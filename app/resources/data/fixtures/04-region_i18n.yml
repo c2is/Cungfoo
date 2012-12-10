@@ -531,34 +531,6 @@
         Name: Ariège/Pyrénées
         Introduction: null
         Description: null
-    20_de:
-        Id: 20
-        Locale: de
-        Slug: centro
-        Name: Centro
-        Introduction: null
-        Description: null
-    20_en:
-        Id: 20
-        Locale: en
-        Slug: centro
-        Name: Centro
-        Introduction: null
-        Description: null
-    20_fr:
-        Id: 20
-        Locale: fr
-        Slug: centro
-        Name: Centro
-        Introduction: null
-        Description: null
-    20_nl:
-        Id: 20
-        Locale: nl
-        Slug: centro
-        Name: Centro
-        Introduction: null
-        Description: null
     21_de:
         Id: 21
         Locale: de
@@ -1005,5 +977,89 @@
         Locale: nl
         Slug: aquitaine
         Name: Aquitaine
+        Introduction: null
+        Description: null
+    37_de:
+        Id: 37
+        Locale: de
+        Slug: limousin
+        Name: Limousin
+        Introduction: null
+        Description: null
+    37_en:
+        Id: 37
+        Locale: en
+        Slug: limousin
+        Name: Limousin
+        Introduction: null
+        Description: null
+    37_fr:
+        Id: 37
+        Locale: fr
+        Slug: limousin
+        Name: Limousin
+        Introduction: null
+        Description: null
+    37_nl:
+        Id: 37
+        Locale: nl
+        Slug: limousin
+        Name: Limousin
+        Introduction: null
+        Description: null
+    38_de:
+        Id: 38
+        Locale: de
+        Slug: tarn
+        Name: Tarn
+        Introduction: null
+        Description: null
+    38_en:
+        Id: 38
+        Locale: en
+        Slug: tarn
+        Name: Tarn
+        Introduction: null
+        Description: null
+    38_fr:
+        Id: 38
+        Locale: fr
+        Slug: tarn
+        Name: Tarn
+        Introduction: null
+        Description: null
+    38_nl:
+        Id: 38
+        Locale: nl
+        Slug: tarn
+        Name: Tarn
+        Introduction: null
+        Description: null
+    39_de:
+        Id: 39
+        Locale: de
+        Slug: costa-blanca
+        Name: 'Costa Blanca'
+        Introduction: null
+        Description: null
+    39_en:
+        Id: 39
+        Locale: en
+        Slug: costa-blanca
+        Name: 'Costa Blanca'
+        Introduction: null
+        Description: null
+    39_fr:
+        Id: 39
+        Locale: fr
+        Slug: costa-blanca
+        Name: 'Costa Blanca'
+        Introduction: null
+        Description: null
+    39_nl:
+        Id: 39
+        Locale: nl
+        Slug: costa-blanca
+        Name: 'Costa Blanca'
         Introduction: null
         Description: null

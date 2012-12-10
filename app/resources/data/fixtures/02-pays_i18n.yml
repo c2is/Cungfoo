@@ -83,31 +83,3 @@
         Name: Espagne
         Introduction: null
         Description: null
-    4_de:
-        Id: 4
-        Locale: de
-        Slug: portugal
-        Name: Portugal
-        Introduction: null
-        Description: null
-    4_en:
-        Id: 4
-        Locale: en
-        Slug: portugal
-        Name: Portugal
-        Introduction: null
-        Description: null
-    4_fr:
-        Id: 4
-        Locale: fr
-        Slug: portugal
-        Name: Portugal
-        Introduction: null
-        Description: null
-    4_nl:
-        Id: 4
-        Locale: nl
-        Slug: portugal
-        Name: Portugal
-        Introduction: null
-        Description: null

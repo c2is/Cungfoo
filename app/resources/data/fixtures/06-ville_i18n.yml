@@ -671,34 +671,6 @@
         Name: 'St Laurent du Verdon (04)'
         Introduction: null
         Description: null
-    25_de:
-        Id: 25
-        Locale: de
-        Slug: pataias
-        Name: Pataias
-        Introduction: null
-        Description: null
-    25_en:
-        Id: 25
-        Locale: en
-        Slug: pataias
-        Name: Pataias
-        Introduction: null
-        Description: null
-    25_fr:
-        Id: 25
-        Locale: fr
-        Slug: pataias
-        Name: Pataias
-        Introduction: null
-        Description: null
-    25_nl:
-        Id: 25
-        Locale: nl
-        Slug: pataias
-        Name: Pataias
-        Introduction: null
-        Description: null
     26_de:
         Id: 26
         Locale: de
@@ -4337,5 +4309,397 @@
         Locale: nl
         Slug: st-aygulf-83
         Name: 'St Aygulf (83)'
+        Introduction: null
+        Description: null
+    156_de:
+        Id: 156
+        Locale: de
+        Slug: creixell-platja
+        Name: 'Creixell platja'
+        Introduction: null
+        Description: null
+    156_en:
+        Id: 156
+        Locale: en
+        Slug: creixell-platja
+        Name: 'Creixell platja'
+        Introduction: null
+        Description: null
+    156_fr:
+        Id: 156
+        Locale: fr
+        Slug: creixell-platja
+        Name: 'Creixell platja'
+        Introduction: null
+        Description: null
+    156_nl:
+        Id: 156
+        Locale: nl
+        Slug: creixell-platja
+        Name: 'Creixell platja'
+        Introduction: null
+        Description: null
+    157_de:
+        Id: 157
+        Locale: de
+        Slug: carqueiranne-83
+        Name: 'Carqueiranne (83)'
+        Introduction: null
+        Description: null
+    157_en:
+        Id: 157
+        Locale: en
+        Slug: carqueiranne-83
+        Name: 'Carqueiranne (83)'
+        Introduction: null
+        Description: null
+    157_fr:
+        Id: 157
+        Locale: fr
+        Slug: carqueiranne-83
+        Name: 'Carqueiranne (83)'
+        Introduction: null
+        Description: null
+    157_nl:
+        Id: 157
+        Locale: nl
+        Slug: carqueiranne-83
+        Name: 'Carqueiranne (83)'
+        Introduction: null
+        Description: null
+    158_de:
+        Id: 158
+        Locale: de
+        Slug: cavalino
+        Name: Cavalino
+        Introduction: null
+        Description: null
+    158_en:
+        Id: 158
+        Locale: en
+        Slug: cavalino
+        Name: Cavalino
+        Introduction: null
+        Description: null
+    158_fr:
+        Id: 158
+        Locale: fr
+        Slug: cavalino
+        Name: Cavalino
+        Introduction: null
+        Description: null
+    158_nl:
+        Id: 158
+        Locale: nl
+        Slug: cavalino
+        Name: Cavalino
+        Introduction: null
+        Description: null
+    159_de:
+        Id: 159
+        Locale: de
+        Slug: st-georges-de-didonne-17
+        Name: 'St Georges-de-Didonne (17)'
+        Introduction: null
+        Description: null
+    159_en:
+        Id: 159
+        Locale: en
+        Slug: st-georges-de-didonne-17
+        Name: 'St Georges-de-Didonne (17)'
+        Introduction: null
+        Description: null
+    159_fr:
+        Id: 159
+        Locale: fr
+        Slug: st-georges-de-didonne-17
+        Name: 'St Georges-de-Didonne (17)'
+        Introduction: null
+        Description: null
+    159_nl:
+        Id: 159
+        Locale: nl
+        Slug: st-georges-de-didonne-17
+        Name: 'St Georges-de-Didonne (17)'
+        Introduction: null
+        Description: null
+    160_de:
+        Id: 160
+        Locale: de
+        Slug: vic-la-gardiole-34
+        Name: 'Vic la Gardiole (34)'
+        Introduction: null
+        Description: null
+    160_en:
+        Id: 160
+        Locale: en
+        Slug: vic-la-gardiole-34
+        Name: 'Vic la Gardiole (34)'
+        Introduction: null
+        Description: null
+    160_fr:
+        Id: 160
+        Locale: fr
+        Slug: vic-la-gardiole-34
+        Name: 'Vic la Gardiole (34)'
+        Introduction: null
+        Description: null
+    160_nl:
+        Id: 160
+        Locale: nl
+        Slug: vic-la-gardiole-34
+        Name: 'Vic la Gardiole (34)'
+        Introduction: null
+        Description: null
+    161_de:
+        Id: 161
+        Locale: de
+        Slug: bieshem-68
+        Name: 'Bieshem (68)'
+        Introduction: null
+        Description: null
+    161_en:
+        Id: 161
+        Locale: en
+        Slug: bieshem-68
+        Name: 'Bieshem (68)'
+        Introduction: null
+        Description: null
+    161_fr:
+        Id: 161
+        Locale: fr
+        Slug: bieshem-68
+        Name: 'Bieshem (68)'
+        Introduction: null
+        Description: null
+    161_nl:
+        Id: 161
+        Locale: nl
+        Slug: bieshem-68
+        Name: 'Bieshem (68)'
+        Introduction: null
+        Description: null
+    162_de:
+        Id: 162
+        Locale: de
+        Slug: seppois-le-bas-68
+        Name: 'Seppois-le-bas (68)'
+        Introduction: null
+        Description: null
+    162_en:
+        Id: 162
+        Locale: en
+        Slug: seppois-le-bas-68
+        Name: 'Seppois-le-bas (68)'
+        Introduction: null
+        Description: null
+    162_fr:
+        Id: 162
+        Locale: fr
+        Slug: seppois-le-bas-68
+        Name: 'Seppois-le-bas (68)'
+        Introduction: null
+        Description: null
+    162_nl:
+        Id: 162
+        Locale: nl
+        Slug: seppois-le-bas-68
+        Name: 'Seppois-le-bas (68)'
+        Introduction: null
+        Description: null
+    163_de:
+        Id: 163
+        Locale: de
+        Slug: nages-81
+        Name: 'Nages (81)'
+        Introduction: null
+        Description: null
+    163_en:
+        Id: 163
+        Locale: en
+        Slug: nages-81
+        Name: 'Nages (81)'
+        Introduction: null
+        Description: null
+    163_fr:
+        Id: 163
+        Locale: fr
+        Slug: nages-81
+        Name: 'Nages (81)'
+        Introduction: null
+        Description: null
+    163_nl:
+        Id: 163
+        Locale: nl
+        Slug: nages-81
+        Name: 'Nages (81)'
+        Introduction: null
+        Description: null
+    164_de:
+        Id: 164
+        Locale: de
+        Slug: volonne-04
+        Name: 'Volonne (04)'
+        Introduction: null
+        Description: null
+    164_en:
+        Id: 164
+        Locale: en
+        Slug: volonne-04
+        Name: 'Volonne (04)'
+        Introduction: null
+        Description: null
+    164_fr:
+        Id: 164
+        Locale: fr
+        Slug: volonne-04
+        Name: 'Volonne (04)'
+        Introduction: null
+        Description: null
+    164_nl:
+        Id: 164
+        Locale: nl
+        Slug: volonne-04
+        Name: 'Volonne (04)'
+        Introduction: null
+        Description: null
+    165_de:
+        Id: 165
+        Locale: de
+        Slug: lido-delle-nazioni
+        Name: 'Lido delle Nazioni'
+        Introduction: null
+        Description: null
+    165_en:
+        Id: 165
+        Locale: en
+        Slug: lido-delle-nazioni
+        Name: 'Lido delle Nazioni'
+        Introduction: null
+        Description: null
+    165_fr:
+        Id: 165
+        Locale: fr
+        Slug: lido-delle-nazioni
+        Name: 'Lido delle Nazioni'
+        Introduction: null
+        Description: null
+    165_nl:
+        Id: 165
+        Locale: nl
+        Slug: lido-delle-nazioni
+        Name: 'Lido delle Nazioni'
+        Introduction: null
+        Description: null
+    166_de:
+        Id: 166
+        Locale: de
+        Slug: alfaz-del-pi
+        Name: 'Alfaz del PI'
+        Introduction: null
+        Description: null
+    166_en:
+        Id: 166
+        Locale: en
+        Slug: alfaz-del-pi
+        Name: 'Alfaz del PI'
+        Introduction: null
+        Description: null
+    166_fr:
+        Id: 166
+        Locale: fr
+        Slug: alfaz-del-pi
+        Name: 'Alfaz del PI'
+        Introduction: null
+        Description: null
+    166_nl:
+        Id: 166
+        Locale: nl
+        Slug: alfaz-del-pi
+        Name: 'Alfaz del PI'
+        Introduction: null
+        Description: null
+    167_de:
+        Id: 167
+        Locale: de
+        Slug: platja-d-aro
+        Name: 'Platja d''Aro'
+        Introduction: null
+        Description: null
+    167_en:
+        Id: 167
+        Locale: en
+        Slug: platja-d-aro
+        Name: 'Platja d''Aro'
+        Introduction: null
+        Description: null
+    167_fr:
+        Id: 167
+        Locale: fr
+        Slug: platja-d-aro
+        Name: 'Platja d''Aro'
+        Introduction: null
+        Description: null
+    167_nl:
+        Id: 167
+        Locale: nl
+        Slug: platja-d-aro
+        Name: 'Platja d''Aro'
+        Introduction: null
+        Description: null
+    168_de:
+        Id: 168
+        Locale: de
+        Slug: punta-marina
+        Name: 'Punta Marina'
+        Introduction: null
+        Description: null
+    168_en:
+        Id: 168
+        Locale: en
+        Slug: punta-marina
+        Name: 'Punta Marina'
+        Introduction: null
+        Description: null
+    168_fr:
+        Id: 168
+        Locale: fr
+        Slug: punta-marina
+        Name: 'Punta Marina'
+        Introduction: null
+        Description: null
+    168_nl:
+        Id: 168
+        Locale: nl
+        Slug: punta-marina
+        Name: 'Punta Marina'
+        Introduction: null
+        Description: null
+    169_de:
+        Id: 169
+        Locale: de
+        Slug: cesenatico
+        Name: Cesenatico
+        Introduction: null
+        Description: null
+    169_en:
+        Id: 169
+        Locale: en
+        Slug: cesenatico
+        Name: Cesenatico
+        Introduction: null
+        Description: null
+    169_fr:
+        Id: 169
+        Locale: fr
+        Slug: cesenatico
+        Name: Cesenatico
+        Introduction: null
+        Description: null
+    169_nl:
+        Id: 169
+        Locale: nl
+        Slug: cesenatico
+        Name: Cesenatico
         Introduction: null
         Description: null

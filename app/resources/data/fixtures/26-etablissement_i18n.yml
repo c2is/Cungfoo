@@ -5026,7 +5026,7 @@
     158_de:
         Id: 158
         Locale: de
-        Country: ''
+        Country: Espagne
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5034,7 +5034,7 @@
     158_en:
         Id: 158
         Locale: en
-        Country: ''
+        Country: Espagne
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5042,7 +5042,7 @@
     158_fr:
         Id: 158
         Locale: fr
-        Country: ''
+        Country: Espagne
         OuvertureReception: 8h-11h/15h-20h
         OuvertureCamping: 12/04/2013-29/09/2013
         ArriveesDeparts: 'Du 12/04/2013 au 06/07/2013 et du 31/08/2013 au 29/09/2013, tous les jours. Du 06/07/2013 au 31/08/2013, le samedi. '
@@ -5050,7 +5050,7 @@
     158_nl:
         Id: 158
         Locale: nl
-        Country: ''
+        Country: Espagne
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5058,7 +5058,7 @@
     159_de:
         Id: 159
         Locale: de
-        Country: ''
+        Country: Espagne
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5066,7 +5066,7 @@
     159_en:
         Id: 159
         Locale: en
-        Country: ''
+        Country: Espagne
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5074,7 +5074,7 @@
     159_fr:
         Id: 159
         Locale: fr
-        Country: ''
+        Country: Espagne
         OuvertureReception: 8h-11h/15h-20h
         OuvertureCamping: 12/04/2013-22/09/2013
         ArriveesDeparts: 'Du 12/04/2013 au 06/07/2013 et du 31/08/2013 au 22/09/2013, tous les jours. Du 06/07/2013 au 31/08/2013, le samedi. '
@@ -5082,7 +5082,7 @@
     159_nl:
         Id: 159
         Locale: nl
-        Country: ''
+        Country: Espagne
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5090,7 +5090,7 @@
     160_de:
         Id: 160
         Locale: de
-        Country: ''
+        Country: Italie
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5098,7 +5098,7 @@
     160_en:
         Id: 160
         Locale: en
-        Country: ''
+        Country: Italie
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5106,7 +5106,7 @@
     160_fr:
         Id: 160
         Locale: fr
-        Country: ''
+        Country: Italie
         OuvertureReception: 8h-11h/15h-20h
         OuvertureCamping: 27/04/2013-15/09/2013
         ArriveesDeparts: 'Du 27/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours. Du 06/07/2013 au 31/08/2013, le samedi. '
@@ -5114,7 +5114,7 @@
     160_nl:
         Id: 160
         Locale: nl
-        Country: ''
+        Country: Italie
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5154,7 +5154,7 @@
     162_de:
         Id: 162
         Locale: de
-        Country: ''
+        Country: Italie
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5162,7 +5162,7 @@
     162_en:
         Id: 162
         Locale: en
-        Country: ''
+        Country: Italie
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5170,7 +5170,7 @@
     162_fr:
         Id: 162
         Locale: fr
-        Country: ''
+        Country: Italie
         OuvertureReception: 8h-11h/15h-20h
         OuvertureCamping: 01/05/2013-22/09/2013
         ArriveesDeparts: 'Du 01/05/2013 au 06/07/2013 et du 31/08/2013 au 22/09/2013, tous les jours. Du 06/07/2013 au 31/08/2013, le samedi. '
@@ -5178,7 +5178,7 @@
     162_nl:
         Id: 162
         Locale: nl
-        Country: ''
+        Country: Italie
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5186,7 +5186,7 @@
     163_de:
         Id: 163
         Locale: de
-        Country: ''
+        Country: Italie
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5194,7 +5194,7 @@
     163_en:
         Id: 163
         Locale: en
-        Country: ''
+        Country: Italie
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5202,7 +5202,7 @@
     163_fr:
         Id: 163
         Locale: fr
-        Country: ''
+        Country: Italie
         OuvertureReception: 8h-11h/15h-20h
         OuvertureCamping: 27/04/2013-15/09/2013
         ArriveesDeparts: 'Du 27/04/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours. Du 06/07/2013 au 31/08/2013, le samedi. '
@@ -5210,7 +5210,7 @@
     163_nl:
         Id: 163
         Locale: nl
-        Country: ''
+        Country: Italie
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null

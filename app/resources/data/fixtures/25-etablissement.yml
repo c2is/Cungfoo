@@ -5,7 +5,7 @@
         Name: Amiaux
         Title: null
         Address1: '223 Route de N.D. de Monts'
-        Address2: null
+        Address2: ''
         Zip: '85169'
         City: 'ST JEAN DE MONTS'
         Mail: test@resalys.com
@@ -13,26 +13,26 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 38 06 56'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-05-08 00:00:00'
-        ClosingDate: '2013-09-15 00:00:00'
+        OpeningDate: '2012-05-15 00:00:00'
+        ClosingDate: '2012-09-15 00:00:00'
         VilleId: 48
         CategorieId: 2
-        GeoCoordinateX: '46.791528'
-        GeoCoordinateY: '-2.064456'
+        GeoCoordinateX: '46.80806056'
+        GeoCoordinateY: '-2.104654312'
         VideoPath: null
         Image360Path: null
         Capacite: '543'
         PlanPath: uploads/etablissements/50c0aeeca983f.jpeg
         Vignette: uploads/etablissements/50c075a7c8a0b.jpeg
         Published: false
-        Active: false
+        Active: true
     2:
         Code: 100
         Slug: pins-parasols
-        Name: 'Pins Parasols'
+        Name: 'Pins Parasols '
         Title: null
         Address1: '3360 Rue des Combattants d''Afrique du Nord'
-        Address2: null
+        Address2: ''
         Zip: '83600'
         City: FRÉJUS
         Mail: test@resalys.com
@@ -40,12 +40,12 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 88 71 90 61'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-06 00:00:00'
-        ClosingDate: '2013-09-28 00:00:00'
+        OpeningDate: '2012-04-07 00:00:00'
+        ClosingDate: '2012-09-29 00:00:00'
         VilleId: 142
         CategorieId: 2
-        GeoCoordinateX: '43.433152'
-        GeoCoordinateY: '6.737034'
+        GeoCoordinateX: '43.46392303'
+        GeoCoordinateY: '6.725360155'
         VideoPath: null
         Image360Path: null
         Capacite: '189'
@@ -56,10 +56,10 @@
     3:
         Code: 101
         Slug: plage-fleurie
-        Name: 'Plage Fleurie'
+        Name: 'Plage Fleurie '
         Title: null
         Address1: 'Les Mazes'
-        Address2: null
+        Address2: ''
         Zip: '07150'
         City: 'VALLON-PONT-D''ARC'
         Mail: test@resalys.com
@@ -67,26 +67,26 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 31 87 03 88'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-27 00:00:00'
-        ClosingDate: '2013-09-07 00:00:00'
+        OpeningDate: '2012-04-27 00:00:00'
+        ClosingDate: '2012-09-08 00:00:00'
         VilleId: 71
         CategorieId: 1
-        GeoCoordinateX: '44.407452'
-        GeoCoordinateY: '4.395401'
+        GeoCoordinateX: '44.412402'
+        GeoCoordinateY: '4.349979'
         VideoPath: null
         Image360Path: null
         Capacite: '299'
         PlanPath: uploads/etablissements/50c0af09d6674.jpeg
         Vignette: uploads/etablissements/50c075d348a48.jpeg
         Published: false
-        Active: false
+        Active: true
     4:
         Code: 102
         Slug: playa-montroig
         Name: 'Playa Montroig'
         Title: null
         Address1: 'Apartado de Correos 3'
-        Address2: null
+        Address2: ''
         Zip: '43300'
         City: 'MONT ROIG DEL CAMP'
         Mail: test@resalys.com
@@ -94,26 +94,26 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 40 21 14 25'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-06 00:00:00'
-        ClosingDate: '2013-09-29 00:00:00'
+        OpeningDate: '2012-04-06 00:00:00'
+        ClosingDate: '2012-09-30 00:00:00'
         VilleId: 34
         CategorieId: 1
-        GeoCoordinateX: '41.0855649'
-        GeoCoordinateY: '0.9616579'
+        GeoCoordinateX: '41.03292'
+        GeoCoordinateY: '0.96921'
         VideoPath: null
         Image360Path: null
         Capacite: '1177'
         PlanPath: uploads/etablissements/50c0af17a86ec.jpeg
         Vignette: uploads/etablissements/50c075df4d461.jpeg
         Published: false
-        Active: false
+        Active: true
     5:
         Code: 103
         Slug: playa-tropicana
-        Name: 'Playa Tropicana'
+        Name: 'Playa Tropicana '
         Title: null
         Address1: 'camino de l''attall s/n'
-        Address2: null
+        Address2: ''
         Zip: '12579'
         City: 'ALCOSSEBRE CASTELLON'
         Mail: test@resalys.com
@@ -121,19 +121,19 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 82 63 48 69'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-27 00:00:00'
-        ClosingDate: '2013-09-15 00:00:00'
+        OpeningDate: '2012-04-27 00:00:00'
+        ClosingDate: '2012-09-16 00:00:00'
         VilleId: 36
         CategorieId: 2
-        GeoCoordinateX: '40.2457632'
-        GeoCoordinateY: '0.2761488'
+        GeoCoordinateX: '40.22119452'
+        GeoCoordinateY: '0.268542767'
         VideoPath: null
         Image360Path: null
         Capacite: '340'
         PlanPath: uploads/etablissements/50c0af25a544c.jpeg
         Vignette: uploads/etablissements/50c075ea6e237.jpeg
         Published: false
-        Active: false
+        Active: true
     6:
         Code: 104
         Slug: port-de-plaisance
@@ -148,12 +148,12 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 07 85 05 84'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-06 00:00:00'
-        ClosingDate: '2013-09-15 00:00:00'
+        OpeningDate: '2012-04-06 00:00:00'
+        ClosingDate: '2012-09-23 00:00:00'
         VilleId: 51
         CategorieId: 2
-        GeoCoordinateX: '47.875568'
-        GeoCoordinateY: '-4.1063729'
+        GeoCoordinateX: '47.88203498'
+        GeoCoordinateY: '-4.103393555'
         VideoPath: null
         Image360Path: null
         Capacite: '340'
@@ -167,7 +167,7 @@
         Name: Ribeyre
         Title: null
         Address1: 'Route de Jassat'
-        Address2: null
+        Address2: ''
         Zip: '63790'
         City: MUROL
         Mail: test@resalys.com
@@ -179,8 +179,8 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 53
         CategorieId: 2
-        GeoCoordinateX: '45.573436'
-        GeoCoordinateY: '2.943472'
+        GeoCoordinateX: '45.56285457'
+        GeoCoordinateY: '2.938236594'
         VideoPath: null
         Image360Path: null
         Capacite: '460'
@@ -191,10 +191,10 @@
     8:
         Code: 108
         Slug: roussillonnais
-        Name: Roussillonnais
+        Name: 'Roussillonnais '
         Title: null
         Address1: 'Boulevard de la Mer'
-        Address2: null
+        Address2: ''
         Zip: '66702'
         City: ARGELÈS-SUR-MER
         Mail: test@resalys.com
@@ -202,26 +202,26 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 31 96 76 12'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-05-25 00:00:00'
-        ClosingDate: '2013-09-08 00:00:00'
+        OpeningDate: '2012-05-25 00:00:00'
+        ClosingDate: '2012-09-09 00:00:00'
         VilleId: 1
         CategorieId: 3
-        GeoCoordinateX: '42.546214'
-        GeoCoordinateY: '3.022911'
+        GeoCoordinateX: '42.56766828'
+        GeoCoordinateY: '3.044221401'
         VideoPath: null
         Image360Path: null
         Capacite: '706'
         PlanPath: uploads/etablissements/50c1af7c41ffa.jpeg
         Vignette: uploads/etablissements/50c0760e8f143.jpeg
         Published: false
-        Active: false
+        Active: true
     9:
         Code: 109
         Slug: sables-de-cordouan
-        Name: 'Sables de Cordouan'
+        Name: 'Sables de Cordouan '
         Title: null
         Address1: '2344 Route de la Fouasse'
-        Address2: null
+        Address2: ''
         Zip: '17570'
         City: 'LES MATHES'
         Mail: test@resalys.com
@@ -229,26 +229,26 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 89 50 18 13'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-27 00:00:00'
-        ClosingDate: '2013-09-14 00:00:00'
+        OpeningDate: '2012-04-28 00:00:00'
+        ClosingDate: '2012-09-16 00:00:00'
         VilleId: 88
         CategorieId: 2
-        GeoCoordinateX: '45.716275'
-        GeoCoordinateY: '-1.143904'
+        GeoCoordinateX: '45.72995496'
+        GeoCoordinateY: '-1.175955534'
         VideoPath: null
         Image360Path: null
         Capacite: '150'
         PlanPath: uploads/etablissements/50c1af9184408.jpeg
         Vignette: uploads/etablissements/50c076178a370.jpeg
         Published: false
-        Active: false
+        Active: true
     10:
         Code: 11
         Slug: azu-rivage
         Name: 'Azu''Rivage'
         Title: null
         Address1: '720 Route des Campings'
-        Address2: null
+        Address2: ''
         Zip: '40140'
         City: AZUR
         Mail: test@resalys.com
@@ -260,22 +260,22 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 94
         CategorieId: 3
-        GeoCoordinateX: '43.798959'
-        GeoCoordinateY: '-1.303089'
+        GeoCoordinateX: '43.785238'
+        GeoCoordinateY: '-1.305147'
         VideoPath: null
         Image360Path: null
         Capacite: '275'
         PlanPath: uploads/etablissements/50c0af9578b80.jpeg
         Vignette: uploads/etablissements/50c07622dd6a5.jpeg
         Published: false
-        Active: false
+        Active: true
     11:
         Code: 110
         Slug: saint-aygulf-plage
         Name: 'Saint Aygulf Plage'
         Title: null
         Address1: '270 Boulevard Salvarelli'
-        Address2: null
+        Address2: ''
         Zip: '83370'
         City: 'ST AYGULF'
         Mail: test@resalys.com
@@ -283,12 +283,12 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 30 43 80 74'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-06 00:00:00'
-        ClosingDate: '2013-09-29 00:00:00'
+        OpeningDate: '2012-04-07 00:00:00'
+        ClosingDate: '2112-10-07 00:00:00'
         VilleId: 155
         CategorieId: 4
-        GeoCoordinateX: '43.433152'
-        GeoCoordinateY: '6.737034'
+        GeoCoordinateX: '43.392481'
+        GeoCoordinateY: '6.726462'
         VideoPath: null
         Image360Path: null
         Capacite: '1100'
@@ -302,20 +302,20 @@
         Name: 'Saint Louis'
         Title: null
         Address1: '2160 Avenue de la République'
-        Address2: null
+        Address2: ''
         Zip: '06550'
         City: 'LA ROQUETTE SUR SIAGNE'
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
         Phone2: '06 31 90 29 44'
-        Fax: null
-        OpeningDate: '2013-04-12 00:00:00'
-        ClosingDate: '2013-09-29 00:00:00'
+        Fax: ''
+        OpeningDate: '2012-04-06 00:00:00'
+        ClosingDate: '2012-09-30 00:00:00'
         VilleId: 42
         CategorieId: 2
-        GeoCoordinateX: '43.597772'
-        GeoCoordinateY: '6.95671'
+        GeoCoordinateX: '43.58853542'
+        GeoCoordinateY: '6.93888545'
         VideoPath: null
         Image360Path: null
         Capacite: '200'
@@ -329,7 +329,7 @@
         Name: 'Domaine de la Sainte Baume'
         Title: null
         Address1: 'Quartier Delvieux Sud'
-        Address2: null
+        Address2: ''
         Zip: '83860'
         City: NANS-LES-PINS
         Mail: test@resalys.com
@@ -337,12 +337,12 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 89 79 83 64'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-12 00:00:00'
-        ClosingDate: '2013-09-29 00:00:00'
+        OpeningDate: '2012-04-06 00:00:00'
+        ClosingDate: '2012-09-30 00:00:00'
         VilleId: 21
         CategorieId: 2
-        GeoCoordinateX: '43.37055'
-        GeoCoordinateY: '5.782809'
+        GeoCoordinateX: '43.37692956'
+        GeoCoordinateY: '5.788040757'
         VideoPath: null
         Image360Path: null
         Capacite: '250'
@@ -353,37 +353,37 @@
     14:
         Code: 113
         Slug: sainte-marie
-        Name: Sainte-Marie
+        Name: 'Sainte-Marie '
         Title: null
         Address1: 'Rue des Clauses'
-        Address2: null
+        Address2: ''
         Zip: '66470'
         City: 'STE MARIE-LA-MER'
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: '06 08 09 37 54'
+        Phone2: '06 08 09 37 54 '
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-26 00:00:00'
-        ClosingDate: '2013-09-08 00:00:00'
-        VilleId: null
+        OpeningDate: '2012-04-27 00:00:00'
+        ClosingDate: '2012-09-09 00:00:00'
+        VilleId: 6
         CategorieId: 2
-        GeoCoordinateX: '42.726559'
-        GeoCoordinateY: '3.016601'
+        GeoCoordinateX: '42.7139833'
+        GeoCoordinateY: '3.0314219'
         VideoPath: null
         Image360Path: null
         Capacite: '300'
         PlanPath: uploads/etablissements/50c1afa391a3a.jpeg
         Vignette: uploads/etablissements/50c0764f49c1f.jpeg
         Published: false
-        Active: false
+        Active: true
     15:
         Code: 114
         Slug: sen-yan
-        Name: 'Sen Yan'
+        Name: 'Sen Yan '
         Title: null
         Address1: 'La Gare'
-        Address2: null
+        Address2: ''
         Zip: '40170'
         City: Mézos
         Mail: test@resalys.com
@@ -391,26 +391,26 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 85 15 03 72'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-06-01 00:00:00'
-        ClosingDate: '2013-09-08 00:00:00'
-        VilleId: null
+        OpeningDate: '2012-04-28 00:00:00'
+        ClosingDate: '2012-09-09 00:00:00'
+        VilleId: 101
         CategorieId: 1
-        GeoCoordinateX: '44.0756609'
-        GeoCoordinateY: '-1.1661729'
+        GeoCoordinateX: '44.07217817'
+        GeoCoordinateY: '-1.156412959'
         VideoPath: null
         Image360Path: null
         Capacite: '375'
         PlanPath: uploads/etablissements/50c1afc92c505.jpeg
         Vignette: uploads/etablissements/50c0765b566f2.jpeg
         Published: false
-        Active: false
+        Active: true
     16:
         Code: 116
         Slug: ferme-de-la-serraz
-        Name: 'Ferme de la Serraz'
+        Name: 'Ferme de la Serraz '
         Title: null
         Address1: 'Rue de la Poste'
-        Address2: null
+        Address2: ''
         Zip: '74210'
         City: DOUSSARD
         Mail: test@resalys.com
@@ -422,8 +422,8 @@
         ClosingDate: '2013-09-14 00:00:00'
         VilleId: 82
         CategorieId: 2
-        GeoCoordinateX: '45.776496'
-        GeoCoordinateY: '6.220515'
+        GeoCoordinateX: '45.7750889'
+        GeoCoordinateY: '6.226780415'
         VideoPath: null
         Image360Path: null
         Capacite: '184'
@@ -434,9 +434,9 @@
     17:
         Code: 117
         Slug: signol
-        Name: Signol
+        Name: 'Signol '
         Title: null
-        Address1: 'avenue des Albatros'
+        Address1: 'avenue des Albatros '
         Address2: Boyardville
         Zip: '17190'
         City: 'ST-GEORGES-D''OLÉRON'
@@ -445,12 +445,12 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 31 88 70 26'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-13 00:00:00'
-        ClosingDate: '2013-09-22 00:00:00'
+        OpeningDate: '2012-04-07 00:00:00'
+        ClosingDate: '2012-09-23 00:00:00'
         VilleId: 96
         CategorieId: 2
-        GeoCoordinateX: '45.978418'
-        GeoCoordinateY: '-1.332125'
+        GeoCoordinateX: '45.96824412'
+        GeoCoordinateY: '-1.245038509'
         VideoPath: null
         Image360Path: null
         Capacite: '300'
@@ -461,10 +461,10 @@
     18:
         Code: 118
         Slug: soleil
-        Name: Soleil
+        Name: 'Soleil '
         Title: null
         Address1: 'Route du Littoral'
-        Address2: null
+        Address2: ''
         Zip: '66702'
         City: ARGELÈS-SUR-MER
         Mail: test@resalys.com
@@ -472,26 +472,26 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 31 32 11 40'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-05-04 00:00:00'
-        ClosingDate: '2013-09-21 00:00:00'
-        VilleId: null
+        OpeningDate: '2012-04-28 00:00:00'
+        ClosingDate: '2012-09-22 00:00:00'
+        VilleId: 1
         CategorieId: 2
-        GeoCoordinateX: '42.546214'
-        GeoCoordinateY: '3.022911'
+        GeoCoordinateX: '42.5757234'
+        GeoCoordinateY: '3.042392135'
         VideoPath: null
         Image360Path: null
         Capacite: '844'
         PlanPath: uploads/etablissements/50c1afdfca20f.jpeg
         Vignette: uploads/etablissements/50c07679cef85.jpeg
         Published: false
-        Active: false
+        Active: true
     19:
         Code: 119
         Slug: soleil-de-la-mediterranee
         Name: 'Soleil de la Méditerranée'
         Title: null
         Address1: '2 rue Ste Beuve'
-        Address2: null
+        Address2: ''
         Zip: '66750'
         City: 'ST CYPRIEN'
         Mail: test@resalys.com
@@ -499,26 +499,26 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 89 73 55 25'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-06 00:00:00'
-        ClosingDate: '2013-09-29 00:00:00'
-        VilleId: null
+        OpeningDate: '2012-04-27 00:00:00'
+        ClosingDate: '2012-09-16 00:00:00'
+        VilleId: 141
         CategorieId: null
-        GeoCoordinateX: '42.61783'
-        GeoCoordinateY: '3.004182'
+        GeoCoordinateX: '42.62443095'
+        GeoCoordinateY: '3.025810719'
         VideoPath: null
         Image360Path: null
         Capacite: '522'
         PlanPath: uploads/etablissements/50c1afef3933e.jpeg
         Vignette: uploads/etablissements/50c076841720b.jpeg
         Published: false
-        Active: false
+        Active: true
     20:
         Code: 12
         Slug: bahia-club
         Name: 'Bahia Club'
         Title: null
         Address1: 'Chemin de l''Hourtou'
-        Address2: null
+        Address2: ''
         Zip: '66420'
         City: 'LE BARCARÈS'
         Mail: test@resalys.com
@@ -530,8 +530,8 @@
         ClosingDate: '2013-09-13 00:00:00'
         VilleId: 17
         CategorieId: 3
-        GeoCoordinateX: '42.78773'
-        GeoCoordinateY: '3.036565'
+        GeoCoordinateX: '42.78606298'
+        GeoCoordinateY: '3.019276857'
         VideoPath: null
         Image360Path: null
         Capacite: '210'
@@ -542,10 +542,10 @@
     21:
         Code: 120
         Slug: sources
-        Name: Sources
+        Name: 'Sources '
         Title: null
         Address1: 'Route des Crêtes'
-        Address2: null
+        Address2: ''
         Zip: '68700'
         City: WATTWILLER
         Mail: test@resalys.com
@@ -553,12 +553,12 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 85 06 13 61'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-13 00:00:00'
-        ClosingDate: '2013-09-15 00:00:00'
+        OpeningDate: '2012-04-06 00:00:00'
+        ClosingDate: '2012-09-16 00:00:00'
         VilleId: 83
         CategorieId: 2
-        GeoCoordinateX: '47.835925'
-        GeoCoordinateY: '7.176868'
+        GeoCoordinateX: '47.83392225'
+        GeoCoordinateY: '7.165617943'
         VideoPath: null
         Image360Path: null
         Capacite: '267'
@@ -584,8 +584,8 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: '44.978459'
-        GeoCoordinateY: '-1.075745'
+        GeoCoordinateX: '45.00800533'
+        GeoCoordinateY: '-1.112129688'
         VideoPath: null
         Image360Path: null
         Capacite: '476'
@@ -596,10 +596,10 @@
     23:
         Code: 122
         Slug: tamerici
-        Name: Tamerici
+        Name: 'Tamerici '
         Title: null
         Address1: 'Via della Cecinella 5'
-        Address2: null
+        Address2: ''
         Zip: '57023'
         City: 'CECINA MARE'
         Mail: test@resalys.com
@@ -607,26 +607,26 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 07 50 68 24'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-13 00:00:00'
-        ClosingDate: '2013-09-15 00:00:00'
-        VilleId: null
+        OpeningDate: '2012-04-06 00:00:00'
+        ClosingDate: '2012-09-16 00:00:00'
+        VilleId: 40
         CategorieId: 3
-        GeoCoordinateX: '43.3007194'
-        GeoCoordinateY: '10.4910957'
+        GeoCoordinateX: '43.29217342'
+        GeoCoordinateY: '10.51079929'
         VideoPath: null
         Image360Path: null
         Capacite: '301'
         PlanPath: uploads/etablissements/50c1b0567994e.jpeg
         Vignette: uploads/etablissements/50c076aa87a87.jpeg
         Published: false
-        Active: false
+        Active: true
     24:
         Code: 123
         Slug: tenuta-primero
-        Name: 'Tenuta Primero'
+        Name: 'Tenuta Primero '
         Title: null
         Address1: 'Via Monfalcone 14'
-        Address2: null
+        Address2: ''
         Zip: '34073'
         City: GRADO
         Mail: test@resalys.com
@@ -634,26 +634,26 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 88 71 65 39'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-05-01 00:00:00'
-        ClosingDate: '2013-09-15 00:00:00'
+        OpeningDate: '2012-04-06 00:00:00'
+        ClosingDate: '2012-09-16 00:00:00'
         VilleId: 37
         CategorieId: 2
-        GeoCoordinateX: '43.3885482'
-        GeoCoordinateY: '-6.0697301'
+        GeoCoordinateX: '45.69481972'
+        GeoCoordinateY: '13.45171809'
         VideoPath: null
         Image360Path: null
         Capacite: '800'
         PlanPath: uploads/etablissements/50c0b0694d86f.jpeg
         Vignette: uploads/etablissements/50c076b862805.jpeg
         Published: false
-        Active: false
+        Active: true
     25:
         Code: 125
         Slug: ur-onea
-        Name: 'Ur Onea'
+        Name: 'Ur Onea '
         Title: null
         Address1: 'Rue de la Chapelle'
-        Address2: null
+        Address2: ''
         Zip: '64210'
         City: BIDART
         Mail: test@resalys.com
@@ -661,26 +661,26 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 31 95 41 42'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-27 00:00:00'
-        ClosingDate: '2013-09-15 00:00:00'
+        OpeningDate: '2012-04-27 00:00:00'
+        ClosingDate: '2012-09-16 00:00:00'
         VilleId: 105
         CategorieId: 3
-        GeoCoordinateX: '43.439236'
-        GeoCoordinateY: '-1.590062'
+        GeoCoordinateX: '43.43388862'
+        GeoCoordinateY: '-1.590839624'
         VideoPath: null
         Image360Path: null
         Capacite: '269'
         PlanPath: uploads/etablissements/50c0b076d5281.jpeg
         Vignette: uploads/etablissements/50c076c4c14d2.jpeg
         Published: false
-        Active: false
+        Active: true
     26:
         Code: 126
         Slug: via-romana
-        Name: 'Via Romana'
+        Name: 'Via Romana '
         Title: null
         Address1: 'Casamozza di Fium''Orbu'
-        Address2: null
+        Address2: ''
         Zip: '20243'
         City: 'PRUNELLI DI FIUMORBU'
         Mail: test@resalys.com
@@ -688,12 +688,12 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 88 71 58 98'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-06-01 00:00:00'
-        ClosingDate: '2013-09-15 00:00:00'
+        OpeningDate: '2012-06-01 00:00:00'
+        ClosingDate: '2012-09-15 00:00:00'
         VilleId: 43
         CategorieId: 4
-        GeoCoordinateX: '42.011184'
-        GeoCoordinateY: '9.313127'
+        GeoCoordinateX: '41.98642663'
+        GeoCoordinateY: '9.398889542'
         VideoPath: null
         Image360Path: null
         Capacite: '54'
@@ -704,10 +704,10 @@
     27:
         Code: 127
         Slug: vieux-port
-        Name: 'Vieux Port'
+        Name: 'Vieux Port '
         Title: null
         Address1: 'Route Plage Sud'
-        Address2: null
+        Address2: ''
         Zip: '40660'
         City: MESSANGES
         Mail: test@resalys.com
@@ -715,12 +715,12 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 89 79 80 11'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-05-01 00:00:00'
-        ClosingDate: '2013-09-29 00:00:00'
+        OpeningDate: '2012-05-01 00:00:00'
+        ClosingDate: '2012-09-30 00:00:00'
         VilleId: 103
         CategorieId: 1
-        GeoCoordinateX: '43.81466'
-        GeoCoordinateY: '-1.37825'
+        GeoCoordinateX: '43.79771568'
+        GeoCoordinateY: '-1.400853395'
         VideoPath: null
         Image360Path: null
         Capacite: '1546'
@@ -731,7 +731,7 @@
     28:
         Code: 128
         Slug: vignes
-        Name: Vignes
+        Name: 'Vignes '
         Title: null
         Address1: '1545 Route du Cap de l''Homy'
         Address2: 'Route de la Plage'
@@ -742,12 +742,12 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 31 03 26 53'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-12 00:00:00'
-        ClosingDate: '2013-09-15 00:00:00'
+        OpeningDate: '2012-04-06 00:00:00'
+        ClosingDate: '2012-09-16 00:00:00'
         VilleId: 102
         CategorieId: 1
-        GeoCoordinateX: '44.033876'
-        GeoCoordinateY: '-1.258325'
+        GeoCoordinateX: '44.02413608'
+        GeoCoordinateY: '-1.27867341'
         VideoPath: null
         Image360Path: null
         Capacite: '450'
@@ -758,10 +758,10 @@
     29:
         Code: 129
         Slug: vilanova-park
-        Name: 'Vilanova Park'
+        Name: 'Vilanova Park '
         Title: null
         Address1: 'AP 64.Ctra Arboc Km 2.5'
-        Address2: null
+        Address2: ''
         Zip: '08800'
         City: 'VILANOVA I LA GELTRÚ'
         Mail: test@resalys.com
@@ -769,26 +769,26 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 40 21 14 24'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-06 00:00:00'
-        ClosingDate: '2013-09-29 00:00:00'
+        OpeningDate: '2012-04-06 00:00:00'
+        ClosingDate: '2012-09-30 00:00:00'
         VilleId: 33
         CategorieId: 2
-        GeoCoordinateX: '42.8467181'
-        GeoCoordinateY: '-2.6716351'
+        GeoCoordinateX: '41.23213011'
+        GeoCoordinateY: '1.690725088'
         VideoPath: null
         Image360Path: null
         Capacite: '1385'
         PlanPath: uploads/etablissements/50c0b0b4c3335.jpeg
         Vignette: uploads/etablissements/50c07709abbeb.jpeg
         Published: false
-        Active: false
+        Active: true
     30:
         Code: 130
         Slug: zagarella
         Name: Zagarella
         Title: null
         Address1: 'Rue des Sables'
-        Address2: null
+        Address2: ''
         Zip: '85160'
         City: 'ST JEAN-DE-MONTS'
         Mail: test@resalys.com
@@ -796,26 +796,26 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 89 73 60 39'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-12 00:00:00'
-        ClosingDate: '2013-09-14 00:00:00'
+        OpeningDate: '2012-04-07 00:00:00'
+        ClosingDate: '2012-09-15 00:00:00'
         VilleId: 48
         CategorieId: 2
-        GeoCoordinateX: '46.791528'
-        GeoCoordinateY: '-2.064456'
+        GeoCoordinateX: '46.7812729'
+        GeoCoordinateY: '-2.017439604'
         VideoPath: null
         Image360Path: null
         Capacite: '278'
         PlanPath: uploads/etablissements/50c0b0bff3feb.jpeg
         Vignette: uploads/etablissements/50c077161f869.jpeg
         Published: false
-        Active: false
+        Active: true
     31:
         Code: 131
         Slug: ruisseau-des-pyrenees
         Name: 'Ruisseau des Pyrénées'
         Title: null
         Address1: 'Rue Burruntz'
-        Address2: null
+        Address2: ''
         Zip: '64210'
         City: BIDART
         Mail: test@resalys.com
@@ -823,26 +823,26 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 32 12 91 82'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-27 00:00:00'
-        ClosingDate: '2013-09-22 00:00:00'
+        OpeningDate: '2012-05-19 00:00:00'
+        ClosingDate: '2012-09-16 00:00:00'
         VilleId: 105
         CategorieId: 1
-        GeoCoordinateX: '43.439236'
-        GeoCoordinateY: '-1.590062'
+        GeoCoordinateX: '43.436804'
+        GeoCoordinateY: '-1.567666'
         VideoPath: null
         Image360Path: null
         Capacite: '480'
         PlanPath: uploads/etablissements/50c1b0795fd0c.jpeg
         Vignette: uploads/etablissements/50c077240f919.jpeg
         Published: false
-        Active: false
+        Active: true
     32:
         Code: 133
         Slug: masia
         Name: Masia
         Title: null
         Address1: 'C/Colon,44'
-        Address2: null
+        Address2: ''
         Zip: '17300'
         City: BLANES
         Mail: test@resalys.com
@@ -854,22 +854,22 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 32
         CategorieId: 4
-        GeoCoordinateX: '41.6742739'
-        GeoCoordinateY: '2.7921031'
+        GeoCoordinateX: '41.664833'
+        GeoCoordinateY: '2.777781'
         VideoPath: null
         Image360Path: null
         Capacite: '757'
         PlanPath: uploads/etablissements/50c0b0df2fd9e.jpeg
         Vignette: uploads/etablissements/50c0773707b45.jpeg
         Published: false
-        Active: false
+        Active: true
     33:
         Code: 134
         Slug: tamaris
         Name: Tamaris
         Title: null
         Address1: 'Rte de St Laurent'
-        Address2: null
+        Address2: ''
         Zip: '66420'
         City: 'LE BARCARÈS'
         Mail: test@resalys.com
@@ -877,12 +877,12 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 07 84 61 31'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-27 00:00:00'
-        ClosingDate: '2013-09-08 00:00:00'
+        OpeningDate: '2012-04-27 00:00:00'
+        ClosingDate: '2012-09-16 00:00:00'
         VilleId: 17
         CategorieId: 3
-        GeoCoordinateX: '42.78773'
-        GeoCoordinateY: '3.036565'
+        GeoCoordinateX: '42.783858'
+        GeoCoordinateY: '3.021154'
         VideoPath: null
         Image360Path: null
         Capacite: '434'
@@ -896,7 +896,7 @@
         Name: 'Playa Joyel'
         Title: null
         Address1: 'Playa De Ris'
-        Address2: null
+        Address2: ''
         Zip: '39180'
         City: NOJA
         Mail: test@resalys.com
@@ -904,28 +904,28 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 31 35 46 23'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-19 00:00:00'
-        ClosingDate: '2013-09-15 00:00:00'
+        OpeningDate: '2012-04-27 00:00:00'
+        ClosingDate: '2012-09-16 00:00:00'
         VilleId: 29
         CategorieId: 2
-        GeoCoordinateX: '43.4799637'
-        GeoCoordinateY: '-3.52139'
+        GeoCoordinateX: '43.491413'
+        GeoCoordinateY: '-3.537512'
         VideoPath: null
         Image360Path: null
         Capacite: '1050'
         PlanPath: uploads/etablissements/50c0b0fc0a723.jpeg
         Vignette: uploads/etablissements/50c0776146ebb.jpeg
         Published: false
-        Active: false
+        Active: true
     35:
         Code: 136
         Slug: grande-italia
         Name: 'Grande Italia'
         Title: null
         Address1: 'Zona Demaniale 10/I'
-        Address2: null
+        Address2: ''
         Zip: 'i 30015'
-        City: 'SOTTOMARINA DI CHIOGGIA'
+        City: 'SOTTOMARINA DI CHIOGGIA '
         Mail: test@resalys.com
         CountryCode: IT
         Phone1: 06.01.01.01.01
@@ -935,22 +935,22 @@
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 38
         CategorieId: null
-        GeoCoordinateX: '45.216488'
-        GeoCoordinateY: '12.294207'
+        GeoCoordinateX: '45.226879'
+        GeoCoordinateY: '12.294774'
         VideoPath: null
         Image360Path: null
         Capacite: '135'
         PlanPath: uploads/etablissements/50c0b1185446d.jpeg
         Vignette: uploads/etablissements/50c0776c29dd7.jpeg
         Published: false
-        Active: false
+        Active: true
     36:
         Code: 137
         Slug: pearl-village-club
         Name: 'Pearl Village Club'
         Title: null
         Address1: 'Route de Taxo à la Mer'
-        Address2: null
+        Address2: ''
         Zip: '66700'
         City: 'ARGELES SUR MER'
         Mail: test@resalys.com
@@ -962,22 +962,22 @@
         ClosingDate: '2013-09-22 00:00:00'
         VilleId: 1
         CategorieId: 2
-        GeoCoordinateX: '42.546214'
-        GeoCoordinateY: '3.022911'
+        GeoCoordinateX: '42.573436'
+        GeoCoordinateY: '3.01918'
         VideoPath: null
         Image360Path: null
         Capacite: '167'
         PlanPath: uploads/etablissements/50c1b08dd8556.jpeg
         Vignette: uploads/etablissements/50c077784ddea.jpeg
         Published: false
-        Active: false
+        Active: true
     37:
         Code: 138
         Slug: pins-maritimes
         Name: 'Pins Maritimes'
         Title: null
         Address1: '1633 boulevard de la Marine'
-        Address2: null
+        Address2: ''
         Zip: '83400'
         City: HYÈRES
         Mail: test@resalys.com
@@ -985,12 +985,12 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 71 59 02 51'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-12 00:00:00'
-        ClosingDate: '2013-09-22 00:00:00'
+        OpeningDate: '2012-04-27 00:00:00'
+        ClosingDate: '2012-09-15 00:00:00'
         VilleId: 13
         CategorieId: 3
-        GeoCoordinateX: '43.120541'
-        GeoCoordinateY: '6.128639'
+        GeoCoordinateX: '43.0935263'
+        GeoCoordinateY: '6.16381530'
         VideoPath: null
         Image360Path: null
         Capacite: '700'
@@ -1028,7 +1028,7 @@
     39:
         Code: 14
         Slug: beau-rivage
-        Name: 'Beau Rivage'
+        Name: 'Beau Rivage '
         Title: null
         Address1: 'Avenue de Montpellier'
         Address2: 'RD 613'
@@ -1043,8 +1043,8 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 9
         CategorieId: 3
-        GeoCoordinateX: '43.4255939'
-        GeoCoordinateY: '3.606834'
+        GeoCoordinateX: '43.43042156'
+        GeoCoordinateY: '3.610414267'
         VideoPath: null
         Image360Path: null
         Capacite: '234'
@@ -1340,8 +1340,8 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.186048'
-        GeoCoordinateY: '-1.1180349'
+        GeoCoordinateX: '46.17793608'
+        GeoCoordinateY: '-1.115090847'
         VideoPath: null
         Image360Path: null
         Capacite: '171'
@@ -1625,7 +1625,7 @@
         Name: 'Bois Soleil'
         Title: null
         Address1: '94 Chemin des Barres'
-        Address2: null
+        Address2: ''
         Zip: '85340'
         City: 'OLONNE SUR MER'
         Mail: test@resalys.com
@@ -1637,8 +1637,8 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 78
         CategorieId: 2
-        GeoCoordinateX: '46.536402'
-        GeoCoordinateY: '-1.772826'
+        GeoCoordinateX: '46.55466987'
+        GeoCoordinateY: '-1.805577278'
         VideoPath: null
         Image360Path: null
         Capacite: '199'
@@ -1687,8 +1687,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: '2013-04-06 00:00:00'
-        ClosingDate: '2013-09-29 00:00:00'
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
         CategorieId: null
         GeoCoordinateX: ''
@@ -1714,8 +1714,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: '2013-04-20 00:00:00'
-        ClosingDate: '2013-09-29 00:00:00'
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
         CategorieId: null
         GeoCoordinateX: ''
@@ -1795,8 +1795,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: '2013-04-27 00:00:00'
-        ClosingDate: '2013-09-29 00:00:00'
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
         CategorieId: null
         GeoCoordinateX: ''
@@ -1919,10 +1919,10 @@
     72:
         Code: 17
         Slug: bordeneo
-        Name: Bordenéo
+        Name: 'Bordenéo '
         Title: null
         Address1: 'Belle Ile en Mer'
-        Address2: null
+        Address2: ''
         Zip: '56360'
         City: 'LE PALAIS'
         Mail: test@resalys.com
@@ -1934,8 +1934,8 @@
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 56
         CategorieId: 2
-        GeoCoordinateX: '47.347009'
-        GeoCoordinateY: '-3.156406'
+        GeoCoordinateX: '47.355914'
+        GeoCoordinateY: '-3.168789'
         VideoPath: null
         Image360Path: null
         Capacite: '202'
@@ -1957,8 +1957,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: '2013-04-27 00:00:00'
-        ClosingDate: '2013-09-29 00:00:00'
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
         CategorieId: null
         GeoCoordinateX: ''
@@ -2011,8 +2011,8 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: '2013-04-06 00:00:00'
-        ClosingDate: '2013-09-29 00:00:00'
+        OpeningDate: null
+        ClosingDate: null
         VilleId: null
         CategorieId: null
         GeoCoordinateX: ''
@@ -2084,7 +2084,7 @@
         Name: 'Domaine des Pins'
         Title: null
         Address1: '151 Avenue de la Faye'
-        Address2: null
+        Address2: ''
         Zip: '85270'
         City: 'ST HILAIRE DE RIEZ'
         Mail: test@resalys.com
@@ -2096,8 +2096,8 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 64
         CategorieId: 2
-        GeoCoordinateX: '46.720204'
-        GeoCoordinateY: '-1.945917'
+        GeoCoordinateX: '46.738375'
+        GeoCoordinateY: '-1.978054'
         VideoPath: null
         Image360Path: null
         Capacite: '140'
@@ -2111,7 +2111,7 @@
         Name: 'Atlantic Club Montalivet'
         Title: null
         Address1: '47 Avenue de l''Europe'
-        Address2: null
+        Address2: ''
         Zip: '33930'
         City: 'VENDAYS MONTALIVET'
         Mail: test@resalys.com
@@ -2123,8 +2123,8 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 151
         CategorieId: 1
-        GeoCoordinateX: '45.3569389'
-        GeoCoordinateY: '-1.061774'
+        GeoCoordinateX: '45.373855'
+        GeoCoordinateY: '-1.144638'
         VideoPath: null
         Image360Path: null
         Capacite: '770'
@@ -2138,7 +2138,7 @@
         Name: 'Ajoncs d''Or'
         Title: null
         Address1: 'Chemin du Rocher'
-        Address2: null
+        Address2: ''
         Zip: '44500'
         City: 'LA BAULE'
         Mail: test@resalys.com
@@ -2146,12 +2146,12 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 31 28 72 24'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-27 00:00:00'
-        ClosingDate: '2013-09-15 00:00:00'
+        OpeningDate: '2012-04-28 00:00:00'
+        ClosingDate: '2012-09-16 00:00:00'
         VilleId: 59
         CategorieId: 3
-        GeoCoordinateX: '47.285448'
-        GeoCoordinateY: '-2.393236'
+        GeoCoordinateX: '47.305775'
+        GeoCoordinateY: '-2.377167'
         VideoPath: null
         Image360Path: null
         Capacite: '222'
@@ -2177,8 +2177,8 @@
         ClosingDate: '2013-09-08 00:00:00'
         VilleId: 64
         CategorieId: 1
-        GeoCoordinateX: '46.720204'
-        GeoCoordinateY: '-1.945917'
+        GeoCoordinateX: '46.740096'
+        GeoCoordinateY: '-1.945052'
         VideoPath: null
         Image360Path: null
         Capacite: '434'
@@ -2200,19 +2200,19 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: '2013-04-06 00:00:00'
-        ClosingDate: '2013-09-29 00:00:00'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
         VilleId: 106
         CategorieId: 1
-        GeoCoordinateX: '44.841033'
-        GeoCoordinateY: '1.276566'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     83:
         Code: 18
         Slug: zz-bretonniere
@@ -2231,8 +2231,8 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.6400409'
-        GeoCoordinateY: '-1.712725'
+        GeoCoordinateX: '46.64475555'
+        GeoCoordinateY: '-1.732943058'
         VideoPath: null
         Image360Path: null
         Capacite: '150'
@@ -2256,17 +2256,17 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: null
+        VilleId: 157
         CategorieId: null
-        GeoCoordinateX: '43.096777'
-        GeoCoordinateY: '6.072284'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     85:
         Code: 181
         Slug: aurilandes
@@ -2281,19 +2281,19 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: '2013-04-27 00:00:00'
-        ClosingDate: '2013-09-29 00:00:00'
-        VilleId: null
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 92
         CategorieId: 4
-        GeoCoordinateX: '44.218845'
-        GeoCoordinateY: '-1.204116'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     86:
         Code: 182
         Slug: baie-du-kernic
@@ -2308,12 +2308,12 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: '2013-04-06 00:00:00'
-        ClosingDate: '2013-09-29 00:00:00'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
         VilleId: 111
         CategorieId: 4
-        GeoCoordinateX: '48.657172'
-        GeoCoordinateY: '-4.174263'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -2335,12 +2335,12 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: '2013-04-06 00:00:00'
-        ClosingDate: '2013-09-29 00:00:00'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
         VilleId: 59
         CategorieId: 3
-        GeoCoordinateX: '47.285448'
-        GeoCoordinateY: '-2.393236'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -2362,19 +2362,19 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: '2013-04-27 00:00:00'
-        ClosingDate: '2013-09-29 00:00:00'
-        VilleId: null
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 158
         CategorieId: 3
-        GeoCoordinateX: '45.4747691'
-        GeoCoordinateY: '12.4965959'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     89:
         Code: 185
         Slug: catalpas
@@ -2389,19 +2389,19 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: '2013-04-06 00:00:00'
-        ClosingDate: '2013-09-29 00:00:00'
-        VilleId: null
-        CategorieId: null
-        GeoCoordinateX: '45.602716'
-        GeoCoordinateY: '-0.997838'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 159
+        CategorieId: 3
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     90:
         Code: 186
         Slug: chalets-de-l-isard-residence
@@ -2420,15 +2420,15 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 130
         CategorieId: null
-        GeoCoordinateX: '43.954465'
-        GeoCoordinateY: '4.77358'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     91:
         Code: 187
         Slug: clos-du-rocher-residence
@@ -2447,8 +2447,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 4
         CategorieId: null
-        GeoCoordinateX: '44.936'
-        GeoCoordinateY: '1.018'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -2472,17 +2472,17 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: null
+        VilleId: 39
         CategorieId: null
-        GeoCoordinateX: '44.6444061'
-        GeoCoordinateY: '12.2463657'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     93:
         Code: 189
         Slug: cote-green-residence
@@ -2501,8 +2501,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 152
         CategorieId: null
-        GeoCoordinateX: '43.611297'
-        GeoCoordinateY: '3.812357'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -2528,15 +2528,15 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 48
         CategorieId: 2
-        GeoCoordinateX: '46.791528'
-        GeoCoordinateY: '-2.064456'
+        GeoCoordinateX: '46.75718789'
+        GeoCoordinateY: '-1.97853148'
         VideoPath: null
         Image360Path: null
         Capacite: '225'
         PlanPath: uploads/etablissements/50c1b17b2ac6d.jpeg
         Vignette: uploads/etablissements/50c0791bea1bb.jpeg
         Published: false
-        Active: false
+        Active: true
     95:
         Code: 190
         Slug: cote-des-roses
@@ -2551,12 +2551,12 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: '2013-04-27 00:00:00'
-        ClosingDate: '2013-09-06 00:00:00'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
         VilleId: 153
         CategorieId: 4
-        GeoCoordinateX: '43.1713807'
-        GeoCoordinateY: '3.184556'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -2578,42 +2578,42 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: '2013-04-06 00:00:00'
-        ClosingDate: '2013-09-29 00:00:00'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
         VilleId: 112
         CategorieId: 4
-        GeoCoordinateX: '46.2289'
-        GeoCoordinateY: '-1.5383'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     97:
         Code: 192
         Slug: coteau-de-la-marine
         Name: 'Coteau de la Marine'
         Title: null
         Address1: 'Coteau de la Marine'
-        Address2: null
+        Address2: ''
         Zip: '04500'
         City: 'MONTAGNAC MONTPEZAT'
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: null
+        Phone2: ''
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-27 00:00:00'
-        ClosingDate: '2013-09-29 00:00:00'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
         VilleId: 124
         CategorieId: 2
-        GeoCoordinateX: '43.7803'
-        GeoCoordinateY: '6.0961'
+        GeoCoordinateX: '43.74642103270366'
+        GeoCoordinateY: '6.10041618347168'
         VideoPath: null
         Image360Path: null
-        Capacite: null
+        Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07959d2aee.jpeg
         Published: false
@@ -2634,17 +2634,17 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: null
+        VilleId: 27
         CategorieId: 1
-        GeoCoordinateX: '41.9712149'
-        GeoCoordinateY: '3.1488764'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     99:
         Code: 194
         Slug: demeures-torrellanes-residence
@@ -2663,8 +2663,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 144
         CategorieId: null
-        GeoCoordinateX: '42.606203'
-        GeoCoordinateY: '3.006674'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -2690,15 +2690,15 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 1
         CategorieId: null
-        GeoCoordinateX: '42.546214'
-        GeoCoordinateY: '3.022911'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     101:
         Code: 196
         Slug: demeures-du-ventoux
@@ -2717,15 +2717,15 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 131
         CategorieId: 3
-        GeoCoordinateX: '44.0993799'
-        GeoCoordinateY: '5.024744'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     102:
         Code: 197
         Slug: domaine-de-bacchus-residence
@@ -2744,8 +2744,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 125
         CategorieId: null
-        GeoCoordinateX: '44.083566'
-        GeoCoordinateY: '4.077927'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -2771,8 +2771,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 126
         CategorieId: 3
-        GeoCoordinateX: '43.290934'
-        GeoCoordinateY: '5.863162'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -2798,35 +2798,35 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 117
         CategorieId: null
-        GeoCoordinateX: '49.306882'
-        GeoCoordinateY: '-0.028052'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     105:
         Code: 2
         Slug: mas
         Name: Mas
         Title: null
         Address1: Sireuil
-        Address2: null
+        Address2: ''
         Zip: '24620'
-        City: 'LES EYZIES DE TAYAC'
+        City: 'LES EYZIES DE TAYAC '
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
         Phone2: '05 53 29 68 06'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-26 00:00:00'
+        OpeningDate: '2013-05-03 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 4
         CategorieId: 2
-        GeoCoordinateX: '44.936'
-        GeoCoordinateY: '1.018'
+        GeoCoordinateX: '44.93689388'
+        GeoCoordinateY: '1.085318327'
         VideoPath: null
         Image360Path: null
         Capacite: '137'
@@ -2840,7 +2840,7 @@
         Name: Calypso
         Title: null
         Address1: 'Boulevard de la Plage'
-        Address2: null
+        Address2: ''
         Zip: '66440'
         City: TORREILLES
         Mail: test@resalys.com
@@ -2852,8 +2852,8 @@
         ClosingDate: '2013-09-22 00:00:00'
         VilleId: 7
         CategorieId: 2
-        GeoCoordinateX: '42.75444'
-        GeoCoordinateY: '2.993641'
+        GeoCoordinateX: '42.767919'
+        GeoCoordinateY: '3.029699922'
         VideoPath: null
         Image360Path: null
         Capacite: '308'
@@ -2867,23 +2867,23 @@
         Name: 'Domaine des Iscles'
         Title: null
         Address1: 'Route du Plan d’Eau'
-        Address2: null
+        Address2: ''
         Zip: '13640'
         City: 'LA ROQUE D ANTHERON'
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: null
+        Phone2: ''
         Fax: 04.92.94.10.01
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 154
         CategorieId: 2
-        GeoCoordinateX: '43.713811'
-        GeoCoordinateY: '5.316109'
+        GeoCoordinateX: '43.7281889'
+        GeoCoordinateY: '5.3209877'
         VideoPath: null
         Image360Path: null
-        Capacite: null
+        Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07a25e504c.jpeg
         Published: false
@@ -2906,15 +2906,15 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 119
         CategorieId: 3
-        GeoCoordinateX: '45.406018'
-        GeoCoordinateY: '2.0463779'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     109:
         Code: 202
         Slug: domaine-du-golf-residence
@@ -2933,8 +2933,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 127
         CategorieId: 3
-        GeoCoordinateX: '43.549831'
-        GeoCoordinateY: '3.778935'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -2948,16 +2948,16 @@
         Name: 'Dune Blanche'
         Title: null
         Address1: 'Route d’Etaples'
-        Address2: null
+        Address2: ''
         Zip: '62176'
         City: CAMIERS
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: null
+        Phone2: ''
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-12 00:00:00'
-        ClosingDate: '2013-09-15 00:00:00'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
         VilleId: 121
         CategorieId: 5
         GeoCoordinateX: '50.568379'
@@ -2987,69 +2987,69 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 118
         CategorieId: 3
-        GeoCoordinateX: '43.3148849'
-        GeoCoordinateY: '3.139111'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     112:
         Code: 205
         Slug: ensoya
         Name: Ensoya
         Title: null
         Address1: '54 rue de Perpignan'
-        Address2: null
+        Address2: ''
         Zip: '11130'
         City: SIGEAN
-        Mail: null
+        Mail: ''
         CountryCode: FR
-        Phone1: null
-        Phone2: null
-        Fax: null
-        OpeningDate: '2013-04-06 00:00:00'
-        ClosingDate: '2013-09-29 00:00:00'
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
         VilleId: 107
         CategorieId: 5
-        GeoCoordinateX: '43.02891'
-        GeoCoordinateY: '2.979255'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
-        Capacite: null
+        Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50bc680fbc8b5.png
         Published: false
-        Active: false
+        Active: true
     113:
         Code: 206
         Slug: europe
         Name: Europe
         Title: null
         Address1: '31 route de Frontignan'
-        Address2: null
+        Address2: ''
         Zip: '34110'
         City: 'VIC LA GARDIOLE'
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: null
-        Fax: null
-        OpeningDate: '2013-04-06 00:00:00'
-        ClosingDate: '2013-09-29 00:00:00'
-        VilleId: null
-        CategorieId: null
-        GeoCoordinateX: '43.490423'
-        GeoCoordinateY: '3.797599'
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 160
+        CategorieId: 2
+        GeoCoordinateX: '43.4915997'
+        GeoCoordinateY: '3.7792969'
         VideoPath: null
         Image360Path: null
-        Capacite: null
+        Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07a87bdb97.jpeg
         Published: false
-        Active: false
+        Active: true
     114:
         Code: 207
         Slug: fonserane-residence
@@ -3068,8 +3068,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 128
         CategorieId: 3
-        GeoCoordinateX: '43.344233'
-        GeoCoordinateY: '3.215795'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -3095,15 +3095,15 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 120
         CategorieId: 3
-        GeoCoordinateX: '48.767811'
-        GeoCoordinateY: '2.350648'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     116:
         Code: 209
         Slug: free-time
@@ -3118,26 +3118,26 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: '2013-04-24 00:00:00'
-        ClosingDate: '2013-10-13 00:00:00'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
         VilleId: 108
         CategorieId: 3
-        GeoCoordinateX: '43.244728'
-        GeoCoordinateY: '10.531519'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     117:
         Code: 21
         Slug: camping-du-lac
-        Name: 'Camping du Lac'
+        Name: 'Camping du Lac '
         Title: null
         Address1: 'Le Fangeas Soulier'
-        Address2: null
+        Address2: ''
         Zip: '05110'
         City: CURBANS
         Mail: test@resalys.com
@@ -3149,8 +3149,8 @@
         ClosingDate: '2013-09-08 00:00:00'
         VilleId: 11
         CategorieId: 3
-        GeoCoordinateX: '44.427565'
-        GeoCoordinateY: '6.035874'
+        GeoCoordinateX: '44.42476978'
+        GeoCoordinateY: '6.031816006'
         VideoPath: null
         Image360Path: null
         Capacite: '180'
@@ -3176,8 +3176,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 152
         CategorieId: 3
-        GeoCoordinateX: '43.611297'
-        GeoCoordinateY: '3.812357'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -3191,27 +3191,27 @@
         Name: 'Ile du Rhin'
         Title: null
         Address1: 'Zone touristique Ile du Rhin'
-        Address2: null
+        Address2: ''
         Zip: '68600'
         City: BIESHEIM
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: null
+        Phone2: ''
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-06 00:00:00'
-        ClosingDate: '2013-09-29 00:00:00'
-        VilleId: null
-        CategorieId: null
-        GeoCoordinateX: '48.040216'
-        GeoCoordinateY: '7.545766'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 161
+        CategorieId: 4
+        GeoCoordinateX: '48.0226826'
+        GeoCoordinateY: '7.5783348'
         VideoPath: null
         Image360Path: null
-        Capacite: null
+        Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07afbdbe73.jpeg
         Published: false
-        Active: false
+        Active: true
     120:
         Code: 212
         Slug: interpals
@@ -3226,19 +3226,19 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: '2013-03-23 00:00:00'
-        ClosingDate: '2013-09-22 00:00:00'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
         VilleId: 109
         CategorieId: null
-        GeoCoordinateX: '41.1732122'
-        GeoCoordinateY: '1.4864715'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     121:
         Code: 213
         Slug: isles-de-sola-residence
@@ -3257,15 +3257,15 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 132
         CategorieId: 3
-        GeoCoordinateX: '49.388696'
-        GeoCoordinateY: '-1.041706'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     122:
         Code: 214
         Slug: ker-goh-lenn-residence
@@ -3284,8 +3284,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 110
         CategorieId: 3
-        GeoCoordinateX: '47.697648'
-        GeoCoordinateY: '-2.805894'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -3307,19 +3307,19 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: '2013-04-06 00:00:00'
-        ClosingDate: '2013-09-29 00:00:00'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
         VilleId: 113
         CategorieId: 3
-        GeoCoordinateX: '44.633628'
-        GeoCoordinateY: '-1.201676'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     124:
         Code: 216
         Slug: bois-de-pleuven
@@ -3338,8 +3338,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 122
         CategorieId: 2
-        GeoCoordinateX: '47.967118'
-        GeoCoordinateY: '-3.937054'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -3353,88 +3353,88 @@
         Name: Castellas
         Title: null
         Address1: 'RN 112'
-        Address2: null
+        Address2: ''
         Zip: '34200'
         City: SETE
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: null
+        Phone2: ''
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-06 00:00:00'
-        ClosingDate: '2013-09-29 00:00:00'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
         VilleId: 114
         CategorieId: 2
-        GeoCoordinateX: '43.40215'
-        GeoCoordinateY: '3.696624'
+        GeoCoordinateX: '43.3400139093'
+        GeoCoordinateY: '3.5819583307'
         VideoPath: null
         Image360Path: null
-        Capacite: null
+        Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07b54eec04.jpeg
         Published: false
-        Active: false
+        Active: true
     126:
         Code: 218
         Slug: neptune
         Name: Neptune
         Title: null
         Address1: 'Avenue de la Retirada plage Nord'
-        Address2: null
+        Address2: ''
         Zip: '66702'
         City: 'ARGELES SUR MER CEDEX'
         Mail: test@resalys.com
         CountryCode: FR
-        Phone1: null
-        Phone2: null
-        Fax: null
-        OpeningDate: '2013-04-06 00:00:00'
-        ClosingDate: '2013-09-29 00:00:00'
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
         VilleId: 1
         CategorieId: 2
-        GeoCoordinateX: '42.546214'
-        GeoCoordinateY: '3.022911'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
-        Capacite: null
+        Capacite: ''
         PlanPath: uploads/etablissements/50c0b8e686a55.jpeg
         Vignette: uploads/etablissements/50c07b6326e05.jpeg
         Published: false
-        Active: false
+        Active: true
     127:
         Code: 219
         Slug: domaine-d-anghione
         Name: 'Domaine d’Anghione'
         Title: null
         Address1: 'Route de la plage'
-        Address2: null
+        Address2: ''
         Zip: '20213'
         City: 'CASTELLARE DI CASINCA'
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: null
-        Fax: null
-        OpeningDate: '2013-03-02 00:00:00'
-        ClosingDate: '2013-11-11 00:00:00'
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
         VilleId: 116
         CategorieId: 4
-        GeoCoordinateX: '42.467512'
-        GeoCoordinateY: '9.473267'
+        GeoCoordinateX: '42.4764651'
+        GeoCoordinateY: '9.5296097'
         VideoPath: null
         Image360Path: null
-        Capacite: null
+        Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07b7d004ec.jpeg
         Published: false
-        Active: false
+        Active: true
     128:
         Code: 22
         Slug: cap-agathois
-        Name: 'Cap Agathois'
+        Name: 'Cap Agathois '
         Title: null
         Address1: 'Route de Sète'
-        Address2: null
+        Address2: ''
         Zip: '34300'
         City: AGDE
         Mail: test@resalys.com
@@ -3442,12 +3442,12 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 87 37 69'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-05-17 00:00:00'
-        ClosingDate: '2013-09-08 00:00:00'
+        OpeningDate: '2013-04-26 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
         VilleId: 19
         CategorieId: 3
-        GeoCoordinateX: '43.312455'
-        GeoCoordinateY: '3.47083'
+        GeoCoordinateX: '43.310056'
+        GeoCoordinateY: '3.509442'
         VideoPath: null
         Image360Path: null
         Capacite: '258'
@@ -3469,12 +3469,12 @@
         Phone1: 06.01.01.01.01
         Phone2: ''
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-06 00:00:00'
-        ClosingDate: '2013-09-29 00:00:00'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
         VilleId: 148
         CategorieId: 5
-        GeoCoordinateX: '50.7074209'
-        GeoCoordinateY: '1.576772'
+        GeoCoordinateX: '50°42''14'
+        GeoCoordinateY: '1°33''58'
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -3496,12 +3496,12 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: '2013-04-06 00:00:00'
-        ClosingDate: '2013-09-29 00:00:00'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
         VilleId: 19
         CategorieId: null
-        GeoCoordinateX: '43.312455'
-        GeoCoordinateY: '3.47083'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -3521,48 +3521,48 @@
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: null
+        Phone2: ''
         Fax: 04.92.94.10.01
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 73
         CategorieId: 2
-        GeoCoordinateX: '46.344059'
-        GeoCoordinateY: '-1.4387859'
+        GeoCoordinateX: '46°22''21''''N'
+        GeoCoordinateY: '1°24''55''''E'
         VideoPath: null
         Image360Path: null
         Capacite: null
         PlanPath: null
         Vignette: uploads/etablissements/50c07baf6c131.jpeg
         Published: false
-        Active: false
+        Active: true
     132:
         Code: 223
         Slug: iles
         Name: Iles
         Title: null
         Address1: '245 route des Lacs'
-        Address2: null
+        Address2: ''
         Zip: '74190'
         City: PASSY
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: null
+        Phone2: ''
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-06 00:00:00'
-        ClosingDate: '2013-09-29 00:00:00'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
         VilleId: 139
         CategorieId: 4
-        GeoCoordinateX: '45.923392'
-        GeoCoordinateY: '6.684919'
+        GeoCoordinateX: '45.9235838981'
+        GeoCoordinateY: '6.65056899541'
         VideoPath: null
         Image360Path: null
-        Capacite: null
+        Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07bbf72e3e.jpeg
         Published: false
-        Active: false
+        Active: true
     133:
         Code: 224
         Slug: lupins
@@ -3577,19 +3577,19 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: '2013-04-06 00:00:00'
-        ClosingDate: '2013-09-29 00:00:00'
-        VilleId: null
-        CategorieId: null
-        GeoCoordinateX: '47.536374'
-        GeoCoordinateY: '7.17609'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 162
+        CategorieId: 3
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     134:
         Code: 225
         Slug: mas-des-cigales-residence
@@ -3608,8 +3608,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 129
         CategorieId: 3
-        GeoCoordinateX: '14.0101094'
-        GeoCoordinateY: '-60.9874687'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -3631,46 +3631,46 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: '2013-04-27 00:00:00'
-        ClosingDate: '2013-09-29 00:00:00'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
         VilleId: 133
         CategorieId: 3
-        GeoCoordinateX: '51.9514808'
-        GeoCoordinateY: '7.6255388'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     136:
         Code: 227
         Slug: parc-des-allais
         Name: 'Parc des Allais'
         Title: null
         Address1: 'Les Allais'
-        Address2: null
+        Address2: ''
         Zip: '37220'
         City: TROGUES
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: null
+        Phone2: ''
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-12 00:00:00'
-        ClosingDate: '2013-09-15 00:00:00'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
         VilleId: 134
         CategorieId: 2
-        GeoCoordinateX: '47.115125'
-        GeoCoordinateY: '0.497549'
+        GeoCoordinateX: '47.0974739'
+        GeoCoordinateY: '0.5019379'
         VideoPath: null
         Image360Path: null
-        Capacite: null
+        Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07c03aa1f4.jpeg
         Published: false
-        Active: false
+        Active: true
     137:
         Code: 228
         Slug: pres-du-verdon
@@ -3685,53 +3685,53 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: '2013-04-06 00:00:00'
-        ClosingDate: '2013-09-29 00:00:00'
-        VilleId: null
-        CategorieId: null
-        GeoCoordinateX: '43.700617'
-        GeoCoordinateY: '6.038878'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 12
+        CategorieId: 4
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     138:
         Code: 229
         Slug: rieumontagne
         Name: Rieumontagné
         Title: null
         Address1: 'Lac du Laouzas'
-        Address2: null
+        Address2: ''
         Zip: '81320'
         City: NAGES
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: null
-        Fax: null
+        Phone2: ''
+        Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: null
-        CategorieId: null
-        GeoCoordinateX: '43.675299'
-        GeoCoordinateY: '2.779604'
+        VilleId: 163
+        CategorieId: 2
+        GeoCoordinateX: '43°38''55'
+        GeoCoordinateY: '2°46''41'
         VideoPath: null
         Image360Path: null
-        Capacite: null
+        Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07c2b36ac4.jpeg
         Published: false
-        Active: false
+        Active: true
     139:
         Code: 23
         Slug: carbonnier
         Name: Carbonnier
         Title: null
-        Address1: null
-        Address2: null
+        Address1: ''
+        Address2: ''
         Zip: '24250'
         City: 'ST MARTIAL DE NABIRAT'
         Mail: test@resalys.com
@@ -3743,8 +3743,8 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 55
         CategorieId: 2
-        GeoCoordinateX: '44.744816'
-        GeoCoordinateY: '1.258582'
+        GeoCoordinateX: '44.7421154'
+        GeoCoordinateY: '1.263438463'
         VideoPath: null
         Image360Path: null
         Capacite: '192'
@@ -3770,8 +3770,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 19
         CategorieId: null
-        GeoCoordinateX: '43.312455'
-        GeoCoordinateY: '3.47083'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -3785,27 +3785,27 @@
         Name: Tours
         Title: null
         Address1: 'Les Tours'
-        Address2: null
+        Address2: ''
         Zip: '12460'
         City: 'ST AMANS DES COTS'
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: null
+        Phone2: ''
         Fax: 04.92.94.10.01
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 147
         CategorieId: 2
-        GeoCoordinateX: '44.689526'
-        GeoCoordinateY: '2.658302'
+        GeoCoordinateX: '44.66761515867915'
+        GeoCoordinateY: '2.6811790466308594'
         VideoPath: null
         Image360Path: null
-        Capacite: null
+        Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07cac98a8a.jpeg
         Published: false
-        Active: false
+        Active: true
     142:
         Code: 232
         Slug: camping-du-ried
@@ -3824,8 +3824,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '48.3334509'
-        GeoCoordinateY: '7.676838'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -3839,23 +3839,23 @@
         Name: 'Domaine de la Marina'
         Title: null
         Address1: 'Route plage sud'
-        Address2: null
+        Address2: ''
         Zip: '40660'
         City: MESSANGES
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: null
+        Phone2: ''
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-05-01 00:00:00'
-        ClosingDate: '2013-09-15 00:00:00'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-04 00:00:00'
         VilleId: 103
         CategorieId: 2
-        GeoCoordinateX: '43.81466'
-        GeoCoordinateY: '-1.37825'
+        GeoCoordinateX: '43.856316'
+        GeoCoordinateY: '-1.392517'
         VideoPath: null
         Image360Path: null
-        Capacite: null
+        Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07cce6cae0.jpeg
         Published: false
@@ -3865,51 +3865,51 @@
         Slug: etangs-fleuris
         Name: 'Etangs Fleuris'
         Title: null
-        Address1: 'Route de la Couture'
-        Address2: null
+        Address1: 'Route de la Couture '
+        Address2: ''
         Zip: '77131'
         City: TOUQUIN
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: null
+        Phone2: ''
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-12 00:00:00'
-        ClosingDate: '2013-10-26 00:00:00'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-04 00:00:00'
         VilleId: 123
         CategorieId: 3
-        GeoCoordinateX: '48.735158'
-        GeoCoordinateY: '3.011745'
+        GeoCoordinateX: '48.733054'
+        GeoCoordinateY: '3.046978'
         VideoPath: null
         Image360Path: null
-        Capacite: null
+        Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07cdbf27aa.jpeg
         Published: false
-        Active: false
+        Active: true
     145:
         Code: 235
         Slug: ravoire
         Name: Ravoire
         Title: null
         Address1: 'Route de le ravoire'
-        Address2: null
+        Address2: ''
         Zip: '74210'
         City: DOUSSARD
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: null
+        Phone2: ''
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-05-08 00:00:00'
-        ClosingDate: '2013-09-08 00:00:00'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-04 00:00:00'
         VilleId: 82
         CategorieId: 2
-        GeoCoordinateX: '45.776496'
-        GeoCoordinateY: '6.220515'
+        GeoCoordinateX: '45.799965'
+        GeoCoordinateY: '6.211696'
         VideoPath: null
         Image360Path: null
-        Capacite: null
+        Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07ce853e04.jpeg
         Published: false
@@ -3920,47 +3920,47 @@
         Name: 'Saint Disdille'
         Title: null
         Address1: '117 Avenue Saint Disdille'
-        Address2: null
+        Address2: ''
         Zip: '74200'
         City: 'THONON LES BAINS'
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: null
+        Phone2: ''
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-27 00:00:00'
-        ClosingDate: '2013-09-15 00:00:00'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-04 00:00:00'
         VilleId: 135
         CategorieId: 3
-        GeoCoordinateX: '46.373565'
-        GeoCoordinateY: '6.477635'
+        GeoCoordinateX: '6° 30’ 15’’ E'
+        GeoCoordinateY: '46° 23’ 58’’ N'
         VideoPath: null
         Image360Path: null
-        Capacite: null
+        Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07cf564de0.jpeg
         Published: false
-        Active: false
+        Active: true
     147:
         Code: 237
         Slug: mar-i-sol
         Name: 'Mar i Sol'
         Title: null
         Address1: 'Boulevard de le plage'
-        Address2: null
+        Address2: ''
         Zip: '66440'
         City: TORREILLES
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: null
+        Phone2: ''
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-13 00:00:00'
-        ClosingDate: '2013-09-20 00:00:00'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-04 00:00:00'
         VilleId: 7
         CategorieId: 1
-        GeoCoordinateX: '42.75444'
-        GeoCoordinateY: '2.993641'
+        GeoCoordinateX: '43.004647'
+        GeoCoordinateY: '3.050903'
         VideoPath: null
         Image360Path: null
         Capacite: null
@@ -3974,50 +3974,50 @@
         Name: 'Lou Pignada Ondres'
         Title: null
         Address1: '741 Avenue de la Plage'
-        Address2: null
+        Address2: ''
         Zip: '40440'
         City: ONDRES
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: null
+        Phone2: ''
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-27 00:00:00'
-        ClosingDate: '2013-09-15 00:00:00'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-04 00:00:00'
         VilleId: 136
         CategorieId: 2
-        GeoCoordinateX: '43.561101'
-        GeoCoordinateY: '-1.448208'
+        GeoCoordinateX: '43,5694205'
+        GeoCoordinateY: '-1,4602153'
         VideoPath: null
         Image360Path: null
-        Capacite: null
+        Capacite: ''
         PlanPath: uploads/etablissements/50c0b9a433c8e.jpeg
         Vignette: uploads/etablissements/50c07d136d49a.jpeg
         Published: false
-        Active: false
+        Active: true
     149:
         Code: 239
         Slug: palmira-beach
         Name: 'Palmira Beach'
         Title: null
         Address1: 'Avenue du Port'
-        Address2: null
+        Address2: ''
         Zip: '34350'
         City: VENDRES
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: null
-        Fax: null
-        OpeningDate: '2013-04-13 00:00:00'
-        ClosingDate: '2013-09-15 00:00:00'
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-04 00:00:00'
         VilleId: 146
         CategorieId: 3
-        GeoCoordinateX: '43.269435'
-        GeoCoordinateY: '3.225202'
+        GeoCoordinateX: '43.229015'
+        GeoCoordinateY: '3.245628'
         VideoPath: null
         Image360Path: null
-        Capacite: null
+        Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07d1fc73c6.jpeg
         Published: false
@@ -4040,38 +4040,38 @@
         ClosingDate: '2013-09-21 00:00:00'
         VilleId: 30
         CategorieId: 2
-        GeoCoordinateX: '42.2582587'
-        GeoCoordinateY: '3.0744421'
+        GeoCoordinateX: '42.2553319'
+        GeoCoordinateY: '3.136843443'
         VideoPath: null
         Image360Path: null
         Capacite: '305'
         PlanPath: uploads/etablissements/50c0b9c03cd17.jpeg
         Vignette: uploads/etablissements/50c07d30289f7.jpeg
         Published: false
-        Active: false
+        Active: true
     151:
         Code: 240
         Slug: etoile-de-mer
         Name: 'Etoile de Mer'
         Title: null
         Address1: 'La Pagesse'
-        Address2: null
+        Address2: ''
         Zip: '34410'
         City: SERIGNAN
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: null
+        Phone2: ''
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-27 00:00:00'
-        ClosingDate: '2013-09-15 00:00:00'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-04 00:00:00'
         VilleId: 8
         CategorieId: 3
-        GeoCoordinateX: '43.282801'
-        GeoCoordinateY: '3.279651'
+        GeoCoordinateX: '43.269862'
+        GeoCoordinateY: '3.332928'
         VideoPath: null
         Image360Path: null
-        Capacite: null
+        Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07d430c3b5.jpeg
         Published: false
@@ -4088,17 +4088,17 @@
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: null
+        Phone2: ''
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-24 00:00:00'
-        ClosingDate: '2013-10-12 00:00:00'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-04 00:00:00'
         VilleId: 145
         CategorieId: 3
-        GeoCoordinateX: '43.576551'
-        GeoCoordinateY: '7.01902'
+        GeoCoordinateX: '43.574826'
+        GeoCoordinateY: '7.004464'
         VideoPath: null
         Image360Path: null
-        Capacite: null
+        Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07d4cbff5e.jpeg
         Published: false
@@ -4108,82 +4108,82 @@
         Slug: cadenieres
         Name: Cadenières
         Title: null
-        Address1: '1427'
+        Address1: '1427 '
         Address2: 'RD 560'
         Zip: '83690'
         City: VILLECROZE
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: null
+        Phone2: ''
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-05-18 00:00:00'
-        ClosingDate: '2013-09-08 00:00:00'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-04 00:00:00'
         VilleId: 138
         CategorieId: 3
-        GeoCoordinateX: '43.5820099'
-        GeoCoordinateY: '6.2754519'
+        GeoCoordinateX: '43° 33'' 26 00'''' N'
+        GeoCoordinateY: '6° 17'' 11 59'''' E'
         VideoPath: null
         Image360Path: null
-        Capacite: null
+        Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07d58a0174.jpeg
         Published: false
-        Active: false
+        Active: true
     154:
         Code: 243
         Slug: pergola
         Name: Pergola
         Title: null
         Address1: '1 rue des vernois'
-        Address2: null
+        Address2: ''
         Zip: '39130'
         City: MARIGNY
-        Mail: null
+        Mail: ''
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: null
+        Phone2: ''
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-05-04 00:00:00'
-        ClosingDate: '2013-09-08 00:00:00'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-04 00:00:00'
         VilleId: 137
         CategorieId: 1
-        GeoCoordinateX: '47.72227'
-        GeoCoordinateY: '-0.6164809'
+        GeoCoordinateX: 46.676802°
+        GeoCoordinateY: 5.781857°
         VideoPath: null
         Image360Path: null
         Capacite: null
         PlanPath: null
         Vignette: uploads/etablissements/50c07d67ba280.jpeg
         Published: false
-        Active: false
+        Active: true
     155:
         Code: 244
         Slug: hippocampe
         Name: Hippocampe
         Title: null
         Address1: 'Quartier La Croix'
-        Address2: null
+        Address2: ''
         Zip: '04290'
         City: VOLONNE
         Mail: test@resalys.com
         CountryCode: FR
-        Phone1: null
-        Phone2: null
-        Fax: null
-        OpeningDate: '2013-04-27 00:00:00'
-        ClosingDate: '2013-09-15 00:00:00'
-        VilleId: null
-        CategorieId: null
-        GeoCoordinateX: '44.111198'
-        GeoCoordinateY: '6.013711'
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-04 00:00:00'
+        VilleId: 164
+        CategorieId: 2
+        GeoCoordinateX: '44°6''22 N'
+        GeoCoordinateY: '6°0''56 E'
         VideoPath: null
         Image360Path: null
-        Capacite: null
+        Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07d71e10ea.jpeg
         Published: false
-        Active: false
+        Active: true
     156:
         Code: 245
         Slug: vacances-directes
@@ -4202,8 +4202,8 @@
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '48.454366'
-        GeoCoordinateY: '-2.047327'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -4217,45 +4217,45 @@
         Name: Tahiti
         Title: null
         Address1: 'Viale Libia 133'
-        Address2: null
+        Address2: ''
         Zip: '44020'
         City: 'LIDO DELLE NAZIONI'
         Mail: test@resalys.com
         CountryCode: IT
         Phone1: 06.01.01.01.01
-        Phone2: null
+        Phone2: ''
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-05-16 00:00:00'
-        ClosingDate: '2013-09-22 00:00:00'
-        VilleId: null
-        CategorieId: null
-        GeoCoordinateX: '44.7462084'
-        GeoCoordinateY: '12.2454011'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-04 00:00:00'
+        VilleId: 165
+        CategorieId: 2
+        GeoCoordinateX: 'N 44°44''5'
+        GeoCoordinateY: 'E 12°13''54'
         VideoPath: null
         Image360Path: null
-        Capacite: null
+        Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07d7f143a9.jpeg
         Published: false
-        Active: false
+        Active: true
     158:
         Code: 247
         Slug: almafra
         Name: Almafra
         Title: null
-        Address1: ''
+        Address1: 'Passeig de la mija illegua'
         Address2: ''
-        Zip: ''
-        City: ''
+        Zip: '03580'
+        City: 'ALFAZ DEL PI'
         Mail: ''
-        CountryCode: ''
+        CountryCode: ES
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: '2013-04-12 00:00:00'
-        ClosingDate: '2013-09-29 00:00:00'
-        VilleId: null
-        CategorieId: null
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-04 00:00:00'
+        VilleId: 166
+        CategorieId: 2
         GeoCoordinateX: null
         GeoCoordinateY: null
         VideoPath: null
@@ -4264,25 +4264,25 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     159:
         Code: 248
         Slug: val-d-aro
         Name: 'Val d''aro'
         Title: null
-        Address1: ''
+        Address1: '63 c/cami Vell '
         Address2: ''
-        Zip: ''
-        City: ''
+        Zip: '17250'
+        City: 'PLATJA D ARO'
         Mail: ''
-        CountryCode: ''
+        CountryCode: ES
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: '2013-04-12 00:00:00'
-        ClosingDate: '2013-09-22 00:00:00'
-        VilleId: null
-        CategorieId: null
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-04 00:00:00'
+        VilleId: 167
+        CategorieId: 2
         GeoCoordinateX: null
         GeoCoordinateY: null
         VideoPath: null
@@ -4291,25 +4291,25 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     160:
         Code: 249
         Slug: adriano
         Name: Adriano
         Title: null
-        Address1: ''
+        Address1: '7 Via dei Campeggi'
         Address2: ''
-        Zip: ''
-        City: ''
+        Zip: '48122'
+        City: 'PUNTA MARINA TERME'
         Mail: ''
-        CountryCode: ''
+        CountryCode: IT
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: '2013-04-27 00:00:00'
-        ClosingDate: '2013-09-15 00:00:00'
-        VilleId: null
-        CategorieId: null
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-04 00:00:00'
+        VilleId: 168
+        CategorieId: 2
         GeoCoordinateX: null
         GeoCoordinateY: null
         VideoPath: null
@@ -4318,14 +4318,14 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     161:
         Code: 25
         Slug: castell-montgri
-        Name: 'Castell Montgri'
+        Name: 'Castell Montgri '
         Title: null
         Address1: 'Ctra. Torroella-Estartit Km 4,700'
-        Address2: null
+        Address2: ''
         Zip: '17258'
         City: 'L''ESTARTIT'
         Mail: test@resalys.com
@@ -4337,33 +4337,33 @@
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 26
         CategorieId: 2
-        GeoCoordinateX: '42.0519544'
-        GeoCoordinateY: '3.1962936'
+        GeoCoordinateX: '42.0521756'
+        GeoCoordinateY: '3.19160074'
         VideoPath: null
         Image360Path: null
         Capacite: '1260'
         PlanPath: uploads/etablissements/50c0ba15cdcd3.jpeg
         Vignette: uploads/etablissements/50c07dcd1d7f7.jpeg
         Published: false
-        Active: false
+        Active: true
     162:
         Code: 250
-        Slug: cessenatico
-        Name: Cessenatico
+        Slug: cesenatico
+        Name: Cesenatico
         Title: null
-        Address1: ''
+        Address1: 'Via Stoccolma'
         Address2: ''
-        Zip: ''
-        City: ''
+        Zip: '47042'
+        City: CESENATICO
         Mail: ''
-        CountryCode: ''
+        CountryCode: IT
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: '2013-05-01 00:00:00'
-        ClosingDate: '2013-09-22 00:00:00'
-        VilleId: null
-        CategorieId: null
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-04 00:00:00'
+        VilleId: 169
+        CategorieId: 4
         GeoCoordinateX: null
         GeoCoordinateY: null
         VideoPath: null
@@ -4372,25 +4372,25 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     163:
         Code: 251
         Slug: marina-italie
         Name: 'Marina (Italie)'
         Title: null
-        Address1: ''
+        Address1: '8 Via  dei Campeggi'
         Address2: ''
-        Zip: ''
-        City: ''
+        Zip: '48122'
+        City: 'PUNTA MARINA TERME'
         Mail: ''
-        CountryCode: ''
+        CountryCode: IT
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: '2013-04-27 00:00:00'
-        ClosingDate: '2013-09-15 00:00:00'
-        VilleId: null
-        CategorieId: null
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-04 00:00:00'
+        VilleId: 168
+        CategorieId: 3
         GeoCoordinateX: null
         GeoCoordinateY: null
         VideoPath: null
@@ -4399,7 +4399,7 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     164:
         Code: 252
         Slug: gavina
@@ -4414,10 +4414,10 @@
         Phone1: ''
         Phone2: ''
         Fax: ''
-        OpeningDate: '2013-05-04 00:00:00'
-        ClosingDate: '2013-09-15 00:00:00'
-        VilleId: null
-        CategorieId: null
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-04 00:00:00'
+        VilleId: 156
+        CategorieId: 3
         GeoCoordinateX: null
         GeoCoordinateY: null
         VideoPath: null
@@ -4426,14 +4426,14 @@
         PlanPath: null
         Vignette: null
         Published: null
-        Active: false
+        Active: true
     165:
         Code: 26
         Slug: caussanel
-        Name: Caussanel
+        Name: 'Caussanel '
         Title: null
-        Address1: 'Lac de Pareloup'
-        Address2: null
+        Address1: ' Lac de Pareloup'
+        Address2: ''
         Zip: '12290'
         City: 'CANET DE SALARS'
         Mail: test@resalys.com
@@ -4441,26 +4441,26 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 78 90 05'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-05-11 00:00:00'
-        ClosingDate: '2013-09-29 00:00:00'
+        OpeningDate: '2013-05-06 00:00:00'
+        ClosingDate: '2013-09-07 00:00:00'
         VilleId: 63
         CategorieId: 1
-        GeoCoordinateX: '44.235174'
-        GeoCoordinateY: '2.752384'
+        GeoCoordinateX: '44.21435585'
+        GeoCoordinateY: '2.766510844'
         VideoPath: null
         Image360Path: null
         Capacite: '108'
         PlanPath: uploads/etablissements/50c0ba2902f1d.jpeg
         Vignette: uploads/etablissements/50c07e1daf8ee.jpeg
         Published: false
-        Active: false
+        Active: true
     166:
         Code: 27
         Slug: cayola
-        Name: Cayola
+        Name: 'Cayola '
         Title: null
         Address1: 'Côte Ouest'
-        Address2: null
+        Address2: ''
         Zip: '34450'
         City: VIAS
         Mail: test@resalys.com
@@ -4472,8 +4472,8 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 5
         CategorieId: 2
-        GeoCoordinateX: '43.312489'
-        GeoCoordinateY: '3.418564'
+        GeoCoordinateX: '43.28224717'
+        GeoCoordinateY: '3.371078074'
         VideoPath: null
         Image360Path: null
         Capacite: '176'
@@ -4487,7 +4487,7 @@
         Name: Chaponnet
         Title: null
         Address1: '16 Rue du Chaponnet'
-        Address2: null
+        Address2: ''
         Zip: '85470'
         City: 'BREM SUR MER'
         Mail: test@resalys.com
@@ -4499,22 +4499,22 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 66
         CategorieId: 2
-        GeoCoordinateX: '46.6057'
-        GeoCoordinateY: '-1.82988'
+        GeoCoordinateX: '46.60419665'
+        GeoCoordinateY: '-1.832286716'
         VideoPath: null
         Image360Path: null
         Capacite: '330'
         PlanPath: uploads/etablissements/50c1b315e9e13.jpeg
         Vignette: uploads/etablissements/50c07e37365d9.jpeg
         Published: false
-        Active: false
+        Active: true
     168:
         Code: 29
         Slug: domaine-des-charmilles
         Name: 'Domaine des Charmilles'
         Title: null
         Address1: '1541 Route de l''Océan'
-        Address2: null
+        Address2: ''
         Zip: '17450'
         City: 'ST LAURENT DE LA PRÉE'
         Mail: test@resalys.com
@@ -4526,8 +4526,8 @@
         ClosingDate: '2013-09-14 00:00:00'
         VilleId: 97
         CategorieId: 2
-        GeoCoordinateX: '45.981425'
-        GeoCoordinateY: '-1.041028'
+        GeoCoordinateX: '45.99008181'
+        GeoCoordinateY: '-1.051871181'
         VideoPath: null
         Image360Path: null
         Capacite: '297'
@@ -4541,7 +4541,7 @@
         Name: 'Cala Gogo'
         Title: null
         Address1: 'Avenue Armand Lanoux'
-        Address2: null
+        Address2: ''
         Zip: '66750'
         City: 'ST CYPRIEN'
         Mail: test@resalys.com
@@ -4553,8 +4553,8 @@
         ClosingDate: '2013-09-21 00:00:00'
         VilleId: 141
         CategorieId: 1
-        GeoCoordinateX: '42.61783'
-        GeoCoordinateY: '3.004182'
+        GeoCoordinateX: '42.59948962'
+        GeoCoordinateY: '3.037636578'
         VideoPath: null
         Image360Path: null
         Capacite: '649'
@@ -4565,10 +4565,10 @@
     170:
         Code: 30
         Slug: chateau-de-galinee
-        Name: 'Château de Galinée'
+        Name: 'Château de Galinée '
         Title: null
         Address1: 'Galinée Le Guildo'
-        Address2: null
+        Address2: ''
         Zip: '22380'
         City: 'ST CAST LE GUILDO'
         Mail: test@resalys.com
@@ -4580,8 +4580,8 @@
         ClosingDate: '2013-09-06 00:00:00'
         VilleId: 143
         CategorieId: 1
-        GeoCoordinateX: '48.632091'
-        GeoCoordinateY: '-2.259804'
+        GeoCoordinateX: '48.58438992'
+        GeoCoordinateY: '-2.257309556'
         VideoPath: null
         Image360Path: null
         Capacite: '273'
@@ -4592,10 +4592,10 @@
     171:
         Code: 31
         Slug: chenaie
-        Name: Chênaie
+        Name: 'Chênaie '
         Title: null
         Address1: '36 Rue du Pâtisseau'
-        Address2: null
+        Address2: ''
         Zip: '44210'
         City: PORNIC
         Mail: test@resalys.com
@@ -4607,8 +4607,8 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 62
         CategorieId: 2
-        GeoCoordinateX: '47.115491'
-        GeoCoordinateY: '-2.104444'
+        GeoCoordinateX: '47.11890222'
+        GeoCoordinateY: '-2.072934508'
         VideoPath: null
         Image360Path: null
         Capacite: '305'
@@ -4619,7 +4619,7 @@
     172:
         Code: 32
         Slug: domaine-des-chenes-verts
-        Name: 'Domaine des Chênes Verts'
+        Name: 'Domaine des Chênes Verts '
         Title: null
         Address1: 'Route de Sarlat'
         Address2: Souillac
@@ -4630,12 +4630,12 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 31 53 93 18'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-13 00:00:00'
-        ClosingDate: '2013-09-15 00:00:00'
+        OpeningDate: '2012-04-07 00:00:00'
+        ClosingDate: '2012-09-16 00:00:00'
         VilleId: 50
         CategorieId: 3
-        GeoCoordinateX: '44.855269'
-        GeoCoordinateY: '1.333955'
+        GeoCoordinateX: '44.86323045'
+        GeoCoordinateY: '1.297008991'
         VideoPath: null
         Image360Path: null
         Capacite: '143'
@@ -4646,10 +4646,10 @@
     173:
         Code: 33
         Slug: col-vert
-        Name: 'Col Vert'
+        Name: 'Col Vert '
         Title: null
         Address1: '1548 Route de l''Etang'
-        Address2: null
+        Address2: ''
         Zip: '40560'
         City: VIELLE-ST-GIRONS
         Mail: test@resalys.com
@@ -4661,22 +4661,22 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 93
         CategorieId: 2
-        GeoCoordinateX: '43.95512'
-        GeoCoordinateY: '-1.305229'
+        GeoCoordinateX: '43.90345841'
+        GeoCoordinateY: '-1.310065985'
         VideoPath: null
         Image360Path: null
         Capacite: '812'
         PlanPath: uploads/etablissements/50c1b44790613.jpeg
         Vignette: uploads/etablissements/50c07e8f9feca.jpeg
         Published: false
-        Active: false
+        Active: true
     174:
         Code: 34
         Slug: conguel
-        Name: Conguel
+        Name: 'Conguel '
         Title: null
         Address1: 'Boulevard de la Teignouse'
-        Address2: null
+        Address2: ''
         Zip: '56170'
         City: QUIBERON
         Mail: test@resalys.com
@@ -4688,8 +4688,8 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 54
         CategorieId: 2
-        GeoCoordinateX: '47.482133'
-        GeoCoordinateY: '-3.121053'
+        GeoCoordinateX: '47.47675288'
+        GeoCoordinateY: '-3.092372417'
         VideoPath: null
         Image360Path: null
         Capacite: '250'
@@ -4700,10 +4700,10 @@
     175:
         Code: 35
         Slug: coste-rouge
-        Name: 'Coste Rouge'
+        Name: 'Coste Rouge '
         Title: null
         Address1: 'Route de Collioure'
-        Address2: null
+        Address2: ''
         Zip: '66700'
         City: ARGELÈS-SUR-MER
         Mail: test@resalys.com
@@ -4715,22 +4715,22 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 1
         CategorieId: 3
-        GeoCoordinateX: '42.546214'
-        GeoCoordinateY: '3.022911'
+        GeoCoordinateX: '42.532127'
+        GeoCoordinateY: '3.05197'
         VideoPath: null
         Image360Path: null
         Capacite: '145'
         PlanPath: uploads/etablissements/50c1b822cce73.jpeg
         Vignette: uploads/etablissements/50c07eaaa87b2.jpeg
         Published: false
-        Active: false
+        Active: true
     176:
         Code: 36
         Slug: cote-d-argent
-        Name: 'Côte d''Argent'
+        Name: 'Côte d''Argent '
         Title: null
         Address1: '134 Route Contaut'
-        Address2: null
+        Address2: ''
         Zip: '33990'
         City: HOURTIN
         Mail: test@resalys.com
@@ -4742,22 +4742,22 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 89
         CategorieId: 1
-        GeoCoordinateX: '45.186089'
-        GeoCoordinateY: '-1.057202'
+        GeoCoordinateX: '45.22291902'
+        GeoCoordinateY: '-1.164722443'
         VideoPath: null
         Image360Path: null
         Capacite: '870'
         PlanPath: uploads/etablissements/50c1b83f38bc8.jpeg
         Vignette: uploads/etablissements/50c07eb8a72f6.jpeg
         Published: false
-        Active: false
+        Active: true
     177:
         Code: 37
         Slug: crin-blanc
-        Name: 'Crin Blanc'
+        Name: 'Crin Blanc '
         Title: null
         Address1: 'Hameau de Saliers'
-        Address2: null
+        Address2: ''
         Zip: '13123'
         City: 'L''ALBARON'
         Mail: test@resalys.com
@@ -4769,8 +4769,8 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 22
         CategorieId: 3
-        GeoCoordinateX: '45.333533'
-        GeoCoordinateY: '7.101924'
+        GeoCoordinateX: '43.66136775'
+        GeoCoordinateY: '4.473999739'
         VideoPath: null
         Image360Path: null
         Capacite: '170'
@@ -4781,10 +4781,10 @@
     178:
         Code: 38
         Slug: cupulatta
-        Name: Cupulatta
+        Name: 'Cupulatta '
         Title: null
         Address1: 'Hameau de Cupulatta'
-        Address2: null
+        Address2: ''
         Zip: '20137'
         City: 'PORTO VECCHIO'
         Mail: test@resalys.com
@@ -4796,8 +4796,8 @@
         ClosingDate: '2013-09-14 00:00:00'
         VilleId: 44
         CategorieId: 5
-        GeoCoordinateX: '41.591369'
-        GeoCoordinateY: '9.278311'
+        GeoCoordinateX: '41.64617179'
+        GeoCoordinateY: '9.293650389'
         VideoPath: null
         Image360Path: null
         Capacite: '115'
@@ -4808,7 +4808,7 @@
     179:
         Code: 39
         Slug: cypres
-        Name: Cyprès
+        Name: 'Cyprès '
         Title: null
         Address1: '41, Rue du Pont Jaunay'
         Address2: BP644
@@ -4819,19 +4819,19 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 71 89 95 41'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-12 00:00:00'
-        ClosingDate: '2013-09-15 00:00:00'
+        OpeningDate: '2012-04-27 00:00:00'
+        ClosingDate: '2012-09-09 00:00:00'
         VilleId: 65
         CategorieId: 3
-        GeoCoordinateX: '46.697777'
-        GeoCoordinateY: '-1.944529'
+        GeoCoordinateX: '46.6761495'
+        GeoCoordinateY: '-1.913208961'
         VideoPath: null
         Image360Path: null
         Capacite: '280'
         PlanPath: uploads/etablissements/50c1b899991c1.jpeg
         Vignette: uploads/etablissements/50c07eeacdc9f.jpeg
         Published: false
-        Active: false
+        Active: true
     180:
         Code: 4
         Slug: petit-mousse
@@ -4846,12 +4846,12 @@
         Phone1: 06.01.01.01.01
         Phone2: '04 67 90 80 48'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-19 00:00:00'
-        ClosingDate: '2013-09-15 00:00:00'
+        OpeningDate: '2012-04-27 00:00:00'
+        ClosingDate: '2012-09-16 00:00:00'
         VilleId: 5
         CategorieId: 3
-        GeoCoordinateX: '43.312489'
-        GeoCoordinateY: '3.418564'
+        GeoCoordinateX: '43.284102'
+        GeoCoordinateY: '3.381122'
         VideoPath: null
         Image360Path: null
         Capacite: '364'
@@ -4862,7 +4862,7 @@
     181:
         Code: 40
         Slug: deux-fontaines
-        Name: 'Deux Fontaines'
+        Name: 'Deux Fontaines '
         Title: null
         Address1: Raguenes
         Address2: 'Feunteun Vihan'
@@ -4873,12 +4873,12 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 71 35 50 80'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-27 00:00:00'
-        ClosingDate: '2013-09-07 00:00:00'
+        OpeningDate: '2012-05-05 00:00:00'
+        ClosingDate: '2012-09-02 00:00:00'
         VilleId: 52
         CategorieId: 2
-        GeoCoordinateX: '47.819167'
-        GeoCoordinateY: '-3.79258'
+        GeoCoordinateX: '47.7986345'
+        GeoCoordinateY: '-3.791956902'
         VideoPath: null
         Image360Path: null
         Capacite: '293'
@@ -4889,10 +4889,10 @@
     182:
         Code: 41
         Slug: deux-plages
-        Name: 'Deux Plages'
+        Name: 'Deux Plages '
         Title: null
         Address1: 'Avenue d''Angoulins'
-        Address2: null
+        Address2: ''
         Zip: '17340'
         City: 'CHATELAILLON PLAGE'
         Mail: test@resalys.com
@@ -4900,8 +4900,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 99 85 48'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-27 00:00:00'
-        ClosingDate: '2013-09-22 00:00:00'
+        OpeningDate: '2012-04-27 00:00:00'
+        ClosingDate: '2012-09-23 00:00:00'
         VilleId: 87
         CategorieId: 2
         GeoCoordinateX: '46.08444237'
@@ -4912,11 +4912,11 @@
         PlanPath: uploads/etablissements/50c1b8e15b766.jpeg
         Vignette: uploads/etablissements/50c07f12115df.jpeg
         Published: false
-        Active: false
+        Active: true
     183:
         Code: 42
         Slug: domaine-d-inly
-        Name: 'Domaine d''Inly'
+        Name: 'Domaine d''Inly '
         Title: null
         Address1: 'Route de Couarne'
         Address2: 'BP 24'
@@ -4931,8 +4931,8 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 58
         CategorieId: 2
-        GeoCoordinateX: '47.482123'
-        GeoCoordinateY: '-2.475881'
+        GeoCoordinateX: '47.47158955'
+        GeoCoordinateY: '-2.467031479'
         VideoPath: null
         Image360Path: null
         Capacite: '500'
@@ -4943,10 +4943,10 @@
     184:
         Code: 43
         Slug: domaine-d-oleron
-        Name: 'Domaine d''Oléron'
+        Name: 'Domaine d''Oléron '
         Title: null
         Address1: 'Route de la Jousselinière'
-        Address2: null
+        Address2: ''
         Zip: '17190'
         City: 'ST GEORGES D''OLÉRON'
         Mail: test@resalys.com
@@ -4958,22 +4958,22 @@
         ClosingDate: '2013-09-14 00:00:00'
         VilleId: 86
         CategorieId: 2
-        GeoCoordinateX: '45.978418'
-        GeoCoordinateY: '-1.332125'
+        GeoCoordinateX: '45.96790109'
+        GeoCoordinateY: '-1.31872952'
         VideoPath: null
         Image360Path: null
         Capacite: '170'
         PlanPath: uploads/etablissements/50c1baff25886.jpeg
         Vignette: uploads/etablissements/50c07f2dde9d1.jpeg
         Published: false
-        Active: false
+        Active: true
     185:
         Code: 44
         Slug: domaine-de-chaussy
-        Name: 'Domaine de Chaussy'
+        Name: 'Domaine de Chaussy '
         Title: null
         Address1: 'Quartier Le Petit Chaussy'
-        Address2: null
+        Address2: ''
         Zip: '07150'
         City: LAGORCE
         Mail: test@resalys.com
@@ -4985,22 +4985,22 @@
         ClosingDate: '2013-09-22 00:00:00'
         VilleId: 70
         CategorieId: 1
-        GeoCoordinateX: '44.446962'
-        GeoCoordinateY: '4.41779'
+        GeoCoordinateX: '44.44722341'
+        GeoCoordinateY: '4.36678648'
         VideoPath: null
         Image360Path: null
         Capacite: '300'
         PlanPath: uploads/etablissements/50c0bb04e5920.jpeg
         Vignette: uploads/etablissements/50c07f3bbd0f2.jpeg
         Published: false
-        Active: false
+        Active: true
     186:
         Code: 45
         Slug: domaine-de-kermario
         Name: 'Domaine de Kermario'
         Title: null
         Address1: '1 Chemin de Kerluir'
-        Address2: null
+        Address2: ''
         Zip: '56340'
         City: CARNAC
         Mail: test@resalys.com
@@ -5012,8 +5012,8 @@
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 140
         CategorieId: 2
-        GeoCoordinateX: '47.584693'
-        GeoCoordinateY: '-3.077786'
+        GeoCoordinateX: '47.59528254'
+        GeoCoordinateY: '-3.066279888'
         VideoPath: null
         Image360Path: null
         Capacite: '123'
@@ -5027,7 +5027,7 @@
         Name: 'Domaine de la Rive'
         Title: null
         Address1: 'Route de Bordeaux'
-        Address2: null
+        Address2: ''
         Zip: '40600'
         City: BISCARROSSE
         Mail: test@resalys.com
@@ -5039,22 +5039,22 @@
         ClosingDate: '2013-09-08 00:00:00'
         VilleId: 91
         CategorieId: 1
-        GeoCoordinateX: '44.395943'
-        GeoCoordinateY: '-1.166917'
+        GeoCoordinateX: '44.46066389'
+        GeoCoordinateY: '-1.130706668'
         VideoPath: null
         Image360Path: null
         Capacite: '800'
         PlanPath: null
         Vignette: uploads/etablissements/50c07f5af3540.jpeg
         Published: false
-        Active: false
+        Active: true
     188:
         Code: 47
         Slug: domaine-de-leveno
-        Name: 'Domaine de Léveno'
+        Name: 'Domaine de Léveno '
         Title: null
         Address1: 'Route de l''Etang de Sandun'
-        Address2: null
+        Address2: ''
         Zip: '44350'
         City: GUÉRANDE
         Mail: test@resalys.com
@@ -5066,8 +5066,8 @@
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 61
         CategorieId: 2
-        GeoCoordinateX: '47.328003'
-        GeoCoordinateY: '-2.4297589'
+        GeoCoordinateX: '47.33350768'
+        GeoCoordinateY: '-2.390749454'
         VideoPath: null
         Image360Path: null
         Capacite: '600'
@@ -5093,8 +5093,8 @@
         ClosingDate: '2013-10-12 00:00:00'
         VilleId: 14
         CategorieId: 2
-        GeoCoordinateX: '43.274308'
-        GeoCoordinateY: '6.521865'
+        GeoCoordinateX: '43.28539469'
+        GeoCoordinateY: '6.57928437'
         VideoPath: null
         Image360Path: null
         Capacite: '470'
@@ -5105,7 +5105,7 @@
     190:
         Code: 49
         Slug: domaine-du-cros-d-auzon
-        Name: 'Domaine du Cros d''Auzon'
+        Name: 'Domaine du Cros d''Auzon '
         Title: null
         Address1: 'Quartier de la Gare'
         Address2: 'St Maurice d''Ardèche'
@@ -5120,15 +5120,15 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 69
         CategorieId: 2
-        GeoCoordinateX: '44.551115'
-        GeoCoordinateY: '4.413293'
+        GeoCoordinateX: '44.53427499'
+        GeoCoordinateY: '4.406890869'
         VideoPath: null
         Image360Path: null
         Capacite: '170'
         PlanPath: uploads/etablissements/50c0bb50766e0.jpeg
         Vignette: uploads/etablissements/50c07f87dae28.jpeg
         Published: false
-        Active: false
+        Active: true
     191:
         Code: 5
         Slug: airotel-oleron
@@ -5141,14 +5141,14 @@
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: '06 70 47 89 48'
+        Phone2: '06 70 47 89 48 '
         Fax: 04.92.94.10.01
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 150
         CategorieId: 3
-        GeoCoordinateX: '45.885588'
-        GeoCoordinateY: '-1.19505'
+        GeoCoordinateX: '45.8828959'
+        GeoCoordinateY: '-1.2042464'
         VideoPath: null
         Image360Path: null
         Capacite: '133'
@@ -5159,10 +5159,10 @@
     192:
         Code: 50
         Slug: domaine-du-verdon
-        Name: 'Domaine du Verdon'
+        Name: 'Domaine du Verdon '
         Title: null
         Address1: 'La Salaou'
-        Address2: null
+        Address2: ''
         Zip: '04120'
         City: CASTELLANE
         Mail: test@resalys.com
@@ -5174,8 +5174,8 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 12
         CategorieId: 2
-        GeoCoordinateX: '43.8462419'
-        GeoCoordinateY: '6.5137'
+        GeoCoordinateX: '43.83920493'
+        GeoCoordinateY: '6.493869424'
         VideoPath: null
         Image360Path: null
         Capacite: '500'
@@ -5186,10 +5186,10 @@
     193:
         Code: 51
         Slug: dunes
-        Name: Dunes
+        Name: 'Dunes '
         Title: null
         Address1: 'Voie de Barcelone'
-        Address2: null
+        Address2: ''
         Zip: '66440'
         City: TORREILLES
         Mail: test@resalys.com
@@ -5197,8 +5197,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 93 31 47'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-12 00:00:00'
-        ClosingDate: '2013-09-15 00:00:00'
+        OpeningDate: '2012-04-06 00:00:00'
+        ClosingDate: '2012-09-16 00:00:00'
         VilleId: 7
         CategorieId: 3
         GeoCoordinateX: '42.76536313'
@@ -5213,7 +5213,7 @@
     194:
         Code: 52
         Slug: eden
-        Name: Eden
+        Name: 'Eden '
         Title: null
         Address1: 'Allée de Tournefort'
         Address2: 'Route de Palavas'
@@ -5228,8 +5228,8 @@
         ClosingDate: '2013-08-31 00:00:00'
         VilleId: 20
         CategorieId: 2
-        GeoCoordinateX: '43.567296'
-        GeoCoordinateY: '3.896473'
+        GeoCoordinateX: '43.54960955'
+        GeoCoordinateY: '3.894379735'
         VideoPath: null
         Image360Path: null
         Capacite: '302'
@@ -5240,7 +5240,7 @@
     195:
         Code: 53
         Slug: embruns
-        Name: Embruns
+        Name: 'Embruns '
         Title: null
         Address1: 'Avenue Edouard Branly'
         Address2: Claouey
@@ -5251,26 +5251,26 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 30 86 18 05'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-30 00:00:00'
-        ClosingDate: '2013-09-15 00:00:00'
+        OpeningDate: '2012-04-27 00:00:00'
+        ClosingDate: '2012-09-09 00:00:00'
         VilleId: 90
         CategorieId: 3
-        GeoCoordinateX: '44.795454'
-        GeoCoordinateY: '-1.147783'
+        GeoCoordinateX: '44.75173929'
+        GeoCoordinateY: '-1.187531948'
         VideoPath: null
         Image360Path: null
         Capacite: '800'
         PlanPath: uploads/etablissements/50c1bb53eb9c8.jpeg
         Vignette: uploads/etablissements/50c07fcd601a0.jpeg
         Published: false
-        Active: false
+        Active: true
     196:
         Code: 54
         Slug: eurolac
-        Name: Eurolac
+        Name: 'Eurolac '
         Title: null
         Address1: 'Promenade de l''Etang'
-        Address2: null
+        Address2: ''
         Zip: '40200'
         City: AUREILHAN
         Mail: test@resalys.com
@@ -5282,22 +5282,22 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 92
         CategorieId: 2
-        GeoCoordinateX: '44.218845'
-        GeoCoordinateY: '-1.204116'
+        GeoCoordinateX: '44.22287547'
+        GeoCoordinateY: '-1.203721762'
         VideoPath: null
         Image360Path: null
         Capacite: '560'
         PlanPath: uploads/etablissements/50c0bbb85b742.jpeg
         Vignette: uploads/etablissements/50c07fdaccdbe.jpeg
         Published: false
-        Active: false
+        Active: true
     197:
         Code: 55
         Slug: fanal
-        Name: Fanal
+        Name: 'Fanal '
         Title: null
         Address1: 'Rue du Fanal'
-        Address2: null
+        Address2: ''
         Zip: '14230'
         City: ISIGNY-SUR-MER
         Mail: test@resalys.com
@@ -5309,22 +5309,22 @@
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 67
         CategorieId: 2
-        GeoCoordinateX: '49.320257'
-        GeoCoordinateY: '-1.102929'
+        GeoCoordinateX: '49.31883866'
+        GeoCoordinateY: '-1.108932495'
         VideoPath: null
         Image360Path: null
         Capacite: '240'
         PlanPath: uploads/etablissements/50c1bb73e22f8.jpeg
         Vignette: uploads/etablissements/50c07fe6b006b.jpeg
         Published: false
-        Active: false
+        Active: true
     198:
         Code: 56
         Slug: farigoulette
-        Name: Farigoulette
+        Name: 'Farigoulette '
         Title: null
         Address1: 'Lac de St Laurent'
-        Address2: null
+        Address2: ''
         Zip: '04500'
         City: 'ST LAURENT DU VERDON'
         Mail: test@resalys.com
@@ -5336,8 +5336,8 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 24
         CategorieId: 1
-        GeoCoordinateX: '43.724391'
-        GeoCoordinateY: '6.069215'
+        GeoCoordinateX: '43.73420486'
+        GeoCoordinateY: '6.077772975'
         VideoPath: null
         Image360Path: null
         Capacite: '219'
@@ -5348,10 +5348,10 @@
     199:
         Code: 57
         Slug: fontaines
-        Name: Fontaines
+        Name: 'Fontaines '
         Title: null
         Address1: 'Route de St Nazaire'
-        Address2: null
+        Address2: ''
         Zip: '66140'
         City: CANET-EN-ROUSSILLON
         Mail: test@resalys.com
@@ -5359,12 +5359,12 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 31 25 40 69'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-05-01 00:00:00'
-        ClosingDate: '2013-09-15 00:00:00'
+        OpeningDate: '2012-05-01 00:00:00'
+        ClosingDate: '2012-09-15 00:00:00'
         VilleId: 16
         CategorieId: 3
-        GeoCoordinateX: '42.706091'
-        GeoCoordinateY: '3.009898'
+        GeoCoordinateX: '42.68903253'
+        GeoCoordinateY: '2.998972535'
         VideoPath: null
         Image360Path: null
         Capacite: '160'
@@ -5375,7 +5375,7 @@
     200:
         Code: 58
         Slug: frenes
-        Name: Frênes
+        Name: 'Frênes '
         Title: null
         Address1: 'Avenue du Pylone'
         Address2: 'La Brague'
@@ -5386,12 +5386,12 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 07 59 79 02'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-05-18 00:00:00'
-        ClosingDate: '2013-09-21 00:00:00'
+        OpeningDate: '2012-05-17 00:00:00'
+        ClosingDate: '2012-09-22 00:00:00'
         VilleId: 15
         CategorieId: 4
-        GeoCoordinateX: '43.580418'
-        GeoCoordinateY: '7.125102'
+        GeoCoordinateX: '43.61142443'
+        GeoCoordinateY: '7.123936415'
         VideoPath: null
         Image360Path: null
         Capacite: '110'
@@ -5405,7 +5405,7 @@
         Name: 'Front de Mer'
         Title: null
         Address1: 'Avenue du Grau'
-        Address2: null
+        Address2: ''
         Zip: '66700'
         City: ARGELÈS-SUR-MER
         Mail: test@resalys.com
@@ -5417,35 +5417,35 @@
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 1
         CategorieId: 2
-        GeoCoordinateX: '42.546214'
-        GeoCoordinateY: '3.022911'
+        GeoCoordinateX: '42.546969'
+        GeoCoordinateY: '3.04659'
         VideoPath: null
         Image360Path: null
         Capacite: '588'
         PlanPath: uploads/etablissements/50c0bc05855fe.jpeg
         Vignette: uploads/etablissements/50c0803cdc7df.jpeg
         Published: false
-        Active: false
+        Active: true
     202:
         Code: 6
         Slug: aluna-vacances
-        Name: 'Aluna Vacances'
+        Name: 'Aluna Vacances '
         Title: null
         Address1: 'Route de Lagorce'
-        Address2: null
+        Address2: ''
         Zip: '07120'
         City: RUOMS
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
-        Phone2: '06 70 53 71 93'
+        Phone2: '06 70 53 71 93 '
         Fax: 04.92.94.10.01
         OpeningDate: '2013-04-13 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 79
         CategorieId: 2
-        GeoCoordinateX: '44.452912'
-        GeoCoordinateY: '4.341765'
+        GeoCoordinateX: '44.449111'
+        GeoCoordinateY: '4.3525926'
         VideoPath: null
         Image360Path: null
         Capacite: '402'
@@ -5456,10 +5456,10 @@
     203:
         Code: 60
         Slug: grand-terre
-        Name: 'Grand''Terre'
+        Name: 'Grand''Terre '
         Title: null
         Address1: 'La Grande Terre'
-        Address2: null
+        Address2: ''
         Zip: '07120'
         City: RUOMS
         Mail: test@resalys.com
@@ -5471,8 +5471,8 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 79
         CategorieId: 3
-        GeoCoordinateX: '44.452912'
-        GeoCoordinateY: '4.341765'
+        GeoCoordinateX: '44.42471997'
+        GeoCoordinateY: '4.331874847'
         VideoPath: null
         Image360Path: null
         Capacite: '296'
@@ -5483,7 +5483,7 @@
     204:
         Code: 61
         Slug: parc-de-la-grenouillere
-        Name: 'Parc de la Grenouillère'
+        Name: 'Parc de la Grenouillère '
         Title: null
         Address1: 'La Grenouillère'
         Address2: 'RN 152'
@@ -5498,22 +5498,22 @@
         ClosingDate: '2013-09-14 00:00:00'
         VilleId: 75
         CategorieId: 2
-        GeoCoordinateX: '47.667176'
-        GeoCoordinateY: '1.460599'
+        GeoCoordinateX: '47.68714583'
+        GeoCoordinateY: '1.483572721'
         VideoPath: null
         Image360Path: null
         Capacite: '280'
         PlanPath: uploads/etablissements/50c1bbe2c6a4e.jpeg
         Vignette: uploads/etablissements/50c0805f736fc.jpeg
         Published: false
-        Active: false
+        Active: true
     205:
         Code: 63
         Slug: huttes
-        Name: Huttes
+        Name: 'Huttes '
         Title: null
         Address1: '15 rue des Seulières'
-        Address2: null
+        Address2: ''
         Zip: '17650'
         City: 'ST DENIS D''OLÉRON'
         Mail: test@resalys.com
@@ -5521,26 +5521,26 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 89 79 45 04'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-26 00:00:00'
-        ClosingDate: '2013-09-08 00:00:00'
+        OpeningDate: '2012-04-27 00:00:00'
+        ClosingDate: '2012-09-09 00:00:00'
         VilleId: 85
         CategorieId: 2
-        GeoCoordinateX: '46.033306'
-        GeoCoordinateY: '-1.379923'
+        GeoCoordinateX: '46.01528621'
+        GeoCoordinateY: '-1.39242053'
         VideoPath: null
         Image360Path: null
         Capacite: '205'
         PlanPath: uploads/etablissements/50c1bc001ca4f.jpeg
         Vignette: uploads/etablissements/50c0806a2ba52.jpeg
         Published: false
-        Active: false
+        Active: true
     206:
         Code: 64
         Slug: ideal
-        Name: Idéal
+        Name: 'Idéal '
         Title: null
         Address1: '715 Route de Chaparon'
-        Address2: null
+        Address2: ''
         Zip: '74210'
         City: LATHUILE
         Mail: test@resalys.com
@@ -5548,12 +5548,12 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 71 86 52 92'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-27 00:00:00'
-        ClosingDate: '2013-09-22 00:00:00'
+        OpeningDate: '2012-04-20 00:00:00'
+        ClosingDate: '2012-09-16 00:00:00'
         VilleId: 81
         CategorieId: 3
-        GeoCoordinateX: '45.781593'
-        GeoCoordinateY: '6.203303'
+        GeoCoordinateX: '45.795155'
+        GeoCoordinateY: '6.205735803'
         VideoPath: null
         Image360Path: null
         Capacite: '300'
@@ -5567,7 +5567,7 @@
         Name: Ilates
         Title: null
         Address1: 'Route du Grouin'
-        Address2: null
+        Address2: ''
         Zip: '17111'
         City: LOIX
         Mail: test@resalys.com
@@ -5575,12 +5575,12 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 89 72 58 96'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-12 00:00:00'
-        ClosingDate: '2013-09-28 00:00:00'
+        OpeningDate: '2012-04-07 00:00:00'
+        ClosingDate: '2012-09-16 00:00:00'
         VilleId: 95
         CategorieId: 2
-        GeoCoordinateX: '46.223107'
-        GeoCoordinateY: '-1.439882'
+        GeoCoordinateX: '46.22760164'
+        GeoCoordinateY: '-1.426178813'
         VideoPath: null
         Image360Path: null
         Capacite: '240'
@@ -5606,8 +5606,8 @@
         ClosingDate: '2012-09-15 00:00:00'
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: '43.439236'
-        GeoCoordinateY: '-1.590062'
+        GeoCoordinateX: '43.45307856'
+        GeoCoordinateY: '-1.573544741'
         VideoPath: null
         Image360Path: null
         Capacite: '374'
@@ -5618,37 +5618,37 @@
     209:
         Code: 67
         Slug: internacional-de-calonge
-        Name: 'Internacional de Calonge'
+        Name: 'Internacional de Calonge '
         Title: null
         Address1: 'Ctra Palamos A St Feliu Km 7.6'
-        Address2: null
+        Address2: ''
         Zip: '17251'
         City: CALONGE
         Mail: test@resalys.com
         CountryCode: ES
         Phone1: 06.01.01.01.01
-        Phone2: '06 72 05 07 05'
+        Phone2: '06 72 05 07 05 '
         Fax: 04.92.94.10.01
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-30 00:00:00'
         VilleId: 28
         CategorieId: 3
-        GeoCoordinateX: '44.372609'
-        GeoCoordinateY: '0.239981'
+        GeoCoordinateX: '41.83260316'
+        GeoCoordinateY: '3.084572554'
         VideoPath: null
         Image360Path: null
         Capacite: '712'
         PlanPath: uploads/etablissements/50c0bc72972ce.jpeg
         Vignette: uploads/etablissements/50c080930c53a.jpeg
         Published: false
-        Active: false
+        Active: true
     210:
         Code: 68
         Slug: internacional-palamos
-        Name: 'Internacional Palamos'
+        Name: 'Internacional Palamos '
         Title: null
         Address1: 'Cami Cap de Planes'
-        Address2: null
+        Address2: ''
         Zip: '17230'
         City: PALAMOS
         Mail: test@resalys.com
@@ -5660,22 +5660,22 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 31
         CategorieId: 3
-        GeoCoordinateX: '41.8467643'
-        GeoCoordinateY: '3.1286356'
+        GeoCoordinateX: '41.857027'
+        GeoCoordinateY: '3.137991'
         VideoPath: null
         Image360Path: null
         Capacite: '453'
         PlanPath: uploads/etablissements/50c0bc7f3126f.jpeg
         Vignette: uploads/etablissements/50c0809db4f40.jpeg
         Published: false
-        Active: false
+        Active: true
     211:
         Code: 69
         Slug: jard
-        Name: Jard
+        Name: 'Jard '
         Title: null
         Address1: '123 Bld Maréchal de Lattre de Tassigny'
-        Address2: null
+        Address2: ''
         Zip: '85360'
         City: 'LA TRANCHE SUR MER'
         Mail: test@resalys.com
@@ -5687,15 +5687,15 @@
         ClosingDate: '2013-09-14 00:00:00'
         VilleId: 73
         CategorieId: 2
-        GeoCoordinateX: '46.344059'
-        GeoCoordinateY: '-1.4387859'
+        GeoCoordinateX: '46.34851988'
+        GeoCoordinateY: '-1.387576461'
         VideoPath: null
         Image360Path: null
         Capacite: '350'
         PlanPath: uploads/etablissements/50c1bc40d03ea.jpeg
         Vignette: uploads/etablissements/50c080a7ab7ee.jpeg
         Published: false
-        Active: false
+        Active: true
     212:
         Code: 7
         Slug: zz-amandiers
@@ -5714,8 +5714,8 @@
         ClosingDate: '2012-09-09 00:00:00'
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: '43.721683'
-        GeoCoordinateY: '4.173218'
+        GeoCoordinateX: '43.71691503'
+        GeoCoordinateY: '4.167069197'
         VideoPath: null
         Image360Path: null
         Capacite: '150'
@@ -5726,10 +5726,10 @@
     213:
         Code: 70
         Slug: lac-bleu
-        Name: 'Lac Bleu'
+        Name: 'Lac Bleu '
         Title: null
         Address1: 'Quartier La Touche'
-        Address2: null
+        Address2: ''
         Zip: '26410'
         City: 'CHATILLON EN DIOIS'
         Mail: test@resalys.com
@@ -5741,22 +5741,22 @@
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 68
         CategorieId: 3
-        GeoCoordinateX: '44.6953419'
-        GeoCoordinateY: '5.485029'
+        GeoCoordinateX: '44.68386545'
+        GeoCoordinateY: '5.450313091'
         VideoPath: null
         Image360Path: null
         Capacite: '130'
         PlanPath: uploads/etablissements/50c0bc92d3b62.jpeg
         Vignette: uploads/etablissements/50c080b41c317.jpeg
         Published: false
-        Active: false
+        Active: true
     214:
         Code: 71
         Slug: domaine-du-lac-de-miel
-        Name: 'Domaine du Lac de Miel'
+        Name: 'Domaine du Lac de Miel '
         Title: null
-        Address1: null
-        Address2: null
+        Address1: ''
+        Address2: ''
         Zip: '19190'
         City: BEYNAT
         Mail: test@resalys.com
@@ -5768,22 +5768,22 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 47
         CategorieId: 3
-        GeoCoordinateX: '45.123826'
-        GeoCoordinateY: '1.723226'
+        GeoCoordinateX: '45.13193732'
+        GeoCoordinateY: '1.762683392'
         VideoPath: null
         Image360Path: null
         Capacite: '180'
         PlanPath: uploads/etablissements/50c0bcae3dd81.jpeg
         Vignette: uploads/etablissements/50c080c38220e.jpeg
         Published: false
-        Active: false
+        Active: true
     215:
         Code: 72
         Slug: lac-de-thoux-st-cricq
         Name: 'Lac de Thoux St Cricq'
         Title: null
         Address1: 'lieu dit lannes'
-        Address2: null
+        Address2: ''
         Zip: '32430'
         City: THOUX
         Mail: test@resalys.com
@@ -5795,15 +5795,15 @@
         ClosingDate: '2013-09-08 00:00:00'
         VilleId: 77
         CategorieId: 3
-        GeoCoordinateX: '43.68218'
-        GeoCoordinateY: '0.993749'
+        GeoCoordinateX: '43.68601738'
+        GeoCoordinateY: '1.00292623'
         VideoPath: null
         Image360Path: null
         Capacite: '129'
         PlanPath: uploads/etablissements/50c0bcb99f0ec.jpeg
         Vignette: uploads/etablissements/50c080cdc4833.jpeg
         Published: false
-        Active: false
+        Active: true
     216:
         Code: 73
         Slug: zz-land-s-hause
@@ -5822,8 +5822,8 @@
         ClosingDate: '2012-09-09 00:00:00'
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '39.5995271'
-        GeoCoordinateY: '-9.069362'
+        GeoCoordinateX: '39.69684787'
+        GeoCoordinateY: '-8.97567451'
         VideoPath: null
         Image360Path: null
         Capacite: '92'
@@ -5834,10 +5834,10 @@
     217:
         Code: 74
         Slug: lou-broustaricq
-        Name: 'Lou Broustaricq'
+        Name: 'Lou Broustaricq '
         Title: null
         Address1: '2315 Route de Langeot'
-        Address2: null
+        Address2: ''
         Zip: '40460'
         City: SANGUINET
         Mail: test@resalys.com
@@ -5845,12 +5845,12 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 89 73 93 08'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-27 00:00:00'
-        ClosingDate: '2013-09-08 00:00:00'
+        OpeningDate: '2012-04-27 00:00:00'
+        ClosingDate: '2012-09-09 00:00:00'
         VilleId: 100
         CategorieId: 2
-        GeoCoordinateX: '44.483615'
-        GeoCoordinateY: '-1.075989'
+        GeoCoordinateX: '44.4990307'
+        GeoCoordinateY: '-1.079460382'
         VideoPath: null
         Image360Path: null
         Capacite: '576'
@@ -5861,10 +5861,10 @@
     218:
         Code: 75
         Slug: lou-pignada
-        Name: 'Lou Pignada'
+        Name: 'Lou Pignada '
         Title: null
         Address1: 'Route d''Azur'
-        Address2: null
+        Address2: ''
         Zip: '40660'
         City: MESSANGES
         Mail: test@resalys.com
@@ -5872,12 +5872,12 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 08 94 63 04'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-05-01 00:00:00'
-        ClosingDate: '2013-09-29 00:00:00'
+        OpeningDate: '2012-05-01 00:00:00'
+        ClosingDate: '2012-09-30 00:00:00'
         VilleId: 103
         CategorieId: 1
-        GeoCoordinateX: '43.81466'
-        GeoCoordinateY: '-1.37825'
+        GeoCoordinateX: '43.79725104'
+        GeoCoordinateY: '-1.381938457'
         VideoPath: null
         Image360Path: null
         Capacite: '430'
@@ -5888,10 +5888,10 @@
     219:
         Code: 76
         Slug: loubine
-        Name: Loubine
+        Name: 'Loubine '
         Title: null
         Address1: '1 Route de la Mer'
-        Address2: null
+        Address2: ''
         Zip: '85340'
         City: OLONNE-SUR-MER
         Mail: test@resalys.com
@@ -5903,8 +5903,8 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 78
         CategorieId: 2
-        GeoCoordinateX: '46.536402'
-        GeoCoordinateY: '-1.772826'
+        GeoCoordinateX: '46.54614044'
+        GeoCoordinateY: '-1.805588007'
         VideoPath: null
         Image360Path: null
         Capacite: '401'
@@ -5915,7 +5915,7 @@
     220:
         Code: 77
         Slug: loyada
-        Name: Loyada
+        Name: 'Loyada '
         Title: null
         Address1: '111 Rue de la Source'
         Address2: 'Avenue de l''Atlantique'
@@ -5926,12 +5926,12 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 08 82 07 93'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-12 00:00:00'
-        ClosingDate: '2013-09-15 00:00:00'
+        OpeningDate: '2012-04-06 00:00:00'
+        ClosingDate: '2012-09-09 00:00:00'
         VilleId: 80
         CategorieId: 1
-        GeoCoordinateX: '46.466102'
-        GeoCoordinateY: '-1.618261'
+        GeoCoordinateX: '46.46559831'
+        GeoCoordinateY: '-1.652584076'
         VideoPath: null
         Image360Path: null
         Capacite: '226'
@@ -5957,8 +5957,8 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '42.720254'
-        GeoCoordinateY: '1.837545'
+        GeoCoordinateX: '42.72870307'
+        GeoCoordinateY: '1.825538278'
         VideoPath: null
         Image360Path: null
         Capacite: '285'
@@ -5969,10 +5969,10 @@
     222:
         Code: 79
         Slug: mare-e-pineta
-        Name: 'Mare e Pineta'
+        Name: 'Mare e Pineta '
         Title: null
         Address1: 'Viale delle Acacie, 67'
-        Address2: null
+        Address2: ''
         Zip: '44029'
         City: 'LIDO DI SPINA'
         Mail: test@resalys.com
@@ -5980,26 +5980,26 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 88 98 66 38'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-20 00:00:00'
-        ClosingDate: '2013-09-15 00:00:00'
+        OpeningDate: '2012-04-20 00:00:00'
+        ClosingDate: '2012-09-16 00:00:00'
         VilleId: 39
         CategorieId: 2
-        GeoCoordinateX: '44.6444061'
-        GeoCoordinateY: '12.2463657'
+        GeoCoordinateX: '44.65568393'
+        GeoCoordinateY: '12.24521756'
         VideoPath: null
         Image360Path: null
         Capacite: '1326'
         PlanPath: uploads/etablissements/50c0bd08e5a04.jpeg
         Vignette: uploads/etablissements/50c08107bd9f4.jpeg
         Published: false
-        Active: false
+        Active: true
     223:
         Code: 8
         Slug: sandaya-soulac-plage
         Name: 'Sandaya Soulac Plage'
         Title: null
         Address1: 'L''Amélie'
-        Address2: null
+        Address2: ''
         Zip: '33780'
         City: SOULAC-SUR-MER
         Mail: test@resalys.com
@@ -6007,12 +6007,12 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 71 97 27 38'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-13 00:00:00'
-        ClosingDate: '2013-09-22 00:00:00'
+        OpeningDate: '2012-04-07 00:00:00'
+        ClosingDate: '2012-09-23 00:00:00'
         VilleId: 98
         CategorieId: 3
-        GeoCoordinateX: '45.515125'
-        GeoCoordinateY: '-1.123258'
+        GeoCoordinateX: '45.4856205'
+        GeoCoordinateY: '-1.1477709'
         VideoPath: null
         Image360Path: null
         Capacite: '526'
@@ -6023,10 +6023,10 @@
     224:
         Code: 80
         Slug: marine
-        Name: Marine
+        Name: 'Marine '
         Title: null
         Address1: '2196 Route de l''Espiguette'
-        Address2: null
+        Address2: ''
         Zip: '30240'
         City: 'LE GRAU-DU-ROI'
         Mail: test@resalys.com
@@ -6034,26 +6034,26 @@
         Phone1: 06.01.01.01.01
         Phone2: '04 66 53 20 31'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-13 00:00:00'
-        ClosingDate: '2013-09-22 00:00:00'
+        OpeningDate: '2012-04-06 00:00:00'
+        ClosingDate: '2012-09-30 00:00:00'
         VilleId: 1
         CategorieId: 2
-        GeoCoordinateX: '43.537476'
-        GeoCoordinateY: '4.137918'
+        GeoCoordinateX: '43.50737094'
+        GeoCoordinateY: '4.145380855'
         VideoPath: null
         Image360Path: null
         Capacite: '293'
         PlanPath: uploads/etablissements/50c1bc7486858.jpeg
         Vignette: uploads/etablissements/50c0812258939.jpeg
         Published: false
-        Active: false
+        Active: true
     225:
         Code: 81
         Slug: marsouins
         Name: Marsouins
         Title: null
         Address1: 'Avenue de la Retirada 1939'
-        Address2: null
+        Address2: ''
         Zip: '66702'
         City: ARGELÈS-SUR-MER
         Mail: test@resalys.com
@@ -6061,26 +6061,26 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 08 70 01 85'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-05-04 00:00:00'
-        ClosingDate: '2013-09-21 00:00:00'
+        OpeningDate: '2012-04-14 00:00:00'
+        ClosingDate: '2012-09-21 00:00:00'
         VilleId: 1
         CategorieId: 2
-        GeoCoordinateX: '42.546214'
-        GeoCoordinateY: '3.022911'
+        GeoCoordinateX: '42.56372132'
+        GeoCoordinateY: '3.034651279'
         VideoPath: null
         Image360Path: null
         Capacite: '587'
         PlanPath: uploads/etablissements/50c1bc8db3665.jpeg
         Vignette: uploads/etablissements/50c0812e76f6f.jpeg
         Published: false
-        Active: false
+        Active: true
     226:
         Code: 82
         Slug: marze
-        Name: Marze
+        Name: 'Marze '
         Title: null
         Address1: 'Str. Prov. N 158 Km 30.200'
-        Address2: null
+        Address2: ''
         Zip: '58046'
         City: 'MARINA DI GROSSETTO'
         Mail: test@resalys.com
@@ -6088,26 +6088,26 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 83 80 92'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-20 00:00:00'
-        ClosingDate: '2013-09-08 00:00:00'
+        OpeningDate: '2012-04-06 00:00:00'
+        ClosingDate: '2012-09-16 00:00:00'
         VilleId: 46
         CategorieId: null
-        GeoCoordinateX: '42.7151275'
-        GeoCoordinateY: '10.9848064'
+        GeoCoordinateX: '42.74528669'
+        GeoCoordinateY: '10.94759166'
         VideoPath: null
         Image360Path: null
         Capacite: '600'
         PlanPath: null
         Vignette: uploads/etablissements/50c08139ec548.jpeg
         Published: false
-        Active: false
+        Active: true
     227:
         Code: 83
         Slug: maire
-        Name: Maïre
+        Name: 'Maïre '
         Title: null
-        Address1: null
-        Address2: null
+        Address1: ''
+        Address2: ''
         Zip: '34410'
         City: SÉRIGNAN
         Mail: test@resalys.com
@@ -6116,11 +6116,11 @@
         Phone2: '06 32 29 48 31'
         Fax: 04.92.94.10.01
         OpeningDate: '2013-04-27 00:00:00'
-        ClosingDate: '2012-09-15 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
         VilleId: 8
         CategorieId: 3
-        GeoCoordinateX: '43.282801'
-        GeoCoordinateY: '3.279651'
+        GeoCoordinateX: '43.27113581'
+        GeoCoordinateY: '3.329329491'
         VideoPath: null
         Image360Path: null
         Capacite: '206'
@@ -6134,7 +6134,7 @@
         Name: Moulin
         Title: null
         Address1: '3 chemin du camping'
-        Address2: null
+        Address2: ''
         Zip: '39130'
         City: PATORNAY
         Mail: test@resalys.com
@@ -6146,22 +6146,22 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 74
         CategorieId: 3
-        GeoCoordinateX: '46.586323'
-        GeoCoordinateY: '5.7030839'
+        GeoCoordinateX: '46.58725895'
+        GeoCoordinateY: '5.700777769'
         VideoPath: null
         Image360Path: null
         Capacite: '227'
         PlanPath: uploads/etablissements/50c1bcb21bb13.jpeg
         Vignette: uploads/etablissements/50c08152150d5.jpeg
         Published: false
-        Active: false
+        Active: true
     229:
         Code: 85
         Slug: camping-neptuno
-        Name: 'Camping Neptuno'
+        Name: 'Camping Neptuno '
         Title: null
         Address1: 'Rodors 23'
-        Address2: null
+        Address2: ''
         Zip: '17256'
         City: PALS
         Mail: test@resalys.com
@@ -6171,7 +6171,7 @@
         Fax: 04.92.94.10.01
         OpeningDate: '2013-04-26 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: null
+        VilleId: 27
         CategorieId: 3
         GeoCoordinateX: '41.993343'
         GeoCoordinateY: '3.188749'
@@ -6181,14 +6181,14 @@
         PlanPath: uploads/etablissements/50c0bd69d449b.jpeg
         Vignette: uploads/etablissements/50c0815e99152.jpeg
         Published: false
-        Active: false
+        Active: true
     230:
         Code: 86
         Slug: oasis
         Name: Oasis
         Title: null
         Address1: 'Route de St Laurent'
-        Address2: null
+        Address2: ''
         Zip: '66420'
         City: 'LE BARCARÈS'
         Mail: test@resalys.com
@@ -6196,12 +6196,12 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 08 32 31 70'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-05-04 00:00:00'
-        ClosingDate: '2013-09-14 00:00:00'
+        OpeningDate: '2012-04-28 00:00:00'
+        ClosingDate: '2012-09-15 00:00:00'
         VilleId: 17
         CategorieId: 3
-        GeoCoordinateX: '42.78773'
-        GeoCoordinateY: '3.036565'
+        GeoCoordinateX: '42.77629471'
+        GeoCoordinateY: '3.02487731'
         VideoPath: null
         Image360Path: null
         Capacite: '496'
@@ -6215,7 +6215,7 @@
         Name: 'Océano d''Or'
         Title: null
         Address1: '84 Rue Georges Clémenceau'
-        Address2: null
+        Address2: ''
         Zip: '85520'
         City: JARD-SUR-MER
         Mail: test@resalys.com
@@ -6223,26 +6223,26 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 08 90 03 54'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-13 00:00:00'
-        ClosingDate: '2013-09-14 00:00:00'
+        OpeningDate: '2012-04-28 00:00:00'
+        ClosingDate: '2012-09-09 00:00:00'
         VilleId: 72
         CategorieId: 1
-        GeoCoordinateX: '46.408889'
-        GeoCoordinateY: '-1.576171'
+        GeoCoordinateX: '46.42087836'
+        GeoCoordinateY: '-1.569660902'
         VideoPath: null
         Image360Path: null
         Capacite: '430'
         PlanPath: uploads/etablissements/50c0bdc2c9aa7.jpeg
         Vignette: uploads/etablissements/50c08174ca21c.jpeg
         Published: false
-        Active: false
+        Active: true
     232:
         Code: 88
         Slug: oyam
-        Name: Oyam
+        Name: 'Oyam '
         Title: null
         Address1: 'Rue Oyamburua'
-        Address2: null
+        Address2: ''
         Zip: '64210'
         City: BIDART
         Mail: test@resalys.com
@@ -6250,26 +6250,26 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 07 68 20'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-06-15 00:00:00'
-        ClosingDate: '2013-09-22 00:00:00'
+        OpeningDate: '2012-04-07 00:00:00'
+        ClosingDate: '2012-09-23 00:00:00'
         VilleId: 105
         CategorieId: 2
-        GeoCoordinateX: '43.439236'
-        GeoCoordinateY: '-1.590062'
+        GeoCoordinateX: '43.43522086'
+        GeoCoordinateY: '-1.582331657'
         VideoPath: null
         Image360Path: null
         Capacite: '350'
         PlanPath: uploads/etablissements/50c0bda74f880.jpeg
         Vignette: uploads/etablissements/50c081a1e7f51.jpeg
         Published: false
-        Active: false
+        Active: true
     233:
         Code: 89
         Slug: oyats
-        Name: Oyats
+        Name: 'Oyats '
         Title: null
         Address1: 'Route de la Plage des Casernes'
-        Address2: null
+        Address2: ''
         Zip: '40510'
         City: SEIGNOSSE
         Mail: test@resalys.com
@@ -6277,12 +6277,12 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 31 69 93 92'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-05-01 00:00:00'
-        ClosingDate: '2013-09-22 00:00:00'
+        OpeningDate: '2012-04-28 00:00:00'
+        ClosingDate: '2012-09-16 00:00:00'
         VilleId: 104
         CategorieId: 2
-        GeoCoordinateX: '43.692694'
-        GeoCoordinateY: '-1.384908'
+        GeoCoordinateX: '43.724728'
+        GeoCoordinateY: '-1.421765'
         VideoPath: null
         Image360Path: null
         Capacite: '500'
@@ -6296,7 +6296,7 @@
         Name: Ametlla
         Title: null
         Address1: 'Apartat de Correus N°240'
-        Address2: null
+        Address2: ''
         Zip: '43860'
         City: 'AMETLLA DE MAR - TARRAGONE'
         Mail: test@resalys.com
@@ -6308,22 +6308,22 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 35
         CategorieId: 2
-        GeoCoordinateX: '40.8850733'
-        GeoCoordinateY: '0.8033742'
+        GeoCoordinateX: '40.86483588'
+        GeoCoordinateY: '0.778688192'
         VideoPath: null
         Image360Path: null
         Capacite: '373'
         PlanPath: uploads/etablissements/50c0bdf92068c.jpeg
         Vignette: uploads/etablissements/50c081be7664e.jpeg
         Published: false
-        Active: false
+        Active: true
     235:
         Code: 90
         Slug: pachacaid
         Name: Pachacaïd
         Title: null
         Address1: 'Route de Canadel'
-        Address2: null
+        Address2: ''
         Zip: '83310'
         City: 'LA MÔLE'
         Mail: test@resalys.com
@@ -6331,12 +6331,12 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 58 02 09'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-06 00:00:00'
-        ClosingDate: '2013-09-29 00:00:00'
+        OpeningDate: '2012-04-08 00:00:00'
+        ClosingDate: '2012-09-30 00:00:00'
         VilleId: 23
         CategorieId: 2
-        GeoCoordinateX: '43.2071759'
-        GeoCoordinateY: '6.465117'
+        GeoCoordinateX: '43.190284'
+        GeoCoordinateY: '6.471419'
         VideoPath: null
         Image360Path: null
         Capacite: '400'
@@ -6350,7 +6350,7 @@
         Name: 'Domaine de la Paille Basse'
         Title: null
         Address1: 'la paille basse'
-        Address2: null
+        Address2: ''
         Zip: '46200'
         City: SOUILLAC
         Mail: test@resalys.com
@@ -6360,7 +6360,7 @@
         Fax: 04.92.94.10.01
         OpeningDate: '2013-05-11 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: null
+        VilleId: 57
         CategorieId: 2
         GeoCoordinateX: '44.893626'
         GeoCoordinateY: '1.478613'
@@ -6370,14 +6370,14 @@
         PlanPath: uploads/etablissements/50c0be161f801.jpeg
         Vignette: uploads/etablissements/50c081d8f233f.jpeg
         Published: false
-        Active: false
+        Active: true
     237:
         Code: 92
         Slug: palace
-        Name: Palace
+        Name: 'Palace '
         Title: null
         Address1: '65 Boulevard Marsan de Montbrun'
-        Address2: null
+        Address2: ''
         Zip: '33780'
         City: 'SOULAC SUR MER'
         Mail: test@resalys.com
@@ -6389,8 +6389,8 @@
         ClosingDate: '2013-09-22 00:00:00'
         VilleId: 98
         CategorieId: 2
-        GeoCoordinateX: '45.515125'
-        GeoCoordinateY: '-1.123258'
+        GeoCoordinateX: '45.50097801'
+        GeoCoordinateY: '-1.129317284'
         VideoPath: null
         Image360Path: null
         Capacite: '583'
@@ -6404,7 +6404,7 @@
         Name: 'Palavas Camping'
         Title: null
         Address1: 'Route de Maguelone'
-        Address2: null
+        Address2: ''
         Zip: '34250'
         City: 'PALAVAS LES FLOTS'
         Mail: test@resalys.com
@@ -6412,12 +6412,12 @@
         Phone1: 06.01.01.01.01
         Phone2: '04 67 68 01 28'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-12 00:00:00'
-        ClosingDate: '2013-09-29 00:00:00'
+        OpeningDate: '2012-04-06 00:00:00'
+        ClosingDate: '2012-09-30 00:00:00'
         VilleId: 3
         CategorieId: 1
-        GeoCoordinateX: '43.528906'
-        GeoCoordinateY: '3.933493'
+        GeoCoordinateX: '43.51973054'
+        GeoCoordinateY: '3.909483254'
         VideoPath: null
         Image360Path: null
         Capacite: '435'
@@ -6428,10 +6428,10 @@
     239:
         Code: 94
         Slug: parc
-        Name: Parc
+        Name: 'Parc '
         Title: null
         Address1: '408 Quartier Trestaure'
-        Address2: null
+        Address2: ''
         Zip: '83440'
         City: 'ST PAUL EN FORÊT'
         Mail: test@resalys.com
@@ -6443,8 +6443,8 @@
         ClosingDate: '2013-09-22 00:00:00'
         VilleId: 41
         CategorieId: 2
-        GeoCoordinateX: '43.567595'
-        GeoCoordinateY: '6.691291'
+        GeoCoordinateX: '43.58432727'
+        GeoCoordinateY: '6.689981818'
         VideoPath: null
         Image360Path: null
         Capacite: '110'
@@ -6455,10 +6455,10 @@
     240:
         Code: 95
         Slug: park-albatros
-        Name: 'Park Albatros'
+        Name: 'Park Albatros '
         Title: null
         Address1: 'Loc. Pineta di T. Nuova'
-        Address2: null
+        Address2: ''
         Zip: '57027'
         City: 'SAN VINCENZO'
         Mail: test@resalys.com
@@ -6466,8 +6466,8 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 88 94 43 84'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-26 00:00:00'
-        ClosingDate: '2013-09-15 00:00:00'
+        OpeningDate: '2012-04-27 00:00:00'
+        ClosingDate: '2012-09-16 00:00:00'
         VilleId: 45
         CategorieId: 2
         GeoCoordinateX: '43.02830997'
@@ -6478,14 +6478,14 @@
         PlanPath: uploads/etablissements/50c0be5728b4b.jpeg
         Vignette: uploads/etablissements/50c0820baa3b3.jpeg
         Published: false
-        Active: false
+        Active: true
     241:
         Code: 96
         Slug: petit-bois-ardeche
         Name: 'Petit Bois (Ardèche)'
         Title: null
         Address1: '87 rue du Petit Bois'
-        Address2: null
+        Address2: ''
         Zip: '07120'
         City: RUOMS
         Mail: test@resalys.com
@@ -6493,12 +6493,12 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 88 71 27 19'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-12 00:00:00'
-        ClosingDate: '2013-09-15 00:00:00'
+        OpeningDate: '2012-04-06 00:00:00'
+        ClosingDate: '2012-09-15 00:00:00'
         VilleId: 79
         CategorieId: 3
-        GeoCoordinateX: '44.452912'
-        GeoCoordinateY: '4.341765'
+        GeoCoordinateX: '44.45909408'
+        GeoCoordinateY: '4.341879487'
         VideoPath: null
         Image360Path: null
         Capacite: '110'
@@ -6512,7 +6512,7 @@
         Name: 'Petit Bois (Cantal)'
         Title: null
         Address1: 'Le bourg'
-        Address2: null
+        Address2: ''
         Zip: '15320'
         City: 'RUYNES EN MARGERIDE'
         Mail: test@resalys.com
@@ -6520,12 +6520,12 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 70 08 54 21'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-27 00:00:00'
-        ClosingDate: '2013-09-08 00:00:00'
+        OpeningDate: '2012-04-28 00:00:00'
+        ClosingDate: '2012-09-09 00:00:00'
         VilleId: 60
         CategorieId: 3
-        GeoCoordinateX: '45.001378'
-        GeoCoordinateY: '3.223658'
+        GeoCoordinateX: '44.99907285'
+        GeoCoordinateY: '3.219047785'
         VideoPath: null
         Image360Path: null
         Capacite: '90'
@@ -6536,23 +6536,23 @@
     243:
         Code: 98
         Slug: pinada
-        Name: Pinada
+        Name: 'Pinada '
         Title: null
         Address1: 'hameau villerouge la crémade'
-        Address2: null
+        Address2: ''
         Zip: '11200'
         City: FABREZAN
         Mail: test@resalys.com
         CountryCode: FR
         Phone1: 06.01.01.01.01
         Phone2: '06 88 71 93 49'
-        Fax: null
-        OpeningDate: '2013-05-01 00:00:00'
-        ClosingDate: '2013-08-31 00:00:00'
+        Fax: ''
+        OpeningDate: '2012-05-04 00:00:00'
+        ClosingDate: '2012-09-02 00:00:00'
         VilleId: 18
         CategorieId: 3
-        GeoCoordinateX: '43.137479'
-        GeoCoordinateY: '2.700108'
+        GeoCoordinateX: '43.11730606'
+        GeoCoordinateY: '2.73617506'
         VideoPath: null
         Image360Path: null
         Capacite: '110'
@@ -6563,10 +6563,10 @@
     244:
         Code: 99
         Slug: pins
-        Name: Pins
+        Name: 'Pins '
         Title: null
         Address1: 'Lieu dit Le Guen'
-        Address2: null
+        Address2: ''
         Zip: '22430'
         City: ERQUY
         Mail: test@resalys.com
@@ -6574,12 +6574,12 @@
         Phone1: 06.01.01.01.01
         Phone2: '06 08 83 65 13'
         Fax: 04.92.94.10.01
-        OpeningDate: '2013-04-26 00:00:00'
-        ClosingDate: '2013-09-15 00:00:00'
+        OpeningDate: '2012-04-27 00:00:00'
+        ClosingDate: '2012-09-16 00:00:00'
         VilleId: 49
         CategorieId: 2
-        GeoCoordinateX: '48.6290369'
-        GeoCoordinateY: '-2.465645'
+        GeoCoordinateX: '48.63805601'
+        GeoCoordinateY: '-2.455675006'
         VideoPath: null
         Image360Path: null
         Capacite: '488'
