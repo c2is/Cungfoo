@@ -18,7 +18,17 @@ header, section, footer {position:relative;}
       a{font-weight:bold;color:@colorGris2;text-decoration:none;display:block;}
     }
   }
-  #account{float:right;font-size:16px;text-transform:uppercase;background-color:@colorFushia;border-radius:10px;padding:7px 12px;color:#fff;text-decoration:none;margin:10px 0 15px 15px;}
+    #account{float:right;font-size:16px;text-transform:uppercase;background-color:@colorFushia;border-radius:10px;padding:7px 12px;color:#fff;text-decoration:none;margin:10px 0 15px 15px;}
+    #accountBox{width:320px;position:absolute;top:50px;right:0;text-align:left;color:@colorBlanc;display:none;
+      &:after{left:100%;margin-left:-65px;}
+      h2{font:bold 22px/24px @ptnarrow;text-transform:uppercase;margin-bottom:10px;color:@colorBlanc;}
+      label{display:none;}
+      input{._verticalCenter(27px);width:188px;background-color:@colorBlanc;border:0 none;margin-bottom:10px;font:bold 17px/27px @ptnarrow;color:@colorBgGrisM;text-transform:uppercase;padding:0 7px;}
+      .link{margin-bottom:15px;
+        a{color:@colorBlanc;text-decoration:underline;}
+      }
+    }
+
 }
 /* specifs home */
 .home #telephone{clear:both;}
@@ -186,10 +196,12 @@ h6, .h6-like{color:@colorFushia;}
   h2{color:@colorBlanc;text-align:center;text-transform:uppercase;position:relative;display:inline-block;}
 }
 .radiusBox{._border-radius(10px);padding:15px 20px;margin:15px 0;position:relative;
+  &.opened{._box-shadow(0 10px 10px -12px @colorBgGrisF);}
   &.bgImg{overflow:hidden;}
   &.greyC{background-color:@colorBgGrisC;}
   &.greyF{background-color:@colorBgGrisF;
     &.arrowLeft:after{right:100%;top:50%;border:solid transparent;content:"";height:0;width:0;position:absolute;pointer-events:none;border-color:rgba(140, 138, 138, 0);border-right-color:@colorBgGrisF;border-width:18px;margin-top:-18px;margin-left:-18px;}
+    &.arrowUp:after{bottom:100%;left:50%;border:solid transparent;content:"";height:0;width:0;position:absolute;pointer-events:none;border-color:rgba(140, 138, 138, 0);border-bottom-color:@colorBgGrisF;border-width:18px;margin-left:-18px;margin-top:-18px;}
   }
   &.fushia{background-color:@colorFushia;
     &.arrowLeft:after{right:100%;top:50%;border:solid transparent;content:"";height:0;width:0;position:absolute;pointer-events:none;border-color:rgba(140, 138, 138, 0);border-right-color:@colorFushia;border-width:18px;margin-top:-18px;margin-left:-18px;}
@@ -233,16 +245,18 @@ h6, .h6-like{color:@colorFushia;}
 .tooltip:hover {text-decoration:none;}
 .tooltip span {font:bold 12px/35px @arial;background:@colorBgGrisM;color:@colorBlanc;text-transform:uppercase;padding:10px;text-decoration:none;text-align:center;._border-radius(10px);z-index:10;display:none;margin:0;width:140px; line-height:16px;right:-10px;bottom:-41px;white-space:nowrap;}
 .tooltip span:after{bottom:100%;border:solid transparent;content:"";height:0;width:0;position:absolute;pointer-events:none;border-color:rgba(140, 138, 138, 0);border-bottom-color:@colorBgGrisM;border-width:5px;right:19px;margin-left:-5px;}
-.tooltip:hover span{
-  display:inline; position:absolute;}
+.tooltip:hover span{display:inline; position:absolute;}
+
+.errors {position:absolute;top:0;left:-15px;outline:none;text-decoration:none;display:block;}
+.errors strong {line-height:30px;}
+.errors ul {font:bold 12px/35px @arial;background:@colorBgBlanc;color:@colorFushia;border:7px solid @colorFushia;text-transform:uppercase;padding:5px 10px;text-decoration:none;text-align:right;._border-radius(10px);z-index:10;display:inline; position:absolute;margin:0;line-height:16px;right:-10px;white-space:nowrap;}
+.errors ul:after{left:100%;top:50%;border:solid transparent;content:"";height:0;width:0;position:absolute;pointer-events:none;border-color:rgba(138, 140, 138, 0);border-left-color:@colorFushia;border-width:5px;margin-top:-5px;margin-left:7px;}
+.errors ul li {margin:5px 0;}
 .callout {z-index:20;position:absolute;top:30px;border:0;left:50%;}
 
 /*CSS3 extras*/
-.tooltip span{._box-shadow(0 10px 10px -12px @colorGris2);
-//  -moz-box-shadow: 0 10px 10px -12px @colorGris2;
-//  -webkit-box-shadow: 0 10px 10px -12px @colorGris2;
-//  box-shadow: 0 10px 10px -12px @colorGris2;
-}
+.error span,
+.tooltip span{._box-shadow(0 10px 10px -12px @colorGris2);}
 
 label,input[type="radio"] {vertical-align:middle;}
 input[type="radio"] + label{display:inline-block;margin:3px 5px 0 0;}
