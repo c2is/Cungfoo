@@ -22,4 +22,16 @@ class PointInteret extends BasePointInteret
     {
         return $this->getName();
     }
+
+    public function getDistanceForEtablissement(Etablissement $etab)
+    {
+        $distance = EtablissementPointInteretQuery::create()
+            ->select('distance')
+            ->filterByEtablissementId($etab->getId())
+            ->filterByPointInteretId($this->getId())
+            ->findOne()
+        ;
+
+        return $distance ? $distance : '0';
+    }
 }
