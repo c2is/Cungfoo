@@ -249,10 +249,15 @@ class DestinationController implements ControllerProviderInterface
             ->findActive()
         ;
 
-        $tags = \Cungfoo\Model\TagQuery::create()
-            ->joinWithI18n($locale)
-            ->findActive()
-        ;
+        $tags = array();
+        foreach($multimedia as $multi){
+            $tag = explode(" ", $multi->getTagsForDisplay());
+            foreach ($tag as $t) {
+                if(!in_array($t, $tags)){
+                    $tags[] = $t;
+                }
+            }
+        }
 
         $personnageAleatoire = \Cungfoo\Model\PersonnageQuery::create()
             ->joinWithI18n($locale)

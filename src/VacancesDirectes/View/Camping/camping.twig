@@ -70,7 +70,7 @@
             <span>Photos</span>
             <label for="photosToutes"><input type="radio" id="photosToutes" name="affPhoto" value="all" checked="checked">{{ "Toutes" | trans }}</label>
             {% for tag in tags %}
-                <label for="photos{{ tag.slug }}"><input type="radio" id="photos{{ tag.slug }}" name="affPhoto" value="{{ tag.slug }}">{{ tag.slug }}</label>
+                <label for="photos{{ tag }}"><input type="radio" id="photos{{ tag }}" name="affPhoto" value="{{ tag }}">{{ tag }}</label>
             {% endfor %}
         </fieldset>
         <fieldset class="right">
@@ -80,6 +80,11 @@
     </form>
 </div>
 <div id="tabCamp" class="tabs">
+    <div class="tabCampDesc">
+        <h3>{{ etab.title}}</h3>
+        <p><strong>{{ etab.capacite }} {{ "fiche.emplacements" | trans }} | {{ "fiche.ouvert_du" | trans }} {{ etab.openingDate | date('d/m/Y') }} au {{ etab.closingDate | date('d/m/Y') }}</strong></p>
+        <p>{{ etab.description }}</p>
+    </div>
     <div class="temoignFiche bloc gris">
         {% if personnages | length %}
         <h3>{{ "fiche.vous_aimerez" | trans }}</h3>
@@ -123,11 +128,6 @@
             </dd>
         </dl>
         {% endif %}
-    </div>
-    <div class="tabCampDesc">
-        <h3>{{ etab.title}}</h3>
-        <p><strong>{{ etab.capacite }} {{ "fiche.emplacements" | trans }} | {{ "fiche.ouvert_du" | trans }} {{ etab.openingDate | date('d M Y') }} au {{ etab.closingDate | date('d M Y') }}</strong></p>
-        <p>{{ etab.description }}</p>
     </div>
     <nav class="paginationTabs clear">
         <button class="bt trans right triggerClick" data-triggerLink="#tabLocations">{{ "fiche.les_locations" | trans }}</button>
