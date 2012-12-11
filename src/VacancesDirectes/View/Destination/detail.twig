@@ -26,6 +26,8 @@
     {# le lien retour pointera à terme sur les pages de listing
     <a class="bt gris left" href="{{ app.request.headers.get('referer') }}">&lt; {{ "destination.retour" | trans }}</a>
     #}
+    
+{% include "Breadcrumbs/_breadcrumbs.twig" %}
 
     {# Bloc titre + accroche + picto #}
     {% if item['imagePath'] is defined %}

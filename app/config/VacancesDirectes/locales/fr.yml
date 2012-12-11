@@ -43,6 +43,8 @@ listing_destination.campings_map_prefixe_subtitle: en
 listing.plus_resultats: Plus de résultats
 listing.du: du
 listing.au: au
+listing.no_results_title: Votre recherche n'a retourné aucun résultat.
+listing.no_results: Nous vous invitons à modifier vos critères de recherche
 
 menu.title: Vacances Directes
 menu.destinations: Nos destinations
@@ -167,9 +169,9 @@ home.plus_de_regions: Plus de régions
 home.faites_le_plein_d_activites: Faites le plein d'activités
 home.dernieres_minutes: Dernières minutes
 home.early_booking: Early booking
-home.dernieres_minutes.link: Voir toutes les dernières minutes
-home.early_booking.link: Voir tous les early booking
-home.idees_weekend.link: Voir toutes les idées week-end (%number%)
+home.dernieres_minutes.link: Toutes les dernières minutes
+home.early_booking.link: Tous les early booking
+home.idees_weekend.link: Toutes les idées week-end (%number%)
 
 general.a_partir_de: à partir de
 general.jouer: Jouer
@@ -261,3 +263,5 @@ resalys.besoin_aide_contact: Contactez-nous
 resalys.besoin_aide_num: au 0825 133 400
 
 vos_week_ends: Vos week-ends
+
+breadcrumbs.home: Accueil

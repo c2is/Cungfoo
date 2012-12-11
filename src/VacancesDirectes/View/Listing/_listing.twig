@@ -105,6 +105,11 @@
             {% endif %}
         </div>
     </div><!-- // .itemResult -->
+    {% else %}
+    <h2>{{ "listing.no_results_title" | trans }}</h2>
+    <p>{{ "listing.no_results" | trans }}</p>
     {% endfor %}
 </div><!-- // #result -->
+{% if list.element|length > 0 %}
 <button id="btPlusResults" class="bt big sombre">{{ "listing.plus_resultats" | trans }}</button>
+{% endif %}
