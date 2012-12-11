@@ -15,7 +15,10 @@
     <li>&gt; <a itemprop="url" href="#_"><span itemprop="title">Le Petit Mousse</span></a></li>
 </ol> #}
 <div itemscope itemtype="http://schema.org/Place">
-    <h1 itemprop="name">{{ etab.name }}{{ etab.categorie.stars }}<br />{{ "destination.camping_title" | trans({'%ville%': etab.ville.name}) }}</h1>
+    <h1 itemprop="name">
+        {{ etab.name }}{{ etab.categorie.stars }}<br />
+        <span class="h2-like">{{ "destination.camping_title" | trans({'%ville%': etab.ville.name}) }}</span>
+    </h1>
     <p class="keywordsFiche">
         {% if etab.activites | length %}
             {% for activite in etab.activites %}
@@ -34,7 +37,7 @@
         {% endif %}
     </p>
     <a class="bt big fushia right goto" href="#frameResalys">Tarifs &amp; disponibilités</a>
-    <h2>{{ "fiche.camping" | trans }} {{ etab.city }}</h2>
+    {#<h2>{{ "fiche.camping" | trans }} {{ etab.city }}</h2>#}
     <div class="geoDataFiche" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
         <span itemprop="addressCountry">{{ etab.country }}</span> |
         <span itemprop="addressRegion">{{ etab.ville.region }}</span> |
