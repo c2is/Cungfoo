@@ -1357,18 +1357,6 @@ footer {
   display: block;
   float: left;
 }
-#header #catchline {
-  color: #ffffff;
-  font: bold 24px/24px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
-  text-transform: uppercase;
-  text-align: center;
-  margin: 75px 30px 15px;
-  float: left;
-  width: 300px;
-}
-#header #catchline span {
-  text-align: left;
-}
 #header #headerRight {
   float: right;
 }
@@ -1376,11 +1364,9 @@ footer {
   width: 256px;
   height: 60px;
   background: url("../../images/vacancesdirectes/common/ui/phone-bg.png") no-repeat 0px 0px transparent;
-  float: right;
   padding: 5px 0px 15px 10px;
-  position: absolute;
-  bottom: 0;
-  right: 0;
+  float: right;
+  margin: 10px 0;
   z-index: 0;
 }
 #header #telephone span {
@@ -2964,6 +2950,8 @@ ul.newList.optGroup li.optGroup-like a {
 
   /* HOME */
 
+  /* header */
+
   /* slider */
 
 }
@@ -2977,17 +2965,42 @@ ul.newList.optGroup li.optGroup-like a {
 .home .element iframe {
   margin: 5px 0 0 10px;
 }
+.home #wrap {
+  padding: 0 0 15px;
+}
 .home #header {
-  margin-bottom: 261px;
+  margin-bottom: 290px;
+}
+.home #header #catchline {
+  color: #ffffff;
+  font: bold 24px/24px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  text-align: right;
+  margin: 75px 30px 15px;
+  float: left;
+  width: 300px;
+  position: relative;
+}
+.home #header #catchline span {
+  font-size: 17px;
+  position: absolute;
+  bottom: -21px;
+  right: 0;
+}
+.home #header #telephone {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  float: none;
+  margin-bottom: 5px;
 }
 .home #sliderWrapper {
   overflow: hidden;
-  padding-top: 30px;
   width: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  height: 500px;
+  height: 600px;
 }
 .home #sliderWrapper #sliderPrev,
 .home #sliderWrapper #sliderNext {
@@ -3052,14 +3065,14 @@ ul.newList.optGroup li.optGroup-like a {
   font-family: 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   width: 976px;
   height: 230px;
-  margin: 240px auto 0;
+  margin: 290px auto 0;
   z-index: 10;
 }
 .home #sliderWrapper #sliderContainer #sliderBackground {
   position: absolute;
   bottom: 0;
   left: 0;
-  height: 70px;
+  height: 100px;
   width: 976px;
   background-color: #ffffff;
   z-index: 2;
@@ -3076,7 +3089,7 @@ ul.newList.optGroup li.optGroup-like a {
 }
 .home #sliderWrapper #sliderContainer .slide .sliderPhoto {
   position: absolute;
-  top: -20px;
+  top: -40px;
   right: 350px;
   text-indent: 90px;
   transform: rotate(18deg);
@@ -3094,7 +3107,7 @@ ul.newList.optGroup li.optGroup-like a {
   position: absolute;
   bottom: 0;
   left: 0;
-  height: 70px;
+  height: 100px;
   width: 976px;
   background-color: #ffffff;
   z-index: 2;
@@ -3104,8 +3117,8 @@ ul.newList.optGroup li.optGroup-like a {
   text-align: center;
 }
 .home #sliderWrapper #sliderContainer .slide .sliderStain.first {
-  left: 70px;
-  top: -75px;
+  left: 50px;
+  top: -100px;
   width: 298px;
   height: 286px;
   /* Centrer verticalement une ligne de texte */
@@ -3142,8 +3155,8 @@ ul.newList.optGroup li.optGroup-like a {
   margin-bottom: 10px;
 }
 .home #sliderWrapper #sliderContainer .slide .sliderStain.second {
-  left: 240px;
-  top: 55px;
+  left: 220px;
+  top: 34px;
   width: 188px;
   height: 188px;
   /* Centrer verticalement une ligne de texte */
@@ -3181,7 +3194,8 @@ ul.newList.optGroup li.optGroup-like a {
   text-align: center;
   position: relative;
   z-index: 10;
-  margin-top: -64px;
+  margin-top: -90px;
+  margin-left: 50px;
   padding-bottom: 30px;
 }
 .home #sliderWrapper .pagination a {
