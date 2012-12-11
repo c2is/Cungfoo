@@ -143,7 +143,7 @@ fiche.fax: Fax :
 fiche.tel: Tél :
 
 home.topcamping: Top campings
-home.topcamping.link: Tous les top campings (%number%)
+home.topcamping.link: Tous les top campings
 home.vacances_directes_cest: Vacances directes c'est
 home.4_pays: 3 pays
 home.26_regions: 23 régions
@@ -154,8 +154,8 @@ home.plus_de_regions: Plus de régions
 home.faites_le_plein_d_activites: Faites le plein d'activités
 home.dernieres_minutes: Dernières minutes
 home.early_booking: Early booking
-home.dernieres_minutes.link: Voir toutes les dernières minutes (%number%)
-home.early_booking.link: Voir tous les early booking (%number%)
+home.dernieres_minutes.link: Voir toutes les dernières minutes
+home.early_booking.link: Voir tous les early booking
 home.idees_weekend.link: Voir toutes les idées week-end (%number%)
 
 general.a_partir_de: à partir de
