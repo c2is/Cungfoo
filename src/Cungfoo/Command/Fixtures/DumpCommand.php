@@ -83,6 +83,12 @@ class DumpCommand extends BaseCommand
         "\\Cungfoo\\Model\\IdeeWeekend",
         "\\Cungfoo\\Model\\IdeeWeekendI18n",
         "\\Cungfoo\\Model\\EditoI18n",
+        "\\Cungfoo\\Model\\Theme",
+        "\\Cungfoo\\Model\\ThemeI18n",
+        "\\Cungfoo\\Model\\ThemeActivite",
+        "\\Cungfoo\\Model\\ThemeBaignade",
+        "\\Cungfoo\\Model\\ThemeServiceComplementaire",
+        "\\Cungfoo\\Model\\ThemePersonnage",
     );
 
     protected function configure()

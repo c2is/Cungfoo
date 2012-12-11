@@ -1,0 +1,7 @@
+\Cungfoo\Model\ThemePersonnage:
+    1_1:
+        ThemeId: 1
+        PersonnageId: 1
+    1_2:
+        ThemeId: 1
+        PersonnageId: 2

@@ -51,6 +51,9 @@ class GenerateCommand extends BaseCommand
             $this->generateTheme(\Cungfoo\Model\PaysQuery::create(), $languages, $con);
             $output->writeln(sprintf('<info>%s</info> slug added on <comment>pays</comment> table.', $this->getName()));
 
+            $this->generateThemeCms($languages, $con);
+            $output->writeln(sprintf('<info>%s</info> slug added on <comment>theme</comment> table.', $this->getName()));
+
             $con->commit();
         }
         catch (\Exception $exception)
@@ -95,6 +98,19 @@ class GenerateCommand extends BaseCommand
                     ->save($con)
                 ;
             }
+        }
+    }
+    protected function generateThemeCms($languages, \PropelPDO $con)
+    {
+        $utils = new \Cungfoo\Lib\Utils();
+        $themes = \Cungfoo\Model\ThemeQuery::create()->find($con);
+
+        foreach ($themes as $theme)
+        {
+            $theme
+                ->setSlug($utils->slugify($theme->getName()))
+                ->save($con)
+            ;
         }
     }
 }
