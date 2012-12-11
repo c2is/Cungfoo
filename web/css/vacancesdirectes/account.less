@@ -4,9 +4,12 @@
   #stepNav{width:976px;height:50px;font:bold 23px @ptnarrow;text-transform:uppercase;position:relative;background:@colorBgGrisF;margin:20px 0 20px -@gutter;z-index:30;
     ul{width:976px;margin:0 auto;text-align:center;
       li.tab{margin:0;float:none;display:inline-block;position:static;color:@colorBlanc;padding:0;
+        &:hover,
         &.current{background:@colorFushia;}
         a{position:relative;display:block;padding:0 10px;color:@colorBlanc;text-decoration:none;._verticalCenter(50px);float:left;}
+        &:hover,
         &.current a{text-decoration:none;}
+        &:hover > a:after,
         &.current > a:after {content:url("../../images/vacancesdirectes/common/pict/Triangle-Tab.png");height:8px;left:50%;margin-left:-12px;position: absolute;top:24px;width:22px;z-index:50;}
         &.completed a:before {content:"";background:url("../../images/vacancesdirectes/common/sprites/sprite-40.png") no-repeat 0 -165px transparent;width:40px;height:50px;float:left;margin-right:10px;}
       }
