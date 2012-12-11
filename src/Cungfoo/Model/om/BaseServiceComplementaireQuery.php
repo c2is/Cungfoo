@@ -18,6 +18,8 @@ use Cungfoo\Model\ServiceComplementaire;
 use Cungfoo\Model\ServiceComplementaireI18n;
 use Cungfoo\Model\ServiceComplementairePeer;
 use Cungfoo\Model\ServiceComplementaireQuery;
+use Cungfoo\Model\Theme;
+use Cungfoo\Model\ThemeServiceComplementaire;
 
 /**
  * Base class that represents a query for the 'service_complementaire' table.
@@ -45,6 +47,10 @@ use Cungfoo\Model\ServiceComplementaireQuery;
  * @method ServiceComplementaireQuery leftJoinEtablissementServiceComplementaire($relationAlias = null) Adds a LEFT JOIN clause to the query using the EtablissementServiceComplementaire relation
  * @method ServiceComplementaireQuery rightJoinEtablissementServiceComplementaire($relationAlias = null) Adds a RIGHT JOIN clause to the query using the EtablissementServiceComplementaire relation
  * @method ServiceComplementaireQuery innerJoinEtablissementServiceComplementaire($relationAlias = null) Adds a INNER JOIN clause to the query using the EtablissementServiceComplementaire relation
+ *
+ * @method ServiceComplementaireQuery leftJoinThemeServiceComplementaire($relationAlias = null) Adds a LEFT JOIN clause to the query using the ThemeServiceComplementaire relation
+ * @method ServiceComplementaireQuery rightJoinThemeServiceComplementaire($relationAlias = null) Adds a RIGHT JOIN clause to the query using the ThemeServiceComplementaire relation
+ * @method ServiceComplementaireQuery innerJoinThemeServiceComplementaire($relationAlias = null) Adds a INNER JOIN clause to the query using the ThemeServiceComplementaire relation
  *
  * @method ServiceComplementaireQuery leftJoinServiceComplementaireI18n($relationAlias = null) Adds a LEFT JOIN clause to the query using the ServiceComplementaireI18n relation
  * @method ServiceComplementaireQuery rightJoinServiceComplementaireI18n($relationAlias = null) Adds a RIGHT JOIN clause to the query using the ServiceComplementaireI18n relation
@@ -530,6 +536,80 @@ abstract class BaseServiceComplementaireQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query by a related ThemeServiceComplementaire object
+     *
+     * @param   ThemeServiceComplementaire|PropelObjectCollection $themeServiceComplementaire  the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   ServiceComplementaireQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByThemeServiceComplementaire($themeServiceComplementaire, $comparison = null)
+    {
+        if ($themeServiceComplementaire instanceof ThemeServiceComplementaire) {
+            return $this
+                ->addUsingAlias(ServiceComplementairePeer::ID, $themeServiceComplementaire->getServiceComplementaireId(), $comparison);
+        } elseif ($themeServiceComplementaire instanceof PropelObjectCollection) {
+            return $this
+                ->useThemeServiceComplementaireQuery()
+                ->filterByPrimaryKeys($themeServiceComplementaire->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByThemeServiceComplementaire() only accepts arguments of type ThemeServiceComplementaire or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the ThemeServiceComplementaire relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return ServiceComplementaireQuery The current query, for fluid interface
+     */
+    public function joinThemeServiceComplementaire($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('ThemeServiceComplementaire');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'ThemeServiceComplementaire');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the ThemeServiceComplementaire relation ThemeServiceComplementaire object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\ThemeServiceComplementaireQuery A secondary query class using the current class as primary query
+     */
+    public function useThemeServiceComplementaireQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        return $this
+            ->joinThemeServiceComplementaire($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'ThemeServiceComplementaire', '\Cungfoo\Model\ThemeServiceComplementaireQuery');
+    }
+
+    /**
      * Filter the query by a related ServiceComplementaireI18n object
      *
      * @param   ServiceComplementaireI18n|PropelObjectCollection $serviceComplementaireI18n  the related object to use as filter
@@ -617,6 +697,23 @@ abstract class BaseServiceComplementaireQuery extends ModelCriteria
         return $this
             ->useEtablissementServiceComplementaireQuery()
             ->filterByEtablissement($etablissement, $comparison)
+            ->endUse();
+    }
+
+    /**
+     * Filter the query by a related Theme object
+     * using the theme_service_complementaire table as cross reference
+     *
+     * @param   Theme $theme the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   ServiceComplementaireQuery The current query, for fluid interface
+     */
+    public function filterByTheme($theme, $comparison = Criteria::EQUAL)
+    {
+        return $this
+            ->useThemeServiceComplementaireQuery()
+            ->filterByTheme($theme, $comparison)
             ->endUse();
     }
 

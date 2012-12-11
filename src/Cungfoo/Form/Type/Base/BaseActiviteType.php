@@ -61,6 +61,14 @@ class BaseActiviteType extends AppAwareType
             'label' => 'activite.etablissements',
             'required' => false,
         ));
+        $builder->add('themes', 'model', array(
+            'class' => 'Cungfoo\Model\Theme',
+            'constraints' => array(
+            ),
+            'multiple' => true,
+            'label' => 'activite.themes',
+            'required' => false,
+        ));
         $builder->add('activiteI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\ActiviteI18n',
             'languages' => array(

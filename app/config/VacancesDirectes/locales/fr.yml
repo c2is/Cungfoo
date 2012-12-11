@@ -3,7 +3,8 @@ seo:
         default: "Location mobil home Espagne, France, Italie"
         pays: "Camping %pays% pas cher"
         region: "Location mobil home %region% pas cher, camping %region%"
-        camping: "Camping %nom%, camping %ville% pas cher avec piscine"
+        camping: "Camping %nom%, camping %ville% pas cher"
+        camping_suffix: " avec piscine"
         dernieres_minutes: "Camping derniere disponibilité, location mobil home derniere disponibilité"
         dispo: "Résultat de recherche location camping, mobil home"
         couloir: "Espace de réservation"
@@ -22,12 +23,16 @@ pays.italie: Italie
 pays.portugal: Portugal
 
 destination.mediterranee: Méditerannée
-destination.atlantique: Atlantique
+destination.manche_atlantique: Manche Atlantique
 destination.montagne: Montagne
 destination.campagne: Campagne
 destination.images_pays_title: Le pays en image
 destination.images_region_title: La région en image
 destination.images_ville_title: La ville en image
+destination.pays_title: Camping en %item% pas cher
+destination.region_title: Location mobil home %item% pas cher en camping 
+destination.ville_title: Camping à %item% pas cher
+destination.camping_title: Camping %ville% pas cher
 destination.retour_bottom: Retour à la liste
 
 listing_destination.campings_map_title: Campings Vacances Directes
@@ -212,8 +217,6 @@ pactiv-2: Envie d'un petit break, de prendre l'air
 pactiv-3: Des vacances sous le signe de la détente et du bonheur
 
 destination.retour: Retour
-destination.prefixe_titre: Vacances
-destination.suffixe_titre: en camping pas cher
 destination.pois_all: Tous les lieux
 destination.events_title: En ce moment
 destination.events_prefixe_subtitle: En
@@ -223,9 +226,9 @@ destination.campings_selection_title: Notre sélection de campings
 encart_vacances_directes.title: Vacances directes
 encart_vacances_directes.subtitle: Un séjour réussi
 encart_vacances_directes.item_1: Des ambassadeurs pour vous accueillir
-encart_vacances_directes.item_2: Un call center pour répondre à vos besoins
+encart_vacances_directes.item_2: Des campings sélectionnés avec soin
 encart_vacances_directes.item_3: Un site 100% sécurisé
-encart_vacances_directes.item_4: Mobil-home sélection des plus grandes marques
+encart_vacances_directes.item_4: Des hébergements tout confort pour des vacances dépaysantes
 
 
 encart_informations.title: Informations & Réservations au

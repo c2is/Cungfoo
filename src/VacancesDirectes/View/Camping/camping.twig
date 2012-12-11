@@ -1,6 +1,6 @@
 {% extends "base.twig" %}
 
-{% block title %}{{ "seo.title.camping" | trans ({'%nom%': etab.name, '%ville%': etab.ville }) }}{% endblock %}
+{% block title %}{{ "seo.title.camping" | trans ({'%nom%': etab.name, '%ville%': etab.ville }) }}{%if hasBaignade %}{{ "seo.title.camping_suffix" }}{% endif %}{% endblock %}
 {% block metaDescription %}{{ "seo.meta.camping" | trans  ({'%nom%': etab.name, '%categorie%': etab.categorie, '%ville%': etab.ville })}}{% endblock %}
 
 {% block bodyClass %} fiche{% endblock %}
@@ -15,7 +15,7 @@
     <li>&gt; <a itemprop="url" href="#_"><span itemprop="title">Le Petit Mousse</span></a></li>
 </ol> #}
 <div itemscope itemtype="http://schema.org/Place">
-    <h1 itemprop="name">{{ etab.name }}{{ etab.categorie.stars }}</h1>
+    <h1 itemprop="name">{{ etab.name }}{{ etab.categorie.stars }}<br />{{ "destination.camping_title" | trans({'%ville%': etab.ville.name}) }}</h1>
     <p class="keywordsFiche">
         {% if etab.activites | length %}
             {% for activite in etab.activites %}
@@ -104,7 +104,7 @@
         </div>
         <hr class="clearboth">
         {% endif %}
-        <h4>{{ "fiche.les_vacances_a" | trans }} {{ etab.city }}</h4>
+        <h2>{{ "fiche.les_vacances_a" | trans }} {{ etab.city }}</h2>
         <dl>
             <dd class="img"><img src="{{ asset(etab.ville.region.imagePath) }}" width="75"></dd>
             <dt>{{ "fiche.a_proximite" | trans }}<br> {{ "fiche.nous_avons_liste" | trans }}</dt>

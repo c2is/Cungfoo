@@ -24,6 +24,10 @@ use Cungfoo\Model\Etablissement;
 use Cungfoo\Model\EtablissementActivite;
 use Cungfoo\Model\EtablissementActiviteQuery;
 use Cungfoo\Model\EtablissementQuery;
+use Cungfoo\Model\Theme;
+use Cungfoo\Model\ThemeActivite;
+use Cungfoo\Model\ThemeActiviteQuery;
+use Cungfoo\Model\ThemeQuery;
 
 /**
  * Base class that represents a row from the 'activite' table.
@@ -97,6 +101,12 @@ abstract class BaseActivite extends BaseObject implements Persistent
     protected $collEtablissementActivitesPartial;
 
     /**
+     * @var        PropelObjectCollection|ThemeActivite[] Collection to store aggregation of ThemeActivite objects.
+     */
+    protected $collThemeActivites;
+    protected $collThemeActivitesPartial;
+
+    /**
      * @var        PropelObjectCollection|ActiviteI18n[] Collection to store aggregation of ActiviteI18n objects.
      */
     protected $collActiviteI18ns;
@@ -106,6 +116,11 @@ abstract class BaseActivite extends BaseObject implements Persistent
      * @var        PropelObjectCollection|Etablissement[] Collection to store aggregation of Etablissement objects.
      */
     protected $collEtablissements;
+
+    /**
+     * @var        PropelObjectCollection|Theme[] Collection to store aggregation of Theme objects.
+     */
+    protected $collThemes;
 
     /**
      * Flag to prevent endless save loop, if this object is referenced
@@ -145,7 +160,19 @@ abstract class BaseActivite extends BaseObject implements Persistent
      * An array of objects scheduled for deletion.
      * @var		PropelObjectCollection
      */
+    protected $themesScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
     protected $etablissementActivitesScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
+    protected $themeActivitesScheduledForDeletion = null;
 
     /**
      * An array of objects scheduled for deletion.
@@ -546,9 +573,12 @@ abstract class BaseActivite extends BaseObject implements Persistent
 
             $this->collEtablissementActivites = null;
 
+            $this->collThemeActivites = null;
+
             $this->collActiviteI18ns = null;
 
             $this->collEtablissements = null;
+            $this->collThemes = null;
         } // if (deep)
     }
 
@@ -704,6 +734,26 @@ abstract class BaseActivite extends BaseObject implements Persistent
                 }
             }
 
+            if ($this->themesScheduledForDeletion !== null) {
+                if (!$this->themesScheduledForDeletion->isEmpty()) {
+                    $pks = array();
+                    $pk = $this->getPrimaryKey();
+                    foreach ($this->themesScheduledForDeletion->getPrimaryKeys(false) as $remotePk) {
+                        $pks[] = array($remotePk, $pk);
+                    }
+                    ThemeActiviteQuery::create()
+                        ->filterByPrimaryKeys($pks)
+                        ->delete($con);
+                    $this->themesScheduledForDeletion = null;
+                }
+
+                foreach ($this->getThemes() as $theme) {
+                    if ($theme->isModified()) {
+                        $theme->save($con);
+                    }
+                }
+            }
+
             if ($this->etablissementActivitesScheduledForDeletion !== null) {
                 if (!$this->etablissementActivitesScheduledForDeletion->isEmpty()) {
                     EtablissementActiviteQuery::create()
@@ -715,6 +765,23 @@ abstract class BaseActivite extends BaseObject implements Persistent
 
             if ($this->collEtablissementActivites !== null) {
                 foreach ($this->collEtablissementActivites as $referrerFK) {
+                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
+                        $affectedRows += $referrerFK->save($con);
+                    }
+                }
+            }
+
+            if ($this->themeActivitesScheduledForDeletion !== null) {
+                if (!$this->themeActivitesScheduledForDeletion->isEmpty()) {
+                    ThemeActiviteQuery::create()
+                        ->filterByPrimaryKeys($this->themeActivitesScheduledForDeletion->getPrimaryKeys(false))
+                        ->delete($con);
+                    $this->themeActivitesScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collThemeActivites !== null) {
+                foreach ($this->collThemeActivites as $referrerFK) {
                     if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
                         $affectedRows += $referrerFK->save($con);
                     }
@@ -918,6 +985,14 @@ abstract class BaseActivite extends BaseObject implements Persistent
                     }
                 }
 
+                if ($this->collThemeActivites !== null) {
+                    foreach ($this->collThemeActivites as $referrerFK) {
+                        if (!$referrerFK->validate($columns)) {
+                            $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
+                        }
+                    }
+                }
+
                 if ($this->collActiviteI18ns !== null) {
                     foreach ($this->collActiviteI18ns as $referrerFK) {
                         if (!$referrerFK->validate($columns)) {
@@ -1018,6 +1093,9 @@ abstract class BaseActivite extends BaseObject implements Persistent
         if ($includeForeignObjects) {
             if (null !== $this->collEtablissementActivites) {
                 $result['EtablissementActivites'] = $this->collEtablissementActivites->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
+            }
+            if (null !== $this->collThemeActivites) {
+                $result['ThemeActivites'] = $this->collThemeActivites->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
             if (null !== $this->collActiviteI18ns) {
                 $result['ActiviteI18ns'] = $this->collActiviteI18ns->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
@@ -1203,6 +1281,12 @@ abstract class BaseActivite extends BaseObject implements Persistent
                 }
             }
 
+            foreach ($this->getThemeActivites() as $relObj) {
+                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
+                    $copyObj->addThemeActivite($relObj->copy($deepCopy));
+                }
+            }
+
             foreach ($this->getActiviteI18ns() as $relObj) {
                 if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
                     $copyObj->addActiviteI18n($relObj->copy($deepCopy));
@@ -1272,6 +1356,9 @@ abstract class BaseActivite extends BaseObject implements Persistent
     {
         if ('EtablissementActivite' == $relationName) {
             $this->initEtablissementActivites();
+        }
+        if ('ThemeActivite' == $relationName) {
+            $this->initThemeActivites();
         }
         if ('ActiviteI18n' == $relationName) {
             $this->initActiviteI18ns();
@@ -1516,6 +1603,246 @@ abstract class BaseActivite extends BaseObject implements Persistent
         $query->joinWith('Etablissement', $join_behavior);
 
         return $this->getEtablissementActivites($query, $con);
+    }
+
+    /**
+     * Clears out the collThemeActivites collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return Activite The current object (for fluent API support)
+     * @see        addThemeActivites()
+     */
+    public function clearThemeActivites()
+    {
+        $this->collThemeActivites = null; // important to set this to null since that means it is uninitialized
+        $this->collThemeActivitesPartial = null;
+
+        return $this;
+    }
+
+    /**
+     * reset is the collThemeActivites collection loaded partially
+     *
+     * @return void
+     */
+    public function resetPartialThemeActivites($v = true)
+    {
+        $this->collThemeActivitesPartial = $v;
+    }
+
+    /**
+     * Initializes the collThemeActivites collection.
+     *
+     * By default this just sets the collThemeActivites collection to an empty array (like clearcollThemeActivites());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @param boolean $overrideExisting If set to true, the method call initializes
+     *                                        the collection even if it is not empty
+     *
+     * @return void
+     */
+    public function initThemeActivites($overrideExisting = true)
+    {
+        if (null !== $this->collThemeActivites && !$overrideExisting) {
+            return;
+        }
+        $this->collThemeActivites = new PropelObjectCollection();
+        $this->collThemeActivites->setModel('ThemeActivite');
+    }
+
+    /**
+     * Gets an array of ThemeActivite objects which contain a foreign key that references this object.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this Activite is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @return PropelObjectCollection|ThemeActivite[] List of ThemeActivite objects
+     * @throws PropelException
+     */
+    public function getThemeActivites($criteria = null, PropelPDO $con = null)
+    {
+        $partial = $this->collThemeActivitesPartial && !$this->isNew();
+        if (null === $this->collThemeActivites || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collThemeActivites) {
+                // return empty collection
+                $this->initThemeActivites();
+            } else {
+                $collThemeActivites = ThemeActiviteQuery::create(null, $criteria)
+                    ->filterByActivite($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    if (false !== $this->collThemeActivitesPartial && count($collThemeActivites)) {
+                      $this->initThemeActivites(false);
+
+                      foreach($collThemeActivites as $obj) {
+                        if (false == $this->collThemeActivites->contains($obj)) {
+                          $this->collThemeActivites->append($obj);
+                        }
+                      }
+
+                      $this->collThemeActivitesPartial = true;
+                    }
+
+                    return $collThemeActivites;
+                }
+
+                if($partial && $this->collThemeActivites) {
+                    foreach($this->collThemeActivites as $obj) {
+                        if($obj->isNew()) {
+                            $collThemeActivites[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collThemeActivites = $collThemeActivites;
+                $this->collThemeActivitesPartial = false;
+            }
+        }
+
+        return $this->collThemeActivites;
+    }
+
+    /**
+     * Sets a collection of ThemeActivite objects related by a one-to-many relationship
+     * to the current object.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $themeActivites A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     * @return Activite The current object (for fluent API support)
+     */
+    public function setThemeActivites(PropelCollection $themeActivites, PropelPDO $con = null)
+    {
+        $this->themeActivitesScheduledForDeletion = $this->getThemeActivites(new Criteria(), $con)->diff($themeActivites);
+
+        foreach ($this->themeActivitesScheduledForDeletion as $themeActiviteRemoved) {
+            $themeActiviteRemoved->setActivite(null);
+        }
+
+        $this->collThemeActivites = null;
+        foreach ($themeActivites as $themeActivite) {
+            $this->addThemeActivite($themeActivite);
+        }
+
+        $this->collThemeActivites = $themeActivites;
+        $this->collThemeActivitesPartial = false;
+
+        return $this;
+    }
+
+    /**
+     * Returns the number of related ThemeActivite objects.
+     *
+     * @param Criteria $criteria
+     * @param boolean $distinct
+     * @param PropelPDO $con
+     * @return int             Count of related ThemeActivite objects.
+     * @throws PropelException
+     */
+    public function countThemeActivites(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        $partial = $this->collThemeActivitesPartial && !$this->isNew();
+        if (null === $this->collThemeActivites || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collThemeActivites) {
+                return 0;
+            }
+
+            if($partial && !$criteria) {
+                return count($this->getThemeActivites());
+            }
+            $query = ThemeActiviteQuery::create(null, $criteria);
+            if ($distinct) {
+                $query->distinct();
+            }
+
+            return $query
+                ->filterByActivite($this)
+                ->count($con);
+        }
+
+        return count($this->collThemeActivites);
+    }
+
+    /**
+     * Method called to associate a ThemeActivite object to this object
+     * through the ThemeActivite foreign key attribute.
+     *
+     * @param    ThemeActivite $l ThemeActivite
+     * @return Activite The current object (for fluent API support)
+     */
+    public function addThemeActivite(ThemeActivite $l)
+    {
+        if ($this->collThemeActivites === null) {
+            $this->initThemeActivites();
+            $this->collThemeActivitesPartial = true;
+        }
+        if (!in_array($l, $this->collThemeActivites->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
+            $this->doAddThemeActivite($l);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	ThemeActivite $themeActivite The themeActivite object to add.
+     */
+    protected function doAddThemeActivite($themeActivite)
+    {
+        $this->collThemeActivites[]= $themeActivite;
+        $themeActivite->setActivite($this);
+    }
+
+    /**
+     * @param	ThemeActivite $themeActivite The themeActivite object to remove.
+     * @return Activite The current object (for fluent API support)
+     */
+    public function removeThemeActivite($themeActivite)
+    {
+        if ($this->getThemeActivites()->contains($themeActivite)) {
+            $this->collThemeActivites->remove($this->collThemeActivites->search($themeActivite));
+            if (null === $this->themeActivitesScheduledForDeletion) {
+                $this->themeActivitesScheduledForDeletion = clone $this->collThemeActivites;
+                $this->themeActivitesScheduledForDeletion->clear();
+            }
+            $this->themeActivitesScheduledForDeletion[]= $themeActivite;
+            $themeActivite->setActivite(null);
+        }
+
+        return $this;
+    }
+
+
+    /**
+     * If this collection has already been initialized with
+     * an identical criteria, it returns the collection.
+     * Otherwise if this Activite is new, it will return
+     * an empty collection; or if this Activite has previously
+     * been saved, it will retrieve related ThemeActivites from storage.
+     *
+     * This method is protected by default in order to keep the public
+     * api reasonable.  You can provide public methods for those you
+     * actually need in Activite.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @param string $join_behavior optional join type to use (defaults to Criteria::LEFT_JOIN)
+     * @return PropelObjectCollection|ThemeActivite[] List of ThemeActivite objects
+     */
+    public function getThemeActivitesJoinTheme($criteria = null, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    {
+        $query = ThemeActiviteQuery::create(null, $criteria);
+        $query->joinWith('Theme', $join_behavior);
+
+        return $this->getThemeActivites($query, $con);
     }
 
     /**
@@ -1915,6 +2242,183 @@ abstract class BaseActivite extends BaseObject implements Persistent
     }
 
     /**
+     * Clears out the collThemes collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return Activite The current object (for fluent API support)
+     * @see        addThemes()
+     */
+    public function clearThemes()
+    {
+        $this->collThemes = null; // important to set this to null since that means it is uninitialized
+        $this->collThemesPartial = null;
+
+        return $this;
+    }
+
+    /**
+     * Initializes the collThemes collection.
+     *
+     * By default this just sets the collThemes collection to an empty collection (like clearThemes());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @return void
+     */
+    public function initThemes()
+    {
+        $this->collThemes = new PropelObjectCollection();
+        $this->collThemes->setModel('Theme');
+    }
+
+    /**
+     * Gets a collection of Theme objects related by a many-to-many relationship
+     * to the current object by way of the theme_activite cross-reference table.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this Activite is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria Optional query object to filter the query
+     * @param PropelPDO $con Optional connection object
+     *
+     * @return PropelObjectCollection|Theme[] List of Theme objects
+     */
+    public function getThemes($criteria = null, PropelPDO $con = null)
+    {
+        if (null === $this->collThemes || null !== $criteria) {
+            if ($this->isNew() && null === $this->collThemes) {
+                // return empty collection
+                $this->initThemes();
+            } else {
+                $collThemes = ThemeQuery::create(null, $criteria)
+                    ->filterByActivite($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    return $collThemes;
+                }
+                $this->collThemes = $collThemes;
+            }
+        }
+
+        return $this->collThemes;
+    }
+
+    /**
+     * Sets a collection of Theme objects related by a many-to-many relationship
+     * to the current object by way of the theme_activite cross-reference table.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $themes A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     * @return Activite The current object (for fluent API support)
+     */
+    public function setThemes(PropelCollection $themes, PropelPDO $con = null)
+    {
+        $this->clearThemes();
+        $currentThemes = $this->getThemes();
+
+        $this->themesScheduledForDeletion = $currentThemes->diff($themes);
+
+        foreach ($themes as $theme) {
+            if (!$currentThemes->contains($theme)) {
+                $this->doAddTheme($theme);
+            }
+        }
+
+        $this->collThemes = $themes;
+
+        return $this;
+    }
+
+    /**
+     * Gets the number of Theme objects related by a many-to-many relationship
+     * to the current object by way of the theme_activite cross-reference table.
+     *
+     * @param Criteria $criteria Optional query object to filter the query
+     * @param boolean $distinct Set to true to force count distinct
+     * @param PropelPDO $con Optional connection object
+     *
+     * @return int the number of related Theme objects
+     */
+    public function countThemes($criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        if (null === $this->collThemes || null !== $criteria) {
+            if ($this->isNew() && null === $this->collThemes) {
+                return 0;
+            } else {
+                $query = ThemeQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
+
+                return $query
+                    ->filterByActivite($this)
+                    ->count($con);
+            }
+        } else {
+            return count($this->collThemes);
+        }
+    }
+
+    /**
+     * Associate a Theme object to this object
+     * through the theme_activite cross reference table.
+     *
+     * @param  Theme $theme The ThemeActivite object to relate
+     * @return Activite The current object (for fluent API support)
+     */
+    public function addTheme(Theme $theme)
+    {
+        if ($this->collThemes === null) {
+            $this->initThemes();
+        }
+        if (!$this->collThemes->contains($theme)) { // only add it if the **same** object is not already associated
+            $this->doAddTheme($theme);
+
+            $this->collThemes[]= $theme;
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	Theme $theme The theme object to add.
+     */
+    protected function doAddTheme($theme)
+    {
+        $themeActivite = new ThemeActivite();
+        $themeActivite->setTheme($theme);
+        $this->addThemeActivite($themeActivite);
+    }
+
+    /**
+     * Remove a Theme object to this object
+     * through the theme_activite cross reference table.
+     *
+     * @param Theme $theme The ThemeActivite object to relate
+     * @return Activite The current object (for fluent API support)
+     */
+    public function removeTheme(Theme $theme)
+    {
+        if ($this->getThemes()->contains($theme)) {
+            $this->collThemes->remove($this->collThemes->search($theme));
+            if (null === $this->themesScheduledForDeletion) {
+                $this->themesScheduledForDeletion = clone $this->collThemes;
+                $this->themesScheduledForDeletion->clear();
+            }
+            $this->themesScheduledForDeletion[]= $theme;
+        }
+
+        return $this;
+    }
+
+    /**
      * Clears the current object and sets all attributes to their default values
      */
     public function clear()
@@ -1951,6 +2455,11 @@ abstract class BaseActivite extends BaseObject implements Persistent
                     $o->clearAllReferences($deep);
                 }
             }
+            if ($this->collThemeActivites) {
+                foreach ($this->collThemeActivites as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
             if ($this->collActiviteI18ns) {
                 foreach ($this->collActiviteI18ns as $o) {
                     $o->clearAllReferences($deep);
@@ -1958,6 +2467,11 @@ abstract class BaseActivite extends BaseObject implements Persistent
             }
             if ($this->collEtablissements) {
                 foreach ($this->collEtablissements as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
+            if ($this->collThemes) {
+                foreach ($this->collThemes as $o) {
                     $o->clearAllReferences($deep);
                 }
             }
@@ -1971,6 +2485,10 @@ abstract class BaseActivite extends BaseObject implements Persistent
             $this->collEtablissementActivites->clearIterator();
         }
         $this->collEtablissementActivites = null;
+        if ($this->collThemeActivites instanceof PropelCollection) {
+            $this->collThemeActivites->clearIterator();
+        }
+        $this->collThemeActivites = null;
         if ($this->collActiviteI18ns instanceof PropelCollection) {
             $this->collActiviteI18ns->clearIterator();
         }
@@ -1979,6 +2497,10 @@ abstract class BaseActivite extends BaseObject implements Persistent
             $this->collEtablissements->clearIterator();
         }
         $this->collEtablissements = null;
+        if ($this->collThemes instanceof PropelCollection) {
+            $this->collThemes->clearIterator();
+        }
+        $this->collThemes = null;
     }
 
     /**

@@ -44,7 +44,7 @@
     2_fr:
         Id: 2
         Locale: fr
-        Titre: "Plus de destinations\_!"
+        Titre: "+ de destinations\_!"
         Accroche: "Découvrez plus de 50 nouveaux campings\_!"
         Lien: '#'
         TitreLien: Réserver
@@ -72,12 +72,40 @@
     3_fr:
         Id: 3
         Locale: fr
-        Titre: 'Vos vacances d’été'
+        Titre: 'Vacances d’été'
         Accroche: 'Choisissez dès maintenant votre camping !'
         Lien: '#'
         TitreLien: Réserver
     3_nl:
         Id: 3
+        Locale: nl
+        Titre: null
+        Accroche: null
+        Lien: null
+        TitreLien: null
+    4_de:
+        Id: 4
+        Locale: de
+        Titre: null
+        Accroche: null
+        Lien: null
+        TitreLien: null
+    4_en:
+        Id: 4
+        Locale: en
+        Titre: null
+        Accroche: null
+        Lien: null
+        TitreLien: null
+    4_fr:
+        Id: 4
+        Locale: fr
+        Titre: 'Nouveau site !'
+        Accroche: 'Découvrez et voyagez ...'
+        Lien: null
+        TitreLien: null
+    4_nl:
+        Id: 4
         Locale: nl
         Titre: null
         Accroche: null

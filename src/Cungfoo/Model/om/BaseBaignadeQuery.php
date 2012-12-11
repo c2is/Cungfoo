@@ -18,6 +18,8 @@ use Cungfoo\Model\BaignadePeer;
 use Cungfoo\Model\BaignadeQuery;
 use Cungfoo\Model\Etablissement;
 use Cungfoo\Model\EtablissementBaignade;
+use Cungfoo\Model\Theme;
+use Cungfoo\Model\ThemeBaignade;
 
 /**
  * Base class that represents a query for the 'baignade' table.
@@ -43,6 +45,10 @@ use Cungfoo\Model\EtablissementBaignade;
  * @method BaignadeQuery leftJoinEtablissementBaignade($relationAlias = null) Adds a LEFT JOIN clause to the query using the EtablissementBaignade relation
  * @method BaignadeQuery rightJoinEtablissementBaignade($relationAlias = null) Adds a RIGHT JOIN clause to the query using the EtablissementBaignade relation
  * @method BaignadeQuery innerJoinEtablissementBaignade($relationAlias = null) Adds a INNER JOIN clause to the query using the EtablissementBaignade relation
+ *
+ * @method BaignadeQuery leftJoinThemeBaignade($relationAlias = null) Adds a LEFT JOIN clause to the query using the ThemeBaignade relation
+ * @method BaignadeQuery rightJoinThemeBaignade($relationAlias = null) Adds a RIGHT JOIN clause to the query using the ThemeBaignade relation
+ * @method BaignadeQuery innerJoinThemeBaignade($relationAlias = null) Adds a INNER JOIN clause to the query using the ThemeBaignade relation
  *
  * @method BaignadeQuery leftJoinBaignadeI18n($relationAlias = null) Adds a LEFT JOIN clause to the query using the BaignadeI18n relation
  * @method BaignadeQuery rightJoinBaignadeI18n($relationAlias = null) Adds a RIGHT JOIN clause to the query using the BaignadeI18n relation
@@ -497,6 +503,80 @@ abstract class BaseBaignadeQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query by a related ThemeBaignade object
+     *
+     * @param   ThemeBaignade|PropelObjectCollection $themeBaignade  the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   BaignadeQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByThemeBaignade($themeBaignade, $comparison = null)
+    {
+        if ($themeBaignade instanceof ThemeBaignade) {
+            return $this
+                ->addUsingAlias(BaignadePeer::ID, $themeBaignade->getBaignadeId(), $comparison);
+        } elseif ($themeBaignade instanceof PropelObjectCollection) {
+            return $this
+                ->useThemeBaignadeQuery()
+                ->filterByPrimaryKeys($themeBaignade->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByThemeBaignade() only accepts arguments of type ThemeBaignade or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the ThemeBaignade relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return BaignadeQuery The current query, for fluid interface
+     */
+    public function joinThemeBaignade($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('ThemeBaignade');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'ThemeBaignade');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the ThemeBaignade relation ThemeBaignade object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\ThemeBaignadeQuery A secondary query class using the current class as primary query
+     */
+    public function useThemeBaignadeQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        return $this
+            ->joinThemeBaignade($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'ThemeBaignade', '\Cungfoo\Model\ThemeBaignadeQuery');
+    }
+
+    /**
      * Filter the query by a related BaignadeI18n object
      *
      * @param   BaignadeI18n|PropelObjectCollection $baignadeI18n  the related object to use as filter
@@ -584,6 +664,23 @@ abstract class BaseBaignadeQuery extends ModelCriteria
         return $this
             ->useEtablissementBaignadeQuery()
             ->filterByEtablissement($etablissement, $comparison)
+            ->endUse();
+    }
+
+    /**
+     * Filter the query by a related Theme object
+     * using the theme_baignade table as cross reference
+     *
+     * @param   Theme $theme the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   BaignadeQuery The current query, for fluid interface
+     */
+    public function filterByTheme($theme, $comparison = Criteria::EQUAL)
+    {
+        return $this
+            ->useThemeBaignadeQuery()
+            ->filterByTheme($theme, $comparison)
             ->endUse();
     }
 

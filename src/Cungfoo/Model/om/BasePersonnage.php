@@ -24,6 +24,10 @@ use Cungfoo\Model\PersonnageI18n;
 use Cungfoo\Model\PersonnageI18nQuery;
 use Cungfoo\Model\PersonnagePeer;
 use Cungfoo\Model\PersonnageQuery;
+use Cungfoo\Model\Theme;
+use Cungfoo\Model\ThemePersonnage;
+use Cungfoo\Model\ThemePersonnageQuery;
+use Cungfoo\Model\ThemeQuery;
 
 /**
  * Base class that represents a row from the 'personnage' table.
@@ -108,10 +112,21 @@ abstract class BasePersonnage extends BaseObject implements Persistent
     protected $collAvantagesPartial;
 
     /**
+     * @var        PropelObjectCollection|ThemePersonnage[] Collection to store aggregation of ThemePersonnage objects.
+     */
+    protected $collThemePersonnages;
+    protected $collThemePersonnagesPartial;
+
+    /**
      * @var        PropelObjectCollection|PersonnageI18n[] Collection to store aggregation of PersonnageI18n objects.
      */
     protected $collPersonnageI18ns;
     protected $collPersonnageI18nsPartial;
+
+    /**
+     * @var        PropelObjectCollection|Theme[] Collection to store aggregation of Theme objects.
+     */
+    protected $collThemes;
 
     /**
      * Flag to prevent endless save loop, if this object is referenced
@@ -145,7 +160,19 @@ abstract class BasePersonnage extends BaseObject implements Persistent
      * An array of objects scheduled for deletion.
      * @var		PropelObjectCollection
      */
+    protected $themesScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
     protected $avantagesScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
+    protected $themePersonnagesScheduledForDeletion = null;
 
     /**
      * An array of objects scheduled for deletion.
@@ -586,8 +613,11 @@ abstract class BasePersonnage extends BaseObject implements Persistent
             $this->aEtablissement = null;
             $this->collAvantages = null;
 
+            $this->collThemePersonnages = null;
+
             $this->collPersonnageI18ns = null;
 
+            $this->collThemes = null;
         } // if (deep)
     }
 
@@ -735,6 +765,26 @@ abstract class BasePersonnage extends BaseObject implements Persistent
                 $this->resetModified();
             }
 
+            if ($this->themesScheduledForDeletion !== null) {
+                if (!$this->themesScheduledForDeletion->isEmpty()) {
+                    $pks = array();
+                    $pk = $this->getPrimaryKey();
+                    foreach ($this->themesScheduledForDeletion->getPrimaryKeys(false) as $remotePk) {
+                        $pks[] = array($remotePk, $pk);
+                    }
+                    ThemePersonnageQuery::create()
+                        ->filterByPrimaryKeys($pks)
+                        ->delete($con);
+                    $this->themesScheduledForDeletion = null;
+                }
+
+                foreach ($this->getThemes() as $theme) {
+                    if ($theme->isModified()) {
+                        $theme->save($con);
+                    }
+                }
+            }
+
             if ($this->avantagesScheduledForDeletion !== null) {
                 if (!$this->avantagesScheduledForDeletion->isEmpty()) {
                     foreach ($this->avantagesScheduledForDeletion as $avantage) {
@@ -747,6 +797,23 @@ abstract class BasePersonnage extends BaseObject implements Persistent
 
             if ($this->collAvantages !== null) {
                 foreach ($this->collAvantages as $referrerFK) {
+                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
+                        $affectedRows += $referrerFK->save($con);
+                    }
+                }
+            }
+
+            if ($this->themePersonnagesScheduledForDeletion !== null) {
+                if (!$this->themePersonnagesScheduledForDeletion->isEmpty()) {
+                    ThemePersonnageQuery::create()
+                        ->filterByPrimaryKeys($this->themePersonnagesScheduledForDeletion->getPrimaryKeys(false))
+                        ->delete($con);
+                    $this->themePersonnagesScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collThemePersonnages !== null) {
+                foreach ($this->collThemePersonnages as $referrerFK) {
                     if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
                         $affectedRows += $referrerFK->save($con);
                     }
@@ -968,6 +1035,14 @@ abstract class BasePersonnage extends BaseObject implements Persistent
                     }
                 }
 
+                if ($this->collThemePersonnages !== null) {
+                    foreach ($this->collThemePersonnages as $referrerFK) {
+                        if (!$referrerFK->validate($columns)) {
+                            $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
+                        }
+                    }
+                }
+
                 if ($this->collPersonnageI18ns !== null) {
                     foreach ($this->collPersonnageI18ns as $referrerFK) {
                         if (!$referrerFK->validate($columns)) {
@@ -1075,6 +1150,9 @@ abstract class BasePersonnage extends BaseObject implements Persistent
             }
             if (null !== $this->collAvantages) {
                 $result['Avantages'] = $this->collAvantages->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
+            }
+            if (null !== $this->collThemePersonnages) {
+                $result['ThemePersonnages'] = $this->collThemePersonnages->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
             if (null !== $this->collPersonnageI18ns) {
                 $result['PersonnageI18ns'] = $this->collPersonnageI18ns->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
@@ -1266,6 +1344,12 @@ abstract class BasePersonnage extends BaseObject implements Persistent
                 }
             }
 
+            foreach ($this->getThemePersonnages() as $relObj) {
+                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
+                    $copyObj->addThemePersonnage($relObj->copy($deepCopy));
+                }
+            }
+
             foreach ($this->getPersonnageI18ns() as $relObj) {
                 if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
                     $copyObj->addPersonnageI18n($relObj->copy($deepCopy));
@@ -1387,6 +1471,9 @@ abstract class BasePersonnage extends BaseObject implements Persistent
     {
         if ('Avantage' == $relationName) {
             $this->initAvantages();
+        }
+        if ('ThemePersonnage' == $relationName) {
+            $this->initThemePersonnages();
         }
         if ('PersonnageI18n' == $relationName) {
             $this->initPersonnageI18ns();
@@ -1609,6 +1696,246 @@ abstract class BasePersonnage extends BaseObject implements Persistent
     }
 
     /**
+     * Clears out the collThemePersonnages collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return Personnage The current object (for fluent API support)
+     * @see        addThemePersonnages()
+     */
+    public function clearThemePersonnages()
+    {
+        $this->collThemePersonnages = null; // important to set this to null since that means it is uninitialized
+        $this->collThemePersonnagesPartial = null;
+
+        return $this;
+    }
+
+    /**
+     * reset is the collThemePersonnages collection loaded partially
+     *
+     * @return void
+     */
+    public function resetPartialThemePersonnages($v = true)
+    {
+        $this->collThemePersonnagesPartial = $v;
+    }
+
+    /**
+     * Initializes the collThemePersonnages collection.
+     *
+     * By default this just sets the collThemePersonnages collection to an empty array (like clearcollThemePersonnages());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @param boolean $overrideExisting If set to true, the method call initializes
+     *                                        the collection even if it is not empty
+     *
+     * @return void
+     */
+    public function initThemePersonnages($overrideExisting = true)
+    {
+        if (null !== $this->collThemePersonnages && !$overrideExisting) {
+            return;
+        }
+        $this->collThemePersonnages = new PropelObjectCollection();
+        $this->collThemePersonnages->setModel('ThemePersonnage');
+    }
+
+    /**
+     * Gets an array of ThemePersonnage objects which contain a foreign key that references this object.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this Personnage is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @return PropelObjectCollection|ThemePersonnage[] List of ThemePersonnage objects
+     * @throws PropelException
+     */
+    public function getThemePersonnages($criteria = null, PropelPDO $con = null)
+    {
+        $partial = $this->collThemePersonnagesPartial && !$this->isNew();
+        if (null === $this->collThemePersonnages || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collThemePersonnages) {
+                // return empty collection
+                $this->initThemePersonnages();
+            } else {
+                $collThemePersonnages = ThemePersonnageQuery::create(null, $criteria)
+                    ->filterByPersonnage($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    if (false !== $this->collThemePersonnagesPartial && count($collThemePersonnages)) {
+                      $this->initThemePersonnages(false);
+
+                      foreach($collThemePersonnages as $obj) {
+                        if (false == $this->collThemePersonnages->contains($obj)) {
+                          $this->collThemePersonnages->append($obj);
+                        }
+                      }
+
+                      $this->collThemePersonnagesPartial = true;
+                    }
+
+                    return $collThemePersonnages;
+                }
+
+                if($partial && $this->collThemePersonnages) {
+                    foreach($this->collThemePersonnages as $obj) {
+                        if($obj->isNew()) {
+                            $collThemePersonnages[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collThemePersonnages = $collThemePersonnages;
+                $this->collThemePersonnagesPartial = false;
+            }
+        }
+
+        return $this->collThemePersonnages;
+    }
+
+    /**
+     * Sets a collection of ThemePersonnage objects related by a one-to-many relationship
+     * to the current object.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $themePersonnages A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     * @return Personnage The current object (for fluent API support)
+     */
+    public function setThemePersonnages(PropelCollection $themePersonnages, PropelPDO $con = null)
+    {
+        $this->themePersonnagesScheduledForDeletion = $this->getThemePersonnages(new Criteria(), $con)->diff($themePersonnages);
+
+        foreach ($this->themePersonnagesScheduledForDeletion as $themePersonnageRemoved) {
+            $themePersonnageRemoved->setPersonnage(null);
+        }
+
+        $this->collThemePersonnages = null;
+        foreach ($themePersonnages as $themePersonnage) {
+            $this->addThemePersonnage($themePersonnage);
+        }
+
+        $this->collThemePersonnages = $themePersonnages;
+        $this->collThemePersonnagesPartial = false;
+
+        return $this;
+    }
+
+    /**
+     * Returns the number of related ThemePersonnage objects.
+     *
+     * @param Criteria $criteria
+     * @param boolean $distinct
+     * @param PropelPDO $con
+     * @return int             Count of related ThemePersonnage objects.
+     * @throws PropelException
+     */
+    public function countThemePersonnages(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        $partial = $this->collThemePersonnagesPartial && !$this->isNew();
+        if (null === $this->collThemePersonnages || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collThemePersonnages) {
+                return 0;
+            }
+
+            if($partial && !$criteria) {
+                return count($this->getThemePersonnages());
+            }
+            $query = ThemePersonnageQuery::create(null, $criteria);
+            if ($distinct) {
+                $query->distinct();
+            }
+
+            return $query
+                ->filterByPersonnage($this)
+                ->count($con);
+        }
+
+        return count($this->collThemePersonnages);
+    }
+
+    /**
+     * Method called to associate a ThemePersonnage object to this object
+     * through the ThemePersonnage foreign key attribute.
+     *
+     * @param    ThemePersonnage $l ThemePersonnage
+     * @return Personnage The current object (for fluent API support)
+     */
+    public function addThemePersonnage(ThemePersonnage $l)
+    {
+        if ($this->collThemePersonnages === null) {
+            $this->initThemePersonnages();
+            $this->collThemePersonnagesPartial = true;
+        }
+        if (!in_array($l, $this->collThemePersonnages->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
+            $this->doAddThemePersonnage($l);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	ThemePersonnage $themePersonnage The themePersonnage object to add.
+     */
+    protected function doAddThemePersonnage($themePersonnage)
+    {
+        $this->collThemePersonnages[]= $themePersonnage;
+        $themePersonnage->setPersonnage($this);
+    }
+
+    /**
+     * @param	ThemePersonnage $themePersonnage The themePersonnage object to remove.
+     * @return Personnage The current object (for fluent API support)
+     */
+    public function removeThemePersonnage($themePersonnage)
+    {
+        if ($this->getThemePersonnages()->contains($themePersonnage)) {
+            $this->collThemePersonnages->remove($this->collThemePersonnages->search($themePersonnage));
+            if (null === $this->themePersonnagesScheduledForDeletion) {
+                $this->themePersonnagesScheduledForDeletion = clone $this->collThemePersonnages;
+                $this->themePersonnagesScheduledForDeletion->clear();
+            }
+            $this->themePersonnagesScheduledForDeletion[]= $themePersonnage;
+            $themePersonnage->setPersonnage(null);
+        }
+
+        return $this;
+    }
+
+
+    /**
+     * If this collection has already been initialized with
+     * an identical criteria, it returns the collection.
+     * Otherwise if this Personnage is new, it will return
+     * an empty collection; or if this Personnage has previously
+     * been saved, it will retrieve related ThemePersonnages from storage.
+     *
+     * This method is protected by default in order to keep the public
+     * api reasonable.  You can provide public methods for those you
+     * actually need in Personnage.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @param string $join_behavior optional join type to use (defaults to Criteria::LEFT_JOIN)
+     * @return PropelObjectCollection|ThemePersonnage[] List of ThemePersonnage objects
+     */
+    public function getThemePersonnagesJoinTheme($criteria = null, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    {
+        $query = ThemePersonnageQuery::create(null, $criteria);
+        $query->joinWith('Theme', $join_behavior);
+
+        return $this->getThemePersonnages($query, $con);
+    }
+
+    /**
      * Clears out the collPersonnageI18ns collection
      *
      * This does not modify the database; however, it will remove any associated objects, causing
@@ -1828,6 +2155,183 @@ abstract class BasePersonnage extends BaseObject implements Persistent
     }
 
     /**
+     * Clears out the collThemes collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return Personnage The current object (for fluent API support)
+     * @see        addThemes()
+     */
+    public function clearThemes()
+    {
+        $this->collThemes = null; // important to set this to null since that means it is uninitialized
+        $this->collThemesPartial = null;
+
+        return $this;
+    }
+
+    /**
+     * Initializes the collThemes collection.
+     *
+     * By default this just sets the collThemes collection to an empty collection (like clearThemes());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @return void
+     */
+    public function initThemes()
+    {
+        $this->collThemes = new PropelObjectCollection();
+        $this->collThemes->setModel('Theme');
+    }
+
+    /**
+     * Gets a collection of Theme objects related by a many-to-many relationship
+     * to the current object by way of the theme_personnage cross-reference table.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this Personnage is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria Optional query object to filter the query
+     * @param PropelPDO $con Optional connection object
+     *
+     * @return PropelObjectCollection|Theme[] List of Theme objects
+     */
+    public function getThemes($criteria = null, PropelPDO $con = null)
+    {
+        if (null === $this->collThemes || null !== $criteria) {
+            if ($this->isNew() && null === $this->collThemes) {
+                // return empty collection
+                $this->initThemes();
+            } else {
+                $collThemes = ThemeQuery::create(null, $criteria)
+                    ->filterByPersonnage($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    return $collThemes;
+                }
+                $this->collThemes = $collThemes;
+            }
+        }
+
+        return $this->collThemes;
+    }
+
+    /**
+     * Sets a collection of Theme objects related by a many-to-many relationship
+     * to the current object by way of the theme_personnage cross-reference table.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $themes A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     * @return Personnage The current object (for fluent API support)
+     */
+    public function setThemes(PropelCollection $themes, PropelPDO $con = null)
+    {
+        $this->clearThemes();
+        $currentThemes = $this->getThemes();
+
+        $this->themesScheduledForDeletion = $currentThemes->diff($themes);
+
+        foreach ($themes as $theme) {
+            if (!$currentThemes->contains($theme)) {
+                $this->doAddTheme($theme);
+            }
+        }
+
+        $this->collThemes = $themes;
+
+        return $this;
+    }
+
+    /**
+     * Gets the number of Theme objects related by a many-to-many relationship
+     * to the current object by way of the theme_personnage cross-reference table.
+     *
+     * @param Criteria $criteria Optional query object to filter the query
+     * @param boolean $distinct Set to true to force count distinct
+     * @param PropelPDO $con Optional connection object
+     *
+     * @return int the number of related Theme objects
+     */
+    public function countThemes($criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        if (null === $this->collThemes || null !== $criteria) {
+            if ($this->isNew() && null === $this->collThemes) {
+                return 0;
+            } else {
+                $query = ThemeQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
+
+                return $query
+                    ->filterByPersonnage($this)
+                    ->count($con);
+            }
+        } else {
+            return count($this->collThemes);
+        }
+    }
+
+    /**
+     * Associate a Theme object to this object
+     * through the theme_personnage cross reference table.
+     *
+     * @param  Theme $theme The ThemePersonnage object to relate
+     * @return Personnage The current object (for fluent API support)
+     */
+    public function addTheme(Theme $theme)
+    {
+        if ($this->collThemes === null) {
+            $this->initThemes();
+        }
+        if (!$this->collThemes->contains($theme)) { // only add it if the **same** object is not already associated
+            $this->doAddTheme($theme);
+
+            $this->collThemes[]= $theme;
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	Theme $theme The theme object to add.
+     */
+    protected function doAddTheme($theme)
+    {
+        $themePersonnage = new ThemePersonnage();
+        $themePersonnage->setTheme($theme);
+        $this->addThemePersonnage($themePersonnage);
+    }
+
+    /**
+     * Remove a Theme object to this object
+     * through the theme_personnage cross reference table.
+     *
+     * @param Theme $theme The ThemePersonnage object to relate
+     * @return Personnage The current object (for fluent API support)
+     */
+    public function removeTheme(Theme $theme)
+    {
+        if ($this->getThemes()->contains($theme)) {
+            $this->collThemes->remove($this->collThemes->search($theme));
+            if (null === $this->themesScheduledForDeletion) {
+                $this->themesScheduledForDeletion = clone $this->collThemes;
+                $this->themesScheduledForDeletion->clear();
+            }
+            $this->themesScheduledForDeletion[]= $theme;
+        }
+
+        return $this;
+    }
+
+    /**
      * Clears the current object and sets all attributes to their default values
      */
     public function clear()
@@ -1865,8 +2369,18 @@ abstract class BasePersonnage extends BaseObject implements Persistent
                     $o->clearAllReferences($deep);
                 }
             }
+            if ($this->collThemePersonnages) {
+                foreach ($this->collThemePersonnages as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
             if ($this->collPersonnageI18ns) {
                 foreach ($this->collPersonnageI18ns as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
+            if ($this->collThemes) {
+                foreach ($this->collThemes as $o) {
                     $o->clearAllReferences($deep);
                 }
             }
@@ -1880,10 +2394,18 @@ abstract class BasePersonnage extends BaseObject implements Persistent
             $this->collAvantages->clearIterator();
         }
         $this->collAvantages = null;
+        if ($this->collThemePersonnages instanceof PropelCollection) {
+            $this->collThemePersonnages->clearIterator();
+        }
+        $this->collThemePersonnages = null;
         if ($this->collPersonnageI18ns instanceof PropelCollection) {
             $this->collPersonnageI18ns->clearIterator();
         }
         $this->collPersonnageI18ns = null;
+        if ($this->collThemes instanceof PropelCollection) {
+            $this->collThemes->clearIterator();
+        }
+        $this->collThemes = null;
         $this->aEtablissement = null;
     }
 

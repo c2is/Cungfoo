@@ -226,7 +226,8 @@ class DestinationController implements ControllerProviderInterface
             'list'              => $listContent,
             'firstEtab'         => $firstEtab,
             'searchForm'        => $searchEngine->getView(),
-            'imagesTitle'       => $app->trans('destination.images_region_title'),
+            'imagesTitle'       => $app->trans('destination.images_' . strtolower($destination) . '_title'),
+            'title'             => $app->trans('destination.' . strtolower($destination) . '_title', array('%item%' => $item->getName())),
         ));
     }
 
@@ -281,11 +282,12 @@ class DestinationController implements ControllerProviderInterface
             'events'                  => $events,
             'resalysParameters'       => $resalysParameters,
             'historyBack'             => $request->headers->get('referer'),
+            'hasBaignade'              => $camping->getEtablissementBaignades(),
             'referer'                 => $app['url_generator']->generate($request->get('_route'), array(
-                'pays' => $camping->getPays()->getSlug(),
-                'region' => $camping->getRegion()->getSlug(),
-                'ville' => $camping->getVille()->getSlug(),
-                'camping' => $camping->getSlug()
+                'pays'      => $camping->getPays()->getSlug(),
+                'region'    => $camping->getRegion()->getSlug(),
+                'ville'     => $camping->getVille()->getSlug(),
+                'camping'   => $camping->getSlug()
             ), true)
 
         ));
