@@ -48,7 +48,7 @@
 {% block bottomLeftColumn %}
 
     {# Bloc "Notre sélection de campings" #}
-    <h3>{{ "destination.campings_selection_title" | trans }}</h3>
+    <h2>{{ "destination.campings_selection_title" | trans }}</h2>
     {% include 'Listing/_listing.twig' %}
 
 {% endblock %}
@@ -96,8 +96,8 @@
 {% if firstEtab %}
 <div id="destiMapContener" class="clear">
     {# Bloc GMap #}
-    <span class="h3-like">{{ "listing_destination.campings_map_title" | trans }}<br>
-    {{ "listing_destination.campings_map_prefixe_subtitle" | trans }} {{ item.name }}</span>
+    <h2><span class="h3-like">{{ "listing_destination.campings_map_title" | trans }}<br>
+    {{ "listing_destination.campings_map_prefixe_subtitle" | trans }} {{ item.name }}</span></h2>
     <div id="destiMap" class="gmap" style="width:908px;height:330px;">
         <script>
             function destiInit() {

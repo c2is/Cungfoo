@@ -3,7 +3,8 @@ seo:
         default: "Location mobil home Espagne, France, Italie"
         pays: "Camping %pays% pas cher"
         region: "Location mobil home %region% pas cher, camping %region%"
-        camping: "Camping %nom%, camping %ville% pas cher avec piscine"
+        camping: "Camping %nom%, camping %ville% pas cher"
+        camping_suffix: " avec piscine"
         dernieres_minutes: "Camping derniere disponibilité, location mobil home derniere disponibilité"
         dispo: "Résultat de recherche location camping, mobil home"
         couloir: "Espace de réservation"
@@ -31,6 +32,7 @@ destination.images_ville_title: La ville en image
 destination.pays_title: Camping en %item% pas cher
 destination.region_title: Location mobil home %item% pas cher en camping 
 destination.ville_title: Camping à %item% pas cher
+destination.camping_title: Camping %ville% pas cher
 destination.retour_bottom: Retour à la liste
 
 listing_destination.campings_map_title: Campings Vacances Directes

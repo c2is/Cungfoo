@@ -282,11 +282,12 @@ class DestinationController implements ControllerProviderInterface
             'events'                  => $events,
             'resalysParameters'       => $resalysParameters,
             'historyBack'             => $request->headers->get('referer'),
+            'hasBaignade'              => $camping->getEtablissementBaignades(),
             'referer'                 => $app['url_generator']->generate($request->get('_route'), array(
-                'pays' => $camping->getPays()->getSlug(),
-                'region' => $camping->getRegion()->getSlug(),
-                'ville' => $camping->getVille()->getSlug(),
-                'camping' => $camping->getSlug()
+                'pays'      => $camping->getPays()->getSlug(),
+                'region'    => $camping->getRegion()->getSlug(),
+                'ville'     => $camping->getVille()->getSlug(),
+                'camping'   => $camping->getSlug()
             ), true)
 
         ));
