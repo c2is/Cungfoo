@@ -1357,18 +1357,6 @@ footer {
   display: block;
   float: left;
 }
-#header #catchline {
-  color: #ffffff;
-  font: bold 24px/24px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
-  text-transform: uppercase;
-  text-align: center;
-  margin: 75px 30px 15px;
-  float: left;
-  width: 300px;
-}
-#header #catchline span {
-  text-align: left;
-}
 #header #headerRight {
   float: right;
 }
@@ -1376,11 +1364,9 @@ footer {
   width: 256px;
   height: 60px;
   background: url("../../images/vacancesdirectes/common/ui/phone-bg.png") no-repeat 0px 0px transparent;
-  float: right;
   padding: 5px 0px 15px 10px;
-  position: absolute;
-  bottom: 0;
-  right: 0;
+  float: right;
+  margin: 10px 0;
   z-index: 0;
 }
 #header #telephone span {
@@ -2964,6 +2950,8 @@ ul.newList.optGroup li.optGroup-like a {
 
   /* HOME */
 
+  /* header */
+
   /* slider */
 
 }
@@ -2977,8 +2965,34 @@ ul.newList.optGroup li.optGroup-like a {
 .home .element iframe {
   margin: 5px 0 0 10px;
 }
+.home #wrap {
+  padding: 0 0 15px;
+}
 .home #header {
   margin-bottom: 261px;
+}
+.home #header #catchline {
+  color: #ffffff;
+  font: bold 24px/24px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  text-align: right;
+  margin: 75px 30px 15px;
+  float: left;
+  width: 300px;
+  position: relative;
+}
+.home #header #catchline span {
+  font-size: 17px;
+  position: absolute;
+  bottom: -21px;
+  right: 0;
+}
+.home #header #telephone {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  float: none;
+  margin-bottom: 5px;
 }
 .home #sliderWrapper {
   overflow: hidden;

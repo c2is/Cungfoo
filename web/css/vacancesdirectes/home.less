@@ -7,12 +7,19 @@
 
 
 /* STRUCTURE */
-//  #wrap .column.left{padding-top:65px}
+  #wrap{padding:0 0 15px;}
 
 /* HOME */
 
-  /* slider */
-  #header{margin-bottom:261px;}
+  /* header */
+  #header{margin-bottom:261px;
+    #catchline{color:@colorBlanc;font:bold 24px/24px @ptnarrow;text-transform:uppercase;text-align:right;margin:75px 30px 15px;float:left;width:300px;position:relative;
+      span{font-size:17px;position:absolute;bottom:-21px;right:0;}
+    }
+    #telephone{position:absolute;bottom:0;right:0;float:none;margin-bottom:5px;}
+  }
+
+/* slider */
   #sliderWrapper{overflow:hidden;padding-top:30px;width:100%;position:absolute;top:0;left:0;height:500px;
     #sliderPrev,
     #sliderNext{position:absolute;top:88px;left:20px;width:125px;._verticalCenter(110px,15px);font:@arial 13px/15px @arial;color:@colorOrange;text-align:center;padding:0 5px;cursor:pointer;
