@@ -5251,9 +5251,11 @@ ul.newList.optGroup li.optGroup-like a {
 .account #stepNav ul li.tab a > img {
   vertical-align: middle;
 }
+.account #stepNav ul li.tab:hover,
 .account #stepNav ul li.tab.current a {
   text-decoration: none;
 }
+.account #stepNav ul li.tab:hover > a:after,
 .account #stepNav ul li.tab.current > a:after {
   content: url("../../images/vacancesdirectes/common/pict/Triangle-Tab.png");
   height: 8px;
