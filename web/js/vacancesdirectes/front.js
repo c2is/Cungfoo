@@ -36,7 +36,11 @@ if(nbVisible == undefined) {
     var nbVisible = 10;                                      // nombre d'items visible avant pagination
 }
 
-/*--  DOMREADY  --*/
+/*
+ *  //////////////////////////////////////////////////////////////////////////////////////////////////////////
+ *                                              DOM ready
+ * ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+ */
 $(function() {
 // ScrollTop onload (mobile) si il n'y a pas d'ancre
     if (/mobile/i.test(navigator.userAgent) && !location.hash) {
@@ -149,22 +153,13 @@ $(function() {
 // select
     $('#searchForm').find('select').sSelect({ddMaxHeight: '300px'});
 
+    $('.sMultSelect').sMultSelect({msgNull: 'Pas de réponse'});
+    /*$('.sMultSelectUl').wrap('<div class="tinyScroll" />').before('<div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>')
+     .wrap('<div class="viewport"><div class="overview"></div></div>');
+     $('.tinyScroll').tinyscrollbar();*/
 
 //navigation
-//    var mylist = $('#campingsList')
-//    var listitems = mylist.children('li').get();
-//    listitems.sort(function(a, b) {
-//        return $(a).text().toUpperCase().localeCompare($(b).text().toUpperCase());
-//    })
-//    $.each(listitems, function(idx, itm) { mylist.append(itm); });
-    /*
-    $('#campingsList').listnav({
-        includeNums: false,
-        includeOther: false,
-//        prefixes: ["le","la","l'","un","une"],
-        noMatchText: "Il n'existe aucun camping commençant par cette lettre."
-    });
-    */
+
 
 
 // footer
@@ -400,18 +395,6 @@ $(function() {
     if ( $('#account').length ) {
         $('#account').click(function(e){
             $(this).next().toggle();
-        });
-    }
-
-    /*
-     *  ############################################################
-     *                          SEARCH ENGINE
-     * ############################################################
-     */
-
-    if ( $('form').length > 0 && $('.errors').is(":visible") ) {
-        $('form').click(function(e){
-            $('.errors').fadeOut(500);
         });
     }
 
@@ -921,10 +904,7 @@ $(function() {
 
     }
 
-    $('.sMultSelect').sMultSelect({msgNull: 'Pas de réponse'});
-    /*$('.sMultSelectUl').wrap('<div class="tinyScroll" />').before('<div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>')
-        .wrap('<div class="viewport"><div class="overview"></div></div>');
-    $('.tinyScroll').tinyscrollbar();*/
+
 
 //init Gmap
     if ($('.gmap').length > 0) {
@@ -951,7 +931,11 @@ $(function() {
     }
 });
 
-/*-- HEADREADY --*/
+/*
+ *  //////////////////////////////////////////////////////////////////////////////////////////////////////////
+ *                                              HEAD ready
+ * ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+ */
 head.ready(function(){
 
     if ($('#searchContainer').length) {
@@ -983,9 +967,35 @@ head.ready(function(){
 
     });
 
+    /*
+     *  ############################################################
+     *                          SEARCH ENGINE
+     * ############################################################
+     */
+    var errorVisible = false;
+    if ( $('.errors').length > 0 ){
+        $('.errors').each(function(i,v){
+            errorVisible = $(this).css('display') == 'block' ? true : false;
+            console.log(errorVisible);
+        });
+    }
+    if ( $('form').length > 0 && errorVisible ) {
+        $('form').click(function(e){
+            $(this).find('.errors').fadeOut(500);
+        });
+        $('.selectedTxt, select, input, #datepicker span').click(function(e){
+            $(this).parents('form').find('.errors').fadeOut(500);
+        });
+    }
+
 });
 
-/*--  FUNCTIONS  --*/
+/*
+ *  //////////////////////////////////////////////////////////////////////////////////////////////////////////
+ *                                              functions
+ * ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+ */
+
 function countItem() {
     //console.log("################################## countItem()  ##################################");
     $('.spin-bt-down, .spin-bt-up').live('click', function(){
@@ -1070,9 +1080,11 @@ function openIframePopin(url){
     $.colorbox({href: url, iframe:true, fixed: true, width:'80%', height:'80%', close:"&times;"});
 }
 
-/*-----------------------------------------------------------
- DATEPICKER
- -----------------------------------------------------------*/
+/*
+ *  ############################################################
+ *                         DATEPICKER
+ * ############################################################
+ */
 
 // reset
 function clearDatepicker() {
@@ -1394,9 +1406,12 @@ function tabs(tView, load) {
 }
 
 
-/****
- * GMAP FUNCIONS
+/*
+ *  ############################################################
+ *                         GMAP FUNCIONS
+ * ############################################################
  */
+
 function loadGmapScript() { // call at the end of the DOM ready
     var script = document.createElement("script");
     script.type = "text/javascript";
@@ -1487,7 +1502,7 @@ function initializeAllGmap() {
         new google.maps.Point(0, 17));
     shape = {
         coord: [1, 1, 1, 20, 18, 20, 18 , 1],
-        type: 'poly'
+        type: 'polynav'
     };
 
     if ($('#proxMap').length) {
