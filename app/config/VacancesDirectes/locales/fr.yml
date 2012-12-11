@@ -8,6 +8,7 @@ seo:
         dernieres_minutes: "Camping derniere disponibilité, location mobil home derniere disponibilité"
         dispo: "Résultat de recherche location camping, mobil home"
         couloir: "Espace de réservation"
+        theme: "%theme%"
     meta:
         default: "Vacances Directes : location de mobil-homes dans de nombreux campings en France, en Italie et en Espagne pour des vacances conviviales et reposantes."
         pays: " Vacances Directes : découvrez nos offres de location de mobil home pas cher en %pays% pour des vacances ensoleillés en camping et réserver en ligne."
@@ -16,6 +17,7 @@ seo:
         dernieres_minutes: "Découvrez toutes les offres de locations de mobil homes en dernières disponibilités en camping proposées par Vacances Directes et réserver en ligne."
         dispo: "Listing - Campings"
         couloir: "Espace de réservation"
+        theme: "%theme%"
 
 pays.france: France
 pays.espagne: Espagne
@@ -30,7 +32,7 @@ destination.images_pays_title: Le pays en image
 destination.images_region_title: La région en image
 destination.images_ville_title: La ville en image
 destination.pays_title: Camping en %item% pas cher
-destination.region_title: Location mobil home %item% pas cher en camping 
+destination.region_title: Location mobil home %item% pas cher en camping
 destination.ville_title: Camping à %item% pas cher
 destination.camping_title: Camping %ville% pas cher
 destination.retour_bottom: Retour à la liste
@@ -242,6 +244,8 @@ encart_informations.price: (0,15 €/min)
 encart_informations.dates_1: Du lundi au vendredi de 9h-21h
 encart_informations.dates_2: Samedi de 10h - 18h
 
+encart_autres_themes.title: D'autres thèmes pour votre week-end
+
 semainier.title: Tarifs & disponibilités
 semainier.choose_dates_desc: En juillet et août, les arrivées et départs sont possibles les mercredis et samedis.
 semainier.type_hebergement_title: Choisissez votre période et votre type d'hébergement
@@ -255,3 +259,5 @@ resalys.besoin_aide_title: Besoin d'aide
 resalys.besoin_aide_subtitle: Une question sur votre réservation&hellip;
 resalys.besoin_aide_contact: Contactez-nous
 resalys.besoin_aide_num: au 0825 133 400
+
+vos_week_ends: Vos week-ends

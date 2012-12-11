@@ -18,4 +18,26 @@ use Cungfoo\Model\om\BaseTheme;
  */
 class Theme extends BaseTheme
 {
+    public function getEtablissementsCatalogues()
+    {
+        $etab = EtablissementQuery::create()
+            ->distinct()
+            ->useEtablissementBaignadeQuery(null, \Criteria::RIGHT_JOIN)
+                ->filterByBaignade($this->getBaignades())
+            ->endUse()
+            ->_or()
+            ->useEtablissementServiceComplementaireQuery(null, \Criteria::RIGHT_JOIN)
+                ->filterByServiceComplementaire($this->getServiceComplementaires())
+            ->endUse()
+            ->_or()
+            ->useEtablissementActiviteQuery(null, \Criteria::RIGHT_JOIN)
+                ->filterByActivite($this->getActivites())
+            ->endUse()
+            ->addAscendingOrderByColumn('RAND()')
+            ->_and()
+            ->findActive()
+        ;
+
+        return $etab;
+    }
 }
