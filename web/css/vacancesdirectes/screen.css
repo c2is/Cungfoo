@@ -1474,7 +1474,7 @@ footer {
 }
 #nav .tab {
   position: static;
-  color: #fff;
+  color: #ffffff;
   float: left;
   padding: 0;
   cursor: pointer;
@@ -5216,7 +5216,7 @@ ul.newList.optGroup li.optGroup-like a {
   text-align: center;
 }
 .account #stepNav ul li.tab {
-  margin: 0 12px;
+  margin: 0;
   float: none;
   display: inline-block;
   position: static;
@@ -5229,7 +5229,7 @@ ul.newList.optGroup li.optGroup-like a {
 .account #stepNav ul li.tab span {
   position: relative;
   display: block;
-  padding: 0 15px;
+  padding: 0 10px;
   color: #ffffff;
   text-decoration: none;
   height: 50px;
