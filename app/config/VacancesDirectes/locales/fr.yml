@@ -3,7 +3,8 @@ seo:
         default: "Location mobil home Espagne, France, Italie"
         pays: "Camping %pays% pas cher"
         region: "Location mobil home %region% pas cher, camping %region%"
-        camping: "Camping %nom%, camping %ville% pas cher avec piscine"
+        camping: "Camping %nom%, camping %ville% pas cher"
+        camping_suffix: " avec piscine"
         dernieres_minutes: "Camping derniere disponibilité, location mobil home derniere disponibilité"
         dispo: "Résultat de recherche location camping, mobil home"
         couloir: "Espace de réservation"
@@ -28,12 +29,18 @@ destination.campagne: Campagne
 destination.images_pays_title: Le pays en image
 destination.images_region_title: La région en image
 destination.images_ville_title: La ville en image
+destination.pays_title: Camping en %item% pas cher
+destination.region_title: Location mobil home %item% pas cher en camping 
+destination.ville_title: Camping à %item% pas cher
+destination.camping_title: Camping %ville% pas cher
 destination.retour_bottom: Retour à la liste
 
 listing_destination.campings_map_title: Campings Vacances Directes
 listing_destination.campings_map_prefixe_subtitle: en
 
 listing.plus_resultats: Plus de résultats
+listing.du: du
+listing.au: au
 
 menu.title: Vacances Directes
 menu.destinations: Nos destinations
@@ -87,6 +94,10 @@ date_search.button.submit: Rechercher
 header.information: Informations & réservations
 header.telephone: 0825 133 400 (0,15€/min)
 header.130_camping: + de 180 campings en France, Espagne & Italie
+header.location_mobil_home: Location de mobil home en camping (France, Espagne, Italie et Portugal)
+header.catchline_prefix: Location de mobil home
+header.catchline: en France, Espagne et Italie
+header.catchline_suffix: (+ de 180 campings)
 
 footer.contact: Contact
 footer.charte_qualite: Charte qualité
@@ -212,8 +223,6 @@ pactiv-2: Envie d'un petit break, de prendre l'air
 pactiv-3: Des vacances sous le signe de la détente et du bonheur
 
 destination.retour: Retour
-destination.prefixe_titre: Vacances
-destination.suffixe_titre: en camping pas cher
 destination.pois_all: Tous les lieux
 destination.events_title: En ce moment
 destination.events_prefixe_subtitle: En

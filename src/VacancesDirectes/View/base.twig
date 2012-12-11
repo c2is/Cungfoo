@@ -25,6 +25,36 @@
         {% include "menu.twig" %}
         <div id="header" class="fixed-width clear">
             <div id="headerRight">
+                <a id="account" href="#">Mon compte</a>
+                <div id="accountBox" class="radiusBox greyF arrowUp">
+                    <h2>vous êtes un client existant, veuillez vous identifier</h2>
+                    <form action="#_" id="connexion">
+                        <fieldset>
+                            <div class="errors">
+                                <ul>
+                                    <li>Identifiant incorrect.</li>
+                                    <li>Mot de passe incorrect.</li>
+                                </ul>
+                            </div>
+                            <ol>
+                                <li>
+                                    <div class="clear" id="userField">
+                                        <label for="userInput">Nom d'utilisateur</label>
+                                        <input type="text" placeholder="Nom d'utilisateur" id="userInput" name="userInput" />
+                                    </div>
+                                    <div class="clear" id="passwordField">
+                                        <label for="passwordInput">Mot de passe</label>
+                                        <input type="password" placeholder="Mot de passe" id="passwordInput" name="passwordInput" autocomplete="off" />
+                                    </div>
+                                    <div class="link clear">
+                                        <a href="#">Mot de passe oublié ?</a>
+                                    </div>
+                                    <button class="bt fushia ib" type="submit">Se connecter</button>
+                                </li>
+                            </ol>
+                        </fieldset>
+                    </form>
+                </div>
                 <div id="telephone">
                     <span>{{ "header.information" | trans }}
                         {{ "header.telephone" | trans }}
@@ -35,7 +65,8 @@
                 <img src="{{ asset('images/vacancesdirectes/common/pict/vacancesdirectes-logo.png') }}" alt="Vacances directes | Le mobil-home et vous" />
             </a>
             {% if app.request.get('_route') == 'homepage' %}
-            <h1 id="catchline">{{ "header.130_camping" | trans }}</h1>
+            <h1 id="catchline">{{ "header.catchline_prefix" | trans }}<br />{{ "header.catchline" | trans }}<br /><span>{{ "header.catchline_suffix" | trans }}</span></h1>
+            {#<h2 id="catchline">{{ "header.130_camping" | trans }}</h2>#}
             {% endif %}
         </div>
 

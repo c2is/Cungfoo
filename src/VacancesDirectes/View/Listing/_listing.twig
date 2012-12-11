@@ -4,9 +4,9 @@
         <!-- item.title -->
         <div class="itemResultTitle">
             <input type="checkbox" name="compar" value="idCamp1">
-            {{ etab.model.name }} {{ etab.model.categorie.stars }}
+            <a href="{{ path('destination_camping', { pays: etab.model.pays.slug, region: etab.model.region.slug, ville: etab.model.ville.slug, camping: etab.model.slug }) }}">{{ etab.model.name }} {{ etab.model.categorie.stars }}</a>
             {% if list.type == 1 %}
-            <span class="dates">du {{ etab.start_date }} au {{ etab.end_date }}</span>
+            <span class="dates">{{ "listing.du" | trans }} {{ etab.start_date }} {{ "listing.au" | trans }} {{ etab.end_date }}</span>
             {% endif %}
         </div>
         <!-- item.left -->

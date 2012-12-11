@@ -1350,13 +1350,12 @@ footer {
   width: 928px;
   margin: 0 auto;
   font-family: 'PT Sans Narrow', Arial, Helvetica, sans-serif;
-  z-index: 11;
+  z-index: 21;
   clear: both;
 }
 #header #logo {
   display: block;
   float: left;
-  margin-bottom: 25px;
 }
 #header #catchline {
   color: #ffffff;
@@ -1379,7 +1378,10 @@ footer {
   background: url("../../images/vacancesdirectes/common/ui/phone-bg.png") no-repeat 0px 0px transparent;
   float: right;
   padding: 5px 0px 15px 10px;
-  margin: 15px 0 0 15px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 0;
 }
 #header #telephone span {
   font-size: 18px;
@@ -1419,6 +1421,7 @@ footer {
   text-align: left;
   color: #ffffff;
   display: none;
+  z-index: 1;
 }
 #header #accountBox:after {
   left: 100%;
@@ -1605,13 +1608,16 @@ footer {
 #nav .tab .subnav#destinations a:hover {
   color: #ed145b;
 }
+#nav .tab .subnav#destinations li {
+  line-height: 15px;
+}
 #nav .tab .subnav#destinations .ratio-33 {
   width: 300px;
-  margin-left: 16px;
+  margin-right: 16px;
 }
-#nav .tab .subnav#destinations .ratio-33:first-child {
+#nav .tab .subnav#destinations .ratio-33:last-child {
   width: 308px;
-  margin-left: 0;
+  margin-right: 0;
 }
 #nav .tab .subnav#destinations .ratio-33 .radiusBox,
 #nav .tab .subnav#destinations .ratio-33 .radiusBox2 {
@@ -1637,16 +1643,6 @@ footer {
   text-transform: uppercase;
   margin: 3px 0 2px;
 }
-#nav .tab .subnav#destinations .ratio-33 .radiusBox .region .link,
-#nav .tab .subnav#destinations .ratio-33 .radiusBox2 .region .link {
-  padding-bottom: 5px;
-  border-bottom: 7px solid #e6e5e5;
-}
-#nav .tab .subnav#destinations .ratio-33 .radiusBox .region:last-child .link,
-#nav .tab .subnav#destinations .ratio-33 .radiusBox2 .region:last-child .link {
-  padding-bottom: 0;
-  border-bottom: 0 none;
-}
 #nav .tab .subnav#destinations .ratio-33 .radiusBox a,
 #nav .tab .subnav#destinations .ratio-33 .radiusBox2 a {
   text-decoration: none;
@@ -1654,9 +1650,7 @@ footer {
 #nav .tab .subnav#destinations .ratio-33 .radiusBox .link,
 #nav .tab .subnav#destinations .ratio-33 .radiusBox2 .link {
   text-align: right;
-}
-#nav .tab .subnav#destinations .ratio-33 .radiusBox {
-  height: 511px;
+  margin: 0;
 }
 #nav .tab .subnav#destinations .ratio-33 .radiusBox .title {
   position: relative;
@@ -1695,31 +1689,45 @@ footer {
 #nav .tab .subnav#destinations .letter-count > img {
   vertical-align: middle;
 }
-#nav .tab .subnav#destinations ol#campingsList {
+#nav .tab .subnav#destinations #destinationsNational .radiusBox2 {
+  min-height: 535px;
+}
+#nav .tab .subnav#destinations #destinationsNational .region ul {
+  padding-bottom: 5px;
+  border-bottom: 7px solid #e6e5e5;
+}
+#nav .tab .subnav#destinations #destinationsNational .region:last-child ul {
+  padding-bottom: 0;
+  border-bottom: 0 none;
+}
+#nav .tab .subnav#destinations #destinationsInternational .radiusBox2 {
+  min-height: 260px;
+}
+#nav .tab .subnav#destinations #destinationsAll ol#campingsList {
   overflow-x: hidden;
-  height: 445px;
+  height: 471px;
   margin-top: 10px;
 }
-#nav .tab .subnav#destinations ol#campingsList li {
+#nav .tab .subnav#destinations #destinationsAll ol#campingsList li {
   position: relative;
   margin-left: 50px;
 }
-#nav .tab .subnav#destinations ol#campingsList li.letter-first {
+#nav .tab .subnav#destinations #destinationsAll ol#campingsList li.letter-first {
   position: relative;
-  margin-bottom: -15px;
+  margin-bottom: -10px;
   margin-left: 0;
-  height: 20px;
+  height: 15px;
   width: 20px;
   font: bold 17px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
 }
-#nav .tab .subnav#destinations ol#campingsList li.letter-last {
+#nav .tab .subnav#destinations #destinationsAll ol#campingsList li.letter-last {
   position: relative;
-  margin: 14px 0 5px;
+  margin: 16px 0 8px;
   height: 1px;
   width: 240px;
   background-color: #c6c5c5;
 }
-#nav .tab .subnav#destinations ol#campingsList li:last-child {
+#nav .tab .subnav#destinations #destinationsAll ol#campingsList li:last-child {
   visibility: hidden;
 }
 #nav .tab .subnav#locations .radiusBox {
@@ -4359,8 +4367,11 @@ ul.newList.optGroup li.optGroup-like a {
   background: #8c8a8a;
   font: bold 25px/28px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   padding: 3px 5px 5px;
+}
+.itemResult .itemResultTitle a {
   color: #ffffff;
   text-transform: uppercase;
+  text-decoration: none;
 }
 .itemResult .itemResultTitle .dates {
   font: bold 16px/18px Arial, Helvetica, sans-serif;
