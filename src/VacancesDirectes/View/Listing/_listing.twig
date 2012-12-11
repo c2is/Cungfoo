@@ -96,12 +96,10 @@
                 {% endfor %}
             {% else %}
                 <div class="linePrice catalogue checked">
-                    {% if etab.model.minimumPrice != 0 %}
-                        <span class="stain fushia cover">
+                        <span class="stain fushia cover"{% if etab.model.minimumPrice == 0 %} style="display: none"{% endif %}>
                             <span class="apartirde">{{ "general.a_partir_de" | trans }} </span>
                             <span class="price">{{ etab.model.minimumPrice|number_format }} €</span>
                         </span>
-                    {% endif %}
                     <a class="bt big" href="{{ path('destination_camping', {pays: etab.model.pays.slug, region: etab.model.region.slug, ville: etab.model.ville.slug, camping: etab.model.slug}) }}#frameResalys">{{ "general.reserver" | trans }}</a>
                 </div>
             {% endif %}

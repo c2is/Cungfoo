@@ -48,8 +48,11 @@ class TopCampingController
             ->setType(CatalogueListing::CATALOGUE)
         ;
 
+        $listingContent = $list->process();
+
         return $app['twig']->render('Research\dispo.twig', array(
-            'list' => $list->process(),
+            'list'       => $listingContent,
+            'firstEtab'  => reset($listingContent['element']),
             'searchForm' => $searchEngine->getView(),
         ));
     }

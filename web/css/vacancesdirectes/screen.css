@@ -1411,6 +1411,61 @@ footer {
   text-decoration: none;
   margin: 10px 0 15px 15px;
 }
+#header #accountBox {
+  width: 320px;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  text-align: left;
+  color: #ffffff;
+  display: none;
+}
+#header #accountBox:after {
+  left: 100%;
+  margin-left: -65px;
+}
+#header #accountBox h2 {
+  font: bold 22px/24px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+#header #accountBox label {
+  display: none;
+}
+#header #accountBox input {
+  height: 27px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 27px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+  width: 188px;
+  background-color: #ffffff;
+  border: 0 none;
+  margin-bottom: 10px;
+  font: bold 17px/27px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+  color: #8c8a8a;
+  text-transform: uppercase;
+  padding: 0 7px;
+}
+#header #accountBox input > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: inherit;
+}
+#header #accountBox input > img {
+  vertical-align: middle;
+}
+#header #accountBox .link {
+  margin-bottom: 15px;
+}
+#header #accountBox .link a {
+  color: #ffffff;
+  text-decoration: underline;
+}
 /* specifs home */
 .home #telephone {
   clear: both;
@@ -2023,6 +2078,10 @@ h6,
   margin: 15px 0;
   position: relative;
 }
+.radiusBox.opened {
+  -webkit-box-shadow: 0 10px 10px -12px #464545;
+  box-shadow: 0 10px 10px -12px #464545;
+}
 .radiusBox.bgImg {
   overflow: hidden;
 }
@@ -2046,6 +2105,21 @@ h6,
   border-width: 18px;
   margin-top: -18px;
   margin-left: -18px;
+}
+.radiusBox.greyF.arrowUp:after {
+  bottom: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: "";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(140, 138, 138, 0);
+  border-bottom-color: #464545;
+  border-width: 18px;
+  margin-left: -18px;
+  margin-top: -18px;
 }
 .radiusBox.fushia {
   background-color: #ed145b;
@@ -2283,6 +2357,54 @@ h6,
   display: inline;
   position: absolute;
 }
+.errors {
+  position: absolute;
+  top: 0;
+  left: -15px;
+  outline: none;
+  text-decoration: none;
+  display: block;
+}
+.errors strong {
+  line-height: 30px;
+}
+.errors ul {
+  font: bold 12px/35px Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: #ed145b;
+  border: 7px solid #ed145b;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  text-decoration: none;
+  text-align: right;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  z-index: 10;
+  display: inline;
+  position: absolute;
+  margin: 0;
+  line-height: 16px;
+  right: -10px;
+  white-space: nowrap;
+}
+.errors ul:after {
+  left: 100%;
+  top: 50%;
+  border: solid transparent;
+  content: "";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(138, 140, 138, 0);
+  border-left-color: #ed145b;
+  border-width: 5px;
+  margin-top: -5px;
+  margin-left: 7px;
+}
+.errors ul li {
+  margin: 5px 0;
+}
 .callout {
   z-index: 20;
   position: absolute;
@@ -2291,6 +2413,7 @@ h6,
   left: 50%;
 }
 /*CSS3 extras*/
+.error span,
 .tooltip span {
   -webkit-box-shadow: 0 10px 10px -12px #464545;
   box-shadow: 0 10px 10px -12px #464545;
@@ -3163,10 +3286,6 @@ ul.newList.optGroup li.optGroup-like a {
 .home aside #searchBloc {
   position: absolute;
   margin-top: -258px;
-}
-.home aside #searchBloc.opened {
-  -webkit-box-shadow: 0 10px 10px -12px #464545;
-  box-shadow: 0 10px 10px -12px #464545;
 }
 .home aside #greyBoxes {
   margin-top: 129px;
@@ -6089,8 +6208,8 @@ aside #greyBoxes #infoBloc .content .tel:before {
 aside #greyBoxes #infoBloc .content .small {
   margin: 10px 0 0px;
 }
-aside #greyBoxes #weekendIdeasBloc .stamp {
-  margin-bottom: 10px;
+aside #greyBoxes #weekendIdeasBloc {
+  min-height: 458px;
 }
 aside #greyBoxes #weekendIdeasBloc h2 {
   margin-left: 0;
