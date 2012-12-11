@@ -13,6 +13,21 @@ use Symfony\Component\HttpFoundation\Request,
 
 class CompteController implements ControllerProviderInterface
 {
+    protected function getDefaultResalysParameters(Application $app, Request $request)
+    {
+        $parameters = array(
+            "specificFiles" => 'compte',
+            "base_id"       => 'vacancesdirectes_preprod_v6_6',
+            "webuser"       => 'web_fr',
+            "tokens"        => 'ignore_token',
+            "actions"       => $request->query->get('actions'),
+            "tokens"        => $request->query->get('tokens'),
+            "session"       => $app['session']->get('resalys_user')->session,
+        );
+
+        return array_merge($parameters, $request->request->all());
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -22,23 +37,57 @@ class CompteController implements ControllerProviderInterface
 
         $controllers->match('/', function (Request $request) use ($app)
         {
-            $query = array(
-                "specificFiles" => 'compte',
-                "base_id"       => 'vacancesdirectes_preprod_v6_6',
-                "webuser"       => 'web_fr',
-                "tokens"        => 'ignore_token',
-                "display"       => 'customer_area',
-                "actions"       => $request->query->get('actions'),
-                "session"       => $request->query->get('session'),
-                "tokens"        => $request->query->get('tokens'),
-                "session"       => $app['session']->get('resalys_user')->session,
-            );
-
-            $query = array_merge($query, $request->request->all());
+            $query            = $this->getDefaultResalysParameters($app, $request);
+            $query['display'] = 'customer_area';
 
             return $app->renderView('Compte/index.twig', array('query' => $query));
 
         })->bind('compte_index');
+
+        $controllers->match('/coordonnees/', function (Request $request) use ($app)
+        {
+            $query            = $this->getDefaultResalysParameters($app, $request);
+            $query['display'] = 'edit_customer_info';
+
+            return $app->renderView('Compte/index.twig', array('query' => $query));
+
+        })->bind('compte_coordonnees');
+
+        $controllers->match('/demande-brochure/', function (Request $request) use ($app)
+        {
+            $query            = $this->getDefaultResalysParameters($app, $request);
+            $query['display'] = 'request';
+
+            return $app->renderView('Compte/index.twig', array('query' => $query));
+
+        })->bind('compte_brochure');
+
+        $controllers->match('/reservations/', function (Request $request) use ($app)
+        {
+            $query            = $this->getDefaultResalysParameters($app, $request);
+            $query['display'] = 'existing_reservations';
+
+            return $app->renderView('Compte/index.twig', array('query' => $query));
+
+        })->bind('compte_reservations');
+
+        $controllers->match('/avantages-fidelite/', function (Request $request) use ($app)
+        {
+            $query            = $this->getDefaultResalysParameters($app, $request);
+            $query['display'] = 'fidelity_point_list';
+
+            return $app->renderView('Compte/index.twig', array('query' => $query));
+
+        })->bind('compte_fidelite');
+
+        $controllers->match('/parrainage/', function (Request $request) use ($app)
+        {
+            $query            = $this->getDefaultResalysParameters($app, $request);
+            $query['display'] = 'sponsorship';
+
+            return $app->renderView('Compte/index.twig', array('query' => $query));
+
+        })->bind('compte_parrainage');
 
         return $controllers;
     }

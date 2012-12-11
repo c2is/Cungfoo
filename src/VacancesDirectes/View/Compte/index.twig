@@ -4,6 +4,19 @@
 
 {% block content %}
 <div id="wrap" class="fixed-width clear">
+<div id="headerContainer" class="column clear">
+    <h1><span>Espace </span>client</h1>
+    <nav id="stepNav" class="clearboth">
+        <ul class="topnav fixed-width clear">
+            <li class="tab current"><span>Accueil</span></li>
+            <li class="tab"><span>Coordonnées</span></li>
+            <li class="tab"><span>Demande de brochure</span></li>
+            <li class="tab"><span>Réservation</span></li>
+            <li class="tab"><span>Avantages fidélité</span></li>
+            <li class="tab"><span>Parrainage</span></li>
+        </ul>
+    </nav>
+</div>
 <iframe id="frameResalys" src="{{ path('resalys_wrapper', query) }}" width="960px" height="700px"></iframe>
 </div>
 {% endblock content %}
