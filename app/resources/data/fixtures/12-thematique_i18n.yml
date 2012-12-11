@@ -2,7 +2,7 @@
     1_de:
         Id: 1
         Locale: de
-        Name: 'Nouveautés 2012'
+        Name: 'Nouveautés 2013'
         Description: null
         Keywords: null
     1_en:
@@ -14,7 +14,7 @@
     1_fr:
         Id: 1
         Locale: fr
-        Name: 'Nouveautés 2012'
+        Name: 'Nouveautés 2013'
         Description: null
         Keywords: null
     1_nl:
