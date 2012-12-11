@@ -4367,8 +4367,11 @@ ul.newList.optGroup li.optGroup-like a {
   background: #8c8a8a;
   font: bold 25px/28px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   padding: 3px 5px 5px;
+}
+.itemResult .itemResultTitle a {
   color: #ffffff;
   text-transform: uppercase;
+  text-decoration: none;
 }
 .itemResult .itemResultTitle .dates {
   font: bold 16px/18px Arial, Helvetica, sans-serif;
