@@ -6,20 +6,20 @@ header, section, footer {position:relative;}
 .fixed-width{position:relative;width:976px;margin:0 auto;}
 
 /* header */
-#header{width:928px;margin:0 auto;font-family:@ptnarrow;z-index:11;clear:both;
-  #logo{display:block;float:left;margin-bottom:25px;}
+#header{width:928px;margin:0 auto;font-family:@ptnarrow;z-index:21;clear:both;
+  #logo{display:block;float:left;}
   #catchline{color:@colorBlanc;font:bold 24px/24px @ptnarrow;text-transform:uppercase;text-align:center;margin:75px 30px 15px;float:left;width:300px;
     span{text-align:left;}
   }
   #headerRight{float:right;}
-  #telephone{width:256px;height:60px;background: url("../../images/vacancesdirectes/common/ui/phone-bg.png") no-repeat 0px 0px transparent;float:right;padding:5px 0px 15px 10px;margin:15px 0 0 15px;
+  #telephone{width:256px;height:60px;background: url("../../images/vacancesdirectes/common/ui/phone-bg.png") no-repeat 0px 0px transparent;float:right;padding:5px 0px 15px 10px;position:absolute;bottom:0;right:0;z-index:0;
     span{font-size:18px;line-height:19px;color:@colorGris2;
       &:before{content:"";width:40px;height:29px;background:transparent url("../../images/vacancesdirectes/common/ui/phone-icon-header.png") no-repeat 0px 0px;float:left;margin:5px;}
       a{font-weight:bold;color:@colorGris2;text-decoration:none;display:block;}
     }
   }
     #account{float:right;font-size:16px;text-transform:uppercase;background-color:@colorFushia;border-radius:10px;padding:7px 12px;color:#fff;text-decoration:none;margin:10px 0 15px 15px;}
-    #accountBox{width:320px;position:absolute;top:50px;right:0;text-align:left;color:@colorBlanc;display:none;
+    #accountBox{width:320px;position:absolute;top:50px;right:0;text-align:left;color:@colorBlanc;display:none;z-index:1;
       &:after{left:100%;margin-left:-65px;}
       h2{font:bold 22px/24px @ptnarrow;text-transform:uppercase;margin-bottom:10px;color:@colorBlanc;}
       label{display:none;}
@@ -58,22 +58,20 @@ header, section, footer {position:relative;}
       .objective{margin:10px;}
       &#destinations{
         a:hover{color:@colorFushia;}
-        .ratio-33{width:300px;margin-left:16px;
-          &:first-child{width:308px;margin-left:0;}
+        li{line-height:15px;}
+        .ratio-33{width:300px;margin-right:16px;
+          &:last-child{width:308px;margin-right:0;}
           .radiusBox,
           .radiusBox2{font:12px/13px @arial,sans-serif;
             .view{width:290px;height:90px;margin:-15px -20px 15px;._border-radius(6px 6px 0 0);
               .bg{position:absolute;top:0;left:0;}
             }
             .title{font:bold 18px @ptnarrow;text-transform:uppercase;margin:3px 0 2px;}
-            .region{
-              .link{padding-bottom:5px;border-bottom:7px solid @colorBgGrisC;}
-              &:last-child .link{padding-bottom:0;border-bottom:0 none;}
-            }
+            .region{}
             a{text-decoration:none;}
-            .link{text-align:right;}
+            .link{text-align:right;margin:0;}
           }
-          .radiusBox{height:511px;
+          .radiusBox{
             .title{position:relative;display:inline;
               &:after{content:url('../../images/vacancesdirectes/common/pict/filterCampingIcon.png');position:absolute;bottom:0px;right:-56px;width:46px;height:56px;}
             }
@@ -81,11 +79,23 @@ header, section, footer {position:relative;}
         }
         .letter-count{position:absolute;top:-30px !important;left:auto !important;right:15px;width:28px !important;._verticalCenter(35px);font:bold 15px @arial,sans-serif;color:@colorGris2;}
 
-        ol#campingsList{overflow-x:hidden;height:445px;margin-top:10px;
-          li{position:relative;margin-left:50px;
-            &.letter-first{position:relative;margin-bottom:-15px;margin-left:0;height:20px;width:20px;font:bold 17px @ptnarrow;}
-            &.letter-last{position:relative;margin:14px 0 5px;height:1px;width:240px;background-color:@colorBorderGris}
-            &:last-child{visibility:hidden;}
+        #destinationsNational{
+          .radiusBox2{min-height:535px;}
+          .region{
+            ul{padding-bottom:5px;border-bottom:7px solid @colorBgGrisC;}
+            &:last-child ul {padding-bottom:0;border-bottom:0 none;}
+          }
+        }
+        #destinationsInternational{
+          .radiusBox2{min-height:260px;}
+        }
+        #destinationsAll{
+          ol#campingsList{overflow-x:hidden;height:471px;margin-top:10px;
+            li{position:relative;margin-left:50px;
+              &.letter-first{position:relative;margin-bottom:-10px;margin-left:0;height:15px;width:20px;font:bold 17px @ptnarrow;}
+              &.letter-last{position:relative;margin:16px 0 8px;height:1px;width:240px;background-color:@colorBorderGris}
+              &:last-child{visibility:hidden;}
+            }
           }
         }
       }

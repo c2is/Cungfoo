@@ -25,6 +25,36 @@
         {% include "menu.twig" %}
         <div id="header" class="fixed-width clear">
             <div id="headerRight">
+                <a id="account" href="#">Mon compte</a>
+                <div id="accountBox" class="radiusBox greyF arrowUp">
+                    <h2>vous êtes un client existant, veuillez vous identifier</h2>
+                    <form action="#_" id="connexion">
+                        <fieldset>
+                            <div class="errors">
+                                <ul>
+                                    <li>Identifiant incorrect.</li>
+                                    <li>Mot de passe incorrect.</li>
+                                </ul>
+                            </div>
+                            <ol>
+                                <li>
+                                    <div class="clear" id="userField">
+                                        <label for="userInput">Nom d'utilisateur</label>
+                                        <input type="text" placeholder="Nom d'utilisateur" id="userInput" name="userInput" />
+                                    </div>
+                                    <div class="clear" id="passwordField">
+                                        <label for="passwordInput">Mot de passe</label>
+                                        <input type="password" placeholder="Mot de passe" id="passwordInput" name="passwordInput" autocomplete="off" />
+                                    </div>
+                                    <div class="link clear">
+                                        <a href="#">Mot de passe oublié ?</a>
+                                    </div>
+                                    <button class="bt fushia ib" type="submit">Se connecter</button>
+                                </li>
+                            </ol>
+                        </fieldset>
+                    </form>
+                </div>
                 <div id="telephone">
                     <span>{{ "header.information" | trans }}
                         {{ "header.telephone" | trans }}
