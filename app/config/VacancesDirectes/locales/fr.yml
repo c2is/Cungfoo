@@ -95,6 +95,9 @@ header.information: Informations & réservations
 header.telephone: 0825 133 400 (0,15€/min)
 header.130_camping: + de 180 campings en France, Espagne & Italie
 header.location_mobil_home: Location de mobil home en camping (France, Espagne, Italie et Portugal)
+header.catchline_prefix: Location de mobil home
+header.catchline: en France, Espagne et Italie
+header.catchline_suffix: (+ de 180 campings)
 
 footer.contact: Contact
 footer.charte_qualite: Charte qualité
