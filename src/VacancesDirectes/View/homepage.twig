@@ -19,7 +19,7 @@
                         <div class="content">
                             <p class="headline" title="{{ mea.titre }}">{{ mea.titre }}</p>
                             <p class="catchline">{{ mea.accroche }}</p>
-                            <button class="bt orange big ib" type="submit">{{ mea.titreLien }}</button>
+                            {% if mea.lien != "" %}<button class="bt orange big ib" type="submit">{{ mea.titreLien }}</button>{% endif %}
                         </div>
                     </a>
                     {% if mea.prix != "" %}

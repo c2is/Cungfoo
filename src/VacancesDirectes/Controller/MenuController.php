@@ -89,19 +89,19 @@ class MenuController implements ControllerProviderInterface
         $destinations = array(
             '4' => array(
                 'label'     => 'destination.mediterranee',
-                'regions'   => array('LARO', 'CORS', 'PCA'),
+                'regions'   => array('LARO', 'PCA', 'CORS', 'HERA', 'AUDE', 'PYRO'),
             ),
             '3' => array(
-                'label'     => 'destination.atlantique',
-                'regions'   => array('BRET', 'CHMA', 'PBAS'),
+                'label'     => 'destination.manche_atlantique',
+                'regions'   => array('NORM', 'BRET', 'CHMA', 'PBAS', 'PLOI', 'VEND', 'GIRO', 'AQUI', 'PASD'),
             ),
             '1' => array(
                 'label'     => 'destination.montagne',
-                'regions'   => array('ALP', 'ALJU', 'ARPY'),
+                'regions'   => array('ARPY', 'ALP'),
             ),
             '2' => array(
                 'label'     => 'destination.campagne',
-                'regions'   => array('PLOI', 'PEDO', 'AUVE'),
+                'regions'   => array('GERS', 'AUVE', 'AVEY', 'ARDE', 'LOCH', 'DRHP', 'VERD', 'PEDO', 'ALJU', 'LIM', 'TAR', 'ILE'),
             ),
         );
 
@@ -128,7 +128,7 @@ class MenuController implements ControllerProviderInterface
     public function getRegionEspagne($locale = BaseEtablissementPeer::DEFAULT_LOCALE){
         $results = array();
 
-        $arrayRegion = array('CTBR', 'CBRA', 'CAZA', 'CDOR');
+        $arrayRegion = array('CAZA', 'CTBR', 'CBRA', 'CDOR', 'BLAC');
 
         $results = $this->getRegionsByForeignCountries($locale, null, $arrayRegion);
 
@@ -138,7 +138,7 @@ class MenuController implements ControllerProviderInterface
     public function getRegionItalie($locale = BaseEtablissementPeer::DEFAULT_LOCALE){
         $results = array();
 
-        $arrayRegion = array('IADR', 'IMED');
+        $arrayRegion = array('IMED', 'TOSC', 'IADR');
 
         $results = $this->getRegionsByForeignCountries($locale, null, $arrayRegion);
 
