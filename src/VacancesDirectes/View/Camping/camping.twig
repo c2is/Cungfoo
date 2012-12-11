@@ -8,12 +8,8 @@
 {% block leftColumn %}
 <a class="bt gris left" href="{{ historyBack ~ "#camping-" ~ etab.slug }}">&lt; Retour</a> <br />
 
-{# TODO <ol itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" class="pathway">
-    <li>&gt; <a itemprop="url" href="#_"><span itemprop="title">Accueil</span></a></li>
-    <li>&gt; <a itemprop="url" href="#_"><span itemprop="title">Nos campings : Campings France</span></a></li>
-    <li>&gt; <a itemprop="url" href="#_"><span itemprop="title">Location mobil home Languedoc-Roussillon</span></a></li>
-    <li>&gt; <a itemprop="url" href="#_"><span itemprop="title">Le Petit Mousse</span></a></li>
-</ol> #}
+{% include "Breadcrumbs/_breadcrumbs.twig" %}
+
 <div itemscope itemtype="http://schema.org/Place">
     <h1 itemprop="name">
         {{ etab.name }}{{ etab.categorie.stars }}<br />

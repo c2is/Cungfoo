@@ -13,6 +13,7 @@
     <div id="wrap" class="fixed-width clear">
         <div class="column">
             {% if edito %}
+                {% include "Breadcrumbs/_breadcrumbs.twig" %}
                 <h1>{{ edito.name}}</h1>
                 {{ edito.description | raw }}
             {% else %}

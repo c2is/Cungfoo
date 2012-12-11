@@ -41,6 +41,8 @@ listing_destination.campings_map_prefixe_subtitle: en
 listing.plus_resultats: Plus de résultats
 listing.du: du
 listing.au: au
+listing.no_results_title: Votre recherche n'a retourné aucun résultat.
+listing.no_results: Nous vous invitons à modifier vos critères de recherche
 
 menu.title: Vacances Directes
 menu.destinations: Nos destinations
@@ -255,3 +257,5 @@ resalys.besoin_aide_title: Besoin d'aide
 resalys.besoin_aide_subtitle: Une question sur votre réservation&hellip;
 resalys.besoin_aide_contact: Contactez-nous
 resalys.besoin_aide_num: au 0825 133 400
+
+breadcrumbs.home: Accueil
