@@ -7,13 +7,14 @@
 <div id="headerContainer" class="column clear">
     <h1><span>Espace </span>client</h1>
     <nav id="stepNav" class="clearboth">
+        {% set currentRoute = app.request.get('_route') %}
         <ul class="topnav fixed-width clear">
-            <li class="tab current"><span>Accueil</span></li>
-            <li class="tab"><span>Coordonnées</span></li>
-            <li class="tab"><span>Demande de brochure</span></li>
-            <li class="tab"><span>Réservation</span></li>
-            <li class="tab"><span>Avantages fidélité</span></li>
-            <li class="tab"><span>Parrainage</span></li>
+            <li class="tab{% if currentRoute == "compte_index" %} current{% endif %}"><a href="{{ path('compte_index') }}">Accueil</a></li>
+            <li class="tab{% if currentRoute == "compte_coordonnees" %} current{% endif %}"><a href="{{ path('compte_coordonnees') }}">Coordonnées</a></li>
+            <li class="tab{% if currentRoute == "compte_brochure" %} current{% endif %}"><a href="{{ path('compte_brochure') }}">Demande de brochure</a></li>
+            <li class="tab{% if currentRoute == "compte_reservations" %} current{% endif %}"><a href="{{ path('compte_reservations') }}">Réservation</a></li>
+            <li class="tab{% if currentRoute == "compte_fidelite" %} current{% endif %}"><a href="{{ path('compte_fidelite') }}">Avantages fidélité</a></li>
+            <li class="tab{% if currentRoute == "compte_parrainage" %} current{% endif %}"><a href="{{ path('compte_parrainage') }}">Parrainage</a></li>
         </ul>
     </nav>
 </div>
