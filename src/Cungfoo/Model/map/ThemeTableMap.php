@@ -7,7 +7,7 @@ use \TableMap;
 
 
 /**
- * This class defines the structure of the 'personnage' table.
+ * This class defines the structure of the 'theme' table.
  *
  *
  *
@@ -18,13 +18,13 @@ use \TableMap;
  *
  * @package    propel.generator.Cungfoo.Model.map
  */
-class PersonnageTableMap extends TableMap
+class ThemeTableMap extends TableMap
 {
 
     /**
      * The (dot-path) name of this class
      */
-    const CLASS_NAME = 'Cungfoo.Model.map.PersonnageTableMap';
+    const CLASS_NAME = 'Cungfoo.Model.map.ThemeTableMap';
 
     /**
      * Initialize the table attributes, columns and validators
@@ -36,18 +36,14 @@ class PersonnageTableMap extends TableMap
     public function initialize()
     {
         // attributes
-        $this->setName('personnage');
-        $this->setPhpName('Personnage');
-        $this->setClassname('Cungfoo\\Model\\Personnage');
+        $this->setName('theme');
+        $this->setPhpName('Theme');
+        $this->setClassname('Cungfoo\\Model\\Theme');
         $this->setPackage('Cungfoo.Model');
         $this->setUseIdGenerator(true);
         // columns
         $this->addPrimaryKey('id', 'Id', 'INTEGER', true, null, null);
-        $this->addForeignKey('etablissement_id', 'EtablissementId', 'INTEGER', 'etablissement', 'id', false, null, null);
-        $this->addColumn('age', 'Age', 'VARCHAR', true, 255, null);
         $this->addColumn('image_path', 'ImagePath', 'VARCHAR', false, 255, null);
-        $this->addColumn('created_at', 'CreatedAt', 'TIMESTAMP', false, null, null);
-        $this->addColumn('updated_at', 'UpdatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('active', 'Active', 'BOOLEAN', false, 1, false);
         // validators
     } // initialize()
@@ -57,11 +53,15 @@ class PersonnageTableMap extends TableMap
      */
     public function buildRelations()
     {
-        $this->addRelation('Etablissement', 'Cungfoo\\Model\\Etablissement', RelationMap::MANY_TO_ONE, array('etablissement_id' => 'id', ), 'CASCADE', null);
-        $this->addRelation('Avantage', 'Cungfoo\\Model\\Avantage', RelationMap::ONE_TO_MANY, array('id' => 'personnage_id', ), 'CASCADE', null, 'Avantages');
-        $this->addRelation('ThemePersonnage', 'Cungfoo\\Model\\ThemePersonnage', RelationMap::ONE_TO_MANY, array('id' => 'personnage_id', ), null, null, 'ThemePersonnages');
-        $this->addRelation('PersonnageI18n', 'Cungfoo\\Model\\PersonnageI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'PersonnageI18ns');
-        $this->addRelation('Theme', 'Cungfoo\\Model\\Theme', RelationMap::MANY_TO_MANY, array(), null, null, 'Themes');
+        $this->addRelation('ThemeActivite', 'Cungfoo\\Model\\ThemeActivite', RelationMap::ONE_TO_MANY, array('id' => 'theme_id', ), null, null, 'ThemeActivites');
+        $this->addRelation('ThemeBaignade', 'Cungfoo\\Model\\ThemeBaignade', RelationMap::ONE_TO_MANY, array('id' => 'theme_id', ), null, null, 'ThemeBaignades');
+        $this->addRelation('ThemeServiceComplementaire', 'Cungfoo\\Model\\ThemeServiceComplementaire', RelationMap::ONE_TO_MANY, array('id' => 'theme_id', ), null, null, 'ThemeServiceComplementaires');
+        $this->addRelation('ThemePersonnage', 'Cungfoo\\Model\\ThemePersonnage', RelationMap::ONE_TO_MANY, array('id' => 'theme_id', ), null, null, 'ThemePersonnages');
+        $this->addRelation('ThemeI18n', 'Cungfoo\\Model\\ThemeI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'ThemeI18ns');
+        $this->addRelation('Activite', 'Cungfoo\\Model\\Activite', RelationMap::MANY_TO_MANY, array(), null, null, 'Activites');
+        $this->addRelation('Baignade', 'Cungfoo\\Model\\Baignade', RelationMap::MANY_TO_MANY, array(), null, null, 'Baignades');
+        $this->addRelation('ServiceComplementaire', 'Cungfoo\\Model\\ServiceComplementaire', RelationMap::MANY_TO_MANY, array(), null, null, 'ServiceComplementaires');
+        $this->addRelation('Personnage', 'Cungfoo\\Model\\Personnage', RelationMap::MANY_TO_MANY, array(), null, null, 'Personnages');
     } // buildRelations()
 
     /**
@@ -73,18 +73,13 @@ class PersonnageTableMap extends TableMap
     public function getBehaviors()
     {
         return array(
-            'timestampable' =>  array (
-  'create_column' => 'created_at',
-  'update_column' => 'updated_at',
-  'disable_updated_at' => 'false',
-),
             'active' =>  array (
   'active_column' => 'active',
 ),
             'i18n' =>  array (
   'i18n_table' => '%TABLE%_i18n',
   'i18n_phpname' => '%PHPNAME%I18n',
-  'i18n_columns' => 'prenom',
+  'i18n_columns' => 'name, slug, introduction, description',
   'i18n_pk_name' => NULL,
   'locale_column' => 'locale',
   'default_locale' => 'fr',
@@ -92,7 +87,7 @@ class PersonnageTableMap extends TableMap
 ),
             'crudable' =>  array (
   'route_prefix' => '/',
-  'crud_prefix' => '/personnages',
+  'crud_prefix' => '/theme',
   'crud_model' => NULL,
   'crud_form' => NULL,
   'crud_type_file' => 'image_path',
@@ -100,4 +95,4 @@ class PersonnageTableMap extends TableMap
         );
     } // getBehaviors()
 
-} // PersonnageTableMap
+} // ThemeTableMap

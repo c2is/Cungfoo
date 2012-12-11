@@ -10,13 +10,13 @@ use Symfony\Component\Form\FormBuilderInterface,
 use Cungfoo\Form\Type\AppAwareType;
 
 /**
- * Test class for Additional builder enabled on the 'activite' table.
+ * Test class for Additional builder enabled on the 'theme' table.
  *
  * @author  Morgan Brunot <brunot.morgan@gmail.com>
  *          Denis Roussel <denis.roussel@gmail.com>
  * @package propel.generator.Cungfoo.Form.Type.Base
  */
-class BaseActiviteType extends AppAwareType
+class BaseThemeType extends AppAwareType
 {
     /**
      * {@inheritdoc}
@@ -24,79 +24,94 @@ class BaseActiviteType extends AppAwareType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('id', 'hidden', array(
-            'label' => 'activite.id',
-            'required' => false,
-        ));
-        $builder->add('code', 'text', array(
-            'constraints' => array(
-                new Assert\NotBlank(),
-            ),
-            'label' => 'activite.code',
+            'label' => 'theme.id',
             'required' => false,
         ));
         $builder->add('image_path', 'cungfoo_file', array(
             'constraints' => array(
             ),
-            'label' => 'activite.image_path',
+            'label' => 'theme.image_path',
             'required' => false,
         ));
         $builder->add('image_path_deleted', 'checkbox', array(
             'constraints' => array(
             ),
             'property_path' => false,
-            'label' => 'activite.image_path_deleted',
+            'label' => 'theme.image_path_deleted',
             'required' => false,
         ));
         $builder->add('active', 'checkbox', array(
             'constraints' => array(
             ),
-            'label' => 'activite.active',
+            'label' => 'theme.active',
             'required' => false,
         ));
-        $builder->add('etablissements', 'model', array(
-            'class' => 'Cungfoo\Model\Etablissement',
+        $builder->add('activites', 'model', array(
+            'class' => 'Cungfoo\Model\Activite',
             'constraints' => array(
             ),
             'multiple' => true,
-            'label' => 'activite.etablissements',
+            'label' => 'theme.activites',
             'required' => false,
         ));
-        $builder->add('themes', 'model', array(
-            'class' => 'Cungfoo\Model\Theme',
+        $builder->add('baignades', 'model', array(
+            'class' => 'Cungfoo\Model\Baignade',
             'constraints' => array(
             ),
             'multiple' => true,
-            'label' => 'activite.themes',
+            'label' => 'theme.baignades',
             'required' => false,
         ));
-        $builder->add('activiteI18ns', 'translation_collection', array(
-            'i18n_class' => 'Cungfoo\Model\ActiviteI18n',
+        $builder->add('service_complementaires', 'model', array(
+            'class' => 'Cungfoo\Model\ServiceComplementaire',
+            'constraints' => array(
+            ),
+            'multiple' => true,
+            'label' => 'theme.service_complementaires',
+            'required' => false,
+        ));
+        $builder->add('personnages', 'model', array(
+            'class' => 'Cungfoo\Model\Personnage',
+            'constraints' => array(
+            ),
+            'multiple' => true,
+            'label' => 'theme.personnages',
+            'required' => false,
+        ));
+        $builder->add('themeI18ns', 'translation_collection', array(
+            'i18n_class' => 'Cungfoo\Model\ThemeI18n',
             'languages' => array(
                 0 => 'fr',
                 1 => 'en',
                 2 => 'de',
                 3 => 'nl',
             ),
-            'label' => 'activite.activiteI18ns',
+            'label' => 'theme.themeI18ns',
             'columns' => array(
                 'name' => array(
                     'required' => false,
-                    'label' => 'activite.name',
+                    'label' => 'theme.name',
                     'type' => 'text',
                     'constraints' => array(
-                        new Assert\NotBlank(),
+                    ),
+                ),
+                'slug' => array(
+                    'required' => false,
+                    'label' => 'theme.slug',
+                    'type' => 'text',
+                    'constraints' => array(
+                    ),
+                ),
+                'introduction' => array(
+                    'required' => false,
+                    'label' => 'theme.introduction',
+                    'type' => 'text',
+                    'constraints' => array(
                     ),
                 ),
                 'description' => array(
                     'required' => false,
-                    'label' => 'activite.description',
-                    'type' => 'text',
-                    'constraints' => array(
-                    ),
-                ),
-                'keywords' => array(
-                    'required' => false,
-                    'label' => 'activite.keywords',
+                    'label' => 'theme.description',
                     'type' => 'text',
                     'constraints' => array(
                     ),
@@ -112,7 +127,7 @@ class BaseActiviteType extends AppAwareType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Cungfoo\Model\Activite',
+            'data_class' => 'Cungfoo\Model\Theme',
         ));
     }
 
@@ -121,7 +136,7 @@ class BaseActiviteType extends AppAwareType
      */
     public function getName()
     {
-        return 'Activite';
+        return 'Theme';
     }
 
-} // BaseActiviteType
+} // BaseThemeType

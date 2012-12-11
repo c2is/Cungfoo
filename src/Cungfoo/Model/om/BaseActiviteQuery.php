@@ -18,6 +18,8 @@ use Cungfoo\Model\ActivitePeer;
 use Cungfoo\Model\ActiviteQuery;
 use Cungfoo\Model\Etablissement;
 use Cungfoo\Model\EtablissementActivite;
+use Cungfoo\Model\Theme;
+use Cungfoo\Model\ThemeActivite;
 
 /**
  * Base class that represents a query for the 'activite' table.
@@ -45,6 +47,10 @@ use Cungfoo\Model\EtablissementActivite;
  * @method ActiviteQuery leftJoinEtablissementActivite($relationAlias = null) Adds a LEFT JOIN clause to the query using the EtablissementActivite relation
  * @method ActiviteQuery rightJoinEtablissementActivite($relationAlias = null) Adds a RIGHT JOIN clause to the query using the EtablissementActivite relation
  * @method ActiviteQuery innerJoinEtablissementActivite($relationAlias = null) Adds a INNER JOIN clause to the query using the EtablissementActivite relation
+ *
+ * @method ActiviteQuery leftJoinThemeActivite($relationAlias = null) Adds a LEFT JOIN clause to the query using the ThemeActivite relation
+ * @method ActiviteQuery rightJoinThemeActivite($relationAlias = null) Adds a RIGHT JOIN clause to the query using the ThemeActivite relation
+ * @method ActiviteQuery innerJoinThemeActivite($relationAlias = null) Adds a INNER JOIN clause to the query using the ThemeActivite relation
  *
  * @method ActiviteQuery leftJoinActiviteI18n($relationAlias = null) Adds a LEFT JOIN clause to the query using the ActiviteI18n relation
  * @method ActiviteQuery rightJoinActiviteI18n($relationAlias = null) Adds a RIGHT JOIN clause to the query using the ActiviteI18n relation
@@ -530,6 +536,80 @@ abstract class BaseActiviteQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query by a related ThemeActivite object
+     *
+     * @param   ThemeActivite|PropelObjectCollection $themeActivite  the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   ActiviteQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByThemeActivite($themeActivite, $comparison = null)
+    {
+        if ($themeActivite instanceof ThemeActivite) {
+            return $this
+                ->addUsingAlias(ActivitePeer::ID, $themeActivite->getActiviteId(), $comparison);
+        } elseif ($themeActivite instanceof PropelObjectCollection) {
+            return $this
+                ->useThemeActiviteQuery()
+                ->filterByPrimaryKeys($themeActivite->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByThemeActivite() only accepts arguments of type ThemeActivite or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the ThemeActivite relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return ActiviteQuery The current query, for fluid interface
+     */
+    public function joinThemeActivite($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('ThemeActivite');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'ThemeActivite');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the ThemeActivite relation ThemeActivite object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\ThemeActiviteQuery A secondary query class using the current class as primary query
+     */
+    public function useThemeActiviteQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        return $this
+            ->joinThemeActivite($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'ThemeActivite', '\Cungfoo\Model\ThemeActiviteQuery');
+    }
+
+    /**
      * Filter the query by a related ActiviteI18n object
      *
      * @param   ActiviteI18n|PropelObjectCollection $activiteI18n  the related object to use as filter
@@ -617,6 +697,23 @@ abstract class BaseActiviteQuery extends ModelCriteria
         return $this
             ->useEtablissementActiviteQuery()
             ->filterByEtablissement($etablissement, $comparison)
+            ->endUse();
+    }
+
+    /**
+     * Filter the query by a related Theme object
+     * using the theme_activite table as cross reference
+     *
+     * @param   Theme $theme the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   ActiviteQuery The current query, for fluid interface
+     */
+    public function filterByTheme($theme, $comparison = Criteria::EQUAL)
+    {
+        return $this
+            ->useThemeActiviteQuery()
+            ->filterByTheme($theme, $comparison)
             ->endUse();
     }
 
