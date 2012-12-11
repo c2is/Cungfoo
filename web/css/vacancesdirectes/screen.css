@@ -5226,7 +5226,7 @@ ul.newList.optGroup li.optGroup-like a {
 .account #stepNav ul li.tab.current {
   background: #ed145b;
 }
-.account #stepNav ul li.tab span {
+.account #stepNav ul li.tab a {
   position: relative;
   display: block;
   padding: 0 10px;
@@ -5242,18 +5242,18 @@ ul.newList.optGroup li.optGroup-like a {
 
   float: left;
 }
-.account #stepNav ul li.tab span > * {
+.account #stepNav ul li.tab a > * {
   vertical-align: middle;
   display: inline-block;
   line-height: inherit;
 }
-.account #stepNav ul li.tab span > img {
+.account #stepNav ul li.tab a > img {
   vertical-align: middle;
 }
-.account #stepNav ul li.tab.current span {
+.account #stepNav ul li.tab.current a {
   text-decoration: none;
 }
-.account #stepNav ul li.tab.current > span:after {
+.account #stepNav ul li.tab.current > a:after {
   content: url("../../images/vacancesdirectes/common/pict/Triangle-Tab.png");
   height: 8px;
   left: 50%;
@@ -5263,7 +5263,7 @@ ul.newList.optGroup li.optGroup-like a {
   width: 22px;
   z-index: 50;
 }
-.account #stepNav ul li.tab.completed span:before {
+.account #stepNav ul li.tab.completed a:before {
   content: "";
   background: url("../../images/vacancesdirectes/common/sprites/sprite-40.png") no-repeat 0 -165px transparent;
   width: 40px;
