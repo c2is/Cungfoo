@@ -210,9 +210,9 @@ class DestinationController implements ControllerProviderInterface
 
         // On parcourt tous les campings pour trouver le premier qui a bien des coordonnees saisies afin d'afficher la GMap centree sur cet element
         $firstEtab = null;
-        for($i = 0; $i < $nbCampings && (!$firstEtab || (!$firstEtab->getGeoCoordinateX() && !$firstEtab->getGeoCoordinateY())); $i++)
+        for($i = 0; $i < $nbCampings && (!$firstEtab['model'] || (!$firstEtab['model']->getGeoCoordinateX() && !$firstEtab['model']->getGeoCoordinateY())); $i++)
         {
-            $firstEtab = $campings[$i];
+            $firstEtab = $listContent['element'][$i];
         }
 
         return $app->renderView('Destination/detail.twig', array(

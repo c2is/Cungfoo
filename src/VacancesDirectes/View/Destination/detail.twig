@@ -26,7 +26,7 @@
     {# le lien retour pointera à terme sur les pages de listing
     <a class="bt gris left" href="{{ app.request.headers.get('referer') }}">&lt; {{ "destination.retour" | trans }}</a>
     #}
-    
+
 {% include "Breadcrumbs/_breadcrumbs.twig" %}
 
     {# Bloc titre + accroche + picto #}
@@ -100,7 +100,7 @@
     {# Bloc GMap #}
     <h2><span class="h3-like">{{ "listing_destination.campings_map_title" | trans }}<br>
     {{ "listing_destination.campings_map_prefixe_subtitle" | trans }} {{ item.name }}</span></h2>
-    <div id="destiMap" class="gmap" style="width:908px;height:330px;">
+    {#<div id="destiMap" class="gmap" style="width:908px;height:330px;">
         <script>
             function destiInit() {
                 var destiMkrs = [
@@ -119,7 +119,8 @@
                 setMarkers(destiMap, destiMkrs);
             }
         </script>
-    </div>
+    </div>#}
+    {% include 'Destination/gmap.twig' %}
 </div>
 {% endif %}
 
