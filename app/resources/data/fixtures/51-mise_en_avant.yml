@@ -20,3 +20,10 @@
         DateFinValidite: '2013-11-29 00:00:00'
         SortableRank: 3
         Active: true
+    4:
+        ImageFondPath: null
+        Prix: null
+        IllustrationPath: null
+        DateFinValidite: '2013-03-24 00:00:00'
+        SortableRank: 4
+        Active: true

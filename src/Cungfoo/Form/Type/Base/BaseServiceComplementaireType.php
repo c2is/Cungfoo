@@ -61,6 +61,14 @@ class BaseServiceComplementaireType extends AppAwareType
             'label' => 'service_complementaire.etablissements',
             'required' => false,
         ));
+        $builder->add('themes', 'model', array(
+            'class' => 'Cungfoo\Model\Theme',
+            'constraints' => array(
+            ),
+            'multiple' => true,
+            'label' => 'service_complementaire.themes',
+            'required' => false,
+        ));
         $builder->add('service_complementaireI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\ServiceComplementaireI18n',
             'languages' => array(

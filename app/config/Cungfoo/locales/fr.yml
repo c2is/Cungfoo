@@ -199,6 +199,7 @@ menu.mise_en_avant: Mise en avant
 menu.dernieres_minutes: Dernières minutes
 menu.vos_vacances: Vos vacances
 menu.idee_weekend: Idées weekend
+menu.theme: Theme CMS
 
 category_type_hebergement.crud.create: Création d'une catégorie de types hébergements
 category_type_hebergement.crud.list: Liste catégories de types hébergements
@@ -207,6 +208,23 @@ category_type_hebergement.crud.view: Détails de la catégorie de types héberge
 category_type_hebergement.id: Id
 category_type_hebergement.code: Code
 category_type_hebergement.name: Nom
+
+theme.crud.create: Création d'un theme
+theme.crud.list: Liste des themes
+theme.crud.update: Mettre à jour le theme %name%
+theme.crud.view: Détails du theme %name%
+theme.id: Id
+theme.name: Nom
+theme.image.path: Image
+theme.image_path: Image
+theme.active: Actif
+theme.activites: Liste des activités
+theme.baignades: Liste des themes baignade
+theme.service_complementaires: Liste des themes services complémentaires
+theme.personnages: Liste des personnages
+theme.slug: Slug
+theme.introduction: Introduction
+theme.description: Description
 
 service_complementaire.crud.create: Création d'un service complémentaire
 service_complementaire.crud.list: Liste services complémentaires

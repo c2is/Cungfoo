@@ -31,7 +31,7 @@
     {% if item['imagePath'] is defined %}
         <img class="right" width="127" height="127" src="{{ asset(item.imagePath) }}"> {# Picto région #}
     {% endif %}
-    <h1>{{ "destination.prefixe_titre" | trans }} {{ item.name }} {{ "destination.suffixe_titre" | trans }}</h1> {# Titre #}
+    <h1>{{ title }}</h1> {# Titre #}
     <h2 class="h3-like">{{ item.introduction }}</h2> {# Accroche #}
     <p class="destiDescription">{{ item.description }}</p> {# Description #}
 
@@ -48,7 +48,7 @@
 {% block bottomLeftColumn %}
 
     {# Bloc "Notre sélection de campings" #}
-    <h3>{{ "destination.campings_selection_title" | trans }}</h3>
+    <h2>{{ "destination.campings_selection_title" | trans }}</h2>
     {% include 'Listing/_listing.twig' %}
 
 {% endblock %}
@@ -96,8 +96,8 @@
 {% if firstEtab %}
 <div id="destiMapContener" class="clear">
     {# Bloc GMap #}
-    <span class="h3-like">{{ "listing_destination.campings_map_title" | trans }}<br>
-    {{ "listing_destination.campings_map_prefixe_subtitle" | trans }} {{ item.name }}</span>
+    <h2><span class="h3-like">{{ "listing_destination.campings_map_title" | trans }}<br>
+    {{ "listing_destination.campings_map_prefixe_subtitle" | trans }} {{ item.name }}</span></h2>
     <div id="destiMap" class="gmap" style="width:908px;height:330px;">
         <script>
             function destiInit() {
@@ -121,15 +121,17 @@
 </div>
 {% endif %}
 
-    {# Photos #}
-    <h3>{{ imagesTitle }}</h3>
+{# Photos #}
+{% if item.imageDetail1 or item.imageDetail2 %}}
+<h3>{{ imagesTitle }}</h3>
     {% if item.imageDetail1 %}}
-    <img src="{{ asset(item.imageDetail1) }}" class="boxborder large imgDesti">
+<img src="{{ asset(item.imageDetail1) }}" class="boxborder large imgDesti">
     {% endif %}
     {% if item.imageDetail2 %}
-    <img src="{{ asset(item.imageDetail2) }}" class="boxborder large imgDesti">
+<img src="{{ asset(item.imageDetail2) }}" class="boxborder large imgDesti">
     {% endif %}
+{% endif %}
 
-    {# TODO <a href="#_">{{ "destination.retour_bottom" | trans }}</a> #}
+{# TODO <a href="#_">{{ "destination.retour_bottom" | trans }}</a> #}
 
 {% endblock %}

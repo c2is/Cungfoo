@@ -18,6 +18,8 @@ use Cungfoo\Model\Personnage;
 use Cungfoo\Model\PersonnageI18n;
 use Cungfoo\Model\PersonnagePeer;
 use Cungfoo\Model\PersonnageQuery;
+use Cungfoo\Model\Theme;
+use Cungfoo\Model\ThemePersonnage;
 
 /**
  * Base class that represents a query for the 'personnage' table.
@@ -51,6 +53,10 @@ use Cungfoo\Model\PersonnageQuery;
  * @method PersonnageQuery leftJoinAvantage($relationAlias = null) Adds a LEFT JOIN clause to the query using the Avantage relation
  * @method PersonnageQuery rightJoinAvantage($relationAlias = null) Adds a RIGHT JOIN clause to the query using the Avantage relation
  * @method PersonnageQuery innerJoinAvantage($relationAlias = null) Adds a INNER JOIN clause to the query using the Avantage relation
+ *
+ * @method PersonnageQuery leftJoinThemePersonnage($relationAlias = null) Adds a LEFT JOIN clause to the query using the ThemePersonnage relation
+ * @method PersonnageQuery rightJoinThemePersonnage($relationAlias = null) Adds a RIGHT JOIN clause to the query using the ThemePersonnage relation
+ * @method PersonnageQuery innerJoinThemePersonnage($relationAlias = null) Adds a INNER JOIN clause to the query using the ThemePersonnage relation
  *
  * @method PersonnageQuery leftJoinPersonnageI18n($relationAlias = null) Adds a LEFT JOIN clause to the query using the PersonnageI18n relation
  * @method PersonnageQuery rightJoinPersonnageI18n($relationAlias = null) Adds a RIGHT JOIN clause to the query using the PersonnageI18n relation
@@ -657,6 +663,80 @@ abstract class BasePersonnageQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query by a related ThemePersonnage object
+     *
+     * @param   ThemePersonnage|PropelObjectCollection $themePersonnage  the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   PersonnageQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByThemePersonnage($themePersonnage, $comparison = null)
+    {
+        if ($themePersonnage instanceof ThemePersonnage) {
+            return $this
+                ->addUsingAlias(PersonnagePeer::ID, $themePersonnage->getPersonnageId(), $comparison);
+        } elseif ($themePersonnage instanceof PropelObjectCollection) {
+            return $this
+                ->useThemePersonnageQuery()
+                ->filterByPrimaryKeys($themePersonnage->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByThemePersonnage() only accepts arguments of type ThemePersonnage or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the ThemePersonnage relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return PersonnageQuery The current query, for fluid interface
+     */
+    public function joinThemePersonnage($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('ThemePersonnage');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'ThemePersonnage');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the ThemePersonnage relation ThemePersonnage object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\ThemePersonnageQuery A secondary query class using the current class as primary query
+     */
+    public function useThemePersonnageQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        return $this
+            ->joinThemePersonnage($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'ThemePersonnage', '\Cungfoo\Model\ThemePersonnageQuery');
+    }
+
+    /**
      * Filter the query by a related PersonnageI18n object
      *
      * @param   PersonnageI18n|PropelObjectCollection $personnageI18n  the related object to use as filter
@@ -728,6 +808,23 @@ abstract class BasePersonnageQuery extends ModelCriteria
         return $this
             ->joinPersonnageI18n($relationAlias, $joinType)
             ->useQuery($relationAlias ? $relationAlias : 'PersonnageI18n', '\Cungfoo\Model\PersonnageI18nQuery');
+    }
+
+    /**
+     * Filter the query by a related Theme object
+     * using the theme_personnage table as cross reference
+     *
+     * @param   Theme $theme the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   PersonnageQuery The current query, for fluid interface
+     */
+    public function filterByTheme($theme, $comparison = Criteria::EQUAL)
+    {
+        return $this
+            ->useThemePersonnageQuery()
+            ->filterByTheme($theme, $comparison)
+            ->endUse();
     }
 
     /**

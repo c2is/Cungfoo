@@ -24,6 +24,10 @@ use Cungfoo\Model\Etablissement;
 use Cungfoo\Model\EtablissementBaignade;
 use Cungfoo\Model\EtablissementBaignadeQuery;
 use Cungfoo\Model\EtablissementQuery;
+use Cungfoo\Model\Theme;
+use Cungfoo\Model\ThemeBaignade;
+use Cungfoo\Model\ThemeBaignadeQuery;
+use Cungfoo\Model\ThemeQuery;
 
 /**
  * Base class that represents a row from the 'baignade' table.
@@ -91,6 +95,12 @@ abstract class BaseBaignade extends BaseObject implements Persistent
     protected $collEtablissementBaignadesPartial;
 
     /**
+     * @var        PropelObjectCollection|ThemeBaignade[] Collection to store aggregation of ThemeBaignade objects.
+     */
+    protected $collThemeBaignades;
+    protected $collThemeBaignadesPartial;
+
+    /**
      * @var        PropelObjectCollection|BaignadeI18n[] Collection to store aggregation of BaignadeI18n objects.
      */
     protected $collBaignadeI18ns;
@@ -100,6 +110,11 @@ abstract class BaseBaignade extends BaseObject implements Persistent
      * @var        PropelObjectCollection|Etablissement[] Collection to store aggregation of Etablissement objects.
      */
     protected $collEtablissements;
+
+    /**
+     * @var        PropelObjectCollection|Theme[] Collection to store aggregation of Theme objects.
+     */
+    protected $collThemes;
 
     /**
      * Flag to prevent endless save loop, if this object is referenced
@@ -139,7 +154,19 @@ abstract class BaseBaignade extends BaseObject implements Persistent
      * An array of objects scheduled for deletion.
      * @var		PropelObjectCollection
      */
+    protected $themesScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
     protected $etablissementBaignadesScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
+    protected $themeBaignadesScheduledForDeletion = null;
 
     /**
      * An array of objects scheduled for deletion.
@@ -508,9 +535,12 @@ abstract class BaseBaignade extends BaseObject implements Persistent
 
             $this->collEtablissementBaignades = null;
 
+            $this->collThemeBaignades = null;
+
             $this->collBaignadeI18ns = null;
 
             $this->collEtablissements = null;
+            $this->collThemes = null;
         } // if (deep)
     }
 
@@ -666,6 +696,26 @@ abstract class BaseBaignade extends BaseObject implements Persistent
                 }
             }
 
+            if ($this->themesScheduledForDeletion !== null) {
+                if (!$this->themesScheduledForDeletion->isEmpty()) {
+                    $pks = array();
+                    $pk = $this->getPrimaryKey();
+                    foreach ($this->themesScheduledForDeletion->getPrimaryKeys(false) as $remotePk) {
+                        $pks[] = array($remotePk, $pk);
+                    }
+                    ThemeBaignadeQuery::create()
+                        ->filterByPrimaryKeys($pks)
+                        ->delete($con);
+                    $this->themesScheduledForDeletion = null;
+                }
+
+                foreach ($this->getThemes() as $theme) {
+                    if ($theme->isModified()) {
+                        $theme->save($con);
+                    }
+                }
+            }
+
             if ($this->etablissementBaignadesScheduledForDeletion !== null) {
                 if (!$this->etablissementBaignadesScheduledForDeletion->isEmpty()) {
                     EtablissementBaignadeQuery::create()
@@ -677,6 +727,23 @@ abstract class BaseBaignade extends BaseObject implements Persistent
 
             if ($this->collEtablissementBaignades !== null) {
                 foreach ($this->collEtablissementBaignades as $referrerFK) {
+                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
+                        $affectedRows += $referrerFK->save($con);
+                    }
+                }
+            }
+
+            if ($this->themeBaignadesScheduledForDeletion !== null) {
+                if (!$this->themeBaignadesScheduledForDeletion->isEmpty()) {
+                    ThemeBaignadeQuery::create()
+                        ->filterByPrimaryKeys($this->themeBaignadesScheduledForDeletion->getPrimaryKeys(false))
+                        ->delete($con);
+                    $this->themeBaignadesScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collThemeBaignades !== null) {
+                foreach ($this->collThemeBaignades as $referrerFK) {
                     if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
                         $affectedRows += $referrerFK->save($con);
                     }
@@ -874,6 +941,14 @@ abstract class BaseBaignade extends BaseObject implements Persistent
                     }
                 }
 
+                if ($this->collThemeBaignades !== null) {
+                    foreach ($this->collThemeBaignades as $referrerFK) {
+                        if (!$referrerFK->validate($columns)) {
+                            $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
+                        }
+                    }
+                }
+
                 if ($this->collBaignadeI18ns !== null) {
                     foreach ($this->collBaignadeI18ns as $referrerFK) {
                         if (!$referrerFK->validate($columns)) {
@@ -970,6 +1045,9 @@ abstract class BaseBaignade extends BaseObject implements Persistent
         if ($includeForeignObjects) {
             if (null !== $this->collEtablissementBaignades) {
                 $result['EtablissementBaignades'] = $this->collEtablissementBaignades->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
+            }
+            if (null !== $this->collThemeBaignades) {
+                $result['ThemeBaignades'] = $this->collThemeBaignades->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
             if (null !== $this->collBaignadeI18ns) {
                 $result['BaignadeI18ns'] = $this->collBaignadeI18ns->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
@@ -1149,6 +1227,12 @@ abstract class BaseBaignade extends BaseObject implements Persistent
                 }
             }
 
+            foreach ($this->getThemeBaignades() as $relObj) {
+                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
+                    $copyObj->addThemeBaignade($relObj->copy($deepCopy));
+                }
+            }
+
             foreach ($this->getBaignadeI18ns() as $relObj) {
                 if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
                     $copyObj->addBaignadeI18n($relObj->copy($deepCopy));
@@ -1218,6 +1302,9 @@ abstract class BaseBaignade extends BaseObject implements Persistent
     {
         if ('EtablissementBaignade' == $relationName) {
             $this->initEtablissementBaignades();
+        }
+        if ('ThemeBaignade' == $relationName) {
+            $this->initThemeBaignades();
         }
         if ('BaignadeI18n' == $relationName) {
             $this->initBaignadeI18ns();
@@ -1462,6 +1549,246 @@ abstract class BaseBaignade extends BaseObject implements Persistent
         $query->joinWith('Etablissement', $join_behavior);
 
         return $this->getEtablissementBaignades($query, $con);
+    }
+
+    /**
+     * Clears out the collThemeBaignades collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return Baignade The current object (for fluent API support)
+     * @see        addThemeBaignades()
+     */
+    public function clearThemeBaignades()
+    {
+        $this->collThemeBaignades = null; // important to set this to null since that means it is uninitialized
+        $this->collThemeBaignadesPartial = null;
+
+        return $this;
+    }
+
+    /**
+     * reset is the collThemeBaignades collection loaded partially
+     *
+     * @return void
+     */
+    public function resetPartialThemeBaignades($v = true)
+    {
+        $this->collThemeBaignadesPartial = $v;
+    }
+
+    /**
+     * Initializes the collThemeBaignades collection.
+     *
+     * By default this just sets the collThemeBaignades collection to an empty array (like clearcollThemeBaignades());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @param boolean $overrideExisting If set to true, the method call initializes
+     *                                        the collection even if it is not empty
+     *
+     * @return void
+     */
+    public function initThemeBaignades($overrideExisting = true)
+    {
+        if (null !== $this->collThemeBaignades && !$overrideExisting) {
+            return;
+        }
+        $this->collThemeBaignades = new PropelObjectCollection();
+        $this->collThemeBaignades->setModel('ThemeBaignade');
+    }
+
+    /**
+     * Gets an array of ThemeBaignade objects which contain a foreign key that references this object.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this Baignade is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @return PropelObjectCollection|ThemeBaignade[] List of ThemeBaignade objects
+     * @throws PropelException
+     */
+    public function getThemeBaignades($criteria = null, PropelPDO $con = null)
+    {
+        $partial = $this->collThemeBaignadesPartial && !$this->isNew();
+        if (null === $this->collThemeBaignades || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collThemeBaignades) {
+                // return empty collection
+                $this->initThemeBaignades();
+            } else {
+                $collThemeBaignades = ThemeBaignadeQuery::create(null, $criteria)
+                    ->filterByBaignade($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    if (false !== $this->collThemeBaignadesPartial && count($collThemeBaignades)) {
+                      $this->initThemeBaignades(false);
+
+                      foreach($collThemeBaignades as $obj) {
+                        if (false == $this->collThemeBaignades->contains($obj)) {
+                          $this->collThemeBaignades->append($obj);
+                        }
+                      }
+
+                      $this->collThemeBaignadesPartial = true;
+                    }
+
+                    return $collThemeBaignades;
+                }
+
+                if($partial && $this->collThemeBaignades) {
+                    foreach($this->collThemeBaignades as $obj) {
+                        if($obj->isNew()) {
+                            $collThemeBaignades[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collThemeBaignades = $collThemeBaignades;
+                $this->collThemeBaignadesPartial = false;
+            }
+        }
+
+        return $this->collThemeBaignades;
+    }
+
+    /**
+     * Sets a collection of ThemeBaignade objects related by a one-to-many relationship
+     * to the current object.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $themeBaignades A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     * @return Baignade The current object (for fluent API support)
+     */
+    public function setThemeBaignades(PropelCollection $themeBaignades, PropelPDO $con = null)
+    {
+        $this->themeBaignadesScheduledForDeletion = $this->getThemeBaignades(new Criteria(), $con)->diff($themeBaignades);
+
+        foreach ($this->themeBaignadesScheduledForDeletion as $themeBaignadeRemoved) {
+            $themeBaignadeRemoved->setBaignade(null);
+        }
+
+        $this->collThemeBaignades = null;
+        foreach ($themeBaignades as $themeBaignade) {
+            $this->addThemeBaignade($themeBaignade);
+        }
+
+        $this->collThemeBaignades = $themeBaignades;
+        $this->collThemeBaignadesPartial = false;
+
+        return $this;
+    }
+
+    /**
+     * Returns the number of related ThemeBaignade objects.
+     *
+     * @param Criteria $criteria
+     * @param boolean $distinct
+     * @param PropelPDO $con
+     * @return int             Count of related ThemeBaignade objects.
+     * @throws PropelException
+     */
+    public function countThemeBaignades(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        $partial = $this->collThemeBaignadesPartial && !$this->isNew();
+        if (null === $this->collThemeBaignades || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collThemeBaignades) {
+                return 0;
+            }
+
+            if($partial && !$criteria) {
+                return count($this->getThemeBaignades());
+            }
+            $query = ThemeBaignadeQuery::create(null, $criteria);
+            if ($distinct) {
+                $query->distinct();
+            }
+
+            return $query
+                ->filterByBaignade($this)
+                ->count($con);
+        }
+
+        return count($this->collThemeBaignades);
+    }
+
+    /**
+     * Method called to associate a ThemeBaignade object to this object
+     * through the ThemeBaignade foreign key attribute.
+     *
+     * @param    ThemeBaignade $l ThemeBaignade
+     * @return Baignade The current object (for fluent API support)
+     */
+    public function addThemeBaignade(ThemeBaignade $l)
+    {
+        if ($this->collThemeBaignades === null) {
+            $this->initThemeBaignades();
+            $this->collThemeBaignadesPartial = true;
+        }
+        if (!in_array($l, $this->collThemeBaignades->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
+            $this->doAddThemeBaignade($l);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	ThemeBaignade $themeBaignade The themeBaignade object to add.
+     */
+    protected function doAddThemeBaignade($themeBaignade)
+    {
+        $this->collThemeBaignades[]= $themeBaignade;
+        $themeBaignade->setBaignade($this);
+    }
+
+    /**
+     * @param	ThemeBaignade $themeBaignade The themeBaignade object to remove.
+     * @return Baignade The current object (for fluent API support)
+     */
+    public function removeThemeBaignade($themeBaignade)
+    {
+        if ($this->getThemeBaignades()->contains($themeBaignade)) {
+            $this->collThemeBaignades->remove($this->collThemeBaignades->search($themeBaignade));
+            if (null === $this->themeBaignadesScheduledForDeletion) {
+                $this->themeBaignadesScheduledForDeletion = clone $this->collThemeBaignades;
+                $this->themeBaignadesScheduledForDeletion->clear();
+            }
+            $this->themeBaignadesScheduledForDeletion[]= $themeBaignade;
+            $themeBaignade->setBaignade(null);
+        }
+
+        return $this;
+    }
+
+
+    /**
+     * If this collection has already been initialized with
+     * an identical criteria, it returns the collection.
+     * Otherwise if this Baignade is new, it will return
+     * an empty collection; or if this Baignade has previously
+     * been saved, it will retrieve related ThemeBaignades from storage.
+     *
+     * This method is protected by default in order to keep the public
+     * api reasonable.  You can provide public methods for those you
+     * actually need in Baignade.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @param string $join_behavior optional join type to use (defaults to Criteria::LEFT_JOIN)
+     * @return PropelObjectCollection|ThemeBaignade[] List of ThemeBaignade objects
+     */
+    public function getThemeBaignadesJoinTheme($criteria = null, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    {
+        $query = ThemeBaignadeQuery::create(null, $criteria);
+        $query->joinWith('Theme', $join_behavior);
+
+        return $this->getThemeBaignades($query, $con);
     }
 
     /**
@@ -1861,6 +2188,183 @@ abstract class BaseBaignade extends BaseObject implements Persistent
     }
 
     /**
+     * Clears out the collThemes collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return Baignade The current object (for fluent API support)
+     * @see        addThemes()
+     */
+    public function clearThemes()
+    {
+        $this->collThemes = null; // important to set this to null since that means it is uninitialized
+        $this->collThemesPartial = null;
+
+        return $this;
+    }
+
+    /**
+     * Initializes the collThemes collection.
+     *
+     * By default this just sets the collThemes collection to an empty collection (like clearThemes());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @return void
+     */
+    public function initThemes()
+    {
+        $this->collThemes = new PropelObjectCollection();
+        $this->collThemes->setModel('Theme');
+    }
+
+    /**
+     * Gets a collection of Theme objects related by a many-to-many relationship
+     * to the current object by way of the theme_baignade cross-reference table.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this Baignade is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria Optional query object to filter the query
+     * @param PropelPDO $con Optional connection object
+     *
+     * @return PropelObjectCollection|Theme[] List of Theme objects
+     */
+    public function getThemes($criteria = null, PropelPDO $con = null)
+    {
+        if (null === $this->collThemes || null !== $criteria) {
+            if ($this->isNew() && null === $this->collThemes) {
+                // return empty collection
+                $this->initThemes();
+            } else {
+                $collThemes = ThemeQuery::create(null, $criteria)
+                    ->filterByBaignade($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    return $collThemes;
+                }
+                $this->collThemes = $collThemes;
+            }
+        }
+
+        return $this->collThemes;
+    }
+
+    /**
+     * Sets a collection of Theme objects related by a many-to-many relationship
+     * to the current object by way of the theme_baignade cross-reference table.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $themes A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     * @return Baignade The current object (for fluent API support)
+     */
+    public function setThemes(PropelCollection $themes, PropelPDO $con = null)
+    {
+        $this->clearThemes();
+        $currentThemes = $this->getThemes();
+
+        $this->themesScheduledForDeletion = $currentThemes->diff($themes);
+
+        foreach ($themes as $theme) {
+            if (!$currentThemes->contains($theme)) {
+                $this->doAddTheme($theme);
+            }
+        }
+
+        $this->collThemes = $themes;
+
+        return $this;
+    }
+
+    /**
+     * Gets the number of Theme objects related by a many-to-many relationship
+     * to the current object by way of the theme_baignade cross-reference table.
+     *
+     * @param Criteria $criteria Optional query object to filter the query
+     * @param boolean $distinct Set to true to force count distinct
+     * @param PropelPDO $con Optional connection object
+     *
+     * @return int the number of related Theme objects
+     */
+    public function countThemes($criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        if (null === $this->collThemes || null !== $criteria) {
+            if ($this->isNew() && null === $this->collThemes) {
+                return 0;
+            } else {
+                $query = ThemeQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
+
+                return $query
+                    ->filterByBaignade($this)
+                    ->count($con);
+            }
+        } else {
+            return count($this->collThemes);
+        }
+    }
+
+    /**
+     * Associate a Theme object to this object
+     * through the theme_baignade cross reference table.
+     *
+     * @param  Theme $theme The ThemeBaignade object to relate
+     * @return Baignade The current object (for fluent API support)
+     */
+    public function addTheme(Theme $theme)
+    {
+        if ($this->collThemes === null) {
+            $this->initThemes();
+        }
+        if (!$this->collThemes->contains($theme)) { // only add it if the **same** object is not already associated
+            $this->doAddTheme($theme);
+
+            $this->collThemes[]= $theme;
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	Theme $theme The theme object to add.
+     */
+    protected function doAddTheme($theme)
+    {
+        $themeBaignade = new ThemeBaignade();
+        $themeBaignade->setTheme($theme);
+        $this->addThemeBaignade($themeBaignade);
+    }
+
+    /**
+     * Remove a Theme object to this object
+     * through the theme_baignade cross reference table.
+     *
+     * @param Theme $theme The ThemeBaignade object to relate
+     * @return Baignade The current object (for fluent API support)
+     */
+    public function removeTheme(Theme $theme)
+    {
+        if ($this->getThemes()->contains($theme)) {
+            $this->collThemes->remove($this->collThemes->search($theme));
+            if (null === $this->themesScheduledForDeletion) {
+                $this->themesScheduledForDeletion = clone $this->collThemes;
+                $this->themesScheduledForDeletion->clear();
+            }
+            $this->themesScheduledForDeletion[]= $theme;
+        }
+
+        return $this;
+    }
+
+    /**
      * Clears the current object and sets all attributes to their default values
      */
     public function clear()
@@ -1896,6 +2400,11 @@ abstract class BaseBaignade extends BaseObject implements Persistent
                     $o->clearAllReferences($deep);
                 }
             }
+            if ($this->collThemeBaignades) {
+                foreach ($this->collThemeBaignades as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
             if ($this->collBaignadeI18ns) {
                 foreach ($this->collBaignadeI18ns as $o) {
                     $o->clearAllReferences($deep);
@@ -1903,6 +2412,11 @@ abstract class BaseBaignade extends BaseObject implements Persistent
             }
             if ($this->collEtablissements) {
                 foreach ($this->collEtablissements as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
+            if ($this->collThemes) {
+                foreach ($this->collThemes as $o) {
                     $o->clearAllReferences($deep);
                 }
             }
@@ -1916,6 +2430,10 @@ abstract class BaseBaignade extends BaseObject implements Persistent
             $this->collEtablissementBaignades->clearIterator();
         }
         $this->collEtablissementBaignades = null;
+        if ($this->collThemeBaignades instanceof PropelCollection) {
+            $this->collThemeBaignades->clearIterator();
+        }
+        $this->collThemeBaignades = null;
         if ($this->collBaignadeI18ns instanceof PropelCollection) {
             $this->collBaignadeI18ns->clearIterator();
         }
@@ -1924,6 +2442,10 @@ abstract class BaseBaignade extends BaseObject implements Persistent
             $this->collEtablissements->clearIterator();
         }
         $this->collEtablissements = null;
+        if ($this->collThemes instanceof PropelCollection) {
+            $this->collThemes->clearIterator();
+        }
+        $this->collThemes = null;
     }
 
     /**
