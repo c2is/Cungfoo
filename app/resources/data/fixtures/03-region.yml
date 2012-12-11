@@ -231,21 +231,21 @@
         Active: true
     24:
         Code: IMED
-        ImagePath: .
+        ImagePath: uploads/regions/50c719dbad680.jpeg
         ImageEncartPath: null
         ImageEncartPetitePath: null
         PaysId: 2
-        MeaHome: null
+        MeaHome: false
         ImageDetail1: null
         ImageDetail2: null
         Active: true
     25:
         Code: ALP
-        ImagePath: .
+        ImagePath: uploads/regions/50c71a02c88e1.jpeg
         ImageEncartPath: null
         ImageEncartPetitePath: null
         PaysId: 1
-        MeaHome: null
+        MeaHome: false
         ImageDetail1: null
         ImageDetail2: null
         Active: true
@@ -261,11 +261,11 @@
         Active: true
     27:
         Code: VERD
-        ImagePath: .
+        ImagePath: uploads/regions/50c71a1080d6b.jpeg
         ImageEncartPath: null
         ImageEncartPetitePath: null
         PaysId: 1
-        MeaHome: null
+        MeaHome: false
         ImageDetail1: null
         ImageDetail2: null
         Active: true

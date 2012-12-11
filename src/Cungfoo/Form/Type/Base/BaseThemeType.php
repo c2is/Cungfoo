@@ -112,7 +112,7 @@ class BaseThemeType extends AppAwareType
                 'description' => array(
                     'required' => false,
                     'label' => 'theme.description',
-                    'type' => 'text',
+                    'type' => 'textarea',
                     'constraints' => array(
                     ),
                 ),

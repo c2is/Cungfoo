@@ -36,7 +36,8 @@
                 <img src="{{ asset('images/vacancesdirectes/common/pict/vacancesdirectes-logo.png') }}" alt="Vacances directes | Le mobil-home et vous" />
             </a>
             {% if app.request.get('_route') == 'homepage' %}
-            <h1 id="catchline">{{ "header.130_camping" | trans }}</h1>
+            <h1 id="catchline">{{ "header.catchline_prefix" | trans }}<br />{{ "header.catchline" | trans }}<br /><span>{{ "header.catchline_suffix" | trans }}</span></h1>
+            {#<h2 id="catchline">{{ "header.130_camping" | trans }}</h2>#}
             {% endif %}
         </div>
 
