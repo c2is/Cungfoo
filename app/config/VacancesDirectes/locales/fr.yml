@@ -17,6 +17,9 @@ seo:
         dispo: "Listing - Campings"
         couloir: "Espace de réservation"
 
+compte:
+    title: "Espace client"
+
 pays.france: France
 pays.espagne: Espagne
 pays.italie: Italie
@@ -30,7 +33,7 @@ destination.images_pays_title: Le pays en image
 destination.images_region_title: La région en image
 destination.images_ville_title: La ville en image
 destination.pays_title: Camping en %item% pas cher
-destination.region_title: Location mobil home %item% pas cher en camping 
+destination.region_title: Location mobil home %item% pas cher en camping
 destination.ville_title: Camping à %item% pas cher
 destination.camping_title: Camping %ville% pas cher
 destination.retour_bottom: Retour à la liste

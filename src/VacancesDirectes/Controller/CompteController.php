@@ -23,7 +23,7 @@ class CompteController implements ControllerProviderInterface
         $controllers->match('/', function (Request $request) use ($app)
         {
             $query = array(
-                "specificFiles" => 'couloir',
+                "specificFiles" => 'compte',
                 "base_id"       => 'vacancesdirectes_preprod_v6_6',
                 "webuser"       => 'web_fr',
                 "tokens"        => 'ignore_token',
