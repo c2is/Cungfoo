@@ -1555,7 +1555,7 @@ function initCritResult(){
         if ( nextItems.length <= nbToShow ) {
             $('#results .nextItem').fadeIn().removeClass('nextItem');
             //nextItems.fadeIn().removeClass('nextItem');
-            $(tthis).hide();
+            $(this).hide();
         }else if ( nextItems.length > nbToShow ) {
             var nbDisclaim = 0;
 
