@@ -50,6 +50,9 @@ menu:
               service_complementaire:
                   title:  menu.service_complementaire
                   route:  service_complementaire_crud_list
+              theme:
+                  title:  menu.theme
+                  route:  theme_crud_list
                   divider: ~
               type_hebergement:
                   title:  menu.type_hebergement

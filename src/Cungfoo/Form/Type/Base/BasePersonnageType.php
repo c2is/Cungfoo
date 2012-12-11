@@ -60,6 +60,14 @@ class BasePersonnageType extends AppAwareType
             'label' => 'personnage.active',
             'required' => false,
         ));
+        $builder->add('themes', 'model', array(
+            'class' => 'Cungfoo\Model\Theme',
+            'constraints' => array(
+            ),
+            'multiple' => true,
+            'label' => 'personnage.themes',
+            'required' => false,
+        ));
         $builder->add('personnageI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\PersonnageI18n',
             'languages' => array(

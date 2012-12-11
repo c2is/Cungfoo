@@ -24,6 +24,10 @@ use Cungfoo\Model\ServiceComplementaireI18n;
 use Cungfoo\Model\ServiceComplementaireI18nQuery;
 use Cungfoo\Model\ServiceComplementairePeer;
 use Cungfoo\Model\ServiceComplementaireQuery;
+use Cungfoo\Model\Theme;
+use Cungfoo\Model\ThemeQuery;
+use Cungfoo\Model\ThemeServiceComplementaire;
+use Cungfoo\Model\ThemeServiceComplementaireQuery;
 
 /**
  * Base class that represents a row from the 'service_complementaire' table.
@@ -97,6 +101,12 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
     protected $collEtablissementServiceComplementairesPartial;
 
     /**
+     * @var        PropelObjectCollection|ThemeServiceComplementaire[] Collection to store aggregation of ThemeServiceComplementaire objects.
+     */
+    protected $collThemeServiceComplementaires;
+    protected $collThemeServiceComplementairesPartial;
+
+    /**
      * @var        PropelObjectCollection|ServiceComplementaireI18n[] Collection to store aggregation of ServiceComplementaireI18n objects.
      */
     protected $collServiceComplementaireI18ns;
@@ -106,6 +116,11 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
      * @var        PropelObjectCollection|Etablissement[] Collection to store aggregation of Etablissement objects.
      */
     protected $collEtablissements;
+
+    /**
+     * @var        PropelObjectCollection|Theme[] Collection to store aggregation of Theme objects.
+     */
+    protected $collThemes;
 
     /**
      * Flag to prevent endless save loop, if this object is referenced
@@ -145,7 +160,19 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
      * An array of objects scheduled for deletion.
      * @var		PropelObjectCollection
      */
+    protected $themesScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
     protected $etablissementServiceComplementairesScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
+    protected $themeServiceComplementairesScheduledForDeletion = null;
 
     /**
      * An array of objects scheduled for deletion.
@@ -546,9 +573,12 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
 
             $this->collEtablissementServiceComplementaires = null;
 
+            $this->collThemeServiceComplementaires = null;
+
             $this->collServiceComplementaireI18ns = null;
 
             $this->collEtablissements = null;
+            $this->collThemes = null;
         } // if (deep)
     }
 
@@ -704,6 +734,26 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
                 }
             }
 
+            if ($this->themesScheduledForDeletion !== null) {
+                if (!$this->themesScheduledForDeletion->isEmpty()) {
+                    $pks = array();
+                    $pk = $this->getPrimaryKey();
+                    foreach ($this->themesScheduledForDeletion->getPrimaryKeys(false) as $remotePk) {
+                        $pks[] = array($remotePk, $pk);
+                    }
+                    ThemeServiceComplementaireQuery::create()
+                        ->filterByPrimaryKeys($pks)
+                        ->delete($con);
+                    $this->themesScheduledForDeletion = null;
+                }
+
+                foreach ($this->getThemes() as $theme) {
+                    if ($theme->isModified()) {
+                        $theme->save($con);
+                    }
+                }
+            }
+
             if ($this->etablissementServiceComplementairesScheduledForDeletion !== null) {
                 if (!$this->etablissementServiceComplementairesScheduledForDeletion->isEmpty()) {
                     EtablissementServiceComplementaireQuery::create()
@@ -715,6 +765,23 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
 
             if ($this->collEtablissementServiceComplementaires !== null) {
                 foreach ($this->collEtablissementServiceComplementaires as $referrerFK) {
+                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
+                        $affectedRows += $referrerFK->save($con);
+                    }
+                }
+            }
+
+            if ($this->themeServiceComplementairesScheduledForDeletion !== null) {
+                if (!$this->themeServiceComplementairesScheduledForDeletion->isEmpty()) {
+                    ThemeServiceComplementaireQuery::create()
+                        ->filterByPrimaryKeys($this->themeServiceComplementairesScheduledForDeletion->getPrimaryKeys(false))
+                        ->delete($con);
+                    $this->themeServiceComplementairesScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collThemeServiceComplementaires !== null) {
+                foreach ($this->collThemeServiceComplementaires as $referrerFK) {
                     if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
                         $affectedRows += $referrerFK->save($con);
                     }
@@ -918,6 +985,14 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
                     }
                 }
 
+                if ($this->collThemeServiceComplementaires !== null) {
+                    foreach ($this->collThemeServiceComplementaires as $referrerFK) {
+                        if (!$referrerFK->validate($columns)) {
+                            $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
+                        }
+                    }
+                }
+
                 if ($this->collServiceComplementaireI18ns !== null) {
                     foreach ($this->collServiceComplementaireI18ns as $referrerFK) {
                         if (!$referrerFK->validate($columns)) {
@@ -1018,6 +1093,9 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
         if ($includeForeignObjects) {
             if (null !== $this->collEtablissementServiceComplementaires) {
                 $result['EtablissementServiceComplementaires'] = $this->collEtablissementServiceComplementaires->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
+            }
+            if (null !== $this->collThemeServiceComplementaires) {
+                $result['ThemeServiceComplementaires'] = $this->collThemeServiceComplementaires->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
             if (null !== $this->collServiceComplementaireI18ns) {
                 $result['ServiceComplementaireI18ns'] = $this->collServiceComplementaireI18ns->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
@@ -1203,6 +1281,12 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
                 }
             }
 
+            foreach ($this->getThemeServiceComplementaires() as $relObj) {
+                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
+                    $copyObj->addThemeServiceComplementaire($relObj->copy($deepCopy));
+                }
+            }
+
             foreach ($this->getServiceComplementaireI18ns() as $relObj) {
                 if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
                     $copyObj->addServiceComplementaireI18n($relObj->copy($deepCopy));
@@ -1272,6 +1356,9 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
     {
         if ('EtablissementServiceComplementaire' == $relationName) {
             $this->initEtablissementServiceComplementaires();
+        }
+        if ('ThemeServiceComplementaire' == $relationName) {
+            $this->initThemeServiceComplementaires();
         }
         if ('ServiceComplementaireI18n' == $relationName) {
             $this->initServiceComplementaireI18ns();
@@ -1516,6 +1603,246 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
         $query->joinWith('Etablissement', $join_behavior);
 
         return $this->getEtablissementServiceComplementaires($query, $con);
+    }
+
+    /**
+     * Clears out the collThemeServiceComplementaires collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return ServiceComplementaire The current object (for fluent API support)
+     * @see        addThemeServiceComplementaires()
+     */
+    public function clearThemeServiceComplementaires()
+    {
+        $this->collThemeServiceComplementaires = null; // important to set this to null since that means it is uninitialized
+        $this->collThemeServiceComplementairesPartial = null;
+
+        return $this;
+    }
+
+    /**
+     * reset is the collThemeServiceComplementaires collection loaded partially
+     *
+     * @return void
+     */
+    public function resetPartialThemeServiceComplementaires($v = true)
+    {
+        $this->collThemeServiceComplementairesPartial = $v;
+    }
+
+    /**
+     * Initializes the collThemeServiceComplementaires collection.
+     *
+     * By default this just sets the collThemeServiceComplementaires collection to an empty array (like clearcollThemeServiceComplementaires());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @param boolean $overrideExisting If set to true, the method call initializes
+     *                                        the collection even if it is not empty
+     *
+     * @return void
+     */
+    public function initThemeServiceComplementaires($overrideExisting = true)
+    {
+        if (null !== $this->collThemeServiceComplementaires && !$overrideExisting) {
+            return;
+        }
+        $this->collThemeServiceComplementaires = new PropelObjectCollection();
+        $this->collThemeServiceComplementaires->setModel('ThemeServiceComplementaire');
+    }
+
+    /**
+     * Gets an array of ThemeServiceComplementaire objects which contain a foreign key that references this object.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this ServiceComplementaire is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @return PropelObjectCollection|ThemeServiceComplementaire[] List of ThemeServiceComplementaire objects
+     * @throws PropelException
+     */
+    public function getThemeServiceComplementaires($criteria = null, PropelPDO $con = null)
+    {
+        $partial = $this->collThemeServiceComplementairesPartial && !$this->isNew();
+        if (null === $this->collThemeServiceComplementaires || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collThemeServiceComplementaires) {
+                // return empty collection
+                $this->initThemeServiceComplementaires();
+            } else {
+                $collThemeServiceComplementaires = ThemeServiceComplementaireQuery::create(null, $criteria)
+                    ->filterByServiceComplementaire($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    if (false !== $this->collThemeServiceComplementairesPartial && count($collThemeServiceComplementaires)) {
+                      $this->initThemeServiceComplementaires(false);
+
+                      foreach($collThemeServiceComplementaires as $obj) {
+                        if (false == $this->collThemeServiceComplementaires->contains($obj)) {
+                          $this->collThemeServiceComplementaires->append($obj);
+                        }
+                      }
+
+                      $this->collThemeServiceComplementairesPartial = true;
+                    }
+
+                    return $collThemeServiceComplementaires;
+                }
+
+                if($partial && $this->collThemeServiceComplementaires) {
+                    foreach($this->collThemeServiceComplementaires as $obj) {
+                        if($obj->isNew()) {
+                            $collThemeServiceComplementaires[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collThemeServiceComplementaires = $collThemeServiceComplementaires;
+                $this->collThemeServiceComplementairesPartial = false;
+            }
+        }
+
+        return $this->collThemeServiceComplementaires;
+    }
+
+    /**
+     * Sets a collection of ThemeServiceComplementaire objects related by a one-to-many relationship
+     * to the current object.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $themeServiceComplementaires A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     * @return ServiceComplementaire The current object (for fluent API support)
+     */
+    public function setThemeServiceComplementaires(PropelCollection $themeServiceComplementaires, PropelPDO $con = null)
+    {
+        $this->themeServiceComplementairesScheduledForDeletion = $this->getThemeServiceComplementaires(new Criteria(), $con)->diff($themeServiceComplementaires);
+
+        foreach ($this->themeServiceComplementairesScheduledForDeletion as $themeServiceComplementaireRemoved) {
+            $themeServiceComplementaireRemoved->setServiceComplementaire(null);
+        }
+
+        $this->collThemeServiceComplementaires = null;
+        foreach ($themeServiceComplementaires as $themeServiceComplementaire) {
+            $this->addThemeServiceComplementaire($themeServiceComplementaire);
+        }
+
+        $this->collThemeServiceComplementaires = $themeServiceComplementaires;
+        $this->collThemeServiceComplementairesPartial = false;
+
+        return $this;
+    }
+
+    /**
+     * Returns the number of related ThemeServiceComplementaire objects.
+     *
+     * @param Criteria $criteria
+     * @param boolean $distinct
+     * @param PropelPDO $con
+     * @return int             Count of related ThemeServiceComplementaire objects.
+     * @throws PropelException
+     */
+    public function countThemeServiceComplementaires(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        $partial = $this->collThemeServiceComplementairesPartial && !$this->isNew();
+        if (null === $this->collThemeServiceComplementaires || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collThemeServiceComplementaires) {
+                return 0;
+            }
+
+            if($partial && !$criteria) {
+                return count($this->getThemeServiceComplementaires());
+            }
+            $query = ThemeServiceComplementaireQuery::create(null, $criteria);
+            if ($distinct) {
+                $query->distinct();
+            }
+
+            return $query
+                ->filterByServiceComplementaire($this)
+                ->count($con);
+        }
+
+        return count($this->collThemeServiceComplementaires);
+    }
+
+    /**
+     * Method called to associate a ThemeServiceComplementaire object to this object
+     * through the ThemeServiceComplementaire foreign key attribute.
+     *
+     * @param    ThemeServiceComplementaire $l ThemeServiceComplementaire
+     * @return ServiceComplementaire The current object (for fluent API support)
+     */
+    public function addThemeServiceComplementaire(ThemeServiceComplementaire $l)
+    {
+        if ($this->collThemeServiceComplementaires === null) {
+            $this->initThemeServiceComplementaires();
+            $this->collThemeServiceComplementairesPartial = true;
+        }
+        if (!in_array($l, $this->collThemeServiceComplementaires->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
+            $this->doAddThemeServiceComplementaire($l);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	ThemeServiceComplementaire $themeServiceComplementaire The themeServiceComplementaire object to add.
+     */
+    protected function doAddThemeServiceComplementaire($themeServiceComplementaire)
+    {
+        $this->collThemeServiceComplementaires[]= $themeServiceComplementaire;
+        $themeServiceComplementaire->setServiceComplementaire($this);
+    }
+
+    /**
+     * @param	ThemeServiceComplementaire $themeServiceComplementaire The themeServiceComplementaire object to remove.
+     * @return ServiceComplementaire The current object (for fluent API support)
+     */
+    public function removeThemeServiceComplementaire($themeServiceComplementaire)
+    {
+        if ($this->getThemeServiceComplementaires()->contains($themeServiceComplementaire)) {
+            $this->collThemeServiceComplementaires->remove($this->collThemeServiceComplementaires->search($themeServiceComplementaire));
+            if (null === $this->themeServiceComplementairesScheduledForDeletion) {
+                $this->themeServiceComplementairesScheduledForDeletion = clone $this->collThemeServiceComplementaires;
+                $this->themeServiceComplementairesScheduledForDeletion->clear();
+            }
+            $this->themeServiceComplementairesScheduledForDeletion[]= $themeServiceComplementaire;
+            $themeServiceComplementaire->setServiceComplementaire(null);
+        }
+
+        return $this;
+    }
+
+
+    /**
+     * If this collection has already been initialized with
+     * an identical criteria, it returns the collection.
+     * Otherwise if this ServiceComplementaire is new, it will return
+     * an empty collection; or if this ServiceComplementaire has previously
+     * been saved, it will retrieve related ThemeServiceComplementaires from storage.
+     *
+     * This method is protected by default in order to keep the public
+     * api reasonable.  You can provide public methods for those you
+     * actually need in ServiceComplementaire.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @param string $join_behavior optional join type to use (defaults to Criteria::LEFT_JOIN)
+     * @return PropelObjectCollection|ThemeServiceComplementaire[] List of ThemeServiceComplementaire objects
+     */
+    public function getThemeServiceComplementairesJoinTheme($criteria = null, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    {
+        $query = ThemeServiceComplementaireQuery::create(null, $criteria);
+        $query->joinWith('Theme', $join_behavior);
+
+        return $this->getThemeServiceComplementaires($query, $con);
     }
 
     /**
@@ -1915,6 +2242,183 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
     }
 
     /**
+     * Clears out the collThemes collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return ServiceComplementaire The current object (for fluent API support)
+     * @see        addThemes()
+     */
+    public function clearThemes()
+    {
+        $this->collThemes = null; // important to set this to null since that means it is uninitialized
+        $this->collThemesPartial = null;
+
+        return $this;
+    }
+
+    /**
+     * Initializes the collThemes collection.
+     *
+     * By default this just sets the collThemes collection to an empty collection (like clearThemes());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @return void
+     */
+    public function initThemes()
+    {
+        $this->collThemes = new PropelObjectCollection();
+        $this->collThemes->setModel('Theme');
+    }
+
+    /**
+     * Gets a collection of Theme objects related by a many-to-many relationship
+     * to the current object by way of the theme_service_complementaire cross-reference table.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this ServiceComplementaire is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria Optional query object to filter the query
+     * @param PropelPDO $con Optional connection object
+     *
+     * @return PropelObjectCollection|Theme[] List of Theme objects
+     */
+    public function getThemes($criteria = null, PropelPDO $con = null)
+    {
+        if (null === $this->collThemes || null !== $criteria) {
+            if ($this->isNew() && null === $this->collThemes) {
+                // return empty collection
+                $this->initThemes();
+            } else {
+                $collThemes = ThemeQuery::create(null, $criteria)
+                    ->filterByServiceComplementaire($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    return $collThemes;
+                }
+                $this->collThemes = $collThemes;
+            }
+        }
+
+        return $this->collThemes;
+    }
+
+    /**
+     * Sets a collection of Theme objects related by a many-to-many relationship
+     * to the current object by way of the theme_service_complementaire cross-reference table.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $themes A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     * @return ServiceComplementaire The current object (for fluent API support)
+     */
+    public function setThemes(PropelCollection $themes, PropelPDO $con = null)
+    {
+        $this->clearThemes();
+        $currentThemes = $this->getThemes();
+
+        $this->themesScheduledForDeletion = $currentThemes->diff($themes);
+
+        foreach ($themes as $theme) {
+            if (!$currentThemes->contains($theme)) {
+                $this->doAddTheme($theme);
+            }
+        }
+
+        $this->collThemes = $themes;
+
+        return $this;
+    }
+
+    /**
+     * Gets the number of Theme objects related by a many-to-many relationship
+     * to the current object by way of the theme_service_complementaire cross-reference table.
+     *
+     * @param Criteria $criteria Optional query object to filter the query
+     * @param boolean $distinct Set to true to force count distinct
+     * @param PropelPDO $con Optional connection object
+     *
+     * @return int the number of related Theme objects
+     */
+    public function countThemes($criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        if (null === $this->collThemes || null !== $criteria) {
+            if ($this->isNew() && null === $this->collThemes) {
+                return 0;
+            } else {
+                $query = ThemeQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
+
+                return $query
+                    ->filterByServiceComplementaire($this)
+                    ->count($con);
+            }
+        } else {
+            return count($this->collThemes);
+        }
+    }
+
+    /**
+     * Associate a Theme object to this object
+     * through the theme_service_complementaire cross reference table.
+     *
+     * @param  Theme $theme The ThemeServiceComplementaire object to relate
+     * @return ServiceComplementaire The current object (for fluent API support)
+     */
+    public function addTheme(Theme $theme)
+    {
+        if ($this->collThemes === null) {
+            $this->initThemes();
+        }
+        if (!$this->collThemes->contains($theme)) { // only add it if the **same** object is not already associated
+            $this->doAddTheme($theme);
+
+            $this->collThemes[]= $theme;
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	Theme $theme The theme object to add.
+     */
+    protected function doAddTheme($theme)
+    {
+        $themeServiceComplementaire = new ThemeServiceComplementaire();
+        $themeServiceComplementaire->setTheme($theme);
+        $this->addThemeServiceComplementaire($themeServiceComplementaire);
+    }
+
+    /**
+     * Remove a Theme object to this object
+     * through the theme_service_complementaire cross reference table.
+     *
+     * @param Theme $theme The ThemeServiceComplementaire object to relate
+     * @return ServiceComplementaire The current object (for fluent API support)
+     */
+    public function removeTheme(Theme $theme)
+    {
+        if ($this->getThemes()->contains($theme)) {
+            $this->collThemes->remove($this->collThemes->search($theme));
+            if (null === $this->themesScheduledForDeletion) {
+                $this->themesScheduledForDeletion = clone $this->collThemes;
+                $this->themesScheduledForDeletion->clear();
+            }
+            $this->themesScheduledForDeletion[]= $theme;
+        }
+
+        return $this;
+    }
+
+    /**
      * Clears the current object and sets all attributes to their default values
      */
     public function clear()
@@ -1951,6 +2455,11 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
                     $o->clearAllReferences($deep);
                 }
             }
+            if ($this->collThemeServiceComplementaires) {
+                foreach ($this->collThemeServiceComplementaires as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
             if ($this->collServiceComplementaireI18ns) {
                 foreach ($this->collServiceComplementaireI18ns as $o) {
                     $o->clearAllReferences($deep);
@@ -1958,6 +2467,11 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
             }
             if ($this->collEtablissements) {
                 foreach ($this->collEtablissements as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
+            if ($this->collThemes) {
+                foreach ($this->collThemes as $o) {
                     $o->clearAllReferences($deep);
                 }
             }
@@ -1971,6 +2485,10 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
             $this->collEtablissementServiceComplementaires->clearIterator();
         }
         $this->collEtablissementServiceComplementaires = null;
+        if ($this->collThemeServiceComplementaires instanceof PropelCollection) {
+            $this->collThemeServiceComplementaires->clearIterator();
+        }
+        $this->collThemeServiceComplementaires = null;
         if ($this->collServiceComplementaireI18ns instanceof PropelCollection) {
             $this->collServiceComplementaireI18ns->clearIterator();
         }
@@ -1979,6 +2497,10 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
             $this->collEtablissements->clearIterator();
         }
         $this->collEtablissements = null;
+        if ($this->collThemes instanceof PropelCollection) {
+            $this->collThemes->clearIterator();
+        }
+        $this->collThemes = null;
     }
 
     /**

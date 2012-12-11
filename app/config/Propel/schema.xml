@@ -817,4 +817,76 @@
         </behavior>
     </table>
 
+    <table name="theme">
+        <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true"/>
+        <column name="name" type="varchar"/>
+        <column name="slug" type="varchar"/>
+        <column name="introduction" type="varchar"/>
+        <column name="description" type="varchar"/>
+        <column name="image_path" type="varchar"/>
+
+        <behavior name="active" />
+
+        <behavior name="i18n">
+            <parameter name="i18n_columns" value="name, slug, introduction, description" />
+        </behavior>
+
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/theme" />
+            <parameter name="crud_type_file" value="image_path" />
+        </behavior>
+    </table>
+
+    <table name="theme_activite" isCrossRef="true">
+        <column name="theme_id" type="integer" primaryKey="true"/>
+        <column name="activite_id" type="integer" primaryKey="true"/>
+
+        <foreign-key foreignTable="theme">
+            <reference local="theme_id" foreign="id"/>
+        </foreign-key>
+
+        <foreign-key foreignTable="activite">
+            <reference local="activite_id" foreign="id"/>
+        </foreign-key>
+    </table>
+
+    <table name="theme_baignade" isCrossRef="true">
+        <column name="theme_id" type="integer" primaryKey="true"/>
+        <column name="baignade_id" type="integer" primaryKey="true"/>
+
+        <foreign-key foreignTable="theme">
+            <reference local="theme_id" foreign="id"/>
+        </foreign-key>
+
+        <foreign-key foreignTable="baignade">
+            <reference local="baignade_id" foreign="id"/>
+        </foreign-key>
+    </table>
+
+    <table name="theme_service_complementaire" isCrossRef="true">
+        <column name="theme_id" type="integer" primaryKey="true"/>
+        <column name="service_complementaire_id" type="integer" primaryKey="true"/>
+
+        <foreign-key foreignTable="theme">
+            <reference local="theme_id" foreign="id"/>
+        </foreign-key>
+
+        <foreign-key foreignTable="service_complementaire">
+            <reference local="service_complementaire_id" foreign="id"/>
+        </foreign-key>
+    </table>
+
+    <table name="theme_personnage" isCrossRef="true">
+        <column name="theme_id" type="integer" primaryKey="true"/>
+        <column name="personnage_id" type="integer" primaryKey="true"/>
+
+        <foreign-key foreignTable="theme">
+            <reference local="theme_id" foreign="id"/>
+        </foreign-key>
+
+        <foreign-key foreignTable="personnage">
+            <reference local="personnage_id" foreign="id"/>
+        </foreign-key>
+    </table>
+
 </database>

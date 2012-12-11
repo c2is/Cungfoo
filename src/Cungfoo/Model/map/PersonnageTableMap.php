@@ -59,7 +59,9 @@ class PersonnageTableMap extends TableMap
     {
         $this->addRelation('Etablissement', 'Cungfoo\\Model\\Etablissement', RelationMap::MANY_TO_ONE, array('etablissement_id' => 'id', ), 'CASCADE', null);
         $this->addRelation('Avantage', 'Cungfoo\\Model\\Avantage', RelationMap::ONE_TO_MANY, array('id' => 'personnage_id', ), 'CASCADE', null, 'Avantages');
+        $this->addRelation('ThemePersonnage', 'Cungfoo\\Model\\ThemePersonnage', RelationMap::ONE_TO_MANY, array('id' => 'personnage_id', ), null, null, 'ThemePersonnages');
         $this->addRelation('PersonnageI18n', 'Cungfoo\\Model\\PersonnageI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'PersonnageI18ns');
+        $this->addRelation('Theme', 'Cungfoo\\Model\\Theme', RelationMap::MANY_TO_MANY, array(), null, null, 'Themes');
     } // buildRelations()
 
     /**

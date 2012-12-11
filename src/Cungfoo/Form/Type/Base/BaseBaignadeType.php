@@ -48,6 +48,14 @@ class BaseBaignadeType extends AppAwareType
             'label' => 'baignade.etablissements',
             'required' => false,
         ));
+        $builder->add('themes', 'model', array(
+            'class' => 'Cungfoo\Model\Theme',
+            'constraints' => array(
+            ),
+            'multiple' => true,
+            'label' => 'baignade.themes',
+            'required' => false,
+        ));
         $builder->add('baignadeI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\BaignadeI18n',
             'languages' => array(
