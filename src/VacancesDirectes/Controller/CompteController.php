@@ -20,9 +20,23 @@ class CompteController implements ControllerProviderInterface
     {
         $controllers = $app['controllers_factory'];
 
-        $controllers->match('/', function () use ($app)
+        $controllers->match('/', function (Request $request) use ($app)
         {
-            return $app->renderView('Compte/index.twig');
+            $query = array(
+                "specificFiles" => 'couloir',
+                "base_id"       => 'vacancesdirectes_preprod_v6_6',
+                "webuser"       => 'web_fr',
+                "tokens"        => 'ignore_token',
+                "display"       => 'customer_area',
+                "actions"       => $request->query->get('actions'),
+                "session"       => $request->query->get('session'),
+                "tokens"        => $request->query->get('tokens'),
+                "session"       => $app['session']->get('resalys_user')->session,
+            );
+
+            $query = array_merge($query, $request->request->all());
+
+            return $app->renderView('Compte/index.twig', array('query' => $query));
 
         })->bind('compte_index');
 
