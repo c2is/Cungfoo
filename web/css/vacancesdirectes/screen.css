@@ -5191,6 +5191,160 @@ ul.newList.optGroup li.optGroup-like a {
   float: none;
   display: inline-block;
 }
+/* page account */
+.account {
+  /* STEPS */
+
+  /* COMMON */
+
+  /* SEARCH */
+
+}
+.account #stepNav {
+  width: 976px;
+  height: 50px;
+  font: bold 23px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  position: relative;
+  background: #464545;
+  margin: 20px 0 20px -24px;
+  z-index: 30;
+}
+.account #stepNav ul {
+  width: 976px;
+  margin: 0 auto;
+  text-align: center;
+}
+.account #stepNav ul li.tab {
+  margin: 0 12px;
+  float: none;
+  display: inline-block;
+  position: static;
+  color: #ffffff;
+  padding: 0;
+}
+.account #stepNav ul li.tab.current {
+  background: #ed145b;
+}
+.account #stepNav ul li.tab span {
+  position: relative;
+  display: block;
+  padding: 0 15px;
+  color: #ffffff;
+  text-decoration: none;
+  height: 50px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 50px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+  float: left;
+}
+.account #stepNav ul li.tab span > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: inherit;
+}
+.account #stepNav ul li.tab span > img {
+  vertical-align: middle;
+}
+.account #stepNav ul li.tab.current span {
+  text-decoration: none;
+}
+.account #stepNav ul li.tab.current > span:after {
+  content: url("../../images/vacancesdirectes/common/pict/Triangle-Tab.png");
+  height: 8px;
+  left: 50%;
+  margin-left: -12px;
+  position: absolute;
+  top: 24px;
+  width: 22px;
+  z-index: 50;
+}
+.account #stepNav ul li.tab.completed span:before {
+  content: "";
+  background: url("../../images/vacancesdirectes/common/sprites/sprite-40.png") no-repeat 0 -165px transparent;
+  width: 40px;
+  height: 50px;
+  float: left;
+  margin-right: 10px;
+}
+.account #nav ul {
+  top: 0px;
+}
+.account #nav ul li.tab {
+  height: 50px;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+.account #nav ul li.tab a {
+  margin: 0;
+}
+.account #nav ul li.tab a span {
+  vertical-align: baseline;
+}
+.account #nav ul li.tab:hover > a#home:after {
+  content: '';
+}
+.account #nav ul span {
+  margin-left: 5px;
+}
+.account h1 {
+  margin: 10px 0 20px;
+}
+.account h1 span {
+  color: #464545;
+}
+.account iframe {
+  width: 100%;
+}
+.account .error {
+  margin-bottom: 10px;
+  font: 12px Arial, Helvetica, sans-serif;
+  color: #f58220;
+}
+.account .error li:before {
+  content: "-";
+  padding-right: 3px;
+}
+.account #headerContainer #nav {
+  margin-left: -24px;
+  width: 976px;
+  height: auto;
+  font-size: 18px;
+  font-weight: bold;
+}
+.account #headerContainer #nav ul {
+  width: 858px;
+  margin: 0 auto;
+  text-align: center;
+}
+.account #headerContainer #nav ul li.tab {
+  width: 186px;
+  margin: 0 12px;
+  float: none;
+  display: inline-block;
+}
+.account #headerContainer #nav ul li.tab a {
+  text-decoration: underline;
+}
+.account #headerContainer #nav ul li.tab a:hover {
+  text-decoration: none;
+}
+.account #headerContainer #nav ul li.tab.current a {
+  text-decoration: none;
+}
+.account #headerContainer #nav .topnavSub {
+  width: 100%;
+  background: #ed145b;
+  text-align: center;
+}
+.account #headerContainer #nav .topnavSub li.tab {
+  float: none;
+  display: inline-block;
+}
 /* page CE */
 .ce {
   /* COMMON */
