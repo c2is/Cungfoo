@@ -5594,6 +5594,7 @@ ul.newList.optGroup li.optGroup-like a {
 .ce #searchContainerReservation .selectContainer .newListSelected .selectedTxt {
   background-color: #e6e5e5;
   font-weight: normal;
+  width: 164px;
 }
 .ce #searchContainer .selectContainer .newListSelected .SSContainerDivWrapper,
 .ce #searchContainerReservation .selectContainer .newListSelected .SSContainerDivWrapper {

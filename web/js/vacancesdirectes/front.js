@@ -398,6 +398,89 @@ $(function() {
         });
     }
 
+
+//init Gmap
+    if ($('.gmap').length > 0) {
+        //consoleLog('map');
+        loadGmapScript();
+    }
+
+//init Search
+    if ($('#searchBlocDate').length > 0) {
+        countItem();
+        $('#searchBlocDate').find('select').sSelect({ddMaxHeight: '300px'});
+        switchSelect();
+        toggleSearchCriteria();
+    }
+
+    if ($('#results').length ){
+        initCritResult();
+        $('.itemResultRight .bt').click( function(){
+            $(this).next('.itemResultPopDest').fadeIn();
+        });
+        $('.itemResult').mouseleave( function(){
+            $(this).find('.itemResultPopDest').fadeOut();
+        });
+    }
+});
+
+/*
+ *  //////////////////////////////////////////////////////////////////////////////////////////////////////////
+ *                                              HEAD ready
+ * ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+ */
+head.ready(function(){
+
+    if ($('#searchContainer').length) {
+        $('#searchText').height($('#searchForm').height());
+    }
+
+    $('.selectedTxt').click(function(){
+
+        if ( !$(this).parent().hasClass('newListSelFocus') ){
+            var selectWidth = $(this).parent().width();
+            $(this).next('.SSContainerDivWrapper').show();
+            var selectUlWidth = $(this).next('.SSContainerDivWrapper').width();
+//            console.log(selectWidth);
+//            console.log(selectUlWidth);
+//            console.log( $(this).next('.SSContainerDivWrapper').hasClass('maxHeight') );
+//            console.log( !$(this).next('.SSContainerDivWrapper').hasClass('minWidth') );
+//            console.log( selectUlWidth >= selectWidth );
+            if ( $(this).next('.SSContainerDivWrapper').hasClass('maxHeight') && !$(this).next('.SSContainerDivWrapper').hasClass('minWidth') && selectUlWidth >= selectWidth ){
+
+                $(this).next('.SSContainerDivWrapper').css({
+                    minWidth: selectUlWidth + 33
+                });
+                $(this).next('.SSContainerDivWrapper').addClass('minWidth')
+            }
+            else if ( $(this).next('.SSContainerDivWrapper').hasClass('minWidth') ){
+                return false;
+            }
+        }
+
+    });
+
+    /*
+     *  ############################################################
+     *                          SEARCH ENGINE
+     * ############################################################
+     */
+    var errorVisible = false;
+    if ( $('.errors').length > 0 ){
+        $('.errors').each(function(i,v){
+            errorVisible = $(this).css('display') == 'block' ? true : false;
+            console.log(errorVisible);
+        });
+    }
+    if ( $('form').length > 0 && errorVisible ) {
+        $('form').click(function(e){
+            $(this).find('.errors').fadeOut(500);
+        });
+        $('.selectedTxt, select, input, #datepicker span').click(function(e){
+            $(this).parents('form').find('.errors').fadeOut(500);
+        });
+    }
+
     /*
      *  ############################################################
      *                          DATEPICKER
@@ -471,7 +554,7 @@ $(function() {
                 });
             },
             onRender: function(date) {
-    //            //console.log("################################## onRender:  ##################################");
+                //            //console.log("################################## onRender:  ##################################");
 
                 var renderDate = date,
                     disabledDate,
@@ -480,22 +563,22 @@ $(function() {
                     fRenderDate = formatDate(renderDate),
                     renderDate = numDate(fRenderDate);
 
-    //            //console.log(renderDate);
-    //            //console.log(startDate);
-    //            //console.log(endDate);
-    //            //console.log(renderWeekDay);
+                //            //console.log(renderDate);
+                //            //console.log(startDate);
+                //            //console.log(endDate);
+                //            //console.log(renderWeekDay);
 
-                    if ( (renderDate < startDate || renderDate > endDate) || renderWeekDay != 6 || (renderDate > highSeasonStartDate && renderDate < highSeasonEndDate) ){
-    //                    //console.log("DISABLED: " + renderDate);
-                        disabledDate = renderDate;
-                    }
+                if ( (renderDate < startDate || renderDate > endDate) || renderWeekDay != 6 || (renderDate > highSeasonStartDate && renderDate < highSeasonEndDate) ){
+                    //                    //console.log("DISABLED: " + renderDate);
+                    disabledDate = renderDate;
+                }
 
-                    if (renderDate >= highSeasonStartDate && renderDate <= highSeasonEndDate){
-    //                    //console.log("HIGH SEASON: " + renderDate);
-                        highSeasonDate = renderDate;
-                    }
+                if (renderDate >= highSeasonStartDate && renderDate <= highSeasonEndDate){
+                    //                    //console.log("HIGH SEASON: " + renderDate);
+                    highSeasonDate = renderDate;
+                }
 
-    //            //console.log(disabledDate);
+                //            //console.log(disabledDate);
                 return {
                     disabled: disabledDate != undefined,
                     className: highSeasonDate != undefined ? 'datepickerSpecial' : false
@@ -511,9 +594,10 @@ $(function() {
             return false;
         });
         $('#datepickerCalendar .bt').bind('click', function(){
-            $('#datepickerCalendar').stop().css({height: 0}, function(){
-                $('#datepickerField').removeClass('opened');
-            });
+            console.log("BUTTON");
+            $('#datepickerCalendar').stop().css({height: 0}).removeClass('opened');
+            $('#datepickerField').removeClass('opened');
+            $('#datepickerCalendar').removeClass('opened');
             state = !state;
             return false;
         });
@@ -576,197 +660,197 @@ $(function() {
     }
 
     if ($('#searchContainerReservation #datepicker').length) {
-            var d = new Date(),
-                fCurrentDate = formatDate(d),
-                currentDate = numDate(fCurrentDate),
-                startDate = numDate(fStartDate),
-                endDate = numDate(fEndDate),
-                arrivalDate,
-                departureDate,
-                visibleMonths = 7,
-                displayMonths = 5;
+        var d = new Date(),
+            fCurrentDate = formatDate(d),
+            currentDate = numDate(fCurrentDate),
+            startDate = numDate(fStartDate),
+            endDate = numDate(fEndDate),
+            arrivalDate,
+            departureDate,
+            visibleMonths = 7,
+            displayMonths = 5;
 
-            //console.log(fSeasonDates);
-            //console.log(fHighSeasonDates);
-            //console.log(fCurrentDate);
-            //console.log(d);
+        //console.log(fSeasonDates);
+        //console.log(fHighSeasonDates);
+        //console.log(fCurrentDate);
+        //console.log(d);
 
-            if (currentDate > startDate){
-                fStartDate = fCurrentDate;
-            }
-            //console.log(currentDate);
-            //console.log(startDate);
-            //console.log(fStartDate);
+        if (currentDate > startDate){
+            fStartDate = fCurrentDate;
+        }
+        //console.log(currentDate);
+        //console.log(startDate);
+        //console.log(fStartDate);
 
-            $('#datepickerCalendar').DatePicker({
-                flat: true,
-                date: '',
-                current: '2013/07/01',
-                calendars: visibleMonths,
-                mode: 'range',
-                starts: 1,
-                format:'Y/m/d',
-                position: 'right',
-                onChange: function(formated, dates){
-                    //console.log("################################## onChange:  ##################################");
-                    //console.log(formated);
-                    //console.log(dates);
-                    arrivalDate = dates[0];
-                    departureDate = dates[1];
-                    //console.log(arrivalDate);
-                    //console.log(departureDate);
-                    var selectedDates  = new Array(),
-                        selectedDays = new Array();
-                    firstRendering = false;
-                    $.each(dates, function(index, value) {
-                        //console.log(index + ": " + value);
-                        selectedDates.push(writeDate(value));
-                        selectedDays.push($(this));
-                    });
-                    if (firstSelection) {
-                        unselectForbiddenDates(arrivalDate);
-                        firstSelection = false;
-                    }
-                    else {
-                        unselectForbiddenDates(departureDate);
-                        firstSelection = true;
-                    }
-                    //console.log(selectedDates)
-                    $('#datepickerInput').val('Du ' + selectedDates.join(' au '));
-                    $('#datepicker input[type=hidden]').each(function(index, value){
-                        $(this).val(selectedDates[index]);
-                    });
-                },
-                onRender: function(date) {
-        //            //console.log("################################## onRender:  ##################################");
-
-                    var renderDate = date,
-                        disabledDate,
-                        renderWeekDay = renderDate.getDay(),
-                        fRenderDate = formatDate(renderDate),
-                        renderDate = numDate(fRenderDate);
-
-        //            //console.log(renderDate);
-        //            //console.log(startDate);
-        //            //console.log(endDate);
-        //            //console.log(renderWeekDay);
-
-                        if ( (renderDate < startDate || renderDate > endDate) || renderWeekDay != 6 ){
-        //                    //console.log("DISABLED: " + renderDate);
-                            disabledDate = renderDate;
-                        }
-
-        //            //console.log(disabledDate);
-                    return {
-                        disabled: disabledDate != undefined
-                    }
-                }
-            });
-
-            var state = false;
-            $('#datepickerField').bind('click', function(){
-                $(this).toggleClass('opened').next().toggleClass('opened');
-                $(this).next('#datepickerCalendar').stop().css({height: state ? 0 : $('#datepickerCalendar div.datepicker').get(0).offsetHeight});
-                state = !state;
-                return false;
-            });
-            $('#datepickerCalendar .bt').bind('click', function(){
-                $('#datepickerCalendar').stop().css({height: 0}, function(){
-                    $('#datepickerField').removeClass('opened');
+        $('#datepickerCalendar').DatePicker({
+            flat: true,
+            date: '',
+            current: '2013/07/01',
+            calendars: visibleMonths,
+            mode: 'range',
+            starts: 1,
+            format:'Y/m/d',
+            position: 'right',
+            onChange: function(formated, dates){
+                //console.log("################################## onChange:  ##################################");
+                //console.log(formated);
+                //console.log(dates);
+                arrivalDate = dates[0];
+                departureDate = dates[1];
+                //console.log(arrivalDate);
+                //console.log(departureDate);
+                var selectedDates  = new Array(),
+                    selectedDays = new Array();
+                firstRendering = false;
+                $.each(dates, function(index, value) {
+                    //console.log(index + ": " + value);
+                    selectedDates.push(writeDate(value));
+                    selectedDays.push($(this));
                 });
-                state = !state;
-                return false;
-            });
-
-            var currentMonth = 1;
-            $('.datepicker>.datepickerGoPrev a, .datepicker>.datepickerGoNext a').bind('click', function(e){
-                //console.log("--- CHANGE MONTH ---");
-                var datepicker = $('.datepickerContainer');
-                var direction = $(this).parent().hasClass('datepickerGoPrev') ? "+=" : "-=";
-                var currentButton = $(this);
-                if (currentButton.hasClass('isFading')){
-                    //console.log("is fading");
-                    return false;
-                }
-                currentMonth = direction == "-=" ? currentMonth+1 : currentMonth-1;
-
-                datepicker.animate({
-                    marginLeft: direction + "175px"
-                }, 500);
-
-                if (currentMonth >= visibleMonths - displayMonths || currentMonth <= 0){
-                    currentButton.addClass('isFading').fadeOut(1000);
+                if (firstSelection) {
+                    unselectForbiddenDates(arrivalDate);
+                    firstSelection = false;
                 }
                 else {
-                    $('.datepicker>.datepickerGoPrev a, .datepicker>.datepickerGoNext a').removeClass('isFading').fadeIn(1000);
+                    unselectForbiddenDates(departureDate);
+                    firstSelection = true;
+                }
+                //console.log(selectedDates)
+                $('#datepickerInput').val('Du ' + selectedDates.join(' au '));
+                $('#datepicker input[type=hidden]').each(function(index, value){
+                    $(this).val(selectedDates[index]);
+                });
+            },
+            onRender: function(date) {
+                //            //console.log("################################## onRender:  ##################################");
+
+                var renderDate = date,
+                    disabledDate,
+                    renderWeekDay = renderDate.getDay(),
+                    fRenderDate = formatDate(renderDate),
+                    renderDate = numDate(fRenderDate);
+
+                //            //console.log(renderDate);
+                //            //console.log(startDate);
+                //            //console.log(endDate);
+                //            //console.log(renderWeekDay);
+
+                if ( (renderDate < startDate || renderDate > endDate) || renderWeekDay != 6 ){
+                    //                    //console.log("DISABLED: " + renderDate);
+                    disabledDate = renderDate;
                 }
 
-                //console.log(currentMonth);
-                return false;
-            });
-            $('.datepickerGoPrev a, .datepickerGoNext a, .datepickerMonth a').bind('click', function(e){
-                return false;
-            });
-            $('#datepickerCalendar div.datepicker').css('position', 'absolute');
-            $('#datepickerCalendar div.datepickerContainer').css('margin-left', '-180px');
+                //            //console.log(disabledDate);
+                return {
+                    disabled: disabledDate != undefined
+                }
+            }
+        });
 
-            var preselectedFDates = new Array(),
-                preselectedDates = new Array();
-            if ( $("#AchatLineaire_dateDebut").val() != '' && $("#AchatLineaire_dateFin").val() != '' ) {
-                $.each($('input[type=hidden]'), function(i, item) {
-                    //console.log(item.value);
+        var state = false;
+        $('#datepickerField').bind('click', function(){
+            $(this).toggleClass('opened').next().toggleClass('opened');
+            $(this).next('#datepickerCalendar').stop().css({height: state ? 0 : $('#datepickerCalendar div.datepicker').get(0).offsetHeight});
+            state = !state;
+            return false;
+        });
+        $('#datepickerCalendar .bt').bind('click', function(){
+            $('#datepickerCalendar').stop().css({height: 0}, function(){
+                $('#datepickerField').removeClass('opened');
+            });
+            state = !state;
+            return false;
+        });
 
-                    var fDate = item.value.split("/").reverse().join('/');
-                    //console.log(fDate);
-                    preselectedFDates.push(fDate);
-                    preselectedDates.push(item.value);
-                });
-                //console.log(preselectedDates);
-                $('#datepickerInput').val('Du ' + preselectedDates.join(' au '));
-                $('#datepickerCalendar').DatePickerSetDate(preselectedFDates);
+        var currentMonth = 1;
+        $('.datepicker>.datepickerGoPrev a, .datepicker>.datepickerGoNext a').bind('click', function(e){
+            //console.log("--- CHANGE MONTH ---");
+            var datepicker = $('.datepickerContainer');
+            var direction = $(this).parent().hasClass('datepickerGoPrev') ? "+=" : "-=";
+            var currentButton = $(this);
+            if (currentButton.hasClass('isFading')){
+                //console.log("is fading");
+                return false;
+            }
+            currentMonth = direction == "-=" ? currentMonth+1 : currentMonth-1;
+
+            datepicker.animate({
+                marginLeft: direction + "175px"
+            }, 500);
+
+            if (currentMonth >= visibleMonths - displayMonths || currentMonth <= 0){
+                currentButton.addClass('isFading').fadeOut(1000);
+            }
+            else {
+                $('.datepicker>.datepickerGoPrev a, .datepicker>.datepickerGoNext a').removeClass('isFading').fadeIn(1000);
             }
 
-            //console.log("################################## switchLinear()  ##################################");
-             $('#searchContainer .searchBox').attr('id',linear);
-             $('#AchatLineaire_isBasseSaison').attr('class','clear ' + linear);
-             var titleText = "Recherche de linéaires";
-             var infoText = "La période choisie doit inlure au minimum 1 semaine.";
-             var legendText = "haute saison";
+            //console.log(currentMonth);
+            return false;
+        });
+        $('.datepickerGoPrev a, .datepickerGoNext a, .datepickerMonth a').bind('click', function(e){
+            return false;
+        });
+        $('#datepickerCalendar div.datepicker').css('position', 'absolute');
+        $('#datepickerCalendar div.datepickerContainer').css('margin-left', '-180px');
 
-             $('#' + linear + ' #datepickerCalendar').find('.datepickerInfo').text(infoText);
-             $('#' + linear + ' #datepickerCalendar').find('.datepickerLegend').text(legendText);
-             firstRendering = true;
+        var preselectedFDates = new Array(),
+            preselectedDates = new Array();
+        if ( $("#AchatLineaire_dateDebut").val() != '' && $("#AchatLineaire_dateFin").val() != '' ) {
+            $.each($('input[type=hidden]'), function(i, item) {
+                //console.log(item.value);
 
-            //console.log("################################## initializeForbiddenDates()  ##################################");
-            //console.log(firstRendering);
-            var allSaturdays = $('#datepickerCalendar td.datepickerSaturday').not($('td.datepickerNotInMonth'));
-
-            allSaturdays.removeClass('datepickerUnselectable');
-            if (firstRendering){
-               allSaturdays.each(function(index, value){
-                   var td = $(this);
-            //            //console.log(endHighSeasonDay);
-
-                   if (linear == "reservation"){
-                       var len = allSaturdays.length;
-                       if (index >= len - numMinWeeks) {
-                           td.addClass('datepickerUnselectable');
-                       }
-
-                   }
-            //            //console.log(value);
-               });
-            }
-
+                var fDate = item.value.split("/").reverse().join('/');
+                //console.log(fDate);
+                preselectedFDates.push(fDate);
+                preselectedDates.push(item.value);
+            });
+            //console.log(preselectedDates);
+            $('#datepickerInput').val('Du ' + preselectedDates.join(' au '));
+            $('#datepickerCalendar').DatePickerSetDate(preselectedFDates);
         }
+
+        //console.log("################################## switchLinear()  ##################################");
+        $('#searchContainer .searchBox').attr('id',linear);
+        $('#AchatLineaire_isBasseSaison').attr('class','clear ' + linear);
+        var titleText = "Recherche de linéaires";
+        var infoText = "La période choisie doit inlure au minimum 1 semaine.";
+        var legendText = "haute saison";
+
+        $('#' + linear + ' #datepickerCalendar').find('.datepickerInfo').text(infoText);
+        $('#' + linear + ' #datepickerCalendar').find('.datepickerLegend').text(legendText);
+        firstRendering = true;
+
+        //console.log("################################## initializeForbiddenDates()  ##################################");
+        //console.log(firstRendering);
+        var allSaturdays = $('#datepickerCalendar td.datepickerSaturday').not($('td.datepickerNotInMonth'));
+
+        allSaturdays.removeClass('datepickerUnselectable');
+        if (firstRendering){
+            allSaturdays.each(function(index, value){
+                var td = $(this);
+                //            //console.log(endHighSeasonDay);
+
+                if (linear == "reservation"){
+                    var len = allSaturdays.length;
+                    if (index >= len - numMinWeeks) {
+                        td.addClass('datepickerUnselectable');
+                    }
+
+                }
+                //            //console.log(value);
+            });
+        }
+
+    }
 
     if ($('#searchBlocDate #datepicker').length) {
         var d = new Date(),
             fCurrentDate = formatDate(d),
             currentDate = numDate(fCurrentDate),
             startDate = numDate(fStartDate)
-            arrivalDate
-            visibleMonths = 7,
+        arrivalDate
+        visibleMonths = 7,
             displayMonths = 2;
 
         //console.log(fSeasonDates);
@@ -902,90 +986,6 @@ $(function() {
 
         firstRendering = true;
 
-    }
-
-
-
-//init Gmap
-    if ($('.gmap').length > 0) {
-        //consoleLog('map');
-        loadGmapScript();
-    }
-
-//init Search
-    if ($('#searchBlocDate').length > 0) {
-        countItem();
-        $('#searchBlocDate').find('select').sSelect({ddMaxHeight: '300px'});
-        switchSelect();
-        toggleSearchCriteria();
-    }
-
-    if ($('#results').length ){
-        initCritResult();
-        $('.itemResultRight .bt').click( function(){
-            $(this).next('.itemResultPopDest').fadeIn();
-        });
-        $('.itemResult').mouseleave( function(){
-            $(this).find('.itemResultPopDest').fadeOut();
-        });
-    }
-});
-
-/*
- *  //////////////////////////////////////////////////////////////////////////////////////////////////////////
- *                                              HEAD ready
- * ///////////////////////////////////////////////////////////////////////////////////////////////////////////
- */
-head.ready(function(){
-
-    if ($('#searchContainer').length) {
-        $('#searchText').height($('#searchForm').height());
-    }
-
-    $('.selectedTxt').click(function(){
-
-        if ( !$(this).parent().hasClass('newListSelFocus') ){
-            var selectWidth = $(this).parent().width();
-            $(this).next('.SSContainerDivWrapper').show();
-            var selectUlWidth = $(this).next('.SSContainerDivWrapper').width();
-//            console.log(selectWidth);
-//            console.log(selectUlWidth);
-//            console.log( $(this).next('.SSContainerDivWrapper').hasClass('maxHeight') );
-//            console.log( !$(this).next('.SSContainerDivWrapper').hasClass('minWidth') );
-//            console.log( selectUlWidth >= selectWidth );
-            if ( $(this).next('.SSContainerDivWrapper').hasClass('maxHeight') && !$(this).next('.SSContainerDivWrapper').hasClass('minWidth') && selectUlWidth >= selectWidth ){
-
-                $(this).next('.SSContainerDivWrapper').css({
-                    minWidth: selectUlWidth + 33
-                });
-                $(this).next('.SSContainerDivWrapper').addClass('minWidth')
-            }
-            else if ( $(this).next('.SSContainerDivWrapper').hasClass('minWidth') ){
-                return false;
-            }
-        }
-
-    });
-
-    /*
-     *  ############################################################
-     *                          SEARCH ENGINE
-     * ############################################################
-     */
-    var errorVisible = false;
-    if ( $('.errors').length > 0 ){
-        $('.errors').each(function(i,v){
-            errorVisible = $(this).css('display') == 'block' ? true : false;
-            console.log(errorVisible);
-        });
-    }
-    if ( $('form').length > 0 && errorVisible ) {
-        $('form').click(function(e){
-            $(this).find('.errors').fadeOut(500);
-        });
-        $('.selectedTxt, select, input, #datepicker span').click(function(e){
-            $(this).parents('form').find('.errors').fadeOut(500);
-        });
     }
 
 });
