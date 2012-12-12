@@ -343,7 +343,7 @@
         Active: true
     58:
         Code: LABA
-        RegionId: 9
+        RegionId: 12
         ImageDetail1: null
         ImageDetail2: null
         Active: true
@@ -355,13 +355,13 @@
         Active: true
     60:
         Code: GUER
-        RegionId: 9
+        RegionId: 12
         ImageDetail1: null
         ImageDetail2: null
         Active: true
     61:
         Code: PORN
-        RegionId: 9
+        RegionId: 12
         ImageDetail1: null
         ImageDetail2: null
         Active: true
@@ -463,7 +463,7 @@
         Active: true
     78:
         Code: RUOM
-        RegionId: 25
+        RegionId: 18
         ImageDetail1: null
         ImageDetail2: null
         Active: true
@@ -559,19 +559,19 @@
         Active: true
     94:
         Code: LOIX
-        RegionId: 13
+        RegionId: 10
         ImageDetail1: null
         ImageDetail2: null
         Active: true
     95:
         Code: BOYA
-        RegionId: 13
+        RegionId: 10
         ImageDetail1: null
         ImageDetail2: null
         Active: true
     96:
         Code: STLA
-        RegionId: 13
+        RegionId: 10
         ImageDetail1: null
         ImageDetail2: null
         Active: true
@@ -799,7 +799,7 @@
         Active: true
     134:
         Code: THON
-        RegionId: 5
+        RegionId: 25
         ImageDetail1: null
         ImageDetail2: null
         Active: true
@@ -889,7 +889,7 @@
         Active: true
     149:
         Code: CHOL
-        RegionId: 13
+        RegionId: 10
         ImageDetail1: null
         ImageDetail2: null
         Active: true

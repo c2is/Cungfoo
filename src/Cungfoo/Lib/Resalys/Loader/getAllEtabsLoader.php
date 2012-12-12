@@ -69,10 +69,10 @@ class getAllEtabsLoader extends AbstractLoader
                 switch ($cmsData->code)
                 {
                     case 'ELAT':
-                        $objectEtab->setGeoCoordinateX($value);
+                        $objectEtab->setGeoCoordinateX(str_replace(',', '.', $value));
                         break;
                     case 'ELON':
-                        $objectEtab->setGeoCoordinateY($value);
+                        $objectEtab->setGeoCoordinateY(str_replace(',', '.', $value));
                         break;
                     case 'ENEM':
                         $objectEtab->setCapacite($value);
