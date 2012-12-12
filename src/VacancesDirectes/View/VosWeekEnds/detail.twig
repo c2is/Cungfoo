@@ -1,0 +1,112 @@
+{% extends "VosWeekEnds/base.twig" %}
+
+{% block title %}
+    {% spaceless %}
+        {{ "seo.title.theme" | trans ({'%theme%': theme.name}) }}
+    {% endspaceless %}
+{% endblock %}
+
+{% block metaDescription %}
+    {% spaceless %}
+        {{ "seo.meta.theme" | trans  ({'%theme%': theme.name})}}
+    {% endspaceless %}
+{% endblock %}
+
+{% block topLeftColumn %}
+    {# Entête ; Lien retour et fil d'ariane ; pour l'instant le fil d'ariane n'est pas dynamisé #}
+    {# le lien retour pointera à terme sur les pages de listing
+    <a class="bt gris left" href="{{ app.request.headers.get('referer') }}">&lt; {{ "destination.retour" | trans }}</a>
+    #}
+
+    {# Bloc titre + accroche #}
+    <h1>{{ "vos_week_ends" | trans }} {{ theme.name }}</h1> {# Titre #}
+    <h2 class="h3-like">{{ theme.introduction }}</h2> {# Accroche #}
+    <p class="themeDescription">{{ theme.description }}</p> {# Description #}
+
+    <a class="bt big fushia right goto" href="#results">Notre sélection</a>
+{% endblock %}
+
+{% block topRightColumn %}
+
+    {% include 'Form/_search_engine.twig' %}
+
+{% endblock %}
+
+{% block bottomColumn %}
+
+    {# Bloc Activité #}
+    <div class="radiusBox greyC left">
+        {% for activite in theme.activites %}
+            <img src="" class="boxborder left">
+            <div class="details">
+                <h3>{{ activite.name }}</h3>
+                <span>{{ activite.description }}</span>
+            </div>
+        {% endfor %}
+        {% for baignade in theme.baignades %}
+            <img src="" class="boxborder left">
+            <div class="details">
+                <h3>{{ baignade.name }}</h3>
+                <span>{{ baignade.description }}</span>
+            </div>
+        {% endfor %}
+        {% for serviceComplementaire in theme.serviceComplementaires %}
+            <img src="" class="boxborder left">
+            <div class="details">
+                <h3>{{ serviceComplementaire.name }}</h3>
+                <span>{{ serviceComplementaire.description }}</span>
+            </div>
+        {% endfor %}
+        <a href="#_" class="bt link right">Toutes les activités (12)</a>
+    </div>
+
+    {# Bloc Vous aimerez #}
+    <div class="radiusBox greyC left">
+        <h3>{{ "fiche.vous_aimerez" | trans }}</h3>
+        <h4>{{ "fiche.comme" | trans }}</h4>
+        {% for personnage in theme.personnages %}
+            <div class="temoignFicheIt fish left">
+                <span class="perso">{{ personnage.prenom | trans }}</span>
+                <span class="age">{{ personnage.age }} ans</span>
+                <ul>
+                    {% for avantage in personnage.avantages %}
+                    <li>{{ avantage.name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block bottomLeftColumn %}
+
+    {# Bloc "Notre sélection de campings" #}
+    <h2 class="h3-like">{{ "destination.campings_selection_title" | trans }}</h2>
+    {% include 'Listing/_listing.twig' %}
+
+{% endblock %}
+
+{% block bottomRightColumn %}
+<div id="greyBoxes">
+    {% include 'Bloc/sejour_reussi.twig' %}
+
+    {% include 'Bloc/informations.twig' %}
+
+    <div id="assetsBloc" class="clear radiusBox greyC">
+        <h3>{{ "encart_autres_themes.title" | trans }}</h3>
+        {% for autreTheme in autresTheme %}
+            <img src="{{ autreTheme.imagePath }}" alt="{{ autreTheme.name }}">
+            <span>{{ autreTheme.name }}</span>
+        {% endfor %}
+    </div>
+
+</div>
+{% endblock %}
+
+{% block topWideColumn %}
+
+{% endblock %}
+
+{% block bottomWideColumn %}
+
+{% endblock %}
