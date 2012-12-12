@@ -8,7 +8,7 @@
     1_en:
         Id: 1
         Locale: en
-        Name: 'Nouveautés 2012'
+        Name: 'Nouveautés 2013'
         Description: null
         Keywords: null
     1_fr:
@@ -20,7 +20,7 @@
     1_nl:
         Id: 1
         Locale: nl
-        Name: 'Nouveautés 2012'
+        Name: 'Nouveautés 2013'
         Description: null
         Keywords: null
     2_de:

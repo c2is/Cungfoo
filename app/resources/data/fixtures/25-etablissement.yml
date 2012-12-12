@@ -17,8 +17,8 @@
         ClosingDate: '2012-09-15 00:00:00'
         VilleId: 47
         CategorieId: 2
-        GeoCoordinateX: '46.791528'
-        GeoCoordinateY: '-2.064456'
+        GeoCoordinateX: '46.80806056'
+        GeoCoordinateY: '-2.104654312'
         VideoPath: null
         Image360Path: null
         Capacite: '543'
@@ -44,8 +44,8 @@
         ClosingDate: '2012-09-29 00:00:00'
         VilleId: 141
         CategorieId: 2
-        GeoCoordinateX: '43.433152'
-        GeoCoordinateY: '6.737034'
+        GeoCoordinateX: '43.46392303'
+        GeoCoordinateY: '6.725360155'
         VideoPath: null
         Image360Path: null
         Capacite: '189'
@@ -71,8 +71,8 @@
         ClosingDate: '2012-09-08 00:00:00'
         VilleId: 70
         CategorieId: 1
-        GeoCoordinateX: '44.407452'
-        GeoCoordinateY: '4.395401'
+        GeoCoordinateX: '44.412402'
+        GeoCoordinateY: '4.349979'
         VideoPath: null
         Image360Path: null
         Capacite: '299'
@@ -98,8 +98,8 @@
         ClosingDate: '2012-09-30 00:00:00'
         VilleId: 33
         CategorieId: 1
-        GeoCoordinateX: '41.0865513'
-        GeoCoordinateY: '0.9606138'
+        GeoCoordinateX: '41.03292'
+        GeoCoordinateY: '0.96921'
         VideoPath: null
         Image360Path: null
         Capacite: '1177'
@@ -125,8 +125,8 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: 35
         CategorieId: 2
-        GeoCoordinateX: '40.2454598'
-        GeoCoordinateY: '0.2659774'
+        GeoCoordinateX: '40.22119452'
+        GeoCoordinateY: '0.268542767'
         VideoPath: null
         Image360Path: null
         Capacite: '340'
@@ -152,8 +152,8 @@
         ClosingDate: '2012-09-23 00:00:00'
         VilleId: 50
         CategorieId: 2
-        GeoCoordinateX: '47.875568'
-        GeoCoordinateY: '-4.1063729'
+        GeoCoordinateX: '47.88203498'
+        GeoCoordinateY: '-4.103393555'
         VideoPath: null
         Image360Path: null
         Capacite: '340'
@@ -179,8 +179,8 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 52
         CategorieId: 2
-        GeoCoordinateX: '45.573436'
-        GeoCoordinateY: '2.943472'
+        GeoCoordinateX: '45.56285457'
+        GeoCoordinateY: '2.938236594'
         VideoPath: null
         Image360Path: null
         Capacite: '460'
@@ -206,8 +206,8 @@
         ClosingDate: '2012-09-09 00:00:00'
         VilleId: 1
         CategorieId: 3
-        GeoCoordinateX: '42.546214'
-        GeoCoordinateY: '3.022911'
+        GeoCoordinateX: '42.56766828'
+        GeoCoordinateY: '3.044221401'
         VideoPath: null
         Image360Path: null
         Capacite: '706'
@@ -233,8 +233,8 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: 87
         CategorieId: 2
-        GeoCoordinateX: '45.716275'
-        GeoCoordinateY: '-1.143904'
+        GeoCoordinateX: '45.72995496'
+        GeoCoordinateY: '-1.175955534'
         VideoPath: null
         Image360Path: null
         Capacite: '150'
@@ -260,8 +260,8 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 93
         CategorieId: 3
-        GeoCoordinateX: '43.798959'
-        GeoCoordinateY: '-1.303089'
+        GeoCoordinateX: '43.785238'
+        GeoCoordinateY: '-1.305147'
         VideoPath: null
         Image360Path: null
         Capacite: '275'
@@ -287,8 +287,8 @@
         ClosingDate: '2112-10-07 00:00:00'
         VilleId: 154
         CategorieId: 4
-        GeoCoordinateX: '43.433152'
-        GeoCoordinateY: '6.737034'
+        GeoCoordinateX: '43.392481'
+        GeoCoordinateY: '6.726462'
         VideoPath: null
         Image360Path: null
         Capacite: '1100'
@@ -314,8 +314,8 @@
         ClosingDate: '2012-09-30 00:00:00'
         VilleId: 41
         CategorieId: 2
-        GeoCoordinateX: '43.597772'
-        GeoCoordinateY: '6.95671'
+        GeoCoordinateX: '43.58853542'
+        GeoCoordinateY: '6.93888545'
         VideoPath: null
         Image360Path: null
         Capacite: '200'
@@ -341,8 +341,8 @@
         ClosingDate: '2012-09-30 00:00:00'
         VilleId: 21
         CategorieId: 2
-        GeoCoordinateX: '43.37055'
-        GeoCoordinateY: '5.782809'
+        GeoCoordinateX: '43.37692956'
+        GeoCoordinateY: '5.788040757'
         VideoPath: null
         Image360Path: null
         Capacite: '250'
@@ -368,8 +368,8 @@
         ClosingDate: '2012-09-09 00:00:00'
         VilleId: 6
         CategorieId: 2
-        GeoCoordinateX: '42.726559'
-        GeoCoordinateY: '3.016601'
+        GeoCoordinateX: '42.7139833'
+        GeoCoordinateY: '3.0314219'
         VideoPath: null
         Image360Path: null
         Capacite: '300'
@@ -395,8 +395,8 @@
         ClosingDate: '2012-09-09 00:00:00'
         VilleId: 100
         CategorieId: 1
-        GeoCoordinateX: '44.0756609'
-        GeoCoordinateY: '-1.1661729'
+        GeoCoordinateX: '44.07217817'
+        GeoCoordinateY: '-1.156412959'
         VideoPath: null
         Image360Path: null
         Capacite: '375'
@@ -422,8 +422,8 @@
         ClosingDate: '2013-09-14 00:00:00'
         VilleId: 81
         CategorieId: 2
-        GeoCoordinateX: '45.776496'
-        GeoCoordinateY: '6.220515'
+        GeoCoordinateX: '45.7750889'
+        GeoCoordinateY: '6.226780415'
         VideoPath: null
         Image360Path: null
         Capacite: '184'
@@ -449,8 +449,8 @@
         ClosingDate: '2012-09-23 00:00:00'
         VilleId: 95
         CategorieId: 2
-        GeoCoordinateX: '45.978418'
-        GeoCoordinateY: '-1.332125'
+        GeoCoordinateX: '45.96824412'
+        GeoCoordinateY: '-1.245038509'
         VideoPath: null
         Image360Path: null
         Capacite: '300'
@@ -476,8 +476,8 @@
         ClosingDate: '2012-09-22 00:00:00'
         VilleId: 1
         CategorieId: 2
-        GeoCoordinateX: '42.546214'
-        GeoCoordinateY: '3.022911'
+        GeoCoordinateX: '42.5757234'
+        GeoCoordinateY: '3.042392135'
         VideoPath: null
         Image360Path: null
         Capacite: '844'
@@ -503,8 +503,8 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: 140
         CategorieId: null
-        GeoCoordinateX: '42.61783'
-        GeoCoordinateY: '3.004182'
+        GeoCoordinateX: '42.62443095'
+        GeoCoordinateY: '3.025810719'
         VideoPath: null
         Image360Path: null
         Capacite: '522'
@@ -530,8 +530,8 @@
         ClosingDate: '2013-09-13 00:00:00'
         VilleId: 17
         CategorieId: 3
-        GeoCoordinateX: '42.78773'
-        GeoCoordinateY: '3.036565'
+        GeoCoordinateX: '42.78606298'
+        GeoCoordinateY: '3.019276857'
         VideoPath: null
         Image360Path: null
         Capacite: '210'
@@ -557,8 +557,8 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: 82
         CategorieId: 2
-        GeoCoordinateX: '47.835925'
-        GeoCoordinateY: '7.176868'
+        GeoCoordinateX: '47.83392225'
+        GeoCoordinateY: '7.165617943'
         VideoPath: null
         Image360Path: null
         Capacite: '267'
@@ -584,8 +584,8 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: '44.978459'
-        GeoCoordinateY: '-1.075745'
+        GeoCoordinateX: '45.00800533'
+        GeoCoordinateY: '-1.112129688'
         VideoPath: null
         Image360Path: null
         Capacite: '476'
@@ -611,8 +611,8 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: 39
         CategorieId: 3
-        GeoCoordinateX: '43.3007194'
-        GeoCoordinateY: '10.4910957'
+        GeoCoordinateX: '43.29217342'
+        GeoCoordinateY: '10.51079929'
         VideoPath: null
         Image360Path: null
         Capacite: '301'
@@ -638,8 +638,8 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: 36
         CategorieId: 2
-        GeoCoordinateX: '43.3870548'
-        GeoCoordinateY: '-6.074386'
+        GeoCoordinateX: '45.69481972'
+        GeoCoordinateY: '13.45171809'
         VideoPath: null
         Image360Path: null
         Capacite: '800'
@@ -665,8 +665,8 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: 104
         CategorieId: 3
-        GeoCoordinateX: '43.439236'
-        GeoCoordinateY: '-1.590062'
+        GeoCoordinateX: '43.43388862'
+        GeoCoordinateY: '-1.590839624'
         VideoPath: null
         Image360Path: null
         Capacite: '269'
@@ -692,8 +692,8 @@
         ClosingDate: '2012-09-15 00:00:00'
         VilleId: 42
         CategorieId: 4
-        GeoCoordinateX: '42.011184'
-        GeoCoordinateY: '9.313127'
+        GeoCoordinateX: '41.98642663'
+        GeoCoordinateY: '9.398889542'
         VideoPath: null
         Image360Path: null
         Capacite: '54'
@@ -719,8 +719,8 @@
         ClosingDate: '2012-09-30 00:00:00'
         VilleId: 102
         CategorieId: 1
-        GeoCoordinateX: '43.81466'
-        GeoCoordinateY: '-1.37825'
+        GeoCoordinateX: '43.79771568'
+        GeoCoordinateY: '-1.400853395'
         VideoPath: null
         Image360Path: null
         Capacite: '1546'
@@ -746,8 +746,8 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: 101
         CategorieId: 1
-        GeoCoordinateX: '44.033876'
-        GeoCoordinateY: '-1.258325'
+        GeoCoordinateX: '44.02413608'
+        GeoCoordinateY: '-1.27867341'
         VideoPath: null
         Image360Path: null
         Capacite: '450'
@@ -773,8 +773,8 @@
         ClosingDate: '2012-09-30 00:00:00'
         VilleId: 32
         CategorieId: 2
-        GeoCoordinateX: '42.8498032'
-        GeoCoordinateY: '-2.6729997'
+        GeoCoordinateX: '41.23213011'
+        GeoCoordinateY: '1.690725088'
         VideoPath: null
         Image360Path: null
         Capacite: '1385'
@@ -800,8 +800,8 @@
         ClosingDate: '2012-09-15 00:00:00'
         VilleId: 47
         CategorieId: 2
-        GeoCoordinateX: '46.791528'
-        GeoCoordinateY: '-2.064456'
+        GeoCoordinateX: '46.7812729'
+        GeoCoordinateY: '-2.017439604'
         VideoPath: null
         Image360Path: null
         Capacite: '278'
@@ -827,8 +827,8 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: 104
         CategorieId: 1
-        GeoCoordinateX: '43.439236'
-        GeoCoordinateY: '-1.590062'
+        GeoCoordinateX: '43.436804'
+        GeoCoordinateY: '-1.567666'
         VideoPath: null
         Image360Path: null
         Capacite: '480'
@@ -854,8 +854,8 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 31
         CategorieId: 4
-        GeoCoordinateX: '41.6759954'
-        GeoCoordinateY: '2.7902289'
+        GeoCoordinateX: '41.664833'
+        GeoCoordinateY: '2.777781'
         VideoPath: null
         Image360Path: null
         Capacite: '757'
@@ -881,8 +881,8 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: 17
         CategorieId: 3
-        GeoCoordinateX: '42.78773'
-        GeoCoordinateY: '3.036565'
+        GeoCoordinateX: '42.783858'
+        GeoCoordinateY: '3.021154'
         VideoPath: null
         Image360Path: null
         Capacite: '434'
@@ -908,8 +908,8 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: 28
         CategorieId: 2
-        GeoCoordinateX: '43.4847877'
-        GeoCoordinateY: '-3.5281482'
+        GeoCoordinateX: '43.491413'
+        GeoCoordinateY: '-3.537512'
         VideoPath: null
         Image360Path: null
         Capacite: '1050'
@@ -935,8 +935,8 @@
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 37
         CategorieId: null
-        GeoCoordinateX: '45.216488'
-        GeoCoordinateY: '12.294207'
+        GeoCoordinateX: '45.226879'
+        GeoCoordinateY: '12.294774'
         VideoPath: null
         Image360Path: null
         Capacite: '135'
@@ -962,8 +962,8 @@
         ClosingDate: '2013-09-22 00:00:00'
         VilleId: 1
         CategorieId: 2
-        GeoCoordinateX: '42.546214'
-        GeoCoordinateY: '3.022911'
+        GeoCoordinateX: '42.573436'
+        GeoCoordinateY: '3.01918'
         VideoPath: null
         Image360Path: null
         Capacite: '167'
@@ -989,8 +989,8 @@
         ClosingDate: '2012-09-15 00:00:00'
         VilleId: 13
         CategorieId: 3
-        GeoCoordinateX: '43.120541'
-        GeoCoordinateY: '6.128639'
+        GeoCoordinateX: '43.0935263'
+        GeoCoordinateY: '6.16381530'
         VideoPath: null
         Image360Path: null
         Capacite: '700'
@@ -1043,8 +1043,8 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 9
         CategorieId: 3
-        GeoCoordinateX: '43.4255939'
-        GeoCoordinateY: '3.606834'
+        GeoCoordinateX: '43.43042156'
+        GeoCoordinateY: '3.610414267'
         VideoPath: null
         Image360Path: null
         Capacite: '234'
@@ -1340,8 +1340,8 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.186048'
-        GeoCoordinateY: '-1.1180349'
+        GeoCoordinateX: '46.17793608'
+        GeoCoordinateY: '-1.115090847'
         VideoPath: null
         Image360Path: null
         Capacite: '171'
@@ -1934,8 +1934,8 @@
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 55
         CategorieId: 2
-        GeoCoordinateX: '47.347009'
-        GeoCoordinateY: '-3.156406'
+        GeoCoordinateX: '47.355914'
+        GeoCoordinateY: '-3.168789'
         VideoPath: null
         Image360Path: null
         Capacite: '202'
@@ -2096,8 +2096,8 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 63
         CategorieId: 2
-        GeoCoordinateX: '46.720204'
-        GeoCoordinateY: '-1.945917'
+        GeoCoordinateX: '46.738375'
+        GeoCoordinateY: '-1.978054'
         VideoPath: null
         Image360Path: null
         Capacite: '140'
@@ -2123,8 +2123,8 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 150
         CategorieId: 1
-        GeoCoordinateX: '45.3569389'
-        GeoCoordinateY: '-1.061774'
+        GeoCoordinateX: '45.373855'
+        GeoCoordinateY: '-1.144638'
         VideoPath: null
         Image360Path: null
         Capacite: '770'
@@ -2150,8 +2150,8 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: 58
         CategorieId: 3
-        GeoCoordinateX: '47.285448'
-        GeoCoordinateY: '-2.393236'
+        GeoCoordinateX: '47.305775'
+        GeoCoordinateY: '-2.377167'
         VideoPath: null
         Image360Path: null
         Capacite: '222'
@@ -2177,8 +2177,8 @@
         ClosingDate: '2013-09-08 00:00:00'
         VilleId: 63
         CategorieId: 1
-        GeoCoordinateX: '46.720204'
-        GeoCoordinateY: '-1.945917'
+        GeoCoordinateX: '46.740096'
+        GeoCoordinateY: '-1.945052'
         VideoPath: null
         Image360Path: null
         Capacite: '434'
@@ -2204,8 +2204,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 105
         CategorieId: 1
-        GeoCoordinateX: '44.841033'
-        GeoCoordinateY: '1.276566'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -2231,8 +2231,8 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.6400409'
-        GeoCoordinateY: '-1.712725'
+        GeoCoordinateX: '46.64475555'
+        GeoCoordinateY: '-1.732943058'
         VideoPath: null
         Image360Path: null
         Capacite: '150'
@@ -2258,8 +2258,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 156
         CategorieId: null
-        GeoCoordinateX: '43.096777'
-        GeoCoordinateY: '6.072284'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -2285,8 +2285,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 91
         CategorieId: 4
-        GeoCoordinateX: '43.242573'
-        GeoCoordinateY: '0.096065'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -2312,8 +2312,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 110
         CategorieId: 4
-        GeoCoordinateX: '48.657172'
-        GeoCoordinateY: '-4.174263'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -2339,8 +2339,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 58
         CategorieId: 3
-        GeoCoordinateX: '47.285448'
-        GeoCoordinateY: '-2.393236'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -2366,8 +2366,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 157
         CategorieId: 3
-        GeoCoordinateX: '45.4747691'
-        GeoCoordinateY: '12.4965959'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -2393,8 +2393,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 158
         CategorieId: 3
-        GeoCoordinateX: '45.602716'
-        GeoCoordinateY: '-0.997838'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -2420,8 +2420,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 129
         CategorieId: null
-        GeoCoordinateX: '43.954465'
-        GeoCoordinateY: '4.77358'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -2447,8 +2447,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 4
         CategorieId: null
-        GeoCoordinateX: '44.936'
-        GeoCoordinateY: '1.018'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -2474,8 +2474,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 38
         CategorieId: null
-        GeoCoordinateX: '44.6444061'
-        GeoCoordinateY: '12.2463657'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -2555,8 +2555,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 152
         CategorieId: 4
-        GeoCoordinateX: '43.1713807'
-        GeoCoordinateY: '3.184556'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -2582,8 +2582,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 111
         CategorieId: 4
-        GeoCoordinateX: '46.2289'
-        GeoCoordinateY: '-1.5383'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -2609,8 +2609,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 123
         CategorieId: 2
-        GeoCoordinateX: '43.7803'
-        GeoCoordinateY: '6.0961'
+        GeoCoordinateX: '43.74642103270366'
+        GeoCoordinateY: '6.10041618347168'
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -2636,8 +2636,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 26
         CategorieId: 1
-        GeoCoordinateX: '41.969591'
-        GeoCoordinateY: '3.148022'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -2663,8 +2663,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 143
         CategorieId: null
-        GeoCoordinateX: '42.606203'
-        GeoCoordinateY: '3.006674'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -2690,8 +2690,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 1
         CategorieId: null
-        GeoCoordinateX: '42.546214'
-        GeoCoordinateY: '3.022911'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -2717,8 +2717,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 130
         CategorieId: 3
-        GeoCoordinateX: '44.0993799'
-        GeoCoordinateY: '5.024744'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -2744,8 +2744,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 124
         CategorieId: null
-        GeoCoordinateX: '44.083566'
-        GeoCoordinateY: '4.077927'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -2771,8 +2771,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 125
         CategorieId: 3
-        GeoCoordinateX: '43.290934'
-        GeoCoordinateY: '5.863162'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -2798,8 +2798,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 116
         CategorieId: null
-        GeoCoordinateX: '49.306882'
-        GeoCoordinateY: '-0.028052'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -2879,8 +2879,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 153
         CategorieId: 2
-        GeoCoordinateX: '43.713811'
-        GeoCoordinateY: '5.316109'
+        GeoCoordinateX: '43.7281889'
+        GeoCoordinateY: '5.3209877'
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -2906,8 +2906,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 118
         CategorieId: 3
-        GeoCoordinateX: '45.406018'
-        GeoCoordinateY: '2.0463779'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -2933,8 +2933,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 126
         CategorieId: 3
-        GeoCoordinateX: '43.549831'
-        GeoCoordinateY: '3.778935'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -2987,8 +2987,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 117
         CategorieId: 3
-        GeoCoordinateX: '43.3148849'
-        GeoCoordinateY: '3.139111'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -3014,8 +3014,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 106
         CategorieId: 5
-        GeoCoordinateX: '43.02891'
-        GeoCoordinateY: '2.979255'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -3041,8 +3041,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 159
         CategorieId: 2
-        GeoCoordinateX: '43.490423'
-        GeoCoordinateY: '3.797599'
+        GeoCoordinateX: '43.4915997'
+        GeoCoordinateY: '3.7792969'
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -3068,8 +3068,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 127
         CategorieId: 3
-        GeoCoordinateX: '43.344233'
-        GeoCoordinateY: '3.215795'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -3095,8 +3095,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 119
         CategorieId: 3
-        GeoCoordinateX: '48.767811'
-        GeoCoordinateY: '2.350648'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -3122,8 +3122,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 107
         CategorieId: 3
-        GeoCoordinateX: '43.244728'
-        GeoCoordinateY: '10.531519'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -3176,8 +3176,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 151
         CategorieId: 3
-        GeoCoordinateX: '43.611297'
-        GeoCoordinateY: '3.812357'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -3203,8 +3203,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 160
         CategorieId: 4
-        GeoCoordinateX: '48.040216'
-        GeoCoordinateY: '7.545766'
+        GeoCoordinateX: '48.0226826'
+        GeoCoordinateY: '7.5783348'
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -3230,8 +3230,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 108
         CategorieId: null
-        GeoCoordinateX: '41.9922327'
-        GeoCoordinateY: '3.2005475'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -3257,8 +3257,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 131
         CategorieId: 3
-        GeoCoordinateX: '49.388696'
-        GeoCoordinateY: '-1.041706'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -3284,8 +3284,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 109
         CategorieId: 3
-        GeoCoordinateX: '47.697648'
-        GeoCoordinateY: '-2.805894'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -3311,8 +3311,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 112
         CategorieId: 3
-        GeoCoordinateX: '44.633628'
-        GeoCoordinateY: '-1.201676'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -3338,8 +3338,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 121
         CategorieId: 2
-        GeoCoordinateX: '47.967118'
-        GeoCoordinateY: '-3.937054'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -3365,8 +3365,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 113
         CategorieId: 2
-        GeoCoordinateX: '43.40215'
-        GeoCoordinateY: '3.696624'
+        GeoCoordinateX: '43.3400139093'
+        GeoCoordinateY: '3.5819583307'
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -3392,8 +3392,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 1
         CategorieId: 2
-        GeoCoordinateX: '42.546214'
-        GeoCoordinateY: '3.022911'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -3419,8 +3419,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 115
         CategorieId: 4
-        GeoCoordinateX: '42.467512'
-        GeoCoordinateY: '9.473267'
+        GeoCoordinateX: '42.4764651'
+        GeoCoordinateY: '9.5296097'
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -3446,8 +3446,8 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 19
         CategorieId: 3
-        GeoCoordinateX: '43.312455'
-        GeoCoordinateY: '3.47083'
+        GeoCoordinateX: '43.310056'
+        GeoCoordinateY: '3.509442'
         VideoPath: null
         Image360Path: null
         Capacite: '258'
@@ -3473,8 +3473,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 147
         CategorieId: 5
-        GeoCoordinateX: '50.7074209'
-        GeoCoordinateY: '1.576772'
+        GeoCoordinateX: '50.7040549'
+        GeoCoordinateY: '1.5663028'
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -3500,8 +3500,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 19
         CategorieId: null
-        GeoCoordinateX: '43.312455'
-        GeoCoordinateY: '3.47083'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -3527,8 +3527,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 72
         CategorieId: 2
-        GeoCoordinateX: '46.344059'
-        GeoCoordinateY: '-1.4387859'
+        GeoCoordinateX: '46.37250'
+        GeoCoordinateY: '-1.41528'
         VideoPath: null
         Image360Path: null
         Capacite: null
@@ -3554,8 +3554,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 138
         CategorieId: 4
-        GeoCoordinateX: '45.923392'
-        GeoCoordinateY: '6.684919'
+        GeoCoordinateX: '45.9235838981'
+        GeoCoordinateY: '6.65056899541'
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -3581,8 +3581,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 161
         CategorieId: 3
-        GeoCoordinateX: '47.536374'
-        GeoCoordinateY: '7.17609'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -3608,8 +3608,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 128
         CategorieId: 3
-        GeoCoordinateX: '14.0101094'
-        GeoCoordinateY: '-60.9874687'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -3635,8 +3635,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 132
         CategorieId: 3
-        GeoCoordinateX: '51.9514808'
-        GeoCoordinateY: '7.6255388'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -3662,8 +3662,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 133
         CategorieId: 2
-        GeoCoordinateX: '47.115125'
-        GeoCoordinateY: '0.497549'
+        GeoCoordinateX: '47.0974739'
+        GeoCoordinateY: '0.5019379'
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -3689,8 +3689,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 12
         CategorieId: 4
-        GeoCoordinateX: '43.700617'
-        GeoCoordinateY: '6.038878'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -3716,8 +3716,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 162
         CategorieId: 2
-        GeoCoordinateX: '43.675299'
-        GeoCoordinateY: '2.779604'
+        GeoCoordinateX: '43.6486529'
+        GeoCoordinateY: '2.7781248'
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -3743,8 +3743,8 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 54
         CategorieId: 2
-        GeoCoordinateX: '44.744816'
-        GeoCoordinateY: '1.258582'
+        GeoCoordinateX: '44.7421154'
+        GeoCoordinateY: '1.263438463'
         VideoPath: null
         Image360Path: null
         Capacite: '192'
@@ -3770,8 +3770,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 19
         CategorieId: null
-        GeoCoordinateX: '43.312455'
-        GeoCoordinateY: '3.47083'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -3797,8 +3797,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 146
         CategorieId: 2
-        GeoCoordinateX: '44.689526'
-        GeoCoordinateY: '2.658302'
+        GeoCoordinateX: '44.66761515867915'
+        GeoCoordinateY: '2.6811790466308594'
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -3824,8 +3824,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '48.3334509'
-        GeoCoordinateY: '7.676838'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -3851,8 +3851,8 @@
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 102
         CategorieId: 2
-        GeoCoordinateX: '43.81466'
-        GeoCoordinateY: '-1.37825'
+        GeoCoordinateX: '43.856316'
+        GeoCoordinateY: '-1.392517'
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -3878,8 +3878,8 @@
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 122
         CategorieId: 3
-        GeoCoordinateX: '48.735158'
-        GeoCoordinateY: '3.011745'
+        GeoCoordinateX: '48.733054'
+        GeoCoordinateY: '3.046978'
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -3905,8 +3905,8 @@
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 81
         CategorieId: 2
-        GeoCoordinateX: '45.776496'
-        GeoCoordinateY: '6.220515'
+        GeoCoordinateX: '45.799965'
+        GeoCoordinateY: '6.211696'
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -3932,8 +3932,8 @@
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 134
         CategorieId: 3
-        GeoCoordinateX: '46.373565'
-        GeoCoordinateY: '6.477635'
+        GeoCoordinateX: '46.3993012'
+        GeoCoordinateY: '6.503873800000065'
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -3959,8 +3959,8 @@
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 7
         CategorieId: 1
-        GeoCoordinateX: '42.75444'
-        GeoCoordinateY: '2.993641'
+        GeoCoordinateX: '43.004647'
+        GeoCoordinateY: '3.050903'
         VideoPath: null
         Image360Path: null
         Capacite: null
@@ -3986,8 +3986,8 @@
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 135
         CategorieId: 2
-        GeoCoordinateX: '43.561101'
-        GeoCoordinateY: '-1.448208'
+        GeoCoordinateX: '43.5694205'
+        GeoCoordinateY: '-1.4602153'
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -4013,8 +4013,8 @@
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 145
         CategorieId: 3
-        GeoCoordinateX: '43.269435'
-        GeoCoordinateY: '3.225202'
+        GeoCoordinateX: '43.229015'
+        GeoCoordinateY: '3.245628'
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -4040,8 +4040,8 @@
         ClosingDate: '2013-09-21 00:00:00'
         VilleId: 29
         CategorieId: 2
-        GeoCoordinateX: '42.258522'
-        GeoCoordinateY: '3.069671'
+        GeoCoordinateX: '42.2553319'
+        GeoCoordinateY: '3.136843443'
         VideoPath: null
         Image360Path: null
         Capacite: '305'
@@ -4067,8 +4067,8 @@
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 8
         CategorieId: 3
-        GeoCoordinateX: '43.282801'
-        GeoCoordinateY: '3.279651'
+        GeoCoordinateX: '43.269862'
+        GeoCoordinateY: '3.332928'
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -4121,8 +4121,8 @@
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 137
         CategorieId: 3
-        GeoCoordinateX: '43.5820099'
-        GeoCoordinateY: '6.2754519'
+        GeoCoordinateX: '43.55726869999999'
+        GeoCoordinateY: '6.286714599999982'
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -4148,8 +4148,8 @@
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 136
         CategorieId: 1
-        GeoCoordinateX: '47.72227'
-        GeoCoordinateY: '-0.6164809'
+        GeoCoordinateX: '46.675999'
+        GeoCoordinateY: '5.787104999999997'
         VideoPath: null
         Image360Path: null
         Capacite: null
@@ -4175,8 +4175,8 @@
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 163
         CategorieId: 2
-        GeoCoordinateX: '44.111198'
-        GeoCoordinateY: '6.013711'
+        GeoCoordinateX: '44.106111'
+        GeoCoordinateY: '6.015556'
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -4202,8 +4202,8 @@
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '48.454366'
-        GeoCoordinateY: '-2.047327'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -4229,8 +4229,8 @@
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 164
         CategorieId: 2
-        GeoCoordinateX: '44.7462084'
-        GeoCoordinateY: '12.2454011'
+        GeoCoordinateX: '44.7343437'
+        GeoCoordinateY: '12.231634299999996'
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -4337,8 +4337,8 @@
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 25
         CategorieId: 2
-        GeoCoordinateX: '42.058995'
-        GeoCoordinateY: '3.203325'
+        GeoCoordinateX: '42.0521756'
+        GeoCoordinateY: '3.19160074'
         VideoPath: null
         Image360Path: null
         Capacite: '1260'
@@ -4445,8 +4445,8 @@
         ClosingDate: '2013-09-07 00:00:00'
         VilleId: 62
         CategorieId: 1
-        GeoCoordinateX: '44.235174'
-        GeoCoordinateY: '2.752384'
+        GeoCoordinateX: '44.21435585'
+        GeoCoordinateY: '2.766510844'
         VideoPath: null
         Image360Path: null
         Capacite: '108'
@@ -4472,8 +4472,8 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 5
         CategorieId: 2
-        GeoCoordinateX: '43.312489'
-        GeoCoordinateY: '3.418564'
+        GeoCoordinateX: '43.28224717'
+        GeoCoordinateY: '3.371078074'
         VideoPath: null
         Image360Path: null
         Capacite: '176'
@@ -4499,8 +4499,8 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 65
         CategorieId: 2
-        GeoCoordinateX: '46.6057'
-        GeoCoordinateY: '-1.82988'
+        GeoCoordinateX: '46.60419665'
+        GeoCoordinateY: '-1.832286716'
         VideoPath: null
         Image360Path: null
         Capacite: '330'
@@ -4526,8 +4526,8 @@
         ClosingDate: '2013-09-14 00:00:00'
         VilleId: 96
         CategorieId: 2
-        GeoCoordinateX: '45.981425'
-        GeoCoordinateY: '-1.041028'
+        GeoCoordinateX: '45.99008181'
+        GeoCoordinateY: '-1.051871181'
         VideoPath: null
         Image360Path: null
         Capacite: '297'
@@ -4553,8 +4553,8 @@
         ClosingDate: '2013-09-21 00:00:00'
         VilleId: 140
         CategorieId: 1
-        GeoCoordinateX: '42.61783'
-        GeoCoordinateY: '3.004182'
+        GeoCoordinateX: '42.59948962'
+        GeoCoordinateY: '3.037636578'
         VideoPath: null
         Image360Path: null
         Capacite: '649'
@@ -4580,8 +4580,8 @@
         ClosingDate: '2013-09-06 00:00:00'
         VilleId: 142
         CategorieId: 1
-        GeoCoordinateX: '48.632091'
-        GeoCoordinateY: '-2.259804'
+        GeoCoordinateX: '48.58438992'
+        GeoCoordinateY: '-2.257309556'
         VideoPath: null
         Image360Path: null
         Capacite: '273'
@@ -4607,8 +4607,8 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 61
         CategorieId: 2
-        GeoCoordinateX: '47.115491'
-        GeoCoordinateY: '-2.104444'
+        GeoCoordinateX: '47.11890222'
+        GeoCoordinateY: '-2.072934508'
         VideoPath: null
         Image360Path: null
         Capacite: '305'
@@ -4634,8 +4634,8 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: 49
         CategorieId: 3
-        GeoCoordinateX: '44.855269'
-        GeoCoordinateY: '1.333955'
+        GeoCoordinateX: '44.86323045'
+        GeoCoordinateY: '1.297008991'
         VideoPath: null
         Image360Path: null
         Capacite: '143'
@@ -4661,8 +4661,8 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 92
         CategorieId: 2
-        GeoCoordinateX: '43.95512'
-        GeoCoordinateY: '-1.305229'
+        GeoCoordinateX: '43.90345841'
+        GeoCoordinateY: '-1.310065985'
         VideoPath: null
         Image360Path: null
         Capacite: '812'
@@ -4688,8 +4688,8 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 53
         CategorieId: 2
-        GeoCoordinateX: '47.482133'
-        GeoCoordinateY: '-3.121053'
+        GeoCoordinateX: '47.47675288'
+        GeoCoordinateY: '-3.092372417'
         VideoPath: null
         Image360Path: null
         Capacite: '250'
@@ -4715,8 +4715,8 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 1
         CategorieId: 3
-        GeoCoordinateX: '42.546214'
-        GeoCoordinateY: '3.022911'
+        GeoCoordinateX: '42.532127'
+        GeoCoordinateY: '3.05197'
         VideoPath: null
         Image360Path: null
         Capacite: '145'
@@ -4742,8 +4742,8 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 88
         CategorieId: 1
-        GeoCoordinateX: '45.186089'
-        GeoCoordinateY: '-1.057202'
+        GeoCoordinateX: '45.22291902'
+        GeoCoordinateY: '-1.164722443'
         VideoPath: null
         Image360Path: null
         Capacite: '870'
@@ -4769,8 +4769,8 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 22
         CategorieId: 3
-        GeoCoordinateX: '45.333533'
-        GeoCoordinateY: '7.101924'
+        GeoCoordinateX: '43.66136775'
+        GeoCoordinateY: '4.473999739'
         VideoPath: null
         Image360Path: null
         Capacite: '170'
@@ -4796,8 +4796,8 @@
         ClosingDate: '2013-09-14 00:00:00'
         VilleId: 43
         CategorieId: 5
-        GeoCoordinateX: '41.591369'
-        GeoCoordinateY: '9.278311'
+        GeoCoordinateX: '41.64617179'
+        GeoCoordinateY: '9.293650389'
         VideoPath: null
         Image360Path: null
         Capacite: '115'
@@ -4823,8 +4823,8 @@
         ClosingDate: '2012-09-09 00:00:00'
         VilleId: 64
         CategorieId: 3
-        GeoCoordinateX: '46.697777'
-        GeoCoordinateY: '-1.944529'
+        GeoCoordinateX: '46.6761495'
+        GeoCoordinateY: '-1.913208961'
         VideoPath: null
         Image360Path: null
         Capacite: '280'
@@ -4850,8 +4850,8 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: 5
         CategorieId: 3
-        GeoCoordinateX: '43.312489'
-        GeoCoordinateY: '3.418564'
+        GeoCoordinateX: '43.284102'
+        GeoCoordinateY: '3.381122'
         VideoPath: null
         Image360Path: null
         Capacite: '364'
@@ -4877,8 +4877,8 @@
         ClosingDate: '2012-09-02 00:00:00'
         VilleId: 51
         CategorieId: 2
-        GeoCoordinateX: '47.819167'
-        GeoCoordinateY: '-3.79258'
+        GeoCoordinateX: '47.7986345'
+        GeoCoordinateY: '-3.791956902'
         VideoPath: null
         Image360Path: null
         Capacite: '293'
@@ -4904,8 +4904,8 @@
         ClosingDate: '2012-09-23 00:00:00'
         VilleId: 86
         CategorieId: 2
-        GeoCoordinateX: '46.069676'
-        GeoCoordinateY: '-1.088543'
+        GeoCoordinateX: '46.08444237'
+        GeoCoordinateY: '-1.093429327'
         VideoPath: null
         Image360Path: null
         Capacite: '265'
@@ -4931,8 +4931,8 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 57
         CategorieId: 2
-        GeoCoordinateX: '47.482123'
-        GeoCoordinateY: '-2.475881'
+        GeoCoordinateX: '47.47158955'
+        GeoCoordinateY: '-2.467031479'
         VideoPath: null
         Image360Path: null
         Capacite: '500'
@@ -5012,8 +5012,8 @@
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 139
         CategorieId: 2
-        GeoCoordinateX: '47.584693'
-        GeoCoordinateY: '-3.077786'
+        GeoCoordinateX: '47.59528254'
+        GeoCoordinateY: '-3.066279888'
         VideoPath: null
         Image360Path: null
         Capacite: '123'
@@ -5039,8 +5039,8 @@
         ClosingDate: '2013-09-08 00:00:00'
         VilleId: 90
         CategorieId: 1
-        GeoCoordinateX: '44.395943'
-        GeoCoordinateY: '-1.166917'
+        GeoCoordinateX: '44.46066389'
+        GeoCoordinateY: '-1.130706668'
         VideoPath: null
         Image360Path: null
         Capacite: '800'
@@ -5066,8 +5066,8 @@
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 60
         CategorieId: 2
-        GeoCoordinateX: '47.328003'
-        GeoCoordinateY: '-2.4297589'
+        GeoCoordinateX: '47.33350768'
+        GeoCoordinateY: '-2.390749454'
         VideoPath: null
         Image360Path: null
         Capacite: '600'
@@ -5093,8 +5093,8 @@
         ClosingDate: '2013-10-12 00:00:00'
         VilleId: 14
         CategorieId: 2
-        GeoCoordinateX: '43.274308'
-        GeoCoordinateY: '6.521865'
+        GeoCoordinateX: '43.28539469'
+        GeoCoordinateY: '6.57928437'
         VideoPath: null
         Image360Path: null
         Capacite: '470'
@@ -5120,8 +5120,8 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 68
         CategorieId: 2
-        GeoCoordinateX: '44.551115'
-        GeoCoordinateY: '4.413293'
+        GeoCoordinateX: '44.53427499'
+        GeoCoordinateY: '4.406890869'
         VideoPath: null
         Image360Path: null
         Capacite: '170'
@@ -5147,8 +5147,8 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 149
         CategorieId: 3
-        GeoCoordinateX: '45.885588'
-        GeoCoordinateY: '-1.19505'
+        GeoCoordinateX: '45.8828959'
+        GeoCoordinateY: '-1.2042464'
         VideoPath: null
         Image360Path: null
         Capacite: '133'
@@ -5174,8 +5174,8 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 12
         CategorieId: 2
-        GeoCoordinateX: '43.8462419'
-        GeoCoordinateY: '6.5137'
+        GeoCoordinateX: '43.83920493'
+        GeoCoordinateY: '6.493869424'
         VideoPath: null
         Image360Path: null
         Capacite: '500'
@@ -5201,8 +5201,8 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: 7
         CategorieId: 3
-        GeoCoordinateX: '42.75444'
-        GeoCoordinateY: '2.993641'
+        GeoCoordinateX: '42.76536313'
+        GeoCoordinateY: '3.031582832'
         VideoPath: null
         Image360Path: null
         Capacite: '615'
@@ -5228,8 +5228,8 @@
         ClosingDate: '2013-08-31 00:00:00'
         VilleId: 20
         CategorieId: 2
-        GeoCoordinateX: '43.567296'
-        GeoCoordinateY: '3.896473'
+        GeoCoordinateX: '43.54960955'
+        GeoCoordinateY: '3.894379735'
         VideoPath: null
         Image360Path: null
         Capacite: '302'
@@ -5255,8 +5255,8 @@
         ClosingDate: '2012-09-09 00:00:00'
         VilleId: 89
         CategorieId: 3
-        GeoCoordinateX: '44.795454'
-        GeoCoordinateY: '-1.147783'
+        GeoCoordinateX: '44.75173929'
+        GeoCoordinateY: '-1.187531948'
         VideoPath: null
         Image360Path: null
         Capacite: '800'
@@ -5309,8 +5309,8 @@
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 66
         CategorieId: 2
-        GeoCoordinateX: '49.320257'
-        GeoCoordinateY: '-1.102929'
+        GeoCoordinateX: '49.31883866'
+        GeoCoordinateY: '-1.108932495'
         VideoPath: null
         Image360Path: null
         Capacite: '240'
@@ -5336,8 +5336,8 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 24
         CategorieId: 1
-        GeoCoordinateX: '43.724391'
-        GeoCoordinateY: '6.069215'
+        GeoCoordinateX: '43.73420486'
+        GeoCoordinateY: '6.077772975'
         VideoPath: null
         Image360Path: null
         Capacite: '219'
@@ -5363,8 +5363,8 @@
         ClosingDate: '2012-09-15 00:00:00'
         VilleId: 16
         CategorieId: 3
-        GeoCoordinateX: '42.706091'
-        GeoCoordinateY: '3.009898'
+        GeoCoordinateX: '42.68903253'
+        GeoCoordinateY: '2.998972535'
         VideoPath: null
         Image360Path: null
         Capacite: '160'
@@ -5390,8 +5390,8 @@
         ClosingDate: '2012-09-22 00:00:00'
         VilleId: 15
         CategorieId: 4
-        GeoCoordinateX: '43.580418'
-        GeoCoordinateY: '7.125102'
+        GeoCoordinateX: '43.61142443'
+        GeoCoordinateY: '7.123936415'
         VideoPath: null
         Image360Path: null
         Capacite: '110'
@@ -5417,8 +5417,8 @@
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 1
         CategorieId: 2
-        GeoCoordinateX: '42.546214'
-        GeoCoordinateY: '3.022911'
+        GeoCoordinateX: '42.546969'
+        GeoCoordinateY: '3.04659'
         VideoPath: null
         Image360Path: null
         Capacite: '588'
@@ -5444,8 +5444,8 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 78
         CategorieId: 2
-        GeoCoordinateX: '44.452912'
-        GeoCoordinateY: '4.341765'
+        GeoCoordinateX: '44.449111'
+        GeoCoordinateY: '4.3525926'
         VideoPath: null
         Image360Path: null
         Capacite: '402'
@@ -5471,8 +5471,8 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 78
         CategorieId: 3
-        GeoCoordinateX: '44.452912'
-        GeoCoordinateY: '4.341765'
+        GeoCoordinateX: '44.42471997'
+        GeoCoordinateY: '4.331874847'
         VideoPath: null
         Image360Path: null
         Capacite: '296'
@@ -5498,8 +5498,8 @@
         ClosingDate: '2013-09-14 00:00:00'
         VilleId: 74
         CategorieId: 2
-        GeoCoordinateX: '47.667176'
-        GeoCoordinateY: '1.460599'
+        GeoCoordinateX: '47.68714583'
+        GeoCoordinateY: '1.483572721'
         VideoPath: null
         Image360Path: null
         Capacite: '280'
@@ -5525,8 +5525,8 @@
         ClosingDate: '2012-09-09 00:00:00'
         VilleId: 84
         CategorieId: 2
-        GeoCoordinateX: '46.033306'
-        GeoCoordinateY: '-1.379923'
+        GeoCoordinateX: '46.01528621'
+        GeoCoordinateY: '-1.39242053'
         VideoPath: null
         Image360Path: null
         Capacite: '205'
@@ -5552,8 +5552,8 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: 80
         CategorieId: 3
-        GeoCoordinateX: '45.781593'
-        GeoCoordinateY: '6.203303'
+        GeoCoordinateX: '45.795155'
+        GeoCoordinateY: '6.205735803'
         VideoPath: null
         Image360Path: null
         Capacite: '300'
@@ -5579,8 +5579,8 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: 94
         CategorieId: 2
-        GeoCoordinateX: '46.223107'
-        GeoCoordinateY: '-1.439882'
+        GeoCoordinateX: '46.22760164'
+        GeoCoordinateY: '-1.426178813'
         VideoPath: null
         Image360Path: null
         Capacite: '240'
@@ -5606,8 +5606,8 @@
         ClosingDate: '2012-09-15 00:00:00'
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: '43.439236'
-        GeoCoordinateY: '-1.590062'
+        GeoCoordinateX: '43.45307856'
+        GeoCoordinateY: '-1.573544741'
         VideoPath: null
         Image360Path: null
         Capacite: '374'
@@ -5633,8 +5633,8 @@
         ClosingDate: '2013-09-30 00:00:00'
         VilleId: 27
         CategorieId: 3
-        GeoCoordinateX: '44.372609'
-        GeoCoordinateY: '0.239981'
+        GeoCoordinateX: '41.83260316'
+        GeoCoordinateY: '3.084572554'
         VideoPath: null
         Image360Path: null
         Capacite: '712'
@@ -5660,8 +5660,8 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 30
         CategorieId: 3
-        GeoCoordinateX: '41.8505066'
-        GeoCoordinateY: '3.1298161'
+        GeoCoordinateX: '41.857027'
+        GeoCoordinateY: '3.137991'
         VideoPath: null
         Image360Path: null
         Capacite: '453'
@@ -5687,8 +5687,8 @@
         ClosingDate: '2013-09-14 00:00:00'
         VilleId: 72
         CategorieId: 2
-        GeoCoordinateX: '46.344059'
-        GeoCoordinateY: '-1.4387859'
+        GeoCoordinateX: '46.34851988'
+        GeoCoordinateY: '-1.387576461'
         VideoPath: null
         Image360Path: null
         Capacite: '350'
@@ -5714,8 +5714,8 @@
         ClosingDate: '2012-09-09 00:00:00'
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: '43.721683'
-        GeoCoordinateY: '4.173218'
+        GeoCoordinateX: '43.71691503'
+        GeoCoordinateY: '4.167069197'
         VideoPath: null
         Image360Path: null
         Capacite: '150'
@@ -5741,8 +5741,8 @@
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 67
         CategorieId: 3
-        GeoCoordinateX: '44.6953419'
-        GeoCoordinateY: '5.485029'
+        GeoCoordinateX: '44.68386545'
+        GeoCoordinateY: '5.450313091'
         VideoPath: null
         Image360Path: null
         Capacite: '130'
@@ -5768,8 +5768,8 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 46
         CategorieId: 3
-        GeoCoordinateX: '45.123826'
-        GeoCoordinateY: '1.723226'
+        GeoCoordinateX: '45.13193732'
+        GeoCoordinateY: '1.762683392'
         VideoPath: null
         Image360Path: null
         Capacite: '180'
@@ -5795,8 +5795,8 @@
         ClosingDate: '2013-09-08 00:00:00'
         VilleId: 76
         CategorieId: 3
-        GeoCoordinateX: '43.68218'
-        GeoCoordinateY: '0.993749'
+        GeoCoordinateX: '43.68601738'
+        GeoCoordinateY: '1.00292623'
         VideoPath: null
         Image360Path: null
         Capacite: '129'
@@ -5822,8 +5822,8 @@
         ClosingDate: '2012-09-09 00:00:00'
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '39.5995271'
-        GeoCoordinateY: '-9.069362'
+        GeoCoordinateX: '39.69684787'
+        GeoCoordinateY: '-8.97567451'
         VideoPath: null
         Image360Path: null
         Capacite: '92'
@@ -5849,8 +5849,8 @@
         ClosingDate: '2012-09-09 00:00:00'
         VilleId: 99
         CategorieId: 2
-        GeoCoordinateX: '44.483615'
-        GeoCoordinateY: '-1.075989'
+        GeoCoordinateX: '44.4990307'
+        GeoCoordinateY: '-1.079460382'
         VideoPath: null
         Image360Path: null
         Capacite: '576'
@@ -5876,8 +5876,8 @@
         ClosingDate: '2012-09-30 00:00:00'
         VilleId: 102
         CategorieId: 1
-        GeoCoordinateX: '43.81466'
-        GeoCoordinateY: '-1.37825'
+        GeoCoordinateX: '43.79725104'
+        GeoCoordinateY: '-1.381938457'
         VideoPath: null
         Image360Path: null
         Capacite: '430'
@@ -5903,8 +5903,8 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 77
         CategorieId: 2
-        GeoCoordinateX: '46.536402'
-        GeoCoordinateY: '-1.772826'
+        GeoCoordinateX: '46.54614044'
+        GeoCoordinateY: '-1.805588007'
         VideoPath: null
         Image360Path: null
         Capacite: '401'
@@ -5930,8 +5930,8 @@
         ClosingDate: '2012-09-09 00:00:00'
         VilleId: 79
         CategorieId: 1
-        GeoCoordinateX: '46.466102'
-        GeoCoordinateY: '-1.618261'
+        GeoCoordinateX: '46.46559831'
+        GeoCoordinateY: '-1.652584076'
         VideoPath: null
         Image360Path: null
         Capacite: '226'
@@ -5957,8 +5957,8 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '42.720254'
-        GeoCoordinateY: '1.837545'
+        GeoCoordinateX: '42.72870307'
+        GeoCoordinateY: '1.825538278'
         VideoPath: null
         Image360Path: null
         Capacite: '285'
@@ -5984,8 +5984,8 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: 38
         CategorieId: 2
-        GeoCoordinateX: '44.6444061'
-        GeoCoordinateY: '12.2463657'
+        GeoCoordinateX: '44.65568393'
+        GeoCoordinateY: '12.24521756'
         VideoPath: null
         Image360Path: null
         Capacite: '1326'
@@ -6011,8 +6011,8 @@
         ClosingDate: '2012-09-23 00:00:00'
         VilleId: 97
         CategorieId: 3
-        GeoCoordinateX: '45.515125'
-        GeoCoordinateY: '-1.123258'
+        GeoCoordinateX: '45.4856205'
+        GeoCoordinateY: '-1.1477709'
         VideoPath: null
         Image360Path: null
         Capacite: '526'
@@ -6092,8 +6092,8 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: 45
         CategorieId: null
-        GeoCoordinateX: '42.7151275'
-        GeoCoordinateY: '10.9848064'
+        GeoCoordinateX: '42.74528669'
+        GeoCoordinateY: '10.94759166'
         VideoPath: null
         Image360Path: null
         Capacite: '600'
@@ -6119,8 +6119,8 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 8
         CategorieId: 3
-        GeoCoordinateX: '43.282801'
-        GeoCoordinateY: '3.279651'
+        GeoCoordinateX: '43.27113581'
+        GeoCoordinateY: '3.329329491'
         VideoPath: null
         Image360Path: null
         Capacite: '206'
@@ -6146,8 +6146,8 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 73
         CategorieId: 3
-        GeoCoordinateX: '46.586323'
-        GeoCoordinateY: '5.7030839'
+        GeoCoordinateX: '46.58725895'
+        GeoCoordinateY: '5.700777769'
         VideoPath: null
         Image360Path: null
         Capacite: '227'
@@ -6173,8 +6173,8 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 26
         CategorieId: 3
-        GeoCoordinateX: '41.969591'
-        GeoCoordinateY: '3.148022'
+        GeoCoordinateX: '41.993343'
+        GeoCoordinateY: '3.188749'
         VideoPath: null
         Image360Path: null
         Capacite: '260'
@@ -6200,8 +6200,8 @@
         ClosingDate: '2012-09-15 00:00:00'
         VilleId: 17
         CategorieId: 3
-        GeoCoordinateX: '42.78773'
-        GeoCoordinateY: '3.036565'
+        GeoCoordinateX: '42.77629471'
+        GeoCoordinateY: '3.02487731'
         VideoPath: null
         Image360Path: null
         Capacite: '496'
@@ -6227,8 +6227,8 @@
         ClosingDate: '2012-09-09 00:00:00'
         VilleId: 71
         CategorieId: 1
-        GeoCoordinateX: '46.408889'
-        GeoCoordinateY: '-1.576171'
+        GeoCoordinateX: '46.42087836'
+        GeoCoordinateY: '-1.569660902'
         VideoPath: null
         Image360Path: null
         Capacite: '430'
@@ -6254,8 +6254,8 @@
         ClosingDate: '2012-09-23 00:00:00'
         VilleId: 104
         CategorieId: 2
-        GeoCoordinateX: '43.439236'
-        GeoCoordinateY: '-1.590062'
+        GeoCoordinateX: '43.43522086'
+        GeoCoordinateY: '-1.582331657'
         VideoPath: null
         Image360Path: null
         Capacite: '350'
@@ -6281,8 +6281,8 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: 103
         CategorieId: 2
-        GeoCoordinateX: '43.692694'
-        GeoCoordinateY: '-1.384908'
+        GeoCoordinateX: '43.724728'
+        GeoCoordinateY: '-1.421765'
         VideoPath: null
         Image360Path: null
         Capacite: '500'
@@ -6308,8 +6308,8 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 34
         CategorieId: 2
-        GeoCoordinateX: '40.8839435'
-        GeoCoordinateY: '0.7996491'
+        GeoCoordinateX: '40.86483588'
+        GeoCoordinateY: '0.778688192'
         VideoPath: null
         Image360Path: null
         Capacite: '373'
@@ -6335,8 +6335,8 @@
         ClosingDate: '2012-09-30 00:00:00'
         VilleId: 23
         CategorieId: 2
-        GeoCoordinateX: '43.2071759'
-        GeoCoordinateY: '6.465117'
+        GeoCoordinateX: '43.190284'
+        GeoCoordinateY: '6.471419'
         VideoPath: null
         Image360Path: null
         Capacite: '400'
@@ -6389,8 +6389,8 @@
         ClosingDate: '2013-09-22 00:00:00'
         VilleId: 97
         CategorieId: 2
-        GeoCoordinateX: '45.515125'
-        GeoCoordinateY: '-1.123258'
+        GeoCoordinateX: '45.50097801'
+        GeoCoordinateY: '-1.129317284'
         VideoPath: null
         Image360Path: null
         Capacite: '583'
@@ -6416,8 +6416,8 @@
         ClosingDate: '2012-09-30 00:00:00'
         VilleId: 3
         CategorieId: 1
-        GeoCoordinateX: '43.528906'
-        GeoCoordinateY: '3.933493'
+        GeoCoordinateX: '43.51973054'
+        GeoCoordinateY: '3.909483254'
         VideoPath: null
         Image360Path: null
         Capacite: '435'
@@ -6443,8 +6443,8 @@
         ClosingDate: '2013-09-22 00:00:00'
         VilleId: 40
         CategorieId: 2
-        GeoCoordinateX: '43.567595'
-        GeoCoordinateY: '6.691291'
+        GeoCoordinateX: '43.58432727'
+        GeoCoordinateY: '6.689981818'
         VideoPath: null
         Image360Path: null
         Capacite: '110'
@@ -6470,8 +6470,8 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: 44
         CategorieId: 2
-        GeoCoordinateX: '43.0772066'
-        GeoCoordinateY: '10.5577407'
+        GeoCoordinateX: '43.02830997'
+        GeoCoordinateY: '10.53853869'
         VideoPath: null
         Image360Path: null
         Capacite: '885'
@@ -6497,8 +6497,8 @@
         ClosingDate: '2012-09-15 00:00:00'
         VilleId: 78
         CategorieId: 3
-        GeoCoordinateX: '44.452912'
-        GeoCoordinateY: '4.341765'
+        GeoCoordinateX: '44.45909408'
+        GeoCoordinateY: '4.341879487'
         VideoPath: null
         Image360Path: null
         Capacite: '110'
@@ -6524,8 +6524,8 @@
         ClosingDate: '2012-09-09 00:00:00'
         VilleId: 59
         CategorieId: 3
-        GeoCoordinateX: '45.001378'
-        GeoCoordinateY: '3.223658'
+        GeoCoordinateX: '44.99907285'
+        GeoCoordinateY: '3.219047785'
         VideoPath: null
         Image360Path: null
         Capacite: '90'
@@ -6551,8 +6551,8 @@
         ClosingDate: '2012-09-02 00:00:00'
         VilleId: 18
         CategorieId: 3
-        GeoCoordinateX: '43.137479'
-        GeoCoordinateY: '2.700108'
+        GeoCoordinateX: '43.11730606'
+        GeoCoordinateY: '2.73617506'
         VideoPath: null
         Image360Path: null
         Capacite: '110'
@@ -6578,8 +6578,8 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: 48
         CategorieId: 2
-        GeoCoordinateX: '48.6290369'
-        GeoCoordinateY: '-2.465645'
+        GeoCoordinateX: '48.63805601'
+        GeoCoordinateY: '-2.455675006'
         VideoPath: null
         Image360Path: null
         Capacite: '488'
