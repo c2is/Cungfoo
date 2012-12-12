@@ -186,7 +186,8 @@ body{background:#fff;color:@colorGris2;font:12px @arial;margin:0 24px;}
 #searchProductFormContener {display:none;}
 #homePage #searchResult {width:928px;height:560px;position:relative;
   .aProposalBlock{background-color:@colorBgGrisC;border-radius:10px;padding:15px 20px;margin:15px 0;width:296px;margin-right:20px;float:left;
-    &.aProposalBlockLast{margin-right:0;}
+    &:nth-of-type(2n+1){margin-right:0;}
+    &:first-of-type{margin-right:20px;}
     &.package .proposalDescriptionTitle{background-color:@colorRubricVert;
       .proposalDescriptionDetailsLink{color:@colorRubricVert;}
     }

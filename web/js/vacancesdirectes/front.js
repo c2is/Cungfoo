@@ -151,7 +151,7 @@ $(function() {
     $(".popinInline").colorbox({inline:true, width:"75%"});
 
 // select
-    $('#searchForm').find('select').sSelect({ddMaxHeight: '300px'});
+    $('#searchForm').find('select').not('.sMultSelect').sSelect({ddMaxHeight: '300px'});
 
     $('.sMultSelect').sMultSelect({msgNull: 'Pas de réponse'});
     /*$('.sMultSelectUl').wrap('<div class="tinyScroll" />').before('<div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>')
