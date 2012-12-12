@@ -18,6 +18,7 @@ class SetupCommand extends Command
             ->setName('resalys:client:setup')
             ->setDescription('Setup resalys client config file')
             ->addArgument('url', InputArgument::REQUIRED, 'Resalys URL.')
+            ->addArgument('base_id', InputArgument::REQUIRED, 'Resalys base id.')
         ;
     }
 
@@ -28,10 +29,12 @@ class SetupCommand extends Command
 
         $defaultParameters = array(
             '/##url##/',
+            '/##base_id##/',
         );
 
         $currentParameters = array(
             $input->getArgument('url'),
+            $input->getArgument('base_id'),
         );
 
         $resalysClientConfig = preg_replace($defaultParameters, $currentParameters, file_get_contents($resalysClientDistFilename));

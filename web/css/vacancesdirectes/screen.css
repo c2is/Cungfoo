@@ -4385,6 +4385,7 @@ ul.newList.optGroup li.optGroup-like a {
   background: #8c8a8a;
   font: bold 25px/28px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   padding: 3px 5px 5px;
+  color: #ffffff;
 }
 .itemResult .itemResultTitle a {
   color: #ffffff;

@@ -67,11 +67,11 @@ head.ready(function(){
                 var selectWidth = $(this).parent().width();
                 $(this).next('.SSContainerDivWrapper').show();
                 var selectUlWidth = $(this).next('.SSContainerDivWrapper').width();
-//                console.log(selectWidth);
-//                console.log(selectUlWidth);
-//                console.log( $(this).next('.SSContainerDivWrapper').hasClass('maxHeight') );
-//                console.log( !$(this).next('.SSContainerDivWrapper').hasClass('minWidth') );
-//                console.log( selectUlWidth >= selectWidth );
+                //console.log(selectWidth);
+                //console.log(selectUlWidth);
+                //console.log( $(this).next('.SSContainerDivWrapper').hasClass('maxHeight') );
+                //console.log( !$(this).next('.SSContainerDivWrapper').hasClass('minWidth') );
+                //console.log( selectUlWidth >= selectWidth );
                 if ( $(this).next('.SSContainerDivWrapper').hasClass('maxHeight') && !$(this).next('.SSContainerDivWrapper').hasClass('minWidth') && selectUlWidth >= selectWidth ){
 
                     $(this).next('.SSContainerDivWrapper').css({
@@ -140,5 +140,5 @@ function resize_myframe() {
     var height = $('body').height();
     height += 70;
     window.parent.document.getElementById('frameResalys').style.height = height + 'px';
-//    consoleLog(height);
+    //consoleLog(height);
 }
