@@ -2994,6 +2994,10 @@ ul.newList.optGroup li.optGroup-like a {
   float: none;
   margin-bottom: 5px;
 }
+.home #header #logoTitle {
+  position: absolute;
+  text-indent: -999em;
+}
 .home #sliderWrapper {
   overflow: hidden;
   width: 100%;
