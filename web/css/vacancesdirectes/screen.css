@@ -5598,7 +5598,7 @@ ul.newList.optGroup li.optGroup-like a {
 }
 .ce #searchContainer .selectContainer .newListSelected .SSContainerDivWrapper,
 .ce #searchContainerReservation .selectContainer .newListSelected .SSContainerDivWrapper {
-  min-width: 204px;
+  min-width: 201px;
 }
 .ce #searchContainer .searchBlock,
 .ce #searchContainerReservation .searchBlock {
