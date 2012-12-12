@@ -40,16 +40,17 @@ iframe{width:100%;}
 
   #boxLogin{
     #formLogin{
+      a:hover{text-decoration:underline;color:@colorFushia;}
       >.left{width:214px;margin:0;}
       >.right{width:164px;margin-left:50px;}
       label{font-family:@ptnarrow;font-size:16px;font-weight:bold;margin:0 0 2px 0;display:block;}
-      input{margin:0 0 15px 0;
-        &[type=submit]{margin:22px 0 32px;}
+      input{margin:0 0 15px 0;border:0 none;._verticalCenter(27px);
+        &[type=submit]{margin:25px 0 37px;}
       }
     }
   }
   #boxDiscover{
-    table{font-family:@ptnarrow;font-size:16px;font-weight:bold;color:@colorBlanc;width:428px;
+    table{font-family:@ptnarrow;font-size:16px;font-weight:bold;color:@colorBlanc;width:428px;margin:30px 0 5px;
       tr:first-child th{border-bottom:1px solid @colorBorderGris;}
       th, td{padding:10px 0;text-transform:uppercase;text-align:center;}
       th{color:@colorGris2;font-size:14px;line-height:13px;
@@ -66,7 +67,7 @@ iframe{width:100%;}
       }
     }
   }
-  #boxEdito{position:relative;
+  #boxEdito{position:relative;min-height:551px;
     h2{margin-left: 27px;
       &:before{content:url('../../images/vacancesdirectes/common/ui/edito-icon.png');width:27px;height:27px;position:absolute;left:-27px;top:50%;margin-top:-14px;}
     }
@@ -112,8 +113,8 @@ iframe{width:100%;}
   #searchText{position:relative;float:right;}
   .selectContainer .newListSelected{
     &:last-child{margin-right:0;}
-    .selectedTxt{background-color:@colorBgGrisC;font-weight:normal;}
-    .SSContainerDivWrapper {min-width:204px;}
+    .selectedTxt{background-color:@colorBgGrisC;font-weight:normal;width:164px;}
+    .SSContainerDivWrapper {min-width:201px;}
   }
   .searchBlock {border: 1px solid @colorGris3;padding: 20px;width: 452px;
     legend,h2{font-family:@ptnarrow;font-size:24px;font-weight:normal;}
