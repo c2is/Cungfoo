@@ -289,7 +289,6 @@ $(function() {
             return false;
         });
         $('#datepickerCalendar .bt').bind('click', function(){
-            console.log("BUTTON");
             $('#datepickerCalendar').stop().css({height: 0}).removeClass('opened');
             $('#datepickerField').removeClass('opened');
             $('#datepickerCalendar').removeClass('opened');
@@ -948,11 +947,11 @@ head.ready(function(){
             var selectWidth = $(this).parent().width();
             $(this).next('.SSContainerDivWrapper').show();
             var selectUlWidth = $(this).next('.SSContainerDivWrapper').width();
-//            console.log(selectWidth);
-//            console.log(selectUlWidth);
-//            console.log( $(this).next('.SSContainerDivWrapper').hasClass('maxHeight') );
-//            console.log( !$(this).next('.SSContainerDivWrapper').hasClass('minWidth') );
-//            console.log( selectUlWidth >= selectWidth );
+            //console.log(selectWidth);
+            //console.log(selectUlWidth);
+            //console.log( $(this).next('.SSContainerDivWrapper').hasClass('maxHeight') );
+            //console.log( !$(this).next('.SSContainerDivWrapper').hasClass('minWidth') );
+            //console.log( selectUlWidth >= selectWidth );
             if ( $(this).next('.SSContainerDivWrapper').hasClass('maxHeight') && !$(this).next('.SSContainerDivWrapper').hasClass('minWidth') && selectUlWidth >= selectWidth ){
 
                 $(this).next('.SSContainerDivWrapper').css({
@@ -976,7 +975,7 @@ head.ready(function(){
     if ( $('.errors').length > 0 ){
         $('.errors').each(function(i,v){
             errorVisible = $(this).css('display') == 'block' ? true : false;
-            console.log(errorVisible);
+            //console.log(errorVisible);
         });
     }
     if ( $('form').length > 0 && errorVisible ) {
