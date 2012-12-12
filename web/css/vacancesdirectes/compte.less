@@ -210,7 +210,7 @@ body.clear{background:#fff;color:@colorGris2;font:12px @arial;margin:0;}
 .tooltip {outline:none;position:relative;display:inline-block;}
 .tooltip strong {line-height:30px;}
 .tooltip:hover {text-decoration:none;}
-.tooltip span.bubble {font:bold 12px/35px @arial;background:@colorBgGrisM;color:@colorBlanc;text-transform:none;padding:10px;text-decoration:none;text-align:center;._border-radius(10px);z-index:10;display:none;margin:0;width:auto; line-height:16px;left:150px;bottom:-5px;white-space:nowrap;}
+.tooltip span.bubble {font:bold 12px/35px @arial;background:@colorBgGrisM;color:@colorBlanc;text-transform:none;padding:10px;text-decoration:none;text-align:center;._border-radius(10px);z-index:10;display:none;margin:0;width:auto; line-height:16px;left:220px;bottom:-5px;white-space:nowrap;}
 .tooltip span.bubble:after{right:100%;border:solid transparent;content:"";height:0;width:0;position:absolute;pointer-events:none;border-color:rgba(140, 138, 138, 0);border-right-color:@colorBgGrisM;border-width:5px;top:50%;margin-top:-5px;}
 .tooltip:hover span.bubble{
   display:inline; position:absolute;}
@@ -240,73 +240,61 @@ body.clear{background:#fff;color:@colorGris2;font:12px @arial;margin:0;}
 
 input,
 textarea{font:bold 12px @arial;color:@colorGris0;}
-input[type="text"],input[type="password"]{background-color:@colorBgBlanc;width:216px;._verticalCenter(27px);padding: 0 7px;border:0 none;}
-textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;border:0 none;}
+input[type="text"],input[type="password"]{background-color:@colorBgGrisC;width:216px;._verticalCenter(27px);padding: 0 7px;border:0 none;}
+textarea{background-color:@colorBgGrisC;width:216px;height:81px;padding: 0 7px;border:0 none;}
 .label{font:bold 15px @ptnarrow;color:@colorGris0;text-transform:uppercase;display:inline-block;}
-//h4{font-size:15px;line-height:17px;}
 .bold{font-weight:bold;}
 
 
 /*LEFT*/
 #reservationContener{
-  h2{color:@colorBgGrisM;text-transform:uppercase;font:bold 22px @ptnarrow;._verticalCenter(40px);}
+
+  h2{color:@colorFushia;font:bold 19px/18px @ptnarrow;text-transform:uppercase;margin-bottom:10px;}
   p{margin-bottom:10px;}
   table{width:100%}
 
   // step 1
   &.detail,
   &.editAccount{
-    #authentication{._border-radius(10px);margin:15px 0;position:relative;background-color:@colorBgBlanc;border:5px solid @colorBgGrisM;
-      h2{background-color:@colorBgGrisM;color:@colorBlanc;text-transform:uppercase;font:bold 22px @ptnarrow;._verticalCenter(40px);padding-left:10px;}
-      &>div{background-color:@colorBgGrisC;color:@colorGris2;
-        &>div{padding:15px 20px;clear:both;}
-        .whiteBg{background-color:@colorBgBlanc;
-          .aField,
-          .authenticationChoice{font:normal 12px @arial;text-transform:none;display:block;margin:0;
-            .label{font:inherit;text-transform:inherit;color:inherit}
-            .field,
-            input[type="radio"]:checked + label{ font-weight: bold; }
-          }
-        }
-        #existingCustomerLayer,
-        #newCustomerLayer,{
-//          &>div{margin-bottom:20px;}
-          .aField{margin-bottom:10px;}
-          .label{margin-right:10px;text-align:right;}
-        }
-        #existingCustomerLayer{padding-bottom:5px;
-          .aField{width:450px;float:left;
-            .label{width:130px;}
-            input{width:310px;}
-          }
-        }
-        #newCustomerLayer{
-          .label{width:134px;padding-top:3px;}
-          #newAccount{margin-bottom:15px;
-            .aField{width:424px;
-              input{width:280px;}
-            }
-          }
-          #address{width:576px;
-            td{display:table-cell;padding:5px 10px 5px 0;vertical-align:middle;width:144px !important;}
-            input,textarea,.newListSelected{width:134px;}
-            textarea{width:134px;height:62px;}
-            .datepicker button{right:0;}
-            .label{width:134px;line-height:17px;padding:0 10px 0 0;}
-          }
-          #others{width:576px;margin:15px 0 20px;
-            td{display:table-cell;padding:5px 10px 5px 0;vertical-align:middle;}
-            .label{width:432px;}
-          }
-        }
-        #option{padding-top:0;
-          table{width:576px;
-            td{display:table-cell;padding:5px 10px 5px 0;vertical-align:middle;}
-            .label{width:432px;text-align:right;}
-          }
-        }
-        .loginLink{float:right;}
+    #authentication{margin:15px 0;position:relative;background-color:@colorBgBlanc;color:@colorGris2;
+
+      &>div{
+        h4{color:@colorGris0;text-transform:uppercase;font:bold 22px @ptnarrow;._verticalCenter(40px);}
       }
+      .aField{font:normal 12px @arial;text-transform:none;display:block;margin:0;padding:15px 20px;clear:both;
+        .label{font:inherit;text-transform:inherit;color:inherit}
+        .field,
+        input[type="radio"]:checked + label{ font-weight: bold; }
+      }
+
+      #loginLayer,
+      #existingCustomerLayer,
+      #newCustomerLayer,{
+        &>div{margin-bottom:20px;}
+        td{display:table-cell;padding:5px 10px 5px 0;vertical-align:middle;}
+        input,textarea,.newListSelected{width:228px;}
+        textarea{width:228px;height:62px;}
+        .datepicker button{right:0;}
+        .label{width:228px;line-height:17px;padding:0 10px 0 0;text-align:right;}
+      }
+      #loginLayer table{width:50%;margin-bottom:15px;}
+      #newCustomerLayer{
+        #address{
+
+        }
+        #others{
+          td{display:inline-block;margin-bottom:10px;float:left;}
+          .label{width:415px;}
+        }
+      }
+      #existingCustomerLayer{
+        .aField{width:450px;float:left;
+          .label{width:130px;}
+          input{width:310px;}
+        }
+      }
+      .loginLink{float:right;}
+
     }
     #reservation{
       .aRoom{
@@ -360,20 +348,15 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
   &.summary{
     #option{
       h2 + p{font-weight:bold;}
-      .label{font:inherit;color:inherit;text-transform:inherit;margin-right:10px;vertical-align:top;}
-      p:not(.aField){
-        .label{width:278px;float:left;text-align:right;}
-        .field textarea{width:288px;height:81px;}
-      }
+      .label{vertical-align:top;font:inherit;color:inherit;text-transform:inherit;margin-right:5px;}
+      .field textarea{width:423px;height:54px;}
       .criteria{margin-bottom:10px;clear:both;
-        .label{float:left;text-align:right;width:278px;._verticalCenter(27px);}
-        input{width:134px;}
-        &:last-of-type .label{line-height:13px;}
+        .label{float:left;._verticalCenter(27px);}
+        input{width:125px;}
       }
       .aField{
-        .label{margin-right:0;}
         input[type="checkbox"]{margin-top:1px;}
-        label{font-style:italic;font-weight:bold;vertical-align:top;
+        label{font-style:italic;font-weight:bold;
           a{color:@colorFushia;}
         }
       }
@@ -520,19 +503,14 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
 /* Stylish Select 0.4.9 */
 
 // step 1
+#authentication #loginLayer,
 #authentication #newCustomerLayer{
-   ._stylish-select(134px,27px,0px,4);
+   ._stylish-select(228px,27px,0px,4);
  }
-#reservation .aRoom{
-  ._stylish-select(54px,27px,10px,5);
-}
-#reservation #financialContener{
-  ._stylish-select(216px,27px,0px,4);
-}
 
 // step 2
 #option {
-  ._stylish-select(134px,27px,0px,4);
+  ._stylish-select(141px,27px,0px,4);
 }
 
 // Stylish Select
@@ -558,7 +536,7 @@ ul.newList a {color:@colorGris2;text-decoration:none;display:block;padding:0 8px
 }
 .newListSelected *{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing: content-box;cursor:pointer;}
 ul.newList li a:focus {-moz-outline-style: none;}
-.selectedTxt {overflow:hidden;position:absolute;text-overflow:ellipsis;white-space:nowrap;margin-right:0;background-color:@colorBlanc;}
+.selectedTxt {overflow:hidden;position:absolute;text-overflow:ellipsis;white-space:nowrap;margin-right:0;background-color:@colorBgGrisC;}
 ul.newList li:first-child{display:none;}
 ul.newList.optGroup li a {padding:0 8px 0 18px;}
 ul.newList.optGroup li.optGroup-like a {padding:0 8px;font-weight:bold;}
