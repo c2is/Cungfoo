@@ -29,6 +29,7 @@ use Cungfoo\Model\ThemeServiceComplementaire;
  * @method ServiceComplementaireQuery orderById($order = Criteria::ASC) Order by the id column
  * @method ServiceComplementaireQuery orderByCode($order = Criteria::ASC) Order by the code column
  * @method ServiceComplementaireQuery orderByImagePath($order = Criteria::ASC) Order by the image_path column
+ * @method ServiceComplementaireQuery orderByVignette($order = Criteria::ASC) Order by the vignette column
  * @method ServiceComplementaireQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method ServiceComplementaireQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  * @method ServiceComplementaireQuery orderByActive($order = Criteria::ASC) Order by the active column
@@ -36,6 +37,7 @@ use Cungfoo\Model\ThemeServiceComplementaire;
  * @method ServiceComplementaireQuery groupById() Group by the id column
  * @method ServiceComplementaireQuery groupByCode() Group by the code column
  * @method ServiceComplementaireQuery groupByImagePath() Group by the image_path column
+ * @method ServiceComplementaireQuery groupByVignette() Group by the vignette column
  * @method ServiceComplementaireQuery groupByCreatedAt() Group by the created_at column
  * @method ServiceComplementaireQuery groupByUpdatedAt() Group by the updated_at column
  * @method ServiceComplementaireQuery groupByActive() Group by the active column
@@ -61,6 +63,7 @@ use Cungfoo\Model\ThemeServiceComplementaire;
  *
  * @method ServiceComplementaire findOneByCode(string $code) Return the first ServiceComplementaire filtered by the code column
  * @method ServiceComplementaire findOneByImagePath(string $image_path) Return the first ServiceComplementaire filtered by the image_path column
+ * @method ServiceComplementaire findOneByVignette(string $vignette) Return the first ServiceComplementaire filtered by the vignette column
  * @method ServiceComplementaire findOneByCreatedAt(string $created_at) Return the first ServiceComplementaire filtered by the created_at column
  * @method ServiceComplementaire findOneByUpdatedAt(string $updated_at) Return the first ServiceComplementaire filtered by the updated_at column
  * @method ServiceComplementaire findOneByActive(boolean $active) Return the first ServiceComplementaire filtered by the active column
@@ -68,6 +71,7 @@ use Cungfoo\Model\ThemeServiceComplementaire;
  * @method array findById(int $id) Return ServiceComplementaire objects filtered by the id column
  * @method array findByCode(string $code) Return ServiceComplementaire objects filtered by the code column
  * @method array findByImagePath(string $image_path) Return ServiceComplementaire objects filtered by the image_path column
+ * @method array findByVignette(string $vignette) Return ServiceComplementaire objects filtered by the vignette column
  * @method array findByCreatedAt(string $created_at) Return ServiceComplementaire objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return ServiceComplementaire objects filtered by the updated_at column
  * @method array findByActive(boolean $active) Return ServiceComplementaire objects filtered by the active column
@@ -174,7 +178,7 @@ abstract class BaseServiceComplementaireQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `code`, `image_path`, `created_at`, `updated_at`, `active` FROM `service_complementaire` WHERE `id` = :p0';
+        $sql = 'SELECT `id`, `code`, `image_path`, `vignette`, `created_at`, `updated_at`, `active` FROM `service_complementaire` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -346,6 +350,35 @@ abstract class BaseServiceComplementaireQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(ServiceComplementairePeer::IMAGE_PATH, $imagePath, $comparison);
+    }
+
+    /**
+     * Filter the query on the vignette column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByVignette('fooValue');   // WHERE vignette = 'fooValue'
+     * $query->filterByVignette('%fooValue%'); // WHERE vignette LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $vignette The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return ServiceComplementaireQuery The current query, for fluid interface
+     */
+    public function filterByVignette($vignette = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($vignette)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $vignette)) {
+                $vignette = str_replace('*', '%', $vignette);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(ServiceComplementairePeer::VIGNETTE, $vignette, $comparison);
     }
 
     /**

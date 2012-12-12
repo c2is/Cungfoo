@@ -47,6 +47,19 @@ class BaseServiceComplementaireType extends AppAwareType
             'label' => 'service_complementaire.image_path_deleted',
             'required' => false,
         ));
+        $builder->add('vignette', 'cungfoo_file', array(
+            'constraints' => array(
+            ),
+            'label' => 'service_complementaire.vignette',
+            'required' => false,
+        ));
+        $builder->add('vignette_deleted', 'checkbox', array(
+            'constraints' => array(
+            ),
+            'property_path' => false,
+            'label' => 'service_complementaire.vignette_deleted',
+            'required' => false,
+        ));
         $builder->add('active', 'checkbox', array(
             'constraints' => array(
             ),
