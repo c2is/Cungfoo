@@ -462,59 +462,6 @@ body.clear {
 .column .ratio-33.clear {
   margin-right: 0;
 }
-/* STEPS */
-#stepNav {
-  width: 976px;
-  height: 50px;
-  font: bold 23px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
-  text-transform: uppercase;
-  position: relative;
-  background: #464545;
-  margin: 20px 0 0 -24px;
-  z-index: 30;
-}
-#stepNav ul {
-  width: 858px;
-  margin: 0 auto;
-  text-align: center;
-}
-#stepNav ul li.tab {
-  margin: 0 12px;
-  float: none;
-  display: inline-block;
-  position: static;
-  color: #fff;
-  padding: 0;
-}
-#stepNav ul li.tab.current {
-  background: #ed145b;
-}
-#stepNav ul li.tab span {
-  position: relative;
-  display: block;
-  padding: 0 15px;
-  color: #ffffff;
-  text-decoration: none;
-  height: 50px;
-  /* Centrer verticalement une ligne de texte */
-
-  line-height: 50px;
-  /* Centrer verticalement plusieurs lignes de texte */
-
-  /* Centrer verticalement une image de taille variable */
-
-}
-#stepNav ul li.tab span > * {
-  vertical-align: middle;
-  display: inline-block;
-  line-height: inherit;
-}
-#stepNav ul li.tab span > img {
-  vertical-align: middle;
-}
-#stepNav ul li.tab.current span {
-  text-decoration: none;
-}
 /*GENERAL*/
 .stain {
   width: 131px;
@@ -781,10 +728,6 @@ textarea {
   text-transform: uppercase;
   display: inline-block;
 }
-h4 {
-  font-size: 15px;
-  line-height: 17px;
-}
 .bold {
   font-weight: bold;
 }
@@ -896,12 +839,6 @@ h4 {
 #reservationContener.editAccount #authentication > div .whiteBg .authenticationChoice input[type="radio"]:checked + label {
   font-weight: bold;
 }
-#reservationContener.detail #authentication > div #existingCustomerLayer > div,
-#reservationContener.editAccount #authentication > div #existingCustomerLayer > div,
-#reservationContener.detail #authentication > div #newCustomerLayer > div,
-#reservationContener.editAccount #authentication > div #newCustomerLayer > div {
-  margin-bottom: 15px;
-}
 #reservationContener.detail #authentication > div #existingCustomerLayer .aField,
 #reservationContener.editAccount #authentication > div #existingCustomerLayer .aField,
 #reservationContener.detail #authentication > div #newCustomerLayer .aField,
@@ -915,66 +852,9 @@ h4 {
   margin-right: 10px;
   text-align: right;
 }
-#reservationContener.detail #authentication > div #newCustomerLayer .label,
-#reservationContener.editAccount #authentication > div #newCustomerLayer .label {
-  width: 124px;
-  padding-top: 3px;
-}
-#reservationContener.detail #authentication > div #newCustomerLayer #newAccount .aField,
-#reservationContener.editAccount #authentication > div #newCustomerLayer #newAccount .aField {
-  width: 450px;
-}
-#reservationContener.detail #authentication > div #newCustomerLayer #newAccount .aField input,
-#reservationContener.editAccount #authentication > div #newCustomerLayer #newAccount .aField input {
-  width: 290px;
-}
-#reservationContener.detail #authentication > div #newCustomerLayer #address,
-#reservationContener.editAccount #authentication > div #newCustomerLayer #address {
-  width: 580px;
-}
-#reservationContener.detail #authentication > div #newCustomerLayer #address td,
-#reservationContener.editAccount #authentication > div #newCustomerLayer #address td {
-  display: table-cell;
-  padding: 5px 10px 5px 0;
-  vertical-align: middle;
-}
-#reservationContener.detail #authentication > div #newCustomerLayer #address td:last-child > *,
-#reservationContener.editAccount #authentication > div #newCustomerLayer #address td:last-child > * {
-  margin-right: 0;
-}
-#reservationContener.detail #authentication > div #newCustomerLayer #address input,
-#reservationContener.editAccount #authentication > div #newCustomerLayer #address input,
-#reservationContener.detail #authentication > div #newCustomerLayer #address textarea,
-#reservationContener.editAccount #authentication > div #newCustomerLayer #address textarea,
-#reservationContener.detail #authentication > div #newCustomerLayer #address .newListSelected,
-#reservationContener.editAccount #authentication > div #newCustomerLayer #address .newListSelected {
-  width: 141px;
-  margin-right: 15px;
-}
-#reservationContener.detail #authentication > div #newCustomerLayer #address textarea,
-#reservationContener.editAccount #authentication > div #newCustomerLayer #address textarea {
-  width: 141px;
-  height: 62px;
-}
-#reservationContener.detail #authentication > div #newCustomerLayer #address .datepicker button,
-#reservationContener.editAccount #authentication > div #newCustomerLayer #address .datepicker button {
-  right: 15px;
-}
-#reservationContener.detail #authentication > div #newCustomerLayer #address .label,
-#reservationContener.editAccount #authentication > div #newCustomerLayer #address .label {
-  width: 124px;
-  line-height: 17px;
-  padding: 0 10px 0 0;
-}
-#reservationContener.detail #authentication > div #newCustomerLayer #others td,
-#reservationContener.editAccount #authentication > div #newCustomerLayer #others td {
-  display: inline-block;
-  margin-bottom: 10px;
-  float: left;
-}
-#reservationContener.detail #authentication > div #newCustomerLayer #others .label,
-#reservationContener.editAccount #authentication > div #newCustomerLayer #others .label {
-  width: 415px;
+#reservationContener.detail #authentication > div #existingCustomerLayer,
+#reservationContener.editAccount #authentication > div #existingCustomerLayer {
+  padding-bottom: 5px;
 }
 #reservationContener.detail #authentication > div #existingCustomerLayer .aField,
 #reservationContener.editAccount #authentication > div #existingCustomerLayer .aField {
@@ -988,6 +868,91 @@ h4 {
 #reservationContener.detail #authentication > div #existingCustomerLayer .aField input,
 #reservationContener.editAccount #authentication > div #existingCustomerLayer .aField input {
   width: 310px;
+}
+#reservationContener.detail #authentication > div #newCustomerLayer .label,
+#reservationContener.editAccount #authentication > div #newCustomerLayer .label {
+  width: 134px;
+  padding-top: 3px;
+}
+#reservationContener.detail #authentication > div #newCustomerLayer #newAccount,
+#reservationContener.editAccount #authentication > div #newCustomerLayer #newAccount {
+  margin-bottom: 15px;
+}
+#reservationContener.detail #authentication > div #newCustomerLayer #newAccount .aField,
+#reservationContener.editAccount #authentication > div #newCustomerLayer #newAccount .aField {
+  width: 424px;
+}
+#reservationContener.detail #authentication > div #newCustomerLayer #newAccount .aField input,
+#reservationContener.editAccount #authentication > div #newCustomerLayer #newAccount .aField input {
+  width: 280px;
+}
+#reservationContener.detail #authentication > div #newCustomerLayer #address,
+#reservationContener.editAccount #authentication > div #newCustomerLayer #address {
+  width: 576px;
+}
+#reservationContener.detail #authentication > div #newCustomerLayer #address td,
+#reservationContener.editAccount #authentication > div #newCustomerLayer #address td {
+  display: table-cell;
+  padding: 5px 10px 5px 0;
+  vertical-align: middle;
+  width: 144px !important;
+}
+#reservationContener.detail #authentication > div #newCustomerLayer #address input,
+#reservationContener.editAccount #authentication > div #newCustomerLayer #address input,
+#reservationContener.detail #authentication > div #newCustomerLayer #address textarea,
+#reservationContener.editAccount #authentication > div #newCustomerLayer #address textarea,
+#reservationContener.detail #authentication > div #newCustomerLayer #address .newListSelected,
+#reservationContener.editAccount #authentication > div #newCustomerLayer #address .newListSelected {
+  width: 134px;
+}
+#reservationContener.detail #authentication > div #newCustomerLayer #address textarea,
+#reservationContener.editAccount #authentication > div #newCustomerLayer #address textarea {
+  width: 134px;
+  height: 62px;
+}
+#reservationContener.detail #authentication > div #newCustomerLayer #address .datepicker button,
+#reservationContener.editAccount #authentication > div #newCustomerLayer #address .datepicker button {
+  right: 0;
+}
+#reservationContener.detail #authentication > div #newCustomerLayer #address .label,
+#reservationContener.editAccount #authentication > div #newCustomerLayer #address .label {
+  width: 134px;
+  line-height: 17px;
+  padding: 0 10px 0 0;
+}
+#reservationContener.detail #authentication > div #newCustomerLayer #others,
+#reservationContener.editAccount #authentication > div #newCustomerLayer #others {
+  width: 576px;
+  margin: 15px 0 20px;
+}
+#reservationContener.detail #authentication > div #newCustomerLayer #others td,
+#reservationContener.editAccount #authentication > div #newCustomerLayer #others td {
+  display: table-cell;
+  padding: 5px 10px 5px 0;
+  vertical-align: middle;
+}
+#reservationContener.detail #authentication > div #newCustomerLayer #others .label,
+#reservationContener.editAccount #authentication > div #newCustomerLayer #others .label {
+  width: 432px;
+}
+#reservationContener.detail #authentication > div #option,
+#reservationContener.editAccount #authentication > div #option {
+  padding-top: 0;
+}
+#reservationContener.detail #authentication > div #option table,
+#reservationContener.editAccount #authentication > div #option table {
+  width: 576px;
+}
+#reservationContener.detail #authentication > div #option table td,
+#reservationContener.editAccount #authentication > div #option table td {
+  display: table-cell;
+  padding: 5px 10px 5px 0;
+  vertical-align: middle;
+}
+#reservationContener.detail #authentication > div #option table .label,
+#reservationContener.editAccount #authentication > div #option table .label {
+  width: 432px;
+  text-align: right;
 }
 #reservationContener.detail #authentication > div .loginLink,
 #reservationContener.editAccount #authentication > div .loginLink {
@@ -1209,15 +1174,20 @@ h4 {
   font-weight: bold;
 }
 #reservationContener.summary #option .label {
-  vertical-align: top;
   font: inherit;
   color: inherit;
   text-transform: inherit;
-  margin-right: 5px;
+  margin-right: 10px;
+  vertical-align: top;
 }
-#reservationContener.summary #option .field textarea {
-  width: 423px;
-  height: 54px;
+#reservationContener.summary #option p:not(.aField) .label {
+  width: 278px;
+  float: left;
+  text-align: right;
+}
+#reservationContener.summary #option p:not(.aField) .field textarea {
+  width: 288px;
+  height: 81px;
 }
 #reservationContener.summary #option .criteria {
   margin-bottom: 10px;
@@ -1225,6 +1195,8 @@ h4 {
 }
 #reservationContener.summary #option .criteria .label {
   float: left;
+  text-align: right;
+  width: 278px;
   height: 27px;
   /* Centrer verticalement une ligne de texte */
 
@@ -1243,7 +1215,13 @@ h4 {
   vertical-align: middle;
 }
 #reservationContener.summary #option .criteria input {
-  width: 125px;
+  width: 134px;
+}
+#reservationContener.summary #option .criteria:last-of-type .label {
+  line-height: 13px;
+}
+#reservationContener.summary #option .aField .label {
+  margin-right: 0;
 }
 #reservationContener.summary #option .aField input[type="checkbox"] {
   margin-top: 1px;
@@ -1251,6 +1229,7 @@ h4 {
 #reservationContener.summary #option .aField label {
   font-style: italic;
   font-weight: bold;
+  vertical-align: top;
 }
 #reservationContener.summary #option .aField label a {
   color: #ed145b;
@@ -1619,7 +1598,7 @@ h4 {
 ---------------------------------------------------------*/
 /* Stylish Select 0.4.9 */
 #authentication #newCustomerLayer .SSContainerDivWrapper {
-  min-width: 141px;
+  min-width: 134px;
 }
 #authentication #newCustomerLayer ul.newList a {
   height: 27px;
@@ -1640,7 +1619,7 @@ h4 {
   vertical-align: middle;
 }
 #authentication #newCustomerLayer .newListSelected {
-  width: 141px;
+  width: 134px;
   height: 27px;
   /* Centrer verticalement une ligne de texte */
 
@@ -1660,7 +1639,7 @@ h4 {
   vertical-align: middle;
 }
 #authentication #newCustomerLayer .newListSelected .selectedTxt {
-  width: 107px;
+  width: 100px;
   height: 27px;
   /* Centrer verticalement une ligne de texte */
 
@@ -1817,7 +1796,7 @@ h4 {
   background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat scroll 0 -108px transparent;
 }
 #option .SSContainerDivWrapper {
-  min-width: 141px;
+  min-width: 134px;
 }
 #option ul.newList a {
   height: 27px;
@@ -1838,7 +1817,7 @@ h4 {
   vertical-align: middle;
 }
 #option .newListSelected {
-  width: 141px;
+  width: 134px;
   height: 27px;
   /* Centrer verticalement une ligne de texte */
 
@@ -1858,7 +1837,7 @@ h4 {
   vertical-align: middle;
 }
 #option .newListSelected .selectedTxt {
-  width: 107px;
+  width: 100px;
   height: 27px;
   /* Centrer verticalement une ligne de texte */
 

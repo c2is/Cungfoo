@@ -76,12 +76,6 @@
   &>img {vertical-align:middle;}                                               /* Centrer verticalement une image de taille variable */
 }
 
-
-._h3Decroch(@colorBg, @color){
-  display:inline-block;position:relative;text-transform:uppercase;._border-radius(10px 0 10px 0);background-color:@colorBg;color:@color;font:bold 18px @ptnarrow;padding:5px 10px;margin:0 0 10px -20px;
-  &:after{content:"";position:absolute;top:100%;left:0;border-left:10px solid transparent;border-right:0 solid transparent;border-top:6px solid #23408f;z-index:1;}
-}
-
 .bt{display:block;border:0;text-transform:uppercase;text-decoration:none;font:bold 14px @ptnarrow;padding:3px 10px;._border-radius(7px);
   &.gris{background-color:@colorBgGrisC;color:@colorFushia;}
   &.gris2{background-color:@colorBgGrisC;color:@colorGris2;}
@@ -196,17 +190,6 @@ body.clear{background:#fff;color:@colorGris2;font:12px @arial;margin:0;}
   }
 }
 
-/* STEPS */
-#stepNav{width:976px;height:50px;font:bold 23px @ptnarrow;text-transform:uppercase;position:relative;background:@colorBgGrisF;margin:20px 0 0 -@gutter;z-index:30;
-  ul{width:858px;margin:0 auto;text-align:center;
-    li.tab{margin:0 12px;float:none;display:inline-block;position:static;color:#fff;padding:0;
-      &.current{background:@colorFushia;}
-      span{position:relative;display:block;padding:0 15px;color:@colorBlanc;text-decoration:none;._verticalCenter(50px);}
-      &.current span{text-decoration:none;}
-    }
-  }
-}
-
 /*GENERAL*/
 .stain{width:131px;._verticalCenter(55px);background:url("../../images/vacancesdirectes/common/ui/stain.png") no-repeat 0 -439px transparent;text-align:center;font-size:10px;color:@colorBlanc;left:130px;bottom:0px;position:absolute;
   &>span{margin-top:15px;}
@@ -260,7 +243,7 @@ textarea{font:bold 12px @arial;color:@colorGris0;}
 input[type="text"],input[type="password"]{background-color:@colorBgBlanc;width:216px;._verticalCenter(27px);padding: 0 7px;border:0 none;}
 textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;border:0 none;}
 .label{font:bold 15px @ptnarrow;color:@colorGris0;text-transform:uppercase;display:inline-block;}
-h4{font-size:15px;line-height:17px;}
+//h4{font-size:15px;line-height:17px;}
 .bold{font-weight:bold;}
 
 
@@ -270,7 +253,7 @@ h4{font-size:15px;line-height:17px;}
   p{margin-bottom:10px;}
   table{width:100%}
 
-  // step 1
+// step 1
   &.detail,
   &.editAccount{
     #authentication{._border-radius(10px);margin:15px 0;position:relative;background-color:@colorBgBlanc;border:5px solid @colorBgGrisM;
@@ -287,35 +270,39 @@ h4{font-size:15px;line-height:17px;}
         }
         #existingCustomerLayer,
         #newCustomerLayer,{
-          &>div{margin-bottom:15px;}
+        //          &>div{margin-bottom:20px;}
           .aField{margin-bottom:10px;}
           .label{margin-right:10px;text-align:right;}
         }
-        #newCustomerLayer{
-          .label{width:124px;padding-top:3px;}
-          #newAccount{
-            .aField{width:450px;
-              input{width:290px;}
-            }
-          }
-          #address{width:580px;
-            td{display:table-cell;padding:5px 10px 5px 0;vertical-align:middle;
-              &:last-child > *{margin-right:0;}
-            }
-            input,textarea,.newListSelected{width:141px;margin-right:15px;}
-            textarea{width:141px;height:62px;}
-            .datepicker button{right:15px;}
-            .label{width:124px;line-height:17px;padding:0 10px 0 0;}
-          }
-          #others{
-            td{display:inline-block;margin-bottom:10px;float:left;}
-            .label{width:415px;}
-          }
-        }
-        #existingCustomerLayer{
+        #existingCustomerLayer{padding-bottom:5px;
           .aField{width:450px;float:left;
             .label{width:130px;}
             input{width:310px;}
+          }
+        }
+        #newCustomerLayer{
+          .label{width:134px;padding-top:3px;}
+          #newAccount{margin-bottom:15px;
+            .aField{width:424px;
+              input{width:280px;}
+            }
+          }
+          #address{width:576px;
+            td{display:table-cell;padding:5px 10px 5px 0;vertical-align:middle;width:144px !important;}
+            input,textarea,.newListSelected{width:134px;}
+            textarea{width:134px;height:62px;}
+            .datepicker button{right:0;}
+            .label{width:134px;line-height:17px;padding:0 10px 0 0;}
+          }
+          #others{width:576px;margin:15px 0 20px;
+            td{display:table-cell;padding:5px 10px 5px 0;vertical-align:middle;}
+            .label{width:432px;}
+          }
+        }
+        #option{padding-top:0;
+          table{width:576px;
+            td{display:table-cell;padding:5px 10px 5px 0;vertical-align:middle;}
+            .label{width:432px;text-align:right;}
           }
         }
         .loginLink{float:right;}
@@ -369,19 +356,24 @@ h4{font-size:15px;line-height:17px;}
     }
   }
 
-  // step 2
+// step 2
   &.summary{
     #option{
       h2 + p{font-weight:bold;}
-      .label{vertical-align:top;font:inherit;color:inherit;text-transform:inherit;margin-right:5px;}
-      .field textarea{width:423px;height:54px;}
+      .label{font:inherit;color:inherit;text-transform:inherit;margin-right:10px;vertical-align:top;}
+      p:not(.aField){
+        .label{width:278px;float:left;text-align:right;}
+        .field textarea{width:288px;height:81px;}
+      }
       .criteria{margin-bottom:10px;clear:both;
-        .label{float:left;._verticalCenter(27px);}
-        input{width:125px;}
+        .label{float:left;text-align:right;width:278px;._verticalCenter(27px);}
+        input{width:134px;}
+        &:last-of-type .label{line-height:13px;}
       }
       .aField{
+        .label{margin-right:0;}
         input[type="checkbox"]{margin-top:1px;}
-        label{font-style:italic;font-weight:bold;
+        label{font-style:italic;font-weight:bold;vertical-align:top;
           a{color:@colorFushia;}
         }
       }
@@ -397,10 +389,10 @@ h4{font-size:15px;line-height:17px;}
     }
   }
 
-  // step 3
-  /* --> payment.css */
+// step 3
+/* --> payment.css */
 
-  // step 4
+// step 4
   &.confirmation{
     td{height:27px;}
     #authentication,
@@ -529,8 +521,8 @@ h4{font-size:15px;line-height:17px;}
 
 // step 1
 #authentication #newCustomerLayer{
-   ._stylish-select(141px,27px,0px,4);
- }
+  ._stylish-select(134px,27px,0px,4);
+}
 #reservation .aRoom{
   ._stylish-select(54px,27px,10px,5);
 }
@@ -540,7 +532,7 @@ h4{font-size:15px;line-height:17px;}
 
 // step 2
 #option {
-  ._stylish-select(141px,27px,0px,4);
+  ._stylish-select(134px,27px,0px,4);
 }
 
 // Stylish Select
