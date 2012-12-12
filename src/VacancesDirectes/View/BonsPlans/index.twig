@@ -1,0 +1,13 @@
+{% extends "base.twig" %}
+
+
+{% block leftColumn %}
+    <h1>{{ title }}</h1>
+{% endblock %}
+
+
+{% block rightColumn %}
+<div id="greyBoxes">
+    {% include 'Bloc/sejour_reussi.twig' %}
+</div>
+{% endblock %}
