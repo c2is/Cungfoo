@@ -132,45 +132,57 @@ class getAllEtabsLoader extends AbstractLoader
         }
     }
 
-    protected function updateTheme($objectEtab, $themecodes, \PropelPDO $con)
+    protected function updateThemes($objectEtab, $themecodes, \PropelPDO $con)
     {
-        foreach ($themecodes as $themecode)
+        if (!is_array($themecodes))
         {
-            foreach ($this->config['EtabLoader']['themes'] as $themeName => $themeConfig)
+            $this->updateTheme($objectEtab, $themecodes, $con);
+        }
+        else
+        {
+            foreach ($themecodes as $themecode)
             {
-                $modelQuery = sprintf('%sQuery', $this->config['EtabLoader']['themes'][$themeName]['model']);
-                $objectTheme = $modelQuery::create()
-                    ->filterByCode($themecode)
-                    ->findOne($con)
-                ;
+                $this->updateTheme($objectEtab, $themecode, $con);
+            }
+        }
+    }
 
-                if ($objectTheme)
+    protected function updateTheme($objectEtab, $themecode, \PropelPDO $con)
+    {
+        foreach ($this->config['EtabLoader']['themes'] as $themeName => $themeConfig)
+        {
+            $modelQuery = sprintf('%sQuery', $this->config['EtabLoader']['themes'][$themeName]['model']);
+            $objectTheme = $modelQuery::create()
+                ->filterByCode($themecode)
+                ->findOne($con)
+            ;
+
+            if ($objectTheme)
+            {
+                if (strpos($this->config['EtabLoader']['themes'][$themeName]['setter'], 'set') === 0)
                 {
-                    if (strpos($this->config['EtabLoader']['themes'][$themeName]['setter'], 'set') === 0)
+                    $themeSetter = $this->config['EtabLoader']['themes'][$themeName]['setter'];
+                    $objectEtab->$themeSetter($objectTheme);
+                    $objectEtab->save($con);
+                    break;
+                }
+                else
+                {
+                    $modelAssociatedQuery = sprintf('%sQuery', $this->config['EtabLoader']['themes'][$themeName]['associated']);
+                    $filterAssociated     = $this->config['EtabLoader']['themes'][$themeName]['filter'];
+
+                    $objectEtabHasTheme = $modelAssociatedQuery::create()
+                        ->filterByEtablissementId($objectEtab->getId())
+                        ->$filterAssociated($objectTheme->getId())
+                        ->findOne($con)
+                    ;
+
+                    if (!$objectEtabHasTheme)
                     {
                         $themeSetter = $this->config['EtabLoader']['themes'][$themeName]['setter'];
                         $objectEtab->$themeSetter($objectTheme);
                         $objectEtab->save($con);
                         break;
-                    }
-                    else
-                    {
-                        $modelAssociatedQuery = sprintf('%sQuery', $this->config['EtabLoader']['themes'][$themeName]['associated']);
-                        $filterAssociated     = $this->config['EtabLoader']['themes'][$themeName]['filter'];
-
-                        $objectEtabHasTheme = $modelAssociatedQuery::create()
-                            ->filterByEtablissementId($objectEtab->getId())
-                            ->$filterAssociated($objectTheme->getId())
-                            ->findOne($con)
-                        ;
-
-                        if (!$objectEtabHasTheme)
-                        {
-                            $themeSetter = $this->config['EtabLoader']['themes'][$themeName]['setter'];
-                            $objectEtab->$themeSetter($objectTheme);
-                            $objectEtab->save($con);
-                            break;
-                        }
                     }
                 }
             }

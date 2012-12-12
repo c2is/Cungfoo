@@ -137,18 +137,33 @@ class DestinationController implements ControllerProviderInterface
 
         $controllers->match('/{region}/', function (Request $request, Pays $pays, Region $region) use ($app)
         {
+            if ($pays->getId() != $region->getPaysId())
+            {
+                $app->abort(404, "$region does not exist.");
+            }
+
             return $this->process($app, $request, $pays, $region, null, self::DESTINATION_REGION);
         })
         ->bind('destination_region');
 
         $controllers->match('/{region}/{ville}/', function (Request $request, Pays $pays, Region $region, Ville $ville) use ($app)
         {
+            if ($pays->getId() != $region->getPaysId() || $region->getId() != $ville->getRegionId())
+            {
+                $app->abort(404, "$ville does not exist.");
+            }
+
             return $this->process($app, $request, $pays, $region, $ville, self::DESTINATION_VILLE);
         })
         ->bind('destination_ville');
 
         $controllers->match('/{region}/{ville}/{camping}.html', function (Request $request, Pays $pays, Region $region, Ville $ville, Etablissement $camping) use ($app)
         {
+            if ($pays->getId() != $region->getPaysId() || $region->getId() != $ville->getRegionId() || $camping->getVilleId() != $ville->getId())
+            {
+                $app->abort(404, "$camping does not exist.");
+            }
+
             return $this->processEtablissement($app, $request, $camping);
         })
         ->bind('destination_camping');
@@ -210,9 +225,9 @@ class DestinationController implements ControllerProviderInterface
 
         // On parcourt tous les campings pour trouver le premier qui a bien des coordonnees saisies afin d'afficher la GMap centree sur cet element
         $firstEtab = null;
-        for($i = 0; $i < $nbCampings && (!$firstEtab || (!$firstEtab->getGeoCoordinateX() && !$firstEtab->getGeoCoordinateY())); $i++)
+        for($i = 0; $i < $nbCampings && (!$firstEtab['model'] || (!$firstEtab['model']->getGeoCoordinateX() && !$firstEtab['model']->getGeoCoordinateY())); $i++)
         {
-            $firstEtab = $campings[$i];
+            $firstEtab = $listContent['element'][$i];
         }
 
         return $app->renderView('Destination/detail.twig', array(
