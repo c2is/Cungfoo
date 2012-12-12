@@ -22,6 +22,7 @@ class BaseServiceComplementaireListing extends Listing
         $this->addColumn(new Column\TextColumn('id'));
         $this->addColumn(new Column\TextColumn('code'));
         $this->addColumn(new Column\TextColumn('image_path'));
+        $this->addColumn(new Column\TextColumn('vignette'));
         $this->addColumn(new Column\TextColumn('active'));
     }
 

@@ -44,6 +44,7 @@ class BaignadeTableMap extends TableMap
         // columns
         $this->addPrimaryKey('id', 'Id', 'INTEGER', true, null, null);
         $this->addColumn('code', 'Code', 'VARCHAR', true, 255, null);
+        $this->addColumn('vignette', 'Vignette', 'VARCHAR', false, 255, null);
         $this->addColumn('created_at', 'CreatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('updated_at', 'UpdatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('active', 'Active', 'BOOLEAN', false, 1, false);
@@ -93,7 +94,7 @@ class BaignadeTableMap extends TableMap
   'crud_prefix' => '/baignades',
   'crud_model' => NULL,
   'crud_form' => NULL,
-  'crud_type_file' => NULL,
+  'crud_type_file' => 'vignette',
 ),
         );
     } // getBehaviors()

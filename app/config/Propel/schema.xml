@@ -390,6 +390,7 @@
         <column name="description" type="varchar" />
         <column name="keywords" type="varchar" />
         <column name="image_path" type="varchar" />
+        <column name="vignette" type="varchar" />
         <behavior name="timestampable" />
         <behavior name="active" />
 
@@ -399,7 +400,7 @@
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/activites" />
-            <parameter name="crud_type_file" value="image_path" />
+            <parameter name="crud_type_file" value="image_path, vignette" />
         </behavior>
     </table>
 
@@ -443,6 +444,7 @@
         <column name="name" type="varchar" required="true" />
         <column name="description" type="varchar" />
         <column name="keywords" type="varchar" />
+        <column name="vignette" type="varchar" />
         <behavior name="timestampable" />
         <behavior name="active" />
 
@@ -452,6 +454,7 @@
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/baignades" />
+            <parameter name="crud_type_file" value="vignette" />
         </behavior>
     </table>
 
@@ -482,6 +485,7 @@
         <column name="description" type="varchar" />
         <column name="keywords" type="varchar" />
         <column name="image_path" type="varchar" />
+        <column name="vignette" type="varchar" />
         <behavior name="timestampable" />
         <behavior name="active" />
 
@@ -491,7 +495,7 @@
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/services-complementaires" />
-            <parameter name="crud_type_file" value="image_path" />
+            <parameter name="crud_type_file" value="image_path, vignette" />
         </behavior>
     </table>
 

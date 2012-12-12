@@ -70,6 +70,12 @@ abstract class BaseBaignade extends BaseObject implements Persistent
     protected $code;
 
     /**
+     * The value for the vignette field.
+     * @var        string
+     */
+    protected $vignette;
+
+    /**
      * The value for the created_at field.
      * @var        string
      */
@@ -216,6 +222,16 @@ abstract class BaseBaignade extends BaseObject implements Persistent
     }
 
     /**
+     * Get the [vignette] column value.
+     *
+     * @return string
+     */
+    public function getVignette()
+    {
+        return $this->vignette;
+    }
+
+    /**
      * Get the [optionally formatted] temporal [created_at] column value.
      *
      *
@@ -348,6 +364,27 @@ abstract class BaseBaignade extends BaseObject implements Persistent
     } // setCode()
 
     /**
+     * Set the value of [vignette] column.
+     *
+     * @param string $v new value
+     * @return Baignade The current object (for fluent API support)
+     */
+    public function setVignette($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->vignette !== $v) {
+            $this->vignette = $v;
+            $this->modifiedColumns[] = BaignadePeer::VIGNETTE;
+        }
+
+
+        return $this;
+    } // setVignette()
+
+    /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
      *
      * @param mixed $v string, integer (timestamp), or DateTime value.
@@ -460,9 +497,10 @@ abstract class BaseBaignade extends BaseObject implements Persistent
 
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
             $this->code = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
-            $this->created_at = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
-            $this->updated_at = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
-            $this->active = ($row[$startcol + 4] !== null) ? (boolean) $row[$startcol + 4] : null;
+            $this->vignette = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
+            $this->created_at = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
+            $this->updated_at = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
+            $this->active = ($row[$startcol + 5] !== null) ? (boolean) $row[$startcol + 5] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -471,7 +509,7 @@ abstract class BaseBaignade extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 5; // 5 = BaignadePeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 6; // 6 = BaignadePeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Baignade object", $e);
@@ -799,6 +837,9 @@ abstract class BaseBaignade extends BaseObject implements Persistent
         if ($this->isColumnModified(BaignadePeer::CODE)) {
             $modifiedColumns[':p' . $index++]  = '`code`';
         }
+        if ($this->isColumnModified(BaignadePeer::VIGNETTE)) {
+            $modifiedColumns[':p' . $index++]  = '`vignette`';
+        }
         if ($this->isColumnModified(BaignadePeer::CREATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`created_at`';
         }
@@ -824,6 +865,9 @@ abstract class BaseBaignade extends BaseObject implements Persistent
                         break;
                     case '`code`':
                         $stmt->bindValue($identifier, $this->code, PDO::PARAM_STR);
+                        break;
+                    case '`vignette`':
+                        $stmt->bindValue($identifier, $this->vignette, PDO::PARAM_STR);
                         break;
                     case '`created_at`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
@@ -999,12 +1043,15 @@ abstract class BaseBaignade extends BaseObject implements Persistent
                 return $this->getCode();
                 break;
             case 2:
-                return $this->getCreatedAt();
+                return $this->getVignette();
                 break;
             case 3:
-                return $this->getUpdatedAt();
+                return $this->getCreatedAt();
                 break;
             case 4:
+                return $this->getUpdatedAt();
+                break;
+            case 5:
                 return $this->getActive();
                 break;
             default:
@@ -1038,9 +1085,10 @@ abstract class BaseBaignade extends BaseObject implements Persistent
         $result = array(
             $keys[0] => $this->getId(),
             $keys[1] => $this->getCode(),
-            $keys[2] => $this->getCreatedAt(),
-            $keys[3] => $this->getUpdatedAt(),
-            $keys[4] => $this->getActive(),
+            $keys[2] => $this->getVignette(),
+            $keys[3] => $this->getCreatedAt(),
+            $keys[4] => $this->getUpdatedAt(),
+            $keys[5] => $this->getActive(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->collEtablissementBaignades) {
@@ -1093,12 +1141,15 @@ abstract class BaseBaignade extends BaseObject implements Persistent
                 $this->setCode($value);
                 break;
             case 2:
-                $this->setCreatedAt($value);
+                $this->setVignette($value);
                 break;
             case 3:
-                $this->setUpdatedAt($value);
+                $this->setCreatedAt($value);
                 break;
             case 4:
+                $this->setUpdatedAt($value);
+                break;
+            case 5:
                 $this->setActive($value);
                 break;
         } // switch()
@@ -1127,9 +1178,10 @@ abstract class BaseBaignade extends BaseObject implements Persistent
 
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
         if (array_key_exists($keys[1], $arr)) $this->setCode($arr[$keys[1]]);
-        if (array_key_exists($keys[2], $arr)) $this->setCreatedAt($arr[$keys[2]]);
-        if (array_key_exists($keys[3], $arr)) $this->setUpdatedAt($arr[$keys[3]]);
-        if (array_key_exists($keys[4], $arr)) $this->setActive($arr[$keys[4]]);
+        if (array_key_exists($keys[2], $arr)) $this->setVignette($arr[$keys[2]]);
+        if (array_key_exists($keys[3], $arr)) $this->setCreatedAt($arr[$keys[3]]);
+        if (array_key_exists($keys[4], $arr)) $this->setUpdatedAt($arr[$keys[4]]);
+        if (array_key_exists($keys[5], $arr)) $this->setActive($arr[$keys[5]]);
     }
 
     /**
@@ -1143,6 +1195,7 @@ abstract class BaseBaignade extends BaseObject implements Persistent
 
         if ($this->isColumnModified(BaignadePeer::ID)) $criteria->add(BaignadePeer::ID, $this->id);
         if ($this->isColumnModified(BaignadePeer::CODE)) $criteria->add(BaignadePeer::CODE, $this->code);
+        if ($this->isColumnModified(BaignadePeer::VIGNETTE)) $criteria->add(BaignadePeer::VIGNETTE, $this->vignette);
         if ($this->isColumnModified(BaignadePeer::CREATED_AT)) $criteria->add(BaignadePeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(BaignadePeer::UPDATED_AT)) $criteria->add(BaignadePeer::UPDATED_AT, $this->updated_at);
         if ($this->isColumnModified(BaignadePeer::ACTIVE)) $criteria->add(BaignadePeer::ACTIVE, $this->active);
@@ -1210,6 +1263,7 @@ abstract class BaseBaignade extends BaseObject implements Persistent
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
         $copyObj->setCode($this->getCode());
+        $copyObj->setVignette($this->getVignette());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
         $copyObj->setActive($this->getActive());
@@ -2371,6 +2425,7 @@ abstract class BaseBaignade extends BaseObject implements Persistent
     {
         $this->id = null;
         $this->code = null;
+        $this->vignette = null;
         $this->created_at = null;
         $this->updated_at = null;
         $this->active = null;
@@ -2677,7 +2732,44 @@ abstract class BaseBaignade extends BaseObject implements Persistent
      */
     public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
     {
+        if (!$form['vignette_deleted']->getData())
+        {
+            $this->resetModified(BaignadePeer::VIGNETTE);
+        }
+
+        $this->uploadVignette($form);
+
         return $this->save($con);
+    }
+
+    /**
+     * @return string
+     */
+    public function getUploadDir()
+    {
+        return 'uploads/baignades';
+    }
+
+    /**
+     * @return string
+     */
+    public function getUploadRootDir()
+    {
+        return __DIR__.'/../../../../web/'.$this->getUploadDir();
+    }
+
+    /**
+     * @param \Symfony\Component\Form\Form $form
+     * @return void
+     */
+    public function uploadVignette(\Symfony\Component\Form\Form $form)
+    {
+        if (!file_exists($this->getUploadRootDir() . '/' . $form['vignette']->getData()))
+        {
+            $image = uniqid().'.'.$form['vignette']->getData()->guessExtension();
+            $form['vignette']->getData()->move($this->getUploadRootDir(), $image);
+            $this->setVignette($this->getUploadDir() . '/' . $image);
+        }
     }
 
 }

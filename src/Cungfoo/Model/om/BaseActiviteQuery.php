@@ -29,6 +29,7 @@ use Cungfoo\Model\ThemeActivite;
  * @method ActiviteQuery orderById($order = Criteria::ASC) Order by the id column
  * @method ActiviteQuery orderByCode($order = Criteria::ASC) Order by the code column
  * @method ActiviteQuery orderByImagePath($order = Criteria::ASC) Order by the image_path column
+ * @method ActiviteQuery orderByVignette($order = Criteria::ASC) Order by the vignette column
  * @method ActiviteQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method ActiviteQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  * @method ActiviteQuery orderByActive($order = Criteria::ASC) Order by the active column
@@ -36,6 +37,7 @@ use Cungfoo\Model\ThemeActivite;
  * @method ActiviteQuery groupById() Group by the id column
  * @method ActiviteQuery groupByCode() Group by the code column
  * @method ActiviteQuery groupByImagePath() Group by the image_path column
+ * @method ActiviteQuery groupByVignette() Group by the vignette column
  * @method ActiviteQuery groupByCreatedAt() Group by the created_at column
  * @method ActiviteQuery groupByUpdatedAt() Group by the updated_at column
  * @method ActiviteQuery groupByActive() Group by the active column
@@ -61,6 +63,7 @@ use Cungfoo\Model\ThemeActivite;
  *
  * @method Activite findOneByCode(string $code) Return the first Activite filtered by the code column
  * @method Activite findOneByImagePath(string $image_path) Return the first Activite filtered by the image_path column
+ * @method Activite findOneByVignette(string $vignette) Return the first Activite filtered by the vignette column
  * @method Activite findOneByCreatedAt(string $created_at) Return the first Activite filtered by the created_at column
  * @method Activite findOneByUpdatedAt(string $updated_at) Return the first Activite filtered by the updated_at column
  * @method Activite findOneByActive(boolean $active) Return the first Activite filtered by the active column
@@ -68,6 +71,7 @@ use Cungfoo\Model\ThemeActivite;
  * @method array findById(int $id) Return Activite objects filtered by the id column
  * @method array findByCode(string $code) Return Activite objects filtered by the code column
  * @method array findByImagePath(string $image_path) Return Activite objects filtered by the image_path column
+ * @method array findByVignette(string $vignette) Return Activite objects filtered by the vignette column
  * @method array findByCreatedAt(string $created_at) Return Activite objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return Activite objects filtered by the updated_at column
  * @method array findByActive(boolean $active) Return Activite objects filtered by the active column
@@ -174,7 +178,7 @@ abstract class BaseActiviteQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `code`, `image_path`, `created_at`, `updated_at`, `active` FROM `activite` WHERE `id` = :p0';
+        $sql = 'SELECT `id`, `code`, `image_path`, `vignette`, `created_at`, `updated_at`, `active` FROM `activite` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -346,6 +350,35 @@ abstract class BaseActiviteQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(ActivitePeer::IMAGE_PATH, $imagePath, $comparison);
+    }
+
+    /**
+     * Filter the query on the vignette column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByVignette('fooValue');   // WHERE vignette = 'fooValue'
+     * $query->filterByVignette('%fooValue%'); // WHERE vignette LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $vignette The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return ActiviteQuery The current query, for fluid interface
+     */
+    public function filterByVignette($vignette = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($vignette)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $vignette)) {
+                $vignette = str_replace('*', '%', $vignette);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(ActivitePeer::VIGNETTE, $vignette, $comparison);
     }
 
     /**
