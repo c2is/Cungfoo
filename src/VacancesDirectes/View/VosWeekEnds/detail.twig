@@ -37,21 +37,21 @@
     {# Bloc Activité #}
     <div class="radiusBox greyC left">
         {% for activite in theme.activites %}
-            <img src="" class="boxborder left">
+            <img src="{{ asset(activite.vignette) }}" alt="{{ activite.name }}" class="boxborder left">
             <div class="details">
                 <h3>{{ activite.name }}</h3>
                 <span>{{ activite.description }}</span>
             </div>
         {% endfor %}
         {% for baignade in theme.baignades %}
-            <img src="" class="boxborder left">
+            <img src="{{ asset(baignade.vignette) }}" alt="{{ baignade.name }}" class="boxborder left">
             <div class="details">
                 <h3>{{ baignade.name }}</h3>
                 <span>{{ baignade.description }}</span>
             </div>
         {% endfor %}
         {% for serviceComplementaire in theme.serviceComplementaires %}
-            <img src="" class="boxborder left">
+            <img src="{{ asset(serviceComplementaire.vignette) }}" alt="{{ serviceComplementaire.name }}" class="boxborder left">
             <div class="details">
                 <h3>{{ serviceComplementaire.name }}</h3>
                 <span>{{ serviceComplementaire.description }}</span>
