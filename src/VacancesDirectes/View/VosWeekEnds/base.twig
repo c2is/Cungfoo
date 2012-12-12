@@ -1,0 +1,42 @@
+{% extends "base.twig" %}
+{% block bodyClass %} theme{% endblock %}
+
+{% block content %}
+    <div id="wrap" class="fixed-width">
+        <div class="clear">
+            <div class="column left">
+                {% block topLeftColumn %}
+                {% endblock %}
+            </div>
+            <aside class="column right">
+                {% block topRightColumn %}
+                {% endblock %}
+            </aside>
+        </div>
+        <div class="column clearboth clear">
+            {% block bottomColumn %}
+            {% endblock %}
+        </div>
+        <div class="clear">
+            <div class="column left">
+                {% block bottomLeftColumn %}
+                {% endblock %}
+            </div>
+            <aside class="column right">
+                {% block bottomRightColumn %}
+                {% endblock %}
+            </aside>
+        </div>
+        <div class="column clearboth clear">
+	        {% block topWideColumn %}
+	        {% endblock %}
+        </div>
+        <div class="column clearboth clear">
+	        {% block bottomWideColumn %}
+	        {% endblock %}
+        </div>
+    </div>
+    <script type="text/javascript">
+        var nbVisible = 5;
+    </script>
+{% endblock %}

@@ -41,7 +41,6 @@ class BaseEtablissementListing extends Listing
         $this->addColumn(new Column\TextColumn('capacite'));
         $this->addColumn(new Column\TextColumn('plan_path'));
         $this->addColumn(new Column\TextColumn('vignette'));
-        $this->addColumn(new Column\TextColumn('published'));
         $this->addColumn(new Column\TextColumn('active'));
     }
 

@@ -250,12 +250,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     protected $vignette;
 
     /**
-     * The value for the published field.
-     * @var        boolean
-     */
-    protected $published;
-
-    /**
      * The value for the created_at field.
      * @var        string
      */
@@ -922,16 +916,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     }
 
     /**
-     * Get the [published] column value.
-     *
-     * @return boolean
-     */
-    public function getPublished()
-    {
-        return $this->published;
-    }
-
-    /**
      * Get the [optionally formatted] temporal [created_at] column value.
      *
      *
@@ -1559,35 +1543,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     } // setVignette()
 
     /**
-     * Sets the value of the [published] column.
-     * Non-boolean arguments are converted using the following rules:
-     *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
-     *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
-     * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
-     *
-     * @param boolean|integer|string $v The new value
-     * @return Etablissement The current object (for fluent API support)
-     */
-    public function setPublished($v)
-    {
-        if ($v !== null) {
-            if (is_string($v)) {
-                $v = in_array(strtolower($v), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
-            } else {
-                $v = (boolean) $v;
-            }
-        }
-
-        if ($this->published !== $v) {
-            $this->published = $v;
-            $this->modifiedColumns[] = EtablissementPeer::PUBLISHED;
-        }
-
-
-        return $this;
-    } // setPublished()
-
-    /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
      *
      * @param mixed $v string, integer (timestamp), or DateTime value.
@@ -1723,10 +1678,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $this->capacite = ($row[$startcol + 22] !== null) ? (string) $row[$startcol + 22] : null;
             $this->plan_path = ($row[$startcol + 23] !== null) ? (string) $row[$startcol + 23] : null;
             $this->vignette = ($row[$startcol + 24] !== null) ? (string) $row[$startcol + 24] : null;
-            $this->published = ($row[$startcol + 25] !== null) ? (boolean) $row[$startcol + 25] : null;
-            $this->created_at = ($row[$startcol + 26] !== null) ? (string) $row[$startcol + 26] : null;
-            $this->updated_at = ($row[$startcol + 27] !== null) ? (string) $row[$startcol + 27] : null;
-            $this->active = ($row[$startcol + 28] !== null) ? (boolean) $row[$startcol + 28] : null;
+            $this->created_at = ($row[$startcol + 25] !== null) ? (string) $row[$startcol + 25] : null;
+            $this->updated_at = ($row[$startcol + 26] !== null) ? (string) $row[$startcol + 26] : null;
+            $this->active = ($row[$startcol + 27] !== null) ? (boolean) $row[$startcol + 27] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -1735,7 +1689,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 29; // 29 = EtablissementPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 28; // 28 = EtablissementPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Etablissement object", $e);
@@ -2538,9 +2492,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if ($this->isColumnModified(EtablissementPeer::VIGNETTE)) {
             $modifiedColumns[':p' . $index++]  = '`vignette`';
         }
-        if ($this->isColumnModified(EtablissementPeer::PUBLISHED)) {
-            $modifiedColumns[':p' . $index++]  = '`published`';
-        }
         if ($this->isColumnModified(EtablissementPeer::CREATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`created_at`';
         }
@@ -2635,9 +2586,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                         break;
                     case '`vignette`':
                         $stmt->bindValue($identifier, $this->vignette, PDO::PARAM_STR);
-                        break;
-                    case '`published`':
-                        $stmt->bindValue($identifier, (int) $this->published, PDO::PARAM_INT);
                         break;
                     case '`created_at`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
@@ -2988,15 +2936,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 return $this->getVignette();
                 break;
             case 25:
-                return $this->getPublished();
-                break;
-            case 26:
                 return $this->getCreatedAt();
                 break;
-            case 27:
+            case 26:
                 return $this->getUpdatedAt();
                 break;
-            case 28:
+            case 27:
                 return $this->getActive();
                 break;
             default:
@@ -3053,10 +2998,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $keys[22] => $this->getCapacite(),
             $keys[23] => $this->getPlanPath(),
             $keys[24] => $this->getVignette(),
-            $keys[25] => $this->getPublished(),
-            $keys[26] => $this->getCreatedAt(),
-            $keys[27] => $this->getUpdatedAt(),
-            $keys[28] => $this->getActive(),
+            $keys[25] => $this->getCreatedAt(),
+            $keys[26] => $this->getUpdatedAt(),
+            $keys[27] => $this->getActive(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aVille) {
@@ -3217,15 +3161,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 $this->setVignette($value);
                 break;
             case 25:
-                $this->setPublished($value);
-                break;
-            case 26:
                 $this->setCreatedAt($value);
                 break;
-            case 27:
+            case 26:
                 $this->setUpdatedAt($value);
                 break;
-            case 28:
+            case 27:
                 $this->setActive($value);
                 break;
         } // switch()
@@ -3277,10 +3218,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if (array_key_exists($keys[22], $arr)) $this->setCapacite($arr[$keys[22]]);
         if (array_key_exists($keys[23], $arr)) $this->setPlanPath($arr[$keys[23]]);
         if (array_key_exists($keys[24], $arr)) $this->setVignette($arr[$keys[24]]);
-        if (array_key_exists($keys[25], $arr)) $this->setPublished($arr[$keys[25]]);
-        if (array_key_exists($keys[26], $arr)) $this->setCreatedAt($arr[$keys[26]]);
-        if (array_key_exists($keys[27], $arr)) $this->setUpdatedAt($arr[$keys[27]]);
-        if (array_key_exists($keys[28], $arr)) $this->setActive($arr[$keys[28]]);
+        if (array_key_exists($keys[25], $arr)) $this->setCreatedAt($arr[$keys[25]]);
+        if (array_key_exists($keys[26], $arr)) $this->setUpdatedAt($arr[$keys[26]]);
+        if (array_key_exists($keys[27], $arr)) $this->setActive($arr[$keys[27]]);
     }
 
     /**
@@ -3317,7 +3257,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if ($this->isColumnModified(EtablissementPeer::CAPACITE)) $criteria->add(EtablissementPeer::CAPACITE, $this->capacite);
         if ($this->isColumnModified(EtablissementPeer::PLAN_PATH)) $criteria->add(EtablissementPeer::PLAN_PATH, $this->plan_path);
         if ($this->isColumnModified(EtablissementPeer::VIGNETTE)) $criteria->add(EtablissementPeer::VIGNETTE, $this->vignette);
-        if ($this->isColumnModified(EtablissementPeer::PUBLISHED)) $criteria->add(EtablissementPeer::PUBLISHED, $this->published);
         if ($this->isColumnModified(EtablissementPeer::CREATED_AT)) $criteria->add(EtablissementPeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(EtablissementPeer::UPDATED_AT)) $criteria->add(EtablissementPeer::UPDATED_AT, $this->updated_at);
         if ($this->isColumnModified(EtablissementPeer::ACTIVE)) $criteria->add(EtablissementPeer::ACTIVE, $this->active);
@@ -3408,7 +3347,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $copyObj->setCapacite($this->getCapacite());
         $copyObj->setPlanPath($this->getPlanPath());
         $copyObj->setVignette($this->getVignette());
-        $copyObj->setPublished($this->getPublished());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
         $copyObj->setActive($this->getActive());
@@ -8777,7 +8715,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $this->capacite = null;
         $this->plan_path = null;
         $this->vignette = null;
-        $this->published = null;
         $this->created_at = null;
         $this->updated_at = null;
         $this->active = null;

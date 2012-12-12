@@ -52,8 +52,8 @@ class AchatLineaireType extends AppAwareType
                 ->withColumn('Name')
                 ->orderByName()
             ->endUse()
-            ->select(array('Code'))
-            ->find()
+            ->select(array('Code', 'Name'))
+            ->findActive()
             ->toArray()
         ;
 
@@ -71,8 +71,8 @@ class AchatLineaireType extends AppAwareType
             ->usePaysQuery()
                 ->withColumn('pays.Code', 'Pays')
             ->endUse()
-            ->select(array('Code'))
-            ->find()
+            ->select(array('Code', 'Name', 'Pays'))
+            ->findActive()
             ->toArray()
         ;
 
@@ -92,9 +92,8 @@ class AchatLineaireType extends AppAwareType
                     ->withColumn('region.Code', 'Region')
                 ->endUse()
             ->endUse()
-            ->select(array('Code'))
-            ->filterByPublished(true)
-            ->find()
+            ->select(array('Code', 'Name', 'Region'))
+            ->findActive()
             ->toArray()
         ;
 

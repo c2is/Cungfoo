@@ -13,6 +13,7 @@ activite.description: Description
 activite.keywords: Mots clés
 activite.image.path: Image
 activite.active: Actif
+activite.vignette: Vignette
 
 category_type_hebergement.crud.create: Création d'une catégorie de types d'hébergements
 category_type_hebergement.crud.list: Liste catégories de types d'hébergements
@@ -92,6 +93,7 @@ baignade.etablissements: Établissements ayant cette baignade
 baignade.description: Description
 baignade.keywords: Mots clés
 baignade.active: Actif
+baignade.vignette: Vignette
 
 thematique.crud.create: Création d'une thématique
 thematique.crud.list: Liste thématiques
@@ -239,6 +241,7 @@ service_complementaire.keywords: Mots clés
 service_complementaire.image_path: Image
 service_complementaire.image.path: Image
 service_complementaire.active: Actif
+service_complementaire.vignette: Vignette
 
 security.username: Nom d'utilisateur
 security.password: Mot de passe
