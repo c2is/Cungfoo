@@ -67,7 +67,6 @@ class EtablissementTableMap extends TableMap
         $this->addColumn('capacite', 'Capacite', 'VARCHAR', false, 255, null);
         $this->addColumn('plan_path', 'PlanPath', 'VARCHAR', false, 255, null);
         $this->addColumn('vignette', 'Vignette', 'VARCHAR', false, 255, null);
-        $this->addColumn('published', 'Published', 'BOOLEAN', false, 1, null);
         $this->addColumn('created_at', 'CreatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('updated_at', 'UpdatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('active', 'Active', 'BOOLEAN', false, 1, false);

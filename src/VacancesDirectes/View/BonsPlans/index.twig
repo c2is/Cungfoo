@@ -1,0 +1,25 @@
+{% extends "base.twig" %}
+
+{% block title %}
+{% spaceless %}
+    {{ "seo.title.bonPlan" | trans ({'%bonPlan%': seo}) }}
+{% endspaceless %}
+{% endblock %}
+
+{% block metaDescription %}
+{% spaceless %}
+    {{ "seo.meta.bonPlan" | trans  ({'%bonPlan%': seo})}}
+{% endspaceless %}
+{% endblock %}
+
+{% block leftColumn %}
+    <h1>{{ title }}</h1>
+    <h2 class="h3-like">{{ accroche }}</h2> {# Accroche #}
+    <p class="destiDescription">{{ description }}</p> {# Description #}
+{% endblock %}
+
+{% block rightColumn %}
+<div id="greyBoxes">
+    {% include 'Bloc/sejour_reussi.twig' %}
+</div>
+{% endblock %}

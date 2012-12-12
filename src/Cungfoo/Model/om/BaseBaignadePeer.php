@@ -37,19 +37,22 @@ abstract class BaseBaignadePeer
     const TM_CLASS = 'BaignadeTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 5;
+    const NUM_COLUMNS = 6;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 5;
+    const NUM_HYDRATE_COLUMNS = 6;
 
     /** the column name for the id field */
     const ID = 'baignade.id';
 
     /** the column name for the code field */
     const CODE = 'baignade.code';
+
+    /** the column name for the vignette field */
+    const VIGNETTE = 'baignade.vignette';
 
     /** the column name for the created_at field */
     const CREATED_AT = 'baignade.created_at';
@@ -86,12 +89,12 @@ abstract class BaseBaignadePeer
      * e.g. BaignadePeer::$fieldNames[BaignadePeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'CreatedAt', 'UpdatedAt', 'Active', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'createdAt', 'updatedAt', 'active', ),
-        BasePeer::TYPE_COLNAME => array (BaignadePeer::ID, BaignadePeer::CODE, BaignadePeer::CREATED_AT, BaignadePeer::UPDATED_AT, BaignadePeer::ACTIVE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'created_at', 'updated_at', 'active', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'Vignette', 'CreatedAt', 'UpdatedAt', 'Active', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'vignette', 'createdAt', 'updatedAt', 'active', ),
+        BasePeer::TYPE_COLNAME => array (BaignadePeer::ID, BaignadePeer::CODE, BaignadePeer::VIGNETTE, BaignadePeer::CREATED_AT, BaignadePeer::UPDATED_AT, BaignadePeer::ACTIVE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'VIGNETTE', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'vignette', 'created_at', 'updated_at', 'active', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
     );
 
     /**
@@ -101,12 +104,12 @@ abstract class BaseBaignadePeer
      * e.g. BaignadePeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'CreatedAt' => 2, 'UpdatedAt' => 3, 'Active' => 4, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'createdAt' => 2, 'updatedAt' => 3, 'active' => 4, ),
-        BasePeer::TYPE_COLNAME => array (BaignadePeer::ID => 0, BaignadePeer::CODE => 1, BaignadePeer::CREATED_AT => 2, BaignadePeer::UPDATED_AT => 3, BaignadePeer::ACTIVE => 4, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'CREATED_AT' => 2, 'UPDATED_AT' => 3, 'ACTIVE' => 4, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'created_at' => 2, 'updated_at' => 3, 'active' => 4, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'Vignette' => 2, 'CreatedAt' => 3, 'UpdatedAt' => 4, 'Active' => 5, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'vignette' => 2, 'createdAt' => 3, 'updatedAt' => 4, 'active' => 5, ),
+        BasePeer::TYPE_COLNAME => array (BaignadePeer::ID => 0, BaignadePeer::CODE => 1, BaignadePeer::VIGNETTE => 2, BaignadePeer::CREATED_AT => 3, BaignadePeer::UPDATED_AT => 4, BaignadePeer::ACTIVE => 5, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'VIGNETTE' => 2, 'CREATED_AT' => 3, 'UPDATED_AT' => 4, 'ACTIVE' => 5, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'vignette' => 2, 'created_at' => 3, 'updated_at' => 4, 'active' => 5, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
     );
 
     /**
@@ -182,12 +185,14 @@ abstract class BaseBaignadePeer
         if (null === $alias) {
             $criteria->addSelectColumn(BaignadePeer::ID);
             $criteria->addSelectColumn(BaignadePeer::CODE);
+            $criteria->addSelectColumn(BaignadePeer::VIGNETTE);
             $criteria->addSelectColumn(BaignadePeer::CREATED_AT);
             $criteria->addSelectColumn(BaignadePeer::UPDATED_AT);
             $criteria->addSelectColumn(BaignadePeer::ACTIVE);
         } else {
             $criteria->addSelectColumn($alias . '.id');
             $criteria->addSelectColumn($alias . '.code');
+            $criteria->addSelectColumn($alias . '.vignette');
             $criteria->addSelectColumn($alias . '.created_at');
             $criteria->addSelectColumn($alias . '.updated_at');
             $criteria->addSelectColumn($alias . '.active');

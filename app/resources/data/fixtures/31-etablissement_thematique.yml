@@ -1,4 +1,7 @@
 \Cungfoo\Model\EtablissementThematique:
+    142_1:
+        EtablissementId: 142
+        ThematiqueId: 1
     15_2:
         EtablissementId: 15
         ThematiqueId: 2

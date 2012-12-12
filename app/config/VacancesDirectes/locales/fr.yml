@@ -9,6 +9,7 @@ seo:
         dispo: "Résultat de recherche location camping, mobil home"
         couloir: "Espace de réservation"
         theme: "%theme%"
+        bonPlan: "Camping %bonPlan%, location mobil-homes %bonPlan%"
     meta:
         default: "Vacances Directes : location de mobil-homes dans de nombreux campings en France, en Italie et en Espagne pour des vacances conviviales et reposantes."
         pays: " Vacances Directes : découvrez nos offres de location de mobil home pas cher en %pays% pour des vacances ensoleillés en camping et réserver en ligne."
@@ -18,6 +19,7 @@ seo:
         dispo: "Listing - Campings"
         couloir: "Espace de réservation"
         theme: "%theme%"
+        bonPlan: "Découvrez toutes les offres de locations de mobil homes en camping pour le %bonPlan% proposées par Vacances directes et réserver en ligne."
 
 compte:
     title: "Espace client"
@@ -102,9 +104,6 @@ header.information: Informations & réservations
 header.telephone: 0825 133 400 (0,15€/min)
 header.130_camping: + de 180 campings en France, Espagne & Italie
 header.location_mobil_home: Location de mobil home en camping (France, Espagne, Italie et Portugal)
-header.catchline_prefix: Location de mobil home
-header.catchline: en France, Espagne et Italie
-header.catchline_suffix: (+ de 180 campings)
 
 footer.contact: Contact
 footer.charte_qualite: Charte qualité

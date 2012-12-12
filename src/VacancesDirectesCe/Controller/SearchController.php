@@ -34,12 +34,12 @@ class SearchController implements ControllerProviderInterface
                     ->filterByCode($code)
                 ->endUse()
                 ->_endif()
-                ->select(array('code'))
+                ->select(array('code', 'name'))
                 ->useI18nQuery()
                     ->withColumn('name')
                     ->orderByName()
                 ->endUse()
-                ->find()
+                ->findActive()
                 ->toArray()
             ;
 
@@ -64,8 +64,7 @@ class SearchController implements ControllerProviderInterface
                 ->_endif()
                 ->select(array('code','name'))
                 ->orderByName()
-                ->filterByPublished(true)
-                ->find()
+                ->findActive()
                 ->toArray()
             ;
 
@@ -88,8 +87,7 @@ class SearchController implements ControllerProviderInterface
                 ->_endif()
                 ->select(array('code','name'))
                 ->orderByName()
-                ->filterByPublished(true)
-                ->find()
+                ->findActive()
                 ->toArray()
             ;
 

@@ -1,20 +1,20 @@
-<div id="resultMap" class="gmap" style="width:616px;height:573px;">
+<div id="{% block gmap_name %}result{% endblock %}Map" class="gmap" style="width:{% block gmap_width %}616{% endblock %}px;height:{% block gmap_height %}573{% endblock %}px;">
     <script>
-        function resultInit() {
-            var resultMkrs = [
+        function {{ block('gmap_name') }}Init() {
+            var {{ block('gmap_name') }}Mkrs = [
                 //['title', lat, lont, zindex, 'idAjaxCamping', couleurMarker]
                 {% for etab in list.element %}
                     ['{{ etab.model.name }} {{ etab.model.categorie.stars }}', {{ etab.model.geoCoordinateX }}, {{ etab.model.geoCoordinateY }}, {{ loop.index }}, '{{ path('infobox_camping', {idResalys: etab.model.code}) }}', markerFushia],
                 {% endfor %}
             ];
-            var centerresultMkr = new google.maps.LatLng({{firstEtab.model.geoCoordinateX}},{{firstEtab.model.geoCoordinateY}}),
+            var center{{ block('gmap_name') }}Mkr = new google.maps.LatLng({{firstEtab.model.geoCoordinateX}},{{firstEtab.model.geoCoordinateY}}),
                     mapOptions = {
                         zoom: 6,
                         mapTypeId: google.maps.MapTypeId.ROADMAP,
-                        center: centerresultMkr
+                        center: center{{ block('gmap_name') }}Mkr
                     };
-            resultMap = new google.maps.Map(document.getElementById('resultMap'), mapOptions);
-            setMarkers(resultMap, resultMkrs);
+            {{ block('gmap_name') }}Map = new google.maps.Map(document.getElementById('{{ block('gmap_name') }}Map'), mapOptions);
+            setMarkers({{ block('gmap_name') }}Map, {{ block('gmap_name') }}Mkrs);
         }
     </script>
 </div>
