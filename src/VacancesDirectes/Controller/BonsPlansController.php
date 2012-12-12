@@ -27,7 +27,10 @@ class BonsPlansController implements ControllerProviderInterface
         $controllers->match('/camping-ascension/', function (Request $request) use ($app)
         {
             return $app['twig']->render('BonsPlans/index.twig', array(
-                'title' => "Camping pont de l'ascension"
+                'seo' => "pont de l'ascension",
+                'title' => "NOS OFFRES CAMPINGS : PONT DE L'ASCENSION",
+                'accroche' => "Besoin d'un week-end prolongé sous le soleil printanier du mois de mai pour l'Ascension ?!",
+                'description' => "Découvrez toutes nos offres de locations de mobil homes en camping pour le week-end de l'Ascension proposées par Vacances directes et réserver en ligne."
             ));
 
         })->bind('bonsplans_ascension');
@@ -35,7 +38,10 @@ class BonsPlansController implements ControllerProviderInterface
         $controllers->match('/camping-8-mai/', function (Request $request) use ($app)
         {
             return $app['twig']->render('BonsPlans/index.twig', array(
-                'title' => "Camping pont du 8 mai"
+                'seo' => "pont du 8 mai",
+                'title' => "NOS OFFRES CAMPINGS : PONT DU 8 MAI",
+                'accroche' => "Besoin d'un week-end prolongé sous le soleil printanier pour le pont du 8 mai ?!",
+                'description' => "Découvrez toutes nos offres de locations de mobil homes en camping pour le pont du 8 mai proposées par Vacances directes et réserver en ligne."
             ));
 
         })->bind('bonsplans_8mai');
@@ -43,7 +49,10 @@ class BonsPlansController implements ControllerProviderInterface
         $controllers->match('/camping-1er-mai/', function (Request $request) use ($app)
         {
             return $app['twig']->render('BonsPlans/index.twig', array(
-                'title' => "Camping pont du 1er mai"
+                'seo' => "pont du 1er mai",
+                'title' => "NOS OFFRES CAMPINGS : PONT DU 1ER MAI",
+                'accroche' => "Besoin d'un week-end prolongé sous le soleil printanier pour le pont du 1er mai ?!",
+                'description' => "Découvrez toutes nos offres de locations de mobil homes en camping pour le pont du 1er mai proposées par Vacances directes et réserver en ligne."
             ));
 
         })->bind('bonsplans_1mai');
@@ -51,7 +60,10 @@ class BonsPlansController implements ControllerProviderInterface
         $controllers->match('/camping-pentecote/', function (Request $request) use ($app)
         {
             return $app['twig']->render('BonsPlans/index.twig', array(
-                'title' => "Camping pont de la pentecote"
+                'seo' => "week-end de la pentecôte",
+                'title' => "NOS OFFRES CAMPINGS : WEEK-END DE LA PENTECÔTE",
+                'accroche' => "Besoin d'un week-end prolongé sous le soleil printanier du mois de mai pour la Pentecôte ?!",
+                'description' => "Découvrez toutes nos offres de locations de mobil homes en camping pour le week-end de la Pentecôte proposées par Vacances directes et réserver en ligne."
             ));
 
         })->bind('bonsplans_pentecote');

@@ -9,6 +9,7 @@ seo:
         dispo: "Résultat de recherche location camping, mobil home"
         couloir: "Espace de réservation"
         theme: "%theme%"
+        bonPlan: "Camping %bonPlan%, location mobil-homes %bonPlan%"
     meta:
         default: "Vacances Directes : location de mobil-homes dans de nombreux campings en France, en Italie et en Espagne pour des vacances conviviales et reposantes."
         pays: " Vacances Directes : découvrez nos offres de location de mobil home pas cher en %pays% pour des vacances ensoleillés en camping et réserver en ligne."
@@ -18,6 +19,7 @@ seo:
         dispo: "Listing - Campings"
         couloir: "Espace de réservation"
         theme: "%theme%"
+        bonPlan: "Découvrez toutes les offres de locations de mobil homes en camping pour le %bonPlan% proposées par Vacances directes et réserver en ligne."
 
 pays.france: France
 pays.espagne: Espagne
