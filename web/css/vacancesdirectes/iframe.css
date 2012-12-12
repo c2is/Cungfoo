@@ -399,8 +399,11 @@ body {
   /* popUp*/
 
 }
-#homePage #searchResult .aProposalBlock.aProposalBlockLast {
+#homePage #searchResult .aProposalBlock:nth-of-type(2n+1) {
   margin-right: 0;
+}
+#homePage #searchResult .aProposalBlock:first-of-type {
+  margin-right: 20px;
 }
 #homePage #searchResult .aProposalBlock.package .proposalDescriptionTitle {
   background-color: #8dc63f;
@@ -930,7 +933,7 @@ body {
 .anOccupant .occupantFields [type="password"] {
   border: 0;
   padding: 4px 10px;
-  color: #efeeee;
+  color: #8c8a8a;
   font: bold 16px/16px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   margin-left: 10px;
 }
@@ -959,14 +962,6 @@ body {
 #customerAreaContener .reservationList tr:last-child:nth-child(odd) td {
   background: #e6e5e5;
 }
-#customerAreaContener .reservationList tr:last-child td:first-child {
-  -webkit-border-radius: 0 0 0 10px;
-  border-radius: 0 0 0 10px;
-}
-#customerAreaContener .reservationList tr:last-child td:last-child {
-  -webkit-border-radius: 0 0 10px 0;
-  border-radius: 0 0 10px 0;
-}
 #customerAreaContener .reservationList th {
   background: #009ab0;
   font: bold 20px/18px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
@@ -986,7 +981,7 @@ body {
 #customerAreaContener .reservationList td {
   height: 36px;
   text-align: center;
-  color: #efeeee;
+  color: #8c8a8a;
   font: 16px/18px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   padding: 5px 3px;
   vertical-align: middle;
@@ -1109,7 +1104,7 @@ body {
   width: 266px;
   border: 0;
   padding: 4px 10px;
-  color: #efeeee;
+  color: #8c8a8a;
   font: bold 16px/16px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
 }
 #authentication #option,
@@ -1133,7 +1128,7 @@ body {
   width: 185px;
   border: 0;
   padding: 4px;
-  color: #efeeee;
+  color: #8c8a8a;
   font: bold 16px/16px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   margin-bottom: 5px;
   margin-right: 50px;
@@ -1172,7 +1167,7 @@ body {
   width: 185px;
   border: 0;
   padding: 4px 10px;
-  color: #efeeee;
+  color: #8c8a8a;
   font: bold 16px/16px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   margin-bottom: 5px;
   margin-right: 50px;
@@ -1349,17 +1344,22 @@ body {
   border-bottom: 2px solid #E6E5E5;
   vertical-align: middle;
 }
+#searchResultPage #searchResult .proposal table td.description {
+  width: 350px;
+}
 #searchResultPage #searchResult .proposal table td.description p {
   font-weight: bold;
 }
 #searchResultPage #searchResult .proposal table td.optionPrice {
   text-align: right;
   font-size: 16px;
+  width: 114px;
 }
 #searchResultPage #searchResult .proposal table td .bt {
   padding: 5px 3px;
   font-size: 17px;
   text-align: center;
+  width: 106px;
 }
 #searchResultPage #searchResult .convention {
   float: right;
@@ -1367,7 +1367,7 @@ body {
   text-transform: uppercase;
   -webkit-border-radius: 0 10px 0 10px;
   border-radius: 0 10px 0 10px;
-  background: #efeeee;
+  background: #8c8a8a;
   color: #ffffff;
   margin: -54px -10px 0px 0px;
   padding: 7px 15px;
@@ -1578,7 +1578,7 @@ body {
 #semainier {
   margin: 0;
 }
-#semainier h1 {
+#semainier .title {
   font: bold 25px/24px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   margin-bottom: 10px;
 }

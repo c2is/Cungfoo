@@ -89,11 +89,11 @@ class MenuController implements ControllerProviderInterface
         $destinations = array(
             '4' => array(
                 'label'     => 'destination.mediterranee',
-                'regions'   => array('LARO', 'PCA', 'CORS', 'HERA', 'AUDE', 'PYRO'),
+                'regions'   => array('LARO', 'PCA', 'CORS', 'HERA', 'AUDE'),
             ),
             '3' => array(
                 'label'     => 'destination.manche_atlantique',
-                'regions'   => array('NORM', 'BRET', 'CHMA', 'PBAS', 'PLOI', 'VEND', 'GIRO', 'AQUI', 'PASD'),
+                'regions'   => array('NORM', 'BRET', 'CHMA', 'PBAS', 'PLOI'),
             ),
             '1' => array(
                 'label'     => 'destination.montagne',
@@ -101,7 +101,7 @@ class MenuController implements ControllerProviderInterface
             ),
             '2' => array(
                 'label'     => 'destination.campagne',
-                'regions'   => array('GERS', 'AUVE', 'AVEY', 'ARDE', 'LOCH', 'DRHP', 'VERD', 'PEDO', 'ALJU', 'LIM', 'TAR', 'ILE'),
+                'regions'   => array('GERS', 'AUVE', 'AVEY', 'ARDE', 'LOCH'),
             ),
         );
 
