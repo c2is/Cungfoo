@@ -84,8 +84,6 @@
         <column name="plan_path" type="varchar" />
         <column name="vignette" type="varchar" />
 
-        <column name="published" type="boolean" />
-
         <behavior name="timestampable" />
         <behavior name="active" />
 
