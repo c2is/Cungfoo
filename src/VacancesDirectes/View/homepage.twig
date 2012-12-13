@@ -87,7 +87,8 @@
                     <span class="counter">J -{{ etab.days_countdown }}</span>
                     {% set discount = proposal.adult_price != proposal.adult_price_without_discounts %}
                     {% if discount %}
-                        <span class="condition"><a href="{{ path('couloir_detail_sejour', {proposalKey: proposal.proposal_key}) }}" class="price linkBlock">{{ proposal.adult_price|number_format }}<span class="fine">&nbsp;</span>€ {{ "general.au_lieu_de" | trans }} {{ proposal.adult_price_without_discounts|number_format }}<span class="fine">&nbsp;</span>€</a> {{ proposal.room_types.room_type.room_type_label }}</span>
+                        <span class="condition"><a href="{{ path('couloir_detail_sejour', {proposalKey: proposal.proposal_key}) }}" class="price linkBlock">{{ proposal.adult_price|number_format }}<span class="fine">&nbsp;</span>€ {{ "general.au_lieu_de" | trans }} {{ proposal.adult_price_without_discounts|number_format }}<span class="fine">&nbsp;</span>€</a><br>
+                        {{ proposal.room_types.room_type.room_type_label }}</span>
                     {% else %}
                         <span class="condition"><a href="{{ path('couloir_detail_sejour', {proposalKey: proposal.proposal_key}) }}" class="price linkBlock">{{ proposal.adult_price|number_format }}<span class="fine">&nbsp;</span>€</a><br>
                         {{ proposal.room_types.room_type.room_type_label }}</span>
