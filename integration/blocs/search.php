@@ -15,7 +15,7 @@
             <ol>
                 <li>
                     <div id="datepicker" class="clear">
-                        <input type="hidden" id="SearchDate_dateDebut"  name="SearchDate[dateDebut]" readonly="readonly" value="15/06/2013" />
+                        <input type="hidden" id="SearchDate_dateDebut"  name="SearchDate[dateDebut]" readonly="readonly" value="" />
                         <div id="datepickerField" class="clear">
                             <label for="datepickerInput">Date de début de séjour</label>
                             <input type="text" name="datepicker" id="datepickerInput" readonly="readonly" placeholder="Date de début de séjour" /><span class="date"></span>
@@ -152,7 +152,9 @@
 </div>
 
 <script type="text/javascript">
-    var fStartDate = '2013/04/06',                  // must be a saturday
-        fEndDate = '2013/10/26',                // must be a saturday
-        linear = "indiv";
+    var fStartDate = '2013/03/01',
+        fEndDate = '2013/10/31',
+        fHighSeasonStartDate = '2013/06/29',    // must be a saturday
+        fHighSeasonEndDate = '2013/08/31',      // must be a saturday
+        linear = "reservation";
 </script>

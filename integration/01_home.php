@@ -63,7 +63,7 @@
                             <span class="region">Région</span>
                             <span class="period">Du 26/05/12 au 02/06/12</span>
                             <span class="counter">J -5</span>
-					        <span class="condition"><a href="#" class="price linkBlock">312<span class="fine">&nbsp;</span>€ au lieu de 357<span class="fine">&nbsp;</span>€</a> pour 8 personnes</span></span>
+					        <span class="condition"><a href="#" class="price linkBlock">312<span class="fine">&nbsp;</span>€ au lieu de 357<span class="fine">&nbsp;</span>€</a><br />pour 8 personnes</span></span>
 						</div>
                     </div>
                     <div class="element clear linkParent">
@@ -72,7 +72,7 @@
                             <span class="region">Région</span>
                             <span class="condition">Du 26/05/12 au 02/06/12</span>
                             <span class="counter">J -45</span>
-					        <span class="condition"><a href="#" class="price linkBlock">312<span class="fine">&nbsp;</span>€ au lieu de 357<span class="fine">&nbsp;</span>€</a> pour 8 personnes</span></span>
+					        <span class="condition"><a href="#" class="price linkBlock">312<span class="fine">&nbsp;</span>€ au lieu de 357<span class="fine">&nbsp;</span>€</a><br />pour 8 personnes</span></span>
 						</div>
                     </div>
                     <div class="element clear linkParent">
@@ -81,7 +81,7 @@
                             <span class="region">Région</span>
                             <span class="period">Du 26/05/12 au 02/06/12</span>
                             <span class="counter">J -20</span>
-					        <span class="condition"><a href="#" class="price linkBlock">312<span class="fine">&nbsp;</span>€ au lieu de 357<span class="fine">&nbsp;</span>€</a> pour 8 personnes</span></span>
+					        <span class="condition"><a href="#" class="price linkBlock">312<span class="fine">&nbsp;</span>€ au lieu de 357<span class="fine">&nbsp;</span>€</a><br />pour 8 personnes</span></span>
 						</div>
                     </div>
                     <div class="element clear linkParent">
@@ -90,16 +90,7 @@
                             <span class="region">Région</span>
                             <span class="period">Du 26/05/12 au 02/06/12</span>
                             <span class="counter">J -5</span>
-					        <span class="condition"><a href="#" class="price linkBlock">312<span class="fine">&nbsp;</span>€ au lieu de 357<span class="fine">&nbsp;</span>€</a> pour 8 personnes</span></span>
-						</div>
-                    </div>
-                    <div class="element last clear linkParent">
-                        <div class="details left">
-                            <span class="title">Nom camping ***</span>
-                            <span class="region">Région</span>
-                            <span class="period">Du 26/05/12 au 02/06/12</span>
-                            <span class="counter">J -15</span>
-					        <span class="condition"><a href="#" class="price linkBlock">312<span class="fine">&nbsp;</span>€ au lieu de 357<span class="fine">&nbsp;</span>€</a> pour 8 personnes</span></span>
+					        <span class="condition"><a href="#" class="price linkBlock">312<span class="fine">&nbsp;</span>€ au lieu de 357<span class="fine">&nbsp;</span>€</a><br />pour 8 personnes</span></span>
 						</div>
                     </div>
                     <a href="#_" class="bt link right">Voir tous les agenda culturel et sorties (13)</a>

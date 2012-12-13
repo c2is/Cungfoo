@@ -93,7 +93,7 @@ class getAllEtabsLoader extends AbstractLoader
         // update theme
         if (isset($etab->{'themecodes'}->{'themecode'}))
         {
-            $this->updateTheme($objectEtab, $etab->{'themecodes'}->{'themecode'}, $con);
+            $this->updateThemes($objectEtab, $etab->{'themecodes'}->{'themecode'}, $con);
         }
 
         $objectEtab->save($con);

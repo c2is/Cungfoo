@@ -112,10 +112,11 @@
 </div>
 
 <script type="text/javascript">
-    var fStartDate  = '2013/04/06',  // must be a saturday
-        fEndDate    = '2013/10/26',  // must be a saturday
-        linear      = "reservation",
-        numMinWeeks = 1;
+    var fStartDate = '2013/03/01',
+        fEndDate = '2013/10/31',
+        fHighSeasonStartDate = '2013/06/29',    // must be a saturday
+        fHighSeasonEndDate = '2013/08/31',      // must be a saturday
+        linear = "reservation";
 
     var selectVille = {
             'byPaysPath': "{{ path('search_engine_get_villes_by_destination') }}",
