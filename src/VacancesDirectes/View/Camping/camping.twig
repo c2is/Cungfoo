@@ -165,7 +165,7 @@
             {#<strong>{{ "fiche.nombre_chambres" | trans }} {{ hebergement.nombrePlace | trans | nl2br }}<br>
             {{ "fiche.surface" | trans }} {{ hebergement.surface | trans }}<br>
             {{ "fiche.type_terrasse" | trans }} {{ hebergement.typeTerrasse | trans }}</strong>#}
-            <p>{% if hebergement.active %}ACTIVE{% else %}INACTIVE{% endif %}
+            <p>
             {% if hebergement.capaciteHebergement %}<strong>{{ "fiche.nombre_personnes" | trans }}</strong> {{ hebergement.capaciteHebergement | trans | nl2br }}{% endif %}
             {% if hebergement.dimensions %}{{ hebergement.dimensions | trans }}{% endif %}
             </p>
