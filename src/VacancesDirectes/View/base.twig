@@ -82,11 +82,11 @@
                     </span>
                 </div>
             </div>
-            <a href="{{ path( 'homepage' ) }}" title="Retourner à Vacances directes | Le mobil-home et vous" id="logo">
+            <a href="{{ path( 'homepage' ) }}" title="Vacances directes | Le camping tout simplement !" id="logo">
             {% if app.request.get('_route') == 'homepage' %}
                 <h1 id="logoTitle">{{ "header.location_mobil_home" | trans }}</h1>
             {% endif %}
-                <img src="{{ asset('images/vacancesdirectes/common/pict/vacancesdirectes-logo.png') }}" alt="Vacances directes | Le mobil-home et vous" />
+                <img src="{{ asset('images/vacancesdirectes/common/pict/vacancesdirectes-logo.png') }}" alt="Vacances directes | Le camping tout simplement !" />
             </a>
             {% if app.request.get('_route') == 'homepage' %}
             <h2 id="catchline">{{ "header.130_camping" | trans }}</h2>
