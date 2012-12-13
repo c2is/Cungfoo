@@ -17,14 +17,13 @@
         ClosingDate: '2012-09-15 00:00:00'
         VilleId: 47
         CategorieId: 2
-        GeoCoordinateX: '46.791528'
-        GeoCoordinateY: '-2.064456'
+        GeoCoordinateX: '46.80806056'
+        GeoCoordinateY: '-2.104654312'
         VideoPath: null
         Image360Path: null
         Capacite: '543'
         PlanPath: uploads/etablissements/50c0aeeca983f.jpeg
         Vignette: uploads/etablissements/50c075a7c8a0b.jpeg
-        Published: false
         Active: true
     2:
         Code: 100
@@ -44,14 +43,13 @@
         ClosingDate: '2012-09-29 00:00:00'
         VilleId: 141
         CategorieId: 2
-        GeoCoordinateX: '43.433152'
-        GeoCoordinateY: '6.737034'
+        GeoCoordinateX: '43.46392303'
+        GeoCoordinateY: '6.725360155'
         VideoPath: null
         Image360Path: null
         Capacite: '189'
         PlanPath: uploads/etablissements/50c0aefd8bf1a.jpeg
         Vignette: uploads/etablissements/50c075ba364bd.jpeg
-        Published: false
         Active: true
     3:
         Code: 101
@@ -71,14 +69,13 @@
         ClosingDate: '2012-09-08 00:00:00'
         VilleId: 70
         CategorieId: 1
-        GeoCoordinateX: '44.407452'
-        GeoCoordinateY: '4.395401'
+        GeoCoordinateX: '44.412402'
+        GeoCoordinateY: '4.349979'
         VideoPath: null
         Image360Path: null
         Capacite: '299'
         PlanPath: uploads/etablissements/50c0af09d6674.jpeg
         Vignette: uploads/etablissements/50c075d348a48.jpeg
-        Published: false
         Active: true
     4:
         Code: 102
@@ -98,14 +95,13 @@
         ClosingDate: '2012-09-30 00:00:00'
         VilleId: 33
         CategorieId: 1
-        GeoCoordinateX: '41.0865513'
-        GeoCoordinateY: '0.9606138'
+        GeoCoordinateX: '41.03292'
+        GeoCoordinateY: '0.96921'
         VideoPath: null
         Image360Path: null
         Capacite: '1177'
         PlanPath: uploads/etablissements/50c0af17a86ec.jpeg
         Vignette: uploads/etablissements/50c075df4d461.jpeg
-        Published: false
         Active: true
     5:
         Code: 103
@@ -125,14 +121,13 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: 35
         CategorieId: 2
-        GeoCoordinateX: '40.2454598'
-        GeoCoordinateY: '0.2659774'
+        GeoCoordinateX: '40.22119452'
+        GeoCoordinateY: '0.268542767'
         VideoPath: null
         Image360Path: null
         Capacite: '340'
         PlanPath: uploads/etablissements/50c0af25a544c.jpeg
         Vignette: uploads/etablissements/50c075ea6e237.jpeg
-        Published: false
         Active: true
     6:
         Code: 104
@@ -152,14 +147,13 @@
         ClosingDate: '2012-09-23 00:00:00'
         VilleId: 50
         CategorieId: 2
-        GeoCoordinateX: '47.875568'
-        GeoCoordinateY: '-4.1063729'
+        GeoCoordinateX: '47.88203498'
+        GeoCoordinateY: '-4.103393555'
         VideoPath: null
         Image360Path: null
         Capacite: '340'
         PlanPath: uploads/etablissements/50c0af45bee05.jpeg
         Vignette: uploads/etablissements/50c075fa2f012.jpeg
-        Published: false
         Active: true
     7:
         Code: 106
@@ -179,14 +173,13 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 52
         CategorieId: 2
-        GeoCoordinateX: '45.573436'
-        GeoCoordinateY: '2.943472'
+        GeoCoordinateX: '45.56285457'
+        GeoCoordinateY: '2.938236594'
         VideoPath: null
         Image360Path: null
         Capacite: '460'
         PlanPath: uploads/etablissements/50c1af62e89c4.jpeg
         Vignette: uploads/etablissements/50c07604c4ccc.jpeg
-        Published: false
         Active: true
     8:
         Code: 108
@@ -206,14 +199,13 @@
         ClosingDate: '2012-09-09 00:00:00'
         VilleId: 1
         CategorieId: 3
-        GeoCoordinateX: '42.546214'
-        GeoCoordinateY: '3.022911'
+        GeoCoordinateX: '42.56766828'
+        GeoCoordinateY: '3.044221401'
         VideoPath: null
         Image360Path: null
         Capacite: '706'
         PlanPath: uploads/etablissements/50c1af7c41ffa.jpeg
         Vignette: uploads/etablissements/50c0760e8f143.jpeg
-        Published: false
         Active: true
     9:
         Code: 109
@@ -233,14 +225,13 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: 87
         CategorieId: 2
-        GeoCoordinateX: '45.716275'
-        GeoCoordinateY: '-1.143904'
+        GeoCoordinateX: '45.72995496'
+        GeoCoordinateY: '-1.175955534'
         VideoPath: null
         Image360Path: null
         Capacite: '150'
         PlanPath: uploads/etablissements/50c1af9184408.jpeg
         Vignette: uploads/etablissements/50c076178a370.jpeg
-        Published: false
         Active: true
     10:
         Code: 11
@@ -260,14 +251,13 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 93
         CategorieId: 3
-        GeoCoordinateX: '43.798959'
-        GeoCoordinateY: '-1.303089'
+        GeoCoordinateX: '43.785238'
+        GeoCoordinateY: '-1.305147'
         VideoPath: null
         Image360Path: null
         Capacite: '275'
         PlanPath: uploads/etablissements/50c0af9578b80.jpeg
         Vignette: uploads/etablissements/50c07622dd6a5.jpeg
-        Published: false
         Active: true
     11:
         Code: 110
@@ -287,14 +277,13 @@
         ClosingDate: '2112-10-07 00:00:00'
         VilleId: 154
         CategorieId: 4
-        GeoCoordinateX: '43.433152'
-        GeoCoordinateY: '6.737034'
+        GeoCoordinateX: '43.392481'
+        GeoCoordinateY: '6.726462'
         VideoPath: null
         Image360Path: null
         Capacite: '1100'
         PlanPath: uploads/etablissements/50c0afa4094b5.jpeg
         Vignette: uploads/etablissements/50c0762d20c4b.jpeg
-        Published: false
         Active: true
     12:
         Code: 111
@@ -314,14 +303,13 @@
         ClosingDate: '2012-09-30 00:00:00'
         VilleId: 41
         CategorieId: 2
-        GeoCoordinateX: '43.597772'
-        GeoCoordinateY: '6.95671'
+        GeoCoordinateX: '43.58853542'
+        GeoCoordinateY: '6.93888545'
         VideoPath: null
         Image360Path: null
         Capacite: '200'
         PlanPath: uploads/etablissements/50c0afb054124.jpeg
         Vignette: uploads/etablissements/50c0763716a2e.jpeg
-        Published: false
         Active: true
     13:
         Code: 112
@@ -341,14 +329,13 @@
         ClosingDate: '2012-09-30 00:00:00'
         VilleId: 21
         CategorieId: 2
-        GeoCoordinateX: '43.37055'
-        GeoCoordinateY: '5.782809'
+        GeoCoordinateX: '43.37692956'
+        GeoCoordinateY: '5.788040757'
         VideoPath: null
         Image360Path: null
         Capacite: '250'
         PlanPath: uploads/etablissements/50c0afe6c63ed.jpeg
         Vignette: uploads/etablissements/50c076445e9b3.jpeg
-        Published: false
         Active: true
     14:
         Code: 113
@@ -368,14 +355,13 @@
         ClosingDate: '2012-09-09 00:00:00'
         VilleId: 6
         CategorieId: 2
-        GeoCoordinateX: '42.726559'
-        GeoCoordinateY: '3.016601'
+        GeoCoordinateX: '42.7139833'
+        GeoCoordinateY: '3.0314219'
         VideoPath: null
         Image360Path: null
         Capacite: '300'
         PlanPath: uploads/etablissements/50c1afa391a3a.jpeg
         Vignette: uploads/etablissements/50c0764f49c1f.jpeg
-        Published: false
         Active: true
     15:
         Code: 114
@@ -395,14 +381,13 @@
         ClosingDate: '2012-09-09 00:00:00'
         VilleId: 100
         CategorieId: 1
-        GeoCoordinateX: '44.0756609'
-        GeoCoordinateY: '-1.1661729'
+        GeoCoordinateX: '44.07217817'
+        GeoCoordinateY: '-1.156412959'
         VideoPath: null
         Image360Path: null
         Capacite: '375'
         PlanPath: uploads/etablissements/50c1afc92c505.jpeg
         Vignette: uploads/etablissements/50c0765b566f2.jpeg
-        Published: false
         Active: true
     16:
         Code: 116
@@ -422,14 +407,13 @@
         ClosingDate: '2013-09-14 00:00:00'
         VilleId: 81
         CategorieId: 2
-        GeoCoordinateX: '45.776496'
-        GeoCoordinateY: '6.220515'
+        GeoCoordinateX: '45.7750889'
+        GeoCoordinateY: '6.226780415'
         VideoPath: null
         Image360Path: null
         Capacite: '184'
         PlanPath: uploads/etablissements/50c1b016d6b29.jpeg
         Vignette: uploads/etablissements/50c0766602664.jpeg
-        Published: false
         Active: true
     17:
         Code: 117
@@ -449,14 +433,13 @@
         ClosingDate: '2012-09-23 00:00:00'
         VilleId: 95
         CategorieId: 2
-        GeoCoordinateX: '45.978418'
-        GeoCoordinateY: '-1.332125'
+        GeoCoordinateX: '45.96824412'
+        GeoCoordinateY: '-1.245038509'
         VideoPath: null
         Image360Path: null
         Capacite: '300'
         PlanPath: uploads/etablissements/50c0b021aa700.jpeg
         Vignette: uploads/etablissements/50c0766f8358e.jpeg
-        Published: false
         Active: true
     18:
         Code: 118
@@ -476,14 +459,13 @@
         ClosingDate: '2012-09-22 00:00:00'
         VilleId: 1
         CategorieId: 2
-        GeoCoordinateX: '42.546214'
-        GeoCoordinateY: '3.022911'
+        GeoCoordinateX: '42.5757234'
+        GeoCoordinateY: '3.042392135'
         VideoPath: null
         Image360Path: null
         Capacite: '844'
         PlanPath: uploads/etablissements/50c1afdfca20f.jpeg
         Vignette: uploads/etablissements/50c07679cef85.jpeg
-        Published: false
         Active: true
     19:
         Code: 119
@@ -503,14 +485,13 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: 140
         CategorieId: null
-        GeoCoordinateX: '42.61783'
-        GeoCoordinateY: '3.004182'
+        GeoCoordinateX: '42.62443095'
+        GeoCoordinateY: '3.025810719'
         VideoPath: null
         Image360Path: null
         Capacite: '522'
         PlanPath: uploads/etablissements/50c1afef3933e.jpeg
         Vignette: uploads/etablissements/50c076841720b.jpeg
-        Published: false
         Active: true
     20:
         Code: 12
@@ -530,14 +511,13 @@
         ClosingDate: '2013-09-13 00:00:00'
         VilleId: 17
         CategorieId: 3
-        GeoCoordinateX: '42.78773'
-        GeoCoordinateY: '3.036565'
+        GeoCoordinateX: '42.78606298'
+        GeoCoordinateY: '3.019276857'
         VideoPath: null
         Image360Path: null
         Capacite: '210'
         PlanPath: uploads/etablissements/50c1b004a7ae6.jpeg
         Vignette: uploads/etablissements/50c0768e5ee70.jpeg
-        Published: false
         Active: true
     21:
         Code: 120
@@ -557,14 +537,13 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: 82
         CategorieId: 2
-        GeoCoordinateX: '47.835925'
-        GeoCoordinateY: '7.176868'
+        GeoCoordinateX: '47.83392225'
+        GeoCoordinateY: '7.165617943'
         VideoPath: null
         Image360Path: null
         Capacite: '267'
         PlanPath: uploads/etablissements/50c1b037245f0.jpeg
         Vignette: uploads/etablissements/50c0769b5c096.jpeg
-        Published: false
         Active: true
     22:
         Code: 121
@@ -584,14 +563,13 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: '44.978459'
-        GeoCoordinateY: '-1.075745'
+        GeoCoordinateX: '45.00800533'
+        GeoCoordinateY: '-1.112129688'
         VideoPath: null
         Image360Path: null
         Capacite: '476'
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     23:
         Code: 122
@@ -611,14 +589,13 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: 39
         CategorieId: 3
-        GeoCoordinateX: '43.3007194'
-        GeoCoordinateY: '10.4910957'
+        GeoCoordinateX: '43.29217342'
+        GeoCoordinateY: '10.51079929'
         VideoPath: null
         Image360Path: null
         Capacite: '301'
         PlanPath: uploads/etablissements/50c1b0567994e.jpeg
         Vignette: uploads/etablissements/50c076aa87a87.jpeg
-        Published: false
         Active: true
     24:
         Code: 123
@@ -638,14 +615,13 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: 36
         CategorieId: 2
-        GeoCoordinateX: '43.3870548'
-        GeoCoordinateY: '-6.074386'
+        GeoCoordinateX: '45.69481972'
+        GeoCoordinateY: '13.45171809'
         VideoPath: null
         Image360Path: null
         Capacite: '800'
         PlanPath: uploads/etablissements/50c0b0694d86f.jpeg
         Vignette: uploads/etablissements/50c076b862805.jpeg
-        Published: false
         Active: true
     25:
         Code: 125
@@ -665,14 +641,13 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: 104
         CategorieId: 3
-        GeoCoordinateX: '43.439236'
-        GeoCoordinateY: '-1.590062'
+        GeoCoordinateX: '43.43388862'
+        GeoCoordinateY: '-1.590839624'
         VideoPath: null
         Image360Path: null
         Capacite: '269'
         PlanPath: uploads/etablissements/50c0b076d5281.jpeg
         Vignette: uploads/etablissements/50c076c4c14d2.jpeg
-        Published: false
         Active: true
     26:
         Code: 126
@@ -692,14 +667,13 @@
         ClosingDate: '2012-09-15 00:00:00'
         VilleId: 42
         CategorieId: 4
-        GeoCoordinateX: '42.011184'
-        GeoCoordinateY: '9.313127'
+        GeoCoordinateX: '41.98642663'
+        GeoCoordinateY: '9.398889542'
         VideoPath: null
         Image360Path: null
         Capacite: '54'
         PlanPath: uploads/etablissements/50c0b08c59d78.jpeg
         Vignette: uploads/etablissements/50c076d71697d.jpeg
-        Published: false
         Active: true
     27:
         Code: 127
@@ -719,14 +693,13 @@
         ClosingDate: '2012-09-30 00:00:00'
         VilleId: 102
         CategorieId: 1
-        GeoCoordinateX: '43.81466'
-        GeoCoordinateY: '-1.37825'
+        GeoCoordinateX: '43.79771568'
+        GeoCoordinateY: '-1.400853395'
         VideoPath: null
         Image360Path: null
         Capacite: '1546'
         PlanPath: uploads/etablissements/50c0b09bacdbb.jpeg
         Vignette: uploads/etablissements/50c076f4477fa.jpeg
-        Published: false
         Active: true
     28:
         Code: 128
@@ -746,14 +719,13 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: 101
         CategorieId: 1
-        GeoCoordinateX: '44.033876'
-        GeoCoordinateY: '-1.258325'
+        GeoCoordinateX: '44.02413608'
+        GeoCoordinateY: '-1.27867341'
         VideoPath: null
         Image360Path: null
         Capacite: '450'
         PlanPath: null
         Vignette: uploads/etablissements/50c076fd9b7ba.jpeg
-        Published: false
         Active: true
     29:
         Code: 129
@@ -773,14 +745,13 @@
         ClosingDate: '2012-09-30 00:00:00'
         VilleId: 32
         CategorieId: 2
-        GeoCoordinateX: '42.8498032'
-        GeoCoordinateY: '-2.6729997'
+        GeoCoordinateX: '41.23213011'
+        GeoCoordinateY: '1.690725088'
         VideoPath: null
         Image360Path: null
         Capacite: '1385'
         PlanPath: uploads/etablissements/50c0b0b4c3335.jpeg
         Vignette: uploads/etablissements/50c07709abbeb.jpeg
-        Published: false
         Active: true
     30:
         Code: 130
@@ -800,14 +771,13 @@
         ClosingDate: '2012-09-15 00:00:00'
         VilleId: 47
         CategorieId: 2
-        GeoCoordinateX: '46.791528'
-        GeoCoordinateY: '-2.064456'
+        GeoCoordinateX: '46.7812729'
+        GeoCoordinateY: '-2.017439604'
         VideoPath: null
         Image360Path: null
         Capacite: '278'
         PlanPath: uploads/etablissements/50c0b0bff3feb.jpeg
         Vignette: uploads/etablissements/50c077161f869.jpeg
-        Published: false
         Active: true
     31:
         Code: 131
@@ -827,14 +797,13 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: 104
         CategorieId: 1
-        GeoCoordinateX: '43.439236'
-        GeoCoordinateY: '-1.590062'
+        GeoCoordinateX: '43.436804'
+        GeoCoordinateY: '-1.567666'
         VideoPath: null
         Image360Path: null
         Capacite: '480'
         PlanPath: uploads/etablissements/50c1b0795fd0c.jpeg
         Vignette: uploads/etablissements/50c077240f919.jpeg
-        Published: false
         Active: true
     32:
         Code: 133
@@ -854,14 +823,13 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 31
         CategorieId: 4
-        GeoCoordinateX: '41.6759954'
-        GeoCoordinateY: '2.7902289'
+        GeoCoordinateX: '41.664833'
+        GeoCoordinateY: '2.777781'
         VideoPath: null
         Image360Path: null
         Capacite: '757'
         PlanPath: uploads/etablissements/50c0b0df2fd9e.jpeg
         Vignette: uploads/etablissements/50c0773707b45.jpeg
-        Published: false
         Active: true
     33:
         Code: 134
@@ -881,14 +849,13 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: 17
         CategorieId: 3
-        GeoCoordinateX: '42.78773'
-        GeoCoordinateY: '3.036565'
+        GeoCoordinateX: '42.783858'
+        GeoCoordinateY: '3.021154'
         VideoPath: null
         Image360Path: null
         Capacite: '434'
         PlanPath: null
         Vignette: uploads/etablissements/50c0774c3e555.jpeg
-        Published: false
         Active: true
     34:
         Code: 135
@@ -908,14 +875,13 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: 28
         CategorieId: 2
-        GeoCoordinateX: '43.4847877'
-        GeoCoordinateY: '-3.5281482'
+        GeoCoordinateX: '43.491413'
+        GeoCoordinateY: '-3.537512'
         VideoPath: null
         Image360Path: null
         Capacite: '1050'
         PlanPath: uploads/etablissements/50c0b0fc0a723.jpeg
         Vignette: uploads/etablissements/50c0776146ebb.jpeg
-        Published: false
         Active: true
     35:
         Code: 136
@@ -935,14 +901,13 @@
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 37
         CategorieId: null
-        GeoCoordinateX: '45.216488'
-        GeoCoordinateY: '12.294207'
+        GeoCoordinateX: '45.226879'
+        GeoCoordinateY: '12.294774'
         VideoPath: null
         Image360Path: null
         Capacite: '135'
         PlanPath: uploads/etablissements/50c0b1185446d.jpeg
         Vignette: uploads/etablissements/50c0776c29dd7.jpeg
-        Published: false
         Active: true
     36:
         Code: 137
@@ -962,14 +927,13 @@
         ClosingDate: '2013-09-22 00:00:00'
         VilleId: 1
         CategorieId: 2
-        GeoCoordinateX: '42.546214'
-        GeoCoordinateY: '3.022911'
+        GeoCoordinateX: '42.573436'
+        GeoCoordinateY: '3.01918'
         VideoPath: null
         Image360Path: null
         Capacite: '167'
         PlanPath: uploads/etablissements/50c1b08dd8556.jpeg
         Vignette: uploads/etablissements/50c077784ddea.jpeg
-        Published: false
         Active: true
     37:
         Code: 138
@@ -989,14 +953,13 @@
         ClosingDate: '2012-09-15 00:00:00'
         VilleId: 13
         CategorieId: 3
-        GeoCoordinateX: '43.120541'
-        GeoCoordinateY: '6.128639'
+        GeoCoordinateX: '43.0935263'
+        GeoCoordinateY: '6.16381530'
         VideoPath: null
         Image360Path: null
         Capacite: '700'
         PlanPath: uploads/etablissements/50c1b0b44fc90.jpeg
         Vignette: uploads/etablissements/50c0778527a48.jpeg
-        Published: false
         Active: true
     38:
         Code: 139
@@ -1023,7 +986,6 @@
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     39:
         Code: 14
@@ -1043,14 +1005,13 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 9
         CategorieId: 3
-        GeoCoordinateX: '43.4255939'
-        GeoCoordinateY: '3.606834'
+        GeoCoordinateX: '43.43042156'
+        GeoCoordinateY: '3.610414267'
         VideoPath: null
         Image360Path: null
         Capacite: '234'
         PlanPath: uploads/etablissements/50c0b1464ee57.jpeg
         Vignette: uploads/etablissements/50c07798a7231.jpeg
-        Published: false
         Active: true
     40:
         Code: 140
@@ -1077,7 +1038,6 @@
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     41:
         Code: 141
@@ -1104,7 +1064,6 @@
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     42:
         Code: 142
@@ -1131,7 +1090,6 @@
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     43:
         Code: 143
@@ -1158,7 +1116,6 @@
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     44:
         Code: 144
@@ -1185,7 +1142,6 @@
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     45:
         Code: 145
@@ -1212,7 +1168,6 @@
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     46:
         Code: 146
@@ -1239,7 +1194,6 @@
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     47:
         Code: 147
@@ -1266,7 +1220,6 @@
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     48:
         Code: 148
@@ -1293,7 +1246,6 @@
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     49:
         Code: 149
@@ -1320,7 +1272,6 @@
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     50:
         Code: 15
@@ -1340,14 +1291,13 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.186048'
-        GeoCoordinateY: '-1.1180349'
+        GeoCoordinateX: '46.17793608'
+        GeoCoordinateY: '-1.115090847'
         VideoPath: null
         Image360Path: null
         Capacite: '171'
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     51:
         Code: 150
@@ -1374,7 +1324,6 @@
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     52:
         Code: 151
@@ -1401,7 +1350,6 @@
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     53:
         Code: 152
@@ -1428,7 +1376,6 @@
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     54:
         Code: 153
@@ -1455,7 +1402,6 @@
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     55:
         Code: 154
@@ -1482,7 +1428,6 @@
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     56:
         Code: 155
@@ -1509,7 +1454,6 @@
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     57:
         Code: 156
@@ -1536,7 +1480,6 @@
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     58:
         Code: 157
@@ -1563,7 +1506,6 @@
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     59:
         Code: 158
@@ -1590,7 +1532,6 @@
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     60:
         Code: 159
@@ -1617,7 +1558,6 @@
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     61:
         Code: 16
@@ -1644,7 +1584,6 @@
         Capacite: '199'
         PlanPath: uploads/etablissements/50c0b1c36f57e.jpeg
         Vignette: uploads/etablissements/50c077ad1cde5.jpeg
-        Published: false
         Active: true
     62:
         Code: 160
@@ -1671,7 +1610,6 @@
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     63:
         Code: 161
@@ -1698,7 +1636,6 @@
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     64:
         Code: 162
@@ -1725,7 +1662,6 @@
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     65:
         Code: 163
@@ -1752,7 +1688,6 @@
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     66:
         Code: 164
@@ -1779,7 +1714,6 @@
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     67:
         Code: 165
@@ -1806,7 +1740,6 @@
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     68:
         Code: 166
@@ -1833,7 +1766,6 @@
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     69:
         Code: 167
@@ -1860,7 +1792,6 @@
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     70:
         Code: 168
@@ -1887,7 +1818,6 @@
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     71:
         Code: 169
@@ -1914,7 +1844,6 @@
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     72:
         Code: 17
@@ -1934,14 +1863,13 @@
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 55
         CategorieId: 2
-        GeoCoordinateX: '47.347009'
-        GeoCoordinateY: '-3.156406'
+        GeoCoordinateX: '47.355914'
+        GeoCoordinateY: '-3.168789'
         VideoPath: null
         Image360Path: null
         Capacite: '202'
         PlanPath: uploads/etablissements/50c0b1d39c943.jpeg
         Vignette: uploads/etablissements/50c077bc5d876.jpeg
-        Published: false
         Active: true
     73:
         Code: 170
@@ -1968,7 +1896,6 @@
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     74:
         Code: 171
@@ -1995,7 +1922,6 @@
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     75:
         Code: 172
@@ -2022,7 +1948,6 @@
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     76:
         Code: 173
@@ -2049,7 +1974,6 @@
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     77:
         Code: 174
@@ -2076,7 +2000,6 @@
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     78:
         Code: 175
@@ -2096,14 +2019,13 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 63
         CategorieId: 2
-        GeoCoordinateX: '46.720204'
-        GeoCoordinateY: '-1.945917'
+        GeoCoordinateX: '46.738375'
+        GeoCoordinateY: '-1.978054'
         VideoPath: null
         Image360Path: null
         Capacite: '140'
         PlanPath: uploads/etablissements/50c0b1e2e576d.jpeg
         Vignette: uploads/etablissements/50c077d39f6a9.jpeg
-        Published: false
         Active: true
     79:
         Code: 176
@@ -2123,14 +2045,13 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 150
         CategorieId: 1
-        GeoCoordinateX: '45.3569389'
-        GeoCoordinateY: '-1.061774'
+        GeoCoordinateX: '45.373855'
+        GeoCoordinateY: '-1.144638'
         VideoPath: null
         Image360Path: null
         Capacite: '770'
         PlanPath: uploads/etablissements/50c0b1efdcf16.jpeg
         Vignette: uploads/etablissements/50c077e07619d.jpeg
-        Published: false
         Active: true
     80:
         Code: 177
@@ -2150,14 +2071,13 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: 58
         CategorieId: 3
-        GeoCoordinateX: '47.285448'
-        GeoCoordinateY: '-2.393236'
+        GeoCoordinateX: '47.305775'
+        GeoCoordinateY: '-2.377167'
         VideoPath: null
         Image360Path: null
         Capacite: '222'
         PlanPath: uploads/etablissements/50c1b1503b389.jpeg
         Vignette: uploads/etablissements/50c077ecaf24e.jpeg
-        Published: false
         Active: true
     81:
         Code: 178
@@ -2177,14 +2097,13 @@
         ClosingDate: '2013-09-08 00:00:00'
         VilleId: 63
         CategorieId: 1
-        GeoCoordinateX: '46.720204'
-        GeoCoordinateY: '-1.945917'
+        GeoCoordinateX: '46.740096'
+        GeoCoordinateY: '-1.945052'
         VideoPath: null
         Image360Path: null
         Capacite: '434'
         PlanPath: uploads/etablissements/50c0b20bcb83a.jpeg
         Vignette: uploads/etablissements/50c077fa54ebf.jpeg
-        Published: false
         Active: true
     82:
         Code: 179
@@ -2204,14 +2123,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 105
         CategorieId: 1
-        GeoCoordinateX: '44.841033'
-        GeoCoordinateY: '1.276566'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: true
     83:
         Code: 18
@@ -2231,14 +2149,13 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '46.6400409'
-        GeoCoordinateY: '-1.712725'
+        GeoCoordinateX: '46.64475555'
+        GeoCoordinateY: '-1.732943058'
         VideoPath: null
         Image360Path: null
         Capacite: '150'
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     84:
         Code: 180
@@ -2258,14 +2175,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 156
         CategorieId: null
-        GeoCoordinateX: '43.096777'
-        GeoCoordinateY: '6.072284'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: true
     85:
         Code: 181
@@ -2285,14 +2201,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 91
         CategorieId: 4
-        GeoCoordinateX: '43.242573'
-        GeoCoordinateY: '0.096065'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: true
     86:
         Code: 182
@@ -2312,14 +2227,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 110
         CategorieId: 4
-        GeoCoordinateX: '48.657172'
-        GeoCoordinateY: '-4.174263'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: true
     87:
         Code: 183
@@ -2339,14 +2253,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 58
         CategorieId: 3
-        GeoCoordinateX: '47.285448'
-        GeoCoordinateY: '-2.393236'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: true
     88:
         Code: 184
@@ -2366,14 +2279,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 157
         CategorieId: 3
-        GeoCoordinateX: '45.4747691'
-        GeoCoordinateY: '12.4965959'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: true
     89:
         Code: 185
@@ -2393,14 +2305,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 158
         CategorieId: 3
-        GeoCoordinateX: '45.602716'
-        GeoCoordinateY: '-0.997838'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: true
     90:
         Code: 186
@@ -2420,14 +2331,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 129
         CategorieId: null
-        GeoCoordinateX: '43.954465'
-        GeoCoordinateY: '4.77358'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     91:
         Code: 187
@@ -2447,14 +2357,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 4
         CategorieId: null
-        GeoCoordinateX: '44.936'
-        GeoCoordinateY: '1.018'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     92:
         Code: 188
@@ -2474,14 +2383,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 38
         CategorieId: null
-        GeoCoordinateX: '44.6444061'
-        GeoCoordinateY: '12.2463657'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: true
     93:
         Code: 189
@@ -2508,7 +2416,6 @@
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     94:
         Code: 19
@@ -2535,7 +2442,6 @@
         Capacite: '225'
         PlanPath: uploads/etablissements/50c1b17b2ac6d.jpeg
         Vignette: uploads/etablissements/50c0791bea1bb.jpeg
-        Published: false
         Active: true
     95:
         Code: 190
@@ -2555,14 +2461,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 152
         CategorieId: 4
-        GeoCoordinateX: '43.1713807'
-        GeoCoordinateY: '3.184556'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: true
     96:
         Code: 191
@@ -2582,14 +2487,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 111
         CategorieId: 4
-        GeoCoordinateX: '46.2289'
-        GeoCoordinateY: '-1.5383'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: true
     97:
         Code: 192
@@ -2609,14 +2513,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 123
         CategorieId: 2
-        GeoCoordinateX: '43.7803'
-        GeoCoordinateY: '6.0961'
+        GeoCoordinateX: '43.74642103270366'
+        GeoCoordinateY: '6.10041618347168'
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07959d2aee.jpeg
-        Published: false
         Active: true
     98:
         Code: 193
@@ -2636,14 +2539,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 26
         CategorieId: 1
-        GeoCoordinateX: '41.969591'
-        GeoCoordinateY: '3.148022'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: true
     99:
         Code: 194
@@ -2663,14 +2565,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 143
         CategorieId: null
-        GeoCoordinateX: '42.606203'
-        GeoCoordinateY: '3.006674'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     100:
         Code: 195
@@ -2690,14 +2591,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 1
         CategorieId: null
-        GeoCoordinateX: '42.546214'
-        GeoCoordinateY: '3.022911'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     101:
         Code: 196
@@ -2717,14 +2617,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 130
         CategorieId: 3
-        GeoCoordinateX: '44.0993799'
-        GeoCoordinateY: '5.024744'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: true
     102:
         Code: 197
@@ -2744,14 +2643,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 124
         CategorieId: null
-        GeoCoordinateX: '44.083566'
-        GeoCoordinateY: '4.077927'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     103:
         Code: 198
@@ -2771,14 +2669,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 125
         CategorieId: 3
-        GeoCoordinateX: '43.290934'
-        GeoCoordinateY: '5.863162'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     104:
         Code: 199
@@ -2798,14 +2695,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 116
         CategorieId: null
-        GeoCoordinateX: '49.306882'
-        GeoCoordinateY: '-0.028052'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     105:
         Code: 2
@@ -2832,7 +2728,6 @@
         Capacite: '137'
         PlanPath: uploads/etablissements/50c1b1d5302c2.jpeg
         Vignette: uploads/etablissements/50c07a0aa125e.jpeg
-        Published: false
         Active: true
     106:
         Code: 20
@@ -2859,7 +2754,6 @@
         Capacite: '308'
         PlanPath: uploads/etablissements/50c1b21c1fdab.jpeg
         Vignette: uploads/etablissements/50c07a15e105c.jpeg
-        Published: false
         Active: true
     107:
         Code: 200
@@ -2879,14 +2773,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 153
         CategorieId: 2
-        GeoCoordinateX: '43.713811'
-        GeoCoordinateY: '5.316109'
+        GeoCoordinateX: '43.7281889'
+        GeoCoordinateY: '5.3209877'
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07a25e504c.jpeg
-        Published: false
         Active: true
     108:
         Code: 201
@@ -2906,14 +2799,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 118
         CategorieId: 3
-        GeoCoordinateX: '45.406018'
-        GeoCoordinateY: '2.0463779'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     109:
         Code: 202
@@ -2933,14 +2825,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 126
         CategorieId: 3
-        GeoCoordinateX: '43.549831'
-        GeoCoordinateY: '3.778935'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     110:
         Code: 203
@@ -2967,7 +2858,6 @@
         Capacite: null
         PlanPath: uploads/etablissements/50c1b23ec9191.jpeg
         Vignette: uploads/etablissements/50c07a57d7e78.jpeg
-        Published: false
         Active: true
     111:
         Code: 204
@@ -2987,14 +2877,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 117
         CategorieId: 3
-        GeoCoordinateX: '43.3148849'
-        GeoCoordinateY: '3.139111'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     112:
         Code: 205
@@ -3014,14 +2903,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 106
         CategorieId: 5
-        GeoCoordinateX: '43.02891'
-        GeoCoordinateY: '2.979255'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50bc680fbc8b5.png
-        Published: false
         Active: true
     113:
         Code: 206
@@ -3041,14 +2929,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 159
         CategorieId: 2
-        GeoCoordinateX: '43.490423'
-        GeoCoordinateY: '3.797599'
+        GeoCoordinateX: '43.4915997'
+        GeoCoordinateY: '3.7792969'
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07a87bdb97.jpeg
-        Published: false
         Active: true
     114:
         Code: 207
@@ -3068,14 +2955,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 127
         CategorieId: 3
-        GeoCoordinateX: '43.344233'
-        GeoCoordinateY: '3.215795'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     115:
         Code: 208
@@ -3095,14 +2981,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 119
         CategorieId: 3
-        GeoCoordinateX: '48.767811'
-        GeoCoordinateY: '2.350648'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     116:
         Code: 209
@@ -3122,14 +3007,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 107
         CategorieId: 3
-        GeoCoordinateX: '43.244728'
-        GeoCoordinateY: '10.531519'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: true
     117:
         Code: 21
@@ -3156,7 +3040,6 @@
         Capacite: '180'
         PlanPath: null
         Vignette: uploads/etablissements/50c07adc646ca.jpeg
-        Published: false
         Active: true
     118:
         Code: 210
@@ -3176,14 +3059,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 151
         CategorieId: 3
-        GeoCoordinateX: '43.611297'
-        GeoCoordinateY: '3.812357'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     119:
         Code: 211
@@ -3203,14 +3085,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 160
         CategorieId: 4
-        GeoCoordinateX: '48.040216'
-        GeoCoordinateY: '7.545766'
+        GeoCoordinateX: '48.0226826'
+        GeoCoordinateY: '7.5783348'
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07afbdbe73.jpeg
-        Published: false
         Active: true
     120:
         Code: 212
@@ -3230,14 +3111,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 108
         CategorieId: null
-        GeoCoordinateX: '41.9922327'
-        GeoCoordinateY: '3.2005475'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: true
     121:
         Code: 213
@@ -3257,14 +3137,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 131
         CategorieId: 3
-        GeoCoordinateX: '49.388696'
-        GeoCoordinateY: '-1.041706'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     122:
         Code: 214
@@ -3284,14 +3163,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 109
         CategorieId: 3
-        GeoCoordinateX: '47.697648'
-        GeoCoordinateY: '-2.805894'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     123:
         Code: 215
@@ -3311,14 +3189,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 112
         CategorieId: 3
-        GeoCoordinateX: '44.633628'
-        GeoCoordinateY: '-1.201676'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: true
     124:
         Code: 216
@@ -3338,14 +3215,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 121
         CategorieId: 2
-        GeoCoordinateX: '47.967118'
-        GeoCoordinateY: '-3.937054'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: true
     125:
         Code: 217
@@ -3365,14 +3241,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 113
         CategorieId: 2
-        GeoCoordinateX: '43.40215'
-        GeoCoordinateY: '3.696624'
+        GeoCoordinateX: '43.3400139093'
+        GeoCoordinateY: '3.5819583307'
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07b54eec04.jpeg
-        Published: false
         Active: true
     126:
         Code: 218
@@ -3392,14 +3267,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 1
         CategorieId: 2
-        GeoCoordinateX: '42.546214'
-        GeoCoordinateY: '3.022911'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: uploads/etablissements/50c0b8e686a55.jpeg
         Vignette: uploads/etablissements/50c07b6326e05.jpeg
-        Published: false
         Active: true
     127:
         Code: 219
@@ -3419,14 +3293,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 115
         CategorieId: 4
-        GeoCoordinateX: '42.467512'
-        GeoCoordinateY: '9.473267'
+        GeoCoordinateX: '42.4764651'
+        GeoCoordinateY: '9.5296097'
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07b7d004ec.jpeg
-        Published: false
         Active: true
     128:
         Code: 22
@@ -3446,14 +3319,13 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 19
         CategorieId: 3
-        GeoCoordinateX: '43.312455'
-        GeoCoordinateY: '3.47083'
+        GeoCoordinateX: '43.310056'
+        GeoCoordinateY: '3.509442'
         VideoPath: null
         Image360Path: null
         Capacite: '258'
         PlanPath: uploads/etablissements/50c0b90441e0b.jpeg
         Vignette: uploads/etablissements/50c07b8b3c71d.jpeg
-        Published: false
         Active: true
     129:
         Code: 220
@@ -3473,14 +3345,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 147
         CategorieId: 5
-        GeoCoordinateX: '50.7074209'
-        GeoCoordinateY: '1.576772'
+        GeoCoordinateX: '50.7040549'
+        GeoCoordinateY: '1.5663028'
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: true
     130:
         Code: 221
@@ -3500,14 +3371,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 19
         CategorieId: null
-        GeoCoordinateX: '43.312455'
-        GeoCoordinateY: '3.47083'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: true
     131:
         Code: 222
@@ -3527,14 +3397,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 72
         CategorieId: 2
-        GeoCoordinateX: '46.344059'
-        GeoCoordinateY: '-1.4387859'
+        GeoCoordinateX: '46.37250'
+        GeoCoordinateY: '-1.41528'
         VideoPath: null
         Image360Path: null
         Capacite: null
         PlanPath: null
         Vignette: uploads/etablissements/50c07baf6c131.jpeg
-        Published: false
         Active: true
     132:
         Code: 223
@@ -3554,14 +3423,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 138
         CategorieId: 4
-        GeoCoordinateX: '45.923392'
-        GeoCoordinateY: '6.684919'
+        GeoCoordinateX: '45.9235838981'
+        GeoCoordinateY: '6.65056899541'
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07bbf72e3e.jpeg
-        Published: false
         Active: true
     133:
         Code: 224
@@ -3581,14 +3449,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 161
         CategorieId: 3
-        GeoCoordinateX: '47.536374'
-        GeoCoordinateY: '7.17609'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: true
     134:
         Code: 225
@@ -3608,14 +3475,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 128
         CategorieId: 3
-        GeoCoordinateX: '14.0101094'
-        GeoCoordinateY: '-60.9874687'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     135:
         Code: 226
@@ -3635,14 +3501,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 132
         CategorieId: 3
-        GeoCoordinateX: '51.9514808'
-        GeoCoordinateY: '7.6255388'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: true
     136:
         Code: 227
@@ -3662,14 +3527,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 133
         CategorieId: 2
-        GeoCoordinateX: '47.115125'
-        GeoCoordinateY: '0.497549'
+        GeoCoordinateX: '47.0974739'
+        GeoCoordinateY: '0.5019379'
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07c03aa1f4.jpeg
-        Published: false
         Active: true
     137:
         Code: 228
@@ -3689,14 +3553,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 12
         CategorieId: 4
-        GeoCoordinateX: '43.700617'
-        GeoCoordinateY: '6.038878'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: true
     138:
         Code: 229
@@ -3716,14 +3579,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 162
         CategorieId: 2
-        GeoCoordinateX: '43.675299'
-        GeoCoordinateY: '2.779604'
+        GeoCoordinateX: '43.6486529'
+        GeoCoordinateY: '2.7781248'
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07c2b36ac4.jpeg
-        Published: false
         Active: true
     139:
         Code: 23
@@ -3743,14 +3605,13 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 54
         CategorieId: 2
-        GeoCoordinateX: '44.744816'
-        GeoCoordinateY: '1.258582'
+        GeoCoordinateX: '44.7421154'
+        GeoCoordinateY: '1.263438463'
         VideoPath: null
         Image360Path: null
         Capacite: '192'
         PlanPath: uploads/etablissements/50c1b2abeab94.jpeg
         Vignette: uploads/etablissements/50c07c3a59d9a.jpeg
-        Published: false
         Active: true
     140:
         Code: 230
@@ -3770,14 +3631,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 19
         CategorieId: null
-        GeoCoordinateX: '43.312455'
-        GeoCoordinateY: '3.47083'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     141:
         Code: 231
@@ -3797,14 +3657,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 146
         CategorieId: 2
-        GeoCoordinateX: '44.689526'
-        GeoCoordinateY: '2.658302'
+        GeoCoordinateX: '44.66761515867915'
+        GeoCoordinateY: '2.6811790466308594'
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07cac98a8a.jpeg
-        Published: false
         Active: true
     142:
         Code: 232
@@ -3824,14 +3683,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '48.3334509'
-        GeoCoordinateY: '7.676838'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     143:
         Code: 233
@@ -3851,14 +3709,13 @@
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 102
         CategorieId: 2
-        GeoCoordinateX: '43.81466'
-        GeoCoordinateY: '-1.37825'
+        GeoCoordinateX: '43.856316'
+        GeoCoordinateY: '-1.392517'
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07cce6cae0.jpeg
-        Published: false
         Active: true
     144:
         Code: 234
@@ -3878,14 +3735,13 @@
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 122
         CategorieId: 3
-        GeoCoordinateX: '48.735158'
-        GeoCoordinateY: '3.011745'
+        GeoCoordinateX: '48.733054'
+        GeoCoordinateY: '3.046978'
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07cdbf27aa.jpeg
-        Published: false
         Active: true
     145:
         Code: 235
@@ -3905,14 +3761,13 @@
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 81
         CategorieId: 2
-        GeoCoordinateX: '45.776496'
-        GeoCoordinateY: '6.220515'
+        GeoCoordinateX: '45.799965'
+        GeoCoordinateY: '6.211696'
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07ce853e04.jpeg
-        Published: false
         Active: true
     146:
         Code: 236
@@ -3932,14 +3787,13 @@
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 134
         CategorieId: 3
-        GeoCoordinateX: '46.373565'
-        GeoCoordinateY: '6.477635'
+        GeoCoordinateX: '46.3993012'
+        GeoCoordinateY: '6.503873800000065'
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07cf564de0.jpeg
-        Published: false
         Active: true
     147:
         Code: 237
@@ -3959,14 +3813,13 @@
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 7
         CategorieId: 1
-        GeoCoordinateX: '42.75444'
-        GeoCoordinateY: '2.993641'
+        GeoCoordinateX: '43.004647'
+        GeoCoordinateY: '3.050903'
         VideoPath: null
         Image360Path: null
         Capacite: null
         PlanPath: null
         Vignette: uploads/etablissements/50c07d042f4b4.jpeg
-        Published: false
         Active: true
     148:
         Code: 238
@@ -3986,14 +3839,13 @@
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 135
         CategorieId: 2
-        GeoCoordinateX: '43.561101'
-        GeoCoordinateY: '-1.448208'
+        GeoCoordinateX: '43.5694205'
+        GeoCoordinateY: '-1.4602153'
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: uploads/etablissements/50c0b9a433c8e.jpeg
         Vignette: uploads/etablissements/50c07d136d49a.jpeg
-        Published: false
         Active: true
     149:
         Code: 239
@@ -4013,14 +3865,13 @@
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 145
         CategorieId: 3
-        GeoCoordinateX: '43.269435'
-        GeoCoordinateY: '3.225202'
+        GeoCoordinateX: '43.229015'
+        GeoCoordinateY: '3.245628'
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07d1fc73c6.jpeg
-        Published: false
         Active: true
     150:
         Code: 24
@@ -4040,14 +3891,13 @@
         ClosingDate: '2013-09-21 00:00:00'
         VilleId: 29
         CategorieId: 2
-        GeoCoordinateX: '42.258522'
-        GeoCoordinateY: '3.069671'
+        GeoCoordinateX: '42.2553319'
+        GeoCoordinateY: '3.136843443'
         VideoPath: null
         Image360Path: null
         Capacite: '305'
         PlanPath: uploads/etablissements/50c0b9c03cd17.jpeg
         Vignette: uploads/etablissements/50c07d30289f7.jpeg
-        Published: false
         Active: true
     151:
         Code: 240
@@ -4067,14 +3917,13 @@
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 8
         CategorieId: 3
-        GeoCoordinateX: '43.282801'
-        GeoCoordinateY: '3.279651'
+        GeoCoordinateX: '43.269862'
+        GeoCoordinateY: '3.332928'
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07d430c3b5.jpeg
-        Published: false
         Active: true
     152:
         Code: 241
@@ -4101,7 +3950,6 @@
         Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07d4cbff5e.jpeg
-        Published: false
         Active: true
     153:
         Code: 242
@@ -4121,14 +3969,13 @@
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 137
         CategorieId: 3
-        GeoCoordinateX: '43.5820099'
-        GeoCoordinateY: '6.2754519'
+        GeoCoordinateX: '43.55726869999999'
+        GeoCoordinateY: '6.286714599999982'
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07d58a0174.jpeg
-        Published: false
         Active: true
     154:
         Code: 243
@@ -4148,14 +3995,13 @@
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 136
         CategorieId: 1
-        GeoCoordinateX: '47.72227'
-        GeoCoordinateY: '-0.6164809'
+        GeoCoordinateX: '46.675999'
+        GeoCoordinateY: '5.787104999999997'
         VideoPath: null
         Image360Path: null
         Capacite: null
         PlanPath: null
         Vignette: uploads/etablissements/50c07d67ba280.jpeg
-        Published: false
         Active: true
     155:
         Code: 244
@@ -4175,14 +4021,13 @@
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 163
         CategorieId: 2
-        GeoCoordinateX: '44.111198'
-        GeoCoordinateY: '6.013711'
+        GeoCoordinateX: '44.106111'
+        GeoCoordinateY: '6.015556'
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07d71e10ea.jpeg
-        Published: false
         Active: true
     156:
         Code: 245
@@ -4202,14 +4047,13 @@
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '48.454366'
-        GeoCoordinateY: '-2.047327'
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     157:
         Code: 246
@@ -4229,14 +4073,13 @@
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 164
         CategorieId: 2
-        GeoCoordinateX: '44.7462084'
-        GeoCoordinateY: '12.2454011'
+        GeoCoordinateX: '44.7343437'
+        GeoCoordinateY: '12.231634299999996'
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07d7f143a9.jpeg
-        Published: false
         Active: true
     158:
         Code: 247
@@ -4263,7 +4106,6 @@
         Capacite: null
         PlanPath: null
         Vignette: null
-        Published: null
         Active: true
     159:
         Code: 248
@@ -4290,7 +4132,6 @@
         Capacite: null
         PlanPath: null
         Vignette: null
-        Published: null
         Active: true
     160:
         Code: 249
@@ -4317,7 +4158,6 @@
         Capacite: null
         PlanPath: null
         Vignette: null
-        Published: null
         Active: true
     161:
         Code: 25
@@ -4337,14 +4177,13 @@
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 25
         CategorieId: 2
-        GeoCoordinateX: '42.058995'
-        GeoCoordinateY: '3.203325'
+        GeoCoordinateX: '42.0521756'
+        GeoCoordinateY: '3.19160074'
         VideoPath: null
         Image360Path: null
         Capacite: '1260'
         PlanPath: uploads/etablissements/50c0ba15cdcd3.jpeg
         Vignette: uploads/etablissements/50c07dcd1d7f7.jpeg
-        Published: false
         Active: true
     162:
         Code: 250
@@ -4371,7 +4210,6 @@
         Capacite: null
         PlanPath: null
         Vignette: null
-        Published: null
         Active: true
     163:
         Code: 251
@@ -4398,7 +4236,6 @@
         Capacite: null
         PlanPath: null
         Vignette: null
-        Published: null
         Active: true
     164:
         Code: 252
@@ -4425,7 +4262,6 @@
         Capacite: null
         PlanPath: null
         Vignette: null
-        Published: null
         Active: true
     165:
         Code: 26
@@ -4445,14 +4281,13 @@
         ClosingDate: '2013-09-07 00:00:00'
         VilleId: 62
         CategorieId: 1
-        GeoCoordinateX: '44.235174'
-        GeoCoordinateY: '2.752384'
+        GeoCoordinateX: '44.21435585'
+        GeoCoordinateY: '2.766510844'
         VideoPath: null
         Image360Path: null
         Capacite: '108'
         PlanPath: uploads/etablissements/50c0ba2902f1d.jpeg
         Vignette: uploads/etablissements/50c07e1daf8ee.jpeg
-        Published: false
         Active: true
     166:
         Code: 27
@@ -4472,14 +4307,13 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 5
         CategorieId: 2
-        GeoCoordinateX: '43.312489'
-        GeoCoordinateY: '3.418564'
+        GeoCoordinateX: '43.28224717'
+        GeoCoordinateY: '3.371078074'
         VideoPath: null
         Image360Path: null
         Capacite: '176'
         PlanPath: uploads/etablissements/50c0ba33c4365.jpeg
         Vignette: uploads/etablissements/50c07e2b73189.jpeg
-        Published: false
         Active: true
     167:
         Code: 28
@@ -4499,14 +4333,13 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 65
         CategorieId: 2
-        GeoCoordinateX: '46.6057'
-        GeoCoordinateY: '-1.82988'
+        GeoCoordinateX: '46.60419665'
+        GeoCoordinateY: '-1.832286716'
         VideoPath: null
         Image360Path: null
         Capacite: '330'
         PlanPath: uploads/etablissements/50c1b315e9e13.jpeg
         Vignette: uploads/etablissements/50c07e37365d9.jpeg
-        Published: false
         Active: true
     168:
         Code: 29
@@ -4526,14 +4359,13 @@
         ClosingDate: '2013-09-14 00:00:00'
         VilleId: 96
         CategorieId: 2
-        GeoCoordinateX: '45.981425'
-        GeoCoordinateY: '-1.041028'
+        GeoCoordinateX: '45.99008181'
+        GeoCoordinateY: '-1.051871181'
         VideoPath: null
         Image360Path: null
         Capacite: '297'
         PlanPath: uploads/etablissements/50c0ba4b261a1.jpeg
         Vignette: uploads/etablissements/50c07e438ad4e.jpeg
-        Published: false
         Active: true
     169:
         Code: 3
@@ -4553,14 +4385,13 @@
         ClosingDate: '2013-09-21 00:00:00'
         VilleId: 140
         CategorieId: 1
-        GeoCoordinateX: '42.61783'
-        GeoCoordinateY: '3.004182'
+        GeoCoordinateX: '42.59948962'
+        GeoCoordinateY: '3.037636578'
         VideoPath: null
         Image360Path: null
         Capacite: '649'
         PlanPath: uploads/etablissements/50c1b32d9b399.jpeg
         Vignette: uploads/etablissements/50c07e4f778ac.jpeg
-        Published: false
         Active: true
     170:
         Code: 30
@@ -4580,14 +4411,13 @@
         ClosingDate: '2013-09-06 00:00:00'
         VilleId: 142
         CategorieId: 1
-        GeoCoordinateX: '48.632091'
-        GeoCoordinateY: '-2.259804'
+        GeoCoordinateX: '48.58438992'
+        GeoCoordinateY: '-2.257309556'
         VideoPath: null
         Image360Path: null
         Capacite: '273'
         PlanPath: null
         Vignette: uploads/etablissements/50c07e6045eb5.jpeg
-        Published: false
         Active: true
     171:
         Code: 31
@@ -4607,14 +4437,13 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 61
         CategorieId: 2
-        GeoCoordinateX: '47.115491'
-        GeoCoordinateY: '-2.104444'
+        GeoCoordinateX: '47.11890222'
+        GeoCoordinateY: '-2.072934508'
         VideoPath: null
         Image360Path: null
         Capacite: '305'
         PlanPath: uploads/etablissements/50c1b35bdab38.jpeg
         Vignette: uploads/etablissements/50c07e6f495fa.jpeg
-        Published: false
         Active: true
     172:
         Code: 32
@@ -4634,14 +4463,13 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: 49
         CategorieId: 3
-        GeoCoordinateX: '44.855269'
-        GeoCoordinateY: '1.333955'
+        GeoCoordinateX: '44.86323045'
+        GeoCoordinateY: '1.297008991'
         VideoPath: null
         Image360Path: null
         Capacite: '143'
         PlanPath: uploads/etablissements/50c1b42c2e166.jpeg
         Vignette: uploads/etablissements/50c07e7dc139a.jpeg
-        Published: false
         Active: true
     173:
         Code: 33
@@ -4661,14 +4489,13 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 92
         CategorieId: 2
-        GeoCoordinateX: '43.95512'
-        GeoCoordinateY: '-1.305229'
+        GeoCoordinateX: '43.90345841'
+        GeoCoordinateY: '-1.310065985'
         VideoPath: null
         Image360Path: null
         Capacite: '812'
         PlanPath: uploads/etablissements/50c1b44790613.jpeg
         Vignette: uploads/etablissements/50c07e8f9feca.jpeg
-        Published: false
         Active: true
     174:
         Code: 34
@@ -4688,14 +4515,13 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 53
         CategorieId: 2
-        GeoCoordinateX: '47.482133'
-        GeoCoordinateY: '-3.121053'
+        GeoCoordinateX: '47.47675288'
+        GeoCoordinateY: '-3.092372417'
         VideoPath: null
         Image360Path: null
         Capacite: '250'
         PlanPath: uploads/etablissements/50c1b46436408.jpeg
         Vignette: uploads/etablissements/50c07e9d9e32e.jpeg
-        Published: false
         Active: true
     175:
         Code: 35
@@ -4715,14 +4541,13 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 1
         CategorieId: 3
-        GeoCoordinateX: '42.546214'
-        GeoCoordinateY: '3.022911'
+        GeoCoordinateX: '42.532127'
+        GeoCoordinateY: '3.05197'
         VideoPath: null
         Image360Path: null
         Capacite: '145'
         PlanPath: uploads/etablissements/50c1b822cce73.jpeg
         Vignette: uploads/etablissements/50c07eaaa87b2.jpeg
-        Published: false
         Active: true
     176:
         Code: 36
@@ -4742,14 +4567,13 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 88
         CategorieId: 1
-        GeoCoordinateX: '45.186089'
-        GeoCoordinateY: '-1.057202'
+        GeoCoordinateX: '45.22291902'
+        GeoCoordinateY: '-1.164722443'
         VideoPath: null
         Image360Path: null
         Capacite: '870'
         PlanPath: uploads/etablissements/50c1b83f38bc8.jpeg
         Vignette: uploads/etablissements/50c07eb8a72f6.jpeg
-        Published: false
         Active: true
     177:
         Code: 37
@@ -4769,14 +4593,13 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 22
         CategorieId: 3
-        GeoCoordinateX: '45.333533'
-        GeoCoordinateY: '7.101924'
+        GeoCoordinateX: '43.66136775'
+        GeoCoordinateY: '4.473999739'
         VideoPath: null
         Image360Path: null
         Capacite: '170'
         PlanPath: uploads/etablissements/50c0baa702174.jpeg
         Vignette: uploads/etablissements/50c07ecc6c0b3.jpeg
-        Published: false
         Active: true
     178:
         Code: 38
@@ -4796,14 +4619,13 @@
         ClosingDate: '2013-09-14 00:00:00'
         VilleId: 43
         CategorieId: 5
-        GeoCoordinateX: '41.591369'
-        GeoCoordinateY: '9.278311'
+        GeoCoordinateX: '41.64617179'
+        GeoCoordinateY: '9.293650389'
         VideoPath: null
         Image360Path: null
         Capacite: '115'
         PlanPath: uploads/etablissements/50c1b883b4f12.jpeg
         Vignette: uploads/etablissements/50c07edb7b8ec.jpeg
-        Published: false
         Active: true
     179:
         Code: 39
@@ -4823,14 +4645,13 @@
         ClosingDate: '2012-09-09 00:00:00'
         VilleId: 64
         CategorieId: 3
-        GeoCoordinateX: '46.697777'
-        GeoCoordinateY: '-1.944529'
+        GeoCoordinateX: '46.6761495'
+        GeoCoordinateY: '-1.913208961'
         VideoPath: null
         Image360Path: null
         Capacite: '280'
         PlanPath: uploads/etablissements/50c1b899991c1.jpeg
         Vignette: uploads/etablissements/50c07eeacdc9f.jpeg
-        Published: false
         Active: true
     180:
         Code: 4
@@ -4850,14 +4671,13 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: 5
         CategorieId: 3
-        GeoCoordinateX: '43.312489'
-        GeoCoordinateY: '3.418564'
+        GeoCoordinateX: '43.284102'
+        GeoCoordinateY: '3.381122'
         VideoPath: null
         Image360Path: null
         Capacite: '364'
         PlanPath: uploads/etablissements/50c1b8af9f072.jpeg
         Vignette: uploads/etablissements/50c07ef93ebc1.jpeg
-        Published: false
         Active: true
     181:
         Code: 40
@@ -4877,14 +4697,13 @@
         ClosingDate: '2012-09-02 00:00:00'
         VilleId: 51
         CategorieId: 2
-        GeoCoordinateX: '47.819167'
-        GeoCoordinateY: '-3.79258'
+        GeoCoordinateX: '47.7986345'
+        GeoCoordinateY: '-3.791956902'
         VideoPath: null
         Image360Path: null
         Capacite: '293'
         PlanPath: uploads/etablissements/50c1b8c98cf46.jpeg
         Vignette: uploads/etablissements/50c07f05362d9.jpeg
-        Published: false
         Active: true
     182:
         Code: 41
@@ -4904,14 +4723,13 @@
         ClosingDate: '2012-09-23 00:00:00'
         VilleId: 86
         CategorieId: 2
-        GeoCoordinateX: '46.069676'
-        GeoCoordinateY: '-1.088543'
+        GeoCoordinateX: '46.08444237'
+        GeoCoordinateY: '-1.093429327'
         VideoPath: null
         Image360Path: null
         Capacite: '265'
         PlanPath: uploads/etablissements/50c1b8e15b766.jpeg
         Vignette: uploads/etablissements/50c07f12115df.jpeg
-        Published: false
         Active: true
     183:
         Code: 42
@@ -4931,14 +4749,13 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 57
         CategorieId: 2
-        GeoCoordinateX: '47.482123'
-        GeoCoordinateY: '-2.475881'
+        GeoCoordinateX: '47.47158955'
+        GeoCoordinateY: '-2.467031479'
         VideoPath: null
         Image360Path: null
         Capacite: '500'
         PlanPath: uploads/etablissements/50c0bb68d5bdd.jpeg
         Vignette: uploads/etablissements/50c07f2104699.jpeg
-        Published: false
         Active: true
     184:
         Code: 43
@@ -4965,7 +4782,6 @@
         Capacite: '170'
         PlanPath: uploads/etablissements/50c1baff25886.jpeg
         Vignette: uploads/etablissements/50c07f2dde9d1.jpeg
-        Published: false
         Active: true
     185:
         Code: 44
@@ -4992,7 +4808,6 @@
         Capacite: '300'
         PlanPath: uploads/etablissements/50c0bb04e5920.jpeg
         Vignette: uploads/etablissements/50c07f3bbd0f2.jpeg
-        Published: false
         Active: true
     186:
         Code: 45
@@ -5012,14 +4827,13 @@
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 139
         CategorieId: 2
-        GeoCoordinateX: '47.584693'
-        GeoCoordinateY: '-3.077786'
+        GeoCoordinateX: '47.59528254'
+        GeoCoordinateY: '-3.066279888'
         VideoPath: null
         Image360Path: null
         Capacite: '123'
         PlanPath: uploads/etablissements/50c0bb114fd98.jpeg
         Vignette: uploads/etablissements/50c07f47a18f3.jpeg
-        Published: false
         Active: true
     187:
         Code: 46
@@ -5039,14 +4853,13 @@
         ClosingDate: '2013-09-08 00:00:00'
         VilleId: 90
         CategorieId: 1
-        GeoCoordinateX: '44.395943'
-        GeoCoordinateY: '-1.166917'
+        GeoCoordinateX: '44.46066389'
+        GeoCoordinateY: '-1.130706668'
         VideoPath: null
         Image360Path: null
         Capacite: '800'
         PlanPath: null
         Vignette: uploads/etablissements/50c07f5af3540.jpeg
-        Published: false
         Active: true
     188:
         Code: 47
@@ -5066,14 +4879,13 @@
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 60
         CategorieId: 2
-        GeoCoordinateX: '47.328003'
-        GeoCoordinateY: '-2.4297589'
+        GeoCoordinateX: '47.33350768'
+        GeoCoordinateY: '-2.390749454'
         VideoPath: null
         Image360Path: null
         Capacite: '600'
         PlanPath: uploads/etablissements/50c0bb2da1f28.jpeg
         Vignette: uploads/etablissements/50c07f685eb16.jpeg
-        Published: false
         Active: true
     189:
         Code: 48
@@ -5093,14 +4905,13 @@
         ClosingDate: '2013-10-12 00:00:00'
         VilleId: 14
         CategorieId: 2
-        GeoCoordinateX: '43.274308'
-        GeoCoordinateY: '6.521865'
+        GeoCoordinateX: '43.28539469'
+        GeoCoordinateY: '6.57928437'
         VideoPath: null
         Image360Path: null
         Capacite: '470'
         PlanPath: uploads/etablissements/50c0bb3be691e.jpeg
         Vignette: uploads/etablissements/50c07f79a5def.jpeg
-        Published: false
         Active: true
     190:
         Code: 49
@@ -5120,14 +4931,13 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 68
         CategorieId: 2
-        GeoCoordinateX: '44.551115'
-        GeoCoordinateY: '4.413293'
+        GeoCoordinateX: '44.53427499'
+        GeoCoordinateY: '4.406890869'
         VideoPath: null
         Image360Path: null
         Capacite: '170'
         PlanPath: uploads/etablissements/50c0bb50766e0.jpeg
         Vignette: uploads/etablissements/50c07f87dae28.jpeg
-        Published: false
         Active: true
     191:
         Code: 5
@@ -5147,14 +4957,13 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 149
         CategorieId: 3
-        GeoCoordinateX: '45.885588'
-        GeoCoordinateY: '-1.19505'
+        GeoCoordinateX: '45.8828959'
+        GeoCoordinateY: '-1.2042464'
         VideoPath: null
         Image360Path: null
         Capacite: '133'
         PlanPath: uploads/etablissements/50c0bb79e91d1.jpeg
         Vignette: uploads/etablissements/50c07f9494938.jpeg
-        Published: false
         Active: true
     192:
         Code: 50
@@ -5174,14 +4983,13 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 12
         CategorieId: 2
-        GeoCoordinateX: '43.8462419'
-        GeoCoordinateY: '6.5137'
+        GeoCoordinateX: '43.83920493'
+        GeoCoordinateY: '6.493869424'
         VideoPath: null
         Image360Path: null
         Capacite: '500'
         PlanPath: uploads/etablissements/50c0bb8a5a3e1.jpeg
         Vignette: uploads/etablissements/50c07fa7aba44.jpeg
-        Published: false
         Active: true
     193:
         Code: 51
@@ -5201,14 +5009,13 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: 7
         CategorieId: 3
-        GeoCoordinateX: '42.75444'
-        GeoCoordinateY: '2.993641'
+        GeoCoordinateX: '42.76536313'
+        GeoCoordinateY: '3.031582832'
         VideoPath: null
         Image360Path: null
         Capacite: '615'
         PlanPath: uploads/etablissements/50c1bb2842e06.jpeg
         Vignette: uploads/etablissements/50c07fb512fb5.jpeg
-        Published: false
         Active: true
     194:
         Code: 52
@@ -5228,14 +5035,13 @@
         ClosingDate: '2013-08-31 00:00:00'
         VilleId: 20
         CategorieId: 2
-        GeoCoordinateX: '43.567296'
-        GeoCoordinateY: '3.896473'
+        GeoCoordinateX: '43.54960955'
+        GeoCoordinateY: '3.894379735'
         VideoPath: null
         Image360Path: null
         Capacite: '302'
         PlanPath: uploads/etablissements/50c0bba15c7c2.jpeg
         Vignette: uploads/etablissements/50c07fc17bf54.jpeg
-        Published: false
         Active: true
     195:
         Code: 53
@@ -5255,14 +5061,13 @@
         ClosingDate: '2012-09-09 00:00:00'
         VilleId: 89
         CategorieId: 3
-        GeoCoordinateX: '44.795454'
-        GeoCoordinateY: '-1.147783'
+        GeoCoordinateX: '44.75173929'
+        GeoCoordinateY: '-1.187531948'
         VideoPath: null
         Image360Path: null
         Capacite: '800'
         PlanPath: uploads/etablissements/50c1bb53eb9c8.jpeg
         Vignette: uploads/etablissements/50c07fcd601a0.jpeg
-        Published: false
         Active: true
     196:
         Code: 54
@@ -5289,7 +5094,6 @@
         Capacite: '560'
         PlanPath: uploads/etablissements/50c0bbb85b742.jpeg
         Vignette: uploads/etablissements/50c07fdaccdbe.jpeg
-        Published: false
         Active: true
     197:
         Code: 55
@@ -5309,14 +5113,13 @@
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 66
         CategorieId: 2
-        GeoCoordinateX: '49.320257'
-        GeoCoordinateY: '-1.102929'
+        GeoCoordinateX: '49.31883866'
+        GeoCoordinateY: '-1.108932495'
         VideoPath: null
         Image360Path: null
         Capacite: '240'
         PlanPath: uploads/etablissements/50c1bb73e22f8.jpeg
         Vignette: uploads/etablissements/50c07fe6b006b.jpeg
-        Published: false
         Active: true
     198:
         Code: 56
@@ -5336,14 +5139,13 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 24
         CategorieId: 1
-        GeoCoordinateX: '43.724391'
-        GeoCoordinateY: '6.069215'
+        GeoCoordinateX: '43.73420486'
+        GeoCoordinateY: '6.077772975'
         VideoPath: null
         Image360Path: null
         Capacite: '219'
         PlanPath: uploads/etablissements/50c1bb8a7f4a5.jpeg
         Vignette: uploads/etablissements/50c07ff28b033.jpeg
-        Published: false
         Active: true
     199:
         Code: 57
@@ -5363,14 +5165,13 @@
         ClosingDate: '2012-09-15 00:00:00'
         VilleId: 16
         CategorieId: 3
-        GeoCoordinateX: '42.706091'
-        GeoCoordinateY: '3.009898'
+        GeoCoordinateX: '42.68903253'
+        GeoCoordinateY: '2.998972535'
         VideoPath: null
         Image360Path: null
         Capacite: '160'
         PlanPath: uploads/etablissements/50c1bba72f8e8.jpeg
         Vignette: uploads/etablissements/50c07ffe41534.jpeg
-        Published: false
         Active: true
     200:
         Code: 58
@@ -5390,14 +5191,13 @@
         ClosingDate: '2012-09-22 00:00:00'
         VilleId: 15
         CategorieId: 4
-        GeoCoordinateX: '43.580418'
-        GeoCoordinateY: '7.125102'
+        GeoCoordinateX: '43.61142443'
+        GeoCoordinateY: '7.123936415'
         VideoPath: null
         Image360Path: null
         Capacite: '110'
         PlanPath: uploads/etablissements/50c1bbbe08830.jpeg
         Vignette: uploads/etablissements/50c0800b0c8c9.jpeg
-        Published: false
         Active: true
     201:
         Code: 59
@@ -5417,14 +5217,13 @@
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 1
         CategorieId: 2
-        GeoCoordinateX: '42.546214'
-        GeoCoordinateY: '3.022911'
+        GeoCoordinateX: '42.546969'
+        GeoCoordinateY: '3.04659'
         VideoPath: null
         Image360Path: null
         Capacite: '588'
         PlanPath: uploads/etablissements/50c0bc05855fe.jpeg
         Vignette: uploads/etablissements/50c0803cdc7df.jpeg
-        Published: false
         Active: true
     202:
         Code: 6
@@ -5444,14 +5243,13 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 78
         CategorieId: 2
-        GeoCoordinateX: '44.452912'
-        GeoCoordinateY: '4.341765'
+        GeoCoordinateX: '44.449111'
+        GeoCoordinateY: '4.3525926'
         VideoPath: null
         Image360Path: null
         Capacite: '402'
         PlanPath: uploads/etablissements/50c0bc0e256e7.jpeg
         Vignette: uploads/etablissements/50c0804b0108a.jpeg
-        Published: false
         Active: true
     203:
         Code: 60
@@ -5471,14 +5269,13 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 78
         CategorieId: 3
-        GeoCoordinateX: '44.452912'
-        GeoCoordinateY: '4.341765'
+        GeoCoordinateX: '44.42471997'
+        GeoCoordinateY: '4.331874847'
         VideoPath: null
         Image360Path: null
         Capacite: '296'
         PlanPath: uploads/etablissements/50c0bc240f18a.jpeg
         Vignette: uploads/etablissements/50c08054a6bdd.jpeg
-        Published: false
         Active: true
     204:
         Code: 61
@@ -5498,14 +5295,13 @@
         ClosingDate: '2013-09-14 00:00:00'
         VilleId: 74
         CategorieId: 2
-        GeoCoordinateX: '47.667176'
-        GeoCoordinateY: '1.460599'
+        GeoCoordinateX: '47.68714583'
+        GeoCoordinateY: '1.483572721'
         VideoPath: null
         Image360Path: null
         Capacite: '280'
         PlanPath: uploads/etablissements/50c1bbe2c6a4e.jpeg
         Vignette: uploads/etablissements/50c0805f736fc.jpeg
-        Published: false
         Active: true
     205:
         Code: 63
@@ -5525,14 +5321,13 @@
         ClosingDate: '2012-09-09 00:00:00'
         VilleId: 84
         CategorieId: 2
-        GeoCoordinateX: '46.033306'
-        GeoCoordinateY: '-1.379923'
+        GeoCoordinateX: '46.01528621'
+        GeoCoordinateY: '-1.39242053'
         VideoPath: null
         Image360Path: null
         Capacite: '205'
         PlanPath: uploads/etablissements/50c1bc001ca4f.jpeg
         Vignette: uploads/etablissements/50c0806a2ba52.jpeg
-        Published: false
         Active: true
     206:
         Code: 64
@@ -5552,14 +5347,13 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: 80
         CategorieId: 3
-        GeoCoordinateX: '45.781593'
-        GeoCoordinateY: '6.203303'
+        GeoCoordinateX: '45.795155'
+        GeoCoordinateY: '6.205735803'
         VideoPath: null
         Image360Path: null
         Capacite: '300'
         PlanPath: uploads/etablissements/50c1bc155d1bb.jpeg
         Vignette: uploads/etablissements/50c08073e5b11.jpeg
-        Published: false
         Active: true
     207:
         Code: 65
@@ -5579,14 +5373,13 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: 94
         CategorieId: 2
-        GeoCoordinateX: '46.223107'
-        GeoCoordinateY: '-1.439882'
+        GeoCoordinateX: '46.22760164'
+        GeoCoordinateY: '-1.426178813'
         VideoPath: null
         Image360Path: null
         Capacite: '240'
         PlanPath: uploads/etablissements/50c1bc2b3d51f.jpeg
         Vignette: uploads/etablissements/50c0807d2e9eb.jpeg
-        Published: false
         Active: true
     208:
         Code: 66
@@ -5606,14 +5399,13 @@
         ClosingDate: '2012-09-15 00:00:00'
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: '43.439236'
-        GeoCoordinateY: '-1.590062'
+        GeoCoordinateX: '43.45307856'
+        GeoCoordinateY: '-1.573544741'
         VideoPath: null
         Image360Path: null
         Capacite: '374'
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     209:
         Code: 67
@@ -5633,14 +5425,13 @@
         ClosingDate: '2013-09-30 00:00:00'
         VilleId: 27
         CategorieId: 3
-        GeoCoordinateX: '44.372609'
-        GeoCoordinateY: '0.239981'
+        GeoCoordinateX: '41.83260316'
+        GeoCoordinateY: '3.084572554'
         VideoPath: null
         Image360Path: null
         Capacite: '712'
         PlanPath: uploads/etablissements/50c0bc72972ce.jpeg
         Vignette: uploads/etablissements/50c080930c53a.jpeg
-        Published: false
         Active: true
     210:
         Code: 68
@@ -5660,14 +5451,13 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 30
         CategorieId: 3
-        GeoCoordinateX: '41.8505066'
-        GeoCoordinateY: '3.1298161'
+        GeoCoordinateX: '41.857027'
+        GeoCoordinateY: '3.137991'
         VideoPath: null
         Image360Path: null
         Capacite: '453'
         PlanPath: uploads/etablissements/50c0bc7f3126f.jpeg
         Vignette: uploads/etablissements/50c0809db4f40.jpeg
-        Published: false
         Active: true
     211:
         Code: 69
@@ -5687,14 +5477,13 @@
         ClosingDate: '2013-09-14 00:00:00'
         VilleId: 72
         CategorieId: 2
-        GeoCoordinateX: '46.344059'
-        GeoCoordinateY: '-1.4387859'
+        GeoCoordinateX: '46.34851988'
+        GeoCoordinateY: '-1.387576461'
         VideoPath: null
         Image360Path: null
         Capacite: '350'
         PlanPath: uploads/etablissements/50c1bc40d03ea.jpeg
         Vignette: uploads/etablissements/50c080a7ab7ee.jpeg
-        Published: false
         Active: true
     212:
         Code: 7
@@ -5714,14 +5503,13 @@
         ClosingDate: '2012-09-09 00:00:00'
         VilleId: null
         CategorieId: 2
-        GeoCoordinateX: '43.721683'
-        GeoCoordinateY: '4.173218'
+        GeoCoordinateX: '43.71691503'
+        GeoCoordinateY: '4.167069197'
         VideoPath: null
         Image360Path: null
         Capacite: '150'
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     213:
         Code: 70
@@ -5741,14 +5529,13 @@
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 67
         CategorieId: 3
-        GeoCoordinateX: '44.6953419'
-        GeoCoordinateY: '5.485029'
+        GeoCoordinateX: '44.68386545'
+        GeoCoordinateY: '5.450313091'
         VideoPath: null
         Image360Path: null
         Capacite: '130'
         PlanPath: uploads/etablissements/50c0bc92d3b62.jpeg
         Vignette: uploads/etablissements/50c080b41c317.jpeg
-        Published: false
         Active: true
     214:
         Code: 71
@@ -5768,14 +5555,13 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 46
         CategorieId: 3
-        GeoCoordinateX: '45.123826'
-        GeoCoordinateY: '1.723226'
+        GeoCoordinateX: '45.13193732'
+        GeoCoordinateY: '1.762683392'
         VideoPath: null
         Image360Path: null
         Capacite: '180'
         PlanPath: uploads/etablissements/50c0bcae3dd81.jpeg
         Vignette: uploads/etablissements/50c080c38220e.jpeg
-        Published: false
         Active: true
     215:
         Code: 72
@@ -5795,14 +5581,13 @@
         ClosingDate: '2013-09-08 00:00:00'
         VilleId: 76
         CategorieId: 3
-        GeoCoordinateX: '43.68218'
-        GeoCoordinateY: '0.993749'
+        GeoCoordinateX: '43.68601738'
+        GeoCoordinateY: '1.00292623'
         VideoPath: null
         Image360Path: null
         Capacite: '129'
         PlanPath: uploads/etablissements/50c0bcb99f0ec.jpeg
         Vignette: uploads/etablissements/50c080cdc4833.jpeg
-        Published: false
         Active: true
     216:
         Code: 73
@@ -5822,14 +5607,13 @@
         ClosingDate: '2012-09-09 00:00:00'
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '39.5995271'
-        GeoCoordinateY: '-9.069362'
+        GeoCoordinateX: '39.69684787'
+        GeoCoordinateY: '-8.97567451'
         VideoPath: null
         Image360Path: null
         Capacite: '92'
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     217:
         Code: 74
@@ -5849,14 +5633,13 @@
         ClosingDate: '2012-09-09 00:00:00'
         VilleId: 99
         CategorieId: 2
-        GeoCoordinateX: '44.483615'
-        GeoCoordinateY: '-1.075989'
+        GeoCoordinateX: '44.4990307'
+        GeoCoordinateY: '-1.079460382'
         VideoPath: null
         Image360Path: null
         Capacite: '576'
         PlanPath: uploads/etablissements/50c0bcc732a1f.jpeg
         Vignette: uploads/etablissements/50c080da39517.jpeg
-        Published: false
         Active: true
     218:
         Code: 75
@@ -5876,14 +5659,13 @@
         ClosingDate: '2012-09-30 00:00:00'
         VilleId: 102
         CategorieId: 1
-        GeoCoordinateX: '43.81466'
-        GeoCoordinateY: '-1.37825'
+        GeoCoordinateX: '43.79725104'
+        GeoCoordinateY: '-1.381938457'
         VideoPath: null
         Image360Path: null
         Capacite: '430'
         PlanPath: uploads/etablissements/50c0bcd6dba4b.jpeg
         Vignette: uploads/etablissements/50c080e516e16.jpeg
-        Published: false
         Active: true
     219:
         Code: 76
@@ -5903,14 +5685,13 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 77
         CategorieId: 2
-        GeoCoordinateX: '46.536402'
-        GeoCoordinateY: '-1.772826'
+        GeoCoordinateX: '46.54614044'
+        GeoCoordinateY: '-1.805588007'
         VideoPath: null
         Image360Path: null
         Capacite: '401'
         PlanPath: uploads/etablissements/50c1bc5d4785c.jpeg
         Vignette: uploads/etablissements/50c080f064c82.jpeg
-        Published: false
         Active: true
     220:
         Code: 77
@@ -5930,14 +5711,13 @@
         ClosingDate: '2012-09-09 00:00:00'
         VilleId: 79
         CategorieId: 1
-        GeoCoordinateX: '46.466102'
-        GeoCoordinateY: '-1.618261'
+        GeoCoordinateX: '46.46559831'
+        GeoCoordinateY: '-1.652584076'
         VideoPath: null
         Image360Path: null
         Capacite: '226'
         PlanPath: uploads/etablissements/50c0bcf14fd5d.jpeg
         Vignette: uploads/etablissements/50c080fc5f050.jpeg
-        Published: false
         Active: true
     221:
         Code: 78
@@ -5957,14 +5737,13 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: null
         CategorieId: null
-        GeoCoordinateX: '42.720254'
-        GeoCoordinateY: '1.837545'
+        GeoCoordinateX: '42.72870307'
+        GeoCoordinateY: '1.825538278'
         VideoPath: null
         Image360Path: null
         Capacite: '285'
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     222:
         Code: 79
@@ -5984,14 +5763,13 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: 38
         CategorieId: 2
-        GeoCoordinateX: '44.6444061'
-        GeoCoordinateY: '12.2463657'
+        GeoCoordinateX: '44.65568393'
+        GeoCoordinateY: '12.24521756'
         VideoPath: null
         Image360Path: null
         Capacite: '1326'
         PlanPath: uploads/etablissements/50c0bd08e5a04.jpeg
         Vignette: uploads/etablissements/50c08107bd9f4.jpeg
-        Published: false
         Active: true
     223:
         Code: 8
@@ -6011,14 +5789,13 @@
         ClosingDate: '2012-09-23 00:00:00'
         VilleId: 97
         CategorieId: 3
-        GeoCoordinateX: '45.515125'
-        GeoCoordinateY: '-1.123258'
+        GeoCoordinateX: '45.4856205'
+        GeoCoordinateY: '-1.1477709'
         VideoPath: null
         Image360Path: null
         Capacite: '526'
         PlanPath: uploads/etablissements/50c0bd189da71.jpeg
         Vignette: uploads/etablissements/50c0811744e94.jpeg
-        Published: false
         Active: true
     224:
         Code: 80
@@ -6045,7 +5822,6 @@
         Capacite: '293'
         PlanPath: uploads/etablissements/50c1bc7486858.jpeg
         Vignette: uploads/etablissements/50c0812258939.jpeg
-        Published: false
         Active: true
     225:
         Code: 81
@@ -6072,7 +5848,6 @@
         Capacite: '587'
         PlanPath: uploads/etablissements/50c1bc8db3665.jpeg
         Vignette: uploads/etablissements/50c0812e76f6f.jpeg
-        Published: false
         Active: true
     226:
         Code: 82
@@ -6092,14 +5867,13 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: 45
         CategorieId: null
-        GeoCoordinateX: '42.7151275'
-        GeoCoordinateY: '10.9848064'
+        GeoCoordinateX: '42.74528669'
+        GeoCoordinateY: '10.94759166'
         VideoPath: null
         Image360Path: null
         Capacite: '600'
         PlanPath: null
         Vignette: uploads/etablissements/50c08139ec548.jpeg
-        Published: false
         Active: true
     227:
         Code: 83
@@ -6119,14 +5893,13 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 8
         CategorieId: 3
-        GeoCoordinateX: '43.282801'
-        GeoCoordinateY: '3.279651'
+        GeoCoordinateX: '43.27113581'
+        GeoCoordinateY: '3.329329491'
         VideoPath: null
         Image360Path: null
         Capacite: '206'
         PlanPath: null
         Vignette: uploads/etablissements/50c08145cad60.jpeg
-        Published: false
         Active: true
     228:
         Code: 84
@@ -6146,14 +5919,13 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 73
         CategorieId: 3
-        GeoCoordinateX: '46.586323'
-        GeoCoordinateY: '5.7030839'
+        GeoCoordinateX: '46.58725895'
+        GeoCoordinateY: '5.700777769'
         VideoPath: null
         Image360Path: null
         Capacite: '227'
         PlanPath: uploads/etablissements/50c1bcb21bb13.jpeg
         Vignette: uploads/etablissements/50c08152150d5.jpeg
-        Published: false
         Active: true
     229:
         Code: 85
@@ -6173,14 +5945,13 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 26
         CategorieId: 3
-        GeoCoordinateX: '41.969591'
-        GeoCoordinateY: '3.148022'
+        GeoCoordinateX: '41.993343'
+        GeoCoordinateY: '3.188749'
         VideoPath: null
         Image360Path: null
         Capacite: '260'
         PlanPath: uploads/etablissements/50c0bd69d449b.jpeg
         Vignette: uploads/etablissements/50c0815e99152.jpeg
-        Published: false
         Active: true
     230:
         Code: 86
@@ -6200,14 +5971,13 @@
         ClosingDate: '2012-09-15 00:00:00'
         VilleId: 17
         CategorieId: 3
-        GeoCoordinateX: '42.78773'
-        GeoCoordinateY: '3.036565'
+        GeoCoordinateX: '42.77629471'
+        GeoCoordinateY: '3.02487731'
         VideoPath: null
         Image360Path: null
         Capacite: '496'
         PlanPath: uploads/etablissements/50c0bdb6dea7a.jpeg
         Vignette: uploads/etablissements/50c081696fe36.jpeg
-        Published: false
         Active: true
     231:
         Code: 87
@@ -6227,14 +5997,13 @@
         ClosingDate: '2012-09-09 00:00:00'
         VilleId: 71
         CategorieId: 1
-        GeoCoordinateX: '46.408889'
-        GeoCoordinateY: '-1.576171'
+        GeoCoordinateX: '46.42087836'
+        GeoCoordinateY: '-1.569660902'
         VideoPath: null
         Image360Path: null
         Capacite: '430'
         PlanPath: uploads/etablissements/50c0bdc2c9aa7.jpeg
         Vignette: uploads/etablissements/50c08174ca21c.jpeg
-        Published: false
         Active: true
     232:
         Code: 88
@@ -6254,14 +6023,13 @@
         ClosingDate: '2012-09-23 00:00:00'
         VilleId: 104
         CategorieId: 2
-        GeoCoordinateX: '43.439236'
-        GeoCoordinateY: '-1.590062'
+        GeoCoordinateX: '43.43522086'
+        GeoCoordinateY: '-1.582331657'
         VideoPath: null
         Image360Path: null
         Capacite: '350'
         PlanPath: uploads/etablissements/50c0bda74f880.jpeg
         Vignette: uploads/etablissements/50c081a1e7f51.jpeg
-        Published: false
         Active: true
     233:
         Code: 89
@@ -6281,14 +6049,13 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: 103
         CategorieId: 2
-        GeoCoordinateX: '43.692694'
-        GeoCoordinateY: '-1.384908'
+        GeoCoordinateX: '43.724728'
+        GeoCoordinateY: '-1.421765'
         VideoPath: null
         Image360Path: null
         Capacite: '500'
         PlanPath: uploads/etablissements/50c1bcdfc4ad5.jpeg
         Vignette: uploads/etablissements/50c081ae8728f.jpeg
-        Published: false
         Active: true
     234:
         Code: 9
@@ -6308,14 +6075,13 @@
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 34
         CategorieId: 2
-        GeoCoordinateX: '40.8839435'
-        GeoCoordinateY: '0.7996491'
+        GeoCoordinateX: '40.86483588'
+        GeoCoordinateY: '0.778688192'
         VideoPath: null
         Image360Path: null
         Capacite: '373'
         PlanPath: uploads/etablissements/50c0bdf92068c.jpeg
         Vignette: uploads/etablissements/50c081be7664e.jpeg
-        Published: false
         Active: true
     235:
         Code: 90
@@ -6335,14 +6101,13 @@
         ClosingDate: '2012-09-30 00:00:00'
         VilleId: 23
         CategorieId: 2
-        GeoCoordinateX: '43.2071759'
-        GeoCoordinateY: '6.465117'
+        GeoCoordinateX: '43.190284'
+        GeoCoordinateY: '6.471419'
         VideoPath: null
         Image360Path: null
         Capacite: '400'
         PlanPath: uploads/etablissements/50c0be0861d7c.jpeg
         Vignette: uploads/etablissements/50c081cc81dad.jpeg
-        Published: false
         Active: true
     236:
         Code: 91
@@ -6369,7 +6134,6 @@
         Capacite: '262'
         PlanPath: uploads/etablissements/50c0be161f801.jpeg
         Vignette: uploads/etablissements/50c081d8f233f.jpeg
-        Published: false
         Active: true
     237:
         Code: 92
@@ -6389,14 +6153,13 @@
         ClosingDate: '2013-09-22 00:00:00'
         VilleId: 97
         CategorieId: 2
-        GeoCoordinateX: '45.515125'
-        GeoCoordinateY: '-1.123258'
+        GeoCoordinateX: '45.50097801'
+        GeoCoordinateY: '-1.129317284'
         VideoPath: null
         Image360Path: null
         Capacite: '583'
         PlanPath: uploads/etablissements/50c1bcf4c36f5.jpeg
         Vignette: uploads/etablissements/50c081e4322b0.jpeg
-        Published: false
         Active: true
     238:
         Code: 93
@@ -6416,14 +6179,13 @@
         ClosingDate: '2012-09-30 00:00:00'
         VilleId: 3
         CategorieId: 1
-        GeoCoordinateX: '43.528906'
-        GeoCoordinateY: '3.933493'
+        GeoCoordinateX: '43.51973054'
+        GeoCoordinateY: '3.909483254'
         VideoPath: null
         Image360Path: null
         Capacite: '435'
         PlanPath: uploads/etablissements/50c0be3ab357b.jpeg
         Vignette: uploads/etablissements/50c081f0e48d7.jpeg
-        Published: false
         Active: true
     239:
         Code: 94
@@ -6443,14 +6205,13 @@
         ClosingDate: '2013-09-22 00:00:00'
         VilleId: 40
         CategorieId: 2
-        GeoCoordinateX: '43.567595'
-        GeoCoordinateY: '6.691291'
+        GeoCoordinateX: '43.58432727'
+        GeoCoordinateY: '6.689981818'
         VideoPath: null
         Image360Path: null
         Capacite: '110'
         PlanPath: uploads/etablissements/50c1bd0d38ec7.jpeg
         Vignette: uploads/etablissements/50c081fee708d.jpeg
-        Published: false
         Active: true
     240:
         Code: 95
@@ -6470,14 +6231,13 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: 44
         CategorieId: 2
-        GeoCoordinateX: '43.0772066'
-        GeoCoordinateY: '10.5577407'
+        GeoCoordinateX: '43.02830997'
+        GeoCoordinateY: '10.53853869'
         VideoPath: null
         Image360Path: null
         Capacite: '885'
         PlanPath: uploads/etablissements/50c0be5728b4b.jpeg
         Vignette: uploads/etablissements/50c0820baa3b3.jpeg
-        Published: false
         Active: true
     241:
         Code: 96
@@ -6497,14 +6257,13 @@
         ClosingDate: '2012-09-15 00:00:00'
         VilleId: 78
         CategorieId: 3
-        GeoCoordinateX: '44.452912'
-        GeoCoordinateY: '4.341765'
+        GeoCoordinateX: '44.45909408'
+        GeoCoordinateY: '4.341879487'
         VideoPath: null
         Image360Path: null
         Capacite: '110'
         PlanPath: uploads/etablissements/50c0be636c384.jpeg
         Vignette: uploads/etablissements/50c082194a720.jpeg
-        Published: false
         Active: true
     242:
         Code: 97
@@ -6524,14 +6283,13 @@
         ClosingDate: '2012-09-09 00:00:00'
         VilleId: 59
         CategorieId: 3
-        GeoCoordinateX: '45.001378'
-        GeoCoordinateY: '3.223658'
+        GeoCoordinateX: '44.99907285'
+        GeoCoordinateY: '3.219047785'
         VideoPath: null
         Image360Path: null
         Capacite: '90'
         PlanPath: uploads/etablissements/50c0be70ddf6f.jpeg
         Vignette: uploads/etablissements/50c0822661cf3.jpeg
-        Published: false
         Active: true
     243:
         Code: 98
@@ -6551,14 +6309,13 @@
         ClosingDate: '2012-09-02 00:00:00'
         VilleId: 18
         CategorieId: 3
-        GeoCoordinateX: '43.137479'
-        GeoCoordinateY: '2.700108'
+        GeoCoordinateX: '43.11730606'
+        GeoCoordinateY: '2.73617506'
         VideoPath: null
         Image360Path: null
         Capacite: '110'
         PlanPath: null
         Vignette: uploads/etablissements/50c0823353b89.jpeg
-        Published: false
         Active: true
     244:
         Code: 99
@@ -6578,14 +6335,13 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: 48
         CategorieId: 2
-        GeoCoordinateX: '48.6290369'
-        GeoCoordinateY: '-2.465645'
+        GeoCoordinateX: '48.63805601'
+        GeoCoordinateY: '-2.455675006'
         VideoPath: null
         Image360Path: null
         Capacite: '488'
         PlanPath: uploads/etablissements/50c0be9c8c108.jpeg
         Vignette: uploads/etablissements/50c08242e8322.jpeg
-        Published: false
         Active: true
     245:
         Code: 997
@@ -6612,7 +6368,6 @@
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     246:
         Code: 998
@@ -6639,7 +6394,6 @@
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false
     247:
         Code: 999
@@ -6666,5 +6420,4 @@
         Capacite: ''
         PlanPath: null
         Vignette: null
-        Published: null
         Active: false

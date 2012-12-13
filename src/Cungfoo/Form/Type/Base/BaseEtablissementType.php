@@ -192,12 +192,6 @@ class BaseEtablissementType extends AppAwareType
             'label' => 'etablissement.vignette_deleted',
             'required' => false,
         ));
-        $builder->add('published', 'checkbox', array(
-            'constraints' => array(
-            ),
-            'label' => 'etablissement.published',
-            'required' => false,
-        ));
         $builder->add('active', 'checkbox', array(
             'constraints' => array(
             ),

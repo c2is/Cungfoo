@@ -72,7 +72,6 @@ use Cungfoo\Model\Ville;
  * @method EtablissementQuery orderByCapacite($order = Criteria::ASC) Order by the capacite column
  * @method EtablissementQuery orderByPlanPath($order = Criteria::ASC) Order by the plan_path column
  * @method EtablissementQuery orderByVignette($order = Criteria::ASC) Order by the vignette column
- * @method EtablissementQuery orderByPublished($order = Criteria::ASC) Order by the published column
  * @method EtablissementQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method EtablissementQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  * @method EtablissementQuery orderByActive($order = Criteria::ASC) Order by the active column
@@ -102,7 +101,6 @@ use Cungfoo\Model\Ville;
  * @method EtablissementQuery groupByCapacite() Group by the capacite column
  * @method EtablissementQuery groupByPlanPath() Group by the plan_path column
  * @method EtablissementQuery groupByVignette() Group by the vignette column
- * @method EtablissementQuery groupByPublished() Group by the published column
  * @method EtablissementQuery groupByCreatedAt() Group by the created_at column
  * @method EtablissementQuery groupByUpdatedAt() Group by the updated_at column
  * @method EtablissementQuery groupByActive() Group by the active column
@@ -202,7 +200,6 @@ use Cungfoo\Model\Ville;
  * @method Etablissement findOneByCapacite(string $capacite) Return the first Etablissement filtered by the capacite column
  * @method Etablissement findOneByPlanPath(string $plan_path) Return the first Etablissement filtered by the plan_path column
  * @method Etablissement findOneByVignette(string $vignette) Return the first Etablissement filtered by the vignette column
- * @method Etablissement findOneByPublished(boolean $published) Return the first Etablissement filtered by the published column
  * @method Etablissement findOneByCreatedAt(string $created_at) Return the first Etablissement filtered by the created_at column
  * @method Etablissement findOneByUpdatedAt(string $updated_at) Return the first Etablissement filtered by the updated_at column
  * @method Etablissement findOneByActive(boolean $active) Return the first Etablissement filtered by the active column
@@ -232,7 +229,6 @@ use Cungfoo\Model\Ville;
  * @method array findByCapacite(string $capacite) Return Etablissement objects filtered by the capacite column
  * @method array findByPlanPath(string $plan_path) Return Etablissement objects filtered by the plan_path column
  * @method array findByVignette(string $vignette) Return Etablissement objects filtered by the vignette column
- * @method array findByPublished(boolean $published) Return Etablissement objects filtered by the published column
  * @method array findByCreatedAt(string $created_at) Return Etablissement objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return Etablissement objects filtered by the updated_at column
  * @method array findByActive(boolean $active) Return Etablissement objects filtered by the active column
@@ -339,7 +335,7 @@ abstract class BaseEtablissementQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `code`, `slug`, `name`, `title`, `address1`, `address2`, `zip`, `city`, `mail`, `country_code`, `phone1`, `phone2`, `fax`, `opening_date`, `closing_date`, `ville_id`, `categorie_id`, `geo_coordinate_x`, `geo_coordinate_y`, `video_path`, `image_360_path`, `capacite`, `plan_path`, `vignette`, `published`, `created_at`, `updated_at`, `active` FROM `etablissement` WHERE `id` = :p0';
+        $sql = 'SELECT `id`, `code`, `slug`, `name`, `title`, `address1`, `address2`, `zip`, `city`, `mail`, `country_code`, `phone1`, `phone2`, `fax`, `opening_date`, `closing_date`, `ville_id`, `categorie_id`, `geo_coordinate_x`, `geo_coordinate_y`, `video_path`, `image_360_path`, `capacite`, `plan_path`, `vignette`, `created_at`, `updated_at`, `active` FROM `etablissement` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -1217,33 +1213,6 @@ abstract class BaseEtablissementQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(EtablissementPeer::VIGNETTE, $vignette, $comparison);
-    }
-
-    /**
-     * Filter the query on the published column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByPublished(true); // WHERE published = true
-     * $query->filterByPublished('yes'); // WHERE published = true
-     * </code>
-     *
-     * @param     boolean|string $published The value to use as filter.
-     *              Non-boolean arguments are converted using the following rules:
-     *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
-     *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
-     *              Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return EtablissementQuery The current query, for fluid interface
-     */
-    public function filterByPublished($published = null, $comparison = null)
-    {
-        if (is_string($published)) {
-            $published = in_array(strtolower($published), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
-        }
-
-        return $this->addUsingAlias(EtablissementPeer::PUBLISHED, $published, $comparison);
     }
 
     /**

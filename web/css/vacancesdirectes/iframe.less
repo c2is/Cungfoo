@@ -18,7 +18,7 @@
 @colorRubricViolet:#9a4d9e;
 
 @colorBgGrisF:#464545; /* bg gris sombre */
-@colorBgGrisM:#efeeee; /* bg gris */
+@colorBgGrisM:#8c8a8a; /* bg gris */
 @colorBgGrisC:#e6e5e5; /* bg gris clair */
 @colorBgFushia: #ed145b;
 @colorBgOrange: #f58220;
@@ -186,7 +186,8 @@ body{background:#fff;color:@colorGris2;font:12px @arial;margin:0 24px;}
 #searchProductFormContener {display:none;}
 #homePage #searchResult {width:928px;height:560px;position:relative;
   .aProposalBlock{background-color:@colorBgGrisC;border-radius:10px;padding:15px 20px;margin:15px 0;width:296px;margin-right:20px;float:left;
-    &.aProposalBlockLast{margin-right:0;}
+    &:nth-of-type(2n+1){margin-right:0;}
+    &:first-of-type{margin-right:20px;}
     &.package .proposalDescriptionTitle{background-color:@colorRubricVert;
       .proposalDescriptionDetailsLink{color:@colorRubricVert;}
     }
@@ -313,8 +314,8 @@ body{background:#fff;color:@colorGris2;font:12px @arial;margin:0 24px;}
       &:nth-child(odd){background:@colorBgBlanc;
         td{background:@colorBgGrisC;}
       }
-      td:first-child{._border-radius(0 0 0 10px);}
-      td:last-child{._border-radius(0 0 10px 0);}
+      //td:first-child{._border-radius(0 0 0 10px);}
+      //td:last-child{._border-radius(0 0 10px 0);}
     }
     th{background:@colorBgBleu;font:bold 20px/18px @ptnarrow;text-transform:uppercase;color:@colorBlanc;padding:15px 10px;text-align:center;
       &:first-child{._border-radius(10px 0 0 0);}
@@ -409,12 +410,12 @@ body{background:#fff;color:@colorGris2;font:12px @arial;margin:0 24px;}
           &.totalPrice{display:none;}
         }
         td{padding:10px 12px;font-size:12px;background:#fff;border-bottom:2px solid #E6E5E5;vertical-align:middle;
-          &.description{
+          &.description{width:350px;
             p{font-weight:bold;}
           }
-          &.optionPrice{text-align:right;font-size:16px;}
+          &.optionPrice{text-align:right;font-size:16px;width:114px;}
           &.optionAction{}
-          .bt{padding:5px 3px;font-size:17px;text-align:center;}
+          .bt{padding:5px 3px;font-size:17px;text-align:center;width:106px;}
         }
       }
     }

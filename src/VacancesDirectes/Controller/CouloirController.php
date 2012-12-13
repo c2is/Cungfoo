@@ -26,10 +26,13 @@ class CouloirController implements ControllerProviderInterface
         $controllers = $app['controllers_factory'];
 
         $controllers->match('/detail-sejour/{proposalKey}', function (Request $request, $proposalKey) use ($app) {
+
+            $rslConfig = $app['config']->get('rsl_config')['services']['disponibilite']['default_envelope'];
+
             $query = array(
                 "specificFiles"     => 'couloir',
-                "base_id"           => 'vacancesdirectes_preprod_v6_6',
-                "webuser"           => 'web_fr',
+                "base_id"           => $rslConfig['base_id'],
+                "webuser"           => $rslConfig['username'],
                 "tokens"            => 'ignore_token',
                 "display"           => 'reservation_content',
                 "actions"           => 'cancelReservation;buildProposalFromKey;chooseProposal',
@@ -48,10 +51,13 @@ class CouloirController implements ControllerProviderInterface
         ->bind('couloir_detail_sejour');
 
         $controllers->post('/recapitulatif/{proposalKey}', function (Request $request, $proposalKey) use ($app) {
+
+            $rslConfig = $app['config']->get('rsl_config')['services']['catalogue']['default_envelope'];
+
             $query = array(
                 "specificFiles"     => 'couloir',
-                "base_id"           => 'vacancesdirectes_preprod_v6_6',
-                "webuser"           => 'web_fr',
+                "base_id"           => $rslConfig['base_id'],
+                "webuser"           => $rslConfig['username'],
                 "tokens"            => 'ignore_token',
                 "display"           => 'cart_payment',
                 "actions"           => 'updateReservationContent;BupdateReservationAddPrestations;BupdateCartReservations',
@@ -73,10 +79,13 @@ class CouloirController implements ControllerProviderInterface
 
 
         $controllers->get('/confirmation', function (Request $request) use ($app) {
+
+            $rslConfig = $app['config']->get('rsl_config')['services']['catalogue']['default_envelope'];
+
             $query = array(
                 "specificFiles" => 'couloir',
-                "base_id"       => 'vacancesdirectes_preprod_v6_6',
-                "webuser"       => 'web_fr',
+                "base_id"       => $rslConfig['base_id'],
+                "webuser"       => $rslConfig['username'],
                 "tokens"        => 'ignore_token',
                 "display"       => 'cart_saved',
                 "actions"       => $request->query->get('actions'),

@@ -99,7 +99,7 @@ abstract class AbstractClient
         {
             foreach ($this->getRequests() as $request)
             {
-                $client = new \SoapClient($this->location);
+                $client = new \SoapClient($this->location, array('cache_wsdl' => WSDL_CACHE_NONE));
                 $this->data[$request][$language] = call_user_func_array(array($client, $request), $this->getEnvelopeFormat());
             }
         }
