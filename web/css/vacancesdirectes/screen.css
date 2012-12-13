@@ -1350,7 +1350,7 @@ footer {
   width: 928px;
   margin: 0 auto;
   font-family: 'PT Sans Narrow', Arial, Helvetica, sans-serif;
-  z-index: 21;
+  z-index: 20;
   clear: both;
 }
 #header #logo {
@@ -3218,7 +3218,7 @@ ul.newList.optGroup li.optGroup-like a {
 }
 .home .locationForwards {
   position: relative;
-  padding-bottom: 35px;
+  padding-bottom: 40px;
   min-height: 575px;
 }
 .home .locationForwards .stamp {
@@ -3264,7 +3264,7 @@ ul.newList.optGroup li.optGroup-like a {
   background-position: 0 0;
 }
 .home .locationForwards#topLocations .element {
-  padding: 20px 0;
+  padding: 17px 0;
 }
 .home .locationForwards#topLocations .element .details {
   width: 151px;
