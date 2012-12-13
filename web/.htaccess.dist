@@ -2,6 +2,8 @@
   Header append P3P 'CP="CAO PSA OUR"'
 </IfModule>
 
+RedirectPermanent /de/ http://www.vacances-directes.de/de/
+
 RedirectPermanent /fr/camping/espagne.p6.html http://www.vacances-directes.com/destinations/camping-espagne/
 RedirectPermanent /fr/camping/france.p2.html http://www.vacances-directes.com/destinations/camping-france/
 RedirectPermanent /fr/camping/italie.p8.html http://www.vacances-directes.com/destinations/camping-italie/
@@ -564,5 +566,3 @@ RedirectPermanent /fr/vacances/camping/les-embruns-lege-cap-ferret.c53.html http
 RedirectPermanent /fr/vacances/camping/le-talaris-lacanau.c121.html http://www.vacances-directes.com/
 RedirectPermanent /fr/vacances/camping/sandaya-soulac-plage-soulac-sur-mer.c8.html http://www.vacances-directes.com/destinations/camping-france/aquitaine/soulac-33/sandaya-soulac-plage.html
 RedirectPermanent /fr/ http://www.vacances-directes.com/
-
-RewriteRule ^fr/(.*)$ http://www.vacances-directes.com/ [L,R=301]
