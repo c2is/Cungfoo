@@ -1025,10 +1025,11 @@ function countItem() {
     });
 }
 
+var $selects;
 function switchSelect(){
     //console.log("################################## switchSelect()  ##################################");
     var $button = $('.switchSelect');
-    var $selects = $button.parent().siblings(".newListSelected");
+    $selects = $button.parent().siblings(".newListSelected");
     if ($('#SearchDate_isCamping').val() == 1){
         selectNum = 1;
         $('.switchSelect').css({backgroundPosition: "0 -270px"});
@@ -1040,7 +1041,7 @@ function switchSelect(){
     }
     $('.switchSelect').live('click', function(){
         selectNum = selectNum == 0 ? 1 : 0;
-        //console.log($selects);
+        $selects = $button.parent().siblings(".newListSelected");
         var $buttonTitle = selectNum == 0 ? 'Campings' : 'Lieux de séjour';
         $button.children('span').text($buttonTitle);
 //        $button.attr('title',$buttonTitle);
