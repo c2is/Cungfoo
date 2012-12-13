@@ -545,6 +545,8 @@ $(function() {
             startDate = numDate(fStartDate),
             endDate = numDate(fEndDate),
             fSeasonDates = [fStartDate,fEndDate],
+            highSeasonStartDate = numDate(fHighSeasonStartDate),
+            highSeasonEndDate = numDate(fHighSeasonEndDate),
             fHighSeasonDates = [fHighSeasonStartDate,fHighSeasonEndDate],
             arrivalDate,
             visibleMonths = 8,
@@ -590,7 +592,7 @@ $(function() {
                 firstSelection = false;
 
                 //console.log(selectedDate);
-                $('#datepickerInput').val('Du ' + selectedDate);
+                $('#datepickerInput').val(selectedDate);
                 $('#datepicker input[type=hidden]').eq(0).val(selectedDate);
 
                 $('#datepickerField').trigger("click");
