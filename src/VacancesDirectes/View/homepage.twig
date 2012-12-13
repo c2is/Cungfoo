@@ -61,7 +61,7 @@
                     <span class="title">{{ camping.etablissement.name }} {{ camping.etablissement.categorie.stars }}</span>
                     <span class="region">{{ camping.etablissement.ville.region }}</span>
                     <span class="condition">{{ camping.etablissement.minimumPriceLabel }}</span>
-                    {% if camping.etablissement.minimumPrice != 0 %}<a href="{{ campingPath }}" class="stain fushia cover linkBlock"><span>{{ "general.a_partir_de" | trans }}<br /><span class="price linkBlock">{{ camping.etablissement.minimumPrice | number_format(0,'','') }}<span class="fine">&nbsp;</span>€</span></span></a>{% endif %}
+                    <a{% if camping.etablissement.minimumPrice == 0 %} style="display: none"{% endif %} href="{{ campingPath }}" class="stain fushia cover linkBlock"><span>{{ "general.a_partir_de" | trans }}<br /><span class="price linkBlock">{{ camping.etablissement.minimumPrice | number_format(0,'','') }}<span class="fine">&nbsp;</span>€</span></span></a>
                 </div>
             </div>
             {% endif %}
