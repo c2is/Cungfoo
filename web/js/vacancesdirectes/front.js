@@ -684,6 +684,51 @@ $(function() {
 
     /*
      *  ############################################################
+     *                        NAVIGATION MENU
+     * ############################################################
+     */
+
+    if ($('#nav').find('.subnav').length > 0){
+        var currentLi;
+        var hoverLi;
+        $('#nav .tab').hover(
+            function(){
+                hoverLi = $(this);
+                hoverLi.addClass('hover').children('.subnav').show();
+                hoverLi.siblings().each(function(i,v){
+                    if( $(this).hasClass('current') ){
+                        currentLi = $(this);
+                        currentLi.removeClass('current');
+                    }
+                })
+            },
+            function(){
+                hoverLi.show();
+                var openTab = false;
+                hoverLi.siblings().each(function(i,v){
+                    console.log( $(this));
+                    if ( $(this).hasClass('hover') ){
+                        openTab = true;
+                    }
+                });
+                console.log(openTab);
+                if ( !openTab ){
+                    setTimeout(function()
+                    {
+                        hoverLi.removeClass('hover').children('.subnav').hide();
+                        currentLi.addClass('current');
+                    }, 200);
+                }
+                else {
+                    hoverLi.removeClass('hover').children('.subnav').hide();
+                }
+            }
+        );
+    }
+
+
+    /*
+     *  ############################################################
      *                          HOME SLIDER
      * ############################################################
      */
