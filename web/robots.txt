@@ -1,0 +1,16 @@
+User-Agent: *
+Disallow : /fr/panier/
+Disallow : /fr/camping/temoignages.php*
+Disallow : /fr/camping/gm_camping.php*
+Disallow : /fr/camping/listing-selection.php*
+Disallow : /fr/reservation/reservation.php*
+Disallow : /fr/camping/-*
+Disallow : /fr/camping/listing-cartographie.php?*
+Disallow : /fr/camping/listing-selection.php?*
+Disallow : /fr/extract/export_search.php?*
+Disallow : /rsl/
+Disallow : /fr/vacances/vacances/
+Disallow : /fr/vacances//
+Disallow : /dispo/
+
+Sitemap: http://www.vacances-directes.com/sitemap.xml
