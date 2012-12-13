@@ -542,10 +542,14 @@ $(function() {
         var d = new Date(),
             fCurrentDate = formatDate(d),
             currentDate = numDate(fCurrentDate),
-            startDate = numDate(fStartDate)
-        arrivalDate
-        visibleMonths = 7,
+            startDate = numDate(fStartDate),
+            endDate = numDate(fEndDate),
+            fSeasonDates = [fStartDate,fEndDate],
+            fHighSeasonDates = [fHighSeasonStartDate,fHighSeasonEndDate],
+            arrivalDate,
+            visibleMonths = 8,
             displayMonths = 2;
+
 
         //console.log(fSeasonDates);
         //console.log(fHighSeasonDates);
@@ -605,7 +609,7 @@ $(function() {
                 //            //console.log(endDate);
                 //            //console.log(renderWeekDay);
 
-                if ( (renderDate < startDate || renderDate > endDate) || (renderWeekDay != 6 && renderWeekDay != 3) ){
+                if ( ((renderDate > highSeasonStartDate && renderDate < highSeasonEndDate) && (renderWeekDay != 6 && renderWeekDay != 3)) || (renderDate < startDate || renderDate > endDate) || ((renderDate > startDate && renderDate < endDate) && renderWeekDay == 2) ){
                     //                    //console.log("DISABLED: " + renderDate);
                     disabledDate = renderDate;
                 }
