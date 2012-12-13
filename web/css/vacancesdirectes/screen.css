@@ -3219,7 +3219,7 @@ ul.newList.optGroup li.optGroup-like a {
 .home .locationForwards {
   position: relative;
   padding-bottom: 35px;
-  height: 602px;
+  min-height: 602px;
 }
 .home .locationForwards .stamp {
   margin-bottom: 5px;

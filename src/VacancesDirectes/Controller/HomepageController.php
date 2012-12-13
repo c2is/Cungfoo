@@ -96,7 +96,7 @@ class HomepageController implements ControllerProviderInterface
                 ->addTheme($dernieresMinutes->getDestinationsCodes())
                 ->addEtab($dernieresMinutes->getEtablissementsCodes())
                 ->setNbAdults(1)
-                ->setMaxResults(5)
+                ->setMaxResults(4)
             ;
 
             $client = new DisponibiliteClient($app['config']->get('root_dir'));
