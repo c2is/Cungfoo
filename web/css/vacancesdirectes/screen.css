@@ -1350,7 +1350,7 @@ footer {
   width: 928px;
   margin: 0 auto;
   font-family: 'PT Sans Narrow', Arial, Helvetica, sans-serif;
-  z-index: 21;
+  z-index: 20;
   clear: both;
 }
 #header #logo {
