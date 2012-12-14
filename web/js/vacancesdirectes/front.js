@@ -542,10 +542,16 @@ $(function() {
         var d = new Date(),
             fCurrentDate = formatDate(d),
             currentDate = numDate(fCurrentDate),
-            startDate = numDate(fStartDate)
-        arrivalDate
-        visibleMonths = 7,
+            startDate = numDate(fStartDate),
+            endDate = numDate(fEndDate),
+            fSeasonDates = [fStartDate,fEndDate],
+            highSeasonStartDate = numDate(fHighSeasonStartDate),
+            highSeasonEndDate = numDate(fHighSeasonEndDate),
+            fHighSeasonDates = [fHighSeasonStartDate,fHighSeasonEndDate],
+            arrivalDate,
+            visibleMonths = 8,
             displayMonths = 2;
+
 
         //console.log(fSeasonDates);
         //console.log(fHighSeasonDates);
@@ -586,7 +592,7 @@ $(function() {
                 firstSelection = false;
 
                 //console.log(selectedDate);
-                $('#datepickerInput').val('Du ' + selectedDate);
+                $('#datepickerInput').val(selectedDate);
                 $('#datepicker input[type=hidden]').eq(0).val(selectedDate);
 
                 $('#datepickerField').trigger("click");
@@ -605,7 +611,7 @@ $(function() {
                 //            //console.log(endDate);
                 //            //console.log(renderWeekDay);
 
-                if ( (renderDate < startDate || renderDate > endDate) || (renderWeekDay != 6 && renderWeekDay != 3) ){
+                if ( ((renderDate > highSeasonStartDate && renderDate < highSeasonEndDate) && (renderWeekDay != 6 && renderWeekDay != 3)) || (renderDate < startDate || renderDate > endDate) || ((renderDate > startDate && renderDate < endDate) && renderWeekDay == 2) ){
                     //                    //console.log("DISABLED: " + renderDate);
                     disabledDate = renderDate;
                 }
@@ -1025,10 +1031,11 @@ function countItem() {
     });
 }
 
+var $selects;
 function switchSelect(){
     //console.log("################################## switchSelect()  ##################################");
     var $button = $('.switchSelect');
-    var $selects = $button.parent().siblings(".newListSelected");
+    $selects = $button.parent().siblings(".newListSelected");
     if ($('#SearchDate_isCamping').val() == 1){
         selectNum = 1;
         $('.switchSelect').css({backgroundPosition: "0 -270px"});
@@ -1040,7 +1047,7 @@ function switchSelect(){
     }
     $('.switchSelect').live('click', function(){
         selectNum = selectNum == 0 ? 1 : 0;
-        //console.log($selects);
+        $selects = $button.parent().siblings(".newListSelected");
         var $buttonTitle = selectNum == 0 ? 'Campings' : 'Lieux de séjour';
         $button.children('span').text($buttonTitle);
 //        $button.attr('title',$buttonTitle);

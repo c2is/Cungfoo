@@ -2,6 +2,8 @@
   Header append P3P 'CP="CAO PSA OUR"'
 </IfModule>
 
+RedirectPermanent /de/ http://www.vacances-directes.de/de/
+
 RedirectPermanent /fr/camping/espagne.p6.html http://www.vacances-directes.com/destinations/camping-espagne/
 RedirectPermanent /fr/camping/france.p2.html http://www.vacances-directes.com/destinations/camping-france/
 RedirectPermanent /fr/camping/italie.p8.html http://www.vacances-directes.com/destinations/camping-italie/

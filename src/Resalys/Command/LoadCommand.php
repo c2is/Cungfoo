@@ -12,6 +12,7 @@ namespace Resalys\Command;
 
 use Symfony\Component\Console\Input\InputArgument,
     Symfony\Component\Console\Input\InputInterface,
+    Symfony\Component\Console\Input\ArrayInput,
     Symfony\Component\Console\Input\InputOption,
     Symfony\Component\Console\Output\OutputInterface;
 
@@ -51,6 +52,19 @@ class LoadCommand extends BaseCommand
             $output->writeln(sprintf('<info>%s</info> <error>%s:</error>.', $this->getName(), $exception->getMessage()));
 
             return false;
+        }
+
+        $commands = array(
+            array('command' => 'vacancesdirectes:database:check-integrity'),
+            array('command' => 'vacancesdirectes:slug:generate'),
+        );
+
+        foreach ($commands as $command)
+        {
+            if ($this->getApplication()->find($command['command'])->run(new ArrayInput($command), $output) === false)
+            {
+                return false;
+            }
         }
 
         $output->writeln(sprintf('<info>%s</info> <info>data (%s) is loaded</info>.', $this->getName(), $input->getArgument('type')));
