@@ -4604,8 +4604,8 @@ ul.newList.optGroup li.optGroup-like a {
   background: #e6e5e5;
   padding: 20px 10px;
   position: relative;
-  -webkit-border-radius: 0 0 15px 15px;
-  border-radius: 0 0 15px 15px;
+  -webkit-border-radius: 0 0 11px 11px;
+  border-radius: 0 0 11px 11px;
 }
 .itemResult .itemResultBottom [type="radio"] {
   vertical-align: -2px;
