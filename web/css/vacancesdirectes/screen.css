@@ -1495,31 +1495,8 @@ footer {
   float: left;
   margin: -32px 0 0 -2px;
 }
-#nav .tab:hover,
-#nav .tab.current {
-  background: #ed145b;
-}
-#nav .tab:hover small,
-#nav .tab.current small {
-  color: #ffffff;
-}
-#nav .tab:hover small,
-#nav .tab.current small {
-  color: #ffffff;
-}
-#nav .tab:hover > a:after,
-#nav .tab.current > a:after {
-  content: url('../../images/vacancesdirectes/common/pict/Triangle-Tab.png');
-  position: absolute;
-  top: 24px;
-  left: 50%;
-  margin-left: -12px;
-  height: 8px;
-  width: 22px;
-  z-index: 50;
-}
-#nav .tab:hover .subnav {
-  display: block;
+#nav .tab.noBorder:after {
+  width: 0px;
 }
 #nav .tab > a {
   position: relative;
@@ -1848,6 +1825,47 @@ footer {
 }
 #nav .tab .subnav#weekends .radiusBox .title {
   color: #f58220;
+}
+.js-true #nav .tab.hover,
+.js-true #nav .tab.current {
+  background: #ed145b;
+}
+.js-true #nav .tab.hover > a:after,
+.js-true #nav .tab.current > a:after {
+  content: url('../../images/vacancesdirectes/common/pict/Triangle-Tab.png');
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  margin-left: -12px;
+  height: 8px;
+  width: 22px;
+  z-index: 50;
+}
+.js-true #nav .tab.hover > a small,
+.js-true #nav .tab.current > a small {
+  color: #ffffff;
+}
+.js-false #nav .tab:hover,
+.js-false #nav .tab.current {
+  background: #ed145b;
+}
+.js-false #nav .tab:hover small,
+.js-false #nav .tab.current small {
+  color: #ffffff;
+}
+.js-false #nav .tab:hover > a:after,
+.js-false #nav .tab.current > a:after {
+  content: url('../../images/vacancesdirectes/common/pict/Triangle-Tab.png');
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  margin-left: -12px;
+  height: 8px;
+  width: 22px;
+  z-index: 50;
+}
+.js-false #nav .tab:hover .subnav {
+  display: block;
 }
 /* lang */
 #lang {
