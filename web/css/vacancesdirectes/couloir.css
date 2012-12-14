@@ -732,11 +732,11 @@ textarea {
   font-weight: bold;
 }
 /*LEFT*/
-#reservationContener {
+#contentContener {
   /* --> payment.css */
 
 }
-#reservationContener h2 {
+#contentContener h2 {
   color: #8c8a8a;
   text-transform: uppercase;
   font: bold 22px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
@@ -749,22 +749,27 @@ textarea {
   /* Centrer verticalement une image de taille variable */
 
 }
-#reservationContener h2 > * {
+#contentContener h2 > * {
   vertical-align: middle;
   display: inline-block;
   line-height: inherit;
 }
-#reservationContener h2 > img {
+#contentContener h2 > img {
   vertical-align: middle;
 }
-#reservationContener p {
+#contentContener p {
   margin-bottom: 10px;
 }
-#reservationContener table {
+#contentContener table {
   width: 100%;
 }
-#reservationContener.detail #authentication,
-#reservationContener.editAccount #authentication {
+#contentContener.login #authentication,
+#contentContener.customerareahome #authentication,
+#contentContener.address #authentication,
+#contentContener.request #authentication,
+#contentContener.reservation #authentication,
+#contentContener.fidelity #authentication,
+#contentContener.sponsorship #authentication {
   -webkit-border-radius: 10px;
   border-radius: 10px;
   margin: 15px 0;
@@ -772,8 +777,13 @@ textarea {
   background-color: #ffffff;
   border: 5px solid #8c8a8a;
 }
-#reservationContener.detail #authentication h2,
-#reservationContener.editAccount #authentication h2 {
+#contentContener.login #authentication h2,
+#contentContener.customerareahome #authentication h2,
+#contentContener.address #authentication h2,
+#contentContener.request #authentication h2,
+#contentContener.reservation #authentication h2,
+#contentContener.fidelity #authentication h2,
+#contentContener.sponsorship #authentication h2 {
   background-color: #8c8a8a;
   color: #ffffff;
   text-transform: uppercase;
@@ -788,178 +798,388 @@ textarea {
 
   padding-left: 10px;
 }
-#reservationContener.detail #authentication h2 > *,
-#reservationContener.editAccount #authentication h2 > * {
+#contentContener.login #authentication h2 > *,
+#contentContener.customerareahome #authentication h2 > *,
+#contentContener.address #authentication h2 > *,
+#contentContener.request #authentication h2 > *,
+#contentContener.reservation #authentication h2 > *,
+#contentContener.fidelity #authentication h2 > *,
+#contentContener.sponsorship #authentication h2 > * {
   vertical-align: middle;
   display: inline-block;
   line-height: inherit;
 }
-#reservationContener.detail #authentication h2 > img,
-#reservationContener.editAccount #authentication h2 > img {
+#contentContener.login #authentication h2 > img,
+#contentContener.customerareahome #authentication h2 > img,
+#contentContener.address #authentication h2 > img,
+#contentContener.request #authentication h2 > img,
+#contentContener.reservation #authentication h2 > img,
+#contentContener.fidelity #authentication h2 > img,
+#contentContener.sponsorship #authentication h2 > img {
   vertical-align: middle;
 }
-#reservationContener.detail #authentication > div,
-#reservationContener.editAccount #authentication > div {
+#contentContener.login #authentication > div,
+#contentContener.customerareahome #authentication > div,
+#contentContener.address #authentication > div,
+#contentContener.request #authentication > div,
+#contentContener.reservation #authentication > div,
+#contentContener.fidelity #authentication > div,
+#contentContener.sponsorship #authentication > div {
   background-color: #e6e5e5;
   color: #464545;
 }
-#reservationContener.detail #authentication > div > div,
-#reservationContener.editAccount #authentication > div > div {
+#contentContener.login #authentication > div > div,
+#contentContener.customerareahome #authentication > div > div,
+#contentContener.address #authentication > div > div,
+#contentContener.request #authentication > div > div,
+#contentContener.reservation #authentication > div > div,
+#contentContener.fidelity #authentication > div > div,
+#contentContener.sponsorship #authentication > div > div {
   padding: 15px 20px;
   clear: both;
 }
-#reservationContener.detail #authentication > div .whiteBg,
-#reservationContener.editAccount #authentication > div .whiteBg {
+#contentContener.login #authentication > div .whiteBg,
+#contentContener.customerareahome #authentication > div .whiteBg,
+#contentContener.address #authentication > div .whiteBg,
+#contentContener.request #authentication > div .whiteBg,
+#contentContener.reservation #authentication > div .whiteBg,
+#contentContener.fidelity #authentication > div .whiteBg,
+#contentContener.sponsorship #authentication > div .whiteBg {
   background-color: #ffffff;
 }
-#reservationContener.detail #authentication > div .whiteBg .aField,
-#reservationContener.editAccount #authentication > div .whiteBg .aField,
-#reservationContener.detail #authentication > div .whiteBg .authenticationChoice,
-#reservationContener.editAccount #authentication > div .whiteBg .authenticationChoice {
+#contentContener.login #authentication > div .whiteBg .aField,
+#contentContener.customerareahome #authentication > div .whiteBg .aField,
+#contentContener.address #authentication > div .whiteBg .aField,
+#contentContener.request #authentication > div .whiteBg .aField,
+#contentContener.reservation #authentication > div .whiteBg .aField,
+#contentContener.fidelity #authentication > div .whiteBg .aField,
+#contentContener.sponsorship #authentication > div .whiteBg .aField,
+#contentContener.login #authentication > div .whiteBg .authenticationChoice,
+#contentContener.customerareahome #authentication > div .whiteBg .authenticationChoice,
+#contentContener.address #authentication > div .whiteBg .authenticationChoice,
+#contentContener.request #authentication > div .whiteBg .authenticationChoice,
+#contentContener.reservation #authentication > div .whiteBg .authenticationChoice,
+#contentContener.fidelity #authentication > div .whiteBg .authenticationChoice,
+#contentContener.sponsorship #authentication > div .whiteBg .authenticationChoice {
   font: normal 12px Arial, Helvetica, sans-serif;
   text-transform: none;
   display: block;
   margin: 0;
 }
-#reservationContener.detail #authentication > div .whiteBg .aField .label,
-#reservationContener.editAccount #authentication > div .whiteBg .aField .label,
-#reservationContener.detail #authentication > div .whiteBg .authenticationChoice .label,
-#reservationContener.editAccount #authentication > div .whiteBg .authenticationChoice .label {
+#contentContener.login #authentication > div .whiteBg .aField .label,
+#contentContener.customerareahome #authentication > div .whiteBg .aField .label,
+#contentContener.address #authentication > div .whiteBg .aField .label,
+#contentContener.request #authentication > div .whiteBg .aField .label,
+#contentContener.reservation #authentication > div .whiteBg .aField .label,
+#contentContener.fidelity #authentication > div .whiteBg .aField .label,
+#contentContener.sponsorship #authentication > div .whiteBg .aField .label,
+#contentContener.login #authentication > div .whiteBg .authenticationChoice .label,
+#contentContener.customerareahome #authentication > div .whiteBg .authenticationChoice .label,
+#contentContener.address #authentication > div .whiteBg .authenticationChoice .label,
+#contentContener.request #authentication > div .whiteBg .authenticationChoice .label,
+#contentContener.reservation #authentication > div .whiteBg .authenticationChoice .label,
+#contentContener.fidelity #authentication > div .whiteBg .authenticationChoice .label,
+#contentContener.sponsorship #authentication > div .whiteBg .authenticationChoice .label {
   font: inherit;
   text-transform: inherit;
   color: inherit;
 }
-#reservationContener.detail #authentication > div .whiteBg .aField .field,
-#reservationContener.editAccount #authentication > div .whiteBg .aField .field,
-#reservationContener.detail #authentication > div .whiteBg .authenticationChoice .field,
-#reservationContener.editAccount #authentication > div .whiteBg .authenticationChoice .field,
-#reservationContener.detail #authentication > div .whiteBg .aField input[type="radio"]:checked + label,
-#reservationContener.editAccount #authentication > div .whiteBg .aField input[type="radio"]:checked + label,
-#reservationContener.detail #authentication > div .whiteBg .authenticationChoice input[type="radio"]:checked + label,
-#reservationContener.editAccount #authentication > div .whiteBg .authenticationChoice input[type="radio"]:checked + label {
+#contentContener.login #authentication > div .whiteBg .aField .field,
+#contentContener.customerareahome #authentication > div .whiteBg .aField .field,
+#contentContener.address #authentication > div .whiteBg .aField .field,
+#contentContener.request #authentication > div .whiteBg .aField .field,
+#contentContener.reservation #authentication > div .whiteBg .aField .field,
+#contentContener.fidelity #authentication > div .whiteBg .aField .field,
+#contentContener.sponsorship #authentication > div .whiteBg .aField .field,
+#contentContener.login #authentication > div .whiteBg .authenticationChoice .field,
+#contentContener.customerareahome #authentication > div .whiteBg .authenticationChoice .field,
+#contentContener.address #authentication > div .whiteBg .authenticationChoice .field,
+#contentContener.request #authentication > div .whiteBg .authenticationChoice .field,
+#contentContener.reservation #authentication > div .whiteBg .authenticationChoice .field,
+#contentContener.fidelity #authentication > div .whiteBg .authenticationChoice .field,
+#contentContener.sponsorship #authentication > div .whiteBg .authenticationChoice .field,
+#contentContener.login #authentication > div .whiteBg .aField input[type="radio"]:checked + label,
+#contentContener.customerareahome #authentication > div .whiteBg .aField input[type="radio"]:checked + label,
+#contentContener.address #authentication > div .whiteBg .aField input[type="radio"]:checked + label,
+#contentContener.request #authentication > div .whiteBg .aField input[type="radio"]:checked + label,
+#contentContener.reservation #authentication > div .whiteBg .aField input[type="radio"]:checked + label,
+#contentContener.fidelity #authentication > div .whiteBg .aField input[type="radio"]:checked + label,
+#contentContener.sponsorship #authentication > div .whiteBg .aField input[type="radio"]:checked + label,
+#contentContener.login #authentication > div .whiteBg .authenticationChoice input[type="radio"]:checked + label,
+#contentContener.customerareahome #authentication > div .whiteBg .authenticationChoice input[type="radio"]:checked + label,
+#contentContener.address #authentication > div .whiteBg .authenticationChoice input[type="radio"]:checked + label,
+#contentContener.request #authentication > div .whiteBg .authenticationChoice input[type="radio"]:checked + label,
+#contentContener.reservation #authentication > div .whiteBg .authenticationChoice input[type="radio"]:checked + label,
+#contentContener.fidelity #authentication > div .whiteBg .authenticationChoice input[type="radio"]:checked + label,
+#contentContener.sponsorship #authentication > div .whiteBg .authenticationChoice input[type="radio"]:checked + label {
   font-weight: bold;
 }
-#reservationContener.detail #authentication > div #existingCustomerLayer .aField,
-#reservationContener.editAccount #authentication > div #existingCustomerLayer .aField,
-#reservationContener.detail #authentication > div #newCustomerLayer .aField,
-#reservationContener.editAccount #authentication > div #newCustomerLayer .aField {
+#contentContener.login #authentication > div #existingCustomerLayer .aField,
+#contentContener.customerareahome #authentication > div #existingCustomerLayer .aField,
+#contentContener.address #authentication > div #existingCustomerLayer .aField,
+#contentContener.request #authentication > div #existingCustomerLayer .aField,
+#contentContener.reservation #authentication > div #existingCustomerLayer .aField,
+#contentContener.fidelity #authentication > div #existingCustomerLayer .aField,
+#contentContener.sponsorship #authentication > div #existingCustomerLayer .aField,
+#contentContener.login #authentication > div #newCustomerLayer .aField,
+#contentContener.customerareahome #authentication > div #newCustomerLayer .aField,
+#contentContener.address #authentication > div #newCustomerLayer .aField,
+#contentContener.request #authentication > div #newCustomerLayer .aField,
+#contentContener.reservation #authentication > div #newCustomerLayer .aField,
+#contentContener.fidelity #authentication > div #newCustomerLayer .aField,
+#contentContener.sponsorship #authentication > div #newCustomerLayer .aField {
   margin-bottom: 10px;
 }
-#reservationContener.detail #authentication > div #existingCustomerLayer .label,
-#reservationContener.editAccount #authentication > div #existingCustomerLayer .label,
-#reservationContener.detail #authentication > div #newCustomerLayer .label,
-#reservationContener.editAccount #authentication > div #newCustomerLayer .label {
+#contentContener.login #authentication > div #existingCustomerLayer .label,
+#contentContener.customerareahome #authentication > div #existingCustomerLayer .label,
+#contentContener.address #authentication > div #existingCustomerLayer .label,
+#contentContener.request #authentication > div #existingCustomerLayer .label,
+#contentContener.reservation #authentication > div #existingCustomerLayer .label,
+#contentContener.fidelity #authentication > div #existingCustomerLayer .label,
+#contentContener.sponsorship #authentication > div #existingCustomerLayer .label,
+#contentContener.login #authentication > div #newCustomerLayer .label,
+#contentContener.customerareahome #authentication > div #newCustomerLayer .label,
+#contentContener.address #authentication > div #newCustomerLayer .label,
+#contentContener.request #authentication > div #newCustomerLayer .label,
+#contentContener.reservation #authentication > div #newCustomerLayer .label,
+#contentContener.fidelity #authentication > div #newCustomerLayer .label,
+#contentContener.sponsorship #authentication > div #newCustomerLayer .label {
   margin-right: 10px;
   text-align: right;
 }
-#reservationContener.detail #authentication > div #existingCustomerLayer,
-#reservationContener.editAccount #authentication > div #existingCustomerLayer {
+#contentContener.login #authentication > div #existingCustomerLayer,
+#contentContener.customerareahome #authentication > div #existingCustomerLayer,
+#contentContener.address #authentication > div #existingCustomerLayer,
+#contentContener.request #authentication > div #existingCustomerLayer,
+#contentContener.reservation #authentication > div #existingCustomerLayer,
+#contentContener.fidelity #authentication > div #existingCustomerLayer,
+#contentContener.sponsorship #authentication > div #existingCustomerLayer {
   padding-bottom: 5px;
 }
-#reservationContener.detail #authentication > div #existingCustomerLayer .aField,
-#reservationContener.editAccount #authentication > div #existingCustomerLayer .aField {
+#contentContener.login #authentication > div #existingCustomerLayer .aField,
+#contentContener.customerareahome #authentication > div #existingCustomerLayer .aField,
+#contentContener.address #authentication > div #existingCustomerLayer .aField,
+#contentContener.request #authentication > div #existingCustomerLayer .aField,
+#contentContener.reservation #authentication > div #existingCustomerLayer .aField,
+#contentContener.fidelity #authentication > div #existingCustomerLayer .aField,
+#contentContener.sponsorship #authentication > div #existingCustomerLayer .aField {
   width: 450px;
   float: left;
 }
-#reservationContener.detail #authentication > div #existingCustomerLayer .aField .label,
-#reservationContener.editAccount #authentication > div #existingCustomerLayer .aField .label {
+#contentContener.login #authentication > div #existingCustomerLayer .aField .label,
+#contentContener.customerareahome #authentication > div #existingCustomerLayer .aField .label,
+#contentContener.address #authentication > div #existingCustomerLayer .aField .label,
+#contentContener.request #authentication > div #existingCustomerLayer .aField .label,
+#contentContener.reservation #authentication > div #existingCustomerLayer .aField .label,
+#contentContener.fidelity #authentication > div #existingCustomerLayer .aField .label,
+#contentContener.sponsorship #authentication > div #existingCustomerLayer .aField .label {
   width: 130px;
 }
-#reservationContener.detail #authentication > div #existingCustomerLayer .aField input,
-#reservationContener.editAccount #authentication > div #existingCustomerLayer .aField input {
+#contentContener.login #authentication > div #existingCustomerLayer .aField input,
+#contentContener.customerareahome #authentication > div #existingCustomerLayer .aField input,
+#contentContener.address #authentication > div #existingCustomerLayer .aField input,
+#contentContener.request #authentication > div #existingCustomerLayer .aField input,
+#contentContener.reservation #authentication > div #existingCustomerLayer .aField input,
+#contentContener.fidelity #authentication > div #existingCustomerLayer .aField input,
+#contentContener.sponsorship #authentication > div #existingCustomerLayer .aField input {
   width: 310px;
 }
-#reservationContener.detail #authentication > div #newCustomerLayer .label,
-#reservationContener.editAccount #authentication > div #newCustomerLayer .label {
+#contentContener.login #authentication > div #newCustomerLayer .label,
+#contentContener.customerareahome #authentication > div #newCustomerLayer .label,
+#contentContener.address #authentication > div #newCustomerLayer .label,
+#contentContener.request #authentication > div #newCustomerLayer .label,
+#contentContener.reservation #authentication > div #newCustomerLayer .label,
+#contentContener.fidelity #authentication > div #newCustomerLayer .label,
+#contentContener.sponsorship #authentication > div #newCustomerLayer .label {
   width: 134px;
   padding-top: 3px;
 }
-#reservationContener.detail #authentication > div #newCustomerLayer #newAccount,
-#reservationContener.editAccount #authentication > div #newCustomerLayer #newAccount {
+#contentContener.login #authentication > div #newCustomerLayer #newAccount,
+#contentContener.customerareahome #authentication > div #newCustomerLayer #newAccount,
+#contentContener.address #authentication > div #newCustomerLayer #newAccount,
+#contentContener.request #authentication > div #newCustomerLayer #newAccount,
+#contentContener.reservation #authentication > div #newCustomerLayer #newAccount,
+#contentContener.fidelity #authentication > div #newCustomerLayer #newAccount,
+#contentContener.sponsorship #authentication > div #newCustomerLayer #newAccount {
   margin-bottom: 15px;
 }
-#reservationContener.detail #authentication > div #newCustomerLayer #newAccount .aField,
-#reservationContener.editAccount #authentication > div #newCustomerLayer #newAccount .aField {
+#contentContener.login #authentication > div #newCustomerLayer #newAccount .aField,
+#contentContener.customerareahome #authentication > div #newCustomerLayer #newAccount .aField,
+#contentContener.address #authentication > div #newCustomerLayer #newAccount .aField,
+#contentContener.request #authentication > div #newCustomerLayer #newAccount .aField,
+#contentContener.reservation #authentication > div #newCustomerLayer #newAccount .aField,
+#contentContener.fidelity #authentication > div #newCustomerLayer #newAccount .aField,
+#contentContener.sponsorship #authentication > div #newCustomerLayer #newAccount .aField {
   width: 424px;
 }
-#reservationContener.detail #authentication > div #newCustomerLayer #newAccount .aField input,
-#reservationContener.editAccount #authentication > div #newCustomerLayer #newAccount .aField input {
+#contentContener.login #authentication > div #newCustomerLayer #newAccount .aField input,
+#contentContener.customerareahome #authentication > div #newCustomerLayer #newAccount .aField input,
+#contentContener.address #authentication > div #newCustomerLayer #newAccount .aField input,
+#contentContener.request #authentication > div #newCustomerLayer #newAccount .aField input,
+#contentContener.reservation #authentication > div #newCustomerLayer #newAccount .aField input,
+#contentContener.fidelity #authentication > div #newCustomerLayer #newAccount .aField input,
+#contentContener.sponsorship #authentication > div #newCustomerLayer #newAccount .aField input {
   width: 280px;
 }
-#reservationContener.detail #authentication > div #newCustomerLayer #address,
-#reservationContener.editAccount #authentication > div #newCustomerLayer #address {
+#contentContener.login #authentication > div #newCustomerLayer #address,
+#contentContener.customerareahome #authentication > div #newCustomerLayer #address,
+#contentContener.address #authentication > div #newCustomerLayer #address,
+#contentContener.request #authentication > div #newCustomerLayer #address,
+#contentContener.reservation #authentication > div #newCustomerLayer #address,
+#contentContener.fidelity #authentication > div #newCustomerLayer #address,
+#contentContener.sponsorship #authentication > div #newCustomerLayer #address {
   width: 576px;
 }
-#reservationContener.detail #authentication > div #newCustomerLayer #address td,
-#reservationContener.editAccount #authentication > div #newCustomerLayer #address td {
+#contentContener.login #authentication > div #newCustomerLayer #address td,
+#contentContener.customerareahome #authentication > div #newCustomerLayer #address td,
+#contentContener.address #authentication > div #newCustomerLayer #address td,
+#contentContener.request #authentication > div #newCustomerLayer #address td,
+#contentContener.reservation #authentication > div #newCustomerLayer #address td,
+#contentContener.fidelity #authentication > div #newCustomerLayer #address td,
+#contentContener.sponsorship #authentication > div #newCustomerLayer #address td {
   display: table-cell;
   padding: 5px 10px 5px 0;
   vertical-align: middle;
   width: 144px !important;
 }
-#reservationContener.detail #authentication > div #newCustomerLayer #address input,
-#reservationContener.editAccount #authentication > div #newCustomerLayer #address input,
-#reservationContener.detail #authentication > div #newCustomerLayer #address textarea,
-#reservationContener.editAccount #authentication > div #newCustomerLayer #address textarea,
-#reservationContener.detail #authentication > div #newCustomerLayer #address .newListSelected,
-#reservationContener.editAccount #authentication > div #newCustomerLayer #address .newListSelected {
+#contentContener.login #authentication > div #newCustomerLayer #address input,
+#contentContener.customerareahome #authentication > div #newCustomerLayer #address input,
+#contentContener.address #authentication > div #newCustomerLayer #address input,
+#contentContener.request #authentication > div #newCustomerLayer #address input,
+#contentContener.reservation #authentication > div #newCustomerLayer #address input,
+#contentContener.fidelity #authentication > div #newCustomerLayer #address input,
+#contentContener.sponsorship #authentication > div #newCustomerLayer #address input,
+#contentContener.login #authentication > div #newCustomerLayer #address textarea,
+#contentContener.customerareahome #authentication > div #newCustomerLayer #address textarea,
+#contentContener.address #authentication > div #newCustomerLayer #address textarea,
+#contentContener.request #authentication > div #newCustomerLayer #address textarea,
+#contentContener.reservation #authentication > div #newCustomerLayer #address textarea,
+#contentContener.fidelity #authentication > div #newCustomerLayer #address textarea,
+#contentContener.sponsorship #authentication > div #newCustomerLayer #address textarea,
+#contentContener.login #authentication > div #newCustomerLayer #address .newListSelected,
+#contentContener.customerareahome #authentication > div #newCustomerLayer #address .newListSelected,
+#contentContener.address #authentication > div #newCustomerLayer #address .newListSelected,
+#contentContener.request #authentication > div #newCustomerLayer #address .newListSelected,
+#contentContener.reservation #authentication > div #newCustomerLayer #address .newListSelected,
+#contentContener.fidelity #authentication > div #newCustomerLayer #address .newListSelected,
+#contentContener.sponsorship #authentication > div #newCustomerLayer #address .newListSelected {
   width: 134px;
 }
-#reservationContener.detail #authentication > div #newCustomerLayer #address textarea,
-#reservationContener.editAccount #authentication > div #newCustomerLayer #address textarea {
+#contentContener.login #authentication > div #newCustomerLayer #address textarea,
+#contentContener.customerareahome #authentication > div #newCustomerLayer #address textarea,
+#contentContener.address #authentication > div #newCustomerLayer #address textarea,
+#contentContener.request #authentication > div #newCustomerLayer #address textarea,
+#contentContener.reservation #authentication > div #newCustomerLayer #address textarea,
+#contentContener.fidelity #authentication > div #newCustomerLayer #address textarea,
+#contentContener.sponsorship #authentication > div #newCustomerLayer #address textarea {
   width: 134px;
   height: 62px;
 }
-#reservationContener.detail #authentication > div #newCustomerLayer #address .datepicker button,
-#reservationContener.editAccount #authentication > div #newCustomerLayer #address .datepicker button {
+#contentContener.login #authentication > div #newCustomerLayer #address .datepicker button,
+#contentContener.customerareahome #authentication > div #newCustomerLayer #address .datepicker button,
+#contentContener.address #authentication > div #newCustomerLayer #address .datepicker button,
+#contentContener.request #authentication > div #newCustomerLayer #address .datepicker button,
+#contentContener.reservation #authentication > div #newCustomerLayer #address .datepicker button,
+#contentContener.fidelity #authentication > div #newCustomerLayer #address .datepicker button,
+#contentContener.sponsorship #authentication > div #newCustomerLayer #address .datepicker button {
   right: 0;
 }
-#reservationContener.detail #authentication > div #newCustomerLayer #address .label,
-#reservationContener.editAccount #authentication > div #newCustomerLayer #address .label {
+#contentContener.login #authentication > div #newCustomerLayer #address .label,
+#contentContener.customerareahome #authentication > div #newCustomerLayer #address .label,
+#contentContener.address #authentication > div #newCustomerLayer #address .label,
+#contentContener.request #authentication > div #newCustomerLayer #address .label,
+#contentContener.reservation #authentication > div #newCustomerLayer #address .label,
+#contentContener.fidelity #authentication > div #newCustomerLayer #address .label,
+#contentContener.sponsorship #authentication > div #newCustomerLayer #address .label {
   width: 134px;
   line-height: 17px;
   padding: 0 10px 0 0;
 }
-#reservationContener.detail #authentication > div #newCustomerLayer #others,
-#reservationContener.editAccount #authentication > div #newCustomerLayer #others {
+#contentContener.login #authentication > div #newCustomerLayer #others,
+#contentContener.customerareahome #authentication > div #newCustomerLayer #others,
+#contentContener.address #authentication > div #newCustomerLayer #others,
+#contentContener.request #authentication > div #newCustomerLayer #others,
+#contentContener.reservation #authentication > div #newCustomerLayer #others,
+#contentContener.fidelity #authentication > div #newCustomerLayer #others,
+#contentContener.sponsorship #authentication > div #newCustomerLayer #others {
   width: 576px;
   margin: 15px 0 20px;
 }
-#reservationContener.detail #authentication > div #newCustomerLayer #others td,
-#reservationContener.editAccount #authentication > div #newCustomerLayer #others td {
+#contentContener.login #authentication > div #newCustomerLayer #others td,
+#contentContener.customerareahome #authentication > div #newCustomerLayer #others td,
+#contentContener.address #authentication > div #newCustomerLayer #others td,
+#contentContener.request #authentication > div #newCustomerLayer #others td,
+#contentContener.reservation #authentication > div #newCustomerLayer #others td,
+#contentContener.fidelity #authentication > div #newCustomerLayer #others td,
+#contentContener.sponsorship #authentication > div #newCustomerLayer #others td {
   display: table-cell;
   padding: 5px 10px 5px 0;
   vertical-align: middle;
 }
-#reservationContener.detail #authentication > div #newCustomerLayer #others .label,
-#reservationContener.editAccount #authentication > div #newCustomerLayer #others .label {
+#contentContener.login #authentication > div #newCustomerLayer #others .label,
+#contentContener.customerareahome #authentication > div #newCustomerLayer #others .label,
+#contentContener.address #authentication > div #newCustomerLayer #others .label,
+#contentContener.request #authentication > div #newCustomerLayer #others .label,
+#contentContener.reservation #authentication > div #newCustomerLayer #others .label,
+#contentContener.fidelity #authentication > div #newCustomerLayer #others .label,
+#contentContener.sponsorship #authentication > div #newCustomerLayer #others .label {
   width: 432px;
 }
-#reservationContener.detail #authentication > div #option,
-#reservationContener.editAccount #authentication > div #option {
+#contentContener.login #authentication > div #option,
+#contentContener.customerareahome #authentication > div #option,
+#contentContener.address #authentication > div #option,
+#contentContener.request #authentication > div #option,
+#contentContener.reservation #authentication > div #option,
+#contentContener.fidelity #authentication > div #option,
+#contentContener.sponsorship #authentication > div #option {
   padding-top: 0;
 }
-#reservationContener.detail #authentication > div #option table,
-#reservationContener.editAccount #authentication > div #option table {
+#contentContener.login #authentication > div #option table,
+#contentContener.customerareahome #authentication > div #option table,
+#contentContener.address #authentication > div #option table,
+#contentContener.request #authentication > div #option table,
+#contentContener.reservation #authentication > div #option table,
+#contentContener.fidelity #authentication > div #option table,
+#contentContener.sponsorship #authentication > div #option table {
   width: 576px;
 }
-#reservationContener.detail #authentication > div #option table td,
-#reservationContener.editAccount #authentication > div #option table td {
+#contentContener.login #authentication > div #option table td,
+#contentContener.customerareahome #authentication > div #option table td,
+#contentContener.address #authentication > div #option table td,
+#contentContener.request #authentication > div #option table td,
+#contentContener.reservation #authentication > div #option table td,
+#contentContener.fidelity #authentication > div #option table td,
+#contentContener.sponsorship #authentication > div #option table td {
   display: table-cell;
   padding: 5px 10px 5px 0;
   vertical-align: middle;
 }
-#reservationContener.detail #authentication > div #option table .label,
-#reservationContener.editAccount #authentication > div #option table .label {
+#contentContener.login #authentication > div #option table .label,
+#contentContener.customerareahome #authentication > div #option table .label,
+#contentContener.address #authentication > div #option table .label,
+#contentContener.request #authentication > div #option table .label,
+#contentContener.reservation #authentication > div #option table .label,
+#contentContener.fidelity #authentication > div #option table .label,
+#contentContener.sponsorship #authentication > div #option table .label {
   width: 432px;
   text-align: right;
 }
-#reservationContener.detail #authentication > div .loginLink,
-#reservationContener.editAccount #authentication > div .loginLink {
+#contentContener.login #authentication > div .loginLink,
+#contentContener.customerareahome #authentication > div .loginLink,
+#contentContener.address #authentication > div .loginLink,
+#contentContener.request #authentication > div .loginLink,
+#contentContener.reservation #authentication > div .loginLink,
+#contentContener.fidelity #authentication > div .loginLink,
+#contentContener.sponsorship #authentication > div .loginLink {
   float: right;
 }
-#reservationContener.detail #reservation .aRoom h2,
-#reservationContener.editAccount #reservation .aRoom h2 {
+#contentContener.login #reservation .aRoom h2,
+#contentContener.customerareahome #reservation .aRoom h2,
+#contentContener.address #reservation .aRoom h2,
+#contentContener.request #reservation .aRoom h2,
+#contentContener.reservation #reservation .aRoom h2,
+#contentContener.fidelity #reservation .aRoom h2,
+#contentContener.sponsorship #reservation .aRoom h2 {
   color: #8c8a8a;
   text-transform: uppercase;
   font: bold 22px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
@@ -972,40 +1192,76 @@ textarea {
   /* Centrer verticalement une image de taille variable */
 
 }
-#reservationContener.detail #reservation .aRoom h2 > *,
-#reservationContener.editAccount #reservation .aRoom h2 > * {
+#contentContener.login #reservation .aRoom h2 > *,
+#contentContener.customerareahome #reservation .aRoom h2 > *,
+#contentContener.address #reservation .aRoom h2 > *,
+#contentContener.request #reservation .aRoom h2 > *,
+#contentContener.reservation #reservation .aRoom h2 > *,
+#contentContener.fidelity #reservation .aRoom h2 > *,
+#contentContener.sponsorship #reservation .aRoom h2 > * {
   vertical-align: middle;
   display: inline-block;
   line-height: inherit;
 }
-#reservationContener.detail #reservation .aRoom h2 > img,
-#reservationContener.editAccount #reservation .aRoom h2 > img {
+#contentContener.login #reservation .aRoom h2 > img,
+#contentContener.customerareahome #reservation .aRoom h2 > img,
+#contentContener.address #reservation .aRoom h2 > img,
+#contentContener.request #reservation .aRoom h2 > img,
+#contentContener.reservation #reservation .aRoom h2 > img,
+#contentContener.fidelity #reservation .aRoom h2 > img,
+#contentContener.sponsorship #reservation .aRoom h2 > img {
   vertical-align: middle;
 }
-#reservationContener.detail #reservation .aRoom h2 small,
-#reservationContener.editAccount #reservation .aRoom h2 small {
+#contentContener.login #reservation .aRoom h2 small,
+#contentContener.customerareahome #reservation .aRoom h2 small,
+#contentContener.address #reservation .aRoom h2 small,
+#contentContener.request #reservation .aRoom h2 small,
+#contentContener.reservation #reservation .aRoom h2 small,
+#contentContener.fidelity #reservation .aRoom h2 small,
+#contentContener.sponsorship #reservation .aRoom h2 small {
   font: bold 17px Arial, Helvetica, sans-serif;
   text-transform: none;
 }
-#reservationContener.detail #reservation .aRoom .price,
-#reservationContener.editAccount #reservation .aRoom .price {
+#contentContener.login #reservation .aRoom .price,
+#contentContener.customerareahome #reservation .aRoom .price,
+#contentContener.address #reservation .aRoom .price,
+#contentContener.request #reservation .aRoom .price,
+#contentContener.reservation #reservation .aRoom .price,
+#contentContener.fidelity #reservation .aRoom .price,
+#contentContener.sponsorship #reservation .aRoom .price {
   font: bold 19px/18px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-align: right;
 }
-#reservationContener.detail #reservation .aRoom .action,
-#reservationContener.editAccount #reservation .aRoom .action {
+#contentContener.login #reservation .aRoom .action,
+#contentContener.customerareahome #reservation .aRoom .action,
+#contentContener.address #reservation .aRoom .action,
+#contentContener.request #reservation .aRoom .action,
+#contentContener.reservation #reservation .aRoom .action,
+#contentContener.fidelity #reservation .aRoom .action,
+#contentContener.sponsorship #reservation .aRoom .action {
   text-align: right;
+  width: 80px;
 }
-#reservationContener.detail #reservation .aRoom .changeOccupantCount,
-#reservationContener.editAccount #reservation .aRoom .changeOccupantCount {
+#contentContener.login #reservation .aRoom .changeOccupantCount,
+#contentContener.customerareahome #reservation .aRoom .changeOccupantCount,
+#contentContener.address #reservation .aRoom .changeOccupantCount,
+#contentContener.request #reservation .aRoom .changeOccupantCount,
+#contentContener.reservation #reservation .aRoom .changeOccupantCount,
+#contentContener.fidelity #reservation .aRoom .changeOccupantCount,
+#contentContener.sponsorship #reservation .aRoom .changeOccupantCount {
   height: auto;
   background-color: #464545;
   padding: 10px 5px 0;
   margin-bottom: 15px;
   position: relative;
 }
-#reservationContener.detail #reservation .aRoom .changeOccupantCount > span,
-#reservationContener.editAccount #reservation .aRoom .changeOccupantCount > span {
+#contentContener.login #reservation .aRoom .changeOccupantCount > span,
+#contentContener.customerareahome #reservation .aRoom .changeOccupantCount > span,
+#contentContener.address #reservation .aRoom .changeOccupantCount > span,
+#contentContener.request #reservation .aRoom .changeOccupantCount > span,
+#contentContener.reservation #reservation .aRoom .changeOccupantCount > span,
+#contentContener.fidelity #reservation .aRoom .changeOccupantCount > span,
+#contentContener.sponsorship #reservation .aRoom .changeOccupantCount > span {
   margin: 0 5px 10px;
   height: 27px;
   /* Centrer verticalement une ligne de texte */
@@ -1020,18 +1276,33 @@ textarea {
   text-transform: uppercase;
   display: inline-block;
 }
-#reservationContener.detail #reservation .aRoom .changeOccupantCount > span > *,
-#reservationContener.editAccount #reservation .aRoom .changeOccupantCount > span > * {
+#contentContener.login #reservation .aRoom .changeOccupantCount > span > *,
+#contentContener.customerareahome #reservation .aRoom .changeOccupantCount > span > *,
+#contentContener.address #reservation .aRoom .changeOccupantCount > span > *,
+#contentContener.request #reservation .aRoom .changeOccupantCount > span > *,
+#contentContener.reservation #reservation .aRoom .changeOccupantCount > span > *,
+#contentContener.fidelity #reservation .aRoom .changeOccupantCount > span > *,
+#contentContener.sponsorship #reservation .aRoom .changeOccupantCount > span > * {
   vertical-align: middle;
   display: inline-block;
   line-height: inherit;
 }
-#reservationContener.detail #reservation .aRoom .changeOccupantCount > span > img,
-#reservationContener.editAccount #reservation .aRoom .changeOccupantCount > span > img {
+#contentContener.login #reservation .aRoom .changeOccupantCount > span > img,
+#contentContener.customerareahome #reservation .aRoom .changeOccupantCount > span > img,
+#contentContener.address #reservation .aRoom .changeOccupantCount > span > img,
+#contentContener.request #reservation .aRoom .changeOccupantCount > span > img,
+#contentContener.reservation #reservation .aRoom .changeOccupantCount > span > img,
+#contentContener.fidelity #reservation .aRoom .changeOccupantCount > span > img,
+#contentContener.sponsorship #reservation .aRoom .changeOccupantCount > span > img {
   vertical-align: middle;
 }
-#reservationContener.detail #reservation .aRoom .changeOccupantCount .addAction a,
-#reservationContener.editAccount #reservation .aRoom .changeOccupantCount .addAction a {
+#contentContener.login #reservation .aRoom .changeOccupantCount .addAction a,
+#contentContener.customerareahome #reservation .aRoom .changeOccupantCount .addAction a,
+#contentContener.address #reservation .aRoom .changeOccupantCount .addAction a,
+#contentContener.request #reservation .aRoom .changeOccupantCount .addAction a,
+#contentContener.reservation #reservation .aRoom .changeOccupantCount .addAction a,
+#contentContener.fidelity #reservation .aRoom .changeOccupantCount .addAction a,
+#contentContener.sponsorship #reservation .aRoom .changeOccupantCount .addAction a {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -1041,41 +1312,81 @@ textarea {
   text-indent: -9999px;
   background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -162px transparent;
 }
-#reservationContener.detail #reservation .aRoom tr,
-#reservationContener.editAccount #reservation .aRoom tr {
+#contentContener.login #reservation .aRoom tr,
+#contentContener.customerareahome #reservation .aRoom tr,
+#contentContener.address #reservation .aRoom tr,
+#contentContener.request #reservation .aRoom tr,
+#contentContener.reservation #reservation .aRoom tr,
+#contentContener.fidelity #reservation .aRoom tr,
+#contentContener.sponsorship #reservation .aRoom tr {
   font-weight: bold;
 }
-#reservationContener.detail #reservation .aRoom tr.productsNotSelectedYet,
-#reservationContener.editAccount #reservation .aRoom tr.productsNotSelectedYet {
+#contentContener.login #reservation .aRoom tr.productsNotSelectedYet,
+#contentContener.customerareahome #reservation .aRoom tr.productsNotSelectedYet,
+#contentContener.address #reservation .aRoom tr.productsNotSelectedYet,
+#contentContener.request #reservation .aRoom tr.productsNotSelectedYet,
+#contentContener.reservation #reservation .aRoom tr.productsNotSelectedYet,
+#contentContener.fidelity #reservation .aRoom tr.productsNotSelectedYet,
+#contentContener.sponsorship #reservation .aRoom tr.productsNotSelectedYet {
   font-weight: normal;
 }
-#reservationContener.detail #reservation .aRoom tr td,
-#reservationContener.editAccount #reservation .aRoom tr td {
+#contentContener.login #reservation .aRoom tr td,
+#contentContener.customerareahome #reservation .aRoom tr td,
+#contentContener.address #reservation .aRoom tr td,
+#contentContener.request #reservation .aRoom tr td,
+#contentContener.reservation #reservation .aRoom tr td,
+#contentContener.fidelity #reservation .aRoom tr td,
+#contentContener.sponsorship #reservation .aRoom tr td {
   height: 30px;
   vertical-align: middle;
 }
-#reservationContener.detail #reservation .aRoom tr td .control_checkbox,
-#reservationContener.editAccount #reservation .aRoom tr td .control_checkbox {
+#contentContener.login #reservation .aRoom tr td .control_checkbox,
+#contentContener.customerareahome #reservation .aRoom tr td .control_checkbox,
+#contentContener.address #reservation .aRoom tr td .control_checkbox,
+#contentContener.request #reservation .aRoom tr td .control_checkbox,
+#contentContener.reservation #reservation .aRoom tr td .control_checkbox,
+#contentContener.fidelity #reservation .aRoom tr td .control_checkbox,
+#contentContener.sponsorship #reservation .aRoom tr td .control_checkbox {
   margin-top: 0;
 }
-#reservationContener.detail #reservation .aRoom tr td .hiddenIfCheckbox,
-#reservationContener.editAccount #reservation .aRoom tr td .hiddenIfCheckbox {
+#contentContener.login #reservation .aRoom tr td .hiddenIfCheckbox,
+#contentContener.customerareahome #reservation .aRoom tr td .hiddenIfCheckbox,
+#contentContener.address #reservation .aRoom tr td .hiddenIfCheckbox,
+#contentContener.request #reservation .aRoom tr td .hiddenIfCheckbox,
+#contentContener.reservation #reservation .aRoom tr td .hiddenIfCheckbox,
+#contentContener.fidelity #reservation .aRoom tr td .hiddenIfCheckbox,
+#contentContener.sponsorship #reservation .aRoom tr td .hiddenIfCheckbox {
   display: none;
 }
-#reservationContener.detail #reservation .aRoom .anOccupant,
-#reservationContener.editAccount #reservation .aRoom .anOccupant {
+#contentContener.login #reservation .aRoom .anOccupant,
+#contentContener.customerareahome #reservation .aRoom .anOccupant,
+#contentContener.address #reservation .aRoom .anOccupant,
+#contentContener.request #reservation .aRoom .anOccupant,
+#contentContener.reservation #reservation .aRoom .anOccupant,
+#contentContener.fidelity #reservation .aRoom .anOccupant,
+#contentContener.sponsorship #reservation .aRoom .anOccupant {
   background-color: #ffffff;
 }
-#reservationContener.detail #reservation .aRoom .anOccupant h3,
-#reservationContener.editAccount #reservation .aRoom .anOccupant h3 {
+#contentContener.login #reservation .aRoom .anOccupant h3,
+#contentContener.customerareahome #reservation .aRoom .anOccupant h3,
+#contentContener.address #reservation .aRoom .anOccupant h3,
+#contentContener.request #reservation .aRoom .anOccupant h3,
+#contentContener.reservation #reservation .aRoom .anOccupant h3,
+#contentContener.fidelity #reservation .aRoom .anOccupant h3,
+#contentContener.sponsorship #reservation .aRoom .anOccupant h3 {
   background-image: none !important;
   background-color: #ed145b;
   color: #ffffff;
   padding: 5px 0;
   position: relative;
 }
-#reservationContener.detail #reservation .aRoom .anOccupant h3 .occupantHeaderLeft,
-#reservationContener.editAccount #reservation .aRoom .anOccupant h3 .occupantHeaderLeft {
+#contentContener.login #reservation .aRoom .anOccupant h3 .occupantHeaderLeft,
+#contentContener.customerareahome #reservation .aRoom .anOccupant h3 .occupantHeaderLeft,
+#contentContener.address #reservation .aRoom .anOccupant h3 .occupantHeaderLeft,
+#contentContener.request #reservation .aRoom .anOccupant h3 .occupantHeaderLeft,
+#contentContener.reservation #reservation .aRoom .anOccupant h3 .occupantHeaderLeft,
+#contentContener.fidelity #reservation .aRoom .anOccupant h3 .occupantHeaderLeft,
+#contentContener.sponsorship #reservation .aRoom .anOccupant h3 .occupantHeaderLeft {
   height: 27px;
   /* Centrer verticalement une ligne de texte */
 
@@ -1085,23 +1396,43 @@ textarea {
   /* Centrer verticalement une image de taille variable */
 
 }
-#reservationContener.detail #reservation .aRoom .anOccupant h3 .occupantHeaderLeft > *,
-#reservationContener.editAccount #reservation .aRoom .anOccupant h3 .occupantHeaderLeft > * {
+#contentContener.login #reservation .aRoom .anOccupant h3 .occupantHeaderLeft > *,
+#contentContener.customerareahome #reservation .aRoom .anOccupant h3 .occupantHeaderLeft > *,
+#contentContener.address #reservation .aRoom .anOccupant h3 .occupantHeaderLeft > *,
+#contentContener.request #reservation .aRoom .anOccupant h3 .occupantHeaderLeft > *,
+#contentContener.reservation #reservation .aRoom .anOccupant h3 .occupantHeaderLeft > *,
+#contentContener.fidelity #reservation .aRoom .anOccupant h3 .occupantHeaderLeft > *,
+#contentContener.sponsorship #reservation .aRoom .anOccupant h3 .occupantHeaderLeft > * {
   vertical-align: middle;
   display: inline-block;
   line-height: inherit;
 }
-#reservationContener.detail #reservation .aRoom .anOccupant h3 .occupantHeaderLeft > img,
-#reservationContener.editAccount #reservation .aRoom .anOccupant h3 .occupantHeaderLeft > img {
+#contentContener.login #reservation .aRoom .anOccupant h3 .occupantHeaderLeft > img,
+#contentContener.customerareahome #reservation .aRoom .anOccupant h3 .occupantHeaderLeft > img,
+#contentContener.address #reservation .aRoom .anOccupant h3 .occupantHeaderLeft > img,
+#contentContener.request #reservation .aRoom .anOccupant h3 .occupantHeaderLeft > img,
+#contentContener.reservation #reservation .aRoom .anOccupant h3 .occupantHeaderLeft > img,
+#contentContener.fidelity #reservation .aRoom .anOccupant h3 .occupantHeaderLeft > img,
+#contentContener.sponsorship #reservation .aRoom .anOccupant h3 .occupantHeaderLeft > img {
   vertical-align: middle;
 }
-#reservationContener.detail #reservation .aRoom .anOccupant h3 .occupantHeaderLeft small,
-#reservationContener.editAccount #reservation .aRoom .anOccupant h3 .occupantHeaderLeft small {
+#contentContener.login #reservation .aRoom .anOccupant h3 .occupantHeaderLeft small,
+#contentContener.customerareahome #reservation .aRoom .anOccupant h3 .occupantHeaderLeft small,
+#contentContener.address #reservation .aRoom .anOccupant h3 .occupantHeaderLeft small,
+#contentContener.request #reservation .aRoom .anOccupant h3 .occupantHeaderLeft small,
+#contentContener.reservation #reservation .aRoom .anOccupant h3 .occupantHeaderLeft small,
+#contentContener.fidelity #reservation .aRoom .anOccupant h3 .occupantHeaderLeft small,
+#contentContener.sponsorship #reservation .aRoom .anOccupant h3 .occupantHeaderLeft small {
   font: bold 17px Arial, Helvetica, sans-serif;
   text-transform: none;
 }
-#reservationContener.detail #reservation .aRoom .anOccupant h3 .occupantHeaderLeft:before,
-#reservationContener.editAccount #reservation .aRoom .anOccupant h3 .occupantHeaderLeft:before {
+#contentContener.login #reservation .aRoom .anOccupant h3 .occupantHeaderLeft:before,
+#contentContener.customerareahome #reservation .aRoom .anOccupant h3 .occupantHeaderLeft:before,
+#contentContener.address #reservation .aRoom .anOccupant h3 .occupantHeaderLeft:before,
+#contentContener.request #reservation .aRoom .anOccupant h3 .occupantHeaderLeft:before,
+#contentContener.reservation #reservation .aRoom .anOccupant h3 .occupantHeaderLeft:before,
+#contentContener.fidelity #reservation .aRoom .anOccupant h3 .occupantHeaderLeft:before,
+#contentContener.sponsorship #reservation .aRoom .anOccupant h3 .occupantHeaderLeft:before {
   content: "";
   width: 27px;
   height: 27px;
@@ -1109,8 +1440,13 @@ textarea {
   float: left;
   margin: 0 10px;
 }
-#reservationContener.detail #reservation .aRoom .anOccupant h3 .deleteAction a,
-#reservationContener.editAccount #reservation .aRoom .anOccupant h3 .deleteAction a {
+#contentContener.login #reservation .aRoom .anOccupant h3 .deleteAction a,
+#contentContener.customerareahome #reservation .aRoom .anOccupant h3 .deleteAction a,
+#contentContener.address #reservation .aRoom .anOccupant h3 .deleteAction a,
+#contentContener.request #reservation .aRoom .anOccupant h3 .deleteAction a,
+#contentContener.reservation #reservation .aRoom .anOccupant h3 .deleteAction a,
+#contentContener.fidelity #reservation .aRoom .anOccupant h3 .deleteAction a,
+#contentContener.sponsorship #reservation .aRoom .anOccupant h3 .deleteAction a {
   position: absolute;
   top: 6px;
   right: -3px;
@@ -1122,78 +1458,138 @@ textarea {
   float: left;
   margin: 0 10px;
 }
-#reservationContener.detail #reservation .aRoom .anOccupant .occupantFields,
-#reservationContener.editAccount #reservation .aRoom .anOccupant .occupantFields {
+#contentContener.login #reservation .aRoom .anOccupant .occupantFields,
+#contentContener.customerareahome #reservation .aRoom .anOccupant .occupantFields,
+#contentContener.address #reservation .aRoom .anOccupant .occupantFields,
+#contentContener.request #reservation .aRoom .anOccupant .occupantFields,
+#contentContener.reservation #reservation .aRoom .anOccupant .occupantFields,
+#contentContener.fidelity #reservation .aRoom .anOccupant .occupantFields,
+#contentContener.sponsorship #reservation .aRoom .anOccupant .occupantFields {
   padding: 10px 5px;
 }
-#reservationContener.detail #reservation .aRoom .anOccupant .occupantFields > *,
-#reservationContener.editAccount #reservation .aRoom .anOccupant .occupantFields > * {
+#contentContener.login #reservation .aRoom .anOccupant .occupantFields > *,
+#contentContener.customerareahome #reservation .aRoom .anOccupant .occupantFields > *,
+#contentContener.address #reservation .aRoom .anOccupant .occupantFields > *,
+#contentContener.request #reservation .aRoom .anOccupant .occupantFields > *,
+#contentContener.reservation #reservation .aRoom .anOccupant .occupantFields > *,
+#contentContener.fidelity #reservation .aRoom .anOccupant .occupantFields > *,
+#contentContener.sponsorship #reservation .aRoom .anOccupant .occupantFields > * {
   margin: 0 5px 10px;
 }
-#reservationContener.detail #reservation .aRoom .anOccupant .occupantFields input,
-#reservationContener.editAccount #reservation .aRoom .anOccupant .occupantFields input {
+#contentContener.login #reservation .aRoom .anOccupant .occupantFields input,
+#contentContener.customerareahome #reservation .aRoom .anOccupant .occupantFields input,
+#contentContener.address #reservation .aRoom .anOccupant .occupantFields input,
+#contentContener.request #reservation .aRoom .anOccupant .occupantFields input,
+#contentContener.reservation #reservation .aRoom .anOccupant .occupantFields input,
+#contentContener.fidelity #reservation .aRoom .anOccupant .occupantFields input,
+#contentContener.sponsorship #reservation .aRoom .anOccupant .occupantFields input {
   border: 1px solid #c6c5c5;
 }
-#reservationContener.detail #reservation .aRoom .anOccupant .occupantFields .control_text,
-#reservationContener.editAccount #reservation .aRoom .anOccupant .occupantFields .control_text {
+#contentContener.login #reservation .aRoom .anOccupant .occupantFields .control_text,
+#contentContener.customerareahome #reservation .aRoom .anOccupant .occupantFields .control_text,
+#contentContener.address #reservation .aRoom .anOccupant .occupantFields .control_text,
+#contentContener.request #reservation .aRoom .anOccupant .occupantFields .control_text,
+#contentContener.reservation #reservation .aRoom .anOccupant .occupantFields .control_text,
+#contentContener.fidelity #reservation .aRoom .anOccupant .occupantFields .control_text,
+#contentContener.sponsorship #reservation .aRoom .anOccupant .occupantFields .control_text {
   width: 150px;
 }
-#reservationContener.detail #reservation .aRoom .anOccupant .occupantFields .control_date,
-#reservationContener.editAccount #reservation .aRoom .anOccupant .occupantFields .control_date {
+#contentContener.login #reservation .aRoom .anOccupant .occupantFields .control_date,
+#contentContener.customerareahome #reservation .aRoom .anOccupant .occupantFields .control_date,
+#contentContener.address #reservation .aRoom .anOccupant .occupantFields .control_date,
+#contentContener.request #reservation .aRoom .anOccupant .occupantFields .control_date,
+#contentContener.reservation #reservation .aRoom .anOccupant .occupantFields .control_date,
+#contentContener.fidelity #reservation .aRoom .anOccupant .occupantFields .control_date,
+#contentContener.sponsorship #reservation .aRoom .anOccupant .occupantFields .control_date {
   width: 120px;
 }
-#reservationContener.detail #reservation .aRoom .anOccupant .occupantFields #date_sRowID_link,
-#reservationContener.editAccount #reservation .aRoom .anOccupant .occupantFields #date_sRowID_link {
+#contentContener.login #reservation .aRoom .anOccupant .occupantFields #date_sRowID_link,
+#contentContener.customerareahome #reservation .aRoom .anOccupant .occupantFields #date_sRowID_link,
+#contentContener.address #reservation .aRoom .anOccupant .occupantFields #date_sRowID_link,
+#contentContener.request #reservation .aRoom .anOccupant .occupantFields #date_sRowID_link,
+#contentContener.reservation #reservation .aRoom .anOccupant .occupantFields #date_sRowID_link,
+#contentContener.fidelity #reservation .aRoom .anOccupant .occupantFields #date_sRowID_link,
+#contentContener.sponsorship #reservation .aRoom .anOccupant .occupantFields #date_sRowID_link {
   right: 0 !important;
 }
-#reservationContener.detail #reservation .aRoom .anOccupant .occupantFields .tooltip span.bubble,
-#reservationContener.editAccount #reservation .aRoom .anOccupant .occupantFields .tooltip span.bubble {
+#contentContener.login #reservation .aRoom .anOccupant .occupantFields .tooltip span.bubble,
+#contentContener.customerareahome #reservation .aRoom .anOccupant .occupantFields .tooltip span.bubble,
+#contentContener.address #reservation .aRoom .anOccupant .occupantFields .tooltip span.bubble,
+#contentContener.request #reservation .aRoom .anOccupant .occupantFields .tooltip span.bubble,
+#contentContener.reservation #reservation .aRoom .anOccupant .occupantFields .tooltip span.bubble,
+#contentContener.fidelity #reservation .aRoom .anOccupant .occupantFields .tooltip span.bubble,
+#contentContener.sponsorship #reservation .aRoom .anOccupant .occupantFields .tooltip span.bubble {
   left: 130px;
 }
-#reservationContener.detail #reservation .aRoom .anOccupant h4,
-#reservationContener.editAccount #reservation .aRoom .anOccupant h4 {
+#contentContener.login #reservation .aRoom .anOccupant h4,
+#contentContener.customerareahome #reservation .aRoom .anOccupant h4,
+#contentContener.address #reservation .aRoom .anOccupant h4,
+#contentContener.request #reservation .aRoom .anOccupant h4,
+#contentContener.reservation #reservation .aRoom .anOccupant h4,
+#contentContener.fidelity #reservation .aRoom .anOccupant h4,
+#contentContener.sponsorship #reservation .aRoom .anOccupant h4 {
   display: none;
 }
-#reservationContener.detail #reservation #financialContener input,
-#reservationContener.editAccount #reservation #financialContener input {
+#contentContener.login #reservation #financialContener input,
+#contentContener.customerareahome #reservation #financialContener input,
+#contentContener.address #reservation #financialContener input,
+#contentContener.request #reservation #financialContener input,
+#contentContener.reservation #reservation #financialContener input,
+#contentContener.fidelity #reservation #financialContener input,
+#contentContener.sponsorship #reservation #financialContener input {
   border: 1px solid #c6c5c5;
 }
-#reservationContener.detail #reservation #financialContener .field,
-#reservationContener.editAccount #reservation #financialContener .field {
+#contentContener.login #reservation #financialContener .field,
+#contentContener.customerareahome #reservation #financialContener .field,
+#contentContener.address #reservation #financialContener .field,
+#contentContener.request #reservation #financialContener .field,
+#contentContener.reservation #reservation #financialContener .field,
+#contentContener.fidelity #reservation #financialContener .field,
+#contentContener.sponsorship #reservation #financialContener .field {
   margin-bottom: 10px;
 }
-#reservationContener.detail #reservation #financialContener .field .newListSelected,
-#reservationContener.editAccount #reservation #financialContener .field .newListSelected {
+#contentContener.login #reservation #financialContener .field .newListSelected,
+#contentContener.customerareahome #reservation #financialContener .field .newListSelected,
+#contentContener.address #reservation #financialContener .field .newListSelected,
+#contentContener.request #reservation #financialContener .field .newListSelected,
+#contentContener.reservation #reservation #financialContener .field .newListSelected,
+#contentContener.fidelity #reservation #financialContener .field .newListSelected,
+#contentContener.sponsorship #reservation #financialContener .field .newListSelected {
   float: none;
 }
-#reservationContener.detail #reservation #financialContener .field .newListSelected .selectedTxt,
-#reservationContener.editAccount #reservation #financialContener .field .newListSelected .selectedTxt {
+#contentContener.login #reservation #financialContener .field .newListSelected .selectedTxt,
+#contentContener.customerareahome #reservation #financialContener .field .newListSelected .selectedTxt,
+#contentContener.address #reservation #financialContener .field .newListSelected .selectedTxt,
+#contentContener.request #reservation #financialContener .field .newListSelected .selectedTxt,
+#contentContener.reservation #reservation #financialContener .field .newListSelected .selectedTxt,
+#contentContener.fidelity #reservation #financialContener .field .newListSelected .selectedTxt,
+#contentContener.sponsorship #reservation #financialContener .field .newListSelected .selectedTxt {
   border: 1px solid #c6c5c5;
 }
-#reservationContener.summary #option h2 + p {
+#contentContener.summary #option h2 + p {
   font-weight: bold;
 }
-#reservationContener.summary #option .label {
+#contentContener.summary #option .label {
   font: inherit;
   color: inherit;
   text-transform: inherit;
   margin-right: 10px;
   vertical-align: top;
 }
-#reservationContener.summary #option p:not(.aField) .label {
+#contentContener.summary #option p:not(.aField) .label {
   width: 278px;
   float: left;
   text-align: right;
 }
-#reservationContener.summary #option p:not(.aField) .field textarea {
+#contentContener.summary #option p:not(.aField) .field textarea {
   width: 288px;
   height: 81px;
 }
-#reservationContener.summary #option .criteria {
+#contentContener.summary #option .criteria {
   margin-bottom: 10px;
   clear: both;
 }
-#reservationContener.summary #option .criteria .label {
+#contentContener.summary #option .criteria .label {
   float: left;
   text-align: right;
   width: 278px;
@@ -1206,106 +1602,106 @@ textarea {
   /* Centrer verticalement une image de taille variable */
 
 }
-#reservationContener.summary #option .criteria .label > * {
+#contentContener.summary #option .criteria .label > * {
   vertical-align: middle;
   display: inline-block;
   line-height: inherit;
 }
-#reservationContener.summary #option .criteria .label > img {
+#contentContener.summary #option .criteria .label > img {
   vertical-align: middle;
 }
-#reservationContener.summary #option .criteria input {
+#contentContener.summary #option .criteria input {
   width: 134px;
 }
-#reservationContener.summary #option .criteria:last-of-type .label {
+#contentContener.summary #option .criteria:last-of-type .label {
   line-height: 13px;
 }
-#reservationContener.summary #option .aField .label {
+#contentContener.summary #option .aField .label {
   margin-right: 0;
 }
-#reservationContener.summary #option .aField input[type="checkbox"] {
+#contentContener.summary #option .aField input[type="checkbox"] {
   margin-top: 1px;
 }
-#reservationContener.summary #option .aField label {
+#contentContener.summary #option .aField label {
   font-style: italic;
   font-weight: bold;
   vertical-align: top;
 }
-#reservationContener.summary #option .aField label a {
+#contentContener.summary #option .aField label a {
   color: #ed145b;
 }
-#reservationContener.summary #paiement table {
+#contentContener.summary #paiement table {
   display: block;
   background-color: #ffffff;
   margin: 10px 0;
 }
-#reservationContener.summary #paiement table th {
+#contentContener.summary #paiement table th {
   background-color: #464545;
   color: #ffffff;
   padding: 10px;
   text-align: center;
   border: 1px solid #464545;
 }
-#reservationContener.summary #paiement table td {
+#contentContener.summary #paiement table td {
   margin: 10px 0;
   padding: 10px;
   text-align: left;
   border: 1px solid #464545;
 }
-#reservationContener.summary #paiement table td:nth-child(1) {
+#contentContener.summary #paiement table td:nth-child(1) {
   font-weight: bold;
 }
-#reservationContener.summary #paiement table td.amount {
+#contentContener.summary #paiement table td.amount {
   width: 125px;
   text-align: right;
 }
-#reservationContener.confirmation td {
+#contentContener.confirmation td {
   height: 27px;
 }
-#reservationContener.confirmation #authentication,
-#reservationContener.confirmation #occupant {
+#contentContener.confirmation #authentication,
+#contentContener.confirmation #occupant {
   font-weight: bold;
 }
-#reservationContener.confirmation #authentication td,
-#reservationContener.confirmation #occupant td {
+#contentContener.confirmation #authentication td,
+#contentContener.confirmation #occupant td {
   color: #8c8a8a;
 }
-#reservationContener.confirmation #authentication td.label,
-#reservationContener.confirmation #occupant td.label {
+#contentContener.confirmation #authentication td.label,
+#contentContener.confirmation #occupant td.label {
   color: inherit;
   text-transform: inherit;
   font: inherit;
   display: table-cell;
 }
-#reservationContener.confirmation #authentication #address,
-#reservationContener.confirmation #occupant #address,
-#reservationContener.confirmation #authentication #occupant_address,
-#reservationContener.confirmation #occupant #occupant_address {
+#contentContener.confirmation #authentication #address,
+#contentContener.confirmation #occupant #address,
+#contentContener.confirmation #authentication #occupant_address,
+#contentContener.confirmation #occupant #occupant_address {
   margin: 10px 0;
 }
-#reservationContener.confirmation #option {
+#contentContener.confirmation #option {
   font-weight: bold;
 }
-#reservationContener.confirmation #option .label,
-#reservationContener.confirmation #option .field {
+#contentContener.confirmation #option .label,
+#contentContener.confirmation #option .field {
   width: 276px;
 }
-#reservationContener.confirmation #option .label {
+#contentContener.confirmation #option .label {
   vertical-align: top;
   font: inherit;
   color: inherit;
   text-transform: inherit;
   margin-right: 20px;
 }
-#reservationContener.confirmation #option .field {
+#contentContener.confirmation #option .field {
   color: #8c8a8a;
   display: inline-block;
 }
-#reservationContener.confirmation #option .criteria {
+#contentContener.confirmation #option .criteria {
   margin-bottom: 10px;
   clear: both;
 }
-#reservationContener.confirmation #option .criteria .label {
+#contentContener.confirmation #option .criteria .label {
   float: left;
   height: 27px;
   /* Centrer verticalement une ligne de texte */
@@ -1316,75 +1712,75 @@ textarea {
   /* Centrer verticalement une image de taille variable */
 
 }
-#reservationContener.confirmation #option .criteria .label > * {
+#contentContener.confirmation #option .criteria .label > * {
   vertical-align: middle;
   display: inline-block;
   line-height: inherit;
 }
-#reservationContener.confirmation #option .criteria .label > img {
+#contentContener.confirmation #option .criteria .label > img {
   vertical-align: middle;
 }
-#reservationContener.confirmation #option .criteria input {
+#contentContener.confirmation #option .criteria input {
   width: 125px;
 }
-#reservationContener.confirmation #option select[name="stat_ORIG_combo"] + .newListSelected .SSContainerDivWrapper {
+#contentContener.confirmation #option select[name="stat_ORIG_combo"] + .newListSelected .SSContainerDivWrapper {
   min-width: 146px;
 }
-#reservationContener.confirmation #option .aField input[type="checkbox"] {
+#contentContener.confirmation #option .aField input[type="checkbox"] {
   margin-top: 1px;
   margin-left: -1px;
 }
-#reservationContener.confirmation #option .aField label {
+#contentContener.confirmation #option .aField label {
   font-style: italic;
   font-weight: bold;
 }
-#reservationContener.confirmation #option .aField label a {
+#contentContener.confirmation #option .aField label a {
   color: #ed145b;
 }
-#reservationContener.confirmation #paiement table.paymentList {
+#contentContener.confirmation #paiement table.paymentList {
   display: block;
   background-color: #ffffff;
   margin: 10px 0;
 }
-#reservationContener.confirmation #paiement table.paymentList th {
+#contentContener.confirmation #paiement table.paymentList th {
   background-color: #464545;
   color: #ffffff;
   padding: 10px;
   text-align: center;
   border: 1px solid #464545;
 }
-#reservationContener.confirmation #paiement table.paymentList td {
+#contentContener.confirmation #paiement table.paymentList td {
   margin: 10px 0;
   padding: 10px;
   text-align: left;
   border: 1px solid #464545;
 }
-#reservationContener.confirmation #paiement table.paymentList td:nth-child(1) {
+#contentContener.confirmation #paiement table.paymentList td:nth-child(1) {
   font-weight: bold;
 }
-#reservationContener.confirmation #paiement table.paymentList td.amount {
+#contentContener.confirmation #paiement table.paymentList td.amount {
   width: 125px;
   text-align: right;
 }
-#reservationContener.confirmation #paiement table#payment_layer_cc {
+#contentContener.confirmation #paiement table#payment_layer_cc {
   font-weight: bold;
 }
-#reservationContener.confirmation #paiement table#payment_layer_cc td {
+#contentContener.confirmation #paiement table#payment_layer_cc td {
   color: #8c8a8a;
 }
-#reservationContener.confirmation #paiement table#payment_layer_cc td.label {
+#contentContener.confirmation #paiement table#payment_layer_cc td.label {
   color: inherit;
   text-transform: inherit;
   font: inherit;
   display: table-cell;
 }
-#reservationContener .rsl-date-input,
-#reservationContener .control_date {
+#contentContener .rsl-date-input,
+#contentContener .control_date {
   position: relative;
   display: inline-block;
 }
-#reservationContener .rsl-date-input a#date_sRowID_link,
-#reservationContener .control_date a#date_sRowID_link {
+#contentContener .rsl-date-input a#date_sRowID_link,
+#contentContener .control_date a#date_sRowID_link {
   display: none;
   position: absolute;
   top: -6px;
@@ -1393,11 +1789,11 @@ textarea {
   height: 27px;
   background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -216px transparent;
 }
-#reservationContener .rsl-date-input a#date_sRowID_link img,
-#reservationContener .control_date a#date_sRowID_link img {
+#contentContener .rsl-date-input a#date_sRowID_link img,
+#contentContener .control_date a#date_sRowID_link img {
   display: none;
 }
-#reservationContener .datepicker button {
+#contentContener .datepicker button {
   display: block;
   width: 27px;
   height: 27px;
@@ -1407,15 +1803,15 @@ textarea {
   top: 0;
   right: 0;
 }
-#reservationContener label,
-#reservationContener input[type="radio"] {
+#contentContener label,
+#contentContener input[type="radio"] {
   vertical-align: middle;
 }
-#reservationContener input[type="radio"] + label {
+#contentContener input[type="radio"] + label {
   display: inline-block;
   margin: 3px 5px 0 0;
 }
-#reservationContener input[type="radio"] {
+#contentContener input[type="radio"] {
   height: auto;
 }
 /*RIGHT*/

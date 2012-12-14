@@ -248,14 +248,19 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
 
 
 /*LEFT*/
-#reservationContener{
+#contentContener{
   h2{color:@colorBgGrisM;text-transform:uppercase;font:bold 22px @ptnarrow;._verticalCenter(40px);}
   p{margin-bottom:10px;}
   table{width:100%}
 
   // step 1
-  &.detail,
-  &.editAccount{
+  &.login,
+  &.customerareahome,
+  &.address,
+  &.request,
+  &.reservation,
+  &.fidelity,
+  &.sponsorship{
     #authentication{._border-radius(10px);margin:15px 0;position:relative;background-color:@colorBgBlanc;border:5px solid @colorBgGrisM;
       h2{background-color:@colorBgGrisM;color:@colorBlanc;text-transform:uppercase;font:bold 22px @ptnarrow;._verticalCenter(40px);padding-left:10px;}
       &>div{background-color:@colorBgGrisC;color:@colorGris2;
@@ -314,7 +319,7 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
           small{font:bold 17px @arial;text-transform:none;}
         }
         .price{font:bold 19px/18px @ptnarrow;text-align:right;}
-        .action{text-align:right;}
+        .action{text-align:right;width:80px;}
         .changeOccupantCount{height:auto;background-color:@colorBgGrisF;padding:10px 5px 0;margin-bottom:15px;position:relative;
           &>span{margin:0 5px 10px;._verticalCenter(27px);font:bold 17px @ptnarrow;color:@colorBlanc;text-transform:uppercase;display:inline-block;}
           .addAction a{position:absolute;top:10px;right:10px;display:block;width:27px;height:27px;text-indent:-9999px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -162px transparent;}
