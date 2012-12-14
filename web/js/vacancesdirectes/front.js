@@ -542,10 +542,16 @@ $(function() {
         var d = new Date(),
             fCurrentDate = formatDate(d),
             currentDate = numDate(fCurrentDate),
-            startDate = numDate(fStartDate)
-        arrivalDate
-        visibleMonths = 7,
+            startDate = numDate(fStartDate),
+            endDate = numDate(fEndDate),
+            fSeasonDates = [fStartDate,fEndDate],
+            highSeasonStartDate = numDate(fHighSeasonStartDate),
+            highSeasonEndDate = numDate(fHighSeasonEndDate),
+            fHighSeasonDates = [fHighSeasonStartDate,fHighSeasonEndDate],
+            arrivalDate,
+            visibleMonths = 8,
             displayMonths = 2;
+
 
         //console.log(fSeasonDates);
         //console.log(fHighSeasonDates);
@@ -586,7 +592,7 @@ $(function() {
                 firstSelection = false;
 
                 //console.log(selectedDate);
-                $('#datepickerInput').val('Du ' + selectedDate);
+                $('#datepickerInput').val(selectedDate);
                 $('#datepicker input[type=hidden]').eq(0).val(selectedDate);
 
                 $('#datepickerField').trigger("click");
@@ -605,7 +611,7 @@ $(function() {
                 //            //console.log(endDate);
                 //            //console.log(renderWeekDay);
 
-                if ( (renderDate < startDate || renderDate > endDate) || (renderWeekDay != 6 && renderWeekDay != 3) ){
+                if ( ((renderDate > highSeasonStartDate && renderDate < highSeasonEndDate) && (renderWeekDay != 6 && renderWeekDay != 3)) || (renderDate < startDate || renderDate > endDate) || ((renderDate > startDate && renderDate < endDate) && renderWeekDay == 2) ){
                     //                    //console.log("DISABLED: " + renderDate);
                     disabledDate = renderDate;
                 }
@@ -684,6 +690,86 @@ $(function() {
 
     /*
      *  ############################################################
+     *                        NAVIGATION MENU
+     * ############################################################
+     */
+
+    if ($('#nav').find('.subnav').length > 0){
+        var currentLi,
+            hoverLi,
+            outLi,
+            previousHoverLi,
+            openTab,
+            delayToCloseTab;
+        $('#nav .tab').hover(
+            function(){
+                console.log("################ OVER ################");
+                hoverLi = $(this);
+                console.log($(this).index());
+
+                hoverLi.siblings().each(function(i,v){
+                    console.log( $(this));
+                    if ( $(this).hasClass('hover') ){
+                        openTab = true;
+                        previousHoverLi = $(this);
+                    }
+                });
+
+                if ( openTab ){
+                    console.log("openTab = TRUE");
+                    clearTimeout(delayToCloseTab);
+                    previousHoverLi.removeClass('hover').children('.subnav').hide();
+                    addBorders(previousHoverLi);
+                }
+                else {
+                    console.log("openTab = FALSE");
+                }
+
+                hoverLi.siblings().andSelf().each(function(i,v){
+                    if( $(this).hasClass('current') ){
+                        currentLi = $(this);
+                        currentLi.removeClass('current');
+                        addBorders(currentLi);
+                    }
+                })
+                hoverLi.addClass('hover').children('.subnav').show();
+                removeBorders(hoverLi);
+                openTab = true;
+            },
+            function(){
+                console.log("################ OUT ################");
+                outLi = $(this);
+                console.log($(this).index());
+
+                delayToCloseTab = setTimeout(function()
+                {
+                    outLi.removeClass('hover').children('.subnav').hide();
+                    addBorders(outLi);
+                    currentLi.addClass('current');
+                    removeBorders(currentLi);
+                    openTab = false;
+                }, 500);
+
+            }
+        );
+
+        if ( $('#nav .topnav').children('.current').length){
+            currentLi = $('#nav .topnav').children('.current');
+            removeBorders(currentLi);
+        }
+    }
+    function addBorders(e){
+        e.removeClass('noBorder');
+        e.next().removeClass('noBorder');
+    }
+    function removeBorders(e){
+        e.addClass('noBorder');
+        e.next().addClass('noBorder');
+    }
+
+
+    /*
+     *  ############################################################
      *                          HOME SLIDER
      * ############################################################
      */
@@ -753,7 +839,7 @@ $(function() {
                     afterSlide(data);
                 }
             }
-    });
+        });
         var i = 1;
         $('#slider').children('li').each(function(){
             $(this).attr('data-slide', i);
@@ -764,36 +850,36 @@ $(function() {
         }, {queue: false, duration: 500});
 
         /*
-        $('#sliderPrev').hover(
-            function () {
-                $(this).addClass("hover").animate({
-                    left: "-=5px"
-                },200);
-            },
-            function () {
-                $(this).removeClass("hover").animate({
-                    left: "+=5px"
-                },200);
-            }
-        );
-        $('#sliderNext').hover(
-            function () {
-                $(this).addClass("hover").animate({
-                    right: "-=5px"
-                },200);
-            },
-            function () {
-                $(this).removeClass("hover").animate({
-                    right: "+=5px"
-                },200);
-            }
-        );
+         $('#sliderPrev').hover(
+         function () {
+         $(this).addClass("hover").animate({
+         left: "-=5px"
+         },200);
+         },
+         function () {
+         $(this).removeClass("hover").animate({
+         left: "+=5px"
+         },200);
+         }
+         );
+         $('#sliderNext').hover(
+         function () {
+         $(this).addClass("hover").animate({
+         right: "-=5px"
+         },200);
+         },
+         function () {
+         $(this).removeClass("hover").animate({
+         right: "+=5px"
+         },200);
+         }
+         );
 
-        $('.slide').mouseover(function(){
-            $(this).addClass("hover").find('.sliderPhoto').stop().animate({rotate: '-6deg', scale: '1.1'}, 500);
-        }).mouseout(function(){
-            $(this).removeClass("hover").find('.sliderPhoto').stop().animate({rotate: '12deg', scale: '1'}, 500);
-        });
+         $('.slide').mouseover(function(){
+         $(this).addClass("hover").find('.sliderPhoto').stop().animate({rotate: '-6deg', scale: '1.1'}, 500);
+         }).mouseout(function(){
+         $(this).removeClass("hover").find('.sliderPhoto').stop().animate({rotate: '12deg', scale: '1'}, 500);
+         });
          */
 
     }
@@ -1025,10 +1111,11 @@ function countItem() {
     });
 }
 
+var $selects;
 function switchSelect(){
     //console.log("################################## switchSelect()  ##################################");
     var $button = $('.switchSelect');
-    var $selects = $button.parent().siblings(".newListSelected");
+    $selects = $button.parent().siblings(".newListSelected");
     if ($('#SearchDate_isCamping').val() == 1){
         selectNum = 1;
         $('.switchSelect').css({backgroundPosition: "0 -270px"});
@@ -1040,7 +1127,7 @@ function switchSelect(){
     }
     $('.switchSelect').live('click', function(){
         selectNum = selectNum == 0 ? 1 : 0;
-        //console.log($selects);
+        $selects = $button.parent().siblings(".newListSelected");
         var $buttonTitle = selectNum == 0 ? 'Campings' : 'Lieux de séjour';
         $button.children('span').text($buttonTitle);
 //        $button.attr('title',$buttonTitle);
@@ -1122,7 +1209,7 @@ function initializeForbiddenDates() {
     //console.log("################################## initializeForbiddenDates()  ##################################");
     //console.log(firstRendering);
     var allSaturdays = $('#datepickerCalendar td.datepickerSaturday').not($('td.datepickerNotInMonth'));
-        startHighSeasonDay = false,
+    startHighSeasonDay = false,
         endHighSeasonDay = false;
     allSaturdays.removeClass('datepickerUnselectable');
     if (firstRendering){
@@ -1153,7 +1240,7 @@ function unselectForbiddenDates(date){
     var selectedDate = numDate(formatDate(date)),
         numWeek = 0,
         allSaturdays = $('#datepickerCalendar td.datepickerSaturday').not($('td.datepickerNotInMonth'));
-        startHighSeasonDay = false,
+    startHighSeasonDay = false,
         endHighSeasonDay = false,
         arrivalDay = false,
         departureDay = false;
@@ -1256,12 +1343,12 @@ function defineHighSeason(td) {
 //    //console.log("################################## defineHighSeason()  ##################################");
     // td HIGH SEASON DEPARTURE DAY
     if ( startHighSeasonDay && td.hasClass('datepickerSpecial') && !td.hasClass('datepickerDisabled') ){
-    //console.log("HIGH SEASON LAST DAY");
+        //console.log("HIGH SEASON LAST DAY");
         endHighSeasonDay = true;
     }
     // td HIGH SEASON ARRIVAL DAY
     else if ( !startHighSeasonDay && td.hasClass('datepickerSpecial') && !td.hasClass('datepickerUnselectable') ){
-    //console.log("HIGH SEASON FIRST DAY");
+        //console.log("HIGH SEASON FIRST DAY");
         startHighSeasonDay = true;
     }
 }
@@ -1349,16 +1436,16 @@ function sliderPict() {
         }
     });
     slider.find('img').each(function() {
-        var tip = $(this).attr("title");
-        $(this).hover( function() {
-            $(this).attr('title', '');
-            $('<div id="littleTIP">'+tip+'</div>').appendTo(slider).fadeIn();
-        }, function() {
-            $('#littleTIP').fadeOut(function(){
-                $(this).remove();
+        var tip = $(this).attr("alt");
+        if (tip != "") {
+            $(this).hover( function() {
+                $('<div id="littleTIP">'+tip+'</div>').appendTo(slider).fadeIn();
+            }, function() {
+                $('#littleTIP').fadeOut(function(){
+                    $(this).remove();
+                });
             });
-            $(this).attr('title', tip);
-        });
+        }
     });
 }
 
@@ -1426,44 +1513,44 @@ function loadPluginsGmap() { // call after http://maps.googleapis.com/maps/api/j
 }
 
 
-    function setMarkers(map, mkrs) {
-        for (var i = 0; i < mkrs.length; i++) {
-            var mkr = mkrs[i];
-            var siteLatLng = new google.maps.LatLng(mkr[1], mkr[2]);
-            var marker = new google.maps.Marker({
-                position: siteLatLng,
-                map: map,
-                shadow: shadow,
-                icon: mkr[5],
-                shape: shape,
-                title: mkr[0],
-                zIndex: mkr[3],
-                idCamp: mkr[4],
-                filters: mkr[6]
+function setMarkers(map, mkrs) {
+    for (var i = 0; i < mkrs.length; i++) {
+        var mkr = mkrs[i];
+        var siteLatLng = new google.maps.LatLng(mkr[1], mkr[2]);
+        var marker = new google.maps.Marker({
+            position: siteLatLng,
+            map: map,
+            shadow: shadow,
+            icon: mkr[5],
+            shape: shape,
+            title: mkr[0],
+            zIndex: mkr[3],
+            idCamp: mkr[4],
+            filters: mkr[6]
+        });
+        aMarkers.push(marker);
+
+        if (marker.idCamp != ''){
+            google.maps.event.addListener(marker, "click", function (e) {
+                var marker = this;
+
+                if(!marker.content){ //1st click
+                    $.ajax({
+                        url: this.idCamp,
+                        success: function(response){
+                            marker.content = response;
+                            ib.setContent(response);
+                            ib.open(map, marker);
+                        }
+                    });
+                }else{
+                    ib.setContent(marker.content);
+                    ib.open(map, marker);
+                }
             });
-            aMarkers.push(marker);
-
-            if (marker.idCamp != ''){
-                google.maps.event.addListener(marker, "click", function (e) {
-                    var marker = this;
-
-                    if(!marker.content){ //1st click
-                        $.ajax({
-                            url: this.idCamp,
-                            success: function(response){
-                                marker.content = response;
-                                ib.setContent(response);
-                                ib.open(map, marker);
-                            }
-                        });
-                    }else{
-                        ib.setContent(marker.content);
-                        ib.open(map, marker);
-                    }
-                });
-            }
         }
     }
+}
 function initializeAllGmap() {
 
     // infobox vars
@@ -1705,8 +1792,8 @@ function rangeSliderPrice() {
                 //console.log('/--- rangeSliderPrice (event: change) ---/');
             }
         }).find('.noUi-handle div').each(function(index){
-            $(this).append('<span class="rangeBox">'+$(this).parent().parent().noUiSlider( 'value' )[index]+' €</span>');
-        });
+                $(this).append('<span class="rangeBox">'+$(this).parent().parent().noUiSlider( 'value' )[index]+' €</span>');
+            });
     };
 
     initRange.call();
@@ -1822,20 +1909,20 @@ function displayResults() {
     });
 
     /*$('#mapFilters').find('a')
-        .click( function(){
-            var theme = this.id;
-            //consoleLog(theme);
-            for ( var i in aMarkers ){
-                var marker = aMarkers[i];
-                marker.setVisible( $.inArray(theme, marker.filters) != -1 ? true : false );
-                //consoleLog($.inArray(theme, marker.filters));
-                //consoleLog(marker.filters);
-            }
-            $(this).addClass('active').parents('li').siblings('li').children('a').removeClass('active');
-            ib.close();
-            return false;
-        })
-        .eq(0).trigger('click');*/
+     .click( function(){
+     var theme = this.id;
+     //consoleLog(theme);
+     for ( var i in aMarkers ){
+     var marker = aMarkers[i];
+     marker.setVisible( $.inArray(theme, marker.filters) != -1 ? true : false );
+     //consoleLog($.inArray(theme, marker.filters));
+     //consoleLog(marker.filters);
+     }
+     $(this).addClass('active').parents('li').siblings('li').children('a').removeClass('active');
+     ib.close();
+     return false;
+     })
+     .eq(0).trigger('click');*/
 
     //gestion de la pagination
     listPagination();
@@ -1923,20 +2010,20 @@ function listPagination() {
 
 //contre propositions
 /*
-function contreProp() {
-    var nbContreProp = 0;
+ function contreProp() {
+ var nbContreProp = 0;
 
-    //on compte le nombre de contre-proposition
-    items.each(function() {
-        if ( $(this).hasClass('isContrePro') ) {
-            nbContreProp++;
-        };
-    });
+ //on compte le nombre de contre-proposition
+ items.each(function() {
+ if ( $(this).hasClass('isContrePro') ) {
+ nbContreProp++;
+ };
+ });
 
-    if (nbContreProp == 0) {
-        $('.contreProp').hide();
-    }else{
-        $('.contreProp').show();
-    };
-    //console.log('/--- contreProp ---/');
-};*/
+ if (nbContreProp == 0) {
+ $('.contreProp').hide();
+ }else{
+ $('.contreProp').show();
+ };
+ //console.log('/--- contreProp ---/');
+ };*/
