@@ -16,6 +16,8 @@ class DispoListing extends AbstractListing
 
     protected $etabs = array();
 
+    protected $contrePropos = false;
+
     public function setClient(DisponibiliteClient $client)
     {
         $this->client = $client;
@@ -43,7 +45,8 @@ class DispoListing extends AbstractListing
 
         $results = array(
             'type'    => self::DISPO,
-            'element' => array()
+            'element' => array(),
+            'contrePropos' => false
         );
 
         $etabs = array();
@@ -107,10 +110,15 @@ class DispoListing extends AbstractListing
         $now       = new \DateTime();
         $interval = $now->diff($startDate);
 
+        if($proposal->{'proposal_type'} == 3 && !$this->contrePropos){
+            $this->contrePropos = true;
+        }
+
         $results['element'][$key]['extra'][$proposal->{'proposal_key'}] = $proposal;
         $results['element'][$key]['start_date']     = $proposal->{'start_date'};
         $results['element'][$key]['end_date']       = $proposal->{'end_date'};
         $results['element'][$key]['days_countdown'] = $interval->format('%a');
+        $results['contrePropos'] = $this->contrePropos;
 
         $loopIndex++;
 

@@ -2384,7 +2384,7 @@ h6,
   font: bold 12px/35px Arial, Helvetica, sans-serif;
   background: #ffffff;
   color: #ed145b;
-  border: 7px solid #ed145b;
+  border: 4px solid #ed145b;
   text-transform: uppercase;
   padding: 5px 10px;
   text-decoration: none;
@@ -2412,7 +2412,7 @@ h6,
   border-left-color: #ed145b;
   border-width: 5px;
   margin-top: -5px;
-  margin-left: 7px;
+  margin-left: 4px;
 }
 .errors ul li {
   margin: 5px 0;
@@ -2429,6 +2429,20 @@ h6,
 .tooltip span {
   -webkit-box-shadow: 0 10px 10px -12px #464545;
   box-shadow: 0 10px 10px -12px #464545;
+}
+.indication {
+  font: bold 12px/35px Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: #8c8a8a;
+  border: 4px solid #8c8a8a;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  margin-bottom: 15px;
+  text-decoration: none;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  position: relative;
+  line-height: 16px;
 }
 label,
 input[type="radio"] {
@@ -3060,7 +3074,7 @@ ul.newList.optGroup li.optGroup-like a {
 }
 .home #sliderWrapper #sliderPrev .content .headline,
 .home #sliderWrapper #sliderNext .content .headline {
-  font: bold 20px/22px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+  font: bold 19px/19px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   margin-bottom: 5px;
   overflow: hidden;
