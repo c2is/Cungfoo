@@ -3060,7 +3060,7 @@ ul.newList.optGroup li.optGroup-like a {
 }
 .home #sliderWrapper #sliderPrev .content .headline,
 .home #sliderWrapper #sliderNext .content .headline {
-  font: bold 20px/22px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+  font: bold 19px/19px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   margin-bottom: 5px;
   overflow: hidden;
