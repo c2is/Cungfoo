@@ -5,6 +5,7 @@
 /app/config/Propel/databases.xml
 /app/config/Propel/generated/*
 /app/config/Resalys/client.yml
+/app/config/Cungfoo/users.yml
 /app/resources/data/sql/*
 /web/uploads/*
 .idea/
