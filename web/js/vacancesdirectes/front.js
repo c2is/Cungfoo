@@ -658,7 +658,7 @@ $(function() {
                 currentButton.addClass('isFading').fadeOut(1000);
             }
             else {
-                $('.datepicker>.datepickerGoPrev a, .datepicker>.datepickerGoNext a').removeClass('isFading').fadeIn(1000);
+                $('.datepicker>.datepickerGoPrev a, .datepicker>.datepickerGoNext a').removeClass('isFading').fadeIn(500);
             }
 
             //console.log(currentMonth);
