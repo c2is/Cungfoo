@@ -984,9 +984,15 @@ $(function() {
      * ############################################################
      */
 
-    if ( $('#account').length ) {
+    if ( $('#accountBox').length ) {
         $('#account').click(function(e){
             $(this).next().toggle();
+            if ( $('#accountBox').is(':visible') ){
+                $('#header').css({zIndex:21});
+            }
+            else {
+                $('#header').css({zIndex:20});
+            }
         });
     }
 

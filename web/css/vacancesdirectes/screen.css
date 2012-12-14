@@ -4403,6 +4403,7 @@ ul.newList.optGroup li.optGroup-like a {
   background: #8c8a8a;
   font: bold 25px/28px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   padding: 3px 5px 5px;
+  color: #ffffff;
 }
 .itemResult .itemResultTitle a {
   color: #ffffff;
@@ -5296,26 +5297,6 @@ ul.newList.optGroup li.optGroup-like a {
   float: left;
   margin-right: 10px;
 }
-.account #nav ul {
-  top: 0px;
-}
-.account #nav ul li.tab {
-  height: 50px;
-  -webkit-border-radius: 0;
-  border-radius: 0;
-}
-.account #nav ul li.tab a {
-  margin: 0;
-}
-.account #nav ul li.tab a span {
-  vertical-align: baseline;
-}
-.account #nav ul li.tab:hover > a#home:after {
-  content: '';
-}
-.account #nav ul span {
-  margin-left: 5px;
-}
 .account h1 {
   margin: 10px 0 20px;
 }
@@ -5457,6 +5438,10 @@ ul.newList.optGroup li.optGroup-like a {
   content: "-";
   padding-right: 3px;
 }
+.ce #boxLogin #formLogin a:hover {
+  text-decoration: underline;
+  color: #ed145b;
+}
 .ce #boxLogin #formLogin > .left {
   width: 214px;
   margin: 0;
@@ -5474,9 +5459,26 @@ ul.newList.optGroup li.optGroup-like a {
 }
 .ce #boxLogin #formLogin input {
   margin: 0 0 15px 0;
+  border: 0 none;
+  height: 27px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 27px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+}
+.ce #boxLogin #formLogin input > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: inherit;
+}
+.ce #boxLogin #formLogin input > img {
+  vertical-align: middle;
 }
 .ce #boxLogin #formLogin input[type=submit] {
-  margin: 22px 0 32px;
+  margin: 25px 0 37px;
 }
 .ce #boxDiscover table {
   font-family: 'PT Sans Narrow', Arial, Helvetica, sans-serif;
@@ -5484,6 +5486,7 @@ ul.newList.optGroup li.optGroup-like a {
   font-weight: bold;
   color: #ffffff;
   width: 428px;
+  margin: 30px 0 5px;
 }
 .ce #boxDiscover table tr:first-child th {
   border-bottom: 1px solid #c6c5c5;
@@ -5554,6 +5557,7 @@ ul.newList.optGroup li.optGroup-like a {
 }
 .ce #boxEdito {
   position: relative;
+  min-height: 551px;
 }
 .ce #boxEdito h2 {
   margin-left: 27px;
@@ -5617,7 +5621,7 @@ ul.newList.optGroup li.optGroup-like a {
 }
 .ce #stepNav {
   width: 976px;
-  height: 50px;
+  /*height:50px;*/
   font: bold 23px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   position: relative;
@@ -5741,6 +5745,16 @@ ul.newList.optGroup li.optGroup-like a {
 .ce #searchContainer .selectContainer .newListSelected:last-child,
 .ce #searchContainerReservation .selectContainer .newListSelected:last-child {
   margin-right: 0;
+}
+.ce #searchContainer .selectContainer .newListSelected .selectedTxt,
+.ce #searchContainerReservation .selectContainer .newListSelected .selectedTxt {
+  background-color: #e6e5e5;
+  font-weight: normal;
+  width: 164px;
+}
+.ce #searchContainer .selectContainer .newListSelected .SSContainerDivWrapper,
+.ce #searchContainerReservation .selectContainer .newListSelected .SSContainerDivWrapper {
+  min-width: 201px;
 }
 .ce #searchContainer .searchBlock,
 .ce #searchContainerReservation .searchBlock {

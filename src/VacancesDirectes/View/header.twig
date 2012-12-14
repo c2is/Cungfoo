@@ -1,7 +1,7 @@
 {% set user = app.session.get('resalys_user') %}
 
 {% if user %}
-<a id="account" href="{{ path('compte_index') }}">{{ user.service.firstname }} {{ user.service.lastname }}</a></br>
+<a id="account" href="{{ path('compte_index') }}">{{ user.service.firstname }} {{ user.service.lastname }}</a>
 {% else %}
 <a id="account" href="#">Mon compte</a>
 <div id="accountBox" class="radiusBox greyF arrowUp">
