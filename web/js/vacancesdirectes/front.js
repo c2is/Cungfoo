@@ -695,41 +695,76 @@ $(function() {
      */
 
     if ($('#nav').find('.subnav').length > 0){
-        var currentLi;
-        var hoverLi;
+        var currentLi,
+            hoverLi,
+            outLi,
+            previousHoverLi,
+            openTab,
+            delayToCloseTab;
         $('#nav .tab').hover(
             function(){
+                console.log("################ OVER ################");
                 hoverLi = $(this);
-                hoverLi.addClass('hover').children('.subnav').show();
-                hoverLi.siblings().each(function(i,v){
-                    if( $(this).hasClass('current') ){
-                        currentLi = $(this);
-                        currentLi.removeClass('current');
-                    }
-                })
-            },
-            function(){
-                hoverLi.show();
-                var openTab = false;
+                console.log($(this).index());
+
                 hoverLi.siblings().each(function(i,v){
                     console.log( $(this));
                     if ( $(this).hasClass('hover') ){
                         openTab = true;
+                        previousHoverLi = $(this);
                     }
                 });
-                console.log(openTab);
-                if ( !openTab ){
-                    setTimeout(function()
-                    {
-                        hoverLi.removeClass('hover').children('.subnav').hide();
-                        currentLi.addClass('current');
-                    }, 200);
+
+                if ( openTab ){
+                    console.log("openTab = TRUE");
+                    clearTimeout(delayToCloseTab);
+                    previousHoverLi.removeClass('hover').children('.subnav').hide();
+                    removeBorder(previousHoverLi);
                 }
                 else {
-                    hoverLi.removeClass('hover').children('.subnav').hide();
+                    console.log("openTab = FALSE");
                 }
+
+                hoverLi.addClass('hover').children('.subnav').show();
+                addBorder(hoverLi);
+                openTab = true;
+                hoverLi.siblings().andSelf().each(function(i,v){
+                    if( $(this).hasClass('current') ){
+                        currentLi = $(this);
+                        currentLi.removeClass('current');
+                        removeBorder(currentLi);
+                    }
+                })
+            },
+            function(){
+                console.log("################ OUT ################");
+                outLi = $(this);
+                console.log($(this).index());
+
+                delayToCloseTab = setTimeout(function()
+                {
+                    outLi.removeClass('hover').children('.subnav').hide();
+                    removeBorder(outLi);
+                    currentLi.addClass('current');
+                    addBorder(currentLi);
+                    openTab = false;
+                }, 500);
+
             }
         );
+
+        if ( $('#nav .topnav').children('.current').length){
+            currentLi = $('#nav .topnav').children('.current');
+            addBorder(currentLi);
+        }
+    }
+    function removeBorder(e){
+        e.removeClass('noBorder');
+        e.next().removeClass('noBorder');
+    }
+    function addBorder(e){
+        e.addClass('noBorder');
+        e.next().addClass('noBorder');
     }
 
 

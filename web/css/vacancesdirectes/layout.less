@@ -36,14 +36,7 @@ header, section, footer {position:relative;}
   .tab{position:static;color:@colorBlanc;float:left;padding:0;cursor:pointer;._border-radius(7px 7px 0 0);z-index:50;margin-left:2px;
     &:first-child:after{width:0;margin-left:0;}
     &:after{content:"";width:2px;height:17px;background-color:@colorBgGrisM;float:left;margin:-32px 0 0 -2px;}
-    &:hover,
-    &.hover,
-    &.current{background:@colorFushia;
-      small{color: @colorBlanc;}
-      small{color: @colorBlanc;}
-      &>a:after{content:url('../../images/vacancesdirectes/common/pict/Triangle-Tab.png');position:absolute;top:24px;left:50%;margin-left:-12px;height:8px;width:22px;z-index:50;}
-    }
-    &:hover .subnav{display:block;}
+    &.noBorder:after{width:0px;}
     &>a{position:relative;display:block;padding:0 10px;margin-top:7px;color:@colorBlanc;text-decoration:none;._verticalCenter(50px);
       &#home img{width:27px;height:27px;margin-top:-7px;}
       small {font:bold  15px @arial,sans-serif;color:@colorFushia;}
@@ -148,6 +141,31 @@ header, section, footer {position:relative;}
     }
   }
 //  .tab:nth-child(2) .subnav{display:block;}
+}
+.js-true{
+  #nav{
+    .tab{
+      &.hover,
+      &.current{background:@colorFushia;
+        &>a{
+          &:after{content:url('../../images/vacancesdirectes/common/pict/Triangle-Tab.png');position:absolute;top:24px;left:50%;margin-left:-12px;height:8px;width:22px;z-index:50;}
+          small{color:@colorBlanc;}
+        }
+      }
+    }
+  }
+}
+.js-false{
+  #nav{
+    .tab{
+      &:hover,
+      &.current{background:@colorFushia;
+        small{color:@colorBlanc;}
+        &>a:after{content:url('../../images/vacancesdirectes/common/pict/Triangle-Tab.png');position:absolute;top:24px;left:50%;margin-left:-12px;height:8px;width:22px;z-index:50;}
+      }
+      &:hover .subnav{display:block;}
+    }
+  }
 }
 
 /* lang */
