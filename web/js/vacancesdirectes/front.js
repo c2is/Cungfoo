@@ -1436,16 +1436,16 @@ function sliderPict() {
         }
     });
     slider.find('img').each(function() {
-        var tip = $(this).attr("title");
-        $(this).hover( function() {
-            $(this).attr('title', '');
-            $('<div id="littleTIP">'+tip+'</div>').appendTo(slider).fadeIn();
-        }, function() {
-            $('#littleTIP').fadeOut(function(){
-                $(this).remove();
+        var tip = $(this).attr("alt");
+        if (tip != "") {
+            $(this).hover( function() {
+                $('<div id="littleTIP">'+tip+'</div>').appendTo(slider).fadeIn();
+            }, function() {
+                $('#littleTIP').fadeOut(function(){
+                    $(this).remove();
+                });
             });
-            $(this).attr('title', tip);
-        });
+        }
     });
 }
 

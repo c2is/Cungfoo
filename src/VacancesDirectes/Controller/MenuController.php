@@ -97,7 +97,7 @@ class MenuController implements ControllerProviderInterface
             ),
             '1' => array(
                 'label'     => 'destination.montagne',
-                'regions'   => array('ARPY', 'ALP'),
+                'regions'   => array(/*'ARPY', Désactivé temporairement car pas de camping associé */'ALP'),
             ),
             '2' => array(
                 'label'     => 'destination.campagne',
@@ -138,7 +138,7 @@ class MenuController implements ControllerProviderInterface
     public function getRegionItalie($locale = BaseEtablissementPeer::DEFAULT_LOCALE){
         $results = array();
 
-        $arrayRegion = array('IMED', 'TOSC', 'IADR');
+        $arrayRegion = array('IMED', 'IADR');
 
         $results = $this->getRegionsByForeignCountries($locale, null, $arrayRegion);
 
