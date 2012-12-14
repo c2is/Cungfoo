@@ -231,7 +231,7 @@
         Active: true
     24:
         Code: IMED
-        ImagePath: uploads/regions/50c719dbad680.jpeg
+        ImagePath: uploads/regions/italie-med.jpg
         ImageEncartPath: null
         ImageEncartPetitePath: null
         PaysId: 2
@@ -241,7 +241,7 @@
         Active: true
     25:
         Code: ALP
-        ImagePath: uploads/regions/50c71a02c88e1.jpeg
+        ImagePath: uploads/regions/alpes.jpg
         ImageEncartPath: null
         ImageEncartPetitePath: null
         PaysId: 1
@@ -261,7 +261,7 @@
         Active: true
     27:
         Code: VERD
-        ImagePath: uploads/regions/50c71a1080d6b.jpeg
+        ImagePath: uploads/regions/verdon.jpg
         ImageEncartPath: null
         ImageEncartPetitePath: null
         PaysId: 1
