@@ -23,3 +23,9 @@
     8:
         Slug: mentions-legales
         Active: true
+    9:
+        Slug: offre-speciale-noel
+        Active: true
+    10:
+        Slug: conditions-generales
+        Active: true

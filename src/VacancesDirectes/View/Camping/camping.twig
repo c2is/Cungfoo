@@ -1,6 +1,6 @@
 {% extends "base.twig" %}
 
-{% block title %}{{ "seo.title.camping" | trans ({'%nom%': etab.name, '%ville%': etab.ville }) }}{%if hasBaignade %}{{ "seo.title.camping_suffix" }}{% endif %}{% endblock %}
+{% block title %}{{ "seo.title.camping" | trans ({'%nom%': etab.name, '%ville%': etab.ville }) }}{%if hasBaignade %}{{ "seo.title.camping_suffix" | trans }}{% endif %}{% endblock %}
 {% block metaDescription %}{{ "seo.meta.camping" | trans  ({'%nom%': etab.name, '%categorie%': etab.categorie, '%ville%': etab.ville })}}{% endblock %}
 
 {% block bodyClass %} fiche{% endblock %}
@@ -156,7 +156,7 @@
         </fieldset>
     </form>
     {% if etab.typeHebergements | length %}
-    {% for hebergement in etab.typeHebergements %}
+    {% for hebergement in etab.typeHebergementsActive %}
         <div class="typLocation {{ hebergement.categoryTypeHebergement.name }} cap{{ hebergement.nombrePlace }} clear">
             <img src="{{ asset(hebergement.imageHebergementPath) }}" width="181" height="134" alt="{{ hebergement.name | trans }}" class="left boxborder">
             <div style="overflow:hidden;">
@@ -340,8 +340,8 @@
         {{ etab.zip }} {{ etab.city }}
     </div>
     <div class="blCoordTel left">
-        {{ "fiche.tel" | trans }} {{ etab.phone1 }}<br />
-        {{ "fiche.fax" | trans }} {{ etab.phone2 }}
+        {# TODO {{ "fiche.tel" | trans }} {{ etab.phone1 }}<br />
+        {{ "fiche.fax" | trans }} {{ etab.phone2 }} #}
     </div>
     <h3 class="clearboth">{{ "fiche.horaires_ouverture" | trans }}</h3>
     <dl class="blHoraire hRecept left">

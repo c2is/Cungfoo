@@ -28,6 +28,12 @@ class Etablissement extends BaseEtablissement
         return $this->getVille()->getRegion();
     }
 
+    public function getVignette()
+    {
+        return parent::getVignette()?: "images/vacancesdirectes/common/images/search-default.jpg";
+
+    }
+
     public function getPays()
     {
         return $this->getRegion()->getPays();
@@ -157,5 +163,16 @@ class Etablissement extends BaseEtablissement
     public function getEventPrioritaire()
     {
         return EventPeer::getForEtablissement($this, EventPeer::SORT_BY_PRIORITY, 1);
+    }
+
+    public function getTypeHebergementsActive($criteria = null, PropelPDO $con = null)
+    {
+        if ($criteria === null)
+        {
+            $criteria = new \Criteria();
+        }
+        $criteria->add(TypeHebergementPeer::ACTIVE, true);
+
+        return $this->getTypeHebergements($criteria, $con);
     }
 }

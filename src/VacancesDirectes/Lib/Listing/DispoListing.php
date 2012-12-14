@@ -10,9 +10,29 @@ class DispoListing extends AbstractListing
 {
     protected $client;
 
+    protected $distinct = false;
+
+    protected $limit = null;
+
+    protected $etabs = array();
+
     public function setClient(DisponibiliteClient $client)
     {
         $this->client = $client;
+
+        return $this;
+    }
+
+    public function distinct()
+    {
+        $this->distinct = true;
+
+        return $this;
+    }
+
+    public function limit($number)
+    {
+        $this->limit = $number;
 
         return $this;
     }
@@ -31,9 +51,15 @@ class DispoListing extends AbstractListing
         {
             if (is_array($this->client->getData()['getProposals65']['fr']->{'proposal'}))
             {
+                $loopIndex = 0;
                 foreach ($this->client->getData()['getProposals65']['fr']->{'proposal'} as $proposal)
                 {
-                    $results = $this->addElement($proposal, $results);
+                    if ($this->limit !== null && $loopIndex === $this->limit)
+                    {
+                        continue;
+                    }
+
+                    $results = $this->addElement($proposal, $results, $loopIndex);
                 }
             }
             else
@@ -45,7 +71,7 @@ class DispoListing extends AbstractListing
         return $results;
     }
 
-    protected function addElement($proposal, $results)
+    protected function addElement($proposal, $results, &$loopIndex)
     {
         $etab = \Cungfoo\Model\EtablissementQuery::create()
             ->joinWithI18n($this->app['context']->get('language'))
@@ -58,6 +84,13 @@ class DispoListing extends AbstractListing
         {
             return $results;
         }
+
+        if ($this->distinct && in_array($etab->getCode(), $this->etabs))
+        {
+            return $results;
+        }
+
+        $this->etabs[] = $etab->getCode();
 
         $key = sprintf("%s_%s_%s",
             $proposal->{'etab_id'},
@@ -78,6 +111,8 @@ class DispoListing extends AbstractListing
         $results['element'][$key]['start_date']     = $proposal->{'start_date'};
         $results['element'][$key]['end_date']       = $proposal->{'end_date'};
         $results['element'][$key]['days_countdown'] = $interval->format('%a');
+
+        $loopIndex++;
 
         return $results;
     }

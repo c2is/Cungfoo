@@ -3,7 +3,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="robots" content="noindex, nofollow">
     <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>{% block title %}{{ "seo.title.default" | trans }}{% endblock %} | Vacances Directes</title>
@@ -19,6 +18,27 @@
         var templatePath = '{{ asset('') }}';<!-- templatePath : chemin du template en absolue -->
         var sGoogleApiKey = 'AIzaSyBaRlrfkxxMWr5zLkbCBJL21MnYNIYIm9I';
     </script>
+
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(
+            ['_setAccount', 'UA-4231998-1'], // compte FR
+            ['_setDomainName', '.vacances-directes.com'],
+            ['_trackPageview'],
+            ['_gat._anonymizeIp'],
+            ['b._setAccount', 'UA-17590883-1'], // compte DE
+            ['b._setDomainName', '.vacances-directes.com'],
+            ['b._trackPageview'],
+            ['b._gat._anonymizeIp']
+        );
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s  = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
 </head>
 <body class="{% block bodyClass %}{% endblock %}">
     <header class="clear">
@@ -32,11 +52,11 @@
                     </span>
                 </div>
             </div>
-            <a href="{{ path( 'homepage' ) }}" title="Retourner à Vacances directes | Le mobil-home et vous" id="logo">
+            <a href="{{ path( 'homepage' ) }}" title="Vacances directes | Le camping tout simplement !" id="logo">
             {% if app.request.get('_route') == 'homepage' %}
                 <h1 id="logoTitle">{{ "header.location_mobil_home" | trans }}</h1>
             {% endif %}
-                <img src="{{ asset('images/vacancesdirectes/common/pict/vacancesdirectes-logo.png') }}" alt="Vacances directes | Le mobil-home et vous" />
+                <img src="{{ asset('images/vacancesdirectes/common/pict/vacancesdirectes-logo.png') }}" alt="Vacances directes | Le camping tout simplement !" />
             </a>
             {% if app.request.get('_route') == 'homepage' %}
             <h2 id="catchline">{{ "header.130_camping" | trans }}</h2>

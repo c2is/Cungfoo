@@ -1,12 +1,12 @@
 body{background:#f5f5f5 url("../../images/vacancesdirectes/common/pict/bg.jpg") no-repeat 50% 0;color:@colorGris2;font:12px @arial;min-width:1000px;}
-body.popin{/*background:#fff;*/background-attachment:fixed;min-width:0;}
+body.popin{/*background:@colorBlanc;*/background-attachment:fixed;min-width:0;}
 header, section, footer {position:relative;}
 
 .full-width{position:relative;min-width:100%;float:left;z-index:0;}
 .fixed-width{position:relative;width:976px;margin:0 auto;}
 
 /* header */
-#header{width:928px;margin:0 auto;font-family:@ptnarrow;z-index:21;clear:both;
+#header{width:928px;margin:0 auto;font-family:@ptnarrow;z-index:20;clear:both;
   #logo{display:block;float:left;}
   #headerRight{float:right;}
   #telephone{width:256px;height:60px;background: url("../../images/vacancesdirectes/common/ui/phone-bg.png") no-repeat 0px 0px transparent;padding:5px 0px 15px 10px;float:right;margin:10px 0;z-index:0;
@@ -15,7 +15,7 @@ header, section, footer {position:relative;}
       a{font-weight:bold;color:@colorGris2;text-decoration:none;display:block;}
     }
   }
-    #account{float:right;font-size:16px;text-transform:uppercase;background-color:@colorFushia;border-radius:10px;padding:7px 12px;color:#fff;text-decoration:none;margin:10px 0 15px 15px;}
+    #account{float:right;font-size:16px;text-transform:uppercase;background-color:@colorFushia;border-radius:10px;padding:7px 12px;color:@colorBlanc;text-decoration:none;margin:10px 0 15px 15px;}
     #accountBox{width:320px;position:absolute;top:50px;right:0;text-align:left;color:@colorBlanc;display:none;z-index:1;
       &:after{left:100%;margin-left:-65px;}
       h2{font:bold 22px/24px @ptnarrow;text-transform:uppercase;margin-bottom:10px;color:@colorBlanc;}
@@ -36,13 +36,7 @@ header, section, footer {position:relative;}
   .tab{position:static;color:@colorBlanc;float:left;padding:0;cursor:pointer;._border-radius(7px 7px 0 0);z-index:50;margin-left:2px;
     &:first-child:after{width:0;margin-left:0;}
     &:after{content:"";width:2px;height:17px;background-color:@colorBgGrisM;float:left;margin:-32px 0 0 -2px;}
-    &:hover,
-    &.current{background:@colorFushia;
-      small{color: #fff;}
-      small{color: #fff;}
-      &>a:after{content:url('../../images/vacancesdirectes/common/pict/Triangle-Tab.png');position:absolute;top:24px;left:50%;margin-left:-12px;height:8px;width:22px;z-index:50;}
-    }
-    &:hover .subnav{display:block;}
+    &.noBorder:after{width:0px;}
     &>a{position:relative;display:block;padding:0 10px;margin-top:7px;color:@colorBlanc;text-decoration:none;._verticalCenter(50px);
       &#home img{width:27px;height:27px;margin-top:-7px;}
       small {font:bold  15px @arial,sans-serif;color:@colorFushia;}
@@ -148,6 +142,31 @@ header, section, footer {position:relative;}
   }
 //  .tab:nth-child(2) .subnav{display:block;}
 }
+.js-true{
+  #nav{
+    .tab{
+      &.hover,
+      &.current{background:@colorFushia;
+        &>a{
+          &:after{content:url('../../images/vacancesdirectes/common/pict/Triangle-Tab.png');position:absolute;top:24px;left:50%;margin-left:-12px;height:8px;width:22px;z-index:50;}
+          small{color:@colorBlanc;}
+        }
+      }
+    }
+  }
+}
+.js-false{
+  #nav{
+    .tab{
+      &:hover,
+      &.current{background:@colorFushia;
+        small{color:@colorBlanc;}
+        &>a:after{content:url('../../images/vacancesdirectes/common/pict/Triangle-Tab.png');position:absolute;top:24px;left:50%;margin-left:-12px;height:8px;width:22px;z-index:50;}
+      }
+      &:hover .subnav{display:block;}
+    }
+  }
+}
 
 /* lang */
 #lang{width:41px;height:27px;background: url('../../images/vacancesdirectes/dyn/ui/lang-flag-fr.png') no-repeat 0px 0px;border-width:4px 6px;border-style:solid;border-color:#a7a9ac;position:relative;display:inline-block;text-indent:-9999px;float:right;margin-top:19px;
@@ -181,7 +200,7 @@ h6, .h6-like{color:@colorFushia;}
   &.full{clear:both;width:100%;text-align:center;font-size:26px;margin:15px 0;}
   &.ib{display:inline-block;}
 }
-.boxborder{margin:0 25px 25px 5px;border:5px solid #fff;._box-shadow(-3px 3px 5px 0px rgba(0,0,0,0.22));
+.boxborder{margin:0 25px 25px 5px;border:5px solid @colorBlanc;._box-shadow(-3px 3px 5px 0px rgba(0,0,0,0.22));
   &.large{border:15px solid @colorBlanc;}
 }
 .pathway{font:11px/28px @arial,sans-serif;color:@colorBgGrisM;text-align:right;
@@ -286,7 +305,7 @@ input[type="radio"] {height:auto;}
   &.sombre{background-color:@colorBgGrisF;color:@colorBlanc;
     h3, p, .bt{color:@colorBlanc !important;}
   }
-  hr{height:0;border:5px solid #fff;margin:15px 0;}
+  hr{height:0;border:5px solid @colorBlanc;margin:15px 0;}
 }
 .element{position:relative;margin:0;padding:20px 0;
   iframe{width:119px;height:20px;}
@@ -355,7 +374,7 @@ body.edito{
 }
 
 .SSContainerDivWrapper {margin:0;padding:0;position:absolute;top:22px;left:0;z-index:100;}
-ul.newList {margin:0;padding:0;list-style:none;color:@colorGris2;background:#fff;border:1px solid #ccc;overflow:auto;}
+ul.newList {margin:0;padding:0;list-style:none;color:@colorGris2;background:@colorBlanc;border:1px solid #ccc;overflow:auto;}
 ul.newList * {margin:0;padding:0;}
 ul.newList a {color:@colorGris2;text-decoration:none;display:block;padding:0 8px;white-space:nowrap;cursor:pointer;}
 .newListSelected {float:left;background-color:@colorBgGrisC;position:relative;
@@ -367,7 +386,7 @@ ul.newList li a:focus {-moz-outline-style: none;}
 //ul.newList li:first-child{display:none;}
 ul.newList.optGroup li a {padding:0 8px 0 18px;}
 ul.newList.optGroup li.optGroup-like a {padding:0 8px;font-weight:bold;}
-.hiLite {background:#ED145B!important;color:#fff!important;}
+.hiLite {background:#ED145B!important;color:@colorBlanc!important;}
 .newListHover {background-color:#ccc!important;color:@colorGris2!important;cursor:default;}
 .newListDisabled {opacity: 0.6;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";filter: alpha(opacity=60);}
 .newListItemDisabled {opacity: 0.6;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";filter: alpha(opacity=60);}

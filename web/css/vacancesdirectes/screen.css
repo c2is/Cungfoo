@@ -1325,7 +1325,7 @@ body {
   min-width: 1000px;
 }
 body.popin {
-  /*background:#fff;*/
+  /*background:@colorBlanc;*/
   background-attachment: fixed;
   min-width: 0;
 }
@@ -1350,7 +1350,7 @@ footer {
   width: 928px;
   margin: 0 auto;
   font-family: 'PT Sans Narrow', Arial, Helvetica, sans-serif;
-  z-index: 21;
+  z-index: 20;
   clear: both;
 }
 #header #logo {
@@ -1395,7 +1395,7 @@ footer {
   background-color: #ed145b;
   border-radius: 10px;
   padding: 7px 12px;
-  color: #fff;
+  color: #ffffff;
   text-decoration: none;
   margin: 10px 0 15px 15px;
 }
@@ -1495,31 +1495,8 @@ footer {
   float: left;
   margin: -32px 0 0 -2px;
 }
-#nav .tab:hover,
-#nav .tab.current {
-  background: #ed145b;
-}
-#nav .tab:hover small,
-#nav .tab.current small {
-  color: #fff;
-}
-#nav .tab:hover small,
-#nav .tab.current small {
-  color: #fff;
-}
-#nav .tab:hover > a:after,
-#nav .tab.current > a:after {
-  content: url('../../images/vacancesdirectes/common/pict/Triangle-Tab.png');
-  position: absolute;
-  top: 24px;
-  left: 50%;
-  margin-left: -12px;
-  height: 8px;
-  width: 22px;
-  z-index: 50;
-}
-#nav .tab:hover .subnav {
-  display: block;
+#nav .tab.noBorder:after {
+  width: 0px;
 }
 #nav .tab > a {
   position: relative;
@@ -1849,6 +1826,47 @@ footer {
 #nav .tab .subnav#weekends .radiusBox .title {
   color: #f58220;
 }
+.js-true #nav .tab.hover,
+.js-true #nav .tab.current {
+  background: #ed145b;
+}
+.js-true #nav .tab.hover > a:after,
+.js-true #nav .tab.current > a:after {
+  content: url('../../images/vacancesdirectes/common/pict/Triangle-Tab.png');
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  margin-left: -12px;
+  height: 8px;
+  width: 22px;
+  z-index: 50;
+}
+.js-true #nav .tab.hover > a small,
+.js-true #nav .tab.current > a small {
+  color: #ffffff;
+}
+.js-false #nav .tab:hover,
+.js-false #nav .tab.current {
+  background: #ed145b;
+}
+.js-false #nav .tab:hover small,
+.js-false #nav .tab.current small {
+  color: #ffffff;
+}
+.js-false #nav .tab:hover > a:after,
+.js-false #nav .tab.current > a:after {
+  content: url('../../images/vacancesdirectes/common/pict/Triangle-Tab.png');
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  margin-left: -12px;
+  height: 8px;
+  width: 22px;
+  z-index: 50;
+}
+.js-false #nav .tab:hover .subnav {
+  display: block;
+}
 /* lang */
 #lang {
   width: 41px;
@@ -1999,7 +2017,7 @@ h6,
 }
 .boxborder {
   margin: 0 25px 25px 5px;
-  border: 5px solid #fff;
+  border: 5px solid #ffffff;
   -webkit-box-shadow: -3px 3px 5px 0px rgba(0, 0, 0, 0.22);
   box-shadow: -3px 3px 5px 0px rgba(0, 0, 0, 0.22);
 }
@@ -2481,7 +2499,7 @@ input[type="radio"] {
 }
 .bloc hr {
   height: 0;
-  border: 5px solid #fff;
+  border: 5px solid #ffffff;
   margin: 15px 0;
 }
 .element {
@@ -2828,7 +2846,7 @@ ul.newList {
   padding: 0;
   list-style: none;
   color: #464545;
-  background: #fff;
+  background: #ffffff;
   border: 1px solid #ccc;
   overflow: auto;
 }
@@ -2882,7 +2900,7 @@ ul.newList.optGroup li.optGroup-like a {
 }
 .hiLite {
   background: #ED145B!important;
-  color: #fff!important;
+  color: #ffffff !important;
 }
 .newListHover {
   background-color: #ccc!important;
@@ -3148,7 +3166,7 @@ ul.newList.optGroup li.optGroup-like a {
   color: #f58220;
 }
 .home #sliderWrapper #sliderContainer .slide .sliderStain.first .content .headline {
-  font: bold 38px/38px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+  font: bold 32px/32px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -3218,8 +3236,8 @@ ul.newList.optGroup li.optGroup-like a {
 }
 .home .locationForwards {
   position: relative;
-  padding-bottom: 35px;
-  height: 602px;
+  padding-bottom: 40px;
+  min-height: 575px;
 }
 .home .locationForwards .stamp {
   margin-bottom: 5px;
@@ -3264,7 +3282,7 @@ ul.newList.optGroup li.optGroup-like a {
   background-position: 0 0;
 }
 .home .locationForwards#topLocations .element {
-  padding: 20px 0;
+  padding: 17px 0;
 }
 .home .locationForwards#topLocations .element .details {
   width: 151px;
@@ -3314,7 +3332,7 @@ ul.newList.optGroup li.optGroup-like a {
   margin-top: -258px;
 }
 .home aside #greyBoxes {
-  margin-top: 129px;
+  margin-top: 102px;
 }
 .home #destinationsBloc {
   width: 400px;
@@ -5988,6 +6006,8 @@ aside {
 
   /* grey boxes */
 
+  /*PLACEHOLDER*/
+
 }
 aside .element .details {
   margin-bottom: 60px;
@@ -6289,7 +6309,7 @@ aside #searchBloc #searchBlocDate .spinner label {
   font: bold 17px/27px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   margin-right: 10px;
-  width: 65px;
+  width: 81px;
 }
 aside #searchBloc #searchBlocDate .spinner input {
   width: 40px;
@@ -6508,6 +6528,18 @@ aside #greyBoxes #assetsBloc .asset:nth-child(3):before {
 }
 aside #greyBoxes #assetsBloc .asset:nth-child(4):before {
   background-position: 0 -360px;
+}
+aside ::-webkit-input-placeholder {
+  color: #8c8a8a;
+}
+aside *:-moz-placeholder {
+  color: #8c8a8a;
+}
+aside *:-ms-placeholder {
+  color: #8c8a8a;
+}
+aside *.placeholder {
+  color: #8c8a8a;
 }
 /* footer */
 /* footer */

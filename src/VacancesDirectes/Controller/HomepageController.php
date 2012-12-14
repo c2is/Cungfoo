@@ -96,14 +96,18 @@ class HomepageController implements ControllerProviderInterface
                 ->addTheme($dernieresMinutes->getDestinationsCodes())
                 ->addEtab($dernieresMinutes->getEtablissementsCodes())
                 ->setNbAdults(1)
-                ->setMaxResults(5)
+                ->setMaxResults(10)
             ;
 
             $client = new DisponibiliteClient($app['config']->get('root_dir'));
             $client->addOptions($searchParams->generate());
 
             $listing = new DispoListing($app);
-            $listing->setClient($client);
+            $listing
+                ->setClient($client)
+                ->distinct()
+                ->limit(4)
+            ;
 
             $pleinActivites = new PleinActivite($app);
 
