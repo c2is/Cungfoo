@@ -5234,17 +5234,20 @@ ul.newList.optGroup li.optGroup-like a {
   z-index: 30;
 }
 .account #stepNav ul {
-  width: 976px;
-  margin: 0 auto;
+  width: auto;
   text-align: center;
+  float: left;
+  position: relative;
+  left: 50%;
 }
 .account #stepNav ul li.tab {
   margin: 0;
-  float: none;
-  display: inline-block;
-  position: static;
-  color: #ffffff;
   padding: 0;
+  float: none;
+  float: left;
+  position: relative;
+  right: 50%;
+  color: #ffffff;
 }
 .account #stepNav ul li.tab:hover,
 .account #stepNav ul li.tab.current {
