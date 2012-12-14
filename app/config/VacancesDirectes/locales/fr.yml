@@ -186,6 +186,7 @@ general.plus_visite: Plus de visites
 general.plus_evenements: Plus d'événements
 general.decouvrir: Découvrir
 general.reserver: Réserver
+general.contre_proposition: ATTENTION! Votre recherche ne donne aucun résultat. Les propositions ci-dessous sont celles qui s'en rapprochent le plus.
 
 footer.nous_joindre: Nous joindre
 footer.contact.tel: 0825 133 400
@@ -238,7 +239,6 @@ encart_vacances_directes.item_1: Des ambassadeurs pour vous accueillir
 encart_vacances_directes.item_2: Des campings sélectionnés avec soin
 encart_vacances_directes.item_3: Un site 100% sécurisé
 encart_vacances_directes.item_4: Des hébergements tout confort pour des vacances dépaysantes
-
 
 encart_informations.title: Informations & Réservations au
 encart_informations.price: (0,15 €/min)
