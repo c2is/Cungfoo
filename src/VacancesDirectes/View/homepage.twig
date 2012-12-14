@@ -195,12 +195,15 @@
     <div id="mapBloc" class="radiusBox greyC clear">
         <div id="homeMap" class="gmap left" style="width:604px;height:392px;">
             <script>
-                function homeInit() {
+                /*function homeInit() {
+                    var homeMap;
                     var homeMkrs = [
                         {# ['title', lat, lont, zindex, 'idAjaxCamping', couleurMarker, filterNew, filter....] #}
-                        {% for etab in etablissements %}
+                        ['Chalon sur Saone', 45.764544, 4.846512, 5, 'blocs/smallInfoBox.php?ID=12', markerFushia, ['NV12', 'PDLE']]
+                        ,['Lyon', 46.764544, 4.846512, 5, 'blocs/smallInfoBox.php?ID=12', markerBleu, ['NV12', 'PAQU']]
+                        {#{% for etab in etablissements %}
                             ['{{ etab.name }}', {{ etab.geoCoordinateX }}, {{ etab.geoCoordinateY }}, {{ loop.index }}, '{{ path('infobox_camping', {idResalys: etab.code}) }}', markerFushia, ['{{etab.thematiques.toArray("Code")|keys|join("','")|raw}}']],
-                        {% endfor %}
+                        {% endfor %}#}
                     ];
                     var centerhomeMkr = new google.maps.LatLng(46.31279,4.828434),
                             mapOptions = {
@@ -214,8 +217,38 @@
                     $('#mapFilters').find('a')
                         .click( function(){
                             var theme = this.id;
-                            //consoleLog(theme);
-                            for ( var i in aMarkers ){
+                            for (var i = 0; i < aMarkers.length; i++) {
+                                var marker = aMarkers[i];
+                                marker.setVisible( $.inArray(theme, marker.filters) != -1 ? true : false );
+                            }
+                            $(this).addClass('active').parents('li').siblings('li').children('a').removeClass('active');
+                            ib.close();
+                            return false;
+                        })
+                        .eq(0).trigger('click');
+                }*/
+                function homeInit() {
+                    var homeMap;
+                    var markerController = new google.maps.MVCObject();
+                    var homeMkrs = [
+                        {% for etab in etablissements %}
+                            ['{{ etab.name }}', {{ etab.geoCoordinateX }}, {{ etab.geoCoordinateY }}, {{ loop.index }}, '{{ path('infobox_camping', {idResalys: etab.code}) }}', markerFushia, ['{{etab.thematiques.toArray("Code")|keys|join("','")|raw}}']],
+                        {% endfor %}
+                    ];
+                    var centerhomeMkr = new google.maps.LatLng(46.31279,4.828434),
+                        mapOptions = {
+                            zoom: 7,
+                            mapTypeId: google.maps.MapTypeId.ROADMAP,
+                            center: centerhomeMkr
+                        };
+                    homeMap = new google.maps.Map(document.getElementById('homeMap'), mapOptions);
+                    setMarkers(homeMap, homeMkrs);
+
+
+                    $('#mapFilters').find('a')
+                        .click( function(){
+                            var theme = this.id;
+                            for (var i = 0; i < aMarkers.length; i++) {
                                 var marker = aMarkers[i];
                                 marker.setVisible( $.inArray(theme, marker.filters) != -1 ? true : false );
                             }

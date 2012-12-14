@@ -703,12 +703,12 @@ $(function() {
             delayToCloseTab;
         $('#nav .tab').hover(
             function(){
-                console.log("################ OVER ################");
+               // console.log("################ OVER ################");
                 hoverLi = $(this);
-                console.log($(this).index());
+               // console.log($(this).index());
 
                 hoverLi.siblings().each(function(i,v){
-                    console.log( $(this));
+                   // console.log( $(this));
                     if ( $(this).hasClass('hover') ){
                         openTab = true;
                         previousHoverLi = $(this);
@@ -716,13 +716,13 @@ $(function() {
                 });
 
                 if ( openTab ){
-                    console.log("openTab = TRUE");
+                   // console.log("openTab = TRUE");
                     clearTimeout(delayToCloseTab);
                     previousHoverLi.removeClass('hover').children('.subnav').hide();
                     addBorders(previousHoverLi);
                 }
                 else {
-                    console.log("openTab = FALSE");
+                   // console.log("openTab = FALSE");
                 }
 
                 hoverLi.siblings().andSelf().each(function(i,v){
@@ -737,9 +737,9 @@ $(function() {
                 openTab = true;
             },
             function(){
-                console.log("################ OUT ################");
+               // console.log("################ OUT ################");
                 outLi = $(this);
-                console.log($(this).index());
+               // console.log($(this).index());
 
                 delayToCloseTab = setTimeout(function()
                 {
