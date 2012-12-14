@@ -11,11 +11,11 @@ seo:
         theme: "%theme%"
         bonPlan: "Camping %bonPlan%, location mobil-homes %bonPlan%"
     meta:
-        default: "Vacances Directes : location de mobil-homes dans de nombreux campings en France, en Italie et en Espagne pour des vacances conviviales et reposantes."
-        pays: " Vacances Directes : découvrez nos offres de location de mobil home pas cher en %pays% pour des vacances ensoleillés en camping et réserver en ligne."
+        default: "Vacances directes : location de mobil-homes dans de nombreux campings en France, en Italie et en Espagne pour des vacances conviviales et reposantes."
+        pays: " Vacances directes : découvrez nos offres de location de mobil home pas cher en %pays% pour des vacances ensoleillés en camping et réserver en ligne."
         region: "Réserver en ligne vos futures vacances dans la région %region% en %pays% avec Vacances directes (location de mobil-homes pas cher en camping)."
-        camping: "Réserver en ligne votre futur séjour dans le camping %categorie% : %nom% à %ville% à petit prix (pas cher) avec Vacances Directes."
-        dernieres_minutes: "Découvrez toutes les offres de locations de mobil homes en dernières disponibilités en camping proposées par Vacances Directes et réserver en ligne."
+        camping: "Réserver en ligne votre futur séjour dans le camping %categorie% : %nom% à %ville% à petit prix (pas cher) avec Vacances directes."
+        dernieres_minutes: "Découvrez toutes les offres de locations de mobil homes en dernières disponibilités en camping proposées par Vacances directes et réserver en ligne."
         dispo: "Listing - Campings"
         couloir: "Espace de réservation"
         theme: "%theme%"
@@ -39,7 +39,7 @@ destination.ville_title: Camping à %item% pas cher
 destination.camping_title: Camping %ville% pas cher
 destination.retour_bottom: Retour à la liste
 
-listing_destination.campings_map_title: Campings Vacances Directes
+listing_destination.campings_map_title: Campings Vacances directes
 listing_destination.campings_map_prefixe_subtitle: en
 
 listing.plus_resultats: Plus de résultats
@@ -48,14 +48,14 @@ listing.au: au
 listing.no_results_title: Votre recherche n'a retourné aucun résultat.
 listing.no_results: Nous vous invitons à modifier vos critères de recherche
 
-menu.title: Vacances Directes
+menu.title: Vacances directes
 menu.destinations: Nos destinations
 menu.locations: Les locations
 menu.bons_plans: Les bons plans
 menu.vacances: Vos vacances
 menu.weekends: Vos week-ends
 
-menu_destination.accroche: 3 pays, 23 régions touristiques, vos vacances avec Vacances Directes.
+menu_destination.accroche: 3 pays, 23 régions touristiques, vos vacances avec Vacances directes.
 
 menu.plus_de_regions: Plus de régions
 menu.libelle: Libellé
@@ -178,7 +178,7 @@ general.en_savoir_plus: En savoir plus
 general.la_nuit: la nuit
 general.idees_week_end: Idées week-end
 general.filter_par: Filtrer par
-general.campings_vacances_directes: Campings Vacances Directes
+general.campings_vacances_directes: Campings Vacances directes
 general.decouvrir_le_camping: Découvrir le camping
 general.au_lieu_de: au lieu de
 general.sur_la_destination: sur la destination
@@ -198,8 +198,8 @@ footer.telecharger_catalogue: Télécharger le catalogue
 footer.facebook.titre: Restons en contact
 footer.facebook.intro: Suivez nos idées week-end & bons plans sur Facebook.
 footer.facebook.like: J'aime
-footer.facebook.desc.highlight: Partagez votre expérience Vacances Directes
-footer.facebook.desc: avec d'autres vacanciers. Photos, activités, avis, rejoignez la communauté des clients Vacances Directes sur
+footer.facebook.desc.highlight: Partagez votre expérience Vacances directes
+footer.facebook.desc: avec d'autres vacanciers. Photos, activités, avis, rejoignez la communauté des clients Vacances directes sur
 footer.jeu.titre: Grand jeu concours sur
 footer.jeu.desc: Gagnez un week-end en Italie
 footer.location_camping: Locations en camping
@@ -213,13 +213,13 @@ footer.a_propos: À propos
 footer.a_propos.desc: Depuis plus de 35 ans, Vacances directes propose la location en camping de mobil-homes tout confort et de qualité. Venez découvrir plus de 120 destinations sélectionnées avec soin en France, Espagne et Italie pour des vacances conviviales et reposantes.
 footer.actualites: Actualités
 footer.qui_sommes_nous: Qui sommmes-nous ?
-footer.recrutement: Recrutement Vacances Directes
+footer.recrutement: Recrutement Vacances directes
 footer.ce: Vacances comité d'entreprise
 footer.newsletter: Abonnemment newsletter
-footer.newsletter.desc: Retrouvez les bons plans et les nouvelles offres Vacances Directes directement dans votre boîte mail.
+footer.newsletter.desc: Retrouvez les bons plans et les nouvelles offres Vacances directes directement dans votre boîte mail.
 footer.newsletter.entrer_son_email: ENTRER SON E-MAIL
 footer.site_mobile: Site mobile
-footer.site_mobile.desc: Retrouvez toutes les offres de Vacances Directes sur votre mobile.
+footer.site_mobile.desc: Retrouvez toutes les offres de Vacances directes sur votre mobile.
 
 pactiv-1: En vacances avec mes parents, j'aime
 pactiv-2: Envie d'un petit break, de prendre l'air
