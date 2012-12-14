@@ -719,22 +719,22 @@ $(function() {
                     console.log("openTab = TRUE");
                     clearTimeout(delayToCloseTab);
                     previousHoverLi.removeClass('hover').children('.subnav').hide();
-                    removeBorder(previousHoverLi);
+                    addBorders(previousHoverLi);
                 }
                 else {
                     console.log("openTab = FALSE");
                 }
 
-                hoverLi.addClass('hover').children('.subnav').show();
-                addBorder(hoverLi);
-                openTab = true;
                 hoverLi.siblings().andSelf().each(function(i,v){
                     if( $(this).hasClass('current') ){
                         currentLi = $(this);
                         currentLi.removeClass('current');
-                        removeBorder(currentLi);
+                        addBorders(currentLi);
                     }
                 })
+                hoverLi.addClass('hover').children('.subnav').show();
+                removeBorders(hoverLi);
+                openTab = true;
             },
             function(){
                 console.log("################ OUT ################");
@@ -744,9 +744,9 @@ $(function() {
                 delayToCloseTab = setTimeout(function()
                 {
                     outLi.removeClass('hover').children('.subnav').hide();
-                    removeBorder(outLi);
+                    addBorders(outLi);
                     currentLi.addClass('current');
-                    addBorder(currentLi);
+                    removeBorders(currentLi);
                     openTab = false;
                 }, 500);
 
@@ -755,14 +755,14 @@ $(function() {
 
         if ( $('#nav .topnav').children('.current').length){
             currentLi = $('#nav .topnav').children('.current');
-            addBorder(currentLi);
+            removeBorders(currentLi);
         }
     }
-    function removeBorder(e){
+    function addBorders(e){
         e.removeClass('noBorder');
         e.next().removeClass('noBorder');
     }
-    function addBorder(e){
+    function removeBorders(e){
         e.addClass('noBorder');
         e.next().addClass('noBorder');
     }
