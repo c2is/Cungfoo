@@ -41,6 +41,10 @@ class SearchEngineController implements ControllerProviderInterface
                 ->withColumn('VilleI18n.name', 'name')
                 ->select(array('code', 'name'))
                 ->filterByDestination($region, $code)
+                ->useEtablissementQuery()
+                    ->filterByActive(true)
+                ->endUse()
+                ->setDistinct()
                 ->orderBy('name')
                 ->findActive()
             ;
