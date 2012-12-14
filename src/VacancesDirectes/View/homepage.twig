@@ -232,7 +232,9 @@
                     var markerController = new google.maps.MVCObject();
                     var homeMkrs = [
                         {% for etab in etablissements %}
-                            ['{{ etab.name }}', {{ etab.geoCoordinateX }}, {{ etab.geoCoordinateY }}, {{ loop.index }}, '{{ path('infobox_camping', {idResalys: etab.code}) }}', markerFushia, ['{{etab.thematiques.toArray("Code")|keys|join("','")|raw}}']],
+                        {% if etab.geoCoordinateX != '' and etab.geoCoordinateY != '' %}
+                            ['{{ etab.name }}', {{ etab.geoCoordinateX }}, {{ etab.geoCoordinateY }}, {{ loop.index }}, '{{ path('infobox_camping', {idResalys: etab.code}) }}', markerFushia, ['{{etab.thematiques.toArray("Code")|keys|join("','")|raw}}']] {% if not loop.last %} ,{% endif %}
+                        {% endif %}
                         {% endfor %}
                     ];
                     var centerhomeMkr = new google.maps.LatLng(46.31279,4.828434),
@@ -242,6 +244,7 @@
                             center: centerhomeMkr
                         };
                     homeMap = new google.maps.Map(document.getElementById('homeMap'), mapOptions);
+                    consoleLog(homeMkrs);
                     setMarkers(homeMap, homeMkrs);
 
 
