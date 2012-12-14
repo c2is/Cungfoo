@@ -97,7 +97,7 @@ class MenuController implements ControllerProviderInterface
             ),
             '1' => array(
                 'label'     => 'destination.montagne',
-                'regions'   => array('ARPY', 'ALP'),
+                'regions'   => array(/*'ARPY', Désactivé temporairement car pas de camping associé */'ALP'),
             ),
             '2' => array(
                 'label'     => 'destination.campagne',
