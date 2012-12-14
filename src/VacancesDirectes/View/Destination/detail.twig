@@ -66,6 +66,7 @@
 {% block topWideColumn %}
 
     {# Bloc POIs #}
+    {% if sitesAVisiter | length %}
     <div class="activites radiusBox greyC left clear">
     {% for poi in sitesAVisiter %}
         {# Le nombre de POIs est limité en PHP en amont, tous les POIs presents ici sont a afficher #}
@@ -77,8 +78,10 @@
     {% endfor %}
     {# TODO<a href="#_" class="bt trans right">{{ "destination.pois_all" | trans }} ({{nbSitesAVisiter}})</a> #}
     </div>
+    {% endif %}
 
     {# Bloc Evenements #}
+    {% if events | length %}
     <div class="events radiusBox greyC left clear">
     <span class="h5-like">{{ "destination.events_title" | trans }}</span>
     <span class="h6-like">{{ "destination.events_prefixe_subtitle" | trans }} {{ item.name }} {{ "destination.events_suffixe_subtitle" | trans }}</span>
@@ -91,6 +94,7 @@
         </div>
     {% endfor %}
     </div>
+    {% endif %}
 
 {% endblock %}
 
