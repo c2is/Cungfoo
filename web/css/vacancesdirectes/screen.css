@@ -1011,8 +1011,11 @@ div.datepicker .datepickerDays td.datepickerSpecial.datepickerUnselectable a:hov
 div.datepicker .datepickerDays td.datepickerSpecial.datepickerDisabled a:hover,
 div.datepicker .datepickerDays td.datepickerSpecial.datepickerUnselectable a:hover {background-color: @colorFushia;}
 */
+.datepickerSpace {
+  display: none;
+}
 .datepickerSpace div {
-  width: 0;
+  width: 0px;
 }
 #datepickerCalendar .datepickerGoNext a,
 #datepickerCalendar .datepickerGoPrev a,
@@ -6292,6 +6295,9 @@ aside #searchBloc #searchBlocDate p {
 aside #searchBloc #searchBlocDate div.datepicker {
   right: 0;
 }
+aside #searchBloc #searchBlocDate #datepickerField ::-webkit-input-placeholder {
+  text-transform: uppercase;
+}
 aside #searchBloc #searchBlocDate #datepickerCalendar {
   width: 362px;
   top: 22px;
@@ -6347,7 +6353,7 @@ aside #searchBloc #searchBlocDate .spinner input {
   height: 27px;
   border: 0 none;
   color: #ed145b;
-  font: bold 24px/27px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+  font: bold 21px/27px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-align: center;
 }
 aside #searchBloc #searchBlocDate .spinner .spin-bt-down,
