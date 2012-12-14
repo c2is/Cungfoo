@@ -97,7 +97,9 @@ aside{
       }
       p{margin-bottom:15px;}
       div.datepicker{right:0;}
-    //    div.datepicker .datepickerDays td a:hover, div.datepicker .datepickerDays td.datepickerSpecial a:hover{background-color:@colorGris3;}
+      #datepickerField{
+        ::-webkit-input-placeholder { text-transform:uppercase; }
+      }
       #datepickerCalendar {width: 362px;top:22px;right:32px;left:auto;}
       #datepickerCalendar .datepicker {
         width: 362px !important;
@@ -123,7 +125,7 @@ aside{
       .datepickerLegend{display:none;}
       .spinner label{font:bold 17px/27px @ptnarrow;text-transform:uppercase;margin-right:10px;width:81px;}
       .spinner{
-        input{width:40px;height:27px;border:0 none;color:@colorFushia;font:bold 24px/27px @ptnarrow;text-align:center;}
+        input{width:40px;height:27px;border:0 none;color:@colorFushia;font:bold 21px/27px @ptnarrow;text-align:center;}
         .spin-bt-down,
         .spin-bt-up {width:27px;height:27px;background-color:@colorBgGrisF;color:@colorBlanc;font:bold 26px/27px @ptnarrow;text-align:center;cursor:pointer;overflow:hidden;border:0 none;}
         .spin-bt-down:active,
@@ -201,13 +203,9 @@ aside{
         &>a{text-decoration:none;}
         &:before{float:left;content:"";background:url("../../images/vacancesdirectes/common/sprites/sprite-60.png") no-repeat 0 -360px transparent;width:60px;height:80px;display:block;position:relative;margin-left:-70px;}
         &:nth-child(1):before{background-position:0 -120px}
-      //&:nth-child(1):hover:before{background-position:-60px -360px}
         &:nth-child(2):before{background-position:0 -200px}
-      //&:nth-child(2):hover:before{background-position:-60px -440px}
         &:nth-child(3):before{background-position:0 -280px}
-      //&:nth-child(3):hover:before{background-position:-60px -520px}
         &:nth-child(4):before{background-position:0 -360px}
-      //&:nth-child(4):hover:before{background-position:-60px -600px}
       }
 
     }
