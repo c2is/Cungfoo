@@ -176,6 +176,317 @@ $(function() {
         });
     }
 
+
+    /*
+     *  ############################################################
+     *                          HEADER
+     * ############################################################
+     */
+
+    if ( $('#accountBox').length ) {
+        $('#account').click(function(e){
+            $(this).next().toggle();
+            if ( $('#accountBox').is(':visible') ){
+                $('#header').css({zIndex:21});
+            }
+            else {
+                $('#header').css({zIndex:20});
+            }
+        });
+    }
+
+
+    /*
+     *  ############################################################
+     *                        NAVIGATION MENU
+     * ############################################################
+     */
+
+    if ($('#nav').find('.subnav').length > 0){
+        var currentLi,
+            hoverLi,
+            outLi,
+            previousHoverLi,
+            openTab,
+            delayToCloseTab;
+        $('#nav .tab').hover(
+            function(){
+                console.log("################ OVER ################");
+                hoverLi = $(this);
+                console.log($(this).index());
+
+                hoverLi.siblings().each(function(i,v){
+                    console.log( $(this));
+                    if ( $(this).hasClass('hover') ){
+                        openTab = true;
+                        previousHoverLi = $(this);
+                    }
+                });
+
+                if ( openTab ){
+                    console.log("openTab = TRUE");
+                    clearTimeout(delayToCloseTab);
+                    previousHoverLi.removeClass('hover').children('.subnav').hide();
+                    addBorders(previousHoverLi);
+                }
+                else {
+                    console.log("openTab = FALSE");
+                }
+
+                hoverLi.siblings().andSelf().each(function(i,v){
+                    if( $(this).hasClass('current') ){
+                        currentLi = $(this);
+                        currentLi.removeClass('current');
+                        addBorders(currentLi);
+                    }
+                })
+                hoverLi.addClass('hover').children('.subnav').show();
+                removeBorders(hoverLi);
+                openTab = true;
+            },
+            function(){
+                console.log("################ OUT ################");
+                outLi = $(this);
+                console.log($(this).index());
+
+                delayToCloseTab = setTimeout(function()
+                {
+                    outLi.removeClass('hover').children('.subnav').hide();
+                    addBorders(outLi);
+                    currentLi.addClass('current');
+                    removeBorders(currentLi);
+                    openTab = false;
+                }, 500);
+
+            }
+        );
+
+        if ( $('#nav .topnav').children('.current').length){
+            currentLi = $('#nav .topnav').children('.current');
+            removeBorders(currentLi);
+        }
+    }
+    function addBorders(e){
+        e.removeClass('noBorder');
+        e.next().removeClass('noBorder');
+    }
+    function removeBorders(e){
+        e.addClass('noBorder');
+        e.next().addClass('noBorder');
+    }
+
+
+    /*
+     *  ############################################################
+     *                          HOME SLIDER
+     * ############################################################
+     */
+
+    var direction;
+    var pos;
+    if ($('#slider').length){
+        $("#slider").carouFredSel({
+            auto: {
+                play: false,
+                delay: 5000,
+                timeoutDuration: 5000,
+                fx: "scroll",
+                easing: "swing",
+                onBefore: function(data) {
+                    direction = "next";
+                    beforeSlide(data);
+                },
+                onAfter	: function(data) {
+                    afterSlide(data);
+                }
+            },
+            direction:"up",
+            items: {
+                visible: 1
+            },
+            onCreate: function( data ) {
+                redefineSliderButtons();
+            },
+            scroll: {
+
+            },
+            prev: {
+                button: "#sliderPrev",
+                fx: "scroll",
+                easing: "swing",
+                onBefore: function(data) {
+                    direction = "prev";
+                    beforeSlide(data);
+                },
+                onAfter	: function(data) {
+                    afterSlide(data);
+                }
+            },
+            next: {
+                button: "#sliderNext",
+                fx: "scroll",
+                easing: "swing",
+                onBefore: function(data) {
+                    direction = "next";
+                    beforeSlide(data);
+                },
+                onAfter	: function(data) {
+                    afterSlide(data);
+                }
+            },
+            pagination: {
+                container: "#sliderPager",
+                keys: true,
+                fx: "scroll",
+                easing: "swing",
+                onBefore: function(data) {
+                    direction = "page";
+                    beforeSlide(data);
+                },
+                onAfter	: function(data) {
+                    afterSlide(data);
+                }
+            }
+        });
+        var i = 1;
+        $('#slider').children('li').each(function(){
+            $(this).attr('data-slide', i);
+            i++;
+        });
+        $('.sliderPhoto').eq(0).animate({
+            rotate: '12deg'
+        }, {queue: false, duration: 500});
+
+        /*
+         $('#sliderPrev').hover(
+         function () {
+         $(this).addClass("hover").animate({
+         left: "-=5px"
+         },200);
+         },
+         function () {
+         $(this).removeClass("hover").animate({
+         left: "+=5px"
+         },200);
+         }
+         );
+         $('#sliderNext').hover(
+         function () {
+         $(this).addClass("hover").animate({
+         right: "-=5px"
+         },200);
+         },
+         function () {
+         $(this).removeClass("hover").animate({
+         right: "+=5px"
+         },200);
+         }
+         );
+
+         $('.slide').mouseover(function(){
+         $(this).addClass("hover").find('.sliderPhoto').stop().animate({rotate: '-6deg', scale: '1.1'}, 500);
+         }).mouseout(function(){
+         $(this).removeClass("hover").find('.sliderPhoto').stop().animate({rotate: '12deg', scale: '1'}, 500);
+         });
+         */
+
+    }
+
+    function beforeSlide(e){
+        //consoleLog(e);
+        e.items.old.removeClass( "active" );
+        if (direction ==  "page"){
+            var newSlide = e.items.new.attr('data-slide');
+            var oldSlide = e.items.old.attr('data-slide');
+            if (newSlide > oldSlide){
+                direction = "next";
+            } else {
+                direction = "prev";
+            }
+        }
+
+//        $("#sliderPrev, #sliderNext").find('.content').fadeOut(100);
+        $('#sliderPrev').animate({left:-125},100);
+        $('#sliderNext').animate({right:-125},100);
+
+        $('.sliderBackground').hide();
+        $('#sliderBackground').show();
+        $('.sliderStain').hide();
+        pos = $("#slider").triggerHandler("currentPosition");
+        if(direction == "next"){
+            e.items.new.find('.sliderPostmark').hide();
+            e.items.new.find('.sliderPhoto').show();
+            e.items.old.find('.sliderPostmark').fadeOut(300);
+            e.items.old.find('.sliderPhoto').fadeOut(500);
+
+            e.items.old.find('.sliderPhoto').animate({
+                rotate: '-54deg',
+                scale: '0.5'
+            }, {queue: false, duration: 500});
+            e.items.new.find('.sliderPhoto').rotate('18deg'); // rotates to 0deg
+            e.items.new.find('.sliderPhoto').scale('1'); // rotates to 0deg
+            e.items.new.find('.sliderPostmark').fadeIn(3000);
+        } else {
+            e.items.new.find('.sliderPostmark').hide();
+            e.items.new.find('.sliderPhoto').hide();
+            e.items.new.find('.sliderPostmark').fadeIn(3000);
+            e.items.new.find('.sliderPhoto').fadeIn(500);
+
+            e.items.old.find('.sliderPhoto').rotate('12deg'); // rotates to 0deg
+            e.items.old.find('.sliderPhoto').scale('01'); // rotates to 0deg
+            e.items.new.find('.sliderPhoto').rotate('-108deg');
+            e.items.new.find('.sliderPhoto').scale(0);
+        }
+    }
+
+    function afterSlide(e){
+        e.items.new.addClass( "active" );
+        $('.sliderBackground').show();
+        $('.sliderStain.first').stop().fadeIn(300);
+        $('.sliderStain.second').delay(150).fadeIn(300);
+        $('#sliderBackground').hide();
+
+        e.items.old.find('.sliderPostmark').hide();
+        e.items.old.find('.sliderPhoto').rotate('18deg'); // rotates to 0deg
+        e.items.old.find('.sliderPhoto').scale(1); // scales to 100%
+        e.items.new.find('.sliderPhoto').animate({
+            rotate: '12deg',
+            scale: '1'
+        }, {queue: false, duration: 500});
+
+        redefineSliderButtons();
+    }
+
+    function redefineSliderButtons(){
+
+        //console.log(direction);
+
+        var prevSlideTitle = $("#slider").children('li').last().find('.headline').clone();
+        var nextSlideTitle = $("#slider").children('li').eq(1).find('.headline').clone();
+
+        if ($("#slider").children('li').last().find('.sliderStain.second').length){
+            var prevSlidePrice = $("#slider").children('li').last().find('.sliderStain.second').children(".content").clone();
+            $('#sliderPrev').empty().append(prevSlidePrice).children('.content').prepend(prevSlideTitle);
+        }
+        else {
+            $('#sliderPrev').empty().wrapInner('<div class="content" />').children('.content').prepend(prevSlideTitle);
+        }
+        if ($("#slider").children('li').eq(1).find('.sliderStain.second').length){
+            var nextSlidePrice = $("#slider").children('li').eq(1).find('.sliderStain.second').children(".content").clone();
+            $('#sliderNext').empty().append(nextSlidePrice).children('.content').prepend(nextSlideTitle);
+        }
+        else {
+            $('#sliderNext').empty().wrapInner('<div class="content" />').children('.content').prepend(nextSlideTitle);
+        }
+
+
+
+
+        $("#sliderPrev").delay(300).animate({left:20},300);
+        $("#sliderNext").delay(300).animate({right:20},300);
+    }
+
+
     /*
      *  ############################################################
      *                          DATEPICKER
@@ -686,314 +997,6 @@ $(function() {
 
         firstRendering = true;
 
-    }
-
-    /*
-     *  ############################################################
-     *                        NAVIGATION MENU
-     * ############################################################
-     */
-
-    if ($('#nav').find('.subnav').length > 0){
-        var currentLi,
-            hoverLi,
-            outLi,
-            previousHoverLi,
-            openTab,
-            delayToCloseTab;
-        $('#nav .tab').hover(
-            function(){
-                console.log("################ OVER ################");
-                hoverLi = $(this);
-                console.log($(this).index());
-
-                hoverLi.siblings().each(function(i,v){
-                    console.log( $(this));
-                    if ( $(this).hasClass('hover') ){
-                        openTab = true;
-                        previousHoverLi = $(this);
-                    }
-                });
-
-                if ( openTab ){
-                    console.log("openTab = TRUE");
-                    clearTimeout(delayToCloseTab);
-                    previousHoverLi.removeClass('hover').children('.subnav').hide();
-                    addBorders(previousHoverLi);
-                }
-                else {
-                    console.log("openTab = FALSE");
-                }
-
-                hoverLi.siblings().andSelf().each(function(i,v){
-                    if( $(this).hasClass('current') ){
-                        currentLi = $(this);
-                        currentLi.removeClass('current');
-                        addBorders(currentLi);
-                    }
-                })
-                hoverLi.addClass('hover').children('.subnav').show();
-                removeBorders(hoverLi);
-                openTab = true;
-            },
-            function(){
-                console.log("################ OUT ################");
-                outLi = $(this);
-                console.log($(this).index());
-
-                delayToCloseTab = setTimeout(function()
-                {
-                    outLi.removeClass('hover').children('.subnav').hide();
-                    addBorders(outLi);
-                    currentLi.addClass('current');
-                    removeBorders(currentLi);
-                    openTab = false;
-                }, 500);
-
-            }
-        );
-
-        if ( $('#nav .topnav').children('.current').length){
-            currentLi = $('#nav .topnav').children('.current');
-            removeBorders(currentLi);
-        }
-    }
-    function addBorders(e){
-        e.removeClass('noBorder');
-        e.next().removeClass('noBorder');
-    }
-    function removeBorders(e){
-        e.addClass('noBorder');
-        e.next().addClass('noBorder');
-    }
-
-
-    /*
-     *  ############################################################
-     *                          HOME SLIDER
-     * ############################################################
-     */
-
-    var direction;
-    var pos;
-    if ($('#slider').length){
-        $("#slider").carouFredSel({
-            auto: {
-                play: false,
-                delay: 5000,
-                timeoutDuration: 5000,
-                fx: "scroll",
-                easing: "swing",
-                onBefore: function(data) {
-                    direction = "next";
-                    beforeSlide(data);
-                },
-                onAfter	: function(data) {
-                    afterSlide(data);
-                }
-            },
-            direction:"up",
-            items: {
-                visible: 1
-            },
-            onCreate: function( data ) {
-                redefineSliderButtons();
-            },
-            scroll: {
-
-            },
-            prev: {
-                button: "#sliderPrev",
-                fx: "scroll",
-                easing: "swing",
-                onBefore: function(data) {
-                    direction = "prev";
-                    beforeSlide(data);
-                },
-                onAfter	: function(data) {
-                    afterSlide(data);
-                }
-            },
-            next: {
-                button: "#sliderNext",
-                fx: "scroll",
-                easing: "swing",
-                onBefore: function(data) {
-                    direction = "next";
-                    beforeSlide(data);
-                },
-                onAfter	: function(data) {
-                    afterSlide(data);
-                }
-            },
-            pagination: {
-                container: "#sliderPager",
-                keys: true,
-                fx: "scroll",
-                easing: "swing",
-                onBefore: function(data) {
-                    direction = "page";
-                    beforeSlide(data);
-                },
-                onAfter	: function(data) {
-                    afterSlide(data);
-                }
-            }
-        });
-        var i = 1;
-        $('#slider').children('li').each(function(){
-            $(this).attr('data-slide', i);
-            i++;
-        });
-        $('.sliderPhoto').eq(0).animate({
-            rotate: '12deg'
-        }, {queue: false, duration: 500});
-
-        /*
-         $('#sliderPrev').hover(
-         function () {
-         $(this).addClass("hover").animate({
-         left: "-=5px"
-         },200);
-         },
-         function () {
-         $(this).removeClass("hover").animate({
-         left: "+=5px"
-         },200);
-         }
-         );
-         $('#sliderNext').hover(
-         function () {
-         $(this).addClass("hover").animate({
-         right: "-=5px"
-         },200);
-         },
-         function () {
-         $(this).removeClass("hover").animate({
-         right: "+=5px"
-         },200);
-         }
-         );
-
-         $('.slide').mouseover(function(){
-         $(this).addClass("hover").find('.sliderPhoto').stop().animate({rotate: '-6deg', scale: '1.1'}, 500);
-         }).mouseout(function(){
-         $(this).removeClass("hover").find('.sliderPhoto').stop().animate({rotate: '12deg', scale: '1'}, 500);
-         });
-         */
-
-    }
-
-    function beforeSlide(e){
-        //consoleLog(e);
-        e.items.old.removeClass( "active" );
-        if (direction ==  "page"){
-            var newSlide = e.items.new.attr('data-slide');
-            var oldSlide = e.items.old.attr('data-slide');
-            if (newSlide > oldSlide){
-                direction = "next";
-            } else {
-                direction = "prev";
-            }
-        }
-
-//        $("#sliderPrev, #sliderNext").find('.content').fadeOut(100);
-        $('#sliderPrev').animate({left:-125},100);
-        $('#sliderNext').animate({right:-125},100);
-
-        $('.sliderBackground').hide();
-        $('#sliderBackground').show();
-        $('.sliderStain').hide();
-        pos = $("#slider").triggerHandler("currentPosition");
-        if(direction == "next"){
-            e.items.new.find('.sliderPostmark').hide();
-            e.items.new.find('.sliderPhoto').show();
-            e.items.old.find('.sliderPostmark').fadeOut(300);
-            e.items.old.find('.sliderPhoto').fadeOut(500);
-
-            e.items.old.find('.sliderPhoto').animate({
-                rotate: '-54deg',
-                scale: '0.5'
-            }, {queue: false, duration: 500});
-            e.items.new.find('.sliderPhoto').rotate('18deg'); // rotates to 0deg
-            e.items.new.find('.sliderPhoto').scale('1'); // rotates to 0deg
-            e.items.new.find('.sliderPostmark').fadeIn(3000);
-        } else {
-            e.items.new.find('.sliderPostmark').hide();
-            e.items.new.find('.sliderPhoto').hide();
-            e.items.new.find('.sliderPostmark').fadeIn(3000);
-            e.items.new.find('.sliderPhoto').fadeIn(500);
-
-            e.items.old.find('.sliderPhoto').rotate('12deg'); // rotates to 0deg
-            e.items.old.find('.sliderPhoto').scale('01'); // rotates to 0deg
-            e.items.new.find('.sliderPhoto').rotate('-108deg');
-            e.items.new.find('.sliderPhoto').scale(0);
-        }
-    }
-
-    function afterSlide(e){
-        e.items.new.addClass( "active" );
-        $('.sliderBackground').show();
-        $('.sliderStain.first').stop().fadeIn(300);
-        $('.sliderStain.second').delay(150).fadeIn(300);
-        $('#sliderBackground').hide();
-
-        e.items.old.find('.sliderPostmark').hide();
-        e.items.old.find('.sliderPhoto').rotate('18deg'); // rotates to 0deg
-        e.items.old.find('.sliderPhoto').scale(1); // scales to 100%
-        e.items.new.find('.sliderPhoto').animate({
-            rotate: '12deg',
-            scale: '1'
-        }, {queue: false, duration: 500});
-
-        redefineSliderButtons();
-    }
-
-    function redefineSliderButtons(){
-
-        //console.log(direction);
-
-        var prevSlideTitle = $("#slider").children('li').last().find('.headline').clone();
-        var nextSlideTitle = $("#slider").children('li').eq(1).find('.headline').clone();
-
-        if ($("#slider").children('li').last().find('.sliderStain.second').length){
-            var prevSlidePrice = $("#slider").children('li').last().find('.sliderStain.second').children(".content").clone();
-            $('#sliderPrev').empty().append(prevSlidePrice).children('.content').prepend(prevSlideTitle);
-        }
-        else {
-            $('#sliderPrev').empty().wrapInner('<div class="content" />').children('.content').prepend(prevSlideTitle);
-        }
-        if ($("#slider").children('li').eq(1).find('.sliderStain.second').length){
-            var nextSlidePrice = $("#slider").children('li').eq(1).find('.sliderStain.second').children(".content").clone();
-            $('#sliderNext').empty().append(nextSlidePrice).children('.content').prepend(nextSlideTitle);
-        }
-        else {
-            $('#sliderNext').empty().wrapInner('<div class="content" />').children('.content').prepend(nextSlideTitle);
-        }
-
-
-
-
-        $("#sliderPrev").delay(300).animate({left:20},300);
-        $("#sliderNext").delay(300).animate({right:20},300);
-    }
-
-    /*
-     *  ############################################################
-     *                          HEADER
-     * ############################################################
-     */
-
-    if ( $('#accountBox').length ) {
-        $('#account').click(function(e){
-            $(this).next().toggle();
-            if ( $('#accountBox').is(':visible') ){
-                $('#header').css({zIndex:21});
-            }
-            else {
-                $('#header').css({zIndex:20});
-            }
-        });
     }
 
 
