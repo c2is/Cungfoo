@@ -658,7 +658,7 @@ $(function() {
                 currentButton.addClass('isFading').fadeOut(1000);
             }
             else {
-                $('.datepicker>.datepickerGoPrev a, .datepicker>.datepickerGoNext a').removeClass('isFading').fadeIn(1000);
+                $('.datepicker>.datepickerGoPrev a, .datepicker>.datepickerGoNext a').removeClass('isFading').fadeIn(500);
             }
 
             //console.log(currentMonth);
@@ -703,12 +703,12 @@ $(function() {
             delayToCloseTab;
         $('#nav .tab').hover(
             function(){
-                console.log("################ OVER ################");
+               // console.log("################ OVER ################");
                 hoverLi = $(this);
-                console.log($(this).index());
+               // console.log($(this).index());
 
                 hoverLi.siblings().each(function(i,v){
-                    console.log( $(this));
+                   // console.log( $(this));
                     if ( $(this).hasClass('hover') ){
                         openTab = true;
                         previousHoverLi = $(this);
@@ -716,13 +716,13 @@ $(function() {
                 });
 
                 if ( openTab ){
-                    console.log("openTab = TRUE");
+                   // console.log("openTab = TRUE");
                     clearTimeout(delayToCloseTab);
                     previousHoverLi.removeClass('hover').children('.subnav').hide();
                     addBorders(previousHoverLi);
                 }
                 else {
-                    console.log("openTab = FALSE");
+                   // console.log("openTab = FALSE");
                 }
 
                 hoverLi.siblings().andSelf().each(function(i,v){
@@ -737,9 +737,9 @@ $(function() {
                 openTab = true;
             },
             function(){
-                console.log("################ OUT ################");
+               // console.log("################ OUT ################");
                 outLi = $(this);
-                console.log($(this).index());
+               // console.log($(this).index());
 
                 delayToCloseTab = setTimeout(function()
                 {
@@ -888,7 +888,7 @@ $(function() {
         //consoleLog(e);
         e.items.old.removeClass( "active" );
         if (direction ==  "page"){
-            var newSlide = e.items.new.attr('data-slide');
+            var newSlide = e.items.visible.attr('data-slide');
             var oldSlide = e.items.old.attr('data-slide');
             if (newSlide > oldSlide){
                 direction = "next";
@@ -906,8 +906,8 @@ $(function() {
         $('.sliderStain').hide();
         pos = $("#slider").triggerHandler("currentPosition");
         if(direction == "next"){
-            e.items.new.find('.sliderPostmark').hide();
-            e.items.new.find('.sliderPhoto').show();
+            e.items.visible.find('.sliderPostmark').hide();
+            e.items.visible.find('.sliderPhoto').show();
             e.items.old.find('.sliderPostmark').fadeOut(300);
             e.items.old.find('.sliderPhoto').fadeOut(500);
 
@@ -915,24 +915,24 @@ $(function() {
                 rotate: '-54deg',
                 scale: '0.5'
             }, {queue: false, duration: 500});
-            e.items.new.find('.sliderPhoto').rotate('18deg'); // rotates to 0deg
-            e.items.new.find('.sliderPhoto').scale('1'); // rotates to 0deg
-            e.items.new.find('.sliderPostmark').fadeIn(3000);
+            e.items.visible.find('.sliderPhoto').rotate('18deg'); // rotates to 0deg
+            e.items.visible.find('.sliderPhoto').scale('1'); // rotates to 0deg
+            e.items.visible.find('.sliderPostmark').fadeIn(3000);
         } else {
-            e.items.new.find('.sliderPostmark').hide();
-            e.items.new.find('.sliderPhoto').hide();
-            e.items.new.find('.sliderPostmark').fadeIn(3000);
-            e.items.new.find('.sliderPhoto').fadeIn(500);
+            e.items.visible.find('.sliderPostmark').hide();
+            e.items.visible.find('.sliderPhoto').hide();
+            e.items.visible.find('.sliderPostmark').fadeIn(3000);
+            e.items.visible.find('.sliderPhoto').fadeIn(500);
 
             e.items.old.find('.sliderPhoto').rotate('12deg'); // rotates to 0deg
             e.items.old.find('.sliderPhoto').scale('01'); // rotates to 0deg
-            e.items.new.find('.sliderPhoto').rotate('-108deg');
-            e.items.new.find('.sliderPhoto').scale(0);
+            e.items.visible.find('.sliderPhoto').rotate('-108deg');
+            e.items.visible.find('.sliderPhoto').scale(0);
         }
     }
 
     function afterSlide(e){
-        e.items.new.addClass( "active" );
+        e.items.visible.addClass( "active" );
         $('.sliderBackground').show();
         $('.sliderStain.first').stop().fadeIn(300);
         $('.sliderStain.second').delay(150).fadeIn(300);
@@ -941,7 +941,7 @@ $(function() {
         e.items.old.find('.sliderPostmark').hide();
         e.items.old.find('.sliderPhoto').rotate('18deg'); // rotates to 0deg
         e.items.old.find('.sliderPhoto').scale(1); // scales to 100%
-        e.items.new.find('.sliderPhoto').animate({
+        e.items.visible.find('.sliderPhoto').animate({
             rotate: '12deg',
             scale: '1'
         }, {queue: false, duration: 500});
