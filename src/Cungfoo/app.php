@@ -29,9 +29,7 @@ $app->register(new Silex\Provider\SecurityServiceProvider(), array(
             'pattern'   => '/',
             'form'      => array('login_path' => '/login', 'check_path' => '/login_check'),
             'logout'    => array('logout_path' => '/logout'),
-            'users'     => array(
-                'admin' => array('ROLE_ADMIN', 'nhDr7OyKlXQju+Ge/WKGrPQ9lPBSUFfpK+B1xqx/+8zLZqRNX0+5G1zBQklXUFy86lCpkAofsExlXiorUcKSNQ=='),
-            )
+            'users'     => Symfony\Component\Yaml\Yaml::parse(sprintf('%s/Cungfoo/users.yml', $app['config']->get('config_dir')))['users'],
         )
     )
 ));
