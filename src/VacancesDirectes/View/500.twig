@@ -1,5 +1,12 @@
 {% extends "base.twig" %}
 
-{% block content %}
-    Internal server error.
+{% block leftColumn %}
+    <h1>Désolé, une erreur s'est produite ...</h1>
+    <p>Retourner sur la <a href="{{path('homepage')}}">page d'accueil</a>.</p>
+{% endblock %}
+
+{% block rightColumn %}
+<div id="greyBoxes">
+    {% include 'Bloc/sejour_reussi.twig' %}
+</div>
 {% endblock %}

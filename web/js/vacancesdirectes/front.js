@@ -690,6 +690,86 @@ $(function() {
 
     /*
      *  ############################################################
+     *                        NAVIGATION MENU
+     * ############################################################
+     */
+
+    if ($('#nav').find('.subnav').length > 0){
+        var currentLi,
+            hoverLi,
+            outLi,
+            previousHoverLi,
+            openTab,
+            delayToCloseTab;
+        $('#nav .tab').hover(
+            function(){
+                console.log("################ OVER ################");
+                hoverLi = $(this);
+                console.log($(this).index());
+
+                hoverLi.siblings().each(function(i,v){
+                    console.log( $(this));
+                    if ( $(this).hasClass('hover') ){
+                        openTab = true;
+                        previousHoverLi = $(this);
+                    }
+                });
+
+                if ( openTab ){
+                    console.log("openTab = TRUE");
+                    clearTimeout(delayToCloseTab);
+                    previousHoverLi.removeClass('hover').children('.subnav').hide();
+                    addBorders(previousHoverLi);
+                }
+                else {
+                    console.log("openTab = FALSE");
+                }
+
+                hoverLi.siblings().andSelf().each(function(i,v){
+                    if( $(this).hasClass('current') ){
+                        currentLi = $(this);
+                        currentLi.removeClass('current');
+                        addBorders(currentLi);
+                    }
+                })
+                hoverLi.addClass('hover').children('.subnav').show();
+                removeBorders(hoverLi);
+                openTab = true;
+            },
+            function(){
+                console.log("################ OUT ################");
+                outLi = $(this);
+                console.log($(this).index());
+
+                delayToCloseTab = setTimeout(function()
+                {
+                    outLi.removeClass('hover').children('.subnav').hide();
+                    addBorders(outLi);
+                    currentLi.addClass('current');
+                    removeBorders(currentLi);
+                    openTab = false;
+                }, 500);
+
+            }
+        );
+
+        if ( $('#nav .topnav').children('.current').length){
+            currentLi = $('#nav .topnav').children('.current');
+            removeBorders(currentLi);
+        }
+    }
+    function addBorders(e){
+        e.removeClass('noBorder');
+        e.next().removeClass('noBorder');
+    }
+    function removeBorders(e){
+        e.addClass('noBorder');
+        e.next().addClass('noBorder');
+    }
+
+
+    /*
+     *  ############################################################
      *                          HOME SLIDER
      * ############################################################
      */

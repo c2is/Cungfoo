@@ -12,5 +12,6 @@ Disallow : /rsl/
 Disallow : /fr/vacances/vacances/
 Disallow : /fr/vacances//
 Disallow : /dispo/
+Disallow : /couloir-reservation/
 
 Sitemap: http://www.vacances-directes.com/sitemap.xml

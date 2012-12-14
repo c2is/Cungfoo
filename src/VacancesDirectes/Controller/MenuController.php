@@ -138,7 +138,7 @@ class MenuController implements ControllerProviderInterface
     public function getRegionItalie($locale = BaseEtablissementPeer::DEFAULT_LOCALE){
         $results = array();
 
-        $arrayRegion = array('IMED', 'TOSC', 'IADR');
+        $arrayRegion = array('IMED', 'IADR');
 
         $results = $this->getRegionsByForeignCountries($locale, null, $arrayRegion);
 
