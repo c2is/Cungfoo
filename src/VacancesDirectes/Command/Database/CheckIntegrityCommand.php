@@ -38,18 +38,17 @@ class CheckIntegrityCommand extends BaseCommand
 
         try
         {
-            \Cungfoo\Model\RegionQuery::create()
-                ->update(array('Active' => false), $con)
-            ;
             $items = \Cungfoo\Model\RegionQuery::create()
                 ->usePaysQuery()
-                    ->filterByActive(true)
+                    ->filterByActive(false)
+                    ->_or()
+                    ->filterById(null, \Criteria::ISNULL)
                 ->endUse()
                 ->find($con)
             ;
             foreach($items as $item)
             {
-                $item->setActive(true);
+                $item->setActive(false);
                 $item->save();
             }
 
@@ -64,13 +63,11 @@ class CheckIntegrityCommand extends BaseCommand
                 $output->writeln(sprintf('<info>%s</info> region <comment>%s - %s</comment> is unactive.', $this->getName(), $notActive->getCode(), $notActive->getName()));
             }
 
-
-            \Cungfoo\Model\VilleQuery::create()
-                ->update(array('Active' => false), $con)
-            ;
             $items = \Cungfoo\Model\VilleQuery::create()
                 ->useRegionQuery()
-                    ->filterByActive(true)
+                    ->filterByActive(false)
+                    ->_or()
+                    ->filterById(null, \Criteria::ISNULL)
                 ->endUse()
                 ->find($con)
             ;
@@ -91,12 +88,11 @@ class CheckIntegrityCommand extends BaseCommand
                 $output->writeln(sprintf('<info>%s</info> ville <comment>%s - %s</comment> is unactive.', $this->getName(), $notActive->getCode(), $notActive->getName()));
             }
 
-            \Cungfoo\Model\EtablissementQuery::create()
-                ->update(array('Active' => false), $con)
-            ;
             $items = \Cungfoo\Model\EtablissementQuery::create()
                 ->useVilleQuery()
-                    ->filterByActive(true)
+                    ->filterByActive(false)
+                    ->_or()
+                    ->filterById(null, \Criteria::ISNULL)
                 ->endUse()
                 ->find($con)
             ;
@@ -137,9 +133,6 @@ class CheckIntegrityCommand extends BaseCommand
                 $item->save();
             }
 
-            \Cungfoo\Model\TopCampingQuery::create()
-                ->update(array('Active' => false), $con)
-            ;
             $items = \Cungfoo\Model\TopCampingQuery::create()
                 ->useEtablissementQuery()
                     ->filterByActive(true)

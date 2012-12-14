@@ -191,7 +191,6 @@
                                 //['title', lat, lont, zindex, 'idAjaxCamping', couleurMarker, filterNew, filter....]
                                 ['Chalon sur Saone', 45.764544, 4.846512, 5, 'blocs/smallInfoBox.php?ID=12', markerFushia, ['NV12', 'PDLE']]
                                 ,['Lyon', 46.764544, 4.846512, 5, 'blocs/smallInfoBox.php?ID=12', markerBleu, ['NV12', 'PAQU']]
-                                ,['Lyon', 46.794544, 4.896512, 5, 'blocs/smallInfoBox.php?ID=12', markerVert, ['']]
                             ];
                             var centerhomeMkr = new google.maps.LatLng(46.31279,4.828434),
                                 mapOptions = {
@@ -202,15 +201,13 @@
                             homeMap = new google.maps.Map(document.getElementById('homeMap'), mapOptions);
                             setMarkers(homeMap, homeMkrs);
 
+
                             $('#mapFilters').find('a')
                                 .click( function(){
                                     var theme = this.id;
-                                    //consoleLog(theme);
-                                    for ( var i in aMarkers ){
+                                    for (var i = 0; i < aMarkers.length; i++) {
                                         var marker = aMarkers[i];
                                         marker.setVisible( $.inArray(theme, marker.filters) != -1 ? true : false );
-                                        //consoleLog($.inArray(theme, marker.filters));
-                                        //consoleLog(marker.filters);
                                     }
                                     $(this).addClass('active').parents('li').siblings('li').children('a').removeClass('active');
                                     ib.close();

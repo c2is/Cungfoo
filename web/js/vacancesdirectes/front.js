@@ -1218,7 +1218,7 @@ function initializeForbiddenDates() {
     //console.log("################################## initializeForbiddenDates()  ##################################");
     //console.log(firstRendering);
     var allSaturdays = $('#datepickerCalendar td.datepickerSaturday').not($('td.datepickerNotInMonth'));
-    startHighSeasonDay = false,
+        startHighSeasonDay = false,
         endHighSeasonDay = false;
     allSaturdays.removeClass('datepickerUnselectable');
     if (firstRendering){
@@ -1249,7 +1249,7 @@ function unselectForbiddenDates(date){
     var selectedDate = numDate(formatDate(date)),
         numWeek = 0,
         allSaturdays = $('#datepickerCalendar td.datepickerSaturday').not($('td.datepickerNotInMonth'));
-    startHighSeasonDay = false,
+        startHighSeasonDay = false,
         endHighSeasonDay = false,
         arrivalDay = false,
         departureDay = false;
@@ -1560,6 +1560,7 @@ function setMarkers(map, mkrs) {
         }
     }
 }
+
 function initializeAllGmap() {
 
     // infobox vars
@@ -1616,7 +1617,6 @@ function initializeAllGmap() {
         homeInit();
     }
 }
-
 
 /*** FONCTIONS RESULTATS DE RECHERCHE ***/
 function initCritResult(){
@@ -1714,6 +1714,7 @@ function launchFilters() {
     //Pagination de la liste de resultats
     listPagination();
 }
+
 function openCrit() {
     $('.formSearchRefined .sectionTitle').click(function() {
         $(this).toggleClass('open').next('fieldset').fadeToggle();
@@ -1801,8 +1802,8 @@ function rangeSliderPrice() {
                 //console.log('/--- rangeSliderPrice (event: change) ---/');
             }
         }).find('.noUi-handle div').each(function(index){
-                $(this).append('<span class="rangeBox">'+$(this).parent().parent().noUiSlider( 'value' )[index]+' €</span>');
-            });
+            $(this).append('<span class="rangeBox">'+$(this).parent().parent().noUiSlider( 'value' )[index]+' €</span>');
+        });
     };
 
     initRange.call();
@@ -1941,7 +1942,6 @@ function displayResults() {
 
     //console.log('/--- displayResults : '+nbItemsDisplayed+' ---/');
 };
-
 
 //gestion du tri par prix ou pertinence
 function orderList() {
