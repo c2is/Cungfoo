@@ -1743,8 +1743,8 @@ function findMinMaxRange() {
 //creation du rangeSlider de prix
 function rangeSliderPrice() {
     var $range = $("#noUiSlider"),
-        minScale = minPrice-20,
-        maxScale = maxPrice+20,
+        minScale = minPrice/*-20*/,
+        maxScale = maxPrice/*+20*/,
         minStart = minPrice,
         minStop = maxPrice;
 
