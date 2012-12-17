@@ -48,10 +48,10 @@ $(function() {
     }
 
 // Test html5 form capacties andif do polyfills
-    //if (!Modernizr.input.placeholder) { polyfillPlaceholder(); } // html5 placeholder
+    if (!Modernizr.input.placeholder) { polyfillPlaceholder(); } // html5 placeholder
 
 //
-    $('.cover').css({backgroundSize: "cover"});
+    //$('.cover').css({backgroundSize: "cover"});
 
 // Gestion du click sur le parent
     if ($('.linkParent').length > 0) { addLinkBlock(); }
@@ -1899,30 +1899,12 @@ function displayResults() {
             $(this).fadeOut().next('.disclaim').fadeOut();
         };
 
-        for ( var i in aMarkers ){
+        for (var i = 0; i < aMarkers.length; i++) {
             var marker = aMarkers[i];
             marker.setVisible( $.inArray(marker.idCamp, gMarkers) != -1 ? true : false );
-            //consoleLog($.inArray(theme, marker.filters));
-            //consoleLog(marker.filters);
         }
 
     });
-
-    /*$('#mapFilters').find('a')
-        .click( function(){
-            var theme = this.id;
-            //consoleLog(theme);
-            for ( var i in aMarkers ){
-                var marker = aMarkers[i];
-                marker.setVisible( $.inArray(theme, marker.filters) != -1 ? true : false );
-                //consoleLog($.inArray(theme, marker.filters));
-                //consoleLog(marker.filters);
-            }
-            $(this).addClass('active').parents('li').siblings('li').children('a').removeClass('active');
-            ib.close();
-            return false;
-        })
-        .eq(0).trigger('click');*/
 
     //gestion de la pagination
     listPagination();
