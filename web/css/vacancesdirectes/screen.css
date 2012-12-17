@@ -2331,11 +2331,6 @@ h6,
 .radiusBox2 .stamp span {
   margin-left: -6px;
 }
-/*.stain{width:90px;._verticalCenter(70px,22px);background-image:url("../../images/vacancesdirectes/common/ui/stain.png");background-repeat:no-repeat;text-align:center;font-size:10px;color:@colorBlanc;margin-left:-10px;position:relative;
-  &>span{margin-top:10px;}
-  .price{font-size:27px;font-weight:bold;}
-}
-.ie-lte8 .stain{width:70px;min-width:70px !important;}*/
 .tooltip {
   outline: none;
   position: relative;
@@ -2622,13 +2617,13 @@ input[type="radio"] {
   vertical-align: middle;
 }
 .element .stain > span {
-  margin-top: 5px;
+  margin-top: 10px;
 }
 .element .stain .price {
   font-size: 27px;
   font-weight: bold;
   display: block;
-  margin: 8px 0 -8px;
+  margin: 7px 0 0px;
   letter-spacing: normal;
 }
 .element.promo .details {
@@ -2678,7 +2673,7 @@ input[type="radio"] {
   background: url("../../images/vacancesdirectes/common/ui/stain.png") no-repeat 0 -262px transparent;
   margin: 0;
   position: absolute;
-  top: -20px;
+  top: -10px;
   left: -30px;
   z-index: 1;
 }
