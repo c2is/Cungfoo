@@ -66,7 +66,9 @@ class EtablissementType extends BaseEtablissementType
                     'description'   => 'Données CMS',
                     'content'       => array(
                         'vignette',
+                        'vignette_delete',
                         'plan_path',
+                        'plan_path_delete',
                         'geo_coordinate_x',
                         'geo_coordinate_y',
                         'video_path',
