@@ -6,7 +6,9 @@ use Silex\Application;
 
 use Symfony\Component\HttpFoundation\Request;
 
-use VacancesDirectes\Form\Type\Search\DateType,
+use Cungfoo\Model\EtablissementQuery,
+    Cungfoo\Model\VilleQuery,
+    VacancesDirectes\Form\Type\Search\DateType,
     VacancesDirectes\Form\Data\Search\DateData;
 
 class SearchEngine
@@ -39,6 +41,30 @@ class SearchEngine
 
             if ($this->form->isValid())
             {
+                if ($searchDateData->destination == null && ($searchDateData->camping || $searchDateData->ville))
+                {
+                    if ($searchDateData->isCamping)
+                    {
+                        $camping = EtablissementQuery::create()
+                            ->filterByCode($searchDateData->camping)
+                            ->findOne()
+                        ;
+
+                        $searchDateData->destination = $camping->getRegion()->getCode();
+                    }
+                    else
+                    {
+                        $ville = VilleQuery::create()
+                            ->filterByCode($searchDateData->ville)
+                            ->findOne()
+                        ;
+
+                        $searchDateData->destination = $ville->getRegion()->getCode();
+                    }
+
+                    $this->app['session']->set('search_engine_data', $searchDateData);
+                }
+
                 if ($searchDateData->dateDebut && $searchDateData->nbJours)
                 {
                     $dateDebut = \DateTime::createFromFormat('d/m/Y', $searchDateData->dateDebut);
