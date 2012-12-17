@@ -52,7 +52,7 @@ class CouloirController implements ControllerProviderInterface
 
         $controllers->post('/recapitulatif/{proposalKey}', function (Request $request, $proposalKey) use ($app) {
 
-            $rslConfig = $app['config']->get('rsl_config')['services']['catalogue']['default_envelope'];
+            $rslConfig = $app['config']->get('rsl_config')['services']['disponibilite']['default_envelope'];
 
             $query = array(
                 "specificFiles"     => 'couloir',
@@ -81,7 +81,7 @@ class CouloirController implements ControllerProviderInterface
 
         $controllers->get('/confirmation', function (Request $request) use ($app) {
 
-            $rslConfig = $app['config']->get('rsl_config')['services']['catalogue']['default_envelope'];
+            $rslConfig = $app['config']->get('rsl_config')['services']['disponibilite']['default_envelope'];
 
             $query = array(
                 "specificFiles" => 'couloir',
