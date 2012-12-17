@@ -512,8 +512,8 @@
         </div>
     </div>
     <div id="telephone">
-        <span>Informations & réservations
-            <a href="tel:+33825133400">0825 133 400 (0,15€/min)</a>
+        <span>Informations & réservations<br />
+            <a class="phone" href="tel:+33825133400">0825 133 400</a> <span class="price"> (0,15€/min)</span>
         </span>
     </div>
 </div>
