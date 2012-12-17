@@ -50,6 +50,7 @@ class DernieresMinutesController implements ControllerProviderInterface
                 ->addTheme($dernieresMinutes->getDestinationsCodes())
                 ->addEtab($dernieresMinutes->getEtablissementsCodes())
                 ->setNbAdults(1)
+                ->setMaxResults(50)
             ;
 
             $client = new DisponibiliteClient($app['config']->get('root_dir'));
