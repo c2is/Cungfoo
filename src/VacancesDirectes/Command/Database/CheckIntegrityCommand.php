@@ -73,7 +73,7 @@ class CheckIntegrityCommand extends BaseCommand
             ;
             foreach($items as $item)
             {
-                $item->setActive(true);
+                $item->setActive(false);
                 $item->save();
             }
 
@@ -98,7 +98,7 @@ class CheckIntegrityCommand extends BaseCommand
             ;
             foreach($items as $item)
             {
-                $item->setActive(true);
+                $item->setActive(false);
                 $item->save();
             }
 
@@ -135,7 +135,7 @@ class CheckIntegrityCommand extends BaseCommand
 
             $items = \Cungfoo\Model\TopCampingQuery::create()
                 ->useEtablissementQuery()
-                    ->filterByActive(true)
+                    ->filterByActive(false)
                 ->endUse()
                 ->find($con)
             ;
