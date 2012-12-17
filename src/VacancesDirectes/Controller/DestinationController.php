@@ -173,7 +173,12 @@ class DestinationController implements ControllerProviderInterface
 
     protected function process(Application $app, Request $request, $pays, $region = null, $ville = null, $destination = self::DESTINATION_PAYS)
     {
-        $dateData = new \VacancesDirectes\Form\Data\Search\DateData();
+        $dateData = $app['session']->get('search_engine_data');
+        if (!$dateData)
+        {
+            $dateData = new \VacancesDirectes\Form\Data\Search\DateData();
+        }
+
         switch ($destination) {
             case self::DESTINATION_PAYS:
                 $item = $pays;
@@ -194,6 +199,8 @@ class DestinationController implements ControllerProviderInterface
                 $app->abort(404, "This route does not exist.");
                 break;
         }
+
+        $app['session']->set('search_engine_data', $dateData);
 
         $locale = $app['context']->get('language');
 

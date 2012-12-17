@@ -32,6 +32,17 @@ class SearchEngine
             $searchDateData = $dateData;
         }
 
+        // override la session passé en paramètre ($dateData)
+        if ('POST' == $this->request->getMethod())
+        {
+            $searchDateQuery = $this->request->get('SearchDate');
+
+            $searchDateData->destination = $searchDateQuery['destination'];
+            $searchDateData->ville       = $searchDateQuery['ville'];
+            $searchDateData->camping     = $searchDateQuery['camping'];
+            $searchDateData->isCamping   = $searchDateQuery['isCamping'];
+        }
+
         $this->form = $this->app['form.factory']->create(new DateType($this->app), $searchDateData);
 
         if ('POST' == $this->request->getMethod())
