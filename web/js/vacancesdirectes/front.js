@@ -51,7 +51,7 @@ $(function() {
     if (!Modernizr.input.placeholder) { polyfillPlaceholder(); } // html5 placeholder
 
 //
-    //$('.cover').css({backgroundSize: "cover"});
+    $('.cover').css({backgroundSize: "cover"});
 
 // Gestion du click sur le parent
     if ($('.linkParent').length > 0) { addLinkBlock(); }
