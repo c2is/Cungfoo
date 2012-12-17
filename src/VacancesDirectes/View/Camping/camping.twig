@@ -244,6 +244,7 @@
     <div id="proxMap" class="gmap" style="width:616px;height:326px;">
         <script>
             function proxInit() {
+                var proxMap;
                 var proxMkrs = [
                     //['title', lat, lont, zindex, 'idAjaxCamping', couleurMarker]
                     ['{{ etab.name }}', {{ etab.geoCoordinateX }}, {{ etab.geoCoordinateY }}, 5, '{#{{ path('infobox_camping', {idResalys: etab.code}) }}#}', markerFushia]
@@ -315,6 +316,7 @@
     <div id="infoMap" class="gmap" style="width:616px;height:326px;">
         <script>
             function infoInit() {
+                var infoMap;
                 var infoMkrs = [
                     //['title', lat, lont, zindex, 'idAjaxCamping', couleurMarker]
                     ['{{ etab.name }}', {{ etab.geoCoordinateX }}, {{ etab.geoCoordinateY }}, 1, '{{ path('infobox_camping', {idResalys: etab.code}) }}', markerFushia]
