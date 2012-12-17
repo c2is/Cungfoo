@@ -36,4 +36,24 @@ class EtablissementQuery extends BaseEtablissementQuery
             ->_endif()
         ;
     }
+
+    public function findActive($absolute = true, $con = null)
+    {
+        if ($absolute)
+        {
+            $this
+                ->useVilleQuery()
+                    ->filterByActive(true)
+                    ->useRegionQuery()
+                        ->filterByActive(true)
+                        ->usePaysQuery()
+                            ->filterByActive(true)
+                        ->endUse()
+                    ->endUse()
+                ->endUse()
+            ;
+        }
+
+        return parent::findActive($con);
+    }
 }
