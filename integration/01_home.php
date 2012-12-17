@@ -22,7 +22,11 @@
                             <span class="region">Région</span>
 							<span class="condition">7 nuits pour 6 personnes</span>
 						</div>
-                        <a href="#_" class="stain cover linkBlock"><span>à partir de<br /><span class="price linkBlock">152<span class="fine">&nbsp;</span>€</span></span></a>
+                        <a href="#_" class="stain cover linkBlock">
+                            <span>à partir de<br />
+                            <span class="price linkBlock">152<span class="fine">&nbsp;</span>€</span>
+                            la semaine</span>
+                        </a>
                     </div>
                     <div class="element promo clear linkParent">
                         <div class="left">
@@ -34,7 +38,13 @@
                             <span class="region">Région</span>
                             <span class="condition">7 nuits pour 6 personnes</span>
 						</div>
-                        <a href="#_" class="stain cover linkBlock"><span>à partir de<br /><span class="price linkBlock">152<span class="fine">&nbsp;</span>€</span><br />au lieu de <span class="line-through">189<span class="fine">&nbsp;</span>€</span></span><span class="discount">-20%</span></a>
+                        <a href="#_" class="stain cover linkBlock">
+                            <span>à partir de<br />
+                            <span class="price linkBlock">152<span class="fine">&nbsp;</span>€</span>
+                            la semaine
+                            </span>
+                            <span class="discount">-20%</span>
+                        </a>
                     </div>
                     <div class="element clear linkParent">
                         <div class="left">
@@ -46,7 +56,11 @@
                             <span class="region">Région</span>
                             <span class="condition">7 nuits pour 6 personnes</span>
 						</div>
-                        <a href="#_" class="stain cover linkBlock"><span>à partir de<br /><span class="price linkBlock">152<span class="fine">&nbsp;</span>€</span></span></a>
+                        <a href="#_" class="stain cover linkBlock">
+                            <span>à partir de<br />
+                            <span class="price linkBlock">152<span class="fine">&nbsp;</span>€</span>
+                            </span>
+                        </a>
                     </div>
                     <a href="#_" class="bt link right">Voir tous les agenda culturel et sorties (13)</a>
                 </div>
