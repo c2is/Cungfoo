@@ -13,10 +13,9 @@
 }
 #widgetRange{float:left;width:326px;margin:10px 0 0 22px;padding:10px;background:@colorBgGrisC;._border-radius(5px);font:bold 15px Arial;color:#575757;height:82px;
   #noUiSlider{width:288px;margin:10px 6px;color:@colorFushia;background:#bcb9b9;padding:0 10px;}
-  .noUi-handle{cursor:pointer;z-index:1 !important;
-    &:first-child .rangeBox{left:-14px;}
-    &:last-child .rangeBox{left:-34px;}
-  }
+  .noUi-handle{cursor:pointer;z-index:1 !important;}
+  .noUi-lowerHandle .rangeBox{left:-14px;}
+  .noUi-upperHandle .rangeBox{left:-34px;}
   .rangeBox{width:50px;position:absolute;text-align:center;}
   .noUi-midBar{background-color:@colorFushia;}
 }
