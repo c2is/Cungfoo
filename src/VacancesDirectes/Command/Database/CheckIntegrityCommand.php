@@ -38,80 +38,64 @@ class CheckIntegrityCommand extends BaseCommand
 
         try
         {
-            \Cungfoo\Model\RegionQuery::create()
-                ->update(array('Active' => false), $con)
-            ;
+            /**
+             * REGIONS
+             */
             $items = \Cungfoo\Model\RegionQuery::create()
-                ->usePaysQuery()
-                    ->filterByActive(true)
-                ->endUse()
+                ->filterByPaysId(null, \Criteria::ISNULL)
                 ->find($con)
             ;
             foreach($items as $item)
             {
-                $item->setActive(true);
-                $item->save();
+                $item->setActive(false);
+                $item->save($con);
             }
-
             $notActives = \Cungfoo\Model\RegionQuery::create()
                 ->filterByActive(false)
-                ->find()
+                ->find($con)
             ;
-
-
             foreach($notActives as $notActive)
             {
                 $output->writeln(sprintf('<info>%s</info> region <comment>%s - %s</comment> is unactive.', $this->getName(), $notActive->getCode(), $notActive->getName()));
             }
 
-
-            \Cungfoo\Model\VilleQuery::create()
-                ->update(array('Active' => false), $con)
-            ;
+            /**
+             * VILLES
+             */
             $items = \Cungfoo\Model\VilleQuery::create()
-                ->useRegionQuery()
-                    ->filterByActive(true)
-                ->endUse()
+                ->filterByRegionId(null, \Criteria::ISNULL)
                 ->find($con)
             ;
             foreach($items as $item)
             {
-                $item->setActive(true);
-                $item->save();
+                $item->setActive(false);
+                $item->save($con);
             }
-
             $notActives = \Cungfoo\Model\VilleQuery::create()
                 ->filterByActive(false)
-                ->find()
+                ->find($con)
             ;
-
-
             foreach($notActives as $notActive)
             {
                 $output->writeln(sprintf('<info>%s</info> ville <comment>%s - %s</comment> is unactive.', $this->getName(), $notActive->getCode(), $notActive->getName()));
             }
 
-            \Cungfoo\Model\EtablissementQuery::create()
-                ->update(array('Active' => false), $con)
-            ;
+            /**
+             * ETABS
+             */
             $items = \Cungfoo\Model\EtablissementQuery::create()
-                ->useVilleQuery()
-                    ->filterByActive(true)
-                ->endUse()
+                ->filterByVilleId(null, \Criteria::ISNULL)
                 ->find($con)
             ;
             foreach($items as $item)
             {
-                $item->setActive(true);
-                $item->save();
+                $item->setActive(false);
+                $item->save($con);
             }
-
             $notActives = \Cungfoo\Model\EtablissementQuery::create()
                 ->filterByActive(false)
-                ->find()
+                ->find($con)
             ;
-
-
             foreach($notActives as $notActive)
             {
                 $output->writeln(sprintf('<info>%s</info> camping <comment>%s - %s</comment> is unactive.', $this->getName(), $notActive->getCode(), $notActive->getName()));
@@ -137,18 +121,15 @@ class CheckIntegrityCommand extends BaseCommand
                 $item->save();
             }
 
-            \Cungfoo\Model\TopCampingQuery::create()
-                ->update(array('Active' => false), $con)
-            ;
             $items = \Cungfoo\Model\TopCampingQuery::create()
                 ->useEtablissementQuery()
-                    ->filterByActive(true)
+                    ->filterByActive(false)
                 ->endUse()
                 ->find($con)
             ;
             foreach($items as $item)
             {
-                $item->setActive(true);
+                $item->setActive(false);
                 $item->save();
             }
 

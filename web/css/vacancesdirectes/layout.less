@@ -10,22 +10,22 @@ header, section, footer {position:relative;}
   #logo{display:block;float:left;}
   #headerRight{float:right;}
   #telephone{width:256px;height:60px;background: url("../../images/vacancesdirectes/common/ui/phone-bg.png") no-repeat 0px 0px transparent;padding:5px 0px 15px 10px;float:right;margin:10px 0;z-index:0;
-    span{font-size:18px;line-height:19px;color:@colorGris2;
+    &>span{font-size:18px;line-height:19px;color:@colorGris2;
       &:before{content:"";width:40px;height:29px;background:transparent url("../../images/vacancesdirectes/common/ui/phone-icon-header.png") no-repeat 0px 0px;float:left;margin:5px;}
-      a{font-weight:bold;color:@colorGris2;text-decoration:none;display:block;}
+      .phoneNum{color:@colorGris2;text-decoration:none;display:inline-block;font-weight:bold;margin-bottom:15px;}
+      .phonePrice{font-weight:bold;float:right;margin-right:15px;}
     }
   }
-    #account{float:right;font-size:16px;text-transform:uppercase;background-color:@colorFushia;border-radius:10px;padding:7px 12px;color:@colorBlanc;text-decoration:none;margin:10px 0 15px 15px;}
-    #accountBox{width:320px;position:absolute;top:50px;right:0;text-align:left;color:@colorBlanc;display:none;z-index:1;
-      &:after{left:100%;margin-left:-65px;}
-      h2{font:bold 22px/24px @ptnarrow;text-transform:uppercase;margin-bottom:10px;color:@colorBlanc;}
-      label{display:none;}
-      input{._verticalCenter(27px);width:188px;background-color:@colorBlanc;border:0 none;margin-bottom:10px;font:bold 17px/27px @ptnarrow;color:@colorBgGrisM;text-transform:uppercase;padding:0 7px;}
-      .link{margin-bottom:15px;
-        a{color:@colorBlanc;text-decoration:underline;}
-      }
+  #account{float:right;font-size:16px;text-transform:uppercase;background-color:@colorFushia;border-radius:10px;padding:7px 12px;color:@colorBlanc;text-decoration:none;margin:10px 0 15px 15px;}
+  #accountBox{width:320px;position:absolute;top:50px;right:0;text-align:left;color:@colorBlanc;display:none;z-index:1;
+    &:after{left:100%;margin-left:-65px;}
+    h2{font:bold 22px/24px @ptnarrow;text-transform:uppercase;margin-bottom:10px;color:@colorBlanc;}
+    label{display:none;}
+    input{._verticalCenter(27px);width:188px;background-color:@colorBlanc;border:0 none;margin-bottom:10px;font:bold 17px/27px @ptnarrow;color:@colorBgGrisM;text-transform:uppercase;padding:0 7px;}
+    .link{margin-bottom:15px;
+      a{color:@colorBlanc;text-decoration:underline;}
     }
-
+  }
 }
 /* specifs home */
 .home #telephone{clear:both;}

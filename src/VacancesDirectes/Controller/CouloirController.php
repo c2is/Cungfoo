@@ -64,7 +64,8 @@ class CouloirController implements ControllerProviderInterface
                 "proposal_key"      => $proposalKey,
                 "confirmation"      => $app['url_generator']->generate('couloir_confirmation', array(), true),
                 "homeLink"          => $app['url_generator']->generate('homepage', array(), true),
-                "backLink"          => 'javascript:history.go(-1);'
+                "backLink"          => 'javascript:history.go(-1);',
+                "cgv"               => $app['url_generator']->generate('edito_by_slug', array('slug' => 'conditions-generales'), true)
             );
 
             $query = array_merge($query, $request->request->all());
