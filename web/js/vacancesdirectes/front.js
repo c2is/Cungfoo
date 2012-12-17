@@ -917,17 +917,17 @@ $(function() {
                     fRenderDate = formatDate(renderDate),
                     renderDate = numDate(fRenderDate);
 
-                //            //console.log(renderDate);
-                //            //console.log(startDate);
-                //            //console.log(endDate);
-                //            //console.log(renderWeekDay);
+                //console.log(renderDate);
+                //console.log(startDate);
+                //console.log(endDate);
+                //console.log(renderWeekDay);
 
                 if ( ((renderDate > highSeasonStartDate && renderDate < highSeasonEndDate) && (renderWeekDay != 6 && renderWeekDay != 3)) || (renderDate < startDate || renderDate > endDate) || ((renderDate > startDate && renderDate < endDate) && renderWeekDay == 2) ){
                     //                    //console.log("DISABLED: " + renderDate);
                     disabledDate = renderDate;
                 }
 
-                //            //console.log(disabledDate);
+                //console.log(disabledDate);
                 return {
                     disabled: disabledDate != undefined
                 }
