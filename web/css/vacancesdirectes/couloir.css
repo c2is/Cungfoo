@@ -1197,22 +1197,8 @@ textarea {
   float: left;
   text-align: right;
   width: 278px;
-  height: 27px;
-  /* Centrer verticalement une ligne de texte */
-
-  line-height: 27px;
-  /* Centrer verticalement plusieurs lignes de texte */
-
-  /* Centrer verticalement une image de taille variable */
-
-}
-#reservationContener.summary #option .criteria .label > * {
-  vertical-align: middle;
-  display: inline-block;
-  line-height: inherit;
-}
-#reservationContener.summary #option .criteria .label > img {
-  vertical-align: middle;
+  /*._verticalCenter(27px);*/
+  line-height: 13px;
 }
 #reservationContener.summary #option .criteria input {
   width: 134px;
