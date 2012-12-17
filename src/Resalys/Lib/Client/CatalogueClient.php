@@ -18,9 +18,9 @@ class CatalogueClient extends AbstractClient
     protected function getRequests()
     {
         return array(
-            'getAllThemes',
-            'getAllRoomTypeCategories',
-            'getAllRoomTypes',
+            //'getAllThemes',
+            //'getAllRoomTypeCategories',
+            //'getAllRoomTypes',
             'getAllEtabs',
         );
     }
