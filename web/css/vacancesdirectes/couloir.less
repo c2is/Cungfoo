@@ -248,19 +248,14 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
 
 
 /*LEFT*/
-#contentContener{
+#reservationContener{
   h2{color:@colorBgGrisM;text-transform:uppercase;font:bold 22px @ptnarrow;._verticalCenter(40px);}
   p{margin-bottom:10px;}
   table{width:100%}
 
-  // step 1
-  &.login,
-  &.customerareahome,
-  &.address,
-  &.request,
-  &.reservation,
-  &.fidelity,
-  &.sponsorship{
+// step 1
+  &.detail,
+  &.editAccount{
     #authentication{._border-radius(10px);margin:15px 0;position:relative;background-color:@colorBgBlanc;border:5px solid @colorBgGrisM;
       h2{background-color:@colorBgGrisM;color:@colorBlanc;text-transform:uppercase;font:bold 22px @ptnarrow;._verticalCenter(40px);padding-left:10px;}
       &>div{background-color:@colorBgGrisC;color:@colorGris2;
@@ -275,7 +270,7 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
         }
         #existingCustomerLayer,
         #newCustomerLayer,{
-//          &>div{margin-bottom:20px;}
+        //          &>div{margin-bottom:20px;}
           .aField{margin-bottom:10px;}
           .label{margin-right:10px;text-align:right;}
         }
@@ -319,7 +314,7 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
           small{font:bold 17px @arial;text-transform:none;}
         }
         .price{font:bold 19px/18px @ptnarrow;text-align:right;}
-        .action{text-align:right;width:80px;}
+        .action{text-align:right;}
         .changeOccupantCount{height:auto;background-color:@colorBgGrisF;padding:10px 5px 0;margin-bottom:15px;position:relative;
           &>span{margin:0 5px 10px;._verticalCenter(27px);font:bold 17px @ptnarrow;color:@colorBlanc;text-transform:uppercase;display:inline-block;}
           .addAction a{position:absolute;top:10px;right:10px;display:block;width:27px;height:27px;text-indent:-9999px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -162px transparent;}
@@ -361,7 +356,7 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
     }
   }
 
-  // step 2
+// step 2
   &.summary{
     #option{
       h2 + p{font-weight:bold;}
@@ -371,7 +366,7 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
         .field textarea{width:288px;height:81px;}
       }
       .criteria{margin-bottom:10px;clear:both;
-        .label{float:left;text-align:right;width:278px;/*._verticalCenter(27px);*/line-height:13px;}
+        .label{float:left;text-align:right;width:278px;._verticalCenter(27px);}
         input{width:134px;}
         &:last-of-type .label{line-height:13px;}
       }
@@ -394,10 +389,10 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
     }
   }
 
-  // step 3
-  /* --> payment.css */
+// step 3
+/* --> payment.css */
 
-  // step 4
+// step 4
   &.confirmation{
     td{height:27px;}
     #authentication,
@@ -526,8 +521,8 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
 
 // step 1
 #authentication #newCustomerLayer{
-   ._stylish-select(134px,27px,0px,4);
- }
+  ._stylish-select(134px,27px,0px,4);
+}
 #reservation .aRoom{
   ._stylish-select(54px,27px,10px,5);
 }
