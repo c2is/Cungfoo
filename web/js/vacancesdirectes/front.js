@@ -15,6 +15,7 @@ var
 //switch select of search engine
     selectNum = 0,
 //resultCrit
+    paginationAfterRange = false,
     list = $('#results'),                                   // la liste a trier
     items = list.find('.itemResult'),                       // les items de cette liste
     minPrice,                                               // le prix minimum de la liste
@@ -1538,6 +1539,23 @@ function setMarkers(map, mkrs) {
             filters: mkr[6]
         });
         aMarkers.push(marker);
+    function setMarkers(map, mkrs) {
+        for (var i = 0; i < mkrs.length; i++) {
+            var mkr = mkrs[i];
+            var titleMkr = mkr[0].replace(/&#039;/g, "'");
+            var siteLatLng = new google.maps.LatLng(mkr[1], mkr[2]);
+            var marker = new google.maps.Marker({
+                position: siteLatLng,
+                map: map,
+                shadow: shadow,
+                icon: mkr[5],
+                shape: shape,
+                title: titleMkr,
+                zIndex: mkr[3],
+                idCamp: mkr[4],
+                filters: mkr[6]
+            });
+            aMarkers.push(marker);
 
         if (marker.idCamp != ''){
             google.maps.event.addListener(marker, "click", function (e) {
@@ -1747,7 +1765,9 @@ function findMinMaxRange() {
     //items dans la range de prix
     items = list.find('[data-ranged="true"]');
 
-    //console.log('/--- findMinMaxRange ---/ minPrice = '+minPrice+' - maxPrice = '+maxPrice);
+    if ( minPrice == maxPrice) {
+        $('#widgetRange').hide();
+    }
 }
 
 //creation du rangeSlider de prix
@@ -1797,6 +1817,8 @@ function rangeSliderPrice() {
                         $(this).attr('data-ranged', false);
                     }
                 });
+
+                paginationAfterRange = true;
                 critSelection();
                 displayResults();
                 //console.log('/--- rangeSliderPrice (event: change) ---/');
@@ -1901,12 +1923,13 @@ function displayResults() {
         var dataFilteredPlus = $(this).attr('data-filteredPlus');
 
         if ( dataFiltered == 'true' && dataFilteredPlus == 'true' && dataRanged == 'true' ) {
-            $(this).fadeIn().next('.disclaim').fadeIn();
+            $(this).addClass('pagination').fadeIn().next('.disclaim').fadeIn();
             nbItemsDisplayed++;
             var idRsl = $(this).attr('data-id');
             gMarkers.push(idRsl);
         }else{
-            $(this).fadeOut().next('.disclaim').fadeOut();
+            var id = $(this).attr('id');
+            $(this).removeClass('pagination').fadeOut().next('.disclaim').fadeOut();
         };
 
         for (var i = 0; i < aMarkers.length; i++) {
@@ -1915,22 +1938,6 @@ function displayResults() {
         }
 
     });
-
-    /*$('#mapFilters').find('a')
-     .click( function(){
-     var theme = this.id;
-     //consoleLog(theme);
-     for ( var i in aMarkers ){
-     var marker = aMarkers[i];
-     marker.setVisible( $.inArray(theme, marker.filters) != -1 ? true : false );
-     //consoleLog($.inArray(theme, marker.filters));
-     //consoleLog(marker.filters);
-     }
-     $(this).addClass('active').parents('li').siblings('li').children('a').removeClass('active');
-     ib.close();
-     return false;
-     })
-     .eq(0).trigger('click');*/
 
     //gestion de la pagination
     listPagination();
@@ -1987,7 +1994,12 @@ function orderList() {
 
 //pagination liste de resultats
 function listPagination() {
-    var itemsPagination = $('#results .itemResult');
+    $('#results .itemResult').attr('data-num', '');
+    if ( paginationAfterRange == false ) {
+        var itemsPagination = $('#results .itemResult');
+    } else {
+        var itemsPagination = $('#results .pagination');
+    }
     var nbResults = itemsPagination.length;
     var btNext = $('#btPlusResults');
 
