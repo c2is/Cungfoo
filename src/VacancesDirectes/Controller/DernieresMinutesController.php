@@ -63,6 +63,7 @@ class DernieresMinutesController implements ControllerProviderInterface
             return $app->renderView('Research\dispo.twig', array(
                 'title'           => $app->trans('seo.title.dernieres_minutes'),
                 'metaDescription' => $app->trans('seo.meta.dernieres_minutes'),
+                'h1' => $app->trans('dernieresMinutes.h1'),
                 'list'            => $listingContent,
                 'firstEtab'       => reset($listingContent['element']),
                 'searchForm'      => $searchEngine->getView(),

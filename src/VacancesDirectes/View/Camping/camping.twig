@@ -1,7 +1,7 @@
 {% extends "base.twig" %}
 
-{% block title %}{{ "seo.title.camping" | trans ({'%nom%': etab.name, '%ville%': etab.ville }) }}{%if hasBaignade %}{{ "seo.title.camping_suffix" | trans }}{% endif %}{% endblock %}
-{% block metaDescription %}{{ "seo.meta.camping" | trans  ({'%nom%': etab.name, '%categorie%': etab.categorie, '%ville%': etab.ville })}}{% endblock %}
+{% block title %}{{ "seo.title.camping" | trans ({'%nom%': etab.name, '%ville%': etab.ville, '%nbEtoiles%': etab.categorie }) }}{%if hasBaignade %}{{ "seo.title.camping_suffix" | trans }}{% endif %}{% endblock %}
+{% block metaDescription %}{{ "seo.meta.camping" | trans  ({'%nom%': etab.name, '%nbEtoiles%': etab.categorie, '%ville%': etab.ville })}}{% endblock %}
 
 {% block bodyClass %} fiche{% endblock %}
 
@@ -13,7 +13,7 @@
 <div itemscope itemtype="http://schema.org/Place">
     <h1 itemprop="name">
         {{ etab.name }}{{ etab.categorie.stars }}<br />
-        <span class="h2-like">{{ "destination.camping_title" | trans({'%ville%': etab.ville.name}) }}</span>
+        <span class="h2-like">{{ "destination.camping_title" | trans({'%ville%': etab.ville.name}) }} {%if hasBaignade %}{{ "seo.title.camping_suffix" | trans }}{% endif %}</span>
     </h1>
     <p class="keywordsFiche">
         {% if etab.activites | length %}
