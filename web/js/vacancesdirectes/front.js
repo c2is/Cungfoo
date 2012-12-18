@@ -1738,7 +1738,9 @@ function findMinMaxRange() {
     //items dans la range de prix
     items = list.find('[data-ranged="true"]');
 
-    //console.log('/--- findMinMaxRange ---/ minPrice = '+minPrice+' - maxPrice = '+maxPrice);
+    if ( minPrice == maxPrice) {
+        $('#widgetRange').hide();
+    }
 }
 
 //creation du rangeSlider de prix
