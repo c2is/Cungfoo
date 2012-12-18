@@ -1,0 +1,14 @@
+pays:
+    - pays.france
+    - pays.afghanistan
+    - pays.afriqueDuSud
+    - pays.albanie
+
+naturesSinistre:
+    - natureSinistre.annulation
+    - natureSinistre.interruption
+
+suitesSinistre:
+    - suiteSinistre.maladie
+    - suiteSinistre.accident
+    - suiteSinistre.autre

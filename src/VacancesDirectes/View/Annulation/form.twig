@@ -1,0 +1,9 @@
+{% extends "Annulation/base.twig" %}
+
+{% block topLeftColumn %}
+<form action="{{ path('formulaire_annulation') }}" method="post" {{ form_enctype(annulationForm) }}>
+    {{ form_widget(annulationForm) }}
+
+    <input type="submit" />
+</form>
+{% endblock %}

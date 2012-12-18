@@ -1,0 +1,18 @@
+{% extends "base.twig" %}
+{% block bodyClass %} annulation{% endblock %}
+
+{% block content %}
+    <div id="wrap" class="fixed-width clear">
+        <div class="column left">
+            {% block topLeftColumn %}
+            {% endblock %}
+        </div>
+        <aside class="column right">
+            {% block topRightColumn %}
+                {% include 'Form/_search_engine.twig' %}
+                {% include 'Bloc/sejour_reussi.twig' %}
+                {% include 'Bloc/informations.twig' %}
+            {% endblock %}
+        </aside>
+    </div>
+{% endblock %}
