@@ -1946,7 +1946,7 @@
     28_de:
         Id: 28
         Locale: de
-        Name: 'Familial (6 places, max. 5 adultes) vue lac'
+        Name: 'Familial (6 places) vue lac'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1964,7 +1964,7 @@
     28_en:
         Id: 28
         Locale: en
-        Name: 'Familial (6 places, max. 5 adultes) vue lac'
+        Name: 'Familial (6 places) vue lac'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1982,7 +1982,7 @@
     28_fr:
         Id: 28
         Locale: fr
-        Name: 'Familial (6 places, max. 5 adultes) vue lac'
+        Name: 'Familial (6 places) vue lac'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2000,7 +2000,7 @@
     28_nl:
         Id: 28
         Locale: nl
-        Name: 'Familial (6 places, max. 5 adultes) vue lac'
+        Name: 'Familial (6 places) vue lac'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2162,7 +2162,7 @@
     31_de:
         Id: 31
         Locale: de
-        Name: 'Maisonnette (2 pièces 4-6 places)'
+        Name: 'Maisonnette (2 pièces 4-6 places) clim'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2180,7 +2180,7 @@
     31_en:
         Id: 31
         Locale: en
-        Name: 'Maisonnette (2 pièces 4-6 places)'
+        Name: 'Maisonnette (2 pièces 4-6 places) clim'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2198,7 +2198,7 @@
     31_fr:
         Id: 31
         Locale: fr
-        Name: 'Maisonnette (2 pièces 4-6 places)'
+        Name: 'Maisonnette (2 pièces 4-6 places) clim'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2216,7 +2216,7 @@
     31_nl:
         Id: 31
         Locale: nl
-        Name: 'Maisonnette (2 pièces 4-6 places)'
+        Name: 'Maisonnette (2 pièces 4-6 places) clim'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2234,7 +2234,7 @@
     32_de:
         Id: 32
         Locale: de
-        Name: 'Maisonnette (2 pièces 2-4 places)'
+        Name: 'Maisonnette (2 pièces 2-4 places) sans clim'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2252,7 +2252,7 @@
     32_en:
         Id: 32
         Locale: en
-        Name: 'Maisonnette (2 pièces 2-4 places)'
+        Name: 'Maisonnette (2 pièces 2-4 places) sans clim'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2270,7 +2270,7 @@
     32_fr:
         Id: 32
         Locale: fr
-        Name: 'Maisonnette (2 pièces 2-4 places)'
+        Name: 'Maisonnette (2 pièces 2-4 places) sans clim'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2288,7 +2288,7 @@
     32_nl:
         Id: 32
         Locale: nl
-        Name: 'Maisonnette (2 pièces 2-4 places)'
+        Name: 'Maisonnette (2 pièces 2-4 places) sans clim'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3098,7 +3098,7 @@
     44_de:
         Id: 44
         Locale: de
-        Name: 'Studio (2 places)'
+        Name: 'Studio (2 places) climatisé'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3116,7 +3116,7 @@
     44_en:
         Id: 44
         Locale: en
-        Name: 'Studio (2 places)'
+        Name: 'Studio (2 places) climatisé'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3134,7 +3134,7 @@
     44_fr:
         Id: 44
         Locale: fr
-        Name: 'Studio (2 places)'
+        Name: 'Studio (2 places) climatisé'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3152,7 +3152,7 @@
     44_nl:
         Id: 44
         Locale: nl
-        Name: 'Studio (2 places)'
+        Name: 'Studio (2 places) climatisé'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3170,7 +3170,7 @@
     45_de:
         Id: 45
         Locale: de
-        Name: 'Studio cabine (2-4 places)'
+        Name: 'Studio cabine (2-4 places) climatisé'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3188,7 +3188,7 @@
     45_en:
         Id: 45
         Locale: en
-        Name: 'Studio cabine (2-4 places)'
+        Name: 'Studio cabine (2-4 places) climatisé'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3206,7 +3206,7 @@
     45_fr:
         Id: 45
         Locale: fr
-        Name: 'Studio cabine (2-4 places)'
+        Name: 'Studio cabine (2-4 places) climatisé'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3224,7 +3224,7 @@
     45_nl:
         Id: 45
         Locale: nl
-        Name: 'Studio cabine (2-4 places)'
+        Name: 'Studio cabine (2-4 places) climatisé'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3674,7 +3674,7 @@
     52_de:
         Id: 52
         Locale: de
-        Name: 'Tente ecolodge (5 places, max. 3 adultes) vue lac'
+        Name: 'Tente ecolodge (5 places) vue lac'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3692,7 +3692,7 @@
     52_en:
         Id: 52
         Locale: en
-        Name: 'Tente ecolodge (5 places, max. 3 adultes) vue lac'
+        Name: 'Tente ecolodge (5 places) vue lac'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3710,7 +3710,7 @@
     52_fr:
         Id: 52
         Locale: fr
-        Name: 'Tente ecolodge (5 places, max. 3 adultes) vue lac'
+        Name: 'Tente ecolodge (5 places) vue lac'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3728,7 +3728,7 @@
     52_nl:
         Id: 52
         Locale: nl
-        Name: 'Tente ecolodge (5 places, max. 3 adultes) vue lac'
+        Name: 'Tente ecolodge (5 places) vue lac'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3818,7 +3818,7 @@
     54_de:
         Id: 54
         Locale: de
-        Name: 'Tente Muscade (5 places, max. 3 adultes)'
+        Name: 'Tente Muscade (5 places, max. 5 adultes)'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3836,7 +3836,7 @@
     54_en:
         Id: 54
         Locale: en
-        Name: 'Tente Muscade (5 places, max. 3 adultes)'
+        Name: 'Tente Muscade (5 places, max. 5 adultes)'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3854,7 +3854,7 @@
     54_fr:
         Id: 54
         Locale: fr
-        Name: 'Tente Muscade (5 places, max. 3 adultes)'
+        Name: 'Tente Muscade (5 places, max. 5 adultes)'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3872,7 +3872,7 @@
     54_nl:
         Id: 54
         Locale: nl
-        Name: 'Tente Muscade (5 places, max. 3 adultes)'
+        Name: 'Tente Muscade (5 places, max. 5 adultes)'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -4305,6 +4305,294 @@
         Id: 60
         Locale: nl
         Name: Yourte
+        Surface: null
+        TypeTerrasse: null
+        Description: null
+        Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
+    61_de:
+        Id: 61
+        Locale: de
+        Name: 'Emplacement nu camping car'
+        Surface: null
+        TypeTerrasse: null
+        Description: null
+        Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
+    61_en:
+        Id: 61
+        Locale: en
+        Name: 'Emplacement nu camping car'
+        Surface: null
+        TypeTerrasse: null
+        Description: null
+        Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
+    61_fr:
+        Id: 61
+        Locale: fr
+        Name: 'Emplacement nu camping car'
+        Surface: null
+        TypeTerrasse: null
+        Description: null
+        Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
+    61_nl:
+        Id: 61
+        Locale: nl
+        Name: 'Emplacement nu camping car'
+        Surface: null
+        TypeTerrasse: null
+        Description: null
+        Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
+    62_de:
+        Id: 62
+        Locale: de
+        Name: 'Emplacement nu avec électricité et sol dur'
+        Surface: null
+        TypeTerrasse: null
+        Description: null
+        Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
+    62_en:
+        Id: 62
+        Locale: en
+        Name: 'Emplacement nu avec électricité et sol dur'
+        Surface: null
+        TypeTerrasse: null
+        Description: null
+        Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
+    62_fr:
+        Id: 62
+        Locale: fr
+        Name: 'Emplacement nu avec électricité et sol dur'
+        Surface: null
+        TypeTerrasse: null
+        Description: null
+        Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
+    62_nl:
+        Id: 62
+        Locale: nl
+        Name: 'Emplacement nu avec électricité et sol dur'
+        Surface: null
+        TypeTerrasse: null
+        Description: null
+        Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
+    63_de:
+        Id: 63
+        Locale: de
+        Name: 'Emplacement nu avec électricité'
+        Surface: null
+        TypeTerrasse: null
+        Description: null
+        Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
+    63_en:
+        Id: 63
+        Locale: en
+        Name: 'Emplacement nu avec électricité'
+        Surface: null
+        TypeTerrasse: null
+        Description: null
+        Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
+    63_fr:
+        Id: 63
+        Locale: fr
+        Name: 'Emplacement nu avec électricité'
+        Surface: null
+        TypeTerrasse: null
+        Description: null
+        Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
+    63_nl:
+        Id: 63
+        Locale: nl
+        Name: 'Emplacement nu avec électricité'
+        Surface: null
+        TypeTerrasse: null
+        Description: null
+        Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
+    64_de:
+        Id: 64
+        Locale: de
+        Name: 'Emplacement nu avec électricité et eau'
+        Surface: null
+        TypeTerrasse: null
+        Description: null
+        Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
+    64_en:
+        Id: 64
+        Locale: en
+        Name: 'Emplacement nu avec électricité et eau'
+        Surface: null
+        TypeTerrasse: null
+        Description: null
+        Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
+    64_fr:
+        Id: 64
+        Locale: fr
+        Name: 'Emplacement nu avec électricité et eau'
+        Surface: null
+        TypeTerrasse: null
+        Description: null
+        Composition: null
+        Presentation: null
+        CapaciteHebergement: null
+        Dimensions: null
+        Agencement: null
+        Equipements: null
+        AnneeUtilisation: null
+        Remarque1: null
+        Remarque2: null
+        Remarque3: null
+        Remarque4: null
+    64_nl:
+        Id: 64
+        Locale: nl
+        Name: 'Emplacement nu avec électricité et eau'
         Surface: null
         TypeTerrasse: null
         Description: null

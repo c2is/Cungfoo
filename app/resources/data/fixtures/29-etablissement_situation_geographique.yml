@@ -11,6 +11,9 @@
     11_1:
         EtablissementId: 11
         SituationGeographiqueId: 1
+    18_1:
+        EtablissementId: 18
+        SituationGeographiqueId: 1
     24_1:
         EtablissementId: 24
         SituationGeographiqueId: 1
@@ -74,6 +77,9 @@
     10_2:
         EtablissementId: 10
         SituationGeographiqueId: 2
+    16_2:
+        EtablissementId: 16
+        SituationGeographiqueId: 2
     21_2:
         EtablissementId: 21
         SituationGeographiqueId: 2
@@ -83,14 +89,26 @@
     81_2:
         EtablissementId: 81
         SituationGeographiqueId: 2
+    97_2:
+        EtablissementId: 97
+        SituationGeographiqueId: 2
     105_2:
         EtablissementId: 105
+        SituationGeographiqueId: 2
+    112_2:
+        EtablissementId: 112
+        SituationGeographiqueId: 2
+    117_2:
+        EtablissementId: 117
         SituationGeographiqueId: 2
     130_2:
         EtablissementId: 130
         SituationGeographiqueId: 2
     132_2:
         EtablissementId: 132
+        SituationGeographiqueId: 2
+    136_2:
+        EtablissementId: 136
         SituationGeographiqueId: 2
     137_2:
         EtablissementId: 137
@@ -103,6 +121,9 @@
         SituationGeographiqueId: 2
     143_2:
         EtablissementId: 143
+        SituationGeographiqueId: 2
+    144_2:
+        EtablissementId: 144
         SituationGeographiqueId: 2
     145_2:
         EtablissementId: 145
@@ -122,8 +143,17 @@
     172_2:
         EtablissementId: 172
         SituationGeographiqueId: 2
+    177_2:
+        EtablissementId: 177
+        SituationGeographiqueId: 2
     183_2:
         EtablissementId: 183
+        SituationGeographiqueId: 2
+    185_2:
+        EtablissementId: 185
+        SituationGeographiqueId: 2
+    192_2:
+        EtablissementId: 192
         SituationGeographiqueId: 2
     197_2:
         EtablissementId: 197
@@ -134,8 +164,14 @@
     202_2:
         EtablissementId: 202
         SituationGeographiqueId: 2
+    203_2:
+        EtablissementId: 203
+        SituationGeographiqueId: 2
     206_2:
         EtablissementId: 206
+        SituationGeographiqueId: 2
+    213_2:
+        EtablissementId: 213
         SituationGeographiqueId: 2
     217_2:
         EtablissementId: 217
@@ -149,8 +185,14 @@
     233_2:
         EtablissementId: 233
         SituationGeographiqueId: 2
+    239_2:
+        EtablissementId: 239
+        SituationGeographiqueId: 2
     241_2:
         EtablissementId: 241
+        SituationGeographiqueId: 2
+    243_2:
+        EtablissementId: 243
         SituationGeographiqueId: 2
     3_3:
         EtablissementId: 3
@@ -202,6 +244,9 @@
         SituationGeographiqueId: 3
     112_3:
         EtablissementId: 112
+        SituationGeographiqueId: 3
+    117_3:
+        EtablissementId: 117
         SituationGeographiqueId: 3
     118_3:
         EtablissementId: 118
@@ -679,6 +724,9 @@
         SituationGeographiqueId: 4
     227_4:
         EtablissementId: 227
+        SituationGeographiqueId: 4
+    229_4:
+        EtablissementId: 229
         SituationGeographiqueId: 4
     230_4:
         EtablissementId: 230

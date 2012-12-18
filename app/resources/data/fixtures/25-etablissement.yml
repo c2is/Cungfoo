@@ -8,20 +8,20 @@
         Address2: ''
         Zip: '85169'
         City: 'ST JEAN DE MONTS'
-        Mail: test@resalys.com
+        Mail: danielchantal.tarantola@laposte.net
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '02 51 58 22 22'
         Phone2: '06 70 38 06 56'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-05-15 00:00:00'
-        ClosingDate: '2012-09-15 00:00:00'
+        Fax: '02 51 58 26 09'
+        OpeningDate: '2013-05-08 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
         VilleId: 47
         CategorieId: 2
         GeoCoordinateX: '46.80806056'
         GeoCoordinateY: '-2.104654312'
         VideoPath: null
         Image360Path: null
-        Capacite: '543'
+        Capacite: '544'
         PlanPath: uploads/etablissements/50c0aeeca983f.jpeg
         Vignette: uploads/etablissements/50c075a7c8a0b.jpeg
         Active: true
@@ -34,20 +34,20 @@
         Address2: ''
         Zip: '83600'
         City: FRÉJUS
-        Mail: test@resalys.com
+        Mail: 0494408199@fax.contact-everyone.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 94 40 88 43'
         Phone2: '06 88 71 90 61'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-07 00:00:00'
-        ClosingDate: '2012-09-29 00:00:00'
+        Fax: '04 94 40 81 99'
+        OpeningDate: '2013-04-06 00:00:00'
+        ClosingDate: '2013-09-28 00:00:00'
         VilleId: 141
         CategorieId: 2
         GeoCoordinateX: '43.46392303'
         GeoCoordinateY: '6.725360155'
         VideoPath: null
         Image360Path: null
-        Capacite: '189'
+        Capacite: '200'
         PlanPath: uploads/etablissements/50c0aefd8bf1a.jpeg
         Vignette: uploads/etablissements/50c075ba364bd.jpeg
         Active: true
@@ -60,13 +60,13 @@
         Address2: ''
         Zip: '07150'
         City: 'VALLON-PONT-D''ARC'
-        Mail: test@resalys.com
+        Mail: info@laplagefleurie.com
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 75 88 01 15'
         Phone2: '06 31 87 03 88'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-27 00:00:00'
-        ClosingDate: '2012-09-08 00:00:00'
+        Fax: '04 75 88 11 31'
+        OpeningDate: '2013-04-27 00:00:00'
+        ClosingDate: '2013-09-07 00:00:00'
         VilleId: 70
         CategorieId: 1
         GeoCoordinateX: '44.412402'
@@ -86,20 +86,20 @@
         Address2: ''
         Zip: '43300'
         City: 'MONT ROIG DEL CAMP'
-        Mail: test@resalys.com
+        Mail: reservas@playamontroig.com
         CountryCode: ES
-        Phone1: 06.01.01.01.01
+        Phone1: '0034 977 810 637'
         Phone2: '06 40 21 14 25'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-06 00:00:00'
-        ClosingDate: '2012-09-30 00:00:00'
+        Fax: '0034 977 811 411'
+        OpeningDate: '2013-04-06 00:00:00'
+        ClosingDate: '2013-09-29 00:00:00'
         VilleId: 33
         CategorieId: 1
         GeoCoordinateX: '41.03292'
         GeoCoordinateY: '0.96921'
         VideoPath: null
         Image360Path: null
-        Capacite: '1177'
+        Capacite: '1137'
         PlanPath: uploads/etablissements/50c0af17a86ec.jpeg
         Vignette: uploads/etablissements/50c075df4d461.jpeg
         Active: true
@@ -112,20 +112,20 @@
         Address2: ''
         Zip: '12579'
         City: 'ALCOSSEBRE CASTELLON'
-        Mail: test@resalys.com
+        Mail: info@playatropicana.com
         CountryCode: ES
-        Phone1: 06.01.01.01.01
+        Phone1: '0034 964 412 463'
         Phone2: '06 82 63 48 69'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-27 00:00:00'
-        ClosingDate: '2012-09-16 00:00:00'
+        Fax: '0034 964 412 805'
+        OpeningDate: '2013-04-27 00:00:00'
+        ClosingDate: '2012-09-15 00:00:00'
         VilleId: 35
         CategorieId: 2
         GeoCoordinateX: '40.22119452'
         GeoCoordinateY: '0.268542767'
         VideoPath: null
         Image360Path: null
-        Capacite: '340'
+        Capacite: '380'
         PlanPath: uploads/etablissements/50c0af25a544c.jpeg
         Vignette: uploads/etablissements/50c075ea6e237.jpeg
         Active: true
@@ -138,20 +138,20 @@
         Address2: 'Clohars Fouesnant'
         Zip: '29950'
         City: BENODET
-        Mail: test@resalys.com
+        Mail: info@campingbenodet.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '02 98 57 02 38'
         Phone2: '06 07 85 05 84'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-06 00:00:00'
-        ClosingDate: '2012-09-23 00:00:00'
+        Fax: '02 98 57 25 25'
+        OpeningDate: '2013-04-06 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
         VilleId: 50
         CategorieId: 2
         GeoCoordinateX: '47.88203498'
         GeoCoordinateY: '-4.103393555'
         VideoPath: null
         Image360Path: null
-        Capacite: '340'
+        Capacite: '353'
         PlanPath: uploads/etablissements/50c0af45bee05.jpeg
         Vignette: uploads/etablissements/50c075fa2f012.jpeg
         Active: true
@@ -164,11 +164,11 @@
         Address2: ''
         Zip: '63790'
         City: MUROL
-        Mail: test@resalys.com
+        Mail: info@laribeyre.com
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 73 88 64 29'
         Phone2: '06 31 86 12 87'
-        Fax: 04.92.94.10.01
+        Fax: '04 73 88 68 41'
         OpeningDate: '2013-05-01 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 52
@@ -190,13 +190,13 @@
         Address2: ''
         Zip: '66702'
         City: ARGELÈS-SUR-MER
-        Mail: test@resalys.com
+        Mail: 0468959611@fax.contact-everyone.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 68 81 10 42'
         Phone2: '06 31 96 76 12'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-05-25 00:00:00'
-        ClosingDate: '2012-09-09 00:00:00'
+        Fax: '04 68 95 96 11'
+        OpeningDate: '2013-05-25 00:00:00'
+        ClosingDate: '2013-09-08 00:00:00'
         VilleId: 1
         CategorieId: 3
         GeoCoordinateX: '42.56766828'
@@ -216,13 +216,13 @@
         Address2: ''
         Zip: '17570'
         City: 'LES MATHES'
-        Mail: test@resalys.com
+        Mail: michel.etriche@orange.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '05 32 09 04 08'
         Phone2: '06 89 50 18 13'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-28 00:00:00'
-        ClosingDate: '2012-09-16 00:00:00'
+        Fax: '05 46 22 51 46'
+        OpeningDate: '2013-04-26 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
         VilleId: 87
         CategorieId: 2
         GeoCoordinateX: '45.72995496'
@@ -242,11 +242,11 @@
         Address2: ''
         Zip: '40140'
         City: AZUR
-        Mail: test@resalys.com
+        Mail: info@campingazurivage.com
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '05 58 48 30 72'
         Phone2: '06 70 36 68 64'
-        Fax: 04.92.94.10.01
+        Fax: '05 58 48 25 56'
         OpeningDate: '2013-06-01 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 93
@@ -268,15 +268,15 @@
         Address2: ''
         Zip: '83370'
         City: 'ST AYGULF'
-        Mail: test@resalys.com
+        Mail: 0494810316@fax.contact-everyone.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 94 17 62 49'
         Phone2: '06 30 43 80 74'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-07 00:00:00'
-        ClosingDate: '2112-10-07 00:00:00'
+        Fax: '04 94 81 03 16'
+        OpeningDate: '2013-04-06 00:00:00'
+        ClosingDate: '2013-09-29 00:00:00'
         VilleId: 154
-        CategorieId: 4
+        CategorieId: 3
         GeoCoordinateX: '43.392481'
         GeoCoordinateY: '6.726462'
         VideoPath: null
@@ -294,13 +294,13 @@
         Address2: ''
         Zip: '06550'
         City: 'LA ROQUETTE SUR SIAGNE'
-        Mail: test@resalys.com
+        Mail: pascal.chantal.chevallier@wanadoo.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 92 19 23 13'
         Phone2: '06 31 90 29 44'
         Fax: ''
-        OpeningDate: '2012-04-06 00:00:00'
-        ClosingDate: '2012-09-30 00:00:00'
+        OpeningDate: '2013-04-12 00:00:00'
+        ClosingDate: '2013-09-29 00:00:00'
         VilleId: 41
         CategorieId: 2
         GeoCoordinateX: '43.58853542'
@@ -320,13 +320,13 @@
         Address2: ''
         Zip: '83860'
         City: NANS-LES-PINS
-        Mail: test@resalys.com
+        Mail: saintebaume@yahoo.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 94 78 92 68'
         Phone2: '06 89 79 83 64'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-06 00:00:00'
-        ClosingDate: '2012-09-30 00:00:00'
+        Fax: '04 94 78 67 37'
+        OpeningDate: '2013-04-12 00:00:00'
+        ClosingDate: '2013-09-29 00:00:00'
         VilleId: 21
         CategorieId: 2
         GeoCoordinateX: '43.37692956'
@@ -346,13 +346,13 @@
         Address2: ''
         Zip: '66470'
         City: 'STE MARIE-LA-MER'
-        Mail: test@resalys.com
+        Mail: camping@lesaintemarie.com
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 68 80 48 10'
         Phone2: '06 08 09 37 54 '
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-27 00:00:00'
-        ClosingDate: '2012-09-09 00:00:00'
+        Fax: '09 58 35 56 11'
+        OpeningDate: '2013-04-26 00:00:00'
+        ClosingDate: '2013-09-08 00:00:00'
         VilleId: 6
         CategorieId: 2
         GeoCoordinateX: '42.7139833'
@@ -372,13 +372,13 @@
         Address2: ''
         Zip: '40170'
         City: Mézos
-        Mail: test@resalys.com
+        Mail: reception@sen-yan.com
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '05 58 42 60 05'
         Phone2: '06 85 15 03 72'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-28 00:00:00'
-        ClosingDate: '2012-09-09 00:00:00'
+        Fax: '05 58 42 64 56'
+        OpeningDate: '2013-06-01 00:00:00'
+        ClosingDate: '2013-09-08 00:00:00'
         VilleId: 100
         CategorieId: 1
         GeoCoordinateX: '44.07217817'
@@ -398,15 +398,15 @@
         Address2: ''
         Zip: '74210'
         City: DOUSSARD
-        Mail: test@resalys.com
+        Mail: info@campinglaserraz.com
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 50 44 30 68'
         Phone2: '06 88 71 85 65'
-        Fax: 04.92.94.10.01
+        Fax: '04 50 44 81 07'
         OpeningDate: '2013-05-04 00:00:00'
         ClosingDate: '2013-09-14 00:00:00'
         VilleId: 81
-        CategorieId: 2
+        CategorieId: 1
         GeoCoordinateX: '45.7750889'
         GeoCoordinateY: '6.226780415'
         VideoPath: null
@@ -424,13 +424,13 @@
         Address2: Boyardville
         Zip: '17190'
         City: 'ST-GEORGES-D''OLÉRON'
-        Mail: test@resalys.com
+        Mail: galardchristian20@gmail.com
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '05 46 47 01 22'
         Phone2: '06 31 88 70 26'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-07 00:00:00'
-        ClosingDate: '2012-09-23 00:00:00'
+        Fax: '05 46 47 23 46'
+        OpeningDate: '2013-04-13 00:00:00'
+        ClosingDate: '2013-09-22 00:00:00'
         VilleId: 95
         CategorieId: 2
         GeoCoordinateX: '45.96824412'
@@ -450,20 +450,20 @@
         Address2: ''
         Zip: '66702'
         City: ARGELÈS-SUR-MER
-        Mail: test@resalys.com
+        Mail: camping.lesoleil@wanadoo.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 68 81 14 48'
         Phone2: '06 31 32 11 40'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-28 00:00:00'
-        ClosingDate: '2012-09-22 00:00:00'
+        Fax: '04 68 81 44 34'
+        OpeningDate: '2013-05-04 00:00:00'
+        ClosingDate: '2013-09-21 00:00:00'
         VilleId: 1
-        CategorieId: 2
+        CategorieId: 1
         GeoCoordinateX: '42.5757234'
         GeoCoordinateY: '3.042392135'
         VideoPath: null
         Image360Path: null
-        Capacite: '844'
+        Capacite: '840'
         PlanPath: uploads/etablissements/50c1afdfca20f.jpeg
         Vignette: uploads/etablissements/50c07679cef85.jpeg
         Active: true
@@ -476,15 +476,15 @@
         Address2: ''
         Zip: '66750'
         City: 'ST CYPRIEN'
-        Mail: test@resalys.com
+        Mail: 0468825004@fax.contact-everyone.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 68 21 07 97'
         Phone2: '06 89 73 55 25'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-27 00:00:00'
-        ClosingDate: '2012-09-16 00:00:00'
+        Fax: '04 68 82 50 04'
+        OpeningDate: '2013-04-06 00:00:00'
+        ClosingDate: '2013-09-29 00:00:00'
         VilleId: 140
-        CategorieId: null
+        CategorieId: 3
         GeoCoordinateX: '42.62443095'
         GeoCoordinateY: '3.025810719'
         VideoPath: null
@@ -502,11 +502,11 @@
         Address2: ''
         Zip: '66420'
         City: 'LE BARCARÈS'
-        Mail: test@resalys.com
+        Mail: camping.bahiaclub@orange.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 68 80 90 16'
         Phone2: '06 71 21 54 71'
-        Fax: 04.92.94.10.01
+        Fax: '04 68 28 24 76'
         OpeningDate: '2013-06-01 00:00:00'
         ClosingDate: '2013-09-13 00:00:00'
         VilleId: 17
@@ -528,20 +528,20 @@
         Address2: ''
         Zip: '68700'
         City: WATTWILLER
-        Mail: test@resalys.com
+        Mail: camping.les.sources@wanadoo.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '03 89 75 44 94'
         Phone2: '06 85 06 13 61'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-06 00:00:00'
-        ClosingDate: '2012-09-16 00:00:00'
+        Fax: '03 89 75 71 98'
+        OpeningDate: '2013-04-13 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
         VilleId: 82
-        CategorieId: 2
+        CategorieId: 3
         GeoCoordinateX: '47.83392225'
         GeoCoordinateY: '7.165617943'
         VideoPath: null
         Image360Path: null
-        Capacite: '267'
+        Capacite: '199'
         PlanPath: uploads/etablissements/50c1b037245f0.jpeg
         Vignette: uploads/etablissements/50c0769b5c096.jpeg
         Active: true
@@ -554,11 +554,11 @@
         Address2: 'Lacanau Océan'
         Zip: '33680'
         City: LACANAU
-        Mail: test@resalys.com
+        Mail: camping@talaris-vacances.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '05 56 03 04 15'
         Phone2: '06 31 37 10 44'
-        Fax: 04.92.94.10.01
+        Fax: '05 56 26 21 56'
         OpeningDate: '2012-04-07 00:00:00'
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: null
@@ -569,7 +569,7 @@
         Image360Path: null
         Capacite: '476'
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     23:
         Code: 122
@@ -580,20 +580,20 @@
         Address2: ''
         Zip: '57023'
         City: 'CECINA MARE'
-        Mail: test@resalys.com
+        Mail: info@letamerici.it
         CountryCode: IT
-        Phone1: 06.01.01.01.01
+        Phone1: '0039 0586 620 629'
         Phone2: '06 07 50 68 24'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-06 00:00:00'
-        ClosingDate: '2012-09-16 00:00:00'
+        Fax: '0039 0586 687 811'
+        OpeningDate: '2013-04-13 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
         VilleId: 39
         CategorieId: 3
         GeoCoordinateX: '43.29217342'
         GeoCoordinateY: '10.51079929'
         VideoPath: null
         Image360Path: null
-        Capacite: '301'
+        Capacite: '300'
         PlanPath: uploads/etablissements/50c1b0567994e.jpeg
         Vignette: uploads/etablissements/50c076aa87a87.jpeg
         Active: true
@@ -606,20 +606,20 @@
         Address2: ''
         Zip: '34073'
         City: GRADO
-        Mail: test@resalys.com
+        Mail: philetlolo@gmail.com
         CountryCode: IT
-        Phone1: 06.01.01.01.01
+        Phone1: '0039 0431 896 900'
         Phone2: '06 88 71 65 39'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-06 00:00:00'
-        ClosingDate: '2012-09-16 00:00:00'
+        Fax: '0039 0431 896 901'
+        OpeningDate: '2013-05-01 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
         VilleId: 36
         CategorieId: 2
         GeoCoordinateX: '45.69481972'
         GeoCoordinateY: '13.45171809'
         VideoPath: null
         Image360Path: null
-        Capacite: '800'
+        Capacite: '750'
         PlanPath: uploads/etablissements/50c0b0694d86f.jpeg
         Vignette: uploads/etablissements/50c076b862805.jpeg
         Active: true
@@ -632,13 +632,13 @@
         Address2: ''
         Zip: '64210'
         City: BIDART
-        Mail: test@resalys.com
+        Mail: contact@uronea.com
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '05 59 26 53 61'
         Phone2: '06 31 95 41 42'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-27 00:00:00'
-        ClosingDate: '2012-09-16 00:00:00'
+        Fax: '05 59 26 53 94'
+        OpeningDate: '2013-04-27 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
         VilleId: 104
         CategorieId: 3
         GeoCoordinateX: '43.43388862'
@@ -658,20 +658,20 @@
         Address2: ''
         Zip: '20243'
         City: 'PRUNELLI DI FIUMORBU'
-        Mail: test@resalys.com
+        Mail: coraline.leandri@gmail.com
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 95 56 14 73'
         Phone2: '06 88 71 58 98'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-06-01 00:00:00'
-        ClosingDate: '2012-09-15 00:00:00'
+        Fax: '04 95 57 07 02'
+        OpeningDate: '2013-06-01 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
         VilleId: 42
         CategorieId: 4
         GeoCoordinateX: '41.98642663'
         GeoCoordinateY: '9.398889542'
         VideoPath: null
         Image360Path: null
-        Capacite: '54'
+        Capacite: '59'
         PlanPath: uploads/etablissements/50c0b08c59d78.jpeg
         Vignette: uploads/etablissements/50c076d71697d.jpeg
         Active: true
@@ -684,13 +684,13 @@
         Address2: ''
         Zip: '40660'
         City: MESSANGES
-        Mail: test@resalys.com
+        Mail: sergemombert@free.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '0 825 70 40 40'
         Phone2: '06 89 79 80 11'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-05-01 00:00:00'
-        ClosingDate: '2012-09-30 00:00:00'
+        Fax: '05 58 48 01 69'
+        OpeningDate: '2013-05-01 00:00:00'
+        ClosingDate: '2013-09-29 00:00:00'
         VilleId: 102
         CategorieId: 1
         GeoCoordinateX: '43.79771568'
@@ -710,13 +710,13 @@
         Address2: 'Route de la Plage'
         Zip: '40170'
         City: LIT-ET-MIXE
-        Mail: test@resalys.com
+        Mail: accvignes@village-center.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '05 58 42 85 60'
         Phone2: '06 31 03 26 53'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-06 00:00:00'
-        ClosingDate: '2012-09-16 00:00:00'
+        Fax: '05 58 42 74 36'
+        OpeningDate: '2013-04-12 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
         VilleId: 101
         CategorieId: 1
         GeoCoordinateX: '44.02413608'
@@ -736,20 +736,20 @@
         Address2: ''
         Zip: '08800'
         City: 'VILANOVA I LA GELTRÚ'
-        Mail: test@resalys.com
+        Mail: info@vilanovapark.com
         CountryCode: ES
-        Phone1: 06.01.01.01.01
+        Phone1: '0034 93 893 34 02'
         Phone2: '06 40 21 14 24'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-06 00:00:00'
-        ClosingDate: '2012-09-30 00:00:00'
+        Fax: '0034 93 893 32 41'
+        OpeningDate: '2013-04-06 00:00:00'
+        ClosingDate: '2013-09-29 00:00:00'
         VilleId: 32
         CategorieId: 2
         GeoCoordinateX: '41.23213011'
         GeoCoordinateY: '1.690725088'
         VideoPath: null
         Image360Path: null
-        Capacite: '1385'
+        Capacite: '1413'
         PlanPath: uploads/etablissements/50c0b0b4c3335.jpeg
         Vignette: uploads/etablissements/50c07709abbeb.jpeg
         Active: true
@@ -762,13 +762,13 @@
         Address2: ''
         Zip: '85160'
         City: 'ST JEAN-DE-MONTS'
-        Mail: test@resalys.com
+        Mail: zagarella@zagarella.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '02 51 58 19 82'
         Phone2: '06 89 73 60 39'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-07 00:00:00'
-        ClosingDate: '2012-09-15 00:00:00'
+        Fax: '02 51 59 35 28'
+        OpeningDate: '2013-04-12 00:00:00'
+        ClosingDate: '2013-09-14 00:00:00'
         VilleId: 47
         CategorieId: 2
         GeoCoordinateX: '46.7812729'
@@ -788,20 +788,20 @@
         Address2: ''
         Zip: '64210'
         City: BIDART
-        Mail: test@resalys.com
+        Mail: francoise.dumont3@wanadoo.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '05 59 41 94 50'
         Phone2: '06 32 12 91 82'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-05-19 00:00:00'
-        ClosingDate: '2012-09-16 00:00:00'
+        Fax: '05 59 41 95 73'
+        OpeningDate: '2013-04-27 00:00:00'
+        ClosingDate: '2013-09-22 00:00:00'
         VilleId: 104
         CategorieId: 1
         GeoCoordinateX: '43.436804'
         GeoCoordinateY: '-1.567666'
         VideoPath: null
         Image360Path: null
-        Capacite: '480'
+        Capacite: '443'
         PlanPath: uploads/etablissements/50c1b0795fd0c.jpeg
         Vignette: uploads/etablissements/50c077240f919.jpeg
         Active: true
@@ -814,17 +814,17 @@
         Address2: ''
         Zip: '17300'
         City: BLANES
-        Mail: test@resalys.com
+        Mail: fontclaude@orange.fr
         CountryCode: ES
-        Phone1: 06.01.01.01.01
+        Phone1: '0034 97 23 31 013'
         Phone2: '06 07 78 00 16'
-        Fax: 04.92.94.10.01
+        Fax: '0034 972 33 31 28'
         OpeningDate: '2013-04-27 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 31
         CategorieId: 4
-        GeoCoordinateX: '41.664833'
-        GeoCoordinateY: '2.777781'
+        GeoCoordinateX: '41.6636747'
+        GeoCoordinateY: '2.78128019'
         VideoPath: null
         Image360Path: null
         Capacite: '757'
@@ -840,13 +840,13 @@
         Address2: ''
         Zip: '66420'
         City: 'LE BARCARÈS'
-        Mail: test@resalys.com
+        Mail: 0468862309@fax.contact-everyone.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 68 86 08 18'
         Phone2: '06 07 84 61 31'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-27 00:00:00'
-        ClosingDate: '2012-09-16 00:00:00'
+        Fax: '04 68 86 23 09'
+        OpeningDate: '2013-04-27 00:00:00'
+        ClosingDate: '2013-09-08 00:00:00'
         VilleId: 17
         CategorieId: 3
         GeoCoordinateX: '42.783858'
@@ -866,13 +866,13 @@
         Address2: ''
         Zip: '39180'
         City: NOJA
-        Mail: test@resalys.com
+        Mail: jean.straniero@gmail.com
         CountryCode: ES
-        Phone1: 06.01.01.01.01
+        Phone1: '0034 942630081 '
         Phone2: '06 31 35 46 23'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-27 00:00:00'
-        ClosingDate: '2012-09-16 00:00:00'
+        Fax: '0034 942631294'
+        OpeningDate: '2013-04-19 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
         VilleId: 28
         CategorieId: 2
         GeoCoordinateX: '43.491413'
@@ -892,11 +892,11 @@
         Address2: ''
         Zip: 'i 30015'
         City: 'SOTTOMARINA DI CHIOGGIA '
-        Mail: test@resalys.com
+        Mail: info@campinggrandeitalia.com
         CountryCode: IT
-        Phone1: 06.01.01.01.01
+        Phone1: '0039 0 41 405 6 64'
         Phone2: '06 32 12 95 69'
-        Fax: 04.92.94.10.01
+        Fax: '04 15 50 68 77'
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 37
@@ -918,11 +918,11 @@
         Address2: ''
         Zip: '66700'
         City: 'ARGELES SUR MER'
-        Mail: test@resalys.com
+        Mail: 0468815529@fax.contact-everyone.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 68 81 26 49'
         Phone2: '06 89 79 60 43'
-        Fax: 04.92.94.10.01
+        Fax: '04 68 81 55 29'
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-22 00:00:00'
         VilleId: 1
@@ -944,15 +944,15 @@
         Address2: ''
         Zip: '83400'
         City: HYÈRES
-        Mail: test@resalys.com
+        Mail: bieber.jean-claude@neuf.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 94 66 34 07'
         Phone2: '06 71 59 02 51'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-27 00:00:00'
-        ClosingDate: '2012-09-15 00:00:00'
+        Fax: '04 94 66 33 57'
+        OpeningDate: '2013-04-26 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
         VilleId: 13
-        CategorieId: 3
+        CategorieId: 2
         GeoCoordinateX: '43.0935263'
         GeoCoordinateY: '6.16381530'
         VideoPath: null
@@ -985,7 +985,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     39:
         Code: 14
@@ -996,11 +996,11 @@
         Address2: 'RD 613'
         Zip: '34140'
         City: MÈZE
-        Mail: test@resalys.com
+        Mail: reception@camping-beaurivage.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 67 43 81 48'
         Phone2: '06 89 50 29 78'
-        Fax: 04.92.94.10.01
+        Fax: '04 67 43 66 70'
         OpeningDate: '2013-04-13 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 9
@@ -1037,7 +1037,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     41:
         Code: 141
@@ -1063,7 +1063,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     42:
         Code: 142
@@ -1089,7 +1089,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     43:
         Code: 143
@@ -1115,7 +1115,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     44:
         Code: 144
@@ -1141,7 +1141,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     45:
         Code: 145
@@ -1167,7 +1167,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     46:
         Code: 146
@@ -1193,7 +1193,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     47:
         Code: 147
@@ -1219,7 +1219,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     48:
         Code: 148
@@ -1245,7 +1245,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     49:
         Code: 149
@@ -1271,7 +1271,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     50:
         Code: 15
@@ -1282,11 +1282,11 @@
         Address2: ''
         Zip: '17138'
         City: PUILBOREAU
-        Mail: test@resalys.com
+        Mail: contact@camping-la-rochelle.com
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '05 46 68 04 38'
         Phone2: '06 08 05 65 48'
-        Fax: 04.92.94.10.01
+        Fax: '05 46 35 85 95'
         OpeningDate: '2012-04-06 00:00:00'
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: null
@@ -1297,7 +1297,7 @@
         Image360Path: null
         Capacite: '171'
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     51:
         Code: 150
@@ -1323,7 +1323,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     52:
         Code: 151
@@ -1349,7 +1349,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     53:
         Code: 152
@@ -1375,7 +1375,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     54:
         Code: 153
@@ -1401,7 +1401,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     55:
         Code: 154
@@ -1427,7 +1427,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     56:
         Code: 155
@@ -1453,7 +1453,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     57:
         Code: 156
@@ -1479,7 +1479,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     58:
         Code: 157
@@ -1505,7 +1505,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     59:
         Code: 158
@@ -1531,7 +1531,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     60:
         Code: 159
@@ -1557,7 +1557,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     61:
         Code: 16
@@ -1568,11 +1568,11 @@
         Address2: ''
         Zip: '85340'
         City: 'OLONNE SUR MER'
-        Mail: test@resalys.com
+        Mail: camping.boissoleil@wanadoo.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '02 51 33 11 97'
         Phone2: '06 70 35 10 91'
-        Fax: 04.92.94.10.01
+        Fax: '02 51 33 14 85'
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 77
@@ -1609,7 +1609,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     63:
         Code: 161
@@ -1635,7 +1635,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     64:
         Code: 162
@@ -1661,7 +1661,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     65:
         Code: 163
@@ -1687,7 +1687,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     66:
         Code: 164
@@ -1713,7 +1713,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     67:
         Code: 165
@@ -1739,7 +1739,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     68:
         Code: 166
@@ -1765,7 +1765,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     69:
         Code: 167
@@ -1791,7 +1791,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     70:
         Code: 168
@@ -1817,7 +1817,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     71:
         Code: 169
@@ -1843,7 +1843,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     72:
         Code: 17
@@ -1854,11 +1854,11 @@
         Address2: ''
         Zip: '56360'
         City: 'LE PALAIS'
-        Mail: test@resalys.com
+        Mail: camping.bordeneo@wanadoo.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '02 97 31 88 96'
         Phone2: '06 70 79 49 91'
-        Fax: 04.92.94.10.01
+        Fax: '02 97 31 87 77'
         OpeningDate: '2013-04-13 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 55
@@ -1895,7 +1895,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     74:
         Code: 171
@@ -1921,7 +1921,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     75:
         Code: 172
@@ -1947,7 +1947,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     76:
         Code: 173
@@ -1973,7 +1973,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     77:
         Code: 174
@@ -1999,7 +1999,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     78:
         Code: 175
@@ -2010,17 +2010,17 @@
         Address2: ''
         Zip: '85270'
         City: 'ST HILAIRE DE RIEZ'
-        Mail: test@resalys.com
+        Mail: info@ledomainedespins.com
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '02 51 58 23 33'
         Phone2: '06 32 12 37 65'
-        Fax: 04.92.94.10.01
+        Fax: '02 51 58 29 93'
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 63
         CategorieId: 2
         GeoCoordinateX: '46.738375'
-        GeoCoordinateY: '-1.978054'
+        GeoCoordinateY: '-1.978047'
         VideoPath: null
         Image360Path: null
         Capacite: '140'
@@ -2036,17 +2036,17 @@
         Address2: ''
         Zip: '33930'
         City: 'VENDAYS MONTALIVET'
-        Mail: test@resalys.com
+        Mail: vautrin.christian@sfr.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '05 56 09 35 64'
         Phone2: '06 32 12 14 52'
-        Fax: 04.92.94.10.01
+        Fax: '05 56 09 35 64'
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 150
         CategorieId: 1
-        GeoCoordinateX: '45.373855'
-        GeoCoordinateY: '-1.144638'
+        GeoCoordinateX: '45.3770439'
+        GeoCoordinateY: '-1.14430200'
         VideoPath: null
         Image360Path: null
         Capacite: '770'
@@ -2062,37 +2062,37 @@
         Address2: ''
         Zip: '44500'
         City: 'LA BAULE'
-        Mail: test@resalys.com
+        Mail: 0240244437@fax.contact-everyone.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '02 40 60 33 29'
         Phone2: '06 31 28 72 24'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-28 00:00:00'
-        ClosingDate: '2012-09-16 00:00:00'
+        Fax: '02 40 24 44 37'
+        OpeningDate: '2013-04-27 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
         VilleId: 58
         CategorieId: 3
         GeoCoordinateX: '47.305775'
         GeoCoordinateY: '-2.377167'
         VideoPath: null
         Image360Path: null
-        Capacite: '222'
+        Capacite: '215'
         PlanPath: uploads/etablissements/50c1b1503b389.jpeg
         Vignette: uploads/etablissements/50c077ecaf24e.jpeg
         Active: true
     81:
         Code: 178
-        Slug: camping-les-biches
-        Name: 'Camping Les Biches'
+        Slug: biches
+        Name: Biches
         Title: null
         Address1: 'Route de Notre Dame de Riez'
         Address2: 'Chemin de la petite Baisse'
         Zip: '85270'
         City: 'ST HILAIRE DE RIEZ'
-        Mail: test@resalys.com
+        Mail: rf.forest@sfr.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '02 51 54 38 82'
         Phone2: '06 32 29 64 91'
-        Fax: 04.92.94.10.01
+        Fax: '02 51 54 30 74'
         OpeningDate: '2013-04-13 00:00:00'
         ClosingDate: '2013-09-08 00:00:00'
         VilleId: 63
@@ -2123,13 +2123,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 105
         CategorieId: 1
-        GeoCoordinateX: ''
-        GeoCoordinateY: ''
+        GeoCoordinateX: '44.8669413'
+        GeoCoordinateY: '1.2797356'
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
     83:
         Code: 18
@@ -2140,11 +2140,11 @@
         Address2: ''
         Zip: '85150'
         City: 'ST JULIEN DES LANDES'
-        Mail: test@resalys.com
+        Mail: camp.la-bretonniere@wanadoo.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '02 51 46 62 44'
         Phone2: '06 88 71 58 15'
-        Fax: 04.92.94.10.01
+        Fax: '02 51 46 61 36'
         OpeningDate: '2012-04-27 00:00:00'
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: null
@@ -2155,7 +2155,7 @@
         Image360Path: null
         Capacite: '150'
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     84:
         Code: 180
@@ -2166,7 +2166,7 @@
         Address2: 'Le Cabenas'
         Zip: '83320'
         City: CARQUEIRANNE
-        Mail: test@resalys.com
+        Mail: contact@village-center.fr
         CountryCode: FR
         Phone1: ''
         Phone2: ''
@@ -2175,13 +2175,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 156
         CategorieId: null
-        GeoCoordinateX: ''
-        GeoCoordinateY: ''
+        GeoCoordinateX: '43.0925'
+        GeoCoordinateY: '6.05638'
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
     85:
         Code: 181
@@ -2201,13 +2201,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 91
         CategorieId: 4
-        GeoCoordinateX: ''
-        GeoCoordinateY: ''
+        GeoCoordinateX: '44.2229784'
+        GeoCoordinateY: '-1.2035572'
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
     86:
         Code: 182
@@ -2218,7 +2218,7 @@
         Address2: ''
         Zip: '29430'
         City: PLOUESCAT
-        Mail: test@resalys.com
+        Mail: accbaiedekernic@village-center.fr
         CountryCode: FR
         Phone1: ''
         Phone2: ''
@@ -2227,13 +2227,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 110
         CategorieId: 4
-        GeoCoordinateX: ''
-        GeoCoordinateY: ''
+        GeoCoordinateX: '48.6589806'
+        GeoCoordinateY: '-4.2175055'
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
     87:
         Code: 183
@@ -2244,7 +2244,7 @@
         Address2: ''
         Zip: '44500'
         City: 'LA BAULE'
-        Mail: test@resalys.com
+        Mail: accboisdamour@village-center.fr
         CountryCode: FR
         Phone1: ''
         Phone2: ''
@@ -2253,13 +2253,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 58
         CategorieId: 3
-        GeoCoordinateX: ''
-        GeoCoordinateY: ''
+        GeoCoordinateX: '47.288836'
+        GeoCoordinateY: '-2.37296'
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
     88:
         Code: 184
@@ -2279,13 +2279,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 157
         CategorieId: 3
-        GeoCoordinateX: ''
-        GeoCoordinateY: ''
+        GeoCoordinateX: '45.445833'
+        GeoCoordinateY: '12.460833'
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
     89:
         Code: 185
@@ -2296,7 +2296,7 @@
         Address2: ''
         Zip: '17110'
         City: 'ST GEORGES DE DIDONNE'
-        Mail: test@resalys.com
+        Mail: acccatalpas@village-center.fr
         CountryCode: FR
         Phone1: ''
         Phone2: ''
@@ -2305,13 +2305,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 158
         CategorieId: 3
-        GeoCoordinateX: ''
-        GeoCoordinateY: ''
+        GeoCoordinateX: '45.6150806'
+        GeoCoordinateY: '-0.9945738'
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
     90:
         Code: 186
@@ -2322,7 +2322,7 @@
         Address2: ''
         Zip: '66210'
         City: 'LES ANGLES'
-        Mail: test@resalys.com
+        Mail: contact@village-center.com
         CountryCode: FR
         Phone1: ''
         Phone2: ''
@@ -2337,7 +2337,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     91:
         Code: 187
@@ -2348,7 +2348,7 @@
         Address2: ''
         Zip: '24620'
         City: 'LES EYZIES DE TAYAC SIREUIL'
-        Mail: test@resalys.com
+        Mail: accclosdurocher@village-center.com
         CountryCode: FR
         Phone1: ''
         Phone2: ''
@@ -2363,12 +2363,12 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     92:
         Code: 188
-        Slug: club-del-sole-spina
-        Name: 'Club del Sole Spina'
+        Slug: zz-club-del-sole-spina
+        Name: 'zz Club del Sole Spina'
         Title: null
         Address1: 'Via Del Campeggio, 99'
         Address2: ''
@@ -2389,7 +2389,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
     93:
         Code: 189
@@ -2415,7 +2415,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     94:
         Code: 19
@@ -2426,11 +2426,11 @@
         Address2: 'Chemin de la Parée Verte'
         Zip: '85160'
         City: 'ST JEAN DE MONTS'
-        Mail: test@resalys.com
+        Mail: camping.california@orange.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '02 51 58 17 51'
         Phone2: '06 70 74 90 74'
-        Fax: 04.92.94.10.01
+        Fax: '02 51 58 12 28'
         OpeningDate: '2013-04-26 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 47
@@ -2452,7 +2452,7 @@
         Address2: ''
         Zip: '11100'
         City: NARBONNE-PLAGE
-        Mail: test@resalys.com
+        Mail: contact@village-center.fr
         CountryCode: FR
         Phone1: ''
         Phone2: ''
@@ -2461,13 +2461,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 152
         CategorieId: 4
-        GeoCoordinateX: ''
-        GeoCoordinateY: ''
+        GeoCoordinateX: '43.143056'
+        GeoCoordinateY: '3.143611'
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
     96:
         Code: 191
@@ -2478,7 +2478,7 @@
         Address2: ''
         Zip: '17590'
         City: 'ST CLEMENT DES BALEINES'
-        Mail: test@resalys.com
+        Mail: acccotesauvage@village-center.fr
         CountryCode: FR
         Phone1: ''
         Phone2: ''
@@ -2487,13 +2487,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 111
         CategorieId: 4
-        GeoCoordinateX: ''
-        GeoCoordinateY: ''
+        GeoCoordinateX: '46.2254232'
+        GeoCoordinateY: '-1.5446198'
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
     97:
         Code: 192
@@ -2504,11 +2504,11 @@
         Address2: ''
         Zip: '04500'
         City: 'MONTAGNAC MONTPEZAT'
-        Mail: test@resalys.com
+        Mail: acccoteaudelamarine@village-center.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 92 77 53 33'
         Phone2: ''
-        Fax: 04.92.94.10.01
+        Fax: '04 92 77 59 34'
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 123
@@ -2523,8 +2523,8 @@
         Active: true
     98:
         Code: 193
-        Slug: cypsela
-        Name: Cypsela
+        Slug: zz-cypsela
+        Name: 'zz Cypsela'
         Title: null
         Address1: 'C/ Rodors 7'
         Address2: ''
@@ -2545,7 +2545,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
     99:
         Code: 194
@@ -2556,7 +2556,7 @@
         Address2: ''
         Zip: '66200'
         City: 'LATOUR BAS ELNE'
-        Mail: test@resalys.com
+        Mail: contact@village-center.fr
         CountryCode: FR
         Phone1: ''
         Phone2: ''
@@ -2571,7 +2571,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     100:
         Code: 195
@@ -2582,7 +2582,7 @@
         Address2: ''
         Zip: '66700'
         City: 'ARGELES SUR MER'
-        Mail: test@resalys.com
+        Mail: contact@village-center.fr
         CountryCode: FR
         Phone1: ''
         Phone2: ''
@@ -2597,18 +2597,18 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     101:
         Code: 196
-        Slug: demeures-du-ventoux
-        Name: 'Demeures du Ventoux'
+        Slug: demeures-du-ventoux-residence
+        Name: 'Demeures du Ventoux (Residence)'
         Title: null
         Address1: '2015 avenue Majoral Jouve'
         Address2: ''
         Zip: '84810'
         City: AUBIGNAN
-        Mail: test@resalys.com
+        Mail: accdemeuresduventoux@village-center.fr
         CountryCode: FR
         Phone1: ''
         Phone2: ''
@@ -2623,8 +2623,8 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
-        Active: true
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
     102:
         Code: 197
         Slug: domaine-de-bacchus-residence
@@ -2634,7 +2634,7 @@
         Address2: ''
         Zip: '34400'
         City: 'ST CHRISTOL'
-        Mail: test@resalys.com
+        Mail: contact@village-center.com
         CountryCode: FR
         Phone1: ''
         Phone2: ''
@@ -2649,7 +2649,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     103:
         Code: 198
@@ -2660,7 +2660,7 @@
         Address2: 'Avenue de Paris'
         Zip: '83870'
         City: SIGNES
-        Mail: test@resalys.com
+        Mail: accdomainedemanon@village-center.fr
         CountryCode: FR
         Phone1: ''
         Phone2: ''
@@ -2675,7 +2675,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     104:
         Code: 199
@@ -2686,7 +2686,7 @@
         Address2: ''
         Zip: '14640'
         City: AUBERVILLE
-        Mail: test@resalys.com
+        Mail: contact@village-center.com
         CountryCode: FR
         Phone1: ''
         Phone2: ''
@@ -2701,7 +2701,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     105:
         Code: 2
@@ -2712,11 +2712,11 @@
         Address2: ''
         Zip: '24620'
         City: 'LES EYZIES DE TAYAC '
-        Mail: test@resalys.com
+        Mail: 0553311273@fax.contact-everyone.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '05 53 29 68 06'
         Phone2: '05 53 29 68 06'
-        Fax: 04.92.94.10.01
+        Fax: '05 53 31 12 73'
         OpeningDate: '2013-05-03 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 4
@@ -2738,11 +2738,11 @@
         Address2: ''
         Zip: '66440'
         City: TORREILLES
-        Mail: test@resalys.com
+        Mail: 0468282476@fax.contact-everyone.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 68 28 09 47'
         Phone2: '06 31 36 81 43'
-        Fax: 04.92.94.10.01
+        Fax: '04 68 28 24 76'
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-22 00:00:00'
         VilleId: 7
@@ -2764,11 +2764,11 @@
         Address2: ''
         Zip: '13640'
         City: 'LA ROQUE D ANTHERON'
-        Mail: test@resalys.com
+        Mail: acciscles@village-center.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '0825 00 53 26'
         Phone2: ''
-        Fax: 04.92.94.10.01
+        Fax: '04 42 50 55 29'
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 153
@@ -2790,7 +2790,7 @@
         Address2: 'Rue de la Vedrenne'
         Zip: '19300'
         City: EGLETONS
-        Mail: test@resalys.com
+        Mail: accdomainedubosquet@village-center.fr
         CountryCode: FR
         Phone1: ''
         Phone2: ''
@@ -2805,7 +2805,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     109:
         Code: 202
@@ -2816,7 +2816,7 @@
         Address2: '1 chemin de l’Aire'
         Zip: '34690'
         City: FABREGUES
-        Mail: test@resalys.com
+        Mail: accdomainedugolf@village-center.fr
         CountryCode: FR
         Phone1: ''
         Phone2: ''
@@ -2831,7 +2831,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     110:
         Code: 203
@@ -2842,17 +2842,17 @@
         Address2: ''
         Zip: '62176'
         City: CAMIERS
-        Mail: test@resalys.com
+        Mail: accduneblanche@village-center.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '03 21 09 78 48'
         Phone2: ''
-        Fax: 04.92.94.10.01
+        Fax: '03 21 09 79 59'
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 120
         CategorieId: 5
-        GeoCoordinateX: '50.568379'
-        GeoCoordinateY: '1.615115'
+        GeoCoordinateX: '50.5584400'
+        GeoCoordinateY: '1.6182947'
         VideoPath: null
         Image360Path: null
         Capacite: null
@@ -2868,7 +2868,7 @@
         Address2: ''
         Zip: '34440'
         City: COLOMBIERS
-        Mail: test@resalys.com
+        Mail: accdomainedenserune@village-center.fr
         CountryCode: FR
         Phone1: ''
         Phone2: ''
@@ -2883,7 +2883,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     112:
         Code: 205
@@ -2903,8 +2903,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 106
         CategorieId: 5
-        GeoCoordinateX: ''
-        GeoCoordinateY: ''
+        GeoCoordinateX: '43.0247845'
+        GeoCoordinateY: '2.9771233'
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -2920,9 +2920,9 @@
         Address2: ''
         Zip: '34110'
         City: 'VIC LA GARDIOLE'
-        Mail: test@resalys.com
+        Mail: acceurope@village-center.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 67 18 02 61'
         Phone2: ''
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
@@ -2946,7 +2946,7 @@
         Address2: ''
         Zip: '34500'
         City: BEZIERS
-        Mail: test@resalys.com
+        Mail: accfonserane@village-center.fr
         CountryCode: FR
         Phone1: ''
         Phone2: ''
@@ -2961,7 +2961,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     115:
         Code: 208
@@ -2972,7 +2972,7 @@
         Address2: ''
         Zip: '94550'
         City: 'CHEVILLY LARUE'
-        Mail: test@resalys.com
+        Mail: accfontainebleau@village-center.com
         CountryCode: FR
         Phone1: ''
         Phone2: ''
@@ -2987,7 +2987,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     116:
         Code: 209
@@ -3007,13 +3007,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 107
         CategorieId: 3
-        GeoCoordinateX: ''
-        GeoCoordinateY: ''
+        GeoCoordinateX: '43.2463281'
+        GeoCoordinateY: '10.5306101'
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
     117:
         Code: 21
@@ -3024,11 +3024,11 @@
         Address2: ''
         Zip: '05110'
         City: CURBANS
-        Mail: test@resalys.com
+        Mail: info@au-camping-du-lac.com
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 92 54 23 10'
         Phone2: '06 89 79 87 57'
-        Fax: 04.92.94.10.01
+        Fax: '04 92 54 23 11'
         OpeningDate: '2013-05-17 00:00:00'
         ClosingDate: '2013-09-08 00:00:00'
         VilleId: 11
@@ -3065,7 +3065,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     119:
         Code: 211
@@ -3076,11 +3076,11 @@
         Address2: ''
         Zip: '68600'
         City: BIESHEIM
-        Mail: test@resalys.com
+        Mail: acciledurhin@village-center.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '03 89 72 57 95'
         Phone2: ''
-        Fax: 04.92.94.10.01
+        Fax: '03 89 72 14 21'
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 160
@@ -3110,14 +3110,14 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 108
-        CategorieId: null
-        GeoCoordinateX: ''
-        GeoCoordinateY: ''
+        CategorieId: 2
+        GeoCoordinateX: '41.981111'
+        GeoCoordinateY: '3.201111'
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
     121:
         Code: 213
@@ -3128,7 +3128,7 @@
         Address2: ''
         Zip: '14450'
         City: 'GRANDCAMP MAISY'
-        Mail: test@resalys.com
+        Mail: accislesdesola@village-center.fr
         CountryCode: FR
         Phone1: ''
         Phone2: ''
@@ -3143,7 +3143,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     122:
         Code: 214
@@ -3169,7 +3169,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     123:
         Code: 215
@@ -3180,7 +3180,7 @@
         Address2: ''
         Zip: '33115'
         City: 'PYLA SUR MER'
-        Mail: test@resalys.com
+        Mail: acclaforet@village-center.fr
         CountryCode: FR
         Phone1: ''
         Phone2: ''
@@ -3189,13 +3189,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 112
         CategorieId: 3
-        GeoCoordinateX: ''
-        GeoCoordinateY: ''
+        GeoCoordinateX: '44.5847824'
+        GeoCoordinateY: '-1.2091827'
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
     124:
         Code: 216
@@ -3206,7 +3206,7 @@
         Address2: ''
         Zip: '29140'
         City: 'ST YVI'
-        Mail: test@resalys.com
+        Mail: accboisdepleuven@village-center.fr
         CountryCode: FR
         Phone1: ''
         Phone2: ''
@@ -3215,13 +3215,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 121
         CategorieId: 2
-        GeoCoordinateX: ''
-        GeoCoordinateY: ''
+        GeoCoordinateX: '47.9503856'
+        GeoCoordinateY: '-3.9705276'
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
     125:
         Code: 217
@@ -3232,11 +3232,11 @@
         Address2: ''
         Zip: '34200'
         City: SETE
-        Mail: test@resalys.com
+        Mail: acccastellas@village-center.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 67 51 63 00'
         Phone2: ''
-        Fax: 04.92.94.10.01
+        Fax: '04 67 51 63 01'
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 113
@@ -3258,7 +3258,7 @@
         Address2: ''
         Zip: '66702'
         City: 'ARGELES SUR MER CEDEX'
-        Mail: test@resalys.com
+        Mail: accneptune@village-center.fr
         CountryCode: FR
         Phone1: ''
         Phone2: ''
@@ -3267,8 +3267,8 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 1
         CategorieId: 2
-        GeoCoordinateX: ''
-        GeoCoordinateY: ''
+        GeoCoordinateX: '42.565353076621875'
+        GeoCoordinateY: '3.0366790294647217'
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -3284,9 +3284,9 @@
         Address2: ''
         Zip: '20213'
         City: 'CASTELLARE DI CASINCA'
-        Mail: test@resalys.com
+        Mail: accanghione@village-center.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 95 36 50 22'
         Phone2: ''
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
@@ -3310,11 +3310,11 @@
         Address2: ''
         Zip: '34300'
         City: AGDE
-        Mail: test@resalys.com
+        Mail: info@campingcapagathois.com
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 67 94 02 21'
         Phone2: '06 70 87 37 69'
-        Fax: 04.92.94.10.01
+        Fax: '04 67 94 02 21'
         OpeningDate: '2013-04-26 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 19
@@ -3336,11 +3336,11 @@
         Address2: ''
         Zip: '62480'
         City: 'LE PORTEL'
-        Mail: test@resalys.com
+        Mail: accphare@village-center.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '03 21 31 69 20'
         Phone2: ''
-        Fax: 04.92.94.10.01
+        Fax: '03 21 92 00 83'
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 147
@@ -3351,7 +3351,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
     130:
         Code: 221
@@ -3362,7 +3362,7 @@
         Address2: ''
         Zip: '34300'
         City: AGDE
-        Mail: test@resalys.com
+        Mail: accseptfont@village-center.fr
         CountryCode: FR
         Phone1: ''
         Phone2: ''
@@ -3370,14 +3370,14 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 19
-        CategorieId: null
-        GeoCoordinateX: ''
-        GeoCoordinateY: ''
+        CategorieId: 4
+        GeoCoordinateX: '43.31123649267182'
+        GeoCoordinateY: '3.499166965484619'
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
     131:
         Code: 222
@@ -3388,11 +3388,11 @@
         Address2: 'La Charrière des Bandes'
         Zip: '85360'
         City: 'LA TRANCHE SUR MER'
-        Mail: test@resalys.com
+        Mail: accalmadies@village-center.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '02 51 30 36 94'
         Phone2: ''
-        Fax: 04.92.94.10.01
+        Fax: '02 51 30 37 04'
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 72
@@ -3414,15 +3414,15 @@
         Address2: ''
         Zip: '74190'
         City: PASSY
-        Mail: test@resalys.com
+        Mail: acciles@village-center.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '0825 00 53 18'
         Phone2: ''
-        Fax: 04.92.94.10.01
+        Fax: '04 50 18 83 76'
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 138
-        CategorieId: 4
+        CategorieId: 3
         GeoCoordinateX: '45.9235838981'
         GeoCoordinateY: '6.65056899541'
         VideoPath: null
@@ -3440,7 +3440,7 @@
         Address2: ''
         Zip: '68580'
         City: 'SEPPOIS LE BAS'
-        Mail: test@resalys.com
+        Mail: acclupins@village-center.fr
         CountryCode: FR
         Phone1: ''
         Phone2: ''
@@ -3449,13 +3449,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 161
         CategorieId: 3
-        GeoCoordinateX: ''
-        GeoCoordinateY: ''
+        GeoCoordinateX: '47.5376882'
+        GeoCoordinateY: '7.1824729'
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
     134:
         Code: 225
@@ -3466,7 +3466,7 @@
         Address2: ''
         Zip: '34160'
         City: CASTRIES
-        Mail: test@resalys.com
+        Mail: accmasdescigales@village-center.fr
         CountryCode: FR
         Phone1: ''
         Phone2: ''
@@ -3481,7 +3481,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     135:
         Code: 226
@@ -3492,7 +3492,7 @@
         Address2: ''
         Zip: '68140'
         City: MUNSTER
-        Mail: test@resalys.com
+        Mail: accparcdelafecht@village-center.fr
         CountryCode: FR
         Phone1: ''
         Phone2: ''
@@ -3501,13 +3501,13 @@
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 132
         CategorieId: 3
-        GeoCoordinateX: ''
-        GeoCoordinateY: ''
+        GeoCoordinateX: '48.0431584'
+        GeoCoordinateY: '7.1509838'
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
     136:
         Code: 227
@@ -3518,11 +3518,11 @@
         Address2: ''
         Zip: '37220'
         City: TROGUES
-        Mail: test@resalys.com
+        Mail: accparcdesallais@village-center.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '02 47 58 60 60 '
         Phone2: ''
-        Fax: 04.92.94.10.01
+        Fax: '02 47 95 24 04 '
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 133
@@ -3544,22 +3544,22 @@
         Address2: ''
         Zip: '04500'
         City: QUINSON
-        Mail: test@resalys.com
+        Mail: accpresduverdon@village-center.fr
         CountryCode: FR
         Phone1: ''
         Phone2: ''
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 12
+        VilleId: 169
         CategorieId: 4
-        GeoCoordinateX: ''
-        GeoCoordinateY: ''
+        GeoCoordinateX: '43.696858773848696'
+        GeoCoordinateY: '6.041450500488281'
         VideoPath: null
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
     138:
         Code: 229
@@ -3570,9 +3570,9 @@
         Address2: ''
         Zip: '81320'
         City: NAGES
-        Mail: test@resalys.com
+        Mail: dirrieumontagne@village-center.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '05 63 37 24 71'
         Phone2: ''
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
@@ -3596,11 +3596,11 @@
         Address2: ''
         Zip: '24250'
         City: 'ST MARTIAL DE NABIRAT'
-        Mail: test@resalys.com
+        Mail: lecarbonnier@aol.com
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '05 53 28 42 53'
         Phone2: '06 70 86 74 52'
-        Fax: 04.92.94.10.01
+        Fax: '05 53 28 51 31'
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 54
@@ -3622,7 +3622,7 @@
         Address2: ''
         Zip: '34300'
         City: AGDE
-        Mail: test@resalys.com
+        Mail: accsaintclair@village-center.fr
         CountryCode: FR
         Phone1: ''
         Phone2: ''
@@ -3637,7 +3637,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     141:
         Code: 231
@@ -3648,11 +3648,11 @@
         Address2: ''
         Zip: '12460'
         City: 'ST AMANS DES COTS'
-        Mail: test@resalys.com
+        Mail: acctours@village-center.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '05 65 44 88 10'
         Phone2: ''
-        Fax: 04.92.94.10.01
+        Fax: '05 65 44 83 07'
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 146
@@ -3689,7 +3689,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     143:
         Code: 233
@@ -3700,17 +3700,17 @@
         Address2: ''
         Zip: '40660'
         City: MESSANGES
-        Mail: test@resalys.com
+        Mail: contact@domainedelamarina.com
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '0825 70 40 40'
         Phone2: ''
-        Fax: 04.92.94.10.01
+        Fax: '05 58 49 00 41 '
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 102
         CategorieId: 2
-        GeoCoordinateX: '43.856316'
-        GeoCoordinateY: '-1.392517'
+        GeoCoordinateX: '43.7963884'
+        GeoCoordinateY: '-1.3931660000000647'
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -3726,17 +3726,17 @@
         Address2: ''
         Zip: '77131'
         City: TOUQUIN
-        Mail: test@resalys.com
+        Mail: contact@etangs-fleuris.com
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '01 64 04 16 36'
         Phone2: ''
-        Fax: 04.92.94.10.01
+        Fax: '01 64 04 12 28'
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 122
         CategorieId: 3
-        GeoCoordinateX: '48.733054'
-        GeoCoordinateY: '3.046978'
+        GeoCoordinateX: '48.731478'
+        GeoCoordinateY: '3.04673600000001'
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -3752,17 +3752,17 @@
         Address2: ''
         Zip: '74210'
         City: DOUSSARD
-        Mail: test@resalys.com
+        Mail: info@camping-la-ravoire.com
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 50 44 37 80 '
         Phone2: ''
-        Fax: 04.92.94.10.01
+        Fax: '04 50 32 90 60 '
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 81
         CategorieId: 2
-        GeoCoordinateX: '45.799965'
-        GeoCoordinateY: '6.211696'
+        GeoCoordinateX: '45.7991447'
+        GeoCoordinateY: '6.211576000000036'
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -3778,11 +3778,11 @@
         Address2: ''
         Zip: '74200'
         City: 'THONON LES BAINS'
-        Mail: test@resalys.com
+        Mail: camping@disdille.com
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 50 71 14 11'
         Phone2: ''
-        Fax: 04.92.94.10.01
+        Fax: '04 50 71 93 67'
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 134
@@ -3804,17 +3804,17 @@
         Address2: ''
         Zip: '66440'
         City: TORREILLES
-        Mail: test@resalys.com
+        Mail: marisol@camping-marisol.com
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 68 28 04 07'
         Phone2: ''
-        Fax: 04.92.94.10.01
+        Fax: '04 68 28 18 23'
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 7
         CategorieId: 1
-        GeoCoordinateX: '43.004647'
-        GeoCoordinateY: '3.050903'
+        GeoCoordinateX: '42.767187'
+        GeoCoordinateY: '3.0327310000000125'
         VideoPath: null
         Image360Path: null
         Capacite: null
@@ -3830,17 +3830,17 @@
         Address2: ''
         Zip: '40440'
         City: ONDRES
-        Mail: test@resalys.com
+        Mail: info@camping-loupignada.com
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '05 59 45 30 65'
         Phone2: ''
-        Fax: 04.92.94.10.01
+        Fax: '05 59 45 25 79'
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 135
         CategorieId: 2
-        GeoCoordinateX: '43.5694205'
-        GeoCoordinateY: '-1.4602153'
+        GeoCoordinateX: '43.5695744'
+        GeoCoordinateY: '-1.4602945000000318'
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -3856,9 +3856,9 @@
         Address2: ''
         Zip: '34350'
         City: VENDRES
-        Mail: test@resalys.com
+        Mail: palmirabeach@gmail.com
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 67 94 29 00'
         Phone2: ''
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
@@ -3882,15 +3882,15 @@
         Address2: 'Badia de Roses'
         Zip: '17486'
         City: 'CASTELLO D''EMPURIES'
-        Mail: test@resalys.com
+        Mail: mtravers@orange.fr
         CountryCode: ES
-        Phone1: 06.01.01.01.01
+        Phone1: '0034 972 45 08 22'
         Phone2: '06 70 48 40 97'
-        Fax: 04.92.94.10.01
+        Fax: '0034 972 45 23 30'
         OpeningDate: '2013-05-11 00:00:00'
         ClosingDate: '2013-09-21 00:00:00'
         VilleId: 29
-        CategorieId: 2
+        CategorieId: 3
         GeoCoordinateX: '42.2553319'
         GeoCoordinateY: '3.136843443'
         VideoPath: null
@@ -3908,17 +3908,17 @@
         Address2: ''
         Zip: '34410'
         City: SERIGNAN
-        Mail: test@resalys.com
+        Mail: info@campingetoiledemer.com
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 67 77 40 82'
         Phone2: ''
-        Fax: 04.92.94.10.01
+        Fax: '04 67 35 07 85'
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 8
         CategorieId: 3
-        GeoCoordinateX: '43.269862'
-        GeoCoordinateY: '3.332928'
+        GeoCoordinateX: '43.2690513'
+        GeoCoordinateY: '3.332877100000019'
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -3934,17 +3934,17 @@
         Address2: 'L''Aubarède'
         Zip: '06110'
         City: 'LE CANNET'
-        Mail: test@resalys.com
+        Mail: dstallis@free.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 93 46 00 11'
         Phone2: ''
-        Fax: 04.92.94.10.01
+        Fax: '04 93 46 44 30'
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 144
         CategorieId: 3
-        GeoCoordinateX: '43.574826'
-        GeoCoordinateY: '7.004464'
+        GeoCoordinateX: '43.5740895'
+        GeoCoordinateY: '7.004152500000032'
         VideoPath: null
         Image360Path: null
         Capacite: ''
@@ -3960,11 +3960,11 @@
         Address2: 'RD 560'
         Zip: '83690'
         City: VILLECROZE
-        Mail: test@resalys.com
+        Mail: info@camping-lescadenieres.com
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 94 67 59 66'
         Phone2: ''
-        Fax: 04.92.94.10.01
+        Fax: '04 94 67 58 35'
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 137
@@ -3988,9 +3988,9 @@
         City: MARIGNY
         Mail: ''
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '03 84 25 70 03'
         Phone2: ''
-        Fax: 04.92.94.10.01
+        Fax: '03 84 25 75 96'
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 136
@@ -4012,7 +4012,7 @@
         Address2: ''
         Zip: '04290'
         City: VOLONNE
-        Mail: test@resalys.com
+        Mail: camping@l-hippocampe.com
         CountryCode: FR
         Phone1: ''
         Phone2: ''
@@ -4038,7 +4038,7 @@
         Address2: ''
         Zip: '22101'
         City: 'DINAN CEDEX'
-        Mail: test@resalys.com
+        Mail: contact@vacances-directes.com
         CountryCode: FR
         Phone1: ''
         Phone2: ''
@@ -4053,7 +4053,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     157:
         Code: 246
@@ -4064,11 +4064,11 @@
         Address2: ''
         Zip: '44020'
         City: 'LIDO DELLE NAZIONI'
-        Mail: test@resalys.com
+        Mail: info@campingtahiti.com
         CountryCode: IT
-        Phone1: 06.01.01.01.01
+        Phone1: '0039 0533 379 500'
         Phone2: ''
-        Fax: 04.92.94.10.01
+        Fax: '0039 05 33 379700'
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 164
@@ -4099,18 +4099,18 @@
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 165
         CategorieId: 2
-        GeoCoordinateX: '38.575398'
-        GeoCoordinateY: '-0.100481'
+        GeoCoordinateX: '38.5683342'
+        GeoCoordinateY: '-0.0941133'
         VideoPath: null
         Image360Path: null
         Capacite: null
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
     159:
         Code: 248
-        Slug: val-d-aro
-        Name: 'Val d''aro'
+        Slug: valldaro
+        Name: Valldaro
         Title: null
         Address1: '63 c/cami Vell '
         Address2: ''
@@ -4125,13 +4125,13 @@
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 166
         CategorieId: 2
-        GeoCoordinateX: '41.8179488'
-        GeoCoordinateY: '3.0668559'
+        GeoCoordinateX: '41.823889'
+        GeoCoordinateY: '3.052222'
         VideoPath: null
         Image360Path: null
         Capacite: null
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
     160:
         Code: 249
@@ -4151,13 +4151,13 @@
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 167
         CategorieId: 2
-        GeoCoordinateX: '44.4563438'
-        GeoCoordinateY: '12.2890372'
+        GeoCoordinateX: '44.433611'
+        GeoCoordinateY: '12.295833'
         VideoPath: null
         Image360Path: null
         Capacite: null
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
     161:
         Code: 25
@@ -4168,11 +4168,11 @@
         Address2: ''
         Zip: '17258'
         City: 'L''ESTARTIT'
-        Mail: test@resalys.com
+        Mail: +34972750906@fax.contact-everyone.fr
         CountryCode: ES
-        Phone1: 06.01.01.01.01
+        Phone1: '0034 972 75 16 30'
         Phone2: '06 07 84 26 20'
-        Fax: 04.92.94.10.01
+        Fax: '0034 972750906'
         OpeningDate: '2013-05-11 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 25
@@ -4203,18 +4203,18 @@
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 168
         CategorieId: 4
-        GeoCoordinateX: '44.1672149'
-        GeoCoordinateY: '12.3807553'
+        GeoCoordinateX: '44.2150172'
+        GeoCoordinateY: '12.3792958'
         VideoPath: null
         Image360Path: null
         Capacite: null
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
     163:
         Code: 251
-        Slug: marina-italie
-        Name: 'Marina (Italie)'
+        Slug: marina
+        Name: 'Marina '
         Title: null
         Address1: '8 Via  dei Campeggi'
         Address2: ''
@@ -4229,25 +4229,25 @@
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 167
         CategorieId: 3
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '44.4319948'
+        GeoCoordinateY: '12.2988617'
         VideoPath: null
         Image360Path: null
         Capacite: null
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
     164:
         Code: 252
         Slug: gavina
         Name: Gavina
         Title: null
-        Address1: ''
+        Address1: 'Playa  Creixell'
         Address2: ''
-        Zip: ''
-        City: ''
+        Zip: '43839'
+        City: 'CREIXELL DE MAR'
         Mail: ''
-        CountryCode: ''
+        CountryCode: ES
         Phone1: ''
         Phone2: ''
         Fax: ''
@@ -4255,13 +4255,13 @@
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 155
         CategorieId: 3
-        GeoCoordinateX: null
-        GeoCoordinateY: null
+        GeoCoordinateX: '41.15716'
+        GeoCoordinateY: '1.44153'
         VideoPath: null
         Image360Path: null
         Capacite: null
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
     165:
         Code: 26
@@ -4272,11 +4272,11 @@
         Address2: ''
         Zip: '12290'
         City: 'CANET DE SALARS'
-        Mail: test@resalys.com
+        Mail: info@lecaussanel.com
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '05 65 46 85 19'
         Phone2: '06 70 78 90 05'
-        Fax: 04.92.94.10.01
+        Fax: '05 65 46 89 85'
         OpeningDate: '2013-05-06 00:00:00'
         ClosingDate: '2013-09-07 00:00:00'
         VilleId: 62
@@ -4298,11 +4298,11 @@
         Address2: ''
         Zip: '34450'
         City: VIAS
-        Mail: test@resalys.com
+        Mail: campingcayola@orange.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 67 90 01 85'
         Phone2: '06 81 93 15 46'
-        Fax: 04.92.94.10.01
+        Fax: '04 67 90 03 06'
         OpeningDate: '2013-04-20 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 5
@@ -4324,11 +4324,11 @@
         Address2: ''
         Zip: '85470'
         City: 'BREM SUR MER'
-        Mail: test@resalys.com
+        Mail: 0251909167@fax.contact-everyone.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '02 51 90 55 56'
         Phone2: '06 70 82 07 74'
-        Fax: 04.92.94.10.01
+        Fax: '02 51 90 91 67'
         OpeningDate: '2013-04-06 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 65
@@ -4350,11 +4350,11 @@
         Address2: ''
         Zip: '17450'
         City: 'ST LAURENT DE LA PRÉE'
-        Mail: test@resalys.com
+        Mail: charmilles17@wanadoo.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '05 46 84 00 05'
         Phone2: '06 71 05 51 54'
-        Fax: 04.92.94.10.01
+        Fax: '05 46 84 02 84'
         OpeningDate: '2013-04-27 00:00:00'
         ClosingDate: '2013-09-14 00:00:00'
         VilleId: 96
@@ -4376,11 +4376,11 @@
         Address2: ''
         Zip: '66750'
         City: 'ST CYPRIEN'
-        Mail: test@resalys.com
+        Mail: camping.calagogo@wanadoo.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 68 21 07 12'
         Phone2: '06 70 67 66 11'
-        Fax: 04.92.94.10.01
+        Fax: '04 68 21 02 19'
         OpeningDate: '2013-05-04 00:00:00'
         ClosingDate: '2013-09-21 00:00:00'
         VilleId: 140
@@ -4402,11 +4402,11 @@
         Address2: ''
         Zip: '22380'
         City: 'ST CAST LE GUILDO'
-        Mail: test@resalys.com
+        Mail: chateaugalinee@wanadoo.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '02 96 41 10 56'
         Phone2: '06 70 30 54 83'
-        Fax: 04.92.94.10.01
+        Fax: '02 96 41 03 72'
         OpeningDate: '2013-05-06 00:00:00'
         ClosingDate: '2013-09-06 00:00:00'
         VilleId: 142
@@ -4428,11 +4428,11 @@
         Address2: ''
         Zip: '44210'
         City: PORNIC
-        Mail: test@resalys.com
+        Mail: la.chenaie44@wanadoo.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '02 40 82 07 31'
         Phone2: '06 89 07 87 55'
-        Fax: 04.92.94.10.01
+        Fax: '02 40 27 95 67'
         OpeningDate: '2013-04-13 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 61
@@ -4454,20 +4454,20 @@
         Address2: Souillac
         Zip: '24370'
         City: 'CALVIAC EN PÉRIGORD'
-        Mail: test@resalys.com
+        Mail: jfg@sky.lu
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '05 53 59 21 07'
         Phone2: '06 31 53 93 18'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-07 00:00:00'
-        ClosingDate: '2012-09-16 00:00:00'
+        Fax: '05 53 31 05 51'
+        OpeningDate: '2013-04-13 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
         VilleId: 49
         CategorieId: 3
         GeoCoordinateX: '44.86323045'
         GeoCoordinateY: '1.297008991'
         VideoPath: null
         Image360Path: null
-        Capacite: '143'
+        Capacite: '176'
         PlanPath: uploads/etablissements/50c1b42c2e166.jpeg
         Vignette: uploads/etablissements/50c07e7dc139a.jpeg
         Active: true
@@ -4480,11 +4480,11 @@
         Address2: ''
         Zip: '40560'
         City: VIELLE-ST-GIRONS
-        Mail: test@resalys.com
+        Mail: 0558429188@fax.contact-everyone.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '05 58 42 94 06'
         Phone2: '06 72 69 45 20'
-        Fax: 04.92.94.10.01
+        Fax: '05 58 42 91 88'
         OpeningDate: '2013-04-13 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 92
@@ -4506,11 +4506,11 @@
         Address2: ''
         Zip: '56170'
         City: QUIBERON
-        Mail: test@resalys.com
+        Mail: info@campingduconguel.com
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '02 97 50 19 11'
         Phone2: '06 70 50 23 63'
-        Fax: 04.92.94.10.01
+        Fax: '02 97 30 46 66'
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 53
@@ -4532,11 +4532,11 @@
         Address2: ''
         Zip: '66700'
         City: ARGELÈS-SUR-MER
-        Mail: test@resalys.com
+        Mail: 0468959417@fax.contact-everyone.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 68 81 08 94'
         Phone2: '06 89 13 14 12'
-        Fax: 04.92.94.10.01
+        Fax: '04 68 95 94 17'
         OpeningDate: '2013-04-19 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 1
@@ -4558,11 +4558,11 @@
         Address2: ''
         Zip: '33990'
         City: HOURTIN
-        Mail: test@resalys.com
+        Mail: 0556092496@fax.contact-everyone.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '05 56 09 10 25'
         Phone2: '06 31 18 78 31'
-        Fax: 04.92.94.10.01
+        Fax: '05 56 09 24 96'
         OpeningDate: '2013-05-17 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 88
@@ -4584,11 +4584,11 @@
         Address2: ''
         Zip: '13123'
         City: 'L''ALBARON'
-        Mail: test@resalys.com
+        Mail: camping-crin.blanc@wanadoo.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 66 87 48 78'
         Phone2: '06 07 59 92 01'
-        Fax: 04.92.94.10.01
+        Fax: '04 66 87 18 66'
         OpeningDate: '2013-04-26 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 22
@@ -4610,15 +4610,15 @@
         Address2: ''
         Zip: '20137'
         City: 'PORTO VECCHIO'
-        Mail: test@resalys.com
+        Mail: gerald.deboffle@yahoo.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '06 12 81 50 89'
         Phone2: '06 19 17 93 60'
-        Fax: 04.92.94.10.01
+        Fax: '04 95 21 45 66'
         OpeningDate: '2013-05-18 00:00:00'
         ClosingDate: '2013-09-14 00:00:00'
         VilleId: 43
-        CategorieId: 5
+        CategorieId: 3
         GeoCoordinateX: '41.64617179'
         GeoCoordinateY: '9.293650389'
         VideoPath: null
@@ -4636,20 +4636,20 @@
         Address2: BP644
         Zip: '85806'
         City: ST-GILLES-CROIX-DE-VIE
-        Mail: test@resalys.com
+        Mail: camping-lescypres85@voila.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '02 51 55 38 98'
         Phone2: '06 71 89 95 41'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-27 00:00:00'
-        ClosingDate: '2012-09-09 00:00:00'
+        Fax: '02 51 54 98 94'
+        OpeningDate: '2013-04-12 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
         VilleId: 64
         CategorieId: 3
         GeoCoordinateX: '46.6761495'
         GeoCoordinateY: '-1.913208961'
         VideoPath: null
         Image360Path: null
-        Capacite: '280'
+        Capacite: '294'
         PlanPath: uploads/etablissements/50c1b899991c1.jpeg
         Vignette: uploads/etablissements/50c07eeacdc9f.jpeg
         Active: true
@@ -4662,20 +4662,20 @@
         Address2: 'La Grande Cosse - Côte Ouest'
         Zip: '34450'
         City: VIAS
-        Mail: test@resalys.com
+        Mail: 0467909795@fax.contact-everyone.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 67 90 99 04'
         Phone2: '04 67 90 80 48'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-27 00:00:00'
-        ClosingDate: '2012-09-16 00:00:00'
+        Fax: '04 67 90 97 95'
+        OpeningDate: '2013-04-19 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
         VilleId: 5
         CategorieId: 3
         GeoCoordinateX: '43.284102'
         GeoCoordinateY: '3.381122'
         VideoPath: null
         Image360Path: null
-        Capacite: '364'
+        Capacite: '354'
         PlanPath: uploads/etablissements/50c1b8af9f072.jpeg
         Vignette: uploads/etablissements/50c07ef93ebc1.jpeg
         Active: true
@@ -4688,13 +4688,13 @@
         Address2: 'Feunteun Vihan'
         Zip: '29920'
         City: NEVEZ
-        Mail: test@resalys.com
+        Mail: 0298067180@fax.contact-everyone.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '02 98 06 81 91'
         Phone2: '06 71 35 50 80'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-05-05 00:00:00'
-        ClosingDate: '2012-09-02 00:00:00'
+        Fax: '02 98 06 71 80'
+        OpeningDate: '2013-04-27 00:00:00'
+        ClosingDate: '2013-09-07 00:00:00'
         VilleId: 51
         CategorieId: 2
         GeoCoordinateX: '47.7986345'
@@ -4714,20 +4714,20 @@
         Address2: ''
         Zip: '17340'
         City: 'CHATELAILLON PLAGE'
-        Mail: test@resalys.com
+        Mail: 0546435118@fax.contact-everyone.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '05 46 56 27 53'
         Phone2: '06 70 99 85 48'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-27 00:00:00'
-        ClosingDate: '2012-09-23 00:00:00'
+        Fax: '05 46 43 51 18'
+        OpeningDate: '2013-04-27 00:00:00'
+        ClosingDate: '2013-09-22 00:00:00'
         VilleId: 86
         CategorieId: 2
         GeoCoordinateX: '46.08444237'
         GeoCoordinateY: '-1.093429327'
         VideoPath: null
         Image360Path: null
-        Capacite: '265'
+        Capacite: '267'
         PlanPath: uploads/etablissements/50c1b8e15b766.jpeg
         Vignette: uploads/etablissements/50c07f12115df.jpeg
         Active: true
@@ -4740,11 +4740,11 @@
         Address2: 'BP 24'
         Zip: '56760'
         City: PÉNESTIN
-        Mail: test@resalys.com
+        Mail: 0299904093@fax.contact-everyone.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '02 99 90 35 09'
         Phone2: '06 71 10 56 26'
-        Fax: 04.92.94.10.01
+        Fax: '02 99 90 40 93'
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 57
@@ -4766,11 +4766,11 @@
         Address2: ''
         Zip: '17190'
         City: 'ST GEORGES D''OLÉRON'
-        Mail: test@resalys.com
+        Mail: domainedoleron@orange.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '05 46 76 54 97'
         Phone2: '06 70 97 10 41'
-        Fax: 04.92.94.10.01
+        Fax: '02 51 33 94 04'
         OpeningDate: '2013-04-13 00:00:00'
         ClosingDate: '2013-09-14 00:00:00'
         VilleId: 85
@@ -4792,11 +4792,11 @@
         Address2: ''
         Zip: '07150'
         City: LAGORCE
-        Mail: test@resalys.com
+        Mail: chantal.gardet@orange.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 75 93 99 66'
         Phone2: '06 71 47 65 41'
-        Fax: 04.92.94.10.01
+        Fax: '04 75 93 90 56'
         OpeningDate: '2013-04-13 00:00:00'
         ClosingDate: '2013-09-22 00:00:00'
         VilleId: 69
@@ -4818,11 +4818,11 @@
         Address2: ''
         Zip: '56340'
         City: CARNAC
-        Mail: test@resalys.com
+        Mail: 0297526566@fax.contact-everyone.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '02 97 52 65 65'
         Phone2: '06 82 63 94 46'
-        Fax: 04.92.94.10.01
+        Fax: '02 97 52 65 66'
         OpeningDate: '2013-03-27 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 139
@@ -4844,11 +4844,11 @@
         Address2: ''
         Zip: '40600'
         City: BISCARROSSE
-        Mail: test@resalys.com
+        Mail: info@larive.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '05 58 78 12 33'
         Phone2: '06 89 72 55 80'
-        Fax: 04.92.94.10.01
+        Fax: '05 58 78 12 92'
         OpeningDate: '2013-04-06 00:00:00'
         ClosingDate: '2013-09-08 00:00:00'
         VilleId: 90
@@ -4870,11 +4870,11 @@
         Address2: ''
         Zip: '44350'
         City: GUÉRANDE
-        Mail: test@resalys.com
+        Mail: info@camping-leveno.com
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '02 40 24 79 30'
         Phone2: '06 30 24 68 57'
-        Fax: 04.92.94.10.01
+        Fax: '02 40 62 01 23'
         OpeningDate: '2013-04-06 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 60
@@ -4896,11 +4896,11 @@
         Address2: 'S T A C F'
         Zip: '83310'
         City: GRIMAUD
-        Mail: test@resalys.com
+        Mail: info@lesnaiades.com
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 94 55 67 80'
         Phone2: '04 94 55 67 80'
-        Fax: 04.92.94.10.01
+        Fax: '04 94 55 67 81'
         OpeningDate: '2013-03-29 00:00:00'
         ClosingDate: '2013-10-12 00:00:00'
         VilleId: 14
@@ -4922,11 +4922,11 @@
         Address2: 'St Maurice d''Ardèche'
         Zip: '07200'
         City: VOGÜÉ
-        Mail: test@resalys.com
+        Mail: 0475370102@fax.contact-everyone.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 75 37 75 86'
         Phone2: '06 30 82 84 31'
-        Fax: 04.92.94.10.01
+        Fax: '04 75 37 01 02'
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 68
@@ -4948,11 +4948,11 @@
         Address2: '19 rue de la Libération - BP 31'
         Zip: '17480'
         City: 'LE CHÂTEAU D''OLÉRON'
-        Mail: test@resalys.com
+        Mail: info@camping-airotel-oleron.com
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '05 46 47 61 82'
         Phone2: '06 70 47 89 48 '
-        Fax: 04.92.94.10.01
+        Fax: '05 46 47 79 67'
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 149
@@ -4974,11 +4974,11 @@
         Address2: ''
         Zip: '04120'
         City: CASTELLANE
-        Mail: test@resalys.com
+        Mail: 0492836937@fax.contact-everyone.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 92 83 61 29'
         Phone2: '06 07 27 84 72'
-        Fax: 04.92.94.10.01
+        Fax: '04 92 83 69 37'
         OpeningDate: '2013-05-15 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 12
@@ -5000,13 +5000,13 @@
         Address2: ''
         Zip: '66440'
         City: TORREILLES
-        Mail: test@resalys.com
+        Mail: 0468283257@fax.contact-everyone.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 68 28 38 29'
         Phone2: '06 70 93 31 47'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-06 00:00:00'
-        ClosingDate: '2012-09-16 00:00:00'
+        Fax: '04 68 28 32 57'
+        OpeningDate: '2013-04-12 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
         VilleId: 7
         CategorieId: 3
         GeoCoordinateX: '42.76536313'
@@ -5026,11 +5026,11 @@
         Address2: 'Route de Palavas'
         Zip: '34970'
         City: LATTES
-        Mail: test@resalys.com
+        Mail: latradition@sfr.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 67 15 11 05'
         Phone2: '06 76 60 51 67'
-        Fax: 04.92.94.10.01
+        Fax: '04 67 15 11 31'
         OpeningDate: '2013-05-01 00:00:00'
         ClosingDate: '2013-08-31 00:00:00'
         VilleId: 20
@@ -5052,20 +5052,20 @@
         Address2: Claouey
         Zip: '33950'
         City: LÈGE-CAP-FERRET
-        Mail: test@resalys.com
+        Mail: 0556600479@fax.contact-everyone.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '05 56 60 70 76'
         Phone2: '06 30 86 18 05'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-27 00:00:00'
-        ClosingDate: '2012-09-09 00:00:00'
+        Fax: '05 56 60 04 79'
+        OpeningDate: '2013-04-30 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
         VilleId: 89
         CategorieId: 3
         GeoCoordinateX: '44.75173929'
         GeoCoordinateY: '-1.187531948'
         VideoPath: null
         Image360Path: null
-        Capacite: '800'
+        Capacite: '750'
         PlanPath: uploads/etablissements/50c1bb53eb9c8.jpeg
         Vignette: uploads/etablissements/50c07fcd601a0.jpeg
         Active: true
@@ -5078,11 +5078,11 @@
         Address2: ''
         Zip: '40200'
         City: AUREILHAN
-        Mail: test@resalys.com
+        Mail: jeandaniel44@gmail.com
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '05 58 09 02 87'
         Phone2: '06 89 43 10 93'
-        Fax: 04.92.94.10.01
+        Fax: '05 58 09 41 89'
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 91
@@ -5104,11 +5104,11 @@
         Address2: ''
         Zip: '14230'
         City: ISIGNY-SUR-MER
-        Mail: test@resalys.com
+        Mail: info@camping-lefanal.com
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '02 31 21 33 20'
         Phone2: '06 89 79 37 64'
-        Fax: 04.92.94.10.01
+        Fax: '02 31 22 12 00'
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 66
@@ -5130,11 +5130,11 @@
         Address2: ''
         Zip: '04500'
         City: 'ST LAURENT DU VERDON'
-        Mail: test@resalys.com
+        Mail: info@camping-la-farigoulette.com
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 92 74 41 62'
         Phone2: '06 40 21 14 23'
-        Fax: 04.92.94.10.01
+        Fax: '09 70 06 76 78'
         OpeningDate: '2013-05-15 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 24
@@ -5156,13 +5156,13 @@
         Address2: ''
         Zip: '66140'
         City: CANET-EN-ROUSSILLON
-        Mail: test@resalys.com
+        Mail: campinglesfontaines@wanadoo.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 68 80 22 57'
         Phone2: '06 31 25 40 69'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-05-01 00:00:00'
-        ClosingDate: '2012-09-15 00:00:00'
+        Fax: '04 68 80 22 57'
+        OpeningDate: '2013-05-01 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
         VilleId: 16
         CategorieId: 3
         GeoCoordinateX: '42.68903253'
@@ -5182,15 +5182,15 @@
         Address2: 'La Brague'
         Zip: '06600'
         City: ANTIBES
-        Mail: test@resalys.com
+        Mail: contact@camping-lesfrenes.com
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 93 33 36 52'
         Phone2: '06 07 59 79 02'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-05-17 00:00:00'
-        ClosingDate: '2012-09-22 00:00:00'
+        Fax: '04 93 74 66 00'
+        OpeningDate: '2013-05-18 00:00:00'
+        ClosingDate: '2013-09-21 00:00:00'
         VilleId: 15
-        CategorieId: 4
+        CategorieId: 3
         GeoCoordinateX: '43.61142443'
         GeoCoordinateY: '7.123936415'
         VideoPath: null
@@ -5208,11 +5208,11 @@
         Address2: ''
         Zip: '66700'
         City: ARGELÈS-SUR-MER
-        Mail: test@resalys.com
+        Mail: 0468818721@fax.contact-everyone.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 68 81 08 70'
         Phone2: '06 71 32 03 35'
-        Fax: 04.92.94.10.01
+        Fax: '04 68 81 87 21'
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 1
@@ -5234,11 +5234,11 @@
         Address2: ''
         Zip: '07120'
         City: RUOMS
-        Mail: test@resalys.com
+        Mail: alunavacances@wanadoo.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 75 93 93 15'
         Phone2: '06 70 53 71 93 '
-        Fax: 04.92.94.10.01
+        Fax: '04 75 93 90 90'
         OpeningDate: '2013-04-13 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 78
@@ -5260,11 +5260,11 @@
         Address2: ''
         Zip: '07120'
         City: RUOMS
-        Mail: test@resalys.com
+        Mail: grandterre@wanadoo.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 75 39 64 94'
         Phone2: '06 89 07 71 22'
-        Fax: 04.92.94.10.01
+        Fax: '04 75 39 78 62'
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 78
@@ -5286,15 +5286,15 @@
         Address2: 'RN 152'
         Zip: '41500'
         City: SUÈVRES
-        Mail: test@resalys.com
+        Mail: la.grenouillere@wanadoo.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '02 54 87 80 37'
         Phone2: '06 70 92 14 76'
-        Fax: 04.92.94.10.01
+        Fax: '02 54 87 84 21'
         OpeningDate: '2013-04-20 00:00:00'
         ClosingDate: '2013-09-14 00:00:00'
         VilleId: 74
-        CategorieId: 2
+        CategorieId: 1
         GeoCoordinateX: '47.68714583'
         GeoCoordinateY: '1.483572721'
         VideoPath: null
@@ -5312,13 +5312,13 @@
         Address2: ''
         Zip: '17650'
         City: 'ST DENIS D''OLÉRON'
-        Mail: test@resalys.com
+        Mail: info@camping-les-huttes.com
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '05 46 75 21 69'
         Phone2: '06 89 79 45 04'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-27 00:00:00'
-        ClosingDate: '2012-09-09 00:00:00'
+        Fax: '05 46 75 91 10'
+        OpeningDate: '2013-04-26 00:00:00'
+        ClosingDate: '2013-09-08 00:00:00'
         VilleId: 84
         CategorieId: 2
         GeoCoordinateX: '46.01528621'
@@ -5338,15 +5338,15 @@
         Address2: ''
         Zip: '74210'
         City: LATHUILE
-        Mail: test@resalys.com
+        Mail: 0450443659@fax.contact-everyone.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 50 44 32 97'
         Phone2: '06 71 86 52 92'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-20 00:00:00'
-        ClosingDate: '2012-09-16 00:00:00'
+        Fax: '04 50 44 36 59'
+        OpeningDate: '2013-04-27 00:00:00'
+        ClosingDate: '2013-09-22 00:00:00'
         VilleId: 80
-        CategorieId: 3
+        CategorieId: 2
         GeoCoordinateX: '45.795155'
         GeoCoordinateY: '6.205735803'
         VideoPath: null
@@ -5364,20 +5364,20 @@
         Address2: ''
         Zip: '17111'
         City: LOIX
-        Mail: test@resalys.com
+        Mail: camping.les.ilates@flowercampings.com
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '05 46 29 05 43'
         Phone2: '06 89 72 58 96'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-07 00:00:00'
-        ClosingDate: '2012-09-16 00:00:00'
+        Fax: '05 46 29 06 79'
+        OpeningDate: '2013-04-12 00:00:00'
+        ClosingDate: '2013-09-28 00:00:00'
         VilleId: 94
         CategorieId: 2
         GeoCoordinateX: '46.22760164'
         GeoCoordinateY: '-1.426178813'
         VideoPath: null
         Image360Path: null
-        Capacite: '240'
+        Capacite: '228'
         PlanPath: uploads/etablissements/50c1bc2b3d51f.jpeg
         Vignette: uploads/etablissements/50c0807d2e9eb.jpeg
         Active: true
@@ -5390,11 +5390,11 @@
         Address2: ''
         Zip: '64210'
         City: BIDART
-        Mail: test@resalys.com
+        Mail: 0559412459@fax.contact-everyone.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '05 59 23 00 29'
         Phone2: '06 31 80 31 54'
-        Fax: 04.92.94.10.01
+        Fax: '05 59 41 24 59'
         OpeningDate: '2012-04-06 00:00:00'
         ClosingDate: '2012-09-15 00:00:00'
         VilleId: null
@@ -5405,7 +5405,7 @@
         Image360Path: null
         Capacite: '374'
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     209:
         Code: 67
@@ -5416,11 +5416,11 @@
         Address2: ''
         Zip: '17251'
         City: CALONGE
-        Mail: test@resalys.com
+        Mail: info@intercalonge.com
         CountryCode: ES
-        Phone1: 06.01.01.01.01
+        Phone1: '0034 972 651 233'
         Phone2: '06 72 05 07 05 '
-        Fax: 04.92.94.10.01
+        Fax: '0034 972 652 507'
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-30 00:00:00'
         VilleId: 27
@@ -5442,15 +5442,15 @@
         Address2: ''
         Zip: '17230'
         City: PALAMOS
-        Mail: test@resalys.com
+        Mail: info@internacionalpalamos.com
         CountryCode: ES
-        Phone1: 06.01.01.01.01
+        Phone1: '0034 972 31 47 36'
         Phone2: '06 30 87 60 57'
-        Fax: 04.92.94.10.01
+        Fax: '0034 972 31 76 26'
         OpeningDate: '2013-04-27 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 30
-        CategorieId: 3
+        CategorieId: 2
         GeoCoordinateX: '41.857027'
         GeoCoordinateY: '3.137991'
         VideoPath: null
@@ -5468,11 +5468,11 @@
         Address2: ''
         Zip: '85360'
         City: 'LA TRANCHE SUR MER'
-        Mail: test@resalys.com
+        Mail: 0251274292@fax.contact-everyone.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '02 51 27 43 79'
         Phone2: '06 89 72 62 08'
-        Fax: 04.92.94.10.01
+        Fax: '02 51 27 42 92'
         OpeningDate: '2013-05-18 00:00:00'
         ClosingDate: '2013-09-14 00:00:00'
         VilleId: 72
@@ -5494,11 +5494,11 @@
         Address2: ''
         Zip: '30660'
         City: GALLARGUES-LE-MONTUEUX
-        Mail: test@resalys.com
+        Mail: camping-lesamandiers@orange.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 66 35 28 02'
         Phone2: '06 70 85 80 57'
-        Fax: 04.92.94.10.01
+        Fax: '04 66 51 48 57'
         OpeningDate: '2012-05-16 00:00:00'
         ClosingDate: '2012-09-09 00:00:00'
         VilleId: null
@@ -5509,7 +5509,7 @@
         Image360Path: null
         Capacite: '150'
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     213:
         Code: 70
@@ -5520,11 +5520,11 @@
         Address2: ''
         Zip: '26410'
         City: 'CHATILLON EN DIOIS'
-        Mail: test@resalys.com
+        Mail: info@lacbleu-diois.com
         CountryCode: FR
-        Phone1: 06.01.01.01.01
-        Phone2: '04 75 21 85 30'
-        Fax: 04.92.94.10.01
+        Phone1: '04 75 21 85 30'
+        Phone2: '06 70 85 80 57'
+        Fax: '04 75 21 82 05'
         OpeningDate: '2013-04-13 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 67
@@ -5546,11 +5546,11 @@
         Address2: ''
         Zip: '19190'
         City: BEYNAT
-        Mail: test@resalys.com
+        Mail: info@camping-miel.com
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '05 55 85 50 66'
         Phone2: '06 08 31 87 93'
-        Fax: 04.92.94.10.01
+        Fax: '05 55 85 57 96'
         OpeningDate: '2013-05-01 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 46
@@ -5572,11 +5572,11 @@
         Address2: ''
         Zip: '32430'
         City: THOUX
-        Mail: test@resalys.com
+        Mail: contact@camping-lacdethoux.com
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '05 62 65 71 29'
         Phone2: '06 45 61 81 52'
-        Fax: 04.92.94.10.01
+        Fax: '05 62 65 74 81'
         OpeningDate: '2013-04-27 00:00:00'
         ClosingDate: '2013-09-08 00:00:00'
         VilleId: 76
@@ -5598,11 +5598,11 @@
         Address2: 'Burinhosa Pataias'
         Zip: '2446 '
         City: NAZARÉ
-        Mail: test@resalys.com
+        Mail: geral@albitur.pt
         CountryCode: PT
-        Phone1: 06.01.01.01.01
+        Phone1: '00351 244 586 765'
         Phone2: '00351 244 586 765'
-        Fax: 04.92.94.10.01
+        Fax: '00351 244 586 062'
         OpeningDate: '2012-04-07 00:00:00'
         ClosingDate: '2012-09-09 00:00:00'
         VilleId: null
@@ -5613,7 +5613,7 @@
         Image360Path: null
         Capacite: '92'
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     217:
         Code: 74
@@ -5624,20 +5624,20 @@
         Address2: ''
         Zip: '40460'
         City: SANGUINET
-        Mail: test@resalys.com
+        Mail: loubrousta@wanadoo.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '05 58 82 74 82'
         Phone2: '06 89 73 93 08'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-27 00:00:00'
-        ClosingDate: '2012-09-09 00:00:00'
+        Fax: '05 58 82 10 74'
+        OpeningDate: '2013-04-27 00:00:00'
+        ClosingDate: '2013-09-08 00:00:00'
         VilleId: 99
         CategorieId: 2
         GeoCoordinateX: '44.4990307'
         GeoCoordinateY: '-1.079460382'
         VideoPath: null
         Image360Path: null
-        Capacite: '576'
+        Capacite: '560'
         PlanPath: uploads/etablissements/50c0bcc732a1f.jpeg
         Vignette: uploads/etablissements/50c080da39517.jpeg
         Active: true
@@ -5650,13 +5650,13 @@
         Address2: ''
         Zip: '40660'
         City: MESSANGES
-        Mail: test@resalys.com
+        Mail: gm.duplais@orange.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '0825 70 40 40'
         Phone2: '06 08 94 63 04'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-05-01 00:00:00'
-        ClosingDate: '2012-09-30 00:00:00'
+        Fax: '05 58 48 26 53'
+        OpeningDate: '2013-05-01 00:00:00'
+        ClosingDate: '2013-09-29 00:00:00'
         VilleId: 102
         CategorieId: 1
         GeoCoordinateX: '43.79725104'
@@ -5676,11 +5676,11 @@
         Address2: ''
         Zip: '85340'
         City: OLONNE-SUR-MER
-        Mail: test@resalys.com
+        Mail: info@la-loubine.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '02 51 33 12 92'
         Phone2: '06 30 89 43 67'
-        Fax: 04.92.94.10.01
+        Fax: '02 51 33 12 71'
         OpeningDate: '2013-04-06 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 77
@@ -5702,13 +5702,13 @@
         Address2: 'Avenue de l''Atlantique'
         Zip: '85440'
         City: TALMONT-ST-HILAIRE
-        Mail: test@resalys.com
+        Mail: 0251203758@fax.contact-everyone.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '02 51 21 28 10'
         Phone2: '06 08 82 07 93'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-06 00:00:00'
-        ClosingDate: '2012-09-09 00:00:00'
+        Fax: '02 51 20 37 58'
+        OpeningDate: '2013-04-12 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
         VilleId: 79
         CategorieId: 1
         GeoCoordinateX: '46.46559831'
@@ -5728,11 +5728,11 @@
         Address2: ''
         Zip: '09110'
         City: AX-LES-THERMES
-        Mail: test@resalys.com
+        Mail: camping.malazeou@wanadoo.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '05 61 64 69 14'
         Phone2: '05 61 64 69 14'
-        Fax: 04.92.94.10.01
+        Fax: '05 61 64 05 60'
         OpeningDate: '2012-04-27 00:00:00'
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: null
@@ -5743,7 +5743,7 @@
         Image360Path: null
         Capacite: '285'
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     222:
         Code: 79
@@ -5754,20 +5754,20 @@
         Address2: ''
         Zip: '44029'
         City: 'LIDO DI SPINA'
-        Mail: test@resalys.com
+        Mail: rosesteban@hotmail.fr
         CountryCode: IT
-        Phone1: 06.01.01.01.01
+        Phone1: '0039 0533 330 110'
         Phone2: '06 88 98 66 38'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-20 00:00:00'
-        ClosingDate: '2012-09-16 00:00:00'
+        Fax: '0039 0533 330 052'
+        OpeningDate: '2013-04-20 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
         VilleId: 38
         CategorieId: 2
         GeoCoordinateX: '44.65568393'
         GeoCoordinateY: '12.24521756'
         VideoPath: null
         Image360Path: null
-        Capacite: '1326'
+        Capacite: '1270'
         PlanPath: uploads/etablissements/50c0bd08e5a04.jpeg
         Vignette: uploads/etablissements/50c08107bd9f4.jpeg
         Active: true
@@ -5780,15 +5780,15 @@
         Address2: ''
         Zip: '33780'
         City: SOULAC-SUR-MER
-        Mail: test@resalys.com
+        Mail: bernard.doreillac@wanadoo.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '05 56 09 87 27'
         Phone2: '06 71 97 27 38'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-07 00:00:00'
-        ClosingDate: '2012-09-23 00:00:00'
+        Fax: '05 56 73 64 26'
+        OpeningDate: '2013-04-13 00:00:00'
+        ClosingDate: '2013-09-22 00:00:00'
         VilleId: 97
-        CategorieId: 3
+        CategorieId: 2
         GeoCoordinateX: '45.4856205'
         GeoCoordinateY: '-1.1477709'
         VideoPath: null
@@ -5806,14 +5806,14 @@
         Address2: ''
         Zip: '30240'
         City: 'LE GRAU-DU-ROI'
-        Mail: test@resalys.com
+        Mail: 0466515045@fax.contact-everyone.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 66 53 36 90'
         Phone2: '04 66 53 20 31'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-06 00:00:00'
-        ClosingDate: '2012-09-30 00:00:00'
-        VilleId: 1
+        Fax: '04 66 51 50 45'
+        OpeningDate: '2013-04-12 00:00:00'
+        ClosingDate: '2013-09-29 00:00:00'
+        VilleId: 2
         CategorieId: 2
         GeoCoordinateX: '43.50737094'
         GeoCoordinateY: '4.145380855'
@@ -5832,20 +5832,20 @@
         Address2: ''
         Zip: '66702'
         City: ARGELÈS-SUR-MER
-        Mail: test@resalys.com
+        Mail: marsouins@gmail.com
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 68 81 14 81'
         Phone2: '06 08 70 01 85'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-14 00:00:00'
-        ClosingDate: '2012-09-21 00:00:00'
+        Fax: '04 68 95 93 58'
+        OpeningDate: '2013-05-04 00:00:00'
+        ClosingDate: '2013-09-21 00:00:00'
         VilleId: 1
         CategorieId: 2
         GeoCoordinateX: '42.56372132'
         GeoCoordinateY: '3.034651279'
         VideoPath: null
         Image360Path: null
-        Capacite: '587'
+        Capacite: '586'
         PlanPath: uploads/etablissements/50c1bc8db3665.jpeg
         Vignette: uploads/etablissements/50c0812e76f6f.jpeg
         Active: true
@@ -5858,20 +5858,20 @@
         Address2: ''
         Zip: '58046'
         City: 'MARINA DI GROSSETTO'
-        Mail: test@resalys.com
+        Mail: lemarze@boschettoholiday.it
         CountryCode: IT
-        Phone1: 06.01.01.01.01
+        Phone1: '0039 0564 35501'
         Phone2: '06 70 83 80 92'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-06 00:00:00'
-        ClosingDate: '2012-09-16 00:00:00'
+        Fax: '0039 564744503'
+        OpeningDate: '2013-04-20 00:00:00'
+        ClosingDate: '2013-09-08 00:00:00'
         VilleId: 45
         CategorieId: null
         GeoCoordinateX: '42.74528669'
         GeoCoordinateY: '10.94759166'
         VideoPath: null
         Image360Path: null
-        Capacite: '600'
+        Capacite: '500'
         PlanPath: null
         Vignette: uploads/etablissements/50c08139ec548.jpeg
         Active: true
@@ -5884,11 +5884,11 @@
         Address2: ''
         Zip: '34410'
         City: SÉRIGNAN
-        Mail: test@resalys.com
+        Mail: 0467325616@fax.contact-everyone.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 67 39 72 00'
         Phone2: '06 32 29 48 31'
-        Fax: 04.92.94.10.01
+        Fax: '04 67 32 56 16'
         OpeningDate: '2013-04-27 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 8
@@ -5910,15 +5910,15 @@
         Address2: ''
         Zip: '39130'
         City: PATORNAY
-        Mail: test@resalys.com
+        Mail: jacques.noelle@wanadoo.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '03 84 48 31 21'
         Phone2: '06 31 43 97 04'
-        Fax: 04.92.94.10.01
+        Fax: '03 84 44 71 21'
         OpeningDate: '2013-04-26 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 73
-        CategorieId: 3
+        CategorieId: 2
         GeoCoordinateX: '46.58725895'
         GeoCoordinateY: '5.700777769'
         VideoPath: null
@@ -5936,11 +5936,11 @@
         Address2: ''
         Zip: '17256'
         City: PALS
-        Mail: test@resalys.com
+        Mail: hartmann.guy@orange.fr
         CountryCode: ES
-        Phone1: 06.01.01.01.01
+        Phone1: '0034 972 63 67 31'
         Phone2: '06 08 35 15 52'
-        Fax: 04.92.94.10.01
+        Fax: '0034 972 66 79 51'
         OpeningDate: '2013-04-26 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 26
@@ -5962,20 +5962,20 @@
         Address2: ''
         Zip: '66420'
         City: 'LE BARCARÈS'
-        Mail: test@resalys.com
+        Mail: camping.loasis@wanadoo.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 68 86 12 43'
         Phone2: '06 08 32 31 70'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-28 00:00:00'
-        ClosingDate: '2012-09-15 00:00:00'
+        Fax: '04 68 86 46 83'
+        OpeningDate: '2013-05-04 00:00:00'
+        ClosingDate: '2013-09-14 00:00:00'
         VilleId: 17
         CategorieId: 3
         GeoCoordinateX: '42.77629471'
         GeoCoordinateY: '3.02487731'
         VideoPath: null
         Image360Path: null
-        Capacite: '496'
+        Capacite: '492'
         PlanPath: uploads/etablissements/50c0bdb6dea7a.jpeg
         Vignette: uploads/etablissements/50c081696fe36.jpeg
         Active: true
@@ -5988,20 +5988,20 @@
         Address2: ''
         Zip: '85520'
         City: JARD-SUR-MER
-        Mail: test@resalys.com
+        Mail: bruno.chauvin0983@orange.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '02 51 33 65 08'
         Phone2: '06 08 90 03 54'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-28 00:00:00'
-        ClosingDate: '2012-09-09 00:00:00'
+        Fax: '02 51 33 94 04 '
+        OpeningDate: '2013-04-13 00:00:00'
+        ClosingDate: '2013-09-14 00:00:00'
         VilleId: 71
         CategorieId: 1
         GeoCoordinateX: '46.42087836'
         GeoCoordinateY: '-1.569660902'
         VideoPath: null
         Image360Path: null
-        Capacite: '430'
+        Capacite: '450'
         PlanPath: uploads/etablissements/50c0bdc2c9aa7.jpeg
         Vignette: uploads/etablissements/50c08174ca21c.jpeg
         Active: true
@@ -6014,13 +6014,13 @@
         Address2: ''
         Zip: '64210'
         City: BIDART
-        Mail: test@resalys.com
+        Mail: accueil@camping-oyam.com
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '05 59 54 91 61'
         Phone2: '06 70 07 68 20'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-07 00:00:00'
-        ClosingDate: '2012-09-23 00:00:00'
+        Fax: '05 59 54 76 87'
+        OpeningDate: '2013-06-15 00:00:00'
+        ClosingDate: '2013-09-22 00:00:00'
         VilleId: 104
         CategorieId: 2
         GeoCoordinateX: '43.43522086'
@@ -6040,20 +6040,20 @@
         Address2: ''
         Zip: '40510'
         City: SEIGNOSSE
-        Mail: test@resalys.com
+        Mail: beatrice.cournee@gmail.com
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '05 58 73 53 96'
         Phone2: '06 31 69 93 92'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-28 00:00:00'
-        ClosingDate: '2012-09-16 00:00:00'
+        Fax: '05 58 73 58 47'
+        OpeningDate: '2013-05-01 00:00:00'
+        ClosingDate: '2013-09-22 00:00:00'
         VilleId: 103
         CategorieId: 2
         GeoCoordinateX: '43.724728'
         GeoCoordinateY: '-1.421765'
         VideoPath: null
         Image360Path: null
-        Capacite: '500'
+        Capacite: '505'
         PlanPath: uploads/etablissements/50c1bcdfc4ad5.jpeg
         Vignette: uploads/etablissements/50c081ae8728f.jpeg
         Active: true
@@ -6066,11 +6066,11 @@
         Address2: ''
         Zip: '43860'
         City: 'AMETLLA DE MAR - TARRAGONE'
-        Mail: test@resalys.com
+        Mail: info@campingametlla.com
         CountryCode: ES
-        Phone1: 06.01.01.01.01
+        Phone1: '0034 977 26 77 84'
         Phone2: '06 70 91 01 83'
-        Fax: 04.92.94.10.01
+        Fax: '0034 977 26 78 68'
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 34
@@ -6092,20 +6092,20 @@
         Address2: ''
         Zip: '83310'
         City: 'LA MÔLE'
-        Mail: test@resalys.com
+        Mail: pacha@pachacaid.com
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 94 55 70 80'
         Phone2: '06 70 58 02 09'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-08 00:00:00'
-        ClosingDate: '2012-09-30 00:00:00'
+        Fax: '04 94 55 70 95'
+        OpeningDate: '2013-04-06 00:00:00'
+        ClosingDate: '2013-09-29 00:00:00'
         VilleId: 23
         CategorieId: 2
         GeoCoordinateX: '43.190284'
         GeoCoordinateY: '6.471419'
         VideoPath: null
         Image360Path: null
-        Capacite: '400'
+        Capacite: '415'
         PlanPath: uploads/etablissements/50c0be0861d7c.jpeg
         Vignette: uploads/etablissements/50c081cc81dad.jpeg
         Active: true
@@ -6118,11 +6118,11 @@
         Address2: ''
         Zip: '46200'
         City: SOUILLAC
-        Mail: test@resalys.com
+        Mail: info@lapaillebasse.com
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '05 65 37 85 48'
         Phone2: '06 08 23 78 03'
-        Fax: 04.92.94.10.01
+        Fax: '05 65 37 09 58'
         OpeningDate: '2013-05-11 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 56
@@ -6144,11 +6144,11 @@
         Address2: ''
         Zip: '33780'
         City: 'SOULAC SUR MER'
-        Mail: test@resalys.com
+        Mail: info@camping-palace.com
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '05 56 09 80 22'
         Phone2: '06 08 28 61 70'
-        Fax: 04.92.94.10.01
+        Fax: '05 56 09 84 23'
         OpeningDate: '2013-04-06 00:00:00'
         ClosingDate: '2013-09-22 00:00:00'
         VilleId: 97
@@ -6170,20 +6170,20 @@
         Address2: ''
         Zip: '34250'
         City: 'PALAVAS LES FLOTS'
-        Mail: test@resalys.com
+        Mail: 0467508245@fax.contact-everyone.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 67 68 01 28'
         Phone2: '04 67 68 01 28'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-06 00:00:00'
-        ClosingDate: '2012-09-30 00:00:00'
+        Fax: '04 67 50 82 45'
+        OpeningDate: '2013-04-12 00:00:00'
+        ClosingDate: '2013-09-29 00:00:00'
         VilleId: 3
         CategorieId: 1
         GeoCoordinateX: '43.51973054'
         GeoCoordinateY: '3.909483254'
         VideoPath: null
         Image360Path: null
-        Capacite: '435'
+        Capacite: '438'
         PlanPath: uploads/etablissements/50c0be3ab357b.jpeg
         Vignette: uploads/etablissements/50c081f0e48d7.jpeg
         Active: true
@@ -6196,11 +6196,11 @@
         Address2: ''
         Zip: '83440'
         City: 'ST PAUL EN FORÊT'
-        Mail: test@resalys.com
+        Mail: m.rene637@orange.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 94 76 15 35'
         Phone2: '06 31 79 25 52'
-        Fax: 04.92.94.10.01
+        Fax: '04 94 76 15 35'
         OpeningDate: '2013-04-27 00:00:00'
         ClosingDate: '2013-09-22 00:00:00'
         VilleId: 40
@@ -6222,13 +6222,13 @@
         Address2: ''
         Zip: '57027'
         City: 'SAN VINCENZO'
-        Mail: test@resalys.com
+        Mail: alain.fuss@gmail.com
         CountryCode: IT
-        Phone1: 06.01.01.01.01
+        Phone1: '0039 0565 701018'
         Phone2: '06 88 94 43 84'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-27 00:00:00'
-        ClosingDate: '2012-09-16 00:00:00'
+        Fax: '0039 0565 701400'
+        OpeningDate: '2013-04-26 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
         VilleId: 44
         CategorieId: 2
         GeoCoordinateX: '43.02830997'
@@ -6248,13 +6248,13 @@
         Address2: ''
         Zip: '07120'
         City: RUOMS
-        Mail: test@resalys.com
+        Mail: resapb@orange.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 75 39 60 72'
         Phone2: '06 88 71 27 19'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-06 00:00:00'
-        ClosingDate: '2012-09-15 00:00:00'
+        Fax: '04 75 93 95 50'
+        OpeningDate: '2013-04-12 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
         VilleId: 78
         CategorieId: 3
         GeoCoordinateX: '44.45909408'
@@ -6274,13 +6274,13 @@
         Address2: ''
         Zip: '15320'
         City: 'RUYNES EN MARGERIDE'
-        Mail: test@resalys.com
+        Mail: lepetitbois0639@orange.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 71 23 42 26'
         Phone2: '06 70 08 54 21'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-28 00:00:00'
-        ClosingDate: '2012-09-09 00:00:00'
+        Fax: '04 71 23 42 26'
+        OpeningDate: '2013-04-27 00:00:00'
+        ClosingDate: '2013-09-08 00:00:00'
         VilleId: 59
         CategorieId: 3
         GeoCoordinateX: '44.99907285'
@@ -6300,13 +6300,13 @@
         Address2: ''
         Zip: '11200'
         City: FABREZAN
-        Mail: test@resalys.com
+        Mail: nadinety@msn.com
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '04 68 43 32 29'
         Phone2: '06 88 71 93 49'
         Fax: ''
-        OpeningDate: '2012-05-04 00:00:00'
-        ClosingDate: '2012-09-02 00:00:00'
+        OpeningDate: '2013-05-01 00:00:00'
+        ClosingDate: '2013-08-31 00:00:00'
         VilleId: 18
         CategorieId: 3
         GeoCoordinateX: '43.11730606'
@@ -6326,20 +6326,20 @@
         Address2: ''
         Zip: '22430'
         City: ERQUY
-        Mail: test@resalys.com
+        Mail: 0296636794@fax.contact-everyone.fr
         CountryCode: FR
-        Phone1: 06.01.01.01.01
+        Phone1: '02 96 72 31 12'
         Phone2: '06 08 83 65 13'
-        Fax: 04.92.94.10.01
-        OpeningDate: '2012-04-27 00:00:00'
-        ClosingDate: '2012-09-16 00:00:00'
+        Fax: '02 96 63 67 94'
+        OpeningDate: '2013-04-26 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
         VilleId: 48
         CategorieId: 2
         GeoCoordinateX: '48.63805601'
         GeoCoordinateY: '-2.455675006'
         VideoPath: null
         Image360Path: null
-        Capacite: '488'
+        Capacite: '419'
         PlanPath: uploads/etablissements/50c0be9c8c108.jpeg
         Vignette: uploads/etablissements/50c08242e8322.jpeg
         Active: true
@@ -6367,7 +6367,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     246:
         Code: 998
@@ -6393,7 +6393,7 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
     247:
         Code: 999
@@ -6419,5 +6419,5 @@
         Image360Path: null
         Capacite: ''
         PlanPath: null
-        Vignette: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false

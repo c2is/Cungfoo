@@ -1063,3 +1063,31 @@
         Name: 'Costa Blanca'
         Introduction: null
         Description: null
+    39_de:
+        Id: 39
+        Locale: de
+        Slug: gard
+        Name: Gard
+        Introduction: null
+        Description: null
+    39_en:
+        Id: 39
+        Locale: en
+        Slug: gard
+        Name: Gard
+        Introduction: null
+        Description: null
+    39_fr:
+        Id: 39
+        Locale: fr
+        Slug: gard
+        Name: Gard
+        Introduction: null
+        Description: null
+    39_nl:
+        Id: 39
+        Locale: nl
+        Slug: gard
+        Name: Gard
+        Introduction: null
+        Description: null
