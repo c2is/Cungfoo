@@ -38,76 +38,64 @@ class CheckIntegrityCommand extends BaseCommand
 
         try
         {
+            /**
+             * REGIONS
+             */
             $items = \Cungfoo\Model\RegionQuery::create()
-                ->usePaysQuery()
-                    ->filterByActive(false)
-                    ->_or()
-                    ->filterById(null, \Criteria::ISNULL)
-                ->endUse()
+                ->filterByPaysId(null, \Criteria::ISNULL)
                 ->find($con)
             ;
             foreach($items as $item)
             {
                 $item->setActive(false);
-                $item->save();
+                $item->save($con);
             }
-
             $notActives = \Cungfoo\Model\RegionQuery::create()
                 ->filterByActive(false)
-                ->find()
+                ->find($con)
             ;
-
-
             foreach($notActives as $notActive)
             {
                 $output->writeln(sprintf('<info>%s</info> region <comment>%s - %s</comment> is unactive.', $this->getName(), $notActive->getCode(), $notActive->getName()));
             }
 
+            /**
+             * VILLES
+             */
             $items = \Cungfoo\Model\VilleQuery::create()
-                ->useRegionQuery()
-                    ->filterByActive(false)
-                    ->_or()
-                    ->filterById(null, \Criteria::ISNULL)
-                ->endUse()
+                ->filterByRegionId(null, \Criteria::ISNULL)
                 ->find($con)
             ;
             foreach($items as $item)
             {
-                $item->setActive(true);
-                $item->save();
+                $item->setActive(false);
+                $item->save($con);
             }
-
             $notActives = \Cungfoo\Model\VilleQuery::create()
                 ->filterByActive(false)
-                ->find()
+                ->find($con)
             ;
-
-
             foreach($notActives as $notActive)
             {
                 $output->writeln(sprintf('<info>%s</info> ville <comment>%s - %s</comment> is unactive.', $this->getName(), $notActive->getCode(), $notActive->getName()));
             }
 
+            /**
+             * ETABS
+             */
             $items = \Cungfoo\Model\EtablissementQuery::create()
-                ->useVilleQuery()
-                    ->filterByActive(false)
-                    ->_or()
-                    ->filterById(null, \Criteria::ISNULL)
-                ->endUse()
+                ->filterByVilleId(null, \Criteria::ISNULL)
                 ->find($con)
             ;
             foreach($items as $item)
             {
-                $item->setActive(true);
-                $item->save();
+                $item->setActive(false);
+                $item->save($con);
             }
-
             $notActives = \Cungfoo\Model\EtablissementQuery::create()
                 ->filterByActive(false)
-                ->find()
+                ->find($con)
             ;
-
-
             foreach($notActives as $notActive)
             {
                 $output->writeln(sprintf('<info>%s</info> camping <comment>%s - %s</comment> is unactive.', $this->getName(), $notActive->getCode(), $notActive->getName()));
@@ -135,13 +123,13 @@ class CheckIntegrityCommand extends BaseCommand
 
             $items = \Cungfoo\Model\TopCampingQuery::create()
                 ->useEtablissementQuery()
-                    ->filterByActive(true)
+                    ->filterByActive(false)
                 ->endUse()
                 ->find($con)
             ;
             foreach($items as $item)
             {
-                $item->setActive(true);
+                $item->setActive(false);
                 $item->save();
             }
 

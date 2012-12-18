@@ -18,4 +18,17 @@ use Cungfoo\Model\om\BaseRegionQuery;
  */
 class RegionQuery extends BaseRegionQuery
 {
+    public function findActive($absolute = true, $con = null)
+    {
+        if ($absolute)
+        {
+            $this
+                ->usePaysQuery()
+                    ->filterByActive(true)
+                ->endUse()
+            ;
+        }
+
+        return parent::findActive($con);
+    }
 }

@@ -30,7 +30,6 @@ class EventPeer extends BaseEventPeer
             ->useEtablissementEventQuery()
                 ->filterByEtablissementId($etab->getId())
             ->endUse()
-            ->addAscendingOrderByColumn('RAND()')
         ;
 
         switch ($sort)

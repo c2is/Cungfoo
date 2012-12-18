@@ -8,33 +8,27 @@ use Silex\Application,
 
 use Symfony\Component\HttpFoundation\Request,
     Symfony\Component\HttpKernel\Exception\NotFoundHttpException,
+    Symfony\Component\HttpFoundation\Response,
     Symfony\Component\Routing\Route;
 
-use Cungfoo\Model\EtablissementQuery,
-    Cungfoo\Model\DernieresMinutesQuery;
+use Cungfoo\Model\DernieresMinutesQuery;
 
-use VacancesDirectes\Lib\Listing,
-    VacancesDirectes\Lib\SearchEngine,
-    VacancesDirectes\Lib\SearchParams,
+use VacancesDirectes\Lib\SearchParams,
     VacancesDirectes\Lib\Listing\DispoListing;
 
 use Resalys\Lib\Client\DisponibiliteClient;
 
-class DernieresMinutesController implements ControllerProviderInterface
+class EsiController implements ControllerProviderInterface
 {
+    /**
+     * {@inheritdoc}
+     */
     public function connect(Application $app)
     {
         $controllers = $app['controllers_factory'];
 
-        $controllers->match('/', function (Application $app, Request $request) {
-
-            $searchEngine = new SearchEngine($app, $request);
-            $searchEngine->process();
-            if ($searchEngine->getRedirect())
-            {
-                return $app->redirect($searchEngine->getRedirect());
-            }
-
+        $controllers->match('/early-booking', function (Request $request) use ($app)
+        {
             $dernieresMinutes = DernieresMinutesQuery::create()
                 ->findOne()
             ;
@@ -50,27 +44,26 @@ class DernieresMinutesController implements ControllerProviderInterface
                 ->addTheme($dernieresMinutes->getDestinationsCodes())
                 ->addEtab($dernieresMinutes->getEtablissementsCodes())
                 ->setNbAdults(1)
-                ->setMaxResults(50)
+                ->setMaxResults(10)
             ;
 
             $client = new DisponibiliteClient($app['config']->get('root_dir'));
             $client->addOptions($searchParams->generate());
 
             $listing = new DispoListing($app);
-            $listing->setClient($client);
+            $listing
+                ->setClient($client)
+                ->distinct()
+                ->limit(4)
+            ;
 
-            $listingContent = $listing->process();
-
-            return $app->renderView('Research\dispo.twig', array(
-                'title'           => $app->trans('seo.title.dernieres_minutes'),
-                'metaDescription' => $app->trans('seo.meta.dernieres_minutes'),
-                'h1' => $app->trans('dernieresMinutes.h1'),
-                'list'            => $listingContent,
-                'firstEtab'       => reset($listingContent['element']),
-                'searchForm'      => $searchEngine->getView(),
+            $view = $app->renderView('Esi/earlyBooking.twig', array(
+                'dernieres_minutes' => $listing->process(),
             ));
-        })
-        ->bind('dernieres_minutes');
+
+            return new Response($view, 200, array('Cache-Control' => 's-maxage=600, public'));
+
+        })->bind('esi_early_booking');
 
         return $controllers;
     }

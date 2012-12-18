@@ -264,7 +264,7 @@ div.datepicker th {
   color: @colorBlanc;
   font-weight: normal;
 }
-.datepickerViewDays thead tr:first-child {
+.datepickerViewDays thead tr {
   background-color: @colorFushia;
   text-transform: uppercase;
   font-family: @ptnarrow;
@@ -272,6 +272,8 @@ div.datepicker th {
 .datepickerViewDays thead tr.datepickerDoW {
   background-color: @colorGris2;
   color: @colorBlanc;
+  font-family: @arial;
+  text-transform: none;
 }
 div.datepicker tbody th {
   text-align: center;
@@ -428,7 +430,7 @@ div.datepicker .datepickerDays td.datepickerSelected a:hover {
   background-color: @colorBlanc;
   color: @colorFushia;
 }
-tr.datepickerDoW th:first-child,
+/*tr.datepickerDoW th:first-child,*/
 th.datepickerWeek{display:none;}
 
 /* Fix icon position in Chrome & Safari */
@@ -483,25 +485,21 @@ th.datepickerWeek{display:none;}
  ** @repository:	https://github.com/leongersen/noUiSlider
  **/
 .noUiSlider{width:400px;border:1px solid #ccc;height:8px;background:#eee;-webkit-touch-callout:none;
-  .noUi-handle{cursor:pointer;
-    &:first-child{
-      > div{position:absolute;width:0;height:0;top:-7px;left:-8px;z-index:5;
+  .noUi-handle{cursor:pointer;}
+  .noUi-lowerHandle div{position:absolute;width:0;height:0;top:-7px;left:-8px;z-index:5;
         border-bottom:12px solid transparent;
         border-top:10px solid transparent;
         border-right:18px solid @colorFushia;
         border-radius:150px;
-      }
     }
-    &:last-child{
-      > div{position:absolute;width:0;height:0;top:-7px;left:-8px;z-index:5;
+
+  .noUi-upperHandle div{position:absolute;width:0;height:0;top:-7px;left:-8px;z-index:5;
         border-bottom:12px solid transparent;
         border-top:10px solid transparent;
         border-left:18px solid @colorFushia;
         border-radius:150px;
-      }
     }
     > div:hover, > div.noUi-activeHandle {}
-  }
   .noUi-midBar{height:100%;z-index:0;background:#39c;-webkit-touch-callout:none;}
   .rangeBox{display:block;margin-top:15px;}
 }

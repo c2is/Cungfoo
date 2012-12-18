@@ -18,7 +18,7 @@ class DateData
 
     public function isValide(ExecutionContext $context)
     {
-        if (!$this->destination)
+        if (!$this->destination && !($this->ville || $this->camping))
         {
             $context->addViolation('date_search.destination.required', array (), null);
         }

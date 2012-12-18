@@ -52,7 +52,7 @@ class CouloirController implements ControllerProviderInterface
 
         $controllers->post('/recapitulatif/{proposalKey}', function (Request $request, $proposalKey) use ($app) {
 
-            $rslConfig = $app['config']->get('rsl_config')['services']['catalogue']['default_envelope'];
+            $rslConfig = $app['config']->get('rsl_config')['services']['disponibilite']['default_envelope'];
 
             $query = array(
                 "specificFiles"     => 'couloir',
@@ -64,7 +64,8 @@ class CouloirController implements ControllerProviderInterface
                 "proposal_key"      => $proposalKey,
                 "confirmation"      => $app['url_generator']->generate('couloir_confirmation', array(), true),
                 "homeLink"          => $app['url_generator']->generate('homepage', array(), true),
-                "backLink"          => 'javascript:history.go(-1);'
+                "backLink"          => 'javascript:history.go(-1);',
+                "cgv"               => $app['url_generator']->generate('edito_by_slug', array('slug' => 'conditions-generales'), true)
             );
 
             $query = array_merge($query, $request->request->all());
@@ -80,7 +81,7 @@ class CouloirController implements ControllerProviderInterface
 
         $controllers->get('/confirmation', function (Request $request) use ($app) {
 
-            $rslConfig = $app['config']->get('rsl_config')['services']['catalogue']['default_envelope'];
+            $rslConfig = $app['config']->get('rsl_config')['services']['disponibilite']['default_envelope'];
 
             $query = array(
                 "specificFiles" => 'couloir',

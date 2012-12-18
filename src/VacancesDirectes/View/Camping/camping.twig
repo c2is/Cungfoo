@@ -1,7 +1,7 @@
 {% extends "base.twig" %}
 
-{% block title %}{{ "seo.title.camping" | trans ({'%nom%': etab.name, '%ville%': etab.ville }) }}{%if hasBaignade %}{{ "seo.title.camping_suffix" | trans }}{% endif %}{% endblock %}
-{% block metaDescription %}{{ "seo.meta.camping" | trans  ({'%nom%': etab.name, '%categorie%': etab.categorie, '%ville%': etab.ville })}}{% endblock %}
+{% block title %}{{ "seo.title.camping" | trans ({'%nom%': etab.name, '%ville%': etab.ville, '%nbEtoiles%': etab.categorie }) }}{%if hasBaignade %}{{ "seo.title.camping_suffix" | trans }}{% endif %}{% endblock %}
+{% block metaDescription %}{{ "seo.meta.camping" | trans  ({'%nom%': etab.name, '%nbEtoiles%': etab.categorie, '%ville%': etab.ville })}}{% endblock %}
 
 {% block bodyClass %} fiche{% endblock %}
 
@@ -13,7 +13,7 @@
 <div itemscope itemtype="http://schema.org/Place">
     <h1 itemprop="name">
         {{ etab.name }}{{ etab.categorie.stars }}<br />
-        <span class="h2-like">{{ "destination.camping_title" | trans({'%ville%': etab.ville.name}) }}</span>
+        <span class="h2-like">{{ "destination.camping_title" | trans({'%ville%': etab.ville.name}) }} {%if hasBaignade %}{{ "seo.title.camping_suffix" | trans }}{% endif %}</span>
     </h1>
     <p class="keywordsFiche">
         {% if etab.activites | length %}
@@ -244,6 +244,7 @@
     <div id="proxMap" class="gmap" style="width:616px;height:326px;">
         <script>
             function proxInit() {
+                var proxMap;
                 var proxMkrs = [
                     //['title', lat, lont, zindex, 'idAjaxCamping', couleurMarker]
                     ['{{ etab.name }}', {{ etab.geoCoordinateX }}, {{ etab.geoCoordinateY }}, 5, '{#{{ path('infobox_camping', {idResalys: etab.code}) }}#}', markerFushia]
@@ -315,6 +316,7 @@
     <div id="infoMap" class="gmap" style="width:616px;height:326px;">
         <script>
             function infoInit() {
+                var infoMap;
                 var infoMkrs = [
                     //['title', lat, lont, zindex, 'idAjaxCamping', couleurMarker]
                     ['{{ etab.name }}', {{ etab.geoCoordinateX }}, {{ etab.geoCoordinateY }}, 1, '{{ path('infobox_camping', {idResalys: etab.code}) }}', markerFushia]
@@ -366,7 +368,7 @@
     etab_id:etab.code,
     campaign_code: resalysParameters.campaign_code,
     referer: referer
-}) }}" width="960px" height="700px"></iframe>
+}) }}" width="960px" height="700px" marginheight="0" marginwidth="0" frameborder="0"></iframe>
 {% endblock %}
 
 {% block rightColumn %}

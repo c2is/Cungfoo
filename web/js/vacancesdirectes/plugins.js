@@ -914,7 +914,7 @@ function addLinkBlock(){
                     '<th class="datepickerGoNext"><a href="#"><span><%=next%></span></a></th>',
                     '</tr>',
                     '<tr class="datepickerDoW">',
-                    '<th><span><%=week%></span></th>',
+                    //'<th><span><%=week%></span></th>',
                     '<th><span><%=day1%></span></th>',
                     '<th><span><%=day2%></span></th>',
                     '<th><span><%=day3%></span></th>',

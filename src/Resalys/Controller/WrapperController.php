@@ -74,15 +74,22 @@ class WrapperController implements ControllerProviderInterface
         );
     }
 
-    protected function getStylesheetTag($url)
+    protected function getStylesheetTag($url, $condition = null)
     {
         $asset = $this->app['twig']->getExtension('asset')->asset($url);
 
-        return sprintf('<link rel="stylesheet" href="%s://%s%s">',
+        $output = sprintf('<link rel="stylesheet" href="%s://%s%s">',
             $this->request->getScheme(),
             $this->request->getHttpHost(),
             $asset
         );
+
+        if ($condition !== null)
+        {
+            $output = sprintf("<!--[if %s]>%s<![endif]-->", $condition, $output);
+        }
+
+        return $output;
     }
 
     protected function getStylesheetPrintTag($url)
@@ -190,6 +197,7 @@ eof
             '{_c2is.javascript.footer}',
         ), array(
             $this->websiteUri,
+            $this->getStylesheetTag('css/vacancesdirectes/ie.css', "lt IE 9").
             $this->getStylesheetTag(sprintf('css/vacancesdirectes/%s.css', $this->specificFiles)),
             $this->getStylesheetPrintTag('css/vacancesdirectes/print.css'),
             $this->getStylesheetDatepickerTag('css/vacancesdirectes/vd-theme/jquery-ui-1.9.2.custom.min.css'),

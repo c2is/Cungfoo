@@ -1593,6 +1593,8 @@ textarea {
   float: left;
   text-align: right;
   width: 278px;
+  /*._verticalCenter(27px);*/
+  line-height: 13px;
   height: 27px;
   /* Centrer verticalement une ligne de texte */
 
