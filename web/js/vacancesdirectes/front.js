@@ -1517,6 +1517,7 @@ function loadPluginsGmap() { // call after http://maps.googleapis.com/maps/api/j
     function setMarkers(map, mkrs) {
         for (var i = 0; i < mkrs.length; i++) {
             var mkr = mkrs[i];
+            var titleMkr = mkr[0].replace(/&#039;/g, "'");
             var siteLatLng = new google.maps.LatLng(mkr[1], mkr[2]);
             var marker = new google.maps.Marker({
                 position: siteLatLng,
@@ -1524,7 +1525,7 @@ function loadPluginsGmap() { // call after http://maps.googleapis.com/maps/api/j
                 shadow: shadow,
                 icon: mkr[5],
                 shape: shape,
-                title: mkr[0],
+                title: titleMkr,
                 zIndex: mkr[3],
                 idCamp: mkr[4],
                 filters: mkr[6]
