@@ -165,9 +165,7 @@ class AnnulationType extends AppAwareType
             )
         );
         $builder->add('piecesJointes', 'file', array(
-                'constraints'   => array(
-                    new Assert\NotBlank()
-                )
+                'required'      => false
             )
         );
         $builder->add('certifie', 'checkbox', array(
