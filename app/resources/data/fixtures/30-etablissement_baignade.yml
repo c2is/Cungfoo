@@ -26,6 +26,9 @@
     17_1:
         EtablissementId: 17
         BaignadeId: 1
+    19_1:
+        EtablissementId: 19
+        BaignadeId: 1
     20_1:
         EtablissementId: 20
         BaignadeId: 1
@@ -92,6 +95,9 @@
     128_1:
         EtablissementId: 128
         BaignadeId: 1
+    130_1:
+        EtablissementId: 130
+        BaignadeId: 1
     131_1:
         EtablissementId: 131
         BaignadeId: 1
@@ -103,6 +109,9 @@
         BaignadeId: 1
     139_1:
         EtablissementId: 139
+        BaignadeId: 1
+    141_1:
+        EtablissementId: 141
         BaignadeId: 1
     144_1:
         EtablissementId: 144
@@ -140,8 +149,14 @@
     171_1:
         EtablissementId: 171
         BaignadeId: 1
+    172_1:
+        EtablissementId: 172
+        BaignadeId: 1
     174_1:
         EtablissementId: 174
+        BaignadeId: 1
+    175_1:
+        EtablissementId: 175
         BaignadeId: 1
     176_1:
         EtablissementId: 176
@@ -281,6 +296,9 @@
     6_2:
         EtablissementId: 6
         BaignadeId: 2
+    7_2:
+        EtablissementId: 7
+        BaignadeId: 2
     9_2:
         EtablissementId: 9
         BaignadeId: 2
@@ -361,6 +379,9 @@
         BaignadeId: 2
     36_2:
         EtablissementId: 36
+        BaignadeId: 2
+    37_2:
+        EtablissementId: 37
         BaignadeId: 2
     39_2:
         EtablissementId: 39
@@ -479,6 +500,9 @@
     123_2:
         EtablissementId: 123
         BaignadeId: 2
+    125_2:
+        EtablissementId: 125
+        BaignadeId: 2
     126_2:
         EtablissementId: 126
         BaignadeId: 2
@@ -487,6 +511,9 @@
         BaignadeId: 2
     128_2:
         EtablissementId: 128
+        BaignadeId: 2
+    130_2:
+        EtablissementId: 130
         BaignadeId: 2
     131_2:
         EtablissementId: 131
@@ -538,6 +565,9 @@
         BaignadeId: 2
     154_2:
         EtablissementId: 154
+        BaignadeId: 2
+    155_2:
+        EtablissementId: 155
         BaignadeId: 2
     157_2:
         EtablissementId: 157
@@ -812,6 +842,9 @@
     17_3:
         EtablissementId: 17
         BaignadeId: 3
+    19_3:
+        EtablissementId: 19
+        BaignadeId: 3
     21_3:
         EtablissementId: 21
         BaignadeId: 3
@@ -865,6 +898,9 @@
         BaignadeId: 3
     143_3:
         EtablissementId: 143
+        BaignadeId: 3
+    152_3:
+        EtablissementId: 152
         BaignadeId: 3
     161_3:
         EtablissementId: 161
@@ -980,6 +1016,9 @@
     28_4:
         EtablissementId: 28
         BaignadeId: 4
+    29_4:
+        EtablissementId: 29
+        BaignadeId: 4
     30_4:
         EtablissementId: 30
         BaignadeId: 4
@@ -1019,6 +1058,9 @@
     126_4:
         EtablissementId: 126
         BaignadeId: 4
+    130_4:
+        EtablissementId: 130
+        BaignadeId: 4
     131_4:
         EtablissementId: 131
         BaignadeId: 4
@@ -1045,6 +1087,9 @@
         BaignadeId: 4
     181_4:
         EtablissementId: 181
+        BaignadeId: 4
+    201_4:
+        EtablissementId: 201
         BaignadeId: 4
     206_4:
         EtablissementId: 206

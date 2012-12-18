@@ -59,3 +59,8 @@
         ImagePath: null
         Vignette: uploads/activites/50c849781a379.png
         Active: true
+    13:
+        Code: CAN
+        ImagePath: null
+        Vignette: null
+        Active: true
