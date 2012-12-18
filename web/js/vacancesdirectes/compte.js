@@ -77,7 +77,7 @@ head.ready(function(){
     });
 
 
-    if($('#reservationContener.editAccount').length){
+    if($('#contentContener.address').length){
 
         // datepickers
         var d = new Date();
