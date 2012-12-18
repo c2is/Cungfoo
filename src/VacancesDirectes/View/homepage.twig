@@ -62,11 +62,10 @@
                     <span class="region">{{ camping.etablissement.ville.region }}</span>
                     <span class="condition">{{ camping.etablissement.minimumPriceLabel }}</span>
                     <a{% if camping.etablissement.minimumPrice == 0 %} style="display: none"{% endif %} href="{{ campingPath }}" class="stain fushia cover linkBlock">
-                        <span>{{ "general.a_partir_de" | trans }}<br />
-                            <span class="price linkBlock">{{ camping.etablissement.minimumPrice | number_format(0,'','') }}
-                                <span class="fine">&nbsp;</span>€
-                            </span>
-                            <span>{{ "general.la_semaine" | trans }}</span>
+                        <span>
+                            {{ "general.a_partir_de" | trans }}<br />
+                            <span class="price linkBlock">{{ camping.etablissement.minimumPrice | number_format(0,'','') }}<span class="fine">&nbsp;</span>€</span>
+                            {{ "general.la_semaine" | trans }}
                         </span>
                     </a>
                 </div>
@@ -79,33 +78,11 @@
     </div>
 </div>
 <div class="ratio-33 left clear">
-
-    <div id="lastLocations" class="locationForwards clear">
-        <div class="stamp grey">
-            <h2>{{ "home.early_booking" | trans }}</h2>
-        </div>
-        {% for etab in dernieres_minutes.element %}
-            {% for proposal in etab.extra %}
-            <div class="element clear linkParent">
-                <div class="details left">
-                    <span class="title">{{ etab.model.name }} {{ etab.model.categorie.stars }}</span>
-                    <span class="region">{{ etab.model.ville.region }}</span>
-                    <span class="period">Du {{ etab.start_date }} au {{ etab.end_date }}</span>
-                    <span class="counter">J -{{ etab.days_countdown }}</span>
-                    {% set discount = proposal.adult_price != proposal.adult_price_without_discounts %}
-                    {% if discount %}
-                        <span class="condition"><a href="{{ path('couloir_detail_sejour', {proposalKey: proposal.proposal_key}) }}" class="price linkBlock">{{ proposal.adult_price|number_format }}<span class="fine">&nbsp;</span>€ {{ "general.au_lieu_de" | trans }} {{ proposal.adult_price_without_discounts|number_format }}<span class="fine">&nbsp;</span>€</a><br>
-                        {{ proposal.room_types.room_type.room_type_label }}</span>
-                    {% else %}
-                        <span class="condition"><a href="{{ path('couloir_detail_sejour', {proposalKey: proposal.proposal_key}) }}" class="price linkBlock">{{ proposal.adult_price|number_format }}<span class="fine">&nbsp;</span>€</a><br>
-                        {{ proposal.room_types.room_type.room_type_label }}</span>
-                    {% endif %}
-                </div>
-            </div>
-            {% endfor %}
-        {% endfor %}
-        <a href="{{ path('dernieres_minutes') }}" class="bt link right">{{ "home.early_booking.link" | trans  ({'%number%': dernieres_minutes.element|length }) }}</a>
-    </div>
+    {% if app.debug %}
+    {{ render(path('esi_early_booking')) }}
+    {% else %}
+    <esi:include src="{{ path('esi_early_booking') }}" />
+    {% endif %}
 </div>
 
 {% endblock %}
