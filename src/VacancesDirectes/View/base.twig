@@ -45,7 +45,6 @@
         {% include "menu.twig" %}
         <div id="header" class="fixed-width clear">
             <div id="headerRight">
-                {#
                 <a id="account" href="#">Mon compte</a>
                 <div id="accountBox" class="radiusBox greyF arrowUp">
                     <h2>vous êtes un client existant, veuillez vous identifier</h2>
@@ -75,12 +74,13 @@
                             </ol>
                         </fieldset>
                     </form>
-                </div> #}
+                </div>
                 <div id="telephone">
                     <span>{{ "header.information" | trans }}
-                        {{ "header.telephone" | trans }}
+                        <span class="phoneNum">{{ "header.telephone.number" | trans }}</span><span class="phonePrice">{{ "header.telephone.price" | trans }}</span>
                     </span>
                 </div>
+            </div>
             </div>
             <a href="{{ path( 'homepage' ) }}" title="Vacances directes | Le camping tout simplement !" id="logo">
             {% if app.request.get('_route') == 'homepage' %}
