@@ -921,7 +921,7 @@ div.datepicker th {
   color: #ffffff;
   font-weight: normal;
 }
-.datepickerViewDays thead tr:first-child {
+.datepickerViewDays thead tr {
   background-color: #ed145b;
   text-transform: uppercase;
   font-family: 'PT Sans Narrow', Arial, Helvetica, sans-serif;
@@ -929,6 +929,8 @@ div.datepicker th {
 .datepickerViewDays thead tr.datepickerDoW {
   background-color: #464545;
   color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: none;
 }
 div.datepicker tbody th {
   text-align: center;
@@ -1153,7 +1155,7 @@ div.datepicker .datepickerDays td.datepickerSelected a:hover {
   background-color: #ffffff;
   color: #ed145b;
 }
-tr.datepickerDoW th:first-child,
+/*tr.datepickerDoW th:first-child,*/
 th.datepickerWeek {
   display: none;
 }
@@ -1278,7 +1280,7 @@ th.datepickerWeek {
 .noUiSlider .noUi-handle {
   cursor: pointer;
 }
-.noUiSlider .noUi-handle:first-child > div {
+.noUiSlider .noUi-lowerHandle div {
   position: absolute;
   width: 0;
   height: 0;
@@ -1290,7 +1292,7 @@ th.datepickerWeek {
   border-right: 18px solid #ed145b;
   border-radius: 150px;
 }
-.noUiSlider .noUi-handle:last-child > div {
+.noUiSlider .noUi-upperHandle div {
   position: absolute;
   width: 0;
   height: 0;
@@ -1372,12 +1374,12 @@ footer {
   margin: 10px 0;
   z-index: 0;
 }
-#header #telephone > span {
+#header #telephone span {
   font-size: 18px;
   line-height: 19px;
   color: #464545;
 }
-#header #telephone > span:before {
+#header #telephone span:before {
   content: "";
   width: 40px;
   height: 29px;
@@ -1385,17 +1387,11 @@ footer {
   float: left;
   margin: 5px;
 }
-#header #telephone > span .phone {
+#header #telephone span a {
+  font-weight: bold;
   color: #464545;
   text-decoration: none;
-  display: inline-block;
-  font-weight: bold;
-  margin-bottom: 15px;
-}
-#header #telephone > span .price {
-  font-weight: bold;
-  float: right;
-  margin-right: 20px;
+  display: block;
 }
 #header #account {
   float: right;
@@ -1463,6 +1459,9 @@ footer {
 #header #accountBox .link a {
   color: #ffffff;
   text-decoration: underline;
+}
+.ie-lte9 #telephone span span {
+  letter-spacing: -1px;
 }
 /* specifs home */
 .home #telephone {
@@ -2326,11 +2325,6 @@ h6,
 .radiusBox2 .stamp span {
   margin-left: -6px;
 }
-/*.stain{width:90px;._verticalCenter(70px,22px);background-image:url("../../images/vacancesdirectes/common/ui/stain.png");background-repeat:no-repeat;text-align:center;font-size:10px;color:@colorBlanc;margin-left:-10px;position:relative;
-  &>span{margin-top:10px;}
-  .price{font-size:27px;font-weight:bold;}
-}
-.ie-lte8 .stain{width:70px;min-width:70px !important;}*/
 .tooltip {
   outline: none;
   position: relative;
@@ -2540,8 +2534,7 @@ input[type="radio"] {
 .element .details {
   font-size: 13px;
   color: #5f5f5f;
-  /*margin-bottom:70px;*/
-
+  margin-bottom: 70px;
 }
 .element .details .title,
 .element .details .region,
@@ -2605,7 +2598,8 @@ input[type="radio"] {
   text-align: center;
   font-size: 10px;
   color: #ffffff;
-  /*left:130px;bottom:20px;*/
+  left: 130px;
+  bottom: 20px;
   position: absolute;
 }
 .element .stain > * {
@@ -2617,13 +2611,13 @@ input[type="radio"] {
   vertical-align: middle;
 }
 .element .stain > span {
-  margin-top: 5px;
+  margin-top: 10px;
 }
 .element .stain .price {
   font-size: 27px;
   font-weight: bold;
   display: block;
-  margin: 8px 0 -8px;
+  margin: 7px 0 0px;
   letter-spacing: normal;
 }
 .element.promo .details {
@@ -2660,7 +2654,8 @@ input[type="radio"] {
 .element.promo .stain .discount {
   font-size: 14px;
   font-weight: bold;
-  width: 72px;
+  width: 68px;
+  padding-right: 10px;
   height: 61px;
   /* Centrer verticalement une ligne de texte */
 
@@ -2672,7 +2667,7 @@ input[type="radio"] {
   background: url("../../images/vacancesdirectes/common/ui/stain.png") no-repeat 0 -262px transparent;
   margin: 0;
   position: absolute;
-  top: -20px;
+  top: -10px;
   left: -30px;
   z-index: 1;
 }
@@ -2692,10 +2687,6 @@ input[type="radio"] {
 }
 .fine {
   font-size: 50%;
-}
-.multiple-background-false .cover {
-  min-height: 100%;
-  min-width: 100%;
 }
 .multiple-background-true .cover {
   background-size: cover;
@@ -4386,10 +4377,10 @@ ul.newList.optGroup li.optGroup-like a {
   cursor: pointer;
   z-index: 1 !important;
 }
-#widgetRange .noUi-handle:first-child .rangeBox {
+#widgetRange .noUi-lowerHandle .rangeBox {
   left: -14px;
 }
-#widgetRange .noUi-handle:last-child .rangeBox {
+#widgetRange .noUi-upperHandle .rangeBox {
   left: -34px;
 }
 #widgetRange .rangeBox {
