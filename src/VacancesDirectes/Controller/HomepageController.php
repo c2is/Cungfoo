@@ -7,6 +7,7 @@ use Silex\Application,
     Silex\ControllerProviderInterface;
 
 use Symfony\Component\HttpFoundation\Request,
+    Symfony\Component\HttpFoundation\Response,
     Symfony\Component\HttpKernel\Exception\NotFoundHttpException,
     Symfony\Component\Routing\Route;
 
@@ -16,12 +17,8 @@ use Cungfoo\Model\EtablissementQuery,
     Cungfoo\Model\ThematiqueQuery,
     Cungfoo\Model\VosVacancesQuery;
 
-use Resalys\Lib\Client\DisponibiliteClient;
-
 use VacancesDirectes\Lib\SearchEngine,
-    VacancesDirectes\Lib\SearchParams,
-    VacancesDirectes\Lib\PleinActivite,
-    VacancesDirectes\Lib\Listing\DispoListing;
+    VacancesDirectes\Lib\PleinActivite;
 
 class HomepageController implements ControllerProviderInterface
 {
@@ -61,10 +58,6 @@ class HomepageController implements ControllerProviderInterface
                 ->findActive()
             ;
 
-            $dernieresMinutes = DernieresMinutesQuery::create()
-                ->findOne()
-            ;
-
             $vosVacances = VosVacancesQuery::create()
                 ->joinWithI18n($locale)
                 ->findOne()
@@ -85,33 +78,9 @@ class HomepageController implements ControllerProviderInterface
                 ->findActive()
             ;
 
-            $baseDate  = $dernieresMinutes->getDateStart('U') ?: date('U');
-            $startDate = strtotime('next ' . $dernieresMinutes->getDayStart(), $baseDate);
-            $startDate = strtotime('+' . ($dernieresMinutes->getDayRange() - 7) . ' days', $startDate);
-
-            $searchParams = new SearchParams($app);
-            $searchParams
-                ->setStartDate(date('Y-m-d', $startDate))
-                ->setNbDays(7)
-                ->addTheme($dernieresMinutes->getDestinationsCodes())
-                ->addEtab($dernieresMinutes->getEtablissementsCodes())
-                ->setNbAdults(1)
-                ->setMaxResults(10)
-            ;
-
-            $client = new DisponibiliteClient($app['config']->get('root_dir'));
-            $client->addOptions($searchParams->generate());
-
-            $listing = new DispoListing($app);
-            $listing
-                ->setClient($client)
-                ->distinct()
-                ->limit(4)
-            ;
-
             $pleinActivites = new PleinActivite($app);
 
-            return $app['twig']->render('homepage.twig', array(
+            $view = $app->renderView('homepage.twig', array(
                 'searchForm'        => $searchEngine->getView(),
                 'locale'            => $locale,
                 'topCampings'       => $topCampings,
@@ -121,9 +90,10 @@ class HomepageController implements ControllerProviderInterface
                 'ideesweekend'      => $ideesweekend,
                 'thematiques'       => $thematiques,
                 'etablissements'    => $etablissements,
-                'dernieres_minutes' => $listing->process(),
                 'pleinActivites'    => $pleinActivites->process(),
             ));
+
+            return new Response($view, 200, array('Surrogate-Control' => 'content="ESI/1.0"'));
         })
         ->bind('homepage');
 
