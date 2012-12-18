@@ -99,7 +99,7 @@
         Code: CH46
         CategoryTypeHebergementId: 3
         NombreChambre: null
-        NombrePlace: 4
+        NombrePlace: 6
         ImageHebergementPath: uploads/type_hebergements/50c06834da2a3.jpeg
         ImageCompositionPath: null
         Active: true
@@ -219,7 +219,7 @@
         Code: FAML
         CategoryTypeHebergementId: 2
         NombreChambre: null
-        NombrePlace: 5
+        NombrePlace: 6
         ImageHebergementPath: uploads/type_hebergements/50c068c18819e.jpeg
         ImageCompositionPath: null
         Active: true
@@ -243,7 +243,7 @@
         Code: MAI
         CategoryTypeHebergementId: 4
         NombreChambre: null
-        NombrePlace: 4
+        NombrePlace: 6
         ImageHebergementPath: uploads/type_hebergements/50c068e427961.jpeg
         ImageCompositionPath: null
         Active: true
@@ -251,7 +251,7 @@
         Code: MAIS
         CategoryTypeHebergementId: 4
         NombreChambre: null
-        NombrePlace: 2
+        NombrePlace: 4
         ImageHebergementPath: uploads/type_hebergements/50c068ec07f71.jpeg
         ImageCompositionPath: null
         Active: true
@@ -355,7 +355,7 @@
         Code: STUC
         CategoryTypeHebergementId: 4
         NombreChambre: null
-        NombrePlace: 2
+        NombrePlace: 4
         ImageHebergementPath: uploads/type_hebergements/50c0697e388c9.jpeg
         ImageCompositionPath: null
         Active: true
@@ -411,7 +411,7 @@
         Code: TECL
         CategoryTypeHebergementId: 8
         NombreChambre: null
-        NombrePlace: 3
+        NombrePlace: 5
         ImageHebergementPath: uploads/type_hebergements/50c069d0108d8.jpeg
         ImageCompositionPath: null
         Active: true
@@ -427,7 +427,7 @@
         Code: TENM
         CategoryTypeHebergementId: 8
         NombreChambre: null
-        NombrePlace: 3
+        NombrePlace: 5
         ImageHebergementPath: uploads/type_hebergements/50c06b8f97af6.jpeg
         ImageCompositionPath: null
         Active: true
@@ -477,5 +477,37 @@
         NombreChambre: null
         NombrePlace: 4
         ImageHebergementPath: uploads/type_hebergements/50c06bd11bb02.jpeg
+        ImageCompositionPath: null
+        Active: true
+    61:
+        Code: CC
+        CategoryTypeHebergementId: 7
+        NombreChambre: null
+        NombrePlace: 6
+        ImageHebergementPath: null
+        ImageCompositionPath: null
+        Active: true
+    62:
+        Code: ED
+        CategoryTypeHebergementId: 7
+        NombreChambre: null
+        NombrePlace: 6
+        ImageHebergementPath: null
+        ImageCompositionPath: null
+        Active: true
+    63:
+        Code: ET
+        CategoryTypeHebergementId: 7
+        NombreChambre: null
+        NombrePlace: 6
+        ImageHebergementPath: null
+        ImageCompositionPath: null
+        Active: true
+    64:
+        Code: ETO
+        CategoryTypeHebergementId: 7
+        NombreChambre: null
+        NombrePlace: 6
+        ImageHebergementPath: null
         ImageCompositionPath: null
         Active: true

@@ -287,3 +287,27 @@
         Name: 'Pêche à proximité'
         Description: null
         Keywords: null
+    13_de:
+        Id: 13
+        Locale: de
+        Name: Canoë
+        Description: null
+        Keywords: null
+    13_en:
+        Id: 13
+        Locale: en
+        Name: Canoë
+        Description: null
+        Keywords: null
+    13_fr:
+        Id: 13
+        Locale: fr
+        Name: Canoë
+        Description: null
+        Keywords: null
+    13_nl:
+        Id: 13
+        Locale: nl
+        Name: Canoë
+        Description: null
+        Keywords: null

@@ -79,3 +79,35 @@
         Id: 5
         Locale: nl
         Name: '1 Etoile'
+    6_de:
+        Id: 6
+        Locale: de
+        Name: '1ère catégorie'
+    6_en:
+        Id: 6
+        Locale: en
+        Name: '1ère catégorie'
+    6_fr:
+        Id: 6
+        Locale: fr
+        Name: '1ère catégorie'
+    6_nl:
+        Id: 6
+        Locale: nl
+        Name: '1ère catégorie'
+    7_de:
+        Id: 7
+        Locale: de
+        Name: '2è catégorie'
+    7_en:
+        Id: 7
+        Locale: en
+        Name: '2è catégorie'
+    7_fr:
+        Id: 7
+        Locale: fr
+        Name: '2è catégorie'
+    7_nl:
+        Id: 7
+        Locale: nl
+        Name: '2è catégorie'
