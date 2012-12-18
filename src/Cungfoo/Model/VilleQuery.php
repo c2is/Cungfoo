@@ -34,4 +34,21 @@ class VilleQuery extends BaseVilleQuery
             ->_endif()
         ;
     }
+
+    public function findActive($absolute = true, $con = null)
+    {
+        if ($absolute)
+        {
+            $this
+                ->useRegionQuery()
+                    ->filterByActive(true)
+                    ->usePaysQuery()
+                        ->filterByActive(true)
+                    ->endUse()
+                ->endUse()
+            ;
+        }
+
+        return parent::findActive($con);
+    }
 }

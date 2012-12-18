@@ -48,10 +48,10 @@ $(function() {
     }
 
 // Test html5 form capacties andif do polyfills
-    //if (!Modernizr.input.placeholder) { polyfillPlaceholder(); } // html5 placeholder
+    if (!Modernizr.input.placeholder) { polyfillPlaceholder(); } // html5 placeholder
 
 //
-    $('.cover').css({backgroundSize: "cover"});
+    $('.details').find('.cover').css({backgroundSize: "cover"});
 
 // Gestion du click sur le parent
     if ($('.linkParent').length > 0) { addLinkBlock(); }
@@ -1753,8 +1753,8 @@ function findMinMaxRange() {
 //creation du rangeSlider de prix
 function rangeSliderPrice() {
     var $range = $("#noUiSlider"),
-        minScale = minPrice-20,
-        maxScale = maxPrice+20,
+        minScale = minPrice/*-20*/,
+        maxScale = maxPrice/*+20*/,
         minStart = minPrice,
         minStop = maxPrice;
 
@@ -1909,11 +1909,9 @@ function displayResults() {
             $(this).fadeOut().next('.disclaim').fadeOut();
         };
 
-        for ( var i in aMarkers ){
+        for (var i = 0; i < aMarkers.length; i++) {
             var marker = aMarkers[i];
             marker.setVisible( $.inArray(marker.idCamp, gMarkers) != -1 ? true : false );
-            //consoleLog($.inArray(theme, marker.filters));
-            //consoleLog(marker.filters);
         }
 
     });

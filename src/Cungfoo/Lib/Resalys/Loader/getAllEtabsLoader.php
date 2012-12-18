@@ -88,7 +88,7 @@ class getAllEtabsLoader extends AbstractLoader
         }
 
         // update type hebergement
-        $this->updateTypeHebergement($objectEtab, $etab->{'roomtypes'}, $con);
+        $this->updateTypeHebergements($objectEtab, $etab->{'roomtypes'}, $con);
 
         // update theme
         if (isset($etab->{'themecodes'}->{'themecode'}))
@@ -101,32 +101,45 @@ class getAllEtabsLoader extends AbstractLoader
         return $objectEtab;
     }
 
-    protected function updateTypeHebergement($objectEtab, $roomtypesGroup, \PropelPDO $con)
+    protected function updateTypeHebergements($objectEtab, $roomtypesGroup, \PropelPDO $con)
     {
-        foreach ($roomtypesGroup as $roomtypes)
+        if (property_exists($roomtypesGroup, 'roomtype'))
         {
-            foreach ($roomtypes as $roomtype)
+            if (is_array($roomtypesGroup->{"roomtype"}))
             {
-                if (is_object($roomtype) && property_exists($roomtype, 'code'))
+                foreach ($roomtypesGroup->{"roomtype"} as $roomtype)
                 {
-                    $objectTypeHebergement = TypeHebergementQuery::create()
-                        ->filterByCode($roomtype->code)
-                        ->findOne($con)
-                    ;
+                    $this->updateTypeHebergement($objectEtab, $roomtype, $con);
+                }
+            }
+            else
+            {
+                $this->updateTypeHebergement($objectEtab, $roomtypesGroup->{'roomtype'}, $con);
+            }
+        }
+    }
 
-                    if ($objectTypeHebergement)
-                    {
-                        $objectEtabHasTypeHebergement = EtablissementTypeHebergementQuery::create()
-                            ->filterByEtablissementId($objectEtab->getId())
-                            ->filterByTypeHebergementId($objectTypeHebergement->getId())
-                            ->findOne()
-                        ;
 
-                        if (!$objectEtabHasTypeHebergement)
-                        {
-                            $objectEtab->addTypeHebergement($objectTypeHebergement, $con);
-                        }
-                    }
+    protected function updateTypeHebergement($objectEtab, $roomtype, \PropelPDO $con)
+    {
+        if (is_object($roomtype) && property_exists($roomtype, 'code'))
+        {
+            $objectTypeHebergement = TypeHebergementQuery::create()
+                ->filterByCode($roomtype->code)
+                ->findOne($con)
+            ;
+
+            if ($objectTypeHebergement)
+            {
+                $objectEtabHasTypeHebergement = EtablissementTypeHebergementQuery::create()
+                    ->filterByEtablissementId($objectEtab->getId())
+                    ->filterByTypeHebergementId($objectTypeHebergement->getId())
+                    ->findOne()
+                ;
+
+                if (!$objectEtabHasTypeHebergement)
+                {
+                    $objectEtab->addTypeHebergement($objectTypeHebergement, $con);
                 }
             }
         }

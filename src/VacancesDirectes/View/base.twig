@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>{% block title %}{{ "seo.title.default" | trans }}{% endblock %} | Vacances Directes</title>
+    <title>{% block title %}{{ "seo.title.default" | trans }}{% endblock %}{% if app.request.get('_route') == 'homepage' %} | Vacances Directes{% endif %}</title>
 
     <meta name="description" content="{% block metaDescription %}{{ "seo.meta.default" | trans }}{% endblock %}" />
 
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
+    <!--[if lt IE 9]><link rel="stylesheet" href="{{ asset('css/vacancesdirectes/ie.css') }}"><![endif]-->
     <link rel="stylesheet" href="{{ asset('css/vacancesdirectes/screen.css') }}">
-
     <script src="{{ asset('vendor/head.extended.js') }}"></script>
     <script>
         var templatePath = '{{ asset('') }}';<!-- templatePath : chemin du template en absolue -->
@@ -45,10 +45,40 @@
         {% include "menu.twig" %}
         <div id="header" class="fixed-width clear">
             <div id="headerRight">
-                {% include 'header.twig' %}
+                {#
+                <a id="account" href="#">Mon compte</a>
+                <div id="accountBox" class="radiusBox greyF arrowUp">
+                    <h2>vous êtes un client existant, veuillez vous identifier</h2>
+                    <form action="#_" id="connexion">
+                        <fieldset>
+                            <div class="errors">
+                                <ul>
+                                    <li>Identifiant incorrect.</li>
+                                    <li>Mot de passe incorrect.</li>
+                                </ul>
+                            </div>
+                            <ol>
+                                <li>
+                                    <div class="clear" id="userField">
+                                        <label for="userInput">Nom d'utilisateur</label>
+                                        <input type="text" placeholder="Nom d'utilisateur" id="userInput" name="userInput" />
+                                    </div>
+                                    <div class="clear" id="passwordField">
+                                        <label for="passwordInput">Mot de passe</label>
+                                        <input type="password" placeholder="Mot de passe" id="passwordInput" name="passwordInput" autocomplete="off" />
+                                    </div>
+                                    <div class="link clear">
+                                        <a href="#">Mot de passe oublié ?</a>
+                                    </div>
+                                    <button class="bt fushia ib" type="submit">Se connecter</button>
+                                </li>
+                            </ol>
+                        </fieldset>
+                    </form>
+                </div> #}
                 <div id="telephone">
-                    <span>{{ "header.information" | trans }}<br />
-                        <a class="phone" href="tel:+33825133400">{{ "header.telephone" | trans }}</a> <span class="price"> (0,15€/min)</span>
+                    <span>{{ "header.information" | trans }}
+                        {{ "header.telephone" | trans }}
                     </span>
                 </div>
             </div>
@@ -99,7 +129,7 @@
     </script>
 
     <!-- Prompt IE 6 users to install Chrome Frame -->
-    <!--[if lte IE 8 ]>
+    <!--[if lt IE 8 ]>
     <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
     <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
     <![endif]-->
