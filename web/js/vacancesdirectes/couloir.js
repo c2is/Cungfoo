@@ -106,8 +106,8 @@ head.ready(function(){
                 changeMonth: true,
                 changeYear: true,
                 yearRange: "1900:2000",
-                defaultDate: new Date(y-18, 1 - 1, 1),
-                maxDate: "-18Y",
+                defaultDate: new Date(y-13, 1 - 1, 1),
+                maxDate: "-13Y",
                 showOn: "button",
                 onClose: onBlur
             });

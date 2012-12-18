@@ -12,19 +12,14 @@ $(function() {
     if(parentExists()){
         resize_myframe();
     }
-
-    // selects
-    if($('#newCustomerLayer').length){
-        $('#newCustomerLayer').find('select').sSelect({ddMaxHeight: '300px'});
-    }
-    if($('#option').length){
-        $('#option').find('select').sSelect({ddMaxHeight: '300px'});
-    }
-
-
 });
 
 head.ready(function(){
+
+    // selects
+    if($('#authentication').length){
+        $('#authentication').find('select').sSelect({ddMaxHeight: '300px'});
+    }
 
     // radio buttons
     var checked;
@@ -89,9 +84,13 @@ head.ready(function(){
                 onChangeAction = onChangeAction.substring(1, onChangeAction.length - 1);
             }
             function onChange(){
-               //console.log(this.value);
-               eval(onChangeAction);
+                //console.log(this.value);
+                eval(onChangeAction);
             }
+            function hideSelects(){
+                $('.SSContainerDivWrapper').hide();
+            }
+
 //            console.log(onBlurAction);
             $(this).find('.control_date').removeAttr('onchange');
             $(this).find('.control_date').datepicker({
@@ -100,7 +99,8 @@ head.ready(function(){
                 yearRange: "1900:2000",
                 defaultDate: new Date(y-18, 1 - 1, 1),
                 maxDate: "-18Y",
-                showOn: "button"
+                showOn: "button",
+                beforeShow: hideSelects
 //                onClose: onChange
             });
         });

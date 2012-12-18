@@ -266,15 +266,18 @@ textarea{background-color:@colorBgGrisC;width:216px;height:81px;padding: 0 7px;b
       &>div{
         h4{color:@colorGris0;text-transform:uppercase;font:bold 22px @ptnarrow;._verticalCenter(40px);}
       }
-      .aField{font:normal 12px @arial;text-transform:none;display:block;margin:0;padding:15px 20px;clear:both;
+      .aField{font:normal 12px @arial;text-transform:none;display:block;margin:0;padding:15px 0;clear:both;
         .label{font:inherit;text-transform:inherit;color:inherit}
         .field,
         input[type="radio"]:checked + label{ font-weight: bold; }
       }
-
+      #loginLayer table{width:50%;margin-bottom:15px;}
+      #address,
+      #option{width:938px;}
       #loginLayer,
       #existingCustomerLayer,
-      #newCustomerLayer,{
+      #newCustomerLayer,
+      #option{
         &>div{margin-bottom:20px;}
         td{display:table-cell;padding:5px 10px 5px 0;vertical-align:middle;}
         input,textarea,.newListSelected{width:228px;}
@@ -282,20 +285,6 @@ textarea{background-color:@colorBgGrisC;width:216px;height:81px;padding: 0 7px;b
         .datepicker button{right:0;}
         .label{width:228px;line-height:17px;padding:0 10px 0 0;text-align:right;}
       }
-      #loginLayer table{width:50%;margin-bottom:15px;}
-      #newCustomerLayer{
-        #others{
-          td{display:inline-block;margin-bottom:10px;float:left;}
-          .label{width:415px;}
-        }
-      }
-      #existingCustomerLayer{
-        .aField{width:450px;float:left;
-          .label{width:130px;}
-          input{width:310px;}
-        }
-      }
-      .loginLink{float:right;}
 
     }
     #reservation{
@@ -504,16 +493,11 @@ textarea{background-color:@colorBgGrisC;width:216px;height:81px;padding: 0 7px;b
 
 /* Stylish Select 0.4.9 */
 
-// step 1
-#authentication #loginLayer,
-#authentication #newCustomerLayer{
+// ADDRESS
+#authentication {
    ._stylish-select(228px,27px,0px,4);
  }
 
-// step 2
-#option {
-  ._stylish-select(141px,27px,0px,4);
-}
 
 // Stylish Select
 .stylish-select .SSContainerDivWrapper {
