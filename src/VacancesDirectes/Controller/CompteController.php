@@ -15,10 +15,12 @@ class CompteController implements ControllerProviderInterface
 {
     protected function getDefaultResalysParameters(Application $app, Request $request)
     {
+        $rslConfig = $app['config']->get('rsl_config')['services']['disponibilite']['default_envelope'];
+
         $parameters = array(
             "specificFiles" => 'compte',
-            "base_id"       => 'vacancesdirectes_preprod_v6_6',
-            "webuser"       => 'web_fr',
+            "base_id"       => $rslConfig['base_id'],
+            "webuser"       => $rslConfig['username'],
             "tokens"        => 'ignore_token',
             "actions"       => $request->query->get('actions'),
             "tokens"        => $request->query->get('tokens'),
