@@ -1374,12 +1374,12 @@ footer {
   margin: 10px 0;
   z-index: 0;
 }
-#header #telephone span {
+#header #telephone > span {
   font-size: 18px;
   line-height: 19px;
   color: #464545;
 }
-#header #telephone span:before {
+#header #telephone > span:before {
   content: "";
   width: 40px;
   height: 29px;
@@ -1387,11 +1387,17 @@ footer {
   float: left;
   margin: 5px;
 }
-#header #telephone span a {
-  font-weight: bold;
+#header #telephone > span .phoneNum {
   color: #464545;
   text-decoration: none;
-  display: block;
+  display: inline-block;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+#header #telephone > span .phonePrice {
+  font-weight: bold;
+  float: right;
+  margin-right: 15px;
 }
 #header #account {
   float: right;

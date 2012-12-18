@@ -10,9 +10,10 @@ header, section, footer {position:relative;}
   #logo{display:block;float:left;}
   #headerRight{float:right;}
   #telephone{width:256px;height:60px;background: url("../../images/vacancesdirectes/common/ui/phone-bg.png") no-repeat 0px 0px transparent;padding:5px 0px 15px 10px;float:right;margin:10px 0;z-index:0;
-    span{font-size:18px;line-height:19px;color:@colorGris2;
+    &>span{font-size:18px;line-height:19px;color:@colorGris2;
       &:before{content:"";width:40px;height:29px;background:transparent url("../../images/vacancesdirectes/common/ui/phone-icon-header.png") no-repeat 0px 0px;float:left;margin:5px;}
-      a{font-weight:bold;color:@colorGris2;text-decoration:none;display:block;}
+      .phoneNum{color:@colorGris2;text-decoration:none;display:inline-block;font-weight:bold;margin-bottom:15px;}
+      .phonePrice{font-weight:bold;float:right;margin-right:15px;}
     }
   }
   #account{float:right;font-size:16px;text-transform:uppercase;background-color:@colorFushia;border-radius:10px;padding:7px 12px;color:@colorBlanc;text-decoration:none;margin:10px 0 15px 15px;}
@@ -242,7 +243,7 @@ h6, .h6-like{color:@colorFushia;}
     &:after{content:url('../../images/vacancesdirectes/common/ui/stamp-right.png');}
     &>h2{text-transform:uppercase;font: bold 22px @ptnarrow;}
     &.no{background:none;padding:0;._verticalCenter(38px,22px);
-     &>h2{color:@colorGris1;}
+      &>h2{color:@colorGris1;}
     }
   }
   &>h2{color:@colorGris1;
@@ -404,4 +405,3 @@ ul.newList.optGroup li.optGroup-like a {padding:0 8px;font-weight:bold;}
     ul.newList.optGroup li.optGroup-like a.newListHover {background-color:@colorGris2!important;color:@colorBlanc!important;}
   }
 }
-
