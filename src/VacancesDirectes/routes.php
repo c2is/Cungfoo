@@ -34,6 +34,7 @@ $app->mount('/bons-plans/camping-dernieres-minutes',  new Controller\DernieresMi
 $app->mount('/bons-plans',                            new Controller\BonsPlansController());
 $app->mount('/compte',                                new Controller\CompteController());
 $app->mount('/vos-week-ends',                         new Controller\VosWeekEndsController());
+$app->mount('/esi',                                   new Controller\EsiController());
 
 $app->match('/top-campings',      'VacancesDirectes\Controller\TopCampingController::indexAction')->bind('top_campings');
 

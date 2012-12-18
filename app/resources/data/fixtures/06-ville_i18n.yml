@@ -3698,85 +3698,85 @@
     133_de:
         Id: 133
         Locale: de
-        Slug: trogues
-        Name: TROGUES
+        Slug: trogues-37
+        Name: 'Trogues (37)'
         Introduction: null
         Description: null
     133_en:
         Id: 133
         Locale: en
-        Slug: trogues
-        Name: TROGUES
+        Slug: trogues-37
+        Name: 'Trogues (37)'
         Introduction: null
         Description: null
     133_fr:
         Id: 133
         Locale: fr
-        Slug: trogues
-        Name: TROGUES
+        Slug: trogues-37
+        Name: 'Trogues (37)'
         Introduction: null
         Description: null
     133_nl:
         Id: 133
         Locale: nl
-        Slug: trogues
-        Name: TROGUES
+        Slug: trogues-37
+        Name: 'Trogues (37)'
         Introduction: null
         Description: null
     134_de:
         Id: 134
         Locale: de
-        Slug: thonon-les-bains
-        Name: 'Thonon les bains'
+        Slug: thonon-les-bains-74
+        Name: 'Thonon les bains (74)'
         Introduction: null
         Description: null
     134_en:
         Id: 134
         Locale: en
-        Slug: thonon-les-bains
-        Name: 'Thonon les bains'
+        Slug: thonon-les-bains-74
+        Name: 'Thonon les bains (74)'
         Introduction: null
         Description: null
     134_fr:
         Id: 134
         Locale: fr
-        Slug: thonon-les-bains
-        Name: 'Thonon les bains'
+        Slug: thonon-les-bains-74
+        Name: 'Thonon les bains (74)'
         Introduction: null
         Description: null
     134_nl:
         Id: 134
         Locale: nl
-        Slug: thonon-les-bains
-        Name: 'Thonon les bains'
+        Slug: thonon-les-bains-74
+        Name: 'Thonon les bains (74)'
         Introduction: null
         Description: null
     135_de:
         Id: 135
         Locale: de
-        Slug: ondres
-        Name: Ondres
+        Slug: ondres-40
+        Name: 'Ondres (40)'
         Introduction: null
         Description: null
     135_en:
         Id: 135
         Locale: en
-        Slug: ondres
-        Name: Ondres
+        Slug: ondres-40
+        Name: 'Ondres (40)'
         Introduction: null
         Description: null
     135_fr:
         Id: 135
         Locale: fr
-        Slug: ondres
-        Name: Ondres
+        Slug: ondres-40
+        Name: 'Ondres (40)'
         Introduction: null
         Description: null
     135_nl:
         Id: 135
         Locale: nl
-        Slug: ondres
-        Name: Ondres
+        Slug: ondres-40
+        Name: 'Ondres (40)'
         Introduction: null
         Description: null
     136_de:
@@ -3810,29 +3810,29 @@
     137_de:
         Id: 137
         Locale: de
-        Slug: villecroze
-        Name: Villecroze
+        Slug: villecroze-83
+        Name: 'Villecroze (83)'
         Introduction: null
         Description: null
     137_en:
         Id: 137
         Locale: en
-        Slug: villecroze
-        Name: Villecroze
+        Slug: villecroze-83
+        Name: 'Villecroze (83)'
         Introduction: null
         Description: null
     137_fr:
         Id: 137
         Locale: fr
-        Slug: villecroze
-        Name: Villecroze
+        Slug: villecroze-83
+        Name: 'Villecroze (83)'
         Introduction: null
         Description: null
     137_nl:
         Id: 137
         Locale: nl
-        Slug: villecroze
-        Name: Villecroze
+        Slug: villecroze-83
+        Name: 'Villecroze (83)'
         Introduction: null
         Description: null
     138_de:
@@ -4370,29 +4370,29 @@
     157_de:
         Id: 157
         Locale: de
-        Slug: cavalino
-        Name: Cavalino
+        Slug: cavallino
+        Name: Cavallino
         Introduction: null
         Description: null
     157_en:
         Id: 157
         Locale: en
-        Slug: cavalino
-        Name: Cavalino
+        Slug: cavallino
+        Name: Cavallino
         Introduction: null
         Description: null
     157_fr:
         Id: 157
         Locale: fr
-        Slug: cavalino
-        Name: Cavalino
+        Slug: cavallino
+        Name: Cavallino
         Introduction: null
         Description: null
     157_nl:
         Id: 157
         Locale: nl
-        Slug: cavalino
-        Name: Cavalino
+        Slug: cavallino
+        Name: Cavallino
         Introduction: null
         Description: null
     158_de:
@@ -4454,29 +4454,29 @@
     160_de:
         Id: 160
         Locale: de
-        Slug: bieshem-68
-        Name: 'Bieshem (68)'
+        Slug: biesheim-68
+        Name: 'Biesheim (68)'
         Introduction: null
         Description: null
     160_en:
         Id: 160
         Locale: en
-        Slug: bieshem-68
-        Name: 'Bieshem (68)'
+        Slug: biesheim-68
+        Name: 'Biesheim (68)'
         Introduction: null
         Description: null
     160_fr:
         Id: 160
         Locale: fr
-        Slug: bieshem-68
-        Name: 'Bieshem (68)'
+        Slug: biesheim-68
+        Name: 'Biesheim (68)'
         Introduction: null
         Description: null
     160_nl:
         Id: 160
         Locale: nl
-        Slug: bieshem-68
-        Name: 'Bieshem (68)'
+        Slug: biesheim-68
+        Name: 'Biesheim (68)'
         Introduction: null
         Description: null
     161_de:
@@ -4701,5 +4701,61 @@
         Locale: nl
         Slug: cesenatico
         Name: Cesenatico
+        Introduction: null
+        Description: null
+    169_de:
+        Id: 169
+        Locale: de
+        Slug: quinson-04
+        Name: 'Quinson (04)'
+        Introduction: null
+        Description: null
+    169_en:
+        Id: 169
+        Locale: en
+        Slug: quinson-04
+        Name: 'Quinson (04)'
+        Introduction: null
+        Description: null
+    169_fr:
+        Id: 169
+        Locale: fr
+        Slug: quinson-04
+        Name: 'Quinson (04)'
+        Introduction: null
+        Description: null
+    169_nl:
+        Id: 169
+        Locale: nl
+        Slug: quinson-04
+        Name: 'Quinson (04)'
+        Introduction: null
+        Description: null
+    170_de:
+        Id: 170
+        Locale: de
+        Slug: pres-du-verdon-04
+        Name: 'Près du Verdon (04)'
+        Introduction: null
+        Description: null
+    170_en:
+        Id: 170
+        Locale: en
+        Slug: pres-du-verdon-04
+        Name: 'Près du Verdon (04)'
+        Introduction: null
+        Description: null
+    170_fr:
+        Id: 170
+        Locale: fr
+        Slug: pres-du-verdon-04
+        Name: 'Près du Verdon (04)'
+        Introduction: null
+        Description: null
+    170_nl:
+        Id: 170
+        Locale: nl
+        Slug: pres-du-verdon-04
+        Name: 'Près du Verdon (04)'
         Introduction: null
         Description: null

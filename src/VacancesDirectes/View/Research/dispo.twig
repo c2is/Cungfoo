@@ -6,6 +6,9 @@
 {% block bodyClass %}result{% endblock %}
 
 {% block leftColumn %}
+    <h1 itemprop="name">
+        {{ h1 }}
+    </h1>
     {% if list.element|length > 0 %}
     {% include 'Listing/_filters.twig' %}
     {% endif %}

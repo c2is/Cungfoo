@@ -6,6 +6,8 @@
         {{ "seo.title.region" | trans ({'%region%': item}) }}
     {% elseif destination == constant("VacancesDirectes\\Controller\\DestinationController::DESTINATION_PAYS") %}
         {{ "seo.title.pays" | trans ({'%pays%': item}) }}
+    {% elseif destination == constant("VacancesDirectes\\Controller\\DestinationController::DESTINATION_VILLE") %}
+        {{ "seo.title.ville" | trans ({'%ville%': item}) }}
     {% endif %}
 {% endspaceless %}
 {% endblock %}
@@ -16,6 +18,8 @@
         {{ "seo.meta.region" | trans  ({'%region%': item, '%pays%': item.pays})}}
     {% elseif destination == constant("VacancesDirectes\\Controller\\DestinationController::DESTINATION_PAYS") %}
         {{ "seo.meta.pays" | trans  ({'%pays%': item})}}
+    {% elseif destination == constant("VacancesDirectes\\Controller\\DestinationController::DESTINATION_VILLE") %}
+        {{ "seo.meta.ville" | trans  ({'%ville%': item, '%region%': item.region})}}
     {% endif %}
 {% endspaceless %}
 {% endblock %}
