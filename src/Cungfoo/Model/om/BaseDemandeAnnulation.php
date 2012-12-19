@@ -102,18 +102,6 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
     protected $assure_telephone;
 
     /**
-     * The value for the montant_sejour_camping field.
-     * @var        string
-     */
-    protected $montant_sejour_camping;
-
-    /**
-     * The value for the montant_verse_camping field.
-     * @var        string
-     */
-    protected $montant_verse_camping;
-
-    /**
      * The value for the camping_id field.
      * @var        int
      */
@@ -124,6 +112,18 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
      * @var        string
      */
     protected $camping_num_resa;
+
+    /**
+     * The value for the camping_montant_sejour field.
+     * @var        string
+     */
+    protected $camping_montant_sejour;
+
+    /**
+     * The value for the camping_montant_verse field.
+     * @var        string
+     */
+    protected $camping_montant_verse;
 
     /**
      * The value for the sinistre_nature field.
@@ -295,26 +295,6 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
     }
 
     /**
-     * Get the [montant_sejour_camping] column value.
-     *
-     * @return string
-     */
-    public function getMontantSejourCamping()
-    {
-        return $this->montant_sejour_camping;
-    }
-
-    /**
-     * Get the [montant_verse_camping] column value.
-     *
-     * @return string
-     */
-    public function getMontantVerseCamping()
-    {
-        return $this->montant_verse_camping;
-    }
-
-    /**
      * Get the [camping_id] column value.
      *
      * @return int
@@ -332,6 +312,26 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
     public function getCampingNumResa()
     {
         return $this->camping_num_resa;
+    }
+
+    /**
+     * Get the [camping_montant_sejour] column value.
+     *
+     * @return string
+     */
+    public function getCampingMontantSejour()
+    {
+        return $this->camping_montant_sejour;
+    }
+
+    /**
+     * Get the [camping_montant_verse] column value.
+     *
+     * @return string
+     */
+    public function getCampingMontantVerse()
+    {
+        return $this->camping_montant_verse;
     }
 
     /**
@@ -702,48 +702,6 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
     } // setAssureTelephone()
 
     /**
-     * Set the value of [montant_sejour_camping] column.
-     *
-     * @param string $v new value
-     * @return DemandeAnnulation The current object (for fluent API support)
-     */
-    public function setMontantSejourCamping($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->montant_sejour_camping !== $v) {
-            $this->montant_sejour_camping = $v;
-            $this->modifiedColumns[] = DemandeAnnulationPeer::MONTANT_SEJOUR_CAMPING;
-        }
-
-
-        return $this;
-    } // setMontantSejourCamping()
-
-    /**
-     * Set the value of [montant_verse_camping] column.
-     *
-     * @param string $v new value
-     * @return DemandeAnnulation The current object (for fluent API support)
-     */
-    public function setMontantVerseCamping($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->montant_verse_camping !== $v) {
-            $this->montant_verse_camping = $v;
-            $this->modifiedColumns[] = DemandeAnnulationPeer::MONTANT_VERSE_CAMPING;
-        }
-
-
-        return $this;
-    } // setMontantVerseCamping()
-
-    /**
      * Set the value of [camping_id] column.
      *
      * @param int $v new value
@@ -788,6 +746,48 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
 
         return $this;
     } // setCampingNumResa()
+
+    /**
+     * Set the value of [camping_montant_sejour] column.
+     *
+     * @param string $v new value
+     * @return DemandeAnnulation The current object (for fluent API support)
+     */
+    public function setCampingMontantSejour($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->camping_montant_sejour !== $v) {
+            $this->camping_montant_sejour = $v;
+            $this->modifiedColumns[] = DemandeAnnulationPeer::CAMPING_MONTANT_SEJOUR;
+        }
+
+
+        return $this;
+    } // setCampingMontantSejour()
+
+    /**
+     * Set the value of [camping_montant_verse] column.
+     *
+     * @param string $v new value
+     * @return DemandeAnnulation The current object (for fluent API support)
+     */
+    public function setCampingMontantVerse($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->camping_montant_verse !== $v) {
+            $this->camping_montant_verse = $v;
+            $this->modifiedColumns[] = DemandeAnnulationPeer::CAMPING_MONTANT_VERSE;
+        }
+
+
+        return $this;
+    } // setCampingMontantVerse()
 
     /**
      * Set the value of [sinistre_nature] column.
@@ -1054,10 +1054,10 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
             $this->assure_pays = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
             $this->assure_mail = ($row[$startcol + 7] !== null) ? (string) $row[$startcol + 7] : null;
             $this->assure_telephone = ($row[$startcol + 8] !== null) ? (string) $row[$startcol + 8] : null;
-            $this->montant_sejour_camping = ($row[$startcol + 9] !== null) ? (string) $row[$startcol + 9] : null;
-            $this->montant_verse_camping = ($row[$startcol + 10] !== null) ? (string) $row[$startcol + 10] : null;
-            $this->camping_id = ($row[$startcol + 11] !== null) ? (int) $row[$startcol + 11] : null;
-            $this->camping_num_resa = ($row[$startcol + 12] !== null) ? (string) $row[$startcol + 12] : null;
+            $this->camping_id = ($row[$startcol + 9] !== null) ? (int) $row[$startcol + 9] : null;
+            $this->camping_num_resa = ($row[$startcol + 10] !== null) ? (string) $row[$startcol + 10] : null;
+            $this->camping_montant_sejour = ($row[$startcol + 11] !== null) ? (string) $row[$startcol + 11] : null;
+            $this->camping_montant_verse = ($row[$startcol + 12] !== null) ? (string) $row[$startcol + 12] : null;
             $this->sinistre_nature = ($row[$startcol + 13] !== null) ? (int) $row[$startcol + 13] : null;
             $this->sinistre_suite = ($row[$startcol + 14] !== null) ? (int) $row[$startcol + 14] : null;
             $this->sinistre_date = ($row[$startcol + 15] !== null) ? (string) $row[$startcol + 15] : null;
@@ -1342,17 +1342,17 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
         if ($this->isColumnModified(DemandeAnnulationPeer::ASSURE_TELEPHONE)) {
             $modifiedColumns[':p' . $index++]  = '`assure_telephone`';
         }
-        if ($this->isColumnModified(DemandeAnnulationPeer::MONTANT_SEJOUR_CAMPING)) {
-            $modifiedColumns[':p' . $index++]  = '`montant_sejour_camping`';
-        }
-        if ($this->isColumnModified(DemandeAnnulationPeer::MONTANT_VERSE_CAMPING)) {
-            $modifiedColumns[':p' . $index++]  = '`montant_verse_camping`';
-        }
         if ($this->isColumnModified(DemandeAnnulationPeer::CAMPING_ID)) {
             $modifiedColumns[':p' . $index++]  = '`camping_id`';
         }
         if ($this->isColumnModified(DemandeAnnulationPeer::CAMPING_NUM_RESA)) {
             $modifiedColumns[':p' . $index++]  = '`camping_num_resa`';
+        }
+        if ($this->isColumnModified(DemandeAnnulationPeer::CAMPING_MONTANT_SEJOUR)) {
+            $modifiedColumns[':p' . $index++]  = '`camping_montant_sejour`';
+        }
+        if ($this->isColumnModified(DemandeAnnulationPeer::CAMPING_MONTANT_VERSE)) {
+            $modifiedColumns[':p' . $index++]  = '`camping_montant_verse`';
         }
         if ($this->isColumnModified(DemandeAnnulationPeer::SINISTRE_NATURE)) {
             $modifiedColumns[':p' . $index++]  = '`sinistre_nature`';
@@ -1422,17 +1422,17 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
                     case '`assure_telephone`':
                         $stmt->bindValue($identifier, $this->assure_telephone, PDO::PARAM_STR);
                         break;
-                    case '`montant_sejour_camping`':
-                        $stmt->bindValue($identifier, $this->montant_sejour_camping, PDO::PARAM_STR);
-                        break;
-                    case '`montant_verse_camping`':
-                        $stmt->bindValue($identifier, $this->montant_verse_camping, PDO::PARAM_STR);
-                        break;
                     case '`camping_id`':
                         $stmt->bindValue($identifier, $this->camping_id, PDO::PARAM_INT);
                         break;
                     case '`camping_num_resa`':
                         $stmt->bindValue($identifier, $this->camping_num_resa, PDO::PARAM_STR);
+                        break;
+                    case '`camping_montant_sejour`':
+                        $stmt->bindValue($identifier, $this->camping_montant_sejour, PDO::PARAM_STR);
+                        break;
+                    case '`camping_montant_verse`':
+                        $stmt->bindValue($identifier, $this->camping_montant_verse, PDO::PARAM_STR);
                         break;
                     case '`sinistre_nature`':
                         $stmt->bindValue($identifier, $this->sinistre_nature, PDO::PARAM_INT);
@@ -1638,16 +1638,16 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
                 return $this->getAssureTelephone();
                 break;
             case 9:
-                return $this->getMontantSejourCamping();
-                break;
-            case 10:
-                return $this->getMontantVerseCamping();
-                break;
-            case 11:
                 return $this->getCampingId();
                 break;
-            case 12:
+            case 10:
                 return $this->getCampingNumResa();
+                break;
+            case 11:
+                return $this->getCampingMontantSejour();
+                break;
+            case 12:
+                return $this->getCampingMontantVerse();
                 break;
             case 13:
                 return $this->getSinistreNature();
@@ -1717,10 +1717,10 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
             $keys[6] => $this->getAssurePays(),
             $keys[7] => $this->getAssureMail(),
             $keys[8] => $this->getAssureTelephone(),
-            $keys[9] => $this->getMontantSejourCamping(),
-            $keys[10] => $this->getMontantVerseCamping(),
-            $keys[11] => $this->getCampingId(),
-            $keys[12] => $this->getCampingNumResa(),
+            $keys[9] => $this->getCampingId(),
+            $keys[10] => $this->getCampingNumResa(),
+            $keys[11] => $this->getCampingMontantSejour(),
+            $keys[12] => $this->getCampingMontantVerse(),
             $keys[13] => $this->getSinistreNature(),
             $keys[14] => $this->getSinistreSuite(),
             $keys[15] => $this->getSinistreDate(),
@@ -1798,16 +1798,16 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
                 $this->setAssureTelephone($value);
                 break;
             case 9:
-                $this->setMontantSejourCamping($value);
-                break;
-            case 10:
-                $this->setMontantVerseCamping($value);
-                break;
-            case 11:
                 $this->setCampingId($value);
                 break;
-            case 12:
+            case 10:
                 $this->setCampingNumResa($value);
+                break;
+            case 11:
+                $this->setCampingMontantSejour($value);
+                break;
+            case 12:
+                $this->setCampingMontantVerse($value);
                 break;
             case 13:
                 $valueSet = DemandeAnnulationPeer::getValueSet(DemandeAnnulationPeer::SINISTRE_NATURE);
@@ -1880,10 +1880,10 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
         if (array_key_exists($keys[6], $arr)) $this->setAssurePays($arr[$keys[6]]);
         if (array_key_exists($keys[7], $arr)) $this->setAssureMail($arr[$keys[7]]);
         if (array_key_exists($keys[8], $arr)) $this->setAssureTelephone($arr[$keys[8]]);
-        if (array_key_exists($keys[9], $arr)) $this->setMontantSejourCamping($arr[$keys[9]]);
-        if (array_key_exists($keys[10], $arr)) $this->setMontantVerseCamping($arr[$keys[10]]);
-        if (array_key_exists($keys[11], $arr)) $this->setCampingId($arr[$keys[11]]);
-        if (array_key_exists($keys[12], $arr)) $this->setCampingNumResa($arr[$keys[12]]);
+        if (array_key_exists($keys[9], $arr)) $this->setCampingId($arr[$keys[9]]);
+        if (array_key_exists($keys[10], $arr)) $this->setCampingNumResa($arr[$keys[10]]);
+        if (array_key_exists($keys[11], $arr)) $this->setCampingMontantSejour($arr[$keys[11]]);
+        if (array_key_exists($keys[12], $arr)) $this->setCampingMontantVerse($arr[$keys[12]]);
         if (array_key_exists($keys[13], $arr)) $this->setSinistreNature($arr[$keys[13]]);
         if (array_key_exists($keys[14], $arr)) $this->setSinistreSuite($arr[$keys[14]]);
         if (array_key_exists($keys[15], $arr)) $this->setSinistreDate($arr[$keys[15]]);
@@ -1914,10 +1914,10 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
         if ($this->isColumnModified(DemandeAnnulationPeer::ASSURE_PAYS)) $criteria->add(DemandeAnnulationPeer::ASSURE_PAYS, $this->assure_pays);
         if ($this->isColumnModified(DemandeAnnulationPeer::ASSURE_MAIL)) $criteria->add(DemandeAnnulationPeer::ASSURE_MAIL, $this->assure_mail);
         if ($this->isColumnModified(DemandeAnnulationPeer::ASSURE_TELEPHONE)) $criteria->add(DemandeAnnulationPeer::ASSURE_TELEPHONE, $this->assure_telephone);
-        if ($this->isColumnModified(DemandeAnnulationPeer::MONTANT_SEJOUR_CAMPING)) $criteria->add(DemandeAnnulationPeer::MONTANT_SEJOUR_CAMPING, $this->montant_sejour_camping);
-        if ($this->isColumnModified(DemandeAnnulationPeer::MONTANT_VERSE_CAMPING)) $criteria->add(DemandeAnnulationPeer::MONTANT_VERSE_CAMPING, $this->montant_verse_camping);
         if ($this->isColumnModified(DemandeAnnulationPeer::CAMPING_ID)) $criteria->add(DemandeAnnulationPeer::CAMPING_ID, $this->camping_id);
         if ($this->isColumnModified(DemandeAnnulationPeer::CAMPING_NUM_RESA)) $criteria->add(DemandeAnnulationPeer::CAMPING_NUM_RESA, $this->camping_num_resa);
+        if ($this->isColumnModified(DemandeAnnulationPeer::CAMPING_MONTANT_SEJOUR)) $criteria->add(DemandeAnnulationPeer::CAMPING_MONTANT_SEJOUR, $this->camping_montant_sejour);
+        if ($this->isColumnModified(DemandeAnnulationPeer::CAMPING_MONTANT_VERSE)) $criteria->add(DemandeAnnulationPeer::CAMPING_MONTANT_VERSE, $this->camping_montant_verse);
         if ($this->isColumnModified(DemandeAnnulationPeer::SINISTRE_NATURE)) $criteria->add(DemandeAnnulationPeer::SINISTRE_NATURE, $this->sinistre_nature);
         if ($this->isColumnModified(DemandeAnnulationPeer::SINISTRE_SUITE)) $criteria->add(DemandeAnnulationPeer::SINISTRE_SUITE, $this->sinistre_suite);
         if ($this->isColumnModified(DemandeAnnulationPeer::SINISTRE_DATE)) $criteria->add(DemandeAnnulationPeer::SINISTRE_DATE, $this->sinistre_date);
@@ -1999,10 +1999,10 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
         $copyObj->setAssurePays($this->getAssurePays());
         $copyObj->setAssureMail($this->getAssureMail());
         $copyObj->setAssureTelephone($this->getAssureTelephone());
-        $copyObj->setMontantSejourCamping($this->getMontantSejourCamping());
-        $copyObj->setMontantVerseCamping($this->getMontantVerseCamping());
         $copyObj->setCampingId($this->getCampingId());
         $copyObj->setCampingNumResa($this->getCampingNumResa());
+        $copyObj->setCampingMontantSejour($this->getCampingMontantSejour());
+        $copyObj->setCampingMontantVerse($this->getCampingMontantVerse());
         $copyObj->setSinistreNature($this->getSinistreNature());
         $copyObj->setSinistreSuite($this->getSinistreSuite());
         $copyObj->setSinistreDate($this->getSinistreDate());
@@ -2137,10 +2137,10 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
         $this->assure_pays = null;
         $this->assure_mail = null;
         $this->assure_telephone = null;
-        $this->montant_sejour_camping = null;
-        $this->montant_verse_camping = null;
         $this->camping_id = null;
         $this->camping_num_resa = null;
+        $this->camping_montant_sejour = null;
+        $this->camping_montant_verse = null;
         $this->sinistre_nature = null;
         $this->sinistre_suite = null;
         $this->sinistre_date = null;
