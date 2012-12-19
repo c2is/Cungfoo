@@ -37,203 +37,275 @@ class AnnulationType extends AppAwareType
             $campings[$camping['id']] = $camping['name'];
         }
 
-        $builder->add('nomAssure', 'text', array(
-                'label'         => 'annulation.nomAssure.label',
+        $builder->add('assureNom', 'text', array(
+                'label'         => 'annulation.assureNom.label',
                 'constraints'   => array(
                     new Assert\NotBlank(array(
-                        'message' => 'annulation.nomAssure.not_blank'
+                        'message' => 'annulation.assureNom.not_blank'
                     ))
                 )
             )
         );
-        $builder->add('prenomAssure', 'text', array(
-                'label'         => 'annulation.prenomAssure.label',
+        $builder->add('assurePrenom', 'text', array(
+                'label'         => 'annulation.assurePrenom.label',
                 'constraints'   => array(
                     new Assert\NotBlank(array(
-                        'message' => 'annulation.prenomAssure.not_blank'
+                        'message' => 'annulation.assurePrenom.not_blank'
                     ))
                 )
             )
         );
-        $builder->add('adresseAssure', 'text', array(
-                'label'         => 'annulation.adresseAssure.label',
+        $builder->add('assureAdresse', 'text', array(
+                'label'         => 'annulation.assureAdresse.label',
                 'constraints'   => array(
                     new Assert\NotBlank(array(
-                        'message' => 'annulation.adresseAssure.not_blank'
+                        'message' => 'annulation.assureAdresse.not_blank'
                     ))
                 )
             )
         );
-        $builder->add('codePostalAssure', 'text', array(
-                'label'         => 'annulation.codePostalAssure.label',
+        $builder->add('assureCodePostal', 'text', array(
+                'label'         => 'annulation.assureCodePostal.label',
                 'constraints'   => array(
                     new Assert\NotBlank(array(
-                        'message' => 'annulation.codePostalAssure.not_blank'
+                        'message' => 'annulation.assureCodePostal.not_blank'
                     ))
                 )
             )
         );
-        $builder->add('villeAssure', 'text', array(
-                'label'         => 'annulation.villeAssure.label',
+        $builder->add('assureVille', 'text', array(
+                'label'         => 'annulation.assureVille.label',
                 'constraints'   => array(
                     new Assert\NotBlank(array(
-                        'message' => 'annulation.villeAssure.not_blank'
+                        'message' => 'annulation.assureVille.not_blank'
                     ))
                 )
             )
         );
-        $builder->add('paysAssure', 'choice', array(
-                'label'         => 'annulation.paysAssure.label',
+        $builder->add('assurePays', 'choice', array(
+                'label'         => 'annulation.assurePays.label',
                 'choices'       => $formConfig['pays'],
-                'empty_value'   => 'annulation.paysAssure.empty_value',
+                'empty_value'   => 'annulation.assurePays.empty_value',
                 'constraints'   => array(
                     new Assert\NotBlank(array(
-                        'message' => 'annulation.paysAssure.not_blank'
+                        'message' => 'annulation.assurePays.not_blank'
                     )),
                     new Assert\Choice(array(
                         'choices' => $formConfig['pays'],
-                        'message' => 'annulation.paysAssure.choice'
+                        'message' => 'annulation.assurePays.choice'
                     ))
                 )
             )
         );
-        $builder->add('emailAssure', 'text', array(
-                'label'         => 'annulation.emailAssure.label',
+        $builder->add('assureMail', 'text', array(
+                'label'         => 'annulation.assureMail.label',
                 'constraints'   => array(
                     new Assert\NotBlank(array(
-                        'message' => 'annulation.emailAssure.not_blank'
+                        'message' => 'annulation.assureMail.not_blank'
                     )),
                     new Assert\Email(array(
-                        'message' => 'annulation.emailAssure.email'
+                        'message' => 'annulation.assureMail.mail'
                     ))
                 )
             )
         );
-        $builder->add('telephoneAssure', 'text', array(
-                'label'         => 'annulation.telephoneAssure.label',
+        $builder->add('assureTelephone', 'text', array(
+                'label'         => 'annulation.assureTelephone.label',
                 'constraints'   => array(
                     new Assert\NotBlank(array(
-                        'message' => 'annulation.telephoneAssure.not_blank'
+                        'message' => 'annulation.assureTelephone.not_blank'
                     ))
                 )
             )
         );
-        $builder->add('montantSejourCamping', 'text', array(
-                'label'         => 'annulation.montantSejourCamping.label',
+        $builder->add('campingMontantSejour', 'text', array(
+                'label'         => 'annulation.campingMontantSejour.label',
                 'constraints'   => array(
                     new Assert\NotBlank(array(
-                        'message' => 'annulation.montantSejourCamping.not_blank'
+                        'message' => 'annulation.campingMontantSejour.not_blank'
                     ))
                 )
             )
         );
-        $builder->add('montantVerseCamping', 'text', array(
-                'label'         => 'annulation.montantVerseCamping.label',
+        $builder->add('campingMontantVerse', 'text', array(
+                'label'         => 'annulation.campingMontantVerse.label',
                 'constraints'   => array(
                     new Assert\NotBlank(array(
-                        'message' => 'annulation.montantVerseCamping.not_blank'
+                        'message' => 'annulation.campingMontantVerse.not_blank'
                     ))
                 )
             )
         );
-        $builder->add('nomCamping', 'choice', array(
-                'label'         => 'annulation.nomCamping.label',
+        $builder->add('campingNom', 'choice', array(
+                'label'         => 'annulation.campingNom.label',
                 'choices'       => $campings,
-                'empty_value'   => 'annulation.nomCamping.empty_value',
+                'empty_value'   => 'annulation.campingNom.empty_value',
                 'constraints'   => array(
                     new Assert\NotBlank(array(
-                        'message' => 'annulation.nomCamping.not_blank'
+                        'message' => 'annulation.campingNom.not_blank'
                     )),
                     new Assert\Choice(array(
                         'choices' => array_values(array_flip($campings)),
-                        'message' => 'annulation.nomCamping.choice'
+                        'message' => 'annulation.campingNom.choice'
                     ))
                 )
             )
         );
-        $builder->add('departementCamping', 'text', array(
-                'label'         => 'annulation.departementCamping.label',
+        $builder->add('campingNumResa', 'text', array(
+                'label'         => 'annulation.campingNumResa.label',
                 'constraints'   => array(
                     new Assert\NotBlank(array(
-                        'message' => 'annulation.departementCamping.not_blank'
+                        'message' => 'annulation.campingNumResa.not_blank'
                     ))
                 )
             )
         );
-        $builder->add('numResaCamping', 'text', array(
-                'label'         => 'annulation.numResaCamping.label',
-                'constraints'   => array(
-                    new Assert\NotBlank(array(
-                        'message' => 'annulation.numResaCamping.not_blank'
-                    ))
-                )
-            )
-        );
-        $builder->add('natureSinistre', 'choice', array(
-                'label'         => 'annulation.natureSinistre.label',
+        $builder->add('sinistreNature', 'choice', array(
+                'label'         => 'annulation.sinistreNature.label',
                 'choices'       => $formConfig['naturesSinistre'],
                 'expanded'      => true,
                 'multiple'      => false,
                 'constraints'   => array(
                     new Assert\NotBlank(array(
-                        'message' => 'annulation.natureSinistre.not_blank'
+                        'message' => 'annulation.sinistreNature.not_blank'
                     )),
                     new Assert\Choice(array(
                         'choices' => array_values(array_flip($formConfig['naturesSinistre'])),
-                        'message' => 'annulation.natureSinistre.choice'
+                        'message' => 'annulation.sinistreNature.choice'
                     ))
                 )
             )
         );
-        $builder->add('suiteSinistre', 'choice', array(
-                'label'         => 'annulation.suiteSinistre.label',
+        $builder->add('sinistreSuite', 'choice', array(
+                'label'         => 'annulation.sinistreSuite.label',
                 'choices'       => $formConfig['suitesSinistre'],
                 'expanded'      => true,
                 'multiple'      => false,
                 'constraints'   => array(
                     new Assert\NotBlank(array(
-                        'message' => 'annulation.suiteSinistre.not_blank'
+                        'message' => 'annulation.sinistreSuite.not_blank'
                     )),
                     new Assert\Choice(array(
                         'choices' => array_values(array_flip($formConfig['suitesSinistre'])),
-                        'message' => 'annulation.suiteSinistre.choice'
+                        'message' => 'annulation.sinistreSuite.choice'
                     ))
                 )
             )
         );
-        $builder->add('dateSinistre', 'date', array(
-                'label'         => 'annulation.dateSinistre.label',
+        $builder->add('sinistreDate', 'date', array(
+                'label'         => 'annulation.sinistreDate.label',
                 'widget'        => 'single_text',
                 'input'         => 'string',
                 'format'        => 'dd/MM/yyyy',
                 'constraints'   => array(
                     new Assert\NotBlank(array(
-                        'message' => 'annulation.dateSinistre.not_blank'
+                        'message' => 'annulation.sinistreDate.not_blank'
                     )),
                     new Assert\Date(array(
-                        'message' => 'annulation.dateSinistre.date'
+                        'message' => 'annulation.sinistreDate.date'
                     ))
                 )
             )
         );
-        $builder->add('resumeSinistre', 'textarea', array(
-                'label'         => 'annulation.resumeSinistre.label',
+        $builder->add('sinistreResume', 'textarea', array(
+                'label'         => 'annulation.sinistreResume.label',
                 'constraints'   => array(
                     new Assert\NotBlank(array(
-                        'message' => 'annulation.resumeSinistre.not_blank'
+                        'message' => 'annulation.sinistreResume.not_blank'
                     ))
                 )
             )
         );
-        $builder->add('piecesJointes', 'collection', array(
-                'type'       => 'file',
-                'allow_add'  => true,
-                'prototype'  => true,
-                'required'   => false,
-                'attr'       => array(
-                    'accept' => 'image/*',
-                    'required'   => false,
-                ),
+        $builder->add('file1', 'file', array(
+                'required'      => false,
+                'constraints'   => array(
+                    new Assert\File(array(
+                        'maxSize' => '2048k',
+                        'mimeTypes' => array(
+                            'application/pdf',
+                            'application/x-pdf',
+                            'application/msword',
+                            'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+                            'image/png',
+                            'image/jpeg'
+                        ),
+                        'mimeTypesMessage'              => 'annulation.mimeTypesMessage',
+                        'notFoundMessage'               => 'annulation.notFoundMessage',
+                        'notReadableMessage'            => 'annulation.notReadableMessage',
+                        'uploadIniSizeErrorMessage'     => 'annulation.uploadIniSizeErrorMessage',
+                        'uploadFormSizeErrorMessage'    => 'annulation.uploadFormSizeErrorMessage',
+                        'uploadErrorMessage'            => 'annulation.uploadErrorMessage',
+                    ))
+                )
+            )
+        );
+        $builder->add('file2', 'file', array(
+                'required'      => false,
+                'constraints'   => array(
+                    new Assert\File(array(
+                        'maxSize' => '2048k',
+                        'mimeTypes' => array(
+                            'application/pdf',
+                            'application/x-pdf',
+                            'application/msword',
+                            'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+                            'image/png',
+                            'image/jpeg'
+                        ),
+                        'mimeTypesMessage'              => 'annulation.mimeTypesMessage',
+                        'notFoundMessage'               => 'annulation.notFoundMessage',
+                        'notReadableMessage'            => 'annulation.notReadableMessage',
+                        'uploadIniSizeErrorMessage'     => 'annulation.uploadIniSizeErrorMessage',
+                        'uploadFormSizeErrorMessage'    => 'annulation.uploadFormSizeErrorMessage',
+                        'uploadErrorMessage'            => 'annulation.uploadErrorMessage',
+                    ))
+                )
+            )
+        );
+        $builder->add('file3', 'file', array(
+                'required'      => false,
+                'constraints'   => array(
+                    new Assert\File(array(
+                        'maxSize' => '2048k',
+                        'mimeTypes' => array(
+                            'application/pdf',
+                            'application/x-pdf',
+                            'application/msword',
+                            'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+                            'image/png',
+                            'image/jpeg'
+                        ),
+                        'mimeTypesMessage'              => 'annulation.mimeTypesMessage',
+                        'notFoundMessage'               => 'annulation.notFoundMessage',
+                        'notReadableMessage'            => 'annulation.notReadableMessage',
+                        'uploadIniSizeErrorMessage'     => 'annulation.uploadIniSizeErrorMessage',
+                        'uploadFormSizeErrorMessage'    => 'annulation.uploadFormSizeErrorMessage',
+                        'uploadErrorMessage'            => 'annulation.uploadErrorMessage',
+                    ))
+                )
+            )
+        );
+        $builder->add('file4', 'file', array(
+                'required'      => false,
+                'constraints'   => array(
+                    new Assert\File(array(
+                        'maxSize' => '2048k',
+                        'mimeTypes' => array(
+                            'application/pdf',
+                            'application/x-pdf',
+                            'application/msword',
+                            'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+                            'image/png',
+                            'image/jpeg'
+                        ),
+                        'mimeTypesMessage'              => 'annulation.mimeTypesMessage',
+                        'notFoundMessage'               => 'annulation.notFoundMessage',
+                        'notReadableMessage'            => 'annulation.notReadableMessage',
+                        'uploadIniSizeErrorMessage'     => 'annulation.uploadIniSizeErrorMessage',
+                        'uploadFormSizeErrorMessage'    => 'annulation.uploadFormSizeErrorMessage',
+                        'uploadErrorMessage'            => 'annulation.uploadErrorMessage',
+                    ))
+                )
             )
         );
         $builder->add('certifie', 'checkbox', array(
@@ -251,7 +323,7 @@ class AnnulationType extends AppAwareType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'VacancesDirectes\Form\Data\Annulation\AnnulationData',
+            'data_class' => 'Cungfoo\Model\DemandeAnnulation',
         ));
     }
 
