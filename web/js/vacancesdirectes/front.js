@@ -1761,13 +1761,7 @@ function openCrit() {
     });
 }
 
-
-/*
- * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
- *                      RANGE SLIDER
- * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
- */
-
+/* RANGE SLIDER */
 //attribution min/max prix pour le range slider
 function findMinMaxRange() {
     var allPrices = [];
