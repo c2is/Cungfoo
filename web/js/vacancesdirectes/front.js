@@ -42,6 +42,7 @@ if(nbVisible == undefined) {
  *                                              DOM ready
  * ///////////////////////////////////////////////////////////////////////////////////////////////////////////
  */
+
 $(function() {
 // ScrollTop onload (mobile) si il n'y a pas d'ancre
     if (/mobile/i.test(navigator.userAgent) && !location.hash) {
@@ -185,18 +186,18 @@ $(function() {
      */
 
     /*
-    if ( $('#accountBox').length ) {
-        $('#account').click(function(e){
-            $(this).next().toggle();
-            if ( $('#accountBox').is(':visible') ){
-                $('#header').css({zIndex:21});
-            }
-            else {
-                $('#header').css({zIndex:20});
-            }
-        });
-    }
-    */
+     if ( $('#accountBox').length ) {
+     $('#account').click(function(e){
+     $(this).next().toggle();
+     if ( $('#accountBox').is(':visible') ){
+     $('#header').css({zIndex:21});
+     }
+     else {
+     $('#header').css({zIndex:20});
+     }
+     });
+     }
+     */
 
     /*
      *  ############################################################
@@ -1084,6 +1085,13 @@ head.ready(function(){
  * ///////////////////////////////////////////////////////////////////////////////////////////////////////////
  */
 
+
+/*
+ * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+ *                       SEARCH ENGINE
+ * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+ */
+
 function countItem() {
     //console.log("################################## countItem()  ##################################");
     $('.spin-bt-down, .spin-bt-up').live('click', function(){
@@ -1133,7 +1141,6 @@ function switchSelect(){
         $selects = $button.parent().siblings(".newListSelected");
         var $buttonTitle = selectNum == 0 ? 'Campings' : 'Lieux de séjour';
         $button.children('span').text($buttonTitle);
-//        $button.attr('title',$buttonTitle);
         if(selectNum) {
             $button.css({backgroundPosition: "0 -270px"});
             $selects.eq(0).hide();
@@ -1151,9 +1158,8 @@ function switchSelect(){
 
 var toggleState = 0;
 function toggleSearchCriteria(){
-//    //console.log("################################## toggleSearchCriteria()  ##################################");
+    //console.log("################################## toggleSearchCriteria()  ##################################");
     $('.toggleButton').live('click', function(e){
-//        //console.log("----------------- toggleSearchCriteria() CLICK -----------------");
         toggleState = toggleState == 0 ? 1 : 0;
         $(this).parents('#searchBloc').toggleClass('opened');
         e.preventDefault();
@@ -1164,6 +1170,13 @@ function toggleSearchCriteria(){
         $container.stop().toggle();
     });
 }
+
+
+/*
+ * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+ *                          POPIN
+ * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+ */
 
 function openIframePopin(url){
     $.colorbox({href: url, iframe:true, fixed: true, width:'80%', height:'80%', close:"&times;"});
