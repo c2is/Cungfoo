@@ -1,9 +1,181 @@
 {% extends "Annulation/base.twig" %}
 
 {% block topLeftColumn %}
-<form action="{{ path('formulaire_annulation') }}" method="post" {{ form_enctype(annulationForm) }}>
-    {{ form_widget(annulationForm) }}
-
-    <input type="submit" name="annulationForm" />
+<form id="annulationForm" method="post" action="{{ app.request.getRequestURI() }}" novalidate {{ form_enctype(annulationForm) }}>
+    <fieldset>
+        <ol>
+            <li>
+                <div class="clear">
+                    {{ form_errors(annulationForm.nomAssure) }}
+                    {{ form_label(annulationForm.nomAssure) }}
+                    {{ form_widget(annulationForm.nomAssure) }}
+                </div>
+            </li>
+            <li>
+                <div class="clear">
+                    {{ form_errors(annulationForm.prenomAssure) }}
+                    {{ form_label(annulationForm.prenomAssure) }}
+                    {{ form_widget(annulationForm.prenomAssure) }}
+                </div>
+            </li>
+            <li>
+                <div class="clear">
+                    {{ form_errors(annulationForm.adresseAssure) }}
+                    {{ form_label(annulationForm.adresseAssure) }}
+                    {{ form_widget(annulationForm.adresseAssure) }}
+                </div>
+            </li>
+            <li>
+                <div class="clear">
+                    {{ form_errors(annulationForm.codePostalAssure) }}
+                    {{ form_label(annulationForm.codePostalAssure) }}
+                    {{ form_widget(annulationForm.codePostalAssure) }}
+                </div>
+            </li>
+            <li>
+                <div class="clear">
+                    {{ form_errors(annulationForm.villeAssure) }}
+                    {{ form_label(annulationForm.villeAssure) }}
+                    {{ form_widget(annulationForm.villeAssure) }}
+                </div>
+            </li>
+            <li>
+                <div class="clear">
+                    {{ form_errors(annulationForm.paysAssure) }}
+                    {{ form_label(annulationForm.paysAssure) }}
+                    {{ form_widget(annulationForm.paysAssure) }}
+                </div>
+            </li>
+            <li>
+                <div class="clear">
+                    {{ form_errors(annulationForm.emailAssure) }}
+                    {{ form_label(annulationForm.emailAssure) }}
+                    {{ form_widget(annulationForm.emailAssure) }}
+                </div>
+            </li>
+            <li>
+                <div class="clear">
+                    {{ form_errors(annulationForm.telephone) }}
+                    {{ form_label(annulationForm.telephone) }}
+                    {{ form_widget(annulationForm.telephone) }}
+                </div>
+            </li>
+            <li>
+                <div class="clear">
+                    {{ form_errors(annulationForm.montantSejourCamping) }}
+                    {{ form_label(annulationForm.montantSejourCamping) }}
+                    {{ form_widget(annulationForm.montantSejourCamping) }}
+                </div>
+            </li>
+            <li>
+                <div class="clear">
+                    {{ form_errors(annulationForm.montantVerseCamping) }}
+                    {{ form_label(annulationForm.montantVerseCamping) }}
+                    {{ form_widget(annulationForm.montantVerseCamping) }}
+                </div>
+            </li>
+            <li>
+                <div class="clear">
+                    {{ form_errors(annulationForm.nomCamping) }}
+                    {{ form_label(annulationForm.nomCamping) }}
+                    {{ form_widget(annulationForm.nomCamping) }}
+                </div>
+            </li>
+            <li>
+                <div class="clear">
+                    {{ form_errors(annulationForm.departementCamping) }}
+                    {{ form_label(annulationForm.departementCamping) }}
+                    {{ form_widget(annulationForm.departementCamping) }}
+                </div>
+            </li>
+            <li>
+                <div class="clear">
+                    {{ form_errors(annulationForm.numResaCamping) }}
+                    {{ form_label(annulationForm.numResaCamping) }}
+                    {{ form_widget(annulationForm.numResaCamping) }}
+                </div>
+            </li>
+            <li>
+                <div class="clear">
+                    {{ form_errors(annulationForm.natureSinistre) }}
+                    {{ form_label(annulationForm.natureSinistre) }}
+                    {{ form_widget(annulationForm.natureSinistre) }}
+                </div>
+            </li>
+            <li>
+                <div class="clear">
+                    {{ form_errors(annulationForm.suiteSinistre) }}
+                    {{ form_label(annulationForm.suiteSinistre) }}
+                    {{ form_widget(annulationForm.suiteSinistre) }}
+                </div>
+            </li>
+            <li>
+                <div class="clear">
+                    {{ form_errors(annulationForm.dateSinistre) }}
+                    {{ form_label(annulationForm.dateSinistre) }}
+                    {{ form_widget(annulationForm.dateSinistre) }}
+                </div>
+            </li>
+            <li>
+                <div class="clear">
+                    {{ form_errors(annulationForm.resumeSinistre) }}
+                    {{ form_label(annulationForm.resumeSinistre) }}
+                    {{ form_widget(annulationForm.resumeSinistre) }}
+                </div>
+            </li>
+            <li>
+                <div class="clear">
+                    {{ form_widget(annulationForm.piecesJointes) }}
+                    <ul id="pieces-jointes-list">
+                    {% for pieceJointe in annulationForm.piecesJointes %}
+                        <li>
+                            {{ form_errors(pieceJointe) }}
+                            {{ form_widget(pieceJointe) }}
+                        </li>
+                    {% endfor %}
+                    </ul>
+                    <a href="#" id="add-piece-jointe">Ajouter une pièce jointe</a>
+                </div>
+            </li>
+            <li>
+                <div class="clear">
+                    {{ form_errors(annulationForm.certifie) }}
+                    {{ form_label(annulationForm.certifie) }}
+                    {{ form_widget(annulationForm.certifie) }}
+                </div>
+            </li>
+            <li>
+                <button type="submit" class="bt sombre big" name="annulationForm">Envoyer</button>
+            </li>
+        </ol>
+        {{ form_rest(annulationForm) }}
+    </fieldset>
 </form>
+
+<script type="text/javascript">
+    var pjCount = {{ form.pieceJointes | length }} + 1;
+
+    head.ready(function() {
+        $('#add-piece-jointe').click(function() {
+            var pjList = $('#pieces-jointes-list');
+
+            var newWidget = $('#Annulation_piecesJointes').attr('data-prototype');
+            // replace the "__name__" used in the id and name of the prototype
+            // end name attribute looks like name="contact[emails][2]"
+            newWidget = newWidget.replace(/__name__label__/g, 'Pièce jointe ' + pjCount);
+            newWidget = newWidget.replace(/__name__/g, pjCount);
+            pjCount++;
+
+            // create a new list element and add it to the list
+            var newLi = $('<li></li>').html(newWidget);
+            newLi.appendTo($('#pieces-jointes-list'));
+
+            if(pjCount > 4) {
+                $('#add-piece-jointe').hide();
+            }
+
+            return false;
+        });
+    })
+</script>
 {% endblock %}

@@ -30,9 +30,11 @@ class AnnulationController implements ControllerProviderInterface
 
             $form = $app['form.factory']->create(new AnnulationType($app), new AnnulationData());
 
-            if ('POST' == $request->getMethod() && $this->request->request->has('annulationForm'))
+            if ('POST' == $request->getMethod() && $request->request->has('annulationForm'))
             {
-                $form->bindRequest($request);
+                $form->bindRequest($request);echo '<pre>';
+die(var_dump($form['piecesJointes']));
+                $form['piecesJointes']->getData();
 
                 if($form->isValid()) {
                     // TODO : envoi mail, enregistrement en base

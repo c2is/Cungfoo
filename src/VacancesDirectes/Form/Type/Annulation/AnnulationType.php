@@ -229,9 +229,10 @@ class AnnulationType extends AppAwareType
                 'type'       => 'file',
                 'allow_add'  => true,
                 'prototype'  => true,
-                'required'   => false
+                'required'   => false,
                 'attr'       => array(
                     'accept' => 'image/*',
+                    'required'   => false,
                 ),
             )
         );
