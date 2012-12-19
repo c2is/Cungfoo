@@ -60,9 +60,9 @@ Résumé des faits : {$annulationData->getSinistreResume()}
 eof;
 
                     $message = \Swift_Message::newInstance()
-                        ->setSubject('Un sujet')
-                        ->setFrom(array('g.manen@c2is.fr'))
-                        ->setTo(array('g.manen@c2is.fr'))
+                        ->setSubject($app['config']->get('globale')['demande_annulation']['sujet'])
+                        ->setFrom(array($app['config']->get('globale')['demande_annulation']['from_mail']) => $app['config']->get('globale')['demande_annulation']['from'])
+                        ->setTo(array($app['config']->get('globale')['demande_annulation']['mail']))
                         ->setBody($body)
                     ;
 
@@ -71,21 +71,20 @@ eof;
                     {
                         $message->attach(\Swift_Attachment::fromPath($uploadDir . $annulationData->getFile1()));
                     }
-                    if ($annulationData->getFile1())
+                    if ($annulationData->getFile2())
                     {
                         $message->attach(\Swift_Attachment::fromPath($uploadDir . $annulationData->getFile2()));
                     }
-                    if ($annulationData->getFile1())
+                    if ($annulationData->getFile3())
                     {
                         $message->attach(\Swift_Attachment::fromPath($uploadDir . $annulationData->getFile3()));
                     }
-                    if ($annulationData->getFile1())
+                    if ($annulationData->getFile4())
                     {
                         $message->attach(\Swift_Attachment::fromPath($uploadDir . $annulationData->getFile4()));
                     }
-echo '<pre>';
-                    die(var_dump($app['mailer']->send($message)));
-                    // TODO : enregistrement en base
+
+                    $app['mailer']->send($message);
                 }
             }
 
@@ -95,6 +94,22 @@ echo '<pre>';
             ));
         })
         ->bind('formulaire_annulation');
+
+        $controllers->match('/confirmation', function (Request $request) use ($app) {
+            // Formulaire de recherche
+            $searchEngine = new SearchEngine($app, $request);
+            $searchEngine->process();
+
+            if ($searchEngine->getRedirect())
+            {
+                return $app->redirect($searchEngine->getRedirect());
+            }
+
+            return $app->renderView('Annulation/confirmation.twig', array(
+                'searchForm'     => $searchEngine->getView(),
+            ));
+        })
+        ->bind('confirmation')
 
         return $controllers;
     }
