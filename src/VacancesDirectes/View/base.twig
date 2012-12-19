@@ -42,7 +42,7 @@
 </head>
 <body class="{% block bodyClass %}{% endblock %}">
     <header class="clear">
-        {% include "menu.twig" %}
+        {{ render(path('menu_principal', {currentRoute: app.request.get('_route')})) }}
         <div id="header" class="fixed-width clear">
             <div id="headerRight">
                 {#

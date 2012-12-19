@@ -91,4 +91,12 @@ class EtablissementPeer extends BaseEtablissementPeer
 
         return ($count == 1) ? $query->findOne() : $query->findActive();
     }
+
+    public static function getNbEtablissements()
+    {
+        return EtablissementQuery::create()
+            ->findActive()
+            ->count()
+        ;
+    }
 }

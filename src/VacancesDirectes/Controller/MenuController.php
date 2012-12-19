@@ -24,6 +24,28 @@ class MenuController implements ControllerProviderInterface
         // creates a new controller based on the default route
         $controllers = $app['controllers_factory'];
 
+        $controllers->get('/', function (Request $request) use ($app)
+        {
+            $menu = $app['config']->get('vd_menu');
+            foreach ($menu['items'] as $name => $options)
+            {
+                if (isset($options['countQuery']))
+                {
+                    $menu['items'][$name]['count'] = call_user_func($options['countQuery']);
+                }
+                else
+                {
+                    $menu['items'][$name]['count'] = null;
+                }
+            }
+
+            return $app['twig']->render('Menu/principal.twig', array(
+                'menu'         => $menu,
+                'currentRoute' => $request->get('currentRoute')
+            ));
+        })
+        ->bind('menu_principal');
+
         $controllers->get('/destinations', function () use ($app)
         {
             $searchForm = $app['form.factory']->create(new AutocompleteType($app));

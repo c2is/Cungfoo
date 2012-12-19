@@ -1,0 +1,14 @@
+<nav id="nav"><ul class="topnav fixed-width clear">
+    <li class="tab{% if currentRoute == "homepage" %} current{% endif %}">
+        <a id="home" href="{{ path( 'homepage' ) }}">
+            <img  src="{{ asset('images/vacancesdirectes/common/pict/home.png') }}" alt="{{ menu.title|trans }}">
+        </a>
+    </li>
+    {% for item in menu.items %}
+        <li class="tab{% if "destination" in currentRoute %} current{% endif %}">
+            <a>{{ item.title|trans }}{% if item.count is not null %} <small>({{ item.count }})</small>{% endif %}</a>
+            {{ render ( path ( item.route ) ) }}
+        </li>
+    {% endfor %}
+    </ul>
+</nav>
