@@ -15,6 +15,7 @@ var
 //switch select of search engine
     selectNum = 0,
 //resultCrit
+    paginationAfterRange = false,
     list = $('#results'),                                   // la liste a trier
     items = list.find('.itemResult'),                       // les items de cette liste
     minPrice,                                               // le prix minimum de la liste
@@ -41,6 +42,7 @@ if(nbVisible == undefined) {
  *                                              DOM ready
  * ///////////////////////////////////////////////////////////////////////////////////////////////////////////
  */
+
 $(function() {
 // ScrollTop onload (mobile) si il n'y a pas d'ancre
     if (/mobile/i.test(navigator.userAgent) && !location.hash) {
@@ -175,6 +177,310 @@ $(function() {
             }
         });
     }
+
+
+    /*
+     *  ############################################################
+     *                          HEADER
+     * ############################################################
+     */
+
+    /*
+     if ( $('#accountBox').length ) {
+     $('#account').click(function(e){
+     $(this).next().toggle();
+     if ( $('#accountBox').is(':visible') ){
+     $('#header').css({zIndex:21});
+     }
+     else {
+     $('#header').css({zIndex:20});
+     }
+     });
+     }
+     */
+
+    /*
+     *  ############################################################
+     *                        NAVIGATION MENU
+     * ############################################################
+     */
+
+    if ($('#nav').find('.subnav').length > 0){
+        var currentLi,
+            hoverLi,
+            outLi,
+            previousHoverLi,
+            openTab,
+            delayToCloseTab;
+        $('#nav .tab').hover(
+            function(){
+                //console.log("################ OVER ################");
+                hoverLi = $(this);
+                //console.log($(this).index());
+
+                hoverLi.siblings().each(function(i,v){
+                    //console.log( $(this));
+                    if ( $(this).hasClass('hover') ){
+                        openTab = true;
+                        previousHoverLi = $(this);
+                    }
+                });
+
+                if ( openTab ){
+                    //console.log("openTab = TRUE");
+                    clearTimeout(delayToCloseTab);
+                    previousHoverLi.removeClass('hover').children('.subnav').hide();
+                    addBorders(previousHoverLi);
+                }
+                else {
+                    //console.log("openTab = FALSE");
+                }
+
+                hoverLi.siblings().andSelf().each(function(i,v){
+                    if( $(this).hasClass('current') ){
+                        currentLi = $(this);
+                        currentLi.removeClass('current');
+                        addBorders(currentLi);
+                    }
+                })
+                hoverLi.addClass('hover').children('.subnav').show();
+                removeBorders(hoverLi);
+                openTab = true;
+            },
+            function(){
+                //console.log("################ OUT ################");
+                outLi = $(this);
+                //console.log($(this).index());
+
+                delayToCloseTab = setTimeout(function()
+                {
+                    outLi.removeClass('hover').children('.subnav').hide();
+                    addBorders(outLi);
+                    currentLi.addClass('current');
+                    removeBorders(currentLi);
+                    openTab = false;
+                }, 200);
+
+            }
+        );
+
+        if ( $('#nav .topnav').children('.current').length){
+            currentLi = $('#nav .topnav').children('.current');
+            removeBorders(currentLi);
+        }
+    }
+
+
+    /*
+     *  ############################################################
+     *                          HOME SLIDER
+     * ############################################################
+     */
+
+    var direction;
+    var pos;
+    if ($('#slider').length){
+        $("#slider").carouFredSel({
+            auto: {
+                play: false,
+                delay: 5000,
+                timeoutDuration: 5000,
+                fx: "scroll",
+                easing: "swing",
+                onBefore: function(data) {
+                    direction = "next";
+                    beforeSlide(data);
+                },
+                onAfter	: function(data) {
+                    afterSlide(data);
+                }
+            },
+            direction:"up",
+            items: {
+                visible: 1
+            },
+            onCreate: function( data ) {
+                redefineSliderButtons();
+            },
+            scroll: {
+
+            },
+            prev: {
+                button: "#sliderPrev",
+                fx: "scroll",
+                easing: "swing",
+                onBefore: function(data) {
+                    direction = "prev";
+                    beforeSlide(data);
+                },
+                onAfter	: function(data) {
+                    afterSlide(data);
+                }
+            },
+            next: {
+                button: "#sliderNext",
+                fx: "scroll",
+                easing: "swing",
+                onBefore: function(data) {
+                    direction = "next";
+                    beforeSlide(data);
+                },
+                onAfter	: function(data) {
+                    afterSlide(data);
+                }
+            },
+            pagination: {
+                container: "#sliderPager",
+                keys: true,
+                fx: "scroll",
+                easing: "swing",
+                onBefore: function(data) {
+                    direction = "page";
+                    beforeSlide(data);
+                },
+                onAfter	: function(data) {
+                    afterSlide(data);
+                }
+            }
+        });
+        var i = 1;
+        $('#slider').children('li').each(function(){
+            $(this).attr('data-slide', i);
+            i++;
+        });
+        $('.sliderPhoto').eq(0).animate({
+            rotate: '12deg'
+        }, {queue: false, duration: 500});
+
+        /*
+         $('#sliderPrev').hover(
+         function () {
+         $(this).addClass("hover").animate({
+         left: "-=5px"
+         },200);
+         },
+         function () {
+         $(this).removeClass("hover").animate({
+         left: "+=5px"
+         },200);
+         }
+         );
+         $('#sliderNext').hover(
+         function () {
+         $(this).addClass("hover").animate({
+         right: "-=5px"
+         },200);
+         },
+         function () {
+         $(this).removeClass("hover").animate({
+         right: "+=5px"
+         },200);
+         }
+         );
+
+         $('.slide').mouseover(function(){
+         $(this).addClass("hover").find('.sliderPhoto').stop().animate({rotate: '-6deg', scale: '1.1'}, 500);
+         }).mouseout(function(){
+         $(this).removeClass("hover").find('.sliderPhoto').stop().animate({rotate: '12deg', scale: '1'}, 500);
+         });
+         */
+
+    }
+
+    function beforeSlide(e){
+        //consoleLog(e);
+        e.items.old.removeClass( "active" );
+        if (direction ==  "page"){
+            var newSlide = e.items.visible.attr('data-slide');
+            var oldSlide = e.items.old.attr('data-slide');
+            if (newSlide > oldSlide){
+                direction = "next";
+            } else {
+                direction = "prev";
+            }
+        }
+
+//        $("#sliderPrev, #sliderNext").find('.content').fadeOut(100);
+        $('#sliderPrev').animate({left:-125},100);
+        $('#sliderNext').animate({right:-125},100);
+
+        $('.sliderBackground').hide();
+        $('#sliderBackground').show();
+        $('.sliderStain').hide();
+        pos = $("#slider").triggerHandler("currentPosition");
+        if(direction == "next"){
+            e.items.visible.find('.sliderPostmark').hide();
+            e.items.visible.find('.sliderPhoto').show();
+            e.items.old.find('.sliderPostmark').fadeOut(300);
+            e.items.old.find('.sliderPhoto').fadeOut(500);
+
+            e.items.old.find('.sliderPhoto').animate({
+                rotate: '-54deg',
+                scale: '0.5'
+            }, {queue: false, duration: 500});
+            e.items.visible.find('.sliderPhoto').rotate('18deg'); // rotates to 0deg
+            e.items.visible.find('.sliderPhoto').scale('1'); // rotates to 0deg
+            e.items.visible.find('.sliderPostmark').fadeIn(3000);
+        } else {
+            e.items.visible.find('.sliderPostmark').hide();
+            e.items.visible.find('.sliderPhoto').hide();
+            e.items.visible.find('.sliderPostmark').fadeIn(3000);
+            e.items.visible.find('.sliderPhoto').fadeIn(500);
+
+            e.items.old.find('.sliderPhoto').rotate('12deg'); // rotates to 0deg
+            e.items.old.find('.sliderPhoto').scale('01'); // rotates to 0deg
+            e.items.visible.find('.sliderPhoto').rotate('-108deg');
+            e.items.visible.find('.sliderPhoto').scale(0);
+        }
+    }
+
+    function afterSlide(e){
+        e.items.visible.addClass( "active" );
+        $('.sliderBackground').show();
+        $('.sliderStain.first').stop().fadeIn(300);
+        $('.sliderStain.second').delay(150).fadeIn(300);
+        $('#sliderBackground').hide();
+
+        e.items.old.find('.sliderPostmark').hide();
+        e.items.old.find('.sliderPhoto').rotate('18deg'); // rotates to 0deg
+        e.items.old.find('.sliderPhoto').scale(1); // scales to 100%
+        e.items.visible.find('.sliderPhoto').animate({
+            rotate: '12deg',
+            scale: '1'
+        }, {queue: false, duration: 500});
+
+        redefineSliderButtons();
+    }
+
+    function redefineSliderButtons(){
+
+        //console.log(direction);
+
+        var prevSlideTitle = $("#slider").children('li').last().find('.headline').clone();
+        var nextSlideTitle = $("#slider").children('li').eq(1).find('.headline').clone();
+
+        if ($("#slider").children('li').last().find('.sliderStain.second').length){
+            var prevSlidePrice = $("#slider").children('li').last().find('.sliderStain.second').children(".content").clone();
+            $('#sliderPrev').empty().append(prevSlidePrice).children('.content').prepend(prevSlideTitle);
+        }
+        else {
+            $('#sliderPrev').empty().wrapInner('<div class="content" />').children('.content').prepend(prevSlideTitle);
+        }
+        if ($("#slider").children('li').eq(1).find('.sliderStain.second').length){
+            var nextSlidePrice = $("#slider").children('li').eq(1).find('.sliderStain.second').children(".content").clone();
+            $('#sliderNext').empty().append(nextSlidePrice).children('.content').prepend(nextSlideTitle);
+        }
+        else {
+            $('#sliderNext').empty().wrapInner('<div class="content" />').children('.content').prepend(nextSlideTitle);
+        }
+
+
+
+
+        $("#sliderPrev").delay(300).animate({left:20},300);
+        $("#sliderNext").delay(300).animate({right:20},300);
+    }
+
 
     /*
      *  ############################################################
@@ -606,17 +912,17 @@ $(function() {
                     fRenderDate = formatDate(renderDate),
                     renderDate = numDate(fRenderDate);
 
-                //            //console.log(renderDate);
-                //            //console.log(startDate);
-                //            //console.log(endDate);
-                //            //console.log(renderWeekDay);
+                //console.log(renderDate);
+                //console.log(startDate);
+                //console.log(endDate);
+                //console.log(renderWeekDay);
 
                 if ( ((renderDate > highSeasonStartDate && renderDate < highSeasonEndDate) && (renderWeekDay != 6 && renderWeekDay != 3)) || (renderDate < startDate || renderDate > endDate) || ((renderDate > startDate && renderDate < endDate) && renderWeekDay == 2) ){
                     //                    //console.log("DISABLED: " + renderDate);
                     disabledDate = renderDate;
                 }
 
-                //            //console.log(disabledDate);
+                //console.log(disabledDate);
                 return {
                     disabled: disabledDate != undefined
                 }
@@ -686,308 +992,6 @@ $(function() {
 
         firstRendering = true;
 
-    }
-
-    /*
-     *  ############################################################
-     *                        NAVIGATION MENU
-     * ############################################################
-     */
-
-    if ($('#nav').find('.subnav').length > 0){
-        var currentLi,
-            hoverLi,
-            outLi,
-            previousHoverLi,
-            openTab,
-            delayToCloseTab;
-        $('#nav .tab').hover(
-            function(){
-               // console.log("################ OVER ################");
-                hoverLi = $(this);
-               // console.log($(this).index());
-
-                hoverLi.siblings().each(function(i,v){
-                   // console.log( $(this));
-                    if ( $(this).hasClass('hover') ){
-                        openTab = true;
-                        previousHoverLi = $(this);
-                    }
-                });
-
-                if ( openTab ){
-                   // console.log("openTab = TRUE");
-                    clearTimeout(delayToCloseTab);
-                    previousHoverLi.removeClass('hover').children('.subnav').hide();
-                    addBorders(previousHoverLi);
-                }
-                else {
-                   // console.log("openTab = FALSE");
-                }
-
-                hoverLi.siblings().andSelf().each(function(i,v){
-                    if( $(this).hasClass('current') ){
-                        currentLi = $(this);
-                        currentLi.removeClass('current');
-                        addBorders(currentLi);
-                    }
-                })
-                hoverLi.addClass('hover').children('.subnav').show();
-                removeBorders(hoverLi);
-                openTab = true;
-            },
-            function(){
-               // console.log("################ OUT ################");
-                outLi = $(this);
-               // console.log($(this).index());
-
-                delayToCloseTab = setTimeout(function()
-                {
-                    outLi.removeClass('hover').children('.subnav').hide();
-                    addBorders(outLi);
-                    currentLi.addClass('current');
-                    removeBorders(currentLi);
-                    openTab = false;
-                }, 500);
-
-            }
-        );
-
-        if ( $('#nav .topnav').children('.current').length){
-            currentLi = $('#nav .topnav').children('.current');
-            removeBorders(currentLi);
-        }
-    }
-    function addBorders(e){
-        e.removeClass('noBorder');
-        e.next().removeClass('noBorder');
-    }
-    function removeBorders(e){
-        e.addClass('noBorder');
-        e.next().addClass('noBorder');
-    }
-
-
-    /*
-     *  ############################################################
-     *                          HOME SLIDER
-     * ############################################################
-     */
-
-    var direction;
-    var pos;
-    if ($('#slider').length){
-        $("#slider").carouFredSel({
-            auto: {
-                play: false,
-                delay: 5000,
-                timeoutDuration: 5000,
-                fx: "scroll",
-                easing: "swing",
-                onBefore: function(data) {
-                    direction = "next";
-                    beforeSlide(data);
-                },
-                onAfter	: function(data) {
-                    afterSlide(data);
-                }
-            },
-            direction:"up",
-            items: {
-                visible: 1
-            },
-            onCreate: function( data ) {
-                redefineSliderButtons();
-            },
-            scroll: {
-
-            },
-            prev: {
-                button: "#sliderPrev",
-                fx: "scroll",
-                easing: "swing",
-                onBefore: function(data) {
-                    direction = "prev";
-                    beforeSlide(data);
-                },
-                onAfter	: function(data) {
-                    afterSlide(data);
-                }
-            },
-            next: {
-                button: "#sliderNext",
-                fx: "scroll",
-                easing: "swing",
-                onBefore: function(data) {
-                    direction = "next";
-                    beforeSlide(data);
-                },
-                onAfter	: function(data) {
-                    afterSlide(data);
-                }
-            },
-            pagination: {
-                container: "#sliderPager",
-                keys: true,
-                fx: "scroll",
-                easing: "swing",
-                onBefore: function(data) {
-                    direction = "page";
-                    beforeSlide(data);
-                },
-                onAfter	: function(data) {
-                    afterSlide(data);
-                }
-            }
-    });
-        var i = 1;
-        $('#slider').children('li').each(function(){
-            $(this).attr('data-slide', i);
-            i++;
-        });
-        $('.sliderPhoto').eq(0).animate({
-            rotate: '12deg'
-        }, {queue: false, duration: 500});
-
-        /*
-        $('#sliderPrev').hover(
-            function () {
-                $(this).addClass("hover").animate({
-                    left: "-=5px"
-                },200);
-            },
-            function () {
-                $(this).removeClass("hover").animate({
-                    left: "+=5px"
-                },200);
-            }
-        );
-        $('#sliderNext').hover(
-            function () {
-                $(this).addClass("hover").animate({
-                    right: "-=5px"
-                },200);
-            },
-            function () {
-                $(this).removeClass("hover").animate({
-                    right: "+=5px"
-                },200);
-            }
-        );
-
-        $('.slide').mouseover(function(){
-            $(this).addClass("hover").find('.sliderPhoto').stop().animate({rotate: '-6deg', scale: '1.1'}, 500);
-        }).mouseout(function(){
-            $(this).removeClass("hover").find('.sliderPhoto').stop().animate({rotate: '12deg', scale: '1'}, 500);
-        });
-         */
-
-    }
-
-    function beforeSlide(e){
-        //consoleLog(e);
-        e.items.old.removeClass( "active" );
-        if (direction ==  "page"){
-            var newSlide = e.items.visible.attr('data-slide');
-            var oldSlide = e.items.old.attr('data-slide');
-            if (newSlide > oldSlide){
-                direction = "next";
-            } else {
-                direction = "prev";
-            }
-        }
-
-//        $("#sliderPrev, #sliderNext").find('.content').fadeOut(100);
-        $('#sliderPrev').animate({left:-125},100);
-        $('#sliderNext').animate({right:-125},100);
-
-        $('.sliderBackground').hide();
-        $('#sliderBackground').show();
-        $('.sliderStain').hide();
-        pos = $("#slider").triggerHandler("currentPosition");
-        if(direction == "next"){
-            e.items.visible.find('.sliderPostmark').hide();
-            e.items.visible.find('.sliderPhoto').show();
-            e.items.old.find('.sliderPostmark').fadeOut(300);
-            e.items.old.find('.sliderPhoto').fadeOut(500);
-
-            e.items.old.find('.sliderPhoto').animate({
-                rotate: '-54deg',
-                scale: '0.5'
-            }, {queue: false, duration: 500});
-            e.items.visible.find('.sliderPhoto').rotate('18deg'); // rotates to 0deg
-            e.items.visible.find('.sliderPhoto').scale('1'); // rotates to 0deg
-            e.items.visible.find('.sliderPostmark').fadeIn(3000);
-        } else {
-            e.items.visible.find('.sliderPostmark').hide();
-            e.items.visible.find('.sliderPhoto').hide();
-            e.items.visible.find('.sliderPostmark').fadeIn(3000);
-            e.items.visible.find('.sliderPhoto').fadeIn(500);
-
-            e.items.old.find('.sliderPhoto').rotate('12deg'); // rotates to 0deg
-            e.items.old.find('.sliderPhoto').scale('01'); // rotates to 0deg
-            e.items.visible.find('.sliderPhoto').rotate('-108deg');
-            e.items.visible.find('.sliderPhoto').scale(0);
-        }
-    }
-
-    function afterSlide(e){
-        e.items.visible.addClass( "active" );
-        $('.sliderBackground').show();
-        $('.sliderStain.first').stop().fadeIn(300);
-        $('.sliderStain.second').delay(150).fadeIn(300);
-        $('#sliderBackground').hide();
-
-        e.items.old.find('.sliderPostmark').hide();
-        e.items.old.find('.sliderPhoto').rotate('18deg'); // rotates to 0deg
-        e.items.old.find('.sliderPhoto').scale(1); // scales to 100%
-        e.items.visible.find('.sliderPhoto').animate({
-            rotate: '12deg',
-            scale: '1'
-        }, {queue: false, duration: 500});
-
-        redefineSliderButtons();
-    }
-
-    function redefineSliderButtons(){
-
-        //console.log(direction);
-
-        var prevSlideTitle = $("#slider").children('li').last().find('.headline').clone();
-        var nextSlideTitle = $("#slider").children('li').eq(1).find('.headline').clone();
-
-        if ($("#slider").children('li').last().find('.sliderStain.second').length){
-            var prevSlidePrice = $("#slider").children('li').last().find('.sliderStain.second').children(".content").clone();
-            $('#sliderPrev').empty().append(prevSlidePrice).children('.content').prepend(prevSlideTitle);
-        }
-        else {
-            $('#sliderPrev').empty().wrapInner('<div class="content" />').children('.content').prepend(prevSlideTitle);
-        }
-        if ($("#slider").children('li').eq(1).find('.sliderStain.second').length){
-            var nextSlidePrice = $("#slider").children('li').eq(1).find('.sliderStain.second').children(".content").clone();
-            $('#sliderNext').empty().append(nextSlidePrice).children('.content').prepend(nextSlideTitle);
-        }
-        else {
-            $('#sliderNext').empty().wrapInner('<div class="content" />').children('.content').prepend(nextSlideTitle);
-        }
-
-
-
-
-        $("#sliderPrev").delay(300).animate({left:20},300);
-        $("#sliderNext").delay(300).animate({right:20},300);
-    }
-
-    /*
-     *  ############################################################
-     *                          HEADER
-     * ############################################################
-     */
-
-    if ( $('#account').length ) {
-        $('#account').click(function(e){
-            $(this).next().toggle();
-        });
     }
 
 
@@ -1081,6 +1085,13 @@ head.ready(function(){
  * ///////////////////////////////////////////////////////////////////////////////////////////////////////////
  */
 
+
+/*
+ * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+ *                       SEARCH ENGINE
+ * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+ */
+
 function countItem() {
     //console.log("################################## countItem()  ##################################");
     $('.spin-bt-down, .spin-bt-up').live('click', function(){
@@ -1130,7 +1141,6 @@ function switchSelect(){
         $selects = $button.parent().siblings(".newListSelected");
         var $buttonTitle = selectNum == 0 ? 'Campings' : 'Lieux de séjour';
         $button.children('span').text($buttonTitle);
-//        $button.attr('title',$buttonTitle);
         if(selectNum) {
             $button.css({backgroundPosition: "0 -270px"});
             $selects.eq(0).hide();
@@ -1148,9 +1158,8 @@ function switchSelect(){
 
 var toggleState = 0;
 function toggleSearchCriteria(){
-//    //console.log("################################## toggleSearchCriteria()  ##################################");
+    //console.log("################################## toggleSearchCriteria()  ##################################");
     $('.toggleButton').live('click', function(e){
-//        //console.log("----------------- toggleSearchCriteria() CLICK -----------------");
         toggleState = toggleState == 0 ? 1 : 0;
         $(this).parents('#searchBloc').toggleClass('opened');
         e.preventDefault();
@@ -1162,14 +1171,37 @@ function toggleSearchCriteria(){
     });
 }
 
+
+/*
+ * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+ *                          POPIN
+ * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+ */
+
 function openIframePopin(url){
     $.colorbox({href: url, iframe:true, fixed: true, width:'80%', height:'80%', close:"&times;"});
 }
 
 /*
- *  ############################################################
+ * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+ *                      NAVIGATION MENU
+ * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+ */
+
+function addBorders(e){
+    e.removeClass('noBorder');
+    e.next().removeClass('noBorder');
+}
+function removeBorders(e){
+    e.addClass('noBorder');
+    e.next().addClass('noBorder');
+}
+
+
+/*
+ * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
  *                         DATEPICKER
- * ############################################################
+ * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
  */
 
 // reset
@@ -1209,7 +1241,7 @@ function initializeForbiddenDates() {
     //console.log("################################## initializeForbiddenDates()  ##################################");
     //console.log(firstRendering);
     var allSaturdays = $('#datepickerCalendar td.datepickerSaturday').not($('td.datepickerNotInMonth'));
-        startHighSeasonDay = false,
+    startHighSeasonDay = false,
         endHighSeasonDay = false;
     allSaturdays.removeClass('datepickerUnselectable');
     if (firstRendering){
@@ -1240,7 +1272,7 @@ function unselectForbiddenDates(date){
     var selectedDate = numDate(formatDate(date)),
         numWeek = 0,
         allSaturdays = $('#datepickerCalendar td.datepickerSaturday').not($('td.datepickerNotInMonth'));
-        startHighSeasonDay = false,
+    startHighSeasonDay = false,
         endHighSeasonDay = false,
         arrivalDay = false,
         departureDay = false;
@@ -1343,12 +1375,12 @@ function defineHighSeason(td) {
 //    //console.log("################################## defineHighSeason()  ##################################");
     // td HIGH SEASON DEPARTURE DAY
     if ( startHighSeasonDay && td.hasClass('datepickerSpecial') && !td.hasClass('datepickerDisabled') ){
-    //console.log("HIGH SEASON LAST DAY");
+        //console.log("HIGH SEASON LAST DAY");
         endHighSeasonDay = true;
     }
     // td HIGH SEASON ARRIVAL DAY
     else if ( !startHighSeasonDay && td.hasClass('datepickerSpecial') && !td.hasClass('datepickerUnselectable') ){
-    //console.log("HIGH SEASON FIRST DAY");
+        //console.log("HIGH SEASON FIRST DAY");
         startHighSeasonDay = true;
     }
 }
@@ -1395,11 +1427,10 @@ function numDate(d){
 }
 
 
-
 /*
- *  ############################################################
- *                   FICHE CAMPING SLIDER
- * ############################################################
+ * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+ *                       FICHE SLIDER
+ * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
  */
 
 function sliderPict() {
@@ -1473,6 +1504,7 @@ function sliderActivite() {
         auto: false
     });
 }
+
 function tabs(tView, load) {
     var sView = tView.split('#')[1],
         slider = $('.tabCampDiapo');
@@ -1493,9 +1525,9 @@ function tabs(tView, load) {
 
 
 /*
- *  ############################################################
- *                         GMAP FUNCIONS
- * ############################################################
+ * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+ *                      GMAP FUNCIONS
+ * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
  */
 
 function loadGmapScript() { // call at the end of the DOM ready
@@ -1512,45 +1544,46 @@ function loadPluginsGmap() { // call after http://maps.googleapis.com/maps/api/j
     document.body.appendChild(script);
 }
 
+function setMarkers(map, mkrs) {
+    for (var i = 0; i < mkrs.length; i++) {
+        var mkr = mkrs[i];
+        var titleMkr = mkr[0].replace(/&#039;/g, "'");
+        var siteLatLng = new google.maps.LatLng(mkr[1], mkr[2]);
+        var marker = new google.maps.Marker({
+            position: siteLatLng,
+            map: map,
+            shadow: shadow,
+            icon: mkr[5],
+            shape: shape,
+            title: titleMkr,
+            zIndex: mkr[3],
+            idCamp: mkr[4],
+            filters: mkr[6]
+        });
+        aMarkers.push(marker);
 
-    function setMarkers(map, mkrs) {
-        for (var i = 0; i < mkrs.length; i++) {
-            var mkr = mkrs[i];
-            var siteLatLng = new google.maps.LatLng(mkr[1], mkr[2]);
-            var marker = new google.maps.Marker({
-                position: siteLatLng,
-                map: map,
-                shadow: shadow,
-                icon: mkr[5],
-                shape: shape,
-                title: mkr[0],
-                zIndex: mkr[3],
-                idCamp: mkr[4],
-                filters: mkr[6]
+        if (marker.idCamp != ''){
+            google.maps.event.addListener(marker, "click", function (e) {
+                var marker = this;
+
+                if(!marker.content){ //1st click
+                    $.ajax({
+                        url: this.idCamp,
+                        success: function(response){
+                            marker.content = response;
+                            ib.setContent(response);
+                            ib.open(map, marker);
+                        }
+                    });
+                }else{
+                    ib.setContent(marker.content);
+                    ib.open(map, marker);
+                }
             });
-            aMarkers.push(marker);
-
-            if (marker.idCamp != ''){
-                google.maps.event.addListener(marker, "click", function (e) {
-                    var marker = this;
-
-                    if(!marker.content){ //1st click
-                        $.ajax({
-                            url: this.idCamp,
-                            success: function(response){
-                                marker.content = response;
-                                ib.setContent(response);
-                                ib.open(map, marker);
-                            }
-                        });
-                    }else{
-                        ib.setContent(marker.content);
-                        ib.open(map, marker);
-                    }
-                });
-            }
         }
     }
+}
+
 function initializeAllGmap() {
 
     // infobox vars
@@ -1609,7 +1642,12 @@ function initializeAllGmap() {
 }
 
 
-/*** FONCTIONS RESULTATS DE RECHERCHE ***/
+/*
+ * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+ *                     SEARCH RESULTS
+ * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+ */
+
 function initCritResult(){
 // affichage carte
     if(window.location.hash === '#carte') {
@@ -1705,11 +1743,19 @@ function launchFilters() {
     //Pagination de la liste de resultats
     listPagination();
 }
+
 function openCrit() {
     $('.formSearchRefined .sectionTitle').click(function() {
         $(this).toggleClass('open').next('fieldset').fadeToggle();
     });
 }
+
+
+/*
+ * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+ *                      RANGE SLIDER
+ * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+ */
 
 //attribution min/max prix pour le range slider
 function findMinMaxRange() {
@@ -1737,7 +1783,9 @@ function findMinMaxRange() {
     //items dans la range de prix
     items = list.find('[data-ranged="true"]');
 
-    //console.log('/--- findMinMaxRange ---/ minPrice = '+minPrice+' - maxPrice = '+maxPrice);
+    if ( minPrice == maxPrice) {
+        $('#widgetRange').hide();
+    }
 }
 
 //creation du rangeSlider de prix
@@ -1787,13 +1835,15 @@ function rangeSliderPrice() {
                         $(this).attr('data-ranged', false);
                     }
                 });
+
+                paginationAfterRange = true;
                 critSelection();
                 displayResults();
                 //console.log('/--- rangeSliderPrice (event: change) ---/');
             }
         }).find('.noUi-handle div').each(function(index){
-            $(this).append('<span class="rangeBox">'+$(this).parent().parent().noUiSlider( 'value' )[index]+' €</span>');
-        });
+                $(this).append('<span class="rangeBox">'+$(this).parent().parent().noUiSlider( 'value' )[index]+' €</span>');
+            });
     };
 
     initRange.call();
@@ -1891,12 +1941,13 @@ function displayResults() {
         var dataFilteredPlus = $(this).attr('data-filteredPlus');
 
         if ( dataFiltered == 'true' && dataFilteredPlus == 'true' && dataRanged == 'true' ) {
-            $(this).fadeIn().next('.disclaim').fadeIn();
+            $(this).addClass('pagination').fadeIn().next('.disclaim').fadeIn();
             nbItemsDisplayed++;
             var idRsl = $(this).attr('data-id');
             gMarkers.push(idRsl);
         }else{
-            $(this).fadeOut().next('.disclaim').fadeOut();
+            var id = $(this).attr('id');
+            $(this).removeClass('pagination').fadeOut().next('.disclaim').fadeOut();
         };
 
         for (var i = 0; i < aMarkers.length; i++) {
@@ -1914,7 +1965,6 @@ function displayResults() {
 
     //console.log('/--- displayResults : '+nbItemsDisplayed+' ---/');
 };
-
 
 //gestion du tri par prix ou pertinence
 function orderList() {
@@ -1962,7 +2012,12 @@ function orderList() {
 
 //pagination liste de resultats
 function listPagination() {
-    var itemsPagination = $('#results .itemResult');
+    $('#results .itemResult').attr('data-num', '');
+    if ( paginationAfterRange == false ) {
+        var itemsPagination = $('#results .itemResult');
+    } else {
+        var itemsPagination = $('#results .pagination');
+    }
     var nbResults = itemsPagination.length;
     var btNext = $('#btPlusResults');
 
@@ -1992,20 +2047,20 @@ function listPagination() {
 
 //contre propositions
 /*
-function contreProp() {
-    var nbContreProp = 0;
+ function contreProp() {
+ var nbContreProp = 0;
 
-    //on compte le nombre de contre-proposition
-    items.each(function() {
-        if ( $(this).hasClass('isContrePro') ) {
-            nbContreProp++;
-        };
-    });
+ //on compte le nombre de contre-proposition
+ items.each(function() {
+ if ( $(this).hasClass('isContrePro') ) {
+ nbContreProp++;
+ };
+ });
 
-    if (nbContreProp == 0) {
-        $('.contreProp').hide();
-    }else{
-        $('.contreProp').show();
-    };
-    //console.log('/--- contreProp ---/');
-};*/
+ if (nbContreProp == 0) {
+ $('.contreProp').hide();
+ }else{
+ $('.contreProp').show();
+ };
+ //console.log('/--- contreProp ---/');
+ };*/

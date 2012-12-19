@@ -1,5 +1,6 @@
-title: menu.title
+title: "menu.title"
 items:
     destinations:
-        title:    menu.destinations
-        route:    menu_destinations
+        title:      "menu.destinations"
+        route:      "menu_destinations"
+        countQuery: "\\Cungfoo\\Model\\EtablissementPeer::getNbEtablissements"

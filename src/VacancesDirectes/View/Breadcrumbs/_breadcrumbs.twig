@@ -12,7 +12,7 @@
     <li>&gt; <a href="{{ path('destination_ville', {'pays': breadCrumbsPays.slug, 'region': breadCrumbsRegion.slug, 'ville': breadCrumbsVille.slug}) }}" itemprop="url"><span itemprop="title">{{ breadCrumbsVille }}</span></a></li>
                 {% if breadcrumbsRoute == 'destination_camping' %}
                     {% set breadCrumbsCamping = app.request.get('camping') %}
-    <li>&gt; <a href="{{ path('destination_camping', {'pays': breadCrumbsPays.slug, 'region': breadCrumbsRegion.slug, 'ville': breadCrumbsVille.slug, 'camping': breadCrumbsCamping}) }}"><span itemprop="title">{{ breadCrumbsCamping }}</span></a></li>
+    <li>&gt; <a href="{{ path('destination_camping', {'pays': breadCrumbsPays.slug, 'region': breadCrumbsRegion.slug, 'ville': breadCrumbsVille.slug, 'camping': breadCrumbsCamping.slug}) }}"><span itemprop="title">{{ breadCrumbsCamping }}</span></a></li>
                 {% endif %}
             {% endif %}
         {% endif %}

@@ -535,25 +535,25 @@
         Active: true
     90:
         Code: BISC
-        RegionId: 6
+        RegionId: 35
         ImageDetail1: null
         ImageDetail2: null
         Active: true
     91:
         Code: AURE
-        RegionId: 6
+        RegionId: 35
         ImageDetail1: null
         ImageDetail2: null
         Active: true
     92:
         Code: VIEL
-        RegionId: 6
+        RegionId: 35
         ImageDetail1: null
         ImageDetail2: null
         Active: true
     93:
         Code: AZUR
-        RegionId: 6
+        RegionId: 35
         ImageDetail1: null
         ImageDetail2: null
         Active: true
@@ -805,7 +805,7 @@
         Active: true
     135:
         Code: ONDR
-        RegionId: 6
+        RegionId: 35
         ImageDetail1: null
         ImageDetail2: null
         Active: true
@@ -1004,6 +1004,18 @@
     168:
         Code: CESE
         RegionId: 22
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    169:
+        Code: QUI
+        RegionId: 26
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    170:
+        Code: PRE
+        RegionId: 26
         ImageDetail1: null
         ImageDetail2: null
         Active: true

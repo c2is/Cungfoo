@@ -5218,7 +5218,7 @@
     164_de:
         Id: 164
         Locale: de
-        Country: ''
+        Country: Espagne
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5226,7 +5226,7 @@
     164_en:
         Id: 164
         Locale: en
-        Country: ''
+        Country: Espagne
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
@@ -5234,7 +5234,7 @@
     164_fr:
         Id: 164
         Locale: fr
-        Country: ''
+        Country: Espagne
         OuvertureReception: 8h-10h/17h-20h
         OuvertureCamping: 04/05/2013-15/09/2013
         ArriveesDeparts: 'Du 04/05/2013 au 06/07/2013 et du 31/08/2013 au 15/09/2013, tous les jours. Du 06/07/2013 au 31/08/2013, le samedi. '
@@ -5242,7 +5242,7 @@
     164_nl:
         Id: 164
         Locale: nl
-        Country: ''
+        Country: Espagne
         OuvertureReception: null
         OuvertureCamping: null
         ArriveesDeparts: null
