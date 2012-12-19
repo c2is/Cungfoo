@@ -201,6 +201,12 @@ class BaseDemandeAnnulationType extends AppAwareType
             'label' => 'demande_annulation.file_4_deleted',
             'required' => false,
         ));
+        $builder->add('active', 'checkbox', array(
+            'constraints' => array(
+            ),
+            'label' => 'demande_annulation.active',
+            'required' => false,
+        ));
     }
 
     /**

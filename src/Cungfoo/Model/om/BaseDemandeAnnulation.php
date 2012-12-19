@@ -186,6 +186,13 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
     protected $updated_at;
 
     /**
+     * The value for the active field.
+     * Note: this column has a database default value of: false
+     * @var        boolean
+     */
+    protected $active;
+
+    /**
      * @var        Etablissement
      */
     protected $aEtablissement;
@@ -203,6 +210,27 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
      * @var        boolean
      */
     protected $alreadyInValidation = false;
+
+    /**
+     * Applies default values to this object.
+     * This method should be called from the object's constructor (or
+     * equivalent initialization method).
+     * @see        __construct()
+     */
+    public function applyDefaultValues()
+    {
+        $this->active = false;
+    }
+
+    /**
+     * Initializes internal state of BaseDemandeAnnulation object.
+     * @see        applyDefaults()
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->applyDefaultValues();
+    }
 
     /**
      * Get the [id] column value.
@@ -510,6 +538,16 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
 
         return $dt->format($format);
 
+    }
+
+    /**
+     * Get the [active] column value.
+     *
+     * @return boolean
+     */
+    public function getActive()
+    {
+        return $this->active;
     }
 
     /**
@@ -1014,6 +1052,35 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
     } // setUpdatedAt()
 
     /**
+     * Sets the value of the [active] column.
+     * Non-boolean arguments are converted using the following rules:
+     *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     *
+     * @param boolean|integer|string $v The new value
+     * @return DemandeAnnulation The current object (for fluent API support)
+     */
+    public function setActive($v)
+    {
+        if ($v !== null) {
+            if (is_string($v)) {
+                $v = in_array(strtolower($v), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+            } else {
+                $v = (boolean) $v;
+            }
+        }
+
+        if ($this->active !== $v) {
+            $this->active = $v;
+            $this->modifiedColumns[] = DemandeAnnulationPeer::ACTIVE;
+        }
+
+
+        return $this;
+    } // setActive()
+
+    /**
      * Indicates whether the columns in this object are only set to default values.
      *
      * This method can be used in conjunction with isModified() to indicate whether an object is both
@@ -1023,6 +1090,10 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
      */
     public function hasOnlyDefaultValues()
     {
+            if ($this->active !== false) {
+                return false;
+            }
+
         // otherwise, everything was equal, so return true
         return true;
     } // hasOnlyDefaultValues()
@@ -1068,6 +1139,7 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
             $this->file_4 = ($row[$startcol + 20] !== null) ? (string) $row[$startcol + 20] : null;
             $this->created_at = ($row[$startcol + 21] !== null) ? (string) $row[$startcol + 21] : null;
             $this->updated_at = ($row[$startcol + 22] !== null) ? (string) $row[$startcol + 22] : null;
+            $this->active = ($row[$startcol + 23] !== null) ? (boolean) $row[$startcol + 23] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -1076,7 +1148,7 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 23; // 23 = DemandeAnnulationPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 24; // 24 = DemandeAnnulationPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating DemandeAnnulation object", $e);
@@ -1384,6 +1456,9 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
         if ($this->isColumnModified(DemandeAnnulationPeer::UPDATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`updated_at`';
         }
+        if ($this->isColumnModified(DemandeAnnulationPeer::ACTIVE)) {
+            $modifiedColumns[':p' . $index++]  = '`active`';
+        }
 
         $sql = sprintf(
             'INSERT INTO `demande_annulation` (%s) VALUES (%s)',
@@ -1463,6 +1538,9 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
                         break;
                     case '`updated_at`':
                         $stmt->bindValue($identifier, $this->updated_at, PDO::PARAM_STR);
+                        break;
+                    case '`active`':
+                        $stmt->bindValue($identifier, (int) $this->active, PDO::PARAM_INT);
                         break;
                 }
             }
@@ -1679,6 +1757,9 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
             case 22:
                 return $this->getUpdatedAt();
                 break;
+            case 23:
+                return $this->getActive();
+                break;
             default:
                 return null;
                 break;
@@ -1731,6 +1812,7 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
             $keys[20] => $this->getFile4(),
             $keys[21] => $this->getCreatedAt(),
             $keys[22] => $this->getUpdatedAt(),
+            $keys[23] => $this->getActive(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aEtablissement) {
@@ -1847,6 +1929,9 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
             case 22:
                 $this->setUpdatedAt($value);
                 break;
+            case 23:
+                $this->setActive($value);
+                break;
         } // switch()
     }
 
@@ -1894,6 +1979,7 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
         if (array_key_exists($keys[20], $arr)) $this->setFile4($arr[$keys[20]]);
         if (array_key_exists($keys[21], $arr)) $this->setCreatedAt($arr[$keys[21]]);
         if (array_key_exists($keys[22], $arr)) $this->setUpdatedAt($arr[$keys[22]]);
+        if (array_key_exists($keys[23], $arr)) $this->setActive($arr[$keys[23]]);
     }
 
     /**
@@ -1928,6 +2014,7 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
         if ($this->isColumnModified(DemandeAnnulationPeer::FILE_4)) $criteria->add(DemandeAnnulationPeer::FILE_4, $this->file_4);
         if ($this->isColumnModified(DemandeAnnulationPeer::CREATED_AT)) $criteria->add(DemandeAnnulationPeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(DemandeAnnulationPeer::UPDATED_AT)) $criteria->add(DemandeAnnulationPeer::UPDATED_AT, $this->updated_at);
+        if ($this->isColumnModified(DemandeAnnulationPeer::ACTIVE)) $criteria->add(DemandeAnnulationPeer::ACTIVE, $this->active);
 
         return $criteria;
     }
@@ -2013,6 +2100,7 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
         $copyObj->setFile4($this->getFile4());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
+        $copyObj->setActive($this->getActive());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -2151,9 +2239,11 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
         $this->file_4 = null;
         $this->created_at = null;
         $this->updated_at = null;
+        $this->active = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();
+        $this->applyDefaultValues();
         $this->resetModified();
         $this->setNew(true);
         $this->setDeleted(false);
@@ -2208,6 +2298,18 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
         $this->modifiedColumns[] = DemandeAnnulationPeer::UPDATED_AT;
 
         return $this;
+    }
+
+    // active behavior
+
+    /**
+     * return true is the object is active
+     *
+     * @return boolean
+     */
+    public function isActive()
+    {
+        return $this->getActive();
     }
 
     // crudable behavior
