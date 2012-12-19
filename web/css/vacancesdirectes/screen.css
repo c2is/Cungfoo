@@ -5,7 +5,7 @@
 /* Gris 1 */
 /* Gris 2 */
 /* Gris 3 */
-/* Gris 1 */
+/* Gris 4 */
 /* bg gris sombre */
 /* bg gris moyen sombre */
 /* bg gris moyen clair */
@@ -1681,7 +1681,7 @@ footer {
   min-height: 260px;
 }
 #nav .tab .subnav#destinations #destinationsAll ol#campingsList {
-  overflow-x: hidden;
+  overflow: auto;
   height: 471px;
   margin-top: 10px;
 }
@@ -1981,7 +1981,7 @@ h6,
   color: #464545;
 }
 .bt.grisC {
-  background-color: #606060;
+  background-color: #8c8a8a;
   color: #ffffff;
 }
 .bt.sombre {
@@ -4488,7 +4488,7 @@ ul.newList.optGroup li.optGroup-like a {
   text-decoration: none;
   text-transform: uppercase;
   font-weight: bold;
-  color: #606060;
+  color: #8c8a8a;
 }
 .itemResult .itemResultRight .titDest a.ville {
   color: #ed145b;
