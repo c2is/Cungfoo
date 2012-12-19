@@ -8,6 +8,8 @@ use Silex\Application,
     Silex\ControllerCollection,
     Silex\ControllerProviderInterface;
 
+use Cungfoo\Model\DemandeAnnulation;
+
 use VacancesDirectes\Form\Type\Annulation\AnnulationType,
     VacancesDirectes\Form\Data\Annulation\AnnulationData,
     VacancesDirectes\Lib\SearchEngine;
@@ -28,7 +30,7 @@ class AnnulationController implements ControllerProviderInterface
                 return $app->redirect($searchEngine->getRedirect());
             }
 
-            $annulationData = new AnnulationData();
+            $annulationData = new DemandeAnnulation();
             $form = $app['form.factory']->create(new AnnulationType($app), $annulationData);
 
             if ('POST' == $request->getMethod() && $request->request->has('annulationForm'))
