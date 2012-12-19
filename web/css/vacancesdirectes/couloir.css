@@ -1062,6 +1062,20 @@ textarea {
 #reservationContener.editAccount #reservation .aRoom tr td .hiddenIfCheckbox {
   display: none;
 }
+#reservationContener.detail #reservation .aRoom tr td .deleteLink,
+#reservationContener.editAccount #reservation .aRoom tr td .deleteLink {
+  position: relative;
+  display: block;
+  width: 27px;
+  height: 24px;
+  background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -243px transparent;
+  float: left;
+  margin-left: 10px;
+}
+#reservationContener.detail #reservation .aRoom tr td .deleteLink span,
+#reservationContener.editAccount #reservation .aRoom tr td .deleteLink span {
+  display: none;
+}
 #reservationContener.detail #reservation .aRoom .anOccupant,
 #reservationContener.editAccount #reservation .aRoom .anOccupant {
   background-color: #ffffff;
