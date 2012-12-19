@@ -1219,7 +1219,7 @@ function initializeForbiddenDates() {
     //console.log("################################## initializeForbiddenDates()  ##################################");
     //console.log(firstRendering);
     var allSaturdays = $('#datepickerCalendar td.datepickerSaturday').not($('td.datepickerNotInMonth'));
-        startHighSeasonDay = false,
+    startHighSeasonDay = false,
         endHighSeasonDay = false;
     allSaturdays.removeClass('datepickerUnselectable');
     if (firstRendering){
@@ -1250,7 +1250,7 @@ function unselectForbiddenDates(date){
     var selectedDate = numDate(formatDate(date)),
         numWeek = 0,
         allSaturdays = $('#datepickerCalendar td.datepickerSaturday').not($('td.datepickerNotInMonth'));
-        startHighSeasonDay = false,
+    startHighSeasonDay = false,
         endHighSeasonDay = false,
         arrivalDay = false,
         departureDay = false;
@@ -1526,6 +1526,7 @@ function loadPluginsGmap() { // call after http://maps.googleapis.com/maps/api/j
 function setMarkers(map, mkrs) {
     for (var i = 0; i < mkrs.length; i++) {
         var mkr = mkrs[i];
+        var titleMkr = mkr[0].replace(/&#039;/g, "'");
         var siteLatLng = new google.maps.LatLng(mkr[1], mkr[2]);
         var marker = new google.maps.Marker({
             position: siteLatLng,
@@ -1533,29 +1534,12 @@ function setMarkers(map, mkrs) {
             shadow: shadow,
             icon: mkr[5],
             shape: shape,
-            title: mkr[0],
+            title: titleMkr,
             zIndex: mkr[3],
             idCamp: mkr[4],
             filters: mkr[6]
         });
         aMarkers.push(marker);
-    function setMarkers(map, mkrs) {
-        for (var i = 0; i < mkrs.length; i++) {
-            var mkr = mkrs[i];
-            var titleMkr = mkr[0].replace(/&#039;/g, "'");
-            var siteLatLng = new google.maps.LatLng(mkr[1], mkr[2]);
-            var marker = new google.maps.Marker({
-                position: siteLatLng,
-                map: map,
-                shadow: shadow,
-                icon: mkr[5],
-                shape: shape,
-                title: titleMkr,
-                zIndex: mkr[3],
-                idCamp: mkr[4],
-                filters: mkr[6]
-            });
-            aMarkers.push(marker);
 
         if (marker.idCamp != ''){
             google.maps.event.addListener(marker, "click", function (e) {
@@ -1578,7 +1562,6 @@ function setMarkers(map, mkrs) {
         }
     }
 }
-
 function initializeAllGmap() {
 
     // infobox vars
@@ -1824,8 +1807,8 @@ function rangeSliderPrice() {
                 //console.log('/--- rangeSliderPrice (event: change) ---/');
             }
         }).find('.noUi-handle div').each(function(index){
-            $(this).append('<span class="rangeBox">'+$(this).parent().parent().noUiSlider( 'value' )[index]+' €</span>');
-        });
+                $(this).append('<span class="rangeBox">'+$(this).parent().parent().noUiSlider( 'value' )[index]+' €</span>');
+            });
     };
 
     initRange.call();
