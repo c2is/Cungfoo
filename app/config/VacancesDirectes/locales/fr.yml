@@ -198,6 +198,7 @@ general.decouvrir: Découvrir
 general.reserver: Réserver
 general.la_semaine: la semaine
 general.contre_proposition: ATTENTION ! Votre recherche ne donne aucun résultat. Les propositions ci-dessous sont celles qui s'en rapprochent le plus.
+general.logout: Se deconnecter
 
 footer.nous_joindre: Nous joindre
 footer.contact.tel: 0825 133 400
