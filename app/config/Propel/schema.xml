@@ -905,8 +905,8 @@
         <column name="camping_num_resa" type="varchar" required="true"/>
         <column name="camping_montant_sejour" type="varchar" required="true"/>
         <column name="camping_montant_verse" type="varchar" required="true"/>
-        <column name="sinistre_nature" type="enum" valueSet="annulation.natureSinistre.annulation, annulation.natureSinistre.interruption" required="true"/>
-        <column name="sinistre_suite" type="enum" valueSet="annulation.suiteSinistre.maladie, annulation.suiteSinistre.accident, annulation.suiteSinistre.autre" required="true"/>
+        <column name="sinistre_nature" type="enum" valueSet="demande_annulation.sinistre_nature.annulation, demande_annulation.nature_sinistre.interruption" required="true"/>
+        <column name="sinistre_suite" type="enum" valueSet="demande_annulation.sinistre_suite.maladie, demande_annulation.suite_sinistre.accident, demande_annulation.suite_sinistre.autre" required="true"/>
         <column name="sinistre_date" type="varchar" required="true"/>
         <column name="sinistre_resume" type="varchar" required="true"/>
         <column name="file_1" type="varchar"/>

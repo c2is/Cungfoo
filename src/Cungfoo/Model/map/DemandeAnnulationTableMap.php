@@ -57,14 +57,14 @@ class DemandeAnnulationTableMap extends TableMap
         $this->addColumn('camping_montant_verse', 'CampingMontantVerse', 'VARCHAR', true, 255, null);
         $this->addColumn('sinistre_nature', 'SinistreNature', 'ENUM', true, null, null);
         $this->getColumn('sinistre_nature', false)->setValueSet(array (
-  0 => 'annulation.natureSinistre.annulation',
-  1 => 'annulation.natureSinistre.interruption',
+  0 => 'demande_annulation.sinistre_nature.annulation',
+  1 => 'demande_annulation.nature_sinistre.interruption',
 ));
         $this->addColumn('sinistre_suite', 'SinistreSuite', 'ENUM', true, null, null);
         $this->getColumn('sinistre_suite', false)->setValueSet(array (
-  0 => 'annulation.suiteSinistre.maladie',
-  1 => 'annulation.suiteSinistre.accident',
-  2 => 'annulation.suiteSinistre.autre',
+  0 => 'demande_annulation.sinistre_suite.maladie',
+  1 => 'demande_annulation.suite_sinistre.accident',
+  2 => 'demande_annulation.suite_sinistre.autre',
 ));
         $this->addColumn('sinistre_date', 'SinistreDate', 'VARCHAR', true, 255, null);
         $this->addColumn('sinistre_resume', 'SinistreResume', 'VARCHAR', true, 255, null);
