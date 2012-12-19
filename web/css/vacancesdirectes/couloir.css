@@ -1524,11 +1524,9 @@ textarea {
 #footerContener .mentions.droite,
 #footerContener .footerNavigation.droite {
   float: right;
-  margin-top: -14px;
 }
 #footerContener .footerNavigation.gauche a,
 #footerContener .footerNavigation.droite a {
-  display: block;
   border: 0;
   text-transform: uppercase;
   text-decoration: none;
