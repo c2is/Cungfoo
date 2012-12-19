@@ -5,10 +5,10 @@ pays:
     - pays.albanie
 
 naturesSinistre:
-    - natureSinistre.annulation
-    - natureSinistre.interruption
+    - annulation.natureSinistre.annulation
+    - annulation.natureSinistre.interruption
 
 suitesSinistre:
-    - suiteSinistre.maladie
-    - suiteSinistre.accident
-    - suiteSinistre.autre
+    - annulation.suiteSinistre.maladie
+    - annulation.suiteSinistre.accident
+    - annulation.suiteSinistre.autre

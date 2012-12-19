@@ -19,8 +19,6 @@ class AnnulationController implements ControllerProviderInterface
         $controllers = $app['controllers_factory'];
 
         $controllers->match('/', function (Request $request) use ($app) {
-            $form = $app['form.factory']->create(new AnnulationType($app), new AnnulationData());
-
             // Formulaire de recherche
             $searchEngine = new SearchEngine($app, $request);
             $searchEngine->process();
@@ -28,6 +26,17 @@ class AnnulationController implements ControllerProviderInterface
             if ($searchEngine->getRedirect())
             {
                 return $app->redirect($searchEngine->getRedirect());
+            }
+
+            $form = $app['form.factory']->create(new AnnulationType($app), new AnnulationData());
+
+            if ('POST' == $request->getMethod() && $this->request->request->has('annulationForm'))
+            {
+                $form->bindRequest($request);
+
+                if($form->isValid()) {
+                    // TODO : envoi mail, enregistrement en base
+                }
             }
 
             return $app->renderView('Annulation/form.twig', array(

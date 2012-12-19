@@ -4,6 +4,6 @@
 <form action="{{ path('formulaire_annulation') }}" method="post" {{ form_enctype(annulationForm) }}>
     {{ form_widget(annulationForm) }}
 
-    <input type="submit" />
+    <input type="submit" name="annulationForm" />
 </form>
 {% endblock %}
