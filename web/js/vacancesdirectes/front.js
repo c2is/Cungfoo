@@ -1,6 +1,9 @@
 /* Project: vd - Date: 20129012 - Author: C2iS.fr > NCH-LGU */
 
 var
+//home slider
+    direction,
+    pos,
 //datepicker
     startDate,                                              // date de début de saison
     endDate,                                                // date de fin de saison
@@ -278,8 +281,6 @@ $(function() {
      * ############################################################
      */
 
-    var direction;
-    var pos;
     if ($('#slider').length){
         $("#slider").carouFredSel({
             auto: {
