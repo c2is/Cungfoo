@@ -1,12 +1,6 @@
 {% extends "Annulation/base.twig" %}
 
 {% block leftColumn %}
-    <h1>Désolé, cette page n'existe pas...</h1>
-    <p>Retourner sur la <a href="{{path('homepage')}}">page d'accueil</a>.</p>
-{% endblock %}
-
-{% block rightColumn %}
-<div id="greyBoxes">
-    {% include 'Bloc/sejour_reussi.twig' %}
-</div>
+    <h1>{{ "demande_annulation.confirmation.title" | trans }}</h1>
+    <p>{{ "demande_annulation.confirmation.content" | trans }}</p>
 {% endblock %}

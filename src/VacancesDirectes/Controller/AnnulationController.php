@@ -38,6 +38,7 @@ class AnnulationController implements ControllerProviderInterface
                 $form->bind($request);
 
                 if ($form->isValid()) {
+                    $annulationData->setActive(true);
                     $annulationData->saveFromCrud($form);
 
                     $body = <<<eof
@@ -60,9 +61,9 @@ Résumé des faits : {$annulationData->getSinistreResume()}
 eof;
 
                     $message = \Swift_Message::newInstance()
-                        ->setSubject($app['config']->get('globale')['demande_annulation']['sujet'])
-                        ->setFrom(array($app['config']->get('globale')['demande_annulation']['from_mail']) => $app['config']->get('globale')['demande_annulation']['from'])
-                        ->setTo(array($app['config']->get('globale')['demande_annulation']['mail']))
+                        ->setSubject($app['config']->get('vd_config')['demande_annulation']['sujet'])
+                        ->setFrom(array($app['config']->get('vd_config')['demande_annulation']['from_mail'] => $app['config']->get('vd_config')['demande_annulation']['from']))
+                        ->setTo(array($app['config']->get('vd_config')['demande_annulation']['mail']))
                         ->setBody($body)
                     ;
 
@@ -86,6 +87,8 @@ eof;
 
                     $app['mailer']->send($message);
                 }
+
+                return $app->redirect($app->path('demande_annulation_confirmation'));
             }
 
             return $app->renderView('Annulation/form.twig', array(
@@ -93,7 +96,7 @@ eof;
                 'annulationForm' => $form->createView(),
             ));
         })
-        ->bind('formulaire_annulation');
+        ->bind('demande_annulation_form');
 
         $controllers->match('/confirmation', function (Request $request) use ($app) {
             // Formulaire de recherche
@@ -109,7 +112,7 @@ eof;
                 'searchForm'     => $searchEngine->getView(),
             ));
         })
-        ->bind('confirmation')
+        ->bind('demande_annulation_confirmation');
 
         return $controllers;
     }

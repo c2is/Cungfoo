@@ -1,6 +1,6 @@
 {% extends "Annulation/base.twig" %}
 
-{% block topLeftColumn %}
+{% block leftColumn %}
 <form id="annulationForm" method="post" action="{{ app.request.getRequestURI() }}" novalidate {{ form_enctype(annulationForm) }}>
     <fieldset>
         <ol>
@@ -155,7 +155,9 @@
                 <button type="submit" class="bt sombre big" name="annulationForm">Envoyer</button>
             </li>
         </ol>
-        {{ form_rest(annulationForm) }}
+        <div style="display: none;">
+            {{ form_rest(annulationForm) }}
+        </div>
     </fieldset>
 </form>
 

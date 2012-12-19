@@ -273,3 +273,34 @@ breadcrumbs.home: Accueil
 
 topCamping.h1: Top destinations vacances en camping
 dernieresMinutes.h1: Nos offres de campings en dernières minutes (location mobil home)
+
+demande_annulation:
+    assure_nom: Nom
+    assure_prenom: Prénom
+    assure_adresse: Adresse
+    assure_code_postal: Code Postal
+    assure_ville: Ville
+    assure_pays: Pays
+    assure_pays.empty_value: Choisissez un pays
+    assure_mail: EMail
+    assure_telephone: Téléphone
+    camping_montant_sejour: Montant du séjour
+    camping_montant_verse: Montant des sommes versées
+    etablissement: Nom du camping
+    etablissement.empty_value: Choisissez un camping
+    camping_num_resa: N° de réservation
+    sinistre_nature: Nature du sinistre
+    sinistre_nature.annulation: Annulation du séjour
+    sinistre_nature.interruption: Interruption du séjour
+    sinistre_suite: Suite à
+    sinistre_suite.maladie: Maladie
+    sinistre_suite.accident: Accident
+    sinistre_suite.autre: Autre
+    sinistre_date: Date du sinistre
+    sinistre_resume: Résumé rapide des faits et description de la nature du sinistre
+    file_1: ""
+    file_2: ""
+    file_3: ""
+    file_4: ""
+    certifie: Je certifie demander l'annulation référencée ci-dessus
+    files: Joindre des pièces : (format : pdf, doc, docx, png, jpg de 2 mo maximum)
