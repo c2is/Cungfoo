@@ -117,8 +117,8 @@ class BaseDemandeAnnulationType extends AppAwareType
                 new Assert\NotBlank(),
             ),
             'choices' => array(
-                'annulation.natureSinistre.annulation' => 'annulation.natureSinistre.annulation',
-                'annulation.natureSinistre.interruption' => 'annulation.natureSinistre.interruption',
+                'demande_annulation.sinistre_nature.annulation' => 'demande_annulation.sinistre_nature.annulation',
+                'demande_annulation.nature_sinistre.interruption' => 'demande_annulation.nature_sinistre.interruption',
             ),
             'label' => 'demande_annulation.sinistre_nature',
             'required' => false,
@@ -128,9 +128,9 @@ class BaseDemandeAnnulationType extends AppAwareType
                 new Assert\NotBlank(),
             ),
             'choices' => array(
-                'annulation.suiteSinistre.maladie' => 'annulation.suiteSinistre.maladie',
-                'annulation.suiteSinistre.accident' => 'annulation.suiteSinistre.accident',
-                'annulation.suiteSinistre.autre' => 'annulation.suiteSinistre.autre',
+                'demande_annulation.sinistre_suite.maladie' => 'demande_annulation.sinistre_suite.maladie',
+                'demande_annulation.suite_sinistre.accident' => 'demande_annulation.suite_sinistre.accident',
+                'demande_annulation.suite_sinistre.autre' => 'demande_annulation.suite_sinistre.autre',
             ),
             'label' => 'demande_annulation.sinistre_suite',
             'required' => false,

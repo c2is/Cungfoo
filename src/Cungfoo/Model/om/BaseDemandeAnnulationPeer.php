@@ -118,13 +118,13 @@ abstract class BaseDemandeAnnulationPeer
     const ACTIVE = 'demande_annulation.active';
 
     /** The enumerated values for the sinistre_nature field */
-    const SINISTRE_NATURE_ANNULATION_NATURESINISTRE_ANNULATION = 'annulation.natureSinistre.annulation';
-    const SINISTRE_NATURE_ANNULATION_NATURESINISTRE_INTERRUPTION = 'annulation.natureSinistre.interruption';
+    const SINISTRE_NATURE_DEMANDE_ANNULATION_SINISTRE_NATURE_ANNULATION = 'demande_annulation.sinistre_nature.annulation';
+    const SINISTRE_NATURE_DEMANDE_ANNULATION_NATURE_SINISTRE_INTERRUPTION = 'demande_annulation.nature_sinistre.interruption';
 
     /** The enumerated values for the sinistre_suite field */
-    const SINISTRE_SUITE_ANNULATION_SUITESINISTRE_MALADIE = 'annulation.suiteSinistre.maladie';
-    const SINISTRE_SUITE_ANNULATION_SUITESINISTRE_ACCIDENT = 'annulation.suiteSinistre.accident';
-    const SINISTRE_SUITE_ANNULATION_SUITESINISTRE_AUTRE = 'annulation.suiteSinistre.autre';
+    const SINISTRE_SUITE_DEMANDE_ANNULATION_SINISTRE_SUITE_MALADIE = 'demande_annulation.sinistre_suite.maladie';
+    const SINISTRE_SUITE_DEMANDE_ANNULATION_SUITE_SINISTRE_ACCIDENT = 'demande_annulation.suite_sinistre.accident';
+    const SINISTRE_SUITE_DEMANDE_ANNULATION_SUITE_SINISTRE_AUTRE = 'demande_annulation.suite_sinistre.autre';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -171,13 +171,13 @@ abstract class BaseDemandeAnnulationPeer
     /** The enumerated values for this table */
     protected static $enumValueSets = array(
         DemandeAnnulationPeer::SINISTRE_NATURE => array(
-            DemandeAnnulationPeer::SINISTRE_NATURE_ANNULATION_NATURESINISTRE_ANNULATION,
-            DemandeAnnulationPeer::SINISTRE_NATURE_ANNULATION_NATURESINISTRE_INTERRUPTION,
+            DemandeAnnulationPeer::SINISTRE_NATURE_DEMANDE_ANNULATION_SINISTRE_NATURE_ANNULATION,
+            DemandeAnnulationPeer::SINISTRE_NATURE_DEMANDE_ANNULATION_NATURE_SINISTRE_INTERRUPTION,
         ),
         DemandeAnnulationPeer::SINISTRE_SUITE => array(
-            DemandeAnnulationPeer::SINISTRE_SUITE_ANNULATION_SUITESINISTRE_MALADIE,
-            DemandeAnnulationPeer::SINISTRE_SUITE_ANNULATION_SUITESINISTRE_ACCIDENT,
-            DemandeAnnulationPeer::SINISTRE_SUITE_ANNULATION_SUITESINISTRE_AUTRE,
+            DemandeAnnulationPeer::SINISTRE_SUITE_DEMANDE_ANNULATION_SINISTRE_SUITE_MALADIE,
+            DemandeAnnulationPeer::SINISTRE_SUITE_DEMANDE_ANNULATION_SUITE_SINISTRE_ACCIDENT,
+            DemandeAnnulationPeer::SINISTRE_SUITE_DEMANDE_ANNULATION_SUITE_SINISTRE_AUTRE,
         ),
     );
 
