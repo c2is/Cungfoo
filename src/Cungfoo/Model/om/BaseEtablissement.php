@@ -21,6 +21,8 @@ use Cungfoo\Model\Baignade;
 use Cungfoo\Model\BaignadeQuery;
 use Cungfoo\Model\Categorie;
 use Cungfoo\Model\CategorieQuery;
+use Cungfoo\Model\DemandeAnnulation;
+use Cungfoo\Model\DemandeAnnulationQuery;
 use Cungfoo\Model\DernieresMinutes;
 use Cungfoo\Model\DernieresMinutesEtablissement;
 use Cungfoo\Model\DernieresMinutesEtablissementQuery;
@@ -357,6 +359,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     protected $collDernieresMinutesEtablissementsPartial;
 
     /**
+     * @var        PropelObjectCollection|DemandeAnnulation[] Collection to store aggregation of DemandeAnnulation objects.
+     */
+    protected $collDemandeAnnulations;
+    protected $collDemandeAnnulationsPartial;
+
+    /**
      * @var        PropelObjectCollection|EtablissementI18n[] Collection to store aggregation of EtablissementI18n objects.
      */
     protected $collEtablissementI18ns;
@@ -577,6 +585,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      * @var		PropelObjectCollection
      */
     protected $dernieresMinutesEtablissementsScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
+    protected $demandeAnnulationsScheduledForDeletion = null;
 
     /**
      * An array of objects scheduled for deletion.
@@ -1785,6 +1799,8 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
             $this->collDernieresMinutesEtablissements = null;
 
+            $this->collDemandeAnnulations = null;
+
             $this->collEtablissementI18ns = null;
 
             $this->collTypeHebergements = null;
@@ -2374,6 +2390,23 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 }
             }
 
+            if ($this->demandeAnnulationsScheduledForDeletion !== null) {
+                if (!$this->demandeAnnulationsScheduledForDeletion->isEmpty()) {
+                    DemandeAnnulationQuery::create()
+                        ->filterByPrimaryKeys($this->demandeAnnulationsScheduledForDeletion->getPrimaryKeys(false))
+                        ->delete($con);
+                    $this->demandeAnnulationsScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collDemandeAnnulations !== null) {
+                foreach ($this->collDemandeAnnulations as $referrerFK) {
+                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
+                        $affectedRows += $referrerFK->save($con);
+                    }
+                }
+            }
+
             if ($this->etablissementI18nsScheduledForDeletion !== null) {
                 if (!$this->etablissementI18nsScheduledForDeletion->isEmpty()) {
                     EtablissementI18nQuery::create()
@@ -2817,6 +2850,14 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                     }
                 }
 
+                if ($this->collDemandeAnnulations !== null) {
+                    foreach ($this->collDemandeAnnulations as $referrerFK) {
+                        if (!$referrerFK->validate($columns)) {
+                            $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
+                        }
+                    }
+                }
+
                 if ($this->collEtablissementI18ns !== null) {
                     foreach ($this->collEtablissementI18ns as $referrerFK) {
                         if (!$referrerFK->validate($columns)) {
@@ -3047,6 +3088,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             }
             if (null !== $this->collDernieresMinutesEtablissements) {
                 $result['DernieresMinutesEtablissements'] = $this->collDernieresMinutesEtablissements->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
+            }
+            if (null !== $this->collDemandeAnnulations) {
+                $result['DemandeAnnulations'] = $this->collDemandeAnnulations->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
             if (null !== $this->collEtablissementI18ns) {
                 $result['EtablissementI18ns'] = $this->collEtablissementI18ns->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
@@ -3436,6 +3480,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 }
             }
 
+            foreach ($this->getDemandeAnnulations() as $relObj) {
+                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
+                    $copyObj->addDemandeAnnulation($relObj->copy($deepCopy));
+                }
+            }
+
             foreach ($this->getEtablissementI18ns() as $relObj) {
                 if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
                     $copyObj->addEtablissementI18n($relObj->copy($deepCopy));
@@ -3645,6 +3695,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         }
         if ('DernieresMinutesEtablissement' == $relationName) {
             $this->initDernieresMinutesEtablissements();
+        }
+        if ('DemandeAnnulation' == $relationName) {
+            $this->initDemandeAnnulations();
         }
         if ('EtablissementI18n' == $relationName) {
             $this->initEtablissementI18ns();
@@ -6697,6 +6750,221 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     }
 
     /**
+     * Clears out the collDemandeAnnulations collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return Etablissement The current object (for fluent API support)
+     * @see        addDemandeAnnulations()
+     */
+    public function clearDemandeAnnulations()
+    {
+        $this->collDemandeAnnulations = null; // important to set this to null since that means it is uninitialized
+        $this->collDemandeAnnulationsPartial = null;
+
+        return $this;
+    }
+
+    /**
+     * reset is the collDemandeAnnulations collection loaded partially
+     *
+     * @return void
+     */
+    public function resetPartialDemandeAnnulations($v = true)
+    {
+        $this->collDemandeAnnulationsPartial = $v;
+    }
+
+    /**
+     * Initializes the collDemandeAnnulations collection.
+     *
+     * By default this just sets the collDemandeAnnulations collection to an empty array (like clearcollDemandeAnnulations());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @param boolean $overrideExisting If set to true, the method call initializes
+     *                                        the collection even if it is not empty
+     *
+     * @return void
+     */
+    public function initDemandeAnnulations($overrideExisting = true)
+    {
+        if (null !== $this->collDemandeAnnulations && !$overrideExisting) {
+            return;
+        }
+        $this->collDemandeAnnulations = new PropelObjectCollection();
+        $this->collDemandeAnnulations->setModel('DemandeAnnulation');
+    }
+
+    /**
+     * Gets an array of DemandeAnnulation objects which contain a foreign key that references this object.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this Etablissement is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @return PropelObjectCollection|DemandeAnnulation[] List of DemandeAnnulation objects
+     * @throws PropelException
+     */
+    public function getDemandeAnnulations($criteria = null, PropelPDO $con = null)
+    {
+        $partial = $this->collDemandeAnnulationsPartial && !$this->isNew();
+        if (null === $this->collDemandeAnnulations || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collDemandeAnnulations) {
+                // return empty collection
+                $this->initDemandeAnnulations();
+            } else {
+                $collDemandeAnnulations = DemandeAnnulationQuery::create(null, $criteria)
+                    ->filterByEtablissement($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    if (false !== $this->collDemandeAnnulationsPartial && count($collDemandeAnnulations)) {
+                      $this->initDemandeAnnulations(false);
+
+                      foreach($collDemandeAnnulations as $obj) {
+                        if (false == $this->collDemandeAnnulations->contains($obj)) {
+                          $this->collDemandeAnnulations->append($obj);
+                        }
+                      }
+
+                      $this->collDemandeAnnulationsPartial = true;
+                    }
+
+                    return $collDemandeAnnulations;
+                }
+
+                if($partial && $this->collDemandeAnnulations) {
+                    foreach($this->collDemandeAnnulations as $obj) {
+                        if($obj->isNew()) {
+                            $collDemandeAnnulations[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collDemandeAnnulations = $collDemandeAnnulations;
+                $this->collDemandeAnnulationsPartial = false;
+            }
+        }
+
+        return $this->collDemandeAnnulations;
+    }
+
+    /**
+     * Sets a collection of DemandeAnnulation objects related by a one-to-many relationship
+     * to the current object.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $demandeAnnulations A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     * @return Etablissement The current object (for fluent API support)
+     */
+    public function setDemandeAnnulations(PropelCollection $demandeAnnulations, PropelPDO $con = null)
+    {
+        $this->demandeAnnulationsScheduledForDeletion = $this->getDemandeAnnulations(new Criteria(), $con)->diff($demandeAnnulations);
+
+        foreach ($this->demandeAnnulationsScheduledForDeletion as $demandeAnnulationRemoved) {
+            $demandeAnnulationRemoved->setEtablissement(null);
+        }
+
+        $this->collDemandeAnnulations = null;
+        foreach ($demandeAnnulations as $demandeAnnulation) {
+            $this->addDemandeAnnulation($demandeAnnulation);
+        }
+
+        $this->collDemandeAnnulations = $demandeAnnulations;
+        $this->collDemandeAnnulationsPartial = false;
+
+        return $this;
+    }
+
+    /**
+     * Returns the number of related DemandeAnnulation objects.
+     *
+     * @param Criteria $criteria
+     * @param boolean $distinct
+     * @param PropelPDO $con
+     * @return int             Count of related DemandeAnnulation objects.
+     * @throws PropelException
+     */
+    public function countDemandeAnnulations(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        $partial = $this->collDemandeAnnulationsPartial && !$this->isNew();
+        if (null === $this->collDemandeAnnulations || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collDemandeAnnulations) {
+                return 0;
+            }
+
+            if($partial && !$criteria) {
+                return count($this->getDemandeAnnulations());
+            }
+            $query = DemandeAnnulationQuery::create(null, $criteria);
+            if ($distinct) {
+                $query->distinct();
+            }
+
+            return $query
+                ->filterByEtablissement($this)
+                ->count($con);
+        }
+
+        return count($this->collDemandeAnnulations);
+    }
+
+    /**
+     * Method called to associate a DemandeAnnulation object to this object
+     * through the DemandeAnnulation foreign key attribute.
+     *
+     * @param    DemandeAnnulation $l DemandeAnnulation
+     * @return Etablissement The current object (for fluent API support)
+     */
+    public function addDemandeAnnulation(DemandeAnnulation $l)
+    {
+        if ($this->collDemandeAnnulations === null) {
+            $this->initDemandeAnnulations();
+            $this->collDemandeAnnulationsPartial = true;
+        }
+        if (!in_array($l, $this->collDemandeAnnulations->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
+            $this->doAddDemandeAnnulation($l);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	DemandeAnnulation $demandeAnnulation The demandeAnnulation object to add.
+     */
+    protected function doAddDemandeAnnulation($demandeAnnulation)
+    {
+        $this->collDemandeAnnulations[]= $demandeAnnulation;
+        $demandeAnnulation->setEtablissement($this);
+    }
+
+    /**
+     * @param	DemandeAnnulation $demandeAnnulation The demandeAnnulation object to remove.
+     * @return Etablissement The current object (for fluent API support)
+     */
+    public function removeDemandeAnnulation($demandeAnnulation)
+    {
+        if ($this->getDemandeAnnulations()->contains($demandeAnnulation)) {
+            $this->collDemandeAnnulations->remove($this->collDemandeAnnulations->search($demandeAnnulation));
+            if (null === $this->demandeAnnulationsScheduledForDeletion) {
+                $this->demandeAnnulationsScheduledForDeletion = clone $this->collDemandeAnnulations;
+                $this->demandeAnnulationsScheduledForDeletion->clear();
+            }
+            $this->demandeAnnulationsScheduledForDeletion[]= $demandeAnnulation;
+            $demandeAnnulation->setEtablissement(null);
+        }
+
+        return $this;
+    }
+
+    /**
      * Clears out the collEtablissementI18ns collection
      *
      * This does not modify the database; however, it will remove any associated objects, causing
@@ -8804,6 +9072,11 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                     $o->clearAllReferences($deep);
                 }
             }
+            if ($this->collDemandeAnnulations) {
+                foreach ($this->collDemandeAnnulations as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
             if ($this->collEtablissementI18ns) {
                 foreach ($this->collEtablissementI18ns as $o) {
                     $o->clearAllReferences($deep);
@@ -8917,6 +9190,10 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $this->collDernieresMinutesEtablissements->clearIterator();
         }
         $this->collDernieresMinutesEtablissements = null;
+        if ($this->collDemandeAnnulations instanceof PropelCollection) {
+            $this->collDemandeAnnulations->clearIterator();
+        }
+        $this->collDemandeAnnulations = null;
         if ($this->collEtablissementI18ns instanceof PropelCollection) {
             $this->collEtablissementI18ns->clearIterator();
         }

@@ -110,3 +110,7 @@ crud:
             prefix: /theme
             model: \Cungfoo\Model\Theme
             form: \Cungfoo\Form\Type\ThemeType
+        demande_annulation:
+            prefix: /demandes-annulation
+            model: \Cungfoo\Model\DemandeAnnulation
+            form: \Cungfoo\Form\Type\DemandeAnnulationType
