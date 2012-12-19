@@ -901,10 +901,10 @@
         <column name="assure_pays" type="varchar" required="true"/>
         <column name="assure_mail" type="varchar" required="true"/>
         <column name="assure_telephone" type="varchar" required="true"/>
-        <column name="montant_sejour_camping" type="varchar" required="true"/>
-        <column name="montant_verse_camping" type="varchar" required="true"/>
         <column name="camping_id" type="integer" required="true"/>
         <column name="camping_num_resa" type="varchar" required="true"/>
+        <column name="camping_montant_sejour" type="varchar" required="true"/>
+        <column name="camping_montant_verse" type="varchar" required="true"/>
         <column name="sinistre_nature" type="enum" valueSet="annulation.natureSinistre.annulation, annulation.natureSinistre.interruption" required="true"/>
         <column name="sinistre_suite" type="enum" valueSet="annulation.suiteSinistre.maladie, annulation.suiteSinistre.accident, annulation.suiteSinistre.autre" required="true"/>
         <column name="sinistre_date" type="varchar" required="true"/>

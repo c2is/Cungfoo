@@ -2,10 +2,10 @@
 
 /**
  * Data object containing the SQL and PHP code to migrate the database
- * up to version 1355915861.
- * Generated on 2012-12-19 12:17:41 by m.brunot
+ * up to version 1355923706.
+ * Generated on 2012-12-19 14:28:26 by m.brunot
  */
-class PropelMigration_1355915861
+class PropelMigration_1355923706
 {
 
     public function preUp($manager)
@@ -53,10 +53,10 @@ CREATE TABLE `demande_annulation`
     `assure_pays` VARCHAR(255) NOT NULL,
     `assure_mail` VARCHAR(255) NOT NULL,
     `assure_telephone` VARCHAR(255) NOT NULL,
-    `montant_sejour_camping` VARCHAR(255) NOT NULL,
-    `montant_verse_camping` VARCHAR(255) NOT NULL,
     `camping_id` INTEGER NOT NULL,
     `camping_num_resa` VARCHAR(255) NOT NULL,
+    `camping_montant_sejour` VARCHAR(255) NOT NULL,
+    `camping_montant_verse` VARCHAR(255) NOT NULL,
     `sinistre_nature` TINYINT NOT NULL,
     `sinistre_suite` TINYINT NOT NULL,
     `sinistre_date` VARCHAR(255) NOT NULL,
