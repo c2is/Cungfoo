@@ -58,7 +58,7 @@ class EsiController implements ControllerProviderInterface
             ;
 
             $view = $app->renderView('Esi/earlyBooking.twig', array(
-                'dernieres_minutes' => $listing->process(),
+                'early_booking' => $listing->process(),
             ));
 
             return new Response($view, 200, array('Cache-Control' => 's-maxage=600, public'));

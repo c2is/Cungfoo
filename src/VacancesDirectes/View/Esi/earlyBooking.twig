@@ -2,7 +2,7 @@
     <div class="stamp grey">
         <h2>{{ "home.early_booking" | trans }}</h2>
     </div>
-    {% for etab in dernieres_minutes.element %}
+    {% for etab in early_booking.element %}
         {% for proposal in etab.extra %}
         <div class="element clear linkParent">
             <div class="details left">
@@ -22,5 +22,5 @@
         </div>
         {% endfor %}
     {% endfor %}
-    <a href="{{ path('dernieres_minutes') }}" class="bt link right">{{ "home.early_booking.link" | trans  ({'%number%': dernieres_minutes.element|length }) }}</a>
+    <a href="{{ path('early_booking') }}" class="bt link right">{{ "home.early_booking.link" | trans  ({'%number%': early_booking.element|length }) }}</a>
 </div>

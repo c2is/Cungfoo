@@ -1,6 +1,10 @@
 {% extends "base.twig" %}
 
-{% block title %}{{ "seo.title.camping" | trans ({'%nom%': etab.name, '%ville%': etab.ville, '%nbEtoiles%': etab.categorie }) }}{%if hasBaignade %}{{ "seo.title.camping_suffix" | trans }}{% endif %}{% endblock %}
+{% block title %}
+    {{ "seo.title.camping" | trans ({'%nom%': etab.name, '%ville%': etab.ville }) }}
+    {%if hasBaignade %}{{ "seo.title.camping_suffix" | trans }}{% endif %}
+    {{ etab.categorie }}
+{% endblock %}
 {% block metaDescription %}{{ "seo.meta.camping" | trans  ({'%nom%': etab.name, '%nbEtoiles%': etab.categorie, '%ville%': etab.ville })}}{% endblock %}
 
 {% block bodyClass %} fiche{% endblock %}
