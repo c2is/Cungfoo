@@ -109,11 +109,11 @@ class AnnulationType extends AppAwareType
                 )
             )
         );
-        $builder->add('telephone', 'text', array(
-                'label'         => 'annulation.telephone.label',
+        $builder->add('telephoneAssure', 'text', array(
+                'label'         => 'annulation.telephoneAssure.label',
                 'constraints'   => array(
                     new Assert\NotBlank(array(
-                        'message' => 'annulation.telephone.not_blank'
+                        'message' => 'annulation.telephoneAssure.not_blank'
                     ))
                 )
             )

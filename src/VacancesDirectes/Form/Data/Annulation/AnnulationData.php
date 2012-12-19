@@ -14,7 +14,7 @@ class AnnulationData
     public $villeAssure;
     public $paysAssure;
     public $emailAssure;
-    public $telephone;
+    public $telephoneAssure;
     public $montantSejourCamping;
     public $montantVerseCamping;
     public $nomCamping;
