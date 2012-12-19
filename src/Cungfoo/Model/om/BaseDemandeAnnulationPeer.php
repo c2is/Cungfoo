@@ -37,13 +37,13 @@ abstract class BaseDemandeAnnulationPeer
     const TM_CLASS = 'DemandeAnnulationTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 23;
+    const NUM_COLUMNS = 24;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 23;
+    const NUM_HYDRATE_COLUMNS = 24;
 
     /** the column name for the id field */
     const ID = 'demande_annulation.id';
@@ -114,6 +114,9 @@ abstract class BaseDemandeAnnulationPeer
     /** the column name for the updated_at field */
     const UPDATED_AT = 'demande_annulation.updated_at';
 
+    /** the column name for the active field */
+    const ACTIVE = 'demande_annulation.active';
+
     /** The enumerated values for the sinistre_nature field */
     const SINISTRE_NATURE_ANNULATION_NATURESINISTRE_ANNULATION = 'annulation.natureSinistre.annulation';
     const SINISTRE_NATURE_ANNULATION_NATURESINISTRE_INTERRUPTION = 'annulation.natureSinistre.interruption';
@@ -142,12 +145,12 @@ abstract class BaseDemandeAnnulationPeer
      * e.g. DemandeAnnulationPeer::$fieldNames[DemandeAnnulationPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'AssureNom', 'AssurePrenom', 'AssureAdresse', 'AssureCodePostal', 'AssureVille', 'AssurePays', 'AssureMail', 'AssureTelephone', 'CampingId', 'CampingNumResa', 'CampingMontantSejour', 'CampingMontantVerse', 'SinistreNature', 'SinistreSuite', 'SinistreDate', 'SinistreResume', 'File1', 'File2', 'File3', 'File4', 'CreatedAt', 'UpdatedAt', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'assureNom', 'assurePrenom', 'assureAdresse', 'assureCodePostal', 'assureVille', 'assurePays', 'assureMail', 'assureTelephone', 'campingId', 'campingNumResa', 'campingMontantSejour', 'campingMontantVerse', 'sinistreNature', 'sinistreSuite', 'sinistreDate', 'sinistreResume', 'file1', 'file2', 'file3', 'file4', 'createdAt', 'updatedAt', ),
-        BasePeer::TYPE_COLNAME => array (DemandeAnnulationPeer::ID, DemandeAnnulationPeer::ASSURE_NOM, DemandeAnnulationPeer::ASSURE_PRENOM, DemandeAnnulationPeer::ASSURE_ADRESSE, DemandeAnnulationPeer::ASSURE_CODE_POSTAL, DemandeAnnulationPeer::ASSURE_VILLE, DemandeAnnulationPeer::ASSURE_PAYS, DemandeAnnulationPeer::ASSURE_MAIL, DemandeAnnulationPeer::ASSURE_TELEPHONE, DemandeAnnulationPeer::CAMPING_ID, DemandeAnnulationPeer::CAMPING_NUM_RESA, DemandeAnnulationPeer::CAMPING_MONTANT_SEJOUR, DemandeAnnulationPeer::CAMPING_MONTANT_VERSE, DemandeAnnulationPeer::SINISTRE_NATURE, DemandeAnnulationPeer::SINISTRE_SUITE, DemandeAnnulationPeer::SINISTRE_DATE, DemandeAnnulationPeer::SINISTRE_RESUME, DemandeAnnulationPeer::FILE_1, DemandeAnnulationPeer::FILE_2, DemandeAnnulationPeer::FILE_3, DemandeAnnulationPeer::FILE_4, DemandeAnnulationPeer::CREATED_AT, DemandeAnnulationPeer::UPDATED_AT, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'ASSURE_NOM', 'ASSURE_PRENOM', 'ASSURE_ADRESSE', 'ASSURE_CODE_POSTAL', 'ASSURE_VILLE', 'ASSURE_PAYS', 'ASSURE_MAIL', 'ASSURE_TELEPHONE', 'CAMPING_ID', 'CAMPING_NUM_RESA', 'CAMPING_MONTANT_SEJOUR', 'CAMPING_MONTANT_VERSE', 'SINISTRE_NATURE', 'SINISTRE_SUITE', 'SINISTRE_DATE', 'SINISTRE_RESUME', 'FILE_1', 'FILE_2', 'FILE_3', 'FILE_4', 'CREATED_AT', 'UPDATED_AT', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'assure_nom', 'assure_prenom', 'assure_adresse', 'assure_code_postal', 'assure_ville', 'assure_pays', 'assure_mail', 'assure_telephone', 'camping_id', 'camping_num_resa', 'camping_montant_sejour', 'camping_montant_verse', 'sinistre_nature', 'sinistre_suite', 'sinistre_date', 'sinistre_resume', 'file_1', 'file_2', 'file_3', 'file_4', 'created_at', 'updated_at', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'AssureNom', 'AssurePrenom', 'AssureAdresse', 'AssureCodePostal', 'AssureVille', 'AssurePays', 'AssureMail', 'AssureTelephone', 'CampingId', 'CampingNumResa', 'CampingMontantSejour', 'CampingMontantVerse', 'SinistreNature', 'SinistreSuite', 'SinistreDate', 'SinistreResume', 'File1', 'File2', 'File3', 'File4', 'CreatedAt', 'UpdatedAt', 'Active', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'assureNom', 'assurePrenom', 'assureAdresse', 'assureCodePostal', 'assureVille', 'assurePays', 'assureMail', 'assureTelephone', 'campingId', 'campingNumResa', 'campingMontantSejour', 'campingMontantVerse', 'sinistreNature', 'sinistreSuite', 'sinistreDate', 'sinistreResume', 'file1', 'file2', 'file3', 'file4', 'createdAt', 'updatedAt', 'active', ),
+        BasePeer::TYPE_COLNAME => array (DemandeAnnulationPeer::ID, DemandeAnnulationPeer::ASSURE_NOM, DemandeAnnulationPeer::ASSURE_PRENOM, DemandeAnnulationPeer::ASSURE_ADRESSE, DemandeAnnulationPeer::ASSURE_CODE_POSTAL, DemandeAnnulationPeer::ASSURE_VILLE, DemandeAnnulationPeer::ASSURE_PAYS, DemandeAnnulationPeer::ASSURE_MAIL, DemandeAnnulationPeer::ASSURE_TELEPHONE, DemandeAnnulationPeer::CAMPING_ID, DemandeAnnulationPeer::CAMPING_NUM_RESA, DemandeAnnulationPeer::CAMPING_MONTANT_SEJOUR, DemandeAnnulationPeer::CAMPING_MONTANT_VERSE, DemandeAnnulationPeer::SINISTRE_NATURE, DemandeAnnulationPeer::SINISTRE_SUITE, DemandeAnnulationPeer::SINISTRE_DATE, DemandeAnnulationPeer::SINISTRE_RESUME, DemandeAnnulationPeer::FILE_1, DemandeAnnulationPeer::FILE_2, DemandeAnnulationPeer::FILE_3, DemandeAnnulationPeer::FILE_4, DemandeAnnulationPeer::CREATED_AT, DemandeAnnulationPeer::UPDATED_AT, DemandeAnnulationPeer::ACTIVE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'ASSURE_NOM', 'ASSURE_PRENOM', 'ASSURE_ADRESSE', 'ASSURE_CODE_POSTAL', 'ASSURE_VILLE', 'ASSURE_PAYS', 'ASSURE_MAIL', 'ASSURE_TELEPHONE', 'CAMPING_ID', 'CAMPING_NUM_RESA', 'CAMPING_MONTANT_SEJOUR', 'CAMPING_MONTANT_VERSE', 'SINISTRE_NATURE', 'SINISTRE_SUITE', 'SINISTRE_DATE', 'SINISTRE_RESUME', 'FILE_1', 'FILE_2', 'FILE_3', 'FILE_4', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'assure_nom', 'assure_prenom', 'assure_adresse', 'assure_code_postal', 'assure_ville', 'assure_pays', 'assure_mail', 'assure_telephone', 'camping_id', 'camping_num_resa', 'camping_montant_sejour', 'camping_montant_verse', 'sinistre_nature', 'sinistre_suite', 'sinistre_date', 'sinistre_resume', 'file_1', 'file_2', 'file_3', 'file_4', 'created_at', 'updated_at', 'active', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, )
     );
 
     /**
@@ -157,12 +160,12 @@ abstract class BaseDemandeAnnulationPeer
      * e.g. DemandeAnnulationPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'AssureNom' => 1, 'AssurePrenom' => 2, 'AssureAdresse' => 3, 'AssureCodePostal' => 4, 'AssureVille' => 5, 'AssurePays' => 6, 'AssureMail' => 7, 'AssureTelephone' => 8, 'CampingId' => 9, 'CampingNumResa' => 10, 'CampingMontantSejour' => 11, 'CampingMontantVerse' => 12, 'SinistreNature' => 13, 'SinistreSuite' => 14, 'SinistreDate' => 15, 'SinistreResume' => 16, 'File1' => 17, 'File2' => 18, 'File3' => 19, 'File4' => 20, 'CreatedAt' => 21, 'UpdatedAt' => 22, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'assureNom' => 1, 'assurePrenom' => 2, 'assureAdresse' => 3, 'assureCodePostal' => 4, 'assureVille' => 5, 'assurePays' => 6, 'assureMail' => 7, 'assureTelephone' => 8, 'campingId' => 9, 'campingNumResa' => 10, 'campingMontantSejour' => 11, 'campingMontantVerse' => 12, 'sinistreNature' => 13, 'sinistreSuite' => 14, 'sinistreDate' => 15, 'sinistreResume' => 16, 'file1' => 17, 'file2' => 18, 'file3' => 19, 'file4' => 20, 'createdAt' => 21, 'updatedAt' => 22, ),
-        BasePeer::TYPE_COLNAME => array (DemandeAnnulationPeer::ID => 0, DemandeAnnulationPeer::ASSURE_NOM => 1, DemandeAnnulationPeer::ASSURE_PRENOM => 2, DemandeAnnulationPeer::ASSURE_ADRESSE => 3, DemandeAnnulationPeer::ASSURE_CODE_POSTAL => 4, DemandeAnnulationPeer::ASSURE_VILLE => 5, DemandeAnnulationPeer::ASSURE_PAYS => 6, DemandeAnnulationPeer::ASSURE_MAIL => 7, DemandeAnnulationPeer::ASSURE_TELEPHONE => 8, DemandeAnnulationPeer::CAMPING_ID => 9, DemandeAnnulationPeer::CAMPING_NUM_RESA => 10, DemandeAnnulationPeer::CAMPING_MONTANT_SEJOUR => 11, DemandeAnnulationPeer::CAMPING_MONTANT_VERSE => 12, DemandeAnnulationPeer::SINISTRE_NATURE => 13, DemandeAnnulationPeer::SINISTRE_SUITE => 14, DemandeAnnulationPeer::SINISTRE_DATE => 15, DemandeAnnulationPeer::SINISTRE_RESUME => 16, DemandeAnnulationPeer::FILE_1 => 17, DemandeAnnulationPeer::FILE_2 => 18, DemandeAnnulationPeer::FILE_3 => 19, DemandeAnnulationPeer::FILE_4 => 20, DemandeAnnulationPeer::CREATED_AT => 21, DemandeAnnulationPeer::UPDATED_AT => 22, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'ASSURE_NOM' => 1, 'ASSURE_PRENOM' => 2, 'ASSURE_ADRESSE' => 3, 'ASSURE_CODE_POSTAL' => 4, 'ASSURE_VILLE' => 5, 'ASSURE_PAYS' => 6, 'ASSURE_MAIL' => 7, 'ASSURE_TELEPHONE' => 8, 'CAMPING_ID' => 9, 'CAMPING_NUM_RESA' => 10, 'CAMPING_MONTANT_SEJOUR' => 11, 'CAMPING_MONTANT_VERSE' => 12, 'SINISTRE_NATURE' => 13, 'SINISTRE_SUITE' => 14, 'SINISTRE_DATE' => 15, 'SINISTRE_RESUME' => 16, 'FILE_1' => 17, 'FILE_2' => 18, 'FILE_3' => 19, 'FILE_4' => 20, 'CREATED_AT' => 21, 'UPDATED_AT' => 22, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'assure_nom' => 1, 'assure_prenom' => 2, 'assure_adresse' => 3, 'assure_code_postal' => 4, 'assure_ville' => 5, 'assure_pays' => 6, 'assure_mail' => 7, 'assure_telephone' => 8, 'camping_id' => 9, 'camping_num_resa' => 10, 'camping_montant_sejour' => 11, 'camping_montant_verse' => 12, 'sinistre_nature' => 13, 'sinistre_suite' => 14, 'sinistre_date' => 15, 'sinistre_resume' => 16, 'file_1' => 17, 'file_2' => 18, 'file_3' => 19, 'file_4' => 20, 'created_at' => 21, 'updated_at' => 22, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'AssureNom' => 1, 'AssurePrenom' => 2, 'AssureAdresse' => 3, 'AssureCodePostal' => 4, 'AssureVille' => 5, 'AssurePays' => 6, 'AssureMail' => 7, 'AssureTelephone' => 8, 'CampingId' => 9, 'CampingNumResa' => 10, 'CampingMontantSejour' => 11, 'CampingMontantVerse' => 12, 'SinistreNature' => 13, 'SinistreSuite' => 14, 'SinistreDate' => 15, 'SinistreResume' => 16, 'File1' => 17, 'File2' => 18, 'File3' => 19, 'File4' => 20, 'CreatedAt' => 21, 'UpdatedAt' => 22, 'Active' => 23, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'assureNom' => 1, 'assurePrenom' => 2, 'assureAdresse' => 3, 'assureCodePostal' => 4, 'assureVille' => 5, 'assurePays' => 6, 'assureMail' => 7, 'assureTelephone' => 8, 'campingId' => 9, 'campingNumResa' => 10, 'campingMontantSejour' => 11, 'campingMontantVerse' => 12, 'sinistreNature' => 13, 'sinistreSuite' => 14, 'sinistreDate' => 15, 'sinistreResume' => 16, 'file1' => 17, 'file2' => 18, 'file3' => 19, 'file4' => 20, 'createdAt' => 21, 'updatedAt' => 22, 'active' => 23, ),
+        BasePeer::TYPE_COLNAME => array (DemandeAnnulationPeer::ID => 0, DemandeAnnulationPeer::ASSURE_NOM => 1, DemandeAnnulationPeer::ASSURE_PRENOM => 2, DemandeAnnulationPeer::ASSURE_ADRESSE => 3, DemandeAnnulationPeer::ASSURE_CODE_POSTAL => 4, DemandeAnnulationPeer::ASSURE_VILLE => 5, DemandeAnnulationPeer::ASSURE_PAYS => 6, DemandeAnnulationPeer::ASSURE_MAIL => 7, DemandeAnnulationPeer::ASSURE_TELEPHONE => 8, DemandeAnnulationPeer::CAMPING_ID => 9, DemandeAnnulationPeer::CAMPING_NUM_RESA => 10, DemandeAnnulationPeer::CAMPING_MONTANT_SEJOUR => 11, DemandeAnnulationPeer::CAMPING_MONTANT_VERSE => 12, DemandeAnnulationPeer::SINISTRE_NATURE => 13, DemandeAnnulationPeer::SINISTRE_SUITE => 14, DemandeAnnulationPeer::SINISTRE_DATE => 15, DemandeAnnulationPeer::SINISTRE_RESUME => 16, DemandeAnnulationPeer::FILE_1 => 17, DemandeAnnulationPeer::FILE_2 => 18, DemandeAnnulationPeer::FILE_3 => 19, DemandeAnnulationPeer::FILE_4 => 20, DemandeAnnulationPeer::CREATED_AT => 21, DemandeAnnulationPeer::UPDATED_AT => 22, DemandeAnnulationPeer::ACTIVE => 23, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'ASSURE_NOM' => 1, 'ASSURE_PRENOM' => 2, 'ASSURE_ADRESSE' => 3, 'ASSURE_CODE_POSTAL' => 4, 'ASSURE_VILLE' => 5, 'ASSURE_PAYS' => 6, 'ASSURE_MAIL' => 7, 'ASSURE_TELEPHONE' => 8, 'CAMPING_ID' => 9, 'CAMPING_NUM_RESA' => 10, 'CAMPING_MONTANT_SEJOUR' => 11, 'CAMPING_MONTANT_VERSE' => 12, 'SINISTRE_NATURE' => 13, 'SINISTRE_SUITE' => 14, 'SINISTRE_DATE' => 15, 'SINISTRE_RESUME' => 16, 'FILE_1' => 17, 'FILE_2' => 18, 'FILE_3' => 19, 'FILE_4' => 20, 'CREATED_AT' => 21, 'UPDATED_AT' => 22, 'ACTIVE' => 23, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'assure_nom' => 1, 'assure_prenom' => 2, 'assure_adresse' => 3, 'assure_code_postal' => 4, 'assure_ville' => 5, 'assure_pays' => 6, 'assure_mail' => 7, 'assure_telephone' => 8, 'camping_id' => 9, 'camping_num_resa' => 10, 'camping_montant_sejour' => 11, 'camping_montant_verse' => 12, 'sinistre_nature' => 13, 'sinistre_suite' => 14, 'sinistre_date' => 15, 'sinistre_resume' => 16, 'file_1' => 17, 'file_2' => 18, 'file_3' => 19, 'file_4' => 20, 'created_at' => 21, 'updated_at' => 22, 'active' => 23, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, )
     );
 
     /** The enumerated values for this table */
@@ -295,6 +298,7 @@ abstract class BaseDemandeAnnulationPeer
             $criteria->addSelectColumn(DemandeAnnulationPeer::FILE_4);
             $criteria->addSelectColumn(DemandeAnnulationPeer::CREATED_AT);
             $criteria->addSelectColumn(DemandeAnnulationPeer::UPDATED_AT);
+            $criteria->addSelectColumn(DemandeAnnulationPeer::ACTIVE);
         } else {
             $criteria->addSelectColumn($alias . '.id');
             $criteria->addSelectColumn($alias . '.assure_nom');
@@ -319,6 +323,7 @@ abstract class BaseDemandeAnnulationPeer
             $criteria->addSelectColumn($alias . '.file_4');
             $criteria->addSelectColumn($alias . '.created_at');
             $criteria->addSelectColumn($alias . '.updated_at');
+            $criteria->addSelectColumn($alias . '.active');
         }
     }
 

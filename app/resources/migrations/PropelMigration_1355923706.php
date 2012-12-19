@@ -67,6 +67,7 @@ CREATE TABLE `demande_annulation`
     `file_4` VARCHAR(255),
     `created_at` DATETIME,
     `updated_at` DATETIME,
+    `active` TINYINT(1) DEFAULT 1,
     PRIMARY KEY (`id`),
     INDEX `demande_annulation_FI_1` (`camping_id`),
     CONSTRAINT `demande_annulation_FK_1`

@@ -74,6 +74,7 @@ class DemandeAnnulationTableMap extends TableMap
         $this->addColumn('file_4', 'File4', 'VARCHAR', false, 255, null);
         $this->addColumn('created_at', 'CreatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('updated_at', 'UpdatedAt', 'TIMESTAMP', false, null, null);
+        $this->addColumn('active', 'Active', 'BOOLEAN', false, 1, false);
         // validators
     } // initialize()
 
@@ -98,6 +99,9 @@ class DemandeAnnulationTableMap extends TableMap
   'create_column' => 'created_at',
   'update_column' => 'updated_at',
   'disable_updated_at' => 'false',
+),
+            'active' =>  array (
+  'active_column' => 'active',
 ),
             'crudable' =>  array (
   'route_prefix' => '/',

@@ -914,6 +914,7 @@
         <column name="file_3" type="varchar"/>
         <column name="file_4" type="varchar"/>
         <behavior name="timestampable" />
+        <behavior name="active" />
 
         <foreign-key foreignTable="etablissement">
             <reference local="camping_id" foreign="id"/>

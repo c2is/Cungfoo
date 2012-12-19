@@ -36,6 +36,7 @@ class BaseDemandeAnnulationListing extends Listing
         $this->addColumn(new Column\TextColumn('file_2'));
         $this->addColumn(new Column\TextColumn('file_3'));
         $this->addColumn(new Column\TextColumn('file_4'));
+        $this->addColumn(new Column\TextColumn('active'));
     }
 
     /**

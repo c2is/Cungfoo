@@ -45,6 +45,7 @@ use Cungfoo\Model\Etablissement;
  * @method DemandeAnnulationQuery orderByFile4($order = Criteria::ASC) Order by the file_4 column
  * @method DemandeAnnulationQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method DemandeAnnulationQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
+ * @method DemandeAnnulationQuery orderByActive($order = Criteria::ASC) Order by the active column
  *
  * @method DemandeAnnulationQuery groupById() Group by the id column
  * @method DemandeAnnulationQuery groupByAssureNom() Group by the assure_nom column
@@ -69,6 +70,7 @@ use Cungfoo\Model\Etablissement;
  * @method DemandeAnnulationQuery groupByFile4() Group by the file_4 column
  * @method DemandeAnnulationQuery groupByCreatedAt() Group by the created_at column
  * @method DemandeAnnulationQuery groupByUpdatedAt() Group by the updated_at column
+ * @method DemandeAnnulationQuery groupByActive() Group by the active column
  *
  * @method DemandeAnnulationQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method DemandeAnnulationQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -103,6 +105,7 @@ use Cungfoo\Model\Etablissement;
  * @method DemandeAnnulation findOneByFile4(string $file_4) Return the first DemandeAnnulation filtered by the file_4 column
  * @method DemandeAnnulation findOneByCreatedAt(string $created_at) Return the first DemandeAnnulation filtered by the created_at column
  * @method DemandeAnnulation findOneByUpdatedAt(string $updated_at) Return the first DemandeAnnulation filtered by the updated_at column
+ * @method DemandeAnnulation findOneByActive(boolean $active) Return the first DemandeAnnulation filtered by the active column
  *
  * @method array findById(int $id) Return DemandeAnnulation objects filtered by the id column
  * @method array findByAssureNom(string $assure_nom) Return DemandeAnnulation objects filtered by the assure_nom column
@@ -127,6 +130,7 @@ use Cungfoo\Model\Etablissement;
  * @method array findByFile4(string $file_4) Return DemandeAnnulation objects filtered by the file_4 column
  * @method array findByCreatedAt(string $created_at) Return DemandeAnnulation objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return DemandeAnnulation objects filtered by the updated_at column
+ * @method array findByActive(boolean $active) Return DemandeAnnulation objects filtered by the active column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -230,7 +234,7 @@ abstract class BaseDemandeAnnulationQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `assure_nom`, `assure_prenom`, `assure_adresse`, `assure_code_postal`, `assure_ville`, `assure_pays`, `assure_mail`, `assure_telephone`, `camping_id`, `camping_num_resa`, `camping_montant_sejour`, `camping_montant_verse`, `sinistre_nature`, `sinistre_suite`, `sinistre_date`, `sinistre_resume`, `file_1`, `file_2`, `file_3`, `file_4`, `created_at`, `updated_at` FROM `demande_annulation` WHERE `id` = :p0';
+        $sql = 'SELECT `id`, `assure_nom`, `assure_prenom`, `assure_adresse`, `assure_code_postal`, `assure_ville`, `assure_pays`, `assure_mail`, `assure_telephone`, `camping_id`, `camping_num_resa`, `camping_montant_sejour`, `camping_montant_verse`, `sinistre_nature`, `sinistre_suite`, `sinistre_date`, `sinistre_resume`, `file_1`, `file_2`, `file_3`, `file_4`, `created_at`, `updated_at`, `active` FROM `demande_annulation` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -1037,6 +1041,33 @@ abstract class BaseDemandeAnnulationQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query on the active column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByActive(true); // WHERE active = true
+     * $query->filterByActive('yes'); // WHERE active = true
+     * </code>
+     *
+     * @param     boolean|string $active The value to use as filter.
+     *              Non-boolean arguments are converted using the following rules:
+     *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     *              Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return DemandeAnnulationQuery The current query, for fluid interface
+     */
+    public function filterByActive($active = null, $comparison = null)
+    {
+        if (is_string($active)) {
+            $active = in_array(strtolower($active), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+        }
+
+        return $this->addUsingAlias(DemandeAnnulationPeer::ACTIVE, $active, $comparison);
+    }
+
+    /**
      * Filter the query by a related Etablissement object
      *
      * @param   Etablissement|PropelObjectCollection $etablissement The related object(s) to use as filter
@@ -1193,4 +1224,18 @@ abstract class BaseDemandeAnnulationQuery extends ModelCriteria
     {
         return $this->addAscendingOrderByColumn(DemandeAnnulationPeer::CREATED_AT);
     }
+    // active behavior
+
+    /**
+     * return only active objects
+     *
+     * @return boolean
+     */
+    public function findActive($con = null)
+    {
+        $this->filterByActive(true);
+
+        return parent::find($con);
+    }
+
 }
