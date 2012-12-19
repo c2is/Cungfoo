@@ -4,9 +4,10 @@ seo:
         pays: "Camping %pays% pas cher"
         region: "Location mobil home %region% pas cher, camping %region%"
         ville: "Camping %ville% pas cher, location mobil home %ville% pas cher"
-        camping: "Camping %nom%, camping %ville% %nbEtoiles%"
+        camping: "Camping %nom%, camping %ville%"
         camping_suffix: " avec piscine"
         dernieres_minutes: "Camping derniere minutes, location mobil home derniere minutes"
+        early_booking: "Camping early booking, location mobil home early booking"
         dispo: "Résultat de recherche location camping, mobil home"
         couloir: "Espace de réservation"
         theme: "%theme%"
@@ -19,6 +20,7 @@ seo:
         ville: "Découvrez l'ensemble des campings à %ville% (%region%) proposés par Vacances Directes (location de mobil home pas cher) et réserver votre séjour en ligne. "
         camping: "Avec Vacances Directes, réserver en ligne votre futur séjour dans le camping %nom% : un camping %nbEtoiles% avec piscine à %ville%."
         dernieres_minutes: "Découvrez toutes les offres de locations de mobil homes en dernières minutes en camping proposées par Vacances directes et réserver en ligne."
+        early_booking: "Découvrez toutes les offres de locations de mobil homes en early booking en camping proposées par Vacances directes et réserver en ligne."
         dispo: "Listing - Campings"
         couloir: "Espace de réservation"
         theme: "%theme%"
@@ -107,7 +109,7 @@ date_search.button.submit: Rechercher
 header.information: Informations & réservations
 header.telephone.number: 0825 133 400
 header.telephone.price: (0,15€/min)
-header.130_camping: + de 180 campings en France, Espagne & Italie
+header.130_camping: + de 170 campings en France, Espagne & Italie
 header.location_mobil_home: Location de mobil home en camping (France, Espagne, Italie et Portugal)
 
 footer.contact: Contact
@@ -276,3 +278,4 @@ breadcrumbs.home: Accueil
 
 topCamping.h1: Top destinations vacances en camping
 dernieresMinutes.h1: Nos offres de campings en dernières minutes (location mobil home)
+earlyBooking.h1: Nos offres de campings en early booking (location mobil home)

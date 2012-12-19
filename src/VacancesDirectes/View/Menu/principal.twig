@@ -1,0 +1,18 @@
+<nav id="nav"><ul class="topnav fixed-width clear">
+    <li class="tab{% if currentRoute == "homepage" %} current{% endif %}">
+        <a id="home" href="{{ path( 'homepage' ) }}">
+            <img  src="{{ asset('images/vacancesdirectes/common/pict/home.png') }}" alt="{{ menu.title|trans }}">
+        </a>
+    </li>
+    {% for item in menu.items %}
+        <li class="tab{% if "destination" in currentRoute %} current{% endif %}">
+            <a>{{ item.title|trans }}{% if item.count is not null %} <small>({{ item.count }})</small>{% endif %}</a>
+            {{ render ( path ( item.route ) ) }}
+        </li>
+    {% endfor %}
+    <li>
+        <a id="lang" href="http://www.vacances-directes.de/de/"><img src="{{ asset('images/vacancesdirectes/dyn/ui/lang-flag-de.jpg') }}" alt="DE"/></a>
+        <a id="lang" href="http://www.vacances-directes.nl"><img src="{{ asset('images/vacancesdirectes/dyn/ui/lang-flag-nl.jpg') }}" alt="NL"/></a>
+    </li>
+    </ul>
+</nav>

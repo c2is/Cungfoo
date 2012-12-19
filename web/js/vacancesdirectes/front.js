@@ -184,18 +184,17 @@ $(function() {
      * ############################################################
      */
 
-    if ( $('#accountBox').length ) {
-        $('#account').click(function(e){
-            $(this).next().toggle();
-            if ( $('#accountBox').is(':visible') ){
-                $('#header').css({zIndex:21});
-            }
-            else {
-                $('#header').css({zIndex:20});
-            }
-        });
-    }
-
+     if ( $('#accountBox').length ) {
+     $('#account').click(function(e){
+     $(this).next().toggle();
+     if ( $('#accountBox').is(':visible') ){
+     $('#header').css({zIndex:21});
+     }
+     else {
+     $('#header').css({zIndex:20});
+     }
+     });
+     }
 
     /*
      *  ############################################################
@@ -266,14 +265,6 @@ $(function() {
             currentLi = $('#nav .topnav').children('.current');
             removeBorders(currentLi);
         }
-    }
-    function addBorders(e){
-        e.removeClass('noBorder');
-        e.next().removeClass('noBorder');
-    }
-    function removeBorders(e){
-        e.addClass('noBorder');
-        e.next().addClass('noBorder');
     }
 
 
@@ -1091,6 +1082,13 @@ head.ready(function(){
  * ///////////////////////////////////////////////////////////////////////////////////////////////////////////
  */
 
+
+/*
+ * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+ *                       SEARCH ENGINE
+ * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+ */
+
 function countItem() {
     //console.log("################################## countItem()  ##################################");
     $('.spin-bt-down, .spin-bt-up').live('click', function(){
@@ -1158,9 +1156,8 @@ function switchSelect(){
 
 var toggleState = 0;
 function toggleSearchCriteria(){
-//    //console.log("################################## toggleSearchCriteria()  ##################################");
+    //console.log("################################## toggleSearchCriteria()  ##################################");
     $('.toggleButton').live('click', function(e){
-//        //console.log("----------------- toggleSearchCriteria() CLICK -----------------");
         toggleState = toggleState == 0 ? 1 : 0;
         $(this).parents('#searchBloc').toggleClass('opened');
         e.preventDefault();
@@ -1172,12 +1169,35 @@ function toggleSearchCriteria(){
     });
 }
 
+
+/*
+ * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+ *                          POPIN
+ * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+ */
+
 function openIframePopin(url){
     $.colorbox({href: url, iframe:true, fixed: true, width:'80%', height:'80%', close:"&times;"});
 }
 
 /*
- *  ############################################################
+ * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+ *                      NAVIGATION MENU
+ * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+ */
+
+function addBorders(e){
+    e.removeClass('noBorder');
+    e.next().removeClass('noBorder');
+}
+function removeBorders(e){
+    e.addClass('noBorder');
+    e.next().addClass('noBorder');
+}
+
+
+/*
+ * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
  *                         DATEPICKER
  * ############################################################
  */
@@ -1219,7 +1239,7 @@ function initializeForbiddenDates() {
     //console.log("################################## initializeForbiddenDates()  ##################################");
     //console.log(firstRendering);
     var allSaturdays = $('#datepickerCalendar td.datepickerSaturday').not($('td.datepickerNotInMonth'));
-    startHighSeasonDay = false,
+        startHighSeasonDay = false,
         endHighSeasonDay = false;
     allSaturdays.removeClass('datepickerUnselectable');
     if (firstRendering){
@@ -1250,7 +1270,7 @@ function unselectForbiddenDates(date){
     var selectedDate = numDate(formatDate(date)),
         numWeek = 0,
         allSaturdays = $('#datepickerCalendar td.datepickerSaturday').not($('td.datepickerNotInMonth'));
-    startHighSeasonDay = false,
+        startHighSeasonDay = false,
         endHighSeasonDay = false,
         arrivalDay = false,
         departureDay = false;
@@ -1353,12 +1373,12 @@ function defineHighSeason(td) {
 //    //console.log("################################## defineHighSeason()  ##################################");
     // td HIGH SEASON DEPARTURE DAY
     if ( startHighSeasonDay && td.hasClass('datepickerSpecial') && !td.hasClass('datepickerDisabled') ){
-        //console.log("HIGH SEASON LAST DAY");
+    //console.log("HIGH SEASON LAST DAY");
         endHighSeasonDay = true;
     }
     // td HIGH SEASON ARRIVAL DAY
     else if ( !startHighSeasonDay && td.hasClass('datepickerSpecial') && !td.hasClass('datepickerUnselectable') ){
-        //console.log("HIGH SEASON FIRST DAY");
+    //console.log("HIGH SEASON FIRST DAY");
         startHighSeasonDay = true;
     }
 }
@@ -1407,9 +1427,9 @@ function numDate(d){
 
 
 /*
- *  ############################################################
- *                   FICHE CAMPING SLIDER
- * ############################################################
+ * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+ *                       FICHE SLIDER
+ * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
  */
 
 function sliderPict() {
@@ -1483,6 +1503,7 @@ function sliderActivite() {
         auto: false
     });
 }
+
 function tabs(tView, load) {
     var sView = tView.split('#')[1],
         slider = $('.tabCampDiapo');
@@ -1503,9 +1524,9 @@ function tabs(tView, load) {
 
 
 /*
- *  ############################################################
- *                         GMAP FUNCIONS
- * ############################################################
+ * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+ *                      GMAP FUNCIONS
+ * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
  */
 
 function loadGmapScript() { // call at the end of the DOM ready
@@ -1521,7 +1542,6 @@ function loadPluginsGmap() { // call after http://maps.googleapis.com/maps/api/j
     script.src = templatePath+"js/vacancesdirectes/pluginGmap.js"; // call initializeAllGmap() at the end of pluginGmap.js (do a callback)
     document.body.appendChild(script);
 }
-
 
 function setMarkers(map, mkrs) {
     for (var i = 0; i < mkrs.length; i++) {
@@ -1562,6 +1582,7 @@ function setMarkers(map, mkrs) {
         }
     }
 }
+
 function initializeAllGmap() {
 
     // infobox vars
@@ -1619,7 +1640,13 @@ function initializeAllGmap() {
     }
 }
 
-/*** FONCTIONS RESULTATS DE RECHERCHE ***/
+
+/*
+ * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+ *                     SEARCH RESULTS
+ * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+ */
+
 function initCritResult(){
 // affichage carte
     if(window.location.hash === '#carte') {
@@ -1721,6 +1748,13 @@ function openCrit() {
         $(this).toggleClass('open').next('fieldset').fadeToggle();
     });
 }
+
+
+/*
+ * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+ *                      RANGE SLIDER
+ * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+ */
 
 //attribution min/max prix pour le range slider
 function findMinMaxRange() {
