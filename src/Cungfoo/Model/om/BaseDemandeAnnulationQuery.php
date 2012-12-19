@@ -31,10 +31,10 @@ use Cungfoo\Model\Etablissement;
  * @method DemandeAnnulationQuery orderByAssurePays($order = Criteria::ASC) Order by the assure_pays column
  * @method DemandeAnnulationQuery orderByAssureMail($order = Criteria::ASC) Order by the assure_mail column
  * @method DemandeAnnulationQuery orderByAssureTelephone($order = Criteria::ASC) Order by the assure_telephone column
- * @method DemandeAnnulationQuery orderByMontantSejourCamping($order = Criteria::ASC) Order by the montant_sejour_camping column
- * @method DemandeAnnulationQuery orderByMontantVerseCamping($order = Criteria::ASC) Order by the montant_verse_camping column
  * @method DemandeAnnulationQuery orderByCampingId($order = Criteria::ASC) Order by the camping_id column
  * @method DemandeAnnulationQuery orderByCampingNumResa($order = Criteria::ASC) Order by the camping_num_resa column
+ * @method DemandeAnnulationQuery orderByCampingMontantSejour($order = Criteria::ASC) Order by the camping_montant_sejour column
+ * @method DemandeAnnulationQuery orderByCampingMontantVerse($order = Criteria::ASC) Order by the camping_montant_verse column
  * @method DemandeAnnulationQuery orderBySinistreNature($order = Criteria::ASC) Order by the sinistre_nature column
  * @method DemandeAnnulationQuery orderBySinistreSuite($order = Criteria::ASC) Order by the sinistre_suite column
  * @method DemandeAnnulationQuery orderBySinistreDate($order = Criteria::ASC) Order by the sinistre_date column
@@ -55,10 +55,10 @@ use Cungfoo\Model\Etablissement;
  * @method DemandeAnnulationQuery groupByAssurePays() Group by the assure_pays column
  * @method DemandeAnnulationQuery groupByAssureMail() Group by the assure_mail column
  * @method DemandeAnnulationQuery groupByAssureTelephone() Group by the assure_telephone column
- * @method DemandeAnnulationQuery groupByMontantSejourCamping() Group by the montant_sejour_camping column
- * @method DemandeAnnulationQuery groupByMontantVerseCamping() Group by the montant_verse_camping column
  * @method DemandeAnnulationQuery groupByCampingId() Group by the camping_id column
  * @method DemandeAnnulationQuery groupByCampingNumResa() Group by the camping_num_resa column
+ * @method DemandeAnnulationQuery groupByCampingMontantSejour() Group by the camping_montant_sejour column
+ * @method DemandeAnnulationQuery groupByCampingMontantVerse() Group by the camping_montant_verse column
  * @method DemandeAnnulationQuery groupBySinistreNature() Group by the sinistre_nature column
  * @method DemandeAnnulationQuery groupBySinistreSuite() Group by the sinistre_suite column
  * @method DemandeAnnulationQuery groupBySinistreDate() Group by the sinistre_date column
@@ -89,10 +89,10 @@ use Cungfoo\Model\Etablissement;
  * @method DemandeAnnulation findOneByAssurePays(string $assure_pays) Return the first DemandeAnnulation filtered by the assure_pays column
  * @method DemandeAnnulation findOneByAssureMail(string $assure_mail) Return the first DemandeAnnulation filtered by the assure_mail column
  * @method DemandeAnnulation findOneByAssureTelephone(string $assure_telephone) Return the first DemandeAnnulation filtered by the assure_telephone column
- * @method DemandeAnnulation findOneByMontantSejourCamping(string $montant_sejour_camping) Return the first DemandeAnnulation filtered by the montant_sejour_camping column
- * @method DemandeAnnulation findOneByMontantVerseCamping(string $montant_verse_camping) Return the first DemandeAnnulation filtered by the montant_verse_camping column
  * @method DemandeAnnulation findOneByCampingId(int $camping_id) Return the first DemandeAnnulation filtered by the camping_id column
  * @method DemandeAnnulation findOneByCampingNumResa(string $camping_num_resa) Return the first DemandeAnnulation filtered by the camping_num_resa column
+ * @method DemandeAnnulation findOneByCampingMontantSejour(string $camping_montant_sejour) Return the first DemandeAnnulation filtered by the camping_montant_sejour column
+ * @method DemandeAnnulation findOneByCampingMontantVerse(string $camping_montant_verse) Return the first DemandeAnnulation filtered by the camping_montant_verse column
  * @method DemandeAnnulation findOneBySinistreNature(int $sinistre_nature) Return the first DemandeAnnulation filtered by the sinistre_nature column
  * @method DemandeAnnulation findOneBySinistreSuite(int $sinistre_suite) Return the first DemandeAnnulation filtered by the sinistre_suite column
  * @method DemandeAnnulation findOneBySinistreDate(string $sinistre_date) Return the first DemandeAnnulation filtered by the sinistre_date column
@@ -113,10 +113,10 @@ use Cungfoo\Model\Etablissement;
  * @method array findByAssurePays(string $assure_pays) Return DemandeAnnulation objects filtered by the assure_pays column
  * @method array findByAssureMail(string $assure_mail) Return DemandeAnnulation objects filtered by the assure_mail column
  * @method array findByAssureTelephone(string $assure_telephone) Return DemandeAnnulation objects filtered by the assure_telephone column
- * @method array findByMontantSejourCamping(string $montant_sejour_camping) Return DemandeAnnulation objects filtered by the montant_sejour_camping column
- * @method array findByMontantVerseCamping(string $montant_verse_camping) Return DemandeAnnulation objects filtered by the montant_verse_camping column
  * @method array findByCampingId(int $camping_id) Return DemandeAnnulation objects filtered by the camping_id column
  * @method array findByCampingNumResa(string $camping_num_resa) Return DemandeAnnulation objects filtered by the camping_num_resa column
+ * @method array findByCampingMontantSejour(string $camping_montant_sejour) Return DemandeAnnulation objects filtered by the camping_montant_sejour column
+ * @method array findByCampingMontantVerse(string $camping_montant_verse) Return DemandeAnnulation objects filtered by the camping_montant_verse column
  * @method array findBySinistreNature(int $sinistre_nature) Return DemandeAnnulation objects filtered by the sinistre_nature column
  * @method array findBySinistreSuite(int $sinistre_suite) Return DemandeAnnulation objects filtered by the sinistre_suite column
  * @method array findBySinistreDate(string $sinistre_date) Return DemandeAnnulation objects filtered by the sinistre_date column
@@ -230,7 +230,7 @@ abstract class BaseDemandeAnnulationQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `assure_nom`, `assure_prenom`, `assure_adresse`, `assure_code_postal`, `assure_ville`, `assure_pays`, `assure_mail`, `assure_telephone`, `montant_sejour_camping`, `montant_verse_camping`, `camping_id`, `camping_num_resa`, `sinistre_nature`, `sinistre_suite`, `sinistre_date`, `sinistre_resume`, `file_1`, `file_2`, `file_3`, `file_4`, `created_at`, `updated_at` FROM `demande_annulation` WHERE `id` = :p0';
+        $sql = 'SELECT `id`, `assure_nom`, `assure_prenom`, `assure_adresse`, `assure_code_postal`, `assure_ville`, `assure_pays`, `assure_mail`, `assure_telephone`, `camping_id`, `camping_num_resa`, `camping_montant_sejour`, `camping_montant_verse`, `sinistre_nature`, `sinistre_suite`, `sinistre_date`, `sinistre_resume`, `file_1`, `file_2`, `file_3`, `file_4`, `created_at`, `updated_at` FROM `demande_annulation` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -579,64 +579,6 @@ abstract class BaseDemandeAnnulationQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query on the montant_sejour_camping column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByMontantSejourCamping('fooValue');   // WHERE montant_sejour_camping = 'fooValue'
-     * $query->filterByMontantSejourCamping('%fooValue%'); // WHERE montant_sejour_camping LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $montantSejourCamping The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return DemandeAnnulationQuery The current query, for fluid interface
-     */
-    public function filterByMontantSejourCamping($montantSejourCamping = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($montantSejourCamping)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $montantSejourCamping)) {
-                $montantSejourCamping = str_replace('*', '%', $montantSejourCamping);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(DemandeAnnulationPeer::MONTANT_SEJOUR_CAMPING, $montantSejourCamping, $comparison);
-    }
-
-    /**
-     * Filter the query on the montant_verse_camping column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByMontantVerseCamping('fooValue');   // WHERE montant_verse_camping = 'fooValue'
-     * $query->filterByMontantVerseCamping('%fooValue%'); // WHERE montant_verse_camping LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $montantVerseCamping The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return DemandeAnnulationQuery The current query, for fluid interface
-     */
-    public function filterByMontantVerseCamping($montantVerseCamping = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($montantVerseCamping)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $montantVerseCamping)) {
-                $montantVerseCamping = str_replace('*', '%', $montantVerseCamping);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(DemandeAnnulationPeer::MONTANT_VERSE_CAMPING, $montantVerseCamping, $comparison);
-    }
-
-    /**
      * Filter the query on the camping_id column
      *
      * Example usage:
@@ -706,6 +648,64 @@ abstract class BaseDemandeAnnulationQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(DemandeAnnulationPeer::CAMPING_NUM_RESA, $campingNumResa, $comparison);
+    }
+
+    /**
+     * Filter the query on the camping_montant_sejour column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByCampingMontantSejour('fooValue');   // WHERE camping_montant_sejour = 'fooValue'
+     * $query->filterByCampingMontantSejour('%fooValue%'); // WHERE camping_montant_sejour LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $campingMontantSejour The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return DemandeAnnulationQuery The current query, for fluid interface
+     */
+    public function filterByCampingMontantSejour($campingMontantSejour = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($campingMontantSejour)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $campingMontantSejour)) {
+                $campingMontantSejour = str_replace('*', '%', $campingMontantSejour);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(DemandeAnnulationPeer::CAMPING_MONTANT_SEJOUR, $campingMontantSejour, $comparison);
+    }
+
+    /**
+     * Filter the query on the camping_montant_verse column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByCampingMontantVerse('fooValue');   // WHERE camping_montant_verse = 'fooValue'
+     * $query->filterByCampingMontantVerse('%fooValue%'); // WHERE camping_montant_verse LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $campingMontantVerse The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return DemandeAnnulationQuery The current query, for fluid interface
+     */
+    public function filterByCampingMontantVerse($campingMontantVerse = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($campingMontantVerse)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $campingMontantVerse)) {
+                $campingMontantVerse = str_replace('*', '%', $campingMontantVerse);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(DemandeAnnulationPeer::CAMPING_MONTANT_VERSE, $campingMontantVerse, $comparison);
     }
 
     /**

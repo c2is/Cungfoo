@@ -27,9 +27,9 @@ class BaseDemandeAnnulationListing extends Listing
         $this->addColumn(new Column\TextColumn('assure_pays'));
         $this->addColumn(new Column\TextColumn('assure_mail'));
         $this->addColumn(new Column\TextColumn('assure_telephone'));
-        $this->addColumn(new Column\TextColumn('montant_sejour_camping'));
-        $this->addColumn(new Column\TextColumn('montant_verse_camping'));
         $this->addColumn(new Column\TextColumn('camping_num_resa'));
+        $this->addColumn(new Column\TextColumn('camping_montant_sejour'));
+        $this->addColumn(new Column\TextColumn('camping_montant_verse'));
         $this->addColumn(new Column\TextColumn('sinistre_date'));
         $this->addColumn(new Column\TextColumn('sinistre_resume'));
         $this->addColumn(new Column\TextColumn('file_1'));

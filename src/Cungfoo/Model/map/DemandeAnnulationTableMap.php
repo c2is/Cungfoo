@@ -51,10 +51,10 @@ class DemandeAnnulationTableMap extends TableMap
         $this->addColumn('assure_pays', 'AssurePays', 'VARCHAR', true, 255, null);
         $this->addColumn('assure_mail', 'AssureMail', 'VARCHAR', true, 255, null);
         $this->addColumn('assure_telephone', 'AssureTelephone', 'VARCHAR', true, 255, null);
-        $this->addColumn('montant_sejour_camping', 'MontantSejourCamping', 'VARCHAR', true, 255, null);
-        $this->addColumn('montant_verse_camping', 'MontantVerseCamping', 'VARCHAR', true, 255, null);
         $this->addForeignKey('camping_id', 'CampingId', 'INTEGER', 'etablissement', 'id', true, null, null);
         $this->addColumn('camping_num_resa', 'CampingNumResa', 'VARCHAR', true, 255, null);
+        $this->addColumn('camping_montant_sejour', 'CampingMontantSejour', 'VARCHAR', true, 255, null);
+        $this->addColumn('camping_montant_verse', 'CampingMontantVerse', 'VARCHAR', true, 255, null);
         $this->addColumn('sinistre_nature', 'SinistreNature', 'ENUM', true, null, null);
         $this->getColumn('sinistre_nature', false)->setValueSet(array (
   0 => 'annulation.natureSinistre.annulation',

@@ -83,20 +83,6 @@ class BaseDemandeAnnulationType extends AppAwareType
             'label' => 'demande_annulation.assure_telephone',
             'required' => false,
         ));
-        $builder->add('montant_sejour_camping', 'text', array(
-            'constraints' => array(
-                new Assert\NotBlank(),
-            ),
-            'label' => 'demande_annulation.montant_sejour_camping',
-            'required' => false,
-        ));
-        $builder->add('montant_verse_camping', 'text', array(
-            'constraints' => array(
-                new Assert\NotBlank(),
-            ),
-            'label' => 'demande_annulation.montant_verse_camping',
-            'required' => false,
-        ));
         $builder->add('etablissement', 'model', array(
             'class' => '\Cungfoo\Model\Etablissement',
             'constraints' => array(
@@ -110,6 +96,20 @@ class BaseDemandeAnnulationType extends AppAwareType
                 new Assert\NotBlank(),
             ),
             'label' => 'demande_annulation.camping_num_resa',
+            'required' => false,
+        ));
+        $builder->add('camping_montant_sejour', 'text', array(
+            'constraints' => array(
+                new Assert\NotBlank(),
+            ),
+            'label' => 'demande_annulation.camping_montant_sejour',
+            'required' => false,
+        ));
+        $builder->add('camping_montant_verse', 'text', array(
+            'constraints' => array(
+                new Assert\NotBlank(),
+            ),
+            'label' => 'demande_annulation.camping_montant_verse',
             'required' => false,
         ));
         $builder->add('sinistre_nature', 'choice', array(
