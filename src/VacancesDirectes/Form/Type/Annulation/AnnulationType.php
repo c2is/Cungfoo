@@ -136,17 +136,17 @@ class AnnulationType extends AppAwareType
                 )
             )
         );
-        $builder->add('campingNom', 'choice', array(
-                'label'         => 'annulation.campingNom.label',
+        $builder->add('campingId', 'choice', array(
+                'label'         => 'annulation.campingId.label',
                 'choices'       => $campings,
-                'empty_value'   => 'annulation.campingNom.empty_value',
+                'empty_value'   => 'annulation.campingId.empty_value',
                 'constraints'   => array(
                     new Assert\NotBlank(array(
-                        'message' => 'annulation.campingNom.not_blank'
+                        'message' => 'annulation.campingId.not_blank'
                     )),
                     new Assert\Choice(array(
                         'choices' => array_values(array_flip($campings)),
-                        'message' => 'annulation.campingNom.choice'
+                        'message' => 'annulation.campingId.choice'
                     ))
                 )
             )

@@ -8,11 +8,10 @@ use Silex\Application,
     Silex\ControllerCollection,
     Silex\ControllerProviderInterface;
 
-use Cungfoo\Model\DemandeAnnulation;
+use Cungfoo\Model\DemandeAnnulation,
+    Cungfoo\Form\Type\DemandeAnnulationType;
 
-use VacancesDirectes\Form\Type\Annulation\AnnulationType,
-    VacancesDirectes\Form\Data\Annulation\AnnulationData,
-    VacancesDirectes\Lib\SearchEngine;
+use VacancesDirectes\Lib\SearchEngine;
 
 class AnnulationController implements ControllerProviderInterface
 {
@@ -31,48 +30,33 @@ class AnnulationController implements ControllerProviderInterface
             }
 
             $annulationData = new DemandeAnnulation();
-            $form = $app['form.factory']->create(new AnnulationType($app), $annulationData);
+
+            $form = $app['form.factory']->create(new DemandeAnnulationType($app), $annulationData);
 
             if ('POST' == $request->getMethod() && $request->request->has('annulationForm'))
             {
                 $form->bind($request);
 
-                if($form->isValid()) {
-                    $uploadDir = $app['config']->get('root_dir') . '/web/uploads/';
-                    $uploadedFiles = array();
-echo '<pre>';
-die(var_dump($annulationData->piecesJointes));
-                    foreach($annulationData->piecesJointes as $file) {
-                        $file->move($dir, $file->getClientOriginalName());
-
-                        $extension = $file->guessExtension();
-                        $fileName = uniqid();
-                        if (!$extension) {
-                            // extension cannot be guessed
-                            $extension = 'bin';
-                        }
-                        $uploadedFiles[] = $file->move($uploadDir, $fileName.'.'.$extension);
-                    }
+                if ($form->isValid()) {
+                    $annulationData->saveFromCrud($form);
 
                     $body = <<<eof
-Nom de l'assuré : {$annulationData->nomAssure}
-Prénom de l'assuré : {$annulationData->prenomAssure}
-Prénom de l'assuré : {$annulationData->prenomAssure}
-Adresse de l'assuré : {$annulationData->adresseAssure}
-Code Postal de l'assuré : {$annulationData->codePostalAssure}
-Ville de l'assuré : {$annulationData->villeAssure}
-Pays de l'assuré : {$annulationData->paysAssure}
-Email de l'assuré : {$annulationData->emailAssure}
-Téléphone de l'assuré : {$annulationData->telephoneAssure}
-Montant du séjour : {$annulationData->montantSejourCamping}
-Montant des sommes versées : {$annulationData->montantVerseCamping}
-Nom du camping : {$annulationData->nomCamping}
-Département du camping : {$annulationData->departementCamping}
-N° de réservation du camping : {$annulationData->numResaCamping}
-Nature du sinistre : {$annulationData->natureSinistre}
-Suite à : {$annulationData->suiteSinistre}
-Date du sinistre : {$annulationData->dateSinistre}
-Résumé des faits : {$annulationData->resumeSinistre}
+Nom de l'assuré : {$annulationData->getAssureNom()}
+Prénom de l'assuré : {$annulationData->getAssurePrenom()}
+Adresse de l'assuré : {$annulationData->getAssureAdresse()}
+Code Postal de l'assuré : {$annulationData->getAssureCodePostal()}
+Ville de l'assuré : {$annulationData->getAssureVille()}
+Pays de l'assuré : {$app->trans($annulationData->getAssurePays())}
+Email de l'assuré : {$annulationData->getAssureMail()}
+Téléphone de l'assuré : {$annulationData->getAssureTelephone()}
+Montant du séjour : {$annulationData->getCampingMontantSejour()}
+Montant des sommes versées : {$annulationData->getCampingMontantVerse()}
+Nom du camping : {$annulationData->getEtablissement()->getName()}
+N° de réservation du camping : {$annulationData->getCampingNumResa()}
+Nature du sinistre : {$annulationData->getSinistreNature()}
+Suite à : {$annulationData->getSinistreSuite()}
+Date du sinistre : {$annulationData->getSinistreDate()}
+Résumé des faits : {$annulationData->getSinistreResume()}
 eof;
 
                     $message = \Swift_Message::newInstance()
@@ -82,11 +66,25 @@ eof;
                         ->setBody($body)
                     ;
 
-                    foreach($uploadedFiles as $uploadedFile) {
-                        $message->attach(\Swift_Attachment::fromPath($uploadDir . $uploadedFile->getRealPath()));
+                    $uploadDir = strstr($annulationData->getUploadRootDir(), $annulationData->getUploadDir(), true);
+                    if ($annulationData->getFile1())
+                    {
+                        $message->attach(\Swift_Attachment::fromPath($uploadDir . $annulationData->getFile1()));
                     }
-
-                    $app['mailer']->send($message);
+                    if ($annulationData->getFile1())
+                    {
+                        $message->attach(\Swift_Attachment::fromPath($uploadDir . $annulationData->getFile2()));
+                    }
+                    if ($annulationData->getFile1())
+                    {
+                        $message->attach(\Swift_Attachment::fromPath($uploadDir . $annulationData->getFile3()));
+                    }
+                    if ($annulationData->getFile1())
+                    {
+                        $message->attach(\Swift_Attachment::fromPath($uploadDir . $annulationData->getFile4()));
+                    }
+echo '<pre>';
+                    die(var_dump($app['mailer']->send($message)));
                     // TODO : enregistrement en base
                 }
             }
