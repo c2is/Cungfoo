@@ -44,8 +44,8 @@
 
             <div class="itemResultPopDest" style="display:none;"><div>
                 <h3>{{ etab.model.ville }}</h3>
-                {# TODO <img height="93" width="211" alt="" src="http://pimg.devlint.fr/211x93/ccc/333/*" class="iDestImg1 boxborder">
-                <img height="65" width="146" alt="" src="http://pimg.devlint.fr/146x65/ccc/333/*" class="iDestImg2 boxborder"> #}
+                <img height="93" width="211" alt="{{ etab.model.region }}" src="{{ asset(etab.model.region.ImageEncartPath) }}" class="iDestImg1 boxborder">
+                <img height="65" width="146" alt="{{ etab.model.region }}" src="{{ asset(etab.model.region.ImageEncartPetitePath) }}" class="iDestImg2 boxborder">
 
                 <div class="infoPop">
                 {% if etab.model.eventPrioritaire %}

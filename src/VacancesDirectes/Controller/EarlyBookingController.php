@@ -20,7 +20,7 @@ use VacancesDirectes\Lib\Listing,
 
 use Resalys\Lib\Client\DisponibiliteClient;
 
-class DernieresMinutesController implements ControllerProviderInterface
+class EarlyBookingController implements ControllerProviderInterface
 {
     public function connect(Application $app)
     {
@@ -35,7 +35,7 @@ class DernieresMinutesController implements ControllerProviderInterface
                 return $app->redirect($searchEngine->getRedirect());
             }
 
-            /*$dernieresMinutes = DernieresMinutesQuery::create()
+            $dernieresMinutes = DernieresMinutesQuery::create()
                 ->findOne()
             ;
 
@@ -59,18 +59,18 @@ class DernieresMinutesController implements ControllerProviderInterface
             $listing = new DispoListing($app);
             $listing->setClient($client);
 
-            $listingContent = $listing->process();*/
+            $listingContent = $listing->process();
 
             return $app->renderView('Research\dispo.twig', array(
-                'title'           => $app->trans('seo.title.dernieres_minutes'),
-                'metaDescription' => $app->trans('seo.meta.dernieres_minutes'),
-                'h1' => $app->trans('dernieresMinutes.h1'),
-                //'list'            => $listingContent,
-                //'firstEtab'       => reset($listingContent['element']),
+                'title'           => $app->trans('seo.title.early_booking'),
+                'metaDescription' => $app->trans('seo.meta.early_booking'),
+                'h1' => $app->trans('earlyBooking.h1'),
+                'list'            => $listingContent,
+                'firstEtab'       => reset($listingContent['element']),
                 'searchForm'      => $searchEngine->getView(),
             ));
         })
-        ->bind('dernieres_minutes');
+        ->bind('early_booking');
 
         return $controllers;
     }
