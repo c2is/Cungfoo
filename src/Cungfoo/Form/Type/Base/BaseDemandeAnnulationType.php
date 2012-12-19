@@ -118,7 +118,7 @@ class BaseDemandeAnnulationType extends AppAwareType
             ),
             'choices' => array(
                 'demande_annulation.sinistre_nature.annulation' => 'demande_annulation.sinistre_nature.annulation',
-                'demande_annulation.nature_sinistre.interruption' => 'demande_annulation.nature_sinistre.interruption',
+                'demande_annulation.sinistre_nature.interruption' => 'demande_annulation.sinistre_nature.interruption',
             ),
             'label' => 'demande_annulation.sinistre_nature',
             'required' => false,
@@ -129,8 +129,8 @@ class BaseDemandeAnnulationType extends AppAwareType
             ),
             'choices' => array(
                 'demande_annulation.sinistre_suite.maladie' => 'demande_annulation.sinistre_suite.maladie',
-                'demande_annulation.suite_sinistre.accident' => 'demande_annulation.suite_sinistre.accident',
-                'demande_annulation.suite_sinistre.autre' => 'demande_annulation.suite_sinistre.autre',
+                'demande_annulation.sinistre_suite.accident' => 'demande_annulation.sinistre_suite.accident',
+                'demande_annulation.sinistre_suite.autre' => 'demande_annulation.sinistre_suite.autre',
             ),
             'label' => 'demande_annulation.sinistre_suite',
             'required' => false,

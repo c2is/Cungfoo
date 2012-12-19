@@ -119,12 +119,12 @@ abstract class BaseDemandeAnnulationPeer
 
     /** The enumerated values for the sinistre_nature field */
     const SINISTRE_NATURE_DEMANDE_ANNULATION_SINISTRE_NATURE_ANNULATION = 'demande_annulation.sinistre_nature.annulation';
-    const SINISTRE_NATURE_DEMANDE_ANNULATION_NATURE_SINISTRE_INTERRUPTION = 'demande_annulation.nature_sinistre.interruption';
+    const SINISTRE_NATURE_DEMANDE_ANNULATION_SINISTRE_NATURE_INTERRUPTION = 'demande_annulation.sinistre_nature.interruption';
 
     /** The enumerated values for the sinistre_suite field */
     const SINISTRE_SUITE_DEMANDE_ANNULATION_SINISTRE_SUITE_MALADIE = 'demande_annulation.sinistre_suite.maladie';
-    const SINISTRE_SUITE_DEMANDE_ANNULATION_SUITE_SINISTRE_ACCIDENT = 'demande_annulation.suite_sinistre.accident';
-    const SINISTRE_SUITE_DEMANDE_ANNULATION_SUITE_SINISTRE_AUTRE = 'demande_annulation.suite_sinistre.autre';
+    const SINISTRE_SUITE_DEMANDE_ANNULATION_SINISTRE_SUITE_ACCIDENT = 'demande_annulation.sinistre_suite.accident';
+    const SINISTRE_SUITE_DEMANDE_ANNULATION_SINISTRE_SUITE_AUTRE = 'demande_annulation.sinistre_suite.autre';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -172,12 +172,12 @@ abstract class BaseDemandeAnnulationPeer
     protected static $enumValueSets = array(
         DemandeAnnulationPeer::SINISTRE_NATURE => array(
             DemandeAnnulationPeer::SINISTRE_NATURE_DEMANDE_ANNULATION_SINISTRE_NATURE_ANNULATION,
-            DemandeAnnulationPeer::SINISTRE_NATURE_DEMANDE_ANNULATION_NATURE_SINISTRE_INTERRUPTION,
+            DemandeAnnulationPeer::SINISTRE_NATURE_DEMANDE_ANNULATION_SINISTRE_NATURE_INTERRUPTION,
         ),
         DemandeAnnulationPeer::SINISTRE_SUITE => array(
             DemandeAnnulationPeer::SINISTRE_SUITE_DEMANDE_ANNULATION_SINISTRE_SUITE_MALADIE,
-            DemandeAnnulationPeer::SINISTRE_SUITE_DEMANDE_ANNULATION_SUITE_SINISTRE_ACCIDENT,
-            DemandeAnnulationPeer::SINISTRE_SUITE_DEMANDE_ANNULATION_SUITE_SINISTRE_AUTRE,
+            DemandeAnnulationPeer::SINISTRE_SUITE_DEMANDE_ANNULATION_SINISTRE_SUITE_ACCIDENT,
+            DemandeAnnulationPeer::SINISTRE_SUITE_DEMANDE_ANNULATION_SINISTRE_SUITE_AUTRE,
         ),
     );
 
