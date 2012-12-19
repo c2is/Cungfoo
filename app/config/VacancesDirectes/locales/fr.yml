@@ -306,5 +306,8 @@ demande_annulation:
     file_4: ""
     certifie: Je certifie demander l'annulation référencée ci-dessus
     files: Joindre des pièces : (format : pdf, doc, docx, png, jpg de 2 mo maximum)
+    confirmation:
+        title: confirmation
+        content: Votre demande d'annulation a bien été envoyée.
 
 earlyBooking.h1: Nos offres de campings en early booking (location mobil home)
