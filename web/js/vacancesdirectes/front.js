@@ -226,8 +226,10 @@ $(function() {
                 if ( openTab ){
                     //console.log("openTab = TRUE");
                     clearTimeout(delayToCloseTab);
-                    previousHoverLi.removeClass('hover').children('.subnav').hide();
-                    addBorders(previousHoverLi);
+                    if ( previousHoverLi != undefined){
+                        previousHoverLi.removeClass('hover').children('.subnav').hide();
+                        addBorders(previousHoverLi);
+                    }
                 }
                 else {
                     //console.log("openTab = FALSE");
@@ -253,8 +255,10 @@ $(function() {
                 {
                     outLi.removeClass('hover').children('.subnav').hide();
                     addBorders(outLi);
-                    currentLi.addClass('current');
-                    removeBorders(currentLi);
+                    if ( currentLi != undefined ){
+                        currentLi.addClass('current');
+                        removeBorders(currentLi);
+                    }
                     openTab = false;
                 }, 200);
 
