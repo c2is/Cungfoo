@@ -43,7 +43,7 @@ class DemandeAnnulationType extends BaseDemandeAnnulationType
         }
 
         $builder->add('etablissement', 'model', array(
-                'label'             => 'demande_annulation.etablissement',
+                'label'             => 'demande_annulation.etablissement.label',
                 'class'             => '\Cungfoo\Model\Etablissement',
                 'empty_value'       => 'demande_annulation.etablissement.empty_value',
                 'constraints'       => array(
@@ -52,7 +52,7 @@ class DemandeAnnulationType extends BaseDemandeAnnulationType
             )
         );
         $builder->add('assure_pays', 'choice', array(
-                'label'         => 'demande_annulation.assure_pays',
+                'label'         => 'demande_annulation.assure_pays.label',
                 'choices'       => array_combine($formConfig['pays'], $formConfig['pays']),
                 'empty_value'   => 'demande_annulation.assure_pays.empty_value',
                 'constraints'   => array(
@@ -67,7 +67,7 @@ class DemandeAnnulationType extends BaseDemandeAnnulationType
             )
         );
         $builder->add('assure_mail', 'text', array(
-                'label'         => 'demande_annulation.assure_mail',
+                'label'         => 'demande_annulation.assure_mail.label',
                 'constraints'   => array(
                     new Assert\NotBlank(array(
                         'message' => 'demande_annulation.assure_mail.not_blank'
@@ -79,7 +79,7 @@ class DemandeAnnulationType extends BaseDemandeAnnulationType
             )
         );
         $builder->add('sinistre_nature', 'choice', array(
-                'label'         => 'demande_annulation.sinistre_nature',
+                'label'         => 'demande_annulation.sinistre_nature.label',
                 'choices'       => array_combine($formConfig['naturesSinistre'], $formConfig['naturesSinistre']),
                 'expanded'      => true,
                 'multiple'      => false,
@@ -95,7 +95,7 @@ class DemandeAnnulationType extends BaseDemandeAnnulationType
             )
         );
         $builder->add('sinistre_suite', 'choice', array(
-                'label'         => 'demande_annulation.sinistre_suite',
+                'label'         => 'demande_annulation.sinistre_suite.label',
                 'choices'       => array_combine($formConfig['suitesSinistre'], $formConfig['suitesSinistre']),
                 'expanded'      => true,
                 'multiple'      => false,
@@ -124,12 +124,12 @@ class DemandeAnnulationType extends BaseDemandeAnnulationType
                             'image/png',
                             'image/jpeg'
                         ),
-                        'mimeTypesMessage'              => 'demande_annulation.mimeTypesMessage',
-                        'notFoundMessage'               => 'demande_annulation.notFoundMessage',
-                        'notReadableMessage'            => 'demande_annulation.notReadableMessage',
-                        'uploadIniSizeErrorMessage'     => 'demande_annulation.uploadIniSizeErrorMessage',
-                        'uploadFormSizeErrorMessage'    => 'demande_annulation.uploadFormSizeErrorMessage',
-                        'uploadErrorMessage'            => 'demande_annulation.uploadErrorMessage',
+                        'mimeTypesMessage'              => 'demande_annulation.files.mimeTypesMessage',
+                        'notFoundMessage'               => 'demande_annulation.files.notFoundMessage',
+                        'notReadableMessage'            => 'demande_annulation.files.notReadableMessage',
+                        'uploadIniSizeErrorMessage'     => 'demande_annulation.files.uploadIniSizeErrorMessage',
+                        'uploadFormSizeErrorMessage'    => 'demande_annulation.files.uploadFormSizeErrorMessage',
+                        'uploadErrorMessage'            => 'demande_annulation.files.uploadErrorMessage',
                     ))
                 )
             )
@@ -148,12 +148,12 @@ class DemandeAnnulationType extends BaseDemandeAnnulationType
                             'image/png',
                             'image/jpeg'
                         ),
-                        'mimeTypesMessage'              => 'demande_annulation.mimeTypesMessage',
-                        'notFoundMessage'               => 'demande_annulation.notFoundMessage',
-                        'notReadableMessage'            => 'demande_annulation.notReadableMessage',
-                        'uploadIniSizeErrorMessage'     => 'demande_annulation.uploadIniSizeErrorMessage',
-                        'uploadFormSizeErrorMessage'    => 'demande_annulation.uploadFormSizeErrorMessage',
-                        'uploadErrorMessage'            => 'demande_annulation.uploadErrorMessage',
+                        'mimeTypesMessage'              => 'demande_annulation.files.mimeTypesMessage',
+                        'notFoundMessage'               => 'demande_annulation.files.notFoundMessage',
+                        'notReadableMessage'            => 'demande_annulation.files.notReadableMessage',
+                        'uploadIniSizeErrorMessage'     => 'demande_annulation.files.uploadIniSizeErrorMessage',
+                        'uploadFormSizeErrorMessage'    => 'demande_annulation.files.uploadFormSizeErrorMessage',
+                        'uploadErrorMessage'            => 'demande_annulation.files.uploadErrorMessage',
                     ))
                 )
             )
@@ -172,12 +172,12 @@ class DemandeAnnulationType extends BaseDemandeAnnulationType
                             'image/png',
                             'image/jpeg'
                         ),
-                        'mimeTypesMessage'              => 'demande_annulation.mimeTypesMessage',
-                        'notFoundMessage'               => 'demande_annulation.notFoundMessage',
-                        'notReadableMessage'            => 'demande_annulation.notReadableMessage',
-                        'uploadIniSizeErrorMessage'     => 'demande_annulation.uploadIniSizeErrorMessage',
-                        'uploadFormSizeErrorMessage'    => 'demande_annulation.uploadFormSizeErrorMessage',
-                        'uploadErrorMessage'            => 'demande_annulation.uploadErrorMessage',
+                        'mimeTypesMessage'              => 'demande_annulation.files.mimeTypesMessage',
+                        'notFoundMessage'               => 'demande_annulation.files.notFoundMessage',
+                        'notReadableMessage'            => 'demande_annulation.files.notReadableMessage',
+                        'uploadIniSizeErrorMessage'     => 'demande_annulation.files.uploadIniSizeErrorMessage',
+                        'uploadFormSizeErrorMessage'    => 'demande_annulation.files.uploadFormSizeErrorMessage',
+                        'uploadErrorMessage'            => 'demande_annulation.files.uploadErrorMessage',
                     ))
                 )
             )
@@ -196,18 +196,18 @@ class DemandeAnnulationType extends BaseDemandeAnnulationType
                             'image/png',
                             'image/jpeg'
                         ),
-                        'mimeTypesMessage'              => 'demande_annulation.mimeTypesMessage',
-                        'notFoundMessage'               => 'demande_annulation.notFoundMessage',
-                        'notReadableMessage'            => 'demande_annulation.notReadableMessage',
-                        'uploadIniSizeErrorMessage'     => 'demande_annulation.uploadIniSizeErrorMessage',
-                        'uploadFormSizeErrorMessage'    => 'demande_annulation.uploadFormSizeErrorMessage',
-                        'uploadErrorMessage'            => 'demande_annulation.uploadErrorMessage',
+                        'mimeTypesMessage'              => 'demande_annulation.files.mimeTypesMessage',
+                        'notFoundMessage'               => 'demande_annulation.files.notFoundMessage',
+                        'notReadableMessage'            => 'demande_annulation.files.notReadableMessage',
+                        'uploadIniSizeErrorMessage'     => 'demande_annulation.files.uploadIniSizeErrorMessage',
+                        'uploadFormSizeErrorMessage'    => 'demande_annulation.files.uploadFormSizeErrorMessage',
+                        'uploadErrorMessage'            => 'demande_annulation.files.uploadErrorMessage',
                     ))
                 )
             )
         );
         $builder->add('certifie', 'checkbox', array(
-                'label'         => 'demande_annulation.certifie',
+                'label'         => 'demande_annulation.certifie.label',
                 'mapped'        => false,
                 'constraints'   => array(
                     new Assert\True(array(
