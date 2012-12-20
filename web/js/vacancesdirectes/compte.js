@@ -18,7 +18,18 @@ head.ready(function(){
 
     // selects
     if($('#authentication').length){
-        $('#authentication').find('select').sSelect({ddMaxHeight: '300px'});
+
+        $('#authentication select').each(function(i,v){
+            if ($(this).children('option').attr('selected') == undefined){
+                $(this).children('option').attr('selected','selected');
+                $('#authentication').find('select').sSelect({ddMaxHeight: '300px'});
+                var selectedOption = $(this).getSetSSValue();
+                $(this).getSetSSValue(selectedOption);
+            }
+            else{
+                $('#authentication').find('select').sSelect({ddMaxHeight: '300px'});
+            }
+        });
     }
 
     // radio buttons

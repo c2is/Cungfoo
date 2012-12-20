@@ -188,16 +188,31 @@ $(function() {
      */
 
      if ( $('#accountBox').length ) {
-     $('#account').click(function(e){
-     $(this).next().toggle();
-     if ( $('#accountBox').is(':visible') ){
-     $('#header').css({zIndex:21});
+         $('#account').click(function(e){
+            $(this).next().toggle();
+            setZIndex();
+         });
+         $(document).mouseup(function (e){
+             if ( $('#accountBox').has(e.target).length == 0 ){
+                 $('#header').css({zIndex:20});
+                 $('#accountBox').hide();
+             }
+         });
+
+         if ( $('#accountBox').find('.errors').css('display') == 'block' ){
+             $('#accountBox').show();
+             setZIndex();
+         }
      }
-     else {
-     $('#header').css({zIndex:20});
-     }
-     });
-     }
+
+    function setZIndex(){
+        if ( $('#accountBox').is(':visible') ){
+            $('#header').css({zIndex:21});
+        }
+        else {
+            $('#header').css({zIndex:20});
+        }
+    }
 
     /*
      *  ############################################################

@@ -59,7 +59,7 @@ $app['security.access_rules'] = array(
 );
 
 $app['security.last_error'] = $app->protect(function (\Symfony\Component\HttpFoundation\Request $request) {
-    $errorMessage = "Le login que vous avez saisi est incorrect. Veuillez réessayer (vérifiez que le verrouillage des majuscules est désactivé).";
+    $errorMessage = "Le login que vous avez saisi est incorrect.\nVeuillez réessayer (vérifiez que le verrouillage des majuscules est désactivé).";
 
     if ($request->attributes->has(\Symfony\Component\Security\Core\SecurityContextInterface::AUTHENTICATION_ERROR)) {
         return $errorMessage;
