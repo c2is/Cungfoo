@@ -891,4 +891,50 @@
         </foreign-key>
     </table>
 
+    <table name="bon_plan_categorie">
+        <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true" />
+        <column name="name" type="varchar" />
+        <column name="slug" type="varchar" />
+        <column name="order" type="integer" />
+
+        <behavior name="active" />
+
+        <behavior name="i18n">
+            <parameter name="i18n_columns" value="name, slug" />
+        </behavior>
+
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/bon-plan-categories" />
+        </behavior>
+    </table>
+
+    <table name="bon_plan">
+        <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true" />
+        <column name="bon_plan_categorie_id" type="integer" required="true" />
+        <column name="name" type="varchar" />
+        <column name="slug" type="varchar" />
+        <column name="introduction" type="varchar" />
+        <column name="date_debut" type="date" />
+        <column name="date_fin" type="date" />
+        <column name="prix" type="integer" />
+        <column name="prix_barre" type="integer" />
+        <column name="indice" type="varchar" />
+        <column name="image_path" type="varchar" />
+
+        <foreign-key foreignTable="bon_plan_categorie">
+            <reference local="bon_plan_categorie_id" foreign="id" />
+        </foreign-key>
+
+        <behavior name="active" />
+
+        <behavior name="i18n">
+            <parameter name="i18n_columns" value="name, slug, introduction, description" />
+        </behavior>
+
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/bons-plans" />
+            <parameter name="crud_type_file" value="image_path" />
+        </behavior>
+    </table>
+
 </database>
