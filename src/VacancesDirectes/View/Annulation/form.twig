@@ -1,6 +1,7 @@
 {% extends "Annulation/base.twig" %}
 
 {% block leftColumn %}
+<h1>{{ "demande_annulation.title" | trans }}</h1>
 <form id="annulationForm" method="post" action="{{ app.request.getRequestURI() }}" novalidate {{ form_enctype(annulationForm) }}>
     <fieldset>
         <ol>
