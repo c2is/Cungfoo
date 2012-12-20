@@ -8,10 +8,10 @@
     <h2>vous êtes un client existant, veuillez vous identifier</h2>
     <form id="connexion" action="{{ path('compte_login_check') }}" method="post">
         <fieldset>
-            {% if error %}
+            {% if app.login_errors %}
             <div class="errors">
                 <ul>
-                    <li>{{ error }}</li>
+                    <li>{{ app.login_errors }}</li>
                 </ul>
             </div>
             {% endif %}
