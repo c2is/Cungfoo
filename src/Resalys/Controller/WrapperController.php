@@ -41,9 +41,15 @@ class WrapperController implements ControllerProviderInterface
             $clientConfigurationFilename = sprintf('%s/app/config/Resalys/client.yml', $app['config']->get('root_dir'));
             $clientConfiguration = Yaml::parse($clientConfigurationFilename);
 
+            // différencier le site ce du site indiv
+            $location = $clientConfiguration['services']['modele']['location'];
+            if ($app['context']->get('site') == "site.ce")
+            {
+                $location = str_replace("www.", "ce.", $location);
+            }
 
             $resalysUri = sprintf("%s?%s&%s",
-                $clientConfiguration['services']['modele']['location'],
+                $location,
                 $this->request->getQueryString(),
                 http_build_query($this->request->request->all())
             );
