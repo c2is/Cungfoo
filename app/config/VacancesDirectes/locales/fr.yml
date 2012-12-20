@@ -165,6 +165,9 @@ fiche:
     arrivees_departs: "Arrivées/Départs"
     fax: "Fax :"
     tel: "Tél :"
+    baignades:
+        top: "Baignade"
+        bottom: "et bien-être"
 
 home:
     topcamping: "Top campings"

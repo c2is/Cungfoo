@@ -28,13 +28,16 @@ if ('cli' !== php_sapi_name()) {
 // created the application
 $app = require __DIR__ . '/../src/Cungfoo/app.php';
 
+// set environnement
+require __DIR__ . '/../app/config/dev.php';
+
+// set security
+require __DIR__ . '/../src/Cungfoo/security.php';
+
 // created the context
 require __DIR__ . '/../src/Cungfoo/context.php';
 
 // load routes code
 require __DIR__ . '/../src/Cungfoo/routes.php';
-
-// set environnement
-require __DIR__ . '/../app/config/dev.php';
 
 $app->run();
