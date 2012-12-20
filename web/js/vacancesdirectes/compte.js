@@ -17,19 +17,23 @@ $(function() {
 head.ready(function(){
 
     // selects
-    if($('#authentication').length){
+    if( $('#authentication').length ){
+        $('#authentication').find('select').sSelect({ddMaxHeight: '300px'});
+    }
+    if( $('#reservation').length ){
+        $('.changeOccupantCount').find('select').sSelect({ddMaxHeight: '300px'});
+    }
+    if( $('#edit_occupant').length ){
+        $('#address').find('select').sSelect({ddMaxHeight: '300px'});
+    }
 
-        $('#authentication select').each(function(i,v){
-            if ($(this).children('option').attr('selected') == undefined){
-                $(this).children('option').attr('selected','selected');
-                $('#authentication').find('select').sSelect({ddMaxHeight: '300px'});
-                var selectedOption = $(this).getSetSSValue();
-                $(this).getSetSSValue(selectedOption);
-            }
-            else{
-                $('#authentication').find('select').sSelect({ddMaxHeight: '300px'});
-            }
-        });
+    function getSelected(s){
+        if ( s.hasAttribute('selected') ){
+            s.children('option').attr('selected','selected');
+            s.sSelect({ddMaxHeight: '300px'});
+            var selectedOption = $(this).getSetSSValue();
+            $(this).getSetSSValue(selectedOption);
+        }
     }
 
     // radio buttons

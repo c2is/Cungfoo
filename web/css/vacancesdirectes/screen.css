@@ -5314,9 +5314,14 @@ ul.newList.optGroup li.optGroup-like a {
 }
 .account h1 {
   margin: 10px 0 20px;
+  float: left;
 }
 .account h1 span {
   color: #464545;
+}
+.account .logout {
+  float: right;
+  margin-top: 9px;
 }
 .account iframe {
   width: 100%;
