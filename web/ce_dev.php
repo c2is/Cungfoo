@@ -29,13 +29,16 @@ if ('cli' !== php_sapi_name())
 // created the application
 $app = require __DIR__ . '/../src/VacancesDirectesCe/app.php';
 
+// set environnement
+require __DIR__ . '/../app/config/dev.php';
+
+// set security
+require __DIR__ . '/../src/VacancesDirectesCe/security.php';
+
 // created the context
 require __DIR__ . '/../src/VacancesDirectesCe/context.php';
 
 // load routes code
 require __DIR__ . '/../src/VacancesDirectesCe/routes.php';
-
-// set environnement
-require __DIR__ . '/../app/config/dev.php';
 
 $app->run();
