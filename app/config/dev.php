@@ -19,3 +19,6 @@ $app->register(new MonologServiceProvider(), array(
 ));
 
 $app['monolog.name'] = 'Cungfoo';
+
+$app['twig']->enableAutoReload();
+$app['twig']->enableDebug();

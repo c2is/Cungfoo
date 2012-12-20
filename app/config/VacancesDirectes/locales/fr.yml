@@ -46,6 +46,12 @@ destination:
     ville_title: Camping %item% pas cher (location mobil home)
     camping_title: Camping %ville%
     retour_bottom: Retour à la liste
+    retour: Retour
+    pois_all: Tous les lieux
+    events_title: En ce moment
+    events_prefixe_subtitle: En
+    events_suffixe_subtitle: ...
+    campings_selection_title: Notre sélection de campings
 
 listing_destination:
     campings_map_title: Campings Vacances directes
@@ -251,14 +257,6 @@ footer:
 pactiv-1: En vacances avec mes parents, j'aime
 pactiv-2: Envie d'un petit break, de prendre l'air
 pactiv-3: Des vacances sous le signe de la détente et du bonheur
-
-destination:
-    retour: Retour
-    pois_all: Tous les lieux
-    events_title: En ce moment
-    events_prefixe_subtitle: En
-    events_suffixe_subtitle: ...
-    campings_selection_title: Notre sélection de campings
 
 encart_vacances_directes:
     title: Vacances directes
