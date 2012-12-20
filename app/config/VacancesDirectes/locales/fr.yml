@@ -27,69 +27,77 @@ seo:
         bonPlan: "Découvrez toutes les offres de locations de mobil homes en camping pour le %bonPlan% proposées par Vacances directes et réserver en ligne."
         topCamping: "Découvrez notre top 10 des destinations pour des vacances en campings réussies avec Vacances Directes, le spécialiste de la location de mobil-home."
 
-pays.france: France
-pays.espagne: Espagne
-pays.italie: Italie
-pays.portugal: Portugal
+pays:
+    france: France
+    espagne: Espagne
+    italie: Italie
+    portugal: Portugal
 
-destination.mediterranee: Méditerannée
-destination.manche_atlantique: Manche Atlantique
-destination.montagne: Montagne
-destination.campagne: Campagne
-destination.images_pays_title: Le pays en image
-destination.images_region_title: La région en image
-destination.images_ville_title: La ville en image
-destination.pays_title: Camping en %item% pas cher
-destination.region_title: Location mobil home %item% pas cher en camping
-destination.ville_title: Camping %item% pas cher (location mobil home)
-destination.camping_title: Camping %ville%
-destination.retour_bottom: Retour à la liste
+destination:
+    mediterranee: Méditerannée
+    manche_atlantique: Manche Atlantique
+    montagne: Montagne
+    campagne: Campagne
+    images_pays_title: Le pays en image
+    images_region_title: La région en image
+    images_ville_title: La ville en image
+    pays_title: Camping en %item% pas cher
+    region_title: Location mobil home %item% pas cher en camping
+    ville_title: Camping %item% pas cher (location mobil home)
+    camping_title: Camping %ville%
+    retour_bottom: Retour à la liste
 
-listing_destination.campings_map_title: Campings Vacances directes
-listing_destination.campings_map_prefixe_subtitle: en
+listing_destination:
+    campings_map_title: Campings Vacances directes
+    campings_map_prefixe_subtitle: en
 
-listing.plus_resultats: Plus de résultats
-listing.du: du
-listing.au: au
-listing.no_results_title: Votre recherche n'a retourné aucun résultat.
-listing.no_results: Nous vous invitons à modifier vos critères de recherche
+listing:
+    plus_resultats: Plus de résultats
+    du: du
+    au: au
+    no_results_title: Votre recherche n'a retourné aucun résultat.
+    no_results: Nous vous invitons à modifier vos critères de recherche
 
-menu.title: Vacances directes
-menu.destinations: Nos destinations
-menu.locations: Les locations
-menu.bons_plans: Les bons plans
-menu.vacances: Vos vacances
-menu.weekends: Vos week-ends
+menu:
+    title: Vacances directes
+    destinations: Nos destinations
+    locations: Les locations
+    bons_plans: Les bons plans
+    vacances: Vos vacances
+    weekends: Vos week-ends
 
 menu_destination.accroche: 3 pays, 23 régions touristiques, vos vacances avec Vacances directes.
 
-menu.plus_de_regions: Plus de régions
-menu.libelle: Libellé
-menu.localisation: Localisation
+menu:
+    plus_de_regions: Plus de régions
+    libelle: Libellé
+    localisation: Localisation
 
-etablissement.activites: Liste des activités
-etablissement.destinations: Liste des destinations
-etablissement.service_complementaires: Liste des services complementaires
-etablissement.type_hebergements: Liste des types d'hébergements
+etablissement:
+    activites: Liste des activités
+    destinations: Liste des destinations
+    service_complementaires: Liste des services complementaires
+    type_hebergements: Liste des types d'hébergements
 
-date_search.date_debut:   Date de début du séjour
-date_search.destination:  Destination
-date_search.destination.empty_value: Destination ?
-date_search.nb_jours:  Nombre de jours
-date_search.nb_jours.required:  Le nombre de jours est requis.
-date_search.nb_jours.empty_value: Nombre de jours ?
-date_search.ville:        Ville
-date_search.ville.empty_value: Ville ?
-date_search.camping:      Camping
-date_search.camping.empty_value: Camping ?
-date_search.nb_adultes:   Adulte(s)
-date_search.nb_enfants:   Enfant(s)
-date_search.date_debut.required:  La date de début de séjour est requise.
-date_search.date_fin.required:    La dete de fin de séjour est requise.
-date_search.destination.required: La destination est requise.
-date_search.ville.required: La ville ou le camping est requis.
-date_search.nb_adultes.required:  Le nombre d'adultes est requis.
-date_search.button.submit: Rechercher
+date_search:
+    date_debut:   Date de début du séjour
+    destination:  Destination
+    destination.empty_value: Destination ?
+    nb_jours:  Nombre de jours
+    nb_jours.required:  Le nombre de jours est requis.
+    nb_jours.empty_value: Nombre de jours ?
+    ville:        Ville
+    ville.empty_value: Ville ?
+    camping:      Camping
+    camping.empty_value: Camping ?
+    nb_adultes:   Adulte(s)
+    nb_enfants:   Enfant(s)
+    date_debut.required:  La date de début de séjour est requise.
+    date_fin.required:    La dete de fin de séjour est requise.
+    destination.required: La destination est requise.
+    ville.required: La ville ou le camping est requis.
+    nb_adultes.required:  Le nombre d'adultes est requis.
+    button.submit: Rechercher
 
 
 "Les vacances à": Les vacances à
@@ -103,171 +111,187 @@ date_search.button.submit: Rechercher
 "ans": ans
 "Toutes": Toutes
 
-header.information: Informations & réservations
-header.telephone.number: 0825 133 400
-header.telephone.price: (0,15€/min)
-header.130_camping: + de 170 campings en France, Espagne & Italie
-header.location_mobil_home: Location de mobil home en camping (France, Espagne, Italie et Portugal)
+header:
+    information: Informations & réservations
+    telephone:
+        number: 0825 133 400
+        price: (0,15€/min)
+    130_camping: + de 170 campings en France, Espagne & Italie
+    location_mobil_home: Location de mobil home en camping (France, Espagne, Italie et Portugal)
 
-footer.contact: Contact
-footer.charte_qualite: Charte qualité
-footer.conditions_generales_de_location: Conditons générales de location
-footer.faq: FAQ
-footer.guide_pratique: Guide pratique
-footer.plan_du_site: Plan du site
-footer.credits: Crédits
-footer.mentions_legales: Mentions légales
-footer.transactions_securisees: Transactions sécurisées
-footer.cb_visa: CB visa
-footer.masterCard: MasterCard
+footer:
+    contact: Contact
+    charte_qualite: Charte qualité
+    conditions_generales_de_location: Conditons générales de location
+    faq: FAQ
+    guide_pratique: Guide pratique
+    plan_du_site: Plan du site
+    credits: Crédits
+    mentions_legales: Mentions légales
+    transactions_securisees: Transactions sécurisées
+    cb_visa: CB visa
+    masterCard: MasterCard
 
-fiche.camping: Camping
-fiche.situer_carte: Situer sur la carte
-fiche.le_camping: Le camping
-fiche.les_locations: Les locations
-fiche.sur_place: Sur place
-fiche.a_proximite: A proximité
-fiche.infos_pratiques: Infos pratiques
-fiche.video: Vidéo
-fiche.emplacements: emplacements
-fiche.ouvert_du: Ouvert du
-fiche.vous_aimerez: Vous aimerez
-fiche.comme: comme...
-fiche.les_vacances_a: Les vacances à
-fiche.nous_avons_liste: nous avons listé :
-fiche.sites_a_visiter: sites à visiter
-fiche.activites_sportives: activités sportives
-fiche.evenements_culturels: événements culturels
-fiche.evenement_ne_pas_manquer: L'événement à ne pas manquer :
-fiche.distance_camping: Distance du camping :
-fiche.filtrer_par: Filtrer par :
-fiche.toutes_categories: Toutes catégories
-fiche.toutes_capacite: Toutes capacités
-fiche.capacite: Capacité :
-fiche.places: places
-fiche.nombre_chambres: Nombre de chambres :
-fiche.nombre_personnes: Nombre de personnes :
-fiche.surface: Surface :
-fiche.type_terrasse: Type de terrasse :
-fiche.activites: Activités
-fiche.equipements: Equipements
-fiche.services_complementaires: Services complémentaires
-fiche.activites_et_sites_a_visiter: Activités et sites à visiter
-fiche.km: km
-fiche.agenda_culturel_et_sorties: Agenda culturel et sorties
-fiche.coordonnees_du_camping: Coordonnées du camping
-fiche.gps: GPS :
-fiche.horaires_ouverture: Horaires d'ouverture
-fiche.reception: Réception
-fiche.arrivees_departs: Arrivées/Départs
-fiche.fax: Fax :
-fiche.tel: Tél :
+fiche:
+    camping: Camping
+    situer_carte: Situer sur la carte
+    le_camping: Le camping
+    les_locations: Les locations
+    sur_place: Sur place
+    a_proximite: A proximité
+    infos_pratiques: Infos pratiques
+    video: Vidéo
+    emplacements: emplacements
+    ouvert_du: Ouvert du
+    vous_aimerez: Vous aimerez
+    comme: comme...
+    les_vacances_a: Les vacances à
+    nous_avons_liste: nous avons listé :
+    sites_a_visiter: sites à visiter
+    activites_sportives: activités sportives
+    evenements_culturels: événements culturels
+    evenement_ne_pas_manquer: L'événement à ne pas manquer :
+    distance_camping: Distance du camping :
+    filtrer_par: Filtrer par :
+    toutes_categories: Toutes catégories
+    toutes_capacite: Toutes capacités
+    capacite: Capacité :
+    places: places
+    nombre_chambres: Nombre de chambres :
+    nombre_personnes: Nombre de personnes :
+    surface: Surface :
+    type_terrasse: Type de terrasse :
+    activites: Activités
+    equipements: Equipements
+    services_complementaires: Services complémentaires
+    activites_et_sites_a_visiter: Activités et sites à visiter
+    km: km
+    agenda_culturel_et_sorties: Agenda culturel et sorties
+    coordonnees_du_camping: Coordonnées du camping
+    gps: GPS :
+    horaires_ouverture: Horaires d'ouverture
+    reception: Réception
+    arrivees_departs: Arrivées/Départs
+    fax: Fax :
+    tel: Tél :
 
-home.topcamping: Top campings
-home.topcamping.link: Tous les top campings
-home.vacances_directes_cest: Vacances directes c'est
-home.4_pays: 3 pays
-home.26_regions: 23 régions
-home.touristiques: touristiques
-home.destination: Destination
-home.destination_france: Destination France
-home.plus_de_regions: Plus de régions
-home.faites_le_plein_d_activites: Faites le plein d'activités
-home.dernieres_minutes: Dernières minutes
-home.early_booking: Early booking
-home.dernieres_minutes.link: Toutes les dernières minutes
-home.early_booking.link: Tous les early booking
-home.idees_weekend.link: Toutes les idées week-end (%number%)
+home:
+    topcamping: Top campings
+    topcamping.link: Tous les top campings
+    vacances_directes_cest: Vacances directes c'est
+    4_pays: 3 pays
+    26_regions: 23 régions
+    touristiques: touristiques
+    destination: Destination
+    destination_france: Destination France
+    plus_de_regions: Plus de régions
+    faites_le_plein_d_activites: Faites le plein d'activités
+    dernieres_minutes: Dernières minutes
+    early_booking: Early booking
+    dernieres_minutes.link: Toutes les dernières minutes
+    early_booking.link: Tous les early booking
+    idees_weekend.link: Toutes les idées week-end (%number%)
 
-general.a_partir_de: à partir de
-general.jouer: Jouer
-general.en_savoir_plus: En savoir plus
-general.la_nuit: la nuit
-general.idees_week_end: Idées week-end
-general.filter_par: Filtrer par
-general.campings_vacances_directes: Campings Vacances directes
-general.decouvrir_le_camping: Découvrir le camping
-general.au_lieu_de: au lieu de
-general.sur_la_destination: sur la destination
-general.plus_visite: Plus de visites
-general.plus_evenements: Plus d'événements
-general.decouvrir: Découvrir
-general.reserver: Réserver
-general.la_semaine: la semaine
-general.contre_proposition: ATTENTION ! Votre recherche ne donne aucun résultat. Les propositions ci-dessous sont celles qui s'en rapprochent le plus.
+general:
+    a_partir_de: à partir de
+    jouer: Jouer
+    en_savoir_plus: En savoir plus
+    la_nuit: la nuit
+    idees_week_end: Idées week-end
+    filter_par: Filtrer par
+    campings_vacances_directes: Campings Vacances directes
+    decouvrir_le_camping: Découvrir le camping
+    au_lieu_de: au lieu de
+    sur_la_destination: sur la destination
+    plus_visite: Plus de visites
+    plus_evenements: Plus d'événements
+    decouvrir: Découvrir
+    reserver: Réserver
+    la_semaine: la semaine
+    contre_proposition: ATTENTION ! Votre recherche ne donne aucun résultat. Les propositions ci-dessous sont celles qui s'en rapprochent le plus.
 
-footer.nous_joindre: Nous joindre
-footer.contact.tel: 0825 133 400
-footer.contact.fax: 02 96 39 97 81
-footer.nous_contacter: Nous contacter
-footer.demande_catalogue: Demande de catalogue
-footer.description_catalogue: Hoc inmaturo interitu ipse quoque sui pertaesus excessit e vita aetatis.
-footer.consulter_catalogue: Consulter le catalogue
-footer.telecharger_catalogue: Télécharger le catalogue
-footer.facebook.titre: Restons en contact
-footer.facebook.intro: Suivez nos idées week-end & bons plans sur Facebook.
-footer.facebook.like: J'aime
-footer.facebook.desc.highlight: Partagez votre expérience Vacances directes
-footer.facebook.desc: avec d'autres vacanciers. Photos, activités, avis, rejoignez la communauté des clients Vacances directes sur
-footer.jeu.titre: Grand jeu concours sur
-footer.jeu.desc: Gagnez un week-end en Italie
-footer.location_camping: Locations en camping
-footer.annuaire_campings: Annuaire des campings
-footer.campings_pas_chers: Liste des campings pas chers
-footer.guide_activites: Guide des activités
-footer.campings_france: Campings France
-footer.campings_espagne: Campings Espagne
-footer.campings_italie: Campings Italie
-footer.a_propos: À propos
-footer.a_propos.desc: Depuis plus de 35 ans, Vacances directes propose la location en camping de mobil-homes tout confort et de qualité. Venez découvrir plus de 180 destinations sélectionnées avec soin en France, Espagne et Italie pour des vacances conviviales et reposantes.
-footer.actualites: Actualités
-footer.qui_sommes_nous: Qui sommmes-nous ?
-footer.recrutement: Recrutement Vacances directes
-footer.ce: Vacances comité d'entreprise
-footer.newsletter: Abonnemment newsletter
-footer.newsletter.desc: Retrouvez les bons plans et les nouvelles offres Vacances directes directement dans votre boîte mail.
-footer.newsletter.entrer_son_email: ENTRER SON E-MAIL
-footer.site_mobile: Site mobile
-footer.site_mobile.desc: Retrouvez toutes les offres de Vacances directes sur votre mobile.
+footer:
+    nous_joindre: Nous joindre
+    contact:
+        tel: 0825 133 400
+        fax: 02 96 39 97 81
+    nous_contacter: Nous contacter
+    demande_catalogue: Demande de catalogue
+    description_catalogue: Hoc inmaturo interitu ipse quoque sui pertaesus excessit e vita aetatis.
+    consulter_catalogue: Consulter le catalogue
+    telecharger_catalogue: Télécharger le catalogue
+    facebook:
+        titre: Restons en contact
+        intro: Suivez nos idées week-end & bons plans sur   
+        like: J'aime
+        desc.highlight: Partagez votre expérience Vacances directes
+        desc: avec d'autres vacanciers. Photos, activités, avis, rejoignez la communauté des clients Vacances directes sur
+    jeu:
+        titre: Grand jeu concours sur
+        desc: Gagnez un week-end en Italie
+    location_camping: Locations en camping
+    annuaire_campings: Annuaire des campings
+    campings_pas_chers: Liste des campings pas chers
+    guide_activites: Guide des activités
+    campings_france: Campings France
+    campings_espagne: Campings Espagne
+    campings_italie: Campings Italie
+    a_propos: À propos
+    a_propos.desc: Depuis plus de 35 ans, Vacances directes propose la location en camping de mobil-homes tout confort et de qualité. Venez découvrir plus de 180 destinations sélectionnées avec soin en France, Espagne et Italie pour des vacances conviviales et reposantes.
+    actualites: Actualités
+    qui_sommes_nous: Qui sommmes-nous ?
+    recrutement: Recrutement Vacances directes
+    ce: Vacances comité d'entreprise
+    newsletter: Abonnemment newsletter
+    newsletter.desc: Retrouvez les bons plans et les nouvelles offres Vacances directes directement dans votre boîte mail.
+    newsletter.entrer_son_email: ENTRER SON E-MAIL
+    site_mobile: Site mobile
+    site_mobile.desc: Retrouvez toutes les offres de Vacances directes sur votre mobile.
 
 pactiv-1: En vacances avec mes parents, j'aime
 pactiv-2: Envie d'un petit break, de prendre l'air
 pactiv-3: Des vacances sous le signe de la détente et du bonheur
 
-destination.retour: Retour
-destination.pois_all: Tous les lieux
-destination.events_title: En ce moment
-destination.events_prefixe_subtitle: En
-destination.events_suffixe_subtitle: ...
-destination.campings_selection_title: Notre sélection de campings
+destination:
+    retour: Retour
+    pois_all: Tous les lieux
+    events_title: En ce moment
+    events_prefixe_subtitle: En
+    events_suffixe_subtitle: ...
+    campings_selection_title: Notre sélection de campings
 
-encart_vacances_directes.title: Vacances directes
-encart_vacances_directes.subtitle: Un séjour réussi
-encart_vacances_directes.item_1: Des ambassadeurs pour vous accueillir
-encart_vacances_directes.item_2: Des campings sélectionnés avec soin
-encart_vacances_directes.item_3: Un site 100% sécurisé
-encart_vacances_directes.item_4: Des hébergements tout confort pour des vacances dépaysantes
+encart_vacances_directes:
+    title: Vacances directes
+    subtitle: Un séjour réussi
+    item_1: Des ambassadeurs pour vous accueillir
+    item_2: Des campings sélectionnés avec soin
+    item_3: Un site 100% sécurisé
+    item_4: Des hébergements tout confort pour des vacances dépaysantes
 
-encart_informations.title: Informations & Réservations au
-encart_informations.price: (0,15 €/min)
-encart_informations.dates_1: Du lundi au vendredi de 9h-21h
-encart_informations.dates_2: Samedi de 10h - 18h
+encart_informations:
+    title: Informations & Réservations au
+    price: (0,15 €/min)
+    dates_1: Du lundi au vendredi de 9h-21h
+    dates_2: Samedi de 10h - 18h
 
-encart_autres_themes.title: D'autres thèmes pour votre week-end
+encart_autres_themes:
+    title: D'autres thèmes pour votre week-end
 
-semainier.title: Tarifs & disponibilités
-semainier.choose_dates_desc: En juillet et août, les arrivées et départs sont possibles les mercredis et samedis.
-semainier.type_hebergement_title: Choisissez votre période et votre type d'hébergement
-semainier.type_hebergement_desc: Vérifiez les disponibilités mois par mois et cliquez sur la période et l'hébergement de votre choix pour réserver.
-semainier.indisponible: Indisponible
+semainier:
+    title: Tarifs & disponibilités
+    choose_dates_desc: En juillet et août, les arrivées et départs sont possibles les mercredis et samedis.
+    type_hebergement_title: Choisissez votre période et votre type d'hébergement
+    type_hebergement_desc: Vérifiez les disponibilités mois par mois et cliquez sur la période et l'hébergement de votre choix pour réserver.
+    indisponible: Indisponible
 
-resalys.creer_compte: Créer mon compte
-resalys.total: Total
-resalys.date_format: Format de la date DD/MM/YYYY
-resalys.besoin_aide_title: Besoin d'aide
-resalys.besoin_aide_subtitle: Une question sur votre réservation&hellip;
-resalys.besoin_aide_contact: Contactez-nous
-resalys.besoin_aide_num: au 0825 133 400
+resalys:
+    creer_compte: Créer mon compte
+    total: Total
+    date_format: Format de la date DD/MM/YYYY
+    besoin_aide_title: Besoin d'aide
+    besoin_aide_subtitle: Une question sur votre réservation&hellip;
+    besoin_aide_contact: Contactez-nous
+    besoin_aide_num: au 0825 133 400
 
 vos_week_ends: Vos week-ends
 
@@ -276,3 +300,44 @@ breadcrumbs.home: Accueil
 topCamping.h1: Top destinations vacances en camping
 dernieresMinutes.h1: Nos offres de campings en dernières minutes (location mobil home)
 earlyBooking.h1: Nos offres de campings en early booking (location mobil home)
+
+demande_annulation:
+    assure_nom: Nom
+    assure_prenom: Prénom
+    assure_adresse: Adresse
+    assure_code_postal: Code Postal
+    assure_ville: Ville
+    assure_pays:
+        label: Pays
+        empty_value: Choisissez un pays
+    assure_mail:
+        label: EMail
+    assure_telephone: Téléphone
+    camping_montant_sejour: Montant du séjour
+    camping_montant_verse: Montant des sommes versées
+    etablissement:
+        label: Nom du camping
+        empty_value: Choisissez un camping
+    camping_num_resa: N° de réservation
+    sinistre_nature:
+        label: Nature du sinistre
+        annulation: Annulation du séjour
+        interruption: Interruption du séjour
+    sinistre_suite:
+        label: Suite à
+        maladie: Maladie
+        accident: Accident
+        autre: Autre
+    sinistre_date: Date du sinistre
+    sinistre_resume: Résumé rapide des faits et description de la nature du sinistre
+    file_1: ""
+    file_2: ""
+    file_3: ""
+    file_4: ""
+    certifie:
+        label: Je certifie demander l'annulation référencée ci-dessus
+    files:
+        label: Joindre des pièces : (format : pdf, doc, docx, png, jpg de 2 mo maximum)
+    confirmation:
+        title: confirmation
+        content: Votre demande d'annulation a bien été envoyée.
