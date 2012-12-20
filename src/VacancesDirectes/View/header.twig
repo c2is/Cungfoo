@@ -4,7 +4,7 @@
 <a id="account" href="{{ path('compte_index') }}">{{ user.service.firstname }} {{ user.service.lastname }}</a>
 {% else %}
 <a id="account" href="#">Mon compte</a>
-<div id="accountBox" class="radiusBox greyF arrowUp">
+<div id="accountBox" class="radiusBox greyF arrowUp" {% if app.login_errors %}style="display: block;"{% endif %}>
     <h2>vous êtes un client existant, veuillez vous identifier</h2>
     <form id="connexion" action="{{ path('compte_login_check') }}" method="post">
         <fieldset>
