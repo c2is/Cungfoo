@@ -154,6 +154,14 @@ $(function() {
     $(".popinVideo").colorbox({iframe:true, innerWidth:960, innerHeight:540, close:"&times;"});
     //$(".popin360").colorbox();
     $(".popinInline").colorbox({inline:true, width:"75%"});
+    $(".popinBP").colorbox({
+        inline:true,
+        width:"300px",
+        close:"&times;",
+        onOpen: function(){
+           $("#colorbox").addClass("cbBP");
+       }
+    });
 
 // select
     $('#searchForm').find('select').not('.sMultSelect').sSelect({ddMaxHeight: '300px'});

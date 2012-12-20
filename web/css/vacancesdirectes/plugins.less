@@ -34,6 +34,15 @@
 .cboxIframe{width:100%; height:100%; display:block; border:0;}
 #colorbox, #cboxContent, #cboxLoadedContent{box-sizing:content-box;}
 
+/*Colorbox Bons Plans */
+#colorbox.cbBP{overflow:visible;
+  #cboxWrapper{background-color:@colorRubricOrange;._border-radius(25px);}
+  #cboxTitle{display:none;}
+  #cboxLoadedContent{background-color:transparent;border:0;}
+  #cboxWrapper, #cboxContent, #cboxLoadedContent{overflow:visible !important;}
+  #cboxClose{right:10px;}
+}
+
 /*
     User Style:
     Change the following styles to modify the appearance of ColorBox.  They are
