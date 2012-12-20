@@ -77,7 +77,9 @@
   .itemResultBottom{min-height:100px;clear:both;background:@colorGris3;padding:20px 10px;position:relative;._border-radius(0 0 11px 11px);
     [type="radio"]{vertical-align:-2px;}
     .linePrice{
-      label{float:left;clear:left;width:345px;}
+      label{position:relative;float:left;clear:left;width:345px;padding-left:20px;margin-bottom:3px;
+        input{position:absolute;top:0;left:0;margin:0;}
+      }
       .stain{display:none;position:absolute;bottom:5px;left:355px;}
       a.bt{display:none;position:absolute;bottom:35px;right:25px;background-color:@colorFushia;color:@colorBlanc;}
       &.checked{
