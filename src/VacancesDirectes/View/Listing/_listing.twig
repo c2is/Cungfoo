@@ -85,11 +85,11 @@
                     {% set discount = proposal.adult_price != proposal.adult_price_without_discounts %}
                     <div class="linePrice {% if discount %}promotion{% endif %} {% if loop.first %}checked{% endif %}">
                         <label for="{{ "camp" ~ etab.model.code }}-{{ loopParent.index ~ loop.index }}">
-                            <input type="radio" id="{{ "camp" ~ etab.model.code }}-{{ loopParent.index ~ loop.index }}" name="{{ "camp" ~ etab.model.code }}-{{ loopParent.index }}" {% if loop.first %}checked="checked"{% endif %}> 
+                            <input type="radio" id="{{ "camp" ~ etab.model.code }}-{{ loopParent.index ~ loop.index }}" name="{{ "camp" ~ etab.model.code }}-{{ loopParent.index }}" {% if loop.first %}checked="checked"{% endif %}>
                             {% for roomType in proposal.room_types.room_type %}
-                                {% if roomType.room_type_count > 2 %}{{ roomType.room_type_count }} * {% endif %}{{ roomType.room_type_label }}{% if not loop.last %} + {% endif %}
+                                {% if roomType.room_type_count > 2 %}{{ roomType.room_type_count }} * {% endif %}{{ roomType.room_type_label }}{% if not loop.last %}<br/> + {% endif %}
                             {% else %}
-                                {% if proposal.room_types.room_type.room_type_count > 1 %}{{ proposal.room_types.room_type.room_type_count }} * {% endif %}{{ proposal.room_types.room_type.room_type_label }} 
+                                {% if proposal.room_types.room_type.room_type_count > 1 %}{{ proposal.room_types.room_type.room_type_count }} * {% endif %}{{ proposal.room_types.room_type.room_type_label }}
                             {% endfor %}
                             <span class="price">{{ proposal.adult_price|number_format }} €</span>
                         </label>
