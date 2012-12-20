@@ -16,13 +16,16 @@ require_once __DIR__.'/../vendor/autoload.php';
 // created the application
 $app = require __DIR__ . '/../src/VacancesDirectesCe/app.php';
 
+// set environnement
+require __DIR__ . '/../app/config/prod.php';
+
+// set security
+require __DIR__ . '/../src/VacancesDirectesCe/security.php';
+
 // created the context
 require __DIR__ . '/../src/VacancesDirectesCe/context.php';
 
 // load routes code
 require __DIR__ . '/../src/VacancesDirectesCe/routes.php';
-
-// set environnement
-require __DIR__ . '/../app/config/prod.php';
 
 $app['http_cache']->run();

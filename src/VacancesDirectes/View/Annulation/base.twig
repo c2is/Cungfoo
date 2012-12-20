@@ -10,8 +10,10 @@
         <aside class="column right">
             {% block topRightColumn %}
                 {% include 'Form/_search_engine.twig' %}
-                {% include 'Bloc/sejour_reussi.twig' %}
-                {% include 'Bloc/informations.twig' %}
+                <div id="greyBoxes">
+                    {% include 'Bloc/sejour_reussi.twig' %}
+                    {% include 'Bloc/informations.twig' %}
+                </div>
             {% endblock %}
         </aside>
     </div>

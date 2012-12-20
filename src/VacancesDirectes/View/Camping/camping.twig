@@ -201,8 +201,11 @@
         </dl>
         {% endif %}
         <dl>
-            <dt><span>{{ "fiche.equipements" | trans }}</span></dt>
+            <dt><span>{{ "fiche.baignades.top" | trans }}<br />{{ "fiche.baignades.bottom" | trans }}</span></dt>
             <dd class="equipements"><ul>
+                {% for baignade in etab.baignades %}
+                    <li><span>{{ baignade.name }}</span></li>
+                {% endfor %}
             </ul></dd>
         </dl>
         {% if etab.serviceComplementaires | length %}
