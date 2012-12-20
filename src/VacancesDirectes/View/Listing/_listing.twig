@@ -84,7 +84,15 @@
                 {% for proposal in etab.extra %}
                     {% set discount = proposal.adult_price != proposal.adult_price_without_discounts %}
                     <div class="linePrice {% if discount %}promotion{% endif %} {% if loop.first %}checked{% endif %}">
-                        <label for="{{ "camp" ~ etab.model.code }}-{{ loopParent.index ~ loop.index }}"><input type="radio" id="{{ "camp" ~ etab.model.code }}-{{ loopParent.index ~ loop.index }}" name="{{ "camp" ~ etab.model.code }}-{{ loopParent.index }}" {% if loop.first %}checked="checked"{% endif %}> {{ proposal.room_types.room_type.room_type_label }} <span class="price">{{ proposal.adult_price|number_format }} €</span></label>
+                        <label for="{{ "camp" ~ etab.model.code }}-{{ loopParent.index ~ loop.index }}">
+                            <input type="radio" id="{{ "camp" ~ etab.model.code }}-{{ loopParent.index ~ loop.index }}" name="{{ "camp" ~ etab.model.code }}-{{ loopParent.index }}" {% if loop.first %}checked="checked"{% endif %}> 
+                            {% for roomType in proposal.room_types.room_type %}
+                                {% if roomType.room_type_count > 2 %}{{ roomType.room_type_count }} * {% endif %}{{ roomType.room_type_label }}{% if not loop.last %} + {% endif %}
+                            {% else %}
+                                {% if proposal.room_types.room_type.room_type_count > 2 %}{{ proposal.room_types.room_type.room_type_count }} * {% endif %}{{ proposal.room_types.room_type.room_type_label }} 
+                            {% endfor %}
+                            <span class="price">{{ proposal.adult_price|number_format }} €</span>
+                        </label>
                         {% if discount %}
                         <span class="stain fushia cover">
                             <span class="promo">-{{ ((proposal.adult_price_without_discounts|number_format - proposal.adult_price|number_format) * 100 / proposal.adult_price_without_discounts)|number_format }}%</span>
