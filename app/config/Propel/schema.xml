@@ -914,12 +914,14 @@
         <column name="name" type="varchar" />
         <column name="slug" type="varchar" />
         <column name="introduction" type="varchar" />
+        <column name="description" type="varchar" />
         <column name="date_debut" type="date" />
         <column name="date_fin" type="date" />
         <column name="prix" type="integer" />
         <column name="prix_barre" type="integer" />
         <column name="indice" type="varchar" />
-        <column name="image_path" type="varchar" />
+        <column name="image_menu" type="varchar" />
+        <column name="image_page" type="varchar" />
 
         <foreign-key foreignTable="bon_plan_categorie">
             <reference local="bon_plan_categorie_id" foreign="id" />
@@ -928,12 +930,12 @@
         <behavior name="active" />
 
         <behavior name="i18n">
-            <parameter name="i18n_columns" value="name, slug, introduction, description" />
+            <parameter name="i18n_columns" value="name, slug, introduction, description, indice, image_page" />
         </behavior>
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/bons-plans" />
-            <parameter name="crud_type_file" value="image_path" />
+            <parameter name="crud_type_file" value="image_menu,image_page" />
         </behavior>
     </table>
 
