@@ -505,6 +505,11 @@
         <column name="address2" type="varchar" />
         <column name="zipcode" type="varchar" />
         <column name="city" type="varchar" />
+        <column name="tel" type="varchar" />
+        <column name="fax" type="varchar" />
+        <column name="email" type="varchar" />
+        <column name="transport" type="longvarchar" />
+        <column name="website" type="varchar" />
         <column name="geo_coordinate_x" type="varchar" />
         <column name="geo_coordinate_y" type="varchar" />
         <column name="distance_camping" type="varchar" />
