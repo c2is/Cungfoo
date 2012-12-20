@@ -2919,16 +2919,9 @@ ul.newList.optGroup li.optGroup-like a {
   color: #464545 !important;
   cursor: default;
 }
-.newListDisabled {
-  opacity: 0.6;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
-  filter: alpha(opacity=60);
-}
-.newListItemDisabled {
-  opacity: 0.6;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
-  filter: alpha(opacity=60);
-}
+input[disabled],
+.newListDisabled,
+.newListItemDisabled,
 .newListOptionDisabled {
   opacity: 0.6;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
@@ -4609,9 +4602,18 @@ ul.newList.optGroup li.optGroup-like a {
   vertical-align: -2px;
 }
 .itemResult .itemResultBottom .linePrice label {
+  position: relative;
   float: left;
   clear: left;
   width: 345px;
+  padding-left: 20px;
+  margin-bottom: 3px;
+}
+.itemResult .itemResultBottom .linePrice label input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
 }
 .itemResult .itemResultBottom .linePrice .stain {
   display: none;
@@ -4999,6 +5001,7 @@ ul.newList.optGroup li.optGroup-like a {
 }
 .booking iframe {
   width: 100%;
+  min-height: 500px;
 }
 .booking #basketContainer,
 .booking #confirmContainer,
@@ -5325,6 +5328,8 @@ ul.newList.optGroup li.optGroup-like a {
 }
 .account iframe {
   width: 100%;
+  min-height: 500px;
+  overflow: hidden;
 }
 .account .error {
   margin-bottom: 10px;

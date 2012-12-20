@@ -243,7 +243,7 @@ input,
 textarea{font:bold 12px @arial;color:@colorGris0;}
 input[type="text"],input[type="password"]{background-color:@colorBgGrisC;width:216px;._verticalCenter(27px);padding: 0 7px;border:0 none;}
 textarea{background-color:@colorBgGrisC;width:216px;height:81px;padding: 0 7px;border:0 none;}
-.label{font:bold 15px @ptnarrow;color:@colorGris0;text-transform:uppercase;display:inline-block;}
+.label{font:bold 15px @ptnarrow;color:@colorGris2;text-transform:uppercase;display:inline-block;}
 .bold{font-weight:bold;}
 
 
@@ -255,7 +255,7 @@ textarea{background-color:@colorBgGrisC;width:216px;height:81px;padding: 0 7px;b
     p{margin-bottom:10px;}
     table{width:100%}
 
-    // step 1
+
     &.login,
     &.customerAreaHome,
     &.address,
@@ -265,6 +265,7 @@ textarea{background-color:@colorBgGrisC;width:216px;height:81px;padding: 0 7px;b
     &.editOccupant,
     &.fidelity,
     &.sponsorship{
+      // step 1
       #authentication,
       #edit_occupant{margin:15px 0;position:relative;
 
@@ -285,8 +286,8 @@ textarea{background-color:@colorBgGrisC;width:216px;height:81px;padding: 0 7px;b
           textarea{width:228px;height:62px;}
           .datepicker button{right:0;}
           .label{width:228px;line-height:17px;padding:0 10px 0 0;text-align:right;color:@colorGris2;}
-          #existing_customer_login,
-          #edit_customer_info_pol_address_email{text-transform:lowercase;}
+//          #existing_customer_login,
+//          #edit_customer_info_pol_address_email{text-transform:lowercase;}
         }
 
       }
@@ -393,6 +394,21 @@ textarea{background-color:@colorBgGrisC;width:216px;height:81px;padding: 0 7px;b
       }
     }
 
+    // sponsorship
+    &.sponsorship{
+      p{margin:20px 0 10px}
+      #sponsorship_message{width:100%;height:189px;padding:7px;text-transform:uppercase;}
+      table.sponsorshipFriend{display:block;background-color:@colorBgBlanc;margin:10px 0;
+        tr{border:1px solid @colorGris2;
+          th{background-color:@colorGris2;color:@colorBlanc;padding:10px;text-align:left;border:1px solid @colorGris2;font-weight:bold;}
+          td{margin:0;padding:10px;
+            &.label{text-align:right;width:72px;}
+            input{text-transform:uppercase;}
+          }
+        }
+      }
+    }
+
     // step 2
     &.summary{
       #option{
@@ -412,7 +428,7 @@ textarea{background-color:@colorBgGrisC;width:216px;height:81px;padding: 0 7px;b
       }
       #paiement{
         table{display:block;background-color:@colorBgBlanc;margin:10px 0;
-          th{background-color:@colorGris2;color:@colorBlanc;padding:10px;text-align:center;border:1px solid @colorGris2;}
+          th{background-color:@colorGris2;color:@colorBlanc;padding:10px;text-align:center;border:1px solid @colorGris2;font-weight:bold;}
           td{margin:10px 0;padding:10px;text-align:left;border:1px solid @colorGris2;
             &:nth-child(1){font-weight:bold;}
             &.amount{width:125px;text-align:right;}
@@ -524,7 +540,7 @@ textarea{background-color:@colorBgGrisC;width:216px;height:81px;padding: 0 7px;b
     &.droite{float:right;}
   }
   .footerNavigation.gauche a,
-  .footerNavigation.droite a{display:block;border:0;text-transform:uppercase;text-decoration:none;font:bold 14px/22px @ptnarrow;padding:3px 16px;._border-radius(7px);color:@colorBlanc;background-image:url('../../images/vacancesdirectes/common/ui/lrArrowResalys.png');background-repeat:no-repeat;height:28px;}
+  .footerNavigation.droite a{display:block;border:0;text-transform:uppercase;text-decoration:none;font:bold 14px/22px @ptnarrow;padding:5px 10px;._border-radius(7px);color:@colorBlanc;background-image:url('../../images/vacancesdirectes/common/ui/lrArrowResalys.png');background-repeat:no-repeat;}
   .footerNavigation.gauche a{background-position:5px 0;padding-left:25px;background-color:@colorBgGrisF;}
   .footerNavigation.droite a{background-image:none;background-color:@colorFushia;}
   .footerNavigation.pageListe{._border-radius(3px);._box-shadow(0 1px 2px rgba(0, 0, 0, 0.05));float:right;
@@ -591,8 +607,9 @@ ul.newList.optGroup li a {padding:0 8px 0 18px;}
 ul.newList.optGroup li.optGroup-like a {padding:0 8px;font-weight:bold;}
 .hiLite {background:#ED145B!important;color:#fff!important;}
 .newListHover {background-color:#ccc!important;color:@colorGris2!important;cursor:default;}
-.newListDisabled {opacity: 0.6;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";filter: alpha(opacity=60);}
-.newListItemDisabled {opacity: 0.6;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";filter: alpha(opacity=60);}
+input[disabled],
+.newListDisabled,
+.newListItemDisabled,
 .newListOptionDisabled {opacity: 0.6;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";filter: alpha(opacity=60);}
 
 .newListSelHover,

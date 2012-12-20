@@ -86,12 +86,12 @@ head.ready(function(){
 
         });
 
-    if($('#reservationContener.detail').length  || $('#reservationContener.editAccount').length){
+    if($('#contentContener.detail').length  || $('#contentContener.editAccount').length){
         // datepickers
         var d = new Date();
         var y = d.getFullYear();
-        $(".anOccupant").each(function(index,value){
-            var onBlurAction = $(this).find('.control_date').attr('onblur');
+        $(".anOccupant").find('.control_date').each(function(index,value){
+            var onBlurAction = $(this).attr('onblur');
             onBlurAction = onBlurAction.replace(';;',';').replace('if( !checkFutureDate( this ) ) return false; ','');
             if(onBlurAction.substring(0, 1) == ';'){
                 onBlurAction = onBlurAction.substring(1, onBlurAction.length - 1);
@@ -101,8 +101,8 @@ head.ready(function(){
                eval(onBlurAction);
             }
 //            console.log(onBlurAction);
-            $(this).find('.control_date').removeAttr('onblur');
-            $(this).find('.control_date').datepicker({
+            $(this).removeAttr('onblur');
+            $(this).datepicker({
                 changeMonth: true,
                 changeYear: true,
                 yearRange: "1900:2000",

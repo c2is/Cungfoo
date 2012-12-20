@@ -1259,6 +1259,7 @@ textarea {
   padding: 10px;
   text-align: center;
   border: 1px solid #464545;
+  font-weight: bold;
 }
 #contentContener.summary #paiement table td {
   margin: 10px 0;
@@ -1270,7 +1271,7 @@ textarea {
   font-weight: bold;
 }
 #contentContener.summary #paiement table td.amount {
-  width: 125px;
+  width: 130px;
   text-align: right;
 }
 #contentContener.confirmation td {
@@ -1546,13 +1547,12 @@ textarea {
   text-transform: uppercase;
   text-decoration: none;
   font: bold 14px/22px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
-  padding: 3px 16px;
+  padding: 0 12px;
   -webkit-border-radius: 7px;
   border-radius: 7px;
   color: #ffffff;
   background-image: url('../../images/vacancesdirectes/common/ui/lrArrowResalys.png');
   background-repeat: no-repeat;
-  height: 28px;
 }
 #footerContener .footerNavigation.gauche a {
   background-position: 5px 0;
@@ -1954,16 +1954,9 @@ ul.newList.optGroup li.optGroup-like a {
   color: #464545 !important;
   cursor: default;
 }
-.newListDisabled {
-  opacity: 0.6;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
-  filter: alpha(opacity=60);
-}
-.newListItemDisabled {
-  opacity: 0.6;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
-  filter: alpha(opacity=60);
-}
+input[disabled],
+.newListDisabled,
+.newListItemDisabled,
 .newListOptionDisabled {
   opacity: 0.6;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
