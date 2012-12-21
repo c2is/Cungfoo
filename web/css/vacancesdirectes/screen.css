@@ -2847,6 +2847,72 @@ body.edito table td {
   height: 27px;
   background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat scroll 0 -135px transparent;
 }
+.radiusBox2 form .SSContainerDivWrapper {
+  min-width: 248px;
+}
+.radiusBox2 form ul.newList a {
+  height: 27px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 27px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+}
+.radiusBox2 form ul.newList a > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: inherit;
+}
+.radiusBox2 form ul.newList a > img {
+  vertical-align: middle;
+}
+.radiusBox2 form .newListSelected {
+  width: 248px;
+  height: 27px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 27px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+  margin-right: 0px;
+}
+.radiusBox2 form .newListSelected > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: inherit;
+}
+.radiusBox2 form .newListSelected > img {
+  vertical-align: middle;
+}
+.radiusBox2 form .newListSelected .selectedTxt {
+  width: 214px;
+  height: 27px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 27px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+  padding: 0 27px 0 7px;
+}
+.radiusBox2 form .newListSelected .selectedTxt > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: inherit;
+}
+.radiusBox2 form .newListSelected .selectedTxt > img {
+  vertical-align: middle;
+}
+.radiusBox2 form .newListSelected .selectedTxt:after {
+  width: 27px;
+  height: 27px;
+  background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat scroll 0 -135px transparent;
+}
 .SSContainerDivWrapper {
   margin: 0;
   padding: 0;
