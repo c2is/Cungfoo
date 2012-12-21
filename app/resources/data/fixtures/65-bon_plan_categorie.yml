@@ -1,0 +1,19 @@
+\Cungfoo\Model\BonPlanCategorie:
+    1:
+        Order: 1
+        Active: true
+    2:
+        Order: 2
+        Active: true
+    3:
+        Order: 3
+        Active: true
+    4:
+        Order: 4
+        Active: true
+    5:
+        Order: 5
+        Active: true
+    6:
+        Order: 6
+        Active: false

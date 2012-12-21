@@ -1,0 +1,113 @@
+\Cungfoo\Model\BonPlanI18N:
+    1_de:
+        Id: 1
+        Name: 'Oryam ***'
+        Slug: 'oryam'
+        Introduction: 'Pays Basque'
+        Description: 'Lorem ipsum dolor sit amet'
+        Indice: 'pour 5 personnes'
+    1_en:
+        Id: 1
+        Name: 'Oryam ***'
+        Slug: 'oryam'
+        Introduction: 'Pays Basque'
+        Description: 'Lorem ipsum dolor sit amet'
+        Indice: 'pour 5 personnes'
+    1_fr:
+        Id: 1
+        Name: 'Oryam ***'
+        Slug: 'oryam'
+        Introduction: 'Pays Basque'
+        Description: 'Lorem ipsum dolor sit amet'
+        Indice: 'pour 5 personnes'
+    1_nl:
+        Id: 1
+        Name: 'Oryam ***'
+        Slug: 'oryam'
+        Introduction: 'Pays Basque'
+        Description: 'Lorem ipsum dolor sit amet'
+        Indice: 'pour 5 personnes'
+    2_de:
+        Id: 2
+        Name: 'Camping Le Col Vert ****'
+        Slug: 'camping-le-col-vert'
+        Introduction: 'Landes'
+        Description: 'Lorem ipsum dolor sit amet'
+        Indice: 'pour 5 personnes'
+    2_en:
+        Id: 2
+        Name: 'Camping Le Col Vert ****'
+        Slug: 'camping-le-col-vert'
+        Introduction: 'Landes'
+        Description: 'Lorem ipsum dolor sit amet'
+        Indice: 'pour 5 personnes'
+    2_fr:
+        Id: 2
+        Name: 'Camping Le Col Vert ****'
+        Slug: 'camping-le-col-vert'
+        Introduction: 'Landes'
+        Description: 'Lorem ipsum dolor sit amet'
+        Indice: 'pour 5 personnes'
+    2_nl:
+        Id: 2
+        Name: 'Camping Le Col Vert ****'
+        Slug: 'camping-le-col-vert'
+        Introduction: 'Landes'
+        Description: 'Lorem ipsum dolor sit amet'
+        Indice: 'pour 5 personnes'
+    3_de:
+        Id: 3
+        Name: 'Le Parc ***'
+        Slug: 'le-parc'
+        Introduction: 'Provence-Côte d''Azur'
+        Description: 'Lorem ipsum dolor sit amet'
+        Indice: 'pour 5 personnes'
+    3_en:
+        Id: 3
+        Name: 'Le Parc ***'
+        Slug: 'le-parc'
+        Introduction: 'Provence-Côte d''Azur'
+        Description: 'Lorem ipsum dolor sit amet'
+        Indice: 'pour 5 personnes'
+    3_fr:
+        Id: 3
+        Name: 'Le Parc ***'
+        Slug: 'le-parc'
+        Introduction: 'Provence-Côte d''Azur'
+        Description: 'Lorem ipsum dolor sit amet'
+        Indice: 'pour 5 personnes'
+    3_nl:
+        Id: 3
+        Name: 'Le Parc ***'
+        Slug: 'le-parc'
+        Introduction: 'Provence-Côte d''Azur'
+        Description: 'Lorem ipsum dolor sit amet'
+        Indice: 'pour 5 personnes'
+    4_de:
+        Id: 4
+        Name: 'Lou Broustaricq ***'
+        Slug: 'lou-broustaricq'
+        Introduction: 'Landes'
+        Description: 'Lorem ipsum dolor sit amet'
+        Indice: 'pour 4 personnes'
+    4_en:
+        Id: 4
+        Name: 'Lou Broustaricq ***'
+        Slug: 'lou-broustaricq'
+        Introduction: 'Landes'
+        Description: 'Lorem ipsum dolor sit amet'
+        Indice: 'pour 4 personnes'
+    4_fr:
+        Id: 4
+        Name: 'Lou Broustaricq ***'
+        Slug: 'lou-broustaricq'
+        Introduction: 'Landes'
+        Description: 'Lorem ipsum dolor sit amet'
+        Indice: 'pour 4 personnes'
+    4_nl:
+        Id: 4
+        Name: 'Lou Broustaricq ***'
+        Slug: 'lou-broustaricq'
+        Introduction: 'Landes'
+        Description: 'Lorem ipsum dolor sit amet'
+        Indice: 'pour 4 personnes'

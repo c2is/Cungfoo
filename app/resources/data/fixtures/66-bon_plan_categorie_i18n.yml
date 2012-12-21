@@ -1,0 +1,121 @@
+\Cungfoo\Model\BonPlanCategorieI18N:
+    1_de:
+        Id: 1
+        Locale: de
+        Name: 'Premières minutes'
+        Slug: 'premieres-minutes'
+    1_en:
+        Id: 1
+        Locale: en
+        Name: 'Premières minutes'
+        Slug: 'premieres-minutes'
+    1_fr:
+        Id: 1
+        Locale: fr
+        Name: 'Premières minutes'
+        Slug: 'premieres-minutes'
+    1_nl:
+        Id: 1
+        Locale: nl
+        Name: 'Premières minutes'
+        Slug: 'premieres-minutes'
+    2_de:
+        Id: 1
+        Locale: de
+        Name: 'Dernières minutes'
+        Slug: 'dernieres-minutes'
+    2_en:
+        Id: 1
+        Locale: en
+        Name: 'Dernières minutes'
+        Slug: 'dernieres-minutes'
+    2_fr:
+        Id: 1
+        Locale: fr
+        Name: 'Dernières minutes'
+        Slug: 'dernieres-minutes'
+    2_nl:
+        Id: 1
+        Locale: nl
+        Name: 'Dernières minutes'
+        Slug: 'dernieres-minutes'
+    3_de:
+        Id: 1
+        Locale: de
+        Name: 'Dernières disponibilités'
+        Slug: 'dernieres-disponibilites'
+    3_en:
+        Id: 1
+        Locale: en
+        Name: 'Dernières disponibilités'
+        Slug: 'dernieres-disponibilites'
+    3_fr:
+        Id: 1
+        Locale: fr
+        Name: 'Dernières disponibilités'
+        Slug: 'dernieres-disponibilites'
+    3_nl:
+        Id: 1
+        Locale: nl
+        Name: 'Dernières disponibilités'
+        Slug: 'dernieres-disponibilites'
+    4_de:
+        Id: 1
+        Locale: de
+        Name: 'Coups de coeur'
+        Slug: 'coups-de-coeur'
+    4_en:
+        Id: 1
+        Locale: en
+        Name: 'Coups de coeur'
+        Slug: 'coups-de-coeur'
+    4_fr:
+        Id: 1
+        Locale: fr
+        Name: 'Coups de coeur'
+        Slug: 'coups-de-coeur'
+    4_nl:
+        Id: 1
+        Locale: nl
+        Name: 'Coups de coeur'
+        Slug: 'coups-de-coeur'
+    5_de:
+        Id: 1
+        Locale: de
+        Name: 'Ponts de mai'
+        Slug: 'ponts-de-mai'
+    5_en:
+        Id: 1
+        Locale: en
+        Name: 'Ponts de mai'
+        Slug: 'ponts-de-mai'
+    5_fr:
+        Id: 1
+        Locale: fr
+        Name: 'Ponts de mai'
+        Slug: 'ponts-de-mai'
+    5_nl:
+        Id: 1
+        Locale: nl
+        Name: 'Ponts de mai'
+        Slug: 'ponts-de-mai'
+    6_de:
+        Id: 1
+        Locale: de
+        Name: 'Test catégorie desactivée'
+        Slug: 'test-categorie-desactivee'
+    6_en:
+        Id: 1
+        Locale: en
+        Name: 'Test catégorie desactivée'
+        Slug: 'test-categorie-desactivee'
+    6_fr:
+        Id: 1
+        Locale: fr
+        Name: 'Test catégorie desactivée'
+        Slug: 'test-categorie-desactivee'
+    6_nl:
+        Id: 1
+        Locale: nl
+        Name: 'Test catégorie desactivée'
+        Slug: 'test-categorie-desactivee'
