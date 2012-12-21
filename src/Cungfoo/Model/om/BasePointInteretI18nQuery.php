@@ -26,11 +26,17 @@ use Cungfoo\Model\PointInteretI18nQuery;
  * @method PointInteretI18nQuery orderByLocale($order = Criteria::ASC) Order by the locale column
  * @method PointInteretI18nQuery orderByName($order = Criteria::ASC) Order by the name column
  * @method PointInteretI18nQuery orderByPresentation($order = Criteria::ASC) Order by the presentation column
+ * @method PointInteretI18nQuery orderByTransport($order = Criteria::ASC) Order by the transport column
+ * @method PointInteretI18nQuery orderByCategorie($order = Criteria::ASC) Order by the categorie column
+ * @method PointInteretI18nQuery orderByType($order = Criteria::ASC) Order by the type column
  *
  * @method PointInteretI18nQuery groupById() Group by the id column
  * @method PointInteretI18nQuery groupByLocale() Group by the locale column
  * @method PointInteretI18nQuery groupByName() Group by the name column
  * @method PointInteretI18nQuery groupByPresentation() Group by the presentation column
+ * @method PointInteretI18nQuery groupByTransport() Group by the transport column
+ * @method PointInteretI18nQuery groupByCategorie() Group by the categorie column
+ * @method PointInteretI18nQuery groupByType() Group by the type column
  *
  * @method PointInteretI18nQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method PointInteretI18nQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -47,11 +53,17 @@ use Cungfoo\Model\PointInteretI18nQuery;
  * @method PointInteretI18n findOneByLocale(string $locale) Return the first PointInteretI18n filtered by the locale column
  * @method PointInteretI18n findOneByName(string $name) Return the first PointInteretI18n filtered by the name column
  * @method PointInteretI18n findOneByPresentation(string $presentation) Return the first PointInteretI18n filtered by the presentation column
+ * @method PointInteretI18n findOneByTransport(string $transport) Return the first PointInteretI18n filtered by the transport column
+ * @method PointInteretI18n findOneByCategorie(string $categorie) Return the first PointInteretI18n filtered by the categorie column
+ * @method PointInteretI18n findOneByType(string $type) Return the first PointInteretI18n filtered by the type column
  *
  * @method array findById(int $id) Return PointInteretI18n objects filtered by the id column
  * @method array findByLocale(string $locale) Return PointInteretI18n objects filtered by the locale column
  * @method array findByName(string $name) Return PointInteretI18n objects filtered by the name column
  * @method array findByPresentation(string $presentation) Return PointInteretI18n objects filtered by the presentation column
+ * @method array findByTransport(string $transport) Return PointInteretI18n objects filtered by the transport column
+ * @method array findByCategorie(string $categorie) Return PointInteretI18n objects filtered by the categorie column
+ * @method array findByType(string $type) Return PointInteretI18n objects filtered by the type column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -142,7 +154,7 @@ abstract class BasePointInteretI18nQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `locale`, `name`, `presentation` FROM `point_interet_i18n` WHERE `id` = :p0 AND `locale` = :p1';
+        $sql = 'SELECT `id`, `locale`, `name`, `presentation`, `transport`, `categorie`, `type` FROM `point_interet_i18n` WHERE `id` = :p0 AND `locale` = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
@@ -357,6 +369,93 @@ abstract class BasePointInteretI18nQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(PointInteretI18nPeer::PRESENTATION, $presentation, $comparison);
+    }
+
+    /**
+     * Filter the query on the transport column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByTransport('fooValue');   // WHERE transport = 'fooValue'
+     * $query->filterByTransport('%fooValue%'); // WHERE transport LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $transport The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return PointInteretI18nQuery The current query, for fluid interface
+     */
+    public function filterByTransport($transport = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($transport)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $transport)) {
+                $transport = str_replace('*', '%', $transport);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(PointInteretI18nPeer::TRANSPORT, $transport, $comparison);
+    }
+
+    /**
+     * Filter the query on the categorie column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByCategorie('fooValue');   // WHERE categorie = 'fooValue'
+     * $query->filterByCategorie('%fooValue%'); // WHERE categorie LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $categorie The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return PointInteretI18nQuery The current query, for fluid interface
+     */
+    public function filterByCategorie($categorie = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($categorie)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $categorie)) {
+                $categorie = str_replace('*', '%', $categorie);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(PointInteretI18nPeer::CATEGORIE, $categorie, $comparison);
+    }
+
+    /**
+     * Filter the query on the type column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByType('fooValue');   // WHERE type = 'fooValue'
+     * $query->filterByType('%fooValue%'); // WHERE type LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $type The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return PointInteretI18nQuery The current query, for fluid interface
+     */
+    public function filterByType($type = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($type)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $type)) {
+                $type = str_replace('*', '%', $type);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(PointInteretI18nPeer::TYPE, $type, $comparison);
     }
 
     /**

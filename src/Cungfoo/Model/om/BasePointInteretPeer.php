@@ -37,13 +37,13 @@ abstract class BasePointInteretPeer
     const TM_CLASS = 'PointInteretTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 13;
+    const NUM_COLUMNS = 17;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 13;
+    const NUM_HYDRATE_COLUMNS = 17;
 
     /** the column name for the id field */
     const ID = 'point_interet.id';
@@ -62,6 +62,18 @@ abstract class BasePointInteretPeer
 
     /** the column name for the city field */
     const CITY = 'point_interet.city';
+
+    /** the column name for the tel field */
+    const TEL = 'point_interet.tel';
+
+    /** the column name for the fax field */
+    const FAX = 'point_interet.fax';
+
+    /** the column name for the email field */
+    const EMAIL = 'point_interet.email';
+
+    /** the column name for the website field */
+    const WEBSITE = 'point_interet.website';
 
     /** the column name for the geo_coordinate_x field */
     const GEO_COORDINATE_X = 'point_interet.geo_coordinate_x';
@@ -110,12 +122,12 @@ abstract class BasePointInteretPeer
      * e.g. PointInteretPeer::$fieldNames[PointInteretPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'Address', 'Address2', 'Zipcode', 'City', 'GeoCoordinateX', 'GeoCoordinateY', 'DistanceCamping', 'Image', 'CreatedAt', 'UpdatedAt', 'Active', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'address', 'address2', 'zipcode', 'city', 'geoCoordinateX', 'geoCoordinateY', 'distanceCamping', 'image', 'createdAt', 'updatedAt', 'active', ),
-        BasePeer::TYPE_COLNAME => array (PointInteretPeer::ID, PointInteretPeer::CODE, PointInteretPeer::ADDRESS, PointInteretPeer::ADDRESS2, PointInteretPeer::ZIPCODE, PointInteretPeer::CITY, PointInteretPeer::GEO_COORDINATE_X, PointInteretPeer::GEO_COORDINATE_Y, PointInteretPeer::DISTANCE_CAMPING, PointInteretPeer::IMAGE, PointInteretPeer::CREATED_AT, PointInteretPeer::UPDATED_AT, PointInteretPeer::ACTIVE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'ADDRESS', 'ADDRESS2', 'ZIPCODE', 'CITY', 'GEO_COORDINATE_X', 'GEO_COORDINATE_Y', 'DISTANCE_CAMPING', 'IMAGE', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'address', 'address2', 'zipcode', 'city', 'geo_coordinate_x', 'geo_coordinate_y', 'distance_camping', 'image', 'created_at', 'updated_at', 'active', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'Address', 'Address2', 'Zipcode', 'City', 'Tel', 'Fax', 'Email', 'Website', 'GeoCoordinateX', 'GeoCoordinateY', 'DistanceCamping', 'Image', 'CreatedAt', 'UpdatedAt', 'Active', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'address', 'address2', 'zipcode', 'city', 'tel', 'fax', 'email', 'website', 'geoCoordinateX', 'geoCoordinateY', 'distanceCamping', 'image', 'createdAt', 'updatedAt', 'active', ),
+        BasePeer::TYPE_COLNAME => array (PointInteretPeer::ID, PointInteretPeer::CODE, PointInteretPeer::ADDRESS, PointInteretPeer::ADDRESS2, PointInteretPeer::ZIPCODE, PointInteretPeer::CITY, PointInteretPeer::TEL, PointInteretPeer::FAX, PointInteretPeer::EMAIL, PointInteretPeer::WEBSITE, PointInteretPeer::GEO_COORDINATE_X, PointInteretPeer::GEO_COORDINATE_Y, PointInteretPeer::DISTANCE_CAMPING, PointInteretPeer::IMAGE, PointInteretPeer::CREATED_AT, PointInteretPeer::UPDATED_AT, PointInteretPeer::ACTIVE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'ADDRESS', 'ADDRESS2', 'ZIPCODE', 'CITY', 'TEL', 'FAX', 'EMAIL', 'WEBSITE', 'GEO_COORDINATE_X', 'GEO_COORDINATE_Y', 'DISTANCE_CAMPING', 'IMAGE', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'address', 'address2', 'zipcode', 'city', 'tel', 'fax', 'email', 'website', 'geo_coordinate_x', 'geo_coordinate_y', 'distance_camping', 'image', 'created_at', 'updated_at', 'active', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, )
     );
 
     /**
@@ -125,12 +137,12 @@ abstract class BasePointInteretPeer
      * e.g. PointInteretPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'Address' => 2, 'Address2' => 3, 'Zipcode' => 4, 'City' => 5, 'GeoCoordinateX' => 6, 'GeoCoordinateY' => 7, 'DistanceCamping' => 8, 'Image' => 9, 'CreatedAt' => 10, 'UpdatedAt' => 11, 'Active' => 12, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'address' => 2, 'address2' => 3, 'zipcode' => 4, 'city' => 5, 'geoCoordinateX' => 6, 'geoCoordinateY' => 7, 'distanceCamping' => 8, 'image' => 9, 'createdAt' => 10, 'updatedAt' => 11, 'active' => 12, ),
-        BasePeer::TYPE_COLNAME => array (PointInteretPeer::ID => 0, PointInteretPeer::CODE => 1, PointInteretPeer::ADDRESS => 2, PointInteretPeer::ADDRESS2 => 3, PointInteretPeer::ZIPCODE => 4, PointInteretPeer::CITY => 5, PointInteretPeer::GEO_COORDINATE_X => 6, PointInteretPeer::GEO_COORDINATE_Y => 7, PointInteretPeer::DISTANCE_CAMPING => 8, PointInteretPeer::IMAGE => 9, PointInteretPeer::CREATED_AT => 10, PointInteretPeer::UPDATED_AT => 11, PointInteretPeer::ACTIVE => 12, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'ADDRESS' => 2, 'ADDRESS2' => 3, 'ZIPCODE' => 4, 'CITY' => 5, 'GEO_COORDINATE_X' => 6, 'GEO_COORDINATE_Y' => 7, 'DISTANCE_CAMPING' => 8, 'IMAGE' => 9, 'CREATED_AT' => 10, 'UPDATED_AT' => 11, 'ACTIVE' => 12, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'address' => 2, 'address2' => 3, 'zipcode' => 4, 'city' => 5, 'geo_coordinate_x' => 6, 'geo_coordinate_y' => 7, 'distance_camping' => 8, 'image' => 9, 'created_at' => 10, 'updated_at' => 11, 'active' => 12, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'Address' => 2, 'Address2' => 3, 'Zipcode' => 4, 'City' => 5, 'Tel' => 6, 'Fax' => 7, 'Email' => 8, 'Website' => 9, 'GeoCoordinateX' => 10, 'GeoCoordinateY' => 11, 'DistanceCamping' => 12, 'Image' => 13, 'CreatedAt' => 14, 'UpdatedAt' => 15, 'Active' => 16, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'address' => 2, 'address2' => 3, 'zipcode' => 4, 'city' => 5, 'tel' => 6, 'fax' => 7, 'email' => 8, 'website' => 9, 'geoCoordinateX' => 10, 'geoCoordinateY' => 11, 'distanceCamping' => 12, 'image' => 13, 'createdAt' => 14, 'updatedAt' => 15, 'active' => 16, ),
+        BasePeer::TYPE_COLNAME => array (PointInteretPeer::ID => 0, PointInteretPeer::CODE => 1, PointInteretPeer::ADDRESS => 2, PointInteretPeer::ADDRESS2 => 3, PointInteretPeer::ZIPCODE => 4, PointInteretPeer::CITY => 5, PointInteretPeer::TEL => 6, PointInteretPeer::FAX => 7, PointInteretPeer::EMAIL => 8, PointInteretPeer::WEBSITE => 9, PointInteretPeer::GEO_COORDINATE_X => 10, PointInteretPeer::GEO_COORDINATE_Y => 11, PointInteretPeer::DISTANCE_CAMPING => 12, PointInteretPeer::IMAGE => 13, PointInteretPeer::CREATED_AT => 14, PointInteretPeer::UPDATED_AT => 15, PointInteretPeer::ACTIVE => 16, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'ADDRESS' => 2, 'ADDRESS2' => 3, 'ZIPCODE' => 4, 'CITY' => 5, 'TEL' => 6, 'FAX' => 7, 'EMAIL' => 8, 'WEBSITE' => 9, 'GEO_COORDINATE_X' => 10, 'GEO_COORDINATE_Y' => 11, 'DISTANCE_CAMPING' => 12, 'IMAGE' => 13, 'CREATED_AT' => 14, 'UPDATED_AT' => 15, 'ACTIVE' => 16, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'address' => 2, 'address2' => 3, 'zipcode' => 4, 'city' => 5, 'tel' => 6, 'fax' => 7, 'email' => 8, 'website' => 9, 'geo_coordinate_x' => 10, 'geo_coordinate_y' => 11, 'distance_camping' => 12, 'image' => 13, 'created_at' => 14, 'updated_at' => 15, 'active' => 16, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, )
     );
 
     /**
@@ -210,6 +222,10 @@ abstract class BasePointInteretPeer
             $criteria->addSelectColumn(PointInteretPeer::ADDRESS2);
             $criteria->addSelectColumn(PointInteretPeer::ZIPCODE);
             $criteria->addSelectColumn(PointInteretPeer::CITY);
+            $criteria->addSelectColumn(PointInteretPeer::TEL);
+            $criteria->addSelectColumn(PointInteretPeer::FAX);
+            $criteria->addSelectColumn(PointInteretPeer::EMAIL);
+            $criteria->addSelectColumn(PointInteretPeer::WEBSITE);
             $criteria->addSelectColumn(PointInteretPeer::GEO_COORDINATE_X);
             $criteria->addSelectColumn(PointInteretPeer::GEO_COORDINATE_Y);
             $criteria->addSelectColumn(PointInteretPeer::DISTANCE_CAMPING);
@@ -224,6 +240,10 @@ abstract class BasePointInteretPeer
             $criteria->addSelectColumn($alias . '.address2');
             $criteria->addSelectColumn($alias . '.zipcode');
             $criteria->addSelectColumn($alias . '.city');
+            $criteria->addSelectColumn($alias . '.tel');
+            $criteria->addSelectColumn($alias . '.fax');
+            $criteria->addSelectColumn($alias . '.email');
+            $criteria->addSelectColumn($alias . '.website');
             $criteria->addSelectColumn($alias . '.geo_coordinate_x');
             $criteria->addSelectColumn($alias . '.geo_coordinate_y');
             $criteria->addSelectColumn($alias . '.distance_camping');
