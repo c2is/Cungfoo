@@ -47,9 +47,8 @@ class BonPlanI18nTableMap extends TableMap
         $this->addColumn('name', 'Name', 'VARCHAR', false, 255, null);
         $this->addColumn('slug', 'Slug', 'VARCHAR', false, 255, null);
         $this->addColumn('introduction', 'Introduction', 'VARCHAR', false, 255, null);
-        $this->addColumn('description', 'Description', 'VARCHAR', false, 255, null);
+        $this->addColumn('description', 'Description', 'LONGVARCHAR', false, null, null);
         $this->addColumn('indice', 'Indice', 'VARCHAR', false, 255, null);
-        $this->addColumn('image_page', 'ImagePage', 'VARCHAR', false, 255, null);
         // validators
     } // initialize()
 

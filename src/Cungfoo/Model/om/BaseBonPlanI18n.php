@@ -89,12 +89,6 @@ abstract class BaseBonPlanI18n extends BaseObject implements Persistent
     protected $indice;
 
     /**
-     * The value for the image_page field.
-     * @var        string
-     */
-    protected $image_page;
-
-    /**
      * @var        BonPlan
      */
     protected $aBonPlan;
@@ -202,16 +196,6 @@ abstract class BaseBonPlanI18n extends BaseObject implements Persistent
     public function getIndice()
     {
         return $this->indice;
-    }
-
-    /**
-     * Get the [image_page] column value.
-     *
-     * @return string
-     */
-    public function getImagePage()
-    {
-        return $this->image_page;
     }
 
     /**
@@ -366,27 +350,6 @@ abstract class BaseBonPlanI18n extends BaseObject implements Persistent
     } // setIndice()
 
     /**
-     * Set the value of [image_page] column.
-     *
-     * @param string $v new value
-     * @return BonPlanI18n The current object (for fluent API support)
-     */
-    public function setImagePage($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->image_page !== $v) {
-            $this->image_page = $v;
-            $this->modifiedColumns[] = BonPlanI18nPeer::IMAGE_PAGE;
-        }
-
-
-        return $this;
-    } // setImagePage()
-
-    /**
      * Indicates whether the columns in this object are only set to default values.
      *
      * This method can be used in conjunction with isModified() to indicate whether an object is both
@@ -429,7 +392,6 @@ abstract class BaseBonPlanI18n extends BaseObject implements Persistent
             $this->introduction = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
             $this->description = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
             $this->indice = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
-            $this->image_page = ($row[$startcol + 7] !== null) ? (string) $row[$startcol + 7] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -438,7 +400,7 @@ abstract class BaseBonPlanI18n extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 8; // 8 = BonPlanI18nPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 7; // 7 = BonPlanI18nPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating BonPlanI18n object", $e);
@@ -683,9 +645,6 @@ abstract class BaseBonPlanI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(BonPlanI18nPeer::INDICE)) {
             $modifiedColumns[':p' . $index++]  = '`indice`';
         }
-        if ($this->isColumnModified(BonPlanI18nPeer::IMAGE_PAGE)) {
-            $modifiedColumns[':p' . $index++]  = '`image_page`';
-        }
 
         $sql = sprintf(
             'INSERT INTO `bon_plan_i18n` (%s) VALUES (%s)',
@@ -717,9 +676,6 @@ abstract class BaseBonPlanI18n extends BaseObject implements Persistent
                         break;
                     case '`indice`':
                         $stmt->bindValue($identifier, $this->indice, PDO::PARAM_STR);
-                        break;
-                    case '`image_page`':
-                        $stmt->bindValue($identifier, $this->image_page, PDO::PARAM_STR);
                         break;
                 }
             }
@@ -881,9 +837,6 @@ abstract class BaseBonPlanI18n extends BaseObject implements Persistent
             case 6:
                 return $this->getIndice();
                 break;
-            case 7:
-                return $this->getImagePage();
-                break;
             default:
                 return null;
                 break;
@@ -920,7 +873,6 @@ abstract class BaseBonPlanI18n extends BaseObject implements Persistent
             $keys[4] => $this->getIntroduction(),
             $keys[5] => $this->getDescription(),
             $keys[6] => $this->getIndice(),
-            $keys[7] => $this->getImagePage(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aBonPlan) {
@@ -981,9 +933,6 @@ abstract class BaseBonPlanI18n extends BaseObject implements Persistent
             case 6:
                 $this->setIndice($value);
                 break;
-            case 7:
-                $this->setImagePage($value);
-                break;
         } // switch()
     }
 
@@ -1015,7 +964,6 @@ abstract class BaseBonPlanI18n extends BaseObject implements Persistent
         if (array_key_exists($keys[4], $arr)) $this->setIntroduction($arr[$keys[4]]);
         if (array_key_exists($keys[5], $arr)) $this->setDescription($arr[$keys[5]]);
         if (array_key_exists($keys[6], $arr)) $this->setIndice($arr[$keys[6]]);
-        if (array_key_exists($keys[7], $arr)) $this->setImagePage($arr[$keys[7]]);
     }
 
     /**
@@ -1034,7 +982,6 @@ abstract class BaseBonPlanI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(BonPlanI18nPeer::INTRODUCTION)) $criteria->add(BonPlanI18nPeer::INTRODUCTION, $this->introduction);
         if ($this->isColumnModified(BonPlanI18nPeer::DESCRIPTION)) $criteria->add(BonPlanI18nPeer::DESCRIPTION, $this->description);
         if ($this->isColumnModified(BonPlanI18nPeer::INDICE)) $criteria->add(BonPlanI18nPeer::INDICE, $this->indice);
-        if ($this->isColumnModified(BonPlanI18nPeer::IMAGE_PAGE)) $criteria->add(BonPlanI18nPeer::IMAGE_PAGE, $this->image_page);
 
         return $criteria;
     }
@@ -1112,7 +1059,6 @@ abstract class BaseBonPlanI18n extends BaseObject implements Persistent
         $copyObj->setIntroduction($this->getIntroduction());
         $copyObj->setDescription($this->getDescription());
         $copyObj->setIndice($this->getIndice());
-        $copyObj->setImagePage($this->getImagePage());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -1234,7 +1180,6 @@ abstract class BaseBonPlanI18n extends BaseObject implements Persistent
         $this->introduction = null;
         $this->description = null;
         $this->indice = null;
-        $this->image_page = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();

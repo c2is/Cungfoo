@@ -38,13 +38,13 @@ abstract class BaseBonPlanPeer
     const TM_CLASS = 'BonPlanTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 8;
+    const NUM_COLUMNS = 9;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 8;
+    const NUM_HYDRATE_COLUMNS = 9;
 
     /** the column name for the id field */
     const ID = 'bon_plan.id';
@@ -66,6 +66,9 @@ abstract class BaseBonPlanPeer
 
     /** the column name for the image_menu field */
     const IMAGE_MENU = 'bon_plan.image_menu';
+
+    /** the column name for the image_page field */
+    const IMAGE_PAGE = 'bon_plan.image_page';
 
     /** the column name for the active field */
     const ACTIVE = 'bon_plan.active';
@@ -96,12 +99,12 @@ abstract class BaseBonPlanPeer
      * e.g. BonPlanPeer::$fieldNames[BonPlanPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'BonPlanCategorieId', 'DateDebut', 'DateFin', 'Prix', 'PrixBarre', 'ImageMenu', 'Active', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'bonPlanCategorieId', 'dateDebut', 'dateFin', 'prix', 'prixBarre', 'imageMenu', 'active', ),
-        BasePeer::TYPE_COLNAME => array (BonPlanPeer::ID, BonPlanPeer::BON_PLAN_CATEGORIE_ID, BonPlanPeer::DATE_DEBUT, BonPlanPeer::DATE_FIN, BonPlanPeer::PRIX, BonPlanPeer::PRIX_BARRE, BonPlanPeer::IMAGE_MENU, BonPlanPeer::ACTIVE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'BON_PLAN_CATEGORIE_ID', 'DATE_DEBUT', 'DATE_FIN', 'PRIX', 'PRIX_BARRE', 'IMAGE_MENU', 'ACTIVE', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'bon_plan_categorie_id', 'date_debut', 'date_fin', 'prix', 'prix_barre', 'image_menu', 'active', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'BonPlanCategorieId', 'DateDebut', 'DateFin', 'Prix', 'PrixBarre', 'ImageMenu', 'ImagePage', 'Active', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'bonPlanCategorieId', 'dateDebut', 'dateFin', 'prix', 'prixBarre', 'imageMenu', 'imagePage', 'active', ),
+        BasePeer::TYPE_COLNAME => array (BonPlanPeer::ID, BonPlanPeer::BON_PLAN_CATEGORIE_ID, BonPlanPeer::DATE_DEBUT, BonPlanPeer::DATE_FIN, BonPlanPeer::PRIX, BonPlanPeer::PRIX_BARRE, BonPlanPeer::IMAGE_MENU, BonPlanPeer::IMAGE_PAGE, BonPlanPeer::ACTIVE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'BON_PLAN_CATEGORIE_ID', 'DATE_DEBUT', 'DATE_FIN', 'PRIX', 'PRIX_BARRE', 'IMAGE_MENU', 'IMAGE_PAGE', 'ACTIVE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'bon_plan_categorie_id', 'date_debut', 'date_fin', 'prix', 'prix_barre', 'image_menu', 'image_page', 'active', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, )
     );
 
     /**
@@ -111,12 +114,12 @@ abstract class BaseBonPlanPeer
      * e.g. BonPlanPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'BonPlanCategorieId' => 1, 'DateDebut' => 2, 'DateFin' => 3, 'Prix' => 4, 'PrixBarre' => 5, 'ImageMenu' => 6, 'Active' => 7, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'bonPlanCategorieId' => 1, 'dateDebut' => 2, 'dateFin' => 3, 'prix' => 4, 'prixBarre' => 5, 'imageMenu' => 6, 'active' => 7, ),
-        BasePeer::TYPE_COLNAME => array (BonPlanPeer::ID => 0, BonPlanPeer::BON_PLAN_CATEGORIE_ID => 1, BonPlanPeer::DATE_DEBUT => 2, BonPlanPeer::DATE_FIN => 3, BonPlanPeer::PRIX => 4, BonPlanPeer::PRIX_BARRE => 5, BonPlanPeer::IMAGE_MENU => 6, BonPlanPeer::ACTIVE => 7, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'BON_PLAN_CATEGORIE_ID' => 1, 'DATE_DEBUT' => 2, 'DATE_FIN' => 3, 'PRIX' => 4, 'PRIX_BARRE' => 5, 'IMAGE_MENU' => 6, 'ACTIVE' => 7, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'bon_plan_categorie_id' => 1, 'date_debut' => 2, 'date_fin' => 3, 'prix' => 4, 'prix_barre' => 5, 'image_menu' => 6, 'active' => 7, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'BonPlanCategorieId' => 1, 'DateDebut' => 2, 'DateFin' => 3, 'Prix' => 4, 'PrixBarre' => 5, 'ImageMenu' => 6, 'ImagePage' => 7, 'Active' => 8, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'bonPlanCategorieId' => 1, 'dateDebut' => 2, 'dateFin' => 3, 'prix' => 4, 'prixBarre' => 5, 'imageMenu' => 6, 'imagePage' => 7, 'active' => 8, ),
+        BasePeer::TYPE_COLNAME => array (BonPlanPeer::ID => 0, BonPlanPeer::BON_PLAN_CATEGORIE_ID => 1, BonPlanPeer::DATE_DEBUT => 2, BonPlanPeer::DATE_FIN => 3, BonPlanPeer::PRIX => 4, BonPlanPeer::PRIX_BARRE => 5, BonPlanPeer::IMAGE_MENU => 6, BonPlanPeer::IMAGE_PAGE => 7, BonPlanPeer::ACTIVE => 8, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'BON_PLAN_CATEGORIE_ID' => 1, 'DATE_DEBUT' => 2, 'DATE_FIN' => 3, 'PRIX' => 4, 'PRIX_BARRE' => 5, 'IMAGE_MENU' => 6, 'IMAGE_PAGE' => 7, 'ACTIVE' => 8, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'bon_plan_categorie_id' => 1, 'date_debut' => 2, 'date_fin' => 3, 'prix' => 4, 'prix_barre' => 5, 'image_menu' => 6, 'image_page' => 7, 'active' => 8, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, )
     );
 
     /**
@@ -197,6 +200,7 @@ abstract class BaseBonPlanPeer
             $criteria->addSelectColumn(BonPlanPeer::PRIX);
             $criteria->addSelectColumn(BonPlanPeer::PRIX_BARRE);
             $criteria->addSelectColumn(BonPlanPeer::IMAGE_MENU);
+            $criteria->addSelectColumn(BonPlanPeer::IMAGE_PAGE);
             $criteria->addSelectColumn(BonPlanPeer::ACTIVE);
         } else {
             $criteria->addSelectColumn($alias . '.id');
@@ -206,6 +210,7 @@ abstract class BaseBonPlanPeer
             $criteria->addSelectColumn($alias . '.prix');
             $criteria->addSelectColumn($alias . '.prix_barre');
             $criteria->addSelectColumn($alias . '.image_menu');
+            $criteria->addSelectColumn($alias . '.image_page');
             $criteria->addSelectColumn($alias . '.active');
         }
     }

@@ -30,6 +30,7 @@ use Cungfoo\Model\BonPlanQuery;
  * @method BonPlanQuery orderByPrix($order = Criteria::ASC) Order by the prix column
  * @method BonPlanQuery orderByPrixBarre($order = Criteria::ASC) Order by the prix_barre column
  * @method BonPlanQuery orderByImageMenu($order = Criteria::ASC) Order by the image_menu column
+ * @method BonPlanQuery orderByImagePage($order = Criteria::ASC) Order by the image_page column
  * @method BonPlanQuery orderByActive($order = Criteria::ASC) Order by the active column
  *
  * @method BonPlanQuery groupById() Group by the id column
@@ -39,6 +40,7 @@ use Cungfoo\Model\BonPlanQuery;
  * @method BonPlanQuery groupByPrix() Group by the prix column
  * @method BonPlanQuery groupByPrixBarre() Group by the prix_barre column
  * @method BonPlanQuery groupByImageMenu() Group by the image_menu column
+ * @method BonPlanQuery groupByImagePage() Group by the image_page column
  * @method BonPlanQuery groupByActive() Group by the active column
  *
  * @method BonPlanQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
@@ -62,6 +64,7 @@ use Cungfoo\Model\BonPlanQuery;
  * @method BonPlan findOneByPrix(int $prix) Return the first BonPlan filtered by the prix column
  * @method BonPlan findOneByPrixBarre(int $prix_barre) Return the first BonPlan filtered by the prix_barre column
  * @method BonPlan findOneByImageMenu(string $image_menu) Return the first BonPlan filtered by the image_menu column
+ * @method BonPlan findOneByImagePage(string $image_page) Return the first BonPlan filtered by the image_page column
  * @method BonPlan findOneByActive(boolean $active) Return the first BonPlan filtered by the active column
  *
  * @method array findById(int $id) Return BonPlan objects filtered by the id column
@@ -71,6 +74,7 @@ use Cungfoo\Model\BonPlanQuery;
  * @method array findByPrix(int $prix) Return BonPlan objects filtered by the prix column
  * @method array findByPrixBarre(int $prix_barre) Return BonPlan objects filtered by the prix_barre column
  * @method array findByImageMenu(string $image_menu) Return BonPlan objects filtered by the image_menu column
+ * @method array findByImagePage(string $image_page) Return BonPlan objects filtered by the image_page column
  * @method array findByActive(boolean $active) Return BonPlan objects filtered by the active column
  *
  * @package    propel.generator.Cungfoo.Model.om
@@ -175,7 +179,7 @@ abstract class BaseBonPlanQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `bon_plan_categorie_id`, `date_debut`, `date_fin`, `prix`, `prix_barre`, `image_menu`, `active` FROM `bon_plan` WHERE `id` = :p0';
+        $sql = 'SELECT `id`, `bon_plan_categorie_id`, `date_debut`, `date_fin`, `prix`, `prix_barre`, `image_menu`, `image_page`, `active` FROM `bon_plan` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -529,6 +533,35 @@ abstract class BaseBonPlanQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(BonPlanPeer::IMAGE_MENU, $imageMenu, $comparison);
+    }
+
+    /**
+     * Filter the query on the image_page column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByImagePage('fooValue');   // WHERE image_page = 'fooValue'
+     * $query->filterByImagePage('%fooValue%'); // WHERE image_page LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $imagePage The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return BonPlanQuery The current query, for fluid interface
+     */
+    public function filterByImagePage($imagePage = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($imagePage)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $imagePage)) {
+                $imagePage = str_replace('*', '%', $imagePage);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(BonPlanPeer::IMAGE_PAGE, $imagePage, $comparison);
     }
 
     /**

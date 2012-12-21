@@ -29,7 +29,6 @@ use Cungfoo\Model\BonPlanI18nQuery;
  * @method BonPlanI18nQuery orderByIntroduction($order = Criteria::ASC) Order by the introduction column
  * @method BonPlanI18nQuery orderByDescription($order = Criteria::ASC) Order by the description column
  * @method BonPlanI18nQuery orderByIndice($order = Criteria::ASC) Order by the indice column
- * @method BonPlanI18nQuery orderByImagePage($order = Criteria::ASC) Order by the image_page column
  *
  * @method BonPlanI18nQuery groupById() Group by the id column
  * @method BonPlanI18nQuery groupByLocale() Group by the locale column
@@ -38,7 +37,6 @@ use Cungfoo\Model\BonPlanI18nQuery;
  * @method BonPlanI18nQuery groupByIntroduction() Group by the introduction column
  * @method BonPlanI18nQuery groupByDescription() Group by the description column
  * @method BonPlanI18nQuery groupByIndice() Group by the indice column
- * @method BonPlanI18nQuery groupByImagePage() Group by the image_page column
  *
  * @method BonPlanI18nQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method BonPlanI18nQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -58,7 +56,6 @@ use Cungfoo\Model\BonPlanI18nQuery;
  * @method BonPlanI18n findOneByIntroduction(string $introduction) Return the first BonPlanI18n filtered by the introduction column
  * @method BonPlanI18n findOneByDescription(string $description) Return the first BonPlanI18n filtered by the description column
  * @method BonPlanI18n findOneByIndice(string $indice) Return the first BonPlanI18n filtered by the indice column
- * @method BonPlanI18n findOneByImagePage(string $image_page) Return the first BonPlanI18n filtered by the image_page column
  *
  * @method array findById(int $id) Return BonPlanI18n objects filtered by the id column
  * @method array findByLocale(string $locale) Return BonPlanI18n objects filtered by the locale column
@@ -67,7 +64,6 @@ use Cungfoo\Model\BonPlanI18nQuery;
  * @method array findByIntroduction(string $introduction) Return BonPlanI18n objects filtered by the introduction column
  * @method array findByDescription(string $description) Return BonPlanI18n objects filtered by the description column
  * @method array findByIndice(string $indice) Return BonPlanI18n objects filtered by the indice column
- * @method array findByImagePage(string $image_page) Return BonPlanI18n objects filtered by the image_page column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -158,7 +154,7 @@ abstract class BaseBonPlanI18nQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `locale`, `name`, `slug`, `introduction`, `description`, `indice`, `image_page` FROM `bon_plan_i18n` WHERE `id` = :p0 AND `locale` = :p1';
+        $sql = 'SELECT `id`, `locale`, `name`, `slug`, `introduction`, `description`, `indice` FROM `bon_plan_i18n` WHERE `id` = :p0 AND `locale` = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
@@ -460,35 +456,6 @@ abstract class BaseBonPlanI18nQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(BonPlanI18nPeer::INDICE, $indice, $comparison);
-    }
-
-    /**
-     * Filter the query on the image_page column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByImagePage('fooValue');   // WHERE image_page = 'fooValue'
-     * $query->filterByImagePage('%fooValue%'); // WHERE image_page LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $imagePage The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return BonPlanI18nQuery The current query, for fluid interface
-     */
-    public function filterByImagePage($imagePage = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($imagePage)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $imagePage)) {
-                $imagePage = str_replace('*', '%', $imagePage);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(BonPlanI18nPeer::IMAGE_PAGE, $imagePage, $comparison);
     }
 
     /**

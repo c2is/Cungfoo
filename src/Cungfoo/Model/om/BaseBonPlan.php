@@ -94,6 +94,12 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
     protected $image_menu;
 
     /**
+     * The value for the image_page field.
+     * @var        string
+     */
+    protected $image_page;
+
+    /**
      * The value for the active field.
      * Note: this column has a database default value of: false
      * @var        boolean
@@ -297,6 +303,16 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
     }
 
     /**
+     * Get the [image_page] column value.
+     *
+     * @return string
+     */
+    public function getImagePage()
+    {
+        return $this->image_page;
+    }
+
+    /**
      * Get the [active] column value.
      *
      * @return boolean
@@ -462,6 +478,27 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
     } // setImageMenu()
 
     /**
+     * Set the value of [image_page] column.
+     *
+     * @param string $v new value
+     * @return BonPlan The current object (for fluent API support)
+     */
+    public function setImagePage($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->image_page !== $v) {
+            $this->image_page = $v;
+            $this->modifiedColumns[] = BonPlanPeer::IMAGE_PAGE;
+        }
+
+
+        return $this;
+    } // setImagePage()
+
+    /**
      * Sets the value of the [active] column.
      * Non-boolean arguments are converted using the following rules:
      *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
@@ -533,7 +570,8 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
             $this->prix = ($row[$startcol + 4] !== null) ? (int) $row[$startcol + 4] : null;
             $this->prix_barre = ($row[$startcol + 5] !== null) ? (int) $row[$startcol + 5] : null;
             $this->image_menu = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
-            $this->active = ($row[$startcol + 7] !== null) ? (boolean) $row[$startcol + 7] : null;
+            $this->image_page = ($row[$startcol + 7] !== null) ? (string) $row[$startcol + 7] : null;
+            $this->active = ($row[$startcol + 8] !== null) ? (boolean) $row[$startcol + 8] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -542,7 +580,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 8; // 8 = BonPlanPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 9; // 9 = BonPlanPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating BonPlan object", $e);
@@ -810,6 +848,9 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
         if ($this->isColumnModified(BonPlanPeer::IMAGE_MENU)) {
             $modifiedColumns[':p' . $index++]  = '`image_menu`';
         }
+        if ($this->isColumnModified(BonPlanPeer::IMAGE_PAGE)) {
+            $modifiedColumns[':p' . $index++]  = '`image_page`';
+        }
         if ($this->isColumnModified(BonPlanPeer::ACTIVE)) {
             $modifiedColumns[':p' . $index++]  = '`active`';
         }
@@ -844,6 +885,9 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
                         break;
                     case '`image_menu`':
                         $stmt->bindValue($identifier, $this->image_menu, PDO::PARAM_STR);
+                        break;
+                    case '`image_page`':
+                        $stmt->bindValue($identifier, $this->image_page, PDO::PARAM_STR);
                         break;
                     case '`active`':
                         $stmt->bindValue($identifier, (int) $this->active, PDO::PARAM_INT);
@@ -1024,6 +1068,9 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
                 return $this->getImageMenu();
                 break;
             case 7:
+                return $this->getImagePage();
+                break;
+            case 8:
                 return $this->getActive();
                 break;
             default:
@@ -1062,7 +1109,8 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
             $keys[4] => $this->getPrix(),
             $keys[5] => $this->getPrixBarre(),
             $keys[6] => $this->getImageMenu(),
-            $keys[7] => $this->getActive(),
+            $keys[7] => $this->getImagePage(),
+            $keys[8] => $this->getActive(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aBonPlanCategorie) {
@@ -1127,6 +1175,9 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
                 $this->setImageMenu($value);
                 break;
             case 7:
+                $this->setImagePage($value);
+                break;
+            case 8:
                 $this->setActive($value);
                 break;
         } // switch()
@@ -1160,7 +1211,8 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
         if (array_key_exists($keys[4], $arr)) $this->setPrix($arr[$keys[4]]);
         if (array_key_exists($keys[5], $arr)) $this->setPrixBarre($arr[$keys[5]]);
         if (array_key_exists($keys[6], $arr)) $this->setImageMenu($arr[$keys[6]]);
-        if (array_key_exists($keys[7], $arr)) $this->setActive($arr[$keys[7]]);
+        if (array_key_exists($keys[7], $arr)) $this->setImagePage($arr[$keys[7]]);
+        if (array_key_exists($keys[8], $arr)) $this->setActive($arr[$keys[8]]);
     }
 
     /**
@@ -1179,6 +1231,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
         if ($this->isColumnModified(BonPlanPeer::PRIX)) $criteria->add(BonPlanPeer::PRIX, $this->prix);
         if ($this->isColumnModified(BonPlanPeer::PRIX_BARRE)) $criteria->add(BonPlanPeer::PRIX_BARRE, $this->prix_barre);
         if ($this->isColumnModified(BonPlanPeer::IMAGE_MENU)) $criteria->add(BonPlanPeer::IMAGE_MENU, $this->image_menu);
+        if ($this->isColumnModified(BonPlanPeer::IMAGE_PAGE)) $criteria->add(BonPlanPeer::IMAGE_PAGE, $this->image_page);
         if ($this->isColumnModified(BonPlanPeer::ACTIVE)) $criteria->add(BonPlanPeer::ACTIVE, $this->active);
 
         return $criteria;
@@ -1249,6 +1302,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
         $copyObj->setPrix($this->getPrix());
         $copyObj->setPrixBarre($this->getPrixBarre());
         $copyObj->setImageMenu($this->getImageMenu());
+        $copyObj->setImagePage($this->getImagePage());
         $copyObj->setActive($this->getActive());
 
         if ($deepCopy && !$this->startCopy) {
@@ -1613,6 +1667,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
         $this->prix = null;
         $this->prix_barre = null;
         $this->image_menu = null;
+        $this->image_page = null;
         $this->active = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
@@ -1900,30 +1955,6 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
          */
         public function setIndice($v)
         {    $this->getCurrentTranslation()->setIndice($v);
-
-        return $this;
-    }
-
-
-        /**
-         * Get the [image_page] column value.
-         *
-         * @return string
-         */
-        public function getImagePage()
-        {
-        return $this->getCurrentTranslation()->getImagePage();
-    }
-
-
-        /**
-         * Set the value of [image_page] column.
-         *
-         * @param string $v new value
-         * @return BonPlanI18n The current object (for fluent API support)
-         */
-        public function setImagePage($v)
-        {    $this->getCurrentTranslation()->setImagePage($v);
 
         return $this;
     }

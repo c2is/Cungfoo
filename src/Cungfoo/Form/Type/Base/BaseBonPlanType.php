@@ -74,6 +74,19 @@ class BaseBonPlanType extends AppAwareType
             'label' => 'bon_plan.image_menu_deleted',
             'required' => false,
         ));
+        $builder->add('image_page', 'cungfoo_file', array(
+            'constraints' => array(
+            ),
+            'label' => 'bon_plan.image_page',
+            'required' => false,
+        ));
+        $builder->add('image_page_deleted', 'checkbox', array(
+            'constraints' => array(
+            ),
+            'property_path' => false,
+            'label' => 'bon_plan.image_page_deleted',
+            'required' => false,
+        ));
         $builder->add('active', 'checkbox', array(
             'constraints' => array(
             ),
@@ -114,20 +127,13 @@ class BaseBonPlanType extends AppAwareType
                 'description' => array(
                     'required' => false,
                     'label' => 'bon_plan.description',
-                    'type' => 'text',
+                    'type' => 'textarea',
                     'constraints' => array(
                     ),
                 ),
                 'indice' => array(
                     'required' => false,
                     'label' => 'bon_plan.indice',
-                    'type' => 'text',
-                    'constraints' => array(
-                    ),
-                ),
-                'image_page' => array(
-                    'required' => false,
-                    'label' => 'bon_plan.image_page',
                     'type' => 'text',
                     'constraints' => array(
                     ),

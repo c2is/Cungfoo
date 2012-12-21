@@ -49,6 +49,7 @@ class BonPlanTableMap extends TableMap
         $this->addColumn('prix', 'Prix', 'INTEGER', false, null, null);
         $this->addColumn('prix_barre', 'PrixBarre', 'INTEGER', false, null, null);
         $this->addColumn('image_menu', 'ImageMenu', 'VARCHAR', false, 255, null);
+        $this->addColumn('image_page', 'ImagePage', 'VARCHAR', false, 255, null);
         $this->addColumn('active', 'Active', 'BOOLEAN', false, 1, false);
         // validators
     } // initialize()
@@ -77,7 +78,7 @@ class BonPlanTableMap extends TableMap
             'i18n' =>  array (
   'i18n_table' => '%TABLE%_i18n',
   'i18n_phpname' => '%PHPNAME%I18n',
-  'i18n_columns' => 'name, slug, introduction, description, indice, image_page',
+  'i18n_columns' => 'name, slug, introduction, description, indice',
   'i18n_pk_name' => NULL,
   'locale_column' => 'locale',
   'default_locale' => 'fr',

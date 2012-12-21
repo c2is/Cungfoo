@@ -66,7 +66,7 @@ abstract class BaseEditoI18n extends BaseObject implements Persistent
 
     /**
      * The value for the description field.
-     * @var        string
+     * @var
      */
     protected $description;
 
@@ -143,7 +143,7 @@ abstract class BaseEditoI18n extends BaseObject implements Persistent
     /**
      * Get the [description] column value.
      *
-     * @return string
+     * @return
      */
     public function getDescription()
     {
@@ -220,15 +220,11 @@ abstract class BaseEditoI18n extends BaseObject implements Persistent
     /**
      * Set the value of [description] column.
      *
-     * @param string $v new value
+     * @param  $v new value
      * @return EditoI18n The current object (for fluent API support)
      */
     public function setDescription($v)
     {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
         if ($this->description !== $v) {
             $this->description = $v;
             $this->modifiedColumns[] = EditoI18nPeer::DESCRIPTION;
@@ -277,7 +273,7 @@ abstract class BaseEditoI18n extends BaseObject implements Persistent
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
             $this->locale = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
             $this->name = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
-            $this->description = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
+            $this->description = ($row[$startcol + 3] !== null) ? new ($row[$startcol + 3]) : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -543,7 +539,7 @@ abstract class BaseEditoI18n extends BaseObject implements Persistent
                         $stmt->bindValue($identifier, $this->name, PDO::PARAM_STR);
                         break;
                     case '`description`':
-                        $stmt->bindValue($identifier, $this->description, PDO::PARAM_STR);
+                        $stmt->bindValue($identifier, $this->description, );
                         break;
                 }
             }

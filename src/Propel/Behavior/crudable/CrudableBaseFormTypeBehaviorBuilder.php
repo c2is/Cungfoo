@@ -370,32 +370,38 @@ class {$this->getClassname()} extends AppAwareType
 
                 $addDeletedField = false;
 
-                if (in_array($column->getName(), $fileFields))
+                if (in_array($i18nColumn->getName(), $fileFields))
                 {
-                    $column->setType('cungfoo_file');
+                    $i18nColumn->setType('cungfoo_file');
                     $addDeletedField = true;
                 }
-                else if (in_array($column->getName(), $richtextFields))
-                {
-                    $column->setType('textrich');
-                }
 
-                $builders .= $this->addBuilderAccordingToColumn($column);
-
-                if ($addDeletedField)
+                if (in_array($i18nColumn->getName(), $richtextFields))
                 {
-                    $columnDeleted = clone $column;
-                    $columnDeleted->setType(PropelTypes::BOOLEAN);
-                    $columnDeleted->setName($columnDeleted->getName() . '_deleted');
-                    $builders .= $this->addBuilderAccordingToColumn($columnDeleted, array('property_path' => false));
+                    $i18nColumn->setType('textrich');
                 }
 
                 $i18nColumns[$i18nColumn->getName()] = array(
                     'required'      => false,
                     'label'         => sprintf('%s.%s', $this->getTable()->getName(), $i18nColumn->getName()),
-                    'type'          => $columnType,
+                    'type'          => $this->getColumnType($i18nColumn),
                     'constraints'   => $this->addConstraints($i18nColumn),
                 );
+
+                if ($addDeletedField)
+                {
+                    $columnDeleted = clone $i18nColumn;
+                    $columnDeleted->setType(PropelTypes::BOOLEAN);
+                    $columnDeleted->setName($columnDeleted->getName() . '_deleted');
+
+                    $i18nColumns[$columnDeleted->getName()] = array(
+                        'required'      => false,
+                        'label'         => sprintf('%s.%s', $this->getTable()->getName(), $columnDeleted->getName()),
+                        'type'          => $this->getColumnType($columnDeleted),
+                        'constraints'   => $this->addConstraints($columnDeleted),
+                        'property_path' => false,
+                    );
+                }
             }
 
             // set default languages

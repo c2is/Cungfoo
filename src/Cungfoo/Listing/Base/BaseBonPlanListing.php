@@ -23,6 +23,7 @@ class BaseBonPlanListing extends Listing
         $this->addColumn(new Column\DateColumn('date_debut'));
         $this->addColumn(new Column\DateColumn('date_fin'));
         $this->addColumn(new Column\TextColumn('image_menu'));
+        $this->addColumn(new Column\TextColumn('image_page'));
         $this->addColumn(new Column\TextColumn('active'));
     }
 

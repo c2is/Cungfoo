@@ -46,12 +46,12 @@ use Cungfoo\Model\EditoI18nQuery;
  * @method EditoI18n findOneById(int $id) Return the first EditoI18n filtered by the id column
  * @method EditoI18n findOneByLocale(string $locale) Return the first EditoI18n filtered by the locale column
  * @method EditoI18n findOneByName(string $name) Return the first EditoI18n filtered by the name column
- * @method EditoI18n findOneByDescription(string $description) Return the first EditoI18n filtered by the description column
+ * @method EditoI18n findOneByDescription( $description) Return the first EditoI18n filtered by the description column
  *
  * @method array findById(int $id) Return EditoI18n objects filtered by the id column
  * @method array findByLocale(string $locale) Return EditoI18n objects filtered by the locale column
  * @method array findByName(string $name) Return EditoI18n objects filtered by the name column
- * @method array findByDescription(string $description) Return EditoI18n objects filtered by the description column
+ * @method array findByDescription( $description) Return EditoI18n objects filtered by the description column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -333,28 +333,13 @@ abstract class BaseEditoI18nQuery extends ModelCriteria
     /**
      * Filter the query on the description column
      *
-     * Example usage:
-     * <code>
-     * $query->filterByDescription('fooValue');   // WHERE description = 'fooValue'
-     * $query->filterByDescription('%fooValue%'); // WHERE description LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $description The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     mixed $description The value to use as filter
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return EditoI18nQuery The current query, for fluid interface
      */
     public function filterByDescription($description = null, $comparison = null)
     {
-        if (null === $comparison) {
-            if (is_array($description)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $description)) {
-                $description = str_replace('*', '%', $description);
-                $comparison = Criteria::LIKE;
-            }
-        }
 
         return $this->addUsingAlias(EditoI18nPeer::DESCRIPTION, $description, $comparison);
     }
