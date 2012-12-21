@@ -8,6 +8,9 @@ class CrudableBaseFormTypeBehaviorBuilder extends OMBuilder
 {
     const TAB_CHARACTER = "\t";
 
+    const CRUDABLE_TYPE_TEXTRICH = 'textrich';
+    const CRUDABLE_TYPE_FILE     = 'cungfoo_file';
+
     public $overwrite = true;
 
     /**
@@ -227,17 +230,20 @@ class {$this->getClassname()} extends AppAwareType
         {
             return 'datetime';
         }
-        elseif (PropelTypes::LONGVARBINARY === $column->getType())
-        {
-            return 'cungfoo_file';
-        }
         elseif (PropelTypes::ENUM === $column->getType())
         {
             return 'choice';
         }
+        elseif (self::CRUDABLE_TYPE_TEXTRICH === $column->getType())
+        {
+            return 'textrich';
+        }
+        elseif (self::CRUDABLE_TYPE_FILE === $column->getType())
+        {
+            return 'cungfoo_file';
+        }
         else
         {
-            // Custom types
             return $column->getType();
         }
     }
@@ -284,12 +290,12 @@ class {$this->getClassname()} extends AppAwareType
 
                 if (in_array($column->getName(), $fileFields))
                 {
-                    $column->setType('cungfoo_file');
+                    $column->setType(self::CRUDABLE_TYPE_FILE);
                     $addDeletedField = true;
                 }
                 else if (in_array($column->getName(), $richtextFields))
                 {
-                    $column->setType('textrich');
+                    $column->setType(self::CRUDABLE_TYPE_TEXTRICH);
                 }
 
                 $builders .= $this->addBuilderAccordingToColumn($column);
@@ -372,19 +378,19 @@ class {$this->getClassname()} extends AppAwareType
 
                 if (in_array($i18nColumn->getName(), $fileFields))
                 {
-                    $i18nColumn->setType('cungfoo_file');
+                    $columnType = self::CRUDABLE_TYPE_FILE;
                     $addDeletedField = true;
                 }
 
                 if (in_array($i18nColumn->getName(), $richtextFields))
                 {
-                    $i18nColumn->setType('textrich');
+                    $columnType = self::CRUDABLE_TYPE_TEXTRICH;
                 }
 
                 $i18nColumns[$i18nColumn->getName()] = array(
                     'required'      => false,
                     'label'         => sprintf('%s.%s', $this->getTable()->getName(), $i18nColumn->getName()),
-                    'type'          => $this->getColumnType($i18nColumn),
+                    'type'          => $columnType,
                     'constraints'   => $this->addConstraints($i18nColumn),
                 );
 
