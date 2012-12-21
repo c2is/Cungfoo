@@ -84,6 +84,13 @@ menu:
               idee_weekend:
                   title:  menu.idee_weekend
                   route:  idee_weekend_crud_list
+                  divider: ~
+              bon_plan_categories:
+                  title:  menu.bon_plan_categorie
+                  route:  bon_plan_categorie_crud_list
+              bons_plans:
+                  title:  menu.bon_plan
+                  route:  bon_plan_crud_list
         viafrance:
             title: menu.viafrance
             items:
