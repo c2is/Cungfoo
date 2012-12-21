@@ -987,15 +987,6 @@ textarea {
   font: bold 17px Arial, Helvetica, sans-serif;
   text-transform: none;
 }
-#contentContener.detail #reservation .aRoom .price,
-#contentContener.editAccount #reservation .aRoom .price {
-  font: bold 19px/18px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
-  text-align: right;
-}
-#contentContener.detail #reservation .aRoom .action,
-#contentContener.editAccount #reservation .aRoom .action {
-  text-align: right;
-}
 #contentContener.detail #reservation .aRoom .changeOccupantCount,
 #contentContener.editAccount #reservation .aRoom .changeOccupantCount {
   height: auto;
@@ -1053,6 +1044,21 @@ textarea {
 #contentContener.editAccount #reservation .aRoom tr td {
   height: 30px;
   vertical-align: middle;
+}
+#contentContener.detail #reservation .aRoom tr td.optionLabel,
+#contentContener.editAccount #reservation .aRoom tr td.optionLabel {
+  width: 400px;
+}
+#contentContener.detail #reservation .aRoom tr td.price,
+#contentContener.editAccount #reservation .aRoom tr td.price {
+  width: 110px;
+  font: bold 19px/18px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+  text-align: right;
+}
+#contentContener.detail #reservation .aRoom tr td.action,
+#contentContener.editAccount #reservation .aRoom tr td.action {
+  text-align: right;
+  width: 40px;
 }
 #contentContener.detail #reservation .aRoom tr td .control_checkbox,
 #contentContener.editAccount #reservation .aRoom tr td .control_checkbox {

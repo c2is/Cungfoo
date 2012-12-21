@@ -314,8 +314,6 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
         h2{color:@colorBgGrisM;text-transform:uppercase;font:bold 22px @ptnarrow;._verticalCenter(40px);
           small{font:bold 17px @arial;text-transform:none;}
         }
-        .price{font:bold 19px/18px @ptnarrow;text-align:right;}
-        .action{text-align:right;}
         .changeOccupantCount{height:auto;background-color:@colorBgGrisF;padding:10px 5px 0;margin-bottom:15px;position:relative;
           &>span{margin:0 5px 10px;._verticalCenter(27px);font:bold 17px @ptnarrow;color:@colorBlanc;text-transform:uppercase;display:inline-block;}
           .addAction a{position:absolute;top:10px;right:10px;display:block;width:27px;height:27px;text-indent:-9999px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -162px transparent;}
@@ -323,6 +321,9 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
         tr{font-weight:bold;
           &.productsNotSelectedYet{font-weight:normal;}
           td{height:30px;vertical-align:middle;
+            &.optionLabel{width:400px;}
+            &.price{width:110px;font:bold 19px/18px @ptnarrow;text-align:right;}
+            &.action{text-align:right;width:40px;}
             .control_checkbox{margin-top:0;}
             .hiddenIfCheckbox{display:none;}
             .deleteLink{position:relative;display:block;width:27px;height:24px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -243px transparent;float:left;margin-left:10px;
