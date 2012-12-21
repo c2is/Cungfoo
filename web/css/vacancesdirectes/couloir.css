@@ -1553,7 +1553,7 @@ textarea {
   text-transform: uppercase;
   text-decoration: none;
   font: bold 14px/22px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
-  padding: 0 12px;
+  padding: 3px 12px;
   -webkit-border-radius: 7px;
   border-radius: 7px;
   color: #ffffff;
