@@ -6314,7 +6314,7 @@ aside *.placeholder {
   z-index: 1;
   margin: -70px 0 0 0;
 }
-#searchBloc form li {
+#searchBloc form ol > li {
   margin-bottom: 10px;
 }
 #searchBloc .newListSelected {
@@ -6350,6 +6350,7 @@ aside *.placeholder {
   background-color: #ffffff;
   color: #8c8a8a;
   font-weight: bold;
+  padding: 0 10px;
 }
 #searchBloc input .SSContainerDivWrapper .newListOptionTitle,
 #searchBloc select .SSContainerDivWrapper .newListOptionTitle,
