@@ -77,6 +77,13 @@ class PointOfInterestLoader extends AbstractLoader
                 ->setDistanceCamping($place->attributes()->{'DistanceXY'})
                 ->setImage($place->{'Image'})
                 ->setPresentation($place->{'Presentation'})
+                ->setTel($place->{'Tel'})
+                ->setFax($place->{'Fax'})
+                ->setEmail($place->{'Email'})
+                ->setWebsite($place->{'WebSite'})
+                ->setTransport($place->{'Transports'})
+                ->setCategorie($place->{'SubCategorySet'}->{'SubCategory'})
+                ->setType($place->{'SubCategorySet'}->{'SubCategory'}[1])
             ;
         }
         else
@@ -88,11 +95,15 @@ class PointOfInterestLoader extends AbstractLoader
 
             $defaultName            = $poi->getName();
             $defaultPresentation    = $poi->getPresentation();
+            $defaultTransport       = $poi->getTransport();
 
             $poi
                 ->setLocale($language)
                 ->setName(($place->{'Name'}) ? $place->{'Name'} : $defaultName)
-                ->setName(($place->{'Presentation'}) ? $place->{'Presentation'} : $defaultPresentation)
+                ->setPresentation(($place->{'Presentation'}) ? $place->{'Presentation'} : $defaultPresentation)
+                ->setTransport(($place->{'Transports'}) ? $place->{'Transports)'} : $defaultTransport)
+                ->setCategorie($place->{'SubCategorySet'}->{'SubCategory'})
+                ->setType($place->{'SubCategorySet'}->{'SubCategory'}[1])
             ;
         }
 
