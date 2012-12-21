@@ -69,7 +69,7 @@ class UpCommand extends Command
     {
         $trace = '';
 
-        $builder = new ProcessBuilder(array('./vendor/bin/propel-gen', 'app/config/Propel', $task));
+        $builder = new ProcessBuilder(array(sprintf('%s/vendor/bin/propel-gen', $this->getProjectDirectory()), sprintf('%s/app/config/Propel', $this->getProjectDirectory()), $task));
         $builder->setTimeout(null);
         $builder->getProcess()->run(function ($type, $buffer) use (&$trace) {
             $trace .= $buffer;
