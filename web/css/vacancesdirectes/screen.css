@@ -6123,7 +6123,7 @@ aside *.placeholder {
   z-index: 1;
   margin: -70px 0 0 0;
 }
-#searchBloc form ol > li {
+#searchBloc form li {
   margin-bottom: 10px;
 }
 #searchBloc .newListSelected {
