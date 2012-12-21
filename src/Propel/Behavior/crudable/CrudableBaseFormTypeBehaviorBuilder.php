@@ -370,21 +370,21 @@ class {$this->getClassname()} extends AppAwareType
 
                 $addDeletedField = false;
 
-                if (in_array($column->getName(), $fileFields))
+                if (in_array($i18nColumn->getName(), $fileFields))
                 {
-                    $column->setType('cungfoo_file');
+                    $columnType = 'cungfoo_file';
                     $addDeletedField = true;
                 }
-                else if (in_array($column->getName(), $richtextFields))
+                else if (in_array($i18nColumn->getName(), $richtextFields))
                 {
-                    $column->setType('textrich');
+                    $columnType = 'textrich';
                 }
 
-                $builders .= $this->addBuilderAccordingToColumn($column);
+                $builders .= $this->addBuilderAccordingToColumn($i18nColumn);
 
                 if ($addDeletedField)
                 {
-                    $columnDeleted = clone $column;
+                    $columnDeleted = clone $i18nColumn;
                     $columnDeleted->setType(PropelTypes::BOOLEAN);
                     $columnDeleted->setName($columnDeleted->getName() . '_deleted');
                     $builders .= $this->addBuilderAccordingToColumn($columnDeleted, array('property_path' => false));
