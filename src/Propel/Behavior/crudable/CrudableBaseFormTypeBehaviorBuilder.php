@@ -8,6 +8,9 @@ class CrudableBaseFormTypeBehaviorBuilder extends OMBuilder
 {
     const TAB_CHARACTER = "\t";
 
+    const CRUDABLE_TYPE_TEXTRICH = 'textrich';
+    const CRUDABLE_TYPE_FILE     = 'cungfoo_file';
+
     public $overwrite = true;
 
     /**
@@ -227,17 +230,20 @@ class {$this->getClassname()} extends AppAwareType
         {
             return 'datetime';
         }
-        elseif (PropelTypes::LONGVARBINARY === $column->getType())
-        {
-            return 'cungfoo_file';
-        }
         elseif (PropelTypes::ENUM === $column->getType())
         {
             return 'choice';
         }
+        elseif (self::CRUDABLE_TYPE_TEXTRICH === $column->getType())
+        {
+            return 'textrich';
+        }
+        elseif (self::CRUDABLE_TYPE_FILE === $column->getType())
+        {
+            return 'cungfoo_file';
+        }
         else
         {
-            // Custom types
             return $column->getType();
         }
     }
@@ -284,12 +290,12 @@ class {$this->getClassname()} extends AppAwareType
 
                 if (in_array($column->getName(), $fileFields))
                 {
-                    $column->setType('cungfoo_file');
+                    $column->setType(self::CRUDABLE_TYPE_FILE);
                     $addDeletedField = true;
                 }
                 else if (in_array($column->getName(), $richtextFields))
                 {
-                    $column->setType('textrich');
+                    $column->setType(self::CRUDABLE_TYPE_TEXTRICH);
                 }
 
                 $builders .= $this->addBuilderAccordingToColumn($column);
@@ -368,9 +374,17 @@ class {$this->getClassname()} extends AppAwareType
             {
                 $columnType = $this->getColumnType($i18nColumn);
 
+                $addDeletedField = false;
+
+                if (in_array($i18nColumn->getName(), $fileFields))
+                {
+                    $columnType = self::CRUDABLE_TYPE_FILE;
+                    $addDeletedField = true;
+                }
+
                 if (in_array($i18nColumn->getName(), $richtextFields))
                 {
-                    $columnType = 'textrich';
+                    $columnType = self::CRUDABLE_TYPE_TEXTRICH;
                 }
 
                 $i18nColumns[$i18nColumn->getName()] = array(
@@ -379,6 +393,21 @@ class {$this->getClassname()} extends AppAwareType
                     'type'          => $columnType,
                     'constraints'   => $this->addConstraints($i18nColumn),
                 );
+
+                if ($addDeletedField)
+                {
+                    $columnDeleted = clone $i18nColumn;
+                    $columnDeleted->setType(PropelTypes::BOOLEAN);
+                    $columnDeleted->setName($columnDeleted->getName() . '_deleted');
+
+                    $i18nColumns[$columnDeleted->getName()] = array(
+                        'required'      => false,
+                        'label'         => sprintf('%s.%s', $this->getTable()->getName(), $columnDeleted->getName()),
+                        'type'          => $this->getColumnType($columnDeleted),
+                        'constraints'   => $this->addConstraints($columnDeleted),
+                        'property_path' => false,
+                    );
+                }
             }
 
             // set default languages
