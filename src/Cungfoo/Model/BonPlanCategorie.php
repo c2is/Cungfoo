@@ -18,4 +18,23 @@ use Cungfoo\Model\om\BaseBonPlanCategorie;
  */
 class BonPlanCategorie extends BaseBonPlanCategorie
 {
+    public function __toString()
+    {
+        return $this->getName();
+    }
+
+    public function getBonPlansActifs($criteria = null, $con = null) {
+        return BonPlanQuery::create(null, $criteria)
+            ->filterByBonPlanCategorie($this)
+            ->findActive($con)
+        ;
+    }
+
+    public function getBonPlansActifsForMenu($criteria = null, $con = null) {
+        return BonPlanQuery::create(null, $criteria)
+            ->filterByBonPlanCategorie($this)
+            ->limit(6)
+            ->findActive($con)
+        ;
+    }
 }

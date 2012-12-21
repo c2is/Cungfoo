@@ -4,3 +4,6 @@ items:
         title:      "menu.destinations"
         route:      "menu_destinations"
         countQuery: "\\Cungfoo\\Model\\EtablissementPeer::getNbEtablissements"
+    bons_plans:
+        title:      "menu.bons_plans"
+        route:      "menu_bons_plans"

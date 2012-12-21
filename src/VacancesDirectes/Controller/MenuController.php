@@ -10,7 +10,9 @@ use Symfony\Component\HttpFoundation\Request,
     Symfony\Component\HttpKernel\Exception\NotFoundHttpException,
     Symfony\Component\Routing\Route;
 
-use Cungfoo\Model\EtablissementPeer;
+use Cungfoo\Model\EtablissementPeer,
+    Cungfoo\Model\BonPlanCategorieQuery,
+    Cungfoo\Model\BonPlanQuery;
 
 use VacancesDirectes\Form\Type\Destination\AutocompleteType;
 
@@ -69,7 +71,23 @@ class MenuController implements ControllerProviderInterface
 
         $controllers->get('/bons-plans', function () use ($app)
         {
-            return $app['twig']->render('Menu/bonsPlans.twig');
+            $categories = BonPlanCategorieQuery::create()
+                ->orderBy('order')
+                ->findActive()
+            ;
+
+            $bonsPlans = array();
+            if($categories) {
+                $bonsPlans = BonPlanQuery::create()
+                    ->filterByBonPlanCategorieId($categories[0]->getId())
+                    ->findActive()
+                ;
+            }
+
+            return $app['twig']->render('Menu/bonsPlans.twig', array(
+                'categories'    => $categories,
+                'bonsPlans'     => $bonsPlans,
+            ));
         })
         ->bind('menu_bons_plans');
 

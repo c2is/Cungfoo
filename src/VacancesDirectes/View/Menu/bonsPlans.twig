@@ -1,0 +1,21 @@
+<div id="deals" class="subnav">
+    <div class="title">Sélectionnez un bon plan</div>
+    <ul>
+        {% for categorie in categories %}
+        <li>{{ categorie.name }}</li>
+        {% endfor %}
+    </ul>
+    <div>
+        <span>Abonnement newsletter</span>
+        <div class="bt bleu">S'inscrire</div>
+    </div>
+    {% for categorie in categories %}
+    <div class="radiusBox greyC clear">
+        <ul>
+            {% for bonPlan in categorie.bonPlansActifsForMenu %}
+            <li>{{ bonPlan.name }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endfor %}
+</div>
