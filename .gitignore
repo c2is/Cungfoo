@@ -11,3 +11,4 @@
 .idea/
 .vagrant
 Vagrantfile
+migrations

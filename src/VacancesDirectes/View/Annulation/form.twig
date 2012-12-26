@@ -1,0 +1,191 @@
+{% extends "Annulation/base.twig" %}
+
+{% block leftColumn %}
+<h1>{{ "demande_annulation.title" | trans }}</h1>
+<form id="annulationForm" method="post" action="{{ app.request.getRequestURI() }}" novalidate {{ form_enctype(annulationForm) }}>
+    <fieldset>
+        <ol>
+            <li>
+                <div class="clear">
+                    {{ form_errors(annulationForm.assure_nom) }}
+                    {{ form_label(annulationForm.assure_nom) }}
+                    {{ form_widget(annulationForm.assure_nom) }}
+                </div>
+            </li>
+            <li>
+                <div class="clear">
+                    {{ form_errors(annulationForm.assure_prenom) }}
+                    {{ form_label(annulationForm.assure_prenom) }}
+                    {{ form_widget(annulationForm.assure_prenom) }}
+                </div>
+            </li>
+            <li>
+                <div class="clear">
+                    {{ form_errors(annulationForm.assure_adresse) }}
+                    {{ form_label(annulationForm.assure_adresse) }}
+                    {{ form_widget(annulationForm.assure_adresse) }}
+                </div>
+            </li>
+            <li>
+                <div class="clear">
+                    {{ form_errors(annulationForm.assure_code_postal) }}
+                    {{ form_label(annulationForm.assure_code_postal) }}
+                    {{ form_widget(annulationForm.assure_code_postal) }}
+                </div>
+            </li>
+            <li>
+                <div class="clear">
+                    {{ form_errors(annulationForm.assure_ville) }}
+                    {{ form_label(annulationForm.assure_ville) }}
+                    {{ form_widget(annulationForm.assure_ville) }}
+                </div>
+            </li>
+            <li>
+                <div class="clear">
+                    {{ form_errors(annulationForm.assure_pays) }}
+                    {{ form_label(annulationForm.assure_pays) }}
+                    {{ form_widget(annulationForm.assure_pays) }}
+                </div>
+            </li>
+            <li>
+                <div class="clear">
+                    {{ form_errors(annulationForm.assure_mail) }}
+                    {{ form_label(annulationForm.assure_mail) }}
+                    {{ form_widget(annulationForm.assure_mail) }}
+                </div>
+            </li>
+            <li>
+                <div class="clear">
+                    {{ form_errors(annulationForm.assure_telephone) }}
+                    {{ form_label(annulationForm.assure_telephone) }}
+                    {{ form_widget(annulationForm.assure_telephone) }}
+                </div>
+            </li>
+            <li>
+                <div class="clear">
+                    {{ form_errors(annulationForm.camping_montant_sejour) }}
+                    {{ form_label(annulationForm.camping_montant_sejour) }}
+                    {{ form_widget(annulationForm.camping_montant_sejour) }}
+                </div>
+            </li>
+            <li>
+                <div class="clear">
+                    {{ form_errors(annulationForm.camping_montant_verse) }}
+                    {{ form_label(annulationForm.camping_montant_verse) }}
+                    {{ form_widget(annulationForm.camping_montant_verse) }}
+                </div>
+            </li>
+            <li>
+                <div class="clear">
+                    {{ form_errors(annulationForm.etablissement) }}
+                    {{ form_label(annulationForm.etablissement) }}
+                    {{ form_widget(annulationForm.etablissement) }}
+                </div>
+            </li>
+            <li>
+                <div class="clear">
+                    {{ form_errors(annulationForm.camping_num_resa) }}
+                    {{ form_label(annulationForm.camping_num_resa) }}
+                    {{ form_widget(annulationForm.camping_num_resa) }}
+                </div>
+            </li>
+            <li>
+                <div class="clear">
+                    {{ form_errors(annulationForm.sinistre_nature) }}
+                    {{ form_label(annulationForm.sinistre_nature) }}
+                    {{ form_widget(annulationForm.sinistre_nature) }}
+                </div>
+            </li>
+            <li>
+                <div class="clear">
+                    {{ form_errors(annulationForm.sinistre_suite) }}
+                    {{ form_label(annulationForm.sinistre_suite) }}
+                    {{ form_widget(annulationForm.sinistre_suite) }}
+                </div>
+            </li>
+            <li>
+                <div class="clear">
+                    {{ form_errors(annulationForm.sinistre_date) }}
+                    {{ form_label(annulationForm.sinistre_date) }}
+                    {{ form_widget(annulationForm.sinistre_date) }}
+                </div>
+            </li>
+            <li>
+                <div class="clear">
+                    {{ form_errors(annulationForm.sinistre_resume) }}
+                    {{ form_label(annulationForm.sinistre_resume) }}
+                    {{ form_widget(annulationForm.sinistre_resume) }}
+                </div>
+            </li>
+            <li>
+                <div class="clear">
+                    {{ form_errors(annulationForm.file_1) }}
+                    {{ form_label(annulationForm.file_1) }}
+                    {{ form_widget(annulationForm.file_1) }}
+                </div>
+            </li>
+            <li>
+                <div class="clear">
+                    {{ form_errors(annulationForm.file_2) }}
+                    {{ form_label(annulationForm.file_2) }}
+                    {{ form_widget(annulationForm.file_2) }}
+                </div>
+            </li>
+            <li>
+                <div class="clear">
+                    {{ form_errors(annulationForm.file_3) }}
+                    {{ form_label(annulationForm.file_3) }}
+                    {{ form_widget(annulationForm.file_3) }}
+                </div>
+            </li>
+            <li>
+                <div class="clear">
+                    {{ form_errors(annulationForm.file_4) }}
+                    {{ form_label(annulationForm.file_4) }}
+                    {{ form_widget(annulationForm.file_4) }}
+                </div>
+            </li>
+            <li>
+                <div class="clear">
+                    {{ form_errors(annulationForm.certifie) }}
+                    {{ form_label(annulationForm.certifie) }}
+                    {{ form_widget(annulationForm.certifie) }}
+                </div>
+            </li>
+            <li>
+                <button type="submit" class="bt sombre big" name="annulationForm">Envoyer</button>
+            </li>
+        </ol>
+        <div style="display: none;">
+            {{ form_rest(annulationForm) }}
+        </div>
+    </fieldset>
+</form>
+
+<script type="text/javascript">
+    var pjCount = {{ form.pieceJointes | length }} + 1;
+
+    head.ready(function() {
+        $('#add-piece-jointe').click(function() {
+            var pjList = $('#pieces-jointes-list');
+
+            var newWidget = $('#Annulation_piecesJointes').attr('data-prototype');
+            // replace the "__name__" used in the id and name of the prototype
+            // end name attribute looks like name="contact[emails][2]"
+            newWidget = newWidget.replace(/__name__label__/g, 'Pièce jointe ' + pjCount);
+            newWidget = newWidget.replace(/__name__/g, pjCount);
+            pjCount++;
+
+            // create a new list element and add it to the list
+            var newLi = $('<li></li>').html(newWidget);
+            newLi.appendTo($('#pieces-jointes-list'));
+
+            if(pjCount > 4) {
+                $('#add-piece-jointe').hide();
+            }
+
+            return false;
+        });
+    })
+</script>
+{% endblock %}

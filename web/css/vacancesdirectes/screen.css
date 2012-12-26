@@ -6142,6 +6142,7 @@ aside #searchBloc .newListSelected .SSContainerDivWrapper ul.newList li a {
   background-color: #ffffff;
   color: #8c8a8a;
   font-weight: bold;
+  padding: 0 10px;
 }
 aside #searchBloc input .SSContainerDivWrapper .newListOptionTitle,
 aside #searchBloc select .SSContainerDivWrapper .newListOptionTitle,

@@ -36,46 +36,16 @@ $app['translator'] = $app->share($app->extend('translator',
     }
 ));
 
-/* S E C U R I T Y   M A N A G E R */
-$app->register(new Silex\Provider\SessionServiceProvider());
-$app->register(new Silex\Provider\SecurityServiceProvider());
-$app['security.firewalls'] =  array(
-    'compte' => array(
-        'pattern' => '/compte/',
-        'form'    => array(
-            'always_use_default_target_path' => true,
-            'default_target_path'            => '/compte/',
-            'login_path'                     => '/compte/logout',
-            'check_path'                     => '/compte/login_check'
-        ),
-        'logout' => array('logout_path' => '/compte/logout'),
-        'users'  => $app->share(function() use ($app) {
-            return new \Resalys\Model\UserIndivProvider($app);
-        }),
-    ),
+$app->register(new \Silex\Provider\SwiftmailerServiceProvider());
+
+$app['swiftmailer.options'] = array(
+    'host' => 'smtp.teaser.net',
+    'port' => '587',
+    'username' => 'serveurs@c2is.fr',
+    'password' => 'RiiU879kH',
+    'encryption' => null,
+    'auth_mode' => null
 );
-$app['security.access_rules'] = array(
-    array('^/compte/', 'ROLE_USER'),
-);
-
-$app['security.last_error'] = $app->protect(function (\Symfony\Component\HttpFoundation\Request $request) {
-    $errorMessage = "Le login que vous avez saisi est incorrect.\nVeuillez réessayer (vérifiez que le verrouillage des majuscules est désactivé).";
-
-    if ($request->attributes->has(\Symfony\Component\Security\Core\SecurityContextInterface::AUTHENTICATION_ERROR)) {
-        return $errorMessage;
-    }
-
-    $session = $request->getSession();
-    if ($session && $session->has(\Symfony\Component\Security\Core\SecurityContextInterface::AUTHENTICATION_ERROR)) {
-        $session->remove(\Symfony\Component\Security\Core\SecurityContextInterface::AUTHENTICATION_ERROR);
-
-        return $errorMessage;
-    }
-});
-
-$app['security.encoder.digest'] = $app->share(function ($app) {
-    return new \Symfony\Component\Security\Core\Encoder\PlaintextPasswordEncoder();
-});
 
 return $app;
 

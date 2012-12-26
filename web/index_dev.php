@@ -32,6 +32,9 @@ $app = require __DIR__ . '/../src/VacancesDirectes/app.php';
 // set environnement
 require __DIR__ . '/../app/config/dev.php';
 
+// set security
+require __DIR__ . '/../src/VacancesDirectes/security.php';
+
 // created the context
 require __DIR__ . '/../src/VacancesDirectes/context.php';
 

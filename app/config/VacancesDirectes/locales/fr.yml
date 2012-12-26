@@ -341,3 +341,4 @@ demande_annulation:
     confirmation:
         title: "confirmation"
         content: "Votre demande d'annulation a bien été envoyée."
+    title: "Formulaire d'annulation"

@@ -1,0 +1,14 @@
+pays:
+    - pays.france
+    - pays.afghanistan
+    - pays.afriqueDuSud
+    - pays.albanie
+
+naturesSinistre:
+    - demande_annulation.sinistre_nature.annulation
+    - demande_annulation.sinistre_nature.interruption
+
+suitesSinistre:
+    - demande_annulation.sinistre_suite.maladie
+    - demande_annulation.sinistre_suite.accident
+    - demande_annulation.sinistre_suite.autre
