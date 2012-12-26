@@ -54,8 +54,8 @@ Montant du séjour : {$annulationData->getCampingMontantSejour()}
 Montant des sommes versées : {$annulationData->getCampingMontantVerse()}
 Nom du camping : {$annulationData->getEtablissement()->getName()}
 N° de réservation du camping : {$annulationData->getCampingNumResa()}
-Nature du sinistre : {$annulationData->getSinistreNature()}
-Suite à : {$annulationData->getSinistreSuite()}
+Nature du sinistre : {$app->trans($annulationData->getSinistreNature())}
+Suite à : {$app->trans($annulationData->getSinistreSuite())}
 Date du sinistre : {$annulationData->getSinistreDate()}
 Résumé des faits : {$annulationData->getSinistreResume()}
 eof;
