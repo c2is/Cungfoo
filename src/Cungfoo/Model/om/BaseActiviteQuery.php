@@ -832,7 +832,7 @@ abstract class BaseActiviteQuery extends ModelCriteria
         return $this->addAscendingOrderByColumn(ActivitePeer::CREATED_AT);
     }
     // active behavior
-
+    
     /**
      * return only active objects
      *
@@ -841,7 +841,7 @@ abstract class BaseActiviteQuery extends ModelCriteria
     public function findActive($con = null)
     {
         $this->filterByActive(true);
-
+    
         return parent::find($con);
     }
 

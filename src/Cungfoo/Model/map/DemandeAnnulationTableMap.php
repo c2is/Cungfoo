@@ -67,7 +67,7 @@ class DemandeAnnulationTableMap extends TableMap
   2 => 'demande_annulation.sinistre_suite.autre',
 ));
         $this->addColumn('sinistre_date', 'SinistreDate', 'VARCHAR', true, 255, null);
-        $this->addColumn('sinistre_resume', 'SinistreResume', 'VARCHAR', true, 255, null);
+        $this->addColumn('sinistre_resume', 'SinistreResume', 'LONGVARCHAR', true, null, null);
         $this->addColumn('file_1', 'File1', 'VARCHAR', false, 255, null);
         $this->addColumn('file_2', 'File2', 'VARCHAR', false, 255, null);
         $this->addColumn('file_3', 'File3', 'VARCHAR', false, 255, null);

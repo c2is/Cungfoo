@@ -3,11 +3,11 @@
 {% block leftColumn %}
 <h1>{{ "demande_annulation.title" | trans }}</h1>
     <div class="radiusBox2 greyM form">
-        <h2>Annuler une réservation</h2>
+        <h2>{{ "demande_annulation.subtitle" | trans }}</h2>
         <form id="annulationForm" method="post" action="{{ app.request.getRequestURI() }}" novalidate {{ form_enctype(annulationForm) }}>
             <div class="errors">{{ form_errors(annulationForm) }}</div>
             <fieldset>
-                <legend class="h4-like">Vos coordonnées</legend>
+                <legend class="h4-like">{{ "demande_annulation.legend.coordonnees" | trans }}</legend>
                 <table>
                     <tr>
                         <td class="label">{{ form_label(annulationForm.assure_nom) }}</td>
@@ -41,7 +41,7 @@
                 </table>
             </fieldset>
             <fieldset>
-                <legend class="h4-like">Votre réservation</legend>
+                <legend class="h4-like">{{ "demande_annulation.legend.reservation" | trans }}</legend>
                 <table>
                     <tr>
                         <td class="label">{{ form_label(annulationForm.camping_montant_sejour) }}</td>
@@ -65,61 +65,35 @@
                     </tr>
                     <tr>
                         <td class="label">{{ form_label(annulationForm.sinistre_date) }}</td>
-                        <td class="field">{{ form_widget(annulationForm.sinistre_date) }}</td>
+                        <td class="field">{{ form_widget(annulationForm.sinistre_date, { 'attr': {'class': 'datepicker'} }) }}</td>
                         <td class="label">{{ form_label(annulationForm.sinistre_resume) }}</td>
                         <td class="field">{{ form_widget(annulationForm.sinistre_resume) }}</td>
                     </tr>
                     <tr>
-                        <td class="label">{{ form_label(annulationForm.file_1) }}</td>
-                        <td class="field" colspan="3">{{ form_widget(annulationForm.file_1) }}</td>
+                        <td class="label" colspan="2">{{ "demande_annulation.files.label" | trans }}</td>
+                        <td class="field" colspan="2">{{ form_widget(annulationForm.file_1) }}</td>
                     </tr>
                     <tr>
-                        <td class="label">{{ form_label(annulationForm.file_2) }}</td>
-                        <td class="field" colspan="3">{{ form_widget(annulationForm.file_2) }}</td>
+                        <td class="label" colspan="2">{{ form_label(annulationForm.file_2) }}</td>
+                        <td class="field" colspan="2">{{ form_widget(annulationForm.file_2) }}</td>
                     </tr>
                     <tr>
-                        <td class="label">{{ form_label(annulationForm.file_3) }}</td>
-                        <td class="field" colspan="3">{{ form_widget(annulationForm.file_3) }}</td>
+                        <td class="label" colspan="2">{{ form_label(annulationForm.file_3) }}</td>
+                        <td class="field" colspan="2">{{ form_widget(annulationForm.file_3) }}</td>
                     </tr>
                     <tr>
-                        <td class="label">{{ form_label(annulationForm.file_4) }}</td>
-                        <td class="field" colspan="3">{{ form_widget(annulationForm.file_4) }}</td>
+                        <td class="label" colspan="2">{{ form_label(annulationForm.file_4) }}</td>
+                        <td class="field" colspan="2">{{ form_widget(annulationForm.file_4) }}</td>
                     </tr>
                     <tr>
                         <td class="checkbox" colspan="4">{{ form_widget(annulationForm.certifie) }}{{ form_label(annulationForm.certifie) }}</td>
                     </tr>
                 </table>
-                <button type="submit" class="bt fushia big right" name="annulationForm">Envoyer</button>
+                <button type="submit" class="bt fushia big right" name="annulationForm">{{ "general.submit" | trans }}</button>
                 <div style="display: none;">
                     {{ form_rest(annulationForm) }}
                 </div>
             </fieldset>
         </form>
 </div>
-<script type="text/javascript">
-    var pjCount = {{ form.pieceJointes | length }} + 1;
-
-    head.ready(function() {
-        $('#add-piece-jointe').click(function() {
-            var pjList = $('#pieces-jointes-list');
-
-            var newWidget = $('#Annulation_piecesJointes').attr('data-prototype');
-            // replace the "__name__" used in the id and name of the prototype
-            // end name attribute looks like name="contact[emails][2]"
-            newWidget = newWidget.replace(/__name__label__/g, 'Pièce jointe ' + pjCount);
-            newWidget = newWidget.replace(/__name__/g, pjCount);
-            pjCount++;
-
-            // create a new list element and add it to the list
-            var newLi = $('<li></li>').html(newWidget);
-            newLi.appendTo($('#pieces-jointes-list'));
-
-            if(pjCount > 4) {
-                $('#add-piece-jointe').hide();
-            }
-
-            return false;
-        });
-    })
-</script>
 {% endblock %}

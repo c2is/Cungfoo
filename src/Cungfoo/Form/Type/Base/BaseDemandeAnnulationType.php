@@ -142,7 +142,7 @@ class BaseDemandeAnnulationType extends AppAwareType
             'label' => 'demande_annulation.sinistre_date',
             'required' => false,
         ));
-        $builder->add('sinistre_resume', 'text', array(
+        $builder->add('sinistre_resume', 'textarea', array(
             'constraints' => array(
                 new Assert\NotBlank(),
             ),
