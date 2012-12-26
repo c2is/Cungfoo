@@ -86,9 +86,9 @@ eof;
                     }
 
                     $app['mailer']->send($message);
-                }
 
-                return $app->redirect($app->path('demande_annulation_confirmation'));
+                    return $app->redirect($app->path('demande_annulation_confirmation'));
+                }
             }
 
             return $app->renderView('Annulation/form.twig', array(

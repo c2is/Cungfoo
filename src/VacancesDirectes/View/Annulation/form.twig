@@ -2,190 +2,98 @@
 
 {% block leftColumn %}
 <h1>{{ "demande_annulation.title" | trans }}</h1>
-<form id="annulationForm" method="post" action="{{ app.request.getRequestURI() }}" novalidate {{ form_enctype(annulationForm) }}>
-    <fieldset>
-        <ol>
-            <li>
-                <div class="clear">
-                    {{ form_errors(annulationForm.assure_nom) }}
-                    {{ form_label(annulationForm.assure_nom) }}
-                    {{ form_widget(annulationForm.assure_nom) }}
-                </div>
-            </li>
-            <li>
-                <div class="clear">
-                    {{ form_errors(annulationForm.assure_prenom) }}
-                    {{ form_label(annulationForm.assure_prenom) }}
-                    {{ form_widget(annulationForm.assure_prenom) }}
-                </div>
-            </li>
-            <li>
-                <div class="clear">
-                    {{ form_errors(annulationForm.assure_adresse) }}
-                    {{ form_label(annulationForm.assure_adresse) }}
-                    {{ form_widget(annulationForm.assure_adresse) }}
-                </div>
-            </li>
-            <li>
-                <div class="clear">
-                    {{ form_errors(annulationForm.assure_code_postal) }}
-                    {{ form_label(annulationForm.assure_code_postal) }}
-                    {{ form_widget(annulationForm.assure_code_postal) }}
-                </div>
-            </li>
-            <li>
-                <div class="clear">
-                    {{ form_errors(annulationForm.assure_ville) }}
-                    {{ form_label(annulationForm.assure_ville) }}
-                    {{ form_widget(annulationForm.assure_ville) }}
-                </div>
-            </li>
-            <li>
-                <div class="clear">
-                    {{ form_errors(annulationForm.assure_pays) }}
-                    {{ form_label(annulationForm.assure_pays) }}
-                    {{ form_widget(annulationForm.assure_pays) }}
-                </div>
-            </li>
-            <li>
-                <div class="clear">
-                    {{ form_errors(annulationForm.assure_mail) }}
-                    {{ form_label(annulationForm.assure_mail) }}
-                    {{ form_widget(annulationForm.assure_mail) }}
-                </div>
-            </li>
-            <li>
-                <div class="clear">
-                    {{ form_errors(annulationForm.assure_telephone) }}
-                    {{ form_label(annulationForm.assure_telephone) }}
-                    {{ form_widget(annulationForm.assure_telephone) }}
-                </div>
-            </li>
-            <li>
-                <div class="clear">
-                    {{ form_errors(annulationForm.camping_montant_sejour) }}
-                    {{ form_label(annulationForm.camping_montant_sejour) }}
-                    {{ form_widget(annulationForm.camping_montant_sejour) }}
-                </div>
-            </li>
-            <li>
-                <div class="clear">
-                    {{ form_errors(annulationForm.camping_montant_verse) }}
-                    {{ form_label(annulationForm.camping_montant_verse) }}
-                    {{ form_widget(annulationForm.camping_montant_verse) }}
-                </div>
-            </li>
-            <li>
-                <div class="clear">
-                    {{ form_errors(annulationForm.etablissement) }}
-                    {{ form_label(annulationForm.etablissement) }}
-                    {{ form_widget(annulationForm.etablissement) }}
-                </div>
-            </li>
-            <li>
-                <div class="clear">
-                    {{ form_errors(annulationForm.camping_num_resa) }}
-                    {{ form_label(annulationForm.camping_num_resa) }}
-                    {{ form_widget(annulationForm.camping_num_resa) }}
-                </div>
-            </li>
-            <li>
-                <div class="clear">
-                    {{ form_errors(annulationForm.sinistre_nature) }}
-                    {{ form_label(annulationForm.sinistre_nature) }}
-                    {{ form_widget(annulationForm.sinistre_nature) }}
-                </div>
-            </li>
-            <li>
-                <div class="clear">
-                    {{ form_errors(annulationForm.sinistre_suite) }}
-                    {{ form_label(annulationForm.sinistre_suite) }}
-                    {{ form_widget(annulationForm.sinistre_suite) }}
-                </div>
-            </li>
-            <li>
-                <div class="clear">
-                    {{ form_errors(annulationForm.sinistre_date) }}
-                    {{ form_label(annulationForm.sinistre_date) }}
-                    {{ form_widget(annulationForm.sinistre_date) }}
-                </div>
-            </li>
-            <li>
-                <div class="clear">
-                    {{ form_errors(annulationForm.sinistre_resume) }}
-                    {{ form_label(annulationForm.sinistre_resume) }}
-                    {{ form_widget(annulationForm.sinistre_resume) }}
-                </div>
-            </li>
-            <li>
-                <div class="clear">
-                    {{ form_errors(annulationForm.file_1) }}
-                    {{ form_label(annulationForm.file_1) }}
-                    {{ form_widget(annulationForm.file_1) }}
-                </div>
-            </li>
-            <li>
-                <div class="clear">
-                    {{ form_errors(annulationForm.file_2) }}
-                    {{ form_label(annulationForm.file_2) }}
-                    {{ form_widget(annulationForm.file_2) }}
-                </div>
-            </li>
-            <li>
-                <div class="clear">
-                    {{ form_errors(annulationForm.file_3) }}
-                    {{ form_label(annulationForm.file_3) }}
-                    {{ form_widget(annulationForm.file_3) }}
-                </div>
-            </li>
-            <li>
-                <div class="clear">
-                    {{ form_errors(annulationForm.file_4) }}
-                    {{ form_label(annulationForm.file_4) }}
-                    {{ form_widget(annulationForm.file_4) }}
-                </div>
-            </li>
-            <li>
-                <div class="clear">
-                    {{ form_errors(annulationForm.certifie) }}
-                    {{ form_label(annulationForm.certifie) }}
-                    {{ form_widget(annulationForm.certifie) }}
-                </div>
-            </li>
-            <li>
-                <button type="submit" class="bt sombre big" name="annulationForm">Envoyer</button>
-            </li>
-        </ol>
-        <div style="display: none;">
-            {{ form_rest(annulationForm) }}
-        </div>
-    </fieldset>
-</form>
+    <div class="radiusBox2 greyM form">
+        <h2>{{ "demande_annulation.subtitle" | trans }}</h2>
+        <form id="annulationForm" method="post" action="{{ app.request.getRequestURI() }}" novalidate {{ form_enctype(annulationForm) }}>
+            <div class="errors">{{ form_errors(annulationForm) }}</div>
+            <fieldset>
+                <legend class="h4-like">{{ "demande_annulation.legend.coordonnees" | trans }}</legend>
+                <table>
+                    <tr>
+                        <td class="label">{{ form_label(annulationForm.assure_nom) }}</td>
+                        <td class="field">{{ form_widget(annulationForm.assure_nom) }}</td>
+                        <td class="label">{{ form_label(annulationForm.assure_prenom) }}</td>
+                        <td class="field">{{ form_widget(annulationForm.assure_prenom) }}</td>
+                    </tr>
+                    <tr>
+                        <td class="label">{{ form_label(annulationForm.assure_code_postal) }}</td>
+                        <td class="field">{{ form_widget(annulationForm.assure_code_postal) }}</td>
+                        <td class="label" rowspan="2">{{ form_label(annulationForm.assure_adresse) }}</td>
+                        <td class="field" rowspan="2">{{ form_widget(annulationForm.assure_adresse) }}</td>
+                    </tr>
+                    <tr>
+                        <td class="label">{{ form_label(annulationForm.assure_ville) }}</td>
+                        <td class="field">{{ form_widget(annulationForm.assure_ville) }}</td>
+                    </tr>
+                    <tr>
+                        <td class="label">{{ form_label(annulationForm.assure_pays) }}</td>
+                        <td class="field">{{ form_widget(annulationForm.assure_pays) }}</td>
+                        <td class="label"></td>
+                        <td class="field"></td>
 
-<script type="text/javascript">
-    var pjCount = {{ form.pieceJointes | length }} + 1;
-
-    head.ready(function() {
-        $('#add-piece-jointe').click(function() {
-            var pjList = $('#pieces-jointes-list');
-
-            var newWidget = $('#Annulation_piecesJointes').attr('data-prototype');
-            // replace the "__name__" used in the id and name of the prototype
-            // end name attribute looks like name="contact[emails][2]"
-            newWidget = newWidget.replace(/__name__label__/g, 'Pièce jointe ' + pjCount);
-            newWidget = newWidget.replace(/__name__/g, pjCount);
-            pjCount++;
-
-            // create a new list element and add it to the list
-            var newLi = $('<li></li>').html(newWidget);
-            newLi.appendTo($('#pieces-jointes-list'));
-
-            if(pjCount > 4) {
-                $('#add-piece-jointe').hide();
-            }
-
-            return false;
-        });
-    })
-</script>
+                    </tr>
+                    <tr>
+                        <td class="label">{{ form_label(annulationForm.assure_mail) }}</td>
+                        <td class="field">{{ form_widget(annulationForm.assure_mail) }}</td>
+                        <td class="label">{{ form_label(annulationForm.assure_telephone) }}</td>
+                        <td class="field">{{ form_widget(annulationForm.assure_telephone) }}</td>
+                    </tr>
+                </table>
+            </fieldset>
+            <fieldset>
+                <legend class="h4-like">{{ "demande_annulation.legend.reservation" | trans }}</legend>
+                <table>
+                    <tr>
+                        <td class="label">{{ form_label(annulationForm.camping_montant_sejour) }}</td>
+                        <td class="field">{{ form_widget(annulationForm.camping_montant_sejour) }}</td>
+                        <td class="label">{{ form_label(annulationForm.camping_montant_verse) }}</td>
+                        <td class="field">{{ form_widget(annulationForm.camping_montant_verse) }}</td>
+                    </tr>
+                    <tr>
+                        <td class="label">{{ form_label(annulationForm.etablissement) }}</td>
+                        <td class="field">{{ form_widget(annulationForm.etablissement) }}</td>
+                        <td class="label">{{ form_label(annulationForm.camping_num_resa) }}</td>
+                        <td class="field">{{ form_widget(annulationForm.camping_num_resa) }}</td>
+                    </tr>
+                    <tr>
+                        <td class="label">{{ form_label(annulationForm.sinistre_nature) }}</td>
+                        <td class="field" colspan="3">{{ form_widget(annulationForm.sinistre_nature) }}</td>
+                    </tr>
+                    <tr>
+                        <td class="label">{{ form_label(annulationForm.sinistre_suite) }}</td>
+                        <td class="field" colspan="3">{{ form_widget(annulationForm.sinistre_suite) }}</td>
+                    </tr>
+                    <tr>
+                        <td class="label">{{ form_label(annulationForm.sinistre_date) }}</td>
+                        <td class="field">{{ form_widget(annulationForm.sinistre_date, { 'attr': {'class': 'datepicker'} }) }}</td>
+                        <td class="label">{{ form_label(annulationForm.sinistre_resume) }}</td>
+                        <td class="field">{{ form_widget(annulationForm.sinistre_resume) }}</td>
+                    </tr>
+                    <tr>
+                        <td class="label" colspan="2">{{ "demande_annulation.files.label" | trans }}</td>
+                        <td class="field" colspan="2">{{ form_widget(annulationForm.file_1) }}</td>
+                    </tr>
+                    <tr>
+                        <td class="label" colspan="2">{{ form_label(annulationForm.file_2) }}</td>
+                        <td class="field" colspan="2">{{ form_widget(annulationForm.file_2) }}</td>
+                    </tr>
+                    <tr>
+                        <td class="label" colspan="2">{{ form_label(annulationForm.file_3) }}</td>
+                        <td class="field" colspan="2">{{ form_widget(annulationForm.file_3) }}</td>
+                    </tr>
+                    <tr>
+                        <td class="label" colspan="2">{{ form_label(annulationForm.file_4) }}</td>
+                        <td class="field" colspan="2">{{ form_widget(annulationForm.file_4) }}</td>
+                    </tr>
+                    <tr>
+                        <td class="checkbox" colspan="4">{{ form_widget(annulationForm.certifie) }}{{ form_label(annulationForm.certifie) }}</td>
+                    </tr>
+                </table>
+                <button type="submit" class="bt fushia big right" name="annulationForm">{{ "general.submit" | trans }}</button>
+                <div style="display: none;">
+                    {{ form_rest(annulationForm) }}
+                </div>
+            </fieldset>
+        </form>
+</div>
 {% endblock %}
