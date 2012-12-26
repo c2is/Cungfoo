@@ -203,8 +203,11 @@ class DemandeAnnulationType extends BaseDemandeAnnulationType
                 )
             )
         );
-        $builder->add('sinistre_date', 'text', array(
+        $builder->add('sinistre_date', 'date', array(
                 'label'             => 'demande_annulation.sinistre_date.label',
+                'widget'            => 'single_text',
+                'format'            => 'dd/MM/yyyy',
+                'input'             => 'string',
                 'error_bubbling'    => true,
                 'constraints'       => array(
                     new Assert\NotBlank(array(
