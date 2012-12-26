@@ -206,6 +206,7 @@ general:
     reserver: "Réserver"
     la_semaine: "la semaine"
     contre_proposition: "ATTENTION ! Votre recherche ne donne aucun résultat. Les propositions ci-dessous sont celles qui s'en rapprochent le plus."
+    logout: Se déconnecter
 
 footer:
     contact: "Contact"
