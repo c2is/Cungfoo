@@ -203,6 +203,7 @@ general:
     reserver: "Réserver"
     la_semaine: "la semaine"
     contre_proposition: "ATTENTION ! Votre recherche ne donne aucun résultat. Les propositions ci-dessous sont celles qui s'en rapprochent le plus."
+    submit: "Envoyer"
 
 footer:
     contact: "Contact"
@@ -299,43 +300,83 @@ dernieresMinutes.h1: "Nos offres de campings en dernières minutes (location mob
 earlyBooking.h1: "Nos offres de campings en early booking (location mobil home)"
 
 demande_annulation:
-    assure_nom: "Nom"
-    assure_prenom: "Prénom"
-    assure_adresse: "Adresse"
-    assure_code_postal: "Code Postal"
-    assure_ville: "Ville"
+    assure_nom:
+        label: "Nom"
+        not_blank: "Le nom est requis"
+    assure_prenom: 
+        label: "Prénom"
+        not_blank: "Le prénom est requis"
+    assure_adresse: 
+        label: "Adresse"
+        not_blank: "L'adresse est requise"
+    assure_code_postal: 
+        label: "Code Postal"
+        not_blank: "Le code postal est requis"
+    assure_ville: 
+        label: "Ville"
+        not_blank: "La ville est requise"
     assure_pays:
         label: "Pays"
         empty_value: "Choisissez un pays"
+        not_blank: "Le pays est requis"
     assure_mail:
         label: "EMail"
-    assure_telephone: "Téléphone"
-    camping_montant_sejour: "Montant du séjour"
-    camping_montant_verse: "Montant des sommes versées"
+        not_blank: "L'email est requis"
+        mail: "L'adresse email renseignée n'est pas valide"
+    assure_telephone: 
+        label: "Téléphone"
+        not_blank: "Le téléphone est requis"
+    camping_montant_sejour: 
+        label: "Montant du séjour"
+        not_blank: "Le montant du séjour est requis"
+    camping_montant_verse: 
+        label: "Montant des sommes versées"
+        not_blank: "Le montant des sommes versées est requis"
     etablissement:
         label: "Nom du camping"
         empty_value: "Choisissez un camping"
-    camping_num_resa: "N° de réservation"
+        not_blank: "Le nom du camping est requis"
+    camping_num_resa: 
+        label: "N° de réservation"
+        not_blank: "Le numéro de réservation est requis"
     sinistre_nature:
         label: "Nature du sinistre"
         annulation: "Annulation du séjour"
         interruption: "Interruption du séjour"
+        not_blank: "La nature du sinistre est requise"
     sinistre_suite:
         label: "Suite à"
         maladie: "Maladie"
         accident: "Accident"
         autre: "Autre"
-    sinistre_date: "Date du sinistre"
-    sinistre_resume: "Résumé rapide des faits et description de la nature du sinistre"
+        not_blank: "La suite de la nature du sinistre est requise"
+    sinistre_date: 
+        label: "Date du sinistre"
+        not_blank: "La date du sinistre est requise"
+        date: "La date de sinistre renseignée n'est pas valide"
+    sinistre_resume: 
+        label: "Résumé rapide des faits et description de la nature du sinistre"
+        not_blank: "Le résumé du sinistre est requis"
     file_1: ""
     file_2: ""
     file_3: ""
     file_4: ""
     certifie:
         label: "Je certifie demander l'annulation référencée ci-dessus"
+        is_true: "Veuillez cocher la case pour confirmer votre demande d'annulation"
     files:
         label: "Joindre des pièces : (format : pdf, doc, docx, png, jpg de 2 mo maximum)"
+        mimeTypesMessage: "Type de fichier invalide (formats autorisés : pdf, doc, docx, png, jpg)"
+        notFoundMessage: "Une erreur est survenue lors du téléchargement du fichier"
+        notReadableMessage: "Une erreur est survenue lors du téléchargement du fichier"
+        uploadIniSizeErrorMessage: "Fichier trop volumineux (2 mo maximum)"
+        uploadFormSizeErrorMessage: "Fichier trop volumineux (2 mo maximum)"
+        uploadErrorMessage: "Une erreur est survenue lors du téléchargement du fichier"
     confirmation:
         title: "confirmation"
         content: "Votre demande d'annulation a bien été envoyée."
     title: "Formulaire d'annulation"
+    subtitle: "Annuler une réservation"
+    legend:
+        coordonnees: "Vos coordonnées"
+        reservation: "Votre réservation"

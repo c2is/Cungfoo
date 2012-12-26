@@ -908,7 +908,7 @@
         <column name="sinistre_nature" type="enum" valueSet="demande_annulation.sinistre_nature.annulation, demande_annulation.sinistre_nature.interruption" required="true"/>
         <column name="sinistre_suite" type="enum" valueSet="demande_annulation.sinistre_suite.maladie, demande_annulation.sinistre_suite.accident, demande_annulation.sinistre_suite.autre" required="true"/>
         <column name="sinistre_date" type="varchar" required="true"/>
-        <column name="sinistre_resume" type="varchar" required="true"/>
+        <column name="sinistre_resume" type="longvarchar" required="true"/>
         <column name="file_1" type="varchar"/>
         <column name="file_2" type="varchar"/>
         <column name="file_3" type="varchar"/>
