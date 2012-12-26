@@ -60,7 +60,7 @@ CREATE TABLE `demande_annulation`
     `sinistre_nature` TINYINT NOT NULL,
     `sinistre_suite` TINYINT NOT NULL,
     `sinistre_date` VARCHAR(255) NOT NULL,
-    `sinistre_resume` VARCHAR(255) NOT NULL,
+    `sinistre_resume` TEXT NOT NULL,
     `file_1` VARCHAR(255),
     `file_2` VARCHAR(255),
     `file_3` VARCHAR(255),
