@@ -30,22 +30,16 @@ class DemandeAnnulationType extends BaseDemandeAnnulationType
         $formConfig = \Symfony\Component\Yaml\Yaml::parse(sprintf('%s/VacancesDirectes/forms/annulation.yml', $this->getApplication()['config']->get('config_dir')));
 
         $listeCampings = EtablissementQuery::create()
-            ->select(array('id', 'name'))
             ->joinWithI18n($locale)
             ->orderBy('name')
-            ->findActive()
-            ->toArray()
+            ->filterBy('Active', true)
         ;
-
-        $campings = array();
-        foreach($listeCampings as $camping) {
-            $campings[$camping['id']] = $camping['name'];
-        }
 
         $builder->add('etablissement', 'model', array(
                 'label'             => 'demande_annulation.etablissement.label',
                 'class'             => '\Cungfoo\Model\Etablissement',
                 'empty_value'       => 'demande_annulation.etablissement.empty_value',
+                'query'             => $listeCampings,
                 'constraints'       => array(
                     new Assert\NotBlank(),
                 ),
