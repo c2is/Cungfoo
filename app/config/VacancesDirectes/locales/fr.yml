@@ -186,6 +186,9 @@ home:
     early_booking.link: "Tous les early booking"
     idees_weekend.link: "Toutes les idées week-end (%number%)"
 
+compte:
+    title: "Espace client"
+
 general:
     a_partir_de: "à partir de"
     jouer: "Jouer"
@@ -204,6 +207,7 @@ general:
     la_semaine: "la semaine"
     contre_proposition: "ATTENTION ! Votre recherche ne donne aucun résultat. Les propositions ci-dessous sont celles qui s'en rapprochent le plus."
     submit: "Envoyer"
+    logout: "Se déconnecter"
 
 footer:
     contact: "Contact"

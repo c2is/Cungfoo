@@ -6,7 +6,7 @@
 @colorGris2: #464545; /* Gris 2 */
 @colorGris3: #e6e5e5; /* Gris 3 */
 @colorGris4: #606060; /* Gris 4 */
-@colorBlanc: #fff;
+@colorBlanc: #fff; /* Gris 1 */
 @colorFushia: #ed145b;
 @colorVert: #b0c700;
 @colorBleu: #009ab0;
@@ -179,7 +179,7 @@ h4, .h4-like{color:@colorFushia;font:bold 19px/18px @ptnarrow;text-transform:upp
 h5, .h5-like{color:@colorGris1;font:bold 16px/15px @ptnarrow;text-transform:uppercase;margin-bottom:10px;}
 h6, .h6-like{color:@colorFushia;}
 
-body.clear{background:#fff;color:@colorGris2;font:12px @arial;margin:0;}
+body{background:#fff;color:@colorGris2;font:12px @arial;margin:0;}
 #homePage{margin:0;}
 .full-width{position:relative;min-width:100%;float:left;z-index:0;}
 .fixed-width{position:relative;width:976px;margin:0 auto;}
@@ -211,7 +211,7 @@ body.clear{background:#fff;color:@colorGris2;font:12px @arial;margin:0;}
 .tooltip {outline:none;position:relative;display:inline-block;}
 .tooltip strong {line-height:30px;}
 .tooltip:hover {text-decoration:none;}
-.tooltip span.bubble {font:bold 12px/35px @arial;background:@colorBgGrisM;color:@colorBlanc;text-transform:none;padding:10px;text-decoration:none;text-align:center;._border-radius(10px);z-index:10;display:none;margin:0;width:auto; line-height:16px;left:150px;bottom:-5px;white-space:nowrap;}
+.tooltip span.bubble {font:bold 12px/35px @arial;background:@colorBgGrisM;color:@colorBlanc;text-transform:none;padding:10px;text-decoration:none;text-align:center;._border-radius(10px);z-index:10;display:none;margin:0;width:auto; line-height:16px;left:233px;bottom:-5px;white-space:nowrap;}
 .tooltip span.bubble:after{right:100%;border:solid transparent;content:"";height:0;width:0;position:absolute;pointer-events:none;border-color:rgba(140, 138, 138, 0);border-right-color:@colorBgGrisM;border-width:5px;top:50%;margin-top:-5px;}
 .tooltip:hover span.bubble{
   display:inline; position:absolute;}
@@ -241,223 +241,267 @@ body.clear{background:#fff;color:@colorGris2;font:12px @arial;margin:0;}
 
 input,
 textarea{font:bold 12px @arial;color:@colorGris0;}
-input[type="text"],input[type="password"]{background-color:@colorBgBlanc;width:216px;._verticalCenter(27px);padding: 0 7px;border:0 none;}
-textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;border:0 none;}
-.label{font:bold 15px @ptnarrow;color:@colorGris0;text-transform:uppercase;display:inline-block;}
-//h4{font-size:15px;line-height:17px;}
+input[type="text"],input[type="password"]{background-color:@colorBgGrisC;width:216px;._verticalCenter(27px);padding: 0 7px;border:0 none;}
+textarea{background-color:@colorBgGrisC;width:216px;height:81px;padding: 0 7px;border:0 none;}
+.label{font:bold 15px @ptnarrow;color:@colorGris2;text-transform:uppercase;display:inline-block;}
 .bold{font-weight:bold;}
 
 
 /*LEFT*/
-#contentContener{
-  h2{color:@colorBgGrisM;text-transform:uppercase;font:bold 22px @ptnarrow;._verticalCenter(40px);}
-  p{margin-bottom:10px;}
-  table{width:100%}
+#pageContener{background-color:@colorBgBlanc;color:@colorGris2;
+  #contentContener{
 
-// step 1
-  &.detail,
-  &.editAccount{
-    #authentication{._border-radius(10px);margin:15px 0;position:relative;background-color:@colorBgBlanc;border:5px solid @colorBgGrisM;
-      h2{background-color:@colorBgGrisM;color:@colorBlanc;text-transform:uppercase;font:bold 22px @ptnarrow;._verticalCenter(40px);padding-left:10px;}
-      &>div{background-color:@colorBgGrisC;color:@colorGris2;
-        &>div{padding:15px 20px;clear:both;}
-        .whiteBg{background-color:@colorBgBlanc;
-          .aField,
-          .authenticationChoice{font:normal 12px @arial;text-transform:none;display:block;margin:0;
-            .label{font:inherit;text-transform:inherit;color:inherit}
-            .field,
-            input[type="radio"]:checked + label{ font-weight: bold; }
-          }
+    h2{color:@colorFushia;font:bold 19px/18px @ptnarrow;text-transform:uppercase;margin-bottom:10px;}
+    p{margin-bottom:10px;}
+    table{width:100%}
+
+
+    &.login,
+    &.customerAreaHome,
+    &.address,
+    &.request,
+    &.reservation,
+    &.editReservation,
+    &.editOccupant,
+    &.fidelity,
+    &.sponsorship{
+      // step 1
+      #authentication,
+      #edit_occupant{margin:15px 0;position:relative;
+
+        &>div{
+          h4{color:@colorGris0;text-transform:uppercase;font:bold 22px @ptnarrow;._verticalCenter(40px);}
         }
-        #existingCustomerLayer,
-        #newCustomerLayer,{
-        //          &>div{margin-bottom:20px;}
-          .aField{margin-bottom:10px;}
-          .label{margin-right:10px;text-align:right;}
+        .logged{font:normal 12px @arial;color:@colorGris4;text-transform:none;display:block;margin:0;padding:15px 0;clear:both;
+          strong{font-weight: bold;text-transform:uppercase;color:@colorGris4;}
         }
-        #existingCustomerLayer{padding-bottom:5px;
-          .aField{width:450px;float:left;
-            .label{width:130px;}
-            input{width:310px;}
-          }
+        #loginLayer table{width:50%;margin-bottom:15px;}
+        #address,
+        #option{width:938px;}
+        #loginLayer,
+        #address,
+        #option{margin-bottom:20px;
+          td{display:table-cell;padding:5px 10px 5px 0;vertical-align:middle;}
+          input,textarea,.newListSelected{width:228px;text-transform:uppercase;}
+          textarea{width:228px;height:62px;}
+          .datepicker button{right:0;}
+          .label{width:228px;line-height:17px;padding:0 10px 0 0;text-align:right;color:@colorGris2;}
+//          #existing_customer_login,
+//          #edit_customer_info_pol_address_email{text-transform:lowercase;}
         }
-        #newCustomerLayer{
-          .label{width:134px;padding-top:3px;}
-          #newAccount{margin-bottom:15px;
-            .aField{width:424px;
-              input{width:280px;}
+
+      }
+      #customerAreaContener{
+        table.reservationList{display:block;background-color:@colorBgBlanc;margin:10px 0;
+          tr{border:1px solid @colorGris2;
+            &.reservationActions{border:1px solid @colorGris2;background-color:@colorBgGrisC;
+              li{float:left;width:50%;._verticalCenter(40px);
+                .resedit_add_lineitem,
+                .resedit_change_address{padding-left:45px;background:url("../../images/vacancesdirectes/common/sprites/sprite-40.png") no-repeat transparent;text-decoration:none;}
+                .resedit_add_lineitem{background-position:0 -215px;}
+                .resedit_change_address{background-position:0 -255px;}
+              }
+            }
+            &.reservationDetail{
+              .description{padding:0;
+                table{background-color:@colorBgGrisC;border-bottom:1px solid @colorGris2;
+                  tr{border:0 none;
+                    th{background-color:@colorBgGrisC;color:@colorGris2;border-bottom:1px solid @colorBlanc;font-weight:bold;}
+                    td{font-weight:normal;
+                      &.maturityDate{width:125px;}
+                      &.payable.amount{width:125px;}
+                      &.paid.amount{width:217px;}
+                      &.paymentDate{width:150px;}
+                      &.remaining.amount{width:225px;}
+                      &.pay{text-align:center;width:110px;
+                        a{width:77px;}
+                      }
+                    }
+                  }
+                }
+              }
+              p{margin:10px;}
+            }
+            th{background-color:@colorGris2;color:@colorBlanc;padding:10px;text-align:left;}
+            td{margin:10px 0;padding:10px;text-align:left;font-weight:bold;vertical-align:top;
+              &.orderDate{width:125px;}
+              &.orderNumber{width:125px;}
+              &.description{width:217px;}
+              &.bookingDates{width:150px;}
+              &.amount{width:100px;}
+              &.resStatus0{width:125px;}
+              &.action_buttons{width:110px;._verticalCenter(40px);
+                a{width:40px;height:40px;background:url("../../images/vacancesdirectes/common/sprites/sprite-40.png") no-repeat transparent;text-decoration:none;
+                  &:first-child{background-position:0 -215px;}
+                  &:last-child{background-position:0 -295px;}
+                  img{display:none;}
+                }
+              }
             }
           }
-          #address{width:576px;
-            td{display:table-cell;padding:5px 10px 5px 0;vertical-align:middle;width:144px !important;}
-            input,textarea,.newListSelected{width:134px;}
-            textarea{width:134px;height:62px;}
-            .datepicker button{right:0;}
-            .label{width:134px;line-height:17px;padding:0 10px 0 0;}
-          }
-          #others{width:576px;margin:15px 0 20px;
-            td{display:table-cell;padding:5px 10px 5px 0;vertical-align:middle;}
-            .label{width:432px;}
-          }
         }
-        #option{padding-top:0;
-          table{width:576px;
-            td{display:table-cell;padding:5px 10px 5px 0;vertical-align:middle;}
-            .label{width:432px;text-align:right;}
-          }
-        }
-        .loginLink{float:right;}
       }
-    }
-    #reservation{
-      .aRoom{
-        h2{color:@colorBgGrisM;text-transform:uppercase;font:bold 22px @ptnarrow;._verticalCenter(40px);
-          small{font:bold 17px @arial;text-transform:none;}
+
+      #reservation{
+        .aRoom{
+          h2{color:@colorBgGrisM;text-transform:uppercase;font:bold 22px @ptnarrow;._verticalCenter(40px);
+            small{font:bold 17px @arial;text-transform:none;}
+          }
+          .price{font:bold 19px/18px @ptnarrow;text-align:right;}
+          .action{text-align:right;}
+          .changeOccupantCount{height:auto;background-color:@colorBgGrisF;padding:10px 5px 0;margin-bottom:15px;position:relative;
+            .selectedTxt{background-color:@colorBgBlanc !important;}
+            &>span{margin:0 5px 10px;._verticalCenter(27px);font:bold 17px @ptnarrow;color:@colorBlanc;text-transform:uppercase;display:inline-block;}
+            .addAction a{position:absolute;top:10px;right:10px;display:block;width:27px;height:27px;text-indent:-9999px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -162px transparent;}
+          }
+          tr{font-weight:bold;
+            &.productsNotSelectedYet{font-weight:normal;}
+            td{height:30px;vertical-align:middle;
+              .control_checkbox{margin-top:0;}
+              .hiddenIfCheckbox{display:none;}
+              .deleteLink{position:relative;display:block;width:27px;height:24px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -243px transparent;float:left;margin-left:10px;
+                span{display:none;}
+              }
+            }
+          }
+          .anOccupant{background-color:@colorBlanc;
+            h3{background-image:none !important;background-color:@colorFushia;color:@colorBlanc;padding:5px 0;position:relative;
+              .occupantHeaderLeft{._verticalCenter(27px);
+                small{font:bold 17px @arial;text-transform:none;}
+                &:before{content:"";width:27px;height:27px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -189px transparent;float:left;margin:0 10px;}
+              }
+              .deleteAction a{position:absolute;top:6px;right:-3px;display:block;text-indent:-9999px;width:27px;height:27px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -243px transparent;float:left;margin:0 10px;}
+            }
+            .occupantFields{padding:10px 5px;
+              &>*{margin:0 5px 10px;}
+              input{border:1px solid @colorBorderGris;}
+              .control_text{width:150px;}
+              .control_date{width:120px;}
+              #date_sRowID_link{right:0 !important;}
+              .tooltip span.bubble{left:130px;}
+            }
+            h4{display:none;}
+          }
         }
-        .changeOccupantCount{height:auto;background-color:@colorBgGrisF;padding:10px 5px 0;margin-bottom:15px;position:relative;
-          &>span{margin:0 5px 10px;._verticalCenter(27px);font:bold 17px @ptnarrow;color:@colorBlanc;text-transform:uppercase;display:inline-block;}
-          .addAction a{position:absolute;top:10px;right:10px;display:block;width:27px;height:27px;text-indent:-9999px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -162px transparent;}
-        }
-        tr{font-weight:bold;
-          &.productsNotSelectedYet{font-weight:normal;}
-          td{height:30px;vertical-align:middle;
-            &.optionLabel{width:400px;}
-            &.price{width:110px;font:bold 19px/18px @ptnarrow;text-align:right;}
-            &.action{text-align:right;width:40px;}
-            .control_checkbox{margin-top:0;}
-            .hiddenIfCheckbox{display:none;}
-            .deleteLink{position:relative;display:block;width:27px;height:24px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -243px transparent;float:left;margin-left:10px;
-              span{display:none;}
+        #financialContener{
+          input{border:1px solid @colorBorderGris;}
+          .field{margin-bottom:10px;
+            .newListSelected{float:none;
+              .selectedTxt{border: 1px solid @colorBorderGris;}
             }
           }
         }
-        .anOccupant{background-color:@colorBlanc;
-          h3{background-image:none !important;background-color:@colorFushia;color:@colorBlanc;padding:5px 0;position:relative;
-            .occupantHeaderLeft{._verticalCenter(27px);
-              small{font:bold 17px @arial;text-transform:none;}
-              &:before{content:"";width:27px;height:27px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -189px transparent;float:left;margin:0 10px;}
-            }
-            .deleteAction a{position:absolute;top:6px;right:-3px;display:block;text-indent:-9999px;width:27px;height:27px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -243px transparent;float:left;margin:0 10px;}
-          }
-          .occupantFields{padding:10px 5px;
-            &>*{margin:0 5px 10px;}
-            input{border:1px solid @colorBorderGris;}
-            .control_text{width:150px;}
-            .control_date{width:120px;}
-            #date_sRowID_link{right:0 !important;}
-            .tooltip span.bubble{left:130px;}
-          }
-          h4{display:none;}
-        }
       }
-      #financialContener{
-        input{border:1px solid @colorBorderGris;}
-        .field{margin-bottom:10px;
-          .newListSelected{float:none;
-            .selectedTxt{border: 1px solid @colorBorderGris;}
+    }
+
+    // sponsorship
+    &.sponsorship{
+      p{margin:20px 0 10px}
+      #sponsorship_message{width:100%;height:189px;padding:7px;text-transform:uppercase;}
+      table.sponsorshipFriend{display:block;background-color:@colorBgBlanc;margin:10px 0;
+        tr{border:1px solid @colorGris2;
+          th{background-color:@colorGris2;color:@colorBlanc;padding:10px;text-align:left;border:1px solid @colorGris2;font-weight:bold;}
+          td{margin:0;padding:10px;
+            &.label{text-align:right;width:72px;}
+            input{text-transform:uppercase;}
           }
         }
       }
     }
-  }
 
-// step 2
-  &.summary{
-    #option{
-      h2 + p{font-weight:bold;}
-      .label{font:inherit;color:inherit;text-transform:inherit;margin-right:10px;vertical-align:top;}
-      p:not(.aField){
-        .label{width:278px;float:left;text-align:right;}
-        .field textarea{width:288px;height:81px;}
+    // step 2
+    &.summary{
+      #option{
+        h2 + p{font-weight:bold;}
+        .label{vertical-align:top;font:inherit;color:inherit;text-transform:inherit;margin-right:5px;}
+        .field textarea{width:423px;height:54px;}
+        .criteria{margin-bottom:10px;clear:both;
+          .label{float:left;._verticalCenter(27px);}
+          input{width:125px;}
+        }
+        .aField{
+          input[type="checkbox"]{margin-top:1px;}
+          label{font-style:italic;font-weight:bold;
+            a{color:@colorFushia;}
+          }
+        }
       }
-      .criteria{margin-bottom:10px;clear:both;
-        .label{float:left;text-align:right;width:278px;._verticalCenter(27px);}
-        input{width:134px;}
-        &:last-of-type .label{line-height:13px;}
-      }
-      .aField{
-        .label{margin-right:0;}
-        input[type="checkbox"]{margin-top:1px;}
-        label{font-style:italic;font-weight:bold;vertical-align:top;
-          a{color:@colorFushia;}
+      #paiement{
+        table{display:block;background-color:@colorBgBlanc;margin:10px 0;
+          th{background-color:@colorGris2;color:@colorBlanc;padding:10px;text-align:center;border:1px solid @colorGris2;font-weight:bold;}
+          td{margin:10px 0;padding:10px;text-align:left;border:1px solid @colorGris2;
+            &:nth-child(1){font-weight:bold;}
+            &.amount{width:125px;text-align:right;}
+          }
         }
       }
     }
-    #paiement{
-      table{display:block;background-color:@colorBgBlanc;margin:10px 0;
-        th{background-color:@colorGris2;color:@colorBlanc;padding:10px;text-align:center;border:1px solid @colorGris2;font-weight:bold;}
-        td{margin:10px 0;padding:10px;text-align:left;border:1px solid @colorGris2;
-          &:nth-child(1){font-weight:bold;}
-          &.amount{width:130px;text-align:right;}
-        }
-      }
-    }
-  }
 
-// step 3
-/* --> payment.css */
+    // step 3
+    /* --> payment.css */
 
-// step 4
-  &.confirmation{
-    td{height:27px;}
-    #authentication,
-    #occupant{font-weight:bold;
-      td{color:@colorGris0;
-        &.label{color:inherit;text-transform:inherit;font:inherit;display:table-cell;}
-      }
-      #address,
-      #occupant_address{
-        margin:10px 0;
-      }
-    }
-    #option{font-weight:bold;
-      .label,
-      .field{width:276px;}
-      .label{vertical-align:top;font:inherit;color:inherit;text-transform:inherit;margin-right:20px;}
-      .field{color:@colorGris0;display:inline-block;}
-      .criteria{margin-bottom:10px;clear:both;
-        .label{float:left;._verticalCenter(27px);}
-        input{width:125px;}
-      }
-      select[name="stat_ORIG_combo"] + .newListSelected{
-        .SSContainerDivWrapper{min-width:146px;}
-      }
-      .aField{
-        input[type="checkbox"]{margin-top:1px;margin-left:-1px;}
-        label{font-style:italic;font-weight:bold;
-          a{color:@colorFushia;}
-        }
-      }
-    }
-    #paiement{
-      table.paymentList{display:block;background-color:@colorBgBlanc;margin:10px 0;
-        th{background-color:@colorGris2;color:@colorBlanc;padding:10px;text-align:center;border:1px solid @colorGris2;}
-        td{margin:10px 0;padding:10px;text-align:left;border:1px solid @colorGris2;
-          &:nth-child(1){font-weight:bold;}
-          &.amount{width:125px;text-align:right;}
-        }
-      }
-      table#payment_layer_cc{font-weight:bold;
+    // step 4
+    &.confirmation{
+      td{height:27px;}
+      #authentication,
+      #occupant{font-weight:bold;
         td{color:@colorGris0;
           &.label{color:inherit;text-transform:inherit;font:inherit;display:table-cell;}
         }
+        #address,
+        #occupant_address{
+          margin:10px 0;
+        }
+      }
+      #option{font-weight:bold;
+        .label,
+        .field{width:276px;}
+        .label{vertical-align:top;font:inherit;color:inherit;text-transform:inherit;margin-right:20px;}
+        .field{color:@colorGris0;display:inline-block;}
+        .criteria{margin-bottom:10px;clear:both;
+          .label{float:left;._verticalCenter(27px);}
+          input{width:125px;}
+        }
+        select[name="stat_ORIG_combo"] + .newListSelected{
+          .SSContainerDivWrapper{min-width:146px;}
+        }
+        .aField{
+          input[type="checkbox"]{margin-top:1px;margin-left:-1px;}
+          label{font-style:italic;font-weight:bold;
+            a{color:@colorFushia;}
+          }
+        }
+      }
+      #paiement{
+        table.paymentList{display:block;background-color:@colorBgBlanc;margin:10px 0;
+          th{background-color:@colorGris2;color:@colorBlanc;padding:10px;text-align:center;border:1px solid @colorGris2;}
+          td{margin:10px 0;padding:10px;text-align:left;border:1px solid @colorGris2;
+            &:nth-child(1){font-weight:bold;}
+            &.amount{width:125px;text-align:right;}
+          }
+        }
+        table#payment_layer_cc{font-weight:bold;
+          td{color:@colorGris0;
+            &.label{color:inherit;text-transform:inherit;font:inherit;display:table-cell;}
+          }
+        }
       }
     }
-  }
 
-  .rsl-date-input,
-  .control_date {position:relative;display:inline-block;
-    a#date_sRowID_link{display:none;position:absolute;top:-6px;right:15px;width:27px;height:27px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -216px transparent;
-      img{display:none;}
+    .rsl-date-input,
+    .control_date {position:relative;display:inline-block;
+      a#date_sRowID_link{display:none;position:absolute;top:-6px;right:15px;width:27px;height:27px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -216px transparent;
+        img{display:none;}
+      }
     }
+    .datepicker button{display:block;width:27px;height:27px;border:0 none;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat scroll 0 -216px transparent;position:absolute;top:0;right:0;}
+
+
+    label,input[type="radio"] {vertical-align:middle;}
+    input[type="radio"] + label{display:inline-block;margin:3px 5px 0 0;}
+    input[type="radio"] {height:auto;}
+
   }
-  .datepicker button{display:block;width:27px;height:27px;border:0 none;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat scroll 0 -216px transparent;position:absolute;top:0;right:0;}
-
-
-  label,input[type="radio"] {vertical-align:middle;}
-  input[type="radio"] + label{display:inline-block;margin:3px 5px 0 0;}
-  input[type="radio"] {height:auto;}
-
 }
 
 /*RIGHT*/
@@ -524,21 +568,15 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
 
 /* Stylish Select 0.4.9 */
 
-// step 1
-#authentication #newCustomerLayer{
-  ._stylish-select(134px,27px,0px,4);
-}
+// ADDRESS
+#authentication,
+#edit_occupant #address{
+   ._stylish-select(228px,27px,0px,4);
+ }
 #reservation .aRoom{
   ._stylish-select(54px,27px,10px,5);
 }
-#reservation #financialContener{
-  ._stylish-select(216px,27px,0px,4);
-}
 
-// step 2
-#option {
-  ._stylish-select(134px,27px,0px,4);
-}
 
 // Stylish Select
 .stylish-select .SSContainerDivWrapper {
@@ -563,7 +601,7 @@ ul.newList a {color:@colorGris2;text-decoration:none;display:block;padding:0 8px
 }
 .newListSelected *{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing: content-box;cursor:pointer;}
 ul.newList li a:focus {-moz-outline-style: none;}
-.selectedTxt {overflow:hidden;position:absolute;text-overflow:ellipsis;white-space:nowrap;margin-right:0;background-color:@colorBlanc;}
+.selectedTxt {overflow:hidden;position:absolute;text-overflow:ellipsis;white-space:nowrap;margin-right:0;background-color:@colorBgGrisC;}
 ul.newList li:first-child{display:none;}
 ul.newList.optGroup li a {padding:0 8px 0 18px;}
 ul.newList.optGroup li.optGroup-like a {padding:0 8px;font-weight:bold;}

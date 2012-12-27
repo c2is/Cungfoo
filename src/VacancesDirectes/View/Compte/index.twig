@@ -1,1 +1,26 @@
 {% extends "base.twig" %}
+
+{% block bodyClass %} account{% endblock bodyClass %}
+
+{% block content %}
+<div id="wrap" class="fixed-width clear">
+<div id="headerContainer" class="column clear">
+    <div class="clear">
+        <h1><span>Espace </span>client</h1>
+        <a href="{{ path('compte_logout') }}" class="logout bt fushia ib right big">{{ "general.logout" | trans }}</a>
+    </div>
+    <nav id="stepNav" class="clearboth">
+        {% set currentRoute = app.request.get('_route') %}
+        <ul class="topnav fixed-width clear">
+            <li class="tab{% if currentRoute == "compte_index" %} current{% endif %}"><a href="{{ path('compte_index') }}">Accueil</a></li>
+            <li class="tab{% if currentRoute == "compte_coordonnees" %} current{% endif %}"><a href="{{ path('compte_coordonnees') }}">Coordonnées</a></li>
+            <li class="tab{% if currentRoute == "compte_brochure" %} current{% endif %}"><a href="{{ path('compte_brochure') }}">Demande de brochure</a></li>
+            <li class="tab{% if currentRoute == "compte_reservations" %} current{% endif %}"><a href="{{ path('compte_reservations') }}">Réservation</a></li>
+            <li class="tab{% if currentRoute == "compte_fidelite" %} current{% endif %}"><a href="{{ path('compte_fidelite') }}">Avantages fidélité</a></li>
+            <li class="tab{% if currentRoute == "compte_parrainage" %} current{% endif %}"><a href="{{ path('compte_parrainage') }}">Parrainage</a></li>
+        </ul>
+    </nav>
+</div>
+<iframe id="frameResalys" src="{{ path('resalys_wrapper', query) }}" width="960px" height="150px"></iframe>
+</div>
+{% endblock content %}
