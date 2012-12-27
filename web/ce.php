@@ -13,6 +13,9 @@ ini_set('display_errors', 0);
 // loaded the libraries
 require_once __DIR__.'/../vendor/autoload.php';
 
+// Corrige un problème de droits sur les fichiers cache de Twig en préprod (et en prod possiblement)
+umask(0002);
+
 // created the application
 $app = require __DIR__ . '/../src/VacancesDirectesCe/app.php';
 
