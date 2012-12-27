@@ -14,6 +14,9 @@ use Symfony\Component\HttpKernel\Debug\ExceptionHandler;
 
 ini_set('display_errors', 0);
 
+echo 'umask Précédent : ' . umask() . '<br />';
+umask(0002);
+
 // loaded the libraries
 require_once __DIR__.'/../vendor/autoload.php';
 
