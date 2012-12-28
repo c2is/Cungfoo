@@ -19,13 +19,16 @@ umask(0002);
 // created the application
 $app = require __DIR__ . '/../src/VacancesDirectes/app.php';
 
+// set environnement
+require __DIR__ . '/../app/config/prod.php';
+
+// set security
+require __DIR__ . '/../src/VacancesDirectes/security.php';
+
 // created the context
 require __DIR__ . '/../src/VacancesDirectes/context.php';
 
 // load routes code
 require __DIR__ . '/../src/VacancesDirectes/routes.php';
-
-// set environnement
-require __DIR__ . '/../app/config/prod.php';
 
 $app['http_cache']->run();
