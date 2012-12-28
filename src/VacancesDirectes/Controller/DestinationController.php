@@ -304,7 +304,7 @@ class DestinationController implements ControllerProviderInterface
             'events'                  => $events,
             'resalysParameters'       => $resalysParameters,
             'historyBack'             => $request->headers->get('referer'),
-            'hasBaignade'              => $camping->getEtablissementBaignades(),
+            'hasBaignade'             => count($camping->getEtablissementBaignades()) > 0,
             'referer'                 => $app['url_generator']->generate($request->get('_route'), array(
                 'pays'      => $camping->getPays()->getSlug(),
                 'region'    => $camping->getRegion()->getSlug(),
