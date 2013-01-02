@@ -36,5 +36,16 @@ $app['translator'] = $app->share($app->extend('translator',
     }
 ));
 
+$app->register(new \Silex\Provider\SwiftmailerServiceProvider());
+
+$app['swiftmailer.options'] = array(
+    'host' => 'smtp.teaser.net',
+    'port' => '587',
+    'username' => 'serveurs@c2is.fr',
+    'password' => 'RiiU879kH',
+    'encryption' => null,
+    'auth_mode' => null
+);
+
 return $app;
 

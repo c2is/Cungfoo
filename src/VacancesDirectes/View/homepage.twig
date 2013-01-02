@@ -2,6 +2,8 @@
 
 {% block bodyClass %}home{% endblock %}
 
+{% block canonical %}<link rel="canonical" href="{{ urlCanonical }}" />{% endblock %}
+
 {% block slider %}
 <div id="sliderWrapper">
     <a id="sliderPrev" class="radiusBox yellow arrowLeft"></a>
@@ -95,7 +97,7 @@
                 <h2>{{ "general.idees_week_end" | trans }}</h2>
             </div>
             {% for idee in ideesweekend %}
-                <div class="element {% if idee.prix == "" %} noprice {% endif %} clear {# TODO linkParent #}">
+                <div class="element clear{% if idee.prix == "" %} noprice{% endif %}{% if loop.last %} last{% endif %}{# TODO linkParent #}">
                     <div class="left">
                         <img class="view" src="{{ asset(idee.imagePath) }}" width="96" height="86" alt="" />
                     </div>

@@ -25,12 +25,17 @@ if ('cli' !== php_sapi_name())
 {
     ExceptionHandler::register();
 }
+// Corrige un problème de droits sur les fichiers cache de Twig en préprod (et en prod possiblement)
+umask(0002);
 
 // created the application
 $app = require __DIR__ . '/../src/VacancesDirectes/app.php';
 
 // set environnement
 require __DIR__ . '/../app/config/dev.php';
+
+// set security
+require __DIR__ . '/../src/VacancesDirectes/security.php';
 
 // created the context
 require __DIR__ . '/../src/VacancesDirectes/context.php';

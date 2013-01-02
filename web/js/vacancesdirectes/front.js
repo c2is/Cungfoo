@@ -45,7 +45,6 @@ if(nbVisible == undefined) {
  *                                              DOM ready
  * ///////////////////////////////////////////////////////////////////////////////////////////////////////////
  */
-
 $(function() {
 // ScrollTop onload (mobile) si il n'y a pas d'ancre
     if (/mobile/i.test(navigator.userAgent) && !location.hash) {
@@ -165,6 +164,7 @@ $(function() {
 
 // select
     $('#searchForm').find('select').not('.sMultSelect').sSelect({ddMaxHeight: '300px'});
+    $('#annulationForm').find('select').sSelect({ddMaxHeight: '300px'});
 
     $('.sMultSelect').sMultSelect({msgNull: 'Pas de réponse'});
     /*$('.sMultSelectUl').wrap('<div class="tinyScroll" />').before('<div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>')
@@ -196,19 +196,32 @@ $(function() {
      * ############################################################
      */
 
-    /*
      if ( $('#accountBox').length ) {
-     $('#account').click(function(e){
-     $(this).next().toggle();
-     if ( $('#accountBox').is(':visible') ){
-     $('#header').css({zIndex:21});
+         $('#account').click(function(e){
+            $(this).next().toggle();
+            setZIndex();
+         });
+         $(document).mouseup(function (e){
+             if ( $('#accountBox').has(e.target).length == 0 ){
+                 $('#header').css({zIndex:20});
+                 $('#accountBox').hide();
+             }
+         });
+
+         if ( $('#accountBox').find('.errors').css('display') == 'block' ){
+             $('#accountBox').show();
+             setZIndex();
+         }
      }
-     else {
-     $('#header').css({zIndex:20});
-     }
-     });
-     }
-     */
+
+    function setZIndex(){
+        if ( $('#accountBox').is(':visible') ){
+            $('#header').css({zIndex:21});
+        }
+        else {
+            $('#header').css({zIndex:20});
+        }
+    }
 
     /*
      *  ############################################################
@@ -1064,6 +1077,7 @@ function switchSelect(){
         $selects = $button.parent().siblings(".newListSelected");
         var $buttonTitle = selectNum == 0 ? 'Campings' : 'Lieux de séjour';
         $button.children('span').text($buttonTitle);
+//        $button.attr('title',$buttonTitle);
         if(selectNum) {
             $button.css({backgroundPosition: "0 -270px"});
             $selects.eq(0).hide();
@@ -1225,7 +1239,7 @@ function redefineSliderButtons(){
 /*
  * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
  *                         DATEPICKER
- * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+ * ############################################################
  */
 
 // reset
@@ -1265,7 +1279,7 @@ function initializeForbiddenDates() {
     //console.log("################################## initializeForbiddenDates()  ##################################");
     //console.log(firstRendering);
     var allSaturdays = $('#datepickerCalendar td.datepickerSaturday').not($('td.datepickerNotInMonth'));
-    startHighSeasonDay = false,
+        startHighSeasonDay = false,
         endHighSeasonDay = false;
     allSaturdays.removeClass('datepickerUnselectable');
     if (firstRendering){
@@ -1296,7 +1310,7 @@ function unselectForbiddenDates(date){
     var selectedDate = numDate(formatDate(date)),
         numWeek = 0,
         allSaturdays = $('#datepickerCalendar td.datepickerSaturday').not($('td.datepickerNotInMonth'));
-    startHighSeasonDay = false,
+        startHighSeasonDay = false,
         endHighSeasonDay = false,
         arrivalDay = false,
         departureDay = false;
@@ -1399,12 +1413,12 @@ function defineHighSeason(td) {
 //    //console.log("################################## defineHighSeason()  ##################################");
     // td HIGH SEASON DEPARTURE DAY
     if ( startHighSeasonDay && td.hasClass('datepickerSpecial') && !td.hasClass('datepickerDisabled') ){
-        //console.log("HIGH SEASON LAST DAY");
+    //console.log("HIGH SEASON LAST DAY");
         endHighSeasonDay = true;
     }
     // td HIGH SEASON ARRIVAL DAY
     else if ( !startHighSeasonDay && td.hasClass('datepickerSpecial') && !td.hasClass('datepickerUnselectable') ){
-        //console.log("HIGH SEASON FIRST DAY");
+    //console.log("HIGH SEASON FIRST DAY");
         startHighSeasonDay = true;
     }
 }
@@ -1449,6 +1463,7 @@ function numDate(d){
     var nThisDate = parseInt(d.split('/').join(''),10);
     return nThisDate;
 }
+
 
 
 /*

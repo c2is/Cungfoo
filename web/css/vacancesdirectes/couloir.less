@@ -5,7 +5,8 @@
 @colorGris1: #5f5f5f; /* Gris 1 */
 @colorGris2: #464545; /* Gris 2 */
 @colorGris3: #e6e5e5; /* Gris 3 */
-@colorBlanc: #fff; /* Gris 1 */
+@colorGris4: #606060; /* Gris 4 */
+@colorBlanc: #fff;
 @colorFushia: #ed145b;
 @colorVert: #b0c700;
 @colorBleu: #009ab0;
@@ -248,7 +249,7 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
 
 
 /*LEFT*/
-#reservationContener{
+#contentContener{
   h2{color:@colorBgGrisM;text-transform:uppercase;font:bold 22px @ptnarrow;._verticalCenter(40px);}
   p{margin-bottom:10px;}
   table{width:100%}
@@ -313,8 +314,6 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
         h2{color:@colorBgGrisM;text-transform:uppercase;font:bold 22px @ptnarrow;._verticalCenter(40px);
           small{font:bold 17px @arial;text-transform:none;}
         }
-        .price{font:bold 19px/18px @ptnarrow;text-align:right;}
-        .action{text-align:right;}
         .changeOccupantCount{height:auto;background-color:@colorBgGrisF;padding:10px 5px 0;margin-bottom:15px;position:relative;
           &>span{margin:0 5px 10px;._verticalCenter(27px);font:bold 17px @ptnarrow;color:@colorBlanc;text-transform:uppercase;display:inline-block;}
           .addAction a{position:absolute;top:10px;right:10px;display:block;width:27px;height:27px;text-indent:-9999px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -162px transparent;}
@@ -322,6 +321,9 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
         tr{font-weight:bold;
           &.productsNotSelectedYet{font-weight:normal;}
           td{height:30px;vertical-align:middle;
+            &.optionLabel{width:400px;}
+            &.price{width:110px;font:bold 19px/18px @ptnarrow;text-align:right;}
+            &.action{text-align:right;width:40px;}
             .control_checkbox{margin-top:0;}
             .hiddenIfCheckbox{display:none;}
             .deleteLink{position:relative;display:block;width:27px;height:24px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -243px transparent;float:left;margin-left:10px;
@@ -369,7 +371,7 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
         .field textarea{width:288px;height:81px;}
       }
       .criteria{margin-bottom:10px;clear:both;
-        .label{float:left;text-align:right;width:278px;/*._verticalCenter(27px);*/line-height:13px;}
+        .label{float:left;text-align:right;width:278px;._verticalCenter(27px);}
         input{width:134px;}
         &:last-of-type .label{line-height:13px;}
       }
@@ -383,10 +385,10 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
     }
     #paiement{
       table{display:block;background-color:@colorBgBlanc;margin:10px 0;
-        th{background-color:@colorGris2;color:@colorBlanc;padding:10px;text-align:center;border:1px solid @colorGris2;}
+        th{background-color:@colorGris2;color:@colorBlanc;padding:10px;text-align:center;border:1px solid @colorGris2;font-weight:bold;}
         td{margin:10px 0;padding:10px;text-align:left;border:1px solid @colorGris2;
           &:nth-child(1){font-weight:bold;}
-          &.amount{width:125px;text-align:right;}
+          &.amount{width:130px;text-align:right;}
         }
       }
     }
@@ -494,7 +496,7 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
     &.droite{float:right;}
   }
   .footerNavigation.gauche a,
-  .footerNavigation.droite a{border:0;text-transform:uppercase;text-decoration:none;font:bold 14px/22px @ptnarrow;padding:3px 16px;._border-radius(7px);color:@colorBlanc;background-image:url('../../images/vacancesdirectes/common/ui/lrArrowResalys.png');background-repeat:no-repeat;height:28px;}
+  .footerNavigation.droite a{display:block;border:0;text-transform:uppercase;text-decoration:none;font:bold 14px/22px @ptnarrow;padding:3px 12px;._border-radius(7px);color:@colorBlanc;background-image:url('../../images/vacancesdirectes/common/ui/lrArrowResalys.png');background-repeat:no-repeat;}
   .footerNavigation.gauche a{background-position:5px 0;padding-left:25px;background-color:@colorBgGrisF;}
   .footerNavigation.droite a{background-image:none;background-color:@colorFushia;}
   .footerNavigation.pageListe{._border-radius(3px);._box-shadow(0 1px 2px rgba(0, 0, 0, 0.05));float:right;
@@ -567,8 +569,9 @@ ul.newList.optGroup li a {padding:0 8px 0 18px;}
 ul.newList.optGroup li.optGroup-like a {padding:0 8px;font-weight:bold;}
 .hiLite {background:#ED145B!important;color:#fff!important;}
 .newListHover {background-color:#ccc!important;color:@colorGris2!important;cursor:default;}
-.newListDisabled {opacity: 0.6;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";filter: alpha(opacity=60);}
-.newListItemDisabled {opacity: 0.6;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";filter: alpha(opacity=60);}
+input[disabled],
+.newListDisabled,
+.newListItemDisabled,
 .newListOptionDisabled {opacity: 0.6;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";filter: alpha(opacity=60);}
 
 .newListSelHover,

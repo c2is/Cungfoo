@@ -13,5 +13,7 @@ Disallow : /fr/vacances/vacances/
 Disallow : /fr/vacances//
 Disallow : /dispo/
 Disallow : /couloir-reservation/
+Disallow : /index.php
+Disallow : /resalys/
 
 Sitemap: http://www.vacances-directes.com/sitemap.xml
