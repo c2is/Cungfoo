@@ -65,6 +65,7 @@ class EarlyBookingController implements ControllerProviderInterface
                 'title'           => $app->trans('seo.title.early_booking'),
                 'metaDescription' => $app->trans('seo.meta.early_booking'),
                 'texteOffre'      => $app->trans('offreSpeciales.texte'),
+                'intro'      => $app->trans('offreSpeciales.intro'),
                 'h1' => $app->trans('earlyBooking.h1'),
                 'list'            => $listingContent,
                 'firstEtab'       => reset($listingContent['element']),
