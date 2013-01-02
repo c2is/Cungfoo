@@ -307,16 +307,16 @@ demande_annulation:
     assure_nom:
         label: "Nom"
         not_blank: "Le nom est requis"
-    assure_prenom: 
+    assure_prenom:
         label: "Prénom"
         not_blank: "Le prénom est requis"
-    assure_adresse: 
+    assure_adresse:
         label: "Adresse"
         not_blank: "L'adresse est requise"
-    assure_code_postal: 
+    assure_code_postal:
         label: "Code Postal"
         not_blank: "Le code postal est requis"
-    assure_ville: 
+    assure_ville:
         label: "Ville"
         not_blank: "La ville est requise"
     assure_pays:
@@ -327,20 +327,20 @@ demande_annulation:
         label: "EMail"
         not_blank: "L'email est requis"
         mail: "L'adresse email renseignée n'est pas valide"
-    assure_telephone: 
+    assure_telephone:
         label: "Téléphone"
         not_blank: "Le téléphone est requis"
-    camping_montant_sejour: 
+    camping_montant_sejour:
         label: "Montant du séjour"
         not_blank: "Le montant du séjour est requis"
-    camping_montant_verse: 
+    camping_montant_verse:
         label: "Montant des sommes versées"
         not_blank: "Le montant des sommes versées est requis"
     etablissement:
         label: "Nom du camping"
         empty_value: "Choisissez un camping"
         not_blank: "Le nom du camping est requis"
-    camping_num_resa: 
+    camping_num_resa:
         label: "N° de réservation"
         not_blank: "Le numéro de réservation est requis"
     sinistre_nature:
@@ -354,11 +354,11 @@ demande_annulation:
         accident: "Accident"
         autre: "Autre"
         not_blank: "La suite de la nature du sinistre est requise"
-    sinistre_date: 
+    sinistre_date:
         label: "Date du sinistre"
         not_blank: "La date du sinistre est requise"
         date: "La date de sinistre renseignée n'est pas valide"
-    sinistre_resume: 
+    sinistre_resume:
         label: "Résumé rapide des faits et description de la nature du sinistre"
         not_blank: "Le résumé du sinistre est requis"
     file_1: ""
@@ -384,3 +384,7 @@ demande_annulation:
     legend:
         coordonnees: "Vos coordonnées"
         reservation: "Votre réservation"
+    texte1: "Vous avez souscrit auprès de VACANCES DIRECTES une assurance annulation et/ou interruption de séjour et avez subi un sinistre répondant aux critères de mise en oeuvre de l'assurance tels que précisément détaillés dans les"
+    lienCGA: "Conditions Générales d'Assurances (CGA)"
+    texte2: "Il est dans ce cas impératif de remplir et de valider le présent formulaire dans un délai maximum de 5 jours suivant la date de survenance du sinistre. A défaut de respecter ce délai, l'Assureur se réserve la faculté de vous refuser le bénéfice de l'assurance (cf art.4.1 des CGA - déchéance de garantie)."
+    texte3: "En validant le présent formulaire de déclaration de sinistre, vous déclarez que les informations que vous avez saisies dans le formulaire sont exactes et sincères, et reconnaissez que le traitement de votre dossier et l'indemnisation qui vous serait due par l'assureur sont soumis à la communication des pièces et informations complémentaires qui vous seront demandées, conformément à l'article 4.2 des CGA."
