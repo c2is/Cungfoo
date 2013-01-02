@@ -14,6 +14,7 @@
     {% endif %}
     {% include 'Listing/_gmap.twig' %}
     {% include 'Listing/_listing.twig' %}
+    {% if texteOffre != "" %}<p>{{ texteOffre }}</p>{% endif %}
 {% endblock %}
 
 {% block rightColumn %}
