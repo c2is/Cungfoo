@@ -5107,14 +5107,13 @@ body.edito table td {
 }
 /* page bons plans */
 .bonsplans #bpItemsList {
-  width: 626px;
+  width: 938px;
 }
 .bonsplans #bpItemsList .bpItem {
   margin-right: 10px;
   float: left;
-}
-.bonsplans #bpItemsList .bpItem.half {
-  width: 299px;
+  overflow: hidden;
+  width: 938px;
 }
 .bonsplans #bpItemsList .bpItem .itemResultTitle {
   text-transform: uppercase;
@@ -5123,7 +5122,6 @@ body.edito table td {
   text-transform: none;
 }
 .bonsplans #bpItemsList .bpItem .view {
-  width: 608px;
   height: 155px;
   position: relative;
   overflow: hidden;
@@ -5132,10 +5130,74 @@ body.edito table td {
   position: absolute;
   top: 0;
   left: 0;
-  width: 608px;
+  width: 100%;
 }
 .bonsplans #bpItemsList .bpItem .content {
   padding: 15px 20px;
+  position: relative;
+}
+.bonsplans #bpItemsList .bpItem .content p {
+  width: 770px;
+}
+.bonsplans #bpItemsList .bpItem .content .stain {
+  width: 131px;
+  height: 131px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 131px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+  position: absolute;
+  left: auto;
+  right: 30px;
+  top: -100px;
+}
+.bonsplans #bpItemsList .bpItem .content .stain > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: 12px;
+}
+.bonsplans #bpItemsList .bpItem .content .stain > img {
+  vertical-align: middle;
+}
+.bonsplans #bpItemsList .bpItem .content .stain > span {
+  margin-top: 0;
+}
+.bonsplans #bpItemsList .bpItem .content .stain .price {
+  font-size: 27px;
+  font-weight: bold;
+  display: block;
+  margin: 7px 0 0px;
+  letter-spacing: normal;
+}
+.bonsplans #bpItemsList .bpItem .content .bt {
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+}
+.bonsplans #bpItemsList .bpItem.half {
+  width: 459px;
+}
+.bonsplans #bpItemsList .bpItem.half p {
+  width: 340px;
+}
+.bonsplans #bpItemsList .bpItem.half .stain {
+  right: -20px;
+}
+.bonsplans #bpItemsList .bpCount {
+  font: bold 22px Arial, Helvetica, sans-serif;
+  margin-top: 10px;
+}
+.bonsplans #bpItemsList .bpCount span {
+  color: #ed145b;
+  font: bold 25px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+  float: left;
+  width: 90px;
+  border: 1px solid #c6c5c5;
+  text-align: center;
+  margin: 5px 5px 0 0;
 }
 /* page booking */
 .booking {
