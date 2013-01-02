@@ -181,12 +181,14 @@ header, section, footer {position:relative;}
 .left{float:left;}
 .right{float:right;}
 .h1-like, .h2-like, .h3-like, .h4-like, .h5-like, .h6-like{display:block;}
-h1, .h1-like{display:block;margin:20px 0 0;color:@colorFushia;font:bold 30px @ptnarrow;text-transform:uppercase;}
-h2, .h2-like{color:@colorGris2;font:bold 20px @arial;line-height:22px;}
+h1, .h1-like{color:@colorFushia;font:bold 30px/28px @ptnarrow;text-transform:uppercase;margin:20px 0 10px;display:block;}
+h2, .h2-like{color:@colorGris2;font:bold 20px/22px @arial;}
 h3, .h3-like{color:@colorGris1;font:bold 25px/24px @ptnarrow;text-transform:uppercase;margin:20px 0 5px;}
 h4, .h4-like{color:@colorFushia;font:bold 19px/18px @ptnarrow;text-transform:uppercase;margin-bottom:10px;}
 h5, .h5-like{color:@colorGris1;font:bold 16px/15px @ptnarrow;text-transform:uppercase;margin-bottom:10px;}
 h6, .h6-like{color:@colorFushia;}
+
+.description{font:13px/18px @arial;color:@colorGris1;margin-bottom:10px;}
 
 .bt{display:block;border:0;text-transform:uppercase;text-decoration:none;font:bold 14px @ptnarrow;padding:3px 10px;._border-radius(7px);
   &.gris{background-color:@colorBgGrisC;color:@colorFushia;}
@@ -269,6 +271,7 @@ h6, .h6-like{color:@colorFushia;}
     textarea{font:bold 12px @arial;color:@colorGris0;}
     input[type="text"],input[type="password"]{background-color:@colorBgBlanc;width:216px;._verticalCenter(27px);padding: 0 7px;border:0 none;}
     textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;border:0 none;}
+    .mandatory{font-size:10px;}
     .label{font:bold 15px @ptnarrow;color:@colorGris0;text-transform:uppercase;}
       form{padding:15px 20px;
         table{width:566px;margin-bottom:15px;
@@ -280,6 +283,7 @@ h6, .h6-like{color:@colorFushia;}
           .datepicker button{right:0;}
           .label{width:134px;line-height:17px;padding:0 10px 0 0;text-align:right;}
         }
+        .bt{margin-bottom:15px;}
     }
   }
 }
