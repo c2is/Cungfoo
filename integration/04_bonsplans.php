@@ -37,18 +37,57 @@
     <!-- colonne full -->
         <div class="column left">
             <h2 class="h3-like">Nos offres</h2>
-
-            <div class="bonsplans itemResult clear">
-                <div class="itemResultTitle">Vos vacances les pieds dans l'eau</div>
-                img
-                A partir de 952€
-                <p>Suspendisse tellus eros, rutrum vel interdum quis, fermentum quis turpis. Aenean velit arcu, facilisis lacinia ullamcorper non, semper sit amet dolor. Sed nisl orci, malesuada nec hendrerit quis, rutrum non ligula.</p>
-                <div class="bp_count">
-                    <span>Plus que</span>
-                    <span class="bp_jours"></span>
-                    <span class="bp_heures"></span>
-                    <span class="bp_minutes"></span>
-                    <a href="#searchBlocDate" class="bt big popinBP">Voir l'offre</a>
+            <div id="bpItemsList">
+                <div class="bpItem itemResult bgImg">
+                    <div class="itemResultTitle">Vos vacances les pieds dans l'eau</div>
+                    <div class="view">
+                        <img class="bg" src="http://pimg.devlint.fr/608x155/ccc/333/*" alt="" />
+                    </div>
+                    <div class="content clear">
+                        A partir de 952€
+                        <p>Suspendisse tellus eros, rutrum vel interdum quis, fermentum quis turpis. Aenean velit arcu, facilisis lacinia ullamcorper non, semper sit amet dolor. Sed nisl orci, malesuada nec hendrerit quis, rutrum non ligula.</p>
+                        <div class="bpCount left">
+                            <span>Plus que</span>
+                            <span class="bpDays"></span>
+                            <span class="bpHours"></span>
+                            <span class="bpMinutes"></span>
+                        </div>
+                        <a href="#" class="bt sombre big ib right popinBP">Voir l'offre</a>
+                    </div>
+                </div>
+                <div class="bpItem itemResult bgImg half">
+                    <div class="itemResultTitle">Vos vacances les pieds dans l'eau</div>
+                    <div class="view">
+                        <img class="bg" src="http://pimg.devlint.fr/608x155/ccc/333/*" alt="" />
+                    </div>
+                    <div class="content clear">
+                        A partir de 952€
+                        <p>Suspendisse tellus eros, rutrum vel interdum quis, fermentum quis turpis. Aenean velit arcu, facilisis lacinia ullamcorper non, semper sit amet dolor. Sed nisl orci, malesuada nec hendrerit quis, rutrum non ligula.</p>
+                        <div class="bpCount left">
+                            <span>Plus que</span>
+                            <span class="bpDays"></span>
+                            <span class="bpHours"></span>
+                            <span class="bpMinutes"></span>
+                        </div>
+                        <a href="#" class="bt sombre big ib right popinBP">Voir l'offre</a>
+                    </div>
+                </div>
+                <div class="bpItem itemResult bgImg half">
+                    <div class="itemResultTitle">Vos vacances les pieds dans l'eau</div>
+                    <div class="view">
+                        <img class="bg" src="http://pimg.devlint.fr/608x155/ccc/333/*" alt="" />
+                    </div>
+                    <div class="content clear">
+                        A partir de 952€
+                        <p>Suspendisse tellus eros, rutrum vel interdum quis, fermentum quis turpis. Aenean velit arcu, facilisis lacinia ullamcorper non, semper sit amet dolor. Sed nisl orci, malesuada nec hendrerit quis, rutrum non ligula.</p>
+                        <div class="bpCount left">
+                            <span>Plus que</span>
+                            <span class="bpDays"></span>
+                            <span class="bpHours"></span>
+                            <span class="bpMinutes"></span>
+                        </div>
+                        <a href="#" class="bt sombre big ib right popinBP">Voir l'offre</a>
+                    </div>
                 </div>
             </div>
 
