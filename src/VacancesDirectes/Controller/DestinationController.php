@@ -182,15 +182,27 @@ class DestinationController implements ControllerProviderInterface
         switch ($destination) {
             case self::DESTINATION_PAYS:
                 $item = $pays;
+                $urlCanonical = $app['url_generator']->generate($request->get('_route'), array(
+                    'pays'      => $item->getSlug(),
+                ), true);
                 break;
 
             case self::DESTINATION_REGION:
                 $item = $region;
+                $urlCanonical = $app['url_generator']->generate($request->get('_route'), array(
+                    'pays'      => $item->getPays()->getSlug(),
+                    'region'    => $item->getSlug(),
+                ), true);
                 $dateData->destination = $region->getCode();
                 break;
 
             case self::DESTINATION_VILLE:
                 $item = $ville;
+                $urlCanonical = $app['url_generator']->generate($request->get('_route'), array(
+                    'pays'      => $item->getRegion()->getPays()->getSlug(),
+                    'region'    => $item->getRegion()->getSlug(),
+                    'ville'     => $item->getSlug(),
+                ), true);
                 $dateData->destination = $region->getCode();
                 $dateData->ville = $ville->getCode();
                 break;
@@ -250,6 +262,7 @@ class DestinationController implements ControllerProviderInterface
             'searchForm'        => $searchEngine->getView(),
             'imagesTitle'       => $app->trans('destination.images_' . strtolower($destination) . '_title'),
             'title'             => $app->trans('destination.' . strtolower($destination) . '_title', array('%item%' => $item->getName())),
+            'urlCanonical'      => $urlCanonical
         ));
     }
 
