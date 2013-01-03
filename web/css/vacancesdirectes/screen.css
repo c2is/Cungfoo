@@ -5495,7 +5495,6 @@ body.edito table td {
 .account #stepNav ul li.tab.current a {
   text-decoration: none;
 }
-.account #stepNav ul li.tab:hover > a:after,
 .account #stepNav ul li.tab.current > a:after {
   content: url("../../images/vacancesdirectes/common/pict/Triangle-Tab.png");
   height: 8px;
