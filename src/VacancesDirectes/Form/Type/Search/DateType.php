@@ -34,7 +34,11 @@ class DateType extends AppAwareType
                 10 => "10 nuits",
                 11 => "11 nuits",
                 14 => "14 nuits",
+                17 => "17 nuits",
+                18 => "18 nuits",
                 21 => "21 nuits",
+                24 => "24 nuits",
+                25 => "25 nuits",
                 28 => "28 nuits"
             ),
             'label'       => 'date_search.nb_jours',
