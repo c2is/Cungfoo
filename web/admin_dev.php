@@ -24,6 +24,8 @@ ErrorHandler::register();
 if ('cli' !== php_sapi_name()) {
     ExceptionHandler::register();
 }
+// Corrige un problème de droits sur les fichiers cache de Twig en préprod (et en prod possiblement)
+umask(0002);
 
 // created the application
 $app = require __DIR__ . '/../src/Cungfoo/app.php';

@@ -34,7 +34,7 @@ $(function() {
 
 head.ready(function(){
 
-    if($('#reservationContener.detail').length){
+
 
         // radio buttons
         var checked;
@@ -67,11 +67,11 @@ head.ready(function(){
                 var selectWidth = $(this).parent().width();
                 $(this).next('.SSContainerDivWrapper').show();
                 var selectUlWidth = $(this).next('.SSContainerDivWrapper').width();
-                //console.log(selectWidth);
-                //console.log(selectUlWidth);
-                //console.log( $(this).next('.SSContainerDivWrapper').hasClass('maxHeight') );
-                //console.log( !$(this).next('.SSContainerDivWrapper').hasClass('minWidth') );
-                //console.log( selectUlWidth >= selectWidth );
+//                console.log(selectWidth);
+//                console.log(selectUlWidth);
+//                console.log( $(this).next('.SSContainerDivWrapper').hasClass('maxHeight') );
+//                console.log( !$(this).next('.SSContainerDivWrapper').hasClass('minWidth') );
+//                console.log( selectUlWidth >= selectWidth );
                 if ( $(this).next('.SSContainerDivWrapper').hasClass('maxHeight') && !$(this).next('.SSContainerDivWrapper').hasClass('minWidth') && selectUlWidth >= selectWidth ){
 
                     $(this).next('.SSContainerDivWrapper').css({
@@ -86,33 +86,33 @@ head.ready(function(){
 
         });
 
-
+    if($('#contentContener.detail').length  || $('#contentContener.editAccount').length){
         // datepickers
         var d = new Date();
         var y = d.getFullYear();
-        $(".anOccupant").each(function(index,value){
-            var onBlurAction = $(this).find('.control_date').attr('onblur');
+        $(".anOccupant").find('.control_date').each(function(index,value){
+            var onBlurAction = $(this).attr('onblur');
             onBlurAction = onBlurAction.replace(';;',';').replace('if( !checkFutureDate( this ) ) return false; ','');
             if(onBlurAction.substring(0, 1) == ';'){
                 onBlurAction = onBlurAction.substring(1, onBlurAction.length - 1);
             }
             function onBlur(){
-                console.log(this.value);
+               //console.log(this.value);
                eval(onBlurAction);
             }
 //            console.log(onBlurAction);
-            $(this).find('.control_date').removeAttr('onblur');
-            $(this).find('.control_date').datepicker({
+            $(this).removeAttr('onblur');
+            $(this).datepicker({
                 changeMonth: true,
                 changeYear: true,
                 yearRange: "1900:2000",
-                defaultDate: new Date(y-18, 1 - 1, 1),
-                maxDate: "-18Y",
+                defaultDate: new Date(y-13, 1 - 1, 1),
+                maxDate: "-13Y",
                 showOn: "button",
                 onClose: onBlur
             });
-        })
-        $('#reservation_content_date_creation').datepicker({
+        });
+        $('#address').find('.control_date').datepicker({
             changeMonth: true,
             changeYear: true,
             yearRange: "1900:2000",
@@ -140,5 +140,5 @@ function resize_myframe() {
     var height = $('body').height();
     height += 70;
     window.parent.document.getElementById('frameResalys').style.height = height + 'px';
-    //consoleLog(height);
+    //console.log(height);
 }
