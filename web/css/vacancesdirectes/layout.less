@@ -32,13 +32,13 @@ header, section, footer {position:relative;}
 .home #telephone{clear:both;}
 
 /* nav */
-#nav{font:bold 23px @ptnarrow;text-transform:uppercase;position:relative;background:@colorBgGrisF;margin-top:20px;height:50px;z-index:30;
+#nav{position:relative;background:@colorBgGrisF;margin-top:20px;height:50px;z-index:30;
   .topnav{top:-7px;}
   .tab{position:static;color:@colorBlanc;float:left;padding:0;cursor:pointer;._border-radius(7px 7px 0 0);z-index:50;margin-left:2px;
     &:first-child:after{width:0;margin-left:0;}
     &:after{content:"";width:2px;height:17px;background-color:@colorBgGrisM;float:left;margin:-32px 0 0 -2px;}
     &.noBorder:after{width:0px;}
-    &>a{position:relative;display:block;padding:0 10px;margin-top:7px;color:@colorBlanc;text-decoration:none;._verticalCenter(50px);
+    &>a{position:relative;display:block;padding:0 10px;margin-top:7px;color:@colorBlanc;text-decoration:none;font:bold 23px @ptnarrow;text-transform:uppercase;._verticalCenter(50px);
       &#home img{width:27px;height:27px;margin-top:-7px;}
       small {font:bold  15px @arial,sans-serif;color:@colorFushia;}
     }
@@ -50,6 +50,7 @@ header, section, footer {position:relative;}
       .objective{margin:10px;}
       &#destinations{
         a:hover{color:@colorFushia;}
+        .link:hover{color:@colorGris2;}
         li{line-height:15px;}
         .ratio-33{width:300px;margin-right:16px;
           &:last-child{width:308px;margin-right:0;}
@@ -102,7 +103,7 @@ header, section, footer {position:relative;}
           }
           .stamp{position:absolute;top:10px;right:0;
             &:after{content:"";}
-            span{margin-right:-6px;}
+            span{margin-right:-6px;font:bold 15px @ptnarrow;text-transform:uppercase;}
           }
         }
         .radiusBox2{margin-right:12px;height:130px;
@@ -126,15 +127,31 @@ header, section, footer {position:relative;}
       }
       &#deals{
         #dealsMenu,
-        #dealsContent{float:left;}
-        #dealsMenu{z-index:2;
-          .title{font-size:30px;}
+        #dealsContent{float:left;position:relative;}
+        #dealsMenu{z-index:2;width:316px;text-transform:uppercase;margin-bottom:180px;
+          .title{font-size:28px;line-height:26px;margin:15px 0;padding:0 16px;}
+          li{padding:0 16px;font:bold 15px @ptnarrow;position:relative;cursor:pointer;._border-radius(7px 0 0 7px);._verticalCenter(38px);
+            &:hover{background-color:@colorBgGrisC;._box-shadow(inset -8px 0px 5px -8px @colorBgGrisM);}
+            &.selected{background-color:@colorOrange;color:@colorBlanc;cursor:default;._box-shadow(none);
+              &:after{left:100%;top:50%;border:solid transparent;content:"";height:0;width:0;position:absolute;pointer-events:none;border-color:rgba(140, 138, 138, 0);border-left-color:@colorOrange;border-width:7px;margin-top:-7px;margin-right:-7px;}
+            }
+          }
         }
-        #dealsContent{z-index:1;width:616px;
+        #dealsSubscribe{text-align:center;position:absolute;bottom:33px;left:0;width:332px;padding:0 18px;
+          .title{font:bold 14px @ptnarrow;color:@colorBleu;margin:0;}
+          img{display:block;margin:5px auto;}
+        }
+        #dealsContent{z-index:1;width:624px;
+          .radiusBox{display:none;
+            &:first-child{display:block;}
+          }
+          a{text-decoration:none;}
           .stamp{font:bold 22px @ptnarrow;text-transform:uppercase;display:inline-block;margin-bottom:15px;}
           .dealsDate{font:italic 15px @arial;margin-left:10px;}
           .element{float:left;padding:0 0 10px 0;
+            .title{font:bold 13px @arial;text-transform:none;}
             .details{margin:0;}
+            .condition{font-size:15px;}
           }
         }
       }
@@ -142,7 +159,7 @@ header, section, footer {position:relative;}
         .title{margin:0;}
         .proposalsDate{padding:0 20px;border-right:7px solid @colorBgGrisC;
           &:last-child{border-right:0 none;}
-          .from{font:bold 13px @ptnarrow; color:@colorFushia;display:block;}
+          .from{font:bold 13px @ptnarrow; color:@colorFushia;display:block;margin-bottom:5px;}
           .bt{display:inline;}
         }
       }
@@ -154,7 +171,7 @@ header, section, footer {position:relative;}
       }
     }
   }
-  .tab:nth-child(4) .subnav{display:block !important;}
+//  .tab:nth-child(4) .subnav{display:block !important;}
 }
 .js-true{
   #nav{
@@ -210,6 +227,7 @@ h6, .h6-like{color:@colorFushia;}
   &.sombre{background-color:@colorBgGrisF;color:@colorBlanc;}
   &.fushia{background-color:@colorFushia;color:@colorBlanc;}
   &.orange{background-color:@colorOrange;color:@colorBlanc;}
+  &.bleu{background-color:@colorBleu;color:@colorBlanc;}
   &.trans{background:transparent;padding:0;}
   &.link{background:transparent;padding:0;text-decoration:underline !important;border-radius:0;margin-top:10px;}
   &.cfushia{color:@colorFushia;}
@@ -350,8 +368,8 @@ input[type="radio"] {height:auto;}
 .element{position:relative;margin:0;padding:20px 0;
   iframe{width:119px;height:20px;}
   .view{margin:0 15px 10px 5px;}
-  .details{font-size:13px;color:@colorGris1;margin-bottom:70px;
-    .title, .region, .condition, .stain{display:block;}
+  .details{font-size:13px;color:@colorGris1;margin-bottom:75px;width:153px;
+    .title, .region, .condition, .stain{display:block;font:inherit;}
     .title{font-weight:bold;}
     .period{font-style:italic;}
     .condition{
