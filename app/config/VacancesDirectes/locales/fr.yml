@@ -496,6 +496,10 @@ resalys:
     besoin_aide_subtitle: "Une question sur votre réservation&hellip;"
     besoin_aide_contact: "Contactez-nous"
     besoin_aide_num: "au 0825 133 400"
+    session_expire: "Votre session a expiré"
+    session_expire_texte_1: "Après un délai d'inactivité, votre session a expiré. Pour continuer, il vous suffit de recommencer votre recherche ou de vous identifier de nouveau sur notre site."
+    session_expire_texte_2: "Formulez à nouveau votre demande ou confiez-en le soin à notre équipe de réservation en appelant au 0825 133 400 (0,15&euro;/min)."
+    non_connecte: "Afin de poursuivre votre réservation,<br /> Merci de vous connecter ou de vous créer un compte ci-dessus"
 
 vos_week_ends: "Vos week-ends"
 
