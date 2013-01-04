@@ -49,6 +49,7 @@ class PointInteretI18nTableMap extends TableMap
         $this->addColumn('transport', 'Transport', 'LONGVARCHAR', false, null, null);
         $this->addColumn('categorie', 'Categorie', 'VARCHAR', false, 255, null);
         $this->addColumn('type', 'Type', 'VARCHAR', false, 255, null);
+        $this->addColumn('slug', 'Slug', 'VARCHAR', false, 255, null);
         // validators
     } // initialize()
 

@@ -382,6 +382,7 @@ point_interet.tel: Tél
 point_interet.fax: Fax
 point_interet.email: Email
 point_interet.website: Site web
+point_interet.slug: Slug
 
 event.crud.create: Création d'un évènement
 event.crud.list: Liste des évènements

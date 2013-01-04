@@ -29,6 +29,7 @@ use Cungfoo\Model\PointInteretI18nQuery;
  * @method PointInteretI18nQuery orderByTransport($order = Criteria::ASC) Order by the transport column
  * @method PointInteretI18nQuery orderByCategorie($order = Criteria::ASC) Order by the categorie column
  * @method PointInteretI18nQuery orderByType($order = Criteria::ASC) Order by the type column
+ * @method PointInteretI18nQuery orderBySlug($order = Criteria::ASC) Order by the slug column
  *
  * @method PointInteretI18nQuery groupById() Group by the id column
  * @method PointInteretI18nQuery groupByLocale() Group by the locale column
@@ -37,6 +38,7 @@ use Cungfoo\Model\PointInteretI18nQuery;
  * @method PointInteretI18nQuery groupByTransport() Group by the transport column
  * @method PointInteretI18nQuery groupByCategorie() Group by the categorie column
  * @method PointInteretI18nQuery groupByType() Group by the type column
+ * @method PointInteretI18nQuery groupBySlug() Group by the slug column
  *
  * @method PointInteretI18nQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method PointInteretI18nQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -56,6 +58,7 @@ use Cungfoo\Model\PointInteretI18nQuery;
  * @method PointInteretI18n findOneByTransport(string $transport) Return the first PointInteretI18n filtered by the transport column
  * @method PointInteretI18n findOneByCategorie(string $categorie) Return the first PointInteretI18n filtered by the categorie column
  * @method PointInteretI18n findOneByType(string $type) Return the first PointInteretI18n filtered by the type column
+ * @method PointInteretI18n findOneBySlug(string $slug) Return the first PointInteretI18n filtered by the slug column
  *
  * @method array findById(int $id) Return PointInteretI18n objects filtered by the id column
  * @method array findByLocale(string $locale) Return PointInteretI18n objects filtered by the locale column
@@ -64,6 +67,7 @@ use Cungfoo\Model\PointInteretI18nQuery;
  * @method array findByTransport(string $transport) Return PointInteretI18n objects filtered by the transport column
  * @method array findByCategorie(string $categorie) Return PointInteretI18n objects filtered by the categorie column
  * @method array findByType(string $type) Return PointInteretI18n objects filtered by the type column
+ * @method array findBySlug(string $slug) Return PointInteretI18n objects filtered by the slug column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -154,7 +158,7 @@ abstract class BasePointInteretI18nQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `locale`, `name`, `presentation`, `transport`, `categorie`, `type` FROM `point_interet_i18n` WHERE `id` = :p0 AND `locale` = :p1';
+        $sql = 'SELECT `id`, `locale`, `name`, `presentation`, `transport`, `categorie`, `type`, `slug` FROM `point_interet_i18n` WHERE `id` = :p0 AND `locale` = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
@@ -456,6 +460,35 @@ abstract class BasePointInteretI18nQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(PointInteretI18nPeer::TYPE, $type, $comparison);
+    }
+
+    /**
+     * Filter the query on the slug column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterBySlug('fooValue');   // WHERE slug = 'fooValue'
+     * $query->filterBySlug('%fooValue%'); // WHERE slug LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $slug The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return PointInteretI18nQuery The current query, for fluid interface
+     */
+    public function filterBySlug($slug = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($slug)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $slug)) {
+                $slug = str_replace('*', '%', $slug);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(PointInteretI18nPeer::SLUG, $slug, $comparison);
     }
 
     /**

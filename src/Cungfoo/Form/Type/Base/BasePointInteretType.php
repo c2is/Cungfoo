@@ -166,6 +166,13 @@ class BasePointInteretType extends AppAwareType
                     'constraints' => array(
                     ),
                 ),
+                'slug' => array(
+                    'required' => false,
+                    'label' => 'point_interet.slug',
+                    'type' => 'text',
+                    'constraints' => array(
+                    ),
+                ),
             ),
             'required' => false,
         ));

@@ -89,6 +89,12 @@ abstract class BasePointInteretI18n extends BaseObject implements Persistent
     protected $type;
 
     /**
+     * The value for the slug field.
+     * @var        string
+     */
+    protected $slug;
+
+    /**
      * @var        PointInteret
      */
     protected $aPointInteret;
@@ -196,6 +202,16 @@ abstract class BasePointInteretI18n extends BaseObject implements Persistent
     public function getType()
     {
         return $this->type;
+    }
+
+    /**
+     * Get the [slug] column value.
+     *
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
     }
 
     /**
@@ -350,6 +366,27 @@ abstract class BasePointInteretI18n extends BaseObject implements Persistent
     } // setType()
 
     /**
+     * Set the value of [slug] column.
+     *
+     * @param string $v new value
+     * @return PointInteretI18n The current object (for fluent API support)
+     */
+    public function setSlug($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->slug !== $v) {
+            $this->slug = $v;
+            $this->modifiedColumns[] = PointInteretI18nPeer::SLUG;
+        }
+
+
+        return $this;
+    } // setSlug()
+
+    /**
      * Indicates whether the columns in this object are only set to default values.
      *
      * This method can be used in conjunction with isModified() to indicate whether an object is both
@@ -392,6 +429,7 @@ abstract class BasePointInteretI18n extends BaseObject implements Persistent
             $this->transport = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
             $this->categorie = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
             $this->type = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
+            $this->slug = ($row[$startcol + 7] !== null) ? (string) $row[$startcol + 7] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -400,7 +438,7 @@ abstract class BasePointInteretI18n extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 7; // 7 = PointInteretI18nPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 8; // 8 = PointInteretI18nPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating PointInteretI18n object", $e);
@@ -645,6 +683,9 @@ abstract class BasePointInteretI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(PointInteretI18nPeer::TYPE)) {
             $modifiedColumns[':p' . $index++]  = '`type`';
         }
+        if ($this->isColumnModified(PointInteretI18nPeer::SLUG)) {
+            $modifiedColumns[':p' . $index++]  = '`slug`';
+        }
 
         $sql = sprintf(
             'INSERT INTO `point_interet_i18n` (%s) VALUES (%s)',
@@ -676,6 +717,9 @@ abstract class BasePointInteretI18n extends BaseObject implements Persistent
                         break;
                     case '`type`':
                         $stmt->bindValue($identifier, $this->type, PDO::PARAM_STR);
+                        break;
+                    case '`slug`':
+                        $stmt->bindValue($identifier, $this->slug, PDO::PARAM_STR);
                         break;
                 }
             }
@@ -837,6 +881,9 @@ abstract class BasePointInteretI18n extends BaseObject implements Persistent
             case 6:
                 return $this->getType();
                 break;
+            case 7:
+                return $this->getSlug();
+                break;
             default:
                 return null;
                 break;
@@ -873,6 +920,7 @@ abstract class BasePointInteretI18n extends BaseObject implements Persistent
             $keys[4] => $this->getTransport(),
             $keys[5] => $this->getCategorie(),
             $keys[6] => $this->getType(),
+            $keys[7] => $this->getSlug(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aPointInteret) {
@@ -933,6 +981,9 @@ abstract class BasePointInteretI18n extends BaseObject implements Persistent
             case 6:
                 $this->setType($value);
                 break;
+            case 7:
+                $this->setSlug($value);
+                break;
         } // switch()
     }
 
@@ -964,6 +1015,7 @@ abstract class BasePointInteretI18n extends BaseObject implements Persistent
         if (array_key_exists($keys[4], $arr)) $this->setTransport($arr[$keys[4]]);
         if (array_key_exists($keys[5], $arr)) $this->setCategorie($arr[$keys[5]]);
         if (array_key_exists($keys[6], $arr)) $this->setType($arr[$keys[6]]);
+        if (array_key_exists($keys[7], $arr)) $this->setSlug($arr[$keys[7]]);
     }
 
     /**
@@ -982,6 +1034,7 @@ abstract class BasePointInteretI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(PointInteretI18nPeer::TRANSPORT)) $criteria->add(PointInteretI18nPeer::TRANSPORT, $this->transport);
         if ($this->isColumnModified(PointInteretI18nPeer::CATEGORIE)) $criteria->add(PointInteretI18nPeer::CATEGORIE, $this->categorie);
         if ($this->isColumnModified(PointInteretI18nPeer::TYPE)) $criteria->add(PointInteretI18nPeer::TYPE, $this->type);
+        if ($this->isColumnModified(PointInteretI18nPeer::SLUG)) $criteria->add(PointInteretI18nPeer::SLUG, $this->slug);
 
         return $criteria;
     }
@@ -1059,6 +1112,7 @@ abstract class BasePointInteretI18n extends BaseObject implements Persistent
         $copyObj->setTransport($this->getTransport());
         $copyObj->setCategorie($this->getCategorie());
         $copyObj->setType($this->getType());
+        $copyObj->setSlug($this->getSlug());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -1180,6 +1234,7 @@ abstract class BasePointInteretI18n extends BaseObject implements Persistent
         $this->transport = null;
         $this->categorie = null;
         $this->type = null;
+        $this->slug = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();
