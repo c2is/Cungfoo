@@ -1,0 +1,64 @@
+{% extends "POI/base.twig" %}
+
+{% block title %}
+{% spaceless %}
+    {{ "seo.title.region" | trans ({'%region%': item}) }}
+{% endspaceless %}
+{% endblock %}
+
+{% block metaDescription %}
+{% spaceless %}
+    {{ "seo.meta.region" | trans  ({'%region%': item, '%pays%': item.pays})}}
+{% endspaceless %}
+{% endblock %}
+
+{% block topLeftColumn %}
+
+    {# Bloc titre + accroche + picto #}
+    <img class="right" src="{{ poi.image }}">
+    <h1>{{ poi.name }}</h1> {# Titre #}
+    <h2 class="h3-like">{{ poi.name }}</h2>
+    <p class="destiDescription">{{ poi.presentation }}</p>
+
+{% endblock %}
+
+{% block topRightColumn %}
+
+    {% include 'Form/_search_engine.twig' %}
+
+{% endblock %}
+
+{% block contentFull %}
+
+    <h2 class="h3-like">{{ "poi.informations_pratiques" | trans }}</h2>
+    {{ poi.zipcode }}<br>
+    {{ poi.city }}<br>
+    {% if poi.tel != "" %} {{ "poi.tel" | trans }} {{ poi.tel }} {% endif %}<br>
+    {% if poi.address != "" or poi.address2 != "" %} {{ "poi.adresse" | trans }} {{ poi.address }}<br>
+    {{ poi.address2 }} {% endif %}<br>
+    {{ poi.zipcode }}<br>
+    {{ poi.city }}<br>
+    {% if poi.fax != "" %} {{ "poi.fax" | trans }} {{ poi.fax }} {% endif %}<br>
+    {% if poi.email != "" %} {{ "poi.email" | trans }} {{ poi.email }} {% endif %}<br>
+    {% if poi.categorie != "" %} {{ "poi.categorie" | trans }} {{ poi.categorie }} {% endif %}<br>
+    {% if poi.type != "" %} {{ "poi.type" | trans }} {{ poi.type }} {% endif %}<br>
+    {% if poi.transport != "" %} {{ "poi.transport" | trans }} {{ poi.transport }} {% endif %}<br>
+    {% if poi.website != "" %}<a href="{{ poi.website }}" target="_blank">{{ "poi.acceder_site" | trans }}</a>{% endif %}
+
+{% endblock %}
+
+{% block bottomLeftColumn %}
+
+    {# Bloc "Notre sélection de campings" #}
+    <h2 class="h3-like">{{ "destination.campings_selection_title" | trans }}</h2>
+    {% include 'Listing/_listing.twig' %}
+
+{% endblock %}
+
+{% block bottomRightColumn %}
+<div id="greyBoxes">
+    {% include 'Bloc/sejour_reussi.twig' %}
+
+    {% include 'Bloc/informations.twig' %}
+</div>
+{% endblock %}
