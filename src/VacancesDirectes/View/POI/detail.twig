@@ -15,36 +15,48 @@
 {% block topLeftColumn %}
 
     {# Bloc titre + accroche + picto #}
-    <img class="right" src="{{ poi.image }}">
+
     <h1>{{ poi.name }}</h1> {# Titre #}
     <h2 class="h3-like">{{ poi.name }}</h2>
-    <p class="destiDescription">{{ poi.presentation }}</p>
+    <div class="description">
+        <img class="left border" src="{{ poi.image }}">
+        <p>{{ poi.presentation }}</p>
+    </div>
+
 
 {% endblock %}
 
 {% block topRightColumn %}
 
-    {% include 'Form/_search_engine.twig' %}
+        {% include 'Form/_search_engine.twig' %}
 
 {% endblock %}
 
 {% block contentFull %}
-
-    <h2 class="h3-like">{{ "poi.informations_pratiques" | trans }}</h2>
-    {{ poi.zipcode }}<br>
-    {{ poi.city }}<br>
-    {% if poi.tel != "" %} {{ "poi.tel" | trans }} {{ poi.tel }} {% endif %}<br>
-    {% if poi.address != "" or poi.address2 != "" %} {{ "poi.adresse" | trans }} {{ poi.address }}<br>
-    {{ poi.address2 }} {% endif %}<br>
-    {{ poi.zipcode }}<br>
-    {{ poi.city }}<br>
-    {% if poi.fax != "" %} {{ "poi.fax" | trans }} {{ poi.fax }} {% endif %}<br>
-    {% if poi.email != "" %} {{ "poi.email" | trans }} {{ poi.email }} {% endif %}<br>
-    {% if poi.categorie != "" %} {{ "poi.categorie" | trans }} {{ poi.categorie }} {% endif %}<br>
-    {% if poi.type != "" %} {{ "poi.type" | trans }} {{ poi.type }} {% endif %}<br>
-    {% if poi.transport != "" %} {{ "poi.transport" | trans }} {{ poi.transport }} {% endif %}<br>
-    {% if poi.website != "" %}<a href="{{ poi.website }}" target="_blank">{{ "poi.acceder_site" | trans }}</a>{% endif %}
-
+    <div class="radiusBox3">
+        <h2 class="title">{{ "poi.informations_pratiques" | trans }}</h2>
+        <div class="content clear">
+            <div class="contentL">
+                <p>{{ poi.zipcode }} {{ poi.city }}</p>
+                <p>
+                    {% if poi.address != "" or poi.address2 != "" %} <span class="label">{{ "poi.adresse" | trans }}</span><br />
+                        {% if poi.address != "" %} {{ poi.address }}<br> {% endif %}
+                        {% if poi.address2 != "" %}{{ poi.address2 }}<br> {% endif %}
+                    {% endif %}
+                    {{ poi.zipcode }} {{ poi.city }}<br />
+                    {% if poi.tel != "" %} <span class="label">{{ "poi.tel" | trans }}</span> {{ poi.tel }}<br /> {% endif %}
+                    {% if poi.fax != "" %} <span class="label">{{ "poi.fax" | trans }}</span> {{ poi.fax }}<br /> {% endif %}
+                    {% if poi.email != "" %} <span class="label">{{ "poi.email" | trans }}</span> {{ poi.email }} {% endif %}
+                </p>
+            </div>
+            <div class="contentR">
+                {% if poi.categorie != "" %} <p><span class="label">{{ "poi.categorie" | trans }}</span> {{ poi.categorie }}</p> {% endif %}
+                {% if poi.type != "" %} <p><span class="label">{{ "poi.type" | trans }}</span> {{ poi.type }}</p> {% endif %}
+                {% if poi.transport != "" %} <p><span class="label">{{ "poi.transport" | trans }}</span> {{ poi.transport }}</p> {% endif %}
+            </div>
+            {% if poi.website != "" %}<a class="bt fushia ib right clearboth" href="{{ poi.website }}" target="_blank">{{ "poi.acceder_site" | trans }}</a>{% endif %}
+        </div>
+    </div>
 {% endblock %}
 
 {% block bottomLeftColumn %}

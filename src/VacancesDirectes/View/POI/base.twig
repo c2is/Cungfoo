@@ -1,27 +1,31 @@
 {% extends "base.twig" %}
-{% block bodyClass %}{% endblock %}
+{% block bodyClass %} event{% endblock %}
 
 {% block content %}
     <div id="wrap" class="fixed-width clear">
-        <div class="column left">
-            {% block topLeftColumn %}
-            {% endblock %}
+        <div class="clear">
+            <div class="column left">
+                {% block topLeftColumn %}
+                {% endblock %}
+            </div>
+            <aside class="column right">
+                {% block topRightColumn %}
+                {% endblock %}
+            </aside>
         </div>
-        <aside class="column right">
-            {% block topRightColumn %}
-            {% endblock %}
-        </aside>
-        <div class="">
+        <div class="column clearboth clear">
             {% block contentFull %}
             {% endblock %}
         </div>
-        <div class="column left">
-            {% block bottomLeftColumn %}
-            {% endblock %}
+        <div class="clear">
+            <div class="column left">
+                {% block bottomLeftColumn %}
+                {% endblock %}
+            </div>
+            <aside class="column right">
+                {% block bottomRightColumn %}
+                {% endblock %}
+            </aside>
         </div>
-        <aside class="column right">
-            {% block bottomRightColumn %}
-            {% endblock %}
-        </aside>
     </div>
 {% endblock %}
