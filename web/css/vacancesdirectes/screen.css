@@ -1898,6 +1898,19 @@ footer {
   display: block;
 }
 /* generic */
+#please_wait_layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../../images/vacancesdirectes/common/ui/loadingResalys.gif) no-repeat scroll 50% 35px #ffffff;
+  text-align: center;
+  font: normal 15px Arial, Helvetica, sans-serif;
+  padding: 100px 20px;
+  opacity: 0.8;
+  z-index: 0;
+}
 .left {
   float: left;
 }
@@ -2800,7 +2813,7 @@ input[type="radio"] {
   position: absolute;
   top: -10px;
   left: -30px;
-  z-index: 1;
+  z-index: 0;
 }
 .element.promo .stain .discount > * {
   vertical-align: middle;
