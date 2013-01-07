@@ -6551,6 +6551,9 @@ aside #greyBoxes #assetsBloc .asset:nth-child(3):before {
 aside #greyBoxes #assetsBloc .asset:nth-child(4):before {
   background-position: 0 -360px;
 }
+aside #greyBoxes #themesBloc h3 {
+  color: #606060;
+}
 aside ::-webkit-input-placeholder {
   color: #8c8a8a;
 }

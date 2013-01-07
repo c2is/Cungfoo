@@ -98,12 +98,18 @@
 
     {% include 'Bloc/informations.twig' %}
 
-    <div id="assetsBloc" class="clear radiusBox greyC">
+    <div id="themesBloc" class="clear radiusBox greyC">
         <h3>{{ "encart_autres_themes.title" | trans }}</h3>
-        {% for autreTheme in autresTheme %}
-            <img src="{{ autreTheme.imagePath }}" alt="{{ autreTheme.name }}">
-            <span>{{ autreTheme.name }}</span>
-        {% endfor %}
+
+
+            <ul>
+                <li class="themeItem">
+                {% for autreTheme in autresTheme %}
+                    <img src="{{ autreTheme.imagePath }}" alt="{{ autreTheme.name }}">
+                    <span>{{ autreTheme.name }}</span>
+                </li>
+                {% endfor %}
+            </ul>
     </div>
 
 </div>
