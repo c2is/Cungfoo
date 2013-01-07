@@ -118,3 +118,7 @@ crud:
             prefix: /bons-plans
             model: \Cungfoo\Model\BonPlan
             form: \Cungfoo\Form\Type\BonPlanType
+        demande_annulation:
+            prefix: /demandes-annulation
+            model: \Cungfoo\Model\DemandeAnnulation
+            form: \Cungfoo\Form\Type\DemandeAnnulationType

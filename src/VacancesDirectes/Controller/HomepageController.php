@@ -91,6 +91,7 @@ class HomepageController implements ControllerProviderInterface
                 'thematiques'       => $thematiques,
                 'etablissements'    => $etablissements,
                 'pleinActivites'    => $pleinActivites->process(),
+                'urlCanonical'      => $app['url_generator']->generate('homepage', array(), true),
             ));
 
             return new Response($view, 200, array('Surrogate-Control' => 'content="ESI/1.0"'));

@@ -1,0 +1,215 @@
+pays:
+    - pays.afghanistan
+    - pays.albanie
+    - pays.algerie
+    - pays.andorre
+    - pays.angola
+    - pays.antigua-et-Barbuda
+    - pays.argentine
+    - pays.armenie
+    - pays.australie
+    - pays.autriche
+    - pays.azerbaidjan
+    - pays.bahamas
+    - pays.bahrein
+    - pays.bangladesh
+    - pays.barbade
+    - pays.bielorussie
+    - pays.belgique
+    - pays.belize
+    - pays.benin
+    - pays.bhoutan
+    - pays.bolivie
+    - pays.bosnie-Herzegovine
+    - pays.botswana
+    - pays.bresil
+    - pays.brunei
+    - pays.bulgarie
+    - pays.burkina Faso
+    - pays.burundi
+    - pays.cambodge
+    - pays.cameroun
+    - pays.canada
+    - pays.cap-Vert
+    - pays.republique centrafricaine
+    - pays.tchad
+    - pays.chili
+    - pays.chine
+    - pays.colombie
+    - pays.comores
+    - pays.congo
+    - pays.costa Rica
+    - pays.cote d'Ivoire
+    - pays.croatie
+    - pays.cuba
+    - pays.chypre
+    - pays.republique tcheque
+    - pays.danemark
+    - pays.djibouti
+    - pays.republique dominicaine
+    - pays.timor Oriental
+    - pays.equateur
+    - pays.egypte
+    - pays.salvador
+    - pays.angleterre
+    - pays.guinee equatoriale
+    - pays.erythree
+    - pays.estonie
+    - pays.ethiopie
+    - pays.iles Feroe
+    - pays.fidji
+    - pays.finlande
+    - pays.france
+    - pays.gabon
+    - pays.gambie
+    - pays.georgie
+    - pays.allemagne
+    - pays.ghana
+    - pays.grande-Bretagne
+    - pays.grece
+    - pays.groenland
+    - pays.grenade
+    - pays.guatemala
+    - pays.guinee
+    - pays.guinee-Bissau
+    - pays.haiti
+    - pays.hollande
+    - pays.saint-Siege
+    - pays.honduras
+    - pays.hongrie
+    - pays.islande
+    - pays.inde
+    - pays.indonesie
+    - pays.irak
+    - pays.iran
+    - pays.irlande
+    - pays.israel
+    - pays.italie
+    - pays.jamaique
+    - pays.japon
+    - pays.jordanie
+    - pays.kazahstan
+    - pays.kenya
+    - pays.kiribati
+    - pays.coree
+    - pays.koweit
+    - pays.kirghizistan
+    - pays.laos
+    - pays.lettonie
+    - pays.liban
+    - pays.lesotho
+    - pays.liberia
+    - pays.libye
+    - pays.liechtenstein
+    - pays.lituanie
+    - pays.luxembourg
+    - pays.macedoine
+    - pays.madagascar
+    - pays.malawi
+    - pays.malaisie
+    - pays.maldives
+    - pays.mali
+    - pays.malte
+    - pays.iles Marshall
+    - pays.mauritanie
+    - pays.maurice
+    - pays.mayotte
+    - pays.mexique
+    - pays.micronesie
+    - pays.moldavie
+    - pays.monaco
+    - pays.mongolie
+    - pays.montenegro
+    - pays.montserrat
+    - pays.maroc
+    - pays.mozambique
+    - pays.myanmar
+    - pays.namibie
+    - pays.nauru
+    - pays.nepal
+    - pays.pays-Bas
+    - pays.nouvelle-Zelande
+    - pays.nicaragua
+    - pays.niger
+    - pays.nigeria
+    - pays.irlande du Nord
+    - pays.norvege
+    - pays.oman
+    - pays.pakistan
+    - pays.palaos
+    - pays.palestine
+    - pays.panama
+    - pays.papouasie-Nouvelle-Guinee
+    - pays.paraguay
+    - pays.perou
+    - pays.philippines
+    - pays.pologne
+    - pays.portugal
+    - pays.principaute de Monaco
+    - pays.qatar
+    - pays.roumanie
+    - pays.russie
+    - pays.rwanda
+    - pays.saint-Christophe-et-Nieves
+    - pays.sainte-Lucie
+    - pays.saint Pierre and Miquelon
+    - pays.saint-Vincent-et-les Grenadines
+    - pays.samoa
+    - pays.saint-Marin
+    - pays.sao Tome-et-Principe
+    - pays.arabie Saoudite
+    - pays.ecosse
+    - pays.senegal
+    - pays.serbie
+    - pays.seychelles
+    - pays.sierra Leone
+    - pays.singapour
+    - pays.slovaquie
+    - pays.slovenie
+    - pays.iles Salomon
+    - pays.somalie
+    - pays.afrique du Sud
+    - pays.espagne
+    - pays.sri Lanka
+    - pays.soudan
+    - pays.suriname
+    - pays.swaziland
+    - pays.suede
+    - pays.suisse
+    - pays.syrie
+    - pays.taiwan
+    - pays.tadjikistan
+    - pays.tanzanie
+    - pays.thailande
+    - pays.togo
+    - pays.tonga
+    - pays.trinite-et-Tobago
+    - pays.tunisie
+    - pays.turquie
+    - pays.turkmenistan
+    - pays.tuvalu
+    - pays.ouganda
+    - pays.ukraine
+    - pays.emirats arabes unis
+    - pays.royaume-Uni
+    - pays.etats-Unis
+    - pays.uruguay
+    - pays.ouzbekistan
+    - pays.vanuatu
+    - pays.vatican
+    - pays.venezuela
+    - pays.vietnam
+    - pays.pays de Galles
+    - pays.wallis et Futuna
+    - pays.yemen
+    - pays.zambie
+    - pays.zimbabwe
+
+naturesSinistre:
+    - demande_annulation.sinistre_nature.annulation
+    - demande_annulation.sinistre_nature.interruption
+
+suitesSinistre:
+    - demande_annulation.sinistre_suite.maladie
+    - demande_annulation.sinistre_suite.accident
+    - demande_annulation.sinistre_suite.autre

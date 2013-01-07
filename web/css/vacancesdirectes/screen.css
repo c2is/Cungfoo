@@ -5,7 +5,7 @@
 /* Gris 1 */
 /* Gris 2 */
 /* Gris 3 */
-/* Gris 1 */
+/* Gris 4 */
 /* bg gris sombre */
 /* bg gris moyen sombre */
 /* bg gris moyen clair */
@@ -1448,7 +1448,6 @@ footer {
   margin-bottom: 10px;
   font: bold 17px/27px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   color: #8c8a8a;
-  text-transform: uppercase;
   padding: 0 7px;
 }
 #header #accountBox input > * {
@@ -1915,17 +1914,16 @@ footer {
 }
 h1,
 .h1-like {
-  display: block;
-  margin: 20px 0 0;
   color: #ed145b;
-  font: bold 30px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+  font: bold 30px/28px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
+  margin: 20px 0 10px;
+  display: block;
 }
 h2,
 .h2-like {
   color: #464545;
-  font: bold 20px Arial, Helvetica, sans-serif;
-  line-height: 22px;
+  font: bold 20px/22px Arial, Helvetica, sans-serif;
 }
 h3,
 .h3-like {
@@ -1952,6 +1950,11 @@ h6,
 .h6-like {
   color: #ed145b;
 }
+.description {
+  font: 13px/18px Arial, Helvetica, sans-serif;
+  color: #5f5f5f;
+  margin-bottom: 10px;
+}
 .bt {
   display: block;
   border: 0;
@@ -1971,7 +1974,7 @@ h6,
   color: #464545;
 }
 .bt.grisC {
-  background-color: #606060;
+  background-color: #8c8a8a;
   color: #ffffff;
 }
 .bt.sombre {
@@ -2277,6 +2280,10 @@ h6,
   background-color: #ffffff;
   border: 5px solid #e6e5e5;
 }
+.radiusBox2.greyM {
+  background-color: #e6e5e5;
+  border: 5px solid #8c8a8a;
+}
 .radiusBox2.greyF {
   background-color: #ffffff;
   border: 5px solid #464545;
@@ -2320,6 +2327,133 @@ h6,
 }
 .radiusBox2 .stamp span {
   margin-left: -6px;
+}
+.radiusBox2.form {
+  padding: 0;
+}
+.radiusBox2.form h2 {
+  background-color: #8c8a8a;
+  color: #ffffff;
+  text-transform: uppercase;
+  font: bold 22px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+  height: 40px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 40px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+  padding-left: 10px;
+}
+.radiusBox2.form h2 > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: inherit;
+}
+.radiusBox2.form h2 > img {
+  vertical-align: middle;
+}
+.radiusBox2.form input,
+.radiusBox2.form textarea {
+  font: bold 12px Arial, Helvetica, sans-serif;
+  color: #8c8a8a;
+}
+.radiusBox2.form input[type="text"],
+.radiusBox2.form input[type="password"] {
+  background-color: #ffffff;
+  width: 216px;
+  height: 27px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 27px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+  padding: 0 7px;
+  border: 0 none;
+}
+.radiusBox2.form input[type="text"] > *,
+.radiusBox2.form input[type="password"] > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: inherit;
+}
+.radiusBox2.form input[type="text"] > img,
+.radiusBox2.form input[type="password"] > img {
+  vertical-align: middle;
+}
+.radiusBox2.form textarea {
+  background-color: #ffffff;
+  width: 216px;
+  height: 81px;
+  padding: 0 7px;
+  border: 0 none;
+}
+.radiusBox2.form .mandatory {
+  font-size: 10px;
+}
+.radiusBox2.form .label {
+  font: bold 15px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+  color: #8c8a8a;
+  text-transform: uppercase;
+}
+.radiusBox2.form form {
+  padding: 15px 20px;
+}
+.radiusBox2.form form table {
+  width: 566px;
+  margin-bottom: 15px;
+}
+.radiusBox2.form form table td {
+  display: table-cell;
+  padding: 5px 10px 5px 0;
+  vertical-align: middle;
+  width: 144px !important;
+}
+.radiusBox2.form form table input[type="text"],
+.radiusBox2.form form table textarea,
+.radiusBox2.form form table select,
+.radiusBox2.form form table .newListSelected {
+  width: 134px;
+}
+.radiusBox2.form form table input[type="checkbox"] {
+  margin-right: 5px;
+}
+.radiusBox2.form form table .checkbox {
+  height: 27px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 27px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+}
+.radiusBox2.form form table .checkbox > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: inherit;
+}
+.radiusBox2.form form table .checkbox > img {
+  vertical-align: middle;
+}
+.radiusBox2.form form table textarea {
+  width: 134px;
+  height: 62px;
+}
+.radiusBox2.form form table .datepicker button {
+  right: 0;
+}
+.radiusBox2.form form table .label {
+  width: 134px;
+  line-height: 17px;
+  padding: 0 10px 0 0;
+  text-align: right;
+}
+.radiusBox2.form form .bt {
+  margin-bottom: 15px;
 }
 .tooltip {
   outline: none;
@@ -2387,7 +2521,7 @@ h6,
   text-transform: uppercase;
   padding: 5px 10px;
   text-decoration: none;
-  text-align: right;
+  text-align: left;
   -webkit-border-radius: 10px;
   border-radius: 10px;
   z-index: 10;
@@ -2415,6 +2549,8 @@ h6,
 }
 .errors ul li {
   margin: 5px 0;
+  width: 288px;
+  white-space: normal;
 }
 .callout {
   z-index: 20;
@@ -2651,7 +2787,6 @@ input[type="radio"] {
   font-size: 14px;
   font-weight: bold;
   width: 68px;
-  padding-right: 10px;
   height: 61px;
   /* Centrer verticalement une ligne de texte */
 
@@ -2684,10 +2819,6 @@ input[type="radio"] {
 .fine {
   font-size: 50%;
 }
-/*.multiple-background-false .cover{
-  min-height: 100%;
-  min-width: 100%;
-}*/
 .multiple-background-true .cover {
   background-size: cover;
 }
@@ -2847,7 +2978,73 @@ body.edito table td {
   height: 27px;
   background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat scroll 0 -135px transparent;
 }
-.SSContainerDivWrapper {
+.radiusBox2.form .SSContainerDivWrapper {
+  min-width: 134px;
+}
+.radiusBox2.form ul.newList a {
+  height: 27px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 27px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+}
+.radiusBox2.form ul.newList a > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: inherit;
+}
+.radiusBox2.form ul.newList a > img {
+  vertical-align: middle;
+}
+.radiusBox2.form .newListSelected {
+  width: 134px;
+  height: 27px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 27px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+  margin-right: 0px;
+}
+.radiusBox2.form .newListSelected > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: inherit;
+}
+.radiusBox2.form .newListSelected > img {
+  vertical-align: middle;
+}
+.radiusBox2.form .newListSelected .selectedTxt {
+  width: 100px;
+  height: 27px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 27px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+  padding: 0 27px 0 7px;
+}
+.radiusBox2.form .newListSelected .selectedTxt > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: inherit;
+}
+.radiusBox2.form .newListSelected .selectedTxt > img {
+  vertical-align: middle;
+}
+.radiusBox2.form .newListSelected .selectedTxt:after {
+  width: 27px;
+  height: 27px;
+  background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat scroll 0 -108px transparent;
+}
+.stylish-select .SSContainerDivWrapper {
   margin: 0;
   padding: 0;
   position: absolute;
@@ -2855,7 +3052,7 @@ body.edito table td {
   left: 0;
   z-index: 100;
 }
-ul.newList {
+.stylish-select ul.newList {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -2864,11 +3061,11 @@ ul.newList {
   border: 1px solid #ccc;
   overflow: auto;
 }
-ul.newList * {
+.stylish-select ul.newList * {
   margin: 0;
   padding: 0;
 }
-ul.newList a {
+.stylish-select ul.newList a {
   color: #464545;
   text-decoration: none;
   display: block;
@@ -2876,28 +3073,28 @@ ul.newList a {
   white-space: nowrap;
   cursor: pointer;
 }
-.newListSelected {
+.stylish-select .newListSelected {
   float: left;
   background-color: #e6e5e5;
   position: relative;
 }
-.newListSelected .selectedTxt:after {
+.stylish-select .newListSelected .selectedTxt:after {
   content: "";
   display: block;
   position: absolute;
   top: 0;
   right: 0;
 }
-.newListSelected * {
+.stylish-select .newListSelected * {
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
   cursor: pointer;
 }
-ul.newList li a:focus {
+.stylish-select ul.newList li a:focus {
   -moz-outline-style: none;
 }
-.selectedTxt {
+.stylish-select .selectedTxt {
   overflow: hidden;
   position: absolute;
   text-overflow: ellipsis;
@@ -2905,72 +3102,65 @@ ul.newList li a:focus {
   margin-right: 0;
   background-color: #ffffff;
 }
-ul.newList.optGroup li a {
+.stylish-select ul.newList.optGroup li a {
   padding: 0 8px 0 18px;
 }
-ul.newList.optGroup li.optGroup-like a {
+.stylish-select ul.newList.optGroup li.optGroup-like a {
   padding: 0 8px;
   font-weight: bold;
 }
-.hiLite {
+.stylish-select .hiLite {
   background: #ED145B!important;
   color: #ffffff !important;
 }
-.newListHover {
+.stylish-select .newListHover {
   background-color: #ccc!important;
   color: #464545 !important;
   cursor: default;
 }
-.newListDisabled {
+.stylish-select input[disabled],
+.stylish-select .newListDisabled,
+.stylish-select .newListItemDisabled,
+.stylish-select .newListOptionDisabled {
   opacity: 0.6;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
   filter: alpha(opacity=60);
 }
-.newListItemDisabled {
-  opacity: 0.6;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
-  filter: alpha(opacity=60);
-}
-.newListOptionDisabled {
-  opacity: 0.6;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
-  filter: alpha(opacity=60);
-}
-.newListSelHover,
-.newListSelFocus {
+.stylish-select .newListSelHover,
+.stylish-select .newListSelFocus {
   cursor: default;
 }
-.newListOptionTitle {
+.stylish-select .newListOptionTitle {
   font-weight: bold;
 }
-.newListOptionTitle ul {
+.stylish-select .newListOptionTitle ul {
   margin: 3px 0 0;
 }
-.newListOptionTitle li {
+.stylish-select .newListOptionTitle li {
   font-weight: normal;
 }
-.newListSelected {
+.stylish-select .newListSelected {
   font: bold 12px/27px Arial, Helvetica, sans-serif;
   color: #464545;
   color: #8c8a8a;
 }
-.newListSelected .SSContainerDivWrapper .newListHover {
+.stylish-select .newListSelected .SSContainerDivWrapper .newListHover {
   background-color: #ccc!important;
   color: #464545 !important;
 }
-.newListSelected .SSContainerDivWrapper ul.newList li a {
+.stylish-select .newListSelected .SSContainerDivWrapper ul.newList li a {
   background-color: #ffffff;
   color: #8c8a8a;
 }
-.newListSelected .SSContainerDivWrapper ul.newList.optGroup li.optGroup-like a {
+.stylish-select .newListSelected .SSContainerDivWrapper ul.newList.optGroup li.optGroup-like a {
   background-color: #8c8a8a;
   color: #ffffff;
 }
-.newListSelected .SSContainerDivWrapper ul.newList li a.newListHover {
+.stylish-select .newListSelected .SSContainerDivWrapper ul.newList li a.newListHover {
   background-color: #e6e5e5 !important;
   color: #464545 !important;
 }
-.newListSelected .SSContainerDivWrapper ul.newList.optGroup li.optGroup-like a.newListHover {
+.stylish-select .newListSelected .SSContainerDivWrapper ul.newList.optGroup li.optGroup-like a.newListHover {
   background-color: #464545 !important;
   color: #ffffff !important;
 }
@@ -4482,7 +4672,7 @@ ul.newList.optGroup li.optGroup-like a {
   text-decoration: none;
   text-transform: uppercase;
   font-weight: bold;
-  color: #606060;
+  color: #8c8a8a;
 }
 .itemResult .itemResultRight .titDest a.ville {
   color: #ed145b;
@@ -5010,6 +5200,7 @@ ul.newList.optGroup li.optGroup-like a {
 }
 .booking iframe {
   width: 100%;
+  min-height: 500px;
 }
 .booking #basketContainer,
 .booking #confirmContainer,
@@ -5234,6 +5425,152 @@ ul.newList.optGroup li.optGroup-like a {
   text-align: center;
 }
 .booking #headerContainer #nav .topnavSub li.tab {
+  float: none;
+  display: inline-block;
+}
+/* page account */
+.account {
+  /* STEPS */
+
+  /* COMMON */
+
+  /* SEARCH */
+
+}
+.account #stepNav {
+  width: 976px;
+  height: 50px;
+  font: bold 23px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  position: relative;
+  background: #464545;
+  margin: 20px 0 20px -24px;
+  z-index: 30;
+}
+.account #stepNav ul {
+  width: auto;
+  text-align: center;
+  float: left;
+  position: relative;
+  left: 50%;
+}
+.account #stepNav ul li.tab {
+  margin: 0;
+  padding: 0;
+  float: none;
+  float: left;
+  position: relative;
+  right: 50%;
+  color: #ffffff;
+}
+.account #stepNav ul li.tab:hover,
+.account #stepNav ul li.tab.current {
+  background: #ed145b;
+}
+.account #stepNav ul li.tab a {
+  position: relative;
+  display: block;
+  padding: 0 10px;
+  color: #ffffff;
+  text-decoration: none;
+  height: 50px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 50px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+  float: left;
+}
+.account #stepNav ul li.tab a > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: inherit;
+}
+.account #stepNav ul li.tab a > img {
+  vertical-align: middle;
+}
+.account #stepNav ul li.tab:hover,
+.account #stepNav ul li.tab.current a {
+  text-decoration: none;
+}
+.account #stepNav ul li.tab.current > a:after {
+  content: url("../../images/vacancesdirectes/common/pict/Triangle-Tab.png");
+  height: 8px;
+  left: 50%;
+  margin-left: -12px;
+  position: absolute;
+  top: 24px;
+  width: 22px;
+  z-index: 50;
+}
+.account #stepNav ul li.tab.completed a:before {
+  content: "";
+  background: url("../../images/vacancesdirectes/common/sprites/sprite-40.png") no-repeat 0 -165px transparent;
+  width: 40px;
+  height: 50px;
+  float: left;
+  margin-right: 10px;
+}
+.account h1 {
+  margin: 10px 0 20px;
+  float: left;
+}
+.account h1 span {
+  color: #464545;
+}
+.account .logout {
+  float: right;
+  margin-top: 9px;
+}
+.account iframe {
+  width: 100%;
+  min-height: 500px;
+  overflow: hidden;
+}
+.account .error {
+  margin-bottom: 10px;
+  font: 12px Arial, Helvetica, sans-serif;
+  color: #f58220;
+}
+.account .error li:before {
+  content: "-";
+  padding-right: 3px;
+}
+.account #headerContainer #nav {
+  margin-left: -24px;
+  width: 976px;
+  height: auto;
+  font-size: 18px;
+  font-weight: bold;
+}
+.account #headerContainer #nav ul {
+  width: 858px;
+  margin: 0 auto;
+  text-align: center;
+}
+.account #headerContainer #nav ul li.tab {
+  width: 186px;
+  margin: 0 12px;
+  float: none;
+  display: inline-block;
+}
+.account #headerContainer #nav ul li.tab a {
+  text-decoration: underline;
+}
+.account #headerContainer #nav ul li.tab a:hover {
+  text-decoration: none;
+}
+.account #headerContainer #nav ul li.tab.current a {
+  text-decoration: none;
+}
+.account #headerContainer #nav .topnavSub {
+  width: 100%;
+  background: #ed145b;
+  text-align: center;
+}
+.account #headerContainer #nav .topnavSub li.tab {
   float: none;
   display: inline-block;
 }
@@ -6123,7 +6460,7 @@ aside *.placeholder {
   z-index: 1;
   margin: -70px 0 0 0;
 }
-#searchBloc form li {
+#searchBloc form ol > li {
   margin-bottom: 10px;
 }
 #searchBloc .newListSelected {
@@ -6159,6 +6496,7 @@ aside *.placeholder {
   background-color: #ffffff;
   color: #8c8a8a;
   font-weight: bold;
+  padding: 0 10px;
 }
 #searchBloc input .SSContainerDivWrapper .newListOptionTitle,
 #searchBloc select .SSContainerDivWrapper .newListOptionTitle,

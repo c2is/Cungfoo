@@ -9,11 +9,13 @@
     <h1 itemprop="name">
         {{ h1 }}
     </h1>
+    {% if intro != "" %}<p class="description">{{ intro | nl2br }}</p>{% endif %}
     {% if list.element|length > 0 %}
     {% include 'Listing/_filters.twig' %}
     {% endif %}
     {% include 'Listing/_gmap.twig' %}
     {% include 'Listing/_listing.twig' %}
+    {% if texteOffre != "" %}<p>{{ texteOffre }}</p>{% endif %}
 {% endblock %}
 
 {% block rightColumn %}

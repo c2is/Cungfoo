@@ -1,0 +1,45 @@
+.account{
+
+/* STEPS */
+  #stepNav{width:976px;height:50px;font:bold 23px @ptnarrow;text-transform:uppercase;position:relative;background:@colorBgGrisF;margin:20px 0 20px -@gutter;z-index:30;
+    ul{width:auto;text-align:center;float:left;position:relative;left:50%;
+      li.tab{margin:0;padding:0;float:none;float:left;position:relative;right:50%;color:@colorBlanc;
+        &:hover,
+        &.current{background:@colorFushia;}
+        a{position:relative;display:block;padding:0 10px;color:@colorBlanc;text-decoration:none;._verticalCenter(50px);float:left;}
+        &:hover,
+        &.current a{text-decoration:none;}
+        &.current > a:after {content:url("../../images/vacancesdirectes/common/pict/Triangle-Tab.png");height:8px;left:50%;margin-left:-12px;position: absolute;top:24px;width:22px;z-index:50;}
+        &.completed a:before {content:"";background:url("../../images/vacancesdirectes/common/sprites/sprite-40.png") no-repeat 0 -165px transparent;width:40px;height:50px;float:left;margin-right:10px;}
+      }
+    }
+  }
+
+/* COMMON */
+h1 {margin:10px 0 20px;float:left;}
+h1 span {color:@colorBgGrisF;}
+.logout{float:right;margin-top:9px;}
+iframe{width:100%;min-height:500px;overflow:hidden;}
+
+.error{margin-bottom:10px;font:12px @arial;color:@colorRubricOrange;
+  li:before{content:"-";padding-right:3px;}
+}
+
+
+/* SEARCH */
+#headerContainer #nav{margin-left:-@gutter;width:976px;height:auto;font-size:18px;font-weight:bold;
+  ul{width:858px;margin:0 auto;text-align:center;
+    li.tab{width:186px;margin:0 12px;float:none;display:inline-block;
+      a{text-decoration:underline;
+        &:hover{text-decoration:none;}
+      }
+      &.current a{text-decoration:none;}
+    }
+  }
+  .topnavSub{width:100%;background:@colorFushia;text-align:center;
+    li.tab{float:none;display:inline-block;}
+  }
+}
+
+
+}

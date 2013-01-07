@@ -20,6 +20,11 @@ use VacancesDirectes\Controller;
 
 use Resalys\Controller\WrapperController;
 
+$app->before(function(Request $request) use ($app) {
+    // gestion de la remonté d'erreurs du formulaire de connexion à mon compte
+    $app['login_errors'] = $app['security.last_error']($request);
+});
+
 $app->mount('/',                                      new Controller\HomepageController());
 $app->mount('/',                                      new Controller\EditoController());
 $app->mount('/menu',                                  new Controller\MenuController());
@@ -36,6 +41,7 @@ $app->mount('/bons-plans',                            new Controller\BonsPlansCo
 $app->mount('/compte',                                new Controller\CompteController());
 $app->mount('/vos-week-ends',                         new Controller\VosWeekEndsController());
 $app->mount('/esi',                                   new Controller\EsiController());
+$app->mount('/assurance',                             new Controller\AnnulationController());
 
 $app->match('/top-campings',      'VacancesDirectes\Controller\TopCampingController::indexAction')->bind('top_campings');
 

@@ -25,3 +25,9 @@ services:
             base_id:  ##base_id##
             username: web_ce_achat_fr
             password: web_ce_achat_fr
+    auth_indiv:
+        location: ##url##/rsl/dwsdl?namespace=webresCustomer
+        default_envelope:
+            base_id:  ##base_id##
+            username: web_fr
+            password: DInan22101

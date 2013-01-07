@@ -9,6 +9,8 @@
 
 {% block bodyClass %} fiche{% endblock %}
 
+{% block canonical %}<link rel="canonical" href="{{ referer }}" />{% endblock %}
+
 {% block leftColumn %}
 <a class="bt gris left" href="{{ historyBack ~ "#camping-" ~ etab.slug }}">&lt; Retour</a> <br />
 
@@ -200,6 +202,7 @@
             </ul></dd>
         </dl>
         {% endif %}
+        {%if hasBaignade %}
         <dl>
             <dt><span>{{ "fiche.baignades.top" | trans }}<br />{{ "fiche.baignades.bottom" | trans }}</span></dt>
             <dd class="equipements"><ul>
@@ -208,6 +211,7 @@
                 {% endfor %}
             </ul></dd>
         </dl>
+        {% endif %}
         {% if etab.serviceComplementaires | length %}
         <dl>
             <dt><span>{{ "fiche.services_complementaires" | trans }}</span></dt>

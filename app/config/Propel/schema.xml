@@ -939,4 +939,39 @@
         </behavior>
     </table>
 
+    <table name="demande_annulation">
+        <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true"/>
+        <column name="assure_nom" type="varchar" required="true"/>
+        <column name="assure_prenom" type="varchar" required="true"/>
+        <column name="assure_adresse" type="longvarchar" required="true"/>
+        <column name="assure_code_postal" type="varchar" required="true"/>
+        <column name="assure_ville" type="varchar" required="true"/>
+        <column name="assure_pays" type="varchar" required="true"/>
+        <column name="assure_mail" type="varchar" required="true"/>
+        <column name="assure_telephone" type="varchar" required="true"/>
+        <column name="camping_id" type="integer" required="true"/>
+        <column name="camping_num_resa" type="varchar" required="true"/>
+        <column name="camping_montant_sejour" type="varchar" required="true"/>
+        <column name="camping_montant_verse" type="varchar" required="true"/>
+        <column name="sinistre_nature" type="enum" valueSet="demande_annulation.sinistre_nature.annulation, demande_annulation.sinistre_nature.interruption" required="true"/>
+        <column name="sinistre_suite" type="enum" valueSet="demande_annulation.sinistre_suite.maladie, demande_annulation.sinistre_suite.accident, demande_annulation.sinistre_suite.autre" required="true"/>
+        <column name="sinistre_date" type="varchar" required="true"/>
+        <column name="sinistre_resume" type="longvarchar" required="true"/>
+        <column name="file_1" type="varchar"/>
+        <column name="file_2" type="varchar"/>
+        <column name="file_3" type="varchar"/>
+        <column name="file_4" type="varchar"/>
+        <behavior name="timestampable" />
+        <behavior name="active" />
+
+        <foreign-key foreignTable="etablissement">
+            <reference local="camping_id" foreign="id"/>
+        </foreign-key>
+
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/demandes-annulation" />
+            <parameter name="crud_type_file" value="file_1, file_2, file_3, file_4" />
+        </behavior>
+    </table>
+
 </database>

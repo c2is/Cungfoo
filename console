@@ -11,6 +11,8 @@ $console = $app['console'];
 $console->add(new \Propel\Command\Fixtures\LoadCommand());
 $console->add(new \Propel\Command\GenerateCommand());
 $console->add(new \Propel\Command\LoadSchemaCommand());
+$console->add(new \Propel\Command\Migration\UpCommand());
+$console->add(new \Propel\Command\Migration\DownCommand());
 
 $console->add(new \Cungfoo\Command\Cache\ClearCommand());
 $console->add(new \Cungfoo\Command\Logs\ClearCommand());
