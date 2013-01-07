@@ -236,10 +236,12 @@ class {$this->getClassname()} extends AppAwareType
         }
         elseif (self::CRUDABLE_TYPE_TEXTRICH === $column->getType())
         {
+            $column->setType(PropelTypes::LONGVARCHAR);
             return 'textrich';
         }
         elseif (self::CRUDABLE_TYPE_FILE === $column->getType())
         {
+            $column->setType(PropelTypes::VARCHAR);
             return 'cungfoo_file';
         }
         else
@@ -390,7 +392,7 @@ class {$this->getClassname()} extends AppAwareType
                 $i18nColumns[$i18nColumn->getName()] = array(
                     'required'      => false,
                     'label'         => sprintf('%s.%s', $this->getTable()->getName(), $i18nColumn->getName()),
-                    'type'          => $this->getColumnType($i18nColumn),
+                    'type'          => $columnType,
                     'constraints'   => $this->addConstraints($i18nColumn),
                 );
 

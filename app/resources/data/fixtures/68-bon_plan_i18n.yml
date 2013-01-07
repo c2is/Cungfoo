@@ -1,4 +1,4 @@
-\Cungfoo\Model\BonPlanI18N:
+\Cungfoo\Model\BonPlanI18n:
     1_de:
         Id: 1
         Locale: de
@@ -125,5 +125,5 @@
         Name: 'Lou Broustaricq ***'
         Slug: 'lou-broustaricq'
         Introduction: 'Landes'
-        Description: 'Lorem ipsum dolor sit amet'   
+        Description: 'Lorem ipsum dolor sit amet'
         Indice: 'pour 4 personnes'

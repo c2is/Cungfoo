@@ -45,7 +45,7 @@ class EditoI18nTableMap extends TableMap
         $this->addForeignPrimaryKey('id', 'Id', 'INTEGER' , 'edito', 'id', true, null, null);
         $this->addPrimaryKey('locale', 'Locale', 'VARCHAR', true, 5, 'fr');
         $this->addColumn('name', 'Name', 'VARCHAR', false, 255, null);
-        $this->addColumn('description', 'Description', 'textrich', true, null, null);
+        $this->addColumn('description', 'Description', 'LONGVARCHAR', true, null, null);
         // validators
     } // initialize()
 
