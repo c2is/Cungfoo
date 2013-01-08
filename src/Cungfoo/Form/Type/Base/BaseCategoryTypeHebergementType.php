@@ -58,6 +58,14 @@ class BaseCategoryTypeHebergementType extends AppAwareType
                         new Assert\NotBlank(),
                     ),
                 ),
+                'slug' => array(
+                    'required' => false,
+                    'label' => 'category_type_hebergement.slug',
+                    'type' => 'text',
+                    'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+                ),
             ),
             'required' => false,
         ));

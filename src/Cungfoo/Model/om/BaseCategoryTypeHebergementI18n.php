@@ -65,6 +65,12 @@ abstract class BaseCategoryTypeHebergementI18n extends BaseObject implements Per
     protected $name;
 
     /**
+     * The value for the slug field.
+     * @var        string
+     */
+    protected $slug;
+
+    /**
      * @var        CategoryTypeHebergement
      */
     protected $aCategoryTypeHebergement;
@@ -135,6 +141,16 @@ abstract class BaseCategoryTypeHebergementI18n extends BaseObject implements Per
     }
 
     /**
+     * Get the [slug] column value.
+     *
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
      * Set the value of [id] column.
      *
      * @param int $v new value
@@ -202,6 +218,27 @@ abstract class BaseCategoryTypeHebergementI18n extends BaseObject implements Per
     } // setName()
 
     /**
+     * Set the value of [slug] column.
+     *
+     * @param string $v new value
+     * @return CategoryTypeHebergementI18n The current object (for fluent API support)
+     */
+    public function setSlug($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->slug !== $v) {
+            $this->slug = $v;
+            $this->modifiedColumns[] = CategoryTypeHebergementI18nPeer::SLUG;
+        }
+
+
+        return $this;
+    } // setSlug()
+
+    /**
      * Indicates whether the columns in this object are only set to default values.
      *
      * This method can be used in conjunction with isModified() to indicate whether an object is both
@@ -240,6 +277,7 @@ abstract class BaseCategoryTypeHebergementI18n extends BaseObject implements Per
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
             $this->locale = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
             $this->name = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
+            $this->slug = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -248,7 +286,7 @@ abstract class BaseCategoryTypeHebergementI18n extends BaseObject implements Per
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 3; // 3 = CategoryTypeHebergementI18nPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 4; // 4 = CategoryTypeHebergementI18nPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating CategoryTypeHebergementI18n object", $e);
@@ -481,6 +519,9 @@ abstract class BaseCategoryTypeHebergementI18n extends BaseObject implements Per
         if ($this->isColumnModified(CategoryTypeHebergementI18nPeer::NAME)) {
             $modifiedColumns[':p' . $index++]  = '`name`';
         }
+        if ($this->isColumnModified(CategoryTypeHebergementI18nPeer::SLUG)) {
+            $modifiedColumns[':p' . $index++]  = '`slug`';
+        }
 
         $sql = sprintf(
             'INSERT INTO `category_type_hebergement_i18n` (%s) VALUES (%s)',
@@ -500,6 +541,9 @@ abstract class BaseCategoryTypeHebergementI18n extends BaseObject implements Per
                         break;
                     case '`name`':
                         $stmt->bindValue($identifier, $this->name, PDO::PARAM_STR);
+                        break;
+                    case '`slug`':
+                        $stmt->bindValue($identifier, $this->slug, PDO::PARAM_STR);
                         break;
                 }
             }
@@ -649,6 +693,9 @@ abstract class BaseCategoryTypeHebergementI18n extends BaseObject implements Per
             case 2:
                 return $this->getName();
                 break;
+            case 3:
+                return $this->getSlug();
+                break;
             default:
                 return null;
                 break;
@@ -681,6 +728,7 @@ abstract class BaseCategoryTypeHebergementI18n extends BaseObject implements Per
             $keys[0] => $this->getId(),
             $keys[1] => $this->getLocale(),
             $keys[2] => $this->getName(),
+            $keys[3] => $this->getSlug(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aCategoryTypeHebergement) {
@@ -729,6 +777,9 @@ abstract class BaseCategoryTypeHebergementI18n extends BaseObject implements Per
             case 2:
                 $this->setName($value);
                 break;
+            case 3:
+                $this->setSlug($value);
+                break;
         } // switch()
     }
 
@@ -756,6 +807,7 @@ abstract class BaseCategoryTypeHebergementI18n extends BaseObject implements Per
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
         if (array_key_exists($keys[1], $arr)) $this->setLocale($arr[$keys[1]]);
         if (array_key_exists($keys[2], $arr)) $this->setName($arr[$keys[2]]);
+        if (array_key_exists($keys[3], $arr)) $this->setSlug($arr[$keys[3]]);
     }
 
     /**
@@ -770,6 +822,7 @@ abstract class BaseCategoryTypeHebergementI18n extends BaseObject implements Per
         if ($this->isColumnModified(CategoryTypeHebergementI18nPeer::ID)) $criteria->add(CategoryTypeHebergementI18nPeer::ID, $this->id);
         if ($this->isColumnModified(CategoryTypeHebergementI18nPeer::LOCALE)) $criteria->add(CategoryTypeHebergementI18nPeer::LOCALE, $this->locale);
         if ($this->isColumnModified(CategoryTypeHebergementI18nPeer::NAME)) $criteria->add(CategoryTypeHebergementI18nPeer::NAME, $this->name);
+        if ($this->isColumnModified(CategoryTypeHebergementI18nPeer::SLUG)) $criteria->add(CategoryTypeHebergementI18nPeer::SLUG, $this->slug);
 
         return $criteria;
     }
@@ -843,6 +896,7 @@ abstract class BaseCategoryTypeHebergementI18n extends BaseObject implements Per
         $copyObj->setId($this->getId());
         $copyObj->setLocale($this->getLocale());
         $copyObj->setName($this->getName());
+        $copyObj->setSlug($this->getSlug());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -960,6 +1014,7 @@ abstract class BaseCategoryTypeHebergementI18n extends BaseObject implements Per
         $this->id = null;
         $this->locale = null;
         $this->name = null;
+        $this->slug = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();

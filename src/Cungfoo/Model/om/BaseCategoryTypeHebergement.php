@@ -1851,6 +1851,30 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
         return $this;
     }
 
+
+        /**
+         * Get the [slug] column value.
+         *
+         * @return string
+         */
+        public function getSlug()
+        {
+        return $this->getCurrentTranslation()->getSlug();
+    }
+
+
+        /**
+         * Set the value of [slug] column.
+         *
+         * @param string $v new value
+         * @return CategoryTypeHebergementI18n The current object (for fluent API support)
+         */
+        public function setSlug($v)
+        {    $this->getCurrentTranslation()->setSlug($v);
+
+        return $this;
+    }
+
     // crudable behavior
 
     /**

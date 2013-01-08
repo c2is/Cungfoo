@@ -37,13 +37,13 @@ abstract class BaseCategoryTypeHebergementI18nPeer
     const TM_CLASS = 'CategoryTypeHebergementI18nTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 3;
+    const NUM_COLUMNS = 4;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 3;
+    const NUM_HYDRATE_COLUMNS = 4;
 
     /** the column name for the id field */
     const ID = 'category_type_hebergement_i18n.id';
@@ -53,6 +53,9 @@ abstract class BaseCategoryTypeHebergementI18nPeer
 
     /** the column name for the name field */
     const NAME = 'category_type_hebergement_i18n.name';
+
+    /** the column name for the slug field */
+    const SLUG = 'category_type_hebergement_i18n.slug';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -73,12 +76,12 @@ abstract class BaseCategoryTypeHebergementI18nPeer
      * e.g. CategoryTypeHebergementI18nPeer::$fieldNames[CategoryTypeHebergementI18nPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Name', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'name', ),
-        BasePeer::TYPE_COLNAME => array (CategoryTypeHebergementI18nPeer::ID, CategoryTypeHebergementI18nPeer::LOCALE, CategoryTypeHebergementI18nPeer::NAME, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'NAME', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'name', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Name', 'Slug', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'name', 'slug', ),
+        BasePeer::TYPE_COLNAME => array (CategoryTypeHebergementI18nPeer::ID, CategoryTypeHebergementI18nPeer::LOCALE, CategoryTypeHebergementI18nPeer::NAME, CategoryTypeHebergementI18nPeer::SLUG, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'NAME', 'SLUG', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'name', 'slug', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
     );
 
     /**
@@ -88,12 +91,12 @@ abstract class BaseCategoryTypeHebergementI18nPeer
      * e.g. CategoryTypeHebergementI18nPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Name' => 2, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, ),
-        BasePeer::TYPE_COLNAME => array (CategoryTypeHebergementI18nPeer::ID => 0, CategoryTypeHebergementI18nPeer::LOCALE => 1, CategoryTypeHebergementI18nPeer::NAME => 2, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'NAME' => 2, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Name' => 2, 'Slug' => 3, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'slug' => 3, ),
+        BasePeer::TYPE_COLNAME => array (CategoryTypeHebergementI18nPeer::ID => 0, CategoryTypeHebergementI18nPeer::LOCALE => 1, CategoryTypeHebergementI18nPeer::NAME => 2, CategoryTypeHebergementI18nPeer::SLUG => 3, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'NAME' => 2, 'SLUG' => 3, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'slug' => 3, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
     );
 
     /**
@@ -170,10 +173,12 @@ abstract class BaseCategoryTypeHebergementI18nPeer
             $criteria->addSelectColumn(CategoryTypeHebergementI18nPeer::ID);
             $criteria->addSelectColumn(CategoryTypeHebergementI18nPeer::LOCALE);
             $criteria->addSelectColumn(CategoryTypeHebergementI18nPeer::NAME);
+            $criteria->addSelectColumn(CategoryTypeHebergementI18nPeer::SLUG);
         } else {
             $criteria->addSelectColumn($alias . '.id');
             $criteria->addSelectColumn($alias . '.locale');
             $criteria->addSelectColumn($alias . '.name');
+            $criteria->addSelectColumn($alias . '.slug');
         }
     }
 
