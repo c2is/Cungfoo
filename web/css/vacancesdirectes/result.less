@@ -1,3 +1,5 @@
+.bdPict{margin:20px 0;}
+
 .nbResult{font:18px/0px @ptnarrow;color:@colorFushia;width:125px;height:98px;float:left;border-right: 1px solid @colorFushia;text-align:center;text-transform: uppercase;padding-top:22px;margin-bottom:30px;
   .nb{display:block;font:bold 45px Arial, sans-serif;}
 }
@@ -26,13 +28,17 @@
 .disclaim{display:none !important;}
 
 #results{clear:both;}
+  h2 + #results{margin-top:25px;}
+
 .itemResult{position:relative;border:4px solid @colorBgGrisM;._border-radius(15px);margin-bottom:15px;
   .itemResultTitle{background:@colorBgGrisM;font:bold 25px/28px @ptnarrow;padding:3px 5px 5px;color:@colorBlanc;
+    &.itemResultTitleHbgt{text-transform:uppercase;}
     a{color:@colorBlanc;text-transform:uppercase;text-decoration:none;}
     .dates{font:bold 16px/18px @arial;text-transform:none;}
     [type="checkbox"]{float:right;display:none;}
   }
   .itemResultLeft{padding:10px 0 10px 10px;float:left;width:175px;
+    &.itemResultLeftHbgt{width:200px;}
     .boxborder{margin:0;}
     .ratingFiche{float:none;margin:0;font-size:11px;display:none;
       .reviewCount{margin-left:0;}
@@ -40,10 +46,14 @@
     }
   }
   .itemResultCenter{padding:10px;float:left;width:200px;
+    &.itemResultCenterHbgt{width:408px;}
     .bt{display:inline-block;margin-top:10px;}
     .pictos{margin-top:10px;
       img{}
     }
+    .ircHbgtTitle{display:block;font:bold 25px @ptnarrow;text-transform:uppercase;color:@colorGris0;}
+    .ircHbgtSubTitle{display:block;font:21px @ptnarrow;color:@colorGris0;margin-bottom:10px;}
+    .ircHbgtDesc{display:block;font:13px @arial;color:@colorGris0;}
   }
   .itemResultRight{padding:10px;float:left;width:233px;text-align:right;
     img{float:right;}
@@ -75,6 +85,7 @@
     .bt.big{font-weight:bold;margin:20px auto;display:inline-block;padding:7px 15px;}
   }
   .itemResultBottom{min-height:100px;clear:both;background:@colorGris3;padding:20px 10px;position:relative;._border-radius(0 0 11px 11px);
+    &.itemResultBottomHbgt{min-height:0;padding:10px;}
     [type="radio"]{vertical-align:-2px;}
     .linePrice{
       label{position:relative;float:left;clear:left;width:345px;padding-left:20px;margin-bottom:3px;
@@ -121,6 +132,14 @@
     }
   }
 }
+
+.bandeau{position:relative;clear:both;}
+.sliderStain{position:absolute;text-align:center;right:10px;top:10px;width:228px;._verticalCenter(216px,15px);background:url("../../images/vacancesdirectes/common/ui/stain-1.png") no-repeat 0 0 transparent;background-size:100%;
+  .content{color:@colorOrange;margin:10px 30px 0;
+    .headline{font:bold 27px/27px @ptnarrow;text-transform:uppercase;overflow:hidden;text-overflow:ellipsis;max-height:95px;}
+  }
+}
+
 /* bouton Afficher plus de resultats */
 #btPlusResults{clear:both;margin:20px auto;height:43px;font-size:23px;}
 
