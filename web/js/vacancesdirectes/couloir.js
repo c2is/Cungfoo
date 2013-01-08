@@ -90,8 +90,8 @@ head.ready(function(){
         // datepickers
         var d = new Date();
         var y = d.getFullYear();
-        $('.occupantHeader[style*="adult"]').parent('.anOccupant').addClass('adult');
-        $('.occupantHeader[style*="child"]').parent('.anOccupant').addClass('child');
+//        $('.occupantHeader[style*="adult"]').parent('.anOccupant').addClass('adult');
+//        $('.occupantHeader[style*="child"]').parent('.anOccupant').addClass('child');
         $(".anOccupant").each(function(index,value){
             var datepickerInput = $(this).find('.control_date')
             var onBlurAction = datepickerInput.attr('onblur');
@@ -99,12 +99,26 @@ head.ready(function(){
             if(onBlurAction.substring(0, 1) == ';'){
                 onBlurAction = onBlurAction.substring(1, onBlurAction.length - 1);
             }
-            function onBlur(){
-               //console.log(this.value);
-               eval(onBlurAction);
+            function onClick(){
+                console.log("CLICK");
+                datepickerInput.removeAttr('onblur');
             }
-//            console.log(onBlurAction);
-            datepickerInput.removeAttr('onblur');
+//            var dateSelected = false;
+            function onSelect(){
+                console.log("SELECT");
+//                dateSelected = true;
+                eval(onBlurAction);
+            }
+            function onBlur(){
+                console.log("BLUR");
+                //console.log(this.value);
+//                if (dateSelected){
+                    datepickerInput.attr('onblur',onBlurAction);
+//                    dateSelected = false;
+//                }
+            }
+            console.log(onBlurAction);
+
             if ($(this).hasClass('adult')){
                 datepickerInput.datepicker({
                     dateFormat: "dd/mm/yy",
@@ -151,6 +165,8 @@ head.ready(function(){
                     yearRange: "1900:+0",
                     maxDate: "y",
                     showOn: "button",
+                    beforeShow:onClick,
+                    onSelect: onSelect,
                     onClose: onBlur
                 });
             }
