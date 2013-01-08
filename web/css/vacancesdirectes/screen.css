@@ -5016,7 +5016,7 @@ body.edito table td {
   top: 0;
   left: 0;
 }
-/* page result */
+/* page destination */
 .destination h2.h3-like {
   margin-top: 10px;
   margin-bottom: 20px;
@@ -5089,6 +5089,112 @@ body.edito table td {
 }
 .imgDesti {
   margin-left: 0;
+}
+/* page edito */
+.edito #wrap .column.left h2 {
+  margin: 40px 0 20px;
+  color: #464545;
+  text-transform: uppercase;
+}
+.edito #wrap .column.left h1 + h2 {
+  margin-top: 0;
+}
+.edito #wrap .column.left h3 {
+  margin-bottom: 20px;
+}
+.edito #wrap .column.left p {
+  margin-bottom: 10px;
+  clear: both;
+}
+.edito #wrap .column.left h2:before,
+.edito #wrap .column.left h3:before,
+.edito #wrap .column.left p:before {
+  clear: left;
+}
+.edito #wrap .column.left a {
+  color: #ed145b;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.edito #wrap .column.left ul {
+  margin-bottom: 10px;
+}
+.edito #wrap .column.left ul li {
+  padding-left: 20px;
+  position: relative;
+}
+.edito #wrap .column.left ul li:before {
+  content: "";
+  width: 27px;
+  height: 27px;
+  background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat scroll 0 -297px transparent;
+  position: absolute;
+  top: -4px;
+  left: -10px;
+}
+.edito #wrap .column.left .view {
+  display: block;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+.edito #wrap .column.left .thumb {
+  float: left;
+  margin: 0 5px 5px 0;
+}
+.edito #wrap .column.left .thumb + p {
+  height: 125px;
+  clear: none;
+}
+.edito #wrap .column.left .destiDescription {
+  color: #5f5f5f;
+  font: 13px/18px Arial, Helvetica, sans-serif;
+  margin-bottom: 20px;
+}
+.edito #wrap .column.left .activites {
+  width: 488px;
+  margin-right: 25px;
+}
+.edito #wrap .column.left .activites .miniEncart {
+  width: 100%;
+}
+.edito #wrap .column.left .activites .miniEncart:nth-child(1n),
+.edito #wrap .column.left .activites .miniEncart:nth-child(2n) {
+  border: 0;
+  padding: 0;
+}
+.edito #wrap .column.left .activites .miniEncart:nth-child(3n) {
+  clear: left;
+}
+.edito #wrap .column.left .activites .miniEncart .h5-like {
+  color: #464545;
+  font-size: 24px;
+  line-height: 24px;
+}
+.edito #wrap .column.left .events {
+  width: 415px;
+}
+.edito #wrap .column.left .events .miniEncart {
+  margin-bottom: 20px;
+}
+.edito #wrap .column.left .events .h5-like {
+  color: #464545;
+  font-size: 24px;
+  line-height: 24px;
+  margin-bottom: 0;
+}
+.edito #wrap .column.left .events .h6-like {
+  text-transform: uppercase;
+  font: bold 19px/19px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+  margin-bottom: 10px;
+}
+.edito #wrap .column.left .events img {
+  margin-bottom: 0;
+  margin-right: 10px;
+}
+.edito #wrap .column.left .events .titre {
+  color: #009aaf;
+  font: bold 19px/19px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
 }
 /* page booking */
 .booking {
