@@ -111,6 +111,14 @@ class BaseTypeHebergementType extends AppAwareType
                         new Assert\NotBlank(),
                     ),
                 ),
+                'slug' => array(
+                    'required' => false,
+                    'label' => 'type_hebergement.slug',
+                    'type' => 'text',
+                    'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+                ),
                 'surface' => array(
                     'required' => false,
                     'label' => 'type_hebergement.surface',

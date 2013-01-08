@@ -2745,6 +2745,30 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
 
 
         /**
+         * Get the [slug] column value.
+         *
+         * @return string
+         */
+        public function getSlug()
+        {
+        return $this->getCurrentTranslation()->getSlug();
+    }
+
+
+        /**
+         * Set the value of [slug] column.
+         *
+         * @param string $v new value
+         * @return TypeHebergementI18n The current object (for fluent API support)
+         */
+        public function setSlug($v)
+        {    $this->getCurrentTranslation()->setSlug($v);
+
+        return $this;
+    }
+
+
+        /**
          * Get the [surface] column value.
          *
          * @return string

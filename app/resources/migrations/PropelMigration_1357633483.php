@@ -70,6 +70,9 @@ CREATE TABLE `multimedia_type_hebergement_i18n`
         ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
+ALTER TABLE `type_hebergement_i18n`
+    ADD `slug` VARCHAR(255) NOT NULL AFTER `name`;
+
 # This restores the fkey checks, after having unset them earlier
 SET FOREIGN_KEY_CHECKS = 1;
 ',
@@ -93,6 +96,8 @@ SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS `multimedia_type_hebergement`;
 
 DROP TABLE IF EXISTS `multimedia_type_hebergement_i18n`;
+
+ALTER TABLE `type_hebergement_i18n` DROP `slug`;
 
 # This restores the fkey checks, after having unset them earlier
 SET FOREIGN_KEY_CHECKS = 1;
