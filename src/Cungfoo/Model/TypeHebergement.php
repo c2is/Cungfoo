@@ -22,4 +22,16 @@ class TypeHebergement extends BaseTypeHebergement
     {
         return $this->getName();
     }
+
+    public function getEtablissements($criteria = null, PropelPDO $con = null)
+    {
+        if ($criteria === null)
+        {
+            $criteria = new \Criteria();
+        }
+
+        $criteria->add(EtablissementPeer::ACTIVE, true);
+
+        return parent::getEtablissements($criteria, $con);
+    }
 }

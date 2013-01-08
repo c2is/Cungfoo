@@ -1,0 +1,79 @@
+{% extends "base.twig" %}
+
+{% block title %}{% endblock %}
+{% block metaDescription %}{% endblock %}
+{% block bodyClass %} fiche{% endblock %}
+
+{% block canonical %}<link rel="canonical" href="{{ referer }}" />{% endblock %}
+
+{% block leftColumn %}
+
+{% include "Breadcrumbs/_breadcrumbs.twig" %}
+
+<h1>{{ categoryTypeHebergement.name }}</h1>
+<h3>Location {{ typeHebergement.name }}</h3>
+<p>{{ typeHebergement.presentation }}</p>
+
+{% for multimedia in typeHebergement.multimediaTypeHebergements %}
+    <img src="{{ asset(multimedia.imagePath) }}" />
+{% endfor %}
+
+<h2 class="h3-like">info pratiques</h2>
+<div class="bloc gris">
+{% if typeHebergement.capaciteHebergement %}
+    <h3>Capacité</h3>
+    <p>{{ typeHebergement.capaciteHebergement | nl2br }}</p>
+{% endif %}
+
+{% if typeHebergement.dimensions %}
+    <h3>Dimensions</h3>
+    <p>{{ typeHebergement.dimensions | nl2br }}</p>
+{% endif %}
+
+{% if typeHebergement.agencement %}
+    <h3>agencement</h3>
+    <p>{{ typeHebergement.agencement | nl2br }}</p>
+{% endif %}
+
+{% if typeHebergement.equipements %}
+    <h3>equipements</h3>
+    <p>{{ typeHebergement.equipements | nl2br }}</p>
+{% endif %}
+
+{% if typeHebergement.anneeUtilisation %}
+    <h3>anneeUtilisation</h3>
+    <p>{{ typeHebergement.anneeUtilisation | nl2br }}</p>
+{% endif %}
+
+{% if typeHebergement.remarque1 %}
+    <h3>remarque1</h3>
+    <p>{{ typeHebergement.remarque1 | nl2br }}</p>
+{% endif %}
+
+{% if typeHebergement.remarque2 %}
+    <h3>remarque2</h3>
+    <p>{{ typeHebergement.remarque2 | nl2br }}</p>
+{% endif %}
+
+{% if typeHebergement.remarque3 %}
+    <h3>remarque3</h3>
+    <p>{{ typeHebergement.remarque3 | nl2br }}</p>
+{% endif %}
+
+{% if typeHebergement.remarque4 %}
+    <h3>remarque4</h3>
+    <p>{{ typeHebergement.remarque4 | nl2br }}</p>
+{% endif %}
+</div>
+
+<script type="text/javascript">
+    var nbVisible = 3;
+</script>
+
+<h2 class="h3-like">{{ "destination.campings_selection_title" | trans }}</h2>
+{% include 'Listing/_listing.twig' %}
+{% endblock %}
+
+{% block rightColumn %}
+    {% include 'Form/_search_engine.twig' %}
+{% endblock %}
