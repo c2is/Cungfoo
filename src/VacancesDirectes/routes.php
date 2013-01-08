@@ -40,7 +40,8 @@ $app->mount('/bons-plans/camping-early-booking',      new Controller\EarlyBookin
 $app->mount('/bons-plans',                            new Controller\BonsPlansController());
 $app->mount('/compte',                                new Controller\CompteController());
 $app->mount('/vos-week-ends',                         new Controller\VosWeekEndsController());
-$app->mount('/fiche-poi',                             new Controller\FichePOIController());
+$app->mount('/lieu-a-visiter',                             new Controller\FichePOIController());
+$app->mount('/evenement',                           new Controller\FicheEventController());
 $app->mount('/esi',                                   new Controller\EsiController());
 $app->mount('/assurance',                             new Controller\AnnulationController());
 
