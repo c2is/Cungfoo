@@ -5,7 +5,7 @@
         </div>
     {% endif %}
     {% for etab in list.element %}
-    <div id="camping-{{ etab.model.slug }}" data-id="{{ path('infobox_camping', {idResalys: etab.model.code}) }}" class="itemResult {% if list.type == 0 %}itemCatalogue{% endif %} clear" data-critplus="{{ etab.model.categorie.code }}" data-crit="{{ etab.model.situationGeographique }}{% if etab.model.situationGeographique != "" %},{% endif %}{{ etab.model.baignade }}{% if etab.model.baignade != "" %},{% endif %}{{ etab.model.activite }}{% if etab.model.activite != "" %},{% endif %}{{ etab.model.service }}{% if etab.model.service != "" %},{% endif %}{{ etab.model.thematique }}">
+    <div id="camping-{{ etab.model.slug }}" data-id="{{ path('infobox_camping', {idResalys: etab.model.code}) }}" class="itemResult {% if list.type == 0 %}itemCatalogue{% endif %} clear" data-crit="{{ etab.model.categorie.code }}" data-critplus="{{ etab.model.situationGeographique }}{% if etab.model.situationGeographique != "" %},{% endif %}{{ etab.model.baignade }}{% if etab.model.baignade != "" %},{% endif %}{{ etab.model.activite }}{% if etab.model.activite != "" %},{% endif %}{{ etab.model.service }}{% if etab.model.service != "" %},{% endif %}{{ etab.model.thematique }}">
         <!-- item.title -->
         <div class="itemResultTitle">
             <input type="checkbox" name="compar" value="idCamp1">

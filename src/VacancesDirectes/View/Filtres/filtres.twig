@@ -5,7 +5,7 @@
     <p class="criteres"><span id="nbCrit">0</span> {{ "filtres.criteres_selectionne" | trans }}</p>
 
         <p class="sectionTitle open first">{{ "filtres.situation" | trans }}</p>
-        <fieldset class="contentCrit" id="searchSituations">
+        <fieldset class="contentCritPlus" id="searchSituations">
             {% for situation in situation %}
                 <label><input type="checkbox" name="checkSituations" id="{{ situation.code }}">{{ situation.name | trans }}</label>
             {% endfor %}
@@ -19,14 +19,14 @@
         </fieldset>
 
         <p class="sectionTitle open">{{ "filtres.baignade_bien_etre" | trans }}</p>
-        <fieldset class="contentCrit" id="searchBaignade">
+        <fieldset class="contentCritPlus" id="searchBaignade">
             {% for baignade in baignade %}
                 <label><input type="checkbox" name="checkBaignade" id="{{ baignade.code }}">{{ baignade.name | trans }}</label>
             {% endfor %}
         </fieldset>
 
         <p class="sectionTitle open">{{ "filtres.animations_loisirs" | trans }}</p>
-        <fieldset class="contentCrit" id="searchAnimations">
+        <fieldset class="contentCritPlus" id="searchAnimations">
             {% for activite in activites %}
                 <label><input type="checkbox" name="checkAnimations" id="{{ activite.code }}">{{ activite.name | trans }}</label>
             {% endfor %}
