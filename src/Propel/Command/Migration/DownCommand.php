@@ -48,7 +48,7 @@ class DownCommand extends Command
         $buffer = '';
         for ($i = 0; $i < $nbPatchs; $i++)
         {
-            $buffer .= $this->propelGen('migrate-down');
+            $buffer .= $this->propelGen('down');
         }
 
         if (OutputInterface::VERBOSITY_VERBOSE === $output->getVerbosity())
