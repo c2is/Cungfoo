@@ -14,8 +14,6 @@ use \PropelObjectCollection;
 use \PropelPDO;
 use Cungfoo\Model\BonPlan;
 use Cungfoo\Model\BonPlanDestination;
-use Cungfoo\Model\DernieresMinutes;
-use Cungfoo\Model\DernieresMinutesDestination;
 use Cungfoo\Model\Destination;
 use Cungfoo\Model\DestinationI18n;
 use Cungfoo\Model\DestinationPeer;
@@ -47,10 +45,6 @@ use Cungfoo\Model\EtablissementDestination;
  * @method DestinationQuery leftJoinEtablissementDestination($relationAlias = null) Adds a LEFT JOIN clause to the query using the EtablissementDestination relation
  * @method DestinationQuery rightJoinEtablissementDestination($relationAlias = null) Adds a RIGHT JOIN clause to the query using the EtablissementDestination relation
  * @method DestinationQuery innerJoinEtablissementDestination($relationAlias = null) Adds a INNER JOIN clause to the query using the EtablissementDestination relation
- *
- * @method DestinationQuery leftJoinDernieresMinutesDestination($relationAlias = null) Adds a LEFT JOIN clause to the query using the DernieresMinutesDestination relation
- * @method DestinationQuery rightJoinDernieresMinutesDestination($relationAlias = null) Adds a RIGHT JOIN clause to the query using the DernieresMinutesDestination relation
- * @method DestinationQuery innerJoinDernieresMinutesDestination($relationAlias = null) Adds a INNER JOIN clause to the query using the DernieresMinutesDestination relation
  *
  * @method DestinationQuery leftJoinBonPlanDestination($relationAlias = null) Adds a LEFT JOIN clause to the query using the BonPlanDestination relation
  * @method DestinationQuery rightJoinBonPlanDestination($relationAlias = null) Adds a RIGHT JOIN clause to the query using the BonPlanDestination relation
@@ -509,80 +503,6 @@ abstract class BaseDestinationQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query by a related DernieresMinutesDestination object
-     *
-     * @param   DernieresMinutesDestination|PropelObjectCollection $dernieresMinutesDestination  the related object to use as filter
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return   DestinationQuery The current query, for fluid interface
-     * @throws   PropelException - if the provided filter is invalid.
-     */
-    public function filterByDernieresMinutesDestination($dernieresMinutesDestination, $comparison = null)
-    {
-        if ($dernieresMinutesDestination instanceof DernieresMinutesDestination) {
-            return $this
-                ->addUsingAlias(DestinationPeer::ID, $dernieresMinutesDestination->getDestinationId(), $comparison);
-        } elseif ($dernieresMinutesDestination instanceof PropelObjectCollection) {
-            return $this
-                ->useDernieresMinutesDestinationQuery()
-                ->filterByPrimaryKeys($dernieresMinutesDestination->getPrimaryKeys())
-                ->endUse();
-        } else {
-            throw new PropelException('filterByDernieresMinutesDestination() only accepts arguments of type DernieresMinutesDestination or PropelCollection');
-        }
-    }
-
-    /**
-     * Adds a JOIN clause to the query using the DernieresMinutesDestination relation
-     *
-     * @param     string $relationAlias optional alias for the relation
-     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
-     *
-     * @return DestinationQuery The current query, for fluid interface
-     */
-    public function joinDernieresMinutesDestination($relationAlias = null, $joinType = Criteria::INNER_JOIN)
-    {
-        $tableMap = $this->getTableMap();
-        $relationMap = $tableMap->getRelation('DernieresMinutesDestination');
-
-        // create a ModelJoin object for this join
-        $join = new ModelJoin();
-        $join->setJoinType($joinType);
-        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
-        if ($previousJoin = $this->getPreviousJoin()) {
-            $join->setPreviousJoin($previousJoin);
-        }
-
-        // add the ModelJoin to the current object
-        if ($relationAlias) {
-            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
-            $this->addJoinObject($join, $relationAlias);
-        } else {
-            $this->addJoinObject($join, 'DernieresMinutesDestination');
-        }
-
-        return $this;
-    }
-
-    /**
-     * Use the DernieresMinutesDestination relation DernieresMinutesDestination object
-     *
-     * @see       useQuery()
-     *
-     * @param     string $relationAlias optional alias for the relation,
-     *                                   to be used as main alias in the secondary query
-     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
-     *
-     * @return   \Cungfoo\Model\DernieresMinutesDestinationQuery A secondary query class using the current class as primary query
-     */
-    public function useDernieresMinutesDestinationQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
-    {
-        return $this
-            ->joinDernieresMinutesDestination($relationAlias, $joinType)
-            ->useQuery($relationAlias ? $relationAlias : 'DernieresMinutesDestination', '\Cungfoo\Model\DernieresMinutesDestinationQuery');
-    }
-
-    /**
      * Filter the query by a related BonPlanDestination object
      *
      * @param   BonPlanDestination|PropelObjectCollection $bonPlanDestination  the related object to use as filter
@@ -744,23 +664,6 @@ abstract class BaseDestinationQuery extends ModelCriteria
         return $this
             ->useEtablissementDestinationQuery()
             ->filterByEtablissement($etablissement, $comparison)
-            ->endUse();
-    }
-
-    /**
-     * Filter the query by a related DernieresMinutes object
-     * using the dernieres_minutes_destination table as cross reference
-     *
-     * @param   DernieresMinutes $dernieresMinutes the related object to use as filter
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return   DestinationQuery The current query, for fluid interface
-     */
-    public function filterByDernieresMinutes($dernieresMinutes, $comparison = Criteria::EQUAL)
-    {
-        return $this
-            ->useDernieresMinutesDestinationQuery()
-            ->filterByDernieresMinutes($dernieresMinutes, $comparison)
             ->endUse();
     }
 

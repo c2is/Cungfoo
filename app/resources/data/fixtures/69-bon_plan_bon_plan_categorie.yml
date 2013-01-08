@@ -14,3 +14,9 @@
     5:
         BonPlanId: 5
         BonPlanCategorieId: 1
+    6:
+        BonPlanId: 6
+        BonPlanCategorieId: 3
+    7:
+        BonPlanId: 6
+        BonPlanCategorieId: 5

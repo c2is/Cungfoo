@@ -67,7 +67,7 @@ class PropelMigration_1357642730
             $categorieDernieresMinutesId = $pdo->lastInsertId();
 
             // Ajout du bon plan Dernières Minutes
-            $sql = 'INSERT INTO bon_plan (date_start, day_start, day_range, nb_adultes, nb_enfants, push_home) VALUES (:date_start, :day_start, :day_range, :nb_adultes, :nb_enfants, :push_home)';
+            $sql = 'INSERT INTO bon_plan (date_start, day_start, day_range, nb_adultes, nb_enfants, push_home, active) VALUES (:date_start, :day_start, :day_range, :nb_adultes, :nb_enfants, :push_home, :active)';
             $stmt = $pdo->prepare($sql);
             $stmt->execute(array(
                 ':date_start' => $derniereMinute['date_start'],
@@ -76,6 +76,7 @@ class PropelMigration_1357642730
                 ':nb_adultes' => 1,
                 ':nb_enfants' => 0,
                 ':push_home' => 1,
+                ':active' => $derniereMinute['active'],
             ));
 
             $dernieresMinutesId = $pdo->lastInsertId();
@@ -114,7 +115,7 @@ class PropelMigration_1357642730
                 $stmt = $pdo->prepare($sql);
                 $stmt->execute(array(
                     ':bon_plan_id' => $dernieresMinutesId,
-                    ':etablissement_id' => $etablissement['etablissement_id'],
+                    ':etablissement_id' => $etablissement,
                 ));
             }
 
@@ -124,7 +125,7 @@ class PropelMigration_1357642730
                 $stmt = $pdo->prepare($sql);
                 $stmt->execute(array(
                     ':bon_plan_id' => $dernieresMinutesId,
-                    ':destination_id' => $destination['destination_id'],
+                    ':destination_id' => $destination,
                 ));
             }
         }
@@ -132,12 +133,82 @@ class PropelMigration_1357642730
 
     public function preDown($manager)
     {
-        // add the pre-migration code here
+        $sql = "SELECT bon_plan.* FROM bon_plan INNER JOIN bon_plan_bon_plan_categorie ON bon_plan_id = id WHERE bon_plan_categorie_id = 1";
+        $pdo = $manager->getPdoConnection('cungfoo');
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+
+        $results = $stmt->fetchAll();
+        foreach ($results as $key => $result)
+        {
+            $result['etablissements'] = array();
+
+            $sql = "SELECT etablissement_id FROM bon_plan_etablissement WHERE bon_plan_id = ?";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute(array($result['id']));
+            
+            $etablissements = $stmt->fetchAll();
+            foreach ($etablissements as $etablissement)
+            {
+                $result['etablissements'][] = $etablissement['etablissement_id'];
+            }
+
+            $result['destinations'] = array();
+
+            $sql = "SELECT destination_id FROM bon_plan_destination WHERE bon_plan_id = ?";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute(array($result['id']));
+            
+            $destinations = $stmt->fetchAll();
+            foreach ($destinations as $destination)
+            {
+                $result['destinations'][] = $destination['destination_id'];
+            }
+
+            $results[$key] = $result;
+        }
+
+        $this->dernieresMinutes = $results;
     }
 
     public function postDown($manager)
     {
-        // add the post-migration code here
+        $pdo = $manager->getPdoConnection('cungfoo');
+
+        foreach ($this->dernieresMinutes as $derniereMinute)
+        {
+            // Ajout des Dernières Minutes
+            $sql = 'INSERT INTO dernieres_minutes (date_start, day_start, day_range, active) VALUES (:date_start, :day_start, :day_range, :active)';
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute(array(
+                ':date_start' => $derniereMinute['date_start'],
+                ':day_start' => $derniereMinute['day_start'],
+                ':day_range' => $derniereMinute['day_range'],
+                ':active' => $derniereMinute['active'],
+            ));
+
+            $dernieresMinutesId = $pdo->lastInsertId();
+
+            foreach ($derniereMinute['etablissements'] as $etablissement)
+            {
+                $sql = 'INSERT INTO dernieres_minutes_etablissement (dernieres_minutes_id, etablissement_id) VALUES (:dernieres_minutes_id, :etablissement_id)';
+                $stmt = $pdo->prepare($sql);
+                $stmt->execute(array(
+                    ':dernieres_minutes_id' => $dernieresMinutesId,
+                    ':etablissement_id' => $etablissement,
+                ));
+            }
+
+            foreach ($derniereMinute['destinations'] as $destination)
+            {
+                $sql = 'INSERT INTO dernieres_minutes_destination (dernieres_minutes_id, destination_id) VALUES (:dernieres_minutes_id, :destination_id)';
+                $stmt = $pdo->prepare($sql);
+                $stmt->execute(array(
+                    ':dernieres_minutes_id' => $dernieresMinutesId,
+                    ':destination_id' => $destination,
+                ));
+            }
+        }
     }
 
     /**
@@ -260,6 +331,12 @@ CREATE TABLE `bon_plan_i18n`
         ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
+DROP TABLE IF EXISTS `dernieres_minutes`;
+
+DROP TABLE IF EXISTS `dernieres_minutes_destination`;
+
+DROP TABLE IF EXISTS `dernieres_minutes_etablissement`;
+
 # This restores the fkey checks, after having unset them earlier
 SET FOREIGN_KEY_CHECKS = 1;
 ',
@@ -293,6 +370,46 @@ DROP TABLE IF EXISTS `bon_plan_destination`;
 DROP TABLE IF EXISTS `bon_plan_categorie_i18n`;
 
 DROP TABLE IF EXISTS `bon_plan_i18n`;
+
+CREATE TABLE `dernieres_minutes`
+(
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `date_start` DATE,
+    `day_start` TINYINT NOT NULL,
+    `day_range` TINYINT NOT NULL,
+    `active` TINYINT(1),
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB;
+
+CREATE TABLE `dernieres_minutes_destination`
+(
+    `dernieres_minutes_id` INTEGER NOT NULL,
+    `destination_id` INTEGER NOT NULL,
+    PRIMARY KEY (`dernieres_minutes_id`,`destination_id`),
+    INDEX `dernieres_minutes_destination_FI_2` (`destination_id`),
+    CONSTRAINT `dernieres_minutes_destination_FK_1`
+        FOREIGN KEY (`dernieres_minutes_id`)
+        REFERENCES `dernieres_minutes` (`id`)
+        ON DELETE CASCADE,
+    CONSTRAINT `dernieres_minutes_destination_FK_2`
+        FOREIGN KEY (`destination_id`)
+        REFERENCES `destination` (`id`)
+) ENGINE=InnoDB;
+
+CREATE TABLE `dernieres_minutes_etablissement`
+(
+    `dernieres_minutes_id` INTEGER NOT NULL,
+    `etablissement_id` INTEGER NOT NULL,
+    PRIMARY KEY (`dernieres_minutes_id`,`etablissement_id`),
+    INDEX `dernieres_minutes_etablissement_FI_2` (`etablissement_id`),
+    CONSTRAINT `dernieres_minutes_etablissement_FK_1`
+        FOREIGN KEY (`dernieres_minutes_id`)
+        REFERENCES `dernieres_minutes` (`id`)
+        ON DELETE CASCADE,
+    CONSTRAINT `dernieres_minutes_etablissement_FK_2`
+        FOREIGN KEY (`etablissement_id`)
+        REFERENCES `etablissement` (`id`)
+) ENGINE=InnoDB;
 
 # This restores the fkey checks, after having unset them earlier
 SET FOREIGN_KEY_CHECKS = 1;

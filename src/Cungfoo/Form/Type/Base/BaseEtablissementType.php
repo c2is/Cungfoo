@@ -270,14 +270,6 @@ class BaseEtablissementType extends AppAwareType
             'label' => 'etablissement.events',
             'required' => false,
         ));
-        $builder->add('dernieres_minutess', 'model', array(
-            'class' => 'Cungfoo\Model\DernieresMinutes',
-            'constraints' => array(
-            ),
-            'multiple' => true,
-            'label' => 'etablissement.dernieres_minutess',
-            'required' => false,
-        ));
         $builder->add('bon_plans', 'model', array(
             'class' => 'Cungfoo\Model\BonPlan',
             'constraints' => array(

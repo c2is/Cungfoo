@@ -716,45 +716,6 @@
         </foreign-key>
     </table>
 
-    <table name="dernieres_minutes">
-        <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true"/>
-        <column name="date_start" type="date"/>
-        <column name="day_start" type="enum" valueSet="monday, tuesday, wednesday, thursday, friday, saturday, sunday" required="true"/>
-        <column name="day_range" type="enum" valueSet="7, 14, 21" required="true"/>
-        <column name="active" type="boolean"/>
-        <behavior name="active" />
-
-        <behavior name="crudable">
-            <parameter name="crud_prefix" value="/dernieres-minutes" />
-        </behavior>
-    </table>
-
-    <table name="dernieres_minutes_etablissement" isCrossRef="true">
-        <column name="dernieres_minutes_id" type="integer" primaryKey="true"/>
-        <column name="etablissement_id" type="integer" primaryKey="true"/>
-
-        <foreign-key foreignTable="dernieres_minutes" onDelete="CASCADE">
-            <reference local="dernieres_minutes_id" foreign="id"/>
-        </foreign-key>
-
-        <foreign-key foreignTable="etablissement">
-            <reference local="etablissement_id" foreign="id"/>
-        </foreign-key>
-    </table>
-
-    <table name="dernieres_minutes_destination" isCrossRef="true">
-        <column name="dernieres_minutes_id" type="integer" primaryKey="true"/>
-        <column name="destination_id" type="integer" primaryKey="true"/>
-
-        <foreign-key foreignTable="dernieres_minutes" onDelete="CASCADE">
-            <reference local="dernieres_minutes_id" foreign="id"/>
-        </foreign-key>
-
-        <foreign-key foreignTable="destination">
-            <reference local="destination_id" foreign="id"/>
-        </foreign-key>
-    </table>
-
     <table name="mise_en_avant">
         <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true"/>
         <column name="image_fond_path" type="varchar"/>

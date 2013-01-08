@@ -2,43 +2,43 @@
     1_de:
         Id: 1
         Locale: de
-        Name: 'Premières minutes'
-        Slug: 'premieres-minutes'
+        Name: 'Dernières minutes'
+        Slug: 'dernieres-minutes'
     1_en:
         Id: 1
         Locale: en
-        Name: 'Premières minutes'
-        Slug: 'premieres-minutes'
+        Name: 'Dernières minutes'
+        Slug: 'dernieres-minutes'
     1_fr:
         Id: 1
         Locale: fr
-        Name: 'Premières minutes'
-        Slug: 'premieres-minutes'
+        Name: 'Dernières minutes'
+        Slug: 'dernieres-minutes'
     1_nl:
         Id: 1
         Locale: nl
-        Name: 'Premières minutes'
-        Slug: 'premieres-minutes'
+        Name: 'Dernières minutes'
+        Slug: 'dernieres-minutes'
     2_de:
         Id: 2
         Locale: de
-        Name: 'Dernières minutes'
-        Slug: 'dernieres-minutes'
+        Name: 'Premières minutes'
+        Slug: 'premieres-minutes'
     2_en:
         Id: 2
         Locale: en
-        Name: 'Dernières minutes'
-        Slug: 'dernieres-minutes'
+        Name: 'Premières minutes'
+        Slug: 'premieres-minutes'
     2_fr:
         Id: 2
         Locale: fr
-        Name: 'Dernières minutes'
-        Slug: 'dernieres-minutes'
+        Name: 'Premières minutes'
+        Slug: 'premieres-minutes'
     2_nl:
         Id: 2
         Locale: nl
-        Name: 'Dernières minutes'
-        Slug: 'dernieres-minutes'
+        Name: 'Premières minutes'
+        Slug: 'premieres-minutes'
     3_de:
         Id: 3
         Locale: de
