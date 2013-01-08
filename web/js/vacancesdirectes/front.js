@@ -37,7 +37,7 @@ var
     aMarkers = [];
 
 if(nbVisible == undefined) {
-    var nbVisible = 10;                                      // nombre d'items visible avant pagination
+    var nbVisible = 1;                                      // nombre d'items visible avant pagination
 }
 
 /*
@@ -1540,7 +1540,7 @@ function tabs(tView, load) {
     var sView = tView.split('#')[1],
         slider = $('.tabCampDiapo');
 
-    if (sView == 'tabCamp' || sView == 'tabLocations') {
+    if (sView == 'tabCamp' || sView == 'tabLocations' || sView == 'tabLogement' || sView == 'tabCampings') {
         slider.fadeIn();
         if (sView == 'tabLocations'){
             $('[name="affPhoto"][value="locations"]').parent('label').trigger('click');
