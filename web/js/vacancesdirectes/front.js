@@ -37,7 +37,7 @@ var
     aMarkers = [];
 
 if(nbVisible == undefined) {
-    var nbVisible = 1;                                      // nombre d'items visible avant pagination
+    var nbVisible = 10;                                      // nombre d'items visible avant pagination
 }
 
 /*
