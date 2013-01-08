@@ -2,13 +2,17 @@
 
 {% block title %}
 {% spaceless %}
-    {{ "seo.title.bonPlan" | trans ({'%bonPlan%': seo}) }}
+    {% if metaTitle %}{{ metaTitle }}
+    {% else %}{{ "seo.title.bonPlan" | trans ({'%bonPlan%': seo}) }}
+    {% endif %}
 {% endspaceless %}
 {% endblock %}
 
 {% block metaDescription %}
 {% spaceless %}
-    {{ "seo.meta.bonPlan" | trans  ({'%bonPlan%': seo})}}
+    {% if metaDescription %}{{ metaDescription }}
+    {% else %}{{ "seo.meta.bonPlan" | trans  ({'%bonPlan%': seo})}}
+    {% endif %}
 {% endspaceless %}
 {% endblock %}
 

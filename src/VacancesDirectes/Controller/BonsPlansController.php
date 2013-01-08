@@ -76,6 +76,17 @@ class BonsPlansController implements ControllerProviderInterface
 
         })->bind('bonsplans_pentecote');
 
+        $controllers->match('/camping-dernieres-minutes/', function (Request $request) use ($app)
+        {
+            return $app['twig']->render('BonsPlans/index.twig', array(
+                'seo' => "dernieres minutes",
+                'title' => "NOS OFFRES DE CAMPINGS EN DERNIÈRES MINUTES (LOCATION MOBIL HOME)",
+                'description' => "Découvrez toutes les offres de locations de mobil homes en dernières minutes en camping proposées par Vacances directes et réserver en ligne.",
+                'metaDescription' => "Découvrez toutes les offres de locations de mobil homes en dernières minutes en camping proposées par Vacances directes et réserver en ligne.",
+            ));
+
+        })->bind('bonsplans_dernieres_minutes');
+
         $controllers->match('/camping-{slug}/', function (Request $request, $slug) use ($app)
         {
             $locale = $app['context']->get('language');
@@ -85,12 +96,13 @@ class BonsPlansController implements ControllerProviderInterface
                 ->useBonPlanI18nQuery()
                     ->filterBySlug($slug)
                 ->endUse()
+                ->filterByActive(true)
                 ->findOne()
             ;
 
             if (!$bonPlanObject)
             {
-                $app->abort(404, "$slug does not exist.");
+                $app->abort(404, "La page recherchée n'existe pas");
             }
 
             $dateData = new \VacancesDirectes\Form\Data\Search\DateData();
