@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request,
     Symfony\Component\HttpFoundation\Response,
     Symfony\Component\Routing\Route;
 
-use Cungfoo\Model\DernieresMinutesQuery;
+use Cungfoo\Model\BonPlanQuery;
 
 use VacancesDirectes\Lib\SearchParams,
     VacancesDirectes\Lib\Listing\DispoListing;
@@ -29,7 +29,8 @@ class EsiController implements ControllerProviderInterface
 
         $controllers->match('/early-booking', function (Request $request) use ($app)
         {
-            $dernieresMinutes = DernieresMinutesQuery::create()
+            $dernieresMinutes = BonPlanQuery::create()
+                ->filterByPushHome(true)
                 ->findOne()
             ;
 

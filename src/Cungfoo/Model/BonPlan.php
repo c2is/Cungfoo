@@ -18,4 +18,27 @@ use Cungfoo\Model\om\BaseBonPlan;
  */
 class BonPlan extends BaseBonPlan
 {
+    public function getDestinationsCodes()
+    {
+        $codes = array();
+
+        foreach ($this->getDestinations() as $destination)
+        {
+            $codes[] = $destination->getCode();
+        }
+
+        return implode(',', $codes);
+    }
+
+    public function getEtablissementsCodes()
+    {
+        $codes = array();
+
+        foreach ($this->getEtablissements() as $etablissement)
+        {
+            $codes[] = $etablissement->getCode();
+        }
+
+        return implode(',', $codes);
+    }
 }

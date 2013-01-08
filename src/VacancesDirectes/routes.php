@@ -36,7 +36,7 @@ $app->mount('/couloir-reservation',                   new Controller\CouloirCont
 $app->mount('/resalys',                               new WrapperController());
 $app->mount('/destinations/camping-{pays}',           new Controller\DestinationController());
 $app->mount('/bons-plans/camping-dernieres-minutes',  new Controller\DernieresMinutesController());
-$app->mount('/bons-plans/camping-early-booking',      new Controller\EarlyBookingController());
+//$app->mount('/bons-plans/camping-early-booking',      new Controller\EarlyBookingController());
 $app->mount('/bons-plans',                            new Controller\BonsPlansController());
 $app->mount('/compte',                                new Controller\CompteController());
 $app->mount('/vos-week-ends',                         new Controller\VosWeekEndsController());

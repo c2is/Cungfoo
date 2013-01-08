@@ -97,8 +97,8 @@ class PropelMigration_1357642730
             $stmt->execute(array(
                 ':id' => $dernieresMinutesId,
                 ':locale' => 'fr',
-                ':name' => 'Dernières Minutes',
-                ':slug' => 'dernieres-minutes',
+                ':name' => 'Early Booking',
+                ':slug' => 'early-booking',
             ));
 
             // Ajout de l'association bon plan => catégorie

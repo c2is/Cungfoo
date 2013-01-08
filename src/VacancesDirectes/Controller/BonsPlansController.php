@@ -13,7 +13,15 @@ use Symfony\Component\HttpFoundation\Request,
 
 use Cungfoo\Model\EtablissementQuery,
     Cungfoo\Model\PointInteretPeer,
-    Cungfoo\Model\EventPeer;
+    Cungfoo\Model\EventPeer,
+    Cungfoo\Model\BonPlanQuery;
+
+use VacancesDirectes\Lib\Listing,
+    VacancesDirectes\Lib\SearchEngine,
+    VacancesDirectes\Lib\SearchParams,
+    VacancesDirectes\Lib\Listing\DispoListing;
+
+use Resalys\Lib\Client\DisponibiliteClient;
 
 class BonsPlansController implements ControllerProviderInterface
 {
@@ -67,6 +75,64 @@ class BonsPlansController implements ControllerProviderInterface
             ));
 
         })->bind('bonsplans_pentecote');
+
+        $controllers->match('/camping-{slug}/', function (Request $request, $slug) use ($app)
+        {
+            $locale = $app['context']->get('language');
+
+            $bonPlanObject = BonPlanQuery::create()
+                ->joinWithI18n($locale)
+                ->useBonPlanI18nQuery()
+                    ->filterBySlug($slug)
+                ->endUse()
+                ->findOne()
+            ;
+
+            if (!$bonPlanObject)
+            {
+                $app->abort(404, "$slug does not exist.");
+            }
+
+            $searchEngine = new SearchEngine($app, $request);
+            $searchEngine->process();
+            if ($searchEngine->getRedirect())
+            {
+                return $app->redirect($searchEngine->getRedirect());
+            }
+
+            $baseDate  = $bonPlanObject->getDateStart('U') ?: date('U');
+            $startDate = strtotime('next ' . $bonPlanObject->getDayStart(), $baseDate);
+            $startDate = strtotime('+' . ($bonPlanObject->getDayRange() - 7) . ' days', $startDate);
+
+            $searchParams = new SearchParams($app);
+            $searchParams
+                ->setStartDate(date('Y-m-d', $startDate))
+                ->setNbDays(7)
+                ->addTheme($bonPlanObject->getDestinationsCodes())
+                ->addEtab($bonPlanObject->getEtablissementsCodes())
+                ->setNbAdults(1)
+                ->setMaxResults(50)
+            ;
+
+            $client = new DisponibiliteClient($app['config']->get('root_dir'));
+            $client->addOptions($searchParams->generate());
+
+            $listing = new DispoListing($app);
+            $listing->setClient($client);
+
+            $listingContent = $listing->process();
+
+            return $app->renderView('Research\dispo.twig', array(
+                'title'           => $app->trans('seo.title.early_booking'),
+                'metaDescription' => $app->trans('seo.meta.early_booking'),
+                'texteOffre'      => $app->trans('offreSpeciales.texte'),
+                'intro'      => $app->trans('offreSpeciales.intro'),
+                'h1' => $app->trans('earlyBooking.h1'),
+                'list'            => $listingContent,
+                'firstEtab'       => reset($listingContent['element']),
+                'searchForm'      => $searchEngine->getView(),
+            ));
+        })->bind('bonsplans');
 
         return $controllers;
     }

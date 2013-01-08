@@ -75,9 +75,6 @@ menu:
               mise_en_avant:
                   title:  menu.mise_en_avant
                   route:  mise_en_avant_crud_list
-              dernieres_minutes:
-                  title:  menu.dernieres_minutes
-                  route:  dernieres_minutes_crud_list
               vos_vacances:
                   title:  menu.vos_vacances
                   route:  vos_vacances_crud_list
