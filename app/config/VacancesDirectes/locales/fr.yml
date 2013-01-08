@@ -472,6 +472,22 @@ encart_vacances_directes:
     item_3: "Un site 100% sécurisé"
     item_4: "Des hébergements tout confort pour des vacances dépaysantes"
 
+encart_hebergement:
+    title: "Vacances directes"
+    subtitle: "propose des hébergements"
+    standardise:
+        title: "Standardisés"
+        texte: "Une même référence offre les mêmes prestations sur tous les campings Vacances directes."
+    adapte:
+        title: "Adaptés"
+        texte: "Vacances directes s'intéresse aux évolutions de le vie de tous les jours et propose des mobil-homes et des caravanes tout confort, adaptés aux besoins de chacun."
+    varie:
+        title: "Variés"
+        texte: "Faites votre choix parmi une large gamme d'hébergements. Vacances directes, c'est plus de 10 modèles de caravanes et des mobil-homes pour s'adapter à toutes les familles et à tous les portesfeuilles."
+    equipe:
+        title: "Equipés"
+        texte: "Les hébergements sont prêts à vous recevoir. Tout est inclus (alèses, couvertures, oreillers...), apportez simplement votre linge de maison. La cuisine est aménagée et équipées."
+
 encart_informations:
     title: "Informations & Réservations au"
     price: "(0,15 €/min)"

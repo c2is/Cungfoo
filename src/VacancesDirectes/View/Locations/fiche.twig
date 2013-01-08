@@ -1,0 +1,114 @@
+{% extends "base.twig" %}
+
+{% block title %}{% endblock %}
+{% block metaDescription %}{% endblock %}
+{% block bodyClass %} fiche{% endblock %}
+
+{% block canonical %}<link rel="canonical" href="{{ referer }}" />{% endblock %}
+
+{% block leftColumn %}
+
+{% include "Breadcrumbs/_breadcrumbs.twig" %}
+
+<h1>{{ typeHebergement.name }}</h1>
+<h2 class="h3-like">Location {{ categoryTypeHebergement.name }} {{ typeHebergement.nombrePlace }} personnes</h2>
+<p>{{ typeHebergement.presentation }}</p>
+<br/>
+
+<button data-triggerlink="#tabCampings" class="bt fushia big right triggerClick">Voir les campings</button>
+
+<ul class="tabControls clear">
+    <li><a href="#tabLogement" class="active">Le logement</a></li>
+    <li><a href="#tabCampings">Les campings</a></li>
+</ul>
+
+<div class="tabCampDiapo">
+    <div class="slider"><div class="slide clear">
+        {% for multimedia in typeHebergement.multimediaTypeHebergements %}
+        <img src="{{ asset(multimedia.imagePath) }}" width="616" height="326" class="locations" title="{{multimedia.titre}}" alt="{{multimedia.titre}}"/>
+        {% endfor %}
+    </div></div>
+</div>
+
+<!-- tab Camping -->
+<div id="tabLogement" class="tabs">
+    <h2 class="h3-like">Informations pratiques</h2>
+    <div class="descLogement bloc gris">
+
+    {% if typeHebergement.capaciteHebergement %}
+        <h4>Capacité</h4>
+        <p>{{ typeHebergement.capaciteHebergement | nl2br }}</p>
+    {% endif %}
+
+    {% if typeHebergement.dimensions %}
+        <br/><br/>
+        <h4>Dimensions</h4>
+        <p>{{ typeHebergement.dimensions | nl2br }}</p>
+    {% endif %}
+
+    {% if typeHebergement.agencement %}
+        <br/><br/>
+        <h4>agencement</h4>
+        <p>{{ typeHebergement.agencement | nl2br }}</p>
+    {% endif %}
+
+    {% if typeHebergement.equipements %}
+        <br/><br/>
+        <h4>equipements</h4>
+        <p>{{ typeHebergement.equipements | nl2br }}</p>
+    {% endif %}
+
+    {% if typeHebergement.anneeUtilisation %}
+        <br/><br/>
+        <h4>anneeUtilisation</h4>
+        <p>{{ typeHebergement.anneeUtilisation | nl2br }}</p>
+    {% endif %}
+
+    {% if typeHebergement.remarque1 %}
+        <br/><br/>
+        <h4>remarque1</h4>
+        <p>{{ typeHebergement.remarque1 | nl2br }}</p>
+    {% endif %}
+
+    {% if typeHebergement.remarque2 %}
+        <br/><br/>
+        <h4>remarque2</h4>
+        <p>{{ typeHebergement.remarque2 | nl2br }}</p>
+    {% endif %}
+
+    {% if typeHebergement.remarque3 %}
+        <br/><br/>
+        <h4>remarque3</h4>
+        <p>{{ typeHebergement.remarque3 | nl2br }}</p>
+    {% endif %}
+
+    {% if typeHebergement.remarque4 %}
+        <br/><br/>
+        <h4>remarque4</h4>
+        <p>{{ typeHebergement.remarque4 | nl2br }}</p>
+    {% endif %}
+    </div>
+    <nav class="paginationTabs clear">
+        <button class="bt trans right triggerClick" data-triggerLink="#tabCampings">Les campings</button>
+    </nav>
+</div>
+
+<!-- tab Locations -->
+<div id="tabCampings" class="tabs">
+    <h2 class="h3-like">Notre selection de campings</h2><br>
+    {% include 'Listing/_listing.twig' %}
+
+    <nav class="paginationTabs clear">
+        <button class="bt trans left triggerClick" data-triggerLink="#tabLogement">Le logement</button>
+    </nav>
+ </div>
+
+<script type="text/javascript">
+    var nbVisible = 3;
+</script>
+
+{% endblock %}
+
+{% block rightColumn %}
+    {% include 'Form/_search_engine.twig' %}
+{% endblock %}

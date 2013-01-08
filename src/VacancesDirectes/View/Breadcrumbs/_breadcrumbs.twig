@@ -22,7 +22,7 @@
     {% endif %}
     {% if 'location' in breadcrumbsRoute %}
     <li>&gt; <a href="{{ path('location_category_type_hebergement', {'categoryTypeHebergement': categoryTypeHebergement.slug}) }}"><span itemprop="title">{{ categoryTypeHebergement.name }}</span></a></li>
-        {% if 'location' in breadcrumbsRoute %}
+        {% if 'location_type_hebergement' == breadcrumbsRoute %}
         <li>&gt; <a href="{{ path('location_type_hebergement', {'categoryTypeHebergement': categoryTypeHebergement.slug, 'typeHebergement': typeHebergement.slug}) }}"><span itemprop="title">{{ typeHebergement.name }}</span></a></li>
         {% endif %}
     {% endif %}

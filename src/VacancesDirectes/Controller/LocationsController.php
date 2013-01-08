@@ -72,8 +72,24 @@ class LocationsController implements ControllerProviderInterface
 
         $controllers->match('/{categoryTypeHebergement}/', function (Request $request, $categoryTypeHebergement) use ($app)
         {
+            $dateData = new \VacancesDirectes\Form\Data\Search\DateData();
 
-            return "ok";
+            $locale = $app['context']->get('language');
+
+            // Formulaire de recherche
+            $searchEngine = new SearchEngine($app, $request);
+            $searchEngine->process($dateData);
+
+            if ($searchEngine->getRedirect())
+            {
+                return $app->redirect($searchEngine->getRedirect());
+            }
+
+            return $app->renderView('Locations/list.twig', array(
+                'locale'                  => $locale,
+                'categoryTypeHebergement' => $categoryTypeHebergement,
+                'searchForm'              => $searchEngine->getView(),
+            ));
         })
         ->bind('location_category_type_hebergement');
 
@@ -101,7 +117,7 @@ class LocationsController implements ControllerProviderInterface
             ;
             $listContent = $list->process();
 
-            return $app->renderView('Locations/detail.twig', array(
+            return $app->renderView('Locations/fiche.twig', array(
                 'locale'                  => $locale,
                 'categoryTypeHebergement' => $categoryTypeHebergement,
                 'typeHebergement'         => $typeHebergement,
