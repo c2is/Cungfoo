@@ -71,10 +71,16 @@ CREATE TABLE `multimedia_type_hebergement_i18n`
 ) ENGINE=InnoDB;
 
 ALTER TABLE `type_hebergement_i18n`
-    ADD `slug` VARCHAR(255) NOT NULL AFTER `name`;
+    ADD `slug` VARCHAR(255) AFTER `name`;
+
+ALTER TABLE `category_type_hebergement`
+    ADD `image_menu` VARCHAR(255) AFTER `code`,
+    ADD `image_page` VARCHAR(255) AFTER `image_menu`,
+    ADD `sortable_rank` INTEGER AFTER `active`;
 
 ALTER TABLE `category_type_hebergement_i18n`
-    ADD `slug` VARCHAR(255) NOT NULL AFTER `name`;
+    ADD `slug` VARCHAR(255) AFTER `name`,
+    ADD `description` TEXT AFTER `slug`;
 
 # This restores the fkey checks, after having unset them earlier
 SET FOREIGN_KEY_CHECKS = 1;
@@ -101,6 +107,14 @@ DROP TABLE IF EXISTS `multimedia_type_hebergement`;
 DROP TABLE IF EXISTS `multimedia_type_hebergement_i18n`;
 
 ALTER TABLE `type_hebergement_i18n` DROP `slug`;
+
+ALTER TABLE `category_type_hebergement` DROP `image_menu`;
+
+ALTER TABLE `category_type_hebergement` DROP `image_page`;
+
+ALTER TABLE `category_type_hebergement` DROP `sortable_rank`;
+
+ALTER TABLE `category_type_hebergement_i18n` DROP `description`;
 
 ALTER TABLE `category_type_hebergement_i18n` DROP `slug`;
 

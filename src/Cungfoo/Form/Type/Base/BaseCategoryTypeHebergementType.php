@@ -34,10 +34,42 @@ class BaseCategoryTypeHebergementType extends AppAwareType
             'label' => 'category_type_hebergement.code',
             'required' => false,
         ));
+        $builder->add('image_menu', 'cungfoo_file', array(
+            'constraints' => array(
+            ),
+            'label' => 'category_type_hebergement.image_menu',
+            'required' => false,
+        ));
+        $builder->add('image_menu_deleted', 'checkbox', array(
+            'constraints' => array(
+            ),
+            'property_path' => false,
+            'label' => 'category_type_hebergement.image_menu_deleted',
+            'required' => false,
+        ));
+        $builder->add('image_page', 'cungfoo_file', array(
+            'constraints' => array(
+            ),
+            'label' => 'category_type_hebergement.image_page',
+            'required' => false,
+        ));
+        $builder->add('image_page_deleted', 'checkbox', array(
+            'constraints' => array(
+            ),
+            'property_path' => false,
+            'label' => 'category_type_hebergement.image_page_deleted',
+            'required' => false,
+        ));
         $builder->add('active', 'checkbox', array(
             'constraints' => array(
             ),
             'label' => 'category_type_hebergement.active',
+            'required' => false,
+        ));
+        $builder->add('sortable_rank', 'integer', array(
+            'constraints' => array(
+            ),
+            'label' => 'category_type_hebergement.sortable_rank',
             'required' => false,
         ));
         $builder->add('category_type_hebergementI18ns', 'translation_collection', array(
@@ -63,7 +95,13 @@ class BaseCategoryTypeHebergementType extends AppAwareType
                     'label' => 'category_type_hebergement.slug',
                     'type' => 'text',
                     'constraints' => array(
-                        new Assert\NotBlank(),
+                    ),
+                ),
+                'description' => array(
+                    'required' => false,
+                    'label' => 'category_type_hebergement.description',
+                    'type' => 'textarea',
+                    'constraints' => array(
                     ),
                 ),
             ),

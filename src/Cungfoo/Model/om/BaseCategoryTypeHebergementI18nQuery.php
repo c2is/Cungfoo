@@ -26,11 +26,13 @@ use Cungfoo\Model\CategoryTypeHebergementI18nQuery;
  * @method CategoryTypeHebergementI18nQuery orderByLocale($order = Criteria::ASC) Order by the locale column
  * @method CategoryTypeHebergementI18nQuery orderByName($order = Criteria::ASC) Order by the name column
  * @method CategoryTypeHebergementI18nQuery orderBySlug($order = Criteria::ASC) Order by the slug column
+ * @method CategoryTypeHebergementI18nQuery orderByDescription($order = Criteria::ASC) Order by the description column
  *
  * @method CategoryTypeHebergementI18nQuery groupById() Group by the id column
  * @method CategoryTypeHebergementI18nQuery groupByLocale() Group by the locale column
  * @method CategoryTypeHebergementI18nQuery groupByName() Group by the name column
  * @method CategoryTypeHebergementI18nQuery groupBySlug() Group by the slug column
+ * @method CategoryTypeHebergementI18nQuery groupByDescription() Group by the description column
  *
  * @method CategoryTypeHebergementI18nQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method CategoryTypeHebergementI18nQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -47,11 +49,13 @@ use Cungfoo\Model\CategoryTypeHebergementI18nQuery;
  * @method CategoryTypeHebergementI18n findOneByLocale(string $locale) Return the first CategoryTypeHebergementI18n filtered by the locale column
  * @method CategoryTypeHebergementI18n findOneByName(string $name) Return the first CategoryTypeHebergementI18n filtered by the name column
  * @method CategoryTypeHebergementI18n findOneBySlug(string $slug) Return the first CategoryTypeHebergementI18n filtered by the slug column
+ * @method CategoryTypeHebergementI18n findOneByDescription(string $description) Return the first CategoryTypeHebergementI18n filtered by the description column
  *
  * @method array findById(int $id) Return CategoryTypeHebergementI18n objects filtered by the id column
  * @method array findByLocale(string $locale) Return CategoryTypeHebergementI18n objects filtered by the locale column
  * @method array findByName(string $name) Return CategoryTypeHebergementI18n objects filtered by the name column
  * @method array findBySlug(string $slug) Return CategoryTypeHebergementI18n objects filtered by the slug column
+ * @method array findByDescription(string $description) Return CategoryTypeHebergementI18n objects filtered by the description column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -142,7 +146,7 @@ abstract class BaseCategoryTypeHebergementI18nQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `locale`, `name`, `slug` FROM `category_type_hebergement_i18n` WHERE `id` = :p0 AND `locale` = :p1';
+        $sql = 'SELECT `id`, `locale`, `name`, `slug`, `description` FROM `category_type_hebergement_i18n` WHERE `id` = :p0 AND `locale` = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
@@ -357,6 +361,35 @@ abstract class BaseCategoryTypeHebergementI18nQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(CategoryTypeHebergementI18nPeer::SLUG, $slug, $comparison);
+    }
+
+    /**
+     * Filter the query on the description column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByDescription('fooValue');   // WHERE description = 'fooValue'
+     * $query->filterByDescription('%fooValue%'); // WHERE description LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $description The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return CategoryTypeHebergementI18nQuery The current query, for fluid interface
+     */
+    public function filterByDescription($description = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($description)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $description)) {
+                $description = str_replace('*', '%', $description);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(CategoryTypeHebergementI18nPeer::DESCRIPTION, $description, $comparison);
     }
 
     /**
