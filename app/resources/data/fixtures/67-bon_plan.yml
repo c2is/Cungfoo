@@ -3,6 +3,8 @@
         DateStart: '2013-07-06 00:00:00'
         DayStart: saturday
         DayRange: '7'
+        NbAdultes: 2
+        NbEnfants: 0
         Active: true
     2:
         DateDebut: 2013-01-02

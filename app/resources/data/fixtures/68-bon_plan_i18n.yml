@@ -2,35 +2,35 @@
     1_de:
         Id: 1
         Locale: de
-        Name: 'Oryam ***'
-        Slug: 'oryam'
-        Introduction: 'Pays Basque'
+        Name: 'Early Booking'
+        Slug: 'early-booking'
+        Introduction: 'Early booking'
         Description: 'Lorem ipsum dolor sit amet'
-        Indice: 'pour 5 personnes'
+        Indice: 'pour 1 personnes'
     1_en:
         Id: 1
         Locale: en
-        Name: 'Oryam ***'
-        Slug: 'oryam'
-        Introduction: 'Pays Basque'
+        Name: 'Early Booking'
+        Slug: 'early-booking'
+        Introduction: 'Early booking'
         Description: 'Lorem ipsum dolor sit amet'
-        Indice: 'pour 5 personnes'
+        Indice: 'pour 1 personnes'
     1_fr:
         Id: 1
         Locale: fr
-        Name: 'Oryam ***'
-        Slug: 'oryam'
-        Introduction: 'Pays Basque'
+        Name: 'Early Booking'
+        Slug: 'early-booking'
+        Introduction: 'Early booking'
         Description: 'Lorem ipsum dolor sit amet'
-        Indice: 'pour 5 personnes'
+        Indice: 'pour 1 personnes'
     1_nl:
         Id: 1
         Locale: nl
-        Name: 'Oryam ***'
-        Slug: 'oryam'
-        Introduction: 'Pays Basque'
+        Name: 'Early Booking'
+        Slug: 'early-booking'
+        Introduction: 'Early booking'
         Description: 'Lorem ipsum dolor sit amet'
-        Indice: 'pour 5 personnes'
+        Indice: 'pour 1 personnes'
     2_de:
         Id: 2
         Locale: de

@@ -910,8 +910,8 @@
         <column name="date_start" type="date"/>
         <column name="day_start" type="enum" valueSet="monday, tuesday, wednesday, thursday, friday, saturday, sunday" required="true"/>
         <column name="day_range" type="enum" valueSet="7, 14, 21" required="true"/>
-        <column name="nb_adultes" type="integer" />
-        <column name="nb_enfants" type="integer" />
+        <column name="nb_adultes" type="integer" defaultValue="1" />
+        <column name="nb_enfants" type="integer" defaultValue="0" />
 
         <behavior name="active" />
 

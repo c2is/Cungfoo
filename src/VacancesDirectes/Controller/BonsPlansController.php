@@ -93,8 +93,14 @@ class BonsPlansController implements ControllerProviderInterface
                 $app->abort(404, "$slug does not exist.");
             }
 
+            $dateData = new \VacancesDirectes\Form\Data\Search\DateData();
+            $dateData->dateDebut    = $bonPlanObject->getDateStart()->format('d/m/Y');
+            $dateData->nbJours      = $bonPlanObject->getDayRange();
+            $dateData->nbAdultes    = $bonPlanObject->getNbAdultes();
+            $dateData->nbEnfants    = $bonPlanObject->getNbEnfants();
+
             $searchEngine = new SearchEngine($app, $request);
-            $searchEngine->process();
+            $searchEngine->process($dateData);
             if ($searchEngine->getRedirect())
             {
                 return $app->redirect($searchEngine->getRedirect());
@@ -110,7 +116,8 @@ class BonsPlansController implements ControllerProviderInterface
                 ->setNbDays(7)
                 ->addTheme($bonPlanObject->getDestinationsCodes())
                 ->addEtab($bonPlanObject->getEtablissementsCodes())
-                ->setNbAdults(1)
+                ->setNbAdults($bonPlanObject->getNbAdultes())
+                ->setNbChildren($bonPlanObject->getNbEnfants())
                 ->setMaxResults(50)
             ;
 
@@ -122,12 +129,8 @@ class BonsPlansController implements ControllerProviderInterface
 
             $listingContent = $listing->process();
 
-            return $app->renderView('Research\dispo.twig', array(
-                'title'           => $app->trans('seo.title.early_booking'),
-                'metaDescription' => $app->trans('seo.meta.early_booking'),
-                'texteOffre'      => $app->trans('offreSpeciales.texte'),
-                'intro'      => $app->trans('offreSpeciales.intro'),
-                'h1' => $app->trans('earlyBooking.h1'),
+            return $app->renderView('BonsPlans\base.twig', array(
+                'bonPlan'         => $bonPlanObject,
                 'list'            => $listingContent,
                 'firstEtab'       => reset($listingContent['element']),
                 'searchForm'      => $searchEngine->getView(),

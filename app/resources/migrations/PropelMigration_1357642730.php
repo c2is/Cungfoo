@@ -264,8 +264,8 @@ CREATE TABLE `bon_plan`
     `date_start` DATE,
     `day_start` TINYINT NOT NULL,
     `day_range` TINYINT NOT NULL,
-    `nb_adultes` INTEGER,
-    `nb_enfants` INTEGER,
+    `nb_adultes` INTEGER DEFAULT 1,
+    `nb_enfants` INTEGER DEFAULT 0,
     `active` TINYINT(1) DEFAULT 1,
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB;
