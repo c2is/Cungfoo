@@ -51,7 +51,7 @@ ALTER TABLE `point_interet`
 ALTER TABLE `point_interet_i18n`
     ADD `transport` TEXT AFTER `presentation`,
     ADD `categorie` VARCHAR(255) AFTER `transport`,
-    ADD `type` VARCHAR(255) AFTER `categorie`;
+    ADD `type` VARCHAR(255) AFTER `categorie`,
     ADD `slug` VARCHAR(255) AFTER `type`;
 
 # This restores the fkey checks, after having unset them earlier
