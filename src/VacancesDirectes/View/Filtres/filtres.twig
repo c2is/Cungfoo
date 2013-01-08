@@ -5,23 +5,30 @@
     <p class="criteres"><span id="nbCrit">0</span> {{ "filtres.criteres_selectionne" | trans }}</p>
 
         <p class="sectionTitle open first">{{ "filtres.situation" | trans }}</p>
-        <fieldset class="contentCrit" id="searchSituation">
+        <fieldset class="contentCrit" id="searchSituations">
             {% for situation in situation %}
-                <label><input type="checkbox" name="checkSituation" id="{{ situation.code }}">{{ situation.name | trans }}</label>
+                <label><input type="checkbox" name="checkSituations" id="{{ situation.code }}">{{ situation.name | trans }}</label>
+            {% endfor %}
+        </fieldset>
+
+        <p class="sectionTitle open first">{{ "filtres.categories" | trans }}</p>
+        <fieldset class="contentCrit" id="searchCategories">
+            {% for categorie in categories %}
+                <label><input type="checkbox" name="checkCategories" id="{{ categorie.code }}">{{ categorie.name | trans }}</label>
             {% endfor %}
         </fieldset>
 
         <p class="sectionTitle open">{{ "filtres.baignade_bien_etre" | trans }}</p>
-        <fieldset class="contentCrit" id="searchDestination">
+        <fieldset class="contentCrit" id="searchBaignade">
             {% for baignade in baignade %}
-                <label><input type="checkbox" name="checkDestination" id="{{ baignade.code }}">{{ baignade.name | trans }}</label>
+                <label><input type="checkbox" name="checkBaignade" id="{{ baignade.code }}">{{ baignade.name | trans }}</label>
             {% endfor %}
         </fieldset>
 
         <p class="sectionTitle open">{{ "filtres.animations_loisirs" | trans }}</p>
-        <fieldset class="contentCrit" id="searchFormules">
+        <fieldset class="contentCrit" id="searchAnimations">
             {% for activite in activites %}
-                <label><input type="checkbox" name="checkFormules" id="{{ activite.code }}">{{ activite.name | trans }}</label>
+                <label><input type="checkbox" name="checkAnimations" id="{{ activite.code }}">{{ activite.name | trans }}</label>
             {% endfor %}
         </fieldset>
 
@@ -33,12 +40,12 @@
         </fieldset>
 
         <p class="sectionTitle open">{{ "filtres.thematiques" | trans }}</p>
-        <fieldset class="contentCritPlus" id="searchAnimations">
+        <fieldset class="contentCritPlus" id="searchThematiques">
             {% for thematique in thematiques %}
-                <label><input type="checkbox" name="checkAnimations" id="{{ thematique.code }}">{{ thematique.name | trans }}</label>
+                <label><input type="checkbox" name="checkThematiques" id="{{ thematique.code }}">{{ thematique.name | trans }}</label>
             {% endfor %}
         </fieldset>
 
     <!-- submit rechercher -->
-    <button class="bt big sombre searchGlobalSubmit">Filtrer</button>
+    <button class="bt big sombre searchGlobalSubmit">{{ "filtres.filtrer" | trans }}</button>
 </form>

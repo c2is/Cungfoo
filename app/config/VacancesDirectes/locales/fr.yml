@@ -419,6 +419,7 @@ filtres:
     animations_loisirs: "Animations et loisirs"
     commerces_services: "Commerces et services"
     thematiques: "Thématiques"
+    filtrer: "Filtrer"
 
 footer:
     contact: "Contact"

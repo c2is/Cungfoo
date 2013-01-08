@@ -50,12 +50,18 @@ class SearchFilterController implements ControllerProviderInterface
                 ->findActive()
             ;
 
+            $categories = \Cungfoo\Model\CategorieQuery::create()
+                ->joinWithI18n($locale)
+                ->findActive()
+            ;
+
             return $app->renderView('Filtres/filtres.twig', array(
                 'situation'       => $situation,
                 'baignade'       => $baignade,
                 'activites'       => $activites,
                 'services'       => $services,
-                'thematiques'       => $thematiques
+                'thematiques'       => $thematiques,
+                'categories'       => $categories
             ));
         })
         ->bind('search_filter');
