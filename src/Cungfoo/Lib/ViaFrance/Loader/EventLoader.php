@@ -76,6 +76,12 @@ class EventLoader extends AbstractLoader
                 ->setGeoCoordinateY($event->attributes()->{'Y'})
                 ->setDistanceCamping($event->attributes()->{'DistanceXY'})
                 ->setImage($event->{'Image1'})
+                ->setDescription($event->{'Description'})
+                ->setTel($event->{'Tel'})
+                ->setFax($event->{'Fax'})
+                ->setEmail($event->{'Email'})
+                ->setWebsite($event->{'WebSite'})
+                ->setTransport($event->{'Transports'})
             ;
 
             if ($place = $event->{'Place'})
@@ -98,12 +104,16 @@ class EventLoader extends AbstractLoader
             $defaultName        = $newEvent->getName();
             $defaultStrDate     = $newEvent->getStrDate();
             $defaultSubtitle    = $newEvent->getSubtitle();
+            $defaultDescription = $newEvent->getDescription();
+            $defaultTransport   = $newEvent->getTransport();
 
             $newEvent
                 ->setLocale($language)
                 ->setName(($event->{'Title'}) ? $event->{'Title'} : $defaultName)
                 ->setSubtitle(($event->{'Subtitle'}) ? $event->{'Subtitle'} : $defaultSubtitle)
                 ->setStrDate($event->{'StrDate'} ? $event->{'StrDate'} : $defaultStrDate)
+                ->setDescription(($event->{'Description'}) ? $event->{'Description'} : $defaultDescription)
+                ->setTransport(($event->{'Transports'}) ? $event->{'Transports)'} : $defaultTransport)
             ;
         }
 
