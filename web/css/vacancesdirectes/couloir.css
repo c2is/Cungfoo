@@ -1980,9 +1980,6 @@ ul.newList li a:focus {
   margin-right: 0;
   background-color: #ffffff;
 }
-ul.newList li:first-child {
-  display: none;
-}
 ul.newList.optGroup li a {
   padding: 0 8px 0 18px;
 }
