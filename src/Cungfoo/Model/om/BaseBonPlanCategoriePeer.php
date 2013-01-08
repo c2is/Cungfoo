@@ -12,6 +12,7 @@ use \PropelPDO;
 use Cungfoo\Model\BonPlanCategorie;
 use Cungfoo\Model\BonPlanCategorieI18nPeer;
 use Cungfoo\Model\BonPlanCategoriePeer;
+use Cungfoo\Model\BonPlanCategorieQuery;
 use Cungfoo\Model\map\BonPlanCategorieTableMap;
 
 /**
@@ -48,11 +49,11 @@ abstract class BaseBonPlanCategoriePeer
     /** the column name for the id field */
     const ID = 'bon_plan_categorie.id';
 
-    /** the column name for the order field */
-    const ORDER = 'bon_plan_categorie.order';
-
     /** the column name for the active field */
     const ACTIVE = 'bon_plan_categorie.active';
+
+    /** the column name for the sortable_rank field */
+    const SORTABLE_RANK = 'bon_plan_categorie.sortable_rank';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -73,6 +74,13 @@ abstract class BaseBonPlanCategoriePeer
      * @var        string
      */
     const DEFAULT_LOCALE = 'fr';
+    // sortable behavior
+
+    /**
+     * rank column
+     */
+    const RANK_COL = 'bon_plan_categorie.sortable_rank';
+
     /**
      * holds an array of fieldnames
      *
@@ -80,11 +88,11 @@ abstract class BaseBonPlanCategoriePeer
      * e.g. BonPlanCategoriePeer::$fieldNames[BonPlanCategoriePeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Order', 'Active', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'order', 'active', ),
-        BasePeer::TYPE_COLNAME => array (BonPlanCategoriePeer::ID, BonPlanCategoriePeer::ORDER, BonPlanCategoriePeer::ACTIVE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'ORDER', 'ACTIVE', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'order', 'active', ),
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Active', 'SortableRank', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'active', 'sortableRank', ),
+        BasePeer::TYPE_COLNAME => array (BonPlanCategoriePeer::ID, BonPlanCategoriePeer::ACTIVE, BonPlanCategoriePeer::SORTABLE_RANK, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'ACTIVE', 'SORTABLE_RANK', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'active', 'sortable_rank', ),
         BasePeer::TYPE_NUM => array (0, 1, 2, )
     );
 
@@ -95,11 +103,11 @@ abstract class BaseBonPlanCategoriePeer
      * e.g. BonPlanCategoriePeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Order' => 1, 'Active' => 2, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'order' => 1, 'active' => 2, ),
-        BasePeer::TYPE_COLNAME => array (BonPlanCategoriePeer::ID => 0, BonPlanCategoriePeer::ORDER => 1, BonPlanCategoriePeer::ACTIVE => 2, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'ORDER' => 1, 'ACTIVE' => 2, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'order' => 1, 'active' => 2, ),
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Active' => 1, 'SortableRank' => 2, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'active' => 1, 'sortableRank' => 2, ),
+        BasePeer::TYPE_COLNAME => array (BonPlanCategoriePeer::ID => 0, BonPlanCategoriePeer::ACTIVE => 1, BonPlanCategoriePeer::SORTABLE_RANK => 2, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'ACTIVE' => 1, 'SORTABLE_RANK' => 2, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'active' => 1, 'sortable_rank' => 2, ),
         BasePeer::TYPE_NUM => array (0, 1, 2, )
     );
 
@@ -175,12 +183,12 @@ abstract class BaseBonPlanCategoriePeer
     {
         if (null === $alias) {
             $criteria->addSelectColumn(BonPlanCategoriePeer::ID);
-            $criteria->addSelectColumn(BonPlanCategoriePeer::ORDER);
             $criteria->addSelectColumn(BonPlanCategoriePeer::ACTIVE);
+            $criteria->addSelectColumn(BonPlanCategoriePeer::SORTABLE_RANK);
         } else {
             $criteria->addSelectColumn($alias . '.id');
-            $criteria->addSelectColumn($alias . '.order');
             $criteria->addSelectColumn($alias . '.active');
+            $criteria->addSelectColumn($alias . '.sortable_rank');
         }
     }
 
@@ -774,6 +782,146 @@ abstract class BaseBonPlanCategoriePeer
         }
 
         return $objs;
+    }
+
+    // sortable behavior
+
+    /**
+     * Get the highest rank
+     *
+     * @param     PropelPDO optional connection
+     *
+     * @return    integer highest position
+     */
+    public static function getMaxRank(PropelPDO $con = null)
+    {
+        if ($con === null) {
+            $con = Propel::getConnection(BonPlanCategoriePeer::DATABASE_NAME);
+        }
+        // shift the objects with a position lower than the one of object
+        $c = new Criteria();
+        $c->addSelectColumn('MAX(' . BonPlanCategoriePeer::RANK_COL . ')');
+        $stmt = BonPlanCategoriePeer::doSelectStmt($c, $con);
+
+        return $stmt->fetchColumn();
+    }
+
+    /**
+     * Get an item from the list based on its rank
+     *
+     * @param     integer   $rank rank
+     * @param     PropelPDO $con optional connection
+     *
+     * @return BonPlanCategorie
+     */
+    public static function retrieveByRank($rank, PropelPDO $con = null)
+    {
+        if ($con === null) {
+            $con = Propel::getConnection(BonPlanCategoriePeer::DATABASE_NAME);
+        }
+
+        $c = new Criteria;
+        $c->add(BonPlanCategoriePeer::RANK_COL, $rank);
+
+        return BonPlanCategoriePeer::doSelectOne($c, $con);
+    }
+
+    /**
+     * Reorder a set of sortable objects based on a list of id/position
+     * Beware that there is no check made on the positions passed
+     * So incoherent positions will result in an incoherent list
+     *
+     * @param     array     $order id => rank pairs
+     * @param     PropelPDO $con   optional connection
+     *
+     * @return    boolean true if the reordering took place, false if a database problem prevented it
+     */
+    public static function reorder(array $order, PropelPDO $con = null)
+    {
+        if ($con === null) {
+            $con = Propel::getConnection(BonPlanCategoriePeer::DATABASE_NAME);
+        }
+
+        $con->beginTransaction();
+        try {
+            $ids = array_keys($order);
+            $objects = BonPlanCategoriePeer::retrieveByPKs($ids);
+            foreach ($objects as $object) {
+                $pk = $object->getPrimaryKey();
+                if ($object->getSortableRank() != $order[$pk]) {
+                    $object->setSortableRank($order[$pk]);
+                    $object->save($con);
+                }
+            }
+            $con->commit();
+
+            return true;
+        } catch (PropelException $e) {
+            $con->rollback();
+            throw $e;
+        }
+    }
+
+    /**
+     * Return an array of sortable objects ordered by position
+     *
+     * @param     Criteria  $criteria  optional criteria object
+     * @param     string    $order     sorting order, to be chosen between Criteria::ASC (default) and Criteria::DESC
+     * @param     PropelPDO $con       optional connection
+     *
+     * @return    array list of sortable objects
+     */
+    public static function doSelectOrderByRank(Criteria $criteria = null, $order = Criteria::ASC, PropelPDO $con = null)
+    {
+        if ($con === null) {
+            $con = Propel::getConnection(BonPlanCategoriePeer::DATABASE_NAME);
+        }
+
+        if ($criteria === null) {
+            $criteria = new Criteria();
+        } elseif ($criteria instanceof Criteria) {
+            $criteria = clone $criteria;
+        }
+
+        $criteria->clearOrderByColumns();
+
+        if ($order == Criteria::ASC) {
+            $criteria->addAscendingOrderByColumn(BonPlanCategoriePeer::RANK_COL);
+        } else {
+            $criteria->addDescendingOrderByColumn(BonPlanCategoriePeer::RANK_COL);
+        }
+
+        return BonPlanCategoriePeer::doSelect($criteria, $con);
+    }
+
+    /**
+     * Adds $delta to all Rank values that are >= $first and <= $last.
+     * '$delta' can also be negative.
+     *
+     * @param      int $delta Value to be shifted by, can be negative
+     * @param      int $first First node to be shifted
+     * @param      int $last  Last node to be shifted
+     * @param      PropelPDO $con Connection to use.
+     */
+    public static function shiftRank($delta, $first = null, $last = null, PropelPDO $con = null)
+    {
+        if ($con === null) {
+            $con = Propel::getConnection(BonPlanCategoriePeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+        }
+
+        $whereCriteria = BonPlanCategorieQuery::create();
+        if (null !== $first) {
+            $whereCriteria->add(BonPlanCategoriePeer::RANK_COL, $first, Criteria::GREATER_EQUAL);
+        }
+        if (null !== $last) {
+            $whereCriteria->addAnd(BonPlanCategoriePeer::RANK_COL, $last, Criteria::LESS_EQUAL);
+        }
+
+        $valuesCriteria = new Criteria(BonPlanCategoriePeer::DATABASE_NAME);
+        $valuesCriteria->add(BonPlanCategoriePeer::RANK_COL, array('raw' => BonPlanCategoriePeer::RANK_COL . ' + ?', 'value' => $delta), Criteria::CUSTOM_EQUAL);
+
+        BasePeer::doUpdate($whereCriteria, $valuesCriteria, $con);
+        BonPlanCategoriePeer::clearInstancePool();
     }
 
 } // BaseBonPlanCategoriePeer

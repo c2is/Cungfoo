@@ -12,6 +12,8 @@ use \PropelCollection;
 use \PropelException;
 use \PropelObjectCollection;
 use \PropelPDO;
+use Cungfoo\Model\BonPlan;
+use Cungfoo\Model\BonPlanDestination;
 use Cungfoo\Model\DernieresMinutes;
 use Cungfoo\Model\DernieresMinutesDestination;
 use Cungfoo\Model\Destination;
@@ -49,6 +51,10 @@ use Cungfoo\Model\EtablissementDestination;
  * @method DestinationQuery leftJoinDernieresMinutesDestination($relationAlias = null) Adds a LEFT JOIN clause to the query using the DernieresMinutesDestination relation
  * @method DestinationQuery rightJoinDernieresMinutesDestination($relationAlias = null) Adds a RIGHT JOIN clause to the query using the DernieresMinutesDestination relation
  * @method DestinationQuery innerJoinDernieresMinutesDestination($relationAlias = null) Adds a INNER JOIN clause to the query using the DernieresMinutesDestination relation
+ *
+ * @method DestinationQuery leftJoinBonPlanDestination($relationAlias = null) Adds a LEFT JOIN clause to the query using the BonPlanDestination relation
+ * @method DestinationQuery rightJoinBonPlanDestination($relationAlias = null) Adds a RIGHT JOIN clause to the query using the BonPlanDestination relation
+ * @method DestinationQuery innerJoinBonPlanDestination($relationAlias = null) Adds a INNER JOIN clause to the query using the BonPlanDestination relation
  *
  * @method DestinationQuery leftJoinDestinationI18n($relationAlias = null) Adds a LEFT JOIN clause to the query using the DestinationI18n relation
  * @method DestinationQuery rightJoinDestinationI18n($relationAlias = null) Adds a RIGHT JOIN clause to the query using the DestinationI18n relation
@@ -577,6 +583,80 @@ abstract class BaseDestinationQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query by a related BonPlanDestination object
+     *
+     * @param   BonPlanDestination|PropelObjectCollection $bonPlanDestination  the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   DestinationQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByBonPlanDestination($bonPlanDestination, $comparison = null)
+    {
+        if ($bonPlanDestination instanceof BonPlanDestination) {
+            return $this
+                ->addUsingAlias(DestinationPeer::ID, $bonPlanDestination->getDestinationId(), $comparison);
+        } elseif ($bonPlanDestination instanceof PropelObjectCollection) {
+            return $this
+                ->useBonPlanDestinationQuery()
+                ->filterByPrimaryKeys($bonPlanDestination->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByBonPlanDestination() only accepts arguments of type BonPlanDestination or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the BonPlanDestination relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return DestinationQuery The current query, for fluid interface
+     */
+    public function joinBonPlanDestination($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('BonPlanDestination');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'BonPlanDestination');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the BonPlanDestination relation BonPlanDestination object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\BonPlanDestinationQuery A secondary query class using the current class as primary query
+     */
+    public function useBonPlanDestinationQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        return $this
+            ->joinBonPlanDestination($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'BonPlanDestination', '\Cungfoo\Model\BonPlanDestinationQuery');
+    }
+
+    /**
      * Filter the query by a related DestinationI18n object
      *
      * @param   DestinationI18n|PropelObjectCollection $destinationI18n  the related object to use as filter
@@ -685,6 +765,23 @@ abstract class BaseDestinationQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query by a related BonPlan object
+     * using the bon_plan_destination table as cross reference
+     *
+     * @param   BonPlan $bonPlan the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   DestinationQuery The current query, for fluid interface
+     */
+    public function filterByBonPlan($bonPlan, $comparison = Criteria::EQUAL)
+    {
+        return $this
+            ->useBonPlanDestinationQuery()
+            ->filterByBonPlan($bonPlan, $comparison)
+            ->endUse();
+    }
+
+    /**
      * Exclude object from result
      *
      * @param   Destination $destination Object to remove from the list of results
@@ -766,7 +863,7 @@ abstract class BaseDestinationQuery extends ModelCriteria
         return $this->addAscendingOrderByColumn(DestinationPeer::CREATED_AT);
     }
     // active behavior
-
+    
     /**
      * return only active objects
      *
@@ -775,7 +872,7 @@ abstract class BaseDestinationQuery extends ModelCriteria
     public function findActive($con = null)
     {
         $this->filterByActive(true);
-
+    
         return parent::find($con);
     }
 

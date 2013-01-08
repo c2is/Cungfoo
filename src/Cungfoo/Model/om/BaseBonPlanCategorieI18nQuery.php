@@ -26,11 +26,15 @@ use Cungfoo\Model\BonPlanCategorieI18nQuery;
  * @method BonPlanCategorieI18nQuery orderByLocale($order = Criteria::ASC) Order by the locale column
  * @method BonPlanCategorieI18nQuery orderByName($order = Criteria::ASC) Order by the name column
  * @method BonPlanCategorieI18nQuery orderBySlug($order = Criteria::ASC) Order by the slug column
+ * @method BonPlanCategorieI18nQuery orderBySubtitle($order = Criteria::ASC) Order by the subtitle column
+ * @method BonPlanCategorieI18nQuery orderByDescription($order = Criteria::ASC) Order by the description column
  *
  * @method BonPlanCategorieI18nQuery groupById() Group by the id column
  * @method BonPlanCategorieI18nQuery groupByLocale() Group by the locale column
  * @method BonPlanCategorieI18nQuery groupByName() Group by the name column
  * @method BonPlanCategorieI18nQuery groupBySlug() Group by the slug column
+ * @method BonPlanCategorieI18nQuery groupBySubtitle() Group by the subtitle column
+ * @method BonPlanCategorieI18nQuery groupByDescription() Group by the description column
  *
  * @method BonPlanCategorieI18nQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method BonPlanCategorieI18nQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -47,11 +51,15 @@ use Cungfoo\Model\BonPlanCategorieI18nQuery;
  * @method BonPlanCategorieI18n findOneByLocale(string $locale) Return the first BonPlanCategorieI18n filtered by the locale column
  * @method BonPlanCategorieI18n findOneByName(string $name) Return the first BonPlanCategorieI18n filtered by the name column
  * @method BonPlanCategorieI18n findOneBySlug(string $slug) Return the first BonPlanCategorieI18n filtered by the slug column
+ * @method BonPlanCategorieI18n findOneBySubtitle(string $subtitle) Return the first BonPlanCategorieI18n filtered by the subtitle column
+ * @method BonPlanCategorieI18n findOneByDescription(string $description) Return the first BonPlanCategorieI18n filtered by the description column
  *
  * @method array findById(int $id) Return BonPlanCategorieI18n objects filtered by the id column
  * @method array findByLocale(string $locale) Return BonPlanCategorieI18n objects filtered by the locale column
  * @method array findByName(string $name) Return BonPlanCategorieI18n objects filtered by the name column
  * @method array findBySlug(string $slug) Return BonPlanCategorieI18n objects filtered by the slug column
+ * @method array findBySubtitle(string $subtitle) Return BonPlanCategorieI18n objects filtered by the subtitle column
+ * @method array findByDescription(string $description) Return BonPlanCategorieI18n objects filtered by the description column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -142,7 +150,7 @@ abstract class BaseBonPlanCategorieI18nQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `locale`, `name`, `slug` FROM `bon_plan_categorie_i18n` WHERE `id` = :p0 AND `locale` = :p1';
+        $sql = 'SELECT `id`, `locale`, `name`, `slug`, `subtitle`, `description` FROM `bon_plan_categorie_i18n` WHERE `id` = :p0 AND `locale` = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
@@ -357,6 +365,64 @@ abstract class BaseBonPlanCategorieI18nQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(BonPlanCategorieI18nPeer::SLUG, $slug, $comparison);
+    }
+
+    /**
+     * Filter the query on the subtitle column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterBySubtitle('fooValue');   // WHERE subtitle = 'fooValue'
+     * $query->filterBySubtitle('%fooValue%'); // WHERE subtitle LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $subtitle The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return BonPlanCategorieI18nQuery The current query, for fluid interface
+     */
+    public function filterBySubtitle($subtitle = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($subtitle)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $subtitle)) {
+                $subtitle = str_replace('*', '%', $subtitle);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(BonPlanCategorieI18nPeer::SUBTITLE, $subtitle, $comparison);
+    }
+
+    /**
+     * Filter the query on the description column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByDescription('fooValue');   // WHERE description = 'fooValue'
+     * $query->filterByDescription('%fooValue%'); // WHERE description LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $description The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return BonPlanCategorieI18nQuery The current query, for fluid interface
+     */
+    public function filterByDescription($description = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($description)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $description)) {
+                $description = str_replace('*', '%', $description);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(BonPlanCategorieI18nPeer::DESCRIPTION, $description, $comparison);
     }
 
     /**

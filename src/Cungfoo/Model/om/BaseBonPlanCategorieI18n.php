@@ -71,6 +71,18 @@ abstract class BaseBonPlanCategorieI18n extends BaseObject implements Persistent
     protected $slug;
 
     /**
+     * The value for the subtitle field.
+     * @var        string
+     */
+    protected $subtitle;
+
+    /**
+     * The value for the description field.
+     * @var        string
+     */
+    protected $description;
+
+    /**
      * @var        BonPlanCategorie
      */
     protected $aBonPlanCategorie;
@@ -148,6 +160,26 @@ abstract class BaseBonPlanCategorieI18n extends BaseObject implements Persistent
     public function getSlug()
     {
         return $this->slug;
+    }
+
+    /**
+     * Get the [subtitle] column value.
+     *
+     * @return string
+     */
+    public function getSubtitle()
+    {
+        return $this->subtitle;
+    }
+
+    /**
+     * Get the [description] column value.
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
     }
 
     /**
@@ -239,6 +271,48 @@ abstract class BaseBonPlanCategorieI18n extends BaseObject implements Persistent
     } // setSlug()
 
     /**
+     * Set the value of [subtitle] column.
+     *
+     * @param string $v new value
+     * @return BonPlanCategorieI18n The current object (for fluent API support)
+     */
+    public function setSubtitle($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->subtitle !== $v) {
+            $this->subtitle = $v;
+            $this->modifiedColumns[] = BonPlanCategorieI18nPeer::SUBTITLE;
+        }
+
+
+        return $this;
+    } // setSubtitle()
+
+    /**
+     * Set the value of [description] column.
+     *
+     * @param string $v new value
+     * @return BonPlanCategorieI18n The current object (for fluent API support)
+     */
+    public function setDescription($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->description !== $v) {
+            $this->description = $v;
+            $this->modifiedColumns[] = BonPlanCategorieI18nPeer::DESCRIPTION;
+        }
+
+
+        return $this;
+    } // setDescription()
+
+    /**
      * Indicates whether the columns in this object are only set to default values.
      *
      * This method can be used in conjunction with isModified() to indicate whether an object is both
@@ -278,6 +352,8 @@ abstract class BaseBonPlanCategorieI18n extends BaseObject implements Persistent
             $this->locale = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
             $this->name = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
             $this->slug = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
+            $this->subtitle = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
+            $this->description = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -286,7 +362,7 @@ abstract class BaseBonPlanCategorieI18n extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 4; // 4 = BonPlanCategorieI18nPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 6; // 6 = BonPlanCategorieI18nPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating BonPlanCategorieI18n object", $e);
@@ -522,6 +598,12 @@ abstract class BaseBonPlanCategorieI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(BonPlanCategorieI18nPeer::SLUG)) {
             $modifiedColumns[':p' . $index++]  = '`slug`';
         }
+        if ($this->isColumnModified(BonPlanCategorieI18nPeer::SUBTITLE)) {
+            $modifiedColumns[':p' . $index++]  = '`subtitle`';
+        }
+        if ($this->isColumnModified(BonPlanCategorieI18nPeer::DESCRIPTION)) {
+            $modifiedColumns[':p' . $index++]  = '`description`';
+        }
 
         $sql = sprintf(
             'INSERT INTO `bon_plan_categorie_i18n` (%s) VALUES (%s)',
@@ -544,6 +626,12 @@ abstract class BaseBonPlanCategorieI18n extends BaseObject implements Persistent
                         break;
                     case '`slug`':
                         $stmt->bindValue($identifier, $this->slug, PDO::PARAM_STR);
+                        break;
+                    case '`subtitle`':
+                        $stmt->bindValue($identifier, $this->subtitle, PDO::PARAM_STR);
+                        break;
+                    case '`description`':
+                        $stmt->bindValue($identifier, $this->description, PDO::PARAM_STR);
                         break;
                 }
             }
@@ -696,6 +784,12 @@ abstract class BaseBonPlanCategorieI18n extends BaseObject implements Persistent
             case 3:
                 return $this->getSlug();
                 break;
+            case 4:
+                return $this->getSubtitle();
+                break;
+            case 5:
+                return $this->getDescription();
+                break;
             default:
                 return null;
                 break;
@@ -729,6 +823,8 @@ abstract class BaseBonPlanCategorieI18n extends BaseObject implements Persistent
             $keys[1] => $this->getLocale(),
             $keys[2] => $this->getName(),
             $keys[3] => $this->getSlug(),
+            $keys[4] => $this->getSubtitle(),
+            $keys[5] => $this->getDescription(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aBonPlanCategorie) {
@@ -780,6 +876,12 @@ abstract class BaseBonPlanCategorieI18n extends BaseObject implements Persistent
             case 3:
                 $this->setSlug($value);
                 break;
+            case 4:
+                $this->setSubtitle($value);
+                break;
+            case 5:
+                $this->setDescription($value);
+                break;
         } // switch()
     }
 
@@ -808,6 +910,8 @@ abstract class BaseBonPlanCategorieI18n extends BaseObject implements Persistent
         if (array_key_exists($keys[1], $arr)) $this->setLocale($arr[$keys[1]]);
         if (array_key_exists($keys[2], $arr)) $this->setName($arr[$keys[2]]);
         if (array_key_exists($keys[3], $arr)) $this->setSlug($arr[$keys[3]]);
+        if (array_key_exists($keys[4], $arr)) $this->setSubtitle($arr[$keys[4]]);
+        if (array_key_exists($keys[5], $arr)) $this->setDescription($arr[$keys[5]]);
     }
 
     /**
@@ -823,6 +927,8 @@ abstract class BaseBonPlanCategorieI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(BonPlanCategorieI18nPeer::LOCALE)) $criteria->add(BonPlanCategorieI18nPeer::LOCALE, $this->locale);
         if ($this->isColumnModified(BonPlanCategorieI18nPeer::NAME)) $criteria->add(BonPlanCategorieI18nPeer::NAME, $this->name);
         if ($this->isColumnModified(BonPlanCategorieI18nPeer::SLUG)) $criteria->add(BonPlanCategorieI18nPeer::SLUG, $this->slug);
+        if ($this->isColumnModified(BonPlanCategorieI18nPeer::SUBTITLE)) $criteria->add(BonPlanCategorieI18nPeer::SUBTITLE, $this->subtitle);
+        if ($this->isColumnModified(BonPlanCategorieI18nPeer::DESCRIPTION)) $criteria->add(BonPlanCategorieI18nPeer::DESCRIPTION, $this->description);
 
         return $criteria;
     }
@@ -897,6 +1003,8 @@ abstract class BaseBonPlanCategorieI18n extends BaseObject implements Persistent
         $copyObj->setLocale($this->getLocale());
         $copyObj->setName($this->getName());
         $copyObj->setSlug($this->getSlug());
+        $copyObj->setSubtitle($this->getSubtitle());
+        $copyObj->setDescription($this->getDescription());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -1015,6 +1123,8 @@ abstract class BaseBonPlanCategorieI18n extends BaseObject implements Persistent
         $this->locale = null;
         $this->name = null;
         $this->slug = null;
+        $this->subtitle = null;
+        $this->description = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();

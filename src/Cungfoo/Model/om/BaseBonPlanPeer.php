@@ -10,7 +10,8 @@ use \Propel;
 use \PropelException;
 use \PropelPDO;
 use Cungfoo\Model\BonPlan;
-use Cungfoo\Model\BonPlanCategoriePeer;
+use Cungfoo\Model\BonPlanDestinationPeer;
+use Cungfoo\Model\BonPlanEtablissementPeer;
 use Cungfoo\Model\BonPlanI18nPeer;
 use Cungfoo\Model\BonPlanPeer;
 use Cungfoo\Model\map\BonPlanTableMap;
@@ -38,19 +39,16 @@ abstract class BaseBonPlanPeer
     const TM_CLASS = 'BonPlanTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 9;
+    const NUM_COLUMNS = 17;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 9;
+    const NUM_HYDRATE_COLUMNS = 17;
 
     /** the column name for the id field */
     const ID = 'bon_plan.id';
-
-    /** the column name for the bon_plan_categorie_id field */
-    const BON_PLAN_CATEGORIE_ID = 'bon_plan.bon_plan_categorie_id';
 
     /** the column name for the date_debut field */
     const DATE_DEBUT = 'bon_plan.date_debut';
@@ -70,8 +68,49 @@ abstract class BaseBonPlanPeer
     /** the column name for the image_page field */
     const IMAGE_PAGE = 'bon_plan.image_page';
 
+    /** the column name for the image_liste field */
+    const IMAGE_LISTE = 'bon_plan.image_liste';
+
+    /** the column name for the active_compteur field */
+    const ACTIVE_COMPTEUR = 'bon_plan.active_compteur';
+
+    /** the column name for the mise_en_avant field */
+    const MISE_EN_AVANT = 'bon_plan.mise_en_avant';
+
+    /** the column name for the push_home field */
+    const PUSH_HOME = 'bon_plan.push_home';
+
+    /** the column name for the date_start field */
+    const DATE_START = 'bon_plan.date_start';
+
+    /** the column name for the day_start field */
+    const DAY_START = 'bon_plan.day_start';
+
+    /** the column name for the day_range field */
+    const DAY_RANGE = 'bon_plan.day_range';
+
+    /** the column name for the nb_adultes field */
+    const NB_ADULTES = 'bon_plan.nb_adultes';
+
+    /** the column name for the nb_enfants field */
+    const NB_ENFANTS = 'bon_plan.nb_enfants';
+
     /** the column name for the active field */
     const ACTIVE = 'bon_plan.active';
+
+    /** The enumerated values for the day_start field */
+    const DAY_START_MONDAY = 'monday';
+    const DAY_START_TUESDAY = 'tuesday';
+    const DAY_START_WEDNESDAY = 'wednesday';
+    const DAY_START_THURSDAY = 'thursday';
+    const DAY_START_FRIDAY = 'friday';
+    const DAY_START_SATURDAY = 'saturday';
+    const DAY_START_SUNDAY = 'sunday';
+
+    /** The enumerated values for the day_range field */
+    const DAY_RANGE_7 = '7';
+    const DAY_RANGE_14 = '14';
+    const DAY_RANGE_21 = '21';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -99,12 +138,12 @@ abstract class BaseBonPlanPeer
      * e.g. BonPlanPeer::$fieldNames[BonPlanPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'BonPlanCategorieId', 'DateDebut', 'DateFin', 'Prix', 'PrixBarre', 'ImageMenu', 'ImagePage', 'Active', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'bonPlanCategorieId', 'dateDebut', 'dateFin', 'prix', 'prixBarre', 'imageMenu', 'imagePage', 'active', ),
-        BasePeer::TYPE_COLNAME => array (BonPlanPeer::ID, BonPlanPeer::BON_PLAN_CATEGORIE_ID, BonPlanPeer::DATE_DEBUT, BonPlanPeer::DATE_FIN, BonPlanPeer::PRIX, BonPlanPeer::PRIX_BARRE, BonPlanPeer::IMAGE_MENU, BonPlanPeer::IMAGE_PAGE, BonPlanPeer::ACTIVE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'BON_PLAN_CATEGORIE_ID', 'DATE_DEBUT', 'DATE_FIN', 'PRIX', 'PRIX_BARRE', 'IMAGE_MENU', 'IMAGE_PAGE', 'ACTIVE', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'bon_plan_categorie_id', 'date_debut', 'date_fin', 'prix', 'prix_barre', 'image_menu', 'image_page', 'active', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'DateDebut', 'DateFin', 'Prix', 'PrixBarre', 'ImageMenu', 'ImagePage', 'ImageListe', 'ActiveCompteur', 'MiseEnAvant', 'PushHome', 'DateStart', 'DayStart', 'DayRange', 'NbAdultes', 'NbEnfants', 'Active', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'dateDebut', 'dateFin', 'prix', 'prixBarre', 'imageMenu', 'imagePage', 'imageListe', 'activeCompteur', 'miseEnAvant', 'pushHome', 'dateStart', 'dayStart', 'dayRange', 'nbAdultes', 'nbEnfants', 'active', ),
+        BasePeer::TYPE_COLNAME => array (BonPlanPeer::ID, BonPlanPeer::DATE_DEBUT, BonPlanPeer::DATE_FIN, BonPlanPeer::PRIX, BonPlanPeer::PRIX_BARRE, BonPlanPeer::IMAGE_MENU, BonPlanPeer::IMAGE_PAGE, BonPlanPeer::IMAGE_LISTE, BonPlanPeer::ACTIVE_COMPTEUR, BonPlanPeer::MISE_EN_AVANT, BonPlanPeer::PUSH_HOME, BonPlanPeer::DATE_START, BonPlanPeer::DAY_START, BonPlanPeer::DAY_RANGE, BonPlanPeer::NB_ADULTES, BonPlanPeer::NB_ENFANTS, BonPlanPeer::ACTIVE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'DATE_DEBUT', 'DATE_FIN', 'PRIX', 'PRIX_BARRE', 'IMAGE_MENU', 'IMAGE_PAGE', 'IMAGE_LISTE', 'ACTIVE_COMPTEUR', 'MISE_EN_AVANT', 'PUSH_HOME', 'DATE_START', 'DAY_START', 'DAY_RANGE', 'NB_ADULTES', 'NB_ENFANTS', 'ACTIVE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'date_debut', 'date_fin', 'prix', 'prix_barre', 'image_menu', 'image_page', 'image_liste', 'active_compteur', 'mise_en_avant', 'push_home', 'date_start', 'day_start', 'day_range', 'nb_adultes', 'nb_enfants', 'active', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, )
     );
 
     /**
@@ -114,12 +153,30 @@ abstract class BaseBonPlanPeer
      * e.g. BonPlanPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'BonPlanCategorieId' => 1, 'DateDebut' => 2, 'DateFin' => 3, 'Prix' => 4, 'PrixBarre' => 5, 'ImageMenu' => 6, 'ImagePage' => 7, 'Active' => 8, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'bonPlanCategorieId' => 1, 'dateDebut' => 2, 'dateFin' => 3, 'prix' => 4, 'prixBarre' => 5, 'imageMenu' => 6, 'imagePage' => 7, 'active' => 8, ),
-        BasePeer::TYPE_COLNAME => array (BonPlanPeer::ID => 0, BonPlanPeer::BON_PLAN_CATEGORIE_ID => 1, BonPlanPeer::DATE_DEBUT => 2, BonPlanPeer::DATE_FIN => 3, BonPlanPeer::PRIX => 4, BonPlanPeer::PRIX_BARRE => 5, BonPlanPeer::IMAGE_MENU => 6, BonPlanPeer::IMAGE_PAGE => 7, BonPlanPeer::ACTIVE => 8, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'BON_PLAN_CATEGORIE_ID' => 1, 'DATE_DEBUT' => 2, 'DATE_FIN' => 3, 'PRIX' => 4, 'PRIX_BARRE' => 5, 'IMAGE_MENU' => 6, 'IMAGE_PAGE' => 7, 'ACTIVE' => 8, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'bon_plan_categorie_id' => 1, 'date_debut' => 2, 'date_fin' => 3, 'prix' => 4, 'prix_barre' => 5, 'image_menu' => 6, 'image_page' => 7, 'active' => 8, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'DateDebut' => 1, 'DateFin' => 2, 'Prix' => 3, 'PrixBarre' => 4, 'ImageMenu' => 5, 'ImagePage' => 6, 'ImageListe' => 7, 'ActiveCompteur' => 8, 'MiseEnAvant' => 9, 'PushHome' => 10, 'DateStart' => 11, 'DayStart' => 12, 'DayRange' => 13, 'NbAdultes' => 14, 'NbEnfants' => 15, 'Active' => 16, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'dateDebut' => 1, 'dateFin' => 2, 'prix' => 3, 'prixBarre' => 4, 'imageMenu' => 5, 'imagePage' => 6, 'imageListe' => 7, 'activeCompteur' => 8, 'miseEnAvant' => 9, 'pushHome' => 10, 'dateStart' => 11, 'dayStart' => 12, 'dayRange' => 13, 'nbAdultes' => 14, 'nbEnfants' => 15, 'active' => 16, ),
+        BasePeer::TYPE_COLNAME => array (BonPlanPeer::ID => 0, BonPlanPeer::DATE_DEBUT => 1, BonPlanPeer::DATE_FIN => 2, BonPlanPeer::PRIX => 3, BonPlanPeer::PRIX_BARRE => 4, BonPlanPeer::IMAGE_MENU => 5, BonPlanPeer::IMAGE_PAGE => 6, BonPlanPeer::IMAGE_LISTE => 7, BonPlanPeer::ACTIVE_COMPTEUR => 8, BonPlanPeer::MISE_EN_AVANT => 9, BonPlanPeer::PUSH_HOME => 10, BonPlanPeer::DATE_START => 11, BonPlanPeer::DAY_START => 12, BonPlanPeer::DAY_RANGE => 13, BonPlanPeer::NB_ADULTES => 14, BonPlanPeer::NB_ENFANTS => 15, BonPlanPeer::ACTIVE => 16, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'DATE_DEBUT' => 1, 'DATE_FIN' => 2, 'PRIX' => 3, 'PRIX_BARRE' => 4, 'IMAGE_MENU' => 5, 'IMAGE_PAGE' => 6, 'IMAGE_LISTE' => 7, 'ACTIVE_COMPTEUR' => 8, 'MISE_EN_AVANT' => 9, 'PUSH_HOME' => 10, 'DATE_START' => 11, 'DAY_START' => 12, 'DAY_RANGE' => 13, 'NB_ADULTES' => 14, 'NB_ENFANTS' => 15, 'ACTIVE' => 16, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'date_debut' => 1, 'date_fin' => 2, 'prix' => 3, 'prix_barre' => 4, 'image_menu' => 5, 'image_page' => 6, 'image_liste' => 7, 'active_compteur' => 8, 'mise_en_avant' => 9, 'push_home' => 10, 'date_start' => 11, 'day_start' => 12, 'day_range' => 13, 'nb_adultes' => 14, 'nb_enfants' => 15, 'active' => 16, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, )
+    );
+
+    /** The enumerated values for this table */
+    protected static $enumValueSets = array(
+        BonPlanPeer::DAY_START => array(
+            BonPlanPeer::DAY_START_MONDAY,
+            BonPlanPeer::DAY_START_TUESDAY,
+            BonPlanPeer::DAY_START_WEDNESDAY,
+            BonPlanPeer::DAY_START_THURSDAY,
+            BonPlanPeer::DAY_START_FRIDAY,
+            BonPlanPeer::DAY_START_SATURDAY,
+            BonPlanPeer::DAY_START_SUNDAY,
+        ),
+        BonPlanPeer::DAY_RANGE => array(
+            BonPlanPeer::DAY_RANGE_7,
+            BonPlanPeer::DAY_RANGE_14,
+            BonPlanPeer::DAY_RANGE_21,
+        ),
     );
 
     /**
@@ -162,6 +219,29 @@ abstract class BaseBonPlanPeer
     }
 
     /**
+     * Gets the list of values for all ENUM columns
+     * @return array
+     */
+    public static function getValueSets()
+    {
+      return BonPlanPeer::$enumValueSets;
+    }
+
+    /**
+     * Gets the list of values for an ENUM column
+     *
+     * @param string $colname The ENUM column name.
+     *
+     * @return array list of possible values for the column
+     */
+    public static function getValueSet($colname)
+    {
+        $valueSets = BonPlanPeer::getValueSets();
+
+        return $valueSets[$colname];
+    }
+
+    /**
      * Convenience method which changes table.column to alias.column.
      *
      * Using this method you can maintain SQL abstraction while using column aliases.
@@ -194,23 +274,39 @@ abstract class BaseBonPlanPeer
     {
         if (null === $alias) {
             $criteria->addSelectColumn(BonPlanPeer::ID);
-            $criteria->addSelectColumn(BonPlanPeer::BON_PLAN_CATEGORIE_ID);
             $criteria->addSelectColumn(BonPlanPeer::DATE_DEBUT);
             $criteria->addSelectColumn(BonPlanPeer::DATE_FIN);
             $criteria->addSelectColumn(BonPlanPeer::PRIX);
             $criteria->addSelectColumn(BonPlanPeer::PRIX_BARRE);
             $criteria->addSelectColumn(BonPlanPeer::IMAGE_MENU);
             $criteria->addSelectColumn(BonPlanPeer::IMAGE_PAGE);
+            $criteria->addSelectColumn(BonPlanPeer::IMAGE_LISTE);
+            $criteria->addSelectColumn(BonPlanPeer::ACTIVE_COMPTEUR);
+            $criteria->addSelectColumn(BonPlanPeer::MISE_EN_AVANT);
+            $criteria->addSelectColumn(BonPlanPeer::PUSH_HOME);
+            $criteria->addSelectColumn(BonPlanPeer::DATE_START);
+            $criteria->addSelectColumn(BonPlanPeer::DAY_START);
+            $criteria->addSelectColumn(BonPlanPeer::DAY_RANGE);
+            $criteria->addSelectColumn(BonPlanPeer::NB_ADULTES);
+            $criteria->addSelectColumn(BonPlanPeer::NB_ENFANTS);
             $criteria->addSelectColumn(BonPlanPeer::ACTIVE);
         } else {
             $criteria->addSelectColumn($alias . '.id');
-            $criteria->addSelectColumn($alias . '.bon_plan_categorie_id');
             $criteria->addSelectColumn($alias . '.date_debut');
             $criteria->addSelectColumn($alias . '.date_fin');
             $criteria->addSelectColumn($alias . '.prix');
             $criteria->addSelectColumn($alias . '.prix_barre');
             $criteria->addSelectColumn($alias . '.image_menu');
             $criteria->addSelectColumn($alias . '.image_page');
+            $criteria->addSelectColumn($alias . '.image_liste');
+            $criteria->addSelectColumn($alias . '.active_compteur');
+            $criteria->addSelectColumn($alias . '.mise_en_avant');
+            $criteria->addSelectColumn($alias . '.push_home');
+            $criteria->addSelectColumn($alias . '.date_start');
+            $criteria->addSelectColumn($alias . '.day_start');
+            $criteria->addSelectColumn($alias . '.day_range');
+            $criteria->addSelectColumn($alias . '.nb_adultes');
+            $criteria->addSelectColumn($alias . '.nb_enfants');
             $criteria->addSelectColumn($alias . '.active');
         }
     }
@@ -411,6 +507,12 @@ abstract class BaseBonPlanPeer
      */
     public static function clearRelatedInstancePool()
     {
+        // Invalidate objects in BonPlanEtablissementPeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        BonPlanEtablissementPeer::clearInstancePool();
+        // Invalidate objects in BonPlanDestinationPeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        BonPlanDestinationPeer::clearInstancePool();
         // Invalidate objects in BonPlanI18nPeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
         BonPlanI18nPeer::clearInstancePool();
@@ -508,244 +610,6 @@ abstract class BaseBonPlanPeer
         }
 
         return array($obj, $col);
-    }
-
-
-    /**
-     * Returns the number of rows matching criteria, joining the related BonPlanCategorie table
-     *
-     * @param      Criteria $criteria
-     * @param      boolean $distinct Whether to select only distinct columns; deprecated: use Criteria->setDistinct() instead.
-     * @param      PropelPDO $con
-     * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
-     * @return int Number of matching rows.
-     */
-    public static function doCountJoinBonPlanCategorie(Criteria $criteria, $distinct = false, PropelPDO $con = null, $join_behavior = Criteria::LEFT_JOIN)
-    {
-        // we're going to modify criteria, so copy it first
-        $criteria = clone $criteria;
-
-        // We need to set the primary table name, since in the case that there are no WHERE columns
-        // it will be impossible for the BasePeer::createSelectSql() method to determine which
-        // tables go into the FROM clause.
-        $criteria->setPrimaryTableName(BonPlanPeer::TABLE_NAME);
-
-        if ($distinct && !in_array(Criteria::DISTINCT, $criteria->getSelectModifiers())) {
-            $criteria->setDistinct();
-        }
-
-        if (!$criteria->hasSelectClause()) {
-            BonPlanPeer::addSelectColumns($criteria);
-        }
-
-        $criteria->clearOrderByColumns(); // ORDER BY won't ever affect the count
-
-        // Set the correct dbName
-        $criteria->setDbName(BonPlanPeer::DATABASE_NAME);
-
-        if ($con === null) {
-            $con = Propel::getConnection(BonPlanPeer::DATABASE_NAME, Propel::CONNECTION_READ);
-        }
-
-        $criteria->addJoin(BonPlanPeer::BON_PLAN_CATEGORIE_ID, BonPlanCategoriePeer::ID, $join_behavior);
-
-        $stmt = BasePeer::doCount($criteria, $con);
-
-        if ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-            $count = (int) $row[0];
-        } else {
-            $count = 0; // no rows returned; we infer that means 0 matches.
-        }
-        $stmt->closeCursor();
-
-        return $count;
-    }
-
-
-    /**
-     * Selects a collection of BonPlan objects pre-filled with their BonPlanCategorie objects.
-     * @param      Criteria  $criteria
-     * @param      PropelPDO $con
-     * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
-     * @return array           Array of BonPlan objects.
-     * @throws PropelException Any exceptions caught during processing will be
-     *		 rethrown wrapped into a PropelException.
-     */
-    public static function doSelectJoinBonPlanCategorie(Criteria $criteria, $con = null, $join_behavior = Criteria::LEFT_JOIN)
-    {
-        $criteria = clone $criteria;
-
-        // Set the correct dbName if it has not been overridden
-        if ($criteria->getDbName() == Propel::getDefaultDB()) {
-            $criteria->setDbName(BonPlanPeer::DATABASE_NAME);
-        }
-
-        BonPlanPeer::addSelectColumns($criteria);
-        $startcol = BonPlanPeer::NUM_HYDRATE_COLUMNS;
-        BonPlanCategoriePeer::addSelectColumns($criteria);
-
-        $criteria->addJoin(BonPlanPeer::BON_PLAN_CATEGORIE_ID, BonPlanCategoriePeer::ID, $join_behavior);
-
-        $stmt = BasePeer::doSelect($criteria, $con);
-        $results = array();
-
-        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-            $key1 = BonPlanPeer::getPrimaryKeyHashFromRow($row, 0);
-            if (null !== ($obj1 = BonPlanPeer::getInstanceFromPool($key1))) {
-                // We no longer rehydrate the object, since this can cause data loss.
-                // See http://www.propelorm.org/ticket/509
-                // $obj1->hydrate($row, 0, true); // rehydrate
-            } else {
-
-                $cls = BonPlanPeer::getOMClass();
-
-                $obj1 = new $cls();
-                $obj1->hydrate($row);
-                BonPlanPeer::addInstanceToPool($obj1, $key1);
-            } // if $obj1 already loaded
-
-            $key2 = BonPlanCategoriePeer::getPrimaryKeyHashFromRow($row, $startcol);
-            if ($key2 !== null) {
-                $obj2 = BonPlanCategoriePeer::getInstanceFromPool($key2);
-                if (!$obj2) {
-
-                    $cls = BonPlanCategoriePeer::getOMClass();
-
-                    $obj2 = new $cls();
-                    $obj2->hydrate($row, $startcol);
-                    BonPlanCategoriePeer::addInstanceToPool($obj2, $key2);
-                } // if obj2 already loaded
-
-                // Add the $obj1 (BonPlan) to $obj2 (BonPlanCategorie)
-                $obj2->addBonPlan($obj1);
-
-            } // if joined row was not null
-
-            $results[] = $obj1;
-        }
-        $stmt->closeCursor();
-
-        return $results;
-    }
-
-
-    /**
-     * Returns the number of rows matching criteria, joining all related tables
-     *
-     * @param      Criteria $criteria
-     * @param      boolean $distinct Whether to select only distinct columns; deprecated: use Criteria->setDistinct() instead.
-     * @param      PropelPDO $con
-     * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
-     * @return int Number of matching rows.
-     */
-    public static function doCountJoinAll(Criteria $criteria, $distinct = false, PropelPDO $con = null, $join_behavior = Criteria::LEFT_JOIN)
-    {
-        // we're going to modify criteria, so copy it first
-        $criteria = clone $criteria;
-
-        // We need to set the primary table name, since in the case that there are no WHERE columns
-        // it will be impossible for the BasePeer::createSelectSql() method to determine which
-        // tables go into the FROM clause.
-        $criteria->setPrimaryTableName(BonPlanPeer::TABLE_NAME);
-
-        if ($distinct && !in_array(Criteria::DISTINCT, $criteria->getSelectModifiers())) {
-            $criteria->setDistinct();
-        }
-
-        if (!$criteria->hasSelectClause()) {
-            BonPlanPeer::addSelectColumns($criteria);
-        }
-
-        $criteria->clearOrderByColumns(); // ORDER BY won't ever affect the count
-
-        // Set the correct dbName
-        $criteria->setDbName(BonPlanPeer::DATABASE_NAME);
-
-        if ($con === null) {
-            $con = Propel::getConnection(BonPlanPeer::DATABASE_NAME, Propel::CONNECTION_READ);
-        }
-
-        $criteria->addJoin(BonPlanPeer::BON_PLAN_CATEGORIE_ID, BonPlanCategoriePeer::ID, $join_behavior);
-
-        $stmt = BasePeer::doCount($criteria, $con);
-
-        if ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-            $count = (int) $row[0];
-        } else {
-            $count = 0; // no rows returned; we infer that means 0 matches.
-        }
-        $stmt->closeCursor();
-
-        return $count;
-    }
-
-    /**
-     * Selects a collection of BonPlan objects pre-filled with all related objects.
-     *
-     * @param      Criteria  $criteria
-     * @param      PropelPDO $con
-     * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
-     * @return array           Array of BonPlan objects.
-     * @throws PropelException Any exceptions caught during processing will be
-     *		 rethrown wrapped into a PropelException.
-     */
-    public static function doSelectJoinAll(Criteria $criteria, $con = null, $join_behavior = Criteria::LEFT_JOIN)
-    {
-        $criteria = clone $criteria;
-
-        // Set the correct dbName if it has not been overridden
-        if ($criteria->getDbName() == Propel::getDefaultDB()) {
-            $criteria->setDbName(BonPlanPeer::DATABASE_NAME);
-        }
-
-        BonPlanPeer::addSelectColumns($criteria);
-        $startcol2 = BonPlanPeer::NUM_HYDRATE_COLUMNS;
-
-        BonPlanCategoriePeer::addSelectColumns($criteria);
-        $startcol3 = $startcol2 + BonPlanCategoriePeer::NUM_HYDRATE_COLUMNS;
-
-        $criteria->addJoin(BonPlanPeer::BON_PLAN_CATEGORIE_ID, BonPlanCategoriePeer::ID, $join_behavior);
-
-        $stmt = BasePeer::doSelect($criteria, $con);
-        $results = array();
-
-        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-            $key1 = BonPlanPeer::getPrimaryKeyHashFromRow($row, 0);
-            if (null !== ($obj1 = BonPlanPeer::getInstanceFromPool($key1))) {
-                // We no longer rehydrate the object, since this can cause data loss.
-                // See http://www.propelorm.org/ticket/509
-                // $obj1->hydrate($row, 0, true); // rehydrate
-            } else {
-                $cls = BonPlanPeer::getOMClass();
-
-                $obj1 = new $cls();
-                $obj1->hydrate($row);
-                BonPlanPeer::addInstanceToPool($obj1, $key1);
-            } // if obj1 already loaded
-
-            // Add objects for joined BonPlanCategorie rows
-
-            $key2 = BonPlanCategoriePeer::getPrimaryKeyHashFromRow($row, $startcol2);
-            if ($key2 !== null) {
-                $obj2 = BonPlanCategoriePeer::getInstanceFromPool($key2);
-                if (!$obj2) {
-
-                    $cls = BonPlanCategoriePeer::getOMClass();
-
-                    $obj2 = new $cls();
-                    $obj2->hydrate($row, $startcol2);
-                    BonPlanCategoriePeer::addInstanceToPool($obj2, $key2);
-                } // if obj2 loaded
-
-                // Add the $obj1 (BonPlan) to the collection in $obj2 (BonPlanCategorie)
-                $obj2->addBonPlan($obj1);
-            } // if joined row not null
-
-            $results[] = $obj1;
-        }
-        $stmt->closeCursor();
-
-        return $results;
     }
 
     /**

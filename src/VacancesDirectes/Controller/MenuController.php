@@ -72,14 +72,16 @@ class MenuController implements ControllerProviderInterface
         $controllers->get('/bons-plans', function () use ($app)
         {
             $categories = BonPlanCategorieQuery::create()
-                ->orderBy('order')
+                ->addAscendingOrderByColumn('sortable_rank')
                 ->findActive()
             ;
 
             $bonsPlans = array();
             if($categories) {
                 $bonsPlans = BonPlanQuery::create()
-                    ->filterByBonPlanCategorieId($categories[0]->getId())
+                    ->useBonPlanBonPlanCategorieQuery()
+                        ->filterByBonPlanCategorieId($categories[0]->getId())
+                    ->endUse()
                     ->findActive()
                 ;
             }

@@ -895,22 +895,42 @@
         <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true" />
         <column name="name" type="varchar" />
         <column name="slug" type="varchar" />
-        <column name="order" type="integer" />
+        <column name="subtitle" type="varchar" />
+        <column name="description" type="longvarchar" />
 
         <behavior name="active" />
 
         <behavior name="i18n">
-            <parameter name="i18n_columns" value="name, slug" />
+            <parameter name="i18n_columns" value="name, slug, subtitle, description" />
         </behavior>
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/bon-plan-categories" />
         </behavior>
+
+        <behavior name="sortable"/>
+    </table>
+
+    <table name="bon_plan_bon_plan_categorie" isCrossRef="true">
+        <column name="bon_plan_id" type="integer" primaryKey="true"/>
+        <column name="bon_plan_categorie_id" type="integer" primaryKey="true"/>
+
+        <behavior name="sortable">
+            <parameter name="use_scope" value="true" />
+            <parameter name="scope_column" value="bon_plan_categorie_id" />
+        </behavior>
+
+        <foreign-key foreignTable="bon_plan">
+            <reference local="bon_plan_id" foreign="id"/>
+        </foreign-key>
+
+        <foreign-key foreignTable="bon_plan_categorie">
+            <reference local="bon_plan_categorie_id" foreign="id"/>
+        </foreign-key>
     </table>
 
     <table name="bon_plan">
         <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true" />
-        <column name="bon_plan_categorie_id" type="integer" required="true" />
         <column name="name" type="varchar" />
         <column name="slug" type="varchar" />
         <column name="introduction" type="varchar" />
@@ -922,10 +942,15 @@
         <column name="indice" type="varchar" />
         <column name="image_menu" type="varchar" />
         <column name="image_page" type="varchar" />
-
-        <foreign-key foreignTable="bon_plan_categorie">
-            <reference local="bon_plan_categorie_id" foreign="id" />
-        </foreign-key>
+        <column name="image_liste" type="varchar" />
+        <column name="active_compteur" type="boolean"/>
+        <column name="mise_en_avant" type="boolean"/>
+        <column name="push_home" type="boolean"/>
+        <column name="date_start" type="date"/>
+        <column name="day_start" type="enum" valueSet="monday, tuesday, wednesday, thursday, friday, saturday, sunday" required="true"/>
+        <column name="day_range" type="enum" valueSet="7, 14, 21" required="true"/>
+        <column name="nb_adultes" type="integer" />
+        <column name="nb_enfants" type="integer" />
 
         <behavior name="active" />
 
@@ -935,8 +960,34 @@
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/bons-plans" />
-            <parameter name="crud_type_file" value="image_menu,image_page" />
+            <parameter name="crud_type_file" value="image_menu,image_page,image_liste" />
         </behavior>
+    </table>
+
+    <table name="bon_plan_etablissement" isCrossRef="true">
+        <column name="bon_plan_id" type="integer" primaryKey="true"/>
+        <column name="etablissement_id" type="integer" primaryKey="true"/>
+
+        <foreign-key foreignTable="bon_plan" onDelete="CASCADE">
+            <reference local="bon_plan_id" foreign="id"/>
+        </foreign-key>
+
+        <foreign-key foreignTable="etablissement">
+            <reference local="etablissement_id" foreign="id"/>
+        </foreign-key>
+    </table>
+
+    <table name="bon_plan_destination" isCrossRef="true">
+        <column name="bon_plan_id" type="integer" primaryKey="true"/>
+        <column name="destination_id" type="integer" primaryKey="true"/>
+
+        <foreign-key foreignTable="bon_plan" onDelete="CASCADE">
+            <reference local="bon_plan_id" foreign="id"/>
+        </foreign-key>
+
+        <foreign-key foreignTable="destination">
+            <reference local="destination_id" foreign="id"/>
+        </foreign-key>
     </table>
 
     <table name="demande_annulation">

@@ -14,6 +14,8 @@ use \PropelException;
 use \PropelObjectCollection;
 use \PropelPDO;
 use Cungfoo\Model\BonPlan;
+use Cungfoo\Model\BonPlanBonPlanCategorie;
+use Cungfoo\Model\BonPlanBonPlanCategorieQuery;
 use Cungfoo\Model\BonPlanCategorie;
 use Cungfoo\Model\BonPlanCategorieI18n;
 use Cungfoo\Model\BonPlanCategorieI18nQuery;
@@ -56,12 +58,6 @@ abstract class BaseBonPlanCategorie extends BaseObject implements Persistent
     protected $id;
 
     /**
-     * The value for the order field.
-     * @var        int
-     */
-    protected $order;
-
-    /**
      * The value for the active field.
      * Note: this column has a database default value of: false
      * @var        boolean
@@ -69,16 +65,27 @@ abstract class BaseBonPlanCategorie extends BaseObject implements Persistent
     protected $active;
 
     /**
-     * @var        PropelObjectCollection|BonPlan[] Collection to store aggregation of BonPlan objects.
+     * The value for the sortable_rank field.
+     * @var        int
      */
-    protected $collBonPlans;
-    protected $collBonPlansPartial;
+    protected $sortable_rank;
+
+    /**
+     * @var        PropelObjectCollection|BonPlanBonPlanCategorie[] Collection to store aggregation of BonPlanBonPlanCategorie objects.
+     */
+    protected $collBonPlanBonPlanCategories;
+    protected $collBonPlanBonPlanCategoriesPartial;
 
     /**
      * @var        PropelObjectCollection|BonPlanCategorieI18n[] Collection to store aggregation of BonPlanCategorieI18n objects.
      */
     protected $collBonPlanCategorieI18ns;
     protected $collBonPlanCategorieI18nsPartial;
+
+    /**
+     * @var        PropelObjectCollection|BonPlan[] Collection to store aggregation of BonPlan objects.
+     */
+    protected $collBonPlans;
 
     /**
      * Flag to prevent endless save loop, if this object is referenced
@@ -108,11 +115,25 @@ abstract class BaseBonPlanCategorie extends BaseObject implements Persistent
      */
     protected $currentTranslations;
 
+    // sortable behavior
+
+    /**
+     * Queries to be executed in the save transaction
+     * @var        array
+     */
+    protected $sortableQueries = array();
+
     /**
      * An array of objects scheduled for deletion.
      * @var		PropelObjectCollection
      */
     protected $bonPlansScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
+    protected $bonPlanBonPlanCategoriesScheduledForDeletion = null;
 
     /**
      * An array of objects scheduled for deletion.
@@ -152,16 +173,6 @@ abstract class BaseBonPlanCategorie extends BaseObject implements Persistent
     }
 
     /**
-     * Get the [order] column value.
-     *
-     * @return int
-     */
-    public function getOrder()
-    {
-        return $this->order;
-    }
-
-    /**
      * Get the [active] column value.
      *
      * @return boolean
@@ -169,6 +180,16 @@ abstract class BaseBonPlanCategorie extends BaseObject implements Persistent
     public function getActive()
     {
         return $this->active;
+    }
+
+    /**
+     * Get the [sortable_rank] column value.
+     *
+     * @return int
+     */
+    public function getSortableRank()
+    {
+        return $this->sortable_rank;
     }
 
     /**
@@ -191,27 +212,6 @@ abstract class BaseBonPlanCategorie extends BaseObject implements Persistent
 
         return $this;
     } // setId()
-
-    /**
-     * Set the value of [order] column.
-     *
-     * @param int $v new value
-     * @return BonPlanCategorie The current object (for fluent API support)
-     */
-    public function setOrder($v)
-    {
-        if ($v !== null) {
-            $v = (int) $v;
-        }
-
-        if ($this->order !== $v) {
-            $this->order = $v;
-            $this->modifiedColumns[] = BonPlanCategoriePeer::ORDER;
-        }
-
-
-        return $this;
-    } // setOrder()
 
     /**
      * Sets the value of the [active] column.
@@ -241,6 +241,27 @@ abstract class BaseBonPlanCategorie extends BaseObject implements Persistent
 
         return $this;
     } // setActive()
+
+    /**
+     * Set the value of [sortable_rank] column.
+     *
+     * @param int $v new value
+     * @return BonPlanCategorie The current object (for fluent API support)
+     */
+    public function setSortableRank($v)
+    {
+        if ($v !== null) {
+            $v = (int) $v;
+        }
+
+        if ($this->sortable_rank !== $v) {
+            $this->sortable_rank = $v;
+            $this->modifiedColumns[] = BonPlanCategoriePeer::SORTABLE_RANK;
+        }
+
+
+        return $this;
+    } // setSortableRank()
 
     /**
      * Indicates whether the columns in this object are only set to default values.
@@ -279,8 +300,8 @@ abstract class BaseBonPlanCategorie extends BaseObject implements Persistent
         try {
 
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
-            $this->order = ($row[$startcol + 1] !== null) ? (int) $row[$startcol + 1] : null;
-            $this->active = ($row[$startcol + 2] !== null) ? (boolean) $row[$startcol + 2] : null;
+            $this->active = ($row[$startcol + 1] !== null) ? (boolean) $row[$startcol + 1] : null;
+            $this->sortable_rank = ($row[$startcol + 2] !== null) ? (int) $row[$startcol + 2] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -351,10 +372,11 @@ abstract class BaseBonPlanCategorie extends BaseObject implements Persistent
 
         if ($deep) {  // also de-associate any related objects?
 
-            $this->collBonPlans = null;
+            $this->collBonPlanBonPlanCategories = null;
 
             $this->collBonPlanCategorieI18ns = null;
 
+            $this->collBonPlans = null;
         } // if (deep)
     }
 
@@ -383,6 +405,11 @@ abstract class BaseBonPlanCategorie extends BaseObject implements Persistent
             $deleteQuery = BonPlanCategorieQuery::create()
                 ->filterByPrimaryKey($this->getPrimaryKey());
             $ret = $this->preDelete($con);
+            // sortable behavior
+
+            BonPlanCategoriePeer::shiftRank(-1, $this->getSortableRank() + 1, null, $con);
+            BonPlanCategoriePeer::clearInstancePool();
+
             if ($ret) {
                 $deleteQuery->delete($con);
                 $this->postDelete($con);
@@ -425,8 +452,15 @@ abstract class BaseBonPlanCategorie extends BaseObject implements Persistent
         $isInsert = $this->isNew();
         try {
             $ret = $this->preSave($con);
+            // sortable behavior
+            $this->processSortableQueries($con);
             if ($isInsert) {
                 $ret = $ret && $this->preInsert($con);
+                // sortable behavior
+                if (!$this->isColumnModified(BonPlanCategoriePeer::RANK_COL)) {
+                    $this->setSortableRank(BonPlanCategorieQuery::create()->getMaxRank($con) + 1);
+                }
+
             } else {
                 $ret = $ret && $this->preUpdate($con);
             }
@@ -481,15 +515,35 @@ abstract class BaseBonPlanCategorie extends BaseObject implements Persistent
 
             if ($this->bonPlansScheduledForDeletion !== null) {
                 if (!$this->bonPlansScheduledForDeletion->isEmpty()) {
-                    BonPlanQuery::create()
-                        ->filterByPrimaryKeys($this->bonPlansScheduledForDeletion->getPrimaryKeys(false))
+                    $pks = array();
+                    $pk = $this->getPrimaryKey();
+                    foreach ($this->bonPlansScheduledForDeletion->getPrimaryKeys(false) as $remotePk) {
+                        $pks[] = array($remotePk, $pk);
+                    }
+                    BonPlanBonPlanCategorieQuery::create()
+                        ->filterByPrimaryKeys($pks)
                         ->delete($con);
                     $this->bonPlansScheduledForDeletion = null;
                 }
+
+                foreach ($this->getBonPlans() as $bonPlan) {
+                    if ($bonPlan->isModified()) {
+                        $bonPlan->save($con);
+                    }
+                }
             }
 
-            if ($this->collBonPlans !== null) {
-                foreach ($this->collBonPlans as $referrerFK) {
+            if ($this->bonPlanBonPlanCategoriesScheduledForDeletion !== null) {
+                if (!$this->bonPlanBonPlanCategoriesScheduledForDeletion->isEmpty()) {
+                    BonPlanBonPlanCategorieQuery::create()
+                        ->filterByPrimaryKeys($this->bonPlanBonPlanCategoriesScheduledForDeletion->getPrimaryKeys(false))
+                        ->delete($con);
+                    $this->bonPlanBonPlanCategoriesScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collBonPlanBonPlanCategories !== null) {
+                foreach ($this->collBonPlanBonPlanCategories as $referrerFK) {
                     if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
                         $affectedRows += $referrerFK->save($con);
                     }
@@ -542,11 +596,11 @@ abstract class BaseBonPlanCategorie extends BaseObject implements Persistent
         if ($this->isColumnModified(BonPlanCategoriePeer::ID)) {
             $modifiedColumns[':p' . $index++]  = '`id`';
         }
-        if ($this->isColumnModified(BonPlanCategoriePeer::ORDER)) {
-            $modifiedColumns[':p' . $index++]  = '`order`';
-        }
         if ($this->isColumnModified(BonPlanCategoriePeer::ACTIVE)) {
             $modifiedColumns[':p' . $index++]  = '`active`';
+        }
+        if ($this->isColumnModified(BonPlanCategoriePeer::SORTABLE_RANK)) {
+            $modifiedColumns[':p' . $index++]  = '`sortable_rank`';
         }
 
         $sql = sprintf(
@@ -562,11 +616,11 @@ abstract class BaseBonPlanCategorie extends BaseObject implements Persistent
                     case '`id`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`order`':
-                        $stmt->bindValue($identifier, $this->order, PDO::PARAM_INT);
-                        break;
                     case '`active`':
                         $stmt->bindValue($identifier, (int) $this->active, PDO::PARAM_INT);
+                        break;
+                    case '`sortable_rank`':
+                        $stmt->bindValue($identifier, $this->sortable_rank, PDO::PARAM_INT);
                         break;
                 }
             }
@@ -667,8 +721,8 @@ abstract class BaseBonPlanCategorie extends BaseObject implements Persistent
             }
 
 
-                if ($this->collBonPlans !== null) {
-                    foreach ($this->collBonPlans as $referrerFK) {
+                if ($this->collBonPlanBonPlanCategories !== null) {
+                    foreach ($this->collBonPlanBonPlanCategories as $referrerFK) {
                         if (!$referrerFK->validate($columns)) {
                             $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
                         }
@@ -722,10 +776,10 @@ abstract class BaseBonPlanCategorie extends BaseObject implements Persistent
                 return $this->getId();
                 break;
             case 1:
-                return $this->getOrder();
+                return $this->getActive();
                 break;
             case 2:
-                return $this->getActive();
+                return $this->getSortableRank();
                 break;
             default:
                 return null;
@@ -757,12 +811,12 @@ abstract class BaseBonPlanCategorie extends BaseObject implements Persistent
         $keys = BonPlanCategoriePeer::getFieldNames($keyType);
         $result = array(
             $keys[0] => $this->getId(),
-            $keys[1] => $this->getOrder(),
-            $keys[2] => $this->getActive(),
+            $keys[1] => $this->getActive(),
+            $keys[2] => $this->getSortableRank(),
         );
         if ($includeForeignObjects) {
-            if (null !== $this->collBonPlans) {
-                $result['BonPlans'] = $this->collBonPlans->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
+            if (null !== $this->collBonPlanBonPlanCategories) {
+                $result['BonPlanBonPlanCategories'] = $this->collBonPlanBonPlanCategories->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
             if (null !== $this->collBonPlanCategorieI18ns) {
                 $result['BonPlanCategorieI18ns'] = $this->collBonPlanCategorieI18ns->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
@@ -805,10 +859,10 @@ abstract class BaseBonPlanCategorie extends BaseObject implements Persistent
                 $this->setId($value);
                 break;
             case 1:
-                $this->setOrder($value);
+                $this->setActive($value);
                 break;
             case 2:
-                $this->setActive($value);
+                $this->setSortableRank($value);
                 break;
         } // switch()
     }
@@ -835,8 +889,8 @@ abstract class BaseBonPlanCategorie extends BaseObject implements Persistent
         $keys = BonPlanCategoriePeer::getFieldNames($keyType);
 
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
-        if (array_key_exists($keys[1], $arr)) $this->setOrder($arr[$keys[1]]);
-        if (array_key_exists($keys[2], $arr)) $this->setActive($arr[$keys[2]]);
+        if (array_key_exists($keys[1], $arr)) $this->setActive($arr[$keys[1]]);
+        if (array_key_exists($keys[2], $arr)) $this->setSortableRank($arr[$keys[2]]);
     }
 
     /**
@@ -849,8 +903,8 @@ abstract class BaseBonPlanCategorie extends BaseObject implements Persistent
         $criteria = new Criteria(BonPlanCategoriePeer::DATABASE_NAME);
 
         if ($this->isColumnModified(BonPlanCategoriePeer::ID)) $criteria->add(BonPlanCategoriePeer::ID, $this->id);
-        if ($this->isColumnModified(BonPlanCategoriePeer::ORDER)) $criteria->add(BonPlanCategoriePeer::ORDER, $this->order);
         if ($this->isColumnModified(BonPlanCategoriePeer::ACTIVE)) $criteria->add(BonPlanCategoriePeer::ACTIVE, $this->active);
+        if ($this->isColumnModified(BonPlanCategoriePeer::SORTABLE_RANK)) $criteria->add(BonPlanCategoriePeer::SORTABLE_RANK, $this->sortable_rank);
 
         return $criteria;
     }
@@ -914,8 +968,8 @@ abstract class BaseBonPlanCategorie extends BaseObject implements Persistent
      */
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
-        $copyObj->setOrder($this->getOrder());
         $copyObj->setActive($this->getActive());
+        $copyObj->setSortableRank($this->getSortableRank());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -924,9 +978,9 @@ abstract class BaseBonPlanCategorie extends BaseObject implements Persistent
             // store object hash to prevent cycle
             $this->startCopy = true;
 
-            foreach ($this->getBonPlans() as $relObj) {
+            foreach ($this->getBonPlanBonPlanCategories() as $relObj) {
                 if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
-                    $copyObj->addBonPlan($relObj->copy($deepCopy));
+                    $copyObj->addBonPlanBonPlanCategorie($relObj->copy($deepCopy));
                 }
             }
 
@@ -997,8 +1051,8 @@ abstract class BaseBonPlanCategorie extends BaseObject implements Persistent
      */
     public function initRelation($relationName)
     {
-        if ('BonPlan' == $relationName) {
-            $this->initBonPlans();
+        if ('BonPlanBonPlanCategorie' == $relationName) {
+            $this->initBonPlanBonPlanCategories();
         }
         if ('BonPlanCategorieI18n' == $relationName) {
             $this->initBonPlanCategorieI18ns();
@@ -1006,36 +1060,36 @@ abstract class BaseBonPlanCategorie extends BaseObject implements Persistent
     }
 
     /**
-     * Clears out the collBonPlans collection
+     * Clears out the collBonPlanBonPlanCategories collection
      *
      * This does not modify the database; however, it will remove any associated objects, causing
      * them to be refetched by subsequent calls to accessor method.
      *
      * @return BonPlanCategorie The current object (for fluent API support)
-     * @see        addBonPlans()
+     * @see        addBonPlanBonPlanCategories()
      */
-    public function clearBonPlans()
+    public function clearBonPlanBonPlanCategories()
     {
-        $this->collBonPlans = null; // important to set this to null since that means it is uninitialized
-        $this->collBonPlansPartial = null;
+        $this->collBonPlanBonPlanCategories = null; // important to set this to null since that means it is uninitialized
+        $this->collBonPlanBonPlanCategoriesPartial = null;
 
         return $this;
     }
 
     /**
-     * reset is the collBonPlans collection loaded partially
+     * reset is the collBonPlanBonPlanCategories collection loaded partially
      *
      * @return void
      */
-    public function resetPartialBonPlans($v = true)
+    public function resetPartialBonPlanBonPlanCategories($v = true)
     {
-        $this->collBonPlansPartial = $v;
+        $this->collBonPlanBonPlanCategoriesPartial = $v;
     }
 
     /**
-     * Initializes the collBonPlans collection.
+     * Initializes the collBonPlanBonPlanCategories collection.
      *
-     * By default this just sets the collBonPlans collection to an empty array (like clearcollBonPlans());
+     * By default this just sets the collBonPlanBonPlanCategories collection to an empty array (like clearcollBonPlanBonPlanCategories());
      * however, you may wish to override this method in your stub class to provide setting appropriate
      * to your application -- for example, setting the initial array to the values stored in database.
      *
@@ -1044,17 +1098,17 @@ abstract class BaseBonPlanCategorie extends BaseObject implements Persistent
      *
      * @return void
      */
-    public function initBonPlans($overrideExisting = true)
+    public function initBonPlanBonPlanCategories($overrideExisting = true)
     {
-        if (null !== $this->collBonPlans && !$overrideExisting) {
+        if (null !== $this->collBonPlanBonPlanCategories && !$overrideExisting) {
             return;
         }
-        $this->collBonPlans = new PropelObjectCollection();
-        $this->collBonPlans->setModel('BonPlan');
+        $this->collBonPlanBonPlanCategories = new PropelObjectCollection();
+        $this->collBonPlanBonPlanCategories->setModel('BonPlanBonPlanCategorie');
     }
 
     /**
-     * Gets an array of BonPlan objects which contain a foreign key that references this object.
+     * Gets an array of BonPlanBonPlanCategorie objects which contain a foreign key that references this object.
      *
      * If the $criteria is not null, it is used to always fetch the results from the database.
      * Otherwise the results are fetched from the database the first time, then cached.
@@ -1064,102 +1118,102 @@ abstract class BaseBonPlanCategorie extends BaseObject implements Persistent
      *
      * @param Criteria $criteria optional Criteria object to narrow the query
      * @param PropelPDO $con optional connection object
-     * @return PropelObjectCollection|BonPlan[] List of BonPlan objects
+     * @return PropelObjectCollection|BonPlanBonPlanCategorie[] List of BonPlanBonPlanCategorie objects
      * @throws PropelException
      */
-    public function getBonPlans($criteria = null, PropelPDO $con = null)
+    public function getBonPlanBonPlanCategories($criteria = null, PropelPDO $con = null)
     {
-        $partial = $this->collBonPlansPartial && !$this->isNew();
-        if (null === $this->collBonPlans || null !== $criteria  || $partial) {
-            if ($this->isNew() && null === $this->collBonPlans) {
+        $partial = $this->collBonPlanBonPlanCategoriesPartial && !$this->isNew();
+        if (null === $this->collBonPlanBonPlanCategories || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collBonPlanBonPlanCategories) {
                 // return empty collection
-                $this->initBonPlans();
+                $this->initBonPlanBonPlanCategories();
             } else {
-                $collBonPlans = BonPlanQuery::create(null, $criteria)
+                $collBonPlanBonPlanCategories = BonPlanBonPlanCategorieQuery::create(null, $criteria)
                     ->filterByBonPlanCategorie($this)
                     ->find($con);
                 if (null !== $criteria) {
-                    if (false !== $this->collBonPlansPartial && count($collBonPlans)) {
-                      $this->initBonPlans(false);
+                    if (false !== $this->collBonPlanBonPlanCategoriesPartial && count($collBonPlanBonPlanCategories)) {
+                      $this->initBonPlanBonPlanCategories(false);
 
-                      foreach($collBonPlans as $obj) {
-                        if (false == $this->collBonPlans->contains($obj)) {
-                          $this->collBonPlans->append($obj);
+                      foreach($collBonPlanBonPlanCategories as $obj) {
+                        if (false == $this->collBonPlanBonPlanCategories->contains($obj)) {
+                          $this->collBonPlanBonPlanCategories->append($obj);
                         }
                       }
 
-                      $this->collBonPlansPartial = true;
+                      $this->collBonPlanBonPlanCategoriesPartial = true;
                     }
 
-                    return $collBonPlans;
+                    return $collBonPlanBonPlanCategories;
                 }
 
-                if($partial && $this->collBonPlans) {
-                    foreach($this->collBonPlans as $obj) {
+                if($partial && $this->collBonPlanBonPlanCategories) {
+                    foreach($this->collBonPlanBonPlanCategories as $obj) {
                         if($obj->isNew()) {
-                            $collBonPlans[] = $obj;
+                            $collBonPlanBonPlanCategories[] = $obj;
                         }
                     }
                 }
 
-                $this->collBonPlans = $collBonPlans;
-                $this->collBonPlansPartial = false;
+                $this->collBonPlanBonPlanCategories = $collBonPlanBonPlanCategories;
+                $this->collBonPlanBonPlanCategoriesPartial = false;
             }
         }
 
-        return $this->collBonPlans;
+        return $this->collBonPlanBonPlanCategories;
     }
 
     /**
-     * Sets a collection of BonPlan objects related by a one-to-many relationship
+     * Sets a collection of BonPlanBonPlanCategorie objects related by a one-to-many relationship
      * to the current object.
      * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
      * and new objects from the given Propel collection.
      *
-     * @param PropelCollection $bonPlans A Propel collection.
+     * @param PropelCollection $bonPlanBonPlanCategories A Propel collection.
      * @param PropelPDO $con Optional connection object
      * @return BonPlanCategorie The current object (for fluent API support)
      */
-    public function setBonPlans(PropelCollection $bonPlans, PropelPDO $con = null)
+    public function setBonPlanBonPlanCategories(PropelCollection $bonPlanBonPlanCategories, PropelPDO $con = null)
     {
-        $this->bonPlansScheduledForDeletion = $this->getBonPlans(new Criteria(), $con)->diff($bonPlans);
+        $this->bonPlanBonPlanCategoriesScheduledForDeletion = $this->getBonPlanBonPlanCategories(new Criteria(), $con)->diff($bonPlanBonPlanCategories);
 
-        foreach ($this->bonPlansScheduledForDeletion as $bonPlanRemoved) {
-            $bonPlanRemoved->setBonPlanCategorie(null);
+        foreach ($this->bonPlanBonPlanCategoriesScheduledForDeletion as $bonPlanBonPlanCategorieRemoved) {
+            $bonPlanBonPlanCategorieRemoved->setBonPlanCategorie(null);
         }
 
-        $this->collBonPlans = null;
-        foreach ($bonPlans as $bonPlan) {
-            $this->addBonPlan($bonPlan);
+        $this->collBonPlanBonPlanCategories = null;
+        foreach ($bonPlanBonPlanCategories as $bonPlanBonPlanCategorie) {
+            $this->addBonPlanBonPlanCategorie($bonPlanBonPlanCategorie);
         }
 
-        $this->collBonPlans = $bonPlans;
-        $this->collBonPlansPartial = false;
+        $this->collBonPlanBonPlanCategories = $bonPlanBonPlanCategories;
+        $this->collBonPlanBonPlanCategoriesPartial = false;
 
         return $this;
     }
 
     /**
-     * Returns the number of related BonPlan objects.
+     * Returns the number of related BonPlanBonPlanCategorie objects.
      *
      * @param Criteria $criteria
      * @param boolean $distinct
      * @param PropelPDO $con
-     * @return int             Count of related BonPlan objects.
+     * @return int             Count of related BonPlanBonPlanCategorie objects.
      * @throws PropelException
      */
-    public function countBonPlans(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    public function countBonPlanBonPlanCategories(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
     {
-        $partial = $this->collBonPlansPartial && !$this->isNew();
-        if (null === $this->collBonPlans || null !== $criteria || $partial) {
-            if ($this->isNew() && null === $this->collBonPlans) {
+        $partial = $this->collBonPlanBonPlanCategoriesPartial && !$this->isNew();
+        if (null === $this->collBonPlanBonPlanCategories || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collBonPlanBonPlanCategories) {
                 return 0;
             }
 
             if($partial && !$criteria) {
-                return count($this->getBonPlans());
+                return count($this->getBonPlanBonPlanCategories());
             }
-            $query = BonPlanQuery::create(null, $criteria);
+            $query = BonPlanBonPlanCategorieQuery::create(null, $criteria);
             if ($distinct) {
                 $query->distinct();
             }
@@ -1169,55 +1223,80 @@ abstract class BaseBonPlanCategorie extends BaseObject implements Persistent
                 ->count($con);
         }
 
-        return count($this->collBonPlans);
+        return count($this->collBonPlanBonPlanCategories);
     }
 
     /**
-     * Method called to associate a BonPlan object to this object
-     * through the BonPlan foreign key attribute.
+     * Method called to associate a BonPlanBonPlanCategorie object to this object
+     * through the BonPlanBonPlanCategorie foreign key attribute.
      *
-     * @param    BonPlan $l BonPlan
+     * @param    BonPlanBonPlanCategorie $l BonPlanBonPlanCategorie
      * @return BonPlanCategorie The current object (for fluent API support)
      */
-    public function addBonPlan(BonPlan $l)
+    public function addBonPlanBonPlanCategorie(BonPlanBonPlanCategorie $l)
     {
-        if ($this->collBonPlans === null) {
-            $this->initBonPlans();
-            $this->collBonPlansPartial = true;
+        if ($this->collBonPlanBonPlanCategories === null) {
+            $this->initBonPlanBonPlanCategories();
+            $this->collBonPlanBonPlanCategoriesPartial = true;
         }
-        if (!in_array($l, $this->collBonPlans->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
-            $this->doAddBonPlan($l);
+        if (!in_array($l, $this->collBonPlanBonPlanCategories->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
+            $this->doAddBonPlanBonPlanCategorie($l);
         }
 
         return $this;
     }
 
     /**
-     * @param	BonPlan $bonPlan The bonPlan object to add.
+     * @param	BonPlanBonPlanCategorie $bonPlanBonPlanCategorie The bonPlanBonPlanCategorie object to add.
      */
-    protected function doAddBonPlan($bonPlan)
+    protected function doAddBonPlanBonPlanCategorie($bonPlanBonPlanCategorie)
     {
-        $this->collBonPlans[]= $bonPlan;
-        $bonPlan->setBonPlanCategorie($this);
+        $this->collBonPlanBonPlanCategories[]= $bonPlanBonPlanCategorie;
+        $bonPlanBonPlanCategorie->setBonPlanCategorie($this);
     }
 
     /**
-     * @param	BonPlan $bonPlan The bonPlan object to remove.
+     * @param	BonPlanBonPlanCategorie $bonPlanBonPlanCategorie The bonPlanBonPlanCategorie object to remove.
      * @return BonPlanCategorie The current object (for fluent API support)
      */
-    public function removeBonPlan($bonPlan)
+    public function removeBonPlanBonPlanCategorie($bonPlanBonPlanCategorie)
     {
-        if ($this->getBonPlans()->contains($bonPlan)) {
-            $this->collBonPlans->remove($this->collBonPlans->search($bonPlan));
-            if (null === $this->bonPlansScheduledForDeletion) {
-                $this->bonPlansScheduledForDeletion = clone $this->collBonPlans;
-                $this->bonPlansScheduledForDeletion->clear();
+        if ($this->getBonPlanBonPlanCategories()->contains($bonPlanBonPlanCategorie)) {
+            $this->collBonPlanBonPlanCategories->remove($this->collBonPlanBonPlanCategories->search($bonPlanBonPlanCategorie));
+            if (null === $this->bonPlanBonPlanCategoriesScheduledForDeletion) {
+                $this->bonPlanBonPlanCategoriesScheduledForDeletion = clone $this->collBonPlanBonPlanCategories;
+                $this->bonPlanBonPlanCategoriesScheduledForDeletion->clear();
             }
-            $this->bonPlansScheduledForDeletion[]= $bonPlan;
-            $bonPlan->setBonPlanCategorie(null);
+            $this->bonPlanBonPlanCategoriesScheduledForDeletion[]= $bonPlanBonPlanCategorie;
+            $bonPlanBonPlanCategorie->setBonPlanCategorie(null);
         }
 
         return $this;
+    }
+
+
+    /**
+     * If this collection has already been initialized with
+     * an identical criteria, it returns the collection.
+     * Otherwise if this BonPlanCategorie is new, it will return
+     * an empty collection; or if this BonPlanCategorie has previously
+     * been saved, it will retrieve related BonPlanBonPlanCategories from storage.
+     *
+     * This method is protected by default in order to keep the public
+     * api reasonable.  You can provide public methods for those you
+     * actually need in BonPlanCategorie.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @param string $join_behavior optional join type to use (defaults to Criteria::LEFT_JOIN)
+     * @return PropelObjectCollection|BonPlanBonPlanCategorie[] List of BonPlanBonPlanCategorie objects
+     */
+    public function getBonPlanBonPlanCategoriesJoinBonPlan($criteria = null, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    {
+        $query = BonPlanBonPlanCategorieQuery::create(null, $criteria);
+        $query->joinWith('BonPlan', $join_behavior);
+
+        return $this->getBonPlanBonPlanCategories($query, $con);
     }
 
     /**
@@ -1440,13 +1519,190 @@ abstract class BaseBonPlanCategorie extends BaseObject implements Persistent
     }
 
     /**
+     * Clears out the collBonPlans collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return BonPlanCategorie The current object (for fluent API support)
+     * @see        addBonPlans()
+     */
+    public function clearBonPlans()
+    {
+        $this->collBonPlans = null; // important to set this to null since that means it is uninitialized
+        $this->collBonPlansPartial = null;
+
+        return $this;
+    }
+
+    /**
+     * Initializes the collBonPlans collection.
+     *
+     * By default this just sets the collBonPlans collection to an empty collection (like clearBonPlans());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @return void
+     */
+    public function initBonPlans()
+    {
+        $this->collBonPlans = new PropelObjectCollection();
+        $this->collBonPlans->setModel('BonPlan');
+    }
+
+    /**
+     * Gets a collection of BonPlan objects related by a many-to-many relationship
+     * to the current object by way of the bon_plan_bon_plan_categorie cross-reference table.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this BonPlanCategorie is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria Optional query object to filter the query
+     * @param PropelPDO $con Optional connection object
+     *
+     * @return PropelObjectCollection|BonPlan[] List of BonPlan objects
+     */
+    public function getBonPlans($criteria = null, PropelPDO $con = null)
+    {
+        if (null === $this->collBonPlans || null !== $criteria) {
+            if ($this->isNew() && null === $this->collBonPlans) {
+                // return empty collection
+                $this->initBonPlans();
+            } else {
+                $collBonPlans = BonPlanQuery::create(null, $criteria)
+                    ->filterByBonPlanCategorie($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    return $collBonPlans;
+                }
+                $this->collBonPlans = $collBonPlans;
+            }
+        }
+
+        return $this->collBonPlans;
+    }
+
+    /**
+     * Sets a collection of BonPlan objects related by a many-to-many relationship
+     * to the current object by way of the bon_plan_bon_plan_categorie cross-reference table.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $bonPlans A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     * @return BonPlanCategorie The current object (for fluent API support)
+     */
+    public function setBonPlans(PropelCollection $bonPlans, PropelPDO $con = null)
+    {
+        $this->clearBonPlans();
+        $currentBonPlans = $this->getBonPlans();
+
+        $this->bonPlansScheduledForDeletion = $currentBonPlans->diff($bonPlans);
+
+        foreach ($bonPlans as $bonPlan) {
+            if (!$currentBonPlans->contains($bonPlan)) {
+                $this->doAddBonPlan($bonPlan);
+            }
+        }
+
+        $this->collBonPlans = $bonPlans;
+
+        return $this;
+    }
+
+    /**
+     * Gets the number of BonPlan objects related by a many-to-many relationship
+     * to the current object by way of the bon_plan_bon_plan_categorie cross-reference table.
+     *
+     * @param Criteria $criteria Optional query object to filter the query
+     * @param boolean $distinct Set to true to force count distinct
+     * @param PropelPDO $con Optional connection object
+     *
+     * @return int the number of related BonPlan objects
+     */
+    public function countBonPlans($criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        if (null === $this->collBonPlans || null !== $criteria) {
+            if ($this->isNew() && null === $this->collBonPlans) {
+                return 0;
+            } else {
+                $query = BonPlanQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
+
+                return $query
+                    ->filterByBonPlanCategorie($this)
+                    ->count($con);
+            }
+        } else {
+            return count($this->collBonPlans);
+        }
+    }
+
+    /**
+     * Associate a BonPlan object to this object
+     * through the bon_plan_bon_plan_categorie cross reference table.
+     *
+     * @param  BonPlan $bonPlan The BonPlanBonPlanCategorie object to relate
+     * @return BonPlanCategorie The current object (for fluent API support)
+     */
+    public function addBonPlan(BonPlan $bonPlan)
+    {
+        if ($this->collBonPlans === null) {
+            $this->initBonPlans();
+        }
+        if (!$this->collBonPlans->contains($bonPlan)) { // only add it if the **same** object is not already associated
+            $this->doAddBonPlan($bonPlan);
+
+            $this->collBonPlans[]= $bonPlan;
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	BonPlan $bonPlan The bonPlan object to add.
+     */
+    protected function doAddBonPlan($bonPlan)
+    {
+        $bonPlanBonPlanCategorie = new BonPlanBonPlanCategorie();
+        $bonPlanBonPlanCategorie->setBonPlan($bonPlan);
+        $this->addBonPlanBonPlanCategorie($bonPlanBonPlanCategorie);
+    }
+
+    /**
+     * Remove a BonPlan object to this object
+     * through the bon_plan_bon_plan_categorie cross reference table.
+     *
+     * @param BonPlan $bonPlan The BonPlanBonPlanCategorie object to relate
+     * @return BonPlanCategorie The current object (for fluent API support)
+     */
+    public function removeBonPlan(BonPlan $bonPlan)
+    {
+        if ($this->getBonPlans()->contains($bonPlan)) {
+            $this->collBonPlans->remove($this->collBonPlans->search($bonPlan));
+            if (null === $this->bonPlansScheduledForDeletion) {
+                $this->bonPlansScheduledForDeletion = clone $this->collBonPlans;
+                $this->bonPlansScheduledForDeletion->clear();
+            }
+            $this->bonPlansScheduledForDeletion[]= $bonPlan;
+        }
+
+        return $this;
+    }
+
+    /**
      * Clears the current object and sets all attributes to their default values
      */
     public function clear()
     {
         $this->id = null;
-        $this->order = null;
         $this->active = null;
+        $this->sortable_rank = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();
@@ -1468,13 +1724,18 @@ abstract class BaseBonPlanCategorie extends BaseObject implements Persistent
     public function clearAllReferences($deep = false)
     {
         if ($deep) {
-            if ($this->collBonPlans) {
-                foreach ($this->collBonPlans as $o) {
+            if ($this->collBonPlanBonPlanCategories) {
+                foreach ($this->collBonPlanBonPlanCategories as $o) {
                     $o->clearAllReferences($deep);
                 }
             }
             if ($this->collBonPlanCategorieI18ns) {
                 foreach ($this->collBonPlanCategorieI18ns as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
+            if ($this->collBonPlans) {
+                foreach ($this->collBonPlans as $o) {
                     $o->clearAllReferences($deep);
                 }
             }
@@ -1484,14 +1745,18 @@ abstract class BaseBonPlanCategorie extends BaseObject implements Persistent
         $this->currentLocale = 'fr';
         $this->currentTranslations = null;
 
-        if ($this->collBonPlans instanceof PropelCollection) {
-            $this->collBonPlans->clearIterator();
+        if ($this->collBonPlanBonPlanCategories instanceof PropelCollection) {
+            $this->collBonPlanBonPlanCategories->clearIterator();
         }
-        $this->collBonPlans = null;
+        $this->collBonPlanBonPlanCategories = null;
         if ($this->collBonPlanCategorieI18ns instanceof PropelCollection) {
             $this->collBonPlanCategorieI18ns->clearIterator();
         }
         $this->collBonPlanCategorieI18ns = null;
+        if ($this->collBonPlans instanceof PropelCollection) {
+            $this->collBonPlans->clearIterator();
+        }
+        $this->collBonPlans = null;
     }
 
     /**
@@ -1515,7 +1780,7 @@ abstract class BaseBonPlanCategorie extends BaseObject implements Persistent
     }
 
     // active behavior
-
+    
     /**
      * return true is the object is active
      *
@@ -1673,8 +1938,56 @@ abstract class BaseBonPlanCategorie extends BaseObject implements Persistent
         return $this;
     }
 
-    // crudable behavior
 
+        /**
+         * Get the [subtitle] column value.
+         *
+         * @return string
+         */
+        public function getSubtitle()
+        {
+        return $this->getCurrentTranslation()->getSubtitle();
+    }
+
+
+        /**
+         * Set the value of [subtitle] column.
+         *
+         * @param string $v new value
+         * @return BonPlanCategorieI18n The current object (for fluent API support)
+         */
+        public function setSubtitle($v)
+        {    $this->getCurrentTranslation()->setSubtitle($v);
+
+        return $this;
+    }
+
+
+        /**
+         * Get the [description] column value.
+         *
+         * @return string
+         */
+        public function getDescription()
+        {
+        return $this->getCurrentTranslation()->getDescription();
+    }
+
+
+        /**
+         * Set the value of [description] column.
+         *
+         * @param string $v new value
+         * @return BonPlanCategorieI18n The current object (for fluent API support)
+         */
+        public function setDescription($v)
+        {    $this->getCurrentTranslation()->setDescription($v);
+
+        return $this;
+    }
+
+    // crudable behavior
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -1686,6 +1999,347 @@ abstract class BaseBonPlanCategorie extends BaseObject implements Persistent
     public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
     {
         return $this->save($con);
+    }
+
+    // sortable behavior
+
+    /**
+     * Wrap the getter for rank value
+     *
+     * @return    int
+     */
+    public function getRank()
+    {
+        return $this->sortable_rank;
+    }
+
+    /**
+     * Wrap the setter for rank value
+     *
+     * @param     int
+     * @return    BonPlanCategorie
+     */
+    public function setRank($v)
+    {
+        return $this->setSortableRank($v);
+    }
+
+    /**
+     * Check if the object is first in the list, i.e. if it has 1 for rank
+     *
+     * @return    boolean
+     */
+    public function isFirst()
+    {
+        return $this->getSortableRank() == 1;
+    }
+
+    /**
+     * Check if the object is last in the list, i.e. if its rank is the highest rank
+     *
+     * @param     PropelPDO  $con      optional connection
+     *
+     * @return    boolean
+     */
+    public function isLast(PropelPDO $con = null)
+    {
+        return $this->getSortableRank() == BonPlanCategorieQuery::create()->getMaxRank($con);
+    }
+
+    /**
+     * Get the next item in the list, i.e. the one for which rank is immediately higher
+     *
+     * @param     PropelPDO  $con      optional connection
+     *
+     * @return    BonPlanCategorie
+     */
+    public function getNext(PropelPDO $con = null)
+    {
+
+        return BonPlanCategorieQuery::create()->findOneByRank($this->getSortableRank() + 1, $con);
+    }
+
+    /**
+     * Get the previous item in the list, i.e. the one for which rank is immediately lower
+     *
+     * @param     PropelPDO  $con      optional connection
+     *
+     * @return    BonPlanCategorie
+     */
+    public function getPrevious(PropelPDO $con = null)
+    {
+
+        return BonPlanCategorieQuery::create()->findOneByRank($this->getSortableRank() - 1, $con);
+    }
+
+    /**
+     * Insert at specified rank
+     * The modifications are not persisted until the object is saved.
+     *
+     * @param     integer    $rank rank value
+     * @param     PropelPDO  $con      optional connection
+     *
+     * @return    BonPlanCategorie the current object
+     *
+     * @throws    PropelException
+     */
+    public function insertAtRank($rank, PropelPDO $con = null)
+    {
+        $maxRank = BonPlanCategorieQuery::create()->getMaxRank($con);
+        if ($rank < 1 || $rank > $maxRank + 1) {
+            throw new PropelException('Invalid rank ' . $rank);
+        }
+        // move the object in the list, at the given rank
+        $this->setSortableRank($rank);
+        if ($rank != $maxRank + 1) {
+            // Keep the list modification query for the save() transaction
+            $this->sortableQueries []= array(
+                'callable'  => array(self::PEER, 'shiftRank'),
+                'arguments' => array(1, $rank, null, )
+            );
+        }
+
+        return $this;
+    }
+
+    /**
+     * Insert in the last rank
+     * The modifications are not persisted until the object is saved.
+     *
+     * @param PropelPDO $con optional connection
+     *
+     * @return    BonPlanCategorie the current object
+     *
+     * @throws    PropelException
+     */
+    public function insertAtBottom(PropelPDO $con = null)
+    {
+        $this->setSortableRank(BonPlanCategorieQuery::create()->getMaxRank($con) + 1);
+
+        return $this;
+    }
+
+    /**
+     * Insert in the first rank
+     * The modifications are not persisted until the object is saved.
+     *
+     * @return    BonPlanCategorie the current object
+     */
+    public function insertAtTop()
+    {
+        return $this->insertAtRank(1);
+    }
+
+    /**
+     * Move the object to a new rank, and shifts the rank
+     * Of the objects inbetween the old and new rank accordingly
+     *
+     * @param     integer   $newRank rank value
+     * @param     PropelPDO $con optional connection
+     *
+     * @return    BonPlanCategorie the current object
+     *
+     * @throws    PropelException
+     */
+    public function moveToRank($newRank, PropelPDO $con = null)
+    {
+        if ($this->isNew()) {
+            throw new PropelException('New objects cannot be moved. Please use insertAtRank() instead');
+        }
+        if ($con === null) {
+            $con = Propel::getConnection(BonPlanCategoriePeer::DATABASE_NAME);
+        }
+        if ($newRank < 1 || $newRank > BonPlanCategorieQuery::create()->getMaxRank($con)) {
+            throw new PropelException('Invalid rank ' . $newRank);
+        }
+
+        $oldRank = $this->getSortableRank();
+        if ($oldRank == $newRank) {
+            return $this;
+        }
+
+        $con->beginTransaction();
+        try {
+            // shift the objects between the old and the new rank
+            $delta = ($oldRank < $newRank) ? -1 : 1;
+            BonPlanCategoriePeer::shiftRank($delta, min($oldRank, $newRank), max($oldRank, $newRank), $con);
+
+            // move the object to its new rank
+            $this->setSortableRank($newRank);
+            $this->save($con);
+
+            $con->commit();
+
+            return $this;
+        } catch (Exception $e) {
+            $con->rollback();
+            throw $e;
+        }
+    }
+
+    /**
+     * Exchange the rank of the object with the one passed as argument, and saves both objects
+     *
+     * @param     BonPlanCategorie $object
+     * @param     PropelPDO $con optional connection
+     *
+     * @return    BonPlanCategorie the current object
+     *
+     * @throws Exception if the database cannot execute the two updates
+     */
+    public function swapWith($object, PropelPDO $con = null)
+    {
+        if ($con === null) {
+            $con = Propel::getConnection(BonPlanCategoriePeer::DATABASE_NAME);
+        }
+        $con->beginTransaction();
+        try {
+            $oldRank = $this->getSortableRank();
+            $newRank = $object->getSortableRank();
+            $this->setSortableRank($newRank);
+            $this->save($con);
+            $object->setSortableRank($oldRank);
+            $object->save($con);
+            $con->commit();
+
+            return $this;
+        } catch (Exception $e) {
+            $con->rollback();
+            throw $e;
+        }
+    }
+
+    /**
+     * Move the object higher in the list, i.e. exchanges its rank with the one of the previous object
+     *
+     * @param     PropelPDO $con optional connection
+     *
+     * @return    BonPlanCategorie the current object
+     */
+    public function moveUp(PropelPDO $con = null)
+    {
+        if ($this->isFirst()) {
+            return $this;
+        }
+        if ($con === null) {
+            $con = Propel::getConnection(BonPlanCategoriePeer::DATABASE_NAME);
+        }
+        $con->beginTransaction();
+        try {
+            $prev = $this->getPrevious($con);
+            $this->swapWith($prev, $con);
+            $con->commit();
+
+            return $this;
+        } catch (Exception $e) {
+            $con->rollback();
+            throw $e;
+        }
+    }
+
+    /**
+     * Move the object higher in the list, i.e. exchanges its rank with the one of the next object
+     *
+     * @param     PropelPDO $con optional connection
+     *
+     * @return    BonPlanCategorie the current object
+     */
+    public function moveDown(PropelPDO $con = null)
+    {
+        if ($this->isLast($con)) {
+            return $this;
+        }
+        if ($con === null) {
+            $con = Propel::getConnection(BonPlanCategoriePeer::DATABASE_NAME);
+        }
+        $con->beginTransaction();
+        try {
+            $next = $this->getNext($con);
+            $this->swapWith($next, $con);
+            $con->commit();
+
+            return $this;
+        } catch (Exception $e) {
+            $con->rollback();
+            throw $e;
+        }
+    }
+
+    /**
+     * Move the object to the top of the list
+     *
+     * @param     PropelPDO $con optional connection
+     *
+     * @return    BonPlanCategorie the current object
+     */
+    public function moveToTop(PropelPDO $con = null)
+    {
+        if ($this->isFirst()) {
+            return $this;
+        }
+
+        return $this->moveToRank(1, $con);
+    }
+
+    /**
+     * Move the object to the bottom of the list
+     *
+     * @param     PropelPDO $con optional connection
+     *
+     * @return integer the old object's rank
+     */
+    public function moveToBottom(PropelPDO $con = null)
+    {
+        if ($this->isLast($con)) {
+            return false;
+        }
+        if ($con === null) {
+            $con = Propel::getConnection(BonPlanCategoriePeer::DATABASE_NAME);
+        }
+        $con->beginTransaction();
+        try {
+            $bottom = BonPlanCategorieQuery::create()->getMaxRank($con);
+            $res = $this->moveToRank($bottom, $con);
+            $con->commit();
+
+            return $res;
+        } catch (Exception $e) {
+            $con->rollback();
+            throw $e;
+        }
+    }
+
+    /**
+     * Removes the current object from the list.
+     * The modifications are not persisted until the object is saved.
+     *
+     * @param     PropelPDO $con optional connection
+     *
+     * @return    BonPlanCategorie the current object
+     */
+    public function removeFromList(PropelPDO $con = null)
+    {
+        // Keep the list modification query for the save() transaction
+        $this->sortableQueries []= array(
+            'callable'  => array(self::PEER, 'shiftRank'),
+            'arguments' => array(-1, $this->getSortableRank() + 1, null)
+        );
+        // remove the object from the list
+        $this->setSortableRank(null);
+
+        return $this;
+    }
+
+    /**
+     * Execute queries that were saved to be run inside the save transaction
+     */
+    protected function processSortableQueries($con)
+    {
+        foreach ($this->sortableQueries as $query) {
+            $query['arguments'][]= $con;
+            call_user_func_array($query['callable'], $query['arguments']);
+        }
+        $this->sortableQueries = array();
     }
 
 }

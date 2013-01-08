@@ -56,6 +56,14 @@ class BaseDestinationType extends AppAwareType
             'label' => 'destination.dernieres_minutess',
             'required' => false,
         ));
+        $builder->add('bon_plans', 'model', array(
+            'class' => 'Cungfoo\Model\BonPlan',
+            'constraints' => array(
+            ),
+            'multiple' => true,
+            'label' => 'destination.bon_plans',
+            'required' => false,
+        ));
         $builder->add('destinationI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\DestinationI18n',
             'languages' => array(

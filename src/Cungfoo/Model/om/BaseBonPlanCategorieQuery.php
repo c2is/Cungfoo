@@ -13,6 +13,7 @@ use \PropelException;
 use \PropelObjectCollection;
 use \PropelPDO;
 use Cungfoo\Model\BonPlan;
+use Cungfoo\Model\BonPlanBonPlanCategorie;
 use Cungfoo\Model\BonPlanCategorie;
 use Cungfoo\Model\BonPlanCategorieI18n;
 use Cungfoo\Model\BonPlanCategoriePeer;
@@ -24,20 +25,20 @@ use Cungfoo\Model\BonPlanCategorieQuery;
  *
  *
  * @method BonPlanCategorieQuery orderById($order = Criteria::ASC) Order by the id column
- * @method BonPlanCategorieQuery orderByOrder($order = Criteria::ASC) Order by the order column
  * @method BonPlanCategorieQuery orderByActive($order = Criteria::ASC) Order by the active column
+ * @method BonPlanCategorieQuery orderBySortableRank($order = Criteria::ASC) Order by the sortable_rank column
  *
  * @method BonPlanCategorieQuery groupById() Group by the id column
- * @method BonPlanCategorieQuery groupByOrder() Group by the order column
  * @method BonPlanCategorieQuery groupByActive() Group by the active column
+ * @method BonPlanCategorieQuery groupBySortableRank() Group by the sortable_rank column
  *
  * @method BonPlanCategorieQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method BonPlanCategorieQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
  * @method BonPlanCategorieQuery innerJoin($relation) Adds a INNER JOIN clause to the query
  *
- * @method BonPlanCategorieQuery leftJoinBonPlan($relationAlias = null) Adds a LEFT JOIN clause to the query using the BonPlan relation
- * @method BonPlanCategorieQuery rightJoinBonPlan($relationAlias = null) Adds a RIGHT JOIN clause to the query using the BonPlan relation
- * @method BonPlanCategorieQuery innerJoinBonPlan($relationAlias = null) Adds a INNER JOIN clause to the query using the BonPlan relation
+ * @method BonPlanCategorieQuery leftJoinBonPlanBonPlanCategorie($relationAlias = null) Adds a LEFT JOIN clause to the query using the BonPlanBonPlanCategorie relation
+ * @method BonPlanCategorieQuery rightJoinBonPlanBonPlanCategorie($relationAlias = null) Adds a RIGHT JOIN clause to the query using the BonPlanBonPlanCategorie relation
+ * @method BonPlanCategorieQuery innerJoinBonPlanBonPlanCategorie($relationAlias = null) Adds a INNER JOIN clause to the query using the BonPlanBonPlanCategorie relation
  *
  * @method BonPlanCategorieQuery leftJoinBonPlanCategorieI18n($relationAlias = null) Adds a LEFT JOIN clause to the query using the BonPlanCategorieI18n relation
  * @method BonPlanCategorieQuery rightJoinBonPlanCategorieI18n($relationAlias = null) Adds a RIGHT JOIN clause to the query using the BonPlanCategorieI18n relation
@@ -46,12 +47,12 @@ use Cungfoo\Model\BonPlanCategorieQuery;
  * @method BonPlanCategorie findOne(PropelPDO $con = null) Return the first BonPlanCategorie matching the query
  * @method BonPlanCategorie findOneOrCreate(PropelPDO $con = null) Return the first BonPlanCategorie matching the query, or a new BonPlanCategorie object populated from the query conditions when no match is found
  *
- * @method BonPlanCategorie findOneByOrder(int $order) Return the first BonPlanCategorie filtered by the order column
  * @method BonPlanCategorie findOneByActive(boolean $active) Return the first BonPlanCategorie filtered by the active column
+ * @method BonPlanCategorie findOneBySortableRank(int $sortable_rank) Return the first BonPlanCategorie filtered by the sortable_rank column
  *
  * @method array findById(int $id) Return BonPlanCategorie objects filtered by the id column
- * @method array findByOrder(int $order) Return BonPlanCategorie objects filtered by the order column
  * @method array findByActive(boolean $active) Return BonPlanCategorie objects filtered by the active column
+ * @method array findBySortableRank(int $sortable_rank) Return BonPlanCategorie objects filtered by the sortable_rank column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -155,7 +156,7 @@ abstract class BaseBonPlanCategorieQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `order`, `active` FROM `bon_plan_categorie` WHERE `id` = :p0';
+        $sql = 'SELECT `id`, `active`, `sortable_rank` FROM `bon_plan_categorie` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -272,47 +273,6 @@ abstract class BaseBonPlanCategorieQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query on the order column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByOrder(1234); // WHERE order = 1234
-     * $query->filterByOrder(array(12, 34)); // WHERE order IN (12, 34)
-     * $query->filterByOrder(array('min' => 12)); // WHERE order > 12
-     * </code>
-     *
-     * @param     mixed $order The value to use as filter.
-     *              Use scalar values for equality.
-     *              Use array values for in_array() equivalent.
-     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return BonPlanCategorieQuery The current query, for fluid interface
-     */
-    public function filterByOrder($order = null, $comparison = null)
-    {
-        if (is_array($order)) {
-            $useMinMax = false;
-            if (isset($order['min'])) {
-                $this->addUsingAlias(BonPlanCategoriePeer::ORDER, $order['min'], Criteria::GREATER_EQUAL);
-                $useMinMax = true;
-            }
-            if (isset($order['max'])) {
-                $this->addUsingAlias(BonPlanCategoriePeer::ORDER, $order['max'], Criteria::LESS_EQUAL);
-                $useMinMax = true;
-            }
-            if ($useMinMax) {
-                return $this;
-            }
-            if (null === $comparison) {
-                $comparison = Criteria::IN;
-            }
-        }
-
-        return $this->addUsingAlias(BonPlanCategoriePeer::ORDER, $order, $comparison);
-    }
-
-    /**
      * Filter the query on the active column
      *
      * Example usage:
@@ -340,41 +300,82 @@ abstract class BaseBonPlanCategorieQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query by a related BonPlan object
+     * Filter the query on the sortable_rank column
      *
-     * @param   BonPlan|PropelObjectCollection $bonPlan  the related object to use as filter
+     * Example usage:
+     * <code>
+     * $query->filterBySortableRank(1234); // WHERE sortable_rank = 1234
+     * $query->filterBySortableRank(array(12, 34)); // WHERE sortable_rank IN (12, 34)
+     * $query->filterBySortableRank(array('min' => 12)); // WHERE sortable_rank > 12
+     * </code>
+     *
+     * @param     mixed $sortableRank The value to use as filter.
+     *              Use scalar values for equality.
+     *              Use array values for in_array() equivalent.
+     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return BonPlanCategorieQuery The current query, for fluid interface
+     */
+    public function filterBySortableRank($sortableRank = null, $comparison = null)
+    {
+        if (is_array($sortableRank)) {
+            $useMinMax = false;
+            if (isset($sortableRank['min'])) {
+                $this->addUsingAlias(BonPlanCategoriePeer::SORTABLE_RANK, $sortableRank['min'], Criteria::GREATER_EQUAL);
+                $useMinMax = true;
+            }
+            if (isset($sortableRank['max'])) {
+                $this->addUsingAlias(BonPlanCategoriePeer::SORTABLE_RANK, $sortableRank['max'], Criteria::LESS_EQUAL);
+                $useMinMax = true;
+            }
+            if ($useMinMax) {
+                return $this;
+            }
+            if (null === $comparison) {
+                $comparison = Criteria::IN;
+            }
+        }
+
+        return $this->addUsingAlias(BonPlanCategoriePeer::SORTABLE_RANK, $sortableRank, $comparison);
+    }
+
+    /**
+     * Filter the query by a related BonPlanBonPlanCategorie object
+     *
+     * @param   BonPlanBonPlanCategorie|PropelObjectCollection $bonPlanBonPlanCategorie  the related object to use as filter
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return   BonPlanCategorieQuery The current query, for fluid interface
      * @throws   PropelException - if the provided filter is invalid.
      */
-    public function filterByBonPlan($bonPlan, $comparison = null)
+    public function filterByBonPlanBonPlanCategorie($bonPlanBonPlanCategorie, $comparison = null)
     {
-        if ($bonPlan instanceof BonPlan) {
+        if ($bonPlanBonPlanCategorie instanceof BonPlanBonPlanCategorie) {
             return $this
-                ->addUsingAlias(BonPlanCategoriePeer::ID, $bonPlan->getBonPlanCategorieId(), $comparison);
-        } elseif ($bonPlan instanceof PropelObjectCollection) {
+                ->addUsingAlias(BonPlanCategoriePeer::ID, $bonPlanBonPlanCategorie->getBonPlanCategorieId(), $comparison);
+        } elseif ($bonPlanBonPlanCategorie instanceof PropelObjectCollection) {
             return $this
-                ->useBonPlanQuery()
-                ->filterByPrimaryKeys($bonPlan->getPrimaryKeys())
+                ->useBonPlanBonPlanCategorieQuery()
+                ->filterByPrimaryKeys($bonPlanBonPlanCategorie->getPrimaryKeys())
                 ->endUse();
         } else {
-            throw new PropelException('filterByBonPlan() only accepts arguments of type BonPlan or PropelCollection');
+            throw new PropelException('filterByBonPlanBonPlanCategorie() only accepts arguments of type BonPlanBonPlanCategorie or PropelCollection');
         }
     }
 
     /**
-     * Adds a JOIN clause to the query using the BonPlan relation
+     * Adds a JOIN clause to the query using the BonPlanBonPlanCategorie relation
      *
      * @param     string $relationAlias optional alias for the relation
      * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
      *
      * @return BonPlanCategorieQuery The current query, for fluid interface
      */
-    public function joinBonPlan($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    public function joinBonPlanBonPlanCategorie($relationAlias = null, $joinType = Criteria::INNER_JOIN)
     {
         $tableMap = $this->getTableMap();
-        $relationMap = $tableMap->getRelation('BonPlan');
+        $relationMap = $tableMap->getRelation('BonPlanBonPlanCategorie');
 
         // create a ModelJoin object for this join
         $join = new ModelJoin();
@@ -389,14 +390,14 @@ abstract class BaseBonPlanCategorieQuery extends ModelCriteria
             $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
             $this->addJoinObject($join, $relationAlias);
         } else {
-            $this->addJoinObject($join, 'BonPlan');
+            $this->addJoinObject($join, 'BonPlanBonPlanCategorie');
         }
 
         return $this;
     }
 
     /**
-     * Use the BonPlan relation BonPlan object
+     * Use the BonPlanBonPlanCategorie relation BonPlanBonPlanCategorie object
      *
      * @see       useQuery()
      *
@@ -404,13 +405,13 @@ abstract class BaseBonPlanCategorieQuery extends ModelCriteria
      *                                   to be used as main alias in the secondary query
      * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
      *
-     * @return   \Cungfoo\Model\BonPlanQuery A secondary query class using the current class as primary query
+     * @return   \Cungfoo\Model\BonPlanBonPlanCategorieQuery A secondary query class using the current class as primary query
      */
-    public function useBonPlanQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    public function useBonPlanBonPlanCategorieQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
     {
         return $this
-            ->joinBonPlan($relationAlias, $joinType)
-            ->useQuery($relationAlias ? $relationAlias : 'BonPlan', '\Cungfoo\Model\BonPlanQuery');
+            ->joinBonPlanBonPlanCategorie($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'BonPlanBonPlanCategorie', '\Cungfoo\Model\BonPlanBonPlanCategorieQuery');
     }
 
     /**
@@ -488,6 +489,23 @@ abstract class BaseBonPlanCategorieQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query by a related BonPlan object
+     * using the bon_plan_bon_plan_categorie table as cross reference
+     *
+     * @param   BonPlan $bonPlan the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   BonPlanCategorieQuery The current query, for fluid interface
+     */
+    public function filterByBonPlan($bonPlan, $comparison = Criteria::EQUAL)
+    {
+        return $this
+            ->useBonPlanBonPlanCategorieQuery()
+            ->filterByBonPlan($bonPlan, $comparison)
+            ->endUse();
+    }
+
+    /**
      * Exclude object from result
      *
      * @param   BonPlanCategorie $bonPlanCategorie Object to remove from the list of results
@@ -504,7 +522,7 @@ abstract class BaseBonPlanCategorieQuery extends ModelCriteria
     }
 
     // active behavior
-
+    
     /**
      * return only active objects
      *
@@ -513,7 +531,7 @@ abstract class BaseBonPlanCategorieQuery extends ModelCriteria
     public function findActive($con = null)
     {
         $this->filterByActive(true);
-
+    
         return parent::find($con);
     }
 
@@ -572,6 +590,128 @@ abstract class BaseBonPlanCategorieQuery extends ModelCriteria
         return $this
             ->joinI18n($locale, $relationAlias, $joinType)
             ->useQuery($relationAlias ? $relationAlias : 'BonPlanCategorieI18n', 'Cungfoo\Model\BonPlanCategorieI18nQuery');
+    }
+
+    // sortable behavior
+
+    /**
+     * Filter the query based on a rank in the list
+     *
+     * @param     integer   $rank rank
+     *
+     * @return    BonPlanCategorieQuery The current query, for fluid interface
+     */
+    public function filterByRank($rank)
+    {
+        return $this
+            ->addUsingAlias(BonPlanCategoriePeer::RANK_COL, $rank, Criteria::EQUAL);
+    }
+
+    /**
+     * Order the query based on the rank in the list.
+     * Using the default $order, returns the item with the lowest rank first
+     *
+     * @param     string $order either Criteria::ASC (default) or Criteria::DESC
+     *
+     * @return    BonPlanCategorieQuery The current query, for fluid interface
+     */
+    public function orderByRank($order = Criteria::ASC)
+    {
+        $order = strtoupper($order);
+        switch ($order) {
+            case Criteria::ASC:
+                return $this->addAscendingOrderByColumn($this->getAliasedColName(BonPlanCategoriePeer::RANK_COL));
+                break;
+            case Criteria::DESC:
+                return $this->addDescendingOrderByColumn($this->getAliasedColName(BonPlanCategoriePeer::RANK_COL));
+                break;
+            default:
+                throw new PropelException('BonPlanCategorieQuery::orderBy() only accepts "asc" or "desc" as argument');
+        }
+    }
+
+    /**
+     * Get an item from the list based on its rank
+     *
+     * @param     integer   $rank rank
+     * @param     PropelPDO $con optional connection
+     *
+     * @return    BonPlanCategorie
+     */
+    public function findOneByRank($rank, PropelPDO $con = null)
+    {
+        return $this
+            ->filterByRank($rank)
+            ->findOne($con);
+    }
+
+    /**
+     * Returns the list of objects
+     *
+     * @param      PropelPDO $con	Connection to use.
+     *
+     * @return     mixed the list of results, formatted by the current formatter
+     */
+    public function findList($con = null)
+    {
+        return $this
+            ->orderByRank()
+            ->find($con);
+    }
+
+    /**
+     * Get the highest rank
+     *
+     * @param     PropelPDO optional connection
+     *
+     * @return    integer highest position
+     */
+    public function getMaxRank(PropelPDO $con = null)
+    {
+        if ($con === null) {
+            $con = Propel::getConnection(BonPlanCategoriePeer::DATABASE_NAME);
+        }
+        // shift the objects with a position lower than the one of object
+        $this->addSelectColumn('MAX(' . BonPlanCategoriePeer::RANK_COL . ')');
+        $stmt = $this->doSelect($con);
+
+        return $stmt->fetchColumn();
+    }
+
+    /**
+     * Reorder a set of sortable objects based on a list of id/position
+     * Beware that there is no check made on the positions passed
+     * So incoherent positions will result in an incoherent list
+     *
+     * @param     array     $order id => rank pairs
+     * @param     PropelPDO $con   optional connection
+     *
+     * @return    boolean true if the reordering took place, false if a database problem prevented it
+     */
+    public function reorder(array $order, PropelPDO $con = null)
+    {
+        if ($con === null) {
+            $con = Propel::getConnection(BonPlanCategoriePeer::DATABASE_NAME);
+        }
+
+        $con->beginTransaction();
+        try {
+            $ids = array_keys($order);
+            $objects = $this->findPks($ids, $con);
+            foreach ($objects as $object) {
+                $pk = $object->getPrimaryKey();
+                if ($object->getSortableRank() != $order[$pk]) {
+                    $object->setSortableRank($order[$pk]);
+                    $object->save($con);
+                }
+            }
+            $con->commit();
+
+            return true;
+        } catch (PropelException $e) {
+            $con->rollback();
+            throw $e;
+        }
     }
 
 }

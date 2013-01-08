@@ -27,16 +27,24 @@ class BaseBonPlanCategorieType extends AppAwareType
             'label' => 'bon_plan_categorie.id',
             'required' => false,
         ));
-        $builder->add('order', 'integer', array(
-            'constraints' => array(
-            ),
-            'label' => 'bon_plan_categorie.order',
-            'required' => false,
-        ));
         $builder->add('active', 'checkbox', array(
             'constraints' => array(
             ),
             'label' => 'bon_plan_categorie.active',
+            'required' => false,
+        ));
+        $builder->add('sortable_rank', 'integer', array(
+            'constraints' => array(
+            ),
+            'label' => 'bon_plan_categorie.sortable_rank',
+            'required' => false,
+        ));
+        $builder->add('bon_plans', 'model', array(
+            'class' => 'Cungfoo\Model\BonPlan',
+            'constraints' => array(
+            ),
+            'multiple' => true,
+            'label' => 'bon_plan_categorie.bon_plans',
             'required' => false,
         ));
         $builder->add('bon_plan_categorieI18ns', 'translation_collection', array(
@@ -60,6 +68,20 @@ class BaseBonPlanCategorieType extends AppAwareType
                     'required' => false,
                     'label' => 'bon_plan_categorie.slug',
                     'type' => 'text',
+                    'constraints' => array(
+                    ),
+                ),
+                'subtitle' => array(
+                    'required' => false,
+                    'label' => 'bon_plan_categorie.subtitle',
+                    'type' => 'text',
+                    'constraints' => array(
+                    ),
+                ),
+                'description' => array(
+                    'required' => false,
+                    'label' => 'bon_plan_categorie.description',
+                    'type' => 'textarea',
                     'constraints' => array(
                     ),
                 ),

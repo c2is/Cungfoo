@@ -278,6 +278,14 @@ class BaseEtablissementType extends AppAwareType
             'label' => 'etablissement.dernieres_minutess',
             'required' => false,
         ));
+        $builder->add('bon_plans', 'model', array(
+            'class' => 'Cungfoo\Model\BonPlan',
+            'constraints' => array(
+            ),
+            'multiple' => true,
+            'label' => 'etablissement.bon_plans',
+            'required' => false,
+        ));
         $builder->add('etablissementI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\EtablissementI18n',
             'languages' => array(

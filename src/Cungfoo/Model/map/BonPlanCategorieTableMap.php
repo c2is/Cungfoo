@@ -43,8 +43,8 @@ class BonPlanCategorieTableMap extends TableMap
         $this->setUseIdGenerator(true);
         // columns
         $this->addPrimaryKey('id', 'Id', 'INTEGER', true, null, null);
-        $this->addColumn('order', 'Order', 'INTEGER', false, null, null);
         $this->addColumn('active', 'Active', 'BOOLEAN', false, 1, false);
+        $this->addColumn('sortable_rank', 'SortableRank', 'INTEGER', false, null, null);
         // validators
     } // initialize()
 
@@ -53,8 +53,9 @@ class BonPlanCategorieTableMap extends TableMap
      */
     public function buildRelations()
     {
-        $this->addRelation('BonPlan', 'Cungfoo\\Model\\BonPlan', RelationMap::ONE_TO_MANY, array('id' => 'bon_plan_categorie_id', ), null, null, 'BonPlans');
+        $this->addRelation('BonPlanBonPlanCategorie', 'Cungfoo\\Model\\BonPlanBonPlanCategorie', RelationMap::ONE_TO_MANY, array('id' => 'bon_plan_categorie_id', ), null, null, 'BonPlanBonPlanCategories');
         $this->addRelation('BonPlanCategorieI18n', 'Cungfoo\\Model\\BonPlanCategorieI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'BonPlanCategorieI18ns');
+        $this->addRelation('BonPlan', 'Cungfoo\\Model\\BonPlan', RelationMap::MANY_TO_MANY, array(), null, null, 'BonPlans');
     } // buildRelations()
 
     /**
@@ -72,7 +73,7 @@ class BonPlanCategorieTableMap extends TableMap
             'i18n' =>  array (
   'i18n_table' => '%TABLE%_i18n',
   'i18n_phpname' => '%PHPNAME%I18n',
-  'i18n_columns' => 'name, slug',
+  'i18n_columns' => 'name, slug, subtitle, description',
   'i18n_pk_name' => NULL,
   'locale_column' => 'locale',
   'default_locale' => 'fr',
@@ -84,6 +85,11 @@ class BonPlanCategorieTableMap extends TableMap
   'crud_model' => NULL,
   'crud_form' => NULL,
   'crud_type_file' => NULL,
+),
+            'sortable' =>  array (
+  'rank_column' => 'sortable_rank',
+  'use_scope' => 'false',
+  'scope_column' => 'sortable_scope',
 ),
         );
     } // getBehaviors()

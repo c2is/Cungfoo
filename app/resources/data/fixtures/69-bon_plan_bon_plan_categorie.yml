@@ -1,0 +1,16 @@
+\Cungfoo\Model\BonPlanBonPlanCategorie:
+    1:
+        BonPlanId: 1
+        BonPlanCategorieId: 1
+    2:
+        BonPlanId: 2
+        BonPlanCategorieId: 1
+    3:
+        BonPlanId: 3
+        BonPlanCategorieId: 1
+    4:
+        BonPlanId: 4
+        BonPlanCategorieId: 1
+    5:
+        BonPlanId: 5
+        BonPlanCategorieId: 1
