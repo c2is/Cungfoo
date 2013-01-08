@@ -9,83 +9,69 @@ use \PDOStatement;
 use \Propel;
 use \PropelException;
 use \PropelPDO;
-use Cungfoo\Model\CategoryTypeHebergementPeer;
-use Cungfoo\Model\EtablissementTypeHebergementPeer;
+use Cungfoo\Model\MultimediaTypeHebergement;
+use Cungfoo\Model\MultimediaTypeHebergementI18nPeer;
 use Cungfoo\Model\MultimediaTypeHebergementPeer;
-use Cungfoo\Model\TypeHebergement;
-use Cungfoo\Model\TypeHebergementI18nPeer;
 use Cungfoo\Model\TypeHebergementPeer;
-use Cungfoo\Model\map\TypeHebergementTableMap;
+use Cungfoo\Model\map\MultimediaTypeHebergementTableMap;
 
 /**
- * Base static class for performing query and update operations on the 'type_hebergement' table.
+ * Base static class for performing query and update operations on the 'multimedia_type_hebergement' table.
  *
  *
  *
  * @package propel.generator.Cungfoo.Model.om
  */
-abstract class BaseTypeHebergementPeer
+abstract class BaseMultimediaTypeHebergementPeer
 {
 
     /** the default database name for this class */
     const DATABASE_NAME = 'cungfoo';
 
     /** the table name for this class */
-    const TABLE_NAME = 'type_hebergement';
+    const TABLE_NAME = 'multimedia_type_hebergement';
 
     /** the related Propel class for this table */
-    const OM_CLASS = 'Cungfoo\\Model\\TypeHebergement';
+    const OM_CLASS = 'Cungfoo\\Model\\MultimediaTypeHebergement';
 
     /** the related TableMap class for this table */
-    const TM_CLASS = 'TypeHebergementTableMap';
+    const TM_CLASS = 'MultimediaTypeHebergementTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 10;
+    const NUM_COLUMNS = 6;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 10;
+    const NUM_HYDRATE_COLUMNS = 6;
 
     /** the column name for the id field */
-    const ID = 'type_hebergement.id';
+    const ID = 'multimedia_type_hebergement.id';
 
-    /** the column name for the code field */
-    const CODE = 'type_hebergement.code';
+    /** the column name for the type_hebergement_id field */
+    const TYPE_HEBERGEMENT_ID = 'multimedia_type_hebergement.type_hebergement_id';
 
-    /** the column name for the category_type_hebergement_id field */
-    const CATEGORY_TYPE_HEBERGEMENT_ID = 'type_hebergement.category_type_hebergement_id';
-
-    /** the column name for the nombre_chambre field */
-    const NOMBRE_CHAMBRE = 'type_hebergement.nombre_chambre';
-
-    /** the column name for the nombre_place field */
-    const NOMBRE_PLACE = 'type_hebergement.nombre_place';
-
-    /** the column name for the image_hebergement_path field */
-    const IMAGE_HEBERGEMENT_PATH = 'type_hebergement.image_hebergement_path';
-
-    /** the column name for the image_composition_path field */
-    const IMAGE_COMPOSITION_PATH = 'type_hebergement.image_composition_path';
+    /** the column name for the image_path field */
+    const IMAGE_PATH = 'multimedia_type_hebergement.image_path';
 
     /** the column name for the created_at field */
-    const CREATED_AT = 'type_hebergement.created_at';
+    const CREATED_AT = 'multimedia_type_hebergement.created_at';
 
     /** the column name for the updated_at field */
-    const UPDATED_AT = 'type_hebergement.updated_at';
+    const UPDATED_AT = 'multimedia_type_hebergement.updated_at';
 
     /** the column name for the active field */
-    const ACTIVE = 'type_hebergement.active';
+    const ACTIVE = 'multimedia_type_hebergement.active';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
 
     /**
-     * An identiy map to hold any loaded instances of TypeHebergement objects.
+     * An identiy map to hold any loaded instances of MultimediaTypeHebergement objects.
      * This must be public so that other peer classes can access this when hydrating from JOIN
      * queries.
-     * @var        array TypeHebergement[]
+     * @var        array MultimediaTypeHebergement[]
      */
     public static $instances = array();
 
@@ -101,30 +87,30 @@ abstract class BaseTypeHebergementPeer
      * holds an array of fieldnames
      *
      * first dimension keys are the type constants
-     * e.g. TypeHebergementPeer::$fieldNames[TypeHebergementPeer::TYPE_PHPNAME][0] = 'Id'
+     * e.g. MultimediaTypeHebergementPeer::$fieldNames[MultimediaTypeHebergementPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'CategoryTypeHebergementId', 'NombreChambre', 'NombrePlace', 'ImageHebergementPath', 'ImageCompositionPath', 'CreatedAt', 'UpdatedAt', 'Active', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'categoryTypeHebergementId', 'nombreChambre', 'nombrePlace', 'imageHebergementPath', 'imageCompositionPath', 'createdAt', 'updatedAt', 'active', ),
-        BasePeer::TYPE_COLNAME => array (TypeHebergementPeer::ID, TypeHebergementPeer::CODE, TypeHebergementPeer::CATEGORY_TYPE_HEBERGEMENT_ID, TypeHebergementPeer::NOMBRE_CHAMBRE, TypeHebergementPeer::NOMBRE_PLACE, TypeHebergementPeer::IMAGE_HEBERGEMENT_PATH, TypeHebergementPeer::IMAGE_COMPOSITION_PATH, TypeHebergementPeer::CREATED_AT, TypeHebergementPeer::UPDATED_AT, TypeHebergementPeer::ACTIVE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'CATEGORY_TYPE_HEBERGEMENT_ID', 'NOMBRE_CHAMBRE', 'NOMBRE_PLACE', 'IMAGE_HEBERGEMENT_PATH', 'IMAGE_COMPOSITION_PATH', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'category_type_hebergement_id', 'nombre_chambre', 'nombre_place', 'image_hebergement_path', 'image_composition_path', 'created_at', 'updated_at', 'active', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'TypeHebergementId', 'ImagePath', 'CreatedAt', 'UpdatedAt', 'Active', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'typeHebergementId', 'imagePath', 'createdAt', 'updatedAt', 'active', ),
+        BasePeer::TYPE_COLNAME => array (MultimediaTypeHebergementPeer::ID, MultimediaTypeHebergementPeer::TYPE_HEBERGEMENT_ID, MultimediaTypeHebergementPeer::IMAGE_PATH, MultimediaTypeHebergementPeer::CREATED_AT, MultimediaTypeHebergementPeer::UPDATED_AT, MultimediaTypeHebergementPeer::ACTIVE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'TYPE_HEBERGEMENT_ID', 'IMAGE_PATH', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'type_hebergement_id', 'image_path', 'created_at', 'updated_at', 'active', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
     );
 
     /**
      * holds an array of keys for quick access to the fieldnames array
      *
      * first dimension keys are the type constants
-     * e.g. TypeHebergementPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
+     * e.g. MultimediaTypeHebergementPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'CategoryTypeHebergementId' => 2, 'NombreChambre' => 3, 'NombrePlace' => 4, 'ImageHebergementPath' => 5, 'ImageCompositionPath' => 6, 'CreatedAt' => 7, 'UpdatedAt' => 8, 'Active' => 9, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'categoryTypeHebergementId' => 2, 'nombreChambre' => 3, 'nombrePlace' => 4, 'imageHebergementPath' => 5, 'imageCompositionPath' => 6, 'createdAt' => 7, 'updatedAt' => 8, 'active' => 9, ),
-        BasePeer::TYPE_COLNAME => array (TypeHebergementPeer::ID => 0, TypeHebergementPeer::CODE => 1, TypeHebergementPeer::CATEGORY_TYPE_HEBERGEMENT_ID => 2, TypeHebergementPeer::NOMBRE_CHAMBRE => 3, TypeHebergementPeer::NOMBRE_PLACE => 4, TypeHebergementPeer::IMAGE_HEBERGEMENT_PATH => 5, TypeHebergementPeer::IMAGE_COMPOSITION_PATH => 6, TypeHebergementPeer::CREATED_AT => 7, TypeHebergementPeer::UPDATED_AT => 8, TypeHebergementPeer::ACTIVE => 9, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'CATEGORY_TYPE_HEBERGEMENT_ID' => 2, 'NOMBRE_CHAMBRE' => 3, 'NOMBRE_PLACE' => 4, 'IMAGE_HEBERGEMENT_PATH' => 5, 'IMAGE_COMPOSITION_PATH' => 6, 'CREATED_AT' => 7, 'UPDATED_AT' => 8, 'ACTIVE' => 9, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'category_type_hebergement_id' => 2, 'nombre_chambre' => 3, 'nombre_place' => 4, 'image_hebergement_path' => 5, 'image_composition_path' => 6, 'created_at' => 7, 'updated_at' => 8, 'active' => 9, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'TypeHebergementId' => 1, 'ImagePath' => 2, 'CreatedAt' => 3, 'UpdatedAt' => 4, 'Active' => 5, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'typeHebergementId' => 1, 'imagePath' => 2, 'createdAt' => 3, 'updatedAt' => 4, 'active' => 5, ),
+        BasePeer::TYPE_COLNAME => array (MultimediaTypeHebergementPeer::ID => 0, MultimediaTypeHebergementPeer::TYPE_HEBERGEMENT_ID => 1, MultimediaTypeHebergementPeer::IMAGE_PATH => 2, MultimediaTypeHebergementPeer::CREATED_AT => 3, MultimediaTypeHebergementPeer::UPDATED_AT => 4, MultimediaTypeHebergementPeer::ACTIVE => 5, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'TYPE_HEBERGEMENT_ID' => 1, 'IMAGE_PATH' => 2, 'CREATED_AT' => 3, 'UPDATED_AT' => 4, 'ACTIVE' => 5, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'type_hebergement_id' => 1, 'image_path' => 2, 'created_at' => 3, 'updated_at' => 4, 'active' => 5, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
     );
 
     /**
@@ -139,10 +125,10 @@ abstract class BaseTypeHebergementPeer
      */
     public static function translateFieldName($name, $fromType, $toType)
     {
-        $toNames = TypeHebergementPeer::getFieldNames($toType);
-        $key = isset(TypeHebergementPeer::$fieldKeys[$fromType][$name]) ? TypeHebergementPeer::$fieldKeys[$fromType][$name] : null;
+        $toNames = MultimediaTypeHebergementPeer::getFieldNames($toType);
+        $key = isset(MultimediaTypeHebergementPeer::$fieldKeys[$fromType][$name]) ? MultimediaTypeHebergementPeer::$fieldKeys[$fromType][$name] : null;
         if ($key === null) {
-            throw new PropelException("'$name' could not be found in the field names of type '$fromType'. These are: " . print_r(TypeHebergementPeer::$fieldKeys[$fromType], true));
+            throw new PropelException("'$name' could not be found in the field names of type '$fromType'. These are: " . print_r(MultimediaTypeHebergementPeer::$fieldKeys[$fromType], true));
         }
 
         return $toNames[$key];
@@ -159,11 +145,11 @@ abstract class BaseTypeHebergementPeer
      */
     public static function getFieldNames($type = BasePeer::TYPE_PHPNAME)
     {
-        if (!array_key_exists($type, TypeHebergementPeer::$fieldNames)) {
+        if (!array_key_exists($type, MultimediaTypeHebergementPeer::$fieldNames)) {
             throw new PropelException('Method getFieldNames() expects the parameter $type to be one of the class constants BasePeer::TYPE_PHPNAME, BasePeer::TYPE_STUDLYPHPNAME, BasePeer::TYPE_COLNAME, BasePeer::TYPE_FIELDNAME, BasePeer::TYPE_NUM. ' . $type . ' was given.');
         }
 
-        return TypeHebergementPeer::$fieldNames[$type];
+        return MultimediaTypeHebergementPeer::$fieldNames[$type];
     }
 
     /**
@@ -175,12 +161,12 @@ abstract class BaseTypeHebergementPeer
      *		$c->addJoin(TablePeer::alias("alias1", TablePeer::PRIMARY_KEY_COLUMN), TablePeer::PRIMARY_KEY_COLUMN);
      * </code>
      * @param      string $alias The alias for the current table.
-     * @param      string $column The column name for current table. (i.e. TypeHebergementPeer::COLUMN_NAME).
+     * @param      string $column The column name for current table. (i.e. MultimediaTypeHebergementPeer::COLUMN_NAME).
      * @return string
      */
     public static function alias($alias, $column)
     {
-        return str_replace(TypeHebergementPeer::TABLE_NAME.'.', $alias.'.', $column);
+        return str_replace(MultimediaTypeHebergementPeer::TABLE_NAME.'.', $alias.'.', $column);
     }
 
     /**
@@ -198,24 +184,16 @@ abstract class BaseTypeHebergementPeer
     public static function addSelectColumns(Criteria $criteria, $alias = null)
     {
         if (null === $alias) {
-            $criteria->addSelectColumn(TypeHebergementPeer::ID);
-            $criteria->addSelectColumn(TypeHebergementPeer::CODE);
-            $criteria->addSelectColumn(TypeHebergementPeer::CATEGORY_TYPE_HEBERGEMENT_ID);
-            $criteria->addSelectColumn(TypeHebergementPeer::NOMBRE_CHAMBRE);
-            $criteria->addSelectColumn(TypeHebergementPeer::NOMBRE_PLACE);
-            $criteria->addSelectColumn(TypeHebergementPeer::IMAGE_HEBERGEMENT_PATH);
-            $criteria->addSelectColumn(TypeHebergementPeer::IMAGE_COMPOSITION_PATH);
-            $criteria->addSelectColumn(TypeHebergementPeer::CREATED_AT);
-            $criteria->addSelectColumn(TypeHebergementPeer::UPDATED_AT);
-            $criteria->addSelectColumn(TypeHebergementPeer::ACTIVE);
+            $criteria->addSelectColumn(MultimediaTypeHebergementPeer::ID);
+            $criteria->addSelectColumn(MultimediaTypeHebergementPeer::TYPE_HEBERGEMENT_ID);
+            $criteria->addSelectColumn(MultimediaTypeHebergementPeer::IMAGE_PATH);
+            $criteria->addSelectColumn(MultimediaTypeHebergementPeer::CREATED_AT);
+            $criteria->addSelectColumn(MultimediaTypeHebergementPeer::UPDATED_AT);
+            $criteria->addSelectColumn(MultimediaTypeHebergementPeer::ACTIVE);
         } else {
             $criteria->addSelectColumn($alias . '.id');
-            $criteria->addSelectColumn($alias . '.code');
-            $criteria->addSelectColumn($alias . '.category_type_hebergement_id');
-            $criteria->addSelectColumn($alias . '.nombre_chambre');
-            $criteria->addSelectColumn($alias . '.nombre_place');
-            $criteria->addSelectColumn($alias . '.image_hebergement_path');
-            $criteria->addSelectColumn($alias . '.image_composition_path');
+            $criteria->addSelectColumn($alias . '.type_hebergement_id');
+            $criteria->addSelectColumn($alias . '.image_path');
             $criteria->addSelectColumn($alias . '.created_at');
             $criteria->addSelectColumn($alias . '.updated_at');
             $criteria->addSelectColumn($alias . '.active');
@@ -238,21 +216,21 @@ abstract class BaseTypeHebergementPeer
         // We need to set the primary table name, since in the case that there are no WHERE columns
         // it will be impossible for the BasePeer::createSelectSql() method to determine which
         // tables go into the FROM clause.
-        $criteria->setPrimaryTableName(TypeHebergementPeer::TABLE_NAME);
+        $criteria->setPrimaryTableName(MultimediaTypeHebergementPeer::TABLE_NAME);
 
         if ($distinct && !in_array(Criteria::DISTINCT, $criteria->getSelectModifiers())) {
             $criteria->setDistinct();
         }
 
         if (!$criteria->hasSelectClause()) {
-            TypeHebergementPeer::addSelectColumns($criteria);
+            MultimediaTypeHebergementPeer::addSelectColumns($criteria);
         }
 
         $criteria->clearOrderByColumns(); // ORDER BY won't ever affect the count
-        $criteria->setDbName(TypeHebergementPeer::DATABASE_NAME); // Set the correct dbName
+        $criteria->setDbName(MultimediaTypeHebergementPeer::DATABASE_NAME); // Set the correct dbName
 
         if ($con === null) {
-            $con = Propel::getConnection(TypeHebergementPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+            $con = Propel::getConnection(MultimediaTypeHebergementPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
         // BasePeer returns a PDOStatement
         $stmt = BasePeer::doCount($criteria, $con);
@@ -271,7 +249,7 @@ abstract class BaseTypeHebergementPeer
      *
      * @param      Criteria $criteria object used to create the SELECT statement.
      * @param      PropelPDO $con
-     * @return                 TypeHebergement
+     * @return                 MultimediaTypeHebergement
      * @throws PropelException Any exceptions caught during processing will be
      *		 rethrown wrapped into a PropelException.
      */
@@ -279,7 +257,7 @@ abstract class BaseTypeHebergementPeer
     {
         $critcopy = clone $criteria;
         $critcopy->setLimit(1);
-        $objects = TypeHebergementPeer::doSelect($critcopy, $con);
+        $objects = MultimediaTypeHebergementPeer::doSelect($critcopy, $con);
         if ($objects) {
             return $objects[0];
         }
@@ -297,7 +275,7 @@ abstract class BaseTypeHebergementPeer
      */
     public static function doSelect(Criteria $criteria, PropelPDO $con = null)
     {
-        return TypeHebergementPeer::populateObjects(TypeHebergementPeer::doSelectStmt($criteria, $con));
+        return MultimediaTypeHebergementPeer::populateObjects(MultimediaTypeHebergementPeer::doSelectStmt($criteria, $con));
     }
     /**
      * Prepares the Criteria object and uses the parent doSelect() method to execute a PDOStatement.
@@ -315,16 +293,16 @@ abstract class BaseTypeHebergementPeer
     public static function doSelectStmt(Criteria $criteria, PropelPDO $con = null)
     {
         if ($con === null) {
-            $con = Propel::getConnection(TypeHebergementPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+            $con = Propel::getConnection(MultimediaTypeHebergementPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
 
         if (!$criteria->hasSelectClause()) {
             $criteria = clone $criteria;
-            TypeHebergementPeer::addSelectColumns($criteria);
+            MultimediaTypeHebergementPeer::addSelectColumns($criteria);
         }
 
         // Set the correct dbName
-        $criteria->setDbName(TypeHebergementPeer::DATABASE_NAME);
+        $criteria->setDbName(MultimediaTypeHebergementPeer::DATABASE_NAME);
 
         // BasePeer returns a PDOStatement
         return BasePeer::doSelect($criteria, $con);
@@ -338,7 +316,7 @@ abstract class BaseTypeHebergementPeer
      * to the cache in order to ensure that the same objects are always returned by doSelect*()
      * and retrieveByPK*() calls.
      *
-     * @param      TypeHebergement $obj A TypeHebergement object.
+     * @param      MultimediaTypeHebergement $obj A MultimediaTypeHebergement object.
      * @param      string $key (optional) key to use for instance map (for performance boost if key was already calculated externally).
      */
     public static function addInstanceToPool($obj, $key = null)
@@ -347,7 +325,7 @@ abstract class BaseTypeHebergementPeer
             if ($key === null) {
                 $key = (string) $obj->getId();
             } // if key === null
-            TypeHebergementPeer::$instances[$key] = $obj;
+            MultimediaTypeHebergementPeer::$instances[$key] = $obj;
         }
     }
 
@@ -359,7 +337,7 @@ abstract class BaseTypeHebergementPeer
      * methods in your stub classes -- you may need to explicitly remove objects
      * from the cache in order to prevent returning objects that no longer exist.
      *
-     * @param      mixed $value A TypeHebergement object or a primary key value.
+     * @param      mixed $value A MultimediaTypeHebergement object or a primary key value.
      *
      * @return void
      * @throws PropelException - if the value is invalid.
@@ -367,17 +345,17 @@ abstract class BaseTypeHebergementPeer
     public static function removeInstanceFromPool($value)
     {
         if (Propel::isInstancePoolingEnabled() && $value !== null) {
-            if (is_object($value) && $value instanceof TypeHebergement) {
+            if (is_object($value) && $value instanceof MultimediaTypeHebergement) {
                 $key = (string) $value->getId();
             } elseif (is_scalar($value)) {
                 // assume we've been passed a primary key
                 $key = (string) $value;
             } else {
-                $e = new PropelException("Invalid value passed to removeInstanceFromPool().  Expected primary key or TypeHebergement object; got " . (is_object($value) ? get_class($value) . ' object.' : var_export($value,true)));
+                $e = new PropelException("Invalid value passed to removeInstanceFromPool().  Expected primary key or MultimediaTypeHebergement object; got " . (is_object($value) ? get_class($value) . ' object.' : var_export($value,true)));
                 throw $e;
             }
 
-            unset(TypeHebergementPeer::$instances[$key]);
+            unset(MultimediaTypeHebergementPeer::$instances[$key]);
         }
     } // removeInstanceFromPool()
 
@@ -388,14 +366,14 @@ abstract class BaseTypeHebergementPeer
      * a multi-column primary key, a serialize()d version of the primary key will be returned.
      *
      * @param      string $key The key (@see getPrimaryKeyHash()) for this instance.
-     * @return   TypeHebergement Found object or null if 1) no instance exists for specified key or 2) instance pooling has been disabled.
+     * @return   MultimediaTypeHebergement Found object or null if 1) no instance exists for specified key or 2) instance pooling has been disabled.
      * @see        getPrimaryKeyHash()
      */
     public static function getInstanceFromPool($key)
     {
         if (Propel::isInstancePoolingEnabled()) {
-            if (isset(TypeHebergementPeer::$instances[$key])) {
-                return TypeHebergementPeer::$instances[$key];
+            if (isset(MultimediaTypeHebergementPeer::$instances[$key])) {
+                return MultimediaTypeHebergementPeer::$instances[$key];
             }
         }
 
@@ -409,24 +387,18 @@ abstract class BaseTypeHebergementPeer
      */
     public static function clearInstancePool()
     {
-        TypeHebergementPeer::$instances = array();
+        MultimediaTypeHebergementPeer::$instances = array();
     }
 
     /**
-     * Method to invalidate the instance pool of all tables related to type_hebergement
+     * Method to invalidate the instance pool of all tables related to multimedia_type_hebergement
      * by a foreign key with ON DELETE CASCADE
      */
     public static function clearRelatedInstancePool()
     {
-        // Invalidate objects in EtablissementTypeHebergementPeer instance pool,
+        // Invalidate objects in MultimediaTypeHebergementI18nPeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
-        EtablissementTypeHebergementPeer::clearInstancePool();
-        // Invalidate objects in MultimediaTypeHebergementPeer instance pool,
-        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
-        MultimediaTypeHebergementPeer::clearInstancePool();
-        // Invalidate objects in TypeHebergementI18nPeer instance pool,
-        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
-        TypeHebergementI18nPeer::clearInstancePool();
+        MultimediaTypeHebergementI18nPeer::clearInstancePool();
     }
 
     /**
@@ -476,11 +448,11 @@ abstract class BaseTypeHebergementPeer
         $results = array();
 
         // set the class once to avoid overhead in the loop
-        $cls = TypeHebergementPeer::getOMClass();
+        $cls = MultimediaTypeHebergementPeer::getOMClass();
         // populate the object(s)
         while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-            $key = TypeHebergementPeer::getPrimaryKeyHashFromRow($row, 0);
-            if (null !== ($obj = TypeHebergementPeer::getInstanceFromPool($key))) {
+            $key = MultimediaTypeHebergementPeer::getPrimaryKeyHashFromRow($row, 0);
+            if (null !== ($obj = MultimediaTypeHebergementPeer::getInstanceFromPool($key))) {
                 // We no longer rehydrate the object, since this can cause data loss.
                 // See http://www.propelorm.org/ticket/509
                 // $obj->hydrate($row, 0, true); // rehydrate
@@ -489,7 +461,7 @@ abstract class BaseTypeHebergementPeer
                 $obj = new $cls();
                 $obj->hydrate($row);
                 $results[] = $obj;
-                TypeHebergementPeer::addInstanceToPool($obj, $key);
+                MultimediaTypeHebergementPeer::addInstanceToPool($obj, $key);
             } // if key exists
         }
         $stmt->closeCursor();
@@ -503,21 +475,21 @@ abstract class BaseTypeHebergementPeer
      * @param      int $startcol The 0-based offset for reading from the resultset row.
      * @throws PropelException Any exceptions caught during processing will be
      *		 rethrown wrapped into a PropelException.
-     * @return array (TypeHebergement object, last column rank)
+     * @return array (MultimediaTypeHebergement object, last column rank)
      */
     public static function populateObject($row, $startcol = 0)
     {
-        $key = TypeHebergementPeer::getPrimaryKeyHashFromRow($row, $startcol);
-        if (null !== ($obj = TypeHebergementPeer::getInstanceFromPool($key))) {
+        $key = MultimediaTypeHebergementPeer::getPrimaryKeyHashFromRow($row, $startcol);
+        if (null !== ($obj = MultimediaTypeHebergementPeer::getInstanceFromPool($key))) {
             // We no longer rehydrate the object, since this can cause data loss.
             // See http://www.propelorm.org/ticket/509
             // $obj->hydrate($row, $startcol, true); // rehydrate
-            $col = $startcol + TypeHebergementPeer::NUM_HYDRATE_COLUMNS;
+            $col = $startcol + MultimediaTypeHebergementPeer::NUM_HYDRATE_COLUMNS;
         } else {
-            $cls = TypeHebergementPeer::OM_CLASS;
+            $cls = MultimediaTypeHebergementPeer::OM_CLASS;
             $obj = new $cls();
             $col = $obj->hydrate($row, $startcol);
-            TypeHebergementPeer::addInstanceToPool($obj, $key);
+            MultimediaTypeHebergementPeer::addInstanceToPool($obj, $key);
         }
 
         return array($obj, $col);
@@ -525,7 +497,7 @@ abstract class BaseTypeHebergementPeer
 
 
     /**
-     * Returns the number of rows matching criteria, joining the related CategoryTypeHebergement table
+     * Returns the number of rows matching criteria, joining the related TypeHebergement table
      *
      * @param      Criteria $criteria
      * @param      boolean $distinct Whether to select only distinct columns; deprecated: use Criteria->setDistinct() instead.
@@ -533,7 +505,7 @@ abstract class BaseTypeHebergementPeer
      * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
      * @return int Number of matching rows.
      */
-    public static function doCountJoinCategoryTypeHebergement(Criteria $criteria, $distinct = false, PropelPDO $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    public static function doCountJoinTypeHebergement(Criteria $criteria, $distinct = false, PropelPDO $con = null, $join_behavior = Criteria::LEFT_JOIN)
     {
         // we're going to modify criteria, so copy it first
         $criteria = clone $criteria;
@@ -541,26 +513,26 @@ abstract class BaseTypeHebergementPeer
         // We need to set the primary table name, since in the case that there are no WHERE columns
         // it will be impossible for the BasePeer::createSelectSql() method to determine which
         // tables go into the FROM clause.
-        $criteria->setPrimaryTableName(TypeHebergementPeer::TABLE_NAME);
+        $criteria->setPrimaryTableName(MultimediaTypeHebergementPeer::TABLE_NAME);
 
         if ($distinct && !in_array(Criteria::DISTINCT, $criteria->getSelectModifiers())) {
             $criteria->setDistinct();
         }
 
         if (!$criteria->hasSelectClause()) {
-            TypeHebergementPeer::addSelectColumns($criteria);
+            MultimediaTypeHebergementPeer::addSelectColumns($criteria);
         }
 
         $criteria->clearOrderByColumns(); // ORDER BY won't ever affect the count
 
         // Set the correct dbName
-        $criteria->setDbName(TypeHebergementPeer::DATABASE_NAME);
+        $criteria->setDbName(MultimediaTypeHebergementPeer::DATABASE_NAME);
 
         if ($con === null) {
-            $con = Propel::getConnection(TypeHebergementPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+            $con = Propel::getConnection(MultimediaTypeHebergementPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
 
-        $criteria->addJoin(TypeHebergementPeer::CATEGORY_TYPE_HEBERGEMENT_ID, CategoryTypeHebergementPeer::ID, $join_behavior);
+        $criteria->addJoin(MultimediaTypeHebergementPeer::TYPE_HEBERGEMENT_ID, TypeHebergementPeer::ID, $join_behavior);
 
         $stmt = BasePeer::doCount($criteria, $con);
 
@@ -576,61 +548,61 @@ abstract class BaseTypeHebergementPeer
 
 
     /**
-     * Selects a collection of TypeHebergement objects pre-filled with their CategoryTypeHebergement objects.
+     * Selects a collection of MultimediaTypeHebergement objects pre-filled with their TypeHebergement objects.
      * @param      Criteria  $criteria
      * @param      PropelPDO $con
      * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
-     * @return array           Array of TypeHebergement objects.
+     * @return array           Array of MultimediaTypeHebergement objects.
      * @throws PropelException Any exceptions caught during processing will be
      *		 rethrown wrapped into a PropelException.
      */
-    public static function doSelectJoinCategoryTypeHebergement(Criteria $criteria, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    public static function doSelectJoinTypeHebergement(Criteria $criteria, $con = null, $join_behavior = Criteria::LEFT_JOIN)
     {
         $criteria = clone $criteria;
 
         // Set the correct dbName if it has not been overridden
         if ($criteria->getDbName() == Propel::getDefaultDB()) {
-            $criteria->setDbName(TypeHebergementPeer::DATABASE_NAME);
+            $criteria->setDbName(MultimediaTypeHebergementPeer::DATABASE_NAME);
         }
 
+        MultimediaTypeHebergementPeer::addSelectColumns($criteria);
+        $startcol = MultimediaTypeHebergementPeer::NUM_HYDRATE_COLUMNS;
         TypeHebergementPeer::addSelectColumns($criteria);
-        $startcol = TypeHebergementPeer::NUM_HYDRATE_COLUMNS;
-        CategoryTypeHebergementPeer::addSelectColumns($criteria);
 
-        $criteria->addJoin(TypeHebergementPeer::CATEGORY_TYPE_HEBERGEMENT_ID, CategoryTypeHebergementPeer::ID, $join_behavior);
+        $criteria->addJoin(MultimediaTypeHebergementPeer::TYPE_HEBERGEMENT_ID, TypeHebergementPeer::ID, $join_behavior);
 
         $stmt = BasePeer::doSelect($criteria, $con);
         $results = array();
 
         while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-            $key1 = TypeHebergementPeer::getPrimaryKeyHashFromRow($row, 0);
-            if (null !== ($obj1 = TypeHebergementPeer::getInstanceFromPool($key1))) {
+            $key1 = MultimediaTypeHebergementPeer::getPrimaryKeyHashFromRow($row, 0);
+            if (null !== ($obj1 = MultimediaTypeHebergementPeer::getInstanceFromPool($key1))) {
                 // We no longer rehydrate the object, since this can cause data loss.
                 // See http://www.propelorm.org/ticket/509
                 // $obj1->hydrate($row, 0, true); // rehydrate
             } else {
 
-                $cls = TypeHebergementPeer::getOMClass();
+                $cls = MultimediaTypeHebergementPeer::getOMClass();
 
                 $obj1 = new $cls();
                 $obj1->hydrate($row);
-                TypeHebergementPeer::addInstanceToPool($obj1, $key1);
+                MultimediaTypeHebergementPeer::addInstanceToPool($obj1, $key1);
             } // if $obj1 already loaded
 
-            $key2 = CategoryTypeHebergementPeer::getPrimaryKeyHashFromRow($row, $startcol);
+            $key2 = TypeHebergementPeer::getPrimaryKeyHashFromRow($row, $startcol);
             if ($key2 !== null) {
-                $obj2 = CategoryTypeHebergementPeer::getInstanceFromPool($key2);
+                $obj2 = TypeHebergementPeer::getInstanceFromPool($key2);
                 if (!$obj2) {
 
-                    $cls = CategoryTypeHebergementPeer::getOMClass();
+                    $cls = TypeHebergementPeer::getOMClass();
 
                     $obj2 = new $cls();
                     $obj2->hydrate($row, $startcol);
-                    CategoryTypeHebergementPeer::addInstanceToPool($obj2, $key2);
+                    TypeHebergementPeer::addInstanceToPool($obj2, $key2);
                 } // if obj2 already loaded
 
-                // Add the $obj1 (TypeHebergement) to $obj2 (CategoryTypeHebergement)
-                $obj2->addTypeHebergement($obj1);
+                // Add the $obj1 (MultimediaTypeHebergement) to $obj2 (TypeHebergement)
+                $obj2->addMultimediaTypeHebergement($obj1);
 
             } // if joined row was not null
 
@@ -659,26 +631,26 @@ abstract class BaseTypeHebergementPeer
         // We need to set the primary table name, since in the case that there are no WHERE columns
         // it will be impossible for the BasePeer::createSelectSql() method to determine which
         // tables go into the FROM clause.
-        $criteria->setPrimaryTableName(TypeHebergementPeer::TABLE_NAME);
+        $criteria->setPrimaryTableName(MultimediaTypeHebergementPeer::TABLE_NAME);
 
         if ($distinct && !in_array(Criteria::DISTINCT, $criteria->getSelectModifiers())) {
             $criteria->setDistinct();
         }
 
         if (!$criteria->hasSelectClause()) {
-            TypeHebergementPeer::addSelectColumns($criteria);
+            MultimediaTypeHebergementPeer::addSelectColumns($criteria);
         }
 
         $criteria->clearOrderByColumns(); // ORDER BY won't ever affect the count
 
         // Set the correct dbName
-        $criteria->setDbName(TypeHebergementPeer::DATABASE_NAME);
+        $criteria->setDbName(MultimediaTypeHebergementPeer::DATABASE_NAME);
 
         if ($con === null) {
-            $con = Propel::getConnection(TypeHebergementPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+            $con = Propel::getConnection(MultimediaTypeHebergementPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
 
-        $criteria->addJoin(TypeHebergementPeer::CATEGORY_TYPE_HEBERGEMENT_ID, CategoryTypeHebergementPeer::ID, $join_behavior);
+        $criteria->addJoin(MultimediaTypeHebergementPeer::TYPE_HEBERGEMENT_ID, TypeHebergementPeer::ID, $join_behavior);
 
         $stmt = BasePeer::doCount($criteria, $con);
 
@@ -693,12 +665,12 @@ abstract class BaseTypeHebergementPeer
     }
 
     /**
-     * Selects a collection of TypeHebergement objects pre-filled with all related objects.
+     * Selects a collection of MultimediaTypeHebergement objects pre-filled with all related objects.
      *
      * @param      Criteria  $criteria
      * @param      PropelPDO $con
      * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
-     * @return array           Array of TypeHebergement objects.
+     * @return array           Array of MultimediaTypeHebergement objects.
      * @throws PropelException Any exceptions caught during processing will be
      *		 rethrown wrapped into a PropelException.
      */
@@ -708,50 +680,50 @@ abstract class BaseTypeHebergementPeer
 
         // Set the correct dbName if it has not been overridden
         if ($criteria->getDbName() == Propel::getDefaultDB()) {
-            $criteria->setDbName(TypeHebergementPeer::DATABASE_NAME);
+            $criteria->setDbName(MultimediaTypeHebergementPeer::DATABASE_NAME);
         }
 
+        MultimediaTypeHebergementPeer::addSelectColumns($criteria);
+        $startcol2 = MultimediaTypeHebergementPeer::NUM_HYDRATE_COLUMNS;
+
         TypeHebergementPeer::addSelectColumns($criteria);
-        $startcol2 = TypeHebergementPeer::NUM_HYDRATE_COLUMNS;
+        $startcol3 = $startcol2 + TypeHebergementPeer::NUM_HYDRATE_COLUMNS;
 
-        CategoryTypeHebergementPeer::addSelectColumns($criteria);
-        $startcol3 = $startcol2 + CategoryTypeHebergementPeer::NUM_HYDRATE_COLUMNS;
-
-        $criteria->addJoin(TypeHebergementPeer::CATEGORY_TYPE_HEBERGEMENT_ID, CategoryTypeHebergementPeer::ID, $join_behavior);
+        $criteria->addJoin(MultimediaTypeHebergementPeer::TYPE_HEBERGEMENT_ID, TypeHebergementPeer::ID, $join_behavior);
 
         $stmt = BasePeer::doSelect($criteria, $con);
         $results = array();
 
         while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-            $key1 = TypeHebergementPeer::getPrimaryKeyHashFromRow($row, 0);
-            if (null !== ($obj1 = TypeHebergementPeer::getInstanceFromPool($key1))) {
+            $key1 = MultimediaTypeHebergementPeer::getPrimaryKeyHashFromRow($row, 0);
+            if (null !== ($obj1 = MultimediaTypeHebergementPeer::getInstanceFromPool($key1))) {
                 // We no longer rehydrate the object, since this can cause data loss.
                 // See http://www.propelorm.org/ticket/509
                 // $obj1->hydrate($row, 0, true); // rehydrate
             } else {
-                $cls = TypeHebergementPeer::getOMClass();
+                $cls = MultimediaTypeHebergementPeer::getOMClass();
 
                 $obj1 = new $cls();
                 $obj1->hydrate($row);
-                TypeHebergementPeer::addInstanceToPool($obj1, $key1);
+                MultimediaTypeHebergementPeer::addInstanceToPool($obj1, $key1);
             } // if obj1 already loaded
 
-            // Add objects for joined CategoryTypeHebergement rows
+            // Add objects for joined TypeHebergement rows
 
-            $key2 = CategoryTypeHebergementPeer::getPrimaryKeyHashFromRow($row, $startcol2);
+            $key2 = TypeHebergementPeer::getPrimaryKeyHashFromRow($row, $startcol2);
             if ($key2 !== null) {
-                $obj2 = CategoryTypeHebergementPeer::getInstanceFromPool($key2);
+                $obj2 = TypeHebergementPeer::getInstanceFromPool($key2);
                 if (!$obj2) {
 
-                    $cls = CategoryTypeHebergementPeer::getOMClass();
+                    $cls = TypeHebergementPeer::getOMClass();
 
                     $obj2 = new $cls();
                     $obj2->hydrate($row, $startcol2);
-                    CategoryTypeHebergementPeer::addInstanceToPool($obj2, $key2);
+                    TypeHebergementPeer::addInstanceToPool($obj2, $key2);
                 } // if obj2 loaded
 
-                // Add the $obj1 (TypeHebergement) to the collection in $obj2 (CategoryTypeHebergement)
-                $obj2->addTypeHebergement($obj1);
+                // Add the $obj1 (MultimediaTypeHebergement) to the collection in $obj2 (TypeHebergement)
+                $obj2->addMultimediaTypeHebergement($obj1);
             } // if joined row not null
 
             $results[] = $obj1;
@@ -770,7 +742,7 @@ abstract class BaseTypeHebergementPeer
      */
     public static function getTableMap()
     {
-        return Propel::getDatabaseMap(TypeHebergementPeer::DATABASE_NAME)->getTable(TypeHebergementPeer::TABLE_NAME);
+        return Propel::getDatabaseMap(MultimediaTypeHebergementPeer::DATABASE_NAME)->getTable(MultimediaTypeHebergementPeer::TABLE_NAME);
     }
 
     /**
@@ -778,9 +750,9 @@ abstract class BaseTypeHebergementPeer
      */
     public static function buildTableMap()
     {
-      $dbMap = Propel::getDatabaseMap(BaseTypeHebergementPeer::DATABASE_NAME);
-      if (!$dbMap->hasTable(BaseTypeHebergementPeer::TABLE_NAME)) {
-        $dbMap->addTableObject(new TypeHebergementTableMap());
+      $dbMap = Propel::getDatabaseMap(BaseMultimediaTypeHebergementPeer::DATABASE_NAME);
+      if (!$dbMap->hasTable(BaseMultimediaTypeHebergementPeer::TABLE_NAME)) {
+        $dbMap->addTableObject(new MultimediaTypeHebergementTableMap());
       }
     }
 
@@ -792,13 +764,13 @@ abstract class BaseTypeHebergementPeer
      */
     public static function getOMClass()
     {
-        return TypeHebergementPeer::OM_CLASS;
+        return MultimediaTypeHebergementPeer::OM_CLASS;
     }
 
     /**
-     * Performs an INSERT on the database, given a TypeHebergement or Criteria object.
+     * Performs an INSERT on the database, given a MultimediaTypeHebergement or Criteria object.
      *
-     * @param      mixed $values Criteria or TypeHebergement object containing data that is used to create the INSERT statement.
+     * @param      mixed $values Criteria or MultimediaTypeHebergement object containing data that is used to create the INSERT statement.
      * @param      PropelPDO $con the PropelPDO connection to use
      * @return mixed           The new primary key.
      * @throws PropelException Any exceptions caught during processing will be
@@ -807,22 +779,22 @@ abstract class BaseTypeHebergementPeer
     public static function doInsert($values, PropelPDO $con = null)
     {
         if ($con === null) {
-            $con = Propel::getConnection(TypeHebergementPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+            $con = Propel::getConnection(MultimediaTypeHebergementPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
 
         if ($values instanceof Criteria) {
             $criteria = clone $values; // rename for clarity
         } else {
-            $criteria = $values->buildCriteria(); // build Criteria from TypeHebergement object
+            $criteria = $values->buildCriteria(); // build Criteria from MultimediaTypeHebergement object
         }
 
-        if ($criteria->containsKey(TypeHebergementPeer::ID) && $criteria->keyContainsValue(TypeHebergementPeer::ID) ) {
-            throw new PropelException('Cannot insert a value for auto-increment primary key ('.TypeHebergementPeer::ID.')');
+        if ($criteria->containsKey(MultimediaTypeHebergementPeer::ID) && $criteria->keyContainsValue(MultimediaTypeHebergementPeer::ID) ) {
+            throw new PropelException('Cannot insert a value for auto-increment primary key ('.MultimediaTypeHebergementPeer::ID.')');
         }
 
 
         // Set the correct dbName
-        $criteria->setDbName(TypeHebergementPeer::DATABASE_NAME);
+        $criteria->setDbName(MultimediaTypeHebergementPeer::DATABASE_NAME);
 
         try {
             // use transaction because $criteria could contain info
@@ -839,9 +811,9 @@ abstract class BaseTypeHebergementPeer
     }
 
     /**
-     * Performs an UPDATE on the database, given a TypeHebergement or Criteria object.
+     * Performs an UPDATE on the database, given a MultimediaTypeHebergement or Criteria object.
      *
-     * @param      mixed $values Criteria or TypeHebergement object containing data that is used to create the UPDATE statement.
+     * @param      mixed $values Criteria or MultimediaTypeHebergement object containing data that is used to create the UPDATE statement.
      * @param      PropelPDO $con The connection to use (specify PropelPDO connection object to exert more control over transactions).
      * @return int             The number of affected rows (if supported by underlying database driver).
      * @throws PropelException Any exceptions caught during processing will be
@@ -850,35 +822,35 @@ abstract class BaseTypeHebergementPeer
     public static function doUpdate($values, PropelPDO $con = null)
     {
         if ($con === null) {
-            $con = Propel::getConnection(TypeHebergementPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+            $con = Propel::getConnection(MultimediaTypeHebergementPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
 
-        $selectCriteria = new Criteria(TypeHebergementPeer::DATABASE_NAME);
+        $selectCriteria = new Criteria(MultimediaTypeHebergementPeer::DATABASE_NAME);
 
         if ($values instanceof Criteria) {
             $criteria = clone $values; // rename for clarity
 
-            $comparison = $criteria->getComparison(TypeHebergementPeer::ID);
-            $value = $criteria->remove(TypeHebergementPeer::ID);
+            $comparison = $criteria->getComparison(MultimediaTypeHebergementPeer::ID);
+            $value = $criteria->remove(MultimediaTypeHebergementPeer::ID);
             if ($value) {
-                $selectCriteria->add(TypeHebergementPeer::ID, $value, $comparison);
+                $selectCriteria->add(MultimediaTypeHebergementPeer::ID, $value, $comparison);
             } else {
-                $selectCriteria->setPrimaryTableName(TypeHebergementPeer::TABLE_NAME);
+                $selectCriteria->setPrimaryTableName(MultimediaTypeHebergementPeer::TABLE_NAME);
             }
 
-        } else { // $values is TypeHebergement object
+        } else { // $values is MultimediaTypeHebergement object
             $criteria = $values->buildCriteria(); // gets full criteria
             $selectCriteria = $values->buildPkeyCriteria(); // gets criteria w/ primary key(s)
         }
 
         // set the correct dbName
-        $criteria->setDbName(TypeHebergementPeer::DATABASE_NAME);
+        $criteria->setDbName(MultimediaTypeHebergementPeer::DATABASE_NAME);
 
         return BasePeer::doUpdate($selectCriteria, $criteria, $con);
     }
 
     /**
-     * Deletes all rows from the type_hebergement table.
+     * Deletes all rows from the multimedia_type_hebergement table.
      *
      * @param      PropelPDO $con the connection to use
      * @return int             The number of affected rows (if supported by underlying database driver).
@@ -887,19 +859,19 @@ abstract class BaseTypeHebergementPeer
     public static function doDeleteAll(PropelPDO $con = null)
     {
         if ($con === null) {
-            $con = Propel::getConnection(TypeHebergementPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+            $con = Propel::getConnection(MultimediaTypeHebergementPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
         $affectedRows = 0; // initialize var to track total num of affected rows
         try {
             // use transaction because $criteria could contain info
             // for more than one table or we could emulating ON DELETE CASCADE, etc.
             $con->beginTransaction();
-            $affectedRows += BasePeer::doDeleteAll(TypeHebergementPeer::TABLE_NAME, $con, TypeHebergementPeer::DATABASE_NAME);
+            $affectedRows += BasePeer::doDeleteAll(MultimediaTypeHebergementPeer::TABLE_NAME, $con, MultimediaTypeHebergementPeer::DATABASE_NAME);
             // Because this db requires some delete cascade/set null emulation, we have to
             // clear the cached instance *after* the emulation has happened (since
             // instances get re-added by the select statement contained therein).
-            TypeHebergementPeer::clearInstancePool();
-            TypeHebergementPeer::clearRelatedInstancePool();
+            MultimediaTypeHebergementPeer::clearInstancePool();
+            MultimediaTypeHebergementPeer::clearRelatedInstancePool();
             $con->commit();
 
             return $affectedRows;
@@ -910,9 +882,9 @@ abstract class BaseTypeHebergementPeer
     }
 
     /**
-     * Performs a DELETE on the database, given a TypeHebergement or Criteria object OR a primary key value.
+     * Performs a DELETE on the database, given a MultimediaTypeHebergement or Criteria object OR a primary key value.
      *
-     * @param      mixed $values Criteria or TypeHebergement object or primary key or array of primary keys
+     * @param      mixed $values Criteria or MultimediaTypeHebergement object or primary key or array of primary keys
      *              which is used to create the DELETE statement
      * @param      PropelPDO $con the connection to use
      * @return int The number of affected rows (if supported by underlying database driver).  This includes CASCADE-related rows
@@ -923,32 +895,32 @@ abstract class BaseTypeHebergementPeer
      public static function doDelete($values, PropelPDO $con = null)
      {
         if ($con === null) {
-            $con = Propel::getConnection(TypeHebergementPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+            $con = Propel::getConnection(MultimediaTypeHebergementPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
 
         if ($values instanceof Criteria) {
             // invalidate the cache for all objects of this type, since we have no
             // way of knowing (without running a query) what objects should be invalidated
             // from the cache based on this Criteria.
-            TypeHebergementPeer::clearInstancePool();
+            MultimediaTypeHebergementPeer::clearInstancePool();
             // rename for clarity
             $criteria = clone $values;
-        } elseif ($values instanceof TypeHebergement) { // it's a model object
+        } elseif ($values instanceof MultimediaTypeHebergement) { // it's a model object
             // invalidate the cache for this single object
-            TypeHebergementPeer::removeInstanceFromPool($values);
+            MultimediaTypeHebergementPeer::removeInstanceFromPool($values);
             // create criteria based on pk values
             $criteria = $values->buildPkeyCriteria();
         } else { // it's a primary key, or an array of pks
-            $criteria = new Criteria(TypeHebergementPeer::DATABASE_NAME);
-            $criteria->add(TypeHebergementPeer::ID, (array) $values, Criteria::IN);
+            $criteria = new Criteria(MultimediaTypeHebergementPeer::DATABASE_NAME);
+            $criteria->add(MultimediaTypeHebergementPeer::ID, (array) $values, Criteria::IN);
             // invalidate the cache for this object(s)
             foreach ((array) $values as $singleval) {
-                TypeHebergementPeer::removeInstanceFromPool($singleval);
+                MultimediaTypeHebergementPeer::removeInstanceFromPool($singleval);
             }
         }
 
         // Set the correct dbName
-        $criteria->setDbName(TypeHebergementPeer::DATABASE_NAME);
+        $criteria->setDbName(MultimediaTypeHebergementPeer::DATABASE_NAME);
 
         $affectedRows = 0; // initialize var to track total num of affected rows
 
@@ -958,7 +930,7 @@ abstract class BaseTypeHebergementPeer
             $con->beginTransaction();
 
             $affectedRows += BasePeer::doDelete($criteria, $con);
-            TypeHebergementPeer::clearRelatedInstancePool();
+            MultimediaTypeHebergementPeer::clearRelatedInstancePool();
             $con->commit();
 
             return $affectedRows;
@@ -969,13 +941,13 @@ abstract class BaseTypeHebergementPeer
     }
 
     /**
-     * Validates all modified columns of given TypeHebergement object.
+     * Validates all modified columns of given MultimediaTypeHebergement object.
      * If parameter $columns is either a single column name or an array of column names
      * than only those columns are validated.
      *
      * NOTICE: This does not apply to primary or foreign keys for now.
      *
-     * @param      TypeHebergement $obj The object to validate.
+     * @param      MultimediaTypeHebergement $obj The object to validate.
      * @param      mixed $cols Column name or array of column names.
      *
      * @return mixed TRUE if all columns are valid or the error message of the first invalid column.
@@ -985,8 +957,8 @@ abstract class BaseTypeHebergementPeer
         $columns = array();
 
         if ($cols) {
-            $dbMap = Propel::getDatabaseMap(TypeHebergementPeer::DATABASE_NAME);
-            $tableMap = $dbMap->getTable(TypeHebergementPeer::TABLE_NAME);
+            $dbMap = Propel::getDatabaseMap(MultimediaTypeHebergementPeer::DATABASE_NAME);
+            $tableMap = $dbMap->getTable(MultimediaTypeHebergementPeer::TABLE_NAME);
 
             if (! is_array($cols)) {
                 $cols = array($cols);
@@ -1002,7 +974,7 @@ abstract class BaseTypeHebergementPeer
 
         }
 
-        return BasePeer::doValidate(TypeHebergementPeer::DATABASE_NAME, TypeHebergementPeer::TABLE_NAME, $columns);
+        return BasePeer::doValidate(MultimediaTypeHebergementPeer::DATABASE_NAME, MultimediaTypeHebergementPeer::TABLE_NAME, $columns);
     }
 
     /**
@@ -1010,23 +982,23 @@ abstract class BaseTypeHebergementPeer
      *
      * @param      int $pk the primary key.
      * @param      PropelPDO $con the connection to use
-     * @return TypeHebergement
+     * @return MultimediaTypeHebergement
      */
     public static function retrieveByPK($pk, PropelPDO $con = null)
     {
 
-        if (null !== ($obj = TypeHebergementPeer::getInstanceFromPool((string) $pk))) {
+        if (null !== ($obj = MultimediaTypeHebergementPeer::getInstanceFromPool((string) $pk))) {
             return $obj;
         }
 
         if ($con === null) {
-            $con = Propel::getConnection(TypeHebergementPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+            $con = Propel::getConnection(MultimediaTypeHebergementPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
 
-        $criteria = new Criteria(TypeHebergementPeer::DATABASE_NAME);
-        $criteria->add(TypeHebergementPeer::ID, $pk);
+        $criteria = new Criteria(MultimediaTypeHebergementPeer::DATABASE_NAME);
+        $criteria->add(MultimediaTypeHebergementPeer::ID, $pk);
 
-        $v = TypeHebergementPeer::doSelect($criteria, $con);
+        $v = MultimediaTypeHebergementPeer::doSelect($criteria, $con);
 
         return !empty($v) > 0 ? $v[0] : null;
     }
@@ -1036,31 +1008,31 @@ abstract class BaseTypeHebergementPeer
      *
      * @param      array $pks List of primary keys
      * @param      PropelPDO $con the connection to use
-     * @return TypeHebergement[]
+     * @return MultimediaTypeHebergement[]
      * @throws PropelException Any exceptions caught during processing will be
      *		 rethrown wrapped into a PropelException.
      */
     public static function retrieveByPKs($pks, PropelPDO $con = null)
     {
         if ($con === null) {
-            $con = Propel::getConnection(TypeHebergementPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+            $con = Propel::getConnection(MultimediaTypeHebergementPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
 
         $objs = null;
         if (empty($pks)) {
             $objs = array();
         } else {
-            $criteria = new Criteria(TypeHebergementPeer::DATABASE_NAME);
-            $criteria->add(TypeHebergementPeer::ID, $pks, Criteria::IN);
-            $objs = TypeHebergementPeer::doSelect($criteria, $con);
+            $criteria = new Criteria(MultimediaTypeHebergementPeer::DATABASE_NAME);
+            $criteria->add(MultimediaTypeHebergementPeer::ID, $pks, Criteria::IN);
+            $objs = MultimediaTypeHebergementPeer::doSelect($criteria, $con);
         }
 
         return $objs;
     }
 
-} // BaseTypeHebergementPeer
+} // BaseMultimediaTypeHebergementPeer
 
 // This is the static code needed to register the TableMap for this table with the main Propel class.
 //
-BaseTypeHebergementPeer::buildTableMap();
+BaseMultimediaTypeHebergementPeer::buildTableMap();
 

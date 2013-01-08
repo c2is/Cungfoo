@@ -184,6 +184,7 @@ menu.themes: Themes
 menu.title: Cungfoo
 menu.ville: Villes
 menu.type_hebergement: Types hébergements
+menu.type_hebergement_multimedia: Types hébergements multimedia
 menu.category_type_hebergement: Catégories des types hébergements
 menu.service_complementaire: Services complémentaires
 menu.situation_geographique: Situations géographiques
@@ -448,6 +449,20 @@ multimedia_etablissement.image_path: Image
 multimedia_etablissement.tags: Tags
 multimedia_etablissement.image.path: Image
 multimedia_etablissement.active: Actif
+
+multimedia_type_hebergement.crud.create: Création d'un média type hébergement
+multimedia_type_hebergement.crud.list: Liste des média type hébergement
+multimedia_type_hebergement.crud.update: Mettre à jour le média type hébergement %name%
+multimedia_type_hebergement.crud.view: Détails du média type hébergement %name%
+multimedia_type_hebergement.id: Id
+multimedia_type_hebergement.etablissement: Etablissement
+multimedia_type_hebergement.titre: Titre
+multimedia_type_hebergement.image_path: Image
+multimedia_type_hebergement.tags: Tags
+multimedia_type_hebergement.image.path: Image
+multimedia_type_hebergement.active: Actif
+multimedia_type_hebergement.type_hebergement: Type hebergement
+multimedia_type_hebergement.multimedia_type_hebergementI18ns: ""
 
 tag.crud.create: Création d'un tag
 tag.crud.list: Liste des tags

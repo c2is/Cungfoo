@@ -15,6 +15,7 @@ use \PropelPDO;
 use Cungfoo\Model\CategoryTypeHebergement;
 use Cungfoo\Model\Etablissement;
 use Cungfoo\Model\EtablissementTypeHebergement;
+use Cungfoo\Model\MultimediaTypeHebergement;
 use Cungfoo\Model\TypeHebergement;
 use Cungfoo\Model\TypeHebergementI18n;
 use Cungfoo\Model\TypeHebergementPeer;
@@ -58,6 +59,10 @@ use Cungfoo\Model\TypeHebergementQuery;
  * @method TypeHebergementQuery leftJoinEtablissementTypeHebergement($relationAlias = null) Adds a LEFT JOIN clause to the query using the EtablissementTypeHebergement relation
  * @method TypeHebergementQuery rightJoinEtablissementTypeHebergement($relationAlias = null) Adds a RIGHT JOIN clause to the query using the EtablissementTypeHebergement relation
  * @method TypeHebergementQuery innerJoinEtablissementTypeHebergement($relationAlias = null) Adds a INNER JOIN clause to the query using the EtablissementTypeHebergement relation
+ *
+ * @method TypeHebergementQuery leftJoinMultimediaTypeHebergement($relationAlias = null) Adds a LEFT JOIN clause to the query using the MultimediaTypeHebergement relation
+ * @method TypeHebergementQuery rightJoinMultimediaTypeHebergement($relationAlias = null) Adds a RIGHT JOIN clause to the query using the MultimediaTypeHebergement relation
+ * @method TypeHebergementQuery innerJoinMultimediaTypeHebergement($relationAlias = null) Adds a INNER JOIN clause to the query using the MultimediaTypeHebergement relation
  *
  * @method TypeHebergementQuery leftJoinTypeHebergementI18n($relationAlias = null) Adds a LEFT JOIN clause to the query using the TypeHebergementI18n relation
  * @method TypeHebergementQuery rightJoinTypeHebergementI18n($relationAlias = null) Adds a RIGHT JOIN clause to the query using the TypeHebergementI18n relation
@@ -778,6 +783,80 @@ abstract class BaseTypeHebergementQuery extends ModelCriteria
         return $this
             ->joinEtablissementTypeHebergement($relationAlias, $joinType)
             ->useQuery($relationAlias ? $relationAlias : 'EtablissementTypeHebergement', '\Cungfoo\Model\EtablissementTypeHebergementQuery');
+    }
+
+    /**
+     * Filter the query by a related MultimediaTypeHebergement object
+     *
+     * @param   MultimediaTypeHebergement|PropelObjectCollection $multimediaTypeHebergement  the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   TypeHebergementQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByMultimediaTypeHebergement($multimediaTypeHebergement, $comparison = null)
+    {
+        if ($multimediaTypeHebergement instanceof MultimediaTypeHebergement) {
+            return $this
+                ->addUsingAlias(TypeHebergementPeer::ID, $multimediaTypeHebergement->getTypeHebergementId(), $comparison);
+        } elseif ($multimediaTypeHebergement instanceof PropelObjectCollection) {
+            return $this
+                ->useMultimediaTypeHebergementQuery()
+                ->filterByPrimaryKeys($multimediaTypeHebergement->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByMultimediaTypeHebergement() only accepts arguments of type MultimediaTypeHebergement or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the MultimediaTypeHebergement relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return TypeHebergementQuery The current query, for fluid interface
+     */
+    public function joinMultimediaTypeHebergement($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('MultimediaTypeHebergement');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'MultimediaTypeHebergement');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the MultimediaTypeHebergement relation MultimediaTypeHebergement object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\MultimediaTypeHebergementQuery A secondary query class using the current class as primary query
+     */
+    public function useMultimediaTypeHebergementQuery($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        return $this
+            ->joinMultimediaTypeHebergement($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'MultimediaTypeHebergement', '\Cungfoo\Model\MultimediaTypeHebergementQuery');
     }
 
     /**

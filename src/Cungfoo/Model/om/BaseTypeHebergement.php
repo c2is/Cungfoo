@@ -21,6 +21,8 @@ use Cungfoo\Model\Etablissement;
 use Cungfoo\Model\EtablissementQuery;
 use Cungfoo\Model\EtablissementTypeHebergement;
 use Cungfoo\Model\EtablissementTypeHebergementQuery;
+use Cungfoo\Model\MultimediaTypeHebergement;
+use Cungfoo\Model\MultimediaTypeHebergementQuery;
 use Cungfoo\Model\TypeHebergement;
 use Cungfoo\Model\TypeHebergementI18n;
 use Cungfoo\Model\TypeHebergementI18nQuery;
@@ -128,6 +130,12 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     protected $collEtablissementTypeHebergementsPartial;
 
     /**
+     * @var        PropelObjectCollection|MultimediaTypeHebergement[] Collection to store aggregation of MultimediaTypeHebergement objects.
+     */
+    protected $collMultimediaTypeHebergements;
+    protected $collMultimediaTypeHebergementsPartial;
+
+    /**
      * @var        PropelObjectCollection|TypeHebergementI18n[] Collection to store aggregation of TypeHebergementI18n objects.
      */
     protected $collTypeHebergementI18ns;
@@ -177,6 +185,12 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
      * @var		PropelObjectCollection
      */
     protected $etablissementTypeHebergementsScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
+    protected $multimediaTypeHebergementsScheduledForDeletion = null;
 
     /**
      * An array of objects scheduled for deletion.
@@ -713,6 +727,8 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
             $this->aCategoryTypeHebergement = null;
             $this->collEtablissementTypeHebergements = null;
 
+            $this->collMultimediaTypeHebergements = null;
+
             $this->collTypeHebergementI18ns = null;
 
             $this->collEtablissements = null;
@@ -894,6 +910,24 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
 
             if ($this->collEtablissementTypeHebergements !== null) {
                 foreach ($this->collEtablissementTypeHebergements as $referrerFK) {
+                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
+                        $affectedRows += $referrerFK->save($con);
+                    }
+                }
+            }
+
+            if ($this->multimediaTypeHebergementsScheduledForDeletion !== null) {
+                if (!$this->multimediaTypeHebergementsScheduledForDeletion->isEmpty()) {
+                    foreach ($this->multimediaTypeHebergementsScheduledForDeletion as $multimediaTypeHebergement) {
+                        // need to save related object because we set the relation to null
+                        $multimediaTypeHebergement->save($con);
+                    }
+                    $this->multimediaTypeHebergementsScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collMultimediaTypeHebergements !== null) {
+                foreach ($this->collMultimediaTypeHebergements as $referrerFK) {
                     if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
                         $affectedRows += $referrerFK->save($con);
                     }
@@ -1133,6 +1167,14 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
                     }
                 }
 
+                if ($this->collMultimediaTypeHebergements !== null) {
+                    foreach ($this->collMultimediaTypeHebergements as $referrerFK) {
+                        if (!$referrerFK->validate($columns)) {
+                            $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
+                        }
+                    }
+                }
+
                 if ($this->collTypeHebergementI18ns !== null) {
                     foreach ($this->collTypeHebergementI18ns as $referrerFK) {
                         if (!$referrerFK->validate($columns)) {
@@ -1252,6 +1294,9 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
             }
             if (null !== $this->collEtablissementTypeHebergements) {
                 $result['EtablissementTypeHebergements'] = $this->collEtablissementTypeHebergements->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
+            }
+            if (null !== $this->collMultimediaTypeHebergements) {
+                $result['MultimediaTypeHebergements'] = $this->collMultimediaTypeHebergements->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
             if (null !== $this->collTypeHebergementI18ns) {
                 $result['TypeHebergementI18ns'] = $this->collTypeHebergementI18ns->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
@@ -1461,6 +1506,12 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
                 }
             }
 
+            foreach ($this->getMultimediaTypeHebergements() as $relObj) {
+                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
+                    $copyObj->addMultimediaTypeHebergement($relObj->copy($deepCopy));
+                }
+            }
+
             foreach ($this->getTypeHebergementI18ns() as $relObj) {
                 if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
                     $copyObj->addTypeHebergementI18n($relObj->copy($deepCopy));
@@ -1582,6 +1633,9 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     {
         if ('EtablissementTypeHebergement' == $relationName) {
             $this->initEtablissementTypeHebergements();
+        }
+        if ('MultimediaTypeHebergement' == $relationName) {
+            $this->initMultimediaTypeHebergements();
         }
         if ('TypeHebergementI18n' == $relationName) {
             $this->initTypeHebergementI18ns();
@@ -1826,6 +1880,221 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
         $query->joinWith('Etablissement', $join_behavior);
 
         return $this->getEtablissementTypeHebergements($query, $con);
+    }
+
+    /**
+     * Clears out the collMultimediaTypeHebergements collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return TypeHebergement The current object (for fluent API support)
+     * @see        addMultimediaTypeHebergements()
+     */
+    public function clearMultimediaTypeHebergements()
+    {
+        $this->collMultimediaTypeHebergements = null; // important to set this to null since that means it is uninitialized
+        $this->collMultimediaTypeHebergementsPartial = null;
+
+        return $this;
+    }
+
+    /**
+     * reset is the collMultimediaTypeHebergements collection loaded partially
+     *
+     * @return void
+     */
+    public function resetPartialMultimediaTypeHebergements($v = true)
+    {
+        $this->collMultimediaTypeHebergementsPartial = $v;
+    }
+
+    /**
+     * Initializes the collMultimediaTypeHebergements collection.
+     *
+     * By default this just sets the collMultimediaTypeHebergements collection to an empty array (like clearcollMultimediaTypeHebergements());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @param boolean $overrideExisting If set to true, the method call initializes
+     *                                        the collection even if it is not empty
+     *
+     * @return void
+     */
+    public function initMultimediaTypeHebergements($overrideExisting = true)
+    {
+        if (null !== $this->collMultimediaTypeHebergements && !$overrideExisting) {
+            return;
+        }
+        $this->collMultimediaTypeHebergements = new PropelObjectCollection();
+        $this->collMultimediaTypeHebergements->setModel('MultimediaTypeHebergement');
+    }
+
+    /**
+     * Gets an array of MultimediaTypeHebergement objects which contain a foreign key that references this object.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this TypeHebergement is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @return PropelObjectCollection|MultimediaTypeHebergement[] List of MultimediaTypeHebergement objects
+     * @throws PropelException
+     */
+    public function getMultimediaTypeHebergements($criteria = null, PropelPDO $con = null)
+    {
+        $partial = $this->collMultimediaTypeHebergementsPartial && !$this->isNew();
+        if (null === $this->collMultimediaTypeHebergements || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collMultimediaTypeHebergements) {
+                // return empty collection
+                $this->initMultimediaTypeHebergements();
+            } else {
+                $collMultimediaTypeHebergements = MultimediaTypeHebergementQuery::create(null, $criteria)
+                    ->filterByTypeHebergement($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    if (false !== $this->collMultimediaTypeHebergementsPartial && count($collMultimediaTypeHebergements)) {
+                      $this->initMultimediaTypeHebergements(false);
+
+                      foreach($collMultimediaTypeHebergements as $obj) {
+                        if (false == $this->collMultimediaTypeHebergements->contains($obj)) {
+                          $this->collMultimediaTypeHebergements->append($obj);
+                        }
+                      }
+
+                      $this->collMultimediaTypeHebergementsPartial = true;
+                    }
+
+                    return $collMultimediaTypeHebergements;
+                }
+
+                if($partial && $this->collMultimediaTypeHebergements) {
+                    foreach($this->collMultimediaTypeHebergements as $obj) {
+                        if($obj->isNew()) {
+                            $collMultimediaTypeHebergements[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collMultimediaTypeHebergements = $collMultimediaTypeHebergements;
+                $this->collMultimediaTypeHebergementsPartial = false;
+            }
+        }
+
+        return $this->collMultimediaTypeHebergements;
+    }
+
+    /**
+     * Sets a collection of MultimediaTypeHebergement objects related by a one-to-many relationship
+     * to the current object.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $multimediaTypeHebergements A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     * @return TypeHebergement The current object (for fluent API support)
+     */
+    public function setMultimediaTypeHebergements(PropelCollection $multimediaTypeHebergements, PropelPDO $con = null)
+    {
+        $this->multimediaTypeHebergementsScheduledForDeletion = $this->getMultimediaTypeHebergements(new Criteria(), $con)->diff($multimediaTypeHebergements);
+
+        foreach ($this->multimediaTypeHebergementsScheduledForDeletion as $multimediaTypeHebergementRemoved) {
+            $multimediaTypeHebergementRemoved->setTypeHebergement(null);
+        }
+
+        $this->collMultimediaTypeHebergements = null;
+        foreach ($multimediaTypeHebergements as $multimediaTypeHebergement) {
+            $this->addMultimediaTypeHebergement($multimediaTypeHebergement);
+        }
+
+        $this->collMultimediaTypeHebergements = $multimediaTypeHebergements;
+        $this->collMultimediaTypeHebergementsPartial = false;
+
+        return $this;
+    }
+
+    /**
+     * Returns the number of related MultimediaTypeHebergement objects.
+     *
+     * @param Criteria $criteria
+     * @param boolean $distinct
+     * @param PropelPDO $con
+     * @return int             Count of related MultimediaTypeHebergement objects.
+     * @throws PropelException
+     */
+    public function countMultimediaTypeHebergements(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        $partial = $this->collMultimediaTypeHebergementsPartial && !$this->isNew();
+        if (null === $this->collMultimediaTypeHebergements || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collMultimediaTypeHebergements) {
+                return 0;
+            }
+
+            if($partial && !$criteria) {
+                return count($this->getMultimediaTypeHebergements());
+            }
+            $query = MultimediaTypeHebergementQuery::create(null, $criteria);
+            if ($distinct) {
+                $query->distinct();
+            }
+
+            return $query
+                ->filterByTypeHebergement($this)
+                ->count($con);
+        }
+
+        return count($this->collMultimediaTypeHebergements);
+    }
+
+    /**
+     * Method called to associate a MultimediaTypeHebergement object to this object
+     * through the MultimediaTypeHebergement foreign key attribute.
+     *
+     * @param    MultimediaTypeHebergement $l MultimediaTypeHebergement
+     * @return TypeHebergement The current object (for fluent API support)
+     */
+    public function addMultimediaTypeHebergement(MultimediaTypeHebergement $l)
+    {
+        if ($this->collMultimediaTypeHebergements === null) {
+            $this->initMultimediaTypeHebergements();
+            $this->collMultimediaTypeHebergementsPartial = true;
+        }
+        if (!in_array($l, $this->collMultimediaTypeHebergements->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
+            $this->doAddMultimediaTypeHebergement($l);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	MultimediaTypeHebergement $multimediaTypeHebergement The multimediaTypeHebergement object to add.
+     */
+    protected function doAddMultimediaTypeHebergement($multimediaTypeHebergement)
+    {
+        $this->collMultimediaTypeHebergements[]= $multimediaTypeHebergement;
+        $multimediaTypeHebergement->setTypeHebergement($this);
+    }
+
+    /**
+     * @param	MultimediaTypeHebergement $multimediaTypeHebergement The multimediaTypeHebergement object to remove.
+     * @return TypeHebergement The current object (for fluent API support)
+     */
+    public function removeMultimediaTypeHebergement($multimediaTypeHebergement)
+    {
+        if ($this->getMultimediaTypeHebergements()->contains($multimediaTypeHebergement)) {
+            $this->collMultimediaTypeHebergements->remove($this->collMultimediaTypeHebergements->search($multimediaTypeHebergement));
+            if (null === $this->multimediaTypeHebergementsScheduledForDeletion) {
+                $this->multimediaTypeHebergementsScheduledForDeletion = clone $this->collMultimediaTypeHebergements;
+                $this->multimediaTypeHebergementsScheduledForDeletion->clear();
+            }
+            $this->multimediaTypeHebergementsScheduledForDeletion[]= $multimediaTypeHebergement;
+            $multimediaTypeHebergement->setTypeHebergement(null);
+        }
+
+        return $this;
     }
 
     /**
@@ -2265,6 +2534,11 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
                     $o->clearAllReferences($deep);
                 }
             }
+            if ($this->collMultimediaTypeHebergements) {
+                foreach ($this->collMultimediaTypeHebergements as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
             if ($this->collTypeHebergementI18ns) {
                 foreach ($this->collTypeHebergementI18ns as $o) {
                     $o->clearAllReferences($deep);
@@ -2285,6 +2559,10 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
             $this->collEtablissementTypeHebergements->clearIterator();
         }
         $this->collEtablissementTypeHebergements = null;
+        if ($this->collMultimediaTypeHebergements instanceof PropelCollection) {
+            $this->collMultimediaTypeHebergements->clearIterator();
+        }
+        $this->collMultimediaTypeHebergements = null;
         if ($this->collTypeHebergementI18ns instanceof PropelCollection) {
             $this->collTypeHebergementI18ns->clearIterator();
         }

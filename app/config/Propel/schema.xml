@@ -596,6 +596,28 @@
         </behavior>
     </table>
 
+    <table name="multimedia_type_hebergement">
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="type_hebergement_id" type="integer" />
+        <column name="titre" type="varchar" required="true" />
+        <column name="image_path" type="varchar" />
+        <behavior name="timestampable" />
+        <behavior name="active" />
+
+        <foreign-key foreignTable="type_hebergement" onDelete="CASCADE">
+            <reference local="type_hebergement_id" foreign="id"/>
+        </foreign-key>
+
+        <behavior name="i18n">
+            <parameter name="i18n_columns" value="titre" />
+        </behavior>
+
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/multimedias/type-hebergement" />
+            <parameter name="crud_type_file" value="image_path" />
+        </behavior>
+    </table>
+
     <table name="multimedia_etablissement">
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="etablissement_id" type="integer" />
@@ -613,7 +635,7 @@
         </behavior>
 
         <behavior name="crudable">
-            <parameter name="crud_prefix" value="/multimedias" />
+            <parameter name="crud_prefix" value="/multimedias/etablissement" />
             <parameter name="crud_type_file" value="image_path" />
         </behavior>
     </table>

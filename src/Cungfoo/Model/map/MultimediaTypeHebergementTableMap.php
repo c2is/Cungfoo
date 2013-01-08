@@ -7,7 +7,7 @@ use \TableMap;
 
 
 /**
- * This class defines the structure of the 'multimedia_etablissement' table.
+ * This class defines the structure of the 'multimedia_type_hebergement' table.
  *
  *
  *
@@ -18,13 +18,13 @@ use \TableMap;
  *
  * @package    propel.generator.Cungfoo.Model.map
  */
-class MultimediaEtablissementTableMap extends TableMap
+class MultimediaTypeHebergementTableMap extends TableMap
 {
 
     /**
      * The (dot-path) name of this class
      */
-    const CLASS_NAME = 'Cungfoo.Model.map.MultimediaEtablissementTableMap';
+    const CLASS_NAME = 'Cungfoo.Model.map.MultimediaTypeHebergementTableMap';
 
     /**
      * Initialize the table attributes, columns and validators
@@ -36,14 +36,14 @@ class MultimediaEtablissementTableMap extends TableMap
     public function initialize()
     {
         // attributes
-        $this->setName('multimedia_etablissement');
-        $this->setPhpName('MultimediaEtablissement');
-        $this->setClassname('Cungfoo\\Model\\MultimediaEtablissement');
+        $this->setName('multimedia_type_hebergement');
+        $this->setPhpName('MultimediaTypeHebergement');
+        $this->setClassname('Cungfoo\\Model\\MultimediaTypeHebergement');
         $this->setPackage('Cungfoo.Model');
         $this->setUseIdGenerator(true);
         // columns
         $this->addPrimaryKey('id', 'Id', 'INTEGER', true, null, null);
-        $this->addForeignKey('etablissement_id', 'EtablissementId', 'INTEGER', 'etablissement', 'id', false, null, null);
+        $this->addForeignKey('type_hebergement_id', 'TypeHebergementId', 'INTEGER', 'type_hebergement', 'id', false, null, null);
         $this->addColumn('image_path', 'ImagePath', 'VARCHAR', false, 255, null);
         $this->addColumn('created_at', 'CreatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('updated_at', 'UpdatedAt', 'TIMESTAMP', false, null, null);
@@ -56,10 +56,8 @@ class MultimediaEtablissementTableMap extends TableMap
      */
     public function buildRelations()
     {
-        $this->addRelation('Etablissement', 'Cungfoo\\Model\\Etablissement', RelationMap::MANY_TO_ONE, array('etablissement_id' => 'id', ), 'CASCADE', null);
-        $this->addRelation('MultimediaEtablissementTag', 'Cungfoo\\Model\\MultimediaEtablissementTag', RelationMap::ONE_TO_MANY, array('id' => 'multimedia_etablissement_id', ), 'CASCADE', null, 'MultimediaEtablissementTags');
-        $this->addRelation('MultimediaEtablissementI18n', 'Cungfoo\\Model\\MultimediaEtablissementI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'MultimediaEtablissementI18ns');
-        $this->addRelation('Tag', 'Cungfoo\\Model\\Tag', RelationMap::MANY_TO_MANY, array(), null, null, 'Tags');
+        $this->addRelation('TypeHebergement', 'Cungfoo\\Model\\TypeHebergement', RelationMap::MANY_TO_ONE, array('type_hebergement_id' => 'id', ), 'CASCADE', null);
+        $this->addRelation('MultimediaTypeHebergementI18n', 'Cungfoo\\Model\\MultimediaTypeHebergementI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'MultimediaTypeHebergementI18ns');
     } // buildRelations()
 
     /**
@@ -90,7 +88,7 @@ class MultimediaEtablissementTableMap extends TableMap
 ),
             'crudable' =>  array (
   'route_prefix' => '/',
-  'crud_prefix' => '/multimedias/etablissement',
+  'crud_prefix' => '/multimedias/type-hebergement',
   'crud_model' => NULL,
   'crud_form' => NULL,
   'crud_type_file' => 'image_path',
@@ -98,4 +96,4 @@ class MultimediaEtablissementTableMap extends TableMap
         );
     } // getBehaviors()
 
-} // MultimediaEtablissementTableMap
+} // MultimediaTypeHebergementTableMap
