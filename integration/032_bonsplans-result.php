@@ -10,15 +10,14 @@ include('includes/top.php'); ?>
 
             <ol class="pathway" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
                 <li>&gt; <a href="#_" itemprop="url"><span itemprop="title">Accueil</span></a></li>
-                <li>&gt; <a href="#_" itemprop="url"><span itemprop="title">Nos campings : Campings France</span></a></li>
-                <li>&gt; <a href="#_" itemprop="url"><span itemprop="title">Location mobil home Languedoc-Roussillon</span></a></li>
-                <li>&gt; <a href="#_" itemprop="url"><span itemprop="title">Le Petit Mousse</span></a></li>
+                <li>&gt; <a href="#_" itemprop="url"><span itemprop="title"Résultats de recherche">Résultats de recherche</span></a></li>
             </ol>
 
             <h1>Destination Espagne !</h1>
 
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tincidunt lobortis consequat. Nam a elit nunc. Sed at enim ac odio molestie rutrum non vitae dolor. Phasellus ac nisl massa. Morbi imperdiet nulla ac neque vulputate sagittis. Mauris ullamcorper aliquet ultricies. Sed ut lectus sed metus lobortis convallis. Cras lectus sapien, blandit non cursus ultricies, bibendum quis diam. Integer nec tortor in risus mollis luctus at nec justo. Suspendisse quis nunc eros. Mauris auctor scelerisque sapien eleifend mattis. Pellentesque dictum sollicitudin velit vitae adipiscing.</p>
 
+            <img class="bdPict" src="../web/images/vacancesdirectes/dyn/results/bandeau-result-bonplan.jpg" alt="">
 
             <span class="nbResult"><span class="nb">07</span>Résultat(s)</span>
             <div class="typeAff">
