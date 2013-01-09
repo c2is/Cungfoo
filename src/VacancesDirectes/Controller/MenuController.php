@@ -63,7 +63,21 @@ class MenuController implements ControllerProviderInterface
 
         $controllers->get('/locations', function () use ($app)
         {
-            return $app['twig']->render('Menu/locations.twig');
+            $categoryTypeHebergements = \Cungfoo\Model\CategoryTypeHebergementQuery::create()
+                ->limit(4)
+                ->find()
+            ;
+
+            $capacites = \Cungfoo\Model\TypeHebergementCapaciteQuery::create()
+                ->limit(4)
+                ->orderBySortableRank()
+                ->find()
+            ;
+
+            return $app['twig']->render('Menu/locations.twig', array(
+                'categoryTypeHebergements' => $categoryTypeHebergements,
+                'capacites'                => $capacites,
+            ));
         })
         ->bind('menu_locations');
 

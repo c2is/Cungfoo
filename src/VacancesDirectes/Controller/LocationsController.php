@@ -39,7 +39,20 @@ class LocationsController implements ControllerProviderInterface
 
             if (!$categoryTypeHebergementObject)
             {
-                $app->abort(404, "$categoryTypeHebergement does not exist.");
+                $capaciteObject = \Cungfoo\Model\TypeHebergementCapaciteQuery::create()
+                    ->joinWithI18n($locale)
+                    ->useI18nQuery()
+                        ->filterBySlug($categoryTypeHebergement)
+                    ->endUse()
+                    ->findOne()
+                ;
+
+                if (!$capaciteObject)
+                {
+                    $app->abort(404, "$categoryTypeHebergement does not exist.");
+                }
+
+                return $capaciteObject;
             }
 
             return $categoryTypeHebergementObject;
