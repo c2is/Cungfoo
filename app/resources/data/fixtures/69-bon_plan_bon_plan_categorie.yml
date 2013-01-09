@@ -2,21 +2,48 @@
     1:
         BonPlanId: 1
         BonPlanCategorieId: 1
+        SortableRank: 1
     2:
         BonPlanId: 2
         BonPlanCategorieId: 1
+        SortableRank: 2
     3:
         BonPlanId: 3
-        BonPlanCategorieId: 2
+        BonPlanCategorieId: 1
+        SortableRank: 3
     4:
         BonPlanId: 4
-        BonPlanCategorieId: 3
+        BonPlanCategorieId: 1
+        SortableRank: 4
     5:
         BonPlanId: 5
         BonPlanCategorieId: 4
+        SortableRank: 1
     6:
         BonPlanId: 6
         BonPlanCategorieId: 3
+        SortableRank: 1
     7:
         BonPlanId: 6
         BonPlanCategorieId: 5
+        SortableRank: 1
+    8:
+        BonPlanId: 2
+        BonPlanCategorieId: 3
+        SortableRank: 2
+    9:
+        BonPlanId: 3
+        BonPlanCategorieId: 5
+        SortableRank: 2
+    10:
+        BonPlanId: 2
+        BonPlanCategorieId: 1
+        SortableRank: 5
+    11:
+        BonPlanId: 2
+        BonPlanCategorieId: 3
+        SortableRank: 3
+    12:
+        BonPlanId: 5
+        BonPlanCategorieId: 5
+        SortableRank: 3

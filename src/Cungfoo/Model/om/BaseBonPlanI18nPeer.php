@@ -37,13 +37,13 @@ abstract class BaseBonPlanI18nPeer
     const TM_CLASS = 'BonPlanI18nTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 7;
+    const NUM_COLUMNS = 8;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 7;
+    const NUM_HYDRATE_COLUMNS = 8;
 
     /** the column name for the id field */
     const ID = 'bon_plan_i18n.id';
@@ -66,6 +66,9 @@ abstract class BaseBonPlanI18nPeer
     /** the column name for the indice field */
     const INDICE = 'bon_plan_i18n.indice';
 
+    /** the column name for the indice_prix field */
+    const INDICE_PRIX = 'bon_plan_i18n.indice_prix';
+
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
 
@@ -85,12 +88,12 @@ abstract class BaseBonPlanI18nPeer
      * e.g. BonPlanI18nPeer::$fieldNames[BonPlanI18nPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Name', 'Slug', 'Introduction', 'Description', 'Indice', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'name', 'slug', 'introduction', 'description', 'indice', ),
-        BasePeer::TYPE_COLNAME => array (BonPlanI18nPeer::ID, BonPlanI18nPeer::LOCALE, BonPlanI18nPeer::NAME, BonPlanI18nPeer::SLUG, BonPlanI18nPeer::INTRODUCTION, BonPlanI18nPeer::DESCRIPTION, BonPlanI18nPeer::INDICE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'NAME', 'SLUG', 'INTRODUCTION', 'DESCRIPTION', 'INDICE', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'name', 'slug', 'introduction', 'description', 'indice', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Name', 'Slug', 'Introduction', 'Description', 'Indice', 'IndicePrix', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'name', 'slug', 'introduction', 'description', 'indice', 'indicePrix', ),
+        BasePeer::TYPE_COLNAME => array (BonPlanI18nPeer::ID, BonPlanI18nPeer::LOCALE, BonPlanI18nPeer::NAME, BonPlanI18nPeer::SLUG, BonPlanI18nPeer::INTRODUCTION, BonPlanI18nPeer::DESCRIPTION, BonPlanI18nPeer::INDICE, BonPlanI18nPeer::INDICE_PRIX, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'NAME', 'SLUG', 'INTRODUCTION', 'DESCRIPTION', 'INDICE', 'INDICE_PRIX', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'name', 'slug', 'introduction', 'description', 'indice', 'indice_prix', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, )
     );
 
     /**
@@ -100,12 +103,12 @@ abstract class BaseBonPlanI18nPeer
      * e.g. BonPlanI18nPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Name' => 2, 'Slug' => 3, 'Introduction' => 4, 'Description' => 5, 'Indice' => 6, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'slug' => 3, 'introduction' => 4, 'description' => 5, 'indice' => 6, ),
-        BasePeer::TYPE_COLNAME => array (BonPlanI18nPeer::ID => 0, BonPlanI18nPeer::LOCALE => 1, BonPlanI18nPeer::NAME => 2, BonPlanI18nPeer::SLUG => 3, BonPlanI18nPeer::INTRODUCTION => 4, BonPlanI18nPeer::DESCRIPTION => 5, BonPlanI18nPeer::INDICE => 6, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'NAME' => 2, 'SLUG' => 3, 'INTRODUCTION' => 4, 'DESCRIPTION' => 5, 'INDICE' => 6, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'slug' => 3, 'introduction' => 4, 'description' => 5, 'indice' => 6, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Name' => 2, 'Slug' => 3, 'Introduction' => 4, 'Description' => 5, 'Indice' => 6, 'IndicePrix' => 7, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'slug' => 3, 'introduction' => 4, 'description' => 5, 'indice' => 6, 'indicePrix' => 7, ),
+        BasePeer::TYPE_COLNAME => array (BonPlanI18nPeer::ID => 0, BonPlanI18nPeer::LOCALE => 1, BonPlanI18nPeer::NAME => 2, BonPlanI18nPeer::SLUG => 3, BonPlanI18nPeer::INTRODUCTION => 4, BonPlanI18nPeer::DESCRIPTION => 5, BonPlanI18nPeer::INDICE => 6, BonPlanI18nPeer::INDICE_PRIX => 7, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'NAME' => 2, 'SLUG' => 3, 'INTRODUCTION' => 4, 'DESCRIPTION' => 5, 'INDICE' => 6, 'INDICE_PRIX' => 7, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'slug' => 3, 'introduction' => 4, 'description' => 5, 'indice' => 6, 'indice_prix' => 7, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, )
     );
 
     /**
@@ -186,6 +189,7 @@ abstract class BaseBonPlanI18nPeer
             $criteria->addSelectColumn(BonPlanI18nPeer::INTRODUCTION);
             $criteria->addSelectColumn(BonPlanI18nPeer::DESCRIPTION);
             $criteria->addSelectColumn(BonPlanI18nPeer::INDICE);
+            $criteria->addSelectColumn(BonPlanI18nPeer::INDICE_PRIX);
         } else {
             $criteria->addSelectColumn($alias . '.id');
             $criteria->addSelectColumn($alias . '.locale');
@@ -194,6 +198,7 @@ abstract class BaseBonPlanI18nPeer
             $criteria->addSelectColumn($alias . '.introduction');
             $criteria->addSelectColumn($alias . '.description');
             $criteria->addSelectColumn($alias . '.indice');
+            $criteria->addSelectColumn($alias . '.indice_prix');
         }
     }
 

@@ -5,48 +5,53 @@
  * up to version 1357642730.
  * Generated on 2013-01-08 11:58:50 by vagrant
  */
-class PropelMigration_1357642730
+class PropelMigration_1357672730
 {
 
     public $dernieresMinutes = array();
 
     public function preUp($manager)
     {
-        $sql = "SELECT * FROM dernieres_minutes";
-        $pdo = $manager->getPdoConnection('cungfoo');
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute();
-
-        $results = $stmt->fetchAll();
-        foreach ($results as $key => $result)
+        try
         {
-            $result['etablissements'] = array();
-
-            $sql = "SELECT etablissement_id FROM dernieres_minutes_etablissement WHERE dernieres_minutes_id = ?";
+            $sql = "SELECT * FROM dernieres_minutes";
+            $pdo = $manager->getPdoConnection('cungfoo');
             $stmt = $pdo->prepare($sql);
-            $stmt->execute(array($result['id']));
-            
-            $etablissements = $stmt->fetchAll();
-            foreach ($etablissements as $etablissement)
+            $stmt->execute();
+
+            $results = $stmt->fetchAll();
+            foreach ($results as $key => $result)
             {
-                $result['etablissements'][] = $etablissement['etablissement_id'];
+                $result['etablissements'] = array();
+
+                $sql = "SELECT etablissement_id FROM dernieres_minutes_etablissement WHERE dernieres_minutes_id = ?";
+                $stmt = $pdo->prepare($sql);
+                $stmt->execute(array($result['id']));
+                
+                $etablissements = $stmt->fetchAll();
+                foreach ($etablissements as $etablissement)
+                {
+                    $result['etablissements'][] = $etablissement['etablissement_id'];
+                }
+
+                $result['destinations'] = array();
+
+                $sql = "SELECT destination_id FROM dernieres_minutes_destination WHERE dernieres_minutes_id = ?";
+                $stmt = $pdo->prepare($sql);
+                $stmt->execute(array($result['id']));
+                
+                $destinations = $stmt->fetchAll();
+                foreach ($destinations as $destination)
+                {
+                    $result['destinations'][] = $destination['destination_id'];
+                }
+
+                $results[$key] = $result;
             }
-
-            $result['destinations'] = array();
-
-            $sql = "SELECT destination_id FROM dernieres_minutes_destination WHERE dernieres_minutes_id = ?";
-            $stmt = $pdo->prepare($sql);
-            $stmt->execute(array($result['id']));
-            
-            $destinations = $stmt->fetchAll();
-            foreach ($destinations as $destination)
-            {
-                $result['destinations'][] = $destination['destination_id'];
-            }
-
-            $results[$key] = $result;
+        } catch(\Exception $e)
+        {
+            $results = array();
         }
-
         $this->dernieresMinutes = $results;
     }
 
@@ -266,6 +271,7 @@ CREATE TABLE `bon_plan`
     `day_range` TINYINT NOT NULL,
     `nb_adultes` INTEGER DEFAULT 1,
     `nb_enfants` INTEGER DEFAULT 0,
+    `period_categories` VARCHAR(255),
     `active` TINYINT(1) DEFAULT 1,
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB;
@@ -324,6 +330,7 @@ CREATE TABLE `bon_plan_i18n`
     `introduction` VARCHAR(255),
     `description` TEXT,
     `indice` VARCHAR(255),
+    `indice_prix` VARCHAR(255),
     PRIMARY KEY (`id`,`locale`),
     CONSTRAINT `bon_plan_i18n_FK_1`
         FOREIGN KEY (`id`)

@@ -7,6 +7,7 @@
         Introduction: 'Early booking'
         Description: 'Lorem ipsum dolor sit amet'
         Indice: 'pour 1 personnes'
+        IndicePrix: 'réduction 25%'
     1_en:
         Id: 1
         Locale: en
@@ -15,6 +16,7 @@
         Introduction: 'Early booking'
         Description: 'Lorem ipsum dolor sit amet'
         Indice: 'pour 1 personnes'
+        IndicePrix: 'réduction 25%'
     1_fr:
         Id: 1
         Locale: fr
@@ -23,6 +25,7 @@
         Introduction: 'Early booking'
         Description: 'Lorem ipsum dolor sit amet'
         Indice: 'pour 1 personnes'
+        IndicePrix: 'réduction 25%'
     1_nl:
         Id: 1
         Locale: nl
@@ -31,6 +34,7 @@
         Introduction: 'Early booking'
         Description: 'Lorem ipsum dolor sit amet'
         Indice: 'pour 1 personnes'
+        IndicePrix: 'réduction 25%'
     2_de:
         Id: 2
         Locale: de
@@ -39,6 +43,7 @@
         Introduction: 'Landes'
         Description: 'Lorem ipsum dolor sit amet'
         Indice: 'pour 5 personnes'
+        IndicePrix: 'réduction 25%'
     2_en:
         Id: 2
         Locale: en
@@ -47,6 +52,7 @@
         Introduction: 'Landes'
         Description: 'Lorem ipsum dolor sit amet'
         Indice: 'pour 5 personnes'
+        IndicePrix: 'réduction 25%'
     2_fr:
         Id: 2
         Locale: fr
@@ -55,6 +61,7 @@
         Introduction: 'Landes'
         Description: 'Lorem ipsum dolor sit amet'
         Indice: 'pour 5 personnes'
+        IndicePrix: 'réduction 25%'
     2_nl:
         Id: 2
         Locale: nl
@@ -63,6 +70,7 @@
         Introduction: 'Landes'
         Description: 'Lorem ipsum dolor sit amet'
         Indice: 'pour 5 personnes'
+        IndicePrix: 'réduction 25%'
     3_de:
         Id: 3
         Locale: de
@@ -71,6 +79,7 @@
         Introduction: 'Provence-Côte d''Azur'
         Description: 'Lorem ipsum dolor sit amet'
         Indice: 'pour 5 personnes'
+        IndicePrix: 'réduction 25%'
     3_en:
         Id: 3
         Locale: en
@@ -79,6 +88,7 @@
         Introduction: 'Provence-Côte d''Azur'
         Description: 'Lorem ipsum dolor sit amet'
         Indice: 'pour 5 personnes'
+        IndicePrix: 'réduction 25%'
     3_fr:
         Id: 3
         Locale: fr
@@ -87,6 +97,7 @@
         Introduction: 'Provence-Côte d''Azur'
         Description: 'Lorem ipsum dolor sit amet'
         Indice: 'pour 5 personnes'
+        IndicePrix: 'réduction 25%'
     3_nl:
         Id: 3
         Locale: nl
@@ -95,6 +106,7 @@
         Introduction: 'Provence-Côte d''Azur'
         Description: 'Lorem ipsum dolor sit amet'
         Indice: 'pour 5 personnes'
+        IndicePrix: 'réduction 25%'
     4_de:
         Id: 4
         Locale: de
@@ -103,6 +115,7 @@
         Introduction: 'Landes'
         Description: 'Lorem ipsum dolor sit amet'
         Indice: 'pour 4 personnes'
+        IndicePrix: 'réduction 25%'
     4_en:
         Id: 4
         Locale: en
@@ -111,6 +124,7 @@
         Introduction: 'Landes'
         Description: 'Lorem ipsum dolor sit amet'
         Indice: 'pour 4 personnes'
+        IndicePrix: 'réduction 25%'
     4_fr:
         Locale: fr
         Id: 4
@@ -119,6 +133,7 @@
         Introduction: 'Landes'
         Description: 'Lorem ipsum dolor sit amet'
         Indice: 'pour 4 personnes'
+        IndicePrix: 'réduction 25%'
     4_nl:
         Id: 4
         Locale: nl
@@ -127,3 +142,77 @@
         Introduction: 'Landes'
         Description: 'Lorem ipsum dolor sit amet'
         Indice: 'pour 4 personnes'
+        IndicePrix: 'réduction 25%'
+    5_de:
+        Id: 5
+        Locale: de
+        Name: 'Lou Broustaricq ***'
+        Slug: 'lou-broustaricq'
+        Introduction: 'Landes'
+        Description: 'Lorem ipsum dolor sit amet'
+        Indice: 'pour 5 personnes'
+        IndicePrix: 'réduction 40%'
+    5_en:
+        Id: 5
+        Locale: en
+        Name: 'Lou Broustaricq ***'
+        Slug: 'lou-broustaricq'
+        Introduction: 'Landes'
+        Description: 'Lorem ipsum dolor sit amet'
+        Indice: 'pour 5 personnes'
+        IndicePrix: 'réduction 40%'
+    5_fr:
+        Locale: fr
+        Id: 5
+        Name: 'Lou Broustaricq ***'
+        Slug: 'lou-broustaricq'
+        Introduction: 'Landes'
+        Description: 'Lorem ipsum dolor sit amet'
+        Indice: 'pour 5 personnes'
+        IndicePrix: 'réduction 40%'
+    5_nl:
+        Id: 5
+        Locale: nl
+        Name: 'Lou Broustaricq ***'
+        Slug: 'lou-broustaricq'
+        Introduction: 'Landes'
+        Description: 'Lorem ipsum dolor sit amet'
+        Indice: 'pour 5 personnes'
+        IndicePrix: 'réduction 40%'
+    6_de:
+        Id: 6
+        Locale: de
+        Name: 'Lou Broustaricq ***'
+        Slug: 'lou-broustaricq'
+        Introduction: 'Landes'
+        Description: 'Lorem ipsum dolor sit amet'
+        Indice: 'pour 6 personnes'
+        IndicePrix: 'réduction 40%'
+    6_en:
+        Id: 6
+        Locale: en
+        Name: 'Lou Broustaricq ***'
+        Slug: 'lou-broustaricq'
+        Introduction: 'Landes'
+        Description: 'Lorem ipsum dolor sit amet'
+        Indice: 'pour 6 personnes'
+        IndicePrix: 'réduction 40%'
+    6_fr:
+        Locale: fr
+        Id: 6
+        Name: 'Lou Broustaricq ***'
+        Slug: 'lou-broustaricq'
+        Introduction: 'Landes'
+        Description: 'Lorem ipsum dolor sit amet'
+        Indice: 'pour 6 personnes'
+        IndicePrix: 'réduction 40%'
+    6_nl:
+        Id: 6
+        Locale: nl
+        Name: 'Lou Broustaricq ***'
+        Slug: 'lou-broustaricq'
+        Introduction: 'Landes'
+        Description: 'Lorem ipsum dolor sit amet'
+        Indice: 'pour 6 personnes'
+        IndicePrix: 'réduction 40%'
+

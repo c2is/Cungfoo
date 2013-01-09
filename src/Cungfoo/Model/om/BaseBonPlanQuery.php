@@ -44,6 +44,7 @@ use Cungfoo\Model\Etablissement;
  * @method BonPlanQuery orderByDayRange($order = Criteria::ASC) Order by the day_range column
  * @method BonPlanQuery orderByNbAdultes($order = Criteria::ASC) Order by the nb_adultes column
  * @method BonPlanQuery orderByNbEnfants($order = Criteria::ASC) Order by the nb_enfants column
+ * @method BonPlanQuery orderByPeriodCategories($order = Criteria::ASC) Order by the period_categories column
  * @method BonPlanQuery orderByActive($order = Criteria::ASC) Order by the active column
  *
  * @method BonPlanQuery groupById() Group by the id column
@@ -62,6 +63,7 @@ use Cungfoo\Model\Etablissement;
  * @method BonPlanQuery groupByDayRange() Group by the day_range column
  * @method BonPlanQuery groupByNbAdultes() Group by the nb_adultes column
  * @method BonPlanQuery groupByNbEnfants() Group by the nb_enfants column
+ * @method BonPlanQuery groupByPeriodCategories() Group by the period_categories column
  * @method BonPlanQuery groupByActive() Group by the active column
  *
  * @method BonPlanQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
@@ -102,6 +104,7 @@ use Cungfoo\Model\Etablissement;
  * @method BonPlan findOneByDayRange(int $day_range) Return the first BonPlan filtered by the day_range column
  * @method BonPlan findOneByNbAdultes(int $nb_adultes) Return the first BonPlan filtered by the nb_adultes column
  * @method BonPlan findOneByNbEnfants(int $nb_enfants) Return the first BonPlan filtered by the nb_enfants column
+ * @method BonPlan findOneByPeriodCategories(string $period_categories) Return the first BonPlan filtered by the period_categories column
  * @method BonPlan findOneByActive(boolean $active) Return the first BonPlan filtered by the active column
  *
  * @method array findById(int $id) Return BonPlan objects filtered by the id column
@@ -120,6 +123,7 @@ use Cungfoo\Model\Etablissement;
  * @method array findByDayRange(int $day_range) Return BonPlan objects filtered by the day_range column
  * @method array findByNbAdultes(int $nb_adultes) Return BonPlan objects filtered by the nb_adultes column
  * @method array findByNbEnfants(int $nb_enfants) Return BonPlan objects filtered by the nb_enfants column
+ * @method array findByPeriodCategories(string $period_categories) Return BonPlan objects filtered by the period_categories column
  * @method array findByActive(boolean $active) Return BonPlan objects filtered by the active column
  *
  * @package    propel.generator.Cungfoo.Model.om
@@ -224,7 +228,7 @@ abstract class BaseBonPlanQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `date_debut`, `date_fin`, `prix`, `prix_barre`, `image_menu`, `image_page`, `image_liste`, `active_compteur`, `mise_en_avant`, `push_home`, `date_start`, `day_start`, `day_range`, `nb_adultes`, `nb_enfants`, `active` FROM `bon_plan` WHERE `id` = :p0';
+        $sql = 'SELECT `id`, `date_debut`, `date_fin`, `prix`, `prix_barre`, `image_menu`, `image_page`, `image_liste`, `active_compteur`, `mise_en_avant`, `push_home`, `date_start`, `day_start`, `day_range`, `nb_adultes`, `nb_enfants`, `period_categories`, `active` FROM `bon_plan` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -867,6 +871,35 @@ abstract class BaseBonPlanQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(BonPlanPeer::NB_ENFANTS, $nbEnfants, $comparison);
+    }
+
+    /**
+     * Filter the query on the period_categories column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByPeriodCategories('fooValue');   // WHERE period_categories = 'fooValue'
+     * $query->filterByPeriodCategories('%fooValue%'); // WHERE period_categories LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $periodCategories The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return BonPlanQuery The current query, for fluid interface
+     */
+    public function filterByPeriodCategories($periodCategories = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($periodCategories)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $periodCategories)) {
+                $periodCategories = str_replace('*', '%', $periodCategories);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(BonPlanPeer::PERIOD_CATEGORIES, $periodCategories, $comparison);
     }
 
     /**

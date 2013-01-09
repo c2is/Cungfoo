@@ -157,6 +157,12 @@ class BaseBonPlanType extends AppAwareType
             'label' => 'bon_plan.nb_enfants',
             'required' => false,
         ));
+        $builder->add('period_categories', 'text', array(
+            'constraints' => array(
+            ),
+            'label' => 'bon_plan.period_categories',
+            'required' => false,
+        ));
         $builder->add('active', 'checkbox', array(
             'constraints' => array(
             ),
@@ -228,6 +234,13 @@ class BaseBonPlanType extends AppAwareType
                 'indice' => array(
                     'required' => false,
                     'label' => 'bon_plan.indice',
+                    'type' => 'text',
+                    'constraints' => array(
+                    ),
+                ),
+                'indice_prix' => array(
+                    'required' => false,
+                    'label' => 'bon_plan.indice_prix',
                     'type' => 'text',
                     'constraints' => array(
                     ),

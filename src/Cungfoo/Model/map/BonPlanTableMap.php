@@ -70,8 +70,9 @@ class BonPlanTableMap extends TableMap
   1 => '14',
   2 => '21',
 ));
-        $this->addColumn('nb_adultes', 'NbAdultes', 'INTEGER', false, null, null);
-        $this->addColumn('nb_enfants', 'NbEnfants', 'INTEGER', false, null, null);
+        $this->addColumn('nb_adultes', 'NbAdultes', 'INTEGER', false, null, 1);
+        $this->addColumn('nb_enfants', 'NbEnfants', 'INTEGER', false, null, 0);
+        $this->addColumn('period_categories', 'PeriodCategories', 'VARCHAR', false, 255, null);
         $this->addColumn('active', 'Active', 'BOOLEAN', false, 1, false);
         // validators
     } // initialize()
@@ -105,7 +106,7 @@ class BonPlanTableMap extends TableMap
             'i18n' =>  array (
   'i18n_table' => '%TABLE%_i18n',
   'i18n_phpname' => '%PHPNAME%I18n',
-  'i18n_columns' => 'name, slug, introduction, description, indice',
+  'i18n_columns' => 'name, slug, introduction, description, indice, indice_prix',
   'i18n_pk_name' => NULL,
   'locale_column' => 'locale',
   'default_locale' => 'fr',
