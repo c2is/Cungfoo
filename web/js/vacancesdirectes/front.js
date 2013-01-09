@@ -153,6 +153,14 @@ $(function() {
     $(".popinVideo").colorbox({iframe:true, innerWidth:960, innerHeight:540, close:"&times;"});
     //$(".popin360").colorbox();
     $(".popinInline").colorbox({inline:true, width:"75%"});
+    $(".popinBP").colorbox({
+        inline:true,
+        width:"300px",
+        close:"&times;",
+        onOpen: function(){
+           $("#colorbox").addClass("cbBP");
+       }
+    });
 
 // select
     $('#searchForm').find('select').not('.sMultSelect').sSelect({ddMaxHeight: '300px'});
@@ -262,6 +270,12 @@ $(function() {
                     }
                 })
                 hoverLi.addClass('hover').children('.subnav').show();
+                if (hoverLi.children('.subnav').is('#deals')){
+                    var minContentHeight = $('#dealsMenu').height() + parseInt($('#dealsMenu').css('margin-bottom')) - parseInt($('#dealsContent').children().css('margin-top')) - parseInt($('#dealsContent').children().css('margin-bottom'));
+                    $('#dealsContent').children().css({
+                        minHeight: minContentHeight
+                    });
+                }
                 removeBorders(hoverLi);
                 openTab = true;
             },
@@ -288,6 +302,14 @@ $(function() {
             currentLi = $('#nav .topnav').children('.current');
             removeBorders(currentLi);
         }
+
+        $('#dealsMenu .bp').click(function(){
+            console.log( parseInt($(this).index() + 1));
+            $(this).addClass('selected').siblings().removeClass('selected');
+            $('#dealsContent').children().hide();
+            $('#dealsContent').children('#bp' + parseInt($(this).index() + 1)).show();
+        });
+
     }
 
 
@@ -1540,7 +1562,7 @@ function tabs(tView, load) {
     var sView = tView.split('#')[1],
         slider = $('.tabCampDiapo');
 
-    if (sView == 'tabCamp' || sView == 'tabLocations') {
+    if (sView == 'tabCamp' || sView == 'tabLocations' || sView == 'tabLogement' || sView == 'tabCampings') {
         slider.fadeIn();
         if (sView == 'tabLocations'){
             $('[name="affPhoto"][value="locations"]').parent('label').trigger('click');

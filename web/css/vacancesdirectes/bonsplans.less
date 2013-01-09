@@ -1,0 +1,29 @@
+.bonsplans{
+  #bpItemsList{width:938px;
+    .bpItem{margin-right:10px;float:left;overflow:hidden;width:928px;
+
+      .itemResultTitle{text-transform:uppercase;
+        span{text-transform:none;}
+      }
+      .view{height:155px;position:relative;overflow:hidden;
+        .bg{position:absolute;top:0;left:0;width:100%;}
+
+      }
+      .content{padding:15px 20px;position:relative;
+        p{width:770px;}
+        .stain {width:131px;._verticalCenter(131px,12px);position:absolute;left:auto;right:30px;top:-100px;
+          &>span{margin-top:0;}
+          .price{font-size:27px;font-weight:bold;display:block;margin:7px 0 0px;letter-spacing:normal;}
+        }
+        .bt{position:absolute;bottom:15px;right:20px;}
+      }
+      &.half{width:459px;
+        p{width:340px;}
+        .stain{right:-20px;}
+      }
+    }
+    .bpCount{font:bold 22px @arial;margin-top:10px;
+      span{color:@colorFushia;font:bold 25px @ptnarrow;float:left;width:90px;border:1px solid @colorBorderGris;text-align:center;margin:5px 5px 0 0;}
+    }
+  }
+}
