@@ -41,4 +41,21 @@ class BonPlan extends BaseBonPlan
 
         return implode(',', $codes);
     }
+
+    public function getCompteur()
+    {
+        $dateFin = $this->getDateFin();
+        $today = new \DateTime();
+        $diff = $today->diff($dateFin);
+
+        foreach ($diff as $key => $value)
+        {
+            if($key == "d" || $key == "h" || $key == "i")
+            {
+                $compteur[$key] = $value;
+            }
+        }
+
+        return $compteur;
+    }
 }
