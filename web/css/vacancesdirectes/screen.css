@@ -438,6 +438,30 @@ textarea {
 #cboxLoadedContent {
   box-sizing: content-box;
 }
+/*Colorbox Bons Plans */
+#colorbox.cbBP {
+  overflow: visible;
+}
+#colorbox.cbBP #cboxWrapper {
+  background-color: #f58220;
+  -webkit-border-radius: 25px;
+  border-radius: 25px;
+}
+#colorbox.cbBP #cboxTitle {
+  display: none;
+}
+#colorbox.cbBP #cboxLoadedContent {
+  background-color: transparent;
+  border: 0;
+}
+#colorbox.cbBP #cboxWrapper,
+#colorbox.cbBP #cboxContent,
+#colorbox.cbBP #cboxLoadedContent {
+  overflow: visible !important;
+}
+#colorbox.cbBP #cboxClose {
+  right: 10px;
+}
 /*
     User Style:
     Change the following styles to modify the appearance of ColorBox.  They are
@@ -2078,10 +2102,16 @@ h6,
 .h6-like {
   color: #ed145b;
 }
+h1 + h2 {
+  margin-top: 0 !important;
+}
 .description {
   font: 13px/18px Arial, Helvetica, sans-serif;
   color: #5f5f5f;
   margin-bottom: 10px;
+}
+h2 + .description {
+  margin-top: 25px;
 }
 .bt {
   display: block;
@@ -2388,6 +2418,9 @@ h6,
 }
 .radiusBox .stamp.no > img {
   vertical-align: middle;
+}
+.radiusBox .stamp.no:after {
+  content: "";
 }
 .radiusBox .stamp.no > h2 {
   color: #5f5f5f;
@@ -2921,7 +2954,6 @@ input[type="radio"] {
   font-size: 14px;
   font-weight: bold;
   width: 68px;
-  padding-right: 10px;
   height: 61px;
   /* Centrer verticalement une ligne de texte */
 
@@ -4588,6 +4620,10 @@ body.edito table td {
   -o-transform: rotate(12deg);
   transform: rotate(12deg);
 }
+.descLogement {
+  margin: 30px 0;
+  padding: 20px 15px;
+}
 /* Gmap infoBox dans popin */
 .popin #infoMap .infoBox .bt {
   display: none;
@@ -4631,6 +4667,9 @@ body.edito table td {
   margin-bottom: 5px;
 }
 /* page result */
+.bdPict {
+  margin: 20px 0;
+}
 .nbResult {
   font: 18px/0px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   color: #ed145b;
@@ -4729,6 +4768,9 @@ body.edito table td {
 #results {
   clear: both;
 }
+h2 + #results {
+  margin-top: 25px;
+}
 .itemResult {
   position: relative;
   border: 4px solid #8c8a8a;
@@ -4743,6 +4785,9 @@ body.edito table td {
   font: bold 25px/28px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   padding: 3px 5px 5px;
   color: #ffffff;
+}
+.itemResult .itemResultTitle.itemResultTitleHbgt {
+  text-transform: uppercase;
 }
 .itemResult .itemResultTitle a {
   color: #ffffff;
@@ -4761,6 +4806,9 @@ body.edito table td {
   padding: 10px 0 10px 10px;
   float: left;
   width: 175px;
+}
+.itemResult .itemResultLeft.itemResultLeftHbgt {
+  width: 200px;
 }
 .itemResult .itemResultLeft .boxborder {
   margin: 0;
@@ -4782,12 +4830,32 @@ body.edito table td {
   float: left;
   width: 200px;
 }
+.itemResult .itemResultCenter.itemResultCenterHbgt {
+  width: 408px;
+}
 .itemResult .itemResultCenter .bt {
   display: inline-block;
   margin-top: 10px;
 }
 .itemResult .itemResultCenter .pictos {
   margin-top: 10px;
+}
+.itemResult .itemResultCenter .ircHbgtTitle {
+  display: block;
+  font: bold 25px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  color: #8c8a8a;
+}
+.itemResult .itemResultCenter .ircHbgtSubTitle {
+  display: block;
+  font: 21px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+  color: #8c8a8a;
+  margin-bottom: 10px;
+}
+.itemResult .itemResultCenter .ircHbgtDesc {
+  display: block;
+  font: 13px Arial, Helvetica, sans-serif;
+  color: #8c8a8a;
 }
 .itemResult .itemResultRight {
   padding: 10px;
@@ -4931,6 +4999,10 @@ body.edito table td {
   position: relative;
   -webkit-border-radius: 0 0 11px 11px;
   border-radius: 0 0 11px 11px;
+}
+.itemResult .itemResultBottom.itemResultBottomHbgt {
+  min-height: 0;
+  padding: 10px;
 }
 .itemResult .itemResultBottom [type="radio"] {
   vertical-align: -2px;
@@ -5077,6 +5149,46 @@ body.edito table td {
 .itemResult.itemCatalogue .itemResultBottom .linePrice .stain {
   display: block;
 }
+.bandeau {
+  position: relative;
+  clear: both;
+}
+.sliderStain {
+  position: absolute;
+  text-align: center;
+  right: 10px;
+  top: 10px;
+  width: 228px;
+  height: 216px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 216px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+  background: url("../../images/vacancesdirectes/common/ui/stain-1.png") no-repeat 0 0 transparent;
+  background-size: 100%;
+}
+.sliderStain > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: 15px;
+}
+.sliderStain > img {
+  vertical-align: middle;
+}
+.sliderStain .content {
+  color: #f58220;
+  margin: 10px 30px 0;
+}
+.sliderStain .content .headline {
+  font: bold 27px/27px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 95px;
+}
 /* bouton Afficher plus de resultats */
 #btPlusResults {
   clear: both;
@@ -5151,7 +5263,7 @@ body.edito table td {
   top: 0;
   left: 0;
 }
-/* page result */
+/* page destination */
 .destination h2.h3-like {
   margin-top: 10px;
   margin-bottom: 20px;
@@ -5224,6 +5336,100 @@ body.edito table td {
 }
 .imgDesti {
   margin-left: 0;
+}
+/* page bons plans */
+.bonsplans #bpItemsList {
+  width: 938px;
+}
+.bonsplans #bpItemsList .bpItem {
+  margin-right: 10px;
+  float: left;
+  overflow: hidden;
+  width: 928px;
+}
+.bonsplans #bpItemsList .bpItem .itemResultTitle {
+  text-transform: uppercase;
+}
+.bonsplans #bpItemsList .bpItem .itemResultTitle span {
+  text-transform: none;
+}
+.bonsplans #bpItemsList .bpItem .view {
+  height: 155px;
+  position: relative;
+  overflow: hidden;
+}
+.bonsplans #bpItemsList .bpItem .view .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.bonsplans #bpItemsList .bpItem .content {
+  padding: 15px 20px;
+  position: relative;
+}
+.bonsplans #bpItemsList .bpItem .content p {
+  width: 770px;
+}
+.bonsplans #bpItemsList .bpItem .content .stain {
+  width: 131px;
+  height: 131px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 131px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+  position: absolute;
+  left: auto;
+  right: 30px;
+  top: -100px;
+}
+.bonsplans #bpItemsList .bpItem .content .stain > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: 12px;
+}
+.bonsplans #bpItemsList .bpItem .content .stain > img {
+  vertical-align: middle;
+}
+.bonsplans #bpItemsList .bpItem .content .stain > span {
+  margin-top: 0;
+}
+.bonsplans #bpItemsList .bpItem .content .stain .price {
+  font-size: 27px;
+  font-weight: bold;
+  display: block;
+  margin: 7px 0 0px;
+  letter-spacing: normal;
+}
+.bonsplans #bpItemsList .bpItem .content .bt {
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+}
+.bonsplans #bpItemsList .bpItem.half {
+  width: 459px;
+}
+.bonsplans #bpItemsList .bpItem.half p {
+  width: 340px;
+}
+.bonsplans #bpItemsList .bpItem.half .stain {
+  right: -20px;
+}
+.bonsplans #bpItemsList .bpCount {
+  font: bold 22px Arial, Helvetica, sans-serif;
+  margin-top: 10px;
+}
+.bonsplans #bpItemsList .bpCount span {
+  color: #ed145b;
+  font: bold 25px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+  float: left;
+  width: 90px;
+  border: 1px solid #c6c5c5;
+  text-align: center;
+  margin: 5px 5px 0 0;
 }
 /* page booking */
 .booking {
@@ -5630,7 +5836,6 @@ body.edito table td {
 .account #stepNav ul li.tab.current a {
   text-decoration: none;
 }
-.account #stepNav ul li.tab:hover > a:after,
 .account #stepNav ul li.tab.current > a:after {
   content: url("../../images/vacancesdirectes/common/pict/Triangle-Tab.png");
   height: 8px;
@@ -6576,6 +6781,19 @@ aside #greyBoxes #assetsBloc .asset:nth-child(3):before {
 }
 aside #greyBoxes #assetsBloc .asset:nth-child(4):before {
   background-position: 0 -360px;
+}
+aside #greyBoxes #arguHbgtBloc {
+  padding: 15px 15px;
+}
+aside #greyBoxes #arguHbgtBloc .stamp {
+  margin-bottom: 10px;
+}
+aside #greyBoxes #arguHbgtBloc .no.stamp {
+  margin-bottom: 30px;
+}
+aside #greyBoxes #arguHbgtBloc .argu {
+  font: 13px/18px Arial, Helvetica, sans-serif;
+  margin-bottom: 25px;
 }
 aside ::-webkit-input-placeholder {
   color: #8c8a8a;

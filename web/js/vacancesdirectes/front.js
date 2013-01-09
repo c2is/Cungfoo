@@ -153,6 +153,14 @@ $(function() {
     $(".popinVideo").colorbox({iframe:true, innerWidth:960, innerHeight:540, close:"&times;"});
     //$(".popin360").colorbox();
     $(".popinInline").colorbox({inline:true, width:"75%"});
+    $(".popinBP").colorbox({
+        inline:true,
+        width:"300px",
+        close:"&times;",
+        onOpen: function(){
+           $("#colorbox").addClass("cbBP");
+       }
+    });
 
 // select
     $('#searchForm').find('select').not('.sMultSelect').sSelect({ddMaxHeight: '300px'});
@@ -1554,7 +1562,7 @@ function tabs(tView, load) {
     var sView = tView.split('#')[1],
         slider = $('.tabCampDiapo');
 
-    if (sView == 'tabCamp' || sView == 'tabLocations') {
+    if (sView == 'tabCamp' || sView == 'tabLocations' || sView == 'tabLogement' || sView == 'tabCampings') {
         slider.fadeIn();
         if (sView == 'tabLocations'){
             $('[name="affPhoto"][value="locations"]').parent('label').trigger('click');
