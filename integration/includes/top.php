@@ -336,48 +336,56 @@
                 <div class="title">Découvrez nos locations</div>
                 <div class="subtitle">Par type</div>
                 <div class="clear">
-                    <div class="radiusBox2 greyC left bgImg">
-                        <div class="view" id="mobilhome">
+                    <div class="radiusBox2 greyC left bgImg linkParent">
+                        <div class="view">
                             <div class="stamp grey"><span>Mobil-home</span></div>
                         </div>
-                        <div class="stain fushia cover"><span>à partir de<br /><span class="price">234<span class="fine">&nbsp;</span>€</span></span></div>
+                        <a href="#" class="stain fushia cover linkBlock"><span>à partir de<br /><span class="price">234<span class="fine">&nbsp;</span>€</span></span></a>
                     </div>
-                    <div class="radiusBox2 greyC left bgImg">
-                        <div class="view" id="cottage">
+                    <div class="radiusBox2 greyC left bgImg linkParent">
+                        <div class="view">
                             <div class="stamp grey"><span>Gîte</span></div>
                         </div>
-                        <div class="stain fushia cover"><span>à partir de<br /><span class="price">144<span class="fine">&nbsp;</span>€</span></span></div>
+                        <a href="#" class="stain fushia cover linkBlock"><span>à partir de<br /><span class="price">144<span class="fine">&nbsp;</span>€</span></span></a>
                     </div>
-                    <div class="radiusBox2 greyC left bgImg">
-                        <div class="view" id="chalet">
+                    <div class="radiusBox2 greyC left bgImg linkParent">
+                        <div class="view">
                             <div class="stamp grey"><span>Chalet</span></div>
                         </div>
-                        <div class="stain fushia cover"><span>à partir de<br /><span class="price">334<span class="fine">&nbsp;</span>€</span></span></div>
+                        <a href="#" class="stain fushia cover linkBlock"><span>à partir de<br /><span class="price">334<span class="fine">&nbsp;</span>€</span></span></a>
                     </div>
-                    <div class="radiusBox2 greyC left bgImg">
-                        <div class="view" id="caravan">
+                    <div class="radiusBox2 greyC left bgImg linkParent">
+                        <div class="view">
                             <div class="stamp grey"><span>Caravane</span></div>
                         </div>
-                        <div class="stain fushia cover"><span>à partir de<br /><span class="price">129<span class="fine">&nbsp;</span>€</span></span></div>
+                        <a href="#" class="stain fushia cover linkBlock"><span>à partir de<br /><span class="price">129<span class="fine">&nbsp;</span>€</span></span></a>
                     </div>
                 </div>
-                <div class="subtitle">Par type</div>
+                <div class="subtitle">Par capacité</div>
                 <div class="clear">
                     <div class="radiusBox greyC left bgImg capacity">
-                        <img class="view" src="../web/images/vacancesdirectes/dyn/menu/2-locations/capacity-1.png" alt="" />
-                        <span>2 adultes</span>
+                        <a href="#">
+                            <img class="view" src="../web/images/vacancesdirectes/dyn/menu/2-locations/capacity-1.png" alt="" />
+                            <span>2 adultes</span>
+                        </a>
                     </div>
                     <div class="radiusBox greyC left bgImg capacity">
-                        <img class="view" src="../web/images/vacancesdirectes/dyn/menu/2-locations/capacity-2.png" alt="" />
-                        <span>2 adultes 1 enfant</span>
+                        <a href="#">
+                            <img class="view" src="../web/images/vacancesdirectes/dyn/menu/2-locations/capacity-2.png" alt="" />
+                            <span>2 adultes 1 enfant</span>
+                        </a>
                     </div>
                     <div class="radiusBox greyC left bgImg capacity">
-                        <img class="view" src="../web/images/vacancesdirectes/dyn/menu/2-locations/capacity-3.png" alt="" />
-                        <span>2 adultes 2 enfants</span>
+                        <a href="#">
+                            <img class="view" src="../web/images/vacancesdirectes/dyn/menu/2-locations/capacity-3.png" alt="" />
+                            <span>2 adultes 2 enfants</span>
+                        </a>
                     </div>
                     <div class="radiusBox greyC left bgImg capacity">
-                        <img class="view" src="../web/images/vacancesdirectes/dyn/menu/2-locations/capacity-4.png" alt="" />
-                        <span>4 adultes et plus</span>
+                        <a href="#">
+                            <img class="view" src="../web/images/vacancesdirectes/dyn/menu/2-locations/capacity-4.png" alt="" />
+                            <span>4 adultes et plus</span>
+                        </a>
                     </div>
                     <div class="radiusBox greyC left bgImg exclusively clear">
                         <div class="stamp fushia"><span>En exclusivité</span></div>
