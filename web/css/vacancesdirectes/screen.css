@@ -1605,6 +1605,10 @@ footer {
 #nav .tab .subnav .objective {
   margin: 10px;
 }
+#nav .tab .subnav .boxborder {
+  margin: 0 10px 5px;
+  display: block;
+}
 #nav .tab .subnav#destinations a:hover {
   color: #ed145b;
 }
@@ -3396,10 +3400,6 @@ body.edito table td {
   /* slider */
 
 }
-.home .boxborder {
-  margin: 0 10px 5px;
-  display: block;
-}
 .home #wrap a {
   text-decoration: none;
 }
@@ -3706,6 +3706,10 @@ body.edito table td {
 }
 .home .locationForwards#topLocations .element {
   padding: 17px 0;
+}
+.home .locationForwards#topLocations .element .boxborder {
+  margin: 0 10px 5px;
+  display: block;
 }
 .home .locationForwards#topLocations .element .details {
   width: 151px;
