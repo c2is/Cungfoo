@@ -2004,9 +2004,6 @@ footer {
 #nav .tab .subnav#weekends .radiusBox .title {
   color: #f58220;
 }
-#nav .tab:nth-child(3) .subnav {
-  display: block !important;
-}
 .js-true #nav .tab.hover,
 .js-true #nav .tab.current {
   background: #ed145b;
