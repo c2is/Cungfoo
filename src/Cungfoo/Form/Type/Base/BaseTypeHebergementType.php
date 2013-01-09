@@ -116,7 +116,13 @@ class BaseTypeHebergementType extends AppAwareType
                     'label' => 'type_hebergement.slug',
                     'type' => 'text',
                     'constraints' => array(
-                        new Assert\NotBlank(),
+                    ),
+                ),
+                'indice' => array(
+                    'required' => false,
+                    'label' => 'type_hebergement.indice',
+                    'type' => 'text',
+                    'constraints' => array(
                     ),
                 ),
                 'surface' => array(

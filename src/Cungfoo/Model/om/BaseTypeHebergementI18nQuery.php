@@ -26,6 +26,7 @@ use Cungfoo\Model\TypeHebergementI18nQuery;
  * @method TypeHebergementI18nQuery orderByLocale($order = Criteria::ASC) Order by the locale column
  * @method TypeHebergementI18nQuery orderByName($order = Criteria::ASC) Order by the name column
  * @method TypeHebergementI18nQuery orderBySlug($order = Criteria::ASC) Order by the slug column
+ * @method TypeHebergementI18nQuery orderByIndice($order = Criteria::ASC) Order by the indice column
  * @method TypeHebergementI18nQuery orderBySurface($order = Criteria::ASC) Order by the surface column
  * @method TypeHebergementI18nQuery orderByTypeTerrasse($order = Criteria::ASC) Order by the type_terrasse column
  * @method TypeHebergementI18nQuery orderByDescription($order = Criteria::ASC) Order by the description column
@@ -45,6 +46,7 @@ use Cungfoo\Model\TypeHebergementI18nQuery;
  * @method TypeHebergementI18nQuery groupByLocale() Group by the locale column
  * @method TypeHebergementI18nQuery groupByName() Group by the name column
  * @method TypeHebergementI18nQuery groupBySlug() Group by the slug column
+ * @method TypeHebergementI18nQuery groupByIndice() Group by the indice column
  * @method TypeHebergementI18nQuery groupBySurface() Group by the surface column
  * @method TypeHebergementI18nQuery groupByTypeTerrasse() Group by the type_terrasse column
  * @method TypeHebergementI18nQuery groupByDescription() Group by the description column
@@ -75,6 +77,7 @@ use Cungfoo\Model\TypeHebergementI18nQuery;
  * @method TypeHebergementI18n findOneByLocale(string $locale) Return the first TypeHebergementI18n filtered by the locale column
  * @method TypeHebergementI18n findOneByName(string $name) Return the first TypeHebergementI18n filtered by the name column
  * @method TypeHebergementI18n findOneBySlug(string $slug) Return the first TypeHebergementI18n filtered by the slug column
+ * @method TypeHebergementI18n findOneByIndice(string $indice) Return the first TypeHebergementI18n filtered by the indice column
  * @method TypeHebergementI18n findOneBySurface(string $surface) Return the first TypeHebergementI18n filtered by the surface column
  * @method TypeHebergementI18n findOneByTypeTerrasse(string $type_terrasse) Return the first TypeHebergementI18n filtered by the type_terrasse column
  * @method TypeHebergementI18n findOneByDescription(string $description) Return the first TypeHebergementI18n filtered by the description column
@@ -94,6 +97,7 @@ use Cungfoo\Model\TypeHebergementI18nQuery;
  * @method array findByLocale(string $locale) Return TypeHebergementI18n objects filtered by the locale column
  * @method array findByName(string $name) Return TypeHebergementI18n objects filtered by the name column
  * @method array findBySlug(string $slug) Return TypeHebergementI18n objects filtered by the slug column
+ * @method array findByIndice(string $indice) Return TypeHebergementI18n objects filtered by the indice column
  * @method array findBySurface(string $surface) Return TypeHebergementI18n objects filtered by the surface column
  * @method array findByTypeTerrasse(string $type_terrasse) Return TypeHebergementI18n objects filtered by the type_terrasse column
  * @method array findByDescription(string $description) Return TypeHebergementI18n objects filtered by the description column
@@ -198,7 +202,7 @@ abstract class BaseTypeHebergementI18nQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `locale`, `name`, `slug`, `surface`, `type_terrasse`, `description`, `composition`, `presentation`, `capacite_hebergement`, `dimensions`, `agencement`, `equipements`, `annee_utilisation`, `remarque_1`, `remarque_2`, `remarque_3`, `remarque_4` FROM `type_hebergement_i18n` WHERE `id` = :p0 AND `locale` = :p1';
+        $sql = 'SELECT `id`, `locale`, `name`, `slug`, `indice`, `surface`, `type_terrasse`, `description`, `composition`, `presentation`, `capacite_hebergement`, `dimensions`, `agencement`, `equipements`, `annee_utilisation`, `remarque_1`, `remarque_2`, `remarque_3`, `remarque_4` FROM `type_hebergement_i18n` WHERE `id` = :p0 AND `locale` = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
@@ -413,6 +417,35 @@ abstract class BaseTypeHebergementI18nQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(TypeHebergementI18nPeer::SLUG, $slug, $comparison);
+    }
+
+    /**
+     * Filter the query on the indice column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByIndice('fooValue');   // WHERE indice = 'fooValue'
+     * $query->filterByIndice('%fooValue%'); // WHERE indice LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $indice The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return TypeHebergementI18nQuery The current query, for fluid interface
+     */
+    public function filterByIndice($indice = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($indice)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $indice)) {
+                $indice = str_replace('*', '%', $indice);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(TypeHebergementI18nPeer::INDICE, $indice, $comparison);
     }
 
     /**

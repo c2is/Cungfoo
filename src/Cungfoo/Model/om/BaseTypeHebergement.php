@@ -2769,6 +2769,30 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
 
 
         /**
+         * Get the [indice] column value.
+         *
+         * @return string
+         */
+        public function getIndice()
+        {
+        return $this->getCurrentTranslation()->getIndice();
+    }
+
+
+        /**
+         * Set the value of [indice] column.
+         *
+         * @param string $v new value
+         * @return TypeHebergementI18n The current object (for fluent API support)
+         */
+        public function setIndice($v)
+        {    $this->getCurrentTranslation()->setIndice($v);
+
+        return $this;
+    }
+
+
+        /**
          * Get the [surface] column value.
          *
          * @return string

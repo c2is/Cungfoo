@@ -37,13 +37,13 @@ abstract class BaseCategoryTypeHebergementI18nPeer
     const TM_CLASS = 'CategoryTypeHebergementI18nTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 5;
+    const NUM_COLUMNS = 6;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 5;
+    const NUM_HYDRATE_COLUMNS = 6;
 
     /** the column name for the id field */
     const ID = 'category_type_hebergement_i18n.id';
@@ -56,6 +56,9 @@ abstract class BaseCategoryTypeHebergementI18nPeer
 
     /** the column name for the slug field */
     const SLUG = 'category_type_hebergement_i18n.slug';
+
+    /** the column name for the accroche field */
+    const ACCROCHE = 'category_type_hebergement_i18n.accroche';
 
     /** the column name for the description field */
     const DESCRIPTION = 'category_type_hebergement_i18n.description';
@@ -79,12 +82,12 @@ abstract class BaseCategoryTypeHebergementI18nPeer
      * e.g. CategoryTypeHebergementI18nPeer::$fieldNames[CategoryTypeHebergementI18nPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Name', 'Slug', 'Description', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'name', 'slug', 'description', ),
-        BasePeer::TYPE_COLNAME => array (CategoryTypeHebergementI18nPeer::ID, CategoryTypeHebergementI18nPeer::LOCALE, CategoryTypeHebergementI18nPeer::NAME, CategoryTypeHebergementI18nPeer::SLUG, CategoryTypeHebergementI18nPeer::DESCRIPTION, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'NAME', 'SLUG', 'DESCRIPTION', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'name', 'slug', 'description', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Name', 'Slug', 'Accroche', 'Description', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'name', 'slug', 'accroche', 'description', ),
+        BasePeer::TYPE_COLNAME => array (CategoryTypeHebergementI18nPeer::ID, CategoryTypeHebergementI18nPeer::LOCALE, CategoryTypeHebergementI18nPeer::NAME, CategoryTypeHebergementI18nPeer::SLUG, CategoryTypeHebergementI18nPeer::ACCROCHE, CategoryTypeHebergementI18nPeer::DESCRIPTION, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'NAME', 'SLUG', 'ACCROCHE', 'DESCRIPTION', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'name', 'slug', 'accroche', 'description', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
     );
 
     /**
@@ -94,12 +97,12 @@ abstract class BaseCategoryTypeHebergementI18nPeer
      * e.g. CategoryTypeHebergementI18nPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Name' => 2, 'Slug' => 3, 'Description' => 4, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'slug' => 3, 'description' => 4, ),
-        BasePeer::TYPE_COLNAME => array (CategoryTypeHebergementI18nPeer::ID => 0, CategoryTypeHebergementI18nPeer::LOCALE => 1, CategoryTypeHebergementI18nPeer::NAME => 2, CategoryTypeHebergementI18nPeer::SLUG => 3, CategoryTypeHebergementI18nPeer::DESCRIPTION => 4, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'NAME' => 2, 'SLUG' => 3, 'DESCRIPTION' => 4, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'slug' => 3, 'description' => 4, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Name' => 2, 'Slug' => 3, 'Accroche' => 4, 'Description' => 5, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'slug' => 3, 'accroche' => 4, 'description' => 5, ),
+        BasePeer::TYPE_COLNAME => array (CategoryTypeHebergementI18nPeer::ID => 0, CategoryTypeHebergementI18nPeer::LOCALE => 1, CategoryTypeHebergementI18nPeer::NAME => 2, CategoryTypeHebergementI18nPeer::SLUG => 3, CategoryTypeHebergementI18nPeer::ACCROCHE => 4, CategoryTypeHebergementI18nPeer::DESCRIPTION => 5, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'NAME' => 2, 'SLUG' => 3, 'ACCROCHE' => 4, 'DESCRIPTION' => 5, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'slug' => 3, 'accroche' => 4, 'description' => 5, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
     );
 
     /**
@@ -177,12 +180,14 @@ abstract class BaseCategoryTypeHebergementI18nPeer
             $criteria->addSelectColumn(CategoryTypeHebergementI18nPeer::LOCALE);
             $criteria->addSelectColumn(CategoryTypeHebergementI18nPeer::NAME);
             $criteria->addSelectColumn(CategoryTypeHebergementI18nPeer::SLUG);
+            $criteria->addSelectColumn(CategoryTypeHebergementI18nPeer::ACCROCHE);
             $criteria->addSelectColumn(CategoryTypeHebergementI18nPeer::DESCRIPTION);
         } else {
             $criteria->addSelectColumn($alias . '.id');
             $criteria->addSelectColumn($alias . '.locale');
             $criteria->addSelectColumn($alias . '.name');
             $criteria->addSelectColumn($alias . '.slug');
+            $criteria->addSelectColumn($alias . '.accroche');
             $criteria->addSelectColumn($alias . '.description');
         }
     }

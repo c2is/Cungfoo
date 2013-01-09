@@ -97,6 +97,13 @@ class BaseCategoryTypeHebergementType extends AppAwareType
                     'constraints' => array(
                     ),
                 ),
+                'accroche' => array(
+                    'required' => false,
+                    'label' => 'category_type_hebergement.accroche',
+                    'type' => 'text',
+                    'constraints' => array(
+                    ),
+                ),
                 'description' => array(
                     'required' => false,
                     'label' => 'category_type_hebergement.description',

@@ -5,7 +5,7 @@
  * up to version 1357633483.
  * Generated on 2013-01-08 09:24:43 by m.brunot
  */
-class PropelMigration_1357633483
+class PropelMigration_1357663310
 {
 
     public function preUp($manager)
@@ -71,7 +71,8 @@ CREATE TABLE `multimedia_type_hebergement_i18n`
 ) ENGINE=InnoDB;
 
 ALTER TABLE `type_hebergement_i18n`
-    ADD `slug` VARCHAR(255) AFTER `name`;
+    ADD `slug` VARCHAR(255) AFTER `name`,
+    ADD `indice` VARCHAR(255) AFTER `slug`;
 
 ALTER TABLE `category_type_hebergement`
     ADD `image_menu` VARCHAR(255) AFTER `code`,
@@ -80,7 +81,8 @@ ALTER TABLE `category_type_hebergement`
 
 ALTER TABLE `category_type_hebergement_i18n`
     ADD `slug` VARCHAR(255) AFTER `name`,
-    ADD `description` TEXT AFTER `slug`;
+    ADD `accroche` VARCHAR(255) AFTER `slug`,
+    ADD `description` TEXT AFTER `accroche`;
 
 # This restores the fkey checks, after having unset them earlier
 SET FOREIGN_KEY_CHECKS = 1;
@@ -106,6 +108,8 @@ DROP TABLE IF EXISTS `multimedia_type_hebergement`;
 
 DROP TABLE IF EXISTS `multimedia_type_hebergement_i18n`;
 
+ALTER TABLE `type_hebergement_i18n` DROP `indice`;
+
 ALTER TABLE `type_hebergement_i18n` DROP `slug`;
 
 ALTER TABLE `category_type_hebergement` DROP `image_menu`;
@@ -115,6 +119,8 @@ ALTER TABLE `category_type_hebergement` DROP `image_page`;
 ALTER TABLE `category_type_hebergement` DROP `sortable_rank`;
 
 ALTER TABLE `category_type_hebergement_i18n` DROP `description`;
+
+ALTER TABLE `category_type_hebergement_i18n` DROP `accroche`;
 
 ALTER TABLE `category_type_hebergement_i18n` DROP `slug`;
 

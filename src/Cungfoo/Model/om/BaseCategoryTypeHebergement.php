@@ -2403,6 +2403,30 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
 
 
         /**
+         * Get the [accroche] column value.
+         *
+         * @return string
+         */
+        public function getAccroche()
+        {
+        return $this->getCurrentTranslation()->getAccroche();
+    }
+
+
+        /**
+         * Set the value of [accroche] column.
+         *
+         * @param string $v new value
+         * @return CategoryTypeHebergementI18n The current object (for fluent API support)
+         */
+        public function setAccroche($v)
+        {    $this->getCurrentTranslation()->setAccroche($v);
+
+        return $this;
+    }
+
+
+        /**
          * Get the [description] column value.
          *
          * @return string
