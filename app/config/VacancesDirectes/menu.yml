@@ -1,9 +1,10 @@
 title: "menu.title"
 items:
-    destinations:
+    destination:
         title:      "menu.destinations"
         route:      "menu_destinations"
         countQuery: "\\Cungfoo\\Model\\EtablissementPeer::getNbEtablissements"
-    locations:
+    location:
         title:      "menu.locations"
         route:      "menu_locations"
+        countQuery: "\\Cungfoo\\Model\\TypeHebergementPeer::getNbTypeHebergements"

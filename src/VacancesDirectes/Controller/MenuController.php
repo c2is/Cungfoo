@@ -64,7 +64,7 @@ class MenuController implements ControllerProviderInterface
         $controllers->get('/locations', function () use ($app)
         {
             $categoryTypeHebergements = \Cungfoo\Model\CategoryTypeHebergementQuery::create()
-                ->limit(4)
+                ->orderBySortableRank()
                 ->find()
             ;
 

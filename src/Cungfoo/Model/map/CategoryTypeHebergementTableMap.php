@@ -44,6 +44,7 @@ class CategoryTypeHebergementTableMap extends TableMap
         // columns
         $this->addPrimaryKey('id', 'Id', 'INTEGER', true, null, null);
         $this->addColumn('code', 'Code', 'VARCHAR', true, 255, null);
+        $this->addColumn('minimum_price', 'MinimumPrice', 'VARCHAR', false, 255, null);
         $this->addColumn('image_menu', 'ImageMenu', 'VARCHAR', false, 255, null);
         $this->addColumn('image_page', 'ImagePage', 'VARCHAR', false, 255, null);
         $this->addColumn('created_at', 'CreatedAt', 'TIMESTAMP', false, null, null);

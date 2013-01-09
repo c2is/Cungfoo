@@ -304,6 +304,7 @@
         <column name="name" type="varchar" required="true" />
         <column name="slug" type="varchar" />
         <column name="accroche" type="varchar" />
+        <column name="minimum_price" type="varchar" />
         <column name="description" type="longvarchar" />
         <column name="image_menu" type="varchar" />
         <column name="image_page" type="varchar" />

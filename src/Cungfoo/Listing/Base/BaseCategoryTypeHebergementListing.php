@@ -21,6 +21,7 @@ class BaseCategoryTypeHebergementListing extends Listing
     {
         $this->addColumn(new Column\TextColumn('id'));
         $this->addColumn(new Column\TextColumn('code'));
+        $this->addColumn(new Column\TextColumn('minimum_price'));
         $this->addColumn(new Column\TextColumn('image_menu'));
         $this->addColumn(new Column\TextColumn('image_page'));
         $this->addColumn(new Column\TextColumn('active'));

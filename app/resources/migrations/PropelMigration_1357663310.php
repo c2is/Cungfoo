@@ -75,7 +75,8 @@ ALTER TABLE `type_hebergement_i18n`
     ADD `indice` VARCHAR(255) AFTER `slug`;
 
 ALTER TABLE `category_type_hebergement`
-    ADD `image_menu` VARCHAR(255) AFTER `code`,
+    ADD `minimum_price` VARCHAR(255) AFTER `code`,
+    ADD `image_menu` VARCHAR(255) AFTER `minimum_price`,
     ADD `image_page` VARCHAR(255) AFTER `image_menu`,
     ADD `sortable_rank` INTEGER AFTER `active`;
 
@@ -111,6 +112,8 @@ DROP TABLE IF EXISTS `multimedia_type_hebergement_i18n`;
 ALTER TABLE `type_hebergement_i18n` DROP `indice`;
 
 ALTER TABLE `type_hebergement_i18n` DROP `slug`;
+
+ALTER TABLE `category_type_hebergement` DROP `minimum_price`;
 
 ALTER TABLE `category_type_hebergement` DROP `image_menu`;
 

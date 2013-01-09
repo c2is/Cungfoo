@@ -17,6 +17,7 @@
 
  <a href="#results" class="bt big fushia right goto">Notre sélection</a>
 
+{% if categoryTypeHebergement.imagePage %}
 <div class="bandeau">
     {% if categoryTypeHebergement.accroche %}
     <div class="sliderStain">
@@ -27,6 +28,7 @@
     {% endif %}
     <img class="bdPict" src="{{ asset(categoryTypeHebergement.imagePage) }}" alt="" width="614" height="253">
 </div>
+{% endif %}
 
 <h2 class="h3-like">Notre sélection d'hébergement</h2>
 <div id="results" class="clear">

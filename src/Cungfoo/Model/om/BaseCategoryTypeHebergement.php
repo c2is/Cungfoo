@@ -64,6 +64,12 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
     protected $code;
 
     /**
+     * The value for the minimum_price field.
+     * @var        string
+     */
+    protected $minimum_price;
+
+    /**
      * The value for the image_menu field.
      * @var        string
      */
@@ -199,6 +205,16 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
     public function getCode()
     {
         return $this->code;
+    }
+
+    /**
+     * Get the [minimum_price] column value.
+     *
+     * @return string
+     */
+    public function getMinimumPrice()
+    {
+        return $this->minimum_price;
     }
 
     /**
@@ -362,6 +378,27 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
 
         return $this;
     } // setCode()
+
+    /**
+     * Set the value of [minimum_price] column.
+     *
+     * @param string $v new value
+     * @return CategoryTypeHebergement The current object (for fluent API support)
+     */
+    public function setMinimumPrice($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->minimum_price !== $v) {
+            $this->minimum_price = $v;
+            $this->modifiedColumns[] = CategoryTypeHebergementPeer::MINIMUM_PRICE;
+        }
+
+
+        return $this;
+    } // setMinimumPrice()
 
     /**
      * Set the value of [image_menu] column.
@@ -539,12 +576,13 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
 
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
             $this->code = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
-            $this->image_menu = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
-            $this->image_page = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
-            $this->created_at = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
-            $this->updated_at = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
-            $this->active = ($row[$startcol + 6] !== null) ? (boolean) $row[$startcol + 6] : null;
-            $this->sortable_rank = ($row[$startcol + 7] !== null) ? (int) $row[$startcol + 7] : null;
+            $this->minimum_price = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
+            $this->image_menu = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
+            $this->image_page = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
+            $this->created_at = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
+            $this->updated_at = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
+            $this->active = ($row[$startcol + 7] !== null) ? (boolean) $row[$startcol + 7] : null;
+            $this->sortable_rank = ($row[$startcol + 8] !== null) ? (int) $row[$startcol + 8] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -553,7 +591,7 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 8; // 8 = CategoryTypeHebergementPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 9; // 9 = CategoryTypeHebergementPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating CategoryTypeHebergement object", $e);
@@ -833,6 +871,9 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
         if ($this->isColumnModified(CategoryTypeHebergementPeer::CODE)) {
             $modifiedColumns[':p' . $index++]  = '`code`';
         }
+        if ($this->isColumnModified(CategoryTypeHebergementPeer::MINIMUM_PRICE)) {
+            $modifiedColumns[':p' . $index++]  = '`minimum_price`';
+        }
         if ($this->isColumnModified(CategoryTypeHebergementPeer::IMAGE_MENU)) {
             $modifiedColumns[':p' . $index++]  = '`image_menu`';
         }
@@ -867,6 +908,9 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
                         break;
                     case '`code`':
                         $stmt->bindValue($identifier, $this->code, PDO::PARAM_STR);
+                        break;
+                    case '`minimum_price`':
+                        $stmt->bindValue($identifier, $this->minimum_price, PDO::PARAM_STR);
                         break;
                     case '`image_menu`':
                         $stmt->bindValue($identifier, $this->image_menu, PDO::PARAM_STR);
@@ -1043,21 +1087,24 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
                 return $this->getCode();
                 break;
             case 2:
-                return $this->getImageMenu();
+                return $this->getMinimumPrice();
                 break;
             case 3:
-                return $this->getImagePage();
+                return $this->getImageMenu();
                 break;
             case 4:
-                return $this->getCreatedAt();
+                return $this->getImagePage();
                 break;
             case 5:
-                return $this->getUpdatedAt();
+                return $this->getCreatedAt();
                 break;
             case 6:
-                return $this->getActive();
+                return $this->getUpdatedAt();
                 break;
             case 7:
+                return $this->getActive();
+                break;
+            case 8:
                 return $this->getSortableRank();
                 break;
             default:
@@ -1091,12 +1138,13 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
         $result = array(
             $keys[0] => $this->getId(),
             $keys[1] => $this->getCode(),
-            $keys[2] => $this->getImageMenu(),
-            $keys[3] => $this->getImagePage(),
-            $keys[4] => $this->getCreatedAt(),
-            $keys[5] => $this->getUpdatedAt(),
-            $keys[6] => $this->getActive(),
-            $keys[7] => $this->getSortableRank(),
+            $keys[2] => $this->getMinimumPrice(),
+            $keys[3] => $this->getImageMenu(),
+            $keys[4] => $this->getImagePage(),
+            $keys[5] => $this->getCreatedAt(),
+            $keys[6] => $this->getUpdatedAt(),
+            $keys[7] => $this->getActive(),
+            $keys[8] => $this->getSortableRank(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->collTypeHebergements) {
@@ -1146,21 +1194,24 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
                 $this->setCode($value);
                 break;
             case 2:
-                $this->setImageMenu($value);
+                $this->setMinimumPrice($value);
                 break;
             case 3:
-                $this->setImagePage($value);
+                $this->setImageMenu($value);
                 break;
             case 4:
-                $this->setCreatedAt($value);
+                $this->setImagePage($value);
                 break;
             case 5:
-                $this->setUpdatedAt($value);
+                $this->setCreatedAt($value);
                 break;
             case 6:
-                $this->setActive($value);
+                $this->setUpdatedAt($value);
                 break;
             case 7:
+                $this->setActive($value);
+                break;
+            case 8:
                 $this->setSortableRank($value);
                 break;
         } // switch()
@@ -1189,12 +1240,13 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
 
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
         if (array_key_exists($keys[1], $arr)) $this->setCode($arr[$keys[1]]);
-        if (array_key_exists($keys[2], $arr)) $this->setImageMenu($arr[$keys[2]]);
-        if (array_key_exists($keys[3], $arr)) $this->setImagePage($arr[$keys[3]]);
-        if (array_key_exists($keys[4], $arr)) $this->setCreatedAt($arr[$keys[4]]);
-        if (array_key_exists($keys[5], $arr)) $this->setUpdatedAt($arr[$keys[5]]);
-        if (array_key_exists($keys[6], $arr)) $this->setActive($arr[$keys[6]]);
-        if (array_key_exists($keys[7], $arr)) $this->setSortableRank($arr[$keys[7]]);
+        if (array_key_exists($keys[2], $arr)) $this->setMinimumPrice($arr[$keys[2]]);
+        if (array_key_exists($keys[3], $arr)) $this->setImageMenu($arr[$keys[3]]);
+        if (array_key_exists($keys[4], $arr)) $this->setImagePage($arr[$keys[4]]);
+        if (array_key_exists($keys[5], $arr)) $this->setCreatedAt($arr[$keys[5]]);
+        if (array_key_exists($keys[6], $arr)) $this->setUpdatedAt($arr[$keys[6]]);
+        if (array_key_exists($keys[7], $arr)) $this->setActive($arr[$keys[7]]);
+        if (array_key_exists($keys[8], $arr)) $this->setSortableRank($arr[$keys[8]]);
     }
 
     /**
@@ -1208,6 +1260,7 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
 
         if ($this->isColumnModified(CategoryTypeHebergementPeer::ID)) $criteria->add(CategoryTypeHebergementPeer::ID, $this->id);
         if ($this->isColumnModified(CategoryTypeHebergementPeer::CODE)) $criteria->add(CategoryTypeHebergementPeer::CODE, $this->code);
+        if ($this->isColumnModified(CategoryTypeHebergementPeer::MINIMUM_PRICE)) $criteria->add(CategoryTypeHebergementPeer::MINIMUM_PRICE, $this->minimum_price);
         if ($this->isColumnModified(CategoryTypeHebergementPeer::IMAGE_MENU)) $criteria->add(CategoryTypeHebergementPeer::IMAGE_MENU, $this->image_menu);
         if ($this->isColumnModified(CategoryTypeHebergementPeer::IMAGE_PAGE)) $criteria->add(CategoryTypeHebergementPeer::IMAGE_PAGE, $this->image_page);
         if ($this->isColumnModified(CategoryTypeHebergementPeer::CREATED_AT)) $criteria->add(CategoryTypeHebergementPeer::CREATED_AT, $this->created_at);
@@ -1278,6 +1331,7 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
         $copyObj->setCode($this->getCode());
+        $copyObj->setMinimumPrice($this->getMinimumPrice());
         $copyObj->setImageMenu($this->getImageMenu());
         $copyObj->setImagePage($this->getImagePage());
         $copyObj->setCreatedAt($this->getCreatedAt());
@@ -1839,6 +1893,7 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
     {
         $this->id = null;
         $this->code = null;
+        $this->minimum_price = null;
         $this->image_menu = null;
         $this->image_page = null;
         $this->created_at = null;

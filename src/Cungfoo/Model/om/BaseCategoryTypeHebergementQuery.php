@@ -25,6 +25,7 @@ use Cungfoo\Model\TypeHebergement;
  *
  * @method CategoryTypeHebergementQuery orderById($order = Criteria::ASC) Order by the id column
  * @method CategoryTypeHebergementQuery orderByCode($order = Criteria::ASC) Order by the code column
+ * @method CategoryTypeHebergementQuery orderByMinimumPrice($order = Criteria::ASC) Order by the minimum_price column
  * @method CategoryTypeHebergementQuery orderByImageMenu($order = Criteria::ASC) Order by the image_menu column
  * @method CategoryTypeHebergementQuery orderByImagePage($order = Criteria::ASC) Order by the image_page column
  * @method CategoryTypeHebergementQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
@@ -34,6 +35,7 @@ use Cungfoo\Model\TypeHebergement;
  *
  * @method CategoryTypeHebergementQuery groupById() Group by the id column
  * @method CategoryTypeHebergementQuery groupByCode() Group by the code column
+ * @method CategoryTypeHebergementQuery groupByMinimumPrice() Group by the minimum_price column
  * @method CategoryTypeHebergementQuery groupByImageMenu() Group by the image_menu column
  * @method CategoryTypeHebergementQuery groupByImagePage() Group by the image_page column
  * @method CategoryTypeHebergementQuery groupByCreatedAt() Group by the created_at column
@@ -57,6 +59,7 @@ use Cungfoo\Model\TypeHebergement;
  * @method CategoryTypeHebergement findOneOrCreate(PropelPDO $con = null) Return the first CategoryTypeHebergement matching the query, or a new CategoryTypeHebergement object populated from the query conditions when no match is found
  *
  * @method CategoryTypeHebergement findOneByCode(string $code) Return the first CategoryTypeHebergement filtered by the code column
+ * @method CategoryTypeHebergement findOneByMinimumPrice(string $minimum_price) Return the first CategoryTypeHebergement filtered by the minimum_price column
  * @method CategoryTypeHebergement findOneByImageMenu(string $image_menu) Return the first CategoryTypeHebergement filtered by the image_menu column
  * @method CategoryTypeHebergement findOneByImagePage(string $image_page) Return the first CategoryTypeHebergement filtered by the image_page column
  * @method CategoryTypeHebergement findOneByCreatedAt(string $created_at) Return the first CategoryTypeHebergement filtered by the created_at column
@@ -66,6 +69,7 @@ use Cungfoo\Model\TypeHebergement;
  *
  * @method array findById(int $id) Return CategoryTypeHebergement objects filtered by the id column
  * @method array findByCode(string $code) Return CategoryTypeHebergement objects filtered by the code column
+ * @method array findByMinimumPrice(string $minimum_price) Return CategoryTypeHebergement objects filtered by the minimum_price column
  * @method array findByImageMenu(string $image_menu) Return CategoryTypeHebergement objects filtered by the image_menu column
  * @method array findByImagePage(string $image_page) Return CategoryTypeHebergement objects filtered by the image_page column
  * @method array findByCreatedAt(string $created_at) Return CategoryTypeHebergement objects filtered by the created_at column
@@ -175,7 +179,7 @@ abstract class BaseCategoryTypeHebergementQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `code`, `image_menu`, `image_page`, `created_at`, `updated_at`, `active`, `sortable_rank` FROM `category_type_hebergement` WHERE `id` = :p0';
+        $sql = 'SELECT `id`, `code`, `minimum_price`, `image_menu`, `image_page`, `created_at`, `updated_at`, `active`, `sortable_rank` FROM `category_type_hebergement` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -318,6 +322,35 @@ abstract class BaseCategoryTypeHebergementQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(CategoryTypeHebergementPeer::CODE, $code, $comparison);
+    }
+
+    /**
+     * Filter the query on the minimum_price column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByMinimumPrice('fooValue');   // WHERE minimum_price = 'fooValue'
+     * $query->filterByMinimumPrice('%fooValue%'); // WHERE minimum_price LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $minimumPrice The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return CategoryTypeHebergementQuery The current query, for fluid interface
+     */
+    public function filterByMinimumPrice($minimumPrice = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($minimumPrice)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $minimumPrice)) {
+                $minimumPrice = str_replace('*', '%', $minimumPrice);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(CategoryTypeHebergementPeer::MINIMUM_PRICE, $minimumPrice, $comparison);
     }
 
     /**

@@ -34,6 +34,12 @@ class BaseCategoryTypeHebergementType extends AppAwareType
             'label' => 'category_type_hebergement.code',
             'required' => false,
         ));
+        $builder->add('minimum_price', 'text', array(
+            'constraints' => array(
+            ),
+            'label' => 'category_type_hebergement.minimum_price',
+            'required' => false,
+        ));
         $builder->add('image_menu', 'cungfoo_file', array(
             'constraints' => array(
             ),
