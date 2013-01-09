@@ -1498,8 +1498,6 @@ footer {
 }
 /* nav */
 #nav {
-  font: bold 23px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
-  text-transform: uppercase;
   position: relative;
   background: #464545;
   margin-top: 20px;
@@ -1542,6 +1540,8 @@ footer {
   margin-top: 7px;
   color: #ffffff;
   text-decoration: none;
+  font: bold 23px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
   height: 50px;
   /* Centrer verticalement une ligne de texte */
 
@@ -1607,6 +1607,9 @@ footer {
 }
 #nav .tab .subnav#destinations a:hover {
   color: #ed145b;
+}
+#nav .tab .subnav#destinations .link:hover {
+  color: #464545;
 }
 #nav .tab .subnav#destinations li {
   line-height: 15px;
@@ -1786,6 +1789,8 @@ footer {
 }
 #nav .tab .subnav#locations .radiusBox .stamp span {
   margin-right: -6px;
+  font: bold 15px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
 }
 #nav .tab .subnav#locations .radiusBox2 {
   margin-right: 12px;
@@ -1839,6 +1844,128 @@ footer {
 #nav .tab .subnav#locations .radiusBox2:last-child {
   margin-right: 0;
 }
+#nav .tab .subnav#deals #dealsMenu,
+#nav .tab .subnav#deals #dealsContent {
+  float: left;
+  position: relative;
+}
+#nav .tab .subnav#deals #dealsMenu {
+  z-index: 2;
+  width: 316px;
+  text-transform: uppercase;
+  margin-bottom: 180px;
+}
+#nav .tab .subnav#deals #dealsMenu .title {
+  font-size: 28px;
+  line-height: 26px;
+  margin: 15px 0;
+  padding: 0 16px;
+}
+#nav .tab .subnav#deals #dealsMenu li {
+  padding: 0 16px;
+  font: bold 15px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+  position: relative;
+  cursor: pointer;
+  -webkit-border-radius: 7px 0 0 7px;
+  border-radius: 7px 0 0 7px;
+  height: 38px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 38px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+}
+#nav .tab .subnav#deals #dealsMenu li > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: inherit;
+}
+#nav .tab .subnav#deals #dealsMenu li > img {
+  vertical-align: middle;
+}
+#nav .tab .subnav#deals #dealsMenu li:hover {
+  background-color: #e6e5e5;
+  -webkit-box-shadow: inset -8px 0px 5px -8px #8c8a8a;
+  box-shadow: inset -8px 0px 5px -8px #8c8a8a;
+}
+#nav .tab .subnav#deals #dealsMenu li.selected {
+  background-color: #f58220;
+  color: #ffffff;
+  cursor: default;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+#nav .tab .subnav#deals #dealsMenu li.selected:after {
+  left: 100%;
+  top: 50%;
+  border: solid transparent;
+  content: "";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(140, 138, 138, 0);
+  border-left-color: #f58220;
+  border-width: 7px;
+  margin-top: -7px;
+  margin-right: -7px;
+}
+#nav .tab .subnav#deals #dealsSubscribe {
+  text-align: center;
+  position: absolute;
+  bottom: 33px;
+  left: 0;
+  width: 332px;
+  padding: 0 18px;
+}
+#nav .tab .subnav#deals #dealsSubscribe .title {
+  font: bold 14px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+  color: #009ab0;
+  margin: 0;
+}
+#nav .tab .subnav#deals #dealsSubscribe img {
+  display: block;
+  margin: 5px auto;
+}
+#nav .tab .subnav#deals #dealsContent {
+  z-index: 1;
+  width: 624px;
+}
+#nav .tab .subnav#deals #dealsContent .radiusBox {
+  display: none;
+}
+#nav .tab .subnav#deals #dealsContent .radiusBox:first-child {
+  display: block;
+}
+#nav .tab .subnav#deals #dealsContent a {
+  text-decoration: none;
+}
+#nav .tab .subnav#deals #dealsContent .stamp {
+  font: bold 22px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+#nav .tab .subnav#deals #dealsContent .dealsDate {
+  font: italic 15px Arial, Helvetica, sans-serif;
+  margin-left: 10px;
+}
+#nav .tab .subnav#deals #dealsContent .element {
+  float: left;
+  padding: 0 0 10px 0;
+}
+#nav .tab .subnav#deals #dealsContent .element .title {
+  font: bold 13px Arial, Helvetica, sans-serif;
+  text-transform: none;
+}
+#nav .tab .subnav#deals #dealsContent .element .details {
+  margin: 0;
+}
+#nav .tab .subnav#deals #dealsContent .element .condition {
+  font-size: 15px;
+}
 #nav .tab .subnav .proposals {
   padding: 0 20px;
 }
@@ -1856,6 +1983,7 @@ footer {
   font: bold 13px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   color: #ed145b;
   display: block;
+  margin-bottom: 5px;
 }
 #nav .tab .subnav .proposals .proposalsDate .bt {
   display: inline;
@@ -1938,17 +2066,16 @@ footer {
 }
 h1,
 .h1-like {
-  display: block;
-  margin: 20px 0 0;
   color: #ed145b;
-  font: bold 30px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+  font: bold 30px/28px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
+  margin: 20px 0 10px;
+  display: block;
 }
 h2,
 .h2-like {
   color: #464545;
-  font: bold 20px Arial, Helvetica, sans-serif;
-  line-height: 22px;
+  font: bold 20px/22px Arial, Helvetica, sans-serif;
 }
 h3,
 .h3-like {
@@ -1974,6 +2101,17 @@ h5,
 h6,
 .h6-like {
   color: #ed145b;
+}
+h1 + h2 {
+  margin-top: 0 !important;
+}
+.description {
+  font: 13px/18px Arial, Helvetica, sans-serif;
+  color: #5f5f5f;
+  margin-bottom: 10px;
+}
+h2 + .description {
+  margin-top: 25px;
 }
 .bt {
   display: block;
@@ -2007,6 +2145,10 @@ h6,
 }
 .bt.orange {
   background-color: #f58220;
+  color: #ffffff;
+}
+.bt.bleu {
+  background-color: #009ab0;
   color: #ffffff;
 }
 .bt.trans {
@@ -2277,6 +2419,9 @@ h6,
 .radiusBox .stamp.no > img {
   vertical-align: middle;
 }
+.radiusBox .stamp.no:after {
+  content: "";
+}
 .radiusBox .stamp.no > h2 {
   color: #5f5f5f;
 }
@@ -2411,6 +2556,9 @@ h6,
   padding: 0 7px;
   border: 0 none;
 }
+.radiusBox2.form .mandatory {
+  font-size: 10px;
+}
 .radiusBox2.form .label {
   font: bold 15px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   color: #8c8a8a;
@@ -2468,6 +2616,9 @@ h6,
   line-height: 17px;
   padding: 0 10px 0 0;
   text-align: right;
+}
+.radiusBox2.form form .bt {
+  margin-bottom: 15px;
 }
 .tooltip {
   outline: none;
@@ -2574,7 +2725,7 @@ h6,
   left: 50%;
 }
 /*CSS3 extras*/
-.error span,
+.errors span,
 .tooltip span {
   -webkit-box-shadow: 0 10px 10px -12px #464545;
   box-shadow: 0 10px 10px -12px #464545;
@@ -2680,13 +2831,15 @@ input[type="radio"] {
 .element .details {
   font-size: 13px;
   color: #5f5f5f;
-  margin-bottom: 70px;
+  margin-bottom: 75px;
+  width: 153px;
 }
 .element .details .title,
 .element .details .region,
 .element .details .condition,
 .element .details .stain {
   display: block;
+  font: inherit;
 }
 .element .details .title {
   font-weight: bold;
@@ -2801,7 +2954,6 @@ input[type="radio"] {
   font-size: 14px;
   font-weight: bold;
   width: 68px;
-  padding-right: 10px;
   height: 61px;
   /* Centrer verticalement une ligne de texte */
 
@@ -4468,6 +4620,10 @@ body.edito table td {
   -o-transform: rotate(12deg);
   transform: rotate(12deg);
 }
+.descLogement {
+  margin: 30px 0;
+  padding: 20px 15px;
+}
 /* Gmap infoBox dans popin */
 .popin #infoMap .infoBox .bt {
   display: none;
@@ -4511,6 +4667,9 @@ body.edito table td {
   margin-bottom: 5px;
 }
 /* page result */
+.bdPict {
+  margin: 20px 0;
+}
 .nbResult {
   font: 18px/0px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   color: #ed145b;
@@ -4609,6 +4768,9 @@ body.edito table td {
 #results {
   clear: both;
 }
+h2 + #results {
+  margin-top: 25px;
+}
 .itemResult {
   position: relative;
   border: 4px solid #8c8a8a;
@@ -4623,6 +4785,9 @@ body.edito table td {
   font: bold 25px/28px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   padding: 3px 5px 5px;
   color: #ffffff;
+}
+.itemResult .itemResultTitle.itemResultTitleHbgt {
+  text-transform: uppercase;
 }
 .itemResult .itemResultTitle a {
   color: #ffffff;
@@ -4641,6 +4806,9 @@ body.edito table td {
   padding: 10px 0 10px 10px;
   float: left;
   width: 175px;
+}
+.itemResult .itemResultLeft.itemResultLeftHbgt {
+  width: 200px;
 }
 .itemResult .itemResultLeft .boxborder {
   margin: 0;
@@ -4662,12 +4830,32 @@ body.edito table td {
   float: left;
   width: 200px;
 }
+.itemResult .itemResultCenter.itemResultCenterHbgt {
+  width: 408px;
+}
 .itemResult .itemResultCenter .bt {
   display: inline-block;
   margin-top: 10px;
 }
 .itemResult .itemResultCenter .pictos {
   margin-top: 10px;
+}
+.itemResult .itemResultCenter .ircHbgtTitle {
+  display: block;
+  font: bold 25px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  color: #8c8a8a;
+}
+.itemResult .itemResultCenter .ircHbgtSubTitle {
+  display: block;
+  font: 21px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+  color: #8c8a8a;
+  margin-bottom: 10px;
+}
+.itemResult .itemResultCenter .ircHbgtDesc {
+  display: block;
+  font: 13px Arial, Helvetica, sans-serif;
+  color: #8c8a8a;
 }
 .itemResult .itemResultRight {
   padding: 10px;
@@ -4811,6 +4999,10 @@ body.edito table td {
   position: relative;
   -webkit-border-radius: 0 0 11px 11px;
   border-radius: 0 0 11px 11px;
+}
+.itemResult .itemResultBottom.itemResultBottomHbgt {
+  min-height: 0;
+  padding: 10px;
 }
 .itemResult .itemResultBottom [type="radio"] {
   vertical-align: -2px;
@@ -4956,6 +5148,46 @@ body.edito table td {
 .itemResult.itemCatalogue .itemResultBottom .linePrice a.bt,
 .itemResult.itemCatalogue .itemResultBottom .linePrice .stain {
   display: block;
+}
+.bandeau {
+  position: relative;
+  clear: both;
+}
+.sliderStain {
+  position: absolute;
+  text-align: center;
+  right: 10px;
+  top: 10px;
+  width: 228px;
+  height: 216px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 216px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+  background: url("../../images/vacancesdirectes/common/ui/stain-1.png") no-repeat 0 0 transparent;
+  background-size: 100%;
+}
+.sliderStain > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: 15px;
+}
+.sliderStain > img {
+  vertical-align: middle;
+}
+.sliderStain .content {
+  color: #f58220;
+  margin: 10px 30px 0;
+}
+.sliderStain .content .headline {
+  font: bold 27px/27px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 95px;
 }
 /* bouton Afficher plus de resultats */
 #btPlusResults {
@@ -5113,7 +5345,7 @@ body.edito table td {
   margin-right: 10px;
   float: left;
   overflow: hidden;
-  width: 938px;
+  width: 928px;
 }
 .bonsplans #bpItemsList .bpItem .itemResultTitle {
   text-transform: uppercase;
@@ -5604,7 +5836,6 @@ body.edito table td {
 .account #stepNav ul li.tab.current a {
   text-decoration: none;
 }
-.account #stepNav ul li.tab:hover > a:after,
 .account #stepNav ul li.tab.current > a:after {
   content: url("../../images/vacancesdirectes/common/pict/Triangle-Tab.png");
   height: 8px;
@@ -6550,6 +6781,19 @@ aside #greyBoxes #assetsBloc .asset:nth-child(3):before {
 }
 aside #greyBoxes #assetsBloc .asset:nth-child(4):before {
   background-position: 0 -360px;
+}
+aside #greyBoxes #arguHbgtBloc {
+  padding: 15px 15px;
+}
+aside #greyBoxes #arguHbgtBloc .stamp {
+  margin-bottom: 10px;
+}
+aside #greyBoxes #arguHbgtBloc .no.stamp {
+  margin-bottom: 30px;
+}
+aside #greyBoxes #arguHbgtBloc .argu {
+  font: 13px/18px Arial, Helvetica, sans-serif;
+  margin-bottom: 25px;
 }
 aside ::-webkit-input-placeholder {
   color: #8c8a8a;
