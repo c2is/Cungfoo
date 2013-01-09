@@ -70,8 +70,8 @@ class BonPlanTableMap extends TableMap
   1 => '14',
   2 => '21',
 ));
-        $this->addColumn('nb_adultes', 'NbAdultes', 'INTEGER', false, null, null);
-        $this->addColumn('nb_enfants', 'NbEnfants', 'INTEGER', false, null, null);
+        $this->addColumn('nb_adultes', 'NbAdultes', 'INTEGER', false, null, 1);
+        $this->addColumn('nb_enfants', 'NbEnfants', 'INTEGER', false, null, 0);
         $this->addColumn('active', 'Active', 'BOOLEAN', false, 1, false);
         // validators
     } // initialize()

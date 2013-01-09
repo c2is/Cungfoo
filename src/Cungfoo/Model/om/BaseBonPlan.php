@@ -147,12 +147,14 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
 
     /**
      * The value for the nb_adultes field.
+     * Note: this column has a database default value of: 1
      * @var        int
      */
     protected $nb_adultes;
 
     /**
      * The value for the nb_enfants field.
+     * Note: this column has a database default value of: 0
      * @var        int
      */
     protected $nb_enfants;
@@ -281,6 +283,8 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
      */
     public function applyDefaultValues()
     {
+        $this->nb_adultes = 1;
+        $this->nb_enfants = 0;
         $this->active = false;
     }
 
@@ -987,6 +991,14 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
      */
     public function hasOnlyDefaultValues()
     {
+            if ($this->nb_adultes !== 1) {
+                return false;
+            }
+
+            if ($this->nb_enfants !== 0) {
+                return false;
+            }
+
             if ($this->active !== false) {
                 return false;
             }
@@ -3732,7 +3744,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
     }
 
     // active behavior
-    
+
     /**
      * return true is the object is active
      *
@@ -3963,7 +3975,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
     }
 
     // crudable behavior
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -3978,26 +3990,26 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
         {
             $this->resetModified(BonPlanPeer::IMAGE_MENU);
         }
-    
+
         $this->uploadImageMenu($form);
-        
+
         if (!$form['image_page_deleted']->getData())
         {
             $this->resetModified(BonPlanPeer::IMAGE_PAGE);
         }
-    
+
         $this->uploadImagePage($form);
-        
+
         if (!$form['image_liste_deleted']->getData())
         {
             $this->resetModified(BonPlanPeer::IMAGE_LISTE);
         }
-    
+
         $this->uploadImageListe($form);
-        
+
         return $this->save($con);
     }
-    
+
     /**
      * @return string
      */
@@ -4005,7 +4017,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
     {
         return 'uploads/bon_plans';
     }
-    
+
     /**
      * @return string
      */
@@ -4013,7 +4025,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -4027,7 +4039,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
             $this->setImageMenu($this->getUploadDir() . '/' . $image);
         }
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -4041,7 +4053,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
             $this->setImagePage($this->getUploadDir() . '/' . $image);
         }
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void

@@ -14,7 +14,8 @@ use Symfony\Component\HttpFoundation\Request,
 use Cungfoo\Model\EtablissementQuery,
     Cungfoo\Model\PointInteretPeer,
     Cungfoo\Model\EventPeer,
-    Cungfoo\Model\BonPlanQuery;
+    Cungfoo\Model\BonPlanQuery,
+    Cungfoo\Model\BonPlanCategorieQuery;
 
 use VacancesDirectes\Lib\Listing,
     VacancesDirectes\Lib\SearchEngine,
@@ -148,6 +149,44 @@ class BonsPlansController implements ControllerProviderInterface
                 'searchForm'      => $searchEngine->getView(),
             ));
         })->bind('bonsplans');
+
+        $controllers->match('/{cat}/', function (Request $request, $cat) use ($app)
+        {
+            $locale = $app['context']->get('language');
+
+            $categorie = BonPlanCategorieQuery::create()
+                ->joinWithI18n($locale)
+                ->useBonPlanCategorieI18nQuery()
+                    ->filterBySlug($cat)
+                ->endUse()
+                ->filterByActive(true)
+                ->findOne()
+            ;
+
+            if (!$categorie)
+            {
+                $app->abort(404, "La page recherchée n'existe pas");
+            }
+
+            $searchEngine = new SearchEngine($app, $request);
+            $searchEngine->process($app['session']->get('search_engine_data'));
+            if ($searchEngine->getRedirect())
+            {
+                return $app->redirect($searchEngine->getRedirect());
+            }
+
+            $bonsPlans = BonPlanQuery::create()
+                ->joinWithI18n($locale)
+                ->filterByBonPlanCategorie($categorie)
+                ->findActive()
+            ;
+
+            return $app->renderView('BonsPlansCategorie\index.twig', array(
+                'categorie'       => $categorie,
+                'bonsPlans'       => $bonsPlans,
+                'searchForm'      => $searchEngine->getView(),
+            ));
+        })->bind('categorie-bonsplans');
 
         return $controllers;
     }

@@ -409,6 +409,9 @@ general:
     contre_proposition: "ATTENTION ! Votre recherche ne donne aucun résultat. Les propositions ci-dessous sont celles qui s'en rapprochent le plus."
     submit: "Envoyer"
     logout: "Se déconnecter"
+    nos_offres: "Nos offres"
+    voir_offre: "Voir l'offre"
+    plus_que: "Plus que"
 
 footer:
     contact: "Contact"

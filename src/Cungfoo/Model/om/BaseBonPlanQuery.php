@@ -1260,7 +1260,7 @@ abstract class BaseBonPlanQuery extends ModelCriteria
     }
 
     // active behavior
-    
+
     /**
      * return only active objects
      *
@@ -1269,7 +1269,7 @@ abstract class BaseBonPlanQuery extends ModelCriteria
     public function findActive($con = null)
     {
         $this->filterByActive(true);
-    
+
         return parent::find($con);
     }
 
