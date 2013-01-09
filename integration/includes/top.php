@@ -1,4 +1,4 @@
-<header class="clear">
+<header class="clear" xmlns="http://www.w3.org/1999/html">
 <nav id="nav">
     <ul class="topnav fixed-width clear">
         <li class="tab current"><a id="home" href="#"><img  src="../web/images/vacancesdirectes/common/pict/home.png" alt="Accueil"></a>
@@ -391,19 +391,252 @@
         </li>
         <li class="tab"><a href="#">Les bons plans</a>
             <div id="deals" class="subnav">
-                <div class="title">Sélectionnez un bon plan</div>
-                <ul>
-                    <li>Premières minutes</li>
-                    <li>Dernières minutes</li>
-                    <li>Dernières disponibilités</li>
-                    <li>Coups de coeur</li>
-                    <li>Ponts de mai</li>
-                </ul>
-                <div>
-                    <span>Abonnement newsletter</span>
-                    <div class="bt bleu">S'inscrire</div>
+                <div id="dealsMenu">
+                    <div class="title">Sélectionner<br />un bon plan</div>
+                    <ul>
+                        <li class="bp selected">Premières minutes</li>
+                        <li class="bp">Dernières minutes</li>
+                        <li class="bp">Dernières disponibilités</li>
+                        <li class="bp">Coups de coeur</li>
+                        <li class="bp">Ponts de mai</li>
+                    </ul>
                 </div>
-                <div class="radiusBox greyC clear">
+                <div id="dealsSubscribe">
+                    <div class="title">Abonnement newsletter</div>
+                    <img src="../web/images/vacancesdirectes/dyn/menu/3-bonsplans/newsletter.jpg" alt="" />
+                    <a href="#" class="bt bleu ib">S'inscrire</a>
+                </div>
+                <div id="dealsContent">
+                    <div id="bp1" class="radiusBox greyC">
+                        <div class="clear">
+                            <div>
+                                <div class="stamp orange"><span>Dans 3 mois</span></div>
+                                <span class="dealsDate">Départ le 14 septembre</span>
+                            </div>
+                            <div class="element clear linkParent">
+                                <img class="boxborder left" src="http://pimg.devlint.fr/119x86/ccc/333/*" width="119" height="86" alt="" />
+                                <div class="details left">
+                                    <span class="title">Nom camping ***</span>
+                                    <span class="region">Région</span>
+                                    <span class="period">Du 26/05/12 au 02/06/12</span>
+                                    <span class="condition"><a href="#" class="price linkBlock">312<span class="fine">&nbsp;</span>€ au lieu de 357<span class="fine">&nbsp;</span>€</a><br />pour 8 personnes</span></span>
+                                </div>
+                            </div>
+                            <div class="element clear linkParent">
+                                <img class="boxborder left" src="http://pimg.devlint.fr/119x86/ccc/333/*" width="119" height="86" alt="" />
+                                <div class="details left">
+                                    <span class="title">Nom camping ***</span>
+                                    <span class="region">Région</span>
+                                    <span class="period">Du 26/05/12 au 02/06/12</span>
+                                    <span class="condition"><a href="#" class="price linkBlock">312<span class="fine">&nbsp;</span>€ au lieu de 357<span class="fine">&nbsp;</span>€</a><br />pour 8 personnes</span></span>
+                                </div>
+                            </div>
+                            <div class="element clear linkParent">
+                                <img class="boxborder left" src="http://pimg.devlint.fr/119x86/ccc/333/*" width="119" height="86" alt="" />
+                                <div class="details left">
+                                    <span class="title">Nom camping ***</span>
+                                    <span class="region">Région</span>
+                                    <span class="period">Du 26/05/12 au 02/06/12</span>
+                                    <span class="condition"><a href="#" class="price linkBlock">312<span class="fine">&nbsp;</span>€ au lieu de 357<span class="fine">&nbsp;</span>€</a><br />pour 8 personnes</span></span>
+                                </div>
+                            </div>
+                            <a href="#_" class="bt link right clearboth">Tous les prochains départs (15)</a>
+                        </div>
+                    </div>
+                    <div id="bp2" class="radiusBox greyC">
+                        <div class="clear">
+                            <div>
+                                <div class="stamp orange"><span>Prochains départs</span></div>
+                                <span class="dealsDate">Départ le 14 juin</span>
+                            </div>
+                            <div class="element clear linkParent">
+                                <img class="boxborder left" src="http://pimg.devlint.fr/119x86/ccc/333/*" width="119" height="86" alt="" />
+                                <div class="details left">
+                                    <span class="title">Nom camping ***</span>
+                                    <span class="region">Région</span>
+                                    <span class="period">Du 26/05/12 au 02/06/12</span>
+                                    <span class="condition"><a href="#" class="price linkBlock">312<span class="fine">&nbsp;</span>€ au lieu de 357<span class="fine">&nbsp;</span>€</a><br />pour 8 personnes</span></span>
+                                </div>
+                            </div>
+                            <div class="element clear linkParent">
+                                <img class="boxborder left" src="http://pimg.devlint.fr/119x86/ccc/333/*" width="119" height="86" alt="" />
+                                <div class="details left">
+                                    <span class="title">Nom camping ***</span>
+                                    <span class="region">Région</span>
+                                    <span class="period">Du 26/05/12 au 02/06/12</span>
+                                    <span class="condition"><a href="#" class="price linkBlock">312<span class="fine">&nbsp;</span>€ au lieu de 357<span class="fine">&nbsp;</span>€</a><br />pour 8 personnes</span></span>
+                                </div>
+                            </div>
+                            <div class="element clear linkParent">
+                                <img class="boxborder left" src="http://pimg.devlint.fr/119x86/ccc/333/*" width="119" height="86" alt="" />
+                                <div class="details left">
+                                    <span class="title">Nom camping ***</span>
+                                    <span class="region">Région</span>
+                                    <span class="period">Du 26/05/12 au 02/06/12</span>
+                                    <span class="condition"><a href="#" class="price linkBlock">312<span class="fine">&nbsp;</span>€ au lieu de 357<span class="fine">&nbsp;</span>€</a><br />pour 8 personnes</span></span>
+                                </div>
+                            </div>
+                            <div class="element clear linkParent">
+                                <img class="boxborder left" src="http://pimg.devlint.fr/119x86/ccc/333/*" width="119" height="86" alt="" />
+                                <div class="details left">
+                                    <span class="title">Nom camping ***</span>
+                                    <span class="region">Région</span>
+                                    <span class="period">Du 26/05/12 au 02/06/12</span>
+                                    <span class="condition"><a href="#" class="price linkBlock">312<span class="fine">&nbsp;</span>€ au lieu de 357<span class="fine">&nbsp;</span>€</a><br />pour 8 personnes</span></span>
+                                </div>
+                            </div>
+                            <a href="#_" class="bt link right clearboth">Tous les prochains départs (15)</a>
+                        </div>
+                        <div class="clear">
+                            <div>
+                                <div class="stamp orange"><span>Semaine suivante</span></div>
+                                <span class="dealsDate">Départ le 21 juin</span>
+                            </div>
+                            <div class="element clear linkParent">
+                                <img class="boxborder left" src="http://pimg.devlint.fr/119x86/ccc/333/*" width="119" height="86" alt="" />
+                                <div class="details left">
+                                    <span class="title">Nom camping ***</span>
+                                    <span class="region">Région</span>
+                                    <span class="period">Du 26/05/12 au 02/06/12</span>
+                                    <span class="condition"><a href="#" class="price linkBlock">312<span class="fine">&nbsp;</span>€ au lieu de 357<span class="fine">&nbsp;</span>€</a><br />pour 8 personnes</span></span>
+                                </div>
+                            </div>
+                            <div class="element clear linkParent">
+                                <img class="boxborder left" src="http://pimg.devlint.fr/119x86/ccc/333/*" width="119" height="86" alt="" />
+                                <div class="details left">
+                                    <span class="title">Nom camping ***</span>
+                                    <span class="region">Région</span>
+                                    <span class="period">Du 26/05/12 au 02/06/12</span>
+                                    <span class="condition"><a href="#" class="price linkBlock">312<span class="fine">&nbsp;</span>€ au lieu de 357<span class="fine">&nbsp;</span>€</a><br />pour 8 personnes</span></span>
+                                </div>
+                            </div>
+                            <a href="#_" class="bt link right clearboth">Plus d'offres (19)</a>
+                        </div>
+                    </div>
+                    <div id="bp3" class="radiusBox greyC">
+                        <div class="clear">
+                            <div>
+                                <div class="stamp orange"><span>Moins de 10 réservations disponibles</span></div>
+                                <span class="dealsDate">Départ le 14 juin</span>
+                            </div>
+                            <div class="element clear linkParent">
+                                <img class="boxborder left" src="http://pimg.devlint.fr/119x86/ccc/333/*" width="119" height="86" alt="" />
+                                <div class="details left">
+                                    <span class="title">Nom camping ***</span>
+                                    <span class="region">Région</span>
+                                    <span class="period">Du 26/05/12 au 02/06/12</span>
+                                    <span class="condition"><a href="#" class="price linkBlock">312<span class="fine">&nbsp;</span>€ au lieu de 357<span class="fine">&nbsp;</span>€</a><br />pour 8 personnes</span></span>
+                                </div>
+                            </div>
+                            <div class="element clear linkParent">
+                                <img class="boxborder left" src="http://pimg.devlint.fr/119x86/ccc/333/*" width="119" height="86" alt="" />
+                                <div class="details left">
+                                    <span class="title">Nom camping ***</span>
+                                    <span class="region">Région</span>
+                                    <span class="period">Du 26/05/12 au 02/06/12</span>
+                                    <span class="condition"><a href="#" class="price linkBlock">312<span class="fine">&nbsp;</span>€ au lieu de 357<span class="fine">&nbsp;</span>€</a><br />pour 8 personnes</span></span>
+                                </div>
+                            </div>
+                            <div class="element clear linkParent">
+                                <img class="boxborder left" src="http://pimg.devlint.fr/119x86/ccc/333/*" width="119" height="86" alt="" />
+                                <div class="details left">
+                                    <span class="title">Nom camping ***</span>
+                                    <span class="region">Région</span>
+                                    <span class="period">Du 26/05/12 au 02/06/12</span>
+                                    <span class="condition"><a href="#" class="price linkBlock">312<span class="fine">&nbsp;</span>€ au lieu de 357<span class="fine">&nbsp;</span>€</a><br />pour 8 personnes</span></span>
+                                </div>
+                            </div>
+                            <div class="element clear linkParent">
+                                <img class="boxborder left" src="http://pimg.devlint.fr/119x86/ccc/333/*" width="119" height="86" alt="" />
+                                <div class="details left">
+                                    <span class="title">Nom camping ***</span>
+                                    <span class="region">Région</span>
+                                    <span class="period">Du 26/05/12 au 02/06/12</span>
+                                    <span class="condition"><a href="#" class="price linkBlock">312<span class="fine">&nbsp;</span>€ au lieu de 357<span class="fine">&nbsp;</span>€</a><br />pour 8 personnes</span></span>
+                                </div>
+                            </div>
+                            <div class="element clear linkParent">
+                                <img class="boxborder left" src="http://pimg.devlint.fr/119x86/ccc/333/*" width="119" height="86" alt="" />
+                                <div class="details left">
+                                    <span class="title">Nom camping ***</span>
+                                    <span class="region">Région</span>
+                                    <span class="period">Du 26/05/12 au 02/06/12</span>
+                                    <span class="condition"><a href="#" class="price linkBlock">312<span class="fine">&nbsp;</span>€ au lieu de 357<span class="fine">&nbsp;</span>€</a><br />pour 8 personnes</span></span>
+                                </div>
+                            </div>
+                            <a href="#_" class="bt link right clearboth">Tous les prochains départs (15)</a>
+                        </div>
+                    </div>
+                    <div id="bp4" class="radiusBox greyC">
+                        <div class="clear">
+                            <div>
+                                <div class="stamp orange"><span>Coups de cœur</span></div>
+                                <span class="dealsDate">Départ le 14 juin</span>
+                            </div>
+                            <div class="element clear linkParent">
+                                <img class="boxborder left" src="http://pimg.devlint.fr/119x86/ccc/333/*" width="119" height="86" alt="" />
+                                <div class="details left">
+                                    <span class="title">Nom camping ***</span>
+                                    <span class="region">Région</span>
+                                    <span class="period">Du 26/05/12 au 02/06/12</span>
+                                    <span class="condition"><a href="#" class="price linkBlock">312<span class="fine">&nbsp;</span>€ au lieu de 357<span class="fine">&nbsp;</span>€</a><br />pour 8 personnes</span></span>
+                                </div>
+                            </div>
+                            <a href="#_" class="bt link right clearboth">Tous les prochains départs (15)</a>
+                        </div>
+                    </div>
+                    <div id="bp5" class="radiusBox greyC">
+                        <div class="clear">
+                            <div>
+                                <div class="stamp orange"><span>Pont du 1er mai</span></div>
+                                <span class="dealsDate">Départ le 1 mai</span>
+                            </div>
+                            <div class="element clear linkParent">
+                                <img class="boxborder left" src="http://pimg.devlint.fr/119x86/ccc/333/*" width="119" height="86" alt="" />
+                                <div class="details left">
+                                    <span class="title">Nom camping ***</span>
+                                    <span class="region">Région</span>
+                                    <span class="period">Du 26/05/12 au 02/06/12</span>
+                                    <span class="condition"><a href="#" class="price linkBlock">312<span class="fine">&nbsp;</span>€ au lieu de 357<span class="fine">&nbsp;</span>€</a><br />pour 8 personnes</span></span>
+                                </div>
+                            </div>
+                            <div class="element clear linkParent">
+                                <img class="boxborder left" src="http://pimg.devlint.fr/119x86/ccc/333/*" width="119" height="86" alt="" />
+                                <div class="details left">
+                                    <span class="title">Nom camping ***</span>
+                                    <span class="region">Région</span>
+                                    <span class="period">Du 26/05/12 au 02/06/12</span>
+                                    <span class="condition"><a href="#" class="price linkBlock">312<span class="fine">&nbsp;</span>€ au lieu de 357<span class="fine">&nbsp;</span>€</a><br />pour 8 personnes</span></span>
+                                </div>
+                            </div>
+                            <a href="#_" class="bt link right clearboth">Tous les prochains départs (15)</a>
+                        </div>
+                        <div class="clear">
+                            <div>
+                                <div class="stamp orange"><span>Pont du 8 mai</span></div>
+                                <span class="dealsDate">Départ le 8 mai</span>
+                            </div>
+                            <div class="element clear linkParent">
+                                <img class="boxborder left" src="http://pimg.devlint.fr/119x86/ccc/333/*" width="119" height="86" alt="" />
+                                <div class="details left">
+                                    <span class="title">Nom camping ***</span>
+                                    <span class="region">Région</span>
+                                    <span class="period">Du 26/05/12 au 02/06/12</span>
+                                    <span class="condition"><a href="#" class="price linkBlock">312<span class="fine">&nbsp;</span>€ au lieu de 357<span class="fine">&nbsp;</span>€</a><br />pour 8 personnes</span></span>
+                                </div>
+                            </div>
+                            <div class="element clear linkParent">
+                                <img class="boxborder left" src="http://pimg.devlint.fr/119x86/ccc/333/*" width="119" height="86" alt="" />
+                                <div class="details left">
+                                    <span class="title">Nom camping ***</span>
+                                    <span class="region">Région</span>
+                                    <span class="period">Du 26/05/12 au 02/06/12</span>
+                                    <span class="condition"><a href="#" class="price linkBlock">312<span class="fine">&nbsp;</span>€ au lieu de 357<span class="fine">&nbsp;</span>€</a><br />pour 8 personnes</span></span>
+                                </div>
+                            </div>
+                            <a href="#_" class="bt link right clearboth">Plus d'offres (19)</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </li>
@@ -411,28 +644,28 @@
             <div id="holiday" class="subnav">
                 <div class="radiusBox greyC clear">
                     <div class="title">Quel type de vacances ?</div>
-                    <img class="type boxborder left" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" />
-                    <img class="type boxborder left" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" />
-                    <img class="type boxborder left" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" />
-                    <img class="type boxborder left" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" />
-                    <img class="type boxborder left" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" />
-                    <img class="type boxborder left" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" />
-                    <img class="type boxborder left" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" />
-                    <img class="type boxborder left" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" />
-                    <img class="type boxborder left" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" />
-                    <img class="type boxborder left" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" />
-                    <img class="type boxborder left" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" />
-                    <img class="type boxborder left" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" />
+                    <a href="#"><img class="type boxborder left" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" /></a>
+                    <a href="#"><img class="type boxborder left" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" /></a>
+                    <a href="#"><img class="type boxborder left" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" /></a>
+                    <a href="#"><img class="type boxborder left" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" /></a>
+                    <a href="#"><img class="type boxborder left" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" /></a>
+                    <a href="#"><img class="type boxborder left" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" /></a>
+                    <a href="#"><img class="type boxborder left" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" /></a>
+                    <a href="#"><img class="type boxborder left" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" /></a>
+                    <a href="#"><img class="type boxborder left" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" /></a>
+                    <a href="#"><img class="type boxborder left" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" /></a>
+                    <a href="#"><img class="type boxborder left" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" /></a>
+                    <a href="#"><img class="type boxborder left" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" /></a>
                 </div>
                 <div class="proposals clear">
                     <div class="title left">Vos vacances...</div>
                     <div class="proposalsDate left">
                         <span class="from">À partir de 810<span class="fine">&nbsp;</span>€</span>
-                        <div class="bt sombre">En juillet</div>
+                        <a href="#" class="bt sombre">En juillet</a>
                     </div>
                     <div class="proposalsDate left">
                         <span class="from">À partir de 910<span class="fine">&nbsp;</span>€</span>
-                        <div class="bt sombre">En août</div>
+                        <a href="#" class="bt sombre">En août</a>
                     </div>
                 </div>
             </div>
@@ -441,30 +674,30 @@
             <div id="weekends" class="subnav">
                 <div class="radiusBox greyC clear">
                     <div class="title">Quel objectif pour votre week-end ?</div>
-                    <img class="objective left" src="http://pimg.devlint.fr/160x160/ccc/333/*" alt="" />
-                    <img class="objective left" src="http://pimg.devlint.fr/160x160/ccc/333/*" alt="" />
-                    <img class="objective left" src="http://pimg.devlint.fr/160x160/ccc/333/*" alt="" />
-                    <img class="objective left" src="http://pimg.devlint.fr/160x160/ccc/333/*" alt="" />
-                    <img class="objective left" src="http://pimg.devlint.fr/160x160/ccc/333/*" alt="" />
-                    <img class="objective left" src="http://pimg.devlint.fr/160x160/ccc/333/*" alt="" />
-                    <img class="objective left" src="http://pimg.devlint.fr/160x160/ccc/333/*" alt="" />
-                    <img class="objective left" src="http://pimg.devlint.fr/160x160/ccc/333/*" alt="" />
-                    <img class="objective left" src="http://pimg.devlint.fr/160x160/ccc/333/*" alt="" />
-                    <img class="objective left" src="http://pimg.devlint.fr/160x160/ccc/333/*" alt="" />
+                    <a href="#"><img class="objective left" src="http://pimg.devlint.fr/160x160/ccc/333/*" alt="" /></a>
+                    <a href="#"><img class="objective left" src="http://pimg.devlint.fr/160x160/ccc/333/*" alt="" /></a>
+                    <a href="#"><img class="objective left" src="http://pimg.devlint.fr/160x160/ccc/333/*" alt="" /></a>
+                    <a href="#"><img class="objective left" src="http://pimg.devlint.fr/160x160/ccc/333/*" alt="" /></a>
+                    <a href="#"><img class="objective left" src="http://pimg.devlint.fr/160x160/ccc/333/*" alt="" /></a>
+                    <a href="#"><img class="objective left" src="http://pimg.devlint.fr/160x160/ccc/333/*" alt="" /></a>
+                    <a href="#"><img class="objective left" src="http://pimg.devlint.fr/160x160/ccc/333/*" alt="" /></a>
+                    <a href="#"><img class="objective left" src="http://pimg.devlint.fr/160x160/ccc/333/*" alt="" /></a>
+                    <a href="#"><img class="objective left" src="http://pimg.devlint.fr/160x160/ccc/333/*" alt="" /></a>
+                    <a href="#"><img class="objective left" src="http://pimg.devlint.fr/160x160/ccc/333/*" alt="" /></a>
                 </div>
                 <div class="proposals clear">
                     <div class="title left">Vos week-ends...</div>
                     <div class="proposalsDate left">
                         <span class="from">À partir de 110<span class="fine">&nbsp;</span>€</span>
-                        <div class="bt sombre">2 jours</div>
+                        <a href="#" class="bt sombre">2 jours</a>
                     </div>
                     <div class="proposalsDate left">
                         <span class="from">À partir de 180<span class="fine">&nbsp;</span>€</span>
-                        <div class="bt sombre">3 jours</div>
+                        <a href="#" class="bt sombre">3 jours</a>
                     </div>
                     <div class="proposalsDate left">
                         <span class="from">À partir de 28<span class="fine">&nbsp;</span>€</span>
-                        <div class="bt sombre">Pont 2013</div>
+                        <a href="#" class="bt sombre">Pont 2013</a>
                     </div>
                 </div>
             </div>

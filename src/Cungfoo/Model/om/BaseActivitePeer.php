@@ -12,6 +12,7 @@ use \PropelPDO;
 use Cungfoo\Model\Activite;
 use Cungfoo\Model\ActiviteI18nPeer;
 use Cungfoo\Model\ActivitePeer;
+use Cungfoo\Model\EtablissementActivitePeer;
 use Cungfoo\Model\map\ActiviteTableMap;
 
 /**
@@ -400,6 +401,9 @@ abstract class BaseActivitePeer
      */
     public static function clearRelatedInstancePool()
     {
+        // Invalidate objects in EtablissementActivitePeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        EtablissementActivitePeer::clearInstancePool();
         // Invalidate objects in ActiviteI18nPeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
         ActiviteI18nPeer::clearInstancePool();

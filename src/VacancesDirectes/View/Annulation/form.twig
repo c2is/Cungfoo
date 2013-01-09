@@ -2,6 +2,8 @@
 
 {% block leftColumn %}
 <h1>{{ "demande_annulation.title" | trans }}</h1>
+    <p class="description">{{ "demande_annulation.texte1" | trans }} <a href="{{ asset("CGA.pdf") }}" title="{{ demande_annulation.lienCGA }}" target="_blank">{{ "demande_annulation.lienCGA" | trans }}</a></p>
+    <p class="description">{{ "demande_annulation.texte2" | trans }}</p>
     <div class="radiusBox2 greyM form">
         <h2>{{ "demande_annulation.subtitle" | trans }}</h2>
         <form id="annulationForm" method="post" action="{{ app.request.getRequestURI() }}" novalidate {{ form_enctype(annulationForm) }}>
@@ -94,6 +96,7 @@
                     {{ form_rest(annulationForm) }}
                 </div>
             </fieldset>
+            <p class="mandatory">{{ "demande_annulation.texte3" | trans }}</p>
         </form>
 </div>
 {% endblock %}

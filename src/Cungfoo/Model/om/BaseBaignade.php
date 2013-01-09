@@ -2538,7 +2538,7 @@ abstract class BaseBaignade extends BaseObject implements Persistent
     }
 
     // active behavior
-    
+
     /**
      * return true is the object is active
      *
@@ -2721,7 +2721,7 @@ abstract class BaseBaignade extends BaseObject implements Persistent
     }
 
     // crudable behavior
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -2736,12 +2736,12 @@ abstract class BaseBaignade extends BaseObject implements Persistent
         {
             $this->resetModified(BaignadePeer::VIGNETTE);
         }
-    
+
         $this->uploadVignette($form);
-        
+
         return $this->save($con);
     }
-    
+
     /**
      * @return string
      */
@@ -2749,7 +2749,7 @@ abstract class BaseBaignade extends BaseObject implements Persistent
     {
         return 'uploads/baignades';
     }
-    
+
     /**
      * @return string
      */
@@ -2757,7 +2757,7 @@ abstract class BaseBaignade extends BaseObject implements Persistent
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void

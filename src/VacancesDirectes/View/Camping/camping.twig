@@ -9,6 +9,8 @@
 
 {% block bodyClass %} fiche{% endblock %}
 
+{% block canonical %}<link rel="canonical" href="{{ referer }}" />{% endblock %}
+
 {% block leftColumn %}
 <a class="bt gris left" href="{{ historyBack ~ "#camping-" ~ etab.slug }}">&lt; Retour</a> <br />
 
