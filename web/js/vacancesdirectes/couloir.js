@@ -67,11 +67,11 @@ head.ready(function(){
                 var selectWidth = $(this).parent().width();
                 $(this).next('.SSContainerDivWrapper').show();
                 var selectUlWidth = $(this).next('.SSContainerDivWrapper').width();
-//                console.log(selectWidth);
-//                console.log(selectUlWidth);
-//                console.log( $(this).next('.SSContainerDivWrapper').hasClass('maxHeight') );
-//                console.log( !$(this).next('.SSContainerDivWrapper').hasClass('minWidth') );
-//                console.log( selectUlWidth >= selectWidth );
+                  //console.log(selectWidth);
+                  //console.log(selectUlWidth);
+                  //console.log( $(this).next('.SSContainerDivWrapper').hasClass('maxHeight') );
+                  //console.log( !$(this).next('.SSContainerDivWrapper').hasClass('minWidth') );
+                  //console.log( selectUlWidth >= selectWidth );
                 if ( $(this).next('.SSContainerDivWrapper').hasClass('maxHeight') && !$(this).next('.SSContainerDivWrapper').hasClass('minWidth') && selectUlWidth >= selectWidth ){
 
                     $(this).next('.SSContainerDivWrapper').css({
@@ -90,8 +90,8 @@ head.ready(function(){
         // datepickers
         var d = new Date();
         var y = d.getFullYear();
-        $('.occupantHeader[style*="adult"]').parent('.anOccupant').addClass('adult');
-        $('.occupantHeader[style*="child"]').parent('.anOccupant').addClass('child');
+//        $('.occupantHeader[style*="adult"]').parent('.anOccupant').addClass('adult');
+//        $('.occupantHeader[style*="child"]').parent('.anOccupant').addClass('child');
         $(".anOccupant").each(function(index,value){
             var datepickerInput = $(this).find('.control_date')
             var onBlurAction = datepickerInput.attr('onblur');
@@ -99,12 +99,26 @@ head.ready(function(){
             if(onBlurAction.substring(0, 1) == ';'){
                 onBlurAction = onBlurAction.substring(1, onBlurAction.length - 1);
             }
-            function onBlur(){
-               //console.log(this.value);
-               eval(onBlurAction);
+            function onClick(){
+                //console.log("CLICK");
+                datepickerInput.removeAttr('onblur');
             }
-//            console.log(onBlurAction);
-            datepickerInput.removeAttr('onblur');
+//            var dateSelected = false;
+            function onSelect(){
+                //console.log("SELECT");
+//                dateSelected = true;
+                eval(onBlurAction);
+            }
+            function onBlur(){
+                //console.log("BLUR");
+                //console.log(this.value);
+//                if (dateSelected){
+                    datepickerInput.attr('onblur',onBlurAction);
+//                    dateSelected = false;
+//                }
+            }
+            //console.log(onBlurAction);
+
             if ($(this).hasClass('adult')){
                 datepickerInput.datepicker({
                     dateFormat: "dd/mm/yy",
@@ -121,8 +135,8 @@ head.ready(function(){
                     });
                 var defaultDate = datepickerInput.datepicker( "option", "defaultDate" );
                 var maxDate = datepickerInput.datepicker( "option", "maxDate" );
-                console.log(defaultDate);
-                console.log(maxDate);
+                //console.log(defaultDate);
+                //console.log(maxDate);
             }
             else if ($(this).hasClass('child')){
                 datepickerInput.datepicker({
@@ -151,6 +165,8 @@ head.ready(function(){
                     yearRange: "1900:+0",
                     maxDate: "y",
                     showOn: "button",
+                    beforeShow:onClick,
+                    onSelect: onSelect,
                     onClose: onBlur
                 });
             }

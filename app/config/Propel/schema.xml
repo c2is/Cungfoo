@@ -144,7 +144,7 @@
             <reference local="etablissement_id" foreign="id"/>
         </foreign-key>
 
-        <foreign-key foreignTable="activite">
+        <foreign-key foreignTable="activite" onDelete="CASCADE">
             <reference local="activite_id" foreign="id"/>
         </foreign-key>
     </table>

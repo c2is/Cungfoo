@@ -15,7 +15,7 @@ include('includes/top.php'); ?>
 
             <h1>Destination Espagne !</h1>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tincidunt lobortis consequat. Nam a elit nunc. Sed at enim ac odio molestie rutrum non vitae dolor. Phasellus ac nisl massa. Morbi imperdiet nulla ac neque vulputate sagittis. Mauris ullamcorper aliquet ultricies. Sed ut lectus sed metus lobortis convallis. Cras lectus sapien, blandit non cursus ultricies, bibendum quis diam. Integer nec tortor in risus mollis luctus at nec justo. Suspendisse quis nunc eros. Mauris auctor scelerisque sapien eleifend mattis. Pellentesque dictum sollicitudin velit vitae adipiscing.</p>
+            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tincidunt lobortis consequat. Nam a elit nunc. Sed at enim ac odio molestie rutrum non vitae dolor. Phasellus ac nisl massa. Morbi imperdiet nulla ac neque vulputate sagittis. Mauris ullamcorper aliquet ultricies. Sed ut lectus sed metus lobortis convallis. Cras lectus sapien, blandit non cursus ultricies, bibendum quis diam. Integer nec tortor in risus mollis luctus at nec justo. Suspendisse quis nunc eros. Mauris auctor scelerisque sapien eleifend mattis. Pellentesque dictum sollicitudin velit vitae adipiscing.</p>
 
             <img class="bdPict" src="../web/images/vacancesdirectes/dyn/results/bandeau-result-bonplan.jpg" alt="">
 
