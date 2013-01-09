@@ -7,13 +7,13 @@
         BonPlanCategorieId: 1
     3:
         BonPlanId: 3
-        BonPlanCategorieId: 1
+        BonPlanCategorieId: 2
     4:
         BonPlanId: 4
-        BonPlanCategorieId: 1
+        BonPlanCategorieId: 3
     5:
         BonPlanId: 5
-        BonPlanCategorieId: 1
+        BonPlanCategorieId: 4
     6:
         BonPlanId: 6
         BonPlanCategorieId: 3

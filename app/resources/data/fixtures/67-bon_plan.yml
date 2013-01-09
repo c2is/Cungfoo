@@ -29,7 +29,7 @@
         PrixBarre: 232
         ImageMenu: 'uploads/etablissements/50c075fa2f012.jpeg'
         ImagePage: ''
-        Active: true
+        Active: false
     5:
         DateDebut: 2013-01-02
         DateFin: 2013-01-15
