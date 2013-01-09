@@ -26,6 +26,9 @@ class BonPlanCategorie extends BaseBonPlanCategorie
     public function getBonPlansActifs($criteria = null, $con = null) {
         return BonPlanQuery::create(null, $criteria)
             ->filterByBonPlanCategorie($this)
+            ->useBonPlanBonPlanCategorieQuery()
+                ->orderBySortableRank()
+            ->endUse()
             ->findActive($con)
         ;
     }
@@ -33,7 +36,10 @@ class BonPlanCategorie extends BaseBonPlanCategorie
     public function getBonPlansActifsForMenu($criteria = null, $con = null) {
         return BonPlanQuery::create(null, $criteria)
             ->filterByBonPlanCategorie($this)
-            ->limit(6)
+            ->useBonPlanBonPlanCategorieQuery()
+                ->orderBySortableRank()
+            ->endUse()
+            ->limit(4)
             ->findActive($con)
         ;
     }

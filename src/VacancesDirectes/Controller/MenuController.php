@@ -16,6 +16,8 @@ use Cungfoo\Model\EtablissementPeer,
 
 use VacancesDirectes\Form\Type\Destination\AutocompleteType;
 
+use \Criteria;
+
 class MenuController implements ControllerProviderInterface
 {
     /**
@@ -72,23 +74,16 @@ class MenuController implements ControllerProviderInterface
         $controllers->get('/bons-plans', function () use ($app)
         {
             $categories = BonPlanCategorieQuery::create()
+                ->distinct()
                 ->addAscendingOrderByColumn('sortable_rank')
+                ->useBonPlanBonPlanCategorieQuery()
+                    ->filterByBonPlanId(null, Criteria::ISNOTNULL)
+                ->endUse()
                 ->findActive()
             ;
 
-            $bonsPlans = array();
-            if($categories) {
-                $bonsPlans = BonPlanQuery::create()
-                    ->useBonPlanBonPlanCategorieQuery()
-                        ->filterByBonPlanCategorieId($categories[0]->getId())
-                    ->endUse()
-                    ->findActive()
-                ;
-            }
-
             return $app['twig']->render('Menu/bonsPlans.twig', array(
                 'categories'    => $categories,
-                'bonsPlans'     => $bonsPlans,
             ));
         })
         ->bind('menu_bons_plans');

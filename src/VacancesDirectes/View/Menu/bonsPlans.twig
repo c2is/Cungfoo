@@ -1,21 +1,56 @@
 <div id="deals" class="subnav">
-    <div class="title">Sélectionnez un bon plan</div>
-    <ul>
-        {% for categorie in categories %}
-        <li>{{ categorie.name }}</li>
-        {% endfor %}
-    </ul>
-    <div>
-        <span>Abonnement newsletter</span>
-        <div class="bt bleu">S'inscrire</div>
-    </div>
-    {% for categorie in categories %}
-    <div class="radiusBox greyC clear">
+    <div id="dealsMenu">
+        <div class="title">Sélectionner<br />un bon plan</div>
         <ul>
-            {% for bonPlan in categorie.bonPlansActifsForMenu %}
-            <li>{{ bonPlan.name }}</li>
+            {% for categorie in categories %}
+            <li class="bp{% if loop.first %} selected{% endif %}">{{ categorie.name }}</li>
             {% endfor %}
         </ul>
     </div>
+    <div id="dealsSubscribe">
+        <div class="title">Abonnement newsletter</div>
+        <img src="../web/images/vacancesdirectes/dyn/menu/3-bonsplans/newsletter.jpg" alt="" />
+        <a href="#" class="bt bleu ib">S'inscrire</a>
+    </div>
+    <div id="dealsContent">
+    {% for categorie in categories %}
+        <div id="bp{{ loop.index }}" class="radiusBox greyC">
+            {% for bonPlan in categorie.bonPlansActifsForMenu %}
+                {% if loop.index < 3 %}
+                <div class="clear">
+                <div>
+                    <div class="stamp orange"><span>{% if loop.first %}{{ bonPlan.name }}{% else %}Nos autres offres{% endif %}</span></div>
+                    {% if loop.first and bonPlan.dateStart %}<span class="dealsDate">Départ le {{ bonPlan.dateStart|date('d/m/Y') }}</span>{% endif %}
+                </div>
+                {% endif %}
+
+                {% if loop.first %}
+                    {% if loop.last %}
+                        {% set nbDispos = 6 %}
+                    {% else %}
+                        {% set nbDispos = 4 %}
+                    {% endif %}
+                    {% if app.debug %}
+                        {{ render(path('esi_bon_plan', {'slug': bonPlan.slug, 'limit': nbDispos})) }}
+                    {% else %}
+                        <esi:include src="{{ path('esi_bon_plan', {'slug': bonPlan.slug, 'limit': nbDispos}) }}" />
+                    {% endif %}
+                    <a href="{{ path('bonsplans', {'slug': bonPlan.slug}) }}" class="bt link right clearboth">Tous les {{ bonPlan.name }}</a>
+                {% elseif loop.index < 4 %}
+                <div class="element clear linkParent">
+                    <img class="boxborder left" src="{{ asset(bonPlan.imageMenu) }}" width="119" height="86" alt="" />
+                    <div class="details left">
+                        <span class="title">{{ bonPlan.name }}</span>
+                        <span class="region">{{ bonPlan.indice }}</span>
+                        <span class="period">Du {{ bonPlan.dateDebut|date('d/m/Y') }} au {{ bonPlan.dateFin|date('d/m/Y') }}</span>
+                        <span class="condition"><a href="{{ path('bonsplans', {'slug': bonPlan.slug}) }}" class="price linkBlock">{{ bonPlan.prix }}<span class="fine">&nbsp;</span>€ {{ "general.au_lieu_de" | trans }} {{ bonPlan.prixBarre }}<span class="fine">&nbsp;</span>€</a><br />pour {{ bonPlan.nbAdultes }} personnes</span></span>
+                    </div>
+                </div>
+                {% else %}
+                <a href="#_" class="bt link right clearboth">Toutes nos offres</a>
+                {% endif %}
+                {% if loop.first or loop.last %}</div>{% endif %}
+            {% endfor %}
+        </div>
     {% endfor %}
 </div>
