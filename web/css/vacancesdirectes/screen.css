@@ -1868,7 +1868,7 @@ footer {
 }
 #nav .tab .subnav#deals #dealsMenu {
   z-index: 2;
-  width: 316px;
+  width: 276px;
   text-transform: uppercase;
   margin-bottom: 180px;
 }
@@ -1948,7 +1948,7 @@ footer {
 }
 #nav .tab .subnav#deals #dealsContent {
   z-index: 1;
-  width: 624px;
+  width: 664px;
 }
 #nav .tab .subnav#deals #dealsContent .radiusBox {
   display: none;
@@ -1978,6 +1978,7 @@ footer {
   text-transform: none;
 }
 #nav .tab .subnav#deals #dealsContent .element .details {
+  width: 173px;
   margin: 0;
 }
 #nav .tab .subnav#deals #dealsContent .element .condition {
