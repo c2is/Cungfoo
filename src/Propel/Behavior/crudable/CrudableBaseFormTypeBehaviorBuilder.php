@@ -236,10 +236,12 @@ class {$this->getClassname()} extends AppAwareType
         }
         elseif (self::CRUDABLE_TYPE_TEXTRICH === $column->getType())
         {
+            $column->setType(PropelTypes::LONGVARCHAR);
             return 'textrich';
         }
         elseif (self::CRUDABLE_TYPE_FILE === $column->getType())
         {
+            $column->setType(PropelTypes::VARCHAR);
             return 'cungfoo_file';
         }
         else

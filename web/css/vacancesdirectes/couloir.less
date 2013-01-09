@@ -288,19 +288,23 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
           }
           #address{width:576px;
             td{display:table-cell;padding:5px 10px 5px 0;vertical-align:middle;width:144px !important;}
-            input,textarea,.newListSelected{width:134px;}
+            input,textarea,.newListSelected{width:134px;text-transform:uppercase;}
             textarea{width:134px;height:62px;}
             .datepicker button{right:0;}
             .label{width:134px;line-height:17px;padding:0 10px 0 0;}
+            .firstname input{text-transform:capitalize;}
+            .email input{text-transform:lowercase;}
           }
           #others{width:576px;margin:15px 0 20px;
             td{display:table-cell;padding:5px 10px 5px 0;vertical-align:middle;}
+            input,textarea,.newListSelected{text-transform:uppercase;}
             .label{width:432px;}
           }
         }
         #option{padding-top:0;
           table{width:576px;
             td{display:table-cell;padding:5px 10px 5px 0;vertical-align:middle;}
+            input,textarea,.newListSelected{text-transform:uppercase;}
             .label{width:432px;text-align:right;}
           }
         }
@@ -562,7 +566,7 @@ ul.newList a {color:@colorGris2;text-decoration:none;display:block;padding:0 8px
 .newListSelected *{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing: content-box;cursor:pointer;}
 ul.newList li a:focus {-moz-outline-style: none;}
 .selectedTxt {overflow:hidden;position:absolute;text-overflow:ellipsis;white-space:nowrap;margin-right:0;background-color:@colorBlanc;}
-ul.newList li:first-child{display:none;}
+//ul.newList li:first-child{display:none;}
 ul.newList.optGroup li a {padding:0 8px 0 18px;}
 ul.newList.optGroup li.optGroup-like a {padding:0 8px;font-weight:bold;}
 .hiLite {background:#ED145B!important;color:#fff!important;}
