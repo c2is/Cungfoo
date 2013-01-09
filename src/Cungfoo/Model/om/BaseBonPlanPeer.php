@@ -39,13 +39,13 @@ abstract class BaseBonPlanPeer
     const TM_CLASS = 'BonPlanTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 17;
+    const NUM_COLUMNS = 18;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 17;
+    const NUM_HYDRATE_COLUMNS = 18;
 
     /** the column name for the id field */
     const ID = 'bon_plan.id';
@@ -95,6 +95,9 @@ abstract class BaseBonPlanPeer
     /** the column name for the nb_enfants field */
     const NB_ENFANTS = 'bon_plan.nb_enfants';
 
+    /** the column name for the period_categories field */
+    const PERIOD_CATEGORIES = 'bon_plan.period_categories';
+
     /** the column name for the active field */
     const ACTIVE = 'bon_plan.active';
 
@@ -138,12 +141,12 @@ abstract class BaseBonPlanPeer
      * e.g. BonPlanPeer::$fieldNames[BonPlanPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'DateDebut', 'DateFin', 'Prix', 'PrixBarre', 'ImageMenu', 'ImagePage', 'ImageListe', 'ActiveCompteur', 'MiseEnAvant', 'PushHome', 'DateStart', 'DayStart', 'DayRange', 'NbAdultes', 'NbEnfants', 'Active', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'dateDebut', 'dateFin', 'prix', 'prixBarre', 'imageMenu', 'imagePage', 'imageListe', 'activeCompteur', 'miseEnAvant', 'pushHome', 'dateStart', 'dayStart', 'dayRange', 'nbAdultes', 'nbEnfants', 'active', ),
-        BasePeer::TYPE_COLNAME => array (BonPlanPeer::ID, BonPlanPeer::DATE_DEBUT, BonPlanPeer::DATE_FIN, BonPlanPeer::PRIX, BonPlanPeer::PRIX_BARRE, BonPlanPeer::IMAGE_MENU, BonPlanPeer::IMAGE_PAGE, BonPlanPeer::IMAGE_LISTE, BonPlanPeer::ACTIVE_COMPTEUR, BonPlanPeer::MISE_EN_AVANT, BonPlanPeer::PUSH_HOME, BonPlanPeer::DATE_START, BonPlanPeer::DAY_START, BonPlanPeer::DAY_RANGE, BonPlanPeer::NB_ADULTES, BonPlanPeer::NB_ENFANTS, BonPlanPeer::ACTIVE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'DATE_DEBUT', 'DATE_FIN', 'PRIX', 'PRIX_BARRE', 'IMAGE_MENU', 'IMAGE_PAGE', 'IMAGE_LISTE', 'ACTIVE_COMPTEUR', 'MISE_EN_AVANT', 'PUSH_HOME', 'DATE_START', 'DAY_START', 'DAY_RANGE', 'NB_ADULTES', 'NB_ENFANTS', 'ACTIVE', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'date_debut', 'date_fin', 'prix', 'prix_barre', 'image_menu', 'image_page', 'image_liste', 'active_compteur', 'mise_en_avant', 'push_home', 'date_start', 'day_start', 'day_range', 'nb_adultes', 'nb_enfants', 'active', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'DateDebut', 'DateFin', 'Prix', 'PrixBarre', 'ImageMenu', 'ImagePage', 'ImageListe', 'ActiveCompteur', 'MiseEnAvant', 'PushHome', 'DateStart', 'DayStart', 'DayRange', 'NbAdultes', 'NbEnfants', 'PeriodCategories', 'Active', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'dateDebut', 'dateFin', 'prix', 'prixBarre', 'imageMenu', 'imagePage', 'imageListe', 'activeCompteur', 'miseEnAvant', 'pushHome', 'dateStart', 'dayStart', 'dayRange', 'nbAdultes', 'nbEnfants', 'periodCategories', 'active', ),
+        BasePeer::TYPE_COLNAME => array (BonPlanPeer::ID, BonPlanPeer::DATE_DEBUT, BonPlanPeer::DATE_FIN, BonPlanPeer::PRIX, BonPlanPeer::PRIX_BARRE, BonPlanPeer::IMAGE_MENU, BonPlanPeer::IMAGE_PAGE, BonPlanPeer::IMAGE_LISTE, BonPlanPeer::ACTIVE_COMPTEUR, BonPlanPeer::MISE_EN_AVANT, BonPlanPeer::PUSH_HOME, BonPlanPeer::DATE_START, BonPlanPeer::DAY_START, BonPlanPeer::DAY_RANGE, BonPlanPeer::NB_ADULTES, BonPlanPeer::NB_ENFANTS, BonPlanPeer::PERIOD_CATEGORIES, BonPlanPeer::ACTIVE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'DATE_DEBUT', 'DATE_FIN', 'PRIX', 'PRIX_BARRE', 'IMAGE_MENU', 'IMAGE_PAGE', 'IMAGE_LISTE', 'ACTIVE_COMPTEUR', 'MISE_EN_AVANT', 'PUSH_HOME', 'DATE_START', 'DAY_START', 'DAY_RANGE', 'NB_ADULTES', 'NB_ENFANTS', 'PERIOD_CATEGORIES', 'ACTIVE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'date_debut', 'date_fin', 'prix', 'prix_barre', 'image_menu', 'image_page', 'image_liste', 'active_compteur', 'mise_en_avant', 'push_home', 'date_start', 'day_start', 'day_range', 'nb_adultes', 'nb_enfants', 'period_categories', 'active', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, )
     );
 
     /**
@@ -153,12 +156,12 @@ abstract class BaseBonPlanPeer
      * e.g. BonPlanPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'DateDebut' => 1, 'DateFin' => 2, 'Prix' => 3, 'PrixBarre' => 4, 'ImageMenu' => 5, 'ImagePage' => 6, 'ImageListe' => 7, 'ActiveCompteur' => 8, 'MiseEnAvant' => 9, 'PushHome' => 10, 'DateStart' => 11, 'DayStart' => 12, 'DayRange' => 13, 'NbAdultes' => 14, 'NbEnfants' => 15, 'Active' => 16, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'dateDebut' => 1, 'dateFin' => 2, 'prix' => 3, 'prixBarre' => 4, 'imageMenu' => 5, 'imagePage' => 6, 'imageListe' => 7, 'activeCompteur' => 8, 'miseEnAvant' => 9, 'pushHome' => 10, 'dateStart' => 11, 'dayStart' => 12, 'dayRange' => 13, 'nbAdultes' => 14, 'nbEnfants' => 15, 'active' => 16, ),
-        BasePeer::TYPE_COLNAME => array (BonPlanPeer::ID => 0, BonPlanPeer::DATE_DEBUT => 1, BonPlanPeer::DATE_FIN => 2, BonPlanPeer::PRIX => 3, BonPlanPeer::PRIX_BARRE => 4, BonPlanPeer::IMAGE_MENU => 5, BonPlanPeer::IMAGE_PAGE => 6, BonPlanPeer::IMAGE_LISTE => 7, BonPlanPeer::ACTIVE_COMPTEUR => 8, BonPlanPeer::MISE_EN_AVANT => 9, BonPlanPeer::PUSH_HOME => 10, BonPlanPeer::DATE_START => 11, BonPlanPeer::DAY_START => 12, BonPlanPeer::DAY_RANGE => 13, BonPlanPeer::NB_ADULTES => 14, BonPlanPeer::NB_ENFANTS => 15, BonPlanPeer::ACTIVE => 16, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'DATE_DEBUT' => 1, 'DATE_FIN' => 2, 'PRIX' => 3, 'PRIX_BARRE' => 4, 'IMAGE_MENU' => 5, 'IMAGE_PAGE' => 6, 'IMAGE_LISTE' => 7, 'ACTIVE_COMPTEUR' => 8, 'MISE_EN_AVANT' => 9, 'PUSH_HOME' => 10, 'DATE_START' => 11, 'DAY_START' => 12, 'DAY_RANGE' => 13, 'NB_ADULTES' => 14, 'NB_ENFANTS' => 15, 'ACTIVE' => 16, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'date_debut' => 1, 'date_fin' => 2, 'prix' => 3, 'prix_barre' => 4, 'image_menu' => 5, 'image_page' => 6, 'image_liste' => 7, 'active_compteur' => 8, 'mise_en_avant' => 9, 'push_home' => 10, 'date_start' => 11, 'day_start' => 12, 'day_range' => 13, 'nb_adultes' => 14, 'nb_enfants' => 15, 'active' => 16, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'DateDebut' => 1, 'DateFin' => 2, 'Prix' => 3, 'PrixBarre' => 4, 'ImageMenu' => 5, 'ImagePage' => 6, 'ImageListe' => 7, 'ActiveCompteur' => 8, 'MiseEnAvant' => 9, 'PushHome' => 10, 'DateStart' => 11, 'DayStart' => 12, 'DayRange' => 13, 'NbAdultes' => 14, 'NbEnfants' => 15, 'PeriodCategories' => 16, 'Active' => 17, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'dateDebut' => 1, 'dateFin' => 2, 'prix' => 3, 'prixBarre' => 4, 'imageMenu' => 5, 'imagePage' => 6, 'imageListe' => 7, 'activeCompteur' => 8, 'miseEnAvant' => 9, 'pushHome' => 10, 'dateStart' => 11, 'dayStart' => 12, 'dayRange' => 13, 'nbAdultes' => 14, 'nbEnfants' => 15, 'periodCategories' => 16, 'active' => 17, ),
+        BasePeer::TYPE_COLNAME => array (BonPlanPeer::ID => 0, BonPlanPeer::DATE_DEBUT => 1, BonPlanPeer::DATE_FIN => 2, BonPlanPeer::PRIX => 3, BonPlanPeer::PRIX_BARRE => 4, BonPlanPeer::IMAGE_MENU => 5, BonPlanPeer::IMAGE_PAGE => 6, BonPlanPeer::IMAGE_LISTE => 7, BonPlanPeer::ACTIVE_COMPTEUR => 8, BonPlanPeer::MISE_EN_AVANT => 9, BonPlanPeer::PUSH_HOME => 10, BonPlanPeer::DATE_START => 11, BonPlanPeer::DAY_START => 12, BonPlanPeer::DAY_RANGE => 13, BonPlanPeer::NB_ADULTES => 14, BonPlanPeer::NB_ENFANTS => 15, BonPlanPeer::PERIOD_CATEGORIES => 16, BonPlanPeer::ACTIVE => 17, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'DATE_DEBUT' => 1, 'DATE_FIN' => 2, 'PRIX' => 3, 'PRIX_BARRE' => 4, 'IMAGE_MENU' => 5, 'IMAGE_PAGE' => 6, 'IMAGE_LISTE' => 7, 'ACTIVE_COMPTEUR' => 8, 'MISE_EN_AVANT' => 9, 'PUSH_HOME' => 10, 'DATE_START' => 11, 'DAY_START' => 12, 'DAY_RANGE' => 13, 'NB_ADULTES' => 14, 'NB_ENFANTS' => 15, 'PERIOD_CATEGORIES' => 16, 'ACTIVE' => 17, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'date_debut' => 1, 'date_fin' => 2, 'prix' => 3, 'prix_barre' => 4, 'image_menu' => 5, 'image_page' => 6, 'image_liste' => 7, 'active_compteur' => 8, 'mise_en_avant' => 9, 'push_home' => 10, 'date_start' => 11, 'day_start' => 12, 'day_range' => 13, 'nb_adultes' => 14, 'nb_enfants' => 15, 'period_categories' => 16, 'active' => 17, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, )
     );
 
     /** The enumerated values for this table */
@@ -289,6 +292,7 @@ abstract class BaseBonPlanPeer
             $criteria->addSelectColumn(BonPlanPeer::DAY_RANGE);
             $criteria->addSelectColumn(BonPlanPeer::NB_ADULTES);
             $criteria->addSelectColumn(BonPlanPeer::NB_ENFANTS);
+            $criteria->addSelectColumn(BonPlanPeer::PERIOD_CATEGORIES);
             $criteria->addSelectColumn(BonPlanPeer::ACTIVE);
         } else {
             $criteria->addSelectColumn($alias . '.id');
@@ -307,6 +311,7 @@ abstract class BaseBonPlanPeer
             $criteria->addSelectColumn($alias . '.day_range');
             $criteria->addSelectColumn($alias . '.nb_adultes');
             $criteria->addSelectColumn($alias . '.nb_enfants');
+            $criteria->addSelectColumn($alias . '.period_categories');
             $criteria->addSelectColumn($alias . '.active');
         }
     }

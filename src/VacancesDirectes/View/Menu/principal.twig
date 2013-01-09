@@ -4,8 +4,8 @@
             <img  src="{{ asset('images/vacancesdirectes/common/pict/home.png') }}" alt="{{ menu.title|trans }}">
         </a>
     </li>
-    {% for item in menu.items %}
-        <li class="tab{% if "destination" in currentRoute %} current{% endif %}">
+    {% for key,item in menu.items %}
+        <li class="tab{% if key in currentRoute %} current{% endif %}">
             <a>{{ item.title|trans }}{% if item.count is not null %} <small>({{ item.count }})</small>{% endif %}</a>
             {{ render ( path ( item.route ) ) }}
         </li>

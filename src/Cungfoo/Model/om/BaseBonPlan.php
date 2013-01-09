@@ -147,15 +147,23 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
 
     /**
      * The value for the nb_adultes field.
+     * Note: this column has a database default value of: 1
      * @var        int
      */
     protected $nb_adultes;
 
     /**
      * The value for the nb_enfants field.
+     * Note: this column has a database default value of: 0
      * @var        int
      */
     protected $nb_enfants;
+
+    /**
+     * The value for the period_categories field.
+     * @var        string
+     */
+    protected $period_categories;
 
     /**
      * The value for the active field.
@@ -281,6 +289,8 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
      */
     public function applyDefaultValues()
     {
+        $this->nb_adultes = 1;
+        $this->nb_enfants = 0;
         $this->active = false;
     }
 
@@ -560,6 +570,16 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
     public function getNbEnfants()
     {
         return $this->nb_enfants;
+    }
+
+    /**
+     * Get the [period_categories] column value.
+     *
+     * @return string
+     */
+    public function getPeriodCategories()
+    {
+        return $this->period_categories;
     }
 
     /**
@@ -949,6 +969,27 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
     } // setNbEnfants()
 
     /**
+     * Set the value of [period_categories] column.
+     *
+     * @param string $v new value
+     * @return BonPlan The current object (for fluent API support)
+     */
+    public function setPeriodCategories($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->period_categories !== $v) {
+            $this->period_categories = $v;
+            $this->modifiedColumns[] = BonPlanPeer::PERIOD_CATEGORIES;
+        }
+
+
+        return $this;
+    } // setPeriodCategories()
+
+    /**
      * Sets the value of the [active] column.
      * Non-boolean arguments are converted using the following rules:
      *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
@@ -987,6 +1028,14 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
      */
     public function hasOnlyDefaultValues()
     {
+            if ($this->nb_adultes !== 1) {
+                return false;
+            }
+
+            if ($this->nb_enfants !== 0) {
+                return false;
+            }
+
             if ($this->active !== false) {
                 return false;
             }
@@ -1029,7 +1078,8 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
             $this->day_range = ($row[$startcol + 13] !== null) ? (int) $row[$startcol + 13] : null;
             $this->nb_adultes = ($row[$startcol + 14] !== null) ? (int) $row[$startcol + 14] : null;
             $this->nb_enfants = ($row[$startcol + 15] !== null) ? (int) $row[$startcol + 15] : null;
-            $this->active = ($row[$startcol + 16] !== null) ? (boolean) $row[$startcol + 16] : null;
+            $this->period_categories = ($row[$startcol + 16] !== null) ? (string) $row[$startcol + 16] : null;
+            $this->active = ($row[$startcol + 17] !== null) ? (boolean) $row[$startcol + 17] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -1038,7 +1088,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 17; // 17 = BonPlanPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 18; // 18 = BonPlanPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating BonPlan object", $e);
@@ -1437,6 +1487,9 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
         if ($this->isColumnModified(BonPlanPeer::NB_ENFANTS)) {
             $modifiedColumns[':p' . $index++]  = '`nb_enfants`';
         }
+        if ($this->isColumnModified(BonPlanPeer::PERIOD_CATEGORIES)) {
+            $modifiedColumns[':p' . $index++]  = '`period_categories`';
+        }
         if ($this->isColumnModified(BonPlanPeer::ACTIVE)) {
             $modifiedColumns[':p' . $index++]  = '`active`';
         }
@@ -1498,6 +1551,9 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
                         break;
                     case '`nb_enfants`':
                         $stmt->bindValue($identifier, $this->nb_enfants, PDO::PARAM_INT);
+                        break;
+                    case '`period_categories`':
+                        $stmt->bindValue($identifier, $this->period_categories, PDO::PARAM_STR);
                         break;
                     case '`active`':
                         $stmt->bindValue($identifier, (int) $this->active, PDO::PARAM_INT);
@@ -1717,6 +1773,9 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
                 return $this->getNbEnfants();
                 break;
             case 16:
+                return $this->getPeriodCategories();
+                break;
+            case 17:
                 return $this->getActive();
                 break;
             default:
@@ -1764,7 +1823,8 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
             $keys[13] => $this->getDayRange(),
             $keys[14] => $this->getNbAdultes(),
             $keys[15] => $this->getNbEnfants(),
-            $keys[16] => $this->getActive(),
+            $keys[16] => $this->getPeriodCategories(),
+            $keys[17] => $this->getActive(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->collBonPlanBonPlanCategories) {
@@ -1870,6 +1930,9 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
                 $this->setNbEnfants($value);
                 break;
             case 16:
+                $this->setPeriodCategories($value);
+                break;
+            case 17:
                 $this->setActive($value);
                 break;
         } // switch()
@@ -1912,7 +1975,8 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
         if (array_key_exists($keys[13], $arr)) $this->setDayRange($arr[$keys[13]]);
         if (array_key_exists($keys[14], $arr)) $this->setNbAdultes($arr[$keys[14]]);
         if (array_key_exists($keys[15], $arr)) $this->setNbEnfants($arr[$keys[15]]);
-        if (array_key_exists($keys[16], $arr)) $this->setActive($arr[$keys[16]]);
+        if (array_key_exists($keys[16], $arr)) $this->setPeriodCategories($arr[$keys[16]]);
+        if (array_key_exists($keys[17], $arr)) $this->setActive($arr[$keys[17]]);
     }
 
     /**
@@ -1940,6 +2004,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
         if ($this->isColumnModified(BonPlanPeer::DAY_RANGE)) $criteria->add(BonPlanPeer::DAY_RANGE, $this->day_range);
         if ($this->isColumnModified(BonPlanPeer::NB_ADULTES)) $criteria->add(BonPlanPeer::NB_ADULTES, $this->nb_adultes);
         if ($this->isColumnModified(BonPlanPeer::NB_ENFANTS)) $criteria->add(BonPlanPeer::NB_ENFANTS, $this->nb_enfants);
+        if ($this->isColumnModified(BonPlanPeer::PERIOD_CATEGORIES)) $criteria->add(BonPlanPeer::PERIOD_CATEGORIES, $this->period_categories);
         if ($this->isColumnModified(BonPlanPeer::ACTIVE)) $criteria->add(BonPlanPeer::ACTIVE, $this->active);
 
         return $criteria;
@@ -2019,6 +2084,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
         $copyObj->setDayRange($this->getDayRange());
         $copyObj->setNbAdultes($this->getNbAdultes());
         $copyObj->setNbEnfants($this->getNbEnfants());
+        $copyObj->setPeriodCategories($this->getPeriodCategories());
         $copyObj->setActive($this->getActive());
 
         if ($deepCopy && !$this->startCopy) {
@@ -3618,6 +3684,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
         $this->day_range = null;
         $this->nb_adultes = null;
         $this->nb_enfants = null;
+        $this->period_categories = null;
         $this->active = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
@@ -3732,7 +3799,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
     }
 
     // active behavior
-    
+
     /**
      * return true is the object is active
      *
@@ -3962,8 +4029,32 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
         return $this;
     }
 
+
+        /**
+         * Get the [indice_prix] column value.
+         *
+         * @return string
+         */
+        public function getIndicePrix()
+        {
+        return $this->getCurrentTranslation()->getIndicePrix();
+    }
+
+
+        /**
+         * Set the value of [indice_prix] column.
+         *
+         * @param string $v new value
+         * @return BonPlanI18n The current object (for fluent API support)
+         */
+        public function setIndicePrix($v)
+        {    $this->getCurrentTranslation()->setIndicePrix($v);
+
+        return $this;
+    }
+
     // crudable behavior
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -3978,26 +4069,26 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
         {
             $this->resetModified(BonPlanPeer::IMAGE_MENU);
         }
-    
+
         $this->uploadImageMenu($form);
-        
+
         if (!$form['image_page_deleted']->getData())
         {
             $this->resetModified(BonPlanPeer::IMAGE_PAGE);
         }
-    
+
         $this->uploadImagePage($form);
-        
+
         if (!$form['image_liste_deleted']->getData())
         {
             $this->resetModified(BonPlanPeer::IMAGE_LISTE);
         }
-    
+
         $this->uploadImageListe($form);
-        
+
         return $this->save($con);
     }
-    
+
     /**
      * @return string
      */
@@ -4005,7 +4096,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
     {
         return 'uploads/bon_plans';
     }
-    
+
     /**
      * @return string
      */
@@ -4013,7 +4104,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -4027,7 +4118,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
             $this->setImageMenu($this->getUploadDir() . '/' . $image);
         }
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -4041,7 +4132,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
             $this->setImagePage($this->getUploadDir() . '/' . $image);
         }
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void

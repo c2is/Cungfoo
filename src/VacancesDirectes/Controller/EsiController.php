@@ -96,6 +96,7 @@ class EsiController implements ControllerProviderInterface
                 ->addEtab($bonPlanObject->getEtablissementsCodes())
                 ->setNbAdults($bonPlanObject->getNbAdultes())
                 ->setNbChildren($bonPlanObject->getNbEnfants())
+                ->setPeriodCategories($bonPlanObject->getPeriodCategories())
                 ->setMaxResults(10)
             ;
 

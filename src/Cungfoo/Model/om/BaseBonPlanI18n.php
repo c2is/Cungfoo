@@ -89,6 +89,12 @@ abstract class BaseBonPlanI18n extends BaseObject implements Persistent
     protected $indice;
 
     /**
+     * The value for the indice_prix field.
+     * @var        string
+     */
+    protected $indice_prix;
+
+    /**
      * @var        BonPlan
      */
     protected $aBonPlan;
@@ -196,6 +202,16 @@ abstract class BaseBonPlanI18n extends BaseObject implements Persistent
     public function getIndice()
     {
         return $this->indice;
+    }
+
+    /**
+     * Get the [indice_prix] column value.
+     *
+     * @return string
+     */
+    public function getIndicePrix()
+    {
+        return $this->indice_prix;
     }
 
     /**
@@ -350,6 +366,27 @@ abstract class BaseBonPlanI18n extends BaseObject implements Persistent
     } // setIndice()
 
     /**
+     * Set the value of [indice_prix] column.
+     *
+     * @param string $v new value
+     * @return BonPlanI18n The current object (for fluent API support)
+     */
+    public function setIndicePrix($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->indice_prix !== $v) {
+            $this->indice_prix = $v;
+            $this->modifiedColumns[] = BonPlanI18nPeer::INDICE_PRIX;
+        }
+
+
+        return $this;
+    } // setIndicePrix()
+
+    /**
      * Indicates whether the columns in this object are only set to default values.
      *
      * This method can be used in conjunction with isModified() to indicate whether an object is both
@@ -392,6 +429,7 @@ abstract class BaseBonPlanI18n extends BaseObject implements Persistent
             $this->introduction = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
             $this->description = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
             $this->indice = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
+            $this->indice_prix = ($row[$startcol + 7] !== null) ? (string) $row[$startcol + 7] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -400,7 +438,7 @@ abstract class BaseBonPlanI18n extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 7; // 7 = BonPlanI18nPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 8; // 8 = BonPlanI18nPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating BonPlanI18n object", $e);
@@ -645,6 +683,9 @@ abstract class BaseBonPlanI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(BonPlanI18nPeer::INDICE)) {
             $modifiedColumns[':p' . $index++]  = '`indice`';
         }
+        if ($this->isColumnModified(BonPlanI18nPeer::INDICE_PRIX)) {
+            $modifiedColumns[':p' . $index++]  = '`indice_prix`';
+        }
 
         $sql = sprintf(
             'INSERT INTO `bon_plan_i18n` (%s) VALUES (%s)',
@@ -676,6 +717,9 @@ abstract class BaseBonPlanI18n extends BaseObject implements Persistent
                         break;
                     case '`indice`':
                         $stmt->bindValue($identifier, $this->indice, PDO::PARAM_STR);
+                        break;
+                    case '`indice_prix`':
+                        $stmt->bindValue($identifier, $this->indice_prix, PDO::PARAM_STR);
                         break;
                 }
             }
@@ -837,6 +881,9 @@ abstract class BaseBonPlanI18n extends BaseObject implements Persistent
             case 6:
                 return $this->getIndice();
                 break;
+            case 7:
+                return $this->getIndicePrix();
+                break;
             default:
                 return null;
                 break;
@@ -873,6 +920,7 @@ abstract class BaseBonPlanI18n extends BaseObject implements Persistent
             $keys[4] => $this->getIntroduction(),
             $keys[5] => $this->getDescription(),
             $keys[6] => $this->getIndice(),
+            $keys[7] => $this->getIndicePrix(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aBonPlan) {
@@ -933,6 +981,9 @@ abstract class BaseBonPlanI18n extends BaseObject implements Persistent
             case 6:
                 $this->setIndice($value);
                 break;
+            case 7:
+                $this->setIndicePrix($value);
+                break;
         } // switch()
     }
 
@@ -964,6 +1015,7 @@ abstract class BaseBonPlanI18n extends BaseObject implements Persistent
         if (array_key_exists($keys[4], $arr)) $this->setIntroduction($arr[$keys[4]]);
         if (array_key_exists($keys[5], $arr)) $this->setDescription($arr[$keys[5]]);
         if (array_key_exists($keys[6], $arr)) $this->setIndice($arr[$keys[6]]);
+        if (array_key_exists($keys[7], $arr)) $this->setIndicePrix($arr[$keys[7]]);
     }
 
     /**
@@ -982,6 +1034,7 @@ abstract class BaseBonPlanI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(BonPlanI18nPeer::INTRODUCTION)) $criteria->add(BonPlanI18nPeer::INTRODUCTION, $this->introduction);
         if ($this->isColumnModified(BonPlanI18nPeer::DESCRIPTION)) $criteria->add(BonPlanI18nPeer::DESCRIPTION, $this->description);
         if ($this->isColumnModified(BonPlanI18nPeer::INDICE)) $criteria->add(BonPlanI18nPeer::INDICE, $this->indice);
+        if ($this->isColumnModified(BonPlanI18nPeer::INDICE_PRIX)) $criteria->add(BonPlanI18nPeer::INDICE_PRIX, $this->indice_prix);
 
         return $criteria;
     }
@@ -1059,6 +1112,7 @@ abstract class BaseBonPlanI18n extends BaseObject implements Persistent
         $copyObj->setIntroduction($this->getIntroduction());
         $copyObj->setDescription($this->getDescription());
         $copyObj->setIndice($this->getIndice());
+        $copyObj->setIndicePrix($this->getIndicePrix());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -1180,6 +1234,7 @@ abstract class BaseBonPlanI18n extends BaseObject implements Persistent
         $this->introduction = null;
         $this->description = null;
         $this->indice = null;
+        $this->indice_prix = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();
