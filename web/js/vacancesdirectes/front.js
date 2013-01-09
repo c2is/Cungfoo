@@ -162,19 +162,6 @@ $(function() {
        }
     });
 
-// select
-    $('#searchForm').find('select').not('.sMultSelect').sSelect({ddMaxHeight: '300px'});
-    $('#annulationForm').find('select').sSelect({ddMaxHeight: '300px'});
-
-    $('.sMultSelect').sMultSelect({msgNull: 'Pas de réponse'});
-    /*$('.sMultSelectUl').wrap('<div class="tinyScroll" />').before('<div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>')
-     .wrap('<div class="viewport"><div class="overview"></div></div>');
-     $('.tinyScroll').tinyscrollbar();*/
-
-//navigation
-
-
-
 // footer
     // ajust borders height
     if($('#footerInfo').length){
@@ -430,10 +417,21 @@ $(function() {
 
     /*
      *  ############################################################
-     *                          DATEPICKER
+     *                          FORMS
      * ############################################################
      */
 
+    // selects
+    $('#searchForm').find('select').not('.sMultSelect').sSelect({ddMaxHeight: '300px'});
+    $('#annulationForm').find('select').sSelect({ddMaxHeight: '300px'});
+
+    $('.sMultSelect').sMultSelect({msgNull: 'Pas de réponse'});
+    /*$('.sMultSelectUl').wrap('<div class="tinyScroll" />').before('<div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>')
+     .wrap('<div class="viewport"><div class="overview"></div></div>');
+     $('.tinyScroll').tinyscrollbar();*/
+
+
+    // datepickers
     if ($('#searchContainer #datepicker').length) {
         var d = new Date(),
             fCurrentDate = formatDate(d),
@@ -1042,6 +1040,7 @@ head.ready(function(){
  * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
  */
 
+// (+/-) Button Number Incrementers
 function countItem() {
     //console.log("################################## countItem()  ##################################");
     $('.spin-bt-down, .spin-bt-up').live('click', function(){
@@ -1072,6 +1071,7 @@ function countItem() {
     });
 }
 
+// switch select between CAMPINGS and CITYS
 var $selects;
 function switchSelect(){
     //console.log("################################## switchSelect()  ##################################");
@@ -1107,6 +1107,7 @@ function switchSelect(){
     });
 }
 
+// toggle search criteria
 var toggleState = 0;
 function toggleSearchCriteria(){
     //console.log("################################## toggleSearchCriteria()  ##################################");
@@ -1122,6 +1123,10 @@ function toggleSearchCriteria(){
     });
 }
 
+// wait layer
+function showWaitLayer(){
+    $('#please_wait_layer').show();
+}
 
 /*
  * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
