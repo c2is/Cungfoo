@@ -2,13 +2,13 @@
 
 {% block title %}
 {% spaceless %}
-    {{ "seo.title.region" | trans ({'%region%': item}) }}
+    {{ "seo.title.poi" | trans ({'%poi%': poi.name, '%ville%': poi.city})}}
 {% endspaceless %}
 {% endblock %}
 
 {% block metaDescription %}
 {% spaceless %}
-    {{ "seo.meta.region" | trans  ({'%region%': item, '%pays%': item.pays})}}
+    {{ "seo.meta.poi" | trans  ({'%poi%': poi.name, '%ville%': poi.city})}}
 {% endspaceless %}
 {% endblock %}
 
@@ -17,7 +17,6 @@
     {# Bloc titre + accroche + picto #}
 
     <h1>{{ poi.name }}</h1> {# Titre #}
-    <h2 class="h3-like">{{ poi.name }}</h2>
     <div class="description">
         <img class="left border" src="{{ poi.image }}">
         <p>{{ poi.presentation }}</p>

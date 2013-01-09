@@ -1,29 +1,37 @@
 \Cungfoo\Model\Event:
     1:
-        Code: '747455'
+        Code: '870364'
         Category: DET
-        Address: 'place de l''Hôtel-de-Ville'
+        Address: 'Plage des Demoiselles'
         Address2: ''
-        Zipcode: '85330'
-        City: 'NOIRMOUTIER-EN-L ILE'
-        GeoCoordinateX: '47.000000'
-        GeoCoordinateY: '-2.244260'
-        DistanceCamping: '26889'
-        Image: 'http://viaimage.viafrance.com/images/evts/54197.jpg'
-        Priority: '5'
+        Zipcode: '85270'
+        City: 'SAINT HILAIRE DE RIEZ'
+        GeoCoordinateX: '46.739067'
+        GeoCoordinateY: '-2.006121'
+        DistanceCamping: '10724'
+        Image: 'http://viaimage.viafrance.com/images/evts/141879.jpg'
+        Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
     2:
-        Code: '441004'
-        Category: EXP
-        Address: 'rue du Cheminet'
+        Code: '870666'
+        Category: DET
+        Address: 'chemin du Bois Juquaud'
         Address2: ''
-        Zipcode: '85330'
-        City: 'NOIRMOUTIER-EN-L ILE'
-        GeoCoordinateX: '47.021939'
-        GeoCoordinateY: '-2.250317'
-        DistanceCamping: '29234'
-        Image: 'http://viaimage.viafrance.com/images/evts/115057.jpg'
-        Priority: '5'
+        Zipcode: '85270'
+        City: 'SAINT HILAIRE DE RIEZ'
+        GeoCoordinateX: '46.773496'
+        GeoCoordinateY: '-1.949687'
+        DistanceCamping: '12399'
+        Image: 'http://viaimage.viafrance.com/images/evts/1216.jpg'
+        Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
     3:
         Code: '425129'
@@ -34,37 +42,32 @@
         City: 'NOIRMOUTIER-EN-L ILE'
         GeoCoordinateX: '46.999002'
         GeoCoordinateY: '-2.247016'
-        DistanceCamping: '26901'
+        DistanceCamping: '23812'
         Image: 'http://viaimage.viafrance.com/images/evts/6882.jpg'
         Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
     4:
-        Code: '441019'
+        Code: '747455'
         Category: DET
-        Address: ''
-        Address2: 'passage du Gois'
+        Address: 'place de l''Hôtel-de-Ville'
+        Address2: ''
         Zipcode: '85330'
         City: 'NOIRMOUTIER-EN-L ILE'
-        GeoCoordinateX: '46.930509'
-        GeoCoordinateY: '-2.123497'
-        DistanceCamping: '16082'
-        Image: 'http://viaimage.viafrance.com/images/evts/54202.jpg'
-        Priority: '7'
+        GeoCoordinateX: '47.000000'
+        GeoCoordinateY: '-2.244260'
+        DistanceCamping: '23817'
+        Image: 'http://viaimage.viafrance.com/images/evts/54197.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
     5:
-        Code: '719422'
-        Category: SAL
-        Address: 'boulevard de la Croisette'
-        Address2: ''
-        Zipcode: '06400'
-        City: CANNES
-        GeoCoordinateX: '43.540529'
-        GeoCoordinateY: '7.034205'
-        DistanceCamping: '26765'
-        Image: 'http://viaimage.viafrance.com/images/evts/62583.jpg'
-        Priority: '2'
-        Active: true
-    6:
         Code: '659645'
         Category: FES
         Address: 'place de l''Hôtel-de-Ville'
@@ -73,37 +76,83 @@
         City: CANNES
         GeoCoordinateX: '43.551231'
         GeoCoordinateY: '7.012676'
-        DistanceCamping: '25805'
+        DistanceCamping: '25106'
         Image: 'http://viaimage.viafrance.com/images/evts/14096.jpg'
         Priority: '2'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.quinzaine-realisateurs.com'
+        Active: true
+    6:
+        Code: '768444'
+        Category: OCC
+        Address: 'avenue Henri Clews'
+        Address2: ''
+        Zipcode: '06210'
+        City: MANDELIEU-LA-NAPOULE
+        GeoCoordinateX: '43.525208'
+        GeoCoordinateY: '6.943854'
+        DistanceCamping: '18884'
+        Image: 'http://viaimage.viafrance.com/images/evts/101712.jpg'
+        Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.salondubateau.fr'
         Active: true
     7:
-        Code: '667063'
-        Category: FES
-        Address: 'boulevard de la Croisette'
+        Code: '665098'
+        Category: SAL
+        Address: 'avenue Francis-Tonner'
         Address2: ''
         Zipcode: '06400'
         City: CANNES
-        GeoCoordinateX: '43.540529'
-        GeoCoordinateY: '7.034205'
-        DistanceCamping: '26765'
-        Image: 'http://viaimage.viafrance.com/images/evts/14096.jpg'
-        Priority: '2'
+        GeoCoordinateX: '43.550027'
+        GeoCoordinateY: '6.957364'
+        DistanceCamping: '21004'
+        Image: 'http://viaimage.viafrance.com/images/evts/105258.jpg'
+        Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.eur-avia.com'
         Active: true
     8:
-        Code: '758335'
-        Category: SAL
-        Address: 'boulevard de la Croisette'
+        Code: '746878'
+        Category: FES
+        Address: 'place Castre'
         Address2: ''
         Zipcode: '06400'
         City: CANNES
-        GeoCoordinateX: '43.540529'
-        GeoCoordinateY: '7.034205'
-        DistanceCamping: '26765'
-        Image: 'http://viaimage.viafrance.com/images/evts/66722.jpg'
-        Priority: '2'
+        GeoCoordinateX: '43.550770'
+        GeoCoordinateY: '7.010356'
+        DistanceCamping: '24914'
+        Image: 'http://viaimage.viafrance.com/images/evts/148080.jpg'
+        Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
     9:
+        Code: '824821'
+        Category: VIV
+        Address: ''
+        Address2: 'foyer socio-culturel'
+        Zipcode: '30340'
+        City: ROUSSON
+        GeoCoordinateX: '44.196881'
+        GeoCoordinateY: '4.144602'
+        DistanceCamping: '28987'
+        Image: 'http://viaimage.viafrance.com/images/evts/70745.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.lagarce.net/'
+        Active: true
+    10:
         Code: '852911'
         Category: VIV
         Address: 'boulevard Gambetta'
@@ -112,37 +161,15 @@
         City: AUBENAS
         GeoCoordinateX: '44.620617'
         GeoCoordinateY: '4.392175'
-        DistanceCamping: '23688'
+        DistanceCamping: '23377'
         Image: 'http://viaimage.viafrance.com/images/evts/102577.jpg'
         Priority: '7'
-        Active: true
-    10:
-        Code: '775633'
-        Category: DET
-        Address: 'rue de Lauzière'
-        Address2: ''
-        Zipcode: '07200'
-        City: SAINT-PRIVAT
-        GeoCoordinateX: '44.628725'
-        GeoCoordinateY: '4.410192'
-        DistanceCamping: '24616'
-        Image: 'http://viaimage.viafrance.com/images/evts/12828.jpg'
-        Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
     11:
-        Code: '789335'
-        Category: DET
-        Address: ''
-        Address2: 'Le village'
-        Zipcode: '07120'
-        City: GROSPIERRES
-        GeoCoordinateX: '44.400518'
-        GeoCoordinateY: '4.289792'
-        DistanceCamping: '8419'
-        Image: 'http://viaimage.viafrance.com/images/evts/114928.jpg'
-        Priority: '8'
-        Active: true
-    12:
         Code: '862025'
         Category: DET
         Address: 'route des Gorges de l''Ardèche'
@@ -151,9 +178,30 @@
         City: 'VALLON-PONT-D ARC'
         GeoCoordinateX: '44.377808'
         GeoCoordinateY: '4.427640'
-        DistanceCamping: '4171'
+        DistanceCamping: '7266'
         Image: 'http://viaimage.viafrance.com/images/evts/104534.jpg'
         Priority: '2'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    12:
+        Code: '501140'
+        Category: DET
+        Address: ''
+        Address2: Le-Village
+        Zipcode: '07150'
+        City: 'VALLON-PONT-D ARC'
+        GeoCoordinateX: '44.396708'
+        GeoCoordinateY: '4.386054'
+        DistanceCamping: '3353'
+        Image: 'http://viaimage.viafrance.com/images/evts/48278.jpg'
+        Priority: '4'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
     13:
         Code: '722965'
@@ -164,9 +212,13 @@
         City: BENODET
         GeoCoordinateX: '47.881729'
         GeoCoordinateY: '-4.115098'
-        DistanceCamping: '944'
+        DistanceCamping: '872'
         Image: 'http://viaimage.viafrance.com/images/evts/45941.jpg'
         Priority: '2'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
     14:
         Code: '660013'
@@ -177,9 +229,13 @@
         City: CONCARNEAU
         GeoCoordinateX: '47.870091'
         GeoCoordinateY: '-3.921767'
-        DistanceCamping: '13773'
+        DistanceCamping: '13602'
         Image: 'http://viaimage.viafrance.com/images/evts/61988.jpg'
         Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.livremer.org/'
         Active: true
     15:
         Code: '752828'
@@ -190,9 +246,13 @@
         City: QUIMPER
         GeoCoordinateX: '47.995440'
         GeoCoordinateY: '-4.102951'
-        DistanceCamping: '13322'
+        DistanceCamping: '12601'
         Image: 'http://viaimage.viafrance.com/images/evts/104443.jpg'
         Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.tourdufinistere.fr'
         Active: true
     16:
         Code: '866218'
@@ -203,9 +263,13 @@
         City: QUIMPER
         GeoCoordinateX: '47.996134'
         GeoCoordinateY: '-4.102301'
-        DistanceCamping: '13400'
+        DistanceCamping: '12679'
         Image: 'http://viaimage.viafrance.com/images/evts/63037.jpg'
         Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
     17:
         Code: '864019'
@@ -216,9 +280,13 @@
         City: CLERMONT-FERRAND
         GeoCoordinateX: '45.774162'
         GeoCoordinateY: '3.086829'
-        DistanceCamping: '24928'
+        DistanceCamping: '26162'
         Image: 'http://viaimage.viafrance.com/images/evts/158016.jpg'
         Priority: '2'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
     18:
         Code: '821846'
@@ -229,9 +297,13 @@
         City: CLERMONT-FERRAND
         GeoCoordinateX: '45.774137'
         GeoCoordinateY: '3.088356'
-        DistanceCamping: '24978'
+        DistanceCamping: '26212'
         Image: 'http://viaimage.viafrance.com/images/evts/145719.jpg'
         Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
     19:
         Code: '771990'
@@ -242,9 +314,13 @@
         City: CLERMONT-FERRAND
         GeoCoordinateX: '45.779362'
         GeoCoordinateY: '3.085982'
-        DistanceCamping: '25417'
+        DistanceCamping: '26654'
         Image: 'http://viaimage.viafrance.com/images/evts/26183.jpg'
         Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.montferrandmedieval.org'
         Active: true
     20:
         Code: '729723'
@@ -255,22 +331,30 @@
         City: CLERMONT-FERRAND
         GeoCoordinateX: '45.779362'
         GeoCoordinateY: '3.085982'
-        DistanceCamping: '25417'
+        DistanceCamping: '26654'
         Image: 'http://viaimage.viafrance.com/images/evts/45298.jpg'
         Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.couriraclermont.fr'
         Active: true
     21:
-        Code: '794813'
-        Category: FET
-        Address: 'place de Verdun'
-        Address2: ''
+        Code: '664561'
+        Category: REU
+        Address: 'avenue du Palais-des-Expositions'
+        Address2: Parc-des-attractions
         Zipcode: '66000'
         City: PERPIGNAN
-        GeoCoordinateX: '42.700618'
-        GeoCoordinateY: '2.894374'
-        DistanceCamping: '20120'
-        Image: 'http://viaimage.viafrance.com/images/evts/35950.jpg'
-        Priority: '1'
+        GeoCoordinateX: '42.708334'
+        GeoCoordinateY: '2.903238'
+        DistanceCamping: '19420'
+        Image: 'http://viaimage.viafrance.com/images/evts/43963.jpg'
+        Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
     22:
         Code: '682754'
@@ -281,9 +365,13 @@
         City: PERPIGNAN
         GeoCoordinateX: '42.703393'
         GeoCoordinateY: '2.899642'
-        DistanceCamping: '20165'
+        DistanceCamping: '19161'
         Image: 'http://viaimage.viafrance.com/images/evts/52326.jpg'
         Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
     23:
         Code: '739808'
@@ -294,9 +382,13 @@
         City: PERPIGNAN
         GeoCoordinateX: '42.703393'
         GeoCoordinateY: '2.899642'
-        DistanceCamping: '20165'
+        DistanceCamping: '19161'
         Image: 'http://viaimage.viafrance.com/images/evts/6173.jpg'
         Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
     24:
         Code: '761383'
@@ -307,24 +399,49 @@
         City: PERPIGNAN
         GeoCoordinateX: '42.699655'
         GeoCoordinateY: '2.894829'
-        DistanceCamping: '20010'
+        DistanceCamping: '19085'
         Image: 'http://viaimage.viafrance.com/images/evts/46480.jpg'
         Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
     25:
-        Code: '770390'
-        Category: EXP
-        Address: 'place La Galiconnière'
-        Address2: 'Hôtel de Cheusses'
-        Zipcode: '17300'
-        City: ROCHEFORT-SUR-MER
-        GeoCoordinateX: '45.935071'
-        GeoCoordinateY: '-0.957925'
-        DistanceCamping: '28258'
-        Image: 'http://viaimage.viafrance.com/images/evts/18008.jpg'
-        Priority: '7'
+        Code: '870209'
+        Category: DET
+        Address: 'place de la République'
+        Address2: ''
+        Zipcode: '17480'
+        City: 'LE CHATEAU-D OLERON'
+        GeoCoordinateX: '45.886587'
+        GeoCoordinateY: '-1.195789'
+        DistanceCamping: '17472'
+        Image: 'http://viaimage.viafrance.com/images/evts/158790.jpg'
+        Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
     26:
+        Code: '870207'
+        Category: DET
+        Address: 'place de la République'
+        Address2: ''
+        Zipcode: '17480'
+        City: 'LE CHATEAU-D OLERON'
+        GeoCoordinateX: '45.886587'
+        GeoCoordinateY: '-1.195789'
+        DistanceCamping: '17472'
+        Image: 'http://viaimage.viafrance.com/images/evts/158501.jpg'
+        Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    27:
         Code: '757198'
         Category: DET
         Address: 'route des Allées'
@@ -333,11 +450,15 @@
         City: 'SAINT-PIERRE-D OLERON'
         GeoCoordinateX: '45.942772'
         GeoCoordinateY: '-1.307030'
-        DistanceCamping: '28160'
+        DistanceCamping: '25733'
         Image: 'http://viaimage.viafrance.com/images/evts/101754.jpg'
         Priority: '2'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.ile-oleron-marennes.com/'
         Active: true
-    27:
+    28:
         Code: '757212'
         Category: DET
         Address: 'plage de la Remigeasse'
@@ -346,22 +467,13 @@
         City: 'DOLUS D OLERON'
         GeoCoordinateX: '45.894005'
         GeoCoordinateY: '-1.288470'
-        DistanceCamping: '22703'
+        DistanceCamping: '20205'
         Image: 'http://viaimage.viafrance.com/images/evts/69307.jpg'
         Priority: '2'
-        Active: true
-    28:
-        Code: '757222'
-        Category: DET
-        Address: 'Grande Plage de Saint-Trojan'
-        Address2: ''
-        Zipcode: '17370'
-        City: SAINT-TROJAN-LES-BAINS
-        GeoCoordinateX: '45.836483'
-        GeoCoordinateY: '-1.200835'
-        DistanceCamping: '14067'
-        Image: 'http://viaimage.viafrance.com/images/evts/101755.jpg'
-        Priority: '2'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
     29:
         Code: '859250'
@@ -372,9 +484,13 @@
         City: BAYONNE
         GeoCoordinateX: '43.536941'
         GeoCoordinateY: '-1.373203'
-        DistanceCamping: '29656'
+        DistanceCamping: '28128'
         Image: 'http://viaimage.viafrance.com/images/evts/102560.jpg'
         Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.fetes.bayonne.fr'
         Active: true
     30:
         Code: '736083'
@@ -385,9 +501,13 @@
         City: DAX
         GeoCoordinateX: '43.712908'
         GeoCoordinateY: '-1.049446'
-        DistanceCamping: '22491'
+        DistanceCamping: '22043'
         Image: 'http://viaimage.viafrance.com/images/evts/147769.jpg'
         Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://feria.dax.fr/'
         Active: true
     31:
         Code: '609942'
@@ -398,9 +518,13 @@
         City: DAX
         GeoCoordinateX: '43.712601'
         GeoCoordinateY: '-1.049369'
-        DistanceCamping: '22512'
+        DistanceCamping: '22061'
         Image: 'http://viaimage.viafrance.com/images/evts/129473.jpg'
         Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
     32:
         Code: '829569'
@@ -411,11 +535,49 @@
         City: DAX
         GeoCoordinateX: '43.711239'
         GeoCoordinateY: '-1.045875'
-        DistanceCamping: '22830'
+        DistanceCamping: '22378'
         Image: 'http://viaimage.viafrance.com/images/evts/48735.jpg'
         Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.usdax.fr/'
         Active: true
     33:
+        Code: '719422'
+        Category: SAL
+        Address: 'boulevard de la Croisette'
+        Address2: ''
+        Zipcode: '06400'
+        City: CANNES
+        GeoCoordinateX: '43.540529'
+        GeoCoordinateY: '7.034205'
+        DistanceCamping: '9346'
+        Image: 'http://viaimage.viafrance.com/images/evts/62583.jpg'
+        Priority: '2'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.marchedufilm.com'
+        Active: true
+    34:
+        Code: '667063'
+        Category: FES
+        Address: 'boulevard de la Croisette'
+        Address2: ''
+        Zipcode: '06400'
+        City: CANNES
+        GeoCoordinateX: '43.540529'
+        GeoCoordinateY: '7.034205'
+        DistanceCamping: '9346'
+        Image: 'http://viaimage.viafrance.com/images/evts/14096.jpg'
+        Priority: '2'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.festival-cannes.fr'
+        Active: true
+    35:
         Code: '866298'
         Category: MUS
         Address: 'route de Grenoble'
@@ -424,50 +586,15 @@
         City: NICE
         GeoCoordinateX: '43.677882'
         GeoCoordinateY: '7.200720'
-        DistanceCamping: '21548'
+        DistanceCamping: '23281'
         Image: 'http://viaimage.viafrance.com/images/evts/16005.jpg'
         Priority: '2'
-        Active: true
-    34:
-        Code: '779079'
-        Category: SAL
-        Address: 'place Gabriel Péri'
-        Address2: 'avenue Général Leclerc'
-        Zipcode: '83000'
-        City: TOULON
-        GeoCoordinateX: '43.126246'
-        GeoCoordinateY: '5.925847'
-        DistanceCamping: '29513'
-        Image: 'http://viaimage.viafrance.com/images/evts/37137.jpg'
-        Priority: '3'
-        Active: true
-    35:
-        Code: '794152'
-        Category: DET
-        Address: 'boulevard de Strasbourg'
-        Address2: ''
-        Zipcode: '83000'
-        City: TOULON
-        GeoCoordinateX: '43.124905'
-        GeoCoordinateY: '5.932437'
-        DistanceCamping: '29862'
-        Image: 'http://viaimage.viafrance.com/images/evts/59976.jpg'
-        Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://muse.mu/'
         Active: true
     36:
-        Code: '647899'
-        Category: SAL
-        Address: 'boulevard du Commandant-Nicolas'
-        Address2: ''
-        Zipcode: '83000'
-        City: TOULON
-        GeoCoordinateX: '43.127928'
-        GeoCoordinateY: '5.932094'
-        DistanceCamping: '29544'
-        Image: 'http://viaimage.viafrance.com/images/evts/46712.jpg'
-        Priority: '3'
-        Active: true
-    37:
         Code: '837450'
         Category: VIV
         Address: 'chemin de Châteauvallon'
@@ -476,11 +603,100 @@
         City: OLLIOULES
         GeoCoordinateX: '43.147014'
         GeoCoordinateY: '5.877230'
-        DistanceCamping: '25988'
+        DistanceCamping: '26548'
         Image: 'http://viaimage.viafrance.com/images/evts/142541.jpg'
         Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    37:
+        Code: '837452'
+        Category: VIV
+        Address: 'chemin de Châteauvallon'
+        Address2: ''
+        Zipcode: '83190'
+        City: OLLIOULES
+        GeoCoordinateX: '43.147014'
+        GeoCoordinateY: '5.877230'
+        DistanceCamping: '26548'
+        Image: 'http://viaimage.viafrance.com/images/evts/142214.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.israelgalvan.com'
         Active: true
     38:
+        Code: '827663'
+        Category: MUS
+        Address: 'rue Raoul-Henry'
+        Address2: 'B.P 24'
+        Zipcode: '83110'
+        City: SANARY-SUR-MER
+        GeoCoordinateX: '43.117525'
+        GeoCoordinateY: '5.803678'
+        DistanceCamping: '28853'
+        Image: 'http://viaimage.viafrance.com/images/evts/10049.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.julienclerc.com'
+        Active: true
+    39:
+        Code: '837460'
+        Category: VIV
+        Address: 'chemin de Châteauvallon'
+        Address2: ''
+        Zipcode: '83190'
+        City: OLLIOULES
+        GeoCoordinateX: '43.147014'
+        GeoCoordinateY: '5.877230'
+        DistanceCamping: '26548'
+        Image: 'http://viaimage.viafrance.com/images/evts/86966.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.mathildemonnier.com'
+        Active: true
+    40:
+        Code: '870602'
+        Category: EXP
+        Address: 'place du village'
+        Address2: ''
+        Zipcode: '40660'
+        City: 'MOLIETS ET MAA'
+        GeoCoordinateX: '43.862922'
+        GeoCoordinateY: '-1.350322'
+        DistanceCamping: '27950'
+        Image: 'http://viaimage.viafrance.com/images/evts/14349.jpg'
+        Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    41:
+        Code: '878346'
+        Category: DET
+        Address: 'avenue de Mimizan'
+        Address2: ''
+        Zipcode: '40200'
+        City: PONTENX-LES-FORGES
+        GeoCoordinateX: '44.239034'
+        GeoCoordinateY: '-1.127761'
+        DistanceCamping: '18681'
+        Image: 'http://viaimage.viafrance.com/images/evts/73.jpg'
+        Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    42:
         Code: '747143'
         Category: DET
         Address: 'avenue Albert-Poisson'
@@ -489,50 +705,32 @@
         City: 'RION DES LANDES'
         GeoCoordinateX: '43.933322'
         GeoCoordinateY: '-0.916850'
-        DistanceCamping: '25442'
+        DistanceCamping: '24591'
         Image: 'http://viaimage.viafrance.com/images/evts/5560.jpg'
         Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
-    39:
-        Code: '173896'
+    43:
+        Code: '862278'
         Category: DET
-        Address: 'avenue de la Gare'
+        Address: 'Vielle Saint Girons'
         Address2: ''
-        Zipcode: '40200'
-        City: MIMIZAN
-        GeoCoordinateX: '44.199830'
-        GeoCoordinateY: '-1.226855'
-        DistanceCamping: '14621'
-        Image: 'http://viaimage.viafrance.com/images/evts/6617.gif'
+        Zipcode: '40560'
+        City: VIELLE-SAINT-GIRONS
+        GeoCoordinateX: '43.914673'
+        GeoCoordinateY: '-1.302703'
+        DistanceCamping: '21049'
+        Image: 'http://viaimage.viafrance.com/images/evts/127001.jpg'
         Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
-    40:
-        Code: '398106'
-        Category: DET
-        Address: 'avenue de la Gare'
-        Address2: ''
-        Zipcode: '40200'
-        City: MIMIZAN
-        GeoCoordinateX: '44.199830'
-        GeoCoordinateY: '-1.226855'
-        DistanceCamping: '14621'
-        Image: 'http://viaimage.viafrance.com/images/evts/45378.jpg'
-        Priority: '8'
-        Active: true
-    41:
-        Code: '467259'
-        Category: DET
-        Address: 'avenue de la Côte d''Argent'
-        Address2: ''
-        Zipcode: '40200'
-        City: MIMIZAN
-        GeoCoordinateX: '44.215144'
-        GeoCoordinateY: '-1.297136'
-        DistanceCamping: '18689'
-        Image: 'http://viaimage.viafrance.com/images/evts/11862.jpg'
-        Priority: '8'
-        Active: true
-    42:
+    44:
         Code: '789339'
         Category: FES
         Address: 'rue Jean-Jaurès'
@@ -541,11 +739,15 @@
         City: ANNECY
         GeoCoordinateX: '45.902704'
         GeoCoordinateY: '6.128190'
-        DistanceCamping: '15740'
+        DistanceCamping: '16104'
         Image: 'http://viaimage.viafrance.com/images/evts/38737.jpg'
         Priority: '2'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.annecy.org'
         Active: true
-    43:
+    45:
         Code: '713078'
         Category: SPO
         Address: 'place de l''Hôtel-de-Ville'
@@ -554,11 +756,15 @@
         City: ANNECY
         GeoCoordinateX: '45.899097'
         GeoCoordinateY: '6.130068'
-        DistanceCamping: '15317'
+        DistanceCamping: '15682'
         Image: 'http://viaimage.viafrance.com/images/evts/45298.jpg'
         Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.marathon-annecy.com/'
         Active: true
-    44:
+    46:
         Code: '860197'
         Category: SPO
         Address: '<BR/>'
@@ -567,11 +773,15 @@
         City: 'LE GRAND BORNAND'
         GeoCoordinateX: '45.941399'
         GeoCoordinateY: '6.427763'
-        DistanceCamping: '24351'
+        DistanceCamping: '24154'
         Image: 'http://viaimage.viafrance.com/images/evts/146120.jpg'
         Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.letour.fr'
         Active: true
-    45:
+    47:
         Code: '860198'
         Category: SPO
         Address: 'place de l''Hôtel-de-Ville'
@@ -580,11 +790,15 @@
         City: ANNECY
         GeoCoordinateX: '45.899097'
         GeoCoordinateY: '6.130068'
-        DistanceCamping: '15317'
+        DistanceCamping: '15682'
         Image: 'http://viaimage.viafrance.com/images/evts/146119.jpg'
         Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.letour.fr'
         Active: true
-    46:
+    48:
         Code: '620641'
         Category: FES
         Address: 'esplanade Saint-Jean-d''Acre'
@@ -593,11 +807,15 @@
         City: 'LA ROCHELLE'
         GeoCoordinateX: '46.155427'
         GeoCoordinateY: '-1.155762'
-        DistanceCamping: '23911'
+        DistanceCamping: '21909'
         Image: 'http://viaimage.viafrance.com/images/evts/102118.jpg'
         Priority: '2'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.francofolies.fr'
         Active: true
-    47:
+    49:
         Code: '746486'
         Category: SAL
         Address: 'avenue de la Capitainerie'
@@ -606,11 +824,15 @@
         City: 'LA ROCHELLE'
         GeoCoordinateX: '46.142775'
         GeoCoordinateY: '-1.166923'
-        DistanceCamping: '22267'
+        DistanceCamping: '20308'
         Image: 'http://viaimage.viafrance.com/images/evts/46238.jpg'
         Priority: '2'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.grand-pavois.com/'
         Active: true
-    48:
+    50:
         Code: '795230'
         Category: FET
         Address: 'avenue de la Capitainerie'
@@ -619,11 +841,15 @@
         City: 'LA ROCHELLE'
         GeoCoordinateX: '46.142775'
         GeoCoordinateY: '-1.166923'
-        DistanceCamping: '22267'
+        DistanceCamping: '20308'
         Image: 'http://viaimage.viafrance.com/images/evts/124185.jpg'
         Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.lunapark-larochelle.fr/'
         Active: true
-    49:
+    51:
         Code: '620635'
         Category: FES
         Address: 'rue Amelot'
@@ -632,11 +858,15 @@
         City: 'LA ROCHELLE'
         GeoCoordinateX: '46.160685'
         GeoCoordinateY: '-1.149224'
-        DistanceCamping: '24678'
+        DistanceCamping: '22624'
         Image: 'http://viaimage.viafrance.com/images/evts/62583.jpg'
         Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.trescourt.com/'
         Active: true
-    50:
+    52:
         Code: '837726'
         Category: FES
         Address: 'rue Pierre-et-Marie-Curie'
@@ -645,11 +875,15 @@
         City: MULHOUSE
         GeoCoordinateX: '47.750087'
         GeoCoordinateY: '7.336109'
-        DistanceCamping: '15241'
+        DistanceCamping: '15772'
         Image: 'http://viaimage.viafrance.com/images/evts/50802.jpg'
         Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.festivalauto.mulhouse.fr/'
         Active: true
-    51:
+    53:
         Code: '746610'
         Category: SAL
         Address: 'rue Lefebvre'
@@ -658,63 +892,66 @@
         City: MULHOUSE
         GeoCoordinateX: '47.762152'
         GeoCoordinateY: '7.338886'
-        DistanceCamping: '14610'
+        DistanceCamping: '15194'
         Image: 'http://viaimage.viafrance.com/images/evts/157285.jpg'
         Priority: '3'
-        Active: true
-    52:
-        Code: '853545'
-        Category: DET
-        Address: 'place de la Réunion'
-        Address2: ''
-        Zipcode: '68100'
-        City: MULHOUSE
-        GeoCoordinateX: '47.746710'
-        GeoCoordinateY: '7.338387'
-        DistanceCamping: '15610'
-        Image: 'http://viaimage.viafrance.com/images/evts/51239.jpg'
-        Priority: '5'
-        Active: true
-    53:
-        Code: '853529'
-        Category: DET
-        Address: 'rue Jean-Jacques-Henner'
-        Address2: ''
-        Zipcode: '68100'
-        City: MULHOUSE
-        GeoCoordinateX: '47.744897'
-        GeoCoordinateY: '7.344684'
-        DistanceCamping: '16102'
-        Image: 'http://viaimage.viafrance.com/images/evts/33381.jpg'
-        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://festivalmondialbiere.qc.ca'
         Active: true
     54:
+        Code: '858760'
+        Category: SPO
+        Address: 'rue Illberg'
+        Address2: ''
+        Zipcode: '68100'
+        City: MULHOUSE
+        GeoCoordinateX: '47.738932'
+        GeoCoordinateY: '7.317433'
+        DistanceCamping: '15488'
+        Image: 'http://viaimage.viafrance.com/images/evts/145298.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.harlemglobetrotters.com'
+        Active: true
+    55:
+        Code: '844377'
+        Category: MUS
+        Address: 'rue de la Fontaine'
+        Address2: ''
+        Zipcode: '68390'
+        City: SAUSHEIM
+        GeoCoordinateX: '47.781618'
+        GeoCoordinateY: '7.369652'
+        DistanceCamping: '16298'
+        Image: 'http://viaimage.viafrance.com/images/evts/150025.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.arno.be'
+        Active: true
+    56:
         Code: '736086'
         Category: SPO
-        Address: ''
-        Address2: 'Plage Centrale'
+        Address: 'boulevard de la Plage'
+        Address2: ''
         Zipcode: '33680'
         City: 'LACANAU OCEAN'
         GeoCoordinateX: '44.999682'
         GeoCoordinateY: '-1.204414'
-        DistanceCamping: '10383'
+        DistanceCamping: '7309'
         Image: 'http://viaimage.viafrance.com/images/evts/11944.jpg'
         Priority: '2'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://sooruzlacanaupro.com/'
         Active: true
-    55:
-        Code: '768041'
-        Category: DET
-        Address: 'domaine des Bombannes'
-        Address2: ''
-        Zipcode: '33121'
-        City: CARCANS-MAUBUISSON
-        GeoCoordinateX: '45.104179'
-        GeoCoordinateY: '-1.141757'
-        DistanceCamping: '14900'
-        Image: 'http://viaimage.viafrance.com/images/evts/25021.jpg'
-        Priority: '5'
-        Active: true
-    56:
+    57:
         Code: '485415'
         Category: DET
         Address: 'route de l''Atlantique'
@@ -723,24 +960,49 @@
         City: LACANAU
         GeoCoordinateX: '45.005400'
         GeoCoordinateY: '-1.167234'
-        DistanceCamping: '7788'
+        DistanceCamping: '4338'
         Image: 'http://viaimage.viafrance.com/images/evts/5560.jpg'
         Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
-    57:
+    58:
         Code: '686214'
         Category: DET
-        Address: ''
-        Address2: 'Plage Centrale'
+        Address: 'boulevard de la Plage'
+        Address2: ''
         Zipcode: '33680'
         City: 'LACANAU OCEAN'
         GeoCoordinateX: '44.999682'
         GeoCoordinateY: '-1.204414'
-        DistanceCamping: '10383'
+        DistanceCamping: '7309'
         Image: 'http://viaimage.viafrance.com/images/evts/5560.jpg'
         Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
-    58:
+    59:
+        Code: '399903'
+        Category: DET
+        Address: 'Etang de Lacanau'
+        Address2: ''
+        Zipcode: '33680'
+        City: LACANAU
+        GeoCoordinateX: '44.972595'
+        GeoCoordinateY: '-1.117356'
+        DistanceCamping: '3956'
+        Image: 'http://viaimage.viafrance.com/images/evts/48622.jpg'
+        Priority: '6'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.lacanauocean.com'
+        Active: true
+    60:
         Code: '792016'
         Category: FET
         Address: 'place de la Liberté'
@@ -749,11 +1011,15 @@
         City: BAYONNE
         GeoCoordinateX: '43.492984'
         GeoCoordinateY: '-1.474818'
-        DistanceCamping: '11048'
+        DistanceCamping: '11431'
         Image: 'http://viaimage.viafrance.com/images/evts/81367.jpg'
         Priority: '2'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.fetes.bayonne.fr'
         Active: true
-    59:
+    61:
         Code: '792065'
         Category: FET
         Address: 'place de la Liberté'
@@ -762,11 +1028,15 @@
         City: BAYONNE
         GeoCoordinateX: '43.492984'
         GeoCoordinateY: '-1.474818'
-        DistanceCamping: '11048'
+        DistanceCamping: '11431'
         Image: 'http://viaimage.viafrance.com/images/evts/81367.jpg'
         Priority: '2'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.fetes.bayonne.fr'
         Active: true
-    60:
+    62:
         Code: '650671'
         Category: FET
         Address: 'place de la Liberté'
@@ -775,11 +1045,15 @@
         City: BAYONNE
         GeoCoordinateX: '43.492984'
         GeoCoordinateY: '-1.474818'
-        DistanceCamping: '11048'
+        DistanceCamping: '11431'
         Image: 'http://viaimage.viafrance.com/images/evts/145586.jpg'
         Priority: '2'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.fetes.bayonne.fr'
         Active: true
-    61:
+    63:
         Code: '768923'
         Category: SAL
         Address: ''
@@ -788,11 +1062,15 @@
         City: HENDAYE
         GeoCoordinateX: '43.359399'
         GeoCoordinateY: '-1.766148'
-        DistanceCamping: '16758'
+        DistanceCamping: '16397'
         Image: 'http://viaimage.viafrance.com/images/evts/31402.jpg'
         Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.salonjardin.hendaye.com'
         Active: true
-    62:
+    64:
         Code: '862765'
         Category: DET
         Address: 'route de la mer'
@@ -801,11 +1079,15 @@
         City: GHISONACCIA
         GeoCoordinateX: '42.005348'
         GeoCoordinateY: '9.427655'
-        DistanceCamping: '9478'
+        DistanceCamping: '3172'
         Image: 'http://viaimage.viafrance.com/images/evts/157790.jpg'
         Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
-    63:
+    65:
         Code: '862771'
         Category: DET
         Address: 'Ranch Evasion'
@@ -814,11 +1096,15 @@
         City: GHISONACCIA
         GeoCoordinateX: '42.016837'
         GeoCoordinateY: '9.403981'
-        DistanceCamping: '7527'
+        DistanceCamping: '3405'
         Image: 'http://viaimage.viafrance.com/images/evts/153345.jpg'
         Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
-    64:
+    66:
         Code: '746556'
         Category: EXP
         Address: ''
@@ -827,11 +1113,15 @@
         City: ALERIA
         GeoCoordinateX: '42.104083'
         GeoCoordinateY: '9.512293'
-        DistanceCamping: '19405'
+        DistanceCamping: '16078'
         Image: 'http://viaimage.viafrance.com/images/evts/82301.jpg'
         Priority: '7'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
-    65:
+    67:
         Code: '398455'
         Category: DET
         Address: 'place de la Mairie'
@@ -840,11 +1130,32 @@
         City: ALERIA
         GeoCoordinateX: '42.103964'
         GeoCoordinateY: '9.512885'
-        DistanceCamping: '19440'
+        DistanceCamping: '16096'
         Image: 'http://viaimage.viafrance.com/images/evts/45378.jpg'
         Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
-    66:
+    68:
+        Code: '872164'
+        Category: DET
+        Address: ''
+        Address2: 'Lac marin d''Hossegor'
+        Zipcode: '40150'
+        City: 'SOORTS HOSSEGOR'
+        GeoCoordinateX: '43.678718'
+        GeoCoordinateY: '-1.424773'
+        DistanceCamping: '13362'
+        Image: 'http://viaimage.viafrance.com/images/evts/104493.jpg'
+        Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    69:
         Code: '862395'
         Category: DET
         Address: 'route Plage Sud'
@@ -853,48 +1164,13 @@
         City: MESSANGES
         GeoCoordinateX: '43.796388'
         GeoCoordinateY: '-1.393166'
-        DistanceCamping: '2356'
+        DistanceCamping: '633'
         Image: 'http://viaimage.viafrance.com/images/evts/51780.jpg'
         Priority: '9'
-        Active: true
-    67:
-        Code: '439516'
-        Category: DET
-        Address: 'allée de la voile'
-        Address2: 'Berges de Soustons'
-        Zipcode: '40140'
-        City: 'SOUSTONS-PORT-D ALBRET'
-        GeoCoordinateX: '43.757168'
-        GeoCoordinateY: '-1.336566'
-        DistanceCamping: '7210'
-        Image: 'http://viaimage.viafrance.com/images/evts/48501.jpg'
-        Priority: '8'
-        Active: true
-    68:
-        Code: '484463'
-        Category: EXP
-        Address: 'impasse de l''Eglise'
-        Address2: ''
-        Zipcode: '40660'
-        City: 'MOLIETS ET MAA'
-        GeoCoordinateX: '43.849435'
-        GeoCoordinateY: '-1.358910'
-        DistanceCamping: '4163'
-        Image: 'http://viaimage.viafrance.com/images/evts/48879.jpg'
-        Priority: '8'
-        Active: true
-    69:
-        Code: '484466'
-        Category: DET
-        Address: 'avenue de l''Océan'
-        Address2: ''
-        Zipcode: '40660'
-        City: 'MOLIETS ET MAA'
-        GeoCoordinateX: '43.851602'
-        GeoCoordinateY: '-1.360307'
-        DistanceCamping: '4349'
-        Image: 'http://viaimage.viafrance.com/images/evts/43038.jpg'
-        Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
     70:
         Code: '633785'
@@ -905,24 +1181,66 @@
         City: TOULON
         GeoCoordinateX: '43.120188'
         GeoCoordinateY: '5.935717'
-        DistanceCamping: '15647'
+        DistanceCamping: '18740'
         Image: 'http://viaimage.viafrance.com/images/evts/9133.jpg'
         Priority: '1'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
     71:
-        Code: '789455'
-        Category: SPO
-        Address: 'port du Manteau'
-        Address2: 'Corniche Michel Pacha'
-        Zipcode: '83500'
-        City: 'LA SEYNE-SUR-MER'
-        GeoCoordinateX: '43.093030'
-        GeoCoordinateY: '5.907684'
-        DistanceCamping: '18184'
-        Image: 'http://viaimage.viafrance.com/images/evts/17973.jpg'
-        Priority: '2'
+        Code: '779079'
+        Category: SAL
+        Address: 'place Gabriel Péri'
+        Address2: 'avenue Général Leclerc'
+        Zipcode: '83000'
+        City: TOULON
+        GeoCoordinateX: '43.126246'
+        GeoCoordinateY: '5.925847'
+        DistanceCamping: '19644'
+        Image: 'http://viaimage.viafrance.com/images/evts/37137.jpg'
+        Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
     72:
+        Code: '794152'
+        Category: DET
+        Address: 'boulevard de Strasbourg'
+        Address2: ''
+        Zipcode: '83000'
+        City: TOULON
+        GeoCoordinateX: '43.124905'
+        GeoCoordinateY: '5.932437'
+        DistanceCamping: '19091'
+        Image: 'http://viaimage.viafrance.com/images/evts/59976.jpg'
+        Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.tous-a-lopera.fr'
+        Active: true
+    73:
+        Code: '863392'
+        Category: EXP
+        Address: 'place Monsenergue'
+        Address2: 'Quai de Norfolk'
+        Zipcode: '83000'
+        City: TOULON
+        GeoCoordinateX: '43.122027'
+        GeoCoordinateY: '5.929027'
+        DistanceCamping: '19309'
+        Image: 'http://viaimage.viafrance.com/images/evts/157886.jpg'
+        Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    74:
         Code: '776735'
         Category: FET
         Address: ' Jardins-du-Peyrou'
@@ -931,11 +1249,15 @@
         City: MONTPELLIER
         GeoCoordinateX: '43.611327'
         GeoCoordinateY: '3.870293'
-        DistanceCamping: '29608'
+        DistanceCamping: '29027'
         Image: 'http://viaimage.viafrance.com/images/evts/3443.jpg'
         Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.montpelliergay.com'
         Active: true
-    73:
+    75:
         Code: '665102'
         Category: SPO
         Address: 'place de la Comédie'
@@ -944,11 +1266,15 @@
         City: MONTPELLIER
         GeoCoordinateX: '43.608389'
         GeoCoordinateY: '3.879882'
-        DistanceCamping: '29945'
+        DistanceCamping: '29369'
         Image: 'http://viaimage.viafrance.com/images/evts/17835.jpg'
         Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.montpellierbeachvolley.fr/'
         Active: true
-    74:
+    76:
         Code: '670653'
         Category: FES
         Address: 'avenue Sergents'
@@ -957,24 +1283,32 @@
         City: AGDE
         GeoCoordinateX: '43.286376'
         GeoCoordinateY: '3.510760'
-        DistanceCamping: '17308'
+        DistanceCamping: '17917'
         Image: 'http://viaimage.viafrance.com/images/evts/62583.jpg'
         Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.lesheraultducinema.com/'
         Active: true
-    75:
-        Code: '809035'
+    77:
+        Code: '860094'
         Category: SPO
-        Address: 'avenue Heidelberg'
+        Address: 'place Francis-Ponge'
         Address2: ''
         Zipcode: '34000'
         City: MONTPELLIER
-        GeoCoordinateX: '43.623826'
-        GeoCoordinateY: '3.811471'
-        DistanceCamping: '27515'
-        Image: 'http://viaimage.viafrance.com/images/evts/57309.jpg'
-        Priority: '5'
+        GeoCoordinateX: '43.609477'
+        GeoCoordinateY: '3.884449'
+        DistanceCamping: '29723'
+        Image: 'http://viaimage.viafrance.com/images/evts/146099.jpg'
+        Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.letour.fr'
         Active: true
-    76:
+    78:
         Code: '827310'
         Category: EXP
         Address: 'rue de Verdun'
@@ -983,63 +1317,32 @@
         City: 'LES SABLES-D OLONNE'
         GeoCoordinateX: '46.497269'
         GeoCoordinateY: '-1.777271'
-        DistanceCamping: '4361'
+        DistanceCamping: '6735'
         Image: 'http://viaimage.viafrance.com/images/evts/52404.jpg'
         Priority: '5'
-        Active: true
-    77:
-        Code: '751696'
-        Category: DET
-        Address: 'promenade Clémenceau'
-        Address2: ''
-        Zipcode: '85100'
-        City: 'LES SABLES-D OLONNE'
-        GeoCoordinateX: '46.492014'
-        GeoCoordinateY: '-1.775690'
-        DistanceCamping: '4937'
-        Image: 'http://viaimage.viafrance.com/images/evts/91876.jpg'
-        Priority: '8'
-        Active: true
-    78:
-        Code: '856664'
-        Category: DET
-        Address: 'avenue Rhin et Danube'
-        Address2: ''
-        Zipcode: '85100'
-        City: 'LES SABLES-D OLONNE'
-        GeoCoordinateX: '46.486311'
-        GeoCoordinateY: '-1.760305'
-        DistanceCamping: '5647'
-        Image: 'http://viaimage.viafrance.com/images/evts/51780.jpg'
-        Priority: '9'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
     79:
-        Code: '381456'
-        Category: EXP
-        Address: 'rue de Verdun'
+        Code: '873024'
+        Category: DET
+        Address: 'chemin des Ecoliers'
         Address2: ''
-        Zipcode: '85100'
-        City: 'LES SABLES-D OLONNE'
-        GeoCoordinateX: '46.497269'
-        GeoCoordinateY: '-1.777271'
-        DistanceCamping: '4361'
-        Image: 'http://viaimage.viafrance.com/images/evts/13357.jpg'
-        Priority: '5'
+        Zipcode: '85440'
+        City: POIROUX
+        GeoCoordinateX: '46.507739'
+        GeoCoordinateY: '-1.536257'
+        DistanceCamping: '21239'
+        Image: 'http://viaimage.viafrance.com/images/evts/143318.jpg'
+        Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
     80:
-        Code: '796947'
-        Category: EXP
-        Address: 'place de-la-Chapelle'
-        Address2: ''
-        Zipcode: '56340'
-        City: CARNAC
-        GeoCoordinateX: '47.584934'
-        GeoCoordinateY: '-3.078565'
-        DistanceCamping: '27077'
-        Image: 'http://viaimage.viafrance.com/images/evts/131446.jpg'
-        Priority: '5'
-        Active: true
-    81:
         Code: '777318'
         Category: SPO
         Address: 'place de la Chapelle'
@@ -1048,11 +1351,15 @@
         City: CARNAC
         GeoCoordinateX: '47.584313'
         GeoCoordinateY: '-3.078680'
-        DistanceCamping: '27008'
+        DistanceCamping: '26267'
         Image: 'http://viaimage.viafrance.com/images/evts/5759.jpg'
         Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.yccarnac.com'
         Active: true
-    82:
+    81:
         Code: '781318'
         Category: SPO
         Address: 'port de la Trinité-sur-Mer'
@@ -1061,24 +1368,83 @@
         City: 'LA TRINITE-SUR-MER'
         GeoCoordinateX: '47.584251'
         GeoCoordinateY: '-3.026250'
-        DistanceCamping: '28117'
+        DistanceCamping: '27539'
         Image: 'http://viaimage.viafrance.com/images/evts/101160.jpg'
         Priority: '7'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.spi-ouestfrance.com/'
+        Active: true
+    82:
+        Code: '870340'
+        Category: EXP
+        Address: 'Port Salio'
+        Address2: ''
+        Zipcode: '56360'
+        City: 'LE PALAIS'
+        GeoCoordinateX: '47.326954'
+        GeoCoordinateY: '-3.144459'
+        DistanceCamping: '3703'
+        Image: 'http://viaimage.viafrance.com/images/evts/56143.jpg'
+        Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
     83:
-        Code: '803997'
-        Category: DET
-        Address: 'rue du Général-de-Gaulle'
+        Code: '663779'
+        Category: EXP
+        Address: 'rue du Menec'
         Address2: ''
-        Zipcode: '56640'
-        City: 'PORT NAVALO'
-        GeoCoordinateX: '47.548498'
-        GeoCoordinateY: '-2.915926'
-        DistanceCamping: '28773'
-        Image: 'http://viaimage.viafrance.com/images/evts/141485.jpg'
-        Priority: '8'
+        Zipcode: '56340'
+        City: CARNAC
+        GeoCoordinateX: '47.591763'
+        GeoCoordinateY: '-3.083026'
+        DistanceCamping: '26988'
+        Image: 'http://viaimage.viafrance.com/images/evts/43864.jpg'
+        Priority: '2'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
     84:
+        Code: '874857'
+        Category: DET
+        Address: 'route du Perrier'
+        Address2: 'La Grande Croix'
+        Zipcode: '85690'
+        City: NOTRE-DAME-DE-MONTS
+        GeoCoordinateX: '46.835320'
+        GeoCoordinateY: '-2.116618'
+        DistanceCamping: '15073'
+        Image: 'http://viaimage.viafrance.com/images/evts/54205.jpg'
+        Priority: '7'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    85:
+        Code: '441019'
+        Category: DET
+        Address: ''
+        Address2: 'passage du Gois'
+        Zipcode: '85330'
+        City: 'NOIRMOUTIER-EN-L ILE'
+        GeoCoordinateX: '46.930509'
+        GeoCoordinateY: '-2.123497'
+        DistanceCamping: '24043'
+        Image: 'http://viaimage.viafrance.com/images/evts/54202.jpg'
+        Priority: '7'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    86:
         Code: '862045'
         Category: FES
         Address: 'avenue de l''Europe'
@@ -1087,206 +1453,15 @@
         City: VENDAYS-MONTALIVET
         GeoCoordinateX: '45.370092'
         GeoCoordinateY: '-1.144813'
-        DistanceCamping: '6645'
+        DistanceCamping: '773'
         Image: 'http://viaimage.viafrance.com/images/evts/115941.jpg'
         Priority: '5'
-        Active: true
-    85:
-        Code: '398531'
-        Category: EXP
-        Address: 'place Aliénor-d''Aquitaine'
-        Address2: ''
-        Zipcode: '33780'
-        City: 'SOULAC SUR MER'
-        GeoCoordinateX: '45.513863'
-        GeoCoordinateY: '-1.121698'
-        DistanceCamping: '18052'
-        Image: 'http://viaimage.viafrance.com/images/evts/20115.jpg'
-        Priority: '5'
-        Active: true
-    86:
-        Code: '382734'
-        Category: DET
-        Address: 'avenue des Congrès'
-        Address2: ''
-        Zipcode: '17200'
-        City: ROYAN
-        GeoCoordinateX: '45.621541'
-        GeoCoordinateY: '-1.032174'
-        DistanceCamping: '29493'
-        Image: 'http://viaimage.viafrance.com/images/evts/43951.jpg'
-        Priority: '7'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
     87:
-        Code: '858768'
-        Category: SPO
-        Address: 'avenue Léo-Lagrange'
-        Address2: ''
-        Zipcode: '44600'
-        City: SAINT-NAZAIRE
-        GeoCoordinateX: '47.272102'
-        GeoCoordinateY: '-2.228266'
-        DistanceCamping: '12525'
-        Image: 'http://viaimage.viafrance.com/images/evts/145298.jpg'
-        Priority: '5'
-        Active: true
-    88:
-        Code: '864553'
-        Category: EXP
-        Address: 'avenue Anne de Bretagne'
-        Address2: ''
-        Zipcode: '44350'
-        City: GUERANDE
-        GeoCoordinateX: '47.329425'
-        GeoCoordinateY: '-2.422419'
-        DistanceCamping: '5358'
-        Image: 'http://viaimage.viafrance.com/images/evts/158146.jpg'
-        Priority: '5'
-        Active: true
-    89:
-        Code: '827056'
-        Category: MUS
-        Address: 'avenue Camille-Flammarion'
-        Address2: ''
-        Zipcode: '44380'
-        City: PORNICHET
-        GeoCoordinateX: '47.265447'
-        GeoCoordinateY: '-2.334911'
-        DistanceCamping: '4927'
-        Image: 'http://viaimage.viafrance.com/images/evts/100263.jpg'
-        Priority: '8'
-        Active: true
-    90:
-        Code: '864813'
-        Category: VIV
-        Address: 'boulevard Victor-Hugo'
-        Address2: ''
-        Zipcode: '44600'
-        City: SAINT-NAZAIRE
-        GeoCoordinateX: '47.280723'
-        GeoCoordinateY: '-2.216370'
-        DistanceCamping: '13342'
-        Image: 'http://viaimage.viafrance.com/images/evts/142269.jpg'
-        Priority: '8'
-        Active: true
-    91:
-        Code: '298932'
-        Category: DET
-        Address: 'route Départementale-704'
-        Address2: ''
-        Zipcode: '24290'
-        City: MONTIGNAC
-        GeoCoordinateX: '45.048094'
-        GeoCoordinateY: '1.169939'
-        DistanceCamping: '24489'
-        Image: 'http://viaimage.viafrance.com/images/evts/94636.jpg'
-        Priority: '2'
-        Active: true
-    92:
-        Code: '818927'
-        Category: DET
-        Address: ''
-        Address2: Village
-        Zipcode: '24620'
-        City: 'LES EYZIES-DE-TAYAC-SIREUIL'
-        GeoCoordinateX: '44.936056'
-        GeoCoordinateY: '1.012885'
-        DistanceCamping: '23290'
-        Image: 'http://viaimage.viafrance.com/images/evts/42758.jpg'
-        Priority: '2'
-        Active: true
-    93:
-        Code: '457494'
-        Category: EXP
-        Address: 'route des Grottes'
-        Address2: 'le bourg'
-        Zipcode: '24620'
-        City: 'LES EYZIES-DE-TAYAC-SIREUIL'
-        GeoCoordinateX: '44.940352'
-        GeoCoordinateY: '1.030007'
-        DistanceCamping: '22328'
-        Image: 'http://viaimage.viafrance.com/images/evts/61989.jpg'
-        Priority: '3'
-        Active: true
-    94:
-        Code: '730254'
-        Category: EXP
-        Address: ''
-        Address2: grotte
-        Zipcode: '24580'
-        City: 'ROUFFIGNAC SAINT CERNIN REILHAC'
-        GeoCoordinateX: '45.008218'
-        GeoCoordinateY: '0.988037'
-        DistanceCamping: '29333'
-        Image: 'http://viaimage.viafrance.com/images/evts/42760.jpg'
-        Priority: '3'
-        Active: true
-    95:
-        Code: '826546'
-        Category: SPO
-        Address: ''
-        Address2: 'Stade de l''Idonnière'
-        Zipcode: '85170'
-        City: 'LE POIRE SUR VIE'
-        GeoCoordinateX: '46.775653'
-        GeoCoordinateY: '-1.498008'
-        DistanceCamping: '22243'
-        Image: 'http://viaimage.viafrance.com/images/evts/46214.jpg'
-        Priority: '5'
-        Active: true
-    96:
-        Code: '826550'
-        Category: SPO
-        Address: ''
-        Address2: 'Stade de l''Idonnière'
-        Zipcode: '85170'
-        City: 'LE POIRE SUR VIE'
-        GeoCoordinateX: '46.775653'
-        GeoCoordinateY: '-1.498008'
-        DistanceCamping: '22243'
-        Image: 'http://viaimage.viafrance.com/images/evts/46214.jpg'
-        Priority: '5'
-        Active: true
-    97:
-        Code: '826551'
-        Category: SPO
-        Address: ''
-        Address2: 'Stade de l''Idonnière'
-        Zipcode: '85170'
-        City: 'LE POIRE SUR VIE'
-        GeoCoordinateX: '46.775653'
-        GeoCoordinateY: '-1.498008'
-        DistanceCamping: '22243'
-        Image: 'http://viaimage.viafrance.com/images/evts/46214.jpg'
-        Priority: '5'
-        Active: true
-    98:
-        Code: '861648'
-        Category: DET
-        Address: 'avenue de la Plage'
-        Address2: ''
-        Zipcode: '40600'
-        City: BISCARROSSE
-        GeoCoordinateX: '44.442901'
-        GeoCoordinateY: '-1.247296'
-        DistanceCamping: '25133'
-        Image: 'http://viaimage.viafrance.com/images/evts/55084.jpg'
-        Priority: '7'
-        Active: true
-    99:
-        Code: '204688'
-        Category: DET
-        Address: ''
-        Address2: Ancien-Chemin-de-Royan
-        Zipcode: '17570'
-        City: 'LES MATHES'
-        GeoCoordinateX: '45.687441'
-        GeoCoordinateY: '-1.168428'
-        DistanceCamping: '16256'
-        Image: 'http://viaimage.viafrance.com/images/evts/12092.jpg'
-        Priority: '2'
-        Active: true
-    100:
         Code: '620565'
         Category: DET
         Address: 'avenue des Fleurs-de-la-Paix'
@@ -1295,115 +1470,338 @@
         City: ROYAN
         GeoCoordinateX: '45.629222'
         GeoCoordinateY: '-1.014239'
-        DistanceCamping: '3209'
+        DistanceCamping: '29797'
         Image: 'http://viaimage.viafrance.com/images/evts/20134.jpg'
         Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    88:
+        Code: '398531'
+        Category: EXP
+        Address: 'place Aliénor-d''Aquitaine'
+        Address2: ''
+        Zipcode: '33780'
+        City: 'SOULAC SUR MER'
+        GeoCoordinateX: '45.513863'
+        GeoCoordinateY: '-1.121698'
+        DistanceCamping: '15305'
+        Image: 'http://viaimage.viafrance.com/images/evts/20115.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    89:
+        Code: '382734'
+        Category: DET
+        Address: 'avenue des Congrès'
+        Address2: ''
+        Zipcode: '17200'
+        City: ROYAN
+        GeoCoordinateX: '45.621541'
+        GeoCoordinateY: '-1.032174'
+        DistanceCamping: '28538'
+        Image: 'http://viaimage.viafrance.com/images/evts/43951.jpg'
+        Priority: '7'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    90:
+        Code: '858768'
+        Category: SPO
+        Address: 'avenue Léo-Lagrange'
+        Address2: ''
+        Zipcode: '44600'
+        City: SAINT-NAZAIRE
+        GeoCoordinateX: '47.272102'
+        GeoCoordinateY: '-2.228266'
+        DistanceCamping: '11830'
+        Image: 'http://viaimage.viafrance.com/images/evts/145298.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.harlemglobetrotters.com'
+        Active: true
+    91:
+        Code: '864553'
+        Category: EXP
+        Address: 'avenue Anne-de-Bretagne'
+        Address2: ''
+        Zipcode: '44350'
+        City: GUERANDE
+        GeoCoordinateX: '47.329425'
+        GeoCoordinateY: '-2.422419'
+        DistanceCamping: '4304'
+        Image: 'http://viaimage.viafrance.com/images/evts/158146.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    92:
+        Code: '827056'
+        Category: MUS
+        Address: 'avenue Camille-Flammarion'
+        Address2: ''
+        Zipcode: '44380'
+        City: PORNICHET
+        GeoCoordinateX: '47.265447'
+        GeoCoordinateY: '-2.334911'
+        DistanceCamping: '5497'
+        Image: 'http://viaimage.viafrance.com/images/evts/100263.jpg'
+        Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.jamait.fr'
+        Active: true
+    93:
+        Code: '864813'
+        Category: VIV
+        Address: 'boulevard Victor-Hugo'
+        Address2: ''
+        Zipcode: '44600'
+        City: SAINT-NAZAIRE
+        GeoCoordinateX: '47.280723'
+        GeoCoordinateY: '-2.216370'
+        DistanceCamping: '12434'
+        Image: 'http://viaimage.viafrance.com/images/evts/142269.jpg'
+        Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.ccncbn.com'
+        Active: true
+    94:
+        Code: '381456'
+        Category: EXP
+        Address: 'rue de Verdun'
+        Address2: ''
+        Zipcode: '85100'
+        City: 'LES SABLES-D OLONNE'
+        GeoCoordinateX: '46.497269'
+        GeoCoordinateY: '-1.777271'
+        DistanceCamping: '29867'
+        Image: 'http://viaimage.viafrance.com/images/evts/13357.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    95:
+        Code: '872715'
+        Category: DET
+        Address: ''
+        Address2: 'Ferme du Brusquand'
+        Zipcode: '24620'
+        City: MARQUAY
+        GeoCoordinateX: '44.944531'
+        GeoCoordinateY: '1.134647'
+        DistanceCamping: '14308'
+        Image: 'http://viaimage.viafrance.com/images/evts/68755.jpg'
+        Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    96:
+        Code: '298932'
+        Category: DET
+        Address: 'route Départementale-704'
+        Address2: ''
+        Zipcode: '24290'
+        City: MONTIGNAC
+        GeoCoordinateX: '45.048094'
+        GeoCoordinateY: '1.169939'
+        DistanceCamping: '21903'
+        Image: 'http://viaimage.viafrance.com/images/evts/94636.jpg'
+        Priority: '2'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    97:
+        Code: '818927'
+        Category: DET
+        Address: ''
+        Address2: Village
+        Zipcode: '24620'
+        City: 'LES EYZIES-DE-TAYAC-SIREUIL'
+        GeoCoordinateX: '44.936056'
+        GeoCoordinateY: '1.012885'
+        DistanceCamping: '22363'
+        Image: 'http://viaimage.viafrance.com/images/evts/42758.jpg'
+        Priority: '2'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    98:
+        Code: '730254'
+        Category: EXP
+        Address: ''
+        Address2: grotte
+        Zipcode: '24580'
+        City: 'ROUFFIGNAC SAINT CERNIN REILHAC'
+        GeoCoordinateX: '45.008218'
+        GeoCoordinateY: '0.988037'
+        DistanceCamping: '27801'
+        Image: 'http://viaimage.viafrance.com/images/evts/42760.jpg'
+        Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    99:
+        Code: '826546'
+        Category: SPO
+        Address: ''
+        Address2: 'Stade de l''Idonnière'
+        Zipcode: '85170'
+        City: 'LE POIRE SUR VIE'
+        GeoCoordinateX: '46.775653'
+        GeoCoordinateY: '-1.498008'
+        DistanceCamping: '23065'
+        Image: 'http://viaimage.viafrance.com/images/evts/46214.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.lepoiresurvie-vendee-football.com/'
+        Active: true
+    100:
+        Code: '826550'
+        Category: SPO
+        Address: ''
+        Address2: 'Stade de l''Idonnière'
+        Zipcode: '85170'
+        City: 'LE POIRE SUR VIE'
+        GeoCoordinateX: '46.775653'
+        GeoCoordinateY: '-1.498008'
+        DistanceCamping: '23065'
+        Image: 'http://viaimage.viafrance.com/images/evts/46214.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.lepoiresurvie-vendee-football.com/'
         Active: true
     101:
-        Code: '596486'
-        Category: EXP
+        Code: '826551'
+        Category: SPO
         Address: ''
-        Address2: 'Chenal de La Cayenne'
-        Zipcode: '17320'
-        City: MARENNES
-        GeoCoordinateX: '45.790853'
-        GeoCoordinateY: '-1.123570'
-        DistanceCamping: '23071'
-        Image: 'http://viaimage.viafrance.com/images/evts/67449.jpg'
+        Address2: 'Stade de l''Idonnière'
+        Zipcode: '85170'
+        City: 'LE POIRE SUR VIE'
+        GeoCoordinateX: '46.775653'
+        GeoCoordinateY: '-1.498008'
+        DistanceCamping: '23065'
+        Image: 'http://viaimage.viafrance.com/images/evts/46214.jpg'
         Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.lepoiresurvie-vendee-football.com/'
         Active: true
     102:
-        Code: '656044'
-        Category: FET
-        Address: 'rue Pente-Rapide'
-        Address2: 'Charles Ansidei'
-        Zipcode: '84000'
-        City: AVIGNON
-        GeoCoordinateX: '43.951644'
-        GeoCoordinateY: '4.806355'
-        DistanceCamping: '2640'
-        Image: 'http://viaimage.viafrance.com/images/evts/37474.jpg'
-        Priority: '3'
+        Code: '861648'
+        Category: DET
+        Address: 'avenue de la Plage'
+        Address2: ''
+        Zipcode: '40600'
+        City: BISCARROSSE
+        GeoCoordinateX: '44.442901'
+        GeoCoordinateY: '-1.247296'
+        DistanceCamping: '24684'
+        Image: 'http://viaimage.viafrance.com/images/evts/55084.jpg'
+        Priority: '7'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
     103:
-        Code: '830366'
-        Category: MUS
-        Address: 'rue Racine'
+        Code: '861651'
+        Category: DET
+        Address: plage
         Address2: ''
-        Zipcode: '84000'
-        City: AVIGNON
-        GeoCoordinateX: '43.949410'
-        GeoCoordinateY: '4.804846'
-        DistanceCamping: '2563'
-        Image: 'http://viaimage.viafrance.com/images/evts/131622.jpg'
-        Priority: '5'
+        Zipcode: '40600'
+        City: BISCARROSSE
+        GeoCoordinateX: '44.442133'
+        GeoCoordinateY: '-1.244544'
+        DistanceCamping: '24569'
+        Image: 'http://viaimage.viafrance.com/images/evts/81935.jpg'
+        Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.alizes-speed.com/'
         Active: true
     104:
-        Code: '860983'
-        Category: EXP
-        Address: 'Hôtel des Porcelets'
+        Code: '861660'
+        Category: DET
+        Address: 'route de la plage'
         Address2: ''
-        Zipcode: '13520'
-        City: BAUX-DE-PROVENCE
-        GeoCoordinateX: '43.743659'
-        GeoCoordinateY: '4.794476'
-        DistanceCamping: '23485'
-        Image: 'http://viaimage.viafrance.com/images/evts/31314.jpg'
-        Priority: '5'
+        Zipcode: '40600'
+        City: BISCARROSSE
+        GeoCoordinateX: '44.442133'
+        GeoCoordinateY: '-1.244544'
+        DistanceCamping: '24569'
+        Image: 'http://viaimage.viafrance.com/images/evts/72688.jpg'
+        Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
     105:
-        Code: '774560'
-        Category: EXP
-        Address: 'route de Fontvieille'
-        Address2: ''
-        Zipcode: '13200'
-        City: ARLES
-        GeoCoordinateX: '43.705985'
-        GeoCoordinateY: '4.663373'
-        DistanceCamping: '28990'
-        Image: 'http://viaimage.viafrance.com/images/evts/25226.jpg'
-        Priority: '6'
+        Code: '204688'
+        Category: DET
+        Address: ''
+        Address2: Ancien-Chemin-de-Royan
+        Zipcode: '17570'
+        City: 'LES MATHES'
+        GeoCoordinateX: '45.687441'
+        GeoCoordinateY: '-1.168428'
+        DistanceCamping: '15717'
+        Image: 'http://viaimage.viafrance.com/images/evts/12092.jpg'
+        Priority: '2'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
     106:
-        Code: '865361'
-        Category: MUS
-        Address: 'rue de la Foire'
+        Code: '757222'
+        Category: DET
+        Address: 'Grande Plage de Saint-Trojan'
         Address2: ''
-        Zipcode: '34470'
-        City: PEROLS
-        GeoCoordinateX: '43.573973'
-        GeoCoordinateY: '3.947277'
-        DistanceCamping: '11623'
-        Image: 'http://viaimage.viafrance.com/images/evts/158278.jpg'
+        Zipcode: '17370'
+        City: SAINT-TROJAN-LES-BAINS
+        GeoCoordinateX: '45.836483'
+        GeoCoordinateY: '-1.200835'
+        DistanceCamping: '29348'
+        Image: 'http://viaimage.viafrance.com/images/evts/101755.jpg'
         Priority: '2'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
     107:
-        Code: '701193'
-        Category: SAL
-        Address: ''
-        Address2: 'B.P. 2116'
-        Zipcode: '34000'
-        City: MONTPELLIER
-        GeoCoordinateX: '43.572496'
-        GeoCoordinateY: '3.951472'
-        DistanceCamping: '11997'
-        Image: 'http://viaimage.viafrance.com/images/evts/61308.jpg'
-        Priority: '3'
-        Active: true
-    108:
-        Code: '553529'
-        Category: SAL
-        Address: ''
-        Address2: 'B.P. 2116'
-        Zipcode: '34000'
-        City: MONTPELLIER
-        GeoCoordinateX: '43.572496'
-        GeoCoordinateY: '3.951472'
-        DistanceCamping: '11997'
-        Image: 'http://viaimage.viafrance.com/images/evts/27807.jpg'
-        Priority: '3'
-        Active: true
-    109:
         Code: '864821'
         Category: EXP
         Address: 'place des Casernes'
@@ -1412,11 +1810,15 @@
         City: BEZIERS
         GeoCoordinateX: '43.338262'
         GeoCoordinateY: '3.214283'
-        DistanceCamping: '18699'
+        DistanceCamping: '22433'
         Image: 'http://viaimage.viafrance.com/images/evts/158169.jpg'
         Priority: '1'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
-    110:
+    108:
         Code: '722332'
         Category: FET
         Address: 'place Gabriel-Péri'
@@ -1425,11 +1827,15 @@
         City: BEZIERS
         GeoCoordinateX: '43.342450'
         GeoCoordinateY: '3.213070'
-        DistanceCamping: '19149'
+        DistanceCamping: '22859'
         Image: 'http://viaimage.viafrance.com/images/evts/1038.jpg'
         Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
-    111:
+    109:
         Code: '852040'
         Category: MUS
         Address: 'route de Vendres'
@@ -1438,63 +1844,32 @@
         City: BEZIERS
         GeoCoordinateX: '43.328835'
         GeoCoordinateY: '3.214484'
-        DistanceCamping: '17663'
+        DistanceCamping: '21426'
         Image: 'http://viaimage.viafrance.com/images/evts/104978.jpg'
         Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.bojanz.com/'
         Active: true
-    112:
+    110:
         Code: '818836'
         Category: MUS
-        Address: '<BR/>'
+        Address: 'avenue Maître-Hubert-Mouly'
         Address2: ''
         Zipcode: '11100'
         City: NARBONNE
-        GeoCoordinateX: '43.180312'
-        GeoCoordinateY: '3.015479'
-        DistanceCamping: '13737'
+        GeoCoordinateX: '43.180032'
+        GeoCoordinateY: '3.017219'
+        DistanceCamping: '11038'
         Image: 'http://viaimage.viafrance.com/images/evts/128453.jpg'
         Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.lachambrephilharmonique.com'
         Active: true
-    113:
-        Code: '791104'
-        Category: EXP
-        Address: 'avenue Victor-Bouthillier'
-        Address2: ''
-        Zipcode: '17410'
-        City: SAINT-MARTIN-DE-RE
-        GeoCoordinateX: '46.205630'
-        GeoCoordinateY: '-1.364723'
-        DistanceCamping: '13594'
-        Image: 'http://viaimage.viafrance.com/images/evts/128989.jpg'
-        Priority: '5'
-        Active: true
-    114:
-        Code: '788958'
-        Category: EXP
-        Address: 'avenue Victor-Bouthillier'
-        Address2: ''
-        Zipcode: '17410'
-        City: SAINT-MARTIN-DE-RE
-        GeoCoordinateX: '46.205630'
-        GeoCoordinateY: '-1.364723'
-        DistanceCamping: '13594'
-        Image: 'http://viaimage.viafrance.com/images/evts/127685.jpg'
-        Priority: '7'
-        Active: true
-    115:
-        Code: '752458'
-        Category: DET
-        Address: 'avenue Philippsburg'
-        Address2: ''
-        Zipcode: '17410'
-        City: SAINT-MARTIN-DE-RE
-        GeoCoordinateX: '46.197315'
-        GeoCoordinateY: '-1.354903'
-        DistanceCamping: '14532'
-        Image: 'http://viaimage.viafrance.com/images/evts/91876.jpg'
-        Priority: '8'
-        Active: true
-    116:
+    111:
         Code: '762923'
         Category: DET
         Address: 'rue du Père-Ignace'
@@ -1503,11 +1878,66 @@
         City: ILE-DE-RE
         GeoCoordinateX: '46.158439'
         GeoCoordinateY: '-1.270748'
-        DistanceCamping: '22019'
+        DistanceCamping: '22343'
         Image: 'http://viaimage.viafrance.com/images/evts/73809.jpg'
         Priority: '2'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
-    117:
+    112:
+        Code: '399430'
+        Category: DET
+        Address: 'rue de la Croix Gouin'
+        Address2: ''
+        Zipcode: '17740'
+        City: 'SAINTE MARIE DE RE'
+        GeoCoordinateX: '46.151093'
+        GeoCoordinateY: '-1.311821'
+        DistanceCamping: '19721'
+        Image: 'http://viaimage.viafrance.com/images/evts/71547.jpg'
+        Priority: '4'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    113:
+        Code: '484269'
+        Category: DET
+        Address: 'place de la République'
+        Address2: 'le bourg'
+        Zipcode: '17410'
+        City: SAINT-MARTIN-DE-RE
+        GeoCoordinateX: '46.201477'
+        GeoCoordinateY: '-1.368295'
+        DistanceCamping: '13816'
+        Image: 'http://viaimage.viafrance.com/images/evts/31835.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    114:
+        Code: '485330'
+        Category: EXP
+        Address: 'rue du Château'
+        Address2: ''
+        Zipcode: '85440'
+        City: TALMONT-SAINT-HILAIRE-BOURGENAY
+        GeoCoordinateX: '46.466531'
+        GeoCoordinateY: '-1.618648'
+        DistanceCamping: '27387'
+        Image: 'http://viaimage.viafrance.com/images/evts/38672.jpg'
+        Priority: '7'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    115:
         Code: '593522'
         Category: FET
         Address: 'place Frédéric-Mistral'
@@ -1516,9 +1946,47 @@
         City: VALENSOLE
         GeoCoordinateX: '43.837258'
         GeoCoordinateY: '5.986819'
-        DistanceCamping: '10810'
+        DistanceCamping: '13598'
         Image: 'http://viaimage.viafrance.com/images/evts/37690.jpg'
         Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    116:
+        Code: '435517'
+        Category: DET
+        Address: 'Centre du village'
+        Address2: ''
+        Zipcode: '04360'
+        City: 'MOUSTIERS SAINTE MARIE'
+        GeoCoordinateX: '43.845438'
+        GeoCoordinateY: '6.221755'
+        DistanceCamping: '14689'
+        Image: 'http://viaimage.viafrance.com/images/evts/116646.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    117:
+        Code: '872150'
+        Category: EXP
+        Address: ''
+        Address2: 'Autoroute A 51, zone industrielle Saint-Maurice'
+        Zipcode: '04100'
+        City: MANOSQUE
+        GeoCoordinateX: '43.799916'
+        GeoCoordinateY: '5.816690'
+        DistanceCamping: '23529'
+        Image: 'http://viaimage.viafrance.com/images/evts/147193.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://fr.loccitane.com'
         Active: true
     118:
         Code: '285384'
@@ -1529,128 +1997,15 @@
         City: 'MOUSTIERS SAINTE MARIE'
         GeoCoordinateX: '43.844211'
         GeoCoordinateY: '6.222559'
-        DistanceCamping: '12380'
+        DistanceCamping: '14630'
         Image: 'http://viaimage.viafrance.com/images/evts/48877.jpg'
         Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
     119:
-        Code: '435517'
-        Category: DET
-        Address: 'Centre du village'
-        Address2: ''
-        Zipcode: '04360'
-        City: 'MOUSTIERS SAINTE MARIE'
-        GeoCoordinateX: '43.845438'
-        GeoCoordinateY: '6.221755'
-        DistanceCamping: '12406'
-        Image: 'http://viaimage.viafrance.com/images/evts/116646.jpg'
-        Priority: '5'
-        Active: true
-    120:
-        Code: '855392'
-        Category: DET
-        Address: ''
-        Address2: 'Le Village'
-        Zipcode: '04330'
-        City: BARREME
-        GeoCoordinateX: '43.954541'
-        GeoCoordinateY: '6.369714'
-        DistanceCamping: '29246'
-        Image: 'http://viaimage.viafrance.com/images/evts/52365.jpg'
-        Priority: '5'
-        Active: true
-    121:
-        Code: '866184'
-        Category: DET
-        Address: 'rue Pente-Rapide'
-        Address2: 'Charles Ansidei'
-        Zipcode: '84000'
-        City: AVIGNON
-        GeoCoordinateX: '43.951644'
-        GeoCoordinateY: '4.806355'
-        DistanceCamping: '23958'
-        Image: 'http://viaimage.viafrance.com/images/evts/158350.jpg'
-        Priority: '8'
-        Active: true
-    122:
-        Code: '837409'
-        Category: VIV
-        Address: 'rue Sainte-Catherine'
-        Address2: ''
-        Zipcode: '84000'
-        City: AVIGNON
-        GeoCoordinateX: '43.950561'
-        GeoCoordinateY: '4.809730'
-        DistanceCamping: '23845'
-        Image: 'http://viaimage.viafrance.com/images/evts/71276.jpg'
-        Priority: '9'
-        Active: true
-    123:
-        Code: '824821'
-        Category: VIV
-        Address: ''
-        Address2: 'foyer socio-culturel'
-        Zipcode: '30340'
-        City: ROUSSON
-        GeoCoordinateX: '44.196881'
-        GeoCoordinateY: '4.144602'
-        DistanceCamping: '13668'
-        Image: 'http://viaimage.viafrance.com/images/evts/70745.jpg'
-        Priority: '5'
-        Active: true
-    124:
-        Code: '762820'
-        Category: EXP
-        Address: 'rue de l’Estrangladou'
-        Address2: ''
-        Zipcode: '30350'
-        City: LEZAN
-        GeoCoordinateX: '44.012911'
-        GeoCoordinateY: '4.050703'
-        DistanceCamping: '8146'
-        Image: 'http://viaimage.viafrance.com/images/evts/116553.jpg'
-        Priority: '5'
-        Active: true
-    125:
-        Code: '406011'
-        Category: DET
-        Address: 'place de la Mairie'
-        Address2: ''
-        Zipcode: '30530'
-        City: CHAMBORIGAUD
-        GeoCoordinateX: '44.303850'
-        GeoCoordinateY: '3.974407'
-        DistanceCamping: '25830'
-        Image: 'http://viaimage.viafrance.com/images/evts/15693.jpg'
-        Priority: '8'
-        Active: true
-    126:
-        Code: '445237'
-        Category: DET
-        Address: 'route de Mialet'
-        Address2: 'Domaine de Prafrance'
-        Zipcode: '30140'
-        City: GENERARGUES
-        GeoCoordinateX: '44.072176'
-        GeoCoordinateY: '3.978231'
-        DistanceCamping: '8058'
-        Image: 'http://viaimage.viafrance.com/images/evts/62776.jpg'
-        Priority: '8'
-        Active: true
-    127:
-        Code: '761340'
-        Category: EXP
-        Address: 'rue de l''Ancienne-Mairie-à-l''Eglise'
-        Address2: ''
-        Zipcode: '13520'
-        City: BAUX-DE-PROVENCE
-        GeoCoordinateX: '49.285479'
-        GeoCoordinateY: '-0.119998'
-        DistanceCamping: '7074'
-        Image: 'http://viaimage.viafrance.com/images/evts/116311.jpg'
-        Priority: '5'
-        Active: true
-    128:
         Code: '721821'
         Category: EXP
         Address: 'cour Gambetta'
@@ -1659,11 +2014,15 @@
         City: AIX-EN-PROVENCE
         GeoCoordinateX: '43.519504'
         GeoCoordinateY: '5.461849'
-        DistanceCamping: '24569'
+        DistanceCamping: '25809'
         Image: 'http://viaimage.viafrance.com/images/evts/10929.jpg'
         Priority: '1'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.santons-fouque.com/'
         Active: true
-    129:
+    120:
         Code: '731590'
         Category: EXP
         Address: 'place Saint-Jean-de-Malte'
@@ -1672,11 +2031,15 @@
         City: AIX-EN-PROVENCE
         GeoCoordinateX: '43.525569'
         GeoCoordinateY: '5.452605'
-        DistanceCamping: '23624'
+        DistanceCamping: '24880'
         Image: 'http://viaimage.viafrance.com/images/evts/124308.jpg'
         Priority: '2'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
-    130:
+    121:
         Code: '774588'
         Category: EXP
         Address: 'place Saint-Jean-de-Malte'
@@ -1685,11 +2048,15 @@
         City: AIX-EN-PROVENCE
         GeoCoordinateX: '43.525569'
         GeoCoordinateY: '5.452605'
-        DistanceCamping: '23624'
+        DistanceCamping: '24880'
         Image: 'http://viaimage.viafrance.com/images/evts/123958.jpg'
         Priority: '2'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
-    131:
+    122:
         Code: '824314'
         Category: MUS
         Address: 'avenue Max-Juvenal'
@@ -1698,102 +2065,66 @@
         City: AIX-EN-PROVENCE
         GeoCoordinateX: '43.526108'
         GeoCoordinateY: '5.440694'
-        DistanceCamping: '23140'
+        DistanceCamping: '24432'
         Image: 'http://viaimage.viafrance.com/images/evts/130145.jpg'
         Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.labeque.com'
         Active: true
-    132:
-        Code: '789418'
-        Category: FES
-        Address: 'rue du 9-Juin-1944'
+    123:
+        Code: '673724'
+        Category: EXP
+        Address: 'boulevard Sainte-Beuve'
         Address2: ''
-        Zipcode: '19000'
-        City: TULLE
-        GeoCoordinateX: '45.260560'
-        GeoCoordinateY: '1.751479'
-        DistanceCamping: '28141'
-        Image: 'http://viaimage.viafrance.com/images/evts/55153.jpg'
-        Priority: '3'
+        Zipcode: '62200'
+        City: BOULOGNE-SUR-MER
+        GeoCoordinateX: '50.730250'
+        GeoCoordinateY: '1.595877'
+        DistanceCamping: '19157'
+        Image: 'http://viaimage.viafrance.com/images/evts/87682.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
-    133:
-        Code: '772492'
-        Category: DET
-        Address: 'place Jean-Tave'
+    124:
+        Code: '874883'
+        Category: EXP
+        Address: 'boulevard Bigot Descelers'
         Address2: ''
-        Zipcode: '19000'
-        City: TULLE
-        GeoCoordinateX: '45.266370'
-        GeoCoordinateY: '1.770167'
-        DistanceCamping: '26576'
-        Image: 'http://viaimage.viafrance.com/images/evts/20115.jpg'
-        Priority: '4'
-        Active: true
-    134:
-        Code: '825768'
-        Category: VIV
-        Address: 'quai de la République'
-        Address2: ''
-        Zipcode: '19000'
-        City: TULLE
-        GeoCoordinateX: '45.266702'
-        GeoCoordinateY: '1.770911'
-        DistanceCamping: '26507'
-        Image: 'http://viaimage.viafrance.com/images/evts/146220.jpg'
+        Zipcode: '62630'
+        City: ETAPLES-SUR-MER
+        GeoCoordinateX: '50.519017'
+        GeoCoordinateY: '1.629556'
+        DistanceCamping: '4452'
+        Image: 'http://viaimage.viafrance.com/images/evts/8633.jpg'
         Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
-    135:
-        Code: '825760'
-        Category: VIV
-        Address: 'quai de la République'
-        Address2: ''
-        Zipcode: '19000'
-        City: TULLE
-        GeoCoordinateX: '45.266702'
-        GeoCoordinateY: '1.770911'
-        DistanceCamping: '26507'
-        Image: 'http://viaimage.viafrance.com/images/evts/146331.jpg'
-        Priority: '8'
+    125:
+        Code: '864873'
+        Category: EXP
+        Address: 'avenue Léon-Jean-Grégory'
+        Address2: 'Palais des Congrès'
+        Zipcode: '66720'
+        City: TAUTAVEL
+        GeoCoordinateX: '42.814049'
+        GeoCoordinateY: '2.748499'
+        DistanceCamping: '29908'
+        Image: 'http://viaimage.viafrance.com/images/evts/101545.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
-    136:
-        Code: '858192'
-        Category: DET
-        Address: ''
-        Address2: 'Château d''Hardelot'
-        Zipcode: '62360'
-        City: CONDETTE
-        GeoCoordinateX: '50.645920'
-        GeoCoordinateY: '1.611572'
-        DistanceCamping: '8620'
-        Image: 'http://viaimage.viafrance.com/images/evts/27413.jpg'
-        Priority: '8'
-        Active: true
-    137:
-        Code: '858217'
-        Category: DET
-        Address: 'chemin aux Raisins'
-        Address2: ''
-        Zipcode: '62600'
-        City: BERCK-SUR-MER
-        GeoCoordinateX: '50.423880'
-        GeoCoordinateY: '1.592500'
-        DistanceCamping: '16136'
-        Image: 'http://viaimage.viafrance.com/images/evts/27413.jpg'
-        Priority: '8'
-        Active: true
-    138:
-        Code: '858220'
-        Category: DET
-        Address: ''
-        Address2: 'Base nautique'
-        Zipcode: '62180'
-        City: 'CONCHIL LE TEMPLE'
-        GeoCoordinateX: '50.366521'
-        GeoCoordinateY: '1.664382'
-        DistanceCamping: '22699'
-        Image: 'http://viaimage.viafrance.com/images/evts/27413.jpg'
-        Priority: '8'
-        Active: true
-    139:
+    126:
         Code: '829693'
         Category: SPO
         Address: 'avenue Pierre de-Coubertin'
@@ -1802,89 +2133,83 @@
         City: NARBONNE
         GeoCoordinateX: '43.183222'
         GeoCoordinateY: '3.022704'
-        DistanceCamping: '17506'
+        DistanceCamping: '17990'
         Image: 'http://viaimage.viafrance.com/images/evts/48735.jpg'
         Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.rcmessonne.com/'
         Active: true
-    140:
+    127:
         Code: '818845'
         Category: VIV
-        Address: '<BR/>'
+        Address: 'avenue Maître-Hubert-Mouly'
         Address2: ''
         Zipcode: '11100'
         City: NARBONNE
-        GeoCoordinateX: '43.180312'
-        GeoCoordinateY: '3.015479'
-        DistanceCamping: '17078'
+        GeoCoordinateX: '43.180032'
+        GeoCoordinateY: '3.017219'
+        DistanceCamping: '17555'
         Image: 'http://viaimage.viafrance.com/images/evts/145321.jpg'
         Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.benjaminmillepied.com'
         Active: true
-    141:
-        Code: '829694'
-        Category: SPO
-        Address: 'avenue Pierre de-Coubertin'
+    128:
+        Code: '865361'
+        Category: MUS
+        Address: 'rue de la Foire'
         Address2: ''
-        Zipcode: '11100'
-        City: NARBONNE
-        GeoCoordinateX: '43.183222'
-        GeoCoordinateY: '3.022704'
-        DistanceCamping: '17506'
-        Image: 'http://viaimage.viafrance.com/images/evts/48735.jpg'
-        Priority: '5'
+        Zipcode: '34470'
+        City: PEROLS
+        GeoCoordinateX: '43.573973'
+        GeoCoordinateY: '3.947277'
+        DistanceCamping: '16337'
+        Image: 'http://viaimage.viafrance.com/images/evts/158278.jpg'
+        Priority: '2'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://rihanna.com/'
         Active: true
-    142:
-        Code: '859659'
-        Category: VIV
-        Address: 'place François-Mitterand'
-        Address2: ''
-        Zipcode: '13310'
-        City: SAINT-MARTIN-DE-CRAU
-        GeoCoordinateX: '48.595912'
-        GeoCoordinateY: '2.580250'
-        DistanceCamping: '25468'
-        Image: 'http://viaimage.viafrance.com/images/evts/100030.jpg'
-        Priority: '8'
+    129:
+        Code: '701193'
+        Category: SAL
+        Address: ''
+        Address2: 'B.P. 2116'
+        Zipcode: '34000'
+        City: MONTPELLIER
+        GeoCoordinateX: '43.572496'
+        GeoCoordinateY: '3.951472'
+        DistanceCamping: '16529'
+        Image: 'http://viaimage.viafrance.com/images/evts/61308.jpg'
+        Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.creavenue.com'
         Active: true
-    143:
-        Code: '859997'
-        Category: DET
-        Address: 'place François-Mitterand'
-        Address2: ''
-        Zipcode: '13310'
-        City: SAINT-MARTIN-DE-CRAU
-        GeoCoordinateX: '48.595912'
-        GeoCoordinateY: '2.580250'
-        DistanceCamping: '25468'
-        Image: 'http://viaimage.viafrance.com/images/evts/82114.jpg'
-        Priority: '8'
+    130:
+        Code: '553529'
+        Category: SAL
+        Address: ''
+        Address2: 'B.P. 2116'
+        Zipcode: '34000'
+        City: MONTPELLIER
+        GeoCoordinateX: '43.572496'
+        GeoCoordinateY: '3.951472'
+        DistanceCamping: '16529'
+        Image: 'http://viaimage.viafrance.com/images/evts/27807.jpg'
+        Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.cheval-montpellier.com'
         Active: true
-    144:
-        Code: '860000'
-        Category: DET
-        Address: 'place François-Mitterand'
-        Address2: ''
-        Zipcode: '13310'
-        City: SAINT-MARTIN-DE-CRAU
-        GeoCoordinateX: '48.595912'
-        GeoCoordinateY: '2.580250'
-        DistanceCamping: '25468'
-        Image: 'http://viaimage.viafrance.com/images/evts/82114.jpg'
-        Priority: '8'
-        Active: true
-    145:
-        Code: '859641'
-        Category: VIV
-        Address: 'place François-Mitterand'
-        Address2: ''
-        Zipcode: '13310'
-        City: SAINT-MARTIN-DE-CRAU
-        GeoCoordinateX: '48.595912'
-        GeoCoordinateY: '2.580250'
-        DistanceCamping: '25468'
-        Image: 'http://viaimage.viafrance.com/images/evts/94840.jpg'
-        Priority: '9'
-        Active: true
-    146:
+    131:
         Code: '761391'
         Category: SAL
         Address: 'avenue du Maréchal-Foch'
@@ -1893,11 +2218,15 @@
         City: GAP
         GeoCoordinateX: '44.563108'
         GeoCoordinateY: '6.086509'
-        DistanceCamping: '15587'
+        DistanceCamping: '15972'
         Image: 'http://viaimage.viafrance.com/images/evts/56535.jpg'
         Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.gap-foire-expo.com'
         Active: true
-    147:
+    132:
         Code: '860190'
         Category: SPO
         Address: 'rue du Colonel-Roux'
@@ -1906,11 +2235,15 @@
         City: GAP
         GeoCoordinateX: '44.557914'
         GeoCoordinateY: '6.078799'
-        DistanceCamping: '14878'
+        DistanceCamping: '15256'
         Image: 'http://viaimage.viafrance.com/images/evts/104443.jpg'
         Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.letour.fr'
         Active: true
-    148:
+    133:
         Code: '860193'
         Category: SPO
         Address: 'Grande rue'
@@ -1919,11 +2252,15 @@
         City: CHORGES
         GeoCoordinateX: '44.550962'
         GeoCoordinateY: '6.259316'
-        DistanceCamping: '22400'
+        DistanceCamping: '22845'
         Image: 'http://viaimage.viafrance.com/images/evts/104405.jpg'
         Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.letour.fr'
         Active: true
-    149:
+    134:
         Code: '860194'
         Category: SPO
         Address: 'rue du Colonel-Roux'
@@ -1932,11 +2269,15 @@
         City: GAP
         GeoCoordinateX: '44.557914'
         GeoCoordinateY: '6.078799'
-        DistanceCamping: '14878'
+        DistanceCamping: '15256'
         Image: 'http://viaimage.viafrance.com/images/evts/104449.jpg'
         Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.letour.fr'
         Active: true
-    150:
+    135:
         Code: '644399'
         Category: SAL
         Address: 'avenue de la Foire-aux-Vins'
@@ -1945,11 +2286,15 @@
         City: COLMAR
         GeoCoordinateX: '48.099998'
         GeoCoordinateY: '7.359186'
-        DistanceCamping: '15364'
+        DistanceCamping: '18403'
         Image: 'http://viaimage.viafrance.com/images/evts/147908.jpg'
         Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.foire-colmar.com/'
         Active: true
-    151:
+    136:
         Code: '795764'
         Category: MUS
         Address: 'Grand''Rue'
@@ -1958,11 +2303,15 @@
         City: COLMAR
         GeoCoordinateX: '48.077284'
         GeoCoordinateY: '7.360566'
-        DistanceCamping: '14358'
+        DistanceCamping: '17276'
         Image: 'http://viaimage.viafrance.com/images/evts/81943.jpg'
         Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.isabelle-aubret.com'
         Active: true
-    152:
+    137:
         Code: '833742'
         Category: VIV
         Address: 'place Scheurer-Kestner'
@@ -1971,11 +2320,15 @@
         City: COLMAR
         GeoCoordinateX: '48.081414'
         GeoCoordinateY: '7.356161'
-        DistanceCamping: '14806'
+        DistanceCamping: '17746'
         Image: 'http://viaimage.viafrance.com/images/evts/129861.jpg'
         Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
-    153:
+    138:
         Code: '818681'
         Category: MUS
         Address: 'avenue de la Foire-aux-Vins'
@@ -1984,115 +2337,15 @@
         City: COLMAR
         GeoCoordinateX: '48.099998'
         GeoCoordinateY: '7.359186'
-        DistanceCamping: '15364'
+        DistanceCamping: '18403'
         Image: 'http://viaimage.viafrance.com/images/evts/126972.jpg'
         Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://voca-people.com'
         Active: true
-    154:
-        Code: '767120'
-        Category: EXP
-        Address: 'quai Vauban'
-        Address2: 'Ile Tatihou'
-        Zipcode: '50550'
-        City: SAINT-VAAST-LA-HOUGUE
-        GeoCoordinateX: '49.587185'
-        GeoCoordinateY: '-1.265035'
-        DistanceCamping: '27319'
-        Image: 'http://viaimage.viafrance.com/images/evts/12564.jpg'
-        Priority: '7'
-        Active: true
-    155:
-        Code: '864464'
-        Category: SAL
-        Address: 'place du Marché'
-        Address2: ''
-        Zipcode: '14330'
-        City: 'LE MOLAY-LITTRY'
-        GeoCoordinateX: '49.242633'
-        GeoCoordinateY: '-0.873417'
-        DistanceCamping: '20299'
-        Image: 'http://viaimage.viafrance.com/images/evts/158076.jpg'
-        Priority: '8'
-        Active: true
-    156:
-        Code: '864467'
-        Category: SAL
-        Address: 'place du Marché'
-        Address2: ''
-        Zipcode: '14330'
-        City: 'LE MOLAY-LITTRY'
-        GeoCoordinateX: '49.242633'
-        GeoCoordinateY: '-0.873417'
-        DistanceCamping: '20299'
-        Image: 'http://viaimage.viafrance.com/images/evts/158079.jpg'
-        Priority: '8'
-        Active: true
-    157:
-        Code: '759655'
-        Category: DET
-        Address: ''
-        Address2: Pointe-du-Hoc
-        Zipcode: '14450'
-        City: 'CRICQUEVILLE EN BESSIN'
-        GeoCoordinateX: '49.396836'
-        GeoCoordinateY: '-0.988896'
-        DistanceCamping: '3925'
-        Image: 'http://viaimage.viafrance.com/images/evts/94603.jpg'
-        Priority: '2'
-        Active: true
-    158:
-        Code: '767932'
-        Category: FES
-        Address: 'place de Bretagne'
-        Address2: ''
-        Zipcode: '56000'
-        City: VANNES
-        GeoCoordinateX: '47.661513'
-        GeoCoordinateY: '-2.760622'
-        DistanceCamping: '5253'
-        Image: 'http://viaimage.viafrance.com/images/evts/158231.jpg'
-        Priority: '3'
-        Active: true
-    159:
-        Code: '858241'
-        Category: FES
-        Address: 'rue du Port'
-        Address2: ''
-        Zipcode: '56000'
-        City: VANNES
-        GeoCoordinateX: '47.647254'
-        GeoCoordinateY: '-2.759508'
-        DistanceCamping: '6588'
-        Image: 'http://viaimage.viafrance.com/images/evts/38352.jpg'
-        Priority: '3'
-        Active: true
-    160:
-        Code: '738865'
-        Category: DET
-        Address: 'rue de Vannes'
-        Address2: ''
-        Zipcode: '56400'
-        City: 'SAINTE ANNE D AURAY'
-        GeoCoordinateX: '47.703639'
-        GeoCoordinateY: '-2.950937'
-        DistanceCamping: '10867'
-        Image: 'http://viaimage.viafrance.com/images/evts/147933.jpg'
-        Priority: '5'
-        Active: true
-    161:
-        Code: '818727'
-        Category: VIV
-        Address: 'avenue du Général-de-Gaulle'
-        Address2: ''
-        Zipcode: '33120'
-        City: ARCACHON
-        GeoCoordinateX: '44.661135'
-        GeoCoordinateY: '-1.165000'
-        DistanceCamping: '4213'
-        Image: 'http://viaimage.viafrance.com/images/evts/94627.jpg'
-        Priority: '5'
-        Active: true
-    162:
+    139:
         Code: '815001'
         Category: VIV
         Address: 'avenue du Général-de-Gaulle'
@@ -2101,11 +2354,15 @@
         City: ARCACHON
         GeoCoordinateX: '44.661135'
         GeoCoordinateY: '-1.165000'
-        DistanceCamping: '4213'
+        DistanceCamping: '9175'
         Image: 'http://viaimage.viafrance.com/images/evts/91337.jpg'
         Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
-    163:
+    140:
         Code: '815000'
         Category: VIV
         Address: 'avenue du Général-de-Gaulle'
@@ -2114,11 +2371,15 @@
         City: ARCACHON
         GeoCoordinateX: '44.661135'
         GeoCoordinateY: '-1.165000'
-        DistanceCamping: '4213'
+        DistanceCamping: '9175'
         Image: 'http://viaimage.viafrance.com/images/evts/115482.jpg'
         Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
-    164:
+    141:
         Code: '823322'
         Category: MUS
         Address: 'avenue du Général-de-Gaulle'
@@ -2127,11 +2388,32 @@
         City: ARCACHON
         GeoCoordinateX: '44.661135'
         GeoCoordinateY: '-1.165000'
-        DistanceCamping: '4213'
+        DistanceCamping: '9175'
         Image: 'http://viaimage.viafrance.com/images/evts/128453.jpg'
         Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.alinaibragimova.com'
         Active: true
-    165:
+    142:
+        Code: '819038'
+        Category: VIV
+        Address: 'avenue du Général-de-Gaulle'
+        Address2: ''
+        Zipcode: '33120'
+        City: ARCACHON
+        GeoCoordinateX: '44.661135'
+        GeoCoordinateY: '-1.165000'
+        DistanceCamping: '9175'
+        Image: 'http://viaimage.viafrance.com/images/evts/147004.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.ariadone.fr'
+        Active: true
+    143:
         Code: '462070'
         Category: FET
         Address: 'rue Jean-Jaurès'
@@ -2140,11 +2422,66 @@
         City: SCAER
         GeoCoordinateX: '48.027272'
         GeoCoordinateY: '-3.702823'
-        DistanceCamping: '18655'
+        DistanceCamping: '21665'
         Image: 'http://viaimage.viafrance.com/images/evts/82436.jpg'
         Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.lacavalcade.fr/'
         Active: true
-    166:
+    144:
+        Code: '782770'
+        Category: SPO
+        Address: 'avenue du passeur de Challiès'
+        Address2: ''
+        Zipcode: '34300'
+        City: AGDE
+        GeoCoordinateX: '43.279251'
+        GeoCoordinateY: '3.501588'
+        DistanceCamping: '9371'
+        Image: 'http://viaimage.viafrance.com/images/evts/87389.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://evenements.ffvoile.fr/cfvl/'
+        Active: true
+    145:
+        Code: '670634'
+        Category: FET
+        Address: 'avenue Raymond Pitet'
+        Address2: 'Domaine de Belle-Isle'
+        Zipcode: '34300'
+        City: AGDE
+        GeoCoordinateX: '43.315541'
+        GeoCoordinateY: '3.468479'
+        DistanceCamping: '9567'
+        Image: 'http://viaimage.viafrance.com/images/evts/158645.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    146:
+        Code: '782774'
+        Category: DET
+        Address: 'quai Jean-Miquel'
+        Address2: ''
+        Zipcode: '34300'
+        City: AGDE
+        GeoCoordinateX: '43.284439'
+        GeoCoordinateY: '3.511861'
+        DistanceCamping: '8382'
+        Image: 'http://viaimage.viafrance.com/images/evts/158646.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    147:
         Code: '862033'
         Category: FES
         Address: 'rue César-Campinchi'
@@ -2153,11 +2490,15 @@
         City: BASTIA
         GeoCoordinateX: '42.700497'
         GeoCoordinateY: '9.449386'
-        DistanceCamping: '25963'
+        DistanceCamping: '25745'
         Image: 'http://viaimage.viafrance.com/images/evts/115941.jpg'
         Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.una-volta.org'
         Active: true
-    167:
+    148:
         Code: '862778'
         Category: DET
         Address: 'rue Notre-Dame de Lourdes'
@@ -2166,50 +2507,49 @@
         City: BASTIA
         GeoCoordinateX: '42.703589'
         GeoCoordinateY: '9.451394'
-        DistanceCamping: '26294'
+        DistanceCamping: '26037'
         Image: 'http://viaimage.viafrance.com/images/evts/75951.jpg'
         Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
-    168:
-        Code: '399031'
-        Category: EXP
-        Address: ''
-        Address2: 'San Michele'
-        Zipcode: '20239'
-        City: MURATO
-        GeoCoordinateX: '42.576605'
-        GeoCoordinateY: '9.326333'
-        DistanceCamping: '17081'
-        Image: 'http://viaimage.viafrance.com/images/evts/91582.jpg'
-        Priority: '7'
-        Active: true
-    169:
-        Code: '469300'
+    149:
+        Code: '874864'
         Category: DET
-        Address: 'route départementale'
+        Address: 'rue Notre-Dame de Lourdes'
         Address2: ''
-        Zipcode: '30470'
-        City: AIMARGUES
-        GeoCoordinateX: '42.679646'
-        GeoCoordinateY: '9.398320'
-        DistanceCamping: '24357'
-        Image: 'http://viaimage.viafrance.com/images/evts/27897.jpg'
+        Zipcode: '20200'
+        City: BASTIA
+        GeoCoordinateX: '42.703589'
+        GeoCoordinateY: '9.451394'
+        DistanceCamping: '26037'
+        Image: 'http://viaimage.viafrance.com/images/evts/48836.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    150:
+        Code: '399029'
+        Category: DET
+        Address: 'quai Saint-Erasme'
+        Address2: ''
+        Zipcode: '20110'
+        City: PROPRIANO
+        GeoCoordinateX: '42.697780'
+        GeoCoordinateY: '9.451793'
+        DistanceCamping: '25403'
+        Image: 'http://viaimage.viafrance.com/images/evts/43450.jpg'
         Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
-    170:
-        Code: '746514'
-        Category: FES
-        Address: 'rue Albert 1er'
-        Address2: ''
-        Zipcode: '17000'
-        City: 'LA ROCHELLE'
-        GeoCoordinateX: '46.164685'
-        GeoCoordinateY: '-1.151577'
-        DistanceCamping: '29737'
-        Image: 'http://viaimage.viafrance.com/images/evts/57746.jpg'
-        Priority: '3'
-        Active: true
-    171:
+    151:
         Code: '829592'
         Category: SPO
         Address: 'avenue du Maréchal Juin'
@@ -2218,11 +2558,15 @@
         City: 'LA ROCHELLE'
         GeoCoordinateX: '46.160169'
         GeoCoordinateY: '-1.179473'
-        DistanceCamping: '28540'
+        DistanceCamping: '29746'
         Image: 'http://viaimage.viafrance.com/images/evts/48735.jpg'
         Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.staderochelais.com'
         Active: true
-    172:
+    152:
         Code: '829593'
         Category: SPO
         Address: 'avenue du Maréchal Juin'
@@ -2231,11 +2575,15 @@
         City: 'LA ROCHELLE'
         GeoCoordinateX: '46.160169'
         GeoCoordinateY: '-1.179473'
-        DistanceCamping: '28540'
+        DistanceCamping: '29746'
         Image: 'http://viaimage.viafrance.com/images/evts/48735.jpg'
         Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.staderochelais.com'
         Active: true
-    173:
+    153:
         Code: '648457'
         Category: SAL
         Address: 'place de l''Eglise'
@@ -2244,11 +2592,15 @@
         City: MEGEVE
         GeoCoordinateX: '45.857463'
         GeoCoordinateY: '6.613626'
-        DistanceCamping: '9169'
+        DistanceCamping: '7883'
         Image: 'http://viaimage.viafrance.com/images/evts/116669.jpg'
         Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
-    174:
+    154:
         Code: '755941'
         Category: SPO
         Address: 'place de l''Eglise'
@@ -2257,37 +2609,66 @@
         City: MEGEVE
         GeoCoordinateX: '45.857463'
         GeoCoordinateY: '6.613626'
-        DistanceCamping: '9169'
+        DistanceCamping: '7883'
         Image: 'http://viaimage.viafrance.com/images/evts/57977.jpg'
         Priority: '7'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
-    175:
-        Code: '824247'
-        Category: EXP
-        Address: ''
-        Address2: 'L''envers de Villeneuve'
-        Zipcode: '74450'
-        City: 'LE GRAND BORNAND'
-        GeoCoordinateX: '45.941635'
-        GeoCoordinateY: '6.431391'
-        DistanceCamping: '19698'
-        Image: 'http://viaimage.viafrance.com/images/evts/128770.jpg'
+    155:
+        Code: '863699'
+        Category: DET
+        Address: 'route des Grandes-Alpes'
+        Address2: ''
+        Zipcode: '74220'
+        City: 'LA CLUSAZ'
+        GeoCoordinateX: '45.906267'
+        GeoCoordinateY: '6.426095'
+        DistanceCamping: '17460'
+        Image: 'http://viaimage.viafrance.com/images/evts/52357.jpg'
         Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.aravis-services.com/'
         Active: true
-    176:
-        Code: '437037'
+    156:
+        Code: '864786'
         Category: EXP
-        Address: 'place de l''Hôtel de Ville'
+        Address: 'place Guillaume Tell'
+        Address2: ''
+        Zipcode: '68100'
+        City: MULHOUSE
+        GeoCoordinateX: '47.745791'
+        GeoCoordinateY: '7.338303'
+        DistanceCamping: '25901'
+        Image: 'http://viaimage.viafrance.com/images/evts/42878.jpg'
+        Priority: '7'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    157:
+        Code: '870704'
+        Category: DET
+        Address: 'place Docteur Joubert'
         Address2: ''
         Zipcode: '04100'
         City: MANOSQUE
-        GeoCoordinateX: '43.833766'
-        GeoCoordinateY: '5.782517'
-        DistanceCamping: '25340'
-        Image: 'http://viaimage.viafrance.com/images/evts/62886.jpg'
-        Priority: '5'
+        GeoCoordinateX: '43.830965'
+        GeoCoordinateY: '5.784111'
+        DistanceCamping: '25467'
+        Image: 'http://viaimage.viafrance.com/images/evts/27650.jpg'
+        Priority: '9'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
-    177:
+    158:
         Code: '181287'
         Category: DET
         Address: 'place du Foirail'
@@ -2296,11 +2677,32 @@
         City: 'SAINT PONS DE THOMIERES'
         GeoCoordinateX: '43.489121'
         GeoCoordinateY: '2.758153'
-        DistanceCamping: '20760'
+        DistanceCamping: '17800'
         Image: 'http://viaimage.viafrance.com/images/evts/27161.jpg'
         Priority: '7'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.parc-haut-languedoc.fr/'
         Active: true
-    178:
+    159:
+        Code: '457494'
+        Category: EXP
+        Address: 'route des Grottes'
+        Address2: 'le bourg'
+        Zipcode: '24620'
+        City: 'LES EYZIES-DE-TAYAC-SIREUIL'
+        GeoCoordinateX: '44.940352'
+        GeoCoordinateY: '1.030007'
+        DistanceCamping: '28697'
+        Image: 'http://viaimage.viafrance.com/images/evts/61989.jpg'
+        Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    160:
         Code: '433948'
         Category: DET
         Address: ''
@@ -2309,24 +2711,15 @@
         City: 'LA ROQUE GAGEAC'
         GeoCoordinateX: '44.825371'
         GeoCoordinateY: '1.183638'
-        DistanceCamping: '10726'
+        DistanceCamping: '11189'
         Image: 'http://viaimage.viafrance.com/images/evts/1815.jpg'
         Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
-    179:
-        Code: '384087'
-        Category: DET
-        Address: 'rue de Tourny'
-        Address2: ''
-        Zipcode: '24200'
-        City: SARLAT-LA-CANEDA
-        GeoCoordinateX: '44.888486'
-        GeoCoordinateY: '1.216727'
-        DistanceCamping: '16302'
-        Image: 'http://viaimage.viafrance.com/images/evts/40862.jpg'
-        Priority: '5'
-        Active: true
-    180:
+    161:
         Code: '434464'
         Category: DET
         Address: 'place du Château-de-Castelnau'
@@ -2335,11 +2728,15 @@
         City: 'SAINT COME D OLT'
         GeoCoordinateX: '44.515169'
         GeoCoordinateY: '2.815011'
-        DistanceCamping: '23002'
+        DistanceCamping: '19978'
         Image: 'http://viaimage.viafrance.com/images/evts/1815.jpg'
         Priority: '6'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
-    181:
+    162:
         Code: '371841'
         Category: DET
         Address: 'place du Maréchal-Foch'
@@ -2348,11 +2745,15 @@
         City: SAINT-JEAN-DE-LUZ
         GeoCoordinateX: '48.953162'
         GeoCoordinateY: '3.019212'
-        DistanceCamping: '24231'
+        DistanceCamping: '24716'
         Image: 'http://viaimage.viafrance.com/images/evts/124122.jpg'
         Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
-    182:
+    163:
         Code: '858094'
         Category: DET
         Address: 'place du Maréchal-Foch'
@@ -2361,11 +2762,15 @@
         City: SAINT-JEAN-DE-LUZ
         GeoCoordinateX: '48.953162'
         GeoCoordinateY: '3.019212'
-        DistanceCamping: '24231'
+        DistanceCamping: '24716'
         Image: 'http://viaimage.viafrance.com/images/evts/8174.jpg'
         Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
-    183:
+    164:
         Code: '855512'
         Category: DET
         Address: 'place du Port'
@@ -2374,11 +2779,15 @@
         City: EVIAN-LES-BAINS
         GeoCoordinateX: '46.401297'
         GeoCoordinateY: '6.594040'
-        DistanceCamping: '9439'
+        DistanceCamping: '6913'
         Image: 'http://viaimage.viafrance.com/images/evts/52365.jpg'
         Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
-    184:
+    165:
         Code: '855523'
         Category: DET
         Address: Vailly
@@ -2387,24 +2796,15 @@
         City: LULLIN
         GeoCoordinateX: '46.306383'
         GeoCoordinateY: '6.517905'
-        DistanceCamping: '8079'
+        DistanceCamping: '10381'
         Image: 'http://viaimage.viafrance.com/images/evts/21501.jpg'
         Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
-    185:
-        Code: '860549'
-        Category: DET
-        Address: 'place de la Mairie'
-        Address2: ''
-        Zipcode: '07150'
-        City: 'VALLON-PONT-D ARC'
-        GeoCoordinateX: '46.194653'
-        GeoCoordinateY: '6.185303'
-        DistanceCamping: '29987'
-        Image: 'http://viaimage.viafrance.com/images/evts/157530.jpg'
-        Priority: '8'
-        Active: true
-    186:
+    166:
         Code: '666877'
         Category: SAL
         Address: ''
@@ -2413,11 +2813,15 @@
         City: BIARRITZ
         GeoCoordinateX: '43.465858'
         GeoCoordinateY: '-1.536654'
-        DistanceCamping: '12759'
+        DistanceCamping: '13064'
         Image: 'http://viaimage.viafrance.com/images/evts/87009.jpg'
         Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.avrilexpo.com'
         Active: true
-    187:
+    167:
         Code: '307654'
         Category: EXP
         Address: 'route des Mas'
@@ -2426,11 +2830,15 @@
         City: BANYULS-SUR-MER
         GeoCoordinateX: '42.476855'
         GeoCoordinateY: '3.117454'
-        DistanceCamping: '24546'
+        DistanceCamping: '24667'
         Image: 'http://viaimage.viafrance.com/images/evts/31672.jpg'
         Priority: '7'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
-    188:
+    168:
         Code: '371894'
         Category: EXP
         Address: 'route du Mas Reig'
@@ -2439,37 +2847,49 @@
         City: BANYULS-SUR-MER
         GeoCoordinateX: '42.476855'
         GeoCoordinateY: '3.117454'
-        DistanceCamping: '24546'
+        DistanceCamping: '24667'
         Image: 'http://viaimage.viafrance.com/images/evts/8363.jpg'
         Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
-    189:
-        Code: '423490'
-        Category: DET
-        Address: 'rue de la Tour d''Auvergne'
-        Address2: ''
-        Zipcode: '66190'
-        City: COLLIOURE
-        GeoCoordinateX: '42.523264'
-        GeoCoordinateY: '3.085998'
-        DistanceCamping: '29463'
-        Image: 'http://viaimage.viafrance.com/images/evts/48518.jpg'
-        Priority: '8'
-        Active: true
-    190:
-        Code: '483899'
+    169:
+        Code: '307568'
         Category: EXP
-        Address: 'route de Port-Vendres'
-        Address2: 'Villa Pams'
-        Zipcode: '66190'
-        City: COLLIOURE
-        GeoCoordinateX: '42.524220'
-        GeoCoordinateY: '3.092393'
-        DistanceCamping: '29590'
-        Image: 'http://viaimage.viafrance.com/images/evts/52404.jpg'
-        Priority: '8'
+        Address: 'rue Charles de Foucault'
+        Address2: ''
+        Zipcode: '66650'
+        City: BANYULS-SUR-MER
+        GeoCoordinateX: '42.477184'
+        GeoCoordinateY: '3.124452'
+        DistanceCamping: '24673'
+        Image: 'http://viaimage.viafrance.com/images/evts/18029.jpg'
+        Priority: '9'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
-    191:
+    170:
+        Code: '307653'
+        Category: EXP
+        Address: 'rue de la Madeloc'
+        Address2: 'Hameau Cosprons'
+        Zipcode: '66660'
+        City: 'PORT VENDRES'
+        GeoCoordinateX: '42.497218'
+        GeoCoordinateY: '3.107375'
+        DistanceCamping: '26987'
+        Image: 'http://viaimage.viafrance.com/images/evts/49121.jpg'
+        Priority: '9'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    171:
         Code: '664999'
         Category: SPO
         Address: 'promenade des Anglais'
@@ -2478,11 +2898,15 @@
         City: NICE
         GeoCoordinateX: '43.695624'
         GeoCoordinateY: '7.263261'
-        DistanceCamping: '23683'
+        DistanceCamping: '24832'
         Image: 'http://viaimage.viafrance.com/images/evts/27454.jpg'
         Priority: '2'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.opennicecotedazur.com/'
         Active: true
-    192:
+    172:
         Code: '863093'
         Category: VIV
         Address: 'boulevard Georges-Clemenceau'
@@ -2491,11 +2915,15 @@
         City: DRAGUIGNAN
         GeoCoordinateX: '43.536894'
         GeoCoordinateY: '6.463569'
-        DistanceCamping: '15956'
+        DistanceCamping: '14423'
         Image: 'http://viaimage.viafrance.com/images/evts/134780.jpg'
         Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.cieyoannbourgeois.fr/'
         Active: true
-    193:
+    173:
         Code: '863087'
         Category: MUS
         Address: 'boulevard Georges-Clemenceau'
@@ -2504,11 +2932,15 @@
         City: DRAGUIGNAN
         GeoCoordinateX: '43.536894'
         GeoCoordinateY: '6.463569'
-        DistanceCamping: '15956'
+        DistanceCamping: '14423'
         Image: 'http://viaimage.viafrance.com/images/evts/100004.jpg'
         Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.myspace.com/younsunnah'
         Active: true
-    194:
+    174:
         Code: '863096'
         Category: VIV
         Address: 'boulevard Georges-Clemenceau'
@@ -2517,11 +2949,15 @@
         City: DRAGUIGNAN
         GeoCoordinateX: '43.536894'
         GeoCoordinateY: '6.463569'
-        DistanceCamping: '15956'
+        DistanceCamping: '14423'
         Image: 'http://viaimage.viafrance.com/images/evts/142280.jpg'
         Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
-    195:
+    175:
         Code: '863101'
         Category: MUS
         Address: 'boulevard Georges-Clemenceau'
@@ -2530,791 +2966,15 @@
         City: DRAGUIGNAN
         GeoCoordinateX: '43.536894'
         GeoCoordinateY: '6.463569'
-        DistanceCamping: '15956'
+        DistanceCamping: '14423'
         Image: 'http://viaimage.viafrance.com/images/evts/76311.jpg'
         Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
-    196:
-        Code: '465431'
-        Category: DET
-        Address: 'Base de Guillaumes'
-        Address2: ''
-        Zipcode: '04240'
-        City: ANNOT
-        GeoCoordinateX: '47.863111'
-        GeoCoordinateY: '-0.733536'
-        DistanceCamping: '17924'
-        Image: 'http://viaimage.viafrance.com/images/evts/11845.jpg'
-        Priority: '8'
-        Active: true
-    197:
-        Code: '824282'
-        Category: VIV
-        Address: 'avenue du 8-Mai-1945'
-        Address2: ''
-        Zipcode: '04000'
-        City: DIGNE-LES-BAINS
-        GeoCoordinateX: '44.089790'
-        GeoCoordinateY: '6.239727'
-        DistanceCamping: '18192'
-        Image: 'http://viaimage.viafrance.com/images/evts/123968.jpg'
-        Priority: '5'
-        Active: true
-    198:
-        Code: '824295'
-        Category: MUS
-        Address: 'avenue du 8-Mai-1945'
-        Address2: ''
-        Zipcode: '04000'
-        City: DIGNE-LES-BAINS
-        GeoCoordinateX: '44.089790'
-        GeoCoordinateY: '6.239727'
-        DistanceCamping: '18192'
-        Image: 'http://viaimage.viafrance.com/images/evts/104128.jpg'
-        Priority: '5'
-        Active: true
-    199:
-        Code: '824297'
-        Category: MUS
-        Address: 'avenue du 8-Mai-1945'
-        Address2: ''
-        Zipcode: '04000'
-        City: DIGNE-LES-BAINS
-        GeoCoordinateX: '44.089790'
-        GeoCoordinateY: '6.239727'
-        DistanceCamping: '18192'
-        Image: 'http://viaimage.viafrance.com/images/evts/99580.jpg'
-        Priority: '5'
-        Active: true
-    200:
-        Code: '824309'
-        Category: MUS
-        Address: 'avenue du 8-Mai-1945'
-        Address2: ''
-        Zipcode: '04000'
-        City: DIGNE-LES-BAINS
-        GeoCoordinateX: '44.089790'
-        GeoCoordinateY: '6.239727'
-        DistanceCamping: '18192'
-        Image: 'http://viaimage.viafrance.com/images/evts/69390.jpg'
-        Priority: '7'
-        Active: true
-    201:
-        Code: '669268'
-        Category: SAL
-        Address: 'avenue Louis-Martin'
-        Address2: ''
-        Zipcode: '35400'
-        City: SAINT-MALO
-        GeoCoordinateX: '48.647441'
-        GeoCoordinateY: '-2.008927'
-        DistanceCamping: '21640'
-        Image: 'http://viaimage.viafrance.com/images/evts/31076.jpg'
-        Priority: '3'
-        Active: true
-    202:
-        Code: '635430'
-        Category: SAL
-        Address: 'boulevard Wilson'
-        Address2: ''
-        Zipcode: '35780'
-        City: DINARD
-        GeoCoordinateX: '48.635041'
-        GeoCoordinateY: '-2.051627'
-        DistanceCamping: '20079'
-        Image: 'http://viaimage.viafrance.com/images/evts/56041.jpg'
-        Priority: '3'
-        Active: true
-    203:
-        Code: '635422'
-        Category: FES
-        Address: 'boulevard Wilson'
-        Address2: ''
-        Zipcode: '35780'
-        City: DINARD
-        GeoCoordinateX: '48.635041'
-        GeoCoordinateY: '-2.051627'
-        DistanceCamping: '20079'
-        Image: 'http://viaimage.viafrance.com/images/evts/76377.jpg'
-        Priority: '3'
-        Active: true
-    204:
-        Code: '646235'
-        Category: FES
-        Address: 'quai Duguay-Trouin'
-        Address2: ''
-        Zipcode: '35400'
-        City: SAINT-MALO
-        GeoCoordinateX: '48.651222'
-        GeoCoordinateY: '-2.021191'
-        DistanceCamping: '21959'
-        Image: 'http://viaimage.viafrance.com/images/evts/75286.jpg'
-        Priority: '3'
-        Active: true
-    205:
-        Code: '861886'
-        Category: VIV
-        Address: 'route Ménascle'
-        Address2: ''
-        Zipcode: '12100'
-        City: 'SAINT GEORGES DE LUZENCON'
-        GeoCoordinateX: '44.063287'
-        GeoCoordinateY: '2.987715'
-        DistanceCamping: '26775'
-        Image: 'http://viaimage.viafrance.com/images/evts/17301.jpg'
-        Priority: '5'
-        Active: true
-    206:
-        Code: '792877'
-        Category: EXP
-        Address: 'Musée Soulages'
-        Address2: ''
-        Zipcode: '12000'
-        City: RODEZ
-        GeoCoordinateX: '44.349340'
-        GeoCoordinateY: '2.576173'
-        DistanceCamping: '18904'
-        Image: 'http://viaimage.viafrance.com/images/evts/52404.jpg'
-        Priority: '5'
-        Active: true
-    207:
-        Code: '383646'
-        Category: DET
-        Address: 'route Départementale-992'
-        Address2: 'Aire des Cazalous'
-        Zipcode: '12100'
-        City: MILLAU
-        GeoCoordinateX: '44.085476'
-        GeoCoordinateY: '3.022231'
-        DistanceCamping: '27193'
-        Image: 'http://viaimage.viafrance.com/images/evts/408.jpg'
-        Priority: '2'
-        Active: true
-    208:
-        Code: '283477'
-        Category: EXP
-        Address: 'rue Eugène Loup'
-        Address2: ''
-        Zipcode: '12000'
-        City: RODEZ
-        GeoCoordinateX: '44.352411'
-        GeoCoordinateY: '2.563659'
-        DistanceCamping: '19875'
-        Image: 'http://viaimage.viafrance.com/images/evts/7731.jpg'
-        Priority: '5'
-        Active: true
-    209:
-        Code: '661627'
-        Category: SPO
-        Address: 'boulevard du Port'
-        Address2: ''
-        Zipcode: '44380'
-        City: PORNICHET
-        GeoCoordinateX: '47.258615'
-        GeoCoordinateY: '-2.344086'
-        DistanceCamping: '24092'
-        Image: 'http://viaimage.viafrance.com/images/evts/38352.jpg'
-        Priority: '8'
-        Active: true
-    210:
-        Code: '293146'
-        Category: EXP
-        Address: 'rue de la Couronnerie'
-        Address2: 'Le bourg'
-        Zipcode: '46500'
-        City: ROCAMADOUR
-        GeoCoordinateX: '44.799259'
-        GeoCoordinateY: '1.616886'
-        DistanceCamping: '23150'
-        Image: 'http://viaimage.viafrance.com/images/evts/31683.jpg'
-        Priority: '5'
-        Active: true
-    211:
-        Code: '298717'
-        Category: EXP
-        Address: ''
-        Address2: Village
-        Zipcode: '19500'
-        City: TURENNE
-        GeoCoordinateX: '45.055438'
-        GeoCoordinateY: '1.583786'
-        DistanceCamping: '29676'
-        Image: 'http://viaimage.viafrance.com/images/evts/53382.jpg'
-        Priority: '5'
-        Active: true
-    212:
-        Code: '147717'
-        Category: EXP
-        Address: ''
-        Address2: Marquay
-        Zipcode: '24620'
-        City: 'LES EYZIES-DE-TAYAC-SIREUIL'
-        GeoCoordinateX: '44.939870'
-        GeoCoordinateY: '1.074781'
-        DistanceCamping: '22462'
-        Image: 'http://viaimage.viafrance.com/images/evts/42760.jpg'
-        Priority: '5'
-        Active: true
-    213:
-        Code: '398525'
-        Category: DET
-        Address: 'avenue de la Grande-Plage'
-        Address2: ''
-        Zipcode: '40510'
-        City: SEIGNOSSE
-        GeoCoordinateX: '43.705980'
-        GeoCoordinateY: '-1.432910'
-        DistanceCamping: '29516'
-        Image: 'http://viaimage.viafrance.com/images/evts/48364.jpg'
-        Priority: '8'
-        Active: true
-    214:
-        Code: '748051'
-        Category: SPO
-        Address: 'place de la Mairie'
-        Address2: ''
-        Zipcode: '20137'
-        City: PORTO-VECCHIO
-        GeoCoordinateX: '41.590872'
-        GeoCoordinateY: '9.279085'
-        DistanceCamping: '84'
-        Image: 'http://viaimage.viafrance.com/images/evts/104441.jpg'
-        Priority: '2'
-        Active: true
-    215:
-        Code: '862759'
-        Category: DET
-        Address: ''
-        Address2: Palombaggia
-        Zipcode: '20137'
-        City: PORTO-VECCHIO
-        GeoCoordinateX: '41.557989'
-        GeoCoordinateY: '9.325743'
-        DistanceCamping: '5413'
-        Image: 'http://viaimage.viafrance.com/images/evts/157789.jpg'
-        Priority: '8'
-        Active: true
-    216:
-        Code: '768885'
-        Category: DET
-        Address: 'rue Fred-Scamaroni'
-        Address2: ''
-        Zipcode: '20169'
-        City: BONIFACIO
-        GeoCoordinateX: '41.387072'
-        GeoCoordinateY: '9.158218'
-        DistanceCamping: '24805'
-        Image: 'http://viaimage.viafrance.com/images/evts/103434.jpg'
-        Priority: '3'
-        Active: true
-    217:
-        Code: '391162'
-        Category: DET
-        Address: 'montée de Saint-Roch'
-        Address2: ''
-        Zipcode: '20169'
-        City: BONIFACIO
-        GeoCoordinateX: '41.387291'
-        GeoCoordinateY: '9.160505'
-        DistanceCamping: '24706'
-        Image: 'http://viaimage.viafrance.com/images/evts/48959.jpg'
-        Priority: '5'
-        Active: true
-    218:
-        Code: '832399'
-        Category: MUS
-        Address: 'rue d''Alsace-Lorraine'
-        Address2: ''
-        Zipcode: '29140'
-        City: ROSPORDEN
-        GeoCoordinateX: '47.957612'
-        GeoCoordinateY: '-3.827298'
-        DistanceCamping: '15600'
-        Image: 'http://viaimage.viafrance.com/images/evts/68763.jpg'
-        Priority: '8'
-        Active: true
-    219:
-        Code: '791829'
-        Category: FES
-        Address: 'avenue Georges-Pompidou'
-        Address2: ''
-        Zipcode: '29000'
-        City: QUIMPER
-        GeoCoordinateX: '47.983290'
-        GeoCoordinateY: '-4.072148'
-        DistanceCamping: '27683'
-        Image: 'http://viaimage.viafrance.com/images/evts/30701.jpg'
-        Priority: '9'
-        Active: true
-    220:
-        Code: '827311'
-        Category: SPO
-        Address: 'place Theodore Decker'
-        Address2: ''
-        Zipcode: '56000'
-        City: VANNES
-        GeoCoordinateX: '47.652184'
-        GeoCoordinateY: '-2.759434'
-        DistanceCamping: '28444'
-        Image: 'http://viaimage.viafrance.com/images/evts/46214.jpg'
-        Priority: '5'
-        Active: true
-    221:
-        Code: '840756'
-        Category: DET
-        Address: 'rue Marceau Brès'
-        Address2: ''
-        Zipcode: '26200'
-        City: MONTELIMAR
-        GeoCoordinateX: '44.544396'
-        GeoCoordinateY: '4.717375'
-        DistanceCamping: '26098'
-        Image: 'http://viaimage.viafrance.com/images/evts/148164.jpg'
-        Priority: '8'
-        Active: true
-    222:
-        Code: '668616'
-        Category: FES
-        Address: 'rue du Tour-des-Portes'
-        Address2: ''
-        Zipcode: '56100'
-        City: LORIENT
-        GeoCoordinateX: '47.751286'
-        GeoCoordinateY: '-3.370700'
-        DistanceCamping: '28690'
-        Image: 'http://viaimage.viafrance.com/images/evts/147897.jpg'
-        Priority: '2'
-        Active: true
-    223:
-        Code: '788487'
-        Category: MUS
-        Address: 'rue Rouget-de-l''Isle'
-        Address2: 'BP 255'
-        Zipcode: '56600'
-        City: LANESTER
-        GeoCoordinateX: '47.777478'
-        GeoCoordinateY: '-3.346664'
-        DistanceCamping: '29386'
-        Image: 'http://viaimage.viafrance.com/images/evts/128379.jpg'
-        Priority: '5'
-        Active: true
-    224:
-        Code: '811966'
-        Category: VIV
-        Address: 'port Santa-Lucia'
-        Address2: ''
-        Zipcode: '83700'
-        City: SAINT-RAPHAEL
-        GeoCoordinateX: '43.414519'
-        GeoCoordinateY: '6.779161'
-        DistanceCamping: '25982'
-        Image: 'http://viaimage.viafrance.com/images/evts/101408.jpg'
-        Priority: '5'
-        Active: true
-    225:
-        Code: '811973'
-        Category: VIV
-        Address: 'port Santa-Lucia'
-        Address2: ''
-        Zipcode: '83700'
-        City: SAINT-RAPHAEL
-        GeoCoordinateX: '43.414519'
-        GeoCoordinateY: '6.779161'
-        DistanceCamping: '25982'
-        Image: 'http://viaimage.viafrance.com/images/evts/142168.jpg'
-        Priority: '5'
-        Active: true
-    226:
-        Code: '828302'
-        Category: SPO
-        Address: 'avenue du 15e corps'
-        Address2: ''
-        Zipcode: '83600'
-        City: FREJUS
-        GeoCoordinateX: '43.437170'
-        GeoCoordinateY: '6.740956'
-        DistanceCamping: '25315'
-        Image: 'http://viaimage.viafrance.com/images/evts/46214.jpg'
-        Priority: '5'
-        Active: true
-    227:
-        Code: '665080'
-        Category: SPO
-        Address: 'avenue de la Capitainerie'
-        Address2: ''
-        Zipcode: '17000'
-        City: 'LA ROCHELLE'
-        GeoCoordinateX: '46.142775'
-        GeoCoordinateY: '-1.166923'
-        DistanceCamping: '28661'
-        Image: 'http://viaimage.viafrance.com/images/evts/10915.jpg'
-        Priority: '3'
-        Active: true
-    228:
-        Code: '788758'
-        Category: MUS
-        Address: 'quai Louis-Prunier'
-        Address2: ''
-        Zipcode: '17000'
-        City: 'LA ROCHELLE'
-        GeoCoordinateX: '46.151825'
-        GeoCoordinateY: '-1.150158'
-        DistanceCamping: '29786'
-        Image: 'http://viaimage.viafrance.com/images/evts/128864.jpg'
-        Priority: '5'
-        Active: true
-    229:
-        Code: '399436'
-        Category: DET
-        Address: 'route D4805'
-        Address2: ''
-        Zipcode: '04120'
-        City: CASTELLANE
-        GeoCoordinateX: '43.827438'
-        GeoCoordinateY: '6.475836'
-        DistanceCamping: '3684'
-        Image: 'http://viaimage.viafrance.com/images/evts/27173.jpg'
-        Priority: '7'
-        Active: true
-    230:
-        Code: '857602'
-        Category: VIV
-        Address: 'rue Octave-Feuillet'
-        Address2: ''
-        Zipcode: '50000'
-        City: SAINT-LO
-        GeoCoordinateX: '49.114362'
-        GeoCoordinateY: '-1.090423'
-        DistanceCamping: '22897'
-        Image: 'http://viaimage.viafrance.com/images/evts/12129.jpg'
-        Priority: '5'
-        Active: true
-    231:
-        Code: '857603'
-        Category: VIV
-        Address: 'rue Octave-Feuillet'
-        Address2: ''
-        Zipcode: '50000'
-        City: SAINT-LO
-        GeoCoordinateX: '49.114362'
-        GeoCoordinateY: '-1.090423'
-        DistanceCamping: '22897'
-        Image: 'http://viaimage.viafrance.com/images/evts/148407.jpg'
-        Priority: '5'
-        Active: true
-    232:
-        Code: '857628'
-        Category: VIV
-        Address: 'rue Octave-Feuillet'
-        Address2: ''
-        Zipcode: '50000'
-        City: SAINT-LO
-        GeoCoordinateX: '49.114362'
-        GeoCoordinateY: '-1.090423'
-        DistanceCamping: '22897'
-        Image: 'http://viaimage.viafrance.com/images/evts/18005.jpg'
-        Priority: '7'
-        Active: true
-    233:
-        Code: '840370'
-        Category: SPO
-        Address: 'route de Torigni'
-        Address2: ''
-        Zipcode: '50000'
-        City: SAINT-LO
-        GeoCoordinateX: '49.105297'
-        GeoCoordinateY: '-1.067690'
-        DistanceCamping: '24023'
-        Image: 'http://viaimage.viafrance.com/images/evts/46214.jpg'
-        Priority: '8'
-        Active: true
-    234:
-        Code: '789336'
-        Category: FES
-        Address: 'route Nationale-152'
-        Address2: ''
-        Zipcode: '41150'
-        City: 'CHAUMONT SUR LOIRE'
-        GeoCoordinateX: '47.479195'
-        GeoCoordinateY: '1.181927'
-        DistanceCamping: '29543'
-        Image: 'http://viaimage.viafrance.com/images/evts/157298.jpg'
-        Priority: '3'
-        Active: true
-    235:
-        Code: '786273'
-        Category: FET
-        Address: 'rue de la Grange-aux-Dîmes'
-        Address2: ''
-        Zipcode: '41250'
-        City: CHAMBORD
-        GeoCoordinateX: '47.616051'
-        GeoCoordinateY: '1.517086'
-        DistanceCamping: '7082'
-        Image: 'http://viaimage.viafrance.com/images/evts/40010.jpg'
-        Priority: '6'
-        Active: true
-    236:
-        Code: '842945'
-        Category: MUS
-        Address: 'avenue Maunoury'
-        Address2: ''
-        Zipcode: '41000'
-        City: BLOIS
-        GeoCoordinateX: '47.590915'
-        GeoCoordinateY: '1.335675'
-        DistanceCamping: '12622'
-        Image: 'http://viaimage.viafrance.com/images/evts/149567.jpg'
-        Priority: '8'
-        Active: true
-    237:
-        Code: '842946'
-        Category: MUS
-        Address: 'avenue Maunoury'
-        Address2: ''
-        Zipcode: '41000'
-        City: BLOIS
-        GeoCoordinateX: '47.590915'
-        GeoCoordinateY: '1.335675'
-        DistanceCamping: '12622'
-        Image: 'http://viaimage.viafrance.com/images/evts/149583.jpg'
-        Priority: '8'
-        Active: true
-    238:
-        Code: '426288'
-        Category: DET
-        Address: 'quartier de la Barre'
-        Address2: ''
-        Zipcode: '64600'
-        City: ANGLET
-        GeoCoordinateX: '44.389736'
-        GeoCoordinateY: '0.303141'
-        DistanceCamping: '5365'
-        Image: 'http://viaimage.viafrance.com/images/evts/51823.jpg'
-        Priority: '8'
-        Active: true
-    239:
-        Code: '860417'
-        Category: MUS
-        Address: 'boulevard des Arènes'
-        Address2: ''
-        Zipcode: '30000'
-        City: NIMES
-        GeoCoordinateX: '43.834783'
-        GeoCoordinateY: '4.359751'
-        DistanceCamping: '19543'
-        Image: 'http://viaimage.viafrance.com/images/evts/11215.jpg'
-        Priority: '2'
-        Active: true
-    240:
-        Code: '771032'
-        Category: DET
-        Address: ''
-        Address2: 'Gare SNCF de Villefranche-de-Conflent'
-        Zipcode: '66500'
-        City: 'VILLEFRANCHE DE CONFLENT'
-        GeoCoordinateX: '44.758148'
-        GeoCoordinateY: '5.363910'
-        DistanceCamping: '11838'
-        Image: 'http://viaimage.viafrance.com/images/evts/72468.jpg'
-        Priority: '5'
-        Active: true
-    241:
-        Code: '463756'
-        Category: DET
-        Address: 'Les Finets'
-        Address2: ''
-        Zipcode: '26420'
-        City: 'LA CHAPELLE-EN-VERCORS'
-        GeoCoordinateX: '44.961137'
-        GeoCoordinateY: '5.422839'
-        DistanceCamping: '29939'
-        Image: 'http://viaimage.viafrance.com/images/evts/21389.jpg'
-        Priority: '8'
-        Active: true
-    242:
-        Code: '371591'
-        Category: EXP
-        Address: 'avenue de la Clairette'
-        Address2: ''
-        Zipcode: '26150'
-        City: DIE
-        GeoCoordinateX: '44.760858'
-        GeoCoordinateY: '5.356225'
-        DistanceCamping: '12506'
-        Image: 'http://viaimage.viafrance.com/images/evts/10899.jpg'
-        Priority: '8'
-        Active: true
-    243:
-        Code: '406597'
-        Category: DET
-        Address: 'place de la République'
-        Address2: ''
-        Zipcode: '26150'
-        City: DIE
-        GeoCoordinateX: '44.752223'
-        GeoCoordinateY: '5.371233'
-        DistanceCamping: '10985'
-        Image: 'http://viaimage.viafrance.com/images/evts/10956.jpg'
-        Priority: '8'
-        Active: true
-    244:
-        Code: '827173'
-        Category: SPO
-        Address: 'rue Léon-Branchet'
-        Address2: ''
-        Zipcode: '19100'
-        City: BRIVE-LA-GAILLARDE
-        GeoCoordinateX: '45.160688'
-        GeoCoordinateY: '1.546031'
-        DistanceCamping: '14479'
-        Image: 'http://viaimage.viafrance.com/images/evts/131331.jpg'
-        Priority: '5'
-        Active: true
-    245:
-        Code: '827174'
-        Category: SPO
-        Address: 'rue Léon-Branchet'
-        Address2: ''
-        Zipcode: '19100'
-        City: BRIVE-LA-GAILLARDE
-        GeoCoordinateX: '45.160688'
-        GeoCoordinateY: '1.546031'
-        DistanceCamping: '14479'
-        Image: 'http://viaimage.viafrance.com/images/evts/131331.jpg'
-        Priority: '5'
-        Active: true
-    246:
-        Code: '808313'
-        Category: VIV
-        Address: 'rue Principale'
-        Address2: ''
-        Zipcode: '31820'
-        City: PIBRAC
-        GeoCoordinateX: '43.617713'
-        GeoCoordinateY: '1.283402'
-        DistanceCamping: '24366'
-        Image: 'http://viaimage.viafrance.com/images/evts/145311.jpg'
-        Priority: '5'
-        Active: true
-    247:
-        Code: '839529'
-        Category: VIV
-        Address: 'route de Toulouse'
-        Address2: ''
-        Zipcode: '31490'
-        City: LEGUEVIN
-        GeoCoordinateX: '43.600306'
-        GeoCoordinateY: '1.242318'
-        DistanceCamping: '21962'
-        Image: 'http://viaimage.viafrance.com/images/evts/4831.jpg'
-        Priority: '7'
-        Active: true
-    248:
-        Code: '808240'
-        Category: VIV
-        Address: 'rue Principale'
-        Address2: ''
-        Zipcode: '31820'
-        City: PIBRAC
-        GeoCoordinateX: '43.617713'
-        GeoCoordinateY: '1.283402'
-        DistanceCamping: '24366'
-        Image: 'http://viaimage.viafrance.com/images/evts/145476.jpg'
-        Priority: '8'
-        Active: true
-    249:
-        Code: '808246'
-        Category: VIV
-        Address: 'rue Principale'
-        Address2: ''
-        Zipcode: '31820'
-        City: PIBRAC
-        GeoCoordinateX: '43.617713'
-        GeoCoordinateY: '1.283402'
-        DistanceCamping: '24366'
-        Image: 'http://viaimage.viafrance.com/images/evts/8594.jpg'
-        Priority: '8'
-        Active: true
-    250:
-        Code: '839889'
-        Category: VIV
-        Address: 'rue Pierre-Bérégovoy'
-        Address2: ''
-        Zipcode: '85000'
-        City: 'LA ROCHE-SUR-YON'
-        GeoCoordinateX: '46.668247'
-        GeoCoordinateY: '-1.429595'
-        DistanceCamping: '26689'
-        Image: 'http://viaimage.viafrance.com/images/evts/100467.jpg'
-        Priority: '8'
-        Active: true
-    251:
-        Code: '860101'
-        Category: SPO
-        Address: 'place Roussel'
-        Address2: ''
-        Zipcode: '09110'
-        City: AX-LES-THERMES
-        GeoCoordinateX: '42.719804'
-        GeoCoordinateY: '1.837653'
-        DistanceCamping: '50'
-        Image: 'http://viaimage.viafrance.com/images/evts/104438.jpg'
-        Priority: '3'
-        Active: true
-    252:
-        Code: '826264'
-        Category: SPO
-        Address: 'route de Vernaux'
-        Address2: ''
-        Zipcode: '09110'
-        City: LUZENAC
-        GeoCoordinateX: '42.771750'
-        GeoCoordinateY: '1.757229'
-        DistanceCamping: '8700'
-        Image: 'http://viaimage.viafrance.com/images/evts/46214.jpg'
-        Priority: '5'
-        Active: true
-    253:
-        Code: '826265'
-        Category: SPO
-        Address: 'route de Vernaux'
-        Address2: ''
-        Zipcode: '09110'
-        City: LUZENAC
-        GeoCoordinateX: '42.771750'
-        GeoCoordinateY: '1.757229'
-        DistanceCamping: '8700'
-        Image: 'http://viaimage.viafrance.com/images/evts/46214.jpg'
-        Priority: '5'
-        Active: true
-    254:
-        Code: '826277'
-        Category: SPO
-        Address: 'route de Vernaux'
-        Address2: ''
-        Zipcode: '09110'
-        City: LUZENAC
-        GeoCoordinateX: '42.771750'
-        GeoCoordinateY: '1.757229'
-        DistanceCamping: '8700'
-        Image: 'http://viaimage.viafrance.com/images/evts/46214.jpg'
-        Priority: '5'
-        Active: true
-    255:
-        Code: '736000'
-        Category: FET
-        Address: 'avenue de la République'
-        Address2: ''
-        Zipcode: '13460'
-        City: 'LES SAINTES-MARIES-DE-LA-MER'
-        GeoCoordinateX: '43.451120'
-        GeoCoordinateY: '4.429291'
-        DistanceCamping: '25372'
-        Image: 'http://viaimage.viafrance.com/images/evts/116027.jpg'
-        Priority: '3'
-        Active: true
-    256:
+    176:
         Code: '856662'
         Category: EXP
         Address: 'rue du Murgin'
@@ -3323,11 +2983,15 @@
         City: MOIRANS-EN-MONTAGNE
         GeoCoordinateX: '46.433137'
         GeoCoordinateY: '5.726193'
-        DistanceCamping: '17113'
+        DistanceCamping: '27385'
         Image: 'http://viaimage.viafrance.com/images/evts/27808.jpg'
         Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.herveplumet.com/'
         Active: true
-    257:
+    177:
         Code: '865307'
         Category: EXP
         Address: 'rue Richebourg'
@@ -3336,11 +3000,1222 @@
         City: LONS-LE-SAUNIER
         GeoCoordinateX: '46.677256'
         GeoCoordinateY: '5.555647'
-        DistanceCamping: '15121'
+        DistanceCamping: '17647'
         Image: 'http://viaimage.viafrance.com/images/evts/27808.jpg'
         Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
-    258:
+    178:
+        Code: '103650'
+        Category: EXP
+        Address: 'place des Salines'
+        Address2: ''
+        Zipcode: '39110'
+        City: SALINS-LES-BAINS
+        GeoCoordinateX: '46.936695'
+        GeoCoordinateY: '5.877343'
+        DistanceCamping: '29771'
+        Image: 'http://viaimage.viafrance.com/images/evts/74767.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    179:
+        Code: '451405'
+        Category: EXP
+        Address: 'place des Salines'
+        Address2: ''
+        Zipcode: '39110'
+        City: SALINS-LES-BAINS
+        GeoCoordinateX: '46.936695'
+        GeoCoordinateY: '5.877343'
+        DistanceCamping: '29771'
+        Image: 'http://viaimage.viafrance.com/images/evts/74767.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    180:
+        Code: '824282'
+        Category: VIV
+        Address: 'avenue du 8-Mai-1945'
+        Address2: ''
+        Zipcode: '04000'
+        City: DIGNE-LES-BAINS
+        GeoCoordinateX: '44.089790'
+        GeoCoordinateY: '6.239727'
+        DistanceCamping: '17981'
+        Image: 'http://viaimage.viafrance.com/images/evts/123968.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    181:
+        Code: '824295'
+        Category: MUS
+        Address: 'avenue du 8-Mai-1945'
+        Address2: ''
+        Zipcode: '04000'
+        City: DIGNE-LES-BAINS
+        GeoCoordinateX: '44.089790'
+        GeoCoordinateY: '6.239727'
+        DistanceCamping: '17981'
+        Image: 'http://viaimage.viafrance.com/images/evts/104128.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.myspace.com/hyphenhyphen'
+        Active: true
+    182:
+        Code: '824297'
+        Category: MUS
+        Address: 'avenue du 8-Mai-1945'
+        Address2: ''
+        Zipcode: '04000'
+        City: DIGNE-LES-BAINS
+        GeoCoordinateX: '44.089790'
+        GeoCoordinateY: '6.239727'
+        DistanceCamping: '17981'
+        Image: 'http://viaimage.viafrance.com/images/evts/99580.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.myspace.com/decibelles.chanson'
+        Active: true
+    183:
+        Code: '824309'
+        Category: MUS
+        Address: 'avenue du 8-Mai-1945'
+        Address2: ''
+        Zipcode: '04000'
+        City: DIGNE-LES-BAINS
+        GeoCoordinateX: '44.089790'
+        GeoCoordinateY: '6.239727'
+        DistanceCamping: '17981'
+        Image: 'http://viaimage.viafrance.com/images/evts/69390.jpg'
+        Priority: '7'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.myspace.com/christinarosmini'
+        Active: true
+    184:
+        Code: '792877'
+        Category: EXP
+        Address: 'Musée Soulages'
+        Address2: ''
+        Zipcode: '12000'
+        City: RODEZ
+        GeoCoordinateX: '44.349340'
+        GeoCoordinateY: '2.576173'
+        DistanceCamping: '21313'
+        Image: 'http://viaimage.viafrance.com/images/evts/73563.jpg'
+        Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    185:
+        Code: '861886'
+        Category: VIV
+        Address: 'route Ménascle'
+        Address2: ''
+        Zipcode: '12100'
+        City: 'SAINT GEORGES DE LUZENCON'
+        GeoCoordinateX: '44.063287'
+        GeoCoordinateY: '2.987715'
+        DistanceCamping: '24351'
+        Image: 'http://viaimage.viafrance.com/images/evts/17301.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.vol-plane.com/'
+        Active: true
+    186:
+        Code: '870589'
+        Category: EXP
+        Address: 'place Clémenceau'
+        Address2: ''
+        Zipcode: '12000'
+        City: RODEZ
+        GeoCoordinateX: '44.349149'
+        GeoCoordinateY: '2.578118'
+        DistanceCamping: '21189'
+        Image: 'http://viaimage.viafrance.com/images/evts/10784.jpg'
+        Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://francois.baschet.free.fr/frontfr.htm'
+        Active: true
+    187:
+        Code: '383646'
+        Category: DET
+        Address: 'route Départementale-992'
+        Address2: 'Aire des Cazalous'
+        Zipcode: '12100'
+        City: MILLAU
+        GeoCoordinateX: '44.085476'
+        GeoCoordinateY: '3.022231'
+        DistanceCamping: '24916'
+        Image: 'http://viaimage.viafrance.com/images/evts/408.jpg'
+        Priority: '2'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    188:
+        Code: '669268'
+        Category: SAL
+        Address: 'avenue Louis-Martin'
+        Address2: ''
+        Zipcode: '35400'
+        City: SAINT-MALO
+        GeoCoordinateX: '48.647441'
+        GeoCoordinateY: '-2.008927'
+        DistanceCamping: '19545'
+        Image: 'http://viaimage.viafrance.com/images/evts/31076.jpg'
+        Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    189:
+        Code: '635430'
+        Category: SAL
+        Address: 'boulevard Wilson'
+        Address2: ''
+        Zipcode: '35780'
+        City: DINARD
+        GeoCoordinateX: '48.635041'
+        GeoCoordinateY: '-2.051627'
+        DistanceCamping: '16126'
+        Image: 'http://viaimage.viafrance.com/images/evts/56041.jpg'
+        Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    190:
+        Code: '635422'
+        Category: FES
+        Address: 'boulevard Wilson'
+        Address2: ''
+        Zipcode: '35780'
+        City: DINARD
+        GeoCoordinateX: '48.635041'
+        GeoCoordinateY: '-2.051627'
+        DistanceCamping: '16126'
+        Image: 'http://viaimage.viafrance.com/images/evts/76377.jpg'
+        Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.estivales-du-rire.com'
+        Active: true
+    191:
+        Code: '646235'
+        Category: FES
+        Address: 'quai Duguay-Trouin'
+        Address2: ''
+        Zipcode: '35400'
+        City: SAINT-MALO
+        GeoCoordinateX: '48.651222'
+        GeoCoordinateY: '-2.021191'
+        DistanceCamping: '18868'
+        Image: 'http://viaimage.viafrance.com/images/evts/75286.jpg'
+        Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    192:
+        Code: '661627'
+        Category: SPO
+        Address: 'boulevard du Port'
+        Address2: ''
+        Zipcode: '44380'
+        City: PORNICHET
+        GeoCoordinateX: '47.258615'
+        GeoCoordinateY: '-2.344086'
+        DistanceCamping: '25696'
+        Image: 'http://viaimage.viafrance.com/images/evts/38352.jpg'
+        Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.labarquera.org/'
+        Active: true
+    193:
+        Code: '798454'
+        Category: FET
+        Address: 'boulevard Paul-Lasaosa'
+        Address2: ''
+        Zipcode: '40100'
+        City: DAX
+        GeoCoordinateX: '43.712908'
+        GeoCoordinateY: '-1.049446'
+        DistanceCamping: '29751'
+        Image: 'http://viaimage.viafrance.com/images/evts/223.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://feria.dax.fr/'
+        Active: true
+    194:
+        Code: '798472'
+        Category: FET
+        Address: 'boulevard Paul-Lasaosa'
+        Address2: ''
+        Zipcode: '40100'
+        City: DAX
+        GeoCoordinateX: '43.712908'
+        GeoCoordinateY: '-1.049446'
+        DistanceCamping: '29751'
+        Image: 'http://viaimage.viafrance.com/images/evts/223.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://feria.dax.fr/'
+        Active: true
+    195:
+        Code: '857011'
+        Category: VIV
+        Address: 'place du Golheres'
+        Address2: ''
+        Zipcode: '56400'
+        City: AURAY
+        GeoCoordinateX: '47.665132'
+        GeoCoordinateY: '-2.989639'
+        DistanceCamping: '22305'
+        Image: 'http://viaimage.viafrance.com/images/evts/147027.jpg'
+        Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.collectifpetittravers.org'
+        Active: true
+    196:
+        Code: '857013'
+        Category: VIV
+        Address: 'place du Golheres'
+        Address2: ''
+        Zipcode: '56400'
+        City: AURAY
+        GeoCoordinateX: '47.665132'
+        GeoCoordinateY: '-2.989639'
+        DistanceCamping: '22305'
+        Image: 'http://viaimage.viafrance.com/images/evts/148448.jpg'
+        Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.maxetmaurice.com'
+        Active: true
+    197:
+        Code: '860417'
+        Category: MUS
+        Address: 'boulevard des Arènes'
+        Address2: ''
+        Zipcode: '30000'
+        City: NIMES
+        GeoCoordinateX: '43.834783'
+        GeoCoordinateY: '4.359751'
+        DistanceCamping: '21341'
+        Image: 'http://viaimage.viafrance.com/images/evts/11215.jpg'
+        Priority: '2'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://countdown.depechemode.com/'
+        Active: true
+    198:
+        Code: '641676'
+        Category: FES
+        Address: 'rue de la Calade'
+        Address2: ''
+        Zipcode: '13200'
+        City: ARLES
+        GeoCoordinateX: '43.676500'
+        GeoCoordinateY: '4.629782'
+        DistanceCamping: '12634'
+        Image: 'http://viaimage.viafrance.com/images/evts/83188.jpg'
+        Priority: '2'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.suds-arles.com/'
+        Active: true
+    199:
+        Code: '731597'
+        Category: EXP
+        Address: 'avenue 1re-Division-France-Libre'
+        Address2: 'Presqu''île du Cirque Romain'
+        Zipcode: '13200'
+        City: ARLES
+        GeoCoordinateX: '43.672538'
+        GeoCoordinateY: '4.617656'
+        DistanceCamping: '11613'
+        Image: 'http://viaimage.viafrance.com/images/evts/124308.jpg'
+        Priority: '2'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    200:
+        Code: '838539'
+        Category: DET
+        Address: 'rond point des Arènes'
+        Address2: ''
+        Zipcode: '13200'
+        City: ARLES
+        GeoCoordinateX: '43.677734'
+        GeoCoordinateY: '4.630964'
+        DistanceCamping: '12746'
+        Image: 'http://viaimage.viafrance.com/images/evts/15511.jpg'
+        Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    201:
+        Code: '748051'
+        Category: SPO
+        Address: 'place de la Mairie'
+        Address2: ''
+        Zipcode: '20137'
+        City: PORTO-VECCHIO
+        GeoCoordinateX: '41.590872'
+        GeoCoordinateY: '9.279085'
+        DistanceCamping: '6263'
+        Image: 'http://viaimage.viafrance.com/images/evts/104441.jpg'
+        Priority: '2'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.letour.fr'
+        Active: true
+    202:
+        Code: '862759'
+        Category: DET
+        Address: ''
+        Address2: Palombaggia
+        Zipcode: '20137'
+        City: PORTO-VECCHIO
+        GeoCoordinateX: '41.557989'
+        GeoCoordinateY: '9.325743'
+        DistanceCamping: '10155'
+        Image: 'http://viaimage.viafrance.com/images/evts/157789.jpg'
+        Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    203:
+        Code: '424508'
+        Category: DET
+        Address: 'La Testa'
+        Address2: ''
+        Zipcode: '20137'
+        City: PORTO-VECCHIO
+        GeoCoordinateX: '41.699527'
+        GeoCoordinateY: '9.394439'
+        DistanceCamping: '10253'
+        Image: 'http://viaimage.viafrance.com/images/evts/51785.jpg'
+        Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    204:
+        Code: '862750'
+        Category: DET
+        Address: ''
+        Address2: 'Les Fauvettes Trinité'
+        Zipcode: '20137'
+        City: PORTO-VECCHIO
+        GeoCoordinateX: '41.591369'
+        GeoCoordinateY: '9.278311'
+        DistanceCamping: '6221'
+        Image: 'http://viaimage.viafrance.com/images/evts/157793.jpg'
+        Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    205:
+        Code: '856664'
+        Category: DET
+        Address: 'avenue Rhin et Danube'
+        Address2: ''
+        Zipcode: '85100'
+        City: 'LES SABLES-D OLONNE'
+        GeoCoordinateX: '46.486311'
+        GeoCoordinateY: '-1.760305'
+        DistanceCamping: '24112'
+        Image: 'http://viaimage.viafrance.com/images/evts/51780.jpg'
+        Priority: '9'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    206:
+        Code: '832399'
+        Category: MUS
+        Address: 'rue d''Alsace-Lorraine'
+        Address2: ''
+        Zipcode: '29140'
+        City: ROSPORDEN
+        GeoCoordinateX: '47.957612'
+        GeoCoordinateY: '-3.827298'
+        DistanceCamping: '17861'
+        Image: 'http://viaimage.viafrance.com/images/evts/68763.jpg'
+        Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.arno.be'
+        Active: true
+    207:
+        Code: '872723'
+        Category: EXP
+        Address: ''
+        Address2: 'ZA de Kergazuel'
+        Zipcode: '29930'
+        City: PONT-AVEN
+        GeoCoordinateX: '47.894194'
+        GeoCoordinateY: '-3.800367'
+        DistanceCamping: '10637'
+        Image: 'http://viaimage.viafrance.com/images/evts/55692.jpg'
+        Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    208:
+        Code: '858241'
+        Category: FES
+        Address: 'rue du Port'
+        Address2: ''
+        Zipcode: '56000'
+        City: VANNES
+        GeoCoordinateX: '47.647075'
+        GeoCoordinateY: '-2.759457'
+        DistanceCamping: '29344'
+        Image: 'http://viaimage.viafrance.com/images/evts/38352.jpg'
+        Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.semainedugolfe.com'
+        Active: true
+    209:
+        Code: '827311'
+        Category: SPO
+        Address: 'place Theodore-Decker'
+        Address2: ''
+        Zipcode: '56000'
+        City: VANNES
+        GeoCoordinateX: '47.652184'
+        GeoCoordinateY: '-2.759434'
+        DistanceCamping: '29723'
+        Image: 'http://viaimage.viafrance.com/images/evts/46214.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.vocfoot.net'
+        Active: true
+    210:
+        Code: '827312'
+        Category: SPO
+        Address: 'place Theodore-Decker'
+        Address2: ''
+        Zipcode: '56000'
+        City: VANNES
+        GeoCoordinateX: '47.652184'
+        GeoCoordinateY: '-2.759434'
+        DistanceCamping: '29723'
+        Image: 'http://viaimage.viafrance.com/images/evts/46214.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.vocfoot.net'
+        Active: true
+    211:
+        Code: '861980'
+        Category: DET
+        Address: 'Le Riousset'
+        Address2: ''
+        Zipcode: '07150'
+        City: VAGNAS
+        GeoCoordinateX: '44.368420'
+        GeoCoordinateY: '4.363540'
+        DistanceCamping: '8760'
+        Image: 'http://viaimage.viafrance.com/images/evts/157711.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    212:
+        Code: '788487'
+        Category: MUS
+        Address: 'rue Rouget-de-l''Isle'
+        Address2: 'BP 255'
+        Zipcode: '56600'
+        City: LANESTER
+        GeoCoordinateX: '47.777478'
+        GeoCoordinateY: '-3.346664'
+        DistanceCamping: '29151'
+        Image: 'http://viaimage.viafrance.com/images/evts/128379.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.aussiefloyd.com/'
+        Active: true
+    213:
+        Code: '848433'
+        Category: EXP
+        Address: 'rue des Vénètes'
+        Address2: ''
+        Zipcode: '56000'
+        City: VANNES
+        GeoCoordinateX: '47.650470'
+        GeoCoordinateY: '-2.776898'
+        DistanceCamping: '22524'
+        Image: 'http://viaimage.viafrance.com/images/evts/123642.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    214:
+        Code: '804688'
+        Category: MUS
+        Address: 'quai Mansion'
+        Address2: ''
+        Zipcode: '56100'
+        City: LORIENT
+        GeoCoordinateX: '47.745712'
+        GeoCoordinateY: '-3.360581'
+        DistanceCamping: '27647'
+        Image: 'http://viaimage.viafrance.com/images/evts/141913.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://marclavoine.artiste.universalmusic.fr/'
+        Active: true
+    215:
+        Code: '808225'
+        Category: MUS
+        Address: 'rue Rouget-de-l''Isle'
+        Address2: 'BP 255'
+        Zipcode: '56600'
+        City: LANESTER
+        GeoCoordinateX: '47.777478'
+        GeoCoordinateY: '-3.346664'
+        DistanceCamping: '29151'
+        Image: 'http://viaimage.viafrance.com/images/evts/141913.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://marclavoine.artiste.universalmusic.fr/'
+        Active: true
+    216:
+        Code: '811966'
+        Category: VIV
+        Address: 'port Santa-Lucia'
+        Address2: ''
+        Zipcode: '83700'
+        City: SAINT-RAPHAEL
+        GeoCoordinateX: '43.414519'
+        GeoCoordinateY: '6.779161'
+        DistanceCamping: '21604'
+        Image: 'http://viaimage.viafrance.com/images/evts/101408.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://cie.koubi.free.fr'
+        Active: true
+    217:
+        Code: '811973'
+        Category: VIV
+        Address: 'port Santa-Lucia'
+        Address2: ''
+        Zipcode: '83700'
+        City: SAINT-RAPHAEL
+        GeoCoordinateX: '43.414519'
+        GeoCoordinateY: '6.779161'
+        DistanceCamping: '21604'
+        Image: 'http://viaimage.viafrance.com/images/evts/142168.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    218:
+        Code: '828302'
+        Category: SPO
+        Address: 'avenue du XVe-Corps'
+        Address2: ''
+        Zipcode: '83600'
+        City: FREJUS
+        GeoCoordinateX: '43.437170'
+        GeoCoordinateY: '6.740956'
+        DistanceCamping: '21331'
+        Image: 'http://viaimage.viafrance.com/images/evts/46214.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.efc-frejus-saintraphael.com'
+        Active: true
+    219:
+        Code: '665080'
+        Category: SPO
+        Address: 'avenue de la Capitainerie'
+        Address2: ''
+        Zipcode: '17000'
+        City: 'LA ROCHELLE'
+        GeoCoordinateX: '46.142775'
+        GeoCoordinateY: '-1.166923'
+        DistanceCamping: '29021'
+        Image: 'http://viaimage.viafrance.com/images/evts/10915.jpg'
+        Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.srr-sailing.com/'
+        Active: true
+    220:
+        Code: '399436'
+        Category: DET
+        Address: 'route D4805'
+        Address2: ''
+        Zipcode: '04120'
+        City: CASTELLANE
+        GeoCoordinateX: '43.827438'
+        GeoCoordinateY: '6.475836'
+        DistanceCamping: '1949'
+        Image: 'http://viaimage.viafrance.com/images/evts/27173.jpg'
+        Priority: '7'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    221:
+        Code: '435550'
+        Category: DET
+        Address: ''
+        Address2: 'Le Village'
+        Zipcode: '83840'
+        City: BARGEME
+        GeoCoordinateX: '43.730124'
+        GeoCoordinateY: '6.572661'
+        DistanceCamping: '13670'
+        Image: 'http://viaimage.viafrance.com/images/evts/1815.jpg'
+        Priority: '7'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    222:
+        Code: '857602'
+        Category: VIV
+        Address: 'rue Octave-Feuillet'
+        Address2: ''
+        Zipcode: '50000'
+        City: SAINT-LO
+        GeoCoordinateX: '49.114362'
+        GeoCoordinateY: '-1.090423'
+        DistanceCamping: '22761'
+        Image: 'http://viaimage.viafrance.com/images/evts/12129.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    223:
+        Code: '857603'
+        Category: VIV
+        Address: 'rue Octave-Feuillet'
+        Address2: ''
+        Zipcode: '50000'
+        City: SAINT-LO
+        GeoCoordinateX: '49.114362'
+        GeoCoordinateY: '-1.090423'
+        DistanceCamping: '22761'
+        Image: 'http://viaimage.viafrance.com/images/evts/148407.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    224:
+        Code: '857628'
+        Category: VIV
+        Address: 'rue Octave-Feuillet'
+        Address2: ''
+        Zipcode: '50000'
+        City: SAINT-LO
+        GeoCoordinateX: '49.114362'
+        GeoCoordinateY: '-1.090423'
+        DistanceCamping: '22761'
+        Image: 'http://viaimage.viafrance.com/images/evts/18005.jpg'
+        Priority: '7'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    225:
+        Code: '840370'
+        Category: SPO
+        Address: 'route de Torigni'
+        Address2: ''
+        Zipcode: '50000'
+        City: SAINT-LO
+        GeoCoordinateX: '49.105297'
+        GeoCoordinateY: '-1.067690'
+        DistanceCamping: '23917'
+        Image: 'http://viaimage.viafrance.com/images/evts/46214.jpg'
+        Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.fcsaintlo.fr'
+        Active: true
+    226:
+        Code: '819876'
+        Category: SPO
+        Address: 'avenue Princesse-Grace'
+        Address2: ''
+        Zipcode: '98000'
+        City: MONACO
+        GeoCoordinateX: '43.762236'
+        GeoCoordinateY: '7.414372'
+        DistanceCamping: '28731'
+        Image: 'http://viaimage.viafrance.com/images/evts/114891.jpg'
+        Priority: '2'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.monte-carlorolexmasters.com'
+        Active: true
+    227:
+        Code: '786273'
+        Category: FET
+        Address: 'rue de la Grange-aux-Dîmes'
+        Address2: ''
+        Zipcode: '41250'
+        City: CHAMBORD
+        GeoCoordinateX: '47.616051'
+        GeoCoordinateY: '1.517086'
+        DistanceCamping: '8288'
+        Image: 'http://viaimage.viafrance.com/images/evts/40010.jpg'
+        Priority: '6'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.gamefair.fr'
+        Active: true
+    228:
+        Code: '842945'
+        Category: MUS
+        Address: 'avenue Maunoury'
+        Address2: ''
+        Zipcode: '41000'
+        City: BLOIS
+        GeoCoordinateX: '47.590915'
+        GeoCoordinateY: '1.335675'
+        DistanceCamping: '15393'
+        Image: 'http://viaimage.viafrance.com/images/evts/149567.jpg'
+        Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.myspace.com/montcalmterez'
+        Active: true
+    229:
+        Code: '842946'
+        Category: MUS
+        Address: 'avenue Maunoury'
+        Address2: ''
+        Zipcode: '41000'
+        City: BLOIS
+        GeoCoordinateX: '47.590915'
+        GeoCoordinateY: '1.335675'
+        DistanceCamping: '15393'
+        Image: 'http://viaimage.viafrance.com/images/evts/149583.jpg'
+        Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://younsunnah.com'
+        Active: true
+    230:
+        Code: '842948'
+        Category: MUS
+        Address: 'avenue Maunoury'
+        Address2: ''
+        Zipcode: '41000'
+        City: BLOIS
+        GeoCoordinateX: '47.590915'
+        GeoCoordinateY: '1.335675'
+        DistanceCamping: '15393'
+        Image: 'http://viaimage.viafrance.com/images/evts/75123.jpg'
+        Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://fredrika-stahl.web.waycom.net'
+        Active: true
+    231:
+        Code: '771032'
+        Category: DET
+        Address: ''
+        Address2: 'Gare SNCF de Villefranche-de-Conflent'
+        Zipcode: '66500'
+        City: 'VILLEFRANCHE DE CONFLENT'
+        GeoCoordinateX: '44.758148'
+        GeoCoordinateY: '5.363910'
+        DistanceCamping: '10708'
+        Image: 'http://viaimage.viafrance.com/images/evts/72468.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    232:
+        Code: '452241'
+        Category: DET
+        Address: 'Le Martouret'
+        Address2: ''
+        Zipcode: '26150'
+        City: DIE
+        GeoCoordinateX: '44.745786'
+        GeoCoordinateY: '5.379474'
+        DistanceCamping: '8867'
+        Image: 'http://viaimage.viafrance.com/images/evts/50484.jpg'
+        Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    233:
+        Code: '371591'
+        Category: EXP
+        Address: 'avenue de la Clairette'
+        Address2: ''
+        Zipcode: '26150'
+        City: DIE
+        GeoCoordinateX: '44.760858'
+        GeoCoordinateY: '5.356225'
+        DistanceCamping: '11330'
+        Image: 'http://viaimage.viafrance.com/images/evts/10899.jpg'
+        Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    234:
+        Code: '406597'
+        Category: DET
+        Address: 'place de la République'
+        Address2: ''
+        Zipcode: '26150'
+        City: DIE
+        GeoCoordinateX: '44.752223'
+        GeoCoordinateY: '5.371233'
+        DistanceCamping: '9833'
+        Image: 'http://viaimage.viafrance.com/images/evts/10956.jpg'
+        Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    235:
+        Code: '789418'
+        Category: FES
+        Address: 'rue du 9-Juin-1944'
+        Address2: ''
+        Zipcode: '19000'
+        City: TULLE
+        GeoCoordinateX: '45.260560'
+        GeoCoordinateY: '1.751479'
+        DistanceCamping: '14319'
+        Image: 'http://viaimage.viafrance.com/images/evts/55153.jpg'
+        Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.accordeon.org'
+        Active: true
+    236:
+        Code: '827173'
+        Category: SPO
+        Address: 'rue Léon-Branchet'
+        Address2: ''
+        Zipcode: '19100'
+        City: BRIVE-LA-GAILLARDE
+        GeoCoordinateX: '45.160688'
+        GeoCoordinateY: '1.546031'
+        DistanceCamping: '17277'
+        Image: 'http://viaimage.viafrance.com/images/evts/131331.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.cabrivecorrezelimousin.com/'
+        Active: true
+    237:
+        Code: '827174'
+        Category: SPO
+        Address: 'rue Léon-Branchet'
+        Address2: ''
+        Zipcode: '19100'
+        City: BRIVE-LA-GAILLARDE
+        GeoCoordinateX: '45.160688'
+        GeoCoordinateY: '1.546031'
+        DistanceCamping: '17277'
+        Image: 'http://viaimage.viafrance.com/images/evts/131331.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.cabrivecorrezelimousin.com/'
+        Active: true
+    238:
+        Code: '825768'
+        Category: VIV
+        Address: 'quai de la République'
+        Address2: ''
+        Zipcode: '19000'
+        City: TULLE
+        GeoCoordinateX: '45.266702'
+        GeoCoordinateY: '1.770911'
+        DistanceCamping: '14989'
+        Image: 'http://viaimage.viafrance.com/images/evts/146220.jpg'
+        Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    239:
+        Code: '808313'
+        Category: VIV
+        Address: 'rue Principale'
+        Address2: ''
+        Zipcode: '31820'
+        City: PIBRAC
+        GeoCoordinateX: '43.617713'
+        GeoCoordinateY: '1.283402'
+        DistanceCamping: '23793'
+        Image: 'http://viaimage.viafrance.com/images/evts/145311.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    240:
+        Code: '839529'
+        Category: VIV
+        Address: 'route de Toulouse'
+        Address2: ''
+        Zipcode: '31490'
+        City: LEGUEVIN
+        GeoCoordinateX: '43.600306'
+        GeoCoordinateY: '1.242318'
+        DistanceCamping: '21477'
+        Image: 'http://viaimage.viafrance.com/images/evts/4831.jpg'
+        Priority: '7'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    241:
+        Code: '808246'
+        Category: VIV
+        Address: 'rue Principale'
+        Address2: ''
+        Zipcode: '31820'
+        City: PIBRAC
+        GeoCoordinateX: '43.617713'
+        GeoCoordinateY: '1.283402'
+        DistanceCamping: '23793'
+        Image: 'http://viaimage.viafrance.com/images/evts/8594.jpg'
+        Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.compagnie-esquisse.com'
+        Active: true
+    242:
+        Code: '808242'
+        Category: VIV
+        Address: 'rue Principale'
+        Address2: ''
+        Zipcode: '31820'
+        City: PIBRAC
+        GeoCoordinateX: '43.617713'
+        GeoCoordinateY: '1.283402'
+        DistanceCamping: '23793'
+        Image: 'http://viaimage.viafrance.com/images/evts/145552.jpg'
+        Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    243:
+        Code: '839889'
+        Category: VIV
+        Address: 'rue Pierre-Bérégovoy'
+        Address2: ''
+        Zipcode: '85000'
+        City: 'LA ROCHE-SUR-YON'
+        GeoCoordinateX: '46.668247'
+        GeoCoordinateY: '-1.429595'
+        DistanceCamping: '28236'
+        Image: 'http://viaimage.viafrance.com/images/evts/100467.jpg'
+        Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.arrt.fr'
+        Active: true
+    244:
+        Code: '860101'
+        Category: SPO
+        Address: 'place Roussel'
+        Address2: ''
+        Zipcode: '09110'
+        City: AX-LES-THERMES
+        GeoCoordinateX: '42.719804'
+        GeoCoordinateY: '1.837653'
+        DistanceCamping: '1398'
+        Image: 'http://viaimage.viafrance.com/images/evts/104438.jpg'
+        Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.letour.fr'
+        Active: true
+    245:
+        Code: '826264'
+        Category: SPO
+        Address: 'route de Vernaux'
+        Address2: ''
+        Zipcode: '09110'
+        City: LUZENAC
+        GeoCoordinateX: '42.771750'
+        GeoCoordinateY: '1.757229'
+        DistanceCamping: '7345'
+        Image: 'http://viaimage.viafrance.com/images/evts/46214.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.usluzenac.info'
+        Active: true
+    246:
+        Code: '826265'
+        Category: SPO
+        Address: 'route de Vernaux'
+        Address2: ''
+        Zipcode: '09110'
+        City: LUZENAC
+        GeoCoordinateX: '42.771750'
+        GeoCoordinateY: '1.757229'
+        DistanceCamping: '7345'
+        Image: 'http://viaimage.viafrance.com/images/evts/46214.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.usluzenac.info'
+        Active: true
+    247:
+        Code: '826277'
+        Category: SPO
+        Address: 'route de Vernaux'
+        Address2: ''
+        Zipcode: '09110'
+        City: LUZENAC
+        GeoCoordinateX: '42.771750'
+        GeoCoordinateY: '1.757229'
+        DistanceCamping: '7345'
+        Image: 'http://viaimage.viafrance.com/images/evts/46214.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.usluzenac.info'
+        Active: true
+    248:
+        Code: '736000'
+        Category: FET
+        Address: 'avenue de la République'
+        Address2: ''
+        Zipcode: '13460'
+        City: 'LES SAINTES-MARIES-DE-LA-MER'
+        GeoCoordinateX: '43.451120'
+        GeoCoordinateY: '4.429291'
+        DistanceCamping: '23730'
+        Image: 'http://viaimage.viafrance.com/images/evts/116027.jpg'
+        Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    249:
         Code: '864904'
         Category: MUS
         Address: 'rue Rosset'
@@ -3349,11 +4224,15 @@
         City: SAINT-CLAUDE
         GeoCoordinateX: '46.388463'
         GeoCoordinateY: '5.865800'
-        DistanceCamping: '25266'
+        DistanceCamping: '25444'
         Image: 'http://viaimage.viafrance.com/images/evts/145345.jpg'
         Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.quatuordebussy.com'
         Active: true
-    259:
+    250:
         Code: '404744'
         Category: DET
         Address: 'rue du Pré'
@@ -3362,37 +4241,49 @@
         City: SAINT-CLAUDE
         GeoCoordinateX: '46.388882'
         GeoCoordinateY: '5.864370'
-        DistanceCamping: '25172'
+        DistanceCamping: '25349'
         Image: 'http://viaimage.viafrance.com/images/evts/49136.jpg'
         Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
-    260:
-        Code: '827103'
-        Category: NEW
-        Address: ' Le Bourg'
+    251:
+        Code: '535546'
+        Category: FET
+        Address: 'avenue du Maréchal-Leclerc'
         Address2: ''
-        Zipcode: '83230'
-        City: BORMES-LES-MIMOSAS
-        GeoCoordinateX: '43.144564'
-        GeoCoordinateY: '6.361816'
-        DistanceCamping: '10885'
-        Image: 'http://viaimage.viafrance.com/images/evts/62089.jpg'
-        Priority: '5'
+        Zipcode: '64100'
+        City: BAYONNE
+        GeoCoordinateX: '43.494970'
+        GeoCoordinateY: '-1.476296'
+        DistanceCamping: '25905'
+        Image: 'http://viaimage.viafrance.com/images/evts/81366.jpg'
+        Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
-    261:
-        Code: '801454'
+    252:
+        Code: '870656'
         Category: DET
-        Address: 'place Neuve'
-        Address2: ''
+        Address: ''
+        Address2: Port
         Zipcode: '83310'
         City: GRIMAUD
-        GeoCoordinateX: '43.273012'
-        GeoCoordinateY: '6.521875'
-        DistanceCamping: '8639'
-        Image: 'http://viaimage.viafrance.com/images/evts/76524.jpg'
+        GeoCoordinateX: '43.281038'
+        GeoCoordinateY: '6.582566'
+        DistanceCamping: '13515'
+        Image: 'http://viaimage.viafrance.com/images/evts/58058.jpg'
         Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://petit-train-de-grimaud.com'
         Active: true
-    262:
+    253:
         Code: '375919'
         Category: DET
         Address: 'terre-plein du Nouveau-Port'
@@ -3401,50 +4292,49 @@
         City: SAINT-TROPEZ
         GeoCoordinateX: '43.272058'
         GeoCoordinateY: '6.639006'
-        DistanceCamping: '15815'
+        DistanceCamping: '16330'
         Image: 'http://viaimage.viafrance.com/images/evts/72530.jpg'
         Priority: '4'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
-    263:
-        Code: '400248'
-        Category: DET
-        Address: 'avenue des Belges'
+    254:
+        Code: '356950'
+        Category: EXP
+        Address: 'quartier Les plaines'
         Address2: ''
-        Zipcode: '83820'
-        City: 'LE RAYOL CANADEL'
-        GeoCoordinateX: '43.156307'
-        GeoCoordinateY: '6.481772'
-        DistanceCamping: '5811'
-        Image: 'http://viaimage.viafrance.com/images/evts/5666.gif'
+        Zipcode: '83590'
+        City: GONFARON
+        GeoCoordinateX: '43.343786'
+        GeoCoordinateY: '6.430894'
+        DistanceCamping: '17369'
+        Image: 'http://viaimage.viafrance.com/images/evts/47423.jpg'
         Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
-    264:
-        Code: '752038'
-        Category: DET
-        Address: ''
-        Address2: Riaume
-        Zipcode: '19360'
-        City: COSNAC
-        GeoCoordinateX: '45.109705'
-        GeoCoordinateY: '1.566967'
-        DistanceCamping: '24994'
-        Image: 'http://viaimage.viafrance.com/images/evts/91876.jpg'
-        Priority: '8'
-        Active: true
-    265:
-        Code: '591637'
-        Category: DET
-        Address: 'place du Lavoir'
+    255:
+        Code: '827103'
+        Category: NEW
+        Address: ' Le Bourg'
         Address2: ''
-        Zipcode: '19500'
-        City: COLLONGES-LA-ROUGE
-        GeoCoordinateX: '45.059614'
-        GeoCoordinateY: '1.656176'
-        DistanceCamping: '23130'
-        Image: 'http://viaimage.viafrance.com/images/evts/42522.jpg'
-        Priority: '2'
+        Zipcode: '83230'
+        City: BORMES-LES-MIMOSAS
+        GeoCoordinateX: '43.144564'
+        GeoCoordinateY: '6.361816'
+        DistanceCamping: '10233'
+        Image: 'http://viaimage.viafrance.com/images/evts/62089.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
-    266:
+    256:
         Code: '292225'
         Category: DET
         Address: 'route Départementale-90'
@@ -3456,73 +4346,63 @@
         DistanceCamping: '21762'
         Image: 'http://viaimage.viafrance.com/images/evts/101656.jpg'
         Priority: '2'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
-    267:
-        Code: '768444'
-        Category: OCC
-        Address: 'avenue Henri Clews'
-        Address2: ''
-        Zipcode: '06210'
-        City: MANDELIEU-LA-NAPOULE
-        GeoCoordinateX: '43.525208'
-        GeoCoordinateY: '6.943854'
-        DistanceCamping: '20880'
-        Image: 'http://viaimage.viafrance.com/images/evts/101712.jpg'
-        Priority: '3'
-        Active: true
-    268:
-        Code: '665098'
-        Category: SAL
-        Address: 'avenue Francis-Tonner'
-        Address2: ''
-        Zipcode: '06400'
-        City: CANNES
-        GeoCoordinateX: '43.550027'
-        GeoCoordinateY: '6.957364'
-        DistanceCamping: '21514'
-        Image: 'http://viaimage.viafrance.com/images/evts/105258.jpg'
-        Priority: '3'
-        Active: true
-    269:
-        Code: '792834'
-        Category: EXP
-        Address: 'boulevard Fragonard'
-        Address2: ''
-        Zipcode: '06130'
-        City: GRASSE
-        GeoCoordinateX: '43.657421'
-        GeoCoordinateY: '6.922213'
-        DistanceCamping: '21090'
-        Image: 'http://viaimage.viafrance.com/images/evts/63037.jpg'
-        Priority: '5'
-        Active: true
-    270:
-        Code: '792867'
-        Category: EXP
-        Address: 'boulevard Fragonard'
-        Address2: ''
-        Zipcode: '06130'
-        City: GRASSE
-        GeoCoordinateX: '43.657421'
-        GeoCoordinateY: '6.922213'
-        DistanceCamping: '21090'
-        Image: 'http://viaimage.viafrance.com/images/evts/52404.jpg'
-        Priority: '5'
-        Active: true
-    271:
-        Code: '859633'
+    257:
+        Code: '591637'
         Category: DET
-        Address: 'place d''armes'
-        Address2: Palais-Episcopal
-        Zipcode: '15100'
-        City: SAINT-FLOUR
-        GeoCoordinateX: '45.033493'
-        GeoCoordinateY: '3.094691'
-        DistanceCamping: '10740'
-        Image: 'http://viaimage.viafrance.com/images/evts/45605.jpg'
-        Priority: '9'
+        Address: 'place du Lavoir'
+        Address2: ''
+        Zipcode: '19500'
+        City: COLLONGES-LA-ROUGE
+        GeoCoordinateX: '45.059614'
+        GeoCoordinateY: '1.656176'
+        DistanceCamping: '23130'
+        Image: 'http://viaimage.viafrance.com/images/evts/42522.jpg'
+        Priority: '2'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
-    272:
+    258:
+        Code: '293152'
+        Category: EXP
+        Address: 'route Départementale-247'
+        Address2: ''
+        Zipcode: '46200'
+        City: LACAVE
+        GeoCoordinateX: '44.830498'
+        GeoCoordinateY: '1.566818'
+        DistanceCamping: '9872'
+        Image: 'http://viaimage.viafrance.com/images/evts/12885.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    259:
+        Code: '291736'
+        Category: EXP
+        Address: 'route départementale 200'
+        Address2: 'Le Château'
+        Zipcode: '46500'
+        City: ROCAMADOUR
+        GeoCoordinateX: '44.801741'
+        GeoCoordinateY: '1.612855'
+        DistanceCamping: '14700'
+        Image: 'http://viaimage.viafrance.com/images/evts/3445.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    260:
         Code: '765053'
         Category: DET
         Address: 'place de la gare'
@@ -3531,24 +4411,15 @@
         City: LANGEAC
         GeoCoordinateX: '45.101598'
         GeoCoordinateY: '3.492666'
-        DistanceCamping: '23874'
+        DistanceCamping: '24314'
         Image: 'http://viaimage.viafrance.com/images/evts/72552.jpg'
         Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.trainstouristiques-ter.com'
         Active: true
-    273:
-        Code: '386000'
-        Category: EXP
-        Address: 'place d''Armes'
-        Address2: ''
-        Zipcode: '15100'
-        City: SAINT-FLOUR
-        GeoCoordinateX: '45.033471'
-        GeoCoordinateY: '3.095489'
-        DistanceCamping: '10680'
-        Image: 'http://viaimage.viafrance.com/images/evts/12509.gif'
-        Priority: '5'
-        Active: true
-    274:
+    261:
         Code: '765064'
         Category: DET
         Address: 'avenue Victor Hugo'
@@ -3557,111 +4428,130 @@
         City: LANGEAC
         GeoCoordinateX: '45.100167'
         GeoCoordinateY: '3.494957'
-        DistanceCamping: '23961'
+        DistanceCamping: '24400'
         Image: 'http://viaimage.viafrance.com/images/evts/512.jpg'
         Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true
-    275:
-        Code: '750291'
-        Category: SPO
-        Address: 'chemin de Gaja'
-        Address2: ''
-        Zipcode: '11000'
-        City: CARCASSONNE
-        GeoCoordinateX: '43.185104'
-        GeoCoordinateY: '2.415423'
-        DistanceCamping: '23674'
-        Image: 'http://viaimage.viafrance.com/images/evts/42739.jpg'
-        Priority: '3'
-        Active: true
-    276:
-        Code: '792882'
-        Category: SAL
-        Address: 'route Départementale-611'
-        Address2: ''
-        Zipcode: '11200'
-        City: 'LEZIGNAN CORBIERES'
-        GeoCoordinateX: '43.181530'
-        GeoCoordinateY: '2.747495'
-        DistanceCamping: '6222'
-        Image: 'http://viaimage.viafrance.com/images/evts/17842.jpg'
-        Priority: '7'
-        Active: true
-    277:
-        Code: '781585'
-        Category: VIV
-        Address: ''
-        Address2: 'Autoroute Sortie Narbonne Sud'
-        Zipcode: '11100'
-        City: NARBONNE
-        GeoCoordinateX: '43.163431'
-        GeoCoordinateY: '2.981925'
-        DistanceCamping: '23028'
-        Image: 'http://viaimage.viafrance.com/images/evts/158545.jpg'
-        Priority: '8'
-        Active: true
-    278:
-        Code: '769850'
-        Category: DET
-        Address: ''
-        Address2: 'Autoroute Sortie Narbonne Sud'
-        Zipcode: '11100'
-        City: NARBONNE
-        GeoCoordinateX: '43.163431'
-        GeoCoordinateY: '2.981925'
-        DistanceCamping: '23028'
-        Image: 'http://viaimage.viafrance.com/images/evts/117253.jpg'
-        Priority: '5'
-        Active: true
-    279:
-        Code: '755781'
-        Category: FES
-        Address: 'rue des Lycéens-Martyrs'
-        Address2: ''
-        Zipcode: '22000'
-        City: SAINT-BRIEUC
-        GeoCoordinateX: '48.511941'
-        GeoCoordinateY: '-2.762044'
-        DistanceCamping: '25382'
-        Image: 'http://viaimage.viafrance.com/images/evts/130226.jpg'
-        Priority: '3'
-        Active: true
-    280:
-        Code: '793209'
-        Category: MUS
-        Address: 'rue Pierre-de-Coubertin'
-        Address2: ''
-        Zipcode: '22000'
-        City: SAINT-BRIEUC
-        GeoCoordinateX: '48.501238'
-        GeoCoordinateY: '-2.763540'
-        DistanceCamping: '26106'
-        Image: 'http://viaimage.viafrance.com/images/evts/99764.jpg'
-        Priority: '5'
-        Active: true
-    281:
-        Code: '755850'
+    262:
+        Code: '765046'
         Category: EXP
-        Address: 'place du Martray'
-        Address2: 'BP 418'
-        Zipcode: '22400'
-        City: LAMBALLE
-        GeoCoordinateX: '48.469279'
-        GeoCoordinateY: '-2.515702'
-        DistanceCamping: '18130'
-        Image: 'http://viaimage.viafrance.com/images/evts/43951.jpg'
-        Priority: '7'
-        Active: true
-    282:
-        Code: '777440'
-        Category: DET
-        Address: ''
-        Address2: 'Centre-ville de Saint-Cast le Guildo'
-        Zipcode: '22380'
-        City: 'SAINT CAST LE GUILDO'
-        GeoCoordinateX: '48.631653'
-        GeoCoordinateY: '-2.258033'
-        DistanceCamping: '15250'
-        Image: 'http://viaimage.viafrance.com/images/evts/115599.jpg'
+        Address: 'place de la Liberté'
+        Address2: ''
+        Zipcode: '43300'
+        City: LANGEAC
+        GeoCoordinateX: '45.099070'
+        GeoCoordinateY: '3.496216'
+        DistanceCamping: '24432'
+        Image: 'http://viaimage.viafrance.com/images/evts/102484.jpg'
         Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    263:
+        Code: '860874'
+        Category: DET
+        Address: 'La Plenne'
+        Address2: ''
+        Zipcode: '15320'
+        City: RUYNES-EN-MARGERIDE
+        GeoCoordinateX: '45.020083'
+        GeoCoordinateY: '3.242895'
+        DistanceCamping: '2993'
+        Image: 'http://viaimage.viafrance.com/images/evts/28961.jpg'
+        Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    264:
+        Code: '829694'
+        Category: SPO
+        Address: 'avenue Pierre de-Coubertin'
+        Address2: ''
+        Zipcode: '11100'
+        City: NARBONNE
+        GeoCoordinateX: '43.183222'
+        GeoCoordinateY: '3.022704'
+        DistanceCamping: '24356'
+        Image: 'http://viaimage.viafrance.com/images/evts/48735.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://www.rcmessonne.com/'
+        Active: true
+    265:
+        Code: '613373'
+        Category: SPO
+        Address: 'square de l''Hôtel-de-Ville'
+        Address2: ''
+        Zipcode: '22430'
+        City: ERQUY
+        GeoCoordinateX: '48.628705'
+        GeoCoordinateY: '-2.465409'
+        DistanceCamping: '1261'
+        Image: 'http://viaimage.viafrance.com/images/evts/17836.jpg'
+        Priority: '9'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: 'http://maiarmor.free.fr/'
+        Active: true
+    266:
+        Code: '747484'
+        Category: DET
+        Address: 'rue de Châtelet'
+        Address2: ''
+        Zipcode: '22750'
+        City: 'SAINT JACUT DE LA MER'
+        GeoCoordinateX: '48.598845'
+        GeoCoordinateY: '-2.186577'
+        DistanceCamping: '20242'
+        Image: 'http://viaimage.viafrance.com/images/evts/72635.jpg'
+        Priority: '3'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    267:
+        Code: '371597'
+        Category: EXP
+        Address: 'place de l''Eglise'
+        Address2: ''
+        Zipcode: '22240'
+        City: PLEVENON
+        GeoCoordinateX: '48.654497'
+        GeoCoordinateY: '-2.332583'
+        DistanceCamping: '9220'
+        Image: 'http://viaimage.viafrance.com/images/evts/81996.jpg'
+        Priority: '5'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
+        Active: true
+    268:
+        Code: '398965'
+        Category: DET
+        Address: 'Les Tronchées'
+        Address2: ''
+        Zipcode: '22400'
+        City: MORIEUX
+        GeoCoordinateX: '48.503239'
+        GeoCoordinateY: '-2.597381'
+        DistanceCamping: '18248'
+        Image: 'http://viaimage.viafrance.com/images/evts/48502.jpg'
+        Priority: '8'
+        Tel: ''
+        Fax: ''
+        Email: ''
+        Website: ''
         Active: true

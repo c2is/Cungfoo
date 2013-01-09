@@ -2,10 +2,10 @@
 
 /**
  * Data object containing the SQL and PHP code to migrate the database
- * up to version 1357298198.
- * Generated on 2013-01-04 12:16:38 by vagrant
+ * up to version 1357635200.
+ * Generated on 2013-01-08 09:53:20 by vagrant
  */
-class PropelMigration_1357298198
+class PropelMigration_1357635200
 {
 
     public function preUp($manager)
@@ -42,8 +42,16 @@ class PropelMigration_1357298198
 # It "suspends judgement" for fkey relationships until are tables are set.
 SET FOREIGN_KEY_CHECKS = 0;
 
-ALTER TABLE `point_interet_i18n`
-    ADD `slug` VARCHAR(255) AFTER `type`;
+ALTER TABLE `event`
+    ADD `tel` VARCHAR(255) AFTER `priority`,
+    ADD `fax` VARCHAR(255) AFTER `tel`,
+    ADD `email` VARCHAR(255) AFTER `fax`,
+    ADD `website` VARCHAR(255) AFTER `email`;
+
+ALTER TABLE `event_i18n`
+    ADD `description` TEXT AFTER `subtitle`,
+    ADD `transport` TEXT AFTER `description`,
+    ADD `slug` VARCHAR(255) AFTER `transport`;
 
 # This restores the fkey checks, after having unset them earlier
 SET FOREIGN_KEY_CHECKS = 1;
@@ -65,7 +73,19 @@ SET FOREIGN_KEY_CHECKS = 1;
 # It "suspends judgement" for fkey relationships until are tables are set.
 SET FOREIGN_KEY_CHECKS = 0;
 
-ALTER TABLE `point_interet_i18n` DROP `slug`;
+ALTER TABLE `event` DROP `tel`;
+
+ALTER TABLE `event` DROP `fax`;
+
+ALTER TABLE `event` DROP `email`;
+
+ALTER TABLE `event` DROP `website`;
+
+ALTER TABLE `event_i18n` DROP `description`;
+
+ALTER TABLE `event_i18n` DROP `transport`;
+
+ALTER TABLE `event_i18n` DROP `slug`;
 
 # This restores the fkey checks, after having unset them earlier
 SET FOREIGN_KEY_CHECKS = 1;

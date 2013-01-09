@@ -36,6 +36,10 @@ use Cungfoo\Model\EventQuery;
  * @method EventQuery orderByDistanceCamping($order = Criteria::ASC) Order by the distance_camping column
  * @method EventQuery orderByImage($order = Criteria::ASC) Order by the image column
  * @method EventQuery orderByPriority($order = Criteria::ASC) Order by the priority column
+ * @method EventQuery orderByTel($order = Criteria::ASC) Order by the tel column
+ * @method EventQuery orderByFax($order = Criteria::ASC) Order by the fax column
+ * @method EventQuery orderByEmail($order = Criteria::ASC) Order by the email column
+ * @method EventQuery orderByWebsite($order = Criteria::ASC) Order by the website column
  * @method EventQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method EventQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  * @method EventQuery orderByActive($order = Criteria::ASC) Order by the active column
@@ -52,6 +56,10 @@ use Cungfoo\Model\EventQuery;
  * @method EventQuery groupByDistanceCamping() Group by the distance_camping column
  * @method EventQuery groupByImage() Group by the image column
  * @method EventQuery groupByPriority() Group by the priority column
+ * @method EventQuery groupByTel() Group by the tel column
+ * @method EventQuery groupByFax() Group by the fax column
+ * @method EventQuery groupByEmail() Group by the email column
+ * @method EventQuery groupByWebsite() Group by the website column
  * @method EventQuery groupByCreatedAt() Group by the created_at column
  * @method EventQuery groupByUpdatedAt() Group by the updated_at column
  * @method EventQuery groupByActive() Group by the active column
@@ -82,6 +90,10 @@ use Cungfoo\Model\EventQuery;
  * @method Event findOneByDistanceCamping(string $distance_camping) Return the first Event filtered by the distance_camping column
  * @method Event findOneByImage(string $image) Return the first Event filtered by the image column
  * @method Event findOneByPriority(string $priority) Return the first Event filtered by the priority column
+ * @method Event findOneByTel(string $tel) Return the first Event filtered by the tel column
+ * @method Event findOneByFax(string $fax) Return the first Event filtered by the fax column
+ * @method Event findOneByEmail(string $email) Return the first Event filtered by the email column
+ * @method Event findOneByWebsite(string $website) Return the first Event filtered by the website column
  * @method Event findOneByCreatedAt(string $created_at) Return the first Event filtered by the created_at column
  * @method Event findOneByUpdatedAt(string $updated_at) Return the first Event filtered by the updated_at column
  * @method Event findOneByActive(boolean $active) Return the first Event filtered by the active column
@@ -98,6 +110,10 @@ use Cungfoo\Model\EventQuery;
  * @method array findByDistanceCamping(string $distance_camping) Return Event objects filtered by the distance_camping column
  * @method array findByImage(string $image) Return Event objects filtered by the image column
  * @method array findByPriority(string $priority) Return Event objects filtered by the priority column
+ * @method array findByTel(string $tel) Return Event objects filtered by the tel column
+ * @method array findByFax(string $fax) Return Event objects filtered by the fax column
+ * @method array findByEmail(string $email) Return Event objects filtered by the email column
+ * @method array findByWebsite(string $website) Return Event objects filtered by the website column
  * @method array findByCreatedAt(string $created_at) Return Event objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return Event objects filtered by the updated_at column
  * @method array findByActive(boolean $active) Return Event objects filtered by the active column
@@ -204,7 +220,7 @@ abstract class BaseEventQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `code`, `category`, `address`, `address2`, `zipcode`, `city`, `geo_coordinate_x`, `geo_coordinate_y`, `distance_camping`, `image`, `priority`, `created_at`, `updated_at`, `active` FROM `event` WHERE `id` = :p0';
+        $sql = 'SELECT `id`, `code`, `category`, `address`, `address2`, `zipcode`, `city`, `geo_coordinate_x`, `geo_coordinate_y`, `distance_camping`, `image`, `priority`, `tel`, `fax`, `email`, `website`, `created_at`, `updated_at`, `active` FROM `event` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -637,6 +653,122 @@ abstract class BaseEventQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(EventPeer::PRIORITY, $priority, $comparison);
+    }
+
+    /**
+     * Filter the query on the tel column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByTel('fooValue');   // WHERE tel = 'fooValue'
+     * $query->filterByTel('%fooValue%'); // WHERE tel LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $tel The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return EventQuery The current query, for fluid interface
+     */
+    public function filterByTel($tel = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($tel)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $tel)) {
+                $tel = str_replace('*', '%', $tel);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(EventPeer::TEL, $tel, $comparison);
+    }
+
+    /**
+     * Filter the query on the fax column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByFax('fooValue');   // WHERE fax = 'fooValue'
+     * $query->filterByFax('%fooValue%'); // WHERE fax LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $fax The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return EventQuery The current query, for fluid interface
+     */
+    public function filterByFax($fax = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($fax)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $fax)) {
+                $fax = str_replace('*', '%', $fax);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(EventPeer::FAX, $fax, $comparison);
+    }
+
+    /**
+     * Filter the query on the email column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByEmail('fooValue');   // WHERE email = 'fooValue'
+     * $query->filterByEmail('%fooValue%'); // WHERE email LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $email The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return EventQuery The current query, for fluid interface
+     */
+    public function filterByEmail($email = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($email)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $email)) {
+                $email = str_replace('*', '%', $email);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(EventPeer::EMAIL, $email, $comparison);
+    }
+
+    /**
+     * Filter the query on the website column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByWebsite('fooValue');   // WHERE website = 'fooValue'
+     * $query->filterByWebsite('%fooValue%'); // WHERE website LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $website The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return EventQuery The current query, for fluid interface
+     */
+    public function filterByWebsite($website = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($website)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $website)) {
+                $website = str_replace('*', '%', $website);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(EventPeer::WEBSITE, $website, $comparison);
     }
 
     /**

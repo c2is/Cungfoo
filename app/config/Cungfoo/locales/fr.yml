@@ -409,6 +409,13 @@ event.distance_camping: Distance du camping
 event.distance.camping: Distance du camping
 event.active: Actif
 event.subtitle: Sous-titre
+event.description: Description
+event.transport: Transport
+event.tel: Tél
+event.fax: Fax
+event.email: Email
+event.website: Site web
+event.slug: Slug
 
 personnage.crud.create: Création d'un personnage
 personnage.crud.list: Liste des personnages

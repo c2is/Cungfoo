@@ -94,6 +94,30 @@ class BaseEventType extends AppAwareType
             'label' => 'event.priority',
             'required' => false,
         ));
+        $builder->add('tel', 'text', array(
+            'constraints' => array(
+            ),
+            'label' => 'event.tel',
+            'required' => false,
+        ));
+        $builder->add('fax', 'text', array(
+            'constraints' => array(
+            ),
+            'label' => 'event.fax',
+            'required' => false,
+        ));
+        $builder->add('email', 'text', array(
+            'constraints' => array(
+            ),
+            'label' => 'event.email',
+            'required' => false,
+        ));
+        $builder->add('website', 'text', array(
+            'constraints' => array(
+            ),
+            'label' => 'event.website',
+            'required' => false,
+        ));
         $builder->add('active', 'checkbox', array(
             'constraints' => array(
             ),
@@ -136,6 +160,27 @@ class BaseEventType extends AppAwareType
                 'subtitle' => array(
                     'required' => false,
                     'label' => 'event.subtitle',
+                    'type' => 'text',
+                    'constraints' => array(
+                    ),
+                ),
+                'description' => array(
+                    'required' => false,
+                    'label' => 'event.description',
+                    'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'transport' => array(
+                    'required' => false,
+                    'label' => 'event.transport',
+                    'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'slug' => array(
+                    'required' => false,
+                    'label' => 'event.slug',
                     'type' => 'text',
                     'constraints' => array(
                     ),

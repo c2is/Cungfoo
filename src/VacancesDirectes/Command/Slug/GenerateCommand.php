@@ -57,6 +57,9 @@ class GenerateCommand extends BaseCommand
             $this->generatePOI($languages, $con);
             $output->writeln(sprintf('<info>%s</info> slug added on <comment>POI</comment> table.', $this->getName()));
 
+            $this->generateEvent($languages, $con);
+            $output->writeln(sprintf('<info>%s</info> slug added on <comment>Event</comment> table.', $this->getName()));
+
             $con->commit();
         }
         catch (\Exception $exception)
@@ -126,6 +129,20 @@ class GenerateCommand extends BaseCommand
         {
             $poi
                 ->setSlug($utils->slugify($poi->getName()))
+                ->save($con)
+            ;
+        }
+    }
+
+    protected function generateEvent($languages, \PropelPDO $con)
+    {
+        $utils = new \Cungfoo\Lib\Utils();
+        $events = \Cungfoo\Model\EventQuery::create()->find($con);
+
+        foreach ($events as $event)
+        {
+            $event
+                ->setSlug($utils->slugify($event->getName()))
                 ->save($con)
             ;
         }

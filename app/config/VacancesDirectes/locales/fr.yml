@@ -13,6 +13,8 @@ seo:
         theme: "%theme%"
         bonPlan: "Camping %bonPlan%, location mobil-homes %bonPlan%"
         topCamping: "Top camping France, top destination vacances"
+        poi: "Visiter %poi% : %ville%"
+        event: "%event% : %ville%"
     meta:
         default: "Vacances directes : location de mobil-homes dans de nombreux campings en France, en Italie et en Espagne pour des vacances conviviales et reposantes."
         pays: " Vacances directes : découvrez nos offres de location de mobil home pas cher en %pays% pour des vacances ensoleillés en camping et réserver en ligne."
@@ -26,6 +28,8 @@ seo:
         theme: "%theme%"
         bonPlan: "Découvrez toutes les offres de locations de mobil homes en camping pour le %bonPlan% proposées par Vacances directes et réserver en ligne."
         topCamping: "Découvrez notre top 10 des destinations pour des vacances en campings réussies avec Vacances Directes, le spécialiste de la location de mobil-home."
+        poi: "%poi% à %ville%, venez visiter ce lieu et passez vos vacances dans nos campings à proximité avec Vacances Directes."
+        event: "%event% à %ville%. Ne rater pas cet événement et passez vos vacances dans nos campings à proximité avec Vacances Directes."
 
 pays:
     afghanistan: "Afghanistan"
@@ -599,6 +603,16 @@ offreSpeciales:
     intro: "Profitez de notre promo early booking sur votre séjour en basse saison:\n-10% pour une réservation avant le 31/01/2013\n-5% pour une réservation avant le 28/02/2013"
     texte: "Offre applicable uniquement sur le séjour, non cumulable avec l’ensemble des offres commerciales en cours. Valable pour tout séjour hors périodes du 06/07/2013 au 31/08/2013. Cette offre ne s’applique pas aux destinations suivantes : Coteau de la Marine, Castellas, Aqua Viva, Neptune, Château de Galinée, Domaine de Kermario, Chaponnet, Sandaya Soulac Plage, Ur Onéa, Domaine des Naädes, Cupulatta, Playa Montroig, et autres exceptions éventuelles."
 poi:
+    informations_pratiques: "Informations pratiques"
+    acceder_site: "Accéder au site web"
+    tel: "Tél :"
+    fax: "Fax :"
+    email: "Email :"
+    categorie: "Catégorie :"
+    type: "Type :"
+    transport: "Transport :"
+    adresse: "Adresse :"
+event:
     informations_pratiques: "Informations pratiques"
     acceder_site: "Accéder au site web"
     tel: "Tél :"
