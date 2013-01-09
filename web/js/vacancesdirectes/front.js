@@ -262,6 +262,12 @@ $(function() {
                     }
                 })
                 hoverLi.addClass('hover').children('.subnav').show();
+                if (hoverLi.children('.subnav').is('#deals')){
+                    var minContentHeight = $('#dealsMenu').height() + parseInt($('#dealsMenu').css('margin-bottom')) - parseInt($('#dealsContent').children().css('margin-top')) - parseInt($('#dealsContent').children().css('margin-bottom'));
+                    $('#dealsContent').children().css({
+                        minHeight: minContentHeight
+                    });
+                }
                 removeBorders(hoverLi);
                 openTab = true;
             },
@@ -288,6 +294,14 @@ $(function() {
             currentLi = $('#nav .topnav').children('.current');
             removeBorders(currentLi);
         }
+
+        $('#dealsMenu .bp').click(function(){
+            console.log( parseInt($(this).index() + 1));
+            $(this).addClass('selected').siblings().removeClass('selected');
+            $('#dealsContent').children().hide();
+            $('#dealsContent').children('#bp' + parseInt($(this).index() + 1)).show();
+        });
+
     }
 
 
