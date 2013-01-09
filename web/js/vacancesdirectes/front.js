@@ -153,19 +153,14 @@ $(function() {
     $(".popinVideo").colorbox({iframe:true, innerWidth:960, innerHeight:540, close:"&times;"});
     //$(".popin360").colorbox();
     $(".popinInline").colorbox({inline:true, width:"75%"});
-
-// select
-    $('#searchForm').find('select').not('.sMultSelect').sSelect({ddMaxHeight: '300px'});
-    $('#annulationForm').find('select').sSelect({ddMaxHeight: '300px'});
-
-    $('.sMultSelect').sMultSelect({msgNull: 'Pas de réponse'});
-    /*$('.sMultSelectUl').wrap('<div class="tinyScroll" />').before('<div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>')
-     .wrap('<div class="viewport"><div class="overview"></div></div>');
-     $('.tinyScroll').tinyscrollbar();*/
-
-//navigation
-
-
+    $(".popinBP").colorbox({
+        inline:true,
+        width:"300px",
+        close:"&times;",
+        onOpen: function(){
+           $("#colorbox").addClass("cbBP");
+       }
+    });
 
 // footer
     // ajust borders height
@@ -262,6 +257,12 @@ $(function() {
                     }
                 })
                 hoverLi.addClass('hover').children('.subnav').show();
+                if (hoverLi.children('.subnav').is('#deals')){
+                    var minContentHeight = $('#dealsMenu').height() + parseInt($('#dealsMenu').css('margin-bottom')) - parseInt($('#dealsContent').children().css('margin-top')) - parseInt($('#dealsContent').children().css('margin-bottom'));
+                    $('#dealsContent').children().css({
+                        minHeight: minContentHeight
+                    });
+                }
                 removeBorders(hoverLi);
                 openTab = true;
             },
@@ -288,6 +289,14 @@ $(function() {
             currentLi = $('#nav .topnav').children('.current');
             removeBorders(currentLi);
         }
+
+        $('#dealsMenu .bp').click(function(){
+            console.log( parseInt($(this).index() + 1));
+            $(this).addClass('selected').siblings().removeClass('selected');
+            $('#dealsContent').children().hide();
+            $('#dealsContent').children('#bp' + parseInt($(this).index() + 1)).show();
+        });
+
     }
 
 
@@ -408,10 +417,21 @@ $(function() {
 
     /*
      *  ############################################################
-     *                          DATEPICKER
+     *                          FORMS
      * ############################################################
      */
 
+    // selects
+    $('#searchForm').find('select').not('.sMultSelect').sSelect({ddMaxHeight: '300px'});
+    $('#annulationForm').find('select').sSelect({ddMaxHeight: '300px'});
+
+    $('.sMultSelect').sMultSelect({msgNull: 'Pas de réponse'});
+    /*$('.sMultSelectUl').wrap('<div class="tinyScroll" />').before('<div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>')
+     .wrap('<div class="viewport"><div class="overview"></div></div>');
+     $('.tinyScroll').tinyscrollbar();*/
+
+
+    // datepickers
     if ($('#searchContainer #datepicker').length) {
         var d = new Date(),
             fCurrentDate = formatDate(d),
@@ -1020,6 +1040,7 @@ head.ready(function(){
  * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
  */
 
+// (+/-) Button Number Incrementers
 function countItem() {
     //console.log("################################## countItem()  ##################################");
     $('.spin-bt-down, .spin-bt-up').live('click', function(){
@@ -1050,6 +1071,7 @@ function countItem() {
     });
 }
 
+// switch select between CAMPINGS and CITYS
 var $selects;
 function switchSelect(){
     //console.log("################################## switchSelect()  ##################################");
@@ -1085,6 +1107,7 @@ function switchSelect(){
     });
 }
 
+// toggle search criteria
 var toggleState = 0;
 function toggleSearchCriteria(){
     //console.log("################################## toggleSearchCriteria()  ##################################");
@@ -1100,6 +1123,10 @@ function toggleSearchCriteria(){
     });
 }
 
+// wait layer
+function showWaitLayer(){
+    $('#please_wait_layer').show();
+}
 
 /*
  * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
@@ -1540,7 +1567,7 @@ function tabs(tView, load) {
     var sView = tView.split('#')[1],
         slider = $('.tabCampDiapo');
 
-    if (sView == 'tabCamp' || sView == 'tabLocations') {
+    if (sView == 'tabCamp' || sView == 'tabLocations' || sView == 'tabLogement' || sView == 'tabCampings') {
         slider.fadeIn();
         if (sView == 'tabLocations'){
             $('[name="affPhoto"][value="locations"]').parent('label').trigger('click');
