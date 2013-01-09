@@ -250,11 +250,6 @@
         </div>
         <!-- // colonne pleine largeur -->
 
-
-        <div class="pleaseWaitLayer" style="" id="please_wait_layer">
-            <div id="please_wait_layer_content">Veuillez patienter</div>
-        </div>
-
     </div>
 
     <?php include('includes/bottom.php'); ?>

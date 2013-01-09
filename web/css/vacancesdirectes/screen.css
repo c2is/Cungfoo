@@ -1748,6 +1748,9 @@ footer {
   height: 50px;
   margin: 0 auto;
 }
+#nav .tab .subnav#locations .radiusBox.capacity a {
+  text-decoration: none;
+}
 #nav .tab .subnav#locations .radiusBox.exclusively {
   width: 320px;
   margin-top: -22px;
@@ -1799,22 +1802,11 @@ footer {
 #nav .tab .subnav#locations .radiusBox2 .view {
   width: 216px;
   height: 120px;
-  background: url('../../images/vacancesdirectes/common/pict/stamp.jpg') no-repeat transparent;
+  background-repeat: no-repeat;
+  background-color: #e6e5e5;
   margin: -15px -20px 15px;
   -webkit-border-radius: 6px;
   border-radius: 6px;
-}
-#nav .tab .subnav#locations .radiusBox2 .view#mobilhome {
-  background-position: 0px 0px;
-}
-#nav .tab .subnav#locations .radiusBox2 .view#cottage {
-  background-position: 0px -120px;
-}
-#nav .tab .subnav#locations .radiusBox2 .view#chalet {
-  background-position: 0px -240px;
-}
-#nav .tab .subnav#locations .radiusBox2 .view#caravan {
-  background-position: 0px -360px;
 }
 #nav .tab .subnav#locations .radiusBox2 .title {
   font: bold 18px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
@@ -1822,19 +1814,40 @@ footer {
   margin: 3px 0 2px;
 }
 #nav .tab .subnav#locations .radiusBox2 .stain {
+  background-image: url("../../images/vacancesdirectes/common/ui/stain.png");
   position: absolute;
   bottom: 0;
   right: 10px;
   height: 50px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 50px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+  width: 90px;
+  font-size: 10px;
+  text-align: center;
+}
+#nav .tab .subnav#locations .radiusBox2 .stain > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: inherit;
+}
+#nav .tab .subnav#locations .radiusBox2 .stain > img {
+  vertical-align: middle;
 }
 #nav .tab .subnav#locations .radiusBox2 .stain > * {
   line-height: 16px;
+  color: #ffffff;
 }
 #nav .tab .subnav#locations .radiusBox2 .stain span {
-  margin-top: -6px;
+  margin-top: 14px;
 }
 #nav .tab .subnav#locations .radiusBox2 .stain .price {
   font-size: 22px;
+  font-weight: bold;
 }
 #nav .tab .subnav#locations .radiusBox,
 #nav .tab .subnav#locations .radiusBox2 {
@@ -1991,6 +2004,9 @@ footer {
 #nav .tab .subnav#weekends .radiusBox .title {
   color: #f58220;
 }
+#nav .tab:nth-child(3) .subnav {
+  display: block !important;
+}
 .js-true #nav .tab.hover,
 .js-true #nav .tab.current {
   background: #ed145b;
@@ -2051,17 +2067,43 @@ footer {
 }
 /* generic */
 #please_wait_layer {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: url(../../images/vacancesdirectes/common/ui/loadingResalys.gif) no-repeat scroll 50% 35px #ffffff;
+  background-color: #ffffff;
   text-align: center;
   font: normal 15px Arial, Helvetica, sans-serif;
-  padding: 100px 20px;
   opacity: 0.8;
-  z-index: 0;
+  z-index: 101;
+  display: none;
+}
+#please_wait_layer #please_wait_layer_content {
+  width: 500px;
+  height: 300px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 300px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+  margin: -150px 0 0 -250px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+}
+#please_wait_layer #please_wait_layer_content > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: 12px;
+}
+#please_wait_layer #please_wait_layer_content > img {
+  vertical-align: middle;
+}
+#please_wait_layer #please_wait_layer_content img {
+  margin-bottom: 15px;
 }
 .left {
   float: left;
