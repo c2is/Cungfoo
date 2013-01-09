@@ -43,13 +43,20 @@
                 <li>Simus igitur contenti his. Quid est enim aliud esse versutum? Velut ego nunc moveor. Sed nimis multa. Sint modo partes vitae beatae. Quis hoc dicit? Nunc agendum est subtilius.</li>
             </ul><h2>Confecta res esset.</h2>
 
-            <img class="thumb" src="http://pimg.devlint.fr/125x125/ccc/333/*" style="cursor: default;">
+            <img class="thumb" src="http://viaimage.viafrance.com/images/evts/16471.jpg" style="cursor: default;">
             <p>Sin laboramus, quis est, qui alienae modum statuat industriae? Sic enim censent, oportunitatis esse beate vivere. De ingenio eius in his disputationibus, non de moribus quaeritur. <b>Tubulo putas dicere?</b> Deinde prima illa, quae in congressu solemus: Quid tu, inquit, huc? Equidem e Cn. <i>Ne discipulum abducam, times.</i> Graccho, eius fere, aequalí? Ut placet, inquit, etsi enim illud erat aptius, aequum cuique concedere. Respondent extrema primis, media utrisque, omnia omnibus. <br>
             </p>
             <h2>Confecta res esset.</h2>
 
             <p>Sin laboramus, quis est, qui alienae modum statuat industriae? Sic enim censent, oportunitatis esse beate vivere. De ingenio eius in his disputationibus, non de moribus quaeritur. <b>Tubulo putas dicere?</b> Deinde prima illa, quae in congressu solemus: Quid tu, inquit, huc? Equidem e Cn. <i>Ne discipulum abducam, times.</i> Graccho, eius fere, aequalí? Ut placet, inquit, etsi enim illud erat aptius, aequum cuique concedere. Respondent extrema primis, media utrisque, omnia omnibus.</p>
-            <img class="view" src="http://pimg.devlint.fr/616x250/ccc/333/*" style="cursor: default;">
+            <div class="banner">
+                <div class="sliderStain first">
+                    <div class="content">
+                        <p class="headline">Au camping comme à la maison</p>
+                    </div>
+                </div>
+                <img class="bdPict" src="../web/images/vacancesdirectes/dyn/results/bandeau-result-hebergement.jpg" alt="" >
+            </div>
 
         </div>
     <!-- // colonne gauche -->
