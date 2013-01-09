@@ -235,6 +235,7 @@
         <column name="name" type="varchar" required="true" />
         <column name="slug" type="varchar" />
         <column name="indice" type="varchar" />
+        <column name="type_hebergement_capacite_id" type="integer" />
         <column name="category_type_hebergement_id" type="integer" />
         <column name="nombre_chambre" type="integer" />
         <column name="nombre_place" type="integer" />
@@ -261,6 +262,10 @@
             <reference local="category_type_hebergement_id" foreign="id"></reference>
         </foreign-key>
 
+        <foreign-key foreignTable="type_hebergement_capacite">
+            <reference local="type_hebergement_capacite_id" foreign="id"></reference>
+        </foreign-key>
+
         <behavior name="i18n">
             <parameter name="i18n_columns" value="name,slug,indice,surface,type_terrasse,description,composition,presentation,capacite_hebergement,dimensions,agencement,equipements,annee_utilisation,remarque_1,remarque_2,remarque_3,remarque_4" />
         </behavior>
@@ -268,6 +273,27 @@
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/type-hebergement" />
             <parameter name="crud_type_file" value="image_hebergement_path, image_composition_path" />
+        </behavior>
+    </table>
+
+    <table name="type_hebergement_capacite">
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="name" type="varchar" required="true" />
+        <column name="slug" type="varchar" />
+        <column name="description" type="longvarchar" />
+        <column name="image_menu" type="varchar" />
+        <column name="image_page" type="varchar" />
+        <behavior name="timestampable" />
+        <behavior name="active" />
+        <behavior name="sortable" />
+
+        <behavior name="i18n">
+            <parameter name="i18n_columns" value="name,slug,description" />
+        </behavior>
+
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/type-hebergement-capacite" />
+            <parameter name="crud_type_file" value="image_menu,image_page" />
         </behavior>
     </table>
 

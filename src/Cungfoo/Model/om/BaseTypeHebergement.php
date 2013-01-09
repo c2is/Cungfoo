@@ -24,6 +24,8 @@ use Cungfoo\Model\EtablissementTypeHebergementQuery;
 use Cungfoo\Model\MultimediaTypeHebergement;
 use Cungfoo\Model\MultimediaTypeHebergementQuery;
 use Cungfoo\Model\TypeHebergement;
+use Cungfoo\Model\TypeHebergementCapacite;
+use Cungfoo\Model\TypeHebergementCapaciteQuery;
 use Cungfoo\Model\TypeHebergementI18n;
 use Cungfoo\Model\TypeHebergementI18nQuery;
 use Cungfoo\Model\TypeHebergementPeer;
@@ -68,6 +70,12 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
      * @var        string
      */
     protected $code;
+
+    /**
+     * The value for the type_hebergement_capacite_id field.
+     * @var        int
+     */
+    protected $type_hebergement_capacite_id;
 
     /**
      * The value for the category_type_hebergement_id field.
@@ -122,6 +130,11 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
      * @var        CategoryTypeHebergement
      */
     protected $aCategoryTypeHebergement;
+
+    /**
+     * @var        TypeHebergementCapacite
+     */
+    protected $aTypeHebergementCapacite;
 
     /**
      * @var        PropelObjectCollection|EtablissementTypeHebergement[] Collection to store aggregation of EtablissementTypeHebergement objects.
@@ -237,6 +250,16 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     public function getCode()
     {
         return $this->code;
+    }
+
+    /**
+     * Get the [type_hebergement_capacite_id] column value.
+     *
+     * @return int
+     */
+    public function getTypeHebergementCapaciteId()
+    {
+        return $this->type_hebergement_capacite_id;
     }
 
     /**
@@ -420,6 +443,31 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
 
         return $this;
     } // setCode()
+
+    /**
+     * Set the value of [type_hebergement_capacite_id] column.
+     *
+     * @param int $v new value
+     * @return TypeHebergement The current object (for fluent API support)
+     */
+    public function setTypeHebergementCapaciteId($v)
+    {
+        if ($v !== null) {
+            $v = (int) $v;
+        }
+
+        if ($this->type_hebergement_capacite_id !== $v) {
+            $this->type_hebergement_capacite_id = $v;
+            $this->modifiedColumns[] = TypeHebergementPeer::TYPE_HEBERGEMENT_CAPACITE_ID;
+        }
+
+        if ($this->aTypeHebergementCapacite !== null && $this->aTypeHebergementCapacite->getId() !== $v) {
+            $this->aTypeHebergementCapacite = null;
+        }
+
+
+        return $this;
+    } // setTypeHebergementCapaciteId()
 
     /**
      * Set the value of [category_type_hebergement_id] column.
@@ -643,14 +691,15 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
 
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
             $this->code = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
-            $this->category_type_hebergement_id = ($row[$startcol + 2] !== null) ? (int) $row[$startcol + 2] : null;
-            $this->nombre_chambre = ($row[$startcol + 3] !== null) ? (int) $row[$startcol + 3] : null;
-            $this->nombre_place = ($row[$startcol + 4] !== null) ? (int) $row[$startcol + 4] : null;
-            $this->image_hebergement_path = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
-            $this->image_composition_path = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
-            $this->created_at = ($row[$startcol + 7] !== null) ? (string) $row[$startcol + 7] : null;
-            $this->updated_at = ($row[$startcol + 8] !== null) ? (string) $row[$startcol + 8] : null;
-            $this->active = ($row[$startcol + 9] !== null) ? (boolean) $row[$startcol + 9] : null;
+            $this->type_hebergement_capacite_id = ($row[$startcol + 2] !== null) ? (int) $row[$startcol + 2] : null;
+            $this->category_type_hebergement_id = ($row[$startcol + 3] !== null) ? (int) $row[$startcol + 3] : null;
+            $this->nombre_chambre = ($row[$startcol + 4] !== null) ? (int) $row[$startcol + 4] : null;
+            $this->nombre_place = ($row[$startcol + 5] !== null) ? (int) $row[$startcol + 5] : null;
+            $this->image_hebergement_path = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
+            $this->image_composition_path = ($row[$startcol + 7] !== null) ? (string) $row[$startcol + 7] : null;
+            $this->created_at = ($row[$startcol + 8] !== null) ? (string) $row[$startcol + 8] : null;
+            $this->updated_at = ($row[$startcol + 9] !== null) ? (string) $row[$startcol + 9] : null;
+            $this->active = ($row[$startcol + 10] !== null) ? (boolean) $row[$startcol + 10] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -659,7 +708,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 10; // 10 = TypeHebergementPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 11; // 11 = TypeHebergementPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating TypeHebergement object", $e);
@@ -682,6 +731,9 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     public function ensureConsistency()
     {
 
+        if ($this->aTypeHebergementCapacite !== null && $this->type_hebergement_capacite_id !== $this->aTypeHebergementCapacite->getId()) {
+            $this->aTypeHebergementCapacite = null;
+        }
         if ($this->aCategoryTypeHebergement !== null && $this->category_type_hebergement_id !== $this->aCategoryTypeHebergement->getId()) {
             $this->aCategoryTypeHebergement = null;
         }
@@ -725,6 +777,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
         if ($deep) {  // also de-associate any related objects?
 
             $this->aCategoryTypeHebergement = null;
+            $this->aTypeHebergementCapacite = null;
             $this->collEtablissementTypeHebergements = null;
 
             $this->collMultimediaTypeHebergements = null;
@@ -868,6 +921,13 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
                 $this->setCategoryTypeHebergement($this->aCategoryTypeHebergement);
             }
 
+            if ($this->aTypeHebergementCapacite !== null) {
+                if ($this->aTypeHebergementCapacite->isModified() || $this->aTypeHebergementCapacite->isNew()) {
+                    $affectedRows += $this->aTypeHebergementCapacite->save($con);
+                }
+                $this->setTypeHebergementCapacite($this->aTypeHebergementCapacite);
+            }
+
             if ($this->isNew() || $this->isModified()) {
                 // persist changes
                 if ($this->isNew()) {
@@ -983,6 +1043,9 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
         if ($this->isColumnModified(TypeHebergementPeer::CODE)) {
             $modifiedColumns[':p' . $index++]  = '`code`';
         }
+        if ($this->isColumnModified(TypeHebergementPeer::TYPE_HEBERGEMENT_CAPACITE_ID)) {
+            $modifiedColumns[':p' . $index++]  = '`type_hebergement_capacite_id`';
+        }
         if ($this->isColumnModified(TypeHebergementPeer::CATEGORY_TYPE_HEBERGEMENT_ID)) {
             $modifiedColumns[':p' . $index++]  = '`category_type_hebergement_id`';
         }
@@ -1023,6 +1086,9 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
                         break;
                     case '`code`':
                         $stmt->bindValue($identifier, $this->code, PDO::PARAM_STR);
+                        break;
+                    case '`type_hebergement_capacite_id`':
+                        $stmt->bindValue($identifier, $this->type_hebergement_capacite_id, PDO::PARAM_INT);
                         break;
                     case '`category_type_hebergement_id`':
                         $stmt->bindValue($identifier, $this->category_type_hebergement_id, PDO::PARAM_INT);
@@ -1153,6 +1219,12 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
                 }
             }
 
+            if ($this->aTypeHebergementCapacite !== null) {
+                if (!$this->aTypeHebergementCapacite->validate($columns)) {
+                    $failureMap = array_merge($failureMap, $this->aTypeHebergementCapacite->getValidationFailures());
+                }
+            }
+
 
             if (($retval = TypeHebergementPeer::doValidate($this, $columns)) !== true) {
                 $failureMap = array_merge($failureMap, $retval);
@@ -1225,27 +1297,30 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
                 return $this->getCode();
                 break;
             case 2:
-                return $this->getCategoryTypeHebergementId();
+                return $this->getTypeHebergementCapaciteId();
                 break;
             case 3:
-                return $this->getNombreChambre();
+                return $this->getCategoryTypeHebergementId();
                 break;
             case 4:
-                return $this->getNombrePlace();
+                return $this->getNombreChambre();
                 break;
             case 5:
-                return $this->getImageHebergementPath();
+                return $this->getNombrePlace();
                 break;
             case 6:
-                return $this->getImageCompositionPath();
+                return $this->getImageHebergementPath();
                 break;
             case 7:
-                return $this->getCreatedAt();
+                return $this->getImageCompositionPath();
                 break;
             case 8:
-                return $this->getUpdatedAt();
+                return $this->getCreatedAt();
                 break;
             case 9:
+                return $this->getUpdatedAt();
+                break;
+            case 10:
                 return $this->getActive();
                 break;
             default:
@@ -1279,18 +1354,22 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
         $result = array(
             $keys[0] => $this->getId(),
             $keys[1] => $this->getCode(),
-            $keys[2] => $this->getCategoryTypeHebergementId(),
-            $keys[3] => $this->getNombreChambre(),
-            $keys[4] => $this->getNombrePlace(),
-            $keys[5] => $this->getImageHebergementPath(),
-            $keys[6] => $this->getImageCompositionPath(),
-            $keys[7] => $this->getCreatedAt(),
-            $keys[8] => $this->getUpdatedAt(),
-            $keys[9] => $this->getActive(),
+            $keys[2] => $this->getTypeHebergementCapaciteId(),
+            $keys[3] => $this->getCategoryTypeHebergementId(),
+            $keys[4] => $this->getNombreChambre(),
+            $keys[5] => $this->getNombrePlace(),
+            $keys[6] => $this->getImageHebergementPath(),
+            $keys[7] => $this->getImageCompositionPath(),
+            $keys[8] => $this->getCreatedAt(),
+            $keys[9] => $this->getUpdatedAt(),
+            $keys[10] => $this->getActive(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aCategoryTypeHebergement) {
                 $result['CategoryTypeHebergement'] = $this->aCategoryTypeHebergement->toArray($keyType, $includeLazyLoadColumns,  $alreadyDumpedObjects, true);
+            }
+            if (null !== $this->aTypeHebergementCapacite) {
+                $result['TypeHebergementCapacite'] = $this->aTypeHebergementCapacite->toArray($keyType, $includeLazyLoadColumns,  $alreadyDumpedObjects, true);
             }
             if (null !== $this->collEtablissementTypeHebergements) {
                 $result['EtablissementTypeHebergements'] = $this->collEtablissementTypeHebergements->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
@@ -1342,27 +1421,30 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
                 $this->setCode($value);
                 break;
             case 2:
-                $this->setCategoryTypeHebergementId($value);
+                $this->setTypeHebergementCapaciteId($value);
                 break;
             case 3:
-                $this->setNombreChambre($value);
+                $this->setCategoryTypeHebergementId($value);
                 break;
             case 4:
-                $this->setNombrePlace($value);
+                $this->setNombreChambre($value);
                 break;
             case 5:
-                $this->setImageHebergementPath($value);
+                $this->setNombrePlace($value);
                 break;
             case 6:
-                $this->setImageCompositionPath($value);
+                $this->setImageHebergementPath($value);
                 break;
             case 7:
-                $this->setCreatedAt($value);
+                $this->setImageCompositionPath($value);
                 break;
             case 8:
-                $this->setUpdatedAt($value);
+                $this->setCreatedAt($value);
                 break;
             case 9:
+                $this->setUpdatedAt($value);
+                break;
+            case 10:
                 $this->setActive($value);
                 break;
         } // switch()
@@ -1391,14 +1473,15 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
 
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
         if (array_key_exists($keys[1], $arr)) $this->setCode($arr[$keys[1]]);
-        if (array_key_exists($keys[2], $arr)) $this->setCategoryTypeHebergementId($arr[$keys[2]]);
-        if (array_key_exists($keys[3], $arr)) $this->setNombreChambre($arr[$keys[3]]);
-        if (array_key_exists($keys[4], $arr)) $this->setNombrePlace($arr[$keys[4]]);
-        if (array_key_exists($keys[5], $arr)) $this->setImageHebergementPath($arr[$keys[5]]);
-        if (array_key_exists($keys[6], $arr)) $this->setImageCompositionPath($arr[$keys[6]]);
-        if (array_key_exists($keys[7], $arr)) $this->setCreatedAt($arr[$keys[7]]);
-        if (array_key_exists($keys[8], $arr)) $this->setUpdatedAt($arr[$keys[8]]);
-        if (array_key_exists($keys[9], $arr)) $this->setActive($arr[$keys[9]]);
+        if (array_key_exists($keys[2], $arr)) $this->setTypeHebergementCapaciteId($arr[$keys[2]]);
+        if (array_key_exists($keys[3], $arr)) $this->setCategoryTypeHebergementId($arr[$keys[3]]);
+        if (array_key_exists($keys[4], $arr)) $this->setNombreChambre($arr[$keys[4]]);
+        if (array_key_exists($keys[5], $arr)) $this->setNombrePlace($arr[$keys[5]]);
+        if (array_key_exists($keys[6], $arr)) $this->setImageHebergementPath($arr[$keys[6]]);
+        if (array_key_exists($keys[7], $arr)) $this->setImageCompositionPath($arr[$keys[7]]);
+        if (array_key_exists($keys[8], $arr)) $this->setCreatedAt($arr[$keys[8]]);
+        if (array_key_exists($keys[9], $arr)) $this->setUpdatedAt($arr[$keys[9]]);
+        if (array_key_exists($keys[10], $arr)) $this->setActive($arr[$keys[10]]);
     }
 
     /**
@@ -1412,6 +1495,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
 
         if ($this->isColumnModified(TypeHebergementPeer::ID)) $criteria->add(TypeHebergementPeer::ID, $this->id);
         if ($this->isColumnModified(TypeHebergementPeer::CODE)) $criteria->add(TypeHebergementPeer::CODE, $this->code);
+        if ($this->isColumnModified(TypeHebergementPeer::TYPE_HEBERGEMENT_CAPACITE_ID)) $criteria->add(TypeHebergementPeer::TYPE_HEBERGEMENT_CAPACITE_ID, $this->type_hebergement_capacite_id);
         if ($this->isColumnModified(TypeHebergementPeer::CATEGORY_TYPE_HEBERGEMENT_ID)) $criteria->add(TypeHebergementPeer::CATEGORY_TYPE_HEBERGEMENT_ID, $this->category_type_hebergement_id);
         if ($this->isColumnModified(TypeHebergementPeer::NOMBRE_CHAMBRE)) $criteria->add(TypeHebergementPeer::NOMBRE_CHAMBRE, $this->nombre_chambre);
         if ($this->isColumnModified(TypeHebergementPeer::NOMBRE_PLACE)) $criteria->add(TypeHebergementPeer::NOMBRE_PLACE, $this->nombre_place);
@@ -1484,6 +1568,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
         $copyObj->setCode($this->getCode());
+        $copyObj->setTypeHebergementCapaciteId($this->getTypeHebergementCapaciteId());
         $copyObj->setCategoryTypeHebergementId($this->getCategoryTypeHebergementId());
         $copyObj->setNombreChambre($this->getNombreChambre());
         $copyObj->setNombrePlace($this->getNombrePlace());
@@ -1618,6 +1703,58 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
         }
 
         return $this->aCategoryTypeHebergement;
+    }
+
+    /**
+     * Declares an association between this object and a TypeHebergementCapacite object.
+     *
+     * @param             TypeHebergementCapacite $v
+     * @return TypeHebergement The current object (for fluent API support)
+     * @throws PropelException
+     */
+    public function setTypeHebergementCapacite(TypeHebergementCapacite $v = null)
+    {
+        if ($v === null) {
+            $this->setTypeHebergementCapaciteId(NULL);
+        } else {
+            $this->setTypeHebergementCapaciteId($v->getId());
+        }
+
+        $this->aTypeHebergementCapacite = $v;
+
+        // Add binding for other direction of this n:n relationship.
+        // If this object has already been added to the TypeHebergementCapacite object, it will not be re-added.
+        if ($v !== null) {
+            $v->addTypeHebergement($this);
+        }
+
+
+        return $this;
+    }
+
+
+    /**
+     * Get the associated TypeHebergementCapacite object
+     *
+     * @param PropelPDO $con Optional Connection object.
+     * @param $doQuery Executes a query to get the object if required
+     * @return TypeHebergementCapacite The associated TypeHebergementCapacite object.
+     * @throws PropelException
+     */
+    public function getTypeHebergementCapacite(PropelPDO $con = null, $doQuery = true)
+    {
+        if ($this->aTypeHebergementCapacite === null && ($this->type_hebergement_capacite_id !== null) && $doQuery) {
+            $this->aTypeHebergementCapacite = TypeHebergementCapaciteQuery::create()->findPk($this->type_hebergement_capacite_id, $con);
+            /* The following can be used additionally to
+                guarantee the related object contains a reference
+                to this object.  This level of coupling may, however, be
+                undesirable since it could result in an only partially populated collection
+                in the referenced object.
+                $this->aTypeHebergementCapacite->addTypeHebergements($this);
+             */
+        }
+
+        return $this->aTypeHebergementCapacite;
     }
 
 
@@ -2500,6 +2637,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     {
         $this->id = null;
         $this->code = null;
+        $this->type_hebergement_capacite_id = null;
         $this->category_type_hebergement_id = null;
         $this->nombre_chambre = null;
         $this->nombre_place = null;
@@ -2572,6 +2710,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
         }
         $this->collEtablissements = null;
         $this->aCategoryTypeHebergement = null;
+        $this->aTypeHebergementCapacite = null;
     }
 
     /**

@@ -118,3 +118,7 @@ crud:
             prefix: /multimedias/type-hebergement
             model: \Cungfoo\Model\MultimediaTypeHebergement
             form: \Cungfoo\Form\Type\MultimediaTypeHebergementType
+        type_hebergement_capacite:
+            prefix: /type-hebergement-capacite
+            model: \Cungfoo\Model\TypeHebergementCapacite
+            form: \Cungfoo\Form\Type\TypeHebergementCapaciteType

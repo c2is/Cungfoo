@@ -57,6 +57,9 @@ menu:
               type_hebergement:
                   title:  menu.type_hebergement
                   route:  type_hebergement_crud_list
+              type_hebergement_capacite:
+                  title:  menu.type_hebergement_capacite
+                  route:  type_hebergement_capacite_crud_list
               type_hebergement_multimedia:
                   title:  menu.type_hebergement_multimedia
                   route:  multimedia_type_hebergement_crud_list

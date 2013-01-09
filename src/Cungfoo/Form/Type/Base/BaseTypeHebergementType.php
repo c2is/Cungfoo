@@ -34,6 +34,13 @@ class BaseTypeHebergementType extends AppAwareType
             'label' => 'type_hebergement.code',
             'required' => false,
         ));
+        $builder->add('type_hebergement_capacite', 'model', array(
+            'class' => '\Cungfoo\Model\TypeHebergementCapacite',
+            'constraints' => array(
+            ),
+            'label' => 'type_hebergement.type_hebergement_capacite',
+            'required' => false,
+        ));
         $builder->add('category_type_hebergement', 'model', array(
             'class' => '\Cungfoo\Model\CategoryTypeHebergement',
             'constraints' => array(
