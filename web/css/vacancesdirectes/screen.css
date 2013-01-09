@@ -1,4 +1,5 @@
 /* Project: NOMPROJET - Date: 20120806 - Author: C2iS.fr > TRI */
+/* Project: NOMPROJET - Date: 20120806 - Author: C2iS.fr > TRI */
 /*Variables*/
 /* Gris 0 */
 /* Gris 1 */
@@ -1732,6 +1733,9 @@ footer {
 #nav .tab .subnav#destinations #destinationsAll ol#campingsList li:last-child {
   visibility: hidden;
 }
+#nav .tab .subnav#locations .clear {
+  width: 960px;
+}
 #nav .tab .subnav#locations .radiusBox {
   margin-right: 20px;
   padding: 10px;
@@ -1851,10 +1855,6 @@ footer {
 #nav .tab .subnav#locations .radiusBox,
 #nav .tab .subnav#locations .radiusBox2 {
   font: 12px/13px Arial, Helvetica, sans-serif, sans-serif;
-}
-#nav .tab .subnav#locations .radiusBox:last-child,
-#nav .tab .subnav#locations .radiusBox2:last-child {
-  margin-right: 0;
 }
 #nav .tab .subnav#deals #dealsMenu,
 #nav .tab .subnav#deals #dealsContent {
