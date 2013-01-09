@@ -90,6 +90,13 @@ class BaseTypeHebergementCapaciteType extends AppAwareType
                     'constraints' => array(
                     ),
                 ),
+                'accroche' => array(
+                    'required' => false,
+                    'label' => 'type_hebergement_capacite.accroche',
+                    'type' => 'text',
+                    'constraints' => array(
+                    ),
+                ),
                 'description' => array(
                     'required' => false,
                     'label' => 'type_hebergement_capacite.description',

@@ -69,6 +69,7 @@ CREATE TABLE `type_hebergement_capacite_i18n`
     `locale` VARCHAR(5) DEFAULT \'fr\' NOT NULL,
     `name` VARCHAR(255) NOT NULL,
     `slug` VARCHAR(255),
+    `accroche` VARCHAR(255),
     `description` TEXT,
     PRIMARY KEY (`id`,`locale`),
     CONSTRAINT `type_hebergement_capacite_i18n_FK_1`
