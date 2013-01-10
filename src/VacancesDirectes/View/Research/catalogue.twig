@@ -12,4 +12,5 @@
 
 {% block rightColumn %}
     {% include 'Form/_search_engine.twig' %}
+    {{ render(path('search_filter')) }}
 {% endblock %}
