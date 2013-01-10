@@ -1,0 +1,51 @@
+<form action="" class="formSearchRefined radiusBox greyC" id="formSearchRefined">
+    <div class="stamp fushia">
+        <h2>{{ "filtres.affinez_recherche" | trans }}</h2>
+    </div>
+    <p class="criteres"><span id="nbCrit">0</span> {{ "filtres.criteres_selectionne" | trans }}</p>
+
+        <p class="sectionTitle open first">{{ "filtres.situation" | trans }}</p>
+        <fieldset class="contentCritPlus" id="searchSituations">
+            {% for situation in situation %}
+                <label><input type="checkbox" name="checkSituations" id="{{ situation.code }}">{{ situation.name | trans }}</label>
+            {% endfor %}
+        </fieldset>
+
+        <p class="sectionTitle open first">{{ "filtres.categories" | trans }}</p>
+        <fieldset class="contentCrit" id="searchCategories">
+            {% for categorie in categories %}
+                <label><input type="checkbox" name="checkCategories" id="{{ categorie.code }}">{{ categorie.name | trans }}</label>
+            {% endfor %}
+        </fieldset>
+
+        <p class="sectionTitle open">{{ "filtres.baignade_bien_etre" | trans }}</p>
+        <fieldset class="contentCritPlus" id="searchBaignade">
+            {% for baignade in baignade %}
+                <label><input type="checkbox" name="checkBaignade" id="{{ baignade.code }}">{{ baignade.name | trans }}</label>
+            {% endfor %}
+        </fieldset>
+
+        <p class="sectionTitle open">{{ "filtres.animations_loisirs" | trans }}</p>
+        <fieldset class="contentCritPlus" id="searchAnimations">
+            {% for activite in activites %}
+                <label><input type="checkbox" name="checkAnimations" id="{{ activite.code }}">{{ activite.name | trans }}</label>
+            {% endfor %}
+        </fieldset>
+
+        <p class="sectionTitle open">{{ "filtres.commerces_services" | trans }}</p>
+        <fieldset class="contentCritPlus" id="searchServices">
+            {% for service in services %}
+                <label><input type="checkbox" name="checkServices" id="{{ service.code }}">{{ service.name | trans }}</label>
+            {% endfor %}
+        </fieldset>
+
+        <p class="sectionTitle open">{{ "filtres.thematiques" | trans }}</p>
+        <fieldset class="contentCritPlus" id="searchThematiques">
+            {% for thematique in thematiques %}
+                <label><input type="checkbox" name="checkThematiques" id="{{ thematique.code }}">{{ thematique.name | trans }}</label>
+            {% endfor %}
+        </fieldset>
+
+    <!-- submit rechercher -->
+    <button class="bt big sombre searchGlobalSubmit">{{ "filtres.filtrer" | trans }}</button>
+</form>

@@ -410,6 +410,17 @@ general:
     submit: "Envoyer"
     logout: "Se déconnecter"
 
+filtres:
+    affinez_recherche: "Affinez votre recherche"
+    criteres_selectionne: "critères(s) séléctioné(s)"
+    situation: "Situation"
+    categories: "Catégories"
+    baignade_bien_etre: "Baignade & bien-être"
+    animations_loisirs: "Animations et loisirs"
+    commerces_services: "Commerces et services"
+    thematiques: "Thématiques"
+    filtrer: "Filtrer"
+
 footer:
     contact: "Contact"
     charte_qualite: "Charte qualité"
