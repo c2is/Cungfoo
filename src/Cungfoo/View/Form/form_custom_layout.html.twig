@@ -36,10 +36,10 @@
 
 {% block cungfoo_file_widget %}
 {% spaceless %}
-{{ block('form_widget_simple') }}
 {% if value %}
-<br/><a href="{{ asset(value) }}">{{ value }}</a>
+<a href="{{ asset(value) }}"><img class="thumbnail" src="{{ asset(value) }}" style="max-width: 128px"/></a>
 {% endif %}
+{{ block('form_widget_simple') }}
 {% endspaceless %}
 {% endblock %}
 
