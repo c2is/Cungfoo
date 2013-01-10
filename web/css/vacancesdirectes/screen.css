@@ -1605,6 +1605,10 @@ footer {
 #nav .tab .subnav .objective {
   margin: 10px;
 }
+#nav .tab .subnav .boxborder {
+  margin: 0 10px 5px;
+  display: block;
+}
 #nav .tab .subnav#destinations a:hover {
   color: #ed145b;
 }
@@ -1864,7 +1868,7 @@ footer {
 }
 #nav .tab .subnav#deals #dealsMenu {
   z-index: 2;
-  width: 316px;
+  width: 276px;
   text-transform: uppercase;
   margin-bottom: 180px;
 }
@@ -1944,7 +1948,7 @@ footer {
 }
 #nav .tab .subnav#deals #dealsContent {
   z-index: 1;
-  width: 624px;
+  width: 664px;
 }
 #nav .tab .subnav#deals #dealsContent .radiusBox {
   display: none;
@@ -1974,6 +1978,7 @@ footer {
   text-transform: none;
 }
 #nav .tab .subnav#deals #dealsContent .element .details {
+  width: 173px;
   margin: 0;
 }
 #nav .tab .subnav#deals #dealsContent .element .condition {
@@ -3396,10 +3401,6 @@ body.edito table td {
   /* slider */
 
 }
-.home .boxborder {
-  margin: 0 10px 5px;
-  display: block;
-}
 .home #wrap a {
   text-decoration: none;
 }
@@ -3706,6 +3707,10 @@ body.edito table td {
 }
 .home .locationForwards#topLocations .element {
   padding: 17px 0;
+}
+.home .locationForwards#topLocations .element .boxborder {
+  margin: 0 10px 5px;
+  display: block;
 }
 .home .locationForwards#topLocations .element .details {
   width: 151px;
@@ -5201,13 +5206,15 @@ h2 + #results {
 .itemResult.itemCatalogue .itemResultBottom .linePrice .stain {
   display: block;
 }
-.bandeau {
+.banner {
   position: relative;
   clear: both;
 }
-.sliderStain {
+.bannerStain {
   position: absolute;
   text-align: center;
+}
+.bannerStain.first {
   right: 10px;
   top: 10px;
   width: 228px;
@@ -5222,24 +5229,59 @@ h2 + #results {
   background: url("../../images/vacancesdirectes/common/ui/stain-1.png") no-repeat 0 0 transparent;
   background-size: 100%;
 }
-.sliderStain > * {
+.bannerStain.first > * {
   vertical-align: middle;
   display: inline-block;
   line-height: 15px;
 }
-.sliderStain > img {
+.bannerStain.first > img {
   vertical-align: middle;
 }
-.sliderStain .content {
+.bannerStain.first .content {
   color: #f58220;
   margin: 10px 30px 0;
 }
-.sliderStain .content .headline {
+.bannerStain.first .content .headline {
   font: bold 27px/27px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-height: 95px;
+  max-height: 81px;
+}
+.bannerStain.second {
+  right: 0px;
+  bottom: 20px;
+  width: 140px;
+  height: 140px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 140px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+  background: url("../../images/vacancesdirectes/common/ui/stain-2.png") no-repeat 0 0 transparent;
+  background-size: 100%;
+  z-index: 4;
+}
+.bannerStain.second > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: 15px;
+}
+.bannerStain.second > img {
+  vertical-align: middle;
+}
+.bannerStain.second .content {
+  width: 70px;
+  color: #ffffff;
+}
+.bannerStain.second .content .headline {
+  font: bold 13px/14px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 42px;
 }
 /* bouton Afficher plus de resultats */
 #btPlusResults {

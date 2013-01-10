@@ -20,8 +20,8 @@ include('includes/top.php'); ?>
 
             <a href="#results" class="bt big fushia right goto">Notre sélection</a>
 
-            <div class="bandeau">
-                <div class="sliderStain">
+            <div class="banner">
+                <div class="bannerStain first">
                     <div class="content">
                         <p class="headline">Au camping comme à la maison</p>
                     </div>
