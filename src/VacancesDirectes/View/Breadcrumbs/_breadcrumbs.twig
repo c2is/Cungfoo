@@ -17,6 +17,14 @@
             {% endif %}
         {% endif %}
     {% endif %}
+    {% if breadcrumbsRoute == 'categorie-bonsplans' %}
+    <li>&gt; <span itemprop="title">{{ 'breadcrumbs.bonsplans' | trans }}</span></li>
+    <li>&gt; <span itemprop="title">{{ categorie.name }}</span></li>
+    {% endif %}
+    {% if breadcrumbsRoute == 'bonsplans' %}
+    <li>&gt; <span itemprop="title">{{ 'breadcrumbs.bonsplans' | trans }}</span></li>
+    <li>&gt; <span itemprop="title">{{ bonPlan.name }}</span></li>
+    {% endif %}
     {% if 'edito' in breadcrumbsRoute %}
     <li>&gt; <a href="{{ path('edito_by_slug', {'slug': edito.slug}) }}"><span itemprop="title">{{ edito.name }}</span></a></li>
     {% endif %}

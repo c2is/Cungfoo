@@ -13,6 +13,9 @@
 {% endblock %}
 
 {% block leftColumn %}
+
+    {% include "Breadcrumbs/_breadcrumbs.twig" %}
+
     <h1>{{ bonPlan.name }}</h1>
 
     <p class="description">{{ bonPlan.description }}</p> {# Description #}
