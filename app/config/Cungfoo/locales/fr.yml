@@ -263,6 +263,7 @@ service_complementaire.image.path: Image
 service_complementaire.active: Actif
 service_complementaire.vignette: Vignette
 
+security.title: Panneau d'administration
 security.username: Nom d'utilisateur
 security.password: Mot de passe
 security.submit: Connexion
