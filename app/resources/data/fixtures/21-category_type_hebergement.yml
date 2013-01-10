@@ -1,25 +1,57 @@
 \Cungfoo\Model\CategoryTypeHebergement:
     1:
         Code: SALL
+        MinimumPrice: '129'
+        ImageMenu: null
+        ImagePage: images/vacancesdirectes/dyn/results/bandeau-result-hebergement.jpg
         Active: true
+        SortableRank: 1
     2:
         Code: MH
+        MinimumPrice: '129'
+        ImageMenu: null
+        ImagePage: images/vacancesdirectes/dyn/results/bandeau-result-hebergement.jpg
         Active: true
+        SortableRank: 2
     3:
         Code: CHA
+        MinimumPrice: '129'
+        ImageMenu: null
+        ImagePage: images/vacancesdirectes/dyn/results/bandeau-result-hebergement.jpg
         Active: true
+        SortableRank: 3
     4:
         Code: MAIS
+        MinimumPrice: '129'
+        ImageMenu: null
+        ImagePage: images/vacancesdirectes/dyn/results/bandeau-result-hebergement.jpg
         Active: true
+        SortableRank: 4
     5:
         Code: CAR
+        MinimumPrice: '129'
+        ImageMenu: null
+        ImagePage: images/vacancesdirectes/dyn/results/bandeau-result-hebergement.jpg
         Active: true
+        SortableRank: 5
     6:
         Code: GITE
+        MinimumPrice: '129'
+        ImageMenu: null
+        ImagePage: images/vacancesdirectes/dyn/results/bandeau-result-hebergement.jpg
         Active: true
+        SortableRank: 6
     7:
         Code: EMP
+        MinimumPrice: '129'
+        ImageMenu: null
+        ImagePage: images/vacancesdirectes/dyn/results/bandeau-result-hebergement.jpg
         Active: true
+        SortableRank: 7
     8:
         Code: TENT
+        MinimumPrice: '129'
+        ImageMenu: null
+        ImagePage: images/vacancesdirectes/dyn/results/bandeau-result-hebergement.jpg
         Active: true
+        SortableRank: 8

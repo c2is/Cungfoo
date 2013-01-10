@@ -67,7 +67,7 @@ crud:
             model: \Cungfoo\Model\Personnage
             form: \Cungfoo\Form\Type\PersonnageType
         multimedia_etablissement:
-            prefix: /multimedias
+            prefix: /multimedias/etablissement
             model: \Cungfoo\Model\MultimediaEtablissement
             form: \Cungfoo\Form\Type\MultimediaEtablissementType
         tag:
@@ -118,3 +118,11 @@ crud:
             prefix: /demandes-annulation
             model: \Cungfoo\Model\DemandeAnnulation
             form: \Cungfoo\Form\Type\DemandeAnnulationType
+        multimedia_type_hebergement:
+            prefix: /multimedias/type-hebergement
+            model: \Cungfoo\Model\MultimediaTypeHebergement
+            form: \Cungfoo\Form\Type\MultimediaTypeHebergementType
+        type_hebergement_capacite:
+            prefix: /type-hebergement-capacite
+            model: \Cungfoo\Model\TypeHebergementCapacite
+            form: \Cungfoo\Form\Type\TypeHebergementCapaciteType

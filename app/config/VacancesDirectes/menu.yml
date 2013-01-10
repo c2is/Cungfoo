@@ -4,6 +4,10 @@ items:
         title:      "menu.destinations"
         route:      "menu_destinations"
         countQuery: "\\Cungfoo\\Model\\EtablissementPeer::getNbEtablissements"
+    location:
+        title:      "menu.locations"
+        route:      "menu_locations"
+        countQuery: "\\Cungfoo\\Model\\TypeHebergementPeer::getNbTypeHebergements"
     bonsplans:
         title:      "menu.bons_plans"
         route:      "menu_bons_plans"

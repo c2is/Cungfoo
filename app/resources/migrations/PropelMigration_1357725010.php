@@ -5,7 +5,7 @@
  * up to version 1357642730.
  * Generated on 2013-01-08 11:58:50 by vagrant
  */
-class PropelMigration_1357672730
+class PropelMigration_1357725010
 {
 
     public $dernieresMinutes = array();
@@ -27,7 +27,7 @@ class PropelMigration_1357672730
                 $sql = "SELECT etablissement_id FROM dernieres_minutes_etablissement WHERE dernieres_minutes_id = ?";
                 $stmt = $pdo->prepare($sql);
                 $stmt->execute(array($result['id']));
-                
+
                 $etablissements = $stmt->fetchAll();
                 foreach ($etablissements as $etablissement)
                 {
@@ -39,7 +39,7 @@ class PropelMigration_1357672730
                 $sql = "SELECT destination_id FROM dernieres_minutes_destination WHERE dernieres_minutes_id = ?";
                 $stmt = $pdo->prepare($sql);
                 $stmt->execute(array($result['id']));
-                
+
                 $destinations = $stmt->fetchAll();
                 foreach ($destinations as $destination)
                 {
@@ -151,7 +151,7 @@ class PropelMigration_1357672730
             $sql = "SELECT etablissement_id FROM bon_plan_etablissement WHERE bon_plan_id = ?";
             $stmt = $pdo->prepare($sql);
             $stmt->execute(array($result['id']));
-            
+
             $etablissements = $stmt->fetchAll();
             foreach ($etablissements as $etablissement)
             {
@@ -163,7 +163,7 @@ class PropelMigration_1357672730
             $sql = "SELECT destination_id FROM bon_plan_destination WHERE bon_plan_id = ?";
             $stmt = $pdo->prepare($sql);
             $stmt->execute(array($result['id']));
-            
+
             $destinations = $stmt->fetchAll();
             foreach ($destinations as $destination)
             {

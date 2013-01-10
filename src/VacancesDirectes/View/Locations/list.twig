@@ -1,0 +1,87 @@
+{% extends "base.twig" %}
+
+{% block title %}
+{% spaceless %}
+    {% if currentClass == "Cungfoo\\Model\\CategoryTypeHebergement" %}
+        {{ "seo.title.location.list.categorie" | trans ({'%type%': categoryTypeHebergement.name|lower}) }}
+    {% elseif currentClass == "Cungfoo\\Model\\TypeHebergementCapacite" %}
+        {{ "seo.title.location.list.capacite.list" | trans ({'%type%': categoryTypeHebergement.name|lower}) }}
+    {% endif %}
+{% endspaceless %}
+{% endblock %}
+{% block metaDescription %}
+{% spaceless %}
+    {% if currentClass == "Cungfoo\\Model\\CategoryTypeHebergement" %}
+        {{ "seo.meta.location.list.categorie" | trans ({'%type%': categoryTypeHebergement.name|lower}) }}
+    {% elseif currentClass == "Cungfoo\\Model\\TypeHebergementCapacite" %}
+        {{ "seo.meta.location.list.capacite" | trans ({'%type%': categoryTypeHebergement.name|lower}) }}
+    {% endif %}
+{% endspaceless %}
+{% endblock %}
+{% block bodyClass %} fiche{% endblock %}
+
+{% block canonical %}<link rel="canonical" href="{{ referer }}" />{% endblock %}
+
+{% block leftColumn %}
+
+{% include "Breadcrumbs/_breadcrumbs.twig" %}
+
+<h1>Nos hébergements</h1>
+<h2 class="h3-like">{{ categoryTypeHebergement.name }}</h2>
+<p class="description">{{ categoryTypeHebergement.description }}</p>
+
+ <a href="#results" class="bt big fushia right goto">Notre sélection</a>
+
+{% if categoryTypeHebergement.imagePage %}
+<div class="bandeau">
+    {% if categoryTypeHebergement.accroche %}
+    <div class="sliderStain">
+        <div class="content">
+            <p class="headline">{{ categoryTypeHebergement.accroche }}</p>
+        </div>
+    </div>
+    {% endif %}
+    <img class="bdPict" src="{{ asset(categoryTypeHebergement.imagePage) }}" alt="" width="614" height="253">
+</div>
+{% endif %}
+
+<h2 class="h3-like">Notre sélection d'hébergement</h2>
+<div id="results" class="clear">
+    {% for hebergement in categoryTypeHebergement.typeHebergements %}
+    <div class="itemResult clear">
+        <div class="itemResultTitle itemResultTitleHbgt">
+           {{ hebergement.name }}
+        </div>
+        <div class="itemResultLeft itemResultLeftHbgt">
+            <img src="{{ asset(hebergement.imageHebergementPath) }}" alt="" class="boxborder">
+        </div>
+        <div class="itemResultCenter itemResultCenterHbgt">
+            <span class="ircHbgtTitle">{{ hebergement.nombrePlace }} places</span>
+            <span class="ircHbgtSubTitle">{{ hebergement.indice }}</span>
+            <span class="ircHbgtDesc">{{ hebergement.presentation | nl2br }}</span>
+        </div>
+        <div class="itemResultBottom itemResultBottomHbgt clear">
+            <a class="bt right fushia big" href="{{ path('location_type_hebergement', {'categoryTypeHebergement': categoryTypeHebergement.slug, 'typeHebergement': hebergement.slug}) }}">En savoir plus</a>
+        </div>
+    </div>
+    {% endfor %}
+
+    <button id="btPlusResults" class="bt big sombre">Plus de résultats</button>
+</div>
+{% endblock %}
+
+{% block rightColumn %}
+    {% include 'Form/_search_engine.twig' %}
+
+    <div id="greyBoxes">
+        {% include 'Bloc/propose_hebergement.twig' %}
+    </div>
+
+    <div id="greyBoxes">
+        {% include 'Bloc/sejour_reussi.twig' %}
+    </div>
+
+    <div id="greyBoxes">
+        {% include 'Bloc/informations.twig' %}
+    </div>
+{% endblock %}

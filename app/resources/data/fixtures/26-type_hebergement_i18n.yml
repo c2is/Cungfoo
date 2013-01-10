@@ -3,6 +3,8 @@
         Id: 1
         Locale: de
         Name: 'Parcelle jusqu''à 100 m²'
+        Slug: parcelle-jusqu-a-100-m
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -21,6 +23,8 @@
         Id: 1
         Locale: en
         Name: 'Parcelle jusqu''à 100 m²'
+        Slug: parcelle-jusqu-a-100-m
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -39,6 +43,8 @@
         Id: 1
         Locale: fr
         Name: 'Parcelle jusqu''à 100 m²'
+        Slug: parcelle-jusqu-a-100-m
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -57,6 +63,8 @@
         Id: 1
         Locale: nl
         Name: 'Parcelle jusqu''à 100 m²'
+        Slug: parcelle-jusqu-a-100-m
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -75,6 +83,8 @@
         Id: 2
         Locale: de
         Name: 'Parcelle de 101 à 110 m²'
+        Slug: parcelle-de-101-a-110-m
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -93,6 +103,8 @@
         Id: 2
         Locale: en
         Name: 'Parcelle de 101 à 110 m²'
+        Slug: parcelle-de-101-a-110-m
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -111,6 +123,8 @@
         Id: 2
         Locale: fr
         Name: 'Parcelle de 101 à 110 m²'
+        Slug: parcelle-de-101-a-110-m
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -129,6 +143,8 @@
         Id: 2
         Locale: nl
         Name: 'Parcelle de 101 à 110 m²'
+        Slug: parcelle-de-101-a-110-m
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -147,6 +163,8 @@
         Id: 3
         Locale: de
         Name: 'Parcelle de 121 à 130 m²'
+        Slug: parcelle-de-121-a-130-m
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -165,6 +183,8 @@
         Id: 3
         Locale: en
         Name: 'Parcelle de 121 à 130 m²'
+        Slug: parcelle-de-121-a-130-m
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -183,6 +203,8 @@
         Id: 3
         Locale: fr
         Name: 'Parcelle de 121 à 130 m²'
+        Slug: parcelle-de-121-a-130-m
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -201,6 +223,8 @@
         Id: 3
         Locale: nl
         Name: 'Parcelle de 121 à 130 m²'
+        Slug: parcelle-de-121-a-130-m
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -219,6 +243,8 @@
         Id: 4
         Locale: de
         Name: 'Parcelle de 131 à 140 m²'
+        Slug: parcelle-de-131-a-140-m
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -237,6 +263,8 @@
         Id: 4
         Locale: en
         Name: 'Parcelle de 131 à 140 m²'
+        Slug: parcelle-de-131-a-140-m
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -255,6 +283,8 @@
         Id: 4
         Locale: fr
         Name: 'Parcelle de 131 à 140 m²'
+        Slug: parcelle-de-131-a-140-m
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -273,6 +303,8 @@
         Id: 4
         Locale: nl
         Name: 'Parcelle de 131 à 140 m²'
+        Slug: parcelle-de-131-a-140-m
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -291,6 +323,8 @@
         Id: 5
         Locale: de
         Name: 'Parcelle de 141 à 150 m²'
+        Slug: parcelle-de-141-a-150-m
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -309,6 +343,8 @@
         Id: 5
         Locale: en
         Name: 'Parcelle de 141 à 150 m²'
+        Slug: parcelle-de-141-a-150-m
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -327,6 +363,8 @@
         Id: 5
         Locale: fr
         Name: 'Parcelle de 141 à 150 m²'
+        Slug: parcelle-de-141-a-150-m
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -345,6 +383,8 @@
         Id: 5
         Locale: nl
         Name: 'Parcelle de 141 à 150 m²'
+        Slug: parcelle-de-141-a-150-m
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -363,6 +403,8 @@
         Id: 6
         Locale: de
         Name: 'Parcelle de 151 à 160 m²'
+        Slug: parcelle-de-151-a-160-m
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -381,6 +423,8 @@
         Id: 6
         Locale: en
         Name: 'Parcelle de 151 à 160 m²'
+        Slug: parcelle-de-151-a-160-m
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -399,6 +443,8 @@
         Id: 6
         Locale: fr
         Name: 'Parcelle de 151 à 160 m²'
+        Slug: parcelle-de-151-a-160-m
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -417,6 +463,8 @@
         Id: 6
         Locale: nl
         Name: 'Parcelle de 151 à 160 m²'
+        Slug: parcelle-de-151-a-160-m
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -435,6 +483,8 @@
         Id: 7
         Locale: de
         Name: 'Parcelle de 161 à 170 m²'
+        Slug: parcelle-de-161-a-170-m
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -453,6 +503,8 @@
         Id: 7
         Locale: en
         Name: 'Parcelle de 161 à 170 m²'
+        Slug: parcelle-de-161-a-170-m
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -471,6 +523,8 @@
         Id: 7
         Locale: fr
         Name: 'Parcelle de 161 à 170 m²'
+        Slug: parcelle-de-161-a-170-m
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -489,6 +543,8 @@
         Id: 7
         Locale: nl
         Name: 'Parcelle de 161 à 170 m²'
+        Slug: parcelle-de-161-a-170-m
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -507,6 +563,8 @@
         Id: 8
         Locale: de
         Name: 'Parcelle de 171 à 180 m²'
+        Slug: parcelle-de-171-a-180-m
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -525,6 +583,8 @@
         Id: 8
         Locale: en
         Name: 'Parcelle de 171 à 180 m²'
+        Slug: parcelle-de-171-a-180-m
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -543,6 +603,8 @@
         Id: 8
         Locale: fr
         Name: 'Parcelle de 171 à 180 m²'
+        Slug: parcelle-de-171-a-180-m
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -561,6 +623,8 @@
         Id: 8
         Locale: nl
         Name: 'Parcelle de 171 à 180 m²'
+        Slug: parcelle-de-171-a-180-m
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -579,6 +643,8 @@
         Id: 9
         Locale: de
         Name: 'Amical (4 places, max. 3 adultes)'
+        Slug: amical-4-places-max-3-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -597,6 +663,8 @@
         Id: 9
         Locale: en
         Name: 'Amical (4 places, max. 3 adultes)'
+        Slug: amical-4-places-max-3-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -615,6 +683,8 @@
         Id: 9
         Locale: fr
         Name: 'Amical (4 places, max. 3 adultes)'
+        Slug: amical-4-places-max-3-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -633,6 +703,8 @@
         Id: 9
         Locale: nl
         Name: 'Amical (4 places, max. 3 adultes)'
+        Slug: amical-4-places-max-3-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -651,6 +723,8 @@
         Id: 10
         Locale: de
         Name: 'Bungalow T2 Luxe (4 places, max. 4 adultes)'
+        Slug: bungalow-t2-luxe-4-places-max-4-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -669,6 +743,8 @@
         Id: 10
         Locale: en
         Name: 'Bungalow T2 Luxe (4 places, max. 4 adultes)'
+        Slug: bungalow-t2-luxe-4-places-max-4-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -687,6 +763,8 @@
         Id: 10
         Locale: fr
         Name: 'Bungalow T2 Luxe (4 places, max. 4 adultes)'
+        Slug: bungalow-t2-luxe-4-places-max-4-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -705,6 +783,8 @@
         Id: 10
         Locale: nl
         Name: 'Bungalow T2 Luxe (4 places, max. 4 adultes)'
+        Slug: bungalow-t2-luxe-4-places-max-4-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -723,6 +803,8 @@
         Id: 11
         Locale: de
         Name: 'Bungalow T3 (6 places, max. 6 adultes)'
+        Slug: bungalow-t3-6-places-max-6-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -741,6 +823,8 @@
         Id: 11
         Locale: en
         Name: 'Bungalow T3 (6 places, max. 6 adultes)'
+        Slug: bungalow-t3-6-places-max-6-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -759,6 +843,8 @@
         Id: 11
         Locale: fr
         Name: 'Bungalow T3 (6 places, max. 6 adultes)'
+        Slug: bungalow-t3-6-places-max-6-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -777,6 +863,8 @@
         Id: 11
         Locale: nl
         Name: 'Bungalow T3 (6 places, max. 6 adultes)'
+        Slug: bungalow-t3-6-places-max-6-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -795,6 +883,8 @@
         Id: 12
         Locale: de
         Name: 'Tente Canada'
+        Slug: tente-canada
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -813,6 +903,8 @@
         Id: 12
         Locale: en
         Name: 'Tente Canada'
+        Slug: tente-canada
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -831,6 +923,8 @@
         Id: 12
         Locale: fr
         Name: 'Tente Canada'
+        Slug: tente-canada
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -849,6 +943,8 @@
         Id: 12
         Locale: nl
         Name: 'Tente Canada'
+        Slug: tente-canada
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -867,6 +963,8 @@
         Id: 13
         Locale: de
         Name: 'Chalet (4-6 places)'
+        Slug: chalet-4-6-places
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -885,6 +983,8 @@
         Id: 13
         Locale: en
         Name: 'Chalet (4-6 places)'
+        Slug: chalet-4-6-places
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -903,6 +1003,8 @@
         Id: 13
         Locale: fr
         Name: 'Chalet (4-6 places)'
+        Slug: chalet-4-6-places
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -921,6 +1023,8 @@
         Id: 13
         Locale: nl
         Name: 'Chalet (4-6 places)'
+        Slug: chalet-4-6-places
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -939,6 +1043,8 @@
         Id: 14
         Locale: de
         Name: 'Chalet (5 places, max. 4 adultes)'
+        Slug: chalet-5-places-max-4-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -957,6 +1063,8 @@
         Id: 14
         Locale: en
         Name: 'Chalet (5 places, max. 4 adultes)'
+        Slug: chalet-5-places-max-4-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -975,6 +1083,8 @@
         Id: 14
         Locale: fr
         Name: 'Chalet (5 places, max. 4 adultes)'
+        Slug: chalet-5-places-max-4-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -993,6 +1103,8 @@
         Id: 14
         Locale: nl
         Name: 'Chalet (5 places, max. 4 adultes)'
+        Slug: chalet-5-places-max-4-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1011,6 +1123,8 @@
         Id: 15
         Locale: de
         Name: 'Chalet (6 places)'
+        Slug: chalet-6-places
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1029,6 +1143,8 @@
         Id: 15
         Locale: en
         Name: 'Chalet (6 places)'
+        Slug: chalet-6-places
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1047,6 +1163,8 @@
         Id: 15
         Locale: fr
         Name: 'Chalet (6 places)'
+        Slug: chalet-6-places
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1065,6 +1183,8 @@
         Id: 15
         Locale: nl
         Name: 'Chalet (6 places)'
+        Slug: chalet-6-places
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1083,6 +1203,8 @@
         Id: 16
         Locale: de
         Name: 'Conviviale (5 places, max. 4 adultes)'
+        Slug: conviviale-5-places-max-4-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1101,6 +1223,8 @@
         Id: 16
         Locale: en
         Name: 'Conviviale (5 places, max. 4 adultes)'
+        Slug: conviviale-5-places-max-4-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1119,6 +1243,8 @@
         Id: 16
         Locale: fr
         Name: 'Conviviale (5 places, max. 4 adultes)'
+        Slug: conviviale-5-places-max-4-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1137,6 +1263,8 @@
         Id: 16
         Locale: nl
         Name: 'Conviviale (5 places, max. 4 adultes)'
+        Slug: conviviale-5-places-max-4-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1155,6 +1283,8 @@
         Id: 17
         Locale: de
         Name: 'Cordial (4 places)'
+        Slug: cordial-4-places
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1173,6 +1303,8 @@
         Id: 17
         Locale: en
         Name: 'Cordial (4 places)'
+        Slug: cordial-4-places
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1191,6 +1323,8 @@
         Id: 17
         Locale: fr
         Name: 'Cordial (4 places)'
+        Slug: cordial-4-places
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1209,6 +1343,8 @@
         Id: 17
         Locale: nl
         Name: 'Cordial (4 places)'
+        Slug: cordial-4-places
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1227,6 +1363,8 @@
         Id: 18
         Locale: de
         Name: 'Cordial (6 places, max. 5 adultes)'
+        Slug: cordial-6-places-max-5-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1245,6 +1383,8 @@
         Id: 18
         Locale: en
         Name: 'Cordial (6 places, max. 5 adultes)'
+        Slug: cordial-6-places-max-5-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1263,6 +1403,8 @@
         Id: 18
         Locale: fr
         Name: 'Cordial (6 places, max. 5 adultes)'
+        Slug: cordial-6-places-max-5-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1281,6 +1423,8 @@
         Id: 18
         Locale: nl
         Name: 'Cordial (6 places, max. 5 adultes)'
+        Slug: cordial-6-places-max-5-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1299,6 +1443,8 @@
         Id: 19
         Locale: de
         Name: 'Domanial (5 places, max. 5 adultes)'
+        Slug: domanial-5-places-max-5-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1317,6 +1463,8 @@
         Id: 19
         Locale: en
         Name: 'Domanial (5 places, max. 5 adultes)'
+        Slug: domanial-5-places-max-5-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1335,6 +1483,8 @@
         Id: 19
         Locale: fr
         Name: 'Domanial (5 places, max. 5 adultes)'
+        Slug: domanial-5-places-max-5-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1353,6 +1503,8 @@
         Id: 19
         Locale: nl
         Name: 'Domanial (5 places, max. 5 adultes)'
+        Slug: domanial-5-places-max-5-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1371,6 +1523,8 @@
         Id: 20
         Locale: de
         Name: 'Domanial (6 places, max. 5 adultes)'
+        Slug: domanial-6-places-max-5-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1389,6 +1543,8 @@
         Id: 20
         Locale: en
         Name: 'Domanial (6 places, max. 5 adultes)'
+        Slug: domanial-6-places-max-5-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1407,6 +1563,8 @@
         Id: 20
         Locale: fr
         Name: 'Domanial (6 places, max. 5 adultes)'
+        Slug: domanial-6-places-max-5-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1425,6 +1583,8 @@
         Id: 20
         Locale: nl
         Name: 'Domanial (6 places, max. 5 adultes)'
+        Slug: domanial-6-places-max-5-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1443,6 +1603,8 @@
         Id: 21
         Locale: de
         Name: 'Domanial Luxe (6 places, max. 5 adultes)'
+        Slug: domanial-luxe-6-places-max-5-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1461,6 +1623,8 @@
         Id: 21
         Locale: en
         Name: 'Domanial Luxe (6 places, max. 5 adultes)'
+        Slug: domanial-luxe-6-places-max-5-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1479,6 +1643,8 @@
         Id: 21
         Locale: fr
         Name: 'Domanial Luxe (6 places, max. 5 adultes)'
+        Slug: domanial-luxe-6-places-max-5-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1497,6 +1663,8 @@
         Id: 21
         Locale: nl
         Name: 'Domanial Luxe (6 places, max. 5 adultes)'
+        Slug: domanial-luxe-6-places-max-5-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1515,6 +1683,8 @@
         Id: 22
         Locale: de
         Name: 'Emplacement nu face mer'
+        Slug: emplacement-nu-face-mer
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1533,6 +1703,8 @@
         Id: 22
         Locale: en
         Name: 'Emplacement nu face mer'
+        Slug: emplacement-nu-face-mer
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1551,6 +1723,8 @@
         Id: 22
         Locale: fr
         Name: 'Emplacement nu face mer'
+        Slug: emplacement-nu-face-mer
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1569,6 +1743,8 @@
         Id: 22
         Locale: nl
         Name: 'Emplacement nu face mer'
+        Slug: emplacement-nu-face-mer
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1587,6 +1763,8 @@
         Id: 23
         Locale: de
         Name: 'Emplacement nu'
+        Slug: emplacement-nu
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1605,6 +1783,8 @@
         Id: 23
         Locale: en
         Name: 'Emplacement nu'
+        Slug: emplacement-nu
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1623,6 +1803,8 @@
         Id: 23
         Locale: fr
         Name: 'Emplacement nu'
+        Slug: emplacement-nu
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1641,6 +1823,8 @@
         Id: 23
         Locale: nl
         Name: 'Emplacement nu'
+        Slug: emplacement-nu
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1659,6 +1843,8 @@
         Id: 24
         Locale: de
         Name: 'Estivale (5 places, max. 4 adultes)'
+        Slug: estivale-5-places-max-4-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1677,6 +1863,8 @@
         Id: 24
         Locale: en
         Name: 'Estivale (5 places, max. 4 adultes)'
+        Slug: estivale-5-places-max-4-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1695,6 +1883,8 @@
         Id: 24
         Locale: fr
         Name: 'Estivale (5 places, max. 4 adultes)'
+        Slug: estivale-5-places-max-4-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1713,6 +1903,8 @@
         Id: 24
         Locale: nl
         Name: 'Estivale (5 places, max. 4 adultes)'
+        Slug: estivale-5-places-max-4-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1731,6 +1923,8 @@
         Id: 25
         Locale: de
         Name: 'Familial (5 places, max. 5 adultes) climatisé'
+        Slug: familial-5-places-max-5-adultes-climatise
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1749,6 +1943,8 @@
         Id: 25
         Locale: en
         Name: 'Familial (5 places, max. 5 adultes) climatisé'
+        Slug: familial-5-places-max-5-adultes-climatise
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1767,6 +1963,8 @@
         Id: 25
         Locale: fr
         Name: 'Familial (5 places, max. 5 adultes) climatisé'
+        Slug: familial-5-places-max-5-adultes-climatise
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1785,6 +1983,8 @@
         Id: 25
         Locale: nl
         Name: 'Familial (5 places, max. 5 adultes) climatisé'
+        Slug: familial-5-places-max-5-adultes-climatise
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1803,6 +2003,8 @@
         Id: 26
         Locale: de
         Name: 'Familial (6 places, max. 5 adultes)'
+        Slug: familial-6-places-max-5-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1821,6 +2023,8 @@
         Id: 26
         Locale: en
         Name: 'Familial (6 places, max. 5 adultes)'
+        Slug: familial-6-places-max-5-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1839,6 +2043,8 @@
         Id: 26
         Locale: fr
         Name: 'Familial (6 places, max. 5 adultes)'
+        Slug: familial-6-places-max-5-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1857,6 +2063,8 @@
         Id: 26
         Locale: nl
         Name: 'Familial (6 places, max. 5 adultes)'
+        Slug: familial-6-places-max-5-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1875,6 +2083,8 @@
         Id: 27
         Locale: de
         Name: 'Familial (6 places, max. 5 adultes) Climatisé'
+        Slug: familial-6-places-max-5-adultes-climatise
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1893,6 +2103,8 @@
         Id: 27
         Locale: en
         Name: 'Familial (6 places, max. 5 adultes) Climatisé'
+        Slug: familial-6-places-max-5-adultes-climatise
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1911,6 +2123,8 @@
         Id: 27
         Locale: fr
         Name: 'Familial (6 places, max. 5 adultes) Climatisé'
+        Slug: familial-6-places-max-5-adultes-climatise
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1929,6 +2143,8 @@
         Id: 27
         Locale: nl
         Name: 'Familial (6 places, max. 5 adultes) Climatisé'
+        Slug: familial-6-places-max-5-adultes-climatise
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1947,6 +2163,8 @@
         Id: 28
         Locale: de
         Name: 'Familial (6 places) vue lac'
+        Slug: familial-6-places-vue-lac
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1965,6 +2183,8 @@
         Id: 28
         Locale: en
         Name: 'Familial (6 places) vue lac'
+        Slug: familial-6-places-vue-lac
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1983,6 +2203,8 @@
         Id: 28
         Locale: fr
         Name: 'Familial (6 places) vue lac'
+        Slug: familial-6-places-vue-lac
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2001,6 +2223,8 @@
         Id: 28
         Locale: nl
         Name: 'Familial (6 places) vue lac'
+        Slug: familial-6-places-vue-lac
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2019,6 +2243,8 @@
         Id: 29
         Locale: de
         Name: 'Hélios (6 places, max. 5 adultes)'
+        Slug: helios-6-places-max-5-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2037,6 +2263,8 @@
         Id: 29
         Locale: en
         Name: 'Hélios (6 places, max. 5 adultes)'
+        Slug: helios-6-places-max-5-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2055,6 +2283,8 @@
         Id: 29
         Locale: fr
         Name: 'Hélios (6 places, max. 5 adultes)'
+        Slug: helios-6-places-max-5-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2073,6 +2303,8 @@
         Id: 29
         Locale: nl
         Name: 'Hélios (6 places, max. 5 adultes)'
+        Slug: helios-6-places-max-5-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2091,6 +2323,8 @@
         Id: 30
         Locale: de
         Name: 'Logial (5 places, max. 4 adultes)'
+        Slug: logial-5-places-max-4-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2109,6 +2343,8 @@
         Id: 30
         Locale: en
         Name: 'Logial (5 places, max. 4 adultes)'
+        Slug: logial-5-places-max-4-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2127,6 +2363,8 @@
         Id: 30
         Locale: fr
         Name: 'Logial (5 places, max. 4 adultes)'
+        Slug: logial-5-places-max-4-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2145,6 +2383,8 @@
         Id: 30
         Locale: nl
         Name: 'Logial (5 places, max. 4 adultes)'
+        Slug: logial-5-places-max-4-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2163,6 +2403,8 @@
         Id: 31
         Locale: de
         Name: 'Maisonnette (2 pièces 4-6 places) clim'
+        Slug: maisonnette-2-pieces-4-6-places-clim
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2181,6 +2423,8 @@
         Id: 31
         Locale: en
         Name: 'Maisonnette (2 pièces 4-6 places) clim'
+        Slug: maisonnette-2-pieces-4-6-places-clim
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2199,6 +2443,8 @@
         Id: 31
         Locale: fr
         Name: 'Maisonnette (2 pièces 4-6 places) clim'
+        Slug: maisonnette-2-pieces-4-6-places-clim
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2217,6 +2463,8 @@
         Id: 31
         Locale: nl
         Name: 'Maisonnette (2 pièces 4-6 places) clim'
+        Slug: maisonnette-2-pieces-4-6-places-clim
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2235,6 +2483,8 @@
         Id: 32
         Locale: de
         Name: 'Maisonnette (2 pièces 2-4 places) sans clim'
+        Slug: maisonnette-2-pieces-2-4-places-sans-clim
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2253,6 +2503,8 @@
         Id: 32
         Locale: en
         Name: 'Maisonnette (2 pièces 2-4 places) sans clim'
+        Slug: maisonnette-2-pieces-2-4-places-sans-clim
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2271,6 +2523,8 @@
         Id: 32
         Locale: fr
         Name: 'Maisonnette (2 pièces 2-4 places) sans clim'
+        Slug: maisonnette-2-pieces-2-4-places-sans-clim
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2289,6 +2543,8 @@
         Id: 32
         Locale: nl
         Name: 'Maisonnette (2 pièces 2-4 places) sans clim'
+        Slug: maisonnette-2-pieces-2-4-places-sans-clim
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2307,6 +2563,8 @@
         Id: 33
         Locale: de
         Name: 'Océane (4 places, max. 4 adultes)'
+        Slug: oceane-4-places-max-4-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2325,6 +2583,8 @@
         Id: 33
         Locale: en
         Name: 'Océane (4 places, max. 4 adultes)'
+        Slug: oceane-4-places-max-4-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2343,6 +2603,8 @@
         Id: 33
         Locale: fr
         Name: 'Océane (4 places, max. 4 adultes)'
+        Slug: oceane-4-places-max-4-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2361,6 +2623,8 @@
         Id: 33
         Locale: nl
         Name: 'Océane (4 places, max. 4 adultes)'
+        Slug: oceane-4-places-max-4-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2379,6 +2643,8 @@
         Id: 34
         Locale: de
         Name: 'O''Hara (6 places, max. 5 adultes)'
+        Slug: o-hara-6-places-max-5-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2397,6 +2663,8 @@
         Id: 34
         Locale: en
         Name: 'O''Hara (6 places, max. 5 adultes)'
+        Slug: o-hara-6-places-max-5-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2415,6 +2683,8 @@
         Id: 34
         Locale: fr
         Name: 'O''Hara (6 places, max. 5 adultes)'
+        Slug: o-hara-6-places-max-5-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2433,6 +2703,8 @@
         Id: 34
         Locale: nl
         Name: 'O''Hara (6 places, max. 5 adultes)'
+        Slug: o-hara-6-places-max-5-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2451,6 +2723,8 @@
         Id: 35
         Locale: de
         Name: 'Pagotel (5 places) climatisé'
+        Slug: pagotel-5-places-climatise
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2469,6 +2743,8 @@
         Id: 35
         Locale: en
         Name: 'Pagotel (5 places) climatisé'
+        Slug: pagotel-5-places-climatise
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2487,6 +2763,8 @@
         Id: 35
         Locale: fr
         Name: 'Pagotel (5 places) climatisé'
+        Slug: pagotel-5-places-climatise
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2505,6 +2783,8 @@
         Id: 35
         Locale: nl
         Name: 'Pagotel (5 places) climatisé'
+        Slug: pagotel-5-places-climatise
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2523,6 +2803,8 @@
         Id: 36
         Locale: de
         Name: 'Résidential (4 Places, max. 4 adultes)'
+        Slug: residential-4-places-max-4-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2541,6 +2823,8 @@
         Id: 36
         Locale: en
         Name: 'Résidential (4 Places, max. 4 adultes)'
+        Slug: residential-4-places-max-4-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2559,6 +2843,8 @@
         Id: 36
         Locale: fr
         Name: 'Résidential (4 Places, max. 4 adultes)'
+        Slug: residential-4-places-max-4-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2577,6 +2863,8 @@
         Id: 36
         Locale: nl
         Name: 'Résidential (4 Places, max. 4 adultes)'
+        Slug: residential-4-places-max-4-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2595,6 +2883,8 @@
         Id: 37
         Locale: de
         Name: 'Résidential (5 places, max. 4 adultes)'
+        Slug: residential-5-places-max-4-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2613,6 +2903,8 @@
         Id: 37
         Locale: en
         Name: 'Résidential (5 places, max. 4 adultes)'
+        Slug: residential-5-places-max-4-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2631,6 +2923,8 @@
         Id: 37
         Locale: fr
         Name: 'Résidential (5 places, max. 4 adultes)'
+        Slug: residential-5-places-max-4-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2649,6 +2943,8 @@
         Id: 37
         Locale: nl
         Name: 'Résidential (5 places, max. 4 adultes)'
+        Slug: residential-5-places-max-4-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2667,6 +2963,8 @@
         Id: 38
         Locale: de
         Name: 'Salle de réception'
+        Slug: salle-de-reception
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2685,6 +2983,8 @@
         Id: 38
         Locale: en
         Name: 'Salle de réception'
+        Slug: salle-de-reception
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2703,6 +3003,8 @@
         Id: 38
         Locale: fr
         Name: 'Salle de réception'
+        Slug: salle-de-reception
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2721,6 +3023,8 @@
         Id: 38
         Locale: nl
         Name: 'Salle de réception'
+        Slug: salle-de-reception
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2739,6 +3043,8 @@
         Id: 39
         Locale: de
         Name: 'Spacial (6 places, max. 6 adultes)'
+        Slug: spacial-6-places-max-6-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2757,6 +3063,8 @@
         Id: 39
         Locale: en
         Name: 'Spacial (6 places, max. 6 adultes)'
+        Slug: spacial-6-places-max-6-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2775,6 +3083,8 @@
         Id: 39
         Locale: fr
         Name: 'Spacial (6 places, max. 6 adultes)'
+        Slug: spacial-6-places-max-6-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2793,6 +3103,8 @@
         Id: 39
         Locale: nl
         Name: 'Spacial (6 places, max. 6 adultes)'
+        Slug: spacial-6-places-max-6-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2811,6 +3123,8 @@
         Id: 40
         Locale: de
         Name: 'Spacial (7 places, max. 6 adultes)'
+        Slug: spacial-7-places-max-6-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2829,6 +3143,8 @@
         Id: 40
         Locale: en
         Name: 'Spacial (7 places, max. 6 adultes)'
+        Slug: spacial-7-places-max-6-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2847,6 +3163,8 @@
         Id: 40
         Locale: fr
         Name: 'Spacial (7 places, max. 6 adultes)'
+        Slug: spacial-7-places-max-6-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2865,6 +3183,8 @@
         Id: 40
         Locale: nl
         Name: 'Spacial (7 places, max. 6 adultes)'
+        Slug: spacial-7-places-max-6-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2883,6 +3203,8 @@
         Id: 41
         Locale: de
         Name: 'Spacial (8 places, max. 6 adultes)'
+        Slug: spacial-8-places-max-6-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2901,6 +3223,8 @@
         Id: 41
         Locale: en
         Name: 'Spacial (8 places, max. 6 adultes)'
+        Slug: spacial-8-places-max-6-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2919,6 +3243,8 @@
         Id: 41
         Locale: fr
         Name: 'Spacial (8 places, max. 6 adultes)'
+        Slug: spacial-8-places-max-6-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2937,6 +3263,8 @@
         Id: 41
         Locale: nl
         Name: 'Spacial (8 places, max. 6 adultes)'
+        Slug: spacial-8-places-max-6-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2955,6 +3283,8 @@
         Id: 42
         Locale: de
         Name: 'Spacial (7 places, max. 6 adultes) Climatisé'
+        Slug: spacial-7-places-max-6-adultes-climatise
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2973,6 +3303,8 @@
         Id: 42
         Locale: en
         Name: 'Spacial (7 places, max. 6 adultes) Climatisé'
+        Slug: spacial-7-places-max-6-adultes-climatise
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2991,6 +3323,8 @@
         Id: 42
         Locale: fr
         Name: 'Spacial (7 places, max. 6 adultes) Climatisé'
+        Slug: spacial-7-places-max-6-adultes-climatise
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3009,6 +3343,8 @@
         Id: 42
         Locale: nl
         Name: 'Spacial (7 places, max. 6 adultes) Climatisé'
+        Slug: spacial-7-places-max-6-adultes-climatise
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3027,6 +3363,8 @@
         Id: 43
         Locale: de
         Name: 'Spacial (6 places, max. 6 adultes) vue lac'
+        Slug: spacial-6-places-max-6-adultes-vue-lac
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3045,6 +3383,8 @@
         Id: 43
         Locale: en
         Name: 'Spacial (6 places, max. 6 adultes) vue lac'
+        Slug: spacial-6-places-max-6-adultes-vue-lac
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3063,6 +3403,8 @@
         Id: 43
         Locale: fr
         Name: 'Spacial (6 places, max. 6 adultes) vue lac'
+        Slug: spacial-6-places-max-6-adultes-vue-lac
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3081,6 +3423,8 @@
         Id: 43
         Locale: nl
         Name: 'Spacial (6 places, max. 6 adultes) vue lac'
+        Slug: spacial-6-places-max-6-adultes-vue-lac
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3099,6 +3443,8 @@
         Id: 44
         Locale: de
         Name: 'Studio (2 places) climatisé'
+        Slug: studio-2-places-climatise
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3117,6 +3463,8 @@
         Id: 44
         Locale: en
         Name: 'Studio (2 places) climatisé'
+        Slug: studio-2-places-climatise
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3135,6 +3483,8 @@
         Id: 44
         Locale: fr
         Name: 'Studio (2 places) climatisé'
+        Slug: studio-2-places-climatise
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3153,6 +3503,8 @@
         Id: 44
         Locale: nl
         Name: 'Studio (2 places) climatisé'
+        Slug: studio-2-places-climatise
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3171,6 +3523,8 @@
         Id: 45
         Locale: de
         Name: 'Studio cabine (2-4 places) climatisé'
+        Slug: studio-cabine-2-4-places-climatise
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3189,6 +3543,8 @@
         Id: 45
         Locale: en
         Name: 'Studio cabine (2-4 places) climatisé'
+        Slug: studio-cabine-2-4-places-climatise
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3207,6 +3563,8 @@
         Id: 45
         Locale: fr
         Name: 'Studio cabine (2-4 places) climatisé'
+        Slug: studio-cabine-2-4-places-climatise
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3225,6 +3583,8 @@
         Id: 45
         Locale: nl
         Name: 'Studio cabine (2-4 places) climatisé'
+        Slug: studio-cabine-2-4-places-climatise
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3243,6 +3603,8 @@
         Id: 46
         Locale: de
         Name: 'Ty Bihan (6 places, max. 6 adultes)'
+        Slug: ty-bihan-6-places-max-6-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3261,6 +3623,8 @@
         Id: 46
         Locale: en
         Name: 'Ty Bihan (6 places, max. 6 adultes)'
+        Slug: ty-bihan-6-places-max-6-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3279,6 +3643,8 @@
         Id: 46
         Locale: fr
         Name: 'Ty Bihan (6 places, max. 6 adultes)'
+        Slug: ty-bihan-6-places-max-6-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3297,6 +3663,8 @@
         Id: 46
         Locale: nl
         Name: 'Ty Bihan (6 places, max. 6 adultes)'
+        Slug: ty-bihan-6-places-max-6-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3315,6 +3683,8 @@
         Id: 47
         Locale: de
         Name: 'Ty Bras (7 places, max. 7 adultes)'
+        Slug: ty-bras-7-places-max-7-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3333,6 +3703,8 @@
         Id: 47
         Locale: en
         Name: 'Ty Bras (7 places, max. 7 adultes)'
+        Slug: ty-bras-7-places-max-7-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3351,6 +3723,8 @@
         Id: 47
         Locale: fr
         Name: 'Ty Bras (7 places, max. 7 adultes)'
+        Slug: ty-bras-7-places-max-7-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3369,6 +3743,8 @@
         Id: 47
         Locale: nl
         Name: 'Ty Bras (7 places, max. 7 adultes)'
+        Slug: ty-bras-7-places-max-7-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3387,6 +3763,8 @@
         Id: 48
         Locale: de
         Name: 'Ty Coz (7 places, max. 6 adultes)'
+        Slug: ty-coz-7-places-max-6-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3405,6 +3783,8 @@
         Id: 48
         Locale: en
         Name: 'Ty Coz (7 places, max. 6 adultes)'
+        Slug: ty-coz-7-places-max-6-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3423,6 +3803,8 @@
         Id: 48
         Locale: fr
         Name: 'Ty Coz (7 places, max. 6 adultes)'
+        Slug: ty-coz-7-places-max-6-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3441,6 +3823,8 @@
         Id: 48
         Locale: nl
         Name: 'Ty Coz (7 places, max. 6 adultes)'
+        Slug: ty-coz-7-places-max-6-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3459,6 +3843,8 @@
         Id: 49
         Locale: de
         Name: 'Ty Daou 1 (5 places, max. 5 adultes)'
+        Slug: ty-daou-1-5-places-max-5-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3477,6 +3863,8 @@
         Id: 49
         Locale: en
         Name: 'Ty Daou 1 (5 places, max. 5 adultes)'
+        Slug: ty-daou-1-5-places-max-5-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3495,6 +3883,8 @@
         Id: 49
         Locale: fr
         Name: 'Ty Daou 1 (5 places, max. 5 adultes)'
+        Slug: ty-daou-1-5-places-max-5-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3513,6 +3903,8 @@
         Id: 49
         Locale: nl
         Name: 'Ty Daou 1 (5 places, max. 5 adultes)'
+        Slug: ty-daou-1-5-places-max-5-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3531,6 +3923,8 @@
         Id: 50
         Locale: de
         Name: 'Ty Daou 2 (6 places, max. 6 adultes)'
+        Slug: ty-daou-2-6-places-max-6-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3549,6 +3943,8 @@
         Id: 50
         Locale: en
         Name: 'Ty Daou 2 (6 places, max. 6 adultes)'
+        Slug: ty-daou-2-6-places-max-6-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3567,6 +3963,8 @@
         Id: 50
         Locale: fr
         Name: 'Ty Daou 2 (6 places, max. 6 adultes)'
+        Slug: ty-daou-2-6-places-max-6-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3585,6 +3983,8 @@
         Id: 50
         Locale: nl
         Name: 'Ty Daou 2 (6 places, max. 6 adultes)'
+        Slug: ty-daou-2-6-places-max-6-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3603,6 +4003,8 @@
         Id: 51
         Locale: de
         Name: 'Ty Divent (7 places, max. 7 adultes)'
+        Slug: ty-divent-7-places-max-7-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3621,6 +4023,8 @@
         Id: 51
         Locale: en
         Name: 'Ty Divent (7 places, max. 7 adultes)'
+        Slug: ty-divent-7-places-max-7-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3639,6 +4043,8 @@
         Id: 51
         Locale: fr
         Name: 'Ty Divent (7 places, max. 7 adultes)'
+        Slug: ty-divent-7-places-max-7-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3657,6 +4063,8 @@
         Id: 51
         Locale: nl
         Name: 'Ty Divent (7 places, max. 7 adultes)'
+        Slug: ty-divent-7-places-max-7-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3675,6 +4083,8 @@
         Id: 52
         Locale: de
         Name: 'Tente ecolodge (5 places) vue lac'
+        Slug: tente-ecolodge-5-places-vue-lac
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3693,6 +4103,8 @@
         Id: 52
         Locale: en
         Name: 'Tente ecolodge (5 places) vue lac'
+        Slug: tente-ecolodge-5-places-vue-lac
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3711,6 +4123,8 @@
         Id: 52
         Locale: fr
         Name: 'Tente ecolodge (5 places) vue lac'
+        Slug: tente-ecolodge-5-places-vue-lac
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3729,6 +4143,8 @@
         Id: 52
         Locale: nl
         Name: 'Tente ecolodge (5 places) vue lac'
+        Slug: tente-ecolodge-5-places-vue-lac
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3747,6 +4163,8 @@
         Id: 53
         Locale: de
         Name: 'Tente ecolodge (5 places, max. 3 adultes)'
+        Slug: tente-ecolodge-5-places-max-3-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3765,6 +4183,8 @@
         Id: 53
         Locale: en
         Name: 'Tente ecolodge (5 places, max. 3 adultes)'
+        Slug: tente-ecolodge-5-places-max-3-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3783,6 +4203,8 @@
         Id: 53
         Locale: fr
         Name: 'Tente ecolodge (5 places, max. 3 adultes)'
+        Slug: tente-ecolodge-5-places-max-3-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3801,6 +4223,8 @@
         Id: 53
         Locale: nl
         Name: 'Tente ecolodge (5 places, max. 3 adultes)'
+        Slug: tente-ecolodge-5-places-max-3-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3819,6 +4243,8 @@
         Id: 54
         Locale: de
         Name: 'Tente Muscade (5 places, max. 5 adultes)'
+        Slug: tente-muscade-5-places-max-5-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3837,6 +4263,8 @@
         Id: 54
         Locale: en
         Name: 'Tente Muscade (5 places, max. 5 adultes)'
+        Slug: tente-muscade-5-places-max-5-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3855,6 +4283,8 @@
         Id: 54
         Locale: fr
         Name: 'Tente Muscade (5 places, max. 5 adultes)'
+        Slug: tente-muscade-5-places-max-5-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3873,6 +4303,8 @@
         Id: 54
         Locale: nl
         Name: 'Tente Muscade (5 places, max. 5 adultes)'
+        Slug: tente-muscade-5-places-max-5-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3891,6 +4323,8 @@
         Id: 55
         Locale: de
         Name: 'Ty Gouzik (7 places, max. 7 adultes)'
+        Slug: ty-gouzik-7-places-max-7-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3909,6 +4343,8 @@
         Id: 55
         Locale: en
         Name: 'Ty Gouzik (7 places, max. 7 adultes)'
+        Slug: ty-gouzik-7-places-max-7-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3927,6 +4363,8 @@
         Id: 55
         Locale: fr
         Name: 'Ty Gouzik (7 places, max. 7 adultes)'
+        Slug: ty-gouzik-7-places-max-7-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3945,6 +4383,8 @@
         Id: 55
         Locale: nl
         Name: 'Ty Gouzik (7 places, max. 7 adultes)'
+        Slug: ty-gouzik-7-places-max-7-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3963,6 +4403,8 @@
         Id: 56
         Locale: de
         Name: 'Ty Gwenn (9 places, max. 9 adultes)'
+        Slug: ty-gwenn-9-places-max-9-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3981,6 +4423,8 @@
         Id: 56
         Locale: en
         Name: 'Ty Gwenn (9 places, max. 9 adultes)'
+        Slug: ty-gwenn-9-places-max-9-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3999,6 +4443,8 @@
         Id: 56
         Locale: fr
         Name: 'Ty Gwenn (9 places, max. 9 adultes)'
+        Slug: ty-gwenn-9-places-max-9-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -4017,6 +4463,8 @@
         Id: 56
         Locale: nl
         Name: 'Ty Gwenn (9 places, max. 9 adultes)'
+        Slug: ty-gwenn-9-places-max-9-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -4035,6 +4483,8 @@
         Id: 57
         Locale: de
         Name: 'Ty Tomm (4 places, max. 2 adultes)'
+        Slug: ty-tomm-4-places-max-2-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -4053,6 +4503,8 @@
         Id: 57
         Locale: en
         Name: 'Ty Tomm (4 places, max. 2 adultes)'
+        Slug: ty-tomm-4-places-max-2-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -4071,6 +4523,8 @@
         Id: 57
         Locale: fr
         Name: 'Ty Tomm (4 places, max. 2 adultes)'
+        Slug: ty-tomm-4-places-max-2-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -4089,6 +4543,8 @@
         Id: 57
         Locale: nl
         Name: 'Ty Tomm (4 places, max. 2 adultes)'
+        Slug: ty-tomm-4-places-max-2-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -4107,6 +4563,8 @@
         Id: 58
         Locale: de
         Name: 'Vacanciale (5 places, max. 4 adultes)'
+        Slug: vacanciale-5-places-max-4-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -4125,6 +4583,8 @@
         Id: 58
         Locale: en
         Name: 'Vacanciale (5 places, max. 4 adultes)'
+        Slug: vacanciale-5-places-max-4-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -4143,6 +4603,8 @@
         Id: 58
         Locale: fr
         Name: 'Vacanciale (5 places, max. 4 adultes)'
+        Slug: vacanciale-5-places-max-4-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -4161,6 +4623,8 @@
         Id: 58
         Locale: nl
         Name: 'Vacanciale (5 places, max. 4 adultes)'
+        Slug: vacanciale-5-places-max-4-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -4179,6 +4643,8 @@
         Id: 59
         Locale: de
         Name: 'Vacanciale mer (5 places, max. 4 adultes)'
+        Slug: vacanciale-mer-5-places-max-4-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -4197,6 +4663,8 @@
         Id: 59
         Locale: en
         Name: 'Vacanciale mer (5 places, max. 4 adultes)'
+        Slug: vacanciale-mer-5-places-max-4-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -4215,6 +4683,8 @@
         Id: 59
         Locale: fr
         Name: 'Vacanciale mer (5 places, max. 4 adultes)'
+        Slug: vacanciale-mer-5-places-max-4-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -4233,6 +4703,8 @@
         Id: 59
         Locale: nl
         Name: 'Vacanciale mer (5 places, max. 4 adultes)'
+        Slug: vacanciale-mer-5-places-max-4-adultes
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -4251,6 +4723,8 @@
         Id: 60
         Locale: de
         Name: Yourte
+        Slug: yourte
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -4269,6 +4743,8 @@
         Id: 60
         Locale: en
         Name: Yourte
+        Slug: yourte
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -4287,6 +4763,8 @@
         Id: 60
         Locale: fr
         Name: Yourte
+        Slug: yourte
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -4305,6 +4783,8 @@
         Id: 60
         Locale: nl
         Name: Yourte
+        Slug: yourte
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -4323,6 +4803,8 @@
         Id: 61
         Locale: de
         Name: 'Emplacement nu camping car'
+        Slug: emplacement-nu-camping-car
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -4341,6 +4823,8 @@
         Id: 61
         Locale: en
         Name: 'Emplacement nu camping car'
+        Slug: emplacement-nu-camping-car
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -4359,6 +4843,8 @@
         Id: 61
         Locale: fr
         Name: 'Emplacement nu camping car'
+        Slug: emplacement-nu-camping-car
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -4377,6 +4863,8 @@
         Id: 61
         Locale: nl
         Name: 'Emplacement nu camping car'
+        Slug: emplacement-nu-camping-car
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -4395,6 +4883,8 @@
         Id: 62
         Locale: de
         Name: 'Emplacement nu avec électricité et sol dur'
+        Slug: emplacement-nu-avec-electricite-et-sol-dur
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -4413,6 +4903,8 @@
         Id: 62
         Locale: en
         Name: 'Emplacement nu avec électricité et sol dur'
+        Slug: emplacement-nu-avec-electricite-et-sol-dur
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -4431,6 +4923,8 @@
         Id: 62
         Locale: fr
         Name: 'Emplacement nu avec électricité et sol dur'
+        Slug: emplacement-nu-avec-electricite-et-sol-dur
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -4449,6 +4943,8 @@
         Id: 62
         Locale: nl
         Name: 'Emplacement nu avec électricité et sol dur'
+        Slug: emplacement-nu-avec-electricite-et-sol-dur
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -4467,6 +4963,8 @@
         Id: 63
         Locale: de
         Name: 'Emplacement nu avec électricité'
+        Slug: emplacement-nu-avec-electricite
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -4485,6 +4983,8 @@
         Id: 63
         Locale: en
         Name: 'Emplacement nu avec électricité'
+        Slug: emplacement-nu-avec-electricite
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -4503,6 +5003,8 @@
         Id: 63
         Locale: fr
         Name: 'Emplacement nu avec électricité'
+        Slug: emplacement-nu-avec-electricite
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -4521,6 +5023,8 @@
         Id: 63
         Locale: nl
         Name: 'Emplacement nu avec électricité'
+        Slug: emplacement-nu-avec-electricite
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -4539,6 +5043,8 @@
         Id: 64
         Locale: de
         Name: 'Emplacement nu avec électricité et eau'
+        Slug: emplacement-nu-avec-electricite-et-eau
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -4557,6 +5063,8 @@
         Id: 64
         Locale: en
         Name: 'Emplacement nu avec électricité et eau'
+        Slug: emplacement-nu-avec-electricite-et-eau
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -4575,6 +5083,8 @@
         Id: 64
         Locale: fr
         Name: 'Emplacement nu avec électricité et eau'
+        Slug: emplacement-nu-avec-electricite-et-eau
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -4593,6 +5103,8 @@
         Id: 64
         Locale: nl
         Name: 'Emplacement nu avec électricité et eau'
+        Slug: emplacement-nu-avec-electricite-et-eau
+        Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null

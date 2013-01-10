@@ -12,6 +12,7 @@ use \PropelPDO;
 use Cungfoo\Model\CategoryTypeHebergement;
 use Cungfoo\Model\CategoryTypeHebergementI18nPeer;
 use Cungfoo\Model\CategoryTypeHebergementPeer;
+use Cungfoo\Model\CategoryTypeHebergementQuery;
 use Cungfoo\Model\map\CategoryTypeHebergementTableMap;
 
 /**
@@ -37,19 +38,28 @@ abstract class BaseCategoryTypeHebergementPeer
     const TM_CLASS = 'CategoryTypeHebergementTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 5;
+    const NUM_COLUMNS = 9;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 5;
+    const NUM_HYDRATE_COLUMNS = 9;
 
     /** the column name for the id field */
     const ID = 'category_type_hebergement.id';
 
     /** the column name for the code field */
     const CODE = 'category_type_hebergement.code';
+
+    /** the column name for the minimum_price field */
+    const MINIMUM_PRICE = 'category_type_hebergement.minimum_price';
+
+    /** the column name for the image_menu field */
+    const IMAGE_MENU = 'category_type_hebergement.image_menu';
+
+    /** the column name for the image_page field */
+    const IMAGE_PAGE = 'category_type_hebergement.image_page';
 
     /** the column name for the created_at field */
     const CREATED_AT = 'category_type_hebergement.created_at';
@@ -59,6 +69,9 @@ abstract class BaseCategoryTypeHebergementPeer
 
     /** the column name for the active field */
     const ACTIVE = 'category_type_hebergement.active';
+
+    /** the column name for the sortable_rank field */
+    const SORTABLE_RANK = 'category_type_hebergement.sortable_rank';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -79,6 +92,13 @@ abstract class BaseCategoryTypeHebergementPeer
      * @var        string
      */
     const DEFAULT_LOCALE = 'fr';
+    // sortable behavior
+
+    /**
+     * rank column
+     */
+    const RANK_COL = 'category_type_hebergement.sortable_rank';
+
     /**
      * holds an array of fieldnames
      *
@@ -86,12 +106,12 @@ abstract class BaseCategoryTypeHebergementPeer
      * e.g. CategoryTypeHebergementPeer::$fieldNames[CategoryTypeHebergementPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'CreatedAt', 'UpdatedAt', 'Active', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'createdAt', 'updatedAt', 'active', ),
-        BasePeer::TYPE_COLNAME => array (CategoryTypeHebergementPeer::ID, CategoryTypeHebergementPeer::CODE, CategoryTypeHebergementPeer::CREATED_AT, CategoryTypeHebergementPeer::UPDATED_AT, CategoryTypeHebergementPeer::ACTIVE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'created_at', 'updated_at', 'active', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'MinimumPrice', 'ImageMenu', 'ImagePage', 'CreatedAt', 'UpdatedAt', 'Active', 'SortableRank', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'minimumPrice', 'imageMenu', 'imagePage', 'createdAt', 'updatedAt', 'active', 'sortableRank', ),
+        BasePeer::TYPE_COLNAME => array (CategoryTypeHebergementPeer::ID, CategoryTypeHebergementPeer::CODE, CategoryTypeHebergementPeer::MINIMUM_PRICE, CategoryTypeHebergementPeer::IMAGE_MENU, CategoryTypeHebergementPeer::IMAGE_PAGE, CategoryTypeHebergementPeer::CREATED_AT, CategoryTypeHebergementPeer::UPDATED_AT, CategoryTypeHebergementPeer::ACTIVE, CategoryTypeHebergementPeer::SORTABLE_RANK, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'MINIMUM_PRICE', 'IMAGE_MENU', 'IMAGE_PAGE', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', 'SORTABLE_RANK', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'minimum_price', 'image_menu', 'image_page', 'created_at', 'updated_at', 'active', 'sortable_rank', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, )
     );
 
     /**
@@ -101,12 +121,12 @@ abstract class BaseCategoryTypeHebergementPeer
      * e.g. CategoryTypeHebergementPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'CreatedAt' => 2, 'UpdatedAt' => 3, 'Active' => 4, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'createdAt' => 2, 'updatedAt' => 3, 'active' => 4, ),
-        BasePeer::TYPE_COLNAME => array (CategoryTypeHebergementPeer::ID => 0, CategoryTypeHebergementPeer::CODE => 1, CategoryTypeHebergementPeer::CREATED_AT => 2, CategoryTypeHebergementPeer::UPDATED_AT => 3, CategoryTypeHebergementPeer::ACTIVE => 4, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'CREATED_AT' => 2, 'UPDATED_AT' => 3, 'ACTIVE' => 4, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'created_at' => 2, 'updated_at' => 3, 'active' => 4, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'MinimumPrice' => 2, 'ImageMenu' => 3, 'ImagePage' => 4, 'CreatedAt' => 5, 'UpdatedAt' => 6, 'Active' => 7, 'SortableRank' => 8, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'minimumPrice' => 2, 'imageMenu' => 3, 'imagePage' => 4, 'createdAt' => 5, 'updatedAt' => 6, 'active' => 7, 'sortableRank' => 8, ),
+        BasePeer::TYPE_COLNAME => array (CategoryTypeHebergementPeer::ID => 0, CategoryTypeHebergementPeer::CODE => 1, CategoryTypeHebergementPeer::MINIMUM_PRICE => 2, CategoryTypeHebergementPeer::IMAGE_MENU => 3, CategoryTypeHebergementPeer::IMAGE_PAGE => 4, CategoryTypeHebergementPeer::CREATED_AT => 5, CategoryTypeHebergementPeer::UPDATED_AT => 6, CategoryTypeHebergementPeer::ACTIVE => 7, CategoryTypeHebergementPeer::SORTABLE_RANK => 8, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'MINIMUM_PRICE' => 2, 'IMAGE_MENU' => 3, 'IMAGE_PAGE' => 4, 'CREATED_AT' => 5, 'UPDATED_AT' => 6, 'ACTIVE' => 7, 'SORTABLE_RANK' => 8, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'minimum_price' => 2, 'image_menu' => 3, 'image_page' => 4, 'created_at' => 5, 'updated_at' => 6, 'active' => 7, 'sortable_rank' => 8, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, )
     );
 
     /**
@@ -182,15 +202,23 @@ abstract class BaseCategoryTypeHebergementPeer
         if (null === $alias) {
             $criteria->addSelectColumn(CategoryTypeHebergementPeer::ID);
             $criteria->addSelectColumn(CategoryTypeHebergementPeer::CODE);
+            $criteria->addSelectColumn(CategoryTypeHebergementPeer::MINIMUM_PRICE);
+            $criteria->addSelectColumn(CategoryTypeHebergementPeer::IMAGE_MENU);
+            $criteria->addSelectColumn(CategoryTypeHebergementPeer::IMAGE_PAGE);
             $criteria->addSelectColumn(CategoryTypeHebergementPeer::CREATED_AT);
             $criteria->addSelectColumn(CategoryTypeHebergementPeer::UPDATED_AT);
             $criteria->addSelectColumn(CategoryTypeHebergementPeer::ACTIVE);
+            $criteria->addSelectColumn(CategoryTypeHebergementPeer::SORTABLE_RANK);
         } else {
             $criteria->addSelectColumn($alias . '.id');
             $criteria->addSelectColumn($alias . '.code');
+            $criteria->addSelectColumn($alias . '.minimum_price');
+            $criteria->addSelectColumn($alias . '.image_menu');
+            $criteria->addSelectColumn($alias . '.image_page');
             $criteria->addSelectColumn($alias . '.created_at');
             $criteria->addSelectColumn($alias . '.updated_at');
             $criteria->addSelectColumn($alias . '.active');
+            $criteria->addSelectColumn($alias . '.sortable_rank');
         }
     }
 
@@ -784,6 +812,146 @@ abstract class BaseCategoryTypeHebergementPeer
         }
 
         return $objs;
+    }
+
+    // sortable behavior
+
+    /**
+     * Get the highest rank
+     *
+     * @param     PropelPDO optional connection
+     *
+     * @return    integer highest position
+     */
+    public static function getMaxRank(PropelPDO $con = null)
+    {
+        if ($con === null) {
+            $con = Propel::getConnection(CategoryTypeHebergementPeer::DATABASE_NAME);
+        }
+        // shift the objects with a position lower than the one of object
+        $c = new Criteria();
+        $c->addSelectColumn('MAX(' . CategoryTypeHebergementPeer::RANK_COL . ')');
+        $stmt = CategoryTypeHebergementPeer::doSelectStmt($c, $con);
+
+        return $stmt->fetchColumn();
+    }
+
+    /**
+     * Get an item from the list based on its rank
+     *
+     * @param     integer   $rank rank
+     * @param     PropelPDO $con optional connection
+     *
+     * @return CategoryTypeHebergement
+     */
+    public static function retrieveByRank($rank, PropelPDO $con = null)
+    {
+        if ($con === null) {
+            $con = Propel::getConnection(CategoryTypeHebergementPeer::DATABASE_NAME);
+        }
+
+        $c = new Criteria;
+        $c->add(CategoryTypeHebergementPeer::RANK_COL, $rank);
+
+        return CategoryTypeHebergementPeer::doSelectOne($c, $con);
+    }
+
+    /**
+     * Reorder a set of sortable objects based on a list of id/position
+     * Beware that there is no check made on the positions passed
+     * So incoherent positions will result in an incoherent list
+     *
+     * @param     array     $order id => rank pairs
+     * @param     PropelPDO $con   optional connection
+     *
+     * @return    boolean true if the reordering took place, false if a database problem prevented it
+     */
+    public static function reorder(array $order, PropelPDO $con = null)
+    {
+        if ($con === null) {
+            $con = Propel::getConnection(CategoryTypeHebergementPeer::DATABASE_NAME);
+        }
+
+        $con->beginTransaction();
+        try {
+            $ids = array_keys($order);
+            $objects = CategoryTypeHebergementPeer::retrieveByPKs($ids);
+            foreach ($objects as $object) {
+                $pk = $object->getPrimaryKey();
+                if ($object->getSortableRank() != $order[$pk]) {
+                    $object->setSortableRank($order[$pk]);
+                    $object->save($con);
+                }
+            }
+            $con->commit();
+
+            return true;
+        } catch (PropelException $e) {
+            $con->rollback();
+            throw $e;
+        }
+    }
+
+    /**
+     * Return an array of sortable objects ordered by position
+     *
+     * @param     Criteria  $criteria  optional criteria object
+     * @param     string    $order     sorting order, to be chosen between Criteria::ASC (default) and Criteria::DESC
+     * @param     PropelPDO $con       optional connection
+     *
+     * @return    array list of sortable objects
+     */
+    public static function doSelectOrderByRank(Criteria $criteria = null, $order = Criteria::ASC, PropelPDO $con = null)
+    {
+        if ($con === null) {
+            $con = Propel::getConnection(CategoryTypeHebergementPeer::DATABASE_NAME);
+        }
+
+        if ($criteria === null) {
+            $criteria = new Criteria();
+        } elseif ($criteria instanceof Criteria) {
+            $criteria = clone $criteria;
+        }
+
+        $criteria->clearOrderByColumns();
+
+        if ($order == Criteria::ASC) {
+            $criteria->addAscendingOrderByColumn(CategoryTypeHebergementPeer::RANK_COL);
+        } else {
+            $criteria->addDescendingOrderByColumn(CategoryTypeHebergementPeer::RANK_COL);
+        }
+
+        return CategoryTypeHebergementPeer::doSelect($criteria, $con);
+    }
+
+    /**
+     * Adds $delta to all Rank values that are >= $first and <= $last.
+     * '$delta' can also be negative.
+     *
+     * @param      int $delta Value to be shifted by, can be negative
+     * @param      int $first First node to be shifted
+     * @param      int $last  Last node to be shifted
+     * @param      PropelPDO $con Connection to use.
+     */
+    public static function shiftRank($delta, $first = null, $last = null, PropelPDO $con = null)
+    {
+        if ($con === null) {
+            $con = Propel::getConnection(CategoryTypeHebergementPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+        }
+
+        $whereCriteria = CategoryTypeHebergementQuery::create();
+        if (null !== $first) {
+            $whereCriteria->add(CategoryTypeHebergementPeer::RANK_COL, $first, Criteria::GREATER_EQUAL);
+        }
+        if (null !== $last) {
+            $whereCriteria->addAnd(CategoryTypeHebergementPeer::RANK_COL, $last, Criteria::LESS_EQUAL);
+        }
+
+        $valuesCriteria = new Criteria(CategoryTypeHebergementPeer::DATABASE_NAME);
+        $valuesCriteria->add(CategoryTypeHebergementPeer::RANK_COL, array('raw' => CategoryTypeHebergementPeer::RANK_COL . ' + ?', 'value' => $delta), Criteria::CUSTOM_EQUAL);
+
+        BasePeer::doUpdate($whereCriteria, $valuesCriteria, $con);
+        CategoryTypeHebergementPeer::clearInstancePool();
     }
 
 } // BaseCategoryTypeHebergementPeer

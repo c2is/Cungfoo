@@ -1,6 +1,7 @@
 \Cungfoo\Model\TypeHebergement:
     1:
         Code: 100M
+        TypeHebergementCapaciteId: 4
         CategoryTypeHebergementId: 2
         NombreChambre: null
         NombrePlace: 6
@@ -9,6 +10,7 @@
         Active: true
     2:
         Code: 110M
+        TypeHebergementCapaciteId: 4
         CategoryTypeHebergementId: 2
         NombreChambre: null
         NombrePlace: 6
@@ -17,6 +19,7 @@
         Active: true
     3:
         Code: 130M
+        TypeHebergementCapaciteId: 4
         CategoryTypeHebergementId: 2
         NombreChambre: null
         NombrePlace: 6
@@ -25,6 +28,7 @@
         Active: true
     4:
         Code: 140M
+        TypeHebergementCapaciteId: 4
         CategoryTypeHebergementId: 2
         NombreChambre: null
         NombrePlace: 6
@@ -33,6 +37,7 @@
         Active: true
     5:
         Code: 150M
+        TypeHebergementCapaciteId: 4
         CategoryTypeHebergementId: 2
         NombreChambre: null
         NombrePlace: 6
@@ -41,6 +46,7 @@
         Active: true
     6:
         Code: 160M
+        TypeHebergementCapaciteId: 4
         CategoryTypeHebergementId: 2
         NombreChambre: null
         NombrePlace: 6
@@ -49,6 +55,7 @@
         Active: true
     7:
         Code: 170M
+        TypeHebergementCapaciteId: 4
         CategoryTypeHebergementId: 2
         NombreChambre: null
         NombrePlace: 6
@@ -57,6 +64,7 @@
         Active: true
     8:
         Code: 180M
+        TypeHebergementCapaciteId: 4
         CategoryTypeHebergementId: 2
         NombreChambre: null
         NombrePlace: 6
@@ -65,6 +73,7 @@
         Active: true
     9:
         Code: AMI4
+        TypeHebergementCapaciteId: 2
         CategoryTypeHebergementId: 2
         NombreChambre: null
         NombrePlace: 3
@@ -73,6 +82,7 @@
         Active: true
     10:
         Code: BT2L
+        TypeHebergementCapaciteId: 3
         CategoryTypeHebergementId: 2
         NombreChambre: null
         NombrePlace: 4
@@ -81,6 +91,7 @@
         Active: true
     11:
         Code: BT3
+        TypeHebergementCapaciteId: 4
         CategoryTypeHebergementId: 2
         NombreChambre: null
         NombrePlace: 6
@@ -89,6 +100,7 @@
         Active: true
     12:
         Code: CANA
+        TypeHebergementCapaciteId: 3
         CategoryTypeHebergementId: 8
         NombreChambre: null
         NombrePlace: 4
@@ -97,6 +109,7 @@
         Active: true
     13:
         Code: CH46
+        TypeHebergementCapaciteId: 4
         CategoryTypeHebergementId: 3
         NombreChambre: null
         NombrePlace: 6
@@ -105,6 +118,7 @@
         Active: true
     14:
         Code: CHA5
+        TypeHebergementCapaciteId: 3
         CategoryTypeHebergementId: 3
         NombreChambre: null
         NombrePlace: 4
@@ -113,6 +127,7 @@
         Active: true
     15:
         Code: CHA6
+        TypeHebergementCapaciteId: 4
         CategoryTypeHebergementId: 3
         NombreChambre: null
         NombrePlace: 6
@@ -121,6 +136,7 @@
         Active: true
     16:
         Code: CON5
+        TypeHebergementCapaciteId: 3
         CategoryTypeHebergementId: 5
         NombreChambre: null
         NombrePlace: 4
@@ -129,6 +145,7 @@
         Active: true
     17:
         Code: COR4
+        TypeHebergementCapaciteId: 3
         CategoryTypeHebergementId: 2
         NombreChambre: null
         NombrePlace: 4
@@ -137,6 +154,7 @@
         Active: true
     18:
         Code: COR6
+        TypeHebergementCapaciteId: 4
         CategoryTypeHebergementId: 2
         NombreChambre: null
         NombrePlace: 5
@@ -145,6 +163,7 @@
         Active: true
     19:
         Code: DOM5
+        TypeHebergementCapaciteId: 4
         CategoryTypeHebergementId: 2
         NombreChambre: null
         NombrePlace: 5
@@ -153,6 +172,7 @@
         Active: true
     20:
         Code: DOM6
+        TypeHebergementCapaciteId: 4
         CategoryTypeHebergementId: 2
         NombreChambre: null
         NombrePlace: 5
@@ -161,6 +181,7 @@
         Active: true
     21:
         Code: DOML
+        TypeHebergementCapaciteId: 4
         CategoryTypeHebergementId: 2
         NombreChambre: null
         NombrePlace: 5
@@ -169,6 +190,7 @@
         Active: true
     22:
         Code: EMPF
+        TypeHebergementCapaciteId: 4
         CategoryTypeHebergementId: 7
         NombreChambre: null
         NombrePlace: 6
@@ -177,6 +199,7 @@
         Active: true
     23:
         Code: EMPL
+        TypeHebergementCapaciteId: 4
         CategoryTypeHebergementId: 7
         NombreChambre: null
         NombrePlace: 6
@@ -185,6 +208,7 @@
         Active: true
     24:
         Code: EST5
+        TypeHebergementCapaciteId: 3
         CategoryTypeHebergementId: 5
         NombreChambre: null
         NombrePlace: 4
@@ -193,6 +217,7 @@
         Active: true
     25:
         Code: FAM5
+        TypeHebergementCapaciteId: 4
         CategoryTypeHebergementId: 2
         NombreChambre: null
         NombrePlace: 5
@@ -201,6 +226,7 @@
         Active: true
     26:
         Code: FAM6
+        TypeHebergementCapaciteId: 4
         CategoryTypeHebergementId: 2
         NombreChambre: null
         NombrePlace: 5
@@ -209,6 +235,7 @@
         Active: true
     27:
         Code: FAMC
+        TypeHebergementCapaciteId: 4
         CategoryTypeHebergementId: 2
         NombreChambre: null
         NombrePlace: 5
@@ -217,6 +244,7 @@
         Active: true
     28:
         Code: FAML
+        TypeHebergementCapaciteId: 4
         CategoryTypeHebergementId: 2
         NombreChambre: null
         NombrePlace: 6
@@ -225,6 +253,7 @@
         Active: true
     29:
         Code: HEL6
+        TypeHebergementCapaciteId: 4
         CategoryTypeHebergementId: 2
         NombreChambre: null
         NombrePlace: 5
@@ -233,6 +262,7 @@
         Active: true
     30:
         Code: LOG5
+        TypeHebergementCapaciteId: 3
         CategoryTypeHebergementId: 2
         NombreChambre: null
         NombrePlace: 4
@@ -241,6 +271,7 @@
         Active: true
     31:
         Code: MAI
+        TypeHebergementCapaciteId: 4
         CategoryTypeHebergementId: 4
         NombreChambre: null
         NombrePlace: 6
@@ -249,6 +280,7 @@
         Active: true
     32:
         Code: MAIS
+        TypeHebergementCapaciteId: 3
         CategoryTypeHebergementId: 4
         NombreChambre: null
         NombrePlace: 4
@@ -257,6 +289,7 @@
         Active: true
     33:
         Code: OCE4
+        TypeHebergementCapaciteId: 3
         CategoryTypeHebergementId: 2
         NombreChambre: null
         NombrePlace: 4
@@ -265,6 +298,7 @@
         Active: true
     34:
         Code: OHA6
+        TypeHebergementCapaciteId: 4
         CategoryTypeHebergementId: 2
         NombreChambre: null
         NombrePlace: 5
@@ -273,6 +307,7 @@
         Active: true
     35:
         Code: PAGO
+        TypeHebergementCapaciteId: 4
         CategoryTypeHebergementId: 8
         NombreChambre: null
         NombrePlace: 5
@@ -281,6 +316,7 @@
         Active: true
     36:
         Code: RES4
+        TypeHebergementCapaciteId: 3
         CategoryTypeHebergementId: 2
         NombreChambre: null
         NombrePlace: 4
@@ -289,6 +325,7 @@
         Active: true
     37:
         Code: RES5
+        TypeHebergementCapaciteId: 3
         CategoryTypeHebergementId: 2
         NombreChambre: null
         NombrePlace: 4
@@ -297,6 +334,7 @@
         Active: true
     38:
         Code: SALL
+        TypeHebergementCapaciteId: 4
         CategoryTypeHebergementId: 1
         NombreChambre: null
         NombrePlace: 99
@@ -305,6 +343,7 @@
         Active: true
     39:
         Code: SPA6
+        TypeHebergementCapaciteId: 4
         CategoryTypeHebergementId: 2
         NombreChambre: null
         NombrePlace: 6
@@ -313,6 +352,7 @@
         Active: true
     40:
         Code: SPA7
+        TypeHebergementCapaciteId: 4
         CategoryTypeHebergementId: 2
         NombreChambre: null
         NombrePlace: 6
@@ -321,6 +361,7 @@
         Active: true
     41:
         Code: SPA8
+        TypeHebergementCapaciteId: 4
         CategoryTypeHebergementId: 2
         NombreChambre: null
         NombrePlace: 6
@@ -329,6 +370,7 @@
         Active: true
     42:
         Code: SPAC
+        TypeHebergementCapaciteId: 4
         CategoryTypeHebergementId: 2
         NombreChambre: null
         NombrePlace: 6
@@ -337,6 +379,7 @@
         Active: true
     43:
         Code: SPAL
+        TypeHebergementCapaciteId: 4
         CategoryTypeHebergementId: 2
         NombreChambre: null
         NombrePlace: 6
@@ -345,6 +388,7 @@
         Active: true
     44:
         Code: STU
+        TypeHebergementCapaciteId: 1
         CategoryTypeHebergementId: 4
         NombreChambre: null
         NombrePlace: 2
@@ -353,6 +397,7 @@
         Active: true
     45:
         Code: STUC
+        TypeHebergementCapaciteId: 3
         CategoryTypeHebergementId: 4
         NombreChambre: null
         NombrePlace: 4
@@ -361,6 +406,7 @@
         Active: true
     46:
         Code: TBIH
+        TypeHebergementCapaciteId: 4
         CategoryTypeHebergementId: 6
         NombreChambre: null
         NombrePlace: 6
@@ -369,6 +415,7 @@
         Active: true
     47:
         Code: TBRA
+        TypeHebergementCapaciteId: 4
         CategoryTypeHebergementId: 6
         NombreChambre: null
         NombrePlace: 7
@@ -377,6 +424,7 @@
         Active: true
     48:
         Code: TCOZ
+        TypeHebergementCapaciteId: 4
         CategoryTypeHebergementId: 6
         NombreChambre: null
         NombrePlace: 6
@@ -385,6 +433,7 @@
         Active: true
     49:
         Code: TDA1
+        TypeHebergementCapaciteId: 4
         CategoryTypeHebergementId: 6
         NombreChambre: null
         NombrePlace: 5
@@ -393,6 +442,7 @@
         Active: true
     50:
         Code: TDA2
+        TypeHebergementCapaciteId: 4
         CategoryTypeHebergementId: 6
         NombreChambre: null
         NombrePlace: 6
@@ -401,6 +451,7 @@
         Active: true
     51:
         Code: TDIV
+        TypeHebergementCapaciteId: 4
         CategoryTypeHebergementId: 6
         NombreChambre: null
         NombrePlace: 7
@@ -409,6 +460,7 @@
         Active: true
     52:
         Code: TECL
+        TypeHebergementCapaciteId: 4
         CategoryTypeHebergementId: 8
         NombreChambre: null
         NombrePlace: 5
@@ -417,6 +469,7 @@
         Active: true
     53:
         Code: TECO
+        TypeHebergementCapaciteId: 2
         CategoryTypeHebergementId: 8
         NombreChambre: null
         NombrePlace: 3
@@ -425,6 +478,7 @@
         Active: true
     54:
         Code: TENM
+        TypeHebergementCapaciteId: 4
         CategoryTypeHebergementId: 8
         NombreChambre: null
         NombrePlace: 5
@@ -433,6 +487,7 @@
         Active: true
     55:
         Code: TGOU
+        TypeHebergementCapaciteId: 4
         CategoryTypeHebergementId: 6
         NombreChambre: null
         NombrePlace: 7
@@ -441,6 +496,7 @@
         Active: true
     56:
         Code: TGWE
+        TypeHebergementCapaciteId: 4
         CategoryTypeHebergementId: 6
         NombreChambre: null
         NombrePlace: 9
@@ -449,6 +505,7 @@
         Active: true
     57:
         Code: TTOM
+        TypeHebergementCapaciteId: 1
         CategoryTypeHebergementId: 6
         NombreChambre: null
         NombrePlace: 2
@@ -457,6 +514,7 @@
         Active: true
     58:
         Code: VAC5
+        TypeHebergementCapaciteId: 3
         CategoryTypeHebergementId: 2
         NombreChambre: null
         NombrePlace: 4
@@ -465,6 +523,7 @@
         Active: true
     59:
         Code: VAM5
+        TypeHebergementCapaciteId: 3
         CategoryTypeHebergementId: 2
         NombreChambre: null
         NombrePlace: 4
@@ -473,6 +532,7 @@
         Active: true
     60:
         Code: YOUR
+        TypeHebergementCapaciteId: 3
         CategoryTypeHebergementId: 8
         NombreChambre: null
         NombrePlace: 4
@@ -481,6 +541,7 @@
         Active: true
     61:
         Code: CC
+        TypeHebergementCapaciteId: 4
         CategoryTypeHebergementId: 7
         NombreChambre: null
         NombrePlace: 6
@@ -489,6 +550,7 @@
         Active: true
     62:
         Code: ED
+        TypeHebergementCapaciteId: 4
         CategoryTypeHebergementId: 7
         NombreChambre: null
         NombrePlace: 6
@@ -497,6 +559,7 @@
         Active: true
     63:
         Code: ET
+        TypeHebergementCapaciteId: 4
         CategoryTypeHebergementId: 7
         NombreChambre: null
         NombrePlace: 6
@@ -505,6 +568,7 @@
         Active: true
     64:
         Code: ETO
+        TypeHebergementCapaciteId: 4
         CategoryTypeHebergementId: 7
         NombreChambre: null
         NombrePlace: 6

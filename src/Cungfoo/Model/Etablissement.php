@@ -175,4 +175,69 @@ class Etablissement extends BaseEtablissement
 
         return $this->getTypeHebergements($criteria, $con);
     }
+
+    public function getSituationGeographique( PropelPDO $con = null)
+    {
+        $aSituations = array();
+
+        $situations = $this->getSituationGeographiques();
+        foreach($situations as $situation)
+        {
+            $aSituations[] = $situation->getCode();
+        }
+
+        return implode(",",$aSituations);
+    }
+
+    public function getBaignade( PropelPDO $con = null)
+    {
+        $aBaignades = array();
+
+        $baignades = $this->getBaignades();
+        foreach($baignades as $baignade)
+        {
+            $aBaignades[] = $baignade->getCode();
+        }
+
+        return implode(",",$aBaignades);
+    }
+
+    public function getActivite( PropelPDO $con = null)
+    {
+        $aActivites = array();
+
+        $activites = $this->getActivites();
+        foreach($activites as $activite)
+        {
+            $aActivites[] = $activite->getCode();
+        }
+
+        return implode(",",$aActivites);
+    }
+
+    public function getService( PropelPDO $con = null)
+    {
+        $aServices = array();
+
+        $services = $this->getServiceComplementaires();
+        foreach($services as $service)
+        {
+            $aServices[] = $service->getCode();
+        }
+
+        return implode(",",$aServices);
+    }
+
+    public function getThematique( PropelPDO $con = null)
+    {
+        $aThematiques = array();
+
+        $thematiques = $this->getThematiques();
+        foreach($thematiques as $thematique)
+        {
+            $aThematiques[] = $thematique->getCode();
+        }
+
+        return implode(",",$aThematiques);
+    }
 }

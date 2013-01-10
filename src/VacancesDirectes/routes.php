@@ -40,6 +40,8 @@ $app->mount('/compte',                                new Controller\CompteContr
 $app->mount('/vos-week-ends',                         new Controller\VosWeekEndsController());
 $app->mount('/esi',                                   new Controller\EsiController());
 $app->mount('/assurance',                             new Controller\AnnulationController());
+$app->mount('/search_filter',                         new Controller\SearchFilterController());
+$app->mount('/locations',                             new Controller\LocationsController());
 
 $app->match('/top-campings',      'VacancesDirectes\Controller\TopCampingController::indexAction')->bind('top_campings');
 
