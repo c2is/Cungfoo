@@ -157,9 +157,12 @@
     &.open{background-position:2px -38px;}
   }
   fieldset{padding:0 0 10px 2px;
-    label{color:@colorGris2;display: block;font-size:13px;margin: 0 0 2px;}
+    label{color:@colorGris2;display: block;font-size:13px;margin: 0 0 2px; ._transition(opacity .5s ease);
+      &.disableLabel{opacity:.5;}
+    }
     input[type="checkbox"]{margin-right: 5px;margin-top: 0;vertical-align: middle;}
     p{color: #666666;font: bold 11px @arial,sans-serif;margin: 0 0 5px;}
+    .nbItem{color:@colorGris0;font-style:italic;}
   }
   .bt{font-size:21px;margin:10px auto}
 }

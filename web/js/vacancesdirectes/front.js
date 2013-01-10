@@ -1707,6 +1707,10 @@ function initializeAllGmap() {
  */
 
 function initCritResult(){
+// affichage des filtres
+    $('.sectionTitle').not('.open').next('fieldset').fadeToggle();
+    openCrit();
+
 // affichage carte
     if(window.location.hash === '#carte') {
         $('#btMap').addClass('active').siblings('button').removeClass('active');
@@ -1727,7 +1731,7 @@ function initCritResult(){
         oCheck.parents('.linePrice').addClass('checked').siblings().removeClass('checked');
     });
 
-    $('.formSearchRefined .searchGlobalSubmit').click(function(e) {
+    $('.formSearchRefined').find('input').change(function(e) {
         critSelection();
         displayResults();
         e.preventDefault();
@@ -1772,8 +1776,15 @@ function initCritResult(){
 
 //launcher des filtres
 function launchFilters() {
-    openCrit();
-    items.attr('data-filtered', false);
+    items.attr('data-filtered', true);
+    items.attr('data-filteredPlus', true);
+    items.attr('data-ranged', true);
+
+    items.each( function(){
+        var critPlus = $(this).attr('data-critplus');
+        var critPlusReg = new RegExp("(,)", "g");
+        $(this).attr('data-critplus', critPlus.replace(critPlusReg,' '));
+    });
 
     //init du nombre de resultats
     var nbResultsItems = items.length;
@@ -1791,9 +1802,9 @@ function launchFilters() {
     rangeSliderPrice();
 
     //selection des criteres
-    if ( containerCrit.find('input:checked').length ) {
+    /*if ( containerCrit.find('input:checked').length ) {*/
         critSelection();
-    };
+    /*};*/
 
     //gestion du tri par prix ou pertinence
     orderList();
@@ -1812,7 +1823,7 @@ function openCrit() {
 //attribution min/max prix pour le range slider
 function findMinMaxRange() {
     var allPrices = [];
-    items.each(function() {
+    $('[data-ranged="true"][data-filtered="true"][data-filteredPlus="true"]').each(function() {
         $(this).find('.linePrice').each( function(){
             var itemPrice = parseInt($(this).find('.stain .price').text());
             allPrices.push(itemPrice);
@@ -1832,8 +1843,6 @@ function findMinMaxRange() {
     };
     maxPrice = Array.max(allPrices);
 
-    //items dans la range de prix
-    items = list.find('[data-ranged="true"]');
 
     if ( minPrice == maxPrice) {
         $('#widgetRange').hide();
@@ -1904,6 +1913,7 @@ function rangeSliderPrice() {
 //selection des criteres
 function critSelection() {
 
+
     //init des tableaux
     var arrayCrit = [];         //tableau des criteres
     var arrayCritPlus = [];     //tableau des criteres cumulatifs
@@ -1963,7 +1973,7 @@ function critSelection() {
                 var itemToShow = $(this);
 
                 //creation des tableau a comparer (avec les valeurs separer par des virgules)
-                var dataCompareCritPlus = $(this).attr('data-critPlus').split(',');
+                var dataCompareCritPlus = $(this).attr('data-critPlus').split(' ');
 
                 //comparaison des criteresPlus
                 jQuery.each(arrayCritPlus, function(i) {
@@ -1979,11 +1989,40 @@ function critSelection() {
         }
     };
 
+
+    //init de l'affichage du nombre de resultats par critere
+    $('.contentCritPlus').find('input').each( function(){
+        var rslTypePlus = $(this).attr('id');
+        var rslTypeinresultPlus = $(".itemResult[data-filtered=true][data-filteredplus=true][data-ranged=true][data-critplus~="+rslTypePlus+"]").length;
+        if ( rslTypeinresultPlus == 0 ) {
+            $(this).siblings('.nbItem').text('');
+            $(this).attr('disabled', true).parent().addClass('disableLabel');
+        } else {
+            $(this).siblings('.nbItem').text('('+rslTypeinresultPlus+')');
+            $(this).attr('disabled', false).parent().removeClass('disableLabel');
+        }
+    });
+    $('.contentCrit').find('input').each( function(){
+        var rslType = $(this).attr('id');
+        var rslTypeinresult = $('.itemResult[data-filteredplus=true][data-ranged=true][data-crit='+rslType+']').length;
+        if ( rslTypeinresult == 0 ) {
+            $(this).siblings('.nbItem').text('');
+            $(this).attr('disabled', true).parent().addClass('disableLabel');
+        } else {
+            $(this).siblings('.nbItem').text('('+rslTypeinresult+')');
+            $(this).attr('disabled', false).parent().removeClass('disableLabel');
+        }
+    });
+
     //console.log('/--- critSelection ---/');
 };
 
 //gestion de l'affichage en fonction des criteres + rangeSlider
 function displayResults() {
+
+    var targetOffset = $('#searchBloc').offset().top;
+    $('html, body').animate({scrollTop: targetOffset},400);
+
     var nbItemsDisplayed = 0;
     var gMarkers = [];
 
