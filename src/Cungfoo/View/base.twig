@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/cungfoo/main.css') }}">
     <link rel="stylesheet" href="{{ asset('css/cungfoo/datepicker.css') }}">
+    <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
     <style>
         body {
             padding-top: 60px;
@@ -19,7 +20,7 @@
     {% endblock %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body>
+<body class="{% block bodyClass %}{% endblock %}">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="navbar-inner">
             <div class="container">
