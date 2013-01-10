@@ -27,31 +27,43 @@ class SearchFilterController implements ControllerProviderInterface
 
             $situation = \Cungfoo\Model\SituationGeographiqueQuery::create()
                 ->joinWithI18n($locale)
+                ->rightJoinEtablissementSituationGeographique()
+                ->distinct()
                 ->findActive()
             ;
 
             $baignade = \Cungfoo\Model\BaignadeQuery::create()
                 ->joinWithI18n($locale)
+                ->rightJoinEtablissementBaignade()
+                ->distinct()
                 ->findActive()
             ;
 
             $activites = \Cungfoo\Model\ActiviteQuery::create()
                 ->joinWithI18n($locale)
+                ->rightJoinEtablissementActivite()
+                ->distinct()
                 ->findActive()
             ;
 
             $services = \Cungfoo\Model\ServiceComplementaireQuery::create()
                 ->joinWithI18n($locale)
+                ->rightJoinEtablissementServiceComplementaire()
+                ->distinct()
                 ->findActive()
             ;
 
             $thematiques = \Cungfoo\Model\ThematiqueQuery::create()
                 ->joinWithI18n($locale)
+                ->rightJoinEtablissementThematique()
+                ->distinct()
                 ->findActive()
             ;
 
             $categories = \Cungfoo\Model\CategorieQuery::create()
                 ->joinWithI18n($locale)
+                ->rightJoinEtablissement()
+                ->distinct()
                 ->findActive()
             ;
 
