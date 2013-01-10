@@ -1,7 +1,23 @@
 {% extends "base.twig" %}
 
-{% block title %}{% endblock %}
-{% block metaDescription %}{% endblock %}
+{% block title %}
+{% spaceless %}
+    {% if currentClass == "Cungfoo\\Model\\CategoryTypeHebergement" %}
+        {{ "seo.title.location.list.categorie" | trans ({'%type%': categoryTypeHebergement.name|lower}) }}
+    {% elseif currentClass == "Cungfoo\\Model\\TypeHebergementCapacite" %}
+        {{ "seo.title.location.list.capacite.list" | trans ({'%type%': categoryTypeHebergement.name|lower}) }}
+    {% endif %}
+{% endspaceless %}
+{% endblock %}
+{% block metaDescription %}
+{% spaceless %}
+    {% if currentClass == "Cungfoo\\Model\\CategoryTypeHebergement" %}
+        {{ "seo.meta.location.list.categorie" | trans ({'%type%': categoryTypeHebergement.name|lower}) }}
+    {% elseif currentClass == "Cungfoo\\Model\\TypeHebergementCapacite" %}
+        {{ "seo.meta.location.list.capacite" | trans ({'%type%': categoryTypeHebergement.name|lower}) }}
+    {% endif %}
+{% endspaceless %}
+{% endblock %}
 {% block bodyClass %} fiche{% endblock %}
 
 {% block canonical %}<link rel="canonical" href="{{ referer }}" />{% endblock %}
@@ -9,7 +25,6 @@
 {% block leftColumn %}
 
 {% include "Breadcrumbs/_breadcrumbs.twig" %}
-
 
 <h1>Nos hébergements</h1>
 <h2 class="h3-like">{{ categoryTypeHebergement.name }}</h2>

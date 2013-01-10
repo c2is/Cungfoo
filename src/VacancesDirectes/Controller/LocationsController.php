@@ -100,6 +100,7 @@ class LocationsController implements ControllerProviderInterface
 
             return $app->renderView('Locations/list.twig', array(
                 'locale'                  => $locale,
+                'currentClass'            => get_class($categoryTypeHebergement),
                 'categoryTypeHebergement' => $categoryTypeHebergement,
                 'searchForm'              => $searchEngine->getView(),
             ));
