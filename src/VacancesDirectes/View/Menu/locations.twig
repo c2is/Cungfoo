@@ -11,7 +11,8 @@
         </div>
         {% endfor %}
     </div>
-    <div class="subtitle">Par type</div>
+    {% if capacites|length > 0 %}
+    <div class="subtitle">Par capacité</div>
     <div class="clear">
         {% for capacite in capacites %}
         <div class="radiusBox greyC left bgImg capacity linkParent">
@@ -21,12 +22,6 @@
             </a>
         </div>
         {% endfor %}
-        <div class="radiusBox greyC left bgImg exclusively clear">
-            <div class="stamp fushia"><span>En exclusivité</span></div>
-            <img class="view" src="{{ asset('images/vacancesdirectes/dyn/menu/2-locations/exclusively.png') }}" alt="" />
-            <div class="content left">
-                <span>3 vrais lits dans la deuxième chambre.</span>
-            </div>
-        </div>
     </div>
+    {% endif %}
 </div>
