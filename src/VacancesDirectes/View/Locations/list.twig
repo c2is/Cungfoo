@@ -33,15 +33,15 @@
  <a href="#results" class="bt big fushia right goto">Notre sélection</a>
 
 {% if categoryTypeHebergement.imagePage %}
-<div class="bandeau">
+<div class="banner">
     {% if categoryTypeHebergement.accroche %}
-    <div class="sliderStain">
+    <div class="bannerStain first">
         <div class="content">
             <p class="headline">{{ categoryTypeHebergement.accroche }}</p>
         </div>
     </div>
     {% endif %}
-    <img class="bdPict" src="{{ asset(categoryTypeHebergement.imagePage) }}" alt="" width="614" height="253">
+    <img class="bdPict" src="{{ asset(categoryTypeHebergement.imagePage) }}" alt="" width="616" height="253">
 </div>
 {% endif %}
 
