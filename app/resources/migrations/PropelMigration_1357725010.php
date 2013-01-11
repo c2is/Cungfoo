@@ -2,7 +2,7 @@
 
 /**
  * Data object containing the SQL and PHP code to migrate the database
- * up to version 1357642730.
+ * up to version 1357725010.
  * Generated on 2013-01-08 11:58:50 by vagrant
  */
 class PropelMigration_1357725010
@@ -48,7 +48,8 @@ class PropelMigration_1357725010
 
                 $results[$key] = $result;
             }
-        } catch(\Exception $e)
+        }
+        catch (\Exception $e)
         {
             $results = array();
         }
