@@ -669,7 +669,7 @@ abstract class BaseDestinationQuery extends ModelCriteria
         return $this->addAscendingOrderByColumn(DestinationPeer::CREATED_AT);
     }
     // active behavior
-    
+
     /**
      * return only active objects
      *
@@ -678,7 +678,7 @@ abstract class BaseDestinationQuery extends ModelCriteria
     public function findActive($con = null)
     {
         $this->filterByActive(true);
-    
+
         return parent::find($con);
     }
 

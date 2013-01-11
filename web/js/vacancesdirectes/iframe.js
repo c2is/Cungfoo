@@ -13,6 +13,9 @@ $(function() {
         resize_myframe();
     }
 
+    // Gestion du click sur le parent
+    if ($('.linkParent').length > 0) { addLinkBlock(); }
+
     $('.proposalDescriptionDetailsLink').hover( function(){
         var yTop = $(this).offset();
        //consoleLog(yTop.top);
@@ -80,3 +83,45 @@ function resize_myframe() {
     window.parent.document.getElementById('frameResalys').style.height = height + 'px';
     //consoleLog(height);
 }
+
+// Gestion du click sur le parent
+function addLinkBlock(){
+    $('.linkParent').each( function( ) {
+        var oElem = $(this).find('.linkBlock'),
+            sOnClick = oElem.attr('onclick');
+        if(sOnClick)
+            $(this).attr('onclick',sOnClick);
+        oElem.removeAttr('onclick');
+
+        $(this).css({cursor:'pointer'}).click(function(e) {
+            var event = e;
+            if (!e)
+                event = window.event;
+            if (event && event.target != oElem[0]) {
+                var sHref = oElem.attr('href'),
+                    sTarget = oElem.attr('target')?oElem.attr('target'):'_self';
+                //consoleLog(sHref);
+                switch (sTarget) {
+                    case "_blank":
+                        window.open(sHref, '');
+                        break;
+                    case "_parent":
+                        parent.location.href = sHref;
+                        break;
+                    case "_top":
+                        top.location.href = sHref;
+                        break;
+                    case "_self":
+                        document.location.href = sHref;
+                        break;
+                    default:
+                        sTarget.location.href = sHref;
+                        break;
+                }
+            }
+        });
+
+    });
+}
+
+

@@ -368,14 +368,16 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
     #option{
       h2 + p{font-weight:bold;}
       .label{font:inherit;color:inherit;text-transform:inherit;margin-right:10px;vertical-align:top;}
-      p:not(.aField){
+      p{
         .label{width:278px;float:left;text-align:right;}
         .field textarea{width:288px;height:81px;}
       }
-      .criteria{margin-bottom:10px;clear:both;
-        .label{float:left;text-align:right;width:278px;._verticalCenter(27px);}
-        input{width:134px;}
-        &:last-of-type .label{line-height:13px;}
+      .criterias{
+        .criteria{margin-bottom:10px;clear:both;
+          .label{float:left;text-align:right;width:278px;._verticalCenter(27px);}
+          input{width:134px;}
+          &:last-child .label{line-height:13px;}
+        }
       }
       .aField{
         .label{margin-right:0;}
@@ -591,5 +593,13 @@ input[disabled],
     ul.newList.optGroup li.optGroup-like a {background-color:@colorBgGrisM;color:@colorBlanc;}
     ul.newList li a.newListHover {background-color:@colorBgGrisC!important;color:@colorGris2!important;}
     ul.newList.optGroup li.optGroup-like a.newListHover {background-color:@colorGris2!important;color:@colorBlanc!important;}
+  }
+}
+
+.ie{
+  #contentContener.detail,
+  #contentContener.editAccount{
+    #reservation .aRoom .anOccupant .occupantFields .control_text{width:148px;}
+    #contentContener.summary #option p .label {width:258px;}
   }
 }

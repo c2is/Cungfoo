@@ -729,7 +729,7 @@ abstract class BaseTypeHebergementCapaciteQuery extends ModelCriteria
         return $this->addAscendingOrderByColumn(TypeHebergementCapacitePeer::CREATED_AT);
     }
     // active behavior
-    
+
     /**
      * return only active objects
      *
@@ -738,7 +738,7 @@ abstract class BaseTypeHebergementCapaciteQuery extends ModelCriteria
     public function findActive($con = null)
     {
         $this->filterByActive(true);
-    
+
         return parent::find($con);
     }
 

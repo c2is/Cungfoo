@@ -1872,7 +1872,7 @@ abstract class BaseTypeHebergementCapacite extends BaseObject implements Persist
     }
 
     // active behavior
-    
+
     /**
      * return true is the object is active
      *
@@ -2420,7 +2420,7 @@ abstract class BaseTypeHebergementCapacite extends BaseObject implements Persist
     }
 
     // crudable behavior
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -2435,19 +2435,19 @@ abstract class BaseTypeHebergementCapacite extends BaseObject implements Persist
         {
             $this->resetModified(TypeHebergementCapacitePeer::IMAGE_MENU);
         }
-    
+
         $this->uploadImageMenu($form);
-        
+
         if (!$form['image_page_deleted']->getData())
         {
             $this->resetModified(TypeHebergementCapacitePeer::IMAGE_PAGE);
         }
-    
+
         $this->uploadImagePage($form);
-        
+
         return $this->save($con);
     }
-    
+
     /**
      * @return string
      */
@@ -2455,7 +2455,7 @@ abstract class BaseTypeHebergementCapacite extends BaseObject implements Persist
     {
         return 'uploads/type_hebergement_capacites';
     }
-    
+
     /**
      * @return string
      */
@@ -2463,7 +2463,7 @@ abstract class BaseTypeHebergementCapacite extends BaseObject implements Persist
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -2477,7 +2477,7 @@ abstract class BaseTypeHebergementCapacite extends BaseObject implements Persist
             $this->setImageMenu($this->getUploadDir() . '/' . $image);
         }
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
