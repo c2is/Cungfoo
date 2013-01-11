@@ -1,0 +1,43 @@
+.edito{
+  #wrap{
+    .column.left{
+
+      h2{margin:40px 0 20px;color:@colorGris2;text-transform:uppercase;}
+      h1 + h2{margin-top:0;}
+      h3{margin-bottom:20px;}
+      p{margin-bottom:10px;clear:both;}
+      h2,h3,p{
+        &:before{clear:left;}
+      }
+      a{color:@colorFushia;font-weight:bold;text-decoration:underline;}
+      ul{margin-bottom:10px;
+        li{padding-left:20px;position:relative;
+          &:before{content:"";width:27px;height:27px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat scroll 0 -297px transparent;position:absolute;top:-4px;left:-10px;}
+        }
+      }
+      .banner{
+        p{margin:0;}
+      }
+      .thumb{float:left;margin:0 5px 5px 0;
+        &+p{height:125px;clear:none;}
+      }
+      .destiDescription{color:@colorGris1;font:13px/18px @arial;margin-bottom:20px;}
+      .activites{width:488px;margin-right:25px;
+        .miniEncart{width:100%;
+          &:nth-child(1n),
+          &:nth-child(2n){border:0;padding:0;}
+          &:nth-child(3n){clear:left}
+          .h5-like{color:#464545;font-size:24px;line-height:24px;}
+        }
+      }
+      .events{width:415px;
+        .miniEncart{margin-bottom:20px;}
+        .h5-like{color:#464545;font-size:24px;line-height:24px;margin-bottom:0;}
+        .h6-like{text-transform:uppercase;font:bold 19px/19px @ptnarrow;margin-bottom:10px;}
+        img{margin-bottom:0;margin-right:10px;}
+        .titre{color:#009aaf;font:bold 19px/19px @ptnarrow;text-transform:uppercase;}
+      }
+
+    }
+  }
+}
