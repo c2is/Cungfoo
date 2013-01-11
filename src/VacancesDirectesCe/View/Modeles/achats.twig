@@ -3,7 +3,7 @@
 {% block title %}Packages{% endblock %}
 
 {% block headjs %}{{ parent() }}
-,{search: templatePath + "js/vacancesdirectes/search.js"}
+,{search: templatePath + "js/vacancesdirectes/search.js?v={{ app.config.get('version') }}"}
 {% endblock %}
 
 {% block content %}
