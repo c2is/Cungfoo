@@ -41,8 +41,8 @@ class DestinationController implements ControllerProviderInterface
             $locale = $app['context']->get('language');
 
             $paysObject = PaysQuery::create()
-                ->joinWithI18n($locale)
                 ->usePaysI18nQuery()
+                    ->filterByLocale($locale)
                     ->filterBySlug($pays)
                 ->endUse()
                 ->findOne()
@@ -66,8 +66,8 @@ class DestinationController implements ControllerProviderInterface
             $locale = $app['context']->get('language');
 
             $regionObject = RegionQuery::create()
-                ->joinWithI18n($locale)
                 ->useRegionI18nQuery()
+                    ->filterByLocale($locale)
                     ->filterBySlug($region)
                 ->endUse()
                 ->findOne()
@@ -91,8 +91,8 @@ class DestinationController implements ControllerProviderInterface
             $locale = $app['context']->get('language');
 
             $villeObject = villeQuery::create()
-                ->joinWithI18n($locale)
                 ->useVilleI18nQuery()
+                    ->filterByLocale($locale)
                     ->filterBySlug($ville)
                 ->endUse()
                 ->findOne()

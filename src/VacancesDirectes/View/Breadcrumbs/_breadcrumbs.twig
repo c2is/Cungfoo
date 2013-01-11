@@ -17,8 +17,8 @@
             {% endif %}
         {% endif %}
     {% endif %}
-    {% if breadcrumbsRoute == 'categorie-bonsplans' %}
-    <li>&gt; <a href="{{ path('categorie-bonsplans', {'cat': categorie.slug}) }}"><span itemprop="title">{{ categorie.name }}</span></a></li>
+    {% if breadcrumbsRoute == 'categorie_bonsplans' %}
+    <li>&gt; <a href="{{ path('categorie_bonsplans', {'cat': categorie.slug}) }}"><span itemprop="title">{{ categorie.name }}</span></a></li>
     {% endif %}
     {% if breadcrumbsRoute == 'bonsplans' %}
     <li>&gt; <a href="{{ path('bonsplans', {'slug': bonPlan.slug}) }}"><span itemprop="title">{{ bonPlan.name }}</span></a></li>

@@ -1,0 +1,17 @@
+\Cungfoo\Model\BonPlanBonPlanCategorie:
+    1_1_3:
+        BonPlanId: 1
+        BonPlanCategorieId: 1
+        SortableRank: 3
+    2_1_6:
+        BonPlanId: 2
+        BonPlanCategorieId: 1
+        SortableRank: 6
+    3_1_4:
+        BonPlanId: 3
+        BonPlanCategorieId: 1
+        SortableRank: 4
+    4_1_5:
+        BonPlanId: 4
+        BonPlanCategorieId: 1
+        SortableRank: 5

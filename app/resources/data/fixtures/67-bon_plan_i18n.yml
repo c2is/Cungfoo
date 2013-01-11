@@ -1,0 +1,217 @@
+\Cungfoo\Model\BonPlanI18n:
+    1_de:
+        Id: 1
+        Locale: de
+        Name: 'Early Booking'
+        Slug: early-booking
+        Introduction: 'Early booking'
+        Description: 'Lorem ipsum dolor sit amet'
+        Indice: 'pour 1 personnes'
+        IndicePrix: 'réduction 25%'
+    1_en:
+        Id: 1
+        Locale: en
+        Name: 'Early Booking'
+        Slug: early-booking
+        Introduction: 'Early booking'
+        Description: 'Lorem ipsum dolor sit amet'
+        Indice: 'pour 1 personnes'
+        IndicePrix: 'réduction 25%'
+    1_fr:
+        Id: 1
+        Locale: fr
+        Name: 'Early Booking'
+        Slug: early-booking
+        Introduction: 'Early booking'
+        Description: 'Lorem ipsum dolor sit amet'
+        Indice: 'pour 1 personnes'
+        IndicePrix: 'réduction 25%'
+    1_nl:
+        Id: 1
+        Locale: nl
+        Name: 'Early Booking'
+        Slug: early-booking
+        Introduction: 'Early booking'
+        Description: 'Lorem ipsum dolor sit amet'
+        Indice: 'pour 1 personnes'
+        IndicePrix: 'réduction 25%'
+    2_de:
+        Id: 2
+        Locale: de
+        Name: 'Camping Le Col Vert ****'
+        Slug: camping-le-col-vert
+        Introduction: Landes
+        Description: 'Lorem ipsum dolor sit amet'
+        Indice: 'pour 5 personnes'
+        IndicePrix: 'réduction 25%'
+    2_en:
+        Id: 2
+        Locale: en
+        Name: 'Camping Le Col Vert ****'
+        Slug: camping-le-col-vert
+        Introduction: Landes
+        Description: 'Lorem ipsum dolor sit amet'
+        Indice: 'pour 5 personnes'
+        IndicePrix: 'réduction 25%'
+    2_fr:
+        Id: 2
+        Locale: fr
+        Name: 'Camping Le Col Vert ****'
+        Slug: camping-le-col-vert
+        Introduction: Landes
+        Description: 'Lorem ipsum dolor sit amet'
+        Indice: 'pour 5 personnes'
+        IndicePrix: 'réduction 25%'
+    2_nl:
+        Id: 2
+        Locale: nl
+        Name: 'Camping Le Col Vert ****'
+        Slug: camping-le-col-vert
+        Introduction: Landes
+        Description: 'Lorem ipsum dolor sit amet'
+        Indice: 'pour 5 personnes'
+        IndicePrix: 'réduction 25%'
+    3_de:
+        Id: 3
+        Locale: de
+        Name: 'Le Parc ***'
+        Slug: le-parc
+        Introduction: 'Provence-Côte d''Azur'
+        Description: 'Lorem ipsum dolor sit amet'
+        Indice: 'pour 5 personnes'
+        IndicePrix: 'réduction 25%'
+    3_en:
+        Id: 3
+        Locale: en
+        Name: 'Le Parc ***'
+        Slug: le-parc
+        Introduction: 'Provence-Côte d''Azur'
+        Description: 'Lorem ipsum dolor sit amet'
+        Indice: 'pour 5 personnes'
+        IndicePrix: 'réduction 25%'
+    3_fr:
+        Id: 3
+        Locale: fr
+        Name: 'Le Parc ***'
+        Slug: le-parc
+        Introduction: 'Provence-Côte d''Azur'
+        Description: 'Lorem ipsum dolor sit amet'
+        Indice: 'pour 5 personnes'
+        IndicePrix: 'réduction 25%'
+    3_nl:
+        Id: 3
+        Locale: nl
+        Name: 'Le Parc ***'
+        Slug: le-parc
+        Introduction: 'Provence-Côte d''Azur'
+        Description: 'Lorem ipsum dolor sit amet'
+        Indice: 'pour 5 personnes'
+        IndicePrix: 'réduction 25%'
+    4_de:
+        Id: 4
+        Locale: de
+        Name: 'Lou Broustaricq ***'
+        Slug: lou-broustaricq
+        Introduction: Landes
+        Description: 'Lorem ipsum dolor sit amet'
+        Indice: 'pour 4 personnes'
+        IndicePrix: 'réduction 25%'
+    4_en:
+        Id: 4
+        Locale: en
+        Name: 'Lou Broustaricq ***'
+        Slug: lou-broustaricq
+        Introduction: Landes
+        Description: 'Lorem ipsum dolor sit amet'
+        Indice: 'pour 4 personnes'
+        IndicePrix: 'réduction 25%'
+    4_fr:
+        Id: 4
+        Locale: fr
+        Name: 'Lou Broustaricq ***'
+        Slug: lou-broustaricq
+        Introduction: Landes
+        Description: 'Lorem ipsum dolor sit amet'
+        Indice: 'pour 4 personnes'
+        IndicePrix: 'réduction 25%'
+    4_nl:
+        Id: 4
+        Locale: nl
+        Name: 'Lou Broustaricq ***'
+        Slug: lou-broustaricq
+        Introduction: Landes
+        Description: 'Lorem ipsum dolor sit amet'
+        Indice: 'pour 4 personnes'
+        IndicePrix: 'réduction 25%'
+    5_de:
+        Id: 5
+        Locale: de
+        Name: 'Lou Broustaricq ***'
+        Slug: lou-broustaricq
+        Introduction: Landes
+        Description: 'Lorem ipsum dolor sit amet'
+        Indice: 'pour 5 personnes'
+        IndicePrix: 'réduction 40%'
+    5_en:
+        Id: 5
+        Locale: en
+        Name: 'Lou Broustaricq ***'
+        Slug: lou-broustaricq
+        Introduction: Landes
+        Description: 'Lorem ipsum dolor sit amet'
+        Indice: 'pour 5 personnes'
+        IndicePrix: 'réduction 40%'
+    5_fr:
+        Id: 5
+        Locale: fr
+        Name: 'Lou Broustaricq ***'
+        Slug: lou-broustaricq
+        Introduction: Landes
+        Description: 'Lorem ipsum dolor sit amet'
+        Indice: 'pour 5 personnes'
+        IndicePrix: 'réduction 40%'
+    5_nl:
+        Id: 5
+        Locale: nl
+        Name: 'Lou Broustaricq ***'
+        Slug: lou-broustaricq
+        Introduction: Landes
+        Description: 'Lorem ipsum dolor sit amet'
+        Indice: 'pour 5 personnes'
+        IndicePrix: 'réduction 40%'
+    6_de:
+        Id: 6
+        Locale: de
+        Name: 'Lou Broustaricq ***'
+        Slug: lou-broustaricq
+        Introduction: Landes
+        Description: 'Lorem ipsum dolor sit amet'
+        Indice: 'pour 6 personnes'
+        IndicePrix: 'réduction 40%'
+    6_en:
+        Id: 6
+        Locale: en
+        Name: 'Lou Broustaricq ***'
+        Slug: lou-broustaricq
+        Introduction: Landes
+        Description: 'Lorem ipsum dolor sit amet'
+        Indice: 'pour 6 personnes'
+        IndicePrix: 'réduction 40%'
+    6_fr:
+        Id: 6
+        Locale: fr
+        Name: 'Lou Broustaricq ***'
+        Slug: lou-broustaricq
+        Introduction: Landes
+        Description: 'Lorem ipsum dolor sit amet'
+        Indice: 'pour 6 personnes'
+        IndicePrix: 'réduction 40%'
+    6_nl:
+        Id: 6
+        Locale: nl
+        Name: 'Lou Broustaricq ***'
+        Slug: lou-broustaricq
+        Introduction: Landes
+        Description: 'Lorem ipsum dolor sit amet'
+        Indice: 'pour 6 personnes'
+        IndicePrix: 'réduction 40%'

@@ -18,6 +18,11 @@ use Cungfoo\Model\om\BaseBonPlan;
  */
 class BonPlan extends BaseBonPlan
 {
+    public function __toString()
+    {
+        return $this->getName();
+    }
+
     public function getDestinationsCodes()
     {
         $codes = array();
@@ -50,7 +55,7 @@ class BonPlan extends BaseBonPlan
 
         foreach ($diff as $key => $value)
         {
-            if($key == "d" || $key == "h" || $key == "i")
+            if ($key == "d" || $key == "h" || $key == "i")
             {
                 $compteur[$key] = $value;
             }
