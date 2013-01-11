@@ -22,5 +22,5 @@
         </div>
         {% endfor %}
     {% endfor %}
-    <a href="{{ path('early_booking') }}" class="bt link right">{{ "home.early_booking.link" | trans  ({'%number%': early_booking.element|length }) }}</a>
+    <a href="{{ path('bonsplans', {'slug': 'early-booking'}) }}" class="bt link right">{{ "home.early_booking.link" | trans  ({'%number%': early_booking.element|length }) }}</a>
 </div>

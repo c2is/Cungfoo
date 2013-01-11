@@ -233,6 +233,9 @@
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="code" type="varchar" required="true" />
         <column name="name" type="varchar" required="true" />
+        <column name="slug" type="varchar" />
+        <column name="indice" type="varchar" />
+        <column name="type_hebergement_capacite_id" type="integer" />
         <column name="category_type_hebergement_id" type="integer" />
         <column name="nombre_chambre" type="integer" />
         <column name="nombre_place" type="integer" />
@@ -259,8 +262,12 @@
             <reference local="category_type_hebergement_id" foreign="id"></reference>
         </foreign-key>
 
+        <foreign-key foreignTable="type_hebergement_capacite">
+            <reference local="type_hebergement_capacite_id" foreign="id"></reference>
+        </foreign-key>
+
         <behavior name="i18n">
-            <parameter name="i18n_columns" value="name,surface,type_terrasse,description,composition,presentation,capacite_hebergement,dimensions,agencement,equipements,annee_utilisation,remarque_1,remarque_2,remarque_3,remarque_4" />
+            <parameter name="i18n_columns" value="name,slug,indice,surface,type_terrasse,description,composition,presentation,capacite_hebergement,dimensions,agencement,equipements,annee_utilisation,remarque_1,remarque_2,remarque_3,remarque_4" />
         </behavior>
 
         <behavior name="crudable">
@@ -269,19 +276,49 @@
         </behavior>
     </table>
 
+    <table name="type_hebergement_capacite">
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="name" type="varchar" required="true" />
+        <column name="slug" type="varchar" />
+        <column name="accroche" type="varchar" />
+        <column name="description" type="longvarchar" />
+        <column name="image_menu" type="varchar" />
+        <column name="image_page" type="varchar" />
+        <behavior name="timestampable" />
+        <behavior name="active" />
+        <behavior name="sortable" />
+
+        <behavior name="i18n">
+            <parameter name="i18n_columns" value="name,slug,accroche,description" />
+        </behavior>
+
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/type-hebergement-capacite" />
+            <parameter name="crud_type_file" value="image_menu,image_page" />
+        </behavior>
+    </table>
+
     <table name="category_type_hebergement">
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="code" type="varchar" required="true" />
         <column name="name" type="varchar" required="true" />
+        <column name="slug" type="varchar" />
+        <column name="accroche" type="varchar" />
+        <column name="minimum_price" type="varchar" />
+        <column name="description" type="longvarchar" />
+        <column name="image_menu" type="varchar" />
+        <column name="image_page" type="varchar" />
         <behavior name="timestampable" />
         <behavior name="active" />
+        <behavior name="sortable" />
 
         <behavior name="i18n">
-            <parameter name="i18n_columns" value="name" />
+            <parameter name="i18n_columns" value="name,slug,accroche,description" />
         </behavior>
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/category-type-hebergement" />
+            <parameter name="crud_type_file" value="image_menu,image_page" />
         </behavior>
     </table>
 
@@ -611,6 +648,28 @@
         </behavior>
     </table>
 
+    <table name="multimedia_type_hebergement">
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="type_hebergement_id" type="integer" />
+        <column name="titre" type="varchar" required="true" />
+        <column name="image_path" type="varchar" />
+        <behavior name="timestampable" />
+        <behavior name="active" />
+
+        <foreign-key foreignTable="type_hebergement" onDelete="CASCADE">
+            <reference local="type_hebergement_id" foreign="id"/>
+        </foreign-key>
+
+        <behavior name="i18n">
+            <parameter name="i18n_columns" value="titre" />
+        </behavior>
+
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/multimedias/type-hebergement" />
+            <parameter name="crud_type_file" value="image_path" />
+        </behavior>
+    </table>
+
     <table name="multimedia_etablissement">
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="etablissement_id" type="integer" />
@@ -628,7 +687,7 @@
         </behavior>
 
         <behavior name="crudable">
-            <parameter name="crud_prefix" value="/multimedias" />
+            <parameter name="crud_prefix" value="/multimedias/etablissement" />
             <parameter name="crud_type_file" value="image_path" />
         </behavior>
     </table>
@@ -728,45 +787,6 @@
 
         <foreign-key foreignTable="etablissement" onDelete="CASCADE">
             <reference local="etablissement_id" foreign="id"/>
-        </foreign-key>
-    </table>
-
-    <table name="dernieres_minutes">
-        <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true"/>
-        <column name="date_start" type="date"/>
-        <column name="day_start" type="enum" valueSet="monday, tuesday, wednesday, thursday, friday, saturday, sunday" required="true"/>
-        <column name="day_range" type="enum" valueSet="7, 14, 21" required="true"/>
-        <column name="active" type="boolean"/>
-        <behavior name="active" />
-
-        <behavior name="crudable">
-            <parameter name="crud_prefix" value="/dernieres-minutes" />
-        </behavior>
-    </table>
-
-    <table name="dernieres_minutes_etablissement" isCrossRef="true">
-        <column name="dernieres_minutes_id" type="integer" primaryKey="true"/>
-        <column name="etablissement_id" type="integer" primaryKey="true"/>
-
-        <foreign-key foreignTable="dernieres_minutes" onDelete="CASCADE">
-            <reference local="dernieres_minutes_id" foreign="id"/>
-        </foreign-key>
-
-        <foreign-key foreignTable="etablissement">
-            <reference local="etablissement_id" foreign="id"/>
-        </foreign-key>
-    </table>
-
-    <table name="dernieres_minutes_destination" isCrossRef="true">
-        <column name="dernieres_minutes_id" type="integer" primaryKey="true"/>
-        <column name="destination_id" type="integer" primaryKey="true"/>
-
-        <foreign-key foreignTable="dernieres_minutes" onDelete="CASCADE">
-            <reference local="dernieres_minutes_id" foreign="id"/>
-        </foreign-key>
-
-        <foreign-key foreignTable="destination">
-            <reference local="destination_id" foreign="id"/>
         </foreign-key>
     </table>
 
@@ -903,6 +923,107 @@
 
         <foreign-key foreignTable="personnage">
             <reference local="personnage_id" foreign="id"/>
+        </foreign-key>
+    </table>
+
+    <table name="bon_plan_categorie">
+        <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true" />
+        <column name="name" type="varchar" />
+        <column name="slug" type="varchar" />
+        <column name="subtitle" type="varchar" />
+        <column name="description" type="longvarchar" />
+
+        <behavior name="active" />
+
+        <behavior name="i18n">
+            <parameter name="i18n_columns" value="name, slug, subtitle, description" />
+        </behavior>
+
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/bon-plan-categories" />
+        </behavior>
+
+        <behavior name="sortable"/>
+    </table>
+
+    <table name="bon_plan">
+        <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true" />
+        <column name="name" type="varchar" />
+        <column name="slug" type="varchar" />
+        <column name="introduction" type="varchar" />
+        <column name="description" type="longvarchar" />
+        <column name="date_debut" type="date" />
+        <column name="date_fin" type="date" />
+        <column name="prix" type="integer" />
+        <column name="prix_barre" type="integer" />
+        <column name="indice" type="varchar" />
+        <column name="indice_prix" type="varchar" />
+        <column name="image_menu" type="varchar" />
+        <column name="image_page" type="varchar" />
+        <column name="image_liste" type="varchar" />
+        <column name="active_compteur" type="boolean"/>
+        <column name="mise_en_avant" type="boolean"/>
+        <column name="push_home" type="boolean"/>
+        <column name="date_start" type="date"/>
+        <column name="day_start" type="enum" valueSet="monday, tuesday, wednesday, thursday, friday, saturday, sunday" required="true"/>
+        <column name="day_range" type="enum" valueSet="7, 14, 21" required="true"/>
+        <column name="nb_adultes" type="integer" defaultValue="1" />
+        <column name="nb_enfants" type="integer" defaultValue="0" />
+        <column name="period_categories" type="varchar" />
+
+        <behavior name="active" />
+
+        <behavior name="i18n">
+            <parameter name="i18n_columns" value="name, slug, introduction, description, indice, indice_prix" />
+        </behavior>
+
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/bons-plans" />
+            <parameter name="crud_type_file" value="image_menu,image_page,image_liste" />
+        </behavior>
+    </table>
+
+    <table name="bon_plan_bon_plan_categorie" isCrossRef="true">
+        <column name="bon_plan_id" type="integer" primaryKey="true"/>
+        <column name="bon_plan_categorie_id" type="integer" primaryKey="true"/>
+
+        <behavior name="sortable">
+            <parameter name="use_scope" value="true" />
+            <parameter name="scope_column" value="bon_plan_categorie_id" />
+        </behavior>
+
+        <foreign-key foreignTable="bon_plan">
+            <reference local="bon_plan_id" foreign="id"/>
+        </foreign-key>
+
+        <foreign-key foreignTable="bon_plan_categorie">
+            <reference local="bon_plan_categorie_id" foreign="id"/>
+        </foreign-key>
+    </table>
+
+    <table name="bon_plan_etablissement" isCrossRef="true">
+        <column name="bon_plan_id" type="integer" primaryKey="true"/>
+        <column name="etablissement_id" type="integer" primaryKey="true"/>
+
+        <foreign-key foreignTable="bon_plan" onDelete="CASCADE">
+            <reference local="bon_plan_id" foreign="id"/>
+        </foreign-key>
+
+        <foreign-key foreignTable="etablissement">
+            <reference local="etablissement_id" foreign="id"/>
+        </foreign-key>
+    </table>
+
+    <table name="bon_plan_destination" isCrossRef="true">
+        <column name="bon_plan_id" type="integer" primaryKey="true"/>
+        <column name="destination_id" type="integer" primaryKey="true"/>
+
+        <foreign-key foreignTable="bon_plan" onDelete="CASCADE">
+            <reference local="bon_plan_id" foreign="id"/>
+        </foreign-key>
+
+        <foreign-key foreignTable="destination">
+            <reference local="destination_id" foreign="id"/>
         </foreign-key>
     </table>
 

@@ -18,4 +18,11 @@ use Cungfoo\Model\om\BaseTypeHebergementPeer;
  */
 class TypeHebergementPeer extends BaseTypeHebergementPeer
 {
+    public static function getNbTypeHebergements()
+    {
+        return TypeHebergementQuery::create()
+            ->find()
+            ->count()
+        ;
+    }
 }

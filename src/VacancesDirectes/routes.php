@@ -35,8 +35,6 @@ $app->mount('/dispo',                                 new Controller\DispoContro
 $app->mount('/couloir-reservation',                   new Controller\CouloirController());
 $app->mount('/resalys',                               new WrapperController());
 $app->mount('/destinations/camping-{pays}',           new Controller\DestinationController());
-$app->mount('/bons-plans/camping-dernieres-minutes',  new Controller\DernieresMinutesController());
-$app->mount('/bons-plans/camping-early-booking',      new Controller\EarlyBookingController());
 $app->mount('/bons-plans',                            new Controller\BonsPlansController());
 $app->mount('/compte',                                new Controller\CompteController());
 $app->mount('/vos-week-ends',                         new Controller\VosWeekEndsController());
@@ -44,6 +42,8 @@ $app->mount('/lieu-a-visiter',                             new Controller\FicheP
 $app->mount('/evenement',                           new Controller\FicheEventController());
 $app->mount('/esi',                                   new Controller\EsiController());
 $app->mount('/assurance',                             new Controller\AnnulationController());
+$app->mount('/search_filter',                         new Controller\SearchFilterController());
+$app->mount('/locations',                             new Controller\LocationsController());
 
 $app->match('/top-campings',      'VacancesDirectes\Controller\TopCampingController::indexAction')->bind('top_campings');
 

@@ -1,19 +1,18 @@
 {% extends "base.twig" %}
 
+{% block bodyClass %}login{% endblock %}
+
 {% block content %}
-    {% if error %}
-        <div>{{ error }}</div>
-    {% endif %}
 
-    <form action="{{ path('login_check') }}" method="post">
-        <label for="username">{{ "security.username" | trans }} :</label>
-        <input type="text" id="username" name="_username" value="{{ last_username }}" />
-
-        <label for="password">{{ "security.password" | trans }}:</label>
-        <input type="password" id="password" name="_password" />
-
-        <div class="form-actions">
-            <button type="submit" class="btn btn-primary">{{ "security.submit" | trans }}</button>
-        </div>
+    <form action="{{ path('login_check') }}" method="post" class="form-signin">
+        <h2 class="form-signin-heading">{{ "security.title" | trans }}</h2>
+        <hr/>
+        {% if error %}
+        <div class="alert alert-error">{{ error }}</div>
+        {% endif %}
+        <input type="text" class="input-block-level" id="username" name="_username" value="{{ last_username }}" placeholder="{{ "security.username" | trans }}"/>
+        <input type="password" class="input-block-level" id="password" name="_password" placeholder="{{ "security.password" | trans }}"/>
+        <button class="btn btn-large btn-primary" type="submit">{{ "security.submit" | trans }}</button>
+        <span class="version">Cungfoo v1</span>
     </form>
 {% endblock %}

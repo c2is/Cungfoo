@@ -24,6 +24,24 @@ category_type_hebergement.code: Code
 category_type_hebergement.name: Nom
 category_type_hebergement.active: Actif
 
+type_hebergement_capacite.crud.create: Création d'une capacité de types d'hébergements
+type_hebergement_capacite.crud.list: Liste des capacités de types d'hébergements
+type_hebergement_capacite.crud.update: Mettre à jour la capacité de types d'hébergements %name%
+type_hebergement_capacite.crud.view: Détails de la capacité de types d'hébergements
+type_hebergement_capacite.id: Id
+type_hebergement_capacite.image.menu: Image menu
+type_hebergement_capacite.image_menu: Image menu
+type_hebergement_capacite.image_menu_deleted: Suppression image menu ?
+type_hebergement_capacite.image.page: Image page
+type_hebergement_capacite.image_page: Image page
+type_hebergement_capacite.image_page_deleted: Suppression image page ?
+type_hebergement_capacite.active: Actif
+type_hebergement_capacite.sortable_rank: Ordre
+type_hebergement_capacite.type_hebergement_capaciteI18ns: ""
+type_hebergement_capacite.name: Nom
+type_hebergement_capacite.slug: Slug
+type_hebergement_capacite.description: Description
+
 job.crud.list: Liste jobs
 job.name: Nom
 job.type: Type
@@ -184,6 +202,8 @@ menu.themes: Themes
 menu.title: Cungfoo
 menu.ville: Villes
 menu.type_hebergement: Types hébergements
+menu.type_hebergement_capacite: Types hébergements capacités
+menu.type_hebergement_multimedia: Types hébergements multimedia
 menu.category_type_hebergement: Catégories des types hébergements
 menu.service_complementaire: Services complémentaires
 menu.situation_geographique: Situations géographiques
@@ -243,6 +263,7 @@ service_complementaire.image.path: Image
 service_complementaire.active: Actif
 service_complementaire.vignette: Vignette
 
+security.title: Panneau d'administration
 security.username: Nom d'utilisateur
 security.password: Mot de passe
 security.submit: Connexion
@@ -319,6 +340,7 @@ type_hebergement.crud.view: Détails du type hébergement %name%
 type_hebergement.etablissements: Établissements ayant ce type hébergement
 type_hebergement.id: Id
 type_hebergement.code: Code
+type_hebergement.type_hebergement_capacite: Capacité
 type_hebergement.name: Nom
 type_hebergement.category.type.hebergement: Catégorie
 type_hebergement.nombre_chambre: Nombre de chambres
@@ -463,6 +485,20 @@ multimedia_etablissement.image_path: Image
 multimedia_etablissement.tags: Tags
 multimedia_etablissement.image.path: Image
 multimedia_etablissement.active: Actif
+
+multimedia_type_hebergement.crud.create: Création d'un média type hébergement
+multimedia_type_hebergement.crud.list: Liste des média type hébergement
+multimedia_type_hebergement.crud.update: Mettre à jour le média type hébergement %name%
+multimedia_type_hebergement.crud.view: Détails du média type hébergement %name%
+multimedia_type_hebergement.id: Id
+multimedia_type_hebergement.etablissement: Etablissement
+multimedia_type_hebergement.titre: Titre
+multimedia_type_hebergement.image_path: Image
+multimedia_type_hebergement.tags: Tags
+multimedia_type_hebergement.image.path: Image
+multimedia_type_hebergement.active: Actif
+multimedia_type_hebergement.type_hebergement: Type hebergement
+multimedia_type_hebergement.multimedia_type_hebergementI18ns: ""
 
 tag.crud.create: Création d'un tag
 tag.crud.list: Liste des tags

@@ -57,6 +57,12 @@ menu:
               type_hebergement:
                   title:  menu.type_hebergement
                   route:  type_hebergement_crud_list
+              type_hebergement_capacite:
+                  title:  menu.type_hebergement_capacite
+                  route:  type_hebergement_capacite_crud_list
+              type_hebergement_multimedia:
+                  title:  menu.type_hebergement_multimedia
+                  route:  multimedia_type_hebergement_crud_list
               category_type_hebergement:
                   title:  menu.category_type_hebergement
                   route:  category_type_hebergement_crud_list
@@ -75,15 +81,19 @@ menu:
               mise_en_avant:
                   title:  menu.mise_en_avant
                   route:  mise_en_avant_crud_list
-              dernieres_minutes:
-                  title:  menu.dernieres_minutes
-                  route:  dernieres_minutes_crud_list
               vos_vacances:
                   title:  menu.vos_vacances
                   route:  vos_vacances_crud_list
               idee_weekend:
                   title:  menu.idee_weekend
                   route:  idee_weekend_crud_list
+                  divider: ~
+              bon_plan_categories:
+                  title:  menu.bon_plan_categorie
+                  route:  bon_plan_categorie_crud_list
+              bons_plans:
+                  title:  menu.bon_plan
+                  route:  bon_plan_crud_list
         viafrance:
             title: menu.viafrance
             items:

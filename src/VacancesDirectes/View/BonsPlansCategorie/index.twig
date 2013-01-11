@@ -1,0 +1,61 @@
+{% extends "BonsPlansCategorie/base.twig" %}
+
+{% block title %}
+{% spaceless %}
+    {{ "seo.title.bonPlan" | trans ({'%bonPlan%': categorie.name}) }}
+{% endspaceless %}
+{% endblock %}
+
+{% block metaDescription %}
+{% spaceless %}
+    {{ "seo.meta.bonPlan" | trans ({'%bonPlan%': categorie.name})}}
+{% endspaceless %}
+{% endblock %}
+
+{% block topLeftColumn %}
+
+    {% include "Breadcrumbs/_breadcrumbs.twig" %}
+
+    <div class="clear">
+        <h1>{{ categorie.name }}</h1>
+        <span class="h2-like">{{ categorie.subtitle }}</span>
+        <p class="description">{{ categorie.description }}</p> {# Description #}
+    </div>
+{% endblock %}
+
+{% block topRightColumn %}
+    {% include 'Form/_search_engine.twig' %}
+{% endblock %}
+
+{% block column %}
+<h2 class="h3-like">{{ "general.nos_offres" | trans }}</h2>
+<div id="bpItemsList" class="clear">
+    {% for bonPlan in bonsPlans %}
+        <div class="bpItem itemResult bgImg {% if bonPlan.miseEnAvant == false %}half{% endif %}">
+            <div class="itemResultTitle">{{ bonPlan.name }}</div>
+            <div class="view">
+                <img class="bg" src="{{ asset(bonPlan.imageListe) }}" alt="{{ bonPlan.name }}" />
+            </div>
+            <div class="content clear">
+                <p>{{ bonPlan.description }}</p>
+                {% if bonPlan.activeCompteur == true %}
+                    <div class="bpCount left">
+                        {{ "general.plus_que" | trans }}<br />
+                        <span>{{ bonPlan.compteur.d }} J</span>
+                        <span>{{ bonPlan.compteur.h }} H</span>
+                        <span>{{ bonPlan.compteur.i }} MN</span>
+                    </div>
+                {% endif %}
+                <div class="stain fushia cover linkBlock" href="#" style="background-size: cover;">
+                    <span>
+                        {{ "general.a_partir_de" | trans }}<br>
+                        <span class="price linkBlock">{{ bonPlan.prix }}<span class="fine">&nbsp;</span>€</span>
+                        {{ "general.la_semaine" | trans }}
+                    </span>
+                </div>
+                <a href="{{ path('bonsplans', {'slug': bonPlan.slug}) }}" class="bt fushia big ib right">{{ "general.voir_offre" | trans }}</a>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

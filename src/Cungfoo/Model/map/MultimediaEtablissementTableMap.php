@@ -90,7 +90,7 @@ class MultimediaEtablissementTableMap extends TableMap
 ),
             'crudable' =>  array (
   'route_prefix' => '/',
-  'crud_prefix' => '/multimedias',
+  'crud_prefix' => '/multimedias/etablissement',
   'crud_model' => NULL,
   'crud_form' => NULL,
   'crud_type_file' => 'image_path',

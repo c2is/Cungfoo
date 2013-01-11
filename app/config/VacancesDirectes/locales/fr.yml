@@ -15,6 +15,11 @@ seo:
         topCamping: "Top camping France, top destination vacances"
         poi: "Visiter %poi% : %ville%"
         event: "%event% : %ville%"
+        location:
+            list:
+                categorie: "Location camping %type% France, Italie, Espagne"
+                capacite: "Location %type% camping France, Italie, Espagne"
+            fiche: "Location %type% %personnes% personnes camping : %name%"
     meta:
         default: "Vacances directes : location de mobil-homes dans de nombreux campings en France, en Italie et en Espagne pour des vacances conviviales et reposantes."
         pays: " Vacances directes : découvrez nos offres de location de mobil home pas cher en %pays% pour des vacances ensoleillés en camping et réserver en ligne."
@@ -30,6 +35,11 @@ seo:
         topCamping: "Découvrez notre top 10 des destinations pour des vacances en campings réussies avec Vacances Directes, le spécialiste de la location de mobil-home."
         poi: "%poi% à %ville%, venez visiter ce lieu et passez vos vacances dans nos campings à proximité avec Vacances Directes."
         event: "%event% à %ville%. Ne rater pas cet événement et passez vos vacances dans nos campings à proximité avec Vacances Directes."
+        location:
+            list:
+                categorie: "Location de %type% dans de nombreux campings de qualité en France, en Espagne et en Italie avec Vacances Directes."
+                capacite:  "Location de vacances pour %type% dans de nombreux campings de qualité en France, en Espagne et en Italie avec Vacances Directes."
+            fiche: "Passez vos prochaines vacances en %type% %name% pour %personnes% dans de nombreux campings de qualité avec Vacances Directes."
 
 pays:
     afghanistan: "Afghanistan"
@@ -413,6 +423,20 @@ general:
     contre_proposition: "ATTENTION ! Votre recherche ne donne aucun résultat. Les propositions ci-dessous sont celles qui s'en rapprochent le plus."
     submit: "Envoyer"
     logout: "Se déconnecter"
+    nos_offres: "Nos offres"
+    voir_offre: "Voir l'offre"
+    plus_que: "Plus que"
+
+filtres:
+    affinez_recherche: "Affinez votre recherche"
+    criteres_selectionne: "critères(s) séléctioné(s)"
+    situation: "Situation"
+    categories: "Catégories"
+    baignade_bien_etre: "Baignade & bien-être"
+    animations_loisirs: "Animations et loisirs"
+    commerces_services: "Commerces et services"
+    thematiques: "Thématiques"
+    filtrer: "Filtrer"
 
 footer:
     contact: "Contact"
@@ -476,6 +500,22 @@ encart_vacances_directes:
     item_3: "Un site 100% sécurisé"
     item_4: "Des hébergements tout confort pour des vacances dépaysantes"
 
+encart_hebergement:
+    title: "Vacances directes"
+    subtitle: "propose des hébergements"
+    standardise:
+        title: "Standardisés"
+        texte: "Une même référence offre les mêmes prestations sur tous les campings Vacances directes."
+    adapte:
+        title: "Adaptés"
+        texte: "Vacances directes s'intéresse aux évolutions de le vie de tous les jours et propose des mobil-homes et des caravanes tout confort, adaptés aux besoins de chacun."
+    varie:
+        title: "Variés"
+        texte: "Faites votre choix parmi une large gamme d'hébergements. Vacances directes, c'est plus de 10 modèles de caravanes et des mobil-homes pour s'adapter à toutes les familles et à tous les portesfeuilles."
+    equipe:
+        title: "Equipés"
+        texte: "Les hébergements sont prêts à vous recevoir. Tout est inclus (alèses, couvertures, oreillers...), apportez simplement votre linge de maison. La cuisine est aménagée et équipées."
+
 encart_informations:
     title: "Informations & Réservations au"
     price: "(0,15 €/min)"
@@ -509,6 +549,7 @@ resalys:
 vos_week_ends: "Vos week-ends"
 
 breadcrumbs.home: "Accueil"
+breadcrumbs.bonsplans: "Bons plans"
 
 topCamping.h1: "Top destinations vacances en camping"
 dernieresMinutes.h1: "Nos offres de campings en dernières minutes (location mobil home)"
@@ -599,9 +640,11 @@ demande_annulation:
     lienCGA: "Conditions Générales d'Assurances (CGA)"
     texte2: "Il est dans ce cas impératif de remplir et de valider le présent formulaire dans un délai maximum de 5 jours suivant la date de survenance du sinistre. A défaut de respecter ce délai, l'Assureur se réserve la faculté de vous refuser le bénéfice de l'assurance (cf art.4.1 des CGA - déchéance de garantie)."
     texte3: "En validant le présent formulaire de déclaration de sinistre, vous déclarez que les informations que vous avez saisies dans le formulaire sont exactes et sincères, et reconnaissez que le traitement de votre dossier et l'indemnisation qui vous serait due par l'assureur sont soumis à la communication des pièces et informations complémentaires qui vous seront demandées, conformément à l'article 4.2 des CGA."
+
 offreSpeciales:
     intro: "Profitez de notre promo early booking sur votre séjour en basse saison:\n-10% pour une réservation avant le 31/01/2013\n-5% pour une réservation avant le 28/02/2013"
     texte: "Offre applicable uniquement sur le séjour, non cumulable avec l’ensemble des offres commerciales en cours. Valable pour tout séjour hors périodes du 06/07/2013 au 31/08/2013. Cette offre ne s’applique pas aux destinations suivantes : Coteau de la Marine, Castellas, Aqua Viva, Neptune, Château de Galinée, Domaine de Kermario, Chaponnet, Sandaya Soulac Plage, Ur Onéa, Domaine des Naädes, Cupulatta, Playa Montroig, et autres exceptions éventuelles."
+
 poi:
     informations_pratiques: "Informations pratiques"
     acceder_site: "Accéder au site web"
@@ -612,6 +655,7 @@ poi:
     type: "Type :"
     transport: "Transport :"
     adresse: "Adresse :"
+
 event:
     informations_pratiques: "Informations pratiques"
     acceder_site: "Accéder au site web"
@@ -622,3 +666,6 @@ event:
     type: "Type :"
     transport: "Transport :"
     adresse: "Adresse :"
+
+global:
+    search_message: "Nous traitons actuellement votre demande. <br/><br/>Merci de bien vouloir patienter."
