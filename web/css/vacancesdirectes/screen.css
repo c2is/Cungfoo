@@ -1605,6 +1605,10 @@ footer {
 #nav .tab .subnav .objective {
   margin: 10px;
 }
+#nav .tab .subnav .boxborder {
+  margin: 0 10px 5px;
+  display: block;
+}
 #nav .tab .subnav#destinations a:hover {
   color: #ed145b;
 }
@@ -1733,6 +1737,9 @@ footer {
 #nav .tab .subnav#destinations #destinationsAll ol#campingsList li:last-child {
   visibility: hidden;
 }
+#nav .tab .subnav#locations .clear {
+  width: 960px;
+}
 #nav .tab .subnav#locations .radiusBox {
   margin-right: 20px;
   padding: 10px;
@@ -1853,10 +1860,6 @@ footer {
 #nav .tab .subnav#locations .radiusBox2 {
   font: 12px/13px Arial, Helvetica, sans-serif, sans-serif;
 }
-#nav .tab .subnav#locations .radiusBox:last-child,
-#nav .tab .subnav#locations .radiusBox2:last-child {
-  margin-right: 0;
-}
 #nav .tab .subnav#deals #dealsMenu,
 #nav .tab .subnav#deals #dealsContent {
   float: left;
@@ -1864,7 +1867,7 @@ footer {
 }
 #nav .tab .subnav#deals #dealsMenu {
   z-index: 2;
-  width: 316px;
+  width: 276px;
   text-transform: uppercase;
   margin-bottom: 180px;
 }
@@ -1944,7 +1947,7 @@ footer {
 }
 #nav .tab .subnav#deals #dealsContent {
   z-index: 1;
-  width: 624px;
+  width: 664px;
 }
 #nav .tab .subnav#deals #dealsContent .radiusBox {
   display: none;
@@ -1974,6 +1977,7 @@ footer {
   text-transform: none;
 }
 #nav .tab .subnav#deals #dealsContent .element .details {
+  width: 173px;
   margin: 0;
 }
 #nav .tab .subnav#deals #dealsContent .element .condition {
@@ -3396,10 +3400,6 @@ body.edito table td {
   /* slider */
 
 }
-.home .boxborder {
-  margin: 0 10px 5px;
-  display: block;
-}
 .home #wrap a {
   text-decoration: none;
 }
@@ -3706,6 +3706,10 @@ body.edito table td {
 }
 .home .locationForwards#topLocations .element {
   padding: 17px 0;
+}
+.home .locationForwards#topLocations .element .boxborder {
+  margin: 0 10px 5px;
+  display: block;
 }
 .home .locationForwards#topLocations .element .details {
   width: 151px;
@@ -4286,6 +4290,9 @@ body.edito table td {
 #tabCamp .tabCampDesc h3 {
   margin-top: 0;
 }
+#tabCamp .tabCampDesc .tabCampDescTitle {
+  margin-bottom: 2px;
+}
 #tabCamp .tabCampDesc p {
   color: #5f5f5f;
 }
@@ -4294,6 +4301,11 @@ body.edito table td {
 
   /* //slider */
 
+}
+.temoignFiche h2 {
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  color: #ed145b;
 }
 .temoignFiche a {
   color: #5f5f5f;
@@ -4319,7 +4331,7 @@ body.edito table td {
   font-weight: bold;
   font-size: 13px;
   line-height: 12px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 .temoignFiche dd.img {
   float: left;
@@ -5205,11 +5217,11 @@ h2 + #results {
   position: relative;
   clear: both;
 }
-.sliderStain {
+.bannerStain {
   position: absolute;
   text-align: center;
 }
-.sliderStain.first {
+.bannerStain.first {
   right: 10px;
   top: 10px;
   width: 228px;
@@ -5224,26 +5236,26 @@ h2 + #results {
   background: url("../../images/vacancesdirectes/common/ui/stain-1.png") no-repeat 0 0 transparent;
   background-size: 100%;
 }
-.sliderStain.first > * {
+.bannerStain.first > * {
   vertical-align: middle;
   display: inline-block;
   line-height: 15px;
 }
-.sliderStain.first > img {
+.bannerStain.first > img {
   vertical-align: middle;
 }
-.sliderStain.first .content {
+.bannerStain.first .content {
   color: #f58220;
   margin: 10px 30px 0;
 }
-.sliderStain.first .content .headline {
+.bannerStain.first .content .headline {
   font: bold 27px/27px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   overflow: hidden;
   text-overflow: ellipsis;
   max-height: 81px;
 }
-.sliderStain.second {
+.bannerStain.second {
   right: 0px;
   bottom: 20px;
   width: 140px;
@@ -5259,19 +5271,19 @@ h2 + #results {
   background-size: 100%;
   z-index: 4;
 }
-.sliderStain.second > * {
+.bannerStain.second > * {
   vertical-align: middle;
   display: inline-block;
   line-height: 15px;
 }
-.sliderStain.second > img {
+.bannerStain.second > img {
   vertical-align: middle;
 }
-.sliderStain.second .content {
+.bannerStain.second .content {
   width: 70px;
   color: #ffffff;
 }
-.sliderStain.second .content .headline {
+.bannerStain.second .content .headline {
   font: bold 13px/14px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   overflow: hidden;
@@ -5318,6 +5330,12 @@ h2 + #results {
   display: block;
   font-size: 13px;
   margin: 0 0 2px;
+  -webkit-transition: opacity 0.5s ease;
+  -o-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
+.formSearchRefined fieldset label.disableLabel {
+  opacity: .3;
 }
 .formSearchRefined fieldset input[type="checkbox"] {
   margin-right: 5px;
@@ -5328,6 +5346,10 @@ h2 + #results {
   color: #666666;
   font: bold 11px Arial, Helvetica, sans-serif, sans-serif;
   margin: 0 0 5px;
+}
+.formSearchRefined fieldset .nbItem {
+  color: #8c8a8a;
+  font-style: italic;
 }
 .formSearchRefined .bt {
   font-size: 21px;
