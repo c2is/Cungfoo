@@ -44,7 +44,7 @@
                 <div class="bpItem itemResult bgImg">
                     <div class="itemResultTitle">Vos vacances les pieds dans l'eau</div>
                     <div class="view">
-                        <img class="bg" src="http://pimg.devlint.fr/608x155/ccc/333/*" alt="" />
+                        <img class="bg" src="http://ipsumimage.appspot.com/920x155,ff7700?l=large+view|(920x155)&s=30&f=ffffff" alt="" />
                     </div>
                     <div class="content clear">
                         <p>Suspendisse tellus eros, rutrum vel interdum quis, fermentum quis turpis. Aenean velit arcu, facilisis lacinia ullamcorper non, semper sit amet dolor. Sed nisl orci, malesuada nec hendrerit quis, rutrum non ligula.</p>
@@ -67,7 +67,7 @@
                 <div class="bpItem itemResult bgImg half">
                     <div class="itemResultTitle">Vos vacances les pieds dans l'eau</div>
                     <div class="view">
-                        <img class="bg" src="http://pimg.devlint.fr/295x155/ccc/333/*" alt="" />
+                        <img class="bg" src="http://ipsumimage.appspot.com/451x155,ff7700?l=small+view|(451x155)&s=30&f=ffffff" alt="" />
                     </div>
                     <div class="content clear">
                         <p>Suspendisse tellus eros, rutrum vel interdum quis, fermentum quis turpis. Aenean velit arcu, facilisis lacinia ullamcorper non, semper sit amet dolor. Sed nisl orci, malesuada nec hendrerit quis, rutrum non ligula.</p>
@@ -90,7 +90,7 @@
                 <div class="bpItem itemResult bgImg half">
                     <div class="itemResultTitle">Vos vacances les pieds dans l'eau</div>
                     <div class="view">
-                        <img class="bg" src="http://pimg.devlint.fr/295x155/ccc/333/*" alt="" />
+                        <img class="bg" src="http://ipsumimage.appspot.com/451x155,ff7700?l=small+view|(451x155)&s=30&f=ffffff" alt="" />
                     </div>
                     <div class="content clear">
                         <p>Suspendisse tellus eros, rutrum vel interdum quis, fermentum quis turpis. Aenean velit arcu, facilisis lacinia ullamcorper non, semper sit amet dolor. Sed nisl orci, malesuada nec hendrerit quis, rutrum non ligula.</p>
