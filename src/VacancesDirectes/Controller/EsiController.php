@@ -48,7 +48,7 @@ class EsiController implements ControllerProviderInterface
                     $searchParams
                         ->setStartDate(date('Y-m-d', $startDate))
                         ->setNbDays(7)
-                        ->addTheme($dernieresMinutes->getDestinationsCodes())
+                        ->addTheme($dernieresMinutes->getRegionsCodes())
                         ->addEtab($dernieresMinutes->getEtablissementsCodes())
                         ->setNbAdults(1)
                         ->setMaxResults(10)
