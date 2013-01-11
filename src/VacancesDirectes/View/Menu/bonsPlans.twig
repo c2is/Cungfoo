@@ -47,7 +47,7 @@
                     </div>
                 </div>
                 {% else %}
-                <a href="#_" class="bt link right clearboth">Toutes nos offres</a>
+                <a href="{{ path('categorie_bonsplans', {'cat': categorie.slug }) }}" class="bt link right clearboth">Toutes nos offres</a>
                 {% endif %}
                 {% if loop.first or loop.last %}</div>{% endif %}
             {% endfor %}
