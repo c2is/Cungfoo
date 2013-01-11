@@ -23,11 +23,13 @@
 </ul>
 
 <div class="tabCampDiapo">
+    {% if typeHebergement.multimediaTypeHebergements|length > 0 %}
     <div class="slider"><div class="slide clear">
         {% for multimedia in typeHebergement.multimediaTypeHebergements %}
         <img src="{{ asset(multimedia.imagePath) }}" width="616" height="326" class="locations" title="{{multimedia.titre}}" alt="{{multimedia.titre}}"/>
         {% endfor %}
     </div></div>
+    {% endif %}
 </div>
 
 <!-- tab Camping -->
