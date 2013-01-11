@@ -1,0 +1,20 @@
+{% for etab in bon_plan.element %}
+    {% for proposal in etab.extra %}
+<div class="element clear linkParent">
+    <img class="boxborder left" src="{{ asset(etab.model.vignette) }}" width="119" height="86" alt="" />
+    <div class="details left">
+        <span class="title">{{ etab.model.name }} {{ etab.model.categorie.stars }}</span>
+        <span class="region">{{ etab.model.ville.region }}</span>
+        <span class="period">Du {{ etab.start_date }} au {{ etab.end_date }}</span>
+        {% set discount = proposal.adult_price != proposal.adult_price_without_discounts %}
+        {% if discount %}
+            <span class="condition"><a href="{{ path('couloir_detail_sejour', {proposalKey: proposal.proposal_key}) }}" class="price linkBlock">{{ proposal.adult_price|number_format }}<span class="fine">&nbsp;</span>€ {{ "general.au_lieu_de" | trans }} {{ proposal.adult_price_without_discounts|number_format }}<span class="fine">&nbsp;</span>€</a><br>
+            {{ proposal.room_types.room_type.room_type_label }}</span>
+        {% else %}
+            <span class="condition"><a href="{{ path('couloir_detail_sejour', {proposalKey: proposal.proposal_key}) }}" class="price linkBlock">{{ proposal.adult_price|number_format }}<span class="fine">&nbsp;</span>€</a><br>
+            {{ proposal.room_types.room_type.room_type_label }}</span>
+        {% endif %}
+    </div>
+</div>
+    {% endfor %}
+{% endfor %}

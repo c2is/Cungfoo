@@ -57,9 +57,9 @@ class DispoListing extends AbstractListing
             {
                 foreach ($this->client->getData()['getProposals65']['fr']->{'proposal'} as $proposal)
                 {
-                    if ($this->limit !== null && $loopIndex === $this->limit)
+                    if ($this->limit !== null && $loopIndex >= $this->limit)
                     {
-                        continue;
+                        break;
                     }
 
                     $results = $this->addElement($proposal, $results, $loopIndex);

@@ -90,10 +90,6 @@ crud:
             prefix: /top-camping
             model: \Cungfoo\Model\TopCamping
             form: \Cungfoo\Form\Type\TopCampingType
-        dernieres_minutes:
-            prefix: /dernieres-minutes
-            model: \Cungfoo\Model\DernieresMinutes
-            form: \Cungfoo\Form\Type\DernieresMinutesType
         mise_en_avant:
             prefix: /mise-en-avant
             model: \Cungfoo\Model\MiseEnAvant
@@ -110,6 +106,14 @@ crud:
             prefix: /theme
             model: \Cungfoo\Model\Theme
             form: \Cungfoo\Form\Type\ThemeType
+        bon_plan_categorie:
+            prefix: /bon-plan-categories
+            model: \Cungfoo\Model\BonPlanCategorie
+            form: \Cungfoo\Form\Type\BonPlanCategorieType
+        bon_plan:
+            prefix: /bons-plans
+            model: \Cungfoo\Model\BonPlan
+            form: \Cungfoo\Form\Type\BonPlanType
         demande_annulation:
             prefix: /demandes-annulation
             model: \Cungfoo\Model\DemandeAnnulation

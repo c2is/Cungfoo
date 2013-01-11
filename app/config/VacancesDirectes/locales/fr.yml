@@ -419,6 +419,9 @@ general:
     contre_proposition: "ATTENTION ! Votre recherche ne donne aucun résultat. Les propositions ci-dessous sont celles qui s'en rapprochent le plus."
     submit: "Envoyer"
     logout: "Se déconnecter"
+    nos_offres: "Nos offres"
+    voir_offre: "Voir l'offre"
+    plus_que: "Plus que"
 
 filtres:
     affinez_recherche: "Affinez votre recherche"
@@ -542,6 +545,7 @@ resalys:
 vos_week_ends: "Vos week-ends"
 
 breadcrumbs.home: "Accueil"
+breadcrumbs.bonsplans: "Bons plans"
 
 topCamping.h1: "Top destinations vacances en camping"
 dernieresMinutes.h1: "Nos offres de campings en dernières minutes (location mobil home)"
