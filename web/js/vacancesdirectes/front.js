@@ -1754,13 +1754,13 @@ function initCritResult(){
         var nextItems = $('#results .nextItem');
 
         if ( nextItems.length <= nbToShow ) {
-            $('#results .nextItem').fadeIn().removeClass('nextItem');
+            $('#results').find('.nextItem[data-filtered=true][data-filteredPlus=true][data-ranged=true]').fadeIn().removeClass('nextItem');
             //nextItems.fadeIn().removeClass('nextItem');
             $(this).hide();
         }else if ( nextItems.length > nbToShow ) {
             var nbDisclaim = 0;
 
-            $('#results .nextItem:lt('+nbToShow+')').each(function() {
+            $('#results').find('.nextItem[data-filtered=true][data-filteredPlus=true][data-ranged=true]:lt('+nbToShow+')').each(function() {
                 if ( $(this).hasClass('disclaim') ) {
                     nbDisclaim++;
                 };
@@ -1768,7 +1768,7 @@ function initCritResult(){
             nbToShow = nbToShow+nbDisclaim;
             //console.log('nbDisclaim = ' +nbDisclaim+' et nbToShow = '+nbToShow);
 
-            $('#results .nextItem:lt('+nbToShow+')').fadeIn().removeClass('nextItem');
+            $('#results').find('.nextItem[data-filtered=true][data-filteredPlus=true][data-ranged=true]:lt('+nbToShow+')').fadeIn().removeClass('nextItem');
         }
         //console.log('/--- listPagination : affichage des '+nbToShow+' items suivants ---/');
     });
@@ -2104,11 +2104,7 @@ function orderList() {
 //pagination liste de resultats
 function listPagination() {
     $('#results .itemResult').attr('data-num', '');
-    if ( paginationAfterRange == false ) {
-        var itemsPagination = $('#results .itemResult');
-    } else {
-        var itemsPagination = $('#results .pagination');
-    }
+    var itemsPagination = $('[data-filtered=true][data-filteredPlus=true][data-ranged=true]');
     var nbResults = itemsPagination.length;
     var btNext = $('#btPlusResults');
 
