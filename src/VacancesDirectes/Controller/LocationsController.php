@@ -30,8 +30,8 @@ class LocationsController implements ControllerProviderInterface
             $locale = $app['context']->get('language');
 
             $categoryTypeHebergementObject = \Cungfoo\Model\CategoryTypeHebergementQuery::create()
-                ->joinWithI18n($locale)
                 ->useI18nQuery()
+                    ->filterByLocale($locale)
                     ->filterBySlug($categoryTypeHebergement)
                 ->endUse()
                 ->findOne()
@@ -40,8 +40,8 @@ class LocationsController implements ControllerProviderInterface
             if (!$categoryTypeHebergementObject)
             {
                 $capaciteObject = \Cungfoo\Model\TypeHebergementCapaciteQuery::create()
-                    ->joinWithI18n($locale)
                     ->useI18nQuery()
+                    ->filterByLocale($locale)
                         ->filterBySlug($categoryTypeHebergement)
                     ->endUse()
                     ->findOne()
@@ -68,8 +68,8 @@ class LocationsController implements ControllerProviderInterface
             $locale = $app['context']->get('language');
 
             $typeHebergementObject = \Cungfoo\Model\TypeHebergementQuery::create()
-                ->joinWithI18n($locale)
                 ->useI18nQuery()
+                    ->filterByLocale($locale)
                     ->filterBySlug($typeHebergement)
                 ->endUse()
                 ->findOne()
