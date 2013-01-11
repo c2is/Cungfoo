@@ -281,6 +281,24 @@ listing:
 
 menu_destination.accroche: "3 pays, 23 régions touristiques, vos vacances avec Vacances directes."
 
+menu_bon_plan:
+    accroche:
+        prefix: "Sélectionner"
+        suffix: "un bon plan"
+    newsletter:
+        title: "Abonnement newsletter"
+        link: S'inscrire"
+    autres_offres:
+        title: "Nos autres offres"
+    dispos:
+        subtitle:
+            prefix: "Départ le"
+    bons_plans:
+        link:
+            prefix: "Tous les"
+    categorie_bons_plans:
+        link: "Toutes nos offres"
+
 menu:
     plus_de_regions: "Plus de régions"
     libelle: "Libellé"
@@ -426,6 +444,8 @@ general:
     nos_offres: "Nos offres"
     voir_offre: "Voir l'offre"
     plus_que: "Plus que"
+    du: "Du"
+    au: "au"
 
 filtres:
     affinez_recherche: "Affinez votre recherche"

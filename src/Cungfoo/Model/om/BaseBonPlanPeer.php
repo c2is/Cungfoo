@@ -10,10 +10,10 @@ use \Propel;
 use \PropelException;
 use \PropelPDO;
 use Cungfoo\Model\BonPlan;
-use Cungfoo\Model\BonPlanDestinationPeer;
 use Cungfoo\Model\BonPlanEtablissementPeer;
 use Cungfoo\Model\BonPlanI18nPeer;
 use Cungfoo\Model\BonPlanPeer;
+use Cungfoo\Model\BonPlanRegionPeer;
 use Cungfoo\Model\map\BonPlanTableMap;
 
 /**
@@ -515,9 +515,9 @@ abstract class BaseBonPlanPeer
         // Invalidate objects in BonPlanEtablissementPeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
         BonPlanEtablissementPeer::clearInstancePool();
-        // Invalidate objects in BonPlanDestinationPeer instance pool,
+        // Invalidate objects in BonPlanRegionPeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
-        BonPlanDestinationPeer::clearInstancePool();
+        BonPlanRegionPeer::clearInstancePool();
         // Invalidate objects in BonPlanI18nPeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
         BonPlanI18nPeer::clearInstancePool();

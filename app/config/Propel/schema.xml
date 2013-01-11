@@ -1014,16 +1014,16 @@
         </foreign-key>
     </table>
 
-    <table name="bon_plan_destination" isCrossRef="true">
+    <table name="bon_plan_region" isCrossRef="true">
         <column name="bon_plan_id" type="integer" primaryKey="true"/>
-        <column name="destination_id" type="integer" primaryKey="true"/>
+        <column name="region_id" type="integer" primaryKey="true"/>
 
         <foreign-key foreignTable="bon_plan" onDelete="CASCADE">
             <reference local="bon_plan_id" foreign="id"/>
         </foreign-key>
 
-        <foreign-key foreignTable="destination">
-            <reference local="destination_id" foreign="id"/>
+        <foreign-key foreignTable="region">
+            <reference local="region_id" foreign="id"/>
         </foreign-key>
     </table>
 

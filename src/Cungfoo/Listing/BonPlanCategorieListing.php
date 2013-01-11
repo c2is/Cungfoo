@@ -23,6 +23,8 @@ class BonPlanCategorieListing extends BaseBonPlanCategorieListing
     public function configure()
     {
         parent::configure();
+
+        $this->addColumn(new Column\TextColumn('name'));
     }
 
 } // BonPlanCategorieListing

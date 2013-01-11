@@ -23,6 +23,18 @@ class BonPlanListing extends BaseBonPlanListing
     public function configure()
     {
         parent::configure();
+
+        $this->removeColumn('date_debut');
+        $this->removeColumn('date_fin');
+        $this->removeColumn('image_menu');
+        $this->removeColumn('image_page');
+        $this->removeColumn('image_liste');
+        $this->removeColumn('active_compteur');
+        $this->removeColumn('mise_en_avant');
+        $this->removeColumn('push_home');
+        $this->removeColumn('date_start');
+        $this->removeColumn('period_categories');
+        $this->addColumn(new Column\TextColumn('name'));
     }
 
 } // BonPlanListing

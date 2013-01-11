@@ -23,13 +23,13 @@ class BonPlan extends BaseBonPlan
         return $this->getName();
     }
 
-    public function getDestinationsCodes()
+    public function getRegionsCodes()
     {
         $codes = array();
 
-        foreach ($this->getDestinations() as $destination)
+        foreach ($this->getRegions() as $Region)
         {
-            $codes[] = $destination->getCode();
+            $codes[] = $Region->getCode();
         }
 
         return implode(',', $codes);

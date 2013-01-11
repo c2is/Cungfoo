@@ -909,7 +909,7 @@ abstract class BasePersonnageQuery extends ModelCriteria
         return $this->addAscendingOrderByColumn(PersonnagePeer::CREATED_AT);
     }
     // active behavior
-
+    
     /**
      * return only active objects
      *
@@ -918,7 +918,7 @@ abstract class BasePersonnageQuery extends ModelCriteria
     public function findActive($con = null)
     {
         $this->filterByActive(true);
-
+    
         return parent::find($con);
     }
 
