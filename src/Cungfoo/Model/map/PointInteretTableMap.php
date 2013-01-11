@@ -48,6 +48,10 @@ class PointInteretTableMap extends TableMap
         $this->addColumn('address2', 'Address2', 'VARCHAR', false, 255, null);
         $this->addColumn('zipcode', 'Zipcode', 'VARCHAR', false, 255, null);
         $this->addColumn('city', 'City', 'VARCHAR', false, 255, null);
+        $this->addColumn('tel', 'Tel', 'VARCHAR', false, 255, null);
+        $this->addColumn('fax', 'Fax', 'VARCHAR', false, 255, null);
+        $this->addColumn('email', 'Email', 'VARCHAR', false, 255, null);
+        $this->addColumn('website', 'Website', 'VARCHAR', false, 255, null);
         $this->addColumn('geo_coordinate_x', 'GeoCoordinateX', 'VARCHAR', false, 255, null);
         $this->addColumn('geo_coordinate_y', 'GeoCoordinateY', 'VARCHAR', false, 255, null);
         $this->addColumn('distance_camping', 'DistanceCamping', 'VARCHAR', false, 255, null);
@@ -88,7 +92,7 @@ class PointInteretTableMap extends TableMap
             'i18n' =>  array (
   'i18n_table' => '%TABLE%_i18n',
   'i18n_phpname' => '%PHPNAME%I18n',
-  'i18n_columns' => 'name,presentation',
+  'i18n_columns' => 'name,presentation,transport,categorie,type, slug',
   'i18n_pk_name' => NULL,
   'locale_column' => 'locale',
   'default_locale' => 'fr',

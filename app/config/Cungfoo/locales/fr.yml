@@ -397,6 +397,14 @@ point_interet.distance.camping: Distance du camping
 point_interet.active: Actif
 point_interet.etablissements: Etablissements
 point_interet.presentation: Présentation
+point_interet.transport: Transport
+point_interet.categorie: Catégorie
+point_interet.type: Type
+point_interet.tel: Tél
+point_interet.fax: Fax
+point_interet.email: Email
+point_interet.website: Site web
+point_interet.slug: Slug
 
 event.crud.create: Création d'un évènement
 event.crud.list: Liste des évènements
@@ -423,6 +431,13 @@ event.distance_camping: Distance du camping
 event.distance.camping: Distance du camping
 event.active: Actif
 event.subtitle: Sous-titre
+event.description: Description
+event.transport: Transport
+event.tel: Tél
+event.fax: Fax
+event.email: Email
+event.website: Site web
+event.slug: Slug
 
 personnage.crud.create: Création d'un personnage
 personnage.crud.list: Liste des personnages

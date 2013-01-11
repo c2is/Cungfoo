@@ -27,12 +27,18 @@ use Cungfoo\Model\EventI18nQuery;
  * @method EventI18nQuery orderByName($order = Criteria::ASC) Order by the name column
  * @method EventI18nQuery orderByStrDate($order = Criteria::ASC) Order by the str_date column
  * @method EventI18nQuery orderBySubtitle($order = Criteria::ASC) Order by the subtitle column
+ * @method EventI18nQuery orderByDescription($order = Criteria::ASC) Order by the description column
+ * @method EventI18nQuery orderByTransport($order = Criteria::ASC) Order by the transport column
+ * @method EventI18nQuery orderBySlug($order = Criteria::ASC) Order by the slug column
  *
  * @method EventI18nQuery groupById() Group by the id column
  * @method EventI18nQuery groupByLocale() Group by the locale column
  * @method EventI18nQuery groupByName() Group by the name column
  * @method EventI18nQuery groupByStrDate() Group by the str_date column
  * @method EventI18nQuery groupBySubtitle() Group by the subtitle column
+ * @method EventI18nQuery groupByDescription() Group by the description column
+ * @method EventI18nQuery groupByTransport() Group by the transport column
+ * @method EventI18nQuery groupBySlug() Group by the slug column
  *
  * @method EventI18nQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method EventI18nQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -50,12 +56,18 @@ use Cungfoo\Model\EventI18nQuery;
  * @method EventI18n findOneByName(string $name) Return the first EventI18n filtered by the name column
  * @method EventI18n findOneByStrDate(string $str_date) Return the first EventI18n filtered by the str_date column
  * @method EventI18n findOneBySubtitle(string $subtitle) Return the first EventI18n filtered by the subtitle column
+ * @method EventI18n findOneByDescription(string $description) Return the first EventI18n filtered by the description column
+ * @method EventI18n findOneByTransport(string $transport) Return the first EventI18n filtered by the transport column
+ * @method EventI18n findOneBySlug(string $slug) Return the first EventI18n filtered by the slug column
  *
  * @method array findById(int $id) Return EventI18n objects filtered by the id column
  * @method array findByLocale(string $locale) Return EventI18n objects filtered by the locale column
  * @method array findByName(string $name) Return EventI18n objects filtered by the name column
  * @method array findByStrDate(string $str_date) Return EventI18n objects filtered by the str_date column
  * @method array findBySubtitle(string $subtitle) Return EventI18n objects filtered by the subtitle column
+ * @method array findByDescription(string $description) Return EventI18n objects filtered by the description column
+ * @method array findByTransport(string $transport) Return EventI18n objects filtered by the transport column
+ * @method array findBySlug(string $slug) Return EventI18n objects filtered by the slug column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -146,7 +158,7 @@ abstract class BaseEventI18nQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `locale`, `name`, `str_date`, `subtitle` FROM `event_i18n` WHERE `id` = :p0 AND `locale` = :p1';
+        $sql = 'SELECT `id`, `locale`, `name`, `str_date`, `subtitle`, `description`, `transport`, `slug` FROM `event_i18n` WHERE `id` = :p0 AND `locale` = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
@@ -390,6 +402,93 @@ abstract class BaseEventI18nQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(EventI18nPeer::SUBTITLE, $subtitle, $comparison);
+    }
+
+    /**
+     * Filter the query on the description column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByDescription('fooValue');   // WHERE description = 'fooValue'
+     * $query->filterByDescription('%fooValue%'); // WHERE description LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $description The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return EventI18nQuery The current query, for fluid interface
+     */
+    public function filterByDescription($description = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($description)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $description)) {
+                $description = str_replace('*', '%', $description);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(EventI18nPeer::DESCRIPTION, $description, $comparison);
+    }
+
+    /**
+     * Filter the query on the transport column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByTransport('fooValue');   // WHERE transport = 'fooValue'
+     * $query->filterByTransport('%fooValue%'); // WHERE transport LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $transport The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return EventI18nQuery The current query, for fluid interface
+     */
+    public function filterByTransport($transport = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($transport)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $transport)) {
+                $transport = str_replace('*', '%', $transport);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(EventI18nPeer::TRANSPORT, $transport, $comparison);
+    }
+
+    /**
+     * Filter the query on the slug column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterBySlug('fooValue');   // WHERE slug = 'fooValue'
+     * $query->filterBySlug('%fooValue%'); // WHERE slug LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $slug The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return EventI18nQuery The current query, for fluid interface
+     */
+    public function filterBySlug($slug = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($slug)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $slug)) {
+                $slug = str_replace('*', '%', $slug);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(EventI18nPeer::SLUG, $slug, $comparison);
     }
 
     /**

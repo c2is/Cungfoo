@@ -2,10 +2,10 @@
 
 /**
  * Data object containing the SQL and PHP code to migrate the database
- * up to version 1355923806.
- * Generated on 2012-12-19 14:28:26 by m.brunot
+ * up to version 1357726000.
+ * Generated on 2012-12-21 12:25:51 by vagrant
  */
-class PropelMigration_1355923806
+class PropelMigration_1357726000
 {
 
     public function preUp($manager)
@@ -42,39 +42,17 @@ class PropelMigration_1355923806
 # It "suspends judgement" for fkey relationships until are tables are set.
 SET FOREIGN_KEY_CHECKS = 0;
 
-DROP TABLE IF EXISTS `demande_annulation`;
-CREATE TABLE `demande_annulation`
-(
-    `id` INTEGER NOT NULL AUTO_INCREMENT,
-    `assure_nom` VARCHAR(255) NOT NULL,
-    `assure_prenom` VARCHAR(255) NOT NULL,
-    `assure_adresse` TEXT NOT NULL,
-    `assure_code_postal` VARCHAR(255) NOT NULL,
-    `assure_ville` VARCHAR(255) NOT NULL,
-    `assure_pays` VARCHAR(255) NOT NULL,
-    `assure_mail` VARCHAR(255) NOT NULL,
-    `assure_telephone` VARCHAR(255) NOT NULL,
-    `camping_id` INTEGER NOT NULL,
-    `camping_num_resa` VARCHAR(255) NOT NULL,
-    `camping_montant_sejour` VARCHAR(255) NOT NULL,
-    `camping_montant_verse` VARCHAR(255) NOT NULL,
-    `sinistre_nature` TINYINT NOT NULL,
-    `sinistre_suite` TINYINT NOT NULL,
-    `sinistre_date` VARCHAR(255) NOT NULL,
-    `sinistre_resume` TEXT NOT NULL,
-    `file_1` VARCHAR(255),
-    `file_2` VARCHAR(255),
-    `file_3` VARCHAR(255),
-    `file_4` VARCHAR(255),
-    `created_at` DATETIME,
-    `updated_at` DATETIME,
-    `active` TINYINT(1) DEFAULT 1,
-    PRIMARY KEY (`id`),
-    INDEX `demande_annulation_FI_1` (`camping_id`),
-    CONSTRAINT `demande_annulation_FK_1`
-        FOREIGN KEY (`camping_id`)
-        REFERENCES `etablissement` (`id`)
-) ENGINE=InnoDB;
+ALTER TABLE `point_interet`
+    ADD `tel` VARCHAR(255) AFTER `city`,
+    ADD `fax` VARCHAR(255) AFTER `tel`,
+    ADD `email` VARCHAR(255) AFTER `fax`,
+    ADD `website` VARCHAR(255) AFTER `email`;
+
+ALTER TABLE `point_interet_i18n`
+    ADD `transport` TEXT AFTER `presentation`,
+    ADD `categorie` VARCHAR(255) AFTER `transport`,
+    ADD `type` VARCHAR(255) AFTER `categorie`,
+    ADD `slug` VARCHAR(255) AFTER `type`;
 
 # This restores the fkey checks, after having unset them earlier
 SET FOREIGN_KEY_CHECKS = 1;
@@ -96,7 +74,21 @@ SET FOREIGN_KEY_CHECKS = 1;
 # It "suspends judgement" for fkey relationships until are tables are set.
 SET FOREIGN_KEY_CHECKS = 0;
 
-DROP TABLE IF EXISTS `demande_annulation`;
+ALTER TABLE `point_interet` DROP `tel`;
+
+ALTER TABLE `point_interet` DROP `fax`;
+
+ALTER TABLE `point_interet` DROP `email`;
+
+ALTER TABLE `point_interet` DROP `website`;
+
+ALTER TABLE `point_interet_i18n` DROP `transport`;
+
+ALTER TABLE `point_interet_i18n` DROP `categorie`;
+
+ALTER TABLE `point_interet_i18n` DROP `type`;
+
+ALTER TABLE `point_interet_i18n` DROP `slug`;
 
 # This restores the fkey checks, after having unset them earlier
 SET FOREIGN_KEY_CHECKS = 1;

@@ -25,6 +25,10 @@ class BasePointInteretListing extends Listing
         $this->addColumn(new Column\TextColumn('address2'));
         $this->addColumn(new Column\TextColumn('zipcode'));
         $this->addColumn(new Column\TextColumn('city'));
+        $this->addColumn(new Column\TextColumn('tel'));
+        $this->addColumn(new Column\TextColumn('fax'));
+        $this->addColumn(new Column\TextColumn('email'));
+        $this->addColumn(new Column\TextColumn('website'));
         $this->addColumn(new Column\TextColumn('geo_coordinate_x'));
         $this->addColumn(new Column\TextColumn('geo_coordinate_y'));
         $this->addColumn(new Column\TextColumn('distance_camping'));

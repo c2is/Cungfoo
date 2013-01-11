@@ -35,33 +35,39 @@
 {% block bottomColumn %}
 
     {# Bloc Activité #}
-    <div class="radiusBox greyC left">
+    <div class="activites radiusBox greyC left clear">
         {% for activite in theme.activites %}
-            <img src="{{ asset(activite.vignette) }}" alt="{{ activite.name }}" class="boxborder left">
-            <div class="details">
-                <h3>{{ activite.name }}</h3>
-                <span>{{ activite.description }}</span>
+            <div class="miniEncart clear">
+                <img src="{{ asset(activite.vignette) }}" alt="{{ activite.name }}" class="boxborder left">
+                <div class="details">
+                    <h3>{{ activite.name }}</h3>
+                    <span>{{ activite.description }}</span>
+                </div>
             </div>
         {% endfor %}
         {% for baignade in theme.baignades %}
-            <img src="{{ asset(baignade.vignette) }}" alt="{{ baignade.name }}" class="boxborder left">
-            <div class="details">
-                <h3>{{ baignade.name }}</h3>
-                <span>{{ baignade.description }}</span>
+            <div class="miniEncart clear">
+                <img src="{{ asset(baignade.vignette) }}" alt="{{ baignade.name }}" class="boxborder left">
+                <div class="details">
+                    <h3>{{ baignade.name }}</h3>
+                    <span>{{ baignade.description }}</span>
+                </div>
             </div>
         {% endfor %}
         {% for serviceComplementaire in theme.serviceComplementaires %}
-            <img src="{{ asset(serviceComplementaire.vignette) }}" alt="{{ serviceComplementaire.name }}" class="boxborder left">
-            <div class="details">
-                <h3>{{ serviceComplementaire.name }}</h3>
-                <span>{{ serviceComplementaire.description }}</span>
+            <div class="miniEncart clear">
+                <img src="{{ asset(serviceComplementaire.vignette) }}" alt="{{ serviceComplementaire.name }}" class="boxborder left">
+                <div class="details">
+                    <h3>{{ serviceComplementaire.name }}</h3>
+                    <span>{{ serviceComplementaire.description }}</span>
+                </div>
             </div>
         {% endfor %}
         <a href="#_" class="bt link right">Toutes les activités (12)</a>
     </div>
 
     {# Bloc Vous aimerez #}
-    <div class="radiusBox greyC left">
+    <div class="events radiusBox greyC left clear">
         <h3>{{ "fiche.vous_aimerez" | trans }}</h3>
         <h4>{{ "fiche.comme" | trans }}</h4>
         {% for personnage in theme.personnages %}
@@ -92,12 +98,18 @@
 
     {% include 'Bloc/informations.twig' %}
 
-    <div id="assetsBloc" class="clear radiusBox greyC">
+    <div id="themesBloc" class="clear radiusBox greyC">
         <h3>{{ "encart_autres_themes.title" | trans }}</h3>
-        {% for autreTheme in autresTheme %}
-            <img src="{{ autreTheme.imagePath }}" alt="{{ autreTheme.name }}">
-            <span>{{ autreTheme.name }}</span>
-        {% endfor %}
+
+
+            <ul>
+                <li class="themeItem">
+                {% for autreTheme in autresTheme %}
+                    <img src="{{ autreTheme.imagePath }}" alt="{{ autreTheme.name }}">
+                    <span>{{ autreTheme.name }}</span>
+                </li>
+                {% endfor %}
+            </ul>
     </div>
 
 </div>

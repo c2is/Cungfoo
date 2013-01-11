@@ -54,6 +54,12 @@ class GenerateCommand extends BaseCommand
             $this->generateThemeCms($languages, $con);
             $output->writeln(sprintf('<info>%s</info> slug added on <comment>theme</comment> table.', $this->getName()));
 
+            $this->generatePOI($languages, $con);
+            $output->writeln(sprintf('<info>%s</info> slug added on <comment>POI</comment> table.', $this->getName()));
+
+            $this->generateEvent($languages, $con);
+            $output->writeln(sprintf('<info>%s</info> slug added on <comment>Event</comment> table.', $this->getName()));
+
             $this->generateTheme(\Cungfoo\Model\TypeHebergementQuery::create(), $languages, $con);
             $output->writeln(sprintf('<info>%s</info> slug added on <comment>type hebergement</comment> table.', $this->getName()));
 
@@ -115,6 +121,34 @@ class GenerateCommand extends BaseCommand
         {
             $theme
                 ->setSlug($utils->slugify($theme->getName()))
+                ->save($con)
+            ;
+        }
+    }
+
+    protected function generatePOI($languages, \PropelPDO $con)
+    {
+        $utils = new \Cungfoo\Lib\Utils();
+        $pois = \Cungfoo\Model\PointInteretQuery::create()->find($con);
+
+        foreach ($pois as $poi)
+        {
+            $poi
+                ->setSlug($utils->slugify($poi->getName()))
+                ->save($con)
+            ;
+        }
+    }
+
+    protected function generateEvent($languages, \PropelPDO $con)
+    {
+        $utils = new \Cungfoo\Lib\Utils();
+        $events = \Cungfoo\Model\EventQuery::create()->find($con);
+
+        foreach ($events as $event)
+        {
+            $event
+                ->setSlug($utils->slugify($event->getName()))
                 ->save($con)
             ;
         }

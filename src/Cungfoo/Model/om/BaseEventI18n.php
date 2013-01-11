@@ -77,6 +77,24 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
     protected $subtitle;
 
     /**
+     * The value for the description field.
+     * @var        string
+     */
+    protected $description;
+
+    /**
+     * The value for the transport field.
+     * @var        string
+     */
+    protected $transport;
+
+    /**
+     * The value for the slug field.
+     * @var        string
+     */
+    protected $slug;
+
+    /**
      * @var        Event
      */
     protected $aEvent;
@@ -164,6 +182,36 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
     public function getSubtitle()
     {
         return $this->subtitle;
+    }
+
+    /**
+     * Get the [description] column value.
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Get the [transport] column value.
+     *
+     * @return string
+     */
+    public function getTransport()
+    {
+        return $this->transport;
+    }
+
+    /**
+     * Get the [slug] column value.
+     *
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
     }
 
     /**
@@ -276,6 +324,69 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
     } // setSubtitle()
 
     /**
+     * Set the value of [description] column.
+     *
+     * @param string $v new value
+     * @return EventI18n The current object (for fluent API support)
+     */
+    public function setDescription($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->description !== $v) {
+            $this->description = $v;
+            $this->modifiedColumns[] = EventI18nPeer::DESCRIPTION;
+        }
+
+
+        return $this;
+    } // setDescription()
+
+    /**
+     * Set the value of [transport] column.
+     *
+     * @param string $v new value
+     * @return EventI18n The current object (for fluent API support)
+     */
+    public function setTransport($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->transport !== $v) {
+            $this->transport = $v;
+            $this->modifiedColumns[] = EventI18nPeer::TRANSPORT;
+        }
+
+
+        return $this;
+    } // setTransport()
+
+    /**
+     * Set the value of [slug] column.
+     *
+     * @param string $v new value
+     * @return EventI18n The current object (for fluent API support)
+     */
+    public function setSlug($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->slug !== $v) {
+            $this->slug = $v;
+            $this->modifiedColumns[] = EventI18nPeer::SLUG;
+        }
+
+
+        return $this;
+    } // setSlug()
+
+    /**
      * Indicates whether the columns in this object are only set to default values.
      *
      * This method can be used in conjunction with isModified() to indicate whether an object is both
@@ -316,6 +427,9 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
             $this->name = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
             $this->str_date = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
             $this->subtitle = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
+            $this->description = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
+            $this->transport = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
+            $this->slug = ($row[$startcol + 7] !== null) ? (string) $row[$startcol + 7] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -324,7 +438,7 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 5; // 5 = EventI18nPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 8; // 8 = EventI18nPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating EventI18n object", $e);
@@ -563,6 +677,15 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(EventI18nPeer::SUBTITLE)) {
             $modifiedColumns[':p' . $index++]  = '`subtitle`';
         }
+        if ($this->isColumnModified(EventI18nPeer::DESCRIPTION)) {
+            $modifiedColumns[':p' . $index++]  = '`description`';
+        }
+        if ($this->isColumnModified(EventI18nPeer::TRANSPORT)) {
+            $modifiedColumns[':p' . $index++]  = '`transport`';
+        }
+        if ($this->isColumnModified(EventI18nPeer::SLUG)) {
+            $modifiedColumns[':p' . $index++]  = '`slug`';
+        }
 
         $sql = sprintf(
             'INSERT INTO `event_i18n` (%s) VALUES (%s)',
@@ -588,6 +711,15 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
                         break;
                     case '`subtitle`':
                         $stmt->bindValue($identifier, $this->subtitle, PDO::PARAM_STR);
+                        break;
+                    case '`description`':
+                        $stmt->bindValue($identifier, $this->description, PDO::PARAM_STR);
+                        break;
+                    case '`transport`':
+                        $stmt->bindValue($identifier, $this->transport, PDO::PARAM_STR);
+                        break;
+                    case '`slug`':
+                        $stmt->bindValue($identifier, $this->slug, PDO::PARAM_STR);
                         break;
                 }
             }
@@ -743,6 +875,15 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
             case 4:
                 return $this->getSubtitle();
                 break;
+            case 5:
+                return $this->getDescription();
+                break;
+            case 6:
+                return $this->getTransport();
+                break;
+            case 7:
+                return $this->getSlug();
+                break;
             default:
                 return null;
                 break;
@@ -777,6 +918,9 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
             $keys[2] => $this->getName(),
             $keys[3] => $this->getStrDate(),
             $keys[4] => $this->getSubtitle(),
+            $keys[5] => $this->getDescription(),
+            $keys[6] => $this->getTransport(),
+            $keys[7] => $this->getSlug(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aEvent) {
@@ -831,6 +975,15 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
             case 4:
                 $this->setSubtitle($value);
                 break;
+            case 5:
+                $this->setDescription($value);
+                break;
+            case 6:
+                $this->setTransport($value);
+                break;
+            case 7:
+                $this->setSlug($value);
+                break;
         } // switch()
     }
 
@@ -860,6 +1013,9 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
         if (array_key_exists($keys[2], $arr)) $this->setName($arr[$keys[2]]);
         if (array_key_exists($keys[3], $arr)) $this->setStrDate($arr[$keys[3]]);
         if (array_key_exists($keys[4], $arr)) $this->setSubtitle($arr[$keys[4]]);
+        if (array_key_exists($keys[5], $arr)) $this->setDescription($arr[$keys[5]]);
+        if (array_key_exists($keys[6], $arr)) $this->setTransport($arr[$keys[6]]);
+        if (array_key_exists($keys[7], $arr)) $this->setSlug($arr[$keys[7]]);
     }
 
     /**
@@ -876,6 +1032,9 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(EventI18nPeer::NAME)) $criteria->add(EventI18nPeer::NAME, $this->name);
         if ($this->isColumnModified(EventI18nPeer::STR_DATE)) $criteria->add(EventI18nPeer::STR_DATE, $this->str_date);
         if ($this->isColumnModified(EventI18nPeer::SUBTITLE)) $criteria->add(EventI18nPeer::SUBTITLE, $this->subtitle);
+        if ($this->isColumnModified(EventI18nPeer::DESCRIPTION)) $criteria->add(EventI18nPeer::DESCRIPTION, $this->description);
+        if ($this->isColumnModified(EventI18nPeer::TRANSPORT)) $criteria->add(EventI18nPeer::TRANSPORT, $this->transport);
+        if ($this->isColumnModified(EventI18nPeer::SLUG)) $criteria->add(EventI18nPeer::SLUG, $this->slug);
 
         return $criteria;
     }
@@ -951,6 +1110,9 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
         $copyObj->setName($this->getName());
         $copyObj->setStrDate($this->getStrDate());
         $copyObj->setSubtitle($this->getSubtitle());
+        $copyObj->setDescription($this->getDescription());
+        $copyObj->setTransport($this->getTransport());
+        $copyObj->setSlug($this->getSlug());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -1070,6 +1232,9 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
         $this->name = null;
         $this->str_date = null;
         $this->subtitle = null;
+        $this->description = null;
+        $this->transport = null;
+        $this->slug = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();

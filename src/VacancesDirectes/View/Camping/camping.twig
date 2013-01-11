@@ -180,7 +180,8 @@
             {{ "fiche.type_terrasse" | trans }} {{ hebergement.typeTerrasse | trans }}</strong>#}
             <p>
             {% if hebergement.capaciteHebergement %}<strong>{{ "fiche.nombre_personnes" | trans }}</strong> {{ hebergement.capaciteHebergement | trans | nl2br }}{% endif %}
-            {% if hebergement.dimensions %}{{ hebergement.dimensions | trans }}{% endif %}
+            {% if hebergement.dimensions %}{{ hebergement.dimensions | trans }}{% endif %}<br>
+            {% if hebergement.remarque2 %}{{ hebergement.remarque2 | trans }}{% endif %}
             </p>
             <br />
             <p class="clearboth">{{ hebergement.presentation | trans | nl2br }}</p>

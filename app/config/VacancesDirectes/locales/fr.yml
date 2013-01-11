@@ -13,6 +13,8 @@ seo:
         theme: "%theme%"
         bonPlan: "Camping %bonPlan%, location mobil-homes %bonPlan%"
         topCamping: "Top camping France, top destination vacances"
+        poi: "Visiter %poi% : %ville%"
+        event: "%event% : %ville%"
         location:
             list:
                 categorie: "Location camping %type% France, Italie, Espagne"
@@ -31,6 +33,8 @@ seo:
         theme: "%theme%"
         bonPlan: "Découvrez toutes les offres de locations de mobil homes en camping pour le %bonPlan% proposées par Vacances directes et réserver en ligne."
         topCamping: "Découvrez notre top 10 des destinations pour des vacances en campings réussies avec Vacances Directes, le spécialiste de la location de mobil-home."
+        poi: "%poi% à %ville%, venez visiter ce lieu et passez vos vacances dans nos campings à proximité avec Vacances Directes."
+        event: "%event% à %ville%. Ne rater pas cet événement et passez vos vacances dans nos campings à proximité avec Vacances Directes."
         location:
             list:
                 categorie: "Location de %type% dans de nombreux campings de qualité en France, en Espagne et en Italie avec Vacances Directes."
@@ -636,9 +640,32 @@ demande_annulation:
     lienCGA: "Conditions Générales d'Assurances (CGA)"
     texte2: "Il est dans ce cas impératif de remplir et de valider le présent formulaire dans un délai maximum de 5 jours suivant la date de survenance du sinistre. A défaut de respecter ce délai, l'Assureur se réserve la faculté de vous refuser le bénéfice de l'assurance (cf art.4.1 des CGA - déchéance de garantie)."
     texte3: "En validant le présent formulaire de déclaration de sinistre, vous déclarez que les informations que vous avez saisies dans le formulaire sont exactes et sincères, et reconnaissez que le traitement de votre dossier et l'indemnisation qui vous serait due par l'assureur sont soumis à la communication des pièces et informations complémentaires qui vous seront demandées, conformément à l'article 4.2 des CGA."
+
 offreSpeciales:
     intro: "Profitez de notre promo early booking sur votre séjour en basse saison:\n-10% pour une réservation avant le 31/01/2013\n-5% pour une réservation avant le 28/02/2013"
     texte: "Offre applicable uniquement sur le séjour, non cumulable avec l’ensemble des offres commerciales en cours. Valable pour tout séjour hors périodes du 06/07/2013 au 31/08/2013. Cette offre ne s’applique pas aux destinations suivantes : Coteau de la Marine, Castellas, Aqua Viva, Neptune, Château de Galinée, Domaine de Kermario, Chaponnet, Sandaya Soulac Plage, Ur Onéa, Domaine des Naädes, Cupulatta, Playa Montroig, et autres exceptions éventuelles."
+
+poi:
+    informations_pratiques: "Informations pratiques"
+    acceder_site: "Accéder au site web"
+    tel: "Tél :"
+    fax: "Fax :"
+    email: "Email :"
+    categorie: "Catégorie :"
+    type: "Type :"
+    transport: "Transport :"
+    adresse: "Adresse :"
+
+event:
+    informations_pratiques: "Informations pratiques"
+    acceder_site: "Accéder au site web"
+    tel: "Tél :"
+    fax: "Fax :"
+    email: "Email :"
+    categorie: "Catégorie :"
+    type: "Type :"
+    transport: "Transport :"
+    adresse: "Adresse :"
 
 global:
     search_message: "Nous traitons actuellement votre demande. <br/><br/>Merci de bien vouloir patienter."

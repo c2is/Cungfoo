@@ -54,6 +54,10 @@ class EventTableMap extends TableMap
         $this->addColumn('distance_camping', 'DistanceCamping', 'VARCHAR', false, 255, null);
         $this->addColumn('image', 'Image', 'VARCHAR', false, 255, null);
         $this->addColumn('priority', 'Priority', 'VARCHAR', false, 255, null);
+        $this->addColumn('tel', 'Tel', 'VARCHAR', false, 255, null);
+        $this->addColumn('fax', 'Fax', 'VARCHAR', false, 255, null);
+        $this->addColumn('email', 'Email', 'VARCHAR', false, 255, null);
+        $this->addColumn('website', 'Website', 'VARCHAR', false, 255, null);
         $this->addColumn('created_at', 'CreatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('updated_at', 'UpdatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('active', 'Active', 'BOOLEAN', false, 1, false);
@@ -90,7 +94,7 @@ class EventTableMap extends TableMap
             'i18n' =>  array (
   'i18n_table' => '%TABLE%_i18n',
   'i18n_phpname' => '%PHPNAME%I18n',
-  'i18n_columns' => 'name,str_date,subtitle',
+  'i18n_columns' => 'name, str_date,subtitle, description, transport, slug',
   'i18n_pk_name' => NULL,
   'locale_column' => 'locale',
   'default_locale' => 'fr',

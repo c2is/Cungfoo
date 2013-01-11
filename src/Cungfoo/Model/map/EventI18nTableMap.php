@@ -47,6 +47,9 @@ class EventI18nTableMap extends TableMap
         $this->addColumn('name', 'Name', 'VARCHAR', true, 255, null);
         $this->addColumn('str_date', 'StrDate', 'VARCHAR', false, 255, null);
         $this->addColumn('subtitle', 'Subtitle', 'VARCHAR', false, 255, null);
+        $this->addColumn('description', 'Description', 'LONGVARCHAR', false, null, null);
+        $this->addColumn('transport', 'Transport', 'LONGVARCHAR', false, null, null);
+        $this->addColumn('slug', 'Slug', 'VARCHAR', false, 255, null);
         // validators
     } // initialize()
 
