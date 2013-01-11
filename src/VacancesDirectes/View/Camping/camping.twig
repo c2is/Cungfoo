@@ -297,6 +297,8 @@
                     {{ poi.address2 }}<br>
                 <span>{{ poi.zipcode }} {{ poi.city }}</span><br>
                     {{ "fiche.distance_camping" | trans }} {{ (poi.distanceForEtablissement(etab) / 1000) | number_format(1, ',', ' ') }} {{ "fiche.km" | trans }}<br>
+                    <a href="{{ path('poi', {slug: poi.slug}) }}" class="bt sombre left" title="{{ "general.en_savoir_plus" | trans }}">{{ "general.en_savoir_plus" | trans }}</a>
+                </p>
             </div>
         {% endfor %}
     </div>
@@ -313,6 +315,8 @@
                     {{ event.address2 }}<br>
                 <span>{{ event.zipcode }} {{ event.city }}</span><br>
                     {{ "fiche.distance_camping" | trans }} {{ (event.distanceForEtablissement(etab) / 1000) | number_format(1, ',', ' ') }} {{ "fiche.km" | trans }}<br>
+                    <a href="{{ path('event', {slug: event.slug}) }}" class="bt sombre left" title="{{ "general.en_savoir_plus" | trans }}">{{ "general.en_savoir_plus" | trans }}</a>
+                </p>
             </div>
         {% endfor %}
     </div>
