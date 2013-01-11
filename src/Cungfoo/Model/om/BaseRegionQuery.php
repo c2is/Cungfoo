@@ -12,6 +12,8 @@ use \PropelCollection;
 use \PropelException;
 use \PropelObjectCollection;
 use \PropelPDO;
+use Cungfoo\Model\BonPlan;
+use Cungfoo\Model\BonPlanRegion;
 use Cungfoo\Model\Pays;
 use Cungfoo\Model\Region;
 use Cungfoo\Model\RegionI18n;
@@ -61,6 +63,10 @@ use Cungfoo\Model\Ville;
  * @method RegionQuery leftJoinVille($relationAlias = null) Adds a LEFT JOIN clause to the query using the Ville relation
  * @method RegionQuery rightJoinVille($relationAlias = null) Adds a RIGHT JOIN clause to the query using the Ville relation
  * @method RegionQuery innerJoinVille($relationAlias = null) Adds a INNER JOIN clause to the query using the Ville relation
+ *
+ * @method RegionQuery leftJoinBonPlanRegion($relationAlias = null) Adds a LEFT JOIN clause to the query using the BonPlanRegion relation
+ * @method RegionQuery rightJoinBonPlanRegion($relationAlias = null) Adds a RIGHT JOIN clause to the query using the BonPlanRegion relation
+ * @method RegionQuery innerJoinBonPlanRegion($relationAlias = null) Adds a INNER JOIN clause to the query using the BonPlanRegion relation
  *
  * @method RegionQuery leftJoinRegionI18n($relationAlias = null) Adds a LEFT JOIN clause to the query using the RegionI18n relation
  * @method RegionQuery rightJoinRegionI18n($relationAlias = null) Adds a RIGHT JOIN clause to the query using the RegionI18n relation
@@ -820,6 +826,80 @@ abstract class BaseRegionQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query by a related BonPlanRegion object
+     *
+     * @param   BonPlanRegion|PropelObjectCollection $bonPlanRegion  the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   RegionQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByBonPlanRegion($bonPlanRegion, $comparison = null)
+    {
+        if ($bonPlanRegion instanceof BonPlanRegion) {
+            return $this
+                ->addUsingAlias(RegionPeer::ID, $bonPlanRegion->getRegionId(), $comparison);
+        } elseif ($bonPlanRegion instanceof PropelObjectCollection) {
+            return $this
+                ->useBonPlanRegionQuery()
+                ->filterByPrimaryKeys($bonPlanRegion->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByBonPlanRegion() only accepts arguments of type BonPlanRegion or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the BonPlanRegion relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return RegionQuery The current query, for fluid interface
+     */
+    public function joinBonPlanRegion($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('BonPlanRegion');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'BonPlanRegion');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the BonPlanRegion relation BonPlanRegion object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\BonPlanRegionQuery A secondary query class using the current class as primary query
+     */
+    public function useBonPlanRegionQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        return $this
+            ->joinBonPlanRegion($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'BonPlanRegion', '\Cungfoo\Model\BonPlanRegionQuery');
+    }
+
+    /**
      * Filter the query by a related RegionI18n object
      *
      * @param   RegionI18n|PropelObjectCollection $regionI18n  the related object to use as filter
@@ -891,6 +971,23 @@ abstract class BaseRegionQuery extends ModelCriteria
         return $this
             ->joinRegionI18n($relationAlias, $joinType)
             ->useQuery($relationAlias ? $relationAlias : 'RegionI18n', '\Cungfoo\Model\RegionI18nQuery');
+    }
+
+    /**
+     * Filter the query by a related BonPlan object
+     * using the bon_plan_region table as cross reference
+     *
+     * @param   BonPlan $bonPlan the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   RegionQuery The current query, for fluid interface
+     */
+    public function filterByBonPlan($bonPlan, $comparison = Criteria::EQUAL)
+    {
+        return $this
+            ->useBonPlanRegionQuery()
+            ->filterByBonPlan($bonPlan, $comparison)
+            ->endUse();
     }
 
     /**
@@ -975,7 +1072,7 @@ abstract class BaseRegionQuery extends ModelCriteria
         return $this->addAscendingOrderByColumn(RegionPeer::CREATED_AT);
     }
     // active behavior
-
+    
     /**
      * return only active objects
      *
@@ -984,7 +1081,7 @@ abstract class BaseRegionQuery extends ModelCriteria
     public function findActive($con = null)
     {
         $this->filterByActive(true);
-
+    
         return parent::find($con);
     }
 

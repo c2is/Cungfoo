@@ -92,7 +92,7 @@ class EsiController implements ControllerProviderInterface
             $searchParams
                 ->setStartDate(date('Y-m-d', $startDate))
                 ->setNbDays(7)
-                ->addTheme($bonPlanObject->getDestinationsCodes())
+                ->addTheme($bonPlanObject->getRegionsCodes())
                 ->addEtab($bonPlanObject->getEtablissementsCodes())
                 ->setNbAdults($bonPlanObject->getNbAdultes())
                 ->setNbChildren($bonPlanObject->getNbEnfants())

@@ -1065,7 +1065,7 @@ abstract class BasePointInteretQuery extends ModelCriteria
         return $this->addAscendingOrderByColumn(PointInteretPeer::CREATED_AT);
     }
     // active behavior
-
+    
     /**
      * return only active objects
      *
@@ -1074,7 +1074,7 @@ abstract class BasePointInteretQuery extends ModelCriteria
     public function findActive($con = null)
     {
         $this->filterByActive(true);
-
+    
         return parent::find($con);
     }
 

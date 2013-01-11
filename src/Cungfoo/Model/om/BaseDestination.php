@@ -15,10 +15,6 @@ use \PropelDateTime;
 use \PropelException;
 use \PropelObjectCollection;
 use \PropelPDO;
-use Cungfoo\Model\BonPlan;
-use Cungfoo\Model\BonPlanDestination;
-use Cungfoo\Model\BonPlanDestinationQuery;
-use Cungfoo\Model\BonPlanQuery;
 use Cungfoo\Model\Destination;
 use Cungfoo\Model\DestinationI18n;
 use Cungfoo\Model\DestinationI18nQuery;
@@ -95,12 +91,6 @@ abstract class BaseDestination extends BaseObject implements Persistent
     protected $collEtablissementDestinationsPartial;
 
     /**
-     * @var        PropelObjectCollection|BonPlanDestination[] Collection to store aggregation of BonPlanDestination objects.
-     */
-    protected $collBonPlanDestinations;
-    protected $collBonPlanDestinationsPartial;
-
-    /**
      * @var        PropelObjectCollection|DestinationI18n[] Collection to store aggregation of DestinationI18n objects.
      */
     protected $collDestinationI18ns;
@@ -110,11 +100,6 @@ abstract class BaseDestination extends BaseObject implements Persistent
      * @var        PropelObjectCollection|Etablissement[] Collection to store aggregation of Etablissement objects.
      */
     protected $collEtablissements;
-
-    /**
-     * @var        PropelObjectCollection|BonPlan[] Collection to store aggregation of BonPlan objects.
-     */
-    protected $collBonPlans;
 
     /**
      * Flag to prevent endless save loop, if this object is referenced
@@ -154,19 +139,7 @@ abstract class BaseDestination extends BaseObject implements Persistent
      * An array of objects scheduled for deletion.
      * @var		PropelObjectCollection
      */
-    protected $bonPlansScheduledForDeletion = null;
-
-    /**
-     * An array of objects scheduled for deletion.
-     * @var		PropelObjectCollection
-     */
     protected $etablissementDestinationsScheduledForDeletion = null;
-
-    /**
-     * An array of objects scheduled for deletion.
-     * @var		PropelObjectCollection
-     */
-    protected $bonPlanDestinationsScheduledForDeletion = null;
 
     /**
      * An array of objects scheduled for deletion.
@@ -535,12 +508,9 @@ abstract class BaseDestination extends BaseObject implements Persistent
 
             $this->collEtablissementDestinations = null;
 
-            $this->collBonPlanDestinations = null;
-
             $this->collDestinationI18ns = null;
 
             $this->collEtablissements = null;
-            $this->collBonPlans = null;
         } // if (deep)
     }
 
@@ -696,26 +666,6 @@ abstract class BaseDestination extends BaseObject implements Persistent
                 }
             }
 
-            if ($this->bonPlansScheduledForDeletion !== null) {
-                if (!$this->bonPlansScheduledForDeletion->isEmpty()) {
-                    $pks = array();
-                    $pk = $this->getPrimaryKey();
-                    foreach ($this->bonPlansScheduledForDeletion->getPrimaryKeys(false) as $remotePk) {
-                        $pks[] = array($remotePk, $pk);
-                    }
-                    BonPlanDestinationQuery::create()
-                        ->filterByPrimaryKeys($pks)
-                        ->delete($con);
-                    $this->bonPlansScheduledForDeletion = null;
-                }
-
-                foreach ($this->getBonPlans() as $bonPlan) {
-                    if ($bonPlan->isModified()) {
-                        $bonPlan->save($con);
-                    }
-                }
-            }
-
             if ($this->etablissementDestinationsScheduledForDeletion !== null) {
                 if (!$this->etablissementDestinationsScheduledForDeletion->isEmpty()) {
                     EtablissementDestinationQuery::create()
@@ -727,23 +677,6 @@ abstract class BaseDestination extends BaseObject implements Persistent
 
             if ($this->collEtablissementDestinations !== null) {
                 foreach ($this->collEtablissementDestinations as $referrerFK) {
-                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
-                        $affectedRows += $referrerFK->save($con);
-                    }
-                }
-            }
-
-            if ($this->bonPlanDestinationsScheduledForDeletion !== null) {
-                if (!$this->bonPlanDestinationsScheduledForDeletion->isEmpty()) {
-                    BonPlanDestinationQuery::create()
-                        ->filterByPrimaryKeys($this->bonPlanDestinationsScheduledForDeletion->getPrimaryKeys(false))
-                        ->delete($con);
-                    $this->bonPlanDestinationsScheduledForDeletion = null;
-                }
-            }
-
-            if ($this->collBonPlanDestinations !== null) {
-                foreach ($this->collBonPlanDestinations as $referrerFK) {
                     if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
                         $affectedRows += $referrerFK->save($con);
                     }
@@ -941,14 +874,6 @@ abstract class BaseDestination extends BaseObject implements Persistent
                     }
                 }
 
-                if ($this->collBonPlanDestinations !== null) {
-                    foreach ($this->collBonPlanDestinations as $referrerFK) {
-                        if (!$referrerFK->validate($columns)) {
-                            $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
-                        }
-                    }
-                }
-
                 if ($this->collDestinationI18ns !== null) {
                     foreach ($this->collDestinationI18ns as $referrerFK) {
                         if (!$referrerFK->validate($columns)) {
@@ -1045,9 +970,6 @@ abstract class BaseDestination extends BaseObject implements Persistent
         if ($includeForeignObjects) {
             if (null !== $this->collEtablissementDestinations) {
                 $result['EtablissementDestinations'] = $this->collEtablissementDestinations->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
-            }
-            if (null !== $this->collBonPlanDestinations) {
-                $result['BonPlanDestinations'] = $this->collBonPlanDestinations->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
             if (null !== $this->collDestinationI18ns) {
                 $result['DestinationI18ns'] = $this->collDestinationI18ns->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
@@ -1227,12 +1149,6 @@ abstract class BaseDestination extends BaseObject implements Persistent
                 }
             }
 
-            foreach ($this->getBonPlanDestinations() as $relObj) {
-                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
-                    $copyObj->addBonPlanDestination($relObj->copy($deepCopy));
-                }
-            }
-
             foreach ($this->getDestinationI18ns() as $relObj) {
                 if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
                     $copyObj->addDestinationI18n($relObj->copy($deepCopy));
@@ -1302,9 +1218,6 @@ abstract class BaseDestination extends BaseObject implements Persistent
     {
         if ('EtablissementDestination' == $relationName) {
             $this->initEtablissementDestinations();
-        }
-        if ('BonPlanDestination' == $relationName) {
-            $this->initBonPlanDestinations();
         }
         if ('DestinationI18n' == $relationName) {
             $this->initDestinationI18ns();
@@ -1549,246 +1462,6 @@ abstract class BaseDestination extends BaseObject implements Persistent
         $query->joinWith('Etablissement', $join_behavior);
 
         return $this->getEtablissementDestinations($query, $con);
-    }
-
-    /**
-     * Clears out the collBonPlanDestinations collection
-     *
-     * This does not modify the database; however, it will remove any associated objects, causing
-     * them to be refetched by subsequent calls to accessor method.
-     *
-     * @return Destination The current object (for fluent API support)
-     * @see        addBonPlanDestinations()
-     */
-    public function clearBonPlanDestinations()
-    {
-        $this->collBonPlanDestinations = null; // important to set this to null since that means it is uninitialized
-        $this->collBonPlanDestinationsPartial = null;
-
-        return $this;
-    }
-
-    /**
-     * reset is the collBonPlanDestinations collection loaded partially
-     *
-     * @return void
-     */
-    public function resetPartialBonPlanDestinations($v = true)
-    {
-        $this->collBonPlanDestinationsPartial = $v;
-    }
-
-    /**
-     * Initializes the collBonPlanDestinations collection.
-     *
-     * By default this just sets the collBonPlanDestinations collection to an empty array (like clearcollBonPlanDestinations());
-     * however, you may wish to override this method in your stub class to provide setting appropriate
-     * to your application -- for example, setting the initial array to the values stored in database.
-     *
-     * @param boolean $overrideExisting If set to true, the method call initializes
-     *                                        the collection even if it is not empty
-     *
-     * @return void
-     */
-    public function initBonPlanDestinations($overrideExisting = true)
-    {
-        if (null !== $this->collBonPlanDestinations && !$overrideExisting) {
-            return;
-        }
-        $this->collBonPlanDestinations = new PropelObjectCollection();
-        $this->collBonPlanDestinations->setModel('BonPlanDestination');
-    }
-
-    /**
-     * Gets an array of BonPlanDestination objects which contain a foreign key that references this object.
-     *
-     * If the $criteria is not null, it is used to always fetch the results from the database.
-     * Otherwise the results are fetched from the database the first time, then cached.
-     * Next time the same method is called without $criteria, the cached collection is returned.
-     * If this Destination is new, it will return
-     * an empty collection or the current collection; the criteria is ignored on a new object.
-     *
-     * @param Criteria $criteria optional Criteria object to narrow the query
-     * @param PropelPDO $con optional connection object
-     * @return PropelObjectCollection|BonPlanDestination[] List of BonPlanDestination objects
-     * @throws PropelException
-     */
-    public function getBonPlanDestinations($criteria = null, PropelPDO $con = null)
-    {
-        $partial = $this->collBonPlanDestinationsPartial && !$this->isNew();
-        if (null === $this->collBonPlanDestinations || null !== $criteria  || $partial) {
-            if ($this->isNew() && null === $this->collBonPlanDestinations) {
-                // return empty collection
-                $this->initBonPlanDestinations();
-            } else {
-                $collBonPlanDestinations = BonPlanDestinationQuery::create(null, $criteria)
-                    ->filterByDestination($this)
-                    ->find($con);
-                if (null !== $criteria) {
-                    if (false !== $this->collBonPlanDestinationsPartial && count($collBonPlanDestinations)) {
-                      $this->initBonPlanDestinations(false);
-
-                      foreach($collBonPlanDestinations as $obj) {
-                        if (false == $this->collBonPlanDestinations->contains($obj)) {
-                          $this->collBonPlanDestinations->append($obj);
-                        }
-                      }
-
-                      $this->collBonPlanDestinationsPartial = true;
-                    }
-
-                    return $collBonPlanDestinations;
-                }
-
-                if($partial && $this->collBonPlanDestinations) {
-                    foreach($this->collBonPlanDestinations as $obj) {
-                        if($obj->isNew()) {
-                            $collBonPlanDestinations[] = $obj;
-                        }
-                    }
-                }
-
-                $this->collBonPlanDestinations = $collBonPlanDestinations;
-                $this->collBonPlanDestinationsPartial = false;
-            }
-        }
-
-        return $this->collBonPlanDestinations;
-    }
-
-    /**
-     * Sets a collection of BonPlanDestination objects related by a one-to-many relationship
-     * to the current object.
-     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
-     * and new objects from the given Propel collection.
-     *
-     * @param PropelCollection $bonPlanDestinations A Propel collection.
-     * @param PropelPDO $con Optional connection object
-     * @return Destination The current object (for fluent API support)
-     */
-    public function setBonPlanDestinations(PropelCollection $bonPlanDestinations, PropelPDO $con = null)
-    {
-        $this->bonPlanDestinationsScheduledForDeletion = $this->getBonPlanDestinations(new Criteria(), $con)->diff($bonPlanDestinations);
-
-        foreach ($this->bonPlanDestinationsScheduledForDeletion as $bonPlanDestinationRemoved) {
-            $bonPlanDestinationRemoved->setDestination(null);
-        }
-
-        $this->collBonPlanDestinations = null;
-        foreach ($bonPlanDestinations as $bonPlanDestination) {
-            $this->addBonPlanDestination($bonPlanDestination);
-        }
-
-        $this->collBonPlanDestinations = $bonPlanDestinations;
-        $this->collBonPlanDestinationsPartial = false;
-
-        return $this;
-    }
-
-    /**
-     * Returns the number of related BonPlanDestination objects.
-     *
-     * @param Criteria $criteria
-     * @param boolean $distinct
-     * @param PropelPDO $con
-     * @return int             Count of related BonPlanDestination objects.
-     * @throws PropelException
-     */
-    public function countBonPlanDestinations(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
-    {
-        $partial = $this->collBonPlanDestinationsPartial && !$this->isNew();
-        if (null === $this->collBonPlanDestinations || null !== $criteria || $partial) {
-            if ($this->isNew() && null === $this->collBonPlanDestinations) {
-                return 0;
-            }
-
-            if($partial && !$criteria) {
-                return count($this->getBonPlanDestinations());
-            }
-            $query = BonPlanDestinationQuery::create(null, $criteria);
-            if ($distinct) {
-                $query->distinct();
-            }
-
-            return $query
-                ->filterByDestination($this)
-                ->count($con);
-        }
-
-        return count($this->collBonPlanDestinations);
-    }
-
-    /**
-     * Method called to associate a BonPlanDestination object to this object
-     * through the BonPlanDestination foreign key attribute.
-     *
-     * @param    BonPlanDestination $l BonPlanDestination
-     * @return Destination The current object (for fluent API support)
-     */
-    public function addBonPlanDestination(BonPlanDestination $l)
-    {
-        if ($this->collBonPlanDestinations === null) {
-            $this->initBonPlanDestinations();
-            $this->collBonPlanDestinationsPartial = true;
-        }
-        if (!in_array($l, $this->collBonPlanDestinations->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
-            $this->doAddBonPlanDestination($l);
-        }
-
-        return $this;
-    }
-
-    /**
-     * @param	BonPlanDestination $bonPlanDestination The bonPlanDestination object to add.
-     */
-    protected function doAddBonPlanDestination($bonPlanDestination)
-    {
-        $this->collBonPlanDestinations[]= $bonPlanDestination;
-        $bonPlanDestination->setDestination($this);
-    }
-
-    /**
-     * @param	BonPlanDestination $bonPlanDestination The bonPlanDestination object to remove.
-     * @return Destination The current object (for fluent API support)
-     */
-    public function removeBonPlanDestination($bonPlanDestination)
-    {
-        if ($this->getBonPlanDestinations()->contains($bonPlanDestination)) {
-            $this->collBonPlanDestinations->remove($this->collBonPlanDestinations->search($bonPlanDestination));
-            if (null === $this->bonPlanDestinationsScheduledForDeletion) {
-                $this->bonPlanDestinationsScheduledForDeletion = clone $this->collBonPlanDestinations;
-                $this->bonPlanDestinationsScheduledForDeletion->clear();
-            }
-            $this->bonPlanDestinationsScheduledForDeletion[]= $bonPlanDestination;
-            $bonPlanDestination->setDestination(null);
-        }
-
-        return $this;
-    }
-
-
-    /**
-     * If this collection has already been initialized with
-     * an identical criteria, it returns the collection.
-     * Otherwise if this Destination is new, it will return
-     * an empty collection; or if this Destination has previously
-     * been saved, it will retrieve related BonPlanDestinations from storage.
-     *
-     * This method is protected by default in order to keep the public
-     * api reasonable.  You can provide public methods for those you
-     * actually need in Destination.
-     *
-     * @param Criteria $criteria optional Criteria object to narrow the query
-     * @param PropelPDO $con optional connection object
-     * @param string $join_behavior optional join type to use (defaults to Criteria::LEFT_JOIN)
-     * @return PropelObjectCollection|BonPlanDestination[] List of BonPlanDestination objects
-     */
-    public function getBonPlanDestinationsJoinBonPlan($criteria = null, $con = null, $join_behavior = Criteria::LEFT_JOIN)
-    {
-        $query = BonPlanDestinationQuery::create(null, $criteria);
-        $query->joinWith('BonPlan', $join_behavior);
-
-        return $this->getBonPlanDestinations($query, $con);
     }
 
     /**
@@ -2188,183 +1861,6 @@ abstract class BaseDestination extends BaseObject implements Persistent
     }
 
     /**
-     * Clears out the collBonPlans collection
-     *
-     * This does not modify the database; however, it will remove any associated objects, causing
-     * them to be refetched by subsequent calls to accessor method.
-     *
-     * @return Destination The current object (for fluent API support)
-     * @see        addBonPlans()
-     */
-    public function clearBonPlans()
-    {
-        $this->collBonPlans = null; // important to set this to null since that means it is uninitialized
-        $this->collBonPlansPartial = null;
-
-        return $this;
-    }
-
-    /**
-     * Initializes the collBonPlans collection.
-     *
-     * By default this just sets the collBonPlans collection to an empty collection (like clearBonPlans());
-     * however, you may wish to override this method in your stub class to provide setting appropriate
-     * to your application -- for example, setting the initial array to the values stored in database.
-     *
-     * @return void
-     */
-    public function initBonPlans()
-    {
-        $this->collBonPlans = new PropelObjectCollection();
-        $this->collBonPlans->setModel('BonPlan');
-    }
-
-    /**
-     * Gets a collection of BonPlan objects related by a many-to-many relationship
-     * to the current object by way of the bon_plan_destination cross-reference table.
-     *
-     * If the $criteria is not null, it is used to always fetch the results from the database.
-     * Otherwise the results are fetched from the database the first time, then cached.
-     * Next time the same method is called without $criteria, the cached collection is returned.
-     * If this Destination is new, it will return
-     * an empty collection or the current collection; the criteria is ignored on a new object.
-     *
-     * @param Criteria $criteria Optional query object to filter the query
-     * @param PropelPDO $con Optional connection object
-     *
-     * @return PropelObjectCollection|BonPlan[] List of BonPlan objects
-     */
-    public function getBonPlans($criteria = null, PropelPDO $con = null)
-    {
-        if (null === $this->collBonPlans || null !== $criteria) {
-            if ($this->isNew() && null === $this->collBonPlans) {
-                // return empty collection
-                $this->initBonPlans();
-            } else {
-                $collBonPlans = BonPlanQuery::create(null, $criteria)
-                    ->filterByDestination($this)
-                    ->find($con);
-                if (null !== $criteria) {
-                    return $collBonPlans;
-                }
-                $this->collBonPlans = $collBonPlans;
-            }
-        }
-
-        return $this->collBonPlans;
-    }
-
-    /**
-     * Sets a collection of BonPlan objects related by a many-to-many relationship
-     * to the current object by way of the bon_plan_destination cross-reference table.
-     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
-     * and new objects from the given Propel collection.
-     *
-     * @param PropelCollection $bonPlans A Propel collection.
-     * @param PropelPDO $con Optional connection object
-     * @return Destination The current object (for fluent API support)
-     */
-    public function setBonPlans(PropelCollection $bonPlans, PropelPDO $con = null)
-    {
-        $this->clearBonPlans();
-        $currentBonPlans = $this->getBonPlans();
-
-        $this->bonPlansScheduledForDeletion = $currentBonPlans->diff($bonPlans);
-
-        foreach ($bonPlans as $bonPlan) {
-            if (!$currentBonPlans->contains($bonPlan)) {
-                $this->doAddBonPlan($bonPlan);
-            }
-        }
-
-        $this->collBonPlans = $bonPlans;
-
-        return $this;
-    }
-
-    /**
-     * Gets the number of BonPlan objects related by a many-to-many relationship
-     * to the current object by way of the bon_plan_destination cross-reference table.
-     *
-     * @param Criteria $criteria Optional query object to filter the query
-     * @param boolean $distinct Set to true to force count distinct
-     * @param PropelPDO $con Optional connection object
-     *
-     * @return int the number of related BonPlan objects
-     */
-    public function countBonPlans($criteria = null, $distinct = false, PropelPDO $con = null)
-    {
-        if (null === $this->collBonPlans || null !== $criteria) {
-            if ($this->isNew() && null === $this->collBonPlans) {
-                return 0;
-            } else {
-                $query = BonPlanQuery::create(null, $criteria);
-                if ($distinct) {
-                    $query->distinct();
-                }
-
-                return $query
-                    ->filterByDestination($this)
-                    ->count($con);
-            }
-        } else {
-            return count($this->collBonPlans);
-        }
-    }
-
-    /**
-     * Associate a BonPlan object to this object
-     * through the bon_plan_destination cross reference table.
-     *
-     * @param  BonPlan $bonPlan The BonPlanDestination object to relate
-     * @return Destination The current object (for fluent API support)
-     */
-    public function addBonPlan(BonPlan $bonPlan)
-    {
-        if ($this->collBonPlans === null) {
-            $this->initBonPlans();
-        }
-        if (!$this->collBonPlans->contains($bonPlan)) { // only add it if the **same** object is not already associated
-            $this->doAddBonPlan($bonPlan);
-
-            $this->collBonPlans[]= $bonPlan;
-        }
-
-        return $this;
-    }
-
-    /**
-     * @param	BonPlan $bonPlan The bonPlan object to add.
-     */
-    protected function doAddBonPlan($bonPlan)
-    {
-        $bonPlanDestination = new BonPlanDestination();
-        $bonPlanDestination->setBonPlan($bonPlan);
-        $this->addBonPlanDestination($bonPlanDestination);
-    }
-
-    /**
-     * Remove a BonPlan object to this object
-     * through the bon_plan_destination cross reference table.
-     *
-     * @param BonPlan $bonPlan The BonPlanDestination object to relate
-     * @return Destination The current object (for fluent API support)
-     */
-    public function removeBonPlan(BonPlan $bonPlan)
-    {
-        if ($this->getBonPlans()->contains($bonPlan)) {
-            $this->collBonPlans->remove($this->collBonPlans->search($bonPlan));
-            if (null === $this->bonPlansScheduledForDeletion) {
-                $this->bonPlansScheduledForDeletion = clone $this->collBonPlans;
-                $this->bonPlansScheduledForDeletion->clear();
-            }
-            $this->bonPlansScheduledForDeletion[]= $bonPlan;
-        }
-
-        return $this;
-    }
-
-    /**
      * Clears the current object and sets all attributes to their default values
      */
     public function clear()
@@ -2400,11 +1896,6 @@ abstract class BaseDestination extends BaseObject implements Persistent
                     $o->clearAllReferences($deep);
                 }
             }
-            if ($this->collBonPlanDestinations) {
-                foreach ($this->collBonPlanDestinations as $o) {
-                    $o->clearAllReferences($deep);
-                }
-            }
             if ($this->collDestinationI18ns) {
                 foreach ($this->collDestinationI18ns as $o) {
                     $o->clearAllReferences($deep);
@@ -2412,11 +1903,6 @@ abstract class BaseDestination extends BaseObject implements Persistent
             }
             if ($this->collEtablissements) {
                 foreach ($this->collEtablissements as $o) {
-                    $o->clearAllReferences($deep);
-                }
-            }
-            if ($this->collBonPlans) {
-                foreach ($this->collBonPlans as $o) {
                     $o->clearAllReferences($deep);
                 }
             }
@@ -2430,10 +1916,6 @@ abstract class BaseDestination extends BaseObject implements Persistent
             $this->collEtablissementDestinations->clearIterator();
         }
         $this->collEtablissementDestinations = null;
-        if ($this->collBonPlanDestinations instanceof PropelCollection) {
-            $this->collBonPlanDestinations->clearIterator();
-        }
-        $this->collBonPlanDestinations = null;
         if ($this->collDestinationI18ns instanceof PropelCollection) {
             $this->collDestinationI18ns->clearIterator();
         }
@@ -2442,10 +1924,6 @@ abstract class BaseDestination extends BaseObject implements Persistent
             $this->collEtablissements->clearIterator();
         }
         $this->collEtablissements = null;
-        if ($this->collBonPlans instanceof PropelCollection) {
-            $this->collBonPlans->clearIterator();
-        }
-        $this->collBonPlans = null;
     }
 
     /**
@@ -2483,7 +1961,7 @@ abstract class BaseDestination extends BaseObject implements Persistent
     }
 
     // active behavior
-
+    
     /**
      * return true is the object is active
      *
@@ -2618,7 +2096,7 @@ abstract class BaseDestination extends BaseObject implements Persistent
     }
 
     // crudable behavior
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con

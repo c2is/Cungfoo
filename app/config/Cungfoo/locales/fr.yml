@@ -222,6 +222,8 @@ menu.dernieres_minutes: Dernières minutes
 menu.vos_vacances: Vos vacances
 menu.idee_weekend: Idées weekend
 menu.theme: Theme CMS
+menu.bon_plan_categorie: Catégories de bons plans
+menu.bon_plan: Bons plans
 
 category_type_hebergement.crud.create: Création d'une catégorie de types hébergements
 category_type_hebergement.crud.list: Liste catégories de types hébergements
@@ -616,3 +618,50 @@ thursday: jeudi
 friday: vendredi
 saturday: samedi
 sunday: dimanche
+
+bon_plan_categorie:
+    crud:
+        list: Liste des catégories de bons plans
+        update: Mettre à jour la catégorie de bons plans
+    id: Identifiant
+    name: Nom
+    active: Active
+    sortable_rank: Ordre
+    bon_plans: Bons plans associés
+    bon_plan_categorieI18ns: Traductions
+    slug: Slug
+    subtitle: Subtitle
+    description: Description
+
+bon_plan:
+    crud:
+        list: Liste des bons plans
+        update: Mettre à jour le bon plan
+    id: Identifiant
+    name: Nom
+    active: Active
+    date_debut: Date de début
+    date_fin: Date de fin
+    prix: Prix
+    prix_barre: Prix barré
+    image_menu: Vignette du menu
+    image_page: Visuel page de détail
+    image_liste: Visuel page de listing
+    active_compteur: Activer le compteur
+    mise_en_avant: Mise en avant (deux colonnes sur la page de listing)
+    push_home: Afficher sur la page d'accueil
+    date_start: Date de début de la recherche de dispo
+    day_start: Jour de début de la recherche de dispo
+    day_range: Nombre de jours de la recherceh de dispo
+    nb_adultes: Nombre d'adultes de la recherche de dispo
+    nb_enfants: Nombre d'enfants de la recherche de dispo
+    period_categories: Périodes de la recherche de dispo
+    bon_plan_categories: Catégories associées à la recherche de dispo
+    etablissements: Campings associés à la recherche de dispo
+    regions: Régions associées à la recherche de dispo
+    bon_planI18ns: Traductions
+    introduction: Introduction
+    slug: Slug
+    description: Description
+    indice: Indice
+    indice_prix: Indice prix
