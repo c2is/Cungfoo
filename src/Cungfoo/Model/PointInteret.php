@@ -34,4 +34,16 @@ class PointInteret extends BasePointInteret
 
         return $distance ? $distance : '0';
     }
+
+    public function getEtablissements($criteria = null, PropelPDO $con = null)
+    {
+        if ($criteria === null)
+        {
+            $criteria = new \Criteria();
+        }
+
+        $criteria->add(EtablissementPeer::ACTIVE, true);
+
+        return parent::getEtablissements($criteria, $con);
+    }
 }

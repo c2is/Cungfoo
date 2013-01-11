@@ -41,8 +41,8 @@ class FicheEventController implements ControllerProviderInterface
             }
 
             $event = \Cungfoo\Model\EventQuery::create()
-                ->joinWithI18n($locale)
                 ->useEventI18nQuery()
+                    ->filterByLocale($locale)
                     ->filterBySlug($slug)
                 ->endUse()
                 ->findOne()

@@ -651,7 +651,7 @@ abstract class BaseCategorieQuery extends ModelCriteria
         return $this->addAscendingOrderByColumn(CategoriePeer::CREATED_AT);
     }
     // active behavior
-    
+
     /**
      * return only active objects
      *
@@ -660,7 +660,7 @@ abstract class BaseCategorieQuery extends ModelCriteria
     public function findActive($con = null)
     {
         $this->filterByActive(true);
-    
+
         return parent::find($con);
     }
 
