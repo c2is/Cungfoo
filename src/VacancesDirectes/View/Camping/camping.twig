@@ -97,50 +97,52 @@
         <p class="tabCampDescTitle"><strong>{{ etab.capacite }} {{ "fiche.emplacements" | trans }} | {{ "fiche.ouvert_du" | trans }} {{ etab.openingDate | date('d/m/Y') }} au {{ etab.closingDate | date('d/m/Y') }}</strong></p>
         <p>{{ etab.description }}</p>
     </div>
-    <div class="temoignFiche bloc gris">
-        {% if personnages | length %}
-        <h3>{{ "fiche.vous_aimerez" | trans }}</h3>
-        <h4>{{ "fiche.comme" | trans }}</h4>
-        <div>
-            {% for personnage in personnages %}
-                <div class="temoignFicheIt fish">
-                    <span class="perso">{{ personnage.prenom | trans }}</span>
-                    <span class="age">{{ personnage.age }} ans</span>
-                    <ul>
-                        {% for avantage in personnage.avantages %}
-                        <li>{{ avantage.name }}</li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            {% endfor %}
+    {% if etab.countPoi != 0 or etab.countActivitesSportives != 0 or etab.countEvenementsCulturels != 0 %}
+        <div class="temoignFiche bloc gris">
+            {% if personnages | length %}
+            <h3>{{ "fiche.vous_aimerez" | trans }}</h3>
+            <h4>{{ "fiche.comme" | trans }}</h4>
+            <div>
+                {% for personnage in personnages %}
+                    <div class="temoignFicheIt fish">
+                        <span class="perso">{{ personnage.prenom | trans }}</span>
+                        <span class="age">{{ personnage.age }} ans</span>
+                        <ul>
+                            {% for avantage in personnage.avantages %}
+                            <li>{{ avantage.name }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endfor %}
+            </div>
+            <hr class="clearboth">
+            {% endif %}
+            <h2>{{ "fiche.les_vacances_a" | trans }} {{ etab.city }}</h2>
+            <dl>
+                <dd class="img"><img src="{{ asset(etab.ville.region.imagePath) }}" width="75"></dd>
+                <dt>{{ "fiche.a_proximite" | trans }}<br> {{ "fiche.nous_avons_liste" | trans }}</dt>
+                <dd class="list">
+                   <ul>
+                       {% if etab.countPoi != 0 %}<li>{{ etab.countPoi }} {{ "fiche.sites_a_visiter" | trans }}</li>{% endif %}
+                       {% if etab.countActivitesSportives != 0 %}<li>{{ etab.countActivitesSportives }} {{ "fiche.activites_sportives" | trans }}</li>{% endif %}
+                       {% if etab.countEvenementsCulturels != 0 %}<li>{{ etab.countEvenementsCulturels }} {{ "fiche.evenements_culturels" | trans }}</li>{% endif %}
+                   </ul>
+                </dd>
+            </dl>
+            {% if etab.eventPrioritaire | length %}
+            <dl>
+                <dt>{{ "fiche.evenement_ne_pas_manquer" | trans }}</dt>
+                <dd class="img"><img src="{{ etab.eventPrioritaire.image }}" /></dd>
+                <dd class="list event">
+                    <strong>{{ etab.eventPrioritaire.name }}<br />
+                    {{ etab.eventPrioritaire.strDate }}</strong> {{ etab.eventPrioritaire.address }}<br />
+                    {{ etab.eventPrioritaire.zipcode }} {{ etab.eventPrioritaire.city }}<br />
+                    {{ "fiche.distance_camping" | trans }} {{ etab.eventPrioritaire.distanceCamping/1000 }} {{ "fiche.km" | trans }}
+                </dd>
+            </dl>
+            {% endif %}
         </div>
-        <hr class="clearboth">
-        {% endif %}
-        <h2>{{ "fiche.les_vacances_a" | trans }} {{ etab.city }}</h2>
-        <dl>
-            <dd class="img"><img src="{{ asset(etab.ville.region.imagePath) }}" width="75"></dd>
-            <dt>{{ "fiche.a_proximite" | trans }}<br> {{ "fiche.nous_avons_liste" | trans }}</dt>
-            <dd class="list">
-               <ul>
-                   <li>{{ etab.countPoi }} {{ "fiche.sites_a_visiter" | trans }}</li>
-                   <li>{{ etab.countActivitesSportives }} {{ "fiche.activites_sportives" | trans }}</li>
-                   <li>{{ etab.countEvenementsCulturels }} {{ "fiche.evenements_culturels" | trans }}</li>
-               </ul>
-            </dd>
-        </dl>
-        {% if etab.eventPrioritaire | length %}
-        <dl>
-            <dt>{{ "fiche.evenement_ne_pas_manquer" | trans }}</dt>
-            <dd class="img"><img src="{{ etab.eventPrioritaire.image }}" /></dd>
-            <dd class="list event">
-                <strong>{{ etab.eventPrioritaire.name }}<br />
-                {{ etab.eventPrioritaire.strDate }}</strong> {{ etab.eventPrioritaire.address }}<br />
-                {{ etab.eventPrioritaire.zipcode }} {{ etab.eventPrioritaire.city }}<br />
-                {{ "fiche.distance_camping" | trans }} {{ etab.eventPrioritaire.distanceCamping/1000 }} {{ "fiche.km" | trans }}
-            </dd>
-        </dl>
-        {% endif %}
-    </div>
+    {% endif %}
     <nav class="paginationTabs clear">
         <button class="bt trans right triggerClick" data-triggerLink="#tabLocations">{{ "fiche.les_locations" | trans }}</button>
     </nav>
