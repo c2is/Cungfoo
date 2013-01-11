@@ -596,10 +596,13 @@ input[disabled],
   }
 }
 
-.ie{
-  #contentContener.detail,
-  #contentContener.editAccount{
-    #reservation .aRoom .anOccupant .occupantFields .control_text{width:148px;}
-    #contentContener.summary #option p .label {width:258px;}
+.ie-lte8{
+  #contentContener{
+    &.detail,
+    &.editAccount{
+      #reservation .aRoom .anOccupant .occupantFields .control_text{width:148px;}
+      #contentContener.summary #option p .label {width:258px;}
+    }
+    &.summary #option .criterias .criteria .label{line-height:13px;}
   }
 }
