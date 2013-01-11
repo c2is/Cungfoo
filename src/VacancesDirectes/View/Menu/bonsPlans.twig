@@ -43,7 +43,7 @@
                         <span class="title">{{ bonPlan.name }}</span>
                         <span class="region">{{ bonPlan.indice }}</span>
                         <span class="period">Du {{ bonPlan.dateDebut|date('d/m/Y') }} au {{ bonPlan.dateFin|date('d/m/Y') }}</span>
-                        <span class="condition"><a href="{{ path('bonsplans', {'slug': bonPlan.slug}) }}" class="price linkBlock">{{ bonPlan.indicePrix }}</a></span>
+                        <span class="condition"><a href="{{ path('bonsplans', {'slug': bonPlan.slug}) }}" class="price linkBlock" onclick="showWaitLayer();">{{ bonPlan.indicePrix }}</a></span>
                     </div>
                 </div>
                 {% else %}
