@@ -7,11 +7,13 @@
             {% endfor %}
         </ul>
     </div>
+    {# TODO
     <div id="dealsSubscribe">
         <div class="title">{{ 'menu_bon_plan.newsletter.title' | trans}}</div>
         <img src="{{ asset('images/vacancesdirectes/dyn/menu/3-bonsplans/newsletter.jpg') }}" alt="" />
         <a href="#" class="bt bleu ib">{{ 'menu_bon_plan.newsletter.link' | trans}}</a>
     </div>
+    #}
     <div id="dealsContent">
     {% for categorie in categories %}
         <div id="bp{{ loop.index }}" class="radiusBox greyC">
