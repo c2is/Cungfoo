@@ -1,0 +1,32 @@
+<div id="locations" class="subnav">
+    <div class="title">Découvrez nos locations</div>
+    <div class="subtitle">Par type</div>
+    <div class="clear">
+        {% for categoryTypeHebergement in categoryTypeHebergements %}
+        <div class="radiusBox2 greyC left bgImg linkParent">
+            <div class="view" style="background-image:url('{{ asset(categoryTypeHebergement.imageMenu) }}')">
+                <div class="stamp grey"><span>{{ categoryTypeHebergement }}</span></div>
+            </div>
+            <a class="stain fushia cover linkBlock" href="{{ path('location_category_type_hebergement', {'categoryTypeHebergement': categoryTypeHebergement.slug}) }}"><span>à partir de<br /><span class="price">{{categoryTypeHebergement.minimumPrice}}<span class="fine">&nbsp;</span>€</span></span></a>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="subtitle">Par type</div>
+    <div class="clear">
+        {% for capacite in capacites %}
+        <div class="radiusBox greyC left bgImg capacity linkParent">
+            <a class="linkBlock" href="{{ path('location_category_type_hebergement', {'categoryTypeHebergement': capacite.slug}) }}">
+                <img class="view" src="{{ asset(capacite.imageMenu) }}" alt="" />
+                <span>{{ capacite.name }}</span>
+            </a>
+        </div>
+        {% endfor %}
+        <div class="radiusBox greyC left bgImg exclusively clear">
+            <div class="stamp fushia"><span>En exclusivité</span></div>
+            <img class="view" src="{{ asset('images/vacancesdirectes/dyn/menu/2-locations/exclusively.png') }}" alt="" />
+            <div class="content left">
+                <span>3 vrais lits dans la deuxième chambre.</span>
+            </div>
+        </div>
+    </div>
+</div>

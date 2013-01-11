@@ -109,7 +109,12 @@
         </fieldset>
     </form>
     #}
+
 </div>
+
+{% if list.type == 1 or app.request.get('_route') == "catalogue" %}
+{{ render(path('search_filter')) }}
+{% endif %}
 
 <script type="text/javascript">
     var fStartDate = '2013/03/01',

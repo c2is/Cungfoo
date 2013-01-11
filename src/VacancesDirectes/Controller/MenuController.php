@@ -10,9 +10,13 @@ use Symfony\Component\HttpFoundation\Request,
     Symfony\Component\HttpKernel\Exception\NotFoundHttpException,
     Symfony\Component\Routing\Route;
 
-use Cungfoo\Model\EtablissementPeer;
+use Cungfoo\Model\EtablissementPeer,
+    Cungfoo\Model\BonPlanCategorieQuery,
+    Cungfoo\Model\BonPlanQuery;
 
 use VacancesDirectes\Form\Type\Destination\AutocompleteType;
+
+use \Criteria;
 
 class MenuController implements ControllerProviderInterface
 {
@@ -63,13 +67,38 @@ class MenuController implements ControllerProviderInterface
 
         $controllers->get('/locations', function () use ($app)
         {
-            return $app['twig']->render('Menu/locations.twig');
+            $categoryTypeHebergements = \Cungfoo\Model\CategoryTypeHebergementQuery::create()
+                ->orderBySortableRank()
+                ->find()
+            ;
+
+            $capacites = \Cungfoo\Model\TypeHebergementCapaciteQuery::create()
+                ->limit(4)
+                ->orderBySortableRank()
+                ->find()
+            ;
+
+            return $app['twig']->render('Menu/locations.twig', array(
+                'categoryTypeHebergements' => $categoryTypeHebergements,
+                'capacites'                => $capacites,
+            ));
         })
         ->bind('menu_locations');
 
         $controllers->get('/bons-plans', function () use ($app)
         {
-            return $app['twig']->render('Menu/bonsPlans.twig');
+            $categories = BonPlanCategorieQuery::create()
+                ->distinct()
+                ->addAscendingOrderByColumn('sortable_rank')
+                ->useBonPlanBonPlanCategorieQuery()
+                    ->filterByBonPlanId(null, Criteria::ISNOTNULL)
+                ->endUse()
+                ->findActive()
+            ;
+
+            return $app['twig']->render('Menu/bonsPlans.twig', array(
+                'categories'    => $categories,
+            ));
         })
         ->bind('menu_bons_plans');
 

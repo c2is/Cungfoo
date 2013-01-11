@@ -40,6 +40,8 @@ class EtablissementListing extends BaseEtablissementListing
         $this->removeColumn('description');
         $this->removeColumn('video_path');
         $this->removeColumn('image_360_path');
+        $this->removeColumn('plan_path');
+        $this->removeColumn('vignette');
     }
 
 } // EtablissementListing

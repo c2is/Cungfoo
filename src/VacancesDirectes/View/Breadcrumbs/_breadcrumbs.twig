@@ -17,7 +17,19 @@
             {% endif %}
         {% endif %}
     {% endif %}
+    {% if breadcrumbsRoute == 'categorie-bonsplans' %}
+    <li>&gt; <a href="{{ path('categorie-bonsplans', {'cat': categorie.slug}) }}"><span itemprop="title">{{ categorie.name }}</span></a></li>
+    {% endif %}
+    {% if breadcrumbsRoute == 'bonsplans' %}
+    <li>&gt; <a href="{{ path('bonsplans', {'slug': bonPlan.slug}) }}"><span itemprop="title">{{ bonPlan.name }}</span></a></li>
+    {% endif %}
     {% if 'edito' in breadcrumbsRoute %}
     <li>&gt; <a href="{{ path('edito_by_slug', {'slug': edito.slug}) }}"><span itemprop="title">{{ edito.name }}</span></a></li>
+    {% endif %}
+    {% if 'location' in breadcrumbsRoute %}
+    <li>&gt; <a href="{{ path('location_category_type_hebergement', {'categoryTypeHebergement': categoryTypeHebergement.slug}) }}"><span itemprop="title">{{ categoryTypeHebergement.name }}</span></a></li>
+        {% if 'location_type_hebergement' == breadcrumbsRoute %}
+        <li>&gt; <a href="{{ path('location_type_hebergement', {'categoryTypeHebergement': categoryTypeHebergement.slug, 'typeHebergement': typeHebergement.slug}) }}"><span itemprop="title">{{ typeHebergement.name }}</span></a></li>
+        {% endif %}
     {% endif %}
 </ol>

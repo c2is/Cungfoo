@@ -45,6 +45,9 @@ class CategoryTypeHebergementI18nTableMap extends TableMap
         $this->addForeignPrimaryKey('id', 'Id', 'INTEGER' , 'category_type_hebergement', 'id', true, null, null);
         $this->addPrimaryKey('locale', 'Locale', 'VARCHAR', true, 5, 'fr');
         $this->addColumn('name', 'Name', 'VARCHAR', true, 255, null);
+        $this->addColumn('slug', 'Slug', 'VARCHAR', false, 255, null);
+        $this->addColumn('accroche', 'Accroche', 'VARCHAR', false, 255, null);
+        $this->addColumn('description', 'Description', 'LONGVARCHAR', false, null, null);
         // validators
     } // initialize()
 
