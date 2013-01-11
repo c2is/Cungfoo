@@ -78,7 +78,7 @@
         {# Le nombre de POIs est limité en PHP en amont, tous les POIs presents ici sont a afficher #}
         <div class="miniEncart clear">
             <img src="{{ poi.image }}"  class="left boxborder" alt="">
-            <span class="h5-like">{{ poi.name }}</span>
+            <a href="{{ path('poi', {slug: poi.slug}) }}" title="{{ poi.name | trans }}"><span class="h5-like">{{ poi.name }}</span></a>
             <p> {{ poi.presentation | truncate(300, true, '...') }}</p>
         </div>
     {% endfor %}
@@ -94,7 +94,7 @@
     {% for event in events %}{# Le nombre d'évènements est limité en PHP en amont, tous les évènements presents ici sont a afficher #}
         <div class="miniEncart clear">
             <img src="{{ event.image }}" class="left boxborder" alt="" width="70" height="70">
-            <span class="titre">{{ event.name | trans }}</span>
+            <a href="{{ path('event', {slug: event.slug}) }}" title="{{ event.name | trans }}"><span class="titre">{{ event.name | trans }}</span></a>
             <p>{{ event.strDate | trans }}</p>
             <p>{{ event.subtitle | trans }}</p>
         </div>
