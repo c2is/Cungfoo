@@ -53,7 +53,7 @@
         {% if topCampings | length %}
         {% for camping in topCampings %}
             {% if loop.index <= 3 %}
-            {% set campingPath = path('destination_camping', {'pays': camping.etablissement.pays.slug, 'region': camping.etablissement.region.slug, 'ville': camping.etablissement.ville.slug, 'camping': camping.etablissement.slug }) %}
+            {% set campingPath = url('destination_camping', {'pays': camping.etablissement.pays.slug, 'region': camping.etablissement.region.slug, 'ville': camping.etablissement.ville.slug, 'camping': camping.etablissement.slug }) %}
             <div class="element clear linkParent">
                 <div class="left">
                     <img class="boxborder" src="{{ asset(camping.etablissement.vignette) }}" width="119" height="86" alt="" />

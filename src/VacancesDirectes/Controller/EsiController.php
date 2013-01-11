@@ -29,6 +29,8 @@ class EsiController implements ControllerProviderInterface
 
         $controllers->match('/early-booking', function (Request $request) use ($app)
         {
+            $listing = null;
+
             try
             {
                 $dernieresMinutes = BonPlanQuery::create()
@@ -36,7 +38,6 @@ class EsiController implements ControllerProviderInterface
                     ->findOne()
                 ;
 
-                $listing = null;
                 if ($dernieresMinutes)
                 {
                     $baseDate  = $dernieresMinutes->getDateStart('U') ?: date('U');
@@ -47,7 +48,7 @@ class EsiController implements ControllerProviderInterface
                     $searchParams
                         ->setStartDate(date('Y-m-d', $startDate))
                         ->setNbDays(7)
-                        ->addTheme($dernieresMinutes->getDestinationsCodes())
+                        ->addTheme($dernieresMinutes->getRegionsCodes())
                         ->addEtab($dernieresMinutes->getEtablissementsCodes())
                         ->setNbAdults(1)
                         ->setMaxResults(10)
@@ -84,47 +85,61 @@ class EsiController implements ControllerProviderInterface
 
         $controllers->match('/bon-plan/{slug}/{limit}', function (Request $request, $slug, $limit) use ($app)
         {
-            $locale = $app['context']->get('language');
+            $listing = null;
 
-            $bonPlanObject = BonPlanQuery::create()
-                ->joinWithI18n($locale)
-                ->useBonPlanI18nQuery()
-                    ->filterBySlug($slug)
-                ->endUse()
-                ->filterByActive(true)
-                ->findOne()
-            ;
-
-            if (!$bonPlanObject)
+            try
             {
-                $app->abort(404, "La page recherchée n'existe pas");
+                $locale = $app['context']->get('language');
+
+                $bonPlanObject = BonPlanQuery::create()
+                    ->joinWithI18n($locale)
+                    ->useBonPlanI18nQuery()
+                        ->filterBySlug($slug)
+                    ->endUse()
+                    ->filterByActive(true)
+                    ->findOne()
+                ;
+
+                if (!$bonPlanObject)
+                {
+                    $app->abort(404, "La page recherchée n'existe pas");
+                }
+
+                $baseDate  = $bonPlanObject->getDateStart('U') ?: date('U');
+                $startDate = strtotime('next ' . $bonPlanObject->getDayStart(), $baseDate);
+                $startDate = strtotime('+' . ($bonPlanObject->getDayRange() - 7) . ' days', $startDate);
+
+                $searchParams = new SearchParams($app);
+                $searchParams
+                    ->setStartDate(date('Y-m-d', $startDate))
+                    ->setNbDays(7)
+                    ->addTheme($bonPlanObject->getRegionsCodes())
+                    ->addEtab($bonPlanObject->getEtablissementsCodes())
+                    ->setNbAdults($bonPlanObject->getNbAdultes())
+                    ->setNbChildren($bonPlanObject->getNbEnfants())
+                    ->setPeriodCategories($bonPlanObject->getPeriodCategories())
+                    ->setMaxResults(10)
+                ;
+
+                $client = new DisponibiliteClient($app['config']->get('root_dir'));
+                $client->addOptions($searchParams->generate());
+
+                $listing = new DispoListing($app);
+                $listing
+                    ->setClient($client)
+                    ->distinct()
+                    ->limit($limit)
+                ;
+            }
+            catch (\Exception $e)
+            {
+                // TODO : gestion d'erreur
             }
 
-            $baseDate  = $bonPlanObject->getDateStart('U') ?: date('U');
-            $startDate = strtotime('next ' . $bonPlanObject->getDayStart(), $baseDate);
-            $startDate = strtotime('+' . ($bonPlanObject->getDayRange() - 7) . ' days', $startDate);
-
-            $searchParams = new SearchParams($app);
-            $searchParams
-                ->setStartDate(date('Y-m-d', $startDate))
-                ->setNbDays(7)
-                ->addTheme($bonPlanObject->getRegionsCodes())
-                ->addEtab($bonPlanObject->getEtablissementsCodes())
-                ->setNbAdults($bonPlanObject->getNbAdultes())
-                ->setNbChildren($bonPlanObject->getNbEnfants())
-                ->setPeriodCategories($bonPlanObject->getPeriodCategories())
-                ->setMaxResults(10)
-            ;
-
-            $client = new DisponibiliteClient($app['config']->get('root_dir'));
-            $client->addOptions($searchParams->generate());
-
-            $listing = new DispoListing($app);
-            $listing
-                ->setClient($client)
-                ->distinct()
-                ->limit($limit)
-            ;
+            $liste = null;
+            if($listing) {
+                $liste = $listing->process();
+            }
 
             $view = $app->renderView('Esi/bonPlan.twig', array(
                 'bon_plan' => $listing->process(),
