@@ -29,37 +29,53 @@ class EsiController implements ControllerProviderInterface
 
         $controllers->match('/early-booking', function (Request $request) use ($app)
         {
-            $dernieresMinutes = BonPlanQuery::create()
-                ->filterByPushHome(true)
-                ->findOne()
-            ;
+            try
+            {
+                $dernieresMinutes = BonPlanQuery::create()
+                    ->filterByPushHome(true)
+                    ->findOne()
+                ;
 
-            $baseDate  = $dernieresMinutes->getDateStart('U') ?: date('U');
-            $startDate = strtotime('next ' . $dernieresMinutes->getDayStart(), $baseDate);
-            $startDate = strtotime('+' . ($dernieresMinutes->getDayRange() - 7) . ' days', $startDate);
+                $listing = null;
+                if ($dernieresMinutes)
+                {
+                    $baseDate  = $dernieresMinutes->getDateStart('U') ?: date('U');
+                    $startDate = strtotime('next ' . $dernieresMinutes->getDayStart(), $baseDate);
+                    $startDate = strtotime('+' . ($dernieresMinutes->getDayRange() - 7) . ' days', $startDate);
 
-            $searchParams = new SearchParams($app);
-            $searchParams
-                ->setStartDate(date('Y-m-d', $startDate))
-                ->setNbDays(7)
-                ->addTheme($dernieresMinutes->getDestinationsCodes())
-                ->addEtab($dernieresMinutes->getEtablissementsCodes())
-                ->setNbAdults(1)
-                ->setMaxResults(10)
-            ;
+                    $searchParams = new SearchParams($app);
+                    $searchParams
+                        ->setStartDate(date('Y-m-d', $startDate))
+                        ->setNbDays(7)
+                        ->addTheme($dernieresMinutes->getDestinationsCodes())
+                        ->addEtab($dernieresMinutes->getEtablissementsCodes())
+                        ->setNbAdults(1)
+                        ->setMaxResults(10)
+                    ;
 
-            $client = new DisponibiliteClient($app['config']->get('root_dir'));
-            $client->addOptions($searchParams->generate());
+                    $client = new DisponibiliteClient($app['config']->get('root_dir'));
+                    $client->addOptions($searchParams->generate());
 
-            $listing = new DispoListing($app);
-            $listing
-                ->setClient($client)
-                ->distinct()
-                ->limit(4)
-            ;
+                    $listing = new DispoListing($app);
+                    $listing
+                        ->setClient($client)
+                        ->distinct()
+                        ->limit(4)
+                    ;
+                }
+            }
+            catch (\Exception $e)
+            {
+                // TODO : gestion d'erreur
+            }
+
+            $liste = null;
+            if($listing) {
+                $liste = $listing->process();
+            }
 
             $view = $app->renderView('Esi/earlyBooking.twig', array(
-                'early_booking' => $listing->process(),
+                'early_booking' => $liste,
             ));
 
             return new Response($view, 200, array('Cache-Control' => 's-maxage=600, public'));

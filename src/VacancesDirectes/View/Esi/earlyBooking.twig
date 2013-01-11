@@ -21,6 +21,8 @@
             </div>
         </div>
         {% endfor %}
+    {% else %}
+    Aucun camping early booking
     {% endfor %}
     <a href="{{ path('bonsplans', {'slug': 'early-booking'}) }}" class="bt link right">{{ "home.early_booking.link" | trans  ({'%number%': early_booking.element|length }) }}</a>
 </div>
