@@ -40,7 +40,6 @@ class EtablissementType extends BaseEtablissementType
             array(
                 array(
                     'title'         => 'etablissement.group.resalys',
-                    'description'   => 'Données resalys',
                     'content'       => array(
                         'code',
                         'name',
@@ -63,7 +62,6 @@ class EtablissementType extends BaseEtablissementType
                 ),
                 array(
                     'title'         => 'etablissement.group.cms',
-                    'description'   => 'Données CMS',
                     'content'       => array(
                         'vignette',
                         'vignette_deleted',

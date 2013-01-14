@@ -3,6 +3,8 @@
 namespace Cungfoo\Form\Type;
 
 use Symfony\Component\Form\FormBuilderInterface,
+    Symfony\Component\Form\FormView,
+    Symfony\Component\Form\FormInterface,
     Symfony\Component\Validator\Constraints as Assert;
 
 use Cungfoo\Form\Type\Base\BaseVilleType;
@@ -29,4 +31,39 @@ class VilleType extends BaseVilleType
         //;
     }
 
+    /**
+     * {@inheritdoc}
+     */
+    public function buildView(FormView $view, FormInterface $form, array $options)
+    {
+        $view->setAttribute('groups',
+            array(
+                array(
+                    'title'         => 'ville.donnees',
+                    'content'       => array(
+                        'code',
+                        'region',
+                        'villeI18ns',
+                    )
+                ),
+                array(
+                    'title'         => 'ville.medias',
+                    'content'       => array(
+                        'image_detail_1',
+                        'image_detail_1_deleted',
+                        'image_detail_2',
+                        'image_detail_2_deleted',
+                    )
+                ),
+                array(
+                    'title'         => 'ville.parametrages',
+                    'content'       => array(
+                        'active',
+                    )
+                ),
+            )
+        );
+    }
+
 } // VilleType
+

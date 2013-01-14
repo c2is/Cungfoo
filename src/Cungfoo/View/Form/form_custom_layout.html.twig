@@ -109,45 +109,9 @@
     {% endif %}
 {% endblock %}
 
-{% block form_widget_compound %}
-{% spaceless %}
-    <div {{ block('widget_container_attributes') }} class="row">
-        {% if form.parent is empty %}
-            {{ form_errors(form) }}
-        {% endif %}
-        {{ block('form_rows') }}
-        {{ form_rest(form) }}
-    </div>
-{% endspaceless %}
-{% endblock form_widget_compound %}
-
-{% block form_rows %}
-{% spaceless %}
-    {% set index = 1 %}
-    {% for child in form %}
-        {% if 'hidden' in child.vars.block_prefixes %}
-            {{ form_row(child) }}
-        {% else %}
-            {% if index is not divisibleby(2) %}
-            <div class="span12">
-            <div class="row">
-            {% endif %}
-            {{ form_row(child) }}
-            {% if index is divisibleby(2) or loop.last %}
-            </div>
-            </div>
-            {% endif %}
-
-            {% set index = index + 1 %}
-        {% endif %}
-
-    {% endfor %}
-{% endspaceless %}
-{% endblock form_rows %}
-
 {% block form_row %}
 {% spaceless %}
-    <div class="span{% if 'I18ns' in form.vars.id and 'I18ns_' not in form.vars.id or 'textarea' in form.vars.block_prefixes %}12{% else %}6{% endif %}">
+    <div class="field-row">
         {{ form_label(form) }}
         {{ form_errors(form) }}
         {{ form_widget(form) }}
