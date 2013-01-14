@@ -338,79 +338,109 @@
     <h3>Activités et sites à visiter</h3>
     <div class="activites clear">
         <div class="miniEncart left clear">
-            <img src="http://pimg.devlint.fr/101x101/ccc/333/*" width="101" height="101" alt="toto" class="left boxborder">
-            <span class="h5-like">Europark</span>
-            <p>Vias Plage<br>
-            <span>34450 Vias Plage</span><br>
-            Distance du camping : 1 km<br>
-            <a href="#_" class="bt sombre left" title="En savoir plus">En savoir plus</a></p>
+            <img src="http://pimg.devlint.fr/101x101/ccc/333/*" width="101" height="101" alt="toto" class="left boxborder" />
+            <div class="details left">
+                <span class="h5-like">Europark</span>
+                <p>
+                    Vias Plage<br>
+                    <span>34450 Vias Plage</span><br />
+                    Distance du camping : 1 km<br />
+                    <a href="#_" class="bt sombre left" title="En savoir plus">En savoir plus</a>
+                </p>
+            </div>
         </div>
         <div class="miniEncart left clear">
-            <img src="http://pimg.devlint.fr/101x101/ccc/333/*" width="101" height="101" alt="toto" class="left boxborder">
-            <span class="h5-like">Europark</span>
-            <p>Vias Plage<br>
-            <span>34450 Vias Plage</span><br>
-            Distance du camping : 1 km<br>
-            <a href="#_" class="bt sombre left" title="En savoir plus">En savoir plus</a></p>
+            <img src="http://pimg.devlint.fr/101x101/ccc/333/*" width="101" height="101" alt="toto" class="left boxborder" />
+            <div class="details left">
+                <span class="h5-like">Europark</span>
+                <p>
+                    Vias Plage<br>
+                    <span>34450 Vias Plage</span><br />
+                    Distance du camping : 1 km<br />
+                    <a href="#_" class="bt sombre left" title="En savoir plus">En savoir plus</a>
+                </p>
+            </div>
         </div>
         <div class="miniEncart left clear">
-            <img src="http://pimg.devlint.fr/101x101/ccc/333/*" width="101" height="101" alt="toto" class="left boxborder">
-            <span class="h5-like">Europark</span>
-            <p>Vias Plage<br>
-            <span>34450 Vias Plage</span><br>
-            Distance du camping : 1 km<br>
-            <a href="#_" class="bt sombre left" title="En savoir plus">En savoir plus</a></p>
+            <img src="http://pimg.devlint.fr/101x101/ccc/333/*" width="101" height="101" alt="toto" class="left boxborder" />
+            <div class="details left">
+                <span class="h5-like">Europark</span>
+                <p>
+                    Vias Plage<br>
+                    <span>34450 Vias Plage</span><br />
+                    Distance du camping : 1 km<br />
+                    <a href="#_" class="bt sombre left" title="En savoir plus">En savoir plus</a>
+                </p>
+            </div>
         </div>
         <div class="miniEncart left clear">
-            <img src="http://pimg.devlint.fr/101x101/ccc/333/*" width="101" height="101" alt="toto" class="left boxborder">
-            <span class="h5-like">Europark</span>
-            <p>Vias Plage<br>
-            <span>34450 Vias Plage</span><br>
-            Distance du camping : 1 km<br>
-            <a href="#_" class="bt sombre left" title="En savoir plus">En savoir plus</a></p>
+            <img src="http://pimg.devlint.fr/101x101/ccc/333/*" width="101" height="101" alt="toto" class="left boxborder" />
+            <div class="details left">
+                <span class="h5-like">Europark</span>
+                <p>
+                    Vias Plage<br>
+                    <span>34450 Vias Plage</span><br />
+                    Distance du camping : 1 km<br />
+                    <a href="#_" class="bt sombre left" title="En savoir plus">En savoir plus</a>
+                </p>
+            </div>
         </div>
-        <a href="#_" class="bt trans right">Voir toutes les activités et sites à visiter (23)</a>
     </div>
 
     <h3>Agenda culturel et sorties</h3>
     <div class="agenda clear">
         <div class="miniEncart left clear">
-            <img src="http://pimg.devlint.fr/101x101/ccc/333/*" width="101" height="101" alt="toto" class="left boxborder">
-            <span class="h5-like">Ben Harper en concert</span>
-            <strong class="date">Le dimanche 29 juillet 2012</strong>
-            <p>promenade du Maréchal-Leclerc<br>
-            <span>34200 Sete</span><br>
-            Distance du camping : 26 km<br>
-            <a href="#_" class="bt sombre left" title="En savoir plus">En savoir plus</a></p>
+            <img src="http://pimg.devlint.fr/101x101/ccc/333/*" width="101" height="101" alt="toto" class="left boxborder" />
+            <div class="details left">
+                <span class="h5-like">Ben Harper en concert</span>
+                <strong class="date">Le dimanche 29 juillet 2012</strong>
+                <p>
+                    Promenade du Maréchal-Leclerc<br>
+                    <span>34200 Sete</span><br>
+                    Distance du camping : 26 km<br>
+                    <a href="#_" class="bt sombre left" title="En savoir plus">En savoir plus</a>
+                </p>
+            </div>
         </div>
         <div class="miniEncart left clear">
-            <img src="http://pimg.devlint.fr/101x101/ccc/333/*" width="101" height="101" alt="toto" class="left boxborder">
-            <span class="h5-like">Ben Harper en concert</span>
-            <strong class="date">Le dimanche 29 juillet 2012</strong>
-            <p>promenade du Maréchal-Leclerc<br>
-            <span>34200 Sete</span><br>
-            Distance du camping : 26 km<br>
-            <a href="#_" class="bt sombre left" title="En savoir plus">En savoir plus</a></p>
+            <img src="http://pimg.devlint.fr/101x101/ccc/333/*" width="101" height="101" alt="toto" class="left boxborder" />
+            <div class="details left">
+                <span class="h5-like">Ben Harper en concert</span>
+                <strong class="date">Le dimanche 29 juillet 2012</strong>
+                <p>
+                    Promenade du Maréchal-Leclerc<br>
+                    <span>34200 Sete</span><br>
+                    Distance du camping : 26 km<br>
+                    <a href="#_" class="bt sombre left" title="En savoir plus">En savoir plus</a>
+                </p>
+            </div>
         </div>
         <div class="miniEncart left clear">
-            <img src="http://pimg.devlint.fr/101x101/ccc/333/*" width="101" height="101" alt="toto" class="left boxborder">
-            <span class="h5-like">Ben Harper en concert</span>
-            <strong class="date">Le dimanche 29 juillet 2012</strong>
-            <p>promenade du Maréchal-Leclerc<br>
-            <span>34200 Sete</span><br>
-            Distance du camping : 26 km<br>
-            <a href="#_" class="bt sombre left" title="En savoir plus">En savoir plus</a></p>
+            <img src="http://pimg.devlint.fr/101x101/ccc/333/*" width="101" height="101" alt="toto" class="left boxborder" />
+            <div class="details left">
+                <span class="h5-like">Ben Harper en concert</span>
+                <strong class="date">Le dimanche 29 juillet 2012</strong>
+                <p>
+                    Promenade du Maréchal-Leclerc<br>
+                    <span>34200 Sete</span><br>
+                    Distance du camping : 26 km<br>
+                    <a href="#_" class="bt sombre left" title="En savoir plus">En savoir plus</a>
+                </p>
+            </div>
         </div>
         <div class="miniEncart left clear">
-            <img src="http://pimg.devlint.fr/101x101/ccc/333/*" width="101" height="101" alt="toto" class="left boxborder">
-            <span class="h5-like">Ben Harper en concert</span>
-            <strong class="date">Le dimanche 29 juillet 2012</strong>
-            <p>promenade du Maréchal-Leclerc<br>
-            <span>34200 Sete</span><br>
-            Distance du camping : 26 km<br>
-            <a href="#_" class="bt sombre left" title="En savoir plus">En savoir plus</a></p>
+            <img src="http://pimg.devlint.fr/101x101/ccc/333/*" width="101" height="101" alt="toto" class="left boxborder" />
+            <div class="details left">
+                <span class="h5-like">Ben Harper en concert</span>
+                <strong class="date">Le dimanche 29 juillet 2012</strong>
+                <p>
+                    Promenade du Maréchal-Leclerc<br>
+                    <span>34200 Sete</span><br>
+                    Distance du camping : 26 km<br>
+                    <a href="#_" class="bt sombre left" title="En savoir plus">En savoir plus</a>
+                </p>
+            </div>
         </div>
-        <a href="#_" class="bt trans right">Voir tous les agenda culturel et sorties (13)</a>
     </div>
 
     <div class="infoDestination bloc sombre">

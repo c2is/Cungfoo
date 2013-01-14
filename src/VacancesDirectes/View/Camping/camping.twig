@@ -293,14 +293,16 @@
     <div class="activites clear">
         {% for poi in sitesAVisiter %}
             <div class="miniEncart left clear">
-                <img src="{{ poi.image }}" width="101" height="101" alt="{{ poi.name }}" class="left boxborder">
-                <span class="h5-like">{{ poi.name }}</span>
-                <p>{{ poi.address }}<br>
-                    {{ poi.address2 }}<br>
-                <span>{{ poi.zipcode }} {{ poi.city }}</span><br>
-                    {{ "fiche.distance_camping" | trans }} {{ (poi.distanceForEtablissement(etab) / 1000) | number_format(1, ',', ' ') }} {{ "fiche.km" | trans }}<br>
-                    <a href="{{ path('poi', {slug: poi.slug}) }}" class="bt sombre left" title="{{ "general.en_savoir_plus" | trans }}">{{ "general.en_savoir_plus" | trans }}</a>
-                </p>
+                <img src="{{ poi.image }}" width="101" height="101" alt="{{ poi.name }}" class="left boxborder" />
+                <div class="details left">
+                    <span class="h5-like">{{ poi.name }}</span>
+                    <p>{{ poi.address }}<br>
+                        {{ poi.address2 }}<br>
+                        <span>{{ poi.zipcode }} {{ poi.city }}</span><br>
+                        {{ "fiche.distance_camping" | trans }} {{ (poi.distanceForEtablissement(etab) / 1000) | number_format(1, ',', ' ') }} {{ "fiche.km" | trans }}<br>
+                        <a href="{{ path('poi', {slug: poi.slug}) }}" class="bt sombre left" title="{{ "general.en_savoir_plus" | trans }}">{{ "general.en_savoir_plus" | trans }}</a>
+                    </p>
+                </div>
             </div>
         {% endfor %}
     </div>
@@ -310,15 +312,17 @@
     <div class="agenda clear">
         {% for event in events %}
             <div class="miniEncart left clear">
-                <img src="{{ event.image }}" width="101" height="101" alt="{{ event.name }}" class="left boxborder">
-                <span class="h5-like">{{ event.name }}</span>
-                <strong class="date">{{ event.strDate }}</strong>
-                <p>{{ event.address }}<br>
-                    {{ event.address2 }}<br>
-                <span>{{ event.zipcode }} {{ event.city }}</span><br>
-                    {{ "fiche.distance_camping" | trans }} {{ (event.distanceForEtablissement(etab) / 1000) | number_format(1, ',', ' ') }} {{ "fiche.km" | trans }}<br>
-                    <a href="{{ path('event', {slug: event.slug}) }}" class="bt sombre left" title="{{ "general.en_savoir_plus" | trans }}">{{ "general.en_savoir_plus" | trans }}</a>
-                </p>
+                <img src="{{ event.image }}" width="101" height="101" alt="{{ event.name }}" class="left boxborder" />
+                <div class="details left">
+                    <span class="h5-like">{{ event.name }}</span>
+                    <strong class="date">{{ event.strDate }}</strong>
+                    <p>{{ event.address }}<br>
+                        {{ event.address2 }}<br>
+                    <span>{{ event.zipcode }} {{ event.city }}</span><br>
+                        {{ "fiche.distance_camping" | trans }} {{ (event.distanceForEtablissement(etab) / 1000) | number_format(1, ',', ' ') }} {{ "fiche.km" | trans }}<br>
+                        <a href="{{ path('event', {slug: event.slug}) }}" class="bt sombre left" title="{{ "general.en_savoir_plus" | trans }}">{{ "general.en_savoir_plus" | trans }}</a>
+                    </p>
+                </div>
             </div>
         {% endfor %}
     </div>

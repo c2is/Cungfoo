@@ -4111,6 +4111,9 @@ body.edito table td {
 }
 /* page fiche */
 /*fiche*/
+h3 {
+  margin-top: 40px;
+}
 #ficheShare {
   position: absolute;
   top: -46px;
@@ -4308,6 +4311,10 @@ body.edito table td {
 .tabCampDiapoOptions label {
   color: #464545;
   margin-left: 5px;
+  padding-bottom: 3px;
+}
+.tabCampDiapoOptions label input[type='radio'] {
+  margin-top: -3px;
 }
 .tabCampDiapoOptions a {
   display: inline-block;
@@ -4331,6 +4338,7 @@ body.edito table td {
   margin: 20px 0;
 }
 .temoignFiche {
+  padding: 20px;
   /*slider*/
 
   /* //slider */
@@ -4349,7 +4357,7 @@ body.edito table td {
 }
 .temoignFiche dl {
   float: left;
-  width: 283px;
+  width: 278px;
 }
 .temoignFiche dl:first-child {
   margin-right: 20px;
@@ -4378,7 +4386,7 @@ body.edito table td {
   display: block;
 }
 .temoignFiche dd.list {
-  width: 193px;
+  width: 188px;
 }
 .temoignFiche dd.list ul {
   list-style-position: inside;
@@ -4388,9 +4396,6 @@ body.edito table td {
 }
 .temoignFiche ul {
   list-style-type: disc;
-}
-.temoignFiche li {
-  margin-bottom: 3px;
 }
 .temoignFicheIt {
   display: table-cell;
@@ -4476,9 +4481,14 @@ body.edito table td {
   margin-bottom: 20px;
   border-bottom: 7px solid #e6e5e5;
 }
-.typLocation > div > .nbPlace,
-.activites .miniEncart > div > .nbPlace,
-.agenda .miniEncart > div > .nbPlace {
+.typLocation .details,
+.activites .miniEncart .details,
+.agenda .miniEncart .details {
+  width: 172px;
+}
+.typLocation .details > div > .nbPlace,
+.activites .miniEncart .details > div > .nbPlace,
+.agenda .miniEncart .details > div > .nbPlace {
   float: left;
   -webkit-border-radius: 4px;
   border-radius: 4px;
@@ -4490,31 +4500,31 @@ body.edito table td {
   font-weight: bold;
   text-align: center;
 }
-.typLocation > div > .nbPlace img,
-.activites .miniEncart > div > .nbPlace img,
-.agenda .miniEncart > div > .nbPlace img {
+.typLocation .details > div > .nbPlace img,
+.activites .miniEncart .details > div > .nbPlace img,
+.agenda .miniEncart .details > div > .nbPlace img {
   display: block;
   margin-bottom: 5px;
 }
-.typLocation > div > strong,
-.activites .miniEncart > div > strong,
-.agenda .miniEncart > div > strong {
+.typLocation .details > div > strong,
+.activites .miniEncart .details > div > strong,
+.agenda .miniEncart .details > div > strong {
   line-height: 1.5;
 }
-.typLocation .h5-like,
-.activites .miniEncart .h5-like,
-.agenda .miniEncart .h5-like {
+.typLocation .details .h5-like,
+.activites .miniEncart .details .h5-like,
+.agenda .miniEncart .details .h5-like {
   margin-bottom: 5px;
 }
-.typLocation > p span,
-.activites .miniEncart > p span,
-.agenda .miniEncart > p span {
+.typLocation .details > p span,
+.activites .miniEncart .details > p span,
+.agenda .miniEncart .details > p span {
   color: #ed145b;
   text-transform: uppercase;
 }
-.typLocation > p a,
-.activites .miniEncart > p a,
-.agenda .miniEncart > p a {
+.typLocation .details > p a,
+.activites .miniEncart .details > p a,
+.agenda .miniEncart .details > p a {
   margin-top: 10px;
 }
 .noResultTyp {
@@ -4626,7 +4636,7 @@ body.edito table td {
 }
 .colSurPlace {
   display: table;
-  margin: 20px 0;
+  margin: 20px 0 40px;
 }
 .colSurPlace dl {
   display: block;
