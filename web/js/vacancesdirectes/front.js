@@ -949,7 +949,8 @@ $(function() {
     if ($('#searchBlocDate').length > 0) {
         countItem();
         $('#searchBlocDate').find('select').sSelect({ddMaxHeight: '300px'});
-        switchSelect();
+        switchPlaceSelect();
+        defineDurationSelect();
         toggleSearchCriteria();
     }
 
@@ -1073,8 +1074,8 @@ function countItem() {
 
 // switch select between CAMPINGS and CITYS
 var $selects;
-function switchSelect(){
-    //console.log("################################## switchSelect()  ##################################");
+function switchPlaceSelect(){
+    //console.log("################################## switchPlaceSelect()  ##################################");
     var $button = $('.switchSelect');
     $selects = $button.parent().siblings(".newListSelected");
     if ($('#SearchDate_isCamping').val() == 1){
@@ -1105,6 +1106,21 @@ function switchSelect(){
         $('#SearchDate_isCamping').val(selectNum);
         return false;
     });
+}
+
+// switch select between LOW SEASON and HIGH SEASON
+var $selects;
+function defineDurationSelect(){
+    //console.log("################################## defineDurationSelect()  ##################################");
+    $selects = $('#SearchDate_selectContainer0').find(".newListSelected");
+    if ($('#SearchDate_duration_isBasseSaison').val() == 1){
+        selectNum = 1;
+        $selects.eq(0).hide();
+        $selects.eq(1).show();
+    }
+    else {
+        $selects.eq(1).hide();
+    }
 }
 
 // toggle search criteria
