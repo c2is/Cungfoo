@@ -19,8 +19,8 @@
     {#<a href="javascript:window.print()" class="icon print" title="Imprimer">Imprimer</a>#}
 </nav>
 
+<a class="bt gris left" href="{{ historyBack ~ "#camping-" ~ etab.slug }}">&lt; Retour</a>
 {% include "Breadcrumbs/_breadcrumbs.twig" %}
-<a class="bt gris left" href="{{ historyBack ~ "#camping-" ~ etab.slug }}">&lt; Retour</a> <br />
 
 
 <div itemscope itemtype="http://schema.org/Place">
@@ -28,6 +28,7 @@
         {{ etab.name }}{{ etab.categorie.stars }}<br />
         <span class="h2-like">{{ "destination.camping_title" | trans({'%ville%': etab.ville.name}) }} {%if hasBaignade %}{{ "seo.title.camping_suffix" | trans }}{% endif %}</span>
     </h1>
+
     <p class="keywordsFiche">
         {% if etab.activites | length %}
             {% for activite in etab.activites %}
@@ -45,8 +46,12 @@
             {% endfor %}
         {% endif %}
     </p>
+
+    <div class="campDesc">
+        <p class="campDescTitle"><strong>{{ etab.capacite }} {{ "fiche.emplacements" | trans }} | {{ "fiche.ouvert_du" | trans }} {{ etab.openingDate | date('d/m/Y') }} au {{ etab.closingDate | date('d/m/Y') }}</strong></p>
+        <p>{{ etab.description }}</p>
+    </div>
     <a class="bt big fushia right goto" href="#frameResalys">Tarifs &amp; disponibilités</a>
-    {#<h2>{{ "fiche.camping" | trans }} {{ etab.city }}</h2>#}
     <div class="geoDataFiche" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
         <span itemprop="addressCountry">{{ etab.country }}</span> |
         <span itemprop="addressRegion">{{ etab.ville.region }}</span> |
@@ -154,11 +159,6 @@
     </div>
     {% endif %}
 
-    <div class="tabCampDesc">
-        <h3>{% if etab.title %}{{ etab.title }}{% else %}{{ etab.name }}{% endif %}</h3>
-        <p class="tabCampDescTitle"><strong>{{ etab.capacite }} {{ "fiche.emplacements" | trans }} | {{ "fiche.ouvert_du" | trans }} {{ etab.openingDate | date('d/m/Y') }} au {{ etab.closingDate | date('d/m/Y') }}</strong></p>
-        <p>{{ etab.description }}</p>
-    </div>
     {% if etab.countPoi != 0 or etab.countActivitesSportives != 0 or etab.countEvenementsCulturels != 0 %}
         <div class="temoignFiche bloc gris">
             {% if personnages | length %}
