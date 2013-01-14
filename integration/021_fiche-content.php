@@ -121,25 +121,27 @@
         <button class="bt trans right triggerClick" data-triggerLink="#tabSurplace">Tous les plus du camping</button>
         <hr class="clearboth">
         <h4>Les vacances à Vias</h4>
-        <dl>
-            <dd class="img"><img src="../web/images/vacancesdirectes/dyn/miniCartes/languedoc-roussillon.png" width="75" height="77" alt="France > Languedoc-Roussillon"></dd>
-            <dt>A proximité<br> nous avons listé :</dt>
-            <dd class="list">
-               <ul>
-                   <li>14 proxMkrs à visiter</li>
-                   <li>24 activités sportives</li>
-                   <li>14 événements culturels</li>
-               </ul>
-            </dd>
-        </dl>
-        <dl>
-            <dt>L'événement à ne pas manquer :</dt>
-            <dd class="img"><img src="http://pimg.devlint.fr/76x75" width="76" height="75" alt="France > Languedoc-Roussillon"></dd>
-            <dd class="list event">
-               <strong>FERIA DE BÉZIERS<br> Du vendredi 10 août 2012<br> au mercredi15 août 2012</strong>
-               avenue Jean-Constans<br> 34500 BEZIERS<br> Distance du camping : 15 km<br>
-            </dd>
-        </dl>
+        <div>
+            <dl>
+                <dd class="img"><img src="../web/images/vacancesdirectes/dyn/miniCartes/languedoc-roussillon.png" width="75" height="77" alt="France > Languedoc-Roussillon"></dd>
+                <dt>A proximité<br> nous avons listé :</dt>
+                <dd class="list">
+                    <ul>
+                        <li>14 proxMkrs à visiter</li>
+                        <li>24 activités sportives</li>
+                        <li>14 événements culturels</li>
+                    </ul>
+                </dd>
+            </dl>
+            <dl>
+                <dt>L'événement à ne pas manquer :</dt>
+                <dd class="img"><img src="http://pimg.devlint.fr/76x75" width="76" height="75" alt="France > Languedoc-Roussillon"></dd>
+                <dd class="list event">
+                    <strong>FERIA DE BÉZIERS<br> Du vendredi 10 août 2012<br> au mercredi15 août 2012</strong>
+                    avenue Jean-Constans<br> 34500 BEZIERS<br> Distance du camping : 15 km<br>
+                </dd>
+            </dl>
+        </div>
         <button class="bt trans right triggerClick" data-triggerLink="#tabProximite">Tout savoir</button>
     </div>
     <nav class="paginationTabs clear">

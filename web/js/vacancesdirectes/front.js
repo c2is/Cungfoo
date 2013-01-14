@@ -949,7 +949,8 @@ $(function() {
     if ($('#searchBlocDate').length > 0) {
         countItem();
         $('#searchBlocDate').find('select').sSelect({ddMaxHeight: '300px'});
-        switchSelect();
+        switchPlaceSelect();
+        defineDurationSelect();
         toggleSearchCriteria();
     }
 
@@ -1072,39 +1073,53 @@ function countItem() {
 }
 
 // switch select between CAMPINGS and CITYS
-var $selects;
-function switchSelect(){
-    //console.log("################################## switchSelect()  ##################################");
+var $placeSelects;
+function switchPlaceSelect(){
+    //console.log("################################## switchPlaceSelect()  ##################################");
     var $button = $('.switchSelect');
-    $selects = $button.parent().siblings(".newListSelected");
+    $placeSelects = $button.parent().siblings(".newListSelected");
     if ($('#SearchDate_isCamping').val() == 1){
         selectNum = 1;
         $('.switchSelect').css({backgroundPosition: "0 -270px"});
-        $selects.eq(0).hide();
-        $selects.eq(1).show();
+        $placeSelects.eq(0).hide();
+        $placeSelects.eq(1).show();
     }
     else {
-        $selects.eq(1).hide();
+        $placeSelects.eq(1).hide();
     }
     $('.switchSelect').live('click', function(){
         selectNum = selectNum == 0 ? 1 : 0;
-        $selects = $button.parent().siblings(".newListSelected");
+        $placeSelects = $button.parent().siblings(".newListSelected");
         var $buttonTitle = selectNum == 0 ? 'Campings' : 'Lieux de séjour';
         $button.children('span').text($buttonTitle);
 //        $button.attr('title',$buttonTitle);
         if(selectNum) {
             $button.css({backgroundPosition: "0 -270px"});
-            $selects.eq(0).hide();
-            $selects.eq(1).show();
+            $placeSelects.eq(0).hide();
+            $placeSelects.eq(1).show();
         }
         else {
             $button.css({backgroundPosition: "0 -54px"});
-            $selects.eq(1).hide();
-            $selects.eq(0).show();
+            $placeSelects.eq(1).hide();
+            $placeSelects.eq(0).show();
         }
         $('#SearchDate_isCamping').val(selectNum);
         return false;
     });
+}
+
+// switch select between LOW SEASON and HIGH SEASON
+function defineDurationSelect(){
+    //console.log("################################## defineDurationSelect()  ##################################");
+    var $durationSelects = $('#SearchDate_selectContainer0').find(".newListSelected");
+    if ($('#SearchDate_duration_isBasseSaison').val() == 1){
+        selectNum = 1;
+        $durationSelects.eq(0).hide();
+        $durationSelects.eq(1).show();
+    }
+    else {
+        $durationSelects.eq(1).hide();
+    }
 }
 
 // toggle search criteria
