@@ -4629,10 +4629,12 @@ body.edito table td {
   margin: 20px 0;
 }
 .colSurPlace dl {
-  display: table-cell;
+  display: block;
   vertical-align: top;
   border-right: 7px solid #e6e5e5;
-  padding: 0 5px 0 22px;
+  padding: 0 20px;
+  float: left;
+  width: 205px;
 }
 .colSurPlace dl:first-child {
   padding-left: 0;

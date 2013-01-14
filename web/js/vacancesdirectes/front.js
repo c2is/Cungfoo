@@ -1599,6 +1599,26 @@ function tabs(tView, load) {
 
 /*
  * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+ *                          FICHE
+ * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+ */
+
+// ajust borders height
+if($('#tabCamp .colSurPlace').length){
+    var maxHeight = 0;
+    $('#tabCamp .colSurPlace').children('dl').each(function(index){
+        if ($(this).height() > maxHeight){
+            maxHeight = $(this).height();
+        }
+        if ($('#tabCamp .colSurPlace').children('dl').length == index+1){
+            $('#tabCamp .colSurPlace').children('dl').css('height',maxHeight);
+        }
+    });
+}
+
+
+/*
+ * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
  *                      GMAP FUNCIONS
  * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
  */
