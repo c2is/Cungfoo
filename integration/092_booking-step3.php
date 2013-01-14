@@ -223,7 +223,7 @@ include('includes/booking-top.php'); ?>
             <!-- Récapitulatif des séjours, boucle sur les réservations-->
 
 
-            <div class="proposal radiusBox fushia">
+            <div class="proposal radiusBox fushia arrowLeft">
                 <p class="proposalDates">du 24/07/2013 au 31/07/2013</p>
                 <p class="proposalEtab">Ajoncs d'Or - Pays de Loire</p>
 

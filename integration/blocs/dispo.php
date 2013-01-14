@@ -1,11 +1,15 @@
-<div id="dispoBloc" class="proposal radiusBox fushia">
-    <p class="proposalDates">du 24/07/2013 au 31/07/2013</p>
-    <p class="proposalType">Ajoncs d'Or - Pays de Loire</p>
+<div id="dispoBloc" class="proposal radiusBox fushia promo arrowLeft">
+    <p class="proposalDates">Du 11/08/2012 au 18/08/2012</p>
+    <p class="proposalType">Vacanciale mer (mobil-home 5 places)</p>
 
-    <div class="total stain cover">
-                    <span>Total
-                        <br>
-                        <span class="price">551,44&nbsp;€</span>
-                    </span>
+    <div class="stain cover">
+        <span>à partir de<br />
+            <span class="price linkBlock">952<span class="fine">&nbsp;</span>€</span>
+            au lieu de <span class="line-through">1075<span class="fine">&nbsp;</span>€</span></span>
+        <!--  PROMO  -->
+        <span class="discount">-20%</span>
+        <!--  FIN / PROMO  -->
     </div>
+    <a class="bt sombre big ib" href="#">Réserver</a>
+
 </div>
