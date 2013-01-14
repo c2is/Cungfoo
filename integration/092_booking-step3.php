@@ -1,7 +1,7 @@
 <?php
 $title = 'Vacances directes | Le mobil-home et vous';
 $page = 'booking';
-include('includes/inc_booking-header.php');
+include('includes/inc_header.php');
 include('includes/booking-top.php'); ?>
 <div id="wrap" class="fixed-width clear">
 
@@ -223,7 +223,7 @@ include('includes/booking-top.php'); ?>
             <!-- Récapitulatif des séjours, boucle sur les réservations-->
 
 
-            <div class="proposal radiusBox fushia">
+            <div class="proposal radiusBox fushia arrowLeft">
                 <p class="proposalDates">du 24/07/2013 au 31/07/2013</p>
                 <p class="proposalEtab">Ajoncs d'Or - Pays de Loire</p>
 

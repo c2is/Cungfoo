@@ -17,7 +17,7 @@
         <div class="details left linkParent">
             <span class="title">Famille nombreuse idées week-end</span>
         </div>
-        <a href="#_" class="stain cover linkBlock"><span>à partir de<br /><span class="price linkBlock">328<span class="fine">&nbsp;</span>€</span><br />au lieu de <span class="line-through">378<span class="fine">&nbsp;</span>€</span></span><span class="discount">-20%</span></a>
+        <a href="#_" class="stain cover linkBlock"><span>à partir de<br /><span class="price linkBlock">328<span class="fine">&nbsp;</span>€</span>au lieu de <span class="line-through">378<span class="fine">&nbsp;</span>€</span></span><span class="discount">-20%</span></a>
     </div>
     <a href="#_" class="bt link right">Plus d'offres</a>
 </div>
