@@ -63,7 +63,6 @@
 <ul class="tabControls clear">
     <li><a href="#tabCamp" class="active">{{ "fiche.le_camping" | trans }}</a></li>
     <li><a href="#tabLocations">{{ "fiche.les_locations" | trans }}</a></li>
-    <li><a href="#tabSurplace">{{ "fiche.sur_place" | trans }}</a></li>
     <li><a href="#tabProximite">{{ "fiche.a_proximite" | trans }}</a></li>
     {# TODO <li><a href="#tabAvis">Avis</a></li> #}
     <li><a href="#tabInfos">{{ "fiche.infos_pratiques" | trans }}</a></li>
@@ -92,6 +91,69 @@
     </form>
 </div>
 <div id="tabCamp" class="tabs">
+
+    <h3>{{ 'fiche.plan_camping' | trans }}</h3>
+    <div>
+        {% if etab.planPath != "" %}<img src="{{ asset(etab.planPath) }}" width="616" alt="{{ etab.name }}">{% endif %}
+        {% if etab.planPath != "" %}<img src="{{ asset('images/vacancesdirectes/common/pict/ficheLegendMap.png') }}" alt="Légende du plan du camping">{% endif %}
+    </div>
+
+    <h3>{{ 'fiche.activite_event' | trans }}</h3>
+    <div class="colSurPlace clearboth">
+        {% if etab.activites | length %}
+        <dl>
+            <dt><span>{{ "fiche.activites" | trans }}</span></dt>
+            <dd class="activites"><ul>
+                {% for activite in etab.activites %}
+                    <li>{% if activite.imagePath != "." %}<img src="{{ asset(activite.imagePath) }}" alt="{{ activite.name }}">{% endif %}<span>{{ activite.name }}</span></span></li>
+                {% endfor %}
+            </ul></dd>
+        </dl>
+        {% endif %}
+        {%if hasBaignade %}
+        <dl>
+            <dt><span>{{ "fiche.baignades.top" | trans }}<br />{{ "fiche.baignades.bottom" | trans }}</span></dt>
+            <dd class="equipements"><ul>
+                {% for baignade in etab.baignades %}
+                    <li><span>{{ baignade.name }}</span></li>
+                {% endfor %}
+            </ul></dd>
+        </dl>
+        {% endif %}
+        {% if etab.serviceComplementaires | length %}
+        <dl>
+            <dt><span>{{ "fiche.services_complementaires" | trans }}</span></dt>
+            <dd class="services"><ul>
+                {% for serviceComplementaire in etab.serviceComplementaires %}
+                    <li>{% if serviceComplementaire.imagePath != "." %}<img src="{{ asset(serviceComplementaire.imagePath) }}" alt="{{ serviceComplementaire.name }}">{% endif %}<span>{{ serviceComplementaire.name }}</span></span></li>
+                {% endfor %}
+            </ul></dd>
+        </dl>
+        {% endif %}
+    </div>
+
+    {% if personnageAleatoire %}
+    <div class="temoignFiche bloc gris">
+        <h3>{{ "fiche.vous_aimerez" | trans }}</h3>
+        <h4>{{ "fiche.comme" | trans }}</h4>
+        <div>
+            <div class="temoignFicheIt fish">
+                <span class="perso">{{ personnageAleatoire.prenom }}</span>
+                <span class="age">{{ personnageAleatoire.age }} ans</span>
+            </div>
+        </div>
+        <div class="slider"><div class="slide">
+            {% for avantage in personnageAleatoire.avantages %}
+                <dl>
+                    <dd><img src="{{ asset(avantage.imagePath) }}" alt="{{ avantage.name }}" class="boxborder"></dd>
+                    <dt>{{ avantage.name }}</dt>
+                    <dd>{{ avantage.description }}</dd>
+                </dl>
+            {% endfor %}
+        </div></div>
+    </div>
+    {% endif %}
+
     <div class="tabCampDesc">
         <h3>{% if etab.title %}{{ etab.title }}{% else %}{{ etab.name }}{% endif %}</h3>
         <p class="tabCampDescTitle"><strong>{{ etab.capacite }} {{ "fiche.emplacements" | trans }} | {{ "fiche.ouvert_du" | trans }} {{ etab.openingDate | date('d/m/Y') }} au {{ etab.closingDate | date('d/m/Y') }}</strong></p>
@@ -196,73 +258,9 @@
 
     <nav class="paginationTabs clear">
         <button class="bt trans left triggerClick" data-triggerLink="#tabCamp">{{ "fiche.le_camping" | trans }}</button>
-        <button class="bt trans right triggerClick" data-triggerLink="#tabSurplace">{{ "fiche.sur_place" | trans }}</button>
     </nav>
 </div>
-<!-- tab Sur place -->
-<div id="tabSurplace" class="tabs">
-    {% if etab.planPath != "" %}<img src="{{ asset(etab.planPath) }}" width="616" alt="{{ etab.name }}">{% endif %}
-    {% if etab.planPath != "" %}<img src="{{ asset('images/vacancesdirectes/common/pict/ficheLegendMap.png') }}" alt="Légende du plan du camping" class="right">{% endif %}
-    <div class="colSurPlace clearboth">
-        {% if etab.activites | length %}
-        <dl>
-            <dt><span>{{ "fiche.activites" | trans }}</span></dt>
-            <dd class="activites"><ul>
-                {% for activite in etab.activites %}
-                    <li>{% if activite.imagePath != "." %}<img src="{{ asset(activite.imagePath) }}" alt="{{ activite.name }}">{% endif %}<span>{{ activite.name }}</span></span></li>
-                {% endfor %}
-            </ul></dd>
-        </dl>
-        {% endif %}
-        {%if hasBaignade %}
-        <dl>
-            <dt><span>{{ "fiche.baignades.top" | trans }}<br />{{ "fiche.baignades.bottom" | trans }}</span></dt>
-            <dd class="equipements"><ul>
-                {% for baignade in etab.baignades %}
-                    <li><span>{{ baignade.name }}</span></li>
-                {% endfor %}
-            </ul></dd>
-        </dl>
-        {% endif %}
-        {% if etab.serviceComplementaires | length %}
-        <dl>
-            <dt><span>{{ "fiche.services_complementaires" | trans }}</span></dt>
-            <dd class="services"><ul>
-                {% for serviceComplementaire in etab.serviceComplementaires %}
-                    <li>{% if serviceComplementaire.imagePath != "." %}<img src="{{ asset(serviceComplementaire.imagePath) }}" alt="{{ serviceComplementaire.name }}">{% endif %}<span>{{ serviceComplementaire.name }}</span></span></li>
-                {% endfor %}
-            </ul></dd>
-        </dl>
-        {% endif %}
-    </div>
 
-    {% if personnageAleatoire %}
-    <div class="temoignFiche bloc gris">
-        <h3>{{ "fiche.vous_aimerez" | trans }}</h3>
-        <h4>{{ "fiche.comme" | trans }}</h4>
-        <div>
-            <div class="temoignFicheIt fish">
-                <span class="perso">{{ personnageAleatoire.prenom }}</span>
-                <span class="age">{{ personnageAleatoire.age }} ans</span>
-            </div>
-        </div>
-        <div class="slider"><div class="slide">
-            {% for avantage in personnageAleatoire.avantages %}
-                <dl>
-                    <dd><img src="{{ asset(avantage.imagePath) }}" alt="{{ avantage.name }}" class="boxborder"></dd>
-                    <dt>{{ avantage.name }}</dt>
-                    <dd>{{ avantage.description }}</dd>
-                </dl>
-            {% endfor %}
-        </div></div>
-    </div>
-    {% endif %}
-
-    <nav class="paginationTabs clear">
-        <button class="bt trans left triggerClick" data-triggerLink="#tabLocations">{{ "fiche.les_locations" | trans }}</button>
-        <button class="bt trans right triggerClick" data-triggerLink="#tabProximite">{{ "fiche.a_proximite" | trans }}</button>
-    </nav>
-</div>
 <div id="tabProximite" class="tabs">
     <div id="proxMap" class="gmap" style="width:616px;height:326px;">
         <script>
@@ -335,7 +333,6 @@
     </div>
 
     <nav class="paginationTabs clear">
-        <button class="bt trans left triggerClick" data-triggerLink="#tabSurplace">{{ "fiche.sur_place" | trans }}</button>
         <button class="bt trans right triggerClick" data-triggerLink="#tabInfos">{{ "fiche.infos_pratiques" | trans }}</button>
     </nav>
 </div>

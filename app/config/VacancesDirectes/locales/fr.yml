@@ -359,6 +359,8 @@ header:
 fiche:
     camping: "Camping"
     situer_carte: "Situer sur la carte"
+    plan_camping: "Plan du camping"
+    activite_event: "Liste des activités et évènements"
     le_camping: "Le camping"
     les_locations: "Les locations"
     sur_place: "Sur place"
