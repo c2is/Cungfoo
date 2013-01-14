@@ -4320,14 +4320,18 @@ body.edito table td {
 #tabCamp .bt {
   margin: 20px 0;
 }
+#tabCamp .tabCampDesc {
+  margin: 35px 0 25px;
+}
 #tabCamp .tabCampDesc h3 {
-  margin-top: 0;
+  margin-bottom: 10px;
 }
 #tabCamp .tabCampDesc .tabCampDescTitle {
   margin-bottom: 2px;
 }
 #tabCamp .tabCampDesc p {
   color: #5f5f5f;
+  font: 13px/15px Arial, Helvetica, sans-serif;
 }
 .temoignFiche {
   /*slider*/
