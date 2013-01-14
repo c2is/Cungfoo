@@ -50,12 +50,12 @@ class DispoListing extends AbstractListing
         );
 
         $etabs = array();
-        if (property_exists($this->client->getData()['getProposals65']['fr'], 'proposal'))
+        if (property_exists($this->client->getData()['getProposals65'][$this->app['context']->get('language')], 'proposal'))
         {
             $loopIndex = 0;
-            if (is_array($this->client->getData()['getProposals65']['fr']->{'proposal'}))
+            if (is_array($this->client->getData()['getProposals65'][$this->app['context']->get('language')]->{'proposal'}))
             {
-                foreach ($this->client->getData()['getProposals65']['fr']->{'proposal'} as $proposal)
+                foreach ($this->client->getData()['getProposals65'][$this->app['context']->get('language')]->{'proposal'} as $proposal)
                 {
                     if ($this->limit !== null && $loopIndex >= $this->limit)
                     {
@@ -67,7 +67,7 @@ class DispoListing extends AbstractListing
             }
             else
             {
-                $results = $this->addElement($this->client->getData()['getProposals65']['fr']->{'proposal'}, $results, $loopIndex);
+                $results = $this->addElement($this->client->getData()['getProposals65'][$this->app['context']->get('language')]->{'proposal'}, $results, $loopIndex);
             }
         }
 
