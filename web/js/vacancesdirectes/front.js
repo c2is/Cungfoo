@@ -299,7 +299,14 @@ $(function() {
                         $('#destinations').hide();
                     }
                 }
-
+                else  if ($(this).hasClass('national')){
+                    var numRegions = $('#destinationsCountry .national .region').length;
+                    var penultimateRegion = numRegions - 2;
+                    console.log(numRegions);
+                    $('#destinationsCountry .national .region').eq(penultimateRegion).filter(':even').children('ul').css({
+                        border: "none"
+                    });
+                }
             });
         }
 

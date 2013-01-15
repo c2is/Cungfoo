@@ -1710,15 +1710,6 @@ footer {
   margin-top: 15px;
   padding-right: 0;
 }
-#nav .tab .subnav#destinations #destinationsCountry .radiusBox2.national .regions:after {
-  content: "";
-  width: 100%;
-  height: 7px;
-  background-color: #ffffff;
-  position: absolute;
-  bottom: 15px;
-  left: 0;
-}
 #nav .tab .subnav#destinations #destinationsCountry .radiusBox2.national .regions .region {
   width: 274px;
   margin-right: 20px;
@@ -2035,6 +2026,9 @@ footer {
 }
 #nav .tab .subnav#weekends .radiusBox .title {
   color: #f58220;
+}
+#nav .tab:nth-child(2) .subnav {
+  display: block !important;
 }
 .js-true #nav .tab.hover,
 .js-true #nav .tab.current {

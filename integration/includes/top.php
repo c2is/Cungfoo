@@ -12,7 +12,7 @@
                                 <img class="bg" src="http://ipsumimage.appspot.com/618x90,ff7700?l=France|(618x90)&s=20&f=ffffff" alt="" />
                                 <div class="stamp grey"><span>France</span></div>
                             </div>
-                            <div class="regions">
+                            <div class="regions clear">
                                 <div class="region">
                                     <div class="title">Destination Méditerranée</div>
                                     <ul>
