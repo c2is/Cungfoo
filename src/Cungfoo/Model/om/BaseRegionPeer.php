@@ -9,6 +9,7 @@ use \PDOStatement;
 use \Propel;
 use \PropelException;
 use \PropelPDO;
+use Cungfoo\Model\DestinationPeer;
 use Cungfoo\Model\PaysPeer;
 use Cungfoo\Model\Region;
 use Cungfoo\Model\RegionI18nPeer;
@@ -39,13 +40,13 @@ abstract class BaseRegionPeer
     const TM_CLASS = 'RegionTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 12;
+    const NUM_COLUMNS = 13;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 12;
+    const NUM_HYDRATE_COLUMNS = 13;
 
     /** the column name for the id field */
     const ID = 'region.id';
@@ -64,6 +65,9 @@ abstract class BaseRegionPeer
 
     /** the column name for the pays_id field */
     const PAYS_ID = 'region.pays_id';
+
+    /** the column name for the destination_id field */
+    const DESTINATION_ID = 'region.destination_id';
 
     /** the column name for the mea_home field */
     const MEA_HOME = 'region.mea_home';
@@ -109,12 +113,12 @@ abstract class BaseRegionPeer
      * e.g. RegionPeer::$fieldNames[RegionPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'ImagePath', 'ImageEncartPath', 'ImageEncartPetitePath', 'PaysId', 'MeaHome', 'ImageDetail1', 'ImageDetail2', 'CreatedAt', 'UpdatedAt', 'Active', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'imagePath', 'imageEncartPath', 'imageEncartPetitePath', 'paysId', 'meaHome', 'imageDetail1', 'imageDetail2', 'createdAt', 'updatedAt', 'active', ),
-        BasePeer::TYPE_COLNAME => array (RegionPeer::ID, RegionPeer::CODE, RegionPeer::IMAGE_PATH, RegionPeer::IMAGE_ENCART_PATH, RegionPeer::IMAGE_ENCART_PETITE_PATH, RegionPeer::PAYS_ID, RegionPeer::MEA_HOME, RegionPeer::IMAGE_DETAIL_1, RegionPeer::IMAGE_DETAIL_2, RegionPeer::CREATED_AT, RegionPeer::UPDATED_AT, RegionPeer::ACTIVE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'IMAGE_PATH', 'IMAGE_ENCART_PATH', 'IMAGE_ENCART_PETITE_PATH', 'PAYS_ID', 'MEA_HOME', 'IMAGE_DETAIL_1', 'IMAGE_DETAIL_2', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'image_path', 'image_encart_path', 'image_encart_petite_path', 'pays_id', 'mea_home', 'image_detail_1', 'image_detail_2', 'created_at', 'updated_at', 'active', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'ImagePath', 'ImageEncartPath', 'ImageEncartPetitePath', 'PaysId', 'DestinationId', 'MeaHome', 'ImageDetail1', 'ImageDetail2', 'CreatedAt', 'UpdatedAt', 'Active', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'imagePath', 'imageEncartPath', 'imageEncartPetitePath', 'paysId', 'destinationId', 'meaHome', 'imageDetail1', 'imageDetail2', 'createdAt', 'updatedAt', 'active', ),
+        BasePeer::TYPE_COLNAME => array (RegionPeer::ID, RegionPeer::CODE, RegionPeer::IMAGE_PATH, RegionPeer::IMAGE_ENCART_PATH, RegionPeer::IMAGE_ENCART_PETITE_PATH, RegionPeer::PAYS_ID, RegionPeer::DESTINATION_ID, RegionPeer::MEA_HOME, RegionPeer::IMAGE_DETAIL_1, RegionPeer::IMAGE_DETAIL_2, RegionPeer::CREATED_AT, RegionPeer::UPDATED_AT, RegionPeer::ACTIVE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'IMAGE_PATH', 'IMAGE_ENCART_PATH', 'IMAGE_ENCART_PETITE_PATH', 'PAYS_ID', 'DESTINATION_ID', 'MEA_HOME', 'IMAGE_DETAIL_1', 'IMAGE_DETAIL_2', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'image_path', 'image_encart_path', 'image_encart_petite_path', 'pays_id', 'destination_id', 'mea_home', 'image_detail_1', 'image_detail_2', 'created_at', 'updated_at', 'active', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, )
     );
 
     /**
@@ -124,12 +128,12 @@ abstract class BaseRegionPeer
      * e.g. RegionPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'ImagePath' => 2, 'ImageEncartPath' => 3, 'ImageEncartPetitePath' => 4, 'PaysId' => 5, 'MeaHome' => 6, 'ImageDetail1' => 7, 'ImageDetail2' => 8, 'CreatedAt' => 9, 'UpdatedAt' => 10, 'Active' => 11, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'imagePath' => 2, 'imageEncartPath' => 3, 'imageEncartPetitePath' => 4, 'paysId' => 5, 'meaHome' => 6, 'imageDetail1' => 7, 'imageDetail2' => 8, 'createdAt' => 9, 'updatedAt' => 10, 'active' => 11, ),
-        BasePeer::TYPE_COLNAME => array (RegionPeer::ID => 0, RegionPeer::CODE => 1, RegionPeer::IMAGE_PATH => 2, RegionPeer::IMAGE_ENCART_PATH => 3, RegionPeer::IMAGE_ENCART_PETITE_PATH => 4, RegionPeer::PAYS_ID => 5, RegionPeer::MEA_HOME => 6, RegionPeer::IMAGE_DETAIL_1 => 7, RegionPeer::IMAGE_DETAIL_2 => 8, RegionPeer::CREATED_AT => 9, RegionPeer::UPDATED_AT => 10, RegionPeer::ACTIVE => 11, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'IMAGE_PATH' => 2, 'IMAGE_ENCART_PATH' => 3, 'IMAGE_ENCART_PETITE_PATH' => 4, 'PAYS_ID' => 5, 'MEA_HOME' => 6, 'IMAGE_DETAIL_1' => 7, 'IMAGE_DETAIL_2' => 8, 'CREATED_AT' => 9, 'UPDATED_AT' => 10, 'ACTIVE' => 11, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'image_path' => 2, 'image_encart_path' => 3, 'image_encart_petite_path' => 4, 'pays_id' => 5, 'mea_home' => 6, 'image_detail_1' => 7, 'image_detail_2' => 8, 'created_at' => 9, 'updated_at' => 10, 'active' => 11, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'ImagePath' => 2, 'ImageEncartPath' => 3, 'ImageEncartPetitePath' => 4, 'PaysId' => 5, 'DestinationId' => 6, 'MeaHome' => 7, 'ImageDetail1' => 8, 'ImageDetail2' => 9, 'CreatedAt' => 10, 'UpdatedAt' => 11, 'Active' => 12, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'imagePath' => 2, 'imageEncartPath' => 3, 'imageEncartPetitePath' => 4, 'paysId' => 5, 'destinationId' => 6, 'meaHome' => 7, 'imageDetail1' => 8, 'imageDetail2' => 9, 'createdAt' => 10, 'updatedAt' => 11, 'active' => 12, ),
+        BasePeer::TYPE_COLNAME => array (RegionPeer::ID => 0, RegionPeer::CODE => 1, RegionPeer::IMAGE_PATH => 2, RegionPeer::IMAGE_ENCART_PATH => 3, RegionPeer::IMAGE_ENCART_PETITE_PATH => 4, RegionPeer::PAYS_ID => 5, RegionPeer::DESTINATION_ID => 6, RegionPeer::MEA_HOME => 7, RegionPeer::IMAGE_DETAIL_1 => 8, RegionPeer::IMAGE_DETAIL_2 => 9, RegionPeer::CREATED_AT => 10, RegionPeer::UPDATED_AT => 11, RegionPeer::ACTIVE => 12, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'IMAGE_PATH' => 2, 'IMAGE_ENCART_PATH' => 3, 'IMAGE_ENCART_PETITE_PATH' => 4, 'PAYS_ID' => 5, 'DESTINATION_ID' => 6, 'MEA_HOME' => 7, 'IMAGE_DETAIL_1' => 8, 'IMAGE_DETAIL_2' => 9, 'CREATED_AT' => 10, 'UPDATED_AT' => 11, 'ACTIVE' => 12, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'image_path' => 2, 'image_encart_path' => 3, 'image_encart_petite_path' => 4, 'pays_id' => 5, 'destination_id' => 6, 'mea_home' => 7, 'image_detail_1' => 8, 'image_detail_2' => 9, 'created_at' => 10, 'updated_at' => 11, 'active' => 12, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, )
     );
 
     /**
@@ -209,6 +213,7 @@ abstract class BaseRegionPeer
             $criteria->addSelectColumn(RegionPeer::IMAGE_ENCART_PATH);
             $criteria->addSelectColumn(RegionPeer::IMAGE_ENCART_PETITE_PATH);
             $criteria->addSelectColumn(RegionPeer::PAYS_ID);
+            $criteria->addSelectColumn(RegionPeer::DESTINATION_ID);
             $criteria->addSelectColumn(RegionPeer::MEA_HOME);
             $criteria->addSelectColumn(RegionPeer::IMAGE_DETAIL_1);
             $criteria->addSelectColumn(RegionPeer::IMAGE_DETAIL_2);
@@ -222,6 +227,7 @@ abstract class BaseRegionPeer
             $criteria->addSelectColumn($alias . '.image_encart_path');
             $criteria->addSelectColumn($alias . '.image_encart_petite_path');
             $criteria->addSelectColumn($alias . '.pays_id');
+            $criteria->addSelectColumn($alias . '.destination_id');
             $criteria->addSelectColumn($alias . '.mea_home');
             $criteria->addSelectColumn($alias . '.image_detail_1');
             $criteria->addSelectColumn($alias . '.image_detail_2');
@@ -582,6 +588,57 @@ abstract class BaseRegionPeer
 
 
     /**
+     * Returns the number of rows matching criteria, joining the related Destination table
+     *
+     * @param      Criteria $criteria
+     * @param      boolean $distinct Whether to select only distinct columns; deprecated: use Criteria->setDistinct() instead.
+     * @param      PropelPDO $con
+     * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
+     * @return int Number of matching rows.
+     */
+    public static function doCountJoinDestination(Criteria $criteria, $distinct = false, PropelPDO $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    {
+        // we're going to modify criteria, so copy it first
+        $criteria = clone $criteria;
+
+        // We need to set the primary table name, since in the case that there are no WHERE columns
+        // it will be impossible for the BasePeer::createSelectSql() method to determine which
+        // tables go into the FROM clause.
+        $criteria->setPrimaryTableName(RegionPeer::TABLE_NAME);
+
+        if ($distinct && !in_array(Criteria::DISTINCT, $criteria->getSelectModifiers())) {
+            $criteria->setDistinct();
+        }
+
+        if (!$criteria->hasSelectClause()) {
+            RegionPeer::addSelectColumns($criteria);
+        }
+
+        $criteria->clearOrderByColumns(); // ORDER BY won't ever affect the count
+
+        // Set the correct dbName
+        $criteria->setDbName(RegionPeer::DATABASE_NAME);
+
+        if ($con === null) {
+            $con = Propel::getConnection(RegionPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+        }
+
+        $criteria->addJoin(RegionPeer::DESTINATION_ID, DestinationPeer::ID, $join_behavior);
+
+        $stmt = BasePeer::doCount($criteria, $con);
+
+        if ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+            $count = (int) $row[0];
+        } else {
+            $count = 0; // no rows returned; we infer that means 0 matches.
+        }
+        $stmt->closeCursor();
+
+        return $count;
+    }
+
+
+    /**
      * Selects a collection of Region objects pre-filled with their Pays objects.
      * @param      Criteria  $criteria
      * @param      PropelPDO $con
@@ -649,6 +706,73 @@ abstract class BaseRegionPeer
 
 
     /**
+     * Selects a collection of Region objects pre-filled with their Destination objects.
+     * @param      Criteria  $criteria
+     * @param      PropelPDO $con
+     * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
+     * @return array           Array of Region objects.
+     * @throws PropelException Any exceptions caught during processing will be
+     *		 rethrown wrapped into a PropelException.
+     */
+    public static function doSelectJoinDestination(Criteria $criteria, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    {
+        $criteria = clone $criteria;
+
+        // Set the correct dbName if it has not been overridden
+        if ($criteria->getDbName() == Propel::getDefaultDB()) {
+            $criteria->setDbName(RegionPeer::DATABASE_NAME);
+        }
+
+        RegionPeer::addSelectColumns($criteria);
+        $startcol = RegionPeer::NUM_HYDRATE_COLUMNS;
+        DestinationPeer::addSelectColumns($criteria);
+
+        $criteria->addJoin(RegionPeer::DESTINATION_ID, DestinationPeer::ID, $join_behavior);
+
+        $stmt = BasePeer::doSelect($criteria, $con);
+        $results = array();
+
+        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+            $key1 = RegionPeer::getPrimaryKeyHashFromRow($row, 0);
+            if (null !== ($obj1 = RegionPeer::getInstanceFromPool($key1))) {
+                // We no longer rehydrate the object, since this can cause data loss.
+                // See http://www.propelorm.org/ticket/509
+                // $obj1->hydrate($row, 0, true); // rehydrate
+            } else {
+
+                $cls = RegionPeer::getOMClass();
+
+                $obj1 = new $cls();
+                $obj1->hydrate($row);
+                RegionPeer::addInstanceToPool($obj1, $key1);
+            } // if $obj1 already loaded
+
+            $key2 = DestinationPeer::getPrimaryKeyHashFromRow($row, $startcol);
+            if ($key2 !== null) {
+                $obj2 = DestinationPeer::getInstanceFromPool($key2);
+                if (!$obj2) {
+
+                    $cls = DestinationPeer::getOMClass();
+
+                    $obj2 = new $cls();
+                    $obj2->hydrate($row, $startcol);
+                    DestinationPeer::addInstanceToPool($obj2, $key2);
+                } // if obj2 already loaded
+
+                // Add the $obj1 (Region) to $obj2 (Destination)
+                $obj2->addRegion($obj1);
+
+            } // if joined row was not null
+
+            $results[] = $obj1;
+        }
+        $stmt->closeCursor();
+
+        return $results;
+    }
+
+
+    /**
      * Returns the number of rows matching criteria, joining all related tables
      *
      * @param      Criteria $criteria
@@ -685,6 +809,8 @@ abstract class BaseRegionPeer
         }
 
         $criteria->addJoin(RegionPeer::PAYS_ID, PaysPeer::ID, $join_behavior);
+
+        $criteria->addJoin(RegionPeer::DESTINATION_ID, DestinationPeer::ID, $join_behavior);
 
         $stmt = BasePeer::doCount($criteria, $con);
 
@@ -723,7 +849,12 @@ abstract class BaseRegionPeer
         PaysPeer::addSelectColumns($criteria);
         $startcol3 = $startcol2 + PaysPeer::NUM_HYDRATE_COLUMNS;
 
+        DestinationPeer::addSelectColumns($criteria);
+        $startcol4 = $startcol3 + DestinationPeer::NUM_HYDRATE_COLUMNS;
+
         $criteria->addJoin(RegionPeer::PAYS_ID, PaysPeer::ID, $join_behavior);
+
+        $criteria->addJoin(RegionPeer::DESTINATION_ID, DestinationPeer::ID, $join_behavior);
 
         $stmt = BasePeer::doSelect($criteria, $con);
         $results = array();
@@ -759,6 +890,274 @@ abstract class BaseRegionPeer
                 // Add the $obj1 (Region) to the collection in $obj2 (Pays)
                 $obj2->addRegion($obj1);
             } // if joined row not null
+
+            // Add objects for joined Destination rows
+
+            $key3 = DestinationPeer::getPrimaryKeyHashFromRow($row, $startcol3);
+            if ($key3 !== null) {
+                $obj3 = DestinationPeer::getInstanceFromPool($key3);
+                if (!$obj3) {
+
+                    $cls = DestinationPeer::getOMClass();
+
+                    $obj3 = new $cls();
+                    $obj3->hydrate($row, $startcol3);
+                    DestinationPeer::addInstanceToPool($obj3, $key3);
+                } // if obj3 loaded
+
+                // Add the $obj1 (Region) to the collection in $obj3 (Destination)
+                $obj3->addRegion($obj1);
+            } // if joined row not null
+
+            $results[] = $obj1;
+        }
+        $stmt->closeCursor();
+
+        return $results;
+    }
+
+
+    /**
+     * Returns the number of rows matching criteria, joining the related Pays table
+     *
+     * @param      Criteria $criteria
+     * @param      boolean $distinct Whether to select only distinct columns; deprecated: use Criteria->setDistinct() instead.
+     * @param      PropelPDO $con
+     * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
+     * @return int Number of matching rows.
+     */
+    public static function doCountJoinAllExceptPays(Criteria $criteria, $distinct = false, PropelPDO $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    {
+        // we're going to modify criteria, so copy it first
+        $criteria = clone $criteria;
+
+        // We need to set the primary table name, since in the case that there are no WHERE columns
+        // it will be impossible for the BasePeer::createSelectSql() method to determine which
+        // tables go into the FROM clause.
+        $criteria->setPrimaryTableName(RegionPeer::TABLE_NAME);
+
+        if ($distinct && !in_array(Criteria::DISTINCT, $criteria->getSelectModifiers())) {
+            $criteria->setDistinct();
+        }
+
+        if (!$criteria->hasSelectClause()) {
+            RegionPeer::addSelectColumns($criteria);
+        }
+
+        $criteria->clearOrderByColumns(); // ORDER BY should not affect count
+
+        // Set the correct dbName
+        $criteria->setDbName(RegionPeer::DATABASE_NAME);
+
+        if ($con === null) {
+            $con = Propel::getConnection(RegionPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+        }
+
+        $criteria->addJoin(RegionPeer::DESTINATION_ID, DestinationPeer::ID, $join_behavior);
+
+        $stmt = BasePeer::doCount($criteria, $con);
+
+        if ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+            $count = (int) $row[0];
+        } else {
+            $count = 0; // no rows returned; we infer that means 0 matches.
+        }
+        $stmt->closeCursor();
+
+        return $count;
+    }
+
+
+    /**
+     * Returns the number of rows matching criteria, joining the related Destination table
+     *
+     * @param      Criteria $criteria
+     * @param      boolean $distinct Whether to select only distinct columns; deprecated: use Criteria->setDistinct() instead.
+     * @param      PropelPDO $con
+     * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
+     * @return int Number of matching rows.
+     */
+    public static function doCountJoinAllExceptDestination(Criteria $criteria, $distinct = false, PropelPDO $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    {
+        // we're going to modify criteria, so copy it first
+        $criteria = clone $criteria;
+
+        // We need to set the primary table name, since in the case that there are no WHERE columns
+        // it will be impossible for the BasePeer::createSelectSql() method to determine which
+        // tables go into the FROM clause.
+        $criteria->setPrimaryTableName(RegionPeer::TABLE_NAME);
+
+        if ($distinct && !in_array(Criteria::DISTINCT, $criteria->getSelectModifiers())) {
+            $criteria->setDistinct();
+        }
+
+        if (!$criteria->hasSelectClause()) {
+            RegionPeer::addSelectColumns($criteria);
+        }
+
+        $criteria->clearOrderByColumns(); // ORDER BY should not affect count
+
+        // Set the correct dbName
+        $criteria->setDbName(RegionPeer::DATABASE_NAME);
+
+        if ($con === null) {
+            $con = Propel::getConnection(RegionPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+        }
+
+        $criteria->addJoin(RegionPeer::PAYS_ID, PaysPeer::ID, $join_behavior);
+
+        $stmt = BasePeer::doCount($criteria, $con);
+
+        if ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+            $count = (int) $row[0];
+        } else {
+            $count = 0; // no rows returned; we infer that means 0 matches.
+        }
+        $stmt->closeCursor();
+
+        return $count;
+    }
+
+
+    /**
+     * Selects a collection of Region objects pre-filled with all related objects except Pays.
+     *
+     * @param      Criteria  $criteria
+     * @param      PropelPDO $con
+     * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
+     * @return array           Array of Region objects.
+     * @throws PropelException Any exceptions caught during processing will be
+     *		 rethrown wrapped into a PropelException.
+     */
+    public static function doSelectJoinAllExceptPays(Criteria $criteria, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    {
+        $criteria = clone $criteria;
+
+        // Set the correct dbName if it has not been overridden
+        // $criteria->getDbName() will return the same object if not set to another value
+        // so == check is okay and faster
+        if ($criteria->getDbName() == Propel::getDefaultDB()) {
+            $criteria->setDbName(RegionPeer::DATABASE_NAME);
+        }
+
+        RegionPeer::addSelectColumns($criteria);
+        $startcol2 = RegionPeer::NUM_HYDRATE_COLUMNS;
+
+        DestinationPeer::addSelectColumns($criteria);
+        $startcol3 = $startcol2 + DestinationPeer::NUM_HYDRATE_COLUMNS;
+
+        $criteria->addJoin(RegionPeer::DESTINATION_ID, DestinationPeer::ID, $join_behavior);
+
+
+        $stmt = BasePeer::doSelect($criteria, $con);
+        $results = array();
+
+        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+            $key1 = RegionPeer::getPrimaryKeyHashFromRow($row, 0);
+            if (null !== ($obj1 = RegionPeer::getInstanceFromPool($key1))) {
+                // We no longer rehydrate the object, since this can cause data loss.
+                // See http://www.propelorm.org/ticket/509
+                // $obj1->hydrate($row, 0, true); // rehydrate
+            } else {
+                $cls = RegionPeer::getOMClass();
+
+                $obj1 = new $cls();
+                $obj1->hydrate($row);
+                RegionPeer::addInstanceToPool($obj1, $key1);
+            } // if obj1 already loaded
+
+                // Add objects for joined Destination rows
+
+                $key2 = DestinationPeer::getPrimaryKeyHashFromRow($row, $startcol2);
+                if ($key2 !== null) {
+                    $obj2 = DestinationPeer::getInstanceFromPool($key2);
+                    if (!$obj2) {
+
+                        $cls = DestinationPeer::getOMClass();
+
+                    $obj2 = new $cls();
+                    $obj2->hydrate($row, $startcol2);
+                    DestinationPeer::addInstanceToPool($obj2, $key2);
+                } // if $obj2 already loaded
+
+                // Add the $obj1 (Region) to the collection in $obj2 (Destination)
+                $obj2->addRegion($obj1);
+
+            } // if joined row is not null
+
+            $results[] = $obj1;
+        }
+        $stmt->closeCursor();
+
+        return $results;
+    }
+
+
+    /**
+     * Selects a collection of Region objects pre-filled with all related objects except Destination.
+     *
+     * @param      Criteria  $criteria
+     * @param      PropelPDO $con
+     * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
+     * @return array           Array of Region objects.
+     * @throws PropelException Any exceptions caught during processing will be
+     *		 rethrown wrapped into a PropelException.
+     */
+    public static function doSelectJoinAllExceptDestination(Criteria $criteria, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    {
+        $criteria = clone $criteria;
+
+        // Set the correct dbName if it has not been overridden
+        // $criteria->getDbName() will return the same object if not set to another value
+        // so == check is okay and faster
+        if ($criteria->getDbName() == Propel::getDefaultDB()) {
+            $criteria->setDbName(RegionPeer::DATABASE_NAME);
+        }
+
+        RegionPeer::addSelectColumns($criteria);
+        $startcol2 = RegionPeer::NUM_HYDRATE_COLUMNS;
+
+        PaysPeer::addSelectColumns($criteria);
+        $startcol3 = $startcol2 + PaysPeer::NUM_HYDRATE_COLUMNS;
+
+        $criteria->addJoin(RegionPeer::PAYS_ID, PaysPeer::ID, $join_behavior);
+
+
+        $stmt = BasePeer::doSelect($criteria, $con);
+        $results = array();
+
+        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+            $key1 = RegionPeer::getPrimaryKeyHashFromRow($row, 0);
+            if (null !== ($obj1 = RegionPeer::getInstanceFromPool($key1))) {
+                // We no longer rehydrate the object, since this can cause data loss.
+                // See http://www.propelorm.org/ticket/509
+                // $obj1->hydrate($row, 0, true); // rehydrate
+            } else {
+                $cls = RegionPeer::getOMClass();
+
+                $obj1 = new $cls();
+                $obj1->hydrate($row);
+                RegionPeer::addInstanceToPool($obj1, $key1);
+            } // if obj1 already loaded
+
+                // Add objects for joined Pays rows
+
+                $key2 = PaysPeer::getPrimaryKeyHashFromRow($row, $startcol2);
+                if ($key2 !== null) {
+                    $obj2 = PaysPeer::getInstanceFromPool($key2);
+                    if (!$obj2) {
+
+                        $cls = PaysPeer::getOMClass();
+
+                    $obj2 = new $cls();
+                    $obj2->hydrate($row, $startcol2);
+                    PaysPeer::addInstanceToPool($obj2, $key2);
+                } // if $obj2 already loaded
+
+                // Add the $obj1 (Region) to the collection in $obj2 (Pays)
+                $obj2->addRegion($obj1);
+
+            } // if joined row is not null
 
             $results[] = $obj1;
         }

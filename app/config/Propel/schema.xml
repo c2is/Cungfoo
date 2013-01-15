@@ -360,6 +360,7 @@
         <column name="image_encart_path" type="varchar" />
         <column name="image_encart_petite_path" type="varchar" />
         <column name="pays_id" type="integer" />
+        <column name="destination_id" type="integer" />
         <column name="mea_home" type="boolean" />
         <column name="image_detail_1" type="varchar" />
         <column name="image_detail_2" type="varchar" />
@@ -368,6 +369,10 @@
 
         <foreign-key foreignTable="pays" onDelete="SETNULL">
             <reference local="pays_id" foreign="id"></reference>
+        </foreign-key>
+
+        <foreign-key foreignTable="destination">
+            <reference local="destination_id" foreign="id"/>
         </foreign-key>
 
         <behavior name="i18n">

@@ -46,21 +46,6 @@
                     </ul>
                 </div>
             </div>
-            {#
-            <div class="radiusBox2 greyC">
-                <div class="view">
-                    <img class="bg" src="{{ asset('images/vacancesdirectes/dyn/menu/1-destinations/portugal.jpg') }}" alt="" />
-                    <div class="stamp grey"><span>{{ "pays.portugal" | trans }}</span></div>
-                </div>
-                <div class="region">
-                    <ul>
-                        {% for region in regionPortugal %}
-                            <li><a href="{{ path('destination_region', {pays: region.pays.slug, region: region.slug})}}">{{ region }}</a></li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
-            #}
         </div>
         <div id="destinationsAll" class="left ratio-33">
             <div class="radiusBox greyC">

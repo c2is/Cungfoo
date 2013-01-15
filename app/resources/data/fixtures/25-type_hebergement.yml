@@ -7,7 +7,7 @@
         NombrePlace: 6
         ImageHebergementPath: uploads/type_hebergements/50c067b319d9a.jpeg
         ImageCompositionPath: null
-        Active: true
+        Active: false
     2:
         Code: 110M
         TypeHebergementCapaciteId: 4
@@ -16,7 +16,7 @@
         NombrePlace: 6
         ImageHebergementPath: uploads/type_hebergements/50c067cd9111c.jpeg
         ImageCompositionPath: null
-        Active: true
+        Active: false
     3:
         Code: 130M
         TypeHebergementCapaciteId: 4
@@ -25,7 +25,7 @@
         NombrePlace: 6
         ImageHebergementPath: uploads/type_hebergements/50c067d66a87a.jpeg
         ImageCompositionPath: null
-        Active: true
+        Active: false
     4:
         Code: 140M
         TypeHebergementCapaciteId: 4
@@ -34,7 +34,7 @@
         NombrePlace: 6
         ImageHebergementPath: uploads/type_hebergements/50c067e028c2e.jpeg
         ImageCompositionPath: null
-        Active: true
+        Active: false
     5:
         Code: 150M
         TypeHebergementCapaciteId: 4
@@ -43,7 +43,7 @@
         NombrePlace: 6
         ImageHebergementPath: uploads/type_hebergements/50c067e7a9ed0.jpeg
         ImageCompositionPath: null
-        Active: true
+        Active: false
     6:
         Code: 160M
         TypeHebergementCapaciteId: 4
@@ -52,7 +52,7 @@
         NombrePlace: 6
         ImageHebergementPath: uploads/type_hebergements/50c067ef57662.jpeg
         ImageCompositionPath: null
-        Active: true
+        Active: false
     7:
         Code: 170M
         TypeHebergementCapaciteId: 4
@@ -61,7 +61,7 @@
         NombrePlace: 6
         ImageHebergementPath: uploads/type_hebergements/50c067fc31be4.jpeg
         ImageCompositionPath: null
-        Active: true
+        Active: false
     8:
         Code: 180M
         TypeHebergementCapaciteId: 4
@@ -70,7 +70,7 @@
         NombrePlace: 6
         ImageHebergementPath: uploads/type_hebergements/50c06804739cd.jpeg
         ImageCompositionPath: null
-        Active: true
+        Active: false
     9:
         Code: AMI4
         TypeHebergementCapaciteId: 2
@@ -88,7 +88,7 @@
         NombrePlace: 4
         ImageHebergementPath: uploads/type_hebergements/50c068139f11f.jpeg
         ImageCompositionPath: null
-        Active: true
+        Active: false
     11:
         Code: BT3
         TypeHebergementCapaciteId: 4
@@ -97,7 +97,7 @@
         NombrePlace: 6
         ImageHebergementPath: uploads/type_hebergements/50c0681cc8acd.jpeg
         ImageCompositionPath: null
-        Active: true
+        Active: false
     12:
         Code: CANA
         TypeHebergementCapaciteId: 3
@@ -250,7 +250,7 @@
         NombrePlace: 6
         ImageHebergementPath: uploads/type_hebergements/50c068c18819e.jpeg
         ImageCompositionPath: null
-        Active: true
+        Active: false
     29:
         Code: HEL6
         TypeHebergementCapaciteId: 4
@@ -295,7 +295,7 @@
         NombrePlace: 4
         ImageHebergementPath: uploads/type_hebergements/50c068f92d80f.jpeg
         ImageCompositionPath: null
-        Active: true
+        Active: false
     34:
         Code: OHA6
         TypeHebergementCapaciteId: 4
@@ -304,7 +304,7 @@
         NombrePlace: 5
         ImageHebergementPath: uploads/type_hebergements/50c06901d3fcc.jpeg
         ImageCompositionPath: null
-        Active: true
+        Active: false
     35:
         Code: PAGO
         TypeHebergementCapaciteId: 4
@@ -340,7 +340,7 @@
         NombrePlace: 99
         ImageHebergementPath: uploads/type_hebergements/50c0693538e09.jpeg
         ImageCompositionPath: null
-        Active: true
+        Active: false
     39:
         Code: SPA6
         TypeHebergementCapaciteId: 4
@@ -367,7 +367,7 @@
         NombrePlace: 6
         ImageHebergementPath: uploads/type_hebergements/50c069551cc8f.jpeg
         ImageCompositionPath: null
-        Active: true
+        Active: false
     42:
         Code: SPAC
         TypeHebergementCapaciteId: 4
@@ -385,7 +385,7 @@
         NombrePlace: 6
         ImageHebergementPath: uploads/type_hebergements/50c0696a3381e.jpeg
         ImageCompositionPath: null
-        Active: true
+        Active: false
     44:
         Code: STU
         TypeHebergementCapaciteId: 1
@@ -466,7 +466,7 @@
         NombrePlace: 5
         ImageHebergementPath: uploads/type_hebergements/50c069d0108d8.jpeg
         ImageCompositionPath: null
-        Active: true
+        Active: false
     53:
         Code: TECO
         TypeHebergementCapaciteId: 2
@@ -556,7 +556,7 @@
         NombrePlace: 6
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Active: true
+        Active: false
     63:
         Code: ET
         TypeHebergementCapaciteId: 4
@@ -574,4 +574,4 @@
         NombrePlace: 6
         ImageHebergementPath: null
         ImageCompositionPath: null
-        Active: true
+        Active: false
