@@ -22,4 +22,16 @@ class TypeHebergementCapacite extends BaseTypeHebergementCapacite
     {
         return $this->getName();
     }
+
+    public function getTypeHebergements($criteria = null, PropelPDO $con = null)
+    {
+        if ($criteria === null)
+        {
+            $criteria = new \Criteria();
+        }
+
+        $criteria->add(TypeHebergementPeer::ACTIVE, true);
+
+        return parent::getTypeHebergements($criteria, $con);
+    }
 }
