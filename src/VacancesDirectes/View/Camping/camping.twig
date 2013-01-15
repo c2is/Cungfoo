@@ -49,7 +49,6 @@
 
     <div class="campDesc">
         <p class="campDescTitle"><strong>{{ etab.capacite }} {{ "fiche.emplacements" | trans }} | {{ "fiche.ouvert_du" | trans }} {{ etab.openingDate | date('d/m/Y') }} au {{ etab.closingDate | date('d/m/Y') }}</strong></p>
-        <p>{{ etab.description }}</p>
     </div>
     <a class="bt big fushia right goto" href="#frameResalys">Tarifs &amp; disponibilités</a>
     <div class="geoDataFiche" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
@@ -96,6 +95,10 @@
     </form>
 </div>
 <div id="tabCamp" class="tabs">
+
+    <div class="campDesc">
+        <p>{{ etab.description }}</p>
+    </div>
 
     <h3>{{ 'fiche.plan_camping' | trans }}</h3>
     <div>
