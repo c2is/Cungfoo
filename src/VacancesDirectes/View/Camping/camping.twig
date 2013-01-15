@@ -181,8 +181,8 @@
             <h4>{{ "fiche.les_vacances_a" | trans }} {{ etab.city }}</h4>
             <div>
                 <dl>
+                    <dt>{{ "fiche.a_proximite" | trans }} {{ "fiche.nous_avons_liste" | trans }}</dt>
                     <dd class="img"><img src="{{ asset(etab.ville.region.imagePath) }}" width="75"></dd>
-                    <dt>{{ "fiche.a_proximite" | trans }}<br> {{ "fiche.nous_avons_liste" | trans }}</dt>
                     <dd class="list">
                         <ul>
                             {% if etab.countPoi != 0 %}<li>{{ etab.countPoi }} {{ "fiche.sites_a_visiter" | trans }}</li>{% endif %}
