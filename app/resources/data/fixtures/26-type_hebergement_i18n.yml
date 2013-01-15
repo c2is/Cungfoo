@@ -1,109 +1,9 @@
 \Cungfoo\Model\TypeHebergementI18n:
-    1_de:
-        Id: 1
-        Locale: de
-        Name: 'Parcelle jusqu''à 100 m²'
-        Slug: parcelle-jusqu-a-100-m
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    1_en:
-        Id: 1
-        Locale: en
-        Name: 'Parcelle jusqu''à 100 m²'
-        Slug: parcelle-jusqu-a-100-m
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
     1_fr:
         Id: 1
         Locale: fr
         Name: 'Parcelle jusqu''à 100 m²'
         Slug: parcelle-jusqu-a-100-m
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    1_nl:
-        Id: 1
-        Locale: nl
-        Name: 'Parcelle jusqu''à 100 m²'
-        Slug: parcelle-jusqu-a-100-m
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    2_de:
-        Id: 2
-        Locale: de
-        Name: 'Parcelle de 101 à 110 m²'
-        Slug: parcelle-de-101-a-110-m
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    2_en:
-        Id: 2
-        Locale: en
-        Name: 'Parcelle de 101 à 110 m²'
-        Slug: parcelle-de-101-a-110-m
         Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
@@ -139,131 +39,11 @@
         Remarque2: null
         Remarque3: null
         Remarque4: null
-    2_nl:
-        Id: 2
-        Locale: nl
-        Name: 'Parcelle de 101 à 110 m²'
-        Slug: parcelle-de-101-a-110-m
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    3_de:
-        Id: 3
-        Locale: de
-        Name: 'Parcelle de 121 à 130 m²'
-        Slug: parcelle-de-121-a-130-m
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    3_en:
-        Id: 3
-        Locale: en
-        Name: 'Parcelle de 121 à 130 m²'
-        Slug: parcelle-de-121-a-130-m
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
     3_fr:
         Id: 3
         Locale: fr
         Name: 'Parcelle de 121 à 130 m²'
         Slug: parcelle-de-121-a-130-m
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    3_nl:
-        Id: 3
-        Locale: nl
-        Name: 'Parcelle de 121 à 130 m²'
-        Slug: parcelle-de-121-a-130-m
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    4_de:
-        Id: 4
-        Locale: de
-        Name: 'Parcelle de 131 à 140 m²'
-        Slug: parcelle-de-131-a-140-m
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    4_en:
-        Id: 4
-        Locale: en
-        Name: 'Parcelle de 131 à 140 m²'
-        Slug: parcelle-de-131-a-140-m
         Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
@@ -299,131 +79,11 @@
         Remarque2: null
         Remarque3: null
         Remarque4: null
-    4_nl:
-        Id: 4
-        Locale: nl
-        Name: 'Parcelle de 131 à 140 m²'
-        Slug: parcelle-de-131-a-140-m
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    5_de:
-        Id: 5
-        Locale: de
-        Name: 'Parcelle de 141 à 150 m²'
-        Slug: parcelle-de-141-a-150-m
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    5_en:
-        Id: 5
-        Locale: en
-        Name: 'Parcelle de 141 à 150 m²'
-        Slug: parcelle-de-141-a-150-m
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
     5_fr:
         Id: 5
         Locale: fr
         Name: 'Parcelle de 141 à 150 m²'
         Slug: parcelle-de-141-a-150-m
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    5_nl:
-        Id: 5
-        Locale: nl
-        Name: 'Parcelle de 141 à 150 m²'
-        Slug: parcelle-de-141-a-150-m
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    6_de:
-        Id: 6
-        Locale: de
-        Name: 'Parcelle de 151 à 160 m²'
-        Slug: parcelle-de-151-a-160-m
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    6_en:
-        Id: 6
-        Locale: en
-        Name: 'Parcelle de 151 à 160 m²'
-        Slug: parcelle-de-151-a-160-m
         Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
@@ -459,131 +119,11 @@
         Remarque2: null
         Remarque3: null
         Remarque4: null
-    6_nl:
-        Id: 6
-        Locale: nl
-        Name: 'Parcelle de 151 à 160 m²'
-        Slug: parcelle-de-151-a-160-m
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    7_de:
-        Id: 7
-        Locale: de
-        Name: 'Parcelle de 161 à 170 m²'
-        Slug: parcelle-de-161-a-170-m
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    7_en:
-        Id: 7
-        Locale: en
-        Name: 'Parcelle de 161 à 170 m²'
-        Slug: parcelle-de-161-a-170-m
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
     7_fr:
         Id: 7
         Locale: fr
         Name: 'Parcelle de 161 à 170 m²'
         Slug: parcelle-de-161-a-170-m
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    7_nl:
-        Id: 7
-        Locale: nl
-        Name: 'Parcelle de 161 à 170 m²'
-        Slug: parcelle-de-161-a-170-m
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    8_de:
-        Id: 8
-        Locale: de
-        Name: 'Parcelle de 171 à 180 m²'
-        Slug: parcelle-de-171-a-180-m
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    8_en:
-        Id: 8
-        Locale: en
-        Name: 'Parcelle de 171 à 180 m²'
-        Slug: parcelle-de-171-a-180-m
         Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
@@ -619,211 +159,31 @@
         Remarque2: null
         Remarque3: null
         Remarque4: null
-    8_nl:
-        Id: 8
-        Locale: nl
-        Name: 'Parcelle de 171 à 180 m²'
-        Slug: parcelle-de-171-a-180-m
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    9_de:
-        Id: 9
-        Locale: de
-        Name: 'Amical (4 places, max. 3 adultes)'
-        Slug: amical-4-places-max-3-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    9_en:
-        Id: 9
-        Locale: en
-        Name: 'Amical (4 places, max. 3 adultes)'
-        Slug: amical-4-places-max-3-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
     9_fr:
         Id: 9
         Locale: fr
         Name: 'Amical (4 places, max. 3 adultes)'
         Slug: amical-4-places-max-3-adultes
-        Indice: 'Avec Sanitaires'
+        Indice: 'Avec 2 chambres'
         Surface: null
         TypeTerrasse: null
         Description: null
         Composition: null
         Presentation: 'Vous souhaitez allier convivialité et détente ? Vacances directes vous présente le mobil-home Amical 4 places. Il vous permettra de vous ressourcer dans une ambiance intime et confortable... Amicalement vôtre !'
-        CapaciteHebergement: "4 personnes\nRecommandé : 2 adultes + 2 enfants, bébé compris\nToléré : 3 adultes maxi. + 1 enfant, bébé compris\nAdulte : à partir de 14 ans\n"
-        Dimensions: "Surface : 18 m²\nLongueur 6 m x Largeur 3 m\n"
-        Agencement: "Chambre parents : 1 lit de 140x190 cm avec sommier à lattes\nChambre enfants : 2 lits superposés de 80x190 cm avec sommiers à lattes. Sur certains campings, les lits sont côte à côte\nPièce commune : coin cuisine avec évier, chauffe-eau, gaz 4 feux, réfrigérateur, coin repas, 1 table et 2 tabourets, banquette. Pas de micro-ondes\nSanitaires : salle de bains avec lavabo et douche, WC séparé\n"
-        Equipements: "Intérieur : chauffage électrique, 2 bouteilles de gaz\nExtérieur : lumière, parasol non utilisable à la plage, salon de jardin\nElectricité : 6 ampères\nParking : sur emplacement pour un seul véhicule (sauf mention contraire)\n"
+        CapaciteHebergement: "4 personnes\r\nRecommandé : 2 adultes + 2 enfants, bébé compris\r\nToléré : 3 adultes maxi. + 1 enfant, bébé compris\r\nAdulte : à partir de 14 ans"
+        Dimensions: "Surface : 18 m²\r\nLongueur 6 m x Largeur 3 m"
+        Agencement: "Chambre parents : 1 lit de 140x190 cm avec sommier à lattes\r\nChambre enfants : 2 lits superposés de 80x190 cm avec sommiers à lattes. Sur certains campings, les lits sont côte à côte\r\nPièce commune : coin cuisine avec évier, chauffe-eau, gaz 4 feux, réfrigérateur, coin repas, 1 table et 2 tabourets, banquette. Pas de micro-ondes\r\nSanitaires : salle de bains avec lavabo et douche, WC séparé"
+        Equipements: "Intérieur : chauffage électrique, 2 bouteilles de gaz\r\nExtérieur : lumière, parasol non utilisable à la plage, salon de jardin\r\nElectricité : 6 ampères\r\nParking : sur emplacement pour un seul véhicule (sauf mention contraire)"
         AnneeUtilisation: '7-12 ans (sauf 0-7 ans : les Oyats, Petit Bois (Cantal), Palavas Camping, Saint-Louis)'
         Remarque1: 'En fonction du camping, l’agencement peut être différent. Tous les hébergements ne sont pas équipés de terrasse'
         Remarque2: 'Pas de place pour un lit bébé'
         Remarque3: 'Sur Palavas Camping, retrouvez le mobil-home Amical de 27 m² avec paillotte - 4 adultes maxi.'
-        Remarque4: null
-    9_nl:
-        Id: 9
-        Locale: nl
-        Name: 'Amical (4 places, max. 3 adultes)'
-        Slug: amical-4-places-max-3-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    10_de:
-        Id: 10
-        Locale: de
-        Name: 'Bungalow T2 Luxe (4 places, max. 4 adultes)'
-        Slug: bungalow-t2-luxe-4-places-max-4-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    10_en:
-        Id: 10
-        Locale: en
-        Name: 'Bungalow T2 Luxe (4 places, max. 4 adultes)'
-        Slug: bungalow-t2-luxe-4-places-max-4-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
         Remarque4: null
     10_fr:
         Id: 10
         Locale: fr
         Name: 'Bungalow T2 Luxe (4 places, max. 4 adultes)'
         Slug: bungalow-t2-luxe-4-places-max-4-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    10_nl:
-        Id: 10
-        Locale: nl
-        Name: 'Bungalow T2 Luxe (4 places, max. 4 adultes)'
-        Slug: bungalow-t2-luxe-4-places-max-4-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    11_de:
-        Id: 11
-        Locale: de
-        Name: 'Bungalow T3 (6 places, max. 6 adultes)'
-        Slug: bungalow-t3-6-places-max-6-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    11_en:
-        Id: 11
-        Locale: en
-        Name: 'Bungalow T3 (6 places, max. 6 adultes)'
-        Slug: bungalow-t3-6-places-max-6-adultes
         Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
@@ -859,144 +219,24 @@
         Remarque2: null
         Remarque3: null
         Remarque4: null
-    11_nl:
-        Id: 11
-        Locale: nl
-        Name: 'Bungalow T3 (6 places, max. 6 adultes)'
-        Slug: bungalow-t3-6-places-max-6-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    12_de:
-        Id: 12
-        Locale: de
-        Name: 'Tente Canada'
-        Slug: tente-canada
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    12_en:
-        Id: 12
-        Locale: en
-        Name: 'Tente Canada'
-        Slug: tente-canada
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
     12_fr:
         Id: 12
         Locale: fr
         Name: 'Tente Canada'
         Slug: tente-canada
-        Indice: 'Avec Sanitaires'
+        Indice: 'Avec 2 chambres'
         Surface: null
         TypeTerrasse: null
         Description: null
         Composition: null
         Presentation: 'Spacieuce et confortable, la tente Canada est un hébergement qui allie originalité et simplicité. Profitez de vos vacances en plein cœur de la nature.'
-        CapaciteHebergement: "5 personnes\n\n"
+        CapaciteHebergement: '5 personnes'
         Dimensions: 'Surface : 20 m²'
-        Agencement: "Chambre parents :  lit de 140x190 cm 1 chambre enfants : 1 lit\nsuperposé de 70x180 cm et 2 lits\nde 70 x 180 cm (le lit superposé ne\nconvient pas aux enfants de moins\nde 6 ans et de plus de 30 kg)                         Séjour : coin cuisine, gaz, réfrigérateur                            Terrasse  "
-        Equipements: "Intérieur : 1 bouteille de gaz\nExtérieur : lumière, salon de jardin\nElectricité : 6 ampères\nParking : sur emplacement pour\nun seul véhicule (sauf mention contraire)"
+        Agencement: "Chambre parents :  lit de 140x190 cm 1 chambre enfants : 1 lit\r\nsuperposé de 70x180 cm et 2 lits\r\nde 70 x 180 cm (le lit superposé ne\r\nconvient pas aux enfants de moins\r\nde 6 ans et de plus de 30 kg)                         Séjour : coin cuisine, gaz, réfrigérateur                            Terrasse"
+        Equipements: "Intérieur : 1 bouteille de gaz\r\nExtérieur : lumière, salon de jardin\r\nElectricité : 6 ampères\r\nParking : sur emplacement pour\r\nun seul véhicule (sauf mention contraire)"
         AnneeUtilisation: '0-7 ans'
-        Remarque1: ''
-        Remarque2: "Hébergement sans arrivée\nd’eau, sans sanitaire et\nsans chauffage"
-        Remarque3: ''
-        Remarque4: null
-    12_nl:
-        Id: 12
-        Locale: nl
-        Name: 'Tente Canada'
-        Slug: tente-canada
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
         Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    13_de:
-        Id: 13
-        Locale: de
-        Name: 'Chalet (4-6 places)'
-        Slug: chalet-4-6-places
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    13_en:
-        Id: 13
-        Locale: en
-        Name: 'Chalet (4-6 places)'
-        Slug: chalet-4-6-places
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
+        Remarque2: "Hébergement sans arrivée\r\nd’eau, sans sanitaire et\r\nsans chauffage"
         Remarque3: null
         Remarque4: null
     13_fr:
@@ -1004,78 +244,18 @@
         Locale: fr
         Name: 'Chalet (4-6 places)'
         Slug: chalet-4-6-places
-        Indice: 'Avec Sanitaires'
+        Indice: 'Avec terrasse couverte intégrée'
         Surface: null
         TypeTerrasse: null
         Description: null
         Composition: null
-        Presentation: "Parfaitement intégré au coeur de paysages magnifiques, il est l’endroit parfait pour renouer avec la nature à deux ou en famille.\n\n\n"
+        Presentation: 'Parfaitement intégré au coeur de paysages magnifiques, il est l’endroit parfait pour renouer avec la nature à deux ou en famille.'
         CapaciteHebergement: '6 personnes Recommandé : 2 adultes+ 4 enfants Toléré : 6 adultes'
         Dimensions: 'Surface : 28m²'
         Agencement: 'Chambre parents : 1 lit de 120 cm Chambre enfants : 2x lits de 70 cm Pièce commune : coin cuisine, salle d''eau avec toilette, pièce principale avec canapé convetible.'
-        Equipements: "Intérieur : chauffage électrique, 2 bouteilles de gaz\nExtérieur : lumière, salon de jardin\nElectricité : 6 ampères\nParking : sur emplacement pour un seul véhicule (sauf mention contraire)\n"
+        Equipements: "Intérieur : chauffage électrique, 2 bouteilles de gaz\r\nExtérieur : lumière, salon de jardin\r\nElectricité : 6 ampères\r\nParking : sur emplacement pour un seul véhicule (sauf mention contraire)"
         AnneeUtilisation: '0-7 ans'
         Remarque1: 'En fonction du camping, l’agencement peut être différent.'
-        Remarque2: ''
-        Remarque3: ''
-        Remarque4: null
-    13_nl:
-        Id: 13
-        Locale: nl
-        Name: 'Chalet (4-6 places)'
-        Slug: chalet-4-6-places
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    14_de:
-        Id: 14
-        Locale: de
-        Name: 'Chalet (5 places, max. 4 adultes)'
-        Slug: chalet-5-places-max-4-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    14_en:
-        Id: 14
-        Locale: en
-        Name: 'Chalet (5 places, max. 4 adultes)'
-        Slug: chalet-5-places-max-4-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
         Remarque2: null
         Remarque3: null
         Remarque4: null
@@ -1084,78 +264,18 @@
         Locale: fr
         Name: 'Chalet (5 places, max. 4 adultes)'
         Slug: chalet-5-places-max-4-adultes
-        Indice: 'Avec Sanitaires'
+        Indice: 'Avec terrasse couverte intégrée'
         Surface: null
         TypeTerrasse: null
         Description: null
         Composition: null
         Presentation: 'Pour des vacances atypiques, profitez de ce chalet tout confort en bois, à l''ombre des arbres. Avec ses deux chambres et sa terrasse, c''est un hébergement idéal pour des vacances mémorables.'
-        CapaciteHebergement: "5 personnes\nRecommandé : 2 adultes + 3 enfants, bébé compris\nToléré : 4 adultes maxi. + 1 enfant, bébé compris\nAdulte : à partir de 14 ans\n"
-        Dimensions: "Surface : 28 m²\nLongueur 5,95 m x Largeur 4,80 m\n"
-        Agencement: "Chambre parents : 1 lit de 140x190 cm avec sommier à lattes\nChambre enfants : 2 lits de 80x190 cm avec sommiers à lattes et 1 lit superposé (déconseillé aux enfants de - 6 ans) de 80x200 cm au camping Le Petit Mousse\nPièce commune : coin cuisine avec évier, chauffe-eau, plaques électriques, réfrigérateur, coin repas, 1 table et 2 tabourets, banquette transformable en lit 1 personne au camping Le Mas. Pas de micro-ondes.\nSanitaires : salle de bains avec lavabo et douche, WC séparé"
-        Equipements: "Intérieur : chauffage électrique, 2 bouteilles de gaz\nExtérieur : lumière, salon de jardin\nElectricité : 6 ampères\nParking : sur emplacement pour un seul véhicule (sauf mention contraire)\n"
+        CapaciteHebergement: "5 personnes\r\nRecommandé : 2 adultes + 3 enfants, bébé compris\r\nToléré : 4 adultes maxi. + 1 enfant, bébé compris\r\nAdulte : à partir de 14 ans"
+        Dimensions: "Surface : 28 m²\r\nLongueur 5,95 m x Largeur 4,80 m"
+        Agencement: "Chambre parents : 1 lit de 140x190 cm avec sommier à lattes\r\nChambre enfants : 2 lits de 80x190 cm avec sommiers à lattes et 1 lit superposé (déconseillé aux enfants de - 6 ans) de 80x200 cm au camping Le Petit Mousse\r\nPièce commune : coin cuisine avec évier, chauffe-eau, plaques électriques, réfrigérateur, coin repas, 1 table et 2 tabourets, banquette transformable en lit 1 personne au camping Le Mas. Pas de micro-ondes.\r\nSanitaires : salle de bains avec lavabo et douche, WC séparé"
+        Equipements: "Intérieur : chauffage électrique, 2 bouteilles de gaz\r\nExtérieur : lumière, salon de jardin\r\nElectricité : 6 ampères\r\nParking : sur emplacement pour un seul véhicule (sauf mention contraire)"
         AnneeUtilisation: 'Plus de 12 ans'
         Remarque1: 'En fonction du camping, l’agencement peut être différent.'
-        Remarque2: ''
-        Remarque3: ''
-        Remarque4: null
-    14_nl:
-        Id: 14
-        Locale: nl
-        Name: 'Chalet (5 places, max. 4 adultes)'
-        Slug: chalet-5-places-max-4-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    15_de:
-        Id: 15
-        Locale: de
-        Name: 'Chalet (6 places)'
-        Slug: chalet-6-places
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    15_en:
-        Id: 15
-        Locale: en
-        Name: 'Chalet (6 places)'
-        Slug: chalet-6-places
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
         Remarque2: null
         Remarque3: null
         Remarque4: null
@@ -1164,67 +284,7 @@
         Locale: fr
         Name: 'Chalet (6 places)'
         Slug: chalet-6-places
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    15_nl:
-        Id: 15
-        Locale: nl
-        Name: 'Chalet (6 places)'
-        Slug: chalet-6-places
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    16_de:
-        Id: 16
-        Locale: de
-        Name: 'Conviviale (5 places, max. 4 adultes)'
-        Slug: conviviale-5-places-max-4-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    16_en:
-        Id: 16
-        Locale: en
-        Name: 'Conviviale (5 places, max. 4 adultes)'
-        Slug: conviviale-5-places-max-4-adultes
-        Indice: 'Avec Sanitaires'
+        Indice: 'Avec terrasse couverte intégrée'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -1244,79 +304,19 @@
         Locale: fr
         Name: 'Conviviale (5 places, max. 4 adultes)'
         Slug: conviviale-5-places-max-4-adultes
-        Indice: 'Avec Sanitaires'
+        Indice: 'Avec sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
         Composition: null
-        Presentation: 'La Conviviale est l''hébergement idéal pour des vacances en famille. Cette caravane 5 places avec auvent et sanitaires vous fera redécouvrir toutes les joies et tous les plaisirs de l''hôtellerie de plein air. A vous la liberté et le bonheur simple... '
-        CapaciteHebergement: "5 personnes\nRecommandé : 2 adultes + 3 enfants, bébé compris\nToléré : 4 adultes maxi. + 1 enfant, bébé compris\nAdulte : à partir de 14 ans\n"
-        Dimensions: "Surface : Conviviale 13 m² + auvent 12 m²\nLongueur 5,40 m x Largeur 4,80 m\n"
-        Agencement: "Chambre parents : 1 lit de 140x190 cm avec sommier à lattes et penderie\nChambre enfants : 2 lits superposés de 70x180 cm avec sommiers à lattes, dînette se transformant en lit de 80 x 180 cm.\nSanitaires : salle de bains avec lavabo, douche, WC\nSous l’auvent : cuisine avec\nréfrigérateur, réchaud 2 feux\navec bouteille de gaz, meuble de\nrangement 120 x 150 cm, évier avec\narrivée d’eau, salon de jardin"
-        Equipements: "Electricité : 220 V + prises\nParking : sur emplacement pour un seul véhicule (sauf mention contraire)"
+        Presentation: 'La Conviviale est l''hébergement idéal pour des vacances en famille. Cette caravane 5 places avec auvent et sanitaires vous fera redécouvrir toutes les joies et tous les plaisirs de l''hôtellerie de plein air. A vous la liberté et le bonheur simple...'
+        CapaciteHebergement: "5 personnes\r\nRecommandé : 2 adultes + 3 enfants, bébé compris\r\nToléré : 4 adultes maxi. + 1 enfant, bébé compris\r\nAdulte : à partir de 14 ans"
+        Dimensions: "Surface : Conviviale 13 m² + auvent 12 m²\r\nLongueur 5,40 m x Largeur 4,80 m"
+        Agencement: "Chambre parents : 1 lit de 140x190 cm avec sommier à lattes et penderie\r\nChambre enfants : 2 lits superposés de 70x180 cm avec sommiers à lattes, dînette se transformant en lit de 80 x 180 cm.\r\nSanitaires : salle de bains avec lavabo, douche, WC\r\nSous l’auvent : cuisine avec\r\nréfrigérateur, réchaud 2 feux\r\navec bouteille de gaz, meuble de\r\nrangement 120 x 150 cm, évier avec\r\narrivée d’eau, salon de jardin"
+        Equipements: "Electricité : 220 V + prises\r\nParking : sur emplacement pour un seul véhicule (sauf mention contraire)"
         AnneeUtilisation: 'Plus de 12 ans'
         Remarque1: 'En fonction du camping, l’agencement peut être différent.'
         Remarque2: 'Hébergement avec sanitaires, sans chauffage'
-        Remarque3: ''
-        Remarque4: null
-    16_nl:
-        Id: 16
-        Locale: nl
-        Name: 'Conviviale (5 places, max. 4 adultes)'
-        Slug: conviviale-5-places-max-4-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    17_de:
-        Id: 17
-        Locale: de
-        Name: 'Cordial (4 places)'
-        Slug: cordial-4-places
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    17_en:
-        Id: 17
-        Locale: en
-        Name: 'Cordial (4 places)'
-        Slug: cordial-4-places
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
         Remarque3: null
         Remarque4: null
     17_fr:
@@ -1339,143 +339,23 @@
         Remarque2: ''
         Remarque3: ''
         Remarque4: null
-    17_nl:
-        Id: 17
-        Locale: nl
-        Name: 'Cordial (4 places)'
-        Slug: cordial-4-places
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    18_de:
-        Id: 18
-        Locale: de
-        Name: 'Cordial (6 places, max. 5 adultes)'
-        Slug: cordial-6-places-max-5-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    18_en:
-        Id: 18
-        Locale: en
-        Name: 'Cordial (6 places, max. 5 adultes)'
-        Slug: cordial-6-places-max-5-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
     18_fr:
         Id: 18
         Locale: fr
         Name: 'Cordial (6 places, max. 5 adultes)'
         Slug: cordial-6-places-max-5-adultes
-        Indice: 'Avec Sanitaires'
+        Indice: 'Avec 2 chambres et banquette convertible'
         Surface: null
         TypeTerrasse: null
         Description: null
         Composition: null
         Presentation: 'Soif d''évasion, de dépaysement et d''authenticité, Vacances directes met à votre disposition le mobil-home Cordial 6 places qui réjouira petits et grands et assurera la pleine réussite de vos vacances !'
-        CapaciteHebergement: "6 personnes\nRecommandé : 2 adultes + 4 enfants, bébé compris\nToléré : 5 adultes maxi. + 1 enfant, bébé compris\nAdulte : à partir de 14 ans\n"
-        Dimensions: "Surface : 23 m²\nLongueur 7,60 m x Largeur 3 m\n"
-        Agencement: "Chambre parents : 1 lit de 140x190 cm avec sommier à lattes\nChambre enfants : 2 lits de 70x180 cm avec sommiers à lattes + 1 lit superposé de 60x180 cm (ne convient pas aux enfants de - 6 ans), sauf à La Marine\nPièce commune : coin cuisine avec évier, chauffe-eau, gaz 4 feux, micro-ondes, réfrigérateur, coin repas, banquette transformable en lit de 115x180 cm (sauf en Italie), 1 table et 2 tabourets\nSanitaires : salle de bains avec lavabo et douche, WC séparé (sauf en Italie)\n"
-        Equipements: "Intérieur : chauffage électrique, 2 bouteilles de gaz\nExtérieur : lumière, parasol non utilisable à la plage et salon de jardin\nElectricité : 6 ampères\nParking : sur emplacement pour un seul véhicule (sauf mention contraire)\n"
+        CapaciteHebergement: "6 personnes\r\nRecommandé : 2 adultes + 4 enfants, bébé compris\r\nToléré : 5 adultes maxi. + 1 enfant, bébé compris\r\nAdulte : à partir de 14 ans"
+        Dimensions: "Surface : 23 m²\r\nLongueur 7,60 m x Largeur 3 m"
+        Agencement: "Chambre parents : 1 lit de 140x190 cm avec sommier à lattes\r\nChambre enfants : 2 lits de 70x180 cm avec sommiers à lattes + 1 lit superposé de 60x180 cm (ne convient pas aux enfants de - 6 ans), sauf à La Marine\r\nPièce commune : coin cuisine avec évier, chauffe-eau, gaz 4 feux, micro-ondes, réfrigérateur, coin repas, banquette transformable en lit de 115x180 cm (sauf en Italie), 1 table et 2 tabourets\r\nSanitaires : salle de bains avec lavabo et douche, WC séparé (sauf en Italie)"
+        Equipements: "Intérieur : chauffage électrique, 2 bouteilles de gaz\r\nExtérieur : lumière, parasol non utilisable à la plage et salon de jardin\r\nElectricité : 6 ampères\r\nParking : sur emplacement pour un seul véhicule (sauf mention contraire)"
         AnneeUtilisation: '0-7 ans (sauf 7-12 ans : le California, le Col Vert, les Marsouins, le Cala Gogo, les Fontaines, le Pinada, la Marine, Camping du Lac, Saint-Louis et plus de 12 ans : Le Mas)'
         Remarque1: 'En fonction du camping, l’agencement peut être différent. Tous les hébergements ne sont pas équipés de terrasse'
-        Remarque2: ''
-        Remarque3: ''
-        Remarque4: null
-    18_nl:
-        Id: 18
-        Locale: nl
-        Name: 'Cordial (6 places, max. 5 adultes)'
-        Slug: cordial-6-places-max-5-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    19_de:
-        Id: 19
-        Locale: de
-        Name: 'Domanial (5 places, max. 5 adultes)'
-        Slug: domanial-5-places-max-5-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    19_en:
-        Id: 19
-        Locale: en
-        Name: 'Domanial (5 places, max. 5 adultes)'
-        Slug: domanial-5-places-max-5-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
         Remarque2: null
         Remarque3: null
         Remarque4: null
@@ -1484,79 +364,19 @@
         Locale: fr
         Name: 'Domanial (5 places, max. 5 adultes)'
         Slug: domanial-5-places-max-5-adultes
-        Indice: 'Avec Sanitaires'
+        Indice: 'Avec grand espace de vie'
         Surface: null
         TypeTerrasse: null
         Description: null
         Composition: null
         Presentation: 'Découvrez le Domanial 5 places. Ce mobil-home bien agencé vous attend pour des vacances sous le signe du sourire.'
-        CapaciteHebergement: "5 personnes\nRecommandé : 2 adultes + 3 enfants, bébé compris\nToléré : 4 adultes maxi. + 1 enfant, bébé compris\nAdulte : à partir de 14 ans\n"
-        Dimensions: "Surface : 31 m²\nLongueur 7,80 m x Largeur 4 m\n"
-        Agencement: "Chambre parents : 1 lit de 140x190 cm avec sommier à lattes (sauf Domaine de Léveno, lit de 160x190 cm)\nChambre enfants : 2 lits de 80x190 cm avec sommiers à lattes\nPièce commune : coin cuisine avec évier, chauffe-eau, gaz 4 feux, micro-ondes, réfrigérateur, coin repas avec banquette transformable en lit de 115x180 cm (sauf Les Deux Fontaines\net Loyada, 90x190 cm), 1 table et 4 chaises\nSanitaires : salle de bains avec lavabo et douche, WC séparé"
-        Equipements: "Intérieur : chauffage électrique, 2 bouteilles de gaz\nExtérieur : lumière, parasol non utilisable à la plage et salon de jardin\nElectricité : 10 ampères\nParking : sur emplacement pour un seul véhicule (sauf mention contraire)\n"
+        CapaciteHebergement: "5 personnes\r\nRecommandé : 2 adultes + 3 enfants, bébé compris\r\nToléré : 4 adultes maxi. + 1 enfant, bébé compris\r\nAdulte : à partir de 14 ans"
+        Dimensions: "Surface : 31 m²\r\nLongueur 7,80 m x Largeur 4 m"
+        Agencement: "Chambre parents : 1 lit de 140x190 cm avec sommier à lattes (sauf Domaine de Léveno, lit de 160x190 cm)\r\nChambre enfants : 2 lits de 80x190 cm avec sommiers à lattes\r\nPièce commune : coin cuisine avec évier, chauffe-eau, gaz 4 feux, micro-ondes, réfrigérateur, coin repas avec banquette transformable en lit de 115x180 cm (sauf Les Deux Fontaines\r\net Loyada, 90x190 cm), 1 table et 4 chaises\r\nSanitaires : salle de bains avec lavabo et douche, WC séparé"
+        Equipements: "Intérieur : chauffage électrique, 2 bouteilles de gaz\r\nExtérieur : lumière, parasol non utilisable à la plage et salon de jardin\r\nElectricité : 10 ampères\r\nParking : sur emplacement pour un seul véhicule (sauf mention contraire)"
         AnneeUtilisation: '0-7 ans'
         Remarque1: 'En fonction du camping, l’agencement peut être différent. Tous les hébergements ne sont pas équipés de terrasse'
         Remarque2: 'Bains de soleil non fournis'
-        Remarque3: ''
-        Remarque4: null
-    19_nl:
-        Id: 19
-        Locale: nl
-        Name: 'Domanial (5 places, max. 5 adultes)'
-        Slug: domanial-5-places-max-5-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    20_de:
-        Id: 20
-        Locale: de
-        Name: 'Domanial (6 places, max. 5 adultes)'
-        Slug: domanial-6-places-max-5-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    20_en:
-        Id: 20
-        Locale: en
-        Name: 'Domanial (6 places, max. 5 adultes)'
-        Slug: domanial-6-places-max-5-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
         Remarque3: null
         Remarque4: null
     20_fr:
@@ -1564,79 +384,19 @@
         Locale: fr
         Name: 'Domanial (6 places, max. 5 adultes)'
         Slug: domanial-6-places-max-5-adultes
-        Indice: 'Avec Sanitaires'
+        Indice: 'Avec grand espace de vie'
         Surface: null
         TypeTerrasse: null
         Description: null
         Composition: null
-        Presentation: 'Parce que chacun vit ses vacances à son rythme, Vacances directes vous propose le mobil-home Domanial où espace de vie rime avec confort ! '
-        CapaciteHebergement: "6 personnes\nRecommandé : 2 adultes + 4 enfants, bébé compris\nToléré : 5 adultes maxi. + 1 enfant, bébé compris\nAdulte : à partir de 14 ans\n"
-        Dimensions: "Surface : 31 m²\nLongueur 7,80 m x Largeur 4 m\n"
-        Agencement: "Chambre parents : 1 lit de 140x190 cm avec sommier à lattes\nChambre enfants : 2 lits de 80x190 cm avec sommiers à lattes + 1 lit superposé (ne convient pas aux enfants de - 6 ans) ou d’appoint de 70x190 cm\nPièce commune : coin cuisine avec évier, chauffe-eau, gaz 4 feux, micro-ondes, réfrigérateur, coin repas avec banquette transformable en lit de 115x180 cm, 1 table et 4 chaises\nSanitaires : salle de bains avec lavabo et douche, WC séparé\n"
-        Equipements: "Intérieur : chauffage électrique, 2 bouteilles de gaz\nExtérieur : lumière, parasol non utilisable à la plage et salon de jardin\nElectricité : 10 ampères\nParking : sur emplacement pour un seul véhicule (sauf mention contraire)\n"
+        Presentation: 'Parce que chacun vit ses vacances à son rythme, Vacances directes vous propose le mobil-home Domanial où espace de vie rime avec confort !'
+        CapaciteHebergement: "6 personnes\r\nRecommandé : 2 adultes + 4 enfants, bébé compris\r\nToléré : 5 adultes maxi. + 1 enfant, bébé compris\r\nAdulte : à partir de 14 ans"
+        Dimensions: "Surface : 31 m²\r\nLongueur 7,80 m x Largeur 4 m"
+        Agencement: "Chambre parents : 1 lit de 140x190 cm avec sommier à lattes\r\nChambre enfants : 2 lits de 80x190 cm avec sommiers à lattes + 1 lit superposé (ne convient pas aux enfants de - 6 ans) ou d’appoint de 70x190 cm\r\nPièce commune : coin cuisine avec évier, chauffe-eau, gaz 4 feux, micro-ondes, réfrigérateur, coin repas avec banquette transformable en lit de 115x180 cm, 1 table et 4 chaises\r\nSanitaires : salle de bains avec lavabo et douche, WC séparé"
+        Equipements: "Intérieur : chauffage électrique, 2 bouteilles de gaz\r\nExtérieur : lumière, parasol non utilisable à la plage et salon de jardin\r\nElectricité : 10 ampères\r\nParking : sur emplacement pour un seul véhicule (sauf mention contraire)"
         AnneeUtilisation: '0-7 ans (sauf 7-12 ans : le Conguel, Domaine de Kermario, la Loubine, les Deux Plages, les Vignes, le Mas, le Petit Mousse, le Bahia Club, les Fontaines)'
         Remarque1: 'En fonction du camping, l’agencement peut être différent. Tous les hébergements ne sont pas équipés de terrasse'
         Remarque2: 'Bains de soleil non fournis'
-        Remarque3: ''
-        Remarque4: null
-    20_nl:
-        Id: 20
-        Locale: nl
-        Name: 'Domanial (6 places, max. 5 adultes)'
-        Slug: domanial-6-places-max-5-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    21_de:
-        Id: 21
-        Locale: de
-        Name: 'Domanial Luxe (6 places, max. 5 adultes)'
-        Slug: domanial-luxe-6-places-max-5-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    21_en:
-        Id: 21
-        Locale: en
-        Name: 'Domanial Luxe (6 places, max. 5 adultes)'
-        Slug: domanial-luxe-6-places-max-5-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
         Remarque3: null
         Remarque4: null
     21_fr:
@@ -1644,78 +404,18 @@
         Locale: fr
         Name: 'Domanial Luxe (6 places, max. 5 adultes)'
         Slug: domanial-luxe-6-places-max-5-adultes
-        Indice: 'Avec Sanitaires'
+        Indice: 'Avec vaste salon'
         Surface: null
         TypeTerrasse: null
         Description: null
         Composition: null
         Presentation: 'Parce que chacun a des envies et des exigences propres, Vacances directes vous propose un mobil-home d''exception ! Spacieux et bien équipé, le mobil-home Domanial Luxe vous offrira des vacances tout confort.'
-        CapaciteHebergement: "6 personnes\nRecommandé : 2 adultes + 4 enfants, bébé compris\nToléré : 5 adultes maxi. + 1 enfant, bébé compris\nAdulte : à partir de 14 ans\n"
-        Dimensions: "Surface : 35 m²\nLongueur 9,72 m x Largeur 4 m\n"
-        Agencement: "Chambre parents : 1 lit de 140x190 cm avec sommier à lattes, volets roulants\nChambre enfants : 2 lits de 80x190 cm avec sommiers à lattes, volets roulants\nPièce commune : coin cuisine avec évier, chauffe-eau, gaz 4 feux, micro-ondes, réfrigérateur, coin repas avec 1 table avec rallonge et 4 chaises, coin séjour avec canapé convertible en couchage 160x200cm et table basse\nSanitaires : salle de bains avec lavabo et douche, WC séparé\n"
-        Equipements: "Intérieur : chauffage électrique, 2 bouteilles de gaz\nExtérieur : lumière, parasol non utilisable à la plage et salon de jardin\nElectricité : 10 ampères\nParking : sur emplacement pour un seul véhicule (sauf mention contraire)"
+        CapaciteHebergement: "6 personnes\r\nRecommandé : 2 adultes + 4 enfants, bébé compris\r\nToléré : 5 adultes maxi. + 1 enfant, bébé compris\r\nAdulte : à partir de 14 ans"
+        Dimensions: "Surface : 35 m²\r\nLongueur 9,72 m x Largeur 4 m"
+        Agencement: "Chambre parents : 1 lit de 140x190 cm avec sommier à lattes, volets roulants\r\nChambre enfants : 2 lits de 80x190 cm avec sommiers à lattes, volets roulants\r\nPièce commune : coin cuisine avec évier, chauffe-eau, gaz 4 feux, micro-ondes, réfrigérateur, coin repas avec 1 table avec rallonge et 4 chaises, coin séjour avec canapé convertible en couchage 160x200cm et table basse\r\nSanitaires : salle de bains avec lavabo et douche, WC séparé"
+        Equipements: "Intérieur : chauffage électrique, 2 bouteilles de gaz\r\nExtérieur : lumière, parasol non utilisable à la plage et salon de jardin\r\nElectricité : 10 ampères\r\nParking : sur emplacement pour un seul véhicule (sauf mention contraire)"
         AnneeUtilisation: '7-12 ans'
         Remarque1: 'En fonction du camping, l’agencement peut être différent. Tous les hébergements ne sont pas équipés de terrasse'
-        Remarque2: ''
-        Remarque3: ''
-        Remarque4: null
-    21_nl:
-        Id: 21
-        Locale: nl
-        Name: 'Domanial Luxe (6 places, max. 5 adultes)'
-        Slug: domanial-luxe-6-places-max-5-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    22_de:
-        Id: 22
-        Locale: de
-        Name: 'Emplacement nu face mer'
-        Slug: emplacement-nu-face-mer
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    22_en:
-        Id: 22
-        Locale: en
-        Name: 'Emplacement nu face mer'
-        Slug: emplacement-nu-face-mer
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
         Remarque2: null
         Remarque3: null
         Remarque4: null
@@ -1724,78 +424,18 @@
         Locale: fr
         Name: 'Emplacement nu face mer'
         Slug: emplacement-nu-face-mer
-        Indice: 'Avec Sanitaires'
+        Indice: 'Au bord de la mer'
         Surface: null
         TypeTerrasse: null
         Description: null
         Composition: null
-        Presentation: "Passez quelques jours ou plus au Palavas Camping,\nà Palavas-les-Flots. \net profitez des joies du plein-air"
+        Presentation: "Passez quelques jours ou plus au Palavas Camping,\r\nà Palavas-les-Flots. \r\net profitez des joies du plein-air"
         CapaciteHebergement: 'Jusqu''à 6 personnes maximum'
-        Dimensions: ''
-        Agencement: ''
+        Dimensions: null
+        Agencement: null
         Equipements: 'Accès à l''électricité'
-        AnneeUtilisation: ''
-        Remarque1: 'Un seul véhicule est autorisé par emplacement '
-        Remarque2: ''
-        Remarque3: ''
-        Remarque4: null
-    22_nl:
-        Id: 22
-        Locale: nl
-        Name: 'Emplacement nu face mer'
-        Slug: emplacement-nu-face-mer
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
         AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    23_de:
-        Id: 23
-        Locale: de
-        Name: 'Emplacement nu'
-        Slug: emplacement-nu
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    23_en:
-        Id: 23
-        Locale: en
-        Name: 'Emplacement nu'
-        Slug: emplacement-nu
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
+        Remarque1: 'Un seul véhicule est autorisé par emplacement'
         Remarque2: null
         Remarque3: null
         Remarque4: null
@@ -1804,78 +444,18 @@
         Locale: fr
         Name: 'Emplacement nu'
         Slug: emplacement-nu
-        Indice: 'Avec Sanitaires'
+        Indice: 'Avec électricité'
         Surface: null
         TypeTerrasse: null
         Description: null
         Composition: null
-        Presentation: "Passez quelques jours ou plus\nsur le Domaine de Kermario,\nà Carnac ou\nau Palavas Camping,\nà Palavas-les-Flots. \net profitez des joies du plein-air"
+        Presentation: "Passez quelques jours ou plus\r\nsur le Domaine de Kermario,\r\nà Carnac ou\r\nau Palavas Camping,\r\nà Palavas-les-Flots. \r\net profitez des joies du plein-air"
         CapaciteHebergement: 'Jusqu''à 6 personnes maximum'
-        Dimensions: ''
-        Agencement: ''
+        Dimensions: null
+        Agencement: null
         Equipements: 'Accès à l''électricité'
-        AnneeUtilisation: ''
-        Remarque1: 'Un seul véhicule est autorisé par emplacement '
-        Remarque2: ''
-        Remarque3: ''
-        Remarque4: null
-    23_nl:
-        Id: 23
-        Locale: nl
-        Name: 'Emplacement nu'
-        Slug: emplacement-nu
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
         AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    24_de:
-        Id: 24
-        Locale: de
-        Name: 'Estivale (5 places, max. 4 adultes)'
-        Slug: estivale-5-places-max-4-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    24_en:
-        Id: 24
-        Locale: en
-        Name: 'Estivale (5 places, max. 4 adultes)'
-        Slug: estivale-5-places-max-4-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
+        Remarque1: 'Un seul véhicule est autorisé par emplacement'
         Remarque2: null
         Remarque3: null
         Remarque4: null
@@ -1884,79 +464,19 @@
         Locale: fr
         Name: 'Estivale (5 places, max. 4 adultes)'
         Slug: estivale-5-places-max-4-adultes
-        Indice: 'Avec Sanitaires'
+        Indice: 'Sans sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
         Composition: null
         Presentation: 'Pour ceux qui apprécient la simplicité, l’Estivale sera l’hébergement idéal des vacances en plein air. Vacances directes met à votre disposition cette caravane 5 places sans sanitaires avec auvent pour profiter pleinement des activités du camping et de ses environs.'
-        CapaciteHebergement: "5 personnes\nRecommandé : 2 adultes + 3 enfants, bébé compris\nToléré : 4 adultes maxi. + 1 enfant, bébé compris\nAdulte : à partir de 14 ans\n"
-        Dimensions: "Surface : Estivale 10 m² + auvent 11 m²\nLongueur 4,60 m x Largeur 4,65 m\n"
-        Agencement: "Chambre parents : 1 lit de 140x190 cm avec sommier à lattes, penderie\nChambre enfants : 2 lits superposés de 70x180 cm avec sommiers à lattes, dînette se transformant en lit de 70 x 180 cm\nSous l’auvent : cuisine avec réfrigérateur, réchaud 2 feux avec bouteille de gaz, meuble de rangement 120 x 150 cm, salon de jardin"
-        Equipements: "Electricité : 220 V + prises\nParking : sur emplacement pour un seul véhicule (sauf mention contraire)"
+        CapaciteHebergement: "5 personnes\r\nRecommandé : 2 adultes + 3 enfants, bébé compris\r\nToléré : 4 adultes maxi. + 1 enfant, bébé compris\r\nAdulte : à partir de 14 ans"
+        Dimensions: "Surface : Estivale 10 m² + auvent 11 m²\r\nLongueur 4,60 m x Largeur 4,65 m"
+        Agencement: "Chambre parents : 1 lit de 140x190 cm avec sommier à lattes, penderie\r\nChambre enfants : 2 lits superposés de 70x180 cm avec sommiers à lattes, dînette se transformant en lit de 70 x 180 cm\r\nSous l’auvent : cuisine avec réfrigérateur, réchaud 2 feux avec bouteille de gaz, meuble de rangement 120 x 150 cm, salon de jardin"
+        Equipements: "Electricité : 220 V + prises\r\nParking : sur emplacement pour un seul véhicule (sauf mention contraire)"
         AnneeUtilisation: 'Plus de 12 ans'
         Remarque1: 'En fonction du camping, l’agencement peut être différent.'
         Remarque2: 'Hébergement sans arrivée d’eau, sans sanitaires et sans chauffage'
-        Remarque3: ''
-        Remarque4: null
-    24_nl:
-        Id: 24
-        Locale: nl
-        Name: 'Estivale (5 places, max. 4 adultes)'
-        Slug: estivale-5-places-max-4-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    25_de:
-        Id: 25
-        Locale: de
-        Name: 'Familial (5 places, max. 5 adultes) climatisé'
-        Slug: familial-5-places-max-5-adultes-climatise
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    25_en:
-        Id: 25
-        Locale: en
-        Name: 'Familial (5 places, max. 5 adultes) climatisé'
-        Slug: familial-5-places-max-5-adultes-climatise
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
         Remarque3: null
         Remarque4: null
     25_fr:
@@ -1964,78 +484,18 @@
         Locale: fr
         Name: 'Familial (5 places, max. 5 adultes) climatisé'
         Slug: familial-5-places-max-5-adultes-climatise
-        Indice: 'Avec Sanitaires'
+        Indice: 'Avec 2 chambres'
         Surface: null
         TypeTerrasse: null
         Description: null
         Composition: null
         Presentation: 'Soif d''évasion, de dépaysement et d''authenticité, le mobil-home Familial 5 places assurera le plein confort grâce à la climatisation!'
-        CapaciteHebergement: "5 personnes\nRecommandé : 2 adultes + 3 enfants, bébé compris\nToléré : 5 adultes maxi. \n\n"
-        Dimensions: "Surface : 26 m²\n\n"
-        Agencement: "Chambre parents : 1 lit de 140x190 cm avec sommier à lattes, penderie\nChambre enfants : 2 lits de 80x190 cm avec sommiers à lattes + 1 lit superposé (ne convient pas aux enfants de - 6 ans)\nPièce commune : coin cuisine avec évier, chauffe-eau, gaz 4 feux, micro-ondes, réfrigérateur, coin repas\nSanitaires : salle de bains avec lavabo et douche, WC séparé"
-        Equipements: "Intérieur : chauffage électrique, 2 bouteilles de gaz\nExtérieur : lumière, parasol non utilisable à la plage et salon de jardin\nElectricité : 10 ampères\nParking : sur emplacement pour un seul véhicule (sauf mention contraire)\n"
+        CapaciteHebergement: "5 personnes\r\nRecommandé : 2 adultes + 3 enfants, bébé compris\r\nToléré : 5 adultes maxi."
+        Dimensions: 'Surface : 26 m²'
+        Agencement: "Chambre parents : 1 lit de 140x190 cm avec sommier à lattes, penderie\r\nChambre enfants : 2 lits de 80x190 cm avec sommiers à lattes + 1 lit superposé (ne convient pas aux enfants de - 6 ans)\r\nPièce commune : coin cuisine avec évier, chauffe-eau, gaz 4 feux, micro-ondes, réfrigérateur, coin repas\r\nSanitaires : salle de bains avec lavabo et douche, WC séparé"
+        Equipements: "Intérieur : chauffage électrique, 2 bouteilles de gaz\r\nExtérieur : lumière, parasol non utilisable à la plage et salon de jardin\r\nElectricité : 10 ampères\r\nParking : sur emplacement pour un seul véhicule (sauf mention contraire)"
         AnneeUtilisation: '0-7 ans'
         Remarque1: 'En fonction du camping, l’agencement peut être différent.'
-        Remarque2: ''
-        Remarque3: ''
-        Remarque4: null
-    25_nl:
-        Id: 25
-        Locale: nl
-        Name: 'Familial (5 places, max. 5 adultes) climatisé'
-        Slug: familial-5-places-max-5-adultes-climatise
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    26_de:
-        Id: 26
-        Locale: de
-        Name: 'Familial (6 places, max. 5 adultes)'
-        Slug: familial-6-places-max-5-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    26_en:
-        Id: 26
-        Locale: en
-        Name: 'Familial (6 places, max. 5 adultes)'
-        Slug: familial-6-places-max-5-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
         Remarque2: null
         Remarque3: null
         Remarque4: null
@@ -2044,78 +504,18 @@
         Locale: fr
         Name: 'Familial (6 places, max. 5 adultes)'
         Slug: familial-6-places-max-5-adultes
-        Indice: 'Avec Sanitaires'
+        Indice: 'Avec 2 chambres et banquette convertible'
         Surface: null
         TypeTerrasse: null
         Description: null
         Composition: null
-        Presentation: 'Particulièrement prisé des familles, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l''esprit libre ! '
-        CapaciteHebergement: "6 personnes\nRecommandé : 2 adultes + 4 enfants, bébé compris\nToléré : 5 adultes maxi. + 1 enfant, bébé compris\nAdulte : à partir de 14 ans\n"
-        Dimensions: "Surface : 29 m²\nLongueur 7,20 m x Largeur 4 m\n"
-        Agencement: "Chambre parents : 1 lit de 140x190 cm avec sommier à lattes\nChambre enfants : 2 lits de 70x190 cm avec sommiers à lattes + 1 lit superposé (ne convient pas aux enfants de - 6 ans) ou d’appoint de 60x190 cm\nPièce commune : coin cuisine avec évier, chauffe-eau, gaz 4 feux, micro-ondes, combiné réfrigérateur-congélateur, coin repas avec banquette transformable en lit de 115x180 cm, 1 table et 4 chaises\nSanitaires : salle de bains avec lavabo et douche, WC séparé\n"
-        Equipements: "Intérieur : chauffage électrique, 2 bouteilles de gaz\nExtérieur : lumière, parasol non utilisable à la plage et salon de jardin\nElectricité : 10 ampères\nParking : sur emplacement pour un seul véhicule (sauf mention contraire)\n"
-        AnneeUtilisation: "0-7 ans (sauf 7-12 ans : le Conguel, Domaine d'Inly, les Amiaux, le\nCalifornia, la Loubine, le Bois Soleil,l’Océano d’Or, Domaine d’Oléron,\nSignol, les Deux Plages, Domaine\ndes Charmilles, le Mas, Domaine des\nChênes Verts, la Ribeyre, Caussanel,\nle Moulin, les Sources, Parc de la\nGrenouillère, la Coste Rouge,\nle Roussillonnais, le Cala Gogo,les Fontaines, le Bahia Club, le Petit Mousse, Camping du Lac)"
+        Presentation: 'Particulièrement prisé des familles, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l''esprit libre !'
+        CapaciteHebergement: "6 personnes\r\nRecommandé : 2 adultes + 4 enfants, bébé compris\r\nToléré : 5 adultes maxi. + 1 enfant, bébé compris\r\nAdulte : à partir de 14 ans"
+        Dimensions: "Surface : 29 m²\r\nLongueur 7,20 m x Largeur 4 m"
+        Agencement: "Chambre parents : 1 lit de 140x190 cm avec sommier à lattes\r\nChambre enfants : 2 lits de 70x190 cm avec sommiers à lattes + 1 lit superposé (ne convient pas aux enfants de - 6 ans) ou d’appoint de 60x190 cm\r\nPièce commune : coin cuisine avec évier, chauffe-eau, gaz 4 feux, micro-ondes, combiné réfrigérateur-congélateur, coin repas avec banquette transformable en lit de 115x180 cm, 1 table et 4 chaises\r\nSanitaires : salle de bains avec lavabo et douche, WC séparé"
+        Equipements: "Intérieur : chauffage électrique, 2 bouteilles de gaz\r\nExtérieur : lumière, parasol non utilisable à la plage et salon de jardin\r\nElectricité : 10 ampères\r\nParking : sur emplacement pour un seul véhicule (sauf mention contraire)"
+        AnneeUtilisation: "0-7 ans (sauf 7-12 ans : le Conguel, Domaine d'Inly, les Amiaux, le\r\nCalifornia, la Loubine, le Bois Soleil,l’Océano d’Or, Domaine d’Oléron,\r\nSignol, les Deux Plages, Domaine\r\ndes Charmilles, le Mas, Domaine des\r\nChênes Verts, la Ribeyre, Caussanel,\r\nle Moulin, les Sources, Parc de la\r\nGrenouillère, la Coste Rouge,\r\nle Roussillonnais, le Cala Gogo,les Fontaines, le Bahia Club, le Petit Mousse, Camping du Lac)"
         Remarque1: 'En fonction du camping, l’agencement peut être différent.'
-        Remarque2: ''
-        Remarque3: ''
-        Remarque4: null
-    26_nl:
-        Id: 26
-        Locale: nl
-        Name: 'Familial (6 places, max. 5 adultes)'
-        Slug: familial-6-places-max-5-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    27_de:
-        Id: 27
-        Locale: de
-        Name: 'Familial (6 places, max. 5 adultes) Climatisé'
-        Slug: familial-6-places-max-5-adultes-climatise
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    27_en:
-        Id: 27
-        Locale: en
-        Name: 'Familial (6 places, max. 5 adultes) Climatisé'
-        Slug: familial-6-places-max-5-adultes-climatise
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
         Remarque2: null
         Remarque3: null
         Remarque4: null
@@ -2124,67 +524,7 @@
         Locale: fr
         Name: 'Familial (6 places, max. 5 adultes) Climatisé'
         Slug: familial-6-places-max-5-adultes-climatise
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    27_nl:
-        Id: 27
-        Locale: nl
-        Name: 'Familial (6 places, max. 5 adultes) Climatisé'
-        Slug: familial-6-places-max-5-adultes-climatise
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    28_de:
-        Id: 28
-        Locale: de
-        Name: 'Familial (6 places) vue lac'
-        Slug: familial-6-places-vue-lac
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    28_en:
-        Id: 28
-        Locale: en
-        Name: 'Familial (6 places) vue lac'
-        Slug: familial-6-places-vue-lac
-        Indice: 'Avec Sanitaires'
+        Indice: 'Avec 2 chambres et banquette convertible'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -2219,143 +559,23 @@
         Remarque2: ''
         Remarque3: ''
         Remarque4: null
-    28_nl:
-        Id: 28
-        Locale: nl
-        Name: 'Familial (6 places) vue lac'
-        Slug: familial-6-places-vue-lac
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    29_de:
-        Id: 29
-        Locale: de
-        Name: 'Hélios (6 places, max. 5 adultes)'
-        Slug: helios-6-places-max-5-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    29_en:
-        Id: 29
-        Locale: en
-        Name: 'Hélios (6 places, max. 5 adultes)'
-        Slug: helios-6-places-max-5-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
     29_fr:
         Id: 29
         Locale: fr
         Name: 'Hélios (6 places, max. 5 adultes)'
         Slug: helios-6-places-max-5-adultes
-        Indice: 'Avec Sanitaires'
+        Indice: 'Accès handicapé'
         Surface: null
         TypeTerrasse: null
         Description: null
         Composition: null
         Presentation: 'Découvrez le modèle Hélios 6 places. Ce mobil-home bien agencé est adapté aux personnes à mobilité réduite.'
-        CapaciteHebergement: "6 personnes\nRecommandé : 2 adultes + 4 enfants, bébé compris\nToléré : 5 adultes maxi. Adulte à partir de 14 ans. \n\n"
-        Dimensions: "Surface : 21 m²\nLongueur 7,92 m ( dont 2,10 m de terrasse couverte)x Largeur 3,90 m\n"
-        Agencement: "Chambre parents : 1 lit de 140x190 cm avec sommier à lattes\nChambre enfants : 2 lits de 90x190 cm avec sommiers à lattes ( + 1 lit rabbatable en hauteur) Pièce commune : coin cuisine avec évier, chauffe-eau, gaz 4 feux, micro-ondes, combiné réfrigérateur-congélateur, coin repas avec banquette transformable en lit de 115x180 cm, 1 table et 4 chaises\nSanitaires : salle de bains avec lavabo et douche, WC séparé\n"
-        Equipements: "Intérieur : chauffage électrique, 2 bouteilles de gaz\nExtérieur : lumière, parasol non utilisable à la plage et salon de jardin\nElectricité : 10 ampères\nParking : sur emplacement pour un seul véhicule (sauf mention contraire)\n"
+        CapaciteHebergement: "6 personnes\r\nRecommandé : 2 adultes + 4 enfants, bébé compris\r\nToléré : 5 adultes maxi. Adulte à partir de 14 ans."
+        Dimensions: "Surface : 21 m²\r\nLongueur 7,92 m ( dont 2,10 m de terrasse couverte)x Largeur 3,90 m"
+        Agencement: "Chambre parents : 1 lit de 140x190 cm avec sommier à lattes\r\nChambre enfants : 2 lits de 90x190 cm avec sommiers à lattes ( + 1 lit rabbatable en hauteur) Pièce commune : coin cuisine avec évier, chauffe-eau, gaz 4 feux, micro-ondes, combiné réfrigérateur-congélateur, coin repas avec banquette transformable en lit de 115x180 cm, 1 table et 4 chaises\r\nSanitaires : salle de bains avec lavabo et douche, WC séparé"
+        Equipements: "Intérieur : chauffage électrique, 2 bouteilles de gaz\r\nExtérieur : lumière, parasol non utilisable à la plage et salon de jardin\r\nElectricité : 10 ampères\r\nParking : sur emplacement pour un seul véhicule (sauf mention contraire)"
         AnneeUtilisation: '0-7 ans'
         Remarque1: 'En fonction du camping, l’agencement peut être différent.'
-        Remarque2: ''
-        Remarque3: ''
-        Remarque4: null
-    29_nl:
-        Id: 29
-        Locale: nl
-        Name: 'Hélios (6 places, max. 5 adultes)'
-        Slug: helios-6-places-max-5-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    30_de:
-        Id: 30
-        Locale: de
-        Name: 'Logial (5 places, max. 4 adultes)'
-        Slug: logial-5-places-max-4-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    30_en:
-        Id: 30
-        Locale: en
-        Name: 'Logial (5 places, max. 4 adultes)'
-        Slug: logial-5-places-max-4-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
         Remarque2: null
         Remarque3: null
         Remarque4: null
@@ -2364,79 +584,19 @@
         Locale: fr
         Name: 'Logial (5 places, max. 4 adultes)'
         Slug: logial-5-places-max-4-adultes
-        Indice: 'Avec Sanitaires'
+        Indice: 'Avec terrasse couverte intégrée'
         Surface: null
         TypeTerrasse: null
         Description: null
         Composition: null
-        Presentation: 'Profitez du Logial et de son atout incontestable : sa terrasse couverte au bout du mobil-home : repos, détente et farniente seront au rendez-vous. Ses deux chambres côte à côte permettront à toute la famille de passer de bonnes vacances ! '
-        CapaciteHebergement: "5 personnes\nRecommandé : 2 adultes + 3 enfants, bébé compris\nToléré : 4 adultes maxi. + 1 enfant, bébé compris\nAdulte : à partir de 14 ans\n"
-        Dimensions: "Surface : 32 m²\nLongueur 8,52 m x Largeur 4 m\n"
-        Agencement: "Chambre parents : 1 lit de\n140x190 cm avec sommier à lattes\nE Chambre enfants : 2 lits de\n70x190 cm avec sommiers à lattes\n+ 1 lit d’appoint de 70x165 cm (sauf\nPalavas Camping)\nE Pièce commune : coin cuisine\navec évier, chauffe-eau, gaz\n4 feux, micro-ondes, réfrigérateur, coin repas avec banquette."
-        Equipements: "Intérieur : chauffage électrique, 2 bouteilles de gaz\nExtérieur : lumière, parasol non utilisable à la plage et salon de jardin\nElectricité : 10 ampères\nParking : sur emplacement pour un seul véhicule (sauf mention contraire)\n"
-        AnneeUtilisation: "7-12 ans (sauf 0-7 ans : eden,\nPalavas Camping)"
+        Presentation: 'Profitez du Logial et de son atout incontestable : sa terrasse couverte au bout du mobil-home : repos, détente et farniente seront au rendez-vous. Ses deux chambres côte à côte permettront à toute la famille de passer de bonnes vacances !'
+        CapaciteHebergement: "5 personnes\r\nRecommandé : 2 adultes + 3 enfants, bébé compris\r\nToléré : 4 adultes maxi. + 1 enfant, bébé compris\r\nAdulte : à partir de 14 ans"
+        Dimensions: "Surface : 32 m²\r\nLongueur 8,52 m x Largeur 4 m"
+        Agencement: "Chambre parents : 1 lit de\r\n140x190 cm avec sommier à lattes\r\nE Chambre enfants : 2 lits de\r\n70x190 cm avec sommiers à lattes\r\n+ 1 lit d’appoint de 70x165 cm (sauf\r\nPalavas Camping)\r\nE Pièce commune : coin cuisine\r\navec évier, chauffe-eau, gaz\r\n4 feux, micro-ondes, réfrigérateur, coin repas avec banquette."
+        Equipements: "Intérieur : chauffage électrique, 2 bouteilles de gaz\r\nExtérieur : lumière, parasol non utilisable à la plage et salon de jardin\r\nElectricité : 10 ampères\r\nParking : sur emplacement pour un seul véhicule (sauf mention contraire)"
+        AnneeUtilisation: "7-12 ans (sauf 0-7 ans : eden,\r\nPalavas Camping)"
         Remarque1: 'En fonction du camping, l’agencement peut être différent.'
         Remarque2: 'Pas de place pour un lit bébé'
-        Remarque3: ''
-        Remarque4: null
-    30_nl:
-        Id: 30
-        Locale: nl
-        Name: 'Logial (5 places, max. 4 adultes)'
-        Slug: logial-5-places-max-4-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    31_de:
-        Id: 31
-        Locale: de
-        Name: 'Maisonnette (2 pièces 4-6 places) clim'
-        Slug: maisonnette-2-pieces-4-6-places-clim
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    31_en:
-        Id: 31
-        Locale: en
-        Name: 'Maisonnette (2 pièces 4-6 places) clim'
-        Slug: maisonnette-2-pieces-4-6-places-clim
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
         Remarque3: null
         Remarque4: null
     31_fr:
@@ -2444,77 +604,17 @@
         Locale: fr
         Name: 'Maisonnette (2 pièces 4-6 places) clim'
         Slug: maisonnette-2-pieces-4-6-places-clim
-        Indice: 'Avec Sanitaires'
+        Indice: 'Avec terrasse'
         Surface: null
         TypeTerrasse: null
         Description: null
         Composition: null
         Presentation: 'Profitez du confort de ces maisonnettes pour des vacances réussies (climatisation)'
-        CapaciteHebergement: "6 personnes\nRecommandé : 2 adultes + 4 enfants.\nToléré : 6 adultes maxi. \n\n"
-        Dimensions: "Surface : 31 m²\n\n"
-        Agencement: "Composé d'un séjour avec un canapé convertible et d'une cabine avec 2 lits superposés de 70, d'un coin cuisine, d'une chambre avec un lit de 140 et d'une salle d'eau avec toilette accessible par la chambre.\n"
+        CapaciteHebergement: "6 personnes\r\nRecommandé : 2 adultes + 4 enfants.\r\nToléré : 6 adultes maxi."
+        Dimensions: 'Surface : 31 m²'
+        Agencement: 'Composé d''un séjour avec un canapé convertible et d''une cabine avec 2 lits superposés de 70, d''un coin cuisine, d''une chambre avec un lit de 140 et d''une salle d''eau avec toilette accessible par la chambre.'
         Equipements: 'Kitchenette comprenant micro-onde, réfrigirateur avec freezer, cafetière, ustensiles de cuisine, plaques de cuisson. 1 salle d''eau avec toilette'
         AnneeUtilisation: '0-7 ans'
-        Remarque1: ''
-        Remarque2: ''
-        Remarque3: ''
-        Remarque4: null
-    31_nl:
-        Id: 31
-        Locale: nl
-        Name: 'Maisonnette (2 pièces 4-6 places) clim'
-        Slug: maisonnette-2-pieces-4-6-places-clim
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    32_de:
-        Id: 32
-        Locale: de
-        Name: 'Maisonnette (2 pièces 2-4 places) sans clim'
-        Slug: maisonnette-2-pieces-2-4-places-sans-clim
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    32_en:
-        Id: 32
-        Locale: en
-        Name: 'Maisonnette (2 pièces 2-4 places) sans clim'
-        Slug: maisonnette-2-pieces-2-4-places-sans-clim
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
         Remarque1: null
         Remarque2: null
         Remarque3: null
@@ -2524,77 +624,17 @@
         Locale: fr
         Name: 'Maisonnette (2 pièces 2-4 places) sans clim'
         Slug: maisonnette-2-pieces-2-4-places-sans-clim
-        Indice: 'Avec Sanitaires'
+        Indice: 'Avec terrasse'
         Surface: null
         TypeTerrasse: null
         Description: null
         Composition: null
         Presentation: 'Profitez du confort de maisonnettess équipées et meublées avec terrasse.'
-        CapaciteHebergement: "4 personnes\nRecommandé : 2 adultes + 2 enfants\nToléré : 4 adultes maxi. \n\n"
-        Dimensions: "Surface : 31 m²\n\n"
-        Agencement: "Coin cuisine,une salle d'eau avec toilette, une chambre avec un grand lit double 160 et d'un canapé convertible dans le séjour.\n"
+        CapaciteHebergement: "4 personnes\r\nRecommandé : 2 adultes + 2 enfants\r\nToléré : 4 adultes maxi."
+        Dimensions: 'Surface : 31 m²'
+        Agencement: 'Coin cuisine,une salle d''eau avec toilette, une chambre avec un grand lit double 160 et d''un canapé convertible dans le séjour.'
         Equipements: 'Kitchenette comprenant micro-onde, réfrigirateur avec freezer, cafetière, ustensiles de cuisine, plaques de cuisson. 1 salle d''eau avec toilette'
         AnneeUtilisation: '0-7 ans'
-        Remarque1: ''
-        Remarque2: ''
-        Remarque3: ''
-        Remarque4: null
-    32_nl:
-        Id: 32
-        Locale: nl
-        Name: 'Maisonnette (2 pièces 2-4 places) sans clim'
-        Slug: maisonnette-2-pieces-2-4-places-sans-clim
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    33_de:
-        Id: 33
-        Locale: de
-        Name: 'Océane (4 places, max. 4 adultes)'
-        Slug: oceane-4-places-max-4-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    33_en:
-        Id: 33
-        Locale: en
-        Name: 'Océane (4 places, max. 4 adultes)'
-        Slug: oceane-4-places-max-4-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
         Remarque1: null
         Remarque2: null
         Remarque3: null
@@ -2604,66 +644,6 @@
         Locale: fr
         Name: 'Océane (4 places, max. 4 adultes)'
         Slug: oceane-4-places-max-4-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    33_nl:
-        Id: 33
-        Locale: nl
-        Name: 'Océane (4 places, max. 4 adultes)'
-        Slug: oceane-4-places-max-4-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    34_de:
-        Id: 34
-        Locale: de
-        Name: 'O''Hara (6 places, max. 5 adultes)'
-        Slug: o-hara-6-places-max-5-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    34_en:
-        Id: 34
-        Locale: en
-        Name: 'O''Hara (6 places, max. 5 adultes)'
-        Slug: o-hara-6-places-max-5-adultes
         Indice: 'Avec Sanitaires'
         Surface: null
         TypeTerrasse: null
@@ -2699,142 +679,22 @@
         Remarque2: null
         Remarque3: null
         Remarque4: null
-    34_nl:
-        Id: 34
-        Locale: nl
-        Name: 'O''Hara (6 places, max. 5 adultes)'
-        Slug: o-hara-6-places-max-5-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    35_de:
-        Id: 35
-        Locale: de
-        Name: 'Pagotel (5 places) climatisé'
-        Slug: pagotel-5-places-climatise
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    35_en:
-        Id: 35
-        Locale: en
-        Name: 'Pagotel (5 places) climatisé'
-        Slug: pagotel-5-places-climatise
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
     35_fr:
         Id: 35
         Locale: fr
         Name: 'Pagotel (5 places) climatisé'
         Slug: pagotel-5-places-climatise
-        Indice: 'Avec Sanitaires'
+        Indice: 'Avec sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
         Composition: null
         Presentation: 'Découvrez cet habitat climatisé, ingénieux entre tente et mobil-home, pour des vacances originales et ressourçantes.'
-        CapaciteHebergement: "5 personnes\nRecommandé : 2 adultes + 3 enfants.\nToléré : 5 adultes maxi. \n\n"
-        Dimensions: "Surface : 25 m²\n\n"
-        Agencement: "1 chambre avec lit double en 120, 1 chambre avec 2 lits simples superposés et 1 lit simple 80, chevet et penderie dans les 2 chambres. \n\nKitchenette équipée d'une plaque de cuisson, évier, égouttoir, réfrigérateur, 1 placard haut et bas, salle d'eau avec douche, lavabo, WC.\n\n\n\n"
+        CapaciteHebergement: "5 personnes\r\nRecommandé : 2 adultes + 3 enfants.\r\nToléré : 5 adultes maxi."
+        Dimensions: 'Surface : 25 m²'
+        Agencement: "1 chambre avec lit double en 120, 1 chambre avec 2 lits simples superposés et 1 lit simple 80, chevet et penderie dans les 2 chambres. \r\n\r\nKitchenette équipée d'une plaque de cuisson, évier, égouttoir, réfrigérateur, 1 placard haut et bas, salle d'eau avec douche, lavabo, WC."
         Equipements: 'Eclairage, branchements électriques, chauffage. Eau courant chaude/froide. Climatisation, auvent extérieur, terrasse et salon de jardin.'
         AnneeUtilisation: '0-7 ans'
-        Remarque1: ''
-        Remarque2: ''
-        Remarque3: ''
-        Remarque4: null
-    35_nl:
-        Id: 35
-        Locale: nl
-        Name: 'Pagotel (5 places) climatisé'
-        Slug: pagotel-5-places-climatise
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    36_de:
-        Id: 36
-        Locale: de
-        Name: 'Résidential (4 Places, max. 4 adultes)'
-        Slug: residential-4-places-max-4-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    36_en:
-        Id: 36
-        Locale: en
-        Name: 'Résidential (4 Places, max. 4 adultes)'
-        Slug: residential-4-places-max-4-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
         Remarque1: null
         Remarque2: null
         Remarque3: null
@@ -2844,79 +704,19 @@
         Locale: fr
         Name: 'Résidential (4 Places, max. 4 adultes)'
         Slug: residential-4-places-max-4-adultes
-        Indice: 'Avec Sanitaires'
+        Indice: 'Avec terrasse couverte intégrée'
         Surface: null
         TypeTerrasse: null
         Description: null
         Composition: null
         Presentation: 'Vous apprécierez ce mobil-home résidential avec sa terrasse couverte, et son équipement confortable pour des vacnaces réussies !'
-        CapaciteHebergement: "4 personnes\nRecommandé : 2 adultes + 2 enfants, bébé compris\nToléré : 4 adultes maxi.\nAdulte : à partir de 14 ans\n"
-        Dimensions: "Surface hors terrasse : 21 m²\nLongueur 7,92 m (dont 2,10 m de\nterrasse couverte) x Largeur 3,90 m"
-        Agencement: "Chambre parents : 1 lit de\n140x190 cm avec sommier à lattes\nChambre enfants : 2 lits de\n70x190 cm avec sommiers à lattes,\n1 lit superposé ou d’appoint (sauf\nDomaine de Kermario,\nLou Broustaricq, Playa Joyel)\nPièce commune : coin cuisine\navec évier, chauffe-eau, gaz\n4 feux, micro-ondes, réfrigérateur,\ncoin repas avec banquette\ntransformable en lit de 140x190 cm,\n1 table et 2 tabourets\nSanitaire : salle de bains avec\nlavabo et douche, WC séparé"
-        Equipements: "Intérieur : chauffage électrique,\n2 bouteilles de gaz\nExtérieur : lumière, salon de jardin\nElectricité : 6 ampères\nParking : sur emplacement pour\nun seul véhicule (sauf mention\ncontraire)"
+        CapaciteHebergement: "4 personnes\r\nRecommandé : 2 adultes + 2 enfants, bébé compris\r\nToléré : 4 adultes maxi.\r\nAdulte : à partir de 14 ans"
+        Dimensions: "Surface hors terrasse : 21 m²\r\nLongueur 7,92 m (dont 2,10 m de\r\nterrasse couverte) x Largeur 3,90 m"
+        Agencement: "Chambre parents : 1 lit de\r\n140x190 cm avec sommier à lattes\r\nChambre enfants : 2 lits de\r\n70x190 cm avec sommiers à lattes,\r\n1 lit superposé ou d’appoint (sauf\r\nDomaine de Kermario,\r\nLou Broustaricq, Playa Joyel)\r\nPièce commune : coin cuisine\r\navec évier, chauffe-eau, gaz\r\n4 feux, micro-ondes, réfrigérateur,\r\ncoin repas avec banquette\r\ntransformable en lit de 140x190 cm,\r\n1 table et 2 tabourets\r\nSanitaire : salle de bains avec\r\nlavabo et douche, WC séparé"
+        Equipements: "Intérieur : chauffage électrique,\r\n2 bouteilles de gaz\r\nExtérieur : lumière, salon de jardin\r\nElectricité : 6 ampères\r\nParking : sur emplacement pour\r\nun seul véhicule (sauf mention\r\ncontraire)"
         AnneeUtilisation: '0-7 ans'
-        Remarque1: ''
+        Remarque1: null
         Remarque2: 'Pas de place pour un lit bébé'
-        Remarque3: ''
-        Remarque4: null
-    36_nl:
-        Id: 36
-        Locale: nl
-        Name: 'Résidential (4 Places, max. 4 adultes)'
-        Slug: residential-4-places-max-4-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    37_de:
-        Id: 37
-        Locale: de
-        Name: 'Résidential (5 places, max. 4 adultes)'
-        Slug: residential-5-places-max-4-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    37_en:
-        Id: 37
-        Locale: en
-        Name: 'Résidential (5 places, max. 4 adultes)'
-        Slug: residential-5-places-max-4-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
         Remarque3: null
         Remarque4: null
     37_fr:
@@ -2924,78 +724,18 @@
         Locale: fr
         Name: 'Résidential (5 places, max. 4 adultes)'
         Slug: residential-5-places-max-4-adultes
-        Indice: 'Avec Sanitaires'
+        Indice: 'Avec terrasse couverte intégrée'
         Surface: null
         TypeTerrasse: null
         Description: null
         Composition: null
-        Presentation: "Vous apprécierez le\nconfort et la tranquillité\ndu Résidential avec sa\nterrasse couverte."
-        CapaciteHebergement: "\n5 personnes\nRecommandé : 2 adultes + 3 enfants\nbébé compris\nToléré : 4 adultes maxi. + 1 enfant,\nbébé compris sauf exception\n(résidential 4 places)\nAdulte : à partir de 14 ans\n"
-        Dimensions: "Surface hors terrasse : 21 m²\nLongueur 7,92 m (dont 2,10 m de\nterrasse couverte) x Largeur 3,90 m"
-        Agencement: "Chambre parents : 1 lit de\n140x190 cm avec sommier à lattes\nChambre enfants : 2 lits de\n70x190 cm avec sommiers à lattes,\n1 lit superposé ou d’appoint (sauf\nDomaine de Kermario,\nLou Broustaricq, Playa Joyel)\nPièce commune : coin cuisine\navec évier, chauffe-eau, gaz\n4 feux, micro-ondes, réfrigérateur,\ncoin repas avec banquette\ntransformable en lit de 140x190 cm,\n1 table et 2 tabourets\nSanitaire : salle de bains avec\nlavabo et douche, WC séparé"
-        Equipements: "Intérieur : chauffage électrique,\n2 bouteilles de gaz\nExtérieur : lumière, salon de jardin\nElectricité : 6 ampères\nParking : sur emplacement pour\nun seul véhicule (sauf mention\ncontraire)"
-        AnneeUtilisation: "0-7 ans (sauf 7-12 ans :\nDomaine de Kermario,\nLou Broustaricq, le Col Vert,\nDomaines des Chênes Verts,\nles Fontaines)"
+        Presentation: "Vous apprécierez le\r\nconfort et la tranquillité\r\ndu Résidential avec sa\r\nterrasse couverte."
+        CapaciteHebergement: "5 personnes\r\nRecommandé : 2 adultes + 3 enfants\r\nbébé compris\r\nToléré : 4 adultes maxi. + 1 enfant,\r\nbébé compris sauf exception\r\n(résidential 4 places)\r\nAdulte : à partir de 14 ans"
+        Dimensions: "Surface hors terrasse : 21 m²\r\nLongueur 7,92 m (dont 2,10 m de\r\nterrasse couverte) x Largeur 3,90 m"
+        Agencement: "Chambre parents : 1 lit de\r\n140x190 cm avec sommier à lattes\r\nChambre enfants : 2 lits de\r\n70x190 cm avec sommiers à lattes,\r\n1 lit superposé ou d’appoint (sauf\r\nDomaine de Kermario,\r\nLou Broustaricq, Playa Joyel)\r\nPièce commune : coin cuisine\r\navec évier, chauffe-eau, gaz\r\n4 feux, micro-ondes, réfrigérateur,\r\ncoin repas avec banquette\r\ntransformable en lit de 140x190 cm,\r\n1 table et 2 tabourets\r\nSanitaire : salle de bains avec\r\nlavabo et douche, WC séparé"
+        Equipements: "Intérieur : chauffage électrique,\r\n2 bouteilles de gaz\r\nExtérieur : lumière, salon de jardin\r\nElectricité : 6 ampères\r\nParking : sur emplacement pour\r\nun seul véhicule (sauf mention\r\ncontraire)"
+        AnneeUtilisation: "0-7 ans (sauf 7-12 ans :\r\nDomaine de Kermario,\r\nLou Broustaricq, le Col Vert,\r\nDomaines des Chênes Verts,\r\nles Fontaines)"
         Remarque1: 'En fonction du camping, l’agencement peut être différent.'
-        Remarque2: ''
-        Remarque3: ''
-        Remarque4: null
-    37_nl:
-        Id: 37
-        Locale: nl
-        Name: 'Résidential (5 places, max. 4 adultes)'
-        Slug: residential-5-places-max-4-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    38_de:
-        Id: 38
-        Locale: de
-        Name: 'Salle de réception'
-        Slug: salle-de-reception
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    38_en:
-        Id: 38
-        Locale: en
-        Name: 'Salle de réception'
-        Slug: salle-de-reception
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
         Remarque2: null
         Remarque3: null
         Remarque4: null
@@ -3019,143 +759,23 @@
         Remarque2: null
         Remarque3: null
         Remarque4: null
-    38_nl:
-        Id: 38
-        Locale: nl
-        Name: 'Salle de réception'
-        Slug: salle-de-reception
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    39_de:
-        Id: 39
-        Locale: de
-        Name: 'Spacial (6 places, max. 6 adultes)'
-        Slug: spacial-6-places-max-6-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    39_en:
-        Id: 39
-        Locale: en
-        Name: 'Spacial (6 places, max. 6 adultes)'
-        Slug: spacial-6-places-max-6-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
     39_fr:
         Id: 39
         Locale: fr
         Name: 'Spacial (6 places, max. 6 adultes)'
         Slug: spacial-6-places-max-6-adultes
-        Indice: 'Avec Sanitaires'
+        Indice: 'Avec 3 chambres'
         Surface: null
         TypeTerrasse: null
         Description: null
         Composition: null
-        Presentation: "Avec ses trois chambres séparées, ce mobil-home vous permet d’accueillir toute votre famille et de profiter de l’espace de vie commun.\n"
-        CapaciteHebergement: "6personnes  Recommandé : 4 adultes + 2 enfants, bébé compris\nToléré : 6 adultes maxi \nAdulte : à partir de 14 ans\n"
-        Dimensions: "Surface : environ 31,5 m²\nLongueur 7,92 m x Largeur 4 m"
-        Agencement: "Chambre parents : 1 lit de\n140x190 cm avec sommier à lattes\n 2 chambres enfants : 2 lits de\n80x190 cm avec sommiers à lattes\npar chambre (1 chambre avec 2 lits\nsuperposés en Italie)\nPièce commune : coin cuisine\navec évier, chauffe-eau, gaz\n4 feux, micro-ondes, combiné\nréfrigérateur-congélateur,coin repas avec banquette\ntransformable en lit de 115x180 cm,\n1 table et 4 chaises\nSanitaire : salle de bains avec\nlavabo et douche, WC séparé (sauf\nen Italie)"
-        Equipements: "Intérieur : chauffage électrique,\n2 bouteilles de gaz\nExtérieur : lumière, salon de\njardin, grand parasol non utilisable\nà la plage\nElectricité : 10 ampères\nParking : sur emplacement pour\nun seul véhicule (sauf mention\ncontraire)"
-        AnneeUtilisation: "0-7 ans (sauf 7-12 ans : le Mas,\nParc de la Grenouillère, Camping\ndu Lac)"
-        Remarque1: "En fonction du camping, l’agencement peut être différent.\nTous les hébergements ne sont pas équipés de terrasse"
-        Remarque2: ''
-        Remarque3: ''
-        Remarque4: null
-    39_nl:
-        Id: 39
-        Locale: nl
-        Name: 'Spacial (6 places, max. 6 adultes)'
-        Slug: spacial-6-places-max-6-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    40_de:
-        Id: 40
-        Locale: de
-        Name: 'Spacial (7 places, max. 6 adultes)'
-        Slug: spacial-7-places-max-6-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    40_en:
-        Id: 40
-        Locale: en
-        Name: 'Spacial (7 places, max. 6 adultes)'
-        Slug: spacial-7-places-max-6-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
+        Presentation: 'Avec ses trois chambres séparées, ce mobil-home vous permet d’accueillir toute votre famille et de profiter de l’espace de vie commun.'
+        CapaciteHebergement: "6personnes  Recommandé : 4 adultes + 2 enfants, bébé compris\r\nToléré : 6 adultes maxi \r\nAdulte : à partir de 14 ans"
+        Dimensions: "Surface : environ 31,5 m²\r\nLongueur 7,92 m x Largeur 4 m"
+        Agencement: "Chambre parents : 1 lit de\r\n140x190 cm avec sommier à lattes\r\n 2 chambres enfants : 2 lits de\r\n80x190 cm avec sommiers à lattes\r\npar chambre (1 chambre avec 2 lits\r\nsuperposés en Italie)\r\nPièce commune : coin cuisine\r\navec évier, chauffe-eau, gaz\r\n4 feux, micro-ondes, combiné\r\nréfrigérateur-congélateur,coin repas avec banquette\r\ntransformable en lit de 115x180 cm,\r\n1 table et 4 chaises\r\nSanitaire : salle de bains avec\r\nlavabo et douche, WC séparé (sauf\r\nen Italie)"
+        Equipements: "Intérieur : chauffage électrique,\r\n2 bouteilles de gaz\r\nExtérieur : lumière, salon de\r\njardin, grand parasol non utilisable\r\nà la plage\r\nElectricité : 10 ampères\r\nParking : sur emplacement pour\r\nun seul véhicule (sauf mention\r\ncontraire)"
+        AnneeUtilisation: "0-7 ans (sauf 7-12 ans : le Mas,\r\nParc de la Grenouillère, Camping\r\ndu Lac)"
+        Remarque1: "En fonction du camping, l’agencement peut être différent.\r\nTous les hébergements ne sont pas équipés de terrasse"
         Remarque2: null
         Remarque3: null
         Remarque4: null
@@ -3164,78 +784,18 @@
         Locale: fr
         Name: 'Spacial (7 places, max. 6 adultes)'
         Slug: spacial-7-places-max-6-adultes
-        Indice: 'Avec Sanitaires'
+        Indice: 'Avec 3 chambres et banquette transformable'
         Surface: null
         TypeTerrasse: null
         Description: null
         Composition: null
-        Presentation: "Avec ses trois chambres séparées, ce mobil-home vous permet d’accueillir toute votre famille et de profiter de l’espace de vie commun.\n"
-        CapaciteHebergement: "7 personnes  Recommandé : 4 adultes + 3 enfants, bébé compris\nToléré : 6 adultes maxi. + 1 enfant,bébé compris sauf exceptions\n(Spacial 6 places)\nAdulte : à partir de 14 ans\n"
-        Dimensions: "Surface : environ 31,5 m²\nLongueur 7,92 m x Largeur 4 m"
-        Agencement: "Chambre parents : 1 lit de\n140x190 cm avec sommier à lattes\n 2 chambres enfants : 2 lits de\n80x190 cm avec sommiers à lattes\npar chambre (1 chambre avec 2 lits\nsuperposés en Italie)\nPièce commune : coin cuisine\navec évier, chauffe-eau, gaz\n4 feux, micro-ondes, combiné\nréfrigérateur-congélateur,coin repas avec banquette\ntransformable en lit de 115x180 cm,\n1 table et 4 chaises\nSanitaire : salle de bains avec\nlavabo et douche, WC séparé (sauf\nen Italie)"
-        Equipements: "Intérieur : chauffage électrique,\n2 bouteilles de gaz\nExtérieur : lumière, salon de\njardin, grand parasol non utilisable\nà la plage\nElectricité : 10 ampères\nParking : sur emplacement pour\nun seul véhicule (sauf mention\ncontraire)"
-        AnneeUtilisation: "0-7 ans (sauf 7-12 ans : le Mas,\nParc de la Grenouillère, Camping\ndu Lac)"
-        Remarque1: "En fonction du camping, l’agencement peut être différent.\nTous les hébergements ne sont pas équipés de terrasse"
-        Remarque2: ''
-        Remarque3: ''
-        Remarque4: null
-    40_nl:
-        Id: 40
-        Locale: nl
-        Name: 'Spacial (7 places, max. 6 adultes)'
-        Slug: spacial-7-places-max-6-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    41_de:
-        Id: 41
-        Locale: de
-        Name: 'Spacial (8 places, max. 6 adultes)'
-        Slug: spacial-8-places-max-6-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    41_en:
-        Id: 41
-        Locale: en
-        Name: 'Spacial (8 places, max. 6 adultes)'
-        Slug: spacial-8-places-max-6-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
+        Presentation: 'Avec ses trois chambres séparées, ce mobil-home vous permet d’accueillir toute votre famille et de profiter de l’espace de vie commun.'
+        CapaciteHebergement: "7 personnes  Recommandé : 4 adultes + 3 enfants, bébé compris\r\nToléré : 6 adultes maxi. + 1 enfant,bébé compris sauf exceptions\r\n(Spacial 6 places)\r\nAdulte : à partir de 14 ans"
+        Dimensions: "Surface : environ 31,5 m²\r\nLongueur 7,92 m x Largeur 4 m"
+        Agencement: "Chambre parents : 1 lit de\r\n140x190 cm avec sommier à lattes\r\n 2 chambres enfants : 2 lits de\r\n80x190 cm avec sommiers à lattes\r\npar chambre (1 chambre avec 2 lits\r\nsuperposés en Italie)\r\nPièce commune : coin cuisine\r\navec évier, chauffe-eau, gaz\r\n4 feux, micro-ondes, combiné\r\nréfrigérateur-congélateur,coin repas avec banquette\r\ntransformable en lit de 115x180 cm,\r\n1 table et 4 chaises\r\nSanitaire : salle de bains avec\r\nlavabo et douche, WC séparé (sauf\r\nen Italie)"
+        Equipements: "Intérieur : chauffage électrique,\r\n2 bouteilles de gaz\r\nExtérieur : lumière, salon de\r\njardin, grand parasol non utilisable\r\nà la plage\r\nElectricité : 10 ampères\r\nParking : sur emplacement pour\r\nun seul véhicule (sauf mention\r\ncontraire)"
+        AnneeUtilisation: "0-7 ans (sauf 7-12 ans : le Mas,\r\nParc de la Grenouillère, Camping\r\ndu Lac)"
+        Remarque1: "En fonction du camping, l’agencement peut être différent.\r\nTous les hébergements ne sont pas équipés de terrasse"
         Remarque2: null
         Remarque3: null
         Remarque4: null
@@ -3259,132 +819,12 @@
         Remarque2: null
         Remarque3: null
         Remarque4: null
-    41_nl:
-        Id: 41
-        Locale: nl
-        Name: 'Spacial (8 places, max. 6 adultes)'
-        Slug: spacial-8-places-max-6-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    42_de:
-        Id: 42
-        Locale: de
-        Name: 'Spacial (7 places, max. 6 adultes) Climatisé'
-        Slug: spacial-7-places-max-6-adultes-climatise
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    42_en:
-        Id: 42
-        Locale: en
-        Name: 'Spacial (7 places, max. 6 adultes) Climatisé'
-        Slug: spacial-7-places-max-6-adultes-climatise
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
     42_fr:
         Id: 42
         Locale: fr
         Name: 'Spacial (7 places, max. 6 adultes) Climatisé'
         Slug: spacial-7-places-max-6-adultes-climatise
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    42_nl:
-        Id: 42
-        Locale: nl
-        Name: 'Spacial (7 places, max. 6 adultes) Climatisé'
-        Slug: spacial-7-places-max-6-adultes-climatise
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    43_de:
-        Id: 43
-        Locale: de
-        Name: 'Spacial (6 places, max. 6 adultes) vue lac'
-        Slug: spacial-6-places-max-6-adultes-vue-lac
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    43_en:
-        Id: 43
-        Locale: en
-        Name: 'Spacial (6 places, max. 6 adultes) vue lac'
-        Slug: spacial-6-places-max-6-adultes-vue-lac
-        Indice: 'Avec Sanitaires'
+        Indice: 'Avec 3 chambres et banquette transformable'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3419,142 +859,22 @@
         Remarque2: ''
         Remarque3: ''
         Remarque4: null
-    43_nl:
-        Id: 43
-        Locale: nl
-        Name: 'Spacial (6 places, max. 6 adultes) vue lac'
-        Slug: spacial-6-places-max-6-adultes-vue-lac
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    44_de:
-        Id: 44
-        Locale: de
-        Name: 'Studio (2 places) climatisé'
-        Slug: studio-2-places-climatise
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    44_en:
-        Id: 44
-        Locale: en
-        Name: 'Studio (2 places) climatisé'
-        Slug: studio-2-places-climatise
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
     44_fr:
         Id: 44
         Locale: fr
         Name: 'Studio (2 places) climatisé'
         Slug: studio-2-places-climatise
-        Indice: 'Avec Sanitaires'
+        Indice: 'Avec terrasse'
         Surface: null
         TypeTerrasse: null
         Description: null
         Composition: null
-        Presentation: "Retrouvez ce studio cocoon pour 2 personnes, \ntout confort sur le Domaine\nd’Anghione en Corse"
+        Presentation: "Retrouvez ce studio cocoon pour 2 personnes, \r\ntout confort sur le Domaine\r\nd’Anghione en Corse"
         CapaciteHebergement: '2 personnes'
         Dimensions: 'Surface : 20 m²'
-        Agencement: "Séjour avec un canapé convertible\nde 140 cm et coin cuisine.\nUne salle d’eau avec toilettes.                     Studio climatisé"
+        Agencement: "Séjour avec un canapé convertible\r\nde 140 cm et coin cuisine.\r\nUne salle d’eau avec toilettes.                     Studio climatisé"
         Equipements: 'Kitchenette comprenant micro-onde, réfrigirateur avec freezer, cafetière, ustensiles de cuisine, plaques de cuisson. 1 salle d''eau avec toilette'
         AnneeUtilisation: '0-7 ans'
-        Remarque1: ''
-        Remarque2: ''
-        Remarque3: ''
-        Remarque4: null
-    44_nl:
-        Id: 44
-        Locale: nl
-        Name: 'Studio (2 places) climatisé'
-        Slug: studio-2-places-climatise
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    45_de:
-        Id: 45
-        Locale: de
-        Name: 'Studio cabine (2-4 places) climatisé'
-        Slug: studio-cabine-2-4-places-climatise
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    45_en:
-        Id: 45
-        Locale: en
-        Name: 'Studio cabine (2-4 places) climatisé'
-        Slug: studio-cabine-2-4-places-climatise
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
         Remarque1: null
         Remarque2: null
         Remarque3: null
@@ -3564,77 +884,17 @@
         Locale: fr
         Name: 'Studio cabine (2-4 places) climatisé'
         Slug: studio-cabine-2-4-places-climatise
-        Indice: 'Avec Sanitaires'
+        Indice: 'Avec terrasse'
         Surface: null
         TypeTerrasse: null
         Description: null
         Composition: null
-        Presentation: "Retrouvez ces bungalows\ntout confort sur le Domaine\nd’Anghione en Corse"
+        Presentation: "Retrouvez ces bungalows\r\ntout confort sur le Domaine\r\nd’Anghione en Corse"
         CapaciteHebergement: '2-4 personnes'
         Dimensions: 'Surface : 20 m²'
-        Agencement: "Séjour avec un canapé convertible\nde 140 cm et coin cuisine.\nUne cabine avec 2 lits superposés\nde 70 cm. Une salle d’eau avec\ntoilettes.                                                                Studio climatisé"
+        Agencement: "Séjour avec un canapé convertible\r\nde 140 cm et coin cuisine.\r\nUne cabine avec 2 lits superposés\r\nde 70 cm. Une salle d’eau avec\r\ntoilettes.                                                                Studio climatisé"
         Equipements: 'Kitchenette comprenant micro-onde, réfrigirateur avec freezer, cafetière, ustensiles de cuisine, plaques de cuisson. 1 salle d''eau avec toilette'
         AnneeUtilisation: '0-7 ans'
-        Remarque1: ''
-        Remarque2: ''
-        Remarque3: ''
-        Remarque4: null
-    45_nl:
-        Id: 45
-        Locale: nl
-        Name: 'Studio cabine (2-4 places) climatisé'
-        Slug: studio-cabine-2-4-places-climatise
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    46_de:
-        Id: 46
-        Locale: de
-        Name: 'Ty Bihan (6 places, max. 6 adultes)'
-        Slug: ty-bihan-6-places-max-6-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    46_en:
-        Id: 46
-        Locale: en
-        Name: 'Ty Bihan (6 places, max. 6 adultes)'
-        Slug: ty-bihan-6-places-max-6-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
         Remarque1: null
         Remarque2: null
         Remarque3: null
@@ -3644,7 +904,7 @@
         Locale: fr
         Name: 'Ty Bihan (6 places, max. 6 adultes)'
         Slug: ty-bihan-6-places-max-6-adultes
-        Indice: 'Avec Sanitaires'
+        Indice: 'Intérieur tout en bois'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3652,67 +912,7 @@
         Presentation: 'Rustique et confortable par excellence, plongez dans l''univers tout en bois du gîte Ty Bihan, pouvant accueillir jusqu''à 6 personnes. C''est le gage de vacances dépaysantes et réussies !'
         CapaciteHebergement: '6 personnes'
         Dimensions: 'Surface : 64 m²'
-        Agencement: "Chambre parents :  1 lit de 140x190 cm (à l'étage.)\nChambre enfants : 2 lits de 90x190 cm (à l'étage)                                                                           La pièce commune comprend un coin cuisine avec lave-vaiselle, micro-ondes, réfrigérateur-congélateur, séjour avec canapé convertible 2 places \nLes sanitaires sont composés d'une salle d'eau et d'un WC séparé. \nLe chauffage est électrique et le gîte est équipé d'une télévision. \nEquipements extérieurs : terrasse et un salon de jardin. "
-        Equipements: ''
-        AnneeUtilisation: ''
-        Remarque1: ''
-        Remarque2: ''
-        Remarque3: ''
-        Remarque4: null
-    46_nl:
-        Id: 46
-        Locale: nl
-        Name: 'Ty Bihan (6 places, max. 6 adultes)'
-        Slug: ty-bihan-6-places-max-6-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    47_de:
-        Id: 47
-        Locale: de
-        Name: 'Ty Bras (7 places, max. 7 adultes)'
-        Slug: ty-bras-7-places-max-7-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    47_en:
-        Id: 47
-        Locale: en
-        Name: 'Ty Bras (7 places, max. 7 adultes)'
-        Slug: ty-bras-7-places-max-7-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
+        Agencement: "Chambre parents :  1 lit de 140x190 cm (à l'étage.)\r\nChambre enfants : 2 lits de 90x190 cm (à l'étage)                                                                           La pièce commune comprend un coin cuisine avec lave-vaiselle, micro-ondes, réfrigérateur-congélateur, séjour avec canapé convertible 2 places \r\nLes sanitaires sont composés d'une salle d'eau et d'un WC séparé. \r\nLe chauffage est électrique et le gîte est équipé d'une télévision. \r\nEquipements extérieurs : terrasse et un salon de jardin."
         Equipements: null
         AnneeUtilisation: null
         Remarque1: null
@@ -3724,7 +924,7 @@
         Locale: fr
         Name: 'Ty Bras (7 places, max. 7 adultes)'
         Slug: ty-bras-7-places-max-7-adultes
-        Indice: 'Avec Sanitaires'
+        Indice: 'Chambre avec salle de bain privative'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3732,67 +932,7 @@
         Presentation: 'Les 90 m² de ce gîte, pouvant recevoir jusqu''à 7 personnes, vous charmeront. Vous y trouverez même une salle de bain privative, dans l''une des chambres. A ne pas manquer !'
         CapaciteHebergement: '7 personnes'
         Dimensions: 'Surface : 90 m²'
-        Agencement: "Chambre parents : 1 lit de 140 x 190 cm (à l'étage) \nChambre enfants : 3 lits de 90 x 190 cm avec salle d'eau privative (à l'étage)                            La pièce commune comprend un coin cuisine avec lave-vaisselle, micro-ondes, réfrigérateur-congélateur, séjour avec canapé convertible 2 places \nLes sanitaires sont composés d'une salle d'eau et d'un WC séparé à l'étage, WC au rez de chaussée. \nLe chauffage est électrique et le gîte est équipé d'une télévision. \nEquipements extérieurs : terrasse et un salon de jardin. "
-        Equipements: ''
-        AnneeUtilisation: ''
-        Remarque1: ''
-        Remarque2: ''
-        Remarque3: ''
-        Remarque4: null
-    47_nl:
-        Id: 47
-        Locale: nl
-        Name: 'Ty Bras (7 places, max. 7 adultes)'
-        Slug: ty-bras-7-places-max-7-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    48_de:
-        Id: 48
-        Locale: de
-        Name: 'Ty Coz (7 places, max. 6 adultes)'
-        Slug: ty-coz-7-places-max-6-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    48_en:
-        Id: 48
-        Locale: en
-        Name: 'Ty Coz (7 places, max. 6 adultes)'
-        Slug: ty-coz-7-places-max-6-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
+        Agencement: "Chambre parents : 1 lit de 140 x 190 cm (à l'étage) \r\nChambre enfants : 3 lits de 90 x 190 cm avec salle d'eau privative (à l'étage)                            La pièce commune comprend un coin cuisine avec lave-vaisselle, micro-ondes, réfrigérateur-congélateur, séjour avec canapé convertible 2 places \r\nLes sanitaires sont composés d'une salle d'eau et d'un WC séparé à l'étage, WC au rez de chaussée. \r\nLe chauffage est électrique et le gîte est équipé d'une télévision. \r\nEquipements extérieurs : terrasse et un salon de jardin."
         Equipements: null
         AnneeUtilisation: null
         Remarque1: null
@@ -3804,75 +944,15 @@
         Locale: fr
         Name: 'Ty Coz (7 places, max. 6 adultes)'
         Slug: ty-coz-7-places-max-6-adultes
-        Indice: 'Avec Sanitaires'
+        Indice: 'Avec véritable cheminée à l''ancienne'
         Surface: null
         TypeTerrasse: null
         Description: null
         Composition: null
         Presentation: 'Sa véritable cheminée à l''ancienne et son charme fou vous émerveilleront. Ce gîte est idéalement conçu pour des vacances conviviales, en famille ou entre amis.'
-        CapaciteHebergement: " 7 personnes\nRecommandé : 4 adultes + 3 enfants, bébé compris\nToléré : 6 adultes maxi. + 1 enfant, bébé compris\nAdulte : à partir de 14 ans\n"
+        CapaciteHebergement: "7 personnes\r\nRecommandé : 4 adultes + 3 enfants, bébé compris\r\nToléré : 6 adultes maxi. + 1 enfant, bébé compris\r\nAdulte : à partir de 14 ans"
         Dimensions: 'Surface : 80 m²'
-        Agencement: "Chambre parents : 1 lit de 140 x 190 cm (à l'étage) \nChambre enfants :  2 lits de 90 x 190 cm (à l'étage) \nChambre palier :  2 lits de 90 x 190 cm (à l'étage)                                                                           La pièce commune comprend un coin cuisine avec lave-vaisselle, micro-ondes, réfrigérateur-congélateur, séjour avec 2 canapés dont un convertible 2 places, cheminée (bois fourni) \nLes sanitaires sont composés d'une salle d'eau et WC séparé au rez de chaussée. \nLe chauffage est électrique et le gîte est équipé d'une télévision. \nEquipements extérieurs : terrasse et un salon de jardin. "
-        Equipements: ''
-        AnneeUtilisation: ''
-        Remarque1: ''
-        Remarque2: ''
-        Remarque3: ''
-        Remarque4: null
-    48_nl:
-        Id: 48
-        Locale: nl
-        Name: 'Ty Coz (7 places, max. 6 adultes)'
-        Slug: ty-coz-7-places-max-6-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    49_de:
-        Id: 49
-        Locale: de
-        Name: 'Ty Daou 1 (5 places, max. 5 adultes)'
-        Slug: ty-daou-1-5-places-max-5-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    49_en:
-        Id: 49
-        Locale: en
-        Name: 'Ty Daou 1 (5 places, max. 5 adultes)'
-        Slug: ty-daou-1-5-places-max-5-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
+        Agencement: "Chambre parents : 1 lit de 140 x 190 cm (à l'étage) \r\nChambre enfants :  2 lits de 90 x 190 cm (à l'étage) \r\nChambre palier :  2 lits de 90 x 190 cm (à l'étage)                                                                           La pièce commune comprend un coin cuisine avec lave-vaisselle, micro-ondes, réfrigérateur-congélateur, séjour avec 2 canapés dont un convertible 2 places, cheminée (bois fourni) \r\nLes sanitaires sont composés d'une salle d'eau et WC séparé au rez de chaussée. \r\nLe chauffage est électrique et le gîte est équipé d'une télévision. \r\nEquipements extérieurs : terrasse et un salon de jardin."
         Equipements: null
         AnneeUtilisation: null
         Remarque1: null
@@ -3884,75 +964,15 @@
         Locale: fr
         Name: 'Ty Daou 1 (5 places, max. 5 adultes)'
         Slug: ty-daou-1-5-places-max-5-adultes
-        Indice: 'Avec Sanitaires'
+        Indice: 'Avec terrasse donnant sur un point d''eau'
         Surface: null
         TypeTerrasse: null
         Description: null
         Composition: null
         Presentation: 'Ce gîte, idéalement conçu pour accueillir jusqu''à 5 personnes, vous propose des vacances inoubliables, avec sa terrasse donnant directement sur un point d''eau, une situation à ne pas manquer.'
-        CapaciteHebergement: "5 personnes\n"
+        CapaciteHebergement: '5 personnes'
         Dimensions: 'Surface : 60 m²'
-        Agencement: "Chambre : 1 lit de 140 x 190 cm et 2 lits de 90 x 190 cm (à l'étage)                                                        La pièce commune comprend un coin cuisine avec lave-vaisselle, micro-ondes, réfrigérateur-congélateur, séjour avec canapé convertible \nLes sanitaires sont composés d'une salle d'eau et d'un WC séparé. \nLe chauffage est électrique et le gîte est équipé d'une télévision. \nEquipements extérieurs : terrasse et un salon de jardin. \n"
-        Equipements: ''
-        AnneeUtilisation: ''
-        Remarque1: ''
-        Remarque2: ''
-        Remarque3: ''
-        Remarque4: null
-    49_nl:
-        Id: 49
-        Locale: nl
-        Name: 'Ty Daou 1 (5 places, max. 5 adultes)'
-        Slug: ty-daou-1-5-places-max-5-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    50_de:
-        Id: 50
-        Locale: de
-        Name: 'Ty Daou 2 (6 places, max. 6 adultes)'
-        Slug: ty-daou-2-6-places-max-6-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    50_en:
-        Id: 50
-        Locale: en
-        Name: 'Ty Daou 2 (6 places, max. 6 adultes)'
-        Slug: ty-daou-2-6-places-max-6-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
+        Agencement: "Chambre : 1 lit de 140 x 190 cm et 2 lits de 90 x 190 cm (à l'étage)                                                        La pièce commune comprend un coin cuisine avec lave-vaisselle, micro-ondes, réfrigérateur-congélateur, séjour avec canapé convertible \r\nLes sanitaires sont composés d'une salle d'eau et d'un WC séparé. \r\nLe chauffage est électrique et le gîte est équipé d'une télévision. \r\nEquipements extérieurs : terrasse et un salon de jardin."
         Equipements: null
         AnneeUtilisation: null
         Remarque1: null
@@ -3964,7 +984,7 @@
         Locale: fr
         Name: 'Ty Daou 2 (6 places, max. 6 adultes)'
         Slug: ty-daou-2-6-places-max-6-adultes
-        Indice: 'Avec Sanitaires'
+        Indice: 'Avec cheminée décorative à l''ancienne'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -3972,67 +992,7 @@
         Presentation: 'Grand frère du Ty Daou 1, ce gîte peut recevoir jusqu''à 6 personnes. Ne manquez pas sa véritable cheminée à l''ancienne et son intérieur très bien équipé.'
         CapaciteHebergement: '6 personnes'
         Dimensions: 'Surface : 64 m²'
-        Agencement: "Chambre parents : 1 lit de 140x190 cm à l'étage. \nChambre palier : 3 lits de 90x190 cm à l'étage. La pièce commune comprend un coin cuisine avec lave-vaiselle, micro-ondes, réfrigérateur-congélateur, séjour avec canapé convertible, cheminée (bois fourni) \nLes sanitaires sont composés d'une salle d'eau et d'un WC séparé. \nLe chauffage est électrique et le chalet est équipé d'une télévision. \nEquipements extérieurs : terrasse et un salon de jardin. "
-        Equipements: ''
-        AnneeUtilisation: ''
-        Remarque1: ''
-        Remarque2: ''
-        Remarque3: ''
-        Remarque4: null
-    50_nl:
-        Id: 50
-        Locale: nl
-        Name: 'Ty Daou 2 (6 places, max. 6 adultes)'
-        Slug: ty-daou-2-6-places-max-6-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    51_de:
-        Id: 51
-        Locale: de
-        Name: 'Ty Divent (7 places, max. 7 adultes)'
-        Slug: ty-divent-7-places-max-7-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    51_en:
-        Id: 51
-        Locale: en
-        Name: 'Ty Divent (7 places, max. 7 adultes)'
-        Slug: ty-divent-7-places-max-7-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
+        Agencement: "Chambre parents : 1 lit de 140x190 cm à l'étage. \r\nChambre palier : 3 lits de 90x190 cm à l'étage. La pièce commune comprend un coin cuisine avec lave-vaiselle, micro-ondes, réfrigérateur-congélateur, séjour avec canapé convertible, cheminée (bois fourni) \r\nLes sanitaires sont composés d'une salle d'eau et d'un WC séparé. \r\nLe chauffage est électrique et le chalet est équipé d'une télévision. \r\nEquipements extérieurs : terrasse et un salon de jardin."
         Equipements: null
         AnneeUtilisation: null
         Remarque1: null
@@ -4044,7 +1004,7 @@
         Locale: fr
         Name: 'Ty Divent (7 places, max. 7 adultes)'
         Slug: ty-divent-7-places-max-7-adultes
-        Indice: 'Avec Sanitaires'
+        Indice: 'Avec grand salon'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -4052,67 +1012,7 @@
         Presentation: 'Jusqu''à 7 personnes peuvent passer un séjour dans ce magnifique gîte rénové. Le très grand salon est son réel point fort, sans oublier ses trois chambres.'
         CapaciteHebergement: '7 personnes'
         Dimensions: 'Surface : 80 m²'
-        Agencement: " 2 chambres parents : 1 lit de 140x190 cm à l'étage. \nChambre enfants :  1 lit de 90x190 cm               La pièce commune comprend un coin cuisine avec lave-vaiselle, micro-ondes, réfrigérateur-congélateur, séjour avec 2 canapés dont 1 convertible 2 places \nLes sanitaires sont composés d'une salle d'eau et d'un WC séparé à l'étage, 1 WC au rez de chaussée. \nLe chauffage est électrique et le gîte est équipé d'une télévision. \nEquipements extérieurs : terrasse et un salon de jardin. "
-        Equipements: ''
-        AnneeUtilisation: ''
-        Remarque1: ''
-        Remarque2: ''
-        Remarque3: ''
-        Remarque4: null
-    51_nl:
-        Id: 51
-        Locale: nl
-        Name: 'Ty Divent (7 places, max. 7 adultes)'
-        Slug: ty-divent-7-places-max-7-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    52_de:
-        Id: 52
-        Locale: de
-        Name: 'Tente ecolodge (5 places) vue lac'
-        Slug: tente-ecolodge-5-places-vue-lac
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    52_en:
-        Id: 52
-        Locale: en
-        Name: 'Tente ecolodge (5 places) vue lac'
-        Slug: tente-ecolodge-5-places-vue-lac
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
+        Agencement: "2 chambres parents : 1 lit de 140x190 cm à l'étage. \r\nChambre enfants :  1 lit de 90x190 cm               La pièce commune comprend un coin cuisine avec lave-vaiselle, micro-ondes, réfrigérateur-congélateur, séjour avec 2 canapés dont 1 convertible 2 places \r\nLes sanitaires sont composés d'une salle d'eau et d'un WC séparé à l'étage, 1 WC au rez de chaussée. \r\nLe chauffage est électrique et le gîte est équipé d'une télévision. \r\nEquipements extérieurs : terrasse et un salon de jardin."
         Equipements: null
         AnneeUtilisation: null
         Remarque1: null
@@ -4139,144 +1039,24 @@
         Remarque2: "Hébergement sans arrivée\nd’eau, sans sanitaire et\nsans chauffage"
         Remarque3: ''
         Remarque4: null
-    52_nl:
-        Id: 52
-        Locale: nl
-        Name: 'Tente ecolodge (5 places) vue lac'
-        Slug: tente-ecolodge-5-places-vue-lac
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    53_de:
-        Id: 53
-        Locale: de
-        Name: 'Tente ecolodge (5 places, max. 3 adultes)'
-        Slug: tente-ecolodge-5-places-max-3-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    53_en:
-        Id: 53
-        Locale: en
-        Name: 'Tente ecolodge (5 places, max. 3 adultes)'
-        Slug: tente-ecolodge-5-places-max-3-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
     53_fr:
         Id: 53
         Locale: fr
         Name: 'Tente ecolodge (5 places, max. 3 adultes)'
         Slug: tente-ecolodge-5-places-max-3-adultes
-        Indice: 'Avec Sanitaires'
+        Indice: 'Avec terrasse couverte'
         Surface: null
         TypeTerrasse: null
         Description: null
         Composition: null
-        Presentation: "Retour aux sources,\nbien-être et décontraction\nseront au rendez-vous des\nvacances en Ecolodge !"
-        CapaciteHebergement: "5 personnes\nRecommandé : 2 adultes + 3 enfants, bébé compris\nToléré : 3 adultes maxi. + 2 enfants, bébé compris\nAdulte : à partir de 14 ans\n"
-        Dimensions: "Surface :\n19 m² + 10,5 m² de terrasse couverte Longueur (terrasse comprise)\n7 m x Largeur 4,25 m"
-        Agencement: "Chambre parents : 1 lit de\n140x190 cm et placard\n1 chambre enfants : 1 lit\nsuperposé de 70x180 cm et 2 lits\nde 70 x 180 cm (le lit superposé ne\nconvient pas aux enfants de moins\nde 6 ans et de plus de 30 kg)\nTerrasse : coin cuisine, gaz,\nmicro-ondes, réfrigérateur"
-        Equipements: "Intérieur : 1 bouteille de gaz\nExtérieur : lumière, salon de jardin\nElectricité : 6 ampères\nParking : sur emplacement pour\nun seul véhicule (sauf mention contraire)"
+        Presentation: "Retour aux sources,\r\nbien-être et décontraction\r\nseront au rendez-vous des\r\nvacances en Ecolodge !"
+        CapaciteHebergement: "5 personnes\r\nRecommandé : 2 adultes + 3 enfants, bébé compris\r\nToléré : 3 adultes maxi. + 2 enfants, bébé compris\r\nAdulte : à partir de 14 ans"
+        Dimensions: "Surface :\r\n19 m² + 10,5 m² de terrasse couverte Longueur (terrasse comprise)\r\n7 m x Largeur 4,25 m"
+        Agencement: "Chambre parents : 1 lit de\r\n140x190 cm et placard\r\n1 chambre enfants : 1 lit\r\nsuperposé de 70x180 cm et 2 lits\r\nde 70 x 180 cm (le lit superposé ne\r\nconvient pas aux enfants de moins\r\nde 6 ans et de plus de 30 kg)\r\nTerrasse : coin cuisine, gaz,\r\nmicro-ondes, réfrigérateur"
+        Equipements: "Intérieur : 1 bouteille de gaz\r\nExtérieur : lumière, salon de jardin\r\nElectricité : 6 ampères\r\nParking : sur emplacement pour\r\nun seul véhicule (sauf mention contraire)"
         AnneeUtilisation: '0-7 ans'
         Remarque1: 'En fonction du camping, l’agencement peut être différent.'
-        Remarque2: "Hébergement sans arrivée\nd’eau, sans sanitaire et\nsans chauffage"
-        Remarque3: ''
-        Remarque4: null
-    53_nl:
-        Id: 53
-        Locale: nl
-        Name: 'Tente ecolodge (5 places, max. 3 adultes)'
-        Slug: tente-ecolodge-5-places-max-3-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    54_de:
-        Id: 54
-        Locale: de
-        Name: 'Tente Muscade (5 places, max. 5 adultes)'
-        Slug: tente-muscade-5-places-max-5-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    54_en:
-        Id: 54
-        Locale: en
-        Name: 'Tente Muscade (5 places, max. 5 adultes)'
-        Slug: tente-muscade-5-places-max-5-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
+        Remarque2: "Hébergement sans arrivée\r\nd’eau, sans sanitaire et\r\nsans chauffage"
         Remarque3: null
         Remarque4: null
     54_fr:
@@ -4284,7 +1064,7 @@
         Locale: fr
         Name: 'Tente Muscade (5 places, max. 5 adultes)'
         Slug: tente-muscade-5-places-max-5-adultes
-        Indice: 'Avec Sanitaires'
+        Indice: 'Avec 2 chambres'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -4292,71 +1072,11 @@
         Presentation: 'Séjourner en tente Muscade c''est vivre confortablement au coeur de la nature, en toute liberté…'
         CapaciteHebergement: '5 personnes'
         Dimensions: 'Surface : 16 m²'
-        Agencement: "Chambre parents : 1 lit de\n140x190 cm\n1 chambre enfants : 1 lit\nsuperposé de 70x180 cm et 2 lits\nde 70 x 180 cm (le lit superposé ne\nconvient pas aux enfants de moins\nde 6 ans et de plus de 30 kg)\nSéjour : coin cuisine, gaz,\nmicro-ondes, réfrigérateur                 Terrasse de 6 m² "
-        Equipements: "Intérieur : 1 bouteille de gaz\nExtérieur : lumière, salon de jardin\nElectricité : 6 ampères\nParking : sur emplacement pour\nun seul véhicule (sauf mention contraire)"
+        Agencement: "Chambre parents : 1 lit de\r\n140x190 cm\r\n1 chambre enfants : 1 lit\r\nsuperposé de 70x180 cm et 2 lits\r\nde 70 x 180 cm (le lit superposé ne\r\nconvient pas aux enfants de moins\r\nde 6 ans et de plus de 30 kg)\r\nSéjour : coin cuisine, gaz,\r\nmicro-ondes, réfrigérateur                 Terrasse de 6 m²"
+        Equipements: "Intérieur : 1 bouteille de gaz\r\nExtérieur : lumière, salon de jardin\r\nElectricité : 6 ampères\r\nParking : sur emplacement pour\r\nun seul véhicule (sauf mention contraire)"
         AnneeUtilisation: '0-7 ans'
         Remarque1: 'En fonction du camping, l’agencement peut être différent.'
-        Remarque2: "Hébergement sans arrivée\nd’eau, sans sanitaire et\nsans chauffage"
-        Remarque3: ''
-        Remarque4: null
-    54_nl:
-        Id: 54
-        Locale: nl
-        Name: 'Tente Muscade (5 places, max. 5 adultes)'
-        Slug: tente-muscade-5-places-max-5-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    55_de:
-        Id: 55
-        Locale: de
-        Name: 'Ty Gouzik (7 places, max. 7 adultes)'
-        Slug: ty-gouzik-7-places-max-7-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    55_en:
-        Id: 55
-        Locale: en
-        Name: 'Ty Gouzik (7 places, max. 7 adultes)'
-        Slug: ty-gouzik-7-places-max-7-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
+        Remarque2: "Hébergement sans arrivée\r\nd’eau, sans sanitaire et\r\nsans chauffage"
         Remarque3: null
         Remarque4: null
     55_fr:
@@ -4364,7 +1084,7 @@
         Locale: fr
         Name: 'Ty Gouzik (7 places, max. 7 adultes)'
         Slug: ty-gouzik-7-places-max-7-adultes
-        Indice: 'Avec Sanitaires'
+        Indice: 'Avec lave-vaisselle'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -4372,67 +1092,7 @@
         Presentation: 'Dernier né des gîtes du Domaine de Kermario, retrouvez le Ty Gouzik, qui accueille jusqu''à 7 personnes ! Confort, détente, charme et repos seront au rendez-vous !'
         CapaciteHebergement: '7 personnes'
         Dimensions: 'Surface : 83 m²'
-        Agencement: "Chambre parents : 1 lit de 140 x 190 cm (à l'étage) \nChambre enfants :  2 lits de 90 x 190 cm et 2 lits superposés de 90 x190 cm (à l'étage)          La pièce commune comprend un coin cuisine avec lave-vaisselle, plaques de cuisson, four, micro-ondes, réfrigérateur, séjour avec canapé convertible \nLes sanitaires sont composés d'une salle d'eau à l'étage, WC au rez de chaussée. \nLe chauffage est électrique et le gîte est équipé d'une télévision. \nEquipements extérieurs : terrasse et un salon de jardin. "
-        Equipements: ''
-        AnneeUtilisation: ''
-        Remarque1: ''
-        Remarque2: ''
-        Remarque3: ''
-        Remarque4: null
-    55_nl:
-        Id: 55
-        Locale: nl
-        Name: 'Ty Gouzik (7 places, max. 7 adultes)'
-        Slug: ty-gouzik-7-places-max-7-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    56_de:
-        Id: 56
-        Locale: de
-        Name: 'Ty Gwenn (9 places, max. 9 adultes)'
-        Slug: ty-gwenn-9-places-max-9-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    56_en:
-        Id: 56
-        Locale: en
-        Name: 'Ty Gwenn (9 places, max. 9 adultes)'
-        Slug: ty-gwenn-9-places-max-9-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
+        Agencement: "Chambre parents : 1 lit de 140 x 190 cm (à l'étage) \r\nChambre enfants :  2 lits de 90 x 190 cm et 2 lits superposés de 90 x190 cm (à l'étage)          La pièce commune comprend un coin cuisine avec lave-vaisselle, plaques de cuisson, four, micro-ondes, réfrigérateur, séjour avec canapé convertible \r\nLes sanitaires sont composés d'une salle d'eau à l'étage, WC au rez de chaussée. \r\nLe chauffage est électrique et le gîte est équipé d'une télévision. \r\nEquipements extérieurs : terrasse et un salon de jardin."
         Equipements: null
         AnneeUtilisation: null
         Remarque1: null
@@ -4444,7 +1104,7 @@
         Locale: fr
         Name: 'Ty Gwenn (9 places, max. 9 adultes)'
         Slug: ty-gwenn-9-places-max-9-adultes
-        Indice: 'Avec Sanitaires'
+        Indice: 'Avec cour privative fermée et 3 chambres'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -4452,67 +1112,7 @@
         Presentation: 'Le plus grand des gîtes du Domaine de Kermario vous attend ! Avec sa cour privative fermée, sa capacité de 9 personnes et ses trois chambres, passez des vacances détente...'
         CapaciteHebergement: '9 personnes'
         Dimensions: 'Surface : 130 m²'
-        Agencement: " 2 chambres parents : 1 lit de 140x190 cm à l'étage. \nChambre enfants : 3 lit de 90x190 cm à l'étage La pièce commune comprend un coin cuisine avec lave-vaisselle, micro-ondes, réfrigérateur-congélateur, séjour avec 2 canapés dont un convertible 2 places \nLes sanitaires sont composés d'une salle de bain à l'étage et d'un WC au rez de chaussée. \nLe chauffage est électrique et le gîte est équipé d'une télévision. \nEquipements extérieurs : terrasse et un salon de jardin.  "
-        Equipements: ''
-        AnneeUtilisation: ''
-        Remarque1: ''
-        Remarque2: ''
-        Remarque3: ''
-        Remarque4: null
-    56_nl:
-        Id: 56
-        Locale: nl
-        Name: 'Ty Gwenn (9 places, max. 9 adultes)'
-        Slug: ty-gwenn-9-places-max-9-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    57_de:
-        Id: 57
-        Locale: de
-        Name: 'Ty Tomm (4 places, max. 2 adultes)'
-        Slug: ty-tomm-4-places-max-2-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    57_en:
-        Id: 57
-        Locale: en
-        Name: 'Ty Tomm (4 places, max. 2 adultes)'
-        Slug: ty-tomm-4-places-max-2-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
+        Agencement: "2 chambres parents : 1 lit de 140x190 cm à l'étage. \r\nChambre enfants : 3 lit de 90x190 cm à l'étage La pièce commune comprend un coin cuisine avec lave-vaisselle, micro-ondes, réfrigérateur-congélateur, séjour avec 2 canapés dont un convertible 2 places \r\nLes sanitaires sont composés d'une salle de bain à l'étage et d'un WC au rez de chaussée. \r\nLe chauffage est électrique et le gîte est équipé d'une télévision. \r\nEquipements extérieurs : terrasse et un salon de jardin."
         Equipements: null
         AnneeUtilisation: null
         Remarque1: null
@@ -4524,75 +1124,15 @@
         Locale: fr
         Name: 'Ty Tomm (4 places, max. 2 adultes)'
         Slug: ty-tomm-4-places-max-2-adultes
-        Indice: 'Avec Sanitaires'
+        Indice: 'Avec Mezzanine'
         Surface: null
         TypeTerrasse: null
         Description: null
         Composition: null
         Presentation: 'Très confortable et douillet, ce gîte peut accueillir jusqu''à 4 personnes. Le côté atypique de ce gîte est sans conteste sa mezzanine, qui permet d''accéder au niveau supérieur.'
-        CapaciteHebergement: "4 personnes\nRecommandé : 2 adultes + 2 enfants, bébé compris                                              Toléré : 2 adultes maxi. + 2 enfants, bébé compris Adulte : à partir de 14 ans\n"
+        CapaciteHebergement: "4 personnes\r\nRecommandé : 2 adultes + 2 enfants, bébé compris                                              Toléré : 2 adultes maxi. + 2 enfants, bébé compris Adulte : à partir de 14 ans"
         Dimensions: 'Surface : 28 m²'
-        Agencement: "La chambre parents : 1 lit de 140x190 cm\nLe couchage en mezzanine : 2 lits superposés de 90 x 190 cm (accès par échelle de meunier déconseillé aux enfants de - 6 ans)                     La pièce commune comprend un coin cuisine avec micro-ondes, réfrigérateur-congélateur, séjour avec banquette \nLes sanitaires sont composés d'une salle d'eau et d'un WC séparé. \nLe chauffage est électrique et le gîte est équipé d'une télévision. \nEquipements extérieurs : 2 terrasses et un salon de jardin. \n"
-        Equipements: ''
-        AnneeUtilisation: ''
-        Remarque1: ''
-        Remarque2: ''
-        Remarque3: ''
-        Remarque4: null
-    57_nl:
-        Id: 57
-        Locale: nl
-        Name: 'Ty Tomm (4 places, max. 2 adultes)'
-        Slug: ty-tomm-4-places-max-2-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    58_de:
-        Id: 58
-        Locale: de
-        Name: 'Vacanciale (5 places, max. 4 adultes)'
-        Slug: vacanciale-5-places-max-4-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    58_en:
-        Id: 58
-        Locale: en
-        Name: 'Vacanciale (5 places, max. 4 adultes)'
-        Slug: vacanciale-5-places-max-4-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
+        Agencement: "La chambre parents : 1 lit de 140x190 cm\r\nLe couchage en mezzanine : 2 lits superposés de 90 x 190 cm (accès par échelle de meunier déconseillé aux enfants de - 6 ans)                     La pièce commune comprend un coin cuisine avec micro-ondes, réfrigérateur-congélateur, séjour avec banquette \r\nLes sanitaires sont composés d'une salle d'eau et d'un WC séparé. \r\nLe chauffage est électrique et le gîte est équipé d'une télévision. \r\nEquipements extérieurs : 2 terrasses et un salon de jardin."
         Equipements: null
         AnneeUtilisation: null
         Remarque1: null
@@ -4604,79 +1144,19 @@
         Locale: fr
         Name: 'Vacanciale (5 places, max. 4 adultes)'
         Slug: vacanciale-5-places-max-4-adultes
-        Indice: 'Avec Sanitaires'
+        Indice: 'Sans sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
         Composition: null
         Presentation: 'Vous apprecierez la Vacanciale, par sa simplicité, son confort et sa terrasse couverte très pratique pour allier plein air et convivialité.'
-        CapaciteHebergement: "5 personnes\nRecommandé : 2 adultes + 3 enfants, bébé compris\nToléré : 4 adultes maxi. + 1 enfant, bébé compris\nAdulte : à partir de 14 ans\n"
-        Dimensions: "Surface : Vacanciale 11 m²+ terrasse 9 m².Longueur 6,70 m x Largeur 3 m \n"
-        Agencement: " Chambre parents : 1 lit de\n140x190 cm avec sommier\nà lattes, penderie\n Chambre enfants : 2 lits\nsuperposés de 70x180 cm avec\nsommiers à lattes et lit gigogne\n(le lit superposé ne convient pas\naux enfants de plus de 30 kg)"
-        Equipements: "Terrasse : cuisine avec\nréfrigérateur, réchaud 2 feux avec\nbouteille de gaz, micro-ondes\n(sauf Playa Tropicana), meuble de\nrangement 120x50 cm, salon de\njardin\nElectricité : 220 V + prises\nParking : sur emplacement pour\nun seul véhicule (sauf mention\ncontraire)\n"
+        CapaciteHebergement: "5 personnes\r\nRecommandé : 2 adultes + 3 enfants, bébé compris\r\nToléré : 4 adultes maxi. + 1 enfant, bébé compris\r\nAdulte : à partir de 14 ans"
+        Dimensions: 'Surface : Vacanciale 11 m²+ terrasse 9 m².Longueur 6,70 m x Largeur 3 m'
+        Agencement: "Chambre parents : 1 lit de\r\n140x190 cm avec sommier\r\nà lattes, penderie\r\n Chambre enfants : 2 lits\r\nsuperposés de 70x180 cm avec\r\nsommiers à lattes et lit gigogne\r\n(le lit superposé ne convient pas\r\naux enfants de plus de 30 kg)"
+        Equipements: "Terrasse : cuisine avec\r\nréfrigérateur, réchaud 2 feux avec\r\nbouteille de gaz, micro-ondes\r\n(sauf Playa Tropicana), meuble de\r\nrangement 120x50 cm, salon de\r\njardin\r\nElectricité : 220 V + prises\r\nParking : sur emplacement pour\r\nun seul véhicule (sauf mention\r\ncontraire)"
         AnneeUtilisation: '0-7 ans'
         Remarque1: 'En fonction du camping, l’agencement peut être différent.'
         Remarque2: 'Hébergement sans arrivée d’eau, sans sanitaires et sans chauffage'
-        Remarque3: ''
-        Remarque4: null
-    58_nl:
-        Id: 58
-        Locale: nl
-        Name: 'Vacanciale (5 places, max. 4 adultes)'
-        Slug: vacanciale-5-places-max-4-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    59_de:
-        Id: 59
-        Locale: de
-        Name: 'Vacanciale mer (5 places, max. 4 adultes)'
-        Slug: vacanciale-mer-5-places-max-4-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    59_en:
-        Id: 59
-        Locale: en
-        Name: 'Vacanciale mer (5 places, max. 4 adultes)'
-        Slug: vacanciale-mer-5-places-max-4-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
         Remarque3: null
         Remarque4: null
     59_fr:
@@ -4684,79 +1164,19 @@
         Locale: fr
         Name: 'Vacanciale mer (5 places, max. 4 adultes)'
         Slug: vacanciale-mer-5-places-max-4-adultes
-        Indice: 'Avec Sanitaires'
+        Indice: 'Sans sanitaires'
         Surface: null
         TypeTerrasse: null
         Description: null
         Composition: null
         Presentation: 'Vous apprecierez la Vacanciale située proche de la plage, équipée d''une terrasse couverte , alliant confort et simplicité.'
-        CapaciteHebergement: "5 personnes\nRecommandé : 2 adultes + 3 enfants, bébé compris\nToléré : 4 adultes maxi. + 1 enfant, bébé compris\nAdulte : à partir de 14 ans\n"
-        Dimensions: "Surface : Vacanciale 11 m²+ terrasse 9 m².Longueur 6,70 m x Largeur 3 m \n"
-        Agencement: " Chambre parents : 1 lit de\n140x190 cm avec sommier\nà lattes, penderie\n Chambre enfants : 2 lits\nsuperposés de 70x180 cm avec\nsommiers à lattes et lit gigogne\n(le lit superposé ne convient pas\naux enfants de plus de 30 kg)"
-        Equipements: "Terrasse : cuisine avec\nréfrigérateur, réchaud 2 feux avec\nbouteille de gaz, micro-ondes\n(sauf Playa Tropicana), meuble de\nrangement 120x50 cm, salon de\njardin\nElectricité : 220 V + prises\nParking : sur emplacement pour\nun seul véhicule (sauf mention\ncontraire)\n"
+        CapaciteHebergement: "5 personnes\r\nRecommandé : 2 adultes + 3 enfants, bébé compris\r\nToléré : 4 adultes maxi. + 1 enfant, bébé compris\r\nAdulte : à partir de 14 ans"
+        Dimensions: 'Surface : Vacanciale 11 m²+ terrasse 9 m².Longueur 6,70 m x Largeur 3 m'
+        Agencement: "Chambre parents : 1 lit de\r\n140x190 cm avec sommier\r\nà lattes, penderie\r\n Chambre enfants : 2 lits\r\nsuperposés de 70x180 cm avec\r\nsommiers à lattes et lit gigogne\r\n(le lit superposé ne convient pas\r\naux enfants de plus de 30 kg)"
+        Equipements: "Terrasse : cuisine avec\r\nréfrigérateur, réchaud 2 feux avec\r\nbouteille de gaz, micro-ondes\r\n(sauf Playa Tropicana), meuble de\r\nrangement 120x50 cm, salon de\r\njardin\r\nElectricité : 220 V + prises\r\nParking : sur emplacement pour\r\nun seul véhicule (sauf mention\r\ncontraire)"
         AnneeUtilisation: '0-7 ans'
         Remarque1: 'En fonction du camping, l’agencement peut être différent.'
         Remarque2: 'Hébergement sans arrivée d’eau, sans sanitaires et sans chauffage'
-        Remarque3: ''
-        Remarque4: null
-    59_nl:
-        Id: 59
-        Locale: nl
-        Name: 'Vacanciale mer (5 places, max. 4 adultes)'
-        Slug: vacanciale-mer-5-places-max-4-adultes
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    60_de:
-        Id: 60
-        Locale: de
-        Name: Yourte
-        Slug: yourte
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    60_en:
-        Id: 60
-        Locale: en
-        Name: Yourte
-        Slug: yourte
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
         Remarque3: null
         Remarque4: null
     60_fr:
@@ -4764,79 +1184,19 @@
         Locale: fr
         Name: Yourte
         Slug: yourte
-        Indice: 'Avec Sanitaires'
+        Indice: 'Tente traditionnelle mongole'
         Surface: null
         TypeTerrasse: null
         Description: null
         Composition: null
         Presentation: 'Pour des vacances atypiques, profitez de cette tente traditionnelle mongole où le voyage et le dépaysement seront au rendez-vous'
-        CapaciteHebergement: "4 personnes\n\n"
-        Dimensions: "Surface : 27 m²\n\n"
+        CapaciteHebergement: '4 personnes'
+        Dimensions: 'Surface : 27 m²'
         Agencement: 'Composée d''une seule pièce meublée de 4 lits individuels, 1 armoire et 4 tabourets. Un coin cuisine est mis à disposition dans une tente à proximité.'
-        Equipements: ''
+        Equipements: null
         AnneeUtilisation: '0-7 ans'
-        Remarque1: ''
+        Remarque1: null
         Remarque2: 'Hébergement sans arrivée d’eau, sans sanitaires, sans éléctricité et sans chauffage'
-        Remarque3: ''
-        Remarque4: null
-    60_nl:
-        Id: 60
-        Locale: nl
-        Name: Yourte
-        Slug: yourte
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    61_de:
-        Id: 61
-        Locale: de
-        Name: 'Emplacement nu camping car'
-        Slug: emplacement-nu-camping-car
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    61_en:
-        Id: 61
-        Locale: en
-        Name: 'Emplacement nu camping car'
-        Slug: emplacement-nu-camping-car
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
         Remarque3: null
         Remarque4: null
     61_fr:
@@ -4844,67 +1204,7 @@
         Locale: fr
         Name: 'Emplacement nu camping car'
         Slug: emplacement-nu-camping-car
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    61_nl:
-        Id: 61
-        Locale: nl
-        Name: 'Emplacement nu camping car'
-        Slug: emplacement-nu-camping-car
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    62_de:
-        Id: 62
-        Locale: de
-        Name: 'Emplacement nu avec électricité et sol dur'
-        Slug: emplacement-nu-avec-electricite-et-sol-dur
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    62_en:
-        Id: 62
-        Locale: en
-        Name: 'Emplacement nu avec électricité et sol dur'
-        Slug: emplacement-nu-avec-electricite-et-sol-dur
-        Indice: 'Avec Sanitaires'
+        Indice: 'Avec électricité'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -4939,132 +1239,12 @@
         Remarque2: null
         Remarque3: null
         Remarque4: null
-    62_nl:
-        Id: 62
-        Locale: nl
-        Name: 'Emplacement nu avec électricité et sol dur'
-        Slug: emplacement-nu-avec-electricite-et-sol-dur
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    63_de:
-        Id: 63
-        Locale: de
-        Name: 'Emplacement nu avec électricité'
-        Slug: emplacement-nu-avec-electricite
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    63_en:
-        Id: 63
-        Locale: en
-        Name: 'Emplacement nu avec électricité'
-        Slug: emplacement-nu-avec-electricite
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
     63_fr:
         Id: 63
         Locale: fr
         Name: 'Emplacement nu avec électricité'
         Slug: emplacement-nu-avec-electricite
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    63_nl:
-        Id: 63
-        Locale: nl
-        Name: 'Emplacement nu avec électricité'
-        Slug: emplacement-nu-avec-electricite
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    64_de:
-        Id: 64
-        Locale: de
-        Name: 'Emplacement nu avec électricité et eau'
-        Slug: emplacement-nu-avec-electricite-et-eau
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    64_en:
-        Id: 64
-        Locale: en
-        Name: 'Emplacement nu avec électricité et eau'
-        Slug: emplacement-nu-avec-electricite-et-eau
-        Indice: 'Avec Sanitaires'
+        Indice: 'Avec électricité'
         Surface: null
         TypeTerrasse: null
         Description: null
@@ -5082,26 +1262,6 @@
     64_fr:
         Id: 64
         Locale: fr
-        Name: 'Emplacement nu avec électricité et eau'
-        Slug: emplacement-nu-avec-electricite-et-eau
-        Indice: 'Avec Sanitaires'
-        Surface: null
-        TypeTerrasse: null
-        Description: null
-        Composition: null
-        Presentation: null
-        CapaciteHebergement: null
-        Dimensions: null
-        Agencement: null
-        Equipements: null
-        AnneeUtilisation: null
-        Remarque1: null
-        Remarque2: null
-        Remarque3: null
-        Remarque4: null
-    64_nl:
-        Id: 64
-        Locale: nl
         Name: 'Emplacement nu avec électricité et eau'
         Slug: emplacement-nu-avec-electricite-et-eau
         Indice: 'Avec Sanitaires'
