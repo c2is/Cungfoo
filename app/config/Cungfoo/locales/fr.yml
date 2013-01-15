@@ -69,6 +69,9 @@ crud.modal.delete.title: Confirmation de suppression
 crud.modal.delete.message: Ètes vous sur de vouloir supprimer l'item <strong>%code%</strong> ?
 crud.modal.delete.ok: Valider
 crud.modal.delete.cancel: Annuler
+crud.tab.datas: Données principales
+crud.tab.medias: Medias
+crud.tab.parameters: Paramètrages
 
 destination.crud.create: Création d'une destination
 destination.crud.list: Liste destinations
@@ -317,6 +320,8 @@ region.image.detail.1: Image 1
 region.image.detail.2: Image 2
 region.active: Actif
 region.slug: Slug
+region.destination: Destination
+region.bon_plans: Bons plans
 
 resalys.actions.import: Importer les données de Resalys
 resalys.title.import: Import Resalys
