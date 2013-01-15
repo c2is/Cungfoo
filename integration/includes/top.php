@@ -9,7 +9,7 @@
                     <div id="destinationsCountry" class="left destination">
                         <div class="radiusBox2 greyC bgImg national">
                             <div class="view">
-                                <img class="bg" src="http://ipsumimage.appspot.com/618x90,ff7700?l=France|(618x90)&s=20&f=ffffff" alt="" />
+                                <img class="bg" src="../web/images/vacancesdirectes/common/menu/destinations/france_visuel.jpg" alt="" />
                                 <div class="stamp grey"><span>France</span></div>
                             </div>
                             <div class="regions clear">
@@ -53,7 +53,7 @@
                         </div>
                         <div class="radiusBox2 greyC bgImg international">
                             <div class="view">
-                                <img class="bg" src="http://ipsumimage.appspot.com/298x90,ff7700?l=Espagne|(298x90)&s=20&f=ffffff" alt="" />
+                                <img class="bg" src="../web/images/vacancesdirectes/common/menu/destinations/espagne_visuel.jpg" alt="" />
                                 <div class="stamp grey"><span>Espagne</span></div>
                             </div>
                             <div class="region">
@@ -67,7 +67,7 @@
                         </div>
                         <div class="radiusBox2 greyC bgImg international">
                             <div class="view">
-                                <img class="bg" src="http://ipsumimage.appspot.com/298x90,ff7700?l=Italie|(298x90)&s=20&f=ffffff" alt="" />
+                                <img class="bg" src="../web/images/vacancesdirectes/common/menu/destinations/italie_visuel.jpg" alt="" />
                                 <div class="stamp grey"><span>Italie</span></div>
                             </div>
                             <div class="region">
