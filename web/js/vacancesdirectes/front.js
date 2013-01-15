@@ -162,20 +162,6 @@ $(function() {
        }
     });
 
-// footer
-    // ajust borders height
-    if($('#footerInfo').length){
-        var maxHeight = 0;
-        $('#footerInfo').children('div').each(function(index){
-            if ($(this).height() > maxHeight){
-                maxHeight = $(this).height();
-            }
-            if ($('#footerInfo').children('div').length == index+1){
-                $('#infoMenu, #infoAbout').css('height',maxHeight);
-            }
-        });
-    }
-
 
     /*
      *  ############################################################
@@ -296,6 +282,26 @@ $(function() {
             $('#dealsContent').children().hide();
             $('#dealsContent').children('#bp' + parseInt($(this).index() + 1)).show();
         });
+
+        // ajust borders height
+        if($('#destinations').length){
+            $('#destinations').show();
+            var maxHeight = 0;
+            $('#destinationsCountry').children('.radiusBox2').each(function(index){
+                if ($(this).hasClass('international')){
+                    if ($(this).outerHeight() > maxHeight){
+                        maxHeight = $(this).outerHeight();
+                    }
+                    if ($('#destinationsCountry').children('.radiusBox2').length == index+1){
+                        $('#destinationsCountry .international').css('height',maxHeight);
+                        var destinationsCountryHeight = $('#destinationsCountry').height();
+                        $('#destinationsAll ol').height(destinationsCountryHeight - 90);
+                        $('#destinations').hide();
+                    }
+                }
+
+            });
+        }
 
     }
 
@@ -964,6 +970,27 @@ $(function() {
         });
     }
 });
+
+
+/*
+ *  ############################################################
+ *                          FOOTER
+ * ############################################################
+ */
+
+// ajust borders height
+if($('#footerInfo').length){
+    var maxHeight = 0;
+    $('#footerInfo').children('div').each(function(index){
+        if ($(this).height() > maxHeight){
+            maxHeight = $(this).height();
+        }
+        if ($('#footerInfo').children('div').length == index+1){
+            $('#infoMenu, #infoAbout').css('height',maxHeight);
+        }
+    });
+}
+
 
 /*
  *  //////////////////////////////////////////////////////////////////////////////////////////////////////////

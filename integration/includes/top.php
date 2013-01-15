@@ -6,54 +6,54 @@
         <li class="tab"><a href="#">Les destinations <small>(137)</small></a>
             <div id="destinations" class="subnav">
                 <div class="clear">
-                    <div id="destinationsNational" class="left ratio-33">
-                        <div class="radiusBox2 greyC bgImg">
+                    <div id="destinationsCountry" class="left destination">
+                        <div class="radiusBox2 greyC bgImg national">
                             <div class="view">
-                                <img class="bg" src="../web/images/vacancesdirectes/dyn/menu/1-destinations/france.jpg" alt="" />
+                                <img class="bg" src="http://ipsumimage.appspot.com/618x90,ff7700?l=France|(618x90)&s=20&f=ffffff" alt="" />
                                 <div class="stamp grey"><span>France</span></div>
                             </div>
-                            <div class="region">
-                                <div class="title">Destination Méditerranée</div>
-                                <ul>
-                                    <li>- <a href=#>Languedoc-Roussillon</a></li>
-                                    <li>- <a href=#>Corse</a></li>
-                                    <li>- <a href=#>Provence Côte d'Azur</a></li>
-                                    <a class="bt link" href="#">Plus de régions</a>
-                                </ul>
-                            </div>
-                            <div class="region">
-                                <div class="title">Destination Atlantique</div>
-                                <ul>
-                                    <li>- <a href=#>Bretagne</a></li>
-                                    <li>- <a href=#>Charente-Maritime</a></li>
-                                    <li>- <a href=#>Pays Basque</a></li>
-                                    <a class="bt link" href="#">Plus de régions</a>
-                                </ul>
-                            </div>
-                            <div class="region">
-                                <div class="title">Destination Montagne</div>
-                                <ul>
-                                    <li>- <a href=#>Alpes</a></li>
-                                    <li>- <a href=#>Alsace / Jura</a></li>
-                                    <li>- <a href=#>Ariège / Pyrénées</a></li>
-                                    <a class="bt link" href="#">Plus de régions</a>
-                                </ul>
-                            </div>
-                            <div class="region">
-                                <div class="title">Destination Campagne</div>
-                                <ul>
-                                    <li>- <a href=#>Pays de la Loire</a></li>
-                                    <li>- <a href=#>Périgord / Dordogne</a></li>
-                                    <li>- <a href=#>Auvergne</a></li>
-                                    <a class="bt link" href="#">Plus de régions</a>
-                                </ul>
+                            <div class="regions">
+                                <div class="region">
+                                    <div class="title">Destination Méditerranée</div>
+                                    <ul>
+                                        <li>- <a href=#>Languedoc-Roussillon</a></li>
+                                        <li>- <a href=#>Corse</a></li>
+                                        <li>- <a href=#>Provence Côte d'Azur</a></li>
+                                        <!--                                    <a class="bt link" href="#">Plus de régions</a>-->
+                                    </ul>
+                                </div>
+                                <div class="region">
+                                    <div class="title">Destination Atlantique</div>
+                                    <ul>
+                                        <li>- <a href=#>Bretagne</a></li>
+                                        <li>- <a href=#>Charente-Maritime</a></li>
+                                        <li>- <a href=#>Pays Basque</a></li>
+                                        <!--                                    <a class="bt link" href="#">Plus de régions</a>-->
+                                    </ul>
+                                </div>
+                                <div class="region">
+                                    <div class="title">Destination Montagne</div>
+                                    <ul>
+                                        <li>- <a href=#>Alpes</a></li>
+                                        <li>- <a href=#>Alsace / Jura</a></li>
+                                        <li>- <a href=#>Ariège / Pyrénées</a></li>
+                                        <!--                                    <a class="bt link" href="#">Plus de régions</a>-->
+                                    </ul>
+                                </div>
+                                <div class="region">
+                                    <div class="title">Destination Campagne</div>
+                                    <ul>
+                                        <li>- <a href=#>Pays de la Loire</a></li>
+                                        <li>- <a href=#>Périgord / Dordogne</a></li>
+                                        <li>- <a href=#>Auvergne</a></li>
+                                        <!--                                    <a class="bt link" href="#">Plus de régions</a>-->
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div id="destinationsInternational" class="left ratio-33">
-                        <div class="radiusBox2 greyC bgImg">
+                        <div class="radiusBox2 greyC bgImg international">
                             <div class="view">
-                                <img class="bg" src="../web/images/vacancesdirectes/dyn/menu/1-destinations/spain.jpg" alt="" />
+                                <img class="bg" src="http://ipsumimage.appspot.com/298x90,ff7700?l=Espagne|(298x90)&s=20&f=ffffff" alt="" />
                                 <div class="stamp grey"><span>Espagne</span></div>
                             </div>
                             <div class="region">
@@ -65,9 +65,9 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="radiusBox2 greyC">
+                        <div class="radiusBox2 greyC bgImg international">
                             <div class="view">
-                                <img class="bg" src="../web/images/vacancesdirectes/dyn/menu/1-destinations/italia.jpg" alt="" />
+                                <img class="bg" src="http://ipsumimage.appspot.com/298x90,ff7700?l=Italie|(298x90)&s=20&f=ffffff" alt="" />
                                 <div class="stamp grey"><span>Italie</span></div>
                             </div>
                             <div class="region">
@@ -77,21 +77,8 @@
                                 </ul>
                             </div>
                         </div>
-                        <!--
-                        <div class="radiusBox2 greyC">
-                            <div class="view">
-                                <img class="bg" src="../web/images/vacancesdirectes/dyn/menu/1-destinations/portugal.jpg" alt="" />
-                                <div class="stamp grey"><span>Portugal</span></div>
-                            </div>
-                            <div class="region">
-                                <ul>
-                                    <li>- <a href=#>Centro</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        -->
                     </div>
-                    <div id="destinationsAll" class="left ratio-33">
+                    <div id="destinationsAll" class="left destination">
                         <div class="radiusBox greyC">
                             <div class="title">Tous nos campings</div>
                             <!--

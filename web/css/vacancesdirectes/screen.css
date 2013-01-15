@@ -1618,52 +1618,48 @@ footer {
 #nav .tab .subnav#destinations li {
   line-height: 15px;
 }
-#nav .tab .subnav#destinations .ratio-33 {
-  width: 300px;
-  margin-right: 16px;
-}
-#nav .tab .subnav#destinations .ratio-33:last-child {
+#nav .tab .subnav#destinations .destination:last-child {
   width: 308px;
   margin-right: 0;
 }
-#nav .tab .subnav#destinations .ratio-33 .radiusBox,
-#nav .tab .subnav#destinations .ratio-33 .radiusBox2 {
+#nav .tab .subnav#destinations .destination .radiusBox,
+#nav .tab .subnav#destinations .destination .radiusBox2 {
   font: 12px/13px Arial, Helvetica, sans-serif, sans-serif;
 }
-#nav .tab .subnav#destinations .ratio-33 .radiusBox .view,
-#nav .tab .subnav#destinations .ratio-33 .radiusBox2 .view {
+#nav .tab .subnav#destinations .destination .radiusBox .view,
+#nav .tab .subnav#destinations .destination .radiusBox2 .view {
   width: 290px;
   height: 90px;
   margin: -15px -20px 15px;
   -webkit-border-radius: 6px 6px 0 0;
   border-radius: 6px 6px 0 0;
 }
-#nav .tab .subnav#destinations .ratio-33 .radiusBox .view .bg,
-#nav .tab .subnav#destinations .ratio-33 .radiusBox2 .view .bg {
+#nav .tab .subnav#destinations .destination .radiusBox .view .bg,
+#nav .tab .subnav#destinations .destination .radiusBox2 .view .bg {
   position: absolute;
   top: 0;
   left: 0;
 }
-#nav .tab .subnav#destinations .ratio-33 .radiusBox .title,
-#nav .tab .subnav#destinations .ratio-33 .radiusBox2 .title {
+#nav .tab .subnav#destinations .destination .radiusBox .title,
+#nav .tab .subnav#destinations .destination .radiusBox2 .title {
   font: bold 18px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   margin: 3px 0 2px;
 }
-#nav .tab .subnav#destinations .ratio-33 .radiusBox a,
-#nav .tab .subnav#destinations .ratio-33 .radiusBox2 a {
+#nav .tab .subnav#destinations .destination .radiusBox a,
+#nav .tab .subnav#destinations .destination .radiusBox2 a {
   text-decoration: none;
 }
-#nav .tab .subnav#destinations .ratio-33 .radiusBox .link,
-#nav .tab .subnav#destinations .ratio-33 .radiusBox2 .link {
+#nav .tab .subnav#destinations .destination .radiusBox .link,
+#nav .tab .subnav#destinations .destination .radiusBox2 .link {
   text-align: right;
   margin: 0;
 }
-#nav .tab .subnav#destinations .ratio-33 .radiusBox .title {
+#nav .tab .subnav#destinations .destination .radiusBox .title {
   position: relative;
   display: inline;
 }
-#nav .tab .subnav#destinations .ratio-33 .radiusBox .title:after {
+#nav .tab .subnav#destinations .destination .radiusBox .title:after {
   content: url('../../images/vacancesdirectes/common/pict/filterCampingIcon.png');
   position: absolute;
   bottom: 0px;
@@ -1696,19 +1692,51 @@ footer {
 #nav .tab .subnav#destinations .letter-count > img {
   vertical-align: middle;
 }
-#nav .tab .subnav#destinations #destinationsNational .radiusBox2 {
-  min-height: 535px;
+#nav .tab .subnav#destinations #destinationsCountry {
+  width: 628px;
+  margin-right: 12px;
 }
-#nav .tab .subnav#destinations #destinationsNational .region ul {
+#nav .tab .subnav#destinations #destinationsCountry .radiusBox2 {
+  float: left;
+  margin-right: 12px;
+  margin-bottom: 12px;
+  margin-top: 0;
+}
+#nav .tab .subnav#destinations #destinationsCountry .radiusBox2:last-child {
+  margin-right: 0;
+}
+#nav .tab .subnav#destinations #destinationsCountry .radiusBox2.national {
+  width: 628px;
+  margin-top: 15px;
+  padding-right: 0;
+}
+#nav .tab .subnav#destinations #destinationsCountry .radiusBox2.national .regions:after {
+  content: "";
+  width: 100%;
+  height: 7px;
+  background-color: #ffffff;
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+}
+#nav .tab .subnav#destinations #destinationsCountry .radiusBox2.national .regions .region {
+  width: 274px;
+  margin-right: 20px;
+  float: left;
+}
+#nav .tab .subnav#destinations #destinationsCountry .radiusBox2.national .regions .region ul {
   padding-bottom: 5px;
   border-bottom: 7px solid #e6e5e5;
 }
-#nav .tab .subnav#destinations #destinationsNational .region:last-child ul {
+#nav .tab .subnav#destinations #destinationsCountry .radiusBox2.national .regions .region:last-child ul {
   padding-bottom: 0;
   border-bottom: 0 none;
 }
-#nav .tab .subnav#destinations #destinationsInternational .radiusBox2 {
-  min-height: 260px;
+#nav .tab .subnav#destinations #destinationsCountry .radiusBox2.international {
+  width: 308px;
+}
+#nav .tab .subnav#destinations #destinationsAll {
+  width: 300px;
 }
 #nav .tab .subnav#destinations #destinationsAll ol#campingsList {
   overflow: auto;
