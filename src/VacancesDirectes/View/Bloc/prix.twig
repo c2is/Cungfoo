@@ -1,0 +1,25 @@
+<div id="dispoBloc" class="proposal radiusBox fushia promo arrowLeft">
+    <p class="proposalDates">
+        {% if blocPrix.proposal_key %}
+        {{ "listing.du" | trans }} {{ blocPrix.start_date }} {{ "listing.au" | trans }} {{ blocPrix.end_date }}
+        {% else %}
+        {{ 'general.meilleur_prix'|trans }}
+        {% endif %}
+    </p>
+    {% if blocPrix.proposal_key %}
+    <p class="proposalType">{{ blocPrix.room_type_label }}</p>
+    {% endif %}
+
+    <div class="stain cover">
+        <span>{{ "general.a_partir_de"|trans }}<br>
+            <span class="price linkBlock">{{ blocPrix.adult_price|number_format }}<span class="fine">&nbsp;</span>€</span>
+            au lieu de <span class="line-through">{{ blocPrix.adult_price_without_discounts|number_format }}<span class="fine">&nbsp;</span>€</span>
+        </span>
+        <!--  PROMO  -->
+        {% if blocPrix.adult_price_pourcent %}
+        <span class="discount">-{{ blocPrix.adult_price_pourcent }}%</span>
+        {% endif %}
+        <!--  FIN / PROMO  -->
+    </div>
+    <a class="bt sombre big ib" href="#frameResalys">Réserver</a>
+</div>
