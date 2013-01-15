@@ -319,6 +319,11 @@ class DestinationController implements ControllerProviderInterface
             $blocPrix['adult_price']                   = $lastProposal['proposal']->{'adult_price'};
             $blocPrix['adult_price_pourcent']          = 100 - (100 * $lastProposal['proposal']->{'adult_price'} / $lastProposal['proposal']->{'adult_price_without_discounts'});
         }
+        else
+        {
+            $blocPrix['adult_price_without_discounts'] = $camping->getMinimumPrice();
+        }
+        // fin de la définition des informations relatives au bloc prix de la fiche camping
 
         return $app->renderView('Camping/camping.twig', array(
             'locale'                  => $locale,

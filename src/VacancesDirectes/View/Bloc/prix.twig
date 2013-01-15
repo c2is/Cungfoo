@@ -12,8 +12,18 @@
 
     <div class="stain cover">
         <span>{{ "general.a_partir_de"|trans }}<br>
-            <span class="price linkBlock">{{ blocPrix.adult_price|number_format }}<span class="fine">&nbsp;</span>€</span>
+            <span class="price linkBlock">
+                {% if blocPrix.adult_price_pourcent %}
+                    {{ blocPrix.adult_price|number_format }}€
+                {% else %}
+                    {{ blocPrix.adult_price_without_discounts|number_format }}€
+                {% endif %}
+
+            </span>
+
+            {% if blocPrix.adult_price_pourcent %}
             au lieu de <span class="line-through">{{ blocPrix.adult_price_without_discounts|number_format }}<span class="fine">&nbsp;</span>€</span>
+            {% endif %}
         </span>
         <!--  PROMO  -->
         {% if blocPrix.adult_price_pourcent %}
@@ -21,5 +31,10 @@
         {% endif %}
         <!--  FIN / PROMO  -->
     </div>
-    <a class="bt sombre big ib" href="#frameResalys">Réserver</a>
+
+    {% if blocPrix.proposal_key %}
+    <a class="bt sombre big ib" href="{{ path('couloir_detail_sejour', {'proposalKey': blocPrix.proposal_key}) }}">Réserver</a>
+    {% else %}
+    <a class="bt sombre big ib goto" href="#frameResalys">Réserver</a>
+    {% endif %}
 </div>
