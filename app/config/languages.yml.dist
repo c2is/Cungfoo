@@ -1,0 +1,7 @@
+languages:
+    fr:
+        name:  locale.french
+        domain: ##domain_fr##
+    de:
+        name:  locale.german
+        domain: ##domain_de##
