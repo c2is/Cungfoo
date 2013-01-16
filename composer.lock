@@ -1,5 +1,5 @@
 {
-    "hash": "2b4fa84c57ad54e0c1e63da9e93cd2c8",
+    "hash": "d73381ab0c3d716105ad57511bc349e8",
     "packages": [
         {
             "name": "atoum/atoum",
@@ -21,7 +21,7 @@
             "replace": {
                 "mageekguy/atoum": "*"
             },
-            "time": "2012-12-04 12:37:49",
+            "time": "1354624669",
             "bin": [
                 "bin/atoum"
             ],
@@ -32,7 +32,6 @@
                     "classes/"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD"
             ],
@@ -86,7 +85,7 @@
                 "php": ">=5.3.2",
                 "symfony/console": "2.1.*"
             },
-            "time": "2012-10-07 21:19:54",
+            "time": "1349644794",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -94,7 +93,6 @@
                     "Knp\\": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -121,7 +119,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/KuiKui/MemcacheServiceProvider/archive/6125467987ae249edb674cc277315dda153c7752.zip",
+                "url": "https://github.com/KuiKui/MemcacheServiceProvider/zipball/6125467987ae249edb674cc277315dda153c7752",
                 "reference": "6125467987ae249edb674cc277315dda153c7752",
                 "shasum": ""
             },
@@ -129,7 +127,6 @@
                 "silex/silex": "1.0.*",
                 "mageekguy/atoum": "dev-master"
             },
-            "time": "2012-10-20 17:12:36",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -137,7 +134,6 @@
                     "KuiKui\\MemcacheServiceProvider": "src"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -153,7 +149,8 @@
             "keywords": [
                 "silex",
                 "memcache"
-            ]
+            ],
+            "time": "1350753156"
         },
         {
             "name": "monolog/monolog",
@@ -178,7 +175,7 @@
             "suggest": {
                 "mlehner/gelf-php": "Allow sending log messages to a GrayLog2 server"
             },
-            "time": "2012-04-23 09:27:40",
+            "time": "2012-04-22 20:27:40",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -186,7 +183,6 @@
                     "Monolog": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -206,6 +202,52 @@
             ]
         },
         {
+            "name": "oziks/debug-service-provider",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:oziks/DebugServiceProvider.git",
+                "reference": "2edadf1991b03ec412a489a3bc10915682727e57"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/oziks/DebugServiceProvider/archive/2edadf1991b03ec412a489a3bc10915682727e57.zip",
+                "reference": "2edadf1991b03ec412a489a3bc10915682727e57",
+                "shasum": ""
+            },
+            "require-dev": {
+                "propel/propel-service-provider": "0.0.*",
+                "propel/propel1": "1.6.*",
+                "silex/silex": "1.0.*",
+                "twig/twig": ">=1.8.0,<2.0-dev"
+            },
+            "time": "1358254640",
+            "type": "library",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "Oziks": "src"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Morgan Brunot",
+                    "email": "brunot.morgan@gmail.com",
+                    "homepage": "http://oziks.fr"
+                }
+            ],
+            "description": "Debug service provider for Silex.",
+            "homepage": "https://github.com/oziks/DebugServiceProvider",
+            "keywords": [
+                "silex",
+                "debug",
+                "toolbar"
+            ]
+        },
+        {
             "name": "phing/phing",
             "version": "2.4.12",
             "source": {
@@ -222,7 +264,7 @@
             "require": {
                 "php": ">=5.2.0"
             },
-            "time": "2012-04-06 11:33:25",
+            "time": "2012-04-05 22:33:25",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -230,18 +272,21 @@
                     "classes/phing/"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "LGPL3"
             ],
             "authors": [
                 {
                     "name": "Michiel Rook",
-                    "email": "mrook@php.net"
+                    "email": "mrook@php.net",
+                    "homepage": null,
+                    "role": null
                 },
                 {
                     "name": "Phing Community",
-                    "homepage": "http://www.phing.info/trac/wiki/Development/Contributors"
+                    "email": null,
+                    "homepage": "http://www.phing.info/trac/wiki/Development/Contributors",
+                    "role": null
                 }
             ],
             "description": "PHing Is Not GNU make; it's a PHP project build system or build tool based on Apache Ant.",
@@ -269,7 +314,7 @@
             "require": {
                 "php": ">=5.3.0"
             },
-            "time": "2012-11-11 08:32:34",
+            "time": "1352622754",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -282,7 +327,6 @@
                     "Pimple": "lib/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -309,7 +353,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/propelorm/PropelServiceProvider/archive/0.0.1.zip",
+                "url": "https://github.com/propelorm/PropelServiceProvider/zipball/0.0.1",
                 "reference": "0.0.1",
                 "shasum": ""
             },
@@ -317,7 +361,6 @@
                 "silex/silex": "1.0.*",
                 "propel/propel1": "1.6.*"
             },
-            "time": "2012-06-17 17:12:41",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -325,7 +368,6 @@
                     "Propel\\Silex": "src"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -333,18 +375,22 @@
                 {
                     "name": "William Durand",
                     "email": "william.durand1@gmail.com",
-                    "homepage": "http://www.willdurand.fr"
+                    "homepage": "http://www.willdurand.fr",
+                    "role": null
                 },
                 {
                     "name": "Cristiano Cinotti",
-                    "email": "cristianocinotti@gmail.com"
+                    "email": "cristianocinotti@gmail.com",
+                    "homepage": null,
+                    "role": null
                 }
             ],
             "description": "Propel integrationfor Silex.",
             "keywords": [
                 "silex",
                 "propel"
-            ]
+            ],
+            "time": "1339953161"
         },
         {
             "name": "propel/propel1",
@@ -364,7 +410,7 @@
                 "php": ">=5.2.4",
                 "phing/phing": "2.4.12"
             },
-            "time": "2012-12-04 19:53:08",
+            "time": "1354650788",
             "bin": [
                 "generator/bin/propel-gen",
                 "generator/bin/propel-gen.bat"
@@ -382,7 +428,6 @@
                     "generator/lib"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "include-path": [
                 "runtime/lib",
                 "generator/lib"
@@ -453,7 +498,7 @@
                 "symfony/css-selector": ">=2.1,<2.3-dev",
                 "symfony/dom-crawler": ">=2.1,<2.3-dev"
             },
-            "time": "2012-12-02 18:04:58",
+            "time": "1354471498",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -466,7 +511,6 @@
                     "Silex": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -504,7 +548,7 @@
             "require": {
                 "php": ">=5.2.4"
             },
-            "time": "2012-11-27 08:48:40",
+            "time": "1354006120",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -517,7 +561,6 @@
                     "lib/swift_required.php"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "LGPL"
             ],
@@ -563,7 +606,7 @@
             "suggest": {
                 "symfony/process": "2.1.*"
             },
-            "time": "2012-12-03 15:25:15",
+            "time": "1354548315",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -576,7 +619,6 @@
                     "Symfony\\Component\\BrowserKit": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -614,7 +656,7 @@
             "require-dev": {
                 "symfony/finder": "2.1.*"
             },
-            "time": "2012-11-08 09:51:48",
+            "time": "1352368308",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -627,7 +669,6 @@
                     "Symfony\\Component\\ClassLoader": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -662,7 +703,7 @@
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2012-11-08 09:51:48",
+            "time": "1352368308",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -675,7 +716,6 @@
                     "Symfony\\Component\\Config": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -710,7 +750,7 @@
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2012-11-09 08:52:51",
+            "time": "1352451171",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -723,7 +763,6 @@
                     "Symfony\\Component\\Console": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -758,7 +797,7 @@
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2012-11-08 09:51:48",
+            "time": "1352368308",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -771,7 +810,6 @@
                     "Symfony\\Component\\CssSelector": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -812,7 +850,7 @@
             "suggest": {
                 "symfony/css-selector": "2.1.*"
             },
-            "time": "2012-11-29 10:32:18",
+            "time": "1354185138",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -825,7 +863,6 @@
                     "Symfony\\Component\\DomCrawler": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -867,7 +904,7 @@
                 "symfony/dependency-injection": "2.1.*",
                 "symfony/http-kernel": "2.1.*"
             },
-            "time": "2012-11-08 09:51:48",
+            "time": "1352368308",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -880,7 +917,6 @@
                     "Symfony\\Component\\EventDispatcher": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -915,7 +951,7 @@
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2012-11-20 13:21:32",
+            "time": "1353417692",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -928,7 +964,6 @@
                     "Symfony\\Component\\Filesystem": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -963,7 +998,7 @@
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2012-11-08 09:51:48",
+            "time": "1352368308",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -976,7 +1011,6 @@
                     "Symfony\\Component\\Finder": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1022,7 +1056,7 @@
                 "symfony/validator": "2.1.*",
                 "symfony/http-foundation": "2.1.*"
             },
-            "time": "2012-11-29 10:32:18",
+            "time": "1354185138",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1035,7 +1069,6 @@
                     "Symfony\\Component\\Form": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1070,7 +1103,7 @@
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2012-11-30 12:53:14",
+            "time": "1354279994",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1084,7 +1117,6 @@
                     "SessionHandlerInterface": "Symfony/Component/HttpFoundation/Resources/stubs"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1139,7 +1171,7 @@
                 "symfony/dependency-injection": "2.1.*",
                 "symfony/finder": "2.1.*"
             },
-            "time": "2012-12-02 18:01:07",
+            "time": "1354471267",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1152,7 +1184,6 @@
                     "Symfony\\Component\\HttpKernel": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1190,7 +1221,7 @@
             "suggest": {
                 "ext-intl": ">=5.3.3"
             },
-            "time": "2012-11-13 16:29:06",
+            "time": "1352824146",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1203,7 +1234,6 @@
                     "Symfony\\Component\\Locale": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1240,7 +1270,7 @@
                 "monolog/monolog": "1.*",
                 "symfony/http-kernel": "2.1.*"
             },
-            "time": "2012-11-08 09:51:48",
+            "time": "1352368308",
             "type": "symfony-bridge",
             "extra": {
                 "branch-alias": {
@@ -1253,7 +1283,6 @@
                     "Symfony\\Bridge\\Monolog": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1288,7 +1317,7 @@
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2012-11-08 09:51:48",
+            "time": "1352368308",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1301,7 +1330,6 @@
                     "Symfony\\Component\\OptionsResolver": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1341,7 +1369,7 @@
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2012-11-19 20:53:52",
+            "time": "1353358432",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1354,7 +1382,6 @@
                     "Symfony\\Component\\Process": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1400,7 +1427,7 @@
                 "symfony/config": "2.2.*",
                 "symfony/yaml": "2.2.*"
             },
-            "time": "2012-12-03 22:11:37",
+            "time": "1354572697",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1413,7 +1440,6 @@
                     "Symfony\\Component\\Routing\\": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1466,7 +1492,7 @@
                 "symfony/validator": "2.1.*",
                 "symfony/routing": "2.1.*"
             },
-            "time": "2012-12-04 00:15:08",
+            "time": "1354580108",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1479,7 +1505,6 @@
                     "Symfony\\Component\\Security": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1522,7 +1547,7 @@
                 "symfony/config": "2.1.*",
                 "symfony/yaml": "2.1.*"
             },
-            "time": "2012-11-21 15:37:42",
+            "time": "1353512262",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1535,7 +1560,6 @@
                     "Symfony\\Component\\Translation": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1587,7 +1611,7 @@
                 "symfony/yaml": "2.1.*",
                 "symfony/security": "2.1.*"
             },
-            "time": "2012-11-08 09:51:48",
+            "time": "1352368308",
             "type": "symfony-bridge",
             "extra": {
                 "branch-alias": {
@@ -1600,7 +1624,6 @@
                     "Symfony\\Bridge\\Twig": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1645,7 +1668,7 @@
                 "symfony/http-foundation": "2.1.*",
                 "symfony/yaml": "2.1.*"
             },
-            "time": "2012-12-03 15:25:15",
+            "time": "1354548315",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1658,7 +1681,6 @@
                     "Symfony\\Component\\Validator": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1693,7 +1715,7 @@
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2012-11-08 09:51:48",
+            "time": "1352368308",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1706,7 +1728,6 @@
                     "Symfony\\Component\\Yaml": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1740,7 +1761,7 @@
             "require": {
                 "twig/twig": "1.*"
             },
-            "time": "2012-10-10 17:13:26",
+            "time": "1349889206",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1753,7 +1774,6 @@
                     "Twig_Extensions_": "lib/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1788,7 +1808,7 @@
             "require": {
                 "php": ">=5.2.4"
             },
-            "time": "2012-12-01 18:41:29",
+            "time": "1354387289",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1801,7 +1821,6 @@
                     "Twig_": "lib/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD-3"
             ],
@@ -1833,6 +1852,7 @@
         "atoum/atoum": 20,
         "kuikui/memcache-service-provider": 20,
         "knplabs/console-service-provider": 20,
-        "twig/extensions": 20
+        "twig/extensions": 20,
+        "oziks/debug-service-provider": 20
     }
 }

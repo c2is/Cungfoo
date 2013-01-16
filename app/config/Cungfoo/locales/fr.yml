@@ -23,6 +23,7 @@ category_type_hebergement.id: Id
 category_type_hebergement.code: Code
 category_type_hebergement.name: Nom
 category_type_hebergement.active: Actif
+type_hebergement.indice: Indice
 
 type_hebergement_capacite.crud.create: Création d'une capacité de types d'hébergements
 type_hebergement_capacite.crud.list: Liste des capacités de types d'hébergements
