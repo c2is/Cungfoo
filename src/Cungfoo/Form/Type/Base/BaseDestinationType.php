@@ -52,9 +52,7 @@ class BaseDestinationType extends AppAwareType
             'i18n_class' => 'Cungfoo\Model\DestinationI18n',
             'languages' => array(
                 0 => 'fr',
-                1 => 'en',
-                2 => 'de',
-                3 => 'nl',
+                1 => 'de',
             ),
             'label' => 'destination.destinationI18ns',
             'columns' => array(

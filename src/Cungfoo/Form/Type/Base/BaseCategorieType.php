@@ -44,9 +44,7 @@ class BaseCategorieType extends AppAwareType
             'i18n_class' => 'Cungfoo\Model\CategorieI18n',
             'languages' => array(
                 0 => 'fr',
-                1 => 'en',
-                2 => 'de',
-                3 => 'nl',
+                1 => 'de',
             ),
             'label' => 'categorie.categorieI18ns',
             'columns' => array(

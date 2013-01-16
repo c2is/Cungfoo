@@ -282,9 +282,7 @@ class BaseEtablissementType extends AppAwareType
             'i18n_class' => 'Cungfoo\Model\EtablissementI18n',
             'languages' => array(
                 0 => 'fr',
-                1 => 'en',
-                2 => 'de',
-                3 => 'nl',
+                1 => 'de',
             ),
             'label' => 'etablissement.etablissementI18ns',
             'columns' => array(

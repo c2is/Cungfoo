@@ -32,7 +32,7 @@ class ContextType extends AppAwareType
         $localeChoices = array();
         foreach ($this->app['config']->get('languages') as $locale => $language)
         {
-            $localeChoices[$locale] = $language['title'];
+            $localeChoices[$locale] = $language['name'];
         }
 
         $builder->add('language', 'choice', array(

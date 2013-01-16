@@ -68,9 +68,7 @@ class BaseIdeeWeekendType extends AppAwareType
             'i18n_class' => 'Cungfoo\Model\IdeeWeekendI18n',
             'languages' => array(
                 0 => 'fr',
-                1 => 'en',
-                2 => 'de',
-                3 => 'nl',
+                1 => 'de',
             ),
             'label' => 'idee_weekend.idee_weekendI18ns',
             'columns' => array(

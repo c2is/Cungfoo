@@ -65,9 +65,7 @@ class BaseMultimediaEtablissementType extends AppAwareType
             'i18n_class' => 'Cungfoo\Model\MultimediaEtablissementI18n',
             'languages' => array(
                 0 => 'fr',
-                1 => 'en',
-                2 => 'de',
-                3 => 'nl',
+                1 => 'de',
             ),
             'label' => 'multimedia_etablissement.multimedia_etablissementI18ns',
             'columns' => array(

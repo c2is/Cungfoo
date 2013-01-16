@@ -57,9 +57,7 @@ class BaseAvantageType extends AppAwareType
             'i18n_class' => 'Cungfoo\Model\AvantageI18n',
             'languages' => array(
                 0 => 'fr',
-                1 => 'en',
-                2 => 'de',
-                3 => 'nl',
+                1 => 'de',
             ),
             'label' => 'avantage.avantageI18ns',
             'columns' => array(
