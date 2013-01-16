@@ -26,7 +26,8 @@
         "atoum/atoum": "dev-master",
         "kuikui/memcache-service-provider": "dev-master",
         "knplabs/console-service-provider": "dev-master",
-        "twig/extensions": "1.0.x-dev"
+        "twig/extensions": "1.0.x-dev",
+        "oziks/debug-service-provider": "dev-master"
     },
     "minimum-stability": "dev",
     "autoload": {
