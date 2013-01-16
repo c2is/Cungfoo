@@ -1,15 +1,10 @@
 <?php
-/*
- * Configuration of our context application
- *
- * @author  Morgan Brunot <brunot.morgan@gmail.com>
- *          Denis Roussel <denis.roussel@gmail.com>
- *
- * @package Cungfoo by C2IS
- */
-$app['context']->addParam('site', isset($_GET['site']) ? $_GET['site'] : 'site.ce');
-$app['context']->addParam('domaine', isset($_GET['domaine']) ? $_GET['domaine'] : 'fr');
-$app['context']->addParam('language', isset($_GET['domaine']) ? $_GET['domaine'] : $app['context']->get('domaine'));
+
+// defined current version instance
+$app['context']->addParam('site', 'site.ce');
+
+// set current language
+$app['context']->addParam('language', 'fr');
 
 // set current language
 $app['translator']->setLocale($app['context']->get('language'));
