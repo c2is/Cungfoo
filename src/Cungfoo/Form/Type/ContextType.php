@@ -14,7 +14,6 @@ class ContextType extends AppAwareType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $this
-            ->addDimensions($builder)
             ->addLocale($builder)
             ->addTerm($builder)
         ;
@@ -26,25 +25,6 @@ class ContextType extends AppAwareType
     public function getName()
     {
         return 'Context';
-    }
-
-    protected function addDimensions($builder)
-    {
-        $dimensions = $this->app['config']->get('dimensions');
-        foreach ($dimensions as $dimensionName => $dimensionInformation)
-        {
-            $dimensionQuery = $dimensionInformation['class'] . 'Query';
-            $builder->add($dimensionName, 'model', array(
-                'class'         => $dimensionInformation['class'],
-                'label'         => sprintf('context.%s', $dimensionName),
-                'required'      => false,
-                'data_class'    => null,
-                'data'          => $dimensionQuery::create()->filterById($this->app['context']->get($dimensionName))->findOne(),
-                'empty_value'   => sprintf('%s.all', $dimensionName)
-            ));
-        }
-
-        return $this;
     }
 
     protected function addLocale($builder)
