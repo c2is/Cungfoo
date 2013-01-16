@@ -11,7 +11,9 @@
     {% endif %}
 
     <div class="stain cover">
+        {% if not blocPrix.proposal_key %}
         <span>{{ "general.a_partir_de"|trans }}<br>
+        {% endif %}
             <span class="price linkBlock">
                 {% if blocPrix.adult_price_pourcent %}
                     {{ blocPrix.adult_price|number_format }}€
