@@ -1,47 +1,46 @@
 <div id="destinations" class="subnav">
     <div class="clear">
-        <div id="destinationsNational" class="left ratio-33">
-            <div class="radiusBox2 greyC bgImg">
+        <div id="destinationsCountry" class="left destination">
+            <div class="radiusBox2 greyC bgImg national">
                 <div class="view">
-                    <img class="bg" src="{{ asset('images/vacancesdirectes/dyn/menu/1-destinations/france.jpg') }}" alt="" />
-                    <div class="stamp grey"><span>{{ "pays.france" | trans }}</span></div>
+                    <img class="bg" src="{{ asset('images/vacancesdirectes/common/menu/destinations/france_visuel.jpg') }}" alt="" />
+                    <div class="stamp grey"><span>France</span></div>
                 </div>
-                {% for destinationId, destination in regionsByDestinations %}
+                <div class="regions clear">
+                    {% for destination in regionsByDestinations %}
                     <div class="region">
-                        <div class="title">Destination {{ destination.label | trans }}</div>
+                        <div class="title">{{ destination|trans }}</div>
                         <ul>
                             {% for region in destination.regions %}
-                                <li><a href="{{ path('destination_region', {pays: region.pays.slug, region: region.slug})}}">{{ region }}</a></li>
+                            <li><a href="{{ path('destination_region', {pays: region.pays.slug, region: region.slug})}}">- {{ region }}</a></li>
                             {% endfor %}
-                            {# TODO <a class="bt link" href="destination/{{ destinationId }}">{{ "menu.plus_de_regions" | trans }}</a> #}
                         </ul>
                     </div>
-                {% endfor %}
+                    {% endfor %}
+                </div>
             </div>
-        </div>
-        <div id="destinationsInternational" class="left ratio-33">
-            <div class="radiusBox2 greyC bgImg">
+            <div class="radiusBox2 greyC bgImg international">
                 <div class="view">
-                    <img class="bg" src="{{ asset('images/vacancesdirectes/dyn/menu/1-destinations/spain.jpg') }}" alt="" />
+                    <img class="bg" src="{{ asset('images/vacancesdirectes/common/menu/destinations/espagne_visuel.jpg') }}" alt="" />
                     <div class="stamp grey"><span>{{ "pays.espagne" | trans }}</span></div>
                 </div>
                 <div class="region">
                     <ul>
                         {% for region in regionEspagne %}
-                            <li><a href="{{ path('destination_region', {pays: region.pays.slug, region: region.slug})}}">{{ region }}</a></li>
+                        <li><a href="{{ path('destination_region', {pays: region.pays.slug, region: region.slug})}}">- {{ region }}</a></li>
                         {% endfor %}
                     </ul>
                 </div>
             </div>
-            <div class="radiusBox2 greyC">
+            <div class="radiusBox2 greyC bgImg international">
                 <div class="view">
-                    <img class="bg" src="{{ asset('images/vacancesdirectes/dyn/menu/1-destinations/italia.jpg') }}" alt="" />
+                    <img class="bg" src="{{ asset('images/vacancesdirectes/common/menu/destinations/italie_visuel.jpg') }}" alt="" />
                     <div class="stamp grey"><span>{{ "pays.italie" | trans }}</span></div>
                 </div>
                 <div class="region">
                     <ul>
                         {% for region in regionItalie %}
-                            <li><a href="{{ path('destination_region', {pays: region.pays.slug, region: region.slug})}}">{{ region }}</a></li>
+                        <li><a href="{{ path('destination_region', {pays: region.pays.slug, region: region.slug})}}">- {{ region }}</a></li>
                         {% endfor %}
                     </ul>
                 </div>
