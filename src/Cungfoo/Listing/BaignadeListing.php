@@ -25,6 +25,7 @@ class BaignadeListing extends BaseBaignadeListing
         parent::configure();
 
         $this->addColumn(new Column\TextColumn('name'));
+        $this->removeColumn('vignette');
     }
 
 } // BaignadeListing

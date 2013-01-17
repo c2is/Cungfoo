@@ -24,6 +24,8 @@ class ActiviteListing extends BaseActiviteListing
     {
         parent::configure();
         $this->addColumn(new Column\TextColumn('name'));
+        $this->removeColumn('image_path');
+        $this->removeColumn('vignette');
     }
 
 } // ActiviteListing

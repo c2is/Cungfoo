@@ -48,7 +48,7 @@ class RegionType extends BaseRegionType
                     )
                 ),
                 array(
-                    'title'         => 'crud.data.medias',
+                    'title'         => 'crud.tab.medias',
                     'content'       => array(
                         'image_path',
                         'image_path_deleted',

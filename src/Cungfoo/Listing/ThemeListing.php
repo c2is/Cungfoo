@@ -23,6 +23,9 @@ class ThemeListing extends BaseThemeListing
     public function configure()
     {
         parent::configure();
+        $this->addColumn(new Column\TextColumn('name'));
+        $this->removeColumn('image_path');
+
     }
 
 } // ThemeListing
