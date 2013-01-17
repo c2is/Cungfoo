@@ -72,10 +72,6 @@ h2 {
     margin: 1px 0;
 }
 
-.btn-group {
-    line-height: 65px;
-}
-
 .table th.actions-item {
     text-align: right;
 }
@@ -135,6 +131,10 @@ h2 {
     vertical-align: bottom;
 }
 
-.row .span6 .tabbable {
+.row .span9 .tabbable {
     margin-left: -240px;
+}
+
+.tab-content {
+    overflow: visible;
 }

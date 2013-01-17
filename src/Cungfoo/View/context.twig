@@ -7,7 +7,7 @@
                     <li><span>{{ fieldName|trans }}</span>{{ form_widget(field) }}</li>
                 {% endif %}
             {% endfor %}
-            <li class="pull-right"><input class="btn" type="submit" value="{{ "context.validate"|trans }}"/></li>
+            <li class="pull-right"><button class="btn" type="submit" ><i class="icon-search"></i> {{ "context.validate"|trans }}</button></li>
         </ul>
     </form>
 {% endif %}
