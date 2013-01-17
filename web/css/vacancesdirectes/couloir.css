@@ -961,8 +961,28 @@ textarea {
 #contentContener.detail #reservation #financialContener input {
   border: 1px solid #c6c5c5;
 }
+#contentContener.detail #reservation #financialContener .label {
+  float: left;
+  margin-right: 10px;
+  height: 27px;
+  /* Centrer verticalement une ligne de texte */
+
+  line-height: 27px;
+  /* Centrer verticalement plusieurs lignes de texte */
+
+  /* Centrer verticalement une image de taille variable */
+
+}
+#contentContener.detail #reservation #financialContener .label > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: inherit;
+}
+#contentContener.detail #reservation #financialContener .label > img {
+  vertical-align: middle;
+}
 #contentContener.detail #reservation #financialContener .field {
-  margin-bottom: 10px;
+  float: left;
 }
 #contentContener.detail #reservation #financialContener .field .newListSelected {
   float: none;
