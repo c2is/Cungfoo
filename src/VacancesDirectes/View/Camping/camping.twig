@@ -94,13 +94,17 @@
 </div>
 <div id="tabCamp" class="tabs">
 
+
+    <h3>{{ 'fiche.description_title' | trans }}</h3>
     <p class="campDesc">{{ etab.description }}</p>
 
+    {% if etab.planPath != "" %}
     <h3>{{ 'fiche.plan_camping' | trans }}</h3>
     <div>
-        {% if etab.planPath != "" %}<img src="{{ asset(etab.planPath) }}" width="616" alt="{{ etab.name }}">{% endif %}
-        {% if etab.planPath != "" %}<img src="{{ asset('images/vacancesdirectes/common/pict/ficheLegendMap.png') }}" alt="Légende du plan du camping">{% endif %}
+        <img src="{{ asset(etab.planPath) }}" width="616" alt="{{ etab.name }}">
+        <img src="{{ asset('images/vacancesdirectes/common/pict/ficheLegendMap.png') }}" alt="Légende du plan du camping">
     </div>
+    {% endif %}
 
     <h3>{{ 'fiche.activite_event' | trans }}</h3>
     <div class="colSurPlace clearboth">

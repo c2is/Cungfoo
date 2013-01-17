@@ -4159,12 +4159,7 @@ h3 {
   text-decoration: underline;
 }
 .campDesc {
-  margin: 35px 0 25px;
-}
-.campDesc .campDescTitle {
-  margin-bottom: 2px;
-}
-.campDesc p {
+  margin: 10px 0 25px;
   color: #5f5f5f;
   font: 13px/15px Arial, Helvetica, sans-serif;
 }
