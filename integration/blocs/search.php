@@ -53,13 +53,6 @@
                             <option value="3">7</option>
                             <option value="3">10</option>
                             <option value="3">11</option>
-                            <option value="3">14</option>
-                            <option value="3">17</option>
-                            <option value="3">18</option>
-                            <option value="3">21</option>
-                            <option value="3">24</option>
-                            <option value="3">25</option>
-                            <option value="3">28</option>
                         </select>
                     </div>
                 </li>

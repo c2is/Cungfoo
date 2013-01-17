@@ -1112,7 +1112,7 @@ function switchPlaceSelect(){
 function defineDurationSelect(){
     //console.log("################################## defineDurationSelect()  ##################################");
     var $durationSelects = $('#SearchDate_selectContainer0').find(".newListSelected");
-    if ($('#SearchDate_duration_isBasseSaison').val() == 1){
+    if ($('#SearchDate_isBasseSaison').val() == 1){
         selectNum = 1;
         $durationSelects.eq(0).hide();
         $durationSelects.eq(1).show();
