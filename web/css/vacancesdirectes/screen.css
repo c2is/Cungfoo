@@ -1592,6 +1592,7 @@ footer {
   font: bold 22px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   margin: 3px 0 2px;
+  display: block;
 }
 #nav .tab .subnav .subtitle {
   font: bold 18px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
@@ -2007,6 +2008,9 @@ footer {
 }
 #nav .tab .subnav#weekends .radiusBox .title {
   color: #f58220;
+}
+#nav .tab:nth-child(2) .subnav {
+  display: block !important;
 }
 .js-true #nav .tab.hover,
 .js-true #nav .tab.current {
