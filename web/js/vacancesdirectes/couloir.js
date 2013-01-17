@@ -86,10 +86,11 @@ head.ready(function(){
 
         });
 
-    if($('#contentContener.detail').length  || $('#contentContener.editAccount').length){
+    if($('#contentContener.detail').length){
         // datepickers
         var d = new Date();
         var y = d.getFullYear();
+
 //        $('.occupantHeader[style*="adult"]').parent('.anOccupant').addClass('adult');
 //        $('.occupantHeader[style*="child"]').parent('.anOccupant').addClass('child');
         $(".anOccupant").each(function(index,value){
@@ -173,6 +174,15 @@ head.ready(function(){
 
 
         });
+
+
+    }
+
+    if ($('#contentContener.summary').length || $('#contentContener.editAccount').length){
+        // datepickers
+        var d = new Date();
+        var y = d.getFullYear();
+
         $('#address').find('.control_date').datepicker({
             changeMonth: true,
             changeYear: true,
@@ -181,7 +191,26 @@ head.ready(function(){
             maxDate: "-18Y",
             showOn: "button"
         });
+    }
 
+    if($('#newCustomerLayer').length){
+        $('#customerLogin input').keypress(function(e) {
+            if(e.which == 32) {
+                e.preventDefault();
+            }
+        }).blur(function(e) {
+            $(this).val($(this).val().replace(/ /g,''));
+        });
+    }
+
+    if($('#existingCustomerLayer').length){
+        $('#existing_customer_login').keypress(function(e) {
+            if(e.which == 32) {
+                e.preventDefault();
+            }
+        }).blur(function(e) {
+                $(this).val($(this).val().replace(/ /g,''));
+            });
     }
 
 });
