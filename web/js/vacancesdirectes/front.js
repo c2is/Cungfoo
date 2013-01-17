@@ -158,8 +158,8 @@ $(function() {
         width:"300px",
         close:"&times;",
         onOpen: function(){
-           $("#colorbox").addClass("cbBP");
-       }
+            $("#colorbox").addClass("cbBP");
+        }
     });
 
 // footer
@@ -183,23 +183,23 @@ $(function() {
      * ############################################################
      */
 
-     if ( $('#accountBox').length ) {
-         $('#account').click(function(e){
+    if ( $('#accountBox').length ) {
+        $('#account').click(function(e){
             $(this).next().toggle();
             setZIndex();
-         });
-         $(document).mouseup(function (e){
-             if ( $('#accountBox').has(e.target).length == 0 ){
-                 $('#header').css({zIndex:20});
-                 $('#accountBox').hide();
-             }
-         });
+        });
+        $(document).mouseup(function (e){
+            if ( $('#accountBox').has(e.target).length == 0 ){
+                $('#header').css({zIndex:20});
+                $('#accountBox').hide();
+            }
+        });
 
-         if ( $('#accountBox').find('.errors').css('display') == 'block' ){
-             $('#accountBox').show();
-             setZIndex();
-         }
-     }
+        if ( $('#accountBox').find('.errors').css('display') == 'block' ){
+            $('#accountBox').show();
+            setZIndex();
+        }
+    }
 
     function setZIndex(){
         if ( $('#accountBox').is(':visible') ){
@@ -291,7 +291,7 @@ $(function() {
         }
 
         $('#dealsMenu .bp').click(function(){
-            console.log( parseInt($(this).index() + 1));
+            //console.log( parseInt($(this).index() + 1));
             $(this).addClass('selected').siblings().removeClass('selected');
             $('#dealsContent').children().hide();
             $('#dealsContent').children('#bp' + parseInt($(this).index() + 1)).show();
@@ -832,18 +832,29 @@ $(function() {
                 //console.log(arrivalDate);
 
                 var selectedDate,
-                    selectedDay;
+                    fSelectedDate;
                 firstRendering = false;
 
-                selectedDate = writeDate(arrivalDate);
-
+                fSelectedDate = writeDate(arrivalDate);
+                var selectedDate = formated.split('/').join('');
+                //console.log(highSeasonStartDate);
+                //console.log(highSeasonEndDate);
+                if ((selectedDate < highSeasonStartDate) || (selectedDate > highSeasonEndDate)){
+                    $('#SearchDate_isBasseSaison').val(1);
+                    defineDurationSelect();
+                }
+                else if ((selectedDate >= highSeasonStartDate) && (selectedDate <= highSeasonEndDate)){
+                    $('#SearchDate_isBasseSaison').val(0);
+                    defineDurationSelect();
+                }
 
 //                unselectForbiddenDates(arrivalDate);
                 firstSelection = false;
 
+                //console.log(fSelectedDate);
                 //console.log(selectedDate);
-                $('#datepickerInput').val(selectedDate);
-                $('#datepicker input[type=hidden]').eq(0).val(selectedDate);
+                $('#datepickerInput').val(fSelectedDate);
+                $('#datepicker input[type=hidden]').eq(0).val(fSelectedDate);
 
                 $('#datepickerField').trigger("click");
             },
@@ -925,9 +936,18 @@ $(function() {
             preselectedDate;
         if ( $("#SearchDate_dateDebut").val() != '' ) {
             var fDate = $("#SearchDate_dateDebut").val().split("/").reverse().join('/');
-            //console.log(preselectedDates);
+            //console.log(fDate);
             $('#datepickerInput').val($("#SearchDate_dateDebut").val());
             $('#datepickerCalendar').DatePickerSetDate(fDate);
+            fDate = $("#SearchDate_dateDebut").val().split("/").reverse().join('');
+            if ((fDate < highSeasonStartDate) || (fDate > highSeasonEndDate)){
+                $('#SearchDate_isBasseSaison').val(1);
+                defineDurationSelect();
+            }
+            else if ((fDate >= highSeasonStartDate) && (fDate <= highSeasonEndDate)){
+                $('#SearchDate_isBasseSaison').val(0);
+                defineDurationSelect();
+            }
         }
 
 
@@ -1113,12 +1133,12 @@ function defineDurationSelect(){
     //console.log("################################## defineDurationSelect()  ##################################");
     var $durationSelects = $('#SearchDate_selectContainer0').find(".newListSelected");
     if ($('#SearchDate_isBasseSaison').val() == 1){
-        selectNum = 1;
         $durationSelects.eq(0).hide();
         $durationSelects.eq(1).show();
     }
     else {
         $durationSelects.eq(1).hide();
+        $durationSelects.eq(0).show();
     }
 }
 
@@ -1313,7 +1333,7 @@ function initializeForbiddenDates() {
     //console.log("################################## initializeForbiddenDates()  ##################################");
     //console.log(firstRendering);
     var allSaturdays = $('#datepickerCalendar td.datepickerSaturday').not($('td.datepickerNotInMonth'));
-        startHighSeasonDay = false,
+    startHighSeasonDay = false,
         endHighSeasonDay = false;
     allSaturdays.removeClass('datepickerUnselectable');
     if (firstRendering){
@@ -1344,7 +1364,7 @@ function unselectForbiddenDates(date){
     var selectedDate = numDate(formatDate(date)),
         numWeek = 0,
         allSaturdays = $('#datepickerCalendar td.datepickerSaturday').not($('td.datepickerNotInMonth'));
-        startHighSeasonDay = false,
+    startHighSeasonDay = false,
         endHighSeasonDay = false,
         arrivalDay = false,
         departureDay = false;
@@ -1447,12 +1467,12 @@ function defineHighSeason(td) {
 //    //console.log("################################## defineHighSeason()  ##################################");
     // td HIGH SEASON DEPARTURE DAY
     if ( startHighSeasonDay && td.hasClass('datepickerSpecial') && !td.hasClass('datepickerDisabled') ){
-    //console.log("HIGH SEASON LAST DAY");
+        //console.log("HIGH SEASON LAST DAY");
         endHighSeasonDay = true;
     }
     // td HIGH SEASON ARRIVAL DAY
     else if ( !startHighSeasonDay && td.hasClass('datepickerSpecial') && !td.hasClass('datepickerUnselectable') ){
-    //console.log("HIGH SEASON FIRST DAY");
+        //console.log("HIGH SEASON FIRST DAY");
         startHighSeasonDay = true;
     }
 }
@@ -1818,7 +1838,7 @@ function launchFilters() {
 
     //selection des criteres
     /*if ( containerCrit.find('input:checked').length ) {*/
-        critSelection();
+    critSelection();
     /*};*/
 
     //gestion du tri par prix ou pertinence
