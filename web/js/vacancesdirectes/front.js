@@ -199,6 +199,14 @@ $(function() {
              $('#accountBox').show();
              setZIndex();
          }
+
+         $('#username').keypress(function(e) {
+             if(e.which == 32) {
+                 e.preventDefault();
+             }
+         }).blur(function(e) {
+                 $(this).val($(this).val().replace(/ /g,''));
+             });
      }
 
     function setZIndex(){
