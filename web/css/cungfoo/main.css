@@ -130,3 +130,11 @@ h2 {
     margin: 0;
     padding: 0;
 }
+
+.row {
+    vertical-align: bottom;
+}
+
+.row .span6 .tabbable {
+    margin-left: -240px;
+}

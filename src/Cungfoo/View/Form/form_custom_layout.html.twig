@@ -111,10 +111,14 @@
 
 {% block form_row %}
 {% spaceless %}
-    <div class="field-row">
-        {{ form_label(form) }}
-        {{ form_errors(form) }}
-        {{ form_widget(form) }}
+    <div class="row">
+        <div class="span3">
+            {{ form_errors(form) }}
+            {{ form_label(form) }}
+        </div>
+        <div class="span6">
+            {{ form_widget(form) }}
+        </div>
     </div>
 {% endspaceless %}
 {% endblock form_row %}
