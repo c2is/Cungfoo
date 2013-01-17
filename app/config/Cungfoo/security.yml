@@ -1,0 +1,4 @@
+edito_crud:
+  role: ROLE_ADMIN
+job:
+  role: ROLE_ADMIN

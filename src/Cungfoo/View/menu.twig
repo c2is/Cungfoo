@@ -1,7 +1,7 @@
 {% set menu = app.config.get('cungfoo_menu') %}
 {% set current_route = app.request.get('_route') %}
 
-<a class="brand" href="{{ path( 'admin' ) }}">{{ menu.title|trans }}</a>
+<a class="brand" href="{{ path( 'admin' ) }}"><img src="{{ asset('images/vacancesdirectes/common/pict/vacancesdirectes-logo-admin.png') }}" /></a>
 
 {% if app.security.getToken().getUser() is defined %}
 <div class="nav-collapse">
@@ -12,7 +12,9 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ level1.title|trans }} <b class="caret"></b></a>
             <ul class="dropdown-menu">
                 {% for level2 in level1.items %}
+                    {% if app.config.get('security').isGranted(level2.route) %}
                     <li><a href="{{ path( level2.route ) }}">{{ level2.title|trans }}</a></li>
+                    {% endif %}
                     {% if level2.divider is defined %}
                         <li class="divider"></li>
                     {% endif %}

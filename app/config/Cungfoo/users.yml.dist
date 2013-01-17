@@ -3,5 +3,5 @@ users:
         - "ROLE_ADMIN"
         - "YhVciJJ+T0jkic1gmqxPvrRfhRL8zVdfsC/Lp9z+Sg5vNarVroOj5epDgzDGR7YgnkgASf+BMAn0F/HOjalu/Q=="
     vdadmin:
-        - "ROLE_ADMIN"
+        - "ROLE_USER"
         - "9ckucUg+vIr7btv8q8ZathpQqu1xZn+WRTXTPDvf/sHDCJLBoB/UTDkvaL6+WcoaciAl6fneDJAPVKeBKPB0Hw=="
