@@ -12,43 +12,41 @@
                                 <img class="bg" src="../web/images/vacancesdirectes/common/menu/destinations/france_visuel.jpg" alt="" />
                                 <div class="stamp grey"><span>France</span></div>
                             </div>
-                            <div class="regions clear">
-                                <div class="region">
-                                    <div class="title">Destination Méditerranée</div>
+                            <div class="region">
+                                <a href="#" class="title">Destination Méditerranée</a>
+                                <ul>
+                                    <li><a href=#>- Languedoc-Roussillon</a></li>
+                                    <li><a href=#>- Corse</a></li>
+                                    <li><a href=#>- Provence Côte d'Azur</a></li>
+                                    <a class="bt link" href="#">Plus de régions</a>
+                                </ul>
+                            </div>
+                            <div class="region">
+                                <a href="#" class="title">Destination Atlantique</a>
                                     <ul>
-                                        <li>- <a href=#>Languedoc-Roussillon</a></li>
-                                        <li>- <a href=#>Corse</a></li>
-                                        <li>- <a href=#>Provence Côte d'Azur</a></li>
-                                        <!--                                    <a class="bt link" href="#">Plus de régions</a>-->
-                                    </ul>
-                                </div>
-                                <div class="region">
-                                    <div class="title">Destination Atlantique</div>
-                                    <ul>
-                                        <li>- <a href=#>Bretagne</a></li>
-                                        <li>- <a href=#>Charente-Maritime</a></li>
-                                        <li>- <a href=#>Pays Basque</a></li>
-                                        <!--                                    <a class="bt link" href="#">Plus de régions</a>-->
-                                    </ul>
-                                </div>
-                                <div class="region">
-                                    <div class="title">Destination Montagne</div>
-                                    <ul>
-                                        <li>- <a href=#>Alpes</a></li>
-                                        <li>- <a href=#>Alsace / Jura</a></li>
-                                        <li>- <a href=#>Ariège / Pyrénées</a></li>
-                                        <!--                                    <a class="bt link" href="#">Plus de régions</a>-->
-                                    </ul>
-                                </div>
-                                <div class="region">
-                                    <div class="title">Destination Campagne</div>
-                                    <ul>
-                                        <li>- <a href=#>Pays de la Loire</a></li>
-                                        <li>- <a href=#>Périgord / Dordogne</a></li>
-                                        <li>- <a href=#>Auvergne</a></li>
-                                        <!--                                    <a class="bt link" href="#">Plus de régions</a>-->
-                                    </ul>
-                                </div>
+                                    <li><a href=#>- Bretagne</a></li>
+                                    <li><a href=#>- Charente-Maritime</a></li>
+                                    <li><a href=#>- Pays Basque</a></li>
+                                    <a class="bt link" href="#">Plus de régions</a>
+                                </ul>
+                            </div>
+                            <div class="region">
+                                <a href="#" class="title">Destination Montagne</a>
+                                <ul>
+                                    <li><a href=#>- Alpes</a></li>
+                                    <li><a href=#>- Alsace / Jura</a></li>
+                                    <li><a href=#>- Ariège / Pyrénées</a></li>
+                                    <a class="bt link" href="#">Plus de régions</a>
+                                </ul>
+                            </div>
+                            <div class="region">
+                                <a href="#" class="title">Destination Campagne</a>
+                                <ul>
+                                    <li><a href=#>- Pays de la Loire</a></li>
+                                    <li><a href=#>- Périgord / Dordogne</a></li>
+                                    <li><a href=#>- Auvergne</a></li>
+                                    <a class="bt link" href="#">Plus de régions</a>
+                                </ul>
                             </div>
                         </div>
                         <div class="radiusBox2 greyC bgImg international">
@@ -58,10 +56,10 @@
                             </div>
                             <div class="region">
                                 <ul>
-                                    <li>- <a href=#>Cantabria</a></li>
-                                    <li>- <a href=#>Costa Brava</a></li>
-                                    <li>- <a href=#>Costa del Azahar</a></li>
-                                    <li>- <a href=#>Costa Dorada</a></li>
+                                    <li><a href=#>- Cantabria</a></li>
+                                    <li><a href=#>- Costa Brava</a></li>
+                                    <li><a href=#>- Costa del Azahar</a></li>
+                                    <li><a href=#>- Costa Dorada</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -72,11 +70,27 @@
                             </div>
                             <div class="region">
                                 <ul>
-                                    <li>- <a href=#>Italie Adriatique</a></li>
-                                    <li>- <a href=#>Italie Méditerranéenne</a></li>
+                                    <li><a href=#>- Italie Adriatique</a></li>
+                                    <li><a href=#>- Italie Méditerranéenne</a></li>
                                 </ul>
                             </div>
                         </div>
+<<<<<<< HEAD
+=======
+                        <!--
+                        <div class="radiusBox2 greyC">
+                            <div class="view">
+                                <img class="bg" src="../web/images/vacancesdirectes/dyn/menu/1-destinations/portugal.jpg" alt="" />
+                                <div class="stamp grey"><span>Portugal</span></div>
+                            </div>
+                            <div class="region">
+                                <ul>
+                                    <li><a href=#>- Centro</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        -->
+>>>>>>> origin/master
                     </div>
                     <div id="destinationsAll" class="left destination">
                         <div class="radiusBox greyC">
