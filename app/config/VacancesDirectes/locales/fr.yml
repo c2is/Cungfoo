@@ -309,6 +309,10 @@ menu:
     bons_plans: "Les bons plans"
     vacances: "Vos vacances"
     weekends: "Vos week-ends"
+    tous_camping: "Tous nos campings"
+    decouvrer_locations: "Découvrez nos locations"
+    decouvrer_locations_type: "Par type"
+    decouvrer_locations_capacite: "Par capacité"
 
 etablissement:
     activites: "Liste des activités"
@@ -335,6 +339,7 @@ date_search:
     ville.required: "La ville ou le camping est requis."
     nb_adultes.required: "Le nombre d'adultes est requis."
     button.submit: "Rechercher"
+    submit: "Trouver"
 
 
 "Les vacances à": "Les vacances à"
@@ -473,7 +478,7 @@ footer:
     nous_joindre: "Nous joindre"
     contact:
         tel: "0825 133 400"
-        fax: "02 96 39 97 81"
+        fax: "Fax: 02 96 39 97 81"
     nous_contacter: "Nous contacter"
     demande_catalogue: "Demande de catalogue"
     description_catalogue: "Hoc inmaturo interitu ipse quoque sui pertaesus excessit e vita aetatis."
@@ -689,3 +694,10 @@ event:
 
 global:
     search_message: "Nous traitons actuellement votre demande. <br/><br/>Merci de bien vouloir patienter."
+    compte:
+        btn: "Mon compte"
+        title: "vous êtes un client existant, veuillez vous identifier"
+        user: "Nom d'utilisateur"
+        password: "Mot de passe"
+        forget: "Mot de passe oublié ?"
+        submit: "Se connecter"
