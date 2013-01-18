@@ -340,6 +340,8 @@ date_search:
     nb_adultes.required: "Le nombre d'adultes est requis."
     button.submit: "Rechercher"
     submit: "Trouver"
+    campings: "Campings"
+    ou: "ou"
 
 
 "Les vacances à": "Les vacances à"
@@ -451,6 +453,11 @@ general:
     plus_que: "Plus que"
     du: "Du"
     au: "au"
+    resultats: "Résultat(s)"
+    toggle: "Affichage résultat(s)"
+    budget_range: "Budget(s) proposé(s)"
+    list: "Liste"
+    map: "Carte"
 
 filtres:
     affinez_recherche: "Affinez votre recherche"
