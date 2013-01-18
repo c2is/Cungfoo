@@ -10,11 +10,5 @@ $(function() {
     $("input[id$='_mail'], input[id$='_email'], input[id$='_website'], input[id$='_city']").addClass('span4');
     $("input[id$='_address'], input[id$='_address1'], input[id$='_address2'], input[id$='_name'], input[id$='_str_date'], input[id$='_subtitle'], input[id$='_slug']").addClass('span6');
     $("input[id$='_image'], input[id$='_description'], input[id$='_keywords']").addClass('span9');
-    $('textarea').autosize();
-
-    $('textarea.textrich').redactor({
-        imageUpload: templatePath + '/vendor/redactor/scripts/image_upload.php',
-        fileUpload: templatePath + '/vendor/redactor/scripts/file_upload.php'
-    });
 });
 
