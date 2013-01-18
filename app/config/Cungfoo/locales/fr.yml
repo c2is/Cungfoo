@@ -89,6 +89,7 @@ crud.modal.delete.cancel: Annuler
 crud.tab.datas: Données
 crud.tab.medias: Médias
 crud.tab.parameters: Paramètres
+crud.tab.resalys: "Resalys"
 
 destination.crud.create: Création d'une destination
 destination.crud.list: Liste destinations
@@ -462,6 +463,7 @@ point_interet.fax: Fax
 point_interet.email: Email
 point_interet.website: Site web
 point_interet.slug: Slug
+point_interet.point_interetI18ns: ""
 
 event.crud.create: Création d'un évènement
 event.crud.list: Liste des évènements
@@ -495,6 +497,7 @@ event.fax: Fax
 event.email: Email
 event.website: Site web
 event.slug: Slug
+event.eventI18ns: ""
 
 personnage.crud.create: Création d'un personnage
 personnage.crud.list: Liste des personnages
@@ -659,6 +662,8 @@ vos_vacances.age: Age
 vos_vacances.prenom: Prénom
 vos_vacances.image.path: Image
 vos_vacances.active: Actif
+vos_vacances.image_path_deleted: "Supprimer l'image ?"
+vos_vacances.vos_vacancesI18ns: ""
 
 idee_weekend.crud.create: Création d'une idée weekend
 idee_weekend.crud.list: Liste des idée weekend
@@ -666,6 +671,7 @@ idee_weekend.crud.update: Mettre à jour de l'idée weekend %name%
 idee_weekend.crud.view: Détails d'une idée weekend
 idee_weekend.id: Id
 idee_weekend.image_path: Image
+idee_weekend.image_path_deleted: "Supprimer l'image ?"
 idee_weekend.titre: Titre
 idee_weekend.prix: Prix
 idee_weekend.lien: Lien
@@ -673,6 +679,7 @@ idee_weekend.home: Mise en avant home
 idee_weekend.highlight: En couleur
 idee_weekend.image.path: Image
 idee_weekend.active: Actif
+idee_weekend.idee_weekendI18ns: ""
 
 monday: lundi
 tuesday: mardi
@@ -708,21 +715,24 @@ bon_plan:
     prix: Prix
     prix_barre: Prix barré
     image_menu: Vignette du menu
+    image_menu_deleted: "Supprimer la vignette du menu ?"
     image_page: Visuel page de détail
+    image_page_deleted: "Supprimer le visuel de la page détail ?"
     image_liste: Visuel page de listing
+    image_liste_deleted: "Supprimer le visuel de la page listing ?"
     active_compteur: Activer le compteur
     mise_en_avant: Mise en avant (deux colonnes sur la page de listing)
     push_home: Afficher sur la page d'accueil
-    date_start: Date de début de la recherche de dispo
-    day_start: Jour de début de la recherche de dispo
-    day_range: Nombre de jours de la recherceh de dispo
-    nb_adultes: Nombre d'adultes de la recherche de dispo
-    nb_enfants: Nombre d'enfants de la recherche de dispo
-    period_categories: Périodes de la recherche de dispo
-    bon_plan_categories: Catégories associées à la recherche de dispo
-    etablissements: Campings associés à la recherche de dispo
-    regions: Régions associées à la recherche de dispo
-    bon_planI18ns: Traductions
+    date_start: Date de début (dispo)
+    day_start: Jour de début (dispo)
+    day_range: Nombre de jours (dispo)
+    nb_adultes: Nombre d'adultes (dispo)
+    nb_enfants: Nombre d'enfants (dispo)
+    period_categories: Périodes (dispo)
+    bon_plan_categories: Catégories associées (dispo)
+    etablissements: Campings associés (dispo)
+    regions: Régions associées (dispo)
+    bon_planI18ns: ""
     introduction: Introduction
     slug: Slug
     description: Description

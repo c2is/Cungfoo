@@ -66,6 +66,13 @@ menu:
               category_type_hebergement:
                   title:  menu.category_type_hebergement
                   route:  category_type_hebergement_crud_list
+                  divider: ~
+              poi:
+                  title:  menu.poi
+                  route:  point_interet_crud_list
+              event:
+                  title:  menu.event
+                  route:  event_crud_list
         cms:
             title: menu.cms
             items:
@@ -94,15 +101,6 @@ menu:
               bons_plans:
                   title:  menu.bon_plan
                   route:  bon_plan_crud_list
-        viafrance:
-            title: menu.viafrance
-            items:
-              poi:
-                  title:  menu.poi
-                  route:  point_interet_crud_list
-              event:
-                  title:  menu.event
-                  route:  event_crud_list
         parameter:
             title: menu.parameters
             items:
