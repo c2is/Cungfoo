@@ -25,6 +25,7 @@ class PersonnageListing extends BasePersonnageListing
         parent::configure();
         $this->addColumn(new Column\TextColumn('prenom'));
         $this->addColumn(new Column\TextColumn('etablissement'));
+        $this->removeColumn('image_path');
     }
 
 } // PersonnageListing

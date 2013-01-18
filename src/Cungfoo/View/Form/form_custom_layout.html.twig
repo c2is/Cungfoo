@@ -1,15 +1,8 @@
 {% use 'form_div_layout.html.twig' %}
 
 {% block textrich_widget %}
-<link rel="stylesheet" href="{{ asset('vendor/redactor/css/redactor.css') }}">
-<script src="{{ asset('vendor/redactor/redactor.js') }}"></script>
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('#{{ id }}').redactor();
-    });
-</script>
 {% spaceless %}
-<textarea {{ block('widget_attributes') }}>{{ value }}</textarea>
+<textarea class="textrich" {{ block('widget_attributes') }}>{{ value }}</textarea>
 {% endspaceless %}
 {% endblock %}
 

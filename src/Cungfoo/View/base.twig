@@ -8,11 +8,17 @@
     <link rel="stylesheet" href="{{ asset('css/cungfoo/main.css') }}">
     <link rel="stylesheet" href="{{ asset('css/cungfoo/datepicker.css') }}">
     <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ asset('vendor/redactor/css/redactor.css') }}">
     {% block javascripts %}
         <script type="text/javascript" src="{{ asset('vendor/jquery-1.8.0.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/cungfoo/bootstrap-datepicker.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('vendor/redactor/redactor.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/cungfoo/plugins.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/cungfoo/main.js') }}"></script>
+        <script type="text/javascript">
+            var templatePath = '{{ asset('') }}';<!-- templatePath : chemin du template en absolue -->
+        </script>
     {% endblock %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>

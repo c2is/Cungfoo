@@ -425,7 +425,9 @@ ville.region.id: Code région
 ville.introduction: Introduction
 ville.description: Description
 ville.image_detail_1: Image 1
+ville.image_detail_1_deleted: "Supprimer l'image 1"
 ville.image_detail_2: Image 2
+ville.image_detail_2_deleted: "Supprimer l'image 2"
 ville.image.detail.1: Image 1
 ville.image.detail.2: Image 2
 ville.active: Actif
@@ -505,6 +507,8 @@ personnage.prenom: Prénom
 personnage.image_path: Image
 personnage.image.path: Image
 personnage.active: Actif
+personnage.personnageI18ns: ""
+personnage.image_path_deleted: "Supprimer l'image ?"
 
 avantage.crud.create: Création d'un avantage
 avantage.crud.list: Liste des avantages
@@ -518,6 +522,7 @@ avantage.image_path: Image
 avantage.image_path_deleted: Supprimer l'image ?
 avantage.image.path: Image
 avantage.active: Actif
+avantage.avantageI18ns: ""
 
 edito.crud.create: Création d'un édito
 edito.crud.list: Liste des editos
@@ -528,6 +533,7 @@ edito.slug: Slug
 edito.name: Titre
 edito.description: Description
 edito.active: Actif
+edito.editoI18ns: ""
 
 multimedia_etablissement.crud.create: Création d'un média
 multimedia_etablissement.crud.list: Liste des média
@@ -637,6 +643,9 @@ mise_en_avant.illustration.path: Illustration
 mise_en_avant.date.fin.validite: Date de fin de validite
 mise_en_avant.sortable_rank: Ordre
 mise_en_avant.active: Actif
+mise_en_avant.image_fond_path_deleted: "Supprimer l'image de fond ?"
+mise_en_avant.illustration_path_deleted: "Supprimer l'illustration ?"
+mise_en_avant.mise_en_avantI18ns: ""
 
 vos_vacances.crud.create: Création d'un encart vos vacances
 vos_vacances.crud.list: Liste des encarts vos vacances
