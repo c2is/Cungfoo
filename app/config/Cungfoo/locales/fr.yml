@@ -206,6 +206,10 @@ etablissement.slug: Slug
 etablissement.plan.path: Plan
 etablissement.group.resalys: Données résalys
 etablissement.group.cms: Données CMS
+etablissement.vignette_deleted: "Supprimer la vignette ?"
+etablissement.plan_path_deleted: "Supprimer le plan ?"
+etablissement.etablissementI18ns: ""
+etablissement.active: "Active"
 
 list.actions: Actions
 
@@ -549,6 +553,8 @@ multimedia_etablissement.image_path: Image
 multimedia_etablissement.tags: Tags
 multimedia_etablissement.image.path: Image
 multimedia_etablissement.active: Actif
+multimedia_etablissement.image_path_deleted: "Supprimer l'image ?"
+multimedia_etablissement.multimedia_etablissementI18ns: ""
 
 multimedia_type_hebergement.crud.create: Création d'un média type hébergement
 multimedia_type_hebergement.crud.list: Liste des média type hébergement
@@ -573,6 +579,8 @@ tag.id: Id
 tag.name: Nom
 tag.multimedia_etablissements: Média
 tag.slug: Slug
+tag.tagI18ns: ""
+tag.active: "Active"
 
 demande_identifiant.crud.list: Liste des demandes d'identifiant
 demande_identifiant.crud.view: Détails de la demande %name%

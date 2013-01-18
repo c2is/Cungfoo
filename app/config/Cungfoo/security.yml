@@ -1,4 +1,6 @@
-edito_crud:
-  role: ROLE_ADMIN
 job:
+  role: ROLE_ADMIN
+resalys:
+  role: ROLE_ADMIN
+viafrance:
   role: ROLE_ADMIN
