@@ -27,7 +27,7 @@
                 </li>
                 <li>
                     <div id="SearchDate_selectContainer0" class="selectContainer clear">
-                        <input type="hidden" id="SearchDate_duration_isBasseSaison" value="1" />
+                        <input type="hidden" id="SearchDate_isBasseSaison" value="1" />
                         <label for="SearchDate_duration_isBasseSaison_0">Nombre de nuits</label>
                         <select id="SearchDate_duration_isBasseSaison_0" name="SearchDate[destination]" >
                             <option value="">Nombre de nuits</option>
