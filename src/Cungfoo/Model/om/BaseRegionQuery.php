@@ -1142,4 +1142,17 @@ abstract class BaseRegionQuery extends ModelCriteria
             ->useQuery($relationAlias ? $relationAlias : 'RegionI18n', 'Cungfoo\Model\RegionI18nQuery');
     }
 
+    // crudable behavior
+
+    public function filterByTerm($term)
+    {
+        $term = '%' . $term . '%';
+
+        return $this
+            ->_or()
+            ->useI18nQuery()
+            ->filterByName($term, \Criteria::LIKE)
+            ->endUse()
+        ;
+    }
 }

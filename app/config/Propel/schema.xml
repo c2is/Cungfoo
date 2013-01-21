@@ -272,6 +272,7 @@
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/type-hebergement" />
+            <parameter name="crud_search" value="name" />
             <parameter name="crud_type_file" value="image_hebergement_path, image_composition_path" />
         </behavior>
     </table>
@@ -294,6 +295,7 @@
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/type-hebergement-capacite" />
+            <parameter name="crud_search" value="name" />
             <parameter name="crud_type_file" value="image_menu,image_page" />
         </behavior>
     </table>
@@ -318,6 +320,7 @@
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/category-type-hebergement" />
+            <parameter name="crud_search" value="name" />
             <parameter name="crud_type_file" value="image_menu,image_page" />
         </behavior>
     </table>
@@ -345,6 +348,7 @@
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/villes" />
+            <parameter name="crud_search" value="name" />
             <parameter name="crud_type_file" value="image_detail_1,image_detail_2" />
         </behavior>
     </table>
@@ -376,6 +380,7 @@
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/regions" />
+            <parameter name="crud_search" value="name" />
             <parameter name="crud_type_file" value="image_path,image_encart_path,image_encart_petite_path,image_detail_1,image_detail_2" />
         </behavior>
     </table>
@@ -398,6 +403,7 @@
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/pays" />
+            <parameter name="crud_search" value="name" />
             <parameter name="crud_type_file" value="image_detail_1,image_detail_2" />
         </behavior>
     </table>
@@ -415,6 +421,7 @@
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/destinations" />
+            <parameter name="crud_search" value="name" />
         </behavior>
     </table>
 
@@ -435,6 +442,7 @@
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/activites" />
+            <parameter name="crud_search" value="name" />
             <parameter name="crud_type_file" value="image_path, vignette" />
         </behavior>
     </table>
@@ -452,6 +460,7 @@
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/categories" />
+            <parameter name="crud_search" value="name" />
         </behavior>
     </table>
 
@@ -470,6 +479,7 @@
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/situation-geographiques" />
+            <parameter name="crud_search" value="name" />
         </behavior>
     </table>
 
@@ -489,6 +499,7 @@
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/baignades" />
+            <parameter name="crud_search" value="name" />
             <parameter name="crud_type_file" value="vignette" />
         </behavior>
     </table>
@@ -509,6 +520,7 @@
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/thematiques" />
+            <parameter name="crud_search" value="name" />
             <parameter name="crud_type_file" value="image_path" />
         </behavior>
     </table>
@@ -530,6 +542,7 @@
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/services-complementaires" />
+            <parameter name="crud_search" value="name" />
             <parameter name="crud_type_file" value="image_path, vignette" />
         </behavior>
     </table>
@@ -564,6 +577,7 @@
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/points-interet" />
+            <parameter name="crud_search" value="name" />
         </behavior>
     </table>
 
@@ -599,6 +613,7 @@
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/events" />
+            <parameter name="crud_search" value="name" />
         </behavior>
     </table>
 
@@ -644,6 +659,7 @@
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/personnages-avantages" />
+            <parameter name="crud_search" value="name" />
             <parameter name="crud_type_file" value="image_path" />
         </behavior>
     </table>
@@ -739,6 +755,7 @@
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/editos" />
+            <parameter name="crud_search" value="name" />
             <parameter name="crud_type_richtext" value="description" />
         </behavior>
     </table>
@@ -870,6 +887,7 @@
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/theme" />
+            <parameter name="crud_search" value="name" />
             <parameter name="crud_type_file" value="image_path" />
         </behavior>
     </table>

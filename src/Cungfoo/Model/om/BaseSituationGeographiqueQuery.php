@@ -739,4 +739,17 @@ abstract class BaseSituationGeographiqueQuery extends ModelCriteria
             ->useQuery($relationAlias ? $relationAlias : 'SituationGeographiqueI18n', 'Cungfoo\Model\SituationGeographiqueI18nQuery');
     }
 
+    // crudable behavior
+
+    public function filterByTerm($term)
+    {
+        $term = '%' . $term . '%';
+
+        return $this
+            ->_or()
+            ->useI18nQuery()
+            ->filterByName($term, \Criteria::LIKE)
+            ->endUse()
+        ;
+    }
 }

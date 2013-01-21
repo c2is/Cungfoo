@@ -1135,4 +1135,17 @@ abstract class BasePointInteretQuery extends ModelCriteria
             ->useQuery($relationAlias ? $relationAlias : 'PointInteretI18n', 'Cungfoo\Model\PointInteretI18nQuery');
     }
 
+    // crudable behavior
+
+    public function filterByTerm($term)
+    {
+        $term = '%' . $term . '%';
+
+        return $this
+            ->_or()
+            ->useI18nQuery()
+            ->filterByName($term, \Criteria::LIKE)
+            ->endUse()
+        ;
+    }
 }

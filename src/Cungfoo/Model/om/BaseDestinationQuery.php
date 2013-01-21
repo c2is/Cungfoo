@@ -739,4 +739,17 @@ abstract class BaseDestinationQuery extends ModelCriteria
             ->useQuery($relationAlias ? $relationAlias : 'DestinationI18n', 'Cungfoo\Model\DestinationI18nQuery');
     }
 
+    // crudable behavior
+
+    public function filterByTerm($term)
+    {
+        $term = '%' . $term . '%';
+
+        return $this
+            ->_or()
+            ->useI18nQuery()
+            ->filterByName($term, \Criteria::LIKE)
+            ->endUse()
+        ;
+    }
 }

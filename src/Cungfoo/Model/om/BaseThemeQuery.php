@@ -871,4 +871,17 @@ abstract class BaseThemeQuery extends ModelCriteria
             ->useQuery($relationAlias ? $relationAlias : 'ThemeI18n', 'Cungfoo\Model\ThemeI18nQuery');
     }
 
+    // crudable behavior
+
+    public function filterByTerm($term)
+    {
+        $term = '%' . $term . '%';
+
+        return $this
+            ->_or()
+            ->useI18nQuery()
+            ->filterByName($term, \Criteria::LIKE)
+            ->endUse()
+        ;
+    }
 }

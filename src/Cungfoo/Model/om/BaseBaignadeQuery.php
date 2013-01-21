@@ -869,4 +869,17 @@ abstract class BaseBaignadeQuery extends ModelCriteria
             ->useQuery($relationAlias ? $relationAlias : 'BaignadeI18n', 'Cungfoo\Model\BaignadeI18nQuery');
     }
 
+    // crudable behavior
+
+    public function filterByTerm($term)
+    {
+        $term = '%' . $term . '%';
+
+        return $this
+            ->_or()
+            ->useI18nQuery()
+            ->filterByName($term, \Criteria::LIKE)
+            ->endUse()
+        ;
+    }
 }
