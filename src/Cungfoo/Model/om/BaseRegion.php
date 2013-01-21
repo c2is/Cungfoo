@@ -15,6 +15,10 @@ use \PropelDateTime;
 use \PropelException;
 use \PropelObjectCollection;
 use \PropelPDO;
+use Cungfoo\Model\BonPlan;
+use Cungfoo\Model\BonPlanQuery;
+use Cungfoo\Model\BonPlanRegion;
+use Cungfoo\Model\BonPlanRegionQuery;
 use Cungfoo\Model\Pays;
 use Cungfoo\Model\PaysQuery;
 use Cungfoo\Model\Region;
@@ -138,10 +142,21 @@ abstract class BaseRegion extends BaseObject implements Persistent
     protected $collVillesPartial;
 
     /**
+     * @var        PropelObjectCollection|BonPlanRegion[] Collection to store aggregation of BonPlanRegion objects.
+     */
+    protected $collBonPlanRegions;
+    protected $collBonPlanRegionsPartial;
+
+    /**
      * @var        PropelObjectCollection|RegionI18n[] Collection to store aggregation of RegionI18n objects.
      */
     protected $collRegionI18ns;
     protected $collRegionI18nsPartial;
+
+    /**
+     * @var        PropelObjectCollection|BonPlan[] Collection to store aggregation of BonPlan objects.
+     */
+    protected $collBonPlans;
 
     /**
      * Flag to prevent endless save loop, if this object is referenced
@@ -175,7 +190,19 @@ abstract class BaseRegion extends BaseObject implements Persistent
      * An array of objects scheduled for deletion.
      * @var		PropelObjectCollection
      */
+    protected $bonPlansScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
     protected $villesScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
+    protected $bonPlanRegionsScheduledForDeletion = null;
 
     /**
      * An array of objects scheduled for deletion.
@@ -784,8 +811,11 @@ abstract class BaseRegion extends BaseObject implements Persistent
             $this->aPays = null;
             $this->collVilles = null;
 
+            $this->collBonPlanRegions = null;
+
             $this->collRegionI18ns = null;
 
+            $this->collBonPlans = null;
         } // if (deep)
     }
 
@@ -933,6 +963,26 @@ abstract class BaseRegion extends BaseObject implements Persistent
                 $this->resetModified();
             }
 
+            if ($this->bonPlansScheduledForDeletion !== null) {
+                if (!$this->bonPlansScheduledForDeletion->isEmpty()) {
+                    $pks = array();
+                    $pk = $this->getPrimaryKey();
+                    foreach ($this->bonPlansScheduledForDeletion->getPrimaryKeys(false) as $remotePk) {
+                        $pks[] = array($remotePk, $pk);
+                    }
+                    BonPlanRegionQuery::create()
+                        ->filterByPrimaryKeys($pks)
+                        ->delete($con);
+                    $this->bonPlansScheduledForDeletion = null;
+                }
+
+                foreach ($this->getBonPlans() as $bonPlan) {
+                    if ($bonPlan->isModified()) {
+                        $bonPlan->save($con);
+                    }
+                }
+            }
+
             if ($this->villesScheduledForDeletion !== null) {
                 if (!$this->villesScheduledForDeletion->isEmpty()) {
                     foreach ($this->villesScheduledForDeletion as $ville) {
@@ -945,6 +995,23 @@ abstract class BaseRegion extends BaseObject implements Persistent
 
             if ($this->collVilles !== null) {
                 foreach ($this->collVilles as $referrerFK) {
+                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
+                        $affectedRows += $referrerFK->save($con);
+                    }
+                }
+            }
+
+            if ($this->bonPlanRegionsScheduledForDeletion !== null) {
+                if (!$this->bonPlanRegionsScheduledForDeletion->isEmpty()) {
+                    BonPlanRegionQuery::create()
+                        ->filterByPrimaryKeys($this->bonPlanRegionsScheduledForDeletion->getPrimaryKeys(false))
+                        ->delete($con);
+                    $this->bonPlanRegionsScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collBonPlanRegions !== null) {
+                foreach ($this->collBonPlanRegions as $referrerFK) {
                     if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
                         $affectedRows += $referrerFK->save($con);
                     }
@@ -1196,6 +1263,14 @@ abstract class BaseRegion extends BaseObject implements Persistent
                     }
                 }
 
+                if ($this->collBonPlanRegions !== null) {
+                    foreach ($this->collBonPlanRegions as $referrerFK) {
+                        if (!$referrerFK->validate($columns)) {
+                            $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
+                        }
+                    }
+                }
+
                 if ($this->collRegionI18ns !== null) {
                     foreach ($this->collRegionI18ns as $referrerFK) {
                         if (!$referrerFK->validate($columns)) {
@@ -1323,6 +1398,9 @@ abstract class BaseRegion extends BaseObject implements Persistent
             }
             if (null !== $this->collVilles) {
                 $result['Villes'] = $this->collVilles->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
+            }
+            if (null !== $this->collBonPlanRegions) {
+                $result['BonPlanRegions'] = $this->collBonPlanRegions->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
             if (null !== $this->collRegionI18ns) {
                 $result['RegionI18ns'] = $this->collRegionI18ns->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
@@ -1544,6 +1622,12 @@ abstract class BaseRegion extends BaseObject implements Persistent
                 }
             }
 
+            foreach ($this->getBonPlanRegions() as $relObj) {
+                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
+                    $copyObj->addBonPlanRegion($relObj->copy($deepCopy));
+                }
+            }
+
             foreach ($this->getRegionI18ns() as $relObj) {
                 if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
                     $copyObj->addRegionI18n($relObj->copy($deepCopy));
@@ -1665,6 +1749,9 @@ abstract class BaseRegion extends BaseObject implements Persistent
     {
         if ('Ville' == $relationName) {
             $this->initVilles();
+        }
+        if ('BonPlanRegion' == $relationName) {
+            $this->initBonPlanRegions();
         }
         if ('RegionI18n' == $relationName) {
             $this->initRegionI18ns();
@@ -1887,6 +1974,246 @@ abstract class BaseRegion extends BaseObject implements Persistent
     }
 
     /**
+     * Clears out the collBonPlanRegions collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return Region The current object (for fluent API support)
+     * @see        addBonPlanRegions()
+     */
+    public function clearBonPlanRegions()
+    {
+        $this->collBonPlanRegions = null; // important to set this to null since that means it is uninitialized
+        $this->collBonPlanRegionsPartial = null;
+
+        return $this;
+    }
+
+    /**
+     * reset is the collBonPlanRegions collection loaded partially
+     *
+     * @return void
+     */
+    public function resetPartialBonPlanRegions($v = true)
+    {
+        $this->collBonPlanRegionsPartial = $v;
+    }
+
+    /**
+     * Initializes the collBonPlanRegions collection.
+     *
+     * By default this just sets the collBonPlanRegions collection to an empty array (like clearcollBonPlanRegions());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @param boolean $overrideExisting If set to true, the method call initializes
+     *                                        the collection even if it is not empty
+     *
+     * @return void
+     */
+    public function initBonPlanRegions($overrideExisting = true)
+    {
+        if (null !== $this->collBonPlanRegions && !$overrideExisting) {
+            return;
+        }
+        $this->collBonPlanRegions = new PropelObjectCollection();
+        $this->collBonPlanRegions->setModel('BonPlanRegion');
+    }
+
+    /**
+     * Gets an array of BonPlanRegion objects which contain a foreign key that references this object.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this Region is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @return PropelObjectCollection|BonPlanRegion[] List of BonPlanRegion objects
+     * @throws PropelException
+     */
+    public function getBonPlanRegions($criteria = null, PropelPDO $con = null)
+    {
+        $partial = $this->collBonPlanRegionsPartial && !$this->isNew();
+        if (null === $this->collBonPlanRegions || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collBonPlanRegions) {
+                // return empty collection
+                $this->initBonPlanRegions();
+            } else {
+                $collBonPlanRegions = BonPlanRegionQuery::create(null, $criteria)
+                    ->filterByRegion($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    if (false !== $this->collBonPlanRegionsPartial && count($collBonPlanRegions)) {
+                      $this->initBonPlanRegions(false);
+
+                      foreach($collBonPlanRegions as $obj) {
+                        if (false == $this->collBonPlanRegions->contains($obj)) {
+                          $this->collBonPlanRegions->append($obj);
+                        }
+                      }
+
+                      $this->collBonPlanRegionsPartial = true;
+                    }
+
+                    return $collBonPlanRegions;
+                }
+
+                if($partial && $this->collBonPlanRegions) {
+                    foreach($this->collBonPlanRegions as $obj) {
+                        if($obj->isNew()) {
+                            $collBonPlanRegions[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collBonPlanRegions = $collBonPlanRegions;
+                $this->collBonPlanRegionsPartial = false;
+            }
+        }
+
+        return $this->collBonPlanRegions;
+    }
+
+    /**
+     * Sets a collection of BonPlanRegion objects related by a one-to-many relationship
+     * to the current object.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $bonPlanRegions A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     * @return Region The current object (for fluent API support)
+     */
+    public function setBonPlanRegions(PropelCollection $bonPlanRegions, PropelPDO $con = null)
+    {
+        $this->bonPlanRegionsScheduledForDeletion = $this->getBonPlanRegions(new Criteria(), $con)->diff($bonPlanRegions);
+
+        foreach ($this->bonPlanRegionsScheduledForDeletion as $bonPlanRegionRemoved) {
+            $bonPlanRegionRemoved->setRegion(null);
+        }
+
+        $this->collBonPlanRegions = null;
+        foreach ($bonPlanRegions as $bonPlanRegion) {
+            $this->addBonPlanRegion($bonPlanRegion);
+        }
+
+        $this->collBonPlanRegions = $bonPlanRegions;
+        $this->collBonPlanRegionsPartial = false;
+
+        return $this;
+    }
+
+    /**
+     * Returns the number of related BonPlanRegion objects.
+     *
+     * @param Criteria $criteria
+     * @param boolean $distinct
+     * @param PropelPDO $con
+     * @return int             Count of related BonPlanRegion objects.
+     * @throws PropelException
+     */
+    public function countBonPlanRegions(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        $partial = $this->collBonPlanRegionsPartial && !$this->isNew();
+        if (null === $this->collBonPlanRegions || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collBonPlanRegions) {
+                return 0;
+            }
+
+            if($partial && !$criteria) {
+                return count($this->getBonPlanRegions());
+            }
+            $query = BonPlanRegionQuery::create(null, $criteria);
+            if ($distinct) {
+                $query->distinct();
+            }
+
+            return $query
+                ->filterByRegion($this)
+                ->count($con);
+        }
+
+        return count($this->collBonPlanRegions);
+    }
+
+    /**
+     * Method called to associate a BonPlanRegion object to this object
+     * through the BonPlanRegion foreign key attribute.
+     *
+     * @param    BonPlanRegion $l BonPlanRegion
+     * @return Region The current object (for fluent API support)
+     */
+    public function addBonPlanRegion(BonPlanRegion $l)
+    {
+        if ($this->collBonPlanRegions === null) {
+            $this->initBonPlanRegions();
+            $this->collBonPlanRegionsPartial = true;
+        }
+        if (!in_array($l, $this->collBonPlanRegions->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
+            $this->doAddBonPlanRegion($l);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	BonPlanRegion $bonPlanRegion The bonPlanRegion object to add.
+     */
+    protected function doAddBonPlanRegion($bonPlanRegion)
+    {
+        $this->collBonPlanRegions[]= $bonPlanRegion;
+        $bonPlanRegion->setRegion($this);
+    }
+
+    /**
+     * @param	BonPlanRegion $bonPlanRegion The bonPlanRegion object to remove.
+     * @return Region The current object (for fluent API support)
+     */
+    public function removeBonPlanRegion($bonPlanRegion)
+    {
+        if ($this->getBonPlanRegions()->contains($bonPlanRegion)) {
+            $this->collBonPlanRegions->remove($this->collBonPlanRegions->search($bonPlanRegion));
+            if (null === $this->bonPlanRegionsScheduledForDeletion) {
+                $this->bonPlanRegionsScheduledForDeletion = clone $this->collBonPlanRegions;
+                $this->bonPlanRegionsScheduledForDeletion->clear();
+            }
+            $this->bonPlanRegionsScheduledForDeletion[]= $bonPlanRegion;
+            $bonPlanRegion->setRegion(null);
+        }
+
+        return $this;
+    }
+
+
+    /**
+     * If this collection has already been initialized with
+     * an identical criteria, it returns the collection.
+     * Otherwise if this Region is new, it will return
+     * an empty collection; or if this Region has previously
+     * been saved, it will retrieve related BonPlanRegions from storage.
+     *
+     * This method is protected by default in order to keep the public
+     * api reasonable.  You can provide public methods for those you
+     * actually need in Region.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @param string $join_behavior optional join type to use (defaults to Criteria::LEFT_JOIN)
+     * @return PropelObjectCollection|BonPlanRegion[] List of BonPlanRegion objects
+     */
+    public function getBonPlanRegionsJoinBonPlan($criteria = null, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    {
+        $query = BonPlanRegionQuery::create(null, $criteria);
+        $query->joinWith('BonPlan', $join_behavior);
+
+        return $this->getBonPlanRegions($query, $con);
+    }
+
+    /**
      * Clears out the collRegionI18ns collection
      *
      * This does not modify the database; however, it will remove any associated objects, causing
@@ -2106,6 +2433,183 @@ abstract class BaseRegion extends BaseObject implements Persistent
     }
 
     /**
+     * Clears out the collBonPlans collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return Region The current object (for fluent API support)
+     * @see        addBonPlans()
+     */
+    public function clearBonPlans()
+    {
+        $this->collBonPlans = null; // important to set this to null since that means it is uninitialized
+        $this->collBonPlansPartial = null;
+
+        return $this;
+    }
+
+    /**
+     * Initializes the collBonPlans collection.
+     *
+     * By default this just sets the collBonPlans collection to an empty collection (like clearBonPlans());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @return void
+     */
+    public function initBonPlans()
+    {
+        $this->collBonPlans = new PropelObjectCollection();
+        $this->collBonPlans->setModel('BonPlan');
+    }
+
+    /**
+     * Gets a collection of BonPlan objects related by a many-to-many relationship
+     * to the current object by way of the bon_plan_region cross-reference table.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this Region is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria Optional query object to filter the query
+     * @param PropelPDO $con Optional connection object
+     *
+     * @return PropelObjectCollection|BonPlan[] List of BonPlan objects
+     */
+    public function getBonPlans($criteria = null, PropelPDO $con = null)
+    {
+        if (null === $this->collBonPlans || null !== $criteria) {
+            if ($this->isNew() && null === $this->collBonPlans) {
+                // return empty collection
+                $this->initBonPlans();
+            } else {
+                $collBonPlans = BonPlanQuery::create(null, $criteria)
+                    ->filterByRegion($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    return $collBonPlans;
+                }
+                $this->collBonPlans = $collBonPlans;
+            }
+        }
+
+        return $this->collBonPlans;
+    }
+
+    /**
+     * Sets a collection of BonPlan objects related by a many-to-many relationship
+     * to the current object by way of the bon_plan_region cross-reference table.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $bonPlans A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     * @return Region The current object (for fluent API support)
+     */
+    public function setBonPlans(PropelCollection $bonPlans, PropelPDO $con = null)
+    {
+        $this->clearBonPlans();
+        $currentBonPlans = $this->getBonPlans();
+
+        $this->bonPlansScheduledForDeletion = $currentBonPlans->diff($bonPlans);
+
+        foreach ($bonPlans as $bonPlan) {
+            if (!$currentBonPlans->contains($bonPlan)) {
+                $this->doAddBonPlan($bonPlan);
+            }
+        }
+
+        $this->collBonPlans = $bonPlans;
+
+        return $this;
+    }
+
+    /**
+     * Gets the number of BonPlan objects related by a many-to-many relationship
+     * to the current object by way of the bon_plan_region cross-reference table.
+     *
+     * @param Criteria $criteria Optional query object to filter the query
+     * @param boolean $distinct Set to true to force count distinct
+     * @param PropelPDO $con Optional connection object
+     *
+     * @return int the number of related BonPlan objects
+     */
+    public function countBonPlans($criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        if (null === $this->collBonPlans || null !== $criteria) {
+            if ($this->isNew() && null === $this->collBonPlans) {
+                return 0;
+            } else {
+                $query = BonPlanQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
+
+                return $query
+                    ->filterByRegion($this)
+                    ->count($con);
+            }
+        } else {
+            return count($this->collBonPlans);
+        }
+    }
+
+    /**
+     * Associate a BonPlan object to this object
+     * through the bon_plan_region cross reference table.
+     *
+     * @param  BonPlan $bonPlan The BonPlanRegion object to relate
+     * @return Region The current object (for fluent API support)
+     */
+    public function addBonPlan(BonPlan $bonPlan)
+    {
+        if ($this->collBonPlans === null) {
+            $this->initBonPlans();
+        }
+        if (!$this->collBonPlans->contains($bonPlan)) { // only add it if the **same** object is not already associated
+            $this->doAddBonPlan($bonPlan);
+
+            $this->collBonPlans[]= $bonPlan;
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	BonPlan $bonPlan The bonPlan object to add.
+     */
+    protected function doAddBonPlan($bonPlan)
+    {
+        $bonPlanRegion = new BonPlanRegion();
+        $bonPlanRegion->setBonPlan($bonPlan);
+        $this->addBonPlanRegion($bonPlanRegion);
+    }
+
+    /**
+     * Remove a BonPlan object to this object
+     * through the bon_plan_region cross reference table.
+     *
+     * @param BonPlan $bonPlan The BonPlanRegion object to relate
+     * @return Region The current object (for fluent API support)
+     */
+    public function removeBonPlan(BonPlan $bonPlan)
+    {
+        if ($this->getBonPlans()->contains($bonPlan)) {
+            $this->collBonPlans->remove($this->collBonPlans->search($bonPlan));
+            if (null === $this->bonPlansScheduledForDeletion) {
+                $this->bonPlansScheduledForDeletion = clone $this->collBonPlans;
+                $this->bonPlansScheduledForDeletion->clear();
+            }
+            $this->bonPlansScheduledForDeletion[]= $bonPlan;
+        }
+
+        return $this;
+    }
+
+    /**
      * Clears the current object and sets all attributes to their default values
      */
     public function clear()
@@ -2148,8 +2652,18 @@ abstract class BaseRegion extends BaseObject implements Persistent
                     $o->clearAllReferences($deep);
                 }
             }
+            if ($this->collBonPlanRegions) {
+                foreach ($this->collBonPlanRegions as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
             if ($this->collRegionI18ns) {
                 foreach ($this->collRegionI18ns as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
+            if ($this->collBonPlans) {
+                foreach ($this->collBonPlans as $o) {
                     $o->clearAllReferences($deep);
                 }
             }
@@ -2163,10 +2677,18 @@ abstract class BaseRegion extends BaseObject implements Persistent
             $this->collVilles->clearIterator();
         }
         $this->collVilles = null;
+        if ($this->collBonPlanRegions instanceof PropelCollection) {
+            $this->collBonPlanRegions->clearIterator();
+        }
+        $this->collBonPlanRegions = null;
         if ($this->collRegionI18ns instanceof PropelCollection) {
             $this->collRegionI18ns->clearIterator();
         }
         $this->collRegionI18ns = null;
+        if ($this->collBonPlans instanceof PropelCollection) {
+            $this->collBonPlans->clearIterator();
+        }
+        $this->collBonPlans = null;
         $this->aPays = null;
     }
 

@@ -1,21 +1,21 @@
 \Cungfoo\Model\TypeHebergementCapacite:
     1:
         ImageMenu: uploads/type_hebergement_capacites/50ed4358842e6.png
-        ImagePage: null
+        ImagePage: uploads/type_hebergement_capacites/50f02aeb81673.jpeg
         Active: true
         SortableRank: 1
     2:
         ImageMenu: uploads/type_hebergement_capacites/50ed435f1ecda.png
-        ImagePage: null
+        ImagePage: uploads/type_hebergement_capacites/50f02bc456e6d.jpeg
         Active: true
         SortableRank: 2
     3:
         ImageMenu: uploads/type_hebergement_capacites/50ed4363f1dad.png
-        ImagePage: null
+        ImagePage: uploads/type_hebergement_capacites/50f02b11caf35.jpeg
         Active: true
         SortableRank: 3
     4:
         ImageMenu: uploads/type_hebergement_capacites/50ed436945eac.png
-        ImagePage: null
+        ImagePage: uploads/type_hebergement_capacites/50f02b21bd6ec.jpeg
         Active: true
         SortableRank: 4

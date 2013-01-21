@@ -126,6 +126,30 @@ abstract class BaseEvent extends BaseObject implements Persistent
     protected $priority;
 
     /**
+     * The value for the tel field.
+     * @var        string
+     */
+    protected $tel;
+
+    /**
+     * The value for the fax field.
+     * @var        string
+     */
+    protected $fax;
+
+    /**
+     * The value for the email field.
+     * @var        string
+     */
+    protected $email;
+
+    /**
+     * The value for the website field.
+     * @var        string
+     */
+    protected $website;
+
+    /**
      * The value for the created_at field.
      * @var        string
      */
@@ -346,6 +370,46 @@ abstract class BaseEvent extends BaseObject implements Persistent
     public function getPriority()
     {
         return $this->priority;
+    }
+
+    /**
+     * Get the [tel] column value.
+     *
+     * @return string
+     */
+    public function getTel()
+    {
+        return $this->tel;
+    }
+
+    /**
+     * Get the [fax] column value.
+     *
+     * @return string
+     */
+    public function getFax()
+    {
+        return $this->fax;
+    }
+
+    /**
+     * Get the [email] column value.
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Get the [website] column value.
+     *
+     * @return string
+     */
+    public function getWebsite()
+    {
+        return $this->website;
     }
 
     /**
@@ -691,6 +755,90 @@ abstract class BaseEvent extends BaseObject implements Persistent
     } // setPriority()
 
     /**
+     * Set the value of [tel] column.
+     *
+     * @param string $v new value
+     * @return Event The current object (for fluent API support)
+     */
+    public function setTel($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->tel !== $v) {
+            $this->tel = $v;
+            $this->modifiedColumns[] = EventPeer::TEL;
+        }
+
+
+        return $this;
+    } // setTel()
+
+    /**
+     * Set the value of [fax] column.
+     *
+     * @param string $v new value
+     * @return Event The current object (for fluent API support)
+     */
+    public function setFax($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->fax !== $v) {
+            $this->fax = $v;
+            $this->modifiedColumns[] = EventPeer::FAX;
+        }
+
+
+        return $this;
+    } // setFax()
+
+    /**
+     * Set the value of [email] column.
+     *
+     * @param string $v new value
+     * @return Event The current object (for fluent API support)
+     */
+    public function setEmail($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->email !== $v) {
+            $this->email = $v;
+            $this->modifiedColumns[] = EventPeer::EMAIL;
+        }
+
+
+        return $this;
+    } // setEmail()
+
+    /**
+     * Set the value of [website] column.
+     *
+     * @param string $v new value
+     * @return Event The current object (for fluent API support)
+     */
+    public function setWebsite($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->website !== $v) {
+            $this->website = $v;
+            $this->modifiedColumns[] = EventPeer::WEBSITE;
+        }
+
+
+        return $this;
+    } // setWebsite()
+
+    /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
      *
      * @param mixed $v string, integer (timestamp), or DateTime value.
@@ -813,9 +961,13 @@ abstract class BaseEvent extends BaseObject implements Persistent
             $this->distance_camping = ($row[$startcol + 9] !== null) ? (string) $row[$startcol + 9] : null;
             $this->image = ($row[$startcol + 10] !== null) ? (string) $row[$startcol + 10] : null;
             $this->priority = ($row[$startcol + 11] !== null) ? (string) $row[$startcol + 11] : null;
-            $this->created_at = ($row[$startcol + 12] !== null) ? (string) $row[$startcol + 12] : null;
-            $this->updated_at = ($row[$startcol + 13] !== null) ? (string) $row[$startcol + 13] : null;
-            $this->active = ($row[$startcol + 14] !== null) ? (boolean) $row[$startcol + 14] : null;
+            $this->tel = ($row[$startcol + 12] !== null) ? (string) $row[$startcol + 12] : null;
+            $this->fax = ($row[$startcol + 13] !== null) ? (string) $row[$startcol + 13] : null;
+            $this->email = ($row[$startcol + 14] !== null) ? (string) $row[$startcol + 14] : null;
+            $this->website = ($row[$startcol + 15] !== null) ? (string) $row[$startcol + 15] : null;
+            $this->created_at = ($row[$startcol + 16] !== null) ? (string) $row[$startcol + 16] : null;
+            $this->updated_at = ($row[$startcol + 17] !== null) ? (string) $row[$startcol + 17] : null;
+            $this->active = ($row[$startcol + 18] !== null) ? (boolean) $row[$startcol + 18] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -824,7 +976,7 @@ abstract class BaseEvent extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 15; // 15 = EventPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 19; // 19 = EventPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Event object", $e);
@@ -1142,6 +1294,18 @@ abstract class BaseEvent extends BaseObject implements Persistent
         if ($this->isColumnModified(EventPeer::PRIORITY)) {
             $modifiedColumns[':p' . $index++]  = '`priority`';
         }
+        if ($this->isColumnModified(EventPeer::TEL)) {
+            $modifiedColumns[':p' . $index++]  = '`tel`';
+        }
+        if ($this->isColumnModified(EventPeer::FAX)) {
+            $modifiedColumns[':p' . $index++]  = '`fax`';
+        }
+        if ($this->isColumnModified(EventPeer::EMAIL)) {
+            $modifiedColumns[':p' . $index++]  = '`email`';
+        }
+        if ($this->isColumnModified(EventPeer::WEBSITE)) {
+            $modifiedColumns[':p' . $index++]  = '`website`';
+        }
         if ($this->isColumnModified(EventPeer::CREATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`created_at`';
         }
@@ -1197,6 +1361,18 @@ abstract class BaseEvent extends BaseObject implements Persistent
                         break;
                     case '`priority`':
                         $stmt->bindValue($identifier, $this->priority, PDO::PARAM_STR);
+                        break;
+                    case '`tel`':
+                        $stmt->bindValue($identifier, $this->tel, PDO::PARAM_STR);
+                        break;
+                    case '`fax`':
+                        $stmt->bindValue($identifier, $this->fax, PDO::PARAM_STR);
+                        break;
+                    case '`email`':
+                        $stmt->bindValue($identifier, $this->email, PDO::PARAM_STR);
+                        break;
+                    case '`website`':
+                        $stmt->bindValue($identifier, $this->website, PDO::PARAM_STR);
                         break;
                     case '`created_at`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
@@ -1394,12 +1570,24 @@ abstract class BaseEvent extends BaseObject implements Persistent
                 return $this->getPriority();
                 break;
             case 12:
-                return $this->getCreatedAt();
+                return $this->getTel();
                 break;
             case 13:
-                return $this->getUpdatedAt();
+                return $this->getFax();
                 break;
             case 14:
+                return $this->getEmail();
+                break;
+            case 15:
+                return $this->getWebsite();
+                break;
+            case 16:
+                return $this->getCreatedAt();
+                break;
+            case 17:
+                return $this->getUpdatedAt();
+                break;
+            case 18:
                 return $this->getActive();
                 break;
             default:
@@ -1443,9 +1631,13 @@ abstract class BaseEvent extends BaseObject implements Persistent
             $keys[9] => $this->getDistanceCamping(),
             $keys[10] => $this->getImage(),
             $keys[11] => $this->getPriority(),
-            $keys[12] => $this->getCreatedAt(),
-            $keys[13] => $this->getUpdatedAt(),
-            $keys[14] => $this->getActive(),
+            $keys[12] => $this->getTel(),
+            $keys[13] => $this->getFax(),
+            $keys[14] => $this->getEmail(),
+            $keys[15] => $this->getWebsite(),
+            $keys[16] => $this->getCreatedAt(),
+            $keys[17] => $this->getUpdatedAt(),
+            $keys[18] => $this->getActive(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->collEtablissementEvents) {
@@ -1525,12 +1717,24 @@ abstract class BaseEvent extends BaseObject implements Persistent
                 $this->setPriority($value);
                 break;
             case 12:
-                $this->setCreatedAt($value);
+                $this->setTel($value);
                 break;
             case 13:
-                $this->setUpdatedAt($value);
+                $this->setFax($value);
                 break;
             case 14:
+                $this->setEmail($value);
+                break;
+            case 15:
+                $this->setWebsite($value);
+                break;
+            case 16:
+                $this->setCreatedAt($value);
+                break;
+            case 17:
+                $this->setUpdatedAt($value);
+                break;
+            case 18:
                 $this->setActive($value);
                 break;
         } // switch()
@@ -1569,9 +1773,13 @@ abstract class BaseEvent extends BaseObject implements Persistent
         if (array_key_exists($keys[9], $arr)) $this->setDistanceCamping($arr[$keys[9]]);
         if (array_key_exists($keys[10], $arr)) $this->setImage($arr[$keys[10]]);
         if (array_key_exists($keys[11], $arr)) $this->setPriority($arr[$keys[11]]);
-        if (array_key_exists($keys[12], $arr)) $this->setCreatedAt($arr[$keys[12]]);
-        if (array_key_exists($keys[13], $arr)) $this->setUpdatedAt($arr[$keys[13]]);
-        if (array_key_exists($keys[14], $arr)) $this->setActive($arr[$keys[14]]);
+        if (array_key_exists($keys[12], $arr)) $this->setTel($arr[$keys[12]]);
+        if (array_key_exists($keys[13], $arr)) $this->setFax($arr[$keys[13]]);
+        if (array_key_exists($keys[14], $arr)) $this->setEmail($arr[$keys[14]]);
+        if (array_key_exists($keys[15], $arr)) $this->setWebsite($arr[$keys[15]]);
+        if (array_key_exists($keys[16], $arr)) $this->setCreatedAt($arr[$keys[16]]);
+        if (array_key_exists($keys[17], $arr)) $this->setUpdatedAt($arr[$keys[17]]);
+        if (array_key_exists($keys[18], $arr)) $this->setActive($arr[$keys[18]]);
     }
 
     /**
@@ -1595,6 +1803,10 @@ abstract class BaseEvent extends BaseObject implements Persistent
         if ($this->isColumnModified(EventPeer::DISTANCE_CAMPING)) $criteria->add(EventPeer::DISTANCE_CAMPING, $this->distance_camping);
         if ($this->isColumnModified(EventPeer::IMAGE)) $criteria->add(EventPeer::IMAGE, $this->image);
         if ($this->isColumnModified(EventPeer::PRIORITY)) $criteria->add(EventPeer::PRIORITY, $this->priority);
+        if ($this->isColumnModified(EventPeer::TEL)) $criteria->add(EventPeer::TEL, $this->tel);
+        if ($this->isColumnModified(EventPeer::FAX)) $criteria->add(EventPeer::FAX, $this->fax);
+        if ($this->isColumnModified(EventPeer::EMAIL)) $criteria->add(EventPeer::EMAIL, $this->email);
+        if ($this->isColumnModified(EventPeer::WEBSITE)) $criteria->add(EventPeer::WEBSITE, $this->website);
         if ($this->isColumnModified(EventPeer::CREATED_AT)) $criteria->add(EventPeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(EventPeer::UPDATED_AT)) $criteria->add(EventPeer::UPDATED_AT, $this->updated_at);
         if ($this->isColumnModified(EventPeer::ACTIVE)) $criteria->add(EventPeer::ACTIVE, $this->active);
@@ -1672,6 +1884,10 @@ abstract class BaseEvent extends BaseObject implements Persistent
         $copyObj->setDistanceCamping($this->getDistanceCamping());
         $copyObj->setImage($this->getImage());
         $copyObj->setPriority($this->getPriority());
+        $copyObj->setTel($this->getTel());
+        $copyObj->setFax($this->getFax());
+        $copyObj->setEmail($this->getEmail());
+        $copyObj->setWebsite($this->getWebsite());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
         $copyObj->setActive($this->getActive());
@@ -2417,6 +2633,10 @@ abstract class BaseEvent extends BaseObject implements Persistent
         $this->distance_camping = null;
         $this->image = null;
         $this->priority = null;
+        $this->tel = null;
+        $this->fax = null;
+        $this->email = null;
+        $this->website = null;
         $this->created_at = null;
         $this->updated_at = null;
         $this->active = null;
@@ -2689,6 +2909,78 @@ abstract class BaseEvent extends BaseObject implements Persistent
          */
         public function setSubtitle($v)
         {    $this->getCurrentTranslation()->setSubtitle($v);
+
+        return $this;
+    }
+
+
+        /**
+         * Get the [description] column value.
+         *
+         * @return string
+         */
+        public function getDescription()
+        {
+        return $this->getCurrentTranslation()->getDescription();
+    }
+
+
+        /**
+         * Set the value of [description] column.
+         *
+         * @param string $v new value
+         * @return EventI18n The current object (for fluent API support)
+         */
+        public function setDescription($v)
+        {    $this->getCurrentTranslation()->setDescription($v);
+
+        return $this;
+    }
+
+
+        /**
+         * Get the [transport] column value.
+         *
+         * @return string
+         */
+        public function getTransport()
+        {
+        return $this->getCurrentTranslation()->getTransport();
+    }
+
+
+        /**
+         * Set the value of [transport] column.
+         *
+         * @param string $v new value
+         * @return EventI18n The current object (for fluent API support)
+         */
+        public function setTransport($v)
+        {    $this->getCurrentTranslation()->setTransport($v);
+
+        return $this;
+    }
+
+
+        /**
+         * Get the [slug] column value.
+         *
+         * @return string
+         */
+        public function getSlug()
+        {
+        return $this->getCurrentTranslation()->getSlug();
+    }
+
+
+        /**
+         * Set the value of [slug] column.
+         *
+         * @param string $v new value
+         * @return EventI18n The current object (for fluent API support)
+         */
+        public function setSlug($v)
+        {    $this->getCurrentTranslation()->setSlug($v);
 
         return $this;
     }

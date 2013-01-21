@@ -13,38 +13,38 @@
                                 <div class="stamp grey"><span>France</span></div>
                             </div>
                             <div class="region">
-                                <div class="title">Destination Méditerranée</div>
+                                <a href="#" class="title">Destination Méditerranée</a>
                                 <ul>
-                                    <li>- <a href=#>Languedoc-Roussillon</a></li>
-                                    <li>- <a href=#>Corse</a></li>
-                                    <li>- <a href=#>Provence Côte d'Azur</a></li>
+                                    <li><a href=#>- Languedoc-Roussillon</a></li>
+                                    <li><a href=#>- Corse</a></li>
+                                    <li><a href=#>- Provence Côte d'Azur</a></li>
                                     <a class="bt link" href="#">Plus de régions</a>
                                 </ul>
                             </div>
                             <div class="region">
-                                <div class="title">Destination Atlantique</div>
-                                <ul>
-                                    <li>- <a href=#>Bretagne</a></li>
-                                    <li>- <a href=#>Charente-Maritime</a></li>
-                                    <li>- <a href=#>Pays Basque</a></li>
+                                <a href="#" class="title">Destination Atlantique</a>
+                                    <ul>
+                                    <li><a href=#>- Bretagne</a></li>
+                                    <li><a href=#>- Charente-Maritime</a></li>
+                                    <li><a href=#>- Pays Basque</a></li>
                                     <a class="bt link" href="#">Plus de régions</a>
                                 </ul>
                             </div>
                             <div class="region">
-                                <div class="title">Destination Montagne</div>
+                                <a href="#" class="title">Destination Montagne</a>
                                 <ul>
-                                    <li>- <a href=#>Alpes</a></li>
-                                    <li>- <a href=#>Alsace / Jura</a></li>
-                                    <li>- <a href=#>Ariège / Pyrénées</a></li>
+                                    <li><a href=#>- Alpes</a></li>
+                                    <li><a href=#>- Alsace / Jura</a></li>
+                                    <li><a href=#>- Ariège / Pyrénées</a></li>
                                     <a class="bt link" href="#">Plus de régions</a>
                                 </ul>
                             </div>
                             <div class="region">
-                                <div class="title">Destination Campagne</div>
+                                <a href="#" class="title">Destination Campagne</a>
                                 <ul>
-                                    <li>- <a href=#>Pays de la Loire</a></li>
-                                    <li>- <a href=#>Périgord / Dordogne</a></li>
-                                    <li>- <a href=#>Auvergne</a></li>
+                                    <li><a href=#>- Pays de la Loire</a></li>
+                                    <li><a href=#>- Périgord / Dordogne</a></li>
+                                    <li><a href=#>- Auvergne</a></li>
                                     <a class="bt link" href="#">Plus de régions</a>
                                 </ul>
                             </div>
@@ -58,10 +58,10 @@
                             </div>
                             <div class="region">
                                 <ul>
-                                    <li>- <a href=#>Cantabria</a></li>
-                                    <li>- <a href=#>Costa Brava</a></li>
-                                    <li>- <a href=#>Costa del Azahar</a></li>
-                                    <li>- <a href=#>Costa Dorada</a></li>
+                                    <li><a href=#>- Cantabria</a></li>
+                                    <li><a href=#>- Costa Brava</a></li>
+                                    <li><a href=#>- Costa del Azahar</a></li>
+                                    <li><a href=#>- Costa Dorada</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -72,8 +72,8 @@
                             </div>
                             <div class="region">
                                 <ul>
-                                    <li>- <a href=#>Italie Adriatique</a></li>
-                                    <li>- <a href=#>Italie Méditerranéenne</a></li>
+                                    <li><a href=#>- Italie Adriatique</a></li>
+                                    <li><a href=#>- Italie Méditerranéenne</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -85,7 +85,7 @@
                             </div>
                             <div class="region">
                                 <ul>
-                                    <li>- <a href=#>Centro</a></li>
+                                    <li><a href=#>- Centro</a></li>
                                 </ul>
                             </div>
                         </div>

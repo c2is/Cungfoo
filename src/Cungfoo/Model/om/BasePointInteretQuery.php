@@ -30,6 +30,10 @@ use Cungfoo\Model\PointInteretQuery;
  * @method PointInteretQuery orderByAddress2($order = Criteria::ASC) Order by the address2 column
  * @method PointInteretQuery orderByZipcode($order = Criteria::ASC) Order by the zipcode column
  * @method PointInteretQuery orderByCity($order = Criteria::ASC) Order by the city column
+ * @method PointInteretQuery orderByTel($order = Criteria::ASC) Order by the tel column
+ * @method PointInteretQuery orderByFax($order = Criteria::ASC) Order by the fax column
+ * @method PointInteretQuery orderByEmail($order = Criteria::ASC) Order by the email column
+ * @method PointInteretQuery orderByWebsite($order = Criteria::ASC) Order by the website column
  * @method PointInteretQuery orderByGeoCoordinateX($order = Criteria::ASC) Order by the geo_coordinate_x column
  * @method PointInteretQuery orderByGeoCoordinateY($order = Criteria::ASC) Order by the geo_coordinate_y column
  * @method PointInteretQuery orderByDistanceCamping($order = Criteria::ASC) Order by the distance_camping column
@@ -44,6 +48,10 @@ use Cungfoo\Model\PointInteretQuery;
  * @method PointInteretQuery groupByAddress2() Group by the address2 column
  * @method PointInteretQuery groupByZipcode() Group by the zipcode column
  * @method PointInteretQuery groupByCity() Group by the city column
+ * @method PointInteretQuery groupByTel() Group by the tel column
+ * @method PointInteretQuery groupByFax() Group by the fax column
+ * @method PointInteretQuery groupByEmail() Group by the email column
+ * @method PointInteretQuery groupByWebsite() Group by the website column
  * @method PointInteretQuery groupByGeoCoordinateX() Group by the geo_coordinate_x column
  * @method PointInteretQuery groupByGeoCoordinateY() Group by the geo_coordinate_y column
  * @method PointInteretQuery groupByDistanceCamping() Group by the distance_camping column
@@ -72,6 +80,10 @@ use Cungfoo\Model\PointInteretQuery;
  * @method PointInteret findOneByAddress2(string $address2) Return the first PointInteret filtered by the address2 column
  * @method PointInteret findOneByZipcode(string $zipcode) Return the first PointInteret filtered by the zipcode column
  * @method PointInteret findOneByCity(string $city) Return the first PointInteret filtered by the city column
+ * @method PointInteret findOneByTel(string $tel) Return the first PointInteret filtered by the tel column
+ * @method PointInteret findOneByFax(string $fax) Return the first PointInteret filtered by the fax column
+ * @method PointInteret findOneByEmail(string $email) Return the first PointInteret filtered by the email column
+ * @method PointInteret findOneByWebsite(string $website) Return the first PointInteret filtered by the website column
  * @method PointInteret findOneByGeoCoordinateX(string $geo_coordinate_x) Return the first PointInteret filtered by the geo_coordinate_x column
  * @method PointInteret findOneByGeoCoordinateY(string $geo_coordinate_y) Return the first PointInteret filtered by the geo_coordinate_y column
  * @method PointInteret findOneByDistanceCamping(string $distance_camping) Return the first PointInteret filtered by the distance_camping column
@@ -86,6 +98,10 @@ use Cungfoo\Model\PointInteretQuery;
  * @method array findByAddress2(string $address2) Return PointInteret objects filtered by the address2 column
  * @method array findByZipcode(string $zipcode) Return PointInteret objects filtered by the zipcode column
  * @method array findByCity(string $city) Return PointInteret objects filtered by the city column
+ * @method array findByTel(string $tel) Return PointInteret objects filtered by the tel column
+ * @method array findByFax(string $fax) Return PointInteret objects filtered by the fax column
+ * @method array findByEmail(string $email) Return PointInteret objects filtered by the email column
+ * @method array findByWebsite(string $website) Return PointInteret objects filtered by the website column
  * @method array findByGeoCoordinateX(string $geo_coordinate_x) Return PointInteret objects filtered by the geo_coordinate_x column
  * @method array findByGeoCoordinateY(string $geo_coordinate_y) Return PointInteret objects filtered by the geo_coordinate_y column
  * @method array findByDistanceCamping(string $distance_camping) Return PointInteret objects filtered by the distance_camping column
@@ -196,7 +212,7 @@ abstract class BasePointInteretQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `code`, `address`, `address2`, `zipcode`, `city`, `geo_coordinate_x`, `geo_coordinate_y`, `distance_camping`, `image`, `created_at`, `updated_at`, `active` FROM `point_interet` WHERE `id` = :p0';
+        $sql = 'SELECT `id`, `code`, `address`, `address2`, `zipcode`, `city`, `tel`, `fax`, `email`, `website`, `geo_coordinate_x`, `geo_coordinate_y`, `distance_camping`, `image`, `created_at`, `updated_at`, `active` FROM `point_interet` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -455,6 +471,122 @@ abstract class BasePointInteretQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(PointInteretPeer::CITY, $city, $comparison);
+    }
+
+    /**
+     * Filter the query on the tel column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByTel('fooValue');   // WHERE tel = 'fooValue'
+     * $query->filterByTel('%fooValue%'); // WHERE tel LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $tel The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return PointInteretQuery The current query, for fluid interface
+     */
+    public function filterByTel($tel = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($tel)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $tel)) {
+                $tel = str_replace('*', '%', $tel);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(PointInteretPeer::TEL, $tel, $comparison);
+    }
+
+    /**
+     * Filter the query on the fax column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByFax('fooValue');   // WHERE fax = 'fooValue'
+     * $query->filterByFax('%fooValue%'); // WHERE fax LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $fax The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return PointInteretQuery The current query, for fluid interface
+     */
+    public function filterByFax($fax = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($fax)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $fax)) {
+                $fax = str_replace('*', '%', $fax);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(PointInteretPeer::FAX, $fax, $comparison);
+    }
+
+    /**
+     * Filter the query on the email column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByEmail('fooValue');   // WHERE email = 'fooValue'
+     * $query->filterByEmail('%fooValue%'); // WHERE email LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $email The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return PointInteretQuery The current query, for fluid interface
+     */
+    public function filterByEmail($email = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($email)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $email)) {
+                $email = str_replace('*', '%', $email);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(PointInteretPeer::EMAIL, $email, $comparison);
+    }
+
+    /**
+     * Filter the query on the website column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByWebsite('fooValue');   // WHERE website = 'fooValue'
+     * $query->filterByWebsite('%fooValue%'); // WHERE website LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $website The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return PointInteretQuery The current query, for fluid interface
+     */
+    public function filterByWebsite($website = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($website)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $website)) {
+                $website = str_replace('*', '%', $website);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(PointInteretPeer::WEBSITE, $website, $comparison);
     }
 
     /**

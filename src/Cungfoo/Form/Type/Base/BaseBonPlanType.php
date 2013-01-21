@@ -185,12 +185,12 @@ class BaseBonPlanType extends AppAwareType
             'label' => 'bon_plan.etablissements',
             'required' => false,
         ));
-        $builder->add('destinations', 'model', array(
-            'class' => 'Cungfoo\Model\Destination',
+        $builder->add('regions', 'model', array(
+            'class' => 'Cungfoo\Model\Region',
             'constraints' => array(
             ),
             'multiple' => true,
-            'label' => 'bon_plan.destinations',
+            'label' => 'bon_plan.regions',
             'required' => false,
         ));
         $builder->add('bon_planI18ns', 'translation_collection', array(

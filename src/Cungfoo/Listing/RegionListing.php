@@ -26,6 +26,10 @@ class RegionListing extends BaseRegionListing
         $this->addColumn(new Column\TextColumn('name'));
         $this->addColumn(new Column\TextColumn('pays'));
         $this->removeColumn('image_path');
+        $this->removeColumn('image_encart_path');
+        $this->removeColumn('image_encart_petite_path');
+        $this->removeColumn('image_detail_1');
+        $this->removeColumn('image_detail_2');
     }
 
 } // RegionListing

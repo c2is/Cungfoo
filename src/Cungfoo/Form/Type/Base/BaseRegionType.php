@@ -118,6 +118,14 @@ class BaseRegionType extends AppAwareType
             'label' => 'region.active',
             'required' => false,
         ));
+        $builder->add('bon_plans', 'model', array(
+            'class' => 'Cungfoo\Model\BonPlan',
+            'constraints' => array(
+            ),
+            'multiple' => true,
+            'label' => 'region.bon_plans',
+            'required' => false,
+        ));
         $builder->add('regionI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\RegionI18n',
             'languages' => array(

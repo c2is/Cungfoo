@@ -90,6 +90,11 @@ class DumpCommand extends BaseCommand
         "\\Cungfoo\\Model\\ThemeBaignade",
         "\\Cungfoo\\Model\\ThemeServiceComplementaire",
         "\\Cungfoo\\Model\\ThemePersonnage",
+        "\\Cungfoo\\Model\\BonPlan",
+        "\\Cungfoo\\Model\\BonPlanI18n",
+        "\\Cungfoo\\Model\\BonPlanCategorie",
+        "\\Cungfoo\\Model\\BonPlanCategorieI18n",
+        "\\Cungfoo\\Model\\BonPlanBonPlanCategorie",
     );
 
     protected function configure()

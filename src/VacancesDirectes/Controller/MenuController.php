@@ -69,13 +69,13 @@ class MenuController implements ControllerProviderInterface
         {
             $categoryTypeHebergements = \Cungfoo\Model\CategoryTypeHebergementQuery::create()
                 ->orderBySortableRank()
-                ->find()
+                ->findActive()
             ;
 
             $capacites = \Cungfoo\Model\TypeHebergementCapaciteQuery::create()
                 ->limit(4)
                 ->orderBySortableRank()
-                ->find()
+                ->findActive()
             ;
 
             return $app['twig']->render('Menu/locations.twig', array(

@@ -58,6 +58,30 @@ class BasePointInteretType extends AppAwareType
             'label' => 'point_interet.city',
             'required' => false,
         ));
+        $builder->add('tel', 'text', array(
+            'constraints' => array(
+            ),
+            'label' => 'point_interet.tel',
+            'required' => false,
+        ));
+        $builder->add('fax', 'text', array(
+            'constraints' => array(
+            ),
+            'label' => 'point_interet.fax',
+            'required' => false,
+        ));
+        $builder->add('email', 'text', array(
+            'constraints' => array(
+            ),
+            'label' => 'point_interet.email',
+            'required' => false,
+        ));
+        $builder->add('website', 'text', array(
+            'constraints' => array(
+            ),
+            'label' => 'point_interet.website',
+            'required' => false,
+        ));
         $builder->add('geo_coordinate_x', 'text', array(
             'constraints' => array(
             ),
@@ -118,6 +142,34 @@ class BasePointInteretType extends AppAwareType
                     'required' => false,
                     'label' => 'point_interet.presentation',
                     'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'transport' => array(
+                    'required' => false,
+                    'label' => 'point_interet.transport',
+                    'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'categorie' => array(
+                    'required' => false,
+                    'label' => 'point_interet.categorie',
+                    'type' => 'text',
+                    'constraints' => array(
+                    ),
+                ),
+                'type' => array(
+                    'required' => false,
+                    'label' => 'point_interet.type',
+                    'type' => 'text',
+                    'constraints' => array(
+                    ),
+                ),
+                'slug' => array(
+                    'required' => false,
+                    'label' => 'point_interet.slug',
+                    'type' => 'text',
                     'constraints' => array(
                     ),
                 ),

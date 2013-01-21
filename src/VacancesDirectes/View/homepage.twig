@@ -53,7 +53,7 @@
         {% if topCampings | length %}
         {% for camping in topCampings %}
             {% if loop.index <= 3 %}
-            {% set campingPath = path('destination_camping', {'pays': camping.etablissement.pays.slug, 'region': camping.etablissement.region.slug, 'ville': camping.etablissement.ville.slug, 'camping': camping.etablissement.slug }) %}
+            {% set campingPath = url('destination_camping', {'pays': camping.etablissement.pays.slug, 'region': camping.etablissement.region.slug, 'ville': camping.etablissement.ville.slug, 'camping': camping.etablissement.slug }) %}
             <div class="element clear linkParent">
                 <div class="left">
                     <img class="boxborder" src="{{ asset(camping.etablissement.vignette) }}" width="119" height="86" alt="" />
@@ -81,9 +81,9 @@
 </div>
 <div class="ratio-33 left clear">
     {% if app.debug %}
-    {{ render(path('esi_early_booking')) }}
+    {{ render(path('esi_home_widget')) }}
     {% else %}
-    <esi:include src="{{ path('esi_early_booking') }}" />
+    <esi:include src="{{ path('esi_home_widget') }}" />
     {% endif %}
 </div>
 
@@ -230,7 +230,7 @@
                             center: centerhomeMkr
                         };
                     homeMap = new google.maps.Map(document.getElementById('homeMap'), mapOptions);
-                    consoleLog(homeMkrs);
+//                    consoleLog(homeMkrs);
                     setMarkers(homeMap, homeMkrs);
 
 

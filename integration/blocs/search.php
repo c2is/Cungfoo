@@ -27,16 +27,39 @@
                 </li>
                 <li>
                     <div id="SearchDate_selectContainer0" class="selectContainer clear">
-                        <label for="SearchDate_duration">Nombre de jours</label>
-                        <select id="SearchDate_duration" name="SearchDate[destination]" >
-                            <option value="">Nombre de jours</option>
-                            <option value="1">1</option>
+                        <input type="hidden" id="SearchDate_duration_isBasseSaison" value="1" />
+                        <label for="SearchDate_duration_isBasseSaison_0">Nombre de nuits</label>
+                        <select id="SearchDate_duration_isBasseSaison_0" name="SearchDate[destination]" >
+                            <option value="">Nombre de nuits</option>
+                            <option value="3">3</option>
+                            <option value="3">4</option>
+                            <option value="3">7</option>
+                            <option value="3">10</option>
+                            <option value="3">11</option>
+                            <option value="3">14</option>
+                            <option value="3">17</option>
+                            <option value="3">18</option>
+                            <option value="3">21</option>
+                            <option value="3">24</option>
+                            <option value="3">25</option>
+                            <option value="3">28</option>
+                        </select>
+                        <label for="SearchDate_duration_isBasseSaison_1">Nombre de nuits</label>
+                        <select id="SearchDate_duration_isBasseSaison_1" name="SearchDate[destination]" >
+                            <option value="">Nombre de nuits</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="3">4</option>
-                            <option value="3">5</option>
-                            <option value="3">6</option>
                             <option value="3">7</option>
+                            <option value="3">10</option>
+                            <option value="3">11</option>
+                            <option value="3">14</option>
+                            <option value="3">17</option>
+                            <option value="3">18</option>
+                            <option value="3">21</option>
+                            <option value="3">24</option>
+                            <option value="3">25</option>
+                            <option value="3">28</option>
                         </select>
                     </div>
                 </li>

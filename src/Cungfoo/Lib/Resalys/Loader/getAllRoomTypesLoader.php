@@ -43,7 +43,7 @@ class getAllRoomTypesLoader extends AbstractLoader
 
         $objectRoomType->setLocale($locale);
         $objectRoomType->setName($roomtype->{'label'});
-        $objectRoomType->setNombrePlace($roomtype->{'nb_beds'});
+        $objectRoomType->setNombrePlace($roomtype->{'pax_max'});
 
         if (property_exists($roomtype, 'category_code'))
         {

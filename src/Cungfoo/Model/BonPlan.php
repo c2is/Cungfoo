@@ -18,13 +18,18 @@ use Cungfoo\Model\om\BaseBonPlan;
  */
 class BonPlan extends BaseBonPlan
 {
-    public function getDestinationsCodes()
+    public function __toString()
+    {
+        return $this->getName();
+    }
+
+    public function getRegionsCodes()
     {
         $codes = array();
 
-        foreach ($this->getDestinations() as $destination)
+        foreach ($this->getRegions() as $Region)
         {
-            $codes[] = $destination->getCode();
+            $codes[] = $Region->getCode();
         }
 
         return implode(',', $codes);
@@ -50,7 +55,7 @@ class BonPlan extends BaseBonPlan
 
         foreach ($diff as $key => $value)
         {
-            if($key == "d" || $key == "h" || $key == "i")
+            if ($key == "d" || $key == "h" || $key == "i")
             {
                 $compteur[$key] = $value;
             }

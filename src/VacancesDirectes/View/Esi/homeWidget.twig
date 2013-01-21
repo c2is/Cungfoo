@@ -2,7 +2,7 @@
     <div class="stamp grey">
         <h2>{{ "home.early_booking" | trans }}</h2>
     </div>
-    {% for etab in early_booking.element %}
+    {% for etab in dispos.element %}
         {% for proposal in etab.extra %}
         <div class="element clear linkParent">
             <div class="details left">
@@ -21,6 +21,8 @@
             </div>
         </div>
         {% endfor %}
+    {% else %}
+    Aucun camping
     {% endfor %}
-    <a href="{{ path('bonsplans', {'slug': 'early-booking'}) }}" class="bt link right">{{ "home.early_booking.link" | trans  ({'%number%': early_booking.element|length }) }}</a>
+    <a href="{{ path('bonsplans', {'slug': bon_plan.slug}) }}" class="bt link right">{{ "home.early_booking.link" | trans  ({'%number%': dispos.element|length }) }}</a>
 </div>

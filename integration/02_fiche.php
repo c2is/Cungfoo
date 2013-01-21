@@ -34,7 +34,7 @@
     <!-- // colonne gauche -->
     <!-- colonne droite -->
         <aside class="column right">
-            <?php include('blocs/search.php') ?>
+            <?php include('blocs/dispo.php') ?>
             <div id="greyBoxes" class="clear">
                 <?php include('blocs/offresSpeciales.php') ?>
                 <?php include('blocs/dejaVu.php') ?>

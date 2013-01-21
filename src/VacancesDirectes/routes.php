@@ -38,6 +38,8 @@ $app->mount('/destinations/camping-{pays}',           new Controller\Destination
 $app->mount('/bons-plans',                            new Controller\BonsPlansController());
 $app->mount('/compte',                                new Controller\CompteController());
 $app->mount('/vos-week-ends',                         new Controller\VosWeekEndsController());
+$app->mount('/lieu-a-visiter',                             new Controller\FichePOIController());
+$app->mount('/evenement',                           new Controller\FicheEventController());
 $app->mount('/esi',                                   new Controller\EsiController());
 $app->mount('/assurance',                             new Controller\AnnulationController());
 $app->mount('/search_filter',                         new Controller\SearchFilterController());

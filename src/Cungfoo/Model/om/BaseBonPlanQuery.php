@@ -15,13 +15,13 @@ use \PropelPDO;
 use Cungfoo\Model\BonPlan;
 use Cungfoo\Model\BonPlanBonPlanCategorie;
 use Cungfoo\Model\BonPlanCategorie;
-use Cungfoo\Model\BonPlanDestination;
 use Cungfoo\Model\BonPlanEtablissement;
 use Cungfoo\Model\BonPlanI18n;
 use Cungfoo\Model\BonPlanPeer;
 use Cungfoo\Model\BonPlanQuery;
-use Cungfoo\Model\Destination;
+use Cungfoo\Model\BonPlanRegion;
 use Cungfoo\Model\Etablissement;
+use Cungfoo\Model\Region;
 
 /**
  * Base class that represents a query for the 'bon_plan' table.
@@ -78,9 +78,9 @@ use Cungfoo\Model\Etablissement;
  * @method BonPlanQuery rightJoinBonPlanEtablissement($relationAlias = null) Adds a RIGHT JOIN clause to the query using the BonPlanEtablissement relation
  * @method BonPlanQuery innerJoinBonPlanEtablissement($relationAlias = null) Adds a INNER JOIN clause to the query using the BonPlanEtablissement relation
  *
- * @method BonPlanQuery leftJoinBonPlanDestination($relationAlias = null) Adds a LEFT JOIN clause to the query using the BonPlanDestination relation
- * @method BonPlanQuery rightJoinBonPlanDestination($relationAlias = null) Adds a RIGHT JOIN clause to the query using the BonPlanDestination relation
- * @method BonPlanQuery innerJoinBonPlanDestination($relationAlias = null) Adds a INNER JOIN clause to the query using the BonPlanDestination relation
+ * @method BonPlanQuery leftJoinBonPlanRegion($relationAlias = null) Adds a LEFT JOIN clause to the query using the BonPlanRegion relation
+ * @method BonPlanQuery rightJoinBonPlanRegion($relationAlias = null) Adds a RIGHT JOIN clause to the query using the BonPlanRegion relation
+ * @method BonPlanQuery innerJoinBonPlanRegion($relationAlias = null) Adds a INNER JOIN clause to the query using the BonPlanRegion relation
  *
  * @method BonPlanQuery leftJoinBonPlanI18n($relationAlias = null) Adds a LEFT JOIN clause to the query using the BonPlanI18n relation
  * @method BonPlanQuery rightJoinBonPlanI18n($relationAlias = null) Adds a RIGHT JOIN clause to the query using the BonPlanI18n relation
@@ -1078,41 +1078,41 @@ abstract class BaseBonPlanQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query by a related BonPlanDestination object
+     * Filter the query by a related BonPlanRegion object
      *
-     * @param   BonPlanDestination|PropelObjectCollection $bonPlanDestination  the related object to use as filter
+     * @param   BonPlanRegion|PropelObjectCollection $bonPlanRegion  the related object to use as filter
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return   BonPlanQuery The current query, for fluid interface
      * @throws   PropelException - if the provided filter is invalid.
      */
-    public function filterByBonPlanDestination($bonPlanDestination, $comparison = null)
+    public function filterByBonPlanRegion($bonPlanRegion, $comparison = null)
     {
-        if ($bonPlanDestination instanceof BonPlanDestination) {
+        if ($bonPlanRegion instanceof BonPlanRegion) {
             return $this
-                ->addUsingAlias(BonPlanPeer::ID, $bonPlanDestination->getBonPlanId(), $comparison);
-        } elseif ($bonPlanDestination instanceof PropelObjectCollection) {
+                ->addUsingAlias(BonPlanPeer::ID, $bonPlanRegion->getBonPlanId(), $comparison);
+        } elseif ($bonPlanRegion instanceof PropelObjectCollection) {
             return $this
-                ->useBonPlanDestinationQuery()
-                ->filterByPrimaryKeys($bonPlanDestination->getPrimaryKeys())
+                ->useBonPlanRegionQuery()
+                ->filterByPrimaryKeys($bonPlanRegion->getPrimaryKeys())
                 ->endUse();
         } else {
-            throw new PropelException('filterByBonPlanDestination() only accepts arguments of type BonPlanDestination or PropelCollection');
+            throw new PropelException('filterByBonPlanRegion() only accepts arguments of type BonPlanRegion or PropelCollection');
         }
     }
 
     /**
-     * Adds a JOIN clause to the query using the BonPlanDestination relation
+     * Adds a JOIN clause to the query using the BonPlanRegion relation
      *
      * @param     string $relationAlias optional alias for the relation
      * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
      *
      * @return BonPlanQuery The current query, for fluid interface
      */
-    public function joinBonPlanDestination($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    public function joinBonPlanRegion($relationAlias = null, $joinType = Criteria::INNER_JOIN)
     {
         $tableMap = $this->getTableMap();
-        $relationMap = $tableMap->getRelation('BonPlanDestination');
+        $relationMap = $tableMap->getRelation('BonPlanRegion');
 
         // create a ModelJoin object for this join
         $join = new ModelJoin();
@@ -1127,14 +1127,14 @@ abstract class BaseBonPlanQuery extends ModelCriteria
             $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
             $this->addJoinObject($join, $relationAlias);
         } else {
-            $this->addJoinObject($join, 'BonPlanDestination');
+            $this->addJoinObject($join, 'BonPlanRegion');
         }
 
         return $this;
     }
 
     /**
-     * Use the BonPlanDestination relation BonPlanDestination object
+     * Use the BonPlanRegion relation BonPlanRegion object
      *
      * @see       useQuery()
      *
@@ -1142,13 +1142,13 @@ abstract class BaseBonPlanQuery extends ModelCriteria
      *                                   to be used as main alias in the secondary query
      * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
      *
-     * @return   \Cungfoo\Model\BonPlanDestinationQuery A secondary query class using the current class as primary query
+     * @return   \Cungfoo\Model\BonPlanRegionQuery A secondary query class using the current class as primary query
      */
-    public function useBonPlanDestinationQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    public function useBonPlanRegionQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
     {
         return $this
-            ->joinBonPlanDestination($relationAlias, $joinType)
-            ->useQuery($relationAlias ? $relationAlias : 'BonPlanDestination', '\Cungfoo\Model\BonPlanDestinationQuery');
+            ->joinBonPlanRegion($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'BonPlanRegion', '\Cungfoo\Model\BonPlanRegionQuery');
     }
 
     /**
@@ -1260,19 +1260,19 @@ abstract class BaseBonPlanQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query by a related Destination object
-     * using the bon_plan_destination table as cross reference
+     * Filter the query by a related Region object
+     * using the bon_plan_region table as cross reference
      *
-     * @param   Destination $destination the related object to use as filter
+     * @param   Region $region the related object to use as filter
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return   BonPlanQuery The current query, for fluid interface
      */
-    public function filterByDestination($destination, $comparison = Criteria::EQUAL)
+    public function filterByRegion($region, $comparison = Criteria::EQUAL)
     {
         return $this
-            ->useBonPlanDestinationQuery()
-            ->filterByDestination($destination, $comparison)
+            ->useBonPlanRegionQuery()
+            ->filterByRegion($region, $comparison)
             ->endUse();
     }
 

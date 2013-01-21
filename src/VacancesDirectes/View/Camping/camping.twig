@@ -1,10 +1,6 @@
 {% extends "base.twig" %}
 
-{% block title %}
-    {{ "seo.title.camping" | trans ({'%nom%': etab.name, '%ville%': etab.ville }) }}
-    {%if hasBaignade %}{{ "seo.title.camping_suffix" | trans }}{% endif %}
-    {{ etab.categorie }}
-{% endblock %}
+{% block title %}{{ "seo.title.camping" | trans ({'%nom%': etab.name, '%ville%': etab.ville }) }}{% if hasBaignade %}{{ "seo.title.camping_suffix" | trans }}{% endif %} {{ etab.categorie }}{% endblock %}
 {% block metaDescription %}{{ "seo.meta.camping" | trans  ({'%nom%': etab.name, '%nbEtoiles%': etab.categorie, '%ville%': etab.ville })}}{% endblock %}
 
 {% block bodyClass %} fiche{% endblock %}
@@ -13,7 +9,7 @@
 
 {% block leftColumn %}
 <nav id="ficheShare">
-    <a href="https://www.facebook.com/sharer/sharer.php?u={{ app.request.uri }}" class="icon facebook" title="Partager sur Facebook">Partager sur Facebook</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{ app.request.uri }}" target="_blank" class="icon facebook" title="Partager sur Facebook">Partager sur Facebook</a>
     <a href="http://twitter.com/home?status={{ etab.name }} {{ "destination.camping_title" | trans({'%ville%': etab.ville.name}) }} {% if hasBaignade %}{{ "seo.title.camping_suffix" | trans }}{% endif %} {{ app.request.uri }}" target="_blank" class="icon twitter" title="Partager sur Twitter">Partager sur Twitter</a>
     {#<a href="#_" class="icon email" title="Partager par email">Partager par email</a>#}
     {#<a href="javascript:window.print()" class="icon print" title="Imprimer">Imprimer</a>#}
@@ -93,54 +89,58 @@
 </div>
 <div id="tabCamp" class="tabs">
     <div class="tabCampDesc">
-        <h3>{{ etab.title}}</h3>
+        <h3>{% if etab.title %}{{ etab.title }}{% else %}{{ etab.name }}{% endif %}</h3>
         <p class="tabCampDescTitle"><strong>{{ etab.capacite }} {{ "fiche.emplacements" | trans }} | {{ "fiche.ouvert_du" | trans }} {{ etab.openingDate | date('d/m/Y') }} au {{ etab.closingDate | date('d/m/Y') }}</strong></p>
         <p>{{ etab.description }}</p>
     </div>
-    <div class="temoignFiche bloc gris">
-        {% if personnages | length %}
-        <h3>{{ "fiche.vous_aimerez" | trans }}</h3>
-        <h4>{{ "fiche.comme" | trans }}</h4>
-        <div>
-            {% for personnage in personnages %}
-                <div class="temoignFicheIt fish">
-                    <span class="perso">{{ personnage.prenom | trans }}</span>
-                    <span class="age">{{ personnage.age }} ans</span>
-                    <ul>
-                        {% for avantage in personnage.avantages %}
-                        <li>{{ avantage.name }}</li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            {% endfor %}
+    {% if etab.countPoi != 0 or etab.countActivitesSportives != 0 or etab.countEvenementsCulturels != 0 %}
+        <div class="temoignFiche bloc gris">
+            {% if personnages | length %}
+            <h3>{{ "fiche.vous_aimerez" | trans }}</h3>
+            <h4>{{ "fiche.comme" | trans }}</h4>
+            <div>
+                {% for personnage in personnages %}
+                    <div class="temoignFicheIt fish">
+                        <span class="perso">{{ personnage.prenom | trans }}</span>
+                        <span class="age">{{ personnage.age }} ans</span>
+                        <ul>
+                            {% for avantage in personnage.avantages %}
+                            <li>{{ avantage.name }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endfor %}
+            </div>
+            <hr class="clearboth">
+            {% endif %}
+            <h4>{{ "fiche.les_vacances_a" | trans }} {{ etab.city }}</h4>
+            <div>
+                <dl>
+                    <dd class="img"><img src="{{ asset(etab.ville.region.imagePath) }}" width="75"></dd>
+                    <dt>{{ "fiche.a_proximite" | trans }}<br> {{ "fiche.nous_avons_liste" | trans }}</dt>
+                    <dd class="list">
+                        <ul>
+                            {% if etab.countPoi != 0 %}<li>{{ etab.countPoi }} {{ "fiche.sites_a_visiter" | trans }}</li>{% endif %}
+                            {% if etab.countActivitesSportives != 0 %}<li>{{ etab.countActivitesSportives }} {{ "fiche.activites_sportives" | trans }}</li>{% endif %}
+                            {% if etab.countEvenementsCulturels != 0 %}<li>{{ etab.countEvenementsCulturels }} {{ "fiche.evenements_culturels" | trans }}</li>{% endif %}
+                        </ul>
+                    </dd>
+                </dl>
+            {% if etab.eventPrioritaire | length %}
+            <dl>
+                <dt>{{ "fiche.evenement_ne_pas_manquer" | trans }}</dt>
+                <dd class="img"><img src="{{ etab.eventPrioritaire.image }}" /></dd>
+                <dd class="list event">
+                    <strong>{{ etab.eventPrioritaire.name }}<br />
+                    {{ etab.eventPrioritaire.strDate }}</strong> {{ etab.eventPrioritaire.address }}<br />
+                    {{ etab.eventPrioritaire.zipcode }} {{ etab.eventPrioritaire.city }}<br />
+                    {{ "fiche.distance_camping" | trans }} {{ (etab.eventPrioritaire.distanceCamping / 1000) | number_format(1, ',', ' ') }} {{ "fiche.km" | trans }}
+                </dd>
+            </dl>
+            {% endif %}
+            </div>
         </div>
-        <hr class="clearboth">
-        {% endif %}
-        <h2>{{ "fiche.les_vacances_a" | trans }} {{ etab.city }}</h2>
-        <dl>
-            <dd class="img"><img src="{{ asset(etab.ville.region.imagePath) }}" width="75"></dd>
-            <dt>{{ "fiche.a_proximite" | trans }}<br> {{ "fiche.nous_avons_liste" | trans }}</dt>
-            <dd class="list">
-               <ul>
-                   <li>{{ etab.countPoi }} {{ "fiche.sites_a_visiter" | trans }}</li>
-                   <li>{{ etab.countActivitesSportives }} {{ "fiche.activites_sportives" | trans }}</li>
-                   <li>{{ etab.countEvenementsCulturels }} {{ "fiche.evenements_culturels" | trans }}</li>
-               </ul>
-            </dd>
-        </dl>
-        {% if etab.eventPrioritaire | length %}
-        <dl>
-            <dt>{{ "fiche.evenement_ne_pas_manquer" | trans }}</dt>
-            <dd class="img"><img src="{{ etab.eventPrioritaire.image }}" /></dd>
-            <dd class="list event">
-                <strong>{{ etab.eventPrioritaire.name }}<br />
-                {{ etab.eventPrioritaire.strDate }}</strong> {{ etab.eventPrioritaire.address }}<br />
-                {{ etab.eventPrioritaire.zipcode }} {{ etab.eventPrioritaire.city }}<br />
-                {{ "fiche.distance_camping" | trans }} {{ etab.eventPrioritaire.distanceCamping/1000 }} {{ "fiche.km" | trans }}
-            </dd>
-        </dl>
-        {% endif %}
-    </div>
+    {% endif %}
     <nav class="paginationTabs clear">
         <button class="bt trans right triggerClick" data-triggerLink="#tabLocations">{{ "fiche.les_locations" | trans }}</button>
     </nav>
@@ -178,9 +178,10 @@
             {#<strong>{{ "fiche.nombre_chambres" | trans }} {{ hebergement.nombrePlace | trans | nl2br }}<br>
             {{ "fiche.surface" | trans }} {{ hebergement.surface | trans }}<br>
             {{ "fiche.type_terrasse" | trans }} {{ hebergement.typeTerrasse | trans }}</strong>#}
-            <p>
-            {% if hebergement.capaciteHebergement %}<strong>{{ "fiche.nombre_personnes" | trans }}</strong> {{ hebergement.capaciteHebergement | trans | nl2br }}{% endif %}
-            {% if hebergement.dimensions %}{{ hebergement.dimensions | trans }}{% endif %}
+            <p><strong>
+            {% if hebergement.capaciteHebergement %}{{ "fiche.nombre_personnes" | trans }} {{ hebergement.capaciteHebergement | trans | nl2br }}<br />{% endif %}
+            {% if hebergement.dimensions %}{{ hebergement.dimensions | trans }}{% endif %}<br />
+            {% if hebergement.remarque2 %}{{ hebergement.remarque2 | trans }}{% endif %}</strong>
             </p>
             <br />
             <p class="clearboth">{{ hebergement.presentation | trans | nl2br }}</p>
@@ -296,6 +297,8 @@
                     {{ poi.address2 }}<br>
                 <span>{{ poi.zipcode }} {{ poi.city }}</span><br>
                     {{ "fiche.distance_camping" | trans }} {{ (poi.distanceForEtablissement(etab) / 1000) | number_format(1, ',', ' ') }} {{ "fiche.km" | trans }}<br>
+                    <a href="{{ path('poi', {slug: poi.slug}) }}" class="bt sombre left" title="{{ "general.en_savoir_plus" | trans }}">{{ "general.en_savoir_plus" | trans }}</a>
+                </p>
             </div>
         {% endfor %}
     </div>
@@ -312,6 +315,8 @@
                     {{ event.address2 }}<br>
                 <span>{{ event.zipcode }} {{ event.city }}</span><br>
                     {{ "fiche.distance_camping" | trans }} {{ (event.distanceForEtablissement(etab) / 1000) | number_format(1, ',', ' ') }} {{ "fiche.km" | trans }}<br>
+                    <a href="{{ path('event', {slug: event.slug}) }}" class="bt sombre left" title="{{ "general.en_savoir_plus" | trans }}">{{ "general.en_savoir_plus" | trans }}</a>
+                </p>
             </div>
         {% endfor %}
     </div>

@@ -1,0 +1,73 @@
+{% extends "Event/base.twig" %}
+
+{% block title %}
+{% spaceless %}
+    {{ "seo.title.event" | trans ({'%event%': event.name, '%ville%': event.city})}}
+{% endspaceless %}
+{% endblock %}
+
+{% block metaDescription %}
+{% spaceless %}
+    {{ "seo.meta.event" | trans  ({'%event%': event.name, '%ville%': event.city})}}
+{% endspaceless %}
+{% endblock %}
+
+{% block topLeftColumn %}
+
+    {# Bloc titre + accroche + picto #}
+
+    <h1>{{ event.name }}</h1> {# Titre #}
+    <div class="description">
+        <img class="left border" src="{{ event.image }}">
+        <p>{{ event.description }}</p>
+    </div>
+
+
+{% endblock %}
+
+{% block topRightColumn %}
+
+        {% include 'Form/_search_engine.twig' %}
+
+{% endblock %}
+
+{% block contentFull %}
+    <div class="radiusBox3">
+        <h2 class="title">{{ "event.informations_pratiques" | trans }}</h2>
+        <div class="content clear">
+            <div class="contentL">
+                <p>{{ event.zipcode }} {{ event.city }}</p>
+                <p>
+                    {% if event.address != "" or event.address2 != "" %} <span class="label">{{ "event.adresse" | trans }}</span><br />
+                        {% if event.address != "" %} {{ event.address }}<br> {% endif %}
+                        {% if event.address2 != "" %}{{ event.address2 }}<br> {% endif %}
+                    {% endif %}
+                    {{ event.zipcode }} {{ event.city }}<br />
+                    {% if event.tel != "" %} <span class="label">{{ "event.tel" | trans }}</span> {{ event.tel }}<br /> {% endif %}
+                    {% if event.fax != "" %} <span class="label">{{ "event.fax" | trans }}</span> {{ event.fax }}<br /> {% endif %}
+                    {% if event.email != "" %} <span class="label">{{ "event.email" | trans }}</span> {{ event.email }} {% endif %}
+                </p>
+            </div>
+            <div class="contentR">
+                {% if event.transport != "" %} <p><span class="label">{{ "event.transport" | trans }}</span> {{ event.transport }}</p> {% endif %}
+            </div>
+            {% if event.website != "" %}<a class="bt fushia ib right clearboth" href="{{ event.website }}" target="_blank">{{ "event.acceder_site" | trans }}</a>{% endif %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block bottomLeftColumn %}
+
+    {# Bloc "Notre sélection de campings" #}
+    <h2 class="h3-like">{{ "destination.campings_selection_title" | trans }}</h2>
+    {% include 'Listing/_listing.twig' %}
+
+{% endblock %}
+
+{% block bottomRightColumn %}
+<div id="greyBoxes">
+    {% include 'Bloc/sejour_reussi.twig' %}
+
+    {% include 'Bloc/informations.twig' %}
+</div>
+{% endblock %}

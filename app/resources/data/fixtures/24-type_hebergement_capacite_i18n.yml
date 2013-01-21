@@ -18,8 +18,8 @@
         Locale: fr
         Name: '2 adultes'
         Slug: 2-adultes
-        Accroche: null
-        Description: null
+        Accroche: 'Partez à deux !'
+        Description: 'Que vous recherchiez plutôt la simplicité, le grand confort, l''originalité ou l''authenticité, retrouvez tous nos hébergements pour vos vacances en couple.'
     1_nl:
         Id: 1
         Locale: nl
@@ -44,10 +44,10 @@
     2_fr:
         Id: 2
         Locale: fr
-        Name: '2 adultes 1 enfant'
-        Slug: 2-adultes-1-enfant
-        Accroche: null
-        Description: null
+        Name: '2 adultes 3 enfants'
+        Slug: 2-adultes-3-enfants
+        Accroche: 'Du bonheur pour toute la famille !'
+        Description: 'Adaptés à tous les portefeuilles, aux familles plus ou moins grandes et à votre mode de vacances favori, nos hébergements vous attendent pour des vacances en famille, l''esprit libre.'
     2_nl:
         Id: 2
         Locale: nl
@@ -74,8 +74,8 @@
         Locale: fr
         Name: '2 adultes 2 enfants'
         Slug: 2-adultes-2-enfants
-        Accroche: null
-        Description: null
+        Accroche: 'Les joies des vacances en famille'
+        Description: 'Nos hébergements bien équipés et adaptés à vos attentes vous permettront de passer des vacances réussies en famille.'
     3_nl:
         Id: 3
         Locale: nl
@@ -102,8 +102,8 @@
         Locale: fr
         Name: '4 adultes et plus'
         Slug: 4-adultes-et-plus
-        Accroche: null
-        Description: null
+        Accroche: 'Entre amis'
+        Description: 'Retrouvez-vous entre amis et profitez de nos hébergements pour vivre des bons moments de détente et de franche rigolade.'
     4_nl:
         Id: 4
         Locale: nl
