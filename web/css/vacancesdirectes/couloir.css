@@ -1548,6 +1548,11 @@ textarea {
   padding-top: 10px;
   text-align: left;
 }
+.proposal table .optionPrice,
+.proposal table .optionPriceDiscount {
+  padding-left: 5px;
+  text-align: right;
+}
 #please_wait_layer {
   position: absolute;
   top: 0;
