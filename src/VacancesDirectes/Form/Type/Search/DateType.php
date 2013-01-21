@@ -26,7 +26,47 @@ class DateType extends AppAwareType
             'required' => false,
         ));
 
-        $builder->add('nbJours', 'choice', array(
+        $builder->add('isBasseSaison', 'hidden', array(
+            'required' => false,
+        ));
+
+        $builder->add('nbJoursBasseSaison', 'choice', array(
+            'choices'     => array(
+                2  => "2 nuits",
+                3  => "3 nuits",
+                4  => "4 nuits",
+                5  => "5 nuits",
+                6  => "6 nuits",
+                7  => "7 nuits",
+                8  => "8 nuits",
+                9  => "9 nuits",
+                10 => "10 nuits",
+                11 => "11 nuits",
+                12  => "12 nuits",
+                13  => "13 nuits",
+                14 => "14 nuits",
+                15  => "15 nuits",
+                16  => "16 nuits",
+                17 => "17 nuits",
+                18 => "18 nuits",
+                19  => "19 nuits",
+                20  => "20 nuits",
+                21 => "21 nuits",
+                22  => "22 nuits",
+                23  => "23 nuits",
+                24 => "24 nuits",
+                25 => "25 nuits",
+                26  => "26 nuits",
+                27  => "27 nuits",
+                28 => "28 nuits"
+            ),
+            'label'       => 'date_search.nb_jours',
+            'empty_value' => "date_search.nb_jours.empty_value",
+            'empty_data'  => null,
+            'required'    => false,
+        ));
+
+        $builder->add('nbJoursHauteSaison', 'choice', array(
             'choices'     => array(
                 3  => "3 nuits",
                 4  => "4 nuits",
