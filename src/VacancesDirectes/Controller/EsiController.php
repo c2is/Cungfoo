@@ -50,7 +50,7 @@ class EsiController implements ControllerProviderInterface
                         ->setNbDays(7)
                         ->addTheme($bonPlan->getRegionsCodes())
                         ->addEtab($bonPlan->getEtablissementsCodes())
-                        ->setNbAdults(1)
+                        ->setNbAdults($bonPlan->getNbAdultes())
                         ->setPeriodCategories($bonPlan->getPeriodCategories())
                         ->setMaxResults(10)
                     ;
