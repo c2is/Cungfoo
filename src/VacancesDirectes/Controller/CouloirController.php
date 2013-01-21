@@ -25,7 +25,7 @@ class CouloirController implements ControllerProviderInterface
     {
         $controllers = $app['controllers_factory'];
 
-        $controllers->match('/detail-sejour/{proposalKey}', function (Request $request, $proposalKey) use ($app) {
+        $controllers->match('/' . $app->trans('seo.url.couloir.detail') . '/{proposalKey}', function (Request $request, $proposalKey) use ($app) {
 
             $rslConfig = $app['config']->get('rsl_config')['services']['disponibilite']['default_envelope'];
 
@@ -50,7 +50,7 @@ class CouloirController implements ControllerProviderInterface
         ->value('proposalKey', null)
         ->bind('couloir_detail_sejour');
 
-        $controllers->post('/recapitulatif/{proposalKey}', function (Request $request, $proposalKey) use ($app) {
+        $controllers->post('/' . $app->trans('seo.url.couloir.recapitulatif') . '/{proposalKey}', function (Request $request, $proposalKey) use ($app) {
 
             $rslConfig = $app['config']->get('rsl_config')['services']['disponibilite']['default_envelope'];
 
@@ -79,7 +79,7 @@ class CouloirController implements ControllerProviderInterface
         ->bind('couloir_recapitulatif');
 
 
-        $controllers->get('/confirmation', function (Request $request) use ($app) {
+        $controllers->get('/' . $app->trans('seo.url.couloir.confirmation') . '', function (Request $request) use ($app) {
 
             $rslConfig = $app['config']->get('rsl_config')['services']['disponibilite']['default_envelope'];
 

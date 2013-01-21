@@ -40,6 +40,32 @@ seo:
                 categorie: "Location de %type% dans de nombreux campings de qualité en France, en Espagne et en Italie avec Vacances Directes."
                 capacite:  "Location de vacances pour %type% dans de nombreux campings de qualité en France, en Espagne et en Italie avec Vacances Directes."
             fiche: "Passez vos prochaines vacances en %type% %name% pour %personnes% dans de nombreux campings de qualité avec Vacances Directes."
+    url:
+        prefix: "camping"
+        catalogue: "catalogue"
+        dispo: "dispo"
+        couloir:
+            index: "couloir-reservation"
+            detail: "detail-sejour"
+            recapitulatif: "recapitulatif"
+            confirmation: "confirmation"
+        destinations: "destinations"
+        bonsplans: "bons-plans"
+        compte:
+            index: "compte"
+            coordonnees: "coordonnees"
+            brochure: "demande-brochure"
+            reservations: "reservations"
+            fidelite: "avantages-fidelite"
+            parrainage: "parrainage"
+        weekends: "vos-week-ends"
+        lieuVisiter: "lieu-a-visiter"
+        evenement: "evenement"
+        assurance:
+            index: "assurance"
+            confirmation: "confirmation"
+        locations: "locations"
+        topCampings: "top-campings"
 
 pays:
     afghanistan: "Afghanistan"

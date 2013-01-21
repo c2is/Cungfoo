@@ -27,25 +27,24 @@ $app->before(function(Request $request) use ($app) {
 
 $app->mount('/',                                      new Controller\HomepageController());
 $app->mount('/',                                      new Controller\EditoController());
+$app->mount('/esi',                                   new Controller\EsiController());
 $app->mount('/menu',                                  new Controller\MenuController());
+$app->mount('/resalys',                               new WrapperController());
 $app->mount('/camping',                               new Controller\CampingController());
 $app->mount('/search_engine',                         new Controller\SearchEngineController());
-$app->mount('/catalogue',                             new Controller\CatalogueController());
-$app->mount('/dispo',                                 new Controller\DispoController());
-$app->mount('/couloir-reservation',                   new Controller\CouloirController());
-$app->mount('/resalys',                               new WrapperController());
-$app->mount('/destinations/camping-{pays}',           new Controller\DestinationController());
-$app->mount('/bons-plans',                            new Controller\BonsPlansController());
-$app->mount('/compte',                                new Controller\CompteController());
-$app->mount('/vos-week-ends',                         new Controller\VosWeekEndsController());
-$app->mount('/lieu-a-visiter',                             new Controller\FichePOIController());
-$app->mount('/evenement',                           new Controller\FicheEventController());
-$app->mount('/esi',                                   new Controller\EsiController());
-$app->mount('/assurance',                             new Controller\AnnulationController());
 $app->mount('/search_filter',                         new Controller\SearchFilterController());
-$app->mount('/locations',                             new Controller\LocationsController());
-
-$app->match('/top-campings',      'VacancesDirectes\Controller\TopCampingController::indexAction')->bind('top_campings');
+$app->mount('/' . $app->trans('seo.url.catalogue'),       new Controller\CatalogueController());
+$app->mount('/' . $app->trans('seo.url.dispo'),           new Controller\DispoController());
+$app->mount('/' . $app->trans('seo.url.couloir.index'),   new Controller\CouloirController());
+$app->mount('/' . $app->trans('seo.url.bonsplans'),       new Controller\BonsPlansController());
+$app->mount('/' . $app->trans('seo.url.compte.index'),    new Controller\CompteController());
+$app->mount('/' . $app->trans('seo.url.weekends'),        new Controller\VosWeekEndsController());
+$app->mount('/' . $app->trans('seo.url.lieuVisiter'),     new Controller\FichePOIController());
+$app->mount('/' . $app->trans('seo.url.evenement'),       new Controller\FicheEventController());
+$app->mount('/' . $app->trans('seo.url.assurance.index'), new Controller\AnnulationController());
+$app->mount('/' . $app->trans('seo.url.locations'),       new Controller\LocationsController());
+$app->mount('/' . $app->trans('seo.url.destinations') . '/' . $app->trans('seo.url.prefix') . '-{pays}', new Controller\DestinationController());
+$app->match('/' . $app->trans('seo.url.topCampings'), 'VacancesDirectes\Controller\TopCampingController::indexAction')->bind('top_campings');
 
 $app->error(function (\Exception $e, $code) use ($app) {
     if ($app['debug'])
