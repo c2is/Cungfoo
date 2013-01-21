@@ -27,32 +27,37 @@ class EsiController implements ControllerProviderInterface
     {
         $controllers = $app['controllers_factory'];
 
-        $controllers->match('/early-booking', function (Request $request) use ($app)
+        $controllers->match('/bon-plan-home', function (Request $request) use ($app)
         {
             $listing = null;
 
             try
             {
-                $dernieresMinutes = BonPlanQuery::create()
+                $bonPlan = BonPlanQuery::create()
                     ->filterByPushHome(true)
                     ->findOne()
                 ;
 
-                if ($dernieresMinutes)
+                if ($bonPlan)
                 {
-                    $baseDate  = $dernieresMinutes->getDateStart('U') ?: date('U');
-                    $startDate = strtotime('next ' . $dernieresMinutes->getDayStart(), $baseDate);
-                    $startDate = strtotime('+' . ($dernieresMinutes->getDayRange() - 7) . ' days', $startDate);
+                    $baseDate  = $bonPlan->getDateStart('U') ?: date('U');
+                    $startDate = strtotime('next ' . $bonPlan->getDayStart(), $baseDate);
+                    $startDate = strtotime('+' . ($bonPlan->getDayRange() - 7) . ' days', $startDate);
 
                     $searchParams = new SearchParams($app);
                     $searchParams
                         ->setStartDate(date('Y-m-d', $startDate))
                         ->setNbDays(7)
-                        ->addTheme($dernieresMinutes->getRegionsCodes())
-                        ->addEtab($dernieresMinutes->getEtablissementsCodes())
-                        ->setNbAdults(1)
+                        ->addTheme($bonPlan->getRegionsCodes())
+                        ->addEtab($bonPlan->getEtablissementsCodes())
+                        ->setNbAdults($bonPlan->getNbAdultes())
+                        ->setPeriodCategories($bonPlan->getPeriodCategories())
                         ->setMaxResults(10)
                     ;
+
+                    if($bonPlan->getNbEnfants() > 0) {
+                        $searchParams->setNbChildren($bonPlan->getNbEnfants());
+                    }
 
                     $client = new DisponibiliteClient($app['config']->get('root_dir'));
                     $client->addOptions($searchParams->generate());
@@ -67,7 +72,7 @@ class EsiController implements ControllerProviderInterface
             }
             catch (\Exception $e)
             {
-                // TODO : gestion d'erreur
+                $app['logger']->addError(sprintf('Erreur au chargement du widget home early booking : %s', $e->getMessage()));
             }
 
             $liste = null;
@@ -75,13 +80,14 @@ class EsiController implements ControllerProviderInterface
                 $liste = $listing->process();
             }
 
-            $view = $app->renderView('Esi/earlyBooking.twig', array(
-                'early_booking' => $liste,
+            $view = $app->renderView('Esi/homeWidget.twig', array(
+                'bon_plan'  => $bonPlan,
+                'dispos'    => $liste,
             ));
 
             return new Response($view, 200, array('Cache-Control' => 's-maxage=600, public'));
 
-        })->bind('esi_early_booking');
+        })->bind('esi_home_widget');
 
         $controllers->match('/bon-plan/{slug}/{limit}', function (Request $request, $slug, $limit) use ($app)
         {
@@ -116,10 +122,13 @@ class EsiController implements ControllerProviderInterface
                     ->addTheme($bonPlanObject->getRegionsCodes())
                     ->addEtab($bonPlanObject->getEtablissementsCodes())
                     ->setNbAdults($bonPlanObject->getNbAdultes())
-                    ->setNbChildren($bonPlanObject->getNbEnfants())
                     ->setPeriodCategories($bonPlanObject->getPeriodCategories())
                     ->setMaxResults(10)
                 ;
+
+                if($bonPlanObject->getNbEnfants() > 0) {
+                    $searchParams->setNbChildren($bonPlanObject->getNbEnfants());
+                }
 
                 $client = new DisponibiliteClient($app['config']->get('root_dir'));
                 $client->addOptions($searchParams->generate());
@@ -133,7 +142,7 @@ class EsiController implements ControllerProviderInterface
             }
             catch (\Exception $e)
             {
-                // TODO : gestion d'erreur
+                $app['logger']->addError(sprintf('Erreur au chargement du menu Bons Plans : %s', $e->getMessage()));
             }
 
             $liste = null;
@@ -142,7 +151,7 @@ class EsiController implements ControllerProviderInterface
             }
 
             $view = $app->renderView('Esi/bonPlan.twig', array(
-                'bon_plan' => $listing->process(),
+                'bon_plan' => $liste,
             ));
 
             return new Response($view, 200, array('Cache-Control' => 's-maxage=600, public'));
