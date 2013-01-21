@@ -27,6 +27,7 @@ class AvantageListing extends BaseAvantageListing
         $this->addColumn(new Column\TextColumn('personnage'));
         $this->addColumn(new Column\TextColumn('name'));
         $this->addColumn(new Column\TextColumn('description'));
+        $this->removeColumn('image_path');
     }
 
 } // AvantageListing

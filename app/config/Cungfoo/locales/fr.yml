@@ -5,6 +5,7 @@ activite.crud.list: Liste activités
 activite.crud.update: Mettre à jour l'activité %name%
 activite.crud.view: Détails de l'activité %name%
 activite.etablissements: Établissements ayant cette activité
+activite.themes: Themes ayant cette activité
 activite.id: Id
 activite.code: Code
 activite.name: Nom
@@ -14,6 +15,9 @@ activite.keywords: Mots clés
 activite.image.path: Image
 activite.active: Actif
 activite.vignette: Vignette
+activite.activiteI18ns: ""
+activite.image_path_deleted: Supprimer l'image ?
+activite.vignette_deleted: Supprimer la vignette ?
 
 category_type_hebergement.crud.create: Création d'une catégorie de types d'hébergements
 category_type_hebergement.crud.list: Liste catégories de types d'hébergements
@@ -23,7 +27,19 @@ category_type_hebergement.id: Id
 category_type_hebergement.code: Code
 category_type_hebergement.name: Nom
 category_type_hebergement.active: Actif
+category_type_hebergement.minimum_price: "Prix minimum"
+category_type_hebergement.image_menu: "Image du menu"
+category_type_hebergement.image_menu_deleted: "Suppression de l'image du menu ?"
+category_type_hebergement.image_page: "Image de la page"
+category_type_hebergement.image_page_deleted: "Suppression de l'image de la page"
+category_type_hebergement.sortable_rank: "Ordre"
+category_type_hebergement.category_type_hebergementI18ns: ""
+category_type_hebergement.slug: "Slug"
+category_type_hebergement.accroche: "Accroche"
+category_type_hebergement.description: "Description"
+
 type_hebergement.indice: Indice
+
 
 type_hebergement_capacite.crud.create: Création d'une capacité de types d'hébergements
 type_hebergement_capacite.crud.list: Liste des capacités de types d'hébergements
@@ -42,6 +58,7 @@ type_hebergement_capacite.type_hebergement_capaciteI18ns: ""
 type_hebergement_capacite.name: Nom
 type_hebergement_capacite.slug: Slug
 type_hebergement_capacite.description: Description
+type_hebergement_capacite.accroche: "Accroche"
 
 job.crud.list: Liste jobs
 job.name: Nom
@@ -69,9 +86,10 @@ crud.modal.delete.title: Confirmation de suppression
 crud.modal.delete.message: Ètes vous sur de vouloir supprimer l'item <strong>%code%</strong> ?
 crud.modal.delete.ok: Valider
 crud.modal.delete.cancel: Annuler
-crud.tab.datas: Données principales
-crud.tab.medias: Medias
-crud.tab.parameters: Paramètrages
+crud.tab.datas: Données
+crud.tab.medias: Médias
+crud.tab.parameters: Paramètres
+crud.tab.resalys: "Resalys"
 
 destination.crud.create: Création d'une destination
 destination.crud.list: Liste destinations
@@ -82,6 +100,7 @@ destination.id: Id
 destination.code: Code
 destination.name: Nom
 destination.active: Actif
+destination.destinationI18ns: ""
 
 categorie.crud.create: Création d'une catégorie
 categorie.crud.list: Liste catégories
@@ -91,6 +110,7 @@ categorie.id: Id
 categorie.code: Code
 categorie.name: Nom
 categorie.active: Actif
+categorie.categorieI18ns: ""
 
 situation_geographique.crud.create: Création d'une situation géographique
 situation_geographique.crud.list: Liste situations géographiques
@@ -103,6 +123,7 @@ situation_geographique.description: Description
 situation_geographique.keywords: Mots clés
 situation_geographique.etablissements: Établissements ayant cette situation géographique
 situation_geographique.active: Actif
+situation_geographique.situation_geographiqueI18ns: ""
 
 baignade.crud.create: Création d'une baignade
 baignade.crud.list: Liste baignades
@@ -116,6 +137,8 @@ baignade.description: Description
 baignade.keywords: Mots clés
 baignade.active: Actif
 baignade.vignette: Vignette
+baignade.vignette_deleted: "Supprimer la vignette ?"
+baignade.baignadeI18ns: ""
 
 thematique.crud.create: Création d'une thématique
 thematique.crud.list: Liste thématiques
@@ -130,6 +153,8 @@ thematique.etablissements: Établissements ayant cette thématique
 thematique.image_path: Picto
 thematique.image.path: Picto
 thematique.active: Actif
+thematique.image_path_deleted: "Supprimer le picto ?"
+thematique.thematiqueI18ns: ""
 
 etablissement.activites: Liste des activités
 etablissement.city: Ville
@@ -181,6 +206,10 @@ etablissement.slug: Slug
 etablissement.plan.path: Plan
 etablissement.group.resalys: Données résalys
 etablissement.group.cms: Données CMS
+etablissement.vignette_deleted: "Supprimer la vignette ?"
+etablissement.plan_path_deleted: "Supprimer le plan ?"
+etablissement.etablissementI18ns: ""
+etablissement.active: "Active"
 
 list.actions: Actions
 
@@ -244,7 +273,7 @@ theme.crud.view: Détails du theme %name%
 theme.id: Id
 theme.name: Nom
 theme.image.path: Image
-theme.image_path: Image
+theme.image_path_deleted: "Supprimer l'image ?"
 theme.active: Actif
 theme.activites: Liste des activités
 theme.baignades: Liste des themes baignade
@@ -253,12 +282,15 @@ theme.personnages: Liste des personnages
 theme.slug: Slug
 theme.introduction: Introduction
 theme.description: Description
+theme.themeI18ns: ""
+
 
 service_complementaire.crud.create: Création d'un service complémentaire
 service_complementaire.crud.list: Liste services complémentaires
 service_complementaire.crud.update: Mettre à jour le service complémentaire %name%
 service_complementaire.crud.view: Détails du service complémentaire %name%
 service_complementaire.etablissements: Établissements ayant ce service complémentaire
+service_complementaire.themes: Themes ayant ce service complémentaire
 service_complementaire.id: Id
 service_complementaire.code: Code
 service_complementaire.name: Nom
@@ -268,6 +300,10 @@ service_complementaire.image_path: Image
 service_complementaire.image.path: Image
 service_complementaire.active: Actif
 service_complementaire.vignette: Vignette
+service_complementaire.image_path_deleted: "Supprimer l'image ?"
+service_complementaire.vignette_deleted: "Supprimer la vignette"
+service_complementaire.service_complementaireI18ns: ""
+
 
 security.title: Panneau d'administration
 security.username: Nom d'utilisateur
@@ -292,6 +328,9 @@ pays.image.detail.1: Image 1
 pays.image.detail.2: Image 2
 pays.active: Actif
 pays.slug: Slug
+pays.image_detail_1_deleted: Supprimer l'image 1
+pays.image_detail_2_deleted: Supprimer l'image 2
+pays.paysI18ns: ""
 
 region.crud.create: Création d'une région
 region.crud.list: Liste régions
@@ -320,8 +359,13 @@ region.image.detail.1: Image 1
 region.image.detail.2: Image 2
 region.active: Actif
 region.slug: Slug
+<<<<<<< HEAD
 region.destination: Destination
 region.bon_plans: Bons plans
+=======
+region.bon_plans: Bons plan ayant cette région
+region.regionI18ns: ""
+>>>>>>> Backoffice
 
 resalys.actions.import: Importer les données de Resalys
 resalys.title.import: Import Resalys
@@ -366,6 +410,18 @@ type_hebergement.nombre_place: Nombre de place
 type_hebergement.image.hebergement.path: Image
 type_hebergement.image.composition.path: Image composition
 type_hebergement.active: Actif
+type_hebergement.type_hebergementI18ns: ""
+type_hebergement.slug: "Slug"
+type_hebergement.presentation: "Présentation"
+type_hebergement.capacite_hebergement: "Capacité hébergement"
+type_hebergement.dimensions: "Dimensions"
+type_hebergement.agencement: "Agencement"
+type_hebergement.equipements: "Équipements"
+type_hebergement.annee_utilisation: "Année d'utilisation"
+type_hebergement.remarque_1: "Remarque 1"
+type_hebergement.remarque_2: "Remarque 2"
+type_hebergement.remarque_3: "Remarque 3"
+type_hebergement.remarque_4: "Remarque 4"
 
 ville.crud.create: Création d'une ville
 ville.crud.list: Liste villes
@@ -379,10 +435,13 @@ ville.region.id: Code région
 ville.introduction: Introduction
 ville.description: Description
 ville.image_detail_1: Image 1
+ville.image_detail_1_deleted: "Supprimer l'image 1"
 ville.image_detail_2: Image 2
+ville.image_detail_2_deleted: "Supprimer l'image 2"
 ville.image.detail.1: Image 1
 ville.image.detail.2: Image 2
 ville.active: Actif
+ville.villeI18ns: ""
 
 point_interet.crud.create: Création d'un POI
 point_interet.crud.list: Liste des POI
@@ -413,6 +472,7 @@ point_interet.fax: Fax
 point_interet.email: Email
 point_interet.website: Site web
 point_interet.slug: Slug
+point_interet.point_interetI18ns: ""
 
 event.crud.create: Création d'un évènement
 event.crud.list: Liste des évènements
@@ -446,6 +506,7 @@ event.fax: Fax
 event.email: Email
 event.website: Site web
 event.slug: Slug
+event.eventI18ns: ""
 
 personnage.crud.create: Création d'un personnage
 personnage.crud.list: Liste des personnages
@@ -458,6 +519,8 @@ personnage.prenom: Prénom
 personnage.image_path: Image
 personnage.image.path: Image
 personnage.active: Actif
+personnage.personnageI18ns: ""
+personnage.image_path_deleted: "Supprimer l'image ?"
 
 avantage.crud.create: Création d'un avantage
 avantage.crud.list: Liste des avantages
@@ -471,6 +534,7 @@ avantage.image_path: Image
 avantage.image_path_deleted: Supprimer l'image ?
 avantage.image.path: Image
 avantage.active: Actif
+avantage.avantageI18ns: ""
 
 edito.crud.create: Création d'un édito
 edito.crud.list: Liste des editos
@@ -481,6 +545,7 @@ edito.slug: Slug
 edito.name: Titre
 edito.description: Description
 edito.active: Actif
+edito.editoI18ns: ""
 
 multimedia_etablissement.crud.create: Création d'un média
 multimedia_etablissement.crud.list: Liste des média
@@ -493,6 +558,8 @@ multimedia_etablissement.image_path: Image
 multimedia_etablissement.tags: Tags
 multimedia_etablissement.image.path: Image
 multimedia_etablissement.active: Actif
+multimedia_etablissement.image_path_deleted: "Supprimer l'image ?"
+multimedia_etablissement.multimedia_etablissementI18ns: ""
 
 multimedia_type_hebergement.crud.create: Création d'un média type hébergement
 multimedia_type_hebergement.crud.list: Liste des média type hébergement
@@ -507,6 +574,7 @@ multimedia_type_hebergement.image.path: Image
 multimedia_type_hebergement.active: Actif
 multimedia_type_hebergement.type_hebergement: Type hebergement
 multimedia_type_hebergement.multimedia_type_hebergementI18ns: ""
+multimedia_type_hebergement.image_path_deleted: "Supprimer l'image ?"
 
 tag.crud.create: Création d'un tag
 tag.crud.list: Liste des tags
@@ -516,6 +584,8 @@ tag.id: Id
 tag.name: Nom
 tag.multimedia_etablissements: Média
 tag.slug: Slug
+tag.tagI18ns: ""
+tag.active: "Active"
 
 demande_identifiant.crud.list: Liste des demandes d'identifiant
 demande_identifiant.crud.view: Détails de la demande %name%
@@ -589,6 +659,9 @@ mise_en_avant.illustration.path: Illustration
 mise_en_avant.date.fin.validite: Date de fin de validite
 mise_en_avant.sortable_rank: Ordre
 mise_en_avant.active: Actif
+mise_en_avant.image_fond_path_deleted: "Supprimer l'image de fond ?"
+mise_en_avant.illustration_path_deleted: "Supprimer l'illustration ?"
+mise_en_avant.mise_en_avantI18ns: ""
 
 vos_vacances.crud.create: Création d'un encart vos vacances
 vos_vacances.crud.list: Liste des encarts vos vacances
@@ -602,6 +675,8 @@ vos_vacances.age: Age
 vos_vacances.prenom: Prénom
 vos_vacances.image.path: Image
 vos_vacances.active: Actif
+vos_vacances.image_path_deleted: "Supprimer l'image ?"
+vos_vacances.vos_vacancesI18ns: ""
 
 idee_weekend.crud.create: Création d'une idée weekend
 idee_weekend.crud.list: Liste des idée weekend
@@ -609,6 +684,7 @@ idee_weekend.crud.update: Mettre à jour de l'idée weekend %name%
 idee_weekend.crud.view: Détails d'une idée weekend
 idee_weekend.id: Id
 idee_weekend.image_path: Image
+idee_weekend.image_path_deleted: "Supprimer l'image ?"
 idee_weekend.titre: Titre
 idee_weekend.prix: Prix
 idee_weekend.lien: Lien
@@ -616,6 +692,7 @@ idee_weekend.home: Mise en avant home
 idee_weekend.highlight: En couleur
 idee_weekend.image.path: Image
 idee_weekend.active: Actif
+idee_weekend.idee_weekendI18ns: ""
 
 monday: lundi
 tuesday: mardi
@@ -651,21 +728,24 @@ bon_plan:
     prix: Prix
     prix_barre: Prix barré
     image_menu: Vignette du menu
+    image_menu_deleted: "Supprimer la vignette du menu ?"
     image_page: Visuel page de détail
+    image_page_deleted: "Supprimer le visuel de la page détail ?"
     image_liste: Visuel page de listing
+    image_liste_deleted: "Supprimer le visuel de la page listing ?"
     active_compteur: Activer le compteur
     mise_en_avant: Mise en avant (deux colonnes sur la page de listing)
     push_home: Afficher sur la page d'accueil
-    date_start: Date de début de la recherche de dispo
-    day_start: Jour de début de la recherche de dispo
-    day_range: Nombre de jours de la recherceh de dispo
-    nb_adultes: Nombre d'adultes de la recherche de dispo
-    nb_enfants: Nombre d'enfants de la recherche de dispo
-    period_categories: Périodes de la recherche de dispo
-    bon_plan_categories: Catégories associées à la recherche de dispo
-    etablissements: Campings associés à la recherche de dispo
-    regions: Régions associées à la recherche de dispo
-    bon_planI18ns: Traductions
+    date_start: Date de début (dispo)
+    day_start: Jour de début (dispo)
+    day_range: Nombre de jours (dispo)
+    nb_adultes: Nombre d'adultes (dispo)
+    nb_enfants: Nombre d'enfants (dispo)
+    period_categories: Périodes (dispo)
+    bon_plan_categories: Catégories associées (dispo)
+    etablissements: Campings associés (dispo)
+    regions: Régions associées (dispo)
+    bon_planI18ns: ""
     introduction: Introduction
     slug: Slug
     description: Description

@@ -3,6 +3,8 @@
 namespace Cungfoo\Form\Type;
 
 use Symfony\Component\Form\FormBuilderInterface,
+    Symfony\Component\Form\FormView,
+    Symfony\Component\Form\FormInterface,
     Symfony\Component\Validator\Constraints as Assert;
 
 use Cungfoo\Form\Type\Base\BaseThemeType;
@@ -27,6 +29,39 @@ class ThemeType extends BaseThemeType
         //$this->getMetadata($options['data_class'])
         //    ->addPropertyConstraint('field1', new Assert\MinLength(5))
         //;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function buildView(FormView $view, FormInterface $form, array $options)
+    {
+        $view->setAttribute('groups',
+            array(
+                array(
+                    'title'         => 'crud.tab.datas',
+                    'content'       => array(
+                        'activites',
+                        'baignades',
+                        'service_complementaires',
+                        'themeI18ns',
+                    )
+                ),
+                array(
+                    'title'         => 'crud.tab.medias',
+                    'content'       => array(
+                        'image_path',
+                        'image_path_deleted',
+                    )
+                ),
+                array(
+                    'title'         => 'crud.tab.parameters',
+                    'content'       => array(
+                        'active',
+                    )
+                ),
+            )
+        );
     }
 
 } // ThemeType

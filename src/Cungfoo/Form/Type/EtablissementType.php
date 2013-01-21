@@ -39,7 +39,7 @@ class EtablissementType extends BaseEtablissementType
         $view->setAttribute('groups',
             array(
                 array(
-                    'title'         => 'etablissement.group.resalys',
+                    'title'         => 'crud.tab.datas',
                     'content'       => array(
                         'code',
                         'name',
@@ -58,20 +58,26 @@ class EtablissementType extends BaseEtablissementType
                         'ville',
                         'categorie',
                         'capacite',
+                        'geo_coordinate_x',
+                        'geo_coordinate_y',
+                        'etablissementI18ns',
                     )
                 ),
                 array(
-                    'title'         => 'etablissement.group.cms',
+                    'title'         => 'crud.tab.medias',
                     'content'       => array(
                         'vignette',
                         'vignette_deleted',
                         'plan_path',
                         'plan_path_deleted',
-                        'geo_coordinate_x',
-                        'geo_coordinate_y',
                         'video_path',
                         'image_360_path',
-                        'etablissementI18ns',
+                    )
+                ),
+                array(
+                    'title'         => 'crud.tab.parameters',
+                    'content'       => array(
+                        'active',
                     )
                 ),
             )

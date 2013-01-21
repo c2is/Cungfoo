@@ -93,6 +93,7 @@ class PaysTableMap extends TableMap
   'crud_model' => NULL,
   'crud_form' => NULL,
   'crud_type_file' => 'image_detail_1,image_detail_2',
+  'crud_search' => 'name',
 ),
         );
     } // getBehaviors()

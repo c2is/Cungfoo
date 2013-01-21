@@ -23,6 +23,8 @@ class EditoListing extends BaseEditoListing
     public function configure()
     {
         parent::configure();
+        $this->addColumn(new Column\TextColumn('name'));
+        $this->removeColumn('slug');
     }
 
 } // EditoListing

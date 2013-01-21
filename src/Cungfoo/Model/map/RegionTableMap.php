@@ -103,6 +103,7 @@ class RegionTableMap extends TableMap
   'crud_model' => NULL,
   'crud_form' => NULL,
   'crud_type_file' => 'image_path,image_encart_path,image_encart_petite_path,image_detail_1,image_detail_2',
+  'crud_search' => 'name',
 ),
         );
     } // getBehaviors()

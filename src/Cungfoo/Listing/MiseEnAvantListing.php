@@ -26,6 +26,9 @@ class MiseEnAvantListing extends BaseMiseEnAvantListing
         $this->addColumn(new Column\TextColumn('titre'));
         $this->addColumn(new Column\TextColumn('accroche'));
         $this->addColumn(new Column\TextColumn('prix'));
+        $this->removeColumn('image_fond_path');
+        $this->removeColumn('illustration_path');
+        $this->removeColumn('date_fin_validite');
     }
 
 } // MiseEnAvantListing

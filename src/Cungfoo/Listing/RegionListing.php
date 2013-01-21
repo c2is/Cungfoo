@@ -28,6 +28,7 @@ class RegionListing extends BaseRegionListing
         $this->removeColumn('image_path');
         $this->removeColumn('image_encart_path');
         $this->removeColumn('image_encart_petite_path');
+        $this->removeColumn('mea_home');
         $this->removeColumn('image_detail_1');
         $this->removeColumn('image_detail_2');
     }

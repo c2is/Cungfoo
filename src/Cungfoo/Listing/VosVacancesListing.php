@@ -25,7 +25,8 @@ class VosVacancesListing extends BaseVosVacancesListing
         parent::configure();
         $this->addColumn(new Column\TextColumn('titre'));
         $this->addColumn(new Column\TextColumn('description'));
-        $this->addColumn(new Column\TextColumn('prenom'));
+        $this->removeColumn('image_path');
+        $this->removeColumn('age');
     }
 
 } // VosVacancesListing

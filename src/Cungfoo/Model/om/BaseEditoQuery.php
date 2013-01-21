@@ -642,4 +642,17 @@ abstract class BaseEditoQuery extends ModelCriteria
             ->useQuery($relationAlias ? $relationAlias : 'EditoI18n', 'Cungfoo\Model\EditoI18nQuery');
     }
 
+    // crudable behavior
+
+    public function filterByTerm($term)
+    {
+        $term = '%' . $term . '%';
+
+        return $this
+            ->_or()
+            ->useI18nQuery()
+            ->filterByName($term, \Criteria::LIKE)
+            ->endUse()
+        ;
+    }
 }

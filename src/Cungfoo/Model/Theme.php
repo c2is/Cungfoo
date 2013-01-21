@@ -18,6 +18,11 @@ use Cungfoo\Model\om\BaseTheme;
  */
 class Theme extends BaseTheme
 {
+    public function __toString()
+    {
+        return $this->getName();
+    }
+
     public function getEtablissementsCatalogues()
     {
         $etab = EtablissementQuery::create()

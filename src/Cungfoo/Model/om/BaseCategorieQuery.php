@@ -721,4 +721,17 @@ abstract class BaseCategorieQuery extends ModelCriteria
             ->useQuery($relationAlias ? $relationAlias : 'CategorieI18n', 'Cungfoo\Model\CategorieI18nQuery');
     }
 
+    // crudable behavior
+
+    public function filterByTerm($term)
+    {
+        $term = '%' . $term . '%';
+
+        return $this
+            ->_or()
+            ->useI18nQuery()
+            ->filterByName($term, \Criteria::LIKE)
+            ->endUse()
+        ;
+    }
 }

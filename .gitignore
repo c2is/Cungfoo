@@ -8,6 +8,8 @@
 /app/config/Cungfoo/users.yml
 /app/resources/data/sql/*
 /web/uploads/*
+/web/portfolio/.thumbs/*
+/web/portfolio/images/*
 .idea/
 .vagrant
 Vagrantfile

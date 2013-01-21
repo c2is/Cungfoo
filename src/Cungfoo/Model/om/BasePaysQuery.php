@@ -787,4 +787,17 @@ abstract class BasePaysQuery extends ModelCriteria
             ->useQuery($relationAlias ? $relationAlias : 'PaysI18n', 'Cungfoo\Model\PaysI18nQuery');
     }
 
+    // crudable behavior
+
+    public function filterByTerm($term)
+    {
+        $term = '%' . $term . '%';
+
+        return $this
+            ->_or()
+            ->useI18nQuery()
+            ->filterByName($term, \Criteria::LIKE)
+            ->endUse()
+        ;
+    }
 }
