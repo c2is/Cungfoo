@@ -1,5 +1,5 @@
 {
-    "hash": "d73381ab0c3d716105ad57511bc349e8",
+    "hash": "5dcbde166e8b50fae03d5eccbbffec86",
     "packages": [
         {
             "name": "atoum/atoum",
@@ -202,17 +202,17 @@
             ]
         },
         {
-            "name": "oziks/debug-service-provider",
+            "name": "oziks/debug-toolbar-service-provider",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@github.com:oziks/DebugServiceProvider.git",
-                "reference": "2edadf1991b03ec412a489a3bc10915682727e57"
+                "url": "git@github.com:oziks/DebugToolbarServiceProvider.git",
+                "reference": "f034c77fb907c4fa8b7506030765504a1e7c3403"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/oziks/DebugServiceProvider/archive/2edadf1991b03ec412a489a3bc10915682727e57.zip",
-                "reference": "2edadf1991b03ec412a489a3bc10915682727e57",
+                "url": "https://github.com/oziks/DebugToolbarServiceProvider/archive/f034c77fb907c4fa8b7506030765504a1e7c3403.zip",
+                "reference": "f034c77fb907c4fa8b7506030765504a1e7c3403",
                 "shasum": ""
             },
             "require-dev": {
@@ -221,7 +221,7 @@
                 "silex/silex": "1.0.*",
                 "twig/twig": ">=1.8.0,<2.0-dev"
             },
-            "time": "1358254640",
+            "time": "1358618308",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -239,11 +239,12 @@
                     "homepage": "http://oziks.fr"
                 }
             ],
-            "description": "Debug service provider for Silex.",
-            "homepage": "https://github.com/oziks/DebugServiceProvider",
+            "description": "Debug toolbar service provider for Silex.",
+            "homepage": "https://github.com/oziks/DebugToolbarServiceProvider",
             "keywords": [
                 "silex",
                 "debug",
+                "propel",
                 "toolbar"
             ]
         },
@@ -1853,6 +1854,6 @@
         "kuikui/memcache-service-provider": 20,
         "knplabs/console-service-provider": 20,
         "twig/extensions": 20,
-        "oziks/debug-service-provider": 20
+        "oziks/debug-toolbar-service-provider": 20
     }
 }
