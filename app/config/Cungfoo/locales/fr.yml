@@ -359,13 +359,9 @@ region.image.detail.1: Image 1
 region.image.detail.2: Image 2
 region.active: Actif
 region.slug: Slug
-<<<<<<< HEAD
 region.destination: Destination
 region.bon_plans: Bons plans
-=======
-region.bon_plans: Bons plan ayant cette région
 region.regionI18ns: ""
->>>>>>> Backoffice
 
 resalys.actions.import: Importer les données de Resalys
 resalys.title.import: Import Resalys
