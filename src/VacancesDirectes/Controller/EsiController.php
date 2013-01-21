@@ -38,8 +38,6 @@ class EsiController implements ControllerProviderInterface
                     ->findOne()
                 ;
 
-                $test = 1 / 0;
-
                 if ($bonPlan)
                 {
                     $baseDate  = $bonPlan->getDateStart('U') ?: date('U');
