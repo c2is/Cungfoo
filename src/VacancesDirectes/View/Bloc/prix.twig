@@ -1,0 +1,42 @@
+<div id="dispoBloc" class="proposal radiusBox fushia promo arrowLeft">
+    <p class="proposalDates">
+        {% if blocPrix.proposal_key %}
+        {{ "listing.du" | trans }} {{ blocPrix.start_date }} {{ "listing.au" | trans }} {{ blocPrix.end_date }}
+        {% else %}
+        {{ 'general.meilleur_prix'|trans }}
+        {% endif %}
+    </p>
+    {% if blocPrix.proposal_key %}
+    <p class="proposalType">{{ blocPrix.room_type_label }}</p>
+    {% endif %}
+
+    <div class="stain cover">
+        {% if not blocPrix.proposal_key %}
+        <span>{{ "general.a_partir_de"|trans }}<br>
+        {% endif %}
+            <span class="price linkBlock">
+                {% if blocPrix.adult_price_pourcent %}
+                    {{ blocPrix.adult_price|number_format }}€
+                {% else %}
+                    {{ blocPrix.adult_price_without_discounts|number_format }}€
+                {% endif %}
+
+            </span>
+
+            {% if blocPrix.adult_price_pourcent %}
+            au lieu de <span class="line-through">{{ blocPrix.adult_price_without_discounts|number_format }}<span class="fine">&nbsp;</span>€</span>
+            {% endif %}
+        </span>
+        <!--  PROMO  -->
+        {% if blocPrix.adult_price_pourcent %}
+        <span class="discount">-{{ blocPrix.adult_price_pourcent }}%</span>
+        {% endif %}
+        <!--  FIN / PROMO  -->
+    </div>
+
+    {% if blocPrix.proposal_key %}
+    <a class="bt sombre big ib" href="{{ path('couloir_detail_sejour', {'proposalKey': blocPrix.proposal_key}) }}">Réserver</a>
+    {% else %}
+    <a class="bt sombre big ib goto" href="#frameResalys">Réserver</a>
+    {% endif %}
+</div>

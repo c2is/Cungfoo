@@ -306,6 +306,25 @@ class DestinationController implements ControllerProviderInterface
 
         $resalysParameters = \Symfony\Component\Yaml\Yaml::parse(sprintf('%s/Resalys/parameters.yml', $app['config']->get('config_dir')));
 
+        // definition des informations relatives au bloc prix de la fiche camping
+        $lastProposal = $app['session']->get('last_proposal');
+
+        $blocPrix['proposal_key'] = $request->getRequestUri() == $lastProposal['target'] ? $lastProposal['proposal']->{'proposal_key'} : false;
+        if ($blocPrix['proposal_key'])
+        {
+            $blocPrix['start_date']                    = $lastProposal['proposal']->{'start_date'};
+            $blocPrix['end_date']                      = $lastProposal['proposal']->{'end_date'};
+            $blocPrix['room_type_label']               = $lastProposal['proposal']->{'room_types'}->{'room_type'}->{'room_type_label'};
+            $blocPrix['adult_price_without_discounts'] = $lastProposal['proposal']->{'adult_price_without_discounts'};
+            $blocPrix['adult_price']                   = $lastProposal['proposal']->{'adult_price'};
+            $blocPrix['adult_price_pourcent']          = 100 - (100 * $lastProposal['proposal']->{'adult_price'} / $lastProposal['proposal']->{'adult_price_without_discounts'});
+        }
+        else
+        {
+            $blocPrix['adult_price_without_discounts'] = $camping->getMinimumPrice();
+        }
+        // fin de la définition des informations relatives au bloc prix de la fiche camping
+
         return $app->renderView('Camping/camping.twig', array(
             'locale'                  => $locale,
             'etab'                    => $camping,
@@ -318,6 +337,7 @@ class DestinationController implements ControllerProviderInterface
             'resalysParameters'       => $resalysParameters,
             'historyBack'             => $request->headers->get('referer'),
             'hasBaignade'             => count($camping->getEtablissementBaignades()) > 0,
+            'blocPrix'                => $blocPrix,
             'referer'                 => $app['url_generator']->generate($request->get('_route'), array(
                 'pays'      => $camping->getPays()->getSlug(),
                 'region'    => $camping->getRegion()->getSlug(),
