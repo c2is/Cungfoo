@@ -19,7 +19,7 @@ $app['config']->addParams(array(
 $app['twig.path'] = array(__DIR__.'/View');
 $app['twig.form.templates'] = array('Form/form_custom_layout.html.twig');
 
-$app->register(new Oziks\Provider\DebugServiceProvider());
+$app->register(new Oziks\Provider\DebugToolbarServiceProvider());
 
 /*  T R A N S L A T O R   M A N A G E R */
 $app['translator'] = $app->share($app->extend('translator',

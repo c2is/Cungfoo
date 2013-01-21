@@ -21,7 +21,7 @@ $app['config']->addParams(array(
 $app['twig.path'] = array(__DIR__.'/View');
 $app['twig.form.templates'] = array('Form/form_custom_layout.html.twig');
 
-$app->register(new Oziks\Provider\DebugServiceProvider());
+$app->register(new Oziks\Provider\DebugToolbarServiceProvider());
 
 $app['twig']->getExtension('core')->setNumberFormat(0, '', '');
 
