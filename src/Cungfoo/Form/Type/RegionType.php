@@ -43,12 +43,13 @@ class RegionType extends BaseRegionType
                     'content'       => array(
                         'code',
                         'pays',
+                        'destination',
                         'bon_plans',
                         'regionI18ns',
                     )
                 ),
                 array(
-                    'title'         => 'crud.data.medias',
+                    'title'         => 'crud.tab.medias',
                     'content'       => array(
                         'image_path',
                         'image_path_deleted',

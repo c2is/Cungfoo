@@ -1514,6 +1514,31 @@ abstract class BasePays extends BaseObject implements Persistent
         return $this;
     }
 
+
+    /**
+     * If this collection has already been initialized with
+     * an identical criteria, it returns the collection.
+     * Otherwise if this Pays is new, it will return
+     * an empty collection; or if this Pays has previously
+     * been saved, it will retrieve related Regions from storage.
+     *
+     * This method is protected by default in order to keep the public
+     * api reasonable.  You can provide public methods for those you
+     * actually need in Pays.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @param string $join_behavior optional join type to use (defaults to Criteria::LEFT_JOIN)
+     * @return PropelObjectCollection|Region[] List of Region objects
+     */
+    public function getRegionsJoinDestination($criteria = null, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    {
+        $query = RegionQuery::create(null, $criteria);
+        $query->joinWith('Destination', $join_behavior);
+
+        return $this->getRegions($query, $con);
+    }
+
     /**
      * Clears out the collPaysI18ns collection
      *

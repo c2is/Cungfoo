@@ -18,6 +18,7 @@ use Cungfoo\Model\DestinationPeer;
 use Cungfoo\Model\DestinationQuery;
 use Cungfoo\Model\Etablissement;
 use Cungfoo\Model\EtablissementDestination;
+use Cungfoo\Model\Region;
 
 /**
  * Base class that represents a query for the 'destination' table.
@@ -43,6 +44,10 @@ use Cungfoo\Model\EtablissementDestination;
  * @method DestinationQuery leftJoinEtablissementDestination($relationAlias = null) Adds a LEFT JOIN clause to the query using the EtablissementDestination relation
  * @method DestinationQuery rightJoinEtablissementDestination($relationAlias = null) Adds a RIGHT JOIN clause to the query using the EtablissementDestination relation
  * @method DestinationQuery innerJoinEtablissementDestination($relationAlias = null) Adds a INNER JOIN clause to the query using the EtablissementDestination relation
+ *
+ * @method DestinationQuery leftJoinRegion($relationAlias = null) Adds a LEFT JOIN clause to the query using the Region relation
+ * @method DestinationQuery rightJoinRegion($relationAlias = null) Adds a RIGHT JOIN clause to the query using the Region relation
+ * @method DestinationQuery innerJoinRegion($relationAlias = null) Adds a INNER JOIN clause to the query using the Region relation
  *
  * @method DestinationQuery leftJoinDestinationI18n($relationAlias = null) Adds a LEFT JOIN clause to the query using the DestinationI18n relation
  * @method DestinationQuery rightJoinDestinationI18n($relationAlias = null) Adds a RIGHT JOIN clause to the query using the DestinationI18n relation
@@ -494,6 +499,80 @@ abstract class BaseDestinationQuery extends ModelCriteria
         return $this
             ->joinEtablissementDestination($relationAlias, $joinType)
             ->useQuery($relationAlias ? $relationAlias : 'EtablissementDestination', '\Cungfoo\Model\EtablissementDestinationQuery');
+    }
+
+    /**
+     * Filter the query by a related Region object
+     *
+     * @param   Region|PropelObjectCollection $region  the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   DestinationQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByRegion($region, $comparison = null)
+    {
+        if ($region instanceof Region) {
+            return $this
+                ->addUsingAlias(DestinationPeer::ID, $region->getDestinationId(), $comparison);
+        } elseif ($region instanceof PropelObjectCollection) {
+            return $this
+                ->useRegionQuery()
+                ->filterByPrimaryKeys($region->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByRegion() only accepts arguments of type Region or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the Region relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return DestinationQuery The current query, for fluid interface
+     */
+    public function joinRegion($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('Region');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'Region');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the Region relation Region object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\RegionQuery A secondary query class using the current class as primary query
+     */
+    public function useRegionQuery($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        return $this
+            ->joinRegion($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'Region', '\Cungfoo\Model\RegionQuery');
     }
 
     /**

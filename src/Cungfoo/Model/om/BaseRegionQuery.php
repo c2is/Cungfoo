@@ -14,6 +14,7 @@ use \PropelObjectCollection;
 use \PropelPDO;
 use Cungfoo\Model\BonPlan;
 use Cungfoo\Model\BonPlanRegion;
+use Cungfoo\Model\Destination;
 use Cungfoo\Model\Pays;
 use Cungfoo\Model\Region;
 use Cungfoo\Model\RegionI18n;
@@ -32,6 +33,7 @@ use Cungfoo\Model\Ville;
  * @method RegionQuery orderByImageEncartPath($order = Criteria::ASC) Order by the image_encart_path column
  * @method RegionQuery orderByImageEncartPetitePath($order = Criteria::ASC) Order by the image_encart_petite_path column
  * @method RegionQuery orderByPaysId($order = Criteria::ASC) Order by the pays_id column
+ * @method RegionQuery orderByDestinationId($order = Criteria::ASC) Order by the destination_id column
  * @method RegionQuery orderByMeaHome($order = Criteria::ASC) Order by the mea_home column
  * @method RegionQuery orderByImageDetail1($order = Criteria::ASC) Order by the image_detail_1 column
  * @method RegionQuery orderByImageDetail2($order = Criteria::ASC) Order by the image_detail_2 column
@@ -45,6 +47,7 @@ use Cungfoo\Model\Ville;
  * @method RegionQuery groupByImageEncartPath() Group by the image_encart_path column
  * @method RegionQuery groupByImageEncartPetitePath() Group by the image_encart_petite_path column
  * @method RegionQuery groupByPaysId() Group by the pays_id column
+ * @method RegionQuery groupByDestinationId() Group by the destination_id column
  * @method RegionQuery groupByMeaHome() Group by the mea_home column
  * @method RegionQuery groupByImageDetail1() Group by the image_detail_1 column
  * @method RegionQuery groupByImageDetail2() Group by the image_detail_2 column
@@ -59,6 +62,10 @@ use Cungfoo\Model\Ville;
  * @method RegionQuery leftJoinPays($relationAlias = null) Adds a LEFT JOIN clause to the query using the Pays relation
  * @method RegionQuery rightJoinPays($relationAlias = null) Adds a RIGHT JOIN clause to the query using the Pays relation
  * @method RegionQuery innerJoinPays($relationAlias = null) Adds a INNER JOIN clause to the query using the Pays relation
+ *
+ * @method RegionQuery leftJoinDestination($relationAlias = null) Adds a LEFT JOIN clause to the query using the Destination relation
+ * @method RegionQuery rightJoinDestination($relationAlias = null) Adds a RIGHT JOIN clause to the query using the Destination relation
+ * @method RegionQuery innerJoinDestination($relationAlias = null) Adds a INNER JOIN clause to the query using the Destination relation
  *
  * @method RegionQuery leftJoinVille($relationAlias = null) Adds a LEFT JOIN clause to the query using the Ville relation
  * @method RegionQuery rightJoinVille($relationAlias = null) Adds a RIGHT JOIN clause to the query using the Ville relation
@@ -80,6 +87,7 @@ use Cungfoo\Model\Ville;
  * @method Region findOneByImageEncartPath(string $image_encart_path) Return the first Region filtered by the image_encart_path column
  * @method Region findOneByImageEncartPetitePath(string $image_encart_petite_path) Return the first Region filtered by the image_encart_petite_path column
  * @method Region findOneByPaysId(int $pays_id) Return the first Region filtered by the pays_id column
+ * @method Region findOneByDestinationId(int $destination_id) Return the first Region filtered by the destination_id column
  * @method Region findOneByMeaHome(boolean $mea_home) Return the first Region filtered by the mea_home column
  * @method Region findOneByImageDetail1(string $image_detail_1) Return the first Region filtered by the image_detail_1 column
  * @method Region findOneByImageDetail2(string $image_detail_2) Return the first Region filtered by the image_detail_2 column
@@ -93,6 +101,7 @@ use Cungfoo\Model\Ville;
  * @method array findByImageEncartPath(string $image_encart_path) Return Region objects filtered by the image_encart_path column
  * @method array findByImageEncartPetitePath(string $image_encart_petite_path) Return Region objects filtered by the image_encart_petite_path column
  * @method array findByPaysId(int $pays_id) Return Region objects filtered by the pays_id column
+ * @method array findByDestinationId(int $destination_id) Return Region objects filtered by the destination_id column
  * @method array findByMeaHome(boolean $mea_home) Return Region objects filtered by the mea_home column
  * @method array findByImageDetail1(string $image_detail_1) Return Region objects filtered by the image_detail_1 column
  * @method array findByImageDetail2(string $image_detail_2) Return Region objects filtered by the image_detail_2 column
@@ -202,7 +211,7 @@ abstract class BaseRegionQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `code`, `image_path`, `image_encart_path`, `image_encart_petite_path`, `pays_id`, `mea_home`, `image_detail_1`, `image_detail_2`, `created_at`, `updated_at`, `active` FROM `region` WHERE `id` = :p0';
+        $sql = 'SELECT `id`, `code`, `image_path`, `image_encart_path`, `image_encart_petite_path`, `pays_id`, `destination_id`, `mea_home`, `image_detail_1`, `image_detail_2`, `created_at`, `updated_at`, `active` FROM `region` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -478,6 +487,49 @@ abstract class BaseRegionQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query on the destination_id column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByDestinationId(1234); // WHERE destination_id = 1234
+     * $query->filterByDestinationId(array(12, 34)); // WHERE destination_id IN (12, 34)
+     * $query->filterByDestinationId(array('min' => 12)); // WHERE destination_id > 12
+     * </code>
+     *
+     * @see       filterByDestination()
+     *
+     * @param     mixed $destinationId The value to use as filter.
+     *              Use scalar values for equality.
+     *              Use array values for in_array() equivalent.
+     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return RegionQuery The current query, for fluid interface
+     */
+    public function filterByDestinationId($destinationId = null, $comparison = null)
+    {
+        if (is_array($destinationId)) {
+            $useMinMax = false;
+            if (isset($destinationId['min'])) {
+                $this->addUsingAlias(RegionPeer::DESTINATION_ID, $destinationId['min'], Criteria::GREATER_EQUAL);
+                $useMinMax = true;
+            }
+            if (isset($destinationId['max'])) {
+                $this->addUsingAlias(RegionPeer::DESTINATION_ID, $destinationId['max'], Criteria::LESS_EQUAL);
+                $useMinMax = true;
+            }
+            if ($useMinMax) {
+                return $this;
+            }
+            if (null === $comparison) {
+                $comparison = Criteria::IN;
+            }
+        }
+
+        return $this->addUsingAlias(RegionPeer::DESTINATION_ID, $destinationId, $comparison);
+    }
+
+    /**
      * Filter the query on the mea_home column
      *
      * Example usage:
@@ -749,6 +801,82 @@ abstract class BaseRegionQuery extends ModelCriteria
         return $this
             ->joinPays($relationAlias, $joinType)
             ->useQuery($relationAlias ? $relationAlias : 'Pays', '\Cungfoo\Model\PaysQuery');
+    }
+
+    /**
+     * Filter the query by a related Destination object
+     *
+     * @param   Destination|PropelObjectCollection $destination The related object(s) to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   RegionQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByDestination($destination, $comparison = null)
+    {
+        if ($destination instanceof Destination) {
+            return $this
+                ->addUsingAlias(RegionPeer::DESTINATION_ID, $destination->getId(), $comparison);
+        } elseif ($destination instanceof PropelObjectCollection) {
+            if (null === $comparison) {
+                $comparison = Criteria::IN;
+            }
+
+            return $this
+                ->addUsingAlias(RegionPeer::DESTINATION_ID, $destination->toKeyValue('PrimaryKey', 'Id'), $comparison);
+        } else {
+            throw new PropelException('filterByDestination() only accepts arguments of type Destination or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the Destination relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return RegionQuery The current query, for fluid interface
+     */
+    public function joinDestination($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('Destination');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'Destination');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the Destination relation Destination object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\DestinationQuery A secondary query class using the current class as primary query
+     */
+    public function useDestinationQuery($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        return $this
+            ->joinDestination($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'Destination', '\Cungfoo\Model\DestinationQuery');
     }
 
     /**
