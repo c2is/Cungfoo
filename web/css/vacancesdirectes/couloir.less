@@ -253,7 +253,63 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
   table{width:100%}
 
 // step 1
-  &.detail,
+  &.detail{
+
+    #reservation{
+      .aRoom{
+        h2{color:@colorBgGrisM;text-transform:uppercase;font:bold 22px @ptnarrow;._verticalCenter(40px);
+          small{font:bold 17px @arial;text-transform:none;}
+        }
+        .changeOccupantCount{height:auto;background-color:@colorBgGrisF;padding:10px 5px 0;margin-bottom:15px;position:relative;
+          &>span{margin:0 5px 10px;._verticalCenter(27px);font:bold 17px @ptnarrow;color:@colorBlanc;text-transform:uppercase;display:inline-block;}
+          .addAction a{position:absolute;top:10px;right:10px;display:block;width:27px;height:27px;text-indent:-9999px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -162px transparent;}
+        }
+        tr{font-weight:bold;
+          &.productsNotSelectedYet{font-weight:normal;}
+          td{height:30px;vertical-align:middle;
+            &.optionLabel{width:400px;}
+            &.price{width:110px;font:bold 19px/18px @ptnarrow;text-align:right;}
+            &.action{text-align:right;width:40px;}
+            .control_checkbox{margin-top:0;}
+            .hiddenIfCheckbox{display:none;}
+            .deleteLink{position:relative;display:block;width:27px;height:24px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -243px transparent;float:left;margin-left:10px;
+              span{display:none;}
+            }
+          }
+        }
+        .anOccupant{background-color:@colorBlanc;
+          h3{background-image:none !important;background-color:@colorFushia;color:@colorBlanc;padding:5px 0;position:relative;
+            .occupantHeaderLeft{._verticalCenter(27px);
+              small{font:bold 17px @arial;text-transform:none;}
+              &:before{content:"";width:27px;height:27px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -189px transparent;float:left;margin:0 10px;}
+            }
+            .deleteAction a{position:absolute;top:6px;right:-3px;display:block;text-indent:-9999px;width:27px;height:27px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -243px transparent;float:left;margin:0 10px;}
+          }
+          .occupantFields{padding:10px 5px;
+            &>*{margin:0 5px 10px;}
+            input{border:1px solid @colorBorderGris;}
+            .control_text{width:150px;}
+            .control_date{width:120px;}
+            #date_sRowID_link{right:0 !important;}
+            .tooltip span.bubble{left:130px;}
+          }
+          h4{display:none;}
+        }
+      }
+      #financialContener{
+        input{border:1px solid @colorBorderGris;}
+        .label{float:left;margin-right:10px;._verticalCenter(27px);}
+        .field{float:left;
+          .newListSelected{float:none;
+            .selectedTxt{border: 1px solid @colorBorderGris;}
+          }
+        }
+      }
+    }
+  }
+
+// step 2
+  &.summary,
   &.editAccount{
     #authentication{._border-radius(10px);margin:15px 0;position:relative;background-color:@colorBgBlanc;border:5px solid @colorBgGrisM;
       h2{background-color:@colorBgGrisM;color:@colorBlanc;text-transform:uppercase;font:bold 22px @ptnarrow;._verticalCenter(40px);padding-left:10px;}
@@ -311,60 +367,6 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
         .loginLink{float:right;}
       }
     }
-    #reservation{
-      .aRoom{
-        h2{color:@colorBgGrisM;text-transform:uppercase;font:bold 22px @ptnarrow;._verticalCenter(40px);
-          small{font:bold 17px @arial;text-transform:none;}
-        }
-        .changeOccupantCount{height:auto;background-color:@colorBgGrisF;padding:10px 5px 0;margin-bottom:15px;position:relative;
-          &>span{margin:0 5px 10px;._verticalCenter(27px);font:bold 17px @ptnarrow;color:@colorBlanc;text-transform:uppercase;display:inline-block;}
-          .addAction a{position:absolute;top:10px;right:10px;display:block;width:27px;height:27px;text-indent:-9999px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -162px transparent;}
-        }
-        tr{font-weight:bold;
-          &.productsNotSelectedYet{font-weight:normal;}
-          td{height:30px;vertical-align:middle;
-            &.optionLabel{width:400px;}
-            &.price{width:110px;font:bold 19px/18px @ptnarrow;text-align:right;}
-            &.action{text-align:right;width:40px;}
-            .control_checkbox{margin-top:0;}
-            .hiddenIfCheckbox{display:none;}
-            .deleteLink{position:relative;display:block;width:27px;height:24px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -243px transparent;float:left;margin-left:10px;
-              span{display:none;}
-            }
-          }
-        }
-        .anOccupant{background-color:@colorBlanc;
-          h3{background-image:none !important;background-color:@colorFushia;color:@colorBlanc;padding:5px 0;position:relative;
-            .occupantHeaderLeft{._verticalCenter(27px);
-              small{font:bold 17px @arial;text-transform:none;}
-              &:before{content:"";width:27px;height:27px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -189px transparent;float:left;margin:0 10px;}
-            }
-            .deleteAction a{position:absolute;top:6px;right:-3px;display:block;text-indent:-9999px;width:27px;height:27px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -243px transparent;float:left;margin:0 10px;}
-          }
-          .occupantFields{padding:10px 5px;
-            &>*{margin:0 5px 10px;}
-            input{border:1px solid @colorBorderGris;}
-            .control_text{width:150px;}
-            .control_date{width:120px;}
-            #date_sRowID_link{right:0 !important;}
-            .tooltip span.bubble{left:130px;}
-          }
-          h4{display:none;}
-        }
-      }
-      #financialContener{
-        input{border:1px solid @colorBorderGris;}
-        .field{margin-bottom:10px;
-          .newListSelected{float:none;
-            .selectedTxt{border: 1px solid @colorBorderGris;}
-          }
-        }
-      }
-    }
-  }
-
-// step 2
-  &.summary{
     #option{
       h2 + p{font-weight:bold;}
       .label{font:inherit;color:inherit;text-transform:inherit;margin-right:10px;vertical-align:top;}
@@ -487,7 +489,10 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
       .price{font:bold 19px/18px @ptnarrow;margin:0;}
     }
   }
-  table{border-top:7px solid @colorBgBlanc;display:block;margin:10px 0;padding-top:10px;text-align:left;}
+  table{border-top:7px solid @colorBgBlanc;display:block;margin:10px 0;padding-top:10px;text-align:left;
+    .optionPrice,
+    .optionPriceDiscount{padding-left:5px;text-align:right;}
+  }
 }
 
 
