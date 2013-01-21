@@ -1,9 +1,20 @@
 <?php
 
-$app['context']->addParam('language', isset($_GET['Context']['language']) ? $_GET['Context']['language'] : 0);
-$app['context']->addParam('site', isset($_GET['Context']['site']) ? $_GET['Context']['site'] : 0);
-$app['context']->addParam('domaine', isset($_GET['Context']['domaine']) ? $_GET['Context']['domaine'] : 0);
+// defined current version instance
+$app['context']->addParam('site', 'site.admin');
+
+// term parameter used on context crud lsit
 $app['context']->addParam('term', isset($_GET['Context']['term']) ? $_GET['Context']['term'] : '');
 
+// set current locale by domain name
+$app['context']->addParam('language', 'fr');
+foreach ($app['config']->get('languages') as $locale => $language)
+{
+    if ($_SERVER['SERVER_NAME'] == $language['domain'])
+    {
+        $app['context']->addParam('language', $locale);
+    }
+}
+
 // set fr default
-$app['translator']->setLocale('fr');
+$app['translator']->setLocale($app['context']->get('language'));

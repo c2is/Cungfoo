@@ -86,9 +86,7 @@ class BaseActiviteType extends AppAwareType
             'i18n_class' => 'Cungfoo\Model\ActiviteI18n',
             'languages' => array(
                 0 => 'fr',
-                1 => 'en',
-                2 => 'de',
-                3 => 'nl',
+                1 => 'de',
             ),
             'label' => 'activite.activiteI18ns',
             'columns' => array(

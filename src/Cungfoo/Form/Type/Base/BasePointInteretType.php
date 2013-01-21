@@ -124,9 +124,7 @@ class BasePointInteretType extends AppAwareType
             'i18n_class' => 'Cungfoo\Model\PointInteretI18n',
             'languages' => array(
                 0 => 'fr',
-                1 => 'en',
-                2 => 'de',
-                3 => 'nl',
+                1 => 'de',
             ),
             'label' => 'point_interet.point_interetI18ns',
             'columns' => array(

@@ -98,7 +98,7 @@ eof;
         })
         ->bind('demande_annulation_form');
 
-        $controllers->match('/confirmation', function (Request $request) use ($app) {
+        $controllers->match('/' . $app->trans('seo.url.assurance.confirmation'), function (Request $request) use ($app) {
             // Formulaire de recherche
             $searchEngine = new SearchEngine($app, $request);
             $searchEngine->process();

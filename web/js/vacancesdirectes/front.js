@@ -1774,15 +1774,11 @@ function initCritResult(){
         oCheck.parents('.linePrice').addClass('checked').siblings().removeClass('checked');
     });
 
-    $('.formSearchRefined').find('input').change(function(e) {
-        critSelection();
-        displayResults();
-        e.preventDefault();
-    });
-
-    $('#formSearchRefined input:checkbox').change(function() {
+    $('.formSearchRefined').find(':checkbox').change(function() {
         var nbCritChecked = $('#formSearchRefined input:checked').length;
         $('#nbCrit').text(nbCritChecked);
+        critSelection();
+        displayResults();
     });
 
     if ( $('.formSearchRefined').length ) {
@@ -2063,8 +2059,8 @@ function critSelection() {
 //gestion de l'affichage en fonction des criteres + rangeSlider
 function displayResults() {
 
-    var targetOffset = $('#searchBloc').offset().top;
-    $('html, body').animate({scrollTop: targetOffset},400);
+    /*var targetOffset = $('#searchBloc').offset().top;
+    $('html, body').animate({scrollTop: targetOffset},400);*/
 
     var nbItemsDisplayed = 0;
     var gMarkers = [];

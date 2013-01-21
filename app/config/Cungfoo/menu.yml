@@ -112,6 +112,7 @@ menu:
               viafrance:
                   title:  menu.parameters.viafrance
                   route:  viafrance_actions
+                  divider: ~
               job:
                   title:  menu.job
                   route:  job_list

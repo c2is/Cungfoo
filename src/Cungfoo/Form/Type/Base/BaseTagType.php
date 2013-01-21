@@ -52,9 +52,7 @@ class BaseTagType extends AppAwareType
             'i18n_class' => 'Cungfoo\Model\TagI18n',
             'languages' => array(
                 0 => 'fr',
-                1 => 'en',
-                2 => 'de',
-                3 => 'nl',
+                1 => 'de',
             ),
             'label' => 'tag.tagI18ns',
             'columns' => array(

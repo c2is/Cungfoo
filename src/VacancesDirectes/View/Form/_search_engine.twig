@@ -40,9 +40,9 @@
                         {{ form_label(searchForm.camping) }}
                         {{ form_widget(searchForm.camping) }}
                         <div id="SearchDate_switch">
-                            <span class="left">ou</span>
+                            <span class="left">{{"date_search.ou"|trans}}</span>
                             <div class="switchSelect tooltip" title="">
-                                <span class="bubble">Campings</span>
+                                <span class="bubble">{{"date_search.campings"|trans}}</span>
                             </div>
                         </div>
                     </div>
@@ -91,7 +91,7 @@
                     <a class="toggleButton" href="#">+ de critères</a>
                 </li>#}
                 <li>
-                    <button type="submit" class="bt sombre big" name="searchForm" onclick="showWaitLayer();">Trouver</button>
+                    <button type="submit" class="bt sombre big" name="searchForm" onclick="showWaitLayer();">{{ "date_search.submit"|trans }}</button>
                 </li>
             </ol>
             {{ form_rest(searchForm) }}

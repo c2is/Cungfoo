@@ -82,9 +82,7 @@ class BaseThemeType extends AppAwareType
             'i18n_class' => 'Cungfoo\Model\ThemeI18n',
             'languages' => array(
                 0 => 'fr',
-                1 => 'en',
-                2 => 'de',
-                3 => 'nl',
+                1 => 'de',
             ),
             'label' => 'theme.themeI18ns',
             'columns' => array(

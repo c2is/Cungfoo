@@ -69,9 +69,7 @@ class BaseTypeHebergementCapaciteType extends AppAwareType
             'i18n_class' => 'Cungfoo\Model\TypeHebergementCapaciteI18n',
             'languages' => array(
                 0 => 'fr',
-                1 => 'en',
-                2 => 'de',
-                3 => 'nl',
+                1 => 'de',
             ),
             'label' => 'type_hebergement_capacite.type_hebergement_capaciteI18ns',
             'columns' => array(
