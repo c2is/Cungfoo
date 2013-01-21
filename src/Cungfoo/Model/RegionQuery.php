@@ -18,6 +18,17 @@ use Cungfoo\Model\om\BaseRegionQuery;
  */
 class RegionQuery extends BaseRegionQuery
 {
+    public function find($con = null)
+    {
+        $this
+            ->useI18nQuery()
+            ->orderByName()
+            ->endUse()
+        ;
+
+        return parent::find($con);
+    }
+
     public function findActive($absolute = true, $con = null)
     {
         if ($absolute)
