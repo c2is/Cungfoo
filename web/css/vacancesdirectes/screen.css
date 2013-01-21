@@ -1592,6 +1592,7 @@ footer {
   font: bold 22px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   margin: 3px 0 2px;
+  display: block;
 }
 #nav .tab .subnav .subtitle {
   font: bold 18px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
