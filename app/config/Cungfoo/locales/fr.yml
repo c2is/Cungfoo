@@ -706,7 +706,7 @@ bon_plan_categorie:
     active: Active
     sortable_rank: Ordre
     bon_plans: Bons plans associés
-    bon_plan_categorieI18ns: Traductions
+    bon_plan_categorieI18ns: ""
     slug: Slug
     subtitle: Subtitle
     description: Description
