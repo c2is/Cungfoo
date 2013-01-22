@@ -1441,7 +1441,8 @@ footer {
   right: 0;
   text-align: left;
   color: #ffffff;
-  display: none;
+  opacity: 0;
+  display: block;
   z-index: 1;
 }
 #header #accountBox:after {
