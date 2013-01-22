@@ -21,6 +21,7 @@ class SearchParams
     protected $nbChildren       = '';
     protected $maxResults       = '';
     protected $periodCategories = '';
+    protected $sortString       = '';
 
     public function __construct(Application $app)
     {
@@ -83,6 +84,13 @@ class SearchParams
         return $this;
     }
 
+    public function setSortString($sortString)
+    {
+        $this->sortString = $sortString;
+
+        return $this;
+    }
+
     public function addTheme($theme)
     {
         if ($theme)
@@ -122,6 +130,7 @@ class SearchParams
             'languages'         => array($this->app['context']->getLanguage()),
             'max_results'       => $this->maxResults,
             'period_categories' => $this->periodCategories,
+            'sort_string'       => $this->sortString,
         );
     }
 
