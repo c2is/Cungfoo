@@ -113,11 +113,8 @@ class LocationsController implements ControllerProviderInterface
 
             $locale = $app['context']->get('language');
 
-            if (get_class($categoryTypeHebergement) == 'Cungfoo\\Model\\CategoryTypeHebergement')
-            {
-                $categoryTypeHebergementObject = $categoryTypeHebergement;
-            }
-            else
+            $canonical = false;
+            if (get_class($categoryTypeHebergement) != 'Cungfoo\\Model\\CategoryTypeHebergement')
             {
                 $categoryTypeHebergementObject = \Cungfoo\Model\CategoryTypeHebergementQuery::create()
                     ->useI18nQuery()
@@ -126,8 +123,9 @@ class LocationsController implements ControllerProviderInterface
                     ->filterByTypeHebergement($typeHebergement)
                     ->findOne()
                 ;
+
+                $canonical = $app['url_generator']->generate('location_type_hebergement', array('categoryTypeHebergement' => $categoryTypeHebergementObject->getSlug(), 'typeHebergement' => $typeHebergement->getSlug()));
             }
-            $canonical = $app['url_generator']->generate('location_type_hebergement', array('categoryTypeHebergement' => $categoryTypeHebergementObject->getSlug(), 'typeHebergement' => $typeHebergement->getSlug()));
 
             // Formulaire de recherche
             $searchEngine = new SearchEngine($app, $request);
