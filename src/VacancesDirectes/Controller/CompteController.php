@@ -46,7 +46,7 @@ class CompteController implements ControllerProviderInterface
 
         })->bind('compte_index');
 
-        $controllers->match('/coordonnees/', function (Request $request) use ($app)
+        $controllers->match('/' . $app->trans('seo.url.compte.coordonnees') . '/', function (Request $request) use ($app)
         {
             $query            = $this->getDefaultResalysParameters($app, $request);
             $query['display'] = 'edit_customer_info';
@@ -55,7 +55,7 @@ class CompteController implements ControllerProviderInterface
 
         })->bind('compte_coordonnees');
 
-        $controllers->match('/demande-brochure/', function (Request $request) use ($app)
+        $controllers->match('/d' . $app->trans('seo.url.compte.brochure') . '/', function (Request $request) use ($app)
         {
             $query            = $this->getDefaultResalysParameters($app, $request);
             $query['display'] = 'request';
@@ -64,7 +64,7 @@ class CompteController implements ControllerProviderInterface
 
         })->bind('compte_brochure');
 
-        $controllers->match('/reservations/', function (Request $request) use ($app)
+        $controllers->match('/' . $app->trans('seo.url.compte.reservations') . '/', function (Request $request) use ($app)
         {
             $query            = $this->getDefaultResalysParameters($app, $request);
             $query['display'] = 'existing_reservations';
@@ -73,7 +73,7 @@ class CompteController implements ControllerProviderInterface
 
         })->bind('compte_reservations');
 
-        $controllers->match('/avantages-fidelite/', function (Request $request) use ($app)
+        $controllers->match('/' . $app->trans('seo.url.compte.fidelite') . '/', function (Request $request) use ($app)
         {
             $query            = $this->getDefaultResalysParameters($app, $request);
             $query['display'] = 'fidelity_point_list';
@@ -82,7 +82,7 @@ class CompteController implements ControllerProviderInterface
 
         })->bind('compte_fidelite');
 
-        $controllers->match('/parrainage/', function (Request $request) use ($app)
+        $controllers->match('/' . $app->trans('seo.url.compte.parrainage') . '/', function (Request $request) use ($app)
         {
             $query            = $this->getDefaultResalysParameters($app, $request);
             $query['display'] = 'sponsorship';

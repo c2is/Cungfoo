@@ -1,7 +1,0 @@
-Cungfoo\Model\Site:
-  1:
-    name: site.individual
-    order: 1
-  2:
-    name: site.business
-    order: 2

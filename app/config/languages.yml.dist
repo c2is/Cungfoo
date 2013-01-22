@@ -1,7 +1,7 @@
 languages:
     fr:
         name:  locale.french
-        domain: localhost
+        domain: ##domain_fr##
     de:
         name:  locale.german
-        domain: 10.63.1.234
+        domain: ##domain_de##

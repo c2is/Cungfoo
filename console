@@ -18,6 +18,7 @@ $console->add(new \Cungfoo\Command\Cache\ClearCommand());
 $console->add(new \Cungfoo\Command\Logs\ClearCommand());
 $console->add(new \Cungfoo\Command\Project\InitCommand());
 $console->add(new \Cungfoo\Command\Project\Database\SetupCommand());
+$console->add(new \Cungfoo\Command\Project\Language\SetupCommand());
 $console->add(new \Cungfoo\Command\Tests\UnitCommand());
 $console->add(new \Cungfoo\Command\Tests\SniffCommand());
 
