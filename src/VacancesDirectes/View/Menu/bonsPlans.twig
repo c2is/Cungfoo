@@ -32,11 +32,13 @@
                     {% else %}
                         {% set nbDispos = 4 %}
                     {% endif %}
+                    {#
                     {% if app.debug %}
                         {{ render(path('esi_bon_plan', {'slug': bonPlan.slug, 'limit': nbDispos})) }}
                     {% else %}
                         <esi:include src="{{ path('esi_bon_plan', {'slug': bonPlan.slug, 'limit': nbDispos}) }}" />
                     {% endif %}
+                    #}
                     <a href="{{ path('bonsplans', {'slug': bonPlan.slug}) }}" class="bt link right clearboth">{{ 'menu_bon_plan.bons_plans.link.prefix' | trans}} {{ bonPlan.name }}</a>
                 {% elseif loop.index < 4 %}
                 <div class="element clear linkParent">

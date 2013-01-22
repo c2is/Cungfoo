@@ -1,21 +1,19 @@
 {% extends "base.twig" %}
 
+{% if currentClass == "Cungfoo\\Model\\CategoryTypeHebergement" %}
+    {% set currentClass = 'categorie' %}
+{% elseif currentClass == "Cungfoo\\Model\\TypeHebergementCapacite" %}
+    {% set currentClass = 'capacite' %}
+{% endif %}
+
 {% block title %}
 {% spaceless %}
-    {% if currentClass == "Cungfoo\\Model\\CategoryTypeHebergement" %}
-        {{ "seo.title.location.list.categorie" | trans ({'%type%': categoryTypeHebergement.name|lower}) }}
-    {% elseif currentClass == "Cungfoo\\Model\\TypeHebergementCapacite" %}
-        {{ "seo.title.location.list.capacite.list" | trans ({'%type%': categoryTypeHebergement.name|lower}) }}
-    {% endif %}
+    {{ ("seo.title.location.list." ~ currentClass) | trans ({'%type%': categoryTypeHebergement.name|lower}) }}
 {% endspaceless %}
 {% endblock %}
 {% block metaDescription %}
 {% spaceless %}
-    {% if currentClass == "Cungfoo\\Model\\CategoryTypeHebergement" %}
-        {{ "seo.meta.location.list.categorie" | trans ({'%type%': categoryTypeHebergement.name|lower}) }}
-    {% elseif currentClass == "Cungfoo\\Model\\TypeHebergementCapacite" %}
-        {{ "seo.meta.location.list.capacite" | trans ({'%type%': categoryTypeHebergement.name|lower}) }}
-    {% endif %}
+    {{ ("seo.meta.location.list." ~ currentClass) | trans ({'%type%': categoryTypeHebergement.name|lower}) }}
 {% endspaceless %}
 {% endblock %}
 {% block bodyClass %} fiche{% endblock %}
@@ -26,7 +24,7 @@
 
 {% include "Breadcrumbs/_breadcrumbs.twig" %}
 
-<h1>Nos hébergements</h1>
+<h1>{{ ("location.list.title") | trans ({'%type%': categoryTypeHebergement.name}) }}</h1>
 <h2 class="h3-like">{{ categoryTypeHebergement.name }}</h2>
 <p class="description">{{ categoryTypeHebergement.description }}</p>
 
@@ -45,28 +43,28 @@
 </div>
 {% endif %}
 
-<h2 class="h3-like">Notre sélection d'hébergements</h2>
+<h2 class="h3-like">{{ 'location.list.selection' | trans }}</h2>
 <div id="results" class="clear">
     {% for hebergement in categoryTypeHebergement.typeHebergements %}
     <div class="itemResult clear" data-critplus="">
         <div class="itemResultTitle itemResultTitleHbgt">
-           {{ hebergement.name }}
+           <a href="{{ path('location_type_hebergement', {'categoryTypeHebergement': categoryTypeHebergement.slug, 'typeHebergement': hebergement.slug}) }}">{{ hebergement.name }}</a>
         </div>
         <div class="itemResultLeft itemResultLeftHbgt">
             <img src="{{ asset(hebergement.imageHebergementPath) }}" alt="" class="boxborder">
         </div>
         <div class="itemResultCenter itemResultCenterHbgt">
-            <span class="ircHbgtTitle">{{ hebergement.nombrePlace }} places</span>
+            <span class="ircHbgtTitle">{{ 'location.list.hebergements.nb_places' | trans({'%nbPlaces%': hebergement.nombrePlace}) }}</span>
             <span class="ircHbgtSubTitle">{{ hebergement.indice }}</span>
             <span class="ircHbgtDesc">{{ hebergement.presentation | nl2br }}</span>
         </div>
         <div class="itemResultBottom itemResultBottomHbgt clear">
-            <a class="bt right fushia big" href="{{ path('location_type_hebergement', {'categoryTypeHebergement': categoryTypeHebergement.slug, 'typeHebergement': hebergement.slug}) }}">En savoir plus</a>
+            <a class="bt right fushia big" href="{{ path('location_type_hebergement', {'categoryTypeHebergement': categoryTypeHebergement.slug, 'typeHebergement': hebergement.slug}) }}">{{ 'location.list.hebergements.savoir_plus' | trans }}</a>
         </div>
     </div>
     {% endfor %}
 
-    <button id="btPlusResults" class="bt big sombre">Plus de résultats</button>
+    <button id="btPlusResults" class="bt big sombre">{{ 'location.list.hebergements.plus_de_resultats' | trans }}</button>
 </div>
 {% endblock %}
 
