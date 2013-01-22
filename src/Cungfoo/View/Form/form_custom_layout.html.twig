@@ -110,13 +110,13 @@
 {% block form_errors %}
 {% spaceless %}
     {% if errors|length > 0 %}
-    <div class="alert ">
+    <div class="alert alert-error">
         {% for error in errors %}
-            <p>{{
+            <span>{{
                 error.messagePluralization is null
                     ? error.messageTemplate|trans(error.messageParameters, 'validators')
                     : error.messageTemplate|transchoice(error.messagePluralization, error.messageParameters, 'validators')
-            }}</p>
+            }}</span><br/>
         {% endfor %}
     </div>
     {% endif %}

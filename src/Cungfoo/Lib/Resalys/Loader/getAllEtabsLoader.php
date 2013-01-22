@@ -93,6 +93,7 @@ class getAllEtabsLoader extends AbstractLoader
         // update theme
         if (isset($etab->{'themecodes'}->{'themecode'}))
         {
+            $this->resetThemes($objectEtab, $con);
             $this->updateThemes($objectEtab, $etab->{'themecodes'}->{'themecode'}, $con);
         }
 
@@ -141,6 +142,21 @@ class getAllEtabsLoader extends AbstractLoader
                 {
                     $objectEtab->addTypeHebergement($objectTypeHebergement, $con);
                 }
+            }
+        }
+    }
+
+    protected function resetThemes($objectEtab, \PropelPDO $con)
+    {
+        foreach ($this->config['EtabLoader']['themes'] as $themeName => $themeConfig)
+        {
+            if (isset($themeConfig['associated']))
+            {
+                $associatedQuery = sprintf('%sQuery', $themeConfig['associated']);
+                $associatedQuery::create()
+                    ->filterByEtablissementId($objectEtab->getId())
+                    ->delete($con)
+                ;
             }
         }
     }
