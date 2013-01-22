@@ -473,7 +473,7 @@ body.clear {
 
   /* Centrer verticalement une image de taille variable */
 
-  background: url("../../images/vacancesdirectes/common/ui/stain.png") no-repeat 0 -439px transparent;
+  background: url("../../images/vacancesdirectes/common/sprites/stain.png") no-repeat 0 -439px transparent;
   text-align: center;
   font-size: 10px;
   color: #ffffff;

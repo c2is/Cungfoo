@@ -12,21 +12,18 @@
 
     <div class="stain cover">
         {% if not blocPrix.proposal_key %}
-        <span>{{ "general.a_partir_de"|trans }}<br>
+            <span class="from">{{ "general.a_partir_de"|trans }}</span>
         {% endif %}
-            <span class="price linkBlock">
-                {% if blocPrix.adult_price_pourcent %}
-                    {{ blocPrix.adult_price|number_format }}€
-                {% else %}
-                    {{ blocPrix.adult_price_without_discounts|number_format }}€
-                {% endif %}
-
-            </span>
-
+        <span class="price linkBlock">
             {% if blocPrix.adult_price_pourcent %}
-            au lieu de <span class="line-through">{{ blocPrix.adult_price_without_discounts|number_format }}<span class="fine">&nbsp;</span>€</span>
+                {{ blocPrix.adult_price|number_format }}<span class="fine">&nbsp;</span>€
+            {% else %}
+                {{ blocPrix.adult_price_without_discounts|number_format }}<span class="fine">&nbsp;</span>€
             {% endif %}
         </span>
+        {% if blocPrix.adult_price_pourcent %}
+            <span class="instead">au lieu de <span class="line-through">{{ blocPrix.adult_price_without_discounts|number_format }}<span class="fine">&nbsp;</span>€</span></span>
+        {% endif %}
         <!--  PROMO  -->
         {% if blocPrix.adult_price_pourcent %}
         <span class="discount">-{{ blocPrix.adult_price_pourcent }}%</span>
