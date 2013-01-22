@@ -24,6 +24,10 @@ class IdeeWeekendListing extends BaseIdeeWeekendListing
     {
         parent::configure();
         $this->addColumn(new Column\TextColumn('titre'));
+        $this->removeColumn('highlight');
+        $this->removeColumn('home');
+        $this->removeColumn('prix');
+        $this->removeColumn('image_path');
     }
 
 } // IdeeWeekendListing

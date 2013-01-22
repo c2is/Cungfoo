@@ -1201,4 +1201,17 @@ abstract class BaseEventQuery extends ModelCriteria
             ->useQuery($relationAlias ? $relationAlias : 'EventI18n', 'Cungfoo\Model\EventI18nQuery');
     }
 
+    // crudable behavior
+
+    public function filterByTerm($term)
+    {
+        $term = '%' . $term . '%';
+
+        return $this
+            ->_or()
+            ->useI18nQuery()
+            ->filterByName($term, \Criteria::LIKE)
+            ->endUse()
+        ;
+    }
 }

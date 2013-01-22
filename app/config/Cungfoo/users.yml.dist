@@ -2,6 +2,9 @@ users:
     c2isadmin:
         - "ROLE_ADMIN"
         - "YhVciJJ+T0jkic1gmqxPvrRfhRL8zVdfsC/Lp9z+Sg5vNarVroOj5epDgzDGR7YgnkgASf+BMAn0F/HOjalu/Q=="
-    vdadmin:
-        - "ROLE_ADMIN"
-        - "9ckucUg+vIr7btv8q8ZathpQqu1xZn+WRTXTPDvf/sHDCJLBoB/UTDkvaL6+WcoaciAl6fneDJAPVKeBKPB0Hw=="
+    g.servoz:
+        - "ROLE_USER"
+        - "QH9iLyZSDmN/fjo8dBeOyRN6Cqu+hyDjBYB/aKyemv1dpHcGEFK/PcFOAAGeYuzJb4ffcuYUl5M/vM2dvPeDSA=="
+    a.lambert:
+        - "ROLE_USER"
+        - "LaFATbP4PD4XmWyt96EtBogYO5aSQKi13QdK1oYvBEMbcwXCiLME9DDT5U144tHyIp9iYYm4JYpsVdXwg3r/QA=="

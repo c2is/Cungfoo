@@ -25,10 +25,19 @@ class EventListing extends BaseEventListing
         parent::configure();
         $this->addColumn(new Column\TextColumn('name'));
         $this->removeColumn('priority');
+        $this->removeColumn('category');
         $this->removeColumn('address');
         $this->removeColumn('address2');
+        $this->removeColumn('code');
+        $this->removeColumn('tel');
+        $this->removeColumn('fax');
+        $this->removeColumn('email');
+        $this->removeColumn('website');
         $this->removeColumn('zipcode');
         $this->removeColumn('image');
+        $this->removeColumn('distance_camping');
+        $this->removeColumn('geo_coordinate_x');
+        $this->removeColumn('geo_coordinate_y');
     }
 
 } // EventListing

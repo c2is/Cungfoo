@@ -1230,4 +1230,17 @@ abstract class BaseTypeHebergementQuery extends ModelCriteria
             ->useQuery($relationAlias ? $relationAlias : 'TypeHebergementI18n', 'Cungfoo\Model\TypeHebergementI18nQuery');
     }
 
+    // crudable behavior
+
+    public function filterByTerm($term)
+    {
+        $term = '%' . $term . '%';
+
+        return $this
+            ->_or()
+            ->useI18nQuery()
+            ->filterByName($term, \Criteria::LIKE)
+            ->endUse()
+        ;
+    }
 }

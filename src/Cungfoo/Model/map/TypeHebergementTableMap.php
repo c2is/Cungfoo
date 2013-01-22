@@ -101,6 +101,7 @@ class TypeHebergementTableMap extends TableMap
   'crud_model' => NULL,
   'crud_form' => NULL,
   'crud_type_file' => 'image_hebergement_path, image_composition_path',
+  'crud_search' => 'name',
 ),
         );
     } // getBehaviors()

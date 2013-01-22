@@ -3,6 +3,8 @@
 namespace Cungfoo\Form\Type;
 
 use Symfony\Component\Form\FormBuilderInterface,
+    Symfony\Component\Form\FormView,
+    Symfony\Component\Form\FormInterface,
     Symfony\Component\Validator\Constraints as Assert;
 
 use Cungfoo\Form\Type\Base\BaseEditoType;
@@ -27,6 +29,30 @@ class EditoType extends BaseEditoType
         //$this->getMetadata($options['data_class'])
         //    ->addPropertyConstraint('field1', new Assert\MinLength(5))
         //;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function buildView(FormView $view, FormInterface $form, array $options)
+    {
+        $view->setAttribute('groups',
+            array(
+                array(
+                    'title'         => 'crud.tab.datas',
+                    'content'       => array(
+                        'slug',
+                        'editoI18ns'
+                    )
+                ),
+                array(
+                    'title'         => 'crud.tab.parameters',
+                    'content'       => array(
+                        'active',
+                    )
+                ),
+            )
+        );
     }
 
 } // EditoType

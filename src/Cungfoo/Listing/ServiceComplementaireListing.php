@@ -24,6 +24,8 @@ class ServiceComplementaireListing extends BaseServiceComplementaireListing
     {
         parent::configure();
         $this->addColumn(new Column\TextColumn('name'));
+        $this->removeColumn('image_path');
+        $this->removeColumn('vignette');
     }
 
 } // ServiceComplementaireListing

@@ -50,7 +50,21 @@ $app->error(function (\Exception $e, $code) use ($app) {
         return;
     }
 
-    $page = 404 == $code ? '404.twig' : '500.twig';
+    switch ($code)
+    {
+        case 403:
+            $page = '403.twig';
+            break;
+        case 404:
+            $page = '404.twig';
+            break;
+        case 500:
+            $page = '500.twig';
+            break;
+        default:
+            $page = '404.twig';
+            break;
+    }
 
     return new Response($app['twig']->render($page, array('code' => $code)), $code);
 });

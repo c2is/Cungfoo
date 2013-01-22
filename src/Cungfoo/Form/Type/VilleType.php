@@ -39,7 +39,7 @@ class VilleType extends BaseVilleType
         $view->setAttribute('groups',
             array(
                 array(
-                    'title'         => 'ville.donnees',
+                    'title'         => 'crud.tab.datas',
                     'content'       => array(
                         'code',
                         'region',
@@ -47,7 +47,7 @@ class VilleType extends BaseVilleType
                     )
                 ),
                 array(
-                    'title'         => 'ville.medias',
+                    'title'         => 'crud.tab.medias',
                     'content'       => array(
                         'image_detail_1',
                         'image_detail_1_deleted',
@@ -56,7 +56,7 @@ class VilleType extends BaseVilleType
                     )
                 ),
                 array(
-                    'title'         => 'ville.parametrages',
+                    'title'         => 'crud.tab.parameters',
                     'content'       => array(
                         'active',
                     )

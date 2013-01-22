@@ -902,4 +902,17 @@ abstract class BaseActiviteQuery extends ModelCriteria
             ->useQuery($relationAlias ? $relationAlias : 'ActiviteI18n', 'Cungfoo\Model\ActiviteI18nQuery');
     }
 
+    // crudable behavior
+
+    public function filterByTerm($term)
+    {
+        $term = '%' . $term . '%';
+
+        return $this
+            ->_or()
+            ->useI18nQuery()
+            ->filterByName($term, \Criteria::LIKE)
+            ->endUse()
+        ;
+    }
 }

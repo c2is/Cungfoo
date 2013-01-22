@@ -37,6 +37,13 @@ class EtablissementQuery extends BaseEtablissementQuery
         ;
     }
 
+    public function find($con = null)
+    {
+        $this->orderByName();
+
+        return parent::find($con);
+    }
+
     public function findActive($absolute = true, $con = null)
     {
         if ($absolute)

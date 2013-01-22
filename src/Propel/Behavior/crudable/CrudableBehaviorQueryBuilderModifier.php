@@ -23,6 +23,7 @@ class CrudableBehaviorQueryBuilderModifier
     public function __construct($behavior)
     {
         $this->behavior = $behavior;
+        $this->table    = $this->behavior->getTable();
     }
 
     public function queryMethods()
@@ -48,14 +49,34 @@ public function filterByTerm(\$term)
 
     return \$this";
 
+    $i18nColumns = '';
+    if ($this->table->hasBehavior('i18n'))
+    {
+        $i18nColumns = $this->table->getBehavior('i18n')->getParameter('i18n_columns');
+    }
+
     foreach ($fields as $field)
     {
         $utils = new \Cungfoo\Lib\Utils();
         $fieldName = $utils->camelize(trim($field));
 
         $output .= "
-        ->_or()
+        ->_or()";
+
+        if (false !== strpos($i18nColumns, $field))
+        {
+            $output .= "
+        ->useI18nQuery()";
+        }
+
+        $output .= "
         ->filterBy$fieldName(\$term, \Criteria::LIKE)";
+
+        if (false !== strpos($i18nColumns, $field))
+        {
+            $output .= "
+        ->endUse()";
+        }
     }
 
     $output .="

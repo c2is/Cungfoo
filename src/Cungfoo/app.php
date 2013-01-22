@@ -12,7 +12,7 @@
 $app = require_once __DIR__.'/../../app/bootstrap.php';
 
 $app['config']->addParams(array(
-    'cungfoo_menu'  => Symfony\Component\Yaml\Yaml::parse(sprintf('%s/Cungfoo/menu.yml', $app['config']->get('config_dir')))['menu'],
+    'cungfoo_menu' => Symfony\Component\Yaml\Yaml::parse(sprintf('%s/Cungfoo/menu.yml', $app['config']->get('config_dir')))['menu'],
 ));
 
 /* T W I G  C O N F I G U R A T I O N  */

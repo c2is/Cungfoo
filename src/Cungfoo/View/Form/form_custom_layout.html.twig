@@ -1,15 +1,8 @@
 {% use 'form_div_layout.html.twig' %}
 
 {% block textrich_widget %}
-<link rel="stylesheet" href="{{ asset('vendor/redactor/css/redactor.css') }}">
-<script src="{{ asset('vendor/redactor/redactor.js') }}"></script>
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('#{{ id }}').redactor();
-    });
-</script>
 {% spaceless %}
-<textarea {{ block('widget_attributes') }}>{{ value }}</textarea>
+<textarea class="ckeditor" {{ block('widget_attributes') }}>{{ value }}</textarea>
 {% endspaceless %}
 {% endblock %}
 
@@ -122,15 +115,15 @@
 {% block form_errors %}
 {% spaceless %}
     {% if errors|length > 0 %}
-    <ul class="alert ">
+    <div class="alert ">
         {% for error in errors %}
-            <li>{{
+            <p>{{
                 error.messagePluralization is null
                     ? error.messageTemplate|trans(error.messageParameters, 'validators')
                     : error.messageTemplate|transchoice(error.messagePluralization, error.messageParameters, 'validators')
-            }}</li>
+            }}</p>
         {% endfor %}
-    </ul>
+    </div>
     {% endif %}
 {% endspaceless %}
 {% endblock form_errors %}

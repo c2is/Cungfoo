@@ -15,9 +15,10 @@ $app['config'] = $app->share(function() {
 });
 
 $app['config']->addParams(array(
-    'web_dir'       => sprintf('%s/web', $app['config']->get('root_dir')),
-    'languages'     => Symfony\Component\Yaml\Yaml::parse(sprintf('%s/languages.yml', $app['config']->get('config_dir')))['languages'],
-    'version'       => trim(file_get_contents(sprintf('%s/version', $app['config']->get('config_dir')))),
+    'web_dir'   => sprintf('%s/web', $app['config']->get('root_dir')),
+    'languages' => Symfony\Component\Yaml\Yaml::parse(sprintf('%s/languages.yml', $app['config']->get('config_dir')))['languages'],
+    'version'   => trim(file_get_contents(sprintf('%s/version', $app['config']->get('config_dir')))),
+    'security'  => new Cungfoo\Lib\Crud\Security($app),
 ));
 
 /* T W I G  C O N F I G U R A T I O N  */

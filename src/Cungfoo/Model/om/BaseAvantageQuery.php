@@ -770,4 +770,17 @@ abstract class BaseAvantageQuery extends ModelCriteria
             ->useQuery($relationAlias ? $relationAlias : 'AvantageI18n', 'Cungfoo\Model\AvantageI18nQuery');
     }
 
+    // crudable behavior
+
+    public function filterByTerm($term)
+    {
+        $term = '%' . $term . '%';
+
+        return $this
+            ->_or()
+            ->useI18nQuery()
+            ->filterByName($term, \Criteria::LIKE)
+            ->endUse()
+        ;
+    }
 }
