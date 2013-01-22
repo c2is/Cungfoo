@@ -624,6 +624,7 @@ bon_plan_categorie:
     crud:
         list: Liste des catégories de bons plans
         update: Mettre à jour la catégorie de bons plans
+        create: Ajouter une catégorie de bons plans
     id: Identifiant
     name: Nom
     active: Active
@@ -638,6 +639,7 @@ bon_plan:
     crud:
         list: Liste des bons plans
         update: Mettre à jour le bon plan
+        create: Ajouter un bon plan
     id: Identifiant
     name: Nom
     active: Active
