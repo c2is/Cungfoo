@@ -1547,6 +1547,7 @@ textarea {
   margin: 10px 0;
   padding-top: 10px;
   text-align: left;
+  width: 100%;
 }
 .proposal table .optionPrice,
 .proposal table .optionPriceDiscount {
