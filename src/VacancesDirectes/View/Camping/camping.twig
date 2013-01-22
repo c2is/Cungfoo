@@ -1,6 +1,10 @@
 {% extends "base.twig" %}
 
-{% block title %}{{ "seo.title.camping" | trans ({'%nom%': etab.name, '%ville%': etab.ville }) }}{% if hasBaignade %}{{ "seo.title.camping_suffix" | trans }}{% endif %} {{ etab.categorie }}{% endblock %}
+{% block title %}
+    {{ "seo.title.camping" | trans ({'%nom%': etab.name, '%ville%': etab.ville }) }}
+    {%if hasBaignade %}{{ "seo.title.camping_suffix" | trans }}{% endif %}
+    {{ etab.categorie }}
+{% endblock %}
 {% block metaDescription %}{{ "seo.meta.camping" | trans  ({'%nom%': etab.name, '%nbEtoiles%': etab.categorie, '%ville%': etab.ville })}}{% endblock %}
 
 {% block bodyClass %} fiche{% endblock %}
@@ -9,7 +13,7 @@
 
 {% block leftColumn %}
 <nav id="ficheShare">
-    <a href="https://www.facebook.com/sharer/sharer.php?u={{ app.request.uri }}" target="_blank" class="icon facebook" title="Partager sur Facebook">Partager sur Facebook</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{ app.request.uri }}" class="icon facebook" title="Partager sur Facebook">Partager sur Facebook</a>
     <a href="http://twitter.com/home?status={{ etab.name }} {{ "destination.camping_title" | trans({'%ville%': etab.ville.name}) }} {% if hasBaignade %}{{ "seo.title.camping_suffix" | trans }}{% endif %} {{ app.request.uri }}" target="_blank" class="icon twitter" title="Partager sur Twitter">Partager sur Twitter</a>
     {#<a href="#_" class="icon email" title="Partager par email">Partager par email</a>#}
     {#<a href="javascript:window.print()" class="icon print" title="Imprimer">Imprimer</a>#}
