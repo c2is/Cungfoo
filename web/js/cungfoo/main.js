@@ -15,10 +15,32 @@ $(function() {
         weekStart: 1
     });
 
+    if($('#crudGroupContent .alert-error').length > 0){
+        var paneId = $('#crudGroupContent .alert-error:first').parents('.tab-pane').attr('id');
+        $('#crudGroup a[href="#' + paneId + '"]').tab('show');
+    }
+    if($('.tab-content .alert-error').length > 0 && $('.tab-content').parent('.tabbable').length){
+        var localizedPaneId = $('.tab-content').hasParent('.tabbable').find('.alert-error:first').parents('.tab-pane').attr('id');
+        $('.tabbable .nav-tabs a[href="#' + localizedPaneId + '"]').tab('show');
+    }
+
+
     //via http://ivaynberg.github.com/select2/#documentation
     //$("select[multiple='multiple']").select2({
     //    placeholder: "Select a State",
     //    allowClear: true,
     //});
+});
+
+// Extend jQuery.fn with our new method
+jQuery.extend( jQuery.fn, {
+    // Name of our method & one argument (the parent selector)
+    hasParent: function(p) {
+        // Returns a subset of items using jQuery.filter
+        return this.filter(function(){
+            // Return truthy/falsey based on presence in parent
+            return $(p).find(this).length;
+        });
+    }
 });
 
