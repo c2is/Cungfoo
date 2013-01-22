@@ -4,7 +4,7 @@
 {% block metaDescription %}{{ "seo.meta.location.fiche" | trans ({'%name%': typeHebergement.name|lower, '%type%': typeHebergement.categoryTypeHebergement|lower, '%personnes%': typeHebergement.nombrePlace}) }}{% endblock %}
 {% block bodyClass %} fiche{% endblock %}
 
-{% block canonical %}<link rel="canonical" href="{{ canonical }}" />{% endblock %}
+{% block canonical %}{% if canonical %}<link rel="canonical" href="{{ canonical }}" />{% endif %}{% endblock %}
 
 {% block leftColumn %}
 
