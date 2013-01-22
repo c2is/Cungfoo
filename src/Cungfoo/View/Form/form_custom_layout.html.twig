@@ -100,13 +100,25 @@
 {% block form_row %}
 {% spaceless %}
     <div class="row">
-        <div class="span3">
-            {{ form_errors(form) }}
-            {{ form_label(form) }}
-        </div>
-        <div class="span9">
-            {{ form_widget(form) }}
-        </div>
+        <div class="span12">{{ form_errors(form) }}</div>
+        <div class="span3">{{ form_label(form) }}</div>
+        <div class="span9">{{ form_widget(form) }}</div>
     </div>
 {% endspaceless %}
 {% endblock form_row %}
+
+{% block form_errors %}
+{% spaceless %}
+    {% if errors|length > 0 %}
+    <div class="alert alert-error">
+        {% for error in errors %}
+            <span>{{
+                error.messagePluralization is null
+                    ? error.messageTemplate|trans(error.messageParameters, 'validators')
+                    : error.messageTemplate|transchoice(error.messagePluralization, error.messageParameters, 'validators')
+            }}</span><br/>
+        {% endfor %}
+    </div>
+    {% endif %}
+{% endspaceless %}
+{% endblock form_errors %}
