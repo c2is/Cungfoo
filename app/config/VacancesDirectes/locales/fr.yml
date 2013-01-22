@@ -336,9 +336,9 @@ menu:
     vacances: "Vos vacances"
     weekends: "Vos week-ends"
     tous_camping: "Tous nos campings"
-    decouvrer_locations: "Découvrez nos locations"
-    decouvrer_locations_type: "Par type"
-    decouvrer_locations_capacite: "Par capacité"
+    decouvrez_locations: "Découvrez nos locations"
+    decouvrez_locations_type: "Par type"
+    decouvrez_locations_capacite: "Par capacité"
 
 etablissement:
     activites: "Liste des activités"
