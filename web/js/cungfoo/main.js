@@ -11,6 +11,10 @@ $(function() {
     $("input[id$='_address'], input[id$='_address1'], input[id$='_address2'], input[id$='_name'], input[id$='_str_date'], input[id$='_subtitle'], input[id$='_slug']").addClass('span6');
     $("input[id$='_image'], input[id$='_description'], input[id$='_keywords']").addClass('span9');
 
+    $('.widget-datepicker').datepicker({
+        weekStart: 1
+    });
+
     //via http://ivaynberg.github.com/select2/#documentation
     //$("select[multiple='multiple']").select2({
     //    placeholder: "Select a State",
