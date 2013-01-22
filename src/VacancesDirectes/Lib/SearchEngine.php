@@ -76,14 +76,14 @@ class SearchEngine
                     $this->app['session']->set('search_engine_data', $searchDateData);
                 }
 
-                if ($searchDateData->dateDebut && $searchDateData->nbJours)
+                if ($searchDateData->dateDebut && (($searchDateData->isBasseSaison && $searchDateData->nbJoursBasseSaison) || (!$searchDateData->isBasseSaison && $searchDateData->nbJoursHauteSaison)))
                 {
                     $dateDebut = \DateTime::createFromFormat('d/m/Y', $searchDateData->dateDebut);
 
                     $urlParams = array(
                         'large'       => $searchDateData->destination,
                         'start_date'  => $dateDebut->format('Y-m-d'),
-                        'nb_days'     => $searchDateData->nbJours,
+                        'nb_days'     => $searchDateData->isBasseSaison ? $searchDateData->nbJoursBasseSaison : $searchDateData->nbJoursHauteSaison,
                         'nb_adults'   => $searchDateData->nbAdultes,
                         'nb_children' => $searchDateData->nbEnfants,
                     );

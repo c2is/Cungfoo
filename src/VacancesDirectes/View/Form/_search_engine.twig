@@ -22,8 +22,11 @@
                 <li>
                 <li>
                     <div id="SearchDate_selectContainer0" class="selectContainer clear">
-                        {{ form_label(searchForm.nbJours) }}
-                        {{ form_widget(searchForm.nbJours) }}
+                        {{ form_widget(searchForm.isBasseSaison) }}
+                        {{ form_label(searchForm.nbJoursHauteSaison) }}
+                        {{ form_widget(searchForm.nbJoursHauteSaison) }}
+                        {{ form_label(searchForm.nbJoursBasseSaison) }}
+                        {{ form_widget(searchForm.nbJoursBasseSaison) }}
                     </div>
                 </li>
                 </li>
@@ -119,7 +122,7 @@
 <script type="text/javascript">
     var fStartDate = '2013/03/01',
         fEndDate = '2013/10/31',
-        fHighSeasonStartDate = '2013/07/06',    // must be a saturday
+        fHighSeasonStartDate = '2013/06/29',    // must be a saturday
         fHighSeasonEndDate = '2013/08/31',      // must be a saturday
         linear = "reservation";
 

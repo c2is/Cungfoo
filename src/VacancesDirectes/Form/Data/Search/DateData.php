@@ -11,10 +11,14 @@ class DateData
     public $destination;
     public $ville;
     public $camping;
-    public $nbJours   = 0;
-    public $isCamping = 0;
-    public $nbAdultes = 2;
-    public $nbEnfants = 0;
+    public $isCamping          = 0;
+
+    public $nbJoursBasseSaison = 0;
+    public $nbJoursHauteSaison = 0;
+    public $isBasseSaison      = 1;
+
+    public $nbAdultes          = 2;
+    public $nbEnfants          = 0;
 
     public function isValide(ExecutionContext $context)
     {
@@ -27,7 +31,7 @@ class DateData
             $context->addViolation('date_search.ville.required', array (), null);
         }
 
-        if ($this->dateDebut || $this->nbJours)
+        if ($this->dateDebut || $this->nbJoursBasseSaison || $this->nbJoursHauteSaison)
         {
             if (!$this->dateDebut)
             {
@@ -39,7 +43,7 @@ class DateData
                 $context->addViolation('date_search.nb_adultes.required', array (), null);
             }
 
-            if ($this->nbJours < 1)
+            if (($this->isBasseSaison && $this->nbJoursBasseSaison < 1) || (!$this->isBasseSaison && $this->nbJoursHauteSaison < 1))
             {
                 $context->addViolation('date_search.nb_jours.required', array (), null);
             }
