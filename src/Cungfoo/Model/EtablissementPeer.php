@@ -26,18 +26,6 @@ class EtablissementPeer extends BaseEtablissementPeer
         return \Cungfoo\Model\EtablissementQuery::create()
             ->orderByName()
             ->joinWithEtablissementI18n()
-            ->joinWithVille()
-            ->useVilleQuery()
-                ->joinWithVilleI18n()
-                ->joinWithRegion()
-                ->useRegionQuery()
-                    ->joinWithRegionI18n()
-                    ->joinWithPays()
-                    ->usePaysQuery()
-                        ->joinWithPaysI18n()
-                    ->endUse()
-                ->endUse()
-            ->endUse()
             ->findActive($con)
         ;
     }
