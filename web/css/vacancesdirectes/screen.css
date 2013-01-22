@@ -3907,7 +3907,7 @@ body.edito table td {
   top: 117px;
   left: 137px;
   padding: 0 15px;
-  background: url("../../images/vacancesdirectes/common/ui/cloud.png") no-repeat 0 0 transparent;
+  background: url("../../images/vacancesdirectes/common/sprites/cloud.png") no-repeat 0 0 transparent;
   text-align: center;
   height: 115px;
   /* Centrer verticalement une ligne de texte */
@@ -3948,7 +3948,7 @@ body.edito table td {
 .home #activitiesBloc .blueCloud {
   position: absolute;
   padding: 0 25px 0 15px;
-  background: url("../../images/vacancesdirectes/common/ui/cloud.png") no-repeat 0 0 transparent;
+  background: url("../../images/vacancesdirectes/common/sprites/cloud.png") no-repeat 0 0 transparent;
   text-align: center;
 }
 .home #activitiesBloc .blueCloud span {
