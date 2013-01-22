@@ -24,6 +24,8 @@ use Cungfoo\Model\Etablissement;
 use Cungfoo\Model\EtablissementDestination;
 use Cungfoo\Model\EtablissementDestinationQuery;
 use Cungfoo\Model\EtablissementQuery;
+use Cungfoo\Model\Region;
+use Cungfoo\Model\RegionQuery;
 
 /**
  * Base class that represents a row from the 'destination' table.
@@ -91,6 +93,12 @@ abstract class BaseDestination extends BaseObject implements Persistent
     protected $collEtablissementDestinationsPartial;
 
     /**
+     * @var        PropelObjectCollection|Region[] Collection to store aggregation of Region objects.
+     */
+    protected $collRegions;
+    protected $collRegionsPartial;
+
+    /**
      * @var        PropelObjectCollection|DestinationI18n[] Collection to store aggregation of DestinationI18n objects.
      */
     protected $collDestinationI18ns;
@@ -140,6 +148,12 @@ abstract class BaseDestination extends BaseObject implements Persistent
      * @var		PropelObjectCollection
      */
     protected $etablissementDestinationsScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
+    protected $regionsScheduledForDeletion = null;
 
     /**
      * An array of objects scheduled for deletion.
@@ -508,6 +522,8 @@ abstract class BaseDestination extends BaseObject implements Persistent
 
             $this->collEtablissementDestinations = null;
 
+            $this->collRegions = null;
+
             $this->collDestinationI18ns = null;
 
             $this->collEtablissements = null;
@@ -677,6 +693,24 @@ abstract class BaseDestination extends BaseObject implements Persistent
 
             if ($this->collEtablissementDestinations !== null) {
                 foreach ($this->collEtablissementDestinations as $referrerFK) {
+                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
+                        $affectedRows += $referrerFK->save($con);
+                    }
+                }
+            }
+
+            if ($this->regionsScheduledForDeletion !== null) {
+                if (!$this->regionsScheduledForDeletion->isEmpty()) {
+                    foreach ($this->regionsScheduledForDeletion as $region) {
+                        // need to save related object because we set the relation to null
+                        $region->save($con);
+                    }
+                    $this->regionsScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collRegions !== null) {
+                foreach ($this->collRegions as $referrerFK) {
                     if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
                         $affectedRows += $referrerFK->save($con);
                     }
@@ -874,6 +908,14 @@ abstract class BaseDestination extends BaseObject implements Persistent
                     }
                 }
 
+                if ($this->collRegions !== null) {
+                    foreach ($this->collRegions as $referrerFK) {
+                        if (!$referrerFK->validate($columns)) {
+                            $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
+                        }
+                    }
+                }
+
                 if ($this->collDestinationI18ns !== null) {
                     foreach ($this->collDestinationI18ns as $referrerFK) {
                         if (!$referrerFK->validate($columns)) {
@@ -970,6 +1012,9 @@ abstract class BaseDestination extends BaseObject implements Persistent
         if ($includeForeignObjects) {
             if (null !== $this->collEtablissementDestinations) {
                 $result['EtablissementDestinations'] = $this->collEtablissementDestinations->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
+            }
+            if (null !== $this->collRegions) {
+                $result['Regions'] = $this->collRegions->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
             if (null !== $this->collDestinationI18ns) {
                 $result['DestinationI18ns'] = $this->collDestinationI18ns->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
@@ -1149,6 +1194,12 @@ abstract class BaseDestination extends BaseObject implements Persistent
                 }
             }
 
+            foreach ($this->getRegions() as $relObj) {
+                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
+                    $copyObj->addRegion($relObj->copy($deepCopy));
+                }
+            }
+
             foreach ($this->getDestinationI18ns() as $relObj) {
                 if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
                     $copyObj->addDestinationI18n($relObj->copy($deepCopy));
@@ -1218,6 +1269,9 @@ abstract class BaseDestination extends BaseObject implements Persistent
     {
         if ('EtablissementDestination' == $relationName) {
             $this->initEtablissementDestinations();
+        }
+        if ('Region' == $relationName) {
+            $this->initRegions();
         }
         if ('DestinationI18n' == $relationName) {
             $this->initDestinationI18ns();
@@ -1462,6 +1516,246 @@ abstract class BaseDestination extends BaseObject implements Persistent
         $query->joinWith('Etablissement', $join_behavior);
 
         return $this->getEtablissementDestinations($query, $con);
+    }
+
+    /**
+     * Clears out the collRegions collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return Destination The current object (for fluent API support)
+     * @see        addRegions()
+     */
+    public function clearRegions()
+    {
+        $this->collRegions = null; // important to set this to null since that means it is uninitialized
+        $this->collRegionsPartial = null;
+
+        return $this;
+    }
+
+    /**
+     * reset is the collRegions collection loaded partially
+     *
+     * @return void
+     */
+    public function resetPartialRegions($v = true)
+    {
+        $this->collRegionsPartial = $v;
+    }
+
+    /**
+     * Initializes the collRegions collection.
+     *
+     * By default this just sets the collRegions collection to an empty array (like clearcollRegions());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @param boolean $overrideExisting If set to true, the method call initializes
+     *                                        the collection even if it is not empty
+     *
+     * @return void
+     */
+    public function initRegions($overrideExisting = true)
+    {
+        if (null !== $this->collRegions && !$overrideExisting) {
+            return;
+        }
+        $this->collRegions = new PropelObjectCollection();
+        $this->collRegions->setModel('Region');
+    }
+
+    /**
+     * Gets an array of Region objects which contain a foreign key that references this object.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this Destination is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @return PropelObjectCollection|Region[] List of Region objects
+     * @throws PropelException
+     */
+    public function getRegions($criteria = null, PropelPDO $con = null)
+    {
+        $partial = $this->collRegionsPartial && !$this->isNew();
+        if (null === $this->collRegions || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collRegions) {
+                // return empty collection
+                $this->initRegions();
+            } else {
+                $collRegions = RegionQuery::create(null, $criteria)
+                    ->filterByDestination($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    if (false !== $this->collRegionsPartial && count($collRegions)) {
+                      $this->initRegions(false);
+
+                      foreach($collRegions as $obj) {
+                        if (false == $this->collRegions->contains($obj)) {
+                          $this->collRegions->append($obj);
+                        }
+                      }
+
+                      $this->collRegionsPartial = true;
+                    }
+
+                    return $collRegions;
+                }
+
+                if($partial && $this->collRegions) {
+                    foreach($this->collRegions as $obj) {
+                        if($obj->isNew()) {
+                            $collRegions[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collRegions = $collRegions;
+                $this->collRegionsPartial = false;
+            }
+        }
+
+        return $this->collRegions;
+    }
+
+    /**
+     * Sets a collection of Region objects related by a one-to-many relationship
+     * to the current object.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $regions A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     * @return Destination The current object (for fluent API support)
+     */
+    public function setRegions(PropelCollection $regions, PropelPDO $con = null)
+    {
+        $this->regionsScheduledForDeletion = $this->getRegions(new Criteria(), $con)->diff($regions);
+
+        foreach ($this->regionsScheduledForDeletion as $regionRemoved) {
+            $regionRemoved->setDestination(null);
+        }
+
+        $this->collRegions = null;
+        foreach ($regions as $region) {
+            $this->addRegion($region);
+        }
+
+        $this->collRegions = $regions;
+        $this->collRegionsPartial = false;
+
+        return $this;
+    }
+
+    /**
+     * Returns the number of related Region objects.
+     *
+     * @param Criteria $criteria
+     * @param boolean $distinct
+     * @param PropelPDO $con
+     * @return int             Count of related Region objects.
+     * @throws PropelException
+     */
+    public function countRegions(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        $partial = $this->collRegionsPartial && !$this->isNew();
+        if (null === $this->collRegions || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collRegions) {
+                return 0;
+            }
+
+            if($partial && !$criteria) {
+                return count($this->getRegions());
+            }
+            $query = RegionQuery::create(null, $criteria);
+            if ($distinct) {
+                $query->distinct();
+            }
+
+            return $query
+                ->filterByDestination($this)
+                ->count($con);
+        }
+
+        return count($this->collRegions);
+    }
+
+    /**
+     * Method called to associate a Region object to this object
+     * through the Region foreign key attribute.
+     *
+     * @param    Region $l Region
+     * @return Destination The current object (for fluent API support)
+     */
+    public function addRegion(Region $l)
+    {
+        if ($this->collRegions === null) {
+            $this->initRegions();
+            $this->collRegionsPartial = true;
+        }
+        if (!in_array($l, $this->collRegions->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
+            $this->doAddRegion($l);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	Region $region The region object to add.
+     */
+    protected function doAddRegion($region)
+    {
+        $this->collRegions[]= $region;
+        $region->setDestination($this);
+    }
+
+    /**
+     * @param	Region $region The region object to remove.
+     * @return Destination The current object (for fluent API support)
+     */
+    public function removeRegion($region)
+    {
+        if ($this->getRegions()->contains($region)) {
+            $this->collRegions->remove($this->collRegions->search($region));
+            if (null === $this->regionsScheduledForDeletion) {
+                $this->regionsScheduledForDeletion = clone $this->collRegions;
+                $this->regionsScheduledForDeletion->clear();
+            }
+            $this->regionsScheduledForDeletion[]= $region;
+            $region->setDestination(null);
+        }
+
+        return $this;
+    }
+
+
+    /**
+     * If this collection has already been initialized with
+     * an identical criteria, it returns the collection.
+     * Otherwise if this Destination is new, it will return
+     * an empty collection; or if this Destination has previously
+     * been saved, it will retrieve related Regions from storage.
+     *
+     * This method is protected by default in order to keep the public
+     * api reasonable.  You can provide public methods for those you
+     * actually need in Destination.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @param string $join_behavior optional join type to use (defaults to Criteria::LEFT_JOIN)
+     * @return PropelObjectCollection|Region[] List of Region objects
+     */
+    public function getRegionsJoinPays($criteria = null, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    {
+        $query = RegionQuery::create(null, $criteria);
+        $query->joinWith('Pays', $join_behavior);
+
+        return $this->getRegions($query, $con);
     }
 
     /**
@@ -1896,6 +2190,11 @@ abstract class BaseDestination extends BaseObject implements Persistent
                     $o->clearAllReferences($deep);
                 }
             }
+            if ($this->collRegions) {
+                foreach ($this->collRegions as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
             if ($this->collDestinationI18ns) {
                 foreach ($this->collDestinationI18ns as $o) {
                     $o->clearAllReferences($deep);
@@ -1916,6 +2215,10 @@ abstract class BaseDestination extends BaseObject implements Persistent
             $this->collEtablissementDestinations->clearIterator();
         }
         $this->collEtablissementDestinations = null;
+        if ($this->collRegions instanceof PropelCollection) {
+            $this->collRegions->clearIterator();
+        }
+        $this->collRegions = null;
         if ($this->collDestinationI18ns instanceof PropelCollection) {
             $this->collDestinationI18ns->clearIterator();
         }

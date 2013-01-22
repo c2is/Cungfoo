@@ -1,18 +1,4 @@
 \Cungfoo\Model\TypeHebergementCapaciteI18n:
-    1_de:
-        Id: 1
-        Locale: de
-        Name: ''
-        Slug: null
-        Accroche: null
-        Description: null
-    1_en:
-        Id: 1
-        Locale: en
-        Name: ''
-        Slug: null
-        Accroche: null
-        Description: null
     1_fr:
         Id: 1
         Locale: fr
@@ -20,94 +6,24 @@
         Slug: 2-adultes
         Accroche: 'Partez à deux !'
         Description: 'Que vous recherchiez plutôt la simplicité, le grand confort, l''originalité ou l''authenticité, retrouvez tous nos hébergements pour vos vacances en couple.'
-    1_nl:
-        Id: 1
-        Locale: nl
-        Name: ''
-        Slug: null
-        Accroche: null
-        Description: null
-    2_de:
-        Id: 2
-        Locale: de
-        Name: ''
-        Slug: null
-        Accroche: null
-        Description: null
-    2_en:
-        Id: 2
-        Locale: en
-        Name: ''
-        Slug: null
-        Accroche: null
-        Description: null
     2_fr:
         Id: 2
         Locale: fr
-        Name: '2 adultes 3 enfants'
+        Name: '2 adultes + 3 enfants'
         Slug: 2-adultes-3-enfants
         Accroche: 'Du bonheur pour toute la famille !'
         Description: 'Adaptés à tous les portefeuilles, aux familles plus ou moins grandes et à votre mode de vacances favori, nos hébergements vous attendent pour des vacances en famille, l''esprit libre.'
-    2_nl:
-        Id: 2
-        Locale: nl
-        Name: ''
-        Slug: null
-        Accroche: null
-        Description: null
-    3_de:
-        Id: 3
-        Locale: de
-        Name: ''
-        Slug: null
-        Accroche: null
-        Description: null
-    3_en:
-        Id: 3
-        Locale: en
-        Name: ''
-        Slug: null
-        Accroche: null
-        Description: null
     3_fr:
         Id: 3
         Locale: fr
-        Name: '2 adultes 2 enfants'
+        Name: '2 adultes + 2 enfants'
         Slug: 2-adultes-2-enfants
         Accroche: 'Les joies des vacances en famille'
         Description: 'Nos hébergements bien équipés et adaptés à vos attentes vous permettront de passer des vacances réussies en famille.'
-    3_nl:
-        Id: 3
-        Locale: nl
-        Name: ''
-        Slug: null
-        Accroche: null
-        Description: null
-    4_de:
-        Id: 4
-        Locale: de
-        Name: ''
-        Slug: null
-        Accroche: null
-        Description: null
-    4_en:
-        Id: 4
-        Locale: en
-        Name: ''
-        Slug: null
-        Accroche: null
-        Description: null
     4_fr:
         Id: 4
         Locale: fr
-        Name: '4 adultes et plus'
-        Slug: 4-adultes-et-plus
+        Name: '4 adultes'
+        Slug: 4-adultes
         Accroche: 'Entre amis'
         Description: 'Retrouvez-vous entre amis et profitez de nos hébergements pour vivre des bons moments de détente et de franche rigolade.'
-    4_nl:
-        Id: 4
-        Locale: nl
-        Name: ''
-        Slug: null
-        Accroche: null
-        Description: null

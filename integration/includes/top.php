@@ -6,10 +6,10 @@
         <li class="tab"><a href="#">Les destinations <small>(137)</small></a>
             <div id="destinations" class="subnav">
                 <div class="clear">
-                    <div id="destinationsNational" class="left ratio-33">
-                        <div class="radiusBox2 greyC bgImg">
+                    <div id="destinationsCountry" class="left destination">
+                        <div class="radiusBox2 greyC bgImg national">
                             <div class="view">
-                                <img class="bg" src="../web/images/vacancesdirectes/dyn/menu/1-destinations/france.jpg" alt="" />
+                                <img class="bg" src="../web/images/vacancesdirectes/common/menu/destinations/france_visuel.jpg" alt="" />
                                 <div class="stamp grey"><span>France</span></div>
                             </div>
                             <div class="region">
@@ -49,11 +49,9 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>
-                    <div id="destinationsInternational" class="left ratio-33">
-                        <div class="radiusBox2 greyC bgImg">
+                        <div class="radiusBox2 greyC bgImg international">
                             <div class="view">
-                                <img class="bg" src="../web/images/vacancesdirectes/dyn/menu/1-destinations/spain.jpg" alt="" />
+                                <img class="bg" src="../web/images/vacancesdirectes/common/menu/destinations/espagne_visuel.jpg" alt="" />
                                 <div class="stamp grey"><span>Espagne</span></div>
                             </div>
                             <div class="region">
@@ -65,9 +63,9 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="radiusBox2 greyC">
+                        <div class="radiusBox2 greyC bgImg international">
                             <div class="view">
-                                <img class="bg" src="../web/images/vacancesdirectes/dyn/menu/1-destinations/italia.jpg" alt="" />
+                                <img class="bg" src="../web/images/vacancesdirectes/common/menu/destinations/italie_visuel.jpg" alt="" />
                                 <div class="stamp grey"><span>Italie</span></div>
                             </div>
                             <div class="region">
@@ -77,6 +75,8 @@
                                 </ul>
                             </div>
                         </div>
+<<<<<<< HEAD
+=======
                         <!--
                         <div class="radiusBox2 greyC">
                             <div class="view">
@@ -90,8 +90,9 @@
                             </div>
                         </div>
                         -->
+>>>>>>> origin/master
                     </div>
-                    <div id="destinationsAll" class="left ratio-33">
+                    <div id="destinationsAll" class="left destination">
                         <div class="radiusBox greyC">
                             <div class="title">Tous nos campings</div>
                             <!--

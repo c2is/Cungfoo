@@ -53,12 +53,12 @@ header, section, footer {position:relative;}
         a:hover{color:@colorFushia;}
         .link:hover{color:@colorGris2;}
         li{line-height:15px;}
-        .ratio-33{width:300px;margin-right:16px;
+        .destination{
           &:last-child{width:308px;margin-right:0;}
           .radiusBox,
           .radiusBox2{font:12px/13px @arial,sans-serif;
             .view{width:290px;height:90px;margin:-15px -20px 15px;._border-radius(6px 6px 0 0);
-              .bg{position:absolute;top:0;left:0;}
+              .bg{position:absolute;top:0;left:0;._border-radius(5px 5px 0 0);}
             }
             .title{font:bold 18px @ptnarrow;text-transform:uppercase;margin:3px 0 2px;}
             .region{}
@@ -73,17 +73,22 @@ header, section, footer {position:relative;}
         }
         .letter-count{position:absolute;top:-30px !important;left:auto !important;right:15px;width:28px !important;._verticalCenter(35px);font:bold 15px @arial,sans-serif;color:@colorGris2;}
 
-        #destinationsNational{
-          .radiusBox2{min-height:535px;}
-          .region{
-            ul{padding-bottom:5px;border-bottom:7px solid @colorBgGrisC;}
-            &:last-child ul {padding-bottom:0;border-bottom:0 none;}
+        #destinationsCountry{width:628px;margin-right:12px;
+
+          .radiusBox2{float:left;margin-right:12px;margin-bottom:12px;margin-top:0;
+            &:last-child{margin-right:0;}
+            &.national{width:628px;margin-top:15px;padding-right:0;
+              .regions{
+                .region{width:274px;margin-right:20px;float:left;
+                  ul{padding-bottom:5px;border-bottom:7px solid @colorBgGrisC;}
+                  &:last-child ul {padding-bottom:0;border-bottom:0 none;}
+                }
+              }
+            }
+            &.international{width:308px;}
           }
         }
-        #destinationsInternational{
-          .radiusBox2{min-height:260px;}
-        }
-        #destinationsAll{
+        #destinationsAll{width:300px;
           ol#campingsList{overflow:auto;height:471px;margin-top:10px;
             li{position:relative;margin-left:50px;
               &.letter-first{position:relative;margin-bottom:-10px;margin-left:0;height:15px;width:20px;font:bold 17px @ptnarrow;}

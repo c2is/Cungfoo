@@ -19,6 +19,8 @@ use Cungfoo\Model\BonPlan;
 use Cungfoo\Model\BonPlanQuery;
 use Cungfoo\Model\BonPlanRegion;
 use Cungfoo\Model\BonPlanRegionQuery;
+use Cungfoo\Model\Destination;
+use Cungfoo\Model\DestinationQuery;
 use Cungfoo\Model\Pays;
 use Cungfoo\Model\PaysQuery;
 use Cungfoo\Model\Region;
@@ -94,6 +96,12 @@ abstract class BaseRegion extends BaseObject implements Persistent
     protected $pays_id;
 
     /**
+     * The value for the destination_id field.
+     * @var        int
+     */
+    protected $destination_id;
+
+    /**
      * The value for the mea_home field.
      * @var        boolean
      */
@@ -134,6 +142,11 @@ abstract class BaseRegion extends BaseObject implements Persistent
      * @var        Pays
      */
     protected $aPays;
+
+    /**
+     * @var        Destination
+     */
+    protected $aDestination;
 
     /**
      * @var        PropelObjectCollection|Ville[] Collection to store aggregation of Ville objects.
@@ -289,6 +302,16 @@ abstract class BaseRegion extends BaseObject implements Persistent
     public function getPaysId()
     {
         return $this->pays_id;
+    }
+
+    /**
+     * Get the [destination_id] column value.
+     *
+     * @return int
+     */
+    public function getDestinationId()
+    {
+        return $this->destination_id;
     }
 
     /**
@@ -542,6 +565,31 @@ abstract class BaseRegion extends BaseObject implements Persistent
     } // setPaysId()
 
     /**
+     * Set the value of [destination_id] column.
+     *
+     * @param int $v new value
+     * @return Region The current object (for fluent API support)
+     */
+    public function setDestinationId($v)
+    {
+        if ($v !== null) {
+            $v = (int) $v;
+        }
+
+        if ($this->destination_id !== $v) {
+            $this->destination_id = $v;
+            $this->modifiedColumns[] = RegionPeer::DESTINATION_ID;
+        }
+
+        if ($this->aDestination !== null && $this->aDestination->getId() !== $v) {
+            $this->aDestination = null;
+        }
+
+
+        return $this;
+    } // setDestinationId()
+
+    /**
      * Sets the value of the [mea_home] column.
      * Non-boolean arguments are converted using the following rules:
      *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
@@ -729,12 +777,13 @@ abstract class BaseRegion extends BaseObject implements Persistent
             $this->image_encart_path = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
             $this->image_encart_petite_path = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
             $this->pays_id = ($row[$startcol + 5] !== null) ? (int) $row[$startcol + 5] : null;
-            $this->mea_home = ($row[$startcol + 6] !== null) ? (boolean) $row[$startcol + 6] : null;
-            $this->image_detail_1 = ($row[$startcol + 7] !== null) ? (string) $row[$startcol + 7] : null;
-            $this->image_detail_2 = ($row[$startcol + 8] !== null) ? (string) $row[$startcol + 8] : null;
-            $this->created_at = ($row[$startcol + 9] !== null) ? (string) $row[$startcol + 9] : null;
-            $this->updated_at = ($row[$startcol + 10] !== null) ? (string) $row[$startcol + 10] : null;
-            $this->active = ($row[$startcol + 11] !== null) ? (boolean) $row[$startcol + 11] : null;
+            $this->destination_id = ($row[$startcol + 6] !== null) ? (int) $row[$startcol + 6] : null;
+            $this->mea_home = ($row[$startcol + 7] !== null) ? (boolean) $row[$startcol + 7] : null;
+            $this->image_detail_1 = ($row[$startcol + 8] !== null) ? (string) $row[$startcol + 8] : null;
+            $this->image_detail_2 = ($row[$startcol + 9] !== null) ? (string) $row[$startcol + 9] : null;
+            $this->created_at = ($row[$startcol + 10] !== null) ? (string) $row[$startcol + 10] : null;
+            $this->updated_at = ($row[$startcol + 11] !== null) ? (string) $row[$startcol + 11] : null;
+            $this->active = ($row[$startcol + 12] !== null) ? (boolean) $row[$startcol + 12] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -743,7 +792,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 12; // 12 = RegionPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 13; // 13 = RegionPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Region object", $e);
@@ -768,6 +817,9 @@ abstract class BaseRegion extends BaseObject implements Persistent
 
         if ($this->aPays !== null && $this->pays_id !== $this->aPays->getId()) {
             $this->aPays = null;
+        }
+        if ($this->aDestination !== null && $this->destination_id !== $this->aDestination->getId()) {
+            $this->aDestination = null;
         }
     } // ensureConsistency
 
@@ -809,6 +861,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
         if ($deep) {  // also de-associate any related objects?
 
             $this->aPays = null;
+            $this->aDestination = null;
             $this->collVilles = null;
 
             $this->collBonPlanRegions = null;
@@ -952,6 +1005,13 @@ abstract class BaseRegion extends BaseObject implements Persistent
                 $this->setPays($this->aPays);
             }
 
+            if ($this->aDestination !== null) {
+                if ($this->aDestination->isModified() || $this->aDestination->isNew()) {
+                    $affectedRows += $this->aDestination->save($con);
+                }
+                $this->setDestination($this->aDestination);
+            }
+
             if ($this->isNew() || $this->isModified()) {
                 // persist changes
                 if ($this->isNew()) {
@@ -1079,6 +1139,9 @@ abstract class BaseRegion extends BaseObject implements Persistent
         if ($this->isColumnModified(RegionPeer::PAYS_ID)) {
             $modifiedColumns[':p' . $index++]  = '`pays_id`';
         }
+        if ($this->isColumnModified(RegionPeer::DESTINATION_ID)) {
+            $modifiedColumns[':p' . $index++]  = '`destination_id`';
+        }
         if ($this->isColumnModified(RegionPeer::MEA_HOME)) {
             $modifiedColumns[':p' . $index++]  = '`mea_home`';
         }
@@ -1125,6 +1188,9 @@ abstract class BaseRegion extends BaseObject implements Persistent
                         break;
                     case '`pays_id`':
                         $stmt->bindValue($identifier, $this->pays_id, PDO::PARAM_INT);
+                        break;
+                    case '`destination_id`':
+                        $stmt->bindValue($identifier, $this->destination_id, PDO::PARAM_INT);
                         break;
                     case '`mea_home`':
                         $stmt->bindValue($identifier, (int) $this->mea_home, PDO::PARAM_INT);
@@ -1249,6 +1315,12 @@ abstract class BaseRegion extends BaseObject implements Persistent
                 }
             }
 
+            if ($this->aDestination !== null) {
+                if (!$this->aDestination->validate($columns)) {
+                    $failureMap = array_merge($failureMap, $this->aDestination->getValidationFailures());
+                }
+            }
+
 
             if (($retval = RegionPeer::doValidate($this, $columns)) !== true) {
                 $failureMap = array_merge($failureMap, $retval);
@@ -1333,21 +1405,24 @@ abstract class BaseRegion extends BaseObject implements Persistent
                 return $this->getPaysId();
                 break;
             case 6:
-                return $this->getMeaHome();
+                return $this->getDestinationId();
                 break;
             case 7:
-                return $this->getImageDetail1();
+                return $this->getMeaHome();
                 break;
             case 8:
-                return $this->getImageDetail2();
+                return $this->getImageDetail1();
                 break;
             case 9:
-                return $this->getCreatedAt();
+                return $this->getImageDetail2();
                 break;
             case 10:
-                return $this->getUpdatedAt();
+                return $this->getCreatedAt();
                 break;
             case 11:
+                return $this->getUpdatedAt();
+                break;
+            case 12:
                 return $this->getActive();
                 break;
             default:
@@ -1385,16 +1460,20 @@ abstract class BaseRegion extends BaseObject implements Persistent
             $keys[3] => $this->getImageEncartPath(),
             $keys[4] => $this->getImageEncartPetitePath(),
             $keys[5] => $this->getPaysId(),
-            $keys[6] => $this->getMeaHome(),
-            $keys[7] => $this->getImageDetail1(),
-            $keys[8] => $this->getImageDetail2(),
-            $keys[9] => $this->getCreatedAt(),
-            $keys[10] => $this->getUpdatedAt(),
-            $keys[11] => $this->getActive(),
+            $keys[6] => $this->getDestinationId(),
+            $keys[7] => $this->getMeaHome(),
+            $keys[8] => $this->getImageDetail1(),
+            $keys[9] => $this->getImageDetail2(),
+            $keys[10] => $this->getCreatedAt(),
+            $keys[11] => $this->getUpdatedAt(),
+            $keys[12] => $this->getActive(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aPays) {
                 $result['Pays'] = $this->aPays->toArray($keyType, $includeLazyLoadColumns,  $alreadyDumpedObjects, true);
+            }
+            if (null !== $this->aDestination) {
+                $result['Destination'] = $this->aDestination->toArray($keyType, $includeLazyLoadColumns,  $alreadyDumpedObjects, true);
             }
             if (null !== $this->collVilles) {
                 $result['Villes'] = $this->collVilles->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
@@ -1458,21 +1537,24 @@ abstract class BaseRegion extends BaseObject implements Persistent
                 $this->setPaysId($value);
                 break;
             case 6:
-                $this->setMeaHome($value);
+                $this->setDestinationId($value);
                 break;
             case 7:
-                $this->setImageDetail1($value);
+                $this->setMeaHome($value);
                 break;
             case 8:
-                $this->setImageDetail2($value);
+                $this->setImageDetail1($value);
                 break;
             case 9:
-                $this->setCreatedAt($value);
+                $this->setImageDetail2($value);
                 break;
             case 10:
-                $this->setUpdatedAt($value);
+                $this->setCreatedAt($value);
                 break;
             case 11:
+                $this->setUpdatedAt($value);
+                break;
+            case 12:
                 $this->setActive($value);
                 break;
         } // switch()
@@ -1505,12 +1587,13 @@ abstract class BaseRegion extends BaseObject implements Persistent
         if (array_key_exists($keys[3], $arr)) $this->setImageEncartPath($arr[$keys[3]]);
         if (array_key_exists($keys[4], $arr)) $this->setImageEncartPetitePath($arr[$keys[4]]);
         if (array_key_exists($keys[5], $arr)) $this->setPaysId($arr[$keys[5]]);
-        if (array_key_exists($keys[6], $arr)) $this->setMeaHome($arr[$keys[6]]);
-        if (array_key_exists($keys[7], $arr)) $this->setImageDetail1($arr[$keys[7]]);
-        if (array_key_exists($keys[8], $arr)) $this->setImageDetail2($arr[$keys[8]]);
-        if (array_key_exists($keys[9], $arr)) $this->setCreatedAt($arr[$keys[9]]);
-        if (array_key_exists($keys[10], $arr)) $this->setUpdatedAt($arr[$keys[10]]);
-        if (array_key_exists($keys[11], $arr)) $this->setActive($arr[$keys[11]]);
+        if (array_key_exists($keys[6], $arr)) $this->setDestinationId($arr[$keys[6]]);
+        if (array_key_exists($keys[7], $arr)) $this->setMeaHome($arr[$keys[7]]);
+        if (array_key_exists($keys[8], $arr)) $this->setImageDetail1($arr[$keys[8]]);
+        if (array_key_exists($keys[9], $arr)) $this->setImageDetail2($arr[$keys[9]]);
+        if (array_key_exists($keys[10], $arr)) $this->setCreatedAt($arr[$keys[10]]);
+        if (array_key_exists($keys[11], $arr)) $this->setUpdatedAt($arr[$keys[11]]);
+        if (array_key_exists($keys[12], $arr)) $this->setActive($arr[$keys[12]]);
     }
 
     /**
@@ -1528,6 +1611,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
         if ($this->isColumnModified(RegionPeer::IMAGE_ENCART_PATH)) $criteria->add(RegionPeer::IMAGE_ENCART_PATH, $this->image_encart_path);
         if ($this->isColumnModified(RegionPeer::IMAGE_ENCART_PETITE_PATH)) $criteria->add(RegionPeer::IMAGE_ENCART_PETITE_PATH, $this->image_encart_petite_path);
         if ($this->isColumnModified(RegionPeer::PAYS_ID)) $criteria->add(RegionPeer::PAYS_ID, $this->pays_id);
+        if ($this->isColumnModified(RegionPeer::DESTINATION_ID)) $criteria->add(RegionPeer::DESTINATION_ID, $this->destination_id);
         if ($this->isColumnModified(RegionPeer::MEA_HOME)) $criteria->add(RegionPeer::MEA_HOME, $this->mea_home);
         if ($this->isColumnModified(RegionPeer::IMAGE_DETAIL_1)) $criteria->add(RegionPeer::IMAGE_DETAIL_1, $this->image_detail_1);
         if ($this->isColumnModified(RegionPeer::IMAGE_DETAIL_2)) $criteria->add(RegionPeer::IMAGE_DETAIL_2, $this->image_detail_2);
@@ -1602,6 +1686,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
         $copyObj->setImageEncartPath($this->getImageEncartPath());
         $copyObj->setImageEncartPetitePath($this->getImageEncartPetitePath());
         $copyObj->setPaysId($this->getPaysId());
+        $copyObj->setDestinationId($this->getDestinationId());
         $copyObj->setMeaHome($this->getMeaHome());
         $copyObj->setImageDetail1($this->getImageDetail1());
         $copyObj->setImageDetail2($this->getImageDetail2());
@@ -1734,6 +1819,58 @@ abstract class BaseRegion extends BaseObject implements Persistent
         }
 
         return $this->aPays;
+    }
+
+    /**
+     * Declares an association between this object and a Destination object.
+     *
+     * @param             Destination $v
+     * @return Region The current object (for fluent API support)
+     * @throws PropelException
+     */
+    public function setDestination(Destination $v = null)
+    {
+        if ($v === null) {
+            $this->setDestinationId(NULL);
+        } else {
+            $this->setDestinationId($v->getId());
+        }
+
+        $this->aDestination = $v;
+
+        // Add binding for other direction of this n:n relationship.
+        // If this object has already been added to the Destination object, it will not be re-added.
+        if ($v !== null) {
+            $v->addRegion($this);
+        }
+
+
+        return $this;
+    }
+
+
+    /**
+     * Get the associated Destination object
+     *
+     * @param PropelPDO $con Optional Connection object.
+     * @param $doQuery Executes a query to get the object if required
+     * @return Destination The associated Destination object.
+     * @throws PropelException
+     */
+    public function getDestination(PropelPDO $con = null, $doQuery = true)
+    {
+        if ($this->aDestination === null && ($this->destination_id !== null) && $doQuery) {
+            $this->aDestination = DestinationQuery::create()->findPk($this->destination_id, $con);
+            /* The following can be used additionally to
+                guarantee the related object contains a reference
+                to this object.  This level of coupling may, however, be
+                undesirable since it could result in an only partially populated collection
+                in the referenced object.
+                $this->aDestination->addRegions($this);
+             */
+        }
+
+        return $this->aDestination;
     }
 
 
@@ -2620,6 +2757,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
         $this->image_encart_path = null;
         $this->image_encart_petite_path = null;
         $this->pays_id = null;
+        $this->destination_id = null;
         $this->mea_home = null;
         $this->image_detail_1 = null;
         $this->image_detail_2 = null;
@@ -2690,6 +2828,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
         }
         $this->collBonPlans = null;
         $this->aPays = null;
+        $this->aDestination = null;
     }
 
     /**
