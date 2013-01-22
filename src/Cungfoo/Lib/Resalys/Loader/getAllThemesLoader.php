@@ -69,7 +69,11 @@ class getAllThemesLoader extends AbstractLoader
 
                 if ($themeQuery->find()->count())
                 {
-                    $themeQuery->delete($con);
+                    $themeIdDeleted = $themeQuery->select('id')->find($con)->toArray();
+                    $themeDeleted = $queryClass::create()
+                        ->filterById($themeIdDeleted)
+                        ->delete($con)
+                    ;
                 }
             }
         }
