@@ -82,6 +82,7 @@ header, section, footer {position:relative;}
                 .region{width:274px;margin-right:20px;float:left;
                   ul{padding-bottom:5px;border-bottom:7px solid @colorBgGrisC;}
                   &:last-child ul {padding-bottom:0;border-bottom:0 none;}
+                  &:nth-child( odd ){clear:left;}
                 }
               }
             }
@@ -150,10 +151,13 @@ header, section, footer {position:relative;}
           a{text-decoration:none;}
           .stamp{font:bold 22px @ptnarrow;text-transform:uppercase;display:inline-block;margin-bottom:15px;}
           .dealsDate{font:italic 15px @arial;margin-left:10px;}
-          .element{float:left;padding:0 0 10px 0;
-            .title{font:bold 13px @arial;text-transform:none;}
-            .details{width:173px;margin:0;}
-            .condition{font-size:15px;}
+          .elements{
+            .element{float:left;padding:0 0 10px 0;
+              .title{font:bold 13px @arial;text-transform:none;}
+              .details{width:173px;margin:0;}
+              .condition{font-size:15px;}
+              &:nth-child( odd ){clear:left;}
+            }
           }
         }
       }

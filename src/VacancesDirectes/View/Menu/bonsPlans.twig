@@ -32,19 +32,23 @@
                     {% else %}
                         {% set nbDispos = 4 %}
                     {% endif %}
+                    <div class="elements">
                     {% if app.debug %}
                         {{ render(path('esi_bon_plan', {'slug': bonPlan.slug, 'limit': nbDispos})) }}
                     {% else %}
                         <esi:include src="{{ path('esi_bon_plan', {'slug': bonPlan.slug, 'limit': nbDispos}) }}" />
                     {% endif %}
+                    </div>
                     <a href="{{ path('bonsplans', {'slug': bonPlan.slug}) }}" class="bt link right clearboth">{{ 'menu_bon_plan.bons_plans.link.prefix' | trans}} {{ bonPlan.name }}</a>
                 {% elseif loop.index < 4 %}
                     {% if loop.index == 2 and loop.last %}
+                    <div class="elements">
                         {% if app.debug %}
                             {{ render(path('esi_bon_plan', {'slug': bonPlan.slug, 'limit': 2})) }}
                         {% else %}
                             <esi:include src="{{ path('esi_bon_plan', {'slug': bonPlan.slug, 'limit': 2}) }}" />
                         {% endif %}
+                    </div>
                     <a href="{{ path('bonsplans', {'slug': bonPlan.slug}) }}" class="bt link right clearboth">{{ 'menu_bon_plan.bons_plans.link.prefix' | trans}} {{ bonPlan.name }}</a>
                     {% else %}
                         {% if loop.index == 2 %}
