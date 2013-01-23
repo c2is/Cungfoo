@@ -731,8 +731,6 @@ event:
 
 global:
     search_message: "Nous traitons actuellement votre demande. <br/><br/>Merci de bien vouloir patienter."
-<<<<<<< Temporary merge branch 1
-=======
     compte:
         btn: "Mon compte"
         title: "vous êtes un client existant, veuillez vous identifier"

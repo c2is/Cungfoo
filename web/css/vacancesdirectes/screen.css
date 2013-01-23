@@ -1727,6 +1727,9 @@ footer {
   padding-bottom: 0;
   border-bottom: 0 none;
 }
+#nav .tab .subnav#destinations #destinationsCountry .radiusBox2.national .regions .region:nth-child( odd ) {
+  clear: left;
+}
 #nav .tab .subnav#destinations #destinationsCountry .radiusBox2.international {
   width: 308px;
 }
@@ -1844,7 +1847,7 @@ footer {
   margin: 3px 0 2px;
 }
 #nav .tab .subnav#locations .radiusBox2 .stain {
-  background-image: url("../../images/vacancesdirectes/common/ui/stain.png");
+  background-image: url("../../images/vacancesdirectes/common/sprites/stain.png");
   position: absolute;
   bottom: 0;
   right: 10px;
@@ -1930,7 +1933,7 @@ footer {
   box-shadow: inset -8px 0px 5px -8px #8c8a8a;
 }
 #nav .tab .subnav#deals #dealsMenu li.selected {
-  background-color: #f58220;
+  background-color: #fa8425;
   color: #ffffff;
   cursor: default;
   -webkit-box-shadow: none;
@@ -1946,7 +1949,7 @@ footer {
   position: absolute;
   pointer-events: none;
   border-color: rgba(140, 138, 138, 0);
-  border-left-color: #f58220;
+  border-left-color: #fa8425;
   border-width: 7px;
   margin-top: -7px;
   margin-right: -7px;
@@ -1991,20 +1994,23 @@ footer {
   font: italic 15px Arial, Helvetica, sans-serif;
   margin-left: 10px;
 }
-#nav .tab .subnav#deals #dealsContent .element {
+#nav .tab .subnav#deals #dealsContent .elements .element {
   float: left;
   padding: 0 0 10px 0;
 }
-#nav .tab .subnav#deals #dealsContent .element .title {
+#nav .tab .subnav#deals #dealsContent .elements .element .title {
   font: bold 13px Arial, Helvetica, sans-serif;
   text-transform: none;
 }
-#nav .tab .subnav#deals #dealsContent .element .details {
+#nav .tab .subnav#deals #dealsContent .elements .element .details {
   width: 173px;
   margin: 0;
 }
-#nav .tab .subnav#deals #dealsContent .element .condition {
+#nav .tab .subnav#deals #dealsContent .elements .element .condition {
   font-size: 15px;
+}
+#nav .tab .subnav#deals #dealsContent .elements .element:nth-child( odd ) {
+  clear: left;
 }
 #nav .tab .subnav .proposals {
   padding: 0 20px;
@@ -2029,7 +2035,7 @@ footer {
   display: inline;
 }
 #nav .tab .subnav#weekends .radiusBox .title {
-  color: #f58220;
+  color: #fa8425;
 }
 .js-true #nav .tab.hover,
 .js-true #nav .tab.current {
@@ -2223,7 +2229,7 @@ h2 + .description {
   color: #ffffff;
 }
 .bt.orange {
-  background-color: #f58220;
+  background-color: #fa8425;
   color: #ffffff;
 }
 .bt.bleu {
@@ -2304,7 +2310,7 @@ h2 + .description {
   background-color: #ed145b;
 }
 .stamp.orange {
-  background-color: #f58220;
+  background-color: #fa8425;
 }
 .stamp:before {
   content: url('../../images/vacancesdirectes/common/ui/stamp-left-blanc.png');
@@ -2960,15 +2966,15 @@ input[type="radio"] {
   font-style: italic;
 }
 .element .details .condition .price {
-  color: #f58220;
+  color: #fa8425;
   font-weight: bold;
 }
 .element .details .counter {
   width: 48px;
   height: 48px;
-  background: url("../../images/vacancesdirectes/common/ui/stain.png") no-repeat 0 -391px transparent;
+  background: url("../../images/vacancesdirectes/common/sprites/stain.png") no-repeat 0 -391px transparent;
   font-family: 'PT Sans Narrow', Arial, Helvetica, sans-serif;
-  color: #f58220;
+  color: #fa8425;
   font-size: 16px;
   letter-spacing: -1px;
   font-weight: bold;
@@ -3004,7 +3010,7 @@ input[type="radio"] {
 
   /* Centrer verticalement une image de taille variable */
 
-  background-image: url("../../images/vacancesdirectes/common/ui/stain.png");
+  background-image: url("../../images/vacancesdirectes/common/sprites/stain.png");
   background-repeat: no-repeat;
   text-align: center;
   font-size: 10px;
@@ -3074,7 +3080,7 @@ input[type="radio"] {
 
   /* Centrer verticalement une image de taille variable */
 
-  background: url("../../images/vacancesdirectes/common/ui/stain.png") no-repeat 0 -262px transparent;
+  background: url("../../images/vacancesdirectes/common/sprites/stain.png") no-repeat 0 -262px transparent;
   margin: 0;
   position: absolute;
   top: -10px;
@@ -3518,7 +3524,7 @@ body.edito table td {
   /* Centrer verticalement une image de taille variable */
 
   font: Arial, Helvetica, sans-serif 13px/15px Arial, Helvetica, sans-serif;
-  color: #f58220;
+  color: #fa8425;
   text-align: center;
   padding: 0 5px;
   cursor: pointer;
@@ -3642,7 +3648,7 @@ body.edito table td {
 }
 .home #sliderWrapper #sliderContainer .slide .sliderStain.first .content {
   width: 190px;
-  color: #f58220;
+  color: #fa8425;
 }
 .home #sliderWrapper #sliderContainer .slide .sliderStain.first .content .headline {
   font: bold 32px/32px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
@@ -3909,7 +3915,7 @@ body.edito table td {
 }
 .home #forwardBloc #forwardBlocSubtitle {
   width: 125px;
-  color: #f58220;
+  color: #fa8425;
   font: bold 42px/32px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   position: absolute;
@@ -3928,7 +3934,7 @@ body.edito table td {
   top: 117px;
   left: 137px;
   padding: 0 15px;
-  background: url("../../images/vacancesdirectes/common/ui/cloud.png") no-repeat 0 0 transparent;
+  background: url("../../images/vacancesdirectes/common/sprites/cloud.png") no-repeat 0 0 transparent;
   text-align: center;
   height: 115px;
   /* Centrer verticalement une ligne de texte */
@@ -3969,7 +3975,7 @@ body.edito table td {
 .home #activitiesBloc .blueCloud {
   position: absolute;
   padding: 0 25px 0 15px;
-  background: url("../../images/vacancesdirectes/common/ui/cloud.png") no-repeat 0 0 transparent;
+  background: url("../../images/vacancesdirectes/common/sprites/cloud.png") no-repeat 0 0 transparent;
   text-align: center;
 }
 .home #activitiesBloc .blueCloud span {
@@ -5198,7 +5204,7 @@ h2 + #results {
 
   /* Centrer verticalement une image de taille variable */
 
-  background-image: url("../../images/vacancesdirectes/common/ui/stain.png");
+  background-image: url("../../images/vacancesdirectes/common/sprites/stain.png");
   background-repeat: no-repeat;
   text-align: center;
   font-size: 10px;
@@ -5246,9 +5252,10 @@ h2 + #results {
   background-image: inherit;
   background-position: 0 -262px;
   font: bold 15px/61px Arial, Helvetica, sans-serif;
+  padding-left: 15px;
 }
 .itemResult .itemResultBottom .promotion a.bt {
-  background-color: #f58220;
+  background-color: #fa8425;
   color: #ffffff;
 }
 .itemResult .itemResultBottom .promotion .stain {
@@ -5268,7 +5275,7 @@ h2 + #results {
 
   /* Centrer verticalement une image de taille variable */
 
-  background-image: url("../../images/vacancesdirectes/common/ui/stain.png");
+  background-image: url("../../images/vacancesdirectes/common/sprites/stain.png");
   background-repeat: no-repeat;
   text-align: center;
   font-size: 10px;
@@ -5327,7 +5334,7 @@ h2 + #results {
   vertical-align: middle;
 }
 .bannerStain.first .content {
-  color: #f58220;
+  color: #fa8425;
   margin: 10px 30px 0;
 }
 .bannerStain.first .content .headline {
@@ -7515,13 +7522,12 @@ aside *.placeholder {
 
   /* Centrer verticalement une image de taille variable */
 
-  background-image: url("../../images/vacancesdirectes/common/ui/stain.png");
+  background-image: url("../../images/vacancesdirectes/common/sprites/stain.png");
   background-position: 0 -556px;
   background-repeat: no-repeat;
-  font-size: 12px;
   text-align: center;
   font-size: 10px;
-  color: #f58220;
+  color: #fa8425;
   position: relative;
   margin: 20px auto 10px;
 }
@@ -7534,11 +7540,23 @@ aside *.placeholder {
   vertical-align: middle;
 }
 .proposal .stain .price {
-  font-size: 40px;
+  font-size: 34px;
   font-weight: bold;
   display: block;
-  margin: 7px 0 0px;
+  margin: 10px 0 0px;
   letter-spacing: normal;
+}
+.proposal .stain .from,
+.proposal .stain .instead {
+  width: 131px;
+  position: absolute !important;
+  left: 0;
+}
+.proposal .stain .from {
+  top: 35px;
+}
+.proposal .stain .instead {
+  bottom: 30px;
 }
 .proposal.promo .stain {
   background-position: 0 -556px;
@@ -7581,7 +7599,7 @@ aside *.placeholder {
 
   /* Centrer verticalement une image de taille variable */
 
-  background: url("../../images/vacancesdirectes/common/ui/stain.png") no-repeat 0 -687px transparent;
+  background: url("../../images/vacancesdirectes/common/sprites/stain.png") no-repeat 0 -687px transparent;
   margin: 0;
   position: absolute;
   top: -10px;
