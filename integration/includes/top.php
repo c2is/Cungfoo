@@ -75,22 +75,6 @@
                                 </ul>
                             </div>
                         </div>
-<<<<<<< HEAD
-=======
-                        <!--
-                        <div class="radiusBox2 greyC">
-                            <div class="view">
-                                <img class="bg" src="../web/images/vacancesdirectes/dyn/menu/1-destinations/portugal.jpg" alt="" />
-                                <div class="stamp grey"><span>Portugal</span></div>
-                            </div>
-                            <div class="region">
-                                <ul>
-                                    <li><a href=#>- Centro</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        -->
->>>>>>> origin/master
                     </div>
                     <div id="destinationsAll" class="left destination">
                         <div class="radiusBox greyC">
