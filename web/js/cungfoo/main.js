@@ -9,7 +9,10 @@ $(function() {
     $("input[id$='_code'], input[id$='_category'], input[id$='_tel'], input[id$='_phone'], input[id$='_phone1'], input[id$='_phone2'], input[id$='_fax']").addClass('span2');
     $("input[id$='_mail'], input[id$='_email'], input[id$='_website'], input[id$='_city']").addClass('span4');
     $("input[id$='_address'], input[id$='_address1'], input[id$='_address2'], input[id$='_name'], input[id$='_str_date'], input[id$='_subtitle'], input[id$='_slug']").addClass('span6');
-    $("input[id$='_image'], input[id$='_description'], input[id$='_keywords']").addClass('span9');
+    $("input[id$='_image'], input[id$='_description'], input[id$='_keywords'], input[id$='introduction']").addClass('span9');
+    $(".widget-datepicker > input").css({
+        width:"178px"
+    });
 
     $('.widget-datepicker').datepicker({
         weekStart: 1
