@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block translation_collection_widget %}
-<div class="tabbable">
+<div id="transGroup" class="tabbable">
     <ul class="nav nav-tabs">
         {% for child in form %}
             {% if not child.rendered %}
@@ -81,17 +81,6 @@
         <div style="display: none">
         {{ form_rest(form) }}
         </div>
-
-        <script>
-            $(function () {
-                $('#crudGroup a').click(function (e) {
-                    e.preventDefault();
-                    $(this).tab('show');
-                });
-
-                $('#crudGroup a:first').tab('show');
-            });
-        </script>
     {% else %}
         {{ parent() }}
     {% endif %}
