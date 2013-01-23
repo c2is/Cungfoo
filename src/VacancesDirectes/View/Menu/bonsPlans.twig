@@ -22,7 +22,7 @@
                 <div class="clear">
                 <div>
                     <div class="stamp orange"><span>{% if loop.first %}{{ bonPlan.name }}{% else %}{{ 'menu_bon_plan.autres_offres.title' | trans}}{% endif %}</span></div>
-                    {% if loop.first and bonPlan.dateStart %}<span class="dealsDate">{{ 'menu_bon_plan.dispos.subtitle.prefix' | trans}} {{ bonPlan.dateStart|date('d/m/Y') }}</span>{% endif %}
+                    {% if (loop.first or (loop.index == 2 and loop.last)) and bonPlan.dateStart %}<span class="dealsDate">{{ 'menu_bon_plan.dispos.subtitle.prefix' | trans}} {{ bonPlan.dateStart|date('d/m/Y') }}</span>{% endif %}
                 </div>
                 {% endif %}
 
@@ -39,6 +39,14 @@
                     {% endif %}
                     <a href="{{ path('bonsplans', {'slug': bonPlan.slug}) }}" class="bt link right clearboth">{{ 'menu_bon_plan.bons_plans.link.prefix' | trans}} {{ bonPlan.name }}</a>
                 {% elseif loop.index < 4 %}
+                    {% if loop.last %}
+                        {% if app.debug %}
+                            {{ render(path('esi_bon_plan', {'slug': bonPlan.slug, 'limit': 2})) }}
+                        {% else %}
+                            <esi:include src="{{ path('esi_bon_plan', {'slug': bonPlan.slug, 'limit': 2}) }}" />
+                        {% endif %}
+                    <a href="{{ path('bonsplans', {'slug': bonPlan.slug}) }}" class="bt link right clearboth">{{ 'menu_bon_plan.bons_plans.link.prefix' | trans}} {{ bonPlan.name }}</a>
+                    {% else %}
                 <div class="element clear linkParent">
                     <img class="boxborder left" src="{{ asset(bonPlan.imageMenu) }}" width="119" height="86" alt="" />
                     <div class="details left">
@@ -48,6 +56,7 @@
                         <span class="condition"><a href="{{ path('bonsplans', {'slug': bonPlan.slug}) }}" class="price linkBlock" onclick="showWaitLayer();">{{ bonPlan.indicePrix }}</a></span>
                     </div>
                 </div>
+                    {% endif %}
                 {% else %}
                 <a href="{{ path('categorie_bonsplans', {'cat': categorie.slug }) }}" class="bt link right clearboth">{{ 'menu_bon_plan.categorie_bons_plans.link' | trans}}</a>
                 {% endif %}

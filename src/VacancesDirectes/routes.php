@@ -29,6 +29,7 @@ $app->mount('/',                                      new Controller\HomepageCon
 $app->mount('/',                                      new Controller\EditoController());
 $app->mount('/esi',                                   new Controller\EsiController());
 $app->mount('/menu',                                  new Controller\MenuController());
+$app->mount('/session',                               new Controller\SessionController());
 $app->mount('/resalys',                               new WrapperController());
 $app->mount('/camping',                               new Controller\CampingController());
 $app->mount('/search_engine',                         new Controller\SearchEngineController());

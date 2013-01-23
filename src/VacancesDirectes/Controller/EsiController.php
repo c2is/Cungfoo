@@ -53,6 +53,7 @@ class EsiController implements ControllerProviderInterface
                         ->setNbAdults($bonPlan->getNbAdultes())
                         ->setPeriodCategories($bonPlan->getPeriodCategories())
                         ->setMaxResults(10)
+                        ->setSortString('Random')
                     ;
 
                     if($bonPlan->getNbEnfants() > 0) {
@@ -124,6 +125,7 @@ class EsiController implements ControllerProviderInterface
                     ->setNbAdults($bonPlanObject->getNbAdultes())
                     ->setPeriodCategories($bonPlanObject->getPeriodCategories())
                     ->setMaxResults(10)
+                    ->setSortString('Random')
                 ;
 
                 if($bonPlanObject->getNbEnfants() > 0) {

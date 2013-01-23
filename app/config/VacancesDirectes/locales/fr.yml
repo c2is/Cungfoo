@@ -17,8 +17,8 @@ seo:
         event: "%event% : %ville%"
         location:
             list:
-                categorie: "Location camping %type% France, Italie, Espagne"
-                capacite: "Location %type% camping France, Italie, Espagne"
+                categorie: "Location %type% camping France, Italie, Espagne"
+                capacite: "Location camping %type% France, Italie, Espagne"
             fiche: "Location %type% %personnes% personnes camping : %name%"
     meta:
         default: "Vacances directes : location de mobil-homes dans de nombreux campings en France, en Italie et en Espagne pour des vacances conviviales et reposantes."
@@ -31,15 +31,15 @@ seo:
         dispo: "Listing - Campings"
         couloir: "Espace de réservation"
         theme: "%theme%"
-        bonPlan: "Découvrez toutes les offres de locations de mobil homes en camping pour le %bonPlan% proposées par Vacances directes et réserver en ligne."
+        bonPlan: "Découvrez toutes nos offres de camping : \"%bonPlan%\" et réservez en ligne vos futures vacances sur le site Vacances Directes."
         topCamping: "Découvrez notre top 10 des destinations pour des vacances en campings réussies avec Vacances Directes, le spécialiste de la location de mobil-home."
         poi: "%poi% à %ville%, venez visiter ce lieu et passez vos vacances dans nos campings à proximité avec Vacances Directes."
         event: "%event% à %ville%. Ne rater pas cet événement et passez vos vacances dans nos campings à proximité avec Vacances Directes."
         location:
             list:
-                categorie: "Location de %type% dans de nombreux campings de qualité en France, en Espagne et en Italie avec Vacances Directes."
+                categorie: "Vous souhaitez louer un(e) %type% pour vos futures vacances ? Découvrez tous nos campings proposant cet hébergement en France, en Espagne et en Italie."
                 capacite:  "Location de vacances pour %type% dans de nombreux campings de qualité en France, en Espagne et en Italie avec Vacances Directes."
-            fiche: "Passez vos prochaines vacances en %type% %name% pour %personnes% dans de nombreux campings de qualité avec Vacances Directes."
+            fiche: "Passez vos prochaines vacances en %type% %name% dans de nombreux campings de qualité avec Vacances Directes."
     url:
         prefix: "camping"
         catalogue: "catalogue"
@@ -336,9 +336,9 @@ menu:
     vacances: "Vos vacances"
     weekends: "Vos week-ends"
     tous_camping: "Tous nos campings"
-    decouvrer_locations: "Découvrez nos locations"
-    decouvrer_locations_type: "Par type"
-    decouvrer_locations_capacite: "Par capacité"
+    decouvrez_locations: "Découvrez nos locations"
+    decouvrez_locations_type: "Par type"
+    decouvrez_locations_capacite: "Par capacité"
 
 etablissement:
     activites: "Liste des activités"
@@ -731,6 +731,8 @@ event:
 
 global:
     search_message: "Nous traitons actuellement votre demande. <br/><br/>Merci de bien vouloir patienter."
+<<<<<<< Temporary merge branch 1
+=======
     compte:
         btn: "Mon compte"
         title: "vous êtes un client existant, veuillez vous identifier"
@@ -738,3 +740,34 @@ global:
         password: "Mot de passe"
         forget: "Mot de passe oublié ?"
         submit: "Se connecter"
+
+bon_plan:
+    title: "Camping : %bonPlan%"
+
+location:
+    list:
+        title: "Nos hébergements : %type%"
+        selection: "Notre sélection d'hébergements"
+        hebergements:
+            savoir_plus: "En savoir plus"
+            plus_de_resultats: "Plus de résultats"
+            nb_places: "%nbPlaces% places"
+    fiche:
+        subtitle: "Location %type% %nbPlaces% personnes"
+        voir_les_campings: "Voir les campings"
+        onglet:
+            logement:
+                title: "Le logement"
+                informations_pratiques:
+                    title: "Informations pratiques"
+                    capacite: "Capacité"
+                    dimensions: "Dimensions"
+                    agencement: "Agencement"
+                    equipements: "Equipements"
+                    annee_utilisation: "Année d'utilisation"
+                lien_campings: "Les campings"
+            campings:
+                title: "Les campings"
+                selection:
+                    title: "Notre selection de campings"
+                lien_logement: "Le logement"

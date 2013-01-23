@@ -2,13 +2,13 @@
 
 {% block title %}
 {% spaceless %}
-    {{ "seo.title.bonPlan" | trans ({'%bonPlan%': seo}) }}
+    {{ "seo.title.bonPlan" | trans ({'%bonPlan%': bonPlan.name}) }}
 {% endspaceless %}
 {% endblock %}
 
 {% block metaDescription %}
 {% spaceless %}
-    {{ "seo.meta.bonPlan" | trans  ({'%bonPlan%': seo})}}
+    {{ "seo.meta.bonPlan" | trans  ({'%bonPlan%': bonPlan.name})}}
 {% endspaceless %}
 {% endblock %}
 
@@ -16,9 +16,9 @@
 
     {% include "Breadcrumbs/_breadcrumbs.twig" %}
 
-    <h1>{{ bonPlan.name }}</h1>
+    <h1> {{ "bon_plan.title" | trans ({'%bonPlan%': bonPlan.name}) }}</h1>
 
-    <p class="description">{{ bonPlan.description }}</p> {# Description #}
+    <p class="description">{{ bonPlan.description }}</p>{# Description #}
 
     {% if bonPlan.imagePage %}
     <img class="bdPict" src="{{ asset(bonPlan.imagePage) }}" alt="">
