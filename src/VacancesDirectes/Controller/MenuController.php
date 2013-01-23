@@ -58,7 +58,7 @@ class MenuController implements ControllerProviderInterface
 
             return $app['twig']->render('Menu/destinations.twig', array(
                 'searchForm'                => $searchForm->createView(),
-                'etabByAlphabeticalOrder'   => $this->getEtablissementByAlphabeticalOrder(),
+                'etabByAlphabeticalOrder'   => $this->getEtablissementByAlphabeticalOrder($app),
                 'regionsByDestinations'     => $this->getRegionsByDestinations($app),
                 'regionEspagne'             => $this->getRegionByCode($app, 'ESP'),
                 'regionItalie'              => $this->getRegionByCode($app, 'ITA'),
@@ -126,9 +126,9 @@ class MenuController implements ControllerProviderInterface
      * @param null|\PropelPDO $con
      * @return array
      */
-    protected function getEtablissementByAlphabeticalOrder(\PropelPDO $con = null)
+    protected function getEtablissementByAlphabeticalOrder(Application $app, \PropelPDO $con = null)
     {
-        $etabs = EtablissementPeer::getNameOrderByName($con);
+        $etabs = EtablissementPeer::getNameOrderByName($app['context']->get('language'), $con);
 
         $etabByAlphabeticalOrder = array();
         foreach ($etabs as $etab)
