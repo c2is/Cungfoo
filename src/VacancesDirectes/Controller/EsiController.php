@@ -30,6 +30,7 @@ class EsiController implements ControllerProviderInterface
         $controllers->match('/bon-plan-home', function (Request $request) use ($app)
         {
             $listing = null;
+            $maxAge = 600;
 
             try
             {
@@ -74,6 +75,7 @@ class EsiController implements ControllerProviderInterface
             catch (\Exception $e)
             {
                 $app['logger']->addError(sprintf('Erreur au chargement du widget home early booking : %s', $e->getMessage()));
+                $maxAge = 0;
             }
 
             $liste = null;
@@ -86,13 +88,14 @@ class EsiController implements ControllerProviderInterface
                 'dispos'    => $liste,
             ));
 
-            return new Response($view, 200, array('Cache-Control' => 's-maxage=600, public'));
+            return new Response($view, 200, array('Cache-Control' => sprintf('s-maxage=%s, public', $maxAge)));
 
         })->bind('esi_home_widget');
 
         $controllers->match('/bon-plan/{slug}/{limit}', function (Request $request, $slug, $limit) use ($app)
         {
             $listing = null;
+            $maxAge = 600;
 
             try
             {
@@ -145,6 +148,7 @@ class EsiController implements ControllerProviderInterface
             catch (\Exception $e)
             {
                 $app['logger']->addError(sprintf('Erreur au chargement du menu Bons Plans : %s', $e->getMessage()));
+                $maxAge = 0;
             }
 
             $liste = null;
@@ -156,7 +160,7 @@ class EsiController implements ControllerProviderInterface
                 'bon_plan' => $liste,
             ));
 
-            return new Response($view, 200, array('Cache-Control' => 's-maxage=600, public'));
+            return new Response($view, 200, array('Cache-Control' => sprintf('s-maxage=%s, public', $maxAge)));
 
         })->bind('esi_bon_plan')
           ->value('limit', '5');
