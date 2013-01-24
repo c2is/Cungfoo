@@ -66,6 +66,12 @@ class GenerateCommand extends BaseCommand
             $this->generateTheme(\Cungfoo\Model\CategoryTypeHebergementQuery::create(), $languages, $con);
             $output->writeln(sprintf('<info>%s</info> slug added on <comment>catégorie type hebergement</comment> table.', $this->getName()));
 
+            $this->generateTheme(\Cungfoo\Model\BonPlanQuery::create(), $languages, $con);
+            $output->writeln(sprintf('<info>%s</info> slug added on <comment>bon plan</comment> table.', $this->getName()));
+
+            $this->generateTheme(\Cungfoo\Model\BonPlanCategorieQuery::create(), $languages, $con);
+            $output->writeln(sprintf('<info>%s</info> slug added on <comment>bon plan catégorie</comment> table.', $this->getName()));
+
             $con->commit();
         }
         catch (\Exception $exception)
