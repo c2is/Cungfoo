@@ -309,18 +309,19 @@ class DestinationController implements ControllerProviderInterface
         // definition des informations relatives au bloc prix de la fiche camping
         $lastProposal = $app['session']->get('last_proposal');
 
-        $blocPrix['proposal_key'] = $request->getRequestUri() == $lastProposal['target'] ? $lastProposal['proposal']->{'proposal_key'} : false;
-        if ($blocPrix['proposal_key'])
+        if (is_array($lastProposal) && is_object($lastProposal['proposal']) && $request->getRequestUri() == $lastProposal['target'])
         {
+            $blocPrix['proposal_key']                  = $lastProposal['proposal']->{'proposal_key'};
             $blocPrix['start_date']                    = $lastProposal['proposal']->{'start_date'};
             $blocPrix['end_date']                      = $lastProposal['proposal']->{'end_date'};
             $blocPrix['room_type_label']               = $lastProposal['proposal']->{'room_types'}->{'room_type'}->{'room_type_label'};
             $blocPrix['adult_price_without_discounts'] = $lastProposal['proposal']->{'adult_price_without_discounts'};
             $blocPrix['adult_price']                   = $lastProposal['proposal']->{'adult_price'};
-            $blocPrix['adult_price_pourcent']          = 100 - (100 * $lastProposal['proposal']->{'adult_price'} / $lastProposal['proposal']->{'adult_price_without_discounts'});
+            $blocPrix['adult_price_pourcent']          = round(100 - (100 * $lastProposal['proposal']->{'adult_price'} / $lastProposal['proposal']->{'adult_price_without_discounts'}));
         }
         else
         {
+            $blocPrix['proposal_key'] = false;
             $blocPrix['adult_price_without_discounts'] = $camping->getMinimumPrice();
         }
         // fin de la définition des informations relatives au bloc prix de la fiche camping
