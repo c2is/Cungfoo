@@ -403,6 +403,7 @@
         <column name="code" type="varchar" required="true" />
         <column name="name" type="varchar" required="true" />
         <behavior name="timestampable" />
+        <behavior name="sortable" />
         <behavior name="active" />
 
         <behavior name="i18n">

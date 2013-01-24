@@ -29,12 +29,14 @@ use Cungfoo\Model\Region;
  * @method DestinationQuery orderByCode($order = Criteria::ASC) Order by the code column
  * @method DestinationQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method DestinationQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
+ * @method DestinationQuery orderBySortableRank($order = Criteria::ASC) Order by the sortable_rank column
  * @method DestinationQuery orderByActive($order = Criteria::ASC) Order by the active column
  *
  * @method DestinationQuery groupById() Group by the id column
  * @method DestinationQuery groupByCode() Group by the code column
  * @method DestinationQuery groupByCreatedAt() Group by the created_at column
  * @method DestinationQuery groupByUpdatedAt() Group by the updated_at column
+ * @method DestinationQuery groupBySortableRank() Group by the sortable_rank column
  * @method DestinationQuery groupByActive() Group by the active column
  *
  * @method DestinationQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
@@ -59,12 +61,14 @@ use Cungfoo\Model\Region;
  * @method Destination findOneByCode(string $code) Return the first Destination filtered by the code column
  * @method Destination findOneByCreatedAt(string $created_at) Return the first Destination filtered by the created_at column
  * @method Destination findOneByUpdatedAt(string $updated_at) Return the first Destination filtered by the updated_at column
+ * @method Destination findOneBySortableRank(int $sortable_rank) Return the first Destination filtered by the sortable_rank column
  * @method Destination findOneByActive(boolean $active) Return the first Destination filtered by the active column
  *
  * @method array findById(int $id) Return Destination objects filtered by the id column
  * @method array findByCode(string $code) Return Destination objects filtered by the code column
  * @method array findByCreatedAt(string $created_at) Return Destination objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return Destination objects filtered by the updated_at column
+ * @method array findBySortableRank(int $sortable_rank) Return Destination objects filtered by the sortable_rank column
  * @method array findByActive(boolean $active) Return Destination objects filtered by the active column
  *
  * @package    propel.generator.Cungfoo.Model.om
@@ -169,7 +173,7 @@ abstract class BaseDestinationQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `code`, `created_at`, `updated_at`, `active` FROM `destination` WHERE `id` = :p0';
+        $sql = 'SELECT `id`, `code`, `created_at`, `updated_at`, `sortable_rank`, `active` FROM `destination` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -398,6 +402,47 @@ abstract class BaseDestinationQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(DestinationPeer::UPDATED_AT, $updatedAt, $comparison);
+    }
+
+    /**
+     * Filter the query on the sortable_rank column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterBySortableRank(1234); // WHERE sortable_rank = 1234
+     * $query->filterBySortableRank(array(12, 34)); // WHERE sortable_rank IN (12, 34)
+     * $query->filterBySortableRank(array('min' => 12)); // WHERE sortable_rank > 12
+     * </code>
+     *
+     * @param     mixed $sortableRank The value to use as filter.
+     *              Use scalar values for equality.
+     *              Use array values for in_array() equivalent.
+     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return DestinationQuery The current query, for fluid interface
+     */
+    public function filterBySortableRank($sortableRank = null, $comparison = null)
+    {
+        if (is_array($sortableRank)) {
+            $useMinMax = false;
+            if (isset($sortableRank['min'])) {
+                $this->addUsingAlias(DestinationPeer::SORTABLE_RANK, $sortableRank['min'], Criteria::GREATER_EQUAL);
+                $useMinMax = true;
+            }
+            if (isset($sortableRank['max'])) {
+                $this->addUsingAlias(DestinationPeer::SORTABLE_RANK, $sortableRank['max'], Criteria::LESS_EQUAL);
+                $useMinMax = true;
+            }
+            if ($useMinMax) {
+                return $this;
+            }
+            if (null === $comparison) {
+                $comparison = Criteria::IN;
+            }
+        }
+
+        return $this->addUsingAlias(DestinationPeer::SORTABLE_RANK, $sortableRank, $comparison);
     }
 
     /**
@@ -747,6 +792,128 @@ abstract class BaseDestinationQuery extends ModelCriteria
     {
         return $this->addAscendingOrderByColumn(DestinationPeer::CREATED_AT);
     }
+    // sortable behavior
+
+    /**
+     * Filter the query based on a rank in the list
+     *
+     * @param     integer   $rank rank
+     *
+     * @return    DestinationQuery The current query, for fluid interface
+     */
+    public function filterByRank($rank)
+    {
+        return $this
+            ->addUsingAlias(DestinationPeer::RANK_COL, $rank, Criteria::EQUAL);
+    }
+
+    /**
+     * Order the query based on the rank in the list.
+     * Using the default $order, returns the item with the lowest rank first
+     *
+     * @param     string $order either Criteria::ASC (default) or Criteria::DESC
+     *
+     * @return    DestinationQuery The current query, for fluid interface
+     */
+    public function orderByRank($order = Criteria::ASC)
+    {
+        $order = strtoupper($order);
+        switch ($order) {
+            case Criteria::ASC:
+                return $this->addAscendingOrderByColumn($this->getAliasedColName(DestinationPeer::RANK_COL));
+                break;
+            case Criteria::DESC:
+                return $this->addDescendingOrderByColumn($this->getAliasedColName(DestinationPeer::RANK_COL));
+                break;
+            default:
+                throw new PropelException('DestinationQuery::orderBy() only accepts "asc" or "desc" as argument');
+        }
+    }
+
+    /**
+     * Get an item from the list based on its rank
+     *
+     * @param     integer   $rank rank
+     * @param     PropelPDO $con optional connection
+     *
+     * @return    Destination
+     */
+    public function findOneByRank($rank, PropelPDO $con = null)
+    {
+        return $this
+            ->filterByRank($rank)
+            ->findOne($con);
+    }
+
+    /**
+     * Returns the list of objects
+     *
+     * @param      PropelPDO $con	Connection to use.
+     *
+     * @return     mixed the list of results, formatted by the current formatter
+     */
+    public function findList($con = null)
+    {
+        return $this
+            ->orderByRank()
+            ->find($con);
+    }
+
+    /**
+     * Get the highest rank
+     *
+     * @param     PropelPDO optional connection
+     *
+     * @return    integer highest position
+     */
+    public function getMaxRank(PropelPDO $con = null)
+    {
+        if ($con === null) {
+            $con = Propel::getConnection(DestinationPeer::DATABASE_NAME);
+        }
+        // shift the objects with a position lower than the one of object
+        $this->addSelectColumn('MAX(' . DestinationPeer::RANK_COL . ')');
+        $stmt = $this->doSelect($con);
+
+        return $stmt->fetchColumn();
+    }
+
+    /**
+     * Reorder a set of sortable objects based on a list of id/position
+     * Beware that there is no check made on the positions passed
+     * So incoherent positions will result in an incoherent list
+     *
+     * @param     array     $order id => rank pairs
+     * @param     PropelPDO $con   optional connection
+     *
+     * @return    boolean true if the reordering took place, false if a database problem prevented it
+     */
+    public function reorder(array $order, PropelPDO $con = null)
+    {
+        if ($con === null) {
+            $con = Propel::getConnection(DestinationPeer::DATABASE_NAME);
+        }
+
+        $con->beginTransaction();
+        try {
+            $ids = array_keys($order);
+            $objects = $this->findPks($ids, $con);
+            foreach ($objects as $object) {
+                $pk = $object->getPrimaryKey();
+                if ($object->getSortableRank() != $order[$pk]) {
+                    $object->setSortableRank($order[$pk]);
+                    $object->save($con);
+                }
+            }
+            $con->commit();
+
+            return true;
+        } catch (PropelException $e) {
+            $con->rollback();
+            throw $e;
+        }
+    }
+
     // active behavior
 
     /**

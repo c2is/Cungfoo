@@ -49,6 +49,7 @@ class DestinationType extends BaseDestinationType
                 array(
                     'title'         => 'crud.tab.parameters',
                     'content'       => array(
+                        'sortable_rank',
                         'active',
                     )
                 ),
