@@ -25,6 +25,9 @@ class CategoryTypeHebergementListing extends BaseCategoryTypeHebergementListing
         parent::configure();
 
         $this->addColumn(new Column\TextColumn('name'));
+        $this->removeColumn('minimum_price');
+        $this->removeColumn('image_menu');
+        $this->removeColumn('image_page');
     }
 
 } // CategoryTypeHebergementListing

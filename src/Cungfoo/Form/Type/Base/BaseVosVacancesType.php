@@ -56,9 +56,7 @@ class BaseVosVacancesType extends AppAwareType
             'i18n_class' => 'Cungfoo\Model\VosVacancesI18n',
             'languages' => array(
                 0 => 'fr',
-                1 => 'en',
-                2 => 'de',
-                3 => 'nl',
+                1 => 'de',
             ),
             'label' => 'vos_vacances.vos_vacancesI18ns',
             'columns' => array(

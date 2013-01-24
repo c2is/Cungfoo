@@ -46,6 +46,7 @@ class DestinationTableMap extends TableMap
         $this->addColumn('code', 'Code', 'VARCHAR', true, 255, null);
         $this->addColumn('created_at', 'CreatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('updated_at', 'UpdatedAt', 'TIMESTAMP', false, null, null);
+        $this->addColumn('sortable_rank', 'SortableRank', 'INTEGER', false, null, null);
         $this->addColumn('active', 'Active', 'BOOLEAN', false, 1, false);
         // validators
     } // initialize()
@@ -56,6 +57,7 @@ class DestinationTableMap extends TableMap
     public function buildRelations()
     {
         $this->addRelation('EtablissementDestination', 'Cungfoo\\Model\\EtablissementDestination', RelationMap::ONE_TO_MANY, array('id' => 'destination_id', ), null, null, 'EtablissementDestinations');
+        $this->addRelation('Region', 'Cungfoo\\Model\\Region', RelationMap::ONE_TO_MANY, array('id' => 'destination_id', ), null, null, 'Regions');
         $this->addRelation('DestinationI18n', 'Cungfoo\\Model\\DestinationI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'DestinationI18ns');
         $this->addRelation('Etablissement', 'Cungfoo\\Model\\Etablissement', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'Etablissements');
     } // buildRelations()
@@ -73,6 +75,11 @@ class DestinationTableMap extends TableMap
   'create_column' => 'created_at',
   'update_column' => 'updated_at',
   'disable_updated_at' => 'false',
+),
+            'sortable' =>  array (
+  'rank_column' => 'sortable_rank',
+  'use_scope' => 'false',
+  'scope_column' => 'sortable_scope',
 ),
             'active' =>  array (
   'active_column' => 'active',
@@ -92,6 +99,7 @@ class DestinationTableMap extends TableMap
   'crud_model' => NULL,
   'crud_form' => NULL,
   'crud_type_file' => NULL,
+  'crud_search' => 'name',
 ),
         );
     } // getBehaviors()

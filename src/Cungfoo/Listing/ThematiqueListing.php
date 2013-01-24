@@ -25,6 +25,7 @@ class ThematiqueListing extends BaseThematiqueListing
         parent::configure();
 
         $this->addColumn(new Column\TextColumn('name'));
+        $this->removeColumn('image_path');
     }
 
 } // ThematiqueListing

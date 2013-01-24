@@ -12,14 +12,12 @@
 $app = require_once __DIR__.'/../../app/bootstrap.php';
 
 $app['config']->addParams(array(
-    'cungfoo_menu'  => Symfony\Component\Yaml\Yaml::parse(sprintf('%s/Cungfoo/menu.yml', $app['config']->get('config_dir')))['menu'],
+    'cungfoo_menu' => Symfony\Component\Yaml\Yaml::parse(sprintf('%s/Cungfoo/menu.yml', $app['config']->get('config_dir')))['menu'],
 ));
 
 /* T W I G  C O N F I G U R A T I O N  */
 $app['twig.path'] = array(__DIR__.'/View');
 $app['twig.form.templates'] = array('Form/form_custom_layout.html.twig');
-
-$app->register(new Oziks\Provider\DebugToolbarServiceProvider());
 
 /*  T R A N S L A T O R   M A N A G E R */
 $app['translator'] = $app->share($app->extend('translator',

@@ -23,6 +23,8 @@ class MultimediaTypeHebergementListing extends BaseMultimediaTypeHebergementList
     public function configure()
     {
         parent::configure();
+        $this->addColumn(new Column\TextColumn('titre'));
+        $this->removeColumn('image_path');
     }
 
 } // MultimediaTypeHebergementListing

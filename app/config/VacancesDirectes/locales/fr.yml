@@ -17,8 +17,8 @@ seo:
         event: "%event% : %ville%"
         location:
             list:
-                categorie: "Location camping %type% France, Italie, Espagne"
-                capacite: "Location %type% camping France, Italie, Espagne"
+                categorie: "Location %type% camping France, Italie, Espagne"
+                capacite: "Location camping %type% France, Italie, Espagne"
             fiche: "Location %type% %personnes% personnes camping : %name%"
     meta:
         default: "Vacances directes : location de mobil-homes dans de nombreux campings en France, en Italie et en Espagne pour des vacances conviviales et reposantes."
@@ -31,15 +31,41 @@ seo:
         dispo: "Listing - Campings"
         couloir: "Espace de réservation"
         theme: "%theme%"
-        bonPlan: "Découvrez toutes les offres de locations de mobil homes en camping pour le %bonPlan% proposées par Vacances directes et réserver en ligne."
+        bonPlan: "Découvrez toutes nos offres de camping : \"%bonPlan%\" et réservez en ligne vos futures vacances sur le site Vacances Directes."
         topCamping: "Découvrez notre top 10 des destinations pour des vacances en campings réussies avec Vacances Directes, le spécialiste de la location de mobil-home."
         poi: "%poi% à %ville%, venez visiter ce lieu et passez vos vacances dans nos campings à proximité avec Vacances Directes."
         event: "%event% à %ville%. Ne rater pas cet événement et passez vos vacances dans nos campings à proximité avec Vacances Directes."
         location:
             list:
-                categorie: "Location de %type% dans de nombreux campings de qualité en France, en Espagne et en Italie avec Vacances Directes."
+                categorie: "Vous souhaitez louer un(e) %type% pour vos futures vacances ? Découvrez tous nos campings proposant cet hébergement en France, en Espagne et en Italie."
                 capacite:  "Location de vacances pour %type% dans de nombreux campings de qualité en France, en Espagne et en Italie avec Vacances Directes."
-            fiche: "Passez vos prochaines vacances en %type% %name% pour %personnes% dans de nombreux campings de qualité avec Vacances Directes."
+            fiche: "Passez vos prochaines vacances en %type% %name% dans de nombreux campings de qualité avec Vacances Directes."
+    url:
+        prefix: "camping"
+        catalogue: "catalogue"
+        dispo: "dispo"
+        couloir:
+            index: "couloir-reservation"
+            detail: "detail-sejour"
+            recapitulatif: "recapitulatif"
+            confirmation: "confirmation"
+        destinations: "destinations"
+        bonsplans: "bons-plans"
+        compte:
+            index: "compte"
+            coordonnees: "coordonnees"
+            brochure: "demande-brochure"
+            reservations: "reservations"
+            fidelite: "avantages-fidelite"
+            parrainage: "parrainage"
+        weekends: "vos-week-ends"
+        lieuVisiter: "lieu-a-visiter"
+        evenement: "evenement"
+        assurance:
+            index: "assurance"
+            confirmation: "confirmation"
+        locations: "locations"
+        topCampings: "top-campings"
 
 pays:
     afghanistan: "Afghanistan"
@@ -279,7 +305,7 @@ listing:
     no_results_title: "Votre recherche n'a retourné aucun résultat."
     no_results: "Nous vous invitons à modifier vos critères de recherche"
 
-menu_destination.accroche: "3 pays, 23 régions touristiques, vos vacances avec Vacances directes."
+menu_destination.accroche: "3 pays, 34 régions touristiques, vos vacances avec Vacances directes."
 
 menu_bon_plan:
     accroche:
@@ -309,6 +335,10 @@ menu:
     bons_plans: "Les bons plans"
     vacances: "Vos vacances"
     weekends: "Vos week-ends"
+    tous_camping: "Tous nos campings"
+    decouvrez_locations: "Découvrez nos locations"
+    decouvrez_locations_type: "Par type"
+    decouvrez_locations_capacite: "Par capacité"
 
 etablissement:
     activites: "Liste des activités"
@@ -335,6 +365,9 @@ date_search:
     ville.required: "La ville ou le camping est requis."
     nb_adultes.required: "Le nombre d'adultes est requis."
     button.submit: "Rechercher"
+    submit: "Trouver"
+    campings: "Campings"
+    ou: "ou"
 
 
 "Les vacances à": "Les vacances à"
@@ -359,6 +392,9 @@ header:
 fiche:
     camping: "Camping"
     situer_carte: "Situer sur la carte"
+    description_title: "Description"
+    plan_camping: "Plan du camping"
+    activite_event: "Liste des activités et évènements"
     le_camping: "Le camping"
     les_locations: "Les locations"
     sur_place: "Sur place"
@@ -407,7 +443,7 @@ home:
     topcamping.link: "Tous les top campings"
     vacances_directes_cest: "Vacances directes c'est"
     4_pays: "3 pays"
-    26_regions: "23 régions"
+    26_regions: "34 régions"
     touristiques: "touristiques"
     destination: "Destination"
     destination_france: "Destination France"
@@ -424,6 +460,7 @@ compte:
 
 general:
     a_partir_de: "à partir de"
+    meilleur_prix: "Notre meilleur prix"
     jouer: "Jouer"
     en_savoir_plus: "En savoir plus"
     la_nuit: "la nuit"
@@ -446,6 +483,11 @@ general:
     plus_que: "Plus que"
     du: "Du"
     au: "au"
+    resultats: "Résultat(s)"
+    toggle: "Affichage résultat(s)"
+    budget_range: "Budget(s) proposé(s)"
+    list: "Liste"
+    map: "Carte"
 
 filtres:
     affinez_recherche: "Affinez votre recherche"
@@ -473,7 +515,7 @@ footer:
     nous_joindre: "Nous joindre"
     contact:
         tel: "0825 133 400"
-        fax: "02 96 39 97 81"
+        fax: "Fax: 02 96 39 97 81"
     nous_contacter: "Nous contacter"
     demande_catalogue: "Demande de catalogue"
     description_catalogue: "Hoc inmaturo interitu ipse quoque sui pertaesus excessit e vita aetatis."
@@ -689,3 +731,41 @@ event:
 
 global:
     search_message: "Nous traitons actuellement votre demande. <br/><br/>Merci de bien vouloir patienter."
+    compte:
+        btn: "Mon compte"
+        title: "vous êtes un client existant, veuillez vous identifier"
+        user: "Nom d'utilisateur"
+        password: "Mot de passe"
+        forget: "Mot de passe oublié ?"
+        submit: "Se connecter"
+
+bon_plan:
+    title: "Camping : %bonPlan%"
+
+location:
+    list:
+        title: "Nos hébergements : %type%"
+        selection: "Notre sélection d'hébergements"
+        hebergements:
+            savoir_plus: "En savoir plus"
+            plus_de_resultats: "Plus de résultats"
+            nb_places: "%nbPlaces% places"
+    fiche:
+        subtitle: "Location %type% %nbPlaces% personnes"
+        voir_les_campings: "Voir les campings"
+        onglet:
+            logement:
+                title: "Le logement"
+                informations_pratiques:
+                    title: "Informations pratiques"
+                    capacite: "Capacité"
+                    dimensions: "Dimensions"
+                    agencement: "Agencement"
+                    equipements: "Equipements"
+                    annee_utilisation: "Année d'utilisation"
+                lien_campings: "Les campings"
+            campings:
+                title: "Les campings"
+                selection:
+                    title: "Notre selection de campings"
+                lien_logement: "Le logement"

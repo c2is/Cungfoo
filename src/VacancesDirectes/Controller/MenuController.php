@@ -11,6 +11,8 @@ use Symfony\Component\HttpFoundation\Request,
     Symfony\Component\Routing\Route;
 
 use Cungfoo\Model\EtablissementPeer,
+    Cungfoo\Model\RegionQuery,
+    Cungfoo\Model\DestinationQuery,
     Cungfoo\Model\BonPlanCategorieQuery,
     Cungfoo\Model\BonPlanQuery;
 
@@ -56,25 +58,28 @@ class MenuController implements ControllerProviderInterface
 
             return $app['twig']->render('Menu/destinations.twig', array(
                 'searchForm'                => $searchForm->createView(),
-                'etabByAlphabeticalOrder'   => $this->getEtablissementByAlphabeticalOrder(),
-                'regionsByDestinations'     => $this->getRegionsByDestinations($app['context']->get('language')),
-                'regionEspagne'             => $this->getRegionEspagne($app['context']->get('language')),
-                'regionItalie'              => $this->getRegionItalie($app['context']->get('language')),
-                'regionPortugal'            => $this->getRegionPortugal($app['context']->get('language')),
+                'etabByAlphabeticalOrder'   => $this->getEtablissementByAlphabeticalOrder($app),
+                'regionsByDestinations'     => $this->getRegionsByDestinations($app),
+                'regionEspagne'             => $this->getRegionByCode($app, 'ESP'),
+                'regionItalie'              => $this->getRegionByCode($app, 'ITA'),
             ));
         })
         ->bind('menu_destinations');
 
         $controllers->get('/locations', function () use ($app)
         {
+            $locale = $app['context']->get('language');
+
             $categoryTypeHebergements = \Cungfoo\Model\CategoryTypeHebergementQuery::create()
+                ->joinWithI18n($locale)
                 ->orderBySortableRank()
                 ->findActive()
             ;
 
             $capacites = \Cungfoo\Model\TypeHebergementCapaciteQuery::create()
-                ->limit(4)
+                ->joinWithI18n($locale)
                 ->orderBySortableRank()
+                ->limit(4)
                 ->findActive()
             ;
 
@@ -121,9 +126,9 @@ class MenuController implements ControllerProviderInterface
      * @param null|\PropelPDO $con
      * @return array
      */
-    protected function getEtablissementByAlphabeticalOrder(\PropelPDO $con = null)
+    protected function getEtablissementByAlphabeticalOrder(Application $app, \PropelPDO $con = null)
     {
-        $etabs = EtablissementPeer::getNameOrderByName($con);
+        $etabs = EtablissementPeer::getNameOrderByName($app['context']->get('language'), $con);
 
         $etabByAlphabeticalOrder = array();
         foreach ($etabs as $etab)
@@ -134,91 +139,43 @@ class MenuController implements ControllerProviderInterface
         return $etabByAlphabeticalOrder;
     }
 
-    public function getRegionsByDestinations($locale = BaseRegionPeer::DEFAULT_LOCALE, \PropelPDO $con = null)
+    public function getRegionsByDestinations(Application $app)
     {
-        $results = array();
-        $destinations = array(
-            '4' => array(
-                'label'     => 'destination.mediterranee',
-                'regions'   => array('LARO', 'PCA', 'CORS', 'HERA', 'AUDE'),
-            ),
-            '3' => array(
-                'label'     => 'destination.manche_atlantique',
-                'regions'   => array('NORM', 'BRET', 'CHMA', 'PBAS', 'PLOI'),
-            ),
-            '1' => array(
-                'label'     => 'destination.montagne',
-                'regions'   => array(/*'ARPY', Désactivé temporairement car pas de camping associé */'ALP'),
-            ),
-            '2' => array(
-                'label'     => 'destination.campagne',
-                'regions'   => array('GERS', 'AUVE', 'AVEY', 'ARDE', 'LOCH'),
-            ),
-        );
+        $locale = $app['context']->get('language');
 
-        foreach ($destinations as $destinationId => $destination)
-        {
-            $results[$destinationId] = array(
-                'label'     => $destination['label'],
-                'regions'   => array(),
-            );
-
-            foreach ($destination['regions'] as $region)
-            {
-                $results[$destinationId]['regions'][] = \Cungfoo\Model\RegionQuery::create()
-                    ->filterByCode($region)
+        return DestinationQuery::create()
+            ->orderBySortableRank()
+            ->joinWithI18n($locale)
+            ->joinWithRegion()
+            ->useRegionQuery()
+                ->useRegionI18nQuery()
+                    ->filterByLocale($locale)
+                    ->orderByName()
+                ->endUse()
+                ->joinWithPays()
+                ->usePaysQuery()
                     ->joinWithI18n($locale)
-                    ->findOne()
-                ;
-            }
-        }
-
-        return $results;
+                ->endUse()
+            ->endUse()
+            ->findActive()
+        ;
     }
 
-    public function getRegionEspagne($locale = BaseEtablissementPeer::DEFAULT_LOCALE){
-        $results = array();
-
-        $arrayRegion = array('CAZA', 'CTBR', 'CBRA', 'CDOR', 'BLAC');
-
-        $results = $this->getRegionsByForeignCountries($locale, null, $arrayRegion);
-
-        return $results;
-    }
-
-    public function getRegionItalie($locale = BaseEtablissementPeer::DEFAULT_LOCALE){
-        $results = array();
-
-        $arrayRegion = array('IMED', 'IADR');
-
-        $results = $this->getRegionsByForeignCountries($locale, null, $arrayRegion);
-
-        return $results;
-    }
-
-    public function getRegionPortugal($locale = BaseEtablissementPeer::DEFAULT_LOCALE){
-        $results = array();
-
-        $arrayRegion = array('CTRO');
-
-        $results = $this->getRegionsByForeignCountries($locale, null, $arrayRegion);
-
-        return $results;
-    }
-
-    public function getRegionsByForeignCountries($locale = BaseEtablissementPeer::DEFAULT_LOCALE, \PropelPDO $con = null, $arrayRegion)
+    public function getRegionByCode(Application $app, $code)
     {
-        $results = array();
+        $locale = $app['context']->get('language');
 
-        foreach ($arrayRegion as $region)
-        {
-            $results[] = \Cungfoo\Model\RegionQuery::create()
-                ->filterByCode($region)
+        return RegionQuery::create()
+            ->useRegionI18nQuery()
+                ->filterByLocale($locale)
+                ->orderByName()
+            ->endUse()
+            ->joinWithPays()
+            ->usePaysQuery()
+                ->filterByCode($code)
                 ->joinWithI18n($locale)
-                ->findOne()
-            ;
-        }
-
-        return $results;
+            ->endUse()
+            ->findActive()
+        ;
     }
 }

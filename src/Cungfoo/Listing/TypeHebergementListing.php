@@ -25,7 +25,6 @@ class TypeHebergementListing extends BaseTypeHebergementListing
         parent::configure();
         $this->addColumn(new Column\TextColumn('name'));
         $this->addColumn(new Column\TextColumn('category_type_hebergement'));
-        $this->addColumn(new Column\TextColumn('indice'));
         $this->removeColumn('image_hebergement_path');
         $this->removeColumn('image_composition_path');
     }

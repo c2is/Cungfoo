@@ -34,6 +34,12 @@ class BaseDestinationType extends AppAwareType
             'label' => 'destination.code',
             'required' => false,
         ));
+        $builder->add('sortable_rank', 'integer', array(
+            'constraints' => array(
+            ),
+            'label' => 'destination.sortable_rank',
+            'required' => false,
+        ));
         $builder->add('active', 'checkbox', array(
             'constraints' => array(
             ),
@@ -52,9 +58,7 @@ class BaseDestinationType extends AppAwareType
             'i18n_class' => 'Cungfoo\Model\DestinationI18n',
             'languages' => array(
                 0 => 'fr',
-                1 => 'en',
-                2 => 'de',
-                3 => 'nl',
+                1 => 'de',
             ),
             'label' => 'destination.destinationI18ns',
             'columns' => array(

@@ -22,8 +22,11 @@
                 <li>
                 <li>
                     <div id="SearchDate_selectContainer0" class="selectContainer clear">
-                        {{ form_label(searchForm.nbJours) }}
-                        {{ form_widget(searchForm.nbJours) }}
+                        {{ form_widget(searchForm.isBasseSaison) }}
+                        {{ form_label(searchForm.nbJoursHauteSaison) }}
+                        {{ form_widget(searchForm.nbJoursHauteSaison) }}
+                        {{ form_label(searchForm.nbJoursBasseSaison) }}
+                        {{ form_widget(searchForm.nbJoursBasseSaison) }}
                     </div>
                 </li>
                 </li>
@@ -40,9 +43,9 @@
                         {{ form_label(searchForm.camping) }}
                         {{ form_widget(searchForm.camping) }}
                         <div id="SearchDate_switch">
-                            <span class="left">ou</span>
+                            <span class="left">{{"date_search.ou"|trans}}</span>
                             <div class="switchSelect tooltip" title="">
-                                <span class="bubble">Campings</span>
+                                <span class="bubble">{{"date_search.campings"|trans}}</span>
                             </div>
                         </div>
                     </div>
@@ -91,7 +94,7 @@
                     <a class="toggleButton" href="#">+ de critères</a>
                 </li>#}
                 <li>
-                    <button type="submit" class="bt sombre big" name="searchForm" onclick="showWaitLayer();">Trouver</button>
+                    <button type="submit" class="bt sombre big" name="searchForm" onclick="showWaitLayer();">{{ "date_search.submit"|trans }}</button>
                 </li>
             </ol>
             {{ form_rest(searchForm) }}
@@ -119,7 +122,7 @@
 <script type="text/javascript">
     var fStartDate = '2013/03/01',
         fEndDate = '2013/10/31',
-        fHighSeasonStartDate = '2013/07/06',    // must be a saturday
+        fHighSeasonStartDate = '2013/06/29',    // must be a saturday
         fHighSeasonEndDate = '2013/08/31',      // must be a saturday
         linear = "reservation";
 

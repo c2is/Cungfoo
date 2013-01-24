@@ -77,9 +77,7 @@ class BaseVilleType extends AppAwareType
             'i18n_class' => 'Cungfoo\Model\VilleI18n',
             'languages' => array(
                 0 => 'fr',
-                1 => 'en',
-                2 => 'de',
-                3 => 'nl',
+                1 => 'de',
             ),
             'label' => 'ville.villeI18ns',
             'columns' => array(

@@ -39,6 +39,8 @@ class PointInteretPeer extends BasePointInteretPeer
             $query->limit($count);
         }
 
+        $query->filterByActive(true);
+
         return ($count == 1) ? $query->findOne() : $query->find();
     }
 
@@ -48,6 +50,7 @@ class PointInteretPeer extends BasePointInteretPeer
             ->useEtablissementPointInteretQuery()
                 ->filterByEtablissementId($etab->getId())
             ->endUse()
+            ->filterByActive(true)
             ->count()
         ;
     }
@@ -80,6 +83,8 @@ class PointInteretPeer extends BasePointInteretPeer
             $query->limit($count);
         }
 
+        $query->filterByActive(true);
+
         return ($count == 1) ? $query->findOne() : $query->find();
     }
 
@@ -99,6 +104,7 @@ class PointInteretPeer extends BasePointInteretPeer
                     ->endUse()
                 ->endUse()
             ->endUse()
+            ->filterByActive(true)
             ->count()
             ;
     }
@@ -128,6 +134,8 @@ class PointInteretPeer extends BasePointInteretPeer
             $query->limit($count);
         }
 
+        $query->filterByActive(true);
+
         return ($count == 1) ? $query->findOne() : $query->find();
     }
 
@@ -144,6 +152,7 @@ class PointInteretPeer extends BasePointInteretPeer
                     ->endUse()
                 ->endUse()
             ->endUse()
+            ->filterByActive(true)
             ->count()
             ;
     }
@@ -170,6 +179,8 @@ class PointInteretPeer extends BasePointInteretPeer
             $query->limit($count);
         }
 
+        $query->filterByActive(true);
+
         return ($count == 1) ? $query->findOne() : $query->find();
     }
 
@@ -183,6 +194,7 @@ class PointInteretPeer extends BasePointInteretPeer
                     ->filterByVille($ville)
                 ->endUse()
             ->endUse()
+            ->filterByActive(true)
             ->count()
             ;
     }

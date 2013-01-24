@@ -1,70 +1,59 @@
 <div id="destinations" class="subnav">
     <div class="clear">
-        <div id="destinationsNational" class="left ratio-33">
-            <div class="radiusBox2 greyC bgImg">
+        <div id="destinationsCountry" class="left destination">
+            <div class="radiusBox2 greyC bgImg national">
                 <div class="view">
-                    <img class="bg" src="{{ asset('images/vacancesdirectes/dyn/menu/1-destinations/france.jpg') }}" alt="" />
-                    <div class="stamp grey"><span>{{ "pays.france" | trans }}</span></div>
+                    <img class="bg" src="{{ asset('images/vacancesdirectes/common/menu/destinations/france_visuel.jpg') }}" alt="" />
+                    <div class="stamp grey"><span>France</span></div>
                 </div>
-                {% for destinationId, destination in regionsByDestinations %}
+                {% set nbDestinationFirstCol = (regionsByDestinations|length // 2) + (regionsByDestinations|length % 2) %}
+                {% for destination in regionsByDestinations %}
+                    {% if loop.first or loop.index == nbDestinationFirstCol + 1 %}
+                    <div class="regions">
+                    {% endif %}
                     <div class="region">
-                        <div class="title">Destination {{ destination.label | trans }}</div>
+                        <div class="title">{{ destination|trans }}</div>
                         <ul>
                             {% for region in destination.regions %}
-                                <li><a href="{{ path('destination_region', {pays: region.pays.slug, region: region.slug})}}">{{ region }}</a></li>
+                            <li><a href="{{ path('destination_region', {pays: region.pays.slug, region: region.slug})}}">- {{ region }}</a></li>
                             {% endfor %}
-                            {# TODO <a class="bt link" href="destination/{{ destinationId }}">{{ "menu.plus_de_regions" | trans }}</a> #}
                         </ul>
                     </div>
+                    {% if loop.last or loop.index == nbDestinationFirstCol %}
+                    </div>
+                    {% endif %}
                 {% endfor %}
             </div>
-        </div>
-        <div id="destinationsInternational" class="left ratio-33">
-            <div class="radiusBox2 greyC bgImg">
+            <div class="radiusBox2 greyC bgImg international">
                 <div class="view">
-                    <img class="bg" src="{{ asset('images/vacancesdirectes/dyn/menu/1-destinations/spain.jpg') }}" alt="" />
+                    <img class="bg" src="{{ asset('images/vacancesdirectes/common/menu/destinations/espagne_visuel.jpg') }}" alt="" />
                     <div class="stamp grey"><span>{{ "pays.espagne" | trans }}</span></div>
                 </div>
                 <div class="region">
                     <ul>
                         {% for region in regionEspagne %}
-                            <li><a href="{{ path('destination_region', {pays: region.pays.slug, region: region.slug})}}">{{ region }}</a></li>
+                        <li><a href="{{ path('destination_region', {pays: region.pays.slug, region: region.slug})}}">- {{ region }}</a></li>
                         {% endfor %}
                     </ul>
                 </div>
             </div>
-            <div class="radiusBox2 greyC">
+            <div class="radiusBox2 greyC bgImg international">
                 <div class="view">
-                    <img class="bg" src="{{ asset('images/vacancesdirectes/dyn/menu/1-destinations/italia.jpg') }}" alt="" />
+                    <img class="bg" src="{{ asset('images/vacancesdirectes/common/menu/destinations/italie_visuel.jpg') }}" alt="" />
                     <div class="stamp grey"><span>{{ "pays.italie" | trans }}</span></div>
                 </div>
                 <div class="region">
                     <ul>
                         {% for region in regionItalie %}
-                            <li><a href="{{ path('destination_region', {pays: region.pays.slug, region: region.slug})}}">{{ region }}</a></li>
+                        <li><a href="{{ path('destination_region', {pays: region.pays.slug, region: region.slug})}}">- {{ region }}</a></li>
                         {% endfor %}
                     </ul>
                 </div>
             </div>
-            {#
-            <div class="radiusBox2 greyC">
-                <div class="view">
-                    <img class="bg" src="{{ asset('images/vacancesdirectes/dyn/menu/1-destinations/portugal.jpg') }}" alt="" />
-                    <div class="stamp grey"><span>{{ "pays.portugal" | trans }}</span></div>
-                </div>
-                <div class="region">
-                    <ul>
-                        {% for region in regionPortugal %}
-                            <li><a href="{{ path('destination_region', {pays: region.pays.slug, region: region.slug})}}">{{ region }}</a></li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
-            #}
         </div>
-        <div id="destinationsAll" class="left ratio-33">
+        <div id="destinationsAll" class="left destination">
             <div class="radiusBox greyC">
-                <div class="title">Tous nos campings</div>
+                <div class="title">{{ "menu.tous_camping"|trans}}</div>
                 <ol id="campingsList">
                     {% for letter, etabs in etabByAlphabeticalOrder %}
                         <li class="letter-first">{{ letter }}</li>

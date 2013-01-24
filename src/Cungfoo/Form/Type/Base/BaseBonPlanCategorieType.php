@@ -51,9 +51,7 @@ class BaseBonPlanCategorieType extends AppAwareType
             'i18n_class' => 'Cungfoo\Model\BonPlanCategorieI18n',
             'languages' => array(
                 0 => 'fr',
-                1 => 'en',
-                2 => 'de',
-                3 => 'nl',
+                1 => 'de',
             ),
             'label' => 'bon_plan_categorie.bon_plan_categorieI18ns',
             'columns' => array(

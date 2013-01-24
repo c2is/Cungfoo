@@ -53,6 +53,8 @@ class EventPeer extends BaseEventPeer
             $query->filterByCategory($category, (!is_null($criteriaOperation)) ? $criteriaOperation : \Criteria::EQUAL);
         }
 
+        $query->filterByActive(true);
+
         return ($count == 1) ? $query->findOne() : $query->find();
     }
 
@@ -68,6 +70,8 @@ class EventPeer extends BaseEventPeer
         {
             $query->filterByCategory($category, (!is_null($criteriaOperation)) ? $criteriaOperation : \Criteria::EQUAL);
         }
+
+        $query->filterByActive(true);
 
         return $query->count();
     }
@@ -111,6 +115,8 @@ class EventPeer extends BaseEventPeer
             $query->filterByCategory($category, (!is_null($criteriaOperation)) ? $criteriaOperation : \Criteria::EQUAL);
         }
 
+        $query->filterByActive(true);
+
         return ($count == 1) ? $query->findOne() : $query->find();
     }
 
@@ -150,6 +156,8 @@ class EventPeer extends BaseEventPeer
             $query->filterByCategory($category, (!is_null($criteriaOperation)) ? $criteriaOperation : \Criteria::EQUAL);
         }
 
+        $query->filterByActive(true);
+
         return ($count == 1) ? $query->findOne() : $query->find();
     }
 
@@ -185,6 +193,8 @@ class EventPeer extends BaseEventPeer
         {
             $query->filterByCategory($category, (!is_null($criteriaOperation)) ? $criteriaOperation : \Criteria::EQUAL);
         }
+
+        $query->filterByActive(true);
 
         return ($count == 1) ? $query->findOne() : $query->find();
     }

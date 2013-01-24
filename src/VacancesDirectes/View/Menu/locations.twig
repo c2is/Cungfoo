@@ -1,7 +1,7 @@
 <div id="locations" class="subnav">
-    <div class="title">Découvrez nos locations</div>
-    <div class="subtitle">Par type</div>
-    <div class="clear">
+    <div class="title">{{ "menu.decouvrez_locations" | trans }}</div>
+    <div class="subtitle">{{ "menu.decouvrez_locations_type" | trans }}</div>
+    <div class="clear"> 
         {% for categoryTypeHebergement in categoryTypeHebergements %}
         <div class="radiusBox2 greyC left bgImg linkParent">
             <div class="view" style="background-image:url('{{ asset(categoryTypeHebergement.imageMenu) }}')">
@@ -12,7 +12,7 @@
         {% endfor %}
     </div>
     {% if capacites|length > 0 %}
-    <div class="subtitle">Par capacité</div>
+    <div class="subtitle">{{ "menu.decouvrez_locations_capacite" | trans }}</div>
     <div class="clear">
         {% for capacite in capacites %}
         <div class="radiusBox greyC left bgImg capacity linkParent">

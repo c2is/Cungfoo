@@ -18,4 +18,14 @@ use Cungfoo\Model\om\BaseBonPlanCategorieQuery;
  */
 class BonPlanCategorieQuery extends BaseBonPlanCategorieQuery
 {
+    public function find($con = null)
+    {
+        $this
+            ->useI18nQuery()
+            ->orderByName()
+            ->endUse()
+        ;
+
+        return parent::find($con);
+    }
 }

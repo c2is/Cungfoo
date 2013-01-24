@@ -98,6 +98,7 @@ class TypeHebergementCapaciteTableMap extends TableMap
   'crud_model' => NULL,
   'crud_form' => NULL,
   'crud_type_file' => 'image_menu,image_page',
+  'crud_search' => 'name',
 ),
         );
     } // getBehaviors()

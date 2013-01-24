@@ -5,7 +5,7 @@
         </div>
     {% endif %}
     {% for etab in list.element %}
-    <div id="camping-{{ etab.model.slug }}" data-id="{{ path('infobox_camping', {idResalys: etab.model.code}) }}" class="itemResult {% if list.type == 0 %}itemCatalogue{% endif %} clear" data-crit="{{ etab.model.categorie.code }}" data-critplus="{{ etab.model.situationGeographique }}{% if etab.model.situationGeographique != "" %} {% endif %}{{ etab.model.baignade }}{% if etab.model.baignade != "" %} {% endif %}{{ etab.model.activite }}{% if etab.model.activite != "" %} {% endif %}{{ etab.model.service }}{% if etab.model.service != "" %} {% endif %}{{ etab.model.thematique }}">
+    <form id="camping-{{ etab.model.slug }}" method="POST" data-id="{{ path('infobox_camping', {idResalys: etab.model.code}) }}" class="itemResult {% if list.type == 0 %}itemCatalogue{% endif %} clear" data-crit="{{ etab.model.categorie.code }}" data-critplus="{{ etab.model.situationGeographique }}{% if etab.model.situationGeographique != "" %} {% endif %}{{ etab.model.baignade }}{% if etab.model.baignade != "" %} {% endif %}{{ etab.model.activite }}{% if etab.model.activite != "" %} {% endif %}{{ etab.model.service }}{% if etab.model.service != "" %} {% endif %}{{ etab.model.thematique }}">
         <!-- item.title -->
         <div class="itemResultTitle">
             <input type="checkbox" name="compar" value="idCamp1">
@@ -30,7 +30,9 @@
             </div>
             #}
 
-            <a class="bt sombre" href="{{ path('destination_camping', { pays: etab.model.pays.slug, region: etab.model.region.slug, ville: etab.model.ville.slug, camping: etab.model.slug }) }}">{{ "general.decouvrir_le_camping" | trans }}</a>
+            <a class="bt sombre itemGetCampingFiche" href="{{ path('destination_camping', { pays: etab.model.pays.slug, region: etab.model.region.slug, ville: etab.model.ville.slug, camping: etab.model.slug }) }}">
+                {{ "general.decouvrir_le_camping" | trans }}
+            </a>
         </div>
         <!-- item.right -->
         <div class="itemResultRight">
@@ -85,7 +87,7 @@
                     {% set discount = proposal.adult_price != proposal.adult_price_without_discounts %}
                     <div class="linePrice {% if discount %}promotion{% endif %} {% if loop.first %}checked{% endif %}">
                         <label for="{{ "camp" ~ etab.model.code }}-{{ loopParent.index ~ loop.index }}">
-                            <input type="radio" id="{{ "camp" ~ etab.model.code }}-{{ loopParent.index ~ loop.index }}" name="{{ "camp" ~ etab.model.code }}-{{ loopParent.index }}" {% if loop.first %}checked="checked"{% endif %}>
+                            <input type="radio" id="{{ "camp" ~ etab.model.code }}-{{ loopParent.index ~ loop.index }}" name="{{ "camp" ~ etab.model.code }}-{{ loopParent.index }}" {% if loop.first %}checked="checked"{% endif %} value="{{ proposal|serialize }}" />
                             {% for roomType in proposal.room_types.room_type %}
                                 {% if roomType.room_type_count > 2 %}{{ roomType.room_type_count }} * {% endif %}{{ roomType.room_type_label }}{% if not loop.last %}<br/> + {% endif %}
                             {% else %}
@@ -118,11 +120,12 @@
                 </div>
             {% endif %}
         </div>
-    </div><!-- // .itemResult -->
+    </form><!-- // .itemResult -->
     {% else %}
     <h2>{{ "listing.no_results_title" | trans }}</h2>
     <p>{{ "listing.no_results" | trans }}</p>
     {% endfor %}
+    
 </div><!-- // #result -->
 {% if list.element|length > 0 %}
 <button id="btPlusResults" class="bt big sombre">{{ "listing.plus_resultats" | trans }}</button>

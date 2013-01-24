@@ -915,4 +915,17 @@ abstract class BaseVilleQuery extends ModelCriteria
             ->useQuery($relationAlias ? $relationAlias : 'VilleI18n', 'Cungfoo\Model\VilleI18nQuery');
     }
 
+    // crudable behavior
+
+    public function filterByTerm($term)
+    {
+        $term = '%' . $term . '%';
+
+        return $this
+            ->_or()
+            ->useI18nQuery()
+            ->filterByName($term, \Criteria::LIKE)
+            ->endUse()
+        ;
+    }
 }

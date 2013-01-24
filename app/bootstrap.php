@@ -15,10 +15,10 @@ $app['config'] = $app->share(function() {
 });
 
 $app['config']->addParams(array(
-    'web_dir'       => sprintf('%s/web', $app['config']->get('root_dir')),
-    'languages'     => Symfony\Component\Yaml\Yaml::parse(sprintf('%s/languages.yml', $app['config']->get('config_dir')))['languages'],
-    'dimensions'    => Symfony\Component\Yaml\Yaml::parse(sprintf('%s/dimensions.yml', $app['config']->get('config_dir')))['dimensions'],
-    'version'       => trim(file_get_contents(sprintf('%s/version', $app['config']->get('config_dir')))),
+    'web_dir'   => sprintf('%s/web', $app['config']->get('root_dir')),
+    'languages' => Symfony\Component\Yaml\Yaml::parse(sprintf('%s/languages.yml', $app['config']->get('config_dir')))['languages'],
+    'version'   => trim(file_get_contents(sprintf('%s/version', $app['config']->get('config_dir')))),
+    'security'  => new Cungfoo\Lib\Crud\Security($app),
 ));
 
 /* T W I G  C O N F I G U R A T I O N  */
@@ -33,6 +33,7 @@ $app['twig'] = $app->share($app->extend('twig', function($twig, $app) {
     $twig->addExtension(new Twig_Extension_Debug());
     $twig->addExtension(new Twig_Extensions_Extension_Text());
     $twig->addExtension(new \Cungfoo\Lib\Twig\Extension\DateLocaleExtension($app));
+    $twig->addExtension(new \Cungfoo\Lib\Twig\Extension\SerializeExtension($app));
     return $twig;
 }));
 

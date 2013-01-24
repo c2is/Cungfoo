@@ -24,6 +24,7 @@ class TagListing extends BaseTagListing
     {
         parent::configure();
         $this->addColumn(new Column\TextColumn('name'));
+        $this->removeColumn('slug');
     }
 
 } // TagListing

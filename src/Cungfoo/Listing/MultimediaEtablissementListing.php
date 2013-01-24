@@ -24,6 +24,7 @@ class MultimediaEtablissementListing extends BaseMultimediaEtablissementListing
     {
         parent::configure();
         $this->addColumn(new Column\TextColumn('titre'));
+        $this->removeColumn('image_path');
     }
 
 } // MultimediaEtablissementListing

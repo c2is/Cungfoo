@@ -80,6 +80,13 @@ class BaseRegionType extends AppAwareType
             'label' => 'region.pays',
             'required' => false,
         ));
+        $builder->add('destination', 'model', array(
+            'class' => '\Cungfoo\Model\Destination',
+            'constraints' => array(
+            ),
+            'label' => 'region.destination',
+            'required' => false,
+        ));
         $builder->add('mea_home', 'checkbox', array(
             'constraints' => array(
             ),
@@ -130,9 +137,7 @@ class BaseRegionType extends AppAwareType
             'i18n_class' => 'Cungfoo\Model\RegionI18n',
             'languages' => array(
                 0 => 'fr',
-                1 => 'en',
-                2 => 'de',
-                3 => 'nl',
+                1 => 'de',
             ),
             'label' => 'region.regionI18ns',
             'columns' => array(

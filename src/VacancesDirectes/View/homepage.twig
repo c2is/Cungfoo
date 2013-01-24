@@ -105,7 +105,7 @@
                         <span class="title">{{ idee.titre }}</span>
                     </div>
                     {% if(idee.prix != "") %}
-                        {# TODO <a href="{{ idee.lien | trans }}" class="stain cover {# TODO linkBlock #}"> #}<span>{{ "general.a_partir_de" | trans }}<br /><span class="price linkBlock">{{ idee.prix }}<span class="fine">&nbsp;</span>€</span></span>{# TODO </a> #}
+                        {# TODO <a href="{{ idee.lien | trans }}" class="stain cover linkBlock "><span>{{ "general.a_partir_de" | trans }}<br /><span class="price linkBlock">{{ idee.prix }}<span class="fine">&nbsp;</span>€</span></span></a> #}
                     {% endif %}
                 </div>
             {% endfor %}
@@ -244,8 +244,7 @@
                             $(this).addClass('active').parents('li').siblings('li').children('a').removeClass('active');
                             ib.close();
                             return false;
-                        })
-                        .eq(0).trigger('click');
+                        });
                 }
             </script>
         </div>

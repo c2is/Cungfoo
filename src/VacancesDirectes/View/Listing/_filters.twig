@@ -1,11 +1,11 @@
-<span class="nbResult"><span class="nb">{{ list.element | length }}</span>Résultat(s)</span>
+<span class="nbResult"><span class="nb">{{ list.element | length }}</span>{{ "general.resultats"|trans }}</span>
 <div class="typeAff">
-    <span>Affichage résultats</span>
-    <button id="btList" class="button picto active">Liste</button>
-    <button id="btMap" class="button picto">Carte</button>
+    <span>{{ "general.toggle"|trans }}</span>
+    <button id="btList" class="button picto active">{{ "general.list"|trans }}</button>
+    <button id="btMap" class="button picto">{{ "general.map"|trans }}</button>
 </div>
 <div id="widgetRange">
-    Budget(s) proposé(s)
+    {{ "general.budget_range"|trans }}
     <div id="noUiSlider" class="noUiSlider" data-range='{"minScale":0, "maxScale":500, "minStart":"0", "minStop":"500"}'></div>
 </div>
 

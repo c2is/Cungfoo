@@ -30,6 +30,7 @@ class EsiController implements ControllerProviderInterface
         $controllers->match('/bon-plan-home', function (Request $request) use ($app)
         {
             $listing = null;
+            $maxAge = 600;
 
             try
             {
@@ -40,19 +41,21 @@ class EsiController implements ControllerProviderInterface
 
                 if ($bonPlan)
                 {
-                    $baseDate  = $bonPlan->getDateStart('U') ?: date('U');
-                    $startDate = strtotime('next ' . $bonPlan->getDayStart(), $baseDate);
-                    $startDate = strtotime('+' . ($bonPlan->getDayRange() - 7) . ' days', $startDate);
+                    $startDate  = $bonPlan->getDateStart('U') ?: date('U');
+                    $dayRange = $bonPlan->getDayRange() ?: 7;
+                    //$startDate = strtotime('next ' . $bonPlanObject->getDayStart(), strtotime('yesterday', $baseDate));
+                    //$startDate = strtotime('+' . ($bonPlan->getDayRange() - 7) . ' days', $startDate);
 
                     $searchParams = new SearchParams($app);
                     $searchParams
                         ->setStartDate(date('Y-m-d', $startDate))
-                        ->setNbDays(7)
+                        ->setNbDays($dayRange)
                         ->addTheme($bonPlan->getRegionsCodes())
                         ->addEtab($bonPlan->getEtablissementsCodes())
                         ->setNbAdults($bonPlan->getNbAdultes())
                         ->setPeriodCategories($bonPlan->getPeriodCategories())
                         ->setMaxResults(10)
+                        ->setSortString('Random')
                     ;
 
                     if($bonPlan->getNbEnfants() > 0) {
@@ -73,6 +76,7 @@ class EsiController implements ControllerProviderInterface
             catch (\Exception $e)
             {
                 $app['logger']->addError(sprintf('Erreur au chargement du widget home early booking : %s', $e->getMessage()));
+                $maxAge = 0;
             }
 
             $liste = null;
@@ -85,13 +89,14 @@ class EsiController implements ControllerProviderInterface
                 'dispos'    => $liste,
             ));
 
-            return new Response($view, 200, array('Cache-Control' => 's-maxage=600, public'));
+            return new Response($view, 200, array('Cache-Control' => sprintf('s-maxage=%s, public', $maxAge)));
 
         })->bind('esi_home_widget');
 
         $controllers->match('/bon-plan/{slug}/{limit}', function (Request $request, $slug, $limit) use ($app)
         {
             $listing = null;
+            $maxAge = 600;
 
             try
             {
@@ -111,19 +116,21 @@ class EsiController implements ControllerProviderInterface
                     $app->abort(404, "La page recherchée n'existe pas");
                 }
 
-                $baseDate  = $bonPlanObject->getDateStart('U') ?: date('U');
-                $startDate = strtotime('next ' . $bonPlanObject->getDayStart(), $baseDate);
-                $startDate = strtotime('+' . ($bonPlanObject->getDayRange() - 7) . ' days', $startDate);
+                $startDate  = $bonPlanObject->getDateStart('U') ?: date('U');
+                $dayRange = $bonPlanObject->getDayRange() ?: 7;
+                //$startDate = strtotime('next ' . $bonPlanObject->getDayStart(), strtotime('yesterday', $baseDate));
+                //$startDate = strtotime('+' . ($bonPlanObject->getDayRange() - 7) . ' days', $startDate);
 
                 $searchParams = new SearchParams($app);
                 $searchParams
                     ->setStartDate(date('Y-m-d', $startDate))
-                    ->setNbDays(7)
+                    ->setNbDays($dayRange)
                     ->addTheme($bonPlanObject->getRegionsCodes())
                     ->addEtab($bonPlanObject->getEtablissementsCodes())
                     ->setNbAdults($bonPlanObject->getNbAdultes())
                     ->setPeriodCategories($bonPlanObject->getPeriodCategories())
                     ->setMaxResults(10)
+                    ->setSortString('Random')
                 ;
 
                 if($bonPlanObject->getNbEnfants() > 0) {
@@ -143,6 +150,7 @@ class EsiController implements ControllerProviderInterface
             catch (\Exception $e)
             {
                 $app['logger']->addError(sprintf('Erreur au chargement du menu Bons Plans : %s', $e->getMessage()));
+                $maxAge = 0;
             }
 
             $liste = null;
@@ -154,7 +162,7 @@ class EsiController implements ControllerProviderInterface
                 'bon_plan' => $liste,
             ));
 
-            return new Response($view, 200, array('Cache-Control' => 's-maxage=600, public'));
+            return new Response($view, 200, array('Cache-Control' => sprintf('s-maxage=%s, public', $maxAge)));
 
         })->bind('esi_bon_plan')
           ->value('limit', '5');

@@ -5,17 +5,17 @@
         Active: true
         SortableRank: 1
     2:
-        ImageMenu: uploads/type_hebergement_capacites/50ed435f1ecda.png
+        ImageMenu: uploads/type_hebergement_capacites/50f42111653ae.png
         ImagePage: uploads/type_hebergement_capacites/50f02bc456e6d.jpeg
         Active: true
-        SortableRank: 2
+        SortableRank: 3
     3:
         ImageMenu: uploads/type_hebergement_capacites/50ed4363f1dad.png
         ImagePage: uploads/type_hebergement_capacites/50f02b11caf35.jpeg
         Active: true
-        SortableRank: 3
+        SortableRank: 2
     4:
-        ImageMenu: uploads/type_hebergement_capacites/50ed436945eac.png
+        ImageMenu: uploads/type_hebergement_capacites/50f4212b2a0ca.png
         ImagePage: uploads/type_hebergement_capacites/50f02b21bd6ec.jpeg
         Active: true
         SortableRank: 4

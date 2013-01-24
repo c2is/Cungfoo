@@ -23,6 +23,10 @@ class TypeHebergementCapaciteListing extends BaseTypeHebergementCapaciteListing
     public function configure()
     {
         parent::configure();
+
+        $this->addColumn(new Column\TextColumn('name'));
+        $this->removeColumn('image_menu');
+        $this->removeColumn('image_page');
     }
 
 } // TypeHebergementCapaciteListing

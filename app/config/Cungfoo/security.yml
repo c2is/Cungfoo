@@ -1,0 +1,6 @@
+job:
+  role: ROLE_ADMIN
+resalys:
+  role: ROLE_ADMIN
+viafrance:
+  role: ROLE_ADMIN

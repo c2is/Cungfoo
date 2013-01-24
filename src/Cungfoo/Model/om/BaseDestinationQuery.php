@@ -18,6 +18,7 @@ use Cungfoo\Model\DestinationPeer;
 use Cungfoo\Model\DestinationQuery;
 use Cungfoo\Model\Etablissement;
 use Cungfoo\Model\EtablissementDestination;
+use Cungfoo\Model\Region;
 
 /**
  * Base class that represents a query for the 'destination' table.
@@ -28,12 +29,14 @@ use Cungfoo\Model\EtablissementDestination;
  * @method DestinationQuery orderByCode($order = Criteria::ASC) Order by the code column
  * @method DestinationQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method DestinationQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
+ * @method DestinationQuery orderBySortableRank($order = Criteria::ASC) Order by the sortable_rank column
  * @method DestinationQuery orderByActive($order = Criteria::ASC) Order by the active column
  *
  * @method DestinationQuery groupById() Group by the id column
  * @method DestinationQuery groupByCode() Group by the code column
  * @method DestinationQuery groupByCreatedAt() Group by the created_at column
  * @method DestinationQuery groupByUpdatedAt() Group by the updated_at column
+ * @method DestinationQuery groupBySortableRank() Group by the sortable_rank column
  * @method DestinationQuery groupByActive() Group by the active column
  *
  * @method DestinationQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
@@ -43,6 +46,10 @@ use Cungfoo\Model\EtablissementDestination;
  * @method DestinationQuery leftJoinEtablissementDestination($relationAlias = null) Adds a LEFT JOIN clause to the query using the EtablissementDestination relation
  * @method DestinationQuery rightJoinEtablissementDestination($relationAlias = null) Adds a RIGHT JOIN clause to the query using the EtablissementDestination relation
  * @method DestinationQuery innerJoinEtablissementDestination($relationAlias = null) Adds a INNER JOIN clause to the query using the EtablissementDestination relation
+ *
+ * @method DestinationQuery leftJoinRegion($relationAlias = null) Adds a LEFT JOIN clause to the query using the Region relation
+ * @method DestinationQuery rightJoinRegion($relationAlias = null) Adds a RIGHT JOIN clause to the query using the Region relation
+ * @method DestinationQuery innerJoinRegion($relationAlias = null) Adds a INNER JOIN clause to the query using the Region relation
  *
  * @method DestinationQuery leftJoinDestinationI18n($relationAlias = null) Adds a LEFT JOIN clause to the query using the DestinationI18n relation
  * @method DestinationQuery rightJoinDestinationI18n($relationAlias = null) Adds a RIGHT JOIN clause to the query using the DestinationI18n relation
@@ -54,12 +61,14 @@ use Cungfoo\Model\EtablissementDestination;
  * @method Destination findOneByCode(string $code) Return the first Destination filtered by the code column
  * @method Destination findOneByCreatedAt(string $created_at) Return the first Destination filtered by the created_at column
  * @method Destination findOneByUpdatedAt(string $updated_at) Return the first Destination filtered by the updated_at column
+ * @method Destination findOneBySortableRank(int $sortable_rank) Return the first Destination filtered by the sortable_rank column
  * @method Destination findOneByActive(boolean $active) Return the first Destination filtered by the active column
  *
  * @method array findById(int $id) Return Destination objects filtered by the id column
  * @method array findByCode(string $code) Return Destination objects filtered by the code column
  * @method array findByCreatedAt(string $created_at) Return Destination objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return Destination objects filtered by the updated_at column
+ * @method array findBySortableRank(int $sortable_rank) Return Destination objects filtered by the sortable_rank column
  * @method array findByActive(boolean $active) Return Destination objects filtered by the active column
  *
  * @package    propel.generator.Cungfoo.Model.om
@@ -164,7 +173,7 @@ abstract class BaseDestinationQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `code`, `created_at`, `updated_at`, `active` FROM `destination` WHERE `id` = :p0';
+        $sql = 'SELECT `id`, `code`, `created_at`, `updated_at`, `sortable_rank`, `active` FROM `destination` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -396,6 +405,47 @@ abstract class BaseDestinationQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query on the sortable_rank column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterBySortableRank(1234); // WHERE sortable_rank = 1234
+     * $query->filterBySortableRank(array(12, 34)); // WHERE sortable_rank IN (12, 34)
+     * $query->filterBySortableRank(array('min' => 12)); // WHERE sortable_rank > 12
+     * </code>
+     *
+     * @param     mixed $sortableRank The value to use as filter.
+     *              Use scalar values for equality.
+     *              Use array values for in_array() equivalent.
+     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return DestinationQuery The current query, for fluid interface
+     */
+    public function filterBySortableRank($sortableRank = null, $comparison = null)
+    {
+        if (is_array($sortableRank)) {
+            $useMinMax = false;
+            if (isset($sortableRank['min'])) {
+                $this->addUsingAlias(DestinationPeer::SORTABLE_RANK, $sortableRank['min'], Criteria::GREATER_EQUAL);
+                $useMinMax = true;
+            }
+            if (isset($sortableRank['max'])) {
+                $this->addUsingAlias(DestinationPeer::SORTABLE_RANK, $sortableRank['max'], Criteria::LESS_EQUAL);
+                $useMinMax = true;
+            }
+            if ($useMinMax) {
+                return $this;
+            }
+            if (null === $comparison) {
+                $comparison = Criteria::IN;
+            }
+        }
+
+        return $this->addUsingAlias(DestinationPeer::SORTABLE_RANK, $sortableRank, $comparison);
+    }
+
+    /**
      * Filter the query on the active column
      *
      * Example usage:
@@ -494,6 +544,80 @@ abstract class BaseDestinationQuery extends ModelCriteria
         return $this
             ->joinEtablissementDestination($relationAlias, $joinType)
             ->useQuery($relationAlias ? $relationAlias : 'EtablissementDestination', '\Cungfoo\Model\EtablissementDestinationQuery');
+    }
+
+    /**
+     * Filter the query by a related Region object
+     *
+     * @param   Region|PropelObjectCollection $region  the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   DestinationQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByRegion($region, $comparison = null)
+    {
+        if ($region instanceof Region) {
+            return $this
+                ->addUsingAlias(DestinationPeer::ID, $region->getDestinationId(), $comparison);
+        } elseif ($region instanceof PropelObjectCollection) {
+            return $this
+                ->useRegionQuery()
+                ->filterByPrimaryKeys($region->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByRegion() only accepts arguments of type Region or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the Region relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return DestinationQuery The current query, for fluid interface
+     */
+    public function joinRegion($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('Region');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'Region');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the Region relation Region object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\RegionQuery A secondary query class using the current class as primary query
+     */
+    public function useRegionQuery($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        return $this
+            ->joinRegion($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'Region', '\Cungfoo\Model\RegionQuery');
     }
 
     /**
@@ -668,6 +792,128 @@ abstract class BaseDestinationQuery extends ModelCriteria
     {
         return $this->addAscendingOrderByColumn(DestinationPeer::CREATED_AT);
     }
+    // sortable behavior
+
+    /**
+     * Filter the query based on a rank in the list
+     *
+     * @param     integer   $rank rank
+     *
+     * @return    DestinationQuery The current query, for fluid interface
+     */
+    public function filterByRank($rank)
+    {
+        return $this
+            ->addUsingAlias(DestinationPeer::RANK_COL, $rank, Criteria::EQUAL);
+    }
+
+    /**
+     * Order the query based on the rank in the list.
+     * Using the default $order, returns the item with the lowest rank first
+     *
+     * @param     string $order either Criteria::ASC (default) or Criteria::DESC
+     *
+     * @return    DestinationQuery The current query, for fluid interface
+     */
+    public function orderByRank($order = Criteria::ASC)
+    {
+        $order = strtoupper($order);
+        switch ($order) {
+            case Criteria::ASC:
+                return $this->addAscendingOrderByColumn($this->getAliasedColName(DestinationPeer::RANK_COL));
+                break;
+            case Criteria::DESC:
+                return $this->addDescendingOrderByColumn($this->getAliasedColName(DestinationPeer::RANK_COL));
+                break;
+            default:
+                throw new PropelException('DestinationQuery::orderBy() only accepts "asc" or "desc" as argument');
+        }
+    }
+
+    /**
+     * Get an item from the list based on its rank
+     *
+     * @param     integer   $rank rank
+     * @param     PropelPDO $con optional connection
+     *
+     * @return    Destination
+     */
+    public function findOneByRank($rank, PropelPDO $con = null)
+    {
+        return $this
+            ->filterByRank($rank)
+            ->findOne($con);
+    }
+
+    /**
+     * Returns the list of objects
+     *
+     * @param      PropelPDO $con	Connection to use.
+     *
+     * @return     mixed the list of results, formatted by the current formatter
+     */
+    public function findList($con = null)
+    {
+        return $this
+            ->orderByRank()
+            ->find($con);
+    }
+
+    /**
+     * Get the highest rank
+     *
+     * @param     PropelPDO optional connection
+     *
+     * @return    integer highest position
+     */
+    public function getMaxRank(PropelPDO $con = null)
+    {
+        if ($con === null) {
+            $con = Propel::getConnection(DestinationPeer::DATABASE_NAME);
+        }
+        // shift the objects with a position lower than the one of object
+        $this->addSelectColumn('MAX(' . DestinationPeer::RANK_COL . ')');
+        $stmt = $this->doSelect($con);
+
+        return $stmt->fetchColumn();
+    }
+
+    /**
+     * Reorder a set of sortable objects based on a list of id/position
+     * Beware that there is no check made on the positions passed
+     * So incoherent positions will result in an incoherent list
+     *
+     * @param     array     $order id => rank pairs
+     * @param     PropelPDO $con   optional connection
+     *
+     * @return    boolean true if the reordering took place, false if a database problem prevented it
+     */
+    public function reorder(array $order, PropelPDO $con = null)
+    {
+        if ($con === null) {
+            $con = Propel::getConnection(DestinationPeer::DATABASE_NAME);
+        }
+
+        $con->beginTransaction();
+        try {
+            $ids = array_keys($order);
+            $objects = $this->findPks($ids, $con);
+            foreach ($objects as $object) {
+                $pk = $object->getPrimaryKey();
+                if ($object->getSortableRank() != $order[$pk]) {
+                    $object->setSortableRank($order[$pk]);
+                    $object->save($con);
+                }
+            }
+            $con->commit();
+
+            return true;
+        } catch (PropelException $e) {
+            $con->rollback();
+            throw $e;
+        }
+    }
+
     // active behavior
 
     /**
@@ -739,4 +985,17 @@ abstract class BaseDestinationQuery extends ModelCriteria
             ->useQuery($relationAlias ? $relationAlias : 'DestinationI18n', 'Cungfoo\Model\DestinationI18nQuery');
     }
 
+    // crudable behavior
+
+    public function filterByTerm($term)
+    {
+        $term = '%' . $term . '%';
+
+        return $this
+            ->_or()
+            ->useI18nQuery()
+            ->filterByName($term, \Criteria::LIKE)
+            ->endUse()
+        ;
+    }
 }

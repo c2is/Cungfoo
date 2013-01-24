@@ -48,6 +48,7 @@ class RegionTableMap extends TableMap
         $this->addColumn('image_encart_path', 'ImageEncartPath', 'VARCHAR', false, 255, null);
         $this->addColumn('image_encart_petite_path', 'ImageEncartPetitePath', 'VARCHAR', false, 255, null);
         $this->addForeignKey('pays_id', 'PaysId', 'INTEGER', 'pays', 'id', false, null, null);
+        $this->addForeignKey('destination_id', 'DestinationId', 'INTEGER', 'destination', 'id', false, null, null);
         $this->addColumn('mea_home', 'MeaHome', 'BOOLEAN', false, 1, null);
         $this->addColumn('image_detail_1', 'ImageDetail1', 'VARCHAR', false, 255, null);
         $this->addColumn('image_detail_2', 'ImageDetail2', 'VARCHAR', false, 255, null);
@@ -63,6 +64,7 @@ class RegionTableMap extends TableMap
     public function buildRelations()
     {
         $this->addRelation('Pays', 'Cungfoo\\Model\\Pays', RelationMap::MANY_TO_ONE, array('pays_id' => 'id', ), 'SET NULL', null);
+        $this->addRelation('Destination', 'Cungfoo\\Model\\Destination', RelationMap::MANY_TO_ONE, array('destination_id' => 'id', ), null, null);
         $this->addRelation('Ville', 'Cungfoo\\Model\\Ville', RelationMap::ONE_TO_MANY, array('id' => 'region_id', ), 'SET NULL', null, 'Villes');
         $this->addRelation('BonPlanRegion', 'Cungfoo\\Model\\BonPlanRegion', RelationMap::ONE_TO_MANY, array('id' => 'region_id', ), null, null, 'BonPlanRegions');
         $this->addRelation('RegionI18n', 'Cungfoo\\Model\\RegionI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'RegionI18ns');
@@ -101,6 +103,7 @@ class RegionTableMap extends TableMap
   'crud_model' => NULL,
   'crud_form' => NULL,
   'crud_type_file' => 'image_path,image_encart_path,image_encart_petite_path,image_detail_1,image_detail_2',
+  'crud_search' => 'name',
 ),
         );
     } // getBehaviors()

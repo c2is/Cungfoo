@@ -21,9 +21,10 @@ class EtablissementPeer extends BaseEtablissementPeer
     const NO_SORT     = 0;
     const RANDOM_SORT = 1;
 
-    public static function getNameOrderByName(\PropelPDO $con = null)
+    public static function getNameOrderByName($locale = 'fr', \PropelPDO $con = null)
     {
         return \Cungfoo\Model\EtablissementQuery::create()
+            ->joinWithI18n($locale)
             ->orderByName()
             ->findActive($con)
         ;

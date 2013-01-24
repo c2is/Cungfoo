@@ -73,9 +73,7 @@ class BaseBaignadeType extends AppAwareType
             'i18n_class' => 'Cungfoo\Model\BaignadeI18n',
             'languages' => array(
                 0 => 'fr',
-                1 => 'en',
-                2 => 'de',
-                3 => 'nl',
+                1 => 'de',
             ),
             'label' => 'baignade.baignadeI18ns',
             'columns' => array(

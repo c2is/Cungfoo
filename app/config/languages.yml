@@ -1,9 +1,0 @@
-languages:
-    fr:
-        title:  locale.french
-    en:
-        title:  locale.english
-    de:
-        title:  locale.german
-    nl:
-        title:  locale.netherlands
