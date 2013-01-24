@@ -119,14 +119,15 @@ class BonsPlansController implements ControllerProviderInterface
                 return $app->redirect($searchEngine->getRedirect());
             }
 
-            $baseDate  = $bonPlanObject->getDateStart('U') ?: date('U');
-            $startDate = strtotime('next ' . $bonPlanObject->getDayStart(), $baseDate);
-            $startDate = strtotime('+' . ($bonPlanObject->getDayRange() - 7) . ' days', $startDate);
+            $startDate  = $bonPlanObject->getDateStart('U') ?: date('U');
+            $dayRange = $bonPlanObject->getDayRange() ?: 7;
+            //$startDate = strtotime('next ' . $bonPlanObject->getDayStart(), $baseDate);
+            //$startDate = strtotime('+' . ($bonPlanObject->getDayRange() - 7) . ' days', $startDate);
 
             $searchParams = new SearchParams($app);
             $searchParams
                 ->setStartDate(date('Y-m-d', $startDate))
-                ->setNbDays(7)
+                ->setNbDays($dayRange)
                 ->addTheme($bonPlanObject->getRegionsCodes())
                 ->addEtab($bonPlanObject->getEtablissementsCodes())
                 ->setNbAdults($bonPlanObject->getNbAdultes())
