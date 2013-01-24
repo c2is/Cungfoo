@@ -97,6 +97,19 @@
             {search: templatePath + "js/vacancesdirectes/searchSelectChange.js?v={{ app.config.get('version') }}"}
             {% block headjs %}{% endblock %}
         );
+
+        head.ready(function() {
+            $('.itemGetCampingFiche').bind('click', function() {
+                var form = $(this).closest('form');
+                var target = $(this).hasClass('linkParent') ? $(this).find('a.linkBlock').attr('href') : $(this).attr('href');
+
+                form.attr('action', "{{ path('session_proposal') }}?target=" + target);
+
+                form.submit();
+
+                return false;
+            });
+        });
     </script>
 
     <!-- Prompt IE 6 users to install Chrome Frame -->

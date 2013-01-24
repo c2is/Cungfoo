@@ -125,21 +125,7 @@
     <h2>{{ "listing.no_results_title" | trans }}</h2>
     <p>{{ "listing.no_results" | trans }}</p>
     {% endfor %}
-
-    {% if list.type == 1 %}
-    <script type="text/javascript">
-    head.ready(function() {
-        $('.itemGetCampingFiche').bind('click', function() {
-            var form = $(this).closest('form');
-            form.attr('action', "{{ path('session_proposal') }}?target=" + $(this).attr('href'));
-
-            form.submit();
-
-            return false;
-        });
-    });
-    </script>
-    {% endif %}
+    
 </div><!-- // #result -->
 {% if list.element|length > 0 %}
 <button id="btPlusResults" class="bt big sombre">{{ "listing.plus_resultats" | trans }}</button>
