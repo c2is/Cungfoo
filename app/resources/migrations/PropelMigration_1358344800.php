@@ -56,7 +56,7 @@ TRUNCATE TABLE bon_plan_categorie;
 INSERT INTO `bon_plan_categorie` (`id`, `active`, `sortable_rank`) VALUES
 (1, 1, 1);
 
-TRUNCATE TABLE bon_plan_categorie_i18n
+TRUNCATE TABLE bon_plan_categorie_i18n;
 INSERT INTO `bon_plan_categorie_i18n` (`id`, `locale`, `name`, `slug`, `subtitle`, `description`) VALUES
 (1, \'de\', NULL, NULL, NULL, NULL),
 (1, \'en\', NULL, NULL, NULL, NULL),
@@ -89,7 +89,7 @@ INSERT INTO `bon_plan_etablissement` (`bon_plan_id`, `etablissement_id`) VALUES
 (2, 242),
 (2, 244);
 
-TRUNCATE TABLE bon_plan_i18n
+TRUNCATE TABLE bon_plan_i18n;
 INSERT INTO `bon_plan_i18n` (`id`, `locale`, `name`, `slug`, `introduction`, `description`, `indice`, `indice_prix`) VALUES
 (1, \'de\', NULL, NULL, NULL, NULL, NULL, NULL),
 (1, \'en\', NULL, NULL, NULL, NULL, NULL, NULL),
