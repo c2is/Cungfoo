@@ -101,6 +101,8 @@ destination.code: Code
 destination.name: Nom
 destination.active: Actif
 destination.destinationI18ns: ""
+destination.sortable_rank: "Ordre"
+destination.sortable.rank: "Ordre"
 
 categorie.crud.create: Création d'une catégorie
 categorie.crud.list: Liste catégories

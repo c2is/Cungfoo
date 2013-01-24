@@ -144,6 +144,7 @@ class MenuController implements ControllerProviderInterface
         $locale = $app['context']->get('language');
 
         return DestinationQuery::create()
+            ->orderBySortableRank()
             ->joinWithI18n($locale)
             ->joinWithRegion()
             ->useRegionQuery()
@@ -156,7 +157,7 @@ class MenuController implements ControllerProviderInterface
                     ->joinWithI18n($locale)
                 ->endUse()
             ->endUse()
-            ->find()
+            ->findActive()
         ;
     }
 

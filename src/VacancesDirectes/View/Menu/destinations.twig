@@ -6,8 +6,11 @@
                     <img class="bg" src="{{ asset('images/vacancesdirectes/common/menu/destinations/france_visuel.jpg') }}" alt="" />
                     <div class="stamp grey"><span>France</span></div>
                 </div>
-                <div class="regions clear">
-                    {% for destination in regionsByDestinations %}
+                {% set nbDestinationFirstCol = (regionsByDestinations|length // 2) + (regionsByDestinations|length % 2) %}
+                {% for destination in regionsByDestinations %}
+                    {% if loop.first or loop.index == nbDestinationFirstCol + 1 %}
+                    <div class="regions">
+                    {% endif %}
                     <div class="region">
                         <div class="title">{{ destination|trans }}</div>
                         <ul>
@@ -16,8 +19,10 @@
                             {% endfor %}
                         </ul>
                     </div>
-                    {% endfor %}
-                </div>
+                    {% if loop.last or loop.index == nbDestinationFirstCol %}
+                    </div>
+                    {% endif %}
+                {% endfor %}
             </div>
             <div class="radiusBox2 greyC bgImg international">
                 <div class="view">

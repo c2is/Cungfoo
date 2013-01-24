@@ -12,6 +12,7 @@ use \PropelPDO;
 use Cungfoo\Model\Destination;
 use Cungfoo\Model\DestinationI18nPeer;
 use Cungfoo\Model\DestinationPeer;
+use Cungfoo\Model\DestinationQuery;
 use Cungfoo\Model\map\DestinationTableMap;
 
 /**
@@ -37,13 +38,13 @@ abstract class BaseDestinationPeer
     const TM_CLASS = 'DestinationTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 5;
+    const NUM_COLUMNS = 6;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 5;
+    const NUM_HYDRATE_COLUMNS = 6;
 
     /** the column name for the id field */
     const ID = 'destination.id';
@@ -56,6 +57,9 @@ abstract class BaseDestinationPeer
 
     /** the column name for the updated_at field */
     const UPDATED_AT = 'destination.updated_at';
+
+    /** the column name for the sortable_rank field */
+    const SORTABLE_RANK = 'destination.sortable_rank';
 
     /** the column name for the active field */
     const ACTIVE = 'destination.active';
@@ -79,6 +83,13 @@ abstract class BaseDestinationPeer
      * @var        string
      */
     const DEFAULT_LOCALE = 'fr';
+    // sortable behavior
+
+    /**
+     * rank column
+     */
+    const RANK_COL = 'destination.sortable_rank';
+
     /**
      * holds an array of fieldnames
      *
@@ -86,12 +97,12 @@ abstract class BaseDestinationPeer
      * e.g. DestinationPeer::$fieldNames[DestinationPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'CreatedAt', 'UpdatedAt', 'Active', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'createdAt', 'updatedAt', 'active', ),
-        BasePeer::TYPE_COLNAME => array (DestinationPeer::ID, DestinationPeer::CODE, DestinationPeer::CREATED_AT, DestinationPeer::UPDATED_AT, DestinationPeer::ACTIVE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'created_at', 'updated_at', 'active', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'CreatedAt', 'UpdatedAt', 'SortableRank', 'Active', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'createdAt', 'updatedAt', 'sortableRank', 'active', ),
+        BasePeer::TYPE_COLNAME => array (DestinationPeer::ID, DestinationPeer::CODE, DestinationPeer::CREATED_AT, DestinationPeer::UPDATED_AT, DestinationPeer::SORTABLE_RANK, DestinationPeer::ACTIVE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'CREATED_AT', 'UPDATED_AT', 'SORTABLE_RANK', 'ACTIVE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'created_at', 'updated_at', 'sortable_rank', 'active', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
     );
 
     /**
@@ -101,12 +112,12 @@ abstract class BaseDestinationPeer
      * e.g. DestinationPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'CreatedAt' => 2, 'UpdatedAt' => 3, 'Active' => 4, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'createdAt' => 2, 'updatedAt' => 3, 'active' => 4, ),
-        BasePeer::TYPE_COLNAME => array (DestinationPeer::ID => 0, DestinationPeer::CODE => 1, DestinationPeer::CREATED_AT => 2, DestinationPeer::UPDATED_AT => 3, DestinationPeer::ACTIVE => 4, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'CREATED_AT' => 2, 'UPDATED_AT' => 3, 'ACTIVE' => 4, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'created_at' => 2, 'updated_at' => 3, 'active' => 4, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'CreatedAt' => 2, 'UpdatedAt' => 3, 'SortableRank' => 4, 'Active' => 5, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'createdAt' => 2, 'updatedAt' => 3, 'sortableRank' => 4, 'active' => 5, ),
+        BasePeer::TYPE_COLNAME => array (DestinationPeer::ID => 0, DestinationPeer::CODE => 1, DestinationPeer::CREATED_AT => 2, DestinationPeer::UPDATED_AT => 3, DestinationPeer::SORTABLE_RANK => 4, DestinationPeer::ACTIVE => 5, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'CREATED_AT' => 2, 'UPDATED_AT' => 3, 'SORTABLE_RANK' => 4, 'ACTIVE' => 5, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'created_at' => 2, 'updated_at' => 3, 'sortable_rank' => 4, 'active' => 5, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
     );
 
     /**
@@ -184,12 +195,14 @@ abstract class BaseDestinationPeer
             $criteria->addSelectColumn(DestinationPeer::CODE);
             $criteria->addSelectColumn(DestinationPeer::CREATED_AT);
             $criteria->addSelectColumn(DestinationPeer::UPDATED_AT);
+            $criteria->addSelectColumn(DestinationPeer::SORTABLE_RANK);
             $criteria->addSelectColumn(DestinationPeer::ACTIVE);
         } else {
             $criteria->addSelectColumn($alias . '.id');
             $criteria->addSelectColumn($alias . '.code');
             $criteria->addSelectColumn($alias . '.created_at');
             $criteria->addSelectColumn($alias . '.updated_at');
+            $criteria->addSelectColumn($alias . '.sortable_rank');
             $criteria->addSelectColumn($alias . '.active');
         }
     }
@@ -784,6 +797,146 @@ abstract class BaseDestinationPeer
         }
 
         return $objs;
+    }
+
+    // sortable behavior
+
+    /**
+     * Get the highest rank
+     *
+     * @param     PropelPDO optional connection
+     *
+     * @return    integer highest position
+     */
+    public static function getMaxRank(PropelPDO $con = null)
+    {
+        if ($con === null) {
+            $con = Propel::getConnection(DestinationPeer::DATABASE_NAME);
+        }
+        // shift the objects with a position lower than the one of object
+        $c = new Criteria();
+        $c->addSelectColumn('MAX(' . DestinationPeer::RANK_COL . ')');
+        $stmt = DestinationPeer::doSelectStmt($c, $con);
+
+        return $stmt->fetchColumn();
+    }
+
+    /**
+     * Get an item from the list based on its rank
+     *
+     * @param     integer   $rank rank
+     * @param     PropelPDO $con optional connection
+     *
+     * @return Destination
+     */
+    public static function retrieveByRank($rank, PropelPDO $con = null)
+    {
+        if ($con === null) {
+            $con = Propel::getConnection(DestinationPeer::DATABASE_NAME);
+        }
+
+        $c = new Criteria;
+        $c->add(DestinationPeer::RANK_COL, $rank);
+
+        return DestinationPeer::doSelectOne($c, $con);
+    }
+
+    /**
+     * Reorder a set of sortable objects based on a list of id/position
+     * Beware that there is no check made on the positions passed
+     * So incoherent positions will result in an incoherent list
+     *
+     * @param     array     $order id => rank pairs
+     * @param     PropelPDO $con   optional connection
+     *
+     * @return    boolean true if the reordering took place, false if a database problem prevented it
+     */
+    public static function reorder(array $order, PropelPDO $con = null)
+    {
+        if ($con === null) {
+            $con = Propel::getConnection(DestinationPeer::DATABASE_NAME);
+        }
+
+        $con->beginTransaction();
+        try {
+            $ids = array_keys($order);
+            $objects = DestinationPeer::retrieveByPKs($ids);
+            foreach ($objects as $object) {
+                $pk = $object->getPrimaryKey();
+                if ($object->getSortableRank() != $order[$pk]) {
+                    $object->setSortableRank($order[$pk]);
+                    $object->save($con);
+                }
+            }
+            $con->commit();
+
+            return true;
+        } catch (PropelException $e) {
+            $con->rollback();
+            throw $e;
+        }
+    }
+
+    /**
+     * Return an array of sortable objects ordered by position
+     *
+     * @param     Criteria  $criteria  optional criteria object
+     * @param     string    $order     sorting order, to be chosen between Criteria::ASC (default) and Criteria::DESC
+     * @param     PropelPDO $con       optional connection
+     *
+     * @return    array list of sortable objects
+     */
+    public static function doSelectOrderByRank(Criteria $criteria = null, $order = Criteria::ASC, PropelPDO $con = null)
+    {
+        if ($con === null) {
+            $con = Propel::getConnection(DestinationPeer::DATABASE_NAME);
+        }
+
+        if ($criteria === null) {
+            $criteria = new Criteria();
+        } elseif ($criteria instanceof Criteria) {
+            $criteria = clone $criteria;
+        }
+
+        $criteria->clearOrderByColumns();
+
+        if ($order == Criteria::ASC) {
+            $criteria->addAscendingOrderByColumn(DestinationPeer::RANK_COL);
+        } else {
+            $criteria->addDescendingOrderByColumn(DestinationPeer::RANK_COL);
+        }
+
+        return DestinationPeer::doSelect($criteria, $con);
+    }
+
+    /**
+     * Adds $delta to all Rank values that are >= $first and <= $last.
+     * '$delta' can also be negative.
+     *
+     * @param      int $delta Value to be shifted by, can be negative
+     * @param      int $first First node to be shifted
+     * @param      int $last  Last node to be shifted
+     * @param      PropelPDO $con Connection to use.
+     */
+    public static function shiftRank($delta, $first = null, $last = null, PropelPDO $con = null)
+    {
+        if ($con === null) {
+            $con = Propel::getConnection(DestinationPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+        }
+
+        $whereCriteria = DestinationQuery::create();
+        if (null !== $first) {
+            $whereCriteria->add(DestinationPeer::RANK_COL, $first, Criteria::GREATER_EQUAL);
+        }
+        if (null !== $last) {
+            $whereCriteria->addAnd(DestinationPeer::RANK_COL, $last, Criteria::LESS_EQUAL);
+        }
+
+        $valuesCriteria = new Criteria(DestinationPeer::DATABASE_NAME);
+        $valuesCriteria->add(DestinationPeer::RANK_COL, array('raw' => DestinationPeer::RANK_COL . ' + ?', 'value' => $delta), Criteria::CUSTOM_EQUAL);
+
+        BasePeer::doUpdate($whereCriteria, $valuesCriteria, $con);
+        DestinationPeer::clearInstancePool();
     }
 
 } // BaseDestinationPeer

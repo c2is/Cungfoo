@@ -24,6 +24,7 @@ class DestinationListing extends BaseDestinationListing
     {
         parent::configure();
         $this->addColumn(new Column\TextColumn('name'));
+        $this->addColumn(new Column\TextColumn('sortable_rank'));
     }
 
 } // DestinationListing

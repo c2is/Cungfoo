@@ -34,6 +34,12 @@ class BaseDestinationType extends AppAwareType
             'label' => 'destination.code',
             'required' => false,
         ));
+        $builder->add('sortable_rank', 'integer', array(
+            'constraints' => array(
+            ),
+            'label' => 'destination.sortable_rank',
+            'required' => false,
+        ));
         $builder->add('active', 'checkbox', array(
             'constraints' => array(
             ),
