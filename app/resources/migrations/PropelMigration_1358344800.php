@@ -42,12 +42,26 @@ class PropelMigration_1358344800
 # It "suspends judgement" for fkey relationships until are tables are set.
 SET FOREIGN_KEY_CHECKS = 0;
 
-UPDATE bon_plan SET date_debut = \'2013-01-01\', date_fin = \'2013-01-31\', prix_barre = \'137\', image_page = \'uploads/bon_plans/50feaa9d501ce.jpeg\', active_compteur = 0, mise_en_avant = 1, push_home = 1, date_start ) \'2013-04-13\', day_start = 5, nb_adultes = 2, nb_enfants = 0, active = 1;
-INSERT INTO `bon_plan` (`date_debut`, `date_fin`, `prix`, `prix_barre`, `image_menu`, `image_page`, `image_liste`, `active_compteur`, `mise_en_avant`, `push_home`, `date_start`, `day_start`, `day_range`, `nb_adultes`, `nb_enfants`, `period_categories`, `active`) VALUES(\'2013-01-01\', \'2013-01-31\', NULL, NULL, \'uploads/bon_plans/50fec19945bb3.jpeg\', \'uploads/bon_plans/50fea8e18bf47.jpeg\', NULL, 0, 0, 0, \'2013-04-20\', 5, 0, 2, 0, NULL, 1);
+TRUNCATE TABLE bon_plan;
+INSERT INTO `bon_plan` (`id`, `date_debut`, `date_fin`, `prix`, `prix_barre`, `image_menu`, `image_page`, `image_liste`, `active_compteur`, `mise_en_avant`, `push_home`, `date_start`, `day_start`, `day_range`, `nb_adultes`, `nb_enfants`, `period_categories`, `active`) VALUES
+(1, \'2013-01-01\', \'2013-01-31\', NULL, 137, NULL, \'uploads/bon_plans/50feaa9d501ce.jpeg\', NULL, 0, 1, 1, \'2013-04-13\', 5, 0, 2, 0, NULL, 1),
+(2, \'2013-01-01\', \'2013-01-31\', NULL, NULL, \'uploads/bon_plans/50fec19945bb3.jpeg\', \'uploads/bon_plans/50fea8e18bf47.jpeg\', NULL, 0, 0, 0, \'2013-04-20\', 5, 0, 2, 0, NULL, 1);
 
-INSERT INTO bon_plan_bon_plan_categorie (bon_plan_id, bon_plan_categorie_id, sortable_rank) VALUES (2, 1, 2);
+TRUNCATE TABLE bon_plan_bon_plan_categorie;
+INSERT INTO `bon_plan_bon_plan_categorie` (`bon_plan_id`, `bon_plan_categorie_id`, `sortable_rank`) VALUES
+(1, 7, 1),
+(2, 7, 2);
 
-UPDATE bon_plan_categorie_i18n SET name = \'Early booking\', slug = \'early-booking\', subtitle = \'Réserveztôt et profitez des promos\' WHERE locale = \'fr\';
+TRUNCATE TABLE bon_plan_categorie;
+INSERT INTO `bon_plan_categorie` (`id`, `active`, `sortable_rank`) VALUES
+(1, 1, 1);
+
+TRUNCATE TABLE bon_plan_categorie_i18n
+INSERT INTO `bon_plan_categorie_i18n` (`id`, `locale`, `name`, `slug`, `subtitle`, `description`) VALUES
+(1, \'de\', NULL, NULL, NULL, NULL),
+(1, \'en\', NULL, NULL, NULL, NULL),
+(1, \'fr\', \'Early booking\', \'early-booking\', \'Réservez tôt et profitez des promos\', NULL),
+(1, \'nl\', NULL, NULL, NULL, NULL);
 
 TRUNCATE TABLE `bon_plan_etablissement`;
 INSERT INTO `bon_plan_etablissement` (`bon_plan_id`, `etablissement_id`) VALUES
@@ -75,10 +89,12 @@ INSERT INTO `bon_plan_etablissement` (`bon_plan_id`, `etablissement_id`) VALUES
 (2, 242),
 (2, 244);
 
-UPDATE bon_plan_i18n SET name = \'Early booking\', slug = \'early-booking-20-avril\', indice_prix = \'10% de réduction\', description = \'Profitez de notre promo early booking sur votre séjour en basse saison : -10% pour une réservation avant le 31/01/2013. 
-N\'\'attendez plus!\' WHERE locale = \'fr\';
-
+TRUNCATE TABLE bon_plan_i18n
 INSERT INTO `bon_plan_i18n` (`id`, `locale`, `name`, `slug`, `introduction`, `description`, `indice`, `indice_prix`) VALUES
+(1, \'de\', NULL, NULL, NULL, NULL, NULL, NULL),
+(1, \'en\', NULL, NULL, NULL, NULL, NULL, NULL),
+(1, \'fr\', \'Early booking\', \'early-booking-20-avril\', NULL, \'Profitez de notre promo early booking sur votre séjour en basse saison : -10% pour une réservation avant le 31/01/2013. \r\nN\'\'attendez plus!\', NULL, \'10% de réduction\'),
+(1, \'nl\', NULL, NULL, NULL, NULL, NULL, NULL),
 (2, \'de\', NULL, NULL, NULL, NULL, NULL, NULL),
 (2, \'fr\', \'Early booking\', \'early-booking-27-avril\', NULL, \'Profitez de notre promo early booking sur votre séjour en basse saison : -10% pour une réservation avant le 31/01/2013. \r\nN\'\'attendez plus!\', NULL, \'10% de réduction\');
 
