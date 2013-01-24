@@ -41,14 +41,15 @@ class EsiController implements ControllerProviderInterface
 
                 if ($bonPlan)
                 {
-                    $baseDate  = $bonPlan->getDateStart('U') ?: date('U');
-                    $startDate = strtotime('next ' . $bonPlan->getDayStart(), $baseDate);
-                    $startDate = strtotime('+' . ($bonPlan->getDayRange() - 7) . ' days', $startDate);
+                    $startDate  = $bonPlan->getDateStart('U') ?: date('U');
+                    $dayRange = $bonPlan->getDayRange() ?: 7;
+                    //$startDate = strtotime('next ' . $bonPlanObject->getDayStart(), strtotime('yesterday', $baseDate));
+                    //$startDate = strtotime('+' . ($bonPlan->getDayRange() - 7) . ' days', $startDate);
 
                     $searchParams = new SearchParams($app);
                     $searchParams
                         ->setStartDate(date('Y-m-d', $startDate))
-                        ->setNbDays(7)
+                        ->setNbDays($dayRange)
                         ->addTheme($bonPlan->getRegionsCodes())
                         ->addEtab($bonPlan->getEtablissementsCodes())
                         ->setNbAdults($bonPlan->getNbAdultes())
@@ -115,14 +116,15 @@ class EsiController implements ControllerProviderInterface
                     $app->abort(404, "La page recherchée n'existe pas");
                 }
 
-                $baseDate  = $bonPlanObject->getDateStart('U') ?: date('U');
-                $startDate = strtotime('next ' . $bonPlanObject->getDayStart(), $baseDate);
-                $startDate = strtotime('+' . ($bonPlanObject->getDayRange() - 7) . ' days', $startDate);
+                $startDate  = $bonPlanObject->getDateStart('U') ?: date('U');
+                $dayRange = $bonPlanObject->getDayRange() ?: 7;
+                //$startDate = strtotime('next ' . $bonPlanObject->getDayStart(), strtotime('yesterday', $baseDate));
+                //$startDate = strtotime('+' . ($bonPlanObject->getDayRange() - 7) . ' days', $startDate);
 
                 $searchParams = new SearchParams($app);
                 $searchParams
                     ->setStartDate(date('Y-m-d', $startDate))
-                    ->setNbDays(7)
+                    ->setNbDays($dayRange)
                     ->addTheme($bonPlanObject->getRegionsCodes())
                     ->addEtab($bonPlanObject->getEtablissementsCodes())
                     ->setNbAdults($bonPlanObject->getNbAdultes())
