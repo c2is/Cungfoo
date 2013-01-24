@@ -61,7 +61,6 @@ header, section, footer {position:relative;}
               .bg{position:absolute;top:0;left:0;._border-radius(5px 5px 0 0);}
             }
             .title{font:bold 18px @ptnarrow;text-transform:uppercase;margin:3px 0 2px;}
-            .region{}
             a{text-decoration:none;}
             .link{text-align:right;margin:0;}
           }
@@ -77,12 +76,12 @@ header, section, footer {position:relative;}
 
           .radiusBox2{float:left;margin-right:12px;margin-bottom:12px;margin-top:0;
             &:last-child{margin-right:0;}
-            &.national{width:628px;margin-top:15px;padding-right:0;
-              .regions{
-                .region{width:274px;margin-right:20px;float:left;
-                  ul{padding-bottom:5px;border-bottom:7px solid @colorBgGrisC;}
+            &.national{width:628px;margin-top:15px;
+              .regions{width:288px;margin-right:20px;float:left;padding-right:15px;border-right:1px solid @colorBgGrisC;
+                &:last-child{padding-right:0;margin-right:0;border-right:none;width:270px;}
+                .region{width:100%;
+                  ul{padding-bottom:5px;}
                   &:last-child ul {padding-bottom:0;border-bottom:0 none;}
-                  &:nth-child( odd ){clear:left;}
                 }
               }
             }
@@ -100,13 +99,14 @@ header, section, footer {position:relative;}
         }
       }
       &#locations{
-        .clear{width:960px;}
+        .clear{width:960px;position:relative;}
+        >div:last-child{padding-right:340px;}
         .radiusBox{margin-right:20px;padding:10px;
-          &.capacity{width:135px;font-size:13px;text-align:center;
+          &.capacity{width:135px;min-height:96px;font-size:13px;font-weight:bold;text-align:center;
             .view{display:block;width:100px;height:50px;margin:0 auto;}
             a{text-decoration:none;}
           }
-          &.exclusively{width:320px;margin-top:-22px;
+          &.exclusively{width:320px;position:absolute;bottom:0;right:0;
             .view{background:width:50px;height:100px;}
             .content{font-size:18px;position:absolute;top:60px;left:70px;width:200px;._verticalCenter(50px, 20px);}
           }
@@ -116,9 +116,9 @@ header, section, footer {position:relative;}
           }
         }
         .radiusBox2{margin-right:12px;height:130px;
-          .view{width:216px;height:120px;background-repeat:no-repeat;background-color:@colorBgGrisC;margin:-15px -20px 15px;._border-radius(6px);
+          .view{width:216px;height:120px;background-repeat:no-repeat;background-color:@colorBgGrisC;margin:-15px -20px 15px;._border-radius(5px);
           }
-          .title{font:bold 18px @ptnarrow;text-transform:uppercase;margin:3px 0 2px;}
+          .title{font:bold 18px @ptnarrow;text-transform:uppercase;margin:7px 0 2px;}
           .stain{background-image:url("../../images/vacancesdirectes/common/sprites/stain.png");position:absolute;bottom:0;right:10px;._verticalCenter(50px);width:90px;font-size:10px;text-align:center;
             &>*{line-height:16px;color:@colorBlanc;}
             span{margin-top:14px;}
