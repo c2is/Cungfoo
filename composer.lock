@@ -1,5 +1,5 @@
 {
-    "hash": "5dcbde166e8b50fae03d5eccbbffec86",
+    "hash": "2b4fa84c57ad54e0c1e63da9e93cd2c8",
     "packages": [
         {
             "name": "atoum/atoum",
@@ -199,53 +199,6 @@
             "keywords": [
                 "log",
                 "logging"
-            ]
-        },
-        {
-            "name": "oziks/debug-toolbar-service-provider",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:oziks/DebugToolbarServiceProvider.git",
-                "reference": "f034c77fb907c4fa8b7506030765504a1e7c3403"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/oziks/DebugToolbarServiceProvider/archive/f034c77fb907c4fa8b7506030765504a1e7c3403.zip",
-                "reference": "f034c77fb907c4fa8b7506030765504a1e7c3403",
-                "shasum": ""
-            },
-            "require-dev": {
-                "propel/propel-service-provider": "0.0.*",
-                "propel/propel1": "1.6.*",
-                "silex/silex": "1.0.*",
-                "twig/twig": ">=1.8.0,<2.0-dev"
-            },
-            "time": "1358618308",
-            "type": "library",
-            "installation-source": "source",
-            "autoload": {
-                "psr-0": {
-                    "Oziks": "src"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Morgan Brunot",
-                    "email": "brunot.morgan@gmail.com",
-                    "homepage": "http://oziks.fr"
-                }
-            ],
-            "description": "Debug toolbar service provider for Silex.",
-            "homepage": "https://github.com/oziks/DebugToolbarServiceProvider",
-            "keywords": [
-                "silex",
-                "debug",
-                "propel",
-                "toolbar"
             ]
         },
         {
@@ -1853,7 +1806,6 @@
         "atoum/atoum": 20,
         "kuikui/memcache-service-provider": 20,
         "knplabs/console-service-provider": 20,
-        "twig/extensions": 20,
-        "oziks/debug-toolbar-service-provider": 20
+        "twig/extensions": 20
     }
 }
