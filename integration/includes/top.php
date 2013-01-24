@@ -20,6 +20,9 @@
                                         <li><a href=#>- Corse</a></li>
                                         <li><a href=#>- Provence Côte d'Azur</a></li>
                                         <li><a href=#>- Test</a></li>
+                                        <li><a href=#>- Test</a></li>
+                                        <li><a href=#>- Test</a></li>
+                                        <li><a href=#>- Test</a></li>
                                         <a class="bt link" href="#">Plus de régions</a>
                                     </ul>
                                 </div>
@@ -32,12 +35,13 @@
                                         <a class="bt link" href="#">Plus de régions</a>
                                     </ul>
                                 </div>
+                            </div>
+                            <div class="regions">
                                 <div class="region">
                                     <a href="#" class="title">Destination Montagne</a>
                                     <ul>
                                         <li><a href=#>- Alpes</a></li>
                                         <li><a href=#>- Alsace / Jura</a></li>
-                                        <li><a href=#>- Ariège / Pyrénées</a></li>
                                         <a class="bt link" href="#">Plus de régions</a>
                                     </ul>
                                 </div>
@@ -47,6 +51,9 @@
                                         <li><a href=#>- Pays de la Loire</a></li>
                                         <li><a href=#>- Périgord / Dordogne</a></li>
                                         <li><a href=#>- Auvergne</a></li>
+                                        <li><a href=#>- Test</a></li>
+                                        <li><a href=#>- Test</a></li>
+                                        <li><a href=#>- Test</a></li>
                                         <a class="bt link" href="#">Plus de régions</a>
                                     </ul>
                                 </div>
