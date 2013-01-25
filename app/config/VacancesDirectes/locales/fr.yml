@@ -773,3 +773,5 @@ location:
                 selection:
                     title: "Notre selection de campings"
                 lien_logement: "Le logement"
+
+"The CSRF token is invalid. Please try to resubmit the form.": "Votre session a expiré ; veuillez soumettre le formulaire à nouveau."
