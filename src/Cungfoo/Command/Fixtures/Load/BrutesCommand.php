@@ -44,7 +44,8 @@ class BrutesCommand extends BaseCommand
             $this->readCSVFile('hebergements.csv', 'hebergementsCallback', 'hebergementsFileCallback', $input, $output);*/
 
             // Fichiers délimiteur ;
-            $this->readCSVFile('types_hebergement.csv', 'typesHebergementCallback', null, $input, $output, true);
+            //$this->readCSVFile('types_hebergement.csv', 'typesHebergementCallback', null, $input, $output, true);
+            $this->readCSVFile('photos_campingv2.csv', 'campingsCallback', null, $input, $output, true);
         }
         catch (\Exception $exception)
         {
@@ -65,7 +66,7 @@ class BrutesCommand extends BaseCommand
         {
             $directory = trim($input->getOption('csv_directory'));
         }
-        $file   = sprintf('%s/%s/%s', $this->getProjectDirectory(), $directory, $filename);
+        $file   = sprintf('%s%s/%s', $this->getProjectDirectory(), $directory, $filename);
 
         $handle = fopen($file, "r");
 
@@ -78,14 +79,14 @@ class BrutesCommand extends BaseCommand
             {
                 while (($line = fgetcsv($handle, 0, ';')) !== false)
                 {
-                    $this->$lineHandler($line, $buffer, $unset);
+                    $this->$lineHandler($line, $buffer, $unset, $output);
                 }
             }
             else
             {
                 while (($line = fgets($handle)) !== false)
                 {
-                    $this->$lineHandler(explode("\t", trim($line, "\n")), $buffer, $unset);
+                    $this->$lineHandler(explode("\t", trim($line, "\n")), $buffer, $unset, $output);
                 }
             }
 
@@ -107,7 +108,7 @@ class BrutesCommand extends BaseCommand
         fclose($handle);
     }
 
-    protected function campingsCallback(array $explodedLine, array &$buffer, array &$unset)
+    protected function campingsCallback(array $explodedLine, array &$buffer, array &$unset, $output)
     {
         list($code, $n, $img, $p1, $p2, $p3, $p4, $p5, $p6, $p7, $p8, $p9, $p10, $p11, $famille, $equitation, $randonnee, $visite, $gastro, $peche, $golf, $eau, $detente, $nature, $sport, $mer, $mariage) = $explodedLine;
 
@@ -133,19 +134,29 @@ class BrutesCommand extends BaseCommand
             return;
         }
 
-        $multimedia = new \Cungfoo\Model\MultimediaEtablissement();
-        $multimedia
-            ->setEtablissementId($camping->getId())
-            ->setImagePath(sprintf('uploads/multimedia_etablissements/%s.jpg', $img))
-            ->save()
+        $multimediaObj = \Cungfoo\Model\MultimediaEtablissementQuery::create()
+            ->filterByEtablissementId($camping->getId())
+            ->filterByImagePath(sprintf('uploads/multimedia_etablissements/%s.jpg', $img))
+            ->findOne()
         ;
+        if($multimediaObj) {
+            //$output->writeln(sprintf('L\'image %s est deja associee au camping %s' , $img, $camping->getName()));
+        } else {
+            $multimedia = new \Cungfoo\Model\MultimediaEtablissement();
+            $multimedia
+                ->setEtablissementId($camping->getId())
+                ->setImagePath(sprintf('uploads/multimedia_etablissements/%s.jpg', $img))
+                ->save()
+            ;
 
-        $tagMultimedia = new \Cungfoo\Model\MultimediaEtablissementTag();
-        $tagMultimedia
-            ->setMultimediaEtablissementId($multimedia->getId())
-            ->setTagId($tag)
-            ->save()
-        ;
+            $tagMultimedia = new \Cungfoo\Model\MultimediaEtablissementTag();
+            $tagMultimedia
+                ->setMultimediaEtablissementId($multimedia->getId())
+                ->setTagId($tag)
+                ->save()
+            ;
+            $output->writeln(sprintf('L\'image %s a ete associee au camping %s' , $img, $camping->getName()));
+        }
     }
 
     protected function regionsCallback(array $explodedLine, array &$buffer, array &$unset)
