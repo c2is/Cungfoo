@@ -285,7 +285,7 @@ destination:
     images_region_title: "La région en image"
     images_ville_title: "La ville en image"
     pays_title: "Camping en %item% pas cher"
-    region_title: "Location mobil home %item% pas cher en camping"
+    region_title: "Location mobil home %item%"
     ville_title: "Camping %item% pas cher (location mobil home)"
     camping_title: "Camping %ville%"
     retour_bottom: "Retour à la liste"
@@ -296,6 +296,7 @@ destination:
     events_suffixe_subtitle: "..."
     campings_selection_title: "Notre sélection de campings"
     destination_title: "Camping en %item% pas cher"
+    pas_cher: "pas cher"
 
 listing_destination:
     campings_map_title: "Campings Vacances directes"
