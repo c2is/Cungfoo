@@ -24,7 +24,7 @@ class AchatController implements ControllerProviderInterface
         // creates a new controller based on the default route
         $controllers = $app['controllers_factory'];
 
-        $controllers->match('profile/edit', function (Request $request) use ($app)
+        $controllers->match('/packages.html', function (Request $request) use ($app)
         {
             $isAlreadyClassique = (int) $this->getAlreadyClassique($app);
 
