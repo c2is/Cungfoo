@@ -401,6 +401,8 @@
         <button class="bt trans right triggerClick" data-triggerLink="#tabCamp">{{ "fiche.le_camping" | trans }}</button>
     </nav>
 </div>
+
+{% if blocPrix.adult_price_without_discounts != 0 %}
 <iframe id="frameResalys" src="{{ path('resalys_wrapper', {
     webuser: resalysParameters.web_user[locale],
     display: 'semainier',
@@ -408,6 +410,7 @@
     campaign_code: resalysParameters.campaign_code,
     referer: referer
 }) }}" width="960px" height="700px" marginheight="0" marginwidth="0" frameborder="0"></iframe>
+{% endif %}
 {% endblock %}
 
 {% block rightColumn %}
