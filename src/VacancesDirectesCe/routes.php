@@ -37,6 +37,11 @@ $app->get('/login', function(Request $request) use ($app) {
 ->bind('login')
 ;
 
+$app->get('/logout', function (Request $request, Application $app) {
+    $app['session']->set('resalys_user', false);
+    return $app['login.basic_login_response'];
+})->bind('logout');
+
 $app->get('/', function(Request $request) use ($app) {
     return $app->redirect($app['url_generator']->generate('achat_achats'));
 })
