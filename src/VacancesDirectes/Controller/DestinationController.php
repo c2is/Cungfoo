@@ -16,6 +16,7 @@ use Cungfoo\Model\Pays,
     Cungfoo\Model\VilleQuery,
     Cungfoo\Model\Etablissement,
     Cungfoo\Model\EtablissementQuery,
+    Cungfoo\Model\DestinationQuery,
     Cungfoo\Model\PointInteretPeer,
     Cungfoo\Model\EventPeer,
     Cungfoo\Model\EtablissementPeer;
@@ -28,6 +29,7 @@ class DestinationController implements ControllerProviderInterface
     const DESTINATION_PAYS   = 'Pays';
     const DESTINATION_REGION = 'Region';
     const DESTINATION_VILLE  = 'Ville';
+    const DESTINATION_DESTINATION = 'Destination';
 
     /**
      * {@inheritdoc}
@@ -47,6 +49,17 @@ class DestinationController implements ControllerProviderInterface
                 ->endUse()
                 ->findOne()
             ;
+
+            if (!$paysObject)
+            {
+                $paysObject = DestinationQuery::create()
+                    ->useDestinationI18nQuery()
+                        ->filterByLocale($locale)
+                        ->filterBySlug($pays)
+                    ->endUse()
+                    ->findOne()
+                ;
+            }
 
             if (!$paysObject)
             {
@@ -129,9 +142,11 @@ class DestinationController implements ControllerProviderInterface
             return $campingObject;
         });
 
-        $controllers->match('/', function (Request $request, Pays $pays) use ($app)
+        $controllers->match('/', function (Request $request, $pays) use ($app)
         {
-            return $this->process($app, $request, $pays, null, null, self::DESTINATION_PAYS);
+            $type = get_class($pays) == 'Cungfoo\Model\Pays' ? self::DESTINATION_PAYS : self::DESTINATION_DESTINATION;
+
+            return $this->process($app, $request, $pays, null, null, $type);
         })
         ->bind('destination_pays');
 
@@ -180,6 +195,7 @@ class DestinationController implements ControllerProviderInterface
         }
 
         switch ($destination) {
+            case self::DESTINATION_DESTINATION:
             case self::DESTINATION_PAYS:
                 $item = $pays;
                 $urlCanonical = $app['url_generator']->generate($request->get('_route'), array(

@@ -59,10 +59,28 @@ abstract class BaseDestinationI18n extends BaseObject implements Persistent
     protected $locale;
 
     /**
+     * The value for the slug field.
+     * @var        string
+     */
+    protected $slug;
+
+    /**
      * The value for the name field.
      * @var        string
      */
     protected $name;
+
+    /**
+     * The value for the introduction field.
+     * @var        string
+     */
+    protected $introduction;
+
+    /**
+     * The value for the description field.
+     * @var        string
+     */
+    protected $description;
 
     /**
      * @var        Destination
@@ -125,6 +143,16 @@ abstract class BaseDestinationI18n extends BaseObject implements Persistent
     }
 
     /**
+     * Get the [slug] column value.
+     *
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
      * Get the [name] column value.
      *
      * @return string
@@ -132,6 +160,26 @@ abstract class BaseDestinationI18n extends BaseObject implements Persistent
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Get the [introduction] column value.
+     *
+     * @return string
+     */
+    public function getIntroduction()
+    {
+        return $this->introduction;
+    }
+
+    /**
+     * Get the [description] column value.
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
     }
 
     /**
@@ -181,6 +229,27 @@ abstract class BaseDestinationI18n extends BaseObject implements Persistent
     } // setLocale()
 
     /**
+     * Set the value of [slug] column.
+     *
+     * @param string $v new value
+     * @return DestinationI18n The current object (for fluent API support)
+     */
+    public function setSlug($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->slug !== $v) {
+            $this->slug = $v;
+            $this->modifiedColumns[] = DestinationI18nPeer::SLUG;
+        }
+
+
+        return $this;
+    } // setSlug()
+
+    /**
      * Set the value of [name] column.
      *
      * @param string $v new value
@@ -200,6 +269,48 @@ abstract class BaseDestinationI18n extends BaseObject implements Persistent
 
         return $this;
     } // setName()
+
+    /**
+     * Set the value of [introduction] column.
+     *
+     * @param string $v new value
+     * @return DestinationI18n The current object (for fluent API support)
+     */
+    public function setIntroduction($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->introduction !== $v) {
+            $this->introduction = $v;
+            $this->modifiedColumns[] = DestinationI18nPeer::INTRODUCTION;
+        }
+
+
+        return $this;
+    } // setIntroduction()
+
+    /**
+     * Set the value of [description] column.
+     *
+     * @param string $v new value
+     * @return DestinationI18n The current object (for fluent API support)
+     */
+    public function setDescription($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->description !== $v) {
+            $this->description = $v;
+            $this->modifiedColumns[] = DestinationI18nPeer::DESCRIPTION;
+        }
+
+
+        return $this;
+    } // setDescription()
 
     /**
      * Indicates whether the columns in this object are only set to default values.
@@ -239,7 +350,10 @@ abstract class BaseDestinationI18n extends BaseObject implements Persistent
 
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
             $this->locale = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
-            $this->name = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
+            $this->slug = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
+            $this->name = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
+            $this->introduction = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
+            $this->description = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -248,7 +362,7 @@ abstract class BaseDestinationI18n extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 3; // 3 = DestinationI18nPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 6; // 6 = DestinationI18nPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating DestinationI18n object", $e);
@@ -478,8 +592,17 @@ abstract class BaseDestinationI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(DestinationI18nPeer::LOCALE)) {
             $modifiedColumns[':p' . $index++]  = '`locale`';
         }
+        if ($this->isColumnModified(DestinationI18nPeer::SLUG)) {
+            $modifiedColumns[':p' . $index++]  = '`slug`';
+        }
         if ($this->isColumnModified(DestinationI18nPeer::NAME)) {
             $modifiedColumns[':p' . $index++]  = '`name`';
+        }
+        if ($this->isColumnModified(DestinationI18nPeer::INTRODUCTION)) {
+            $modifiedColumns[':p' . $index++]  = '`introduction`';
+        }
+        if ($this->isColumnModified(DestinationI18nPeer::DESCRIPTION)) {
+            $modifiedColumns[':p' . $index++]  = '`description`';
         }
 
         $sql = sprintf(
@@ -498,8 +621,17 @@ abstract class BaseDestinationI18n extends BaseObject implements Persistent
                     case '`locale`':
                         $stmt->bindValue($identifier, $this->locale, PDO::PARAM_STR);
                         break;
+                    case '`slug`':
+                        $stmt->bindValue($identifier, $this->slug, PDO::PARAM_STR);
+                        break;
                     case '`name`':
                         $stmt->bindValue($identifier, $this->name, PDO::PARAM_STR);
+                        break;
+                    case '`introduction`':
+                        $stmt->bindValue($identifier, $this->introduction, PDO::PARAM_STR);
+                        break;
+                    case '`description`':
+                        $stmt->bindValue($identifier, $this->description, PDO::PARAM_STR);
                         break;
                 }
             }
@@ -647,7 +779,16 @@ abstract class BaseDestinationI18n extends BaseObject implements Persistent
                 return $this->getLocale();
                 break;
             case 2:
+                return $this->getSlug();
+                break;
+            case 3:
                 return $this->getName();
+                break;
+            case 4:
+                return $this->getIntroduction();
+                break;
+            case 5:
+                return $this->getDescription();
                 break;
             default:
                 return null;
@@ -680,7 +821,10 @@ abstract class BaseDestinationI18n extends BaseObject implements Persistent
         $result = array(
             $keys[0] => $this->getId(),
             $keys[1] => $this->getLocale(),
-            $keys[2] => $this->getName(),
+            $keys[2] => $this->getSlug(),
+            $keys[3] => $this->getName(),
+            $keys[4] => $this->getIntroduction(),
+            $keys[5] => $this->getDescription(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aDestination) {
@@ -727,7 +871,16 @@ abstract class BaseDestinationI18n extends BaseObject implements Persistent
                 $this->setLocale($value);
                 break;
             case 2:
+                $this->setSlug($value);
+                break;
+            case 3:
                 $this->setName($value);
+                break;
+            case 4:
+                $this->setIntroduction($value);
+                break;
+            case 5:
+                $this->setDescription($value);
                 break;
         } // switch()
     }
@@ -755,7 +908,10 @@ abstract class BaseDestinationI18n extends BaseObject implements Persistent
 
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
         if (array_key_exists($keys[1], $arr)) $this->setLocale($arr[$keys[1]]);
-        if (array_key_exists($keys[2], $arr)) $this->setName($arr[$keys[2]]);
+        if (array_key_exists($keys[2], $arr)) $this->setSlug($arr[$keys[2]]);
+        if (array_key_exists($keys[3], $arr)) $this->setName($arr[$keys[3]]);
+        if (array_key_exists($keys[4], $arr)) $this->setIntroduction($arr[$keys[4]]);
+        if (array_key_exists($keys[5], $arr)) $this->setDescription($arr[$keys[5]]);
     }
 
     /**
@@ -769,7 +925,10 @@ abstract class BaseDestinationI18n extends BaseObject implements Persistent
 
         if ($this->isColumnModified(DestinationI18nPeer::ID)) $criteria->add(DestinationI18nPeer::ID, $this->id);
         if ($this->isColumnModified(DestinationI18nPeer::LOCALE)) $criteria->add(DestinationI18nPeer::LOCALE, $this->locale);
+        if ($this->isColumnModified(DestinationI18nPeer::SLUG)) $criteria->add(DestinationI18nPeer::SLUG, $this->slug);
         if ($this->isColumnModified(DestinationI18nPeer::NAME)) $criteria->add(DestinationI18nPeer::NAME, $this->name);
+        if ($this->isColumnModified(DestinationI18nPeer::INTRODUCTION)) $criteria->add(DestinationI18nPeer::INTRODUCTION, $this->introduction);
+        if ($this->isColumnModified(DestinationI18nPeer::DESCRIPTION)) $criteria->add(DestinationI18nPeer::DESCRIPTION, $this->description);
 
         return $criteria;
     }
@@ -842,7 +1001,10 @@ abstract class BaseDestinationI18n extends BaseObject implements Persistent
     {
         $copyObj->setId($this->getId());
         $copyObj->setLocale($this->getLocale());
+        $copyObj->setSlug($this->getSlug());
         $copyObj->setName($this->getName());
+        $copyObj->setIntroduction($this->getIntroduction());
+        $copyObj->setDescription($this->getDescription());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -959,7 +1121,10 @@ abstract class BaseDestinationI18n extends BaseObject implements Persistent
     {
         $this->id = null;
         $this->locale = null;
+        $this->slug = null;
         $this->name = null;
+        $this->introduction = null;
+        $this->description = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();

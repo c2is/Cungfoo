@@ -100,4 +100,23 @@ class EtablissementPeer extends BaseEtablissementPeer
             ->count()
         ;
     }
+
+    public static function getForDestination(Destination $destination, $sort = self::NO_SORT, $count = null)
+    {
+        $query = EtablissementQuery::create()
+            ->filterByDestination($destination)
+        ;
+
+        if ($sort == self::RANDOM_SORT)
+        {
+            $query->addAscendingOrderByColumn('RAND()');
+        }
+
+        if (!is_null($count))
+        {
+            $query->limit($count);
+        }
+
+        return ($count == 1) ? $query->findOne() : $query->findActive();
+    }
 }

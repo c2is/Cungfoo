@@ -801,7 +801,7 @@ abstract class BaseThemeQuery extends ModelCriteria
     }
 
     // active behavior
-
+    
     /**
      * return only active objects
      *
@@ -810,7 +810,7 @@ abstract class BaseThemeQuery extends ModelCriteria
     public function findActive($con = null)
     {
         $this->filterByActive(true);
-
+    
         return parent::find($con);
     }
 
@@ -872,11 +872,11 @@ abstract class BaseThemeQuery extends ModelCriteria
     }
 
     // crudable behavior
-
+    
     public function filterByTerm($term)
     {
         $term = '%' . $term . '%';
-
+    
         return $this
             ->_or()
             ->useI18nQuery()

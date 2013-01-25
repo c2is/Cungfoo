@@ -198,4 +198,42 @@ class EventPeer extends BaseEventPeer
 
         return ($count == 1) ? $query->findOne() : $query->find();
     }
+
+    static public function getForDestination(Destination $destination, $sort = self::NO_SORT, $count = null, $category = null, $criteriaOperation = null)
+    {
+        $query = EventQuery::create()
+            ->setDistinct()
+            ->useEtablissementEventQuery()
+                ->useEtablissementQuery()
+                    ->filterByActive(true)
+                    ->filterByDestination($destination)
+                ->endUse()
+            ->endUse()
+        ;
+
+        switch ($sort)
+        {
+            case self::RANDOM_SORT:
+                $query->addAscendingOrderByColumn('RAND()');
+                break;
+
+            case self::SORT_BY_PRIORITY:
+                $query->orderByPriority(\Criteria::ASC);
+                break;
+        }
+
+        if (!is_null($count))
+        {
+            $query->limit($count);
+        }
+
+        if (!is_null($category))
+        {
+            $query->filterByCategory($category, (!is_null($criteriaOperation)) ? $criteriaOperation : \Criteria::EQUAL);
+        }
+
+        $query->filterByActive(true);
+
+        return ($count == 1) ? $query->findOne() : $query->find();
+    }
 }
