@@ -50,7 +50,7 @@
 
             <p>Sin laboramus, quis est, qui alienae modum statuat industriae? Sic enim censent, oportunitatis esse beate vivere. De ingenio eius in his disputationibus, non de moribus quaeritur. <b>Tubulo putas dicere?</b> Deinde prima illa, quae in congressu solemus: Quid tu, inquit, huc? Equidem e Cn. <i>Ne discipulum abducam, times.</i> Graccho, eius fere, aequalí? Ut placet, inquit, etsi enim illud erat aptius, aequum cuique concedere. Respondent extrema primis, media utrisque, omnia omnibus.</p>
             <div class="banner">
-                <div class="bannerStain first">
+                <div class="bannerStain first cover">
                     <div class="content">
                         <p class="headline">Au camping comme à la maison</p>
                     </div>

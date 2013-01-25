@@ -54,8 +54,9 @@ $(function() {
 // Test html5 form capacties andif do polyfills
     if (!Modernizr.input.placeholder) { polyfillPlaceholder(); } // html5 placeholder
 
-//
-    $('.details').find('.cover').css({backgroundSize: "cover"});
+// Cover IE
+    $('.banner').find('.cover').css({backgroundSize: "cover"});
+    $('.bgImg').find('.cover').css({backgroundSize: "cover"});
 
 // Gestion du click sur le parent
     if ($('.linkParent').length > 0) { addLinkBlock(); }

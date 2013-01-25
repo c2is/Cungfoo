@@ -1,3 +1,4 @@
+{% if blocPrix.adult_price_without_discounts != 0 %}
 <div id="dispoBloc" class="proposal radiusBox fushia promo arrowLeft">
     <p class="proposalDates">
         {% if blocPrix.proposal_key %}
@@ -37,3 +38,4 @@
     <a class="bt sombre big ib goto" href="#frameResalys">Réserver</a>
     {% endif %}
 </div>
+{% endif %}
