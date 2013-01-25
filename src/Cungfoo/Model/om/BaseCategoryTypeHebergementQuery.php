@@ -795,7 +795,7 @@ abstract class BaseCategoryTypeHebergementQuery extends ModelCriteria
         return $this->addAscendingOrderByColumn(CategoryTypeHebergementPeer::CREATED_AT);
     }
     // active behavior
-
+    
     /**
      * return only active objects
      *
@@ -804,7 +804,7 @@ abstract class BaseCategoryTypeHebergementQuery extends ModelCriteria
     public function findActive($con = null)
     {
         $this->filterByActive(true);
-
+    
         return parent::find($con);
     }
 
@@ -988,11 +988,11 @@ abstract class BaseCategoryTypeHebergementQuery extends ModelCriteria
     }
 
     // crudable behavior
-
+    
     public function filterByTerm($term)
     {
         $term = '%' . $term . '%';
-
+    
         return $this
             ->_or()
             ->useI18nQuery()
