@@ -1,7 +1,7 @@
 \Cungfoo\Model\MiseEnAvant:
     1:
         ImageFondPath: null
-        Prix: '227'
+        Prix: null
         IllustrationPath: uploads/mise_en_avants/50c1ed5ca90ae.jpeg
         DateFinValidite: '2013-11-15 00:00:00'
         SortableRank: 1

@@ -18,7 +18,7 @@
     5:
         EtablissementId: 36
         SortableRank: 5
-        Active: true
+        Active: false
     6:
         EtablissementId: 181
         SortableRank: 6
@@ -46,4 +46,4 @@
     12:
         EtablissementId: 35
         SortableRank: 12
-        Active: true
+        Active: false

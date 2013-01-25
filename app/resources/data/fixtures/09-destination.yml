@@ -1,10 +1,17 @@
 \Cungfoo\Model\Destination:
     1:
         Code: ATL
+        SortableRank: 2
         Active: true
     2:
         Code: MED
+        SortableRank: 1
         Active: true
     3:
         Code: CAM
+        SortableRank: 3
+        Active: true
+    4:
+        Code: MNT
+        SortableRank: 4
         Active: true

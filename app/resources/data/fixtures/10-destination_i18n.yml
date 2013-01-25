@@ -34,7 +34,7 @@
     3_de:
         Id: 3
         Locale: de
-        Name: 'Campagne et Montagne'
+        Name: Campagne
     3_en:
         Id: 3
         Locale: en
@@ -42,8 +42,16 @@
     3_fr:
         Id: 3
         Locale: fr
-        Name: 'Campagne et Montagne'
+        Name: Campagne
     3_nl:
         Id: 3
         Locale: nl
         Name: 'Campagne et Montagne'
+    4_de:
+        Id: 4
+        Locale: de
+        Name: Montagne
+    4_fr:
+        Id: 4
+        Locale: fr
+        Name: Montagne

@@ -188,9 +188,6 @@
     33_2:
         EtablissementId: 33
         ThematiqueId: 2
-    34_2:
-        EtablissementId: 34
-        ThematiqueId: 2
     36_2:
         EtablissementId: 36
         ThematiqueId: 2
@@ -256,9 +253,6 @@
         ThematiqueId: 2
     166_2:
         EtablissementId: 166
-        ThematiqueId: 2
-    177_2:
-        EtablissementId: 177
         ThematiqueId: 2
     187_2:
         EtablissementId: 187

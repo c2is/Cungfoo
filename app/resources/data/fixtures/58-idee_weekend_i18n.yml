@@ -32,8 +32,8 @@
     2_fr:
         Id: 2
         Locale: fr
-        Titre: "2. Week-end les pieds dans l’eau\_!"
-        Lien: top-campings
+        Titre: "Week-end les pieds dans l’eau\_!"
+        Lien: null
     2_nl:
         Id: 2
         Locale: nl

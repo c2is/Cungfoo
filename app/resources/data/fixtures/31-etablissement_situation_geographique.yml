@@ -80,9 +80,6 @@
     16_2:
         EtablissementId: 16
         SituationGeographiqueId: 2
-    21_2:
-        EtablissementId: 21
-        SituationGeographiqueId: 2
     39_2:
         EtablissementId: 39
         SituationGeographiqueId: 2
@@ -118,6 +115,9 @@
         SituationGeographiqueId: 2
     141_2:
         EtablissementId: 141
+        SituationGeographiqueId: 2
+    142_2:
+        EtablissementId: 142
         SituationGeographiqueId: 2
     143_2:
         EtablissementId: 143
@@ -752,9 +752,6 @@
     238_4:
         EtablissementId: 238
         SituationGeographiqueId: 4
-    239_4:
-        EtablissementId: 239
-        SituationGeographiqueId: 4
     240_4:
         EtablissementId: 240
         SituationGeographiqueId: 4
@@ -763,9 +760,6 @@
         SituationGeographiqueId: 4
     19_5:
         EtablissementId: 19
-        SituationGeographiqueId: 5
-    37_5:
-        EtablissementId: 37
         SituationGeographiqueId: 5
     216_5:
         EtablissementId: 216
@@ -796,9 +790,6 @@
         SituationGeographiqueId: 6
     18_6:
         EtablissementId: 18
-        SituationGeographiqueId: 6
-    19_6:
-        EtablissementId: 19
         SituationGeographiqueId: 6
     20_6:
         EtablissementId: 20
@@ -1058,9 +1049,6 @@
     238_6:
         EtablissementId: 238
         SituationGeographiqueId: 6
-    239_6:
-        EtablissementId: 239
-        SituationGeographiqueId: 6
     240_6:
         EtablissementId: 240
         SituationGeographiqueId: 6
@@ -1103,17 +1091,11 @@
     22_8:
         EtablissementId: 22
         SituationGeographiqueId: 8
-    39_8:
-        EtablissementId: 39
-        SituationGeographiqueId: 8
     82_8:
         EtablissementId: 82
         SituationGeographiqueId: 8
     85_8:
         EtablissementId: 85
-        SituationGeographiqueId: 8
-    97_8:
-        EtablissementId: 97
         SituationGeographiqueId: 8
     107_8:
         EtablissementId: 107
@@ -1129,6 +1111,9 @@
         SituationGeographiqueId: 8
     141_8:
         EtablissementId: 141
+        SituationGeographiqueId: 8
+    142_8:
+        EtablissementId: 142
         SituationGeographiqueId: 8
     146_8:
         EtablissementId: 146
@@ -1166,9 +1151,6 @@
     215_8:
         EtablissementId: 215
         SituationGeographiqueId: 8
-    243_8:
-        EtablissementId: 243
-        SituationGeographiqueId: 8
     3_9:
         EtablissementId: 3
         SituationGeographiqueId: 9
@@ -1177,9 +1159,6 @@
         SituationGeographiqueId: 9
     135_9:
         EtablissementId: 135
-        SituationGeographiqueId: 9
-    137_9:
-        EtablissementId: 137
         SituationGeographiqueId: 9
     190_9:
         EtablissementId: 190

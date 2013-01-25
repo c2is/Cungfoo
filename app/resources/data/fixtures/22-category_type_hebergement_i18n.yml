@@ -5,42 +5,42 @@
         Name: 'Salles de réception'
         Slug: salles-de-reception
         Accroche: 'Au camping comme à la maison'
-        Description: "Découvrez ici les hébergements proposé par Vacances directes : mobil-homes jusqu'à 8 places, caravanes, gîtes, chalets, bungalows sur des campins de qualité en France, en Espagne et en Italie. Pour un séjour réussi en famille ou entre amis, retrouvez le confort d'un hébergement de qualité.\nNos hébergements sont régulièrement entretenus et renouvelés afin de vous proposer un confort maximum. L'une des nos devises \"Pendant vos vacances, profitez du grand air tout en vous sentant comme chez vous.\""
+        Description: "Découvrez ici les hébergements proposé par Vacances directes : mobil-homes jusqu'à 8 places, caravanes, gîtes, chalets, bungalows sur des campins de qualité en France, en Espagne et en Italie. Pour un séjour réussi en famille ou entre amis, retrouvez le confort d'un hébergement de qualité.\nNos hébergements sont régulièrement entretenus et renouvelés afin de vous proposer un confort maximum."
     1_en:
         Id: 1
         Locale: en
         Name: 'Salles de réception'
-        Slug: salles-de-reception
+        Slug: null
         Accroche: 'Au camping comme à la maison'
-        Description: "Découvrez ici les hébergements proposé par Vacances directes : mobil-homes jusqu'à 8 places, caravanes, gîtes, chalets, bungalows sur des campins de qualité en France, en Espagne et en Italie. Pour un séjour réussi en famille ou entre amis, retrouvez le confort d'un hébergement de qualité.\nNos hébergements sont régulièrement entretenus et renouvelés afin de vous proposer un confort maximum. L'une des nos devises \"Pendant vos vacances, profitez du grand air tout en vous sentant comme chez vous.\""
+        Description: "Découvrez ici les hébergements proposé par Vacances directes : mobil-homes jusqu'à 8 places, caravanes, gîtes, chalets, bungalows sur des campins de qualité en France, en Espagne et en Italie. Pour un séjour réussi en famille ou entre amis, retrouvez le confort d'un hébergement de qualité.\nNos hébergements sont régulièrement entretenus et renouvelés afin de vous proposer un confort maximum."
     1_fr:
         Id: 1
         Locale: fr
         Name: 'Salles de réception'
         Slug: salles-de-reception
         Accroche: 'Au camping comme à la maison'
-        Description: "Découvrez ici les hébergements proposé par Vacances directes : mobil-homes jusqu'à 8 places, caravanes, gîtes, chalets, bungalows sur des campins de qualité en France, en Espagne et en Italie. Pour un séjour réussi en famille ou entre amis, retrouvez le confort d'un hébergement de qualité.\nNos hébergements sont régulièrement entretenus et renouvelés afin de vous proposer un confort maximum. L'une des nos devises \"Pendant vos vacances, profitez du grand air tout en vous sentant comme chez vous.\""
+        Description: "Découvrez ici les hébergements proposé par Vacances directes : mobil-homes jusqu'à 8 places, caravanes, gîtes, chalets, bungalows sur des campins de qualité en France, en Espagne et en Italie. Pour un séjour réussi en famille ou entre amis, retrouvez le confort d'un hébergement de qualité.\nNos hébergements sont régulièrement entretenus et renouvelés afin de vous proposer un confort maximum."
     1_nl:
         Id: 1
         Locale: nl
         Name: 'Salles de réception'
-        Slug: salles-de-reception
+        Slug: null
         Accroche: 'Au camping comme à la maison'
-        Description: "Découvrez ici les hébergements proposé par Vacances directes : mobil-homes jusqu'à 8 places, caravanes, gîtes, chalets, bungalows sur des campins de qualité en France, en Espagne et en Italie. Pour un séjour réussi en famille ou entre amis, retrouvez le confort d'un hébergement de qualité.\nNos hébergements sont régulièrement entretenus et renouvelés afin de vous proposer un confort maximum. L'une des nos devises \"Pendant vos vacances, profitez du grand air tout en vous sentant comme chez vous.\""
+        Description: "Découvrez ici les hébergements proposé par Vacances directes : mobil-homes jusqu'à 8 places, caravanes, gîtes, chalets, bungalows sur des campins de qualité en France, en Espagne et en Italie. Pour un séjour réussi en famille ou entre amis, retrouvez le confort d'un hébergement de qualité.\nNos hébergements sont régulièrement entretenus et renouvelés afin de vous proposer un confort maximum."
     2_de:
         Id: 2
         Locale: de
         Name: Mobil-homes
         Slug: mobil-homes
         Accroche: 'Au camping comme à la maison'
-        Description: "Découvrez ici les hébergements proposé par Vacances directes : mobil-homes jusqu'à 8 places, caravanes, gîtes, chalets, bungalows sur des campins de qualité en France, en Espagne et en Italie. Pour un séjour réussi en famille ou entre amis, retrouvez le confort d'un hébergement de qualité.\r\nNos hébergements sont régulièrement entretenus et renouvelés afin de vous proposer un confort maximum. L'une des nos devises \"Pendant vos vacances, profitez du grand air tout en vous sentant comme chez vous.\""
+        Description: 'Pour des vacances en famille ou entre amis, profitez de nos mobil-homes tout confort. Choisissez celui qui vous ressemble et vivez vos vacances à votre rythme.'
     2_en:
         Id: 2
         Locale: en
         Name: Mobil-homes
-        Slug: mobil-homes
+        Slug: null
         Accroche: 'Au camping comme à la maison'
-        Description: "Découvrez ici les hébergements proposé par Vacances directes : mobil-homes jusqu'à 8 places, caravanes, gîtes, chalets, bungalows sur des campins de qualité en France, en Espagne et en Italie. Pour un séjour réussi en famille ou entre amis, retrouvez le confort d'un hébergement de qualité.\r\nNos hébergements sont régulièrement entretenus et renouvelés afin de vous proposer un confort maximum. L'une des nos devises \"Pendant vos vacances, profitez du grand air tout en vous sentant comme chez vous.\""
+        Description: 'Pour des vacances en famille ou entre amis, profitez de nos mobil-homes tout confort. Choisissez celui qui vous ressemble et vivez vos vacances à votre rythme.'
     2_fr:
         Id: 2
         Locale: fr
@@ -52,23 +52,23 @@
         Id: 2
         Locale: nl
         Name: Mobil-homes
-        Slug: mobil-homes
+        Slug: null
         Accroche: 'Au camping comme à la maison'
-        Description: "Découvrez ici les hébergements proposé par Vacances directes : mobil-homes jusqu'à 8 places, caravanes, gîtes, chalets, bungalows sur des campins de qualité en France, en Espagne et en Italie. Pour un séjour réussi en famille ou entre amis, retrouvez le confort d'un hébergement de qualité.\r\nNos hébergements sont régulièrement entretenus et renouvelés afin de vous proposer un confort maximum. L'une des nos devises \"Pendant vos vacances, profitez du grand air tout en vous sentant comme chez vous.\""
+        Description: 'Pour des vacances en famille ou entre amis, profitez de nos mobil-homes tout confort. Choisissez celui qui vous ressemble et vivez vos vacances à votre rythme.'
     3_de:
         Id: 3
         Locale: de
         Name: Chalets
         Slug: chalets
-        Accroche: 'Au camping comme à la maison'
-        Description: "Découvrez ici les hébergements proposé par Vacances directes : mobil-homes jusqu'à 8 places, caravanes, gîtes, chalets, bungalows sur des campins de qualité en France, en Espagne et en Italie. Pour un séjour réussi en famille ou entre amis, retrouvez le confort d'un hébergement de qualité.\r\nNos hébergements sont régulièrement entretenus et renouvelés afin de vous proposer un confort maximum. L'une des nos devises \"Pendant vos vacances, profitez du grand air tout en vous sentant comme chez vous.\""
+        Accroche: 'Changez d’air !'
+        Description: 'Parfaitement intégrés à l''environnement, nos chalets vous attendent pour un séjour original et dépaysant. Vous apprécierez la terrasse couverte et l''équipement confortable de cet hébergement atypique.'
     3_en:
         Id: 3
         Locale: en
         Name: Chalets
-        Slug: chalets
-        Accroche: 'Au camping comme à la maison'
-        Description: "Découvrez ici les hébergements proposé par Vacances directes : mobil-homes jusqu'à 8 places, caravanes, gîtes, chalets, bungalows sur des campins de qualité en France, en Espagne et en Italie. Pour un séjour réussi en famille ou entre amis, retrouvez le confort d'un hébergement de qualité.\r\nNos hébergements sont régulièrement entretenus et renouvelés afin de vous proposer un confort maximum. L'une des nos devises \"Pendant vos vacances, profitez du grand air tout en vous sentant comme chez vous.\""
+        Slug: null
+        Accroche: 'Changez d’air !'
+        Description: 'Parfaitement intégrés à l''environnement, nos chalets vous attendent pour un séjour original et dépaysant. Vous apprécierez la terrasse couverte et l''équipement confortable de cet hébergement atypique.'
     3_fr:
         Id: 3
         Locale: fr
@@ -80,23 +80,23 @@
         Id: 3
         Locale: nl
         Name: Chalets
-        Slug: chalets
-        Accroche: 'Au camping comme à la maison'
-        Description: "Découvrez ici les hébergements proposé par Vacances directes : mobil-homes jusqu'à 8 places, caravanes, gîtes, chalets, bungalows sur des campins de qualité en France, en Espagne et en Italie. Pour un séjour réussi en famille ou entre amis, retrouvez le confort d'un hébergement de qualité.\r\nNos hébergements sont régulièrement entretenus et renouvelés afin de vous proposer un confort maximum. L'une des nos devises \"Pendant vos vacances, profitez du grand air tout en vous sentant comme chez vous.\""
+        Slug: null
+        Accroche: 'Changez d’air !'
+        Description: 'Parfaitement intégrés à l''environnement, nos chalets vous attendent pour un séjour original et dépaysant. Vous apprécierez la terrasse couverte et l''équipement confortable de cet hébergement atypique.'
     4_de:
         Id: 4
         Locale: de
         Name: Maisonnette
         Slug: maisonnette
-        Accroche: 'Au camping comme à la maison'
-        Description: "Découvrez ici les hébergements proposé par Vacances directes : mobil-homes jusqu'à 8 places, caravanes, gîtes, chalets, bungalows sur des campins de qualité en France, en Espagne et en Italie. Pour un séjour réussi en famille ou entre amis, retrouvez le confort d'un hébergement de qualité.\r\nNos hébergements sont régulièrement entretenus et renouvelés afin de vous proposer un confort maximum. L'une des nos devises \"Pendant vos vacances, profitez du grand air tout en vous sentant comme chez vous.\""
+        Accroche: 'Un séjour haut en couleur'
+        Description: 'Découvrez le charme des bungalows sur le Domaine d''Anghione en Corse et leur terrasse nature à l’ombre de la pinède. Ces hébergements tout confort vous attendent pour des vacances inoubliables sur l’ile de Beauté.'
     4_en:
         Id: 4
         Locale: en
         Name: Maisonnette
-        Slug: maisonnette
-        Accroche: 'Au camping comme à la maison'
-        Description: "Découvrez ici les hébergements proposé par Vacances directes : mobil-homes jusqu'à 8 places, caravanes, gîtes, chalets, bungalows sur des campins de qualité en France, en Espagne et en Italie. Pour un séjour réussi en famille ou entre amis, retrouvez le confort d'un hébergement de qualité.\r\nNos hébergements sont régulièrement entretenus et renouvelés afin de vous proposer un confort maximum. L'une des nos devises \"Pendant vos vacances, profitez du grand air tout en vous sentant comme chez vous.\""
+        Slug: null
+        Accroche: 'Un séjour haut en couleur'
+        Description: 'Découvrez le charme des bungalows sur le Domaine d''Anghione en Corse et leur terrasse nature à l’ombre de la pinède. Ces hébergements tout confort vous attendent pour des vacances inoubliables sur l’ile de Beauté.'
     4_fr:
         Id: 4
         Locale: fr
@@ -108,23 +108,23 @@
         Id: 4
         Locale: nl
         Name: Maisonnette
-        Slug: maisonnette
-        Accroche: 'Au camping comme à la maison'
-        Description: "Découvrez ici les hébergements proposé par Vacances directes : mobil-homes jusqu'à 8 places, caravanes, gîtes, chalets, bungalows sur des campins de qualité en France, en Espagne et en Italie. Pour un séjour réussi en famille ou entre amis, retrouvez le confort d'un hébergement de qualité.\r\nNos hébergements sont régulièrement entretenus et renouvelés afin de vous proposer un confort maximum. L'une des nos devises \"Pendant vos vacances, profitez du grand air tout en vous sentant comme chez vous.\""
+        Slug: null
+        Accroche: 'Un séjour haut en couleur'
+        Description: 'Découvrez le charme des bungalows sur le Domaine d''Anghione en Corse et leur terrasse nature à l’ombre de la pinède. Ces hébergements tout confort vous attendent pour des vacances inoubliables sur l’ile de Beauté.'
     5_de:
         Id: 5
         Locale: de
         Name: Caravanes
         Slug: caravanes
-        Accroche: 'Au camping comme à la maison'
-        Description: "Découvrez ici les hébergements proposé par Vacances directes : mobil-homes jusqu'à 8 places, caravanes, gîtes, chalets, bungalows sur des campins de qualité en France, en Espagne et en Italie. Pour un séjour réussi en famille ou entre amis, retrouvez le confort d'un hébergement de qualité.\r\nNos hébergements sont régulièrement entretenus et renouvelés afin de vous proposer un confort maximum. L'une des nos devises \"Pendant vos vacances, profitez du grand air tout en vous sentant comme chez vous.\""
+        Accroche: 'Les plaisirs simples'
+        Description: 'Vous souhaitez allier confort et simplicité ? Nos caravanes avec ou sans sanitaires vous permettront de passer des vacances sous le signe de la liberté et de l''authenticité.'
     5_en:
         Id: 5
         Locale: en
         Name: Caravanes
-        Slug: caravanes
-        Accroche: 'Au camping comme à la maison'
-        Description: "Découvrez ici les hébergements proposé par Vacances directes : mobil-homes jusqu'à 8 places, caravanes, gîtes, chalets, bungalows sur des campins de qualité en France, en Espagne et en Italie. Pour un séjour réussi en famille ou entre amis, retrouvez le confort d'un hébergement de qualité.\r\nNos hébergements sont régulièrement entretenus et renouvelés afin de vous proposer un confort maximum. L'une des nos devises \"Pendant vos vacances, profitez du grand air tout en vous sentant comme chez vous.\""
+        Slug: null
+        Accroche: 'Les plaisirs simples'
+        Description: 'Vous souhaitez allier confort et simplicité ? Nos caravanes avec ou sans sanitaires vous permettront de passer des vacances sous le signe de la liberté et de l''authenticité.'
     5_fr:
         Id: 5
         Locale: fr
@@ -136,23 +136,23 @@
         Id: 5
         Locale: nl
         Name: Caravanes
-        Slug: caravanes
-        Accroche: 'Au camping comme à la maison'
-        Description: "Découvrez ici les hébergements proposé par Vacances directes : mobil-homes jusqu'à 8 places, caravanes, gîtes, chalets, bungalows sur des campins de qualité en France, en Espagne et en Italie. Pour un séjour réussi en famille ou entre amis, retrouvez le confort d'un hébergement de qualité.\r\nNos hébergements sont régulièrement entretenus et renouvelés afin de vous proposer un confort maximum. L'une des nos devises \"Pendant vos vacances, profitez du grand air tout en vous sentant comme chez vous.\""
+        Slug: null
+        Accroche: 'Les plaisirs simples'
+        Description: 'Vous souhaitez allier confort et simplicité ? Nos caravanes avec ou sans sanitaires vous permettront de passer des vacances sous le signe de la liberté et de l''authenticité.'
     6_de:
         Id: 6
         Locale: de
         Name: Gîtes
         Slug: gites
-        Accroche: 'Au camping comme à la maison'
-        Description: "Découvrez ici les hébergements proposé par Vacances directes : mobil-homes jusqu'à 8 places, caravanes, gîtes, chalets, bungalows sur des campins de qualité en France, en Espagne et en Italie. Pour un séjour réussi en famille ou entre amis, retrouvez le confort d'un hébergement de qualité.\r\nNos hébergements sont régulièrement entretenus et renouvelés afin de vous proposer un confort maximum. L'une des nos devises \"Pendant vos vacances, profitez du grand air tout en vous sentant comme chez vous.\""
+        Accroche: 'Le charme de la Bretagne'
+        Description: 'De 2 à 9 places, les gîtes du Domaine de Kermario offrent un cachet incroyable pour un séjour dépaysant. Découverte et détente vous attendent au pays des menhirs.'
     6_en:
         Id: 6
         Locale: en
         Name: Gîtes
-        Slug: gites
-        Accroche: 'Au camping comme à la maison'
-        Description: "Découvrez ici les hébergements proposé par Vacances directes : mobil-homes jusqu'à 8 places, caravanes, gîtes, chalets, bungalows sur des campins de qualité en France, en Espagne et en Italie. Pour un séjour réussi en famille ou entre amis, retrouvez le confort d'un hébergement de qualité.\r\nNos hébergements sont régulièrement entretenus et renouvelés afin de vous proposer un confort maximum. L'une des nos devises \"Pendant vos vacances, profitez du grand air tout en vous sentant comme chez vous.\""
+        Slug: null
+        Accroche: 'Le charme de la Bretagne'
+        Description: 'De 2 à 9 places, les gîtes du Domaine de Kermario offrent un cachet incroyable pour un séjour dépaysant. Découverte et détente vous attendent au pays des menhirs.'
     6_fr:
         Id: 6
         Locale: fr
@@ -164,23 +164,23 @@
         Id: 6
         Locale: nl
         Name: Gîtes
-        Slug: gites
-        Accroche: 'Au camping comme à la maison'
-        Description: "Découvrez ici les hébergements proposé par Vacances directes : mobil-homes jusqu'à 8 places, caravanes, gîtes, chalets, bungalows sur des campins de qualité en France, en Espagne et en Italie. Pour un séjour réussi en famille ou entre amis, retrouvez le confort d'un hébergement de qualité.\r\nNos hébergements sont régulièrement entretenus et renouvelés afin de vous proposer un confort maximum. L'une des nos devises \"Pendant vos vacances, profitez du grand air tout en vous sentant comme chez vous.\""
+        Slug: null
+        Accroche: 'Le charme de la Bretagne'
+        Description: 'De 2 à 9 places, les gîtes du Domaine de Kermario offrent un cachet incroyable pour un séjour dépaysant. Découverte et détente vous attendent au pays des menhirs.'
     7_de:
         Id: 7
         Locale: de
         Name: Emplacements
         Slug: emplacements
-        Accroche: 'Au camping comme à la maison'
-        Description: "Découvrez ici les hébergements proposé par Vacances directes : mobil-homes jusqu'à 8 places, caravanes, gîtes, chalets, bungalows sur des campins de qualité en France, en Espagne et en Italie. Pour un séjour réussi en famille ou entre amis, retrouvez le confort d'un hébergement de qualité.\r\nNos hébergements sont régulièrement entretenus et renouvelés afin de vous proposer un confort maximum. L'une des nos devises \"Pendant vos vacances, profitez du grand air tout en vous sentant comme chez vous.\""
+        Accroche: 'La liberté à l''état pur'
+        Description: 'Passez quelques jours ou plus en tente, en caravane ou en camping-car sur l''un de nos 3 000 emplacements et profitez des joies du plein-air.'
     7_en:
         Id: 7
         Locale: en
         Name: Emplacements
-        Slug: emplacements
-        Accroche: 'Au camping comme à la maison'
-        Description: "Découvrez ici les hébergements proposé par Vacances directes : mobil-homes jusqu'à 8 places, caravanes, gîtes, chalets, bungalows sur des campins de qualité en France, en Espagne et en Italie. Pour un séjour réussi en famille ou entre amis, retrouvez le confort d'un hébergement de qualité.\r\nNos hébergements sont régulièrement entretenus et renouvelés afin de vous proposer un confort maximum. L'une des nos devises \"Pendant vos vacances, profitez du grand air tout en vous sentant comme chez vous.\""
+        Slug: null
+        Accroche: 'La liberté à l''état pur'
+        Description: 'Passez quelques jours ou plus en tente, en caravane ou en camping-car sur l''un de nos 3 000 emplacements et profitez des joies du plein-air.'
     7_fr:
         Id: 7
         Locale: fr
@@ -192,23 +192,23 @@
         Id: 7
         Locale: nl
         Name: Emplacements
-        Slug: emplacements
-        Accroche: 'Au camping comme à la maison'
-        Description: "Découvrez ici les hébergements proposé par Vacances directes : mobil-homes jusqu'à 8 places, caravanes, gîtes, chalets, bungalows sur des campins de qualité en France, en Espagne et en Italie. Pour un séjour réussi en famille ou entre amis, retrouvez le confort d'un hébergement de qualité.\r\nNos hébergements sont régulièrement entretenus et renouvelés afin de vous proposer un confort maximum. L'une des nos devises \"Pendant vos vacances, profitez du grand air tout en vous sentant comme chez vous.\""
+        Slug: null
+        Accroche: 'La liberté à l''état pur'
+        Description: 'Passez quelques jours ou plus en tente, en caravane ou en camping-car sur l''un de nos 3 000 emplacements et profitez des joies du plein-air.'
     8_de:
         Id: 8
         Locale: de
         Name: Tente
         Slug: tente
-        Accroche: 'Au camping comme à la maison'
-        Description: "Découvrez ici les hébergements proposé par Vacances directes : mobil-homes jusqu'à 8 places, caravanes, gîtes, chalets, bungalows sur des campins de qualité en France, en Espagne et en Italie. Pour un séjour réussi en famille ou entre amis, retrouvez le confort d'un hébergement de qualité.\r\nNos hébergements sont régulièrement entretenus et renouvelés afin de vous proposer un confort maximum. L'une des nos devises \"Pendant vos vacances, profitez du grand air tout en vous sentant comme chez vous.\""
+        Accroche: 'Gardez l''esprit campeur !'
+        Description: 'Pour ceux qui veulent garder l''esprit campeur, Vacances directes vous propose ses tentes équipées. Jusqu''à 5 places, avec ou sans sanitaire, vous pourrez vivre des moments de détente et de convivialité.'
     8_en:
         Id: 8
         Locale: en
         Name: Tente
-        Slug: tente
-        Accroche: 'Au camping comme à la maison'
-        Description: "Découvrez ici les hébergements proposé par Vacances directes : mobil-homes jusqu'à 8 places, caravanes, gîtes, chalets, bungalows sur des campins de qualité en France, en Espagne et en Italie. Pour un séjour réussi en famille ou entre amis, retrouvez le confort d'un hébergement de qualité.\r\nNos hébergements sont régulièrement entretenus et renouvelés afin de vous proposer un confort maximum. L'une des nos devises \"Pendant vos vacances, profitez du grand air tout en vous sentant comme chez vous.\""
+        Slug: null
+        Accroche: 'Gardez l''esprit campeur !'
+        Description: 'Pour ceux qui veulent garder l''esprit campeur, Vacances directes vous propose ses tentes équipées. Jusqu''à 5 places, avec ou sans sanitaire, vous pourrez vivre des moments de détente et de convivialité.'
     8_fr:
         Id: 8
         Locale: fr
@@ -220,6 +220,20 @@
         Id: 8
         Locale: nl
         Name: Tente
-        Slug: tente
-        Accroche: 'Au camping comme à la maison'
-        Description: "Découvrez ici les hébergements proposé par Vacances directes : mobil-homes jusqu'à 8 places, caravanes, gîtes, chalets, bungalows sur des campins de qualité en France, en Espagne et en Italie. Pour un séjour réussi en famille ou entre amis, retrouvez le confort d'un hébergement de qualité.\r\nNos hébergements sont régulièrement entretenus et renouvelés afin de vous proposer un confort maximum. L'une des nos devises \"Pendant vos vacances, profitez du grand air tout en vous sentant comme chez vous.\""
+        Slug: null
+        Accroche: 'Gardez l''esprit campeur !'
+        Description: 'Pour ceux qui veulent garder l''esprit campeur, Vacances directes vous propose ses tentes équipées. Jusqu''à 5 places, avec ou sans sanitaire, vous pourrez vivre des moments de détente et de convivialité.'
+    9_de:
+        Id: 9
+        Locale: de
+        Name: Appartement
+        Slug: appartement
+        Accroche: null
+        Description: null
+    9_fr:
+        Id: 9
+        Locale: fr
+        Name: Appartement
+        Slug: appartement
+        Accroche: null
+        Description: null
