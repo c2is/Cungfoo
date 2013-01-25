@@ -44,6 +44,8 @@ class DestinationTableMap extends TableMap
         // columns
         $this->addPrimaryKey('id', 'Id', 'INTEGER', true, null, null);
         $this->addColumn('code', 'Code', 'VARCHAR', true, 255, null);
+        $this->addColumn('image_detail_1', 'ImageDetail1', 'VARCHAR', false, 255, null);
+        $this->addColumn('image_detail_2', 'ImageDetail2', 'VARCHAR', false, 255, null);
         $this->addColumn('created_at', 'CreatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('updated_at', 'UpdatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('sortable_rank', 'SortableRank', 'INTEGER', false, null, null);
@@ -87,7 +89,7 @@ class DestinationTableMap extends TableMap
             'i18n' =>  array (
   'i18n_table' => '%TABLE%_i18n',
   'i18n_phpname' => '%PHPNAME%I18n',
-  'i18n_columns' => 'name',
+  'i18n_columns' => 'slug,name,introduction,description',
   'i18n_pk_name' => NULL,
   'locale_column' => 'locale',
   'default_locale' => 'fr',
@@ -98,7 +100,7 @@ class DestinationTableMap extends TableMap
   'crud_prefix' => '/destinations',
   'crud_model' => NULL,
   'crud_form' => NULL,
-  'crud_type_file' => NULL,
+  'crud_type_file' => 'image_detail_1,image_detail_2',
   'crud_search' => 'name',
 ),
         );

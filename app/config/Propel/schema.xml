@@ -402,18 +402,24 @@
     <table name="destination">
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="code" type="varchar" required="true" />
+        <column name="slug" type="varchar" required="true" />
         <column name="name" type="varchar" required="true" />
+        <column name="introduction" type="varchar" />
+        <column name="description" type="longvarchar" />
+        <column name="image_detail_1" type="varchar" />
+        <column name="image_detail_2" type="varchar" />
         <behavior name="timestampable" />
         <behavior name="sortable" />
         <behavior name="active" />
 
         <behavior name="i18n">
-            <parameter name="i18n_columns" value="name" />
+            <parameter name="i18n_columns" value="slug,name,introduction,description" />
         </behavior>
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/destinations" />
             <parameter name="crud_search" value="name" />
+            <parameter name="crud_type_file" value="image_detail_1,image_detail_2" />
         </behavior>
     </table>
 

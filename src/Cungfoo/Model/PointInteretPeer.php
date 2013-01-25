@@ -198,4 +198,46 @@ class PointInteretPeer extends BasePointInteretPeer
             ->count()
             ;
     }
+
+    static public function getForDestination(Destination $destination, $sort = self::NO_SORT, $count = null)
+    {
+        $query = PointInteretQuery::create()
+            ->setDistinct()
+            ->useEtablissementPointInteretQuery()
+                ->useEtablissementQuery()
+                    ->filterByActive(true)
+                    ->filterByDestination($destination)
+                ->endUse()
+            ->endUse()
+        ;
+
+        if ($sort == self::RANDOM_SORT)
+        {
+            $query->addAscendingOrderByColumn('RAND()');
+        }
+
+        if (!is_null($count))
+        {
+            $query->limit($count);
+        }
+
+        $query->filterByActive(true);
+
+        return ($count == 1) ? $query->findOne() : $query->find();
+    }
+
+    static public function getCountForDestination(Destination $destination)
+    {
+        return PointInteretQuery::create()
+            ->setDistinct()
+            ->useEtablissementPointInteretQuery()
+                ->useEtablissementQuery()
+                    ->filterByActive(true)
+                    ->filterByDestination($destination)
+                ->endUse()
+            ->endUse()
+            ->filterByActive(true)
+            ->count()
+            ;
+    }
 }

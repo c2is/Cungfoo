@@ -34,6 +34,32 @@ class BaseDestinationType extends AppAwareType
             'label' => 'destination.code',
             'required' => false,
         ));
+        $builder->add('image_detail_1', 'cungfoo_file', array(
+            'constraints' => array(
+            ),
+            'label' => 'destination.image_detail_1',
+            'required' => false,
+        ));
+        $builder->add('image_detail_1_deleted', 'checkbox', array(
+            'constraints' => array(
+            ),
+            'property_path' => false,
+            'label' => 'destination.image_detail_1_deleted',
+            'required' => false,
+        ));
+        $builder->add('image_detail_2', 'cungfoo_file', array(
+            'constraints' => array(
+            ),
+            'label' => 'destination.image_detail_2',
+            'required' => false,
+        ));
+        $builder->add('image_detail_2_deleted', 'checkbox', array(
+            'constraints' => array(
+            ),
+            'property_path' => false,
+            'label' => 'destination.image_detail_2_deleted',
+            'required' => false,
+        ));
         $builder->add('sortable_rank', 'integer', array(
             'constraints' => array(
             ),
@@ -62,12 +88,34 @@ class BaseDestinationType extends AppAwareType
             ),
             'label' => 'destination.destinationI18ns',
             'columns' => array(
+                'slug' => array(
+                    'required' => false,
+                    'label' => 'destination.slug',
+                    'type' => 'text',
+                    'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+                ),
                 'name' => array(
                     'required' => false,
                     'label' => 'destination.name',
                     'type' => 'text',
                     'constraints' => array(
                         new Assert\NotBlank(),
+                    ),
+                ),
+                'introduction' => array(
+                    'required' => false,
+                    'label' => 'destination.introduction',
+                    'type' => 'text',
+                    'constraints' => array(
+                    ),
+                ),
+                'description' => array(
+                    'required' => false,
+                    'label' => 'destination.description',
+                    'type' => 'textarea',
+                    'constraints' => array(
                     ),
                 ),
             ),
