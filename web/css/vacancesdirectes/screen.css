@@ -3024,8 +3024,7 @@ input[type="radio"] {
 
   /* Centrer verticalement une image de taille variable */
 
-  background-image: url("../../images/vacancesdirectes/common/sprites/stain.png");
-  background-repeat: no-repeat;
+  background: url("../../images/vacancesdirectes/common/sprites/spriteSplash1.png") no-repeat 0 0 transparent;
   text-align: center;
   font-size: 10px;
   color: #ffffff;
@@ -3055,7 +3054,7 @@ input[type="radio"] {
   margin-bottom: 90px;
 }
 .element.promo .stain {
-  background-position: 0 -90px;
+  background-image: url("../../images/vacancesdirectes/common/sprites/spriteSplash2.png");
   height: 70px;
   /* Centrer verticalement une ligne de texte */
 
@@ -7522,6 +7521,9 @@ aside *.placeholder {
   position: relative;
   z-index: 1;
   margin: -70px 0 0 0;
+}
+.proposal table {
+  width: 100%;
 }
 .proposal .proposalDates {
   font: bold 18px/21px Arial, Helvetica, sans-serif;
