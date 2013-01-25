@@ -8,6 +8,8 @@
         {{ "seo.title.pays" | trans ({'%pays%': item}) }}
     {% elseif destination == constant("VacancesDirectes\\Controller\\DestinationController::DESTINATION_VILLE") %}
         {{ "seo.title.ville" | trans ({'%ville%': item}) }}
+    {% elseif destination == constant("VacancesDirectes\\Controller\\DestinationController::DESTINATION_DESTINATION") %}
+        {{ "seo.title.destination" | trans ({'%destination%': item}) }}
     {% endif %}
 {% endspaceless %}
 {% endblock %}
@@ -27,11 +29,6 @@
 {% block canonical %}<link rel="canonical" href="{{ urlCanonical }}" />{% endblock %}
 
 {% block topLeftColumn %}
-
-    {# Entête ; Lien retour et fil d'ariane ; pour l'instant le fil d'ariane n'est pas dynamisé #}
-    {# le lien retour pointera à terme sur les pages de listing
-    <a class="bt gris left" href="{{ app.request.headers.get('referer') }}">&lt; {{ "destination.retour" | trans }}</a>
-    #}
 
 {% include "Breadcrumbs/_breadcrumbs.twig" %}
 
@@ -56,7 +53,7 @@
 {% block bottomLeftColumn %}
 
     {# Bloc "Notre sélection de campings" #}
-    <h2 class="h3-like">{{ "destination.campings_selection_title" | trans }}</h2>
+    <h2 class="h3-like">{{ "destination.campings_selection_title" | trans }}{% if destination == constant("VacancesDirectes\\Controller\\DestinationController::DESTINATION_REGION") %} {{ 'destination.pas_cher' | trans }}{% endif %}</h2>
     {% include 'Listing/_listing.twig' %}
 
 {% endblock %}

@@ -28,7 +28,7 @@
         <span class="h2-like">{{ "destination.camping_title" | trans({'%ville%': etab.ville.name}) }} {%if hasBaignade %}{{ "seo.title.camping_suffix" | trans }}{% endif %}</span>
     </h1>
 
-    <p class="campSubtitle"><strong>{{ etab.capacite }} {{ "fiche.emplacements" | trans }} | {{ "fiche.ouvert_du" | trans }} {{ etab.openingDate | date('d/m/Y') }} au {{ etab.closingDate | date('d/m/Y') }}</strong></p>
+    <p class="campSubtitle"><strong>{% if etab.capacite %}{{ etab.capacite }} {{ "fiche.emplacements" | trans }} | {% endif %}{{ "fiche.ouvert_du" | trans }} {{ etab.openingDate | date('d/m/Y') }} au {{ etab.closingDate | date('d/m/Y') }}</strong></p>
 
     <p class="keywordsFiche">
         {% if etab.activites | length %}
@@ -114,7 +114,7 @@
             <dt><span>{{ "fiche.activites" | trans }}</span></dt>
             <dd class="activites"><ul>
                 {% for activite in etab.activites %}
-                    <li>{% if activite.imagePath != "." %}<img src="{{ asset(activite.imagePath) }}" alt="{{ activite.name }}">{% endif %}<span>{{ activite.name }}</span></span></li>
+                    <li>{% if activite.imagePath != "." and activite.imagePath != null %}<img src="{{ asset(activite.imagePath) }}" alt="{{ activite.name }}">{% endif %}<span>{{ activite.name }}</span></li>
                 {% endfor %}
             </ul></dd>
         </dl>
@@ -134,7 +134,7 @@
             <dt><span>{{ "fiche.services_complementaires" | trans }}</span></dt>
             <dd class="services"><ul>
                 {% for serviceComplementaire in etab.serviceComplementaires %}
-                    <li>{% if serviceComplementaire.imagePath != "." %}<img src="{{ asset(serviceComplementaire.imagePath) }}" alt="{{ serviceComplementaire.name }}">{% endif %}<span>{{ serviceComplementaire.name }}</span></span></li>
+                    <li>{% if serviceComplementaire.imagePath != "." and serviceComplementaire.imagePath != null %}<img src="{{ asset(serviceComplementaire.imagePath) }}" alt="{{ serviceComplementaire.name }}">{% endif %}<span>{{ serviceComplementaire.name }}</span></li>
                 {% endfor %}
             </ul></dd>
         </dl>

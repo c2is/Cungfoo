@@ -182,6 +182,7 @@ eof
             {selectivizr: templatePath+"vendor/selectivizr-min.js"}, // extend css selectors for IE
             {jqPlugins: templatePath+"js/vacancesdirectes/plugins.js"},
             {datepicker: templatePath+"js/vacancesdirectes/jquery-ui-1.9.2.custom.min.js"},
+            {iframeFrontJS: templatePath+"js/vacancesdirectes/iframe/front.js"},
             {iframeJS: templatePath+"js/vacancesdirectes/%s.js"}
         );
     </script>

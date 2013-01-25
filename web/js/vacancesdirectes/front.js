@@ -726,9 +726,9 @@ $(function() {
             return false;
         });
         $('#datepickerCalendar .bt').bind('click', function(){
-            $('#datepickerCalendar').stop().css({height: 0}, function(){
-                $('#datepickerField').removeClass('opened');
-            });
+            $('#datepickerCalendar').stop().css({height: 0}).removeClass('opened');
+            $('#datepickerField').removeClass('opened');
+            $('#datepickerCalendar').removeClass('opened');
             state = !state;
             return false;
         });
@@ -777,7 +777,8 @@ $(function() {
                 preselectedDates.push(item.value);
             });
             //console.log(preselectedDates);
-            $('#datepickerInput').val('Du ' + preselectedDates.join(' au '));
+            console.log(preselectedDates);
+            $('#datepickerInput').val('Du ' + preselectedDates[0] + ' au ' + preselectedDates[1]);
             $('#datepickerCalendar').DatePickerSetDate(preselectedFDates);
         }
 
@@ -919,9 +920,9 @@ $(function() {
             return false;
         });
         $('#datepickerCalendar .bt').bind('click', function(){
-            $('#datepickerCalendar').stop().css({height: 0}, function(){
-                $('#datepickerField').removeClass('opened').next().removeClass('opened');
-            });
+            $('#datepickerCalendar').stop().css({height: 0}).removeClass('opened');
+            $('#datepickerField').removeClass('opened');
+            $('#datepickerCalendar').removeClass('opened');
             state = !state;
             return false;
         });

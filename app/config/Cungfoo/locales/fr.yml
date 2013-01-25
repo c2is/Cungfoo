@@ -103,6 +103,15 @@ destination.active: Actif
 destination.destinationI18ns: ""
 destination.sortable_rank: "Ordre"
 destination.sortable.rank: "Ordre"
+destination.slug: "Slug"
+destination.introduction: "Introduction"
+destination.description: "Description"
+destination.image_detail_1: "Image 1"
+destination.image.detail.1: "Image 1"
+destination.image_detail_1_deleted: "Supprimer l'image 1"
+destination.image_detail_2: "Image 2"
+destination.image.detail.2: "Image 2"
+destination.image_detail_2_deleted: "Supprimer l'image 2"
 
 categorie.crud.create: Création d'une catégorie
 categorie.crud.list: Liste catégories

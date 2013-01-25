@@ -47,6 +47,15 @@ class DestinationType extends BaseDestinationType
                     )
                 ),
                 array(
+                    'title'         => 'crud.tab.medias',
+                    'content'       => array(
+                        'image_detail_1',
+                        'image_detail_1_deleted',
+                        'image_detail_2',
+                        'image_detail_2_deleted',
+                    )
+                ),
+                array(
                     'title'         => 'crud.tab.parameters',
                     'content'       => array(
                         'sortable_rank',

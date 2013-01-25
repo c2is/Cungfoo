@@ -702,7 +702,7 @@ abstract class BaseThematiqueQuery extends ModelCriteria
         return $this->addAscendingOrderByColumn(ThematiquePeer::CREATED_AT);
     }
     // active behavior
-
+    
     /**
      * return only active objects
      *
@@ -711,7 +711,7 @@ abstract class BaseThematiqueQuery extends ModelCriteria
     public function findActive($con = null)
     {
         $this->filterByActive(true);
-
+    
         return parent::find($con);
     }
 
@@ -773,11 +773,11 @@ abstract class BaseThematiqueQuery extends ModelCriteria
     }
 
     // crudable behavior
-
+    
     public function filterByTerm($term)
     {
         $term = '%' . $term . '%';
-
+    
         return $this
             ->_or()
             ->useI18nQuery()

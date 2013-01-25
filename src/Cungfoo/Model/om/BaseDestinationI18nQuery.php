@@ -24,11 +24,17 @@ use Cungfoo\Model\DestinationI18nQuery;
  *
  * @method DestinationI18nQuery orderById($order = Criteria::ASC) Order by the id column
  * @method DestinationI18nQuery orderByLocale($order = Criteria::ASC) Order by the locale column
+ * @method DestinationI18nQuery orderBySlug($order = Criteria::ASC) Order by the slug column
  * @method DestinationI18nQuery orderByName($order = Criteria::ASC) Order by the name column
+ * @method DestinationI18nQuery orderByIntroduction($order = Criteria::ASC) Order by the introduction column
+ * @method DestinationI18nQuery orderByDescription($order = Criteria::ASC) Order by the description column
  *
  * @method DestinationI18nQuery groupById() Group by the id column
  * @method DestinationI18nQuery groupByLocale() Group by the locale column
+ * @method DestinationI18nQuery groupBySlug() Group by the slug column
  * @method DestinationI18nQuery groupByName() Group by the name column
+ * @method DestinationI18nQuery groupByIntroduction() Group by the introduction column
+ * @method DestinationI18nQuery groupByDescription() Group by the description column
  *
  * @method DestinationI18nQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method DestinationI18nQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -43,11 +49,17 @@ use Cungfoo\Model\DestinationI18nQuery;
  *
  * @method DestinationI18n findOneById(int $id) Return the first DestinationI18n filtered by the id column
  * @method DestinationI18n findOneByLocale(string $locale) Return the first DestinationI18n filtered by the locale column
+ * @method DestinationI18n findOneBySlug(string $slug) Return the first DestinationI18n filtered by the slug column
  * @method DestinationI18n findOneByName(string $name) Return the first DestinationI18n filtered by the name column
+ * @method DestinationI18n findOneByIntroduction(string $introduction) Return the first DestinationI18n filtered by the introduction column
+ * @method DestinationI18n findOneByDescription(string $description) Return the first DestinationI18n filtered by the description column
  *
  * @method array findById(int $id) Return DestinationI18n objects filtered by the id column
  * @method array findByLocale(string $locale) Return DestinationI18n objects filtered by the locale column
+ * @method array findBySlug(string $slug) Return DestinationI18n objects filtered by the slug column
  * @method array findByName(string $name) Return DestinationI18n objects filtered by the name column
+ * @method array findByIntroduction(string $introduction) Return DestinationI18n objects filtered by the introduction column
+ * @method array findByDescription(string $description) Return DestinationI18n objects filtered by the description column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -138,7 +150,7 @@ abstract class BaseDestinationI18nQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `locale`, `name` FROM `destination_i18n` WHERE `id` = :p0 AND `locale` = :p1';
+        $sql = 'SELECT `id`, `locale`, `slug`, `name`, `introduction`, `description` FROM `destination_i18n` WHERE `id` = :p0 AND `locale` = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
@@ -298,6 +310,35 @@ abstract class BaseDestinationI18nQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query on the slug column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterBySlug('fooValue');   // WHERE slug = 'fooValue'
+     * $query->filterBySlug('%fooValue%'); // WHERE slug LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $slug The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return DestinationI18nQuery The current query, for fluid interface
+     */
+    public function filterBySlug($slug = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($slug)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $slug)) {
+                $slug = str_replace('*', '%', $slug);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(DestinationI18nPeer::SLUG, $slug, $comparison);
+    }
+
+    /**
      * Filter the query on the name column
      *
      * Example usage:
@@ -324,6 +365,64 @@ abstract class BaseDestinationI18nQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(DestinationI18nPeer::NAME, $name, $comparison);
+    }
+
+    /**
+     * Filter the query on the introduction column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByIntroduction('fooValue');   // WHERE introduction = 'fooValue'
+     * $query->filterByIntroduction('%fooValue%'); // WHERE introduction LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $introduction The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return DestinationI18nQuery The current query, for fluid interface
+     */
+    public function filterByIntroduction($introduction = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($introduction)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $introduction)) {
+                $introduction = str_replace('*', '%', $introduction);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(DestinationI18nPeer::INTRODUCTION, $introduction, $comparison);
+    }
+
+    /**
+     * Filter the query on the description column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByDescription('fooValue');   // WHERE description = 'fooValue'
+     * $query->filterByDescription('%fooValue%'); // WHERE description LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $description The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return DestinationI18nQuery The current query, for fluid interface
+     */
+    public function filterByDescription($description = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($description)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $description)) {
+                $description = str_replace('*', '%', $description);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(DestinationI18nPeer::DESCRIPTION, $description, $comparison);
     }
 
     /**
