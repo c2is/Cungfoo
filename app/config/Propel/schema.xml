@@ -88,6 +88,7 @@
             <parameter name="crud_prefix" value="/etablissement" />
             <parameter name="crud_search" value="name, title" />
             <parameter name="crud_type_file" value="plan_path, vignette" />
+            <parameter name="crud_type_richtext" value="description" />
         </behavior>
     </table>
 

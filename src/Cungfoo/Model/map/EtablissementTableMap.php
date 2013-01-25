@@ -140,6 +140,7 @@ class EtablissementTableMap extends TableMap
   'crud_form' => NULL,
   'crud_type_file' => 'plan_path, vignette',
   'crud_search' => 'name, title',
+  'crud_type_richtext' => 'description',
 ),
         );
     } // getBehaviors()

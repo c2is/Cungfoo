@@ -317,7 +317,7 @@ class BaseEtablissementType extends AppAwareType
                 'description' => array(
                     'required' => false,
                     'label' => 'etablissement.description',
-                    'type' => 'textarea',
+                    'type' => 'textrich',
                     'constraints' => array(
                     ),
                 ),
