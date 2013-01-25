@@ -590,29 +590,29 @@
     22_de:
         Id: 22
         Locale: de
-        Slug: albaron-arles-30
-        Name: 'Albaron/Arles (30)'
+        Slug: albaron-arles-13
+        Name: 'Albaron/Arles (13)'
         Introduction: null
         Description: null
     22_en:
         Id: 22
         Locale: en
-        Slug: albaron-arles-30
-        Name: 'Albaron/Arles (30)'
+        Slug: albaron-arles-13
+        Name: 'Albaron/Arles (13)'
         Introduction: null
         Description: null
     22_fr:
         Id: 22
         Locale: fr
-        Slug: albaron-arles-30
-        Name: 'Albaron/Arles (30)'
+        Slug: albaron-arles-13
+        Name: 'Albaron/Arles (13)'
         Introduction: null
         Description: null
     22_nl:
         Id: 22
         Locale: nl
-        Slug: albaron-arles-30
-        Name: 'Albaron/Arles (30)'
+        Slug: albaron-arles-13
+        Name: 'Albaron/Arles (13)'
         Introduction: null
         Description: null
     23_de:
@@ -1010,29 +1010,29 @@
     37_de:
         Id: 37
         Locale: de
-        Slug: sottomarina-di-chioggoa
-        Name: 'Sottomarina di Chioggoa'
+        Slug: sottomarina-di-chioggia
+        Name: 'Sottomarina di Chioggia'
         Introduction: null
         Description: null
     37_en:
         Id: 37
         Locale: en
-        Slug: sottomarina-di-chioggoa
-        Name: 'Sottomarina di Chioggoa'
+        Slug: sottomarina-di-chioggia
+        Name: 'Sottomarina di Chioggia'
         Introduction: null
         Description: null
     37_fr:
         Id: 37
         Locale: fr
-        Slug: sottomarina-di-chioggoa
-        Name: 'Sottomarina di Chioggoa'
+        Slug: sottomarina-di-chioggia
+        Name: 'Sottomarina di Chioggia'
         Introduction: null
         Description: null
     37_nl:
         Id: 37
         Locale: nl
-        Slug: sottomarina-di-chioggoa
-        Name: 'Sottomarina di Chioggoa'
+        Slug: sottomarina-di-chioggia
+        Name: 'Sottomarina di Chioggia'
         Introduction: null
         Description: null
     38_de:
@@ -2715,34 +2715,6 @@
         Name: 'Soulac (33)'
         Introduction: null
         Description: null
-    98_de:
-        Id: 98
-        Locale: de
-        Slug: lacanau-33
-        Name: 'Lacanau (33)'
-        Introduction: null
-        Description: null
-    98_en:
-        Id: 98
-        Locale: en
-        Slug: lacanau-33
-        Name: 'Lacanau (33)'
-        Introduction: null
-        Description: null
-    98_fr:
-        Id: 98
-        Locale: fr
-        Slug: lacanau-33
-        Name: 'Lacanau (33)'
-        Introduction: null
-        Description: null
-    98_nl:
-        Id: 98
-        Locale: nl
-        Slug: lacanau-33
-        Name: 'Lacanau (33)'
-        Introduction: null
-        Description: null
     99_de:
         Id: 99
         Locale: de
@@ -3110,29 +3082,29 @@
     112_de:
         Id: 112
         Locale: de
-        Slug: pyla-sur-mer
-        Name: 'Pyla sur Mer'
+        Slug: pyla-sur-mer-33
+        Name: 'Pyla sur Mer (33)'
         Introduction: null
         Description: null
     112_en:
         Id: 112
         Locale: en
-        Slug: pyla-sur-mer
-        Name: 'Pyla sur Mer'
+        Slug: pyla-sur-mer-33
+        Name: 'Pyla sur Mer (33)'
         Introduction: null
         Description: null
     112_fr:
         Id: 112
         Locale: fr
-        Slug: pyla-sur-mer
-        Name: 'Pyla sur Mer'
+        Slug: pyla-sur-mer-33
+        Name: 'Pyla sur Mer (33)'
         Introduction: null
         Description: null
     112_nl:
         Id: 112
         Locale: nl
-        Slug: pyla-sur-mer
-        Name: 'Pyla sur Mer'
+        Slug: pyla-sur-mer-33
+        Name: 'Pyla sur Mer (33)'
         Introduction: null
         Description: null
     113_de:
@@ -3670,29 +3642,29 @@
     132_de:
         Id: 132
         Locale: de
-        Slug: munster
-        Name: Munster
+        Slug: munster-68
+        Name: 'Munster (68)'
         Introduction: null
         Description: null
     132_en:
         Id: 132
         Locale: en
-        Slug: munster
-        Name: Munster
+        Slug: munster-68
+        Name: 'Munster (68)'
         Introduction: null
         Description: null
     132_fr:
         Id: 132
         Locale: fr
-        Slug: munster
-        Name: Munster
+        Slug: munster-68
+        Name: 'Munster (68)'
         Introduction: null
         Description: null
     132_nl:
         Id: 132
         Locale: nl
-        Slug: munster
-        Name: Munster
+        Slug: munster-68
+        Name: 'Munster (68)'
         Introduction: null
         Description: null
     133_de:
@@ -4062,29 +4034,29 @@
     146_de:
         Id: 146
         Locale: de
-        Slug: st-aman-des-cots-12
-        Name: 'St Aman des Côts (12)'
+        Slug: st-amans-des-cots-12
+        Name: 'St Amans des Côts (12)'
         Introduction: null
         Description: null
     146_en:
         Id: 146
         Locale: en
-        Slug: st-aman-des-cots-12
-        Name: 'St Aman des Côts (12)'
+        Slug: st-amans-des-cots-12
+        Name: 'St Amans des Côts (12)'
         Introduction: null
         Description: null
     146_fr:
         Id: 146
         Locale: fr
-        Slug: st-aman-des-cots-12
-        Name: 'St Aman des Côts (12)'
+        Slug: st-amans-des-cots-12
+        Name: 'St Amans des Côts (12)'
         Introduction: null
         Description: null
     146_nl:
         Id: 146
         Locale: nl
-        Slug: st-aman-des-cots-12
-        Name: 'St Aman des Côts (12)'
+        Slug: st-amans-des-cots-12
+        Name: 'St Amans des Côts (12)'
         Introduction: null
         Description: null
     147_de:
@@ -4258,29 +4230,29 @@
     153_de:
         Id: 153
         Locale: de
-        Slug: la-roquette-d-antheron-13
-        Name: 'La Roquette d''Anthéron (13)'
+        Slug: la-roque-d-antheron-13
+        Name: 'La Roque d''Anthéron (13)'
         Introduction: null
         Description: null
     153_en:
         Id: 153
         Locale: en
-        Slug: la-roquette-d-antheron-13
-        Name: 'La Roquette d''Anthéron (13)'
+        Slug: la-roque-d-antheron-13
+        Name: 'La Roque d''Anthéron (13)'
         Introduction: null
         Description: null
     153_fr:
         Id: 153
         Locale: fr
-        Slug: la-roquette-d-antheron-13
-        Name: 'La Roquette d''Anthéron (13)'
+        Slug: la-roque-d-antheron-13
+        Name: 'La Roque d''Anthéron (13)'
         Introduction: null
         Description: null
     153_nl:
         Id: 153
         Locale: nl
-        Slug: la-roquette-d-antheron-13
-        Name: 'La Roquette d''Anthéron (13)'
+        Slug: la-roque-d-antheron-13
+        Name: 'La Roque d''Anthéron (13)'
         Introduction: null
         Description: null
     154_de:
@@ -4757,5 +4729,19 @@
         Locale: nl
         Slug: pres-du-verdon-04
         Name: 'Près du Verdon (04)'
+        Introduction: null
+        Description: null
+    171_de:
+        Id: 171
+        Locale: de
+        Slug: st-maurice-d-ardeche-07
+        Name: 'St Maurice d''Ardèche (07)'
+        Introduction: null
+        Description: null
+    171_fr:
+        Id: 171
+        Locale: fr
+        Slug: st-maurice-d-ardeche-07
+        Name: 'St Maurice d''Ardèche (07)'
         Introduction: null
         Description: null

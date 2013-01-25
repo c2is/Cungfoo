@@ -127,7 +127,7 @@
         Active: true
     22:
         Code: ALSA
-        RegionId: 14
+        RegionId: 26
         ImageDetail1: null
         ImageDetail2: null
         Active: true
@@ -271,7 +271,7 @@
         Active: true
     46:
         Code: BEYN
-        RegionId: 36
+        RegionId: 40
         ImageDetail1: null
         ImageDetail2: null
         Active: true
@@ -331,7 +331,7 @@
         Active: true
     56:
         Code: SOUI
-        RegionId: 34
+        RegionId: 2
         ImageDetail1: null
         ImageDetail2: null
         Active: true
@@ -367,7 +367,7 @@
         Active: true
     62:
         Code: CADS
-        RegionId: 34
+        RegionId: 17
         ImageDetail1: null
         ImageDetail2: null
         Active: true
@@ -433,7 +433,7 @@
         Active: true
     73:
         Code: PATO
-        RegionId: 5
+        RegionId: 41
         ImageDetail1: null
         ImageDetail2: null
         Active: true
@@ -451,7 +451,7 @@
         Active: true
     76:
         Code: THOU
-        RegionId: 34
+        RegionId: 15
         ImageDetail1: null
         ImageDetail2: null
         Active: true
@@ -535,25 +535,25 @@
         Active: true
     90:
         Code: BISC
-        RegionId: 35
+        RegionId: 6
         ImageDetail1: null
         ImageDetail2: null
         Active: true
     91:
         Code: AURE
-        RegionId: 35
+        RegionId: 6
         ImageDetail1: null
         ImageDetail2: null
         Active: true
     92:
         Code: VIEL
-        RegionId: 35
+        RegionId: 6
         ImageDetail1: null
         ImageDetail2: null
         Active: true
     93:
         Code: AZUR
-        RegionId: 35
+        RegionId: 6
         ImageDetail1: null
         ImageDetail2: null
         Active: true
@@ -577,43 +577,37 @@
         Active: true
     97:
         Code: SOUL
-        RegionId: 35
-        ImageDetail1: null
-        ImageDetail2: null
-        Active: true
-    98:
-        Code: LACA
-        RegionId: 35
+        RegionId: 4
         ImageDetail1: null
         ImageDetail2: null
         Active: true
     99:
         Code: SANG
-        RegionId: 35
+        RegionId: 6
         ImageDetail1: null
         ImageDetail2: null
         Active: true
     100:
         Code: MEZO
-        RegionId: 35
+        RegionId: 6
         ImageDetail1: null
         ImageDetail2: null
         Active: true
     101:
         Code: LIMI
-        RegionId: 35
+        RegionId: 6
         ImageDetail1: null
         ImageDetail2: null
         Active: true
     102:
         Code: MESS
-        RegionId: 35
+        RegionId: 6
         ImageDetail1: null
         ImageDetail2: null
         Active: true
     103:
         Code: SEIG
-        RegionId: 35
+        RegionId: 6
         ImageDetail1: null
         ImageDetail2: null
         Active: true
@@ -793,7 +787,7 @@
         Active: true
     133:
         Code: TRO
-        RegionId: 1
+        RegionId: 42
         ImageDetail1: null
         ImageDetail2: null
         Active: true
@@ -805,13 +799,13 @@
         Active: true
     135:
         Code: ONDR
-        RegionId: 35
+        RegionId: 6
         ImageDetail1: null
         ImageDetail2: null
         Active: true
     136:
         Code: MAR
-        RegionId: 5
+        RegionId: 41
         ImageDetail1: null
         ImageDetail2: null
         Active: true
@@ -871,7 +865,7 @@
         Active: true
     146:
         Code: AMAN
-        RegionId: 34
+        RegionId: 17
         ImageDetail1: null
         ImageDetail2: null
         Active: true
@@ -895,7 +889,7 @@
         Active: true
     150:
         Code: MTLV
-        RegionId: 35
+        RegionId: 4
         ImageDetail1: null
         ImageDetail2: null
         Active: true
@@ -979,7 +973,7 @@
         Active: true
     164:
         Code: LID
-        RegionId: 24
+        RegionId: 22
         ImageDetail1: null
         ImageDetail2: null
         Active: true
@@ -1016,6 +1010,12 @@
     170:
         Code: PRE
         RegionId: 26
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    171:
+        Code: MAUA
+        RegionId: 18
         ImageDetail1: null
         ImageDetail2: null
         Active: true

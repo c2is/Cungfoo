@@ -3574,7 +3574,7 @@
         OuvertureReception: 8h-10h/17-20h
         OuvertureCamping: 06/04/2013-29/09/2013
         ArriveesDeparts: 'Du 06/04/2013 au 06/07/2013 et du 31/08/2013 au 29/09/2013, tous les jours. Du 06/07/2013 au 31/08/2013, le samedi.'
-        Description: 'Le camping Ensoya vous accueille dans un cadre naturel, calme et ombragé à seulement 4km de la réserve africaine de Sigean et à 7 km des plages.  '
+        Description: 'Le camping Ensoya vous accueille dans un cadre naturel, calme et ombragé à seulement 4km de la réserve africaine de Sigean et à 7 km des plages.'
     112_nl:
         Id: 112
         Locale: nl
@@ -4886,7 +4886,7 @@
         OuvertureReception: 8h-11h/15h-20h
         OuvertureCamping: 18/05/2013-08/09/2013
         ArriveesDeparts: 'Du 18/05/2013 au 06/07/2013 et du 31/08/2013 au 08/09/2013, tous les jours sauf le mardi. Du 06/07/2013 au 31/08/2013, le mercredi et le samedi.'
-        Description: 'Au coeur du parc régional du Verdon, sur le plateau de Valensole, le camping le Coteau de la Marine vous propose des vacances sous le signe du bon air provençal. Senteurs, nature, détente, baignades et découvertes feront de vos vacances, un moment inoubliable !'
+        Description: 'Idéalement situé au cœur de la Provence, du Var et des gorges du Verdon, venez passer des vacances au camping Les Cadenières à Villecroze, où la nature est préservée, dans la région des plages de Fréjus, Saint Tropez et de la Côte d’Azur.'
     153_nl:
         Id: 153
         Locale: nl

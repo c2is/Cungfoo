@@ -17,8 +17,8 @@
         Id: 1
         Locale: fr
         Titre: 'Early booking'
-        Accroche: "Réservez tôt et profitez des promos\_!"
-        Lien: top-campings
+        Accroche: "Réservez tôt et profitez des promos basse saison\_!"
+        Lien: 'http://www.vacances-directes.com/bons-plans/camping-early-booking-vacances-de-paques/'
         TitreLien: Réserver
     1_nl:
         Id: 1
@@ -44,10 +44,10 @@
     2_fr:
         Id: 2
         Locale: fr
-        Titre: "+ de destinations\_!"
+        Titre: '+ de destinations'
         Accroche: "Découvrez plus de 50 nouveaux campings\_!"
-        Lien: '#'
-        TitreLien: Réserver
+        Lien: null
+        TitreLien: null
     2_nl:
         Id: 2
         Locale: nl
@@ -74,8 +74,8 @@
         Locale: fr
         Titre: 'Vacances d’été'
         Accroche: 'Choisissez dès maintenant votre camping !'
-        Lien: '#'
-        TitreLien: Réserver
+        Lien: null
+        TitreLien: null
     3_nl:
         Id: 3
         Locale: nl

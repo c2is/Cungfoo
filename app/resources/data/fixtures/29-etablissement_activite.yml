@@ -1,108 +1,6 @@
 \Cungfoo\Model\EtablissementActivite:
-    2_1:
-        EtablissementId: 2
-        ActiviteId: 1
-    3_1:
-        EtablissementId: 3
-        ActiviteId: 1
-    4_1:
-        EtablissementId: 4
-        ActiviteId: 1
-    5_1:
-        EtablissementId: 5
-        ActiviteId: 1
-    11_1:
-        EtablissementId: 11
-        ActiviteId: 1
-    12_1:
-        EtablissementId: 12
-        ActiviteId: 1
-    13_1:
-        EtablissementId: 13
-        ActiviteId: 1
-    21_1:
-        EtablissementId: 21
-        ActiviteId: 1
-    33_1:
-        EtablissementId: 33
-        ActiviteId: 1
-    34_1:
-        EtablissementId: 34
-        ActiviteId: 1
-    37_1:
-        EtablissementId: 37
-        ActiviteId: 1
     82_1:
         EtablissementId: 82
-        ActiviteId: 1
-    132_1:
-        EtablissementId: 132
-        ActiviteId: 1
-    141_1:
-        EtablissementId: 141
-        ActiviteId: 1
-    144_1:
-        EtablissementId: 144
-        ActiviteId: 1
-    145_1:
-        EtablissementId: 145
-        ActiviteId: 1
-    146_1:
-        EtablissementId: 146
-        ActiviteId: 1
-    147_1:
-        EtablissementId: 147
-        ActiviteId: 1
-    149_1:
-        EtablissementId: 149
-        ActiviteId: 1
-    151_1:
-        EtablissementId: 151
-        ActiviteId: 1
-    153_1:
-        EtablissementId: 153
-        ActiviteId: 1
-    154_1:
-        EtablissementId: 154
-        ActiviteId: 1
-    193_1:
-        EtablissementId: 193
-        ActiviteId: 1
-    195_1:
-        EtablissementId: 195
-        ActiviteId: 1
-    199_1:
-        EtablissementId: 199
-        ActiviteId: 1
-    200_1:
-        EtablissementId: 200
-        ActiviteId: 1
-    222_1:
-        EtablissementId: 222
-        ActiviteId: 1
-    225_1:
-        EtablissementId: 225
-        ActiviteId: 1
-    226_1:
-        EtablissementId: 226
-        ActiviteId: 1
-    230_1:
-        EtablissementId: 230
-        ActiviteId: 1
-    235_1:
-        EtablissementId: 235
-        ActiviteId: 1
-    238_1:
-        EtablissementId: 238
-        ActiviteId: 1
-    240_1:
-        EtablissementId: 240
-        ActiviteId: 1
-    241_1:
-        EtablissementId: 241
-        ActiviteId: 1
-    242_1:
-        EtablissementId: 242
         ActiviteId: 1
     1_2:
         EtablissementId: 1
@@ -125,9 +23,6 @@
     10_2:
         EtablissementId: 10
         ActiviteId: 2
-    11_2:
-        EtablissementId: 11
-        ActiviteId: 2
     13_2:
         EtablissementId: 13
         ActiviteId: 2
@@ -143,14 +38,8 @@
     17_2:
         EtablissementId: 17
         ActiviteId: 2
-    18_2:
-        EtablissementId: 18
-        ActiviteId: 2
     19_2:
         EtablissementId: 19
-        ActiviteId: 2
-    20_2:
-        EtablissementId: 20
         ActiviteId: 2
     21_2:
         EtablissementId: 21
@@ -346,6 +235,9 @@
         ActiviteId: 2
     141_2:
         EtablissementId: 141
+        ActiviteId: 2
+    142_2:
+        EtablissementId: 142
         ActiviteId: 2
     146_2:
         EtablissementId: 146
@@ -605,105 +497,6 @@
     244_2:
         EtablissementId: 244
         ActiviteId: 2
-    2_3:
-        EtablissementId: 2
-        ActiviteId: 3
-    3_3:
-        EtablissementId: 3
-        ActiviteId: 3
-    4_3:
-        EtablissementId: 4
-        ActiviteId: 3
-    5_3:
-        EtablissementId: 5
-        ActiviteId: 3
-    11_3:
-        EtablissementId: 11
-        ActiviteId: 3
-    12_3:
-        EtablissementId: 12
-        ActiviteId: 3
-    13_3:
-        EtablissementId: 13
-        ActiviteId: 3
-    21_3:
-        EtablissementId: 21
-        ActiviteId: 3
-    33_3:
-        EtablissementId: 33
-        ActiviteId: 3
-    34_3:
-        EtablissementId: 34
-        ActiviteId: 3
-    37_3:
-        EtablissementId: 37
-        ActiviteId: 3
-    132_3:
-        EtablissementId: 132
-        ActiviteId: 3
-    141_3:
-        EtablissementId: 141
-        ActiviteId: 3
-    144_3:
-        EtablissementId: 144
-        ActiviteId: 3
-    145_3:
-        EtablissementId: 145
-        ActiviteId: 3
-    146_3:
-        EtablissementId: 146
-        ActiviteId: 3
-    147_3:
-        EtablissementId: 147
-        ActiviteId: 3
-    149_3:
-        EtablissementId: 149
-        ActiviteId: 3
-    151_3:
-        EtablissementId: 151
-        ActiviteId: 3
-    152_3:
-        EtablissementId: 152
-        ActiviteId: 3
-    153_3:
-        EtablissementId: 153
-        ActiviteId: 3
-    154_3:
-        EtablissementId: 154
-        ActiviteId: 3
-    193_3:
-        EtablissementId: 193
-        ActiviteId: 3
-    195_3:
-        EtablissementId: 195
-        ActiviteId: 3
-    199_3:
-        EtablissementId: 199
-        ActiviteId: 3
-    200_3:
-        EtablissementId: 200
-        ActiviteId: 3
-    222_3:
-        EtablissementId: 222
-        ActiviteId: 3
-    225_3:
-        EtablissementId: 225
-        ActiviteId: 3
-    230_3:
-        EtablissementId: 230
-        ActiviteId: 3
-    235_3:
-        EtablissementId: 235
-        ActiviteId: 3
-    238_3:
-        EtablissementId: 238
-        ActiviteId: 3
-    241_3:
-        EtablissementId: 241
-        ActiviteId: 3
-    242_3:
-        EtablissementId: 242
-        ActiviteId: 3
     3_4:
         EtablissementId: 3
         ActiviteId: 4
@@ -778,12 +571,6 @@
         ActiviteId: 4
     130_4:
         EtablissementId: 130
-        ActiviteId: 4
-    136_4:
-        EtablissementId: 136
-        ActiviteId: 4
-    137_4:
-        EtablissementId: 137
         ActiviteId: 4
     147_4:
         EtablissementId: 147
@@ -1124,9 +911,6 @@
     237_5:
         EtablissementId: 237
         ActiviteId: 5
-    238_5:
-        EtablissementId: 238
-        ActiviteId: 5
     239_5:
         EtablissementId: 239
         ActiviteId: 5
@@ -1142,17 +926,11 @@
     4_6:
         EtablissementId: 4
         ActiviteId: 6
-    5_6:
-        EtablissementId: 5
-        ActiviteId: 6
     6_6:
         EtablissementId: 6
         ActiviteId: 6
     11_6:
         EtablissementId: 11
-        ActiviteId: 6
-    15_6:
-        EtablissementId: 15
         ActiviteId: 6
     17_6:
         EtablissementId: 17
@@ -1168,9 +946,6 @@
         ActiviteId: 6
     30_6:
         EtablissementId: 30
-        ActiviteId: 6
-    31_6:
-        EtablissementId: 31
         ActiviteId: 6
     32_6:
         EtablissementId: 32
@@ -1355,12 +1130,6 @@
     34_7:
         EtablissementId: 34
         ActiviteId: 7
-    39_7:
-        EtablissementId: 39
-        ActiviteId: 7
-    79_7:
-        EtablissementId: 79
-        ActiviteId: 7
     82_7:
         EtablissementId: 82
         ActiviteId: 7
@@ -1376,9 +1145,6 @@
     98_7:
         EtablissementId: 98
         ActiviteId: 7
-    107_7:
-        EtablissementId: 107
-        ActiviteId: 7
     120_7:
         EtablissementId: 120
         ActiviteId: 7
@@ -1387,12 +1153,6 @@
         ActiviteId: 7
     124_7:
         EtablissementId: 124
-        ActiviteId: 7
-    125_7:
-        EtablissementId: 125
-        ActiviteId: 7
-    128_7:
-        EtablissementId: 128
         ActiviteId: 7
     143_7:
         EtablissementId: 143
@@ -1417,9 +1177,6 @@
         ActiviteId: 7
     191_7:
         EtablissementId: 191
-        ActiviteId: 7
-    195_7:
-        EtablissementId: 195
         ActiviteId: 7
     200_7:
         EtablissementId: 200
@@ -1532,9 +1289,6 @@
     94_8:
         EtablissementId: 94
         ActiviteId: 8
-    106_8:
-        EtablissementId: 106
-        ActiviteId: 8
     124_8:
         EtablissementId: 124
         ActiviteId: 8
@@ -1550,14 +1304,14 @@
     133_8:
         EtablissementId: 133
         ActiviteId: 8
-    137_8:
-        EtablissementId: 137
-        ActiviteId: 8
     138_8:
         EtablissementId: 138
         ActiviteId: 8
     139_8:
         EtablissementId: 139
+        ActiviteId: 8
+    142_8:
+        EtablissementId: 142
         ActiviteId: 8
     143_8:
         EtablissementId: 143
@@ -1571,17 +1325,11 @@
     147_8:
         EtablissementId: 147
         ActiviteId: 8
-    150_8:
-        EtablissementId: 150
-        ActiviteId: 8
     151_8:
         EtablissementId: 151
         ActiviteId: 8
     153_8:
         EtablissementId: 153
-        ActiviteId: 8
-    154_8:
-        EtablissementId: 154
         ActiviteId: 8
     157_8:
         EtablissementId: 157
@@ -1642,9 +1390,6 @@
         ActiviteId: 8
     193_8:
         EtablissementId: 193
-        ActiviteId: 8
-    194_8:
-        EtablissementId: 194
         ActiviteId: 8
     195_8:
         EtablissementId: 195
@@ -2039,9 +1784,6 @@
     183_9:
         EtablissementId: 183
         ActiviteId: 9
-    185_9:
-        EtablissementId: 185
-        ActiviteId: 9
     186_9:
         EtablissementId: 186
         ActiviteId: 9
@@ -2071,9 +1813,6 @@
         ActiviteId: 9
     195_9:
         EtablissementId: 195
-        ActiviteId: 9
-    196_9:
-        EtablissementId: 196
         ActiviteId: 9
     197_9:
         EtablissementId: 197
@@ -2225,9 +1964,6 @@
     104_10:
         EtablissementId: 104
         ActiviteId: 10
-    107_10:
-        EtablissementId: 107
-        ActiviteId: 10
     109_10:
         EtablissementId: 109
         ActiviteId: 10
@@ -2254,9 +1990,6 @@
         ActiviteId: 10
     141_10:
         EtablissementId: 141
-        ActiviteId: 10
-    157_10:
-        EtablissementId: 157
         ActiviteId: 10
     181_10:
         EtablissementId: 181
@@ -2447,9 +2180,6 @@
     136_11:
         EtablissementId: 136
         ActiviteId: 11
-    137_11:
-        EtablissementId: 137
-        ActiviteId: 11
     138_11:
         EtablissementId: 138
         ActiviteId: 11
@@ -2509,9 +2239,6 @@
         ActiviteId: 11
     172_11:
         EtablissementId: 172
-        ActiviteId: 11
-    173_11:
-        EtablissementId: 173
         ActiviteId: 11
     174_11:
         EtablissementId: 174
@@ -2596,9 +2323,6 @@
         ActiviteId: 11
     203_11:
         EtablissementId: 203
-        ActiviteId: 11
-    204_11:
-        EtablissementId: 204
         ActiviteId: 11
     205_11:
         EtablissementId: 205
@@ -2743,6 +2467,9 @@
         ActiviteId: 12
     140_12:
         EtablissementId: 140
+        ActiviteId: 12
+    142_12:
+        EtablissementId: 142
         ActiviteId: 12
     155_12:
         EtablissementId: 155
