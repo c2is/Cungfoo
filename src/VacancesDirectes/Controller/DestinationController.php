@@ -337,8 +337,11 @@ class DestinationController implements ControllerProviderInterface
         }
         else
         {
+            $minimumPriceType = $camping->getMinimumPriceType();
             $blocPrix['proposal_key'] = false;
-            $blocPrix['adult_price_without_discounts'] = $camping->getMinimumPrice();
+            $blocPrix['start_date']                    = $minimumPriceType->getMinimumPriceStartDate('d/m/Y');
+            $blocPrix['end_date']                      = $minimumPriceType->getMinimumPriceEndDate('d/m/Y');
+            $blocPrix['adult_price_without_discounts'] = $minimumPriceType->getMinimumPrice();
         }
         // fin de la définition des informations relatives au bloc prix de la fiche camping
 

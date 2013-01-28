@@ -9,6 +9,8 @@
     </p>
     {% if blocPrix.proposal_key %}
     <p class="proposalType">{{ blocPrix.room_type_label }}</p>
+    {% else %}
+    <p class="proposalType">{{ "listing.du" | trans }} {{ blocPrix.start_date }} {{ "listing.au" | trans }} {{ blocPrix.end_date }}</p>
     {% endif %}
 
     <div class="stain cover">
@@ -33,9 +35,9 @@
     </div>
 
     {% if blocPrix.proposal_key %}
-    <a class="bt sombre big ib" href="{{ path('couloir_detail_sejour', {'proposalKey': blocPrix.proposal_key}) }}">Réserver</a>
+    <a class="bt sombre big ib" href="{{ path('couloir_detail_sejour', {'proposalKey': blocPrix.proposal_key}) }}">{{ "general.reserver"|trans }}</a>
     {% else %}
-    <a class="bt sombre big ib goto" href="#frameResalys">Réserver</a>
+    <a class="bt sombre big ib goto" href="#frameResalys">{{ "general.profite"|trans }}</a>
     {% endif %}
 </div>
 {% endif %}

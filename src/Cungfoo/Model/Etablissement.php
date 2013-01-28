@@ -130,6 +130,39 @@ class Etablissement extends BaseEtablissement
          ;
     }
 
+    public function getMinimumPriceType()
+    {
+        $minimalPrice = 9999;
+
+        foreach ($this->getEtablissementTypeHebergements() as $type)
+        {
+            $min = $type->getMinimumPrice();
+
+            if ($min != '')
+            {
+                if (is_numeric($min))
+                {
+                    if ($min < $minimalPrice)
+                    {
+                        $minimalPrice = $min;
+                    }
+                }
+            }
+        }
+
+        if ($minimalPrice == 9999)
+        {
+            return null;
+        }
+
+        return \Cungfoo\Model\EtablissementTypeHebergementQuery::create()
+             ->filterByEtablissementId($this->getId())
+             ->filterByMinimumPrice($minimalPrice)
+             ->addAscendingOrderByColumn('minimum_price')
+             ->findOne()
+         ;
+    }
+
     public function getRandomPoi($number)
     {
         return PointInteretPeer::getForEtablissement($this, PointInteretPeer::RANDOM_SORT, $number);
@@ -181,12 +214,12 @@ class Etablissement extends BaseEtablissement
         $aSituations = array();
 
         $situations = $this->getSituationGeographiques();
-        foreach($situations as $situation)
+        foreach ($situations as $situation)
         {
             $aSituations[] = $situation->getCode();
         }
 
-        return implode(",",$aSituations);
+        return implode(",", $aSituations);
     }
 
     public function getBaignade( PropelPDO $con = null)
@@ -194,12 +227,12 @@ class Etablissement extends BaseEtablissement
         $aBaignades = array();
 
         $baignades = $this->getBaignades();
-        foreach($baignades as $baignade)
+        foreach ($baignades as $baignade)
         {
             $aBaignades[] = $baignade->getCode();
         }
 
-        return implode(",",$aBaignades);
+        return implode(",", $aBaignades);
     }
 
     public function getActivite( PropelPDO $con = null)
@@ -207,12 +240,12 @@ class Etablissement extends BaseEtablissement
         $aActivites = array();
 
         $activites = $this->getActivites();
-        foreach($activites as $activite)
+        foreach ($activites as $activite)
         {
             $aActivites[] = $activite->getCode();
         }
 
-        return implode(",",$aActivites);
+        return implode(",", $aActivites);
     }
 
     public function getService( PropelPDO $con = null)
@@ -220,12 +253,12 @@ class Etablissement extends BaseEtablissement
         $aServices = array();
 
         $services = $this->getServiceComplementaires();
-        foreach($services as $service)
+        foreach ($services as $service)
         {
             $aServices[] = $service->getCode();
         }
 
-        return implode(",",$aServices);
+        return implode(",", $aServices);
     }
 
     public function getThematique( PropelPDO $con = null)
@@ -233,11 +266,11 @@ class Etablissement extends BaseEtablissement
         $aThematiques = array();
 
         $thematiques = $this->getThematiques();
-        foreach($thematiques as $thematique)
+        foreach ($thematiques as $thematique)
         {
             $aThematiques[] = $thematique->getCode();
         }
 
-        return implode(",",$aThematiques);
+        return implode(",", $aThematiques);
     }
 }
