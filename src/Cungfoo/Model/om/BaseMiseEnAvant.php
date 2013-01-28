@@ -1853,7 +1853,7 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
     }
 
     // active behavior
-    
+
     /**
      * return true is the object is active
      *
@@ -2060,7 +2060,7 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
     }
 
     // crudable behavior
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -2075,19 +2075,19 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
         {
             $this->resetModified(MiseEnAvantPeer::IMAGE_FOND_PATH);
         }
-    
+
         $this->uploadImageFondPath($form);
-        
+
         if (!$form['illustration_path_deleted']->getData())
         {
             $this->resetModified(MiseEnAvantPeer::ILLUSTRATION_PATH);
         }
-    
+
         $this->uploadIllustrationPath($form);
-        
+
         return $this->save($con);
     }
-    
+
     /**
      * @return string
      */
@@ -2095,7 +2095,7 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
     {
         return 'uploads/mise_en_avants';
     }
-    
+
     /**
      * @return string
      */
@@ -2103,7 +2103,7 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -2112,12 +2112,14 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
     {
         if (!file_exists($this->getUploadRootDir() . '/' . $form['image_fond_path']->getData()))
         {
-            $image = uniqid().'.'.$form['image_fond_path']->getData()->guessExtension();
-            $form['image_fond_path']->getData()->move($this->getUploadRootDir(), $image);
-            $this->setImageFondPath($this->getUploadDir() . '/' . $image);
+            if ($form['image_fond_path']->getData()) {
+                $image = uniqid().'.'.$form['image_fond_path']->getData()->guessExtension();
+                $form['image_fond_path']->getData()->move($this->getUploadRootDir(), $image);
+                $this->setImageFondPath($this->getUploadDir() . '/' . $image);
+            }
         }
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -2126,9 +2128,11 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
     {
         if (!file_exists($this->getUploadRootDir() . '/' . $form['illustration_path']->getData()))
         {
-            $image = uniqid().'.'.$form['illustration_path']->getData()->guessExtension();
-            $form['illustration_path']->getData()->move($this->getUploadRootDir(), $image);
-            $this->setIllustrationPath($this->getUploadDir() . '/' . $image);
+            if ($form['illustration_path']->getData()) {
+                $image = uniqid().'.'.$form['illustration_path']->getData()->guessExtension();
+                $form['illustration_path']->getData()->move($this->getUploadRootDir(), $image);
+                $this->setIllustrationPath($this->getUploadDir() . '/' . $image);
+            }
         }
     }
 

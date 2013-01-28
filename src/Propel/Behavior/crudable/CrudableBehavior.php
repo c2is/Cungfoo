@@ -146,9 +146,11 @@ public function upload$columnNameCamelize(\Symfony\Component\Form\Form \$form)
 {
     if (!file_exists(\$this->getUploadRootDir() . '/' . \$form['$columnName']->getData()))
     {
-        \$image = uniqid().'.'.\$form['$columnName']->getData()->guessExtension();
-        \$form['$columnName']->getData()->move(\$this->getUploadRootDir(), \$image);
-        \$this->set$columnNameCamelize(\$this->getUploadDir() . '/' . \$image);
+        if (\$form['$columnName']->getData()) {
+            \$image = uniqid().'.'.\$form['$columnName']->getData()->guessExtension();
+            \$form['$columnName']->getData()->move(\$this->getUploadRootDir(), \$image);
+            \$this->set$columnNameCamelize(\$this->getUploadDir() . '/' . \$image);
+        }
     }
 }
 ";

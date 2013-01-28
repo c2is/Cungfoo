@@ -1982,7 +1982,7 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
     }
 
     // active behavior
-    
+
     /**
      * return true is the object is active
      *
@@ -2530,7 +2530,7 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
     }
 
     // crudable behavior
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -2545,19 +2545,19 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
         {
             $this->resetModified(CategoryTypeHebergementPeer::IMAGE_MENU);
         }
-    
+
         $this->uploadImageMenu($form);
-        
+
         if (!$form['image_page_deleted']->getData())
         {
             $this->resetModified(CategoryTypeHebergementPeer::IMAGE_PAGE);
         }
-    
+
         $this->uploadImagePage($form);
-        
+
         return $this->save($con);
     }
-    
+
     /**
      * @return string
      */
@@ -2565,7 +2565,7 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
     {
         return 'uploads/category_type_hebergements';
     }
-    
+
     /**
      * @return string
      */
@@ -2573,7 +2573,7 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -2582,12 +2582,14 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
     {
         if (!file_exists($this->getUploadRootDir() . '/' . $form['image_menu']->getData()))
         {
-            $image = uniqid().'.'.$form['image_menu']->getData()->guessExtension();
-            $form['image_menu']->getData()->move($this->getUploadRootDir(), $image);
-            $this->setImageMenu($this->getUploadDir() . '/' . $image);
+            if ($form['image_menu']->getData()) {
+                $image = uniqid().'.'.$form['image_menu']->getData()->guessExtension();
+                $form['image_menu']->getData()->move($this->getUploadRootDir(), $image);
+                $this->setImageMenu($this->getUploadDir() . '/' . $image);
+            }
         }
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -2596,9 +2598,11 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
     {
         if (!file_exists($this->getUploadRootDir() . '/' . $form['image_page']->getData()))
         {
-            $image = uniqid().'.'.$form['image_page']->getData()->guessExtension();
-            $form['image_page']->getData()->move($this->getUploadRootDir(), $image);
-            $this->setImagePage($this->getUploadDir() . '/' . $image);
+            if ($form['image_page']->getData()) {
+                $image = uniqid().'.'.$form['image_page']->getData()->guessExtension();
+                $form['image_page']->getData()->move($this->getUploadRootDir(), $image);
+                $this->setImagePage($this->getUploadDir() . '/' . $image);
+            }
         }
     }
 

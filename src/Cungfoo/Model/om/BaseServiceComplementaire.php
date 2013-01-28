@@ -2593,7 +2593,7 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
     }
 
     // active behavior
-    
+
     /**
      * return true is the object is active
      *
@@ -2776,7 +2776,7 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
     }
 
     // crudable behavior
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -2791,19 +2791,19 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
         {
             $this->resetModified(ServiceComplementairePeer::IMAGE_PATH);
         }
-    
+
         $this->uploadImagePath($form);
-        
+
         if (!$form['vignette_deleted']->getData())
         {
             $this->resetModified(ServiceComplementairePeer::VIGNETTE);
         }
-    
+
         $this->uploadVignette($form);
-        
+
         return $this->save($con);
     }
-    
+
     /**
      * @return string
      */
@@ -2811,7 +2811,7 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
     {
         return 'uploads/service_complementaires';
     }
-    
+
     /**
      * @return string
      */
@@ -2819,7 +2819,7 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -2828,12 +2828,14 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
     {
         if (!file_exists($this->getUploadRootDir() . '/' . $form['image_path']->getData()))
         {
-            $image = uniqid().'.'.$form['image_path']->getData()->guessExtension();
-            $form['image_path']->getData()->move($this->getUploadRootDir(), $image);
-            $this->setImagePath($this->getUploadDir() . '/' . $image);
+            if ($form['image_path']->getData()) {
+                $image = uniqid().'.'.$form['image_path']->getData()->guessExtension();
+                $form['image_path']->getData()->move($this->getUploadRootDir(), $image);
+                $this->setImagePath($this->getUploadDir() . '/' . $image);
+            }
         }
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -2842,9 +2844,11 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
     {
         if (!file_exists($this->getUploadRootDir() . '/' . $form['vignette']->getData()))
         {
-            $image = uniqid().'.'.$form['vignette']->getData()->guessExtension();
-            $form['vignette']->getData()->move($this->getUploadRootDir(), $image);
-            $this->setVignette($this->getUploadDir() . '/' . $image);
+            if ($form['vignette']->getData()) {
+                $image = uniqid().'.'.$form['vignette']->getData()->guessExtension();
+                $form['vignette']->getData()->move($this->getUploadRootDir(), $image);
+                $this->setVignette($this->getUploadDir() . '/' . $image);
+            }
         }
     }
 

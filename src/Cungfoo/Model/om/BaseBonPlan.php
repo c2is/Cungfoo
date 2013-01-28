@@ -3799,7 +3799,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
     }
 
     // active behavior
-    
+
     /**
      * return true is the object is active
      *
@@ -4054,7 +4054,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
     }
 
     // crudable behavior
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -4069,26 +4069,26 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
         {
             $this->resetModified(BonPlanPeer::IMAGE_MENU);
         }
-    
+
         $this->uploadImageMenu($form);
-        
+
         if (!$form['image_page_deleted']->getData())
         {
             $this->resetModified(BonPlanPeer::IMAGE_PAGE);
         }
-    
+
         $this->uploadImagePage($form);
-        
+
         if (!$form['image_liste_deleted']->getData())
         {
             $this->resetModified(BonPlanPeer::IMAGE_LISTE);
         }
-    
+
         $this->uploadImageListe($form);
-        
+
         return $this->save($con);
     }
-    
+
     /**
      * @return string
      */
@@ -4096,7 +4096,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
     {
         return 'uploads/bon_plans';
     }
-    
+
     /**
      * @return string
      */
@@ -4104,7 +4104,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -4113,12 +4113,14 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
     {
         if (!file_exists($this->getUploadRootDir() . '/' . $form['image_menu']->getData()))
         {
-            $image = uniqid().'.'.$form['image_menu']->getData()->guessExtension();
-            $form['image_menu']->getData()->move($this->getUploadRootDir(), $image);
-            $this->setImageMenu($this->getUploadDir() . '/' . $image);
+            if ($form['image_menu']->getData()) {
+                $image = uniqid().'.'.$form['image_menu']->getData()->guessExtension();
+                $form['image_menu']->getData()->move($this->getUploadRootDir(), $image);
+                $this->setImageMenu($this->getUploadDir() . '/' . $image);
+            }
         }
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -4127,12 +4129,14 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
     {
         if (!file_exists($this->getUploadRootDir() . '/' . $form['image_page']->getData()))
         {
-            $image = uniqid().'.'.$form['image_page']->getData()->guessExtension();
-            $form['image_page']->getData()->move($this->getUploadRootDir(), $image);
-            $this->setImagePage($this->getUploadDir() . '/' . $image);
+            if ($form['image_page']->getData()) {
+                $image = uniqid().'.'.$form['image_page']->getData()->guessExtension();
+                $form['image_page']->getData()->move($this->getUploadRootDir(), $image);
+                $this->setImagePage($this->getUploadDir() . '/' . $image);
+            }
         }
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -4141,9 +4145,11 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
     {
         if (!file_exists($this->getUploadRootDir() . '/' . $form['image_liste']->getData()))
         {
-            $image = uniqid().'.'.$form['image_liste']->getData()->guessExtension();
-            $form['image_liste']->getData()->move($this->getUploadRootDir(), $image);
-            $this->setImageListe($this->getUploadDir() . '/' . $image);
+            if ($form['image_liste']->getData()) {
+                $image = uniqid().'.'.$form['image_liste']->getData()->guessExtension();
+                $form['image_liste']->getData()->move($this->getUploadRootDir(), $image);
+                $this->setImageListe($this->getUploadDir() . '/' . $image);
+            }
         }
     }
 
