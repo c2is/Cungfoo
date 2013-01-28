@@ -41,12 +41,14 @@ iframe{width:100%;}
   #boxLogin{
     #formLogin{
       a:hover{text-decoration:underline;color:@colorFushia;}
-      >.left{width:214px;margin:0;}
-      >.right{width:164px;margin-left:50px;}
       label{font-family:@ptnarrow;font-size:16px;font-weight:bold;margin:0 0 2px 0;display:block;}
-      input{margin:0 0 15px 0;border:0 none;._verticalCenter(27px);
+      input{margin:0 0 15px 0;border:0 none;height:27px;
         &[type=submit]{margin:25px 0 37px;}
       }
+      >.left{width:214px;margin:0;
+        input{padding:0 5px;}
+      }
+      >.right{width:164px;margin-left:50px;}
     }
   }
   #boxDiscover{
