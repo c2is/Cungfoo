@@ -45,7 +45,20 @@ class BrutesCommand extends BaseCommand
 
             // Fichiers délimiteur ;
             //$this->readCSVFile('types_hebergement.csv', 'typesHebergementCallback', null, $input, $output, true);
-            $this->readCSVFile('photos_campingv2.csv', 'campingsCallback', null, $input, $output, true);
+            //$this->readCSVFile('photos_campingv2.csv', 'campingsCallback', null, $input, $output, true);
+            $this->readCSVFile('activite_i18n_de_rel.csv', 'activitesI18nCallback', null, $input, $output, true);
+            $this->readCSVFile('avantage_i18n_de_rel.csv', 'avantagesI18nCallback', null, $input, $output, true);
+            $this->readCSVFile('baignade_i18n_de_rel.csv', 'baignadesI18nCallback', null, $input, $output, true);
+            $this->readCSVFile('etablissement_i18n_de_rel.csv', 'etablissementsI18nCallback', null, $input, $output, true);
+            $this->readCSVFile('idee_weekend_i18n_de_rel.csv', 'ideesWEI18nCallback', null, $input, $output, true);
+            $this->readCSVFile('mise_en_avant_i18n_de_rel.csv', 'misesEnAvantI18nCallback', null, $input, $output, true);
+            $this->readCSVFile('region_i18n_de_rel.csv', 'regionsI18nCallback', null, $input, $output, true);
+            $this->readCSVFile('service_complementaire_i18n_de_rel.csv', 'servicesComplementairesI18nCallback', null, $input, $output, true);
+            $this->readCSVFile('situation_geographique_i18n_de_rel.csv', 'situationsGeographiquesI18nCallback', null, $input, $output, true);
+            $this->readCSVFile('tag_i18n_de_rel.csv', 'tagsI18nCallback', null, $input, $output, true);
+            $this->readCSVFile('thematique_i18n_de_rel.csv', 'thematiquesI18nCallback', null, $input, $output, true);
+            $this->readCSVFile('type_hebergement_i18n_de_rel.csv', 'typesHebergementsI18nCallback', null, $input, $output, true);
+            $this->readCSVFile('ville_i18n_de_rel.csv', 'villesI18nCallback', null, $input, $output, true);
         }
         catch (\Exception $exception)
         {
@@ -247,6 +260,344 @@ class BrutesCommand extends BaseCommand
                 ->setRemarque1($remarque1)
                 ->setRemarque2($remarque2)
                 ->setRemarque3($remarque3)
+                ->save()
+            ;
+        }
+    }
+
+    protected function activitesI18nCallback(array $explodedLine, array &$buffer, array &$unset)
+    {
+        list($id, $locale, $name, $description, $keywords) = $explodedLine;
+
+        if($locale == 'de') {
+            $activite = \Cungfoo\Model\ActiviteQuery::create()
+                ->filterById($id)
+                ->findOne()
+            ;
+
+            if (!$activite)
+            {
+                return;
+            }
+
+            $activite
+                ->setLocale($locale)
+                ->setName($name)
+                ->setDescription($description)
+                ->setKeywords($keywords)
+                ->save()
+            ;
+        }
+    }
+
+    protected function avantagesI18nCallback(array $explodedLine, array &$buffer, array &$unset)
+    {
+        list($id, $locale, $name, $description) = $explodedLine;
+
+        if($locale == 'de') {
+            $avantage = \Cungfoo\Model\AvantageQuery::create()
+                ->filterById($id)
+                ->findOne()
+            ;
+
+            if (!$avantage)
+            {
+                return;
+            }
+
+            $avantage
+                ->setLocale($locale)
+                ->setName($name)
+                ->setDescription($description)
+                ->save()
+            ;
+        }
+    }
+
+    protected function baignadesI18nCallback(array $explodedLine, array &$buffer, array &$unset)
+    {
+        list($id, $locale, $name, $description, $keywords) = $explodedLine;
+
+        if($locale == 'de') {
+            $item = \Cungfoo\Model\BaignadeQuery::create()
+                ->filterById($id)
+                ->findOne()
+            ;
+
+            if (!$item)
+            {
+                return;
+            }
+
+            $item
+                ->setLocale($locale)
+                ->setName($name)
+                ->setDescription($description)
+                ->setKeywords($keywords)
+                ->save()
+            ;
+        }
+    }
+
+    protected function etablissementsI18nCallback(array $explodedLine, array &$buffer, array &$unset)
+    {
+        list($id, $locale, $country, $ouverture_reception, $ouverture_camping, $arrivees_departs, $description, $joker) = $explodedLine;
+
+        if($locale == 'de') {
+            $item = \Cungfoo\Model\EtablissementQuery::create()
+                ->filterById($id)
+                ->findOne()
+            ;
+
+            if (!$item)
+            {
+                return;
+            }
+
+            $item
+                ->setLocale($locale)
+                ->setCountry($country)
+                ->setOuvertureReception($ouverture_reception)
+                ->setOuvertureCamping($ouverture_camping)
+                ->setArriveesDeparts($arrivees_departs)
+                ->setDescription($description)
+                ->save()
+            ;
+        }
+    }
+
+    protected function ideesWEI18nCallback(array $explodedLine, array &$buffer, array &$unset)
+    {
+        list($id, $locale, $titre, $lien) = $explodedLine;
+
+        if($locale == 'de') {
+            $item = \Cungfoo\Model\IdeeWeekendQuery::create()
+                ->filterById($id)
+                ->findOne()
+            ;
+
+            if (!$item)
+            {
+                return;
+            }
+
+            $item
+                ->setLocale($locale)
+                ->setTitre($titre)
+                ->setLien($lien)
+                ->save()
+            ;
+        }
+    }
+
+    protected function misesEnAvantI18nCallback(array $explodedLine, array &$buffer, array &$unset)
+    {
+        list($id, $locale, $titre, $accroche, $lien, $titre_lien) = $explodedLine;
+
+        if($locale == 'de') {
+            $item = \Cungfoo\Model\MiseEnAvantQuery::create()
+                ->filterById($id)
+                ->findOne()
+            ;
+
+            if (!$item)
+            {
+                return;
+            }
+
+            $item
+                ->setLocale($locale)
+                ->setTitre($titre)
+                ->setAccroche($accroche)
+                ->setLien($lien)
+                ->setTitreLien($titre_lien)
+                ->save()
+            ;
+        }
+    }
+
+    protected function regionsI18nCallback(array $explodedLine, array &$buffer, array &$unset)
+    {
+        list($id, $locale, $slug, $name, $introduction, $description) = $explodedLine;
+
+        if($locale == 'de') {
+            $item = \Cungfoo\Model\RegionQuery::create()
+                ->filterById($id)
+                ->findOne()
+            ;
+
+            if (!$item)
+            {
+                return;
+            }
+
+            $item
+                ->setLocale($locale)
+                ->setSlug($slug)
+                ->setName($name)
+                ->setIntroduction($introduction)
+                ->setDescription($description)
+                ->save()
+            ;
+        }
+    }
+
+    protected function servicesComplementairesI18nCallback(array $explodedLine, array &$buffer, array &$unset)
+    {
+        list($id, $locale, $name, $description, $keywords) = $explodedLine;
+
+        if($locale == 'de') {
+            $item = \Cungfoo\Model\ServiceComplementaireQuery::create()
+                ->filterById($id)
+                ->findOne()
+            ;
+
+            if (!$item)
+            {
+                return;
+            }
+
+            $item
+                ->setLocale($locale)
+                ->setName($name)
+                ->setDescription($description)
+                ->setKeywords($keywords)
+                ->save()
+            ;
+        }
+    }
+
+    protected function situationsGeographiquesI18nCallback(array $explodedLine, array &$buffer, array &$unset)
+    {
+        list($id, $locale, $name, $description, $keywords) = $explodedLine;
+
+        if($locale == 'de') {
+            $item = \Cungfoo\Model\SituationGeographiqueQuery::create()
+                ->filterById($id)
+                ->findOne()
+            ;
+
+            if (!$item)
+            {
+                return;
+            }
+
+            $item
+                ->setLocale($locale)
+                ->setName($name)
+                ->setDescription($description)
+                ->setKeywords($keywords)
+                ->save()
+            ;
+        }
+    }
+
+    protected function tagsI18nCallback(array $explodedLine, array &$buffer, array &$unset)
+    {
+        list($id, $locale, $name) = $explodedLine;
+
+        if($locale == 'de') {
+            $item = \Cungfoo\Model\TagQuery::create()
+                ->filterById($id)
+                ->findOne()
+            ;
+
+            if (!$item)
+            {
+                return;
+            }
+
+            $item
+                ->setLocale($locale)
+                ->setName($name)
+                ->save()
+            ;
+        }
+    }
+
+    protected function thematiquesI18nCallback(array $explodedLine, array &$buffer, array &$unset)
+    {
+        list($id, $locale, $name, $description, $keywords) = $explodedLine;
+
+        if($locale == 'de') {
+            $item = \Cungfoo\Model\ThematiqueQuery::create()
+                ->filterById($id)
+                ->findOne()
+            ;
+
+            if (!$item)
+            {
+                return;
+            }
+
+            $item
+                ->setLocale($locale)
+                ->setName($name)
+                ->setDescription($description)
+                ->setKeywords($keywords)
+                ->save()
+            ;
+        }
+    }
+
+    protected function typesHebergementsI18nCallback(array $explodedLine, array &$buffer, array &$unset)
+    {
+        list($id, $locale, $name, $surface, $type_terrasse, $description, $composition, $presentation, $capacite_hebergement, $dimensions, $agencement, $equipements, $annee_utilisation, $remarque_1, $remarque_2, $remarque_3, $remarque_4) = $explodedLine;
+
+        if($locale == 'de') {
+            $item = \Cungfoo\Model\TypeHebergementQuery::create()
+                ->filterById($id)
+                ->findOne()
+            ;
+
+            if (!$item)
+            {
+                return;
+            }
+
+            $item
+                ->setLocale($locale)
+                ->setName($name)
+                ->setSurface($surface)
+                ->setTypeTerrasse($type_terrasse)
+                ->setDescription($description)
+                ->setComposition($composition)
+                ->setPresentation($presentation)
+                ->setCapaciteHebergement($capacite_hebergement)
+                ->setDimensions($dimensions)
+                ->setAgencement($agencement)
+                ->setEquipements($equipements)
+                ->setAnneeUtilisation($annee_utilisation)
+                ->setRemarque1($remarque_1)
+                ->setRemarque2($remarque_2)
+                ->setRemarque3($remarque_3)
+                ->setRemarque4($remarque_4)
+                ->save()
+            ;
+        }
+    }
+
+    protected function villesI18nCallback(array $explodedLine, array &$buffer, array &$unset)
+    {
+        list($id, $locale, $slug, $name, $introduction, $description) = $explodedLine;
+
+        if($locale == 'de') {
+            $item = \Cungfoo\Model\VilleQuery::create()
+                ->filterById($id)
+                ->findOne()
+            ;
+
+            if (!$item)
+            {
+                return;
+            }
+
+            $item
+                ->setLocale($locale)
+                ->setSlug($slug)
+                ->setName($name)
+                ->setIntroduction($introduction)
+                ->setDescription($description)
                 ->save()
             ;
         }
