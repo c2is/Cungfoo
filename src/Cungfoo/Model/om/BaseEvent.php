@@ -2,7 +2,6 @@
 
 namespace Cungfoo\Model\om;
 
-use \BaseObject;
 use \BasePeer;
 use \Criteria;
 use \DateTime;
@@ -24,6 +23,7 @@ use Cungfoo\Model\EventI18n;
 use Cungfoo\Model\EventI18nQuery;
 use Cungfoo\Model\EventPeer;
 use Cungfoo\Model\EventQuery;
+use Propel\BaseObject;
 
 /**
  * Base class that represents a row from the 'event' table.

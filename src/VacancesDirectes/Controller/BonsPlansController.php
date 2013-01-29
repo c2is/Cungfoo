@@ -93,8 +93,7 @@ class BonsPlansController implements ControllerProviderInterface
             $locale = $app['context']->get('language');
 
             $bonPlanObject = BonPlanQuery::create()
-                ->useBonPlanI18nQuery()
-                    ->filterByLocale($locale)
+                ->useI18nQuery($locale)
                     ->filterBySlug($slug)
                 ->endUse()
                 ->filterByActive(true)
@@ -156,8 +155,7 @@ class BonsPlansController implements ControllerProviderInterface
             $locale = $app['context']->get('language');
 
             $categorie = BonPlanCategorieQuery::create()
-                ->useBonPlanCategorieI18nQuery()
-                    ->filterByLocale($locale)
+                ->useI18nQuery($locale)
                     ->filterBySlug($cat)
                 ->endUse()
                 ->filterByActive(true)

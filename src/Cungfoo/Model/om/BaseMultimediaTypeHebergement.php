@@ -2,7 +2,6 @@
 
 namespace Cungfoo\Model\om;
 
-use \BaseObject;
 use \BasePeer;
 use \Criteria;
 use \DateTime;
@@ -22,6 +21,7 @@ use Cungfoo\Model\MultimediaTypeHebergementPeer;
 use Cungfoo\Model\MultimediaTypeHebergementQuery;
 use Cungfoo\Model\TypeHebergement;
 use Cungfoo\Model\TypeHebergementQuery;
+use Propel\BaseObject;
 
 /**
  * Base class that represents a row from the 'multimedia_type_hebergement' table.

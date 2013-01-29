@@ -2,7 +2,6 @@
 
 namespace Cungfoo\Model\om;
 
-use \BaseObject;
 use \BasePeer;
 use \Criteria;
 use \Exception;
@@ -18,6 +17,7 @@ use Cungfoo\Model\ThemeQuery;
 use Cungfoo\Model\ThemeServiceComplementaire;
 use Cungfoo\Model\ThemeServiceComplementairePeer;
 use Cungfoo\Model\ThemeServiceComplementaireQuery;
+use Propel\BaseObject;
 
 /**
  * Base class that represents a row from the 'theme_service_complementaire' table.

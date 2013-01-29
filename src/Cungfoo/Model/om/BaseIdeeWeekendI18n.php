@@ -2,7 +2,6 @@
 
 namespace Cungfoo\Model\om;
 
-use \BaseObject;
 use \BasePeer;
 use \Criteria;
 use \Exception;
@@ -16,6 +15,7 @@ use Cungfoo\Model\IdeeWeekendI18n;
 use Cungfoo\Model\IdeeWeekendI18nPeer;
 use Cungfoo\Model\IdeeWeekendI18nQuery;
 use Cungfoo\Model\IdeeWeekendQuery;
+use Propel\BaseObject;
 
 /**
  * Base class that represents a row from the 'idee_weekend_i18n' table.

@@ -2,7 +2,6 @@
 
 namespace Cungfoo\Model\om;
 
-use \BaseObject;
 use \BasePeer;
 use \Criteria;
 use \DateTime;
@@ -28,6 +27,7 @@ use Cungfoo\Model\Theme;
 use Cungfoo\Model\ThemeQuery;
 use Cungfoo\Model\ThemeServiceComplementaire;
 use Cungfoo\Model\ThemeServiceComplementaireQuery;
+use Propel\BaseObject;
 
 /**
  * Base class that represents a row from the 'service_complementaire' table.

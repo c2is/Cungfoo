@@ -2,7 +2,6 @@
 
 namespace Cungfoo\Model\om;
 
-use \BaseObject;
 use \BasePeer;
 use \Criteria;
 use \Exception;
@@ -16,6 +15,7 @@ use Cungfoo\Model\ActiviteI18n;
 use Cungfoo\Model\ActiviteI18nPeer;
 use Cungfoo\Model\ActiviteI18nQuery;
 use Cungfoo\Model\ActiviteQuery;
+use Propel\BaseObject;
 
 /**
  * Base class that represents a row from the 'activite_i18n' table.

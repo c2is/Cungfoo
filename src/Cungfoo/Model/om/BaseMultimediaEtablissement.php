@@ -2,7 +2,6 @@
 
 namespace Cungfoo\Model\om;
 
-use \BaseObject;
 use \BasePeer;
 use \Criteria;
 use \DateTime;
@@ -26,6 +25,7 @@ use Cungfoo\Model\MultimediaEtablissementTag;
 use Cungfoo\Model\MultimediaEtablissementTagQuery;
 use Cungfoo\Model\Tag;
 use Cungfoo\Model\TagQuery;
+use Propel\BaseObject;
 
 /**
  * Base class that represents a row from the 'multimedia_etablissement' table.

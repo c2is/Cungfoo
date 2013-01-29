@@ -2,7 +2,6 @@
 
 namespace Cungfoo\Model\om;
 
-use \BaseObject;
 use \BasePeer;
 use \Criteria;
 use \Exception;
@@ -16,6 +15,7 @@ use Cungfoo\Model\CategoryTypeHebergementI18n;
 use Cungfoo\Model\CategoryTypeHebergementI18nPeer;
 use Cungfoo\Model\CategoryTypeHebergementI18nQuery;
 use Cungfoo\Model\CategoryTypeHebergementQuery;
+use Propel\BaseObject;
 
 /**
  * Base class that represents a row from the 'category_type_hebergement_i18n' table.

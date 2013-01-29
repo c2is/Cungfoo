@@ -2,7 +2,6 @@
 
 namespace Cungfoo\Model\om;
 
-use \BaseObject;
 use \BasePeer;
 use \Criteria;
 use \Exception;
@@ -16,6 +15,7 @@ use Cungfoo\Model\AvantageI18n;
 use Cungfoo\Model\AvantageI18nPeer;
 use Cungfoo\Model\AvantageI18nQuery;
 use Cungfoo\Model\AvantageQuery;
+use Propel\BaseObject;
 
 /**
  * Base class that represents a row from the 'avantage_i18n' table.

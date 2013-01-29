@@ -2,7 +2,6 @@
 
 namespace Cungfoo\Model\om;
 
-use \BaseObject;
 use \BasePeer;
 use \Criteria;
 use \DateTime;
@@ -20,6 +19,7 @@ use Cungfoo\Model\EditoI18n;
 use Cungfoo\Model\EditoI18nQuery;
 use Cungfoo\Model\EditoPeer;
 use Cungfoo\Model\EditoQuery;
+use Propel\BaseObject;
 
 /**
  * Base class that represents a row from the 'edito' table.

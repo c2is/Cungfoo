@@ -2,7 +2,6 @@
 
 namespace Cungfoo\Model\om;
 
-use \BaseObject;
 use \BasePeer;
 use \Criteria;
 use \DateTime;
@@ -20,6 +19,7 @@ use Cungfoo\Model\MiseEnAvantI18n;
 use Cungfoo\Model\MiseEnAvantI18nQuery;
 use Cungfoo\Model\MiseEnAvantPeer;
 use Cungfoo\Model\MiseEnAvantQuery;
+use Propel\BaseObject;
 
 /**
  * Base class that represents a row from the 'mise_en_avant' table.

@@ -148,8 +148,7 @@ class MenuController implements ControllerProviderInterface
             ->joinWithI18n($locale)
             ->joinWithRegion()
             ->useRegionQuery()
-                ->useRegionI18nQuery()
-                    ->filterByLocale($locale)
+                ->useI18nQuery($locale)
                     ->orderByName()
                 ->endUse()
                 ->joinWithPays()
@@ -166,8 +165,7 @@ class MenuController implements ControllerProviderInterface
         $locale = $app['context']->get('language');
 
         return RegionQuery::create()
-            ->useRegionI18nQuery()
-                ->filterByLocale($locale)
+            ->useI18nQuery($locale)
                 ->orderByName()
             ->endUse()
             ->joinWithPays()

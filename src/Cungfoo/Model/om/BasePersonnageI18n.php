@@ -2,7 +2,6 @@
 
 namespace Cungfoo\Model\om;
 
-use \BaseObject;
 use \BasePeer;
 use \Criteria;
 use \Exception;
@@ -16,6 +15,7 @@ use Cungfoo\Model\PersonnageI18n;
 use Cungfoo\Model\PersonnageI18nPeer;
 use Cungfoo\Model\PersonnageI18nQuery;
 use Cungfoo\Model\PersonnageQuery;
+use Propel\BaseObject;
 
 /**
  * Base class that represents a row from the 'personnage_i18n' table.

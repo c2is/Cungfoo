@@ -2,7 +2,6 @@
 
 namespace Cungfoo\Model\om;
 
-use \BaseObject;
 use \BasePeer;
 use \Criteria;
 use \Exception;
@@ -16,6 +15,7 @@ use Cungfoo\Model\TypeHebergementI18n;
 use Cungfoo\Model\TypeHebergementI18nPeer;
 use Cungfoo\Model\TypeHebergementI18nQuery;
 use Cungfoo\Model\TypeHebergementQuery;
+use Propel\BaseObject;
 
 /**
  * Base class that represents a row from the 'type_hebergement_i18n' table.

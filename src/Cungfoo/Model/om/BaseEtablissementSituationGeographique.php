@@ -2,7 +2,6 @@
 
 namespace Cungfoo\Model\om;
 
-use \BaseObject;
 use \BasePeer;
 use \Criteria;
 use \Exception;
@@ -18,6 +17,7 @@ use Cungfoo\Model\EtablissementSituationGeographiquePeer;
 use Cungfoo\Model\EtablissementSituationGeographiqueQuery;
 use Cungfoo\Model\SituationGeographique;
 use Cungfoo\Model\SituationGeographiqueQuery;
+use Propel\BaseObject;
 
 /**
  * Base class that represents a row from the 'etablissement_situation_geographique' table.

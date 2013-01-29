@@ -2,7 +2,6 @@
 
 namespace Cungfoo\Model\om;
 
-use \BaseObject;
 use \BasePeer;
 use \Criteria;
 use \DateTime;
@@ -22,6 +21,7 @@ use Cungfoo\Model\AvantagePeer;
 use Cungfoo\Model\AvantageQuery;
 use Cungfoo\Model\Personnage;
 use Cungfoo\Model\PersonnageQuery;
+use Propel\BaseObject;
 
 /**
  * Base class that represents a row from the 'avantage' table.

@@ -2,7 +2,6 @@
 
 namespace Cungfoo\Model\om;
 
-use \BaseObject;
 use \BasePeer;
 use \Criteria;
 use \Exception;
@@ -18,6 +17,7 @@ use Cungfoo\Model\ThemeActivite;
 use Cungfoo\Model\ThemeActivitePeer;
 use Cungfoo\Model\ThemeActiviteQuery;
 use Cungfoo\Model\ThemeQuery;
+use Propel\BaseObject;
 
 /**
  * Base class that represents a row from the 'theme_activite' table.

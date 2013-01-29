@@ -2,7 +2,6 @@
 
 namespace Cungfoo\Model\om;
 
-use \BaseObject;
 use \BasePeer;
 use \Criteria;
 use \DateTime;
@@ -32,6 +31,7 @@ use Cungfoo\Model\Etablissement;
 use Cungfoo\Model\EtablissementQuery;
 use Cungfoo\Model\Region;
 use Cungfoo\Model\RegionQuery;
+use Propel\BaseObject;
 
 /**
  * Base class that represents a row from the 'bon_plan' table.

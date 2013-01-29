@@ -2,7 +2,6 @@
 
 namespace Cungfoo\Model\om;
 
-use \BaseObject;
 use \BasePeer;
 use \Criteria;
 use \DateTime;
@@ -24,6 +23,7 @@ use Cungfoo\Model\SituationGeographiqueI18n;
 use Cungfoo\Model\SituationGeographiqueI18nQuery;
 use Cungfoo\Model\SituationGeographiquePeer;
 use Cungfoo\Model\SituationGeographiqueQuery;
+use Propel\BaseObject;
 
 /**
  * Base class that represents a row from the 'situation_geographique' table.

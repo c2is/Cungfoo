@@ -2,7 +2,6 @@
 
 namespace Cungfoo\Model\om;
 
-use \BaseObject;
 use \BasePeer;
 use \Criteria;
 use \DateTime;
@@ -18,6 +17,7 @@ use Cungfoo\Model\DemandeAnnulationPeer;
 use Cungfoo\Model\DemandeAnnulationQuery;
 use Cungfoo\Model\Etablissement;
 use Cungfoo\Model\EtablissementQuery;
+use Propel\BaseObject;
 
 /**
  * Base class that represents a row from the 'demande_annulation' table.

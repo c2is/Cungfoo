@@ -2,7 +2,6 @@
 
 namespace Cungfoo\Model\om;
 
-use \BaseObject;
 use \BasePeer;
 use \Criteria;
 use \DateTime;
@@ -24,6 +23,7 @@ use Cungfoo\Model\TagI18n;
 use Cungfoo\Model\TagI18nQuery;
 use Cungfoo\Model\TagPeer;
 use Cungfoo\Model\TagQuery;
+use Propel\BaseObject;
 
 /**
  * Base class that represents a row from the 'tag' table.

@@ -2,7 +2,6 @@
 
 namespace Cungfoo\Model\om;
 
-use \BaseObject;
 use \BasePeer;
 use \Criteria;
 use \Exception;
@@ -16,6 +15,7 @@ use Cungfoo\Model\BaignadeI18n;
 use Cungfoo\Model\BaignadeI18nPeer;
 use Cungfoo\Model\BaignadeI18nQuery;
 use Cungfoo\Model\BaignadeQuery;
+use Propel\BaseObject;
 
 /**
  * Base class that represents a row from the 'baignade_i18n' table.

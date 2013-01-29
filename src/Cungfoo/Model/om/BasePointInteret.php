@@ -2,7 +2,6 @@
 
 namespace Cungfoo\Model\om;
 
-use \BaseObject;
 use \BasePeer;
 use \Criteria;
 use \DateTime;
@@ -24,6 +23,7 @@ use Cungfoo\Model\PointInteretI18n;
 use Cungfoo\Model\PointInteretI18nQuery;
 use Cungfoo\Model\PointInteretPeer;
 use Cungfoo\Model\PointInteretQuery;
+use Propel\BaseObject;
 
 /**
  * Base class that represents a row from the 'point_interet' table.

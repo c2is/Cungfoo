@@ -2,7 +2,6 @@
 
 namespace Cungfoo\Model\om;
 
-use \BaseObject;
 use \BasePeer;
 use \Criteria;
 use \DateTime;
@@ -20,6 +19,7 @@ use Cungfoo\Model\EtablissementTypeHebergementPeer;
 use Cungfoo\Model\EtablissementTypeHebergementQuery;
 use Cungfoo\Model\TypeHebergement;
 use Cungfoo\Model\TypeHebergementQuery;
+use Propel\BaseObject;
 
 /**
  * Base class that represents a row from the 'etablissement_type_hebergement' table.

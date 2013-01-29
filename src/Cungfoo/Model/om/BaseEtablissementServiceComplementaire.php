@@ -2,7 +2,6 @@
 
 namespace Cungfoo\Model\om;
 
-use \BaseObject;
 use \BasePeer;
 use \Criteria;
 use \Exception;
@@ -18,6 +17,7 @@ use Cungfoo\Model\EtablissementServiceComplementairePeer;
 use Cungfoo\Model\EtablissementServiceComplementaireQuery;
 use Cungfoo\Model\ServiceComplementaire;
 use Cungfoo\Model\ServiceComplementaireQuery;
+use Propel\BaseObject;
 
 /**
  * Base class that represents a row from the 'etablissement_service_complementaire' table.
