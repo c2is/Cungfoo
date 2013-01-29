@@ -12,12 +12,12 @@ $(function() {
             var type = $(this).parent('.roomType').attr('data-type');
             parent.openPopinInline(type);
         }
-        else if ($(this).parent('.linePrice') && $(this).attr('href')) {
+        else if ($(this).parent().hasClass('linePrice')) {
             var url = $(this).attr('href');
             var context = $('body').attr('class');
             parent.openPopinIframe(url, context);
         }
-        else if ($(this).attr('href')) {
+        else {
             var url = $(this).attr('href');
             parent.openPopinIframe(url);
         }
