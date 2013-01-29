@@ -598,6 +598,8 @@ semainier:
     type_hebergement_title: "Choisissez votre période et votre type d'hébergement"
     type_hebergement_desc: "Vérifiez les disponibilités mois par mois et cliquez sur la période et l'hébergement de votre choix pour réserver."
     indisponible: "Indisponible"
+    type_hebergement:
+        details: Détails
 
 resalys:
     creer_compte: "Créer mon compte"
