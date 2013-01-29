@@ -2,7 +2,6 @@
 
 namespace Cungfoo\Model\om;
 
-use \BaseObject;
 use \BasePeer;
 use \Criteria;
 use \DateTime;
@@ -24,6 +23,7 @@ use Cungfoo\Model\ThematiqueI18n;
 use Cungfoo\Model\ThematiqueI18nQuery;
 use Cungfoo\Model\ThematiquePeer;
 use Cungfoo\Model\ThematiqueQuery;
+use Propel\BaseObject;
 
 /**
  * Base class that represents a row from the 'thematique' table.

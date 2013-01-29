@@ -2,7 +2,6 @@
 
 namespace Cungfoo\Model\om;
 
-use \BaseObject;
 use \BasePeer;
 use \Criteria;
 use \Exception;
@@ -16,6 +15,7 @@ use Cungfoo\Model\MultimediaEtablissementI18n;
 use Cungfoo\Model\MultimediaEtablissementI18nPeer;
 use Cungfoo\Model\MultimediaEtablissementI18nQuery;
 use Cungfoo\Model\MultimediaEtablissementQuery;
+use Propel\BaseObject;
 
 /**
  * Base class that represents a row from the 'multimedia_etablissement_i18n' table.

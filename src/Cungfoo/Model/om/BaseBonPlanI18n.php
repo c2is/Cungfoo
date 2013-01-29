@@ -2,7 +2,6 @@
 
 namespace Cungfoo\Model\om;
 
-use \BaseObject;
 use \BasePeer;
 use \Criteria;
 use \Exception;
@@ -16,6 +15,7 @@ use Cungfoo\Model\BonPlanI18n;
 use Cungfoo\Model\BonPlanI18nPeer;
 use Cungfoo\Model\BonPlanI18nQuery;
 use Cungfoo\Model\BonPlanQuery;
+use Propel\BaseObject;
 
 /**
  * Base class that represents a row from the 'bon_plan_i18n' table.

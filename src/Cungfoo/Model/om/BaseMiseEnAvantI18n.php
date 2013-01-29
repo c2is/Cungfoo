@@ -2,7 +2,6 @@
 
 namespace Cungfoo\Model\om;
 
-use \BaseObject;
 use \BasePeer;
 use \Criteria;
 use \Exception;
@@ -16,6 +15,7 @@ use Cungfoo\Model\MiseEnAvantI18n;
 use Cungfoo\Model\MiseEnAvantI18nPeer;
 use Cungfoo\Model\MiseEnAvantI18nQuery;
 use Cungfoo\Model\MiseEnAvantQuery;
+use Propel\BaseObject;
 
 /**
  * Base class that represents a row from the 'mise_en_avant_i18n' table.

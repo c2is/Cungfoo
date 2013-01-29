@@ -2,7 +2,6 @@
 
 namespace Cungfoo\Model\om;
 
-use \BaseObject;
 use \BasePeer;
 use \Criteria;
 use \Exception;
@@ -16,6 +15,7 @@ use Cungfoo\Model\EditoI18n;
 use Cungfoo\Model\EditoI18nPeer;
 use Cungfoo\Model\EditoI18nQuery;
 use Cungfoo\Model\EditoQuery;
+use Propel\BaseObject;
 
 /**
  * Base class that represents a row from the 'edito_i18n' table.

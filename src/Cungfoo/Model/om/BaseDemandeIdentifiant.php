@@ -2,7 +2,6 @@
 
 namespace Cungfoo\Model\om;
 
-use \BaseObject;
 use \BasePeer;
 use \Criteria;
 use \DateTime;
@@ -16,6 +15,7 @@ use \PropelPDO;
 use Cungfoo\Model\DemandeIdentifiant;
 use Cungfoo\Model\DemandeIdentifiantPeer;
 use Cungfoo\Model\DemandeIdentifiantQuery;
+use Propel\BaseObject;
 
 /**
  * Base class that represents a row from the 'demande_identifiant' table.

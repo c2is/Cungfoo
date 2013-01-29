@@ -2,7 +2,6 @@
 
 namespace Cungfoo\Model\om;
 
-use \BaseObject;
 use \BasePeer;
 use \Criteria;
 use \DateTime;
@@ -18,6 +17,7 @@ use Cungfoo\Model\JobLog;
 use Cungfoo\Model\JobLogPeer;
 use Cungfoo\Model\JobLogQuery;
 use Cungfoo\Model\JobQuery;
+use Propel\BaseObject;
 
 /**
  * Base class that represents a row from the 'job_log' table.

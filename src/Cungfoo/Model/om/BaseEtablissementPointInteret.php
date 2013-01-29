@@ -2,7 +2,6 @@
 
 namespace Cungfoo\Model\om;
 
-use \BaseObject;
 use \BasePeer;
 use \Criteria;
 use \Exception;
@@ -18,6 +17,7 @@ use Cungfoo\Model\EtablissementPointInteretQuery;
 use Cungfoo\Model\EtablissementQuery;
 use Cungfoo\Model\PointInteret;
 use Cungfoo\Model\PointInteretQuery;
+use Propel\BaseObject;
 
 /**
  * Base class that represents a row from the 'etablissement_point_interet' table.

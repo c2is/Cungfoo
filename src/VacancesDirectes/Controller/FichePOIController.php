@@ -41,8 +41,7 @@ class FichePOIController implements ControllerProviderInterface
             }
 
             $poi = \Cungfoo\Model\PointInteretQuery::create()
-                ->usePointInteretI18nQuery()
-                    ->filterByLocale($locale)
+                ->useI18nQuery($locale)
                     ->filterBySlug($slug)
                 ->endUse()
                 ->findOne()

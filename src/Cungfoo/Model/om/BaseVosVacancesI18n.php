@@ -2,7 +2,6 @@
 
 namespace Cungfoo\Model\om;
 
-use \BaseObject;
 use \BasePeer;
 use \Criteria;
 use \Exception;
@@ -16,6 +15,7 @@ use Cungfoo\Model\VosVacancesI18n;
 use Cungfoo\Model\VosVacancesI18nPeer;
 use Cungfoo\Model\VosVacancesI18nQuery;
 use Cungfoo\Model\VosVacancesQuery;
+use Propel\BaseObject;
 
 /**
  * Base class that represents a row from the 'vos_vacances_i18n' table.

@@ -26,10 +26,10 @@ class Pays extends BasePays
     public function getRegionMeaHome()
     {
         return \Cungfoo\Model\RegionQuery::create()
-            ->joinWithI18n()
+            ->joinWithI18n($this->currentLocale)
             ->filterByPaysId($this->getId())
             ->filterByMeaHome(1)
-            ->find()
+            ->findActive()
         ;
     }
 }

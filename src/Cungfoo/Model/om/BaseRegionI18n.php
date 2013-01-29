@@ -2,7 +2,6 @@
 
 namespace Cungfoo\Model\om;
 
-use \BaseObject;
 use \BasePeer;
 use \Criteria;
 use \Exception;
@@ -16,6 +15,7 @@ use Cungfoo\Model\RegionI18n;
 use Cungfoo\Model\RegionI18nPeer;
 use Cungfoo\Model\RegionI18nQuery;
 use Cungfoo\Model\RegionQuery;
+use Propel\BaseObject;
 
 /**
  * Base class that represents a row from the 'region_i18n' table.

@@ -66,6 +66,9 @@ class GenerateCommand extends BaseCommand
             $this->generateTheme(\Cungfoo\Model\CategoryTypeHebergementQuery::create(), $languages, $con);
             $output->writeln(sprintf('<info>%s</info> slug added on <comment>catégorie type hebergement</comment> table.', $this->getName()));
 
+            $this->generateTheme(\Cungfoo\Model\TypeHebergementCapaciteQuery::create(), $languages, $con);
+            $output->writeln(sprintf('<info>%s</info> slug added on <comment>capacité type hebergement</comment> table.', $this->getName()));
+
             $this->generateTheme(\Cungfoo\Model\BonPlanQuery::create(), $languages, $con);
             $output->writeln(sprintf('<info>%s</info> slug added on <comment>bon plan</comment> table.', $this->getName()));
 
@@ -108,13 +111,13 @@ class GenerateCommand extends BaseCommand
         foreach ($languages as $language)
         {
             $objects = $query
-                ->joinWithI18n($language)
                 ->find($con)
             ;
 
             foreach ($objects as $object)
             {
                 $object
+                    ->setLocale($language)
                     ->setSlug($utils->slugify($object->getName()))
                     ->save($con)
                 ;
@@ -124,42 +127,68 @@ class GenerateCommand extends BaseCommand
     protected function generateThemeCms($languages, \PropelPDO $con)
     {
         $utils = new \Cungfoo\Lib\Utils();
-        $themes = \Cungfoo\Model\ThemeQuery::create()->find($con);
+        $query = \Cungfoo\Model\ThemeQuery::create();
 
-        foreach ($themes as $theme)
+
+        foreach ($languages as $language)
         {
-            $theme
-                ->setSlug($utils->slugify($theme->getName()))
-                ->save($con)
+            $objects = $query
+                ->find($con)
             ;
+
+            foreach ($objects as $theme)
+            {
+                $theme
+                    ->setLocale($language)
+                    ->setSlug($utils->slugify($theme->getName()))
+                    ->save($con)
+                ;
+            }
         }
     }
 
     protected function generatePOI($languages, \PropelPDO $con)
     {
         $utils = new \Cungfoo\Lib\Utils();
-        $pois = \Cungfoo\Model\PointInteretQuery::create()->find($con);
+        $query = \Cungfoo\Model\PointInteretQuery::create();
 
-        foreach ($pois as $poi)
+
+        foreach ($languages as $language)
         {
-            $poi
-                ->setSlug($utils->slugify($poi->getName()))
-                ->save($con)
+            $objects = $query
+                ->find($con)
             ;
+
+            foreach ($objects as $poi)
+            {
+                $poi
+                    ->setLocale($language)
+                    ->setSlug($utils->slugify($poi->getName()))
+                    ->save($con)
+                ;
+            }
         }
     }
 
     protected function generateEvent($languages, \PropelPDO $con)
     {
         $utils = new \Cungfoo\Lib\Utils();
-        $events = \Cungfoo\Model\EventQuery::create()->find($con);
+        $query = \Cungfoo\Model\EventQuery::create();
 
-        foreach ($events as $event)
+        foreach ($languages as $language)
         {
-            $event
-                ->setSlug($utils->slugify($event->getName()))
-                ->save($con)
+            $objects = $query
+                ->find($con)
             ;
+
+            foreach ($objects as $event)
+            {
+                $event
+                    ->setLocale($language)
+                    ->setSlug($utils->slugify($event->getName()))
+                    ->save($con)
+                ;
+            }
         }
     }
 }

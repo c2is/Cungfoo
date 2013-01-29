@@ -2,7 +2,6 @@
 
 namespace Cungfoo\Model\om;
 
-use \BaseObject;
 use \BasePeer;
 use \Criteria;
 use \DateTime;
@@ -28,6 +27,7 @@ use Cungfoo\Model\Theme;
 use Cungfoo\Model\ThemeActivite;
 use Cungfoo\Model\ThemeActiviteQuery;
 use Cungfoo\Model\ThemeQuery;
+use Propel\BaseObject;
 
 /**
  * Base class that represents a row from the 'activite' table.

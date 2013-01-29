@@ -2,7 +2,6 @@
 
 namespace Cungfoo\Model\om;
 
-use \BaseObject;
 use \BasePeer;
 use \Criteria;
 use \Exception;
@@ -16,6 +15,7 @@ use Cungfoo\Model\VilleI18n;
 use Cungfoo\Model\VilleI18nPeer;
 use Cungfoo\Model\VilleI18nQuery;
 use Cungfoo\Model\VilleQuery;
+use Propel\BaseObject;
 
 /**
  * Base class that represents a row from the 'ville_i18n' table.

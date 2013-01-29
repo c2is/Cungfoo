@@ -2,7 +2,6 @@
 
 namespace Cungfoo\Model\om;
 
-use \BaseObject;
 use \BasePeer;
 use \Criteria;
 use \Exception;
@@ -16,6 +15,7 @@ use Cungfoo\Model\ThematiqueI18n;
 use Cungfoo\Model\ThematiqueI18nPeer;
 use Cungfoo\Model\ThematiqueI18nQuery;
 use Cungfoo\Model\ThematiqueQuery;
+use Propel\BaseObject;
 
 /**
  * Base class that represents a row from the 'thematique_i18n' table.

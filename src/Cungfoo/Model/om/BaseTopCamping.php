@@ -2,7 +2,6 @@
 
 namespace Cungfoo\Model\om;
 
-use \BaseObject;
 use \BasePeer;
 use \Criteria;
 use \Exception;
@@ -16,6 +15,7 @@ use Cungfoo\Model\EtablissementQuery;
 use Cungfoo\Model\TopCamping;
 use Cungfoo\Model\TopCampingPeer;
 use Cungfoo\Model\TopCampingQuery;
+use Propel\BaseObject;
 
 /**
  * Base class that represents a row from the 'top_camping' table.
