@@ -67,7 +67,7 @@ class SearchEngineController implements ControllerProviderInterface
 
             $campings = Model\EtablissementQuery::create()
                 ->select(array('code', 'name'))
-                ->filterByDestination($region, $code)
+                ->filterByDestinationSearch($region, $code)
                 ->orderByName()
                 ->findActive()
             ;

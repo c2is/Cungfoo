@@ -9277,7 +9277,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     }
 
     // active behavior
-    
+
     /**
      * return true is the object is active
      *
@@ -9508,7 +9508,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     }
 
     // crudable behavior
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -9523,19 +9523,19 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         {
             $this->resetModified(EtablissementPeer::PLAN_PATH);
         }
-    
+
         $this->uploadPlanPath($form);
-        
+
         if (!$form['vignette_deleted']->getData())
         {
             $this->resetModified(EtablissementPeer::VIGNETTE);
         }
-    
+
         $this->uploadVignette($form);
-        
+
         return $this->save($con);
     }
-    
+
     /**
      * @return string
      */
@@ -9543,7 +9543,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     {
         return 'uploads/etablissements';
     }
-    
+
     /**
      * @return string
      */
@@ -9551,7 +9551,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -9560,12 +9560,14 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     {
         if (!file_exists($this->getUploadRootDir() . '/' . $form['plan_path']->getData()))
         {
-            $image = uniqid().'.'.$form['plan_path']->getData()->guessExtension();
-            $form['plan_path']->getData()->move($this->getUploadRootDir(), $image);
-            $this->setPlanPath($this->getUploadDir() . '/' . $image);
+            if ($form['plan_path']->getData()) {
+                $image = uniqid().'.'.$form['plan_path']->getData()->guessExtension();
+                $form['plan_path']->getData()->move($this->getUploadRootDir(), $image);
+                $this->setPlanPath($this->getUploadDir() . '/' . $image);
+            }
         }
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -9574,9 +9576,11 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     {
         if (!file_exists($this->getUploadRootDir() . '/' . $form['vignette']->getData()))
         {
-            $image = uniqid().'.'.$form['vignette']->getData()->guessExtension();
-            $form['vignette']->getData()->move($this->getUploadRootDir(), $image);
-            $this->setVignette($this->getUploadDir() . '/' . $image);
+            if ($form['vignette']->getData()) {
+                $image = uniqid().'.'.$form['vignette']->getData()->guessExtension();
+                $form['vignette']->getData()->move($this->getUploadRootDir(), $image);
+                $this->setVignette($this->getUploadDir() . '/' . $image);
+            }
         }
     }
 

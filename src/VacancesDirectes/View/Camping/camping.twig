@@ -244,7 +244,7 @@
         <div class="typLocation {{ hebergement.categoryTypeHebergement.name }} cap{{ hebergement.nombrePlace }} clear">
             <img src="{{ asset(hebergement.imageHebergementPath) }}" width="181" height="134" alt="{{ hebergement.name | trans }}" class="left boxborder">
             <div style="overflow:hidden;">
-            <span class="h4-like">{{ hebergement.name | trans }}</span>
+            <a href="{{ path('location_type_hebergement', {'categoryTypeHebergement':hebergement.categoryTypeHebergement.slug ,'typeHebergement':hebergement.slug }) }}"><span class="h4-like">{{ hebergement.name | trans }}</span></a>
             {# TODO <span class="nbPlace"><img src="{{ asset(hebergement.imageCompositionPath) }}" width="92" height="33" alt="">  {{ hebergement.composition | trans | nl2br }}</span>#}
             {#<strong>{{ "fiche.nombre_chambres" | trans }} {{ hebergement.nombrePlace | trans | nl2br }}<br>
             {{ "fiche.surface" | trans }} {{ hebergement.surface | trans }}<br>

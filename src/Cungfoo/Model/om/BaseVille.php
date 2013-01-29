@@ -2002,7 +2002,7 @@ abstract class BaseVille extends BaseObject implements Persistent
     }
 
     // active behavior
-    
+
     /**
      * return true is the object is active
      *
@@ -2209,7 +2209,7 @@ abstract class BaseVille extends BaseObject implements Persistent
     }
 
     // crudable behavior
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -2224,19 +2224,19 @@ abstract class BaseVille extends BaseObject implements Persistent
         {
             $this->resetModified(VillePeer::IMAGE_DETAIL_1);
         }
-    
+
         $this->uploadImageDetail1($form);
-        
+
         if (!$form['image_detail_2_deleted']->getData())
         {
             $this->resetModified(VillePeer::IMAGE_DETAIL_2);
         }
-    
+
         $this->uploadImageDetail2($form);
-        
+
         return $this->save($con);
     }
-    
+
     /**
      * @return string
      */
@@ -2244,7 +2244,7 @@ abstract class BaseVille extends BaseObject implements Persistent
     {
         return 'uploads/villes';
     }
-    
+
     /**
      * @return string
      */
@@ -2252,7 +2252,7 @@ abstract class BaseVille extends BaseObject implements Persistent
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -2261,12 +2261,14 @@ abstract class BaseVille extends BaseObject implements Persistent
     {
         if (!file_exists($this->getUploadRootDir() . '/' . $form['image_detail_1']->getData()))
         {
-            $image = uniqid().'.'.$form['image_detail_1']->getData()->guessExtension();
-            $form['image_detail_1']->getData()->move($this->getUploadRootDir(), $image);
-            $this->setImageDetail1($this->getUploadDir() . '/' . $image);
+            if ($form['image_detail_1']->getData()) {
+                $image = uniqid().'.'.$form['image_detail_1']->getData()->guessExtension();
+                $form['image_detail_1']->getData()->move($this->getUploadRootDir(), $image);
+                $this->setImageDetail1($this->getUploadDir() . '/' . $image);
+            }
         }
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -2275,9 +2277,11 @@ abstract class BaseVille extends BaseObject implements Persistent
     {
         if (!file_exists($this->getUploadRootDir() . '/' . $form['image_detail_2']->getData()))
         {
-            $image = uniqid().'.'.$form['image_detail_2']->getData()->guessExtension();
-            $form['image_detail_2']->getData()->move($this->getUploadRootDir(), $image);
-            $this->setImageDetail2($this->getUploadDir() . '/' . $image);
+            if ($form['image_detail_2']->getData()) {
+                $image = uniqid().'.'.$form['image_detail_2']->getData()->guessExtension();
+                $form['image_detail_2']->getData()->move($this->getUploadRootDir(), $image);
+                $this->setImageDetail2($this->getUploadDir() . '/' . $image);
+            }
         }
     }
 

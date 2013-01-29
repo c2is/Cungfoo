@@ -164,7 +164,7 @@ class DateType extends AppAwareType
         $campings = \Cungfoo\Model\EtablissementQuery::create()
             ->select(array('Code', 'Name'))
             ->_if($currentDestination)
-            ->filterByDestination($region, $currentDestination)
+            ->filterByDestinationSearch($region, $currentDestination)
             ->_endif()
             ->orderByName()
             ->findActive()

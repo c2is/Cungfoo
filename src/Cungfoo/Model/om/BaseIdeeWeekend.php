@@ -1419,7 +1419,7 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
     }
 
     // active behavior
-    
+
     /**
      * return true is the object is active
      *
@@ -1578,7 +1578,7 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
     }
 
     // crudable behavior
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -1593,12 +1593,12 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
         {
             $this->resetModified(IdeeWeekendPeer::IMAGE_PATH);
         }
-    
+
         $this->uploadImagePath($form);
-        
+
         return $this->save($con);
     }
-    
+
     /**
      * @return string
      */
@@ -1606,7 +1606,7 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
     {
         return 'uploads/idee_weekends';
     }
-    
+
     /**
      * @return string
      */
@@ -1614,7 +1614,7 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -1623,9 +1623,11 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
     {
         if (!file_exists($this->getUploadRootDir() . '/' . $form['image_path']->getData()))
         {
-            $image = uniqid().'.'.$form['image_path']->getData()->guessExtension();
-            $form['image_path']->getData()->move($this->getUploadRootDir(), $image);
-            $this->setImagePath($this->getUploadDir() . '/' . $image);
+            if ($form['image_path']->getData()) {
+                $image = uniqid().'.'.$form['image_path']->getData()->guessExtension();
+                $form['image_path']->getData()->move($this->getUploadRootDir(), $image);
+                $this->setImagePath($this->getUploadDir() . '/' . $image);
+            }
         }
     }
 

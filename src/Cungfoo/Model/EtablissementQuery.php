@@ -18,7 +18,7 @@ use Cungfoo\Model\om\BaseEtablissementQuery;
  */
 class EtablissementQuery extends BaseEtablissementQuery
 {
-    public function filterByDestination($isRegion, $code = null)
+    public function filterByDestinationSearch($isRegion, $code = null)
     {
         return $this
             ->_if($code)
