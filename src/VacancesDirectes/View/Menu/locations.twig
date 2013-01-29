@@ -7,7 +7,7 @@
             <div class="view" style="background-image:url('{{ asset(categoryTypeHebergement.imageMenu) }}')">
                 <div class="stamp grey"><span>{{ categoryTypeHebergement }}</span></div>
             </div>
-            <a class="stain fushia cover linkBlock" href="{{ path('location_category_type_hebergement', {'categoryTypeHebergement': categoryTypeHebergement.slug}) }}"><span>à partir de<br /><span class="price">{{categoryTypeHebergement.minimumPrice}}<span class="fine">&nbsp;</span>€</span></span></a>
+            <a class="stain fushia cover linkBlock" href="{{ path('location_category_type_hebergement', {'categoryTypeHebergement': categoryTypeHebergement.slug}) }}"><span>{{ 'general.a_partir_de' | trans }}<br /><span class="price">{{categoryTypeHebergement.minimumPrice}}<span class="fine">&nbsp;</span>€</span></span></a>
         </div>
         {% endfor %}
     </div>

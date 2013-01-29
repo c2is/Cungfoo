@@ -10,7 +10,7 @@
                 <div class="details left">
                     <span class="title">{{ etab.model.name }} {{ etab.model.categorie.stars }}</span>
                     <span class="region">{{ etab.model.ville.region }}</span>
-                    <span class="period">Du {{ etab.start_date }} au {{ etab.end_date }}</span>
+                    <span class="period">{{ "listing.du" | trans }} {{ etab.start_date }} {{ "listing.au" | trans }} {{ etab.end_date }}</span>
                     <span class="counter">J -{{ etab.days_countdown }}</span>
                     {% set discount = proposal.adult_price != proposal.adult_price_without_discounts %}
                     {% if discount %}

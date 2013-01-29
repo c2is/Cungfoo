@@ -7,7 +7,7 @@
             <div class="details left">
                 <span class="title">{{ etab.model.name }} {{ etab.model.categorie.stars }}</span>
                 <span class="region">{{ etab.model.ville.region }}</span>
-                <span class="period">Du {{ etab.start_date }} au {{ etab.end_date }}</span>
+                <span class="period">{{ "listing.du" | trans }} {{ etab.start_date }} {{ "listing.au" | trans }} {{ etab.end_date }}</span>
                 {% set discount = proposal.adult_price != proposal.adult_price_without_discounts %}
                 {% if discount %}
                     <span class="condition"><a href="{{ path('destination_camping', { pays: etab.model.pays.slug, region: etab.model.region.slug, ville: etab.model.ville.slug, camping: etab.model.slug }) }}" class="price linkBlock">{{ proposal.adult_price|number_format }}<span class="fine">&nbsp;</span>€ {{ "general.au_lieu_de" | trans }} {{ proposal.adult_price_without_discounts|number_format }}<span class="fine">&nbsp;</span>€</a><br>
