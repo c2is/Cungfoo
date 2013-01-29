@@ -1655,10 +1655,38 @@ body {
 }
 #semainier #semainierContener table.aSemainier td.reserver.discount {
   color: #f58220;
+  padding: 0;
 }
 #semainier #semainierContener table.aSemainier td.reserver.discount .orderPrice,
 #semainier #semainierContener table.aSemainier td.reserver.discount .orderLink {
   color: #f58220;
+}
+#semainier #semainierContener table.aSemainier td.reserver.discount > div {
+  padding: 32px 9px 8px;
+  position: relative;
+  overflow: hidden;
+}
+#semainier #semainierContener table.aSemainier td.reserver.discount .instead {
+  font-size: 10px;
+}
+#semainier #semainierContener table.aSemainier td.reserver.discount .instead .rawPrice {
+  text-decoration: line-through;
+}
+#semainier #semainierContener table.aSemainier td.reserver.discount .reductionPercents {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 68px;
+  height: 36px;
+  background: url("../../images/vacancesdirectes/common/sprites/stain.png") no-repeat 15px -288px transparent;
+}
+#semainier #semainierContener table.aSemainier td.reserver.discount .reductionPercents span {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 12px;
+  position: absolute;
+  top: 3px;
+  right: 3px;
 }
 #semainier #semainierContener table.aSemainier td.reserver.discount:hover {
   background-color: #f58220;
@@ -1668,7 +1696,13 @@ body {
 #semainier #semainierContener table.aSemainier td.reserver.discount:hover a {
   color: #ffffff;
 }
-#semainier #semainierContener table.aSemainier td.noDispo {
+#semainier #semainierContener table.aSemainier td.reserver.discount:hover .reductionPercents {
+  background-position: 15px -713px;
+}
+#semainier #semainierContener table.aSemainier td.reserver.discount:hover .reductionPercents span {
+  color: #f58220;
+}
+#semainier #semainierContener table.aSemainier.noDispo {
   background-color: #e6e5e5;
   text-align: center;
   text-transform: uppercase;
@@ -1677,10 +1711,10 @@ body {
   color: #5f5f5f;
   vertical-align: middle;
 }
-#semainier #semainierContener table.aSemainier .semainier_table-line1 {
+#semainier #semainierContener .semainier_table-line1 {
   background-color: #8c8a8a;
 }
-#semainier #semainierContener table.aSemainier .semainier_table-line1 td {
+#semainier #semainierContener .semainier_table-line1 td {
   padding: 7px 0 5px;
   text-transform: uppercase;
   color: #fff;
@@ -1689,82 +1723,86 @@ body {
   text-align: center;
   border-color: #8C8A8A;
 }
-#semainier #semainierContener table.aSemainier tr:last-child {
+#semainier #semainierContener tr:last-child {
   background-color: #ed145b;
 }
-#semainier #semainierContener table.aSemainier tr:last-child td {
+#semainier #semainierContener tr:last-child td {
   border-color: #ed145b;
 }
-#semainier #semainierContener table.aSemainier tr:last-child a {
+#semainier #semainierContener tr:last-child a {
   color: #ffffff;
   font: 13px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
 }
-#semainier #semainierContener table.aSemainier tr:last-child .monthNavigationPrevious {
+#semainier #semainierContener tr:last-child .monthNavigationPrevious {
   float: left;
   text-decoration: underline;
 }
-#semainier #semainierContener table.aSemainier tr:last-child .monthNavigationPrevious:before {
+#semainier #semainierContener tr:last-child .monthNavigationPrevious:before {
   content: '<< ';
 }
-#semainier #semainierContener table.aSemainier tr:last-child .monthNavigationNext {
+#semainier #semainierContener tr:last-child .monthNavigationNext {
   float: right;
   text-decoration: underline;
 }
-#semainier #semainierContener table.aSemainier tr:last-child .monthNavigationNext:after {
+#semainier #semainierContener tr:last-child .monthNavigationNext:after {
   content: ' >>';
 }
-#semainier #semainierContener .monthList {
+#semainier .monthList {
   text-align: center;
 }
-#semainier #semainierContener .monthList li {
+#semainier .monthList li {
   background: #e6e5e5;
   border-radius: 5px 5px 0 0;
   display: inline-block;
   padding: 5px 10px 1px;
   text-transform: uppercase;
 }
-#semainier #semainierContener .monthList li a {
+#semainier .monthList li a {
   text-decoration: none;
   color: #464545;
   font: bold 12px Arial;
 }
-#semainier #semainierContener .monthList li.on {
+#semainier .monthList li.on {
   background: #8c8a8a;
 }
-#semainier #semainierContener .monthList li.on a {
+#semainier .monthList li.on a {
   color: #fff;
 }
-#semainier #semainierContener .pNbr {
+#semainier .pNbr {
   overflow: hidden;
   margin-bottom: 10px;
 }
-#semainier #semainierContener .pNbr .number {
+#semainier .pNbr .number {
   float: left;
   border-right: 1px solid #fff;
   font: bold 35px Arial;
   padding: 0px 5px 0px 0px;
 }
-#semainier #semainierContener .pNbr .titre {
+#semainier .pNbr .titre {
   float: left;
   border-left: 1px solid #fff;
   margin-left: -1px;
   padding: 0px 0px 4px 10px;
   width: 510px;
 }
-#semainier #semainierContener .pNbr .titre strong {
+#semainier .pNbr .titre strong {
   font: bold 16px Arial;
   display: block;
 }
-#semainier #semainierContener .pNbr .titre em {
+#semainier .pNbr .titre em {
   font: italic 13px Arial;
   display: block;
   margin-bottom: 10px;
 }
-#semainier #semainierContener .pNbr select {
+#semainier .pNbr select {
   text-transform: uppercase;
   font: 12px Arial;
   color: #606060;
   width: 300px;
   padding: 3px 0;
+}
+.ie-lte9 .reductionPercents {
+  top: 0!important;
+  right: 0!important;
 }

@@ -7,9 +7,16 @@ $(function() {
 
 // popins
     $(".popinIframe").click( function(e){
-        var url = $(this).attr('href');
-        parent.openIframePopin(url);
         e.preventDefault();
+        if ($(this).parent('.roomType').attr('data-type')) {
+            var type = $(this).parent('.roomType').attr('data-type');
+            console.log(type);
+            parent.openPopinInline(type);
+        }
+        else if ($(this).attr('href')) {
+            var url = $(this).attr('href');
+            parent.openPopinIframe(url);
+        }
     });
 
     //$(".popinIframe").colorbox({iframe:true, width:'80%', height:'80%', close:"&times;"});

@@ -182,6 +182,8 @@ body{background:#fff;color:@colorGris2;font:12px @arial;margin:0 24px;}
 .full-width{position:relative;min-width:100%;float:left;z-index:0;}
 .fixed-width{position:relative;width:976px;margin:0 auto;}
 
+
+
 /* packages */
 #searchProductFormContener {display:none;}
 #homePage #searchResult {width:928px;height:560px;position:relative;
@@ -506,11 +508,22 @@ body{background:#fff;color:@colorGris2;font:12px @arial;margin:0 24px;}
             span, a{color:@colorBlanc;}
           }
         }
-        &.reserver.discount{color:@colorOrange;
+        &.reserver.discount{color:@colorOrange;padding:0;
           .orderPrice, .orderLink{color:@colorOrange;}
+          &>div{padding:32px 9px 8px;position:relative;overflow:hidden;}
+          .instead{font-size:10px;
+            .rawPrice{text-decoration:line-through;}
+          }
+          .reductionPercents{position:absolute;top:0;right:0;width:68px;height:36px;background:url("../../images/vacancesdirectes/common/sprites/stain.png") no-repeat 15px -288px transparent;
+            span{color:@colorBlanc;font-weight:bold;font-size:12px;position:absolute;top:3px;right:3px;}
+          }
           &:hover{background-color:@colorBgOrange;color:@colorBlanc;
             span, a{color:@colorBlanc;}
+            .reductionPercents{background-position:15px -713px;
+              span{color:@colorOrange;}
+            }
           }
+        }
         }
         &.noDispo{background-color:@colorBgGrisC;text-align:center;text-transform:uppercase;font-family:@ptnarrow;font-size:11px;color:@colorGris1;vertical-align:middle;}
       }
@@ -545,4 +558,4 @@ body{background:#fff;color:@colorGris2;font:12px @arial;margin:0 24px;}
       select{text-transform:uppercase;font:12px Arial;color:#606060;width:300px;padding:3px 0;}
     }
   }
-}
+.ie-lte9 .reductionPercents{top:0!important;right:0!important;}
