@@ -1218,8 +1218,13 @@ function showWaitLayer(){
  * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
  */
 
-function openPopinIframe(url){
-    $.colorbox({href:url, iframe:true, fixed: true, width:'80%', height:'80%', close:"&times;"});
+function openPopinIframe(url, context){
+    if (context == 'result'){
+        $.colorbox({href:url, inline:true, width:'616px', close:"&times;"});
+    }
+    else{
+        $.colorbox({href:url, iframe:true, fixed: true, width:'80%', height:'80%', close:"&times;"});
+    }
 }
 function openPopinInline(type){
     console.log(type);

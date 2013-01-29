@@ -10,8 +10,12 @@ $(function() {
         e.preventDefault();
         if ($(this).parent('.roomType').attr('data-type')) {
             var type = $(this).parent('.roomType').attr('data-type');
-            console.log(type);
             parent.openPopinInline(type);
+        }
+        else if ($(this).parent('.linePrice') && $(this).attr('href')) {
+            var url = $(this).attr('href');
+            var context = $('body').attr('class');
+            parent.openPopinIframe(url, context);
         }
         else if ($(this).attr('href')) {
             var url = $(this).attr('href');
