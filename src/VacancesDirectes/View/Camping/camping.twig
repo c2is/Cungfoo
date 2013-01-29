@@ -241,7 +241,7 @@
     </form>
     {% if etab.typeHebergements | length %}
     {% for hebergement in etab.typeHebergementsActive %}
-        <div class="typLocation {{ hebergement.categoryTypeHebergement.name }} cap{{ hebergement.nombrePlace }} clear">
+        <div class="typLocation {{ hebergement.categoryTypeHebergement.name }} cap{{ hebergement.nombrePlace }} clear" data-type="{{ hebergement.code }}">
             <img src="{{ asset(hebergement.imageHebergementPath) }}" width="181" height="134" alt="{{ hebergement.name | trans }}" class="left boxborder">
             <div style="overflow:hidden;">
             <a href="{{ path('location_type_hebergement', {'categoryTypeHebergement':hebergement.categoryTypeHebergement.slug ,'typeHebergement':hebergement.slug }) }}"><span class="h4-like">{{ hebergement.name | trans }}</span></a>
