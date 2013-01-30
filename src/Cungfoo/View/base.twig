@@ -45,6 +45,6 @@
 
         {% endblock %}
     </div>
-    <script type="text/javascript">var locale = 'fr';</script>
+    <script type="text/javascript">var locale = "{{ app.context.get('language') }}";</script>
 </body>
 </html>
