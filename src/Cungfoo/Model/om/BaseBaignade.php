@@ -70,6 +70,12 @@ abstract class BaseBaignade extends BaseObject implements Persistent
     protected $code;
 
     /**
+     * The value for the image_path field.
+     * @var        string
+     */
+    protected $image_path;
+
+    /**
      * The value for the vignette field.
      * @var        string
      */
@@ -222,6 +228,16 @@ abstract class BaseBaignade extends BaseObject implements Persistent
     }
 
     /**
+     * Get the [image_path] column value.
+     *
+     * @return string
+     */
+    public function getImagePath()
+    {
+        return $this->image_path;
+    }
+
+    /**
      * Get the [vignette] column value.
      *
      * @return string
@@ -364,6 +380,27 @@ abstract class BaseBaignade extends BaseObject implements Persistent
     } // setCode()
 
     /**
+     * Set the value of [image_path] column.
+     *
+     * @param string $v new value
+     * @return Baignade The current object (for fluent API support)
+     */
+    public function setImagePath($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->image_path !== $v) {
+            $this->image_path = $v;
+            $this->modifiedColumns[] = BaignadePeer::IMAGE_PATH;
+        }
+
+
+        return $this;
+    } // setImagePath()
+
+    /**
      * Set the value of [vignette] column.
      *
      * @param string $v new value
@@ -497,10 +534,11 @@ abstract class BaseBaignade extends BaseObject implements Persistent
 
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
             $this->code = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
-            $this->vignette = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
-            $this->created_at = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
-            $this->updated_at = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
-            $this->active = ($row[$startcol + 5] !== null) ? (boolean) $row[$startcol + 5] : null;
+            $this->image_path = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
+            $this->vignette = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
+            $this->created_at = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
+            $this->updated_at = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
+            $this->active = ($row[$startcol + 6] !== null) ? (boolean) $row[$startcol + 6] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -509,7 +547,7 @@ abstract class BaseBaignade extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 6; // 6 = BaignadePeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 7; // 7 = BaignadePeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Baignade object", $e);
@@ -837,6 +875,9 @@ abstract class BaseBaignade extends BaseObject implements Persistent
         if ($this->isColumnModified(BaignadePeer::CODE)) {
             $modifiedColumns[':p' . $index++]  = '`code`';
         }
+        if ($this->isColumnModified(BaignadePeer::IMAGE_PATH)) {
+            $modifiedColumns[':p' . $index++]  = '`image_path`';
+        }
         if ($this->isColumnModified(BaignadePeer::VIGNETTE)) {
             $modifiedColumns[':p' . $index++]  = '`vignette`';
         }
@@ -865,6 +906,9 @@ abstract class BaseBaignade extends BaseObject implements Persistent
                         break;
                     case '`code`':
                         $stmt->bindValue($identifier, $this->code, PDO::PARAM_STR);
+                        break;
+                    case '`image_path`':
+                        $stmt->bindValue($identifier, $this->image_path, PDO::PARAM_STR);
                         break;
                     case '`vignette`':
                         $stmt->bindValue($identifier, $this->vignette, PDO::PARAM_STR);
@@ -1043,15 +1087,18 @@ abstract class BaseBaignade extends BaseObject implements Persistent
                 return $this->getCode();
                 break;
             case 2:
-                return $this->getVignette();
+                return $this->getImagePath();
                 break;
             case 3:
-                return $this->getCreatedAt();
+                return $this->getVignette();
                 break;
             case 4:
-                return $this->getUpdatedAt();
+                return $this->getCreatedAt();
                 break;
             case 5:
+                return $this->getUpdatedAt();
+                break;
+            case 6:
                 return $this->getActive();
                 break;
             default:
@@ -1085,10 +1132,11 @@ abstract class BaseBaignade extends BaseObject implements Persistent
         $result = array(
             $keys[0] => $this->getId(),
             $keys[1] => $this->getCode(),
-            $keys[2] => $this->getVignette(),
-            $keys[3] => $this->getCreatedAt(),
-            $keys[4] => $this->getUpdatedAt(),
-            $keys[5] => $this->getActive(),
+            $keys[2] => $this->getImagePath(),
+            $keys[3] => $this->getVignette(),
+            $keys[4] => $this->getCreatedAt(),
+            $keys[5] => $this->getUpdatedAt(),
+            $keys[6] => $this->getActive(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->collEtablissementBaignades) {
@@ -1141,15 +1189,18 @@ abstract class BaseBaignade extends BaseObject implements Persistent
                 $this->setCode($value);
                 break;
             case 2:
-                $this->setVignette($value);
+                $this->setImagePath($value);
                 break;
             case 3:
-                $this->setCreatedAt($value);
+                $this->setVignette($value);
                 break;
             case 4:
-                $this->setUpdatedAt($value);
+                $this->setCreatedAt($value);
                 break;
             case 5:
+                $this->setUpdatedAt($value);
+                break;
+            case 6:
                 $this->setActive($value);
                 break;
         } // switch()
@@ -1178,10 +1229,11 @@ abstract class BaseBaignade extends BaseObject implements Persistent
 
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
         if (array_key_exists($keys[1], $arr)) $this->setCode($arr[$keys[1]]);
-        if (array_key_exists($keys[2], $arr)) $this->setVignette($arr[$keys[2]]);
-        if (array_key_exists($keys[3], $arr)) $this->setCreatedAt($arr[$keys[3]]);
-        if (array_key_exists($keys[4], $arr)) $this->setUpdatedAt($arr[$keys[4]]);
-        if (array_key_exists($keys[5], $arr)) $this->setActive($arr[$keys[5]]);
+        if (array_key_exists($keys[2], $arr)) $this->setImagePath($arr[$keys[2]]);
+        if (array_key_exists($keys[3], $arr)) $this->setVignette($arr[$keys[3]]);
+        if (array_key_exists($keys[4], $arr)) $this->setCreatedAt($arr[$keys[4]]);
+        if (array_key_exists($keys[5], $arr)) $this->setUpdatedAt($arr[$keys[5]]);
+        if (array_key_exists($keys[6], $arr)) $this->setActive($arr[$keys[6]]);
     }
 
     /**
@@ -1195,6 +1247,7 @@ abstract class BaseBaignade extends BaseObject implements Persistent
 
         if ($this->isColumnModified(BaignadePeer::ID)) $criteria->add(BaignadePeer::ID, $this->id);
         if ($this->isColumnModified(BaignadePeer::CODE)) $criteria->add(BaignadePeer::CODE, $this->code);
+        if ($this->isColumnModified(BaignadePeer::IMAGE_PATH)) $criteria->add(BaignadePeer::IMAGE_PATH, $this->image_path);
         if ($this->isColumnModified(BaignadePeer::VIGNETTE)) $criteria->add(BaignadePeer::VIGNETTE, $this->vignette);
         if ($this->isColumnModified(BaignadePeer::CREATED_AT)) $criteria->add(BaignadePeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(BaignadePeer::UPDATED_AT)) $criteria->add(BaignadePeer::UPDATED_AT, $this->updated_at);
@@ -1263,6 +1316,7 @@ abstract class BaseBaignade extends BaseObject implements Persistent
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
         $copyObj->setCode($this->getCode());
+        $copyObj->setImagePath($this->getImagePath());
         $copyObj->setVignette($this->getVignette());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
@@ -2425,6 +2479,7 @@ abstract class BaseBaignade extends BaseObject implements Persistent
     {
         $this->id = null;
         $this->code = null;
+        $this->image_path = null;
         $this->vignette = null;
         $this->created_at = null;
         $this->updated_at = null;
@@ -2732,6 +2787,13 @@ abstract class BaseBaignade extends BaseObject implements Persistent
      */
     public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
     {
+        if (!$form['image_path_deleted']->getData())
+        {
+            $this->resetModified(BaignadePeer::IMAGE_PATH);
+        }
+
+        $this->uploadImagePath($form);
+
         if (!$form['vignette_deleted']->getData())
         {
             $this->resetModified(BaignadePeer::VIGNETTE);
@@ -2756,6 +2818,22 @@ abstract class BaseBaignade extends BaseObject implements Persistent
     public function getUploadRootDir()
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
+    }
+
+    /**
+     * @param \Symfony\Component\Form\Form $form
+     * @return void
+     */
+    public function uploadImagePath(\Symfony\Component\Form\Form $form)
+    {
+        if (!file_exists($this->getUploadRootDir() . '/' . $form['image_path']->getData()))
+        {
+            if ($form['image_path']->getData()) {
+                $image = uniqid().'.'.$form['image_path']->getData()->guessExtension();
+                $form['image_path']->getData()->move($this->getUploadRootDir(), $image);
+                $this->setImagePath($this->getUploadDir() . '/' . $image);
+            }
+        }
     }
 
     /**

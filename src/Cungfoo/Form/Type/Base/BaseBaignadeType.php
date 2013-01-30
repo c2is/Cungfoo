@@ -34,6 +34,19 @@ class BaseBaignadeType extends AppAwareType
             'label' => 'baignade.code',
             'required' => false,
         ));
+        $builder->add('image_path', 'cungfoo_file', array(
+            'constraints' => array(
+            ),
+            'label' => 'baignade.image_path',
+            'required' => false,
+        ));
+        $builder->add('image_path_deleted', 'checkbox', array(
+            'constraints' => array(
+            ),
+            'property_path' => false,
+            'label' => 'baignade.image_path_deleted',
+            'required' => false,
+        ));
         $builder->add('vignette', 'cungfoo_file', array(
             'constraints' => array(
             ),
