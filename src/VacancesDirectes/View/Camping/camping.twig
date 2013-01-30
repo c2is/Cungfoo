@@ -114,17 +114,17 @@
             <dt><span>{{ "fiche.activites" | trans }}</span></dt>
             <dd class="activites"><ul>
                 {% for activite in etab.activites %}
-                    <li>{% if activite.imagePath != "." and activite.imagePath != null %}<img src="{{ asset(activite.imagePath) }}" alt="{{ activite.name }}">{% endif %}<span>{{ activite.name }}</span></li>
+                    <li>{% if activite.imagePath != "." and activite.imagePath != null %}<img src="{{ asset(activite.imagePath) }}" width="36" height="43" alt="{{ activite.name }}">{% endif %}<span>{{ activite.name }}</span></li>
                 {% endfor %}
             </ul></dd>
         </dl>
         {% endif %}
-        {%if hasBaignade %}
+        {% if hasBaignade %}
         <dl>
             <dt><span>{{ "fiche.baignades.top" | trans }}<br />{{ "fiche.baignades.bottom" | trans }}</span></dt>
             <dd class="equipements"><ul>
                 {% for baignade in etab.baignades %}
-                    <li><span>{{ baignade.name }}</span></li>
+                    <li>{% if baignade.imagePath != "." and baignade.imagePath != null %}<img src="{{ asset(baignade.imagePath) }}" width="36" height="43" alt="{{ baignade.name }}">{% endif %}<span>{{ baignade.name }}</span></li>
                 {% endfor %}
             </ul></dd>
         </dl>
@@ -134,7 +134,7 @@
             <dt><span>{{ "fiche.services_complementaires" | trans }}</span></dt>
             <dd class="services"><ul>
                 {% for serviceComplementaire in etab.serviceComplementaires %}
-                    <li>{% if serviceComplementaire.imagePath != "." and serviceComplementaire.imagePath != null %}<img src="{{ asset(serviceComplementaire.imagePath) }}" alt="{{ serviceComplementaire.name }}">{% endif %}<span>{{ serviceComplementaire.name }}</span></li>
+                    <li>{% if serviceComplementaire.imagePath != "." and serviceComplementaire.imagePath != null %}<img src="{{ asset(serviceComplementaire.imagePath) }}" width="36" height="43" alt="{{ serviceComplementaire.name }}">{% endif %}<span>{{ serviceComplementaire.name }}</span></li>
                 {% endfor %}
             </ul></dd>
         </dl>
@@ -404,10 +404,10 @@
 
 {% if blocPrix.adult_price_without_discounts != 0 %}
 <iframe id="frameResalys" src="{{ path('resalys_wrapper', {
-    webuser: resalysParameters.web_user[locale],
+    webuser: webuser,
     display: 'semainier',
     etab_id:etab.code,
-    campaign_code: resalysParameters.campaign_code,
+    campaign_code: "now"|date("Y"),
     referer: referer
 }) }}" width="960px" height="700px" marginheight="0" marginwidth="0" frameborder="0"></iframe>
 {% endif %}

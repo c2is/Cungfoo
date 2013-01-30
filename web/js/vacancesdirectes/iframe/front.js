@@ -8,20 +8,19 @@ $(function() {
 // popins
     $(".popinIframe").click( function(e){
         e.preventDefault();
-        if ($(this).parent('.roomType').attr('data-type')) {
-            var type = $(this).parent('.roomType').attr('data-type');
-            parent.openPopinInline(type);
-        }
-        else if ($(this).parent().hasClass('linePrice')) {
-            var url = $(this).attr('href');
-            var context = $('body').attr('class');
-            parent.openPopinIframe(url, context);
-        }
-        else {
+        if ($(this).attr('href').length) {
             var url = $(this).attr('href');
             parent.openPopinIframe(url);
         }
     });
+    $(".popinInline").click( function(e){
+        e.preventDefault();
+        if ($(this).parent('.roomType').attr('data-type')) {
+            var type = $(this).parent('.roomType').attr('data-type');
+            parent.openPopinInline(type);
+        }
+    });
+
 
     //$(".popinIframe").colorbox({iframe:true, width:'80%', height:'80%', close:"&times;"});
 

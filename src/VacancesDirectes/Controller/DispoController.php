@@ -43,7 +43,7 @@ class DispoController implements ControllerProviderInterface
                 ->setNbChildren($nb_children)
             ;
 
-            $client = new DisponibiliteClient($app['config']->get('root_dir'));
+            $client = new DisponibiliteClient($app['config']->get('root_dir'), $app['context']->get('language'));
             $client->addOptions($searchParams->generate());
 
             $listing = new DispoListing($app);

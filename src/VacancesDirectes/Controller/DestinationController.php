@@ -316,7 +316,7 @@ class DestinationController implements ControllerProviderInterface
             ->findOne()
         ;
 
-        $resalysParameters = \Symfony\Component\Yaml\Yaml::parse(sprintf('%s/Resalys/parameters.yml', $app['config']->get('config_dir')));
+        $webuser = $app['config']->get('languages')[$locale]['resalys_username'];
 
         // definition des informations relatives au bloc prix de la fiche camping
         $lastProposal = $app['session']->get('last_proposal');
@@ -358,7 +358,7 @@ class DestinationController implements ControllerProviderInterface
             'personnageAleatoire'     => $personnageAleatoire,
             'sitesAVisiter'           => $sitesAVisiter,
             'events'                  => $events,
-            'resalysParameters'       => $resalysParameters,
+            'webuser'                 => $webuser,
             'historyBack'             => $request->headers->get('referer'),
             'hasBaignade'             => count($camping->getEtablissementBaignades()) > 0,
             'blocPrix'                => $blocPrix,

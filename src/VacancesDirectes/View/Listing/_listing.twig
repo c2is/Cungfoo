@@ -94,7 +94,8 @@
                                 {% if proposal.room_types.room_type.room_type_count > 1 %}{{ proposal.room_types.room_type.room_type_count }} * {% endif %}{{ proposal.room_types.room_type.room_type_label }}
                             {% endfor %}
                             <span class="price">{{ proposal.adult_price|number_format }} €</span>
-                        </label>{#<a class="popinIframe" href="#">Détails</a>#}
+                        </label>
+                        {#<a class="popinRoomType" href="#">Détails</a>#}
                         {% if discount %}
                         <span class="stain fushia cover">
                             <span class="promo">-{{ ((proposal.adult_price_without_discounts|number_format - proposal.adult_price|number_format) * 100 / proposal.adult_price_without_discounts)|number_format }}%</span>
@@ -137,7 +138,7 @@
     <h2>{{ "listing.no_results_title" | trans }}</h2>
     <p>{{ "listing.no_results" | trans }}</p>
     {% endfor %}
-    
+
 </div><!-- // #result -->
 {% if list.element|length > 0 %}
 <button id="btPlusResults" class="bt big sombre">{{ "listing.plus_resultats" | trans }}</button>

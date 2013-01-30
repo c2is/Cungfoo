@@ -147,6 +147,8 @@ baignade.etablissements: Établissements ayant cette baignade
 baignade.description: Description
 baignade.keywords: Mots clés
 baignade.active: Actif
+baignade.image_path: Image
+baignade.image_path_deleted: "Supprimer l'image ?"
 baignade.vignette: Vignette
 baignade.vignette_deleted: "Supprimer la vignette ?"
 baignade.baignadeI18ns: ""

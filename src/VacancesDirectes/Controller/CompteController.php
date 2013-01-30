@@ -16,6 +16,10 @@ class CompteController implements ControllerProviderInterface
     protected function getDefaultResalysParameters(Application $app, Request $request)
     {
         $rslConfig = $app['config']->get('rsl_config')['services']['disponibilite']['default_envelope'];
+        if (isset($app['config']->get('languages')[$app['context']->get('language')]) && isset($app['config']->get('languages')[$app['context']->get('language')]['resalys_username']))
+        {
+            $rslConfig['username'] = $app['config']->get('languages')[$app['context']->get('language')]['resalys_username'];
+        }
 
         $parameters = array(
             "specificFiles" => 'compte',

@@ -5200,13 +5200,6 @@ h2 + #results {
   left: 0;
   margin: 0;
 }
-.itemResult .itemResultBottom .linePrice a.popinIframe {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  color: #ed145b;
-  text-decoration: underline;
-}
 .itemResult .itemResultBottom .linePrice .stain {
   display: none;
   position: absolute;
