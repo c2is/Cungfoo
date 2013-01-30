@@ -114,7 +114,7 @@
             <dt><span>{{ "fiche.activites" | trans }}</span></dt>
             <dd class="activites"><ul>
                 {% for activite in etab.activites %}
-                    <li>{% if activite.imagePath != "." and activite.imagePath != null %}<img src="{{ asset(activite.imagePath) }}" alt="{{ activite.name }}">{% endif %}<span>{{ activite.name }}</span></li>
+                    <li>{% if activite.imagePath != "." and activite.imagePath != null %}<img src="{{ asset(activite.imagePath) }}" width="36" height="43" alt="{{ activite.name }}">{% endif %}<span>{{ activite.name }}</span></li>
                 {% endfor %}
             </ul></dd>
         </dl>
@@ -124,7 +124,7 @@
             <dt><span>{{ "fiche.baignades.top" | trans }}<br />{{ "fiche.baignades.bottom" | trans }}</span></dt>
             <dd class="equipements"><ul>
                 {% for baignade in etab.baignades %}
-                    <li>{% if baignade.imagePath != "." and baignade.imagePath != null %}<img src="{{ asset(baignade.imagePath) }}" alt="{{ baignade.name }}">{% endif %}<span>{{ baignade.name }}</span></li>
+                    <li>{% if baignade.imagePath != "." and baignade.imagePath != null %}<img src="{{ asset(baignade.imagePath) }}" width="36" height="43" alt="{{ baignade.name }}">{% endif %}<span>{{ baignade.name }}</span></li>
                 {% endfor %}
             </ul></dd>
         </dl>
@@ -134,7 +134,7 @@
             <dt><span>{{ "fiche.services_complementaires" | trans }}</span></dt>
             <dd class="services"><ul>
                 {% for serviceComplementaire in etab.serviceComplementaires %}
-                    <li>{% if serviceComplementaire.imagePath != "." and serviceComplementaire.imagePath != null %}<img src="{{ asset(serviceComplementaire.imagePath) }}" alt="{{ serviceComplementaire.name }}">{% endif %}<span>{{ serviceComplementaire.name }}</span></li>
+                    <li>{% if serviceComplementaire.imagePath != "." and serviceComplementaire.imagePath != null %}<img src="{{ asset(serviceComplementaire.imagePath) }}" width="36" height="43" alt="{{ serviceComplementaire.name }}">{% endif %}<span>{{ serviceComplementaire.name }}</span></li>
                 {% endfor %}
             </ul></dd>
         </dl>
