@@ -28,7 +28,7 @@
         <span class="h2-like">{{ "destination.camping_title" | trans({'%ville%': etab.ville.name}) }} {%if hasBaignade %}{{ "seo.title.camping_suffix" | trans }}{% endif %}</span>
     </h1>
 
-    <p class="campSubtitle"><strong>{% if etab.capacite %}{{ etab.capacite }} {{ "fiche.emplacements" | trans }} | {% endif %}{{ "fiche.ouvert_du" | trans }} {{ etab.openingDate | date('d/m/Y') }} {{ "fiche.ouvert_au" | trans }} {{ etab.closingDate | date('d/m/Y') }}</strong></p>
+    <p class="campSubtitle"><strong>{{ "fiche.ouvert_du" | trans }} {{ etab.openingDate | date('d/m/Y') }} {{ "fiche.ouvert_au" | trans }} {{ etab.closingDate | date('d/m/Y') }}</strong></p>
 
     <p class="keywordsFiche">
         {% if etab.activites | length %}
