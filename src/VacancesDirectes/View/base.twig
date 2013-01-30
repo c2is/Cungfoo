@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="js-false" lang="fr">
+<html class="js-false" lang="{{ app.context.get('language') }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -16,6 +16,9 @@
     <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
     <!--[if lt IE 9]><link rel="stylesheet" href="{{ asset('css/vacancesdirectes/ie.css?v='~app.config.get('version')) }}"><![endif]-->
     <link rel="stylesheet" href="{{ asset('css/vacancesdirectes/screen.css?v='~app.config.get('version')) }}">
+    {% if app.context.get('language') != "fr" %}
+    <link rel="stylesheet" href="{{ asset('css/vacancesdirectes/screen_'~app.context.get('language')~'.css?v='~app.config.get('version')) }}">
+    {% endif %}
     <script src="{{ asset('vendor/head.extended.js?v='~app.config.get('version')) }}"></script>
     <script>
         var templatePath = '{{ asset('') }}';<!-- templatePath : chemin du template en absolue -->
