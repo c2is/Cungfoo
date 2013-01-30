@@ -8,3 +8,10 @@ users:
     a.lambert:
         - "ROLE_USER"
         - "LaFATbP4PD4XmWyt96EtBogYO5aSQKi13QdK1oYvBEMbcwXCiLME9DDT5U144tHyIp9iYYm4JYpsVdXwg3r/QA=="
+    a.meunier:
+        - "ROLE_USER"
+        - "1Ch56FSOUxwOW68V0JK5CEnxdyhWyiyNhjABoppD2COD4HrY/TH/WhcbxStYMjUAMkQcbtsnyryLpDrCqSBWxQ=="
+    l.lacalmontie:
+        - "ROLE_USER"
+        - "n9QM5UA3+ji9TciEaYqEuL4JtFp3tVqcq1kvCvkgDodPUiZUcm/mjN1tJdDO1xYLdVjKq0UadYBkVHk0bRlslQ=="
+
