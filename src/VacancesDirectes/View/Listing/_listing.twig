@@ -114,7 +114,7 @@
                 <div class="linePrice catalogue checked">
                     {% if etab.model.typeHebergements %}
                     <dl class="roomTypeList">
-                        <dt class="roomTypeListTitle">{{ "listing.nos_locations_disponibles" | trans }}</dt>
+                        <dt class="roomTypeListTitle">{{ "listing.nos_locations_disponibles" | trans }}&nbsp;:</dt>
                         <dd>
                             <ul>
                                 {% for typeHebergement in etab.model.typeHebergements if loop.index < 6 %}

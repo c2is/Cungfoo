@@ -13,7 +13,7 @@
     <p class="proposalDates">{{ "listing.du" | trans }} {{ blocPrix.start_date }} {{ "listing.au" | trans }} {{ blocPrix.end_date }}</p>
     {% endif %}
     {% if blocPrix.type_hebergement %}
-    <p class="proposalType">{{ "fiche.bloc_prix.type_hebergement" | trans({"%categorie%": blocPrix.category_hebergement, "%type%": blocPrix.type_hebergement}) }}
+    <p class="proposalType">{{ blocPrix.category_hebergement }} - {{ blocPrix.type_hebergement }}
     {% endif %}
 
     <div class="stain cover">
