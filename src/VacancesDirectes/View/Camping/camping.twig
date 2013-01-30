@@ -119,12 +119,12 @@
             </ul></dd>
         </dl>
         {% endif %}
-        {%if hasBaignade %}
+        {% if hasBaignade %}
         <dl>
             <dt><span>{{ "fiche.baignades.top" | trans }}<br />{{ "fiche.baignades.bottom" | trans }}</span></dt>
             <dd class="equipements"><ul>
                 {% for baignade in etab.baignades %}
-                    <li><span>{{ baignade.name }}</span></li>
+                    <li>{% if baignade.imagePath != "." and baignade.imagePath != null %}<img src="{{ asset(baignade.imagePath) }}" alt="{{ baignade.name }}">{% endif %}<span>{{ baignade.name }}</span></li>
                 {% endfor %}
             </ul></dd>
         </dl>
