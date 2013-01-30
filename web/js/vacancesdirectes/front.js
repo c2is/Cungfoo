@@ -993,6 +993,13 @@ $(function() {
         loadGmapScript();
     }
 
+
+/*
+ *  ############################################################
+ *                       SEARCH ENGINE
+ * ############################################################
+ */
+
 //init Search
     if ($('#searchBlocDate').length > 0) {
         countItem();
@@ -1002,6 +1009,13 @@ $(function() {
         toggleSearchCriteria();
     }
 
+
+/*
+ *  ############################################################
+ *                      SEARCH RESULTS
+ * ############################################################
+ */
+
     if ($('#results').length ){
         initCritResult();
         $('.itemResultRight .bt').click( function(){
@@ -1010,7 +1024,16 @@ $(function() {
         $('.itemResult').mouseleave( function(){
             $(this).find('.itemResultPopDest').fadeOut();
         });
+        $(".popinRoomType").click( function(e){
+            e.preventDefault();
+            if ($(this).attr('href').length) {
+                var url = $(this).attr('href');
+               openPopinRoomType(url);
+            }
+        });
     }
+
+
 });
 
 
@@ -1218,22 +1241,23 @@ function showWaitLayer(){
  * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
  */
 
-function openPopinIframe(url, context){
-    if (context == 'result'){
-        $.colorbox({href:url, inline:true, width:'616px', close:"&times;"});
-    }
-    else{
-        $.colorbox({href:url, iframe:true, fixed: true, width:'80%', height:'80%', close:"&times;"});
-    }
+function openPopinRoomType(url){
+//    console.log("################################## openPopinType()  ##################################");
+    $.colorbox({href:url, inline:true, width:'616px', close:"&times;"});
+}
+function openPopinIframe(url){
+//    console.log("################################## openPopinIframe()  ##################################");
+    $.colorbox({href:url, iframe:true, fixed: true, width:'80%', height:'80%', close:"&times;"});
 }
 function openPopinInline(type){
-    console.log(type);
+//    console.log("################################## openPopinInline()  ##################################");
+//    console.log(type);
     if ($('*[data-type="' + type + '"]').length > 0){
         $('*[data-type="' + type + '"]').attr('id',type);
         var content = $('*[data-type="' + type + '"]').clone();
         content.find('.h4-like').unwrap();
-        console.log(content);
-            $.colorbox({href:content, inline:true, width:'616px', close:"&times;"});
+//        console.log(content);
+        $.colorbox({href:content, inline:true, width:'616px', close:"&times;"});
     }
 }
 
