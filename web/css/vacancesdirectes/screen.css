@@ -5549,6 +5549,15 @@ h2 + #results {
   font: bold 19px/19px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
 }
+.destination .roomTypeList dt {
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 12px;
+  margin-bottom: 10px;
+}
+.destination .roomTypeList dd li {
+  list-style: disc inside none;
+}
 #destiMapContener {
   background-color: #e6e5e5;
   -webkit-border-radius: 8px;
