@@ -7495,7 +7495,8 @@ aside *.placeholder {
 #searchBloc #searchBlocDate #SearchDate_switch > span {
   height: 27px;
   line-height: 27px;
-  margin-right: 10px;
+  width: 33px;
+  text-align: center;
 }
 #searchBloc .switchSelect {
   width: 27px;
@@ -7686,26 +7687,21 @@ footer .footer-home #insertContact {
 footer .footer-home #insertContact h3 {
   margin-left: 30px;
 }
-footer .footer-home #insertContact .price {
-  font-size: 9px;
-  position: absolute;
-  bottom: 15px;
-  left: 5px;
-}
 footer .footer-home #insertContact .content {
   width: 110px;
   margin-left: 56px;
 }
-footer .footer-home #insertContact .content .tel {
+footer .footer-home #insertContact .content .contactPhone .tel {
   position: relative;
   font-size: 17px;
+  line-height: 15px;
   font-weight: bold;
   text-decoration: none;
   display: block;
   margin: 10px 0 5px;
   width: 115px;
 }
-footer .footer-home #insertContact .content .tel:before {
+footer .footer-home #insertContact .content .contactPhone .tel:before {
   content: "";
   background: url("../../images/vacancesdirectes/common/sprites/sprite-40.png") no-repeat 0 -80px transparent;
   width: 40px;
@@ -7715,7 +7711,13 @@ footer .footer-home #insertContact .content .tel:before {
   top: -10px;
   left: -43px;
 }
-footer .footer-home #insertContact .content .small {
+footer .footer-home #insertContact .content .contactPhonePrice {
+  font-size: 9px;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+footer .footer-home #insertContact .content .contactAddress {
   margin: 20px 0 15px;
 }
 footer .footer-home #insertCatalog {
