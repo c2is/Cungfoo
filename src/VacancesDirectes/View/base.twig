@@ -9,8 +9,10 @@
 
     <meta name="description" content="{% block metaDescription %}{{ "seo.meta.default" | trans }}{% endblock %}" />
 
+    {% if app.request.get('_route') == 'homepage' %}
     <!-- Google Webmaster Tools -->
     <meta name="google-site-verification" content="6EkcVeagsnor8CT8mVYl9373fy-z_jYGmsPasU5GVcM" />
+    {% endif %}
 
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
