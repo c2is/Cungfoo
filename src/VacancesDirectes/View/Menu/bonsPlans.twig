@@ -21,7 +21,7 @@
                 {% if loop.index < 3 %}
                 <div class="clear">
                 <div>
-                    <div class="stamp orange"><span>{% if loop.first %}{{ bonPlan.name }}{% else %}{{ 'menu_bon_plan.autres_offres.title' | trans}}{% endif %}</span></div>
+                    <div class="stamp orange"><span>{% if loop.first or loop.last %}{{ bonPlan.name }}{% else %}{{ 'menu_bon_plan.autres_offres.title' | trans}}{% endif %}</span></div>
                     {% if (loop.first or (loop.index == 2 and loop.last)) and bonPlan.dateStart %}<span class="dealsDate">{{ 'menu_bon_plan.dispos.subtitle.prefix' | trans}} {{ bonPlan.dateStart|date('d/m/Y') }}</span>{% endif %}
                 </div>
                 {% endif %}
