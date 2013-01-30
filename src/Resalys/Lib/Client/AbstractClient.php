@@ -30,8 +30,8 @@ abstract class AbstractClient
         $this->locale  = $locale;
 
         // load default configurations
-        $this->loadLanguagesConfig($this->rootdir . (empty($configFiles['languages_file']) ? self::DEFAULT_LANGUAGE_FILE: $configFiles['languages_file']));
         $this->loadClientConfig($this->rootdir . (empty($configFiles['client_file']) ? self::DEFAULT_CLIENT_FILE : $configFiles['client_file']));
+        $this->loadLanguagesConfig($this->rootdir . (empty($configFiles['languages_file']) ? self::DEFAULT_LANGUAGE_FILE: $configFiles['languages_file']));
     }
 
     public function addOptions(array $options)
@@ -95,6 +95,7 @@ abstract class AbstractClient
 
         if (null !== $this->locale && isset($languagesConfig['languages'][$this->locale]) && isset($languagesConfig['languages'][$this->locale]['resalys_username']))
         {
+            $this->addOption('username', $languagesConfig['languages'][$this->locale]['resalys_username']);
             $this->addOption('webuser', $languagesConfig['languages'][$this->locale]['resalys_username']);
         }
     }
