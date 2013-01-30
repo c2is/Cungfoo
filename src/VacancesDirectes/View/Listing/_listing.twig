@@ -112,14 +112,16 @@
             {% else %}
                 <div class="linePrice catalogue checked">
                     {% if etab.model.typeHebergements %}
-                    <div class="roomTypeList">
-                        <span class="roomTypeListTitle">{{ "listing.nos_locations_disponibles" | trans }}</span>
-                        <ul>
-                        {% for typeHebergement in etab.model.typeHebergements if loop.index < 6 %}
-                           <li>{% if loop.index >= 5 %}...{% else %}{{ typeHebergement.name }}{% endif %}</li>
-                        {% endfor %}
-                        </ul>
-                    </div>
+                    <dl class="roomTypeList">
+                        <dt class="roomTypeListTitle">{{ "listing.nos_locations_disponibles" | trans }}</dt>
+                        <dd>
+                            <ul>
+                                {% for typeHebergement in etab.model.typeHebergements if loop.index < 6 %}
+                                    <li>{% if loop.index >= 5 %}...{% else %}{{ typeHebergement.name }}{% endif %}</li>
+                                {% endfor %}
+                            </ul>
+                        </dd>
+                    </dl>
                     {% endif %}
                     <span class="stain fushia cover"{% if etab.model.minimumPrice == 0 %} style="display: none"{% endif %}>
                         <span class="apartirde">{{ "general.a_partir_de" | trans }} </span>
