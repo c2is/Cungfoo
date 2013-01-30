@@ -448,7 +448,7 @@ fiche:
     plan:
         legende: "Légende du plan du camping"
     bloc_prix:
-        type_hebergement: "pour un %categorie% %type%"
+        type_hebergement: "pour un %categorie% - %type%"
 
 home:
     topcamping: "Top campings"
