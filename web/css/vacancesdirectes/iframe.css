@@ -1715,10 +1715,10 @@ body {
   color: #5f5f5f;
   vertical-align: middle;
 }
-#semainier #semainierContener .semainier_table-line1 {
+#semainier #semainierContener table.aSemainier .semainier_table-line1 {
   background-color: #8c8a8a;
 }
-#semainier #semainierContener .semainier_table-line1 td {
+#semainier #semainierContener table.aSemainier .semainier_table-line1 td {
   padding: 7px 0 5px;
   text-transform: uppercase;
   color: #fff;
