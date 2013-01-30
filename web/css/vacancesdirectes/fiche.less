@@ -13,7 +13,7 @@ h3{margin-top:40px;}
 }
 .keywordsFiche{margin:0 0 20px;
   a{text-decoration:none;
-  &:hover{text-decoration:underline;}
+    &:hover{text-decoration:underline;}
   }
 }
 .campDesc{margin:10px 0 25px;color:@colorGris1;font:13px/15px @arial;}
@@ -45,8 +45,8 @@ h3{margin-top:40px;}
 .tabCampDiapo .slider{position:relative;width:616px;height:326px;overflow:hidden;
   img{float:left;/*cursor:help;*/}
   button{display:block;position:absolute;z-index:2;top:50%;margin-top:-45px;height:70px;width:31px;background-color:@colorBgGrisF;background-image:url(../../images/vacancesdirectes/common/ui/sliderArrows.png);background-repeat:no-repeat;border:0;cursor:pointer;text-indent:-999em;
-      &.prev{left:0;background-position:0 0;}
-      &.next{right:0;background-position:100%100%;}
+    &.prev{left:0;background-position:0 0;}
+    &.next{right:0;background-position:100%100%;}
   }
 }
 #littleTIP{position:absolute;display:none;z-index:1;width:100%;background:rgba(0, 0, 0, 0.3);text-align:center;padding:7px 0 6px;left:0;top:0;color:#fff;font-weight:bold;}
@@ -56,46 +56,53 @@ h3{margin-top:40px;}
     input[type='radio']{margin-top:-3px;}
   }
   a{display:inline-block;font:bold 15px/34px@ptnarrow;color:@colorGris2;text-transform:uppercase;text-decoration:none;background-image:url(../../images/vacancesdirectes/common/pict/video360.png);background-repeat:no-repeat;padding-left:32px;
-      &.tabCampVideo{background-position:0 0;margin-right:10px;}
-      &.tabCamp360{background-position:0 100%;}
+    &.tabCampVideo{background-position:0 0;margin-right:10px;}
+    &.tabCamp360{background-position:0 100%;}
   }
 }
+
+
 /* #tabCamp */
-  .temoignFiche{padding:20px;margin-bottom:30px;
-    h4{margin-bottom:10px;}
-    a{color:@colorGris1;text-decoration:underline;margin:0 0 10px;
-      &:hover{text-decoration:none;}
-    }
-    dl{float:left;width:278px;
-      &:first-child{margin-right:20px;}
-    }
-    /*slider*/
-      .slider dl{width:172px;margin:0;padding-right:15px;}
-    /* //slider */
-    dt{font-weight:bold;font-size:13px;line-height:12px;margin-bottom:10px;}
-    dd{float:left;
-      &.img{float:left;margin:0 10px 10px 0;
-        img{width:80px;height:80px;display:block;}
-      }
-      &.list{width:188px;
-        ul{list-style-position:inside;}
-        &.event{font-size:11px;}
-      }
-    }
-    ul{list-style-type:disc;}
+.temoignFiche{padding:20px;margin-bottom:30px;
+  h4{margin-bottom:10px;}
+  a{color:@colorGris1;text-decoration:underline;margin:0 0 10px;
+    &:hover{text-decoration:none;}
   }
-  .temoignFicheIt{display:table-cell;border-left:1px solid @colorBorderGris;width:196px;margin-bottom:15px;vertical-align:top;padding:30px 0 10px 6px;background-image:url(../../images/vacancesdirectes/common/sprites/spCloudTemgn.png);background-repeat:no-repeat;font-size:13px;line-height:12px;
-      &:nth-child(1){padding-left:0;border-left:0;}
-     &.fish{background-position:0 0;}
-     &.drink{background-position:-197px 0;}
-     &.glass{background-position:-405px 0;}
-     span{text-transform:uppercase;display:block;width:115px;text-align:center;color:#fff;}
-    ul{margin-left:20px;}
-     .perso{font:bold 22px/16px @ptnarrow;}
-     .age{font:bold 15px/16px @ptnarrow;margin-bottom:27px;}
+  dl{float:left;width:278px;
+    &:first-child{margin-right:20px;}
   }
-  .tabCampDesc{margin-bottom:15px;}
-  .triggerClick{text-decoration:underline;}
+/*slider*/
+  .slider dl{width:172px;margin:0;padding-right:15px;}
+/* //slider */
+  dt{font-weight:bold;font-size:13px;line-height:12px;margin-bottom:10px;}
+  dd{float:left;
+    &.img{float:left;margin:0 10px 10px 0;
+      img{width:80px;height:80px;display:block;}
+    }
+    &.list{width:188px;
+      ul{list-style-position:inside;}
+      &.event{font-size:11px;line-height:13px;}
+    }
+  }
+  ul{list-style-type:disc;}
+}
+.temoignFicheIt{display:table-cell;border-left:1px solid @colorBorderGris;width:196px;margin-bottom:15px;vertical-align:top;padding:30px 0 10px 6px;background-image:url(../../images/vacancesdirectes/common/sprites/spCloudTemgn.png);background-repeat:no-repeat;font-size:13px;line-height:12px;
+  &:nth-child(1){padding-left:0;border-left:0;}
+  &.fish{background-position:0 0;}
+  &.drink{background-position:-197px 0;}
+  &.glass{background-position:-405px 0;}
+  span{text-transform:uppercase;display:block;width:115px;text-align:center;color:#fff;}
+  ul{margin-left:20px;}
+  .perso{font:bold 22px/16px @ptnarrow;}
+  .age{font:bold 15px/16px @ptnarrow;margin-bottom:27px;}
+}
+.tabCampDesc{margin-bottom:15px;}
+.triggerClick{text-decoration:underline;}
+
+/*tabs locations*/
+#tabLocations{
+  .h4-like a{display:inline;text-decoration:none;color:@colorFushia;}
+}
 
 /*tabs pagination*/
 .paginationTabs{
@@ -137,7 +144,7 @@ h3{margin-top:40px;}
   &:nth-child(2n){border:0;padding-left:20px;padding-right:0;}
   &:nth-child(3n){clear:left}
 }
-/*tabs surplace*/
+/*tab sur place*/
 #tabSurplace{
   .right{margin-bottom:20px;}
   .temoignFiche{position:relative;margin-bottom:25px;
@@ -179,6 +186,7 @@ h3{margin-top:40px;}
   }
 }
 
+/*tab à proximité*/
 #tabProximite{
   h3{margin:40px 0 20px;}
   .infoDestination{position:relative;margin:30px 0;min-height:175px;padding:10px 50px 10px 300px;background-image:url(../../images/vacancesdirectes/common/images/infoDestStamp.png);background-repeat:no-repeat;background-position:15px 50%;
@@ -192,7 +200,7 @@ h3{margin-top:40px;}
 .descLogement{margin:30px 0;padding:20px 15px;}
 
 /* Gmap infoBox dans popin */
-  .popin #infoMap .infoBox .bt{display:none;}
+.popin #infoMap .infoBox .bt{display:none;}
 /* //Gmap */
 #infoContent{margin-bottom:30px;}
 .blCoordGps{border-right:7px solid @colorBgGrisC;width:50%;margin:10px 0 30px;padding-bottom:5px;

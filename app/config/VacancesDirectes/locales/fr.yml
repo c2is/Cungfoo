@@ -308,6 +308,7 @@ listing:
     au: "au"
     no_results_title: "Votre recherche n'a retourné aucun résultat."
     no_results: "Nous vous invitons à modifier vos critères de recherche"
+    nos_locations_disponibles: "Nos locations disponibles"
 
 menu_destination.accroche: "3 pays, 34 régions touristiques, vos vacances avec Vacances directes."
 
@@ -446,6 +447,8 @@ fiche:
     ouvert_au: "au"
     plan:
         legende: "Légende du plan du camping"
+    bloc_prix:
+        type_hebergement: "pour un %categorie% - %type%"
 
 home:
     topcamping: "Top campings"
@@ -575,7 +578,7 @@ encart_vacances_directes:
     item_1: "Des ambassadeurs pour vous accueillir"
     item_2: "Des campings sélectionnés avec soin"
     item_3: "Un site 100% sécurisé"
-    item_4: "Des hébergements tout confort pour des vacances dépaysantes"
+    item_4: "Des mobil-homes tout confort pour des vacances dépaysantes"
 
 encart_hebergement:
     title: "Vacances directes"

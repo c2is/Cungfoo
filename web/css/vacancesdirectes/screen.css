@@ -4428,6 +4428,7 @@ h3 {
 }
 .temoignFiche dd.list.event {
   font-size: 11px;
+  line-height: 13px;
 }
 .temoignFiche ul {
   list-style-type: disc;
@@ -4479,6 +4480,12 @@ h3 {
 }
 .triggerClick {
   text-decoration: underline;
+}
+/*tabs locations*/
+#tabLocations .h4-like a {
+  display: inline;
+  text-decoration: none;
+  color: #ed145b;
 }
 /*tabs pagination*/
 .paginationTabs .bt {
@@ -4614,7 +4621,7 @@ h3 {
 .agenda .miniEncart:nth-child(3n) {
   clear: left;
 }
-/*tabs surplace*/
+/*tab sur place*/
 #tabSurplace .right {
   margin-bottom: 20px;
 }
@@ -4745,6 +4752,7 @@ h3 {
   display: table-cell;
   vertical-align: middle;
 }
+/*tab à proximité*/
 #tabProximite h3 {
   margin: 40px 0 20px;
 }
@@ -5541,6 +5549,15 @@ h2 + #results {
   color: #009aaf;
   font: bold 19px/19px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
+}
+.destination .roomTypeList dt {
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 12px;
+  margin-bottom: 10px;
+}
+.destination .roomTypeList dd li {
+  list-style: disc inside none;
 }
 #destiMapContener {
   background-color: #e6e5e5;
@@ -7519,8 +7536,16 @@ aside *.placeholder {
 .proposal table {
   width: 100%;
 }
+.proposal .proposalTitle {
+  font: bold 19px/18px 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
 .proposal .proposalDates {
   font: bold 18px/21px Arial, Helvetica, sans-serif;
+}
+.proposal .proposalType {
+  line-height: 13px;
 }
 .proposal .stain {
   width: 131px;
