@@ -28,6 +28,7 @@ use Cungfoo\Model\ThemeBaignade;
  *
  * @method BaignadeQuery orderById($order = Criteria::ASC) Order by the id column
  * @method BaignadeQuery orderByCode($order = Criteria::ASC) Order by the code column
+ * @method BaignadeQuery orderByImagePath($order = Criteria::ASC) Order by the image_path column
  * @method BaignadeQuery orderByVignette($order = Criteria::ASC) Order by the vignette column
  * @method BaignadeQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method BaignadeQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
@@ -35,6 +36,7 @@ use Cungfoo\Model\ThemeBaignade;
  *
  * @method BaignadeQuery groupById() Group by the id column
  * @method BaignadeQuery groupByCode() Group by the code column
+ * @method BaignadeQuery groupByImagePath() Group by the image_path column
  * @method BaignadeQuery groupByVignette() Group by the vignette column
  * @method BaignadeQuery groupByCreatedAt() Group by the created_at column
  * @method BaignadeQuery groupByUpdatedAt() Group by the updated_at column
@@ -60,6 +62,7 @@ use Cungfoo\Model\ThemeBaignade;
  * @method Baignade findOneOrCreate(PropelPDO $con = null) Return the first Baignade matching the query, or a new Baignade object populated from the query conditions when no match is found
  *
  * @method Baignade findOneByCode(string $code) Return the first Baignade filtered by the code column
+ * @method Baignade findOneByImagePath(string $image_path) Return the first Baignade filtered by the image_path column
  * @method Baignade findOneByVignette(string $vignette) Return the first Baignade filtered by the vignette column
  * @method Baignade findOneByCreatedAt(string $created_at) Return the first Baignade filtered by the created_at column
  * @method Baignade findOneByUpdatedAt(string $updated_at) Return the first Baignade filtered by the updated_at column
@@ -67,6 +70,7 @@ use Cungfoo\Model\ThemeBaignade;
  *
  * @method array findById(int $id) Return Baignade objects filtered by the id column
  * @method array findByCode(string $code) Return Baignade objects filtered by the code column
+ * @method array findByImagePath(string $image_path) Return Baignade objects filtered by the image_path column
  * @method array findByVignette(string $vignette) Return Baignade objects filtered by the vignette column
  * @method array findByCreatedAt(string $created_at) Return Baignade objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return Baignade objects filtered by the updated_at column
@@ -174,7 +178,7 @@ abstract class BaseBaignadeQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `code`, `vignette`, `created_at`, `updated_at`, `active` FROM `baignade` WHERE `id` = :p0';
+        $sql = 'SELECT `id`, `code`, `image_path`, `vignette`, `created_at`, `updated_at`, `active` FROM `baignade` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -317,6 +321,35 @@ abstract class BaseBaignadeQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(BaignadePeer::CODE, $code, $comparison);
+    }
+
+    /**
+     * Filter the query on the image_path column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByImagePath('fooValue');   // WHERE image_path = 'fooValue'
+     * $query->filterByImagePath('%fooValue%'); // WHERE image_path LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $imagePath The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return BaignadeQuery The current query, for fluid interface
+     */
+    public function filterByImagePath($imagePath = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($imagePath)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $imagePath)) {
+                $imagePath = str_replace('*', '%', $imagePath);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(BaignadePeer::IMAGE_PATH, $imagePath, $comparison);
     }
 
     /**
