@@ -1702,7 +1702,11 @@ body {
 #semainier #semainierContener table.aSemainier td.reserver.discount:hover .reductionPercents span {
   color: #f58220;
 }
-#semainier #semainierContener table.aSemainier.noDispo {
+#semainier #semainierContener table.aSemainier td.roomType .popinIframe {
+  color: #ed145b;
+  text-decoration: underline;
+}
+#semainier #semainierContener table.aSemainier td.noDispo {
   background-color: #e6e5e5;
   text-align: center;
   text-transform: uppercase;

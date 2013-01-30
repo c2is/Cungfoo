@@ -1218,16 +1218,22 @@ function showWaitLayer(){
  * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
  */
 
-function openPopinIframe(url){
-    $.colorbox({href:url, iframe:true, fixed: true, width:'80%', height:'80%', close:"&times;"});
+function openPopinIframe(url, context){
+    if (context == 'result'){
+        $.colorbox({href:url, inline:true, width:'616px', close:"&times;"});
+    }
+    else{
+        $.colorbox({href:url, iframe:true, fixed: true, width:'80%', height:'80%', close:"&times;"});
+    }
 }
 function openPopinInline(type){
     console.log(type);
     if ($('*[data-type="' + type + '"]').length > 0){
         $('*[data-type="' + type + '"]').attr('id',type);
-        var content = $('*[data-type="' + type + '"]');
+        var content = $('*[data-type="' + type + '"]').clone();
+        content.find('.h4-like').unwrap();
         console.log(content);
-            $.colorbox({href:content, inline:true, width:'50%', close:"&times;"});
+            $.colorbox({href:content, inline:true, width:'616px', close:"&times;"});
     }
 }
 

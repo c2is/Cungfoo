@@ -524,38 +524,41 @@ body{background:#fff;color:@colorGris2;font:12px @arial;margin:0 24px;}
             }
           }
         }
+        &.roomType{
+          .popinIframe{color:@colorFushia;text-decoration:underline;}
         }
         &.noDispo{background-color:@colorBgGrisC;text-align:center;text-transform:uppercase;font-family:@ptnarrow;font-size:11px;color:@colorGris1;vertical-align:middle;}
       }
-      .semainier_table-line1{background-color:#8c8a8a;
-        td{padding:7px 0 5px;text-transform:uppercase;color:#fff;font-weight:bold;font-size:15px;text-align:center;border-color:#8C8A8A;}
-      }
-      tr:last-child{background-color:@colorBgFushia;
-        td{border-color:@colorBgFushia;}
-        a{color:@colorBlanc;font:13px @ptnarrow;text-transform:uppercase;}
-        .monthNavigationPrevious{float:left;text-decoration:underline;
-          &:before{content:'<< ';}
-        }
-        .monthNavigationNext{float:right;text-decoration:underline;
-          &:after{content:' >>';}
-        }
-      }
     }
-    .monthList{text-align:center;
-      li{background:#e6e5e5;border-radius:5px 5px 0 0;display:inline-block;padding:5px 10px 1px;text-transform:uppercase;
-        a{text-decoration:none;color:#464545;font:bold 12px Arial;}
-        &.on{background:#8c8a8a;
-          a{color:#fff;}
-        }
-      }
+    .semainier_table-line1{background-color:#8c8a8a;
+      td{padding:7px 0 5px;text-transform:uppercase;color:#fff;font-weight:bold;font-size:15px;text-align:center;border-color:#8C8A8A;}
     }
-    .pNbr{overflow:hidden;margin-bottom:10px;
-      .number{float:left;border-right:1px solid #fff;font:bold 35px Arial;padding:0px 5px 0px 0px;}
-      .titre{float:left;border-left:1px solid #fff;margin-left:-1px;padding:0px 0px 4px 10px;width:510px;
-        strong{font:bold 16px Arial;display:block;}
-        em{font:italic 13px Arial;display:block;margin-bottom:10px;}
+    tr:last-child{background-color:@colorBgFushia;
+      td{border-color:@colorBgFushia;}
+      a{color:@colorBlanc;font:13px @ptnarrow;text-transform:uppercase;}
+      .monthNavigationPrevious{float:left;text-decoration:underline;
+        &:before{content:'<< ';}
       }
-      select{text-transform:uppercase;font:12px Arial;color:#606060;width:300px;padding:3px 0;}
+      .monthNavigationNext{float:right;text-decoration:underline;
+        &:after{content:' >>';}
+      }
     }
   }
+  .monthList{text-align:center;
+    li{background:#e6e5e5;border-radius:5px 5px 0 0;display:inline-block;padding:5px 10px 1px;text-transform:uppercase;
+      a{text-decoration:none;color:#464545;font:bold 12px Arial;}
+      &.on{background:#8c8a8a;
+        a{color:#fff;}
+      }
+    }
+  }
+  .pNbr{overflow:hidden;margin-bottom:10px;
+    .number{float:left;border-right:1px solid #fff;font:bold 35px Arial;padding:0px 5px 0px 0px;}
+    .titre{float:left;border-left:1px solid #fff;margin-left:-1px;padding:0px 0px 4px 10px;width:510px;
+      strong{font:bold 16px Arial;display:block;}
+      em{font:italic 13px Arial;display:block;margin-bottom:10px;}
+    }
+    select{text-transform:uppercase;font:12px Arial;color:#606060;width:300px;padding:3px 0;}
+  }
+}
 .ie-lte9 .reductionPercents{top:0!important;right:0!important;}
