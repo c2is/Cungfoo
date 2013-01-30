@@ -62,7 +62,7 @@ class EsiController implements ControllerProviderInterface
                         $searchParams->setNbChildren($bonPlan->getNbEnfants());
                     }
 
-                    $client = new DisponibiliteClient($app['config']->get('root_dir'));
+                    $client = new DisponibiliteClient($app['config']->get('root_dir'), $app['context']->get('language'));
                     $client->addOptions($searchParams->generate());
 
                     $listing = new DispoListing($app);
@@ -137,7 +137,7 @@ class EsiController implements ControllerProviderInterface
                     $searchParams->setNbChildren($bonPlanObject->getNbEnfants());
                 }
 
-                $client = new DisponibiliteClient($app['config']->get('root_dir'));
+                $client = new DisponibiliteClient($app['config']->get('root_dir'), $app['context']->get('language'));
                 $client->addOptions($searchParams->generate());
 
                 $listing = new DispoListing($app);

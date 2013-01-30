@@ -404,10 +404,10 @@
 
 {% if blocPrix.adult_price_without_discounts != 0 %}
 <iframe id="frameResalys" src="{{ path('resalys_wrapper', {
-    webuser: resalysParameters.web_user[locale],
+    webuser: webuser,
     display: 'semainier',
     etab_id:etab.code,
-    campaign_code: resalysParameters.campaign_code,
+    campaign_code: "now"|date("Y"),
     referer: referer
 }) }}" width="960px" height="700px" marginheight="0" marginwidth="0" frameborder="0"></iframe>
 {% endif %}
