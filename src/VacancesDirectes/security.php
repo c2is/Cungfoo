@@ -16,7 +16,7 @@ $app['security.firewalls'] =  array(
         'pattern' => '/compte/',
         'form'    => array(
             'always_use_default_target_path' => true,
-            'default_target_path'            => '/compte/',
+            'default_target_path'            => '/' . $app->trans('seo.url.compte.index') . '/',
             'login_path'                     => '/compte/logout',
             'check_path'                     => '/compte/login_check'
         ),
@@ -30,8 +30,8 @@ $app['security.access_rules'] = array(
     array('^/compte/', 'ROLE_USER'),
 );
 
-$app['security.last_error'] = $app->protect(function (\Symfony\Component\HttpFoundation\Request $request) {
-    $errorMessage = "Le login que vous avez saisi est incorrect.\nVeuillez réessayer (vérifiez que le verrouillage des majuscules est désactivé).";
+$app['security.last_error'] = $app->protect(function (\Symfony\Component\HttpFoundation\Request $request) use ($app) {
+    $errorMessage = $app->trans("compte.login.error");
 
     if ($request->attributes->has(\Symfony\Component\Security\Core\SecurityContextInterface::AUTHENTICATION_ERROR)) {
         return $errorMessage;
