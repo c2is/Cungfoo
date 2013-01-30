@@ -317,7 +317,7 @@ menu_bon_plan:
         suffix: "un bon plan"
     newsletter:
         title: "Abonnement newsletter"
-        link: S'inscrire"
+        link: "S'inscrire"
     autres_offres:
         title: "Nos autres offres"
     dispos:
@@ -405,6 +405,7 @@ fiche:
     a_proximite: "A proximité"
     infos_pratiques: "Infos pratiques"
     video: "Vidéo"
+    photo: "Photo"
     emplacements: "emplacements"
     ouvert_du: "Ouvert du"
     vous_aimerez: "Vous aimerez"
@@ -441,6 +442,10 @@ fiche:
     baignades:
         top: "Baignade"
         bottom: "et bien-être"
+    retour: "Retour"
+    ouvert_au: "au"
+    plan:
+        legende: "Légende du plan du camping"
 
 home:
     topcamping: "Top campings"
@@ -461,6 +466,11 @@ home:
 
 compte:
     title: "Espace client"
+    placeholder:
+        name: "Nom d'utilisateur"
+        password: "Mot de passe"
+    login:
+        error: "Le login que vous avez saisi est incorrect.\nVeuillez réessayer (vérifiez que le verrouillage des majuscules est désactivé)."
 
 general:
     a_partir_de: "à partir de"
@@ -757,6 +767,7 @@ location:
             savoir_plus: "En savoir plus"
             plus_de_resultats: "Plus de résultats"
             nb_places: "%nbPlaces% places"
+        notre_selection: "Notre sélection"
     fiche:
         subtitle: "Location %type% %nbPlaces% personnes"
         voir_les_campings: "Voir les campings"
@@ -778,3 +789,7 @@ location:
                 lien_logement: "Le logement"
 
 "The CSRF token is invalid. Please try to resubmit the form.": "Votre session a expiré ; veuillez soumettre le formulaire à nouveau."
+
+share:
+    facebook: "Partager sur Facebook"
+    twitter: "Partager sur Twitter"

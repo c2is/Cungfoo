@@ -13,13 +13,13 @@
 
 {% block leftColumn %}
 <nav id="ficheShare">
-    <a href="https://www.facebook.com/sharer/sharer.php?u={{ app.request.uri }}" class="icon facebook" target="_blank" title="Partager sur Facebook">Partager sur Facebook</a>
-    <a href="http://twitter.com/home?status={{ etab.name }} {{ "destination.camping_title" | trans({'%ville%': etab.ville.name}) }} {% if hasBaignade %}{{ "seo.title.camping_suffix" | trans }}{% endif %} {{ app.request.uri }}" target="_blank" class="icon twitter" title="Partager sur Twitter">Partager sur Twitter</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{ app.request.uri }}" class="icon facebook" target="_blank" title="{{ "share.facebook" | trans }}">{{ "share.facebook" | trans }}</a>
+    <a href="http://twitter.com/home?status={{ etab.name }} {{ "destination.camping_title" | trans({'%ville%': etab.ville.name}) }} {% if hasBaignade %}{{ "seo.title.camping_suffix" | trans }}{% endif %} {{ app.request.uri }}" target="_blank" class="icon twitter" title="{{ "share.twitter" | trans }}">{{ "share.twitter" | trans }}</a>
     {#<a href="#_" class="icon email" title="Partager par email">Partager par email</a>#}
     {#<a href="javascript:window.print()" class="icon print" title="Imprimer">Imprimer</a>#}
 </nav>
 
-<a class="bt gris left" href="{{ historyBack ~ "#camping-" ~ etab.slug }}">&lt; Retour</a>
+<a class="bt gris left" href="{{ historyBack ~ "#camping-" ~ etab.slug }}">&lt; {{ "fiche.retour" | trans }}</a>
 {% include "Breadcrumbs/_breadcrumbs.twig" %}
 
 <div itemscope itemtype="http://schema.org/Place">
@@ -28,7 +28,7 @@
         <span class="h2-like">{{ "destination.camping_title" | trans({'%ville%': etab.ville.name}) }} {%if hasBaignade %}{{ "seo.title.camping_suffix" | trans }}{% endif %}</span>
     </h1>
 
-    <p class="campSubtitle"><strong>{% if etab.capacite %}{{ etab.capacite }} {{ "fiche.emplacements" | trans }} | {% endif %}{{ "fiche.ouvert_du" | trans }} {{ etab.openingDate | date('d/m/Y') }} au {{ etab.closingDate | date('d/m/Y') }}</strong></p>
+    <p class="campSubtitle"><strong>{% if etab.capacite %}{{ etab.capacite }} {{ "fiche.emplacements" | trans }} | {% endif %}{{ "fiche.ouvert_du" | trans }} {{ etab.openingDate | date('d/m/Y') }} {{ "fiche.ouvert_au" | trans }} {{ etab.closingDate | date('d/m/Y') }}</strong></p>
 
     <p class="keywordsFiche">
         {% if etab.activites | length %}
@@ -48,7 +48,7 @@
         {% endif %}
     </p>
 
-    <a class="bt big fushia right goto" href="#frameResalys">Tarifs &amp; disponibilités</a>
+    <a class="bt big fushia right goto" href="#frameResalys">{{ "semainier.title" | trans }}</a>
     <div class="geoDataFiche" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
         <span itemprop="addressCountry">{{ etab.country }}</span> |
         <span itemprop="addressRegion">{{ etab.ville.region }}</span> |
@@ -80,7 +80,7 @@
     </div></div>
     <form class="tabCampDiapoOptions clear" action="#_">
         <fieldset class="left">
-            <span>Photos</span>
+            <span>{{ "fiche.photo" | trans }}</span>
             <label for="photosToutes"><input type="radio" id="photosToutes" name="affPhoto" value="all" checked="checked">{{ "Toutes" | trans }}</label>
             {% for tag in tags %}
                 <label for="photos{{ tag }}"><input type="radio" id="photos{{ tag }}" name="affPhoto" value="{{ tag }}">{{ tag }}</label>
@@ -103,7 +103,7 @@
     <h3>{{ 'fiche.plan_camping' | trans }}</h3>
     <div>
         <img src="{{ asset(etab.planPath) }}" width="616" alt="{{ etab.name }}">
-        <img src="{{ asset('images/vacancesdirectes/common/pict/ficheLegendMap.png') }}" alt="Légende du plan du camping">
+        <img src="{{ asset('images/vacancesdirectes/common/pict/ficheLegendMap.png') }}" alt="{{ "fiche.plan.legende" | trans }}">
     </div>
     {% endif %}
 
