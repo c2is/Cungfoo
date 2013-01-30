@@ -117,7 +117,7 @@
                         <dd>
                             <ul>
                                 {% for typeHebergement in etab.model.typeHebergements if loop.index < 6 %}
-                                    <li>{% if loop.index >= 5 %}...{% else %}{{ typeHebergement.name }}{% endif %}</li>
+                                    <li>{% if loop.index >= 5 %}...{% else %}{{ typeHebergement.categoryTypeHebergement.name }} - {{ typeHebergement.name }}{% endif %}</li>
                                 {% endfor %}
                             </ul>
                         </dd>
