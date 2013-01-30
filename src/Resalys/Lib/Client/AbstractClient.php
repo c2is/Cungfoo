@@ -95,7 +95,7 @@ abstract class AbstractClient
 
         if (null !== $this->locale && isset($languagesConfig['languages'][$this->locale]) && isset($languagesConfig['languages'][$this->locale]['resalys_username']))
         {
-            $this->addOption('username', $languagesConfig['languages'][$this->locale]['resalys_username']);
+            $this->addOption('webuser', $languagesConfig['languages'][$this->locale]['resalys_username']);
         }
     }
 

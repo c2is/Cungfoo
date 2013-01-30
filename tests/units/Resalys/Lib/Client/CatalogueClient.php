@@ -10,7 +10,7 @@ class CatalogueClient extends atoum\test
 {
     protected function getLoaderTestInstance()
     {
-        return new Client(__DIR__, array(
+        return new Client(__DIR__, null, array(
             'client_file'      => '/config/client.yml',
             'languages_file'   => '/config/languages.yml',
         ));
@@ -19,12 +19,12 @@ class CatalogueClient extends atoum\test
     public function test_addOption()
     {
         $defaultOptions = array(
-            'base_id'   => 'base_id_value',
             'languages' => array(
                 'fr',
                 'en',
                 'de'
-            )
+            ),
+            'base_id'   => 'base_id_value',
         );
 
         $client = $this->getLoaderTestInstance();
@@ -41,12 +41,12 @@ class CatalogueClient extends atoum\test
     public function test_addOptions()
     {
         $defaultOptions = array(
-            'base_id'   => 'base_id_value',
             'languages' => array(
                 'fr',
                 'en',
                 'de'
-            )
+            ),
+            'base_id'   => 'base_id_value',
         );
 
         $client = $this->getLoaderTestInstance();
