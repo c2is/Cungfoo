@@ -111,11 +111,21 @@
                 {% endfor %}
             {% else %}
                 <div class="linePrice catalogue checked">
-                        <span class="stain fushia cover"{% if etab.model.minimumPrice == 0 %} style="display: none"{% endif %}>
-                            <span class="apartirde">{{ "general.a_partir_de" | trans }} </span>
-                            <span class="price">{{ etab.model.minimumPrice|number_format }} €</span>
-                            <span>{{ "general.la_semaine" | trans }}</span>
-                        </span>
+                    {% if etab.model.typeHebergements %}
+                    <div class="roomTypeList">
+                        <span class="roomTypeListTitle">{{ "listing.nos_locations_disponibles" | trans }}</span>
+                        <ul>
+                        {% for typeHebergement in etab.model.typeHebergements if loop.index < 6 %}
+                           <li>{% if loop.index >= 5 %}...{% else %}{{ typeHebergement.name }}{% endif %}</li>
+                        {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
+                    <span class="stain fushia cover"{% if etab.model.minimumPrice == 0 %} style="display: none"{% endif %}>
+                        <span class="apartirde">{{ "general.a_partir_de" | trans }} </span>
+                        <span class="price">{{ etab.model.minimumPrice|number_format }} €</span>
+                        <span>{{ "general.la_semaine" | trans }}</span>
+                    </span>
                     <a class="bt big" href="{{ path('destination_camping', {pays: etab.model.pays.slug, region: etab.model.region.slug, ville: etab.model.ville.slug, camping: etab.model.slug}) }}#frameResalys">{{ "general.reserver" | trans }}</a>
                 </div>
             {% endif %}
