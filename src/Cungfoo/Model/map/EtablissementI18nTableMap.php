@@ -49,6 +49,7 @@ class EtablissementI18nTableMap extends TableMap
         $this->addColumn('ouverture_camping', 'OuvertureCamping', 'LONGVARCHAR', false, null, null);
         $this->addColumn('arrivees_departs', 'ArriveesDeparts', 'LONGVARCHAR', false, null, null);
         $this->addColumn('description', 'Description', 'LONGVARCHAR', false, null, null);
+        $this->addColumn('active_locale', 'ActiveLocale', 'BOOLEAN', false, 1, false);
         // validators
     } // initialize()
 

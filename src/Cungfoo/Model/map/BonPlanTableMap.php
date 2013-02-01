@@ -102,11 +102,12 @@ class BonPlanTableMap extends TableMap
         return array(
             'active' =>  array (
   'active_column' => 'active',
+  'active_locale_column' => 'active_locale',
 ),
             'i18n' =>  array (
   'i18n_table' => '%TABLE%_i18n',
   'i18n_phpname' => '%PHPNAME%I18n',
-  'i18n_columns' => 'name, slug, introduction, description, indice, indice_prix',
+  'i18n_columns' => 'name, slug, introduction, description, indice, indice_prix,active_locale',
   'i18n_pk_name' => NULL,
   'locale_column' => 'locale',
   'default_locale' => 'fr',

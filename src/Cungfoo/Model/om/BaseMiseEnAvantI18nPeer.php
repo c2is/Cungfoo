@@ -37,13 +37,13 @@ abstract class BaseMiseEnAvantI18nPeer
     const TM_CLASS = 'MiseEnAvantI18nTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 6;
+    const NUM_COLUMNS = 7;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 6;
+    const NUM_HYDRATE_COLUMNS = 7;
 
     /** the column name for the id field */
     const ID = 'mise_en_avant_i18n.id';
@@ -62,6 +62,9 @@ abstract class BaseMiseEnAvantI18nPeer
 
     /** the column name for the titre_lien field */
     const TITRE_LIEN = 'mise_en_avant_i18n.titre_lien';
+
+    /** the column name for the active_locale field */
+    const ACTIVE_LOCALE = 'mise_en_avant_i18n.active_locale';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -82,12 +85,12 @@ abstract class BaseMiseEnAvantI18nPeer
      * e.g. MiseEnAvantI18nPeer::$fieldNames[MiseEnAvantI18nPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Titre', 'Accroche', 'Lien', 'TitreLien', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'titre', 'accroche', 'lien', 'titreLien', ),
-        BasePeer::TYPE_COLNAME => array (MiseEnAvantI18nPeer::ID, MiseEnAvantI18nPeer::LOCALE, MiseEnAvantI18nPeer::TITRE, MiseEnAvantI18nPeer::ACCROCHE, MiseEnAvantI18nPeer::LIEN, MiseEnAvantI18nPeer::TITRE_LIEN, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'TITRE', 'ACCROCHE', 'LIEN', 'TITRE_LIEN', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'titre', 'accroche', 'lien', 'titre_lien', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Titre', 'Accroche', 'Lien', 'TitreLien', 'ActiveLocale', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'titre', 'accroche', 'lien', 'titreLien', 'activeLocale', ),
+        BasePeer::TYPE_COLNAME => array (MiseEnAvantI18nPeer::ID, MiseEnAvantI18nPeer::LOCALE, MiseEnAvantI18nPeer::TITRE, MiseEnAvantI18nPeer::ACCROCHE, MiseEnAvantI18nPeer::LIEN, MiseEnAvantI18nPeer::TITRE_LIEN, MiseEnAvantI18nPeer::ACTIVE_LOCALE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'TITRE', 'ACCROCHE', 'LIEN', 'TITRE_LIEN', 'ACTIVE_LOCALE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'titre', 'accroche', 'lien', 'titre_lien', 'active_locale', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
     );
 
     /**
@@ -97,12 +100,12 @@ abstract class BaseMiseEnAvantI18nPeer
      * e.g. MiseEnAvantI18nPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Titre' => 2, 'Accroche' => 3, 'Lien' => 4, 'TitreLien' => 5, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'titre' => 2, 'accroche' => 3, 'lien' => 4, 'titreLien' => 5, ),
-        BasePeer::TYPE_COLNAME => array (MiseEnAvantI18nPeer::ID => 0, MiseEnAvantI18nPeer::LOCALE => 1, MiseEnAvantI18nPeer::TITRE => 2, MiseEnAvantI18nPeer::ACCROCHE => 3, MiseEnAvantI18nPeer::LIEN => 4, MiseEnAvantI18nPeer::TITRE_LIEN => 5, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'TITRE' => 2, 'ACCROCHE' => 3, 'LIEN' => 4, 'TITRE_LIEN' => 5, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'titre' => 2, 'accroche' => 3, 'lien' => 4, 'titre_lien' => 5, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Titre' => 2, 'Accroche' => 3, 'Lien' => 4, 'TitreLien' => 5, 'ActiveLocale' => 6, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'titre' => 2, 'accroche' => 3, 'lien' => 4, 'titreLien' => 5, 'activeLocale' => 6, ),
+        BasePeer::TYPE_COLNAME => array (MiseEnAvantI18nPeer::ID => 0, MiseEnAvantI18nPeer::LOCALE => 1, MiseEnAvantI18nPeer::TITRE => 2, MiseEnAvantI18nPeer::ACCROCHE => 3, MiseEnAvantI18nPeer::LIEN => 4, MiseEnAvantI18nPeer::TITRE_LIEN => 5, MiseEnAvantI18nPeer::ACTIVE_LOCALE => 6, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'TITRE' => 2, 'ACCROCHE' => 3, 'LIEN' => 4, 'TITRE_LIEN' => 5, 'ACTIVE_LOCALE' => 6, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'titre' => 2, 'accroche' => 3, 'lien' => 4, 'titre_lien' => 5, 'active_locale' => 6, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
     );
 
     /**
@@ -182,6 +185,7 @@ abstract class BaseMiseEnAvantI18nPeer
             $criteria->addSelectColumn(MiseEnAvantI18nPeer::ACCROCHE);
             $criteria->addSelectColumn(MiseEnAvantI18nPeer::LIEN);
             $criteria->addSelectColumn(MiseEnAvantI18nPeer::TITRE_LIEN);
+            $criteria->addSelectColumn(MiseEnAvantI18nPeer::ACTIVE_LOCALE);
         } else {
             $criteria->addSelectColumn($alias . '.id');
             $criteria->addSelectColumn($alias . '.locale');
@@ -189,6 +193,7 @@ abstract class BaseMiseEnAvantI18nPeer
             $criteria->addSelectColumn($alias . '.accroche');
             $criteria->addSelectColumn($alias . '.lien');
             $criteria->addSelectColumn($alias . '.titre_lien');
+            $criteria->addSelectColumn($alias . '.active_locale');
         }
     }
 

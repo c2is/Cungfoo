@@ -597,6 +597,7 @@ abstract class BaseTopCampingQuery extends ModelCriteria
 
     // active behavior
 
+
     /**
      * return only active objects
      *
@@ -604,9 +605,10 @@ abstract class BaseTopCampingQuery extends ModelCriteria
      */
     public function findActive($con = null)
     {
-        $this->filterByActive(true);
+        $this
+            ->filterByActive(true)
+        ;
 
         return parent::find($con);
     }
-
 }

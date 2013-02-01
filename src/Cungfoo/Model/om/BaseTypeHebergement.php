@@ -2749,6 +2749,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
 
     // active behavior
 
+
     /**
      * return true is the object is active
      *
@@ -2759,6 +2760,50 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
         return $this->getActive();
     }
 
+    /**
+     * return true is the object is active locale
+     *
+     * @return boolean
+     */
+    public function isActiveLocale()
+    {
+        return $this->getActiveLocale();
+    }
+
+    public function getEtablissementsActive($criteria = null, PropelPDO $con = null)
+    {
+        if ($criteria === null)
+        {
+            $criteria = new \Criteria();
+        }
+
+        $criteria->add(\Cungfoo\Model\EtablissementPeer::ACTIVE, true);
+
+
+        $criteria->addJoin(\Cungfoo\Model\EtablissementPeer::ID, \Cungfoo\Model\EtablissementI18nPeer::ID, \Criteria::LEFT_JOIN);
+        $criteria->add(\Cungfoo\Model\EtablissementI18nPeer::ACTIVE_LOCALE, true);
+        $criteria->add(\Cungfoo\Model\EtablissementI18nPeer::LOCALE, $this->currentLocale);
+
+        return $this->getEtablissements($criteria, $con);
+    }
+
+    public function getMultimediasActive($criteria = null, PropelPDO $con = null)
+    {
+
+        if ($criteria === null)
+        {
+            $criteria = new \Criteria();
+        }
+
+        $criteria->add(\Cungfoo\Model\MultimediaPeer::ACTIVE, true);
+
+
+        $criteria->addJoin(\Cungfoo\Model\MultimediaPeer::ID, \Cungfoo\Model\MultimediaI18nPeer::ID, \Criteria::LEFT_JOIN);
+        $criteria->add(\Cungfoo\Model\MultimediaI18nPeer::ACTIVE_LOCALE, true);
+        $criteria->add(\Cungfoo\Model\MultimediaI18nPeer::LOCALE, $this->currentLocale);
+
+        return $this->getMultimedias($criteria, $con);
+    }
     // i18n behavior
 
     /**
@@ -3262,6 +3307,30 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
          */
         public function setRemarque4($v)
         {    $this->getCurrentTranslation()->setRemarque4($v);
+
+        return $this;
+    }
+
+
+        /**
+         * Get the [active_locale] column value.
+         *
+         * @return boolean
+         */
+        public function getActiveLocale()
+        {
+        return $this->getCurrentTranslation()->getActiveLocale();
+    }
+
+
+        /**
+         * Set the value of [active_locale] column.
+         *
+         * @param boolean $v new value
+         * @return TypeHebergementI18n The current object (for fluent API support)
+         */
+        public function setActiveLocale($v)
+        {    $this->getCurrentTranslation()->setActiveLocale($v);
 
         return $this;
     }

@@ -65,6 +65,13 @@ abstract class BaseMultimediaEtablissementI18n extends BaseObject implements Per
     protected $titre;
 
     /**
+     * The value for the active_locale field.
+     * Note: this column has a database default value of: false
+     * @var        boolean
+     */
+    protected $active_locale;
+
+    /**
      * @var        MultimediaEtablissement
      */
     protected $aMultimediaEtablissement;
@@ -92,6 +99,7 @@ abstract class BaseMultimediaEtablissementI18n extends BaseObject implements Per
     public function applyDefaultValues()
     {
         $this->locale = 'fr';
+        $this->active_locale = false;
     }
 
     /**
@@ -132,6 +140,16 @@ abstract class BaseMultimediaEtablissementI18n extends BaseObject implements Per
     public function getTitre()
     {
         return $this->titre;
+    }
+
+    /**
+     * Get the [active_locale] column value.
+     *
+     * @return boolean
+     */
+    public function getActiveLocale()
+    {
+        return $this->active_locale;
     }
 
     /**
@@ -202,6 +220,35 @@ abstract class BaseMultimediaEtablissementI18n extends BaseObject implements Per
     } // setTitre()
 
     /**
+     * Sets the value of the [active_locale] column.
+     * Non-boolean arguments are converted using the following rules:
+     *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     *
+     * @param boolean|integer|string $v The new value
+     * @return MultimediaEtablissementI18n The current object (for fluent API support)
+     */
+    public function setActiveLocale($v)
+    {
+        if ($v !== null) {
+            if (is_string($v)) {
+                $v = in_array(strtolower($v), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+            } else {
+                $v = (boolean) $v;
+            }
+        }
+
+        if ($this->active_locale !== $v) {
+            $this->active_locale = $v;
+            $this->modifiedColumns[] = MultimediaEtablissementI18nPeer::ACTIVE_LOCALE;
+        }
+
+
+        return $this;
+    } // setActiveLocale()
+
+    /**
      * Indicates whether the columns in this object are only set to default values.
      *
      * This method can be used in conjunction with isModified() to indicate whether an object is both
@@ -212,6 +259,10 @@ abstract class BaseMultimediaEtablissementI18n extends BaseObject implements Per
     public function hasOnlyDefaultValues()
     {
             if ($this->locale !== 'fr') {
+                return false;
+            }
+
+            if ($this->active_locale !== false) {
                 return false;
             }
 
@@ -240,6 +291,7 @@ abstract class BaseMultimediaEtablissementI18n extends BaseObject implements Per
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
             $this->locale = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
             $this->titre = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
+            $this->active_locale = ($row[$startcol + 3] !== null) ? (boolean) $row[$startcol + 3] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -248,7 +300,7 @@ abstract class BaseMultimediaEtablissementI18n extends BaseObject implements Per
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 3; // 3 = MultimediaEtablissementI18nPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 4; // 4 = MultimediaEtablissementI18nPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating MultimediaEtablissementI18n object", $e);
@@ -481,6 +533,9 @@ abstract class BaseMultimediaEtablissementI18n extends BaseObject implements Per
         if ($this->isColumnModified(MultimediaEtablissementI18nPeer::TITRE)) {
             $modifiedColumns[':p' . $index++]  = '`titre`';
         }
+        if ($this->isColumnModified(MultimediaEtablissementI18nPeer::ACTIVE_LOCALE)) {
+            $modifiedColumns[':p' . $index++]  = '`active_locale`';
+        }
 
         $sql = sprintf(
             'INSERT INTO `multimedia_etablissement_i18n` (%s) VALUES (%s)',
@@ -500,6 +555,9 @@ abstract class BaseMultimediaEtablissementI18n extends BaseObject implements Per
                         break;
                     case '`titre`':
                         $stmt->bindValue($identifier, $this->titre, PDO::PARAM_STR);
+                        break;
+                    case '`active_locale`':
+                        $stmt->bindValue($identifier, (int) $this->active_locale, PDO::PARAM_INT);
                         break;
                 }
             }
@@ -649,6 +707,9 @@ abstract class BaseMultimediaEtablissementI18n extends BaseObject implements Per
             case 2:
                 return $this->getTitre();
                 break;
+            case 3:
+                return $this->getActiveLocale();
+                break;
             default:
                 return null;
                 break;
@@ -681,6 +742,7 @@ abstract class BaseMultimediaEtablissementI18n extends BaseObject implements Per
             $keys[0] => $this->getId(),
             $keys[1] => $this->getLocale(),
             $keys[2] => $this->getTitre(),
+            $keys[3] => $this->getActiveLocale(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aMultimediaEtablissement) {
@@ -729,6 +791,9 @@ abstract class BaseMultimediaEtablissementI18n extends BaseObject implements Per
             case 2:
                 $this->setTitre($value);
                 break;
+            case 3:
+                $this->setActiveLocale($value);
+                break;
         } // switch()
     }
 
@@ -756,6 +821,7 @@ abstract class BaseMultimediaEtablissementI18n extends BaseObject implements Per
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
         if (array_key_exists($keys[1], $arr)) $this->setLocale($arr[$keys[1]]);
         if (array_key_exists($keys[2], $arr)) $this->setTitre($arr[$keys[2]]);
+        if (array_key_exists($keys[3], $arr)) $this->setActiveLocale($arr[$keys[3]]);
     }
 
     /**
@@ -770,6 +836,7 @@ abstract class BaseMultimediaEtablissementI18n extends BaseObject implements Per
         if ($this->isColumnModified(MultimediaEtablissementI18nPeer::ID)) $criteria->add(MultimediaEtablissementI18nPeer::ID, $this->id);
         if ($this->isColumnModified(MultimediaEtablissementI18nPeer::LOCALE)) $criteria->add(MultimediaEtablissementI18nPeer::LOCALE, $this->locale);
         if ($this->isColumnModified(MultimediaEtablissementI18nPeer::TITRE)) $criteria->add(MultimediaEtablissementI18nPeer::TITRE, $this->titre);
+        if ($this->isColumnModified(MultimediaEtablissementI18nPeer::ACTIVE_LOCALE)) $criteria->add(MultimediaEtablissementI18nPeer::ACTIVE_LOCALE, $this->active_locale);
 
         return $criteria;
     }
@@ -843,6 +910,7 @@ abstract class BaseMultimediaEtablissementI18n extends BaseObject implements Per
         $copyObj->setId($this->getId());
         $copyObj->setLocale($this->getLocale());
         $copyObj->setTitre($this->getTitre());
+        $copyObj->setActiveLocale($this->getActiveLocale());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -960,6 +1028,7 @@ abstract class BaseMultimediaEtablissementI18n extends BaseObject implements Per
         $this->id = null;
         $this->locale = null;
         $this->titre = null;
+        $this->active_locale = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();

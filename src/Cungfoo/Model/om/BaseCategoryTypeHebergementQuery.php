@@ -796,6 +796,7 @@ abstract class BaseCategoryTypeHebergementQuery extends ModelCriteria
     }
     // active behavior
 
+
     /**
      * return only active objects
      *
@@ -803,11 +804,15 @@ abstract class BaseCategoryTypeHebergementQuery extends ModelCriteria
      */
     public function findActive($con = null)
     {
-        $this->filterByActive(true);
+        $this
+            ->filterByActive(true)
+            ->useI18nQuery('fr', 'i18n_locale')
+                ->filterByActiveLocale(true)
+            ->endUse()
+        ;
 
         return parent::find($con);
     }
-
     // sortable behavior
 
     /**

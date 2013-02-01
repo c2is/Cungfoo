@@ -3800,6 +3800,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
 
     // active behavior
 
+
     /**
      * return true is the object is active
      *
@@ -3810,6 +3811,84 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
         return $this->getActive();
     }
 
+    /**
+     * return true is the object is active locale
+     *
+     * @return boolean
+     */
+    public function isActiveLocale()
+    {
+        return $this->getActiveLocale();
+    }
+
+    public function getBonPlanCategoriesActive($criteria = null, PropelPDO $con = null)
+    {
+        if ($criteria === null)
+        {
+            $criteria = new \Criteria();
+        }
+
+        $criteria->add(\Cungfoo\Model\BonPlanCategoriePeer::ACTIVE, true);
+
+
+        $criteria->addJoin(\Cungfoo\Model\BonPlanCategoriePeer::ID, \Cungfoo\Model\BonPlanCategorieI18nPeer::ID, \Criteria::LEFT_JOIN);
+        $criteria->add(\Cungfoo\Model\BonPlanCategorieI18nPeer::ACTIVE_LOCALE, true);
+        $criteria->add(\Cungfoo\Model\BonPlanCategorieI18nPeer::LOCALE, $this->currentLocale);
+
+        return $this->getBonPlanCategories($criteria, $con);
+    }
+
+    public function getEtablissementsActive($criteria = null, PropelPDO $con = null)
+    {
+        if ($criteria === null)
+        {
+            $criteria = new \Criteria();
+        }
+
+        $criteria->add(\Cungfoo\Model\EtablissementPeer::ACTIVE, true);
+
+
+        $criteria->addJoin(\Cungfoo\Model\EtablissementPeer::ID, \Cungfoo\Model\EtablissementI18nPeer::ID, \Criteria::LEFT_JOIN);
+        $criteria->add(\Cungfoo\Model\EtablissementI18nPeer::ACTIVE_LOCALE, true);
+        $criteria->add(\Cungfoo\Model\EtablissementI18nPeer::LOCALE, $this->currentLocale);
+
+        return $this->getEtablissements($criteria, $con);
+    }
+
+    public function getRegionsActive($criteria = null, PropelPDO $con = null)
+    {
+        if ($criteria === null)
+        {
+            $criteria = new \Criteria();
+        }
+
+        $criteria->add(\Cungfoo\Model\RegionPeer::ACTIVE, true);
+
+
+        $criteria->addJoin(\Cungfoo\Model\RegionPeer::ID, \Cungfoo\Model\RegionI18nPeer::ID, \Criteria::LEFT_JOIN);
+        $criteria->add(\Cungfoo\Model\RegionI18nPeer::ACTIVE_LOCALE, true);
+        $criteria->add(\Cungfoo\Model\RegionI18nPeer::LOCALE, $this->currentLocale);
+
+        return $this->getRegions($criteria, $con);
+    }
+
+    public function getCategoriesActive($criteria = null, PropelPDO $con = null)
+    {
+
+        if ($criteria === null)
+        {
+            $criteria = new \Criteria();
+        }
+
+        $criteria->add(\Cungfoo\Model\CategoriePeer::ACTIVE, true);
+
+
+        $criteria->addJoin(\Cungfoo\Model\CategoriePeer::ID, \Cungfoo\Model\CategorieI18nPeer::ID, \Criteria::LEFT_JOIN);
+        $criteria->add(\Cungfoo\Model\CategorieI18nPeer::ACTIVE_LOCALE, true);
+        $criteria->add(\Cungfoo\Model\CategorieI18nPeer::LOCALE, $this->currentLocale);
+
+        return $this->getCategories($criteria, $con);
+    }
     // i18n behavior
 
     /**
@@ -4049,6 +4128,30 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
          */
         public function setIndicePrix($v)
         {    $this->getCurrentTranslation()->setIndicePrix($v);
+
+        return $this;
+    }
+
+
+        /**
+         * Get the [active_locale] column value.
+         *
+         * @return boolean
+         */
+        public function getActiveLocale()
+        {
+        return $this->getCurrentTranslation()->getActiveLocale();
+    }
+
+
+        /**
+         * Set the value of [active_locale] column.
+         *
+         * @param boolean $v new value
+         * @return BonPlanI18n The current object (for fluent API support)
+         */
+        public function setActiveLocale($v)
+        {    $this->getCurrentTranslation()->setActiveLocale($v);
 
         return $this;
     }

@@ -21,7 +21,7 @@ class TypeHebergementPeer extends BaseTypeHebergementPeer
     public static function getNbTypeHebergements()
     {
         return TypeHebergementQuery::create()
-            ->find()
+            ->findActive()
             ->count()
         ;
     }

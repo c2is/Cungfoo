@@ -56,7 +56,7 @@ class Etablissement extends BaseEtablissement
                 ->endUse()
             ->endUse()
             ->distinct()
-            ->find()
+            ->findActive()
         ;
     }
 
@@ -69,7 +69,7 @@ class Etablissement extends BaseEtablissement
                 ->filterByEtablissementId($this->getId())
             ->endUse()
             ->distinct()
-            ->find()
+            ->findActive()
         ;
     }
 

@@ -1853,6 +1853,7 @@ abstract class BasePays extends BaseObject implements Persistent
 
     // active behavior
 
+
     /**
      * return true is the object is active
      *
@@ -1863,6 +1864,33 @@ abstract class BasePays extends BaseObject implements Persistent
         return $this->getActive();
     }
 
+    /**
+     * return true is the object is active locale
+     *
+     * @return boolean
+     */
+    public function isActiveLocale()
+    {
+        return $this->getActiveLocale();
+    }
+
+    public function getRegionsActive($criteria = null, PropelPDO $con = null)
+    {
+
+        if ($criteria === null)
+        {
+            $criteria = new \Criteria();
+        }
+
+        $criteria->add(\Cungfoo\Model\RegionPeer::ACTIVE, true);
+
+
+        $criteria->addJoin(\Cungfoo\Model\RegionPeer::ID, \Cungfoo\Model\RegionI18nPeer::ID, \Criteria::LEFT_JOIN);
+        $criteria->add(\Cungfoo\Model\RegionI18nPeer::ACTIVE_LOCALE, true);
+        $criteria->add(\Cungfoo\Model\RegionI18nPeer::LOCALE, $this->currentLocale);
+
+        return $this->getRegions($criteria, $con);
+    }
     // i18n behavior
 
     /**
@@ -2054,6 +2082,30 @@ abstract class BasePays extends BaseObject implements Persistent
          */
         public function setDescription($v)
         {    $this->getCurrentTranslation()->setDescription($v);
+
+        return $this;
+    }
+
+
+        /**
+         * Get the [active_locale] column value.
+         *
+         * @return boolean
+         */
+        public function getActiveLocale()
+        {
+        return $this->getCurrentTranslation()->getActiveLocale();
+    }
+
+
+        /**
+         * Set the value of [active_locale] column.
+         *
+         * @param boolean $v new value
+         * @return PaysI18n The current object (for fluent API support)
+         */
+        public function setActiveLocale($v)
+        {    $this->getCurrentTranslation()->setActiveLocale($v);
 
         return $this;
     }

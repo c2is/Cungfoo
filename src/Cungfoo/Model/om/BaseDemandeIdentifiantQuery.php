@@ -1177,6 +1177,7 @@ abstract class BaseDemandeIdentifiantQuery extends ModelCriteria
     }
     // active behavior
 
+
     /**
      * return only active objects
      *
@@ -1184,9 +1185,10 @@ abstract class BaseDemandeIdentifiantQuery extends ModelCriteria
      */
     public function findActive($con = null)
     {
-        $this->filterByActive(true);
+        $this
+            ->filterByActive(true)
+        ;
 
         return parent::find($con);
     }
-
 }

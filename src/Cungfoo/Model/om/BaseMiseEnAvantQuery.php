@@ -694,6 +694,7 @@ abstract class BaseMiseEnAvantQuery extends ModelCriteria
 
     // active behavior
 
+
     /**
      * return only active objects
      *
@@ -701,11 +702,15 @@ abstract class BaseMiseEnAvantQuery extends ModelCriteria
      */
     public function findActive($con = null)
     {
-        $this->filterByActive(true);
+        $this
+            ->filterByActive(true)
+            ->useI18nQuery('fr', 'i18n_locale')
+                ->filterByActiveLocale(true)
+            ->endUse()
+        ;
 
         return parent::find($con);
     }
-
     // i18n behavior
 
     /**
