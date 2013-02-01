@@ -1812,9 +1812,10 @@ abstract class BaseBonPlanCategorie extends BaseObject implements Persistent
         $criteria->add(\Cungfoo\Model\BonPlanPeer::ACTIVE, true);
 
 
-        $criteria->addJoin(\Cungfoo\Model\BonPlanPeer::ID, \Cungfoo\Model\BonPlanI18nPeer::ID, \Criteria::LEFT_JOIN);
-        $criteria->add(\Cungfoo\Model\BonPlanI18nPeer::ACTIVE_LOCALE, true);
-        $criteria->add(\Cungfoo\Model\BonPlanI18nPeer::LOCALE, $this->currentLocale);
+        $criteria->addAlias('i18n_locale', \Cungfoo\Model\BonPlanI18nPeer::TABLE_NAME);
+        $criteria->addJoin(\Cungfoo\Model\BonPlanPeer::ID, \Cungfoo\Model\BonPlanI18nPeer::alias('i18n_locale', \Cungfoo\Model\BonPlanI18nPeer::ID), \Criteria::LEFT_JOIN);
+        $criteria->add(\Cungfoo\Model\BonPlanI18nPeer::alias('i18n_locale', \Cungfoo\Model\BonPlanI18nPeer::ACTIVE_LOCALE), true);
+        $criteria->add(\Cungfoo\Model\BonPlanI18nPeer::alias('i18n_locale', \Cungfoo\Model\BonPlanI18nPeer::LOCALE), $this->currentLocale);
 
         return $this->getBonPlans($criteria, $con);
     }

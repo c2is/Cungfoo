@@ -2476,9 +2476,10 @@ abstract class BasePersonnage extends BaseObject implements Persistent
         $criteria->add(\Cungfoo\Model\ThemePeer::ACTIVE, true);
 
 
-        $criteria->addJoin(\Cungfoo\Model\ThemePeer::ID, \Cungfoo\Model\ThemeI18nPeer::ID, \Criteria::LEFT_JOIN);
-        $criteria->add(\Cungfoo\Model\ThemeI18nPeer::ACTIVE_LOCALE, true);
-        $criteria->add(\Cungfoo\Model\ThemeI18nPeer::LOCALE, $this->currentLocale);
+        $criteria->addAlias('i18n_locale', \Cungfoo\Model\ThemeI18nPeer::TABLE_NAME);
+        $criteria->addJoin(\Cungfoo\Model\ThemePeer::ID, \Cungfoo\Model\ThemeI18nPeer::alias('i18n_locale', \Cungfoo\Model\ThemeI18nPeer::ID), \Criteria::LEFT_JOIN);
+        $criteria->add(\Cungfoo\Model\ThemeI18nPeer::alias('i18n_locale', \Cungfoo\Model\ThemeI18nPeer::ACTIVE_LOCALE), true);
+        $criteria->add(\Cungfoo\Model\ThemeI18nPeer::alias('i18n_locale', \Cungfoo\Model\ThemeI18nPeer::LOCALE), $this->currentLocale);
 
         return $this->getThemes($criteria, $con);
     }
@@ -2494,9 +2495,10 @@ abstract class BasePersonnage extends BaseObject implements Persistent
         $criteria->add(\Cungfoo\Model\AvantagePeer::ACTIVE, true);
 
 
-        $criteria->addJoin(\Cungfoo\Model\AvantagePeer::ID, \Cungfoo\Model\AvantageI18nPeer::ID, \Criteria::LEFT_JOIN);
-        $criteria->add(\Cungfoo\Model\AvantageI18nPeer::ACTIVE_LOCALE, true);
-        $criteria->add(\Cungfoo\Model\AvantageI18nPeer::LOCALE, $this->currentLocale);
+        $criteria->addAlias('i18n_locale', \Cungfoo\Model\AvantageI18nPeer::TABLE_NAME);
+        $criteria->addJoin(\Cungfoo\Model\AvantagePeer::ID, \Cungfoo\Model\AvantageI18nPeer::alias('i18n_locale', \Cungfoo\Model\AvantageI18nPeer::ID), \Criteria::LEFT_JOIN);
+        $criteria->add(\Cungfoo\Model\AvantageI18nPeer::alias('i18n_locale', \Cungfoo\Model\AvantageI18nPeer::ACTIVE_LOCALE), true);
+        $criteria->add(\Cungfoo\Model\AvantageI18nPeer::alias('i18n_locale', \Cungfoo\Model\AvantageI18nPeer::LOCALE), $this->currentLocale);
 
         return $this->getAvantages($criteria, $con);
     }

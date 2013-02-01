@@ -738,9 +738,11 @@ abstract class BaseTypeHebergementCapaciteQuery extends ModelCriteria
      */
     public function findActive($con = null)
     {
+        $locale = defined('CURRENT_LANGUAGE') ? CURRENT_LANGUAGE : 'fr';
+
         $this
             ->filterByActive(true)
-            ->useI18nQuery('fr', 'i18n_locale')
+            ->useI18nQuery($locale, 'i18n_locale')
                 ->filterByActiveLocale(true)
             ->endUse()
         ;

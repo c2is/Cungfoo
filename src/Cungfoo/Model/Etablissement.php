@@ -198,17 +198,6 @@ class Etablissement extends BaseEtablissement
         return EventPeer::getForEtablissement($this, EventPeer::SORT_BY_PRIORITY, 1);
     }
 
-    public function getTypeHebergementsActive($criteria = null, PropelPDO $con = null)
-    {
-        if ($criteria === null)
-        {
-            $criteria = new \Criteria();
-        }
-        $criteria->add(TypeHebergementPeer::ACTIVE, true);
-
-        return $this->getTypeHebergements($criteria, $con);
-    }
-
     public function getSituationGeographique( PropelPDO $con = null)
     {
         $aSituations = array();

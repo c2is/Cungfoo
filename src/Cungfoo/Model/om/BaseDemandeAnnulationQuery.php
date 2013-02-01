@@ -1234,6 +1234,8 @@ abstract class BaseDemandeAnnulationQuery extends ModelCriteria
      */
     public function findActive($con = null)
     {
+        $locale = defined('CURRENT_LANGUAGE') ? CURRENT_LANGUAGE : 'fr';
+
         $this
             ->filterByActive(true)
         ;

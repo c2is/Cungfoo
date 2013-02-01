@@ -2780,9 +2780,10 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
         $criteria->add(\Cungfoo\Model\EtablissementPeer::ACTIVE, true);
 
 
-        $criteria->addJoin(\Cungfoo\Model\EtablissementPeer::ID, \Cungfoo\Model\EtablissementI18nPeer::ID, \Criteria::LEFT_JOIN);
-        $criteria->add(\Cungfoo\Model\EtablissementI18nPeer::ACTIVE_LOCALE, true);
-        $criteria->add(\Cungfoo\Model\EtablissementI18nPeer::LOCALE, $this->currentLocale);
+        $criteria->addAlias('i18n_locale', \Cungfoo\Model\EtablissementI18nPeer::TABLE_NAME);
+        $criteria->addJoin(\Cungfoo\Model\EtablissementPeer::ID, \Cungfoo\Model\EtablissementI18nPeer::alias('i18n_locale', \Cungfoo\Model\EtablissementI18nPeer::ID), \Criteria::LEFT_JOIN);
+        $criteria->add(\Cungfoo\Model\EtablissementI18nPeer::alias('i18n_locale', \Cungfoo\Model\EtablissementI18nPeer::ACTIVE_LOCALE), true);
+        $criteria->add(\Cungfoo\Model\EtablissementI18nPeer::alias('i18n_locale', \Cungfoo\Model\EtablissementI18nPeer::LOCALE), $this->currentLocale);
 
         return $this->getEtablissements($criteria, $con);
     }
@@ -2798,9 +2799,10 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
         $criteria->add(\Cungfoo\Model\MultimediaPeer::ACTIVE, true);
 
 
-        $criteria->addJoin(\Cungfoo\Model\MultimediaPeer::ID, \Cungfoo\Model\MultimediaI18nPeer::ID, \Criteria::LEFT_JOIN);
-        $criteria->add(\Cungfoo\Model\MultimediaI18nPeer::ACTIVE_LOCALE, true);
-        $criteria->add(\Cungfoo\Model\MultimediaI18nPeer::LOCALE, $this->currentLocale);
+        $criteria->addAlias('i18n_locale', \Cungfoo\Model\MultimediaI18nPeer::TABLE_NAME);
+        $criteria->addJoin(\Cungfoo\Model\MultimediaPeer::ID, \Cungfoo\Model\MultimediaI18nPeer::alias('i18n_locale', \Cungfoo\Model\MultimediaI18nPeer::ID), \Criteria::LEFT_JOIN);
+        $criteria->add(\Cungfoo\Model\MultimediaI18nPeer::alias('i18n_locale', \Cungfoo\Model\MultimediaI18nPeer::ACTIVE_LOCALE), true);
+        $criteria->add(\Cungfoo\Model\MultimediaI18nPeer::alias('i18n_locale', \Cungfoo\Model\MultimediaI18nPeer::LOCALE), $this->currentLocale);
 
         return $this->getMultimedias($criteria, $con);
     }

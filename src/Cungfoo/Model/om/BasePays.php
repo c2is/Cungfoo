@@ -1885,9 +1885,10 @@ abstract class BasePays extends BaseObject implements Persistent
         $criteria->add(\Cungfoo\Model\RegionPeer::ACTIVE, true);
 
 
-        $criteria->addJoin(\Cungfoo\Model\RegionPeer::ID, \Cungfoo\Model\RegionI18nPeer::ID, \Criteria::LEFT_JOIN);
-        $criteria->add(\Cungfoo\Model\RegionI18nPeer::ACTIVE_LOCALE, true);
-        $criteria->add(\Cungfoo\Model\RegionI18nPeer::LOCALE, $this->currentLocale);
+        $criteria->addAlias('i18n_locale', \Cungfoo\Model\RegionI18nPeer::TABLE_NAME);
+        $criteria->addJoin(\Cungfoo\Model\RegionPeer::ID, \Cungfoo\Model\RegionI18nPeer::alias('i18n_locale', \Cungfoo\Model\RegionI18nPeer::ID), \Criteria::LEFT_JOIN);
+        $criteria->add(\Cungfoo\Model\RegionI18nPeer::alias('i18n_locale', \Cungfoo\Model\RegionI18nPeer::ACTIVE_LOCALE), true);
+        $criteria->add(\Cungfoo\Model\RegionI18nPeer::alias('i18n_locale', \Cungfoo\Model\RegionI18nPeer::LOCALE), $this->currentLocale);
 
         return $this->getRegions($criteria, $con);
     }

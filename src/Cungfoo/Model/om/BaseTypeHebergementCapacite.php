@@ -1905,9 +1905,10 @@ abstract class BaseTypeHebergementCapacite extends BaseObject implements Persist
         $criteria->add(\Cungfoo\Model\TypeHebergementPeer::ACTIVE, true);
 
 
-        $criteria->addJoin(\Cungfoo\Model\TypeHebergementPeer::ID, \Cungfoo\Model\TypeHebergementI18nPeer::ID, \Criteria::LEFT_JOIN);
-        $criteria->add(\Cungfoo\Model\TypeHebergementI18nPeer::ACTIVE_LOCALE, true);
-        $criteria->add(\Cungfoo\Model\TypeHebergementI18nPeer::LOCALE, $this->currentLocale);
+        $criteria->addAlias('i18n_locale', \Cungfoo\Model\TypeHebergementI18nPeer::TABLE_NAME);
+        $criteria->addJoin(\Cungfoo\Model\TypeHebergementPeer::ID, \Cungfoo\Model\TypeHebergementI18nPeer::alias('i18n_locale', \Cungfoo\Model\TypeHebergementI18nPeer::ID), \Criteria::LEFT_JOIN);
+        $criteria->add(\Cungfoo\Model\TypeHebergementI18nPeer::alias('i18n_locale', \Cungfoo\Model\TypeHebergementI18nPeer::ACTIVE_LOCALE), true);
+        $criteria->add(\Cungfoo\Model\TypeHebergementI18nPeer::alias('i18n_locale', \Cungfoo\Model\TypeHebergementI18nPeer::LOCALE), $this->currentLocale);
 
         return $this->getTypeHebergements($criteria, $con);
     }

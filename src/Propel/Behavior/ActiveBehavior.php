@@ -127,6 +127,8 @@ public function isActiveLocale()
 
     protected function addFindMethod(&$script)
     {
+        $tableName = $this->getTable()->getPhpName();
+
         $script .= "
 
 /**
@@ -136,12 +138,14 @@ public function isActiveLocale()
  */
 public function find".$this->getColumnPhpName('active_column')."(\$con = null)
 {
+    \$locale = defined('CURRENT_LANGUAGE') ? CURRENT_LANGUAGE : 'fr';
+
     \$this
         ->filterBy".$this->getColumnPhpName('active_column')."(true)";
 
         if ($this->getTable()->hasBehavior('i18n')) {
             $script .= "
-        ->useI18nQuery('fr', 'i18n_locale')
+        ->useI18nQuery(\$locale, 'i18n_locale')
             ->filterByActiveLocale(true)
         ->endUse()";
         }
@@ -189,9 +193,10 @@ public function get{$relatedNameActive}(\$criteria = null, PropelPDO \$con = nul
         if ($relatedPeerI18nClassName) {
 
             $script .= "
-    \$criteria->addJoin({$relatedPeerClassName}::ID, {$relatedPeerI18nClassName}::ID, \Criteria::LEFT_JOIN);
-    \$criteria->add({$relatedPeerI18nClassName}::{$peerActiveLocaleColumn}, true);
-    \$criteria->add({$relatedPeerI18nClassName}::LOCALE, \$this->currentLocale);
+    \$criteria->addAlias('i18n_locale', {$relatedPeerI18nClassName}::TABLE_NAME);
+    \$criteria->addJoin({$relatedPeerClassName}::ID, {$relatedPeerI18nClassName}::alias('i18n_locale', {$relatedPeerI18nClassName}::ID), \Criteria::LEFT_JOIN);
+    \$criteria->add({$relatedPeerI18nClassName}::alias('i18n_locale', {$relatedPeerI18nClassName}::{$peerActiveLocaleColumn}), true);
+    \$criteria->add({$relatedPeerI18nClassName}::alias('i18n_locale', {$relatedPeerI18nClassName}::LOCALE), \$this->currentLocale);
 ";
         }
 
@@ -233,9 +238,10 @@ public function get{$relatedNameActive}(\$criteria = null, PropelPDO \$con = nul
         if ($relatedPeerI18nClassName) {
 
             $script .= "
-    \$criteria->addJoin({$relatedPeerClassName}::ID, {$relatedPeerI18nClassName}::ID, \Criteria::LEFT_JOIN);
-    \$criteria->add({$relatedPeerI18nClassName}::{$peerActiveLocaleColumn}, true);
-    \$criteria->add({$relatedPeerI18nClassName}::LOCALE, \$this->currentLocale);
+    \$criteria->addAlias('i18n_locale', {$relatedPeerI18nClassName}::TABLE_NAME);
+    \$criteria->addJoin({$relatedPeerClassName}::ID, {$relatedPeerI18nClassName}::alias('i18n_locale', {$relatedPeerI18nClassName}::ID), \Criteria::LEFT_JOIN);
+    \$criteria->add({$relatedPeerI18nClassName}::alias('i18n_locale', {$relatedPeerI18nClassName}::{$peerActiveLocaleColumn}), true);
+    \$criteria->add({$relatedPeerI18nClassName}::alias('i18n_locale', {$relatedPeerI18nClassName}::LOCALE), \$this->currentLocale);
 ";
         }
 

@@ -32,14 +32,14 @@
 
     <p class="keywordsFiche">
         {% if etab.activites | length %}
-            {% for activite in etab.activites %}
+            {% for activite in etab.activitesActive %}
                 {% if loop.index <= 2 %}
                     {{ activite.name }} -
                 {% endif %}
             {% endfor %}
         {% endif %}
         {% if etab.serviceComplementaires | length %}
-            {% for serviceComplementaire in etab.serviceComplementaires %}
+            {% for serviceComplementaire in etab.serviceComplementairesActive %}
                 {% if loop.index <= 2 %}
                     {{ serviceComplementaire.name }}
                     {% if loop.index < 2 %} - {% endif %}
@@ -113,7 +113,7 @@
         <dl>
             <dt><span>{{ "fiche.activites" | trans }}</span></dt>
             <dd class="activites"><ul>
-                {% for activite in etab.activites %}
+                {% for activite in etab.activitesActive %}
                     <li>{% if activite.imagePath != "." and activite.imagePath != null %}<img src="{{ asset(activite.imagePath) }}" width="36" height="43" alt="{{ activite.name }}">{% endif %}<span>{{ activite.name }}</span></li>
                 {% endfor %}
             </ul></dd>
@@ -123,7 +123,7 @@
         <dl>
             <dt><span>{{ "fiche.baignades.top" | trans }}<br />{{ "fiche.baignades.bottom" | trans }}</span></dt>
             <dd class="equipements"><ul>
-                {% for baignade in etab.baignades %}
+                {% for baignade in etab.baignadesActive %}
                     <li>{% if baignade.imagePath != "." and baignade.imagePath != null %}<img src="{{ asset(baignade.imagePath) }}" width="36" height="43" alt="{{ baignade.name }}">{% endif %}<span>{{ baignade.name }}</span></li>
                 {% endfor %}
             </ul></dd>
@@ -133,7 +133,7 @@
         <dl>
             <dt><span>{{ "fiche.services_complementaires" | trans }}</span></dt>
             <dd class="services"><ul>
-                {% for serviceComplementaire in etab.serviceComplementaires %}
+                {% for serviceComplementaire in etab.serviceComplementairesActive %}
                     <li>{% if serviceComplementaire.imagePath != "." and serviceComplementaire.imagePath != null %}<img src="{{ asset(serviceComplementaire.imagePath) }}" width="36" height="43" alt="{{ serviceComplementaire.name }}">{% endif %}<span>{{ serviceComplementaire.name }}</span></li>
                 {% endfor %}
             </ul></dd>
@@ -152,7 +152,7 @@
             </div>
         </div>
         <div class="slider"><div class="slide">
-            {% for avantage in personnageAleatoire.avantages %}
+            {% for avantage in personnageAleatoire.avantagesActivite %}
                 <dl>
                     <dd><img src="{{ asset(avantage.imagePath) }}" alt="{{ avantage.name }}" class="boxborder"></dd>
                     <dt>{{ avantage.name }}</dt>
@@ -174,7 +174,7 @@
                         <span class="perso">{{ personnage.prenom | trans }}</span>
                         <span class="age">{{ personnage.age }} ans</span>
                         <ul>
-                            {% for avantage in personnage.avantages %}
+                            {% for avantage in personnage.avantagesActive %}
                             <li>{{ avantage.name }}</li>
                             {% endfor %}
                         </ul>

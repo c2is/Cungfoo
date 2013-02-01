@@ -3831,9 +3831,10 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
         $criteria->add(\Cungfoo\Model\BonPlanCategoriePeer::ACTIVE, true);
 
 
-        $criteria->addJoin(\Cungfoo\Model\BonPlanCategoriePeer::ID, \Cungfoo\Model\BonPlanCategorieI18nPeer::ID, \Criteria::LEFT_JOIN);
-        $criteria->add(\Cungfoo\Model\BonPlanCategorieI18nPeer::ACTIVE_LOCALE, true);
-        $criteria->add(\Cungfoo\Model\BonPlanCategorieI18nPeer::LOCALE, $this->currentLocale);
+        $criteria->addAlias('i18n_locale', \Cungfoo\Model\BonPlanCategorieI18nPeer::TABLE_NAME);
+        $criteria->addJoin(\Cungfoo\Model\BonPlanCategoriePeer::ID, \Cungfoo\Model\BonPlanCategorieI18nPeer::alias('i18n_locale', \Cungfoo\Model\BonPlanCategorieI18nPeer::ID), \Criteria::LEFT_JOIN);
+        $criteria->add(\Cungfoo\Model\BonPlanCategorieI18nPeer::alias('i18n_locale', \Cungfoo\Model\BonPlanCategorieI18nPeer::ACTIVE_LOCALE), true);
+        $criteria->add(\Cungfoo\Model\BonPlanCategorieI18nPeer::alias('i18n_locale', \Cungfoo\Model\BonPlanCategorieI18nPeer::LOCALE), $this->currentLocale);
 
         return $this->getBonPlanCategories($criteria, $con);
     }
@@ -3848,9 +3849,10 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
         $criteria->add(\Cungfoo\Model\EtablissementPeer::ACTIVE, true);
 
 
-        $criteria->addJoin(\Cungfoo\Model\EtablissementPeer::ID, \Cungfoo\Model\EtablissementI18nPeer::ID, \Criteria::LEFT_JOIN);
-        $criteria->add(\Cungfoo\Model\EtablissementI18nPeer::ACTIVE_LOCALE, true);
-        $criteria->add(\Cungfoo\Model\EtablissementI18nPeer::LOCALE, $this->currentLocale);
+        $criteria->addAlias('i18n_locale', \Cungfoo\Model\EtablissementI18nPeer::TABLE_NAME);
+        $criteria->addJoin(\Cungfoo\Model\EtablissementPeer::ID, \Cungfoo\Model\EtablissementI18nPeer::alias('i18n_locale', \Cungfoo\Model\EtablissementI18nPeer::ID), \Criteria::LEFT_JOIN);
+        $criteria->add(\Cungfoo\Model\EtablissementI18nPeer::alias('i18n_locale', \Cungfoo\Model\EtablissementI18nPeer::ACTIVE_LOCALE), true);
+        $criteria->add(\Cungfoo\Model\EtablissementI18nPeer::alias('i18n_locale', \Cungfoo\Model\EtablissementI18nPeer::LOCALE), $this->currentLocale);
 
         return $this->getEtablissements($criteria, $con);
     }
@@ -3865,9 +3867,10 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
         $criteria->add(\Cungfoo\Model\RegionPeer::ACTIVE, true);
 
 
-        $criteria->addJoin(\Cungfoo\Model\RegionPeer::ID, \Cungfoo\Model\RegionI18nPeer::ID, \Criteria::LEFT_JOIN);
-        $criteria->add(\Cungfoo\Model\RegionI18nPeer::ACTIVE_LOCALE, true);
-        $criteria->add(\Cungfoo\Model\RegionI18nPeer::LOCALE, $this->currentLocale);
+        $criteria->addAlias('i18n_locale', \Cungfoo\Model\RegionI18nPeer::TABLE_NAME);
+        $criteria->addJoin(\Cungfoo\Model\RegionPeer::ID, \Cungfoo\Model\RegionI18nPeer::alias('i18n_locale', \Cungfoo\Model\RegionI18nPeer::ID), \Criteria::LEFT_JOIN);
+        $criteria->add(\Cungfoo\Model\RegionI18nPeer::alias('i18n_locale', \Cungfoo\Model\RegionI18nPeer::ACTIVE_LOCALE), true);
+        $criteria->add(\Cungfoo\Model\RegionI18nPeer::alias('i18n_locale', \Cungfoo\Model\RegionI18nPeer::LOCALE), $this->currentLocale);
 
         return $this->getRegions($criteria, $con);
     }
@@ -3883,9 +3886,10 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
         $criteria->add(\Cungfoo\Model\CategoriePeer::ACTIVE, true);
 
 
-        $criteria->addJoin(\Cungfoo\Model\CategoriePeer::ID, \Cungfoo\Model\CategorieI18nPeer::ID, \Criteria::LEFT_JOIN);
-        $criteria->add(\Cungfoo\Model\CategorieI18nPeer::ACTIVE_LOCALE, true);
-        $criteria->add(\Cungfoo\Model\CategorieI18nPeer::LOCALE, $this->currentLocale);
+        $criteria->addAlias('i18n_locale', \Cungfoo\Model\CategorieI18nPeer::TABLE_NAME);
+        $criteria->addJoin(\Cungfoo\Model\CategoriePeer::ID, \Cungfoo\Model\CategorieI18nPeer::alias('i18n_locale', \Cungfoo\Model\CategorieI18nPeer::ID), \Criteria::LEFT_JOIN);
+        $criteria->add(\Cungfoo\Model\CategorieI18nPeer::alias('i18n_locale', \Cungfoo\Model\CategorieI18nPeer::ACTIVE_LOCALE), true);
+        $criteria->add(\Cungfoo\Model\CategorieI18nPeer::alias('i18n_locale', \Cungfoo\Model\CategorieI18nPeer::LOCALE), $this->currentLocale);
 
         return $this->getCategories($criteria, $con);
     }

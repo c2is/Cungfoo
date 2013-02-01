@@ -1993,9 +1993,10 @@ abstract class BaseTag extends BaseObject implements Persistent
         $criteria->add(\Cungfoo\Model\MultimediaEtablissementPeer::ACTIVE, true);
 
 
-        $criteria->addJoin(\Cungfoo\Model\MultimediaEtablissementPeer::ID, \Cungfoo\Model\MultimediaEtablissementI18nPeer::ID, \Criteria::LEFT_JOIN);
-        $criteria->add(\Cungfoo\Model\MultimediaEtablissementI18nPeer::ACTIVE_LOCALE, true);
-        $criteria->add(\Cungfoo\Model\MultimediaEtablissementI18nPeer::LOCALE, $this->currentLocale);
+        $criteria->addAlias('i18n_locale', \Cungfoo\Model\MultimediaEtablissementI18nPeer::TABLE_NAME);
+        $criteria->addJoin(\Cungfoo\Model\MultimediaEtablissementPeer::ID, \Cungfoo\Model\MultimediaEtablissementI18nPeer::alias('i18n_locale', \Cungfoo\Model\MultimediaEtablissementI18nPeer::ID), \Criteria::LEFT_JOIN);
+        $criteria->add(\Cungfoo\Model\MultimediaEtablissementI18nPeer::alias('i18n_locale', \Cungfoo\Model\MultimediaEtablissementI18nPeer::ACTIVE_LOCALE), true);
+        $criteria->add(\Cungfoo\Model\MultimediaEtablissementI18nPeer::alias('i18n_locale', \Cungfoo\Model\MultimediaEtablissementI18nPeer::LOCALE), $this->currentLocale);
 
         return $this->getMultimediaEtablissements($criteria, $con);
     }

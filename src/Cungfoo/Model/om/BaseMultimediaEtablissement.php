@@ -2143,9 +2143,10 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
         $criteria->add(\Cungfoo\Model\TagPeer::ACTIVE, true);
 
 
-        $criteria->addJoin(\Cungfoo\Model\TagPeer::ID, \Cungfoo\Model\TagI18nPeer::ID, \Criteria::LEFT_JOIN);
-        $criteria->add(\Cungfoo\Model\TagI18nPeer::ACTIVE_LOCALE, true);
-        $criteria->add(\Cungfoo\Model\TagI18nPeer::LOCALE, $this->currentLocale);
+        $criteria->addAlias('i18n_locale', \Cungfoo\Model\TagI18nPeer::TABLE_NAME);
+        $criteria->addJoin(\Cungfoo\Model\TagPeer::ID, \Cungfoo\Model\TagI18nPeer::alias('i18n_locale', \Cungfoo\Model\TagI18nPeer::ID), \Criteria::LEFT_JOIN);
+        $criteria->add(\Cungfoo\Model\TagI18nPeer::alias('i18n_locale', \Cungfoo\Model\TagI18nPeer::ACTIVE_LOCALE), true);
+        $criteria->add(\Cungfoo\Model\TagI18nPeer::alias('i18n_locale', \Cungfoo\Model\TagI18nPeer::LOCALE), $this->currentLocale);
 
         return $this->getTags($criteria, $con);
     }
