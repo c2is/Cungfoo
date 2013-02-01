@@ -53,8 +53,8 @@ class ThemePersonnageTableMap extends TableMap
      */
     public function buildRelations()
     {
-        $this->addRelation('Theme', 'Cungfoo\\Model\\Theme', RelationMap::MANY_TO_ONE, array('theme_id' => 'id', ), null, null);
-        $this->addRelation('Personnage', 'Cungfoo\\Model\\Personnage', RelationMap::MANY_TO_ONE, array('personnage_id' => 'id', ), null, null);
+        $this->addRelation('Theme', 'Cungfoo\\Model\\Theme', RelationMap::MANY_TO_ONE, array('theme_id' => 'id', ), 'CASCADE', null);
+        $this->addRelation('Personnage', 'Cungfoo\\Model\\Personnage', RelationMap::MANY_TO_ONE, array('personnage_id' => 'id', ), 'CASCADE', null);
     } // buildRelations()
 
 } // ThemePersonnageTableMap

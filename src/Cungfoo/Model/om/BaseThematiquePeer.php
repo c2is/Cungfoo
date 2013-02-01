@@ -9,6 +9,7 @@ use \PDOStatement;
 use \Propel;
 use \PropelException;
 use \PropelPDO;
+use Cungfoo\Model\EtablissementThematiquePeer;
 use Cungfoo\Model\Thematique;
 use Cungfoo\Model\ThematiqueI18nPeer;
 use Cungfoo\Model\ThematiquePeer;
@@ -395,6 +396,9 @@ abstract class BaseThematiquePeer
      */
     public static function clearRelatedInstancePool()
     {
+        // Invalidate objects in EtablissementThematiquePeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        EtablissementThematiquePeer::clearInstancePool();
         // Invalidate objects in ThematiqueI18nPeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
         ThematiqueI18nPeer::clearInstancePool();

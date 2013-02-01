@@ -12,6 +12,8 @@ use \PropelPDO;
 use Cungfoo\Model\Baignade;
 use Cungfoo\Model\BaignadeI18nPeer;
 use Cungfoo\Model\BaignadePeer;
+use Cungfoo\Model\EtablissementBaignadePeer;
+use Cungfoo\Model\ThemeBaignadePeer;
 use Cungfoo\Model\map\BaignadeTableMap;
 
 /**
@@ -400,6 +402,12 @@ abstract class BaseBaignadePeer
      */
     public static function clearRelatedInstancePool()
     {
+        // Invalidate objects in EtablissementBaignadePeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        EtablissementBaignadePeer::clearInstancePool();
+        // Invalidate objects in ThemeBaignadePeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        ThemeBaignadePeer::clearInstancePool();
         // Invalidate objects in BaignadeI18nPeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
         BaignadeI18nPeer::clearInstancePool();

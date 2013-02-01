@@ -117,7 +117,7 @@
             <reference local="etablissement_id" foreign="id"/>
         </foreign-key>
 
-        <foreign-key foreignTable="destination">
+        <foreign-key foreignTable="destination" onDelete="CASCADE">
             <reference local="destination_id" foreign="id"/>
         </foreign-key>
     </table>
@@ -143,7 +143,7 @@
             <reference local="etablissement_id" foreign="id"/>
         </foreign-key>
 
-        <foreign-key foreignTable="service_complementaire">
+        <foreign-key foreignTable="service_complementaire" onDelete="CASCADE">
             <reference local="service_complementaire_id" foreign="id"/>
         </foreign-key>
     </table>
@@ -156,7 +156,7 @@
             <reference local="etablissement_id" foreign="id"/>
         </foreign-key>
 
-        <foreign-key foreignTable="situation_geographique">
+        <foreign-key foreignTable="situation_geographique" onDelete="CASCADE">
             <reference local="situation_geographique_id" foreign="id"/>
         </foreign-key>
     </table>
@@ -169,7 +169,7 @@
             <reference local="etablissement_id" foreign="id"/>
         </foreign-key>
 
-        <foreign-key foreignTable="baignade">
+        <foreign-key foreignTable="baignade" onDelete="CASCADE">
             <reference local="baignade_id" foreign="id"/>
         </foreign-key>
     </table>
@@ -182,7 +182,7 @@
             <reference local="etablissement_id" foreign="id"/>
         </foreign-key>
 
-        <foreign-key foreignTable="thematique">
+        <foreign-key foreignTable="thematique" onDelete="CASCADE">
             <reference local="thematique_id" foreign="id"/>
         </foreign-key>
     </table>
@@ -196,7 +196,7 @@
             <reference local="etablissement_id" foreign="id"/>
         </foreign-key>
 
-        <foreign-key foreignTable="point_interet">
+        <foreign-key foreignTable="point_interet" onDelete="CASCADE">
             <reference local="point_interet_id" foreign="id"/>
         </foreign-key>
     </table>
@@ -210,7 +210,7 @@
             <reference local="etablissement_id" foreign="id"/>
         </foreign-key>
 
-        <foreign-key foreignTable="event">
+        <foreign-key foreignTable="event" onDelete="CASCADE">
             <reference local="event_id" foreign="id"/>
         </foreign-key>
     </table>
@@ -715,7 +715,7 @@
             <reference local="multimedia_etablissement_id" foreign="id"/>
         </foreign-key>
 
-        <foreign-key foreignTable="tag">
+        <foreign-key foreignTable="tag" onDelete="CASCADE">
             <reference local="tag_id" foreign="id"/>
         </foreign-key>
     </table>
@@ -895,11 +895,11 @@
         <column name="theme_id" type="integer" primaryKey="true"/>
         <column name="activite_id" type="integer" primaryKey="true"/>
 
-        <foreign-key foreignTable="theme">
+        <foreign-key foreignTable="theme" onDelete="CASCADE">
             <reference local="theme_id" foreign="id"/>
         </foreign-key>
 
-        <foreign-key foreignTable="activite">
+        <foreign-key foreignTable="activite" onDelete="CASCADE">
             <reference local="activite_id" foreign="id"/>
         </foreign-key>
     </table>
@@ -908,11 +908,11 @@
         <column name="theme_id" type="integer" primaryKey="true"/>
         <column name="baignade_id" type="integer" primaryKey="true"/>
 
-        <foreign-key foreignTable="theme">
+        <foreign-key foreignTable="theme" onDelete="CASCADE">
             <reference local="theme_id" foreign="id"/>
         </foreign-key>
 
-        <foreign-key foreignTable="baignade">
+        <foreign-key foreignTable="baignade" onDelete="CASCADE">
             <reference local="baignade_id" foreign="id"/>
         </foreign-key>
     </table>
@@ -921,11 +921,11 @@
         <column name="theme_id" type="integer" primaryKey="true"/>
         <column name="service_complementaire_id" type="integer" primaryKey="true"/>
 
-        <foreign-key foreignTable="theme">
+        <foreign-key foreignTable="theme" onDelete="CASCADE">
             <reference local="theme_id" foreign="id"/>
         </foreign-key>
 
-        <foreign-key foreignTable="service_complementaire">
+        <foreign-key foreignTable="service_complementaire" onDelete="CASCADE">
             <reference local="service_complementaire_id" foreign="id"/>
         </foreign-key>
     </table>
@@ -934,11 +934,11 @@
         <column name="theme_id" type="integer" primaryKey="true"/>
         <column name="personnage_id" type="integer" primaryKey="true"/>
 
-        <foreign-key foreignTable="theme">
+        <foreign-key foreignTable="theme" onDelete="CASCADE">
             <reference local="theme_id" foreign="id"/>
         </foreign-key>
 
-        <foreign-key foreignTable="personnage">
+        <foreign-key foreignTable="personnage" onDelete="CASCADE">
             <reference local="personnage_id" foreign="id"/>
         </foreign-key>
     </table>
@@ -1009,11 +1009,11 @@
             <parameter name="scope_column" value="bon_plan_categorie_id" />
         </behavior>
 
-        <foreign-key foreignTable="bon_plan">
+        <foreign-key foreignTable="bon_plan" onDelete="CASCADE">
             <reference local="bon_plan_id" foreign="id"/>
         </foreign-key>
 
-        <foreign-key foreignTable="bon_plan_categorie">
+        <foreign-key foreignTable="bon_plan_categorie" onDelete="CASCADE">
             <reference local="bon_plan_categorie_id" foreign="id"/>
         </foreign-key>
     </table>
@@ -1026,7 +1026,7 @@
             <reference local="bon_plan_id" foreign="id"/>
         </foreign-key>
 
-        <foreign-key foreignTable="etablissement">
+        <foreign-key foreignTable="etablissement" onDelete="CASCADE">
             <reference local="etablissement_id" foreign="id"/>
         </foreign-key>
     </table>
@@ -1039,7 +1039,7 @@
             <reference local="bon_plan_id" foreign="id"/>
         </foreign-key>
 
-        <foreign-key foreignTable="region">
+        <foreign-key foreignTable="region" onDelete="CASCADE">
             <reference local="region_id" foreign="id"/>
         </foreign-key>
     </table>

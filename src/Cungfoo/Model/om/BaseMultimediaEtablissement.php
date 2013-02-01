@@ -2111,7 +2111,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
     }
 
     // active behavior
-
+    
     /**
      * return true is the object is active
      *
@@ -2246,7 +2246,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
     }
 
     // crudable behavior
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -2261,12 +2261,12 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
         {
             $this->resetModified(MultimediaEtablissementPeer::IMAGE_PATH);
         }
-
+    
         $this->uploadImagePath($form);
-
+        
         return $this->save($con);
     }
-
+    
     /**
      * @return string
      */
@@ -2274,7 +2274,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
     {
         return 'uploads/multimedia_etablissements';
     }
-
+    
     /**
      * @return string
      */
@@ -2282,7 +2282,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void

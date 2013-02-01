@@ -54,8 +54,8 @@ class BonPlanBonPlanCategorieTableMap extends TableMap
      */
     public function buildRelations()
     {
-        $this->addRelation('BonPlan', 'Cungfoo\\Model\\BonPlan', RelationMap::MANY_TO_ONE, array('bon_plan_id' => 'id', ), null, null);
-        $this->addRelation('BonPlanCategorie', 'Cungfoo\\Model\\BonPlanCategorie', RelationMap::MANY_TO_ONE, array('bon_plan_categorie_id' => 'id', ), null, null);
+        $this->addRelation('BonPlan', 'Cungfoo\\Model\\BonPlan', RelationMap::MANY_TO_ONE, array('bon_plan_id' => 'id', ), 'CASCADE', null);
+        $this->addRelation('BonPlanCategorie', 'Cungfoo\\Model\\BonPlanCategorie', RelationMap::MANY_TO_ONE, array('bon_plan_categorie_id' => 'id', ), 'CASCADE', null);
     } // buildRelations()
 
     /**

@@ -53,15 +53,15 @@ class ThemeTableMap extends TableMap
      */
     public function buildRelations()
     {
-        $this->addRelation('ThemeActivite', 'Cungfoo\\Model\\ThemeActivite', RelationMap::ONE_TO_MANY, array('id' => 'theme_id', ), null, null, 'ThemeActivites');
-        $this->addRelation('ThemeBaignade', 'Cungfoo\\Model\\ThemeBaignade', RelationMap::ONE_TO_MANY, array('id' => 'theme_id', ), null, null, 'ThemeBaignades');
-        $this->addRelation('ThemeServiceComplementaire', 'Cungfoo\\Model\\ThemeServiceComplementaire', RelationMap::ONE_TO_MANY, array('id' => 'theme_id', ), null, null, 'ThemeServiceComplementaires');
-        $this->addRelation('ThemePersonnage', 'Cungfoo\\Model\\ThemePersonnage', RelationMap::ONE_TO_MANY, array('id' => 'theme_id', ), null, null, 'ThemePersonnages');
+        $this->addRelation('ThemeActivite', 'Cungfoo\\Model\\ThemeActivite', RelationMap::ONE_TO_MANY, array('id' => 'theme_id', ), 'CASCADE', null, 'ThemeActivites');
+        $this->addRelation('ThemeBaignade', 'Cungfoo\\Model\\ThemeBaignade', RelationMap::ONE_TO_MANY, array('id' => 'theme_id', ), 'CASCADE', null, 'ThemeBaignades');
+        $this->addRelation('ThemeServiceComplementaire', 'Cungfoo\\Model\\ThemeServiceComplementaire', RelationMap::ONE_TO_MANY, array('id' => 'theme_id', ), 'CASCADE', null, 'ThemeServiceComplementaires');
+        $this->addRelation('ThemePersonnage', 'Cungfoo\\Model\\ThemePersonnage', RelationMap::ONE_TO_MANY, array('id' => 'theme_id', ), 'CASCADE', null, 'ThemePersonnages');
         $this->addRelation('ThemeI18n', 'Cungfoo\\Model\\ThemeI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'ThemeI18ns');
-        $this->addRelation('Activite', 'Cungfoo\\Model\\Activite', RelationMap::MANY_TO_MANY, array(), null, null, 'Activites');
-        $this->addRelation('Baignade', 'Cungfoo\\Model\\Baignade', RelationMap::MANY_TO_MANY, array(), null, null, 'Baignades');
-        $this->addRelation('ServiceComplementaire', 'Cungfoo\\Model\\ServiceComplementaire', RelationMap::MANY_TO_MANY, array(), null, null, 'ServiceComplementaires');
-        $this->addRelation('Personnage', 'Cungfoo\\Model\\Personnage', RelationMap::MANY_TO_MANY, array(), null, null, 'Personnages');
+        $this->addRelation('Activite', 'Cungfoo\\Model\\Activite', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'Activites');
+        $this->addRelation('Baignade', 'Cungfoo\\Model\\Baignade', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'Baignades');
+        $this->addRelation('ServiceComplementaire', 'Cungfoo\\Model\\ServiceComplementaire', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'ServiceComplementaires');
+        $this->addRelation('Personnage', 'Cungfoo\\Model\\Personnage', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'Personnages');
     } // buildRelations()
 
     /**

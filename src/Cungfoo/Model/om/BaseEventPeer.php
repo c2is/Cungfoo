@@ -9,6 +9,7 @@ use \PDOStatement;
 use \Propel;
 use \PropelException;
 use \PropelPDO;
+use Cungfoo\Model\EtablissementEventPeer;
 use Cungfoo\Model\Event;
 use Cungfoo\Model\EventI18nPeer;
 use Cungfoo\Model\EventPeer;
@@ -460,6 +461,9 @@ abstract class BaseEventPeer
      */
     public static function clearRelatedInstancePool()
     {
+        // Invalidate objects in EtablissementEventPeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        EtablissementEventPeer::clearInstancePool();
         // Invalidate objects in EventI18nPeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
         EventI18nPeer::clearInstancePool();

@@ -10,6 +10,7 @@ use \Propel;
 use \PropelException;
 use \PropelPDO;
 use Cungfoo\Model\BonPlan;
+use Cungfoo\Model\BonPlanBonPlanCategoriePeer;
 use Cungfoo\Model\BonPlanEtablissementPeer;
 use Cungfoo\Model\BonPlanI18nPeer;
 use Cungfoo\Model\BonPlanPeer;
@@ -512,6 +513,9 @@ abstract class BaseBonPlanPeer
      */
     public static function clearRelatedInstancePool()
     {
+        // Invalidate objects in BonPlanBonPlanCategoriePeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        BonPlanBonPlanCategoriePeer::clearInstancePool();
         // Invalidate objects in BonPlanEtablissementPeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
         BonPlanEtablissementPeer::clearInstancePool();

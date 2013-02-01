@@ -10,8 +10,12 @@ use \Propel;
 use \PropelException;
 use \PropelPDO;
 use Cungfoo\Model\Theme;
+use Cungfoo\Model\ThemeActivitePeer;
+use Cungfoo\Model\ThemeBaignadePeer;
 use Cungfoo\Model\ThemeI18nPeer;
 use Cungfoo\Model\ThemePeer;
+use Cungfoo\Model\ThemePersonnagePeer;
+use Cungfoo\Model\ThemeServiceComplementairePeer;
 use Cungfoo\Model\map\ThemeTableMap;
 
 /**
@@ -380,6 +384,18 @@ abstract class BaseThemePeer
      */
     public static function clearRelatedInstancePool()
     {
+        // Invalidate objects in ThemeActivitePeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        ThemeActivitePeer::clearInstancePool();
+        // Invalidate objects in ThemeBaignadePeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        ThemeBaignadePeer::clearInstancePool();
+        // Invalidate objects in ThemeServiceComplementairePeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        ThemeServiceComplementairePeer::clearInstancePool();
+        // Invalidate objects in ThemePersonnagePeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        ThemePersonnagePeer::clearInstancePool();
         // Invalidate objects in ThemeI18nPeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
         ThemeI18nPeer::clearInstancePool();
