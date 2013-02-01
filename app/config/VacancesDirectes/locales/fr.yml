@@ -758,6 +758,12 @@ global:
         password: "Mot de passe"
         forget: "Mot de passe oublié ?"
         submit: "Se connecter"
+        accueil: "Accueil"
+        coordonnees: "Coordonnées"
+        demande_brochure: "Demande de brochure"
+        reservation: "Réservation"
+        title: "Espace"
+        title_client: "client"
 
 bon_plan:
     title: "Camping : %bonPlan%"
@@ -796,3 +802,12 @@ location:
 share:
     facebook: "Partager sur Facebook"
     twitter: "Partager sur Twitter"
+
+couloir:
+    menu:
+        detail: "Détails du séjour"
+        recapitulatif: "Récapitulatif"
+        paiement: "Paiement"
+    confirmation: "Confirmation"
+    title: "Bienvenue dans l’espace de"
+    title_reservation: "Réservation"
