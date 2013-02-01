@@ -390,7 +390,7 @@ header:
     information: "Informationen & Reservierungen"
     telephone:
         number: "0033 (0) 825 133 400"
-        price: "(0,15/Min)"
+        price: ""
     130_camping: "mehr als 170 Campingplätze in Frankreich, Spanien & Italien"
     location_mobil_home: "Vermietung von Wohnwagen auf Campingplätzen (Frankreich, Spanien, Italien und Portugal)"
 
@@ -519,7 +519,16 @@ filtres:
     filtrer: "Filtern"
 
 footer:
-    contact: "Kontakt"
+    contact:
+        title: "Kontakt"
+        tel: "0033 (0)825 133 400"
+        fax: "Fax: 0033 (0)2 96 39 97 81"
+        adresse:
+            name: "Vacances directes"
+            lieu_dit: "Ettlinger-Tor-Platz 3"
+            rue: "D-76137 Karlsruhe"
+            ville: ""
+            code_postal: ""
     charte_qualite: "Qualitätscharta"
     conditions_generales_de_location: "Allgemeine Vermietungsbedingungen"
     faq: "FAQ"
@@ -531,9 +540,6 @@ footer:
     cb_visa: "Kreditkarte Visa"
     masterCard: "MasterCard"
     nous_joindre: "Uns kontaktieren"
-    contact:
-        tel: "0033 (0)825 133 400"
-        fax: "Fax: 0033 (0)2 96 39 97 81"
     nous_contacter: "Uns kontaktieren"
     demande_catalogue: "Kataloganfrage"
     description_catalogue: "Hoc inmaturo interitu ipse quoque sui pertaesus excessit e vita aetatis."
