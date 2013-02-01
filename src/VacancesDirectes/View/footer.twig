@@ -106,8 +106,8 @@
         {# TODO <a href="{{ path('edito_by_slug', {slug: 'plan-du-site'}) }}">{{ "footer.plan_du_site" | trans }}</a> - #}
         {# TODO <a href="{{ path('edito_by_slug', {slug: 'credits'}) }}">{{ "footer.credits" | trans }}</a> - #}
         <a href="{{ path('edito_by_slug', {slug: 'mentions-legales'}) }}">{{ "footer.mentions_legales" | trans }}</a>
-        <span class="card transac">{{ "footer.transactions_securisees" | trans }}</span>{% endif %}
-        {% if app.context.get('language') != 'de' %}<span class="card visa">{{ "footer.cb_visa" | trans }}</span>
+        <span class="card transac">{{ "footer.transactions_securisees" | trans }}</span>
+        {% if app.context.get('language') != 'de' %}<span class="card visa">{{ "footer.cb_visa" | trans }}</span>{% endif %}
         <span class="card master">{{ "footer.masterCard" | trans }}</span>
     </div>
 </footer>
