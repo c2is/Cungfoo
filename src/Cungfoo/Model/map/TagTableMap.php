@@ -56,7 +56,7 @@ class TagTableMap extends TableMap
      */
     public function buildRelations()
     {
-        $this->addRelation('MultimediaEtablissementTag', 'Cungfoo\\Model\\MultimediaEtablissementTag', RelationMap::ONE_TO_MANY, array('id' => 'tag_id', ), null, null, 'MultimediaEtablissementTags');
+        $this->addRelation('MultimediaEtablissementTag', 'Cungfoo\\Model\\MultimediaEtablissementTag', RelationMap::ONE_TO_MANY, array('id' => 'tag_id', ), 'CASCADE', null, 'MultimediaEtablissementTags');
         $this->addRelation('TagI18n', 'Cungfoo\\Model\\TagI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'TagI18ns');
         $this->addRelation('MultimediaEtablissement', 'Cungfoo\\Model\\MultimediaEtablissement', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'MultimediaEtablissements');
     } // buildRelations()

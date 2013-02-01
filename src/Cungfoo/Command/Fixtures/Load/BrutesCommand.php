@@ -56,8 +56,8 @@ class BrutesCommand extends BaseCommand
             $this->readCSVFile('baignade_i18n_de_rel.csv', 'baignadesI18nCallback', null, $input, $output, true);
             $this->readCSVFile('etablissement_i18n_de_rel.csv', 'etablissementsI18nCallback', null, $input, $output, true, true);
             $this->readCSVFile('etablissement_i18n_de_rel.csv', 'etablissementsI18nCallback', null, $input, $output, true);
-            //$this->readCSVFile('etablissement2_i18n_de_rel.csv', 'etablissements2I18nCallback', null, $input, $output, true, true);
-            //$this->readCSVFile('etablissement2_i18n_de_rel.csv', 'etablissements2I18nCallback', null, $input, $output, true);
+            $this->readCSVFile('etablissement2_i18n_de_rel.csv', 'etablissements2I18nCallback', null, $input, $output, true, true);
+            $this->readCSVFile('etablissement2_i18n_de_rel.csv', 'etablissements2I18nCallback', null, $input, $output, true);
             $this->readCSVFile('idee_weekend_i18n_de_rel.csv', 'ideesWEI18nCallback', null, $input, $output, true, true);
             $this->readCSVFile('idee_weekend_i18n_de_rel.csv', 'ideesWEI18nCallback', null, $input, $output, true);
             $this->readCSVFile('mise_en_avant_i18n_de_rel.csv', 'misesEnAvantI18nCallback', null, $input, $output, true, true);
@@ -299,6 +299,7 @@ class BrutesCommand extends BaseCommand
                 ;
 
                 if ($item) $this->translatedIds['activites'][$id] = $item->getId();
+                else $output->writeln(sprintf('Failed to map activity : %s' , $name));
             }
         }
         elseif ($locale == 'de' && isset($this->translatedIds['activites'][$id]))
@@ -340,6 +341,7 @@ class BrutesCommand extends BaseCommand
                 ;
 
                 if ($item) $this->translatedIds['avantages'][$id] = $item->getId();
+                else $output->writeln(sprintf('Failed to map advantage : %s' , $name));
             }
         }
         elseif ($locale == 'de' && isset($this->translatedIds['avantages'][$id])) {
@@ -379,6 +381,7 @@ class BrutesCommand extends BaseCommand
                 ;
 
                 if ($item) $this->translatedIds['baignades'][$id] = $item->getId();
+                else $output->writeln(sprintf('Failed to map bathing : %s' , $name));
             }
         }
         elseif ($locale == 'de' && isset($this->translatedIds['baignades'][$id])) {
@@ -419,6 +422,7 @@ class BrutesCommand extends BaseCommand
                 ;
 
                 if ($item) $this->translatedIds['etablissements'][$id] = $item->getId();
+                else $output->writeln(sprintf('Failed to map camping : %s' , $description));
             }
         }
         elseif ($locale == 'de' && isset($this->translatedIds['etablissements'][$id])) {
@@ -461,6 +465,7 @@ class BrutesCommand extends BaseCommand
                 ;
 
                 if ($item) $this->translatedIds['etablissements'][$id] = $item->getId();
+                else $output->writeln(sprintf('Failed to map camping : %s' , $description));
             }
         }
         elseif ($locale == 'de' && isset($this->translatedIds['etablissements'][$id])) {
@@ -503,6 +508,7 @@ class BrutesCommand extends BaseCommand
                 ;
 
                 if ($item) $this->translatedIds['idees_weekend'][$id] = $item->getId();
+                else $output->writeln(sprintf('Failed to map weekend idea : %s' , $titre));
             }
         }
         elseif ($locale == 'de' && isset($this->translatedIds['idees_weekend'][$id])) {
@@ -542,6 +548,7 @@ class BrutesCommand extends BaseCommand
                 ;
 
                 if ($item) $this->translatedIds['mises_en_avant'][$id] = $item->getId();
+                else $output->writeln(sprintf('Failed to map highlight : %s' , $titre));
             }
         }
         elseif ($locale == 'de' && isset($this->translatedIds['mises_en_avant'][$id])) {
@@ -583,6 +590,7 @@ class BrutesCommand extends BaseCommand
                 ;
 
                 if ($item) $this->translatedIds['regions'][$id] = $item->getId();
+                else $output->writeln(sprintf('Failed to map region : %s' , $slug));
             }
         }
         elseif ($locale == 'de' && isset($this->translatedIds['regions'][$id])) {
@@ -624,6 +632,7 @@ class BrutesCommand extends BaseCommand
                 ;
 
                 if ($item) $this->translatedIds['services'][$id] = $item->getId();
+                else $output->writeln(sprintf('Failed to map service : %s' , $name));
             }
         }
         elseif ($locale == 'de' && isset($this->translatedIds['services'][$id])) {
@@ -664,6 +673,7 @@ class BrutesCommand extends BaseCommand
                 ;
 
                 if ($item) $this->translatedIds['situations'][$id] = $item->getId();
+                else $output->writeln(sprintf('Failed to map situation : %s' , $name));
             }
         }
         elseif ($locale == 'de' && isset($this->translatedIds['situations'][$id])) {
@@ -704,6 +714,7 @@ class BrutesCommand extends BaseCommand
                 ;
 
                 if ($item) $this->translatedIds['tags'][$id] = $item->getId();
+                else $output->writeln(sprintf('Failed to map tag : %s' , $name));
             }
         }
         elseif ($locale == 'de' && isset($this->translatedIds['tags'][$id])) {
@@ -742,6 +753,7 @@ class BrutesCommand extends BaseCommand
                 ;
 
                 if ($item) $this->translatedIds['thematiques'][$id] = $item->getId();
+                else $output->writeln(sprintf('Failed to map theme : %s' , $name));
             }
         }
         elseif ($locale == 'de' && isset($this->translatedIds['thematiques'][$id])) {
@@ -782,6 +794,7 @@ class BrutesCommand extends BaseCommand
                 ;
 
                 if ($item) $this->translatedIds['types_hebergement'][$id] = $item->getId();
+                else $output->writeln(sprintf('Failed to map type hebergement : %s' , $name));
             }
         }
         elseif ($locale == 'de' && isset($this->translatedIds['types_hebergement'][$id])) {
@@ -834,6 +847,7 @@ class BrutesCommand extends BaseCommand
                 ;
 
                 if ($item) $this->translatedIds['villes'][$id] = $item->getId();
+                else $output->writeln(sprintf('Failed to map type city : %s' , $slug));
             }
         }
         elseif ($locale == 'de' && isset($this->translatedIds['villes'][$id])) {

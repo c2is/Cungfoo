@@ -300,12 +300,12 @@ class DestinationController implements ControllerProviderInterface
         ;
 
         $tags = array();
-        foreach($multimedia as $multi){
-            $tag = explode(" ", $multi->getTagsForDisplay());
-            foreach ($tag as $t) {
-                if(!in_array($t, $tags)){
-                    $tags[] = $t;
-                }
+        foreach ($multimedia as $multi)
+        {
+            $multimediaTags = $multi->getTags();
+            foreach ($multimediaTags as $tag)
+            {
+                $tags[$tag->getSlug()] = $tag;
             }
         }
 

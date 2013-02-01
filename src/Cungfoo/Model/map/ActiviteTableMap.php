@@ -58,10 +58,10 @@ class ActiviteTableMap extends TableMap
     public function buildRelations()
     {
         $this->addRelation('EtablissementActivite', 'Cungfoo\\Model\\EtablissementActivite', RelationMap::ONE_TO_MANY, array('id' => 'activite_id', ), 'CASCADE', null, 'EtablissementActivites');
-        $this->addRelation('ThemeActivite', 'Cungfoo\\Model\\ThemeActivite', RelationMap::ONE_TO_MANY, array('id' => 'activite_id', ), null, null, 'ThemeActivites');
+        $this->addRelation('ThemeActivite', 'Cungfoo\\Model\\ThemeActivite', RelationMap::ONE_TO_MANY, array('id' => 'activite_id', ), 'CASCADE', null, 'ThemeActivites');
         $this->addRelation('ActiviteI18n', 'Cungfoo\\Model\\ActiviteI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'ActiviteI18ns');
         $this->addRelation('Etablissement', 'Cungfoo\\Model\\Etablissement', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'Etablissements');
-        $this->addRelation('Theme', 'Cungfoo\\Model\\Theme', RelationMap::MANY_TO_MANY, array(), null, null, 'Themes');
+        $this->addRelation('Theme', 'Cungfoo\\Model\\Theme', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'Themes');
     } // buildRelations()
 
     /**

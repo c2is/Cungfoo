@@ -9,6 +9,7 @@ use \PDOStatement;
 use \Propel;
 use \PropelException;
 use \PropelPDO;
+use Cungfoo\Model\MultimediaEtablissementTagPeer;
 use Cungfoo\Model\Tag;
 use Cungfoo\Model\TagI18nPeer;
 use Cungfoo\Model\TagPeer;
@@ -390,6 +391,9 @@ abstract class BaseTagPeer
      */
     public static function clearRelatedInstancePool()
     {
+        // Invalidate objects in MultimediaEtablissementTagPeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        MultimediaEtablissementTagPeer::clearInstancePool();
         // Invalidate objects in TagI18nPeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
         TagI18nPeer::clearInstancePool();

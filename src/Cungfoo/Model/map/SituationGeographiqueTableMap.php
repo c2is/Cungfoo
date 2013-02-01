@@ -55,7 +55,7 @@ class SituationGeographiqueTableMap extends TableMap
      */
     public function buildRelations()
     {
-        $this->addRelation('EtablissementSituationGeographique', 'Cungfoo\\Model\\EtablissementSituationGeographique', RelationMap::ONE_TO_MANY, array('id' => 'situation_geographique_id', ), null, null, 'EtablissementSituationGeographiques');
+        $this->addRelation('EtablissementSituationGeographique', 'Cungfoo\\Model\\EtablissementSituationGeographique', RelationMap::ONE_TO_MANY, array('id' => 'situation_geographique_id', ), 'CASCADE', null, 'EtablissementSituationGeographiques');
         $this->addRelation('SituationGeographiqueI18n', 'Cungfoo\\Model\\SituationGeographiqueI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'SituationGeographiqueI18ns');
         $this->addRelation('Etablissement', 'Cungfoo\\Model\\Etablissement', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'Etablissements');
     } // buildRelations()

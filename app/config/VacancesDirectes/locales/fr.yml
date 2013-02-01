@@ -373,6 +373,7 @@ date_search:
     submit: "Trouver"
     campings: "Campings"
     ou: "ou"
+    nuits: "nuits"
 
 
 "Les vacances à": "Les vacances à"
@@ -519,7 +520,16 @@ filtres:
     filtrer: "Filtrer"
 
 footer:
-    contact: "Contact"
+    contact:
+        title: "Contact"
+        tel: "0825 133 400"
+        fax: "Fax: 02 96 39 97 81"
+        adresse:
+            name: "Vacances directes"
+            lieu_dit: "ZA les Alleux"
+            rue: "4 Rue du Suroit"
+            ville: "CS 81010 - TADEN"
+            code_postal: "22101 DINAN cedex"
     charte_qualite: "Charte qualité"
     conditions_generales_de_location: "Conditions générales de location"
     faq: "FAQ"
@@ -531,9 +541,6 @@ footer:
     cb_visa: "CB visa"
     masterCard: "MasterCard"
     nous_joindre: "Nous joindre"
-    contact:
-        tel: "0825 133 400"
-        fax: "Fax: 02 96 39 97 81"
     nous_contacter: "Nous contacter"
     demande_catalogue: "Demande de catalogue"
     description_catalogue: "Hoc inmaturo interitu ipse quoque sui pertaesus excessit e vita aetatis."
@@ -758,6 +765,12 @@ global:
         password: "Mot de passe"
         forget: "Mot de passe oublié ?"
         submit: "Se connecter"
+        accueil: "Accueil"
+        coordonnees: "Coordonnées"
+        demande_brochure: "Demande de brochure"
+        reservation: "Réservation"
+        title: "Espace"
+        title_client: "client"
 
 bon_plan:
     title: "Camping : %bonPlan%"
@@ -796,3 +809,12 @@ location:
 share:
     facebook: "Partager sur Facebook"
     twitter: "Partager sur Twitter"
+
+couloir:
+    menu:
+        detail: "Détails du séjour"
+        recapitulatif: "Récapitulatif"
+        paiement: "Paiement"
+    confirmation: "Confirmation"
+    title: "Bienvenue dans l’espace de"
+    title_reservation: "Réservation"

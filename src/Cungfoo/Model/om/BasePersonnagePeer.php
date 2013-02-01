@@ -14,6 +14,7 @@ use Cungfoo\Model\EtablissementPeer;
 use Cungfoo\Model\Personnage;
 use Cungfoo\Model\PersonnageI18nPeer;
 use Cungfoo\Model\PersonnagePeer;
+use Cungfoo\Model\ThemePersonnagePeer;
 use Cungfoo\Model\map\PersonnageTableMap;
 
 /**
@@ -405,6 +406,9 @@ abstract class BasePersonnagePeer
         // Invalidate objects in AvantagePeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
         AvantagePeer::clearInstancePool();
+        // Invalidate objects in ThemePersonnagePeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        ThemePersonnagePeer::clearInstancePool();
         // Invalidate objects in PersonnageI18nPeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
         PersonnageI18nPeer::clearInstancePool();

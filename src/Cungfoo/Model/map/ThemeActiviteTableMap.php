@@ -53,8 +53,8 @@ class ThemeActiviteTableMap extends TableMap
      */
     public function buildRelations()
     {
-        $this->addRelation('Theme', 'Cungfoo\\Model\\Theme', RelationMap::MANY_TO_ONE, array('theme_id' => 'id', ), null, null);
-        $this->addRelation('Activite', 'Cungfoo\\Model\\Activite', RelationMap::MANY_TO_ONE, array('activite_id' => 'id', ), null, null);
+        $this->addRelation('Theme', 'Cungfoo\\Model\\Theme', RelationMap::MANY_TO_ONE, array('theme_id' => 'id', ), 'CASCADE', null);
+        $this->addRelation('Activite', 'Cungfoo\\Model\\Activite', RelationMap::MANY_TO_ONE, array('activite_id' => 'id', ), 'CASCADE', null);
     } // buildRelations()
 
 } // ThemeActiviteTableMap

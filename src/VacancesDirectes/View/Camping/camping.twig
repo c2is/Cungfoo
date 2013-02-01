@@ -83,7 +83,7 @@
             <span>{{ "fiche.photo" | trans }}</span>
             <label for="photosToutes"><input type="radio" id="photosToutes" name="affPhoto" value="all" checked="checked">{{ "Toutes" | trans }}</label>
             {% for tag in tags %}
-                <label for="photos{{ tag }}"><input type="radio" id="photos{{ tag }}" name="affPhoto" value="{{ tag }}">{{ tag }}</label>
+                <label for="photos{{ tag.slug }}"><input type="radio" id="photos{{ tag.slug }}" name="affPhoto" value="{{ tag.slug }}">{{ tag.name }}</label>
             {% endfor %}
         </fieldset>
         <fieldset class="right">

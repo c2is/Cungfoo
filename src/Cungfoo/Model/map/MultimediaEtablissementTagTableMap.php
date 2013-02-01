@@ -54,7 +54,7 @@ class MultimediaEtablissementTagTableMap extends TableMap
     public function buildRelations()
     {
         $this->addRelation('MultimediaEtablissement', 'Cungfoo\\Model\\MultimediaEtablissement', RelationMap::MANY_TO_ONE, array('multimedia_etablissement_id' => 'id', ), 'CASCADE', null);
-        $this->addRelation('Tag', 'Cungfoo\\Model\\Tag', RelationMap::MANY_TO_ONE, array('tag_id' => 'id', ), null, null);
+        $this->addRelation('Tag', 'Cungfoo\\Model\\Tag', RelationMap::MANY_TO_ONE, array('tag_id' => 'id', ), 'CASCADE', null);
     } // buildRelations()
 
 } // MultimediaEtablissementTagTableMap

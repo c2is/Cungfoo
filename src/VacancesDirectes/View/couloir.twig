@@ -36,13 +36,13 @@
 
     <div id="wrap" class="fixed-width clear">
         <div id="headerContainer" class="column clear">
-            <h1><span>Bienvenue dans l’espace de </span>réservation</h1>
+            <h1><span>{{ "couloir.title" | trans }} </span>{{ "couloir.title_reservation" | trans }}</h1>
             <nav id="stepNav" class="clearboth">
                 <ul class="topnav fixed-width clear">
-                    <li class="tab{% if step == 1 %} current{% elseif step > 1%} completed{% endif %}"><span>Détails du séjour</span></li>
-                    <li class="tab{% if step == 2 %} current{% elseif step > 2%} completed{% endif %}"><span>Récapitulatif</span></li>
-                    <li class="tab{% if step == 3 %} current{% elseif step > 3%} completed{% endif %}"><span>Paiement</span></li>
-                    <li class="tab{% if step == 4 %} current{% endif %}"><span>Confirmation</span></li>
+                    <li class="tab{% if step == 1 %} current{% elseif step > 1%} completed{% endif %}"><span>{{ "couloir.menu.detail" | trans }}</span></li>
+                    <li class="tab{% if step == 2 %} current{% elseif step > 2%} completed{% endif %}"><span>{{ "couloir.menu.recapitulatif" | trans }}</span></li>
+                    <li class="tab{% if step == 3 %} current{% elseif step > 3%} completed{% endif %}"><span>{{ "couloir.menu.paiement" | trans }}</span></li>
+                    <li class="tab{% if step == 4 %} current{% endif %}"><span>{{ "couloir.confirmation" | trans }}</span></li>
                 </ul>
             </nav>
         </div>
@@ -57,10 +57,10 @@
                 <div id="greyBoxes" class="clear">
                     <div id="needHelpBloc" class="clear radiusBox greyC">
                         <div class="stamp fushia">
-                            <h2>Besoin d'aide</h2>
+                            <h2>{{ "resalys.besoin_aide_title" | trans }}</h2>
                         </div>
-                        <div class="content"><p>Une question sur votre réservation&hellip;</p></div>
-                        <div class="blueCloud" id="needHelpBlocCloud"><span>Contactez-nous<a class="tel" href="tel:0825133400">au 0825 133 400</a>(0.15€/min</span></div>
+                        <div class="content"><p>{{ "resalys.besoin_aide_subtitle" | trans }}</p></div>
+                        <div class="blueCloud" id="needHelpBlocCloud"><span>{{ "resalys.besoin_aide_contact" | trans }}<a class="tel" href="tel:0825133400">{{ "resalys.besoin_aide_num" | trans }}</a>{{ "resalys.besoin_aide_subtitle" | trans }}(0.15€/min)</span></div>
                     </div>
                 </div>
             </aside>

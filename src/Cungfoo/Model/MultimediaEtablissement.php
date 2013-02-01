@@ -30,15 +30,13 @@ class MultimediaEtablissement extends BaseMultimediaEtablissement
     public function getTagsForDisplay()
     {
         $tags = $this->getTags();
-        $arrayNames = array();
+        $toReturn = array();
 
-        foreach($tags as $tag)
+        foreach ($tags as $tag)
         {
-            $arrayNames[] = $tag->getSlug();
+            $toReturn[] = $tag->getSlug();
         }
 
-        $names = implode(" ", $arrayNames);
-
-        return $names;
+        return implode(' ', $toReturn);
     }
 }
