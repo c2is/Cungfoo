@@ -822,7 +822,7 @@ couloir:
 
 err404:
     title: "Désolé, cette page n'existe pas..."
-    content: "Retourner sur la <a href=\"%link%\">page d'accueil</a>."    title_reservation: "Réservation"
+    content: "Retourner sur la <a href=\"%link%\">page d'accueil</a>."
 
 datepicker:
     days: "['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche']"

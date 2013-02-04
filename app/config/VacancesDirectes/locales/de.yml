@@ -816,7 +816,7 @@ couloir:
 
 err404:
     title: "Sorry, diese Seite existiert"
-    content: "Zurück zur <a href=\"%link%\">Startseite</a>."    twitter: "Auf Twitter teilen"
+    content: "Zurück zur <a href=\"%link%\">Startseite</a>."
 
 datepicker:
     days: "['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag', 'Sonntag']"
