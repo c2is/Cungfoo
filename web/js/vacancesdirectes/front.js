@@ -1183,7 +1183,7 @@ function switchPlaceSelect(){
     $('.switchSelect').live('click', function(){
         selectNum = selectNum == 0 ? 1 : 0;
         $placeSelects = $button.parent().siblings(".newListSelected");
-        var $buttonTitle = selectNum == 0 ? 'Campings' : 'Lieux de séjour';
+        var $buttonTitle = selectNum == 0 ? $('#SearchDate_selectContainer2 label[for="SearchDate_camping"]').text() : $('#SearchDate_selectContainer2 label[for="SearchDate_ville"]').text();
         $button.children('span').text($buttonTitle);
 //        $button.attr('title',$buttonTitle);
         if(selectNum) {
