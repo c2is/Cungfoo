@@ -852,6 +852,7 @@ $(function() {
             starts: 1,
             format:'Y/m/d',
             position: 'right',
+            locale: datepickerLanguage,
             onChange: function(formated, dates){
                 //console.log("################################## onChange:  ##################################");
                 //console.log(formated);

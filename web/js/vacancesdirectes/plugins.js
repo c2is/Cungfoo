@@ -884,14 +884,6 @@ function addLinkBlock(){
  * Dual licensed under the MIT and GPL licenses
  *
  */
-/*
- var days = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"],
- months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"],
- daysShort = ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"],
- daysMin = ["Di", "Lu", "Ma", "Me", "Je", "Ve", "Sa", "Di"],
- monthsShort = ["Jan", "Fév", "Mar", "Avr", "Mai", "Jui", "Jui", "Aoû", "Sepe", "Oct", "Nov", "Déc"],
- */
-
 (function ($) {
     var datepickerInfo = "";
     var datepickerLegend = "";
@@ -1033,11 +1025,11 @@ function addLinkBlock(){
                 onBeforeShow: function(){return true;},
                 onHide: function(){return true;},
                 locale: {
-                    days: ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"],
-                    daysShort: ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"],
-                    daysMin: ["Di", "Lu", "Ma", "Me", "Je", "Ve", "Sa", "Di"],
-                    months: ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"],
-                    monthsShort: ["janv", "févr", "mars", "avr.", "mai", "juin", "juil", "août", "sept", "oct", "nov", "déc"],
+                    days: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'],
+                    daysShort: ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim'],
+                    daysMin: ['Di', 'Lu', 'Ma', 'Me', 'Je', 'Ve', 'Sa', 'Di'],
+                    months: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+                    monthsShort: ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Jui', 'Jui', 'Aoû', 'Sepe', 'Oct', 'Nov', 'Déc'],
                     weekMin: 'Se'
                 }
             },

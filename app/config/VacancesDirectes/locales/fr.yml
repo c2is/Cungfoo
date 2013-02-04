@@ -823,3 +823,11 @@ couloir:
 err404:
     title: "Désolé, cette page n'existe pas..."
     content: "Retourner sur la <a href=\"%link%\">page d'accueil</a>."
+
+datepicker:
+    days: "['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche']"
+    daysShort: "['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim']"
+    daysMin: "['Di', 'Lu', 'Ma', 'Me', 'Je', 'Ve', 'Sa', 'Di']"
+    months: "['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre']"
+    monthsShort: "['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Jui', 'Jui', 'Aoû', 'Sepe', 'Oct', 'Nov', 'Déc']"
+    weekMin: "'Se'"
