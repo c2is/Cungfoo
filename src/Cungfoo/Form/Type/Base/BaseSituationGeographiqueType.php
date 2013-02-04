@@ -78,6 +78,13 @@ class BaseSituationGeographiqueType extends AppAwareType
                     'constraints' => array(
                     ),
                 ),
+                'active_locale' => array(
+                    'required' => false,
+                    'label' => 'situation_geographique.active_locale',
+                    'type' => 'checkbox',
+                    'constraints' => array(
+                    ),
+                ),
             ),
             'required' => false,
         ));

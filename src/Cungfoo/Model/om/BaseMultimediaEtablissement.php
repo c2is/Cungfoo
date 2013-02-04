@@ -2112,6 +2112,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
 
     // active behavior
 
+
     /**
      * return true is the object is active
      *
@@ -2122,6 +2123,33 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
         return $this->getActive();
     }
 
+    /**
+     * return true is the object is active locale
+     *
+     * @return boolean
+     */
+    public function isActiveLocale()
+    {
+        return $this->getActiveLocale();
+    }
+
+    public function getTagsActive($criteria = null, PropelPDO $con = null)
+    {
+        if ($criteria === null)
+        {
+            $criteria = new \Criteria();
+        }
+
+        $criteria->add(\Cungfoo\Model\TagPeer::ACTIVE, true);
+
+
+        $criteria->addAlias('i18n_locale', \Cungfoo\Model\TagI18nPeer::TABLE_NAME);
+        $criteria->addJoin(\Cungfoo\Model\TagPeer::ID, \Cungfoo\Model\TagI18nPeer::alias('i18n_locale', \Cungfoo\Model\TagI18nPeer::ID), \Criteria::LEFT_JOIN);
+        $criteria->add(\Cungfoo\Model\TagI18nPeer::alias('i18n_locale', \Cungfoo\Model\TagI18nPeer::ACTIVE_LOCALE), true);
+        $criteria->add(\Cungfoo\Model\TagI18nPeer::alias('i18n_locale', \Cungfoo\Model\TagI18nPeer::LOCALE), $this->currentLocale);
+
+        return $this->getTags($criteria, $con);
+    }
     // i18n behavior
 
     /**
@@ -2241,6 +2269,30 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
          */
         public function setTitre($v)
         {    $this->getCurrentTranslation()->setTitre($v);
+
+        return $this;
+    }
+
+
+        /**
+         * Get the [active_locale] column value.
+         *
+         * @return boolean
+         */
+        public function getActiveLocale()
+        {
+        return $this->getCurrentTranslation()->getActiveLocale();
+    }
+
+
+        /**
+         * Set the value of [active_locale] column.
+         *
+         * @param boolean $v new value
+         * @return MultimediaEtablissementI18n The current object (for fluent API support)
+         */
+        public function setActiveLocale($v)
+        {    $this->getCurrentTranslation()->setActiveLocale($v);
 
         return $this;
     }

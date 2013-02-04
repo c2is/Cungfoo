@@ -28,6 +28,7 @@ use Cungfoo\Model\DestinationI18nQuery;
  * @method DestinationI18nQuery orderByName($order = Criteria::ASC) Order by the name column
  * @method DestinationI18nQuery orderByIntroduction($order = Criteria::ASC) Order by the introduction column
  * @method DestinationI18nQuery orderByDescription($order = Criteria::ASC) Order by the description column
+ * @method DestinationI18nQuery orderByActiveLocale($order = Criteria::ASC) Order by the active_locale column
  *
  * @method DestinationI18nQuery groupById() Group by the id column
  * @method DestinationI18nQuery groupByLocale() Group by the locale column
@@ -35,6 +36,7 @@ use Cungfoo\Model\DestinationI18nQuery;
  * @method DestinationI18nQuery groupByName() Group by the name column
  * @method DestinationI18nQuery groupByIntroduction() Group by the introduction column
  * @method DestinationI18nQuery groupByDescription() Group by the description column
+ * @method DestinationI18nQuery groupByActiveLocale() Group by the active_locale column
  *
  * @method DestinationI18nQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method DestinationI18nQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -53,6 +55,7 @@ use Cungfoo\Model\DestinationI18nQuery;
  * @method DestinationI18n findOneByName(string $name) Return the first DestinationI18n filtered by the name column
  * @method DestinationI18n findOneByIntroduction(string $introduction) Return the first DestinationI18n filtered by the introduction column
  * @method DestinationI18n findOneByDescription(string $description) Return the first DestinationI18n filtered by the description column
+ * @method DestinationI18n findOneByActiveLocale(boolean $active_locale) Return the first DestinationI18n filtered by the active_locale column
  *
  * @method array findById(int $id) Return DestinationI18n objects filtered by the id column
  * @method array findByLocale(string $locale) Return DestinationI18n objects filtered by the locale column
@@ -60,6 +63,7 @@ use Cungfoo\Model\DestinationI18nQuery;
  * @method array findByName(string $name) Return DestinationI18n objects filtered by the name column
  * @method array findByIntroduction(string $introduction) Return DestinationI18n objects filtered by the introduction column
  * @method array findByDescription(string $description) Return DestinationI18n objects filtered by the description column
+ * @method array findByActiveLocale(boolean $active_locale) Return DestinationI18n objects filtered by the active_locale column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -150,7 +154,7 @@ abstract class BaseDestinationI18nQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `locale`, `slug`, `name`, `introduction`, `description` FROM `destination_i18n` WHERE `id` = :p0 AND `locale` = :p1';
+        $sql = 'SELECT `id`, `locale`, `slug`, `name`, `introduction`, `description`, `active_locale` FROM `destination_i18n` WHERE `id` = :p0 AND `locale` = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
@@ -423,6 +427,33 @@ abstract class BaseDestinationI18nQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(DestinationI18nPeer::DESCRIPTION, $description, $comparison);
+    }
+
+    /**
+     * Filter the query on the active_locale column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByActiveLocale(true); // WHERE active_locale = true
+     * $query->filterByActiveLocale('yes'); // WHERE active_locale = true
+     * </code>
+     *
+     * @param     boolean|string $activeLocale The value to use as filter.
+     *              Non-boolean arguments are converted using the following rules:
+     *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     *              Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return DestinationI18nQuery The current query, for fluid interface
+     */
+    public function filterByActiveLocale($activeLocale = null, $comparison = null)
+    {
+        if (is_string($activeLocale)) {
+            $active_locale = in_array(strtolower($activeLocale), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+        }
+
+        return $this->addUsingAlias(DestinationI18nPeer::ACTIVE_LOCALE, $activeLocale, $comparison);
     }
 
     /**

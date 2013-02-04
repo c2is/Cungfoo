@@ -37,13 +37,13 @@ abstract class BaseSituationGeographiqueI18nPeer
     const TM_CLASS = 'SituationGeographiqueI18nTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 5;
+    const NUM_COLUMNS = 6;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 5;
+    const NUM_HYDRATE_COLUMNS = 6;
 
     /** the column name for the id field */
     const ID = 'situation_geographique_i18n.id';
@@ -59,6 +59,9 @@ abstract class BaseSituationGeographiqueI18nPeer
 
     /** the column name for the keywords field */
     const KEYWORDS = 'situation_geographique_i18n.keywords';
+
+    /** the column name for the active_locale field */
+    const ACTIVE_LOCALE = 'situation_geographique_i18n.active_locale';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -79,12 +82,12 @@ abstract class BaseSituationGeographiqueI18nPeer
      * e.g. SituationGeographiqueI18nPeer::$fieldNames[SituationGeographiqueI18nPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Name', 'Description', 'Keywords', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'name', 'description', 'keywords', ),
-        BasePeer::TYPE_COLNAME => array (SituationGeographiqueI18nPeer::ID, SituationGeographiqueI18nPeer::LOCALE, SituationGeographiqueI18nPeer::NAME, SituationGeographiqueI18nPeer::DESCRIPTION, SituationGeographiqueI18nPeer::KEYWORDS, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'NAME', 'DESCRIPTION', 'KEYWORDS', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'name', 'description', 'keywords', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Name', 'Description', 'Keywords', 'ActiveLocale', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'name', 'description', 'keywords', 'activeLocale', ),
+        BasePeer::TYPE_COLNAME => array (SituationGeographiqueI18nPeer::ID, SituationGeographiqueI18nPeer::LOCALE, SituationGeographiqueI18nPeer::NAME, SituationGeographiqueI18nPeer::DESCRIPTION, SituationGeographiqueI18nPeer::KEYWORDS, SituationGeographiqueI18nPeer::ACTIVE_LOCALE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'NAME', 'DESCRIPTION', 'KEYWORDS', 'ACTIVE_LOCALE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'name', 'description', 'keywords', 'active_locale', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
     );
 
     /**
@@ -94,12 +97,12 @@ abstract class BaseSituationGeographiqueI18nPeer
      * e.g. SituationGeographiqueI18nPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Name' => 2, 'Description' => 3, 'Keywords' => 4, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'description' => 3, 'keywords' => 4, ),
-        BasePeer::TYPE_COLNAME => array (SituationGeographiqueI18nPeer::ID => 0, SituationGeographiqueI18nPeer::LOCALE => 1, SituationGeographiqueI18nPeer::NAME => 2, SituationGeographiqueI18nPeer::DESCRIPTION => 3, SituationGeographiqueI18nPeer::KEYWORDS => 4, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'NAME' => 2, 'DESCRIPTION' => 3, 'KEYWORDS' => 4, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'description' => 3, 'keywords' => 4, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Name' => 2, 'Description' => 3, 'Keywords' => 4, 'ActiveLocale' => 5, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'description' => 3, 'keywords' => 4, 'activeLocale' => 5, ),
+        BasePeer::TYPE_COLNAME => array (SituationGeographiqueI18nPeer::ID => 0, SituationGeographiqueI18nPeer::LOCALE => 1, SituationGeographiqueI18nPeer::NAME => 2, SituationGeographiqueI18nPeer::DESCRIPTION => 3, SituationGeographiqueI18nPeer::KEYWORDS => 4, SituationGeographiqueI18nPeer::ACTIVE_LOCALE => 5, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'NAME' => 2, 'DESCRIPTION' => 3, 'KEYWORDS' => 4, 'ACTIVE_LOCALE' => 5, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'description' => 3, 'keywords' => 4, 'active_locale' => 5, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
     );
 
     /**
@@ -178,12 +181,14 @@ abstract class BaseSituationGeographiqueI18nPeer
             $criteria->addSelectColumn(SituationGeographiqueI18nPeer::NAME);
             $criteria->addSelectColumn(SituationGeographiqueI18nPeer::DESCRIPTION);
             $criteria->addSelectColumn(SituationGeographiqueI18nPeer::KEYWORDS);
+            $criteria->addSelectColumn(SituationGeographiqueI18nPeer::ACTIVE_LOCALE);
         } else {
             $criteria->addSelectColumn($alias . '.id');
             $criteria->addSelectColumn($alias . '.locale');
             $criteria->addSelectColumn($alias . '.name');
             $criteria->addSelectColumn($alias . '.description');
             $criteria->addSelectColumn($alias . '.keywords');
+            $criteria->addSelectColumn($alias . '.active_locale');
         }
     }
 

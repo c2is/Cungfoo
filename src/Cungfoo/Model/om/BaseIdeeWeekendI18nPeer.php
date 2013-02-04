@@ -37,13 +37,13 @@ abstract class BaseIdeeWeekendI18nPeer
     const TM_CLASS = 'IdeeWeekendI18nTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 4;
+    const NUM_COLUMNS = 5;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 4;
+    const NUM_HYDRATE_COLUMNS = 5;
 
     /** the column name for the id field */
     const ID = 'idee_weekend_i18n.id';
@@ -56,6 +56,9 @@ abstract class BaseIdeeWeekendI18nPeer
 
     /** the column name for the lien field */
     const LIEN = 'idee_weekend_i18n.lien';
+
+    /** the column name for the active_locale field */
+    const ACTIVE_LOCALE = 'idee_weekend_i18n.active_locale';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -76,12 +79,12 @@ abstract class BaseIdeeWeekendI18nPeer
      * e.g. IdeeWeekendI18nPeer::$fieldNames[IdeeWeekendI18nPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Titre', 'Lien', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'titre', 'lien', ),
-        BasePeer::TYPE_COLNAME => array (IdeeWeekendI18nPeer::ID, IdeeWeekendI18nPeer::LOCALE, IdeeWeekendI18nPeer::TITRE, IdeeWeekendI18nPeer::LIEN, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'TITRE', 'LIEN', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'titre', 'lien', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Titre', 'Lien', 'ActiveLocale', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'titre', 'lien', 'activeLocale', ),
+        BasePeer::TYPE_COLNAME => array (IdeeWeekendI18nPeer::ID, IdeeWeekendI18nPeer::LOCALE, IdeeWeekendI18nPeer::TITRE, IdeeWeekendI18nPeer::LIEN, IdeeWeekendI18nPeer::ACTIVE_LOCALE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'TITRE', 'LIEN', 'ACTIVE_LOCALE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'titre', 'lien', 'active_locale', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
     );
 
     /**
@@ -91,12 +94,12 @@ abstract class BaseIdeeWeekendI18nPeer
      * e.g. IdeeWeekendI18nPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Titre' => 2, 'Lien' => 3, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'titre' => 2, 'lien' => 3, ),
-        BasePeer::TYPE_COLNAME => array (IdeeWeekendI18nPeer::ID => 0, IdeeWeekendI18nPeer::LOCALE => 1, IdeeWeekendI18nPeer::TITRE => 2, IdeeWeekendI18nPeer::LIEN => 3, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'TITRE' => 2, 'LIEN' => 3, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'titre' => 2, 'lien' => 3, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Titre' => 2, 'Lien' => 3, 'ActiveLocale' => 4, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'titre' => 2, 'lien' => 3, 'activeLocale' => 4, ),
+        BasePeer::TYPE_COLNAME => array (IdeeWeekendI18nPeer::ID => 0, IdeeWeekendI18nPeer::LOCALE => 1, IdeeWeekendI18nPeer::TITRE => 2, IdeeWeekendI18nPeer::LIEN => 3, IdeeWeekendI18nPeer::ACTIVE_LOCALE => 4, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'TITRE' => 2, 'LIEN' => 3, 'ACTIVE_LOCALE' => 4, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'titre' => 2, 'lien' => 3, 'active_locale' => 4, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
     );
 
     /**
@@ -174,11 +177,13 @@ abstract class BaseIdeeWeekendI18nPeer
             $criteria->addSelectColumn(IdeeWeekendI18nPeer::LOCALE);
             $criteria->addSelectColumn(IdeeWeekendI18nPeer::TITRE);
             $criteria->addSelectColumn(IdeeWeekendI18nPeer::LIEN);
+            $criteria->addSelectColumn(IdeeWeekendI18nPeer::ACTIVE_LOCALE);
         } else {
             $criteria->addSelectColumn($alias . '.id');
             $criteria->addSelectColumn($alias . '.locale');
             $criteria->addSelectColumn($alias . '.titre');
             $criteria->addSelectColumn($alias . '.lien');
+            $criteria->addSelectColumn($alias . '.active_locale');
         }
     }
 

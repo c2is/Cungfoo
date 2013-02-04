@@ -71,6 +71,13 @@ abstract class BaseAvantageI18n extends BaseObject implements Persistent
     protected $description;
 
     /**
+     * The value for the active_locale field.
+     * Note: this column has a database default value of: false
+     * @var        boolean
+     */
+    protected $active_locale;
+
+    /**
      * @var        Avantage
      */
     protected $aAvantage;
@@ -98,6 +105,7 @@ abstract class BaseAvantageI18n extends BaseObject implements Persistent
     public function applyDefaultValues()
     {
         $this->locale = 'fr';
+        $this->active_locale = false;
     }
 
     /**
@@ -148,6 +156,16 @@ abstract class BaseAvantageI18n extends BaseObject implements Persistent
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Get the [active_locale] column value.
+     *
+     * @return boolean
+     */
+    public function getActiveLocale()
+    {
+        return $this->active_locale;
     }
 
     /**
@@ -239,6 +257,35 @@ abstract class BaseAvantageI18n extends BaseObject implements Persistent
     } // setDescription()
 
     /**
+     * Sets the value of the [active_locale] column.
+     * Non-boolean arguments are converted using the following rules:
+     *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     *
+     * @param boolean|integer|string $v The new value
+     * @return AvantageI18n The current object (for fluent API support)
+     */
+    public function setActiveLocale($v)
+    {
+        if ($v !== null) {
+            if (is_string($v)) {
+                $v = in_array(strtolower($v), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+            } else {
+                $v = (boolean) $v;
+            }
+        }
+
+        if ($this->active_locale !== $v) {
+            $this->active_locale = $v;
+            $this->modifiedColumns[] = AvantageI18nPeer::ACTIVE_LOCALE;
+        }
+
+
+        return $this;
+    } // setActiveLocale()
+
+    /**
      * Indicates whether the columns in this object are only set to default values.
      *
      * This method can be used in conjunction with isModified() to indicate whether an object is both
@@ -249,6 +296,10 @@ abstract class BaseAvantageI18n extends BaseObject implements Persistent
     public function hasOnlyDefaultValues()
     {
             if ($this->locale !== 'fr') {
+                return false;
+            }
+
+            if ($this->active_locale !== false) {
                 return false;
             }
 
@@ -278,6 +329,7 @@ abstract class BaseAvantageI18n extends BaseObject implements Persistent
             $this->locale = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
             $this->name = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
             $this->description = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
+            $this->active_locale = ($row[$startcol + 4] !== null) ? (boolean) $row[$startcol + 4] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -286,7 +338,7 @@ abstract class BaseAvantageI18n extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 4; // 4 = AvantageI18nPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 5; // 5 = AvantageI18nPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating AvantageI18n object", $e);
@@ -522,6 +574,9 @@ abstract class BaseAvantageI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(AvantageI18nPeer::DESCRIPTION)) {
             $modifiedColumns[':p' . $index++]  = '`description`';
         }
+        if ($this->isColumnModified(AvantageI18nPeer::ACTIVE_LOCALE)) {
+            $modifiedColumns[':p' . $index++]  = '`active_locale`';
+        }
 
         $sql = sprintf(
             'INSERT INTO `avantage_i18n` (%s) VALUES (%s)',
@@ -544,6 +599,9 @@ abstract class BaseAvantageI18n extends BaseObject implements Persistent
                         break;
                     case '`description`':
                         $stmt->bindValue($identifier, $this->description, PDO::PARAM_STR);
+                        break;
+                    case '`active_locale`':
+                        $stmt->bindValue($identifier, (int) $this->active_locale, PDO::PARAM_INT);
                         break;
                 }
             }
@@ -696,6 +754,9 @@ abstract class BaseAvantageI18n extends BaseObject implements Persistent
             case 3:
                 return $this->getDescription();
                 break;
+            case 4:
+                return $this->getActiveLocale();
+                break;
             default:
                 return null;
                 break;
@@ -729,6 +790,7 @@ abstract class BaseAvantageI18n extends BaseObject implements Persistent
             $keys[1] => $this->getLocale(),
             $keys[2] => $this->getName(),
             $keys[3] => $this->getDescription(),
+            $keys[4] => $this->getActiveLocale(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aAvantage) {
@@ -780,6 +842,9 @@ abstract class BaseAvantageI18n extends BaseObject implements Persistent
             case 3:
                 $this->setDescription($value);
                 break;
+            case 4:
+                $this->setActiveLocale($value);
+                break;
         } // switch()
     }
 
@@ -808,6 +873,7 @@ abstract class BaseAvantageI18n extends BaseObject implements Persistent
         if (array_key_exists($keys[1], $arr)) $this->setLocale($arr[$keys[1]]);
         if (array_key_exists($keys[2], $arr)) $this->setName($arr[$keys[2]]);
         if (array_key_exists($keys[3], $arr)) $this->setDescription($arr[$keys[3]]);
+        if (array_key_exists($keys[4], $arr)) $this->setActiveLocale($arr[$keys[4]]);
     }
 
     /**
@@ -823,6 +889,7 @@ abstract class BaseAvantageI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(AvantageI18nPeer::LOCALE)) $criteria->add(AvantageI18nPeer::LOCALE, $this->locale);
         if ($this->isColumnModified(AvantageI18nPeer::NAME)) $criteria->add(AvantageI18nPeer::NAME, $this->name);
         if ($this->isColumnModified(AvantageI18nPeer::DESCRIPTION)) $criteria->add(AvantageI18nPeer::DESCRIPTION, $this->description);
+        if ($this->isColumnModified(AvantageI18nPeer::ACTIVE_LOCALE)) $criteria->add(AvantageI18nPeer::ACTIVE_LOCALE, $this->active_locale);
 
         return $criteria;
     }
@@ -897,6 +964,7 @@ abstract class BaseAvantageI18n extends BaseObject implements Persistent
         $copyObj->setLocale($this->getLocale());
         $copyObj->setName($this->getName());
         $copyObj->setDescription($this->getDescription());
+        $copyObj->setActiveLocale($this->getActiveLocale());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -1015,6 +1083,7 @@ abstract class BaseAvantageI18n extends BaseObject implements Persistent
         $this->locale = null;
         $this->name = null;
         $this->description = null;
+        $this->active_locale = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();

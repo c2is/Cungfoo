@@ -8,13 +8,10 @@ class BaseObject extends BaseObjectDefault
 {
     public function __construct()
     {
-        try
+        if (defined('CURRENT_LANGUAGE'))
         {
-            global $app;
-
-            $this->currentLocale = $app['context']->get('language');
+            $this->currentLocale = CURRENT_LANGUAGE;
         }
-        catch (\Exception $e) {}
 
         parent::__construct();
     }

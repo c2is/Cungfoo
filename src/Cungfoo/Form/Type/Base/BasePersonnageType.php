@@ -84,6 +84,13 @@ class BasePersonnageType extends AppAwareType
                         new Assert\NotBlank(),
                     ),
                 ),
+                'active_locale' => array(
+                    'required' => false,
+                    'label' => 'personnage.active_locale',
+                    'type' => 'checkbox',
+                    'constraints' => array(
+                    ),
+                ),
             ),
             'required' => false,
         ));

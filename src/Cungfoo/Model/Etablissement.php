@@ -56,7 +56,7 @@ class Etablissement extends BaseEtablissement
                 ->endUse()
             ->endUse()
             ->distinct()
-            ->find()
+            ->findActive()
         ;
     }
 
@@ -69,7 +69,7 @@ class Etablissement extends BaseEtablissement
                 ->filterByEtablissementId($this->getId())
             ->endUse()
             ->distinct()
-            ->find()
+            ->findActive()
         ;
     }
 
@@ -196,17 +196,6 @@ class Etablissement extends BaseEtablissement
     public function getEventPrioritaire()
     {
         return EventPeer::getForEtablissement($this, EventPeer::SORT_BY_PRIORITY, 1);
-    }
-
-    public function getTypeHebergementsActive($criteria = null, PropelPDO $con = null)
-    {
-        if ($criteria === null)
-        {
-            $criteria = new \Criteria();
-        }
-        $criteria->add(TypeHebergementPeer::ACTIVE, true);
-
-        return $this->getTypeHebergements($criteria, $con);
     }
 
     public function getSituationGeographique( PropelPDO $con = null)

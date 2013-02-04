@@ -28,6 +28,7 @@ use Cungfoo\Model\BonPlanCategorieI18nQuery;
  * @method BonPlanCategorieI18nQuery orderBySlug($order = Criteria::ASC) Order by the slug column
  * @method BonPlanCategorieI18nQuery orderBySubtitle($order = Criteria::ASC) Order by the subtitle column
  * @method BonPlanCategorieI18nQuery orderByDescription($order = Criteria::ASC) Order by the description column
+ * @method BonPlanCategorieI18nQuery orderByActiveLocale($order = Criteria::ASC) Order by the active_locale column
  *
  * @method BonPlanCategorieI18nQuery groupById() Group by the id column
  * @method BonPlanCategorieI18nQuery groupByLocale() Group by the locale column
@@ -35,6 +36,7 @@ use Cungfoo\Model\BonPlanCategorieI18nQuery;
  * @method BonPlanCategorieI18nQuery groupBySlug() Group by the slug column
  * @method BonPlanCategorieI18nQuery groupBySubtitle() Group by the subtitle column
  * @method BonPlanCategorieI18nQuery groupByDescription() Group by the description column
+ * @method BonPlanCategorieI18nQuery groupByActiveLocale() Group by the active_locale column
  *
  * @method BonPlanCategorieI18nQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method BonPlanCategorieI18nQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -53,6 +55,7 @@ use Cungfoo\Model\BonPlanCategorieI18nQuery;
  * @method BonPlanCategorieI18n findOneBySlug(string $slug) Return the first BonPlanCategorieI18n filtered by the slug column
  * @method BonPlanCategorieI18n findOneBySubtitle(string $subtitle) Return the first BonPlanCategorieI18n filtered by the subtitle column
  * @method BonPlanCategorieI18n findOneByDescription(string $description) Return the first BonPlanCategorieI18n filtered by the description column
+ * @method BonPlanCategorieI18n findOneByActiveLocale(boolean $active_locale) Return the first BonPlanCategorieI18n filtered by the active_locale column
  *
  * @method array findById(int $id) Return BonPlanCategorieI18n objects filtered by the id column
  * @method array findByLocale(string $locale) Return BonPlanCategorieI18n objects filtered by the locale column
@@ -60,6 +63,7 @@ use Cungfoo\Model\BonPlanCategorieI18nQuery;
  * @method array findBySlug(string $slug) Return BonPlanCategorieI18n objects filtered by the slug column
  * @method array findBySubtitle(string $subtitle) Return BonPlanCategorieI18n objects filtered by the subtitle column
  * @method array findByDescription(string $description) Return BonPlanCategorieI18n objects filtered by the description column
+ * @method array findByActiveLocale(boolean $active_locale) Return BonPlanCategorieI18n objects filtered by the active_locale column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -150,7 +154,7 @@ abstract class BaseBonPlanCategorieI18nQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `locale`, `name`, `slug`, `subtitle`, `description` FROM `bon_plan_categorie_i18n` WHERE `id` = :p0 AND `locale` = :p1';
+        $sql = 'SELECT `id`, `locale`, `name`, `slug`, `subtitle`, `description`, `active_locale` FROM `bon_plan_categorie_i18n` WHERE `id` = :p0 AND `locale` = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
@@ -423,6 +427,33 @@ abstract class BaseBonPlanCategorieI18nQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(BonPlanCategorieI18nPeer::DESCRIPTION, $description, $comparison);
+    }
+
+    /**
+     * Filter the query on the active_locale column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByActiveLocale(true); // WHERE active_locale = true
+     * $query->filterByActiveLocale('yes'); // WHERE active_locale = true
+     * </code>
+     *
+     * @param     boolean|string $activeLocale The value to use as filter.
+     *              Non-boolean arguments are converted using the following rules:
+     *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     *              Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return BonPlanCategorieI18nQuery The current query, for fluid interface
+     */
+    public function filterByActiveLocale($activeLocale = null, $comparison = null)
+    {
+        if (is_string($activeLocale)) {
+            $active_locale = in_array(strtolower($activeLocale), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+        }
+
+        return $this->addUsingAlias(BonPlanCategorieI18nPeer::ACTIVE_LOCALE, $activeLocale, $comparison);
     }
 
     /**

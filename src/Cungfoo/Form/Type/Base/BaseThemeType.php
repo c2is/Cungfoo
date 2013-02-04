@@ -114,6 +114,13 @@ class BaseThemeType extends AppAwareType
                     'constraints' => array(
                     ),
                 ),
+                'active_locale' => array(
+                    'required' => false,
+                    'label' => 'theme.active_locale',
+                    'type' => 'checkbox',
+                    'constraints' => array(
+                    ),
+                ),
             ),
             'required' => false,
         ));
