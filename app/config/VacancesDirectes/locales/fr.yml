@@ -409,7 +409,7 @@ fiche:
     video: "Vidéo"
     photo: "Photo"
     emplacements: "emplacements"
-    ouvert_du: "Ouvert du"
+    ouvert_du: "Ouverture :"
     vous_aimerez: "Vous aimerez"
     comme: "comme..."
     les_vacances_a: "Les vacances à"
@@ -522,8 +522,9 @@ filtres:
 footer:
     contact:
         title: "Contact"
-        tel: "0825 133 400"
+        tel: "0825 133 400*"
         fax: "Fax: 02 96 39 97 81"
+        price: "*(0,15 €/min)"
         adresse:
             name: "Vacances directes"
             lieu_dit: "ZA les Alleux"
@@ -822,3 +823,11 @@ couloir:
 err404:
     title: "Désolé, cette page n'existe pas..."
     content: "Retourner sur la <a href=\"%link%\">page d'accueil</a>."
+
+datepicker:
+    days: "['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche']"
+    daysShort: "['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim']"
+    daysMin: "['Di', 'Lu', 'Ma', 'Me', 'Je', 'Ve', 'Sa', 'Di']"
+    months: "['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre']"
+    monthsShort: "['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Jui', 'Jui', 'Aoû', 'Sepe', 'Oct', 'Nov', 'Déc']"
+    weekMin: "'Se'"

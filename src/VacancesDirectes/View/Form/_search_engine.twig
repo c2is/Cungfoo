@@ -45,7 +45,7 @@
                         <div id="SearchDate_switch">
                             <span class="left">{{"date_search.ou"|trans}}</span>
                             <div class="switchSelect tooltip" title="">
-                                <span class="bubble">{{"date_search.campings"|trans}}</span>
+                                <span class="bubble">{{"date_search.camping"|trans}}</span>
                             </div>
                         </div>
                     </div>
@@ -128,7 +128,15 @@
         fEndDate = '2013/10/31',
         fHighSeasonStartDate = '2013/06/29',    // must be a saturday
         fHighSeasonEndDate = '2013/08/31',      // must be a saturday
-        linear = "reservation";
+        linear = "reservation",
+        datepickerLanguage = {
+            days: {{ 'datepicker.days'|trans|raw }},
+            daysShort:  {{ 'datepicker.daysShort'|trans|raw }},
+            daysMin:  {{ 'datepicker.daysMin'|trans|raw }},
+            months:  {{ 'datepicker.months'|trans|raw }},
+            monthsShort:  {{ 'datepicker.monthsShort'|trans|raw }},
+            weekMin: {{ 'datepicker.weekMin'|trans|raw }}
+        };
 
     var selectVille = {
             'byPaysPath': "{{ path('search_engine_get_villes_by_destination') }}",
@@ -138,4 +146,5 @@
             'byPaysPath': "{{ path('search_engine_get_campings_by_destination') }}",
             'emptyValue': "{{ 'date_search.camping.empty_value'|trans }}"
         };
+
 </script>

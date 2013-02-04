@@ -390,7 +390,7 @@ date_search:
 header:
     information: "Informationen & Reservierungen"
     telephone:
-        number: "0049 (0) 721 680 78 240"
+        number: "+49 (0) 721 680 78 240"
         price: ""
     130_camping: "mehr als 170 Campingplätze in Frankreich, Spanien & Italien"
     location_mobil_home: "Vermietung von Wohnwagen auf Campingplätzen (Frankreich, Spanien, Italien und Portugal)"
@@ -409,7 +409,7 @@ fiche:
     video: "Video"
     photo: "Foto"
     emplacements: "Stellplätze"
-    ouvert_du: "Geöffnet ab"
+    ouvert_du: "Öffnen:"
     vous_aimerez: "Das wird Ihnen gefallen"
     comme: "wie..."
     les_vacances_a: "Urlaub in"
@@ -522,8 +522,9 @@ filtres:
 footer:
     contact:
         title: "Kontakt"
-        tel: "0049 (0) 721 680 78 240"
-        fax: "Fax: 0033 (0)2 96 39 97 81"
+        tel: "+49 (0) 721 680 78 240"
+        fax: "Fax: +49 (0) 721 96 14 12 60"
+        price: ""
         adresse:
             name: "Vacances directes"
             lieu_dit: "Ettlinger-Tor-Platz 3"
@@ -540,7 +541,7 @@ footer:
     transactions_securisees: "Sichere Zahlung"
     cb_visa: "Kreditkarte Visa"
     masterCard: "MasterCard"
-    nous_joindre: "Uns kontaktieren"
+    nous_joindre: "Bitte kontaktieren Sie uns unter"
     nous_contacter: "Uns kontaktieren"
     demande_catalogue: "Kataloganfrage"
     description_catalogue: "Hoc inmaturo interitu ipse quoque sui pertaesus excessit e vita aetatis."
@@ -628,10 +629,10 @@ resalys:
     besoin_aide_title: "Hilfe"
     besoin_aide_subtitle: "Eine Frage zu Ihrer Reservierung&hellip;"
     besoin_aide_contact: "Kontaktieren Sie uns"
-    besoin_aide_num: "unter 0049 (0) 721 680 78 240"
+    besoin_aide_num: "unter +49 (0) 721 680 78 240"
     session_expire: "Urlaubsangebot nicht verfügbar"
     session_expire_texte_1: "Während der Suche nach Verfügbarkeiten ist ein Fehler aufgetreten."
-    session_expire_texte_2: "Ändern Sie Ihre Anfrage oder vertrauen Sie sie unserem Reservierungsteam an, indem Sie unter der Nummer  0049 (0) 721 680 78 240 (0,15 /min) anrufen."
+    session_expire_texte_2: "Ändern Sie Ihre Anfrage oder vertrauen Sie sie unserem Reservierungsteam an, indem Sie unter der Nummer  +49 (0) 721 680 78 240 (0,15 /min) anrufen."
     non_connecte: "Um Ihre Reservierung fortzusetzen,<br /> melden Sie sich bitte an oder erstellen Sie oben ein Konto"
     retour_home: "Zurück zur Startseite"
 
@@ -816,3 +817,11 @@ couloir:
 err404:
     title: "Sorry, diese Seite existiert"
     content: "Zurück zur <a href=\"%link%\">Startseite</a>."
+
+datepicker:
+    days: "['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag', 'Sonntag']"
+    daysShort: "['Son', 'Mon', 'Die', 'Mit', 'Don', 'Fre', 'Sam', 'Son']"
+    daysMin: "['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa', 'So']"
+    months: "['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember']"
+    monthsShort: "['Jan', 'Feb', 'Mär', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez']"
+    weekMin: "'Wo'"
