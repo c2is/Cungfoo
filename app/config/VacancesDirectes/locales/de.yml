@@ -409,7 +409,7 @@ fiche:
     video: "Video"
     photo: "Foto"
     emplacements: "Stellplätze"
-    ouvert_du: "Geöffnet ab"
+    ouvert_du: "Öffnen"
     vous_aimerez: "Das wird Ihnen gefallen"
     comme: "wie..."
     les_vacances_a: "Urlaub in"
@@ -523,7 +523,7 @@ footer:
     contact:
         title: "Kontakt"
         tel: "+49 (0) 721 680 78 240"
-        fax: "Fax: 0033 (0)2 96 39 97 81"
+        fax: "Fax: +49 (0) 721 96 14 12 60"
         price: ""
         adresse:
             name: "Vacances directes"
