@@ -101,11 +101,11 @@ class CouloirController implements ControllerProviderInterface
                 "tokens"        => 'ignore_token',
                 "display"       => 'cart_saved',
                 "actions"       => $request->query->get('actions'),
-                "session"       => $request->query->get('session'),
+                "session"       => $request->cookies->get('session_name'),
                 "tokens"        => $request->query->get('tokens')
             );
 
-            $query = array_merge($query, $request->request->all());
+            $query = array_merge($request->request->all(), $query);
 
             return $app['twig']->render('Couloir\confirmation.twig', array(
                 'query' => $query,
