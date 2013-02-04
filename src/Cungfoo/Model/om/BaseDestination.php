@@ -2790,7 +2790,7 @@ abstract class BaseDestination extends BaseObject implements Persistent
     }
 
     // active behavior
-    
+
     /**
      * return true is the object is active
      *
@@ -2997,7 +2997,7 @@ abstract class BaseDestination extends BaseObject implements Persistent
     }
 
     // crudable behavior
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -3012,19 +3012,19 @@ abstract class BaseDestination extends BaseObject implements Persistent
         {
             $this->resetModified(DestinationPeer::IMAGE_DETAIL_1);
         }
-    
+
         $this->uploadImageDetail1($form);
-        
+
         if (!$form['image_detail_2_deleted']->getData())
         {
             $this->resetModified(DestinationPeer::IMAGE_DETAIL_2);
         }
-    
+
         $this->uploadImageDetail2($form);
-        
+
         return $this->save($con);
     }
-    
+
     /**
      * @return string
      */
@@ -3032,7 +3032,7 @@ abstract class BaseDestination extends BaseObject implements Persistent
     {
         return 'uploads/destinations';
     }
-    
+
     /**
      * @return string
      */
@@ -3040,7 +3040,7 @@ abstract class BaseDestination extends BaseObject implements Persistent
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -3056,7 +3056,7 @@ abstract class BaseDestination extends BaseObject implements Persistent
             }
         }
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void

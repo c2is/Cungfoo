@@ -244,11 +244,11 @@
         <behavior name="timestampable" />
         <behavior name="active" />
 
-        <foreign-key foreignTable="category_type_hebergement">
+        <foreign-key foreignTable="category_type_hebergement" onDelete="SETNULL">
             <reference local="category_type_hebergement_id" foreign="id"></reference>
         </foreign-key>
 
-        <foreign-key foreignTable="type_hebergement_capacite">
+        <foreign-key foreignTable="type_hebergement_capacite" onDelete="SETNULL">
             <reference local="type_hebergement_capacite_id" foreign="id"></reference>
         </foreign-key>
 

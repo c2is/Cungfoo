@@ -13,6 +13,7 @@ use Cungfoo\Model\CategoryTypeHebergement;
 use Cungfoo\Model\CategoryTypeHebergementI18nPeer;
 use Cungfoo\Model\CategoryTypeHebergementPeer;
 use Cungfoo\Model\CategoryTypeHebergementQuery;
+use Cungfoo\Model\TypeHebergementPeer;
 use Cungfoo\Model\map\CategoryTypeHebergementTableMap;
 
 /**
@@ -418,6 +419,9 @@ abstract class BaseCategoryTypeHebergementPeer
      */
     public static function clearRelatedInstancePool()
     {
+        // Invalidate objects in TypeHebergementPeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        TypeHebergementPeer::clearInstancePool();
         // Invalidate objects in CategoryTypeHebergementI18nPeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
         CategoryTypeHebergementI18nPeer::clearInstancePool();
