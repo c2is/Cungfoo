@@ -101,7 +101,7 @@ class CouloirController implements ControllerProviderInterface
                 "tokens"        => 'ignore_token',
                 "display"       => 'cart_saved',
                 "actions"       => $request->query->get('actions'),
-                "session"       => $request->query->get('session'),
+                "session"       => $request->cookie->get('session_name'),
                 "tokens"        => $request->query->get('tokens')
             );
 
