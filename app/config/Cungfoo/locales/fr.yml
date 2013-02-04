@@ -16,6 +16,7 @@ activite.image.path: Image
 activite.active: Actif
 activite.vignette: Vignette
 activite.activiteI18ns: ""
+activite.active_locale: "Activer pour cette langue"
 activite.image_path_deleted: Supprimer l'image ?
 activite.vignette_deleted: Supprimer la vignette ?
 
@@ -34,6 +35,7 @@ category_type_hebergement.image_page: "Image de la page"
 category_type_hebergement.image_page_deleted: "Suppression de l'image de la page"
 category_type_hebergement.sortable_rank: "Ordre"
 category_type_hebergement.category_type_hebergementI18ns: ""
+category_type_hebergement.active_locale: "Activer pour cette langue"
 category_type_hebergement.slug: "Slug"
 category_type_hebergement.accroche: "Accroche"
 category_type_hebergement.description: "Description"
@@ -55,6 +57,7 @@ type_hebergement_capacite.image_page_deleted: Suppression image page ?
 type_hebergement_capacite.active: Actif
 type_hebergement_capacite.sortable_rank: Ordre
 type_hebergement_capacite.type_hebergement_capaciteI18ns: ""
+type_hebergement_capacite.active_locale: "Activer pour cette langue"
 type_hebergement_capacite.name: Nom
 type_hebergement_capacite.slug: Slug
 type_hebergement_capacite.description: Description
@@ -101,6 +104,7 @@ destination.code: Code
 destination.name: Nom
 destination.active: Actif
 destination.destinationI18ns: ""
+destination.active_locale: "Activer pour cette langue"
 destination.sortable_rank: "Ordre"
 destination.sortable.rank: "Ordre"
 destination.slug: "Slug"
@@ -122,6 +126,7 @@ categorie.code: Code
 categorie.name: Nom
 categorie.active: Actif
 categorie.categorieI18ns: ""
+categorie.active_locale: "Activer pour cette langue"
 
 situation_geographique.crud.create: Création d'une situation géographique
 situation_geographique.crud.list: Liste situations géographiques
@@ -135,6 +140,7 @@ situation_geographique.keywords: Mots clés
 situation_geographique.etablissements: Établissements ayant cette situation géographique
 situation_geographique.active: Actif
 situation_geographique.situation_geographiqueI18ns: ""
+situation_geographique.active_locale: "Activer pour cette langue"
 
 baignade.crud.create: Création d'une baignade
 baignade.crud.list: Liste baignades
@@ -152,6 +158,7 @@ baignade.image_path_deleted: "Supprimer l'image ?"
 baignade.vignette: Vignette
 baignade.vignette_deleted: "Supprimer la vignette ?"
 baignade.baignadeI18ns: ""
+baignade.active_locale: "Activer pour cette langue"
 
 thematique.crud.create: Création d'une thématique
 thematique.crud.list: Liste thématiques
@@ -168,6 +175,7 @@ thematique.image.path: Picto
 thematique.active: Actif
 thematique.image_path_deleted: "Supprimer le picto ?"
 thematique.thematiqueI18ns: ""
+thematique.active_locale: "Activer pour cette langue"
 
 etablissement.activites: Liste des activités
 etablissement.city: Ville
@@ -222,6 +230,7 @@ etablissement.group.cms: Données CMS
 etablissement.vignette_deleted: "Supprimer la vignette ?"
 etablissement.plan_path_deleted: "Supprimer le plan ?"
 etablissement.etablissementI18ns: ""
+etablissement.active_locale: "Activer pour cette langue"
 etablissement.active: "Active"
 
 list.actions: Actions
@@ -296,6 +305,7 @@ theme.slug: Slug
 theme.introduction: Introduction
 theme.description: Description
 theme.themeI18ns: ""
+theme.active_locale: "Activer pour cette langue"
 
 
 service_complementaire.crud.create: Création d'un service complémentaire
@@ -316,6 +326,7 @@ service_complementaire.vignette: Vignette
 service_complementaire.image_path_deleted: "Supprimer l'image ?"
 service_complementaire.vignette_deleted: "Supprimer la vignette"
 service_complementaire.service_complementaireI18ns: ""
+service_complementaire.active_locale: "Activer pour cette langue"
 
 
 security.title: Panneau d'administration
@@ -344,6 +355,7 @@ pays.slug: Slug
 pays.image_detail_1_deleted: Supprimer l'image 1
 pays.image_detail_2_deleted: Supprimer l'image 2
 pays.paysI18ns: ""
+pays.active_locale: "Activer pour cette langue"
 
 region.crud.create: Création d'une région
 region.crud.list: Liste régions
@@ -375,6 +387,7 @@ region.slug: Slug
 region.destination: Destination
 region.bon_plans: Bons plan ayant cette région
 region.regionI18ns: ""
+region.active_locale: "Activer pour cette langue"
 
 resalys.actions.import: Importer les données de Resalys
 resalys.title.import: Import Resalys
@@ -420,6 +433,7 @@ type_hebergement.image.hebergement.path: Image
 type_hebergement.image.composition.path: Image composition
 type_hebergement.active: Actif
 type_hebergement.type_hebergementI18ns: ""
+type_hebergement.active_locale: "Activer pour cette langue"
 type_hebergement.slug: "Slug"
 type_hebergement.presentation: "Présentation"
 type_hebergement.capacite_hebergement: "Capacité hébergement"
@@ -451,6 +465,7 @@ ville.image.detail.1: Image 1
 ville.image.detail.2: Image 2
 ville.active: Actif
 ville.villeI18ns: ""
+ville.active_locale: "Activer pour cette langue"
 
 point_interet.crud.create: Création d'un POI
 point_interet.crud.list: Liste des POI
@@ -482,6 +497,7 @@ point_interet.email: Email
 point_interet.website: Site web
 point_interet.slug: Slug
 point_interet.point_interetI18ns: ""
+point_interet.active_locale: "Activer pour cette langue"
 
 event.crud.create: Création d'un évènement
 event.crud.list: Liste des évènements
@@ -516,6 +532,7 @@ event.email: Email
 event.website: Site web
 event.slug: Slug
 event.eventI18ns: ""
+event.active_locale: "Activer pour cette langue"
 
 personnage.crud.create: Création d'un personnage
 personnage.crud.list: Liste des personnages
@@ -529,6 +546,7 @@ personnage.image_path: Image
 personnage.image.path: Image
 personnage.active: Actif
 personnage.personnageI18ns: ""
+personnage.active_locale: "Activer pour cette langue"
 personnage.image_path_deleted: "Supprimer l'image ?"
 
 avantage.crud.create: Création d'un avantage
@@ -544,6 +562,7 @@ avantage.image_path_deleted: Supprimer l'image ?
 avantage.image.path: Image
 avantage.active: Actif
 avantage.avantageI18ns: ""
+avantage.active_locale: "Activer pour cette langue"
 
 edito.crud.create: Création d'un édito
 edito.crud.list: Liste des editos
@@ -555,6 +574,7 @@ edito.name: Titre
 edito.description: Description
 edito.active: Actif
 edito.editoI18ns: ""
+edito.active_locale: "Activer pour cette langue"
 
 multimedia_etablissement.crud.create: Création d'un média
 multimedia_etablissement.crud.list: Liste des média
@@ -569,6 +589,7 @@ multimedia_etablissement.image.path: Image
 multimedia_etablissement.active: Actif
 multimedia_etablissement.image_path_deleted: "Supprimer l'image ?"
 multimedia_etablissement.multimedia_etablissementI18ns: ""
+multimedia_etablissement.active_locale: "Activer pour cette langue"
 
 multimedia_type_hebergement.crud.create: Création d'un média type hébergement
 multimedia_type_hebergement.crud.list: Liste des média type hébergement
@@ -583,6 +604,7 @@ multimedia_type_hebergement.image.path: Image
 multimedia_type_hebergement.active: Actif
 multimedia_type_hebergement.type_hebergement: Type hebergement
 multimedia_type_hebergement.multimedia_type_hebergementI18ns: ""
+multimedia_type_hebergement.active_locale: "Activer pour cette langue"
 multimedia_type_hebergement.image_path_deleted: "Supprimer l'image ?"
 
 tag.crud.create: Création d'un tag
@@ -594,6 +616,7 @@ tag.name: Nom
 tag.multimedia_etablissements: Média
 tag.slug: Slug
 tag.tagI18ns: ""
+tag.active_locale: "Activer pour cette langue"
 tag.active: "Active"
 
 demande_identifiant.crud.list: Liste des demandes d'identifiant
@@ -671,6 +694,7 @@ mise_en_avant.active: Actif
 mise_en_avant.image_fond_path_deleted: "Supprimer l'image de fond ?"
 mise_en_avant.illustration_path_deleted: "Supprimer l'illustration ?"
 mise_en_avant.mise_en_avantI18ns: ""
+mise_en_avant.active_locale: "Activer pour cette langue"
 
 vos_vacances.crud.create: Création d'un encart vos vacances
 vos_vacances.crud.list: Liste des encarts vos vacances
@@ -686,6 +710,7 @@ vos_vacances.image.path: Image
 vos_vacances.active: Actif
 vos_vacances.image_path_deleted: "Supprimer l'image ?"
 vos_vacances.vos_vacancesI18ns: ""
+vos_vacances.active_locale: "Activer pour cette langue"
 
 idee_weekend.crud.create: Création d'une idée weekend
 idee_weekend.crud.list: Liste des idée weekend
@@ -702,6 +727,7 @@ idee_weekend.highlight: En couleur
 idee_weekend.image.path: Image
 idee_weekend.active: Actif
 idee_weekend.idee_weekendI18ns: ""
+idee_weekend.active_locale: "Activer pour cette langue"
 
 monday: lundi
 tuesday: mardi
@@ -722,6 +748,7 @@ bon_plan_categorie:
     sortable_rank: Ordre
     bon_plans: Bons plans associés
     bon_plan_categorieI18ns: ""
+    active_locale: "Activer pour cette langue"
     slug: Slug
     subtitle: Subtitle
     description: Description
@@ -757,6 +784,7 @@ bon_plan:
     etablissements: Campings associés (dispo)
     regions: Régions associées (dispo)
     bon_planI18ns: ""
+    active_locale: "Activer pour cette langue"
     introduction: Introduction
     slug: Slug
     description: Description
