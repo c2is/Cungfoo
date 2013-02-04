@@ -524,6 +524,7 @@ footer:
         title: "Contact"
         tel: "0825 133 400"
         fax: "Fax: 02 96 39 97 81"
+        price: "*(0,15 €/min)"
         adresse:
             name: "Vacances directes"
             lieu_dit: "ZA les Alleux"
@@ -818,6 +819,10 @@ couloir:
     confirmation: "Confirmation"
     title: "Bienvenue dans l’espace de"
     title_reservation: "Réservation"
+
+err404:
+    title: "Désolé, cette page n'existe pas..."
+    content: "Retourner sur la <a href=\"%link%\">page d'accueil</a>."    title_reservation: "Réservation"
 
 datepicker:
     days: "['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche']"
