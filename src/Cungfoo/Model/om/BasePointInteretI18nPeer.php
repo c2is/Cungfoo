@@ -37,13 +37,13 @@ abstract class BasePointInteretI18nPeer
     const TM_CLASS = 'PointInteretI18nTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 8;
+    const NUM_COLUMNS = 9;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 8;
+    const NUM_HYDRATE_COLUMNS = 9;
 
     /** the column name for the id field */
     const ID = 'point_interet_i18n.id';
@@ -69,6 +69,9 @@ abstract class BasePointInteretI18nPeer
     /** the column name for the slug field */
     const SLUG = 'point_interet_i18n.slug';
 
+    /** the column name for the active_locale field */
+    const ACTIVE_LOCALE = 'point_interet_i18n.active_locale';
+
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
 
@@ -88,12 +91,12 @@ abstract class BasePointInteretI18nPeer
      * e.g. PointInteretI18nPeer::$fieldNames[PointInteretI18nPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Name', 'Presentation', 'Transport', 'Categorie', 'Type', 'Slug', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'name', 'presentation', 'transport', 'categorie', 'type', 'slug', ),
-        BasePeer::TYPE_COLNAME => array (PointInteretI18nPeer::ID, PointInteretI18nPeer::LOCALE, PointInteretI18nPeer::NAME, PointInteretI18nPeer::PRESENTATION, PointInteretI18nPeer::TRANSPORT, PointInteretI18nPeer::CATEGORIE, PointInteretI18nPeer::TYPE, PointInteretI18nPeer::SLUG, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'NAME', 'PRESENTATION', 'TRANSPORT', 'CATEGORIE', 'TYPE', 'SLUG', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'name', 'presentation', 'transport', 'categorie', 'type', 'slug', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Name', 'Presentation', 'Transport', 'Categorie', 'Type', 'Slug', 'ActiveLocale', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'name', 'presentation', 'transport', 'categorie', 'type', 'slug', 'activeLocale', ),
+        BasePeer::TYPE_COLNAME => array (PointInteretI18nPeer::ID, PointInteretI18nPeer::LOCALE, PointInteretI18nPeer::NAME, PointInteretI18nPeer::PRESENTATION, PointInteretI18nPeer::TRANSPORT, PointInteretI18nPeer::CATEGORIE, PointInteretI18nPeer::TYPE, PointInteretI18nPeer::SLUG, PointInteretI18nPeer::ACTIVE_LOCALE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'NAME', 'PRESENTATION', 'TRANSPORT', 'CATEGORIE', 'TYPE', 'SLUG', 'ACTIVE_LOCALE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'name', 'presentation', 'transport', 'categorie', 'type', 'slug', 'active_locale', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, )
     );
 
     /**
@@ -103,12 +106,12 @@ abstract class BasePointInteretI18nPeer
      * e.g. PointInteretI18nPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Name' => 2, 'Presentation' => 3, 'Transport' => 4, 'Categorie' => 5, 'Type' => 6, 'Slug' => 7, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'presentation' => 3, 'transport' => 4, 'categorie' => 5, 'type' => 6, 'slug' => 7, ),
-        BasePeer::TYPE_COLNAME => array (PointInteretI18nPeer::ID => 0, PointInteretI18nPeer::LOCALE => 1, PointInteretI18nPeer::NAME => 2, PointInteretI18nPeer::PRESENTATION => 3, PointInteretI18nPeer::TRANSPORT => 4, PointInteretI18nPeer::CATEGORIE => 5, PointInteretI18nPeer::TYPE => 6, PointInteretI18nPeer::SLUG => 7, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'NAME' => 2, 'PRESENTATION' => 3, 'TRANSPORT' => 4, 'CATEGORIE' => 5, 'TYPE' => 6, 'SLUG' => 7, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'presentation' => 3, 'transport' => 4, 'categorie' => 5, 'type' => 6, 'slug' => 7, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Name' => 2, 'Presentation' => 3, 'Transport' => 4, 'Categorie' => 5, 'Type' => 6, 'Slug' => 7, 'ActiveLocale' => 8, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'presentation' => 3, 'transport' => 4, 'categorie' => 5, 'type' => 6, 'slug' => 7, 'activeLocale' => 8, ),
+        BasePeer::TYPE_COLNAME => array (PointInteretI18nPeer::ID => 0, PointInteretI18nPeer::LOCALE => 1, PointInteretI18nPeer::NAME => 2, PointInteretI18nPeer::PRESENTATION => 3, PointInteretI18nPeer::TRANSPORT => 4, PointInteretI18nPeer::CATEGORIE => 5, PointInteretI18nPeer::TYPE => 6, PointInteretI18nPeer::SLUG => 7, PointInteretI18nPeer::ACTIVE_LOCALE => 8, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'NAME' => 2, 'PRESENTATION' => 3, 'TRANSPORT' => 4, 'CATEGORIE' => 5, 'TYPE' => 6, 'SLUG' => 7, 'ACTIVE_LOCALE' => 8, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'presentation' => 3, 'transport' => 4, 'categorie' => 5, 'type' => 6, 'slug' => 7, 'active_locale' => 8, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, )
     );
 
     /**
@@ -190,6 +193,7 @@ abstract class BasePointInteretI18nPeer
             $criteria->addSelectColumn(PointInteretI18nPeer::CATEGORIE);
             $criteria->addSelectColumn(PointInteretI18nPeer::TYPE);
             $criteria->addSelectColumn(PointInteretI18nPeer::SLUG);
+            $criteria->addSelectColumn(PointInteretI18nPeer::ACTIVE_LOCALE);
         } else {
             $criteria->addSelectColumn($alias . '.id');
             $criteria->addSelectColumn($alias . '.locale');
@@ -199,6 +203,7 @@ abstract class BasePointInteretI18nPeer
             $criteria->addSelectColumn($alias . '.categorie');
             $criteria->addSelectColumn($alias . '.type');
             $criteria->addSelectColumn($alias . '.slug');
+            $criteria->addSelectColumn($alias . '.active_locale');
         }
     }
 

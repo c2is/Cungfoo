@@ -16,5 +16,7 @@ foreach ($app['config']->get('languages') as $locale => $language)
     }
 }
 
+define('CURRENT_LANGUAGE', $app['context']->get('language'));
+
 // set fr default
 $app['translator']->setLocale($app['context']->get('language'));

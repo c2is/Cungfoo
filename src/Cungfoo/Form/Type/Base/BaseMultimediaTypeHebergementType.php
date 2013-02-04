@@ -69,6 +69,13 @@ class BaseMultimediaTypeHebergementType extends AppAwareType
                         new Assert\NotBlank(),
                     ),
                 ),
+                'active_locale' => array(
+                    'required' => false,
+                    'label' => 'multimedia_type_hebergement.active_locale',
+                    'type' => 'checkbox',
+                    'constraints' => array(
+                    ),
+                ),
             ),
             'required' => false,
         ));

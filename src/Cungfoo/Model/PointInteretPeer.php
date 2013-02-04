@@ -41,7 +41,7 @@ class PointInteretPeer extends BasePointInteretPeer
 
         $query->filterByActive(true);
 
-        return ($count == 1) ? $query->findOne() : $query->find();
+        return ($count == 1) ? $query->findOne() : $query->findActive();
     }
 
     static public function getCountForEtablissement(Etablissement $etab)
@@ -85,7 +85,7 @@ class PointInteretPeer extends BasePointInteretPeer
 
         $query->filterByActive(true);
 
-        return ($count == 1) ? $query->findOne() : $query->find();
+        return ($count == 1) ? $query->findOne() : $query->findActive();
     }
 
     static public function getCountForPays(Pays $pays)
@@ -136,7 +136,7 @@ class PointInteretPeer extends BasePointInteretPeer
 
         $query->filterByActive(true);
 
-        return ($count == 1) ? $query->findOne() : $query->find();
+        return ($count == 1) ? $query->findOne() : $query->findActive();
     }
 
     static public function getCountForRegion(Region $region)
@@ -181,7 +181,7 @@ class PointInteretPeer extends BasePointInteretPeer
 
         $query->filterByActive(true);
 
-        return ($count == 1) ? $query->findOne() : $query->find();
+        return ($count == 1) ? $query->findOne() : $query->findActive();
     }
 
     static public function getCountForVille(Ville $ville)
@@ -223,7 +223,7 @@ class PointInteretPeer extends BasePointInteretPeer
 
         $query->filterByActive(true);
 
-        return ($count == 1) ? $query->findOne() : $query->find();
+        return ($count == 1) ? $query->findOne() : $query->findActive();
     }
 
     static public function getCountForDestination(Destination $destination)

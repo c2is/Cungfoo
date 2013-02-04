@@ -45,6 +45,7 @@ class MultimediaEtablissementI18nTableMap extends TableMap
         $this->addForeignPrimaryKey('id', 'Id', 'INTEGER' , 'multimedia_etablissement', 'id', true, null, null);
         $this->addPrimaryKey('locale', 'Locale', 'VARCHAR', true, 5, 'fr');
         $this->addColumn('titre', 'Titre', 'VARCHAR', true, 255, null);
+        $this->addColumn('active_locale', 'ActiveLocale', 'BOOLEAN', false, 1, false);
         // validators
     } // initialize()
 

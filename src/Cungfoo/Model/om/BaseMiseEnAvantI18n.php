@@ -83,6 +83,13 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
     protected $titre_lien;
 
     /**
+     * The value for the active_locale field.
+     * Note: this column has a database default value of: false
+     * @var        boolean
+     */
+    protected $active_locale;
+
+    /**
      * @var        MiseEnAvant
      */
     protected $aMiseEnAvant;
@@ -110,6 +117,7 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
     public function applyDefaultValues()
     {
         $this->locale = 'fr';
+        $this->active_locale = false;
     }
 
     /**
@@ -180,6 +188,16 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
     public function getTitreLien()
     {
         return $this->titre_lien;
+    }
+
+    /**
+     * Get the [active_locale] column value.
+     *
+     * @return boolean
+     */
+    public function getActiveLocale()
+    {
+        return $this->active_locale;
     }
 
     /**
@@ -313,6 +331,35 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
     } // setTitreLien()
 
     /**
+     * Sets the value of the [active_locale] column.
+     * Non-boolean arguments are converted using the following rules:
+     *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     *
+     * @param boolean|integer|string $v The new value
+     * @return MiseEnAvantI18n The current object (for fluent API support)
+     */
+    public function setActiveLocale($v)
+    {
+        if ($v !== null) {
+            if (is_string($v)) {
+                $v = in_array(strtolower($v), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+            } else {
+                $v = (boolean) $v;
+            }
+        }
+
+        if ($this->active_locale !== $v) {
+            $this->active_locale = $v;
+            $this->modifiedColumns[] = MiseEnAvantI18nPeer::ACTIVE_LOCALE;
+        }
+
+
+        return $this;
+    } // setActiveLocale()
+
+    /**
      * Indicates whether the columns in this object are only set to default values.
      *
      * This method can be used in conjunction with isModified() to indicate whether an object is both
@@ -323,6 +370,10 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
     public function hasOnlyDefaultValues()
     {
             if ($this->locale !== 'fr') {
+                return false;
+            }
+
+            if ($this->active_locale !== false) {
                 return false;
             }
 
@@ -354,6 +405,7 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
             $this->accroche = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
             $this->lien = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
             $this->titre_lien = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
+            $this->active_locale = ($row[$startcol + 6] !== null) ? (boolean) $row[$startcol + 6] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -362,7 +414,7 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 6; // 6 = MiseEnAvantI18nPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 7; // 7 = MiseEnAvantI18nPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating MiseEnAvantI18n object", $e);
@@ -604,6 +656,9 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(MiseEnAvantI18nPeer::TITRE_LIEN)) {
             $modifiedColumns[':p' . $index++]  = '`titre_lien`';
         }
+        if ($this->isColumnModified(MiseEnAvantI18nPeer::ACTIVE_LOCALE)) {
+            $modifiedColumns[':p' . $index++]  = '`active_locale`';
+        }
 
         $sql = sprintf(
             'INSERT INTO `mise_en_avant_i18n` (%s) VALUES (%s)',
@@ -632,6 +687,9 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
                         break;
                     case '`titre_lien`':
                         $stmt->bindValue($identifier, $this->titre_lien, PDO::PARAM_STR);
+                        break;
+                    case '`active_locale`':
+                        $stmt->bindValue($identifier, (int) $this->active_locale, PDO::PARAM_INT);
                         break;
                 }
             }
@@ -790,6 +848,9 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
             case 5:
                 return $this->getTitreLien();
                 break;
+            case 6:
+                return $this->getActiveLocale();
+                break;
             default:
                 return null;
                 break;
@@ -825,6 +886,7 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
             $keys[3] => $this->getAccroche(),
             $keys[4] => $this->getLien(),
             $keys[5] => $this->getTitreLien(),
+            $keys[6] => $this->getActiveLocale(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aMiseEnAvant) {
@@ -882,6 +944,9 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
             case 5:
                 $this->setTitreLien($value);
                 break;
+            case 6:
+                $this->setActiveLocale($value);
+                break;
         } // switch()
     }
 
@@ -912,6 +977,7 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
         if (array_key_exists($keys[3], $arr)) $this->setAccroche($arr[$keys[3]]);
         if (array_key_exists($keys[4], $arr)) $this->setLien($arr[$keys[4]]);
         if (array_key_exists($keys[5], $arr)) $this->setTitreLien($arr[$keys[5]]);
+        if (array_key_exists($keys[6], $arr)) $this->setActiveLocale($arr[$keys[6]]);
     }
 
     /**
@@ -929,6 +995,7 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(MiseEnAvantI18nPeer::ACCROCHE)) $criteria->add(MiseEnAvantI18nPeer::ACCROCHE, $this->accroche);
         if ($this->isColumnModified(MiseEnAvantI18nPeer::LIEN)) $criteria->add(MiseEnAvantI18nPeer::LIEN, $this->lien);
         if ($this->isColumnModified(MiseEnAvantI18nPeer::TITRE_LIEN)) $criteria->add(MiseEnAvantI18nPeer::TITRE_LIEN, $this->titre_lien);
+        if ($this->isColumnModified(MiseEnAvantI18nPeer::ACTIVE_LOCALE)) $criteria->add(MiseEnAvantI18nPeer::ACTIVE_LOCALE, $this->active_locale);
 
         return $criteria;
     }
@@ -1005,6 +1072,7 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
         $copyObj->setAccroche($this->getAccroche());
         $copyObj->setLien($this->getLien());
         $copyObj->setTitreLien($this->getTitreLien());
+        $copyObj->setActiveLocale($this->getActiveLocale());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -1125,6 +1193,7 @@ abstract class BaseMiseEnAvantI18n extends BaseObject implements Persistent
         $this->accroche = null;
         $this->lien = null;
         $this->titre_lien = null;
+        $this->active_locale = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();

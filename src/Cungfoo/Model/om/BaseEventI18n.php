@@ -95,6 +95,13 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
     protected $slug;
 
     /**
+     * The value for the active_locale field.
+     * Note: this column has a database default value of: false
+     * @var        boolean
+     */
+    protected $active_locale;
+
+    /**
      * @var        Event
      */
     protected $aEvent;
@@ -122,6 +129,7 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
     public function applyDefaultValues()
     {
         $this->locale = 'fr';
+        $this->active_locale = false;
     }
 
     /**
@@ -212,6 +220,16 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
     public function getSlug()
     {
         return $this->slug;
+    }
+
+    /**
+     * Get the [active_locale] column value.
+     *
+     * @return boolean
+     */
+    public function getActiveLocale()
+    {
+        return $this->active_locale;
     }
 
     /**
@@ -387,6 +405,35 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
     } // setSlug()
 
     /**
+     * Sets the value of the [active_locale] column.
+     * Non-boolean arguments are converted using the following rules:
+     *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     *
+     * @param boolean|integer|string $v The new value
+     * @return EventI18n The current object (for fluent API support)
+     */
+    public function setActiveLocale($v)
+    {
+        if ($v !== null) {
+            if (is_string($v)) {
+                $v = in_array(strtolower($v), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+            } else {
+                $v = (boolean) $v;
+            }
+        }
+
+        if ($this->active_locale !== $v) {
+            $this->active_locale = $v;
+            $this->modifiedColumns[] = EventI18nPeer::ACTIVE_LOCALE;
+        }
+
+
+        return $this;
+    } // setActiveLocale()
+
+    /**
      * Indicates whether the columns in this object are only set to default values.
      *
      * This method can be used in conjunction with isModified() to indicate whether an object is both
@@ -397,6 +444,10 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
     public function hasOnlyDefaultValues()
     {
             if ($this->locale !== 'fr') {
+                return false;
+            }
+
+            if ($this->active_locale !== false) {
                 return false;
             }
 
@@ -430,6 +481,7 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
             $this->description = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
             $this->transport = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
             $this->slug = ($row[$startcol + 7] !== null) ? (string) $row[$startcol + 7] : null;
+            $this->active_locale = ($row[$startcol + 8] !== null) ? (boolean) $row[$startcol + 8] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -438,7 +490,7 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 8; // 8 = EventI18nPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 9; // 9 = EventI18nPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating EventI18n object", $e);
@@ -686,6 +738,9 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(EventI18nPeer::SLUG)) {
             $modifiedColumns[':p' . $index++]  = '`slug`';
         }
+        if ($this->isColumnModified(EventI18nPeer::ACTIVE_LOCALE)) {
+            $modifiedColumns[':p' . $index++]  = '`active_locale`';
+        }
 
         $sql = sprintf(
             'INSERT INTO `event_i18n` (%s) VALUES (%s)',
@@ -720,6 +775,9 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
                         break;
                     case '`slug`':
                         $stmt->bindValue($identifier, $this->slug, PDO::PARAM_STR);
+                        break;
+                    case '`active_locale`':
+                        $stmt->bindValue($identifier, (int) $this->active_locale, PDO::PARAM_INT);
                         break;
                 }
             }
@@ -884,6 +942,9 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
             case 7:
                 return $this->getSlug();
                 break;
+            case 8:
+                return $this->getActiveLocale();
+                break;
             default:
                 return null;
                 break;
@@ -921,6 +982,7 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
             $keys[5] => $this->getDescription(),
             $keys[6] => $this->getTransport(),
             $keys[7] => $this->getSlug(),
+            $keys[8] => $this->getActiveLocale(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aEvent) {
@@ -984,6 +1046,9 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
             case 7:
                 $this->setSlug($value);
                 break;
+            case 8:
+                $this->setActiveLocale($value);
+                break;
         } // switch()
     }
 
@@ -1016,6 +1081,7 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
         if (array_key_exists($keys[5], $arr)) $this->setDescription($arr[$keys[5]]);
         if (array_key_exists($keys[6], $arr)) $this->setTransport($arr[$keys[6]]);
         if (array_key_exists($keys[7], $arr)) $this->setSlug($arr[$keys[7]]);
+        if (array_key_exists($keys[8], $arr)) $this->setActiveLocale($arr[$keys[8]]);
     }
 
     /**
@@ -1035,6 +1101,7 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(EventI18nPeer::DESCRIPTION)) $criteria->add(EventI18nPeer::DESCRIPTION, $this->description);
         if ($this->isColumnModified(EventI18nPeer::TRANSPORT)) $criteria->add(EventI18nPeer::TRANSPORT, $this->transport);
         if ($this->isColumnModified(EventI18nPeer::SLUG)) $criteria->add(EventI18nPeer::SLUG, $this->slug);
+        if ($this->isColumnModified(EventI18nPeer::ACTIVE_LOCALE)) $criteria->add(EventI18nPeer::ACTIVE_LOCALE, $this->active_locale);
 
         return $criteria;
     }
@@ -1113,6 +1180,7 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
         $copyObj->setDescription($this->getDescription());
         $copyObj->setTransport($this->getTransport());
         $copyObj->setSlug($this->getSlug());
+        $copyObj->setActiveLocale($this->getActiveLocale());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -1235,6 +1303,7 @@ abstract class BaseEventI18n extends BaseObject implements Persistent
         $this->description = null;
         $this->transport = null;
         $this->slug = null;
+        $this->active_locale = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();

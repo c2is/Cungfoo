@@ -61,6 +61,7 @@ class TypeHebergementI18nTableMap extends TableMap
         $this->addColumn('remarque_2', 'Remarque2', 'LONGVARCHAR', false, null, null);
         $this->addColumn('remarque_3', 'Remarque3', 'LONGVARCHAR', false, null, null);
         $this->addColumn('remarque_4', 'Remarque4', 'LONGVARCHAR', false, null, null);
+        $this->addColumn('active_locale', 'ActiveLocale', 'BOOLEAN', false, 1, false);
         // validators
     } // initialize()
 

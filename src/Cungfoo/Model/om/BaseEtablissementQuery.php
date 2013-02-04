@@ -2848,6 +2848,7 @@ abstract class BaseEtablissementQuery extends ModelCriteria
     }
     // active behavior
 
+
     /**
      * return only active objects
      *
@@ -2855,11 +2856,17 @@ abstract class BaseEtablissementQuery extends ModelCriteria
      */
     public function findActive($con = null)
     {
-        $this->filterByActive(true);
+        $locale = defined('CURRENT_LANGUAGE') ? CURRENT_LANGUAGE : 'fr';
+
+        $this
+            ->filterByActive(true)
+            ->useI18nQuery($locale, 'i18n_locale')
+                ->filterByActiveLocale(true)
+            ->endUse()
+        ;
 
         return parent::find($con);
     }
-
     // i18n behavior
 
     /**

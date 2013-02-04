@@ -37,13 +37,13 @@ abstract class BaseThemeI18nPeer
     const TM_CLASS = 'ThemeI18nTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 6;
+    const NUM_COLUMNS = 7;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 6;
+    const NUM_HYDRATE_COLUMNS = 7;
 
     /** the column name for the id field */
     const ID = 'theme_i18n.id';
@@ -62,6 +62,9 @@ abstract class BaseThemeI18nPeer
 
     /** the column name for the description field */
     const DESCRIPTION = 'theme_i18n.description';
+
+    /** the column name for the active_locale field */
+    const ACTIVE_LOCALE = 'theme_i18n.active_locale';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -82,12 +85,12 @@ abstract class BaseThemeI18nPeer
      * e.g. ThemeI18nPeer::$fieldNames[ThemeI18nPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Name', 'Slug', 'Introduction', 'Description', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'name', 'slug', 'introduction', 'description', ),
-        BasePeer::TYPE_COLNAME => array (ThemeI18nPeer::ID, ThemeI18nPeer::LOCALE, ThemeI18nPeer::NAME, ThemeI18nPeer::SLUG, ThemeI18nPeer::INTRODUCTION, ThemeI18nPeer::DESCRIPTION, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'NAME', 'SLUG', 'INTRODUCTION', 'DESCRIPTION', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'name', 'slug', 'introduction', 'description', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Name', 'Slug', 'Introduction', 'Description', 'ActiveLocale', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'name', 'slug', 'introduction', 'description', 'activeLocale', ),
+        BasePeer::TYPE_COLNAME => array (ThemeI18nPeer::ID, ThemeI18nPeer::LOCALE, ThemeI18nPeer::NAME, ThemeI18nPeer::SLUG, ThemeI18nPeer::INTRODUCTION, ThemeI18nPeer::DESCRIPTION, ThemeI18nPeer::ACTIVE_LOCALE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'NAME', 'SLUG', 'INTRODUCTION', 'DESCRIPTION', 'ACTIVE_LOCALE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'name', 'slug', 'introduction', 'description', 'active_locale', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
     );
 
     /**
@@ -97,12 +100,12 @@ abstract class BaseThemeI18nPeer
      * e.g. ThemeI18nPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Name' => 2, 'Slug' => 3, 'Introduction' => 4, 'Description' => 5, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'slug' => 3, 'introduction' => 4, 'description' => 5, ),
-        BasePeer::TYPE_COLNAME => array (ThemeI18nPeer::ID => 0, ThemeI18nPeer::LOCALE => 1, ThemeI18nPeer::NAME => 2, ThemeI18nPeer::SLUG => 3, ThemeI18nPeer::INTRODUCTION => 4, ThemeI18nPeer::DESCRIPTION => 5, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'NAME' => 2, 'SLUG' => 3, 'INTRODUCTION' => 4, 'DESCRIPTION' => 5, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'slug' => 3, 'introduction' => 4, 'description' => 5, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Name' => 2, 'Slug' => 3, 'Introduction' => 4, 'Description' => 5, 'ActiveLocale' => 6, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'slug' => 3, 'introduction' => 4, 'description' => 5, 'activeLocale' => 6, ),
+        BasePeer::TYPE_COLNAME => array (ThemeI18nPeer::ID => 0, ThemeI18nPeer::LOCALE => 1, ThemeI18nPeer::NAME => 2, ThemeI18nPeer::SLUG => 3, ThemeI18nPeer::INTRODUCTION => 4, ThemeI18nPeer::DESCRIPTION => 5, ThemeI18nPeer::ACTIVE_LOCALE => 6, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'NAME' => 2, 'SLUG' => 3, 'INTRODUCTION' => 4, 'DESCRIPTION' => 5, 'ACTIVE_LOCALE' => 6, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'slug' => 3, 'introduction' => 4, 'description' => 5, 'active_locale' => 6, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
     );
 
     /**
@@ -182,6 +185,7 @@ abstract class BaseThemeI18nPeer
             $criteria->addSelectColumn(ThemeI18nPeer::SLUG);
             $criteria->addSelectColumn(ThemeI18nPeer::INTRODUCTION);
             $criteria->addSelectColumn(ThemeI18nPeer::DESCRIPTION);
+            $criteria->addSelectColumn(ThemeI18nPeer::ACTIVE_LOCALE);
         } else {
             $criteria->addSelectColumn($alias . '.id');
             $criteria->addSelectColumn($alias . '.locale');
@@ -189,6 +193,7 @@ abstract class BaseThemeI18nPeer
             $criteria->addSelectColumn($alias . '.slug');
             $criteria->addSelectColumn($alias . '.introduction');
             $criteria->addSelectColumn($alias . '.description');
+            $criteria->addSelectColumn($alias . '.active_locale');
         }
     }
 
