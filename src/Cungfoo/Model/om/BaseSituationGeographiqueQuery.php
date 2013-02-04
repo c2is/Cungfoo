@@ -669,7 +669,7 @@ abstract class BaseSituationGeographiqueQuery extends ModelCriteria
         return $this->addAscendingOrderByColumn(SituationGeographiquePeer::CREATED_AT);
     }
     // active behavior
-    
+
     /**
      * return only active objects
      *
@@ -678,7 +678,7 @@ abstract class BaseSituationGeographiqueQuery extends ModelCriteria
     public function findActive($con = null)
     {
         $this->filterByActive(true);
-    
+
         return parent::find($con);
     }
 
@@ -740,11 +740,11 @@ abstract class BaseSituationGeographiqueQuery extends ModelCriteria
     }
 
     // crudable behavior
-    
+
     public function filterByTerm($term)
     {
         $term = '%' . $term . '%';
-    
+
         return $this
             ->_or()
             ->useI18nQuery()

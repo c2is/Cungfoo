@@ -3799,7 +3799,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
     }
 
     // active behavior
-    
+
     /**
      * return true is the object is active
      *
@@ -4054,7 +4054,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
     }
 
     // crudable behavior
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -4069,26 +4069,26 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
         {
             $this->resetModified(BonPlanPeer::IMAGE_MENU);
         }
-    
+
         $this->uploadImageMenu($form);
-        
+
         if (!$form['image_page_deleted']->getData())
         {
             $this->resetModified(BonPlanPeer::IMAGE_PAGE);
         }
-    
+
         $this->uploadImagePage($form);
-        
+
         if (!$form['image_liste_deleted']->getData())
         {
             $this->resetModified(BonPlanPeer::IMAGE_LISTE);
         }
-    
+
         $this->uploadImageListe($form);
-        
+
         return $this->save($con);
     }
-    
+
     /**
      * @return string
      */
@@ -4096,7 +4096,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
     {
         return 'uploads/bon_plans';
     }
-    
+
     /**
      * @return string
      */
@@ -4104,7 +4104,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -4120,7 +4120,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
             }
         }
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -4136,7 +4136,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
             }
         }
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void

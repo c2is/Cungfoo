@@ -2444,7 +2444,7 @@ abstract class BasePersonnage extends BaseObject implements Persistent
     }
 
     // active behavior
-    
+
     /**
      * return true is the object is active
      *
@@ -2579,7 +2579,7 @@ abstract class BasePersonnage extends BaseObject implements Persistent
     }
 
     // crudable behavior
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -2594,12 +2594,12 @@ abstract class BasePersonnage extends BaseObject implements Persistent
         {
             $this->resetModified(PersonnagePeer::IMAGE_PATH);
         }
-    
+
         $this->uploadImagePath($form);
-        
+
         return $this->save($con);
     }
-    
+
     /**
      * @return string
      */
@@ -2607,7 +2607,7 @@ abstract class BasePersonnage extends BaseObject implements Persistent
     {
         return 'uploads/personnages';
     }
-    
+
     /**
      * @return string
      */
@@ -2615,7 +2615,7 @@ abstract class BasePersonnage extends BaseObject implements Persistent
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void

@@ -104,6 +104,8 @@ abstract class AbstractClient
     {
         foreach ($this->getOption('languages', array('FR')) as $language)
         {
+            $this->addOption('language', strtoupper($language));
+
             foreach ($this->getRequests() as $request)
             {
                 try

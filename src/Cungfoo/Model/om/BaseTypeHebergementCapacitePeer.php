@@ -13,6 +13,7 @@ use Cungfoo\Model\TypeHebergementCapacite;
 use Cungfoo\Model\TypeHebergementCapaciteI18nPeer;
 use Cungfoo\Model\TypeHebergementCapacitePeer;
 use Cungfoo\Model\TypeHebergementCapaciteQuery;
+use Cungfoo\Model\TypeHebergementPeer;
 use Cungfoo\Model\map\TypeHebergementCapaciteTableMap;
 
 /**
@@ -408,6 +409,9 @@ abstract class BaseTypeHebergementCapacitePeer
      */
     public static function clearRelatedInstancePool()
     {
+        // Invalidate objects in TypeHebergementPeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        TypeHebergementPeer::clearInstancePool();
         // Invalidate objects in TypeHebergementCapaciteI18nPeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
         TypeHebergementCapaciteI18nPeer::clearInstancePool();

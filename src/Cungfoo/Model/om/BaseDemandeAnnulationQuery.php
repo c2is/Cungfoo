@@ -1225,7 +1225,7 @@ abstract class BaseDemandeAnnulationQuery extends ModelCriteria
         return $this->addAscendingOrderByColumn(DemandeAnnulationPeer::CREATED_AT);
     }
     // active behavior
-    
+
     /**
      * return only active objects
      *
@@ -1234,7 +1234,7 @@ abstract class BaseDemandeAnnulationQuery extends ModelCriteria
     public function findActive($con = null)
     {
         $this->filterByActive(true);
-    
+
         return parent::find($con);
     }
 
