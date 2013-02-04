@@ -43,6 +43,7 @@ class WrapperController implements ControllerProviderInterface
 
             // différencier le site ce du site indiv
             $location = $clientConfiguration['services']['modele']['location'];
+            $location = str_replace($app['config']->get('languages')['fr']['domain'], $app['config']->get('languages')[$app['context']->getLanguage()]['domain'], $location);
             if ($app['context']->get('site') == "site.ce")
             {
                 $location = str_replace("www.", "ce.", $location);
