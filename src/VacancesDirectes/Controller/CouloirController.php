@@ -105,7 +105,7 @@ class CouloirController implements ControllerProviderInterface
                 "tokens"        => $request->query->get('tokens')
             );
 
-            $query = array_merge($query, $request->request->all());
+            $query = array_merge($request->request->all(), $query);
 
             return $app['twig']->render('Couloir\confirmation.twig', array(
                 'query' => $query,
