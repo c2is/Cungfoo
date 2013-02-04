@@ -37,13 +37,13 @@ abstract class BaseRegionI18nPeer
     const TM_CLASS = 'RegionI18nTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 6;
+    const NUM_COLUMNS = 7;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 6;
+    const NUM_HYDRATE_COLUMNS = 7;
 
     /** the column name for the id field */
     const ID = 'region_i18n.id';
@@ -62,6 +62,9 @@ abstract class BaseRegionI18nPeer
 
     /** the column name for the description field */
     const DESCRIPTION = 'region_i18n.description';
+
+    /** the column name for the active_locale field */
+    const ACTIVE_LOCALE = 'region_i18n.active_locale';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -82,12 +85,12 @@ abstract class BaseRegionI18nPeer
      * e.g. RegionI18nPeer::$fieldNames[RegionI18nPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Slug', 'Name', 'Introduction', 'Description', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'slug', 'name', 'introduction', 'description', ),
-        BasePeer::TYPE_COLNAME => array (RegionI18nPeer::ID, RegionI18nPeer::LOCALE, RegionI18nPeer::SLUG, RegionI18nPeer::NAME, RegionI18nPeer::INTRODUCTION, RegionI18nPeer::DESCRIPTION, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'SLUG', 'NAME', 'INTRODUCTION', 'DESCRIPTION', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'slug', 'name', 'introduction', 'description', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Slug', 'Name', 'Introduction', 'Description', 'ActiveLocale', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'slug', 'name', 'introduction', 'description', 'activeLocale', ),
+        BasePeer::TYPE_COLNAME => array (RegionI18nPeer::ID, RegionI18nPeer::LOCALE, RegionI18nPeer::SLUG, RegionI18nPeer::NAME, RegionI18nPeer::INTRODUCTION, RegionI18nPeer::DESCRIPTION, RegionI18nPeer::ACTIVE_LOCALE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'SLUG', 'NAME', 'INTRODUCTION', 'DESCRIPTION', 'ACTIVE_LOCALE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'slug', 'name', 'introduction', 'description', 'active_locale', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
     );
 
     /**
@@ -97,12 +100,12 @@ abstract class BaseRegionI18nPeer
      * e.g. RegionI18nPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Slug' => 2, 'Name' => 3, 'Introduction' => 4, 'Description' => 5, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'slug' => 2, 'name' => 3, 'introduction' => 4, 'description' => 5, ),
-        BasePeer::TYPE_COLNAME => array (RegionI18nPeer::ID => 0, RegionI18nPeer::LOCALE => 1, RegionI18nPeer::SLUG => 2, RegionI18nPeer::NAME => 3, RegionI18nPeer::INTRODUCTION => 4, RegionI18nPeer::DESCRIPTION => 5, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'SLUG' => 2, 'NAME' => 3, 'INTRODUCTION' => 4, 'DESCRIPTION' => 5, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'slug' => 2, 'name' => 3, 'introduction' => 4, 'description' => 5, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Slug' => 2, 'Name' => 3, 'Introduction' => 4, 'Description' => 5, 'ActiveLocale' => 6, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'slug' => 2, 'name' => 3, 'introduction' => 4, 'description' => 5, 'activeLocale' => 6, ),
+        BasePeer::TYPE_COLNAME => array (RegionI18nPeer::ID => 0, RegionI18nPeer::LOCALE => 1, RegionI18nPeer::SLUG => 2, RegionI18nPeer::NAME => 3, RegionI18nPeer::INTRODUCTION => 4, RegionI18nPeer::DESCRIPTION => 5, RegionI18nPeer::ACTIVE_LOCALE => 6, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'SLUG' => 2, 'NAME' => 3, 'INTRODUCTION' => 4, 'DESCRIPTION' => 5, 'ACTIVE_LOCALE' => 6, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'slug' => 2, 'name' => 3, 'introduction' => 4, 'description' => 5, 'active_locale' => 6, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
     );
 
     /**
@@ -182,6 +185,7 @@ abstract class BaseRegionI18nPeer
             $criteria->addSelectColumn(RegionI18nPeer::NAME);
             $criteria->addSelectColumn(RegionI18nPeer::INTRODUCTION);
             $criteria->addSelectColumn(RegionI18nPeer::DESCRIPTION);
+            $criteria->addSelectColumn(RegionI18nPeer::ACTIVE_LOCALE);
         } else {
             $criteria->addSelectColumn($alias . '.id');
             $criteria->addSelectColumn($alias . '.locale');
@@ -189,6 +193,7 @@ abstract class BaseRegionI18nPeer
             $criteria->addSelectColumn($alias . '.name');
             $criteria->addSelectColumn($alias . '.introduction');
             $criteria->addSelectColumn($alias . '.description');
+            $criteria->addSelectColumn($alias . '.active_locale');
         }
     }
 

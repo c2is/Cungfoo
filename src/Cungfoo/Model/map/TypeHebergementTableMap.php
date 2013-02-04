@@ -85,11 +85,12 @@ class TypeHebergementTableMap extends TableMap
 ),
             'active' =>  array (
   'active_column' => 'active',
+  'active_locale_column' => 'active_locale',
 ),
             'i18n' =>  array (
   'i18n_table' => '%TABLE%_i18n',
   'i18n_phpname' => '%PHPNAME%I18n',
-  'i18n_columns' => 'name,slug,indice,surface,type_terrasse,description,composition,presentation,capacite_hebergement,dimensions,agencement,equipements,annee_utilisation,remarque_1,remarque_2,remarque_3,remarque_4',
+  'i18n_columns' => 'name,slug,indice,surface,type_terrasse,description,composition,presentation,capacite_hebergement,dimensions,agencement,equipements,annee_utilisation,remarque_1,remarque_2,remarque_3,remarque_4,active_locale',
   'i18n_pk_name' => NULL,
   'locale_column' => 'locale',
   'default_locale' => 'fr',

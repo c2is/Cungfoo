@@ -45,7 +45,7 @@ class CampingController implements ControllerProviderInterface
                 ->endUse()
                 ->addAscendingOrderByColumn('RAND()')
                 ->limit(4)
-                ->find()
+                ->findActive()
             ;
 
             $nbSiteAVisiter = \Cungfoo\Model\PointInteretQuery::create()
@@ -69,7 +69,7 @@ class CampingController implements ControllerProviderInterface
                 ->endUse()
                 ->addAscendingOrderByColumn('RAND()')
                 ->limit(4)
-                ->find()
+                ->findActive()
             ;
 
             $nbEvenementsCulturels = \Cungfoo\Model\EventQuery::create()
@@ -93,18 +93,18 @@ class CampingController implements ControllerProviderInterface
                 ->filterByEtablissementId($etab->getId())
                 ->orderByAge(\Criteria::ASC)
                 ->limit(3)
-                ->find()
+                ->findActive()
             ;
 
             $multimedia = \Cungfoo\Model\MultimediaEtablissementQuery::create()
                 ->joinWithI18n($locale)
                 ->filterByEtablissementId($etab->getId())
-                ->find()
+                ->findActive()
             ;
 
             $tags = \Cungfoo\Model\TagQuery::create()
                 ->joinWithI18n($locale)
-                ->find()
+                ->findActive()
             ;
 
             $personnageAleatoire = \Cungfoo\Model\PersonnageQuery::create()

@@ -36,7 +36,7 @@
 
     {# Bloc Activité #}
     <div class="activites radiusBox greyC left clear">
-        {% for activite in theme.activites %}
+        {% for activite in theme.activitesActive %}
             <div class="miniEncart clear">
                 <img src="{{ asset(activite.vignette) }}" alt="{{ activite.name }}" class="boxborder left">
                 <div class="details">
@@ -45,7 +45,7 @@
                 </div>
             </div>
         {% endfor %}
-        {% for baignade in theme.baignades %}
+        {% for baignade in theme.baignadesActive %}
             <div class="miniEncart clear">
                 <img src="{{ asset(baignade.vignette) }}" alt="{{ baignade.name }}" class="boxborder left">
                 <div class="details">
@@ -54,7 +54,7 @@
                 </div>
             </div>
         {% endfor %}
-        {% for serviceComplementaire in theme.serviceComplementaires %}
+        {% for serviceComplementaire in theme.serviceComplementairesActive %}
             <div class="miniEncart clear">
                 <img src="{{ asset(serviceComplementaire.vignette) }}" alt="{{ serviceComplementaire.name }}" class="boxborder left">
                 <div class="details">
@@ -70,12 +70,12 @@
     <div class="events radiusBox greyC left clear">
         <h3>{{ "fiche.vous_aimerez" | trans }}</h3>
         <h4>{{ "fiche.comme" | trans }}</h4>
-        {% for personnage in theme.personnages %}
+        {% for personnage in theme.personnagesActive %}
             <div class="temoignFicheIt fish left">
                 <span class="perso">{{ personnage.prenom | trans }}</span>
                 <span class="age">{{ personnage.age }} ans</span>
                 <ul>
-                    {% for avantage in personnage.avantages %}
+                    {% for avantage in personnage.avantagesActive %}
                     <li>{{ avantage.name }}</li>
                     {% endfor %}
                 </ul>

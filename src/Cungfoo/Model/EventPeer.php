@@ -53,9 +53,7 @@ class EventPeer extends BaseEventPeer
             $query->filterByCategory($category, (!is_null($criteriaOperation)) ? $criteriaOperation : \Criteria::EQUAL);
         }
 
-        $query->filterByActive(true);
-
-        return ($count == 1) ? $query->findOne() : $query->find();
+        return ($count == 1) ? $query->findOne() : $query->findActive();
     }
 
     static public function getCountForEtablissement(Etablissement $etab, $category = null, $criteriaOperation = null)
@@ -117,7 +115,7 @@ class EventPeer extends BaseEventPeer
 
         $query->filterByActive(true);
 
-        return ($count == 1) ? $query->findOne() : $query->find();
+        return ($count == 1) ? $query->findOne() : $query->findActive();
     }
 
     static public function getForRegion(Region $region, $sort = self::NO_SORT, $count = null, $category = null, $criteriaOperation = null)
@@ -158,7 +156,7 @@ class EventPeer extends BaseEventPeer
 
         $query->filterByActive(true);
 
-        return ($count == 1) ? $query->findOne() : $query->find();
+        return ($count == 1) ? $query->findOne() : $query->findActive();
     }
 
     static public function getForVille(Ville $ville, $sort = self::NO_SORT, $count = null, $category = null, $criteriaOperation = null)
@@ -196,7 +194,7 @@ class EventPeer extends BaseEventPeer
 
         $query->filterByActive(true);
 
-        return ($count == 1) ? $query->findOne() : $query->find();
+        return ($count == 1) ? $query->findOne() : $query->findActive();
     }
 
     static public function getForDestination(Destination $destination, $sort = self::NO_SORT, $count = null, $category = null, $criteriaOperation = null)
@@ -234,6 +232,6 @@ class EventPeer extends BaseEventPeer
 
         $query->filterByActive(true);
 
-        return ($count == 1) ? $query->findOne() : $query->find();
+        return ($count == 1) ? $query->findOne() : $query->findActive();
     }
 }

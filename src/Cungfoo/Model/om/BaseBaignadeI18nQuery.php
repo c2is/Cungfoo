@@ -27,12 +27,14 @@ use Cungfoo\Model\BaignadeI18nQuery;
  * @method BaignadeI18nQuery orderByName($order = Criteria::ASC) Order by the name column
  * @method BaignadeI18nQuery orderByDescription($order = Criteria::ASC) Order by the description column
  * @method BaignadeI18nQuery orderByKeywords($order = Criteria::ASC) Order by the keywords column
+ * @method BaignadeI18nQuery orderByActiveLocale($order = Criteria::ASC) Order by the active_locale column
  *
  * @method BaignadeI18nQuery groupById() Group by the id column
  * @method BaignadeI18nQuery groupByLocale() Group by the locale column
  * @method BaignadeI18nQuery groupByName() Group by the name column
  * @method BaignadeI18nQuery groupByDescription() Group by the description column
  * @method BaignadeI18nQuery groupByKeywords() Group by the keywords column
+ * @method BaignadeI18nQuery groupByActiveLocale() Group by the active_locale column
  *
  * @method BaignadeI18nQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method BaignadeI18nQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -50,12 +52,14 @@ use Cungfoo\Model\BaignadeI18nQuery;
  * @method BaignadeI18n findOneByName(string $name) Return the first BaignadeI18n filtered by the name column
  * @method BaignadeI18n findOneByDescription(string $description) Return the first BaignadeI18n filtered by the description column
  * @method BaignadeI18n findOneByKeywords(string $keywords) Return the first BaignadeI18n filtered by the keywords column
+ * @method BaignadeI18n findOneByActiveLocale(boolean $active_locale) Return the first BaignadeI18n filtered by the active_locale column
  *
  * @method array findById(int $id) Return BaignadeI18n objects filtered by the id column
  * @method array findByLocale(string $locale) Return BaignadeI18n objects filtered by the locale column
  * @method array findByName(string $name) Return BaignadeI18n objects filtered by the name column
  * @method array findByDescription(string $description) Return BaignadeI18n objects filtered by the description column
  * @method array findByKeywords(string $keywords) Return BaignadeI18n objects filtered by the keywords column
+ * @method array findByActiveLocale(boolean $active_locale) Return BaignadeI18n objects filtered by the active_locale column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -146,7 +150,7 @@ abstract class BaseBaignadeI18nQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `locale`, `name`, `description`, `keywords` FROM `baignade_i18n` WHERE `id` = :p0 AND `locale` = :p1';
+        $sql = 'SELECT `id`, `locale`, `name`, `description`, `keywords`, `active_locale` FROM `baignade_i18n` WHERE `id` = :p0 AND `locale` = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
@@ -390,6 +394,33 @@ abstract class BaseBaignadeI18nQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(BaignadeI18nPeer::KEYWORDS, $keywords, $comparison);
+    }
+
+    /**
+     * Filter the query on the active_locale column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByActiveLocale(true); // WHERE active_locale = true
+     * $query->filterByActiveLocale('yes'); // WHERE active_locale = true
+     * </code>
+     *
+     * @param     boolean|string $activeLocale The value to use as filter.
+     *              Non-boolean arguments are converted using the following rules:
+     *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     *              Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return BaignadeI18nQuery The current query, for fluid interface
+     */
+    public function filterByActiveLocale($activeLocale = null, $comparison = null)
+    {
+        if (is_string($activeLocale)) {
+            $active_locale = in_array(strtolower($activeLocale), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+        }
+
+        return $this->addUsingAlias(BaignadeI18nPeer::ACTIVE_LOCALE, $activeLocale, $comparison);
     }
 
     /**

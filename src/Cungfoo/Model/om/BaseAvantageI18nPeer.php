@@ -37,13 +37,13 @@ abstract class BaseAvantageI18nPeer
     const TM_CLASS = 'AvantageI18nTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 4;
+    const NUM_COLUMNS = 5;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 4;
+    const NUM_HYDRATE_COLUMNS = 5;
 
     /** the column name for the id field */
     const ID = 'avantage_i18n.id';
@@ -56,6 +56,9 @@ abstract class BaseAvantageI18nPeer
 
     /** the column name for the description field */
     const DESCRIPTION = 'avantage_i18n.description';
+
+    /** the column name for the active_locale field */
+    const ACTIVE_LOCALE = 'avantage_i18n.active_locale';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -76,12 +79,12 @@ abstract class BaseAvantageI18nPeer
      * e.g. AvantageI18nPeer::$fieldNames[AvantageI18nPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Name', 'Description', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'name', 'description', ),
-        BasePeer::TYPE_COLNAME => array (AvantageI18nPeer::ID, AvantageI18nPeer::LOCALE, AvantageI18nPeer::NAME, AvantageI18nPeer::DESCRIPTION, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'NAME', 'DESCRIPTION', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'name', 'description', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Name', 'Description', 'ActiveLocale', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'name', 'description', 'activeLocale', ),
+        BasePeer::TYPE_COLNAME => array (AvantageI18nPeer::ID, AvantageI18nPeer::LOCALE, AvantageI18nPeer::NAME, AvantageI18nPeer::DESCRIPTION, AvantageI18nPeer::ACTIVE_LOCALE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'NAME', 'DESCRIPTION', 'ACTIVE_LOCALE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'name', 'description', 'active_locale', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
     );
 
     /**
@@ -91,12 +94,12 @@ abstract class BaseAvantageI18nPeer
      * e.g. AvantageI18nPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Name' => 2, 'Description' => 3, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'description' => 3, ),
-        BasePeer::TYPE_COLNAME => array (AvantageI18nPeer::ID => 0, AvantageI18nPeer::LOCALE => 1, AvantageI18nPeer::NAME => 2, AvantageI18nPeer::DESCRIPTION => 3, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'NAME' => 2, 'DESCRIPTION' => 3, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'description' => 3, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Name' => 2, 'Description' => 3, 'ActiveLocale' => 4, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'description' => 3, 'activeLocale' => 4, ),
+        BasePeer::TYPE_COLNAME => array (AvantageI18nPeer::ID => 0, AvantageI18nPeer::LOCALE => 1, AvantageI18nPeer::NAME => 2, AvantageI18nPeer::DESCRIPTION => 3, AvantageI18nPeer::ACTIVE_LOCALE => 4, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'NAME' => 2, 'DESCRIPTION' => 3, 'ACTIVE_LOCALE' => 4, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'description' => 3, 'active_locale' => 4, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
     );
 
     /**
@@ -174,11 +177,13 @@ abstract class BaseAvantageI18nPeer
             $criteria->addSelectColumn(AvantageI18nPeer::LOCALE);
             $criteria->addSelectColumn(AvantageI18nPeer::NAME);
             $criteria->addSelectColumn(AvantageI18nPeer::DESCRIPTION);
+            $criteria->addSelectColumn(AvantageI18nPeer::ACTIVE_LOCALE);
         } else {
             $criteria->addSelectColumn($alias . '.id');
             $criteria->addSelectColumn($alias . '.locale');
             $criteria->addSelectColumn($alias . '.name');
             $criteria->addSelectColumn($alias . '.description');
+            $criteria->addSelectColumn($alias . '.active_locale');
         }
     }
 

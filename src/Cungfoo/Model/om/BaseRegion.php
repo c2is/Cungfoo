@@ -2867,6 +2867,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
 
     // active behavior
 
+
     /**
      * return true is the object is active
      *
@@ -2877,6 +2878,52 @@ abstract class BaseRegion extends BaseObject implements Persistent
         return $this->getActive();
     }
 
+    /**
+     * return true is the object is active locale
+     *
+     * @return boolean
+     */
+    public function isActiveLocale()
+    {
+        return $this->getActiveLocale();
+    }
+
+    public function getBonPlansActive($criteria = null, PropelPDO $con = null)
+    {
+        if ($criteria === null)
+        {
+            $criteria = new \Criteria();
+        }
+
+        $criteria->add(\Cungfoo\Model\BonPlanPeer::ACTIVE, true);
+
+
+        $criteria->addAlias('i18n_locale', \Cungfoo\Model\BonPlanI18nPeer::TABLE_NAME);
+        $criteria->addJoin(\Cungfoo\Model\BonPlanPeer::ID, \Cungfoo\Model\BonPlanI18nPeer::alias('i18n_locale', \Cungfoo\Model\BonPlanI18nPeer::ID), \Criteria::LEFT_JOIN);
+        $criteria->add(\Cungfoo\Model\BonPlanI18nPeer::alias('i18n_locale', \Cungfoo\Model\BonPlanI18nPeer::ACTIVE_LOCALE), true);
+        $criteria->add(\Cungfoo\Model\BonPlanI18nPeer::alias('i18n_locale', \Cungfoo\Model\BonPlanI18nPeer::LOCALE), $this->currentLocale);
+
+        return $this->getBonPlans($criteria, $con);
+    }
+
+    public function getVillesActive($criteria = null, PropelPDO $con = null)
+    {
+
+        if ($criteria === null)
+        {
+            $criteria = new \Criteria();
+        }
+
+        $criteria->add(\Cungfoo\Model\VillePeer::ACTIVE, true);
+
+
+        $criteria->addAlias('i18n_locale', \Cungfoo\Model\VilleI18nPeer::TABLE_NAME);
+        $criteria->addJoin(\Cungfoo\Model\VillePeer::ID, \Cungfoo\Model\VilleI18nPeer::alias('i18n_locale', \Cungfoo\Model\VilleI18nPeer::ID), \Criteria::LEFT_JOIN);
+        $criteria->add(\Cungfoo\Model\VilleI18nPeer::alias('i18n_locale', \Cungfoo\Model\VilleI18nPeer::ACTIVE_LOCALE), true);
+        $criteria->add(\Cungfoo\Model\VilleI18nPeer::alias('i18n_locale', \Cungfoo\Model\VilleI18nPeer::LOCALE), $this->currentLocale);
+
+        return $this->getVilles($criteria, $con);
+    }
     // i18n behavior
 
     /**
@@ -3068,6 +3115,30 @@ abstract class BaseRegion extends BaseObject implements Persistent
          */
         public function setDescription($v)
         {    $this->getCurrentTranslation()->setDescription($v);
+
+        return $this;
+    }
+
+
+        /**
+         * Get the [active_locale] column value.
+         *
+         * @return boolean
+         */
+        public function getActiveLocale()
+        {
+        return $this->getCurrentTranslation()->getActiveLocale();
+    }
+
+
+        /**
+         * Set the value of [active_locale] column.
+         *
+         * @param boolean $v new value
+         * @return RegionI18n The current object (for fluent API support)
+         */
+        public function setActiveLocale($v)
+        {    $this->getCurrentTranslation()->setActiveLocale($v);
 
         return $this;
     }

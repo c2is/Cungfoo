@@ -47,6 +47,7 @@ class ThematiqueI18nTableMap extends TableMap
         $this->addColumn('name', 'Name', 'VARCHAR', true, 255, null);
         $this->addColumn('description', 'Description', 'VARCHAR', false, 255, null);
         $this->addColumn('keywords', 'Keywords', 'VARCHAR', false, 255, null);
+        $this->addColumn('active_locale', 'ActiveLocale', 'BOOLEAN', false, 1, false);
         // validators
     } // initialize()
 

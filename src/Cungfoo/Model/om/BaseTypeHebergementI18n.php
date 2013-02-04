@@ -161,6 +161,13 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
     protected $remarque_4;
 
     /**
+     * The value for the active_locale field.
+     * Note: this column has a database default value of: false
+     * @var        boolean
+     */
+    protected $active_locale;
+
+    /**
      * @var        TypeHebergement
      */
     protected $aTypeHebergement;
@@ -188,6 +195,7 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
     public function applyDefaultValues()
     {
         $this->locale = 'fr';
+        $this->active_locale = false;
     }
 
     /**
@@ -388,6 +396,16 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
     public function getRemarque4()
     {
         return $this->remarque_4;
+    }
+
+    /**
+     * Get the [active_locale] column value.
+     *
+     * @return boolean
+     */
+    public function getActiveLocale()
+    {
+        return $this->active_locale;
     }
 
     /**
@@ -794,6 +812,35 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
     } // setRemarque4()
 
     /**
+     * Sets the value of the [active_locale] column.
+     * Non-boolean arguments are converted using the following rules:
+     *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     *
+     * @param boolean|integer|string $v The new value
+     * @return TypeHebergementI18n The current object (for fluent API support)
+     */
+    public function setActiveLocale($v)
+    {
+        if ($v !== null) {
+            if (is_string($v)) {
+                $v = in_array(strtolower($v), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+            } else {
+                $v = (boolean) $v;
+            }
+        }
+
+        if ($this->active_locale !== $v) {
+            $this->active_locale = $v;
+            $this->modifiedColumns[] = TypeHebergementI18nPeer::ACTIVE_LOCALE;
+        }
+
+
+        return $this;
+    } // setActiveLocale()
+
+    /**
      * Indicates whether the columns in this object are only set to default values.
      *
      * This method can be used in conjunction with isModified() to indicate whether an object is both
@@ -804,6 +851,10 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
     public function hasOnlyDefaultValues()
     {
             if ($this->locale !== 'fr') {
+                return false;
+            }
+
+            if ($this->active_locale !== false) {
                 return false;
             }
 
@@ -848,6 +899,7 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
             $this->remarque_2 = ($row[$startcol + 16] !== null) ? (string) $row[$startcol + 16] : null;
             $this->remarque_3 = ($row[$startcol + 17] !== null) ? (string) $row[$startcol + 17] : null;
             $this->remarque_4 = ($row[$startcol + 18] !== null) ? (string) $row[$startcol + 18] : null;
+            $this->active_locale = ($row[$startcol + 19] !== null) ? (boolean) $row[$startcol + 19] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -856,7 +908,7 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 19; // 19 = TypeHebergementI18nPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 20; // 20 = TypeHebergementI18nPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating TypeHebergementI18n object", $e);
@@ -1137,6 +1189,9 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(TypeHebergementI18nPeer::REMARQUE_4)) {
             $modifiedColumns[':p' . $index++]  = '`remarque_4`';
         }
+        if ($this->isColumnModified(TypeHebergementI18nPeer::ACTIVE_LOCALE)) {
+            $modifiedColumns[':p' . $index++]  = '`active_locale`';
+        }
 
         $sql = sprintf(
             'INSERT INTO `type_hebergement_i18n` (%s) VALUES (%s)',
@@ -1204,6 +1259,9 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
                         break;
                     case '`remarque_4`':
                         $stmt->bindValue($identifier, $this->remarque_4, PDO::PARAM_STR);
+                        break;
+                    case '`active_locale`':
+                        $stmt->bindValue($identifier, (int) $this->active_locale, PDO::PARAM_INT);
                         break;
                 }
             }
@@ -1401,6 +1459,9 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
             case 18:
                 return $this->getRemarque4();
                 break;
+            case 19:
+                return $this->getActiveLocale();
+                break;
             default:
                 return null;
                 break;
@@ -1449,6 +1510,7 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
             $keys[16] => $this->getRemarque2(),
             $keys[17] => $this->getRemarque3(),
             $keys[18] => $this->getRemarque4(),
+            $keys[19] => $this->getActiveLocale(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aTypeHebergement) {
@@ -1545,6 +1607,9 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
             case 18:
                 $this->setRemarque4($value);
                 break;
+            case 19:
+                $this->setActiveLocale($value);
+                break;
         } // switch()
     }
 
@@ -1588,6 +1653,7 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
         if (array_key_exists($keys[16], $arr)) $this->setRemarque2($arr[$keys[16]]);
         if (array_key_exists($keys[17], $arr)) $this->setRemarque3($arr[$keys[17]]);
         if (array_key_exists($keys[18], $arr)) $this->setRemarque4($arr[$keys[18]]);
+        if (array_key_exists($keys[19], $arr)) $this->setActiveLocale($arr[$keys[19]]);
     }
 
     /**
@@ -1618,6 +1684,7 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(TypeHebergementI18nPeer::REMARQUE_2)) $criteria->add(TypeHebergementI18nPeer::REMARQUE_2, $this->remarque_2);
         if ($this->isColumnModified(TypeHebergementI18nPeer::REMARQUE_3)) $criteria->add(TypeHebergementI18nPeer::REMARQUE_3, $this->remarque_3);
         if ($this->isColumnModified(TypeHebergementI18nPeer::REMARQUE_4)) $criteria->add(TypeHebergementI18nPeer::REMARQUE_4, $this->remarque_4);
+        if ($this->isColumnModified(TypeHebergementI18nPeer::ACTIVE_LOCALE)) $criteria->add(TypeHebergementI18nPeer::ACTIVE_LOCALE, $this->active_locale);
 
         return $criteria;
     }
@@ -1707,6 +1774,7 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
         $copyObj->setRemarque2($this->getRemarque2());
         $copyObj->setRemarque3($this->getRemarque3());
         $copyObj->setRemarque4($this->getRemarque4());
+        $copyObj->setActiveLocale($this->getActiveLocale());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -1840,6 +1908,7 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
         $this->remarque_2 = null;
         $this->remarque_3 = null;
         $this->remarque_4 = null;
+        $this->active_locale = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();
