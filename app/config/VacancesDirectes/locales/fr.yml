@@ -818,3 +818,7 @@ couloir:
     confirmation: "Confirmation"
     title: "Bienvenue dans l’espace de"
     title_reservation: "Réservation"
+
+err404:
+    title: "Désolé, cette page n'existe pas..."
+    content: "Retourner sur la <a href=\"%link%\">page d'accueil</a>."
