@@ -9,6 +9,7 @@ use \PDOStatement;
 use \Propel;
 use \PropelException;
 use \PropelPDO;
+use Cungfoo\Model\BonPlanEtablissementPeer;
 use Cungfoo\Model\CategoriePeer;
 use Cungfoo\Model\Etablissement;
 use Cungfoo\Model\EtablissementActivitePeer;
@@ -555,6 +556,9 @@ abstract class BaseEtablissementPeer
         // Invalidate objects in TopCampingPeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
         TopCampingPeer::clearInstancePool();
+        // Invalidate objects in BonPlanEtablissementPeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        BonPlanEtablissementPeer::clearInstancePool();
         // Invalidate objects in EtablissementI18nPeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
         EtablissementI18nPeer::clearInstancePool();

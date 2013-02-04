@@ -2,6 +2,8 @@ languages:
     fr:
         name:  locale.french
         domain: ##domain_fr##
+        resalys_username: web_fr
     de:
         name:  locale.german
         domain: ##domain_de##
+        resalys_username: web_de

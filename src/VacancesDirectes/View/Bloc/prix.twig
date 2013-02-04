@@ -1,6 +1,6 @@
 {% if blocPrix.adult_price_without_discounts != 0 %}
 <div id="dispoBloc" class="proposal radiusBox fushia promo arrowLeft">
-    <p class="proposalDates">
+    <p class="proposalTitle">
         {% if blocPrix.proposal_key %}
         {{ "listing.du" | trans }} {{ blocPrix.start_date }} {{ "listing.au" | trans }} {{ blocPrix.end_date }}
         {% else %}
@@ -8,9 +8,12 @@
         {% endif %}
     </p>
     {% if blocPrix.proposal_key %}
-    <p class="proposalType">{{ blocPrix.room_type_label }}</p>
+    <p class="proposalType">{% if blocPrix.category_hebergement %}{{ blocPrix.category_hebergement }} - {% endif %}{{ blocPrix.room_type_label }}</p>
     {% else %}
-    <p class="proposalType">{{ "listing.du" | trans }} {{ blocPrix.start_date }} {{ "listing.au" | trans }} {{ blocPrix.end_date }}</p>
+    <p class="proposalDates">{{ "listing.du" | trans }} {{ blocPrix.start_date }} {{ "listing.au" | trans }} {{ blocPrix.end_date }}</p>
+    {% endif %}
+    {% if blocPrix.type_hebergement %}
+    <p class="proposalType">{{ blocPrix.category_hebergement }} - {{ blocPrix.type_hebergement }}
     {% endif %}
 
     <div class="stain cover">

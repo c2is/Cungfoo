@@ -54,7 +54,7 @@ class BonPlanRegionTableMap extends TableMap
     public function buildRelations()
     {
         $this->addRelation('BonPlan', 'Cungfoo\\Model\\BonPlan', RelationMap::MANY_TO_ONE, array('bon_plan_id' => 'id', ), 'CASCADE', null);
-        $this->addRelation('Region', 'Cungfoo\\Model\\Region', RelationMap::MANY_TO_ONE, array('region_id' => 'id', ), null, null);
+        $this->addRelation('Region', 'Cungfoo\\Model\\Region', RelationMap::MANY_TO_ONE, array('region_id' => 'id', ), 'CASCADE', null);
     } // buildRelations()
 
 } // BonPlanRegionTableMap

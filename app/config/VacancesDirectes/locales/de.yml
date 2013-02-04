@@ -4,6 +4,7 @@ seo:
         pays: "günstiger Campingplatz %pays%"
         region: "Günstige Vermietung von Wohnwagen %region%, Campingplatz %region%"
         ville: "Günstiger Campingplatz %ville%, günstige Vermietung von Wohnwagen %ville%"
+        destination: "Günstiger Campingplatz in %destination%"
         camping: "Campingplatz %nom%, Campingplatz %ville%"
         camping_suffix: "mit Swimmingpool"
         dernieres_minutes: "Last Minute Camping, Last Minute Vermietung Wohnwagen"
@@ -17,55 +18,56 @@ seo:
         event: "%event% : %ville%"
         location:
             list:
-                categorie: "Vermietung Campingplatz %type% Frankreich, Italien, Spanien"
-                capacite: "Vermietung %type% Campingplatz Frankreich, Italien, Spanien"
+                categorie: "Vermietung %type% Campingplatz Frankreich, Italien, Spanien"
+                capacite: "Vermietung Campingplatz %type% Frankreich, Italien, Spanien"
             fiche: "Vermietung %type% %personnes% Personen Campingplatz: %name%"
     meta:
         default: "Vacances Directes: Vermietung von Wohnwagen auf zahlreichen Campingplätzen in Frankreich, Italien und Spanien für einen geselligen und entspannten Urlaub."
-        pays: "Vacances Directes: Entdecken Sie unsere Angebote für die günstige Vermietung von Wohnwagen in %pays% für einen sonnigen Urlaub auf dem Campingplatz und buchen Sie online."
+        pays: "Vacances Directes: Entdecken Sie unsere günstigen Angebote für die Vermietung von Wohnwagen in %pays% für einen sonnigen Urlaub auf dem Campingplatz und buchen Sie online."
         region: "Buchen Sie Ihren künftigen Urlaub in der Region %region% in %pays% mit Vacances Directes online (günstige Vermietung von Wohnwagen auf dem Campingplatz)."
-        ville: "Entdecken Sie alle von Vacances Directes (günstige Vermietung von Wohnwagen) angebotenen Campingplätze in %ville% (%region%) und buchen Sie Ihren Urlaub online. "
+        ville: "Entdecken Sie alle von Vacances Directes (günstige Vermietung von Wohnwagen) angebotenen Campingplätze in %ville% (%region%) und buchen Sie Ihren Aufenthalt online."
+        destination: "Vacances Directes: Entdecken Sie alle unsere Angebote für die günstige Vermietung von Wohnwagen in %pays% für einen sonnigen Urlaub auf dem Campingplatz und buchen Sie online."
         camping: "Buchen Sie Ihren künftigen Urlaub auf dem Campingplatz %nom% mit Vacances Directes online: ein %nbEtoiles% Campingplatz mit Swimmingpool in %ville%."
         dernieres_minutes: "Entdecken Sie alle Last Minute Angebote von Vacances Directes für die Vermietung von Wohnwagen auf dem Campingplatz und buchen Sie online."
         early_booking: "Entdecken Sie alle Frühbucherangebote von Vacances Directes für die Vermietung von Wohnwagen auf dem Campingplatz und buchen Sie online."
         dispo: "Liste - Campingplätze"
         couloir: "Reservierung"
         theme: "%theme%"
-        bonPlan: "Entdecken Sie alle Angebote von Vacances Directes für die Vermietung von Wohnwagen auf dem Campingplatz für den %bonPlan% und buchen Sie online."
+        bonPlan: "Entdecken Sie alle unsere Campingangebote: \"%bonPlan%\" und buchen Sie Ihren künftigen Urlaub auf der Internetseite Vacances Directes online."
         topCamping: "Entdecken Sie unsere 10 besten Reiseziele für einen perfekten Campingurlaub mit Vacances Directes, der Spezialist für die Vermietung von Wohnwagen."
         poi: "%poi% in %ville%, besichtigen Sie diesen Ort und verbringen Sie Ihren Urlaub mit Vacances Directes auf unseren nahegelegenen Campingplätzen."
         event: "%event% in %ville%. Verpassen Sie nicht dieses Event und verbringen Sie Ihren Urlaub mit Vacances Directes auf unseren nahegelegenen Campingplätzen."
         location:
             list:
-                categorie: "%type% Vermietung auf zahlreichen erstklassigen Campingplätzen in Frankreich, Spanien und Italien mit Vacances Directes."
+                categorie: "Sie möchten für Ihren künftigen Urlaub eine(n) %type% mieten? Entdecken Sie alle unsere Campingplätze, die diese Art Unterkunft in Frankreich, Spanien und Italien anbieten."
                 capacite:  "Urlaubsvermietung für  %type% auf zahlreichen erstklassigen Campingplätzen in Frankreich, Spanien und Italien mit Vacances Directes."
-            fiche: "Verbringen Sie Ihren nächsten %type% %name% Urlaub für %personnes% mit Vacances Directes auf zahlreichen erstklassigen Campingplätzen."
+            fiche: "Verbringen Sie Ihren nächsten Urlaub mit Vacances Directes im %type% %name% auf zahlreichen erstklassigen Campingplätzen."
     url:
-        prefix: "Campingplatz"
-        catalogue: "Katalog"
-        dispo: "verfügbar"
+        prefix: "campingplatz"
+        catalogue: "katalog"
+        dispo: "verfugbar"
         couloir:
-            index: "Reservierung"
-            detail: "Informationen-zum-Urlaub"
-            recapitulatif: "Überblick"
-            confirmation: "Bestätigung"
-        destinations: "Reiseziele"
-        bonsplans: "Geheimtipps"
+            index: "reservierung"
+            detail: "informationen-zum-urlaub"
+            recapitulatif: "uberblick"
+            confirmation: "bestatigung"
+        destinations: "reiseziele"
+        bonsplans: "geheimtipps"
         compte:
-            index: "Konto"
-            coordonnees: "Kontaktdaten"
-            brochure: "Anforderung-Broschüre"
-            reservations: "Reservierungen"
-            fidelite: "Treuevorteile"
-            parrainage: "Werben"
-        weekends: "Ihre-Wochenendtrips"
-        lieuVisiter: "zu-besichtigende-Orte"
-        evenement: "Event"
+            index: "konto"
+            coordonnees: "kontaktdaten"
+            brochure: "anforderung-broschure"
+            reservations: "reservierungen"
+            fidelite: "treuevorteile"
+            parrainage: "werben"
+        weekends: "ihre-wochenendtrips"
+        lieuVisiter: "zu-besichtigende-orte"
+        evenement: "event"
         assurance:
-            index: "Versicherung"
-            confirmation: "Bestätigung"
-        locations: "Vermietungsangebote"
-        topCampings: "beste-Campingplätze"
+            index: "versicherung"
+            confirmation: "bestatigung"
+        locations: "vermietungsangebote"
+        topCampings: "beste-campingplatze"
 
 pays:
     afghanistan: "Afghanistan"
@@ -283,7 +285,7 @@ destination:
     images_region_title: "Die Region in Bildern"
     images_ville_title: "Die Stadt in Bildern"
     pays_title: "Günstig campen in %item%"
-    region_title: "Günstige Vermietung Wohnwagen %item% auf dem Campingplatz"
+    region_title: "Vermietung Wohnwagen %item%"
     ville_title: "Günstig campen %item% (Vermietung Wohnwagen)"
     camping_title: "Campingplatz %ville%"
     retour_bottom: "Zurück zur Liste"
@@ -293,6 +295,8 @@ destination:
     events_prefixe_subtitle: "In"
     events_suffixe_subtitle: "..."
     campings_selection_title: "Unsere Auswahl an Campingplätzen"
+    destination_title: "Günstiger Campingplatz in %item%"
+    pas_cher: "günstig"
 
 listing_destination:
     campings_map_title: "Vacances Directes Campingplätze"
@@ -304,8 +308,9 @@ listing:
     au: "bis zum"
     no_results_title: "Ihre Suche ergab keine Treffer."
     no_results: "Bitte geben Sie neue Suchkriterien ein."
+    nos_locations_disponibles: "Unsere verfügbaren Vermietungsangebote"
 
-menu_destination.accroche: "3 Länder, 23 touristische Regionen, Ihr Urlaub mit Vacances Directes."
+menu_destination.accroche: "3 Länder, 34 touristische Regionen, Ihr Urlaub mit Vacances Directes."
 
 menu_bon_plan:
     accroche:
@@ -313,7 +318,7 @@ menu_bon_plan:
         suffix: "Geheimtipp"
     newsletter:
         title: "Newsletter abonnieren"
-        link: Anmelden"
+        link: "Anmelden"
     autres_offres:
         title: "Unsere anderen Angebote"
     dispos:
@@ -336,9 +341,9 @@ menu:
     vacances: "Ihr Urlaub"
     weekends: "Ihre Wochenendtrips"
     tous_camping: "Alle unsere Campingplätze"
-    decouvrer_locations: "Entdecken Sie unsere Vermietungsangebote"
-    decouvrer_locations_type: "Nach Art"
-    decouvrer_locations_capacite: "Nach Kapazität"
+    decouvrez_locations: "Entdecken Sie unsere Vermietungsangebote"
+    decouvrez_locations_type: "Nach Art"
+    decouvrez_locations_capacite: "Nach Kapazität"
 
 etablissement:
     activites: "Liste der Aktivitäten"
@@ -368,6 +373,7 @@ date_search:
     submit: "Finden"
     campings: "Campingplätze"
     ou: "oder"
+    nuits: "nachts"
 
 
 "Les vacances à": "Urlaub in"
@@ -385,19 +391,23 @@ header:
     information: "Informationen & Reservierungen"
     telephone:
         number: "0033 (0) 825 133 400"
-        price: "(0,15/Min)"
+        price: ""
     130_camping: "mehr als 170 Campingplätze in Frankreich, Spanien & Italien"
     location_mobil_home: "Vermietung von Wohnwagen auf Campingplätzen (Frankreich, Spanien, Italien und Portugal)"
 
 fiche:
     camping: "Campingplatz"
     situer_carte: "Auf der Karte anzeigen"
+    description_title: "Beschreibung"
+    plan_camping: "Plan des Campingplatzes"
+    activite_event: "Liste der Aktivitäten und Veranstaltungen"
     le_camping: "Der Campingplatz"
     les_locations: "Vermietungsangebote"
     sur_place: "Vor Ort"
     a_proximite: "in der Nähe"
     infos_pratiques: "Praktische Infos"
     video: "Video"
+    photo: "Foto"
     emplacements: "Stellplätze"
     ouvert_du: "Geöffnet ab"
     vous_aimerez: "Das wird Ihnen gefallen"
@@ -434,13 +444,19 @@ fiche:
     baignades:
         top: "Baden"
         bottom: "und Wellness"
+    retour: "Zurück"
+    ouvert_au: "bis zum"
+    plan:
+        legende: "Legende zum Plan des Campingplatzes"
+    bloc_prix:
+        type_hebergement: "für ein(e/n) %categorie% - %type%"
 
 home:
     topcamping: "Beste Campingplätze"
     topcamping.link: "Alle besten Campingplätze"
     vacances_directes_cest: "Vacances Directes steht für"
     4_pays: "3 Länder"
-    26_regions: "23 touristische"
+    26_regions: "34 Regionen"
     touristiques: "Regionen"
     destination: "Reiseziel"
     destination_france: "Reiseziel Frankreich"
@@ -454,13 +470,19 @@ home:
 
 compte:
     title: "Kundenbereich"
+    placeholder:
+        name: "Benutzername"
+        password: "Passwort"
+    login:
+        error: "Die von Ihnen eingegebenen Login-Informationen sind nicht korrekt.\nVersuchen Sie es bitte noch einmal (vergewissern Sie sich, dass die Umschalttaste nicht aktiviert ist)."
 
 general:
     a_partir_de: "ab"
+    meilleur_prix: "Unser bester Preis"
     jouer: "Spielen"
     en_savoir_plus: "Mehr erfahren"
     la_nuit: "nachts"
-    idees_week_end: "Wochenendtrips"
+    idees_week_end: "Geheimtipps"
     filter_par: "Filtern nach"
     campings_vacances_directes: "Vacances Directes Campingplätze"
     decouvrir_le_camping: "Den Campingplatz entdecken"
@@ -470,6 +492,7 @@ general:
     plus_evenements: "Mehr Veranstaltungen"
     decouvrir: "Entdecken"
     reserver: "Buchen"
+    profite: "Zuschlagen"
     la_semaine: "die Woche"
     contre_proposition: "ACHTUNG! Ihre Suche ergibt keine Treffer. Die untenstehenden Angebote sind diejenigen, die Ihrer Suche am nächsten kommen."
     submit: "Senden"
@@ -497,7 +520,16 @@ filtres:
     filtrer: "Filtern"
 
 footer:
-    contact: "Kontakt"
+    contact:
+        title: "Kontakt"
+        tel: "0033 (0)825 133 400"
+        fax: "Fax: 0033 (0)2 96 39 97 81"
+        adresse:
+            name: "Vacances directes"
+            lieu_dit: "Ettlinger-Tor-Platz 3"
+            rue: "D-76137 Karlsruhe"
+            ville: ""
+            code_postal: ""
     charte_qualite: "Qualitätscharta"
     conditions_generales_de_location: "Allgemeine Vermietungsbedingungen"
     faq: "FAQ"
@@ -509,9 +541,6 @@ footer:
     cb_visa: "Kreditkarte Visa"
     masterCard: "MasterCard"
     nous_joindre: "Uns kontaktieren"
-    contact:
-        tel: "0033 (0)825 133 400"
-        fax: "Fax: 0033 (0)2 96 39 97 81"
     nous_contacter: "Uns kontaktieren"
     demande_catalogue: "Kataloganfrage"
     description_catalogue: "Hoc inmaturo interitu ipse quoque sui pertaesus excessit e vita aetatis."
@@ -556,7 +585,7 @@ encart_vacances_directes:
     item_1: "Botschafter, um Sie willkommen zu heißen"
     item_2: "Sorgfältig ausgewählte Campingplätze"
     item_3: "Eine zu 100% gesicherte Website"
-    item_4: "Unterkünfte mit allem Komfort für einen Urlaub, der Sie auf andere Gedanken bringt"
+    item_4: "Wohnwagen mit allem Komfort für einen Urlaub, der Sie auf andere Gedanken bringt"
 
 encart_hebergement:
     title: "Vacances Directes"
@@ -589,6 +618,8 @@ semainier:
     type_hebergement_title: "Wählen Sie Ihren Zeitraum und die Art Ihrer Unterkunft"
     type_hebergement_desc: "Überprüfen Sie die Verfügbarkeiten für jeden einzelnen Monat und klicken Sie auf den Zeitraum und die Unterkunft Ihrer Wahl, um zu buchen."
     indisponible: "Nicht verfügbar"
+    type_hebergement:
+        details: Details
 
 resalys:
     creer_compte: "Mein Konto erstellen"
@@ -734,3 +765,41 @@ global:
         password: "Passwort"
         forget: "Passwort vergessen?"
         submit: "Anmelden"
+
+bon_plan:
+    title: "Campingplatz: %bonPlan%"
+
+location:
+    list:
+        title: "Unsere Unterkünfte: %type%"
+        selection: "Unsere Auswahl an Unterkünften"
+        hebergements:
+            savoir_plus: "Mehr erfahren"
+            plus_de_resultats: "Mehr Ergebnisse"
+            nb_places: "%nbPlaces% Plätze"
+        notre_selection: "Unsere Auswahl"
+    fiche:
+        subtitle: "Vermietung %type% %nbPlaces% Personen"
+        voir_les_campings: "Campingplätze ansehen"
+        onglet:
+            logement:
+                title: "Die Unterkunft"
+                informations_pratiques:
+                    title: "Praktische Informationen"
+                    capacite: "Kapazität"
+                    dimensions: "Größe"
+                    agencement: "Aufbau"
+                    equipements: "Ausstattung"
+                    annee_utilisation: "Nutzungsjahr"
+                lien_campings: "Die Campingplätze"
+            campings:
+                title: "Die Campingplätze"
+                selection:
+                    title: "Unsere Auswahl an Campingplätzen"
+                lien_logement: "Die Unterkunft"
+
+"The CSRF token is invalid. Please try to resubmit the form.": "Ihre Sitzung ist abgelaufen. Bitte geben Sie das Formular noch einmal ein."
+
+share:
+    facebook: "Auf Facebook teilen"
+    twitter: "Auf Twitter teilen"

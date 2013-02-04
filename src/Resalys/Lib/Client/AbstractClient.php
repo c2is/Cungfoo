@@ -12,6 +12,7 @@ abstract class AbstractClient
 
     protected $type             = array();
     protected $data             = array();
+    protected $locale           = null;
     protected $rootdir          = '';
 
     protected $location         = null;
@@ -23,9 +24,10 @@ abstract class AbstractClient
 
     abstract protected function getEnvelopeFormat();
 
-    public function __construct($rootdir, $configFiles = array())
+    public function __construct($rootdir, $locale = null, $configFiles = array())
     {
         $this->rootdir = $rootdir;
+        $this->locale  = $locale;
 
         // load default configurations
         $this->loadClientConfig($this->rootdir . (empty($configFiles['client_file']) ? self::DEFAULT_CLIENT_FILE : $configFiles['client_file']));
@@ -83,20 +85,27 @@ abstract class AbstractClient
             throw new \Exception("No 'languages' key in languages configuration file : ".$languagesConfigFile);
         }
 
-        $languagesConfig = array_keys($languagesConfig['languages']);
-        if (!count($languagesConfig))
+        $languagesKeys = array_keys($languagesConfig['languages']);
+        if (!count($languagesKeys))
         {
             throw new \Exception("No language in languages configuration file : ".$languagesConfigFile);
         }
 
+        $this->addOption('languages', array_values($languagesKeys));
 
-        $this->addOption('languages', array_values($languagesConfig));
+        if (null !== $this->locale && isset($languagesConfig['languages'][$this->locale]) && isset($languagesConfig['languages'][$this->locale]['resalys_username']))
+        {
+            $this->addOption('username', $languagesConfig['languages'][$this->locale]['resalys_username']);
+            $this->addOption('webuser', $languagesConfig['languages'][$this->locale]['resalys_username']);
+        }
     }
 
     public function parse()
     {
         foreach ($this->getOption('languages', array('FR')) as $language)
         {
+            $this->addOption('language', strtoupper($language));
+
             foreach ($this->getRequests() as $request)
             {
                 try

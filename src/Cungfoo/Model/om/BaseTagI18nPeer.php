@@ -37,13 +37,13 @@ abstract class BaseTagI18nPeer
     const TM_CLASS = 'TagI18nTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 3;
+    const NUM_COLUMNS = 4;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 3;
+    const NUM_HYDRATE_COLUMNS = 4;
 
     /** the column name for the id field */
     const ID = 'tag_i18n.id';
@@ -53,6 +53,9 @@ abstract class BaseTagI18nPeer
 
     /** the column name for the name field */
     const NAME = 'tag_i18n.name';
+
+    /** the column name for the active_locale field */
+    const ACTIVE_LOCALE = 'tag_i18n.active_locale';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -73,12 +76,12 @@ abstract class BaseTagI18nPeer
      * e.g. TagI18nPeer::$fieldNames[TagI18nPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Name', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'name', ),
-        BasePeer::TYPE_COLNAME => array (TagI18nPeer::ID, TagI18nPeer::LOCALE, TagI18nPeer::NAME, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'NAME', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'name', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Name', 'ActiveLocale', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'name', 'activeLocale', ),
+        BasePeer::TYPE_COLNAME => array (TagI18nPeer::ID, TagI18nPeer::LOCALE, TagI18nPeer::NAME, TagI18nPeer::ACTIVE_LOCALE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'NAME', 'ACTIVE_LOCALE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'name', 'active_locale', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
     );
 
     /**
@@ -88,12 +91,12 @@ abstract class BaseTagI18nPeer
      * e.g. TagI18nPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Name' => 2, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, ),
-        BasePeer::TYPE_COLNAME => array (TagI18nPeer::ID => 0, TagI18nPeer::LOCALE => 1, TagI18nPeer::NAME => 2, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'NAME' => 2, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Name' => 2, 'ActiveLocale' => 3, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'activeLocale' => 3, ),
+        BasePeer::TYPE_COLNAME => array (TagI18nPeer::ID => 0, TagI18nPeer::LOCALE => 1, TagI18nPeer::NAME => 2, TagI18nPeer::ACTIVE_LOCALE => 3, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'NAME' => 2, 'ACTIVE_LOCALE' => 3, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'active_locale' => 3, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
     );
 
     /**
@@ -170,10 +173,12 @@ abstract class BaseTagI18nPeer
             $criteria->addSelectColumn(TagI18nPeer::ID);
             $criteria->addSelectColumn(TagI18nPeer::LOCALE);
             $criteria->addSelectColumn(TagI18nPeer::NAME);
+            $criteria->addSelectColumn(TagI18nPeer::ACTIVE_LOCALE);
         } else {
             $criteria->addSelectColumn($alias . '.id');
             $criteria->addSelectColumn($alias . '.locale');
             $criteria->addSelectColumn($alias . '.name');
+            $criteria->addSelectColumn($alias . '.active_locale');
         }
     }
 

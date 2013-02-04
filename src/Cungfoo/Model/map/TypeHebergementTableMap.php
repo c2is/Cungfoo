@@ -61,8 +61,8 @@ class TypeHebergementTableMap extends TableMap
      */
     public function buildRelations()
     {
-        $this->addRelation('CategoryTypeHebergement', 'Cungfoo\\Model\\CategoryTypeHebergement', RelationMap::MANY_TO_ONE, array('category_type_hebergement_id' => 'id', ), null, null);
-        $this->addRelation('TypeHebergementCapacite', 'Cungfoo\\Model\\TypeHebergementCapacite', RelationMap::MANY_TO_ONE, array('type_hebergement_capacite_id' => 'id', ), null, null);
+        $this->addRelation('CategoryTypeHebergement', 'Cungfoo\\Model\\CategoryTypeHebergement', RelationMap::MANY_TO_ONE, array('category_type_hebergement_id' => 'id', ), 'SET NULL', null);
+        $this->addRelation('TypeHebergementCapacite', 'Cungfoo\\Model\\TypeHebergementCapacite', RelationMap::MANY_TO_ONE, array('type_hebergement_capacite_id' => 'id', ), 'SET NULL', null);
         $this->addRelation('EtablissementTypeHebergement', 'Cungfoo\\Model\\EtablissementTypeHebergement', RelationMap::ONE_TO_MANY, array('id' => 'type_hebergement_id', ), 'CASCADE', null, 'EtablissementTypeHebergements');
         $this->addRelation('MultimediaTypeHebergement', 'Cungfoo\\Model\\MultimediaTypeHebergement', RelationMap::ONE_TO_MANY, array('id' => 'type_hebergement_id', ), 'CASCADE', null, 'MultimediaTypeHebergements');
         $this->addRelation('TypeHebergementI18n', 'Cungfoo\\Model\\TypeHebergementI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'TypeHebergementI18ns');
@@ -85,11 +85,12 @@ class TypeHebergementTableMap extends TableMap
 ),
             'active' =>  array (
   'active_column' => 'active',
+  'active_locale_column' => 'active_locale',
 ),
             'i18n' =>  array (
   'i18n_table' => '%TABLE%_i18n',
   'i18n_phpname' => '%PHPNAME%I18n',
-  'i18n_columns' => 'name,slug,indice,surface,type_terrasse,description,composition,presentation,capacite_hebergement,dimensions,agencement,equipements,annee_utilisation,remarque_1,remarque_2,remarque_3,remarque_4',
+  'i18n_columns' => 'name,slug,indice,surface,type_terrasse,description,composition,presentation,capacite_hebergement,dimensions,agencement,equipements,annee_utilisation,remarque_1,remarque_2,remarque_3,remarque_4,active_locale',
   'i18n_pk_name' => NULL,
   'locale_column' => 'locale',
   'default_locale' => 'fr',

@@ -57,11 +57,11 @@ class BaignadeTableMap extends TableMap
      */
     public function buildRelations()
     {
-        $this->addRelation('EtablissementBaignade', 'Cungfoo\\Model\\EtablissementBaignade', RelationMap::ONE_TO_MANY, array('id' => 'baignade_id', ), null, null, 'EtablissementBaignades');
-        $this->addRelation('ThemeBaignade', 'Cungfoo\\Model\\ThemeBaignade', RelationMap::ONE_TO_MANY, array('id' => 'baignade_id', ), null, null, 'ThemeBaignades');
+        $this->addRelation('EtablissementBaignade', 'Cungfoo\\Model\\EtablissementBaignade', RelationMap::ONE_TO_MANY, array('id' => 'baignade_id', ), 'CASCADE', null, 'EtablissementBaignades');
+        $this->addRelation('ThemeBaignade', 'Cungfoo\\Model\\ThemeBaignade', RelationMap::ONE_TO_MANY, array('id' => 'baignade_id', ), 'CASCADE', null, 'ThemeBaignades');
         $this->addRelation('BaignadeI18n', 'Cungfoo\\Model\\BaignadeI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'BaignadeI18ns');
         $this->addRelation('Etablissement', 'Cungfoo\\Model\\Etablissement', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'Etablissements');
-        $this->addRelation('Theme', 'Cungfoo\\Model\\Theme', RelationMap::MANY_TO_MANY, array(), null, null, 'Themes');
+        $this->addRelation('Theme', 'Cungfoo\\Model\\Theme', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'Themes');
     } // buildRelations()
 
     /**
@@ -80,11 +80,12 @@ class BaignadeTableMap extends TableMap
 ),
             'active' =>  array (
   'active_column' => 'active',
+  'active_locale_column' => 'active_locale',
 ),
             'i18n' =>  array (
   'i18n_table' => '%TABLE%_i18n',
   'i18n_phpname' => '%PHPNAME%I18n',
-  'i18n_columns' => 'name, description, keywords',
+  'i18n_columns' => 'name, description, keywords,active_locale',
   'i18n_pk_name' => NULL,
   'locale_column' => 'locale',
   'default_locale' => 'fr',

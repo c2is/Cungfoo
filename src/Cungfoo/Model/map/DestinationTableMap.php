@@ -58,7 +58,7 @@ class DestinationTableMap extends TableMap
      */
     public function buildRelations()
     {
-        $this->addRelation('EtablissementDestination', 'Cungfoo\\Model\\EtablissementDestination', RelationMap::ONE_TO_MANY, array('id' => 'destination_id', ), null, null, 'EtablissementDestinations');
+        $this->addRelation('EtablissementDestination', 'Cungfoo\\Model\\EtablissementDestination', RelationMap::ONE_TO_MANY, array('id' => 'destination_id', ), 'CASCADE', null, 'EtablissementDestinations');
         $this->addRelation('Region', 'Cungfoo\\Model\\Region', RelationMap::ONE_TO_MANY, array('id' => 'destination_id', ), null, null, 'Regions');
         $this->addRelation('DestinationI18n', 'Cungfoo\\Model\\DestinationI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'DestinationI18ns');
         $this->addRelation('Etablissement', 'Cungfoo\\Model\\Etablissement', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'Etablissements');
@@ -85,11 +85,12 @@ class DestinationTableMap extends TableMap
 ),
             'active' =>  array (
   'active_column' => 'active',
+  'active_locale_column' => 'active_locale',
 ),
             'i18n' =>  array (
   'i18n_table' => '%TABLE%_i18n',
   'i18n_phpname' => '%PHPNAME%I18n',
-  'i18n_columns' => 'slug,name,introduction,description',
+  'i18n_columns' => 'slug,name,introduction,description,active_locale',
   'i18n_pk_name' => NULL,
   'locale_column' => 'locale',
   'default_locale' => 'fr',

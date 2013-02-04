@@ -69,7 +69,7 @@ class EventTableMap extends TableMap
      */
     public function buildRelations()
     {
-        $this->addRelation('EtablissementEvent', 'Cungfoo\\Model\\EtablissementEvent', RelationMap::ONE_TO_MANY, array('id' => 'event_id', ), null, null, 'EtablissementEvents');
+        $this->addRelation('EtablissementEvent', 'Cungfoo\\Model\\EtablissementEvent', RelationMap::ONE_TO_MANY, array('id' => 'event_id', ), 'CASCADE', null, 'EtablissementEvents');
         $this->addRelation('EventI18n', 'Cungfoo\\Model\\EventI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'EventI18ns');
         $this->addRelation('Etablissement', 'Cungfoo\\Model\\Etablissement', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'Etablissements');
     } // buildRelations()
@@ -90,11 +90,12 @@ class EventTableMap extends TableMap
 ),
             'active' =>  array (
   'active_column' => 'active',
+  'active_locale_column' => 'active_locale',
 ),
             'i18n' =>  array (
   'i18n_table' => '%TABLE%_i18n',
   'i18n_phpname' => '%PHPNAME%I18n',
-  'i18n_columns' => 'name, str_date,subtitle, description, transport, slug',
+  'i18n_columns' => 'name, str_date,subtitle, description, transport, slug,active_locale',
   'i18n_pk_name' => NULL,
   'locale_column' => 'locale',
   'default_locale' => 'fr',

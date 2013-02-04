@@ -9,6 +9,7 @@ use \PDOStatement;
 use \Propel;
 use \PropelException;
 use \PropelPDO;
+use Cungfoo\Model\BonPlanRegionPeer;
 use Cungfoo\Model\DestinationPeer;
 use Cungfoo\Model\PaysPeer;
 use Cungfoo\Model\Region;
@@ -436,6 +437,9 @@ abstract class BaseRegionPeer
         // Invalidate objects in VillePeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
         VillePeer::clearInstancePool();
+        // Invalidate objects in BonPlanRegionPeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        BonPlanRegionPeer::clearInstancePool();
         // Invalidate objects in RegionI18nPeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
         RegionI18nPeer::clearInstancePool();

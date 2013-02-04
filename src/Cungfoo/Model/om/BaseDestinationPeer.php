@@ -13,6 +13,7 @@ use Cungfoo\Model\Destination;
 use Cungfoo\Model\DestinationI18nPeer;
 use Cungfoo\Model\DestinationPeer;
 use Cungfoo\Model\DestinationQuery;
+use Cungfoo\Model\EtablissementDestinationPeer;
 use Cungfoo\Model\map\DestinationTableMap;
 
 /**
@@ -413,6 +414,9 @@ abstract class BaseDestinationPeer
      */
     public static function clearRelatedInstancePool()
     {
+        // Invalidate objects in EtablissementDestinationPeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        EtablissementDestinationPeer::clearInstancePool();
         // Invalidate objects in DestinationI18nPeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
         DestinationI18nPeer::clearInstancePool();

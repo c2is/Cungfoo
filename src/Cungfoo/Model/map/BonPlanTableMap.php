@@ -82,13 +82,13 @@ class BonPlanTableMap extends TableMap
      */
     public function buildRelations()
     {
-        $this->addRelation('BonPlanBonPlanCategorie', 'Cungfoo\\Model\\BonPlanBonPlanCategorie', RelationMap::ONE_TO_MANY, array('id' => 'bon_plan_id', ), null, null, 'BonPlanBonPlanCategories');
+        $this->addRelation('BonPlanBonPlanCategorie', 'Cungfoo\\Model\\BonPlanBonPlanCategorie', RelationMap::ONE_TO_MANY, array('id' => 'bon_plan_id', ), 'CASCADE', null, 'BonPlanBonPlanCategories');
         $this->addRelation('BonPlanEtablissement', 'Cungfoo\\Model\\BonPlanEtablissement', RelationMap::ONE_TO_MANY, array('id' => 'bon_plan_id', ), 'CASCADE', null, 'BonPlanEtablissements');
         $this->addRelation('BonPlanRegion', 'Cungfoo\\Model\\BonPlanRegion', RelationMap::ONE_TO_MANY, array('id' => 'bon_plan_id', ), 'CASCADE', null, 'BonPlanRegions');
         $this->addRelation('BonPlanI18n', 'Cungfoo\\Model\\BonPlanI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'BonPlanI18ns');
-        $this->addRelation('BonPlanCategorie', 'Cungfoo\\Model\\BonPlanCategorie', RelationMap::MANY_TO_MANY, array(), null, null, 'BonPlanCategories');
-        $this->addRelation('Etablissement', 'Cungfoo\\Model\\Etablissement', RelationMap::MANY_TO_MANY, array(), null, null, 'Etablissements');
-        $this->addRelation('Region', 'Cungfoo\\Model\\Region', RelationMap::MANY_TO_MANY, array(), null, null, 'Regions');
+        $this->addRelation('BonPlanCategorie', 'Cungfoo\\Model\\BonPlanCategorie', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'BonPlanCategories');
+        $this->addRelation('Etablissement', 'Cungfoo\\Model\\Etablissement', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'Etablissements');
+        $this->addRelation('Region', 'Cungfoo\\Model\\Region', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'Regions');
     } // buildRelations()
 
     /**
@@ -102,11 +102,12 @@ class BonPlanTableMap extends TableMap
         return array(
             'active' =>  array (
   'active_column' => 'active',
+  'active_locale_column' => 'active_locale',
 ),
             'i18n' =>  array (
   'i18n_table' => '%TABLE%_i18n',
   'i18n_phpname' => '%PHPNAME%I18n',
-  'i18n_columns' => 'name, slug, introduction, description, indice, indice_prix',
+  'i18n_columns' => 'name, slug, introduction, description, indice, indice_prix,active_locale',
   'i18n_pk_name' => NULL,
   'locale_column' => 'locale',
   'default_locale' => 'fr',

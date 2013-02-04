@@ -18,6 +18,8 @@ class DateType extends AppAwareType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        global $app;
+
         $locale = $this->getApplication()['context']->get('language');
         $data   = $this->getApplication()['session']->get('search_engine_data');
         $currentDestination = is_object($data) && property_exists($data, 'destination') ? $data->destination : null;
@@ -32,33 +34,33 @@ class DateType extends AppAwareType
 
         $builder->add('nbJoursBasseSaison', 'choice', array(
             'choices'     => array(
-                2  => "2 nuits",
-                3  => "3 nuits",
-                4  => "4 nuits",
-                5  => "5 nuits",
-                6  => "6 nuits",
-                7  => "7 nuits",
-                8  => "8 nuits",
-                9  => "9 nuits",
-                10 => "10 nuits",
-                11 => "11 nuits",
-                12  => "12 nuits",
-                13  => "13 nuits",
-                14 => "14 nuits",
-                15  => "15 nuits",
-                16  => "16 nuits",
-                17 => "17 nuits",
-                18 => "18 nuits",
-                19  => "19 nuits",
-                20  => "20 nuits",
-                21 => "21 nuits",
-                22  => "22 nuits",
-                23  => "23 nuits",
-                24 => "24 nuits",
-                25 => "25 nuits",
-                26  => "26 nuits",
-                27  => "27 nuits",
-                28 => "28 nuits"
+                2  => "2 " . $app->trans('date_search.nuits'),
+                3  => "3 " . $app->trans('date_search.nuits'),
+                4  => "4 " . $app->trans('date_search.nuits'),
+                5  => "5 " . $app->trans('date_search.nuits'),
+                6  => "6 " . $app->trans('date_search.nuits'),
+                7  => "7 " . $app->trans('date_search.nuits'),
+                8  => "8 " . $app->trans('date_search.nuits'),
+                9  => "9 " . $app->trans('date_search.nuits'),
+                10 => "10 " . $app->trans('date_search.nuits'),
+                11 => "11 " . $app->trans('date_search.nuits'),
+                12  => "12 " . $app->trans('date_search.nuits'),
+                13  => "13 " . $app->trans('date_search.nuits'),
+                14 => "14 " . $app->trans('date_search.nuits'),
+                15  => "15 " . $app->trans('date_search.nuits'),
+                16  => "16 " . $app->trans('date_search.nuits'),
+                17 => "17 " . $app->trans('date_search.nuits'),
+                18 => "18 " . $app->trans('date_search.nuits'),
+                19  => "19 " . $app->trans('date_search.nuits'),
+                20  => "20 " . $app->trans('date_search.nuits'),
+                21 => "21 " . $app->trans('date_search.nuits'),
+                22  => "22 " . $app->trans('date_search.nuits'),
+                23  => "23 " . $app->trans('date_search.nuits'),
+                24 => "24 " . $app->trans('date_search.nuits'),
+                25 => "25 " . $app->trans('date_search.nuits'),
+                26  => "26 " . $app->trans('date_search.nuits'),
+                27  => "27 " . $app->trans('date_search.nuits'),
+                28 => "28 " . $app->trans('date_search.nuits')
             ),
             'label'       => 'date_search.nb_jours',
             'empty_value' => "date_search.nb_jours.empty_value",

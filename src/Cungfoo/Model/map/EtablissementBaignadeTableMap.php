@@ -54,7 +54,7 @@ class EtablissementBaignadeTableMap extends TableMap
     public function buildRelations()
     {
         $this->addRelation('Etablissement', 'Cungfoo\\Model\\Etablissement', RelationMap::MANY_TO_ONE, array('etablissement_id' => 'id', ), 'CASCADE', null);
-        $this->addRelation('Baignade', 'Cungfoo\\Model\\Baignade', RelationMap::MANY_TO_ONE, array('baignade_id' => 'id', ), null, null);
+        $this->addRelation('Baignade', 'Cungfoo\\Model\\Baignade', RelationMap::MANY_TO_ONE, array('baignade_id' => 'id', ), 'CASCADE', null);
     } // buildRelations()
 
 } // EtablissementBaignadeTableMap

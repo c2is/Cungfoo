@@ -30,6 +30,7 @@ use Cungfoo\Model\BonPlanI18nQuery;
  * @method BonPlanI18nQuery orderByDescription($order = Criteria::ASC) Order by the description column
  * @method BonPlanI18nQuery orderByIndice($order = Criteria::ASC) Order by the indice column
  * @method BonPlanI18nQuery orderByIndicePrix($order = Criteria::ASC) Order by the indice_prix column
+ * @method BonPlanI18nQuery orderByActiveLocale($order = Criteria::ASC) Order by the active_locale column
  *
  * @method BonPlanI18nQuery groupById() Group by the id column
  * @method BonPlanI18nQuery groupByLocale() Group by the locale column
@@ -39,6 +40,7 @@ use Cungfoo\Model\BonPlanI18nQuery;
  * @method BonPlanI18nQuery groupByDescription() Group by the description column
  * @method BonPlanI18nQuery groupByIndice() Group by the indice column
  * @method BonPlanI18nQuery groupByIndicePrix() Group by the indice_prix column
+ * @method BonPlanI18nQuery groupByActiveLocale() Group by the active_locale column
  *
  * @method BonPlanI18nQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method BonPlanI18nQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -59,6 +61,7 @@ use Cungfoo\Model\BonPlanI18nQuery;
  * @method BonPlanI18n findOneByDescription(string $description) Return the first BonPlanI18n filtered by the description column
  * @method BonPlanI18n findOneByIndice(string $indice) Return the first BonPlanI18n filtered by the indice column
  * @method BonPlanI18n findOneByIndicePrix(string $indice_prix) Return the first BonPlanI18n filtered by the indice_prix column
+ * @method BonPlanI18n findOneByActiveLocale(boolean $active_locale) Return the first BonPlanI18n filtered by the active_locale column
  *
  * @method array findById(int $id) Return BonPlanI18n objects filtered by the id column
  * @method array findByLocale(string $locale) Return BonPlanI18n objects filtered by the locale column
@@ -68,6 +71,7 @@ use Cungfoo\Model\BonPlanI18nQuery;
  * @method array findByDescription(string $description) Return BonPlanI18n objects filtered by the description column
  * @method array findByIndice(string $indice) Return BonPlanI18n objects filtered by the indice column
  * @method array findByIndicePrix(string $indice_prix) Return BonPlanI18n objects filtered by the indice_prix column
+ * @method array findByActiveLocale(boolean $active_locale) Return BonPlanI18n objects filtered by the active_locale column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -158,7 +162,7 @@ abstract class BaseBonPlanI18nQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `locale`, `name`, `slug`, `introduction`, `description`, `indice`, `indice_prix` FROM `bon_plan_i18n` WHERE `id` = :p0 AND `locale` = :p1';
+        $sql = 'SELECT `id`, `locale`, `name`, `slug`, `introduction`, `description`, `indice`, `indice_prix`, `active_locale` FROM `bon_plan_i18n` WHERE `id` = :p0 AND `locale` = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
@@ -489,6 +493,33 @@ abstract class BaseBonPlanI18nQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(BonPlanI18nPeer::INDICE_PRIX, $indicePrix, $comparison);
+    }
+
+    /**
+     * Filter the query on the active_locale column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByActiveLocale(true); // WHERE active_locale = true
+     * $query->filterByActiveLocale('yes'); // WHERE active_locale = true
+     * </code>
+     *
+     * @param     boolean|string $activeLocale The value to use as filter.
+     *              Non-boolean arguments are converted using the following rules:
+     *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     *              Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return BonPlanI18nQuery The current query, for fluid interface
+     */
+    public function filterByActiveLocale($activeLocale = null, $comparison = null)
+    {
+        if (is_string($activeLocale)) {
+            $active_locale = in_array(strtolower($activeLocale), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+        }
+
+        return $this->addUsingAlias(BonPlanI18nPeer::ACTIVE_LOCALE, $activeLocale, $comparison);
     }
 
     /**

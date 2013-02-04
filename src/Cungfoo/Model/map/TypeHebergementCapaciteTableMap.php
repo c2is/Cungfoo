@@ -57,7 +57,7 @@ class TypeHebergementCapaciteTableMap extends TableMap
      */
     public function buildRelations()
     {
-        $this->addRelation('TypeHebergement', 'Cungfoo\\Model\\TypeHebergement', RelationMap::ONE_TO_MANY, array('id' => 'type_hebergement_capacite_id', ), null, null, 'TypeHebergements');
+        $this->addRelation('TypeHebergement', 'Cungfoo\\Model\\TypeHebergement', RelationMap::ONE_TO_MANY, array('id' => 'type_hebergement_capacite_id', ), 'SET NULL', null, 'TypeHebergements');
         $this->addRelation('TypeHebergementCapaciteI18n', 'Cungfoo\\Model\\TypeHebergementCapaciteI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'TypeHebergementCapaciteI18ns');
     } // buildRelations()
 
@@ -77,6 +77,7 @@ class TypeHebergementCapaciteTableMap extends TableMap
 ),
             'active' =>  array (
   'active_column' => 'active',
+  'active_locale_column' => 'active_locale',
 ),
             'sortable' =>  array (
   'rank_column' => 'sortable_rank',
@@ -86,7 +87,7 @@ class TypeHebergementCapaciteTableMap extends TableMap
             'i18n' =>  array (
   'i18n_table' => '%TABLE%_i18n',
   'i18n_phpname' => '%PHPNAME%I18n',
-  'i18n_columns' => 'name,slug,accroche,description',
+  'i18n_columns' => 'name,slug,accroche,description,active_locale',
   'i18n_pk_name' => NULL,
   'locale_column' => 'locale',
   'default_locale' => 'fr',

@@ -1440,6 +1440,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
 
     // active behavior
 
+
     /**
      * return true is the object is active
      *
@@ -1450,6 +1451,15 @@ abstract class BaseEdito extends BaseObject implements Persistent
         return $this->getActive();
     }
 
+    /**
+     * return true is the object is active locale
+     *
+     * @return boolean
+     */
+    public function isActiveLocale()
+    {
+        return $this->getActiveLocale();
+    }
     // i18n behavior
 
     /**
@@ -1593,6 +1603,30 @@ abstract class BaseEdito extends BaseObject implements Persistent
          */
         public function setDescription($v)
         {    $this->getCurrentTranslation()->setDescription($v);
+
+        return $this;
+    }
+
+
+        /**
+         * Get the [active_locale] column value.
+         *
+         * @return boolean
+         */
+        public function getActiveLocale()
+        {
+        return $this->getCurrentTranslation()->getActiveLocale();
+    }
+
+
+        /**
+         * Set the value of [active_locale] column.
+         *
+         * @param boolean $v new value
+         * @return EditoI18n The current object (for fluent API support)
+         */
+        public function setActiveLocale($v)
+        {    $this->getCurrentTranslation()->setActiveLocale($v);
 
         return $this;
     }

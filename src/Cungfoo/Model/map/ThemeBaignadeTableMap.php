@@ -53,8 +53,8 @@ class ThemeBaignadeTableMap extends TableMap
      */
     public function buildRelations()
     {
-        $this->addRelation('Theme', 'Cungfoo\\Model\\Theme', RelationMap::MANY_TO_ONE, array('theme_id' => 'id', ), null, null);
-        $this->addRelation('Baignade', 'Cungfoo\\Model\\Baignade', RelationMap::MANY_TO_ONE, array('baignade_id' => 'id', ), null, null);
+        $this->addRelation('Theme', 'Cungfoo\\Model\\Theme', RelationMap::MANY_TO_ONE, array('theme_id' => 'id', ), 'CASCADE', null);
+        $this->addRelation('Baignade', 'Cungfoo\\Model\\Baignade', RelationMap::MANY_TO_ONE, array('baignade_id' => 'id', ), 'CASCADE', null);
     } // buildRelations()
 
 } // ThemeBaignadeTableMap

@@ -92,18 +92,18 @@ class EtablissementTableMap extends TableMap
         $this->addRelation('Personnage', 'Cungfoo\\Model\\Personnage', RelationMap::ONE_TO_MANY, array('id' => 'etablissement_id', ), 'CASCADE', null, 'Personnages');
         $this->addRelation('MultimediaEtablissement', 'Cungfoo\\Model\\MultimediaEtablissement', RelationMap::ONE_TO_MANY, array('id' => 'etablissement_id', ), 'CASCADE', null, 'MultimediaEtablissements');
         $this->addRelation('TopCamping', 'Cungfoo\\Model\\TopCamping', RelationMap::ONE_TO_MANY, array('id' => 'etablissement_id', ), 'CASCADE', null, 'TopCampings');
-        $this->addRelation('BonPlanEtablissement', 'Cungfoo\\Model\\BonPlanEtablissement', RelationMap::ONE_TO_MANY, array('id' => 'etablissement_id', ), null, null, 'BonPlanEtablissements');
+        $this->addRelation('BonPlanEtablissement', 'Cungfoo\\Model\\BonPlanEtablissement', RelationMap::ONE_TO_MANY, array('id' => 'etablissement_id', ), 'CASCADE', null, 'BonPlanEtablissements');
         $this->addRelation('DemandeAnnulation', 'Cungfoo\\Model\\DemandeAnnulation', RelationMap::ONE_TO_MANY, array('id' => 'camping_id', ), null, null, 'DemandeAnnulations');
         $this->addRelation('EtablissementI18n', 'Cungfoo\\Model\\EtablissementI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'EtablissementI18ns');
         $this->addRelation('TypeHebergement', 'Cungfoo\\Model\\TypeHebergement', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'TypeHebergements');
-        $this->addRelation('Destination', 'Cungfoo\\Model\\Destination', RelationMap::MANY_TO_MANY, array(), null, null, 'Destinations');
+        $this->addRelation('Destination', 'Cungfoo\\Model\\Destination', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'Destinations');
         $this->addRelation('Activite', 'Cungfoo\\Model\\Activite', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'Activites');
-        $this->addRelation('ServiceComplementaire', 'Cungfoo\\Model\\ServiceComplementaire', RelationMap::MANY_TO_MANY, array(), null, null, 'ServiceComplementaires');
-        $this->addRelation('SituationGeographique', 'Cungfoo\\Model\\SituationGeographique', RelationMap::MANY_TO_MANY, array(), null, null, 'SituationGeographiques');
-        $this->addRelation('Baignade', 'Cungfoo\\Model\\Baignade', RelationMap::MANY_TO_MANY, array(), null, null, 'Baignades');
-        $this->addRelation('Thematique', 'Cungfoo\\Model\\Thematique', RelationMap::MANY_TO_MANY, array(), null, null, 'Thematiques');
-        $this->addRelation('PointInteret', 'Cungfoo\\Model\\PointInteret', RelationMap::MANY_TO_MANY, array(), null, null, 'PointInterets');
-        $this->addRelation('Event', 'Cungfoo\\Model\\Event', RelationMap::MANY_TO_MANY, array(), null, null, 'Events');
+        $this->addRelation('ServiceComplementaire', 'Cungfoo\\Model\\ServiceComplementaire', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'ServiceComplementaires');
+        $this->addRelation('SituationGeographique', 'Cungfoo\\Model\\SituationGeographique', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'SituationGeographiques');
+        $this->addRelation('Baignade', 'Cungfoo\\Model\\Baignade', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'Baignades');
+        $this->addRelation('Thematique', 'Cungfoo\\Model\\Thematique', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'Thematiques');
+        $this->addRelation('PointInteret', 'Cungfoo\\Model\\PointInteret', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'PointInterets');
+        $this->addRelation('Event', 'Cungfoo\\Model\\Event', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'Events');
         $this->addRelation('BonPlan', 'Cungfoo\\Model\\BonPlan', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'BonPlans');
     } // buildRelations()
 
@@ -123,11 +123,12 @@ class EtablissementTableMap extends TableMap
 ),
             'active' =>  array (
   'active_column' => 'active',
+  'active_locale_column' => 'active_locale',
 ),
             'i18n' =>  array (
   'i18n_table' => '%TABLE%_i18n',
   'i18n_phpname' => '%PHPNAME%I18n',
-  'i18n_columns' => 'country,ouverture_reception,ouverture_camping,arrivees_departs,description',
+  'i18n_columns' => 'country,ouverture_reception,ouverture_camping,arrivees_departs,description,active_locale',
   'i18n_pk_name' => NULL,
   'locale_column' => 'locale',
   'default_locale' => 'fr',

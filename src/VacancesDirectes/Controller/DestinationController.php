@@ -300,12 +300,12 @@ class DestinationController implements ControllerProviderInterface
         ;
 
         $tags = array();
-        foreach($multimedia as $multi){
-            $tag = explode(" ", $multi->getTagsForDisplay());
-            foreach ($tag as $t) {
-                if(!in_array($t, $tags)){
-                    $tags[] = $t;
-                }
+        foreach ($multimedia as $multi)
+        {
+            $multimediaTags = $multi->getTags();
+            foreach ($multimediaTags as $tag)
+            {
+                $tags[$tag->getSlug()] = $tag;
             }
         }
 
@@ -316,13 +316,18 @@ class DestinationController implements ControllerProviderInterface
             ->findOne()
         ;
 
-        $resalysParameters = \Symfony\Component\Yaml\Yaml::parse(sprintf('%s/Resalys/parameters.yml', $app['config']->get('config_dir')));
+        $webuser = $app['config']->get('languages')[$locale]['resalys_username'];
 
         // definition des informations relatives au bloc prix de la fiche camping
         $lastProposal = $app['session']->get('last_proposal');
 
         if (is_array($lastProposal) && is_object($lastProposal['proposal']) && $request->getRequestUri() == $lastProposal['target'])
         {
+            $category = \Cungfoo\Model\CategoryTypeHebergementQuery::create()
+                ->filterByCode($lastProposal['proposal']->{'room_type_category'})
+                ->findOne()
+            ;
+
             $blocPrix['proposal_key']                  = $lastProposal['proposal']->{'proposal_key'};
             $blocPrix['start_date']                    = $lastProposal['proposal']->{'start_date'};
             $blocPrix['end_date']                      = $lastProposal['proposal']->{'end_date'};
@@ -330,6 +335,7 @@ class DestinationController implements ControllerProviderInterface
             $blocPrix['adult_price_without_discounts'] = $lastProposal['proposal']->{'adult_price_without_discounts'};
             $blocPrix['adult_price']                   = $lastProposal['proposal']->{'adult_price'};
             $blocPrix['adult_price_pourcent']          = round(100 - (100 * $lastProposal['proposal']->{'adult_price'} / $lastProposal['proposal']->{'adult_price_without_discounts'}));
+            $blocPrix['category_hebergement']          = $category ? $category->getName() : '';
         }
         else
         {
@@ -338,6 +344,8 @@ class DestinationController implements ControllerProviderInterface
             $blocPrix['start_date']                    = $minimumPriceType ? $minimumPriceType->getMinimumPriceStartDate('d/m/Y') : null;
             $blocPrix['end_date']                      = $minimumPriceType ? $minimumPriceType->getMinimumPriceEndDate('d/m/Y') : null;
             $blocPrix['adult_price_without_discounts'] = $minimumPriceType ? $minimumPriceType->getMinimumPrice() : 0;
+            $blocPrix['type_hebergement']              = $minimumPriceType ? $minimumPriceType->getTypeHebergement()->getName() : '';
+            $blocPrix['category_hebergement']          = $minimumPriceType ? $minimumPriceType->getTypeHebergement()->getCategoryTypeHebergement()->getName() : '';
         }
         // fin de la définition des informations relatives au bloc prix de la fiche camping
 
@@ -350,7 +358,7 @@ class DestinationController implements ControllerProviderInterface
             'personnageAleatoire'     => $personnageAleatoire,
             'sitesAVisiter'           => $sitesAVisiter,
             'events'                  => $events,
-            'resalysParameters'       => $resalysParameters,
+            'webuser'                 => $webuser,
             'historyBack'             => $request->headers->get('referer'),
             'hasBaignade'             => count($camping->getEtablissementBaignades()) > 0,
             'blocPrix'                => $blocPrix,

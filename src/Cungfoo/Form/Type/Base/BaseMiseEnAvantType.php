@@ -114,6 +114,13 @@ class BaseMiseEnAvantType extends AppAwareType
                     'constraints' => array(
                     ),
                 ),
+                'active_locale' => array(
+                    'required' => false,
+                    'label' => 'mise_en_avant.active_locale',
+                    'type' => 'checkbox',
+                    'constraints' => array(
+                    ),
+                ),
             ),
             'required' => false,
         ));

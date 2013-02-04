@@ -9,9 +9,11 @@ use \PDOStatement;
 use \Propel;
 use \PropelException;
 use \PropelPDO;
+use Cungfoo\Model\EtablissementServiceComplementairePeer;
 use Cungfoo\Model\ServiceComplementaire;
 use Cungfoo\Model\ServiceComplementaireI18nPeer;
 use Cungfoo\Model\ServiceComplementairePeer;
+use Cungfoo\Model\ThemeServiceComplementairePeer;
 use Cungfoo\Model\map\ServiceComplementaireTableMap;
 
 /**
@@ -400,6 +402,12 @@ abstract class BaseServiceComplementairePeer
      */
     public static function clearRelatedInstancePool()
     {
+        // Invalidate objects in EtablissementServiceComplementairePeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        EtablissementServiceComplementairePeer::clearInstancePool();
+        // Invalidate objects in ThemeServiceComplementairePeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        ThemeServiceComplementairePeer::clearInstancePool();
         // Invalidate objects in ServiceComplementaireI18nPeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
         ServiceComplementaireI18nPeer::clearInstancePool();

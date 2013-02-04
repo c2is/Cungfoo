@@ -171,6 +171,13 @@ class BasePointInteretType extends AppAwareType
                     'constraints' => array(
                     ),
                 ),
+                'active_locale' => array(
+                    'required' => false,
+                    'label' => 'point_interet.active_locale',
+                    'type' => 'checkbox',
+                    'constraints' => array(
+                    ),
+                ),
             ),
             'required' => false,
         ));

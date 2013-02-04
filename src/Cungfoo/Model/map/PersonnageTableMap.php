@@ -59,9 +59,9 @@ class PersonnageTableMap extends TableMap
     {
         $this->addRelation('Etablissement', 'Cungfoo\\Model\\Etablissement', RelationMap::MANY_TO_ONE, array('etablissement_id' => 'id', ), 'CASCADE', null);
         $this->addRelation('Avantage', 'Cungfoo\\Model\\Avantage', RelationMap::ONE_TO_MANY, array('id' => 'personnage_id', ), 'CASCADE', null, 'Avantages');
-        $this->addRelation('ThemePersonnage', 'Cungfoo\\Model\\ThemePersonnage', RelationMap::ONE_TO_MANY, array('id' => 'personnage_id', ), null, null, 'ThemePersonnages');
+        $this->addRelation('ThemePersonnage', 'Cungfoo\\Model\\ThemePersonnage', RelationMap::ONE_TO_MANY, array('id' => 'personnage_id', ), 'CASCADE', null, 'ThemePersonnages');
         $this->addRelation('PersonnageI18n', 'Cungfoo\\Model\\PersonnageI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'PersonnageI18ns');
-        $this->addRelation('Theme', 'Cungfoo\\Model\\Theme', RelationMap::MANY_TO_MANY, array(), null, null, 'Themes');
+        $this->addRelation('Theme', 'Cungfoo\\Model\\Theme', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'Themes');
     } // buildRelations()
 
     /**
@@ -80,11 +80,12 @@ class PersonnageTableMap extends TableMap
 ),
             'active' =>  array (
   'active_column' => 'active',
+  'active_locale_column' => 'active_locale',
 ),
             'i18n' =>  array (
   'i18n_table' => '%TABLE%_i18n',
   'i18n_phpname' => '%PHPNAME%I18n',
-  'i18n_columns' => 'prenom',
+  'i18n_columns' => 'prenom,active_locale',
   'i18n_pk_name' => NULL,
   'locale_column' => 'locale',
   'default_locale' => 'fr',

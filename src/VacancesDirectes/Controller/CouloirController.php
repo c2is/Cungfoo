@@ -21,13 +21,24 @@ use Resalys\Lib\Client\DisponibiliteClient;
 
 class CouloirController implements ControllerProviderInterface
 {
+    protected function getResalysConfig(Application $app)
+    {
+        $rslConfig = $app['config']->get('rsl_config')['services']['disponibilite']['default_envelope'];
+        if (isset($app['config']->get('languages')[$app['context']->get('language')]) && isset($app['config']->get('languages')[$app['context']->get('language')]['resalys_username']))
+        {
+            $rslConfig['username'] = $app['config']->get('languages')[$app['context']->get('language')]['resalys_username'];
+        }
+
+        return $rslConfig;
+    }
+
     public function connect(Application $app)
     {
         $controllers = $app['controllers_factory'];
 
         $controllers->match('/' . $app->trans('seo.url.couloir.detail') . '/{proposalKey}', function (Request $request, $proposalKey) use ($app) {
 
-            $rslConfig = $app['config']->get('rsl_config')['services']['disponibilite']['default_envelope'];
+            $rslConfig = $this->getResalysConfig($app);
 
             $query = array(
                 "specificFiles"     => 'couloir',
@@ -52,7 +63,7 @@ class CouloirController implements ControllerProviderInterface
 
         $controllers->post('/' . $app->trans('seo.url.couloir.recapitulatif') . '/{proposalKey}', function (Request $request, $proposalKey) use ($app) {
 
-            $rslConfig = $app['config']->get('rsl_config')['services']['disponibilite']['default_envelope'];
+            $rslConfig = $this->getResalysConfig($app);
 
             $query = array(
                 "specificFiles"     => 'couloir',
@@ -81,7 +92,7 @@ class CouloirController implements ControllerProviderInterface
 
         $controllers->get('/' . $app->trans('seo.url.couloir.confirmation') . '', function (Request $request) use ($app) {
 
-            $rslConfig = $app['config']->get('rsl_config')['services']['disponibilite']['default_envelope'];
+            $rslConfig = $this->getResalysConfig($app);
 
             $query = array(
                 "specificFiles" => 'couloir',

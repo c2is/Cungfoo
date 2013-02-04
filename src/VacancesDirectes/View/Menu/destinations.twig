@@ -14,7 +14,7 @@
                     <div class="region">
                         <div class="title"><a href="{{ path('destination_pays', {pays: destination.slug})}}">{{ destination|trans }}</a></div>
                         <ul>
-                            {% for region in destination.regions %}
+                            {% for region in destination.regionsActive %}
                             <li><a href="{{ path('destination_region', {pays: region.pays.slug, region: region.slug})}}">- {{ region }}</a></li>
                             {% endfor %}
                         </ul>

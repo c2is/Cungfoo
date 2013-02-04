@@ -50,6 +50,7 @@ class EventI18nTableMap extends TableMap
         $this->addColumn('description', 'Description', 'LONGVARCHAR', false, null, null);
         $this->addColumn('transport', 'Transport', 'LONGVARCHAR', false, null, null);
         $this->addColumn('slug', 'Slug', 'VARCHAR', false, 255, null);
+        $this->addColumn('active_locale', 'ActiveLocale', 'BOOLEAN', false, 1, false);
         // validators
     } // initialize()
 

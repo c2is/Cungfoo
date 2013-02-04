@@ -308,6 +308,7 @@ listing:
     au: "au"
     no_results_title: "Votre recherche n'a retourné aucun résultat."
     no_results: "Nous vous invitons à modifier vos critères de recherche"
+    nos_locations_disponibles: "Nos locations disponibles"
 
 menu_destination.accroche: "3 pays, 34 régions touristiques, vos vacances avec Vacances directes."
 
@@ -372,6 +373,7 @@ date_search:
     submit: "Trouver"
     campings: "Campings"
     ou: "ou"
+    nuits: "nuits"
 
 
 "Les vacances à": "Les vacances à"
@@ -446,6 +448,8 @@ fiche:
     ouvert_au: "au"
     plan:
         legende: "Légende du plan du camping"
+    bloc_prix:
+        type_hebergement: "pour un %categorie% - %type%"
 
 home:
     topcamping: "Top campings"
@@ -516,7 +520,16 @@ filtres:
     filtrer: "Filtrer"
 
 footer:
-    contact: "Contact"
+    contact:
+        title: "Contact"
+        tel: "0825 133 400"
+        fax: "Fax: 02 96 39 97 81"
+        adresse:
+            name: "Vacances directes"
+            lieu_dit: "ZA les Alleux"
+            rue: "4 Rue du Suroit"
+            ville: "CS 81010 - TADEN"
+            code_postal: "22101 DINAN cedex"
     charte_qualite: "Charte qualité"
     conditions_generales_de_location: "Conditions générales de location"
     faq: "FAQ"
@@ -528,9 +541,6 @@ footer:
     cb_visa: "CB visa"
     masterCard: "MasterCard"
     nous_joindre: "Nous joindre"
-    contact:
-        tel: "0825 133 400"
-        fax: "Fax: 02 96 39 97 81"
     nous_contacter: "Nous contacter"
     demande_catalogue: "Demande de catalogue"
     description_catalogue: "Hoc inmaturo interitu ipse quoque sui pertaesus excessit e vita aetatis."
@@ -575,7 +585,7 @@ encart_vacances_directes:
     item_1: "Des ambassadeurs pour vous accueillir"
     item_2: "Des campings sélectionnés avec soin"
     item_3: "Un site 100% sécurisé"
-    item_4: "Des hébergements tout confort pour des vacances dépaysantes"
+    item_4: "Des mobil-homes tout confort pour des vacances dépaysantes"
 
 encart_hebergement:
     title: "Vacances directes"
@@ -755,6 +765,12 @@ global:
         password: "Mot de passe"
         forget: "Mot de passe oublié ?"
         submit: "Se connecter"
+        accueil: "Accueil"
+        coordonnees: "Coordonnées"
+        demande_brochure: "Demande de brochure"
+        reservation: "Réservation"
+        title: "Espace"
+        title_client: "client"
 
 bon_plan:
     title: "Camping : %bonPlan%"
@@ -793,3 +809,12 @@ location:
 share:
     facebook: "Partager sur Facebook"
     twitter: "Partager sur Twitter"
+
+couloir:
+    menu:
+        detail: "Détails du séjour"
+        recapitulatif: "Récapitulatif"
+        paiement: "Paiement"
+    confirmation: "Confirmation"
+    title: "Bienvenue dans l’espace de"
+    title_reservation: "Réservation"

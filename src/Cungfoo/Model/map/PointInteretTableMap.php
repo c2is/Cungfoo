@@ -67,7 +67,7 @@ class PointInteretTableMap extends TableMap
      */
     public function buildRelations()
     {
-        $this->addRelation('EtablissementPointInteret', 'Cungfoo\\Model\\EtablissementPointInteret', RelationMap::ONE_TO_MANY, array('id' => 'point_interet_id', ), null, null, 'EtablissementPointInterets');
+        $this->addRelation('EtablissementPointInteret', 'Cungfoo\\Model\\EtablissementPointInteret', RelationMap::ONE_TO_MANY, array('id' => 'point_interet_id', ), 'CASCADE', null, 'EtablissementPointInterets');
         $this->addRelation('PointInteretI18n', 'Cungfoo\\Model\\PointInteretI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'PointInteretI18ns');
         $this->addRelation('Etablissement', 'Cungfoo\\Model\\Etablissement', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'Etablissements');
     } // buildRelations()
@@ -88,11 +88,12 @@ class PointInteretTableMap extends TableMap
 ),
             'active' =>  array (
   'active_column' => 'active',
+  'active_locale_column' => 'active_locale',
 ),
             'i18n' =>  array (
   'i18n_table' => '%TABLE%_i18n',
   'i18n_phpname' => '%PHPNAME%I18n',
-  'i18n_columns' => 'name,presentation,transport,categorie,type, slug',
+  'i18n_columns' => 'name,presentation,transport,categorie,type, slug,active_locale',
   'i18n_pk_name' => NULL,
   'locale_column' => 'locale',
   'default_locale' => 'fr',

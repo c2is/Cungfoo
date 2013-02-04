@@ -28,18 +28,18 @@
         <span class="h2-like">{{ "destination.camping_title" | trans({'%ville%': etab.ville.name}) }} {%if hasBaignade %}{{ "seo.title.camping_suffix" | trans }}{% endif %}</span>
     </h1>
 
-    <p class="campSubtitle"><strong>{% if etab.capacite %}{{ etab.capacite }} {{ "fiche.emplacements" | trans }} | {% endif %}{{ "fiche.ouvert_du" | trans }} {{ etab.openingDate | date('d/m/Y') }} {{ "fiche.ouvert_au" | trans }} {{ etab.closingDate | date('d/m/Y') }}</strong></p>
+    <p class="campSubtitle"><strong>{{ "fiche.ouvert_du" | trans }} {{ etab.openingDate | date('d/m/Y') }} {{ "fiche.ouvert_au" | trans }} {{ etab.closingDate | date('d/m/Y') }}</strong></p>
 
     <p class="keywordsFiche">
         {% if etab.activites | length %}
-            {% for activite in etab.activites %}
+            {% for activite in etab.activitesActive %}
                 {% if loop.index <= 2 %}
                     {{ activite.name }} -
                 {% endif %}
             {% endfor %}
         {% endif %}
         {% if etab.serviceComplementaires | length %}
-            {% for serviceComplementaire in etab.serviceComplementaires %}
+            {% for serviceComplementaire in etab.serviceComplementairesActive %}
                 {% if loop.index <= 2 %}
                     {{ serviceComplementaire.name }}
                     {% if loop.index < 2 %} - {% endif %}
@@ -83,7 +83,7 @@
             <span>{{ "fiche.photo" | trans }}</span>
             <label for="photosToutes"><input type="radio" id="photosToutes" name="affPhoto" value="all" checked="checked">{{ "Toutes" | trans }}</label>
             {% for tag in tags %}
-                <label for="photos{{ tag }}"><input type="radio" id="photos{{ tag }}" name="affPhoto" value="{{ tag }}">{{ tag }}</label>
+                <label for="photos{{ tag.slug }}"><input type="radio" id="photos{{ tag.slug }}" name="affPhoto" value="{{ tag.slug }}">{{ tag.name }}</label>
             {% endfor %}
         </fieldset>
         <fieldset class="right">
@@ -113,7 +113,7 @@
         <dl>
             <dt><span>{{ "fiche.activites" | trans }}</span></dt>
             <dd class="activites"><ul>
-                {% for activite in etab.activites %}
+                {% for activite in etab.activitesActive %}
                     <li>{% if activite.imagePath != "." and activite.imagePath != null %}<img src="{{ asset(activite.imagePath) }}" width="36" height="43" alt="{{ activite.name }}">{% endif %}<span>{{ activite.name }}</span></li>
                 {% endfor %}
             </ul></dd>
@@ -123,7 +123,7 @@
         <dl>
             <dt><span>{{ "fiche.baignades.top" | trans }}<br />{{ "fiche.baignades.bottom" | trans }}</span></dt>
             <dd class="equipements"><ul>
-                {% for baignade in etab.baignades %}
+                {% for baignade in etab.baignadesActive %}
                     <li>{% if baignade.imagePath != "." and baignade.imagePath != null %}<img src="{{ asset(baignade.imagePath) }}" width="36" height="43" alt="{{ baignade.name }}">{% endif %}<span>{{ baignade.name }}</span></li>
                 {% endfor %}
             </ul></dd>
@@ -133,7 +133,7 @@
         <dl>
             <dt><span>{{ "fiche.services_complementaires" | trans }}</span></dt>
             <dd class="services"><ul>
-                {% for serviceComplementaire in etab.serviceComplementaires %}
+                {% for serviceComplementaire in etab.serviceComplementairesActive %}
                     <li>{% if serviceComplementaire.imagePath != "." and serviceComplementaire.imagePath != null %}<img src="{{ asset(serviceComplementaire.imagePath) }}" width="36" height="43" alt="{{ serviceComplementaire.name }}">{% endif %}<span>{{ serviceComplementaire.name }}</span></li>
                 {% endfor %}
             </ul></dd>
@@ -152,7 +152,7 @@
             </div>
         </div>
         <div class="slider"><div class="slide">
-            {% for avantage in personnageAleatoire.avantages %}
+            {% for avantage in personnageAleatoire.avantagesActivite %}
                 <dl>
                     <dd><img src="{{ asset(avantage.imagePath) }}" alt="{{ avantage.name }}" class="boxborder"></dd>
                     <dt>{{ avantage.name }}</dt>
@@ -174,7 +174,7 @@
                         <span class="perso">{{ personnage.prenom | trans }}</span>
                         <span class="age">{{ personnage.age }} ans</span>
                         <ul>
-                            {% for avantage in personnage.avantages %}
+                            {% for avantage in personnage.avantagesActive %}
                             <li>{{ avantage.name }}</li>
                             {% endfor %}
                         </ul>
@@ -244,7 +244,7 @@
         <div class="typLocation {{ hebergement.categoryTypeHebergement.name }} cap{{ hebergement.nombrePlace }} clear" data-type="{{ hebergement.code }}">
             <img src="{{ asset(hebergement.imageHebergementPath) }}" width="181" height="134" alt="{{ hebergement.name | trans }}" class="left boxborder">
             <div style="overflow:hidden;">
-            <a href="{{ path('location_type_hebergement', {'categoryTypeHebergement':hebergement.categoryTypeHebergement.slug ,'typeHebergement':hebergement.slug }) }}"><span class="h4-like">{{ hebergement.name | trans }}</span></a>
+            <span class="h4-like"><a href="{{ path('location_category_type_hebergement', {'categoryTypeHebergement':hebergement.categoryTypeHebergement.slug}) }}">{{ hebergement.categoryTypeHebergement.name | trans }}</a> - <a href="{{ path('location_type_hebergement', {'categoryTypeHebergement':hebergement.categoryTypeHebergement.slug ,'typeHebergement':hebergement.slug }) }}">{{ hebergement.name | trans }}</a></span>
             {# TODO <span class="nbPlace"><img src="{{ asset(hebergement.imageCompositionPath) }}" width="92" height="33" alt="">  {{ hebergement.composition | trans | nl2br }}</span>#}
             {#<strong>{{ "fiche.nombre_chambres" | trans }} {{ hebergement.nombrePlace | trans | nl2br }}<br>
             {{ "fiche.surface" | trans }} {{ hebergement.surface | trans }}<br>
@@ -404,10 +404,10 @@
 
 {% if blocPrix.adult_price_without_discounts != 0 %}
 <iframe id="frameResalys" src="{{ path('resalys_wrapper', {
-    webuser: resalysParameters.web_user[locale],
+    webuser: webuser,
     display: 'semainier',
     etab_id:etab.code,
-    campaign_code: resalysParameters.campaign_code,
+    campaign_code: "now"|date("Y"),
     referer: referer
 }) }}" width="960px" height="700px" marginheight="0" marginwidth="0" frameborder="0"></iframe>
 {% endif %}

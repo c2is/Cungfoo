@@ -15,11 +15,11 @@
     </div>
     #}
     <div id="dealsContent">
-    {% for categorie in categories %}
+        {% for categorie in categories %}
         <div id="bp{{ loop.index }}" class="radiusBox greyC">
             {% for bonPlan in categorie.bonPlansActifsForMenu %}
                 {% if loop.index < 3 %}
-                <div class="clear">
+            <div class="clear">
                 <div>
                     <div class="stamp orange"><span>{% if loop.first or loop.last %}{{ bonPlan.name }}{% else %}{{ 'menu_bon_plan.autres_offres.title' | trans}}{% endif %}</span></div>
                     {% if (loop.first or (loop.index == 2 and loop.last)) and bonPlan.dateStart %}<span class="dealsDate">{{ 'menu_bon_plan.dispos.subtitle.prefix' | trans}} {{ bonPlan.dateStart|date('d/m/Y') }}</span>{% endif %}
@@ -32,24 +32,24 @@
                     {% else %}
                         {% set nbDispos = 4 %}
                     {% endif %}
-                    <div class="elements">
+                <div class="elements">
                     {#{% if app.debug %}#}
-                        {{ render(path('esi_bon_plan', {'slug': bonPlan.slug, 'limit': nbDispos})) }}
+                    {{ render(path('esi_bon_plan', {'slug': bonPlan.slug, 'limit': nbDispos})) }}
                     {#{% else %}
                         <esi:include src="{{ path('esi_bon_plan', {'slug': bonPlan.slug, 'limit': nbDispos}) }}" />
                     {% endif %}#}
-                    </div>
-                    <a href="{{ path('bonsplans', {'slug': bonPlan.slug}) }}" class="bt link right clearboth">{{ 'menu_bon_plan.bons_plans.link.prefix' | trans}} {{ bonPlan.name }}</a>
+                </div>
+                <a href="{{ path('bonsplans', {'slug': bonPlan.slug}) }}" class="bt link right clearboth">{{ 'menu_bon_plan.bons_plans.link.prefix' | trans}} {{ bonPlan.name }}</a>
                 {% elseif loop.index < 4 %}
                     {% if loop.index == 2 and loop.last %}
-                    <div class="elements">
+                <div class="elements">
                         {#{% if app.debug %}#}
-                            {{ render(path('esi_bon_plan', {'slug': bonPlan.slug, 'limit': 2})) }}
+                     {{ render(path('esi_bon_plan', {'slug': bonPlan.slug, 'limit': 2})) }}
                         {#{% else %}
                             <esi:include src="{{ path('esi_bon_plan', {'slug': bonPlan.slug, 'limit': 2}) }}" />
                         {% endif %}#}
-                    </div>
-                    <a href="{{ path('bonsplans', {'slug': bonPlan.slug}) }}" class="bt link right clearboth">{{ 'menu_bon_plan.bons_plans.link.prefix' | trans}} {{ bonPlan.name }}</a>
+                </div>
+                <a href="{{ path('bonsplans', {'slug': bonPlan.slug}) }}" class="bt link right clearboth">{{ 'menu_bon_plan.bons_plans.link.prefix' | trans}} {{ bonPlan.name }}</a>
                     {% else %}
                         {% if loop.index == 2 %}
                 <div class="elements">
@@ -70,8 +70,11 @@
                 {% else %}
                 <a href="{{ path('categorie_bonsplans', {'cat': categorie.slug }) }}" class="bt link right clearboth">{{ 'menu_bon_plan.categorie_bons_plans.link' | trans}}</a>
                 {% endif %}
-                {% if loop.first or loop.last %}</div>{% endif %}
+                {% if loop.first or loop.last %}
+            </div>
+                {% endif %}
             {% endfor %}
         </div>
-    {% endfor %}
+        {% endfor %}
+    </div>
 </div>

@@ -86,6 +86,13 @@ class BaseIdeeWeekendType extends AppAwareType
                     'constraints' => array(
                     ),
                 ),
+                'active_locale' => array(
+                    'required' => false,
+                    'label' => 'idee_weekend.active_locale',
+                    'type' => 'checkbox',
+                    'constraints' => array(
+                    ),
+                ),
             ),
             'required' => false,
         ));

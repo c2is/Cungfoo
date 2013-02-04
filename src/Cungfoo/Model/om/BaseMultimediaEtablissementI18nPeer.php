@@ -37,13 +37,13 @@ abstract class BaseMultimediaEtablissementI18nPeer
     const TM_CLASS = 'MultimediaEtablissementI18nTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 3;
+    const NUM_COLUMNS = 4;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 3;
+    const NUM_HYDRATE_COLUMNS = 4;
 
     /** the column name for the id field */
     const ID = 'multimedia_etablissement_i18n.id';
@@ -53,6 +53,9 @@ abstract class BaseMultimediaEtablissementI18nPeer
 
     /** the column name for the titre field */
     const TITRE = 'multimedia_etablissement_i18n.titre';
+
+    /** the column name for the active_locale field */
+    const ACTIVE_LOCALE = 'multimedia_etablissement_i18n.active_locale';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -73,12 +76,12 @@ abstract class BaseMultimediaEtablissementI18nPeer
      * e.g. MultimediaEtablissementI18nPeer::$fieldNames[MultimediaEtablissementI18nPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Titre', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'titre', ),
-        BasePeer::TYPE_COLNAME => array (MultimediaEtablissementI18nPeer::ID, MultimediaEtablissementI18nPeer::LOCALE, MultimediaEtablissementI18nPeer::TITRE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'TITRE', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'titre', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Titre', 'ActiveLocale', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'titre', 'activeLocale', ),
+        BasePeer::TYPE_COLNAME => array (MultimediaEtablissementI18nPeer::ID, MultimediaEtablissementI18nPeer::LOCALE, MultimediaEtablissementI18nPeer::TITRE, MultimediaEtablissementI18nPeer::ACTIVE_LOCALE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'TITRE', 'ACTIVE_LOCALE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'titre', 'active_locale', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
     );
 
     /**
@@ -88,12 +91,12 @@ abstract class BaseMultimediaEtablissementI18nPeer
      * e.g. MultimediaEtablissementI18nPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Titre' => 2, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'titre' => 2, ),
-        BasePeer::TYPE_COLNAME => array (MultimediaEtablissementI18nPeer::ID => 0, MultimediaEtablissementI18nPeer::LOCALE => 1, MultimediaEtablissementI18nPeer::TITRE => 2, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'TITRE' => 2, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'titre' => 2, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Titre' => 2, 'ActiveLocale' => 3, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'titre' => 2, 'activeLocale' => 3, ),
+        BasePeer::TYPE_COLNAME => array (MultimediaEtablissementI18nPeer::ID => 0, MultimediaEtablissementI18nPeer::LOCALE => 1, MultimediaEtablissementI18nPeer::TITRE => 2, MultimediaEtablissementI18nPeer::ACTIVE_LOCALE => 3, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'TITRE' => 2, 'ACTIVE_LOCALE' => 3, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'titre' => 2, 'active_locale' => 3, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
     );
 
     /**
@@ -170,10 +173,12 @@ abstract class BaseMultimediaEtablissementI18nPeer
             $criteria->addSelectColumn(MultimediaEtablissementI18nPeer::ID);
             $criteria->addSelectColumn(MultimediaEtablissementI18nPeer::LOCALE);
             $criteria->addSelectColumn(MultimediaEtablissementI18nPeer::TITRE);
+            $criteria->addSelectColumn(MultimediaEtablissementI18nPeer::ACTIVE_LOCALE);
         } else {
             $criteria->addSelectColumn($alias . '.id');
             $criteria->addSelectColumn($alias . '.locale');
             $criteria->addSelectColumn($alias . '.titre');
+            $criteria->addSelectColumn($alias . '.active_locale');
         }
     }
 
