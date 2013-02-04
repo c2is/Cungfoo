@@ -524,6 +524,7 @@ footer:
         title: "Contact"
         tel: "0825 133 400"
         fax: "Fax: 02 96 39 97 81"
+        price: "*(0,15 €/min)"
         adresse:
             name: "Vacances directes"
             lieu_dit: "ZA les Alleux"
