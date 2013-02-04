@@ -105,7 +105,7 @@
                         <span class="title">{{ idee.titre }}</span>
                     </div>
                     {% if(idee.prix != "") %}
-                        {# TODO <a href="{{ idee.lien | trans }}" class="stain cover linkBlock "><span>{{ "general.a_partir_de" | trans }}<br /><span class="price linkBlock">{{ idee.prix }}<span class="fine">&nbsp;</span>€</span></span></a> #}
+                        <a href="{{ idee.lien | trans }}" class="stain cover linkBlock "><span>{{ "general.a_partir_de" | trans }}<br /><span class="price linkBlock">{{ idee.prix }}<span class="fine">&nbsp;</span>€</span></span></a>
                     {% endif %}
                 </div>
             {% endfor %}
