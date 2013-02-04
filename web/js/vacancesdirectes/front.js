@@ -1251,11 +1251,14 @@ function openPopinIframe(url){
 }
 function openPopinInline(type){
 //    console.log("################################## openPopinInline()  ##################################");
-//    console.log(type);
     if ($('*[data-type="' + type + '"]').length > 0){
         $('*[data-type="' + type + '"]').attr('id',type);
         var content = $('*[data-type="' + type + '"]').clone();
-        content.find('.h4-like').unwrap();
+        content.find('.h4-like').each(function() {
+            $(this).children('a').replaceWith(function () {
+                return $(this).text();
+            });
+        });
 //        console.log(content);
         $.colorbox({href:content, inline:true, width:'616px', close:"&times;"});
     }
