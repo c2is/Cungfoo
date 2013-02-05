@@ -74,7 +74,7 @@ class CouloirController implements ControllerProviderInterface
         ->value('proposalKey', null)
         ->bind('couloir_detail_sejour');
 
-        $controllers->post('/' . $app->trans('seo.url.couloir.recapitulatif') . '/{proposalKey}', function (Request $request, $proposalKey) use ($app) {
+        $controllers->match('/' . $app->trans('seo.url.couloir.recapitulatif') . '/{proposalKey}', function (Request $request, $proposalKey) use ($app) {
 
             $rslConfig = $this->getResalysConfig($app);
 
