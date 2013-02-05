@@ -172,5 +172,13 @@
         fEndDate = '2013/10/31',
         fHighSeasonStartDate = '2013/06/29',    // must be a saturday
         fHighSeasonEndDate = '2013/08/31',      // must be a saturday
-        linear = "reservation";
+        linear = "reservation",
+        datepickerLanguage = {
+            days: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'],
+            daysShort: ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim'],
+            daysMin: ['Di', 'Lu', 'Ma', 'Me', 'Je', 'Ve', 'Sa', 'Di'],
+            months: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+            monthsShort: ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Jui', 'Jui', 'Aoû', 'Sepe', 'Oct', 'Nov', 'Déc'],
+            weekMin: 'Se'
+        };
 </script>
