@@ -807,12 +807,12 @@ share:
 
 couloir:
     menu:
-        detail: "Détails du séjour"
-        recapitulatif: "Récapitulatif"
-        paiement: "Paiement"
-    confirmation: "Confirmation"
-    title: "Bienvenue dans l’espace de"
-    title_reservation: "Réservation"
+        detail: "Details des Aufenthaltes"
+        recapitulatif: "Übersicht"
+        paiement: "Bezahlung"
+    confirmation: "Bestätigung"
+    title: "Willkommen im"
+    title_reservation: " Buchungsbereich"
 
 err404:
     title: "Sorry, diese Seite existiert"
