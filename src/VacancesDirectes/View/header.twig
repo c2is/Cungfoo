@@ -5,7 +5,7 @@
 {% else %}
 <a id="account" href="#">{{ "global.compte.btn" | trans }}</a>
 <div id="accountBox" class="radiusBox greyF arrowUp">
-    <h2>{{ "global.compte.title" | trans }}</h2>
+    <h2>{{ "global.compte.title" | trans|raw }}</h2>
     <form id="connexion" action="{{ path('compte_login_check') }}" method="post">
         <fieldset>
             {% if app.login_errors %}

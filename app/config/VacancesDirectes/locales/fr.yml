@@ -770,8 +770,7 @@ global:
         coordonnees: "Coordonnées"
         demande_brochure: "Demande de brochure"
         reservation: "Réservation"
-        title: "Espace"
-        title_client: "client"
+        title: "<span>Espace</span> client"
 
 bon_plan:
     title: "Camping : %bonPlan%"

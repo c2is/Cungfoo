@@ -152,7 +152,7 @@
             </div>
         </div>
         <div class="slider"><div class="slide">
-            {% for avantage in personnageAleatoire.avantagesActivite %}
+            {% for avantage in personnageAleatoire.avantagesActive %}
                 <dl>
                     <dd><img src="{{ asset(avantage.imagePath) }}" alt="{{ avantage.name }}" class="boxborder"></dd>
                     <dt>{{ avantage.name }}</dt>
