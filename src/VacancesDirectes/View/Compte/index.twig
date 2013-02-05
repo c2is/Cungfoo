@@ -6,7 +6,7 @@
 <div id="wrap" class="fixed-width clear">
 <div id="headerContainer" class="column clear">
     <div class="clear">
-        <h1><span>{{ "global.compte.title" | trans }} </span>{{ "global.compte.title_client" | trans }}</h1>
+        <h1>{{ "global.compte.title" | trans | raw }}</h1>
         <a href="{{ path('compte_logout') }}" class="logout bt fushia ib right big">{{ "general.logout" | trans }}</a>
     </div>
     <nav id="stepNav" class="clearboth">
