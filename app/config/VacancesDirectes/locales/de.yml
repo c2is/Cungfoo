@@ -13,7 +13,7 @@ seo:
         couloir: "Reservierung"
         theme: "%theme%"
         bonPlan: "Campingplatz %bonPlan%, Vermietung Wohnwagen %bonPlan%"
-        topCamping: "Beste Campingplätze Frankreich, beste Urlaubsziele"
+        topCamping: "Top Campingplätze Frankreich, beste Urlaubsziele"
         poi: "%poi% besichtigen: %ville%"
         event: "%event% : %ville%"
         location:
@@ -67,7 +67,7 @@ seo:
             index: "versicherung"
             confirmation: "bestatigung"
         locations: "vermietungsangebote"
-        topCampings: "beste-campingplatze"
+        topCampings: "top-campingplatze"
 
 pays:
     afghanistan: "Afghanistan"
@@ -314,8 +314,8 @@ menu_destination.accroche: "3 Länder, 34 touristische Regionen, Ihr Urlaub mit 
 
 menu_bon_plan:
     accroche:
-        prefix: "Auswählen"
-        suffix: "Geheimtipp"
+        prefix: "Geheimtipp"
+        suffix: "Auswählen"
     newsletter:
         title: "Newsletter abonnieren"
         link: "Anmelden"
@@ -373,7 +373,7 @@ date_search:
     submit: "Finden"
     campings: "Campingplätze"
     ou: "oder"
-    nuits: "nachts"
+    nuits: "nächte"
 
 
 "Les vacances à": "Urlaub in"
@@ -452,7 +452,7 @@ fiche:
         type_hebergement: "für ein(e/n) %categorie% - %type%"
 
 home:
-    topcamping: "Beste Campingplätze"
+    topcamping: "Top Campingplätze"
     topcamping.link: "Alle besten Campingplätze"
     vacances_directes_cest: "Vacances Directes steht für"
     4_pays: "3 Länder"
@@ -482,7 +482,7 @@ general:
     jouer: "Spielen"
     en_savoir_plus: "Mehr erfahren"
     la_nuit: "nachts"
-    idees_week_end: "Geheimtipps"
+    idees_week_end: "Unsere tipps"
     filter_par: "Filtern nach"
     campings_vacances_directes: "Vacances Directes Campingplätze"
     decouvrir_le_camping: "Den Campingplatz entdecken"
@@ -606,7 +606,7 @@ encart_hebergement:
 
 encart_informations:
     title: "Informationen & Reservierungen unter"
-    price: "(0,15 /min)"
+    price: ""
     dates_1: "Von Montag bis Freitag 9 -21 Uhr"
     dates_2: "Samstag 10 - 18 Uhr"
 
