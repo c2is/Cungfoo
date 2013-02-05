@@ -131,7 +131,6 @@ class BonsPlansController implements ControllerProviderInterface
                 ->addEtab($bonPlanObject->getEtablissementsCodes())
                 ->setNbAdults($bonPlanObject->getNbAdultes())
                 ->setNbChildren($bonPlanObject->getNbEnfants())
-                ->setMaxResults(50)
             ;
 
             $client = new DisponibiliteClient($app['config']->get('root_dir'), $app['context']->get('language'));
