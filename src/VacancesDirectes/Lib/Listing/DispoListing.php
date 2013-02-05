@@ -76,10 +76,14 @@ class DispoListing extends AbstractListing
 
     protected function addElement($proposal, $results, &$loopIndex)
     {
+        $locale = $this->app['context']->get('language');
+
         $etab = \Cungfoo\Model\EtablissementQuery::create()
-            ->joinWithI18n($this->app['context']->get('language'))
             ->filterByCode($proposal->{'etab_id'})
             ->filterByActive(true)
+            ->useI18nQuery($locale)
+                ->filterByActiveLocale(true)
+            ->endUse()
             ->findOne()
         ;
 
