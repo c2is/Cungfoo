@@ -36,6 +36,8 @@ class EsiController implements ControllerProviderInterface
             {
                 $bonPlan = BonPlanQuery::create()
                     ->filterByPushHome(true)
+                    ->filterByDateDebut(array('max' => 'today'))
+                    ->filterByDateFin(array('min' => 'today'))
                     ->findOne()
                 ;
 
@@ -54,7 +56,7 @@ class EsiController implements ControllerProviderInterface
                         ->addEtab($bonPlan->getEtablissementsCodes())
                         ->setNbAdults($bonPlan->getNbAdultes())
                         ->setPeriodCategories($bonPlan->getPeriodCategories())
-                        ->setMaxResults(10)
+                        ->setMaxResults(15)
                         ->setSortString('Random')
                     ;
 
@@ -129,7 +131,7 @@ class EsiController implements ControllerProviderInterface
                     ->addEtab($bonPlanObject->getEtablissementsCodes())
                     ->setNbAdults($bonPlanObject->getNbAdultes())
                     ->setPeriodCategories($bonPlanObject->getPeriodCategories())
-                    ->setMaxResults(10)
+                    ->setMaxResults(15)
                     ->setSortString('Random')
                 ;
 
