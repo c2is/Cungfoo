@@ -766,12 +766,12 @@ global:
         password: "Passwort"
         forget: "Passwort vergessen?"
         submit: "Anmelden"
-        accueil: "Accueil"
-        coordonnees: "Coordonnées"
-        demande_brochure: "Demande de brochure"
-        reservation: "Réservation"
-        title: "Espace"
-        title_client: "client"
+        accueil: "Startseite"  
+        coordonnees: "Kontaktinformationen"
+        demande_brochure: "Broschüre anfordern"
+        reservation: "Buchung"
+        title: "Kundenbereich "
+        title_client: ""
 
 bon_plan:
     title: "Campingplatz: %bonPlan%"
