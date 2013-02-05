@@ -36,96 +36,734 @@ include('includes/top.php'); ?>
 
             <h2 class="h3-like">Nos campings par région</h2>
 
-            <div class="toggleContainer">
-                <div class="toggleItem">France</div>
-                <div class="toggleContent primary">
-                    <div class="toggleItem">Aquitaine</div>
-                    <div class="toggleContent secondary"></div>
-                    <div class="toggleItem">Normandie</div>
-                    <div class="toggleContent secondary"></div>
-                    <div class="toggleItem">Bretagne</div>
-                    <div class="toggleContent secondary"></div>
-                    <div class="toggleItem">Corse</div>
-                    <div class="toggleContent secondary"></div>
-                    <div class="toggleItem">Lorraine</div>
-                    <div class="toggleContent secondary"></div>
-                    <div class="toggleItem">Picardie</div>
-                    <div class="toggleContent secondary"></div>
-                </div>
-                <div class="toggleItem">Espagne</div>
-                <div class="toggleContent primary">
-                    <div class="toggleItem">Cantabria</div>
-                    <div class="toggleContent secondary"></div>
-                    <div class="toggleItem">Costa Blanca</div>
-                    <div class="toggleContent secondary"></div>
-                    <div class="toggleItem">Costa Brava</div>
-                    <div class="toggleContent secondary"></div>
-                    <div class="toggleItem">Costa del Azahar</div>
-                    <div class="toggleContent secondary"></div>
-                    <div class="toggleItem">Costa Dorada</div>
-                    <div class="toggleContent secondary"></div>
-                </div>
-                <div class="toggleItem">Italie</div>
-                <div class="toggleContent primary">
-                    <div class="toggleItem">Italie adriatique</div>
-                    <div class="toggleContent secondary"></div>
-                    <div class="toggleItem">Italie méditerranéenne</div>
-                    <div class="toggleContent secondary"></div>
-                    <div class="toggleItem">Toscane</div>
-                    <div class="toggleContent secondary"></div>
-                </div>
-            </div>
-
-
             <div id="results" class="clear">
-                <div class="itemResult clear">
-                    <div class="itemResultTitle itemResultTitleHbgt">
-                       Familial
+
+                <div class="toggleContainer">
+                    <div class="toggleItem">France<span class="toggleArrow">&gt;</span></div>
+                    <div class="toggleContent primary">
+                        <div class="toggleItem">Aquitaine<span class="toggleArrow">&gt;</span></div>
+                        <div class="toggleContent secondary">
+                            <div class="itemResult clear">
+                                <div class="itemResultTitle itemResultTitleHbgt">
+                                    Familial
+                                </div>
+                                <div class="itemResultLeft itemResultLeftHbgt">
+                                    <img src="http://pimg.devlint.fr/171x124" alt="" class="boxborder">
+                                </div>
+                                <div class="itemResultCenter itemResultCenterHbgt">
+                                    <span class="ircHbgtTitle">Mobil-home | 6 places</span>
+                                    <span class="ircHbgtSubTitle">Avec sanitaires</span>
+                                    <span class="ircHbgtDesc">Particulièrement prisé des famille, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l'esprit libre</span>
+                                </div>
+                                <div class="itemResultBottom itemResultBottomHbgt clear">
+                                    <a class="bt right fushia big" href="#_">En savoir plus</a>
+                                </div>
+                            </div>
+                            <div class="itemResult clear">
+                                <div class="itemResultTitle itemResultTitleHbgt">
+                                    Familial
+                                </div>
+                                <div class="itemResultLeft itemResultLeftHbgt">
+                                    <img src="http://pimg.devlint.fr/171x124" alt="" class="boxborder">
+                                </div>
+                                <div class="itemResultCenter itemResultCenterHbgt">
+                                    <span class="ircHbgtTitle">Mobil-home | 6 places</span>
+                                    <span class="ircHbgtSubTitle">Avec sanitaires</span>
+                                    <span class="ircHbgtDesc">Particulièrement prisé des famille, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l'esprit libre</span>
+                                </div>
+                                <div class="itemResultBottom itemResultBottomHbgt clear">
+                                    <a class="bt right fushia big" href="#_">En savoir plus</a>
+                                </div>
+                            </div>
+                            <div class="itemResult clear">
+                                <div class="itemResultTitle itemResultTitleHbgt">
+                                    Familial
+                                </div>
+                                <div class="itemResultLeft itemResultLeftHbgt">
+                                    <img src="http://pimg.devlint.fr/171x124" alt="" class="boxborder">
+                                </div>
+                                <div class="itemResultCenter itemResultCenterHbgt">
+                                    <span class="ircHbgtTitle">Mobil-home | 6 places</span>
+                                    <span class="ircHbgtSubTitle">Avec sanitaires</span>
+                                    <span class="ircHbgtDesc">Particulièrement prisé des famille, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l'esprit libre</span>
+                                </div>
+                                <div class="itemResultBottom itemResultBottomHbgt clear">
+                                    <a class="bt right fushia big" href="#_">En savoir plus</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="toggleItem">Normandie<span class="toggleArrow">&gt;</span></div>
+                        <div class="toggleContent secondary">
+                            <div class="itemResult clear">
+                                <div class="itemResultTitle itemResultTitleHbgt">
+                                    Familial
+                                </div>
+                                <div class="itemResultLeft itemResultLeftHbgt">
+                                    <img src="http://pimg.devlint.fr/171x124" alt="" class="boxborder">
+                                </div>
+                                <div class="itemResultCenter itemResultCenterHbgt">
+                                    <span class="ircHbgtTitle">Mobil-home | 6 places</span>
+                                    <span class="ircHbgtSubTitle">Avec sanitaires</span>
+                                    <span class="ircHbgtDesc">Particulièrement prisé des famille, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l'esprit libre</span>
+                                </div>
+                                <div class="itemResultBottom itemResultBottomHbgt clear">
+                                    <a class="bt right fushia big" href="#_">En savoir plus</a>
+                                </div>
+                            </div>
+                            <div class="itemResult clear">
+                                <div class="itemResultTitle itemResultTitleHbgt">
+                                    Familial
+                                </div>
+                                <div class="itemResultLeft itemResultLeftHbgt">
+                                    <img src="http://pimg.devlint.fr/171x124" alt="" class="boxborder">
+                                </div>
+                                <div class="itemResultCenter itemResultCenterHbgt">
+                                    <span class="ircHbgtTitle">Mobil-home | 6 places</span>
+                                    <span class="ircHbgtSubTitle">Avec sanitaires</span>
+                                    <span class="ircHbgtDesc">Particulièrement prisé des famille, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l'esprit libre</span>
+                                </div>
+                                <div class="itemResultBottom itemResultBottomHbgt clear">
+                                    <a class="bt right fushia big" href="#_">En savoir plus</a>
+                                </div>
+                            </div>
+                            <div class="itemResult clear">
+                                <div class="itemResultTitle itemResultTitleHbgt">
+                                    Familial
+                                </div>
+                                <div class="itemResultLeft itemResultLeftHbgt">
+                                    <img src="http://pimg.devlint.fr/171x124" alt="" class="boxborder">
+                                </div>
+                                <div class="itemResultCenter itemResultCenterHbgt">
+                                    <span class="ircHbgtTitle">Mobil-home | 6 places</span>
+                                    <span class="ircHbgtSubTitle">Avec sanitaires</span>
+                                    <span class="ircHbgtDesc">Particulièrement prisé des famille, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l'esprit libre</span>
+                                </div>
+                                <div class="itemResultBottom itemResultBottomHbgt clear">
+                                    <a class="bt right fushia big" href="#_">En savoir plus</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="toggleItem">Bretagne<span class="toggleArrow">&gt;</span></div>
+                        <div class="toggleContent secondary">
+                            <div class="itemResult clear">
+                                <div class="itemResultTitle itemResultTitleHbgt">
+                                    Familial
+                                </div>
+                                <div class="itemResultLeft itemResultLeftHbgt">
+                                    <img src="http://pimg.devlint.fr/171x124" alt="" class="boxborder">
+                                </div>
+                                <div class="itemResultCenter itemResultCenterHbgt">
+                                    <span class="ircHbgtTitle">Mobil-home | 6 places</span>
+                                    <span class="ircHbgtSubTitle">Avec sanitaires</span>
+                                    <span class="ircHbgtDesc">Particulièrement prisé des famille, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l'esprit libre</span>
+                                </div>
+                                <div class="itemResultBottom itemResultBottomHbgt clear">
+                                    <a class="bt right fushia big" href="#_">En savoir plus</a>
+                                </div>
+                            </div>
+                            <div class="itemResult clear">
+                                <div class="itemResultTitle itemResultTitleHbgt">
+                                    Familial
+                                </div>
+                                <div class="itemResultLeft itemResultLeftHbgt">
+                                    <img src="http://pimg.devlint.fr/171x124" alt="" class="boxborder">
+                                </div>
+                                <div class="itemResultCenter itemResultCenterHbgt">
+                                    <span class="ircHbgtTitle">Mobil-home | 6 places</span>
+                                    <span class="ircHbgtSubTitle">Avec sanitaires</span>
+                                    <span class="ircHbgtDesc">Particulièrement prisé des famille, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l'esprit libre</span>
+                                </div>
+                                <div class="itemResultBottom itemResultBottomHbgt clear">
+                                    <a class="bt right fushia big" href="#_">En savoir plus</a>
+                                </div>
+                            </div>
+                            <div class="itemResult clear">
+                                <div class="itemResultTitle itemResultTitleHbgt">
+                                    Familial
+                                </div>
+                                <div class="itemResultLeft itemResultLeftHbgt">
+                                    <img src="http://pimg.devlint.fr/171x124" alt="" class="boxborder">
+                                </div>
+                                <div class="itemResultCenter itemResultCenterHbgt">
+                                    <span class="ircHbgtTitle">Mobil-home | 6 places</span>
+                                    <span class="ircHbgtSubTitle">Avec sanitaires</span>
+                                    <span class="ircHbgtDesc">Particulièrement prisé des famille, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l'esprit libre</span>
+                                </div>
+                                <div class="itemResultBottom itemResultBottomHbgt clear">
+                                    <a class="bt right fushia big" href="#_">En savoir plus</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="toggleItem">Corse<span class="toggleArrow">&gt;</span></div>
+                        <div class="toggleContent secondary">
+                            <div class="itemResult clear">
+                                <div class="itemResultTitle itemResultTitleHbgt">
+                                    Familial
+                                </div>
+                                <div class="itemResultLeft itemResultLeftHbgt">
+                                    <img src="http://pimg.devlint.fr/171x124" alt="" class="boxborder">
+                                </div>
+                                <div class="itemResultCenter itemResultCenterHbgt">
+                                    <span class="ircHbgtTitle">Mobil-home | 6 places</span>
+                                    <span class="ircHbgtSubTitle">Avec sanitaires</span>
+                                    <span class="ircHbgtDesc">Particulièrement prisé des famille, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l'esprit libre</span>
+                                </div>
+                                <div class="itemResultBottom itemResultBottomHbgt clear">
+                                    <a class="bt right fushia big" href="#_">En savoir plus</a>
+                                </div>
+                            </div>
+                            <div class="itemResult clear">
+                                <div class="itemResultTitle itemResultTitleHbgt">
+                                    Familial
+                                </div>
+                                <div class="itemResultLeft itemResultLeftHbgt">
+                                    <img src="http://pimg.devlint.fr/171x124" alt="" class="boxborder">
+                                </div>
+                                <div class="itemResultCenter itemResultCenterHbgt">
+                                    <span class="ircHbgtTitle">Mobil-home | 6 places</span>
+                                    <span class="ircHbgtSubTitle">Avec sanitaires</span>
+                                    <span class="ircHbgtDesc">Particulièrement prisé des famille, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l'esprit libre</span>
+                                </div>
+                                <div class="itemResultBottom itemResultBottomHbgt clear">
+                                    <a class="bt right fushia big" href="#_">En savoir plus</a>
+                                </div>
+                            </div>
+                            <div class="itemResult clear">
+                                <div class="itemResultTitle itemResultTitleHbgt">
+                                    Familial
+                                </div>
+                                <div class="itemResultLeft itemResultLeftHbgt">
+                                    <img src="http://pimg.devlint.fr/171x124" alt="" class="boxborder">
+                                </div>
+                                <div class="itemResultCenter itemResultCenterHbgt">
+                                    <span class="ircHbgtTitle">Mobil-home | 6 places</span>
+                                    <span class="ircHbgtSubTitle">Avec sanitaires</span>
+                                    <span class="ircHbgtDesc">Particulièrement prisé des famille, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l'esprit libre</span>
+                                </div>
+                                <div class="itemResultBottom itemResultBottomHbgt clear">
+                                    <a class="bt right fushia big" href="#_">En savoir plus</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="toggleItem">Lorraine<span class="toggleArrow">&gt;</span></div>
+                        <div class="toggleContent secondary">
+                            <div class="itemResult clear">
+                                <div class="itemResultTitle itemResultTitleHbgt">
+                                    Familial
+                                </div>
+                                <div class="itemResultLeft itemResultLeftHbgt">
+                                    <img src="http://pimg.devlint.fr/171x124" alt="" class="boxborder">
+                                </div>
+                                <div class="itemResultCenter itemResultCenterHbgt">
+                                    <span class="ircHbgtTitle">Mobil-home | 6 places</span>
+                                    <span class="ircHbgtSubTitle">Avec sanitaires</span>
+                                    <span class="ircHbgtDesc">Particulièrement prisé des famille, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l'esprit libre</span>
+                                </div>
+                                <div class="itemResultBottom itemResultBottomHbgt clear">
+                                    <a class="bt right fushia big" href="#_">En savoir plus</a>
+                                </div>
+                            </div>
+                            <div class="itemResult clear">
+                                <div class="itemResultTitle itemResultTitleHbgt">
+                                    Familial
+                                </div>
+                                <div class="itemResultLeft itemResultLeftHbgt">
+                                    <img src="http://pimg.devlint.fr/171x124" alt="" class="boxborder">
+                                </div>
+                                <div class="itemResultCenter itemResultCenterHbgt">
+                                    <span class="ircHbgtTitle">Mobil-home | 6 places</span>
+                                    <span class="ircHbgtSubTitle">Avec sanitaires</span>
+                                    <span class="ircHbgtDesc">Particulièrement prisé des famille, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l'esprit libre</span>
+                                </div>
+                                <div class="itemResultBottom itemResultBottomHbgt clear">
+                                    <a class="bt right fushia big" href="#_">En savoir plus</a>
+                                </div>
+                            </div>
+                            <div class="itemResult clear">
+                                <div class="itemResultTitle itemResultTitleHbgt">
+                                    Familial
+                                </div>
+                                <div class="itemResultLeft itemResultLeftHbgt">
+                                    <img src="http://pimg.devlint.fr/171x124" alt="" class="boxborder">
+                                </div>
+                                <div class="itemResultCenter itemResultCenterHbgt">
+                                    <span class="ircHbgtTitle">Mobil-home | 6 places</span>
+                                    <span class="ircHbgtSubTitle">Avec sanitaires</span>
+                                    <span class="ircHbgtDesc">Particulièrement prisé des famille, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l'esprit libre</span>
+                                </div>
+                                <div class="itemResultBottom itemResultBottomHbgt clear">
+                                    <a class="bt right fushia big" href="#_">En savoir plus</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="toggleItem">Picardie<span class="toggleArrow">&gt;</span></div>
+                        <div class="toggleContent secondary">
+                            <div class="itemResult clear">
+                                <div class="itemResultTitle itemResultTitleHbgt">
+                                    Familial
+                                </div>
+                                <div class="itemResultLeft itemResultLeftHbgt">
+                                    <img src="http://pimg.devlint.fr/171x124" alt="" class="boxborder">
+                                </div>
+                                <div class="itemResultCenter itemResultCenterHbgt">
+                                    <span class="ircHbgtTitle">Mobil-home | 6 places</span>
+                                    <span class="ircHbgtSubTitle">Avec sanitaires</span>
+                                    <span class="ircHbgtDesc">Particulièrement prisé des famille, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l'esprit libre</span>
+                                </div>
+                                <div class="itemResultBottom itemResultBottomHbgt clear">
+                                    <a class="bt right fushia big" href="#_">En savoir plus</a>
+                                </div>
+                            </div>
+                            <div class="itemResult clear">
+                                <div class="itemResultTitle itemResultTitleHbgt">
+                                    Familial
+                                </div>
+                                <div class="itemResultLeft itemResultLeftHbgt">
+                                    <img src="http://pimg.devlint.fr/171x124" alt="" class="boxborder">
+                                </div>
+                                <div class="itemResultCenter itemResultCenterHbgt">
+                                    <span class="ircHbgtTitle">Mobil-home | 6 places</span>
+                                    <span class="ircHbgtSubTitle">Avec sanitaires</span>
+                                    <span class="ircHbgtDesc">Particulièrement prisé des famille, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l'esprit libre</span>
+                                </div>
+                                <div class="itemResultBottom itemResultBottomHbgt clear">
+                                    <a class="bt right fushia big" href="#_">En savoir plus</a>
+                                </div>
+                            </div>
+                            <div class="itemResult clear">
+                                <div class="itemResultTitle itemResultTitleHbgt">
+                                    Familial
+                                </div>
+                                <div class="itemResultLeft itemResultLeftHbgt">
+                                    <img src="http://pimg.devlint.fr/171x124" alt="" class="boxborder">
+                                </div>
+                                <div class="itemResultCenter itemResultCenterHbgt">
+                                    <span class="ircHbgtTitle">Mobil-home | 6 places</span>
+                                    <span class="ircHbgtSubTitle">Avec sanitaires</span>
+                                    <span class="ircHbgtDesc">Particulièrement prisé des famille, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l'esprit libre</span>
+                                </div>
+                                <div class="itemResultBottom itemResultBottomHbgt clear">
+                                    <a class="bt right fushia big" href="#_">En savoir plus</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="itemResultLeft itemResultLeftHbgt">
-                        <img src="http://pimg.devlint.fr/171x124" alt="" class="boxborder">
+                    <div class="toggleItem">Espagne<span class="toggleArrow">&gt;</span></div>
+                    <div class="toggleContent primary">
+                        <div class="toggleItem">Cantabria<span class="toggleArrow">&gt;</span></div>
+                        <div class="toggleContent secondary">
+                            <div class="itemResult clear">
+                                <div class="itemResultTitle itemResultTitleHbgt">
+                                    Familial
+                                </div>
+                                <div class="itemResultLeft itemResultLeftHbgt">
+                                    <img src="http://pimg.devlint.fr/171x124" alt="" class="boxborder">
+                                </div>
+                                <div class="itemResultCenter itemResultCenterHbgt">
+                                    <span class="ircHbgtTitle">Mobil-home | 6 places</span>
+                                    <span class="ircHbgtSubTitle">Avec sanitaires</span>
+                                    <span class="ircHbgtDesc">Particulièrement prisé des famille, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l'esprit libre</span>
+                                </div>
+                                <div class="itemResultBottom itemResultBottomHbgt clear">
+                                    <a class="bt right fushia big" href="#_">En savoir plus</a>
+                                </div>
+                            </div>
+                            <div class="itemResult clear">
+                                <div class="itemResultTitle itemResultTitleHbgt">
+                                    Familial
+                                </div>
+                                <div class="itemResultLeft itemResultLeftHbgt">
+                                    <img src="http://pimg.devlint.fr/171x124" alt="" class="boxborder">
+                                </div>
+                                <div class="itemResultCenter itemResultCenterHbgt">
+                                    <span class="ircHbgtTitle">Mobil-home | 6 places</span>
+                                    <span class="ircHbgtSubTitle">Avec sanitaires</span>
+                                    <span class="ircHbgtDesc">Particulièrement prisé des famille, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l'esprit libre</span>
+                                </div>
+                                <div class="itemResultBottom itemResultBottomHbgt clear">
+                                    <a class="bt right fushia big" href="#_">En savoir plus</a>
+                                </div>
+                            </div>
+                            <div class="itemResult clear">
+                                <div class="itemResultTitle itemResultTitleHbgt">
+                                    Familial
+                                </div>
+                                <div class="itemResultLeft itemResultLeftHbgt">
+                                    <img src="http://pimg.devlint.fr/171x124" alt="" class="boxborder">
+                                </div>
+                                <div class="itemResultCenter itemResultCenterHbgt">
+                                    <span class="ircHbgtTitle">Mobil-home | 6 places</span>
+                                    <span class="ircHbgtSubTitle">Avec sanitaires</span>
+                                    <span class="ircHbgtDesc">Particulièrement prisé des famille, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l'esprit libre</span>
+                                </div>
+                                <div class="itemResultBottom itemResultBottomHbgt clear">
+                                    <a class="bt right fushia big" href="#_">En savoir plus</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="toggleItem">Costa Blanca<span class="toggleArrow">&gt;</span></div>
+                        <div class="toggleContent secondary">
+                            <div class="itemResult clear">
+                                <div class="itemResultTitle itemResultTitleHbgt">
+                                    Familial
+                                </div>
+                                <div class="itemResultLeft itemResultLeftHbgt">
+                                    <img src="http://pimg.devlint.fr/171x124" alt="" class="boxborder">
+                                </div>
+                                <div class="itemResultCenter itemResultCenterHbgt">
+                                    <span class="ircHbgtTitle">Mobil-home | 6 places</span>
+                                    <span class="ircHbgtSubTitle">Avec sanitaires</span>
+                                    <span class="ircHbgtDesc">Particulièrement prisé des famille, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l'esprit libre</span>
+                                </div>
+                                <div class="itemResultBottom itemResultBottomHbgt clear">
+                                    <a class="bt right fushia big" href="#_">En savoir plus</a>
+                                </div>
+                            </div>
+                            <div class="itemResult clear">
+                                <div class="itemResultTitle itemResultTitleHbgt">
+                                    Familial
+                                </div>
+                                <div class="itemResultLeft itemResultLeftHbgt">
+                                    <img src="http://pimg.devlint.fr/171x124" alt="" class="boxborder">
+                                </div>
+                                <div class="itemResultCenter itemResultCenterHbgt">
+                                    <span class="ircHbgtTitle">Mobil-home | 6 places</span>
+                                    <span class="ircHbgtSubTitle">Avec sanitaires</span>
+                                    <span class="ircHbgtDesc">Particulièrement prisé des famille, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l'esprit libre</span>
+                                </div>
+                                <div class="itemResultBottom itemResultBottomHbgt clear">
+                                    <a class="bt right fushia big" href="#_">En savoir plus</a>
+                                </div>
+                            </div>
+                            <div class="itemResult clear">
+                                <div class="itemResultTitle itemResultTitleHbgt">
+                                    Familial
+                                </div>
+                                <div class="itemResultLeft itemResultLeftHbgt">
+                                    <img src="http://pimg.devlint.fr/171x124" alt="" class="boxborder">
+                                </div>
+                                <div class="itemResultCenter itemResultCenterHbgt">
+                                    <span class="ircHbgtTitle">Mobil-home | 6 places</span>
+                                    <span class="ircHbgtSubTitle">Avec sanitaires</span>
+                                    <span class="ircHbgtDesc">Particulièrement prisé des famille, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l'esprit libre</span>
+                                </div>
+                                <div class="itemResultBottom itemResultBottomHbgt clear">
+                                    <a class="bt right fushia big" href="#_">En savoir plus</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="toggleItem">Costa Brava<span class="toggleArrow">&gt;</span></div>
+                        <div class="toggleContent secondary">
+                            <div class="itemResult clear">
+                                <div class="itemResultTitle itemResultTitleHbgt">
+                                    Familial
+                                </div>
+                                <div class="itemResultLeft itemResultLeftHbgt">
+                                    <img src="http://pimg.devlint.fr/171x124" alt="" class="boxborder">
+                                </div>
+                                <div class="itemResultCenter itemResultCenterHbgt">
+                                    <span class="ircHbgtTitle">Mobil-home | 6 places</span>
+                                    <span class="ircHbgtSubTitle">Avec sanitaires</span>
+                                    <span class="ircHbgtDesc">Particulièrement prisé des famille, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l'esprit libre</span>
+                                </div>
+                                <div class="itemResultBottom itemResultBottomHbgt clear">
+                                    <a class="bt right fushia big" href="#_">En savoir plus</a>
+                                </div>
+                            </div>
+                            <div class="itemResult clear">
+                                <div class="itemResultTitle itemResultTitleHbgt">
+                                    Familial
+                                </div>
+                                <div class="itemResultLeft itemResultLeftHbgt">
+                                    <img src="http://pimg.devlint.fr/171x124" alt="" class="boxborder">
+                                </div>
+                                <div class="itemResultCenter itemResultCenterHbgt">
+                                    <span class="ircHbgtTitle">Mobil-home | 6 places</span>
+                                    <span class="ircHbgtSubTitle">Avec sanitaires</span>
+                                    <span class="ircHbgtDesc">Particulièrement prisé des famille, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l'esprit libre</span>
+                                </div>
+                                <div class="itemResultBottom itemResultBottomHbgt clear">
+                                    <a class="bt right fushia big" href="#_">En savoir plus</a>
+                                </div>
+                            </div>
+                            <div class="itemResult clear">
+                                <div class="itemResultTitle itemResultTitleHbgt">
+                                    Familial
+                                </div>
+                                <div class="itemResultLeft itemResultLeftHbgt">
+                                    <img src="http://pimg.devlint.fr/171x124" alt="" class="boxborder">
+                                </div>
+                                <div class="itemResultCenter itemResultCenterHbgt">
+                                    <span class="ircHbgtTitle">Mobil-home | 6 places</span>
+                                    <span class="ircHbgtSubTitle">Avec sanitaires</span>
+                                    <span class="ircHbgtDesc">Particulièrement prisé des famille, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l'esprit libre</span>
+                                </div>
+                                <div class="itemResultBottom itemResultBottomHbgt clear">
+                                    <a class="bt right fushia big" href="#_">En savoir plus</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="toggleItem">Costa del Azahar<span class="toggleArrow">&gt;</span></div>
+                        <div class="toggleContent secondary">
+                            <div class="itemResult clear">
+                                <div class="itemResultTitle itemResultTitleHbgt">
+                                    Familial
+                                </div>
+                                <div class="itemResultLeft itemResultLeftHbgt">
+                                    <img src="http://pimg.devlint.fr/171x124" alt="" class="boxborder">
+                                </div>
+                                <div class="itemResultCenter itemResultCenterHbgt">
+                                    <span class="ircHbgtTitle">Mobil-home | 6 places</span>
+                                    <span class="ircHbgtSubTitle">Avec sanitaires</span>
+                                    <span class="ircHbgtDesc">Particulièrement prisé des famille, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l'esprit libre</span>
+                                </div>
+                                <div class="itemResultBottom itemResultBottomHbgt clear">
+                                    <a class="bt right fushia big" href="#_">En savoir plus</a>
+                                </div>
+                            </div>
+                            <div class="itemResult clear">
+                                <div class="itemResultTitle itemResultTitleHbgt">
+                                    Familial
+                                </div>
+                                <div class="itemResultLeft itemResultLeftHbgt">
+                                    <img src="http://pimg.devlint.fr/171x124" alt="" class="boxborder">
+                                </div>
+                                <div class="itemResultCenter itemResultCenterHbgt">
+                                    <span class="ircHbgtTitle">Mobil-home | 6 places</span>
+                                    <span class="ircHbgtSubTitle">Avec sanitaires</span>
+                                    <span class="ircHbgtDesc">Particulièrement prisé des famille, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l'esprit libre</span>
+                                </div>
+                                <div class="itemResultBottom itemResultBottomHbgt clear">
+                                    <a class="bt right fushia big" href="#_">En savoir plus</a>
+                                </div>
+                            </div>
+                            <div class="itemResult clear">
+                                <div class="itemResultTitle itemResultTitleHbgt">
+                                    Familial
+                                </div>
+                                <div class="itemResultLeft itemResultLeftHbgt">
+                                    <img src="http://pimg.devlint.fr/171x124" alt="" class="boxborder">
+                                </div>
+                                <div class="itemResultCenter itemResultCenterHbgt">
+                                    <span class="ircHbgtTitle">Mobil-home | 6 places</span>
+                                    <span class="ircHbgtSubTitle">Avec sanitaires</span>
+                                    <span class="ircHbgtDesc">Particulièrement prisé des famille, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l'esprit libre</span>
+                                </div>
+                                <div class="itemResultBottom itemResultBottomHbgt clear">
+                                    <a class="bt right fushia big" href="#_">En savoir plus</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="toggleItem">Costa Dorada<span class="toggleArrow">&gt;</span></div>
+                        <div class="toggleContent secondary">
+                            <div class="itemResult clear">
+                                <div class="itemResultTitle itemResultTitleHbgt">
+                                    Familial
+                                </div>
+                                <div class="itemResultLeft itemResultLeftHbgt">
+                                    <img src="http://pimg.devlint.fr/171x124" alt="" class="boxborder">
+                                </div>
+                                <div class="itemResultCenter itemResultCenterHbgt">
+                                    <span class="ircHbgtTitle">Mobil-home | 6 places</span>
+                                    <span class="ircHbgtSubTitle">Avec sanitaires</span>
+                                    <span class="ircHbgtDesc">Particulièrement prisé des famille, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l'esprit libre</span>
+                                </div>
+                                <div class="itemResultBottom itemResultBottomHbgt clear">
+                                    <a class="bt right fushia big" href="#_">En savoir plus</a>
+                                </div>
+                            </div>
+                            <div class="itemResult clear">
+                                <div class="itemResultTitle itemResultTitleHbgt">
+                                    Familial
+                                </div>
+                                <div class="itemResultLeft itemResultLeftHbgt">
+                                    <img src="http://pimg.devlint.fr/171x124" alt="" class="boxborder">
+                                </div>
+                                <div class="itemResultCenter itemResultCenterHbgt">
+                                    <span class="ircHbgtTitle">Mobil-home | 6 places</span>
+                                    <span class="ircHbgtSubTitle">Avec sanitaires</span>
+                                    <span class="ircHbgtDesc">Particulièrement prisé des famille, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l'esprit libre</span>
+                                </div>
+                                <div class="itemResultBottom itemResultBottomHbgt clear">
+                                    <a class="bt right fushia big" href="#_">En savoir plus</a>
+                                </div>
+                            </div>
+                            <div class="itemResult clear">
+                                <div class="itemResultTitle itemResultTitleHbgt">
+                                    Familial
+                                </div>
+                                <div class="itemResultLeft itemResultLeftHbgt">
+                                    <img src="http://pimg.devlint.fr/171x124" alt="" class="boxborder">
+                                </div>
+                                <div class="itemResultCenter itemResultCenterHbgt">
+                                    <span class="ircHbgtTitle">Mobil-home | 6 places</span>
+                                    <span class="ircHbgtSubTitle">Avec sanitaires</span>
+                                    <span class="ircHbgtDesc">Particulièrement prisé des famille, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l'esprit libre</span>
+                                </div>
+                                <div class="itemResultBottom itemResultBottomHbgt clear">
+                                    <a class="bt right fushia big" href="#_">En savoir plus</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="itemResultCenter itemResultCenterHbgt">
-                        <span class="ircHbgtTitle">Mobil-home | 6 places</span>
-                        <span class="ircHbgtSubTitle">Avec sanitaires</span>
-                        <span class="ircHbgtDesc">Particulièrement prisé des famille, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l'esprit libre</span>
-                    </div>
-                    <div class="itemResultBottom itemResultBottomHbgt clear">
-                        <a class="bt right fushia big" href="#_">En savoir plus</a>
+                    <div class="toggleItem">Italie<span class="toggleArrow">&gt;</span></div>
+                    <div class="toggleContent primary">
+                        <div class="toggleItem">Italie adriatique<span class="toggleArrow">&gt;</span></div>
+                        <div class="toggleContent secondary">
+                            <div class="itemResult clear">
+                                <div class="itemResultTitle itemResultTitleHbgt">
+                                    Familial
+                                </div>
+                                <div class="itemResultLeft itemResultLeftHbgt">
+                                    <img src="http://pimg.devlint.fr/171x124" alt="" class="boxborder">
+                                </div>
+                                <div class="itemResultCenter itemResultCenterHbgt">
+                                    <span class="ircHbgtTitle">Mobil-home | 6 places</span>
+                                    <span class="ircHbgtSubTitle">Avec sanitaires</span>
+                                    <span class="ircHbgtDesc">Particulièrement prisé des famille, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l'esprit libre</span>
+                                </div>
+                                <div class="itemResultBottom itemResultBottomHbgt clear">
+                                    <a class="bt right fushia big" href="#_">En savoir plus</a>
+                                </div>
+                            </div>
+                            <div class="itemResult clear">
+                                <div class="itemResultTitle itemResultTitleHbgt">
+                                    Familial
+                                </div>
+                                <div class="itemResultLeft itemResultLeftHbgt">
+                                    <img src="http://pimg.devlint.fr/171x124" alt="" class="boxborder">
+                                </div>
+                                <div class="itemResultCenter itemResultCenterHbgt">
+                                    <span class="ircHbgtTitle">Mobil-home | 6 places</span>
+                                    <span class="ircHbgtSubTitle">Avec sanitaires</span>
+                                    <span class="ircHbgtDesc">Particulièrement prisé des famille, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l'esprit libre</span>
+                                </div>
+                                <div class="itemResultBottom itemResultBottomHbgt clear">
+                                    <a class="bt right fushia big" href="#_">En savoir plus</a>
+                                </div>
+                            </div>
+                            <div class="itemResult clear">
+                                <div class="itemResultTitle itemResultTitleHbgt">
+                                    Familial
+                                </div>
+                                <div class="itemResultLeft itemResultLeftHbgt">
+                                    <img src="http://pimg.devlint.fr/171x124" alt="" class="boxborder">
+                                </div>
+                                <div class="itemResultCenter itemResultCenterHbgt">
+                                    <span class="ircHbgtTitle">Mobil-home | 6 places</span>
+                                    <span class="ircHbgtSubTitle">Avec sanitaires</span>
+                                    <span class="ircHbgtDesc">Particulièrement prisé des famille, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l'esprit libre</span>
+                                </div>
+                                <div class="itemResultBottom itemResultBottomHbgt clear">
+                                    <a class="bt right fushia big" href="#_">En savoir plus</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="toggleItem">Italie méditerranéenne<span class="toggleArrow">&gt;</span></div>
+                        <div class="toggleContent secondary">
+                            <div class="itemResult clear">
+                                <div class="itemResultTitle itemResultTitleHbgt">
+                                    Familial
+                                </div>
+                                <div class="itemResultLeft itemResultLeftHbgt">
+                                    <img src="http://pimg.devlint.fr/171x124" alt="" class="boxborder">
+                                </div>
+                                <div class="itemResultCenter itemResultCenterHbgt">
+                                    <span class="ircHbgtTitle">Mobil-home | 6 places</span>
+                                    <span class="ircHbgtSubTitle">Avec sanitaires</span>
+                                    <span class="ircHbgtDesc">Particulièrement prisé des famille, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l'esprit libre</span>
+                                </div>
+                                <div class="itemResultBottom itemResultBottomHbgt clear">
+                                    <a class="bt right fushia big" href="#_">En savoir plus</a>
+                                </div>
+                            </div>
+                            <div class="itemResult clear">
+                                <div class="itemResultTitle itemResultTitleHbgt">
+                                    Familial
+                                </div>
+                                <div class="itemResultLeft itemResultLeftHbgt">
+                                    <img src="http://pimg.devlint.fr/171x124" alt="" class="boxborder">
+                                </div>
+                                <div class="itemResultCenter itemResultCenterHbgt">
+                                    <span class="ircHbgtTitle">Mobil-home | 6 places</span>
+                                    <span class="ircHbgtSubTitle">Avec sanitaires</span>
+                                    <span class="ircHbgtDesc">Particulièrement prisé des famille, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l'esprit libre</span>
+                                </div>
+                                <div class="itemResultBottom itemResultBottomHbgt clear">
+                                    <a class="bt right fushia big" href="#_">En savoir plus</a>
+                                </div>
+                            </div>
+                            <div class="itemResult clear">
+                                <div class="itemResultTitle itemResultTitleHbgt">
+                                    Familial
+                                </div>
+                                <div class="itemResultLeft itemResultLeftHbgt">
+                                    <img src="http://pimg.devlint.fr/171x124" alt="" class="boxborder">
+                                </div>
+                                <div class="itemResultCenter itemResultCenterHbgt">
+                                    <span class="ircHbgtTitle">Mobil-home | 6 places</span>
+                                    <span class="ircHbgtSubTitle">Avec sanitaires</span>
+                                    <span class="ircHbgtDesc">Particulièrement prisé des famille, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l'esprit libre</span>
+                                </div>
+                                <div class="itemResultBottom itemResultBottomHbgt clear">
+                                    <a class="bt right fushia big" href="#_">En savoir plus</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="toggleItem">Toscane<span class="toggleArrow">&gt;</span></div>
+                        <div class="toggleContent secondary">
+                            <div class="itemResult clear">
+                                <div class="itemResultTitle itemResultTitleHbgt">
+                                    Familial
+                                </div>
+                                <div class="itemResultLeft itemResultLeftHbgt">
+                                    <img src="http://pimg.devlint.fr/171x124" alt="" class="boxborder">
+                                </div>
+                                <div class="itemResultCenter itemResultCenterHbgt">
+                                    <span class="ircHbgtTitle">Mobil-home | 6 places</span>
+                                    <span class="ircHbgtSubTitle">Avec sanitaires</span>
+                                    <span class="ircHbgtDesc">Particulièrement prisé des famille, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l'esprit libre</span>
+                                </div>
+                                <div class="itemResultBottom itemResultBottomHbgt clear">
+                                    <a class="bt right fushia big" href="#_">En savoir plus</a>
+                                </div>
+                            </div>
+                            <div class="itemResult clear">
+                                <div class="itemResultTitle itemResultTitleHbgt">
+                                    Familial
+                                </div>
+                                <div class="itemResultLeft itemResultLeftHbgt">
+                                    <img src="http://pimg.devlint.fr/171x124" alt="" class="boxborder">
+                                </div>
+                                <div class="itemResultCenter itemResultCenterHbgt">
+                                    <span class="ircHbgtTitle">Mobil-home | 6 places</span>
+                                    <span class="ircHbgtSubTitle">Avec sanitaires</span>
+                                    <span class="ircHbgtDesc">Particulièrement prisé des famille, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l'esprit libre</span>
+                                </div>
+                                <div class="itemResultBottom itemResultBottomHbgt clear">
+                                    <a class="bt right fushia big" href="#_">En savoir plus</a>
+                                </div>
+                            </div>
+                            <div class="itemResult clear">
+                                <div class="itemResultTitle itemResultTitleHbgt">
+                                    Familial
+                                </div>
+                                <div class="itemResultLeft itemResultLeftHbgt">
+                                    <img src="http://pimg.devlint.fr/171x124" alt="" class="boxborder">
+                                </div>
+                                <div class="itemResultCenter itemResultCenterHbgt">
+                                    <span class="ircHbgtTitle">Mobil-home | 6 places</span>
+                                    <span class="ircHbgtSubTitle">Avec sanitaires</span>
+                                    <span class="ircHbgtDesc">Particulièrement prisé des famille, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l'esprit libre</span>
+                                </div>
+                                <div class="itemResultBottom itemResultBottomHbgt clear">
+                                    <a class="bt right fushia big" href="#_">En savoir plus</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="itemResult clear">
-                    <div class="itemResultTitle itemResultTitleHbgt">
-                       Familial
-                    </div>
-                    <div class="itemResultLeft itemResultLeftHbgt">
-                        <img src="http://pimg.devlint.fr/171x124" alt="" class="boxborder">
-                    </div>
-                    <div class="itemResultCenter itemResultCenterHbgt">
-                        <span class="ircHbgtTitle">Mobil-home | 6 places</span>
-                        <span class="ircHbgtSubTitle">Avec sanitaires</span>
-                        <span class="ircHbgtDesc">Particulièrement prisé des famille, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l'esprit libre</span>
-                    </div>
-                    <div class="itemResultBottom itemResultBottomHbgt clear">
-                        <a class="bt right fushia big" href="#_">En savoir plus</a>
-                    </div>
-                </div>
-                <div class="itemResult clear">
-                    <div class="itemResultTitle itemResultTitleHbgt">
-                       Familial
-                    </div>
-                    <div class="itemResultLeft itemResultLeftHbgt">
-                        <img src="http://pimg.devlint.fr/171x124" alt="" class="boxborder">
-                    </div>
-                    <div class="itemResultCenter itemResultCenterHbgt">
-                        <span class="ircHbgtTitle">Mobil-home | 6 places</span>
-                        <span class="ircHbgtSubTitle">Avec sanitaires</span>
-                        <span class="ircHbgtDesc">Particulièrement prisé des famille, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l'esprit libre</span>
-                    </div>
-                    <div class="itemResultBottom itemResultBottomHbgt clear">
-                        <a class="bt right fushia big" href="#_">En savoir plus</a>
-                    </div>
-                </div>
+
             </div>
 
             <button id="btPlusResults" class="bt big sombre">Plus de résultats</button>

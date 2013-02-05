@@ -341,9 +341,16 @@ h6, .h6-like{color:@colorFushia;}
 
 .toggleContainer{
   .toggleItem{position:relative;background-color:@colorBgGrisF;color:@colorBlanc;._verticalCenter(40px);padding:0 40px;text-transform:uppercase;font-size:19px;font-family:@ptnarrow;font-weight:bold;._border-radius(10px);margin-bottom:10px;cursor:pointer;
-    &:after{content:">";position:absolute;right:15px;top:0;font-size:30px;}
+    .toggleArrow{position:absolute;right:15px;top:0;font-size:30px;}
   }
-  .toggleContent{display:none;}
+  .toggleContent{display:none;
+    &.primary{
+      .toggleItem{position:relative;background-color:@colorBgGrisC;color:@colorFushia;._verticalCenter(40px);padding:0 40px;text-transform:uppercase;font-size:19px;font-family:@ptnarrow;font-weight:bold;._border-radius(10px);margin-bottom:10px;cursor:pointer;
+        .toggleArrow{position:absolute;right:15px;top:0;font-size:30px;}
+      }
+      .toggleContent{display:none;}
+    }
+  }
 }
 
 .tooltip {outline:none;position:relative;}
