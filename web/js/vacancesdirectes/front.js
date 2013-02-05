@@ -457,6 +457,13 @@ $(function() {
      .wrap('<div class="viewport"><div class="overview"></div></div>');
      $('.tinyScroll').tinyscrollbar();*/
 
+    // toggle
+    if($('.toggleContainer').length > 0){
+        $('.toggleItem').click(function(e){
+           $(this).toggleClass('active').next('.toggleContent').slideToggle();
+        });
+    }
+
 
     // datepickers
     if ($('#searchContainer #datepicker').length) {

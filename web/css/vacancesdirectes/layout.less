@@ -339,6 +339,13 @@ h6, .h6-like{color:@colorFushia;}
   .content{padding:20px 15px;}
 }
 
+.toggleContainer{
+  .toggleItem{position:relative;background-color:@colorBgGrisF;color:@colorBlanc;._verticalCenter(40px);padding:0 40px;text-transform:uppercase;font-size:19px;font-family:@ptnarrow;font-weight:bold;._border-radius(10px);margin-bottom:10px;cursor:pointer;
+    &:after{content:">";position:absolute;right:15px;top:0;font-size:30px;}
+  }
+  .toggleContent{display:none;}
+}
+
 .tooltip {outline:none;position:relative;}
 .tooltip strong {line-height:30px;}
 .tooltip:hover {text-decoration:none;}
