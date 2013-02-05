@@ -766,7 +766,7 @@ include('includes/top.php'); ?>
 
             </div>
 
-            <button id="btPlusResults" class="bt big sombre">Plus de résultats</button>
+<!--            <button id="btPlusResults" class="bt big sombre">Plus de résultats</button>-->
 
         </div>
 

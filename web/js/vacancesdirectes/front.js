@@ -486,8 +486,8 @@ jQuery.extend( jQuery.fn, {
             }
             togglingItem.toggleClass('active').next('.toggleContent').slideToggle(500, function(){
                 if (togglingItem.hasClass('active')){
-                    var toggleActiveItemOffset = togglingItem.offset().top;
-                    $('html, body').delay(500).animate({scrollTop: toggleActiveItemOffset},400);
+                    var toggleActiveItemOffset = togglingItem.offset().top - 9;
+                    $('html, body').animate({scrollTop: toggleActiveItemOffset},400);
                 }
             });
             if (togglingItem.parent('.toggleContainer').length){
