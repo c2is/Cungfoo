@@ -32,6 +32,17 @@ class CouloirController implements ControllerProviderInterface
         return $rslConfig;
     }
 
+    protected function pushCookieSession(Request $request, $options)
+    {
+        $session = base64_decode(str_replace('B64_', '', $request->cookies->get('session_name')));
+
+        if ($session) {
+            $options['session'] = $session;
+        }
+
+        return $options;
+    }
+
     public function connect(Application $app)
     {
         $controllers = $app['controllers_factory'];
@@ -41,17 +52,19 @@ class CouloirController implements ControllerProviderInterface
             $rslConfig = $this->getResalysConfig($app);
 
             $query = array(
-                "specificFiles"     => 'couloir',
-                "base_id"           => $rslConfig['base_id'],
-                "webuser"           => $rslConfig['username'],
-                "tokens"            => 'ignore_token',
-                "display"           => 'reservation_content',
-                "actions"           => 'cancelReservation;buildProposalFromKey;chooseProposal',
-                "proposal_key"      => $proposalKey,
-                "referer"           => $request->headers->get('referer')
+                "specificFiles" => 'couloir',
+                "base_id"       => $rslConfig['base_id'],
+                "webuser"       => $rslConfig['username'],
+                "tokens"        => 'ignore_token',
+                "display"       => 'reservation_content',
+                "actions"       => 'cancelReservation;buildProposalFromKey;chooseProposal',
+                "proposal_key"  => $proposalKey,
+                "referer"       => $request->headers->get('referer'),
             );
 
             $query = array_merge($query, $request->request->all());
+
+            $query = $this->pushCookieSession($request, $query);
 
             return $app['twig']->render('Couloir\detail-sejour.twig', array(
                 'query' => $query,
@@ -66,20 +79,23 @@ class CouloirController implements ControllerProviderInterface
             $rslConfig = $this->getResalysConfig($app);
 
             $query = array(
-                "specificFiles"     => 'couloir',
-                "base_id"           => $rslConfig['base_id'],
-                "webuser"           => $rslConfig['username'],
-                "tokens"            => 'ignore_token',
-                "display"           => 'cart_payment',
-                "actions"           => 'updateReservationContent;BupdateReservationAddPrestations;BupdateCartReservations',
-                "proposal_key"      => $proposalKey,
-                "confirmation"      => $app['url_generator']->generate('couloir_confirmation', array(), true),
-                "homeLink"          => $app['url_generator']->generate('homepage', array(), true),
-                "backLink"          => 'javascript:history.go(-1);',
-                "cgv"               => $app['url_generator']->generate('edito_by_slug', array('slug' => 'conditions-generales'), true)
+                "specificFiles" => 'couloir',
+                "base_id"       => $rslConfig['base_id'],
+                "webuser"       => $rslConfig['username'],
+                "tokens"        => 'ignore_token',
+                "display"       => 'cart_payment',
+                "actions"       => 'updateReservationContent;BupdateReservationAddPrestations;BupdateCartReservations',
+                "proposal_key"  => $proposalKey,
+                "confirmation"  => $app['url_generator']->generate('couloir_confirmation', array(), true),
+                "homeLink"      => $app['url_generator']->generate('homepage', array(), true),
+                "backLink"      => 'javascript:history.go(-1);',
+                "cgv"           => $app['url_generator']->generate('edito_by_slug', array('slug' => 'conditions-generales'), true),
+                "session"       => base64_decode(str_replace('B64_', '', $request->cookies->get('session_name'))),
             );
 
             $query = array_merge($query, $request->request->all());
+
+            $query = $this->pushCookieSession($request, $query);
 
             return $app['twig']->render('Couloir\detail-sejour.twig', array(
                 'query' => $query,
@@ -105,7 +121,9 @@ class CouloirController implements ControllerProviderInterface
                 "tokens"        => $request->query->get('tokens')
             );
 
-            $query = array_merge($request->request->all(), $query);
+            $query = array_merge($query, $request->request->all());
+
+            $query = $this->pushCookieSession($request, $query);
 
             return $app['twig']->render('Couloir\confirmation.twig', array(
                 'query' => $query,

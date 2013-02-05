@@ -254,7 +254,6 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
 
 // step 1
   &.detail{
-
     #reservation{
       .aRoom{
         h2{color:@colorBgGrisM;text-transform:uppercase;font:bold 22px @ptnarrow;._verticalCenter(40px);
@@ -395,6 +394,9 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
           &:nth-child(1){font-weight:bold;}
           &.amount{width:130px;text-align:right;}
         }
+      }
+      #payment_layer_ecc{
+        .newListSelected{margin-bottom:10px;}
       }
     }
   }
@@ -544,7 +546,8 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
 }
 
 // step 2
-#option {
+#option,
+#paiement {
   ._stylish-select(134px,27px,0px,4);
 }
 
@@ -608,5 +611,25 @@ input[disabled],
       #contentContener.summary #option p .label {width:258px;}
     }
     &.summary #option .criterias .criteria .label{line-height:13px;}
+  }
+}
+
+html[lang="de"]{
+/*LEFT*/
+  #contentContener{
+
+  // step 1
+    &.detail{
+      #reservation{
+        .aRoom{
+          .anOccupant{
+            h3{font-size:23px;}
+            .occupantFields{
+              .control_text{width:142px;}
+            }
+          }
+        }
+      }
+    }
   }
 }
