@@ -22,6 +22,8 @@ class TopCampingController
 {
     public function indexAction(Request $request, Application $app)
     {
+        $locale = $app['context']->get('language');
+
         // Formulaire de recherche
         $searchEngine = new SearchEngine($app, $request);
         $searchEngine->process();
@@ -32,6 +34,12 @@ class TopCampingController
 
         $topCampings = \Cungfoo\Model\TopCampingQuery::create()
             ->addAscendingOrderByColumn('sortable_rank')
+            ->useEtablissementQuery()
+                ->useI18nQuery($locale)
+                    ->filterByActiveLocale(true)
+                ->endUse()
+                ->filterByActive(true)
+            ->endUse()
             ->findActive()
         ;
 

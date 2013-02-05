@@ -1,7 +1,20 @@
 {% extends 'base.twig' %}
 
+{% block bodyClass %}booking{% endblock %}
+
 {% block content %}
 <div id="wrap" class="fixed-width clear">
-	<iframe id="frameResalys" src="{{ path('resalys_wrapper', query) }}" width="960px" height="700px" marginheight="0" marginwidth="0" frameborder="0"></iframe>
+    <div id="headerContainer" class="column clear">
+        <h1><span>{{ "couloir.title" | trans }} </span>{{ "couloir.title_reservation" | trans }}</h1>
+        <nav id="stepNav" class="clearboth">
+            <ul class="topnav fixed-width clear">
+                <li class="tab completed"><span>{{ "couloir.menu.detail" | trans }}</span></li>
+                <li class="tab completed"><span>{{ "couloir.menu.recapitulatif" | trans }}</span></li>
+                <li class="tab completed"><span>{{ "couloir.menu.paiement" | trans }}</span></li>
+                <li class="tab current"><span>{{ "couloir.confirmation" | trans }}</span></li>
+            </ul>
+        </nav>
+    </div>
+    <iframe id="frameResalys" src="{{ path('resalys_wrapper', query) }}" width="960px" height="700px" marginheight="0" marginwidth="0" frameborder="0"></iframe>
 </div>
 {% endblock content %}

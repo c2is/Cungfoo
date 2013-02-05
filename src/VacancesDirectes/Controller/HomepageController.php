@@ -44,6 +44,12 @@ class HomepageController implements ControllerProviderInterface
 
             $topCampings = \Cungfoo\Model\TopCampingQuery::create()
                 ->addAscendingOrderByColumn('sortable_rank')
+                ->useEtablissementQuery()
+                    ->useI18nQuery($locale)
+                        ->filterByActiveLocale(true)
+                    ->endUse()
+                    ->filterByActive(true)
+                ->endUse()
                 ->findActive()
             ;
 
