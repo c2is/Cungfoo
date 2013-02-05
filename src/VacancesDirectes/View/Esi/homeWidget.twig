@@ -27,5 +27,7 @@
     {% else %}
     Aucun camping
     {% endfor %}
+    {% if bon_plan %}
     <a href="{{ path('bonsplans', {'slug': bon_plan.slug}) }}" class="bt link right">{{ "home.early_booking.link" | trans  ({'%number%': dispos.element|length }) }}</a>
+    {% endif %}
 </div>
