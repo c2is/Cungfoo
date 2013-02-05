@@ -766,6 +766,12 @@ global:
         password: "Passwort"
         forget: "Passwort vergessen?"
         submit: "Anmelden"
+        accueil: "Accueil"
+        coordonnees: "Coordonnées"
+        demande_brochure: "Demande de brochure"
+        reservation: "Réservation"
+        title: "Espace"
+        title_client: "client"
 
 bon_plan:
     title: "Campingplatz: %bonPlan%"
