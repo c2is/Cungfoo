@@ -26,9 +26,6 @@ $(function() {
     if($('#option').length){
         $('#option').find('select').sSelect({ddMaxHeight: '300px'});
     }
-    if($('#paiement').length){
-        $('#paiement').find('select').sSelect({ddMaxHeight: '300px'});
-    }
     if($('#customerAreaContener').length){
         $('#customerAreaContener').find('select').sSelect({ddMaxHeight: '300px'});
     }

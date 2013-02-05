@@ -2542,6 +2542,20 @@ h4{font-size:15px;line-height:17px;}
   .aField:nth-of-type(1){._verticalCenter(33px);}
   input[type="text"]{width:241px;}
 }
+#customerAreaContener .paiement_due{
+  table{display:block;background-color:@colorBgBlanc;margin:10px 0;width:100%;
+    th{background-color:@colorGris2;color:@colorBlanc;padding:10px;text-align:center;border:1px solid @colorGris2;font-weight:bold;}
+    td{margin:10px 0;padding:10px;text-align:left;border:1px solid @colorGris2;
+      &:nth-child(1){font-weight:bold;}
+      &.amount{width:130px;text-align:right;}
+    }
+  }
+}
+#customerAreaContener .paymentMode{
+  .label,
+  .field{float:left;}
+  .label{margin-right:10px;._verticalCenter(27px);}
+}
 
 // box fushia in sidebar
 .proposal{font:normal 14px/17px @arial;padding-bottom:60px;text-align:center;color:@colorBlanc;
@@ -2561,7 +2575,7 @@ h4{font-size:15px;line-height:17px;}
 #greyBoxes{
   #needHelpBloc{width:288px;height:246px;color:@colorBlanc;background-image:url("../../images/vacancesdirectes/common/pict/help-bloc.jpg");background-repeat:no-repeat;
     .stamp{margin-bottom:10px;}
-    h2{margin-left:0;position:relative;
+    h2{margin-left:0;position:relative;._verticalCenter(38px);
       &:before{content:"";background:none;}
     }
     .content{width:113px;margin-left:65px;color:@colorGris2;font:bold 15px/17px @arial;position:absolute;top:70px;left:100px}
@@ -2583,13 +2597,18 @@ h4{font-size:15px;line-height:17px;}
 #reservation #financialContener{
   ._stylish-select(216px,27px,0px,4);
 }
-#customerAreaContener{
+#customerAreaContener .paiement{
   ._stylish-select(64px,27px,10px,5);
 }
+#customerAreaContener .paymentMode {
+  ._stylish-select(252px,27px,0px,4);
+}
+
 // step 2
 #option {
   ._stylish-select(141px,27px,0px,4);
 }
+
 
 #please_wait_layer{position:absolute;top:0;left:0;width:100%;height:100%;background:url(../../images/vacancesdirectes/common/ui/loadingResalys.gif) no-repeat fixed 50% 35px @colorBgBlanc;text-align:center;font:normal 15px @arial;padding:100px 20px;opacity:0.8;}
 
@@ -2650,7 +2669,7 @@ ul.newList a {color:@colorGris2;text-decoration:none;display:block;padding:0 8px
 .newListSelected *{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing: content-box;cursor:pointer;}
 ul.newList li a:focus {-moz-outline-style: none;}
 .selectedTxt {overflow:hidden;position:absolute;text-overflow:ellipsis;white-space:nowrap;margin-right:0;background-color:@colorBlanc;}
-ul.newList li:first-child{display:none;}
+//ul.newList li:first-child{display:none;}
 ul.newList.optGroup li a {padding:0 8px 0 18px;}
 ul.newList.optGroup li.optGroup-like a {padding:0 8px;font-weight:bold;}
 .hiLite {background:#ED145B!important;color:#fff!important;}

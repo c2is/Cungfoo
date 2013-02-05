@@ -777,7 +777,6 @@ $(function() {
                 preselectedDates.push(item.value);
             });
             //console.log(preselectedDates);
-            console.log(preselectedDates);
             $('#datepickerInput').val('Du ' + preselectedDates[0] + ' au ' + preselectedDates[1]);
             $('#datepickerCalendar').DatePickerSetDate(preselectedFDates);
         }
@@ -1243,15 +1242,15 @@ function showWaitLayer(){
  */
 
 function openPopinRoomType(url){
-//    console.log("################################## openPopinType()  ##################################");
+    //console.log("################################## openPopinType()  ##################################");
     $.colorbox({href:url, inline:true, width:'616px', close:"&times;"});
 }
 function openPopinIframe(url){
-//    console.log("################################## openPopinIframe()  ##################################");
+    //console.log("################################## openPopinIframe()  ##################################");
     $.colorbox({href:url, iframe:true, fixed: true, width:'80%', height:'80%', close:"&times;"});
 }
 function openPopinInline(type){
-//    console.log("################################## openPopinInline()  ##################################");
+    //console.log("################################## openPopinInline()  ##################################");
     if ($('*[data-type="' + type + '"]').length > 0){
         $('*[data-type="' + type + '"]').attr('id',type);
         var content = $('*[data-type="' + type + '"]').clone();
@@ -1260,7 +1259,7 @@ function openPopinInline(type){
                 return $(this).text();
             });
         });
-//        console.log(content);
+        //console.log(content);
         $.colorbox({href:content, inline:true, width:'616px', close:"&times;"});
     }
 }
