@@ -20,7 +20,7 @@
         </div>
         <!-- item.center -->
         <div class="itemResultCenter">
-            <p>{{ etab.model.description | trans | truncate(100,true,'...') }}</p>
+            <p>{{ etab.model.description | trans | truncate(100,true,'...') | raw }}</p>
 
             {# TODO
             <div class="pictos">

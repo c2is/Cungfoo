@@ -4,7 +4,7 @@
             <div class="radiusBox2 greyC bgImg national">
                 <div class="view">
                     <img class="bg" src="{{ asset('images/vacancesdirectes/common/menu/destinations/france_visuel.jpg') }}" alt="" />
-                    <div class="stamp grey"><span>France</span></div>
+                    <div class="stamp grey"><span>{{ 'pays.france' | trans }}</span></div>
                 </div>
                 {% set nbDestinationFirstCol = (regionsByDestinations|length // 2) + (regionsByDestinations|length % 2) %}
                 {% for destination in regionsByDestinations %}
