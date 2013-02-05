@@ -31,7 +31,21 @@ class CompteController implements ControllerProviderInterface
             "session"       => $app['session']->get('resalys_user')->session,
         );
 
-        return array_merge($parameters, $request->request->all());
+        $query = array_merge($parameters, $request->request->all());
+        $query = $this->pushCookieSession($request, $query);
+
+        return $query;
+    }
+
+    protected function pushCookieSession(Request $request, $options)
+    {
+        $session = base64_decode(str_replace('B64_', '', $request->cookies->get('session_name')));
+
+        if ($session) {
+            $options['session'] = $session;
+        }
+
+        return $options;
     }
 
     /**
