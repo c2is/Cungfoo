@@ -36,6 +36,8 @@ class EsiController implements ControllerProviderInterface
             {
                 $bonPlan = BonPlanQuery::create()
                     ->filterByPushHome(true)
+                    ->filterByDateDebut(array('max' => 'today'))
+                    ->filterByDateFin(array('min' => 'today'))
                     ->findOne()
                 ;
 
