@@ -2695,3 +2695,59 @@ ul.newList.optGroup li.optGroup-like a {padding:0 8px;font-weight:bold;}
     ul.newList.optGroup li.optGroup-like a.newListHover {background-color:@colorGris2!important;color:@colorBlanc!important;}
   }
 }
+
+html[id="page-clickbooking"]{
+
+  #header{
+    #logo{margin:10px 0 15px;}
+    #telephone{
+      span{font-size:15px;}
+    }
+    #catchline{font-size:23px;}
+  }
+  .home{
+    #wrap{
+      .locationForwards{
+        h2{font-size:18px;}
+      }
+    }
+  }
+  aside{
+    #searchBloc{
+      #searchBlocDate{
+        .spinner{
+          .spin{float:right;}
+          label{width:auto;}
+        }
+      }
+    }
+    #greyBoxes{
+      #infoBloc{
+        .content .tel{font-size:18px;}
+      }
+      #arguHbgtBloc{
+        .stamp.orange{height:40px;
+          &>h2{font-size:18px;line-height:17px;}
+        }
+      }
+    }
+  }
+  footer{
+    .footer-home{
+      .radiusBox{padding:15px 10px 15px 15px;
+        &#insertContact{
+          h3{margin-left:25px;font-size:20px;text-align:right;}
+          .content{
+            .contactPhone{position:absolute;bottom:30px;left:50px;
+              .tel{width:auto;font-size:13px;
+                &:before{top:-15px;left:-41px;}
+              }
+              .fax{margin-left:-22px;margin-top:5px;}
+            }
+          }
+          .bt{font-size:12px;}
+        }
+      }
+    }
+  }
+}

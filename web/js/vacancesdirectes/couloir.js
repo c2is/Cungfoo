@@ -15,7 +15,7 @@ $(function() {
 
     // selects
     if($('#newCustomerLayer').length){
-        $('#newCustomerLayer').find('select').sSelect({ddMaxHeight: '300px'});
+        $('#newCustomerLayer').show().find('select').sSelect({ddMaxHeight: '300px'});
     }
     if($('#reservation').length){
         $('.changeOccupantCount').find('select').sSelect({ddMaxHeight: '300px'});
@@ -47,7 +47,6 @@ head.ready(function(){
             });
             if(checked != undefined){
                 $('#returningCustomerYes').trigger("click");
-
             }
             else{
                 if($('#returningCustomerYes').is(':checked')) {
