@@ -7,7 +7,7 @@
 <div id="headerContainer" class="column clear">
     <div class="clear">
         <h1>{{ "global.compte.title" | trans | raw }}</h1>
-        <a href="{{ path('compte_logout') }}" class="logout bt fushia ib right big">{{ "general.logout" | trans }}</a>
+        <a href="{{ path('seo.url.compte.index'|trans ~ '_logout') }}" class="logout bt fushia ib right big">{{ "general.logout" | trans }}</a>
     </div>
     <nav id="stepNav" class="clearboth">
         {% set currentRoute = app.request.get('_route') %}
