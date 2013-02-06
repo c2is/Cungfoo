@@ -771,7 +771,7 @@ global:
         demande_brochure: "Demande de brochure"
         reservation: "Réservation"
         title: "<span>Espace</span> client"
-        site_name: "Vacances directes.com"
+    site_name: "Vacances directes.com"
 
 bon_plan:
     title: "Camping : %bonPlan%"
