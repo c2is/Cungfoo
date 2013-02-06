@@ -32,8 +32,24 @@ class CompteController implements ControllerProviderInterface
         );
 
         $query = array_merge($parameters, $request->request->all());
+        $query = $this->pushCookieSession($request, $query);
 
         return $query;
+    }
+
+    protected function pushCookieSession(Request $request, $options)
+    {
+        $session = base64_decode(str_replace('B64_', '', $request->cookies->get('session_name')));
+
+        if (!$session && $options['session'])
+        {
+            setcookie( "session_name", 'B64_'.base64_encode($options['session']));
+            $session = $options['session'];
+        }
+
+        $options['session'] = $session;
+
+        return $options;
     }
 
     /**
@@ -61,7 +77,7 @@ class CompteController implements ControllerProviderInterface
 
         })->bind('compte_coordonnees');
 
-        $controllers->match('/d' . $app->trans('seo.url.compte.brochure') . '/', function (Request $request) use ($app)
+        $controllers->match('/' . $app->trans('seo.url.compte.brochure') . '/', function (Request $request) use ($app)
         {
             $query            = $this->getDefaultResalysParameters($app, $request);
             $query['display'] = 'request';
@@ -72,8 +88,9 @@ class CompteController implements ControllerProviderInterface
 
         $controllers->match('/' . $app->trans('seo.url.compte.reservations') . '/', function (Request $request) use ($app)
         {
-            $query            = $this->getDefaultResalysParameters($app, $request);
-            $query['display'] = 'existing_reservations';
+            $query              = $this->getDefaultResalysParameters($app, $request);
+            $query['display']   = 'existing_reservations';
+            $query['homeLink']  = $app['url_generator']->generate('homepage', array(), true);
 
             return $app->renderView('Compte/index.twig', array('query' => $query));
 

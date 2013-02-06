@@ -48,15 +48,18 @@ class BrutesCommand extends BaseCommand
             // Fichiers délimiteur ;
             //$this->readCSVFile('types_hebergement.csv', 'typesHebergementCallback', null, $input, $output, true);
             //$this->readCSVFile('photos_campingv2.csv', 'campingsCallback', null, $input, $output, true);
-            $this->readCSVFile('activite_i18n_de_rel.csv', 'activitesI18nCallback', null, $input, $output, true);
-            $this->readCSVFile('baignade_i18n_de_rel.csv', 'baignadesI18nCallback', null, $input, $output, true);
-            $this->readCSVFile('etablissement_i18n_de_rel.csv', 'etablissementsI18nCallback', null, $input, $output, true);
-            $this->readCSVFile('region_i18n_de_rel.csv', 'regionsI18nCallback', null, $input, $output, true);
-            $this->readCSVFile('service_complementaire_i18n_de_rel.csv', 'servicesComplementairesI18nCallback', null, $input, $output, true);
-            $this->readCSVFile('situation_geographique_i18n_de_rel.csv', 'situationsGeographiquesI18nCallback', null, $input, $output, true);
-            $this->readCSVFile('thematique_i18n_de_rel.csv', 'thematiquesI18nCallback', null, $input, $output, true);
-            $this->readCSVFile('type_hebergement_i18n_de_rel.csv', 'typesHebergementsI18nCallback', null, $input, $output, true);
-            $this->readCSVFile('ville_i18n_de_rel.csv', 'villesI18nCallback', null, $input, $output, true);
+            $this->readCSVFile('activite_i18n.csv', 'activitesI18nCallback', null, $input, $output, true);
+            $this->readCSVFile('baignade_i18n.csv', 'baignadesI18nCallback', null, $input, $output, true);
+            $this->readCSVFile('etablissement_i18n.csv', 'etablissementsI18nCallback', null, $input, $output, true);
+            $this->readCSVFile('region_i18n.csv', 'regionsI18nCallback', null, $input, $output, true);
+            $this->readCSVFile('service_complementaire_i18n.csv', 'servicesComplementairesI18nCallback', null, $input, $output, true);
+            $this->readCSVFile('situation_geographique_i18n.csv', 'situationsGeographiquesI18nCallback', null, $input, $output, true);
+            $this->readCSVFile('thematique_i18n.csv', 'thematiquesI18nCallback', null, $input, $output, true);
+            $this->readCSVFile('type_hebergement_i18n.csv', 'typesHebergementsI18nCallback', null, $input, $output, true);
+            $this->readCSVFile('ville_i18n.csv', 'villesI18nCallback', null, $input, $output, true);
+            $this->readCSVFile('pays_i18n.csv', 'paysI18nCallback', null, $input, $output, true);
+            $this->readCSVFile('categorie_i18n.csv', 'categoriesI18nCallback', null, $input, $output, true);
+            $this->readCSVFile('destination_i18n.csv', 'destinationsI18nCallback', null, $input, $output, true);
         }
         catch (\Exception $exception)
         {
@@ -296,7 +299,7 @@ class BrutesCommand extends BaseCommand
 
         if ($locale == 'de') {
             $item = \Cungfoo\Model\BaignadeQuery::create()
-                ->filterByCode($code])
+                ->filterByCode($code)
                 ->findOne()
             ;
 
@@ -318,11 +321,11 @@ class BrutesCommand extends BaseCommand
 
     protected function etablissementsI18nCallback(array $explodedLine, array &$buffer, array &$unset, $output)
     {
-        list($code, $id, $locale, $country, $ouverture_reception, $ouverture_camping, $arrivees_departs, $description, $activiteLocale) = $explodedLine;
+        list($code, $id, $locale, $country, $ouverture_reception, $ouverture_camping, $arrivees_departs, $description, $activeLocale) = $explodedLine;
 
         if ($locale == 'de') {
             $item = \Cungfoo\Model\EtablissementQuery::create()
-                ->filterById($code)
+                ->filterByCode($code)
                 ->findOne()
             ;
 
@@ -346,11 +349,11 @@ class BrutesCommand extends BaseCommand
 
     protected function regionsI18nCallback(array $explodedLine, array &$buffer, array &$unset, $output)
     {
-        list($code, $id, $locale, $slug, $name, $introduction, $description, $activiteLocale) = $explodedLine;
+        list($code, $id, $locale, $slug, $name, $introduction, $description, $activeLocale) = $explodedLine;
 
         if ($locale == 'de') {
             $item = \Cungfoo\Model\RegionQuery::create()
-                ->filterById($code)
+                ->filterByCode($code)
                 ->findOne()
             ;
 
@@ -373,11 +376,11 @@ class BrutesCommand extends BaseCommand
 
     protected function servicesComplementairesI18nCallback(array $explodedLine, array &$buffer, array &$unset, $output)
     {
-        list($code, $id, $locale, $name, $description, $keywords, $activiteLocale) = $explodedLine;
+        list($code, $id, $locale, $name, $description, $keywords, $activeLocale) = $explodedLine;
 
         if ($locale == 'de') {
             $item = \Cungfoo\Model\ServiceComplementaireQuery::create()
-                ->filterById($code)
+                ->filterByCode($code)
                 ->findOne()
             ;
 
@@ -399,11 +402,11 @@ class BrutesCommand extends BaseCommand
 
     protected function situationsGeographiquesI18nCallback(array $explodedLine, array &$buffer, array &$unset, $output)
     {
-        list($code, $id, $locale, $name, $description, $keywords, $activiteLocale) = $explodedLine;
+        list($code, $id, $locale, $name, $description, $keywords, $activeLocale) = $explodedLine;
 
         if ($locale == 'de') {
             $item = \Cungfoo\Model\SituationGeographiqueQuery::create()
-                ->filterById($code)
+                ->filterByCode($code)
                 ->findOne()
             ;
 
@@ -425,11 +428,11 @@ class BrutesCommand extends BaseCommand
 
     protected function thematiquesI18nCallback(array $explodedLine, array &$buffer, array &$unset, $output, $translateIds = false)
     {
-        list($code, $id, $locale, $name, $description, $keywords, $activiteLocale) = $explodedLine;
+        list($code, $id, $locale, $name, $description, $keywords, $activeLocale) = $explodedLine;
 
         if ($locale == 'de') {
             $item = \Cungfoo\Model\ThematiqueQuery::create()
-                ->filterById($code)
+                ->filterByCode($code)
                 ->findOne()
             ;
 
@@ -451,11 +454,11 @@ class BrutesCommand extends BaseCommand
 
     protected function typesHebergementsI18nCallback(array $explodedLine, array &$buffer, array &$unset, $output, $translateIds = false)
     {
-        list($code, $id, $locale, $name, $slug, $indice, $surface, $type_terrasse, $description, $composition, $presentation, $capacite_hebergement, $dimensions, $agencement, $equipements, $annee_utilisation, $remarque_1, $remarque_2, $remarque_3, $remarque_4, $activiteLocale) = $explodedLine;
+        list($code, $id, $locale, $name, $slug, $indice, $surface, $type_terrasse, $description, $composition, $presentation, $capacite_hebergement, $dimensions, $agencement, $equipements, $annee_utilisation, $remarque_1, $remarque_2, $remarque_3, $remarque_4, $activeLocale) = $explodedLine;
 
         if ($locale == 'de') {
             $item = \Cungfoo\Model\TypeHebergementQuery::create()
-                ->filterById($code)
+                ->filterByCode($code)
                 ->findOne()
             ;
 
@@ -491,11 +494,89 @@ class BrutesCommand extends BaseCommand
 
     protected function villesI18nCallback(array $explodedLine, array &$buffer, array &$unset, $output, $translateIds = false)
     {
-        list($code, $id, $locale, $slug, $name, $introduction, $description, $activiteLocale) = $explodedLine;
+        list($code, $id, $locale, $slug, $name, $introduction, $description, $activeLocale) = $explodedLine;
 
         if ($locale == 'de') {
             $item = \Cungfoo\Model\VilleQuery::create()
-                ->filterById($code)
+                ->filterByCode($code)
+                ->findOne()
+            ;
+
+            if (!$item)
+            {
+                return;
+            }
+
+            $item
+                ->setLocale($locale)
+                ->setSlug($slug)
+                ->setName($name)
+                ->setIntroduction($introduction)
+                ->setDescription($description)
+                ->setActiveLocale($activeLocale)
+                ->save()
+            ;
+        }
+    }
+
+    protected function paysI18nCallback(array $explodedLine, array &$buffer, array &$unset, $output, $translateIds = false)
+    {
+        list($code, $id, $locale, $slug, $name, $introduction, $description, $activeLocale) = $explodedLine;
+
+        if ($locale == 'de') {
+            $item = \Cungfoo\Model\PaysQuery::create()
+                ->filterByCode($code)
+                ->findOne()
+            ;
+
+            if (!$item)
+            {
+                return;
+            }
+
+            $item
+                ->setLocale($locale)
+                ->setSlug($slug)
+                ->setName($name)
+                ->setIntroduction($introduction)
+                ->setDescription($description)
+                ->setActiveLocale($activeLocale)
+                ->save()
+            ;
+        }
+    }
+
+    protected function categoriesI18nCallback(array $explodedLine, array &$buffer, array &$unset, $output, $translateIds = false)
+    {
+        list($code, $id, $locale, $name, $activeLocale) = $explodedLine;
+
+        if ($locale == 'de') {
+            $item = \Cungfoo\Model\CategorieQuery::create()
+                ->filterByCode($code)
+                ->findOne()
+            ;
+
+            if (!$item)
+            {
+                return;
+            }
+
+            $item
+                ->setLocale($locale)
+                ->setName($name)
+                ->setActiveLocale($activeLocale)
+                ->save()
+            ;
+        }
+    }
+
+    protected function destinationsI18nCallback(array $explodedLine, array &$buffer, array &$unset, $output, $translateIds = false)
+    {
+        list($code, $id, $locale, $slug, $name, $introduction, $description, $activeLocale) = $explodedLine;
+
+        if ($locale == 'de') {
+            $item = \Cungfoo\Model\DestinationQuery::create()
+                ->filterByCode($code)
                 ->findOne()
             ;
 

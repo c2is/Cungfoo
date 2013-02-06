@@ -772,6 +772,7 @@ global:
         reservation: "Buchung"
         title: "Kundenbereich "
         title_client: ""
+    site_name: "Vacances directes.de"
 
 bon_plan:
     title: "Campingplatz: %bonPlan%"
