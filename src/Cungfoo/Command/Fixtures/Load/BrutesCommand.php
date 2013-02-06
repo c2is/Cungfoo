@@ -48,33 +48,14 @@ class BrutesCommand extends BaseCommand
             // Fichiers délimiteur ;
             //$this->readCSVFile('types_hebergement.csv', 'typesHebergementCallback', null, $input, $output, true);
             //$this->readCSVFile('photos_campingv2.csv', 'campingsCallback', null, $input, $output, true);
-            $this->readCSVFile('activite_i18n_de_rel.csv', 'activitesI18nCallback', null, $input, $output, true, true);
             $this->readCSVFile('activite_i18n_de_rel.csv', 'activitesI18nCallback', null, $input, $output, true);
-            $this->readCSVFile('avantage_i18n_de_rel.csv', 'avantagesI18nCallback', null, $input, $output, true, true);
-            $this->readCSVFile('avantage_i18n_de_rel.csv', 'avantagesI18nCallback', null, $input, $output, true);
-            $this->readCSVFile('baignade_i18n_de_rel.csv', 'baignadesI18nCallback', null, $input, $output, true, true);
             $this->readCSVFile('baignade_i18n_de_rel.csv', 'baignadesI18nCallback', null, $input, $output, true);
-            $this->readCSVFile('etablissement_i18n_de_rel.csv', 'etablissementsI18nCallback', null, $input, $output, true, true);
             $this->readCSVFile('etablissement_i18n_de_rel.csv', 'etablissementsI18nCallback', null, $input, $output, true);
-            $this->readCSVFile('etablissement2_i18n_de_rel.csv', 'etablissements2I18nCallback', null, $input, $output, true, true);
-            $this->readCSVFile('etablissement2_i18n_de_rel.csv', 'etablissements2I18nCallback', null, $input, $output, true);
-            $this->readCSVFile('idee_weekend_i18n_de_rel.csv', 'ideesWEI18nCallback', null, $input, $output, true, true);
-            $this->readCSVFile('idee_weekend_i18n_de_rel.csv', 'ideesWEI18nCallback', null, $input, $output, true);
-            $this->readCSVFile('mise_en_avant_i18n_de_rel.csv', 'misesEnAvantI18nCallback', null, $input, $output, true, true);
-            $this->readCSVFile('mise_en_avant_i18n_de_rel.csv', 'misesEnAvantI18nCallback', null, $input, $output, true);
-            $this->readCSVFile('region_i18n_de_rel.csv', 'regionsI18nCallback', null, $input, $output, true, true);
             $this->readCSVFile('region_i18n_de_rel.csv', 'regionsI18nCallback', null, $input, $output, true);
-            $this->readCSVFile('service_complementaire_i18n_de_rel.csv', 'servicesComplementairesI18nCallback', null, $input, $output, true, true);
             $this->readCSVFile('service_complementaire_i18n_de_rel.csv', 'servicesComplementairesI18nCallback', null, $input, $output, true);
-            $this->readCSVFile('situation_geographique_i18n_de_rel.csv', 'situationsGeographiquesI18nCallback', null, $input, $output, true, true);
             $this->readCSVFile('situation_geographique_i18n_de_rel.csv', 'situationsGeographiquesI18nCallback', null, $input, $output, true);
-            $this->readCSVFile('tag_i18n_de_rel.csv', 'tagsI18nCallback', null, $input, $output, true, true);
-            $this->readCSVFile('tag_i18n_de_rel.csv', 'tagsI18nCallback', null, $input, $output, true);
-            $this->readCSVFile('thematique_i18n_de_rel.csv', 'thematiquesI18nCallback', null, $input, $output, true, true);
             $this->readCSVFile('thematique_i18n_de_rel.csv', 'thematiquesI18nCallback', null, $input, $output, true);
-            $this->readCSVFile('type_hebergement_i18n_de_rel.csv', 'typesHebergementsI18nCallback', null, $input, $output, true, true);
             $this->readCSVFile('type_hebergement_i18n_de_rel.csv', 'typesHebergementsI18nCallback', null, $input, $output, true);
-            $this->readCSVFile('ville_i18n_de_rel.csv', 'villesI18nCallback', null, $input, $output, true, true);
             $this->readCSVFile('ville_i18n_de_rel.csv', 'villesI18nCallback', null, $input, $output, true);
         }
         catch (\Exception $exception)
@@ -89,7 +70,7 @@ class BrutesCommand extends BaseCommand
         return true;
     }
 
-    protected function readCSVFile($filename, $lineHandler, $fileHandler, $input, $output, $csv = false, $translateIds = false)
+    protected function readCSVFile($filename, $lineHandler, $fileHandler, $input, $output, $csv = false)
     {
         $directory = trim($input->getOption('directory'));
         if ($csv)
@@ -109,7 +90,7 @@ class BrutesCommand extends BaseCommand
             {
                 while (($line = fgetcsv($handle, 0, ';')) !== false)
                 {
-                    $this->$lineHandler($line, $buffer, $unset, $output, $translateIds);
+                    $this->$lineHandler($line, $buffer, $unset, $output);
                 }
             }
             else
@@ -282,30 +263,14 @@ class BrutesCommand extends BaseCommand
         }
     }
 
-    protected function activitesI18nCallback(array $explodedLine, array &$buffer, array &$unset, $output, $translateIds = false)
+    protected function activitesI18nCallback(array $explodedLine, array &$buffer, array &$unset, $output)
     {
-        list($id, $locale, $name, $description, $keywords) = $explodedLine;
+        list($code, $id, $locale, $name, $description, $keywords, $activeLocale) = $explodedLine;
 
-        if ($translateIds)
-        {
-            if ($locale == 'fr')
-            {
-                $item = \Cungfoo\Model\ActiviteQuery::create()
-                    ->useI18nQuery()
-                        ->filterByName($name)
-                        ->filterByLocale('fr')
-                    ->endUse()
-                    ->findOne()
-                ;
-
-                if ($item) $this->translatedIds['activites'][$id] = $item->getId();
-                else $output->writeln(sprintf('Failed to map activity : %s' , $name));
-            }
-        }
-        elseif ($locale == 'de' && isset($this->translatedIds['activites'][$id]))
+        if ($locale == 'de')
         {
             $item = \Cungfoo\Model\ActiviteQuery::create()
-                ->filterById($this->translatedIds['activites'][$id])
+                ->filterByCode($code)
                 ->findOne()
             ;
 
@@ -319,74 +284,19 @@ class BrutesCommand extends BaseCommand
                 ->setName($name)
                 ->setDescription($description)
                 ->setKeywords($keywords)
+                ->setActiveLocale($activeLocale)
                 ->save()
             ;
         }
     }
 
-    protected function avantagesI18nCallback(array $explodedLine, array &$buffer, array &$unset, $output, $translateIds = false)
+    protected function baignadesI18nCallback(array $explodedLine, array &$buffer, array &$unset, $output)
     {
-        list($id, $locale, $name, $description) = $explodedLine;
+        list($code, $id, $locale, $name, $description, $keywords, $activeLocale) = $explodedLine;
 
-        if ($translateIds)
-        {
-            if ($locale == 'fr')
-            {
-                $item = \Cungfoo\Model\AvantageQuery::create()
-                    ->useI18nQuery()
-                        ->filterByName($name)
-                        ->filterByLocale('fr')
-                    ->endUse()
-                    ->findOne()
-                ;
-
-                if ($item) $this->translatedIds['avantages'][$id] = $item->getId();
-                else $output->writeln(sprintf('Failed to map advantage : %s' , $name));
-            }
-        }
-        elseif ($locale == 'de' && isset($this->translatedIds['avantages'][$id])) {
-            $item = \Cungfoo\Model\AvantageQuery::create()
-                ->filterById($this->translatedIds['avantages'][$id])
-                ->findOne()
-            ;
-
-            if (!$item)
-            {
-                return;
-            }
-
-            $item
-                ->setLocale($locale)
-                ->setName($name)
-                ->setDescription($description)
-                ->save()
-            ;
-        }
-    }
-
-    protected function baignadesI18nCallback(array $explodedLine, array &$buffer, array &$unset, $output, $translateIds = false)
-    {
-        list($id, $locale, $name, $description, $keywords) = $explodedLine;
-
-        if ($translateIds)
-        {
-            if ($locale == 'fr')
-            {
-                $item = \Cungfoo\Model\BaignadeQuery::create()
-                    ->useI18nQuery()
-                        ->filterByName($name)
-                        ->filterByLocale('fr')
-                    ->endUse()
-                    ->findOne()
-                ;
-
-                if ($item) $this->translatedIds['baignades'][$id] = $item->getId();
-                else $output->writeln(sprintf('Failed to map bathing : %s' , $name));
-            }
-        }
-        elseif ($locale == 'de' && isset($this->translatedIds['baignades'][$id])) {
+        if ($locale == 'de') {
             $item = \Cungfoo\Model\BaignadeQuery::create()
-                ->filterById($this->translatedIds['baignades'][$id])
+                ->filterByCode($code])
                 ->findOne()
             ;
 
@@ -400,34 +310,19 @@ class BrutesCommand extends BaseCommand
                 ->setName($name)
                 ->setDescription($description)
                 ->setKeywords($keywords)
+                ->setActiveLocale($activeLocale)
                 ->save()
             ;
         }
     }
 
-    protected function etablissementsI18nCallback(array $explodedLine, array &$buffer, array &$unset, $output, $translateIds = false)
+    protected function etablissementsI18nCallback(array $explodedLine, array &$buffer, array &$unset, $output)
     {
-        list($id, $locale, $country, $ouverture_reception, $ouverture_camping, $arrivees_departs, $description, $joker) = $explodedLine;
+        list($code, $id, $locale, $country, $ouverture_reception, $ouverture_camping, $arrivees_departs, $description, $activiteLocale) = $explodedLine;
 
-        if ($translateIds)
-        {
-            if ($locale == 'fr')
-            {
-                $item = \Cungfoo\Model\EtablissementQuery::create()
-                    ->useI18nQuery()
-                        ->filterByDescription($description, \Criteria::LIKE)
-                        ->filterByLocale('fr')
-                    ->endUse()
-                    ->findOne()
-                ;
-
-                if ($item) $this->translatedIds['etablissements'][$id] = $item->getId();
-                else $output->writeln(sprintf('Failed to map camping : %s' , $description));
-            }
-        }
-        elseif ($locale == 'de' && isset($this->translatedIds['etablissements'][$id])) {
+        if ($locale == 'de') {
             $item = \Cungfoo\Model\EtablissementQuery::create()
-                ->filterById($this->translatedIds['etablissements'][$id])
+                ->filterById($code)
                 ->findOne()
             ;
 
@@ -443,159 +338,19 @@ class BrutesCommand extends BaseCommand
                 ->setOuvertureCamping($ouverture_camping)
                 ->setArriveesDeparts($arrivees_departs)
                 ->setDescription($description)
+                ->setActiveLocale($activeLocale)
                 ->save()
             ;
         }
     }
 
-    protected function etablissements2I18nCallback(array $explodedLine, array &$buffer, array &$unset, $output, $translateIds = false)
+    protected function regionsI18nCallback(array $explodedLine, array &$buffer, array &$unset, $output)
     {
-        list($id, $locale, $country, $ouverture_reception, $ouverture_camping, $arrivees_departs, $description) = $explodedLine;
+        list($code, $id, $locale, $slug, $name, $introduction, $description, $activiteLocale) = $explodedLine;
 
-        if ($translateIds)
-        {
-            if ($locale == 'fr')
-            {
-                $item = \Cungfoo\Model\EtablissementQuery::create()
-                    ->useI18nQuery()
-                        ->filterByDescription($description, \Criteria::LIKE)
-                        ->filterByLocale('fr')
-                    ->endUse()
-                    ->findOne()
-                ;
-
-                if ($item) $this->translatedIds['etablissements'][$id] = $item->getId();
-                else $output->writeln(sprintf('Failed to map camping : %s' , $description));
-            }
-        }
-        elseif ($locale == 'de' && isset($this->translatedIds['etablissements'][$id])) {
-            $item = \Cungfoo\Model\EtablissementQuery::create()
-                ->filterById($this->translatedIds['etablissements'][$id])
-                ->findOne()
-            ;
-
-            if (!$item)
-            {
-                return;
-            }
-
-            $item
-                ->setLocale($locale)
-                ->setCountry($country)
-                ->setOuvertureReception($ouverture_reception)
-                ->setOuvertureCamping($ouverture_camping)
-                ->setArriveesDeparts($arrivees_departs)
-                ->setDescription($description)
-                ->save()
-            ;
-        }
-    }
-
-    protected function ideesWEI18nCallback(array $explodedLine, array &$buffer, array &$unset, $output, $translateIds = false)
-    {
-        list($id, $locale, $titre, $lien) = $explodedLine;
-
-        if ($translateIds)
-        {
-            if ($locale == 'fr')
-            {
-                $item = \Cungfoo\Model\IdeeWeekendQuery::create()
-                    ->useI18nQuery()
-                        ->filterByTitre($titre)
-                        ->filterByLocale('fr')
-                    ->endUse()
-                    ->findOne()
-                ;
-
-                if ($item) $this->translatedIds['idees_weekend'][$id] = $item->getId();
-                else $output->writeln(sprintf('Failed to map weekend idea : %s' , $titre));
-            }
-        }
-        elseif ($locale == 'de' && isset($this->translatedIds['idees_weekend'][$id])) {
-            $item = \Cungfoo\Model\IdeeWeekendQuery::create()
-                ->filterById($this->translatedIds['idees_weekend'][$id])
-                ->findOne()
-            ;
-
-            if (!$item)
-            {
-                return;
-            }
-
-            $item
-                ->setLocale($locale)
-                ->setTitre($titre)
-                ->setLien($lien)
-                ->save()
-            ;
-        }
-    }
-
-    protected function misesEnAvantI18nCallback(array $explodedLine, array &$buffer, array &$unset, $output, $translateIds = false)
-    {
-        list($id, $locale, $titre, $accroche, $lien, $titre_lien) = $explodedLine;
-
-        if ($translateIds)
-        {
-            if ($locale == 'fr')
-            {
-                $item = \Cungfoo\Model\MiseEnAvantQuery::create()
-                    ->useI18nQuery()
-                        ->filterByTitre($titre)
-                        ->filterByLocale('fr')
-                    ->endUse()
-                    ->findOne()
-                ;
-
-                if ($item) $this->translatedIds['mises_en_avant'][$id] = $item->getId();
-                else $output->writeln(sprintf('Failed to map highlight : %s' , $titre));
-            }
-        }
-        elseif ($locale == 'de' && isset($this->translatedIds['mises_en_avant'][$id])) {
-            $item = \Cungfoo\Model\MiseEnAvantQuery::create()
-                ->filterById($this->translatedIds['mises_en_avant'][$id])
-                ->findOne()
-            ;
-
-            if (!$item)
-            {
-                return;
-            }
-
-            $item
-                ->setLocale($locale)
-                ->setTitre($titre)
-                ->setAccroche($accroche)
-                ->setLien($lien)
-                ->setTitreLien($titre_lien)
-                ->save()
-            ;
-        }
-    }
-
-    protected function regionsI18nCallback(array $explodedLine, array &$buffer, array &$unset, $output, $translateIds = false)
-    {
-        list($id, $locale, $slug, $name, $introduction, $description) = $explodedLine;
-
-        if ($translateIds)
-        {
-            if ($locale == 'fr')
-            {
-                $item = \Cungfoo\Model\RegionQuery::create()
-                    ->useI18nQuery()
-                        ->filterBySlug($slug)
-                        ->filterByLocale('fr')
-                    ->endUse()
-                    ->findOne()
-                ;
-
-                if ($item) $this->translatedIds['regions'][$id] = $item->getId();
-                else $output->writeln(sprintf('Failed to map region : %s' , $slug));
-            }
-        }
-        elseif ($locale == 'de' && isset($this->translatedIds['regions'][$id])) {
+        if ($locale == 'de') {
             $item = \Cungfoo\Model\RegionQuery::create()
-                ->filterById($this->translatedIds['regions'][$id])
+                ->filterById($code)
                 ->findOne()
             ;
 
@@ -610,34 +365,19 @@ class BrutesCommand extends BaseCommand
                 ->setName($name)
                 ->setIntroduction($introduction)
                 ->setDescription($description)
+                ->setActiveLocale($activeLocale)
                 ->save()
             ;
         }
     }
 
-    protected function servicesComplementairesI18nCallback(array $explodedLine, array &$buffer, array &$unset, $output, $translateIds = false)
+    protected function servicesComplementairesI18nCallback(array $explodedLine, array &$buffer, array &$unset, $output)
     {
-        list($id, $locale, $name, $description, $keywords) = $explodedLine;
+        list($code, $id, $locale, $name, $description, $keywords, $activiteLocale) = $explodedLine;
 
-        if ($translateIds)
-        {
-            if ($locale == 'fr')
-            {
-                $item = \Cungfoo\Model\ServiceComplementaireQuery::create()
-                    ->useI18nQuery()
-                        ->filterByName($name)
-                        ->filterByLocale('fr')
-                    ->endUse()
-                    ->findOne()
-                ;
-
-                if ($item) $this->translatedIds['services'][$id] = $item->getId();
-                else $output->writeln(sprintf('Failed to map service : %s' , $name));
-            }
-        }
-        elseif ($locale == 'de' && isset($this->translatedIds['services'][$id])) {
+        if ($locale == 'de') {
             $item = \Cungfoo\Model\ServiceComplementaireQuery::create()
-                ->filterById($this->translatedIds['services'][$id])
+                ->filterById($code)
                 ->findOne()
             ;
 
@@ -651,34 +391,19 @@ class BrutesCommand extends BaseCommand
                 ->setName($name)
                 ->setDescription($description)
                 ->setKeywords($keywords)
+                ->setActiveLocale($activeLocale)
                 ->save()
             ;
         }
     }
 
-    protected function situationsGeographiquesI18nCallback(array $explodedLine, array &$buffer, array &$unset, $output, $translateIds = false)
+    protected function situationsGeographiquesI18nCallback(array $explodedLine, array &$buffer, array &$unset, $output)
     {
-        list($id, $locale, $name, $description, $keywords) = $explodedLine;
+        list($code, $id, $locale, $name, $description, $keywords, $activiteLocale) = $explodedLine;
 
-        if ($translateIds)
-        {
-            if ($locale == 'fr')
-            {
-                $item = \Cungfoo\Model\SituationGeographiqueQuery::create()
-                    ->useI18nQuery()
-                        ->filterByName($name)
-                        ->filterByLocale('fr')
-                    ->endUse()
-                    ->findOne()
-                ;
-
-                if ($item) $this->translatedIds['situations'][$id] = $item->getId();
-                else $output->writeln(sprintf('Failed to map situation : %s' , $name));
-            }
-        }
-        elseif ($locale == 'de' && isset($this->translatedIds['situations'][$id])) {
+        if ($locale == 'de') {
             $item = \Cungfoo\Model\SituationGeographiqueQuery::create()
-                ->filterById($this->translatedIds['situations'][$id])
+                ->filterById($code)
                 ->findOne()
             ;
 
@@ -692,45 +417,7 @@ class BrutesCommand extends BaseCommand
                 ->setName($name)
                 ->setDescription($description)
                 ->setKeywords($keywords)
-                ->save()
-            ;
-        }
-    }
-
-    protected function tagsI18nCallback(array $explodedLine, array &$buffer, array &$unset, $output, $translateIds = false)
-    {
-        list($id, $locale, $name) = $explodedLine;
-
-        if ($translateIds)
-        {
-            if ($locale == 'fr')
-            {
-                $item = \Cungfoo\Model\TagQuery::create()
-                    ->useI18nQuery()
-                        ->filterByName($name)
-                        ->filterByLocale('fr')
-                    ->endUse()
-                    ->findOne()
-                ;
-
-                if ($item) $this->translatedIds['tags'][$id] = $item->getId();
-                else $output->writeln(sprintf('Failed to map tag : %s' , $name));
-            }
-        }
-        elseif ($locale == 'de' && isset($this->translatedIds['tags'][$id])) {
-            $item = \Cungfoo\Model\TagQuery::create()
-                ->filterById($this->translatedIds['tags'][$id])
-                ->findOne()
-            ;
-
-            if (!$item)
-            {
-                return;
-            }
-
-            $item
-                ->setLocale($locale)
-                ->setName($name)
+                ->setActiveLocale($activeLocale)
                 ->save()
             ;
         }
@@ -738,27 +425,11 @@ class BrutesCommand extends BaseCommand
 
     protected function thematiquesI18nCallback(array $explodedLine, array &$buffer, array &$unset, $output, $translateIds = false)
     {
-        list($id, $locale, $name, $description, $keywords) = $explodedLine;
+        list($code, $id, $locale, $name, $description, $keywords, $activiteLocale) = $explodedLine;
 
-        if ($translateIds)
-        {
-            if ($locale == 'fr')
-            {
-                $item = \Cungfoo\Model\ThematiqueQuery::create()
-                    ->useI18nQuery()
-                        ->filterByName($name)
-                        ->filterByLocale('fr')
-                    ->endUse()
-                    ->findOne()
-                ;
-
-                if ($item) $this->translatedIds['thematiques'][$id] = $item->getId();
-                else $output->writeln(sprintf('Failed to map theme : %s' , $name));
-            }
-        }
-        elseif ($locale == 'de' && isset($this->translatedIds['thematiques'][$id])) {
+        if ($locale == 'de') {
             $item = \Cungfoo\Model\ThematiqueQuery::create()
-                ->filterById($this->translatedIds['thematiques'][$id])
+                ->filterById($code)
                 ->findOne()
             ;
 
@@ -772,6 +443,7 @@ class BrutesCommand extends BaseCommand
                 ->setName($name)
                 ->setDescription($description)
                 ->setKeywords($keywords)
+                ->setActiveLocale($activeLocale)
                 ->save()
             ;
         }
@@ -779,27 +451,11 @@ class BrutesCommand extends BaseCommand
 
     protected function typesHebergementsI18nCallback(array $explodedLine, array &$buffer, array &$unset, $output, $translateIds = false)
     {
-        list($id, $locale, $name, $surface, $type_terrasse, $description, $composition, $presentation, $capacite_hebergement, $dimensions, $agencement, $equipements, $annee_utilisation, $remarque_1, $remarque_2, $remarque_3, $remarque_4) = $explodedLine;
+        list($code, $id, $locale, $name, $slug, $indice, $surface, $type_terrasse, $description, $composition, $presentation, $capacite_hebergement, $dimensions, $agencement, $equipements, $annee_utilisation, $remarque_1, $remarque_2, $remarque_3, $remarque_4, $activiteLocale) = $explodedLine;
 
-        if ($translateIds)
-        {
-            if ($locale == 'fr')
-            {
-                $item = \Cungfoo\Model\TypeHebergementQuery::create()
-                    ->useI18nQuery()
-                        ->filterByName($name)
-                        ->filterByLocale('fr')
-                    ->endUse()
-                    ->findOne()
-                ;
-
-                if ($item) $this->translatedIds['types_hebergement'][$id] = $item->getId();
-                else $output->writeln(sprintf('Failed to map type hebergement : %s' , $name));
-            }
-        }
-        elseif ($locale == 'de' && isset($this->translatedIds['types_hebergement'][$id])) {
+        if ($locale == 'de') {
             $item = \Cungfoo\Model\TypeHebergementQuery::create()
-                ->filterById($this->translatedIds['types_hebergement'][$id])
+                ->filterById($code)
                 ->findOne()
             ;
 
@@ -811,7 +467,9 @@ class BrutesCommand extends BaseCommand
             $item
                 ->setLocale($locale)
                 ->setName($name)
+                ->setSlug($slug)
                 ->setSurface($surface)
+                ->setIndice($indice)
                 ->setTypeTerrasse($type_terrasse)
                 ->setDescription($description)
                 ->setComposition($composition)
@@ -825,6 +483,7 @@ class BrutesCommand extends BaseCommand
                 ->setRemarque2($remarque_2)
                 ->setRemarque3($remarque_3)
                 ->setRemarque4($remarque_4)
+                ->setActiveLocale($activeLocale)
                 ->save()
             ;
         }
@@ -832,27 +491,11 @@ class BrutesCommand extends BaseCommand
 
     protected function villesI18nCallback(array $explodedLine, array &$buffer, array &$unset, $output, $translateIds = false)
     {
-        list($id, $locale, $slug, $name, $introduction, $description) = $explodedLine;
+        list($code, $id, $locale, $slug, $name, $introduction, $description, $activiteLocale) = $explodedLine;
 
-        if ($translateIds)
-        {
-            if ($locale == 'fr')
-            {
-                $item = \Cungfoo\Model\VilleQuery::create()
-                    ->useI18nQuery()
-                        ->filterByName($name)
-                        ->filterByLocale('fr')
-                    ->endUse()
-                    ->findOne()
-                ;
-
-                if ($item) $this->translatedIds['villes'][$id] = $item->getId();
-                else $output->writeln(sprintf('Failed to map type city : %s' , $slug));
-            }
-        }
-        elseif ($locale == 'de' && isset($this->translatedIds['villes'][$id])) {
+        if ($locale == 'de') {
             $item = \Cungfoo\Model\VilleQuery::create()
-                ->filterById($this->translatedIds['villes'][$id])
+                ->filterById($code)
                 ->findOne()
             ;
 
@@ -867,6 +510,7 @@ class BrutesCommand extends BaseCommand
                 ->setName($name)
                 ->setIntroduction($introduction)
                 ->setDescription($description)
+                ->setActiveLocale($activeLocale)
                 ->save()
             ;
         }
