@@ -46,6 +46,18 @@ if(nbVisible == undefined) {
  * ///////////////////////////////////////////////////////////////////////////////////////////////////////////
  */
 $(function() {
+// Extend jQuery.fn with our new method
+jQuery.extend( jQuery.fn, {
+    // Name of our method & one argument (the parent selector)
+    hasParent: function(p) {
+        // Returns a subset of items using jQuery.filter
+        return this.filter(function(){
+            // Return truthy/falsey based on presence in parent
+            return $(p).find(this).length;
+        });
+    }
+});
+
 // ScrollTop onload (mobile) si il n'y a pas d'ancre
     if (/mobile/i.test(navigator.userAgent) && !location.hash) {
         window.scrollTo(0, 1);
@@ -456,6 +468,46 @@ $(function() {
     /*$('.sMultSelectUl').wrap('<div class="tinyScroll" />').before('<div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>')
      .wrap('<div class="viewport"><div class="overview"></div></div>');
      $('.tinyScroll').tinyscrollbar();*/
+
+    // toggle
+    if($('.toggleContainer').length > 0){
+        $('.toggleContainer > .toggleItem').each(function(i,v){
+            $(this).children('.toggleArrow').rotate('90deg');
+        });
+        $('.toggleItem').click(function(e){
+            var togglingItem = $(this);
+            togglingItem.siblings().filter(function(i){
+                return $(this).hasClass('active');
+            }).trigger('click');
+            if (!togglingItem.hasClass('active')){
+                var alreadyToggledItem = $('.primary .toggleItem.active')
+                alreadyToggledItem.next('.toggleContent').hide();
+                alreadyToggledItem.removeClass('active').children('.toggleArrow').rotate('0deg');
+            }
+            togglingItem.toggleClass('active').next('.toggleContent').slideToggle(500, function(){
+                if (togglingItem.hasClass('active')){
+                    var toggleActiveItemOffset = togglingItem.offset().top - 9;
+                    $('html, body').animate({scrollTop: toggleActiveItemOffset},400);
+                }
+            });
+            if (togglingItem.parent('.toggleContainer').length){
+                if (togglingItem.hasClass('active')){
+                    togglingItem.children('.toggleArrow').animate({rotate: '-=180deg'}, 500);
+                }
+                else {
+                    togglingItem.children('.toggleArrow').animate({rotate: '+=180deg'}, 500);
+                }
+            }
+            else if (togglingItem.parent('.primary').length){
+                if (togglingItem.hasClass('active')){
+                    togglingItem.children('.toggleArrow').animate({rotate: '-=90deg'}, 500);
+                }
+                else {
+                    togglingItem.children('.toggleArrow').animate({rotate: '+=90deg'}, 500);
+                }
+            }
+        });
+    }
 
 
     // datepickers
