@@ -13,21 +13,21 @@ $app->register(new Silex\Provider\SessionServiceProvider());
 $app->register(new Silex\Provider\SecurityServiceProvider());
 $app['security.firewalls'] =  array(
     'compte' => array(
-        'pattern' => '/compte/',
+        'pattern' => '/'.$app->trans('seo.url.compte.index').'/',
         'form'    => array(
             'always_use_default_target_path' => true,
             'default_target_path'            => '/' . $app->trans('seo.url.compte.index') . '/',
-            'login_path'                     => '/compte/logout',
-            'check_path'                     => '/compte/login_check'
+            'login_path'                     => '/' . $app->trans('seo.url.compte.index') . '/logout',
+            'check_path'                     => '/' . $app->trans('seo.url.compte.index') . '/login_check'
         ),
-        'logout' => array('logout_path' => '/compte/logout'),
+        'logout' => array('logout_path' => '/' . $app->trans('seo.url.compte.index') . '/logout'),
         'users'  => $app->share(function() use ($app) {
             return new \Resalys\Model\UserIndivProvider($app);
         }),
     ),
 );
 $app['security.access_rules'] = array(
-    array('^/compte/', 'ROLE_USER'),
+    array('^/' . $app->trans('seo.url.compte.index') . '/', 'ROLE_USER'),
 );
 
 $app['security.last_error'] = $app->protect(function (\Symfony\Component\HttpFoundation\Request $request) use ($app) {
