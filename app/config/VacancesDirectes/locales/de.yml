@@ -453,7 +453,7 @@ fiche:
 
 home:
     topcamping: "Top Campingplätze"
-    topcamping.link: "Alle besten Campingplätze"
+    topcamping.link: "Alle top Campingplätze"
     vacances_directes_cest: "Vacances Directes steht für"
     4_pays: "3 Länder"
     26_regions: "34 Regionen"
@@ -482,7 +482,7 @@ general:
     jouer: "Spielen"
     en_savoir_plus: "Mehr erfahren"
     la_nuit: "nachts"
-    idees_week_end: "Unsere tipps"
+    idees_week_end: "Unsere tipps für sie"
     filter_par: "Filtern nach"
     campings_vacances_directes: "Vacances Directes Campingplätze"
     decouvrir_le_camping: "Den Campingplatz entdecken"
@@ -583,7 +583,7 @@ pactiv-3: "Urlaub voller Entspannung und Lebensfreude"
 encart_vacances_directes:
     title: "Vacances Directes"
     subtitle: "Ein perfekter Urlaub"
-    item_1: "Botschafter, um Sie willkommen zu heißen"
+    item_1: "Unsere Mitarbeiter heißen Sie herzlich willkommen!"
     item_2: "Sorgfältig ausgewählte Campingplätze"
     item_3: "Eine zu 100% gesicherte Website"
     item_4: "Wohnwagen mit allem Komfort für einen Urlaub, der Sie auf andere Gedanken bringt"
@@ -607,8 +607,8 @@ encart_hebergement:
 encart_informations:
     title: "Informationen & Reservierungen unter"
     price: ""
-    dates_1: "Von Montag bis Freitag 9 -21 Uhr"
-    dates_2: "Samstag 10 - 18 Uhr"
+    dates_1: "Von Montag bis Freitag 9 - 18 Uhr"
+    dates_2: ""
 
 encart_autres_themes:
     title: "Andere Möglichkeiten für Ihr Wochenende"
@@ -766,6 +766,12 @@ global:
         password: "Passwort"
         forget: "Passwort vergessen?"
         submit: "Anmelden"
+        accueil: "Startseite"  
+        coordonnees: "Kontaktinformationen"
+        demande_brochure: "Broschüre anfordern"
+        reservation: "Buchung"
+        title: "Kundenbereich "
+        title_client: ""
 
 bon_plan:
     title: "Campingplatz: %bonPlan%"
