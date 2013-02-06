@@ -88,8 +88,9 @@ class CompteController implements ControllerProviderInterface
 
         $controllers->match('/' . $app->trans('seo.url.compte.reservations') . '/', function (Request $request) use ($app)
         {
-            $query            = $this->getDefaultResalysParameters($app, $request);
-            $query['display'] = 'existing_reservations';
+            $query              = $this->getDefaultResalysParameters($app, $request);
+            $query['display']   = 'existing_reservations';
+            $query['homeLink']  = $app['url_generator']->generate('homepage', array(), true);
 
             return $app->renderView('Compte/index.twig', array('query' => $query));
 
