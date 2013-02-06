@@ -48,18 +48,18 @@ class BrutesCommand extends BaseCommand
             // Fichiers délimiteur ;
             //$this->readCSVFile('types_hebergement.csv', 'typesHebergementCallback', null, $input, $output, true);
             //$this->readCSVFile('photos_campingv2.csv', 'campingsCallback', null, $input, $output, true);
-            $this->readCSVFile('activite_i18n_de_rel.csv', 'activitesI18nCallback', null, $input, $output, true);
-            $this->readCSVFile('baignade_i18n_de_rel.csv', 'baignadesI18nCallback', null, $input, $output, true);
-            $this->readCSVFile('etablissement_i18n_de_rel.csv', 'etablissementsI18nCallback', null, $input, $output, true);
-            $this->readCSVFile('region_i18n_de_rel.csv', 'regionsI18nCallback', null, $input, $output, true);
-            $this->readCSVFile('service_complementaire_i18n_de_rel.csv', 'servicesComplementairesI18nCallback', null, $input, $output, true);
-            $this->readCSVFile('situation_geographique_i18n_de_rel.csv', 'situationsGeographiquesI18nCallback', null, $input, $output, true);
-            $this->readCSVFile('thematique_i18n_de_rel.csv', 'thematiquesI18nCallback', null, $input, $output, true);
-            $this->readCSVFile('type_hebergement_i18n_de_rel.csv', 'typesHebergementsI18nCallback', null, $input, $output, true);
-            $this->readCSVFile('ville_i18n_de_rel.csv', 'villesI18nCallback', null, $input, $output, true);
-            $this->readCSVFile('pays_i18n_de_rel.csv', 'paysI18nCallback', null, $input, $output, true);
-            $this->readCSVFile('categorie_i18n_de_rel.csv', 'categoriesI18nCallback', null, $input, $output, true);
-            $this->readCSVFile('destination_i18n_de_rel.csv', 'destinationsI18nCallback', null, $input, $output, true);
+            $this->readCSVFile('activite_i18n.csv', 'activitesI18nCallback', null, $input, $output, true);
+            $this->readCSVFile('baignade_i18n.csv', 'baignadesI18nCallback', null, $input, $output, true);
+            $this->readCSVFile('etablissement_i18n.csv', 'etablissementsI18nCallback', null, $input, $output, true);
+            $this->readCSVFile('region_i18n.csv', 'regionsI18nCallback', null, $input, $output, true);
+            $this->readCSVFile('service_complementaire_i18n.csv', 'servicesComplementairesI18nCallback', null, $input, $output, true);
+            $this->readCSVFile('situation_geographique_i18n.csv', 'situationsGeographiquesI18nCallback', null, $input, $output, true);
+            $this->readCSVFile('thematique_i18n.csv', 'thematiquesI18nCallback', null, $input, $output, true);
+            $this->readCSVFile('type_hebergement_i18n.csv', 'typesHebergementsI18nCallback', null, $input, $output, true);
+            $this->readCSVFile('ville_i18n.csv', 'villesI18nCallback', null, $input, $output, true);
+            $this->readCSVFile('pays_i18n.csv', 'paysI18nCallback', null, $input, $output, true);
+            $this->readCSVFile('categorie_i18n.csv', 'categoriesI18nCallback', null, $input, $output, true);
+            $this->readCSVFile('destination_i18n.csv', 'destinationsI18nCallback', null, $input, $output, true);
         }
         catch (\Exception $exception)
         {
