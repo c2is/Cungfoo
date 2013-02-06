@@ -296,7 +296,7 @@ class BrutesCommand extends BaseCommand
 
         if ($locale == 'de') {
             $item = \Cungfoo\Model\BaignadeQuery::create()
-                ->filterByCode($code])
+                ->filterByCode($code)
                 ->findOne()
             ;
 
