@@ -321,7 +321,7 @@ class BrutesCommand extends BaseCommand
 
     protected function etablissementsI18nCallback(array $explodedLine, array &$buffer, array &$unset, $output)
     {
-        list($code, $id, $locale, $country, $ouverture_reception, $ouverture_camping, $arrivees_departs, $description, $activiteLocale) = $explodedLine;
+        list($code, $id, $locale, $country, $ouverture_reception, $ouverture_camping, $arrivees_departs, $description, $activeLocale) = $explodedLine;
 
         if ($locale == 'de') {
             $item = \Cungfoo\Model\EtablissementQuery::create()
@@ -349,7 +349,7 @@ class BrutesCommand extends BaseCommand
 
     protected function regionsI18nCallback(array $explodedLine, array &$buffer, array &$unset, $output)
     {
-        list($code, $id, $locale, $slug, $name, $introduction, $description, $activiteLocale) = $explodedLine;
+        list($code, $id, $locale, $slug, $name, $introduction, $description, $activeLocale) = $explodedLine;
 
         if ($locale == 'de') {
             $item = \Cungfoo\Model\RegionQuery::create()
@@ -376,7 +376,7 @@ class BrutesCommand extends BaseCommand
 
     protected function servicesComplementairesI18nCallback(array $explodedLine, array &$buffer, array &$unset, $output)
     {
-        list($code, $id, $locale, $name, $description, $keywords, $activiteLocale) = $explodedLine;
+        list($code, $id, $locale, $name, $description, $keywords, $activeLocale) = $explodedLine;
 
         if ($locale == 'de') {
             $item = \Cungfoo\Model\ServiceComplementaireQuery::create()
@@ -402,7 +402,7 @@ class BrutesCommand extends BaseCommand
 
     protected function situationsGeographiquesI18nCallback(array $explodedLine, array &$buffer, array &$unset, $output)
     {
-        list($code, $id, $locale, $name, $description, $keywords, $activiteLocale) = $explodedLine;
+        list($code, $id, $locale, $name, $description, $keywords, $activeLocale) = $explodedLine;
 
         if ($locale == 'de') {
             $item = \Cungfoo\Model\SituationGeographiqueQuery::create()
@@ -428,7 +428,7 @@ class BrutesCommand extends BaseCommand
 
     protected function thematiquesI18nCallback(array $explodedLine, array &$buffer, array &$unset, $output, $translateIds = false)
     {
-        list($code, $id, $locale, $name, $description, $keywords, $activiteLocale) = $explodedLine;
+        list($code, $id, $locale, $name, $description, $keywords, $activeLocale) = $explodedLine;
 
         if ($locale == 'de') {
             $item = \Cungfoo\Model\ThematiqueQuery::create()
@@ -454,7 +454,7 @@ class BrutesCommand extends BaseCommand
 
     protected function typesHebergementsI18nCallback(array $explodedLine, array &$buffer, array &$unset, $output, $translateIds = false)
     {
-        list($code, $id, $locale, $name, $slug, $indice, $surface, $type_terrasse, $description, $composition, $presentation, $capacite_hebergement, $dimensions, $agencement, $equipements, $annee_utilisation, $remarque_1, $remarque_2, $remarque_3, $remarque_4, $activiteLocale) = $explodedLine;
+        list($code, $id, $locale, $name, $slug, $indice, $surface, $type_terrasse, $description, $composition, $presentation, $capacite_hebergement, $dimensions, $agencement, $equipements, $annee_utilisation, $remarque_1, $remarque_2, $remarque_3, $remarque_4, $activeLocale) = $explodedLine;
 
         if ($locale == 'de') {
             $item = \Cungfoo\Model\TypeHebergementQuery::create()
@@ -494,7 +494,7 @@ class BrutesCommand extends BaseCommand
 
     protected function villesI18nCallback(array $explodedLine, array &$buffer, array &$unset, $output, $translateIds = false)
     {
-        list($code, $id, $locale, $slug, $name, $introduction, $description, $activiteLocale) = $explodedLine;
+        list($code, $id, $locale, $slug, $name, $introduction, $description, $activeLocale) = $explodedLine;
 
         if ($locale == 'de') {
             $item = \Cungfoo\Model\VilleQuery::create()
@@ -521,7 +521,7 @@ class BrutesCommand extends BaseCommand
 
     protected function paysI18nCallback(array $explodedLine, array &$buffer, array &$unset, $output, $translateIds = false)
     {
-        list($code, $id, $locale, $slug, $name, $introduction, $description, $activiteLocale) = $explodedLine;
+        list($code, $id, $locale, $slug, $name, $introduction, $description, $activeLocale) = $explodedLine;
 
         if ($locale == 'de') {
             $item = \Cungfoo\Model\PaysQuery::create()
@@ -546,9 +546,9 @@ class BrutesCommand extends BaseCommand
         }
     }
 
-    protected function categorieI18nCallback(array $explodedLine, array &$buffer, array &$unset, $output, $translateIds = false)
+    protected function categoriesI18nCallback(array $explodedLine, array &$buffer, array &$unset, $output, $translateIds = false)
     {
-        list($code, $id, $locale, $name, $activiteLocale) = $explodedLine;
+        list($code, $id, $locale, $name, $activeLocale) = $explodedLine;
 
         if ($locale == 'de') {
             $item = \Cungfoo\Model\CategorieQuery::create()
@@ -570,9 +570,9 @@ class BrutesCommand extends BaseCommand
         }
     }
 
-    protected function destinationI18nCallback(array $explodedLine, array &$buffer, array &$unset, $output, $translateIds = false)
+    protected function destinationsI18nCallback(array $explodedLine, array &$buffer, array &$unset, $output, $translateIds = false)
     {
-        list($code, $id, $locale, $slug, $name, $introduction, $description, $activiteLocale) = $explodedLine;
+        list($code, $id, $locale, $slug, $name, $introduction, $description, $activeLocale) = $explodedLine;
 
         if ($locale == 'de') {
             $item = \Cungfoo\Model\DestinationQuery::create()
