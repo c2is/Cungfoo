@@ -1,6 +1,6 @@
 <?php
 
-namespace VacancesDirectes\Controller;
+namespace Cungfoo\Controller;
 
 use Symfony\Component\HttpFoundation\Request,
     Symfony\Component\HttpFoundation\Response;
@@ -20,18 +20,18 @@ class WidgetController implements ControllerProviderInterface
 
         $controllers->match('/{name}', function (Request $request, $name) use ($app)
         {
-            $maxAge = (int) $request->query->get('maxage', 600);
+            $maxAge = (int) $request->query->get('maxage', 0);
 
             $className = '\\VacancesDirectes\\Widget\\' . join('', array_map('ucwords', explode('_', $name))) . 'Widget';
             if (!class_exists($className))
             {
-                throw new \Exception('Ta classe n\'existe pas espèce de gros putain de stagiaire de mes couilles');
+                throw new \Exception(sprintf('Failed to guess the class of widget \'%\'', $name));
             }
 
             $widget = new $className($app);
-            if (!$widget instanceof \VacancesDirectes\Widget\AbstractWidget)
+            if (!$widget instanceof \Cungfoo\Widget\AbstractWidget)
             {
-                throw new \Exception('Le widget doit implémenter l\'interface \\VacancesDirectes\\Widget\\WidgetInterface');
+                throw new \Exception('Widgets must extend the \\Cungfoo\\Widget\\AbstractWidget class');
             }
 
             return new Response($widget->render(), 200, array('Cache-Control' => sprintf('s-maxage=%s, public', $maxAge)));

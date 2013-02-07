@@ -4,7 +4,8 @@ namespace VacancesDirectes\Widget;
 
 use Symfony\Component\HttpFoundation\Request;
 
-use Cungfoo\Model\BonPlanQuery;
+use Cungfoo\Model\BonPlanQuery,
+    Cungfoo\Widget\AbstractWidget;
 
 class OffresSpecialesWidget extends AbstractWidget
 {
@@ -29,6 +30,8 @@ class OffresSpecialesWidget extends AbstractWidget
                 ->useBonPlanEtablissementQuery()
                     ->filterByEtablissementId($etab)
                 ->endUse()
+                ->filterByDateDebut(array('max' => 'today'))
+                ->filterByDateFin(array('min' => 'today'))
                 ->findActive()
             ;
         }

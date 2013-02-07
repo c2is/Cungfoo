@@ -1,6 +1,6 @@
 <?php
 
-namespace VacancesDirectes\Widget;
+namespace Cungfoo\Widget;
 
 use Symfony\Component\HttpFoundation\Request;
 
