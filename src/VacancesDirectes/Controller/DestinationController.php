@@ -349,6 +349,21 @@ class DestinationController implements ControllerProviderInterface
         }
         // fin de la définition des informations relatives au bloc prix de la fiche camping
 
+        $trackingCamping = $app['session']->get('tracking.camping');
+        if (!$trackingCamping)
+        {
+            $trackingCamping = array();
+        }
+        if (!in_array($camping->getCode(), $trackingCamping))
+        {
+            array_unshift($trackingCamping, $camping->getCode());
+        }
+        if (count($trackingCamping) > 5)
+        {
+            array_pop($trackingCamping);
+        }
+        $trackingCamping = $app['session']->set('tracking.camping', $trackingCamping);
+
         return $app->renderView('Camping/camping.twig', array(
             'locale'                  => $locale,
             'etab'                    => $camping,
