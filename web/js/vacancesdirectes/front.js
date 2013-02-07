@@ -1729,8 +1729,8 @@ function numDate(d){
 
 function sliderPict() {
     var slider = $('.tabCampDiapo').find('.slider'),
-        btLeft = '<button class="prev">&lt;</button>',
-        btRight = '<button class="next">&gt;</button>',
+        btLeft = '<button class="prev" onclick="javascript:_gaq.push([\'_trackEvent\', \'Nav-VD_-_Page_-_Fiche-Camping\', \'Contenu_-_Visionneuse\', \'Clic_-_Bouton-Precedent\']);">&lt;</button>',
+        btRight = '<button class="next" onclick="javascript:_gaq.push([\'_trackEvent\', \'Nav-VD_-_Page_-_Fiche-Camping\', \'Contenu_-_Visionneuse\', \'Clic_-_Bouton-Suivant\']);">&gt;</button>',
         btns = btLeft + btRight;
     slider.append(btns);
 
