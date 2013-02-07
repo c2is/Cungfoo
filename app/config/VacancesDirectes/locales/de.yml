@@ -837,5 +837,5 @@ widget:
     offres_speciales:
         title: "Special offers"
         more: "More"
-        from: "From"
+        from: "Starting price"
         instead: "instead of"
