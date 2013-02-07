@@ -23,6 +23,9 @@ class RegionRefListing extends BaseRegionRefListing
     public function configure()
     {
         parent::configure();
+        $this->addColumn(new Column\TextColumn('name'));
+        $this->removeColumn('image_detail_1');
+        $this->removeColumn('image_detail_2');
     }
 
 } // RegionRefListing
