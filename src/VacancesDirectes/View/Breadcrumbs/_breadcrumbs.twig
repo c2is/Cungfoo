@@ -1,15 +1,15 @@
 {% set breadcrumbsRoute = app.request.get('_route') %}
 <ol class="pathway" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-    <li>&gt; <a href="{{ path('homepage') }}" itemprop="url"><span itemprop="title">{{ 'breadcrumbs.home' | trans }}</span></a></li>
+    <li>&gt; <a href="{{ path('homepage') }}" itemprop="url"{% if breadcrumbsRoute == 'destination_camping' %} onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fil-Ariane', 'Lien_-_Ariane', 'Clic_-_Lien-Ariane']);"{% endif %}><span itemprop="title">{{ 'breadcrumbs.home' | trans }}</span></a></li>
     {% if 'destination' in breadcrumbsRoute %}
         {% set breadCrumbsPays = app.request.get('pays') %}
-    <li>&gt; <a href="{{ path('destination_pays', {'pays': breadCrumbsPays.slug}) }}" itemprop="url"><span itemprop="title" {% if breadcrumbsRoute == 'destination_camping' %}onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fil-Ariane', 'Lien_-_Ariane', 'Clic_-_Lien-Ariane']);"{% endif %}>{{ breadCrumbsPays }}</span></a></li>
+    <li>&gt; <a href="{{ path('destination_pays', {'pays': breadCrumbsPays.slug}) }}" itemprop="url"{% if breadcrumbsRoute == 'destination_camping' %} onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fil-Ariane', 'Lien_-_Ariane', 'Clic_-_Lien-Ariane']);"{% endif %}><span itemprop="title">{{ breadCrumbsPays }}</span></a></li>
         {% if breadcrumbsRoute == 'destination_region' or breadcrumbsRoute == 'destination_ville' or breadcrumbsRoute == 'destination_camping' %}
             {% set breadCrumbsRegion = app.request.get('region') %}
-    <li>&gt; <a href="{{ path('destination_region', {'pays': breadCrumbsPays.slug, 'region': breadCrumbsRegion.slug}) }}" itemprop="url" {% if breadcrumbsRoute == 'destination_camping' %}onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fil-Ariane', 'Lien_-_Ariane', 'Clic_-_Lien-Ariane']);"{% endif %}><span itemprop="title">{{ breadCrumbsRegion }}</span></a></li>
+    <li>&gt; <a href="{{ path('destination_region', {'pays': breadCrumbsPays.slug, 'region': breadCrumbsRegion.slug}) }}" itemprop="url"{% if breadcrumbsRoute == 'destination_camping' %} onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fil-Ariane', 'Lien_-_Ariane', 'Clic_-_Lien-Ariane']);"{% endif %}><span itemprop="title">{{ breadCrumbsRegion }}</span></a></li>
             {% if breadcrumbsRoute == 'destination_ville' or breadcrumbsRoute == 'destination_camping' %}
                 {% set breadCrumbsVille = app.request.get('ville') %}
-    <li>&gt; <a href="{{ path('destination_ville', {'pays': breadCrumbsPays.slug, 'region': breadCrumbsRegion.slug, 'ville': breadCrumbsVille.slug}) }}" itemprop="url" {% if breadcrumbsRoute == 'destination_camping' %}onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fil-Ariane', 'Lien_-_Ariane', 'Clic_-_Lien-Ariane']);"{% endif %}><span itemprop="title">{{ breadCrumbsVille }}</span></a></li>
+    <li>&gt; <a href="{{ path('destination_ville', {'pays': breadCrumbsPays.slug, 'region': breadCrumbsRegion.slug, 'ville': breadCrumbsVille.slug}) }}" itemprop="url"{% if breadcrumbsRoute == 'destination_camping' %} onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fil-Ariane', 'Lien_-_Ariane', 'Clic_-_Lien-Ariane']);"{% endif %}><span itemprop="title">{{ breadCrumbsVille }}</span></a></li>
                 {% if breadcrumbsRoute == 'destination_camping' %}
                     {% set breadCrumbsCamping = app.request.get('camping') %}
     <li>&gt; <a href="{{ path('destination_camping', {'pays': breadCrumbsPays.slug, 'region': breadCrumbsRegion.slug, 'ville': breadCrumbsVille.slug, 'camping': breadCrumbsCamping.slug}) }}" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fil-Ariane', 'Lien_-_Ariane', 'Clic_-_Lien-Ariane']);"><span itemprop="title">{{ breadCrumbsCamping }}</span></a></li>

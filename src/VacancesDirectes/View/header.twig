@@ -1,9 +1,9 @@
 {% set user = app.session.get('resalys_user') %}
 
 {% if user %}
-<a id="account" href="{{ path('compte_index') }}"{% if currentRoute == "destination_camping" %} onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Header', 'Lien_-_Mon-Compte', 'Clic_-_Bouton-Mon-Compte']);"{% endif %}>{{ user.service.firstname }} {{ user.service.lastname }}</a>
+<a id="account" href="{{ path('compte_index') }}"{% if app.request.get('_route') == "destination_camping" %} onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Header', 'Lien_-_Mon-Compte', 'Clic_-_Bouton-Mon-Compte']);"{% endif %}>{{ user.service.firstname }} {{ user.service.lastname }}</a>
 {% else %}
-<a id="account" href="#"{% if currentRoute == "destination_camping" %} onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Header', 'Lien_-_Mon-Compte', 'Clic_-_Bouton-Mon-Compte']);"{% endif %}>{{ "global.compte.btn" | trans }}</a>
+<a id="account" href="#"{% if app.request.get('_route') == "destination_camping" %} onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Header', 'Lien_-_Mon-Compte', 'Clic_-_Bouton-Mon-Compte']);"{% endif %}>{{ "global.compte.btn" | trans }}</a>
 <div id="accountBox" class="radiusBox greyF arrowUp">
     <h2>{{ "global.compte.title" | trans|raw }}</h2>
     <form id="connexion" action="{{ path('seo.url.compte.index'|trans ~ '_login_check') }}" method="post">

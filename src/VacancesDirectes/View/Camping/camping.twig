@@ -48,13 +48,13 @@
         {% endif %}
     </p>
 
-    <a class="bt big fushia right goto" href="#frameResalys">{{ "semainier.title" | trans }}</a>
+    <a class="bt big fushia right goto" href="#frameResalys" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'Chapo_-_Lien-Prix', 'Clic_-_Bouton-Tarifs']);">{{ "semainier.title" | trans }}</a>
     <div class="geoDataFiche" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
         <span itemprop="addressCountry">{{ etab.country }}</span> |
         <span itemprop="addressRegion">{{ etab.ville.region }}</span> |
         <span itemprop="postalCode">{{ etab.zip }}</span>
         <span itemprop="addressLocality">{{ etab.ville }}</span>
-        <button data-triggerLink="#tabInfos" class="triggerClick bt trans cfushia">{{ "fiche.situer_carte" | trans }}</button>
+        <button data-triggerLink="#tabInfos" class="triggerClick bt trans cfushia" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'Chapo_-_Lien-Situer', 'Clic_-_Lien-Situer-sur-la-Carte']);">{{ "fiche.situer_carte" | trans }}</button>
     </div>
     <div itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
         <meta itemprop="latitude" content="{{ etab.geoCoordinateX }}">
@@ -63,11 +63,11 @@
 </div>
 
 <ul class="tabControls clear">
-    <li><a href="#tabCamp" class="active">{{ "fiche.le_camping" | trans }}</a></li>
-    <li><a href="#tabLocations">{{ "fiche.les_locations" | trans }}</a></li>
-    <li><a href="#tabProximite">{{ "fiche.a_proximite" | trans }}</a></li>
+    <li><a href="#tabCamp" class="active" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'Contenu_-_Onglets', 'Clic_-_Onglet-1-Le-Camping']);">{{ "fiche.le_camping" | trans }}</a></li>
+    <li><a href="#tabLocations" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'Contenu_-_Onglets', 'Clic_-_Onglet-2-Les-Locations']);">{{ "fiche.les_locations" | trans }}</a></li>
+    <li><a href="#tabProximite" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'Contenu_-_Onglets', 'Clic_-_Onglet-3-A-Proximite']);">{{ "fiche.a_proximite" | trans }}</a></li>
     {# TODO <li><a href="#tabAvis">Avis</a></li> #}
-    <li><a href="#tabInfos">{{ "fiche.infos_pratiques" | trans }}</a></li>
+    <li><a href="#tabInfos" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'Contenu_-_Onglets', 'Clic_-_Onglet-4-Info-Pratiques']);">{{ "fiche.infos_pratiques" | trans }}</a></li>
 </ul>
 
 <div class="tabCampDiapo">
@@ -83,7 +83,7 @@
             <span>{{ "fiche.photo" | trans }}</span>
             <label for="photosToutes"><input type="radio" id="photosToutes" name="affPhoto" value="all" checked="checked">{{ "Toutes" | trans }}</label>
             {% for tag in tags %}
-                <label for="photos{{ tag.slug }}"><input type="radio" id="photos{{ tag.slug }}" name="affPhoto" value="{{ tag.slug }}">{{ tag.name }}</label>
+                <label for="photos{{ tag.slug }}"><input type="radio" id="photos{{ tag.slug }}" name="affPhoto" value="{{ tag.slug }}" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'Contenu_-_Visionneuse', 'Clic_-_Bouton-Radio']);">{{ tag.name }}</label>
             {% endfor %}
         </fieldset>
         <fieldset class="right">
@@ -212,8 +212,8 @@
         </div>
     {% endif %}
     <nav class="paginationTabs clear">
-        <button class="bt trans left triggerClick" data-triggerLink="#tabInfos">{{ "fiche.infos_pratiques" | trans }}</button>
-        <button class="bt trans right triggerClick" data-triggerLink="#tabLocations">{{ "fiche.les_locations" | trans }}</button>
+        <button class="bt trans left triggerClick" data-triggerLink="#tabInfos" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'Contenu_-_Footer', 'Clic_-_Lien-Precedent']);">{{ "fiche.infos_pratiques" | trans }}</button>
+        <button class="bt trans right triggerClick" data-triggerLink="#tabLocations" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'Contenu_-_Footer', 'Clic_-_Lien-Suivant']);">{{ "fiche.les_locations" | trans }}</button>
     </nav>
 </div>
 <!-- tab Locations -->
@@ -221,7 +221,7 @@
     <form class="filterBy" action="">
         <fieldset>
             <span>{{ "fiche.filtrer_par" | trans }}</span>
-            <select name="type" id="type">
+            <select name="type" id="type" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'Contenu_-_Location', 'Clic_-_Select-Categories']);">
                 <option value="">{{ "fiche.toutes_categories" | trans }}</option>
                 {% if etab.categoriesTypeHergement | length %}
                 {% for category in etab.categoriesTypeHergement %}
@@ -229,7 +229,7 @@
                 {% endfor %}
                 {% endif %}
             </select>
-            <select name="capacite" id="capacite">
+            <select name="capacite" id="capacite" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'Contenu_-_Location', 'Clic_-_Select-Capacite']);">
                 <option value="">{{ "fiche.toutes_capacite" | trans }}</option>
                 {% if etab.capacitesTypeHebergement | length %}
                 {% for nbPlace in etab.capacitesTypeHebergement %}
@@ -244,7 +244,7 @@
         <div class="typLocation {{ hebergement.categoryTypeHebergement.name }} cap{{ hebergement.nombrePlace }} clear" data-type="{{ hebergement.code }}">
             <img src="{{ asset(hebergement.imageHebergementPath) }}" width="181" height="134" alt="{{ hebergement.name | trans }}" class="left boxborder">
             <div style="overflow:hidden;">
-            <span class="h4-like"><a href="{{ path('location_category_type_hebergement', {'categoryTypeHebergement':hebergement.categoryTypeHebergement.slug}) }}">{{ hebergement.categoryTypeHebergement.name | trans }}</a> - <a href="{{ path('location_type_hebergement', {'categoryTypeHebergement':hebergement.categoryTypeHebergement.slug ,'typeHebergement':hebergement.slug }) }}">{{ hebergement.name | trans }}</a></span>
+            <span class="h4-like"><a href="{{ path('location_category_type_hebergement', {'categoryTypeHebergement':hebergement.categoryTypeHebergement.slug}) }}" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'Contenu_-_Location', 'Clic_-_Detail-Hebergement']);">{{ hebergement.categoryTypeHebergement.name | trans }}</a> - <a href="{{ path('location_type_hebergement', {'categoryTypeHebergement':hebergement.categoryTypeHebergement.slug ,'typeHebergement':hebergement.slug }) }}" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'Contenu_-_Location', 'Clic_-_Detail-Hebergement']);">{{ hebergement.name | trans }}</a></span>
             {# TODO <span class="nbPlace"><img src="{{ asset(hebergement.imageCompositionPath) }}" width="92" height="33" alt="">  {{ hebergement.composition | trans | nl2br }}</span>#}
             {#<strong>{{ "fiche.nombre_chambres" | trans }} {{ hebergement.nombrePlace | trans | nl2br }}<br>
             {{ "fiche.surface" | trans }} {{ hebergement.surface | trans }}<br>
@@ -261,8 +261,8 @@
     {% endif %}
 
     <nav class="paginationTabs clear">
-        <button class="bt trans left triggerClick" data-triggerLink="#tabCamp">{{ "fiche.le_camping" | trans }}</button>
-        <button class="bt trans right triggerClick" data-triggerLink="#tabProximite">{{ "fiche.a_proximite" | trans }}</button>
+        <button class="bt trans left triggerClick" data-triggerLink="#tabCamp" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'Contenu_-_Footer', 'Clic_-_Lien-Precedent']);">{{ "fiche.le_camping" | trans }}</button>
+        <button class="bt trans right triggerClick" data-triggerLink="#tabProximite" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'Contenu_-_Footer', 'Clic_-_Lien-Suivant']);">{{ "fiche.a_proximite" | trans }}</button>
     </nav>
 </div>
 
@@ -306,7 +306,7 @@
                         {{ poi.address2 }}<br>
                         <span>{{ poi.zipcode }} {{ poi.city }}</span><br>
                         {{ "fiche.distance_camping" | trans }} {{ (poi.distanceForEtablissement(etab) / 1000) | number_format(1, ',', ' ') }} {{ "fiche.km" | trans }}<br>
-                        <a href="{{ path('poi', {slug: poi.slug}) }}" class="bt sombre left" title="{{ "general.en_savoir_plus" | trans }}">{{ "general.en_savoir_plus" | trans }}</a>
+                        <a href="{{ path('poi', {slug: poi.slug}) }}" class="bt sombre left" title="{{ "general.en_savoir_plus" | trans }}" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'Contenu_-_A-Proximite', 'Clic_-_Detail-Activite-Sites-a-Visiter']);">{{ "general.en_savoir_plus" | trans }}</a>
                     </p>
                 </div>
             </div>
@@ -326,7 +326,7 @@
                         {{ event.address2 }}<br>
                     <span>{{ event.zipcode }} {{ event.city }}</span><br>
                         {{ "fiche.distance_camping" | trans }} {{ (event.distanceForEtablissement(etab) / 1000) | number_format(1, ',', ' ') }} {{ "fiche.km" | trans }}<br>
-                        <a href="{{ path('event', {slug: event.slug}) }}" class="bt sombre left" title="{{ "general.en_savoir_plus" | trans }}">{{ "general.en_savoir_plus" | trans }}</a>
+                        <a href="{{ path('event', {slug: event.slug}) }}" class="bt sombre left" title="{{ "general.en_savoir_plus" | trans }}" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'Contenu_-_A-Proximite', 'Clic_-_Detail-Agenda-culturel-et-sorties']);">{{ "general.en_savoir_plus" | trans }}</a>
                     </p>
                 </div>
             </div>
@@ -343,8 +343,8 @@
     </div>
 
     <nav class="paginationTabs clear">
-        <button class="bt trans left triggerClick" data-triggerLink="#tabLocations">{{ "fiche.les_locations" | trans }}</button>
-        <button class="bt trans right triggerClick" data-triggerLink="#tabInfos">{{ "fiche.infos_pratiques" | trans }}</button>
+        <button class="bt trans left triggerClick" data-triggerLink="#tabLocations" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'Contenu_-_Footer', 'Clic_-_Lien-Precedent']);">{{ "fiche.les_locations" | trans }}</button>
+        <button class="bt trans right triggerClick" data-triggerLink="#tabInfos" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'Contenu_-_Footer', 'Clic_-_Lien-Suivant']);">{{ "fiche.infos_pratiques" | trans }}</button>
     </nav>
 </div>
 
@@ -397,8 +397,8 @@
     </div>
 
     <nav class="paginationTabs clear">
-        <button class="bt trans left triggerClick" data-triggerLink="#tabProximite">{{ "fiche.a_proximite" | trans }}</button>
-        <button class="bt trans right triggerClick" data-triggerLink="#tabCamp">{{ "fiche.le_camping" | trans }}</button>
+        <button class="bt trans left triggerClick" data-triggerLink="#tabProximite" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'Contenu_-_Footer', 'Clic_-_Lien-Precedent']);">{{ "fiche.a_proximite" | trans }}</button>
+        <button class="bt trans right triggerClick" data-triggerLink="#tabCamp" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'Contenu_-_Footer', 'Clic_-_Lien-Suivant']);">{{ "fiche.le_camping" | trans }}</button>
     </nav>
 </div>
 
