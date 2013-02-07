@@ -336,6 +336,29 @@ jQuery.extend( jQuery.fn, {
             });
         }
 
+        if($('#holiday').length){
+            $("#holidayGallery a").each( function(i,v) {
+                var rNum = (Math.random()*10)*2;
+                if (i % 2 === 0){
+                    $(this).rotate(rNum+'deg');
+                }
+                else{
+                    $(this).rotate(-rNum+'deg');
+                }
+//                $('#holidayGallery').css({margin:"0 auto"});
+//                $('#holidayGallery a:nth-child(4n + 1)').css({border:"1px solid red"});
+//                $('#holidayGallery a:nth-child(4n + 2)').css({border:"1px solid green"});
+//                $('#holidayGallery a:nth-child(4n + 3)').css({border:"1px solid yellow"});
+//                $('#holidayGallery a:nth-child(4n)').css({border:"1px solid blue"});
+//                console.log($(this).position());
+//                $(this).position({
+//                    my: "center center",
+//                    at: "center center",
+//                    of: "#holidayGallery"
+//                });
+            } );
+        }
+
     }
 
 
@@ -1671,8 +1694,8 @@ function numDate(d){
 
 function sliderPict() {
     var slider = $('.tabCampDiapo').find('.slider'),
-        btLeft = '<button class="prev">&lt;</button>',
-        btRight = '<button class="next">&gt;</button>',
+        btLeft = '<button class="prev" onclick="javascript:_gaq.push([\'_trackEvent\', \'Nav-VD_-_Page_-_Fiche-Camping\', \'Contenu_-_Visionneuse\', \'Clic_-_Bouton-Precedent\']);">&lt;</button>',
+        btRight = '<button class="next" onclick="javascript:_gaq.push([\'_trackEvent\', \'Nav-VD_-_Page_-_Fiche-Camping\', \'Contenu_-_Visionneuse\', \'Clic_-_Bouton-Suivant'\']);">&gt;</button>',
         btns = btLeft + btRight;
     slider.append(btns);
 
