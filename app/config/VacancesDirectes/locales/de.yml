@@ -773,8 +773,6 @@ global:
         title: "Kundenbereich "
         title_client: ""
     site_name: "Vacances directes.de"
-    analytics:
-        domain_name: ".vacances-directes.de"
 
 bon_plan:
     title: "Campingplatz: %bonPlan%"
