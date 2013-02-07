@@ -1,0 +1,235 @@
+\Cungfoo\Model\Departement:
+    1:
+        Code: ARD
+        RegionRefId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    2:
+        Code: AVE
+        RegionRefId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    3:
+        Code: CORR
+        RegionRefId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    4:
+        Code: CDS
+        RegionRefId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    5:
+        Code: CODA
+        RegionRefId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    6:
+        Code: DORD
+        RegionRefId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    7:
+        Code: DROM
+        RegionRefId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    8:
+        Code: BRH
+        RegionRefId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    9:
+        Code: HER
+        RegionRefId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    10:
+        Code: JURA
+        RegionRefId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    11:
+        Code: LCH
+        RegionRefId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    12:
+        Code: GER
+        RegionRefId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    13:
+        Code: BDR
+        RegionRefId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    14:
+        Code: CANT
+        RegionRefId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    15:
+        Code: CMA
+        RegionRefId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    16:
+        Code: HTRH
+        RegionRefId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    17:
+        Code: PA
+        RegionRefId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    18:
+        Code: LOAT
+        RegionRefId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    19:
+        Code: FINI
+        RegionRefId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    20:
+        Code: GARD
+        RegionRefId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    21:
+        Code: GIR
+        RegionRefId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    22:
+        Code: HC
+        RegionRefId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    23:
+        Code: HA
+        RegionRefId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    24:
+        Code: LAN
+        RegionRefId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    25:
+        Code: TARN
+        RegionRefId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    26:
+        Code: HS
+        RegionRefId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    27:
+        Code: IEL
+        RegionRefId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    28:
+        Code: LOT
+        RegionRefId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    29:
+        Code: MORB
+        RegionRefId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    30:
+        Code: PDC
+        RegionRefId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    31:
+        Code: PDD
+        RegionRefId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    32:
+        Code: SEMA
+        RegionRefId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    33:
+        Code: VAR
+        RegionRefId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    34:
+        Code: PO
+        RegionRefId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    35:
+        Code: ALMA
+        RegionRefId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    36:
+        Code: AHP
+        RegionRefId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    37:
+        Code: AUD
+        RegionRefId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    38:
+        Code: CAL
+        RegionRefId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    39:
+        Code: VE
+        RegionRefId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true

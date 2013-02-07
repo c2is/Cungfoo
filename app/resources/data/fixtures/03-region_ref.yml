@@ -1,0 +1,79 @@
+\Cungfoo\Model\RegionRef:
+    1:
+        Code: AZAH
+        PaysId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    2:
+        Code: ALS
+        PaysId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    3:
+        Code: AQUI
+        PaysId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    4:
+        Code: BRE
+        PaysId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    5:
+        Code: PACA
+        PaysId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    6:
+        Code: TOS
+        PaysId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    7:
+        Code: BNOR
+        PaysId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    8:
+        Code: BRAV
+        PaysId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    9:
+        Code: EMIR
+        PaysId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    10:
+        Code: VENE
+        PaysId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    11:
+        Code: LR
+        PaysId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    12:
+        Code: RA
+        PaysId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    13:
+        Code: DORA
+        PaysId: null
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true

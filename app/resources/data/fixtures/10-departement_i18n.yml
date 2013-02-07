@@ -1,0 +1,625 @@
+\Cungfoo\Model\DepartementI18n:
+    1_de:
+        Id: 1
+        Locale: de
+        Slug: ardeche
+        Name: Ardèche
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    1_fr:
+        Id: 1
+        Locale: fr
+        Slug: ardeche
+        Name: Ardèche
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    2_de:
+        Id: 2
+        Locale: de
+        Slug: aveyron
+        Name: Aveyron
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    2_fr:
+        Id: 2
+        Locale: fr
+        Slug: aveyron
+        Name: Aveyron
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    3_de:
+        Id: 3
+        Locale: de
+        Slug: correze
+        Name: Corrèze
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    3_fr:
+        Id: 3
+        Locale: fr
+        Slug: correze
+        Name: Corrèze
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    4_de:
+        Id: 4
+        Locale: de
+        Slug: corse-du-sud
+        Name: Corse-du-Sud
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    4_fr:
+        Id: 4
+        Locale: fr
+        Slug: corse-du-sud
+        Name: Corse-du-Sud
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    5_de:
+        Id: 5
+        Locale: de
+        Slug: cotes-d-armor
+        Name: 'Côtes d''Armor'
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    5_fr:
+        Id: 5
+        Locale: fr
+        Slug: cotes-d-armor
+        Name: 'Côtes d''Armor'
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    6_de:
+        Id: 6
+        Locale: de
+        Slug: dordogne
+        Name: Dordogne
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    6_fr:
+        Id: 6
+        Locale: fr
+        Slug: dordogne
+        Name: Dordogne
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    7_de:
+        Id: 7
+        Locale: de
+        Slug: drome
+        Name: Drôme
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    7_fr:
+        Id: 7
+        Locale: fr
+        Slug: drome
+        Name: Drôme
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    8_de:
+        Id: 8
+        Locale: de
+        Slug: bas-rhin
+        Name: Bas-Rhin
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    8_fr:
+        Id: 8
+        Locale: fr
+        Slug: bas-rhin
+        Name: Bas-Rhin
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    9_de:
+        Id: 9
+        Locale: de
+        Slug: herault
+        Name: Hérault
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    9_fr:
+        Id: 9
+        Locale: fr
+        Slug: herault
+        Name: Hérault
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    10_de:
+        Id: 10
+        Locale: de
+        Slug: jura
+        Name: Jura
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    10_fr:
+        Id: 10
+        Locale: fr
+        Slug: jura
+        Name: Jura
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    11_de:
+        Id: 11
+        Locale: de
+        Slug: loir-et-cher
+        Name: Loir-et-Cher
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    11_fr:
+        Id: 11
+        Locale: fr
+        Slug: loir-et-cher
+        Name: Loir-et-Cher
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    12_de:
+        Id: 12
+        Locale: de
+        Slug: gers
+        Name: Gers
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    12_fr:
+        Id: 12
+        Locale: fr
+        Slug: gers
+        Name: Gers
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    13_de:
+        Id: 13
+        Locale: de
+        Slug: bouches-du-rhone
+        Name: Bouches-du-Rhône
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    13_fr:
+        Id: 13
+        Locale: fr
+        Slug: bouches-du-rhone
+        Name: Bouches-du-Rhône
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    14_de:
+        Id: 14
+        Locale: de
+        Slug: cantal
+        Name: Cantal
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    14_fr:
+        Id: 14
+        Locale: fr
+        Slug: cantal
+        Name: Cantal
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    15_de:
+        Id: 15
+        Locale: de
+        Slug: charente-maritime
+        Name: Charente-Maritime
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    15_fr:
+        Id: 15
+        Locale: fr
+        Slug: charente-maritime
+        Name: Charente-Maritime
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    16_de:
+        Id: 16
+        Locale: de
+        Slug: haut-rhin
+        Name: Haut-Rhin
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    16_fr:
+        Id: 16
+        Locale: fr
+        Slug: haut-rhin
+        Name: Haut-Rhin
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    17_de:
+        Id: 17
+        Locale: de
+        Slug: pyrenees-atlantiques
+        Name: 'Pyrénées Atlantiques'
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    17_fr:
+        Id: 17
+        Locale: fr
+        Slug: pyrenees-atlantiques
+        Name: 'Pyrénées Atlantiques'
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    18_de:
+        Id: 18
+        Locale: de
+        Slug: loire-atlantique
+        Name: Loire-Atlantique
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    18_fr:
+        Id: 18
+        Locale: fr
+        Slug: loire-atlantique
+        Name: Loire-Atlantique
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    19_de:
+        Id: 19
+        Locale: de
+        Slug: finistere
+        Name: Finistère
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    19_fr:
+        Id: 19
+        Locale: fr
+        Slug: finistere
+        Name: Finistère
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    20_de:
+        Id: 20
+        Locale: de
+        Slug: gard
+        Name: Gard
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    20_fr:
+        Id: 20
+        Locale: fr
+        Slug: gard
+        Name: Gard
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    21_de:
+        Id: 21
+        Locale: de
+        Slug: gironde
+        Name: Gironde
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    21_fr:
+        Id: 21
+        Locale: fr
+        Slug: gironde
+        Name: Gironde
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    22_de:
+        Id: 22
+        Locale: de
+        Slug: haute-corse
+        Name: Haute-Corse
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    22_fr:
+        Id: 22
+        Locale: fr
+        Slug: haute-corse
+        Name: Haute-Corse
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    23_de:
+        Id: 23
+        Locale: de
+        Slug: hautes-alpes
+        Name: Hautes-Alpes
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    23_fr:
+        Id: 23
+        Locale: fr
+        Slug: hautes-alpes
+        Name: Hautes-Alpes
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    24_de:
+        Id: 24
+        Locale: de
+        Slug: landes
+        Name: Landes
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    24_fr:
+        Id: 24
+        Locale: fr
+        Slug: landes
+        Name: Landes
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    25_de:
+        Id: 25
+        Locale: de
+        Slug: tarn
+        Name: Tarn
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    25_fr:
+        Id: 25
+        Locale: fr
+        Slug: tarn
+        Name: Tarn
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    26_de:
+        Id: 26
+        Locale: de
+        Slug: haute-savoie
+        Name: Haute-Savoie
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    26_fr:
+        Id: 26
+        Locale: fr
+        Slug: haute-savoie
+        Name: Haute-Savoie
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    27_de:
+        Id: 27
+        Locale: de
+        Slug: indre-et-loire
+        Name: Indre-et-Loire
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    27_fr:
+        Id: 27
+        Locale: fr
+        Slug: indre-et-loire
+        Name: Indre-et-Loire
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    28_de:
+        Id: 28
+        Locale: de
+        Slug: lot
+        Name: Lot
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    28_fr:
+        Id: 28
+        Locale: fr
+        Slug: lot
+        Name: Lot
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    29_de:
+        Id: 29
+        Locale: de
+        Slug: morbihan
+        Name: Morbihan
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    29_fr:
+        Id: 29
+        Locale: fr
+        Slug: morbihan
+        Name: Morbihan
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    30_de:
+        Id: 30
+        Locale: de
+        Slug: pas-de-calais
+        Name: Pas-de-Calais
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    30_fr:
+        Id: 30
+        Locale: fr
+        Slug: pas-de-calais
+        Name: Pas-de-Calais
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    31_de:
+        Id: 31
+        Locale: de
+        Slug: puy-de-dome
+        Name: Puy-de-Dôme
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    31_fr:
+        Id: 31
+        Locale: fr
+        Slug: puy-de-dome
+        Name: Puy-de-Dôme
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    32_de:
+        Id: 32
+        Locale: de
+        Slug: seine-et-marne
+        Name: Seine-et-Marne
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    32_fr:
+        Id: 32
+        Locale: fr
+        Slug: seine-et-marne
+        Name: Seine-et-Marne
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    33_de:
+        Id: 33
+        Locale: de
+        Slug: var
+        Name: Var
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    33_fr:
+        Id: 33
+        Locale: fr
+        Slug: var
+        Name: Var
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    34_de:
+        Id: 34
+        Locale: de
+        Slug: pyrenees-orientales
+        Name: 'Pyrénées Orientales'
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    34_fr:
+        Id: 34
+        Locale: fr
+        Slug: pyrenees-orientales
+        Name: 'Pyrénées Orientales'
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    35_de:
+        Id: 35
+        Locale: de
+        Slug: alpes-maritimes
+        Name: Alpes-Maritimes
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    35_fr:
+        Id: 35
+        Locale: fr
+        Slug: alpes-maritimes
+        Name: Alpes-Maritimes
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    36_de:
+        Id: 36
+        Locale: de
+        Slug: alpes-de-haute-provence
+        Name: Alpes-de-Haute-Provence
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    36_fr:
+        Id: 36
+        Locale: fr
+        Slug: alpes-de-haute-provence
+        Name: Alpes-de-Haute-Provence
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    37_de:
+        Id: 37
+        Locale: de
+        Slug: aude
+        Name: Aude
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    37_fr:
+        Id: 37
+        Locale: fr
+        Slug: aude
+        Name: Aude
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    38_de:
+        Id: 38
+        Locale: de
+        Slug: calvados
+        Name: Calvados
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    38_fr:
+        Id: 38
+        Locale: fr
+        Slug: calvados
+        Name: Calvados
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    39_de:
+        Id: 39
+        Locale: de
+        Slug: vendee
+        Name: Vendée
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    39_fr:
+        Id: 39
+        Locale: fr
+        Slug: vendee
+        Name: Vendée
+        Introduction: null
+        Description: null
+        ActiveLocale: true

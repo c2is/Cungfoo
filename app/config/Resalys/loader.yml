@@ -31,10 +31,14 @@ loader:
         model:  \Cungfoo\Model\Destination
       REGIONSREF:
         model:  \Cungfoo\Model\RegionRef
-      REGIONSREF:
-        model:  \Cungfoo\Model\RegionRef
+        parent:
+          name:   PAYS
+          setter: setPaysId
       DEPT:
         model:  \Cungfoo\Model\Departement
+        parent:
+          name:   REGION
+          setter: setRegionId
   EtabLoader:
     themes:
       VILLE:

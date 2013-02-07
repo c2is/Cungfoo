@@ -1,0 +1,33 @@
+\Cungfoo\Model\BonPlanCategorieI18n:
+    1_de:
+        Id: 1
+        Locale: de
+        Name: null
+        Slug: n-a
+        Subtitle: null
+        Description: null
+        ActiveLocale: true
+    1_en:
+        Id: 1
+        Locale: en
+        Name: null
+        Slug: null
+        Subtitle: null
+        Description: null
+        ActiveLocale: true
+    1_fr:
+        Id: 1
+        Locale: fr
+        Name: 'Early booking'
+        Slug: early-booking
+        Subtitle: 'Réservez tôt et profitez des promos'
+        Description: null
+        ActiveLocale: true
+    1_nl:
+        Id: 1
+        Locale: nl
+        Name: null
+        Slug: null
+        Subtitle: null
+        Description: null
+        ActiveLocale: true

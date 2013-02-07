@@ -1,0 +1,163 @@
+\Cungfoo\Model\AvantageI18n:
+    1_de:
+        Id: 1
+        Locale: de
+        Name: 'les activités du club enfant (5-12 ans) DE'
+        Description: ''
+        ActiveLocale: true
+    1_en:
+        Id: 1
+        Locale: en
+        Name: 'les activités du club enfant (5-12 ans) EN'
+        Description: ''
+        ActiveLocale: true
+    1_fr:
+        Id: 1
+        Locale: fr
+        Name: 'les activités du club enfant (5-12 ans)'
+        Description: 'Desc. les activités du club enfant (5-12 ans)'
+        ActiveLocale: true
+    2_de:
+        Id: 2
+        Locale: de
+        Name: 'le toboggan aquatique DE'
+        Description: ''
+        ActiveLocale: true
+    2_en:
+        Id: 2
+        Locale: en
+        Name: 'le toboggan aquatique EN'
+        Description: ''
+        ActiveLocale: true
+    2_fr:
+        Id: 2
+        Locale: fr
+        Name: 'le toboggan aquatique'
+        Description: 'Desc. le toboggan aquatique'
+        ActiveLocale: true
+    3_de:
+        Id: 3
+        Locale: de
+        Name: 'l''équitation DE'
+        Description: ''
+        ActiveLocale: true
+    3_en:
+        Id: 3
+        Locale: en
+        Name: 'l''équitation EN'
+        Description: ''
+        ActiveLocale: true
+    3_fr:
+        Id: 3
+        Locale: fr
+        Name: 'l''équitation'
+        Description: 'Desc. l''équitation'
+        ActiveLocale: true
+    4_de:
+        Id: 4
+        Locale: de
+        Name: 'la location des vélos DE'
+        Description: ''
+        ActiveLocale: true
+    4_en:
+        Id: 4
+        Locale: en
+        Name: 'la location des vélos EN'
+        Description: ''
+        ActiveLocale: true
+    4_fr:
+        Id: 4
+        Locale: fr
+        Name: 'la location des vélos'
+        Description: 'Desc. la location des vélos'
+        ActiveLocale: true
+    5_de:
+        Id: 5
+        Locale: de
+        Name: 'les barbecues collectifs DE'
+        Description: ''
+        ActiveLocale: true
+    5_en:
+        Id: 5
+        Locale: en
+        Name: 'les barbecues collectifs EN'
+        Description: ''
+        ActiveLocale: true
+    5_fr:
+        Id: 5
+        Locale: fr
+        Name: 'les barbecues collectifs'
+        Description: 'Desc. les barbecues collectifs'
+        ActiveLocale: true
+    6_de:
+        Id: 6
+        Locale: de
+        Name: 'le restaurant et le snack DE'
+        Description: ''
+        ActiveLocale: true
+    6_en:
+        Id: 6
+        Locale: en
+        Name: 'le restaurant et le snack EN'
+        Description: ''
+        ActiveLocale: true
+    6_fr:
+        Id: 6
+        Locale: fr
+        Name: 'le restaurant et le snack'
+        Description: 'Desc. le restaurant et le snack'
+        ActiveLocale: true
+    7_de:
+        Id: 7
+        Locale: de
+        Name: 'l''accès direct à la plage DE'
+        Description: ''
+        ActiveLocale: true
+    7_en:
+        Id: 7
+        Locale: en
+        Name: 'l''accès direct à la plage EN'
+        Description: ''
+        ActiveLocale: true
+    7_fr:
+        Id: 7
+        Locale: fr
+        Name: 'l''accès direct à la plage'
+        Description: 'Desc. l''accès direct à la plage'
+        ActiveLocale: true
+    8_de:
+        Id: 8
+        Locale: de
+        Name: 'l''accès au wifi dans tout le camping DE'
+        Description: ''
+        ActiveLocale: true
+    8_en:
+        Id: 8
+        Locale: en
+        Name: 'l''accès au wifi dans tout le camping EN'
+        Description: ''
+        ActiveLocale: true
+    8_fr:
+        Id: 8
+        Locale: fr
+        Name: 'l''accès au wifi dans tout le camping'
+        Description: 'Desc. l''accès au wifi dans tout le camping'
+        ActiveLocale: true
+    9_de:
+        Id: 9
+        Locale: de
+        Name: 'la laverie DE'
+        Description: ''
+        ActiveLocale: true
+    9_en:
+        Id: 9
+        Locale: en
+        Name: 'la laverie EN'
+        Description: ''
+        ActiveLocale: true
+    9_fr:
+        Id: 9
+        Locale: fr
+        Name: 'la laverie'
+        Description: 'Desc. la laverie'
+        ActiveLocale: true

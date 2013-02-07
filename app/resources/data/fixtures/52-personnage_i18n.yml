@@ -1,0 +1,46 @@
+\Cungfoo\Model\PersonnageI18n:
+    1_de:
+        Id: 1
+        Locale: de
+        Prenom: 'Roger DE'
+        ActiveLocale: true
+    1_en:
+        Id: 1
+        Locale: en
+        Prenom: 'Roger EN'
+        ActiveLocale: true
+    1_fr:
+        Id: 1
+        Locale: fr
+        Prenom: Roger
+        ActiveLocale: true
+    2_de:
+        Id: 2
+        Locale: de
+        Prenom: 'Simon DE'
+        ActiveLocale: true
+    2_en:
+        Id: 2
+        Locale: en
+        Prenom: 'Simon EN'
+        ActiveLocale: true
+    2_fr:
+        Id: 2
+        Locale: fr
+        Prenom: Simon
+        ActiveLocale: true
+    3_de:
+        Id: 3
+        Locale: de
+        Prenom: 'Amélie DE'
+        ActiveLocale: true
+    3_en:
+        Id: 3
+        Locale: en
+        Prenom: 'Amélie EN'
+        ActiveLocale: true
+    3_fr:
+        Id: 3
+        Locale: fr
+        Prenom: Amélie
+        ActiveLocale: true

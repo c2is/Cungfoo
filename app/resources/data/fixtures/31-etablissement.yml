@@ -1,0 +1,6423 @@
+\Cungfoo\Model\Etablissement:
+    200:
+        Code: 171
+        Slug: abri-de-camargue
+        Name: '*Abri de Camargue'
+        Title: null
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: null
+        ClosingDate: null
+        VilleId: null
+        CategorieId: null
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    201:
+        Code: 161
+        Slug: almadies
+        Name: '*Almadies'
+        Title: null
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: null
+        ClosingDate: null
+        VilleId: null
+        CategorieId: null
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    204:
+        Code: 141
+        Slug: aux-hamacs
+        Name: '*Aux Hamacs'
+        Title: null
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: null
+        ClosingDate: null
+        VilleId: null
+        CategorieId: null
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    206:
+        Code: 162
+        Slug: bois-de-pleuven
+        Name: '*Bois de Pleuven'
+        Title: null
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: null
+        ClosingDate: null
+        VilleId: null
+        CategorieId: null
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    208:
+        Code: 149
+        Slug: chanset
+        Name: '*Chanset'
+        Title: null
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: null
+        ClosingDate: null
+        VilleId: null
+        CategorieId: null
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    211:
+        Code: 152
+        Slug: domaine-de-beaulieu
+        Name: '*Domaine de Beaulieu'
+        Title: null
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: null
+        ClosingDate: null
+        VilleId: null
+        CategorieId: null
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    212:
+        Code: 163
+        Slug: domaine-de-la-foret
+        Name: '*Domaine de la Forêt'
+        Title: null
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: null
+        ClosingDate: null
+        VilleId: null
+        CategorieId: null
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    213:
+        Code: 166
+        Slug: domaine-des-bans
+        Name: '*Domaine des Bans'
+        Title: null
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: null
+        ClosingDate: null
+        VilleId: null
+        CategorieId: null
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    214:
+        Code: 172
+        Slug: domaine-des-iscles
+        Name: '*Domaine des Iscles'
+        Title: null
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: null
+        ClosingDate: null
+        VilleId: null
+        CategorieId: null
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    215:
+        Code: 167
+        Slug: douce-quietude
+        Name: '*Douce Quiétude'
+        Title: null
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: null
+        ClosingDate: null
+        VilleId: null
+        CategorieId: null
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    216:
+        Code: 168
+        Slug: fleutron
+        Name: '*Fleutron'
+        Title: null
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: null
+        ClosingDate: null
+        VilleId: null
+        CategorieId: null
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    218:
+        Code: 146
+        Slug: l-atlantique
+        Name: '*L''Atlantique'
+        Title: null
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: null
+        ClosingDate: null
+        VilleId: null
+        CategorieId: null
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    219:
+        Code: 148
+        Slug: la-barque
+        Name: '*La Barque'
+        Title: null
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: null
+        ClosingDate: null
+        VilleId: null
+        CategorieId: null
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    220:
+        Code: 157
+        Slug: la-rotonde
+        Name: '*La Rotonde'
+        Title: null
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: null
+        ClosingDate: null
+        VilleId: null
+        CategorieId: null
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    221:
+        Code: 173
+        Slug: lacs-du-verdon
+        Name: '*Lacs du Verdon'
+        Title: null
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: null
+        ClosingDate: null
+        VilleId: null
+        CategorieId: null
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    223:
+        Code: 147
+        Slug: le-bahamas-beach
+        Name: '*Le Bahamas Beach'
+        Title: null
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: null
+        ClosingDate: null
+        VilleId: null
+        CategorieId: null
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    224:
+        Code: 139
+        Slug: le-barralet
+        Name: '*Le Barralet'
+        Title: null
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: null
+        ClosingDate: null
+        VilleId: null
+        CategorieId: null
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    225:
+        Code: 150
+        Slug: le-chene-gris
+        Name: '*Le Chêne Gris'
+        Title: null
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: null
+        ClosingDate: null
+        VilleId: null
+        CategorieId: null
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    226:
+        Code: 164
+        Slug: le-lac
+        Name: '*Le Lac'
+        Title: null
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: null
+        ClosingDate: null
+        VilleId: null
+        CategorieId: null
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    227:
+        Code: 153
+        Slug: le-lamparo
+        Name: '*Le Lamparo'
+        Title: null
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: null
+        ClosingDate: null
+        VilleId: null
+        CategorieId: null
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    228:
+        Code: 159
+        Slug: le-tamarit-park
+        Name: '*Le Tamarit Park'
+        Title: null
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: null
+        ClosingDate: null
+        VilleId: null
+        CategorieId: null
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    229:
+        Code: 160
+        Slug: le-trivoly
+        Name: '*Le Trivoly'
+        Title: null
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: null
+        ClosingDate: null
+        VilleId: null
+        CategorieId: null
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    230:
+        Code: 151
+        Slug: les-dauphins-bleus
+        Name: '*Les Dauphins Bleus'
+        Title: null
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: null
+        ClosingDate: null
+        VilleId: null
+        CategorieId: null
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    231:
+        Code: 155
+        Slug: les-ondines
+        Name: '*Les Ondines'
+        Title: null
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: null
+        ClosingDate: null
+        VilleId: null
+        CategorieId: null
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    232:
+        Code: 174
+        Slug: les-pins-payrac
+        Name: '*Les Pins Payrac'
+        Title: null
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: null
+        ClosingDate: null
+        VilleId: null
+        CategorieId: null
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    233:
+        Code: 170
+        Slug: les-tours
+        Name: '*Les Tours'
+        Title: null
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: null
+        ClosingDate: null
+        VilleId: null
+        CategorieId: null
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    235:
+        Code: 154
+        Slug: marmotel
+        Name: '*Marmotel'
+        Title: null
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: null
+        ClosingDate: null
+        VilleId: null
+        CategorieId: null
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    236:
+        Code: 169
+        Slug: palmeraie
+        Name: '*Palmeraie'
+        Title: null
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: null
+        ClosingDate: null
+        VilleId: null
+        CategorieId: null
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    237:
+        Code: 142
+        Slug: prat-dou-rey
+        Name: '*Prat Dou Rey'
+        Title: null
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: null
+        ClosingDate: null
+        VilleId: null
+        CategorieId: null
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    238:
+        Code: 156
+        Slug: pyla-camping
+        Name: '*Pyla Camping'
+        Title: null
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: null
+        ClosingDate: null
+        VilleId: null
+        CategorieId: null
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    239:
+        Code: 165
+        Slug: rieu-montagne
+        Name: '*Rieu Montagné'
+        Title: null
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: null
+        ClosingDate: null
+        VilleId: null
+        CategorieId: null
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    240:
+        Code: 143
+        Slug: rouffiac
+        Name: '*Rouffiac'
+        Title: null
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: null
+        ClosingDate: null
+        VilleId: null
+        CategorieId: null
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    241:
+        Code: 144
+        Slug: sequoia-parc
+        Name: '*Séquoia Parc'
+        Title: null
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: null
+        ClosingDate: null
+        VilleId: null
+        CategorieId: null
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    243:
+        Code: 145
+        Slug: tremolat
+        Name: '*Trémolat'
+        Title: null
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: null
+        ClosingDate: null
+        VilleId: null
+        CategorieId: null
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    244:
+        Code: 140
+        Slug: village-cavallino
+        Name: '*Village Cavallino'
+        Title: null
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: null
+        ClosingDate: null
+        VilleId: null
+        CategorieId: null
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    245:
+        Code: 158
+        Slug: village-stoja
+        Name: '*Village Stoja'
+        Title: null
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: null
+        ClosingDate: null
+        VilleId: null
+        CategorieId: null
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    1:
+        Code: 221
+        Slug: 7-fonts
+        Name: '7 Fonts'
+        Title: null
+        Address1: 'RN 112'
+        Address2: ''
+        Zip: '34300'
+        City: AGDE
+        Mail: accseptfont@village-center.fr
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 19
+        CategorieId: 4
+        GeoCoordinateX: '43.31123649267182'
+        GeoCoordinateY: '3.499166965484619'
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: true
+    2:
+        Code: 249
+        Slug: adriano
+        Name: Adriano
+        Title: null
+        Address1: '7 Via dei Campeggi'
+        Address2: ''
+        Zip: '48122'
+        City: 'PUNTA MARINA TERME'
+        Mail: ''
+        CountryCode: IT
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 166
+        CategorieId: 2
+        GeoCoordinateX: '44.433611'
+        GeoCoordinateY: '12.295833'
+        VideoPath: null
+        Image360Path: null
+        Capacite: null
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: true
+    3:
+        Code: 5
+        Slug: airotel-oleron
+        Name: 'Airotel Oléron'
+        Title: null
+        Address1: 'Domaine de Montravail'
+        Address2: '19 rue de la Libération - BP 31'
+        Zip: '17480'
+        City: 'LE CHÂTEAU D''OLÉRON'
+        Mail: info@camping-airotel-oleron.com
+        CountryCode: FR
+        Phone1: '05 46 47 61 82'
+        Phone2: '06 70 47 89 48 '
+        Fax: '05 46 47 79 67'
+        OpeningDate: '2013-04-12 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 148
+        CategorieId: 3
+        GeoCoordinateX: '45.8828959'
+        GeoCoordinateY: '-1.2042464'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '133'
+        PlanPath: uploads/etablissements/50c0bb79e91d1.jpeg
+        Vignette: uploads/etablissements/50c07f9494938.jpeg
+        Active: true
+    5:
+        Code: 222
+        Slug: almadies
+        Name: Almadies
+        Title: null
+        Address1: 'Route de la Roche sur Yon'
+        Address2: 'La Charrière des Bandes'
+        Zip: '85360'
+        City: 'LA TRANCHE SUR MER'
+        Mail: accalmadies@village-center.fr
+        CountryCode: FR
+        Phone1: '02 51 30 36 94'
+        Phone2: ''
+        Fax: '02 51 30 37 04'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 72
+        CategorieId: 2
+        GeoCoordinateX: '46.37250'
+        GeoCoordinateY: '-1.41528'
+        VideoPath: null
+        Image360Path: null
+        Capacite: null
+        PlanPath: null
+        Vignette: uploads/etablissements/50c07baf6c131.jpeg
+        Active: true
+    6:
+        Code: 247
+        Slug: almafra
+        Name: Almafra
+        Title: null
+        Address1: 'Passeig de la mija illegua'
+        Address2: ''
+        Zip: '03580'
+        City: 'ALFAZ DEL PI'
+        Mail: ''
+        CountryCode: ES
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 164
+        CategorieId: 2
+        GeoCoordinateX: '38.5683342'
+        GeoCoordinateY: '-0.0941133'
+        VideoPath: null
+        Image360Path: null
+        Capacite: null
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: true
+    7:
+        Code: 6
+        Slug: aluna-vacances
+        Name: 'Aluna Vacances '
+        Title: null
+        Address1: 'Route de Lagorce'
+        Address2: ''
+        Zip: '07120'
+        City: RUOMS
+        Mail: alunavacances@wanadoo.fr
+        CountryCode: FR
+        Phone1: '04 75 93 93 15'
+        Phone2: '06 70 53 71 93 '
+        Fax: '04 75 93 90 90'
+        OpeningDate: '2013-04-13 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 78
+        CategorieId: 2
+        GeoCoordinateX: '44.449111'
+        GeoCoordinateY: '4.3525926'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '402'
+        PlanPath: uploads/etablissements/50c0bc0e256e7.jpeg
+        Vignette: uploads/etablissements/50c0804b0108a.jpeg
+        Active: true
+    8:
+        Code: 9
+        Slug: ametlla
+        Name: Ametlla
+        Title: null
+        Address1: 'Apartat de Correus N°240'
+        Address2: ''
+        Zip: '43860'
+        City: 'AMETLLA DE MAR - TARRAGONE'
+        Mail: info@campingametlla.com
+        CountryCode: ES
+        Phone1: '0034 977 26 77 84'
+        Phone2: '06 70 91 01 83'
+        Fax: '0034 977 26 78 68'
+        OpeningDate: '2013-04-12 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 34
+        CategorieId: 2
+        GeoCoordinateX: '40.86483588'
+        GeoCoordinateY: '0.778688192'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '373'
+        PlanPath: uploads/etablissements/50c0bdf92068c.jpeg
+        Vignette: uploads/etablissements/50c081be7664e.jpeg
+        Active: true
+    9:
+        Code: 10
+        Slug: amiaux
+        Name: Amiaux
+        Title: null
+        Address1: '223 Route de N.D. de Monts'
+        Address2: ''
+        Zip: '85169'
+        City: 'ST JEAN DE MONTS'
+        Mail: danielchantal.tarantola@laposte.net
+        CountryCode: FR
+        Phone1: '02 51 58 22 22'
+        Phone2: '06 70 38 06 56'
+        Fax: '02 51 58 26 09'
+        OpeningDate: '2013-05-08 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 47
+        CategorieId: 2
+        GeoCoordinateX: '46.80806056'
+        GeoCoordinateY: '-2.104654312'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '544'
+        PlanPath: uploads/etablissements/50c0aeeca983f.jpeg
+        Vignette: uploads/etablissements/50c075a7c8a0b.jpeg
+        Active: true
+    10:
+        Code: 179
+        Slug: aqua-viva
+        Name: 'Aqua Viva'
+        Title: null
+        Address1: 'Route de Souillac'
+        Address2: ''
+        Zip: '24200'
+        City: 'CARSAC AILLAC'
+        Mail: ''
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 104
+        CategorieId: 1
+        GeoCoordinateX: '44.8669413'
+        GeoCoordinateY: '1.2797356'
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: true
+    11:
+        Code: 176
+        Slug: atlantic-club-montalivet
+        Name: 'Atlantic Club Montalivet'
+        Title: null
+        Address1: '47 Avenue de l''Europe'
+        Address2: ''
+        Zip: '33930'
+        City: 'VENDAYS MONTALIVET'
+        Mail: vautrin.christian@sfr.fr
+        CountryCode: FR
+        Phone1: '05 56 09 35 64'
+        Phone2: '06 32 12 14 52'
+        Fax: '05 56 09 35 64'
+        OpeningDate: '2013-04-12 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 149
+        CategorieId: 1
+        GeoCoordinateX: '45.3770439'
+        GeoCoordinateY: '-1.14430200'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '770'
+        PlanPath: uploads/etablissements/50c0b1efdcf16.jpeg
+        Vignette: uploads/etablissements/50c077e07619d.jpeg
+        Active: true
+    12:
+        Code: 181
+        Slug: aurilandes
+        Name: Aurilandes
+        Title: null
+        Address1: '1001 Promenade de l’Etang'
+        Address2: ''
+        Zip: '40200'
+        City: AUREILHAN
+        Mail: ''
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 91
+        CategorieId: 4
+        GeoCoordinateX: '44.2229784'
+        GeoCoordinateY: '-1.2035572'
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: true
+    13:
+        Code: 11
+        Slug: azu-rivage
+        Name: 'Azu''Rivage'
+        Title: null
+        Address1: '720 Route des Campings'
+        Address2: ''
+        Zip: '40140'
+        City: AZUR
+        Mail: info@campingazurivage.com
+        CountryCode: FR
+        Phone1: '05 58 48 30 72'
+        Phone2: '06 70 36 68 64'
+        Fax: '05 58 48 25 56'
+        OpeningDate: '2013-06-01 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 93
+        CategorieId: 3
+        GeoCoordinateX: '43.785238'
+        GeoCoordinateY: '-1.305147'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '275'
+        PlanPath: uploads/etablissements/50c0af9578b80.jpeg
+        Vignette: uploads/etablissements/50c07622dd6a5.jpeg
+        Active: true
+    14:
+        Code: 12
+        Slug: bahia-club
+        Name: 'Bahia Club'
+        Title: null
+        Address1: 'Chemin de l''Hourtou'
+        Address2: ''
+        Zip: '66420'
+        City: 'LE BARCARÈS'
+        Mail: camping.bahiaclub@orange.fr
+        CountryCode: FR
+        Phone1: '04 68 80 90 16'
+        Phone2: '06 71 21 54 71'
+        Fax: '04 68 28 24 76'
+        OpeningDate: '2013-06-01 00:00:00'
+        ClosingDate: '2013-09-13 00:00:00'
+        VilleId: 17
+        CategorieId: 3
+        GeoCoordinateX: '42.78606298'
+        GeoCoordinateY: '3.019276857'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '210'
+        PlanPath: uploads/etablissements/50c1b004a7ae6.jpeg
+        Vignette: uploads/etablissements/50c0768e5ee70.jpeg
+        Active: true
+    15:
+        Code: 182
+        Slug: baie-du-kernic
+        Name: 'Baie du Kernic'
+        Title: null
+        Address1: 'Route de Pen An Théven'
+        Address2: ''
+        Zip: '29430'
+        City: PLOUESCAT
+        Mail: accbaiedekernic@village-center.fr
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 109
+        CategorieId: 4
+        GeoCoordinateX: '48.6589806'
+        GeoCoordinateY: '-4.2175055'
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: true
+    16:
+        Code: 14
+        Slug: beau-rivage
+        Name: 'Beau Rivage '
+        Title: null
+        Address1: 'Avenue de Montpellier'
+        Address2: 'RD 613'
+        Zip: '34140'
+        City: MÈZE
+        Mail: reception@camping-beaurivage.fr
+        CountryCode: FR
+        Phone1: '04 67 43 81 48'
+        Phone2: '06 89 50 29 78'
+        Fax: '04 67 43 66 70'
+        OpeningDate: '2013-04-13 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 9
+        CategorieId: 3
+        GeoCoordinateX: '43.43042156'
+        GeoCoordinateY: '3.610414267'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '234'
+        PlanPath: uploads/etablissements/50c0b1464ee57.jpeg
+        Vignette: uploads/etablissements/50c07798a7231.jpeg
+        Active: true
+    18:
+        Code: 216
+        Slug: bois-de-pleuven
+        Name: 'Bois de Pleuven'
+        Title: null
+        Address1: 'Bois de Pleuven'
+        Address2: ''
+        Zip: '29140'
+        City: 'ST YVI'
+        Mail: accboisdepleuven@village-center.fr
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 120
+        CategorieId: 2
+        GeoCoordinateX: '47.9503856'
+        GeoCoordinateY: '-3.9705276'
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: true
+    19:
+        Code: 183
+        Slug: bois-d-amour
+        Name: 'Bois d’Amour'
+        Title: null
+        Address1: '10 allée Diane'
+        Address2: ''
+        Zip: '44500'
+        City: 'LA BAULE'
+        Mail: accboisdamour@village-center.fr
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 58
+        CategorieId: 3
+        GeoCoordinateX: '47.288836'
+        GeoCoordinateY: '-2.37296'
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: true
+    20:
+        Code: 16
+        Slug: bois-soleil
+        Name: 'Bois Soleil'
+        Title: null
+        Address1: '94 Chemin des Barres'
+        Address2: ''
+        Zip: '85340'
+        City: 'OLONNE SUR MER'
+        Mail: camping.boissoleil@wanadoo.fr
+        CountryCode: FR
+        Phone1: '02 51 33 11 97'
+        Phone2: '06 70 35 10 91'
+        Fax: '02 51 33 14 85'
+        OpeningDate: '2013-04-12 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 77
+        CategorieId: 2
+        GeoCoordinateX: '46.55466987'
+        GeoCoordinateY: '-1.805577278'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '199'
+        PlanPath: uploads/etablissements/50c0b1c36f57e.jpeg
+        Vignette: uploads/etablissements/50c077ad1cde5.jpeg
+        Active: true
+    21:
+        Code: 17
+        Slug: bordeneo
+        Name: 'Bordenéo '
+        Title: null
+        Address1: 'Belle Ile en Mer'
+        Address2: ''
+        Zip: '56360'
+        City: 'LE PALAIS'
+        Mail: camping.bordeneo@wanadoo.fr
+        CountryCode: FR
+        Phone1: '02 97 31 88 96'
+        Phone2: '06 70 79 49 91'
+        Fax: '02 97 31 87 77'
+        OpeningDate: '2013-04-13 00:00:00'
+        ClosingDate: '2013-09-29 00:00:00'
+        VilleId: 55
+        CategorieId: 2
+        GeoCoordinateX: '47.355914'
+        GeoCoordinateY: '-3.168789'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '202'
+        PlanPath: uploads/etablissements/50c0b1d39c943.jpeg
+        Vignette: uploads/etablissements/50c077bc5d876.jpeg
+        Active: true
+    22:
+        Code: 242
+        Slug: cadenieres
+        Name: Cadenières
+        Title: null
+        Address1: '1427 '
+        Address2: 'RD 560'
+        Zip: '83690'
+        City: VILLECROZE
+        Mail: info@camping-lescadenieres.com
+        CountryCode: FR
+        Phone1: '04 94 67 59 66'
+        Phone2: ''
+        Fax: '04 94 67 58 35'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-04 00:00:00'
+        VilleId: 136
+        CategorieId: 3
+        GeoCoordinateX: '43.55726869999999'
+        GeoCoordinateY: '6.286714599999982'
+        VideoPath: null
+        Image360Path: null
+        Capacite: null
+        PlanPath: null
+        Vignette: uploads/etablissements/50c07d58a0174.jpeg
+        Active: true
+    23:
+        Code: 3
+        Slug: cala-gogo
+        Name: 'Cala Gogo'
+        Title: null
+        Address1: 'Avenue Armand Lanoux'
+        Address2: ''
+        Zip: '66750'
+        City: 'ST CYPRIEN'
+        Mail: camping.calagogo@wanadoo.fr
+        CountryCode: FR
+        Phone1: '04 68 21 07 12'
+        Phone2: '06 70 67 66 11'
+        Fax: '04 68 21 02 19'
+        OpeningDate: '2013-05-04 00:00:00'
+        ClosingDate: '2013-09-21 00:00:00'
+        VilleId: 139
+        CategorieId: 1
+        GeoCoordinateX: '42.59948962'
+        GeoCoordinateY: '3.037636578'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '649'
+        PlanPath: uploads/etablissements/50c1b32d9b399.jpeg
+        Vignette: uploads/etablissements/50c07e4f778ac.jpeg
+        Active: true
+    24:
+        Code: 19
+        Slug: california
+        Name: California
+        Title: null
+        Address1: Orouet
+        Address2: 'Chemin de la Parée Verte'
+        Zip: '85160'
+        City: 'ST JEAN DE MONTS'
+        Mail: camping.california@orange.fr
+        CountryCode: FR
+        Phone1: '02 51 58 17 51'
+        Phone2: '06 70 74 90 74'
+        Fax: '02 51 58 12 28'
+        OpeningDate: '2013-04-26 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 47
+        CategorieId: 2
+        GeoCoordinateX: '46.75718789'
+        GeoCoordinateY: '-1.97853148'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '225'
+        PlanPath: uploads/etablissements/50c1b17b2ac6d.jpeg
+        Vignette: uploads/etablissements/50c0791bea1bb.jpeg
+        Active: true
+    25:
+        Code: 20
+        Slug: calypso
+        Name: Calypso
+        Title: null
+        Address1: 'Boulevard de la Plage'
+        Address2: ''
+        Zip: '66440'
+        City: TORREILLES
+        Mail: 0468282476@fax.contact-everyone.fr
+        CountryCode: FR
+        Phone1: '04 68 28 09 47'
+        Phone2: '06 31 36 81 43'
+        Fax: '04 68 28 24 76'
+        OpeningDate: '2013-04-12 00:00:00'
+        ClosingDate: '2013-09-22 00:00:00'
+        VilleId: 7
+        CategorieId: 2
+        GeoCoordinateX: '42.767919'
+        GeoCoordinateY: '3.029699922'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '308'
+        PlanPath: uploads/etablissements/50c1b21c1fdab.jpeg
+        Vignette: uploads/etablissements/50c07a15e105c.jpeg
+        Active: true
+    26:
+        Code: 21
+        Slug: camping-du-lac
+        Name: 'Camping du Lac '
+        Title: null
+        Address1: 'Le Fangeas Soulier'
+        Address2: ''
+        Zip: '05110'
+        City: CURBANS
+        Mail: info@au-camping-du-lac.com
+        CountryCode: FR
+        Phone1: '04 92 54 23 10'
+        Phone2: '06 89 79 87 57'
+        Fax: '04 92 54 23 11'
+        OpeningDate: '2013-05-17 00:00:00'
+        ClosingDate: '2013-09-08 00:00:00'
+        VilleId: 11
+        CategorieId: 3
+        GeoCoordinateX: '44.42476978'
+        GeoCoordinateY: '6.031816006'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '180'
+        PlanPath: null
+        Vignette: uploads/etablissements/50c07adc646ca.jpeg
+        Active: true
+    17:
+        Code: 178
+        Slug: camping-les-biches
+        Name: 'Camping Les Biches'
+        Title: null
+        Address1: 'Route de Notre Dame de Riez'
+        Address2: 'Chemin de la petite Baisse'
+        Zip: '85270'
+        City: 'ST HILAIRE DE RIEZ'
+        Mail: rf.forest@sfr.fr
+        CountryCode: FR
+        Phone1: '02 51 54 38 82'
+        Phone2: '06 32 29 64 91'
+        Fax: '02 51 54 30 74'
+        OpeningDate: '2013-04-13 00:00:00'
+        ClosingDate: '2013-09-08 00:00:00'
+        VilleId: 63
+        CategorieId: 1
+        GeoCoordinateX: '46.740096'
+        GeoCoordinateY: '-1.945052'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '434'
+        PlanPath: uploads/etablissements/50c0b20bcb83a.jpeg
+        Vignette: uploads/etablissements/50c077fa54ebf.jpeg
+        Active: true
+    27:
+        Code: 85
+        Slug: camping-neptuno
+        Name: 'Camping Neptuno '
+        Title: null
+        Address1: 'Rodors 23'
+        Address2: ''
+        Zip: '17256'
+        City: PALS
+        Mail: hartmann.guy@orange.fr
+        CountryCode: ES
+        Phone1: '0034 972 63 67 31'
+        Phone2: '06 08 35 15 52'
+        Fax: '0034 972 66 79 51'
+        OpeningDate: '2013-04-26 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 26
+        CategorieId: 3
+        GeoCoordinateX: '41.993343'
+        GeoCoordinateY: '3.188749'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '260'
+        PlanPath: uploads/etablissements/50c0bd69d449b.jpeg
+        Vignette: uploads/etablissements/50c0815e99152.jpeg
+        Active: true
+    28:
+        Code: 22
+        Slug: cap-agathois
+        Name: 'Cap Agathois '
+        Title: null
+        Address1: 'Route de Sète'
+        Address2: ''
+        Zip: '34300'
+        City: AGDE
+        Mail: info@campingcapagathois.com
+        CountryCode: FR
+        Phone1: '04 67 94 02 21'
+        Phone2: '06 70 87 37 69'
+        Fax: '04 67 94 02 21'
+        OpeningDate: '2013-04-26 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 19
+        CategorieId: 3
+        GeoCoordinateX: '43.310056'
+        GeoCoordinateY: '3.509442'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '258'
+        PlanPath: uploads/etablissements/50c0b90441e0b.jpeg
+        Vignette: uploads/etablissements/50c07b8b3c71d.jpeg
+        Active: true
+    29:
+        Code: 23
+        Slug: carbonnier
+        Name: Carbonnier
+        Title: null
+        Address1: ''
+        Address2: ''
+        Zip: '24250'
+        City: 'ST MARTIAL DE NABIRAT'
+        Mail: lecarbonnier@aol.com
+        CountryCode: FR
+        Phone1: '05 53 28 42 53'
+        Phone2: '06 70 86 74 52'
+        Fax: '05 53 28 51 31'
+        OpeningDate: '2013-04-12 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 54
+        CategorieId: 2
+        GeoCoordinateX: '44.7421154'
+        GeoCoordinateY: '1.263438463'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '192'
+        PlanPath: uploads/etablissements/50c1b2abeab94.jpeg
+        Vignette: uploads/etablissements/50c07c3a59d9a.jpeg
+        Active: true
+    30:
+        Code: 24
+        Slug: castell-mar
+        Name: 'Castell Mar'
+        Title: null
+        Address1: 'Platja de la Rubina'
+        Address2: 'Badia de Roses'
+        Zip: '17486'
+        City: 'CASTELLO D''EMPURIES'
+        Mail: mtravers@orange.fr
+        CountryCode: ES
+        Phone1: '0034 972 45 08 22'
+        Phone2: '06 70 48 40 97'
+        Fax: '0034 972 45 23 30'
+        OpeningDate: '2013-05-11 00:00:00'
+        ClosingDate: '2013-09-21 00:00:00'
+        VilleId: 29
+        CategorieId: 3
+        GeoCoordinateX: '42.2553319'
+        GeoCoordinateY: '3.136843443'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '305'
+        PlanPath: uploads/etablissements/50c0b9c03cd17.jpeg
+        Vignette: uploads/etablissements/50c07d30289f7.jpeg
+        Active: true
+    31:
+        Code: 25
+        Slug: castell-montgri
+        Name: 'Castell Montgri '
+        Title: null
+        Address1: 'Ctra. Torroella-Estartit Km 4,700'
+        Address2: ''
+        Zip: '17258'
+        City: 'L''ESTARTIT'
+        Mail: +34972750906@fax.contact-everyone.fr
+        CountryCode: ES
+        Phone1: '0034 972 75 16 30'
+        Phone2: '06 07 84 26 20'
+        Fax: '0034 972750906'
+        OpeningDate: '2013-05-11 00:00:00'
+        ClosingDate: '2013-09-29 00:00:00'
+        VilleId: 25
+        CategorieId: 2
+        GeoCoordinateX: '42.0521756'
+        GeoCoordinateY: '3.19160074'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '1260'
+        PlanPath: uploads/etablissements/50c0ba15cdcd3.jpeg
+        Vignette: uploads/etablissements/50c07dcd1d7f7.jpeg
+        Active: true
+    32:
+        Code: 217
+        Slug: castellas
+        Name: Castellas
+        Title: null
+        Address1: 'RN 112'
+        Address2: ''
+        Zip: '34200'
+        City: SETE
+        Mail: acccastellas@village-center.fr
+        CountryCode: FR
+        Phone1: '04 67 51 63 00'
+        Phone2: ''
+        Fax: '04 67 51 63 01'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 112
+        CategorieId: 2
+        GeoCoordinateX: '43.3400139093'
+        GeoCoordinateY: '3.5819583307'
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: uploads/etablissements/50c07b54eec04.jpeg
+        Active: true
+    33:
+        Code: 185
+        Slug: catalpas
+        Name: Catalpas
+        Title: null
+        Address1: '45 chemin d’Enlias'
+        Address2: ''
+        Zip: '17110'
+        City: 'ST GEORGES DE DIDONNE'
+        Mail: acccatalpas@village-center.fr
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 157
+        CategorieId: 3
+        GeoCoordinateX: '45.6150806'
+        GeoCoordinateY: '-0.9945738'
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: true
+    34:
+        Code: 26
+        Slug: caussanel
+        Name: 'Caussanel '
+        Title: null
+        Address1: ' Lac de Pareloup'
+        Address2: ''
+        Zip: '12290'
+        City: 'CANET DE SALARS'
+        Mail: info@lecaussanel.com
+        CountryCode: FR
+        Phone1: '05 65 46 85 19'
+        Phone2: '06 70 78 90 05'
+        Fax: '05 65 46 89 85'
+        OpeningDate: '2013-05-06 00:00:00'
+        ClosingDate: '2013-09-07 00:00:00'
+        VilleId: 62
+        CategorieId: 1
+        GeoCoordinateX: '44.21435585'
+        GeoCoordinateY: '2.766510844'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '108'
+        PlanPath: uploads/etablissements/50c0ba2902f1d.jpeg
+        Vignette: uploads/etablissements/50c07e1daf8ee.jpeg
+        Active: true
+    35:
+        Code: 27
+        Slug: cayola
+        Name: 'Cayola '
+        Title: null
+        Address1: 'Côte Ouest'
+        Address2: ''
+        Zip: '34450'
+        City: VIAS
+        Mail: campingcayola@orange.fr
+        CountryCode: FR
+        Phone1: '04 67 90 01 85'
+        Phone2: '06 81 93 15 46'
+        Fax: '04 67 90 03 06'
+        OpeningDate: '2013-04-20 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 5
+        CategorieId: 2
+        GeoCoordinateX: '43.28224717'
+        GeoCoordinateY: '3.371078074'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '176'
+        PlanPath: uploads/etablissements/50c0ba33c4365.jpeg
+        Vignette: uploads/etablissements/50c07e2b73189.jpeg
+        Active: true
+    36:
+        Code: 184
+        Slug: ca-savio
+        Name: Ca’Savio
+        Title: null
+        Address1: 'Via di Ca’Savio, 77'
+        Address2: ''
+        Zip: '30013'
+        City: CAVALLINO-TREPORTI
+        Mail: ''
+        CountryCode: IT
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 156
+        CategorieId: 3
+        GeoCoordinateX: '45.445833'
+        GeoCoordinateY: '12.460833'
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: true
+    37:
+        Code: 250
+        Slug: cesenatico
+        Name: Cesenatico
+        Title: null
+        Address1: 'Via Stoccolma'
+        Address2: ''
+        Zip: '47042'
+        City: CESENATICO
+        Mail: ''
+        CountryCode: IT
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 167
+        CategorieId: 4
+        GeoCoordinateX: '44.2150172'
+        GeoCoordinateY: '12.3792958'
+        VideoPath: null
+        Image360Path: null
+        Capacite: null
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: true
+    38:
+        Code: 186
+        Slug: chalets-de-l-isard-residence
+        Name: 'Chalets de l’Isard (Résidence)'
+        Title: null
+        Address1: ''
+        Address2: ''
+        Zip: '66210'
+        City: 'LES ANGLES'
+        Mail: contact@village-center.com
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 128
+        CategorieId: null
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    39:
+        Code: 28
+        Slug: chaponnet
+        Name: Chaponnet
+        Title: null
+        Address1: '16 Rue du Chaponnet'
+        Address2: ''
+        Zip: '85470'
+        City: 'BREM SUR MER'
+        Mail: 0251909167@fax.contact-everyone.fr
+        CountryCode: FR
+        Phone1: '02 51 90 55 56'
+        Phone2: '06 70 82 07 74'
+        Fax: '02 51 90 91 67'
+        OpeningDate: '2013-04-06 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 65
+        CategorieId: 2
+        GeoCoordinateX: '46.60419665'
+        GeoCoordinateY: '-1.832286716'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '330'
+        PlanPath: uploads/etablissements/50c1b315e9e13.jpeg
+        Vignette: uploads/etablissements/50c07e37365d9.jpeg
+        Active: true
+    40:
+        Code: 30
+        Slug: chateau-de-galinee
+        Name: 'Château de Galinée '
+        Title: null
+        Address1: 'Galinée Le Guildo'
+        Address2: ''
+        Zip: '22380'
+        City: 'ST CAST LE GUILDO'
+        Mail: chateaugalinee@wanadoo.fr
+        CountryCode: FR
+        Phone1: '02 96 41 10 56'
+        Phone2: '06 70 30 54 83'
+        Fax: '02 96 41 03 72'
+        OpeningDate: '2013-05-06 00:00:00'
+        ClosingDate: '2013-09-06 00:00:00'
+        VilleId: 141
+        CategorieId: 1
+        GeoCoordinateX: '48.58438992'
+        GeoCoordinateY: '-2.257309556'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '273'
+        PlanPath: null
+        Vignette: uploads/etablissements/50c07e6045eb5.jpeg
+        Active: true
+    41:
+        Code: 31
+        Slug: chenaie
+        Name: 'Chênaie '
+        Title: null
+        Address1: '36 Rue du Pâtisseau'
+        Address2: ''
+        Zip: '44210'
+        City: PORNIC
+        Mail: la.chenaie44@wanadoo.fr
+        CountryCode: FR
+        Phone1: '02 40 82 07 31'
+        Phone2: '06 89 07 87 55'
+        Fax: '02 40 27 95 67'
+        OpeningDate: '2013-04-13 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 61
+        CategorieId: 2
+        GeoCoordinateX: '47.11890222'
+        GeoCoordinateY: '-2.072934508'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '305'
+        PlanPath: uploads/etablissements/50c1b35bdab38.jpeg
+        Vignette: uploads/etablissements/50c07e6f495fa.jpeg
+        Active: true
+    42:
+        Code: 187
+        Slug: clos-du-rocher-residence
+        Name: 'Clos du Rocher (Résidence)'
+        Title: null
+        Address1: 'Avenue du Cingle'
+        Address2: ''
+        Zip: '24620'
+        City: 'LES EYZIES DE TAYAC SIREUIL'
+        Mail: accclosdurocher@village-center.com
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 4
+        CategorieId: null
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    43:
+        Code: 33
+        Slug: col-vert
+        Name: 'Col Vert '
+        Title: null
+        Address1: '1548 Route de l''Etang'
+        Address2: ''
+        Zip: '40560'
+        City: VIELLE-ST-GIRONS
+        Mail: 0558429188@fax.contact-everyone.fr
+        CountryCode: FR
+        Phone1: '05 58 42 94 06'
+        Phone2: '06 72 69 45 20'
+        Fax: '05 58 42 91 88'
+        OpeningDate: '2013-04-13 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 92
+        CategorieId: 2
+        GeoCoordinateX: '43.90345841'
+        GeoCoordinateY: '-1.310065985'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '812'
+        PlanPath: uploads/etablissements/50c1b44790613.jpeg
+        Vignette: uploads/etablissements/50c07e8f9feca.jpeg
+        Active: true
+    44:
+        Code: 34
+        Slug: conguel
+        Name: 'Conguel '
+        Title: null
+        Address1: 'Boulevard de la Teignouse'
+        Address2: ''
+        Zip: '56170'
+        City: QUIBERON
+        Mail: info@campingduconguel.com
+        CountryCode: FR
+        Phone1: '02 97 50 19 11'
+        Phone2: '06 70 50 23 63'
+        Fax: '02 97 30 46 66'
+        OpeningDate: '2013-04-13 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 53
+        CategorieId: 2
+        GeoCoordinateX: '47.47675288'
+        GeoCoordinateY: '-3.092372417'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '250'
+        PlanPath: uploads/etablissements/50c1b46436408.jpeg
+        Vignette: uploads/etablissements/50c07e9d9e32e.jpeg
+        Active: true
+    45:
+        Code: 35
+        Slug: coste-rouge
+        Name: 'Coste Rouge '
+        Title: null
+        Address1: 'Route de Collioure'
+        Address2: ''
+        Zip: '66700'
+        City: ARGELÈS-SUR-MER
+        Mail: 0468959417@fax.contact-everyone.fr
+        CountryCode: FR
+        Phone1: '04 68 81 08 94'
+        Phone2: '06 89 13 14 12'
+        Fax: '04 68 95 94 17'
+        OpeningDate: '2013-04-19 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 1
+        CategorieId: 3
+        GeoCoordinateX: '42.532127'
+        GeoCoordinateY: '3.05197'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '145'
+        PlanPath: uploads/etablissements/50c1b822cce73.jpeg
+        Vignette: uploads/etablissements/50c07eaaa87b2.jpeg
+        Active: true
+    46:
+        Code: 36
+        Slug: cote-d-argent
+        Name: 'Côte d''Argent '
+        Title: null
+        Address1: '134 Route Contaut'
+        Address2: ''
+        Zip: '33990'
+        City: HOURTIN
+        Mail: 0556092496@fax.contact-everyone.fr
+        CountryCode: FR
+        Phone1: '05 56 09 10 25'
+        Phone2: '06 31 18 78 31'
+        Fax: '05 56 09 24 96'
+        OpeningDate: '2013-05-17 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 88
+        CategorieId: 1
+        GeoCoordinateX: '45.22291902'
+        GeoCoordinateY: '-1.164722443'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '870'
+        PlanPath: uploads/etablissements/50c1b83f38bc8.jpeg
+        Vignette: uploads/etablissements/50c07eb8a72f6.jpeg
+        Active: true
+    47:
+        Code: 190
+        Slug: cote-des-roses
+        Name: 'Côte des Roses'
+        Title: null
+        Address1: 'Route de Gruissan'
+        Address2: ''
+        Zip: '11100'
+        City: NARBONNE-PLAGE
+        Mail: contact@village-center.fr
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 151
+        CategorieId: 4
+        GeoCoordinateX: '43.143056'
+        GeoCoordinateY: '3.143611'
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: true
+    48:
+        Code: 189
+        Slug: cote-green-residence
+        Name: 'Côté Green (Résidence)'
+        Title: null
+        Address1: '1213 Allée des Thermes'
+        Address2: ''
+        Zip: '34990'
+        City: JUVIGNAC
+        Mail: ''
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 150
+        CategorieId: null
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    49:
+        Code: 191
+        Slug: cote-sauvage
+        Name: 'Côte Sauvage'
+        Title: null
+        Address1: '336 rue de la Forêt'
+        Address2: ''
+        Zip: '17590'
+        City: 'ST CLEMENT DES BALEINES'
+        Mail: acccotesauvage@village-center.fr
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 110
+        CategorieId: 4
+        GeoCoordinateX: '46.2254232'
+        GeoCoordinateY: '-1.5446198'
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: true
+    50:
+        Code: 192
+        Slug: coteau-de-la-marine
+        Name: 'Coteau de la Marine'
+        Title: null
+        Address1: 'Coteau de la Marine'
+        Address2: ''
+        Zip: '04500'
+        City: 'MONTAGNAC MONTPEZAT'
+        Mail: acccoteaudelamarine@village-center.fr
+        CountryCode: FR
+        Phone1: '04 92 77 53 33'
+        Phone2: ''
+        Fax: '04 92 77 59 34'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 122
+        CategorieId: 2
+        GeoCoordinateX: '43.74642103270366'
+        GeoCoordinateY: '6.10041618347168'
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: uploads/etablissements/50c07959d2aee.jpeg
+        Active: true
+    51:
+        Code: 37
+        Slug: crin-blanc
+        Name: 'Crin Blanc '
+        Title: null
+        Address1: 'Hameau de Saliers'
+        Address2: ''
+        Zip: '13123'
+        City: 'L''ALBARON'
+        Mail: camping-crin.blanc@wanadoo.fr
+        CountryCode: FR
+        Phone1: '04 66 87 48 78'
+        Phone2: '06 07 59 92 01'
+        Fax: '04 66 87 18 66'
+        OpeningDate: '2013-04-26 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 22
+        CategorieId: 3
+        GeoCoordinateX: '43.66136775'
+        GeoCoordinateY: '4.473999739'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '170'
+        PlanPath: uploads/etablissements/50c0baa702174.jpeg
+        Vignette: uploads/etablissements/50c07ecc6c0b3.jpeg
+        Active: true
+    52:
+        Code: 38
+        Slug: cupulatta
+        Name: 'Cupulatta '
+        Title: null
+        Address1: 'Hameau de Cupulatta'
+        Address2: ''
+        Zip: '20137'
+        City: 'PORTO VECCHIO'
+        Mail: gerald.deboffle@yahoo.fr
+        CountryCode: FR
+        Phone1: '06 12 81 50 89'
+        Phone2: '06 19 17 93 60'
+        Fax: '04 95 21 45 66'
+        OpeningDate: '2013-05-18 00:00:00'
+        ClosingDate: '2013-09-14 00:00:00'
+        VilleId: 43
+        CategorieId: 3
+        GeoCoordinateX: '41.64617179'
+        GeoCoordinateY: '9.293650389'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '115'
+        PlanPath: uploads/etablissements/50c1b883b4f12.jpeg
+        Vignette: uploads/etablissements/50c07edb7b8ec.jpeg
+        Active: true
+    53:
+        Code: 39
+        Slug: cypres
+        Name: 'Cyprès '
+        Title: null
+        Address1: '41, Rue du Pont Jaunay'
+        Address2: BP644
+        Zip: '85806'
+        City: ST-GILLES-CROIX-DE-VIE
+        Mail: camping-lescypres85@voila.fr
+        CountryCode: FR
+        Phone1: '02 51 55 38 98'
+        Phone2: '06 71 89 95 41'
+        Fax: '02 51 54 98 94'
+        OpeningDate: '2013-04-12 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 64
+        CategorieId: 3
+        GeoCoordinateX: '46.6761495'
+        GeoCoordinateY: '-1.913208961'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '294'
+        PlanPath: uploads/etablissements/50c1b899991c1.jpeg
+        Vignette: uploads/etablissements/50c07eeacdc9f.jpeg
+        Active: true
+    54:
+        Code: 195
+        Slug: demeures-de-la-massane-residence
+        Name: 'Demeures de la Massane (Résidence)'
+        Title: null
+        Address1: 'Impasse Edmond Brazes'
+        Address2: ''
+        Zip: '66700'
+        City: 'ARGELES SUR MER'
+        Mail: contact@village-center.fr
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 1
+        CategorieId: null
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    55:
+        Code: 196
+        Slug: demeures-du-ventoux-residence
+        Name: 'Demeures du Ventoux (Residence)'
+        Title: null
+        Address1: '2015 avenue Majoral Jouve'
+        Address2: ''
+        Zip: '84810'
+        City: AUBIGNAN
+        Mail: accdemeuresduventoux@village-center.fr
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 129
+        CategorieId: 3
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    56:
+        Code: 194
+        Slug: demeures-torrellanes-residence
+        Name: 'Demeures Torrellanes (Résidence)'
+        Title: null
+        Address1: 'Route départementale 40'
+        Address2: ''
+        Zip: '66200'
+        City: 'LATOUR BAS ELNE'
+        Mail: contact@village-center.fr
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 142
+        CategorieId: null
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    57:
+        Code: 40
+        Slug: deux-fontaines
+        Name: 'Deux Fontaines '
+        Title: null
+        Address1: Raguenes
+        Address2: 'Feunteun Vihan'
+        Zip: '29920'
+        City: NEVEZ
+        Mail: 0298067180@fax.contact-everyone.fr
+        CountryCode: FR
+        Phone1: '02 98 06 81 91'
+        Phone2: '06 71 35 50 80'
+        Fax: '02 98 06 71 80'
+        OpeningDate: '2013-04-27 00:00:00'
+        ClosingDate: '2013-09-07 00:00:00'
+        VilleId: 51
+        CategorieId: 2
+        GeoCoordinateX: '47.7986345'
+        GeoCoordinateY: '-3.791956902'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '293'
+        PlanPath: uploads/etablissements/50c1b8c98cf46.jpeg
+        Vignette: uploads/etablissements/50c07f05362d9.jpeg
+        Active: true
+    58:
+        Code: 41
+        Slug: deux-plages
+        Name: 'Deux Plages '
+        Title: null
+        Address1: 'Avenue d''Angoulins'
+        Address2: ''
+        Zip: '17340'
+        City: 'CHATELAILLON PLAGE'
+        Mail: 0546435118@fax.contact-everyone.fr
+        CountryCode: FR
+        Phone1: '05 46 56 27 53'
+        Phone2: '06 70 99 85 48'
+        Fax: '05 46 43 51 18'
+        OpeningDate: '2013-04-27 00:00:00'
+        ClosingDate: '2013-09-22 00:00:00'
+        VilleId: 86
+        CategorieId: 2
+        GeoCoordinateX: '46.08444237'
+        GeoCoordinateY: '-1.093429327'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '267'
+        PlanPath: uploads/etablissements/50c1b8e15b766.jpeg
+        Vignette: uploads/etablissements/50c07f12115df.jpeg
+        Active: true
+    59:
+        Code: 42
+        Slug: domaine-d-inly
+        Name: 'Domaine d''Inly '
+        Title: null
+        Address1: 'Route de Couarne'
+        Address2: 'BP 24'
+        Zip: '56760'
+        City: PÉNESTIN
+        Mail: 0299904093@fax.contact-everyone.fr
+        CountryCode: FR
+        Phone1: '02 99 90 35 09'
+        Phone2: '06 71 10 56 26'
+        Fax: '02 99 90 40 93'
+        OpeningDate: '2013-04-12 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 57
+        CategorieId: 2
+        GeoCoordinateX: '47.47158955'
+        GeoCoordinateY: '-2.467031479'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '500'
+        PlanPath: uploads/etablissements/50c0bb68d5bdd.jpeg
+        Vignette: uploads/etablissements/50c07f2104699.jpeg
+        Active: true
+    60:
+        Code: 43
+        Slug: domaine-d-oleron
+        Name: 'Domaine d''Oléron '
+        Title: null
+        Address1: 'Route de la Jousselinière'
+        Address2: ''
+        Zip: '17190'
+        City: 'ST GEORGES D''OLÉRON'
+        Mail: domainedoleron@orange.fr
+        CountryCode: FR
+        Phone1: '05 46 76 54 97'
+        Phone2: '06 70 97 10 41'
+        Fax: '02 51 33 94 04'
+        OpeningDate: '2013-04-13 00:00:00'
+        ClosingDate: '2013-09-14 00:00:00'
+        VilleId: 85
+        CategorieId: 2
+        GeoCoordinateX: '45.96790109'
+        GeoCoordinateY: '-1.31872952'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '170'
+        PlanPath: uploads/etablissements/50c1baff25886.jpeg
+        Vignette: uploads/etablissements/50c07f2dde9d1.jpeg
+        Active: true
+    61:
+        Code: 197
+        Slug: domaine-de-bacchus-residence
+        Name: 'Domaine de Bacchus (Résidence)'
+        Title: null
+        Address1: ''
+        Address2: ''
+        Zip: '34400'
+        City: 'ST CHRISTOL'
+        Mail: contact@village-center.com
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 123
+        CategorieId: null
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    62:
+        Code: 44
+        Slug: domaine-de-chaussy
+        Name: 'Domaine de Chaussy '
+        Title: null
+        Address1: 'Quartier Le Petit Chaussy'
+        Address2: ''
+        Zip: '07150'
+        City: LAGORCE
+        Mail: chantal.gardet@orange.fr
+        CountryCode: FR
+        Phone1: '04 75 93 99 66'
+        Phone2: '06 71 47 65 41'
+        Fax: '04 75 93 90 56'
+        OpeningDate: '2013-04-13 00:00:00'
+        ClosingDate: '2013-09-22 00:00:00'
+        VilleId: 69
+        CategorieId: 1
+        GeoCoordinateX: '44.44722341'
+        GeoCoordinateY: '4.36678648'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '300'
+        PlanPath: uploads/etablissements/50c0bb04e5920.jpeg
+        Vignette: uploads/etablissements/50c07f3bbd0f2.jpeg
+        Active: true
+    63:
+        Code: 45
+        Slug: domaine-de-kermario
+        Name: 'Domaine de Kermario'
+        Title: null
+        Address1: '1 Chemin de Kerluir'
+        Address2: ''
+        Zip: '56340'
+        City: CARNAC
+        Mail: 0297526566@fax.contact-everyone.fr
+        CountryCode: FR
+        Phone1: '02 97 52 65 65'
+        Phone2: '06 82 63 94 46'
+        Fax: '02 97 52 65 66'
+        OpeningDate: '2013-03-27 00:00:00'
+        ClosingDate: '2013-09-29 00:00:00'
+        VilleId: 138
+        CategorieId: 2
+        GeoCoordinateX: '47.59528254'
+        GeoCoordinateY: '-3.066279888'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '123'
+        PlanPath: uploads/etablissements/50c0bb114fd98.jpeg
+        Vignette: uploads/etablissements/50c07f47a18f3.jpeg
+        Active: true
+    64:
+        Code: 199
+        Slug: domaine-de-la-corniche-residence
+        Name: 'Domaine de la Corniche (Résidence)'
+        Title: null
+        Address1: 'Route de la Corniche'
+        Address2: ''
+        Zip: '14640'
+        City: AUBERVILLE
+        Mail: contact@village-center.com
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 115
+        CategorieId: null
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    65:
+        Code: 233
+        Slug: domaine-de-la-marina
+        Name: 'Domaine de la Marina'
+        Title: null
+        Address1: 'Route plage sud'
+        Address2: ''
+        Zip: '40660'
+        City: MESSANGES
+        Mail: contact@domainedelamarina.com
+        CountryCode: FR
+        Phone1: '0825 70 40 40'
+        Phone2: ''
+        Fax: '05 58 49 00 41 '
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-04 00:00:00'
+        VilleId: 101
+        CategorieId: 2
+        GeoCoordinateX: '43.7963884'
+        GeoCoordinateY: '-1.3931660000000647'
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: uploads/etablissements/50c07cce6cae0.jpeg
+        Active: true
+    66:
+        Code: 91
+        Slug: domaine-de-la-paille-basse
+        Name: 'Domaine de la Paille Basse'
+        Title: null
+        Address1: 'la paille basse'
+        Address2: ''
+        Zip: '46200'
+        City: SOUILLAC
+        Mail: info@lapaillebasse.com
+        CountryCode: FR
+        Phone1: '05 65 37 85 48'
+        Phone2: '06 08 23 78 03'
+        Fax: '05 65 37 09 58'
+        OpeningDate: '2013-05-11 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 56
+        CategorieId: 2
+        GeoCoordinateX: '44.893626'
+        GeoCoordinateY: '1.478613'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '262'
+        PlanPath: uploads/etablissements/50c0be161f801.jpeg
+        Vignette: uploads/etablissements/50c081d8f233f.jpeg
+        Active: true
+    67:
+        Code: 46
+        Slug: domaine-de-la-rive
+        Name: 'Domaine de la Rive'
+        Title: null
+        Address1: 'Route de Bordeaux'
+        Address2: ''
+        Zip: '40600'
+        City: BISCARROSSE
+        Mail: info@larive.fr
+        CountryCode: FR
+        Phone1: '05 58 78 12 33'
+        Phone2: '06 89 72 55 80'
+        Fax: '05 58 78 12 92'
+        OpeningDate: '2013-04-06 00:00:00'
+        ClosingDate: '2013-09-08 00:00:00'
+        VilleId: 90
+        CategorieId: 1
+        GeoCoordinateX: '44.46066389'
+        GeoCoordinateY: '-1.130706668'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '800'
+        PlanPath: null
+        Vignette: uploads/etablissements/50c07f5af3540.jpeg
+        Active: true
+    68:
+        Code: 112
+        Slug: domaine-de-la-sainte-baume
+        Name: 'Domaine de la Sainte Baume'
+        Title: null
+        Address1: 'Quartier Delvieux Sud'
+        Address2: ''
+        Zip: '83860'
+        City: NANS-LES-PINS
+        Mail: saintebaume@yahoo.fr
+        CountryCode: FR
+        Phone1: '04 94 78 92 68'
+        Phone2: '06 89 79 83 64'
+        Fax: '04 94 78 67 37'
+        OpeningDate: '2013-04-12 00:00:00'
+        ClosingDate: '2013-09-29 00:00:00'
+        VilleId: 21
+        CategorieId: 2
+        GeoCoordinateX: '43.37692956'
+        GeoCoordinateY: '5.788040757'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '250'
+        PlanPath: uploads/etablissements/50c0afe6c63ed.jpeg
+        Vignette: uploads/etablissements/50c076445e9b3.jpeg
+        Active: true
+    69:
+        Code: 47
+        Slug: domaine-de-leveno
+        Name: 'Domaine de Léveno '
+        Title: null
+        Address1: 'Route de l''Etang de Sandun'
+        Address2: ''
+        Zip: '44350'
+        City: GUÉRANDE
+        Mail: info@camping-leveno.com
+        CountryCode: FR
+        Phone1: '02 40 24 79 30'
+        Phone2: '06 30 24 68 57'
+        Fax: '02 40 62 01 23'
+        OpeningDate: '2013-04-06 00:00:00'
+        ClosingDate: '2013-09-29 00:00:00'
+        VilleId: 60
+        CategorieId: 2
+        GeoCoordinateX: '47.33350768'
+        GeoCoordinateY: '-2.390749454'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '600'
+        PlanPath: uploads/etablissements/50c0bb2da1f28.jpeg
+        Vignette: uploads/etablissements/50c07f685eb16.jpeg
+        Active: true
+    70:
+        Code: 198
+        Slug: domaine-de-manon-residence
+        Name: 'Domaine de Manon (Résidence)'
+        Title: null
+        Address1: 'Zone d’activité de Signes'
+        Address2: 'Avenue de Paris'
+        Zip: '83870'
+        City: SIGNES
+        Mail: accdomainedemanon@village-center.fr
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 124
+        CategorieId: 3
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    71:
+        Code: 29
+        Slug: domaine-des-charmilles
+        Name: 'Domaine des Charmilles'
+        Title: null
+        Address1: '1541 Route de l''Océan'
+        Address2: ''
+        Zip: '17450'
+        City: 'ST LAURENT DE LA PRÉE'
+        Mail: charmilles17@wanadoo.fr
+        CountryCode: FR
+        Phone1: '05 46 84 00 05'
+        Phone2: '06 71 05 51 54'
+        Fax: '05 46 84 02 84'
+        OpeningDate: '2013-04-27 00:00:00'
+        ClosingDate: '2013-09-14 00:00:00'
+        VilleId: 96
+        CategorieId: 2
+        GeoCoordinateX: '45.99008181'
+        GeoCoordinateY: '-1.051871181'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '297'
+        PlanPath: uploads/etablissements/50c0ba4b261a1.jpeg
+        Vignette: uploads/etablissements/50c07e438ad4e.jpeg
+        Active: true
+    72:
+        Code: 32
+        Slug: domaine-des-chenes-verts
+        Name: 'Domaine des Chênes Verts '
+        Title: null
+        Address1: 'Route de Sarlat'
+        Address2: Souillac
+        Zip: '24370'
+        City: 'CALVIAC EN PÉRIGORD'
+        Mail: jfg@sky.lu
+        CountryCode: FR
+        Phone1: '05 53 59 21 07'
+        Phone2: '06 31 53 93 18'
+        Fax: '05 53 31 05 51'
+        OpeningDate: '2013-04-13 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 49
+        CategorieId: 3
+        GeoCoordinateX: '44.86323045'
+        GeoCoordinateY: '1.297008991'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '176'
+        PlanPath: uploads/etablissements/50c1b42c2e166.jpeg
+        Vignette: uploads/etablissements/50c07e7dc139a.jpeg
+        Active: true
+    73:
+        Code: 200
+        Slug: domaine-des-iscles
+        Name: 'Domaine des Iscles'
+        Title: null
+        Address1: 'Route du Plan d’Eau'
+        Address2: ''
+        Zip: '13640'
+        City: 'LA ROQUE D ANTHERON'
+        Mail: acciscles@village-center.fr
+        CountryCode: FR
+        Phone1: '0825 00 53 26'
+        Phone2: ''
+        Fax: '04 42 50 55 29'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 152
+        CategorieId: 2
+        GeoCoordinateX: '43.7281889'
+        GeoCoordinateY: '5.3209877'
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: uploads/etablissements/50c07a25e504c.jpeg
+        Active: true
+    74:
+        Code: 48
+        Slug: domaine-des-naiades
+        Name: 'Domaine des Naïades'
+        Title: null
+        Address1: 'St Pons les Mûres'
+        Address2: 'S T A C F'
+        Zip: '83310'
+        City: GRIMAUD
+        Mail: info@lesnaiades.com
+        CountryCode: FR
+        Phone1: '04 94 55 67 80'
+        Phone2: '04 94 55 67 80'
+        Fax: '04 94 55 67 81'
+        OpeningDate: '2013-03-29 00:00:00'
+        ClosingDate: '2013-10-12 00:00:00'
+        VilleId: 14
+        CategorieId: 2
+        GeoCoordinateX: '43.28539469'
+        GeoCoordinateY: '6.57928437'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '470'
+        PlanPath: uploads/etablissements/50c0bb3be691e.jpeg
+        Vignette: uploads/etablissements/50c07f79a5def.jpeg
+        Active: true
+    75:
+        Code: 175
+        Slug: domaine-des-pins
+        Name: 'Domaine des Pins'
+        Title: null
+        Address1: '151 Avenue de la Faye'
+        Address2: ''
+        Zip: '85270'
+        City: 'ST HILAIRE DE RIEZ'
+        Mail: info@ledomainedespins.com
+        CountryCode: FR
+        Phone1: '02 51 58 23 33'
+        Phone2: '06 32 12 37 65'
+        Fax: '02 51 58 29 93'
+        OpeningDate: '2013-04-12 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 63
+        CategorieId: 2
+        GeoCoordinateX: '46.738375'
+        GeoCoordinateY: '-1.978047'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '140'
+        PlanPath: uploads/etablissements/50c0b1e2e576d.jpeg
+        Vignette: uploads/etablissements/50c077d39f6a9.jpeg
+        Active: true
+    76:
+        Code: 201
+        Slug: domaine-du-bosquet-residence
+        Name: 'Domaine du Bosquet (Résidence)'
+        Title: null
+        Address1: 'Lieu dit Lafont'
+        Address2: 'Rue de la Vedrenne'
+        Zip: '19300'
+        City: EGLETONS
+        Mail: accdomainedubosquet@village-center.fr
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 117
+        CategorieId: 3
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    77:
+        Code: 49
+        Slug: domaine-du-cros-d-auzon
+        Name: 'Domaine du Cros d''Auzon '
+        Title: null
+        Address1: 'Quartier de la Gare'
+        Address2: 'St Maurice d''Ardèche'
+        Zip: '07200'
+        City: 'ST MAURICE D''ARDECHE'
+        Mail: 0475370102@fax.contact-everyone.fr
+        CountryCode: FR
+        Phone1: '04 75 37 75 86'
+        Phone2: '06 30 82 84 31'
+        Fax: '04 75 37 01 02'
+        OpeningDate: '2013-04-12 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 68
+        CategorieId: 2
+        GeoCoordinateX: '44.53427499'
+        GeoCoordinateY: '4.406890869'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '170'
+        PlanPath: uploads/etablissements/50c0bb50766e0.jpeg
+        Vignette: uploads/etablissements/50c07f87dae28.jpeg
+        Active: true
+    78:
+        Code: 202
+        Slug: domaine-du-golf-residence
+        Name: 'Domaine du Golf (Résidence)'
+        Title: null
+        Address1: 'Lieu-dit Launac Le Vieux'
+        Address2: '1 chemin de l’Aire'
+        Zip: '34690'
+        City: FABREGUES
+        Mail: accdomainedugolf@village-center.fr
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 125
+        CategorieId: 3
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    79:
+        Code: 71
+        Slug: domaine-du-lac-de-miel
+        Name: 'Domaine du Lac de Miel '
+        Title: null
+        Address1: ''
+        Address2: ''
+        Zip: '19190'
+        City: BEYNAT
+        Mail: info@camping-miel.com
+        CountryCode: FR
+        Phone1: '05 55 85 50 66'
+        Phone2: '06 08 31 87 93'
+        Fax: '05 55 85 57 96'
+        OpeningDate: '2013-05-01 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 46
+        CategorieId: 3
+        GeoCoordinateX: '45.13193732'
+        GeoCoordinateY: '1.762683392'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '180'
+        PlanPath: uploads/etablissements/50c0bcae3dd81.jpeg
+        Vignette: uploads/etablissements/50c080c38220e.jpeg
+        Active: true
+    80:
+        Code: 50
+        Slug: domaine-du-verdon
+        Name: 'Domaine du Verdon '
+        Title: null
+        Address1: 'La Salaou'
+        Address2: ''
+        Zip: '04120'
+        City: CASTELLANE
+        Mail: 0492836937@fax.contact-everyone.fr
+        CountryCode: FR
+        Phone1: '04 92 83 61 29'
+        Phone2: '06 07 27 84 72'
+        Fax: '04 92 83 69 37'
+        OpeningDate: '2013-05-15 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 12
+        CategorieId: 2
+        GeoCoordinateX: '43.83920493'
+        GeoCoordinateY: '6.493869424'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '500'
+        PlanPath: uploads/etablissements/50c0bb8a5a3e1.jpeg
+        Vignette: uploads/etablissements/50c07fa7aba44.jpeg
+        Active: true
+    81:
+        Code: 219
+        Slug: domaine-d-anghione
+        Name: 'Domaine d’Anghione'
+        Title: null
+        Address1: 'Route de la plage'
+        Address2: ''
+        Zip: '20213'
+        City: 'CASTELLARE DI CASINCA'
+        Mail: accanghione@village-center.fr
+        CountryCode: FR
+        Phone1: '04 95 36 50 22'
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 114
+        CategorieId: 4
+        GeoCoordinateX: '42.4764651'
+        GeoCoordinateY: '9.5296097'
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: uploads/etablissements/50c07b7d004ec.jpeg
+        Active: true
+    82:
+        Code: 204
+        Slug: domaine-d-enserune-residence
+        Name: 'Domaine d’Ensérune (Résidence)'
+        Title: null
+        Address1: 'Promenade de l’ancien stade'
+        Address2: ''
+        Zip: '34440'
+        City: COLOMBIERS
+        Mail: accdomainedenserune@village-center.fr
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 116
+        CategorieId: 3
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    83:
+        Code: 203
+        Slug: dune-blanche
+        Name: 'Dune Blanche'
+        Title: null
+        Address1: 'Route d’Etaples'
+        Address2: ''
+        Zip: '62176'
+        City: CAMIERS
+        Mail: accduneblanche@village-center.fr
+        CountryCode: FR
+        Phone1: '03 21 09 78 48'
+        Phone2: ''
+        Fax: '03 21 09 79 59'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 119
+        CategorieId: 5
+        GeoCoordinateX: '50.5584400'
+        GeoCoordinateY: '1.6182947'
+        VideoPath: null
+        Image360Path: null
+        Capacite: null
+        PlanPath: uploads/etablissements/50c1b23ec9191.jpeg
+        Vignette: uploads/etablissements/50c07a57d7e78.jpeg
+        Active: true
+    84:
+        Code: 51
+        Slug: dunes
+        Name: 'Dunes '
+        Title: null
+        Address1: 'Voie de Barcelone'
+        Address2: ''
+        Zip: '66440'
+        City: TORREILLES
+        Mail: 0468283257@fax.contact-everyone.fr
+        CountryCode: FR
+        Phone1: '04 68 28 38 29'
+        Phone2: '06 70 93 31 47'
+        Fax: '04 68 28 32 57'
+        OpeningDate: '2013-04-12 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 7
+        CategorieId: 3
+        GeoCoordinateX: '42.76536313'
+        GeoCoordinateY: '3.031582832'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '615'
+        PlanPath: uploads/etablissements/50c1bb2842e06.jpeg
+        Vignette: uploads/etablissements/50c07fb512fb5.jpeg
+        Active: true
+    85:
+        Code: 52
+        Slug: eden
+        Name: 'Eden '
+        Title: null
+        Address1: 'Allée de Tournefort'
+        Address2: 'Route de Palavas'
+        Zip: '34970'
+        City: LATTES
+        Mail: latradition@sfr.fr
+        CountryCode: FR
+        Phone1: '04 67 15 11 05'
+        Phone2: '06 76 60 51 67'
+        Fax: '04 67 15 11 31'
+        OpeningDate: '2013-05-01 00:00:00'
+        ClosingDate: '2013-08-31 00:00:00'
+        VilleId: 20
+        CategorieId: 2
+        GeoCoordinateX: '43.54960955'
+        GeoCoordinateY: '3.894379735'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '302'
+        PlanPath: uploads/etablissements/50c0bba15c7c2.jpeg
+        Vignette: uploads/etablissements/50c07fc17bf54.jpeg
+        Active: true
+    86:
+        Code: 53
+        Slug: embruns
+        Name: 'Embruns '
+        Title: null
+        Address1: 'Avenue Edouard Branly'
+        Address2: Claouey
+        Zip: '33950'
+        City: LÈGE-CAP-FERRET
+        Mail: 0556600479@fax.contact-everyone.fr
+        CountryCode: FR
+        Phone1: '05 56 60 70 76'
+        Phone2: '06 30 86 18 05'
+        Fax: '05 56 60 04 79'
+        OpeningDate: '2013-04-30 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 89
+        CategorieId: 3
+        GeoCoordinateX: '44.75173929'
+        GeoCoordinateY: '-1.187531948'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '750'
+        PlanPath: uploads/etablissements/50c1bb53eb9c8.jpeg
+        Vignette: uploads/etablissements/50c07fcd601a0.jpeg
+        Active: true
+    87:
+        Code: 205
+        Slug: ensoya
+        Name: Ensoya
+        Title: null
+        Address1: '54 rue de Perpignan'
+        Address2: ''
+        Zip: '11130'
+        City: SIGEAN
+        Mail: ''
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 105
+        CategorieId: 5
+        GeoCoordinateX: '43.0247845'
+        GeoCoordinateY: '2.9771233'
+        VideoPath: null
+        Image360Path: null
+        Capacite: null
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: true
+    88:
+        Code: 234
+        Slug: etangs-fleuris
+        Name: 'Etangs Fleuris'
+        Title: null
+        Address1: 'Route de la Couture '
+        Address2: ''
+        Zip: '77131'
+        City: TOUQUIN
+        Mail: contact@etangs-fleuris.com
+        CountryCode: FR
+        Phone1: '01 64 04 16 36'
+        Phone2: ''
+        Fax: '01 64 04 12 28'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-04 00:00:00'
+        VilleId: 121
+        CategorieId: 3
+        GeoCoordinateX: '48.731478'
+        GeoCoordinateY: '3.04673600000001'
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: uploads/etablissements/50c07cdbf27aa.jpeg
+        Active: true
+    89:
+        Code: 240
+        Slug: etoile-de-mer
+        Name: 'Etoile de Mer'
+        Title: null
+        Address1: 'La Pagesse'
+        Address2: ''
+        Zip: '34410'
+        City: SERIGNAN
+        Mail: info@campingetoiledemer.com
+        CountryCode: FR
+        Phone1: '04 67 77 40 82'
+        Phone2: ''
+        Fax: '04 67 35 07 85'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-04 00:00:00'
+        VilleId: 8
+        CategorieId: 3
+        GeoCoordinateX: '43.2690513'
+        GeoCoordinateY: '3.332877100000019'
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: uploads/etablissements/50c07d430c3b5.jpeg
+        Active: true
+    90:
+        Code: 54
+        Slug: eurolac
+        Name: 'Eurolac '
+        Title: null
+        Address1: 'Promenade de l''Etang'
+        Address2: ''
+        Zip: '40200'
+        City: AUREILHAN
+        Mail: jeandaniel44@gmail.com
+        CountryCode: FR
+        Phone1: '05 58 09 02 87'
+        Phone2: '06 89 43 10 93'
+        Fax: '05 58 09 41 89'
+        OpeningDate: '2013-04-12 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 91
+        CategorieId: 2
+        GeoCoordinateX: '44.22287547'
+        GeoCoordinateY: '-1.203721762'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '560'
+        PlanPath: uploads/etablissements/50c0bbb85b742.jpeg
+        Vignette: uploads/etablissements/50c07fdaccdbe.jpeg
+        Active: true
+    91:
+        Code: 206
+        Slug: europe
+        Name: Europe
+        Title: null
+        Address1: '31 route de Frontignan'
+        Address2: ''
+        Zip: '34110'
+        City: 'VIC LA GARDIOLE'
+        Mail: acceurope@village-center.fr
+        CountryCode: FR
+        Phone1: '04 67 18 02 61'
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 158
+        CategorieId: 2
+        GeoCoordinateX: '43.4915997'
+        GeoCoordinateY: '3.7792969'
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: uploads/etablissements/50c07a87bdb97.jpeg
+        Active: true
+    92:
+        Code: 55
+        Slug: fanal
+        Name: 'Fanal '
+        Title: null
+        Address1: 'Rue du Fanal'
+        Address2: ''
+        Zip: '14230'
+        City: ISIGNY-SUR-MER
+        Mail: info@camping-lefanal.com
+        CountryCode: FR
+        Phone1: '02 31 21 33 20'
+        Phone2: '06 89 79 37 64'
+        Fax: '02 31 22 12 00'
+        OpeningDate: '2013-04-12 00:00:00'
+        ClosingDate: '2013-09-29 00:00:00'
+        VilleId: 66
+        CategorieId: 2
+        GeoCoordinateX: '49.31883866'
+        GeoCoordinateY: '-1.108932495'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '240'
+        PlanPath: uploads/etablissements/50c1bb73e22f8.jpeg
+        Vignette: uploads/etablissements/50c07fe6b006b.jpeg
+        Active: true
+    93:
+        Code: 56
+        Slug: farigoulette
+        Name: 'Farigoulette '
+        Title: null
+        Address1: 'Lac de St Laurent'
+        Address2: ''
+        Zip: '04500'
+        City: 'ST LAURENT DU VERDON'
+        Mail: info@camping-la-farigoulette.com
+        CountryCode: FR
+        Phone1: '04 92 74 41 62'
+        Phone2: '06 40 21 14 23'
+        Fax: '09 70 06 76 78'
+        OpeningDate: '2013-05-15 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 24
+        CategorieId: 1
+        GeoCoordinateX: '43.73420486'
+        GeoCoordinateY: '6.077772975'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '219'
+        PlanPath: uploads/etablissements/50c1bb8a7f4a5.jpeg
+        Vignette: uploads/etablissements/50c07ff28b033.jpeg
+        Active: true
+    94:
+        Code: 116
+        Slug: ferme-de-la-serraz
+        Name: 'Ferme de la Serraz '
+        Title: null
+        Address1: 'Rue de la Poste'
+        Address2: ''
+        Zip: '74210'
+        City: DOUSSARD
+        Mail: info@campinglaserraz.com
+        CountryCode: FR
+        Phone1: '04 50 44 30 68'
+        Phone2: '06 88 71 85 65'
+        Fax: '04 50 44 81 07'
+        OpeningDate: '2013-05-04 00:00:00'
+        ClosingDate: '2013-09-14 00:00:00'
+        VilleId: 81
+        CategorieId: 1
+        GeoCoordinateX: '45.7750889'
+        GeoCoordinateY: '6.226780415'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '184'
+        PlanPath: uploads/etablissements/50c1b016d6b29.jpeg
+        Vignette: uploads/etablissements/50c0766602664.jpeg
+        Active: true
+    95:
+        Code: 207
+        Slug: fonserane-residence
+        Name: 'Fonserane (Résidence)'
+        Title: null
+        Address1: '190 Rue des Christols'
+        Address2: ''
+        Zip: '34500'
+        City: BEZIERS
+        Mail: accfonserane@village-center.fr
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 126
+        CategorieId: 3
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    96:
+        Code: 208
+        Slug: fontainebleau-residence
+        Name: 'Fontainebleau (Résidence)'
+        Title: null
+        Address1: '196 Avenue de Stalingrad'
+        Address2: ''
+        Zip: '94550'
+        City: 'CHEVILLY LARUE'
+        Mail: accfontainebleau@village-center.com
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 118
+        CategorieId: 3
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    97:
+        Code: 57
+        Slug: fontaines
+        Name: 'Fontaines '
+        Title: null
+        Address1: 'Route de St Nazaire'
+        Address2: ''
+        Zip: '66140'
+        City: CANET-EN-ROUSSILLON
+        Mail: campinglesfontaines@wanadoo.fr
+        CountryCode: FR
+        Phone1: '04 68 80 22 57'
+        Phone2: '06 31 25 40 69'
+        Fax: '04 68 80 22 57'
+        OpeningDate: '2013-05-01 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 16
+        CategorieId: 3
+        GeoCoordinateX: '42.68903253'
+        GeoCoordinateY: '2.998972535'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '160'
+        PlanPath: uploads/etablissements/50c1bba72f8e8.jpeg
+        Vignette: uploads/etablissements/50c07ffe41534.jpeg
+        Active: true
+    98:
+        Code: 215
+        Slug: foret
+        Name: Forêt
+        Title: null
+        Address1: 'Route de Biscarrosse'
+        Address2: ''
+        Zip: '33115'
+        City: 'PYLA SUR MER'
+        Mail: acclaforet@village-center.fr
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 111
+        CategorieId: 3
+        GeoCoordinateX: '44.5847824'
+        GeoCoordinateY: '-1.2091827'
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: true
+    99:
+        Code: 209
+        Slug: free-time
+        Name: 'Free Time'
+        Title: null
+        Address1: 'Via dei Cipressi'
+        Address2: ''
+        Zip: '57020'
+        City: 'MARINA DI BIBBONA'
+        Mail: ''
+        CountryCode: IT
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 106
+        CategorieId: 3
+        GeoCoordinateX: '43.2463281'
+        GeoCoordinateY: '10.5306101'
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: true
+    100:
+        Code: 58
+        Slug: frenes
+        Name: 'Frênes '
+        Title: null
+        Address1: 'Avenue du Pylone'
+        Address2: 'La Brague'
+        Zip: '06600'
+        City: ANTIBES
+        Mail: contact@camping-lesfrenes.com
+        CountryCode: FR
+        Phone1: '04 93 33 36 52'
+        Phone2: '06 07 59 79 02'
+        Fax: '04 93 74 66 00'
+        OpeningDate: '2013-05-18 00:00:00'
+        ClosingDate: '2013-09-21 00:00:00'
+        VilleId: 15
+        CategorieId: 3
+        GeoCoordinateX: '43.61142443'
+        GeoCoordinateY: '7.123936415'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '110'
+        PlanPath: uploads/etablissements/50c1bbbe08830.jpeg
+        Vignette: uploads/etablissements/50c0800b0c8c9.jpeg
+        Active: true
+    101:
+        Code: 59
+        Slug: front-de-mer
+        Name: 'Front de Mer'
+        Title: null
+        Address1: 'Avenue du Grau'
+        Address2: ''
+        Zip: '66700'
+        City: ARGELÈS-SUR-MER
+        Mail: 0468818721@fax.contact-everyone.fr
+        CountryCode: FR
+        Phone1: '04 68 81 08 70'
+        Phone2: '06 71 32 03 35'
+        Fax: '04 68 81 87 21'
+        OpeningDate: '2013-04-12 00:00:00'
+        ClosingDate: '2013-09-29 00:00:00'
+        VilleId: 1
+        CategorieId: 2
+        GeoCoordinateX: '42.546969'
+        GeoCoordinateY: '3.04659'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '588'
+        PlanPath: uploads/etablissements/50c0bc05855fe.jpeg
+        Vignette: uploads/etablissements/50c0803cdc7df.jpeg
+        Active: true
+    102:
+        Code: 252
+        Slug: gavina
+        Name: Gavina
+        Title: null
+        Address1: 'Playa  Creixell'
+        Address2: ''
+        Zip: '43839'
+        City: 'CREIXELL DE MAR'
+        Mail: ''
+        CountryCode: ES
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 154
+        CategorieId: 3
+        GeoCoordinateX: '41.15716'
+        GeoCoordinateY: '1.44153'
+        VideoPath: null
+        Image360Path: null
+        Capacite: null
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: true
+    103:
+        Code: 60
+        Slug: grand-terre
+        Name: 'Grand''Terre '
+        Title: null
+        Address1: 'La Grande Terre'
+        Address2: ''
+        Zip: '07120'
+        City: RUOMS
+        Mail: grandterre@wanadoo.fr
+        CountryCode: FR
+        Phone1: '04 75 39 64 94'
+        Phone2: '06 89 07 71 22'
+        Fax: '04 75 39 78 62'
+        OpeningDate: '2013-04-12 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 78
+        CategorieId: 3
+        GeoCoordinateX: '44.42471997'
+        GeoCoordinateY: '4.331874847'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '296'
+        PlanPath: uploads/etablissements/50c0bc240f18a.jpeg
+        Vignette: uploads/etablissements/50c08054a6bdd.jpeg
+        Active: true
+    104:
+        Code: 136
+        Slug: grande-italia
+        Name: 'Grande Italia'
+        Title: null
+        Address1: 'Zona Demaniale 10/I'
+        Address2: ''
+        Zip: 'i 30015'
+        City: 'SOTTOMARINA DI CHIOGGIA '
+        Mail: info@campinggrandeitalia.com
+        CountryCode: IT
+        Phone1: '0039 0 41 405 6 64'
+        Phone2: '06 32 12 95 69'
+        Fax: '04 15 50 68 77'
+        OpeningDate: '2013-04-12 00:00:00'
+        ClosingDate: '2013-09-29 00:00:00'
+        VilleId: 37
+        CategorieId: null
+        GeoCoordinateX: '45.226879'
+        GeoCoordinateY: '12.294774'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '135'
+        PlanPath: uploads/etablissements/50c0b1185446d.jpeg
+        Vignette: uploads/etablissements/50c0776c29dd7.jpeg
+        Active: true
+    105:
+        Code: 244
+        Slug: hippocampe
+        Name: Hippocampe
+        Title: null
+        Address1: 'Quartier La Croix'
+        Address2: ''
+        Zip: '04290'
+        City: VOLONNE
+        Mail: camping@l-hippocampe.com
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-04 00:00:00'
+        VilleId: 162
+        CategorieId: 2
+        GeoCoordinateX: '44.106111'
+        GeoCoordinateY: '6.015556'
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: uploads/etablissements/50c07d71e10ea.jpeg
+        Active: true
+    106:
+        Code: 210
+        Slug: hotel-du-golf-hotel
+        Name: 'Hôtel du Golf (Hôtel)'
+        Title: null
+        Address1: '38 Avenue des Hameaux du Golf'
+        Address2: ''
+        Zip: '34990'
+        City: JUVIGNAC
+        Mail: ''
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 150
+        CategorieId: 3
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    107:
+        Code: 63
+        Slug: huttes
+        Name: 'Huttes '
+        Title: null
+        Address1: '15 rue des Seulières'
+        Address2: ''
+        Zip: '17650'
+        City: 'ST DENIS D''OLÉRON'
+        Mail: info@camping-les-huttes.com
+        CountryCode: FR
+        Phone1: '05 46 75 21 69'
+        Phone2: '06 89 79 45 04'
+        Fax: '05 46 75 91 10'
+        OpeningDate: '2013-04-26 00:00:00'
+        ClosingDate: '2013-09-08 00:00:00'
+        VilleId: 84
+        CategorieId: 2
+        GeoCoordinateX: '46.01528621'
+        GeoCoordinateY: '-1.39242053'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '205'
+        PlanPath: uploads/etablissements/50c1bc001ca4f.jpeg
+        Vignette: uploads/etablissements/50c0806a2ba52.jpeg
+        Active: true
+    108:
+        Code: 64
+        Slug: ideal
+        Name: 'Idéal '
+        Title: null
+        Address1: '715 Route de Chaparon'
+        Address2: ''
+        Zip: '74210'
+        City: LATHUILE
+        Mail: 0450443659@fax.contact-everyone.fr
+        CountryCode: FR
+        Phone1: '04 50 44 32 97'
+        Phone2: '06 71 86 52 92'
+        Fax: '04 50 44 36 59'
+        OpeningDate: '2013-04-27 00:00:00'
+        ClosingDate: '2013-09-22 00:00:00'
+        VilleId: 80
+        CategorieId: 2
+        GeoCoordinateX: '45.795155'
+        GeoCoordinateY: '6.205735803'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '300'
+        PlanPath: uploads/etablissements/50c1bc155d1bb.jpeg
+        Vignette: uploads/etablissements/50c08073e5b11.jpeg
+        Active: true
+    109:
+        Code: 65
+        Slug: ilates
+        Name: Ilates
+        Title: null
+        Address1: 'Route du Grouin'
+        Address2: ''
+        Zip: '17111'
+        City: LOIX
+        Mail: camping.les.ilates@flowercampings.com
+        CountryCode: FR
+        Phone1: '05 46 29 05 43'
+        Phone2: '06 89 72 58 96'
+        Fax: '05 46 29 06 79'
+        OpeningDate: '2013-04-12 00:00:00'
+        ClosingDate: '2013-09-28 00:00:00'
+        VilleId: 94
+        CategorieId: 2
+        GeoCoordinateX: '46.22760164'
+        GeoCoordinateY: '-1.426178813'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '228'
+        PlanPath: uploads/etablissements/50c1bc2b3d51f.jpeg
+        Vignette: uploads/etablissements/50c0807d2e9eb.jpeg
+        Active: true
+    110:
+        Code: 211
+        Slug: ile-du-rhin
+        Name: 'Ile du Rhin'
+        Title: null
+        Address1: 'Zone touristique Ile du Rhin'
+        Address2: ''
+        Zip: '68600'
+        City: BIESHEIM
+        Mail: acciledurhin@village-center.fr
+        CountryCode: FR
+        Phone1: '03 89 72 57 95'
+        Phone2: ''
+        Fax: '03 89 72 14 21'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 159
+        CategorieId: 4
+        GeoCoordinateX: '48.0226826'
+        GeoCoordinateY: '7.5783348'
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: uploads/etablissements/50c07afbdbe73.jpeg
+        Active: true
+    111:
+        Code: 223
+        Slug: iles
+        Name: Iles
+        Title: null
+        Address1: '245 route des Lacs'
+        Address2: ''
+        Zip: '74190'
+        City: PASSY
+        Mail: acciles@village-center.fr
+        CountryCode: FR
+        Phone1: '0825 00 53 18'
+        Phone2: ''
+        Fax: '04 50 18 83 76'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 137
+        CategorieId: 3
+        GeoCoordinateX: '45.9235838981'
+        GeoCoordinateY: '6.65056899541'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '223'
+        PlanPath: null
+        Vignette: uploads/etablissements/50c07bbf72e3e.jpeg
+        Active: true
+    112:
+        Code: 67
+        Slug: internacional-de-calonge
+        Name: 'Internacional de Calonge '
+        Title: null
+        Address1: 'Ctra Palamos A St Feliu Km 7.6'
+        Address2: ''
+        Zip: '17251'
+        City: CALONGE
+        Mail: info@intercalonge.com
+        CountryCode: ES
+        Phone1: '0034 972 651 233'
+        Phone2: '06 72 05 07 05 '
+        Fax: '0034 972 652 507'
+        OpeningDate: '2013-04-12 00:00:00'
+        ClosingDate: '2013-09-30 00:00:00'
+        VilleId: 27
+        CategorieId: 3
+        GeoCoordinateX: '41.83260316'
+        GeoCoordinateY: '3.084572554'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '712'
+        PlanPath: uploads/etablissements/50c0bc72972ce.jpeg
+        Vignette: uploads/etablissements/50c080930c53a.jpeg
+        Active: true
+    113:
+        Code: 68
+        Slug: internacional-palamos
+        Name: 'Internacional Palamos '
+        Title: null
+        Address1: 'Cami Cap de Planes'
+        Address2: ''
+        Zip: '17230'
+        City: PALAMOS
+        Mail: info@internacionalpalamos.com
+        CountryCode: ES
+        Phone1: '0034 972 31 47 36'
+        Phone2: '06 30 87 60 57'
+        Fax: '0034 972 31 76 26'
+        OpeningDate: '2013-04-27 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 30
+        CategorieId: 2
+        GeoCoordinateX: '41.857027'
+        GeoCoordinateY: '3.137991'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '453'
+        PlanPath: uploads/etablissements/50c0bc7f3126f.jpeg
+        Vignette: uploads/etablissements/50c0809db4f40.jpeg
+        Active: true
+    114:
+        Code: 212
+        Slug: interpals
+        Name: Interpals
+        Title: null
+        Address1: 'Avenue Mediterranania km 4,5'
+        Address2: ''
+        Zip: '17256'
+        City: 'PLADJA DE PALS'
+        Mail: ''
+        CountryCode: ES
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 107
+        CategorieId: 2
+        GeoCoordinateX: '41.981111'
+        GeoCoordinateY: '3.201111'
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: true
+    115:
+        Code: 213
+        Slug: isles-de-sola-residence
+        Name: 'Isles de Sola (Résidence)'
+        Title: null
+        Address1: '8 rue du Joncal'
+        Address2: ''
+        Zip: '14450'
+        City: 'GRANDCAMP MAISY'
+        Mail: accislesdesola@village-center.fr
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 130
+        CategorieId: 3
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    116:
+        Code: 69
+        Slug: jard
+        Name: 'Jard '
+        Title: null
+        Address1: '123 Bld Maréchal de Lattre de Tassigny'
+        Address2: ''
+        Zip: '85360'
+        City: 'LA TRANCHE SUR MER'
+        Mail: 0251274292@fax.contact-everyone.fr
+        CountryCode: FR
+        Phone1: '02 51 27 43 79'
+        Phone2: '06 89 72 62 08'
+        Fax: '02 51 27 42 92'
+        OpeningDate: '2013-05-18 00:00:00'
+        ClosingDate: '2013-09-14 00:00:00'
+        VilleId: 72
+        CategorieId: 2
+        GeoCoordinateX: '46.34851988'
+        GeoCoordinateY: '-1.387576461'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '350'
+        PlanPath: uploads/etablissements/50c1bc40d03ea.jpeg
+        Vignette: uploads/etablissements/50c080a7ab7ee.jpeg
+        Active: true
+    117:
+        Code: 214
+        Slug: ker-goh-lenn-residence
+        Name: 'Ker Goh Lenn (Résidence)'
+        Title: null
+        Address1: 'Espace tertiaire Atlanparc'
+        Address2: 'Rond-point Kerluhern'
+        Zip: '56890'
+        City: PLESCOP
+        Mail: ''
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 108
+        CategorieId: 3
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    118:
+        Code: 70
+        Slug: lac-bleu
+        Name: 'Lac Bleu '
+        Title: null
+        Address1: 'Quartier La Touche'
+        Address2: ''
+        Zip: '26410'
+        City: 'CHATILLON EN DIOIS'
+        Mail: info@lacbleu-diois.com
+        CountryCode: FR
+        Phone1: '04 75 21 85 30'
+        Phone2: '06 70 85 80 57'
+        Fax: '04 75 21 82 05'
+        OpeningDate: '2013-04-13 00:00:00'
+        ClosingDate: '2013-09-29 00:00:00'
+        VilleId: 67
+        CategorieId: 3
+        GeoCoordinateX: '44.68386545'
+        GeoCoordinateY: '5.450313091'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '130'
+        PlanPath: uploads/etablissements/50c0bc92d3b62.jpeg
+        Vignette: uploads/etablissements/50c080b41c317.jpeg
+        Active: true
+    119:
+        Code: 72
+        Slug: lac-de-thoux-st-cricq
+        Name: 'Lac de Thoux St Cricq'
+        Title: null
+        Address1: 'lieu dit lannes'
+        Address2: ''
+        Zip: '32430'
+        City: THOUX
+        Mail: contact@camping-lacdethoux.com
+        CountryCode: FR
+        Phone1: '05 62 65 71 29'
+        Phone2: '06 74 95 91 86'
+        Fax: '05 62 65 74 81'
+        OpeningDate: '2013-04-27 00:00:00'
+        ClosingDate: '2013-09-08 00:00:00'
+        VilleId: 76
+        CategorieId: 3
+        GeoCoordinateX: '43.68601738'
+        GeoCoordinateY: '1.00292623'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '129'
+        PlanPath: uploads/etablissements/50c0bcb99f0ec.jpeg
+        Vignette: uploads/etablissements/50c080cdc4833.jpeg
+        Active: true
+    151:
+        Code: 137
+        Slug: le-pearl-village-club
+        Name: 'Le Pearl Village Club'
+        Title: null
+        Address1: 'Route de Taxo à la Mer'
+        Address2: ''
+        Zip: '66700'
+        City: 'ARGELES SUR MER'
+        Mail: 0468815529@fax.contact-everyone.fr
+        CountryCode: FR
+        Phone1: '04 68 81 26 49'
+        Phone2: '06 89 79 60 43'
+        Fax: '04 68 81 55 29'
+        OpeningDate: '2013-04-12 00:00:00'
+        ClosingDate: '2013-09-22 00:00:00'
+        VilleId: 1
+        CategorieId: 2
+        GeoCoordinateX: '42.573436'
+        GeoCoordinateY: '3.01918'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '167'
+        PlanPath: uploads/etablissements/50c1b08dd8556.jpeg
+        Vignette: uploads/etablissements/50c077784ddea.jpeg
+        Active: true
+    4:
+        Code: 177
+        Slug: les-ajoncs-d-or
+        Name: 'Les Ajoncs d''Or'
+        Title: null
+        Address1: 'Chemin du Rocher'
+        Address2: ''
+        Zip: '44500'
+        City: 'LA BAULE'
+        Mail: 0240244437@fax.contact-everyone.fr
+        CountryCode: FR
+        Phone1: '02 40 60 33 29'
+        Phone2: '06 31 28 72 24'
+        Fax: '02 40 24 44 37'
+        OpeningDate: '2013-04-27 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 58
+        CategorieId: 3
+        GeoCoordinateX: '47.305775'
+        GeoCoordinateY: '-2.377167'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '215'
+        PlanPath: uploads/etablissements/50c1b1503b389.jpeg
+        Vignette: uploads/etablissements/50c077ecaf24e.jpeg
+        Active: true
+    159:
+        Code: 138
+        Slug: les-pins-maritimes
+        Name: 'Les Pins Maritimes'
+        Title: null
+        Address1: '1633 boulevard de la Marine'
+        Address2: ''
+        Zip: '83400'
+        City: HYÈRES
+        Mail: bieber.jean-claude@neuf.fr
+        CountryCode: FR
+        Phone1: '04 94 66 34 07'
+        Phone2: '06 71 59 02 51'
+        Fax: '04 94 66 33 57'
+        OpeningDate: '2013-04-26 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 13
+        CategorieId: 2
+        GeoCoordinateX: '43.0935263'
+        GeoCoordinateY: '6.16381530'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '700'
+        PlanPath: uploads/etablissements/50c1b0b44fc90.jpeg
+        Vignette: uploads/etablissements/50c0778527a48.jpeg
+        Active: true
+    120:
+        Code: 74
+        Slug: lou-broustaricq
+        Name: 'Lou Broustaricq '
+        Title: null
+        Address1: '2315 Route de Langeot'
+        Address2: ''
+        Zip: '40460'
+        City: SANGUINET
+        Mail: loubrousta@wanadoo.fr
+        CountryCode: FR
+        Phone1: '05 58 82 74 82'
+        Phone2: '06 89 73 93 08'
+        Fax: '05 58 82 10 74'
+        OpeningDate: '2013-04-27 00:00:00'
+        ClosingDate: '2013-09-08 00:00:00'
+        VilleId: 98
+        CategorieId: 2
+        GeoCoordinateX: '44.4990307'
+        GeoCoordinateY: '-1.079460382'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '560'
+        PlanPath: uploads/etablissements/50c0bcc732a1f.jpeg
+        Vignette: uploads/etablissements/50c080da39517.jpeg
+        Active: true
+    121:
+        Code: 75
+        Slug: lou-pignada
+        Name: 'Lou Pignada '
+        Title: null
+        Address1: 'Route d''Azur'
+        Address2: ''
+        Zip: '40660'
+        City: MESSANGES
+        Mail: gm.duplais@orange.fr
+        CountryCode: FR
+        Phone1: '0825 70 40 40'
+        Phone2: '06 08 94 63 04'
+        Fax: '05 58 48 26 53'
+        OpeningDate: '2013-05-01 00:00:00'
+        ClosingDate: '2013-09-29 00:00:00'
+        VilleId: 101
+        CategorieId: 1
+        GeoCoordinateX: '43.79725104'
+        GeoCoordinateY: '-1.381938457'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '430'
+        PlanPath: uploads/etablissements/50c0bcd6dba4b.jpeg
+        Vignette: uploads/etablissements/50c080e516e16.jpeg
+        Active: true
+    122:
+        Code: 238
+        Slug: lou-pignada-ondres
+        Name: 'Lou Pignada Ondres'
+        Title: null
+        Address1: '741 Avenue de la Plage'
+        Address2: ''
+        Zip: '40440'
+        City: ONDRES
+        Mail: info@camping-loupignada.com
+        CountryCode: FR
+        Phone1: '05 59 45 30 65'
+        Phone2: ''
+        Fax: '05 59 45 25 79'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-04 00:00:00'
+        VilleId: 134
+        CategorieId: 2
+        GeoCoordinateX: '43.5695744'
+        GeoCoordinateY: '-1.4602945000000318'
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: uploads/etablissements/50c0b9a433c8e.jpeg
+        Vignette: uploads/etablissements/50c07d136d49a.jpeg
+        Active: true
+    123:
+        Code: 76
+        Slug: loubine
+        Name: 'Loubine '
+        Title: null
+        Address1: '1 Route de la Mer'
+        Address2: ''
+        Zip: '85340'
+        City: OLONNE-SUR-MER
+        Mail: info@la-loubine.fr
+        CountryCode: FR
+        Phone1: '02 51 33 12 92'
+        Phone2: '06 30 89 43 67'
+        Fax: '02 51 33 12 71'
+        OpeningDate: '2013-04-06 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 77
+        CategorieId: 2
+        GeoCoordinateX: '46.54614044'
+        GeoCoordinateY: '-1.805588007'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '401'
+        PlanPath: uploads/etablissements/50c1bc5d4785c.jpeg
+        Vignette: uploads/etablissements/50c080f064c82.jpeg
+        Active: true
+    124:
+        Code: 77
+        Slug: loyada
+        Name: 'Loyada '
+        Title: null
+        Address1: '111 Rue de la Source'
+        Address2: 'Avenue de l''Atlantique'
+        Zip: '85440'
+        City: TALMONT-ST-HILAIRE
+        Mail: 0251203758@fax.contact-everyone.fr
+        CountryCode: FR
+        Phone1: '02 51 21 28 10'
+        Phone2: '06 08 82 07 93'
+        Fax: '02 51 20 37 58'
+        OpeningDate: '2013-04-12 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 79
+        CategorieId: 1
+        GeoCoordinateX: '46.46559831'
+        GeoCoordinateY: '-1.652584076'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '226'
+        PlanPath: uploads/etablissements/50c0bcf14fd5d.jpeg
+        Vignette: uploads/etablissements/50c080fc5f050.jpeg
+        Active: true
+    125:
+        Code: 224
+        Slug: lupins
+        Name: Lupins
+        Title: null
+        Address1: '1 rue de la gare'
+        Address2: ''
+        Zip: '68580'
+        City: 'SEPPOIS LE BAS'
+        Mail: acclupins@village-center.fr
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 160
+        CategorieId: 3
+        GeoCoordinateX: '47.5376882'
+        GeoCoordinateY: '7.1824729'
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: true
+    126:
+        Code: 83
+        Slug: maire
+        Name: 'Maïre '
+        Title: null
+        Address1: ''
+        Address2: ''
+        Zip: '34410'
+        City: SÉRIGNAN
+        Mail: 0467325616@fax.contact-everyone.fr
+        CountryCode: FR
+        Phone1: '04 67 39 72 00'
+        Phone2: '06 32 29 48 31'
+        Fax: '04 67 32 56 16'
+        OpeningDate: '2013-04-27 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 8
+        CategorieId: 3
+        GeoCoordinateX: '43.27113581'
+        GeoCoordinateY: '3.329329491'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '206'
+        PlanPath: null
+        Vignette: uploads/etablissements/50c08145cad60.jpeg
+        Active: true
+    127:
+        Code: 237
+        Slug: mar-i-sol
+        Name: 'Mar i Sol'
+        Title: null
+        Address1: 'Boulevard de le plage'
+        Address2: ''
+        Zip: '66440'
+        City: TORREILLES
+        Mail: nuria@camping-marisol.com
+        CountryCode: FR
+        Phone1: '04 68 28 04 07'
+        Phone2: ''
+        Fax: '04 68 28 18 23'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-04 00:00:00'
+        VilleId: 7
+        CategorieId: 1
+        GeoCoordinateX: '42.767187'
+        GeoCoordinateY: '3.0327310000000125'
+        VideoPath: null
+        Image360Path: null
+        Capacite: null
+        PlanPath: null
+        Vignette: uploads/etablissements/50c07d042f4b4.jpeg
+        Active: true
+    128:
+        Code: 79
+        Slug: mare-e-pineta
+        Name: 'Mare e Pineta '
+        Title: null
+        Address1: 'Viale delle Acacie, 67'
+        Address2: ''
+        Zip: '44029'
+        City: 'LIDO DI SPINA'
+        Mail: rosesteban@hotmail.fr
+        CountryCode: IT
+        Phone1: '0039 0533 330 110'
+        Phone2: '06 88 98 66 38'
+        Fax: '0039 0533 330 052'
+        OpeningDate: '2013-04-20 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 38
+        CategorieId: 2
+        GeoCoordinateX: '44.65568393'
+        GeoCoordinateY: '12.24521756'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '1270'
+        PlanPath: uploads/etablissements/50c0bd08e5a04.jpeg
+        Vignette: uploads/etablissements/50c08107bd9f4.jpeg
+        Active: true
+    129:
+        Code: 251
+        Slug: marina
+        Name: 'Marina '
+        Title: null
+        Address1: '8 Via  dei Campeggi'
+        Address2: ''
+        Zip: '48122'
+        City: 'PUNTA MARINA TERME'
+        Mail: 'info@marinacampingvillage.com '
+        CountryCode: IT
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 166
+        CategorieId: 3
+        GeoCoordinateX: '44.4319948'
+        GeoCoordinateY: '12.2988617'
+        VideoPath: null
+        Image360Path: null
+        Capacite: null
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: true
+    130:
+        Code: 80
+        Slug: marine
+        Name: 'Marine '
+        Title: null
+        Address1: '2196 Route de l''Espiguette'
+        Address2: ''
+        Zip: '30240'
+        City: 'LE GRAU-DU-ROI'
+        Mail: 0466515045@fax.contact-everyone.fr
+        CountryCode: FR
+        Phone1: '04 66 53 36 90'
+        Phone2: '04 66 53 20 31'
+        Fax: '04 66 51 50 45'
+        OpeningDate: '2013-04-12 00:00:00'
+        ClosingDate: '2013-09-29 00:00:00'
+        VilleId: 2
+        CategorieId: 2
+        GeoCoordinateX: '43.50737094'
+        GeoCoordinateY: '4.145380855'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '293'
+        PlanPath: uploads/etablissements/50c1bc7486858.jpeg
+        Vignette: uploads/etablissements/50c0812258939.jpeg
+        Active: true
+    131:
+        Code: 81
+        Slug: marsouins
+        Name: Marsouins
+        Title: null
+        Address1: 'Avenue de la Retirada 1939'
+        Address2: ''
+        Zip: '66702'
+        City: ARGELÈS-SUR-MER
+        Mail: marsouins@gmail.com
+        CountryCode: FR
+        Phone1: '04 68 81 14 81'
+        Phone2: '06 08 70 01 85'
+        Fax: '04 68 95 93 58'
+        OpeningDate: '2013-05-04 00:00:00'
+        ClosingDate: '2013-09-21 00:00:00'
+        VilleId: 1
+        CategorieId: 2
+        GeoCoordinateX: '42.56372132'
+        GeoCoordinateY: '3.034651279'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '586'
+        PlanPath: null
+        Vignette: uploads/etablissements/50c0812e76f6f.jpeg
+        Active: true
+    132:
+        Code: 82
+        Slug: marze
+        Name: 'Marze '
+        Title: null
+        Address1: 'Str. Prov. N 158 Km 30.200'
+        Address2: ''
+        Zip: '58046'
+        City: 'MARINA DI GROSSETTO'
+        Mail: lemarze@boschettoholiday.it
+        CountryCode: IT
+        Phone1: '0039 0564 35501'
+        Phone2: '06 70 83 80 92'
+        Fax: '0039 564744503'
+        OpeningDate: '2013-04-20 00:00:00'
+        ClosingDate: '2013-09-08 00:00:00'
+        VilleId: 45
+        CategorieId: null
+        GeoCoordinateX: '42.74528669'
+        GeoCoordinateY: '10.94759166'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '500'
+        PlanPath: null
+        Vignette: uploads/etablissements/50c08139ec548.jpeg
+        Active: true
+    133:
+        Code: 2
+        Slug: mas
+        Name: Mas
+        Title: null
+        Address1: Sireuil
+        Address2: ''
+        Zip: '24620'
+        City: 'LES EYZIES DE TAYAC '
+        Mail: 0553311273@fax.contact-everyone.fr
+        CountryCode: FR
+        Phone1: '05 53 29 68 06'
+        Phone2: '05 53 29 68 06'
+        Fax: '05 53 31 12 73'
+        OpeningDate: '2013-05-03 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 4
+        CategorieId: 2
+        GeoCoordinateX: '44.93689388'
+        GeoCoordinateY: '1.085318327'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '137'
+        PlanPath: uploads/etablissements/50c1b1d5302c2.jpeg
+        Vignette: uploads/etablissements/50c07a0aa125e.jpeg
+        Active: true
+    134:
+        Code: 225
+        Slug: mas-des-cigales-residence
+        Name: 'Mas des Cigales (Résidence)'
+        Title: null
+        Address1: '384 rue des Romarins'
+        Address2: ''
+        Zip: '34160'
+        City: CASTRIES
+        Mail: accmasdescigales@village-center.fr
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 127
+        CategorieId: 3
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    135:
+        Code: 133
+        Slug: masia
+        Name: Masia
+        Title: null
+        Address1: 'C/Colon,44'
+        Address2: ''
+        Zip: '17300'
+        City: BLANES
+        Mail: fontclaude@orange.fr
+        CountryCode: ES
+        Phone1: '0034 97 23 31 013'
+        Phone2: '06 07 78 00 16'
+        Fax: '0034 972 33 31 28'
+        OpeningDate: '2013-04-27 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 31
+        CategorieId: 4
+        GeoCoordinateX: '41.6636747'
+        GeoCoordinateY: '2.78128019'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '757'
+        PlanPath: uploads/etablissements/50c0b0df2fd9e.jpeg
+        Vignette: uploads/etablissements/50c0773707b45.jpeg
+        Active: true
+    136:
+        Code: 84
+        Slug: moulin
+        Name: Moulin
+        Title: null
+        Address1: '3 chemin du camping'
+        Address2: ''
+        Zip: '39130'
+        City: PATORNAY
+        Mail: jacques.noelle@wanadoo.fr
+        CountryCode: FR
+        Phone1: '03 84 48 31 21'
+        Phone2: '06 31 43 97 04'
+        Fax: '03 84 44 71 21'
+        OpeningDate: '2013-04-26 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 73
+        CategorieId: 2
+        GeoCoordinateX: '46.58725895'
+        GeoCoordinateY: '5.700777769'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '227'
+        PlanPath: uploads/etablissements/50c1bcb21bb13.jpeg
+        Vignette: uploads/etablissements/50c08152150d5.jpeg
+        Active: true
+    137:
+        Code: 218
+        Slug: neptune
+        Name: Neptune
+        Title: null
+        Address1: 'Avenue de la Retirada plage Nord'
+        Address2: ''
+        Zip: '66702'
+        City: 'ARGELES SUR MER CEDEX'
+        Mail: accneptune@village-center.fr
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 1
+        CategorieId: 2
+        GeoCoordinateX: '42.565353076621875'
+        GeoCoordinateY: '3.0366790294647217'
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: uploads/etablissements/50c0b8e686a55.jpeg
+        Vignette: uploads/etablissements/50c07b6326e05.jpeg
+        Active: true
+    138:
+        Code: 86
+        Slug: oasis
+        Name: Oasis
+        Title: null
+        Address1: 'Route de St Laurent'
+        Address2: ''
+        Zip: '66420'
+        City: 'LE BARCARÈS'
+        Mail: camping.loasis@wanadoo.fr
+        CountryCode: FR
+        Phone1: '04 68 86 12 43'
+        Phone2: '06 08 32 31 70'
+        Fax: '04 68 86 46 83'
+        OpeningDate: '2013-05-04 00:00:00'
+        ClosingDate: '2013-09-14 00:00:00'
+        VilleId: 17
+        CategorieId: 3
+        GeoCoordinateX: '42.77629471'
+        GeoCoordinateY: '3.02487731'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '492'
+        PlanPath: uploads/etablissements/50c0bdb6dea7a.jpeg
+        Vignette: uploads/etablissements/50c081696fe36.jpeg
+        Active: true
+    139:
+        Code: 87
+        Slug: oceano-d-or
+        Name: 'Océano d''Or'
+        Title: null
+        Address1: '84 Rue Georges Clémenceau'
+        Address2: ''
+        Zip: '85520'
+        City: JARD-SUR-MER
+        Mail: bruno.chauvin0983@orange.fr
+        CountryCode: FR
+        Phone1: '02 51 33 65 08'
+        Phone2: '06 08 90 03 54'
+        Fax: '02 51 33 94 04 '
+        OpeningDate: '2013-04-13 00:00:00'
+        ClosingDate: '2013-09-14 00:00:00'
+        VilleId: 71
+        CategorieId: 1
+        GeoCoordinateX: '46.42087836'
+        GeoCoordinateY: '-1.569660902'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '450'
+        PlanPath: uploads/etablissements/50c0bdc2c9aa7.jpeg
+        Vignette: uploads/etablissements/50c08174ca21c.jpeg
+        Active: true
+    140:
+        Code: 88
+        Slug: oyam
+        Name: 'Oyam '
+        Title: null
+        Address1: 'Rue Oyamburua'
+        Address2: ''
+        Zip: '64210'
+        City: BIDART
+        Mail: accueil@camping-oyam.com
+        CountryCode: FR
+        Phone1: '05 59 54 91 61'
+        Phone2: '06 70 07 68 20'
+        Fax: '05 59 54 76 87'
+        OpeningDate: '2013-06-15 00:00:00'
+        ClosingDate: '2013-09-22 00:00:00'
+        VilleId: 103
+        CategorieId: 2
+        GeoCoordinateX: '43.43522086'
+        GeoCoordinateY: '-1.582331657'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '350'
+        PlanPath: uploads/etablissements/50c0bda74f880.jpeg
+        Vignette: uploads/etablissements/50c081a1e7f51.jpeg
+        Active: true
+    141:
+        Code: 89
+        Slug: oyats
+        Name: 'Oyats '
+        Title: null
+        Address1: 'Route de la Plage des Casernes'
+        Address2: ''
+        Zip: '40510'
+        City: SEIGNOSSE
+        Mail: beatrice.cournee@gmail.com
+        CountryCode: FR
+        Phone1: '05 58 73 53 96'
+        Phone2: '06 31 69 93 92'
+        Fax: '05 58 73 58 47'
+        OpeningDate: '2013-05-01 00:00:00'
+        ClosingDate: '2013-09-22 00:00:00'
+        VilleId: 102
+        CategorieId: 2
+        GeoCoordinateX: '43.724728'
+        GeoCoordinateY: '-1.421765'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '505'
+        PlanPath: uploads/etablissements/50c1bcdfc4ad5.jpeg
+        Vignette: uploads/etablissements/50c081ae8728f.jpeg
+        Active: true
+    142:
+        Code: 90
+        Slug: pachacaid
+        Name: Pachacaïd
+        Title: null
+        Address1: 'Route de Canadel'
+        Address2: ''
+        Zip: '83310'
+        City: 'LA MÔLE'
+        Mail: pacha@pachacaid.com
+        CountryCode: FR
+        Phone1: '04 94 55 70 80'
+        Phone2: '06 70 58 02 09'
+        Fax: '04 94 55 70 95'
+        OpeningDate: '2013-04-06 00:00:00'
+        ClosingDate: '2013-09-29 00:00:00'
+        VilleId: 23
+        CategorieId: 2
+        GeoCoordinateX: '43.190284'
+        GeoCoordinateY: '6.471419'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '415'
+        PlanPath: uploads/etablissements/50c0be0861d7c.jpeg
+        Vignette: uploads/etablissements/50c081cc81dad.jpeg
+        Active: true
+    143:
+        Code: 92
+        Slug: palace
+        Name: 'Palace '
+        Title: null
+        Address1: '65 Boulevard Marsan de Montbrun'
+        Address2: ''
+        Zip: '33780'
+        City: 'SOULAC SUR MER'
+        Mail: info@camping-palace.com
+        CountryCode: FR
+        Phone1: '05 56 09 80 22'
+        Phone2: '06 08 28 61 70'
+        Fax: '05 56 09 84 23'
+        OpeningDate: '2013-04-06 00:00:00'
+        ClosingDate: '2013-09-22 00:00:00'
+        VilleId: 97
+        CategorieId: 2
+        GeoCoordinateX: '45.50097801'
+        GeoCoordinateY: '-1.129317284'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '583'
+        PlanPath: uploads/etablissements/50c1bcf4c36f5.jpeg
+        Vignette: uploads/etablissements/50c081e4322b0.jpeg
+        Active: true
+    144:
+        Code: 93
+        Slug: palavas-camping
+        Name: 'Palavas Camping'
+        Title: null
+        Address1: 'Route de Maguelone'
+        Address2: ''
+        Zip: '34250'
+        City: 'PALAVAS LES FLOTS'
+        Mail: 0467508245@fax.contact-everyone.fr
+        CountryCode: FR
+        Phone1: '04 67 68 01 28'
+        Phone2: '04 67 68 01 28'
+        Fax: '04 67 50 82 45'
+        OpeningDate: '2013-04-12 00:00:00'
+        ClosingDate: '2013-09-29 00:00:00'
+        VilleId: 3
+        CategorieId: 1
+        GeoCoordinateX: '43.51973054'
+        GeoCoordinateY: '3.909483254'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '438'
+        PlanPath: uploads/etablissements/50c0be3ab357b.jpeg
+        Vignette: uploads/etablissements/50c081f0e48d7.jpeg
+        Active: true
+    145:
+        Code: 239
+        Slug: palmira-beach
+        Name: 'Palmira Beach'
+        Title: null
+        Address1: 'Avenue du Port'
+        Address2: ''
+        Zip: '34350'
+        City: VENDRES
+        Mail: palmirabeach@gmail.com
+        CountryCode: FR
+        Phone1: '04 67 94 29 00'
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-04 00:00:00'
+        VilleId: 144
+        CategorieId: 3
+        GeoCoordinateX: '43.229015'
+        GeoCoordinateY: '3.245628'
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: uploads/etablissements/50c07d1fc73c6.jpeg
+        Active: true
+    146:
+        Code: 94
+        Slug: parc
+        Name: 'Parc '
+        Title: null
+        Address1: '408 Quartier Trestaure'
+        Address2: ''
+        Zip: '83440'
+        City: 'ST PAUL EN FORÊT'
+        Mail: m.rene637@orange.fr
+        CountryCode: FR
+        Phone1: '04 94 76 15 35'
+        Phone2: '06 31 79 25 52'
+        Fax: '04 94 76 15 35'
+        OpeningDate: '2013-04-27 00:00:00'
+        ClosingDate: '2013-09-22 00:00:00'
+        VilleId: 40
+        CategorieId: 2
+        GeoCoordinateX: '43.58432727'
+        GeoCoordinateY: '6.689981818'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '110'
+        PlanPath: uploads/etablissements/50c1bd0d38ec7.jpeg
+        Vignette: uploads/etablissements/50c081fee708d.jpeg
+        Active: true
+    147:
+        Code: 226
+        Slug: parc-de-la-fecht
+        Name: 'Parc de la Fecht'
+        Title: null
+        Address1: 'Route de Gunsbach'
+        Address2: ''
+        Zip: '68140'
+        City: MUNSTER
+        Mail: accparcdelafecht@village-center.fr
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 131
+        CategorieId: 3
+        GeoCoordinateX: '48.0431584'
+        GeoCoordinateY: '7.1509838'
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: true
+    148:
+        Code: 61
+        Slug: parc-de-la-grenouillere
+        Name: 'Parc de la Grenouillère '
+        Title: null
+        Address1: 'La Grenouillère'
+        Address2: 'RN 152'
+        Zip: '41500'
+        City: SUÈVRES
+        Mail: la.grenouillere@wanadoo.fr
+        CountryCode: FR
+        Phone1: '02 54 87 80 37'
+        Phone2: '06 70 92 14 76'
+        Fax: '02 54 87 84 21'
+        OpeningDate: '2013-04-20 00:00:00'
+        ClosingDate: '2013-09-14 00:00:00'
+        VilleId: 74
+        CategorieId: 1
+        GeoCoordinateX: '47.68714583'
+        GeoCoordinateY: '1.483572721'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '280'
+        PlanPath: uploads/etablissements/50c1bbe2c6a4e.jpeg
+        Vignette: uploads/etablissements/50c0805f736fc.jpeg
+        Active: true
+    149:
+        Code: 227
+        Slug: parc-des-allais
+        Name: 'Parc des Allais'
+        Title: null
+        Address1: 'Les Allais'
+        Address2: ''
+        Zip: '37220'
+        City: TROGUES
+        Mail: accparcdesallais@village-center.fr
+        CountryCode: FR
+        Phone1: '02 47 58 60 60 '
+        Phone2: ''
+        Fax: '02 47 95 24 04 '
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 132
+        CategorieId: 2
+        GeoCoordinateX: '47.0974739'
+        GeoCoordinateY: '0.5019379'
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: uploads/etablissements/50c07c03aa1f4.jpeg
+        Active: true
+    150:
+        Code: 95
+        Slug: park-albatros
+        Name: 'Park Albatros '
+        Title: null
+        Address1: 'Loc. Pineta di T. Nuova'
+        Address2: ''
+        Zip: '57027'
+        City: 'SAN VINCENZO'
+        Mail: alain.fuss@gmail.com
+        CountryCode: IT
+        Phone1: '0039 0565 701018'
+        Phone2: '06 88 94 43 84'
+        Fax: '0039 0565 701400'
+        OpeningDate: '2013-04-26 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 44
+        CategorieId: 2
+        GeoCoordinateX: '43.02830997'
+        GeoCoordinateY: '10.53853869'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '885'
+        PlanPath: uploads/etablissements/50c0be5728b4b.jpeg
+        Vignette: uploads/etablissements/50c0820baa3b3.jpeg
+        Active: true
+    152:
+        Code: 243
+        Slug: pergola
+        Name: Pergola
+        Title: null
+        Address1: '1 rue des vernois'
+        Address2: ''
+        Zip: '39130'
+        City: MARIGNY
+        Mail: ''
+        CountryCode: FR
+        Phone1: '03 84 25 70 03'
+        Phone2: ''
+        Fax: '03 84 25 75 96'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-04 00:00:00'
+        VilleId: 135
+        CategorieId: 1
+        GeoCoordinateX: '46.675999'
+        GeoCoordinateY: '5.787104999999997'
+        VideoPath: null
+        Image360Path: null
+        Capacite: null
+        PlanPath: null
+        Vignette: uploads/etablissements/50c07d67ba280.jpeg
+        Active: true
+    153:
+        Code: 96
+        Slug: petit-bois-ardeche
+        Name: 'Petit Bois (Ardèche)'
+        Title: null
+        Address1: '87 rue du Petit Bois'
+        Address2: ''
+        Zip: '07120'
+        City: RUOMS
+        Mail: resapb@orange.fr
+        CountryCode: FR
+        Phone1: '04 75 39 60 72'
+        Phone2: '06 88 71 27 19'
+        Fax: '04 75 93 95 50'
+        OpeningDate: '2013-04-12 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 78
+        CategorieId: 3
+        GeoCoordinateX: '44.45909408'
+        GeoCoordinateY: '4.341879487'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '110'
+        PlanPath: uploads/etablissements/50c0be636c384.jpeg
+        Vignette: uploads/etablissements/50c082194a720.jpeg
+        Active: true
+    154:
+        Code: 97
+        Slug: petit-bois-cantal
+        Name: 'Petit Bois (Cantal)'
+        Title: null
+        Address1: 'Le bourg'
+        Address2: ''
+        Zip: '15320'
+        City: 'RUYNES EN MARGERIDE'
+        Mail: lepetitbois0639@orange.fr
+        CountryCode: FR
+        Phone1: '04 71 23 42 26'
+        Phone2: '06 70 08 54 21'
+        Fax: '04 71 23 42 26'
+        OpeningDate: '2013-04-27 00:00:00'
+        ClosingDate: '2013-09-08 00:00:00'
+        VilleId: 59
+        CategorieId: 3
+        GeoCoordinateX: '44.99907285'
+        GeoCoordinateY: '3.219047785'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '90'
+        PlanPath: uploads/etablissements/50c0be70ddf6f.jpeg
+        Vignette: uploads/etablissements/50c0822661cf3.jpeg
+        Active: true
+    155:
+        Code: 4
+        Slug: petit-mousse
+        Name: 'Petit Mousse'
+        Title: null
+        Address1: 'Impasse des Espargouls'
+        Address2: 'La Grande Cosse - Côte Ouest'
+        Zip: '34450'
+        City: VIAS
+        Mail: 0467909795@fax.contact-everyone.fr
+        CountryCode: FR
+        Phone1: '04 67 90 99 04'
+        Phone2: '04 67 90 80 48'
+        Fax: '04 67 90 97 95'
+        OpeningDate: '2013-04-19 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 5
+        CategorieId: 3
+        GeoCoordinateX: '43.284219'
+        GeoCoordinateY: '3.381127'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '354'
+        PlanPath: uploads/etablissements/50c1b8af9f072.jpeg
+        Vignette: uploads/etablissements/50c07ef93ebc1.jpeg
+        Active: true
+    156:
+        Code: 220
+        Slug: phare
+        Name: Phare
+        Title: null
+        Address1: '2 rue de la Mer'
+        Address2: ''
+        Zip: '62480'
+        City: 'LE PORTEL'
+        Mail: accphare@village-center.fr
+        CountryCode: FR
+        Phone1: '03 21 31 69 20'
+        Phone2: ''
+        Fax: '03 21 92 00 83'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 146
+        CategorieId: 5
+        GeoCoordinateX: '50.7040549'
+        GeoCoordinateY: '1.5663028'
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: true
+    157:
+        Code: 98
+        Slug: pinada
+        Name: 'Pinada '
+        Title: null
+        Address1: 'hameau villerouge la crémade'
+        Address2: ''
+        Zip: '11200'
+        City: FABREZAN
+        Mail: nadinety@msn.com
+        CountryCode: FR
+        Phone1: '04 68 43 32 29'
+        Phone2: '06 88 71 93 49'
+        Fax: ''
+        OpeningDate: '2013-05-01 00:00:00'
+        ClosingDate: '2013-08-31 00:00:00'
+        VilleId: 18
+        CategorieId: 3
+        GeoCoordinateX: '43.11730606'
+        GeoCoordinateY: '2.73617506'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '110'
+        PlanPath: null
+        Vignette: uploads/etablissements/50c0823353b89.jpeg
+        Active: true
+    158:
+        Code: 99
+        Slug: pins
+        Name: 'Pins '
+        Title: null
+        Address1: 'Lieu dit Le Guen'
+        Address2: ''
+        Zip: '22430'
+        City: ERQUY
+        Mail: 0296636794@fax.contact-everyone.fr
+        CountryCode: FR
+        Phone1: '02 96 72 31 12'
+        Phone2: '06 08 83 65 13'
+        Fax: '02 96 63 67 94'
+        OpeningDate: '2013-04-26 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 48
+        CategorieId: 2
+        GeoCoordinateX: '48.63805601'
+        GeoCoordinateY: '-2.455675006'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '419'
+        PlanPath: uploads/etablissements/50c0be9c8c108.jpeg
+        Vignette: uploads/etablissements/50c08242e8322.jpeg
+        Active: true
+    160:
+        Code: 100
+        Slug: pins-parasols
+        Name: 'Pins Parasols '
+        Title: null
+        Address1: '3360 Rue des Combattants d''Afrique du Nord'
+        Address2: ''
+        Zip: '83600'
+        City: FRÉJUS
+        Mail: 0494408199@fax.contact-everyone.fr
+        CountryCode: FR
+        Phone1: '04 94 40 88 43'
+        Phone2: '06 88 71 90 61'
+        Fax: '04 94 40 81 99'
+        OpeningDate: '2013-04-06 00:00:00'
+        ClosingDate: '2013-09-28 00:00:00'
+        VilleId: 140
+        CategorieId: 2
+        GeoCoordinateX: '43.46392303'
+        GeoCoordinateY: '6.725360155'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '200'
+        PlanPath: uploads/etablissements/50c0aefd8bf1a.jpeg
+        Vignette: uploads/etablissements/50c075ba364bd.jpeg
+        Active: true
+    161:
+        Code: 101
+        Slug: plage-fleurie
+        Name: 'Plage Fleurie '
+        Title: null
+        Address1: 'Les Mazes'
+        Address2: ''
+        Zip: '07150'
+        City: 'VALLON-PONT-D''ARC'
+        Mail: info@laplagefleurie.com
+        CountryCode: FR
+        Phone1: '04 75 88 01 15'
+        Phone2: '06 31 87 03 88'
+        Fax: '04 75 88 11 31'
+        OpeningDate: '2013-04-27 00:00:00'
+        ClosingDate: '2013-09-07 00:00:00'
+        VilleId: 70
+        CategorieId: 1
+        GeoCoordinateX: '44.412402'
+        GeoCoordinateY: '4.349979'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '299'
+        PlanPath: uploads/etablissements/50c0af09d6674.jpeg
+        Vignette: uploads/etablissements/50c075d348a48.jpeg
+        Active: true
+    162:
+        Code: 135
+        Slug: playa-joyel
+        Name: 'Playa Joyel'
+        Title: null
+        Address1: 'Playa De Ris'
+        Address2: ''
+        Zip: '39180'
+        City: NOJA
+        Mail: jean.straniero@gmail.com
+        CountryCode: ES
+        Phone1: '0034 942630081 '
+        Phone2: '06 31 35 46 23'
+        Fax: '0034 942631294'
+        OpeningDate: '2013-04-19 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 28
+        CategorieId: 2
+        GeoCoordinateX: '43.491413'
+        GeoCoordinateY: '-3.537512'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '1050'
+        PlanPath: uploads/etablissements/50c0b0fc0a723.jpeg
+        Vignette: uploads/etablissements/50c0776146ebb.jpeg
+        Active: true
+    163:
+        Code: 102
+        Slug: playa-montroig
+        Name: 'Playa Montroig'
+        Title: null
+        Address1: 'Apartado de Correos 3'
+        Address2: ''
+        Zip: '43300'
+        City: 'MONT ROIG DEL CAMP'
+        Mail: reservas@playamontroig.com
+        CountryCode: ES
+        Phone1: '0034 977 810 637'
+        Phone2: '06 40 21 14 25'
+        Fax: '0034 977 811 411'
+        OpeningDate: '2013-04-06 00:00:00'
+        ClosingDate: '2013-09-29 00:00:00'
+        VilleId: 33
+        CategorieId: 1
+        GeoCoordinateX: '41.03292'
+        GeoCoordinateY: '0.96921'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '1137'
+        PlanPath: uploads/etablissements/50c0af17a86ec.jpeg
+        Vignette: uploads/etablissements/50c075df4d461.jpeg
+        Active: true
+    164:
+        Code: 103
+        Slug: playa-tropicana
+        Name: 'Playa Tropicana '
+        Title: null
+        Address1: 'camino de l''attall s/n'
+        Address2: ''
+        Zip: '12579'
+        City: 'ALCOSSEBRE CASTELLON'
+        Mail: info@playatropicana.com
+        CountryCode: ES
+        Phone1: '0034 964 412 463'
+        Phone2: '06 82 63 48 69'
+        Fax: '0034 964 412 805'
+        OpeningDate: '2013-04-27 00:00:00'
+        ClosingDate: '2012-09-15 00:00:00'
+        VilleId: 35
+        CategorieId: 2
+        GeoCoordinateX: '40.22119452'
+        GeoCoordinateY: '0.268542767'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '380'
+        PlanPath: uploads/etablissements/50c0af25a544c.jpeg
+        Vignette: uploads/etablissements/50c075ea6e237.jpeg
+        Active: true
+    165:
+        Code: 104
+        Slug: port-de-plaisance
+        Name: 'Port de plaisance'
+        Title: null
+        Address1: 'Prad Poullou'
+        Address2: 'Clohars Fouesnant'
+        Zip: '29950'
+        City: BENODET
+        Mail: info@campingbenodet.fr
+        CountryCode: FR
+        Phone1: '02 98 57 02 38'
+        Phone2: '06 07 85 05 84'
+        Fax: '02 98 57 25 25'
+        OpeningDate: '2013-04-06 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 50
+        CategorieId: 2
+        GeoCoordinateX: '47.88203498'
+        GeoCoordinateY: '-4.103393555'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '353'
+        PlanPath: uploads/etablissements/50c0af45bee05.jpeg
+        Vignette: uploads/etablissements/50c075fa2f012.jpeg
+        Active: true
+    166:
+        Code: 228
+        Slug: pres-du-verdon
+        Name: 'Prés du Verdon'
+        Title: null
+        Address1: 'Les Prés du Verdon'
+        Address2: ''
+        Zip: '04500'
+        City: QUINSON
+        Mail: accpresduverdon@village-center.fr
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 168
+        CategorieId: 3
+        GeoCoordinateX: '43.696858773848696'
+        GeoCoordinateY: '6.041450500488281'
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: true
+    167:
+        Code: 241
+        Slug: ranch
+        Name: Ranch
+        Title: null
+        Address1: 'Chemin Saint Joseph'
+        Address2: 'L''Aubarède'
+        Zip: '06110'
+        City: 'LE CANNET'
+        Mail: dstallis@free.fr
+        CountryCode: FR
+        Phone1: '04 93 46 00 11'
+        Phone2: ''
+        Fax: '04 93 46 44 30'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-04 00:00:00'
+        VilleId: 143
+        CategorieId: 3
+        GeoCoordinateX: '43.5740895'
+        GeoCoordinateY: '7.004152500000032'
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: uploads/etablissements/50c07d4cbff5e.jpeg
+        Active: true
+    168:
+        Code: 235
+        Slug: ravoire
+        Name: Ravoire
+        Title: null
+        Address1: 'Route de le ravoire'
+        Address2: ''
+        Zip: '74210'
+        City: DOUSSARD
+        Mail: info@camping-la-ravoire.com
+        CountryCode: FR
+        Phone1: '04 50 44 37 80 '
+        Phone2: ''
+        Fax: '04 50 32 90 60 '
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-04 00:00:00'
+        VilleId: 81
+        CategorieId: 2
+        GeoCoordinateX: '45.7991447'
+        GeoCoordinateY: '6.211576000000036'
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: uploads/etablissements/50c07ce853e04.jpeg
+        Active: true
+    169:
+        Code: 106
+        Slug: ribeyre
+        Name: Ribeyre
+        Title: null
+        Address1: 'Route de Jassat'
+        Address2: ''
+        Zip: '63790'
+        City: MUROL
+        Mail: info@laribeyre.com
+        CountryCode: FR
+        Phone1: '04 73 88 64 29'
+        Phone2: '06 31 86 12 87'
+        Fax: '04 73 88 68 41'
+        OpeningDate: '2013-05-01 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 52
+        CategorieId: 2
+        GeoCoordinateX: '45.56285457'
+        GeoCoordinateY: '2.938236594'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '460'
+        PlanPath: uploads/etablissements/50c1af62e89c4.jpeg
+        Vignette: uploads/etablissements/50c07604c4ccc.jpeg
+        Active: true
+    170:
+        Code: 232
+        Slug: ried
+        Name: Ried
+        Title: null
+        Address1: '1 rue du camping'
+        Address2: ''
+        Zip: '67860'
+        City: BOOFZHEIM
+        Mail: info@camping-ried.com
+        CountryCode: FR
+        Phone1: '03 88 74 68 27'
+        Phone2: ''
+        Fax: '03 88 74 62 89'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 171
+        CategorieId: 3
+        GeoCoordinateX: '48.3291292'
+        GeoCoordinateY: '7.6931870'
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: true
+    171:
+        Code: 229
+        Slug: rieumontagne
+        Name: Rieumontagné
+        Title: null
+        Address1: 'Lac du Laouzas'
+        Address2: ''
+        Zip: '81320'
+        City: NAGES
+        Mail: dirrieumontagne@village-center.fr
+        CountryCode: FR
+        Phone1: '05 63 37 24 71'
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 161
+        CategorieId: 2
+        GeoCoordinateX: '43.6486529'
+        GeoCoordinateY: '2.7781248'
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: uploads/etablissements/50c07c2b36ac4.jpeg
+        Active: true
+    172:
+        Code: 108
+        Slug: roussillonnais
+        Name: 'Roussillonnais '
+        Title: null
+        Address1: 'Boulevard de la Mer'
+        Address2: ''
+        Zip: '66702'
+        City: ARGELÈS-SUR-MER
+        Mail: 0468959611@fax.contact-everyone.fr
+        CountryCode: FR
+        Phone1: '04 68 81 10 42'
+        Phone2: '06 31 96 76 12'
+        Fax: '04 68 95 96 11'
+        OpeningDate: '2013-05-25 00:00:00'
+        ClosingDate: '2013-09-08 00:00:00'
+        VilleId: 1
+        CategorieId: 3
+        GeoCoordinateX: '42.56766828'
+        GeoCoordinateY: '3.044221401'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '706'
+        PlanPath: uploads/etablissements/50c1af7c41ffa.jpeg
+        Vignette: uploads/etablissements/50c0760e8f143.jpeg
+        Active: true
+    173:
+        Code: 131
+        Slug: ruisseau-des-pyrenees
+        Name: 'Ruisseau des Pyrénées'
+        Title: null
+        Address1: 'Rue Burruntz'
+        Address2: ''
+        Zip: '64210'
+        City: BIDART
+        Mail: francoise.dumont3@wanadoo.fr
+        CountryCode: FR
+        Phone1: '05 59 41 94 50'
+        Phone2: '06 32 12 91 82'
+        Fax: '05 59 41 95 73'
+        OpeningDate: '2013-04-27 00:00:00'
+        ClosingDate: '2013-09-22 00:00:00'
+        VilleId: 103
+        CategorieId: 1
+        GeoCoordinateX: '43.436804'
+        GeoCoordinateY: '-1.567666'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '443'
+        PlanPath: uploads/etablissements/50c1b0795fd0c.jpeg
+        Vignette: uploads/etablissements/50c077240f919.jpeg
+        Active: true
+    174:
+        Code: 109
+        Slug: sables-de-cordouan
+        Name: 'Sables de Cordouan '
+        Title: null
+        Address1: '2344 Route de la Fouasse'
+        Address2: ''
+        Zip: '17570'
+        City: 'LES MATHES'
+        Mail: michel.etriche@orange.fr
+        CountryCode: FR
+        Phone1: '05 32 09 04 08'
+        Phone2: '06 89 50 18 13'
+        Fax: '05 46 22 51 46'
+        OpeningDate: '2013-04-26 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 87
+        CategorieId: 2
+        GeoCoordinateX: '45.72995496'
+        GeoCoordinateY: '-1.175955534'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '150'
+        PlanPath: uploads/etablissements/50c1af9184408.jpeg
+        Vignette: uploads/etablissements/50c076178a370.jpeg
+        Active: true
+    175:
+        Code: 110
+        Slug: saint-aygulf-plage
+        Name: 'Saint Aygulf Plage'
+        Title: null
+        Address1: '270 Boulevard Salvarelli'
+        Address2: ''
+        Zip: '83370'
+        City: 'ST AYGULF'
+        Mail: 0494810316@fax.contact-everyone.fr
+        CountryCode: FR
+        Phone1: '04 94 17 62 49'
+        Phone2: '06 30 43 80 74'
+        Fax: '04 94 81 03 16'
+        OpeningDate: '2013-04-06 00:00:00'
+        ClosingDate: '2013-09-29 00:00:00'
+        VilleId: 153
+        CategorieId: 3
+        GeoCoordinateX: '43.392481'
+        GeoCoordinateY: '6.726462'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '1100'
+        PlanPath: uploads/etablissements/50c0afa4094b5.jpeg
+        Vignette: uploads/etablissements/50c0762d20c4b.jpeg
+        Active: true
+    176:
+        Code: 230
+        Slug: saint-clair-residence
+        Name: 'Saint Clair (Résidence)'
+        Title: null
+        Address1: '4 impasse de la Misaine'
+        Address2: ''
+        Zip: '34300'
+        City: AGDE
+        Mail: accsaintclair@village-center.fr
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 19
+        CategorieId: null
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    177:
+        Code: 236
+        Slug: saint-disdille
+        Name: 'Saint Disdille'
+        Title: null
+        Address1: '117 Avenue Saint Disdille'
+        Address2: ''
+        Zip: '74200'
+        City: 'THONON LES BAINS'
+        Mail: camping@disdille.com
+        CountryCode: FR
+        Phone1: '04 50 71 14 11'
+        Phone2: ''
+        Fax: '04 50 71 93 67'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-04 00:00:00'
+        VilleId: 133
+        CategorieId: 3
+        GeoCoordinateX: '46.3993012'
+        GeoCoordinateY: '6.503873800000065'
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: uploads/etablissements/50c07cf564de0.jpeg
+        Active: true
+    178:
+        Code: 111
+        Slug: saint-louis
+        Name: 'Saint Louis'
+        Title: null
+        Address1: '2160 Avenue de la République'
+        Address2: ''
+        Zip: '06550'
+        City: 'LA ROQUETTE SUR SIAGNE'
+        Mail: pascal.chantal.chevallier@wanadoo.fr
+        CountryCode: FR
+        Phone1: '04 92 19 23 13'
+        Phone2: '06 31 90 29 44'
+        Fax: ''
+        OpeningDate: '2013-04-12 00:00:00'
+        ClosingDate: '2013-09-29 00:00:00'
+        VilleId: 41
+        CategorieId: 2
+        GeoCoordinateX: '43.58853542'
+        GeoCoordinateY: '6.93888545'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '200'
+        PlanPath: uploads/etablissements/50c0afb054124.jpeg
+        Vignette: uploads/etablissements/50c0763716a2e.jpeg
+        Active: true
+    179:
+        Code: 113
+        Slug: sainte-marie
+        Name: 'Sainte-Marie '
+        Title: null
+        Address1: 'Rue des Clauses'
+        Address2: ''
+        Zip: '66470'
+        City: 'STE MARIE-LA-MER'
+        Mail: camping@lesaintemarie.com
+        CountryCode: FR
+        Phone1: '04 68 80 48 10'
+        Phone2: '06 08 09 37 54 '
+        Fax: '09 58 35 56 11'
+        OpeningDate: '2013-04-26 00:00:00'
+        ClosingDate: '2013-09-08 00:00:00'
+        VilleId: 6
+        CategorieId: 2
+        GeoCoordinateX: '42.7139833'
+        GeoCoordinateY: '3.0314219'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '300'
+        PlanPath: uploads/etablissements/50c1afa391a3a.jpeg
+        Vignette: uploads/etablissements/50c0764f49c1f.jpeg
+        Active: true
+    180:
+        Code: 8
+        Slug: sandaya-soulac-plage
+        Name: 'Sandaya Soulac Plage'
+        Title: null
+        Address1: 'L''Amélie'
+        Address2: ''
+        Zip: '33780'
+        City: SOULAC-SUR-MER
+        Mail: bernard.doreillac@wanadoo.fr
+        CountryCode: FR
+        Phone1: '05 56 09 87 27'
+        Phone2: '06 71 97 27 38'
+        Fax: '05 56 73 64 26'
+        OpeningDate: '2013-04-13 00:00:00'
+        ClosingDate: '2013-09-22 00:00:00'
+        VilleId: 97
+        CategorieId: 2
+        GeoCoordinateX: '45.4856205'
+        GeoCoordinateY: '-1.1477709'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '526'
+        PlanPath: uploads/etablissements/50c0bd189da71.jpeg
+        Vignette: uploads/etablissements/50c0811744e94.jpeg
+        Active: true
+    181:
+        Code: 114
+        Slug: sen-yan
+        Name: 'Sen Yan '
+        Title: null
+        Address1: 'La Gare'
+        Address2: ''
+        Zip: '40170'
+        City: Mézos
+        Mail: reception@sen-yan.com
+        CountryCode: FR
+        Phone1: '05 58 42 60 05'
+        Phone2: '06 85 15 03 72'
+        Fax: '05 58 42 64 56'
+        OpeningDate: '2013-06-01 00:00:00'
+        ClosingDate: '2013-09-08 00:00:00'
+        VilleId: 99
+        CategorieId: 1
+        GeoCoordinateX: '44.07217817'
+        GeoCoordinateY: '-1.156412959'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '375'
+        PlanPath: uploads/etablissements/50c1afc92c505.jpeg
+        Vignette: uploads/etablissements/50c0765b566f2.jpeg
+        Active: true
+    182:
+        Code: 117
+        Slug: signol
+        Name: 'Signol '
+        Title: null
+        Address1: 'avenue des Albatros '
+        Address2: 'Saint Georges D''Oléron'
+        Zip: '17190'
+        City: BOYARDVILLE
+        Mail: galardchristian20@gmail.com
+        CountryCode: FR
+        Phone1: '05 46 47 01 22'
+        Phone2: '06 31 88 70 26'
+        Fax: '05 46 47 23 46'
+        OpeningDate: '2013-04-13 00:00:00'
+        ClosingDate: '2013-09-22 00:00:00'
+        VilleId: 95
+        CategorieId: 2
+        GeoCoordinateX: '45.96824412'
+        GeoCoordinateY: '-1.245038509'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '300'
+        PlanPath: uploads/etablissements/50c0b021aa700.jpeg
+        Vignette: uploads/etablissements/50c0766f8358e.jpeg
+        Active: true
+    183:
+        Code: 118
+        Slug: soleil
+        Name: 'Soleil '
+        Title: null
+        Address1: 'Route du Littoral'
+        Address2: ''
+        Zip: '66702'
+        City: ARGELÈS-SUR-MER
+        Mail: camping.lesoleil@wanadoo.fr
+        CountryCode: FR
+        Phone1: '04 68 81 14 48'
+        Phone2: '06 31 32 11 40'
+        Fax: '04 68 81 44 34'
+        OpeningDate: '2013-05-04 00:00:00'
+        ClosingDate: '2013-09-21 00:00:00'
+        VilleId: 1
+        CategorieId: 1
+        GeoCoordinateX: '42.5757234'
+        GeoCoordinateY: '3.042392135'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '840'
+        PlanPath: uploads/etablissements/50c1afdfca20f.jpeg
+        Vignette: uploads/etablissements/50c07679cef85.jpeg
+        Active: true
+    184:
+        Code: 119
+        Slug: soleil-de-la-mediterranee
+        Name: 'Soleil de la Méditerranée'
+        Title: null
+        Address1: '2 rue Ste Beuve'
+        Address2: ''
+        Zip: '66750'
+        City: 'ST CYPRIEN'
+        Mail: 0468825004@fax.contact-everyone.fr
+        CountryCode: FR
+        Phone1: '04 68 21 07 97'
+        Phone2: '06 89 73 55 25'
+        Fax: '04 68 82 50 04'
+        OpeningDate: '2013-04-06 00:00:00'
+        ClosingDate: '2013-09-29 00:00:00'
+        VilleId: 139
+        CategorieId: 3
+        GeoCoordinateX: '42.62443095'
+        GeoCoordinateY: '3.025810719'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '522'
+        PlanPath: uploads/etablissements/50c1afef3933e.jpeg
+        Vignette: uploads/etablissements/50c076841720b.jpeg
+        Active: true
+    185:
+        Code: 120
+        Slug: sources
+        Name: 'Sources '
+        Title: null
+        Address1: 'Route des Crêtes'
+        Address2: ''
+        Zip: '68700'
+        City: WATTWILLER
+        Mail: camping.les.sources@wanadoo.fr
+        CountryCode: FR
+        Phone1: '03 89 75 44 94'
+        Phone2: '06 85 06 13 61'
+        Fax: '03 89 75 71 98'
+        OpeningDate: '2013-04-13 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 82
+        CategorieId: 3
+        GeoCoordinateX: '47.83392225'
+        GeoCoordinateY: '7.165617943'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '199'
+        PlanPath: uploads/etablissements/50c1b037245f0.jpeg
+        Vignette: uploads/etablissements/50c0769b5c096.jpeg
+        Active: true
+    186:
+        Code: 246
+        Slug: tahiti
+        Name: Tahiti
+        Title: null
+        Address1: 'Viale Libia 133'
+        Address2: ''
+        Zip: '44020'
+        City: 'LIDO DELLE NAZIONI'
+        Mail: info@campingtahiti.com
+        CountryCode: IT
+        Phone1: '0039 0533 379 500'
+        Phone2: ''
+        Fax: '0039 05 33 379700'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-04 00:00:00'
+        VilleId: 163
+        CategorieId: 2
+        GeoCoordinateX: '44.7343437'
+        GeoCoordinateY: '12.231634299999996'
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: uploads/etablissements/50c07d7f143a9.jpeg
+        Active: true
+    187:
+        Code: 134
+        Slug: tamaris
+        Name: Tamaris
+        Title: null
+        Address1: 'Rte de St Laurent'
+        Address2: ''
+        Zip: '66420'
+        City: 'LE BARCARÈS'
+        Mail: 0468862309@fax.contact-everyone.fr
+        CountryCode: FR
+        Phone1: '04 68 86 08 18'
+        Phone2: '06 07 84 61 31'
+        Fax: '04 68 86 23 09'
+        OpeningDate: '2013-04-27 00:00:00'
+        ClosingDate: '2013-09-08 00:00:00'
+        VilleId: 17
+        CategorieId: 3
+        GeoCoordinateX: '42.783858'
+        GeoCoordinateY: '3.021154'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '434'
+        PlanPath: null
+        Vignette: uploads/etablissements/50c0774c3e555.jpeg
+        Active: true
+    188:
+        Code: 122
+        Slug: tamerici
+        Name: 'Tamerici '
+        Title: null
+        Address1: 'Via della Cecinella 5'
+        Address2: ''
+        Zip: '57023'
+        City: 'CECINA MARE'
+        Mail: info@letamerici.it
+        CountryCode: IT
+        Phone1: '0039 0586 620 629'
+        Phone2: '06 07 50 68 24'
+        Fax: '0039 0586 687 811'
+        OpeningDate: '2013-04-13 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 39
+        CategorieId: 3
+        GeoCoordinateX: '43.29217342'
+        GeoCoordinateY: '10.51079929'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '300'
+        PlanPath: uploads/etablissements/50c1b0567994e.jpeg
+        Vignette: uploads/etablissements/50c076aa87a87.jpeg
+        Active: true
+    189:
+        Code: 123
+        Slug: tenuta-primero
+        Name: 'Tenuta Primero '
+        Title: null
+        Address1: 'Via Monfalcone 14'
+        Address2: ''
+        Zip: '34073'
+        City: GRADO
+        Mail: philetlolo@gmail.com
+        CountryCode: IT
+        Phone1: '0039 0431 896 900'
+        Phone2: '06 88 71 65 39'
+        Fax: '0039 0431 896 901'
+        OpeningDate: '2013-05-01 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 36
+        CategorieId: 2
+        GeoCoordinateX: '45.69481972'
+        GeoCoordinateY: '13.45171809'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '750'
+        PlanPath: uploads/etablissements/50c0b0694d86f.jpeg
+        Vignette: uploads/etablissements/50c076b862805.jpeg
+        Active: true
+    190:
+        Code: 231
+        Slug: tours
+        Name: Tours
+        Title: null
+        Address1: 'Les Tours'
+        Address2: ''
+        Zip: '12460'
+        City: 'ST AMANS DES COTS'
+        Mail: acctours@village-center.fr
+        CountryCode: FR
+        Phone1: '05 65 44 88 10'
+        Phone2: ''
+        Fax: '05 65 44 83 07'
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 145
+        CategorieId: 2
+        GeoCoordinateX: '44.66761515867915'
+        GeoCoordinateY: '2.6811790466308594'
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: uploads/etablissements/50c07cac98a8a.jpeg
+        Active: true
+    191:
+        Code: 125
+        Slug: ur-onea
+        Name: 'Ur Onea '
+        Title: null
+        Address1: 'Rue de la Chapelle'
+        Address2: ''
+        Zip: '64210'
+        City: BIDART
+        Mail: contact@uronea.com
+        CountryCode: FR
+        Phone1: '05 59 26 53 61'
+        Phone2: '06 31 95 41 42'
+        Fax: '05 59 26 53 94'
+        OpeningDate: '2013-04-27 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 103
+        CategorieId: 3
+        GeoCoordinateX: '43.43388862'
+        GeoCoordinateY: '-1.590839624'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '269'
+        PlanPath: uploads/etablissements/50c0b076d5281.jpeg
+        Vignette: uploads/etablissements/50c076c4c14d2.jpeg
+        Active: true
+    192:
+        Code: 245
+        Slug: vacances-directes
+        Name: 'Vacances Directes'
+        Title: null
+        Address1: ''
+        Address2: ''
+        Zip: '22101'
+        City: 'DINAN CEDEX'
+        Mail: contact@vacances-directes.com
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-04 00:00:00'
+        VilleId: null
+        CategorieId: null
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    193:
+        Code: 248
+        Slug: valldaro
+        Name: Valldaro
+        Title: null
+        Address1: '63 c/cami Vell '
+        Address2: ''
+        Zip: '17250'
+        City: 'PLATJA D ARO'
+        Mail: ''
+        CountryCode: ES
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 165
+        CategorieId: 2
+        GeoCoordinateX: '41.823889'
+        GeoCoordinateY: '3.052222'
+        VideoPath: null
+        Image360Path: null
+        Capacite: null
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: true
+    194:
+        Code: 126
+        Slug: via-romana
+        Name: 'Via Romana '
+        Title: null
+        Address1: 'Casamozza di Fium''Orbu'
+        Address2: ''
+        Zip: '20243'
+        City: 'PRUNELLI DI FIUMORBU'
+        Mail: coraline.leandri@gmail.com
+        CountryCode: FR
+        Phone1: '04 95 56 14 73'
+        Phone2: '06 88 71 58 98'
+        Fax: '04 95 57 07 02'
+        OpeningDate: '2013-06-01 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 42
+        CategorieId: 4
+        GeoCoordinateX: '41.98642663'
+        GeoCoordinateY: '9.398889542'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '59'
+        PlanPath: uploads/etablissements/50c0b08c59d78.jpeg
+        Vignette: uploads/etablissements/50c076d71697d.jpeg
+        Active: true
+    195:
+        Code: 127
+        Slug: vieux-port
+        Name: 'Vieux Port '
+        Title: null
+        Address1: 'Route Plage Sud'
+        Address2: ''
+        Zip: '40660'
+        City: MESSANGES
+        Mail: sergemombert@free.fr
+        CountryCode: FR
+        Phone1: '0 825 70 40 40'
+        Phone2: '06 89 79 80 11'
+        Fax: '05 58 48 01 69'
+        OpeningDate: '2013-05-01 00:00:00'
+        ClosingDate: '2013-09-29 00:00:00'
+        VilleId: 101
+        CategorieId: 1
+        GeoCoordinateX: '43.79771568'
+        GeoCoordinateY: '-1.400853395'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '1546'
+        PlanPath: uploads/etablissements/50c0b09bacdbb.jpeg
+        Vignette: uploads/etablissements/50c076f4477fa.jpeg
+        Active: true
+    196:
+        Code: 128
+        Slug: vignes
+        Name: 'Vignes '
+        Title: null
+        Address1: '1545 Route du Cap de l''Homy'
+        Address2: 'Route de la Plage'
+        Zip: '40170'
+        City: LIT-ET-MIXE
+        Mail: accvignes@village-center.fr
+        CountryCode: FR
+        Phone1: '05 58 42 85 60'
+        Phone2: '06 31 03 26 53'
+        Fax: '05 58 42 74 36'
+        OpeningDate: '2013-04-12 00:00:00'
+        ClosingDate: '2013-09-15 00:00:00'
+        VilleId: 100
+        CategorieId: 1
+        GeoCoordinateX: '44.02413608'
+        GeoCoordinateY: '-1.27867341'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '450'
+        PlanPath: null
+        Vignette: uploads/etablissements/50c076fd9b7ba.jpeg
+        Active: true
+    197:
+        Code: 129
+        Slug: vilanova-park
+        Name: 'Vilanova Park '
+        Title: null
+        Address1: 'AP 64.Ctra Arboc Km 2.5'
+        Address2: ''
+        Zip: '08800'
+        City: 'VILANOVA I LA GELTRÚ'
+        Mail: info@vilanovapark.com
+        CountryCode: ES
+        Phone1: '0034 93 893 34 02'
+        Phone2: '06 40 21 14 24'
+        Fax: '0034 93 893 32 41'
+        OpeningDate: '2013-04-06 00:00:00'
+        ClosingDate: '2013-09-29 00:00:00'
+        VilleId: 32
+        CategorieId: 2
+        GeoCoordinateX: '41.23213011'
+        GeoCoordinateY: '1.690725088'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '1413'
+        PlanPath: uploads/etablissements/50c0b0b4c3335.jpeg
+        Vignette: uploads/etablissements/50c07709abbeb.jpeg
+        Active: true
+    198:
+        Code: 997
+        Slug: z-semaines-non-prises-lineaire-liberte
+        Name: 'z Semaines non prises Linéaire Liberté'
+        Title: null
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: null
+        ClosingDate: null
+        VilleId: null
+        CategorieId: null
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    199:
+        Code: 130
+        Slug: zagarella
+        Name: Zagarella
+        Title: null
+        Address1: 'Rue des Sables'
+        Address2: ''
+        Zip: '85160'
+        City: 'ST JEAN-DE-MONTS'
+        Mail: zagarella@zagarella.fr
+        CountryCode: FR
+        Phone1: '02 51 58 19 82'
+        Phone2: '06 89 73 60 39'
+        Fax: '02 51 59 35 28'
+        OpeningDate: '2013-04-12 00:00:00'
+        ClosingDate: '2013-09-14 00:00:00'
+        VilleId: 47
+        CategorieId: 2
+        GeoCoordinateX: '46.7812729'
+        GeoCoordinateY: '-2.017439604'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '278'
+        PlanPath: uploads/etablissements/50c0b0bff3feb.jpeg
+        Vignette: uploads/etablissements/50c077161f869.jpeg
+        Active: true
+    202:
+        Code: 7
+        Slug: zz-amandiers
+        Name: 'zz Amandiers'
+        Title: null
+        Address1: 'Rue du Stade'
+        Address2: ''
+        Zip: '30660'
+        City: GALLARGUES-LE-MONTUEUX
+        Mail: camping-lesamandiers@orange.fr
+        CountryCode: FR
+        Phone1: '04 66 35 28 02'
+        Phone2: '06 70 85 80 57'
+        Fax: '04 66 51 48 57'
+        OpeningDate: '2012-05-16 00:00:00'
+        ClosingDate: '2012-09-09 00:00:00'
+        VilleId: null
+        CategorieId: 2
+        GeoCoordinateX: '43.71691503'
+        GeoCoordinateY: '4.167069197'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '150'
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    203:
+        Code: 180
+        Slug: zz-arbousiers
+        Name: 'zz Arbousiers'
+        Title: null
+        Address1: 'Chemin des Arbousiers'
+        Address2: 'Le Cabenas'
+        Zip: '83320'
+        City: CARQUEIRANNE
+        Mail: contact@village-center.fr
+        CountryCode: FR
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 155
+        CategorieId: null
+        GeoCoordinateX: '43.0925'
+        GeoCoordinateY: '6.05638'
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: true
+    205:
+        Code: 15
+        Slug: zz-beaulieu
+        Name: 'zz Beaulieu '
+        Title: null
+        Address1: '3 Rue du Treuil Gras'
+        Address2: ''
+        Zip: '17138'
+        City: PUILBOREAU
+        Mail: contact@camping-la-rochelle.com
+        CountryCode: FR
+        Phone1: '05 46 68 04 38'
+        Phone2: '06 08 05 65 48'
+        Fax: '05 46 35 85 95'
+        OpeningDate: '2012-04-06 00:00:00'
+        ClosingDate: '2012-09-16 00:00:00'
+        VilleId: null
+        CategorieId: null
+        GeoCoordinateX: '46.17793608'
+        GeoCoordinateY: '-1.115090847'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '171'
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    207:
+        Code: 18
+        Slug: zz-bretonniere
+        Name: 'zz Bretonnière'
+        Title: null
+        Address1: ''
+        Address2: ''
+        Zip: '85150'
+        City: 'ST JULIEN DES LANDES'
+        Mail: camp.la-bretonniere@wanadoo.fr
+        CountryCode: FR
+        Phone1: '02 51 46 62 44'
+        Phone2: '06 88 71 58 15'
+        Fax: '02 51 46 61 36'
+        OpeningDate: '2012-04-27 00:00:00'
+        ClosingDate: '2012-09-16 00:00:00'
+        VilleId: null
+        CategorieId: null
+        GeoCoordinateX: '46.64475555'
+        GeoCoordinateY: '-1.732943058'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '150'
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    209:
+        Code: 188
+        Slug: zz-club-del-sole-spina
+        Name: 'zz Club del Sole Spina'
+        Title: null
+        Address1: 'Via Del Campeggio, 99'
+        Address2: ''
+        Zip: '44024'
+        City: 'LIDO DI SPINA'
+        Mail: ''
+        CountryCode: IT
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 38
+        CategorieId: null
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: true
+    210:
+        Code: 193
+        Slug: zz-cypsela
+        Name: 'zz Cypsela'
+        Title: null
+        Address1: 'C/ Rodors 7'
+        Address2: ''
+        Zip: '17256'
+        City: 'PALS GIRONA'
+        Mail: ''
+        CountryCode: ES
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2012-10-01 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: 26
+        CategorieId: 1
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: true
+    217:
+        Code: 66
+        Slug: zz-ilbarritz
+        Name: 'zz Ilbarritz '
+        Title: null
+        Address1: 'Avenue de Biarritz'
+        Address2: ''
+        Zip: '64210'
+        City: BIDART
+        Mail: 0559412459@fax.contact-everyone.fr
+        CountryCode: FR
+        Phone1: '05 59 23 00 29'
+        Phone2: '06 31 80 31 54'
+        Fax: '05 59 41 24 59'
+        OpeningDate: '2012-04-06 00:00:00'
+        ClosingDate: '2012-09-15 00:00:00'
+        VilleId: null
+        CategorieId: 2
+        GeoCoordinateX: '43.45307856'
+        GeoCoordinateY: '-1.573544741'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '374'
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    222:
+        Code: 73
+        Slug: zz-land-s-hause
+        Name: 'zz Land''s Hause '
+        Title: null
+        Address1: 'Rua José Maria Custodio  '
+        Address2: 'Burinhosa Pataias'
+        Zip: '2446 '
+        City: NAZARÉ
+        Mail: geral@albitur.pt
+        CountryCode: PT
+        Phone1: '00351 244 586 765'
+        Phone2: '00351 244 586 765'
+        Fax: '00351 244 586 062'
+        OpeningDate: '2012-04-07 00:00:00'
+        ClosingDate: '2012-09-09 00:00:00'
+        VilleId: null
+        CategorieId: null
+        GeoCoordinateX: '39.69684787'
+        GeoCoordinateY: '-8.97567451'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '92'
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    234:
+        Code: 78
+        Slug: zz-malazeou
+        Name: 'zz Malazéou '
+        Title: null
+        Address1: 'RN 20'
+        Address2: ''
+        Zip: '09110'
+        City: AX-LES-THERMES
+        Mail: camping.malazeou@wanadoo.fr
+        CountryCode: FR
+        Phone1: '05 61 64 69 14'
+        Phone2: '05 61 64 69 14'
+        Fax: '05 61 64 05 60'
+        OpeningDate: '2012-04-27 00:00:00'
+        ClosingDate: '2012-09-16 00:00:00'
+        VilleId: null
+        CategorieId: null
+        GeoCoordinateX: '42.72870307'
+        GeoCoordinateY: '1.825538278'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '285'
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    242:
+        Code: 121
+        Slug: zz-talaris
+        Name: 'zz Talaris '
+        Title: null
+        Address1: 'Route de l''Océan'
+        Address2: 'Lacanau Océan'
+        Zip: '33680'
+        City: LACANAU
+        Mail: camping@talaris-vacances.fr
+        CountryCode: FR
+        Phone1: '05 56 03 04 15'
+        Phone2: '06 31 37 10 44'
+        Fax: '05 56 26 21 56'
+        OpeningDate: '2012-04-07 00:00:00'
+        ClosingDate: '2012-09-16 00:00:00'
+        VilleId: null
+        CategorieId: 2
+        GeoCoordinateX: '45.00800533'
+        GeoCoordinateY: '-1.112129688'
+        VideoPath: null
+        Image360Path: null
+        Capacite: '476'
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    246:
+        Code: 998
+        Slug: zzz-fictif-enregistrement-package
+        Name: 'zzz Fictif enregistrement package'
+        Title: null
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: null
+        ClosingDate: null
+        VilleId: null
+        CategorieId: null
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false
+    247:
+        Code: 999
+        Slug: zzz-fictif-pour-copie-parametrage
+        Name: 'zzz Fictif pour copie paramétrage'
+        Title: null
+        Address1: ''
+        Address2: ''
+        Zip: ''
+        City: ''
+        Mail: ''
+        CountryCode: ''
+        Phone1: ''
+        Phone2: ''
+        Fax: ''
+        OpeningDate: '2013-01-05 00:00:00'
+        ClosingDate: '2014-01-24 00:00:00'
+        VilleId: null
+        CategorieId: null
+        GeoCoordinateX: ''
+        GeoCoordinateY: ''
+        VideoPath: null
+        Image360Path: null
+        Capacite: ''
+        PlanPath: null
+        Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Active: false

@@ -1,0 +1,49 @@
+\Cungfoo\Model\TopCamping:
+    1:
+        EtablissementId: 17
+        SortableRank: 1
+        Active: true
+    2:
+        EtablissementId: 52
+        SortableRank: 2
+        Active: true
+    3:
+        EtablissementId: 67
+        SortableRank: 3
+        Active: true
+    4:
+        EtablissementId: 74
+        SortableRank: 4
+        Active: true
+    5:
+        EtablissementId: 151
+        SortableRank: 5
+        Active: true
+    6:
+        EtablissementId: 57
+        SortableRank: 6
+        Active: true
+    7:
+        EtablissementId: 11
+        SortableRank: 7
+        Active: true
+    8:
+        EtablissementId: 155
+        SortableRank: 8
+        Active: true
+    9:
+        EtablissementId: 173
+        SortableRank: 9
+        Active: true
+    10:
+        EtablissementId: 80
+        SortableRank: 10
+        Active: true
+    11:
+        EtablissementId: 197
+        SortableRank: 11
+        Active: true
+    12:
+        EtablissementId: 104
+        SortableRank: 12
+        Active: true
