@@ -659,20 +659,22 @@
         </li>
         <li class="tab"><a href="#">Vos vacances</a>
             <div id="holiday" class="subnav">
-                <div class="radiusBox greyC clear">
+                <div class="radiusBox greyC">
                     <div class="title">Quel type de vacances ?</div>
-                    <a href="#"><img class="type boxborder left" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" /></a>
-                    <a href="#"><img class="type boxborder left" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" /></a>
-                    <a href="#"><img class="type boxborder left" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" /></a>
-                    <a href="#"><img class="type boxborder left" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" /></a>
-                    <a href="#"><img class="type boxborder left" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" /></a>
-                    <a href="#"><img class="type boxborder left" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" /></a>
-                    <a href="#"><img class="type boxborder left" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" /></a>
-                    <a href="#"><img class="type boxborder left" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" /></a>
-                    <a href="#"><img class="type boxborder left" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" /></a>
-                    <a href="#"><img class="type boxborder left" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" /></a>
-                    <a href="#"><img class="type boxborder left" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" /></a>
-                    <a href="#"><img class="type boxborder left" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" /></a>
+                    <div id="holidayGallery" class="clear">
+                        <a href="#"><img class="type boxborder" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" /></a>
+                        <a href="#"><img class="type boxborder" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" /></a>
+                        <a href="#"><img class="type boxborder" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" /></a>
+                        <a href="#"><img class="type boxborder" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" /></a>
+                        <a href="#"><img class="type boxborder" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" /></a>
+                        <a href="#"><img class="type boxborder" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" /></a>
+                        <a href="#"><img class="type boxborder" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" /></a>
+                        <a href="#"><img class="type boxborder" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" /></a>
+                        <a href="#"><img class="type boxborder" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" /></a>
+                        <a href="#"><img class="type boxborder" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" /></a>
+                        <a href="#"><img class="type boxborder" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" /></a>
+                        <a href="#"><img class="type boxborder" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" /></a>
+                    </div>
                 </div>
                 <div class="proposals clear">
                     <div class="title left">Vos vacances...</div>

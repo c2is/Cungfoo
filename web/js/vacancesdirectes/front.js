@@ -336,6 +336,29 @@ jQuery.extend( jQuery.fn, {
             });
         }
 
+        if($('#holiday').length){
+            $("#holidayGallery a").each( function(i,v) {
+                var rNum = (Math.random()*10)*2;
+                if (i % 2 === 0){
+                    $(this).rotate(rNum+'deg');
+                }
+                else{
+                    $(this).rotate(-rNum+'deg');
+                }
+//                $('#holidayGallery').css({margin:"0 auto"});
+//                $('#holidayGallery a:nth-child(4n + 1)').css({border:"1px solid red"});
+//                $('#holidayGallery a:nth-child(4n + 2)').css({border:"1px solid green"});
+//                $('#holidayGallery a:nth-child(4n + 3)').css({border:"1px solid yellow"});
+//                $('#holidayGallery a:nth-child(4n)').css({border:"1px solid blue"});
+//                console.log($(this).position());
+//                $(this).position({
+//                    my: "center center",
+//                    at: "center center",
+//                    of: "#holidayGallery"
+//                });
+            } );
+        }
+
     }
 
 
