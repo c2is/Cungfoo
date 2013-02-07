@@ -12,7 +12,7 @@
     {% endfor %}
     <li id="lang">
         {% if app.context.get('language') == 'fr' %}
-        <a href="http://www.vacances-directes.de/de/"><img src="{{ asset('images/vacancesdirectes/dyn/ui/lang-flag-de.jpg') }}" width="26" height="17" alt="DE"/></a>
+        <a href="http://www.vacances-directes.de"><img src="{{ asset('images/vacancesdirectes/dyn/ui/lang-flag-de.jpg') }}" width="26" height="17" alt="DE"/></a>
         {% elseif app.context.get('language') == 'de' %}
         <a href="http://www.vacances-directes.com"><img src="{{ asset('images/vacancesdirectes/dyn/ui/lang-flag-fr.jpg') }}" width="26" height="17" alt="FR"/></a>
         {% endif %}
