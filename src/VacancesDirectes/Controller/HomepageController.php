@@ -86,7 +86,7 @@ class HomepageController implements ControllerProviderInterface
 
             $pleinActivites = new PleinActivite($app);
 
-            $view = $app->renderView('homepage.twig', array(
+            return $view = $app->renderView('homepage.twig', array(
                 'searchForm'        => $searchEngine->getView(),
                 'locale'            => $locale,
                 'topCampings'       => $topCampings,
@@ -99,8 +99,6 @@ class HomepageController implements ControllerProviderInterface
                 'pleinActivites'    => $pleinActivites->process(),
                 'urlCanonical'      => $app['url_generator']->generate('homepage', array(), true),
             ));
-
-            return new Response($view, 200, array('Surrogate-Control' => 'content="ESI/1.0"'));
         })
         ->bind('homepage');
 

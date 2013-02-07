@@ -86,7 +86,7 @@ class EsiController implements ControllerProviderInterface
                 $liste = $listing->process();
             }
 
-            $view = $app->renderView('Esi/homeWidget.twig', array(
+            $view = $app['twig']->render('Esi/homeWidget.twig', array(
                 'bon_plan'  => $bonPlan,
                 'dispos'    => $liste,
             ));
@@ -160,7 +160,7 @@ class EsiController implements ControllerProviderInterface
                 $liste = $listing->process();
             }
 
-            $view = $app->renderView('Esi/bonPlan.twig', array(
+            $view = $app['twig']->render('Esi/bonPlan.twig', array(
                 'bon_plan' => $liste,
             ));
 
