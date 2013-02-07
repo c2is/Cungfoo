@@ -831,3 +831,10 @@ datepicker:
     months: "['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre']"
     monthsShort: "['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Jui', 'Jui', 'Aoû', 'Sepe', 'Oct', 'Nov', 'Déc']"
     weekMin: "'Se'"
+
+widget:
+    offres_speciales:
+        title: "Offres spéciales"
+        more: "Plus d'offres"
+        from: "à partir de"
+        instead: "au lieu de"
