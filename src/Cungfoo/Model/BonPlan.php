@@ -67,7 +67,7 @@ class BonPlan extends BaseBonPlan
     public function getReduction() {
         if ($this->getPrix() && $this->getPrixBarre())
         {
-            return (1 - ($this->getPrixBarre() / $this->getPrix())) * 100;
+            return (1 - ($this->getPrix() / $this->getPrixBarre())) * 100;
         }
         else
         {
