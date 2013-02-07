@@ -840,3 +840,4 @@ widget:
         instead: "au lieu de"
     tracking:
         title: "Vous avez déjà consulté"
+        from: "à partir de"

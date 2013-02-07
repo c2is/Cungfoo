@@ -18,18 +18,28 @@ class TrackingWidget extends AbstractWidget
     {
         $etab = (int) $this->app['request']->query->get('etab');
 
+        $campings = array();
         $trackingCamping = $this->app['session']->get('tracking.camping');
-        if($etab && ($key = array_search($etab, $trackingCamping)) !== false) {
-            unset($trackingCamping[$key]);
+
+        $nbTrackingCamping = count($trackingCamping);
+        for($i = 0; $i < $nbTrackingCamping && count($campings) < 2; $i++) {
+            if ($trackingCamping[$i] != $etab)
+            {
+                $camping = EtablissementQuery::create()
+                    ->filterByCode($trackingCamping[$i])
+                    ->filterByActive(true)
+                    ->findOne()
+                ;
+                
+                if ($camping)
+                {
+                    $campings[] = $camping;
+                }
+            }
         }
 
-        $campings = EtablissementQuery::create()
-            ->filterByCode($trackingCamping, \Criteria::IN)
-            ->findActive()
-        ;
-
         return $this->app['twig']->render('Widget\\tracking.twig', array(
-            'trackingCamping' => $campings
+            'campings' => $campings
         ));
     }
 }
