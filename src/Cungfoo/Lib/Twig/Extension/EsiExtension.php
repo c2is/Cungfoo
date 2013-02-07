@@ -19,7 +19,7 @@ class EsiExtension extends Twig_Extension
 
     public function getFunctions()
     {
-        return array('esi' => new \Twig_Function_Method($this, 'esi'));
+        return array('esi' => new \Twig_Function_Method($this, 'esi', array('is_safe' => array('html'))));
     }
 
     public function esi($path)

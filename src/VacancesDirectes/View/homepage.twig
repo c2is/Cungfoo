@@ -80,11 +80,7 @@
     </div>
 </div>
 <div class="ratio-33 left clear">
-    {% if app.debug %}
-    {{ render(path('esi_home_widget')) }}
-    {% else %}
-    <esi:include src="{{ path('esi_home_widget') }}" />
-    {% endif %}
+    {{ esi(path('esi_home_widget')) }}
 </div>
 
 {% endblock %}
