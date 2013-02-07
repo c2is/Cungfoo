@@ -772,6 +772,8 @@ global:
         reservation: "Réservation"
         title: "<span>Espace</span> client"
     site_name: "Vacances directes.com"
+    analytics:
+        domain_name: ".vacances-directes.com"
 
 bon_plan:
     title: "Camping : %bonPlan%"
