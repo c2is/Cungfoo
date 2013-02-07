@@ -29,6 +29,12 @@ loader:
         model:  \Cungfoo\Model\Activite
       DESTI:
         model:  \Cungfoo\Model\Destination
+      REGIONSREF:
+        model:  \Cungfoo\Model\RegionRef
+      REGIONSREF:
+        model:  \Cungfoo\Model\RegionRef
+      DEPT:
+        model:  \Cungfoo\Model\Departement
   EtabLoader:
     themes:
       VILLE:
