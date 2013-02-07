@@ -1040,6 +1040,20 @@ abstract class BaseDepartementPeer
         return $objs;
     }
 
+    // crudable behavior
+
+    /**
+     * The default locale to use for translations
+     * @var        string
+     */
+    public static function getMetadata(PropelPDO $con = null)
+    {
+        return \Cungfoo\Model\MetadataQuery::create()
+            ->joinWithI18n()
+            ->filterByTableRef(DepartementPeer::TABLE_NAME)
+            ->findOne()
+        ;
+    }
 } // BaseDepartementPeer
 
 // This is the static code needed to register the TableMap for this table with the main Propel class.

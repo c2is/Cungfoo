@@ -134,3 +134,7 @@ crud:
             prefix: /departements
             model: \Cungfoo\Model\Departement
             form: \Cungfoo\Form\Type\DepartementType
+        metadata:
+            prefix: /metadata
+            model: \Cungfoo\Model\Metadata
+            form: \Cungfoo\Form\Type\MetadataType

@@ -1586,6 +1586,20 @@ abstract class BaseEtablissementPeer
         return $objs;
     }
 
+    // crudable behavior
+
+    /**
+     * The default locale to use for translations
+     * @var        string
+     */
+    public static function getMetadata(PropelPDO $con = null)
+    {
+        return \Cungfoo\Model\MetadataQuery::create()
+            ->joinWithI18n()
+            ->filterByTableRef(EtablissementPeer::TABLE_NAME)
+            ->findOne()
+        ;
+    }
 } // BaseEtablissementPeer
 
 // This is the static code needed to register the TableMap for this table with the main Propel class.

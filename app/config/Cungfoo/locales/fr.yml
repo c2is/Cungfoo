@@ -1,5 +1,6 @@
 general.import: Importer
 
+activite.crud.metadata: Metadata de la table activité
 activite.crud.create: Création d'une activité
 activite.crud.list: Liste activités
 activite.crud.update: Mettre à jour l'activité %name%
@@ -20,6 +21,7 @@ activite.active_locale: "Activer pour cette langue"
 activite.image_path_deleted: Supprimer l'image ?
 activite.vignette_deleted: Supprimer la vignette ?
 
+category_type_hebergement.crud.metadata: Metadata de la table catégorie type hébergement
 category_type_hebergement.crud.create: Création d'une catégorie de types d'hébergements
 category_type_hebergement.crud.list: Liste catégories de types d'hébergements
 category_type_hebergement.crud.update: Mettre à jour la catégorie de types d'hébergements %name%
@@ -42,7 +44,7 @@ category_type_hebergement.description: "Description"
 
 type_hebergement.indice: Indice
 
-
+type_hebergement_capacite.crud.metadata: Metadata de la table type hébergement capacité
 type_hebergement_capacite.crud.create: Création d'une capacité de types d'hébergements
 type_hebergement_capacite.crud.list: Liste des capacités de types d'hébergements
 type_hebergement_capacite.crud.update: Mettre à jour la capacité de types d'hébergements %name%
@@ -83,6 +85,7 @@ crud.button.filter: Filtrer
 crud.button.delete: Supprimer
 crud.button.edit: Éditer
 crud.button.list: Liste
+crud.button.metadata: Metadata
 crud.button.read: Détails
 crud.button.save: Enregistrer
 crud.modal.delete.title: Confirmation de suppression
@@ -94,6 +97,14 @@ crud.tab.medias: Médias
 crud.tab.parameters: Paramètres
 crud.tab.resalys: "Resalys"
 
+metadata.metadataI18ns: ""
+metadata.title: "Titre"
+metadata.subtitle: "Sous titre"
+metadata.accroche: "Accroche"
+metadata.visuel: "Visuel"
+metadata.visuel_deleted: "Supprimer le visuel ?"
+
+destination.crud.metadata: Metadata de la table destination
 destination.crud.create: Création d'une destination
 destination.crud.list: Liste destinations
 destination.crud.update: Mettre à jour la destination %name%
@@ -117,6 +128,7 @@ destination.image_detail_2: "Image 2"
 destination.image.detail.2: "Image 2"
 destination.image_detail_2_deleted: "Supprimer l'image 2"
 
+categorie.crud.metadata: Metadata de la table catégorie
 categorie.crud.create: Création d'une catégorie
 categorie.crud.list: Liste catégories
 categorie.crud.update: Mettre à jour la catégorie %name%
@@ -128,6 +140,7 @@ categorie.active: Actif
 categorie.categorieI18ns: ""
 categorie.active_locale: "Activer pour cette langue"
 
+situation_geographique.crud.metadata: Metadata de la table situation géographique
 situation_geographique.crud.create: Création d'une situation géographique
 situation_geographique.crud.list: Liste situations géographiques
 situation_geographique.crud.update: Mettre à jour la situation géographique %name%
@@ -142,6 +155,7 @@ situation_geographique.active: Actif
 situation_geographique.situation_geographiqueI18ns: ""
 situation_geographique.active_locale: "Activer pour cette langue"
 
+baignade.crud.metadata: Metadata de la table baignade
 baignade.crud.create: Création d'une baignade
 baignade.crud.list: Liste baignades
 baignade.crud.update: Mettre à jour la baignade %name%
@@ -160,6 +174,7 @@ baignade.vignette_deleted: "Supprimer la vignette ?"
 baignade.baignadeI18ns: ""
 baignade.active_locale: "Activer pour cette langue"
 
+thematique.crud.metadata: Metadata de la table thématique
 thematique.crud.create: Création d'une thématique
 thematique.crud.list: Liste thématiques
 thematique.crud.update: Mettre à jour la thématique %name%
@@ -177,6 +192,7 @@ thematique.image_path_deleted: "Supprimer le picto ?"
 thematique.thematiqueI18ns: ""
 thematique.active_locale: "Activer pour cette langue"
 
+etablissement.crud.metadata: Metadata de la table établissement
 etablissement.activites: Liste des activités
 etablissement.city: Ville
 etablissement.country: Pays
@@ -290,6 +306,7 @@ category_type_hebergement.id: Id
 category_type_hebergement.code: Code
 category_type_hebergement.name: Nom
 
+theme.crud.metadata: Metadata de la table theme
 theme.crud.create: Création d'un theme
 theme.crud.list: Liste des themes
 theme.crud.update: Mettre à jour le theme %name%
@@ -309,7 +326,7 @@ theme.description: Description
 theme.themeI18ns: ""
 theme.active_locale: "Activer pour cette langue"
 
-
+service_complementaire.crud.metadata: Metadata de la table service complémentaire
 service_complementaire.crud.create: Création d'un service complémentaire
 service_complementaire.crud.list: Liste services complémentaires
 service_complementaire.crud.update: Mettre à jour le service complémentaire %name%
@@ -330,7 +347,6 @@ service_complementaire.vignette_deleted: "Supprimer la vignette"
 service_complementaire.service_complementaireI18ns: ""
 service_complementaire.active_locale: "Activer pour cette langue"
 
-
 security.title: Panneau d'administration
 security.username: Nom d'utilisateur
 security.password: Mot de passe
@@ -339,6 +355,7 @@ security.submit: Connexion
 paginator.previous: Précédent
 paginator.next: Suivant
 
+pays.crud.metadata: Metadata de la table pays
 pays.crud.create: Création d'un pays
 pays.crud.list: Liste pays
 pays.crud.update: Mettre à jour le pays %name%
@@ -359,6 +376,7 @@ pays.image_detail_2_deleted: Supprimer l'image 2
 pays.paysI18ns: ""
 pays.active_locale: "Activer pour cette langue"
 
+region_ref.crud.metadata: Metadata de la table région réferencement
 region_ref.crud.create: Création d'une region réferencement
 region_ref.crud.list: Liste regions réferencements
 region_ref.crud.update: Mettre à jour la region réferencement %name%
@@ -380,6 +398,7 @@ region_ref.image_detail_2_deleted: Supprimer l'image 2
 region_ref.region_refI18ns: ""
 region_ref.active_locale: "Activer pour cette langue"
 
+departement.crud.metadata: Metadata de la table département
 departement.crud.create: Création d'un département
 departement.crud.list: Liste départements
 departement.crud.update: Mettre à jour le département %name%
@@ -402,10 +421,11 @@ departement.image_detail_2_deleted: Supprimer l'image 2
 departement.departementI18ns: ""
 departement.active_locale: "Activer pour cette langue"
 
-region.crud.create: Création d'une région
-region.crud.list: Liste régions
-region.crud.update: Mettre à jour la région %name%
-region.crud.view: Détails de la région %name%
+region.crud.metadata: Metadata de la table region marketing
+region.crud.create: Création d'une région marketing
+region.crud.list: Liste régions marketing
+region.crud.update: Mettre à jour la région marketing %name%
+region.crud.view: Détails de la région marketing %name%
 region.id: Id
 region.code: Code
 region.name: Nom
@@ -451,6 +471,7 @@ service_complementaire.id: Id
 service_complementaire.code: Code
 service_complementaire.name: Nom
 
+type_hebergement.crud.metadata: Metadata de la table type hébergement
 type_hebergement.category_type_hebergement: Catégorie
 type_hebergement.crud.create: Création d'un type hébergement
 type_hebergement.crud.list: Liste types hébergements
@@ -491,6 +512,7 @@ type_hebergement.remarque_2: "Remarque 2"
 type_hebergement.remarque_3: "Remarque 3"
 type_hebergement.remarque_4: "Remarque 4"
 
+ville.crud.metadata: Metadata de la table ville
 ville.crud.create: Création d'une ville
 ville.crud.list: Liste villes
 ville.crud.update: Mettre à jour la ville %name%
@@ -512,6 +534,7 @@ ville.active: Actif
 ville.villeI18ns: ""
 ville.active_locale: "Activer pour cette langue"
 
+point_interet.crud.metadata: Metadata de la table POI
 point_interet.crud.create: Création d'un POI
 point_interet.crud.list: Liste des POI
 point_interet.crud.update: Mettre à jour le POI %name%
@@ -544,6 +567,7 @@ point_interet.slug: Slug
 point_interet.point_interetI18ns: ""
 point_interet.active_locale: "Activer pour cette langue"
 
+event.crud.metadata: Metadata de la table évenement
 event.crud.create: Création d'un évènement
 event.crud.list: Liste des évènements
 event.crud.update: Mettre à jour l'évènement %name%
@@ -579,6 +603,7 @@ event.slug: Slug
 event.eventI18ns: ""
 event.active_locale: "Activer pour cette langue"
 
+personnage.crud.metadata: Metadata de la table personnage
 personnage.crud.create: Création d'un personnage
 personnage.crud.list: Liste des personnages
 personnage.crud.update: Mettre à jour le personnage %name%
@@ -594,6 +619,7 @@ personnage.personnageI18ns: ""
 personnage.active_locale: "Activer pour cette langue"
 personnage.image_path_deleted: "Supprimer l'image ?"
 
+avantage.crud.metadata: Metadata de la table avantage
 avantage.crud.create: Création d'un avantage
 avantage.crud.list: Liste des avantages
 avantage.crud.update: Mettre à jour l'avantage %name%
@@ -609,6 +635,7 @@ avantage.active: Actif
 avantage.avantageI18ns: ""
 avantage.active_locale: "Activer pour cette langue"
 
+edito.crud.metadata: Metadata de la table édito
 edito.crud.create: Création d'un édito
 edito.crud.list: Liste des editos
 edito.crud.update: Mettre à jour l'édito %name%
@@ -621,6 +648,7 @@ edito.active: Actif
 edito.editoI18ns: ""
 edito.active_locale: "Activer pour cette langue"
 
+multimedia_etablissement.crud.metadata: Metadata de la table multimedia établissement
 multimedia_etablissement.crud.create: Création d'un média
 multimedia_etablissement.crud.list: Liste des média
 multimedia_etablissement.crud.update: Mettre à jour le média %name%
@@ -636,6 +664,7 @@ multimedia_etablissement.image_path_deleted: "Supprimer l'image ?"
 multimedia_etablissement.multimedia_etablissementI18ns: ""
 multimedia_etablissement.active_locale: "Activer pour cette langue"
 
+multimedia_type_hebergement.crud.metadata: Metadata de la table multimedia type hébergement
 multimedia_type_hebergement.crud.create: Création d'un média type hébergement
 multimedia_type_hebergement.crud.list: Liste des média type hébergement
 multimedia_type_hebergement.crud.update: Mettre à jour le média type hébergement %name%
@@ -652,6 +681,7 @@ multimedia_type_hebergement.multimedia_type_hebergementI18ns: ""
 multimedia_type_hebergement.active_locale: "Activer pour cette langue"
 multimedia_type_hebergement.image_path_deleted: "Supprimer l'image ?"
 
+tag.crud.metadata: Metadata de la table tag multimedia
 tag.crud.create: Création d'un tag
 tag.crud.list: Liste des tags
 tag.crud.update: Mettre à jour le tag %name%
@@ -693,6 +723,8 @@ demande_identifiant.identifiant: Souhaitez-vous obtenir un identifiant pour une 
 This value should not be blank.: Cette valeur ne doit pas être vide.
 This value is not a valid email address.: Cette valeur n'est pas une adresse email valide.
 
+
+top_camping.crud.metadata: Metadata de la table top camping
 top_camping.crud.create: Création d'un top camping
 top_camping.crud.list: Liste des top campings
 top_camping.crud.update: Mettre à jour le top camping %name%
@@ -717,6 +749,7 @@ dernieres_minutes.day.start: Jour de départ
 dernieres_minutes.date_start: Date relative de départ
 dernieres_minutes.date.start: Date relative de départ
 
+mise_en_avant.crud.metadata: Metadata de la table mise en avant
 mise_en_avant.crud.create: Création d'une mise en avant
 mise_en_avant.crud.list: Liste des mises en avant
 mise_en_avant.crud.update: Mettre à jour la mise en avant %name%
@@ -741,6 +774,7 @@ mise_en_avant.illustration_path_deleted: "Supprimer l'illustration ?"
 mise_en_avant.mise_en_avantI18ns: ""
 mise_en_avant.active_locale: "Activer pour cette langue"
 
+vos_vacances.crud.metadata: Metadata de la table vos vacances
 vos_vacances.crud.create: Création d'un encart vos vacances
 vos_vacances.crud.list: Liste des encarts vos vacances
 vos_vacances.crud.update: Mettre à jour l'encart vos vacances %name%
@@ -757,6 +791,7 @@ vos_vacances.image_path_deleted: "Supprimer l'image ?"
 vos_vacances.vos_vacancesI18ns: ""
 vos_vacances.active_locale: "Activer pour cette langue"
 
+idee_weekend.crud.metadata: Metadata de la table idée weekend
 idee_weekend.crud.create: Création d'une idée weekend
 idee_weekend.crud.list: Liste des idée weekend
 idee_weekend.crud.update: Mettre à jour de l'idée weekend %name%
@@ -784,6 +819,7 @@ sunday: dimanche
 
 bon_plan_categorie:
     crud:
+        metadata: Metadata de la table bon plan catégorie
         list: Liste des catégories de bons plans
         update: Mettre à jour la catégorie de bons plans
         create: Ajouter une catégorie de bons plans
@@ -800,6 +836,7 @@ bon_plan_categorie:
 
 bon_plan:
     crud:
+        metadata: Metadata de la table bon plan
         list: Liste des bons plans
         update: Mettre à jour le bon plan
         create: Ajouter un bon plan

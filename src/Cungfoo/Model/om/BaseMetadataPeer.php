@@ -9,36 +9,32 @@ use \PDOStatement;
 use \Propel;
 use \PropelException;
 use \PropelPDO;
-use Cungfoo\Model\Theme;
-use Cungfoo\Model\ThemeActivitePeer;
-use Cungfoo\Model\ThemeBaignadePeer;
-use Cungfoo\Model\ThemeI18nPeer;
-use Cungfoo\Model\ThemePeer;
-use Cungfoo\Model\ThemePersonnagePeer;
-use Cungfoo\Model\ThemeServiceComplementairePeer;
-use Cungfoo\Model\map\ThemeTableMap;
+use Cungfoo\Model\Metadata;
+use Cungfoo\Model\MetadataI18nPeer;
+use Cungfoo\Model\MetadataPeer;
+use Cungfoo\Model\map\MetadataTableMap;
 
 /**
- * Base static class for performing query and update operations on the 'theme' table.
+ * Base static class for performing query and update operations on the 'metadata' table.
  *
  *
  *
  * @package propel.generator.Cungfoo.Model.om
  */
-abstract class BaseThemePeer
+abstract class BaseMetadataPeer
 {
 
     /** the default database name for this class */
     const DATABASE_NAME = 'cungfoo';
 
     /** the table name for this class */
-    const TABLE_NAME = 'theme';
+    const TABLE_NAME = 'metadata';
 
     /** the related Propel class for this table */
-    const OM_CLASS = 'Cungfoo\\Model\\Theme';
+    const OM_CLASS = 'Cungfoo\\Model\\Metadata';
 
     /** the related TableMap class for this table */
-    const TM_CLASS = 'ThemeTableMap';
+    const TM_CLASS = 'MetadataTableMap';
 
     /** The total number of columns. */
     const NUM_COLUMNS = 3;
@@ -50,22 +46,22 @@ abstract class BaseThemePeer
     const NUM_HYDRATE_COLUMNS = 3;
 
     /** the column name for the id field */
-    const ID = 'theme.id';
+    const ID = 'metadata.id';
 
-    /** the column name for the image_path field */
-    const IMAGE_PATH = 'theme.image_path';
+    /** the column name for the table_ref field */
+    const TABLE_REF = 'metadata.table_ref';
 
-    /** the column name for the active field */
-    const ACTIVE = 'theme.active';
+    /** the column name for the visuel field */
+    const VISUEL = 'metadata.visuel';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
 
     /**
-     * An identiy map to hold any loaded instances of Theme objects.
+     * An identiy map to hold any loaded instances of Metadata objects.
      * This must be public so that other peer classes can access this when hydrating from JOIN
      * queries.
-     * @var        array Theme[]
+     * @var        array Metadata[]
      */
     public static $instances = array();
 
@@ -81,14 +77,14 @@ abstract class BaseThemePeer
      * holds an array of fieldnames
      *
      * first dimension keys are the type constants
-     * e.g. ThemePeer::$fieldNames[ThemePeer::TYPE_PHPNAME][0] = 'Id'
+     * e.g. MetadataPeer::$fieldNames[MetadataPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'ImagePath', 'Active', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'imagePath', 'active', ),
-        BasePeer::TYPE_COLNAME => array (ThemePeer::ID, ThemePeer::IMAGE_PATH, ThemePeer::ACTIVE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'IMAGE_PATH', 'ACTIVE', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'image_path', 'active', ),
+        BasePeer::TYPE_PHPNAME => array ('Id', 'TableRef', 'Visuel', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'tableRef', 'visuel', ),
+        BasePeer::TYPE_COLNAME => array (MetadataPeer::ID, MetadataPeer::TABLE_REF, MetadataPeer::VISUEL, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'TABLE_REF', 'VISUEL', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'table_ref', 'visuel', ),
         BasePeer::TYPE_NUM => array (0, 1, 2, )
     );
 
@@ -96,14 +92,14 @@ abstract class BaseThemePeer
      * holds an array of keys for quick access to the fieldnames array
      *
      * first dimension keys are the type constants
-     * e.g. ThemePeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
+     * e.g. MetadataPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'ImagePath' => 1, 'Active' => 2, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'imagePath' => 1, 'active' => 2, ),
-        BasePeer::TYPE_COLNAME => array (ThemePeer::ID => 0, ThemePeer::IMAGE_PATH => 1, ThemePeer::ACTIVE => 2, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'IMAGE_PATH' => 1, 'ACTIVE' => 2, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'image_path' => 1, 'active' => 2, ),
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'TableRef' => 1, 'Visuel' => 2, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'tableRef' => 1, 'visuel' => 2, ),
+        BasePeer::TYPE_COLNAME => array (MetadataPeer::ID => 0, MetadataPeer::TABLE_REF => 1, MetadataPeer::VISUEL => 2, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'TABLE_REF' => 1, 'VISUEL' => 2, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'table_ref' => 1, 'visuel' => 2, ),
         BasePeer::TYPE_NUM => array (0, 1, 2, )
     );
 
@@ -119,10 +115,10 @@ abstract class BaseThemePeer
      */
     public static function translateFieldName($name, $fromType, $toType)
     {
-        $toNames = ThemePeer::getFieldNames($toType);
-        $key = isset(ThemePeer::$fieldKeys[$fromType][$name]) ? ThemePeer::$fieldKeys[$fromType][$name] : null;
+        $toNames = MetadataPeer::getFieldNames($toType);
+        $key = isset(MetadataPeer::$fieldKeys[$fromType][$name]) ? MetadataPeer::$fieldKeys[$fromType][$name] : null;
         if ($key === null) {
-            throw new PropelException("'$name' could not be found in the field names of type '$fromType'. These are: " . print_r(ThemePeer::$fieldKeys[$fromType], true));
+            throw new PropelException("'$name' could not be found in the field names of type '$fromType'. These are: " . print_r(MetadataPeer::$fieldKeys[$fromType], true));
         }
 
         return $toNames[$key];
@@ -139,11 +135,11 @@ abstract class BaseThemePeer
      */
     public static function getFieldNames($type = BasePeer::TYPE_PHPNAME)
     {
-        if (!array_key_exists($type, ThemePeer::$fieldNames)) {
+        if (!array_key_exists($type, MetadataPeer::$fieldNames)) {
             throw new PropelException('Method getFieldNames() expects the parameter $type to be one of the class constants BasePeer::TYPE_PHPNAME, BasePeer::TYPE_STUDLYPHPNAME, BasePeer::TYPE_COLNAME, BasePeer::TYPE_FIELDNAME, BasePeer::TYPE_NUM. ' . $type . ' was given.');
         }
 
-        return ThemePeer::$fieldNames[$type];
+        return MetadataPeer::$fieldNames[$type];
     }
 
     /**
@@ -155,12 +151,12 @@ abstract class BaseThemePeer
      *		$c->addJoin(TablePeer::alias("alias1", TablePeer::PRIMARY_KEY_COLUMN), TablePeer::PRIMARY_KEY_COLUMN);
      * </code>
      * @param      string $alias The alias for the current table.
-     * @param      string $column The column name for current table. (i.e. ThemePeer::COLUMN_NAME).
+     * @param      string $column The column name for current table. (i.e. MetadataPeer::COLUMN_NAME).
      * @return string
      */
     public static function alias($alias, $column)
     {
-        return str_replace(ThemePeer::TABLE_NAME.'.', $alias.'.', $column);
+        return str_replace(MetadataPeer::TABLE_NAME.'.', $alias.'.', $column);
     }
 
     /**
@@ -178,13 +174,13 @@ abstract class BaseThemePeer
     public static function addSelectColumns(Criteria $criteria, $alias = null)
     {
         if (null === $alias) {
-            $criteria->addSelectColumn(ThemePeer::ID);
-            $criteria->addSelectColumn(ThemePeer::IMAGE_PATH);
-            $criteria->addSelectColumn(ThemePeer::ACTIVE);
+            $criteria->addSelectColumn(MetadataPeer::ID);
+            $criteria->addSelectColumn(MetadataPeer::TABLE_REF);
+            $criteria->addSelectColumn(MetadataPeer::VISUEL);
         } else {
             $criteria->addSelectColumn($alias . '.id');
-            $criteria->addSelectColumn($alias . '.image_path');
-            $criteria->addSelectColumn($alias . '.active');
+            $criteria->addSelectColumn($alias . '.table_ref');
+            $criteria->addSelectColumn($alias . '.visuel');
         }
     }
 
@@ -204,21 +200,21 @@ abstract class BaseThemePeer
         // We need to set the primary table name, since in the case that there are no WHERE columns
         // it will be impossible for the BasePeer::createSelectSql() method to determine which
         // tables go into the FROM clause.
-        $criteria->setPrimaryTableName(ThemePeer::TABLE_NAME);
+        $criteria->setPrimaryTableName(MetadataPeer::TABLE_NAME);
 
         if ($distinct && !in_array(Criteria::DISTINCT, $criteria->getSelectModifiers())) {
             $criteria->setDistinct();
         }
 
         if (!$criteria->hasSelectClause()) {
-            ThemePeer::addSelectColumns($criteria);
+            MetadataPeer::addSelectColumns($criteria);
         }
 
         $criteria->clearOrderByColumns(); // ORDER BY won't ever affect the count
-        $criteria->setDbName(ThemePeer::DATABASE_NAME); // Set the correct dbName
+        $criteria->setDbName(MetadataPeer::DATABASE_NAME); // Set the correct dbName
 
         if ($con === null) {
-            $con = Propel::getConnection(ThemePeer::DATABASE_NAME, Propel::CONNECTION_READ);
+            $con = Propel::getConnection(MetadataPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
         // BasePeer returns a PDOStatement
         $stmt = BasePeer::doCount($criteria, $con);
@@ -237,7 +233,7 @@ abstract class BaseThemePeer
      *
      * @param      Criteria $criteria object used to create the SELECT statement.
      * @param      PropelPDO $con
-     * @return                 Theme
+     * @return                 Metadata
      * @throws PropelException Any exceptions caught during processing will be
      *		 rethrown wrapped into a PropelException.
      */
@@ -245,7 +241,7 @@ abstract class BaseThemePeer
     {
         $critcopy = clone $criteria;
         $critcopy->setLimit(1);
-        $objects = ThemePeer::doSelect($critcopy, $con);
+        $objects = MetadataPeer::doSelect($critcopy, $con);
         if ($objects) {
             return $objects[0];
         }
@@ -263,7 +259,7 @@ abstract class BaseThemePeer
      */
     public static function doSelect(Criteria $criteria, PropelPDO $con = null)
     {
-        return ThemePeer::populateObjects(ThemePeer::doSelectStmt($criteria, $con));
+        return MetadataPeer::populateObjects(MetadataPeer::doSelectStmt($criteria, $con));
     }
     /**
      * Prepares the Criteria object and uses the parent doSelect() method to execute a PDOStatement.
@@ -281,16 +277,16 @@ abstract class BaseThemePeer
     public static function doSelectStmt(Criteria $criteria, PropelPDO $con = null)
     {
         if ($con === null) {
-            $con = Propel::getConnection(ThemePeer::DATABASE_NAME, Propel::CONNECTION_READ);
+            $con = Propel::getConnection(MetadataPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
 
         if (!$criteria->hasSelectClause()) {
             $criteria = clone $criteria;
-            ThemePeer::addSelectColumns($criteria);
+            MetadataPeer::addSelectColumns($criteria);
         }
 
         // Set the correct dbName
-        $criteria->setDbName(ThemePeer::DATABASE_NAME);
+        $criteria->setDbName(MetadataPeer::DATABASE_NAME);
 
         // BasePeer returns a PDOStatement
         return BasePeer::doSelect($criteria, $con);
@@ -304,7 +300,7 @@ abstract class BaseThemePeer
      * to the cache in order to ensure that the same objects are always returned by doSelect*()
      * and retrieveByPK*() calls.
      *
-     * @param      Theme $obj A Theme object.
+     * @param      Metadata $obj A Metadata object.
      * @param      string $key (optional) key to use for instance map (for performance boost if key was already calculated externally).
      */
     public static function addInstanceToPool($obj, $key = null)
@@ -313,7 +309,7 @@ abstract class BaseThemePeer
             if ($key === null) {
                 $key = (string) $obj->getId();
             } // if key === null
-            ThemePeer::$instances[$key] = $obj;
+            MetadataPeer::$instances[$key] = $obj;
         }
     }
 
@@ -325,7 +321,7 @@ abstract class BaseThemePeer
      * methods in your stub classes -- you may need to explicitly remove objects
      * from the cache in order to prevent returning objects that no longer exist.
      *
-     * @param      mixed $value A Theme object or a primary key value.
+     * @param      mixed $value A Metadata object or a primary key value.
      *
      * @return void
      * @throws PropelException - if the value is invalid.
@@ -333,17 +329,17 @@ abstract class BaseThemePeer
     public static function removeInstanceFromPool($value)
     {
         if (Propel::isInstancePoolingEnabled() && $value !== null) {
-            if (is_object($value) && $value instanceof Theme) {
+            if (is_object($value) && $value instanceof Metadata) {
                 $key = (string) $value->getId();
             } elseif (is_scalar($value)) {
                 // assume we've been passed a primary key
                 $key = (string) $value;
             } else {
-                $e = new PropelException("Invalid value passed to removeInstanceFromPool().  Expected primary key or Theme object; got " . (is_object($value) ? get_class($value) . ' object.' : var_export($value,true)));
+                $e = new PropelException("Invalid value passed to removeInstanceFromPool().  Expected primary key or Metadata object; got " . (is_object($value) ? get_class($value) . ' object.' : var_export($value,true)));
                 throw $e;
             }
 
-            unset(ThemePeer::$instances[$key]);
+            unset(MetadataPeer::$instances[$key]);
         }
     } // removeInstanceFromPool()
 
@@ -354,14 +350,14 @@ abstract class BaseThemePeer
      * a multi-column primary key, a serialize()d version of the primary key will be returned.
      *
      * @param      string $key The key (@see getPrimaryKeyHash()) for this instance.
-     * @return   Theme Found object or null if 1) no instance exists for specified key or 2) instance pooling has been disabled.
+     * @return   Metadata Found object or null if 1) no instance exists for specified key or 2) instance pooling has been disabled.
      * @see        getPrimaryKeyHash()
      */
     public static function getInstanceFromPool($key)
     {
         if (Propel::isInstancePoolingEnabled()) {
-            if (isset(ThemePeer::$instances[$key])) {
-                return ThemePeer::$instances[$key];
+            if (isset(MetadataPeer::$instances[$key])) {
+                return MetadataPeer::$instances[$key];
             }
         }
 
@@ -375,30 +371,18 @@ abstract class BaseThemePeer
      */
     public static function clearInstancePool()
     {
-        ThemePeer::$instances = array();
+        MetadataPeer::$instances = array();
     }
 
     /**
-     * Method to invalidate the instance pool of all tables related to theme
+     * Method to invalidate the instance pool of all tables related to metadata
      * by a foreign key with ON DELETE CASCADE
      */
     public static function clearRelatedInstancePool()
     {
-        // Invalidate objects in ThemeActivitePeer instance pool,
+        // Invalidate objects in MetadataI18nPeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
-        ThemeActivitePeer::clearInstancePool();
-        // Invalidate objects in ThemeBaignadePeer instance pool,
-        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
-        ThemeBaignadePeer::clearInstancePool();
-        // Invalidate objects in ThemeServiceComplementairePeer instance pool,
-        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
-        ThemeServiceComplementairePeer::clearInstancePool();
-        // Invalidate objects in ThemePersonnagePeer instance pool,
-        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
-        ThemePersonnagePeer::clearInstancePool();
-        // Invalidate objects in ThemeI18nPeer instance pool,
-        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
-        ThemeI18nPeer::clearInstancePool();
+        MetadataI18nPeer::clearInstancePool();
     }
 
     /**
@@ -448,11 +432,11 @@ abstract class BaseThemePeer
         $results = array();
 
         // set the class once to avoid overhead in the loop
-        $cls = ThemePeer::getOMClass();
+        $cls = MetadataPeer::getOMClass();
         // populate the object(s)
         while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-            $key = ThemePeer::getPrimaryKeyHashFromRow($row, 0);
-            if (null !== ($obj = ThemePeer::getInstanceFromPool($key))) {
+            $key = MetadataPeer::getPrimaryKeyHashFromRow($row, 0);
+            if (null !== ($obj = MetadataPeer::getInstanceFromPool($key))) {
                 // We no longer rehydrate the object, since this can cause data loss.
                 // See http://www.propelorm.org/ticket/509
                 // $obj->hydrate($row, 0, true); // rehydrate
@@ -461,7 +445,7 @@ abstract class BaseThemePeer
                 $obj = new $cls();
                 $obj->hydrate($row);
                 $results[] = $obj;
-                ThemePeer::addInstanceToPool($obj, $key);
+                MetadataPeer::addInstanceToPool($obj, $key);
             } // if key exists
         }
         $stmt->closeCursor();
@@ -475,21 +459,21 @@ abstract class BaseThemePeer
      * @param      int $startcol The 0-based offset for reading from the resultset row.
      * @throws PropelException Any exceptions caught during processing will be
      *		 rethrown wrapped into a PropelException.
-     * @return array (Theme object, last column rank)
+     * @return array (Metadata object, last column rank)
      */
     public static function populateObject($row, $startcol = 0)
     {
-        $key = ThemePeer::getPrimaryKeyHashFromRow($row, $startcol);
-        if (null !== ($obj = ThemePeer::getInstanceFromPool($key))) {
+        $key = MetadataPeer::getPrimaryKeyHashFromRow($row, $startcol);
+        if (null !== ($obj = MetadataPeer::getInstanceFromPool($key))) {
             // We no longer rehydrate the object, since this can cause data loss.
             // See http://www.propelorm.org/ticket/509
             // $obj->hydrate($row, $startcol, true); // rehydrate
-            $col = $startcol + ThemePeer::NUM_HYDRATE_COLUMNS;
+            $col = $startcol + MetadataPeer::NUM_HYDRATE_COLUMNS;
         } else {
-            $cls = ThemePeer::OM_CLASS;
+            $cls = MetadataPeer::OM_CLASS;
             $obj = new $cls();
             $col = $obj->hydrate($row, $startcol);
-            ThemePeer::addInstanceToPool($obj, $key);
+            MetadataPeer::addInstanceToPool($obj, $key);
         }
 
         return array($obj, $col);
@@ -504,7 +488,7 @@ abstract class BaseThemePeer
      */
     public static function getTableMap()
     {
-        return Propel::getDatabaseMap(ThemePeer::DATABASE_NAME)->getTable(ThemePeer::TABLE_NAME);
+        return Propel::getDatabaseMap(MetadataPeer::DATABASE_NAME)->getTable(MetadataPeer::TABLE_NAME);
     }
 
     /**
@@ -512,9 +496,9 @@ abstract class BaseThemePeer
      */
     public static function buildTableMap()
     {
-      $dbMap = Propel::getDatabaseMap(BaseThemePeer::DATABASE_NAME);
-      if (!$dbMap->hasTable(BaseThemePeer::TABLE_NAME)) {
-        $dbMap->addTableObject(new ThemeTableMap());
+      $dbMap = Propel::getDatabaseMap(BaseMetadataPeer::DATABASE_NAME);
+      if (!$dbMap->hasTable(BaseMetadataPeer::TABLE_NAME)) {
+        $dbMap->addTableObject(new MetadataTableMap());
       }
     }
 
@@ -526,13 +510,13 @@ abstract class BaseThemePeer
      */
     public static function getOMClass()
     {
-        return ThemePeer::OM_CLASS;
+        return MetadataPeer::OM_CLASS;
     }
 
     /**
-     * Performs an INSERT on the database, given a Theme or Criteria object.
+     * Performs an INSERT on the database, given a Metadata or Criteria object.
      *
-     * @param      mixed $values Criteria or Theme object containing data that is used to create the INSERT statement.
+     * @param      mixed $values Criteria or Metadata object containing data that is used to create the INSERT statement.
      * @param      PropelPDO $con the PropelPDO connection to use
      * @return mixed           The new primary key.
      * @throws PropelException Any exceptions caught during processing will be
@@ -541,22 +525,22 @@ abstract class BaseThemePeer
     public static function doInsert($values, PropelPDO $con = null)
     {
         if ($con === null) {
-            $con = Propel::getConnection(ThemePeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+            $con = Propel::getConnection(MetadataPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
 
         if ($values instanceof Criteria) {
             $criteria = clone $values; // rename for clarity
         } else {
-            $criteria = $values->buildCriteria(); // build Criteria from Theme object
+            $criteria = $values->buildCriteria(); // build Criteria from Metadata object
         }
 
-        if ($criteria->containsKey(ThemePeer::ID) && $criteria->keyContainsValue(ThemePeer::ID) ) {
-            throw new PropelException('Cannot insert a value for auto-increment primary key ('.ThemePeer::ID.')');
+        if ($criteria->containsKey(MetadataPeer::ID) && $criteria->keyContainsValue(MetadataPeer::ID) ) {
+            throw new PropelException('Cannot insert a value for auto-increment primary key ('.MetadataPeer::ID.')');
         }
 
 
         // Set the correct dbName
-        $criteria->setDbName(ThemePeer::DATABASE_NAME);
+        $criteria->setDbName(MetadataPeer::DATABASE_NAME);
 
         try {
             // use transaction because $criteria could contain info
@@ -573,9 +557,9 @@ abstract class BaseThemePeer
     }
 
     /**
-     * Performs an UPDATE on the database, given a Theme or Criteria object.
+     * Performs an UPDATE on the database, given a Metadata or Criteria object.
      *
-     * @param      mixed $values Criteria or Theme object containing data that is used to create the UPDATE statement.
+     * @param      mixed $values Criteria or Metadata object containing data that is used to create the UPDATE statement.
      * @param      PropelPDO $con The connection to use (specify PropelPDO connection object to exert more control over transactions).
      * @return int             The number of affected rows (if supported by underlying database driver).
      * @throws PropelException Any exceptions caught during processing will be
@@ -584,35 +568,35 @@ abstract class BaseThemePeer
     public static function doUpdate($values, PropelPDO $con = null)
     {
         if ($con === null) {
-            $con = Propel::getConnection(ThemePeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+            $con = Propel::getConnection(MetadataPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
 
-        $selectCriteria = new Criteria(ThemePeer::DATABASE_NAME);
+        $selectCriteria = new Criteria(MetadataPeer::DATABASE_NAME);
 
         if ($values instanceof Criteria) {
             $criteria = clone $values; // rename for clarity
 
-            $comparison = $criteria->getComparison(ThemePeer::ID);
-            $value = $criteria->remove(ThemePeer::ID);
+            $comparison = $criteria->getComparison(MetadataPeer::ID);
+            $value = $criteria->remove(MetadataPeer::ID);
             if ($value) {
-                $selectCriteria->add(ThemePeer::ID, $value, $comparison);
+                $selectCriteria->add(MetadataPeer::ID, $value, $comparison);
             } else {
-                $selectCriteria->setPrimaryTableName(ThemePeer::TABLE_NAME);
+                $selectCriteria->setPrimaryTableName(MetadataPeer::TABLE_NAME);
             }
 
-        } else { // $values is Theme object
+        } else { // $values is Metadata object
             $criteria = $values->buildCriteria(); // gets full criteria
             $selectCriteria = $values->buildPkeyCriteria(); // gets criteria w/ primary key(s)
         }
 
         // set the correct dbName
-        $criteria->setDbName(ThemePeer::DATABASE_NAME);
+        $criteria->setDbName(MetadataPeer::DATABASE_NAME);
 
         return BasePeer::doUpdate($selectCriteria, $criteria, $con);
     }
 
     /**
-     * Deletes all rows from the theme table.
+     * Deletes all rows from the metadata table.
      *
      * @param      PropelPDO $con the connection to use
      * @return int             The number of affected rows (if supported by underlying database driver).
@@ -621,19 +605,19 @@ abstract class BaseThemePeer
     public static function doDeleteAll(PropelPDO $con = null)
     {
         if ($con === null) {
-            $con = Propel::getConnection(ThemePeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+            $con = Propel::getConnection(MetadataPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
         $affectedRows = 0; // initialize var to track total num of affected rows
         try {
             // use transaction because $criteria could contain info
             // for more than one table or we could emulating ON DELETE CASCADE, etc.
             $con->beginTransaction();
-            $affectedRows += BasePeer::doDeleteAll(ThemePeer::TABLE_NAME, $con, ThemePeer::DATABASE_NAME);
+            $affectedRows += BasePeer::doDeleteAll(MetadataPeer::TABLE_NAME, $con, MetadataPeer::DATABASE_NAME);
             // Because this db requires some delete cascade/set null emulation, we have to
             // clear the cached instance *after* the emulation has happened (since
             // instances get re-added by the select statement contained therein).
-            ThemePeer::clearInstancePool();
-            ThemePeer::clearRelatedInstancePool();
+            MetadataPeer::clearInstancePool();
+            MetadataPeer::clearRelatedInstancePool();
             $con->commit();
 
             return $affectedRows;
@@ -644,9 +628,9 @@ abstract class BaseThemePeer
     }
 
     /**
-     * Performs a DELETE on the database, given a Theme or Criteria object OR a primary key value.
+     * Performs a DELETE on the database, given a Metadata or Criteria object OR a primary key value.
      *
-     * @param      mixed $values Criteria or Theme object or primary key or array of primary keys
+     * @param      mixed $values Criteria or Metadata object or primary key or array of primary keys
      *              which is used to create the DELETE statement
      * @param      PropelPDO $con the connection to use
      * @return int The number of affected rows (if supported by underlying database driver).  This includes CASCADE-related rows
@@ -657,32 +641,32 @@ abstract class BaseThemePeer
      public static function doDelete($values, PropelPDO $con = null)
      {
         if ($con === null) {
-            $con = Propel::getConnection(ThemePeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+            $con = Propel::getConnection(MetadataPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
 
         if ($values instanceof Criteria) {
             // invalidate the cache for all objects of this type, since we have no
             // way of knowing (without running a query) what objects should be invalidated
             // from the cache based on this Criteria.
-            ThemePeer::clearInstancePool();
+            MetadataPeer::clearInstancePool();
             // rename for clarity
             $criteria = clone $values;
-        } elseif ($values instanceof Theme) { // it's a model object
+        } elseif ($values instanceof Metadata) { // it's a model object
             // invalidate the cache for this single object
-            ThemePeer::removeInstanceFromPool($values);
+            MetadataPeer::removeInstanceFromPool($values);
             // create criteria based on pk values
             $criteria = $values->buildPkeyCriteria();
         } else { // it's a primary key, or an array of pks
-            $criteria = new Criteria(ThemePeer::DATABASE_NAME);
-            $criteria->add(ThemePeer::ID, (array) $values, Criteria::IN);
+            $criteria = new Criteria(MetadataPeer::DATABASE_NAME);
+            $criteria->add(MetadataPeer::ID, (array) $values, Criteria::IN);
             // invalidate the cache for this object(s)
             foreach ((array) $values as $singleval) {
-                ThemePeer::removeInstanceFromPool($singleval);
+                MetadataPeer::removeInstanceFromPool($singleval);
             }
         }
 
         // Set the correct dbName
-        $criteria->setDbName(ThemePeer::DATABASE_NAME);
+        $criteria->setDbName(MetadataPeer::DATABASE_NAME);
 
         $affectedRows = 0; // initialize var to track total num of affected rows
 
@@ -692,7 +676,7 @@ abstract class BaseThemePeer
             $con->beginTransaction();
 
             $affectedRows += BasePeer::doDelete($criteria, $con);
-            ThemePeer::clearRelatedInstancePool();
+            MetadataPeer::clearRelatedInstancePool();
             $con->commit();
 
             return $affectedRows;
@@ -703,13 +687,13 @@ abstract class BaseThemePeer
     }
 
     /**
-     * Validates all modified columns of given Theme object.
+     * Validates all modified columns of given Metadata object.
      * If parameter $columns is either a single column name or an array of column names
      * than only those columns are validated.
      *
      * NOTICE: This does not apply to primary or foreign keys for now.
      *
-     * @param      Theme $obj The object to validate.
+     * @param      Metadata $obj The object to validate.
      * @param      mixed $cols Column name or array of column names.
      *
      * @return mixed TRUE if all columns are valid or the error message of the first invalid column.
@@ -719,8 +703,8 @@ abstract class BaseThemePeer
         $columns = array();
 
         if ($cols) {
-            $dbMap = Propel::getDatabaseMap(ThemePeer::DATABASE_NAME);
-            $tableMap = $dbMap->getTable(ThemePeer::TABLE_NAME);
+            $dbMap = Propel::getDatabaseMap(MetadataPeer::DATABASE_NAME);
+            $tableMap = $dbMap->getTable(MetadataPeer::TABLE_NAME);
 
             if (! is_array($cols)) {
                 $cols = array($cols);
@@ -736,7 +720,7 @@ abstract class BaseThemePeer
 
         }
 
-        return BasePeer::doValidate(ThemePeer::DATABASE_NAME, ThemePeer::TABLE_NAME, $columns);
+        return BasePeer::doValidate(MetadataPeer::DATABASE_NAME, MetadataPeer::TABLE_NAME, $columns);
     }
 
     /**
@@ -744,23 +728,23 @@ abstract class BaseThemePeer
      *
      * @param      int $pk the primary key.
      * @param      PropelPDO $con the connection to use
-     * @return Theme
+     * @return Metadata
      */
     public static function retrieveByPK($pk, PropelPDO $con = null)
     {
 
-        if (null !== ($obj = ThemePeer::getInstanceFromPool((string) $pk))) {
+        if (null !== ($obj = MetadataPeer::getInstanceFromPool((string) $pk))) {
             return $obj;
         }
 
         if ($con === null) {
-            $con = Propel::getConnection(ThemePeer::DATABASE_NAME, Propel::CONNECTION_READ);
+            $con = Propel::getConnection(MetadataPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
 
-        $criteria = new Criteria(ThemePeer::DATABASE_NAME);
-        $criteria->add(ThemePeer::ID, $pk);
+        $criteria = new Criteria(MetadataPeer::DATABASE_NAME);
+        $criteria->add(MetadataPeer::ID, $pk);
 
-        $v = ThemePeer::doSelect($criteria, $con);
+        $v = MetadataPeer::doSelect($criteria, $con);
 
         return !empty($v) > 0 ? $v[0] : null;
     }
@@ -770,23 +754,23 @@ abstract class BaseThemePeer
      *
      * @param      array $pks List of primary keys
      * @param      PropelPDO $con the connection to use
-     * @return Theme[]
+     * @return Metadata[]
      * @throws PropelException Any exceptions caught during processing will be
      *		 rethrown wrapped into a PropelException.
      */
     public static function retrieveByPKs($pks, PropelPDO $con = null)
     {
         if ($con === null) {
-            $con = Propel::getConnection(ThemePeer::DATABASE_NAME, Propel::CONNECTION_READ);
+            $con = Propel::getConnection(MetadataPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
 
         $objs = null;
         if (empty($pks)) {
             $objs = array();
         } else {
-            $criteria = new Criteria(ThemePeer::DATABASE_NAME);
-            $criteria->add(ThemePeer::ID, $pks, Criteria::IN);
-            $objs = ThemePeer::doSelect($criteria, $con);
+            $criteria = new Criteria(MetadataPeer::DATABASE_NAME);
+            $criteria->add(MetadataPeer::ID, $pks, Criteria::IN);
+            $objs = MetadataPeer::doSelect($criteria, $con);
         }
 
         return $objs;
@@ -802,13 +786,13 @@ abstract class BaseThemePeer
     {
         return \Cungfoo\Model\MetadataQuery::create()
             ->joinWithI18n()
-            ->filterByTableRef(ThemePeer::TABLE_NAME)
+            ->filterByTableRef(MetadataPeer::TABLE_NAME)
             ->findOne()
         ;
     }
-} // BaseThemePeer
+} // BaseMetadataPeer
 
 // This is the static code needed to register the TableMap for this table with the main Propel class.
 //
-BaseThemePeer::buildTableMap();
+BaseMetadataPeer::buildTableMap();
 

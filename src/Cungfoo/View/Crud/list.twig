@@ -34,6 +34,7 @@
 
 {% block content %}
     <div class="btn-group pull-right">
+        <a class="btn edit" href="{{ path('%s_crud_metadata' | format (name)) }}"><i class="icon-pencil"></i> {{ "crud.button.metadata" | trans }}</a>
         <a class="btn add btn-success" href="{{ path('%s_crud_create' | format (name)) }}"><i class="icon-plus icon-white"></i> {{ "crud.button.add" | trans }}</a>
     </div>
     <h1>{{ (name ~ ".crud.list") | trans }}</h1>
