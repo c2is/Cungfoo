@@ -7,7 +7,7 @@ use \TableMap;
 
 
 /**
- * This class defines the structure of the 'pays' table.
+ * This class defines the structure of the 'departement' table.
  *
  *
  *
@@ -18,13 +18,13 @@ use \TableMap;
  *
  * @package    propel.generator.Cungfoo.Model.map
  */
-class PaysTableMap extends TableMap
+class DepartementTableMap extends TableMap
 {
 
     /**
      * The (dot-path) name of this class
      */
-    const CLASS_NAME = 'Cungfoo.Model.map.PaysTableMap';
+    const CLASS_NAME = 'Cungfoo.Model.map.DepartementTableMap';
 
     /**
      * Initialize the table attributes, columns and validators
@@ -36,14 +36,15 @@ class PaysTableMap extends TableMap
     public function initialize()
     {
         // attributes
-        $this->setName('pays');
-        $this->setPhpName('Pays');
-        $this->setClassname('Cungfoo\\Model\\Pays');
+        $this->setName('departement');
+        $this->setPhpName('Departement');
+        $this->setClassname('Cungfoo\\Model\\Departement');
         $this->setPackage('Cungfoo.Model');
         $this->setUseIdGenerator(true);
         // columns
         $this->addPrimaryKey('id', 'Id', 'INTEGER', true, null, null);
         $this->addColumn('code', 'Code', 'VARCHAR', true, 255, null);
+        $this->addForeignKey('region_ref_id', 'RegionRefId', 'INTEGER', 'region_ref', 'id', false, null, null);
         $this->addColumn('image_detail_1', 'ImageDetail1', 'VARCHAR', false, 255, null);
         $this->addColumn('image_detail_2', 'ImageDetail2', 'VARCHAR', false, 255, null);
         $this->addColumn('created_at', 'CreatedAt', 'TIMESTAMP', false, null, null);
@@ -57,9 +58,8 @@ class PaysTableMap extends TableMap
      */
     public function buildRelations()
     {
-        $this->addRelation('Region', 'Cungfoo\\Model\\Region', RelationMap::ONE_TO_MANY, array('id' => 'pays_id', ), 'SET NULL', null, 'Regions');
-        $this->addRelation('RegionRef', 'Cungfoo\\Model\\RegionRef', RelationMap::ONE_TO_MANY, array('id' => 'pays_id', ), 'SET NULL', null, 'RegionRefs');
-        $this->addRelation('PaysI18n', 'Cungfoo\\Model\\PaysI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'PaysI18ns');
+        $this->addRelation('RegionRef', 'Cungfoo\\Model\\RegionRef', RelationMap::MANY_TO_ONE, array('region_ref_id' => 'id', ), 'SET NULL', null);
+        $this->addRelation('DepartementI18n', 'Cungfoo\\Model\\DepartementI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'DepartementI18ns');
     } // buildRelations()
 
     /**
@@ -91,7 +91,7 @@ class PaysTableMap extends TableMap
 ),
             'crudable' =>  array (
   'route_prefix' => '/',
-  'crud_prefix' => '/pays',
+  'crud_prefix' => '/departements',
   'crud_model' => NULL,
   'crud_form' => NULL,
   'crud_type_file' => 'image_detail_1,image_detail_2',
@@ -100,4 +100,4 @@ class PaysTableMap extends TableMap
         );
     } // getBehaviors()
 
-} // PaysTableMap
+} // DepartementTableMap

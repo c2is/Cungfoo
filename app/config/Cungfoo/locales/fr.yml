@@ -252,10 +252,12 @@ menu.parameters: Paramètres
 menu.parameters.resalys: Imports Resalys
 menu.parameters.viafrance: Imports ViaFrance
 menu.pays: Pays
-menu.region: Régions
+menu.region: Régions Marketing
 menu.themes: Themes
 menu.title: Cungfoo
 menu.ville: Villes
+menu.departement: Departements
+menu.region_ref: Régions Réferencement
 menu.type_hebergement: Types hébergements
 menu.type_hebergement_capacite: Types hébergements capacités
 menu.type_hebergement_multimedia: Types hébergements multimedia
@@ -356,6 +358,49 @@ pays.image_detail_1_deleted: Supprimer l'image 1
 pays.image_detail_2_deleted: Supprimer l'image 2
 pays.paysI18ns: ""
 pays.active_locale: "Activer pour cette langue"
+
+region_ref.crud.create: Création d'une region réferencement
+region_ref.crud.list: Liste regions réferencements
+region_ref.crud.update: Mettre à jour la region réferencement %name%
+region_ref.crud.view: Détails de la region réferencement %name%
+region_ref.id: Id
+region_ref.code: Code
+region_ref.name: Nom
+region_ref.introduction: Introduction
+region_ref.description: Description
+region_ref.image_detail_1: Image 1
+region_ref.image_detail_2: Image 2
+region_ref.image.detail.1: Image 1
+region_ref.image.detail.2: Image 2
+region_ref.active: Actif
+region_ref.slug: Slug
+region_ref.pays: Pays
+region_ref.image_detail_1_deleted: Supprimer l'image 1
+region_ref.image_detail_2_deleted: Supprimer l'image 2
+region_ref.region_refI18ns: ""
+region_ref.active_locale: "Activer pour cette langue"
+
+departement.crud.create: Création d'un département
+departement.crud.list: Liste départements
+departement.crud.update: Mettre à jour le département %name%
+departement.crud.view: Détails de le département %name%
+departement.id: Id
+departement.code: Code
+departement.region_ref: Région réferencement
+departement.name: Nom
+departement.introduction: Introduction
+departement.description: Description
+departement.image_detail_1: Image 1
+departement.image_detail_2: Image 2
+departement.image.detail.1: Image 1
+departement.image.detail.2: Image 2
+departement.active: Actif
+departement.slug: Slug
+departement.pays: Pays
+departement.image_detail_1_deleted: Supprimer l'image 1
+departement.image_detail_2_deleted: Supprimer l'image 2
+departement.departementI18ns: ""
+departement.active_locale: "Activer pour cette langue"
 
 region.crud.create: Création d'une région
 region.crud.list: Liste régions

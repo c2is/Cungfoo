@@ -12,98 +12,102 @@ use \PropelCollection;
 use \PropelException;
 use \PropelObjectCollection;
 use \PropelPDO;
+use Cungfoo\Model\Departement;
 use Cungfoo\Model\Pays;
-use Cungfoo\Model\PaysI18n;
-use Cungfoo\Model\PaysPeer;
-use Cungfoo\Model\PaysQuery;
-use Cungfoo\Model\Region;
 use Cungfoo\Model\RegionRef;
+use Cungfoo\Model\RegionRefI18n;
+use Cungfoo\Model\RegionRefPeer;
+use Cungfoo\Model\RegionRefQuery;
 
 /**
- * Base class that represents a query for the 'pays' table.
+ * Base class that represents a query for the 'region_ref' table.
  *
  *
  *
- * @method PaysQuery orderById($order = Criteria::ASC) Order by the id column
- * @method PaysQuery orderByCode($order = Criteria::ASC) Order by the code column
- * @method PaysQuery orderByImageDetail1($order = Criteria::ASC) Order by the image_detail_1 column
- * @method PaysQuery orderByImageDetail2($order = Criteria::ASC) Order by the image_detail_2 column
- * @method PaysQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
- * @method PaysQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
- * @method PaysQuery orderByActive($order = Criteria::ASC) Order by the active column
+ * @method RegionRefQuery orderById($order = Criteria::ASC) Order by the id column
+ * @method RegionRefQuery orderByCode($order = Criteria::ASC) Order by the code column
+ * @method RegionRefQuery orderByPaysId($order = Criteria::ASC) Order by the pays_id column
+ * @method RegionRefQuery orderByImageDetail1($order = Criteria::ASC) Order by the image_detail_1 column
+ * @method RegionRefQuery orderByImageDetail2($order = Criteria::ASC) Order by the image_detail_2 column
+ * @method RegionRefQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
+ * @method RegionRefQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
+ * @method RegionRefQuery orderByActive($order = Criteria::ASC) Order by the active column
  *
- * @method PaysQuery groupById() Group by the id column
- * @method PaysQuery groupByCode() Group by the code column
- * @method PaysQuery groupByImageDetail1() Group by the image_detail_1 column
- * @method PaysQuery groupByImageDetail2() Group by the image_detail_2 column
- * @method PaysQuery groupByCreatedAt() Group by the created_at column
- * @method PaysQuery groupByUpdatedAt() Group by the updated_at column
- * @method PaysQuery groupByActive() Group by the active column
+ * @method RegionRefQuery groupById() Group by the id column
+ * @method RegionRefQuery groupByCode() Group by the code column
+ * @method RegionRefQuery groupByPaysId() Group by the pays_id column
+ * @method RegionRefQuery groupByImageDetail1() Group by the image_detail_1 column
+ * @method RegionRefQuery groupByImageDetail2() Group by the image_detail_2 column
+ * @method RegionRefQuery groupByCreatedAt() Group by the created_at column
+ * @method RegionRefQuery groupByUpdatedAt() Group by the updated_at column
+ * @method RegionRefQuery groupByActive() Group by the active column
  *
- * @method PaysQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
- * @method PaysQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
- * @method PaysQuery innerJoin($relation) Adds a INNER JOIN clause to the query
+ * @method RegionRefQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
+ * @method RegionRefQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
+ * @method RegionRefQuery innerJoin($relation) Adds a INNER JOIN clause to the query
  *
- * @method PaysQuery leftJoinRegion($relationAlias = null) Adds a LEFT JOIN clause to the query using the Region relation
- * @method PaysQuery rightJoinRegion($relationAlias = null) Adds a RIGHT JOIN clause to the query using the Region relation
- * @method PaysQuery innerJoinRegion($relationAlias = null) Adds a INNER JOIN clause to the query using the Region relation
+ * @method RegionRefQuery leftJoinPays($relationAlias = null) Adds a LEFT JOIN clause to the query using the Pays relation
+ * @method RegionRefQuery rightJoinPays($relationAlias = null) Adds a RIGHT JOIN clause to the query using the Pays relation
+ * @method RegionRefQuery innerJoinPays($relationAlias = null) Adds a INNER JOIN clause to the query using the Pays relation
  *
- * @method PaysQuery leftJoinRegionRef($relationAlias = null) Adds a LEFT JOIN clause to the query using the RegionRef relation
- * @method PaysQuery rightJoinRegionRef($relationAlias = null) Adds a RIGHT JOIN clause to the query using the RegionRef relation
- * @method PaysQuery innerJoinRegionRef($relationAlias = null) Adds a INNER JOIN clause to the query using the RegionRef relation
+ * @method RegionRefQuery leftJoinDepartement($relationAlias = null) Adds a LEFT JOIN clause to the query using the Departement relation
+ * @method RegionRefQuery rightJoinDepartement($relationAlias = null) Adds a RIGHT JOIN clause to the query using the Departement relation
+ * @method RegionRefQuery innerJoinDepartement($relationAlias = null) Adds a INNER JOIN clause to the query using the Departement relation
  *
- * @method PaysQuery leftJoinPaysI18n($relationAlias = null) Adds a LEFT JOIN clause to the query using the PaysI18n relation
- * @method PaysQuery rightJoinPaysI18n($relationAlias = null) Adds a RIGHT JOIN clause to the query using the PaysI18n relation
- * @method PaysQuery innerJoinPaysI18n($relationAlias = null) Adds a INNER JOIN clause to the query using the PaysI18n relation
+ * @method RegionRefQuery leftJoinRegionRefI18n($relationAlias = null) Adds a LEFT JOIN clause to the query using the RegionRefI18n relation
+ * @method RegionRefQuery rightJoinRegionRefI18n($relationAlias = null) Adds a RIGHT JOIN clause to the query using the RegionRefI18n relation
+ * @method RegionRefQuery innerJoinRegionRefI18n($relationAlias = null) Adds a INNER JOIN clause to the query using the RegionRefI18n relation
  *
- * @method Pays findOne(PropelPDO $con = null) Return the first Pays matching the query
- * @method Pays findOneOrCreate(PropelPDO $con = null) Return the first Pays matching the query, or a new Pays object populated from the query conditions when no match is found
+ * @method RegionRef findOne(PropelPDO $con = null) Return the first RegionRef matching the query
+ * @method RegionRef findOneOrCreate(PropelPDO $con = null) Return the first RegionRef matching the query, or a new RegionRef object populated from the query conditions when no match is found
  *
- * @method Pays findOneByCode(string $code) Return the first Pays filtered by the code column
- * @method Pays findOneByImageDetail1(string $image_detail_1) Return the first Pays filtered by the image_detail_1 column
- * @method Pays findOneByImageDetail2(string $image_detail_2) Return the first Pays filtered by the image_detail_2 column
- * @method Pays findOneByCreatedAt(string $created_at) Return the first Pays filtered by the created_at column
- * @method Pays findOneByUpdatedAt(string $updated_at) Return the first Pays filtered by the updated_at column
- * @method Pays findOneByActive(boolean $active) Return the first Pays filtered by the active column
+ * @method RegionRef findOneByCode(string $code) Return the first RegionRef filtered by the code column
+ * @method RegionRef findOneByPaysId(int $pays_id) Return the first RegionRef filtered by the pays_id column
+ * @method RegionRef findOneByImageDetail1(string $image_detail_1) Return the first RegionRef filtered by the image_detail_1 column
+ * @method RegionRef findOneByImageDetail2(string $image_detail_2) Return the first RegionRef filtered by the image_detail_2 column
+ * @method RegionRef findOneByCreatedAt(string $created_at) Return the first RegionRef filtered by the created_at column
+ * @method RegionRef findOneByUpdatedAt(string $updated_at) Return the first RegionRef filtered by the updated_at column
+ * @method RegionRef findOneByActive(boolean $active) Return the first RegionRef filtered by the active column
  *
- * @method array findById(int $id) Return Pays objects filtered by the id column
- * @method array findByCode(string $code) Return Pays objects filtered by the code column
- * @method array findByImageDetail1(string $image_detail_1) Return Pays objects filtered by the image_detail_1 column
- * @method array findByImageDetail2(string $image_detail_2) Return Pays objects filtered by the image_detail_2 column
- * @method array findByCreatedAt(string $created_at) Return Pays objects filtered by the created_at column
- * @method array findByUpdatedAt(string $updated_at) Return Pays objects filtered by the updated_at column
- * @method array findByActive(boolean $active) Return Pays objects filtered by the active column
+ * @method array findById(int $id) Return RegionRef objects filtered by the id column
+ * @method array findByCode(string $code) Return RegionRef objects filtered by the code column
+ * @method array findByPaysId(int $pays_id) Return RegionRef objects filtered by the pays_id column
+ * @method array findByImageDetail1(string $image_detail_1) Return RegionRef objects filtered by the image_detail_1 column
+ * @method array findByImageDetail2(string $image_detail_2) Return RegionRef objects filtered by the image_detail_2 column
+ * @method array findByCreatedAt(string $created_at) Return RegionRef objects filtered by the created_at column
+ * @method array findByUpdatedAt(string $updated_at) Return RegionRef objects filtered by the updated_at column
+ * @method array findByActive(boolean $active) Return RegionRef objects filtered by the active column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
-abstract class BasePaysQuery extends ModelCriteria
+abstract class BaseRegionRefQuery extends ModelCriteria
 {
     /**
-     * Initializes internal state of BasePaysQuery object.
+     * Initializes internal state of BaseRegionRefQuery object.
      *
      * @param     string $dbName The dabase name
      * @param     string $modelName The phpName of a model, e.g. 'Book'
      * @param     string $modelAlias The alias for the model in this query, e.g. 'b'
      */
-    public function __construct($dbName = 'cungfoo', $modelName = 'Cungfoo\\Model\\Pays', $modelAlias = null)
+    public function __construct($dbName = 'cungfoo', $modelName = 'Cungfoo\\Model\\RegionRef', $modelAlias = null)
     {
         parent::__construct($dbName, $modelName, $modelAlias);
     }
 
     /**
-     * Returns a new PaysQuery object.
+     * Returns a new RegionRefQuery object.
      *
      * @param     string $modelAlias The alias of a model in the query
-     * @param     PaysQuery|Criteria $criteria Optional Criteria to build the query from
+     * @param     RegionRefQuery|Criteria $criteria Optional Criteria to build the query from
      *
-     * @return PaysQuery
+     * @return RegionRefQuery
      */
     public static function create($modelAlias = null, $criteria = null)
     {
-        if ($criteria instanceof PaysQuery) {
+        if ($criteria instanceof RegionRefQuery) {
             return $criteria;
         }
-        $query = new PaysQuery();
+        $query = new RegionRefQuery();
         if (null !== $modelAlias) {
             $query->setModelAlias($modelAlias);
         }
@@ -126,19 +130,19 @@ abstract class BasePaysQuery extends ModelCriteria
      * @param mixed $key Primary key to use for the query
      * @param     PropelPDO $con an optional connection object
      *
-     * @return   Pays|Pays[]|mixed the result, formatted by the current formatter
+     * @return   RegionRef|RegionRef[]|mixed the result, formatted by the current formatter
      */
     public function findPk($key, $con = null)
     {
         if ($key === null) {
             return null;
         }
-        if ((null !== ($obj = PaysPeer::getInstanceFromPool((string) $key))) && !$this->formatter) {
+        if ((null !== ($obj = RegionRefPeer::getInstanceFromPool((string) $key))) && !$this->formatter) {
             // the object is alredy in the instance pool
             return $obj;
         }
         if ($con === null) {
-            $con = Propel::getConnection(PaysPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+            $con = Propel::getConnection(RegionRefPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
         $this->basePreSelect($con);
         if ($this->formatter || $this->modelAlias || $this->with || $this->select
@@ -156,7 +160,7 @@ abstract class BasePaysQuery extends ModelCriteria
      * @param     mixed $key Primary key to use for the query
      * @param     PropelPDO $con A connection object
      *
-     * @return   Pays A model object, or null if the key is not found
+     * @return   RegionRef A model object, or null if the key is not found
      * @throws   PropelException
      */
      public function findOneById($key, $con = null)
@@ -171,12 +175,12 @@ abstract class BasePaysQuery extends ModelCriteria
      * @param     mixed $key Primary key to use for the query
      * @param     PropelPDO $con A connection object
      *
-     * @return   Pays A model object, or null if the key is not found
+     * @return   RegionRef A model object, or null if the key is not found
      * @throws   PropelException
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `code`, `image_detail_1`, `image_detail_2`, `created_at`, `updated_at`, `active` FROM `pays` WHERE `id` = :p0';
+        $sql = 'SELECT `id`, `code`, `pays_id`, `image_detail_1`, `image_detail_2`, `created_at`, `updated_at`, `active` FROM `region_ref` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -187,9 +191,9 @@ abstract class BasePaysQuery extends ModelCriteria
         }
         $obj = null;
         if ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-            $obj = new Pays();
+            $obj = new RegionRef();
             $obj->hydrate($row);
-            PaysPeer::addInstanceToPool($obj, (string) $key);
+            RegionRefPeer::addInstanceToPool($obj, (string) $key);
         }
         $stmt->closeCursor();
 
@@ -202,7 +206,7 @@ abstract class BasePaysQuery extends ModelCriteria
      * @param     mixed $key Primary key to use for the query
      * @param     PropelPDO $con A connection object
      *
-     * @return Pays|Pays[]|mixed the result, formatted by the current formatter
+     * @return RegionRef|RegionRef[]|mixed the result, formatted by the current formatter
      */
     protected function findPkComplex($key, $con)
     {
@@ -223,7 +227,7 @@ abstract class BasePaysQuery extends ModelCriteria
      * @param     array $keys Primary keys to use for the query
      * @param     PropelPDO $con an optional connection object
      *
-     * @return PropelObjectCollection|Pays[]|mixed the list of results, formatted by the current formatter
+     * @return PropelObjectCollection|RegionRef[]|mixed the list of results, formatted by the current formatter
      */
     public function findPks($keys, $con = null)
     {
@@ -244,12 +248,12 @@ abstract class BasePaysQuery extends ModelCriteria
      *
      * @param     mixed $key Primary key to use for the query
      *
-     * @return PaysQuery The current query, for fluid interface
+     * @return RegionRefQuery The current query, for fluid interface
      */
     public function filterByPrimaryKey($key)
     {
 
-        return $this->addUsingAlias(PaysPeer::ID, $key, Criteria::EQUAL);
+        return $this->addUsingAlias(RegionRefPeer::ID, $key, Criteria::EQUAL);
     }
 
     /**
@@ -257,12 +261,12 @@ abstract class BasePaysQuery extends ModelCriteria
      *
      * @param     array $keys The list of primary key to use for the query
      *
-     * @return PaysQuery The current query, for fluid interface
+     * @return RegionRefQuery The current query, for fluid interface
      */
     public function filterByPrimaryKeys($keys)
     {
 
-        return $this->addUsingAlias(PaysPeer::ID, $keys, Criteria::IN);
+        return $this->addUsingAlias(RegionRefPeer::ID, $keys, Criteria::IN);
     }
 
     /**
@@ -281,7 +285,7 @@ abstract class BasePaysQuery extends ModelCriteria
      *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
-     * @return PaysQuery The current query, for fluid interface
+     * @return RegionRefQuery The current query, for fluid interface
      */
     public function filterById($id = null, $comparison = null)
     {
@@ -289,7 +293,7 @@ abstract class BasePaysQuery extends ModelCriteria
             $comparison = Criteria::IN;
         }
 
-        return $this->addUsingAlias(PaysPeer::ID, $id, $comparison);
+        return $this->addUsingAlias(RegionRefPeer::ID, $id, $comparison);
     }
 
     /**
@@ -305,7 +309,7 @@ abstract class BasePaysQuery extends ModelCriteria
      *              Accepts wildcards (* and % trigger a LIKE)
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
-     * @return PaysQuery The current query, for fluid interface
+     * @return RegionRefQuery The current query, for fluid interface
      */
     public function filterByCode($code = null, $comparison = null)
     {
@@ -318,7 +322,50 @@ abstract class BasePaysQuery extends ModelCriteria
             }
         }
 
-        return $this->addUsingAlias(PaysPeer::CODE, $code, $comparison);
+        return $this->addUsingAlias(RegionRefPeer::CODE, $code, $comparison);
+    }
+
+    /**
+     * Filter the query on the pays_id column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByPaysId(1234); // WHERE pays_id = 1234
+     * $query->filterByPaysId(array(12, 34)); // WHERE pays_id IN (12, 34)
+     * $query->filterByPaysId(array('min' => 12)); // WHERE pays_id > 12
+     * </code>
+     *
+     * @see       filterByPays()
+     *
+     * @param     mixed $paysId The value to use as filter.
+     *              Use scalar values for equality.
+     *              Use array values for in_array() equivalent.
+     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return RegionRefQuery The current query, for fluid interface
+     */
+    public function filterByPaysId($paysId = null, $comparison = null)
+    {
+        if (is_array($paysId)) {
+            $useMinMax = false;
+            if (isset($paysId['min'])) {
+                $this->addUsingAlias(RegionRefPeer::PAYS_ID, $paysId['min'], Criteria::GREATER_EQUAL);
+                $useMinMax = true;
+            }
+            if (isset($paysId['max'])) {
+                $this->addUsingAlias(RegionRefPeer::PAYS_ID, $paysId['max'], Criteria::LESS_EQUAL);
+                $useMinMax = true;
+            }
+            if ($useMinMax) {
+                return $this;
+            }
+            if (null === $comparison) {
+                $comparison = Criteria::IN;
+            }
+        }
+
+        return $this->addUsingAlias(RegionRefPeer::PAYS_ID, $paysId, $comparison);
     }
 
     /**
@@ -334,7 +381,7 @@ abstract class BasePaysQuery extends ModelCriteria
      *              Accepts wildcards (* and % trigger a LIKE)
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
-     * @return PaysQuery The current query, for fluid interface
+     * @return RegionRefQuery The current query, for fluid interface
      */
     public function filterByImageDetail1($imageDetail1 = null, $comparison = null)
     {
@@ -347,7 +394,7 @@ abstract class BasePaysQuery extends ModelCriteria
             }
         }
 
-        return $this->addUsingAlias(PaysPeer::IMAGE_DETAIL_1, $imageDetail1, $comparison);
+        return $this->addUsingAlias(RegionRefPeer::IMAGE_DETAIL_1, $imageDetail1, $comparison);
     }
 
     /**
@@ -363,7 +410,7 @@ abstract class BasePaysQuery extends ModelCriteria
      *              Accepts wildcards (* and % trigger a LIKE)
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
-     * @return PaysQuery The current query, for fluid interface
+     * @return RegionRefQuery The current query, for fluid interface
      */
     public function filterByImageDetail2($imageDetail2 = null, $comparison = null)
     {
@@ -376,7 +423,7 @@ abstract class BasePaysQuery extends ModelCriteria
             }
         }
 
-        return $this->addUsingAlias(PaysPeer::IMAGE_DETAIL_2, $imageDetail2, $comparison);
+        return $this->addUsingAlias(RegionRefPeer::IMAGE_DETAIL_2, $imageDetail2, $comparison);
     }
 
     /**
@@ -397,18 +444,18 @@ abstract class BasePaysQuery extends ModelCriteria
      *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
-     * @return PaysQuery The current query, for fluid interface
+     * @return RegionRefQuery The current query, for fluid interface
      */
     public function filterByCreatedAt($createdAt = null, $comparison = null)
     {
         if (is_array($createdAt)) {
             $useMinMax = false;
             if (isset($createdAt['min'])) {
-                $this->addUsingAlias(PaysPeer::CREATED_AT, $createdAt['min'], Criteria::GREATER_EQUAL);
+                $this->addUsingAlias(RegionRefPeer::CREATED_AT, $createdAt['min'], Criteria::GREATER_EQUAL);
                 $useMinMax = true;
             }
             if (isset($createdAt['max'])) {
-                $this->addUsingAlias(PaysPeer::CREATED_AT, $createdAt['max'], Criteria::LESS_EQUAL);
+                $this->addUsingAlias(RegionRefPeer::CREATED_AT, $createdAt['max'], Criteria::LESS_EQUAL);
                 $useMinMax = true;
             }
             if ($useMinMax) {
@@ -419,7 +466,7 @@ abstract class BasePaysQuery extends ModelCriteria
             }
         }
 
-        return $this->addUsingAlias(PaysPeer::CREATED_AT, $createdAt, $comparison);
+        return $this->addUsingAlias(RegionRefPeer::CREATED_AT, $createdAt, $comparison);
     }
 
     /**
@@ -440,18 +487,18 @@ abstract class BasePaysQuery extends ModelCriteria
      *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
-     * @return PaysQuery The current query, for fluid interface
+     * @return RegionRefQuery The current query, for fluid interface
      */
     public function filterByUpdatedAt($updatedAt = null, $comparison = null)
     {
         if (is_array($updatedAt)) {
             $useMinMax = false;
             if (isset($updatedAt['min'])) {
-                $this->addUsingAlias(PaysPeer::UPDATED_AT, $updatedAt['min'], Criteria::GREATER_EQUAL);
+                $this->addUsingAlias(RegionRefPeer::UPDATED_AT, $updatedAt['min'], Criteria::GREATER_EQUAL);
                 $useMinMax = true;
             }
             if (isset($updatedAt['max'])) {
-                $this->addUsingAlias(PaysPeer::UPDATED_AT, $updatedAt['max'], Criteria::LESS_EQUAL);
+                $this->addUsingAlias(RegionRefPeer::UPDATED_AT, $updatedAt['max'], Criteria::LESS_EQUAL);
                 $useMinMax = true;
             }
             if ($useMinMax) {
@@ -462,7 +509,7 @@ abstract class BasePaysQuery extends ModelCriteria
             }
         }
 
-        return $this->addUsingAlias(PaysPeer::UPDATED_AT, $updatedAt, $comparison);
+        return $this->addUsingAlias(RegionRefPeer::UPDATED_AT, $updatedAt, $comparison);
     }
 
     /**
@@ -481,7 +528,7 @@ abstract class BasePaysQuery extends ModelCriteria
      *              Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
-     * @return PaysQuery The current query, for fluid interface
+     * @return RegionRefQuery The current query, for fluid interface
      */
     public function filterByActive($active = null, $comparison = null)
     {
@@ -489,45 +536,47 @@ abstract class BasePaysQuery extends ModelCriteria
             $active = in_array(strtolower($active), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
         }
 
-        return $this->addUsingAlias(PaysPeer::ACTIVE, $active, $comparison);
+        return $this->addUsingAlias(RegionRefPeer::ACTIVE, $active, $comparison);
     }
 
     /**
-     * Filter the query by a related Region object
+     * Filter the query by a related Pays object
      *
-     * @param   Region|PropelObjectCollection $region  the related object to use as filter
+     * @param   Pays|PropelObjectCollection $pays The related object(s) to use as filter
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
-     * @return   PaysQuery The current query, for fluid interface
+     * @return   RegionRefQuery The current query, for fluid interface
      * @throws   PropelException - if the provided filter is invalid.
      */
-    public function filterByRegion($region, $comparison = null)
+    public function filterByPays($pays, $comparison = null)
     {
-        if ($region instanceof Region) {
+        if ($pays instanceof Pays) {
             return $this
-                ->addUsingAlias(PaysPeer::ID, $region->getPaysId(), $comparison);
-        } elseif ($region instanceof PropelObjectCollection) {
+                ->addUsingAlias(RegionRefPeer::PAYS_ID, $pays->getId(), $comparison);
+        } elseif ($pays instanceof PropelObjectCollection) {
+            if (null === $comparison) {
+                $comparison = Criteria::IN;
+            }
+
             return $this
-                ->useRegionQuery()
-                ->filterByPrimaryKeys($region->getPrimaryKeys())
-                ->endUse();
+                ->addUsingAlias(RegionRefPeer::PAYS_ID, $pays->toKeyValue('PrimaryKey', 'Id'), $comparison);
         } else {
-            throw new PropelException('filterByRegion() only accepts arguments of type Region or PropelCollection');
+            throw new PropelException('filterByPays() only accepts arguments of type Pays or PropelCollection');
         }
     }
 
     /**
-     * Adds a JOIN clause to the query using the Region relation
+     * Adds a JOIN clause to the query using the Pays relation
      *
      * @param     string $relationAlias optional alias for the relation
      * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
      *
-     * @return PaysQuery The current query, for fluid interface
+     * @return RegionRefQuery The current query, for fluid interface
      */
-    public function joinRegion($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    public function joinPays($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
     {
         $tableMap = $this->getTableMap();
-        $relationMap = $tableMap->getRelation('Region');
+        $relationMap = $tableMap->getRelation('Pays');
 
         // create a ModelJoin object for this join
         $join = new ModelJoin();
@@ -542,14 +591,14 @@ abstract class BasePaysQuery extends ModelCriteria
             $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
             $this->addJoinObject($join, $relationAlias);
         } else {
-            $this->addJoinObject($join, 'Region');
+            $this->addJoinObject($join, 'Pays');
         }
 
         return $this;
     }
 
     /**
-     * Use the Region relation Region object
+     * Use the Pays relation Pays object
      *
      * @see       useQuery()
      *
@@ -557,51 +606,51 @@ abstract class BasePaysQuery extends ModelCriteria
      *                                   to be used as main alias in the secondary query
      * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
      *
-     * @return   \Cungfoo\Model\RegionQuery A secondary query class using the current class as primary query
+     * @return   \Cungfoo\Model\PaysQuery A secondary query class using the current class as primary query
      */
-    public function useRegionQuery($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    public function usePaysQuery($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
     {
         return $this
-            ->joinRegion($relationAlias, $joinType)
-            ->useQuery($relationAlias ? $relationAlias : 'Region', '\Cungfoo\Model\RegionQuery');
+            ->joinPays($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'Pays', '\Cungfoo\Model\PaysQuery');
     }
 
     /**
-     * Filter the query by a related RegionRef object
+     * Filter the query by a related Departement object
      *
-     * @param   RegionRef|PropelObjectCollection $regionRef  the related object to use as filter
+     * @param   Departement|PropelObjectCollection $departement  the related object to use as filter
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
-     * @return   PaysQuery The current query, for fluid interface
+     * @return   RegionRefQuery The current query, for fluid interface
      * @throws   PropelException - if the provided filter is invalid.
      */
-    public function filterByRegionRef($regionRef, $comparison = null)
+    public function filterByDepartement($departement, $comparison = null)
     {
-        if ($regionRef instanceof RegionRef) {
+        if ($departement instanceof Departement) {
             return $this
-                ->addUsingAlias(PaysPeer::ID, $regionRef->getPaysId(), $comparison);
-        } elseif ($regionRef instanceof PropelObjectCollection) {
+                ->addUsingAlias(RegionRefPeer::ID, $departement->getRegionRefId(), $comparison);
+        } elseif ($departement instanceof PropelObjectCollection) {
             return $this
-                ->useRegionRefQuery()
-                ->filterByPrimaryKeys($regionRef->getPrimaryKeys())
+                ->useDepartementQuery()
+                ->filterByPrimaryKeys($departement->getPrimaryKeys())
                 ->endUse();
         } else {
-            throw new PropelException('filterByRegionRef() only accepts arguments of type RegionRef or PropelCollection');
+            throw new PropelException('filterByDepartement() only accepts arguments of type Departement or PropelCollection');
         }
     }
 
     /**
-     * Adds a JOIN clause to the query using the RegionRef relation
+     * Adds a JOIN clause to the query using the Departement relation
      *
      * @param     string $relationAlias optional alias for the relation
      * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
      *
-     * @return PaysQuery The current query, for fluid interface
+     * @return RegionRefQuery The current query, for fluid interface
      */
-    public function joinRegionRef($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    public function joinDepartement($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
     {
         $tableMap = $this->getTableMap();
-        $relationMap = $tableMap->getRelation('RegionRef');
+        $relationMap = $tableMap->getRelation('Departement');
 
         // create a ModelJoin object for this join
         $join = new ModelJoin();
@@ -616,14 +665,14 @@ abstract class BasePaysQuery extends ModelCriteria
             $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
             $this->addJoinObject($join, $relationAlias);
         } else {
-            $this->addJoinObject($join, 'RegionRef');
+            $this->addJoinObject($join, 'Departement');
         }
 
         return $this;
     }
 
     /**
-     * Use the RegionRef relation RegionRef object
+     * Use the Departement relation Departement object
      *
      * @see       useQuery()
      *
@@ -631,51 +680,51 @@ abstract class BasePaysQuery extends ModelCriteria
      *                                   to be used as main alias in the secondary query
      * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
      *
-     * @return   \Cungfoo\Model\RegionRefQuery A secondary query class using the current class as primary query
+     * @return   \Cungfoo\Model\DepartementQuery A secondary query class using the current class as primary query
      */
-    public function useRegionRefQuery($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    public function useDepartementQuery($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
     {
         return $this
-            ->joinRegionRef($relationAlias, $joinType)
-            ->useQuery($relationAlias ? $relationAlias : 'RegionRef', '\Cungfoo\Model\RegionRefQuery');
+            ->joinDepartement($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'Departement', '\Cungfoo\Model\DepartementQuery');
     }
 
     /**
-     * Filter the query by a related PaysI18n object
+     * Filter the query by a related RegionRefI18n object
      *
-     * @param   PaysI18n|PropelObjectCollection $paysI18n  the related object to use as filter
+     * @param   RegionRefI18n|PropelObjectCollection $regionRefI18n  the related object to use as filter
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
-     * @return   PaysQuery The current query, for fluid interface
+     * @return   RegionRefQuery The current query, for fluid interface
      * @throws   PropelException - if the provided filter is invalid.
      */
-    public function filterByPaysI18n($paysI18n, $comparison = null)
+    public function filterByRegionRefI18n($regionRefI18n, $comparison = null)
     {
-        if ($paysI18n instanceof PaysI18n) {
+        if ($regionRefI18n instanceof RegionRefI18n) {
             return $this
-                ->addUsingAlias(PaysPeer::ID, $paysI18n->getId(), $comparison);
-        } elseif ($paysI18n instanceof PropelObjectCollection) {
+                ->addUsingAlias(RegionRefPeer::ID, $regionRefI18n->getId(), $comparison);
+        } elseif ($regionRefI18n instanceof PropelObjectCollection) {
             return $this
-                ->usePaysI18nQuery()
-                ->filterByPrimaryKeys($paysI18n->getPrimaryKeys())
+                ->useRegionRefI18nQuery()
+                ->filterByPrimaryKeys($regionRefI18n->getPrimaryKeys())
                 ->endUse();
         } else {
-            throw new PropelException('filterByPaysI18n() only accepts arguments of type PaysI18n or PropelCollection');
+            throw new PropelException('filterByRegionRefI18n() only accepts arguments of type RegionRefI18n or PropelCollection');
         }
     }
 
     /**
-     * Adds a JOIN clause to the query using the PaysI18n relation
+     * Adds a JOIN clause to the query using the RegionRefI18n relation
      *
      * @param     string $relationAlias optional alias for the relation
      * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
      *
-     * @return PaysQuery The current query, for fluid interface
+     * @return RegionRefQuery The current query, for fluid interface
      */
-    public function joinPaysI18n($relationAlias = null, $joinType = 'LEFT JOIN')
+    public function joinRegionRefI18n($relationAlias = null, $joinType = 'LEFT JOIN')
     {
         $tableMap = $this->getTableMap();
-        $relationMap = $tableMap->getRelation('PaysI18n');
+        $relationMap = $tableMap->getRelation('RegionRefI18n');
 
         // create a ModelJoin object for this join
         $join = new ModelJoin();
@@ -690,14 +739,14 @@ abstract class BasePaysQuery extends ModelCriteria
             $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
             $this->addJoinObject($join, $relationAlias);
         } else {
-            $this->addJoinObject($join, 'PaysI18n');
+            $this->addJoinObject($join, 'RegionRefI18n');
         }
 
         return $this;
     }
 
     /**
-     * Use the PaysI18n relation PaysI18n object
+     * Use the RegionRefI18n relation RegionRefI18n object
      *
      * @see       useQuery()
      *
@@ -705,26 +754,26 @@ abstract class BasePaysQuery extends ModelCriteria
      *                                   to be used as main alias in the secondary query
      * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
      *
-     * @return   \Cungfoo\Model\PaysI18nQuery A secondary query class using the current class as primary query
+     * @return   \Cungfoo\Model\RegionRefI18nQuery A secondary query class using the current class as primary query
      */
-    public function usePaysI18nQuery($relationAlias = null, $joinType = 'LEFT JOIN')
+    public function useRegionRefI18nQuery($relationAlias = null, $joinType = 'LEFT JOIN')
     {
         return $this
-            ->joinPaysI18n($relationAlias, $joinType)
-            ->useQuery($relationAlias ? $relationAlias : 'PaysI18n', '\Cungfoo\Model\PaysI18nQuery');
+            ->joinRegionRefI18n($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'RegionRefI18n', '\Cungfoo\Model\RegionRefI18nQuery');
     }
 
     /**
      * Exclude object from result
      *
-     * @param   Pays $pays Object to remove from the list of results
+     * @param   RegionRef $regionRef Object to remove from the list of results
      *
-     * @return PaysQuery The current query, for fluid interface
+     * @return RegionRefQuery The current query, for fluid interface
      */
-    public function prune($pays = null)
+    public function prune($regionRef = null)
     {
-        if ($pays) {
-            $this->addUsingAlias(PaysPeer::ID, $pays->getId(), Criteria::NOT_EQUAL);
+        if ($regionRef) {
+            $this->addUsingAlias(RegionRefPeer::ID, $regionRef->getId(), Criteria::NOT_EQUAL);
         }
 
         return $this;
@@ -737,31 +786,31 @@ abstract class BasePaysQuery extends ModelCriteria
      *
      * @param      int $nbDays Maximum age of the latest update in days
      *
-     * @return     PaysQuery The current query, for fluid interface
+     * @return     RegionRefQuery The current query, for fluid interface
      */
     public function recentlyUpdated($nbDays = 7)
     {
-        return $this->addUsingAlias(PaysPeer::UPDATED_AT, time() - $nbDays * 24 * 60 * 60, Criteria::GREATER_EQUAL);
+        return $this->addUsingAlias(RegionRefPeer::UPDATED_AT, time() - $nbDays * 24 * 60 * 60, Criteria::GREATER_EQUAL);
     }
 
     /**
      * Order by update date desc
      *
-     * @return     PaysQuery The current query, for fluid interface
+     * @return     RegionRefQuery The current query, for fluid interface
      */
     public function lastUpdatedFirst()
     {
-        return $this->addDescendingOrderByColumn(PaysPeer::UPDATED_AT);
+        return $this->addDescendingOrderByColumn(RegionRefPeer::UPDATED_AT);
     }
 
     /**
      * Order by update date asc
      *
-     * @return     PaysQuery The current query, for fluid interface
+     * @return     RegionRefQuery The current query, for fluid interface
      */
     public function firstUpdatedFirst()
     {
-        return $this->addAscendingOrderByColumn(PaysPeer::UPDATED_AT);
+        return $this->addAscendingOrderByColumn(RegionRefPeer::UPDATED_AT);
     }
 
     /**
@@ -769,31 +818,31 @@ abstract class BasePaysQuery extends ModelCriteria
      *
      * @param      int $nbDays Maximum age of in days
      *
-     * @return     PaysQuery The current query, for fluid interface
+     * @return     RegionRefQuery The current query, for fluid interface
      */
     public function recentlyCreated($nbDays = 7)
     {
-        return $this->addUsingAlias(PaysPeer::CREATED_AT, time() - $nbDays * 24 * 60 * 60, Criteria::GREATER_EQUAL);
+        return $this->addUsingAlias(RegionRefPeer::CREATED_AT, time() - $nbDays * 24 * 60 * 60, Criteria::GREATER_EQUAL);
     }
 
     /**
      * Order by create date desc
      *
-     * @return     PaysQuery The current query, for fluid interface
+     * @return     RegionRefQuery The current query, for fluid interface
      */
     public function lastCreatedFirst()
     {
-        return $this->addDescendingOrderByColumn(PaysPeer::CREATED_AT);
+        return $this->addDescendingOrderByColumn(RegionRefPeer::CREATED_AT);
     }
 
     /**
      * Order by create date asc
      *
-     * @return     PaysQuery The current query, for fluid interface
+     * @return     RegionRefQuery The current query, for fluid interface
      */
     public function firstCreatedFirst()
     {
-        return $this->addAscendingOrderByColumn(PaysPeer::CREATED_AT);
+        return $this->addAscendingOrderByColumn(RegionRefPeer::CREATED_AT);
     }
     // active behavior
 
@@ -825,14 +874,14 @@ abstract class BasePaysQuery extends ModelCriteria
      * @param     string $relationAlias optional alias for the relation
      * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
      *
-     * @return    PaysQuery The current query, for fluid interface
+     * @return    RegionRefQuery The current query, for fluid interface
      */
     public function joinI18n($locale = 'fr', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
     {
-        $relationName = $relationAlias ? $relationAlias : 'PaysI18n';
+        $relationName = $relationAlias ? $relationAlias : 'RegionRefI18n';
 
         return $this
-            ->joinPaysI18n($relationAlias, $joinType)
+            ->joinRegionRefI18n($relationAlias, $joinType)
             ->addJoinCondition($relationName, $relationName . '.Locale = ?', $locale);
     }
 
@@ -843,14 +892,14 @@ abstract class BasePaysQuery extends ModelCriteria
      * @param     string $locale Locale to use for the join condition, e.g. 'fr_FR'
      * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
      *
-     * @return    PaysQuery The current query, for fluid interface
+     * @return    RegionRefQuery The current query, for fluid interface
      */
     public function joinWithI18n($locale = 'fr', $joinType = Criteria::LEFT_JOIN)
     {
         $this
             ->joinI18n($locale, null, $joinType)
-            ->with('PaysI18n');
-        $this->with['PaysI18n']->setIsWithOneToMany(false);
+            ->with('RegionRefI18n');
+        $this->with['RegionRefI18n']->setIsWithOneToMany(false);
 
         return $this;
     }
@@ -864,13 +913,13 @@ abstract class BasePaysQuery extends ModelCriteria
      * @param     string $relationAlias optional alias for the relation
      * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
      *
-     * @return    PaysI18nQuery A secondary query class using the current class as primary query
+     * @return    RegionRefI18nQuery A secondary query class using the current class as primary query
      */
     public function useI18nQuery($locale = 'fr', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
     {
         return $this
             ->joinI18n($locale, $relationAlias, $joinType)
-            ->useQuery($relationAlias ? $relationAlias : 'PaysI18n', 'Cungfoo\Model\PaysI18nQuery');
+            ->useQuery($relationAlias ? $relationAlias : 'RegionRefI18n', 'Cungfoo\Model\RegionRefI18nQuery');
     }
 
     // crudable behavior
