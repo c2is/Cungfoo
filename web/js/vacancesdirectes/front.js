@@ -336,27 +336,62 @@ jQuery.extend( jQuery.fn, {
             });
         }
 
-        if($('#holiday').length){
-            $("#holidayGallery a").each( function(i,v) {
-                var rNum = (Math.random()*10)*2;
-                if (i % 2 === 0){
+        if($('#holiday').length && !$('body').hasClass('ie-lte8')){
+            $('#holiday').show();
+            $("#holidayGallery .polaroid a").each( function(i,v) {
+                var rNum = (Math.random()*10)*4;
+                if (i % 3 != 0){
                     $(this).rotate(rNum+'deg');
                 }
                 else{
                     $(this).rotate(-rNum+'deg');
                 }
-//                $('#holidayGallery').css({margin:"0 auto"});
-//                $('#holidayGallery a:nth-child(4n + 1)').css({border:"1px solid red"});
-//                $('#holidayGallery a:nth-child(4n + 2)').css({border:"1px solid green"});
-//                $('#holidayGallery a:nth-child(4n + 3)').css({border:"1px solid yellow"});
-//                $('#holidayGallery a:nth-child(4n)').css({border:"1px solid blue"});
-//                console.log($(this).position());
-//                $(this).position({
-//                    my: "center center",
-//                    at: "center center",
-//                    of: "#holidayGallery"
-//                });
-            } );
+//                $('#holidayGallery .polaroid:nth-child(4n + 1)').css({border:"1px solid red"});
+//                $('#holidayGallery .polaroid:nth-child(4n + 2)').css({border:"1px solid green"});
+//                $('#holidayGallery .polaroid:nth-child(4n + 3)').css({border:"1px solid yellow"});
+//                $('#holidayGallery .polaroid:nth-child(4n)').css({border:"1px solid blue"});
+                var x=$(this).parent().position().left;
+                var y=$(this).parent().position().top;
+//                console.log($(this).parent().position());
+                if(y<100 && x<400){
+                    $(this).css({top:"+30px",bottom:"-30px"});
+                }
+                else if(y>200){
+                    $(this).css({top:"-30px",bottom:"+30px"});
+                }
+                if(x<100){
+                    $(this).css({left:"+60px",right:"-60px"});
+                }
+                else if(x<250){
+                    $(this).css({left:"+30px",right:"-30px"});
+                }
+                else if(x<400){
+                    $(this).css({left:"-30px",right:"+30px"});
+                }
+                else if(x>550){
+                    $(this).css({left:"-60px",right:"+60px"});
+                }
+                if(y>100 && 400){
+                    $(this).css({left:"0px",right:"0px"});
+                }
+            });
+            var currentDeg;
+            var currentZIndex = 0;
+            $("#holidayGallery .polaroid a").hover(function(e){
+                currentDeg = $(this).rotate();
+                currentZIndex++;
+//                console.log(currentDeg);
+
+                $(this).css({zIndex:currentZIndex}).animate({
+                    rotate: '0deg'
+                }, {queue: false, duration: 500});
+            },
+            function(e){
+                $(this).animate({
+                    rotate: currentDeg
+                }, {queue: false, duration: 500});
+            });
+            $('#holiday').hide();
         }
 
     }
