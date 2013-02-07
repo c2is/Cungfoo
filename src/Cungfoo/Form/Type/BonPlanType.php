@@ -42,6 +42,7 @@ class BonPlanType extends BaseBonPlanType
                     'title'         => 'crud.tab.datas',
                     'content'       => array(
                         'prix',
+                        'prix_barre',
                         'date_debut',
                         'date_fin',
                         'bon_planI18ns',
