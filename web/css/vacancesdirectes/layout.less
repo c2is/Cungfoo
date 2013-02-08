@@ -348,11 +348,13 @@ h6, .h6-like{color:@colorFushia;}
 }
 
 .toggleContainer{
-  .toggleItem{position:relative;background-color:@colorBgGrisF;color:@colorBlanc;._verticalCenter(40px);padding:0 40px;text-transform:uppercase;font-size:19px;font-family:@ptnarrow;font-weight:bold;._border-radius(10px);margin-bottom:10px;cursor:pointer;
+  .linkItem,
+  .toggleItem{position:relative;background-color:@colorBgGrisF;color:@colorBlanc;display:block;._verticalCenter(40px);padding:0 40px;text-transform:uppercase;text-decoration:none;font-size:19px;font-family:@ptnarrow;font-weight:bold;._border-radius(10px);margin-bottom:10px;cursor:pointer;
     .toggleArrow{position:absolute;right:15px;top:0;font-size:30px;}
   }
   .toggleContent{display:none;
     &.primary{
+      .linkItem,
       .toggleItem{position:relative;background-color:@colorBgGrisC;color:@colorFushia;._verticalCenter(40px);padding:0 40px;text-transform:uppercase;font-size:19px;font-family:@ptnarrow;font-weight:bold;._border-radius(10px);margin-bottom:10px;cursor:pointer;
         .toggleArrow{position:absolute;right:15px;top:0;font-size:30px;}
       }

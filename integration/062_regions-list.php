@@ -143,57 +143,7 @@ include('includes/top.php'); ?>
                                 </div>
                             </div>
                         </div>
-                        <div class="toggleItem">Bretagne<span class="toggleArrow">&gt;</span></div>
-                        <div class="toggleContent secondary">
-                            <div class="itemResult clear">
-                                <div class="itemResultTitle itemResultTitleHbgt">
-                                    Familial
-                                </div>
-                                <div class="itemResultLeft itemResultLeftHbgt">
-                                    <img src="http://pimg.devlint.fr/171x124" alt="" class="boxborder">
-                                </div>
-                                <div class="itemResultCenter itemResultCenterHbgt">
-                                    <span class="ircHbgtTitle">Mobil-home | 6 places</span>
-                                    <span class="ircHbgtSubTitle">Avec sanitaires</span>
-                                    <span class="ircHbgtDesc">Particulièrement prisé des famille, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l'esprit libre</span>
-                                </div>
-                                <div class="itemResultBottom itemResultBottomHbgt clear">
-                                    <a class="bt right fushia big" href="#_">En savoir plus</a>
-                                </div>
-                            </div>
-                            <div class="itemResult clear">
-                                <div class="itemResultTitle itemResultTitleHbgt">
-                                    Familial
-                                </div>
-                                <div class="itemResultLeft itemResultLeftHbgt">
-                                    <img src="http://pimg.devlint.fr/171x124" alt="" class="boxborder">
-                                </div>
-                                <div class="itemResultCenter itemResultCenterHbgt">
-                                    <span class="ircHbgtTitle">Mobil-home | 6 places</span>
-                                    <span class="ircHbgtSubTitle">Avec sanitaires</span>
-                                    <span class="ircHbgtDesc">Particulièrement prisé des famille, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l'esprit libre</span>
-                                </div>
-                                <div class="itemResultBottom itemResultBottomHbgt clear">
-                                    <a class="bt right fushia big" href="#_">En savoir plus</a>
-                                </div>
-                            </div>
-                            <div class="itemResult clear">
-                                <div class="itemResultTitle itemResultTitleHbgt">
-                                    Familial
-                                </div>
-                                <div class="itemResultLeft itemResultLeftHbgt">
-                                    <img src="http://pimg.devlint.fr/171x124" alt="" class="boxborder">
-                                </div>
-                                <div class="itemResultCenter itemResultCenterHbgt">
-                                    <span class="ircHbgtTitle">Mobil-home | 6 places</span>
-                                    <span class="ircHbgtSubTitle">Avec sanitaires</span>
-                                    <span class="ircHbgtDesc">Particulièrement prisé des famille, ce mobil-home 6 places allie la fonctionnalité au grand confort. Tout est fait pour que vous en profitiez au maximum, l'esprit libre</span>
-                                </div>
-                                <div class="itemResultBottom itemResultBottomHbgt clear">
-                                    <a class="bt right fushia big" href="#_">En savoir plus</a>
-                                </div>
-                            </div>
-                        </div>
+                        <a class="linkItem" href="#">Bretagne<span class="toggleArrow">&gt;</span></a>
                         <div class="toggleItem">Corse<span class="toggleArrow">&gt;</span></div>
                         <div class="toggleContent secondary">
                             <div class="itemResult clear">
