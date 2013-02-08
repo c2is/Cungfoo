@@ -4,11 +4,11 @@
         <h2>{{ 'widget.offres_speciales.title' | trans }}</h2>
     </div>
     {% for bonPlan in bonsPlans %}
-    <div class="element {% if bonPlan.prix and bonPlan.prixBarre %}promo{% elseif not bonPlan.prix %}noprice{% endif %} clear">
+    <div class="element linkParent clear{% if bonPlan.prix and bonPlan.prixBarre %} promo{% elseif not bonPlan.prix %} noprice{% endif %}">
         <div class="left">
             <a href="{{ path('bonsplans', {'slug': bonPlan.slug}) }}" class="linkBlock"><img class="view" src="{{ asset(bonPlan.imageMenu) }}" width="96" height="66" alt="" /></a>
         </div>
-        <div class="details left linkParent">
+        <div class="details left">
             <span class="title">{{ bonPlan.name }}</span>
         </div>
         {% if bonPlan.prix %}
