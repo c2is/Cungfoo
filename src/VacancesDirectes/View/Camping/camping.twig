@@ -418,6 +418,7 @@
 <div id="greyBoxes">
     {{ esi(path('widget', {'name': 'offres_speciales', 'etab': etab.id, 'maxage': 600})) }}
     {{ esi(path('widget', {'name': 'tracking', 'etab': etab.code})) }}
+    {{ esi(path('widget', {'name': 'related', 'etab': etab.code, 'maxage': 600})) }}
     {% include 'Bloc/sejour_reussi.twig' %}
 </div>
 {% endblock %}
