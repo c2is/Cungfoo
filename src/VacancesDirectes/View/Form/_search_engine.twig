@@ -120,7 +120,7 @@
 </div>
 
 {% if list.type == 1 or app.request.get('_route') == "catalogue" %}
-{{ render(path('search_filter')) }}
+{{ esi(path('widget', {'name': 'search_filter'})) }}
 {% endif %}
 
 <script type="text/javascript">

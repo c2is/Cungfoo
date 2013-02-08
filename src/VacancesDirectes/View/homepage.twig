@@ -88,25 +88,7 @@
 {% block rightColumn %}
     {% include 'Form/_search_engine.twig' %}
     <div id="greyBoxes" class="clear">
-        <div id="weekendIdeasBloc" class="clear radiusBox greyC">
-            <div class="stamp fushia">
-                <h2>{{ "general.idees_week_end" | trans }}</h2>
-            </div>
-            {% for idee in ideesweekend %}
-                <div class="element clear{% if idee.prix == "" %} noprice{% endif %}{% if loop.last %} last{% endif %}{# TODO linkParent #}">
-                    <div class="left">
-                        <img class="view" src="{{ asset(idee.imagePath) }}" width="96" height="86" alt="" />
-                    </div>
-                    <div class="details left">
-                        <span class="title">{{ idee.titre }}</span>
-                    </div>
-                    {% if(idee.prix != "") %}
-                        <a href="{{ idee.lien | trans }}" class="stain cover linkBlock "><span>{{ "general.a_partir_de" | trans }}<br /><span class="price linkBlock">{{ idee.prix }}<span class="fine">&nbsp;</span>€</span></span></a>
-                    {% endif %}
-                </div>
-            {% endfor %}
-            {# TODO <a href="#_" class="bt link right">{{ "home.idees_weekend.link" | trans  ({'%number%': ideesweekend|length }) }}</a> #}
-        </div>
+        {{ esi(path('widget', {'name': 'idees_weekend'})) }}
     </div>
 {% endblock %}
 

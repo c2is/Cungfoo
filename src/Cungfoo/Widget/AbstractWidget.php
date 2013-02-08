@@ -29,6 +29,11 @@ abstract class AbstractWidget
         }
     }
 
+    public function getMaxAge()
+    {
+        return 0;
+    }
+
     public abstract function render();
 
     public abstract function getName();

@@ -4,24 +4,7 @@
 <footer class="clear">
     <div class="footer-home fixed-width clear">
         <div id="footerInsert" class="clear">
-            <div id="insertContact" class="left radiusBox greyF">
-                <h3>{{ "footer.nous_joindre" | trans }}</h3>
-                <div class="content">
-                    <p class="contactPhone">
-                        <span class="tel">{{ "footer.contact.tel"  | trans }}</span>
-                        <span class="fax">{{ "footer.contact.fax" | trans }}</span>
-                    </p>
-                    <span class="contactPhonePrice">{{ "footer.contact.price" | trans }}</span>
-                    <p class="contactAddress small">
-                        {{ "footer.contact.adresse.name" | trans }}<br />
-                        {{ "footer.contact.adresse.lieu_dit" | trans }}<br />
-                        {{ "footer.contact.adresse.rue" | trans }}<br />
-                        {{ "footer.contact.adresse.ville" | trans }}<br />
-                        {{ "footer.contact.adresse.code_postal" | trans }}
-                    </p>
-                    {# TODO <a class="bt big gris2" href="#">{{ "footer.nous_contacter" | trans }}</a> #}
-                </div>
-            </div>
+            {{ esi(path('widget', {'name': 'contact'})) }}
             {# TODO <div id="insertCatalog" class="left radiusBox greyC">
                 <div class="content">
                     <h3>{{ "footer.demande_catalogue" | trans }}</h3>

@@ -414,12 +414,12 @@
 {% endblock %}
 
 {% block rightColumn %}
-    {% include 'Bloc/prix.twig' %}
+    {{ esi(path('widget', {'name': 'bloc_prix', 'etab': etab.id})) }}
 <div id="greyBoxes">
-    {{ esi(path('widget', {'name': 'offres_speciales', 'etab': etab.id, 'maxage': 600})) }}
+    {{ esi(path('widget', {'name': 'offres_speciales', 'etab': etab.id})) }}
     {{ esi(path('widget', {'name': 'tracking', 'etab': etab.code})) }}
-    {{ esi(path('widget', {'name': 'related', 'etab': etab.code, 'maxage': 600})) }}
-    {% include 'Bloc/sejour_reussi.twig' %}
-    {{ esi(path('widget', {'name': 'reassurance', 'etab': etab.code, 'maxage': 600})) }}
+    {{ esi(path('widget', {'name': 'related', 'etab': etab.code})) }}
+    {{ esi(path('widget', {'name': 'sejour_reussi'})) }}
+    {{ esi(path('widget', {'name': 'reassurance'})) }}
 </div>
 {% endblock %}

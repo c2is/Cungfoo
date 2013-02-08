@@ -20,8 +20,6 @@ class WidgetController implements ControllerProviderInterface
 
         $controllers->match('/{name}', function (Request $request, $name) use ($app)
         {
-            $maxAge = (int) $request->query->get('maxage', 0);
-
             $className = '\\VacancesDirectes\\Widget\\' . join('', array_map('ucwords', explode('_', $name))) . 'Widget';
             if (!class_exists($className))
             {
@@ -33,6 +31,8 @@ class WidgetController implements ControllerProviderInterface
             {
                 throw new \Exception(sprintf('Widget %s must extend the \\Cungfoo\\Widget\\AbstractWidget class', $name));
             }
+
+            $maxAge = (int) $request->query->get('maxage', $widget->getMaxAge());
 
             return new Response($widget->render(), 200, array('Cache-Control' => sprintf('s-maxage=%s, public', $maxAge)));
         })

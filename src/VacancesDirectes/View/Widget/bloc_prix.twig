@@ -1,0 +1,46 @@
+{% if blocPrix.adult_price_without_discounts != 0 %}
+<div id="dispoBloc" class="proposal radiusBox fushia promo arrowLeft">
+    <p class="proposalTitle">
+        {% if blocPrix.proposal_key %}
+        {{ "listing.du" | trans }} {{ blocPrix.start_date }} {{ "listing.au" | trans }} {{ blocPrix.end_date }}
+        {% else %}
+        {{ 'general.meilleur_prix'|trans }}
+        {% endif %}
+    </p>
+    {% if blocPrix.proposal_key %}
+    <p class="proposalType">{% if blocPrix.category_hebergement %}{{ blocPrix.category_hebergement }} - {% endif %}{{ blocPrix.room_type_label }}</p>
+    {% else %}
+    <p class="proposalDates">{{ "listing.du" | trans }} {{ blocPrix.start_date }} {{ "listing.au" | trans }} {{ blocPrix.end_date }}</p>
+    {% endif %}
+    {% if blocPrix.type_hebergement %}
+    <p class="proposalType">{{ blocPrix.category_hebergement }} - {{ blocPrix.type_hebergement }}
+    {% endif %}
+
+    <div class="stain cover">
+        {% if not blocPrix.proposal_key %}
+            <span class="from">{{ "general.a_partir_de"|trans }}</span>
+        {% endif %}
+        <span class="price linkBlock">
+            {% if blocPrix.adult_price_pourcent %}
+                {{ blocPrix.adult_price|number_format }}<span class="fine">&nbsp;</span>€
+            {% else %}
+                {{ blocPrix.adult_price_without_discounts|number_format }}<span class="fine">&nbsp;</span>€
+            {% endif %}
+        </span>
+        {% if blocPrix.adult_price_pourcent %}
+            <span class="instead">au lieu de <span class="line-through">{{ blocPrix.adult_price_without_discounts|number_format }}<span class="fine">&nbsp;</span>€</span></span>
+        {% endif %}
+        <!--  PROMO  -->
+        {% if blocPrix.adult_price_pourcent %}
+        <span class="discount">-{{ blocPrix.adult_price_pourcent }}%</span>
+        {% endif %}
+        <!--  FIN / PROMO  -->
+    </div>
+
+    {% if blocPrix.proposal_key %}
+    <a class="bt sombre big ib" href="{{ path('couloir_detail_sejour', {'proposalKey': blocPrix.proposal_key}) }}" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'SideBar_-_Lien-Reserver', 'Clic_-_Bouton-Reserver']);">{{ "general.reserver"|trans }}</a>
+    {% else %}
+    <a class="bt sombre big ib goto" href="#frameResalys" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'SideBar_-_Lien-Prix', 'Clic_-_Bouton-J-en-Profite']);">{{ "general.profite"|trans }}</a>
+    {% endif %}
+</div>
+{% endif %}

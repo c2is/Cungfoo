@@ -6,16 +6,16 @@ use Symfony\Component\HttpFoundation\Request;
 
 use Cungfoo\Widget\AbstractWidget;
 
-class ReassuranceWidget extends AbstractWidget
+class SejourReussiWidget extends AbstractWidget
 {
     public function getName()
     {
-        return 'reassurance';
+        return 'sejour_reussi';
     }
 
     public function render()
     {
-        return $this->app['twig']->render('Widget\\reassurance.twig');
+        return $this->app['twig']->render('Widget\\sejour_reussi.twig');
     }
 
     public function getMaxAge()

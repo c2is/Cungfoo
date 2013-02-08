@@ -9,7 +9,7 @@ use Cungfoo\Model\BonPlanQuery,
 
 class OffresSpecialesWidget extends AbstractWidget
 {
-    public function requiredParameters()
+    protected function requiredParameters()
     {
         return array('etab');
     }
@@ -41,5 +41,10 @@ class OffresSpecialesWidget extends AbstractWidget
         return $this->app['twig']->render('Widget\\offres_speciales.twig', array(
             'bonsPlans' => $bonsPlans
         ));
+    }
+
+    public function getMaxAge()
+    {
+        return $this->app['config']->get('vd_config')['httpcache']['short'];
     }
 }

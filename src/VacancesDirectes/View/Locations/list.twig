@@ -72,14 +72,8 @@
     {% include 'Form/_search_engine.twig' %}
 
     <div id="greyBoxes">
-        {% include 'Bloc/propose_hebergement.twig' %}
-    </div>
-
-    <div id="greyBoxes">
-        {% include 'Bloc/sejour_reussi.twig' %}
-    </div>
-
-    <div id="greyBoxes">
-        {% include 'Bloc/informations.twig' %}
+        {{ esi(path('widget', {'name': 'proposition_hebergement'})) }}
+        {{ esi(path('widget', {'name': 'sejour_reussi'})) }}
+        {{ esi(path('widget', {'name': 'reassurance'})) }}
     </div>
 {% endblock %}

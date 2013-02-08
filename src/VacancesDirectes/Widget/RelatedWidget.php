@@ -9,7 +9,7 @@ use Cungfoo\Model\EtablissementQuery,
 
 class RelatedWidget extends AbstractWidget
 {
-    public function requiredParameters()
+    protected function requiredParameters()
     {
         return array('etab');
     }
@@ -42,5 +42,10 @@ class RelatedWidget extends AbstractWidget
         return $this->app['twig']->render('Widget\\related.twig', array(
             'campings' => $campings
         ));
+    }
+
+    public function getMaxAge()
+    {
+        return $this->app['config']->get('vd_config')['httpcache']['short'];
     }
 }
