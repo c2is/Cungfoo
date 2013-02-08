@@ -19,7 +19,7 @@ class TrackingWidget extends AbstractWidget
         $etab = (int) $this->app['request']->query->get('etab');
 
         $campings = array();
-        $trackingCamping = $this->app['session']->get('tracking.camping');
+        $trackingCamping = unserialize($this->app['request']->cookies->get('tracking'));
 
         $nbTrackingCamping = count($trackingCamping);
         for($i = 0; $i < $nbTrackingCamping && count($campings) < 2; $i++) {
@@ -30,7 +30,7 @@ class TrackingWidget extends AbstractWidget
                     ->filterByActive(true)
                     ->findOne()
                 ;
-                
+
                 if ($camping)
                 {
                     $campings[] = $camping;
