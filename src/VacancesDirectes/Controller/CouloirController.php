@@ -70,7 +70,7 @@ class CouloirController implements ControllerProviderInterface
 
             $query = $this->pushCookieSession($request, $query);
 
-            return $app['twig']->render('Couloir\detail-sejour.twig', array(
+            return $app->renderView('Couloir\detail-sejour.twig', array(
                 'query' => $query,
                 "step"  => 1,
             ));
@@ -101,7 +101,7 @@ class CouloirController implements ControllerProviderInterface
 
             $query = $this->pushCookieSession($request, $query);
 
-            return $app['twig']->render('Couloir\detail-sejour.twig', array(
+            return $app->renderView('Couloir\detail-sejour.twig', array(
                 'query' => $query,
                 "step"  => 2,
             ));
@@ -129,7 +129,7 @@ class CouloirController implements ControllerProviderInterface
 
             $query = $this->pushCookieSession($request, $query);
 
-            return $app['twig']->render('Couloir\confirmation.twig', array(
+            return $app->renderView('Couloir\confirmation.twig', array(
                 'query' => $query,
                 "step"  => 4,
             ));
