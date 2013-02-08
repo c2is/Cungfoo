@@ -838,3 +838,6 @@ widget:
         more: "Plus d'offres"
         from: "à partir de"
         instead: "au lieu de"
+    tracking:
+        title: "Vous avez déjà consulté"
+        from: "à partir de"

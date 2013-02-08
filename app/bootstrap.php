@@ -34,11 +34,7 @@ $app['twig'] = $app->share($app->extend('twig', function($twig, $app) {
     $twig->addExtension(new Twig_Extensions_Extension_Text());
     $twig->addExtension(new \Cungfoo\Lib\Twig\Extension\DateLocaleExtension($app));
     $twig->addExtension(new \Cungfoo\Lib\Twig\Extension\SerializeExtension($app));
-
-    /*$esiFunction = new Twig_Function_Function('esi', function () {
-        // ...
-    });
-    $twig->addFunction($esiFunction);*/
+    $twig->addExtension(new \Cungfoo\Lib\Twig\Extension\EsiExtension($app));
 
     return $twig;
 }));

@@ -2,7 +2,9 @@
 
 namespace VacancesDirectes\Controller;
 
-use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Request,
+    Symfony\Component\HttpFoundation\Response,
+    Symfony\Component\HttpFoundation\Cookie;
 
 use Silex\Application,
     Silex\ControllerCollection,
@@ -349,7 +351,22 @@ class DestinationController implements ControllerProviderInterface
         }
         // fin de la définition des informations relatives au bloc prix de la fiche camping
 
-        return $app->renderView('Camping/camping.twig', array(
+        $trackingCamping = unserialize($app['request']->cookies->get('tracking'));
+        if (!$trackingCamping)
+        {
+            $trackingCamping = array();
+        }
+        if (!in_array($camping->getCode(), $trackingCamping))
+        {
+            array_unshift($trackingCamping, $camping->getCode());
+        }
+        if (count($trackingCamping) > 3)
+        {
+            array_pop($trackingCamping);
+        }
+        $cookie = new Cookie('tracking', serialize($trackingCamping), time() + 3600 * 24 * 7);
+
+        $view = $app['twig']->render('Camping/camping.twig', array(
             'locale'                  => $locale,
             'etab'                    => $camping,
             'personnages'             => $personnages,
@@ -370,5 +387,9 @@ class DestinationController implements ControllerProviderInterface
             ), true)
 
         ));
+
+        $response = new Response($view, 200, array('Surrogate-Control' => 'content="ESI/1.0"'));
+        $response->headers->setCookie($cookie);
+        return $response;
     }
 }
