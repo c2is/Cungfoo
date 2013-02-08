@@ -58,7 +58,7 @@ class TopCampingController
 
         $listingContent = $list->process();
 
-        return $app['twig']->render('Research\dispo.twig', array(
+        return $app->renderView('Research\dispo.twig', array(
             'title'           => $app->trans('seo.title.topCamping'),
             'metaDescription' => $app->trans('seo.meta.topCamping'),
             'h1' => $app->trans('topCamping.h1'),
