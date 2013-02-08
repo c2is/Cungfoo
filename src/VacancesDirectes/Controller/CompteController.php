@@ -32,24 +32,8 @@ class CompteController implements ControllerProviderInterface
         );
 
         $query = array_merge($parameters, $request->request->all());
-        $query = $this->pushCookieSession($request, $query);
 
         return $query;
-    }
-
-    protected function pushCookieSession(Request $request, $options)
-    {
-        $session = base64_decode(str_replace('B64_', '', $request->cookies->get('session_name')));
-
-        if (!$session && $options['session'])
-        {
-            setcookie( "session_name", 'B64_'.base64_encode($options['session']));
-            $session = $options['session'];
-        }
-
-        $options['session'] = $session;
-
-        return $options;
     }
 
     /**
