@@ -23,7 +23,7 @@ class TrackingWidget extends AbstractWidget
 
         $nbTrackingCamping = count($trackingCamping);
         for($i = 0; $i < $nbTrackingCamping && count($campings) < 2; $i++) {
-            if ($trackingCamping[$i] != $etab)
+            if (!$etab || $trackingCamping[$i] != $etab)
             {
                 $camping = EtablissementQuery::create()
                     ->filterByCode($trackingCamping[$i])
