@@ -14,21 +14,6 @@
         Locale: fr
         Prenom: Roger
         ActiveLocale: true
-    2_de:
-        Id: 2
-        Locale: de
-        Prenom: 'Simon DE'
-        ActiveLocale: true
-    2_en:
-        Id: 2
-        Locale: en
-        Prenom: 'Simon EN'
-        ActiveLocale: true
-    2_fr:
-        Id: 2
-        Locale: fr
-        Prenom: Simon
-        ActiveLocale: true
     3_de:
         Id: 3
         Locale: de

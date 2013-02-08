@@ -1,7 +1,7 @@
 \Cungfoo\Model\BonPlan:
     1:
         DateDebut: '2013-01-01 00:00:00'
-        DateFin: '2013-01-31 00:00:00'
+        DateFin: '2013-07-14 00:00:00'
         Prix: null
         PrixBarre: 137
         ImageMenu: null
@@ -10,7 +10,7 @@
         ActiveCompteur: false
         MiseEnAvant: true
         PushHome: true
-        DateStart: '2013-04-20 00:00:00'
+        DateStart: '2013-04-13 00:00:00'
         DayStart: saturday
         DayRange: '7'
         NbAdultes: 2
@@ -19,7 +19,7 @@
         Active: true
     2:
         DateDebut: '2013-01-01 00:00:00'
-        DateFin: '2013-01-31 00:00:00'
+        DateFin: '2013-08-31 00:00:00'
         Prix: null
         PrixBarre: null
         ImageMenu: uploads/bon_plans/50fec19945bb3.jpeg
@@ -28,7 +28,7 @@
         ActiveCompteur: false
         MiseEnAvant: false
         PushHome: false
-        DateStart: '2013-06-29 00:00:00'
+        DateStart: '2013-04-20 00:00:00'
         DayStart: saturday
         DayRange: '7'
         NbAdultes: 2

@@ -12,6 +12,7 @@ use \PropelPDO;
 use Cungfoo\Model\Departement;
 use Cungfoo\Model\DepartementI18nPeer;
 use Cungfoo\Model\DepartementPeer;
+use Cungfoo\Model\EtablissementPeer;
 use Cungfoo\Model\RegionRefPeer;
 use Cungfoo\Model\map\DepartementTableMap;
 
@@ -406,6 +407,9 @@ abstract class BaseDepartementPeer
      */
     public static function clearRelatedInstancePool()
     {
+        // Invalidate objects in EtablissementPeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        EtablissementPeer::clearInstancePool();
         // Invalidate objects in DepartementI18nPeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
         DepartementI18nPeer::clearInstancePool();

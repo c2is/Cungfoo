@@ -1,5 +1,5 @@
 \Cungfoo\Model\Etablissement:
-    200:
+    1:
         Code: 171
         Slug: abri-de-camargue
         Name: '*Abri de Camargue'
@@ -16,6 +16,7 @@
         OpeningDate: null
         ClosingDate: null
         VilleId: null
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -25,7 +26,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    201:
+    2:
         Code: 161
         Slug: almadies
         Name: '*Almadies'
@@ -42,6 +43,7 @@
         OpeningDate: null
         ClosingDate: null
         VilleId: null
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -51,7 +53,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    204:
+    3:
         Code: 141
         Slug: aux-hamacs
         Name: '*Aux Hamacs'
@@ -68,6 +70,7 @@
         OpeningDate: null
         ClosingDate: null
         VilleId: null
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -77,7 +80,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    206:
+    4:
         Code: 162
         Slug: bois-de-pleuven
         Name: '*Bois de Pleuven'
@@ -94,6 +97,7 @@
         OpeningDate: null
         ClosingDate: null
         VilleId: null
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -103,7 +107,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    208:
+    5:
         Code: 149
         Slug: chanset
         Name: '*Chanset'
@@ -120,6 +124,7 @@
         OpeningDate: null
         ClosingDate: null
         VilleId: null
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -129,7 +134,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    211:
+    6:
         Code: 152
         Slug: domaine-de-beaulieu
         Name: '*Domaine de Beaulieu'
@@ -146,6 +151,7 @@
         OpeningDate: null
         ClosingDate: null
         VilleId: null
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -155,7 +161,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    212:
+    7:
         Code: 163
         Slug: domaine-de-la-foret
         Name: '*Domaine de la Forêt'
@@ -172,6 +178,7 @@
         OpeningDate: null
         ClosingDate: null
         VilleId: null
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -181,7 +188,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    213:
+    8:
         Code: 166
         Slug: domaine-des-bans
         Name: '*Domaine des Bans'
@@ -198,6 +205,7 @@
         OpeningDate: null
         ClosingDate: null
         VilleId: null
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -207,7 +215,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    214:
+    9:
         Code: 172
         Slug: domaine-des-iscles
         Name: '*Domaine des Iscles'
@@ -224,6 +232,7 @@
         OpeningDate: null
         ClosingDate: null
         VilleId: null
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -233,7 +242,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    215:
+    10:
         Code: 167
         Slug: douce-quietude
         Name: '*Douce Quiétude'
@@ -250,6 +259,7 @@
         OpeningDate: null
         ClosingDate: null
         VilleId: null
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -259,7 +269,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    216:
+    11:
         Code: 168
         Slug: fleutron
         Name: '*Fleutron'
@@ -276,6 +286,7 @@
         OpeningDate: null
         ClosingDate: null
         VilleId: null
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -285,7 +296,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    218:
+    12:
         Code: 146
         Slug: l-atlantique
         Name: '*L''Atlantique'
@@ -302,6 +313,7 @@
         OpeningDate: null
         ClosingDate: null
         VilleId: null
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -311,7 +323,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    219:
+    13:
         Code: 148
         Slug: la-barque
         Name: '*La Barque'
@@ -328,6 +340,7 @@
         OpeningDate: null
         ClosingDate: null
         VilleId: null
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -337,7 +350,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    220:
+    14:
         Code: 157
         Slug: la-rotonde
         Name: '*La Rotonde'
@@ -354,6 +367,7 @@
         OpeningDate: null
         ClosingDate: null
         VilleId: null
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -363,7 +377,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    221:
+    15:
         Code: 173
         Slug: lacs-du-verdon
         Name: '*Lacs du Verdon'
@@ -380,6 +394,7 @@
         OpeningDate: null
         ClosingDate: null
         VilleId: null
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -389,7 +404,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    223:
+    16:
         Code: 147
         Slug: le-bahamas-beach
         Name: '*Le Bahamas Beach'
@@ -406,6 +421,7 @@
         OpeningDate: null
         ClosingDate: null
         VilleId: null
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -415,7 +431,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    224:
+    17:
         Code: 139
         Slug: le-barralet
         Name: '*Le Barralet'
@@ -432,6 +448,7 @@
         OpeningDate: null
         ClosingDate: null
         VilleId: null
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -441,7 +458,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    225:
+    18:
         Code: 150
         Slug: le-chene-gris
         Name: '*Le Chêne Gris'
@@ -458,6 +475,7 @@
         OpeningDate: null
         ClosingDate: null
         VilleId: null
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -467,7 +485,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    226:
+    19:
         Code: 164
         Slug: le-lac
         Name: '*Le Lac'
@@ -484,6 +502,7 @@
         OpeningDate: null
         ClosingDate: null
         VilleId: null
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -493,7 +512,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    227:
+    20:
         Code: 153
         Slug: le-lamparo
         Name: '*Le Lamparo'
@@ -510,6 +529,7 @@
         OpeningDate: null
         ClosingDate: null
         VilleId: null
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -519,7 +539,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    228:
+    21:
         Code: 159
         Slug: le-tamarit-park
         Name: '*Le Tamarit Park'
@@ -536,6 +556,7 @@
         OpeningDate: null
         ClosingDate: null
         VilleId: null
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -545,7 +566,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    229:
+    22:
         Code: 160
         Slug: le-trivoly
         Name: '*Le Trivoly'
@@ -562,6 +583,7 @@
         OpeningDate: null
         ClosingDate: null
         VilleId: null
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -571,7 +593,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    230:
+    23:
         Code: 151
         Slug: les-dauphins-bleus
         Name: '*Les Dauphins Bleus'
@@ -588,6 +610,7 @@
         OpeningDate: null
         ClosingDate: null
         VilleId: null
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -597,7 +620,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    231:
+    24:
         Code: 155
         Slug: les-ondines
         Name: '*Les Ondines'
@@ -614,6 +637,7 @@
         OpeningDate: null
         ClosingDate: null
         VilleId: null
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -623,7 +647,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    232:
+    25:
         Code: 174
         Slug: les-pins-payrac
         Name: '*Les Pins Payrac'
@@ -640,6 +664,7 @@
         OpeningDate: null
         ClosingDate: null
         VilleId: null
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -649,7 +674,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    233:
+    26:
         Code: 170
         Slug: les-tours
         Name: '*Les Tours'
@@ -666,6 +691,7 @@
         OpeningDate: null
         ClosingDate: null
         VilleId: null
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -675,7 +701,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    235:
+    27:
         Code: 154
         Slug: marmotel
         Name: '*Marmotel'
@@ -692,6 +718,7 @@
         OpeningDate: null
         ClosingDate: null
         VilleId: null
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -701,7 +728,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    236:
+    28:
         Code: 169
         Slug: palmeraie
         Name: '*Palmeraie'
@@ -718,6 +745,7 @@
         OpeningDate: null
         ClosingDate: null
         VilleId: null
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -727,7 +755,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    237:
+    29:
         Code: 142
         Slug: prat-dou-rey
         Name: '*Prat Dou Rey'
@@ -744,6 +772,7 @@
         OpeningDate: null
         ClosingDate: null
         VilleId: null
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -753,7 +782,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    238:
+    30:
         Code: 156
         Slug: pyla-camping
         Name: '*Pyla Camping'
@@ -770,6 +799,7 @@
         OpeningDate: null
         ClosingDate: null
         VilleId: null
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -779,7 +809,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    239:
+    31:
         Code: 165
         Slug: rieu-montagne
         Name: '*Rieu Montagné'
@@ -796,6 +826,7 @@
         OpeningDate: null
         ClosingDate: null
         VilleId: null
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -805,7 +836,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    240:
+    32:
         Code: 143
         Slug: rouffiac
         Name: '*Rouffiac'
@@ -822,6 +853,7 @@
         OpeningDate: null
         ClosingDate: null
         VilleId: null
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -831,7 +863,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    241:
+    33:
         Code: 144
         Slug: sequoia-parc
         Name: '*Séquoia Parc'
@@ -848,6 +880,7 @@
         OpeningDate: null
         ClosingDate: null
         VilleId: null
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -857,7 +890,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    243:
+    34:
         Code: 145
         Slug: tremolat
         Name: '*Trémolat'
@@ -874,6 +907,7 @@
         OpeningDate: null
         ClosingDate: null
         VilleId: null
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -883,7 +917,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    244:
+    35:
         Code: 140
         Slug: village-cavallino
         Name: '*Village Cavallino'
@@ -900,6 +934,7 @@
         OpeningDate: null
         ClosingDate: null
         VilleId: null
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -909,7 +944,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    245:
+    36:
         Code: 158
         Slug: village-stoja
         Name: '*Village Stoja'
@@ -926,6 +961,7 @@
         OpeningDate: null
         ClosingDate: null
         VilleId: null
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -935,7 +971,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    1:
+    37:
         Code: 221
         Slug: 7-fonts
         Name: '7 Fonts'
@@ -952,6 +988,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 19
+        DepartementId: 9
         CategorieId: 4
         GeoCoordinateX: '43.31123649267182'
         GeoCoordinateY: '3.499166965484619'
@@ -961,7 +998,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
-    2:
+    38:
         Code: 249
         Slug: adriano
         Name: Adriano
@@ -978,6 +1015,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 166
+        DepartementId: null
         CategorieId: 2
         GeoCoordinateX: '44.433611'
         GeoCoordinateY: '12.295833'
@@ -987,7 +1025,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
-    3:
+    39:
         Code: 5
         Slug: airotel-oleron
         Name: 'Airotel Oléron'
@@ -1004,6 +1042,7 @@
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 148
+        DepartementId: 15
         CategorieId: 3
         GeoCoordinateX: '45.8828959'
         GeoCoordinateY: '-1.2042464'
@@ -1013,7 +1052,7 @@
         PlanPath: uploads/etablissements/50c0bb79e91d1.jpeg
         Vignette: uploads/etablissements/50c07f9494938.jpeg
         Active: true
-    5:
+    40:
         Code: 222
         Slug: almadies
         Name: Almadies
@@ -1030,6 +1069,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 72
+        DepartementId: 39
         CategorieId: 2
         GeoCoordinateX: '46.37250'
         GeoCoordinateY: '-1.41528'
@@ -1039,7 +1079,7 @@
         PlanPath: null
         Vignette: uploads/etablissements/50c07baf6c131.jpeg
         Active: true
-    6:
+    41:
         Code: 247
         Slug: almafra
         Name: Almafra
@@ -1056,6 +1096,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 164
+        DepartementId: null
         CategorieId: 2
         GeoCoordinateX: '38.5683342'
         GeoCoordinateY: '-0.0941133'
@@ -1065,7 +1106,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
-    7:
+    42:
         Code: 6
         Slug: aluna-vacances
         Name: 'Aluna Vacances '
@@ -1082,6 +1123,7 @@
         OpeningDate: '2013-04-13 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 78
+        DepartementId: 1
         CategorieId: 2
         GeoCoordinateX: '44.449111'
         GeoCoordinateY: '4.3525926'
@@ -1091,7 +1133,7 @@
         PlanPath: uploads/etablissements/50c0bc0e256e7.jpeg
         Vignette: uploads/etablissements/50c0804b0108a.jpeg
         Active: true
-    8:
+    43:
         Code: 9
         Slug: ametlla
         Name: Ametlla
@@ -1108,6 +1150,7 @@
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 34
+        DepartementId: null
         CategorieId: 2
         GeoCoordinateX: '40.86483588'
         GeoCoordinateY: '0.778688192'
@@ -1117,7 +1160,7 @@
         PlanPath: uploads/etablissements/50c0bdf92068c.jpeg
         Vignette: uploads/etablissements/50c081be7664e.jpeg
         Active: true
-    9:
+    44:
         Code: 10
         Slug: amiaux
         Name: Amiaux
@@ -1134,6 +1177,7 @@
         OpeningDate: '2013-05-08 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 47
+        DepartementId: 39
         CategorieId: 2
         GeoCoordinateX: '46.80806056'
         GeoCoordinateY: '-2.104654312'
@@ -1143,7 +1187,7 @@
         PlanPath: uploads/etablissements/50c0aeeca983f.jpeg
         Vignette: uploads/etablissements/50c075a7c8a0b.jpeg
         Active: true
-    10:
+    45:
         Code: 179
         Slug: aqua-viva
         Name: 'Aqua Viva'
@@ -1160,6 +1204,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 104
+        DepartementId: 6
         CategorieId: 1
         GeoCoordinateX: '44.8669413'
         GeoCoordinateY: '1.2797356'
@@ -1169,7 +1214,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
-    11:
+    46:
         Code: 176
         Slug: atlantic-club-montalivet
         Name: 'Atlantic Club Montalivet'
@@ -1186,6 +1231,7 @@
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 149
+        DepartementId: 21
         CategorieId: 1
         GeoCoordinateX: '45.3770439'
         GeoCoordinateY: '-1.14430200'
@@ -1195,7 +1241,7 @@
         PlanPath: uploads/etablissements/50c0b1efdcf16.jpeg
         Vignette: uploads/etablissements/50c077e07619d.jpeg
         Active: true
-    12:
+    47:
         Code: 181
         Slug: aurilandes
         Name: Aurilandes
@@ -1212,6 +1258,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 91
+        DepartementId: 24
         CategorieId: 4
         GeoCoordinateX: '44.2229784'
         GeoCoordinateY: '-1.2035572'
@@ -1221,7 +1268,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
-    13:
+    48:
         Code: 11
         Slug: azu-rivage
         Name: 'Azu''Rivage'
@@ -1238,6 +1285,7 @@
         OpeningDate: '2013-06-01 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 93
+        DepartementId: 24
         CategorieId: 3
         GeoCoordinateX: '43.785238'
         GeoCoordinateY: '-1.305147'
@@ -1247,7 +1295,7 @@
         PlanPath: uploads/etablissements/50c0af9578b80.jpeg
         Vignette: uploads/etablissements/50c07622dd6a5.jpeg
         Active: true
-    14:
+    49:
         Code: 12
         Slug: bahia-club
         Name: 'Bahia Club'
@@ -1264,6 +1312,7 @@
         OpeningDate: '2013-06-01 00:00:00'
         ClosingDate: '2013-09-13 00:00:00'
         VilleId: 17
+        DepartementId: 34
         CategorieId: 3
         GeoCoordinateX: '42.78606298'
         GeoCoordinateY: '3.019276857'
@@ -1273,7 +1322,7 @@
         PlanPath: uploads/etablissements/50c1b004a7ae6.jpeg
         Vignette: uploads/etablissements/50c0768e5ee70.jpeg
         Active: true
-    15:
+    50:
         Code: 182
         Slug: baie-du-kernic
         Name: 'Baie du Kernic'
@@ -1290,6 +1339,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 109
+        DepartementId: 19
         CategorieId: 4
         GeoCoordinateX: '48.6589806'
         GeoCoordinateY: '-4.2175055'
@@ -1299,7 +1349,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
-    16:
+    51:
         Code: 14
         Slug: beau-rivage
         Name: 'Beau Rivage '
@@ -1316,6 +1366,7 @@
         OpeningDate: '2013-04-13 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 9
+        DepartementId: 9
         CategorieId: 3
         GeoCoordinateX: '43.43042156'
         GeoCoordinateY: '3.610414267'
@@ -1325,7 +1376,7 @@
         PlanPath: uploads/etablissements/50c0b1464ee57.jpeg
         Vignette: uploads/etablissements/50c07798a7231.jpeg
         Active: true
-    18:
+    52:
         Code: 216
         Slug: bois-de-pleuven
         Name: 'Bois de Pleuven'
@@ -1342,6 +1393,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 120
+        DepartementId: 19
         CategorieId: 2
         GeoCoordinateX: '47.9503856'
         GeoCoordinateY: '-3.9705276'
@@ -1351,7 +1403,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
-    19:
+    53:
         Code: 183
         Slug: bois-d-amour
         Name: 'Bois d’Amour'
@@ -1368,6 +1420,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 58
+        DepartementId: 18
         CategorieId: 3
         GeoCoordinateX: '47.288836'
         GeoCoordinateY: '-2.37296'
@@ -1377,7 +1430,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
-    20:
+    54:
         Code: 16
         Slug: bois-soleil
         Name: 'Bois Soleil'
@@ -1394,6 +1447,7 @@
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 77
+        DepartementId: 39
         CategorieId: 2
         GeoCoordinateX: '46.55466987'
         GeoCoordinateY: '-1.805577278'
@@ -1403,7 +1457,7 @@
         PlanPath: uploads/etablissements/50c0b1c36f57e.jpeg
         Vignette: uploads/etablissements/50c077ad1cde5.jpeg
         Active: true
-    21:
+    55:
         Code: 17
         Slug: bordeneo
         Name: 'Bordenéo '
@@ -1420,6 +1474,7 @@
         OpeningDate: '2013-04-13 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 55
+        DepartementId: 29
         CategorieId: 2
         GeoCoordinateX: '47.355914'
         GeoCoordinateY: '-3.168789'
@@ -1429,7 +1484,7 @@
         PlanPath: uploads/etablissements/50c0b1d39c943.jpeg
         Vignette: uploads/etablissements/50c077bc5d876.jpeg
         Active: true
-    22:
+    56:
         Code: 242
         Slug: cadenieres
         Name: Cadenières
@@ -1446,6 +1501,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 136
+        DepartementId: 33
         CategorieId: 3
         GeoCoordinateX: '43.55726869999999'
         GeoCoordinateY: '6.286714599999982'
@@ -1455,7 +1511,7 @@
         PlanPath: null
         Vignette: uploads/etablissements/50c07d58a0174.jpeg
         Active: true
-    23:
+    57:
         Code: 3
         Slug: cala-gogo
         Name: 'Cala Gogo'
@@ -1472,6 +1528,7 @@
         OpeningDate: '2013-05-04 00:00:00'
         ClosingDate: '2013-09-21 00:00:00'
         VilleId: 139
+        DepartementId: 34
         CategorieId: 1
         GeoCoordinateX: '42.59948962'
         GeoCoordinateY: '3.037636578'
@@ -1481,7 +1538,7 @@
         PlanPath: uploads/etablissements/50c1b32d9b399.jpeg
         Vignette: uploads/etablissements/50c07e4f778ac.jpeg
         Active: true
-    24:
+    58:
         Code: 19
         Slug: california
         Name: California
@@ -1498,6 +1555,7 @@
         OpeningDate: '2013-04-26 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 47
+        DepartementId: 39
         CategorieId: 2
         GeoCoordinateX: '46.75718789'
         GeoCoordinateY: '-1.97853148'
@@ -1507,7 +1565,7 @@
         PlanPath: uploads/etablissements/50c1b17b2ac6d.jpeg
         Vignette: uploads/etablissements/50c0791bea1bb.jpeg
         Active: true
-    25:
+    59:
         Code: 20
         Slug: calypso
         Name: Calypso
@@ -1524,6 +1582,7 @@
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-22 00:00:00'
         VilleId: 7
+        DepartementId: 34
         CategorieId: 2
         GeoCoordinateX: '42.767919'
         GeoCoordinateY: '3.029699922'
@@ -1533,7 +1592,7 @@
         PlanPath: uploads/etablissements/50c1b21c1fdab.jpeg
         Vignette: uploads/etablissements/50c07a15e105c.jpeg
         Active: true
-    26:
+    60:
         Code: 21
         Slug: camping-du-lac
         Name: 'Camping du Lac '
@@ -1550,6 +1609,7 @@
         OpeningDate: '2013-05-17 00:00:00'
         ClosingDate: '2013-09-08 00:00:00'
         VilleId: 11
+        DepartementId: 23
         CategorieId: 3
         GeoCoordinateX: '44.42476978'
         GeoCoordinateY: '6.031816006'
@@ -1559,7 +1619,7 @@
         PlanPath: null
         Vignette: uploads/etablissements/50c07adc646ca.jpeg
         Active: true
-    17:
+    61:
         Code: 178
         Slug: camping-les-biches
         Name: 'Camping Les Biches'
@@ -1576,6 +1636,7 @@
         OpeningDate: '2013-04-13 00:00:00'
         ClosingDate: '2013-09-08 00:00:00'
         VilleId: 63
+        DepartementId: 39
         CategorieId: 1
         GeoCoordinateX: '46.740096'
         GeoCoordinateY: '-1.945052'
@@ -1585,7 +1646,7 @@
         PlanPath: uploads/etablissements/50c0b20bcb83a.jpeg
         Vignette: uploads/etablissements/50c077fa54ebf.jpeg
         Active: true
-    27:
+    62:
         Code: 85
         Slug: camping-neptuno
         Name: 'Camping Neptuno '
@@ -1602,6 +1663,7 @@
         OpeningDate: '2013-04-26 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 26
+        DepartementId: null
         CategorieId: 3
         GeoCoordinateX: '41.993343'
         GeoCoordinateY: '3.188749'
@@ -1611,7 +1673,7 @@
         PlanPath: uploads/etablissements/50c0bd69d449b.jpeg
         Vignette: uploads/etablissements/50c0815e99152.jpeg
         Active: true
-    28:
+    63:
         Code: 22
         Slug: cap-agathois
         Name: 'Cap Agathois '
@@ -1628,6 +1690,7 @@
         OpeningDate: '2013-04-26 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 19
+        DepartementId: 9
         CategorieId: 3
         GeoCoordinateX: '43.310056'
         GeoCoordinateY: '3.509442'
@@ -1637,7 +1700,7 @@
         PlanPath: uploads/etablissements/50c0b90441e0b.jpeg
         Vignette: uploads/etablissements/50c07b8b3c71d.jpeg
         Active: true
-    29:
+    64:
         Code: 23
         Slug: carbonnier
         Name: Carbonnier
@@ -1654,6 +1717,7 @@
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 54
+        DepartementId: 6
         CategorieId: 2
         GeoCoordinateX: '44.7421154'
         GeoCoordinateY: '1.263438463'
@@ -1663,7 +1727,7 @@
         PlanPath: uploads/etablissements/50c1b2abeab94.jpeg
         Vignette: uploads/etablissements/50c07c3a59d9a.jpeg
         Active: true
-    30:
+    65:
         Code: 24
         Slug: castell-mar
         Name: 'Castell Mar'
@@ -1680,6 +1744,7 @@
         OpeningDate: '2013-05-11 00:00:00'
         ClosingDate: '2013-09-21 00:00:00'
         VilleId: 29
+        DepartementId: null
         CategorieId: 3
         GeoCoordinateX: '42.2553319'
         GeoCoordinateY: '3.136843443'
@@ -1689,7 +1754,7 @@
         PlanPath: uploads/etablissements/50c0b9c03cd17.jpeg
         Vignette: uploads/etablissements/50c07d30289f7.jpeg
         Active: true
-    31:
+    66:
         Code: 25
         Slug: castell-montgri
         Name: 'Castell Montgri '
@@ -1706,6 +1771,7 @@
         OpeningDate: '2013-05-11 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 25
+        DepartementId: null
         CategorieId: 2
         GeoCoordinateX: '42.0521756'
         GeoCoordinateY: '3.19160074'
@@ -1715,7 +1781,7 @@
         PlanPath: uploads/etablissements/50c0ba15cdcd3.jpeg
         Vignette: uploads/etablissements/50c07dcd1d7f7.jpeg
         Active: true
-    32:
+    67:
         Code: 217
         Slug: castellas
         Name: Castellas
@@ -1732,6 +1798,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 112
+        DepartementId: 9
         CategorieId: 2
         GeoCoordinateX: '43.3400139093'
         GeoCoordinateY: '3.5819583307'
@@ -1741,7 +1808,7 @@
         PlanPath: null
         Vignette: uploads/etablissements/50c07b54eec04.jpeg
         Active: true
-    33:
+    68:
         Code: 185
         Slug: catalpas
         Name: Catalpas
@@ -1758,6 +1825,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 157
+        DepartementId: null
         CategorieId: 3
         GeoCoordinateX: '45.6150806'
         GeoCoordinateY: '-0.9945738'
@@ -1767,7 +1835,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
-    34:
+    69:
         Code: 26
         Slug: caussanel
         Name: 'Caussanel '
@@ -1784,6 +1852,7 @@
         OpeningDate: '2013-05-06 00:00:00'
         ClosingDate: '2013-09-07 00:00:00'
         VilleId: 62
+        DepartementId: 2
         CategorieId: 1
         GeoCoordinateX: '44.21435585'
         GeoCoordinateY: '2.766510844'
@@ -1793,7 +1862,7 @@
         PlanPath: uploads/etablissements/50c0ba2902f1d.jpeg
         Vignette: uploads/etablissements/50c07e1daf8ee.jpeg
         Active: true
-    35:
+    70:
         Code: 27
         Slug: cayola
         Name: 'Cayola '
@@ -1810,6 +1879,7 @@
         OpeningDate: '2013-04-20 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 5
+        DepartementId: 9
         CategorieId: 2
         GeoCoordinateX: '43.28224717'
         GeoCoordinateY: '3.371078074'
@@ -1819,7 +1889,7 @@
         PlanPath: uploads/etablissements/50c0ba33c4365.jpeg
         Vignette: uploads/etablissements/50c07e2b73189.jpeg
         Active: true
-    36:
+    71:
         Code: 184
         Slug: ca-savio
         Name: Ca’Savio
@@ -1836,6 +1906,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 156
+        DepartementId: null
         CategorieId: 3
         GeoCoordinateX: '45.445833'
         GeoCoordinateY: '12.460833'
@@ -1845,7 +1916,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
-    37:
+    72:
         Code: 250
         Slug: cesenatico
         Name: Cesenatico
@@ -1862,6 +1933,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 167
+        DepartementId: null
         CategorieId: 4
         GeoCoordinateX: '44.2150172'
         GeoCoordinateY: '12.3792958'
@@ -1871,7 +1943,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
-    38:
+    73:
         Code: 186
         Slug: chalets-de-l-isard-residence
         Name: 'Chalets de l’Isard (Résidence)'
@@ -1888,6 +1960,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 128
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -1897,7 +1970,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    39:
+    74:
         Code: 28
         Slug: chaponnet
         Name: Chaponnet
@@ -1914,6 +1987,7 @@
         OpeningDate: '2013-04-06 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 65
+        DepartementId: 39
         CategorieId: 2
         GeoCoordinateX: '46.60419665'
         GeoCoordinateY: '-1.832286716'
@@ -1923,7 +1997,7 @@
         PlanPath: uploads/etablissements/50c1b315e9e13.jpeg
         Vignette: uploads/etablissements/50c07e37365d9.jpeg
         Active: true
-    40:
+    75:
         Code: 30
         Slug: chateau-de-galinee
         Name: 'Château de Galinée '
@@ -1940,6 +2014,7 @@
         OpeningDate: '2013-05-06 00:00:00'
         ClosingDate: '2013-09-06 00:00:00'
         VilleId: 141
+        DepartementId: null
         CategorieId: 1
         GeoCoordinateX: '48.58438992'
         GeoCoordinateY: '-2.257309556'
@@ -1949,7 +2024,7 @@
         PlanPath: null
         Vignette: uploads/etablissements/50c07e6045eb5.jpeg
         Active: true
-    41:
+    76:
         Code: 31
         Slug: chenaie
         Name: 'Chênaie '
@@ -1966,6 +2041,7 @@
         OpeningDate: '2013-04-13 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 61
+        DepartementId: 18
         CategorieId: 2
         GeoCoordinateX: '47.11890222'
         GeoCoordinateY: '-2.072934508'
@@ -1975,7 +2051,7 @@
         PlanPath: uploads/etablissements/50c1b35bdab38.jpeg
         Vignette: uploads/etablissements/50c07e6f495fa.jpeg
         Active: true
-    42:
+    77:
         Code: 187
         Slug: clos-du-rocher-residence
         Name: 'Clos du Rocher (Résidence)'
@@ -1992,6 +2068,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 4
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -2001,7 +2078,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    43:
+    78:
         Code: 33
         Slug: col-vert
         Name: 'Col Vert '
@@ -2018,6 +2095,7 @@
         OpeningDate: '2013-04-13 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 92
+        DepartementId: 24
         CategorieId: 2
         GeoCoordinateX: '43.90345841'
         GeoCoordinateY: '-1.310065985'
@@ -2027,7 +2105,7 @@
         PlanPath: uploads/etablissements/50c1b44790613.jpeg
         Vignette: uploads/etablissements/50c07e8f9feca.jpeg
         Active: true
-    44:
+    79:
         Code: 34
         Slug: conguel
         Name: 'Conguel '
@@ -2044,6 +2122,7 @@
         OpeningDate: '2013-04-13 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 53
+        DepartementId: 29
         CategorieId: 2
         GeoCoordinateX: '47.47675288'
         GeoCoordinateY: '-3.092372417'
@@ -2053,7 +2132,7 @@
         PlanPath: uploads/etablissements/50c1b46436408.jpeg
         Vignette: uploads/etablissements/50c07e9d9e32e.jpeg
         Active: true
-    45:
+    80:
         Code: 35
         Slug: coste-rouge
         Name: 'Coste Rouge '
@@ -2070,6 +2149,7 @@
         OpeningDate: '2013-04-19 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 1
+        DepartementId: 34
         CategorieId: 3
         GeoCoordinateX: '42.532127'
         GeoCoordinateY: '3.05197'
@@ -2079,7 +2159,7 @@
         PlanPath: uploads/etablissements/50c1b822cce73.jpeg
         Vignette: uploads/etablissements/50c07eaaa87b2.jpeg
         Active: true
-    46:
+    81:
         Code: 36
         Slug: cote-d-argent
         Name: 'Côte d''Argent '
@@ -2096,6 +2176,7 @@
         OpeningDate: '2013-05-17 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 88
+        DepartementId: 21
         CategorieId: 1
         GeoCoordinateX: '45.22291902'
         GeoCoordinateY: '-1.164722443'
@@ -2105,7 +2186,7 @@
         PlanPath: uploads/etablissements/50c1b83f38bc8.jpeg
         Vignette: uploads/etablissements/50c07eb8a72f6.jpeg
         Active: true
-    47:
+    82:
         Code: 190
         Slug: cote-des-roses
         Name: 'Côte des Roses'
@@ -2122,6 +2203,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 151
+        DepartementId: 37
         CategorieId: 4
         GeoCoordinateX: '43.143056'
         GeoCoordinateY: '3.143611'
@@ -2131,7 +2213,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
-    48:
+    83:
         Code: 189
         Slug: cote-green-residence
         Name: 'Côté Green (Résidence)'
@@ -2148,6 +2230,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 150
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -2157,7 +2240,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    49:
+    84:
         Code: 191
         Slug: cote-sauvage
         Name: 'Côte Sauvage'
@@ -2174,6 +2257,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 110
+        DepartementId: null
         CategorieId: 4
         GeoCoordinateX: '46.2254232'
         GeoCoordinateY: '-1.5446198'
@@ -2183,7 +2267,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
-    50:
+    85:
         Code: 192
         Slug: coteau-de-la-marine
         Name: 'Coteau de la Marine'
@@ -2200,6 +2284,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 122
+        DepartementId: null
         CategorieId: 2
         GeoCoordinateX: '43.74642103270366'
         GeoCoordinateY: '6.10041618347168'
@@ -2209,7 +2294,7 @@
         PlanPath: null
         Vignette: uploads/etablissements/50c07959d2aee.jpeg
         Active: true
-    51:
+    86:
         Code: 37
         Slug: crin-blanc
         Name: 'Crin Blanc '
@@ -2226,6 +2311,7 @@
         OpeningDate: '2013-04-26 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 22
+        DepartementId: 13
         CategorieId: 3
         GeoCoordinateX: '43.66136775'
         GeoCoordinateY: '4.473999739'
@@ -2235,7 +2321,7 @@
         PlanPath: uploads/etablissements/50c0baa702174.jpeg
         Vignette: uploads/etablissements/50c07ecc6c0b3.jpeg
         Active: true
-    52:
+    87:
         Code: 38
         Slug: cupulatta
         Name: 'Cupulatta '
@@ -2252,6 +2338,7 @@
         OpeningDate: '2013-05-18 00:00:00'
         ClosingDate: '2013-09-14 00:00:00'
         VilleId: 43
+        DepartementId: 4
         CategorieId: 3
         GeoCoordinateX: '41.64617179'
         GeoCoordinateY: '9.293650389'
@@ -2261,7 +2348,7 @@
         PlanPath: uploads/etablissements/50c1b883b4f12.jpeg
         Vignette: uploads/etablissements/50c07edb7b8ec.jpeg
         Active: true
-    53:
+    88:
         Code: 39
         Slug: cypres
         Name: 'Cyprès '
@@ -2278,6 +2365,7 @@
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 64
+        DepartementId: 39
         CategorieId: 3
         GeoCoordinateX: '46.6761495'
         GeoCoordinateY: '-1.913208961'
@@ -2287,7 +2375,7 @@
         PlanPath: uploads/etablissements/50c1b899991c1.jpeg
         Vignette: uploads/etablissements/50c07eeacdc9f.jpeg
         Active: true
-    54:
+    89:
         Code: 195
         Slug: demeures-de-la-massane-residence
         Name: 'Demeures de la Massane (Résidence)'
@@ -2304,6 +2392,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 1
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -2313,7 +2402,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    55:
+    90:
         Code: 196
         Slug: demeures-du-ventoux-residence
         Name: 'Demeures du Ventoux (Residence)'
@@ -2330,6 +2419,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 129
+        DepartementId: null
         CategorieId: 3
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -2339,7 +2429,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    56:
+    91:
         Code: 194
         Slug: demeures-torrellanes-residence
         Name: 'Demeures Torrellanes (Résidence)'
@@ -2356,6 +2446,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 142
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -2365,7 +2456,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    57:
+    92:
         Code: 40
         Slug: deux-fontaines
         Name: 'Deux Fontaines '
@@ -2382,6 +2473,7 @@
         OpeningDate: '2013-04-27 00:00:00'
         ClosingDate: '2013-09-07 00:00:00'
         VilleId: 51
+        DepartementId: 19
         CategorieId: 2
         GeoCoordinateX: '47.7986345'
         GeoCoordinateY: '-3.791956902'
@@ -2391,7 +2483,7 @@
         PlanPath: uploads/etablissements/50c1b8c98cf46.jpeg
         Vignette: uploads/etablissements/50c07f05362d9.jpeg
         Active: true
-    58:
+    93:
         Code: 41
         Slug: deux-plages
         Name: 'Deux Plages '
@@ -2408,6 +2500,7 @@
         OpeningDate: '2013-04-27 00:00:00'
         ClosingDate: '2013-09-22 00:00:00'
         VilleId: 86
+        DepartementId: 15
         CategorieId: 2
         GeoCoordinateX: '46.08444237'
         GeoCoordinateY: '-1.093429327'
@@ -2417,7 +2510,7 @@
         PlanPath: uploads/etablissements/50c1b8e15b766.jpeg
         Vignette: uploads/etablissements/50c07f12115df.jpeg
         Active: true
-    59:
+    94:
         Code: 42
         Slug: domaine-d-inly
         Name: 'Domaine d''Inly '
@@ -2434,6 +2527,7 @@
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 57
+        DepartementId: 29
         CategorieId: 2
         GeoCoordinateX: '47.47158955'
         GeoCoordinateY: '-2.467031479'
@@ -2443,7 +2537,7 @@
         PlanPath: uploads/etablissements/50c0bb68d5bdd.jpeg
         Vignette: uploads/etablissements/50c07f2104699.jpeg
         Active: true
-    60:
+    95:
         Code: 43
         Slug: domaine-d-oleron
         Name: 'Domaine d''Oléron '
@@ -2460,6 +2554,7 @@
         OpeningDate: '2013-04-13 00:00:00'
         ClosingDate: '2013-09-14 00:00:00'
         VilleId: 85
+        DepartementId: 15
         CategorieId: 2
         GeoCoordinateX: '45.96790109'
         GeoCoordinateY: '-1.31872952'
@@ -2469,7 +2564,7 @@
         PlanPath: uploads/etablissements/50c1baff25886.jpeg
         Vignette: uploads/etablissements/50c07f2dde9d1.jpeg
         Active: true
-    61:
+    96:
         Code: 197
         Slug: domaine-de-bacchus-residence
         Name: 'Domaine de Bacchus (Résidence)'
@@ -2486,6 +2581,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 123
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -2495,7 +2591,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    62:
+    97:
         Code: 44
         Slug: domaine-de-chaussy
         Name: 'Domaine de Chaussy '
@@ -2512,6 +2608,7 @@
         OpeningDate: '2013-04-13 00:00:00'
         ClosingDate: '2013-09-22 00:00:00'
         VilleId: 69
+        DepartementId: 1
         CategorieId: 1
         GeoCoordinateX: '44.44722341'
         GeoCoordinateY: '4.36678648'
@@ -2521,7 +2618,7 @@
         PlanPath: uploads/etablissements/50c0bb04e5920.jpeg
         Vignette: uploads/etablissements/50c07f3bbd0f2.jpeg
         Active: true
-    63:
+    98:
         Code: 45
         Slug: domaine-de-kermario
         Name: 'Domaine de Kermario'
@@ -2538,6 +2635,7 @@
         OpeningDate: '2013-03-27 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 138
+        DepartementId: 29
         CategorieId: 2
         GeoCoordinateX: '47.59528254'
         GeoCoordinateY: '-3.066279888'
@@ -2547,7 +2645,7 @@
         PlanPath: uploads/etablissements/50c0bb114fd98.jpeg
         Vignette: uploads/etablissements/50c07f47a18f3.jpeg
         Active: true
-    64:
+    99:
         Code: 199
         Slug: domaine-de-la-corniche-residence
         Name: 'Domaine de la Corniche (Résidence)'
@@ -2564,6 +2662,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 115
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -2573,7 +2672,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    65:
+    100:
         Code: 233
         Slug: domaine-de-la-marina
         Name: 'Domaine de la Marina'
@@ -2590,6 +2689,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 101
+        DepartementId: 24
         CategorieId: 2
         GeoCoordinateX: '43.7963884'
         GeoCoordinateY: '-1.3931660000000647'
@@ -2599,7 +2699,7 @@
         PlanPath: null
         Vignette: uploads/etablissements/50c07cce6cae0.jpeg
         Active: true
-    66:
+    101:
         Code: 91
         Slug: domaine-de-la-paille-basse
         Name: 'Domaine de la Paille Basse'
@@ -2616,6 +2716,7 @@
         OpeningDate: '2013-05-11 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 56
+        DepartementId: 28
         CategorieId: 2
         GeoCoordinateX: '44.893626'
         GeoCoordinateY: '1.478613'
@@ -2625,7 +2726,7 @@
         PlanPath: uploads/etablissements/50c0be161f801.jpeg
         Vignette: uploads/etablissements/50c081d8f233f.jpeg
         Active: true
-    67:
+    102:
         Code: 46
         Slug: domaine-de-la-rive
         Name: 'Domaine de la Rive'
@@ -2642,6 +2743,7 @@
         OpeningDate: '2013-04-06 00:00:00'
         ClosingDate: '2013-09-08 00:00:00'
         VilleId: 90
+        DepartementId: 24
         CategorieId: 1
         GeoCoordinateX: '44.46066389'
         GeoCoordinateY: '-1.130706668'
@@ -2651,7 +2753,7 @@
         PlanPath: null
         Vignette: uploads/etablissements/50c07f5af3540.jpeg
         Active: true
-    68:
+    103:
         Code: 112
         Slug: domaine-de-la-sainte-baume
         Name: 'Domaine de la Sainte Baume'
@@ -2668,6 +2770,7 @@
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 21
+        DepartementId: 33
         CategorieId: 2
         GeoCoordinateX: '43.37692956'
         GeoCoordinateY: '5.788040757'
@@ -2677,7 +2780,7 @@
         PlanPath: uploads/etablissements/50c0afe6c63ed.jpeg
         Vignette: uploads/etablissements/50c076445e9b3.jpeg
         Active: true
-    69:
+    104:
         Code: 47
         Slug: domaine-de-leveno
         Name: 'Domaine de Léveno '
@@ -2694,6 +2797,7 @@
         OpeningDate: '2013-04-06 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 60
+        DepartementId: 18
         CategorieId: 2
         GeoCoordinateX: '47.33350768'
         GeoCoordinateY: '-2.390749454'
@@ -2703,7 +2807,7 @@
         PlanPath: uploads/etablissements/50c0bb2da1f28.jpeg
         Vignette: uploads/etablissements/50c07f685eb16.jpeg
         Active: true
-    70:
+    105:
         Code: 198
         Slug: domaine-de-manon-residence
         Name: 'Domaine de Manon (Résidence)'
@@ -2720,6 +2824,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 124
+        DepartementId: null
         CategorieId: 3
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -2729,7 +2834,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    71:
+    106:
         Code: 29
         Slug: domaine-des-charmilles
         Name: 'Domaine des Charmilles'
@@ -2746,6 +2851,7 @@
         OpeningDate: '2013-04-27 00:00:00'
         ClosingDate: '2013-09-14 00:00:00'
         VilleId: 96
+        DepartementId: 15
         CategorieId: 2
         GeoCoordinateX: '45.99008181'
         GeoCoordinateY: '-1.051871181'
@@ -2755,7 +2861,7 @@
         PlanPath: uploads/etablissements/50c0ba4b261a1.jpeg
         Vignette: uploads/etablissements/50c07e438ad4e.jpeg
         Active: true
-    72:
+    107:
         Code: 32
         Slug: domaine-des-chenes-verts
         Name: 'Domaine des Chênes Verts '
@@ -2772,6 +2878,7 @@
         OpeningDate: '2013-04-13 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 49
+        DepartementId: 6
         CategorieId: 3
         GeoCoordinateX: '44.86323045'
         GeoCoordinateY: '1.297008991'
@@ -2781,7 +2888,7 @@
         PlanPath: uploads/etablissements/50c1b42c2e166.jpeg
         Vignette: uploads/etablissements/50c07e7dc139a.jpeg
         Active: true
-    73:
+    108:
         Code: 200
         Slug: domaine-des-iscles
         Name: 'Domaine des Iscles'
@@ -2798,6 +2905,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 152
+        DepartementId: 13
         CategorieId: 2
         GeoCoordinateX: '43.7281889'
         GeoCoordinateY: '5.3209877'
@@ -2807,7 +2915,7 @@
         PlanPath: null
         Vignette: uploads/etablissements/50c07a25e504c.jpeg
         Active: true
-    74:
+    109:
         Code: 48
         Slug: domaine-des-naiades
         Name: 'Domaine des Naïades'
@@ -2824,6 +2932,7 @@
         OpeningDate: '2013-03-29 00:00:00'
         ClosingDate: '2013-10-12 00:00:00'
         VilleId: 14
+        DepartementId: 33
         CategorieId: 2
         GeoCoordinateX: '43.28539469'
         GeoCoordinateY: '6.57928437'
@@ -2833,7 +2942,7 @@
         PlanPath: uploads/etablissements/50c0bb3be691e.jpeg
         Vignette: uploads/etablissements/50c07f79a5def.jpeg
         Active: true
-    75:
+    110:
         Code: 175
         Slug: domaine-des-pins
         Name: 'Domaine des Pins'
@@ -2850,6 +2959,7 @@
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 63
+        DepartementId: 39
         CategorieId: 2
         GeoCoordinateX: '46.738375'
         GeoCoordinateY: '-1.978047'
@@ -2859,7 +2969,7 @@
         PlanPath: uploads/etablissements/50c0b1e2e576d.jpeg
         Vignette: uploads/etablissements/50c077d39f6a9.jpeg
         Active: true
-    76:
+    111:
         Code: 201
         Slug: domaine-du-bosquet-residence
         Name: 'Domaine du Bosquet (Résidence)'
@@ -2876,6 +2986,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 117
+        DepartementId: null
         CategorieId: 3
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -2885,7 +2996,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    77:
+    112:
         Code: 49
         Slug: domaine-du-cros-d-auzon
         Name: 'Domaine du Cros d''Auzon '
@@ -2902,6 +3013,7 @@
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 68
+        DepartementId: 1
         CategorieId: 2
         GeoCoordinateX: '44.53427499'
         GeoCoordinateY: '4.406890869'
@@ -2911,7 +3023,7 @@
         PlanPath: uploads/etablissements/50c0bb50766e0.jpeg
         Vignette: uploads/etablissements/50c07f87dae28.jpeg
         Active: true
-    78:
+    113:
         Code: 202
         Slug: domaine-du-golf-residence
         Name: 'Domaine du Golf (Résidence)'
@@ -2928,6 +3040,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 125
+        DepartementId: null
         CategorieId: 3
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -2937,7 +3050,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    79:
+    114:
         Code: 71
         Slug: domaine-du-lac-de-miel
         Name: 'Domaine du Lac de Miel '
@@ -2954,6 +3067,7 @@
         OpeningDate: '2013-05-01 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 46
+        DepartementId: 3
         CategorieId: 3
         GeoCoordinateX: '45.13193732'
         GeoCoordinateY: '1.762683392'
@@ -2963,7 +3077,7 @@
         PlanPath: uploads/etablissements/50c0bcae3dd81.jpeg
         Vignette: uploads/etablissements/50c080c38220e.jpeg
         Active: true
-    80:
+    115:
         Code: 50
         Slug: domaine-du-verdon
         Name: 'Domaine du Verdon '
@@ -2980,6 +3094,7 @@
         OpeningDate: '2013-05-15 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 12
+        DepartementId: 36
         CategorieId: 2
         GeoCoordinateX: '43.83920493'
         GeoCoordinateY: '6.493869424'
@@ -2989,7 +3104,7 @@
         PlanPath: uploads/etablissements/50c0bb8a5a3e1.jpeg
         Vignette: uploads/etablissements/50c07fa7aba44.jpeg
         Active: true
-    81:
+    116:
         Code: 219
         Slug: domaine-d-anghione
         Name: 'Domaine d’Anghione'
@@ -3006,6 +3121,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 114
+        DepartementId: 22
         CategorieId: 4
         GeoCoordinateX: '42.4764651'
         GeoCoordinateY: '9.5296097'
@@ -3015,7 +3131,7 @@
         PlanPath: null
         Vignette: uploads/etablissements/50c07b7d004ec.jpeg
         Active: true
-    82:
+    117:
         Code: 204
         Slug: domaine-d-enserune-residence
         Name: 'Domaine d’Ensérune (Résidence)'
@@ -3032,6 +3148,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 116
+        DepartementId: null
         CategorieId: 3
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -3041,7 +3158,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    83:
+    118:
         Code: 203
         Slug: dune-blanche
         Name: 'Dune Blanche'
@@ -3058,6 +3175,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 119
+        DepartementId: 30
         CategorieId: 5
         GeoCoordinateX: '50.5584400'
         GeoCoordinateY: '1.6182947'
@@ -3067,7 +3185,7 @@
         PlanPath: uploads/etablissements/50c1b23ec9191.jpeg
         Vignette: uploads/etablissements/50c07a57d7e78.jpeg
         Active: true
-    84:
+    119:
         Code: 51
         Slug: dunes
         Name: 'Dunes '
@@ -3084,6 +3202,7 @@
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 7
+        DepartementId: 34
         CategorieId: 3
         GeoCoordinateX: '42.76536313'
         GeoCoordinateY: '3.031582832'
@@ -3093,7 +3212,7 @@
         PlanPath: uploads/etablissements/50c1bb2842e06.jpeg
         Vignette: uploads/etablissements/50c07fb512fb5.jpeg
         Active: true
-    85:
+    120:
         Code: 52
         Slug: eden
         Name: 'Eden '
@@ -3110,6 +3229,7 @@
         OpeningDate: '2013-05-01 00:00:00'
         ClosingDate: '2013-08-31 00:00:00'
         VilleId: 20
+        DepartementId: 9
         CategorieId: 2
         GeoCoordinateX: '43.54960955'
         GeoCoordinateY: '3.894379735'
@@ -3119,7 +3239,7 @@
         PlanPath: uploads/etablissements/50c0bba15c7c2.jpeg
         Vignette: uploads/etablissements/50c07fc17bf54.jpeg
         Active: true
-    86:
+    121:
         Code: 53
         Slug: embruns
         Name: 'Embruns '
@@ -3136,6 +3256,7 @@
         OpeningDate: '2013-04-30 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 89
+        DepartementId: 21
         CategorieId: 3
         GeoCoordinateX: '44.75173929'
         GeoCoordinateY: '-1.187531948'
@@ -3145,7 +3266,7 @@
         PlanPath: uploads/etablissements/50c1bb53eb9c8.jpeg
         Vignette: uploads/etablissements/50c07fcd601a0.jpeg
         Active: true
-    87:
+    122:
         Code: 205
         Slug: ensoya
         Name: Ensoya
@@ -3162,6 +3283,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 105
+        DepartementId: 37
         CategorieId: 5
         GeoCoordinateX: '43.0247845'
         GeoCoordinateY: '2.9771233'
@@ -3171,7 +3293,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
-    88:
+    123:
         Code: 234
         Slug: etangs-fleuris
         Name: 'Etangs Fleuris'
@@ -3188,6 +3310,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 121
+        DepartementId: 32
         CategorieId: 3
         GeoCoordinateX: '48.731478'
         GeoCoordinateY: '3.04673600000001'
@@ -3197,7 +3320,7 @@
         PlanPath: null
         Vignette: uploads/etablissements/50c07cdbf27aa.jpeg
         Active: true
-    89:
+    124:
         Code: 240
         Slug: etoile-de-mer
         Name: 'Etoile de Mer'
@@ -3214,6 +3337,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 8
+        DepartementId: 9
         CategorieId: 3
         GeoCoordinateX: '43.2690513'
         GeoCoordinateY: '3.332877100000019'
@@ -3223,7 +3347,7 @@
         PlanPath: null
         Vignette: uploads/etablissements/50c07d430c3b5.jpeg
         Active: true
-    90:
+    125:
         Code: 54
         Slug: eurolac
         Name: 'Eurolac '
@@ -3240,6 +3364,7 @@
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 91
+        DepartementId: 24
         CategorieId: 2
         GeoCoordinateX: '44.22287547'
         GeoCoordinateY: '-1.203721762'
@@ -3249,7 +3374,7 @@
         PlanPath: uploads/etablissements/50c0bbb85b742.jpeg
         Vignette: uploads/etablissements/50c07fdaccdbe.jpeg
         Active: true
-    91:
+    126:
         Code: 206
         Slug: europe
         Name: Europe
@@ -3266,6 +3391,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 158
+        DepartementId: 9
         CategorieId: 2
         GeoCoordinateX: '43.4915997'
         GeoCoordinateY: '3.7792969'
@@ -3275,7 +3401,7 @@
         PlanPath: null
         Vignette: uploads/etablissements/50c07a87bdb97.jpeg
         Active: true
-    92:
+    127:
         Code: 55
         Slug: fanal
         Name: 'Fanal '
@@ -3292,6 +3418,7 @@
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 66
+        DepartementId: 38
         CategorieId: 2
         GeoCoordinateX: '49.31883866'
         GeoCoordinateY: '-1.108932495'
@@ -3301,7 +3428,7 @@
         PlanPath: uploads/etablissements/50c1bb73e22f8.jpeg
         Vignette: uploads/etablissements/50c07fe6b006b.jpeg
         Active: true
-    93:
+    128:
         Code: 56
         Slug: farigoulette
         Name: 'Farigoulette '
@@ -3318,6 +3445,7 @@
         OpeningDate: '2013-05-15 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 24
+        DepartementId: 36
         CategorieId: 1
         GeoCoordinateX: '43.73420486'
         GeoCoordinateY: '6.077772975'
@@ -3327,7 +3455,7 @@
         PlanPath: uploads/etablissements/50c1bb8a7f4a5.jpeg
         Vignette: uploads/etablissements/50c07ff28b033.jpeg
         Active: true
-    94:
+    129:
         Code: 116
         Slug: ferme-de-la-serraz
         Name: 'Ferme de la Serraz '
@@ -3344,6 +3472,7 @@
         OpeningDate: '2013-05-04 00:00:00'
         ClosingDate: '2013-09-14 00:00:00'
         VilleId: 81
+        DepartementId: 26
         CategorieId: 1
         GeoCoordinateX: '45.7750889'
         GeoCoordinateY: '6.226780415'
@@ -3353,7 +3482,7 @@
         PlanPath: uploads/etablissements/50c1b016d6b29.jpeg
         Vignette: uploads/etablissements/50c0766602664.jpeg
         Active: true
-    95:
+    130:
         Code: 207
         Slug: fonserane-residence
         Name: 'Fonserane (Résidence)'
@@ -3370,6 +3499,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 126
+        DepartementId: null
         CategorieId: 3
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -3379,7 +3509,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    96:
+    131:
         Code: 208
         Slug: fontainebleau-residence
         Name: 'Fontainebleau (Résidence)'
@@ -3396,6 +3526,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 118
+        DepartementId: null
         CategorieId: 3
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -3405,7 +3536,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    97:
+    132:
         Code: 57
         Slug: fontaines
         Name: 'Fontaines '
@@ -3422,6 +3553,7 @@
         OpeningDate: '2013-05-01 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 16
+        DepartementId: 34
         CategorieId: 3
         GeoCoordinateX: '42.68903253'
         GeoCoordinateY: '2.998972535'
@@ -3431,7 +3563,7 @@
         PlanPath: uploads/etablissements/50c1bba72f8e8.jpeg
         Vignette: uploads/etablissements/50c07ffe41534.jpeg
         Active: true
-    98:
+    133:
         Code: 215
         Slug: foret
         Name: Forêt
@@ -3448,6 +3580,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 111
+        DepartementId: 21
         CategorieId: 3
         GeoCoordinateX: '44.5847824'
         GeoCoordinateY: '-1.2091827'
@@ -3457,7 +3590,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
-    99:
+    134:
         Code: 209
         Slug: free-time
         Name: 'Free Time'
@@ -3474,6 +3607,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 106
+        DepartementId: null
         CategorieId: 3
         GeoCoordinateX: '43.2463281'
         GeoCoordinateY: '10.5306101'
@@ -3483,7 +3617,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
-    100:
+    135:
         Code: 58
         Slug: frenes
         Name: 'Frênes '
@@ -3500,6 +3634,7 @@
         OpeningDate: '2013-05-18 00:00:00'
         ClosingDate: '2013-09-21 00:00:00'
         VilleId: 15
+        DepartementId: 35
         CategorieId: 3
         GeoCoordinateX: '43.61142443'
         GeoCoordinateY: '7.123936415'
@@ -3509,7 +3644,7 @@
         PlanPath: uploads/etablissements/50c1bbbe08830.jpeg
         Vignette: uploads/etablissements/50c0800b0c8c9.jpeg
         Active: true
-    101:
+    136:
         Code: 59
         Slug: front-de-mer
         Name: 'Front de Mer'
@@ -3526,6 +3661,7 @@
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 1
+        DepartementId: 34
         CategorieId: 2
         GeoCoordinateX: '42.546969'
         GeoCoordinateY: '3.04659'
@@ -3535,7 +3671,7 @@
         PlanPath: uploads/etablissements/50c0bc05855fe.jpeg
         Vignette: uploads/etablissements/50c0803cdc7df.jpeg
         Active: true
-    102:
+    137:
         Code: 252
         Slug: gavina
         Name: Gavina
@@ -3552,6 +3688,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 154
+        DepartementId: null
         CategorieId: 3
         GeoCoordinateX: '41.15716'
         GeoCoordinateY: '1.44153'
@@ -3561,7 +3698,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
-    103:
+    138:
         Code: 60
         Slug: grand-terre
         Name: 'Grand''Terre '
@@ -3578,6 +3715,7 @@
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 78
+        DepartementId: 1
         CategorieId: 3
         GeoCoordinateX: '44.42471997'
         GeoCoordinateY: '4.331874847'
@@ -3587,7 +3725,7 @@
         PlanPath: uploads/etablissements/50c0bc240f18a.jpeg
         Vignette: uploads/etablissements/50c08054a6bdd.jpeg
         Active: true
-    104:
+    139:
         Code: 136
         Slug: grande-italia
         Name: 'Grande Italia'
@@ -3604,6 +3742,7 @@
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 37
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: '45.226879'
         GeoCoordinateY: '12.294774'
@@ -3613,7 +3752,7 @@
         PlanPath: uploads/etablissements/50c0b1185446d.jpeg
         Vignette: uploads/etablissements/50c0776c29dd7.jpeg
         Active: true
-    105:
+    140:
         Code: 244
         Slug: hippocampe
         Name: Hippocampe
@@ -3630,6 +3769,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 162
+        DepartementId: 36
         CategorieId: 2
         GeoCoordinateX: '44.106111'
         GeoCoordinateY: '6.015556'
@@ -3639,7 +3779,7 @@
         PlanPath: null
         Vignette: uploads/etablissements/50c07d71e10ea.jpeg
         Active: true
-    106:
+    141:
         Code: 210
         Slug: hotel-du-golf-hotel
         Name: 'Hôtel du Golf (Hôtel)'
@@ -3656,6 +3796,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 150
+        DepartementId: null
         CategorieId: 3
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -3665,7 +3806,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    107:
+    142:
         Code: 63
         Slug: huttes
         Name: 'Huttes '
@@ -3682,6 +3823,7 @@
         OpeningDate: '2013-04-26 00:00:00'
         ClosingDate: '2013-09-08 00:00:00'
         VilleId: 84
+        DepartementId: 15
         CategorieId: 2
         GeoCoordinateX: '46.01528621'
         GeoCoordinateY: '-1.39242053'
@@ -3691,7 +3833,7 @@
         PlanPath: uploads/etablissements/50c1bc001ca4f.jpeg
         Vignette: uploads/etablissements/50c0806a2ba52.jpeg
         Active: true
-    108:
+    143:
         Code: 64
         Slug: ideal
         Name: 'Idéal '
@@ -3708,6 +3850,7 @@
         OpeningDate: '2013-04-27 00:00:00'
         ClosingDate: '2013-09-22 00:00:00'
         VilleId: 80
+        DepartementId: 26
         CategorieId: 2
         GeoCoordinateX: '45.795155'
         GeoCoordinateY: '6.205735803'
@@ -3717,7 +3860,7 @@
         PlanPath: uploads/etablissements/50c1bc155d1bb.jpeg
         Vignette: uploads/etablissements/50c08073e5b11.jpeg
         Active: true
-    109:
+    144:
         Code: 65
         Slug: ilates
         Name: Ilates
@@ -3734,6 +3877,7 @@
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-28 00:00:00'
         VilleId: 94
+        DepartementId: 15
         CategorieId: 2
         GeoCoordinateX: '46.22760164'
         GeoCoordinateY: '-1.426178813'
@@ -3743,7 +3887,7 @@
         PlanPath: uploads/etablissements/50c1bc2b3d51f.jpeg
         Vignette: uploads/etablissements/50c0807d2e9eb.jpeg
         Active: true
-    110:
+    145:
         Code: 211
         Slug: ile-du-rhin
         Name: 'Ile du Rhin'
@@ -3760,6 +3904,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 159
+        DepartementId: 16
         CategorieId: 4
         GeoCoordinateX: '48.0226826'
         GeoCoordinateY: '7.5783348'
@@ -3769,7 +3914,7 @@
         PlanPath: null
         Vignette: uploads/etablissements/50c07afbdbe73.jpeg
         Active: true
-    111:
+    146:
         Code: 223
         Slug: iles
         Name: Iles
@@ -3786,6 +3931,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 137
+        DepartementId: 26
         CategorieId: 3
         GeoCoordinateX: '45.9235838981'
         GeoCoordinateY: '6.65056899541'
@@ -3795,7 +3941,7 @@
         PlanPath: null
         Vignette: uploads/etablissements/50c07bbf72e3e.jpeg
         Active: true
-    112:
+    147:
         Code: 67
         Slug: internacional-de-calonge
         Name: 'Internacional de Calonge '
@@ -3812,6 +3958,7 @@
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-30 00:00:00'
         VilleId: 27
+        DepartementId: null
         CategorieId: 3
         GeoCoordinateX: '41.83260316'
         GeoCoordinateY: '3.084572554'
@@ -3821,7 +3968,7 @@
         PlanPath: uploads/etablissements/50c0bc72972ce.jpeg
         Vignette: uploads/etablissements/50c080930c53a.jpeg
         Active: true
-    113:
+    148:
         Code: 68
         Slug: internacional-palamos
         Name: 'Internacional Palamos '
@@ -3838,6 +3985,7 @@
         OpeningDate: '2013-04-27 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 30
+        DepartementId: null
         CategorieId: 2
         GeoCoordinateX: '41.857027'
         GeoCoordinateY: '3.137991'
@@ -3847,7 +3995,7 @@
         PlanPath: uploads/etablissements/50c0bc7f3126f.jpeg
         Vignette: uploads/etablissements/50c0809db4f40.jpeg
         Active: true
-    114:
+    149:
         Code: 212
         Slug: interpals
         Name: Interpals
@@ -3864,6 +4012,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 107
+        DepartementId: null
         CategorieId: 2
         GeoCoordinateX: '41.981111'
         GeoCoordinateY: '3.201111'
@@ -3873,7 +4022,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
-    115:
+    150:
         Code: 213
         Slug: isles-de-sola-residence
         Name: 'Isles de Sola (Résidence)'
@@ -3890,6 +4039,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 130
+        DepartementId: null
         CategorieId: 3
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -3899,7 +4049,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    116:
+    151:
         Code: 69
         Slug: jard
         Name: 'Jard '
@@ -3916,6 +4066,7 @@
         OpeningDate: '2013-05-18 00:00:00'
         ClosingDate: '2013-09-14 00:00:00'
         VilleId: 72
+        DepartementId: 39
         CategorieId: 2
         GeoCoordinateX: '46.34851988'
         GeoCoordinateY: '-1.387576461'
@@ -3925,7 +4076,7 @@
         PlanPath: uploads/etablissements/50c1bc40d03ea.jpeg
         Vignette: uploads/etablissements/50c080a7ab7ee.jpeg
         Active: true
-    117:
+    152:
         Code: 214
         Slug: ker-goh-lenn-residence
         Name: 'Ker Goh Lenn (Résidence)'
@@ -3942,6 +4093,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 108
+        DepartementId: null
         CategorieId: 3
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -3951,7 +4103,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    118:
+    153:
         Code: 70
         Slug: lac-bleu
         Name: 'Lac Bleu '
@@ -3968,6 +4120,7 @@
         OpeningDate: '2013-04-13 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 67
+        DepartementId: 7
         CategorieId: 3
         GeoCoordinateX: '44.68386545'
         GeoCoordinateY: '5.450313091'
@@ -3977,7 +4130,7 @@
         PlanPath: uploads/etablissements/50c0bc92d3b62.jpeg
         Vignette: uploads/etablissements/50c080b41c317.jpeg
         Active: true
-    119:
+    154:
         Code: 72
         Slug: lac-de-thoux-st-cricq
         Name: 'Lac de Thoux St Cricq'
@@ -3994,6 +4147,7 @@
         OpeningDate: '2013-04-27 00:00:00'
         ClosingDate: '2013-09-08 00:00:00'
         VilleId: 76
+        DepartementId: 12
         CategorieId: 3
         GeoCoordinateX: '43.68601738'
         GeoCoordinateY: '1.00292623'
@@ -4003,7 +4157,7 @@
         PlanPath: uploads/etablissements/50c0bcb99f0ec.jpeg
         Vignette: uploads/etablissements/50c080cdc4833.jpeg
         Active: true
-    151:
+    155:
         Code: 137
         Slug: le-pearl-village-club
         Name: 'Le Pearl Village Club'
@@ -4020,6 +4174,7 @@
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-22 00:00:00'
         VilleId: 1
+        DepartementId: 34
         CategorieId: 2
         GeoCoordinateX: '42.573436'
         GeoCoordinateY: '3.01918'
@@ -4029,7 +4184,7 @@
         PlanPath: uploads/etablissements/50c1b08dd8556.jpeg
         Vignette: uploads/etablissements/50c077784ddea.jpeg
         Active: true
-    4:
+    156:
         Code: 177
         Slug: les-ajoncs-d-or
         Name: 'Les Ajoncs d''Or'
@@ -4046,6 +4201,7 @@
         OpeningDate: '2013-04-27 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 58
+        DepartementId: 18
         CategorieId: 3
         GeoCoordinateX: '47.305775'
         GeoCoordinateY: '-2.377167'
@@ -4055,7 +4211,7 @@
         PlanPath: uploads/etablissements/50c1b1503b389.jpeg
         Vignette: uploads/etablissements/50c077ecaf24e.jpeg
         Active: true
-    159:
+    157:
         Code: 138
         Slug: les-pins-maritimes
         Name: 'Les Pins Maritimes'
@@ -4072,6 +4228,7 @@
         OpeningDate: '2013-04-26 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 13
+        DepartementId: 33
         CategorieId: 2
         GeoCoordinateX: '43.0935263'
         GeoCoordinateY: '6.16381530'
@@ -4081,7 +4238,7 @@
         PlanPath: uploads/etablissements/50c1b0b44fc90.jpeg
         Vignette: uploads/etablissements/50c0778527a48.jpeg
         Active: true
-    120:
+    158:
         Code: 74
         Slug: lou-broustaricq
         Name: 'Lou Broustaricq '
@@ -4098,6 +4255,7 @@
         OpeningDate: '2013-04-27 00:00:00'
         ClosingDate: '2013-09-08 00:00:00'
         VilleId: 98
+        DepartementId: 24
         CategorieId: 2
         GeoCoordinateX: '44.4990307'
         GeoCoordinateY: '-1.079460382'
@@ -4107,7 +4265,7 @@
         PlanPath: uploads/etablissements/50c0bcc732a1f.jpeg
         Vignette: uploads/etablissements/50c080da39517.jpeg
         Active: true
-    121:
+    159:
         Code: 75
         Slug: lou-pignada
         Name: 'Lou Pignada '
@@ -4124,6 +4282,7 @@
         OpeningDate: '2013-05-01 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 101
+        DepartementId: 24
         CategorieId: 1
         GeoCoordinateX: '43.79725104'
         GeoCoordinateY: '-1.381938457'
@@ -4133,7 +4292,7 @@
         PlanPath: uploads/etablissements/50c0bcd6dba4b.jpeg
         Vignette: uploads/etablissements/50c080e516e16.jpeg
         Active: true
-    122:
+    160:
         Code: 238
         Slug: lou-pignada-ondres
         Name: 'Lou Pignada Ondres'
@@ -4150,6 +4309,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 134
+        DepartementId: 24
         CategorieId: 2
         GeoCoordinateX: '43.5695744'
         GeoCoordinateY: '-1.4602945000000318'
@@ -4159,7 +4319,7 @@
         PlanPath: uploads/etablissements/50c0b9a433c8e.jpeg
         Vignette: uploads/etablissements/50c07d136d49a.jpeg
         Active: true
-    123:
+    161:
         Code: 76
         Slug: loubine
         Name: 'Loubine '
@@ -4176,6 +4336,7 @@
         OpeningDate: '2013-04-06 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 77
+        DepartementId: 39
         CategorieId: 2
         GeoCoordinateX: '46.54614044'
         GeoCoordinateY: '-1.805588007'
@@ -4185,7 +4346,7 @@
         PlanPath: uploads/etablissements/50c1bc5d4785c.jpeg
         Vignette: uploads/etablissements/50c080f064c82.jpeg
         Active: true
-    124:
+    162:
         Code: 77
         Slug: loyada
         Name: 'Loyada '
@@ -4202,6 +4363,7 @@
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 79
+        DepartementId: 39
         CategorieId: 1
         GeoCoordinateX: '46.46559831'
         GeoCoordinateY: '-1.652584076'
@@ -4211,7 +4373,7 @@
         PlanPath: uploads/etablissements/50c0bcf14fd5d.jpeg
         Vignette: uploads/etablissements/50c080fc5f050.jpeg
         Active: true
-    125:
+    163:
         Code: 224
         Slug: lupins
         Name: Lupins
@@ -4228,6 +4390,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 160
+        DepartementId: 16
         CategorieId: 3
         GeoCoordinateX: '47.5376882'
         GeoCoordinateY: '7.1824729'
@@ -4237,7 +4400,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
-    126:
+    164:
         Code: 83
         Slug: maire
         Name: 'Maïre '
@@ -4254,6 +4417,7 @@
         OpeningDate: '2013-04-27 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 8
+        DepartementId: 9
         CategorieId: 3
         GeoCoordinateX: '43.27113581'
         GeoCoordinateY: '3.329329491'
@@ -4263,7 +4427,7 @@
         PlanPath: null
         Vignette: uploads/etablissements/50c08145cad60.jpeg
         Active: true
-    127:
+    165:
         Code: 237
         Slug: mar-i-sol
         Name: 'Mar i Sol'
@@ -4280,6 +4444,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 7
+        DepartementId: 34
         CategorieId: 1
         GeoCoordinateX: '42.767187'
         GeoCoordinateY: '3.0327310000000125'
@@ -4289,7 +4454,7 @@
         PlanPath: null
         Vignette: uploads/etablissements/50c07d042f4b4.jpeg
         Active: true
-    128:
+    166:
         Code: 79
         Slug: mare-e-pineta
         Name: 'Mare e Pineta '
@@ -4306,6 +4471,7 @@
         OpeningDate: '2013-04-20 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 38
+        DepartementId: null
         CategorieId: 2
         GeoCoordinateX: '44.65568393'
         GeoCoordinateY: '12.24521756'
@@ -4315,7 +4481,7 @@
         PlanPath: uploads/etablissements/50c0bd08e5a04.jpeg
         Vignette: uploads/etablissements/50c08107bd9f4.jpeg
         Active: true
-    129:
+    167:
         Code: 251
         Slug: marina
         Name: 'Marina '
@@ -4332,6 +4498,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 166
+        DepartementId: null
         CategorieId: 3
         GeoCoordinateX: '44.4319948'
         GeoCoordinateY: '12.2988617'
@@ -4341,7 +4508,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
-    130:
+    168:
         Code: 80
         Slug: marine
         Name: 'Marine '
@@ -4358,6 +4525,7 @@
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 2
+        DepartementId: 20
         CategorieId: 2
         GeoCoordinateX: '43.50737094'
         GeoCoordinateY: '4.145380855'
@@ -4367,7 +4535,7 @@
         PlanPath: uploads/etablissements/50c1bc7486858.jpeg
         Vignette: uploads/etablissements/50c0812258939.jpeg
         Active: true
-    131:
+    169:
         Code: 81
         Slug: marsouins
         Name: Marsouins
@@ -4384,6 +4552,7 @@
         OpeningDate: '2013-05-04 00:00:00'
         ClosingDate: '2013-09-21 00:00:00'
         VilleId: 1
+        DepartementId: 34
         CategorieId: 2
         GeoCoordinateX: '42.56372132'
         GeoCoordinateY: '3.034651279'
@@ -4393,7 +4562,7 @@
         PlanPath: null
         Vignette: uploads/etablissements/50c0812e76f6f.jpeg
         Active: true
-    132:
+    170:
         Code: 82
         Slug: marze
         Name: 'Marze '
@@ -4410,6 +4579,7 @@
         OpeningDate: '2013-04-20 00:00:00'
         ClosingDate: '2013-09-08 00:00:00'
         VilleId: 45
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: '42.74528669'
         GeoCoordinateY: '10.94759166'
@@ -4419,7 +4589,7 @@
         PlanPath: null
         Vignette: uploads/etablissements/50c08139ec548.jpeg
         Active: true
-    133:
+    171:
         Code: 2
         Slug: mas
         Name: Mas
@@ -4436,6 +4606,7 @@
         OpeningDate: '2013-05-03 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 4
+        DepartementId: 6
         CategorieId: 2
         GeoCoordinateX: '44.93689388'
         GeoCoordinateY: '1.085318327'
@@ -4445,7 +4616,7 @@
         PlanPath: uploads/etablissements/50c1b1d5302c2.jpeg
         Vignette: uploads/etablissements/50c07a0aa125e.jpeg
         Active: true
-    134:
+    172:
         Code: 225
         Slug: mas-des-cigales-residence
         Name: 'Mas des Cigales (Résidence)'
@@ -4462,6 +4633,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 127
+        DepartementId: null
         CategorieId: 3
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -4471,7 +4643,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    135:
+    173:
         Code: 133
         Slug: masia
         Name: Masia
@@ -4488,6 +4660,7 @@
         OpeningDate: '2013-04-27 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 31
+        DepartementId: null
         CategorieId: 4
         GeoCoordinateX: '41.6636747'
         GeoCoordinateY: '2.78128019'
@@ -4497,7 +4670,7 @@
         PlanPath: uploads/etablissements/50c0b0df2fd9e.jpeg
         Vignette: uploads/etablissements/50c0773707b45.jpeg
         Active: true
-    136:
+    174:
         Code: 84
         Slug: moulin
         Name: Moulin
@@ -4514,6 +4687,7 @@
         OpeningDate: '2013-04-26 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 73
+        DepartementId: 10
         CategorieId: 2
         GeoCoordinateX: '46.58725895'
         GeoCoordinateY: '5.700777769'
@@ -4523,7 +4697,7 @@
         PlanPath: uploads/etablissements/50c1bcb21bb13.jpeg
         Vignette: uploads/etablissements/50c08152150d5.jpeg
         Active: true
-    137:
+    175:
         Code: 218
         Slug: neptune
         Name: Neptune
@@ -4540,6 +4714,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 1
+        DepartementId: 34
         CategorieId: 2
         GeoCoordinateX: '42.565353076621875'
         GeoCoordinateY: '3.0366790294647217'
@@ -4549,7 +4724,7 @@
         PlanPath: uploads/etablissements/50c0b8e686a55.jpeg
         Vignette: uploads/etablissements/50c07b6326e05.jpeg
         Active: true
-    138:
+    176:
         Code: 86
         Slug: oasis
         Name: Oasis
@@ -4566,6 +4741,7 @@
         OpeningDate: '2013-05-04 00:00:00'
         ClosingDate: '2013-09-14 00:00:00'
         VilleId: 17
+        DepartementId: 34
         CategorieId: 3
         GeoCoordinateX: '42.77629471'
         GeoCoordinateY: '3.02487731'
@@ -4575,7 +4751,7 @@
         PlanPath: uploads/etablissements/50c0bdb6dea7a.jpeg
         Vignette: uploads/etablissements/50c081696fe36.jpeg
         Active: true
-    139:
+    177:
         Code: 87
         Slug: oceano-d-or
         Name: 'Océano d''Or'
@@ -4592,6 +4768,7 @@
         OpeningDate: '2013-04-13 00:00:00'
         ClosingDate: '2013-09-14 00:00:00'
         VilleId: 71
+        DepartementId: 39
         CategorieId: 1
         GeoCoordinateX: '46.42087836'
         GeoCoordinateY: '-1.569660902'
@@ -4601,7 +4778,7 @@
         PlanPath: uploads/etablissements/50c0bdc2c9aa7.jpeg
         Vignette: uploads/etablissements/50c08174ca21c.jpeg
         Active: true
-    140:
+    178:
         Code: 88
         Slug: oyam
         Name: 'Oyam '
@@ -4618,6 +4795,7 @@
         OpeningDate: '2013-06-15 00:00:00'
         ClosingDate: '2013-09-22 00:00:00'
         VilleId: 103
+        DepartementId: 17
         CategorieId: 2
         GeoCoordinateX: '43.43522086'
         GeoCoordinateY: '-1.582331657'
@@ -4627,7 +4805,7 @@
         PlanPath: uploads/etablissements/50c0bda74f880.jpeg
         Vignette: uploads/etablissements/50c081a1e7f51.jpeg
         Active: true
-    141:
+    179:
         Code: 89
         Slug: oyats
         Name: 'Oyats '
@@ -4644,6 +4822,7 @@
         OpeningDate: '2013-05-01 00:00:00'
         ClosingDate: '2013-09-22 00:00:00'
         VilleId: 102
+        DepartementId: 24
         CategorieId: 2
         GeoCoordinateX: '43.724728'
         GeoCoordinateY: '-1.421765'
@@ -4653,7 +4832,7 @@
         PlanPath: uploads/etablissements/50c1bcdfc4ad5.jpeg
         Vignette: uploads/etablissements/50c081ae8728f.jpeg
         Active: true
-    142:
+    180:
         Code: 90
         Slug: pachacaid
         Name: Pachacaïd
@@ -4670,6 +4849,7 @@
         OpeningDate: '2013-04-06 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 23
+        DepartementId: 33
         CategorieId: 2
         GeoCoordinateX: '43.190284'
         GeoCoordinateY: '6.471419'
@@ -4679,7 +4859,7 @@
         PlanPath: uploads/etablissements/50c0be0861d7c.jpeg
         Vignette: uploads/etablissements/50c081cc81dad.jpeg
         Active: true
-    143:
+    181:
         Code: 92
         Slug: palace
         Name: 'Palace '
@@ -4696,6 +4876,7 @@
         OpeningDate: '2013-04-06 00:00:00'
         ClosingDate: '2013-09-22 00:00:00'
         VilleId: 97
+        DepartementId: 21
         CategorieId: 2
         GeoCoordinateX: '45.50097801'
         GeoCoordinateY: '-1.129317284'
@@ -4705,7 +4886,7 @@
         PlanPath: uploads/etablissements/50c1bcf4c36f5.jpeg
         Vignette: uploads/etablissements/50c081e4322b0.jpeg
         Active: true
-    144:
+    182:
         Code: 93
         Slug: palavas-camping
         Name: 'Palavas Camping'
@@ -4722,6 +4903,7 @@
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 3
+        DepartementId: 9
         CategorieId: 1
         GeoCoordinateX: '43.51973054'
         GeoCoordinateY: '3.909483254'
@@ -4731,7 +4913,7 @@
         PlanPath: uploads/etablissements/50c0be3ab357b.jpeg
         Vignette: uploads/etablissements/50c081f0e48d7.jpeg
         Active: true
-    145:
+    183:
         Code: 239
         Slug: palmira-beach
         Name: 'Palmira Beach'
@@ -4748,6 +4930,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 144
+        DepartementId: 9
         CategorieId: 3
         GeoCoordinateX: '43.229015'
         GeoCoordinateY: '3.245628'
@@ -4757,7 +4940,7 @@
         PlanPath: null
         Vignette: uploads/etablissements/50c07d1fc73c6.jpeg
         Active: true
-    146:
+    184:
         Code: 94
         Slug: parc
         Name: 'Parc '
@@ -4774,6 +4957,7 @@
         OpeningDate: '2013-04-27 00:00:00'
         ClosingDate: '2013-09-22 00:00:00'
         VilleId: 40
+        DepartementId: 33
         CategorieId: 2
         GeoCoordinateX: '43.58432727'
         GeoCoordinateY: '6.689981818'
@@ -4783,7 +4967,7 @@
         PlanPath: uploads/etablissements/50c1bd0d38ec7.jpeg
         Vignette: uploads/etablissements/50c081fee708d.jpeg
         Active: true
-    147:
+    185:
         Code: 226
         Slug: parc-de-la-fecht
         Name: 'Parc de la Fecht'
@@ -4800,6 +4984,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 131
+        DepartementId: 16
         CategorieId: 3
         GeoCoordinateX: '48.0431584'
         GeoCoordinateY: '7.1509838'
@@ -4809,7 +4994,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
-    148:
+    186:
         Code: 61
         Slug: parc-de-la-grenouillere
         Name: 'Parc de la Grenouillère '
@@ -4826,6 +5011,7 @@
         OpeningDate: '2013-04-20 00:00:00'
         ClosingDate: '2013-09-14 00:00:00'
         VilleId: 74
+        DepartementId: 11
         CategorieId: 1
         GeoCoordinateX: '47.68714583'
         GeoCoordinateY: '1.483572721'
@@ -4835,7 +5021,7 @@
         PlanPath: uploads/etablissements/50c1bbe2c6a4e.jpeg
         Vignette: uploads/etablissements/50c0805f736fc.jpeg
         Active: true
-    149:
+    187:
         Code: 227
         Slug: parc-des-allais
         Name: 'Parc des Allais'
@@ -4852,6 +5038,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 132
+        DepartementId: 27
         CategorieId: 2
         GeoCoordinateX: '47.0974739'
         GeoCoordinateY: '0.5019379'
@@ -4861,7 +5048,7 @@
         PlanPath: null
         Vignette: uploads/etablissements/50c07c03aa1f4.jpeg
         Active: true
-    150:
+    188:
         Code: 95
         Slug: park-albatros
         Name: 'Park Albatros '
@@ -4878,6 +5065,7 @@
         OpeningDate: '2013-04-26 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 44
+        DepartementId: null
         CategorieId: 2
         GeoCoordinateX: '43.02830997'
         GeoCoordinateY: '10.53853869'
@@ -4887,7 +5075,7 @@
         PlanPath: uploads/etablissements/50c0be5728b4b.jpeg
         Vignette: uploads/etablissements/50c0820baa3b3.jpeg
         Active: true
-    152:
+    189:
         Code: 243
         Slug: pergola
         Name: Pergola
@@ -4904,6 +5092,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 135
+        DepartementId: 10
         CategorieId: 1
         GeoCoordinateX: '46.675999'
         GeoCoordinateY: '5.787104999999997'
@@ -4913,7 +5102,7 @@
         PlanPath: null
         Vignette: uploads/etablissements/50c07d67ba280.jpeg
         Active: true
-    153:
+    190:
         Code: 96
         Slug: petit-bois-ardeche
         Name: 'Petit Bois (Ardèche)'
@@ -4930,6 +5119,7 @@
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 78
+        DepartementId: 1
         CategorieId: 3
         GeoCoordinateX: '44.45909408'
         GeoCoordinateY: '4.341879487'
@@ -4939,7 +5129,7 @@
         PlanPath: uploads/etablissements/50c0be636c384.jpeg
         Vignette: uploads/etablissements/50c082194a720.jpeg
         Active: true
-    154:
+    191:
         Code: 97
         Slug: petit-bois-cantal
         Name: 'Petit Bois (Cantal)'
@@ -4956,6 +5146,7 @@
         OpeningDate: '2013-04-27 00:00:00'
         ClosingDate: '2013-09-08 00:00:00'
         VilleId: 59
+        DepartementId: 14
         CategorieId: 3
         GeoCoordinateX: '44.99907285'
         GeoCoordinateY: '3.219047785'
@@ -4965,7 +5156,7 @@
         PlanPath: uploads/etablissements/50c0be70ddf6f.jpeg
         Vignette: uploads/etablissements/50c0822661cf3.jpeg
         Active: true
-    155:
+    192:
         Code: 4
         Slug: petit-mousse
         Name: 'Petit Mousse'
@@ -4982,6 +5173,7 @@
         OpeningDate: '2013-04-19 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 5
+        DepartementId: 9
         CategorieId: 3
         GeoCoordinateX: '43.284219'
         GeoCoordinateY: '3.381127'
@@ -4991,7 +5183,7 @@
         PlanPath: uploads/etablissements/50c1b8af9f072.jpeg
         Vignette: uploads/etablissements/50c07ef93ebc1.jpeg
         Active: true
-    156:
+    193:
         Code: 220
         Slug: phare
         Name: Phare
@@ -5008,6 +5200,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 146
+        DepartementId: 30
         CategorieId: 5
         GeoCoordinateX: '50.7040549'
         GeoCoordinateY: '1.5663028'
@@ -5017,7 +5210,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
-    157:
+    194:
         Code: 98
         Slug: pinada
         Name: 'Pinada '
@@ -5034,6 +5227,7 @@
         OpeningDate: '2013-05-01 00:00:00'
         ClosingDate: '2013-08-31 00:00:00'
         VilleId: 18
+        DepartementId: 37
         CategorieId: 3
         GeoCoordinateX: '43.11730606'
         GeoCoordinateY: '2.73617506'
@@ -5043,7 +5237,7 @@
         PlanPath: null
         Vignette: uploads/etablissements/50c0823353b89.jpeg
         Active: true
-    158:
+    195:
         Code: 99
         Slug: pins
         Name: 'Pins '
@@ -5060,6 +5254,7 @@
         OpeningDate: '2013-04-26 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 48
+        DepartementId: 5
         CategorieId: 2
         GeoCoordinateX: '48.63805601'
         GeoCoordinateY: '-2.455675006'
@@ -5069,7 +5264,7 @@
         PlanPath: uploads/etablissements/50c0be9c8c108.jpeg
         Vignette: uploads/etablissements/50c08242e8322.jpeg
         Active: true
-    160:
+    196:
         Code: 100
         Slug: pins-parasols
         Name: 'Pins Parasols '
@@ -5086,6 +5281,7 @@
         OpeningDate: '2013-04-06 00:00:00'
         ClosingDate: '2013-09-28 00:00:00'
         VilleId: 140
+        DepartementId: 33
         CategorieId: 2
         GeoCoordinateX: '43.46392303'
         GeoCoordinateY: '6.725360155'
@@ -5095,7 +5291,7 @@
         PlanPath: uploads/etablissements/50c0aefd8bf1a.jpeg
         Vignette: uploads/etablissements/50c075ba364bd.jpeg
         Active: true
-    161:
+    197:
         Code: 101
         Slug: plage-fleurie
         Name: 'Plage Fleurie '
@@ -5112,6 +5308,7 @@
         OpeningDate: '2013-04-27 00:00:00'
         ClosingDate: '2013-09-07 00:00:00'
         VilleId: 70
+        DepartementId: 1
         CategorieId: 1
         GeoCoordinateX: '44.412402'
         GeoCoordinateY: '4.349979'
@@ -5121,7 +5318,7 @@
         PlanPath: uploads/etablissements/50c0af09d6674.jpeg
         Vignette: uploads/etablissements/50c075d348a48.jpeg
         Active: true
-    162:
+    198:
         Code: 135
         Slug: playa-joyel
         Name: 'Playa Joyel'
@@ -5138,6 +5335,7 @@
         OpeningDate: '2013-04-19 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 28
+        DepartementId: null
         CategorieId: 2
         GeoCoordinateX: '43.491413'
         GeoCoordinateY: '-3.537512'
@@ -5147,7 +5345,7 @@
         PlanPath: uploads/etablissements/50c0b0fc0a723.jpeg
         Vignette: uploads/etablissements/50c0776146ebb.jpeg
         Active: true
-    163:
+    199:
         Code: 102
         Slug: playa-montroig
         Name: 'Playa Montroig'
@@ -5164,6 +5362,7 @@
         OpeningDate: '2013-04-06 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 33
+        DepartementId: null
         CategorieId: 1
         GeoCoordinateX: '41.03292'
         GeoCoordinateY: '0.96921'
@@ -5173,7 +5372,7 @@
         PlanPath: uploads/etablissements/50c0af17a86ec.jpeg
         Vignette: uploads/etablissements/50c075df4d461.jpeg
         Active: true
-    164:
+    200:
         Code: 103
         Slug: playa-tropicana
         Name: 'Playa Tropicana '
@@ -5190,6 +5389,7 @@
         OpeningDate: '2013-04-27 00:00:00'
         ClosingDate: '2012-09-15 00:00:00'
         VilleId: 35
+        DepartementId: null
         CategorieId: 2
         GeoCoordinateX: '40.22119452'
         GeoCoordinateY: '0.268542767'
@@ -5199,7 +5399,7 @@
         PlanPath: uploads/etablissements/50c0af25a544c.jpeg
         Vignette: uploads/etablissements/50c075ea6e237.jpeg
         Active: true
-    165:
+    201:
         Code: 104
         Slug: port-de-plaisance
         Name: 'Port de plaisance'
@@ -5216,6 +5416,7 @@
         OpeningDate: '2013-04-06 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 50
+        DepartementId: 19
         CategorieId: 2
         GeoCoordinateX: '47.88203498'
         GeoCoordinateY: '-4.103393555'
@@ -5225,7 +5426,7 @@
         PlanPath: uploads/etablissements/50c0af45bee05.jpeg
         Vignette: uploads/etablissements/50c075fa2f012.jpeg
         Active: true
-    166:
+    202:
         Code: 228
         Slug: pres-du-verdon
         Name: 'Prés du Verdon'
@@ -5242,6 +5443,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 168
+        DepartementId: null
         CategorieId: 3
         GeoCoordinateX: '43.696858773848696'
         GeoCoordinateY: '6.041450500488281'
@@ -5251,7 +5453,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
-    167:
+    203:
         Code: 241
         Slug: ranch
         Name: Ranch
@@ -5268,6 +5470,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 143
+        DepartementId: 35
         CategorieId: 3
         GeoCoordinateX: '43.5740895'
         GeoCoordinateY: '7.004152500000032'
@@ -5277,7 +5480,7 @@
         PlanPath: null
         Vignette: uploads/etablissements/50c07d4cbff5e.jpeg
         Active: true
-    168:
+    204:
         Code: 235
         Slug: ravoire
         Name: Ravoire
@@ -5294,6 +5497,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 81
+        DepartementId: 26
         CategorieId: 2
         GeoCoordinateX: '45.7991447'
         GeoCoordinateY: '6.211576000000036'
@@ -5303,7 +5507,7 @@
         PlanPath: null
         Vignette: uploads/etablissements/50c07ce853e04.jpeg
         Active: true
-    169:
+    205:
         Code: 106
         Slug: ribeyre
         Name: Ribeyre
@@ -5320,6 +5524,7 @@
         OpeningDate: '2013-05-01 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 52
+        DepartementId: 31
         CategorieId: 2
         GeoCoordinateX: '45.56285457'
         GeoCoordinateY: '2.938236594'
@@ -5329,7 +5534,7 @@
         PlanPath: uploads/etablissements/50c1af62e89c4.jpeg
         Vignette: uploads/etablissements/50c07604c4ccc.jpeg
         Active: true
-    170:
+    206:
         Code: 232
         Slug: ried
         Name: Ried
@@ -5346,6 +5551,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 171
+        DepartementId: 8
         CategorieId: 3
         GeoCoordinateX: '48.3291292'
         GeoCoordinateY: '7.6931870'
@@ -5355,7 +5561,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
-    171:
+    207:
         Code: 229
         Slug: rieumontagne
         Name: Rieumontagné
@@ -5372,6 +5578,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 161
+        DepartementId: 25
         CategorieId: 2
         GeoCoordinateX: '43.6486529'
         GeoCoordinateY: '2.7781248'
@@ -5381,7 +5588,7 @@
         PlanPath: null
         Vignette: uploads/etablissements/50c07c2b36ac4.jpeg
         Active: true
-    172:
+    208:
         Code: 108
         Slug: roussillonnais
         Name: 'Roussillonnais '
@@ -5398,6 +5605,7 @@
         OpeningDate: '2013-05-25 00:00:00'
         ClosingDate: '2013-09-08 00:00:00'
         VilleId: 1
+        DepartementId: 34
         CategorieId: 3
         GeoCoordinateX: '42.56766828'
         GeoCoordinateY: '3.044221401'
@@ -5407,7 +5615,7 @@
         PlanPath: uploads/etablissements/50c1af7c41ffa.jpeg
         Vignette: uploads/etablissements/50c0760e8f143.jpeg
         Active: true
-    173:
+    209:
         Code: 131
         Slug: ruisseau-des-pyrenees
         Name: 'Ruisseau des Pyrénées'
@@ -5424,6 +5632,7 @@
         OpeningDate: '2013-04-27 00:00:00'
         ClosingDate: '2013-09-22 00:00:00'
         VilleId: 103
+        DepartementId: 17
         CategorieId: 1
         GeoCoordinateX: '43.436804'
         GeoCoordinateY: '-1.567666'
@@ -5433,7 +5642,7 @@
         PlanPath: uploads/etablissements/50c1b0795fd0c.jpeg
         Vignette: uploads/etablissements/50c077240f919.jpeg
         Active: true
-    174:
+    210:
         Code: 109
         Slug: sables-de-cordouan
         Name: 'Sables de Cordouan '
@@ -5450,6 +5659,7 @@
         OpeningDate: '2013-04-26 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 87
+        DepartementId: 15
         CategorieId: 2
         GeoCoordinateX: '45.72995496'
         GeoCoordinateY: '-1.175955534'
@@ -5459,7 +5669,7 @@
         PlanPath: uploads/etablissements/50c1af9184408.jpeg
         Vignette: uploads/etablissements/50c076178a370.jpeg
         Active: true
-    175:
+    211:
         Code: 110
         Slug: saint-aygulf-plage
         Name: 'Saint Aygulf Plage'
@@ -5476,6 +5686,7 @@
         OpeningDate: '2013-04-06 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 153
+        DepartementId: 33
         CategorieId: 3
         GeoCoordinateX: '43.392481'
         GeoCoordinateY: '6.726462'
@@ -5485,7 +5696,7 @@
         PlanPath: uploads/etablissements/50c0afa4094b5.jpeg
         Vignette: uploads/etablissements/50c0762d20c4b.jpeg
         Active: true
-    176:
+    212:
         Code: 230
         Slug: saint-clair-residence
         Name: 'Saint Clair (Résidence)'
@@ -5502,6 +5713,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 19
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -5511,7 +5723,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    177:
+    213:
         Code: 236
         Slug: saint-disdille
         Name: 'Saint Disdille'
@@ -5528,6 +5740,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 133
+        DepartementId: 26
         CategorieId: 3
         GeoCoordinateX: '46.3993012'
         GeoCoordinateY: '6.503873800000065'
@@ -5537,7 +5750,7 @@
         PlanPath: null
         Vignette: uploads/etablissements/50c07cf564de0.jpeg
         Active: true
-    178:
+    214:
         Code: 111
         Slug: saint-louis
         Name: 'Saint Louis'
@@ -5554,6 +5767,7 @@
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 41
+        DepartementId: 35
         CategorieId: 2
         GeoCoordinateX: '43.58853542'
         GeoCoordinateY: '6.93888545'
@@ -5563,7 +5777,7 @@
         PlanPath: uploads/etablissements/50c0afb054124.jpeg
         Vignette: uploads/etablissements/50c0763716a2e.jpeg
         Active: true
-    179:
+    215:
         Code: 113
         Slug: sainte-marie
         Name: 'Sainte-Marie '
@@ -5580,6 +5794,7 @@
         OpeningDate: '2013-04-26 00:00:00'
         ClosingDate: '2013-09-08 00:00:00'
         VilleId: 6
+        DepartementId: 34
         CategorieId: 2
         GeoCoordinateX: '42.7139833'
         GeoCoordinateY: '3.0314219'
@@ -5589,7 +5804,7 @@
         PlanPath: uploads/etablissements/50c1afa391a3a.jpeg
         Vignette: uploads/etablissements/50c0764f49c1f.jpeg
         Active: true
-    180:
+    216:
         Code: 8
         Slug: sandaya-soulac-plage
         Name: 'Sandaya Soulac Plage'
@@ -5606,6 +5821,7 @@
         OpeningDate: '2013-04-13 00:00:00'
         ClosingDate: '2013-09-22 00:00:00'
         VilleId: 97
+        DepartementId: null
         CategorieId: 2
         GeoCoordinateX: '45.4856205'
         GeoCoordinateY: '-1.1477709'
@@ -5615,7 +5831,7 @@
         PlanPath: uploads/etablissements/50c0bd189da71.jpeg
         Vignette: uploads/etablissements/50c0811744e94.jpeg
         Active: true
-    181:
+    217:
         Code: 114
         Slug: sen-yan
         Name: 'Sen Yan '
@@ -5632,6 +5848,7 @@
         OpeningDate: '2013-06-01 00:00:00'
         ClosingDate: '2013-09-08 00:00:00'
         VilleId: 99
+        DepartementId: 24
         CategorieId: 1
         GeoCoordinateX: '44.07217817'
         GeoCoordinateY: '-1.156412959'
@@ -5641,7 +5858,7 @@
         PlanPath: uploads/etablissements/50c1afc92c505.jpeg
         Vignette: uploads/etablissements/50c0765b566f2.jpeg
         Active: true
-    182:
+    218:
         Code: 117
         Slug: signol
         Name: 'Signol '
@@ -5658,6 +5875,7 @@
         OpeningDate: '2013-04-13 00:00:00'
         ClosingDate: '2013-09-22 00:00:00'
         VilleId: 95
+        DepartementId: 15
         CategorieId: 2
         GeoCoordinateX: '45.96824412'
         GeoCoordinateY: '-1.245038509'
@@ -5667,7 +5885,7 @@
         PlanPath: uploads/etablissements/50c0b021aa700.jpeg
         Vignette: uploads/etablissements/50c0766f8358e.jpeg
         Active: true
-    183:
+    219:
         Code: 118
         Slug: soleil
         Name: 'Soleil '
@@ -5684,6 +5902,7 @@
         OpeningDate: '2013-05-04 00:00:00'
         ClosingDate: '2013-09-21 00:00:00'
         VilleId: 1
+        DepartementId: 34
         CategorieId: 1
         GeoCoordinateX: '42.5757234'
         GeoCoordinateY: '3.042392135'
@@ -5693,7 +5912,7 @@
         PlanPath: uploads/etablissements/50c1afdfca20f.jpeg
         Vignette: uploads/etablissements/50c07679cef85.jpeg
         Active: true
-    184:
+    220:
         Code: 119
         Slug: soleil-de-la-mediterranee
         Name: 'Soleil de la Méditerranée'
@@ -5710,6 +5929,7 @@
         OpeningDate: '2013-04-06 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 139
+        DepartementId: 34
         CategorieId: 3
         GeoCoordinateX: '42.62443095'
         GeoCoordinateY: '3.025810719'
@@ -5719,7 +5939,7 @@
         PlanPath: uploads/etablissements/50c1afef3933e.jpeg
         Vignette: uploads/etablissements/50c076841720b.jpeg
         Active: true
-    185:
+    221:
         Code: 120
         Slug: sources
         Name: 'Sources '
@@ -5736,6 +5956,7 @@
         OpeningDate: '2013-04-13 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 82
+        DepartementId: 16
         CategorieId: 3
         GeoCoordinateX: '47.83392225'
         GeoCoordinateY: '7.165617943'
@@ -5745,7 +5966,7 @@
         PlanPath: uploads/etablissements/50c1b037245f0.jpeg
         Vignette: uploads/etablissements/50c0769b5c096.jpeg
         Active: true
-    186:
+    222:
         Code: 246
         Slug: tahiti
         Name: Tahiti
@@ -5762,6 +5983,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: 163
+        DepartementId: null
         CategorieId: 2
         GeoCoordinateX: '44.7343437'
         GeoCoordinateY: '12.231634299999996'
@@ -5771,7 +5993,7 @@
         PlanPath: null
         Vignette: uploads/etablissements/50c07d7f143a9.jpeg
         Active: true
-    187:
+    223:
         Code: 134
         Slug: tamaris
         Name: Tamaris
@@ -5788,6 +6010,7 @@
         OpeningDate: '2013-04-27 00:00:00'
         ClosingDate: '2013-09-08 00:00:00'
         VilleId: 17
+        DepartementId: 34
         CategorieId: 3
         GeoCoordinateX: '42.783858'
         GeoCoordinateY: '3.021154'
@@ -5797,7 +6020,7 @@
         PlanPath: null
         Vignette: uploads/etablissements/50c0774c3e555.jpeg
         Active: true
-    188:
+    224:
         Code: 122
         Slug: tamerici
         Name: 'Tamerici '
@@ -5814,6 +6037,7 @@
         OpeningDate: '2013-04-13 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 39
+        DepartementId: null
         CategorieId: 3
         GeoCoordinateX: '43.29217342'
         GeoCoordinateY: '10.51079929'
@@ -5823,7 +6047,7 @@
         PlanPath: uploads/etablissements/50c1b0567994e.jpeg
         Vignette: uploads/etablissements/50c076aa87a87.jpeg
         Active: true
-    189:
+    225:
         Code: 123
         Slug: tenuta-primero
         Name: 'Tenuta Primero '
@@ -5840,6 +6064,7 @@
         OpeningDate: '2013-05-01 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 36
+        DepartementId: null
         CategorieId: 2
         GeoCoordinateX: '45.69481972'
         GeoCoordinateY: '13.45171809'
@@ -5849,7 +6074,7 @@
         PlanPath: uploads/etablissements/50c0b0694d86f.jpeg
         Vignette: uploads/etablissements/50c076b862805.jpeg
         Active: true
-    190:
+    226:
         Code: 231
         Slug: tours
         Name: Tours
@@ -5866,6 +6091,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 145
+        DepartementId: 2
         CategorieId: 2
         GeoCoordinateX: '44.66761515867915'
         GeoCoordinateY: '2.6811790466308594'
@@ -5875,7 +6101,7 @@
         PlanPath: null
         Vignette: uploads/etablissements/50c07cac98a8a.jpeg
         Active: true
-    191:
+    227:
         Code: 125
         Slug: ur-onea
         Name: 'Ur Onea '
@@ -5892,6 +6118,7 @@
         OpeningDate: '2013-04-27 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 103
+        DepartementId: 17
         CategorieId: 3
         GeoCoordinateX: '43.43388862'
         GeoCoordinateY: '-1.590839624'
@@ -5901,7 +6128,7 @@
         PlanPath: uploads/etablissements/50c0b076d5281.jpeg
         Vignette: uploads/etablissements/50c076c4c14d2.jpeg
         Active: true
-    192:
+    228:
         Code: 245
         Slug: vacances-directes
         Name: 'Vacances Directes'
@@ -5918,6 +6145,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-04 00:00:00'
         VilleId: null
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -5927,7 +6155,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    193:
+    229:
         Code: 248
         Slug: valldaro
         Name: Valldaro
@@ -5944,6 +6172,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 165
+        DepartementId: null
         CategorieId: 2
         GeoCoordinateX: '41.823889'
         GeoCoordinateY: '3.052222'
@@ -5953,7 +6182,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
-    194:
+    230:
         Code: 126
         Slug: via-romana
         Name: 'Via Romana '
@@ -5970,6 +6199,7 @@
         OpeningDate: '2013-06-01 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 42
+        DepartementId: 22
         CategorieId: 4
         GeoCoordinateX: '41.98642663'
         GeoCoordinateY: '9.398889542'
@@ -5979,7 +6209,7 @@
         PlanPath: uploads/etablissements/50c0b08c59d78.jpeg
         Vignette: uploads/etablissements/50c076d71697d.jpeg
         Active: true
-    195:
+    231:
         Code: 127
         Slug: vieux-port
         Name: 'Vieux Port '
@@ -5996,6 +6226,7 @@
         OpeningDate: '2013-05-01 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 101
+        DepartementId: 24
         CategorieId: 1
         GeoCoordinateX: '43.79771568'
         GeoCoordinateY: '-1.400853395'
@@ -6005,7 +6236,7 @@
         PlanPath: uploads/etablissements/50c0b09bacdbb.jpeg
         Vignette: uploads/etablissements/50c076f4477fa.jpeg
         Active: true
-    196:
+    232:
         Code: 128
         Slug: vignes
         Name: 'Vignes '
@@ -6022,6 +6253,7 @@
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
         VilleId: 100
+        DepartementId: 24
         CategorieId: 1
         GeoCoordinateX: '44.02413608'
         GeoCoordinateY: '-1.27867341'
@@ -6031,7 +6263,7 @@
         PlanPath: null
         Vignette: uploads/etablissements/50c076fd9b7ba.jpeg
         Active: true
-    197:
+    233:
         Code: 129
         Slug: vilanova-park
         Name: 'Vilanova Park '
@@ -6048,6 +6280,7 @@
         OpeningDate: '2013-04-06 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
         VilleId: 32
+        DepartementId: null
         CategorieId: 2
         GeoCoordinateX: '41.23213011'
         GeoCoordinateY: '1.690725088'
@@ -6057,7 +6290,7 @@
         PlanPath: uploads/etablissements/50c0b0b4c3335.jpeg
         Vignette: uploads/etablissements/50c07709abbeb.jpeg
         Active: true
-    198:
+    234:
         Code: 997
         Slug: z-semaines-non-prises-lineaire-liberte
         Name: 'z Semaines non prises Linéaire Liberté'
@@ -6074,6 +6307,7 @@
         OpeningDate: null
         ClosingDate: null
         VilleId: null
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -6083,7 +6317,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    199:
+    235:
         Code: 130
         Slug: zagarella
         Name: Zagarella
@@ -6100,6 +6334,7 @@
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-14 00:00:00'
         VilleId: 47
+        DepartementId: 39
         CategorieId: 2
         GeoCoordinateX: '46.7812729'
         GeoCoordinateY: '-2.017439604'
@@ -6109,7 +6344,7 @@
         PlanPath: uploads/etablissements/50c0b0bff3feb.jpeg
         Vignette: uploads/etablissements/50c077161f869.jpeg
         Active: true
-    202:
+    236:
         Code: 7
         Slug: zz-amandiers
         Name: 'zz Amandiers'
@@ -6126,6 +6361,7 @@
         OpeningDate: '2012-05-16 00:00:00'
         ClosingDate: '2012-09-09 00:00:00'
         VilleId: null
+        DepartementId: null
         CategorieId: 2
         GeoCoordinateX: '43.71691503'
         GeoCoordinateY: '4.167069197'
@@ -6135,7 +6371,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    203:
+    237:
         Code: 180
         Slug: zz-arbousiers
         Name: 'zz Arbousiers'
@@ -6152,6 +6388,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 155
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: '43.0925'
         GeoCoordinateY: '6.05638'
@@ -6161,7 +6398,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
-    205:
+    238:
         Code: 15
         Slug: zz-beaulieu
         Name: 'zz Beaulieu '
@@ -6178,6 +6415,7 @@
         OpeningDate: '2012-04-06 00:00:00'
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: null
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: '46.17793608'
         GeoCoordinateY: '-1.115090847'
@@ -6187,7 +6425,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    207:
+    239:
         Code: 18
         Slug: zz-bretonniere
         Name: 'zz Bretonnière'
@@ -6204,6 +6442,7 @@
         OpeningDate: '2012-04-27 00:00:00'
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: null
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: '46.64475555'
         GeoCoordinateY: '-1.732943058'
@@ -6213,7 +6452,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    209:
+    240:
         Code: 188
         Slug: zz-club-del-sole-spina
         Name: 'zz Club del Sole Spina'
@@ -6230,6 +6469,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 38
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -6239,7 +6479,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
-    210:
+    241:
         Code: 193
         Slug: zz-cypsela
         Name: 'zz Cypsela'
@@ -6256,6 +6496,7 @@
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: 26
+        DepartementId: null
         CategorieId: 1
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -6265,7 +6506,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: true
-    217:
+    242:
         Code: 66
         Slug: zz-ilbarritz
         Name: 'zz Ilbarritz '
@@ -6282,6 +6523,7 @@
         OpeningDate: '2012-04-06 00:00:00'
         ClosingDate: '2012-09-15 00:00:00'
         VilleId: null
+        DepartementId: null
         CategorieId: 2
         GeoCoordinateX: '43.45307856'
         GeoCoordinateY: '-1.573544741'
@@ -6291,7 +6533,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    222:
+    243:
         Code: 73
         Slug: zz-land-s-hause
         Name: 'zz Land''s Hause '
@@ -6308,6 +6550,7 @@
         OpeningDate: '2012-04-07 00:00:00'
         ClosingDate: '2012-09-09 00:00:00'
         VilleId: null
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: '39.69684787'
         GeoCoordinateY: '-8.97567451'
@@ -6317,7 +6560,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    234:
+    244:
         Code: 78
         Slug: zz-malazeou
         Name: 'zz Malazéou '
@@ -6334,6 +6577,7 @@
         OpeningDate: '2012-04-27 00:00:00'
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: null
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: '42.72870307'
         GeoCoordinateY: '1.825538278'
@@ -6343,7 +6587,7 @@
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
         Active: false
-    242:
+    245:
         Code: 121
         Slug: zz-talaris
         Name: 'zz Talaris '
@@ -6360,6 +6604,7 @@
         OpeningDate: '2012-04-07 00:00:00'
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: null
+        DepartementId: null
         CategorieId: 2
         GeoCoordinateX: '45.00800533'
         GeoCoordinateY: '-1.112129688'
@@ -6386,6 +6631,7 @@
         OpeningDate: null
         ClosingDate: null
         VilleId: null
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''
@@ -6412,6 +6658,7 @@
         OpeningDate: '2013-01-05 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
         VilleId: null
+        DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
         GeoCoordinateY: ''

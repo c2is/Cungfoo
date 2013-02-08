@@ -53,12 +53,20 @@ class EtablissementPeer extends BaseEtablissementPeer
         return ($count == 1) ? $query->findOne() : $query->findActive();
     }
 
-    public static function getForRegion(Region $region, $sort = self::NO_SORT, $count = null)
+    public static function getForRegion($region, $sort = self::NO_SORT, $count = null)
     {
         $query = EtablissementQuery::create()
+            ->_if(get_class($region) == "Cungfoo\\Model\\Region")
             ->useVilleQuery()
+                ->filterByActive(true)
                 ->filterByRegion($region)
             ->endUse()
+            ->_else()
+            ->useDepartementQuery()
+                ->filterByActive(true)
+                ->filterByRegionRef($region)
+            ->endUse()
+            ->_endif()
         ;
 
         if ($sort == self::RANDOM_SORT)

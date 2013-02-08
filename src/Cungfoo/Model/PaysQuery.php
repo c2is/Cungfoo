@@ -18,4 +18,14 @@ use Cungfoo\Model\om\BasePaysQuery;
  */
 class PaysQuery extends BasePaysQuery
 {
+    public function find($con = null)
+    {
+        $this
+            ->useI18nQuery()
+            ->orderByName()
+            ->endUse()
+        ;
+
+        return parent::find($con);
+    }
 }

@@ -37,13 +37,16 @@ loader:
       DEPT:
         model:  \Cungfoo\Model\Departement
         parent:
-          name:   REGION
-          setter: setRegionId
+          name:   REGIONSREF
+          setter: setRegionRefId
   EtabLoader:
     themes:
       VILLE:
         model:      \Cungfoo\Model\Ville
         setter:     setVille
+      DEPARTEMENT:
+        model:      \Cungfoo\Model\Departement
+        setter:     setDepartement
       CATEG:
         model:      \Cungfoo\Model\Categorie
         setter:     setCategorie

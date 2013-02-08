@@ -4,11 +4,6 @@
         Age: '45'
         ImagePath: uploads/personnages/506ae37d15e6a.gif
         Active: true
-    2:
-        EtablissementId: null
-        Age: '27'
-        ImagePath: uploads/personnages/506bf37cdb8ab.gif
-        Active: true
     3:
         EtablissementId: null
         Age: '10'

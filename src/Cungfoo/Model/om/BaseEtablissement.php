@@ -26,6 +26,8 @@ use Cungfoo\Model\Categorie;
 use Cungfoo\Model\CategorieQuery;
 use Cungfoo\Model\DemandeAnnulation;
 use Cungfoo\Model\DemandeAnnulationQuery;
+use Cungfoo\Model\Departement;
+use Cungfoo\Model\DepartementQuery;
 use Cungfoo\Model\Destination;
 use Cungfoo\Model\DestinationQuery;
 use Cungfoo\Model\Etablissement;
@@ -204,6 +206,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     protected $ville_id;
 
     /**
+     * The value for the departement_id field.
+     * @var        int
+     */
+    protected $departement_id;
+
+    /**
      * The value for the categorie_id field.
      * @var        int
      */
@@ -274,6 +282,11 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      * @var        Ville
      */
     protected $aVille;
+
+    /**
+     * @var        Departement
+     */
+    protected $aDepartement;
 
     /**
      * @var        Categorie
@@ -850,6 +863,16 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     }
 
     /**
+     * Get the [departement_id] column value.
+     *
+     * @return int
+     */
+    public function getDepartementId()
+    {
+        return $this->departement_id;
+    }
+
+    /**
      * Get the [categorie_id] column value.
      *
      * @return int
@@ -1385,6 +1408,31 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     } // setVilleId()
 
     /**
+     * Set the value of [departement_id] column.
+     *
+     * @param int $v new value
+     * @return Etablissement The current object (for fluent API support)
+     */
+    public function setDepartementId($v)
+    {
+        if ($v !== null) {
+            $v = (int) $v;
+        }
+
+        if ($this->departement_id !== $v) {
+            $this->departement_id = $v;
+            $this->modifiedColumns[] = EtablissementPeer::DEPARTEMENT_ID;
+        }
+
+        if ($this->aDepartement !== null && $this->aDepartement->getId() !== $v) {
+            $this->aDepartement = null;
+        }
+
+
+        return $this;
+    } // setDepartementId()
+
+    /**
      * Set the value of [categorie_id] column.
      *
      * @param int $v new value
@@ -1684,17 +1732,18 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $this->opening_date = ($row[$startcol + 14] !== null) ? (string) $row[$startcol + 14] : null;
             $this->closing_date = ($row[$startcol + 15] !== null) ? (string) $row[$startcol + 15] : null;
             $this->ville_id = ($row[$startcol + 16] !== null) ? (int) $row[$startcol + 16] : null;
-            $this->categorie_id = ($row[$startcol + 17] !== null) ? (int) $row[$startcol + 17] : null;
-            $this->geo_coordinate_x = ($row[$startcol + 18] !== null) ? (string) $row[$startcol + 18] : null;
-            $this->geo_coordinate_y = ($row[$startcol + 19] !== null) ? (string) $row[$startcol + 19] : null;
-            $this->video_path = ($row[$startcol + 20] !== null) ? (string) $row[$startcol + 20] : null;
-            $this->image_360_path = ($row[$startcol + 21] !== null) ? (string) $row[$startcol + 21] : null;
-            $this->capacite = ($row[$startcol + 22] !== null) ? (string) $row[$startcol + 22] : null;
-            $this->plan_path = ($row[$startcol + 23] !== null) ? (string) $row[$startcol + 23] : null;
-            $this->vignette = ($row[$startcol + 24] !== null) ? (string) $row[$startcol + 24] : null;
-            $this->created_at = ($row[$startcol + 25] !== null) ? (string) $row[$startcol + 25] : null;
-            $this->updated_at = ($row[$startcol + 26] !== null) ? (string) $row[$startcol + 26] : null;
-            $this->active = ($row[$startcol + 27] !== null) ? (boolean) $row[$startcol + 27] : null;
+            $this->departement_id = ($row[$startcol + 17] !== null) ? (int) $row[$startcol + 17] : null;
+            $this->categorie_id = ($row[$startcol + 18] !== null) ? (int) $row[$startcol + 18] : null;
+            $this->geo_coordinate_x = ($row[$startcol + 19] !== null) ? (string) $row[$startcol + 19] : null;
+            $this->geo_coordinate_y = ($row[$startcol + 20] !== null) ? (string) $row[$startcol + 20] : null;
+            $this->video_path = ($row[$startcol + 21] !== null) ? (string) $row[$startcol + 21] : null;
+            $this->image_360_path = ($row[$startcol + 22] !== null) ? (string) $row[$startcol + 22] : null;
+            $this->capacite = ($row[$startcol + 23] !== null) ? (string) $row[$startcol + 23] : null;
+            $this->plan_path = ($row[$startcol + 24] !== null) ? (string) $row[$startcol + 24] : null;
+            $this->vignette = ($row[$startcol + 25] !== null) ? (string) $row[$startcol + 25] : null;
+            $this->created_at = ($row[$startcol + 26] !== null) ? (string) $row[$startcol + 26] : null;
+            $this->updated_at = ($row[$startcol + 27] !== null) ? (string) $row[$startcol + 27] : null;
+            $this->active = ($row[$startcol + 28] !== null) ? (boolean) $row[$startcol + 28] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -1703,7 +1752,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 28; // 28 = EtablissementPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 29; // 29 = EtablissementPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Etablissement object", $e);
@@ -1728,6 +1777,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
         if ($this->aVille !== null && $this->ville_id !== $this->aVille->getId()) {
             $this->aVille = null;
+        }
+        if ($this->aDepartement !== null && $this->departement_id !== $this->aDepartement->getId()) {
+            $this->aDepartement = null;
         }
         if ($this->aCategorie !== null && $this->categorie_id !== $this->aCategorie->getId()) {
             $this->aCategorie = null;
@@ -1772,6 +1824,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if ($deep) {  // also de-associate any related objects?
 
             $this->aVille = null;
+            $this->aDepartement = null;
             $this->aCategorie = null;
             $this->collEtablissementTypeHebergements = null;
 
@@ -1947,6 +2000,13 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                     $affectedRows += $this->aVille->save($con);
                 }
                 $this->setVille($this->aVille);
+            }
+
+            if ($this->aDepartement !== null) {
+                if ($this->aDepartement->isModified() || $this->aDepartement->isNew()) {
+                    $affectedRows += $this->aDepartement->save($con);
+                }
+                $this->setDepartement($this->aDepartement);
             }
 
             if ($this->aCategorie !== null) {
@@ -2501,6 +2561,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if ($this->isColumnModified(EtablissementPeer::VILLE_ID)) {
             $modifiedColumns[':p' . $index++]  = '`ville_id`';
         }
+        if ($this->isColumnModified(EtablissementPeer::DEPARTEMENT_ID)) {
+            $modifiedColumns[':p' . $index++]  = '`departement_id`';
+        }
         if ($this->isColumnModified(EtablissementPeer::CATEGORIE_ID)) {
             $modifiedColumns[':p' . $index++]  = '`categorie_id`';
         }
@@ -2595,6 +2658,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                         break;
                     case '`ville_id`':
                         $stmt->bindValue($identifier, $this->ville_id, PDO::PARAM_INT);
+                        break;
+                    case '`departement_id`':
+                        $stmt->bindValue($identifier, $this->departement_id, PDO::PARAM_INT);
                         break;
                     case '`categorie_id`':
                         $stmt->bindValue($identifier, $this->categorie_id, PDO::PARAM_INT);
@@ -2731,6 +2797,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             if ($this->aVille !== null) {
                 if (!$this->aVille->validate($columns)) {
                     $failureMap = array_merge($failureMap, $this->aVille->getValidationFailures());
+                }
+            }
+
+            if ($this->aDepartement !== null) {
+                if (!$this->aDepartement->validate($columns)) {
+                    $failureMap = array_merge($failureMap, $this->aDepartement->getValidationFailures());
                 }
             }
 
@@ -2953,36 +3025,39 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 return $this->getVilleId();
                 break;
             case 17:
-                return $this->getCategorieId();
+                return $this->getDepartementId();
                 break;
             case 18:
-                return $this->getGeoCoordinateX();
+                return $this->getCategorieId();
                 break;
             case 19:
-                return $this->getGeoCoordinateY();
+                return $this->getGeoCoordinateX();
                 break;
             case 20:
-                return $this->getVideoPath();
+                return $this->getGeoCoordinateY();
                 break;
             case 21:
-                return $this->getImage360Path();
+                return $this->getVideoPath();
                 break;
             case 22:
-                return $this->getCapacite();
+                return $this->getImage360Path();
                 break;
             case 23:
-                return $this->getPlanPath();
+                return $this->getCapacite();
                 break;
             case 24:
-                return $this->getVignette();
+                return $this->getPlanPath();
                 break;
             case 25:
-                return $this->getCreatedAt();
+                return $this->getVignette();
                 break;
             case 26:
-                return $this->getUpdatedAt();
+                return $this->getCreatedAt();
                 break;
             case 27:
+                return $this->getUpdatedAt();
+                break;
+            case 28:
                 return $this->getActive();
                 break;
             default:
@@ -3031,21 +3106,25 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $keys[14] => $this->getOpeningDate(),
             $keys[15] => $this->getClosingDate(),
             $keys[16] => $this->getVilleId(),
-            $keys[17] => $this->getCategorieId(),
-            $keys[18] => $this->getGeoCoordinateX(),
-            $keys[19] => $this->getGeoCoordinateY(),
-            $keys[20] => $this->getVideoPath(),
-            $keys[21] => $this->getImage360Path(),
-            $keys[22] => $this->getCapacite(),
-            $keys[23] => $this->getPlanPath(),
-            $keys[24] => $this->getVignette(),
-            $keys[25] => $this->getCreatedAt(),
-            $keys[26] => $this->getUpdatedAt(),
-            $keys[27] => $this->getActive(),
+            $keys[17] => $this->getDepartementId(),
+            $keys[18] => $this->getCategorieId(),
+            $keys[19] => $this->getGeoCoordinateX(),
+            $keys[20] => $this->getGeoCoordinateY(),
+            $keys[21] => $this->getVideoPath(),
+            $keys[22] => $this->getImage360Path(),
+            $keys[23] => $this->getCapacite(),
+            $keys[24] => $this->getPlanPath(),
+            $keys[25] => $this->getVignette(),
+            $keys[26] => $this->getCreatedAt(),
+            $keys[27] => $this->getUpdatedAt(),
+            $keys[28] => $this->getActive(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aVille) {
                 $result['Ville'] = $this->aVille->toArray($keyType, $includeLazyLoadColumns,  $alreadyDumpedObjects, true);
+            }
+            if (null !== $this->aDepartement) {
+                $result['Departement'] = $this->aDepartement->toArray($keyType, $includeLazyLoadColumns,  $alreadyDumpedObjects, true);
             }
             if (null !== $this->aCategorie) {
                 $result['Categorie'] = $this->aCategorie->toArray($keyType, $includeLazyLoadColumns,  $alreadyDumpedObjects, true);
@@ -3181,36 +3260,39 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 $this->setVilleId($value);
                 break;
             case 17:
-                $this->setCategorieId($value);
+                $this->setDepartementId($value);
                 break;
             case 18:
-                $this->setGeoCoordinateX($value);
+                $this->setCategorieId($value);
                 break;
             case 19:
-                $this->setGeoCoordinateY($value);
+                $this->setGeoCoordinateX($value);
                 break;
             case 20:
-                $this->setVideoPath($value);
+                $this->setGeoCoordinateY($value);
                 break;
             case 21:
-                $this->setImage360Path($value);
+                $this->setVideoPath($value);
                 break;
             case 22:
-                $this->setCapacite($value);
+                $this->setImage360Path($value);
                 break;
             case 23:
-                $this->setPlanPath($value);
+                $this->setCapacite($value);
                 break;
             case 24:
-                $this->setVignette($value);
+                $this->setPlanPath($value);
                 break;
             case 25:
-                $this->setCreatedAt($value);
+                $this->setVignette($value);
                 break;
             case 26:
-                $this->setUpdatedAt($value);
+                $this->setCreatedAt($value);
                 break;
             case 27:
+                $this->setUpdatedAt($value);
+                break;
+            case 28:
                 $this->setActive($value);
                 break;
         } // switch()
@@ -3254,17 +3336,18 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if (array_key_exists($keys[14], $arr)) $this->setOpeningDate($arr[$keys[14]]);
         if (array_key_exists($keys[15], $arr)) $this->setClosingDate($arr[$keys[15]]);
         if (array_key_exists($keys[16], $arr)) $this->setVilleId($arr[$keys[16]]);
-        if (array_key_exists($keys[17], $arr)) $this->setCategorieId($arr[$keys[17]]);
-        if (array_key_exists($keys[18], $arr)) $this->setGeoCoordinateX($arr[$keys[18]]);
-        if (array_key_exists($keys[19], $arr)) $this->setGeoCoordinateY($arr[$keys[19]]);
-        if (array_key_exists($keys[20], $arr)) $this->setVideoPath($arr[$keys[20]]);
-        if (array_key_exists($keys[21], $arr)) $this->setImage360Path($arr[$keys[21]]);
-        if (array_key_exists($keys[22], $arr)) $this->setCapacite($arr[$keys[22]]);
-        if (array_key_exists($keys[23], $arr)) $this->setPlanPath($arr[$keys[23]]);
-        if (array_key_exists($keys[24], $arr)) $this->setVignette($arr[$keys[24]]);
-        if (array_key_exists($keys[25], $arr)) $this->setCreatedAt($arr[$keys[25]]);
-        if (array_key_exists($keys[26], $arr)) $this->setUpdatedAt($arr[$keys[26]]);
-        if (array_key_exists($keys[27], $arr)) $this->setActive($arr[$keys[27]]);
+        if (array_key_exists($keys[17], $arr)) $this->setDepartementId($arr[$keys[17]]);
+        if (array_key_exists($keys[18], $arr)) $this->setCategorieId($arr[$keys[18]]);
+        if (array_key_exists($keys[19], $arr)) $this->setGeoCoordinateX($arr[$keys[19]]);
+        if (array_key_exists($keys[20], $arr)) $this->setGeoCoordinateY($arr[$keys[20]]);
+        if (array_key_exists($keys[21], $arr)) $this->setVideoPath($arr[$keys[21]]);
+        if (array_key_exists($keys[22], $arr)) $this->setImage360Path($arr[$keys[22]]);
+        if (array_key_exists($keys[23], $arr)) $this->setCapacite($arr[$keys[23]]);
+        if (array_key_exists($keys[24], $arr)) $this->setPlanPath($arr[$keys[24]]);
+        if (array_key_exists($keys[25], $arr)) $this->setVignette($arr[$keys[25]]);
+        if (array_key_exists($keys[26], $arr)) $this->setCreatedAt($arr[$keys[26]]);
+        if (array_key_exists($keys[27], $arr)) $this->setUpdatedAt($arr[$keys[27]]);
+        if (array_key_exists($keys[28], $arr)) $this->setActive($arr[$keys[28]]);
     }
 
     /**
@@ -3293,6 +3376,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if ($this->isColumnModified(EtablissementPeer::OPENING_DATE)) $criteria->add(EtablissementPeer::OPENING_DATE, $this->opening_date);
         if ($this->isColumnModified(EtablissementPeer::CLOSING_DATE)) $criteria->add(EtablissementPeer::CLOSING_DATE, $this->closing_date);
         if ($this->isColumnModified(EtablissementPeer::VILLE_ID)) $criteria->add(EtablissementPeer::VILLE_ID, $this->ville_id);
+        if ($this->isColumnModified(EtablissementPeer::DEPARTEMENT_ID)) $criteria->add(EtablissementPeer::DEPARTEMENT_ID, $this->departement_id);
         if ($this->isColumnModified(EtablissementPeer::CATEGORIE_ID)) $criteria->add(EtablissementPeer::CATEGORIE_ID, $this->categorie_id);
         if ($this->isColumnModified(EtablissementPeer::GEO_COORDINATE_X)) $criteria->add(EtablissementPeer::GEO_COORDINATE_X, $this->geo_coordinate_x);
         if ($this->isColumnModified(EtablissementPeer::GEO_COORDINATE_Y)) $criteria->add(EtablissementPeer::GEO_COORDINATE_Y, $this->geo_coordinate_y);
@@ -3383,6 +3467,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $copyObj->setOpeningDate($this->getOpeningDate());
         $copyObj->setClosingDate($this->getClosingDate());
         $copyObj->setVilleId($this->getVilleId());
+        $copyObj->setDepartementId($this->getDepartementId());
         $copyObj->setCategorieId($this->getCategorieId());
         $copyObj->setGeoCoordinateX($this->getGeoCoordinateX());
         $copyObj->setGeoCoordinateY($this->getGeoCoordinateY());
@@ -3592,6 +3677,58 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         }
 
         return $this->aVille;
+    }
+
+    /**
+     * Declares an association between this object and a Departement object.
+     *
+     * @param             Departement $v
+     * @return Etablissement The current object (for fluent API support)
+     * @throws PropelException
+     */
+    public function setDepartement(Departement $v = null)
+    {
+        if ($v === null) {
+            $this->setDepartementId(NULL);
+        } else {
+            $this->setDepartementId($v->getId());
+        }
+
+        $this->aDepartement = $v;
+
+        // Add binding for other direction of this n:n relationship.
+        // If this object has already been added to the Departement object, it will not be re-added.
+        if ($v !== null) {
+            $v->addEtablissement($this);
+        }
+
+
+        return $this;
+    }
+
+
+    /**
+     * Get the associated Departement object
+     *
+     * @param PropelPDO $con Optional Connection object.
+     * @param $doQuery Executes a query to get the object if required
+     * @return Departement The associated Departement object.
+     * @throws PropelException
+     */
+    public function getDepartement(PropelPDO $con = null, $doQuery = true)
+    {
+        if ($this->aDepartement === null && ($this->departement_id !== null) && $doQuery) {
+            $this->aDepartement = DepartementQuery::create()->findPk($this->departement_id, $con);
+            /* The following can be used additionally to
+                guarantee the related object contains a reference
+                to this object.  This level of coupling may, however, be
+                undesirable since it could result in an only partially populated collection
+                in the referenced object.
+                $this->aDepartement->addEtablissements($this);
+             */
+        }
+
+        return $this->aDepartement;
     }
 
     /**
@@ -8975,6 +9112,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $this->opening_date = null;
         $this->closing_date = null;
         $this->ville_id = null;
+        $this->departement_id = null;
         $this->categorie_id = null;
         $this->geo_coordinate_x = null;
         $this->geo_coordinate_y = null;
@@ -9239,6 +9377,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         }
         $this->collBonPlans = null;
         $this->aVille = null;
+        $this->aDepartement = null;
         $this->aCategorie = null;
     }
 

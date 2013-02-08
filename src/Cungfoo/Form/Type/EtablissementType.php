@@ -56,6 +56,7 @@ class EtablissementType extends BaseEtablissementType
                         'opening_date',
                         'closing_date',
                         'ville',
+                        'departement',
                         'categorie',
                         'capacite',
                         'geo_coordinate_x',

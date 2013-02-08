@@ -248,6 +248,7 @@ etablissement.plan_path_deleted: "Supprimer le plan ?"
 etablissement.etablissementI18ns: ""
 etablissement.active_locale: "Activer pour cette langue"
 etablissement.active: "Active"
+etablissement.departement: "Département"
 
 list.actions: Actions
 

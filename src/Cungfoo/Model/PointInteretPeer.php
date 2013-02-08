@@ -109,17 +109,24 @@ class PointInteretPeer extends BasePointInteretPeer
             ;
     }
 
-    static public function getForRegion(Region $region, $sort = self::NO_SORT, $count = null)
+    static public function getForRegion($region, $sort = self::NO_SORT, $count = null)
     {
         $query = PointInteretQuery::create()
             ->setDistinct()
             ->useEtablissementPointInteretQuery()
                 ->useEtablissementQuery()
                     ->filterByActive(true)
+                    ->_if(get_class($region) == "Cungfoo\\Model\\Region")
                     ->useVilleQuery()
                         ->filterByActive(true)
                         ->filterByRegion($region)
                     ->endUse()
+                    ->_else()
+                    ->useDepartementQuery()
+                        ->filterByActive(true)
+                        ->filterByRegionRef($region)
+                    ->endUse()
+                    ->_endif()
                 ->endUse()
             ->endUse()
         ;
@@ -139,17 +146,24 @@ class PointInteretPeer extends BasePointInteretPeer
         return ($count == 1) ? $query->findOne() : $query->findActive();
     }
 
-    static public function getCountForRegion(Region $region)
+    static public function getCountForRegion($region)
     {
         return PointInteretQuery::create()
             ->setDistinct()
             ->useEtablissementPointInteretQuery()
                 ->useEtablissementQuery()
                     ->filterByActive(true)
+                    ->_if(get_class($region) == "Cungfoo\\Model\\Region")
                     ->useVilleQuery()
                         ->filterByActive(true)
                         ->filterByRegion($region)
                     ->endUse()
+                    ->_else()
+                    ->useDepartementQuery()
+                        ->filterByActive(true)
+                        ->filterByRegionRef($region)
+                    ->endUse()
+                    ->_endif()
                 ->endUse()
             ->endUse()
             ->filterByActive(true)

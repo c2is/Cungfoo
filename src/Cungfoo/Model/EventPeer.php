@@ -118,17 +118,24 @@ class EventPeer extends BaseEventPeer
         return ($count == 1) ? $query->findOne() : $query->findActive();
     }
 
-    static public function getForRegion(Region $region, $sort = self::NO_SORT, $count = null, $category = null, $criteriaOperation = null)
+    static public function getForRegion($region, $sort = self::NO_SORT, $count = null, $category = null, $criteriaOperation = null)
     {
         $query = EventQuery::create()
             ->setDistinct()
             ->useEtablissementEventQuery()
                 ->useEtablissementQuery()
                     ->filterByActive(true)
+                    ->_if(get_class($region) == "Cungfoo\\Model\\Region")
                     ->useVilleQuery()
                         ->filterByActive(true)
                         ->filterByRegion($region)
                     ->endUse()
+                    ->_else()
+                    ->useDepartementQuery()
+                        ->filterByActive(true)
+                        ->filterByRegionRef($region)
+                    ->endUse()
+                    ->_endif()
                 ->endUse()
             ->endUse()
         ;

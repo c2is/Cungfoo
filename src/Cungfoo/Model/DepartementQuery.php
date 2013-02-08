@@ -18,4 +18,14 @@ use Cungfoo\Model\om\BaseDepartementQuery;
  */
 class DepartementQuery extends BaseDepartementQuery
 {
+    public function find($con = null)
+    {
+        $this
+            ->useI18nQuery()
+            ->orderByName()
+            ->endUse()
+        ;
+
+        return parent::find($con);
+    }
 }

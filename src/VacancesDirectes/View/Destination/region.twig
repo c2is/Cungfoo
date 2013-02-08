@@ -1,0 +1,52 @@
+{% extends "Destination/base.twig" %}
+
+{% block topLeftColumn %}
+
+{% include "Breadcrumbs/_breadcrumbs.twig" %}
+
+{% endblock %}
+
+{% block topRightColumn %}
+
+    {% include 'Form/_search_engine.twig' %}
+
+{% endblock %}
+
+{% block bottomLeftColumn %}
+
+    <h1>{{ metadata.title }}</h1>
+    <h2 class="h3-like">{{ metadata.subtitle }}</h2>
+
+    {% if metadata.visuel %}
+    <div class="banner">
+        <div class="bannerStain first">
+            <div class="content">
+                <p class="headline">{{ metadata.accroche }}</p>
+            </div>
+        </div>
+        <img class="bdPict" src="{{ asset(metadata.visuel) }}" alt="">
+    </div>
+    {% endif %}
+
+    <div id="results" class="clear">
+        <div class="toggleContainer">
+            {% for paysElement in pays %}
+            <div class="toggleItem">{{ paysElement.name }}<span class="toggleArrow">&gt;</span></div>
+            <div class="toggleContent primary">
+                {% for region in paysElement.regionRefsActive %}
+                <a class="linkItem" href="{{ path('destination_region',{'pays': region.pays.slug, 'region': region.slug}) }}">{{ region.name }}<span class="toggleArrow">&gt;</span></a>
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block bottomRightColumn %}
+<div id="greyBoxes">
+    {% include 'Bloc/sejour_reussi.twig' %}
+
+    {% include 'Bloc/informations.twig' %}
+</div>
+{% endblock %}

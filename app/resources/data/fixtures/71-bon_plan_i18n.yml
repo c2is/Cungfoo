@@ -22,10 +22,10 @@
     1_fr:
         Id: 1
         Locale: fr
-        Name: 'Early booking - Vacances de Pâques'
-        Slug: early-booking-vacances-de-paques
+        Name: 'Early booking'
+        Slug: early-booking
         Introduction: null
-        Description: "Profitez de notre promo Early booking sur votre séjour en basse saison : -10% pour une réservation avant le 31/01/2013. \r\n\r\nCi-dessous nos offres pour les départs du 20/04. \r\nUtilisez notre moteur de recherche pour tout autre date."
+        Description: "Profitez de notre promo early booking sur votre séjour en basse saison : -10% pour une réservation avant le 31/01/2013. \r\nN'attendez plus!"
         Indice: null
         IndicePrix: '10% de réduction'
         ActiveLocale: true
@@ -52,10 +52,10 @@
     2_fr:
         Id: 2
         Locale: fr
-        Name: 'Early booking - Eté'
-        Slug: early-booking-ete
+        Name: 'Early booking'
+        Slug: early-booking
         Introduction: null
-        Description: "Profitez de notre promo Early booking sur votre séjour en basse saison : -10% pour une réservation avant le 31/01/2013. \r\n\r\nCi-dessous nos offres pour les départs du 20/04. \r\nUtilisez notre moteur de recherche pour tout autre date."
+        Description: "Profitez de notre promo early booking sur votre séjour en basse saison : -10% pour une réservation avant le 31/01/2013. \r\nN'attendez plus!"
         Indice: null
         IndicePrix: '10% de réduction'
         ActiveLocale: true

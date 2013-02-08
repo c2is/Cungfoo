@@ -12,6 +12,8 @@ use Cungfoo\Model\Pays,
     Cungfoo\Model\PaysQuery,
     Cungfoo\Model\Region,
     Cungfoo\Model\RegionQuery,
+    Cungfoo\Model\RegionRef,
+    Cungfoo\Model\RegionRefQuery,
     Cungfoo\Model\Ville,
     Cungfoo\Model\VilleQuery,
     Cungfoo\Model\Etablissement,
@@ -85,7 +87,18 @@ class DestinationController implements ControllerProviderInterface
 
             if (!$regionObject)
             {
-                $app->abort(404, "$region does not exist.");
+                $regionObject = RegionRefQuery::create()
+                    ->useI18nQuery($locale)
+                        ->filterBySlug($region)
+                    ->endUse()
+                    ->findOne()
+                ;
+
+                if (!$regionObject)
+                {
+                    $app->abort(404, "$region does not exist.");
+                }
+
             }
 
             return $regionObject;
@@ -146,7 +159,7 @@ class DestinationController implements ControllerProviderInterface
         })
         ->bind('destination_pays');
 
-        $controllers->match('/{region}/', function (Request $request, Pays $pays, Region $region) use ($app)
+        $controllers->match('/{region}/', function (Request $request, Pays $pays, $region) use ($app)
         {
             if ($pays->getId() != $region->getPaysId())
             {

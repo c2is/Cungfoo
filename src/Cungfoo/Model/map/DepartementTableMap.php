@@ -59,6 +59,7 @@ class DepartementTableMap extends TableMap
     public function buildRelations()
     {
         $this->addRelation('RegionRef', 'Cungfoo\\Model\\RegionRef', RelationMap::MANY_TO_ONE, array('region_ref_id' => 'id', ), 'SET NULL', null);
+        $this->addRelation('Etablissement', 'Cungfoo\\Model\\Etablissement', RelationMap::ONE_TO_MANY, array('id' => 'departement_id', ), 'SET NULL', null, 'Etablissements');
         $this->addRelation('DepartementI18n', 'Cungfoo\\Model\\DepartementI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'DepartementI18ns');
     } // buildRelations()
 

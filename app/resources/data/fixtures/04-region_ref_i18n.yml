@@ -207,3 +207,147 @@
         Introduction: null
         Description: null
         ActiveLocale: true
+    41_de:
+        Id: 41
+        Locale: de
+        Slug: limousin
+        Name: Limousin
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    41_fr:
+        Id: 41
+        Locale: fr
+        Slug: limousin
+        Name: Limousin
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    42_de:
+        Id: 42
+        Locale: de
+        Slug: auvergne
+        Name: Auvergne
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    42_fr:
+        Id: 42
+        Locale: fr
+        Slug: auvergne
+        Name: Auvergne
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    43_de:
+        Id: 43
+        Locale: de
+        Slug: midi-pyrenees
+        Name: Midi-Pyrénées
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    43_fr:
+        Id: 43
+        Locale: fr
+        Slug: midi-pyrenees
+        Name: Midi-Pyrénées
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    44_de:
+        Id: 44
+        Locale: de
+        Slug: poitou-charentes
+        Name: Poitou-Charentes
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    44_fr:
+        Id: 44
+        Locale: fr
+        Slug: poitou-charentes
+        Name: Poitou-Charentes
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    45_de:
+        Id: 45
+        Locale: de
+        Slug: pays-de-la-loire
+        Name: Pays-de-la-Loire
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    45_fr:
+        Id: 45
+        Locale: fr
+        Slug: pays-de-la-loire
+        Name: Pays-de-la-Loire
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    46_de:
+        Id: 46
+        Locale: de
+        Slug: centre
+        Name: Centre
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    46_fr:
+        Id: 46
+        Locale: fr
+        Slug: centre
+        Name: Centre
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    47_de:
+        Id: 47
+        Locale: de
+        Slug: ile-de-france
+        Name: Ile-de-France
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    47_fr:
+        Id: 47
+        Locale: fr
+        Slug: ile-de-france
+        Name: Ile-de-France
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    48_de:
+        Id: 48
+        Locale: de
+        Slug: nord-pas-de-calais
+        Name: Nord-Pas-de-Calais
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    48_fr:
+        Id: 48
+        Locale: fr
+        Slug: nord-pas-de-calais
+        Name: Nord-Pas-de-Calais
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    49_de:
+        Id: 49
+        Locale: de
+        Slug: franche-comte
+        Name: Franche-Comté
+        Introduction: null
+        Description: null
+        ActiveLocale: true
+    49_fr:
+        Id: 49
+        Locale: fr
+        Slug: franche-comte
+        Name: Franche-Comté
+        Introduction: null
+        Description: null
+        ActiveLocale: true

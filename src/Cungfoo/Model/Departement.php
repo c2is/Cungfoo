@@ -18,4 +18,8 @@ use Cungfoo\Model\om\BaseDepartement;
  */
 class Departement extends BaseDepartement
 {
+    public function __toString()
+    {
+        return $this->getName();
+    }
 }

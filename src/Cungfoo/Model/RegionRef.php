@@ -18,4 +18,8 @@ use Cungfoo\Model\om\BaseRegionRef;
  */
 class RegionRef extends BaseRegionRef
 {
+    public function __toString()
+    {
+        return $this->getName();
+    }
 }

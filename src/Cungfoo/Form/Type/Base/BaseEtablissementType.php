@@ -129,6 +129,13 @@ class BaseEtablissementType extends AppAwareType
             'label' => 'etablissement.ville',
             'required' => false,
         ));
+        $builder->add('departement', 'model', array(
+            'class' => '\Cungfoo\Model\Departement',
+            'constraints' => array(
+            ),
+            'label' => 'etablissement.departement',
+            'required' => false,
+        ));
         $builder->add('categorie', 'model', array(
             'class' => '\Cungfoo\Model\Categorie',
             'constraints' => array(

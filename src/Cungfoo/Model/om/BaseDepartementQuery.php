@@ -16,6 +16,7 @@ use Cungfoo\Model\Departement;
 use Cungfoo\Model\DepartementI18n;
 use Cungfoo\Model\DepartementPeer;
 use Cungfoo\Model\DepartementQuery;
+use Cungfoo\Model\Etablissement;
 use Cungfoo\Model\RegionRef;
 
 /**
@@ -48,6 +49,10 @@ use Cungfoo\Model\RegionRef;
  * @method DepartementQuery leftJoinRegionRef($relationAlias = null) Adds a LEFT JOIN clause to the query using the RegionRef relation
  * @method DepartementQuery rightJoinRegionRef($relationAlias = null) Adds a RIGHT JOIN clause to the query using the RegionRef relation
  * @method DepartementQuery innerJoinRegionRef($relationAlias = null) Adds a INNER JOIN clause to the query using the RegionRef relation
+ *
+ * @method DepartementQuery leftJoinEtablissement($relationAlias = null) Adds a LEFT JOIN clause to the query using the Etablissement relation
+ * @method DepartementQuery rightJoinEtablissement($relationAlias = null) Adds a RIGHT JOIN clause to the query using the Etablissement relation
+ * @method DepartementQuery innerJoinEtablissement($relationAlias = null) Adds a INNER JOIN clause to the query using the Etablissement relation
  *
  * @method DepartementQuery leftJoinDepartementI18n($relationAlias = null) Adds a LEFT JOIN clause to the query using the DepartementI18n relation
  * @method DepartementQuery rightJoinDepartementI18n($relationAlias = null) Adds a RIGHT JOIN clause to the query using the DepartementI18n relation
@@ -608,6 +613,80 @@ abstract class BaseDepartementQuery extends ModelCriteria
         return $this
             ->joinRegionRef($relationAlias, $joinType)
             ->useQuery($relationAlias ? $relationAlias : 'RegionRef', '\Cungfoo\Model\RegionRefQuery');
+    }
+
+    /**
+     * Filter the query by a related Etablissement object
+     *
+     * @param   Etablissement|PropelObjectCollection $etablissement  the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   DepartementQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByEtablissement($etablissement, $comparison = null)
+    {
+        if ($etablissement instanceof Etablissement) {
+            return $this
+                ->addUsingAlias(DepartementPeer::ID, $etablissement->getDepartementId(), $comparison);
+        } elseif ($etablissement instanceof PropelObjectCollection) {
+            return $this
+                ->useEtablissementQuery()
+                ->filterByPrimaryKeys($etablissement->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByEtablissement() only accepts arguments of type Etablissement or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the Etablissement relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return DepartementQuery The current query, for fluid interface
+     */
+    public function joinEtablissement($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('Etablissement');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'Etablissement');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the Etablissement relation Etablissement object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\EtablissementQuery A secondary query class using the current class as primary query
+     */
+    public function useEtablissementQuery($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        return $this
+            ->joinEtablissement($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'Etablissement', '\Cungfoo\Model\EtablissementQuery');
     }
 
     /**

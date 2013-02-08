@@ -11,18 +11,6 @@
         PersonnageId: 3
         ImagePath: null
         Active: true
-    4:
-        PersonnageId: 2
-        ImagePath: uploads/avantages/5073e4596e987.jpeg
-        Active: true
-    5:
-        PersonnageId: 2
-        ImagePath: uploads/avantages/5073e4982c0bd.jpeg
-        Active: true
-    6:
-        PersonnageId: 2
-        ImagePath: uploads/avantages/5073e4b4e03ef.jpeg
-        Active: true
     7:
         PersonnageId: 1
         ImagePath: uploads/avantages/5073e4d554c90.jpeg

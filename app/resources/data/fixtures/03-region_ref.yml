@@ -1,79 +1,133 @@
 \Cungfoo\Model\RegionRef:
-    1:
-        Code: AZAH
-        PaysId: null
-        ImageDetail1: null
-        ImageDetail2: null
-        Active: true
     2:
         Code: ALS
-        PaysId: null
+        PaysId: 1
         ImageDetail1: null
         ImageDetail2: null
         Active: true
     3:
         Code: AQUI
-        PaysId: null
+        PaysId: 1
         ImageDetail1: null
         ImageDetail2: null
         Active: true
-    4:
-        Code: BRE
-        PaysId: null
-        ImageDetail1: null
-        ImageDetail2: null
-        Active: true
-    5:
-        Code: PACA
-        PaysId: null
-        ImageDetail1: null
-        ImageDetail2: null
-        Active: true
-    6:
-        Code: TOS
-        PaysId: null
+    42:
+        Code: AUVG
+        PaysId: 1
         ImageDetail1: null
         ImageDetail2: null
         Active: true
     7:
         Code: BNOR
-        PaysId: null
+        PaysId: 1
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    4:
+        Code: BRE
+        PaysId: 1
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    46:
+        Code: CTRE
+        PaysId: 1
         ImageDetail1: null
         ImageDetail2: null
         Active: true
     8:
         Code: BRAV
-        PaysId: null
+        PaysId: 3
         ImageDetail1: null
         ImageDetail2: null
         Active: true
-    9:
-        Code: EMIR
-        PaysId: null
-        ImageDetail1: null
-        ImageDetail2: null
-        Active: true
-    10:
-        Code: VENE
-        PaysId: null
-        ImageDetail1: null
-        ImageDetail2: null
-        Active: true
-    11:
-        Code: LR
-        PaysId: null
-        ImageDetail1: null
-        ImageDetail2: null
-        Active: true
-    12:
-        Code: RA
-        PaysId: null
+    1:
+        Code: AZAH
+        PaysId: 3
         ImageDetail1: null
         ImageDetail2: null
         Active: true
     13:
         Code: DORA
-        PaysId: null
+        PaysId: 3
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    9:
+        Code: EMIR
+        PaysId: 2
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    49:
+        Code: FRCO
+        PaysId: 1
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    47:
+        Code: IDF
+        PaysId: 1
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    11:
+        Code: LR
+        PaysId: 1
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    41:
+        Code: LIMO
+        PaysId: 1
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    43:
+        Code: MPYR
+        PaysId: 1
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    48:
+        Code: NPDC
+        PaysId: 1
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    45:
+        Code: PDLL
+        PaysId: 1
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    44:
+        Code: PTCH
+        PaysId: 1
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    5:
+        Code: PACA
+        PaysId: 1
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    12:
+        Code: RA
+        PaysId: 1
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    6:
+        Code: TOS
+        PaysId: 2
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    10:
+        Code: VENE
+        PaysId: 2
         ImageDetail1: null
         ImageDetail2: null
         Active: true
