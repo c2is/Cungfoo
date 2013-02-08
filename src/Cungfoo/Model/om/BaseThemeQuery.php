@@ -801,8 +801,8 @@ abstract class BaseThemeQuery extends ModelCriteria
     }
 
     // active behavior
-
-
+    
+    
     /**
      * return only active objects
      *
@@ -811,14 +811,14 @@ abstract class BaseThemeQuery extends ModelCriteria
     public function findActive($con = null)
     {
         $locale = defined('CURRENT_LANGUAGE') ? CURRENT_LANGUAGE : 'fr';
-
+    
         $this
             ->filterByActive(true)
             ->useI18nQuery($locale, 'i18n_locale')
                 ->filterByActiveLocale(true)
             ->endUse()
         ;
-
+    
         return parent::find($con);
     }
     // i18n behavior
@@ -879,11 +879,11 @@ abstract class BaseThemeQuery extends ModelCriteria
     }
 
     // crudable behavior
-
+    
     public function filterByTerm($term)
     {
         $term = '%' . $term . '%';
-
+    
         return $this
             ->_or()
             ->useI18nQuery()

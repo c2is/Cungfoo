@@ -67,6 +67,8 @@ class EtablissementTableMap extends TableMap
         $this->addColumn('capacite', 'Capacite', 'VARCHAR', false, 255, null);
         $this->addColumn('plan_path', 'PlanPath', 'VARCHAR', false, 255, null);
         $this->addColumn('vignette', 'Vignette', 'VARCHAR', false, 255, null);
+        $this->addForeignKey('related_1', 'Related1', 'INTEGER', 'etablissement', 'id', false, null, null);
+        $this->addForeignKey('related_2', 'Related2', 'INTEGER', 'etablissement', 'id', false, null, null);
         $this->addColumn('created_at', 'CreatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('updated_at', 'UpdatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('active', 'Active', 'BOOLEAN', false, 1, false);
@@ -80,6 +82,10 @@ class EtablissementTableMap extends TableMap
     {
         $this->addRelation('Ville', 'Cungfoo\\Model\\Ville', RelationMap::MANY_TO_ONE, array('ville_id' => 'id', ), 'SET NULL', null);
         $this->addRelation('Categorie', 'Cungfoo\\Model\\Categorie', RelationMap::MANY_TO_ONE, array('categorie_id' => 'id', ), 'SET NULL', null);
+        $this->addRelation('EtablissementRelatedByRelated1', 'Cungfoo\\Model\\Etablissement', RelationMap::MANY_TO_ONE, array('related_1' => 'id', ), 'SET NULL', null);
+        $this->addRelation('EtablissementRelatedByRelated2', 'Cungfoo\\Model\\Etablissement', RelationMap::MANY_TO_ONE, array('related_2' => 'id', ), 'SET NULL', null);
+        $this->addRelation('EtablissementRelatedById0', 'Cungfoo\\Model\\Etablissement', RelationMap::ONE_TO_MANY, array('id' => 'related_1', ), 'SET NULL', null, 'EtablissementsRelatedById0');
+        $this->addRelation('EtablissementRelatedById1', 'Cungfoo\\Model\\Etablissement', RelationMap::ONE_TO_MANY, array('id' => 'related_2', ), 'SET NULL', null, 'EtablissementsRelatedById1');
         $this->addRelation('EtablissementTypeHebergement', 'Cungfoo\\Model\\EtablissementTypeHebergement', RelationMap::ONE_TO_MANY, array('id' => 'etablissement_id', ), 'CASCADE', null, 'EtablissementTypeHebergements');
         $this->addRelation('EtablissementDestination', 'Cungfoo\\Model\\EtablissementDestination', RelationMap::ONE_TO_MANY, array('id' => 'etablissement_id', ), 'CASCADE', null, 'EtablissementDestinations');
         $this->addRelation('EtablissementActivite', 'Cungfoo\\Model\\EtablissementActivite', RelationMap::ONE_TO_MANY, array('id' => 'etablissement_id', ), 'CASCADE', null, 'EtablissementActivites');
