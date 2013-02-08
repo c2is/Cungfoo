@@ -48,17 +48,17 @@ class AchatLineaireType extends AppAwareType
 
 
         $paysList = PaysQuery::create()
-            ->useI18nQuery()
-                ->withColumn('Name')
+            ->useI18nQuery('fr')
+                ->withColumn('PaysI18n.Name')
                 ->orderByName()
             ->endUse()
-            ->select(array('Code', 'Name'))
+            ->select(array('Code', 'PaysI18n.Name'))
             ->findActive()
             ->toArray()
         ;
 
         $builder->add('pays', 'choice', array(
-            'choices'   => $this->formatForList($paysList, 'Code', 'Name', 'Pays'),
+            'choices'   => $this->formatForList($paysList, 'Code', 'PaysI18n.Name', 'Pays'),
             'required' => false,
             'empty_value' => false
         ));

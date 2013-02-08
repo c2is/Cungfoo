@@ -336,6 +336,64 @@ jQuery.extend( jQuery.fn, {
             });
         }
 
+        if($('#holiday').length && !$('body').hasClass('ie-lte8')){
+            $('#holiday').show();
+            $("#holidayGallery .polaroid a").each( function(i,v) {
+                var rNum = (Math.random()*10)*4;
+                if (i % 3 != 0){
+                    $(this).rotate(rNum+'deg');
+                }
+                else{
+                    $(this).rotate(-rNum+'deg');
+                }
+//                $('#holidayGallery .polaroid:nth-child(4n + 1)').css({border:"1px solid red"});
+//                $('#holidayGallery .polaroid:nth-child(4n + 2)').css({border:"1px solid green"});
+//                $('#holidayGallery .polaroid:nth-child(4n + 3)').css({border:"1px solid yellow"});
+//                $('#holidayGallery .polaroid:nth-child(4n)').css({border:"1px solid blue"});
+                var x=$(this).parent().position().left;
+                var y=$(this).parent().position().top;
+//                console.log($(this).parent().position());
+                if(y<100 && x<400){
+                    $(this).css({top:"+30px",bottom:"-30px"});
+                }
+                else if(y>200){
+                    $(this).css({top:"-30px",bottom:"+30px"});
+                }
+                if(x<100){
+                    $(this).css({left:"+60px",right:"-60px"});
+                }
+                else if(x<250){
+                    $(this).css({left:"+30px",right:"-30px"});
+                }
+                else if(x<400){
+                    $(this).css({left:"-30px",right:"+30px"});
+                }
+                else if(x>550){
+                    $(this).css({left:"-60px",right:"+60px"});
+                }
+                if(y>100 && 400){
+                    $(this).css({left:"0px",right:"0px"});
+                }
+            });
+            var currentDeg;
+            var currentZIndex = 0;
+            $("#holidayGallery .polaroid a").hover(function(e){
+                currentDeg = $(this).rotate();
+                currentZIndex++;
+//                console.log(currentDeg);
+
+                $(this).css({zIndex:currentZIndex}).animate({
+                    rotate: '0deg'
+                }, {queue: false, duration: 500});
+            },
+            function(e){
+                $(this).animate({
+                    rotate: currentDeg
+                }, {queue: false, duration: 500});
+            });
+            $('#holiday').hide();
+        }
+
     }
 
 
@@ -1671,8 +1729,8 @@ function numDate(d){
 
 function sliderPict() {
     var slider = $('.tabCampDiapo').find('.slider'),
-        btLeft = '<button class="prev">&lt;</button>',
-        btRight = '<button class="next">&gt;</button>',
+        btLeft = '<button class="prev" onclick="javascript:_gaq.push([\'_trackEvent\', \'Nav-VD_-_Page_-_Fiche-Camping\', \'Contenu_-_Visionneuse\', \'Clic_-_Bouton-Precedent\']);">&lt;</button>',
+        btRight = '<button class="next" onclick="javascript:_gaq.push([\'_trackEvent\', \'Nav-VD_-_Page_-_Fiche-Camping\', \'Contenu_-_Visionneuse\', \'Clic_-_Bouton-Suivant\']);">&gt;</button>',
         btns = btLeft + btRight;
     slider.append(btns);
 

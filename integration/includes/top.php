@@ -659,20 +659,22 @@
         </li>
         <li class="tab"><a href="#">Vos vacances</a>
             <div id="holiday" class="subnav">
-                <div class="radiusBox greyC clear">
+                <div class="radiusBox greyC">
                     <div class="title">Quel type de vacances ?</div>
-                    <a href="#"><img class="type boxborder left" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" /></a>
-                    <a href="#"><img class="type boxborder left" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" /></a>
-                    <a href="#"><img class="type boxborder left" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" /></a>
-                    <a href="#"><img class="type boxborder left" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" /></a>
-                    <a href="#"><img class="type boxborder left" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" /></a>
-                    <a href="#"><img class="type boxborder left" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" /></a>
-                    <a href="#"><img class="type boxborder left" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" /></a>
-                    <a href="#"><img class="type boxborder left" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" /></a>
-                    <a href="#"><img class="type boxborder left" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" /></a>
-                    <a href="#"><img class="type boxborder left" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" /></a>
-                    <a href="#"><img class="type boxborder left" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" /></a>
-                    <a href="#"><img class="type boxborder left" src="http://pimg.devlint.fr/175x110/ccc/333/*" alt="" /></a>
+                    <div id="holidayGallery" class="clear">
+                        <div class="polaroid"><a href="#"><img class="type boxborder" src="http://ipsumimage.appspot.com/175x110,ff7700?l=polaroid+1|(175x110)&s=30&f=ffffff" alt="" /></a></div>
+                        <div class="polaroid"><a href="#"><img class="type boxborder" src="http://ipsumimage.appspot.com/175x110,ff7700?l=polaroid+2|(175x110)&s=30&f=ffffff" alt="" /></a></div>
+                        <div class="polaroid"><a href="#"><img class="type boxborder" src="http://ipsumimage.appspot.com/175x110,ff7700?l=polaroid+3|(175x110)&s=30&f=ffffff" alt="" /></a></div>
+                        <div class="polaroid"><a href="#"><img class="type boxborder" src="http://ipsumimage.appspot.com/175x110,ff7700?l=polaroid+4|(175x110)&s=30&f=ffffff" alt="" /></a></div>
+                        <div class="polaroid"><a href="#"><img class="type boxborder" src="http://ipsumimage.appspot.com/175x110,ff7700?l=polaroid+5|(175x110)&s=30&f=ffffff" alt="" /></a></div>
+                        <div class="polaroid"><a href="#"><img class="type boxborder" src="http://ipsumimage.appspot.com/175x110,ff7700?l=polaroid+6|(175x110)&s=30&f=ffffff" alt="" /></a></div>
+                        <div class="polaroid"><a href="#"><img class="type boxborder" src="http://ipsumimage.appspot.com/175x110,ff7700?l=polaroid+7|(175x110)&s=30&f=ffffff" alt="" /></a></div>
+                        <div class="polaroid"><a href="#"><img class="type boxborder" src="http://ipsumimage.appspot.com/175x110,ff7700?l=polaroid+8|(175x110)&s=30&f=ffffff" alt="" /></a></div>
+                        <div class="polaroid"><a href="#"><img class="type boxborder" src="http://ipsumimage.appspot.com/175x110,ff7700?l=polaroid+9|(175x110)&s=30&f=ffffff" alt="" /></a></div>
+                        <div class="polaroid"><a href="#"><img class="type boxborder" src="http://ipsumimage.appspot.com/175x110,ff7700?l=polaroid+10|(175x110)&s=30&f=ffffff" alt="" /></a></div>
+                        <div class="polaroid"><a href="#"><img class="type boxborder" src="http://ipsumimage.appspot.com/175x110,ff7700?l=polaroid+11|(175x110)&s=30&f=ffffff" alt="" /></a></div>
+                        <div class="polaroid"><a href="#"><img class="type boxborder" src="http://ipsumimage.appspot.com/175x110,ff7700?l=polaroid+12|(175x110)&s=30&f=ffffff" alt="" /></a></div>
+                    </div>
                 </div>
                 <div class="proposals clear">
                     <div class="title left">Vos vacances...</div>
@@ -727,7 +729,7 @@
 
 <div id="header" class="fixed-width clear">
     <a href="01_home.php" title="Retourner à Vacances directes | Le mobil-home et vous" id="logo">
-        <img src="../web/images/vacancesdirectes/common/pict/vacancesdirectes-logo.png" alt="Vacances directes | Le mobil-home et vous" /></a>
+        <img src="../web/images/vacancesdirectes/common/pict/vacancesdirectes-logo_fr.png" alt="Vacances directes | Le mobil-home et vous" /></a>
     <?php if($page == 'home'){ echo '<h1 id="catchline">+ de 130 campings en France, Espagne, Italie & Portugal</h1>'; }?>
     <div id="headerRight">
         <a id="account" href="#">Mon compte</a>

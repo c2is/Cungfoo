@@ -115,7 +115,7 @@ class CatalogueController implements ControllerProviderInterface
 
             $listingContent = $list->process();
 
-            return $app['twig']->render('Research\catalogue.twig', array(
+            return $app->renderView('Research\catalogue.twig', array(
                 'list' => $listingContent,
                 'firstEtab' => reset($listingContent['element']),
                 'searchForm' => $searchEngine->getView(),
