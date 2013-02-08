@@ -172,9 +172,11 @@ header, section, footer {position:relative;}
         }
       }
       &#holiday{
-        #holidayGallery{margin-top:10px;position:relative;
-          a{float:left;margin:0 10px 20px;
-            img{margin:0;}
+        #holidayGallery{margin:10px auto 0;position:relative;width:820px;height:420px;
+          .polaroid{position:relative;width:185px;height:120px;float:left;margin:0 10px 20px;
+            a{position:absolute;top:0;left:0;
+              img{margin:0;}
+            }
           }
         }
       }
@@ -185,7 +187,7 @@ header, section, footer {position:relative;}
       }
     }
   }
-  .tab:nth-child(5) .subnav{display:block !important;}
+//  .tab:nth-child(5) .subnav{display:block !important;}
 }
 .js-true{
   #nav{
@@ -346,11 +348,13 @@ h6, .h6-like{color:@colorFushia;}
 }
 
 .toggleContainer{
-  .toggleItem{position:relative;background-color:@colorBgGrisF;color:@colorBlanc;._verticalCenter(40px);padding:0 40px;text-transform:uppercase;font-size:19px;font-family:@ptnarrow;font-weight:bold;._border-radius(10px);margin-bottom:10px;cursor:pointer;
+  .linkItem,
+  .toggleItem{position:relative;background-color:@colorBgGrisF;color:@colorBlanc;display:block;._verticalCenter(40px);padding:0 40px;text-transform:uppercase;text-decoration:none;font-size:19px;font-family:@ptnarrow;font-weight:bold;._border-radius(10px);margin-bottom:10px;cursor:pointer;
     .toggleArrow{position:absolute;right:15px;top:0;font-size:30px;}
   }
   .toggleContent{display:none;
     &.primary{
+      .linkItem,
       .toggleItem{position:relative;background-color:@colorBgGrisC;color:@colorFushia;._verticalCenter(40px);padding:0 40px;text-transform:uppercase;font-size:19px;font-family:@ptnarrow;font-weight:bold;._border-radius(10px);margin-bottom:10px;cursor:pointer;
         .toggleArrow{position:absolute;right:15px;top:0;font-size:30px;}
       }

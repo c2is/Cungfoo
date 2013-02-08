@@ -61,7 +61,7 @@
                     </span>
                 </div>
             </div>
-            <a href="{{ path( 'homepage' ) }}" title="Vacances directes | Le camping tout simplement !" id="logo">
+            <a href="{{ path( 'homepage' ) }}" title="Vacances directes | Le camping tout simplement !" id="logo"{% if app.request.get('_route') == "destination_camping" %} onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Header', 'Lien_-_Logo', 'Clic_-_Logo']);"{% endif %}>
             {% if app.request.get('_route') == 'homepage' %}
                 <h1 id="logoTitle">{{ "header.location_mobil_home" | trans }}</h1>
             {% endif %}

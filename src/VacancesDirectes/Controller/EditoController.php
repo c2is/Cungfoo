@@ -27,7 +27,7 @@ class EditoController implements ControllerProviderInterface
         {
             $locale = $app['context']->get('language');
 
-            return $app['twig']->render('Edito/view.twig', array(
+            return $app->renderView('Edito/view.twig', array(
                 'edito' => $this->getEditoBySlug($slug, $locale),
             ));
         })->bind('edito_by_slug');
@@ -36,7 +36,7 @@ class EditoController implements ControllerProviderInterface
         {
             $locale = $app['context']->get('language');
 
-            return $app['twig']->render('Edito/view.twig', array(
+            return $app->renderView('Edito/view.twig', array(
                 'edito' => $this->getEditoById($locale),
             ));
         })
