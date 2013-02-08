@@ -282,7 +282,7 @@ class {$this->getClassname()} extends AppAwareType
                 {
                     $options['class'] = sprintf('\\%s\\%s', $fColumn->getForeignTable()->getNamespace(), $fColumn->getForeignTable()->getPhpName());
                     $options['constraints'] = $this->addConstraints($column);
-                    $builders .= $this->addBuilder($fColumn->getForeignTable()->getName(), 'model', $options);
+                    $builders .= $this->addBuilder($column->getName(), 'model', $options);
                 }
             }
             // for the other columns

@@ -34,11 +34,11 @@ class BaseVilleType extends AppAwareType
             'label' => 'ville.code',
             'required' => false,
         ));
-        $builder->add('region', 'model', array(
+        $builder->add('region_id', 'model', array(
             'class' => '\Cungfoo\Model\Region',
             'constraints' => array(
             ),
-            'label' => 'ville.region',
+            'label' => 'ville.region_id',
             'required' => false,
         ));
         $builder->add('image_detail_1', 'cungfoo_file', array(

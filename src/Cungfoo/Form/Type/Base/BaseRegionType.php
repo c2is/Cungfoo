@@ -73,18 +73,18 @@ class BaseRegionType extends AppAwareType
             'label' => 'region.image_encart_petite_path_deleted',
             'required' => false,
         ));
-        $builder->add('pays', 'model', array(
+        $builder->add('pays_id', 'model', array(
             'class' => '\Cungfoo\Model\Pays',
             'constraints' => array(
             ),
-            'label' => 'region.pays',
+            'label' => 'region.pays_id',
             'required' => false,
         ));
-        $builder->add('destination', 'model', array(
+        $builder->add('destination_id', 'model', array(
             'class' => '\Cungfoo\Model\Destination',
             'constraints' => array(
             ),
-            'label' => 'region.destination',
+            'label' => 'region.destination_id',
             'required' => false,
         ));
         $builder->add('mea_home', 'checkbox', array(

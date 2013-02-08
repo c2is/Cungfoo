@@ -27,11 +27,11 @@ class BaseMultimediaTypeHebergementType extends AppAwareType
             'label' => 'multimedia_type_hebergement.id',
             'required' => false,
         ));
-        $builder->add('type_hebergement', 'model', array(
+        $builder->add('type_hebergement_id', 'model', array(
             'class' => '\Cungfoo\Model\TypeHebergement',
             'constraints' => array(
             ),
-            'label' => 'multimedia_type_hebergement.type_hebergement',
+            'label' => 'multimedia_type_hebergement.type_hebergement_id',
             'required' => false,
         ));
         $builder->add('image_path', 'cungfoo_file', array(
