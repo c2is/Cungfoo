@@ -83,12 +83,12 @@ class BaseDemandeAnnulationType extends AppAwareType
             'label' => 'demande_annulation.assure_telephone',
             'required' => false,
         ));
-        $builder->add('camping_id', 'model', array(
+        $builder->add('etablissement', 'model', array(
             'class' => '\Cungfoo\Model\Etablissement',
             'constraints' => array(
                 new Assert\NotBlank(),
             ),
-            'label' => 'demande_annulation.camping_id',
+            'label' => 'demande_annulation.etablissement',
             'required' => false,
         ));
         $builder->add('camping_num_resa', 'text', array(

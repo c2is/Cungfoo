@@ -27,11 +27,11 @@ class BasePersonnageType extends AppAwareType
             'label' => 'personnage.id',
             'required' => false,
         ));
-        $builder->add('etablissement_id', 'model', array(
+        $builder->add('etablissement', 'model', array(
             'class' => '\Cungfoo\Model\Etablissement',
             'constraints' => array(
             ),
-            'label' => 'personnage.etablissement_id',
+            'label' => 'personnage.etablissement',
             'required' => false,
         ));
         $builder->add('age', 'text', array(

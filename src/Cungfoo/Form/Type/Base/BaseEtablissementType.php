@@ -122,18 +122,18 @@ class BaseEtablissementType extends AppAwareType
             'label' => 'etablissement.closing_date',
             'required' => false,
         ));
-        $builder->add('ville_id', 'model', array(
+        $builder->add('ville', 'model', array(
             'class' => '\Cungfoo\Model\Ville',
             'constraints' => array(
             ),
-            'label' => 'etablissement.ville_id',
+            'label' => 'etablissement.ville',
             'required' => false,
         ));
-        $builder->add('categorie_id', 'model', array(
+        $builder->add('categorie', 'model', array(
             'class' => '\Cungfoo\Model\Categorie',
             'constraints' => array(
             ),
-            'label' => 'etablissement.categorie_id',
+            'label' => 'etablissement.categorie',
             'required' => false,
         ));
         $builder->add('geo_coordinate_x', 'text', array(
@@ -192,18 +192,18 @@ class BaseEtablissementType extends AppAwareType
             'label' => 'etablissement.vignette_deleted',
             'required' => false,
         ));
-        $builder->add('related_1', 'model', array(
+        $builder->add('etablissement_related_by_related_1', 'model', array(
             'class' => '\Cungfoo\Model\Etablissement',
             'constraints' => array(
             ),
-            'label' => 'etablissement.related_1',
+            'label' => 'etablissement.etablissement_related_by_related_1',
             'required' => false,
         ));
-        $builder->add('related_2', 'model', array(
+        $builder->add('etablissement_related_by_related_2', 'model', array(
             'class' => '\Cungfoo\Model\Etablissement',
             'constraints' => array(
             ),
-            'label' => 'etablissement.related_2',
+            'label' => 'etablissement.etablissement_related_by_related_2',
             'required' => false,
         ));
         $builder->add('active', 'checkbox', array(

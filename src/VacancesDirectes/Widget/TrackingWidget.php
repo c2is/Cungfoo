@@ -16,7 +16,7 @@ class TrackingWidget extends AbstractWidget
 
     public function render()
     {
-        $etab = (int) $this->app['request']->query->get('etab');
+        $etab = $this->app['request']->query->get('etab');
         $limit = min((int) $this->app['request']->query->get('limit', 2), 5);
 
         $campings = array();

@@ -27,12 +27,12 @@ class BaseTopCampingType extends AppAwareType
             'label' => 'top_camping.id',
             'required' => false,
         ));
-        $builder->add('etablissement_id', 'model', array(
+        $builder->add('etablissement', 'model', array(
             'class' => '\Cungfoo\Model\Etablissement',
             'constraints' => array(
                 new Assert\NotBlank(),
             ),
-            'label' => 'top_camping.etablissement_id',
+            'label' => 'top_camping.etablissement',
             'required' => false,
         ));
         $builder->add('sortable_rank', 'integer', array(

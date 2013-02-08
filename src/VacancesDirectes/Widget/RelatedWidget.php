@@ -21,12 +21,23 @@ class RelatedWidget extends AbstractWidget
 
     public function render()
     {
-        $etab = (int) $this->app['request']->query->get('etab');
+        $etab = $this->app['request']->query->get('etab');
 
-        $campings = EtablissementQuery::create()
-            ->limit(2)
-            ->findActive()
+        $etabObj = EtablissementQuery::create()
+            ->filterByCode($etab)
+            ->findOne()
         ;
+
+        $campings = array();
+        if ($etabObj)
+        {
+            $campings = EtablissementQuery::create()
+                ->filterById($etabObj->getRelated1())
+                ->_or()
+                ->filterById($etabObj->getRelated2())
+                ->findActive()
+            ;
+        }
 
         return $this->app['twig']->render('Widget\\related.twig', array(
             'campings' => $campings

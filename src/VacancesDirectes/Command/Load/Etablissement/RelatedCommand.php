@@ -48,16 +48,19 @@ class RelatedCommand extends BaseCommand
 
                 for ($j = 0; $j < $nbEtab; $j++)
                 {
-                    $etabCompared = $etabArray[$j];
+                    if ($etabArray[$j]['Id'] != $etab->getId())
+                    {
+                        $etabCompared = $etabArray[$j];
 
-                    $distance = sqrt(pow($etabCompared['GeoCoordinateX'] - $etab->getGeoCoordinateX(), 2) + pow($etabCompared['GeoCoordinateY'] - $etab->getGeoCoordinateY(), 2));
-                    if ($min1['distance'] > $distance)
-                    {
-                        $min1 = array('etab' => $etabCompared['Id'], 'distance' => $distance);
-                    }
-                    elseif ($min2['distance'] > $distance)
-                    {
-                        $min2 = array('etab' => $etabCompared['Id'], 'distance' => $distance);
+                        $distance = sqrt(pow($etabCompared['GeoCoordinateX'] - $etab->getGeoCoordinateX(), 2) + pow($etabCompared['GeoCoordinateY'] - $etab->getGeoCoordinateY(), 2));
+                        if ($min1['distance'] > $distance)
+                        {
+                            $min1 = array('etab' => $etabCompared['Id'], 'distance' => $distance);
+                        }
+                        elseif ($min2['distance'] > $distance)
+                        {
+                            $min2 = array('etab' => $etabCompared['Id'], 'distance' => $distance);
+                        }
                     }
                 }
 

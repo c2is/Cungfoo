@@ -27,11 +27,11 @@ class BaseAvantageType extends AppAwareType
             'label' => 'avantage.id',
             'required' => false,
         ));
-        $builder->add('personnage_id', 'model', array(
+        $builder->add('personnage', 'model', array(
             'class' => '\Cungfoo\Model\Personnage',
             'constraints' => array(
             ),
-            'label' => 'avantage.personnage_id',
+            'label' => 'avantage.personnage',
             'required' => false,
         ));
         $builder->add('image_path', 'cungfoo_file', array(

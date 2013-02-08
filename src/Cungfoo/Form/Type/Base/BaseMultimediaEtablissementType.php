@@ -27,11 +27,11 @@ class BaseMultimediaEtablissementType extends AppAwareType
             'label' => 'multimedia_etablissement.id',
             'required' => false,
         ));
-        $builder->add('etablissement_id', 'model', array(
+        $builder->add('etablissement', 'model', array(
             'class' => '\Cungfoo\Model\Etablissement',
             'constraints' => array(
             ),
-            'label' => 'multimedia_etablissement.etablissement_id',
+            'label' => 'multimedia_etablissement.etablissement',
             'required' => false,
         ));
         $builder->add('image_path', 'cungfoo_file', array(
