@@ -68,6 +68,8 @@
         <column name="arrivees_departs" type="longvarchar" />
         <column name="plan_path" type="varchar" />
         <column name="vignette" type="varchar" />
+        <column name="related_1" type="integer" />
+        <column name="related_2" type="integer" />
 
         <behavior name="timestampable" />
         <behavior name="active" />
@@ -78,6 +80,14 @@
 
         <foreign-key foreignTable="categorie" onDelete="SETNULL">
             <reference local="categorie_id" foreign="id"></reference>
+        </foreign-key>
+
+        <foreign-key foreignTable="etablissement" onDelete="SETNULL">
+            <reference local="related_1" foreign="id"></reference>
+        </foreign-key>
+
+        <foreign-key foreignTable="etablissement" onDelete="SETNULL">
+            <reference local="related_2" foreign="id"></reference>
         </foreign-key>
 
         <behavior name="i18n">

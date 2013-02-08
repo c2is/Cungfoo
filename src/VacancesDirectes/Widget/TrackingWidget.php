@@ -16,13 +16,14 @@ class TrackingWidget extends AbstractWidget
 
     public function render()
     {
-        $etab = (int) $this->app['request']->query->get('etab');
+        $etab = $this->app['request']->query->get('etab');
+        $limit = min((int) $this->app['request']->query->get('limit', 2), 5);
 
         $campings = array();
         $trackingCamping = unserialize($this->app['request']->cookies->get('tracking'));
 
         $nbTrackingCamping = count($trackingCamping);
-        for($i = 0; $i < $nbTrackingCamping && count($campings) < 2; $i++) {
+        for($i = 0; $i < $nbTrackingCamping && count($campings) < 2 && count($campings) < $limit; $i++) {
             if (!$etab || $trackingCamping[$i] != $etab)
             {
                 $camping = EtablissementQuery::create()

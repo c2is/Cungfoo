@@ -841,3 +841,6 @@ widget:
     tracking:
         title: "Vous avez déjà consulté"
         from: "à partir de"
+    related:
+        title: "Vous aimerez aussi"
+        from: "à partir de"

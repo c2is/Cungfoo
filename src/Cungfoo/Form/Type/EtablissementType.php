@@ -60,6 +60,8 @@ class EtablissementType extends BaseEtablissementType
                         'capacite',
                         'geo_coordinate_x',
                         'geo_coordinate_y',
+                        'etablissement_related_by_related_1',
+                        'etablissement_related_by_related_2',
                         'etablissementI18ns',
                     )
                 ),

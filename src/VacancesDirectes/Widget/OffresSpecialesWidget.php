@@ -22,6 +22,7 @@ class OffresSpecialesWidget extends AbstractWidget
     public function render()
     {
         $etab = (int) $this->app['request']->query->get('etab');
+        $limit = (int) $this->app['request']->query->get('limit', 2);
 
         $bonsPlans = array();
         if ($etab)
@@ -32,6 +33,7 @@ class OffresSpecialesWidget extends AbstractWidget
                 ->endUse()
                 ->filterByDateDebut(array('max' => 'today'))
                 ->filterByDateFin(array('min' => 'today'))
+                ->limit(2)
                 ->findActive()
             ;
         }

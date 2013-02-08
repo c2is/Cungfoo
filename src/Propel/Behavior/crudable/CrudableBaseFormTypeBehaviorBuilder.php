@@ -267,6 +267,23 @@ class {$this->getClassname()} extends AppAwareType
         $fileFields     = array_map(array('CrudableBaseFormTypeBehaviorBuilder', 'trimArray'), explode(',', $this->getTable()->getBehavior('crudable')->getParameter('crud_type_file')));
         $richtextFields = array_map(array('CrudableBaseFormTypeBehaviorBuilder', 'trimArray'), explode(',', $this->getTable()->getBehavior('crudable')->getParameter('crud_type_richtext')));
 
+        $foreignKeysByTable = array();
+        foreach ($this->getTable()->getColumns() as $column)
+        {
+            if ($column->isForeignKey())
+            {
+                foreach ($column->getForeignKeys() as $fColumn)
+                {
+                    if (empty($foreignKeysByTable[$fColumn->getForeignTable()->getName()]))
+                    {
+                        $foreignKeysByTable[$fColumn->getForeignTable()->getName()] = 0;
+                    }
+
+                    $foreignKeysByTable[$fColumn->getForeignTable()->getName()]++;
+                }
+            }
+        }
+
         // Manage table columns
         foreach ($this->getTable()->getColumns() as $column)
         {
@@ -280,9 +297,23 @@ class {$this->getClassname()} extends AppAwareType
             {
                 foreach ($column->getForeignKeys() as $fColumn)
                 {
-                    $options['class'] = sprintf('\\%s\\%s', $fColumn->getForeignTable()->getNamespace(), $fColumn->getForeignTable()->getPhpName());
-                    $options['constraints'] = $this->addConstraints($column);
-                    $builders .= $this->addBuilder($fColumn->getForeignTable()->getName(), 'model', $options);
+                    if ($foreignKeysByTable[$fColumn->getForeignTable()->getName()]  < 2)
+                    {
+                        $options['class'] = sprintf('\\%s\\%s', $fColumn->getForeignTable()->getNamespace(), $fColumn->getForeignTable()->getPhpName());
+                        $options['constraints'] = $this->addConstraints($column);
+                        $builders .= $this->addBuilder($fColumn->getForeignTable()->getName(), 'model', $options);
+                    }
+                    else
+                    {
+                        $name = sprintf("%s_related_by_%s",
+                            $fColumn->getForeignTable()->getName(),
+                            $column->getName()
+                        );
+
+                        $options['class'] = sprintf('\\%s\\%s', $fColumn->getForeignTable()->getNamespace(), $fColumn->getForeignTable()->getPhpName());
+                        $options['constraints'] = $this->addConstraints($column);
+                        $builders .= $this->addBuilder($name, 'model', $options);
+                    }
                 }
             }
             // for the other columns

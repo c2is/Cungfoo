@@ -360,7 +360,7 @@ class DestinationController implements ControllerProviderInterface
         {
             array_unshift($trackingCamping, $camping->getCode());
         }
-        if (count($trackingCamping) > 3)
+        if (count($trackingCamping) > 5)
         {
             array_pop($trackingCamping);
         }

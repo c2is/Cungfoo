@@ -192,6 +192,20 @@ class BaseEtablissementType extends AppAwareType
             'label' => 'etablissement.vignette_deleted',
             'required' => false,
         ));
+        $builder->add('etablissement_related_by_related_1', 'model', array(
+            'class' => '\Cungfoo\Model\Etablissement',
+            'constraints' => array(
+            ),
+            'label' => 'etablissement.etablissement_related_by_related_1',
+            'required' => false,
+        ));
+        $builder->add('etablissement_related_by_related_2', 'model', array(
+            'class' => '\Cungfoo\Model\Etablissement',
+            'constraints' => array(
+            ),
+            'label' => 'etablissement.etablissement_related_by_related_2',
+            'required' => false,
+        ));
         $builder->add('active', 'checkbox', array(
             'constraints' => array(
             ),
