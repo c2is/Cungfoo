@@ -844,3 +844,10 @@ widget:
     related:
         title: "Vous aimerez aussi"
         from: "à partir de"
+    reassurance:
+        title: "Informations & réservations au"
+        tel: "0825 133 400"
+        telto: "0825133400"
+        price: "(0,15 €/min)"
+        ouverture_du: "Du lundi au vendredi de 9h à 21h"
+        ouverture_au: "Samedi de 10h à 18h"
