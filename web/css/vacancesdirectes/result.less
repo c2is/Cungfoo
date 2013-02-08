@@ -62,7 +62,7 @@
         &.ville{color:@colorFushia;}
       }
     }
-    span.bt{clear:both;display:block;margin-top:15px;font-weight:normal;line-height:1em;cursor:pointer;}
+    span.bt{clear:both;display:block;margin-top:15px;font-weight:normal;line-height:1em;cursor:pointer;float:right;width:120px;}
   }
   .itemResultPopDest{position:absolute;left:100%;padding-left:20px;z-index:9;top:-4px;
     > div{width:300px;background-color:@colorBgGrisF;._border-radius(10px);padding:10px 30px;background-image:url(../../images/vacancesdirectes/common/images/infoDestStamp.png);background-repeat:no-repeat;background-position:50% 70px;text-align:center;color:@colorBlanc;
@@ -99,8 +99,13 @@
         .stain, a.bt{display:block;}
       }
     }
-
-    .stain{width:90px;._verticalCenter(70px,22px);background-image:url("../../images/vacancesdirectes/common/sprites/stain.png");background-repeat:no-repeat;text-align:center;font-size:10px;color:@colorBlanc;margin-left:-10px;position:relative;
+    dl.roomTypeList{width:350px;
+      dt{font-weight:bold;font-size:13px;line-height:12px;margin-bottom:10px;}
+      dd{
+        li{list-style:disc inside none;}
+      }
+    }
+    .stain{width:90px;._verticalCenter(70px,22px);background-image:url("../../images/vacancesdirectes/common/sprites/stain.png");background-repeat:no-repeat;text-align:center;font-size:10px;color:@colorBlanc;margin-left:10px;position:relative;
       /*&>span{margin-top:10px;}*/
       .price{font-size:27px;font-weight:bold;}
     }
