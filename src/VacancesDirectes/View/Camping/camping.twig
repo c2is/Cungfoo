@@ -420,5 +420,6 @@
     {{ esi(path('widget', {'name': 'tracking', 'etab': etab.code})) }}
     {{ esi(path('widget', {'name': 'related', 'etab': etab.code, 'maxage': 600})) }}
     {% include 'Bloc/sejour_reussi.twig' %}
+    {{ esi(path('widget', {'name': 'reassurance', 'etab': etab.code, 'maxage': 600})) }}
 </div>
 {% endblock %}
