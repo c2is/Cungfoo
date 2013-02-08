@@ -416,8 +416,8 @@
 {% block rightColumn %}
     {% include 'Bloc/prix.twig' %}
 <div id="greyBoxes">
-    {% include 'Bloc/sejour_reussi.twig' %}
-    {{ esi(path('widget', {'name': 'offres_speciales', 'etab': etab.id})) }}
+    {{ esi(path('widget', {'name': 'offres_speciales', 'etab': etab.id, 'maxage': 600})) }}
     {{ esi(path('widget', {'name': 'tracking', 'etab': etab.code})) }}
+    {% include 'Bloc/sejour_reussi.twig' %}
 </div>
 {% endblock %}

@@ -25,13 +25,13 @@ class WidgetController implements ControllerProviderInterface
             $className = '\\VacancesDirectes\\Widget\\' . join('', array_map('ucwords', explode('_', $name))) . 'Widget';
             if (!class_exists($className))
             {
-                throw new \Exception(sprintf('Failed to guess the class of widget \'%\'', $name));
+                throw new \Exception(sprintf('Failed to guess the class of widget \'%s\'', $name));
             }
 
             $widget = new $className($app);
             if (!$widget instanceof \Cungfoo\Widget\AbstractWidget)
             {
-                throw new \Exception('Widgets must extend the \\Cungfoo\\Widget\\AbstractWidget class');
+                throw new \Exception(sprintf('Widget %s must extend the \\Cungfoo\\Widget\\AbstractWidget class', $name));
             }
 
             return new Response($widget->render(), 200, array('Cache-Control' => sprintf('s-maxage=%s, public', $maxAge)));
