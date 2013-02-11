@@ -3,8 +3,8 @@
 {% block _SearchDate_destination_widget %}
     {% set listPays = list_pays() %}
     <select id="SearchDate_destination" name="SearchDate[destination]">
-        {% for item in choices %}
-        <option value="{{ item.value }}"{% if item.value in listPays %} class="optGroup"{% endif %}>{{ item.label }}</option>
+        {% for choice in choices %}
+        <option value="{{ choice.value }}"{% if choice.value in listPays %} class="optGroup-like"{% endif %}{% if choice is selectedchoice(value) %} selected="selected"{% endif %}>{{ choice.label | trans }}</option>
         {% endfor %}
     </select>
 {% endblock %}
