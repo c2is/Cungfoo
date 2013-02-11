@@ -116,29 +116,38 @@ jQuery.extend( jQuery.fn, {
         var oForm = $('form.filterBy');
         oForm.find('select').change( function(){
             var sVal1 = $(this).val();
-            var siblingSelect = $(this).siblings('select');
-            var sVal2 = siblingSelect.length > 0 ? siblingSelect.val() : '';
-            var nElt = $('.typLocation').length;
+            var nbTypes = $('.typLocation').length;
+            var nbCampings = $('.itemResult').length;
 
-            $('.typLocation').each( function() {
-                if (sVal1 == "" && sVal2 == "") {
-                    $(this).fadeIn();
-                } else if (sVal1 == "") {
-                    $(this).not('.'+sVal2).hide();
-                    $('.'+sVal2).fadeIn();
-                } else if (sVal2 == "") {
-                    $(this).not('.'+sVal1).hide();
-                    $('.'+sVal1).fadeIn();
-                } else {
-                    $(this).not('.'+sVal1+'.'+sVal2).hide();
-                    $('.'+sVal1+'.'+sVal2).fadeIn();
+            if (nbTypes) {
+                var siblingSelect = $(this).siblings('select');
+                var sVal2 = siblingSelect.length > 0 ? siblingSelect.val() : '';
+
+                $('.typLocation').each( function() {
+                    if (sVal1 == "" && sVal2 == "") {
+                        $(this).fadeIn();
+                    } else if (sVal1 == "") {
+                        $(this).not('.'+sVal2).hide();
+                        $('.'+sVal2).fadeIn();
+                    } else if (sVal2 == "") {
+                        $(this).not('.'+sVal1).hide();
+                        $('.'+sVal1).fadeIn();
+                    } else {
+                        $(this).not('.'+sVal1+'.'+sVal2).hide();
+                        $('.'+sVal1+'.'+sVal2).fadeIn();
+                    }
+                });
+
+                if ($('.typLocation').not(':visible').length >= nbTypes) {
+                    $('.noResultTyp').fadeIn();
+                }else{
+                    $('.noResultTyp').fadeOut();
                 }
-            });
-
-            if ($('.typLocation').not(':visible').length >= nElt) {
-                $('.noResultTyp').fadeIn();
-            }else{
-                $('.noResultTyp').fadeOut();
+            } else if (nbCampings) {
+                $('.itemResult').each(function() {
+                    $(this).not('.' + sVal1).hide();
+                    $('.' + sVal1).fadeIn();
+                });
             }
         });
     }
