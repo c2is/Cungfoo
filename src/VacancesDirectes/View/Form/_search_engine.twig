@@ -4,7 +4,7 @@
     {% set listPays = list_pays() %}
     <select id="SearchDate_destination" name="SearchDate[destination]">
         {% for item in choices %}
-        <option value="{{ item.value }}"{% if item.value in listPays %} class="pays"{% endif %}>{{ item.label }}</option>
+        <option value="{{ item.value }}"{% if item.value in listPays %} class="optGroup"{% endif %}>{{ item.label }}</option>
         {% endfor %}
     </select>
 {% endblock %}
