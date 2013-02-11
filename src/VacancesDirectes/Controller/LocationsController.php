@@ -122,6 +122,19 @@ class LocationsController implements ControllerProviderInterface
                 $canonical = $app['url_generator']->generate('location_type_hebergement', array('categoryTypeHebergement' => $categoryTypeHebergementObject->getSlug(), 'typeHebergement' => $typeHebergement->getSlug()));
             }
 
+            $regions = \Cungfoo\Model\RegionQuery::create()
+                ->useVilleQuery()
+                    ->useEtablissementQuery()
+                        ->filterByTypeHebergement($typeHebergement)
+                    ->endUse()
+                ->endUse()
+                ->usei18nQuery()
+                    ->orderBy('Name')
+                ->endUse()
+                ->distinct()
+                ->findActive();
+            ;
+
             // Formulaire de recherche
             $searchEngine = new SearchEngine($app, $request);
             $searchEngine->process($dateData);
@@ -132,7 +145,6 @@ class LocationsController implements ControllerProviderInterface
             }
 
             $campings = $typeHebergement->getEtablissements();
-
             $list = new CatalogueListing($app);
             $list
                 ->setData($campings)
@@ -147,6 +159,7 @@ class LocationsController implements ControllerProviderInterface
                 'list'                    => $listContent,
                 'searchForm'              => $searchEngine->getView(),
                 'canonical'               => $canonical,
+                'regions'                 => $regions,
             ));
         })
         ->bind('location_type_hebergement');
