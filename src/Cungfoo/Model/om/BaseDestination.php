@@ -2790,8 +2790,8 @@ abstract class BaseDestination extends BaseObject implements Persistent
     }
 
     // active behavior
-
-
+    
+    
     /**
      * return true is the object is active
      *
@@ -2801,7 +2801,7 @@ abstract class BaseDestination extends BaseObject implements Persistent
     {
         return $this->getActive();
     }
-
+    
     /**
      * return true is the object is active locale
      *
@@ -2811,41 +2811,41 @@ abstract class BaseDestination extends BaseObject implements Persistent
     {
         return $this->getActiveLocale();
     }
-
+    
     public function getEtablissementsActive($criteria = null, PropelPDO $con = null)
     {
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-
+    
         $criteria->add(\Cungfoo\Model\EtablissementPeer::ACTIVE, true);
-
-
+    
+    
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\EtablissementI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\EtablissementPeer::ID, \Cungfoo\Model\EtablissementI18nPeer::alias('i18n_locale', \Cungfoo\Model\EtablissementI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\EtablissementI18nPeer::alias('i18n_locale', \Cungfoo\Model\EtablissementI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\EtablissementI18nPeer::alias('i18n_locale', \Cungfoo\Model\EtablissementI18nPeer::LOCALE), $this->currentLocale);
-
+    
         return $this->getEtablissements($criteria, $con);
     }
-
+    
     public function getRegionsActive($criteria = null, PropelPDO $con = null)
     {
-
+    
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-
+    
         $criteria->add(\Cungfoo\Model\RegionPeer::ACTIVE, true);
-
-
+    
+    
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\RegionI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\RegionPeer::ID, \Cungfoo\Model\RegionI18nPeer::alias('i18n_locale', \Cungfoo\Model\RegionI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\RegionI18nPeer::alias('i18n_locale', \Cungfoo\Model\RegionI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\RegionI18nPeer::alias('i18n_locale', \Cungfoo\Model\RegionI18nPeer::LOCALE), $this->currentLocale);
-
+    
         return $this->getRegions($criteria, $con);
     }
     // i18n behavior
@@ -3067,8 +3067,56 @@ abstract class BaseDestination extends BaseObject implements Persistent
         return $this;
     }
 
-    // crudable behavior
 
+        /**
+         * Get the [seo_title] column value.
+         *
+         * @return string
+         */
+        public function getSeoTitle()
+        {
+        return $this->getCurrentTranslation()->getSeoTitle();
+    }
+
+
+        /**
+         * Set the value of [seo_title] column.
+         *
+         * @param string $v new value
+         * @return DestinationI18n The current object (for fluent API support)
+         */
+        public function setSeoTitle($v)
+        {    $this->getCurrentTranslation()->setSeoTitle($v);
+
+        return $this;
+    }
+
+
+        /**
+         * Get the [seo_description] column value.
+         *
+         * @return string
+         */
+        public function getSeoDescription()
+        {
+        return $this->getCurrentTranslation()->getSeoDescription();
+    }
+
+
+        /**
+         * Set the value of [seo_description] column.
+         *
+         * @param string $v new value
+         * @return DestinationI18n The current object (for fluent API support)
+         */
+        public function setSeoDescription($v)
+        {    $this->getCurrentTranslation()->setSeoDescription($v);
+
+        return $this;
+    }
+
+    // crudable behavior
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -3083,19 +3131,19 @@ abstract class BaseDestination extends BaseObject implements Persistent
         {
             $this->resetModified(DestinationPeer::IMAGE_DETAIL_1);
         }
-
+    
         $this->uploadImageDetail1($form);
-
+        
         if (!$form['image_detail_2_deleted']->getData())
         {
             $this->resetModified(DestinationPeer::IMAGE_DETAIL_2);
         }
-
+    
         $this->uploadImageDetail2($form);
-
+        
         return $this->save($con);
     }
-
+    
     /**
      * @return string
      */
@@ -3103,7 +3151,7 @@ abstract class BaseDestination extends BaseObject implements Persistent
     {
         return 'uploads/destinations';
     }
-
+    
     /**
      * @return string
      */
@@ -3111,7 +3159,7 @@ abstract class BaseDestination extends BaseObject implements Persistent
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -3127,7 +3175,7 @@ abstract class BaseDestination extends BaseObject implements Persistent
             }
         }
     }
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void

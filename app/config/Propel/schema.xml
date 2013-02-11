@@ -408,9 +408,11 @@
         <column name="description" type="longvarchar" />
         <column name="image_detail_1" type="varchar" />
         <column name="image_detail_2" type="varchar" />
+
         <behavior name="timestampable" />
         <behavior name="sortable" />
         <behavior name="active" />
+        <behavior name="seo" />
 
         <behavior name="i18n">
             <parameter name="i18n_columns" value="slug,name,introduction,description" />

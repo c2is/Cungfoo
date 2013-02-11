@@ -2866,8 +2866,8 @@ abstract class BaseRegion extends BaseObject implements Persistent
     }
 
     // active behavior
-
-
+    
+    
     /**
      * return true is the object is active
      *
@@ -2877,7 +2877,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
     {
         return $this->getActive();
     }
-
+    
     /**
      * return true is the object is active locale
      *
@@ -2887,41 +2887,41 @@ abstract class BaseRegion extends BaseObject implements Persistent
     {
         return $this->getActiveLocale();
     }
-
+    
     public function getBonPlansActive($criteria = null, PropelPDO $con = null)
     {
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-
+    
         $criteria->add(\Cungfoo\Model\BonPlanPeer::ACTIVE, true);
-
-
+    
+    
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\BonPlanI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\BonPlanPeer::ID, \Cungfoo\Model\BonPlanI18nPeer::alias('i18n_locale', \Cungfoo\Model\BonPlanI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\BonPlanI18nPeer::alias('i18n_locale', \Cungfoo\Model\BonPlanI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\BonPlanI18nPeer::alias('i18n_locale', \Cungfoo\Model\BonPlanI18nPeer::LOCALE), $this->currentLocale);
-
+    
         return $this->getBonPlans($criteria, $con);
     }
-
+    
     public function getVillesActive($criteria = null, PropelPDO $con = null)
     {
-
+    
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-
+    
         $criteria->add(\Cungfoo\Model\VillePeer::ACTIVE, true);
-
-
+    
+    
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\VilleI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\VillePeer::ID, \Cungfoo\Model\VilleI18nPeer::alias('i18n_locale', \Cungfoo\Model\VilleI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\VilleI18nPeer::alias('i18n_locale', \Cungfoo\Model\VilleI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\VilleI18nPeer::alias('i18n_locale', \Cungfoo\Model\VilleI18nPeer::LOCALE), $this->currentLocale);
-
+    
         return $this->getVilles($criteria, $con);
     }
     // i18n behavior
@@ -3144,7 +3144,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
     }
 
     // crudable behavior
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -3159,40 +3159,40 @@ abstract class BaseRegion extends BaseObject implements Persistent
         {
             $this->resetModified(RegionPeer::IMAGE_PATH);
         }
-
+    
         $this->uploadImagePath($form);
-
+        
         if (!$form['image_encart_path_deleted']->getData())
         {
             $this->resetModified(RegionPeer::IMAGE_ENCART_PATH);
         }
-
+    
         $this->uploadImageEncartPath($form);
-
+        
         if (!$form['image_encart_petite_path_deleted']->getData())
         {
             $this->resetModified(RegionPeer::IMAGE_ENCART_PETITE_PATH);
         }
-
+    
         $this->uploadImageEncartPetitePath($form);
-
+        
         if (!$form['image_detail_1_deleted']->getData())
         {
             $this->resetModified(RegionPeer::IMAGE_DETAIL_1);
         }
-
+    
         $this->uploadImageDetail1($form);
-
+        
         if (!$form['image_detail_2_deleted']->getData())
         {
             $this->resetModified(RegionPeer::IMAGE_DETAIL_2);
         }
-
+    
         $this->uploadImageDetail2($form);
-
+        
         return $this->save($con);
     }
-
+    
     /**
      * @return string
      */
@@ -3200,7 +3200,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
     {
         return 'uploads/regions';
     }
-
+    
     /**
      * @return string
      */
@@ -3208,7 +3208,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -3224,7 +3224,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
             }
         }
     }
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -3240,7 +3240,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
             }
         }
     }
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -3256,7 +3256,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
             }
         }
     }
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -3272,7 +3272,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
             }
         }
     }
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
