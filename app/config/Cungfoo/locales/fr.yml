@@ -116,6 +116,8 @@ destination.image_detail_1_deleted: "Supprimer l'image 1"
 destination.image_detail_2: "Image 2"
 destination.image.detail.2: "Image 2"
 destination.image_detail_2_deleted: "Supprimer l'image 2"
+destination.seo_title: "Titre SEO"
+destination.seo_description: "Description SEO"
 
 categorie.crud.create: Création d'une catégorie
 categorie.crud.list: Liste catégories
