@@ -414,7 +414,7 @@
 {% endblock %}
 
 {% block rightColumn %}
-    {{ esi(path('widget', {'name': 'bloc_prix', 'etab': etab.id})) }}
+    {{ esi(path('widget', {'name': 'bloc_prix', 'etab': etab.code})) }}
 <div id="greyBoxes">
     {{ esi(path('widget', {'name': 'offres_speciales', 'etab': etab.id})) }}
     {{ esi(path('widget', {'name': 'tracking', 'etab': etab.code})) }}
