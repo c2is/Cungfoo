@@ -145,8 +145,12 @@ jQuery.extend( jQuery.fn, {
                 }
             } else if (nbCampings) {
                 $('.itemResult').each(function() {
-                    $(this).not('.' + sVal1).hide();
-                    $('.' + sVal1).fadeIn();
+                    if (sVal1 == '') {
+                        $(this).fadeIn();
+                    } else {
+                        $(this).not('.' + sVal1).hide();
+                        $('.' + sVal1).fadeIn();
+                    }
                 });
             }
         });
