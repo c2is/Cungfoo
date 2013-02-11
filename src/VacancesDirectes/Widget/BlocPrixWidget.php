@@ -24,13 +24,13 @@ class BlocPrixWidget extends AbstractWidget
         $etab = (int) $this->app['request']->query->get('etab');
         
         $camping = EtablissementQuery::create()
-            ->filterById($etab)
+            ->filterByCode($etab)
             ->findOne()
         ; 
         $lastProposal = $this->app['session']->get('last_proposal');
         $blocPrix = array();
 
-        if (is_array($lastProposal) && is_object($lastProposal['proposal']) && $this->app['request']->getRequestUri() == $lastProposal['target'])
+        if (is_array($lastProposal) && is_object($lastProposal['proposal']) && $lastProposal['proposal']->etab_id == $etab)
         {
             $category = \Cungfoo\Model\CategoryTypeHebergementQuery::create()
                 ->filterByCode($lastProposal['proposal']->{'room_type_category'})
