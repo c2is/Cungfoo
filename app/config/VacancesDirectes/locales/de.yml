@@ -450,6 +450,8 @@ fiche:
         legende: "Legende zum Plan des Campingplatzes"
     bloc_prix:
         type_hebergement: "für ein(e/n) %categorie% - %type%"
+    toutes_regions: "All regions"
+    region: "Region"
 
 home:
     topcamping: "Top Campingplätze"
