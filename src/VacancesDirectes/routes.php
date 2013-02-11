@@ -45,8 +45,8 @@ $app->mount('/' . $app->trans('seo.url.evenement'),       new Controller\FicheEv
 $app->mount('/' . $app->trans('seo.url.assurance.index'), new Controller\AnnulationController());
 $app->mount('/' . $app->trans('seo.url.locations'),       new Controller\LocationsController());
 $app->mount('/' . $app->trans('seo.url.destinations') . '/' . $app->trans('seo.url.prefix') . '-region', new Controller\RegionController());
-//$app->mount('/' . $app->trans('seo.url.destinations') . '/' . $app->trans('seo.url.prefix') . '-departement', new Controller\DepartementController());
-$app->mount('/' . $app->trans('seo.url.destinations') . '/' . $app->trans('seo.url.prefix') . '-{pays}', new Controller\DestinationController());
+$app->mount('/' . $app->trans('seo.url.destinations') . '/' . $app->trans('seo.url.prefix') . '-departement', new Controller\DepartementController());
+$app->mount('/' . $app->trans('seo.url.destinations'), new Controller\DestinationController());
 $app->match('/' . $app->trans('seo.url.topCampings'), 'VacancesDirectes\Controller\TopCampingController::indexAction')->bind('top_campings');
 
 $app->error(function (\Exception $e, $code) use ($app) {

@@ -18,4 +18,17 @@ use Cungfoo\Model\om\BaseDepartementPeer;
  */
 class DepartementPeer extends BaseDepartementPeer
 {
+    public static function assertUrl()
+    {
+        $objects = DepartementQuery::create()
+            ->useI18nQuery()
+            ->withColumn('departement_i18n.slug', 'slug')
+            ->endUse()
+            ->select('slug')
+            ->findActive()
+            ->toArray()
+        ;
+
+        return implode('|', $objects);
+    }
 }

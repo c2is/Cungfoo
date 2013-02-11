@@ -116,17 +116,10 @@ class PointInteretPeer extends BasePointInteretPeer
             ->useEtablissementPointInteretQuery()
                 ->useEtablissementQuery()
                     ->filterByActive(true)
-                    ->_if(get_class($region) == "Cungfoo\\Model\\Region")
                     ->useVilleQuery()
                         ->filterByActive(true)
                         ->filterByRegion($region)
                     ->endUse()
-                    ->_else()
-                    ->useDepartementQuery()
-                        ->filterByActive(true)
-                        ->filterByRegionRef($region)
-                    ->endUse()
-                    ->_endif()
                 ->endUse()
             ->endUse()
         ;
@@ -153,22 +146,108 @@ class PointInteretPeer extends BasePointInteretPeer
             ->useEtablissementPointInteretQuery()
                 ->useEtablissementQuery()
                     ->filterByActive(true)
-                    ->_if(get_class($region) == "Cungfoo\\Model\\Region")
                     ->useVilleQuery()
                         ->filterByActive(true)
                         ->filterByRegion($region)
                     ->endUse()
-                    ->_else()
-                    ->useDepartementQuery()
-                        ->filterByActive(true)
-                        ->filterByRegionRef($region)
-                    ->endUse()
-                    ->_endif()
                 ->endUse()
             ->endUse()
             ->filterByActive(true)
             ->count()
             ;
+    }
+
+    static public function getForRegionRef($region, $sort = self::NO_SORT, $count = null)
+    {
+        $query = PointInteretQuery::create()
+            ->setDistinct()
+            ->useEtablissementPointInteretQuery()
+                ->useEtablissementQuery()
+                    ->filterByActive(true)
+                    ->useDepartementQuery()
+                        ->filterByActive(true)
+                        ->filterByRegionRef($region)
+                    ->endUse()
+                ->endUse()
+            ->endUse()
+        ;
+
+        if ($sort == self::RANDOM_SORT)
+        {
+            $query->addAscendingOrderByColumn('RAND()');
+        }
+
+        if (!is_null($count))
+        {
+            $query->limit($count);
+        }
+
+        $query->filterByActive(true);
+
+        return ($count == 1) ? $query->findOne() : $query->findActive();
+    }
+
+    static public function getCountForRegionRef($region)
+    {
+        return PointInteretQuery::create()
+            ->setDistinct()
+            ->useEtablissementPointInteretQuery()
+                ->useEtablissementQuery()
+                    ->filterByActive(true)
+                    ->useDepartementQuery()
+                        ->filterByActive(true)
+                        ->filterByRegionRef($region)
+                    ->endUse()
+                ->endUse()
+            ->endUse()
+            ->filterByActive(true)
+            ->count()
+            ;
+    }
+
+    static public function getForDepartement($departement, $sort = self::NO_SORT, $count = null)
+    {
+        $query = PointInteretQuery::create()
+            ->setDistinct()
+            ->useEtablissementPointInteretQuery()
+                ->useEtablissementQuery()
+                    ->filterByDepartement($departement)
+                    ->useDepartementQuery()
+                    ->filterByActive(true)
+                    ->endUse()
+                ->endUse()
+            ->endUse()
+        ;
+
+        if ($sort == self::RANDOM_SORT)
+        {
+            $query->addAscendingOrderByColumn('RAND()');
+        }
+
+        if (!is_null($count))
+        {
+            $query->limit($count);
+        }
+
+        $query->filterByActive(true);
+
+        return ($count == 1) ? $query->findOne() : $query->findActive();
+    }
+
+    static public function getCountForDepartement($departement, $sort = self::NO_SORT, $count = null)
+    {
+        return PointInteretQuery::create()
+            ->setDistinct()
+            ->useEtablissementPointInteretQuery()
+                ->useEtablissementQuery()
+                    ->filterByDepartement($departement)
+                    ->useDepartementQuery()
+                    ->filterByActive(true)
+                    ->endUse()
+                ->endUse()
+            ->endUse()
+            ->count()
+        ;
     }
 
     static public function getForVille(Ville $ville, $sort = self::NO_SORT, $count = null)

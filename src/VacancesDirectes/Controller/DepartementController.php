@@ -11,12 +11,12 @@ use Symfony\Component\HttpFoundation\Request,
     Symfony\Component\Routing\Route;
 
 use Cungfoo\Model\PaysQuery,
-    Cungfoo\Model\RegionRefPeer;
+    Cungfoo\Model\DepartementPeer;
 
 use VacancesDirectes\Lib\Listing\CatalogueListing,
     VacancesDirectes\Lib\SearchEngine;
 
-class RegionController implements ControllerProviderInterface
+class DepartementController implements ControllerProviderInterface
 {
     /**
      * {@inheritdoc}
@@ -25,26 +25,27 @@ class RegionController implements ControllerProviderInterface
     {
         $ctl = $app['controllers_factory'];
 
-        $ctl->get('/', array($this, 'region'))
-            ->bind('destination_region_list')
+        $ctl->get('/', array($this, 'departement'))
+            ->bind('destination_departement_list')
         ;
 
         return $ctl;
     }
 
-    function region(Application $app, Request $request) {
+    function departement(Application $app, Request $request) {
 
         $searchEngine = new SearchEngine($app, $request);
         $searchEngine->process();
 
         $pays = PaysQuery::create()
+            ->orderById()
             ->findActive()
         ;
 
-        return $app->renderView('Destination/list_region.twig', array(
+        return $app->renderView('Destination/list_departement.twig', array(
             'pays'       => $pays,
-            'metadata'   => RegionRefPeer::getMetadata(),
             'searchForm' => $searchEngine->getView(),
+            'metadata'   => DepartementPeer::getMetadata(),
         ));
     }
 }

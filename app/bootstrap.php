@@ -41,10 +41,9 @@ $app['twig_collection_parser'] = new Cungfoo\Lib\Parser\TwigCollectionParser();
 $app['twig_object_parser'] = new Cungfoo\Lib\Parser\TwigObjectParser();
 
 /* P R O P E L   C O N F I G U R A T I O N  */
-$app->register(new Propel\Silex\PropelServiceProvider(), array(
-    'propel.config_file' => $app['config']->get('config_dir').'/Propel/generated/Cungfoo-conf.php',
-    'propel.model_path' => $app['config']->get('root_dir').'/src'
-));
+$app['propel.model_path'] = $app['config']->get('root_dir').'/src';
+$app['propel.config_file'] = $app['config']->get('config_dir').'/Propel/generated/Cungfoo-conf.php';
+$app->register(new Propel\Silex\PropelServiceProvider());
 
 $app->register(new Silex\Provider\SessionServiceProvider(), array(
     'session.storage.options' => array('auto_start' => true)
