@@ -216,7 +216,12 @@ class DateType extends AppAwareType
         $choices = array();
         foreach ($list as $item)
         {
-            $choices[$item['PaysName']][$item['Code']] = $item['Name'];
+            if (!in_array($item['PaysCode'], $pays))
+            {
+                $choices[$item['PaysCode']] = $item['PaysName'];
+                $pays[] = $item['PaysCode'];
+            }
+            $choices[$item['Code']] = $item['Name'];
         }
 
         return $choices;
