@@ -32,6 +32,7 @@ class CategoryTypeHebergement extends BaseCategoryTypeHebergement
                 ->filterById($this->getId())
             ->endUse()
             ->distinct()
+            ->orderBy('NombrePlace')
             ->findActive()
         ;
     }
