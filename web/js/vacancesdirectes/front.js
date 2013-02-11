@@ -112,11 +112,12 @@ jQuery.extend( jQuery.fn, {
         });
     }
 
-    if ($('#tabLocations').length > 0) {
-        var oForm = $('.filterBy');
+    if ($('form.filterBy').length > 0) {
+        var oForm = $('form.filterBy');
         oForm.find('select').change( function(){
             var sVal1 = $(this).val();
-            var sVal2 = $(this).siblings('select').val();
+            var siblingSelect = $(this).siblings('select');
+            var sVal2 = siblingSelect.length > 0 ? siblingSelect.val() : '';
             var nElt = $('.typLocation').length;
 
             $('.typLocation').each( function() {
