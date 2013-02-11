@@ -22,4 +22,17 @@ class CategoryTypeHebergement extends BaseCategoryTypeHebergement
     {
         return $this->getName();
     }
+
+    public function getCapacitesTypeHebergement()
+    {
+        return \Cungfoo\Model\TypeHebergementQuery::create()
+            ->select('NombrePlace')
+            ->joinWithI18n()
+            ->useCategoryTypeHebergementQuery()
+                ->filterById($this->getId())
+            ->endUse()
+            ->distinct()
+            ->findActive()
+        ;
+    }
 }
