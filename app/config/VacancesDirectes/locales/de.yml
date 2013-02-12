@@ -1,6 +1,7 @@
 seo.title.default: 'Vermietung Wohnwagen Spanien, Frankreich, Italien'
 seo.title.pays: 'günstiger Campingplatz %pays%'
 seo.title.region: 'Günstige Vermietung von Wohnwagen %region%, Campingplatz %region%'
+seo.title.departement: 'Location mobil home %departement% pas cher, camping %departement%'
 seo.title.ville: 'Günstiger Campingplatz %ville%, günstige Vermietung von Wohnwagen %ville%'
 seo.title.destination: 'Günstiger Campingplatz in %destination%'
 seo.title.camping: 'Campingplatz %nom%, Campingplatz %ville%'
@@ -20,6 +21,7 @@ seo.title.location.fiche: 'Vermietung %type% %personnes% Personen Campingplatz: 
 seo.meta.default: 'Vacances Directes: Vermietung von Wohnwagen auf zahlreichen Campingplätzen in Frankreich, Italien und Spanien für einen geselligen und entspannten Urlaub.'
 seo.meta.pays: 'Vacances Directes: Entdecken Sie unsere günstigen Angebote für die Vermietung von Wohnwagen in %pays% für einen sonnigen Urlaub auf dem Campingplatz und buchen Sie online.'
 seo.meta.region: 'Buchen Sie Ihren künftigen Urlaub in der Region %region% in %pays% mit Vacances Directes online (günstige Vermietung von Wohnwagen auf dem Campingplatz).'
+seo.meta.departement: 'Réserver en ligne vos futures vacances dans le département %departement% en %pays% avec Vacances directes (location de mobil-homes pas cher en camping).'
 seo.meta.ville: 'Entdecken Sie alle von Vacances Directes (günstige Vermietung von Wohnwagen) angebotenen Campingplätze in %ville% (%region%) und buchen Sie Ihren Aufenthalt online.'
 seo.meta.destination: 'Vacances Directes: Entdecken Sie alle unsere Angebote für die günstige Vermietung von Wohnwagen in %pays% für einen sonnigen Urlaub auf dem Campingplatz und buchen Sie online.'
 seo.meta.camping: 'Buchen Sie Ihren künftigen Urlaub auf dem Campingplatz %nom% mit Vacances Directes online: ein %nbEtoiles% Campingplatz mit Swimmingpool in %ville%.'
@@ -271,6 +273,8 @@ destination.images_region_title: 'Die Region in Bildern'
 destination.images_ville_title: 'Die Stadt in Bildern'
 destination.pays_title: 'Günstig campen in %item%'
 destination.region_title: 'Vermietung Wohnwagen %item%'
+destination.regionref_title: 'Location mobil home %item%'
+destination.departement_title: 'Location mobil home %item%'
 destination.ville_title: 'Günstig campen %item% (Vermietung Wohnwagen)'
 destination.camping_title: 'Campingplatz %ville%'
 destination.retour_bottom: 'Zurück zur Liste'
@@ -424,7 +428,7 @@ home.idees_weekend.link: 'Alle Wochenendtrips (%number%)'
 compte.title: Kundenbereich
 compte.placeholder.name: Benutzername
 compte.placeholder.password: Passwort
-compte.login.error: "Die von Ihnen eingegebenen Login-Informationen sind nicht korrekt.\nVersuchen Sie es bitte noch einmal (vergewissern Sie sich, dass die Umschalttaste nicht aktiviert ist)."
+compte.login.error: 'Die von Ihnen eingegebenen Login-Informationen sind nicht korrekt.Versuchen Sie es bitte noch einmal (vergewissern Sie sich, dass die Umschalttaste nicht aktiviert ist).'
 general.a_partir_de: ab
 general.meilleur_prix: 'Unser bester Preis'
 general.jouer: Spielen
@@ -494,210 +498,3 @@ footer.facebook.intro: 'Erfahren Sie alles über unsere Wochenendtrips & Geheimt
 footer.facebook.like: 'Gefällt mir'
 footer.facebook.desc.highlight: 'Teilen Sie Ihre Vacances Directes Erfahrung'
 footer.facebook.desc: 'mit anderen Urlaubern. Fotos, Aktivitäten, Meinungen  treten Sie der Vacances Directes Community bei auf'
-footer.jeu.titre: 'Großes Gewinnspiel auf'
-footer.jeu.desc: 'Gewinnen Sie ein Wochenende in Italien'
-footer.location_camping: 'Vermietungsangebote auf Campingplätzen'
-footer.annuaire_campings: Campingplatzverzeichnis
-footer.campings_pas_chers: 'Liste mit günstigen Campingplätzen'
-footer.guide_activites: 'Die Angebote an Aktivitäten'
-footer.campings_france: 'Campingplätze Frankreich'
-footer.campings_espagne: 'Campingplätze Spanien'
-footer.campings_italie: 'Campingplätze Italien'
-footer.a_propos: 'Über uns'
-footer.a_propos.desc: 'Seit über 35 Jahren bietet Vacances Directes die Vermietung von komfortabel eingerichteten und erstklassigen Wohnwagen auf Campingplätzen an. Entdecken Sie mehr als 180 sorgfältig ausgewählte Reiseziele in Frankreich, Spanien und Italien für einen geselligen und entspannten Urlaub.'
-footer.actualites: Aktuelles
-footer.qui_sommes_nous: 'Wer sind wir?'
-footer.recrutement: 'Jobs bei Vacances Directes'
-footer.ce: 'Vacances Betriebsrat'
-footer.newsletter: 'Newsletter abonnieren'
-footer.newsletter.desc: 'Erhalten Sie die Geheimtipps und die neuesten Angebote von Vacances Directes direkt in Ihrem E-Mail-Postfach.'
-footer.newsletter.entrer_son_email: 'E-MAIL EINGEBEN'
-footer.site_mobile: Mobiltelefonseite
-footer.site_mobile.desc: 'Erhalten Sie alle Angebote von Vacances Directes auf Ihrem Mobiltelefon.'
-footer.annulation: Stornierungsformular
-pactiv-1: 'Urlaub mit meinen Eltern  das gefällt mir'
-pactiv-2: 'Lust auf eine kleine Auszeit, um Luft zu schnappen'
-pactiv-3: 'Urlaub voller Entspannung und Lebensfreude'
-encart_vacances_directes.title: 'Vacances Directes'
-encart_vacances_directes.subtitle: 'Ein perfekter Urlaub'
-encart_vacances_directes.item_1: 'Unsere Mitarbeiter heißen Sie herzlich willkommen!'
-encart_vacances_directes.item_2: 'Sorgfältig ausgewählte Campingplätze'
-encart_vacances_directes.item_3: 'Eine zu 100% gesicherte Website'
-encart_vacances_directes.item_4: 'Wohnwagen mit allem Komfort für einen Urlaub, der Sie auf andere Gedanken bringt'
-encart_hebergement.title: 'Vacances Directes'
-encart_hebergement.subtitle: bietet
-encart_hebergement.standardise.title: 'standardisierte Unterkünfte'
-encart_hebergement.standardise.texte: 'Die gleiche Referenz bietet die gleichen Leistungen auf allen Vacances Directes Campingplätzen.'
-encart_hebergement.adapte.title: 'individuell angepasste Unterkünfte'
-encart_hebergement.adapte.texte: 'Vacances Directes interessiert sich für die Entwicklungen des täglichen Lebens und bietet Wohnwagen mit allem Komfort, die auf die Bedürfnisse jedes einzelnen angepasst sind.'
-encart_hebergement.varie.title: 'abwechslungsreiche Unterkünfte'
-encart_hebergement.varie.texte: 'Wählen Sie zwischen einer Vielzahl verschiedener Unterkünfte. Vacances Directes steht für 10 Wohnwagen- und Wohnmobilmodelle, die sich an alle Familien und alle Budgets anpassen lassen.'
-encart_hebergement.equipe.title: 'ausgestattete Unterkünfte'
-encart_hebergement.equipe.texte: 'Die Unterkünfte vollständig ausgestattet und bereit, Sie aufzunehmen. Alles ist vorhanden und inklusive (Laken, Decken, Kopfkissen...). Bringen Sie einfach nur Ihre Haushaltswäsche mit. Es gibt eine eingebaute und ausgestattete Küche.'
-encart_informations.title: 'Informationen & Reservierungen unter'
-encart_informations.price: ''
-encart_informations.dates_1: "Von Montag bis Freitag 9 - 18\_Uhr"
-encart_informations.dates_2: ''
-encart_autres_themes.title: 'Andere Möglichkeiten für Ihr Wochenende'
-semainier.title: 'Tarife & Verfügbarkeiten'
-semainier.choose_dates_desc: 'Im Juli und August sind die An- und Abreise mittwochs und samstags möglich.'
-semainier.type_hebergement_title: 'Wählen Sie Ihren Zeitraum und die Art Ihrer Unterkunft'
-semainier.type_hebergement_desc: 'Überprüfen Sie die Verfügbarkeiten für jeden einzelnen Monat und klicken Sie auf den Zeitraum und die Unterkunft Ihrer Wahl, um zu buchen.'
-semainier.indisponible: 'Nicht verfügbar'
-semainier.type_hebergement.details: Details
-resalys.creer_compte: 'Mein Konto erstellen'
-resalys.total: Gesamt
-resalys.date_format: 'Format für das Datum TT/MM/JJJJ'
-resalys.besoin_aide_title: Hilfe
-resalys.besoin_aide_subtitle: 'Eine Frage zu Ihrer Reservierung&hellip;'
-resalys.besoin_aide_contact: 'Kontaktieren Sie uns'
-resalys.besoin_aide_num: 'unter +49 (0) 721 680 78 240'
-resalys.session_expire: 'Urlaubsangebot nicht verfügbar'
-resalys.session_expire_texte_1: 'Während der Suche nach Verfügbarkeiten ist ein Fehler aufgetreten.'
-resalys.session_expire_texte_2: 'Ändern Sie Ihre Anfrage oder vertrauen Sie sie unserem Reservierungsteam an, indem Sie unter der Nummer  +49 (0) 721 680 78 240 (0,15 /min) anrufen.'
-resalys.non_connecte: 'Um Ihre Reservierung fortzusetzen,<br /> melden Sie sich bitte an oder erstellen Sie oben ein Konto'
-resalys.retour_home: 'Zurück zur Startseite'
-vos_week_ends: 'Ihre Wochenendtrips'
-breadcrumbs.home: Startseite
-breadcrumbs.bonsplans: Geheimtipps
-topCamping.h1: 'Die besten Urlaubsziele zum Campen'
-dernieresMinutes.h1: 'Unsere Last Minute Campingangebote (Vermietung Wohnwagen)'
-earlyBooking.h1: 'Unsere Campingangebote für Frühbucher (Vermietung Wohnwagen)'
-demande_annulation.assure_nom.label: Name
-demande_annulation.assure_nom.not_blank: 'Der Name ist erforderlich'
-demande_annulation.assure_prenom.label: Vorname
-demande_annulation.assure_prenom.not_blank: 'Der Vorname ist erforderlich'
-demande_annulation.assure_adresse.label: Adresse
-demande_annulation.assure_adresse.not_blank: 'Die Adresse ist erforderlich'
-demande_annulation.assure_code_postal.label: Postleitzahl
-demande_annulation.assure_code_postal.not_blank: 'Die Postleitzahl ist erforderlich'
-demande_annulation.assure_ville.label: Stadt
-demande_annulation.assure_ville.not_blank: 'Die Stadt ist erforderlich'
-demande_annulation.assure_pays.label: Land
-demande_annulation.assure_pays.empty_value: 'Wählen Sie ein Land'
-demande_annulation.assure_pays.not_blank: 'Das Land ist erforderlich'
-demande_annulation.assure_mail.label: E-Mail
-demande_annulation.assure_mail.not_blank: 'Die E-Mail ist erforderlich'
-demande_annulation.assure_mail.mail: 'Die angegebene E-Mail-Adresse ist nicht gültig'
-demande_annulation.assure_telephone.label: Telefon
-demande_annulation.assure_telephone.not_blank: 'Die Telefonnummer ist erforderlich'
-demande_annulation.camping_montant_sejour.label: 'Betrag des Urlaubs'
-demande_annulation.camping_montant_sejour.not_blank: 'Der Betrag des Urlaubs ist erforderlich'
-demande_annulation.camping_montant_verse.label: 'Betrag der überwiesenen Summe'
-demande_annulation.camping_montant_verse.not_blank: 'Der Betrag der überwiesenen Summe ist erforderlich'
-demande_annulation.etablissement.label: 'Name des Campingplatzes'
-demande_annulation.etablissement.empty_value: 'Wählen Sie einen Campingplatz'
-demande_annulation.etablissement.not_blank: 'Der Name des Campingplatzes ist erforderlich'
-demande_annulation.camping_num_resa.label: Reservierungsnummer
-demande_annulation.camping_num_resa.not_blank: 'Die Reservierungsnummer ist erforderlich'
-demande_annulation.sinistre_nature.label: 'Art des Schadens'
-demande_annulation.sinistre_nature.annulation: 'Stornierung des Urlaubs'
-demande_annulation.sinistre_nature.interruption: 'Abbruch des Urlaubs'
-demande_annulation.sinistre_nature.not_blank: 'Die Art des Schadens ist erforderlich'
-demande_annulation.sinistre_suite.label: 'In Folge von'
-demande_annulation.sinistre_suite.maladie: Krankheit
-demande_annulation.sinistre_suite.accident: Unfall
-demande_annulation.sinistre_suite.autre: Andere
-demande_annulation.sinistre_suite.not_blank: 'Die Folge der Art des Schadens ist erforderlich'
-demande_annulation.sinistre_date.label: 'Datum des Schadens'
-demande_annulation.sinistre_date.not_blank: 'Das Datum des Schadens ist erforderlich'
-demande_annulation.sinistre_date.date: 'Das angegebene Datum des Schadens ist nicht gültig'
-demande_annulation.sinistre_resume.label: 'Kurze Zusammenfassung der Fakten und Beschreibung der Art des Schadens'
-demande_annulation.sinistre_resume.not_blank: 'Die Zusammenfassung des Schadens ist erforderlich'
-demande_annulation.file_1: ''
-demande_annulation.file_2: ''
-demande_annulation.file_3: ''
-demande_annulation.file_4: ''
-demande_annulation.certifie.label: 'Ich bestätige hiermit, dass ich um die oben verzeichnete Stornierung bitte'
-demande_annulation.certifie.is_true: 'Bitte kreuzen Sie das Kästchen an, um Ihre Stornierungsanfrage zu bestätigen'
-demande_annulation.files.label: 'Anhang beifügen: (Format : pdf, doc, docx, png, jpg von max. 2 MB)'
-demande_annulation.files.mimeTypesMessage: 'Ungültiger Dateityp (autorisierte Formate: pdf, doc, docx, png, jpg)'
-demande_annulation.files.notFoundMessage: 'Beim Hochladen der Datei ist ein Fehler aufgetreten'
-demande_annulation.files.notReadableMessage: 'Beim Hochladen der Datei ist ein Fehler aufgetreten'
-demande_annulation.files.uploadIniSizeErrorMessage: 'Die Datei ist zu groß (max. 2 MB)'
-demande_annulation.files.uploadFormSizeErrorMessage: 'Die Datei ist zu groß (max. 2 MB)'
-demande_annulation.files.uploadErrorMessage: 'Beim Hochladen der Datei ist ein Fehler aufgetreten'
-demande_annulation.confirmation.title: Bestätigung
-demande_annulation.confirmation.content: 'Ihre Stornierungsanfrage wurde erfolgreich versendet.'
-demande_annulation.title: Stornierungsformular
-demande_annulation.subtitle: 'Eine Reservierung stornieren'
-demande_annulation.legend.coordonnees: 'Ihre Kontaktdaten'
-demande_annulation.legend.reservation: 'Ihre Reservierung'
-demande_annulation.texte1: 'Sie haben mit VACANCES DIRECTES eine Versicherung für die Stornierung und/oder den Abbruch des Urlaubs abgeschlossen und Ihnen ist ein Schaden zugestoßen, der den Kriterien zur Inanspruchnahme der Versicherung entspricht wie sie in den'
-demande_annulation.lienCGA: 'Allgemeinen Versicherungsbedingungen (AVB) genau aufgelistet sind.'
-demande_annulation.texte2: 'In diesem Fall ist es zwingend erforderlich, das vorliegende Formular innerhalb der 5 auf das Auftreten des Schadens folgenden Tage auszufüllen und zu bestätigen. Sollte diese Frist nicht eingehalten werden, behält sich der Versicherer das Recht vor, Ihnen die Vorteile der Versicherung zu verweigern (s. Art.4.1 der AVB - Verfall der Garantieleistung).'
-demande_annulation.texte3: 'Mit der Bestätigung des vorliegenden Formulars zur Schadenserklärung erklären Sie, dass die von Ihnen in diesem Formular angegebenen Informationen korrekt sind und der Wahrheit entsprechen. Zudem erklären Sie sich damit einverstanden, dass die Bearbeitung Ihres Falls und die Ihnen vom Versicherer geschuldete Entschädigung der Einhändigung zusätzlicher Dokumente und Informationen, die gemäß dem Artikel 4.2 der AVB von Ihnen verlangt werden, unterliegen.'
-offreSpeciales.intro: "Nutzen Sie unsere Frühbucheraktion für Ihren Urlaub in der Nebensaison:\n-10% für eine Reservierung vor dem 31.01.2013\n-5% für eine Reservierung vor dem 28.02.2013"
-offreSpeciales.texte: 'Angebot nur für den Aufenthalt gültig, nicht mit den anderen aktuellen Spezialangeboten kombinierbar. Für alle Aufenthalte außerhalb des Zeitraums vom 06.07.2013 bis 31.08.2013 gültig. Dieses Angebot gilt nicht für folgende Reiseziele: Coteau de la Marine, Castellas, Aqua Viva, Neptune, Château de Galinée, Domaine de Kermario, Chaponnet, Sandaya Soulac Plage, Ur Onéa, Domaine des Naädes, Cupulatta, Playa Montroig und andere eventuelle Ausnahmen.'
-poi.informations_pratiques: 'Praktische Informationen'
-poi.acceder_site: 'Zur Website'
-poi.tel: 'Tel.:'
-poi.fax: 'Fax:'
-poi.email: 'E-Mail:'
-poi.categorie: 'Kategorie:'
-poi.type: 'Art:'
-poi.transport: 'Transport:'
-poi.adresse: 'Adresse:'
-event.informations_pratiques: 'Praktische Informationen'
-event.acceder_site: 'Zur Website'
-event.tel: 'Tel.:'
-event.fax: 'Fax:'
-event.email: 'E-Mail:'
-event.categorie: 'Kategorie:'
-event.type: 'Art:'
-event.transport: 'Transport:'
-event.adresse: 'Adresse:'
-global.search_message: 'Wir bearbeiten Ihre Anfrage. <br/><br/>Bitte warten Sie.'
-global.compte.btn: 'Mein Konto'
-global.compte.title: 'Kundenbereich '
-global.compte.user: Benutzername
-global.compte.password: Passwort
-global.compte.forget: 'Passwort vergessen?'
-global.compte.submit: Anmelden
-global.compte.accueil: Startseite
-global.compte.coordonnees: Kontaktinformationen
-global.compte.demande_brochure: 'Broschüre anfordern'
-global.compte.reservation: Buchung
-global.compte.title_client: ''
-global.site_name: 'Vacances directes.de'
-bon_plan.title: 'Campingplatz: %bonPlan%'
-location.list.title: 'Unsere Unterkünfte: %type%'
-location.list.selection: 'Unsere Auswahl an Unterkünften'
-location.list.hebergements.savoir_plus: 'Mehr erfahren'
-location.list.hebergements.plus_de_resultats: 'Mehr Ergebnisse'
-location.list.hebergements.nb_places: '%nbPlaces% Plätze'
-location.list.notre_selection: 'Unsere Auswahl'
-location.fiche.subtitle: 'Vermietung %type% %nbPlaces% Personen'
-location.fiche.voir_les_campings: 'Campingplätze ansehen'
-location.fiche.onglet.logement.title: 'Die Unterkunft'
-location.fiche.onglet.logement.informations_pratiques.title: 'Praktische Informationen'
-location.fiche.onglet.logement.informations_pratiques.capacite: Kapazität
-location.fiche.onglet.logement.informations_pratiques.dimensions: Größe
-location.fiche.onglet.logement.informations_pratiques.agencement: Aufbau
-location.fiche.onglet.logement.informations_pratiques.equipements: Ausstattung
-location.fiche.onglet.logement.informations_pratiques.annee_utilisation: Nutzungsjahr
-location.fiche.onglet.logement.lien_campings: 'Die Campingplätze'
-location.fiche.onglet.campings.title: 'Die Campingplätze'
-location.fiche.onglet.campings.selection.title: 'Unsere Auswahl an Campingplätzen'
-location.fiche.onglet.campings.lien_logement: 'Die Unterkunft'
-'The CSRF token is invalid. Please try to resubmit the form.': 'Ihre Sitzung ist abgelaufen. Bitte geben Sie das Formular noch einmal ein.'
-share.facebook: 'Auf Facebook teilen'
-share.twitter: 'Auf Twitter teilen'
-couloir.menu.detail: 'Details des Aufenthaltes'
-couloir.menu.recapitulatif: Übersicht
-couloir.menu.paiement: Bezahlung
-couloir.confirmation: Bestätigung
-couloir.title: 'Willkommen im'
-couloir.title_reservation: ' Buchungsbereich'
-err404.title: 'Sorry, diese Seite existiert'
-err404.content: 'Zurück zur <a href="%link%">Startseite</a>.'
-datepicker.days: '[''Sonntag'', ''Montag'', ''Dienstag'', ''Mittwoch'', ''Donnerstag'', ''Freitag'', ''Samstag'', ''Sonntag'']'
-datepicker.daysShort: '[''Son'', ''Mon'', ''Die'', ''Mit'', ''Don'', ''Fre'', ''Sam'', ''Son'']'
-datepicker.daysMin: '[''So'', ''Mo'', ''Di'', ''Mi'', ''Do'', ''Fr'', ''Sa'', ''So'']'
-datepicker.months: '[''Januar'', ''Februar'', ''März'', ''April'', ''Mai'', ''Juni'', ''Juli'', ''August'', ''September'', ''Oktober'', ''November'', ''Dezember'']'
-datepicker.monthsShort: '[''Jan'', ''Feb'', ''Mär'', ''Apr'', ''Mai'', ''Jun'', ''Jul'', ''Aug'', ''Sep'', ''Okt'', ''Nov'', ''Dez'']'
-datepicker.weekMin: '''Wo'''
-widget.offres_speciales.title: 'Special offers'
-widget.offres_speciales.more: More
-widget.offres_speciales.from: 'Starting price'
-widget.offres_speciales.instead: 'instead of'

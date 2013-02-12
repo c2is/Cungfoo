@@ -3,6 +3,48 @@
 {% block content %}
 <h3>{{ "i18n.crud.list" | trans }}</h3>
 <div class="box">
-    
+    <form action="{{ path(app.request.get('_route')) }}" method="post">
+        <ul id="crudGroup" class="nav nav-tabs">
+        {% for tabbedkey,keyList in tabbedKeys %}
+        <li><a href="#{{ tabbedkey }}">{{ tabbedkey }}</a></li>
+        {% endfor %}
+        </ul>
+        <div id="crudGroupContent" class="tab-content">
+        {% for tabbedkey,keyList in tabbedKeys %}
+            <div class="tab-pane row" id="{{ tabbedkey }}">
+            {% for key in keyList %}
+                <div class="row">
+                    <div class="span3">
+                        <label for="IdeeWeekend_prix">{{ key }}</label>
+                    </div>
+                    <div class="span9">
+                        {% for locale in langues %}
+                            {% set translationsLocale = attribute(translations,locale) %}
+                            <div class="input-prepend">
+                                <span class="add-on">{{ locale }}</span>
+                                <input class="span9" type="text" id="{{ locale}}_{{ key }}" name="{{ locale}}[{{ key }}]" value="{% if key in translationsLocale|keys %}{{ attribute(translationsLocale,key) }}{% endif %}" />
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% if loop.index % 20 == 0 %}
+                    {{ block('formAction') }}
+                {% else %}
+                <hr/>
+                {% endif %}
+            {% endfor %}
+            </div>
+        {% endfor %}
+        </div>
+        {{ block('formAction') }}
+    </form>
+</div>
+{% endblock %}
+
+{% block formAction %}
+<div class="form-actions">
+    <div class="btn-toolbar">
+        <button type="submit" class="btn btn-primary pull-right" style="margin-bottom: -5px">{{ "crud.button.save" | trans }}</button>
+    </div>
 </div>
 {% endblock %}
