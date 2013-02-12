@@ -107,6 +107,10 @@ menu:
               bons_plans:
                   title:  menu.bon_plan
                   route:  bon_plan_crud_list
+                  divider: ~
+              i18n:
+                  title: Traductions
+                  route: i18n_admin
         parameter:
             title: menu.parameters
             items:
