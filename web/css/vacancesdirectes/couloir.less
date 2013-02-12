@@ -296,7 +296,7 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
           }
         }
         .anOccupant{background-color:@colorBlanc;
-          h3{background-image:none !important;background-color:@colorFushia;color:@colorBlanc;padding:5px 35px 5px 0;position:relative;font-size:23px;
+          h3{background-image:none !important;background-color:@colorFushia;color:@colorBlanc;padding:5px 35px 5px 0;position:relative;font-size:23px;margin-bottom:10px;
             .occupantHeaderLeft{._verticalCenter(27px);
               small{font:bold 17px @arial;text-transform:none;}
               &:before{content:"";width:27px;height:27px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -189px transparent;float:left;margin:0 10px;}
@@ -331,8 +331,8 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
   &.editAccount{
     #authentication{margin:15px 0;border:5px solid @colorBgGrisC;padding-bottom:5px;
       &>div{
-        &.stamp{margin:0 -25px 20px;}
-        &>div{padding:15px 20px;clear:both;margin:10px -20px 0;}
+        &.stamp{margin:0 -25px 15px;}
+        &>div{padding:10px 20px;clear:both;margin:10px -20px 0;}
         .whiteBg{background-color:@colorBgBlanc;padding-left:35px;
           .aField,
           .authenticationChoice{font:normal 12px @arial;text-transform:none;display:block;margin:0;
@@ -342,12 +342,12 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
           }
         }
         #existingCustomerLayer,
-        #newCustomerLayer,{
+        #newCustomerLayer,{padding-bottom:0;
         //          &>div{margin-bottom:20px;}
           .aField{margin-bottom:10px;}
           .label{margin-right:10px;text-align:right;}
         }
-        #existingCustomerLayer{padding-bottom:5px;
+        #existingCustomerLayer{
           .aField{width:450px;float:left;
             .label{width:130px;}
             input{width:310px;}
