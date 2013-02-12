@@ -18,10 +18,10 @@ use Cungfoo\Model\om\BaseDepartementPeer;
  */
 class DepartementPeer extends BaseDepartementPeer
 {
-    public static function assertUrl()
+    public static function assertUrl($locale = 'fr')
     {
         $objects = DepartementQuery::create()
-            ->useI18nQuery()
+            ->useI18nQuery($locale)
             ->withColumn('departement_i18n.slug', 'slug')
             ->endUse()
             ->select('slug')

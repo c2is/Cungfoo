@@ -169,12 +169,14 @@ class DestinationController implements ControllerProviderInterface
             return $objectItem;
         });
 
-        $assertUrlPays = PaysPeer::assertUrl();
-        $assertUrlDestination = DestinationPeer::assertUrl();
-        $assertUrlRegion = RegionPeer::assertUrl();
-        $assertUrlRegionRef = RegionRefPeer::assertUrl();
-        $assertUrlDepartement = DepartementPeer::assertUrl();
-        $assertUrlVille = VillePeer::assertUrl();
+        $locale = $app['context']->get('language');
+
+        $assertUrlPays = PaysPeer::assertUrl($locale);
+        $assertUrlDestination = DestinationPeer::assertUrl($locale);
+        $assertUrlRegion = RegionPeer::assertUrl($locale);
+        $assertUrlRegionRef = RegionRefPeer::assertUrl($locale);
+        $assertUrlDepartement = DepartementPeer::assertUrl($locale);
+        $assertUrlVille = VillePeer::assertUrl($locale);
         $assertUrlCamping = EtablissementPeer::assertUrl();
 
         $urlPrefix = $app->trans('seo.url.prefix');
