@@ -626,6 +626,7 @@ resalys:
     creer_compte: "Créer mon compte"
     total: "Total"
     date_format: "Format de la date DD/MM/YYYY"
+    birthdate_format: "Date de naissance (DD/MM/YYYY)"
     besoin_aide_title: "Besoin d'aide"
     besoin_aide_subtitle: "Une question sur votre réservation&hellip;"
     besoin_aide_contact: "Contactez-nous"
