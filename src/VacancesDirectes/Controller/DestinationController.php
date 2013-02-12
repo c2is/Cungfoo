@@ -169,50 +169,72 @@ class DestinationController implements ControllerProviderInterface
             return $objectItem;
         });
 
+        $assertUrlPays = PaysPeer::assertUrl();
+        $assertUrlDestination = DestinationPeer::assertUrl();
+        $assertUrlRegion = RegionPeer::assertUrl();
+        $assertUrlRegionRef = RegionRefPeer::assertUrl();
+        $assertUrlDepartement = DepartementPeer::assertUrl();
+        $assertUrlVille = VillePeer::assertUrl();
+        $assertUrlCamping = EtablissementPeer::assertUrl();
+
         $urlPrefix = $app->trans('seo.url.prefix');
 
-        $ctl->match("/$urlPrefix-{pays}/", array($this, 'pays'))
-            ->assert('pays', PaysPeer::assertUrl())
-            ->bind('destination_pays')
-        ;
+        if ($assertUrlDestination) {
+            $ctl->match("/$urlPrefix-{destination}/", array($this, 'destination'))
+                ->assert('destination', $assertUrlDestination)
+                ->bind('destination_destination')
+            ;
+        }
 
-        $ctl->match("/$urlPrefix-{destination}/", array($this, 'destination'))
-            ->assert('destination', DestinationPeer::assertUrl())
-            ->bind('destination_destination')
-        ;
+        if ($assertUrlPays) {
+            $ctl->match("/$urlPrefix-{pays}/", array($this, 'pays'))
+                ->assert('pays', $assertUrlPays)
+                ->bind('destination_pays')
+            ;
 
-        $ctl->match("/$urlPrefix-{pays}/{region}/", array($this, 'region'))
-            ->assert('pays', PaysPeer::assertUrl())
-            ->assert('region', RegionPeer::assertUrl())
-            ->bind('destination_region')
-        ;
+            if ($assertUrlRegionRef) {
+                $ctl->match("/$urlPrefix-{pays}/{regionRef}/", array($this, 'regionRef'))
+                    ->assert('pays', $assertUrlPays)
+                    ->assert('regionRef', $assertUrlRegionRef)
+                    ->bind('destination_region_ref')
+                ;
+            }
 
-        $ctl->match("/$urlPrefix-{pays}/{regionRef}/", array($this, 'regionRef'))
-            ->assert('pays', PaysPeer::assertUrl())
-            ->assert('regionRef', RegionRefPeer::assertUrl())
-            ->bind('destination_region_ref')
-        ;
+            if ($assertUrlDepartement) {
+                $ctl->match("/$urlPrefix-{pays}/{departement}/", array($this, 'departement'))
+                    ->assert('pays', $assertUrlPays)
+                    ->assert('departement', $assertUrlDepartement)
+                    ->bind('destination_departement')
+                ;
+            }
 
-        $ctl->match("/$urlPrefix-{pays}/{departement}/", array($this, 'departement'))
-            ->assert('pays', PaysPeer::assertUrl())
-            ->assert('departement', DepartementPeer::assertUrl())
-            ->bind('destination_departement')
-        ;
+            if ($assertUrlRegion) {
+                $ctl->match("/$urlPrefix-{pays}/{region}/", array($this, 'region'))
+                    ->assert('pays', $assertUrlPays)
+                    ->assert('region', $assertUrlRegion)
+                    ->bind('destination_region')
+                ;
 
-        $ctl->match("/$urlPrefix-{pays}/{region}/{ville}/", array($this, 'ville'))
-            ->assert('pays', PaysPeer::assertUrl())
-            ->assert('region', RegionPeer::assertUrl())
-            ->assert('ville', VillePeer::assertUrl())
-            ->bind('destination_ville')
-        ;
+                if ($assertUrlVille) {
+                    $ctl->match("/$urlPrefix-{pays}/{region}/{ville}/", array($this, 'ville'))
+                        ->assert('pays', $assertUrlPays)
+                        ->assert('region', $assertUrlRegion)
+                        ->assert('ville', $assertUrlVille)
+                        ->bind('destination_ville')
+                    ;
 
-        $ctl->match("/$urlPrefix-{pays}/{region}/{ville}/{camping}.html", array($this, 'camping'))
-            ->assert('pays', PaysPeer::assertUrl())
-            ->assert('region', RegionPeer::assertUrl())
-            ->assert('ville', VillePeer::assertUrl())
-            ->assert('camping', EtablissementPeer::assertUrl())
-            ->bind('destination_camping')
-        ;
+                    if ($assertUrlCamping) {
+                        $ctl->match("/$urlPrefix-{pays}/{region}/{ville}/{camping}.html", array($this, 'camping'))
+                            ->assert('pays', $assertUrlPays)
+                            ->assert('region', $assertUrlRegion)
+                            ->assert('ville', $assertUrlVille)
+                            ->assert('camping', $assertUrlCamping)
+                            ->bind('destination_camping')
+                        ;
+                    }
+                }
+            }
+        }
 
         return $ctl;
     }
