@@ -248,7 +248,28 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
 
 /*LEFT*/
 #contentContener{
-  h2{color:@colorBgGrisM;text-transform:uppercase;font:bold 22px @ptnarrow;._verticalCenter(40px);}
+  .radiusBox{margin-bottom:35px;padding-top:10px;
+    .stamp{margin: 0 -20px 20px;padding-left:48px;text-align:left;
+      &:before,
+      &:after{content:"";}
+      h2{text-transform:uppercase;font:bold 22px @ptnarrow;._verticalCenter(38px);position:static;color:@colorBlanc;
+        &>span{
+          background-color:@colorFushia;
+          color: @colorBlanc;
+          display: block;
+          width:38px;
+          height: 38px;
+          font-size:28px;
+          line-height: 34px;
+          margin-top: 0;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+    }
+  }
+
   p{margin-bottom:10px;}
   table{width:100%}
 
@@ -256,9 +277,6 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
   &.detail{
     #reservation{
       .aRoom{
-        h2{color:@colorBgGrisM;text-transform:uppercase;font:bold 22px @ptnarrow;._verticalCenter(40px);
-          small{font:bold 17px @arial;text-transform:none;}
-        }
         .changeOccupantCount{height:auto;background-color:@colorBgGrisF;padding:10px 5px 0;margin-bottom:15px;position:relative;
           &>span{margin:0 5px 10px;._verticalCenter(27px);font:bold 17px @ptnarrow;color:@colorBlanc;text-transform:uppercase;display:inline-block;}
           .addAction a{position:absolute;top:10px;right:10px;display:block;width:27px;height:27px;text-indent:-9999px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -162px transparent;}
@@ -269,7 +287,7 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
             &.optionLabel{width:400px;}
             &.price{width:110px;font:bold 19px/18px @ptnarrow;text-align:right;}
             &.action{text-align:right;width:40px;}
-            .control_checkbox{margin-top:0;}
+            .control_checkbox{margin-top:0;margin-right:5px;}
             .hiddenIfCheckbox{display:none;}
             .deleteLink{position:relative;display:block;width:27px;height:24px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -243px transparent;float:left;margin-left:10px;
               span{display:none;}
@@ -542,7 +560,7 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
   ._stylish-select(54px,27px,10px,5);
 }
 #reservation #financialContener{
-  ._stylish-select(216px,27px,0px,4);
+  ._stylish-select(375px,27px,0px,4);
 }
 
 // step 2
@@ -622,20 +640,20 @@ input[disabled],
 //html[lang="de"]{
 
 /*LEFT*/
-  #contentContener{
+#contentContener{
 
-  // step 1
-    &.detail{
-      #reservation{
-        .aRoom{
-          .anOccupant{
-            h3{font-size:23px;}
-            .occupantFields{
-              .control_text{width:142px;}
-            }
+// step 1
+  &.detail{
+    #reservation{
+      .aRoom{
+        .anOccupant{
+          h3{font-size:23px;}
+          .occupantFields{
+            .control_text{width:142px;}
           }
         }
       }
     }
   }
+}
 //}

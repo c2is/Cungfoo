@@ -402,7 +402,6 @@
     </nav>
 </div>
 
-{% if blocPrix.adult_price_without_discounts != 0 %}
 <iframe id="frameResalys" src="{{ path('resalys_wrapper', {
     webuser: webuser,
     display: 'semainier',
@@ -410,11 +409,10 @@
     campaign_code: "now"|date("Y"),
     referer: referer
 }) }}" width="960px" height="700px" marginheight="0" marginwidth="0" frameborder="0"></iframe>
-{% endif %}
 {% endblock %}
 
 {% block rightColumn %}
-    {{ esi(path('widget', {'name': 'bloc_prix', 'etab': etab.id})) }}
+    {{ esi(path('widget', {'name': 'bloc_prix', 'etab': etab.code})) }}
 <div id="greyBoxes">
     {{ esi(path('widget', {'name': 'offres_speciales', 'etab': etab.id})) }}
     {{ esi(path('widget', {'name': 'tracking', 'etab': etab.code})) }}

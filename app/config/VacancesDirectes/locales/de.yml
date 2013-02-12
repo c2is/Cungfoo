@@ -358,7 +358,7 @@ date_search:
     nb_jours: "Anzahl der Übernachtungen"
     nb_jours.required: "Die Anzahl der Übernachtungen ist erforderlich."
     nb_jours.empty_value: "Anzahl der Übernachtungen?"
-    ville: "Stadt"
+    ville: "Ort"
     ville.empty_value: "Stadt?"
     camping: "Campingplatz"
     camping.empty_value: "Campingplatz?"
@@ -450,6 +450,8 @@ fiche:
         legende: "Legende zum Plan des Campingplatzes"
     bloc_prix:
         type_hebergement: "für ein(e/n) %categorie% - %type%"
+    toutes_regions: "All regions"
+    region: "Region"
 
 home:
     topcamping: "Top Campingplätze"
@@ -493,7 +495,7 @@ general:
     decouvrir: "Entdecken"
     reserver: "Buchen"
     profite: "Zuschlagen"
-    la_semaine: "die Woche"
+    la_semaine: "Pro Woche"
     contre_proposition: "ACHTUNG! Ihre Suche ergibt keine Treffer. Die untenstehenden Angebote sind diejenigen, die Ihrer Suche am nächsten kommen."
     submit: "Senden"
     logout: "Anmelden"
