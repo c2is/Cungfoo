@@ -59,6 +59,7 @@ class EtablissementTableMap extends TableMap
         $this->addColumn('opening_date', 'OpeningDate', 'TIMESTAMP', false, null, null);
         $this->addColumn('closing_date', 'ClosingDate', 'TIMESTAMP', false, null, null);
         $this->addForeignKey('ville_id', 'VilleId', 'INTEGER', 'ville', 'id', false, null, null);
+        $this->addForeignKey('departement_id', 'DepartementId', 'INTEGER', 'departement', 'id', false, null, null);
         $this->addForeignKey('categorie_id', 'CategorieId', 'INTEGER', 'categorie', 'id', false, null, null);
         $this->addColumn('geo_coordinate_x', 'GeoCoordinateX', 'VARCHAR', false, 255, null);
         $this->addColumn('geo_coordinate_y', 'GeoCoordinateY', 'VARCHAR', false, 255, null);
@@ -81,6 +82,7 @@ class EtablissementTableMap extends TableMap
     public function buildRelations()
     {
         $this->addRelation('Ville', 'Cungfoo\\Model\\Ville', RelationMap::MANY_TO_ONE, array('ville_id' => 'id', ), 'SET NULL', null);
+        $this->addRelation('Departement', 'Cungfoo\\Model\\Departement', RelationMap::MANY_TO_ONE, array('departement_id' => 'id', ), 'SET NULL', null);
         $this->addRelation('Categorie', 'Cungfoo\\Model\\Categorie', RelationMap::MANY_TO_ONE, array('categorie_id' => 'id', ), 'SET NULL', null);
         $this->addRelation('EtablissementRelatedByRelated1', 'Cungfoo\\Model\\Etablissement', RelationMap::MANY_TO_ONE, array('related_1' => 'id', ), 'SET NULL', null);
         $this->addRelation('EtablissementRelatedByRelated2', 'Cungfoo\\Model\\Etablissement', RelationMap::MANY_TO_ONE, array('related_2' => 'id', ), 'SET NULL', null);

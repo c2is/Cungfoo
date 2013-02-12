@@ -1853,8 +1853,8 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
     }
 
     // active behavior
-    
-    
+
+
     /**
      * return true is the object is active
      *
@@ -1864,7 +1864,7 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
     {
         return $this->getActive();
     }
-    
+
     /**
      * return true is the object is active locale
      *
@@ -2094,7 +2094,7 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
     }
 
     // crudable behavior
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -2109,19 +2109,19 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
         {
             $this->resetModified(MiseEnAvantPeer::IMAGE_FOND_PATH);
         }
-    
+
         $this->uploadImageFondPath($form);
-        
+
         if (!$form['illustration_path_deleted']->getData())
         {
             $this->resetModified(MiseEnAvantPeer::ILLUSTRATION_PATH);
         }
-    
+
         $this->uploadIllustrationPath($form);
-        
+
         return $this->save($con);
     }
-    
+
     /**
      * @return string
      */
@@ -2129,7 +2129,7 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
     {
         return 'uploads/mise_en_avants';
     }
-    
+
     /**
      * @return string
      */
@@ -2137,7 +2137,7 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -2153,7 +2153,7 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
             }
         }
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void

@@ -29,11 +29,24 @@ loader:
         model:  \Cungfoo\Model\Activite
       DESTI:
         model:  \Cungfoo\Model\Destination
+      REGIONSREF:
+        model:  \Cungfoo\Model\RegionRef
+        parent:
+          name:   PAYS
+          setter: setPaysId
+      DEPT:
+        model:  \Cungfoo\Model\Departement
+        parent:
+          name:   REGIONSREF
+          setter: setRegionRefId
   EtabLoader:
     themes:
       VILLE:
         model:      \Cungfoo\Model\Ville
         setter:     setVille
+      DEPARTEMENT:
+        model:      \Cungfoo\Model\Departement
+        setter:     setDepartement
       CATEG:
         model:      \Cungfoo\Model\Categorie
         setter:     setCategorie

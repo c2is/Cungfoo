@@ -118,7 +118,7 @@ class EventPeer extends BaseEventPeer
         return ($count == 1) ? $query->findOne() : $query->findActive();
     }
 
-    static public function getForRegion(Region $region, $sort = self::NO_SORT, $count = null, $category = null, $criteriaOperation = null)
+    static public function getForRegion($region, $sort = self::NO_SORT, $count = null, $category = null, $criteriaOperation = null)
     {
         $query = EventQuery::create()
             ->setDistinct()
@@ -128,6 +128,87 @@ class EventPeer extends BaseEventPeer
                     ->useVilleQuery()
                         ->filterByActive(true)
                         ->filterByRegion($region)
+                    ->endUse()
+                ->endUse()
+            ->endUse()
+        ;
+
+        switch ($sort)
+        {
+            case self::RANDOM_SORT:
+                $query->addAscendingOrderByColumn('RAND()');
+                break;
+
+            case self::SORT_BY_PRIORITY:
+                $query->orderByPriority(\Criteria::ASC);
+                break;
+        }
+
+        if (!is_null($count))
+        {
+            $query->limit($count);
+        }
+
+        if (!is_null($category))
+        {
+            $query->filterByCategory($category, (!is_null($criteriaOperation)) ? $criteriaOperation : \Criteria::EQUAL);
+        }
+
+        $query->filterByActive(true);
+
+        return ($count == 1) ? $query->findOne() : $query->findActive();
+    }
+
+    static public function getForDepartement($departement, $sort = self::NO_SORT, $count = null, $category = null, $criteriaOperation = null)
+    {
+        $query = EventQuery::create()
+            ->setDistinct()
+            ->useEtablissementEventQuery()
+                ->useEtablissementQuery()
+                    ->filterByDepartement($departement)
+                    ->useDepartementQuery()
+                    ->filterByActive(true)
+                    ->endUse()
+                ->endUse()
+            ->endUse()
+        ;
+
+        switch ($sort)
+        {
+            case self::RANDOM_SORT:
+                $query->addAscendingOrderByColumn('RAND()');
+                break;
+
+            case self::SORT_BY_PRIORITY:
+                $query->orderByPriority(\Criteria::ASC);
+                break;
+        }
+
+        if (!is_null($count))
+        {
+            $query->limit($count);
+        }
+
+        if (!is_null($category))
+        {
+            $query->filterByCategory($category, (!is_null($criteriaOperation)) ? $criteriaOperation : \Criteria::EQUAL);
+        }
+
+        $query->filterByActive(true);
+
+        return ($count == 1) ? $query->findOne() : $query->findActive();
+    }
+
+    static public function getForRegionRef($region, $sort = self::NO_SORT, $count = null, $category = null, $criteriaOperation = null)
+    {
+        $query = EventQuery::create()
+            ->setDistinct()
+            ->useEtablissementEventQuery()
+                ->useEtablissementQuery()
+                    ->filterByActive(true)
+                    ->useDepartementQuery()
+                        ->filterByActive(true)
+                        ->filterByRegionRef($region)
                     ->endUse()
                 ->endUse()
             ->endUse()

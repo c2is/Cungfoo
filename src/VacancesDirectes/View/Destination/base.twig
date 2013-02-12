@@ -1,30 +1,93 @@
 {% extends "base.twig" %}
 {% block bodyClass %} destination{% endblock %}
 
+{% block canonical %}<link rel="canonical" href="{{ urlCanonical }}" />{% endblock %}
+
 {% block content %}
     <div id="wrap" class="fixed-width clear">
         <div class="column left">
             {% block topLeftColumn %}
+                {% include "Breadcrumbs/_breadcrumbs.twig" %}
+                {% if item['imagePath'] is defined %}
+                    <img class="right" width="127" height="127" src="{{ asset(item.imagePath) }}"> {# Picto région #}
+                {% endif %}
+                <h1>{{ title }}</h1> {# Titre #}
+                <h2 class="h3-like">{{ item.introduction }}</h2> {# Accroche #}
+                <p class="destiDescription">{{ item.description }}</p> {# Description #}
             {% endblock %}
         </div>
         <aside class="column right">
             {% block topRightColumn %}
+                {% include 'Form/_search_engine.twig' %}
             {% endblock %}
         </aside>
         <div class="column left">
             {% block bottomLeftColumn %}
+                {# Bloc "Notre sélection de campings" #}
+                <h2 class="h3-like">{{ "destination.campings_selection_title" | trans }}{% if destination == constant("VacancesDirectes\\Controller\\DestinationController::DESTINATION_REGION") %} {{ 'destination.pas_cher' | trans }}{% endif %}</h2>
+                {% include 'Listing/_listing.twig' %}
             {% endblock %}
         </div>
         <aside class="column right">
             {% block bottomRightColumn %}
+                <div id="greyBoxes">
+                    {% include 'Bloc/sejour_reussi.twig' %}
+                    {% include 'Bloc/informations.twig' %}
+                </div>
             {% endblock %}
         </aside>
         <div class="column clearboth clear">
 	        {% block topWideColumn %}
+                {% if sitesAVisiter | length %}
+                <div class="activites radiusBox greyC left clear">
+                    {% for poi in sitesAVisiter %}
+                    {# Le nombre de POIs est limité en PHP en amont, tous les POIs presents ici sont a afficher #}
+                    <div class="miniEncart clear linkParent">
+                        <a href="{{ path('poi', {slug: poi.slug}) }}" title="{{ poi.name | trans }}" class="linkBlock"><img src="{{ poi.image }}"  class="left boxborder" alt=""></a>
+                        <span class="h5-like">{{ poi.name }}</span>
+                        <p> {{ poi.presentation | truncate(300, true, '...') }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                {# Bloc Evenements #}
+                {% if events | length %}
+                <div class="events radiusBox greyC left clear">
+                <span class="h5-like">{{ "destination.events_title" | trans }}</span>
+                <span class="h6-like">{{ "destination.events_prefixe_subtitle" | trans }} {{ item.name }} {{ "destination.events_suffixe_subtitle" | trans }}</span>
+                {% for event in events %}{# Le nombre d'évènements est limité en PHP en amont, tous les évènements presents ici sont a afficher #}
+                    <div class="miniEncart clear linkParent">
+                        <a href="{{ path('event', {slug: event.slug}) }}" title="{{ event.name | trans }}" class="linkBlock"><img src="{{ event.image }}" class="left boxborder" alt="" width="70" height="70"></a>
+                        <span class="titre">{{ event.name | trans }}</span>
+                        <p>{{ event.strDate | trans }}</p>
+                        <p>{{ event.subtitle | trans }}</p>
+                    </div>
+                {% endfor %}
+                </div>
+                {% endif %}
 	        {% endblock %}
         </div>
         <div class="column clearboth clear">
 	        {% block bottomWideColumn %}
+                {% if firstEtab %}
+                <div id="destiMapContener" class="clear">
+                    <h2><span class="h3-like">{{ "listing_destination.campings_map_title" | trans }}<br>
+                    {{ "listing_destination.campings_map_prefixe_subtitle" | trans }} {{ item.name }}</span></h2>
+                    {% include 'Destination/gmap.twig' %}
+                </div>
+                {% endif %}
+
+                {# Photos #}
+                {% if item.imageDetail1 or item.imageDetail2 %}}
+                <h3>{{ imagesTitle }}</h3>
+                    {% if item.imageDetail1 %}}
+                <img src="{{ asset(item.imageDetail1) }}" class="boxborder large imgDesti">
+                    {% endif %}
+                    {% if item.imageDetail2 %}
+                <img src="{{ asset(item.imageDetail2) }}" class="boxborder large imgDesti">
+                    {% endif %}
+                {% endif %}
 	        {% endblock %}
         </div>
     </div>

@@ -1,0 +1,109 @@
+\Cungfoo\Model\AvantageI18n:
+    1_de:
+        Id: 1
+        Locale: de
+        Name: 'les activités du club enfant (5-12 ans) DE'
+        Description: ''
+        ActiveLocale: true
+    1_en:
+        Id: 1
+        Locale: en
+        Name: 'les activités du club enfant (5-12 ans) EN'
+        Description: ''
+        ActiveLocale: true
+    1_fr:
+        Id: 1
+        Locale: fr
+        Name: 'les activités du club enfant (5-12 ans)'
+        Description: 'Desc. les activités du club enfant (5-12 ans)'
+        ActiveLocale: true
+    2_de:
+        Id: 2
+        Locale: de
+        Name: 'le toboggan aquatique DE'
+        Description: ''
+        ActiveLocale: true
+    2_en:
+        Id: 2
+        Locale: en
+        Name: 'le toboggan aquatique EN'
+        Description: ''
+        ActiveLocale: true
+    2_fr:
+        Id: 2
+        Locale: fr
+        Name: 'le toboggan aquatique'
+        Description: 'Desc. le toboggan aquatique'
+        ActiveLocale: true
+    3_de:
+        Id: 3
+        Locale: de
+        Name: 'l''équitation DE'
+        Description: ''
+        ActiveLocale: true
+    3_en:
+        Id: 3
+        Locale: en
+        Name: 'l''équitation EN'
+        Description: ''
+        ActiveLocale: true
+    3_fr:
+        Id: 3
+        Locale: fr
+        Name: 'l''équitation'
+        Description: 'Desc. l''équitation'
+        ActiveLocale: true
+    7_de:
+        Id: 7
+        Locale: de
+        Name: 'l''accès direct à la plage DE'
+        Description: ''
+        ActiveLocale: true
+    7_en:
+        Id: 7
+        Locale: en
+        Name: 'l''accès direct à la plage EN'
+        Description: ''
+        ActiveLocale: true
+    7_fr:
+        Id: 7
+        Locale: fr
+        Name: 'l''accès direct à la plage'
+        Description: 'Desc. l''accès direct à la plage'
+        ActiveLocale: true
+    8_de:
+        Id: 8
+        Locale: de
+        Name: 'l''accès au wifi dans tout le camping DE'
+        Description: ''
+        ActiveLocale: true
+    8_en:
+        Id: 8
+        Locale: en
+        Name: 'l''accès au wifi dans tout le camping EN'
+        Description: ''
+        ActiveLocale: true
+    8_fr:
+        Id: 8
+        Locale: fr
+        Name: 'l''accès au wifi dans tout le camping'
+        Description: 'Desc. l''accès au wifi dans tout le camping'
+        ActiveLocale: true
+    9_de:
+        Id: 9
+        Locale: de
+        Name: 'la laverie DE'
+        Description: ''
+        ActiveLocale: true
+    9_en:
+        Id: 9
+        Locale: en
+        Name: 'la laverie EN'
+        Description: ''
+        ActiveLocale: true
+    9_fr:
+        Id: 9
+        Locale: fr
+        Name: 'la laverie'
+        Description: 'Desc. la laverie'
+        ActiveLocale: true

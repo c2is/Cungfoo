@@ -26,6 +26,8 @@ use Cungfoo\Model\Categorie;
 use Cungfoo\Model\CategorieQuery;
 use Cungfoo\Model\DemandeAnnulation;
 use Cungfoo\Model\DemandeAnnulationQuery;
+use Cungfoo\Model\Departement;
+use Cungfoo\Model\DepartementQuery;
 use Cungfoo\Model\Destination;
 use Cungfoo\Model\DestinationQuery;
 use Cungfoo\Model\Etablissement;
@@ -204,6 +206,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     protected $ville_id;
 
     /**
+     * The value for the departement_id field.
+     * @var        int
+     */
+    protected $departement_id;
+
+    /**
      * The value for the categorie_id field.
      * @var        int
      */
@@ -286,6 +294,11 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      * @var        Ville
      */
     protected $aVille;
+
+    /**
+     * @var        Departement
+     */
+    protected $aDepartement;
 
     /**
      * @var        Categorie
@@ -896,6 +909,16 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     }
 
     /**
+     * Get the [departement_id] column value.
+     *
+     * @return int
+     */
+    public function getDepartementId()
+    {
+        return $this->departement_id;
+    }
+
+    /**
      * Get the [categorie_id] column value.
      *
      * @return int
@@ -1451,6 +1474,31 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     } // setVilleId()
 
     /**
+     * Set the value of [departement_id] column.
+     *
+     * @param int $v new value
+     * @return Etablissement The current object (for fluent API support)
+     */
+    public function setDepartementId($v)
+    {
+        if ($v !== null) {
+            $v = (int) $v;
+        }
+
+        if ($this->departement_id !== $v) {
+            $this->departement_id = $v;
+            $this->modifiedColumns[] = EtablissementPeer::DEPARTEMENT_ID;
+        }
+
+        if ($this->aDepartement !== null && $this->aDepartement->getId() !== $v) {
+            $this->aDepartement = null;
+        }
+
+
+        return $this;
+    } // setDepartementId()
+
+    /**
      * Set the value of [categorie_id] column.
      *
      * @param int $v new value
@@ -1800,19 +1848,20 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $this->opening_date = ($row[$startcol + 14] !== null) ? (string) $row[$startcol + 14] : null;
             $this->closing_date = ($row[$startcol + 15] !== null) ? (string) $row[$startcol + 15] : null;
             $this->ville_id = ($row[$startcol + 16] !== null) ? (int) $row[$startcol + 16] : null;
-            $this->categorie_id = ($row[$startcol + 17] !== null) ? (int) $row[$startcol + 17] : null;
-            $this->geo_coordinate_x = ($row[$startcol + 18] !== null) ? (string) $row[$startcol + 18] : null;
-            $this->geo_coordinate_y = ($row[$startcol + 19] !== null) ? (string) $row[$startcol + 19] : null;
-            $this->video_path = ($row[$startcol + 20] !== null) ? (string) $row[$startcol + 20] : null;
-            $this->image_360_path = ($row[$startcol + 21] !== null) ? (string) $row[$startcol + 21] : null;
-            $this->capacite = ($row[$startcol + 22] !== null) ? (string) $row[$startcol + 22] : null;
-            $this->plan_path = ($row[$startcol + 23] !== null) ? (string) $row[$startcol + 23] : null;
-            $this->vignette = ($row[$startcol + 24] !== null) ? (string) $row[$startcol + 24] : null;
-            $this->related_1 = ($row[$startcol + 25] !== null) ? (int) $row[$startcol + 25] : null;
-            $this->related_2 = ($row[$startcol + 26] !== null) ? (int) $row[$startcol + 26] : null;
-            $this->created_at = ($row[$startcol + 27] !== null) ? (string) $row[$startcol + 27] : null;
-            $this->updated_at = ($row[$startcol + 28] !== null) ? (string) $row[$startcol + 28] : null;
-            $this->active = ($row[$startcol + 29] !== null) ? (boolean) $row[$startcol + 29] : null;
+            $this->departement_id = ($row[$startcol + 17] !== null) ? (int) $row[$startcol + 17] : null;
+            $this->categorie_id = ($row[$startcol + 18] !== null) ? (int) $row[$startcol + 18] : null;
+            $this->geo_coordinate_x = ($row[$startcol + 19] !== null) ? (string) $row[$startcol + 19] : null;
+            $this->geo_coordinate_y = ($row[$startcol + 20] !== null) ? (string) $row[$startcol + 20] : null;
+            $this->video_path = ($row[$startcol + 21] !== null) ? (string) $row[$startcol + 21] : null;
+            $this->image_360_path = ($row[$startcol + 22] !== null) ? (string) $row[$startcol + 22] : null;
+            $this->capacite = ($row[$startcol + 23] !== null) ? (string) $row[$startcol + 23] : null;
+            $this->plan_path = ($row[$startcol + 24] !== null) ? (string) $row[$startcol + 24] : null;
+            $this->vignette = ($row[$startcol + 25] !== null) ? (string) $row[$startcol + 25] : null;
+            $this->related_1 = ($row[$startcol + 26] !== null) ? (int) $row[$startcol + 26] : null;
+            $this->related_2 = ($row[$startcol + 27] !== null) ? (int) $row[$startcol + 27] : null;
+            $this->created_at = ($row[$startcol + 28] !== null) ? (string) $row[$startcol + 28] : null;
+            $this->updated_at = ($row[$startcol + 29] !== null) ? (string) $row[$startcol + 29] : null;
+            $this->active = ($row[$startcol + 30] !== null) ? (boolean) $row[$startcol + 30] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -1821,7 +1870,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 30; // 30 = EtablissementPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 31; // 31 = EtablissementPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Etablissement object", $e);
@@ -1846,6 +1895,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
 
         if ($this->aVille !== null && $this->ville_id !== $this->aVille->getId()) {
             $this->aVille = null;
+        }
+        if ($this->aDepartement !== null && $this->departement_id !== $this->aDepartement->getId()) {
+            $this->aDepartement = null;
         }
         if ($this->aCategorie !== null && $this->categorie_id !== $this->aCategorie->getId()) {
             $this->aCategorie = null;
@@ -1896,6 +1948,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if ($deep) {  // also de-associate any related objects?
 
             $this->aVille = null;
+            $this->aDepartement = null;
             $this->aCategorie = null;
             $this->aEtablissementRelatedByRelated1 = null;
             $this->aEtablissementRelatedByRelated2 = null;
@@ -2077,6 +2130,13 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                     $affectedRows += $this->aVille->save($con);
                 }
                 $this->setVille($this->aVille);
+            }
+
+            if ($this->aDepartement !== null) {
+                if ($this->aDepartement->isModified() || $this->aDepartement->isNew()) {
+                    $affectedRows += $this->aDepartement->save($con);
+                }
+                $this->setDepartement($this->aDepartement);
             }
 
             if ($this->aCategorie !== null) {
@@ -2681,6 +2741,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if ($this->isColumnModified(EtablissementPeer::VILLE_ID)) {
             $modifiedColumns[':p' . $index++]  = '`ville_id`';
         }
+        if ($this->isColumnModified(EtablissementPeer::DEPARTEMENT_ID)) {
+            $modifiedColumns[':p' . $index++]  = '`departement_id`';
+        }
         if ($this->isColumnModified(EtablissementPeer::CATEGORIE_ID)) {
             $modifiedColumns[':p' . $index++]  = '`categorie_id`';
         }
@@ -2781,6 +2844,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                         break;
                     case '`ville_id`':
                         $stmt->bindValue($identifier, $this->ville_id, PDO::PARAM_INT);
+                        break;
+                    case '`departement_id`':
+                        $stmt->bindValue($identifier, $this->departement_id, PDO::PARAM_INT);
                         break;
                     case '`categorie_id`':
                         $stmt->bindValue($identifier, $this->categorie_id, PDO::PARAM_INT);
@@ -2923,6 +2989,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             if ($this->aVille !== null) {
                 if (!$this->aVille->validate($columns)) {
                     $failureMap = array_merge($failureMap, $this->aVille->getValidationFailures());
+                }
+            }
+
+            if ($this->aDepartement !== null) {
+                if (!$this->aDepartement->validate($columns)) {
+                    $failureMap = array_merge($failureMap, $this->aDepartement->getValidationFailures());
                 }
             }
 
@@ -3173,42 +3245,45 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 return $this->getVilleId();
                 break;
             case 17:
-                return $this->getCategorieId();
+                return $this->getDepartementId();
                 break;
             case 18:
-                return $this->getGeoCoordinateX();
+                return $this->getCategorieId();
                 break;
             case 19:
-                return $this->getGeoCoordinateY();
+                return $this->getGeoCoordinateX();
                 break;
             case 20:
-                return $this->getVideoPath();
+                return $this->getGeoCoordinateY();
                 break;
             case 21:
-                return $this->getImage360Path();
+                return $this->getVideoPath();
                 break;
             case 22:
-                return $this->getCapacite();
+                return $this->getImage360Path();
                 break;
             case 23:
-                return $this->getPlanPath();
+                return $this->getCapacite();
                 break;
             case 24:
-                return $this->getVignette();
+                return $this->getPlanPath();
                 break;
             case 25:
-                return $this->getRelated1();
+                return $this->getVignette();
                 break;
             case 26:
-                return $this->getRelated2();
+                return $this->getRelated1();
                 break;
             case 27:
-                return $this->getCreatedAt();
+                return $this->getRelated2();
                 break;
             case 28:
-                return $this->getUpdatedAt();
+                return $this->getCreatedAt();
                 break;
             case 29:
+                return $this->getUpdatedAt();
+                break;
+            case 30:
                 return $this->getActive();
                 break;
             default:
@@ -3257,23 +3332,27 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $keys[14] => $this->getOpeningDate(),
             $keys[15] => $this->getClosingDate(),
             $keys[16] => $this->getVilleId(),
-            $keys[17] => $this->getCategorieId(),
-            $keys[18] => $this->getGeoCoordinateX(),
-            $keys[19] => $this->getGeoCoordinateY(),
-            $keys[20] => $this->getVideoPath(),
-            $keys[21] => $this->getImage360Path(),
-            $keys[22] => $this->getCapacite(),
-            $keys[23] => $this->getPlanPath(),
-            $keys[24] => $this->getVignette(),
-            $keys[25] => $this->getRelated1(),
-            $keys[26] => $this->getRelated2(),
-            $keys[27] => $this->getCreatedAt(),
-            $keys[28] => $this->getUpdatedAt(),
-            $keys[29] => $this->getActive(),
+            $keys[17] => $this->getDepartementId(),
+            $keys[18] => $this->getCategorieId(),
+            $keys[19] => $this->getGeoCoordinateX(),
+            $keys[20] => $this->getGeoCoordinateY(),
+            $keys[21] => $this->getVideoPath(),
+            $keys[22] => $this->getImage360Path(),
+            $keys[23] => $this->getCapacite(),
+            $keys[24] => $this->getPlanPath(),
+            $keys[25] => $this->getVignette(),
+            $keys[26] => $this->getRelated1(),
+            $keys[27] => $this->getRelated2(),
+            $keys[28] => $this->getCreatedAt(),
+            $keys[29] => $this->getUpdatedAt(),
+            $keys[30] => $this->getActive(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aVille) {
                 $result['Ville'] = $this->aVille->toArray($keyType, $includeLazyLoadColumns,  $alreadyDumpedObjects, true);
+            }
+            if (null !== $this->aDepartement) {
+                $result['Departement'] = $this->aDepartement->toArray($keyType, $includeLazyLoadColumns,  $alreadyDumpedObjects, true);
             }
             if (null !== $this->aCategorie) {
                 $result['Categorie'] = $this->aCategorie->toArray($keyType, $includeLazyLoadColumns,  $alreadyDumpedObjects, true);
@@ -3421,42 +3500,45 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 $this->setVilleId($value);
                 break;
             case 17:
-                $this->setCategorieId($value);
+                $this->setDepartementId($value);
                 break;
             case 18:
-                $this->setGeoCoordinateX($value);
+                $this->setCategorieId($value);
                 break;
             case 19:
-                $this->setGeoCoordinateY($value);
+                $this->setGeoCoordinateX($value);
                 break;
             case 20:
-                $this->setVideoPath($value);
+                $this->setGeoCoordinateY($value);
                 break;
             case 21:
-                $this->setImage360Path($value);
+                $this->setVideoPath($value);
                 break;
             case 22:
-                $this->setCapacite($value);
+                $this->setImage360Path($value);
                 break;
             case 23:
-                $this->setPlanPath($value);
+                $this->setCapacite($value);
                 break;
             case 24:
-                $this->setVignette($value);
+                $this->setPlanPath($value);
                 break;
             case 25:
-                $this->setRelated1($value);
+                $this->setVignette($value);
                 break;
             case 26:
-                $this->setRelated2($value);
+                $this->setRelated1($value);
                 break;
             case 27:
-                $this->setCreatedAt($value);
+                $this->setRelated2($value);
                 break;
             case 28:
-                $this->setUpdatedAt($value);
+                $this->setCreatedAt($value);
                 break;
             case 29:
+                $this->setUpdatedAt($value);
+                break;
+            case 30:
                 $this->setActive($value);
                 break;
         } // switch()
@@ -3500,19 +3582,20 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if (array_key_exists($keys[14], $arr)) $this->setOpeningDate($arr[$keys[14]]);
         if (array_key_exists($keys[15], $arr)) $this->setClosingDate($arr[$keys[15]]);
         if (array_key_exists($keys[16], $arr)) $this->setVilleId($arr[$keys[16]]);
-        if (array_key_exists($keys[17], $arr)) $this->setCategorieId($arr[$keys[17]]);
-        if (array_key_exists($keys[18], $arr)) $this->setGeoCoordinateX($arr[$keys[18]]);
-        if (array_key_exists($keys[19], $arr)) $this->setGeoCoordinateY($arr[$keys[19]]);
-        if (array_key_exists($keys[20], $arr)) $this->setVideoPath($arr[$keys[20]]);
-        if (array_key_exists($keys[21], $arr)) $this->setImage360Path($arr[$keys[21]]);
-        if (array_key_exists($keys[22], $arr)) $this->setCapacite($arr[$keys[22]]);
-        if (array_key_exists($keys[23], $arr)) $this->setPlanPath($arr[$keys[23]]);
-        if (array_key_exists($keys[24], $arr)) $this->setVignette($arr[$keys[24]]);
-        if (array_key_exists($keys[25], $arr)) $this->setRelated1($arr[$keys[25]]);
-        if (array_key_exists($keys[26], $arr)) $this->setRelated2($arr[$keys[26]]);
-        if (array_key_exists($keys[27], $arr)) $this->setCreatedAt($arr[$keys[27]]);
-        if (array_key_exists($keys[28], $arr)) $this->setUpdatedAt($arr[$keys[28]]);
-        if (array_key_exists($keys[29], $arr)) $this->setActive($arr[$keys[29]]);
+        if (array_key_exists($keys[17], $arr)) $this->setDepartementId($arr[$keys[17]]);
+        if (array_key_exists($keys[18], $arr)) $this->setCategorieId($arr[$keys[18]]);
+        if (array_key_exists($keys[19], $arr)) $this->setGeoCoordinateX($arr[$keys[19]]);
+        if (array_key_exists($keys[20], $arr)) $this->setGeoCoordinateY($arr[$keys[20]]);
+        if (array_key_exists($keys[21], $arr)) $this->setVideoPath($arr[$keys[21]]);
+        if (array_key_exists($keys[22], $arr)) $this->setImage360Path($arr[$keys[22]]);
+        if (array_key_exists($keys[23], $arr)) $this->setCapacite($arr[$keys[23]]);
+        if (array_key_exists($keys[24], $arr)) $this->setPlanPath($arr[$keys[24]]);
+        if (array_key_exists($keys[25], $arr)) $this->setVignette($arr[$keys[25]]);
+        if (array_key_exists($keys[26], $arr)) $this->setRelated1($arr[$keys[26]]);
+        if (array_key_exists($keys[27], $arr)) $this->setRelated2($arr[$keys[27]]);
+        if (array_key_exists($keys[28], $arr)) $this->setCreatedAt($arr[$keys[28]]);
+        if (array_key_exists($keys[29], $arr)) $this->setUpdatedAt($arr[$keys[29]]);
+        if (array_key_exists($keys[30], $arr)) $this->setActive($arr[$keys[30]]);
     }
 
     /**
@@ -3541,6 +3624,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if ($this->isColumnModified(EtablissementPeer::OPENING_DATE)) $criteria->add(EtablissementPeer::OPENING_DATE, $this->opening_date);
         if ($this->isColumnModified(EtablissementPeer::CLOSING_DATE)) $criteria->add(EtablissementPeer::CLOSING_DATE, $this->closing_date);
         if ($this->isColumnModified(EtablissementPeer::VILLE_ID)) $criteria->add(EtablissementPeer::VILLE_ID, $this->ville_id);
+        if ($this->isColumnModified(EtablissementPeer::DEPARTEMENT_ID)) $criteria->add(EtablissementPeer::DEPARTEMENT_ID, $this->departement_id);
         if ($this->isColumnModified(EtablissementPeer::CATEGORIE_ID)) $criteria->add(EtablissementPeer::CATEGORIE_ID, $this->categorie_id);
         if ($this->isColumnModified(EtablissementPeer::GEO_COORDINATE_X)) $criteria->add(EtablissementPeer::GEO_COORDINATE_X, $this->geo_coordinate_x);
         if ($this->isColumnModified(EtablissementPeer::GEO_COORDINATE_Y)) $criteria->add(EtablissementPeer::GEO_COORDINATE_Y, $this->geo_coordinate_y);
@@ -3633,6 +3717,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $copyObj->setOpeningDate($this->getOpeningDate());
         $copyObj->setClosingDate($this->getClosingDate());
         $copyObj->setVilleId($this->getVilleId());
+        $copyObj->setDepartementId($this->getDepartementId());
         $copyObj->setCategorieId($this->getCategorieId());
         $copyObj->setGeoCoordinateX($this->getGeoCoordinateX());
         $copyObj->setGeoCoordinateY($this->getGeoCoordinateY());
@@ -3856,6 +3941,58 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         }
 
         return $this->aVille;
+    }
+
+    /**
+     * Declares an association between this object and a Departement object.
+     *
+     * @param             Departement $v
+     * @return Etablissement The current object (for fluent API support)
+     * @throws PropelException
+     */
+    public function setDepartement(Departement $v = null)
+    {
+        if ($v === null) {
+            $this->setDepartementId(NULL);
+        } else {
+            $this->setDepartementId($v->getId());
+        }
+
+        $this->aDepartement = $v;
+
+        // Add binding for other direction of this n:n relationship.
+        // If this object has already been added to the Departement object, it will not be re-added.
+        if ($v !== null) {
+            $v->addEtablissement($this);
+        }
+
+
+        return $this;
+    }
+
+
+    /**
+     * Get the associated Departement object
+     *
+     * @param PropelPDO $con Optional Connection object.
+     * @param $doQuery Executes a query to get the object if required
+     * @return Departement The associated Departement object.
+     * @throws PropelException
+     */
+    public function getDepartement(PropelPDO $con = null, $doQuery = true)
+    {
+        if ($this->aDepartement === null && ($this->departement_id !== null) && $doQuery) {
+            $this->aDepartement = DepartementQuery::create()->findPk($this->departement_id, $con);
+            /* The following can be used additionally to
+                guarantee the related object contains a reference
+                to this object.  This level of coupling may, however, be
+                undesirable since it could result in an only partially populated collection
+                in the referenced object.
+                $this->aDepartement->addEtablissements($this);
+             */
+        }
+
+        return $this->aDepartement;
     }
 
     /**
@@ -4335,6 +4472,31 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      * @param string $join_behavior optional join type to use (defaults to Criteria::LEFT_JOIN)
      * @return PropelObjectCollection|Etablissement[] List of Etablissement objects
      */
+    public function getEtablissementsRelatedById0JoinDepartement($criteria = null, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    {
+        $query = EtablissementQuery::create(null, $criteria);
+        $query->joinWith('Departement', $join_behavior);
+
+        return $this->getEtablissementsRelatedById0($query, $con);
+    }
+
+
+    /**
+     * If this collection has already been initialized with
+     * an identical criteria, it returns the collection.
+     * Otherwise if this Etablissement is new, it will return
+     * an empty collection; or if this Etablissement has previously
+     * been saved, it will retrieve related EtablissementsRelatedById0 from storage.
+     *
+     * This method is protected by default in order to keep the public
+     * api reasonable.  You can provide public methods for those you
+     * actually need in Etablissement.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @param string $join_behavior optional join type to use (defaults to Criteria::LEFT_JOIN)
+     * @return PropelObjectCollection|Etablissement[] List of Etablissement objects
+     */
     public function getEtablissementsRelatedById0JoinCategorie($criteria = null, $con = null, $join_behavior = Criteria::LEFT_JOIN)
     {
         $query = EtablissementQuery::create(null, $criteria);
@@ -4579,6 +4741,31 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     {
         $query = EtablissementQuery::create(null, $criteria);
         $query->joinWith('Ville', $join_behavior);
+
+        return $this->getEtablissementsRelatedById1($query, $con);
+    }
+
+
+    /**
+     * If this collection has already been initialized with
+     * an identical criteria, it returns the collection.
+     * Otherwise if this Etablissement is new, it will return
+     * an empty collection; or if this Etablissement has previously
+     * been saved, it will retrieve related EtablissementsRelatedById1 from storage.
+     *
+     * This method is protected by default in order to keep the public
+     * api reasonable.  You can provide public methods for those you
+     * actually need in Etablissement.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @param string $join_behavior optional join type to use (defaults to Criteria::LEFT_JOIN)
+     * @return PropelObjectCollection|Etablissement[] List of Etablissement objects
+     */
+    public function getEtablissementsRelatedById1JoinDepartement($criteria = null, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    {
+        $query = EtablissementQuery::create(null, $criteria);
+        $query->joinWith('Departement', $join_behavior);
 
         return $this->getEtablissementsRelatedById1($query, $con);
     }
@@ -9879,6 +10066,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $this->opening_date = null;
         $this->closing_date = null;
         $this->ville_id = null;
+        $this->departement_id = null;
         $this->categorie_id = null;
         $this->geo_coordinate_x = null;
         $this->geo_coordinate_y = null;
@@ -10163,6 +10351,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         }
         $this->collBonPlans = null;
         $this->aVille = null;
+        $this->aDepartement = null;
         $this->aCategorie = null;
         $this->aEtablissementRelatedByRelated1 = null;
         $this->aEtablissementRelatedByRelated2 = null;
@@ -10203,8 +10392,8 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     }
 
     // active behavior
-    
-    
+
+
     /**
      * return true is the object is active
      *
@@ -10214,7 +10403,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     {
         return $this->getActive();
     }
-    
+
     /**
      * return true is the object is active locale
      *
@@ -10224,279 +10413,279 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     {
         return $this->getActiveLocale();
     }
-    
+
     public function getTypeHebergementsActive($criteria = null, PropelPDO $con = null)
     {
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-    
+
         $criteria->add(\Cungfoo\Model\TypeHebergementPeer::ACTIVE, true);
-    
-    
+
+
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\TypeHebergementI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\TypeHebergementPeer::ID, \Cungfoo\Model\TypeHebergementI18nPeer::alias('i18n_locale', \Cungfoo\Model\TypeHebergementI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\TypeHebergementI18nPeer::alias('i18n_locale', \Cungfoo\Model\TypeHebergementI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\TypeHebergementI18nPeer::alias('i18n_locale', \Cungfoo\Model\TypeHebergementI18nPeer::LOCALE), $this->currentLocale);
-    
+
         return $this->getTypeHebergements($criteria, $con);
     }
-    
+
     public function getDestinationsActive($criteria = null, PropelPDO $con = null)
     {
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-    
+
         $criteria->add(\Cungfoo\Model\DestinationPeer::ACTIVE, true);
-    
-    
+
+
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\DestinationI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\DestinationPeer::ID, \Cungfoo\Model\DestinationI18nPeer::alias('i18n_locale', \Cungfoo\Model\DestinationI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\DestinationI18nPeer::alias('i18n_locale', \Cungfoo\Model\DestinationI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\DestinationI18nPeer::alias('i18n_locale', \Cungfoo\Model\DestinationI18nPeer::LOCALE), $this->currentLocale);
-    
+
         return $this->getDestinations($criteria, $con);
     }
-    
+
     public function getActivitesActive($criteria = null, PropelPDO $con = null)
     {
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-    
+
         $criteria->add(\Cungfoo\Model\ActivitePeer::ACTIVE, true);
-    
-    
+
+
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\ActiviteI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\ActivitePeer::ID, \Cungfoo\Model\ActiviteI18nPeer::alias('i18n_locale', \Cungfoo\Model\ActiviteI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\ActiviteI18nPeer::alias('i18n_locale', \Cungfoo\Model\ActiviteI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\ActiviteI18nPeer::alias('i18n_locale', \Cungfoo\Model\ActiviteI18nPeer::LOCALE), $this->currentLocale);
-    
+
         return $this->getActivites($criteria, $con);
     }
-    
+
     public function getServiceComplementairesActive($criteria = null, PropelPDO $con = null)
     {
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-    
+
         $criteria->add(\Cungfoo\Model\ServiceComplementairePeer::ACTIVE, true);
-    
-    
+
+
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\ServiceComplementaireI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\ServiceComplementairePeer::ID, \Cungfoo\Model\ServiceComplementaireI18nPeer::alias('i18n_locale', \Cungfoo\Model\ServiceComplementaireI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\ServiceComplementaireI18nPeer::alias('i18n_locale', \Cungfoo\Model\ServiceComplementaireI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\ServiceComplementaireI18nPeer::alias('i18n_locale', \Cungfoo\Model\ServiceComplementaireI18nPeer::LOCALE), $this->currentLocale);
-    
+
         return $this->getServiceComplementaires($criteria, $con);
     }
-    
+
     public function getSituationGeographiquesActive($criteria = null, PropelPDO $con = null)
     {
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-    
+
         $criteria->add(\Cungfoo\Model\SituationGeographiquePeer::ACTIVE, true);
-    
-    
+
+
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\SituationGeographiqueI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\SituationGeographiquePeer::ID, \Cungfoo\Model\SituationGeographiqueI18nPeer::alias('i18n_locale', \Cungfoo\Model\SituationGeographiqueI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\SituationGeographiqueI18nPeer::alias('i18n_locale', \Cungfoo\Model\SituationGeographiqueI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\SituationGeographiqueI18nPeer::alias('i18n_locale', \Cungfoo\Model\SituationGeographiqueI18nPeer::LOCALE), $this->currentLocale);
-    
+
         return $this->getSituationGeographiques($criteria, $con);
     }
-    
+
     public function getBaignadesActive($criteria = null, PropelPDO $con = null)
     {
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-    
+
         $criteria->add(\Cungfoo\Model\BaignadePeer::ACTIVE, true);
-    
-    
+
+
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\BaignadeI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\BaignadePeer::ID, \Cungfoo\Model\BaignadeI18nPeer::alias('i18n_locale', \Cungfoo\Model\BaignadeI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\BaignadeI18nPeer::alias('i18n_locale', \Cungfoo\Model\BaignadeI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\BaignadeI18nPeer::alias('i18n_locale', \Cungfoo\Model\BaignadeI18nPeer::LOCALE), $this->currentLocale);
-    
+
         return $this->getBaignades($criteria, $con);
     }
-    
+
     public function getThematiquesActive($criteria = null, PropelPDO $con = null)
     {
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-    
+
         $criteria->add(\Cungfoo\Model\ThematiquePeer::ACTIVE, true);
-    
-    
+
+
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\ThematiqueI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\ThematiquePeer::ID, \Cungfoo\Model\ThematiqueI18nPeer::alias('i18n_locale', \Cungfoo\Model\ThematiqueI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\ThematiqueI18nPeer::alias('i18n_locale', \Cungfoo\Model\ThematiqueI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\ThematiqueI18nPeer::alias('i18n_locale', \Cungfoo\Model\ThematiqueI18nPeer::LOCALE), $this->currentLocale);
-    
+
         return $this->getThematiques($criteria, $con);
     }
-    
+
     public function getPointInteretsActive($criteria = null, PropelPDO $con = null)
     {
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-    
+
         $criteria->add(\Cungfoo\Model\PointInteretPeer::ACTIVE, true);
-    
-    
+
+
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\PointInteretI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\PointInteretPeer::ID, \Cungfoo\Model\PointInteretI18nPeer::alias('i18n_locale', \Cungfoo\Model\PointInteretI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\PointInteretI18nPeer::alias('i18n_locale', \Cungfoo\Model\PointInteretI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\PointInteretI18nPeer::alias('i18n_locale', \Cungfoo\Model\PointInteretI18nPeer::LOCALE), $this->currentLocale);
-    
+
         return $this->getPointInterets($criteria, $con);
     }
-    
+
     public function getEventsActive($criteria = null, PropelPDO $con = null)
     {
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-    
+
         $criteria->add(\Cungfoo\Model\EventPeer::ACTIVE, true);
-    
-    
+
+
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\EventI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\EventPeer::ID, \Cungfoo\Model\EventI18nPeer::alias('i18n_locale', \Cungfoo\Model\EventI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\EventI18nPeer::alias('i18n_locale', \Cungfoo\Model\EventI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\EventI18nPeer::alias('i18n_locale', \Cungfoo\Model\EventI18nPeer::LOCALE), $this->currentLocale);
-    
+
         return $this->getEvents($criteria, $con);
     }
-    
+
     public function getBonPlansActive($criteria = null, PropelPDO $con = null)
     {
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-    
+
         $criteria->add(\Cungfoo\Model\BonPlanPeer::ACTIVE, true);
-    
-    
+
+
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\BonPlanI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\BonPlanPeer::ID, \Cungfoo\Model\BonPlanI18nPeer::alias('i18n_locale', \Cungfoo\Model\BonPlanI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\BonPlanI18nPeer::alias('i18n_locale', \Cungfoo\Model\BonPlanI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\BonPlanI18nPeer::alias('i18n_locale', \Cungfoo\Model\BonPlanI18nPeer::LOCALE), $this->currentLocale);
-    
+
         return $this->getBonPlans($criteria, $con);
     }
-    
+
     public function getsActive($criteria = null, PropelPDO $con = null)
     {
-    
+
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-    
+
         $criteria->add(\Cungfoo\Model\Peer::ACTIVE, true);
-    
-    
+
+
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\I18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\Peer::ID, \Cungfoo\Model\I18nPeer::alias('i18n_locale', \Cungfoo\Model\I18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\I18nPeer::alias('i18n_locale', \Cungfoo\Model\I18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\I18nPeer::alias('i18n_locale', \Cungfoo\Model\I18nPeer::LOCALE), $this->currentLocale);
-    
+
         return $this->gets($criteria, $con);
     }
-    
+
     public function getPersonnagesActive($criteria = null, PropelPDO $con = null)
     {
-    
+
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-    
+
         $criteria->add(\Cungfoo\Model\PersonnagePeer::ACTIVE, true);
-    
-    
+
+
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\PersonnageI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\PersonnagePeer::ID, \Cungfoo\Model\PersonnageI18nPeer::alias('i18n_locale', \Cungfoo\Model\PersonnageI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\PersonnageI18nPeer::alias('i18n_locale', \Cungfoo\Model\PersonnageI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\PersonnageI18nPeer::alias('i18n_locale', \Cungfoo\Model\PersonnageI18nPeer::LOCALE), $this->currentLocale);
-    
+
         return $this->getPersonnages($criteria, $con);
     }
-    
+
     public function getMultimediasActive($criteria = null, PropelPDO $con = null)
     {
-    
+
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-    
+
         $criteria->add(\Cungfoo\Model\MultimediaPeer::ACTIVE, true);
-    
-    
+
+
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\MultimediaI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\MultimediaPeer::ID, \Cungfoo\Model\MultimediaI18nPeer::alias('i18n_locale', \Cungfoo\Model\MultimediaI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\MultimediaI18nPeer::alias('i18n_locale', \Cungfoo\Model\MultimediaI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\MultimediaI18nPeer::alias('i18n_locale', \Cungfoo\Model\MultimediaI18nPeer::LOCALE), $this->currentLocale);
-    
+
         return $this->getMultimedias($criteria, $con);
     }
-    
+
     public function getTopCampingsActive($criteria = null, PropelPDO $con = null)
     {
-    
+
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-    
+
         $criteria->add(\Cungfoo\Model\TopCampingPeer::ACTIVE, true);
-    
-    
+
+
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\TopCampingI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\TopCampingPeer::ID, \Cungfoo\Model\TopCampingI18nPeer::alias('i18n_locale', \Cungfoo\Model\TopCampingI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\TopCampingI18nPeer::alias('i18n_locale', \Cungfoo\Model\TopCampingI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\TopCampingI18nPeer::alias('i18n_locale', \Cungfoo\Model\TopCampingI18nPeer::LOCALE), $this->currentLocale);
-    
+
         return $this->getTopCampings($criteria, $con);
     }
-    
+
     public function getDemandeAnnulationsActive($criteria = null, PropelPDO $con = null)
     {
-    
+
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-    
+
         $criteria->add(\Cungfoo\Model\DemandeAnnulationPeer::ACTIVE, true);
-    
-    
+
+
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\DemandeAnnulationI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\DemandeAnnulationPeer::ID, \Cungfoo\Model\DemandeAnnulationI18nPeer::alias('i18n_locale', \Cungfoo\Model\DemandeAnnulationI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\DemandeAnnulationI18nPeer::alias('i18n_locale', \Cungfoo\Model\DemandeAnnulationI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\DemandeAnnulationI18nPeer::alias('i18n_locale', \Cungfoo\Model\DemandeAnnulationI18nPeer::LOCALE), $this->currentLocale);
-    
+
         return $this->getDemandeAnnulations($criteria, $con);
     }
     // i18n behavior
@@ -10743,7 +10932,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     }
 
     // crudable behavior
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -10758,19 +10947,19 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         {
             $this->resetModified(EtablissementPeer::PLAN_PATH);
         }
-    
+
         $this->uploadPlanPath($form);
-        
+
         if (!$form['vignette_deleted']->getData())
         {
             $this->resetModified(EtablissementPeer::VIGNETTE);
         }
-    
+
         $this->uploadVignette($form);
-        
+
         return $this->save($con);
     }
-    
+
     /**
      * @return string
      */
@@ -10778,7 +10967,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     {
         return 'uploads/etablissements';
     }
-    
+
     /**
      * @return string
      */
@@ -10786,7 +10975,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -10802,7 +10991,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             }
         }
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void

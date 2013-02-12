@@ -56,6 +56,7 @@
         <column name="opening_date" type="timestamp" />
         <column name="closing_date" type="timestamp" />
         <column name="ville_id" type="integer"/>
+        <column name="departement_id" type="integer"/>
         <column name="categorie_id" type="integer"/>
         <column name="geo_coordinate_x" type="varchar" />
         <column name="geo_coordinate_y" type="varchar" />
@@ -76,6 +77,10 @@
 
         <foreign-key foreignTable="ville" onDelete="SETNULL">
             <reference local="ville_id" foreign="id"></reference>
+        </foreign-key>
+
+        <foreign-key foreignTable="departement" onDelete="SETNULL">
+            <reference local="departement_id" foreign="id"></reference>
         </foreign-key>
 
         <foreign-key foreignTable="categorie" onDelete="SETNULL">
@@ -383,6 +388,62 @@
             <parameter name="crud_prefix" value="/regions" />
             <parameter name="crud_search" value="name" />
             <parameter name="crud_type_file" value="image_path,image_encart_path,image_encart_petite_path,image_detail_1,image_detail_2" />
+        </behavior>
+    </table>
+
+    <table name="region_ref">
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="code" type="varchar" required="true" />
+        <column name="pays_id" type="integer" />
+        <column name="slug" type="varchar" required="true" />
+        <column name="name" type="varchar" required="true" />
+        <column name="introduction" type="varchar" />
+        <column name="description" type="longvarchar" />
+        <column name="image_detail_1" type="varchar" />
+        <column name="image_detail_2" type="varchar" />
+        <behavior name="timestampable" />
+        <behavior name="active" />
+
+        <foreign-key foreignTable="pays" onDelete="SETNULL">
+            <reference local="pays_id" foreign="id"></reference>
+        </foreign-key>
+
+        <behavior name="i18n">
+            <parameter name="i18n_columns" value="slug,name,introduction,description" />
+        </behavior>
+
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/regions_ref" />
+            <parameter name="crud_search" value="name" />
+            <parameter name="crud_type_file" value="image_detail_1,image_detail_2" />
+        </behavior>
+    </table>
+
+    <table name="departement">
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="code" type="varchar" required="true" />
+        <column name="region_ref_id" type="integer" />
+        <column name="slug" type="varchar" required="true" />
+        <column name="name" type="varchar" required="true" />
+        <column name="introduction" type="varchar" />
+        <column name="description" type="longvarchar" />
+        <column name="image_detail_1" type="varchar" />
+        <column name="image_detail_2" type="varchar" />
+        <behavior name="timestampable" />
+        <behavior name="active" />
+
+        <foreign-key foreignTable="region_ref" onDelete="SETNULL">
+            <reference local="region_ref_id" foreign="id"></reference>
+        </foreign-key>
+
+        <behavior name="i18n">
+            <parameter name="i18n_columns" value="slug,name,introduction,description" />
+        </behavior>
+
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/departements" />
+            <parameter name="crud_search" value="name" />
+            <parameter name="crud_type_file" value="image_detail_1,image_detail_2" />
         </behavior>
     </table>
 

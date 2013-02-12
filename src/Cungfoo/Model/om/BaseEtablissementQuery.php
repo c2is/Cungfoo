@@ -18,6 +18,7 @@ use Cungfoo\Model\BonPlan;
 use Cungfoo\Model\BonPlanEtablissement;
 use Cungfoo\Model\Categorie;
 use Cungfoo\Model\DemandeAnnulation;
+use Cungfoo\Model\Departement;
 use Cungfoo\Model\Destination;
 use Cungfoo\Model\Etablissement;
 use Cungfoo\Model\EtablissementActivite;
@@ -65,6 +66,7 @@ use Cungfoo\Model\Ville;
  * @method EtablissementQuery orderByOpeningDate($order = Criteria::ASC) Order by the opening_date column
  * @method EtablissementQuery orderByClosingDate($order = Criteria::ASC) Order by the closing_date column
  * @method EtablissementQuery orderByVilleId($order = Criteria::ASC) Order by the ville_id column
+ * @method EtablissementQuery orderByDepartementId($order = Criteria::ASC) Order by the departement_id column
  * @method EtablissementQuery orderByCategorieId($order = Criteria::ASC) Order by the categorie_id column
  * @method EtablissementQuery orderByGeoCoordinateX($order = Criteria::ASC) Order by the geo_coordinate_x column
  * @method EtablissementQuery orderByGeoCoordinateY($order = Criteria::ASC) Order by the geo_coordinate_y column
@@ -96,6 +98,7 @@ use Cungfoo\Model\Ville;
  * @method EtablissementQuery groupByOpeningDate() Group by the opening_date column
  * @method EtablissementQuery groupByClosingDate() Group by the closing_date column
  * @method EtablissementQuery groupByVilleId() Group by the ville_id column
+ * @method EtablissementQuery groupByDepartementId() Group by the departement_id column
  * @method EtablissementQuery groupByCategorieId() Group by the categorie_id column
  * @method EtablissementQuery groupByGeoCoordinateX() Group by the geo_coordinate_x column
  * @method EtablissementQuery groupByGeoCoordinateY() Group by the geo_coordinate_y column
@@ -117,6 +120,10 @@ use Cungfoo\Model\Ville;
  * @method EtablissementQuery leftJoinVille($relationAlias = null) Adds a LEFT JOIN clause to the query using the Ville relation
  * @method EtablissementQuery rightJoinVille($relationAlias = null) Adds a RIGHT JOIN clause to the query using the Ville relation
  * @method EtablissementQuery innerJoinVille($relationAlias = null) Adds a INNER JOIN clause to the query using the Ville relation
+ *
+ * @method EtablissementQuery leftJoinDepartement($relationAlias = null) Adds a LEFT JOIN clause to the query using the Departement relation
+ * @method EtablissementQuery rightJoinDepartement($relationAlias = null) Adds a RIGHT JOIN clause to the query using the Departement relation
+ * @method EtablissementQuery innerJoinDepartement($relationAlias = null) Adds a INNER JOIN clause to the query using the Departement relation
  *
  * @method EtablissementQuery leftJoinCategorie($relationAlias = null) Adds a LEFT JOIN clause to the query using the Categorie relation
  * @method EtablissementQuery rightJoinCategorie($relationAlias = null) Adds a RIGHT JOIN clause to the query using the Categorie relation
@@ -217,6 +224,7 @@ use Cungfoo\Model\Ville;
  * @method Etablissement findOneByOpeningDate(string $opening_date) Return the first Etablissement filtered by the opening_date column
  * @method Etablissement findOneByClosingDate(string $closing_date) Return the first Etablissement filtered by the closing_date column
  * @method Etablissement findOneByVilleId(int $ville_id) Return the first Etablissement filtered by the ville_id column
+ * @method Etablissement findOneByDepartementId(int $departement_id) Return the first Etablissement filtered by the departement_id column
  * @method Etablissement findOneByCategorieId(int $categorie_id) Return the first Etablissement filtered by the categorie_id column
  * @method Etablissement findOneByGeoCoordinateX(string $geo_coordinate_x) Return the first Etablissement filtered by the geo_coordinate_x column
  * @method Etablissement findOneByGeoCoordinateY(string $geo_coordinate_y) Return the first Etablissement filtered by the geo_coordinate_y column
@@ -248,6 +256,7 @@ use Cungfoo\Model\Ville;
  * @method array findByOpeningDate(string $opening_date) Return Etablissement objects filtered by the opening_date column
  * @method array findByClosingDate(string $closing_date) Return Etablissement objects filtered by the closing_date column
  * @method array findByVilleId(int $ville_id) Return Etablissement objects filtered by the ville_id column
+ * @method array findByDepartementId(int $departement_id) Return Etablissement objects filtered by the departement_id column
  * @method array findByCategorieId(int $categorie_id) Return Etablissement objects filtered by the categorie_id column
  * @method array findByGeoCoordinateX(string $geo_coordinate_x) Return Etablissement objects filtered by the geo_coordinate_x column
  * @method array findByGeoCoordinateY(string $geo_coordinate_y) Return Etablissement objects filtered by the geo_coordinate_y column
@@ -364,7 +373,7 @@ abstract class BaseEtablissementQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `code`, `slug`, `name`, `title`, `address1`, `address2`, `zip`, `city`, `mail`, `country_code`, `phone1`, `phone2`, `fax`, `opening_date`, `closing_date`, `ville_id`, `categorie_id`, `geo_coordinate_x`, `geo_coordinate_y`, `video_path`, `image_360_path`, `capacite`, `plan_path`, `vignette`, `related_1`, `related_2`, `created_at`, `updated_at`, `active` FROM `etablissement` WHERE `id` = :p0';
+        $sql = 'SELECT `id`, `code`, `slug`, `name`, `title`, `address1`, `address2`, `zip`, `city`, `mail`, `country_code`, `phone1`, `phone2`, `fax`, `opening_date`, `closing_date`, `ville_id`, `departement_id`, `categorie_id`, `geo_coordinate_x`, `geo_coordinate_y`, `video_path`, `image_360_path`, `capacite`, `plan_path`, `vignette`, `related_1`, `related_2`, `created_at`, `updated_at`, `active` FROM `etablissement` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -999,6 +1008,49 @@ abstract class BaseEtablissementQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query on the departement_id column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByDepartementId(1234); // WHERE departement_id = 1234
+     * $query->filterByDepartementId(array(12, 34)); // WHERE departement_id IN (12, 34)
+     * $query->filterByDepartementId(array('min' => 12)); // WHERE departement_id > 12
+     * </code>
+     *
+     * @see       filterByDepartement()
+     *
+     * @param     mixed $departementId The value to use as filter.
+     *              Use scalar values for equality.
+     *              Use array values for in_array() equivalent.
+     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return EtablissementQuery The current query, for fluid interface
+     */
+    public function filterByDepartementId($departementId = null, $comparison = null)
+    {
+        if (is_array($departementId)) {
+            $useMinMax = false;
+            if (isset($departementId['min'])) {
+                $this->addUsingAlias(EtablissementPeer::DEPARTEMENT_ID, $departementId['min'], Criteria::GREATER_EQUAL);
+                $useMinMax = true;
+            }
+            if (isset($departementId['max'])) {
+                $this->addUsingAlias(EtablissementPeer::DEPARTEMENT_ID, $departementId['max'], Criteria::LESS_EQUAL);
+                $useMinMax = true;
+            }
+            if ($useMinMax) {
+                return $this;
+            }
+            if (null === $comparison) {
+                $comparison = Criteria::IN;
+            }
+        }
+
+        return $this->addUsingAlias(EtablissementPeer::DEPARTEMENT_ID, $departementId, $comparison);
+    }
+
+    /**
      * Filter the query on the categorie_id column
      *
      * Example usage:
@@ -1517,6 +1569,82 @@ abstract class BaseEtablissementQuery extends ModelCriteria
         return $this
             ->joinVille($relationAlias, $joinType)
             ->useQuery($relationAlias ? $relationAlias : 'Ville', '\Cungfoo\Model\VilleQuery');
+    }
+
+    /**
+     * Filter the query by a related Departement object
+     *
+     * @param   Departement|PropelObjectCollection $departement The related object(s) to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   EtablissementQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByDepartement($departement, $comparison = null)
+    {
+        if ($departement instanceof Departement) {
+            return $this
+                ->addUsingAlias(EtablissementPeer::DEPARTEMENT_ID, $departement->getId(), $comparison);
+        } elseif ($departement instanceof PropelObjectCollection) {
+            if (null === $comparison) {
+                $comparison = Criteria::IN;
+            }
+
+            return $this
+                ->addUsingAlias(EtablissementPeer::DEPARTEMENT_ID, $departement->toKeyValue('PrimaryKey', 'Id'), $comparison);
+        } else {
+            throw new PropelException('filterByDepartement() only accepts arguments of type Departement or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the Departement relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return EtablissementQuery The current query, for fluid interface
+     */
+    public function joinDepartement($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('Departement');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'Departement');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the Departement relation Departement object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\DepartementQuery A secondary query class using the current class as primary query
+     */
+    public function useDepartementQuery($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        return $this
+            ->joinDepartement($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'Departement', '\Cungfoo\Model\DepartementQuery');
     }
 
     /**
@@ -3257,8 +3385,8 @@ abstract class BaseEtablissementQuery extends ModelCriteria
         return $this->addAscendingOrderByColumn(EtablissementPeer::CREATED_AT);
     }
     // active behavior
-    
-    
+
+
     /**
      * return only active objects
      *
@@ -3267,14 +3395,14 @@ abstract class BaseEtablissementQuery extends ModelCriteria
     public function findActive($con = null)
     {
         $locale = defined('CURRENT_LANGUAGE') ? CURRENT_LANGUAGE : 'fr';
-    
+
         $this
             ->filterByActive(true)
             ->useI18nQuery($locale, 'i18n_locale')
                 ->filterByActiveLocale(true)
             ->endUse()
         ;
-    
+
         return parent::find($con);
     }
     // i18n behavior
@@ -3335,11 +3463,11 @@ abstract class BaseEtablissementQuery extends ModelCriteria
     }
 
     // crudable behavior
-    
+
     public function filterByTerm($term)
     {
         $term = '%' . $term . '%';
-    
+
         return $this
             ->_or()
             ->filterByName($term, \Criteria::LIKE)

@@ -10,7 +10,7 @@ include('includes/top.php'); ?>
             <a class="bt gris left" href="#_">&lt; Retour</a>
             <ol class="pathway" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
                 <li>&gt; <a href="#_" itemprop="url"><span itemprop="title">Accueil</span></a></li>
-                <li>&gt; <a href="#_" itemprop="url"><span itemprop="title"Résultats de recherche">Résultats de recherche</span></a></li>
+                <li>&gt; <a href="#_" itemprop="url"><span itemprop="title">Résultats de recherche">Résultats de recherche</span></a></li>
             </ol>
 
             <h1>Nos régions</h1>

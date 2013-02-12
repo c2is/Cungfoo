@@ -21,6 +21,17 @@ class EtablissementPeer extends BaseEtablissementPeer
     const NO_SORT     = 0;
     const RANDOM_SORT = 1;
 
+    public static function assertUrl()
+    {
+        $objects = EtablissementQuery::create()
+            ->select('slug')
+            ->findActive()
+            ->toArray()
+        ;
+
+        return implode('|', $objects);
+    }
+
     public static function getNameOrderByName($locale = 'fr', \PropelPDO $con = null)
     {
         return \Cungfoo\Model\EtablissementQuery::create()
@@ -53,11 +64,53 @@ class EtablissementPeer extends BaseEtablissementPeer
         return ($count == 1) ? $query->findOne() : $query->findActive();
     }
 
-    public static function getForRegion(Region $region, $sort = self::NO_SORT, $count = null)
+    public static function getForRegion($region, $sort = self::NO_SORT, $count = null)
     {
         $query = EtablissementQuery::create()
             ->useVilleQuery()
+                ->filterByActive(true)
                 ->filterByRegion($region)
+            ->endUse()
+        ;
+
+        if ($sort == self::RANDOM_SORT)
+        {
+            $query->addAscendingOrderByColumn('RAND()');
+        }
+
+        if (!is_null($count))
+        {
+            $query->limit($count);
+        }
+
+        return ($count == 1) ? $query->findOne() : $query->findActive();
+    }
+
+    public static function getForDepartement($departement, $sort = self::NO_SORT, $count = null)
+    {
+        $query = EtablissementQuery::create()
+            ->filterByDepartement($departement)
+        ;
+
+        if ($sort == self::RANDOM_SORT)
+        {
+            $query->addAscendingOrderByColumn('RAND()');
+        }
+
+        if (!is_null($count))
+        {
+            $query->limit($count);
+        }
+
+        return ($count == 1) ? $query->findOne() : $query->findActive();
+    }
+
+    public static function getForRegionRef($region, $sort = self::NO_SORT, $count = null)
+    {
+        $query = EtablissementQuery::create()
+            ->useDepartementQuery()
+                ->filterByActive(true)
+                ->filterByRegionRef($region)
             ->endUse()
         ;
 

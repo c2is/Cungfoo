@@ -11,6 +11,7 @@ use \PropelException;
 use \PropelPDO;
 use Cungfoo\Model\BonPlanEtablissementPeer;
 use Cungfoo\Model\CategoriePeer;
+use Cungfoo\Model\DepartementPeer;
 use Cungfoo\Model\Etablissement;
 use Cungfoo\Model\EtablissementActivitePeer;
 use Cungfoo\Model\EtablissementBaignadePeer;
@@ -52,13 +53,13 @@ abstract class BaseEtablissementPeer
     const TM_CLASS = 'EtablissementTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 30;
+    const NUM_COLUMNS = 31;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 30;
+    const NUM_HYDRATE_COLUMNS = 31;
 
     /** the column name for the id field */
     const ID = 'etablissement.id';
@@ -110,6 +111,9 @@ abstract class BaseEtablissementPeer
 
     /** the column name for the ville_id field */
     const VILLE_ID = 'etablissement.ville_id';
+
+    /** the column name for the departement_id field */
+    const DEPARTEMENT_ID = 'etablissement.departement_id';
 
     /** the column name for the categorie_id field */
     const CATEGORIE_ID = 'etablissement.categorie_id';
@@ -176,12 +180,12 @@ abstract class BaseEtablissementPeer
      * e.g. EtablissementPeer::$fieldNames[EtablissementPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'Slug', 'Name', 'Title', 'Address1', 'Address2', 'Zip', 'City', 'Mail', 'CountryCode', 'Phone1', 'Phone2', 'Fax', 'OpeningDate', 'ClosingDate', 'VilleId', 'CategorieId', 'GeoCoordinateX', 'GeoCoordinateY', 'VideoPath', 'Image360Path', 'Capacite', 'PlanPath', 'Vignette', 'Related1', 'Related2', 'CreatedAt', 'UpdatedAt', 'Active', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'slug', 'name', 'title', 'address1', 'address2', 'zip', 'city', 'mail', 'countryCode', 'phone1', 'phone2', 'fax', 'openingDate', 'closingDate', 'villeId', 'categorieId', 'geoCoordinateX', 'geoCoordinateY', 'videoPath', 'image360Path', 'capacite', 'planPath', 'vignette', 'related1', 'related2', 'createdAt', 'updatedAt', 'active', ),
-        BasePeer::TYPE_COLNAME => array (EtablissementPeer::ID, EtablissementPeer::CODE, EtablissementPeer::SLUG, EtablissementPeer::NAME, EtablissementPeer::TITLE, EtablissementPeer::ADDRESS1, EtablissementPeer::ADDRESS2, EtablissementPeer::ZIP, EtablissementPeer::CITY, EtablissementPeer::MAIL, EtablissementPeer::COUNTRY_CODE, EtablissementPeer::PHONE1, EtablissementPeer::PHONE2, EtablissementPeer::FAX, EtablissementPeer::OPENING_DATE, EtablissementPeer::CLOSING_DATE, EtablissementPeer::VILLE_ID, EtablissementPeer::CATEGORIE_ID, EtablissementPeer::GEO_COORDINATE_X, EtablissementPeer::GEO_COORDINATE_Y, EtablissementPeer::VIDEO_PATH, EtablissementPeer::IMAGE_360_PATH, EtablissementPeer::CAPACITE, EtablissementPeer::PLAN_PATH, EtablissementPeer::VIGNETTE, EtablissementPeer::RELATED_1, EtablissementPeer::RELATED_2, EtablissementPeer::CREATED_AT, EtablissementPeer::UPDATED_AT, EtablissementPeer::ACTIVE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'SLUG', 'NAME', 'TITLE', 'ADDRESS1', 'ADDRESS2', 'ZIP', 'CITY', 'MAIL', 'COUNTRY_CODE', 'PHONE1', 'PHONE2', 'FAX', 'OPENING_DATE', 'CLOSING_DATE', 'VILLE_ID', 'CATEGORIE_ID', 'GEO_COORDINATE_X', 'GEO_COORDINATE_Y', 'VIDEO_PATH', 'IMAGE_360_PATH', 'CAPACITE', 'PLAN_PATH', 'VIGNETTE', 'RELATED_1', 'RELATED_2', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'slug', 'name', 'title', 'address1', 'address2', 'zip', 'city', 'mail', 'country_code', 'phone1', 'phone2', 'fax', 'opening_date', 'closing_date', 'ville_id', 'categorie_id', 'geo_coordinate_x', 'geo_coordinate_y', 'video_path', 'image_360_path', 'capacite', 'plan_path', 'vignette', 'related_1', 'related_2', 'created_at', 'updated_at', 'active', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'Slug', 'Name', 'Title', 'Address1', 'Address2', 'Zip', 'City', 'Mail', 'CountryCode', 'Phone1', 'Phone2', 'Fax', 'OpeningDate', 'ClosingDate', 'VilleId', 'DepartementId', 'CategorieId', 'GeoCoordinateX', 'GeoCoordinateY', 'VideoPath', 'Image360Path', 'Capacite', 'PlanPath', 'Vignette', 'Related1', 'Related2', 'CreatedAt', 'UpdatedAt', 'Active', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'slug', 'name', 'title', 'address1', 'address2', 'zip', 'city', 'mail', 'countryCode', 'phone1', 'phone2', 'fax', 'openingDate', 'closingDate', 'villeId', 'departementId', 'categorieId', 'geoCoordinateX', 'geoCoordinateY', 'videoPath', 'image360Path', 'capacite', 'planPath', 'vignette', 'related1', 'related2', 'createdAt', 'updatedAt', 'active', ),
+        BasePeer::TYPE_COLNAME => array (EtablissementPeer::ID, EtablissementPeer::CODE, EtablissementPeer::SLUG, EtablissementPeer::NAME, EtablissementPeer::TITLE, EtablissementPeer::ADDRESS1, EtablissementPeer::ADDRESS2, EtablissementPeer::ZIP, EtablissementPeer::CITY, EtablissementPeer::MAIL, EtablissementPeer::COUNTRY_CODE, EtablissementPeer::PHONE1, EtablissementPeer::PHONE2, EtablissementPeer::FAX, EtablissementPeer::OPENING_DATE, EtablissementPeer::CLOSING_DATE, EtablissementPeer::VILLE_ID, EtablissementPeer::DEPARTEMENT_ID, EtablissementPeer::CATEGORIE_ID, EtablissementPeer::GEO_COORDINATE_X, EtablissementPeer::GEO_COORDINATE_Y, EtablissementPeer::VIDEO_PATH, EtablissementPeer::IMAGE_360_PATH, EtablissementPeer::CAPACITE, EtablissementPeer::PLAN_PATH, EtablissementPeer::VIGNETTE, EtablissementPeer::RELATED_1, EtablissementPeer::RELATED_2, EtablissementPeer::CREATED_AT, EtablissementPeer::UPDATED_AT, EtablissementPeer::ACTIVE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'SLUG', 'NAME', 'TITLE', 'ADDRESS1', 'ADDRESS2', 'ZIP', 'CITY', 'MAIL', 'COUNTRY_CODE', 'PHONE1', 'PHONE2', 'FAX', 'OPENING_DATE', 'CLOSING_DATE', 'VILLE_ID', 'DEPARTEMENT_ID', 'CATEGORIE_ID', 'GEO_COORDINATE_X', 'GEO_COORDINATE_Y', 'VIDEO_PATH', 'IMAGE_360_PATH', 'CAPACITE', 'PLAN_PATH', 'VIGNETTE', 'RELATED_1', 'RELATED_2', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'slug', 'name', 'title', 'address1', 'address2', 'zip', 'city', 'mail', 'country_code', 'phone1', 'phone2', 'fax', 'opening_date', 'closing_date', 'ville_id', 'departement_id', 'categorie_id', 'geo_coordinate_x', 'geo_coordinate_y', 'video_path', 'image_360_path', 'capacite', 'plan_path', 'vignette', 'related_1', 'related_2', 'created_at', 'updated_at', 'active', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, )
     );
 
     /**
@@ -191,12 +195,12 @@ abstract class BaseEtablissementPeer
      * e.g. EtablissementPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'Slug' => 2, 'Name' => 3, 'Title' => 4, 'Address1' => 5, 'Address2' => 6, 'Zip' => 7, 'City' => 8, 'Mail' => 9, 'CountryCode' => 10, 'Phone1' => 11, 'Phone2' => 12, 'Fax' => 13, 'OpeningDate' => 14, 'ClosingDate' => 15, 'VilleId' => 16, 'CategorieId' => 17, 'GeoCoordinateX' => 18, 'GeoCoordinateY' => 19, 'VideoPath' => 20, 'Image360Path' => 21, 'Capacite' => 22, 'PlanPath' => 23, 'Vignette' => 24, 'Related1' => 25, 'Related2' => 26, 'CreatedAt' => 27, 'UpdatedAt' => 28, 'Active' => 29, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'slug' => 2, 'name' => 3, 'title' => 4, 'address1' => 5, 'address2' => 6, 'zip' => 7, 'city' => 8, 'mail' => 9, 'countryCode' => 10, 'phone1' => 11, 'phone2' => 12, 'fax' => 13, 'openingDate' => 14, 'closingDate' => 15, 'villeId' => 16, 'categorieId' => 17, 'geoCoordinateX' => 18, 'geoCoordinateY' => 19, 'videoPath' => 20, 'image360Path' => 21, 'capacite' => 22, 'planPath' => 23, 'vignette' => 24, 'related1' => 25, 'related2' => 26, 'createdAt' => 27, 'updatedAt' => 28, 'active' => 29, ),
-        BasePeer::TYPE_COLNAME => array (EtablissementPeer::ID => 0, EtablissementPeer::CODE => 1, EtablissementPeer::SLUG => 2, EtablissementPeer::NAME => 3, EtablissementPeer::TITLE => 4, EtablissementPeer::ADDRESS1 => 5, EtablissementPeer::ADDRESS2 => 6, EtablissementPeer::ZIP => 7, EtablissementPeer::CITY => 8, EtablissementPeer::MAIL => 9, EtablissementPeer::COUNTRY_CODE => 10, EtablissementPeer::PHONE1 => 11, EtablissementPeer::PHONE2 => 12, EtablissementPeer::FAX => 13, EtablissementPeer::OPENING_DATE => 14, EtablissementPeer::CLOSING_DATE => 15, EtablissementPeer::VILLE_ID => 16, EtablissementPeer::CATEGORIE_ID => 17, EtablissementPeer::GEO_COORDINATE_X => 18, EtablissementPeer::GEO_COORDINATE_Y => 19, EtablissementPeer::VIDEO_PATH => 20, EtablissementPeer::IMAGE_360_PATH => 21, EtablissementPeer::CAPACITE => 22, EtablissementPeer::PLAN_PATH => 23, EtablissementPeer::VIGNETTE => 24, EtablissementPeer::RELATED_1 => 25, EtablissementPeer::RELATED_2 => 26, EtablissementPeer::CREATED_AT => 27, EtablissementPeer::UPDATED_AT => 28, EtablissementPeer::ACTIVE => 29, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'SLUG' => 2, 'NAME' => 3, 'TITLE' => 4, 'ADDRESS1' => 5, 'ADDRESS2' => 6, 'ZIP' => 7, 'CITY' => 8, 'MAIL' => 9, 'COUNTRY_CODE' => 10, 'PHONE1' => 11, 'PHONE2' => 12, 'FAX' => 13, 'OPENING_DATE' => 14, 'CLOSING_DATE' => 15, 'VILLE_ID' => 16, 'CATEGORIE_ID' => 17, 'GEO_COORDINATE_X' => 18, 'GEO_COORDINATE_Y' => 19, 'VIDEO_PATH' => 20, 'IMAGE_360_PATH' => 21, 'CAPACITE' => 22, 'PLAN_PATH' => 23, 'VIGNETTE' => 24, 'RELATED_1' => 25, 'RELATED_2' => 26, 'CREATED_AT' => 27, 'UPDATED_AT' => 28, 'ACTIVE' => 29, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'slug' => 2, 'name' => 3, 'title' => 4, 'address1' => 5, 'address2' => 6, 'zip' => 7, 'city' => 8, 'mail' => 9, 'country_code' => 10, 'phone1' => 11, 'phone2' => 12, 'fax' => 13, 'opening_date' => 14, 'closing_date' => 15, 'ville_id' => 16, 'categorie_id' => 17, 'geo_coordinate_x' => 18, 'geo_coordinate_y' => 19, 'video_path' => 20, 'image_360_path' => 21, 'capacite' => 22, 'plan_path' => 23, 'vignette' => 24, 'related_1' => 25, 'related_2' => 26, 'created_at' => 27, 'updated_at' => 28, 'active' => 29, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'Slug' => 2, 'Name' => 3, 'Title' => 4, 'Address1' => 5, 'Address2' => 6, 'Zip' => 7, 'City' => 8, 'Mail' => 9, 'CountryCode' => 10, 'Phone1' => 11, 'Phone2' => 12, 'Fax' => 13, 'OpeningDate' => 14, 'ClosingDate' => 15, 'VilleId' => 16, 'DepartementId' => 17, 'CategorieId' => 18, 'GeoCoordinateX' => 19, 'GeoCoordinateY' => 20, 'VideoPath' => 21, 'Image360Path' => 22, 'Capacite' => 23, 'PlanPath' => 24, 'Vignette' => 25, 'Related1' => 26, 'Related2' => 27, 'CreatedAt' => 28, 'UpdatedAt' => 29, 'Active' => 30, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'slug' => 2, 'name' => 3, 'title' => 4, 'address1' => 5, 'address2' => 6, 'zip' => 7, 'city' => 8, 'mail' => 9, 'countryCode' => 10, 'phone1' => 11, 'phone2' => 12, 'fax' => 13, 'openingDate' => 14, 'closingDate' => 15, 'villeId' => 16, 'departementId' => 17, 'categorieId' => 18, 'geoCoordinateX' => 19, 'geoCoordinateY' => 20, 'videoPath' => 21, 'image360Path' => 22, 'capacite' => 23, 'planPath' => 24, 'vignette' => 25, 'related1' => 26, 'related2' => 27, 'createdAt' => 28, 'updatedAt' => 29, 'active' => 30, ),
+        BasePeer::TYPE_COLNAME => array (EtablissementPeer::ID => 0, EtablissementPeer::CODE => 1, EtablissementPeer::SLUG => 2, EtablissementPeer::NAME => 3, EtablissementPeer::TITLE => 4, EtablissementPeer::ADDRESS1 => 5, EtablissementPeer::ADDRESS2 => 6, EtablissementPeer::ZIP => 7, EtablissementPeer::CITY => 8, EtablissementPeer::MAIL => 9, EtablissementPeer::COUNTRY_CODE => 10, EtablissementPeer::PHONE1 => 11, EtablissementPeer::PHONE2 => 12, EtablissementPeer::FAX => 13, EtablissementPeer::OPENING_DATE => 14, EtablissementPeer::CLOSING_DATE => 15, EtablissementPeer::VILLE_ID => 16, EtablissementPeer::DEPARTEMENT_ID => 17, EtablissementPeer::CATEGORIE_ID => 18, EtablissementPeer::GEO_COORDINATE_X => 19, EtablissementPeer::GEO_COORDINATE_Y => 20, EtablissementPeer::VIDEO_PATH => 21, EtablissementPeer::IMAGE_360_PATH => 22, EtablissementPeer::CAPACITE => 23, EtablissementPeer::PLAN_PATH => 24, EtablissementPeer::VIGNETTE => 25, EtablissementPeer::RELATED_1 => 26, EtablissementPeer::RELATED_2 => 27, EtablissementPeer::CREATED_AT => 28, EtablissementPeer::UPDATED_AT => 29, EtablissementPeer::ACTIVE => 30, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'SLUG' => 2, 'NAME' => 3, 'TITLE' => 4, 'ADDRESS1' => 5, 'ADDRESS2' => 6, 'ZIP' => 7, 'CITY' => 8, 'MAIL' => 9, 'COUNTRY_CODE' => 10, 'PHONE1' => 11, 'PHONE2' => 12, 'FAX' => 13, 'OPENING_DATE' => 14, 'CLOSING_DATE' => 15, 'VILLE_ID' => 16, 'DEPARTEMENT_ID' => 17, 'CATEGORIE_ID' => 18, 'GEO_COORDINATE_X' => 19, 'GEO_COORDINATE_Y' => 20, 'VIDEO_PATH' => 21, 'IMAGE_360_PATH' => 22, 'CAPACITE' => 23, 'PLAN_PATH' => 24, 'VIGNETTE' => 25, 'RELATED_1' => 26, 'RELATED_2' => 27, 'CREATED_AT' => 28, 'UPDATED_AT' => 29, 'ACTIVE' => 30, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'slug' => 2, 'name' => 3, 'title' => 4, 'address1' => 5, 'address2' => 6, 'zip' => 7, 'city' => 8, 'mail' => 9, 'country_code' => 10, 'phone1' => 11, 'phone2' => 12, 'fax' => 13, 'opening_date' => 14, 'closing_date' => 15, 'ville_id' => 16, 'departement_id' => 17, 'categorie_id' => 18, 'geo_coordinate_x' => 19, 'geo_coordinate_y' => 20, 'video_path' => 21, 'image_360_path' => 22, 'capacite' => 23, 'plan_path' => 24, 'vignette' => 25, 'related_1' => 26, 'related_2' => 27, 'created_at' => 28, 'updated_at' => 29, 'active' => 30, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, )
     );
 
     /**
@@ -287,6 +291,7 @@ abstract class BaseEtablissementPeer
             $criteria->addSelectColumn(EtablissementPeer::OPENING_DATE);
             $criteria->addSelectColumn(EtablissementPeer::CLOSING_DATE);
             $criteria->addSelectColumn(EtablissementPeer::VILLE_ID);
+            $criteria->addSelectColumn(EtablissementPeer::DEPARTEMENT_ID);
             $criteria->addSelectColumn(EtablissementPeer::CATEGORIE_ID);
             $criteria->addSelectColumn(EtablissementPeer::GEO_COORDINATE_X);
             $criteria->addSelectColumn(EtablissementPeer::GEO_COORDINATE_Y);
@@ -318,6 +323,7 @@ abstract class BaseEtablissementPeer
             $criteria->addSelectColumn($alias . '.opening_date');
             $criteria->addSelectColumn($alias . '.closing_date');
             $criteria->addSelectColumn($alias . '.ville_id');
+            $criteria->addSelectColumn($alias . '.departement_id');
             $criteria->addSelectColumn($alias . '.categorie_id');
             $criteria->addSelectColumn($alias . '.geo_coordinate_x');
             $criteria->addSelectColumn($alias . '.geo_coordinate_y');
@@ -727,6 +733,57 @@ abstract class BaseEtablissementPeer
 
 
     /**
+     * Returns the number of rows matching criteria, joining the related Departement table
+     *
+     * @param      Criteria $criteria
+     * @param      boolean $distinct Whether to select only distinct columns; deprecated: use Criteria->setDistinct() instead.
+     * @param      PropelPDO $con
+     * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
+     * @return int Number of matching rows.
+     */
+    public static function doCountJoinDepartement(Criteria $criteria, $distinct = false, PropelPDO $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    {
+        // we're going to modify criteria, so copy it first
+        $criteria = clone $criteria;
+
+        // We need to set the primary table name, since in the case that there are no WHERE columns
+        // it will be impossible for the BasePeer::createSelectSql() method to determine which
+        // tables go into the FROM clause.
+        $criteria->setPrimaryTableName(EtablissementPeer::TABLE_NAME);
+
+        if ($distinct && !in_array(Criteria::DISTINCT, $criteria->getSelectModifiers())) {
+            $criteria->setDistinct();
+        }
+
+        if (!$criteria->hasSelectClause()) {
+            EtablissementPeer::addSelectColumns($criteria);
+        }
+
+        $criteria->clearOrderByColumns(); // ORDER BY won't ever affect the count
+
+        // Set the correct dbName
+        $criteria->setDbName(EtablissementPeer::DATABASE_NAME);
+
+        if ($con === null) {
+            $con = Propel::getConnection(EtablissementPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+        }
+
+        $criteria->addJoin(EtablissementPeer::DEPARTEMENT_ID, DepartementPeer::ID, $join_behavior);
+
+        $stmt = BasePeer::doCount($criteria, $con);
+
+        if ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+            $count = (int) $row[0];
+        } else {
+            $count = 0; // no rows returned; we infer that means 0 matches.
+        }
+        $stmt->closeCursor();
+
+        return $count;
+    }
+
+
+    /**
      * Returns the number of rows matching criteria, joining the related Categorie table
      *
      * @param      Criteria $criteria
@@ -845,6 +902,73 @@ abstract class BaseEtablissementPeer
 
 
     /**
+     * Selects a collection of Etablissement objects pre-filled with their Departement objects.
+     * @param      Criteria  $criteria
+     * @param      PropelPDO $con
+     * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
+     * @return array           Array of Etablissement objects.
+     * @throws PropelException Any exceptions caught during processing will be
+     *		 rethrown wrapped into a PropelException.
+     */
+    public static function doSelectJoinDepartement(Criteria $criteria, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    {
+        $criteria = clone $criteria;
+
+        // Set the correct dbName if it has not been overridden
+        if ($criteria->getDbName() == Propel::getDefaultDB()) {
+            $criteria->setDbName(EtablissementPeer::DATABASE_NAME);
+        }
+
+        EtablissementPeer::addSelectColumns($criteria);
+        $startcol = EtablissementPeer::NUM_HYDRATE_COLUMNS;
+        DepartementPeer::addSelectColumns($criteria);
+
+        $criteria->addJoin(EtablissementPeer::DEPARTEMENT_ID, DepartementPeer::ID, $join_behavior);
+
+        $stmt = BasePeer::doSelect($criteria, $con);
+        $results = array();
+
+        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+            $key1 = EtablissementPeer::getPrimaryKeyHashFromRow($row, 0);
+            if (null !== ($obj1 = EtablissementPeer::getInstanceFromPool($key1))) {
+                // We no longer rehydrate the object, since this can cause data loss.
+                // See http://www.propelorm.org/ticket/509
+                // $obj1->hydrate($row, 0, true); // rehydrate
+            } else {
+
+                $cls = EtablissementPeer::getOMClass();
+
+                $obj1 = new $cls();
+                $obj1->hydrate($row);
+                EtablissementPeer::addInstanceToPool($obj1, $key1);
+            } // if $obj1 already loaded
+
+            $key2 = DepartementPeer::getPrimaryKeyHashFromRow($row, $startcol);
+            if ($key2 !== null) {
+                $obj2 = DepartementPeer::getInstanceFromPool($key2);
+                if (!$obj2) {
+
+                    $cls = DepartementPeer::getOMClass();
+
+                    $obj2 = new $cls();
+                    $obj2->hydrate($row, $startcol);
+                    DepartementPeer::addInstanceToPool($obj2, $key2);
+                } // if obj2 already loaded
+
+                // Add the $obj1 (Etablissement) to $obj2 (Departement)
+                $obj2->addEtablissement($obj1);
+
+            } // if joined row was not null
+
+            $results[] = $obj1;
+        }
+        $stmt->closeCursor();
+
+        return $results;
+    }
+
+
+    /**
      * Selects a collection of Etablissement objects pre-filled with their Categorie objects.
      * @param      Criteria  $criteria
      * @param      PropelPDO $con
@@ -949,6 +1073,8 @@ abstract class BaseEtablissementPeer
 
         $criteria->addJoin(EtablissementPeer::VILLE_ID, VillePeer::ID, $join_behavior);
 
+        $criteria->addJoin(EtablissementPeer::DEPARTEMENT_ID, DepartementPeer::ID, $join_behavior);
+
         $criteria->addJoin(EtablissementPeer::CATEGORIE_ID, CategoriePeer::ID, $join_behavior);
 
         $stmt = BasePeer::doCount($criteria, $con);
@@ -988,10 +1114,15 @@ abstract class BaseEtablissementPeer
         VillePeer::addSelectColumns($criteria);
         $startcol3 = $startcol2 + VillePeer::NUM_HYDRATE_COLUMNS;
 
+        DepartementPeer::addSelectColumns($criteria);
+        $startcol4 = $startcol3 + DepartementPeer::NUM_HYDRATE_COLUMNS;
+
         CategoriePeer::addSelectColumns($criteria);
-        $startcol4 = $startcol3 + CategoriePeer::NUM_HYDRATE_COLUMNS;
+        $startcol5 = $startcol4 + CategoriePeer::NUM_HYDRATE_COLUMNS;
 
         $criteria->addJoin(EtablissementPeer::VILLE_ID, VillePeer::ID, $join_behavior);
+
+        $criteria->addJoin(EtablissementPeer::DEPARTEMENT_ID, DepartementPeer::ID, $join_behavior);
 
         $criteria->addJoin(EtablissementPeer::CATEGORIE_ID, CategoriePeer::ID, $join_behavior);
 
@@ -1030,22 +1161,40 @@ abstract class BaseEtablissementPeer
                 $obj2->addEtablissement($obj1);
             } // if joined row not null
 
-            // Add objects for joined Categorie rows
+            // Add objects for joined Departement rows
 
-            $key3 = CategoriePeer::getPrimaryKeyHashFromRow($row, $startcol3);
+            $key3 = DepartementPeer::getPrimaryKeyHashFromRow($row, $startcol3);
             if ($key3 !== null) {
-                $obj3 = CategoriePeer::getInstanceFromPool($key3);
+                $obj3 = DepartementPeer::getInstanceFromPool($key3);
                 if (!$obj3) {
 
-                    $cls = CategoriePeer::getOMClass();
+                    $cls = DepartementPeer::getOMClass();
 
                     $obj3 = new $cls();
                     $obj3->hydrate($row, $startcol3);
-                    CategoriePeer::addInstanceToPool($obj3, $key3);
+                    DepartementPeer::addInstanceToPool($obj3, $key3);
                 } // if obj3 loaded
 
-                // Add the $obj1 (Etablissement) to the collection in $obj3 (Categorie)
+                // Add the $obj1 (Etablissement) to the collection in $obj3 (Departement)
                 $obj3->addEtablissement($obj1);
+            } // if joined row not null
+
+            // Add objects for joined Categorie rows
+
+            $key4 = CategoriePeer::getPrimaryKeyHashFromRow($row, $startcol4);
+            if ($key4 !== null) {
+                $obj4 = CategoriePeer::getInstanceFromPool($key4);
+                if (!$obj4) {
+
+                    $cls = CategoriePeer::getOMClass();
+
+                    $obj4 = new $cls();
+                    $obj4->hydrate($row, $startcol4);
+                    CategoriePeer::addInstanceToPool($obj4, $key4);
+                } // if obj4 loaded
+
+                // Add the $obj1 (Etablissement) to the collection in $obj4 (Categorie)
+                $obj4->addEtablissement($obj1);
             } // if joined row not null
 
             $results[] = $obj1;
@@ -1091,6 +1240,61 @@ abstract class BaseEtablissementPeer
         if ($con === null) {
             $con = Propel::getConnection(EtablissementPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
+
+        $criteria->addJoin(EtablissementPeer::DEPARTEMENT_ID, DepartementPeer::ID, $join_behavior);
+
+        $criteria->addJoin(EtablissementPeer::CATEGORIE_ID, CategoriePeer::ID, $join_behavior);
+
+        $stmt = BasePeer::doCount($criteria, $con);
+
+        if ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+            $count = (int) $row[0];
+        } else {
+            $count = 0; // no rows returned; we infer that means 0 matches.
+        }
+        $stmt->closeCursor();
+
+        return $count;
+    }
+
+
+    /**
+     * Returns the number of rows matching criteria, joining the related Departement table
+     *
+     * @param      Criteria $criteria
+     * @param      boolean $distinct Whether to select only distinct columns; deprecated: use Criteria->setDistinct() instead.
+     * @param      PropelPDO $con
+     * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
+     * @return int Number of matching rows.
+     */
+    public static function doCountJoinAllExceptDepartement(Criteria $criteria, $distinct = false, PropelPDO $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    {
+        // we're going to modify criteria, so copy it first
+        $criteria = clone $criteria;
+
+        // We need to set the primary table name, since in the case that there are no WHERE columns
+        // it will be impossible for the BasePeer::createSelectSql() method to determine which
+        // tables go into the FROM clause.
+        $criteria->setPrimaryTableName(EtablissementPeer::TABLE_NAME);
+
+        if ($distinct && !in_array(Criteria::DISTINCT, $criteria->getSelectModifiers())) {
+            $criteria->setDistinct();
+        }
+
+        if (!$criteria->hasSelectClause()) {
+            EtablissementPeer::addSelectColumns($criteria);
+        }
+
+        $criteria->clearOrderByColumns(); // ORDER BY should not affect count
+
+        // Set the correct dbName
+        $criteria->setDbName(EtablissementPeer::DATABASE_NAME);
+
+        if ($con === null) {
+            $con = Propel::getConnection(EtablissementPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+        }
+
+        $criteria->addJoin(EtablissementPeer::VILLE_ID, VillePeer::ID, $join_behavior);
 
         $criteria->addJoin(EtablissementPeer::CATEGORIE_ID, CategoriePeer::ID, $join_behavior);
 
@@ -1145,6 +1349,8 @@ abstract class BaseEtablissementPeer
 
         $criteria->addJoin(EtablissementPeer::VILLE_ID, VillePeer::ID, $join_behavior);
 
+        $criteria->addJoin(EtablissementPeer::DEPARTEMENT_ID, DepartementPeer::ID, $join_behavior);
+
         $stmt = BasePeer::doCount($criteria, $con);
 
         if ($row = $stmt->fetch(PDO::FETCH_NUM)) {
@@ -1195,6 +1401,8 @@ abstract class BaseEtablissementPeer
         }
 
         $criteria->addJoin(EtablissementPeer::VILLE_ID, VillePeer::ID, $join_behavior);
+
+        $criteria->addJoin(EtablissementPeer::DEPARTEMENT_ID, DepartementPeer::ID, $join_behavior);
 
         $criteria->addJoin(EtablissementPeer::CATEGORIE_ID, CategoriePeer::ID, $join_behavior);
 
@@ -1249,6 +1457,8 @@ abstract class BaseEtablissementPeer
 
         $criteria->addJoin(EtablissementPeer::VILLE_ID, VillePeer::ID, $join_behavior);
 
+        $criteria->addJoin(EtablissementPeer::DEPARTEMENT_ID, DepartementPeer::ID, $join_behavior);
+
         $criteria->addJoin(EtablissementPeer::CATEGORIE_ID, CategoriePeer::ID, $join_behavior);
 
         $stmt = BasePeer::doCount($criteria, $con);
@@ -1288,8 +1498,13 @@ abstract class BaseEtablissementPeer
         EtablissementPeer::addSelectColumns($criteria);
         $startcol2 = EtablissementPeer::NUM_HYDRATE_COLUMNS;
 
+        DepartementPeer::addSelectColumns($criteria);
+        $startcol3 = $startcol2 + DepartementPeer::NUM_HYDRATE_COLUMNS;
+
         CategoriePeer::addSelectColumns($criteria);
-        $startcol3 = $startcol2 + CategoriePeer::NUM_HYDRATE_COLUMNS;
+        $startcol4 = $startcol3 + CategoriePeer::NUM_HYDRATE_COLUMNS;
+
+        $criteria->addJoin(EtablissementPeer::DEPARTEMENT_ID, DepartementPeer::ID, $join_behavior);
 
         $criteria->addJoin(EtablissementPeer::CATEGORIE_ID, CategoriePeer::ID, $join_behavior);
 
@@ -1311,22 +1526,139 @@ abstract class BaseEtablissementPeer
                 EtablissementPeer::addInstanceToPool($obj1, $key1);
             } // if obj1 already loaded
 
-                // Add objects for joined Categorie rows
+                // Add objects for joined Departement rows
 
-                $key2 = CategoriePeer::getPrimaryKeyHashFromRow($row, $startcol2);
+                $key2 = DepartementPeer::getPrimaryKeyHashFromRow($row, $startcol2);
                 if ($key2 !== null) {
-                    $obj2 = CategoriePeer::getInstanceFromPool($key2);
+                    $obj2 = DepartementPeer::getInstanceFromPool($key2);
                     if (!$obj2) {
 
-                        $cls = CategoriePeer::getOMClass();
+                        $cls = DepartementPeer::getOMClass();
 
                     $obj2 = new $cls();
                     $obj2->hydrate($row, $startcol2);
-                    CategoriePeer::addInstanceToPool($obj2, $key2);
+                    DepartementPeer::addInstanceToPool($obj2, $key2);
                 } // if $obj2 already loaded
 
-                // Add the $obj1 (Etablissement) to the collection in $obj2 (Categorie)
+                // Add the $obj1 (Etablissement) to the collection in $obj2 (Departement)
                 $obj2->addEtablissement($obj1);
+
+            } // if joined row is not null
+
+                // Add objects for joined Categorie rows
+
+                $key3 = CategoriePeer::getPrimaryKeyHashFromRow($row, $startcol3);
+                if ($key3 !== null) {
+                    $obj3 = CategoriePeer::getInstanceFromPool($key3);
+                    if (!$obj3) {
+
+                        $cls = CategoriePeer::getOMClass();
+
+                    $obj3 = new $cls();
+                    $obj3->hydrate($row, $startcol3);
+                    CategoriePeer::addInstanceToPool($obj3, $key3);
+                } // if $obj3 already loaded
+
+                // Add the $obj1 (Etablissement) to the collection in $obj3 (Categorie)
+                $obj3->addEtablissement($obj1);
+
+            } // if joined row is not null
+
+            $results[] = $obj1;
+        }
+        $stmt->closeCursor();
+
+        return $results;
+    }
+
+
+    /**
+     * Selects a collection of Etablissement objects pre-filled with all related objects except Departement.
+     *
+     * @param      Criteria  $criteria
+     * @param      PropelPDO $con
+     * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
+     * @return array           Array of Etablissement objects.
+     * @throws PropelException Any exceptions caught during processing will be
+     *		 rethrown wrapped into a PropelException.
+     */
+    public static function doSelectJoinAllExceptDepartement(Criteria $criteria, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    {
+        $criteria = clone $criteria;
+
+        // Set the correct dbName if it has not been overridden
+        // $criteria->getDbName() will return the same object if not set to another value
+        // so == check is okay and faster
+        if ($criteria->getDbName() == Propel::getDefaultDB()) {
+            $criteria->setDbName(EtablissementPeer::DATABASE_NAME);
+        }
+
+        EtablissementPeer::addSelectColumns($criteria);
+        $startcol2 = EtablissementPeer::NUM_HYDRATE_COLUMNS;
+
+        VillePeer::addSelectColumns($criteria);
+        $startcol3 = $startcol2 + VillePeer::NUM_HYDRATE_COLUMNS;
+
+        CategoriePeer::addSelectColumns($criteria);
+        $startcol4 = $startcol3 + CategoriePeer::NUM_HYDRATE_COLUMNS;
+
+        $criteria->addJoin(EtablissementPeer::VILLE_ID, VillePeer::ID, $join_behavior);
+
+        $criteria->addJoin(EtablissementPeer::CATEGORIE_ID, CategoriePeer::ID, $join_behavior);
+
+
+        $stmt = BasePeer::doSelect($criteria, $con);
+        $results = array();
+
+        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+            $key1 = EtablissementPeer::getPrimaryKeyHashFromRow($row, 0);
+            if (null !== ($obj1 = EtablissementPeer::getInstanceFromPool($key1))) {
+                // We no longer rehydrate the object, since this can cause data loss.
+                // See http://www.propelorm.org/ticket/509
+                // $obj1->hydrate($row, 0, true); // rehydrate
+            } else {
+                $cls = EtablissementPeer::getOMClass();
+
+                $obj1 = new $cls();
+                $obj1->hydrate($row);
+                EtablissementPeer::addInstanceToPool($obj1, $key1);
+            } // if obj1 already loaded
+
+                // Add objects for joined Ville rows
+
+                $key2 = VillePeer::getPrimaryKeyHashFromRow($row, $startcol2);
+                if ($key2 !== null) {
+                    $obj2 = VillePeer::getInstanceFromPool($key2);
+                    if (!$obj2) {
+
+                        $cls = VillePeer::getOMClass();
+
+                    $obj2 = new $cls();
+                    $obj2->hydrate($row, $startcol2);
+                    VillePeer::addInstanceToPool($obj2, $key2);
+                } // if $obj2 already loaded
+
+                // Add the $obj1 (Etablissement) to the collection in $obj2 (Ville)
+                $obj2->addEtablissement($obj1);
+
+            } // if joined row is not null
+
+                // Add objects for joined Categorie rows
+
+                $key3 = CategoriePeer::getPrimaryKeyHashFromRow($row, $startcol3);
+                if ($key3 !== null) {
+                    $obj3 = CategoriePeer::getInstanceFromPool($key3);
+                    if (!$obj3) {
+
+                        $cls = CategoriePeer::getOMClass();
+
+                    $obj3 = new $cls();
+                    $obj3->hydrate($row, $startcol3);
+                    CategoriePeer::addInstanceToPool($obj3, $key3);
+                } // if $obj3 already loaded
+
+                // Add the $obj1 (Etablissement) to the collection in $obj3 (Categorie)
+                $obj3->addEtablissement($obj1);
 
             } // if joined row is not null
 
@@ -1365,7 +1697,12 @@ abstract class BaseEtablissementPeer
         VillePeer::addSelectColumns($criteria);
         $startcol3 = $startcol2 + VillePeer::NUM_HYDRATE_COLUMNS;
 
+        DepartementPeer::addSelectColumns($criteria);
+        $startcol4 = $startcol3 + DepartementPeer::NUM_HYDRATE_COLUMNS;
+
         $criteria->addJoin(EtablissementPeer::VILLE_ID, VillePeer::ID, $join_behavior);
+
+        $criteria->addJoin(EtablissementPeer::DEPARTEMENT_ID, DepartementPeer::ID, $join_behavior);
 
 
         $stmt = BasePeer::doSelect($criteria, $con);
@@ -1401,6 +1738,25 @@ abstract class BaseEtablissementPeer
 
                 // Add the $obj1 (Etablissement) to the collection in $obj2 (Ville)
                 $obj2->addEtablissement($obj1);
+
+            } // if joined row is not null
+
+                // Add objects for joined Departement rows
+
+                $key3 = DepartementPeer::getPrimaryKeyHashFromRow($row, $startcol3);
+                if ($key3 !== null) {
+                    $obj3 = DepartementPeer::getInstanceFromPool($key3);
+                    if (!$obj3) {
+
+                        $cls = DepartementPeer::getOMClass();
+
+                    $obj3 = new $cls();
+                    $obj3->hydrate($row, $startcol3);
+                    DepartementPeer::addInstanceToPool($obj3, $key3);
+                } // if $obj3 already loaded
+
+                // Add the $obj1 (Etablissement) to the collection in $obj3 (Departement)
+                $obj3->addEtablissement($obj1);
 
             } // if joined row is not null
 
@@ -1439,10 +1795,15 @@ abstract class BaseEtablissementPeer
         VillePeer::addSelectColumns($criteria);
         $startcol3 = $startcol2 + VillePeer::NUM_HYDRATE_COLUMNS;
 
+        DepartementPeer::addSelectColumns($criteria);
+        $startcol4 = $startcol3 + DepartementPeer::NUM_HYDRATE_COLUMNS;
+
         CategoriePeer::addSelectColumns($criteria);
-        $startcol4 = $startcol3 + CategoriePeer::NUM_HYDRATE_COLUMNS;
+        $startcol5 = $startcol4 + CategoriePeer::NUM_HYDRATE_COLUMNS;
 
         $criteria->addJoin(EtablissementPeer::VILLE_ID, VillePeer::ID, $join_behavior);
+
+        $criteria->addJoin(EtablissementPeer::DEPARTEMENT_ID, DepartementPeer::ID, $join_behavior);
 
         $criteria->addJoin(EtablissementPeer::CATEGORIE_ID, CategoriePeer::ID, $join_behavior);
 
@@ -1483,22 +1844,41 @@ abstract class BaseEtablissementPeer
 
             } // if joined row is not null
 
-                // Add objects for joined Categorie rows
+                // Add objects for joined Departement rows
 
-                $key3 = CategoriePeer::getPrimaryKeyHashFromRow($row, $startcol3);
+                $key3 = DepartementPeer::getPrimaryKeyHashFromRow($row, $startcol3);
                 if ($key3 !== null) {
-                    $obj3 = CategoriePeer::getInstanceFromPool($key3);
+                    $obj3 = DepartementPeer::getInstanceFromPool($key3);
                     if (!$obj3) {
 
-                        $cls = CategoriePeer::getOMClass();
+                        $cls = DepartementPeer::getOMClass();
 
                     $obj3 = new $cls();
                     $obj3->hydrate($row, $startcol3);
-                    CategoriePeer::addInstanceToPool($obj3, $key3);
+                    DepartementPeer::addInstanceToPool($obj3, $key3);
                 } // if $obj3 already loaded
 
-                // Add the $obj1 (Etablissement) to the collection in $obj3 (Categorie)
+                // Add the $obj1 (Etablissement) to the collection in $obj3 (Departement)
                 $obj3->addEtablissement($obj1);
+
+            } // if joined row is not null
+
+                // Add objects for joined Categorie rows
+
+                $key4 = CategoriePeer::getPrimaryKeyHashFromRow($row, $startcol4);
+                if ($key4 !== null) {
+                    $obj4 = CategoriePeer::getInstanceFromPool($key4);
+                    if (!$obj4) {
+
+                        $cls = CategoriePeer::getOMClass();
+
+                    $obj4 = new $cls();
+                    $obj4->hydrate($row, $startcol4);
+                    CategoriePeer::addInstanceToPool($obj4, $key4);
+                } // if $obj4 already loaded
+
+                // Add the $obj1 (Etablissement) to the collection in $obj4 (Categorie)
+                $obj4->addEtablissement($obj1);
 
             } // if joined row is not null
 
@@ -1537,10 +1917,15 @@ abstract class BaseEtablissementPeer
         VillePeer::addSelectColumns($criteria);
         $startcol3 = $startcol2 + VillePeer::NUM_HYDRATE_COLUMNS;
 
+        DepartementPeer::addSelectColumns($criteria);
+        $startcol4 = $startcol3 + DepartementPeer::NUM_HYDRATE_COLUMNS;
+
         CategoriePeer::addSelectColumns($criteria);
-        $startcol4 = $startcol3 + CategoriePeer::NUM_HYDRATE_COLUMNS;
+        $startcol5 = $startcol4 + CategoriePeer::NUM_HYDRATE_COLUMNS;
 
         $criteria->addJoin(EtablissementPeer::VILLE_ID, VillePeer::ID, $join_behavior);
+
+        $criteria->addJoin(EtablissementPeer::DEPARTEMENT_ID, DepartementPeer::ID, $join_behavior);
 
         $criteria->addJoin(EtablissementPeer::CATEGORIE_ID, CategoriePeer::ID, $join_behavior);
 
@@ -1581,22 +1966,41 @@ abstract class BaseEtablissementPeer
 
             } // if joined row is not null
 
-                // Add objects for joined Categorie rows
+                // Add objects for joined Departement rows
 
-                $key3 = CategoriePeer::getPrimaryKeyHashFromRow($row, $startcol3);
+                $key3 = DepartementPeer::getPrimaryKeyHashFromRow($row, $startcol3);
                 if ($key3 !== null) {
-                    $obj3 = CategoriePeer::getInstanceFromPool($key3);
+                    $obj3 = DepartementPeer::getInstanceFromPool($key3);
                     if (!$obj3) {
 
-                        $cls = CategoriePeer::getOMClass();
+                        $cls = DepartementPeer::getOMClass();
 
                     $obj3 = new $cls();
                     $obj3->hydrate($row, $startcol3);
-                    CategoriePeer::addInstanceToPool($obj3, $key3);
+                    DepartementPeer::addInstanceToPool($obj3, $key3);
                 } // if $obj3 already loaded
 
-                // Add the $obj1 (Etablissement) to the collection in $obj3 (Categorie)
+                // Add the $obj1 (Etablissement) to the collection in $obj3 (Departement)
                 $obj3->addEtablissement($obj1);
+
+            } // if joined row is not null
+
+                // Add objects for joined Categorie rows
+
+                $key4 = CategoriePeer::getPrimaryKeyHashFromRow($row, $startcol4);
+                if ($key4 !== null) {
+                    $obj4 = CategoriePeer::getInstanceFromPool($key4);
+                    if (!$obj4) {
+
+                        $cls = CategoriePeer::getOMClass();
+
+                    $obj4 = new $cls();
+                    $obj4->hydrate($row, $startcol4);
+                    CategoriePeer::addInstanceToPool($obj4, $key4);
+                } // if $obj4 already loaded
+
+                // Add the $obj1 (Etablissement) to the collection in $obj4 (Categorie)
+                $obj4->addEtablissement($obj1);
 
             } // if joined row is not null
 
@@ -1904,6 +2308,20 @@ abstract class BaseEtablissementPeer
         return $objs;
     }
 
+    // crudable behavior
+
+    /**
+     * The default locale to use for translations
+     * @var        string
+     */
+    public static function getMetadata(PropelPDO $con = null)
+    {
+        return \Cungfoo\Model\MetadataQuery::create()
+            ->joinWithI18n()
+            ->filterByTableRef(EtablissementPeer::TABLE_NAME)
+            ->findOne()
+        ;
+    }
 } // BaseEtablissementPeer
 
 // This is the static code needed to register the TableMap for this table with the main Propel class.

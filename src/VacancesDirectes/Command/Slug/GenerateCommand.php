@@ -48,6 +48,12 @@ class GenerateCommand extends BaseCommand
             $this->generateTheme(\Cungfoo\Model\RegionQuery::create(), $languages, $con);
             $output->writeln(sprintf('<info>%s</info> slug added on <comment>region</comment> table.', $this->getName()));
 
+            $this->generateTheme(\Cungfoo\Model\RegionRefQuery::create(), $languages, $con);
+            $output->writeln(sprintf('<info>%s</info> slug added on <comment>region ref</comment> table.', $this->getName()));
+
+            $this->generateTheme(\Cungfoo\Model\DepartementQuery::create(), $languages, $con);
+            $output->writeln(sprintf('<info>%s</info> slug added on <comment>departement</comment> table.', $this->getName()));
+
             $this->generateTheme(\Cungfoo\Model\PaysQuery::create(), $languages, $con);
             $output->writeln(sprintf('<info>%s</info> slug added on <comment>pays</comment> table.', $this->getName()));
 

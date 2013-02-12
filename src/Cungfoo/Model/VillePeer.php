@@ -18,4 +18,17 @@ use Cungfoo\Model\om\BaseVillePeer;
  */
 class VillePeer extends BaseVillePeer
 {
+    public static function assertUrl()
+    {
+        $objects = VilleQuery::create()
+            ->useI18nQuery()
+            ->withColumn('ville_i18n.slug', 'slug')
+            ->endUse()
+            ->select('slug')
+            ->findActive()
+            ->toArray()
+        ;
+
+        return implode('|', $objects);
+    }
 }

@@ -2444,8 +2444,8 @@ abstract class BasePersonnage extends BaseObject implements Persistent
     }
 
     // active behavior
-    
-    
+
+
     /**
      * return true is the object is active
      *
@@ -2455,7 +2455,7 @@ abstract class BasePersonnage extends BaseObject implements Persistent
     {
         return $this->getActive();
     }
-    
+
     /**
      * return true is the object is active locale
      *
@@ -2465,41 +2465,41 @@ abstract class BasePersonnage extends BaseObject implements Persistent
     {
         return $this->getActiveLocale();
     }
-    
+
     public function getThemesActive($criteria = null, PropelPDO $con = null)
     {
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-    
+
         $criteria->add(\Cungfoo\Model\ThemePeer::ACTIVE, true);
-    
-    
+
+
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\ThemeI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\ThemePeer::ID, \Cungfoo\Model\ThemeI18nPeer::alias('i18n_locale', \Cungfoo\Model\ThemeI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\ThemeI18nPeer::alias('i18n_locale', \Cungfoo\Model\ThemeI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\ThemeI18nPeer::alias('i18n_locale', \Cungfoo\Model\ThemeI18nPeer::LOCALE), $this->currentLocale);
-    
+
         return $this->getThemes($criteria, $con);
     }
-    
+
     public function getAvantagesActive($criteria = null, PropelPDO $con = null)
     {
-    
+
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-    
+
         $criteria->add(\Cungfoo\Model\AvantagePeer::ACTIVE, true);
-    
-    
+
+
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\AvantageI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\AvantagePeer::ID, \Cungfoo\Model\AvantageI18nPeer::alias('i18n_locale', \Cungfoo\Model\AvantageI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\AvantageI18nPeer::alias('i18n_locale', \Cungfoo\Model\AvantageI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\AvantageI18nPeer::alias('i18n_locale', \Cungfoo\Model\AvantageI18nPeer::LOCALE), $this->currentLocale);
-    
+
         return $this->getAvantages($criteria, $con);
     }
     // i18n behavior
@@ -2650,7 +2650,7 @@ abstract class BasePersonnage extends BaseObject implements Persistent
     }
 
     // crudable behavior
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -2665,12 +2665,12 @@ abstract class BasePersonnage extends BaseObject implements Persistent
         {
             $this->resetModified(PersonnagePeer::IMAGE_PATH);
         }
-    
+
         $this->uploadImagePath($form);
-        
+
         return $this->save($con);
     }
-    
+
     /**
      * @return string
      */
@@ -2678,7 +2678,7 @@ abstract class BasePersonnage extends BaseObject implements Persistent
     {
         return 'uploads/personnages';
     }
-    
+
     /**
      * @return string
      */
@@ -2686,7 +2686,7 @@ abstract class BasePersonnage extends BaseObject implements Persistent
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void

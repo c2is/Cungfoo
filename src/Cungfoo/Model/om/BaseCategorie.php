@@ -1448,6 +1448,31 @@ abstract class BaseCategorie extends BaseObject implements Persistent
      * @param string $join_behavior optional join type to use (defaults to Criteria::LEFT_JOIN)
      * @return PropelObjectCollection|Etablissement[] List of Etablissement objects
      */
+    public function getEtablissementsJoinDepartement($criteria = null, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    {
+        $query = EtablissementQuery::create(null, $criteria);
+        $query->joinWith('Departement', $join_behavior);
+
+        return $this->getEtablissements($query, $con);
+    }
+
+
+    /**
+     * If this collection has already been initialized with
+     * an identical criteria, it returns the collection.
+     * Otherwise if this Categorie is new, it will return
+     * an empty collection; or if this Categorie has previously
+     * been saved, it will retrieve related Etablissements from storage.
+     *
+     * This method is protected by default in order to keep the public
+     * api reasonable.  You can provide public methods for those you
+     * actually need in Categorie.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @param string $join_behavior optional join type to use (defaults to Criteria::LEFT_JOIN)
+     * @return PropelObjectCollection|Etablissement[] List of Etablissement objects
+     */
     public function getEtablissementsJoinEtablissementRelatedByRelated1($criteria = null, $con = null, $join_behavior = Criteria::LEFT_JOIN)
     {
         $query = EtablissementQuery::create(null, $criteria);
@@ -1792,8 +1817,8 @@ abstract class BaseCategorie extends BaseObject implements Persistent
     }
 
     // active behavior
-    
-    
+
+
     /**
      * return true is the object is active
      *
@@ -1803,7 +1828,7 @@ abstract class BaseCategorie extends BaseObject implements Persistent
     {
         return $this->getActive();
     }
-    
+
     /**
      * return true is the object is active locale
      *
@@ -1813,23 +1838,23 @@ abstract class BaseCategorie extends BaseObject implements Persistent
     {
         return $this->getActiveLocale();
     }
-    
+
     public function getEtablissementsActive($criteria = null, PropelPDO $con = null)
     {
-    
+
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-    
+
         $criteria->add(\Cungfoo\Model\EtablissementPeer::ACTIVE, true);
-    
-    
+
+
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\EtablissementI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\EtablissementPeer::ID, \Cungfoo\Model\EtablissementI18nPeer::alias('i18n_locale', \Cungfoo\Model\EtablissementI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\EtablissementI18nPeer::alias('i18n_locale', \Cungfoo\Model\EtablissementI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\EtablissementI18nPeer::alias('i18n_locale', \Cungfoo\Model\EtablissementI18nPeer::LOCALE), $this->currentLocale);
-    
+
         return $this->getEtablissements($criteria, $con);
     }
     // i18n behavior
@@ -1980,7 +2005,7 @@ abstract class BaseCategorie extends BaseObject implements Persistent
     }
 
     // crudable behavior
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
