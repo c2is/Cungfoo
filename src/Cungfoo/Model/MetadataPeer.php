@@ -18,4 +18,16 @@ use Cungfoo\Model\om\BaseMetadataPeer;
  */
 class MetadataPeer extends BaseMetadataPeer
 {
+    public static function get($name, $value = null)
+    {
+        return MetadataQuery::create()
+            ->filterByTableRef($name)
+            ->joinWithI18n()
+            ->_if($value)
+            ->withColumn($value)
+            ->select($value)
+            ->_endif()
+            ->findOne()
+        ;
+    }
 }

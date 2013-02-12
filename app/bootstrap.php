@@ -36,7 +36,8 @@ $app['twig'] = $app->share($app->extend('twig', function($twig, $app) {
     $twig->addExtension(new \Cungfoo\Lib\Twig\Extension\SerializeExtension($app));
     $twig->addExtension(new \Cungfoo\Lib\Twig\Extension\EsiExtension($app));
     $twig->addExtension(new \VacancesDirectes\Lib\Twig\Extension\ListPaysExtension($app));
-    
+    $twig->addExtension(new \Cungfoo\Lib\Twig\Extension\MetadataExtension($app));
+
     return $twig;
 }));
 
