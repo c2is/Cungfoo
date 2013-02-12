@@ -81,17 +81,12 @@
                     <li><a class="rubric" href="#">{{ "footer.ce" | trans }}</a></li>
                 </ul> #}
             </div>
-            <div id="infoOthers" class="left">
-                {# TODO <div id="infoNewsletter" class="clear">
-                    <h3>{{ "footer.newsletter" | trans }}</h3>
-                    <p>{{ "footer.newsletter.desc" | trans }}</p>
-                    <input type="email" name="footer-email" id="footerEmail" class="left" placeholder="{{ "footer.newsletter.entrer_son_email" | trans }}" />
-                    <a class="bt big sombre left" href="#">{{ "general.en_savoir_plus" | trans }}</a>
-                </div> #}
-                <div id="infoMobile" class="clear">
-                    <h3>{{ "footer.site_mobile" | trans }}</h3>
-                    <p>{{ "footer.site_mobile.desc" | trans }}</p>
-                </div>
+            <div id="infoOthers" class="left" style="height: 277px;">
+                <h3>Locations en camping</h3>
+                <ul>
+                    <li><a class="level-1" href="{{ path('destination_region_list') }}">{{ metadata('region_ref', 'title') }}</a></li>
+                    <li><a class="level-1" href="{{ path('destination_departement_list') }}">{{ metadata('departement', 'title') }}</a></li>
+                </ul>
             </div>
         </div>
     </div>
