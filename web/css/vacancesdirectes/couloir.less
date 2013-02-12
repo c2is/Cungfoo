@@ -175,7 +175,7 @@ textarea { overflow: auto;  resize: vertical; }
 h1, .h1-like{dismargin:20px 0 0;color:@colorFushia;font:bold 30px @ptnarrow;text-transform:uppercase;}
 h2, .h2-like{color:@colorGris2;font:bold 20px @arial;line-height:22px;}
 h3, .h3-like{color:@colorGris1;font:bold 25px/24px @ptnarrow;text-transform:uppercase;margin:20px 0 5px;}
-h4, .h4-like{color:@colorFushia;font:bold 19px/18px @ptnarrow;text-transform:uppercase;margin-bottom:10px;}
+h4, .h4-like{color:@colorFushia;font:bold 19px/18px @ptnarrow;text-transform:uppercase;margin-top:25px;margin-bottom:15px;}
 h5, .h5-like{color:@colorGris1;font:bold 16px/15px @ptnarrow;text-transform:uppercase;margin-bottom:10px;}
 h6, .h6-like{color:@colorFushia;}
 
@@ -235,7 +235,7 @@ body.clear{background:#fff;color:@colorGris2;font:12px @arial;margin:0;}
 /*CSS3 extras*/
 .tooltip span.bubble{._box-shadow(0 10px 10px -12px @colorGris2);}
 
-.indication {font:bold 12px/35px @arial;background:@colorBgBlanc;color:@colorBgGrisM;border:4px solid @colorBgGrisM;text-transform:uppercase;padding:5px 10px;margin-bottom:15px;text-decoration:none;._border-radius(10px);position:relative;line-height:16px;}
+.indication {font:bold 12px/35px @arial;background:@colorBgBlanc;color:@colorBgGrisM;border:4px solid @colorBgGrisM;text-transform:uppercase;padding:5px 10px;margin-bottom:35px;text-decoration:none;._border-radius(10px);position:relative;line-height:16px;}
 
 input,
 textarea{font:bold 12px @arial;color:@colorGris0;}
@@ -249,7 +249,7 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
 /*LEFT*/
 #contentContener{
   .radiusBox{margin-bottom:35px;padding-top:10px;
-    .stamp{margin: 0 -20px 20px;padding-left:48px;text-align:left;
+    .stamp{margin: 0 -20px 15px;padding-left:48px;text-align:left;
       &:before,
       &:after{content:"";}
       h2{text-transform:uppercase;font:bold 22px @ptnarrow;._verticalCenter(38px);position:static;color:@colorBlanc;
@@ -303,7 +303,7 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
             }
             .deleteAction a{position:absolute;top:6px;right:-3px;display:block;text-indent:-9999px;width:27px;height:27px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -243px transparent;float:left;margin:0 10px;}
           }
-          .occupantFields{padding:10px 5px;
+          .occupantFields{padding:10px 5px;margin-bottom:0;
             &>*{margin:0 5px 10px;}
             input{border:1px solid @colorBorderGris;}
             .control_text{width:150px;}
@@ -329,11 +329,11 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
 // step 2
   &.summary,
   &.editAccount{
-    #authentication{._border-radius(10px);margin:15px 0;position:relative;background-color:@colorBgBlanc;border:5px solid @colorBgGrisM;
-      h2{background-color:@colorBgGrisM;color:@colorBlanc;text-transform:uppercase;font:bold 22px @ptnarrow;._verticalCenter(40px);padding-left:10px;}
-      &>div{background-color:@colorBgGrisC;color:@colorGris2;
-        &>div{padding:15px 20px;clear:both;}
-        .whiteBg{background-color:@colorBgBlanc;
+    #authentication{margin:15px 0;border:5px solid @colorBgGrisC;padding-bottom:5px;
+      &>div{
+        &.stamp{margin:0 -25px 20px;}
+        &>div{padding:15px 20px;clear:both;margin:10px -20px 0;}
+        .whiteBg{background-color:@colorBgBlanc;padding-left:35px;
           .aField,
           .authenticationChoice{font:normal 12px @arial;text-transform:none;display:block;margin:0;
             .label{font:inherit;text-transform:inherit;color:inherit}
@@ -398,13 +398,6 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
           input{width:134px;}
         }
       }
-      .aField{
-        .label{margin-right:0;}
-        input[type="checkbox"]{margin-top:1px;}
-        label{font-style:italic;font-weight:bold;vertical-align:top;
-          a{color:@colorFushia;}
-        }
-      }
     }
     #paiement{
       table{display:block;background-color:@colorBgBlanc;margin:10px 0;
@@ -417,6 +410,16 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
       #payment_layer_ecc{
         .newListSelected{margin-bottom:10px;}
       }
+    }
+    #termsAndConditions{
+      .aField{
+        .label{margin-right:0;}
+        input[type="checkbox"]{margin:1px 5px 0 0;float:left;}
+        label{font-style:italic;font-weight:bold;float:left;width:554px;
+          a{color:@colorFushia;}
+        }
+      }
+      small{font-size:10px;}
     }
   }
 
