@@ -83,3 +83,4 @@ foreach ($crudRouter->getRoutes() as $name => $route)
 $app->mount('/resalys', new \Cungfoo\Controller\ResalysController());
 $app->mount('/viafrance', new \Cungfoo\Controller\ViaFranceController());
 $app->mount('/jobs', new \Cungfoo\Controller\JobController());
+$app->mount('/i18n', new \Cungfoo\Controller\I18nController());
