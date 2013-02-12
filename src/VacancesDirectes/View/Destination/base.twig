@@ -31,8 +31,8 @@
         <aside class="column right">
             {% block bottomRightColumn %}
                 <div id="greyBoxes">
-                    {% include 'Bloc/sejour_reussi.twig' %}
-                    {% include 'Bloc/informations.twig' %}
+                    {{ esi(path('widget', {'name': 'sejour_reussi'})) }}
+                    {{ esi(path('widget', {'name': 'reassurance'})) }}
                 </div>
             {% endblock %}
         </aside>
