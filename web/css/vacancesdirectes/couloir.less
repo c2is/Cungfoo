@@ -275,7 +275,7 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
 
   p{margin-bottom:10px;}
   table{width:100%}
-
+  .whiteBg{background-color:@colorBgBlanc;padding: 20px 20px 20px 38px;clear:both;}
 // step 1
   &.detail{
     #reservation{
@@ -331,11 +331,11 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
 // step 2
   &.summary,
   &.editAccount{
-    #authentication{margin:15px 0;border:5px solid @colorBgGrisC;padding-bottom:5px;
-      &>div{
-        &.stamp{margin:0 -25px 15px;}
-        &>div{padding:10px 20px;clear:both;margin:10px -20px 0;}
-        .whiteBg{background-color:@colorBgBlanc;padding-left:35px;
+    #authentication{margin:15px 0;border:5px solid @colorBgGrisC;padding-bottom:0;
+      &.logged{margin-bottom:35px;}
+      .stamp{margin:0 -25px;}
+      #loginInfoCustomerLayer{padding:10px 20px 5px;clear:both;margin:0 -25px;margin-top:0;
+        .whiteBg{margin:5px -15px 0;
           .aField,
           .authenticationChoice{font:normal 12px @arial;text-transform:none;display:block;margin:0;
             .label{font:inherit;text-transform:inherit;color:inherit}
@@ -345,11 +345,13 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
         }
         #existingCustomerLayer,
         #newCustomerLayer,{padding-bottom:0;
-        //          &>div{margin-bottom:20px;}
-          .aField{margin-bottom:10px;}
-          .label{margin-right:10px;text-align:right;}
+          .whiteBg{
+            .aField{margin-bottom:10px;}
+            .label{margin-right:10px;text-align:right;}
+          }
+          .loginButtons{margin-top:20px;}
         }
-        #existingCustomerLayer{
+        #existingCustomerLayer{margin-top:20px;
           .aField{width:450px;float:left;
             .label{width:130px;}
             input{width:310px;}
@@ -362,7 +364,7 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
               input{width:280px;}
             }
           }
-          #address{width:576px;
+          #address{width:586px;
             td{display:table-cell;padding:5px 10px 5px 0;vertical-align:middle;width:144px !important;}
             input,textarea,.newListSelected{width:134px;text-transform:uppercase;}
             textarea{width:134px;height:62px;}
@@ -384,12 +386,13 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
             .label{width:432px;text-align:right;}
           }
         }
-        .loginLink{float:right;}
+        .loginButtons{margin-top:20px;}
       }
     }
     #option{
       h2 + p{font-weight:bold;}
       .label{font:inherit;color:inherit;text-transform:inherit;margin-right:10px;vertical-align:top;}
+      p.description{text-transform:uppercase;font:bold 12px @arial;color:@colorGris2;margin:20px 0;}
       p{
         .label{width:278px;float:left;text-align:right;}
         .field textarea{width:288px;height:81px;}
@@ -430,6 +433,13 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
 
 // step 4
   &.confirmation{
+    #reservationSaved{
+      h2{margin:15px 0 20px;text-transform:uppercase;font:bold 30px/28px @ptnarrow;}
+      .whiteBg{padding:10px 20px 20px;clear:both;margin:10px -15px 0;
+        h4{margin-top:20px;}
+      }
+    }
+    .stamp{padding-left:inherit;}
     td{height:27px;}
     #authentication,
     #occupant{font-weight:bold;
@@ -566,7 +576,7 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
   ._stylish-select(54px,27px,10px,5);
 }
 #reservation #financialContener{
-  ._stylish-select(375px,27px,0px,4);
+  ._stylish-select(374px,27px,0px,4);
 }
 
 // step 2
