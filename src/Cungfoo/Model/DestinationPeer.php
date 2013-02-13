@@ -18,9 +18,9 @@ use Cungfoo\Model\om\BaseDestinationPeer;
  */
 class DestinationPeer extends BaseDestinationPeer
 {
-    public static function assertUrl()
+    public static function assertUrl($locale = 'fr')
     {
-        $objects = DestinationQuery::create($locale = 'fr')
+        $objects = DestinationQuery::create()
             ->useI18nQuery($locale)
             ->withColumn('destination_i18n.slug', 'slug')
             ->endUse()
