@@ -4,6 +4,7 @@ seo:
         pays: "günstiger Campingplatz %pays%"
         region: "Günstige Vermietung von Wohnwagen %region%, Campingplatz %region%"
         ville: "Günstiger Campingplatz %ville%, günstige Vermietung von Wohnwagen %ville%"
+        departement: "Vermietung von günstigen Mobilhomes %departement%, Camping %departement%"
         destination: "Günstiger Campingplatz in %destination%"
         camping: "Campingplatz %nom%, Campingplatz %ville%"
         camping_suffix: "mit Swimmingpool"
@@ -26,6 +27,7 @@ seo:
         pays: "Vacances Directes: Entdecken Sie unsere günstigen Angebote für die Vermietung von Wohnwagen in %pays% für einen sonnigen Urlaub auf dem Campingplatz und buchen Sie online."
         region: "Buchen Sie Ihren künftigen Urlaub in der Region %region% in %pays% mit Vacances Directes online (günstige Vermietung von Wohnwagen auf dem Campingplatz)."
         ville: "Entdecken Sie alle von Vacances Directes (günstige Vermietung von Wohnwagen) angebotenen Campingplätze in %ville% (%region%) und buchen Sie Ihren Aufenthalt online."
+        departement: "Reservieren Sie Ihren nächsten Urlaub online im Departement %departement% in %pays% mit Vacanes directes (Vermietung von günstigen Camping-Mobilhomes)."
         destination: "Vacances Directes: Entdecken Sie alle unsere Angebote für die günstige Vermietung von Wohnwagen in %pays% für einen sonnigen Urlaub auf dem Campingplatz und buchen Sie online."
         camping: "Buchen Sie Ihren künftigen Urlaub auf dem Campingplatz %nom% mit Vacances Directes online: ein %nbEtoiles% Campingplatz mit Swimmingpool in %ville%."
         dernieres_minutes: "Entdecken Sie alle Last Minute Angebote von Vacances Directes für die Vermietung von Wohnwagen auf dem Campingplatz und buchen Sie online."
@@ -286,6 +288,8 @@ destination:
     images_ville_title: "Die Stadt in Bildern"
     pays_title: "Günstig campen in %item%"
     region_title: "Vermietung Wohnwagen %item%"
+    regionref_title: "Vermietungsangebot Mobilhome %item%"
+    departement_title: "Vermietungsangebot Mobilhome %item%"
     ville_title: "Günstig campen %item% (Vermietung Wohnwagen)"
     camping_title: "Campingplatz %ville%"
     retour_bottom: "Zurück zur Liste"
@@ -342,8 +346,8 @@ menu:
     weekends: "Ihre Wochenendtrips"
     tous_camping: "Alle unsere Campingplätze"
     decouvrez_locations: "Entdecken Sie unsere Vermietungsangebote"
-    decouvrez_locations_type: "Nach Art"
-    decouvrez_locations_capacite: "Nach Kapazität"
+    decouvrez_locations_type: "Nach Art der Unterkunft"
+    decouvrez_locations_capacite: "Nach Anzahl der Personen"
 
 etablissement:
     activites: "Liste der Aktivitäten"
@@ -359,7 +363,7 @@ date_search:
     nb_jours.required: "Die Anzahl der Übernachtungen ist erforderlich."
     nb_jours.empty_value: "Anzahl der Übernachtungen?"
     ville: "Ort"
-    ville.empty_value: "Stadt?"
+    ville.empty_value: "Ort?"
     camping: "Campingplatz"
     camping.empty_value: "Campingplatz?"
     nb_adultes: "Erwachsene(r)"
@@ -450,6 +454,8 @@ fiche:
         legende: "Legende zum Plan des Campingplatzes"
     bloc_prix:
         type_hebergement: "für ein(e/n) %categorie% - %type%"
+    toutes_regions: "All regions"
+    region: "Region"
 
 home:
     topcamping: "Top Campingplätze"
@@ -493,7 +499,7 @@ general:
     decouvrir: "Entdecken"
     reserver: "Buchen"
     profite: "Zuschlagen"
-    la_semaine: "Pro Woche"
+    la_semaine: "pro Woche"
     contre_proposition: "ACHTUNG! Ihre Suche ergibt keine Treffer. Die untenstehenden Angebote sind diejenigen, die Ihrer Suche am nächsten kommen."
     submit: "Senden"
     logout: "Anmelden"
@@ -593,7 +599,7 @@ encart_hebergement:
     subtitle: "bietet"
     standardise:
         title: "standardisierte Unterkünfte"
-        texte: "Die gleiche Referenz bietet die gleichen Leistungen auf allen Vacances Directes Campingplätzen."
+        texte: "Der gleiche Mobilhome-Typ bietet die gleichen Leistungen auf allen Vacances Directes Campingplätzen."
     adapte:
         title: "individuell angepasste Unterkünfte"
         texte: "Vacances Directes interessiert sich für die Entwicklungen des täglichen Lebens und bietet Wohnwagen mit allem Komfort, die auf die Bedürfnisse jedes einzelnen angepasst sind."
@@ -601,8 +607,8 @@ encart_hebergement:
         title: "abwechslungsreiche Unterkünfte"
         texte: "Wählen Sie zwischen einer Vielzahl verschiedener Unterkünfte. Vacances Directes steht für 10 Wohnwagen- und Wohnmobilmodelle, die sich an alle Familien und alle Budgets anpassen lassen."
     equipe:
-        title: "ausgestattete Unterkünfte"
-        texte: "Die Unterkünfte vollständig ausgestattet und bereit, Sie aufzunehmen. Alles ist vorhanden und inklusive (Laken, Decken, Kopfkissen...). Bringen Sie einfach nur Ihre Haushaltswäsche mit. Es gibt eine eingebaute und ausgestattete Küche."
+        title: "voll ausgestattete Unterkünfte"
+        texte: "Die Unterkünfte sind vollständig ausgestattet und bereit, Sie aufzunehmen. Alles ist vorhanden und inklusive (Laken, Decken, Kopfkissen ...). Bringen Sie einfach nur Ihre Haushaltswäsche mit. Es gibt eine eingebaute und voll ausgestattete Küche."
 
 encart_informations:
     title: "Informationen & Reservierungen unter"
@@ -780,7 +786,7 @@ bon_plan:
 location:
     list:
         title: "Unsere Unterkünfte: %type%"
-        selection: "Unsere Auswahl an Unterkünften"
+        selection: "Unsere Unterkünfte"
         hebergements:
             savoir_plus: "Mehr erfahren"
             plus_de_resultats: "Mehr Ergebnisse"
@@ -798,7 +804,7 @@ location:
                     dimensions: "Größe"
                     agencement: "Aufbau"
                     equipements: "Ausstattung"
-                    annee_utilisation: "Nutzungsjahr"
+                    annee_utilisation: "Nutzungsjahre"
                 lien_campings: "Die Campingplätze"
             campings:
                 title: "Die Campingplätze"
@@ -832,3 +838,24 @@ datepicker:
     months: "['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember']"
     monthsShort: "['Jan', 'Feb', 'Mär', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez']"
     weekMin: "'Wo'"
+
+widget:
+    offres_speciales:
+        title: "Sonderangebote"
+        more: "Mehr"
+        from: "Anfangspreis"
+        instead: "statt"
+    tracking:
+        title: "Schon angesehen"
+        from: "ab"
+    related:
+        title: "Dies könnte Ihnen auch gefallen"
+        from: "ab"
+    reassurance:
+        title: "Informationen & Reservierungen unter"
+        tel: "0049 (0) 721 680 78 240"
+        telto: "0049 (0) 721 680 78 240"
+        price: ""
+        ouverture_du: "Von Montag bis Freitag 9 - 18 Uhr"
+        ouverture_au: ""
+
