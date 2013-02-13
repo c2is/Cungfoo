@@ -729,8 +729,8 @@ abstract class BaseTypeHebergementCapaciteQuery extends ModelCriteria
         return $this->addAscendingOrderByColumn(TypeHebergementCapacitePeer::CREATED_AT);
     }
     // active behavior
-    
-    
+
+
     /**
      * return only active objects
      *
@@ -739,14 +739,14 @@ abstract class BaseTypeHebergementCapaciteQuery extends ModelCriteria
     public function findActive($con = null)
     {
         $locale = defined('CURRENT_LANGUAGE') ? CURRENT_LANGUAGE : 'fr';
-    
+
         $this
             ->filterByActive(true)
             ->useI18nQuery($locale, 'i18n_locale')
                 ->filterByActiveLocale(true)
             ->endUse()
         ;
-    
+
         return parent::find($con);
     }
     // sortable behavior
@@ -929,11 +929,11 @@ abstract class BaseTypeHebergementCapaciteQuery extends ModelCriteria
     }
 
     // crudable behavior
-    
+
     public function filterByTerm($term)
     {
         $term = '%' . $term . '%';
-    
+
         return $this
             ->_or()
             ->useI18nQuery()
