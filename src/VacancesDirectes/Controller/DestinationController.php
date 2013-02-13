@@ -56,7 +56,7 @@ class DestinationController implements ControllerProviderInterface
             if (!$pays) return;
 
             $objectItem = PaysQuery::create()
-                ->useI18nQuery()
+                ->useI18nQuery($app['context']->get('language'))
                 ->filterBySlug($pays)
                 ->endUse()
                 ->findOne()
@@ -73,7 +73,7 @@ class DestinationController implements ControllerProviderInterface
             if (!$destination) return;
 
             $objectItem = DestinationQuery::create()
-                ->useI18nQuery()
+                ->useI18nQuery($app['context']->get('language'))
                 ->filterBySlug($destination)
                 ->endUse()
                 ->findOne()
@@ -90,7 +90,7 @@ class DestinationController implements ControllerProviderInterface
             if (!$region) return;
 
             $objectItem = RegionQuery::create()
-                ->useI18nQuery()
+                ->useI18nQuery($app['context']->get('language'))
                 ->filterBySlug($region)
                 ->endUse()
                 ->findOne()
@@ -107,7 +107,7 @@ class DestinationController implements ControllerProviderInterface
             if (!$regionRef) return;
 
             $objectItem = RegionRefQuery::create()
-                ->useI18nQuery()
+                ->useI18nQuery($app['context']->get('language'))
                 ->filterBySlug($regionRef)
                 ->endUse()
                 ->findOne()
@@ -124,7 +124,7 @@ class DestinationController implements ControllerProviderInterface
             if (!$departement) return;
 
             $objectItem = DepartementQuery::create()
-                ->useI18nQuery()
+                ->useI18nQuery($app['context']->get('language'))
                 ->filterBySlug($departement)
                 ->endUse()
                 ->findOne()
@@ -141,7 +141,7 @@ class DestinationController implements ControllerProviderInterface
             if (!$ville) return;
 
             $objectItem = VilleQuery::create()
-                ->useI18nQuery()
+                ->useI18nQuery($app['context']->get('language'))
                 ->filterBySlug($ville)
                 ->endUse()
                 ->findOne()
@@ -169,12 +169,14 @@ class DestinationController implements ControllerProviderInterface
             return $objectItem;
         });
 
-        $assertUrlPays = PaysPeer::assertUrl();
-        $assertUrlDestination = DestinationPeer::assertUrl();
-        $assertUrlRegion = RegionPeer::assertUrl();
-        $assertUrlRegionRef = RegionRefPeer::assertUrl();
-        $assertUrlDepartement = DepartementPeer::assertUrl();
-        $assertUrlVille = VillePeer::assertUrl();
+        $locale = $app['context']->get('language');
+
+        $assertUrlPays = PaysPeer::assertUrl($locale);
+        $assertUrlDestination = DestinationPeer::assertUrl($locale);
+        $assertUrlRegion = RegionPeer::assertUrl($locale);
+        $assertUrlRegionRef = RegionRefPeer::assertUrl($locale);
+        $assertUrlDepartement = DepartementPeer::assertUrl($locale);
+        $assertUrlVille = VillePeer::assertUrl($locale);
         $assertUrlCamping = EtablissementPeer::assertUrl();
 
         $urlPrefix = $app->trans('seo.url.prefix');

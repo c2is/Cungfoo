@@ -20,8 +20,8 @@ class DestinationPeer extends BaseDestinationPeer
 {
     public static function assertUrl()
     {
-        $objects = DestinationQuery::create()
-            ->useI18nQuery()
+        $objects = DestinationQuery::create($locale = 'fr')
+            ->useI18nQuery($locale)
             ->withColumn('destination_i18n.slug', 'slug')
             ->endUse()
             ->select('slug')

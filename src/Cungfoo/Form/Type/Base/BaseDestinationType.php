@@ -125,6 +125,20 @@ class BaseDestinationType extends AppAwareType
                     'constraints' => array(
                     ),
                 ),
+                'seo_title' => array(
+                    'required' => false,
+                    'label' => 'destination.seo_title',
+                    'type' => 'text',
+                    'constraints' => array(
+                    ),
+                ),
+                'seo_description' => array(
+                    'required' => false,
+                    'label' => 'destination.seo_description',
+                    'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
             ),
             'required' => false,
         ));
