@@ -788,6 +788,20 @@ abstract class BaseBonPlanCategoriePeer
         return $objs;
     }
 
+    // crudable behavior
+
+    /**
+     * The default locale to use for translations
+     * @var        string
+     */
+    public static function getMetadata(PropelPDO $con = null)
+    {
+        return \Cungfoo\Model\MetadataQuery::create()
+            ->joinWithI18n()
+            ->filterByTableRef(BonPlanCategoriePeer::TABLE_NAME)
+            ->findOne()
+        ;
+    }
     // sortable behavior
 
     /**

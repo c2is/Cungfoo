@@ -90,6 +90,19 @@ abstract class BaseDestinationI18n extends BaseObject implements Persistent
     protected $active_locale;
 
     /**
+     * The value for the seo_title field.
+     * Note: this column has a database default value of: ''
+     * @var        string
+     */
+    protected $seo_title;
+
+    /**
+     * The value for the seo_description field.
+     * @var        string
+     */
+    protected $seo_description;
+
+    /**
      * @var        Destination
      */
     protected $aDestination;
@@ -118,6 +131,7 @@ abstract class BaseDestinationI18n extends BaseObject implements Persistent
     {
         $this->locale = 'fr';
         $this->active_locale = false;
+        $this->seo_title = '';
     }
 
     /**
@@ -198,6 +212,26 @@ abstract class BaseDestinationI18n extends BaseObject implements Persistent
     public function getActiveLocale()
     {
         return $this->active_locale;
+    }
+
+    /**
+     * Get the [seo_title] column value.
+     *
+     * @return string
+     */
+    public function getSeoTitle()
+    {
+        return $this->seo_title;
+    }
+
+    /**
+     * Get the [seo_description] column value.
+     *
+     * @return string
+     */
+    public function getSeoDescription()
+    {
+        return $this->seo_description;
     }
 
     /**
@@ -360,6 +394,48 @@ abstract class BaseDestinationI18n extends BaseObject implements Persistent
     } // setActiveLocale()
 
     /**
+     * Set the value of [seo_title] column.
+     *
+     * @param string $v new value
+     * @return DestinationI18n The current object (for fluent API support)
+     */
+    public function setSeoTitle($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->seo_title !== $v) {
+            $this->seo_title = $v;
+            $this->modifiedColumns[] = DestinationI18nPeer::SEO_TITLE;
+        }
+
+
+        return $this;
+    } // setSeoTitle()
+
+    /**
+     * Set the value of [seo_description] column.
+     *
+     * @param string $v new value
+     * @return DestinationI18n The current object (for fluent API support)
+     */
+    public function setSeoDescription($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->seo_description !== $v) {
+            $this->seo_description = $v;
+            $this->modifiedColumns[] = DestinationI18nPeer::SEO_DESCRIPTION;
+        }
+
+
+        return $this;
+    } // setSeoDescription()
+
+    /**
      * Indicates whether the columns in this object are only set to default values.
      *
      * This method can be used in conjunction with isModified() to indicate whether an object is both
@@ -374,6 +450,10 @@ abstract class BaseDestinationI18n extends BaseObject implements Persistent
             }
 
             if ($this->active_locale !== false) {
+                return false;
+            }
+
+            if ($this->seo_title !== '') {
                 return false;
             }
 
@@ -406,6 +486,8 @@ abstract class BaseDestinationI18n extends BaseObject implements Persistent
             $this->introduction = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
             $this->description = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
             $this->active_locale = ($row[$startcol + 6] !== null) ? (boolean) $row[$startcol + 6] : null;
+            $this->seo_title = ($row[$startcol + 7] !== null) ? (string) $row[$startcol + 7] : null;
+            $this->seo_description = ($row[$startcol + 8] !== null) ? (string) $row[$startcol + 8] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -414,7 +496,7 @@ abstract class BaseDestinationI18n extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 7; // 7 = DestinationI18nPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 9; // 9 = DestinationI18nPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating DestinationI18n object", $e);
@@ -659,6 +741,12 @@ abstract class BaseDestinationI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(DestinationI18nPeer::ACTIVE_LOCALE)) {
             $modifiedColumns[':p' . $index++]  = '`active_locale`';
         }
+        if ($this->isColumnModified(DestinationI18nPeer::SEO_TITLE)) {
+            $modifiedColumns[':p' . $index++]  = '`seo_title`';
+        }
+        if ($this->isColumnModified(DestinationI18nPeer::SEO_DESCRIPTION)) {
+            $modifiedColumns[':p' . $index++]  = '`seo_description`';
+        }
 
         $sql = sprintf(
             'INSERT INTO `destination_i18n` (%s) VALUES (%s)',
@@ -690,6 +778,12 @@ abstract class BaseDestinationI18n extends BaseObject implements Persistent
                         break;
                     case '`active_locale`':
                         $stmt->bindValue($identifier, (int) $this->active_locale, PDO::PARAM_INT);
+                        break;
+                    case '`seo_title`':
+                        $stmt->bindValue($identifier, $this->seo_title, PDO::PARAM_STR);
+                        break;
+                    case '`seo_description`':
+                        $stmt->bindValue($identifier, $this->seo_description, PDO::PARAM_STR);
                         break;
                 }
             }
@@ -851,6 +945,12 @@ abstract class BaseDestinationI18n extends BaseObject implements Persistent
             case 6:
                 return $this->getActiveLocale();
                 break;
+            case 7:
+                return $this->getSeoTitle();
+                break;
+            case 8:
+                return $this->getSeoDescription();
+                break;
             default:
                 return null;
                 break;
@@ -887,6 +987,8 @@ abstract class BaseDestinationI18n extends BaseObject implements Persistent
             $keys[4] => $this->getIntroduction(),
             $keys[5] => $this->getDescription(),
             $keys[6] => $this->getActiveLocale(),
+            $keys[7] => $this->getSeoTitle(),
+            $keys[8] => $this->getSeoDescription(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aDestination) {
@@ -947,6 +1049,12 @@ abstract class BaseDestinationI18n extends BaseObject implements Persistent
             case 6:
                 $this->setActiveLocale($value);
                 break;
+            case 7:
+                $this->setSeoTitle($value);
+                break;
+            case 8:
+                $this->setSeoDescription($value);
+                break;
         } // switch()
     }
 
@@ -978,6 +1086,8 @@ abstract class BaseDestinationI18n extends BaseObject implements Persistent
         if (array_key_exists($keys[4], $arr)) $this->setIntroduction($arr[$keys[4]]);
         if (array_key_exists($keys[5], $arr)) $this->setDescription($arr[$keys[5]]);
         if (array_key_exists($keys[6], $arr)) $this->setActiveLocale($arr[$keys[6]]);
+        if (array_key_exists($keys[7], $arr)) $this->setSeoTitle($arr[$keys[7]]);
+        if (array_key_exists($keys[8], $arr)) $this->setSeoDescription($arr[$keys[8]]);
     }
 
     /**
@@ -996,6 +1106,8 @@ abstract class BaseDestinationI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(DestinationI18nPeer::INTRODUCTION)) $criteria->add(DestinationI18nPeer::INTRODUCTION, $this->introduction);
         if ($this->isColumnModified(DestinationI18nPeer::DESCRIPTION)) $criteria->add(DestinationI18nPeer::DESCRIPTION, $this->description);
         if ($this->isColumnModified(DestinationI18nPeer::ACTIVE_LOCALE)) $criteria->add(DestinationI18nPeer::ACTIVE_LOCALE, $this->active_locale);
+        if ($this->isColumnModified(DestinationI18nPeer::SEO_TITLE)) $criteria->add(DestinationI18nPeer::SEO_TITLE, $this->seo_title);
+        if ($this->isColumnModified(DestinationI18nPeer::SEO_DESCRIPTION)) $criteria->add(DestinationI18nPeer::SEO_DESCRIPTION, $this->seo_description);
 
         return $criteria;
     }
@@ -1073,6 +1185,8 @@ abstract class BaseDestinationI18n extends BaseObject implements Persistent
         $copyObj->setIntroduction($this->getIntroduction());
         $copyObj->setDescription($this->getDescription());
         $copyObj->setActiveLocale($this->getActiveLocale());
+        $copyObj->setSeoTitle($this->getSeoTitle());
+        $copyObj->setSeoDescription($this->getSeoDescription());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -1194,6 +1308,8 @@ abstract class BaseDestinationI18n extends BaseObject implements Persistent
         $this->introduction = null;
         $this->description = null;
         $this->active_locale = null;
+        $this->seo_title = null;
+        $this->seo_description = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();

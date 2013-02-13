@@ -32,4 +32,19 @@ class Pays extends BasePays
             ->findActive()
         ;
     }
+
+    public function getDepartementOrderByName(\PropelPDO $con = null)
+    {
+        return \Cungfoo\Model\DepartementQuery::create()
+            ->useRegionRefQuery()
+                ->usePaysQuery()
+                    ->filterById($this->getId())
+                ->endUse()
+            ->endUse()
+            ->useI18nQuery()
+                ->orderByName()
+            ->endUse()
+            ->findActive()
+        ;
+    }
 }

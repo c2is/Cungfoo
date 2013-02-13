@@ -1,0 +1,5 @@
+{% extends "Destination/base.twig" %}
+
+{% block title %}{{ "seo.title.ville" | trans ({'%ville%': item}) }}{% endblock %}
+
+{% block metaDescription %}{{ "seo.meta.ville" | trans  ({'%ville%': item, '%region%': item.region})}}{% endblock %}

@@ -26,6 +26,8 @@ use Cungfoo\Model\Categorie;
 use Cungfoo\Model\CategorieQuery;
 use Cungfoo\Model\DemandeAnnulation;
 use Cungfoo\Model\DemandeAnnulationQuery;
+use Cungfoo\Model\Departement;
+use Cungfoo\Model\DepartementQuery;
 use Cungfoo\Model\Destination;
 use Cungfoo\Model\DestinationQuery;
 use Cungfoo\Model\Etablissement;
@@ -204,6 +206,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     protected $ville_id;
 
     /**
+     * The value for the departement_id field.
+     * @var        int
+     */
+    protected $departement_id;
+
+    /**
      * The value for the categorie_id field.
      * @var        int
      */
@@ -252,6 +260,18 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     protected $vignette;
 
     /**
+     * The value for the related_1 field.
+     * @var        int
+     */
+    protected $related_1;
+
+    /**
+     * The value for the related_2 field.
+     * @var        int
+     */
+    protected $related_2;
+
+    /**
      * The value for the created_at field.
      * @var        string
      */
@@ -276,9 +296,36 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     protected $aVille;
 
     /**
+     * @var        Departement
+     */
+    protected $aDepartement;
+
+    /**
      * @var        Categorie
      */
     protected $aCategorie;
+
+    /**
+     * @var        Etablissement
+     */
+    protected $aEtablissementRelatedByRelated1;
+
+    /**
+     * @var        Etablissement
+     */
+    protected $aEtablissementRelatedByRelated2;
+
+    /**
+     * @var        PropelObjectCollection|Etablissement[] Collection to store aggregation of Etablissement objects.
+     */
+    protected $collEtablissementsRelatedById0;
+    protected $collEtablissementsRelatedById0Partial;
+
+    /**
+     * @var        PropelObjectCollection|Etablissement[] Collection to store aggregation of Etablissement objects.
+     */
+    protected $collEtablissementsRelatedById1;
+    protected $collEtablissementsRelatedById1Partial;
 
     /**
      * @var        PropelObjectCollection|EtablissementTypeHebergement[] Collection to store aggregation of EtablissementTypeHebergement objects.
@@ -507,6 +554,18 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      * @var		PropelObjectCollection
      */
     protected $bonPlansScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
+    protected $etablissementsRelatedById0ScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
+    protected $etablissementsRelatedById1ScheduledForDeletion = null;
 
     /**
      * An array of objects scheduled for deletion.
@@ -850,6 +909,16 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     }
 
     /**
+     * Get the [departement_id] column value.
+     *
+     * @return int
+     */
+    public function getDepartementId()
+    {
+        return $this->departement_id;
+    }
+
+    /**
      * Get the [categorie_id] column value.
      *
      * @return int
@@ -927,6 +996,26 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     public function getVignette()
     {
         return $this->vignette;
+    }
+
+    /**
+     * Get the [related_1] column value.
+     *
+     * @return int
+     */
+    public function getRelated1()
+    {
+        return $this->related_1;
+    }
+
+    /**
+     * Get the [related_2] column value.
+     *
+     * @return int
+     */
+    public function getRelated2()
+    {
+        return $this->related_2;
     }
 
     /**
@@ -1385,6 +1474,31 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     } // setVilleId()
 
     /**
+     * Set the value of [departement_id] column.
+     *
+     * @param int $v new value
+     * @return Etablissement The current object (for fluent API support)
+     */
+    public function setDepartementId($v)
+    {
+        if ($v !== null) {
+            $v = (int) $v;
+        }
+
+        if ($this->departement_id !== $v) {
+            $this->departement_id = $v;
+            $this->modifiedColumns[] = EtablissementPeer::DEPARTEMENT_ID;
+        }
+
+        if ($this->aDepartement !== null && $this->aDepartement->getId() !== $v) {
+            $this->aDepartement = null;
+        }
+
+
+        return $this;
+    } // setDepartementId()
+
+    /**
      * Set the value of [categorie_id] column.
      *
      * @param int $v new value
@@ -1557,6 +1671,56 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     } // setVignette()
 
     /**
+     * Set the value of [related_1] column.
+     *
+     * @param int $v new value
+     * @return Etablissement The current object (for fluent API support)
+     */
+    public function setRelated1($v)
+    {
+        if ($v !== null) {
+            $v = (int) $v;
+        }
+
+        if ($this->related_1 !== $v) {
+            $this->related_1 = $v;
+            $this->modifiedColumns[] = EtablissementPeer::RELATED_1;
+        }
+
+        if ($this->aEtablissementRelatedByRelated1 !== null && $this->aEtablissementRelatedByRelated1->getId() !== $v) {
+            $this->aEtablissementRelatedByRelated1 = null;
+        }
+
+
+        return $this;
+    } // setRelated1()
+
+    /**
+     * Set the value of [related_2] column.
+     *
+     * @param int $v new value
+     * @return Etablissement The current object (for fluent API support)
+     */
+    public function setRelated2($v)
+    {
+        if ($v !== null) {
+            $v = (int) $v;
+        }
+
+        if ($this->related_2 !== $v) {
+            $this->related_2 = $v;
+            $this->modifiedColumns[] = EtablissementPeer::RELATED_2;
+        }
+
+        if ($this->aEtablissementRelatedByRelated2 !== null && $this->aEtablissementRelatedByRelated2->getId() !== $v) {
+            $this->aEtablissementRelatedByRelated2 = null;
+        }
+
+
+        return $this;
+    } // setRelated2()
+
+    /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
      *
      * @param mixed $v string, integer (timestamp), or DateTime value.
@@ -1684,17 +1848,20 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $this->opening_date = ($row[$startcol + 14] !== null) ? (string) $row[$startcol + 14] : null;
             $this->closing_date = ($row[$startcol + 15] !== null) ? (string) $row[$startcol + 15] : null;
             $this->ville_id = ($row[$startcol + 16] !== null) ? (int) $row[$startcol + 16] : null;
-            $this->categorie_id = ($row[$startcol + 17] !== null) ? (int) $row[$startcol + 17] : null;
-            $this->geo_coordinate_x = ($row[$startcol + 18] !== null) ? (string) $row[$startcol + 18] : null;
-            $this->geo_coordinate_y = ($row[$startcol + 19] !== null) ? (string) $row[$startcol + 19] : null;
-            $this->video_path = ($row[$startcol + 20] !== null) ? (string) $row[$startcol + 20] : null;
-            $this->image_360_path = ($row[$startcol + 21] !== null) ? (string) $row[$startcol + 21] : null;
-            $this->capacite = ($row[$startcol + 22] !== null) ? (string) $row[$startcol + 22] : null;
-            $this->plan_path = ($row[$startcol + 23] !== null) ? (string) $row[$startcol + 23] : null;
-            $this->vignette = ($row[$startcol + 24] !== null) ? (string) $row[$startcol + 24] : null;
-            $this->created_at = ($row[$startcol + 25] !== null) ? (string) $row[$startcol + 25] : null;
-            $this->updated_at = ($row[$startcol + 26] !== null) ? (string) $row[$startcol + 26] : null;
-            $this->active = ($row[$startcol + 27] !== null) ? (boolean) $row[$startcol + 27] : null;
+            $this->departement_id = ($row[$startcol + 17] !== null) ? (int) $row[$startcol + 17] : null;
+            $this->categorie_id = ($row[$startcol + 18] !== null) ? (int) $row[$startcol + 18] : null;
+            $this->geo_coordinate_x = ($row[$startcol + 19] !== null) ? (string) $row[$startcol + 19] : null;
+            $this->geo_coordinate_y = ($row[$startcol + 20] !== null) ? (string) $row[$startcol + 20] : null;
+            $this->video_path = ($row[$startcol + 21] !== null) ? (string) $row[$startcol + 21] : null;
+            $this->image_360_path = ($row[$startcol + 22] !== null) ? (string) $row[$startcol + 22] : null;
+            $this->capacite = ($row[$startcol + 23] !== null) ? (string) $row[$startcol + 23] : null;
+            $this->plan_path = ($row[$startcol + 24] !== null) ? (string) $row[$startcol + 24] : null;
+            $this->vignette = ($row[$startcol + 25] !== null) ? (string) $row[$startcol + 25] : null;
+            $this->related_1 = ($row[$startcol + 26] !== null) ? (int) $row[$startcol + 26] : null;
+            $this->related_2 = ($row[$startcol + 27] !== null) ? (int) $row[$startcol + 27] : null;
+            $this->created_at = ($row[$startcol + 28] !== null) ? (string) $row[$startcol + 28] : null;
+            $this->updated_at = ($row[$startcol + 29] !== null) ? (string) $row[$startcol + 29] : null;
+            $this->active = ($row[$startcol + 30] !== null) ? (boolean) $row[$startcol + 30] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -1703,7 +1870,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 28; // 28 = EtablissementPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 31; // 31 = EtablissementPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Etablissement object", $e);
@@ -1729,8 +1896,17 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if ($this->aVille !== null && $this->ville_id !== $this->aVille->getId()) {
             $this->aVille = null;
         }
+        if ($this->aDepartement !== null && $this->departement_id !== $this->aDepartement->getId()) {
+            $this->aDepartement = null;
+        }
         if ($this->aCategorie !== null && $this->categorie_id !== $this->aCategorie->getId()) {
             $this->aCategorie = null;
+        }
+        if ($this->aEtablissementRelatedByRelated1 !== null && $this->related_1 !== $this->aEtablissementRelatedByRelated1->getId()) {
+            $this->aEtablissementRelatedByRelated1 = null;
+        }
+        if ($this->aEtablissementRelatedByRelated2 !== null && $this->related_2 !== $this->aEtablissementRelatedByRelated2->getId()) {
+            $this->aEtablissementRelatedByRelated2 = null;
         }
     } // ensureConsistency
 
@@ -1772,7 +1948,14 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if ($deep) {  // also de-associate any related objects?
 
             $this->aVille = null;
+            $this->aDepartement = null;
             $this->aCategorie = null;
+            $this->aEtablissementRelatedByRelated1 = null;
+            $this->aEtablissementRelatedByRelated2 = null;
+            $this->collEtablissementsRelatedById0 = null;
+
+            $this->collEtablissementsRelatedById1 = null;
+
             $this->collEtablissementTypeHebergements = null;
 
             $this->collEtablissementDestinations = null;
@@ -1949,11 +2132,32 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 $this->setVille($this->aVille);
             }
 
+            if ($this->aDepartement !== null) {
+                if ($this->aDepartement->isModified() || $this->aDepartement->isNew()) {
+                    $affectedRows += $this->aDepartement->save($con);
+                }
+                $this->setDepartement($this->aDepartement);
+            }
+
             if ($this->aCategorie !== null) {
                 if ($this->aCategorie->isModified() || $this->aCategorie->isNew()) {
                     $affectedRows += $this->aCategorie->save($con);
                 }
                 $this->setCategorie($this->aCategorie);
+            }
+
+            if ($this->aEtablissementRelatedByRelated1 !== null) {
+                if ($this->aEtablissementRelatedByRelated1->isModified() || $this->aEtablissementRelatedByRelated1->isNew()) {
+                    $affectedRows += $this->aEtablissementRelatedByRelated1->save($con);
+                }
+                $this->setEtablissementRelatedByRelated1($this->aEtablissementRelatedByRelated1);
+            }
+
+            if ($this->aEtablissementRelatedByRelated2 !== null) {
+                if ($this->aEtablissementRelatedByRelated2->isModified() || $this->aEtablissementRelatedByRelated2->isNew()) {
+                    $affectedRows += $this->aEtablissementRelatedByRelated2->save($con);
+                }
+                $this->setEtablissementRelatedByRelated2($this->aEtablissementRelatedByRelated2);
             }
 
             if ($this->isNew() || $this->isModified()) {
@@ -2163,6 +2367,42 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 foreach ($this->getBonPlans() as $bonPlan) {
                     if ($bonPlan->isModified()) {
                         $bonPlan->save($con);
+                    }
+                }
+            }
+
+            if ($this->etablissementsRelatedById0ScheduledForDeletion !== null) {
+                if (!$this->etablissementsRelatedById0ScheduledForDeletion->isEmpty()) {
+                    foreach ($this->etablissementsRelatedById0ScheduledForDeletion as $etablissementRelatedById0) {
+                        // need to save related object because we set the relation to null
+                        $etablissementRelatedById0->save($con);
+                    }
+                    $this->etablissementsRelatedById0ScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collEtablissementsRelatedById0 !== null) {
+                foreach ($this->collEtablissementsRelatedById0 as $referrerFK) {
+                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
+                        $affectedRows += $referrerFK->save($con);
+                    }
+                }
+            }
+
+            if ($this->etablissementsRelatedById1ScheduledForDeletion !== null) {
+                if (!$this->etablissementsRelatedById1ScheduledForDeletion->isEmpty()) {
+                    foreach ($this->etablissementsRelatedById1ScheduledForDeletion as $etablissementRelatedById1) {
+                        // need to save related object because we set the relation to null
+                        $etablissementRelatedById1->save($con);
+                    }
+                    $this->etablissementsRelatedById1ScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collEtablissementsRelatedById1 !== null) {
+                foreach ($this->collEtablissementsRelatedById1 as $referrerFK) {
+                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
+                        $affectedRows += $referrerFK->save($con);
                     }
                 }
             }
@@ -2501,6 +2741,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if ($this->isColumnModified(EtablissementPeer::VILLE_ID)) {
             $modifiedColumns[':p' . $index++]  = '`ville_id`';
         }
+        if ($this->isColumnModified(EtablissementPeer::DEPARTEMENT_ID)) {
+            $modifiedColumns[':p' . $index++]  = '`departement_id`';
+        }
         if ($this->isColumnModified(EtablissementPeer::CATEGORIE_ID)) {
             $modifiedColumns[':p' . $index++]  = '`categorie_id`';
         }
@@ -2524,6 +2767,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         }
         if ($this->isColumnModified(EtablissementPeer::VIGNETTE)) {
             $modifiedColumns[':p' . $index++]  = '`vignette`';
+        }
+        if ($this->isColumnModified(EtablissementPeer::RELATED_1)) {
+            $modifiedColumns[':p' . $index++]  = '`related_1`';
+        }
+        if ($this->isColumnModified(EtablissementPeer::RELATED_2)) {
+            $modifiedColumns[':p' . $index++]  = '`related_2`';
         }
         if ($this->isColumnModified(EtablissementPeer::CREATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`created_at`';
@@ -2596,6 +2845,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                     case '`ville_id`':
                         $stmt->bindValue($identifier, $this->ville_id, PDO::PARAM_INT);
                         break;
+                    case '`departement_id`':
+                        $stmt->bindValue($identifier, $this->departement_id, PDO::PARAM_INT);
+                        break;
                     case '`categorie_id`':
                         $stmt->bindValue($identifier, $this->categorie_id, PDO::PARAM_INT);
                         break;
@@ -2619,6 +2871,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                         break;
                     case '`vignette`':
                         $stmt->bindValue($identifier, $this->vignette, PDO::PARAM_STR);
+                        break;
+                    case '`related_1`':
+                        $stmt->bindValue($identifier, $this->related_1, PDO::PARAM_INT);
+                        break;
+                    case '`related_2`':
+                        $stmt->bindValue($identifier, $this->related_2, PDO::PARAM_INT);
                         break;
                     case '`created_at`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
@@ -2734,9 +2992,27 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 }
             }
 
+            if ($this->aDepartement !== null) {
+                if (!$this->aDepartement->validate($columns)) {
+                    $failureMap = array_merge($failureMap, $this->aDepartement->getValidationFailures());
+                }
+            }
+
             if ($this->aCategorie !== null) {
                 if (!$this->aCategorie->validate($columns)) {
                     $failureMap = array_merge($failureMap, $this->aCategorie->getValidationFailures());
+                }
+            }
+
+            if ($this->aEtablissementRelatedByRelated1 !== null) {
+                if (!$this->aEtablissementRelatedByRelated1->validate($columns)) {
+                    $failureMap = array_merge($failureMap, $this->aEtablissementRelatedByRelated1->getValidationFailures());
+                }
+            }
+
+            if ($this->aEtablissementRelatedByRelated2 !== null) {
+                if (!$this->aEtablissementRelatedByRelated2->validate($columns)) {
+                    $failureMap = array_merge($failureMap, $this->aEtablissementRelatedByRelated2->getValidationFailures());
                 }
             }
 
@@ -2745,6 +3021,22 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 $failureMap = array_merge($failureMap, $retval);
             }
 
+
+                if ($this->collEtablissementsRelatedById0 !== null) {
+                    foreach ($this->collEtablissementsRelatedById0 as $referrerFK) {
+                        if (!$referrerFK->validate($columns)) {
+                            $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
+                        }
+                    }
+                }
+
+                if ($this->collEtablissementsRelatedById1 !== null) {
+                    foreach ($this->collEtablissementsRelatedById1 as $referrerFK) {
+                        if (!$referrerFK->validate($columns)) {
+                            $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
+                        }
+                    }
+                }
 
                 if ($this->collEtablissementTypeHebergements !== null) {
                     foreach ($this->collEtablissementTypeHebergements as $referrerFK) {
@@ -2953,36 +3245,45 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 return $this->getVilleId();
                 break;
             case 17:
-                return $this->getCategorieId();
+                return $this->getDepartementId();
                 break;
             case 18:
-                return $this->getGeoCoordinateX();
+                return $this->getCategorieId();
                 break;
             case 19:
-                return $this->getGeoCoordinateY();
+                return $this->getGeoCoordinateX();
                 break;
             case 20:
-                return $this->getVideoPath();
+                return $this->getGeoCoordinateY();
                 break;
             case 21:
-                return $this->getImage360Path();
+                return $this->getVideoPath();
                 break;
             case 22:
-                return $this->getCapacite();
+                return $this->getImage360Path();
                 break;
             case 23:
-                return $this->getPlanPath();
+                return $this->getCapacite();
                 break;
             case 24:
-                return $this->getVignette();
+                return $this->getPlanPath();
                 break;
             case 25:
-                return $this->getCreatedAt();
+                return $this->getVignette();
                 break;
             case 26:
-                return $this->getUpdatedAt();
+                return $this->getRelated1();
                 break;
             case 27:
+                return $this->getRelated2();
+                break;
+            case 28:
+                return $this->getCreatedAt();
+                break;
+            case 29:
+                return $this->getUpdatedAt();
+                break;
+            case 30:
                 return $this->getActive();
                 break;
             default:
@@ -3031,24 +3332,42 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $keys[14] => $this->getOpeningDate(),
             $keys[15] => $this->getClosingDate(),
             $keys[16] => $this->getVilleId(),
-            $keys[17] => $this->getCategorieId(),
-            $keys[18] => $this->getGeoCoordinateX(),
-            $keys[19] => $this->getGeoCoordinateY(),
-            $keys[20] => $this->getVideoPath(),
-            $keys[21] => $this->getImage360Path(),
-            $keys[22] => $this->getCapacite(),
-            $keys[23] => $this->getPlanPath(),
-            $keys[24] => $this->getVignette(),
-            $keys[25] => $this->getCreatedAt(),
-            $keys[26] => $this->getUpdatedAt(),
-            $keys[27] => $this->getActive(),
+            $keys[17] => $this->getDepartementId(),
+            $keys[18] => $this->getCategorieId(),
+            $keys[19] => $this->getGeoCoordinateX(),
+            $keys[20] => $this->getGeoCoordinateY(),
+            $keys[21] => $this->getVideoPath(),
+            $keys[22] => $this->getImage360Path(),
+            $keys[23] => $this->getCapacite(),
+            $keys[24] => $this->getPlanPath(),
+            $keys[25] => $this->getVignette(),
+            $keys[26] => $this->getRelated1(),
+            $keys[27] => $this->getRelated2(),
+            $keys[28] => $this->getCreatedAt(),
+            $keys[29] => $this->getUpdatedAt(),
+            $keys[30] => $this->getActive(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aVille) {
                 $result['Ville'] = $this->aVille->toArray($keyType, $includeLazyLoadColumns,  $alreadyDumpedObjects, true);
             }
+            if (null !== $this->aDepartement) {
+                $result['Departement'] = $this->aDepartement->toArray($keyType, $includeLazyLoadColumns,  $alreadyDumpedObjects, true);
+            }
             if (null !== $this->aCategorie) {
                 $result['Categorie'] = $this->aCategorie->toArray($keyType, $includeLazyLoadColumns,  $alreadyDumpedObjects, true);
+            }
+            if (null !== $this->aEtablissementRelatedByRelated1) {
+                $result['EtablissementRelatedByRelated1'] = $this->aEtablissementRelatedByRelated1->toArray($keyType, $includeLazyLoadColumns,  $alreadyDumpedObjects, true);
+            }
+            if (null !== $this->aEtablissementRelatedByRelated2) {
+                $result['EtablissementRelatedByRelated2'] = $this->aEtablissementRelatedByRelated2->toArray($keyType, $includeLazyLoadColumns,  $alreadyDumpedObjects, true);
+            }
+            if (null !== $this->collEtablissementsRelatedById0) {
+                $result['EtablissementsRelatedById0'] = $this->collEtablissementsRelatedById0->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
+            }
+            if (null !== $this->collEtablissementsRelatedById1) {
+                $result['EtablissementsRelatedById1'] = $this->collEtablissementsRelatedById1->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
             if (null !== $this->collEtablissementTypeHebergements) {
                 $result['EtablissementTypeHebergements'] = $this->collEtablissementTypeHebergements->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
@@ -3181,36 +3500,45 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 $this->setVilleId($value);
                 break;
             case 17:
-                $this->setCategorieId($value);
+                $this->setDepartementId($value);
                 break;
             case 18:
-                $this->setGeoCoordinateX($value);
+                $this->setCategorieId($value);
                 break;
             case 19:
-                $this->setGeoCoordinateY($value);
+                $this->setGeoCoordinateX($value);
                 break;
             case 20:
-                $this->setVideoPath($value);
+                $this->setGeoCoordinateY($value);
                 break;
             case 21:
-                $this->setImage360Path($value);
+                $this->setVideoPath($value);
                 break;
             case 22:
-                $this->setCapacite($value);
+                $this->setImage360Path($value);
                 break;
             case 23:
-                $this->setPlanPath($value);
+                $this->setCapacite($value);
                 break;
             case 24:
-                $this->setVignette($value);
+                $this->setPlanPath($value);
                 break;
             case 25:
-                $this->setCreatedAt($value);
+                $this->setVignette($value);
                 break;
             case 26:
-                $this->setUpdatedAt($value);
+                $this->setRelated1($value);
                 break;
             case 27:
+                $this->setRelated2($value);
+                break;
+            case 28:
+                $this->setCreatedAt($value);
+                break;
+            case 29:
+                $this->setUpdatedAt($value);
+                break;
+            case 30:
                 $this->setActive($value);
                 break;
         } // switch()
@@ -3254,17 +3582,20 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if (array_key_exists($keys[14], $arr)) $this->setOpeningDate($arr[$keys[14]]);
         if (array_key_exists($keys[15], $arr)) $this->setClosingDate($arr[$keys[15]]);
         if (array_key_exists($keys[16], $arr)) $this->setVilleId($arr[$keys[16]]);
-        if (array_key_exists($keys[17], $arr)) $this->setCategorieId($arr[$keys[17]]);
-        if (array_key_exists($keys[18], $arr)) $this->setGeoCoordinateX($arr[$keys[18]]);
-        if (array_key_exists($keys[19], $arr)) $this->setGeoCoordinateY($arr[$keys[19]]);
-        if (array_key_exists($keys[20], $arr)) $this->setVideoPath($arr[$keys[20]]);
-        if (array_key_exists($keys[21], $arr)) $this->setImage360Path($arr[$keys[21]]);
-        if (array_key_exists($keys[22], $arr)) $this->setCapacite($arr[$keys[22]]);
-        if (array_key_exists($keys[23], $arr)) $this->setPlanPath($arr[$keys[23]]);
-        if (array_key_exists($keys[24], $arr)) $this->setVignette($arr[$keys[24]]);
-        if (array_key_exists($keys[25], $arr)) $this->setCreatedAt($arr[$keys[25]]);
-        if (array_key_exists($keys[26], $arr)) $this->setUpdatedAt($arr[$keys[26]]);
-        if (array_key_exists($keys[27], $arr)) $this->setActive($arr[$keys[27]]);
+        if (array_key_exists($keys[17], $arr)) $this->setDepartementId($arr[$keys[17]]);
+        if (array_key_exists($keys[18], $arr)) $this->setCategorieId($arr[$keys[18]]);
+        if (array_key_exists($keys[19], $arr)) $this->setGeoCoordinateX($arr[$keys[19]]);
+        if (array_key_exists($keys[20], $arr)) $this->setGeoCoordinateY($arr[$keys[20]]);
+        if (array_key_exists($keys[21], $arr)) $this->setVideoPath($arr[$keys[21]]);
+        if (array_key_exists($keys[22], $arr)) $this->setImage360Path($arr[$keys[22]]);
+        if (array_key_exists($keys[23], $arr)) $this->setCapacite($arr[$keys[23]]);
+        if (array_key_exists($keys[24], $arr)) $this->setPlanPath($arr[$keys[24]]);
+        if (array_key_exists($keys[25], $arr)) $this->setVignette($arr[$keys[25]]);
+        if (array_key_exists($keys[26], $arr)) $this->setRelated1($arr[$keys[26]]);
+        if (array_key_exists($keys[27], $arr)) $this->setRelated2($arr[$keys[27]]);
+        if (array_key_exists($keys[28], $arr)) $this->setCreatedAt($arr[$keys[28]]);
+        if (array_key_exists($keys[29], $arr)) $this->setUpdatedAt($arr[$keys[29]]);
+        if (array_key_exists($keys[30], $arr)) $this->setActive($arr[$keys[30]]);
     }
 
     /**
@@ -3293,6 +3624,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if ($this->isColumnModified(EtablissementPeer::OPENING_DATE)) $criteria->add(EtablissementPeer::OPENING_DATE, $this->opening_date);
         if ($this->isColumnModified(EtablissementPeer::CLOSING_DATE)) $criteria->add(EtablissementPeer::CLOSING_DATE, $this->closing_date);
         if ($this->isColumnModified(EtablissementPeer::VILLE_ID)) $criteria->add(EtablissementPeer::VILLE_ID, $this->ville_id);
+        if ($this->isColumnModified(EtablissementPeer::DEPARTEMENT_ID)) $criteria->add(EtablissementPeer::DEPARTEMENT_ID, $this->departement_id);
         if ($this->isColumnModified(EtablissementPeer::CATEGORIE_ID)) $criteria->add(EtablissementPeer::CATEGORIE_ID, $this->categorie_id);
         if ($this->isColumnModified(EtablissementPeer::GEO_COORDINATE_X)) $criteria->add(EtablissementPeer::GEO_COORDINATE_X, $this->geo_coordinate_x);
         if ($this->isColumnModified(EtablissementPeer::GEO_COORDINATE_Y)) $criteria->add(EtablissementPeer::GEO_COORDINATE_Y, $this->geo_coordinate_y);
@@ -3301,6 +3633,8 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if ($this->isColumnModified(EtablissementPeer::CAPACITE)) $criteria->add(EtablissementPeer::CAPACITE, $this->capacite);
         if ($this->isColumnModified(EtablissementPeer::PLAN_PATH)) $criteria->add(EtablissementPeer::PLAN_PATH, $this->plan_path);
         if ($this->isColumnModified(EtablissementPeer::VIGNETTE)) $criteria->add(EtablissementPeer::VIGNETTE, $this->vignette);
+        if ($this->isColumnModified(EtablissementPeer::RELATED_1)) $criteria->add(EtablissementPeer::RELATED_1, $this->related_1);
+        if ($this->isColumnModified(EtablissementPeer::RELATED_2)) $criteria->add(EtablissementPeer::RELATED_2, $this->related_2);
         if ($this->isColumnModified(EtablissementPeer::CREATED_AT)) $criteria->add(EtablissementPeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(EtablissementPeer::UPDATED_AT)) $criteria->add(EtablissementPeer::UPDATED_AT, $this->updated_at);
         if ($this->isColumnModified(EtablissementPeer::ACTIVE)) $criteria->add(EtablissementPeer::ACTIVE, $this->active);
@@ -3383,6 +3717,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $copyObj->setOpeningDate($this->getOpeningDate());
         $copyObj->setClosingDate($this->getClosingDate());
         $copyObj->setVilleId($this->getVilleId());
+        $copyObj->setDepartementId($this->getDepartementId());
         $copyObj->setCategorieId($this->getCategorieId());
         $copyObj->setGeoCoordinateX($this->getGeoCoordinateX());
         $copyObj->setGeoCoordinateY($this->getGeoCoordinateY());
@@ -3391,6 +3726,8 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $copyObj->setCapacite($this->getCapacite());
         $copyObj->setPlanPath($this->getPlanPath());
         $copyObj->setVignette($this->getVignette());
+        $copyObj->setRelated1($this->getRelated1());
+        $copyObj->setRelated2($this->getRelated2());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
         $copyObj->setActive($this->getActive());
@@ -3401,6 +3738,18 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $copyObj->setNew(false);
             // store object hash to prevent cycle
             $this->startCopy = true;
+
+            foreach ($this->getEtablissementsRelatedById0() as $relObj) {
+                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
+                    $copyObj->addEtablissementRelatedById0($relObj->copy($deepCopy));
+                }
+            }
+
+            foreach ($this->getEtablissementsRelatedById1() as $relObj) {
+                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
+                    $copyObj->addEtablissementRelatedById1($relObj->copy($deepCopy));
+                }
+            }
 
             foreach ($this->getEtablissementTypeHebergements() as $relObj) {
                 if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
@@ -3595,6 +3944,58 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     }
 
     /**
+     * Declares an association between this object and a Departement object.
+     *
+     * @param             Departement $v
+     * @return Etablissement The current object (for fluent API support)
+     * @throws PropelException
+     */
+    public function setDepartement(Departement $v = null)
+    {
+        if ($v === null) {
+            $this->setDepartementId(NULL);
+        } else {
+            $this->setDepartementId($v->getId());
+        }
+
+        $this->aDepartement = $v;
+
+        // Add binding for other direction of this n:n relationship.
+        // If this object has already been added to the Departement object, it will not be re-added.
+        if ($v !== null) {
+            $v->addEtablissement($this);
+        }
+
+
+        return $this;
+    }
+
+
+    /**
+     * Get the associated Departement object
+     *
+     * @param PropelPDO $con Optional Connection object.
+     * @param $doQuery Executes a query to get the object if required
+     * @return Departement The associated Departement object.
+     * @throws PropelException
+     */
+    public function getDepartement(PropelPDO $con = null, $doQuery = true)
+    {
+        if ($this->aDepartement === null && ($this->departement_id !== null) && $doQuery) {
+            $this->aDepartement = DepartementQuery::create()->findPk($this->departement_id, $con);
+            /* The following can be used additionally to
+                guarantee the related object contains a reference
+                to this object.  This level of coupling may, however, be
+                undesirable since it could result in an only partially populated collection
+                in the referenced object.
+                $this->aDepartement->addEtablissements($this);
+             */
+        }
+
+        return $this->aDepartement;
+    }
+
+    /**
      * Declares an association between this object and a Categorie object.
      *
      * @param             Categorie $v
@@ -3646,6 +4047,110 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         return $this->aCategorie;
     }
 
+    /**
+     * Declares an association between this object and a Etablissement object.
+     *
+     * @param             Etablissement $v
+     * @return Etablissement The current object (for fluent API support)
+     * @throws PropelException
+     */
+    public function setEtablissementRelatedByRelated1(Etablissement $v = null)
+    {
+        if ($v === null) {
+            $this->setRelated1(NULL);
+        } else {
+            $this->setRelated1($v->getId());
+        }
+
+        $this->aEtablissementRelatedByRelated1 = $v;
+
+        // Add binding for other direction of this n:n relationship.
+        // If this object has already been added to the Etablissement object, it will not be re-added.
+        if ($v !== null) {
+            $v->addEtablissementRelatedById0($this);
+        }
+
+
+        return $this;
+    }
+
+
+    /**
+     * Get the associated Etablissement object
+     *
+     * @param PropelPDO $con Optional Connection object.
+     * @param $doQuery Executes a query to get the object if required
+     * @return Etablissement The associated Etablissement object.
+     * @throws PropelException
+     */
+    public function getEtablissementRelatedByRelated1(PropelPDO $con = null, $doQuery = true)
+    {
+        if ($this->aEtablissementRelatedByRelated1 === null && ($this->related_1 !== null) && $doQuery) {
+            $this->aEtablissementRelatedByRelated1 = EtablissementQuery::create()->findPk($this->related_1, $con);
+            /* The following can be used additionally to
+                guarantee the related object contains a reference
+                to this object.  This level of coupling may, however, be
+                undesirable since it could result in an only partially populated collection
+                in the referenced object.
+                $this->aEtablissementRelatedByRelated1->addEtablissementsRelatedById0($this);
+             */
+        }
+
+        return $this->aEtablissementRelatedByRelated1;
+    }
+
+    /**
+     * Declares an association between this object and a Etablissement object.
+     *
+     * @param             Etablissement $v
+     * @return Etablissement The current object (for fluent API support)
+     * @throws PropelException
+     */
+    public function setEtablissementRelatedByRelated2(Etablissement $v = null)
+    {
+        if ($v === null) {
+            $this->setRelated2(NULL);
+        } else {
+            $this->setRelated2($v->getId());
+        }
+
+        $this->aEtablissementRelatedByRelated2 = $v;
+
+        // Add binding for other direction of this n:n relationship.
+        // If this object has already been added to the Etablissement object, it will not be re-added.
+        if ($v !== null) {
+            $v->addEtablissementRelatedById1($this);
+        }
+
+
+        return $this;
+    }
+
+
+    /**
+     * Get the associated Etablissement object
+     *
+     * @param PropelPDO $con Optional Connection object.
+     * @param $doQuery Executes a query to get the object if required
+     * @return Etablissement The associated Etablissement object.
+     * @throws PropelException
+     */
+    public function getEtablissementRelatedByRelated2(PropelPDO $con = null, $doQuery = true)
+    {
+        if ($this->aEtablissementRelatedByRelated2 === null && ($this->related_2 !== null) && $doQuery) {
+            $this->aEtablissementRelatedByRelated2 = EtablissementQuery::create()->findPk($this->related_2, $con);
+            /* The following can be used additionally to
+                guarantee the related object contains a reference
+                to this object.  This level of coupling may, however, be
+                undesirable since it could result in an only partially populated collection
+                in the referenced object.
+                $this->aEtablissementRelatedByRelated2->addEtablissementsRelatedById1($this);
+             */
+        }
+
+        return $this->aEtablissementRelatedByRelated2;
+    }
+
 
     /**
      * Initializes a collection based on the name of a relation.
@@ -3657,6 +4162,12 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      */
     public function initRelation($relationName)
     {
+        if ('EtablissementRelatedById0' == $relationName) {
+            $this->initEtablissementsRelatedById0();
+        }
+        if ('EtablissementRelatedById1' == $relationName) {
+            $this->initEtablissementsRelatedById1();
+        }
         if ('EtablissementTypeHebergement' == $relationName) {
             $this->initEtablissementTypeHebergements();
         }
@@ -3702,6 +4213,586 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if ('EtablissementI18n' == $relationName) {
             $this->initEtablissementI18ns();
         }
+    }
+
+    /**
+     * Clears out the collEtablissementsRelatedById0 collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return Etablissement The current object (for fluent API support)
+     * @see        addEtablissementsRelatedById0()
+     */
+    public function clearEtablissementsRelatedById0()
+    {
+        $this->collEtablissementsRelatedById0 = null; // important to set this to null since that means it is uninitialized
+        $this->collEtablissementsRelatedById0Partial = null;
+
+        return $this;
+    }
+
+    /**
+     * reset is the collEtablissementsRelatedById0 collection loaded partially
+     *
+     * @return void
+     */
+    public function resetPartialEtablissementsRelatedById0($v = true)
+    {
+        $this->collEtablissementsRelatedById0Partial = $v;
+    }
+
+    /**
+     * Initializes the collEtablissementsRelatedById0 collection.
+     *
+     * By default this just sets the collEtablissementsRelatedById0 collection to an empty array (like clearcollEtablissementsRelatedById0());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @param boolean $overrideExisting If set to true, the method call initializes
+     *                                        the collection even if it is not empty
+     *
+     * @return void
+     */
+    public function initEtablissementsRelatedById0($overrideExisting = true)
+    {
+        if (null !== $this->collEtablissementsRelatedById0 && !$overrideExisting) {
+            return;
+        }
+        $this->collEtablissementsRelatedById0 = new PropelObjectCollection();
+        $this->collEtablissementsRelatedById0->setModel('Etablissement');
+    }
+
+    /**
+     * Gets an array of Etablissement objects which contain a foreign key that references this object.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this Etablissement is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @return PropelObjectCollection|Etablissement[] List of Etablissement objects
+     * @throws PropelException
+     */
+    public function getEtablissementsRelatedById0($criteria = null, PropelPDO $con = null)
+    {
+        $partial = $this->collEtablissementsRelatedById0Partial && !$this->isNew();
+        if (null === $this->collEtablissementsRelatedById0 || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collEtablissementsRelatedById0) {
+                // return empty collection
+                $this->initEtablissementsRelatedById0();
+            } else {
+                $collEtablissementsRelatedById0 = EtablissementQuery::create(null, $criteria)
+                    ->filterByEtablissementRelatedByRelated1($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    if (false !== $this->collEtablissementsRelatedById0Partial && count($collEtablissementsRelatedById0)) {
+                      $this->initEtablissementsRelatedById0(false);
+
+                      foreach($collEtablissementsRelatedById0 as $obj) {
+                        if (false == $this->collEtablissementsRelatedById0->contains($obj)) {
+                          $this->collEtablissementsRelatedById0->append($obj);
+                        }
+                      }
+
+                      $this->collEtablissementsRelatedById0Partial = true;
+                    }
+
+                    return $collEtablissementsRelatedById0;
+                }
+
+                if($partial && $this->collEtablissementsRelatedById0) {
+                    foreach($this->collEtablissementsRelatedById0 as $obj) {
+                        if($obj->isNew()) {
+                            $collEtablissementsRelatedById0[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collEtablissementsRelatedById0 = $collEtablissementsRelatedById0;
+                $this->collEtablissementsRelatedById0Partial = false;
+            }
+        }
+
+        return $this->collEtablissementsRelatedById0;
+    }
+
+    /**
+     * Sets a collection of EtablissementRelatedById0 objects related by a one-to-many relationship
+     * to the current object.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $etablissementsRelatedById0 A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     * @return Etablissement The current object (for fluent API support)
+     */
+    public function setEtablissementsRelatedById0(PropelCollection $etablissementsRelatedById0, PropelPDO $con = null)
+    {
+        $this->etablissementsRelatedById0ScheduledForDeletion = $this->getEtablissementsRelatedById0(new Criteria(), $con)->diff($etablissementsRelatedById0);
+
+        foreach ($this->etablissementsRelatedById0ScheduledForDeletion as $etablissementRelatedById0Removed) {
+            $etablissementRelatedById0Removed->setEtablissementRelatedByRelated1(null);
+        }
+
+        $this->collEtablissementsRelatedById0 = null;
+        foreach ($etablissementsRelatedById0 as $etablissementRelatedById0) {
+            $this->addEtablissementRelatedById0($etablissementRelatedById0);
+        }
+
+        $this->collEtablissementsRelatedById0 = $etablissementsRelatedById0;
+        $this->collEtablissementsRelatedById0Partial = false;
+
+        return $this;
+    }
+
+    /**
+     * Returns the number of related Etablissement objects.
+     *
+     * @param Criteria $criteria
+     * @param boolean $distinct
+     * @param PropelPDO $con
+     * @return int             Count of related Etablissement objects.
+     * @throws PropelException
+     */
+    public function countEtablissementsRelatedById0(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        $partial = $this->collEtablissementsRelatedById0Partial && !$this->isNew();
+        if (null === $this->collEtablissementsRelatedById0 || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collEtablissementsRelatedById0) {
+                return 0;
+            }
+
+            if($partial && !$criteria) {
+                return count($this->getEtablissementsRelatedById0());
+            }
+            $query = EtablissementQuery::create(null, $criteria);
+            if ($distinct) {
+                $query->distinct();
+            }
+
+            return $query
+                ->filterByEtablissementRelatedByRelated1($this)
+                ->count($con);
+        }
+
+        return count($this->collEtablissementsRelatedById0);
+    }
+
+    /**
+     * Method called to associate a Etablissement object to this object
+     * through the Etablissement foreign key attribute.
+     *
+     * @param    Etablissement $l Etablissement
+     * @return Etablissement The current object (for fluent API support)
+     */
+    public function addEtablissementRelatedById0(Etablissement $l)
+    {
+        if ($this->collEtablissementsRelatedById0 === null) {
+            $this->initEtablissementsRelatedById0();
+            $this->collEtablissementsRelatedById0Partial = true;
+        }
+        if (!in_array($l, $this->collEtablissementsRelatedById0->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
+            $this->doAddEtablissementRelatedById0($l);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	EtablissementRelatedById0 $etablissementRelatedById0 The etablissementRelatedById0 object to add.
+     */
+    protected function doAddEtablissementRelatedById0($etablissementRelatedById0)
+    {
+        $this->collEtablissementsRelatedById0[]= $etablissementRelatedById0;
+        $etablissementRelatedById0->setEtablissementRelatedByRelated1($this);
+    }
+
+    /**
+     * @param	EtablissementRelatedById0 $etablissementRelatedById0 The etablissementRelatedById0 object to remove.
+     * @return Etablissement The current object (for fluent API support)
+     */
+    public function removeEtablissementRelatedById0($etablissementRelatedById0)
+    {
+        if ($this->getEtablissementsRelatedById0()->contains($etablissementRelatedById0)) {
+            $this->collEtablissementsRelatedById0->remove($this->collEtablissementsRelatedById0->search($etablissementRelatedById0));
+            if (null === $this->etablissementsRelatedById0ScheduledForDeletion) {
+                $this->etablissementsRelatedById0ScheduledForDeletion = clone $this->collEtablissementsRelatedById0;
+                $this->etablissementsRelatedById0ScheduledForDeletion->clear();
+            }
+            $this->etablissementsRelatedById0ScheduledForDeletion[]= $etablissementRelatedById0;
+            $etablissementRelatedById0->setEtablissementRelatedByRelated1(null);
+        }
+
+        return $this;
+    }
+
+
+    /**
+     * If this collection has already been initialized with
+     * an identical criteria, it returns the collection.
+     * Otherwise if this Etablissement is new, it will return
+     * an empty collection; or if this Etablissement has previously
+     * been saved, it will retrieve related EtablissementsRelatedById0 from storage.
+     *
+     * This method is protected by default in order to keep the public
+     * api reasonable.  You can provide public methods for those you
+     * actually need in Etablissement.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @param string $join_behavior optional join type to use (defaults to Criteria::LEFT_JOIN)
+     * @return PropelObjectCollection|Etablissement[] List of Etablissement objects
+     */
+    public function getEtablissementsRelatedById0JoinVille($criteria = null, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    {
+        $query = EtablissementQuery::create(null, $criteria);
+        $query->joinWith('Ville', $join_behavior);
+
+        return $this->getEtablissementsRelatedById0($query, $con);
+    }
+
+
+    /**
+     * If this collection has already been initialized with
+     * an identical criteria, it returns the collection.
+     * Otherwise if this Etablissement is new, it will return
+     * an empty collection; or if this Etablissement has previously
+     * been saved, it will retrieve related EtablissementsRelatedById0 from storage.
+     *
+     * This method is protected by default in order to keep the public
+     * api reasonable.  You can provide public methods for those you
+     * actually need in Etablissement.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @param string $join_behavior optional join type to use (defaults to Criteria::LEFT_JOIN)
+     * @return PropelObjectCollection|Etablissement[] List of Etablissement objects
+     */
+    public function getEtablissementsRelatedById0JoinDepartement($criteria = null, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    {
+        $query = EtablissementQuery::create(null, $criteria);
+        $query->joinWith('Departement', $join_behavior);
+
+        return $this->getEtablissementsRelatedById0($query, $con);
+    }
+
+
+    /**
+     * If this collection has already been initialized with
+     * an identical criteria, it returns the collection.
+     * Otherwise if this Etablissement is new, it will return
+     * an empty collection; or if this Etablissement has previously
+     * been saved, it will retrieve related EtablissementsRelatedById0 from storage.
+     *
+     * This method is protected by default in order to keep the public
+     * api reasonable.  You can provide public methods for those you
+     * actually need in Etablissement.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @param string $join_behavior optional join type to use (defaults to Criteria::LEFT_JOIN)
+     * @return PropelObjectCollection|Etablissement[] List of Etablissement objects
+     */
+    public function getEtablissementsRelatedById0JoinCategorie($criteria = null, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    {
+        $query = EtablissementQuery::create(null, $criteria);
+        $query->joinWith('Categorie', $join_behavior);
+
+        return $this->getEtablissementsRelatedById0($query, $con);
+    }
+
+    /**
+     * Clears out the collEtablissementsRelatedById1 collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return Etablissement The current object (for fluent API support)
+     * @see        addEtablissementsRelatedById1()
+     */
+    public function clearEtablissementsRelatedById1()
+    {
+        $this->collEtablissementsRelatedById1 = null; // important to set this to null since that means it is uninitialized
+        $this->collEtablissementsRelatedById1Partial = null;
+
+        return $this;
+    }
+
+    /**
+     * reset is the collEtablissementsRelatedById1 collection loaded partially
+     *
+     * @return void
+     */
+    public function resetPartialEtablissementsRelatedById1($v = true)
+    {
+        $this->collEtablissementsRelatedById1Partial = $v;
+    }
+
+    /**
+     * Initializes the collEtablissementsRelatedById1 collection.
+     *
+     * By default this just sets the collEtablissementsRelatedById1 collection to an empty array (like clearcollEtablissementsRelatedById1());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @param boolean $overrideExisting If set to true, the method call initializes
+     *                                        the collection even if it is not empty
+     *
+     * @return void
+     */
+    public function initEtablissementsRelatedById1($overrideExisting = true)
+    {
+        if (null !== $this->collEtablissementsRelatedById1 && !$overrideExisting) {
+            return;
+        }
+        $this->collEtablissementsRelatedById1 = new PropelObjectCollection();
+        $this->collEtablissementsRelatedById1->setModel('Etablissement');
+    }
+
+    /**
+     * Gets an array of Etablissement objects which contain a foreign key that references this object.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this Etablissement is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @return PropelObjectCollection|Etablissement[] List of Etablissement objects
+     * @throws PropelException
+     */
+    public function getEtablissementsRelatedById1($criteria = null, PropelPDO $con = null)
+    {
+        $partial = $this->collEtablissementsRelatedById1Partial && !$this->isNew();
+        if (null === $this->collEtablissementsRelatedById1 || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collEtablissementsRelatedById1) {
+                // return empty collection
+                $this->initEtablissementsRelatedById1();
+            } else {
+                $collEtablissementsRelatedById1 = EtablissementQuery::create(null, $criteria)
+                    ->filterByEtablissementRelatedByRelated2($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    if (false !== $this->collEtablissementsRelatedById1Partial && count($collEtablissementsRelatedById1)) {
+                      $this->initEtablissementsRelatedById1(false);
+
+                      foreach($collEtablissementsRelatedById1 as $obj) {
+                        if (false == $this->collEtablissementsRelatedById1->contains($obj)) {
+                          $this->collEtablissementsRelatedById1->append($obj);
+                        }
+                      }
+
+                      $this->collEtablissementsRelatedById1Partial = true;
+                    }
+
+                    return $collEtablissementsRelatedById1;
+                }
+
+                if($partial && $this->collEtablissementsRelatedById1) {
+                    foreach($this->collEtablissementsRelatedById1 as $obj) {
+                        if($obj->isNew()) {
+                            $collEtablissementsRelatedById1[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collEtablissementsRelatedById1 = $collEtablissementsRelatedById1;
+                $this->collEtablissementsRelatedById1Partial = false;
+            }
+        }
+
+        return $this->collEtablissementsRelatedById1;
+    }
+
+    /**
+     * Sets a collection of EtablissementRelatedById1 objects related by a one-to-many relationship
+     * to the current object.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $etablissementsRelatedById1 A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     * @return Etablissement The current object (for fluent API support)
+     */
+    public function setEtablissementsRelatedById1(PropelCollection $etablissementsRelatedById1, PropelPDO $con = null)
+    {
+        $this->etablissementsRelatedById1ScheduledForDeletion = $this->getEtablissementsRelatedById1(new Criteria(), $con)->diff($etablissementsRelatedById1);
+
+        foreach ($this->etablissementsRelatedById1ScheduledForDeletion as $etablissementRelatedById1Removed) {
+            $etablissementRelatedById1Removed->setEtablissementRelatedByRelated2(null);
+        }
+
+        $this->collEtablissementsRelatedById1 = null;
+        foreach ($etablissementsRelatedById1 as $etablissementRelatedById1) {
+            $this->addEtablissementRelatedById1($etablissementRelatedById1);
+        }
+
+        $this->collEtablissementsRelatedById1 = $etablissementsRelatedById1;
+        $this->collEtablissementsRelatedById1Partial = false;
+
+        return $this;
+    }
+
+    /**
+     * Returns the number of related Etablissement objects.
+     *
+     * @param Criteria $criteria
+     * @param boolean $distinct
+     * @param PropelPDO $con
+     * @return int             Count of related Etablissement objects.
+     * @throws PropelException
+     */
+    public function countEtablissementsRelatedById1(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        $partial = $this->collEtablissementsRelatedById1Partial && !$this->isNew();
+        if (null === $this->collEtablissementsRelatedById1 || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collEtablissementsRelatedById1) {
+                return 0;
+            }
+
+            if($partial && !$criteria) {
+                return count($this->getEtablissementsRelatedById1());
+            }
+            $query = EtablissementQuery::create(null, $criteria);
+            if ($distinct) {
+                $query->distinct();
+            }
+
+            return $query
+                ->filterByEtablissementRelatedByRelated2($this)
+                ->count($con);
+        }
+
+        return count($this->collEtablissementsRelatedById1);
+    }
+
+    /**
+     * Method called to associate a Etablissement object to this object
+     * through the Etablissement foreign key attribute.
+     *
+     * @param    Etablissement $l Etablissement
+     * @return Etablissement The current object (for fluent API support)
+     */
+    public function addEtablissementRelatedById1(Etablissement $l)
+    {
+        if ($this->collEtablissementsRelatedById1 === null) {
+            $this->initEtablissementsRelatedById1();
+            $this->collEtablissementsRelatedById1Partial = true;
+        }
+        if (!in_array($l, $this->collEtablissementsRelatedById1->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
+            $this->doAddEtablissementRelatedById1($l);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	EtablissementRelatedById1 $etablissementRelatedById1 The etablissementRelatedById1 object to add.
+     */
+    protected function doAddEtablissementRelatedById1($etablissementRelatedById1)
+    {
+        $this->collEtablissementsRelatedById1[]= $etablissementRelatedById1;
+        $etablissementRelatedById1->setEtablissementRelatedByRelated2($this);
+    }
+
+    /**
+     * @param	EtablissementRelatedById1 $etablissementRelatedById1 The etablissementRelatedById1 object to remove.
+     * @return Etablissement The current object (for fluent API support)
+     */
+    public function removeEtablissementRelatedById1($etablissementRelatedById1)
+    {
+        if ($this->getEtablissementsRelatedById1()->contains($etablissementRelatedById1)) {
+            $this->collEtablissementsRelatedById1->remove($this->collEtablissementsRelatedById1->search($etablissementRelatedById1));
+            if (null === $this->etablissementsRelatedById1ScheduledForDeletion) {
+                $this->etablissementsRelatedById1ScheduledForDeletion = clone $this->collEtablissementsRelatedById1;
+                $this->etablissementsRelatedById1ScheduledForDeletion->clear();
+            }
+            $this->etablissementsRelatedById1ScheduledForDeletion[]= $etablissementRelatedById1;
+            $etablissementRelatedById1->setEtablissementRelatedByRelated2(null);
+        }
+
+        return $this;
+    }
+
+
+    /**
+     * If this collection has already been initialized with
+     * an identical criteria, it returns the collection.
+     * Otherwise if this Etablissement is new, it will return
+     * an empty collection; or if this Etablissement has previously
+     * been saved, it will retrieve related EtablissementsRelatedById1 from storage.
+     *
+     * This method is protected by default in order to keep the public
+     * api reasonable.  You can provide public methods for those you
+     * actually need in Etablissement.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @param string $join_behavior optional join type to use (defaults to Criteria::LEFT_JOIN)
+     * @return PropelObjectCollection|Etablissement[] List of Etablissement objects
+     */
+    public function getEtablissementsRelatedById1JoinVille($criteria = null, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    {
+        $query = EtablissementQuery::create(null, $criteria);
+        $query->joinWith('Ville', $join_behavior);
+
+        return $this->getEtablissementsRelatedById1($query, $con);
+    }
+
+
+    /**
+     * If this collection has already been initialized with
+     * an identical criteria, it returns the collection.
+     * Otherwise if this Etablissement is new, it will return
+     * an empty collection; or if this Etablissement has previously
+     * been saved, it will retrieve related EtablissementsRelatedById1 from storage.
+     *
+     * This method is protected by default in order to keep the public
+     * api reasonable.  You can provide public methods for those you
+     * actually need in Etablissement.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @param string $join_behavior optional join type to use (defaults to Criteria::LEFT_JOIN)
+     * @return PropelObjectCollection|Etablissement[] List of Etablissement objects
+     */
+    public function getEtablissementsRelatedById1JoinDepartement($criteria = null, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    {
+        $query = EtablissementQuery::create(null, $criteria);
+        $query->joinWith('Departement', $join_behavior);
+
+        return $this->getEtablissementsRelatedById1($query, $con);
+    }
+
+
+    /**
+     * If this collection has already been initialized with
+     * an identical criteria, it returns the collection.
+     * Otherwise if this Etablissement is new, it will return
+     * an empty collection; or if this Etablissement has previously
+     * been saved, it will retrieve related EtablissementsRelatedById1 from storage.
+     *
+     * This method is protected by default in order to keep the public
+     * api reasonable.  You can provide public methods for those you
+     * actually need in Etablissement.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @param string $join_behavior optional join type to use (defaults to Criteria::LEFT_JOIN)
+     * @return PropelObjectCollection|Etablissement[] List of Etablissement objects
+     */
+    public function getEtablissementsRelatedById1JoinCategorie($criteria = null, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    {
+        $query = EtablissementQuery::create(null, $criteria);
+        $query->joinWith('Categorie', $join_behavior);
+
+        return $this->getEtablissementsRelatedById1($query, $con);
     }
 
     /**
@@ -8975,6 +10066,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $this->opening_date = null;
         $this->closing_date = null;
         $this->ville_id = null;
+        $this->departement_id = null;
         $this->categorie_id = null;
         $this->geo_coordinate_x = null;
         $this->geo_coordinate_y = null;
@@ -8983,6 +10075,8 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $this->capacite = null;
         $this->plan_path = null;
         $this->vignette = null;
+        $this->related_1 = null;
+        $this->related_2 = null;
         $this->created_at = null;
         $this->updated_at = null;
         $this->active = null;
@@ -9007,6 +10101,16 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     public function clearAllReferences($deep = false)
     {
         if ($deep) {
+            if ($this->collEtablissementsRelatedById0) {
+                foreach ($this->collEtablissementsRelatedById0 as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
+            if ($this->collEtablissementsRelatedById1) {
+                foreach ($this->collEtablissementsRelatedById1 as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
             if ($this->collEtablissementTypeHebergements) {
                 foreach ($this->collEtablissementTypeHebergements as $o) {
                     $o->clearAllReferences($deep);
@@ -9138,6 +10242,14 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $this->currentLocale = 'fr';
         $this->currentTranslations = null;
 
+        if ($this->collEtablissementsRelatedById0 instanceof PropelCollection) {
+            $this->collEtablissementsRelatedById0->clearIterator();
+        }
+        $this->collEtablissementsRelatedById0 = null;
+        if ($this->collEtablissementsRelatedById1 instanceof PropelCollection) {
+            $this->collEtablissementsRelatedById1->clearIterator();
+        }
+        $this->collEtablissementsRelatedById1 = null;
         if ($this->collEtablissementTypeHebergements instanceof PropelCollection) {
             $this->collEtablissementTypeHebergements->clearIterator();
         }
@@ -9239,7 +10351,10 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         }
         $this->collBonPlans = null;
         $this->aVille = null;
+        $this->aDepartement = null;
         $this->aCategorie = null;
+        $this->aEtablissementRelatedByRelated1 = null;
+        $this->aEtablissementRelatedByRelated2 = null;
     }
 
     /**
@@ -9477,6 +10592,25 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $criteria->add(\Cungfoo\Model\BonPlanI18nPeer::alias('i18n_locale', \Cungfoo\Model\BonPlanI18nPeer::LOCALE), $this->currentLocale);
 
         return $this->getBonPlans($criteria, $con);
+    }
+
+    public function getsActive($criteria = null, PropelPDO $con = null)
+    {
+
+        if ($criteria === null)
+        {
+            $criteria = new \Criteria();
+        }
+
+        $criteria->add(\Cungfoo\Model\Peer::ACTIVE, true);
+
+
+        $criteria->addAlias('i18n_locale', \Cungfoo\Model\I18nPeer::TABLE_NAME);
+        $criteria->addJoin(\Cungfoo\Model\Peer::ID, \Cungfoo\Model\I18nPeer::alias('i18n_locale', \Cungfoo\Model\I18nPeer::ID), \Criteria::LEFT_JOIN);
+        $criteria->add(\Cungfoo\Model\I18nPeer::alias('i18n_locale', \Cungfoo\Model\I18nPeer::ACTIVE_LOCALE), true);
+        $criteria->add(\Cungfoo\Model\I18nPeer::alias('i18n_locale', \Cungfoo\Model\I18nPeer::LOCALE), $this->currentLocale);
+
+        return $this->gets($criteria, $con);
     }
 
     public function getPersonnagesActive($criteria = null, PropelPDO $con = null)

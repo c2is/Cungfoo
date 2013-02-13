@@ -1,0 +1,19 @@
+{% if campings | length %}
+<div id="alreadySeenBloc" class="clear radiusBox greyC">
+    <div class="no stamp">
+        <h2>{{ 'widget.tracking.title' | trans }}</h2>
+    </div>
+    {% for camping in campings if loop.index < 3 %}
+    <div class="element clear linkParent">
+        <div class="left">
+            <img class="boxborder" src="{{ asset(camping.vignette) }}" width="119" height="86" alt="" />
+        </div>
+        <div class="details left">
+            <span class="title">{{ camping.name }}{{ etab.categorie.stars }}</span>
+            <span class="region">{{ camping.region.pays.name }} - {{ camping.region.name }}</span>
+        </div>
+        <a href="#_" class="stain cover linkBlock"><span>{{ 'widget.tracking.from' | trans }}<br /><span class="price">{{ camping.minimumPriceType.minimumPrice | number_format }}<span class="fine">&nbsp;</span>€</span></span></a>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}

@@ -44,9 +44,29 @@
 {% endif %}
 
 <h2 class="h3-like">{{ 'location.list.selection' | trans }}</h2>
+<form class="filterBy" action="">
+    <fieldset>
+        <span>{{ "fiche.filtrer_par" | trans }}</span>
+        {% if currentClass == 'categorie' %}
+        <select name="capacite" id="capacite">
+            <option value="">{{ "fiche.toutes_capacite" | trans }}</option>
+            {% for nbPlace in categoryTypeHebergement.capacitesTypeHebergement %}
+                <option value="cap{{ nbPlace }}">{{ "fiche.capacite" | trans }} {{ nbPlace }} {{ "fiche.places" | trans }}</option>
+            {% endfor %}
+        </select>
+        {% elseif currentClass == 'capacite' %}
+        <select name="type" id="type">
+            <option value="">{{ "fiche.toutes_categories" | trans }}</option>
+            {% for category in categoryTypeHebergement.categoriesTypeHergement %}
+                <option value="{{ category.name | trans }}">{{ category.name | trans }}</option>
+            {% endfor %}
+        </select>
+        {% endif %}
+    </fieldset>
+</form>
 <div id="results" class="clear">
     {% for hebergement in categoryTypeHebergement.typeHebergementsActive %}
-    <div class="itemResult clear" data-critplus="">
+    <div class="itemResult clear typLocation cap{{ hebergement.nombrePlace }} {{ hebergement.categoryTypeHebergement.name }}" data-critplus="">
         <div class="itemResultTitle itemResultTitleHbgt">
            <a href="{{ path('location_type_hebergement', {'categoryTypeHebergement': categoryTypeHebergement.slug, 'typeHebergement': hebergement.slug}) }}">{{ hebergement.name }}</a>
         </div>
@@ -72,14 +92,8 @@
     {% include 'Form/_search_engine.twig' %}
 
     <div id="greyBoxes">
-        {% include 'Bloc/propose_hebergement.twig' %}
-    </div>
-
-    <div id="greyBoxes">
-        {% include 'Bloc/sejour_reussi.twig' %}
-    </div>
-
-    <div id="greyBoxes">
-        {% include 'Bloc/informations.twig' %}
+        {{ esi(path('widget', {'name': 'proposition_hebergement'})) }}
+        {{ esi(path('widget', {'name': 'sejour_reussi'})) }}
+        {{ esi(path('widget', {'name': 'reassurance'})) }}
     </div>
 {% endblock %}

@@ -22,9 +22,15 @@ menu:
               ville:
                   title:  menu.ville
                   route:  ville_crud_list
+              departement:
+                  title:  menu.departement
+                  route:  departement_crud_list
               region:
                   title:  menu.region
                   route:  region_crud_list
+              region_ref:
+                  title:  menu.region_ref
+                  route:  region_ref_crud_list
               pays:
                   title:  menu.pays
                   route:  pays_crud_list
@@ -101,6 +107,10 @@ menu:
               bons_plans:
                   title:  menu.bon_plan
                   route:  bon_plan_crud_list
+                  divider: ~
+              i18n:
+                  title: Traductions
+                  route: i18n_admin
         parameter:
             title: menu.parameters
             items:

@@ -1,834 +1,716 @@
-seo:
-    title:
-        default: "Location mobil home Espagne, France, Italie"
-        pays: "Camping %pays% pas cher"
-        region: "Location mobil home %region% pas cher, camping %region%"
-        ville: "Camping %ville% pas cher, location mobil home %ville% pas cher"
-        destination: "Camping en %destination% pas cher"
-        camping: "Camping %nom%, camping %ville%"
-        camping_suffix: " avec piscine"
-        dernieres_minutes: "Camping derniere minutes, location mobil home derniere minutes"
-        early_booking: "Camping early booking, location mobil home early booking"
-        dispo: "Résultat de recherche location camping, mobil home"
-        couloir: "Espace de réservation"
-        theme: "%theme%"
-        bonPlan: "Camping %bonPlan%, location mobil-homes %bonPlan%"
-        topCamping: "Top camping France, top destination vacances"
-        poi: "Visiter %poi% : %ville%"
-        event: "%event% : %ville%"
-        location:
-            list:
-                categorie: "Location %type% camping France, Italie, Espagne"
-                capacite: "Location camping %type% France, Italie, Espagne"
-            fiche: "Location %type% %personnes% personnes camping : %name%"
-    meta:
-        default: "Vacances directes : location de mobil-homes dans de nombreux campings en France, en Italie et en Espagne pour des vacances conviviales et reposantes."
-        pays: "Vacances directes : découvrez nos offres de location de mobil home pas cher en %pays% pour des vacances ensoleillés en camping et réserver en ligne."
-        region: "Réserver en ligne vos futures vacances dans la région %region% en %pays% avec Vacances directes (location de mobil-homes pas cher en camping)."
-        ville: "Découvrez l'ensemble des campings à %ville% (%region%) proposés par Vacances Directes (location de mobil home pas cher) et réserver votre séjour en ligne."
-        destination: "Vacances directes : découvrez nos offres de location de mobil home pas cher en %pays% pour des vacances ensoleillés en camping et réserver en ligne."
-        camping: "Avec Vacances Directes, réserver en ligne votre futur séjour dans le camping %nom% : un camping %nbEtoiles% avec piscine à %ville%."
-        dernieres_minutes: "Découvrez toutes les offres de locations de mobil homes en dernières minutes en camping proposées par Vacances directes et réserver en ligne."
-        early_booking: "Découvrez toutes les offres de locations de mobil homes en early booking en camping proposées par Vacances directes et réserver en ligne."
-        dispo: "Listing - Campings"
-        couloir: "Espace de réservation"
-        theme: "%theme%"
-        bonPlan: "Découvrez toutes nos offres de camping : \"%bonPlan%\" et réservez en ligne vos futures vacances sur le site Vacances Directes."
-        topCamping: "Découvrez notre top 10 des destinations pour des vacances en campings réussies avec Vacances Directes, le spécialiste de la location de mobil-home."
-        poi: "%poi% à %ville%, venez visiter ce lieu et passez vos vacances dans nos campings à proximité avec Vacances Directes."
-        event: "%event% à %ville%. Ne rater pas cet événement et passez vos vacances dans nos campings à proximité avec Vacances Directes."
-        location:
-            list:
-                categorie: "Vous souhaitez louer un(e) %type% pour vos futures vacances ? Découvrez tous nos campings proposant cet hébergement en France, en Espagne et en Italie."
-                capacite:  "Location de vacances pour %type% dans de nombreux campings de qualité en France, en Espagne et en Italie avec Vacances Directes."
-            fiche: "Passez vos prochaines vacances en %type% %name% dans de nombreux campings de qualité avec Vacances Directes."
-    url:
-        prefix: "camping"
-        catalogue: "catalogue"
-        dispo: "dispo"
-        couloir:
-            index: "couloir-reservation"
-            detail: "detail-sejour"
-            recapitulatif: "recapitulatif"
-            confirmation: "confirmation"
-        destinations: "destinations"
-        bonsplans: "bons-plans"
-        compte:
-            index: "compte"
-            coordonnees: "coordonnees"
-            brochure: "demande-brochure"
-            reservations: "reservations"
-            fidelite: "avantages-fidelite"
-            parrainage: "parrainage"
-        weekends: "vos-week-ends"
-        lieuVisiter: "lieu-a-visiter"
-        evenement: "evenement"
-        assurance:
-            index: "assurance"
-            confirmation: "confirmation"
-        locations: "locations"
-        topCampings: "top-campings"
-
-pays:
-    afghanistan: "Afghanistan"
-    albanie: "Albanie"
-    algerie: "Algérie"
-    andorre: "Andorre"
-    angola: "Angola"
-    antigua-et-Barbuda: "Antigua-et-Barbuda"
-    argentine: "Argentine"
-    armenie: "Arménie"
-    australie: "Australie"
-    autriche: "Autriche"
-    azerbaidjan: "Azerbaïdjan"
-    bahamas: "Bahamas"
-    bahrein: "Bahreïn"
-    bangladesh: "Bangladesh"
-    barbade: "Barbade"
-    bielorussie: "Biélorussie"
-    belgique: "Belgique"
-    belize: "Belize"
-    benin: "Bénin"
-    bhoutan: "Bhoutan"
-    bolivie: "Bolivie"
-    bosnie-Herzegovine: "Bosnie-Herzégovine"
-    botswana: "Botswana"
-    bresil: "Brésil"
-    brunei: "Brunei"
-    bulgarie: "Bulgarie"
-    burkina Faso: "Burkina Faso"
-    burundi: "Burundi"
-    cambodge: "Cambodge"
-    cameroun: "Cameroun"
-    canada: "Canada"
-    cap-Vert: "Cap-Vert"
-    republique centrafricaine: "République centrafricaine"
-    tchad: "Tchad"
-    chili: "Chili"
-    chine: "Chine"
-    colombie: "Colombie"
-    comores: "Comores"
-    congo: "Congo"
-    costa Rica: "Costa Rica"
-    cote d'Ivoire: "Côte d'Ivoire"
-    croatie: "Croatie"
-    cuba: "Cuba"
-    chypre: "Chypre"
-    republique tcheque: "République tchèque"
-    danemark: "Danemark"
-    djibouti: "Djibouti"
-    republique dominicaine: "République dominicaine"
-    timor Oriental: "Timor Oriental"
-    equateur: "Equateur"
-    egypte: "Egypte"
-    salvador: "Salvador"
-    angleterre: "Angleterre"
-    guinee equatoriale: "Guinée équatoriale"
-    erythree: "Erythrée"
-    estonie: "Estonie"
-    ethiopie: "Ethiopie"
-    iles Feroe: "Iles Féroé"
-    fidji: "Fidji"
-    finlande: "Finlande"
-    france: "France"
-    gabon: "Gabon"
-    gambie: "Gambie"
-    georgie: "Géorgie"
-    allemagne: "Allemagne"
-    ghana: "Ghana"
-    grande-Bretagne: "Grande-Bretagne"
-    grece: "Grèce"
-    groenland: "Groenland"
-    grenade: "Grenade"
-    guatemala: "Guatemala"
-    guinee: "Guinée"
-    guinee-Bissau: "Guinée-Bissau"
-    haiti: "Haïti"
-    hollande: "Hollande"
-    saint-Siege: "Saint-Siège"
-    honduras: "Honduras"
-    hongrie: "Hongrie"
-    islande: "Islande"
-    inde: "Inde"
-    indonesie: "Indonésie"
-    irak: "Irak"
-    iran: "Iran"
-    irlande: "Irlande"
-    israel: "Israël"
-    italie: "Italie"
-    jamaique: "Jamaïque"
-    japon: "Japon"
-    jordanie: "Jordanie"
-    kazahstan: "Kazahstan"
-    kenya: "Kenya"
-    kiribati: "Kiribati"
-    coree: "Corée"
-    koweit: "Koweït"
-    kirghizistan: "Kirghizistan"
-    laos: "Laos"
-    lettonie: "Lettonie"
-    liban: "Liban"
-    lesotho: "Lesotho"
-    liberia: "Liberia"
-    libye: "Libye"
-    liechtenstein: "Liechtenstein"
-    lituanie: "Lituanie"
-    luxembourg: "Luxembourg"
-    macedoine: "Macédoine"
-    madagascar: "Madagascar"
-    malawi: "Malawi"
-    malaisie: "Malaisie"
-    maldives: "Maldives"
-    mali: "Mali"
-    malte: "Malte"
-    iles Marshall: "Iles Marshall"
-    mauritanie: "Mauritanie"
-    maurice: "Maurice"
-    mayotte: "Mayotte"
-    mexique: "Mexique"
-    micronesie: "Micronésie"
-    moldavie: "Moldavie"
-    monaco: "Monaco"
-    mongolie: "Mongolie"
-    montenegro: "Monténégro"
-    montserrat: "Montserrat"
-    maroc: "Maroc"
-    mozambique: "Mozambique"
-    myanmar: "Myanmar"
-    namibie: "Namibie"
-    nauru: "Nauru"
-    nepal: "Népal"
-    pays-Bas: "Pays-Bas"
-    nouvelle-Zelande: "Nouvelle-Zélande"
-    nicaragua: "Nicaragua"
-    niger: "Niger"
-    nigeria: "Nigeria"
-    irlande du Nord: "Irlande du Nord"
-    norvege: "Norvège"
-    oman: "Oman"
-    pakistan: "Pakistan"
-    palaos: "Palaos"
-    palestine: "Palestine"
-    panama: "Panama"
-    papouasie-Nouvelle-Guinee: "Papouasie-Nouvelle-Guinée"
-    paraguay: "Paraguay"
-    perou: "Pérou"
-    philippines: "Philippines"
-    pologne: "Pologne"
-    portugal: "Portugal"
-    principaute de Monaco: "Principauté de Monaco"
-    qatar: "Qatar"
-    roumanie: "Roumanie"
-    russie: "Russie"
-    rwanda: "Rwanda"
-    saint-Christophe-et-Nieves: "Saint-Christophe-et-Niévès"
-    sainte-Lucie: "Sainte-Lucie"
-    saint Pierre and Miquelon: "Saint Pierre and Miquelon"
-    saint-Vincent-et-les Grenadines: "Saint-Vincent-et-les Grenadines"
-    samoa: "Samoa"
-    saint-Marin: "Saint-Marin"
-    sao Tome-et-Principe: "São Tomé-et-Príncipe"
-    arabie Saoudite: "Arabie Saoudite"
-    ecosse: "Ecosse"
-    senegal: "Sénégal"
-    serbie: "Serbie"
-    seychelles: "Seychelles"
-    sierra Leone: "Sierra Leone"
-    singapour: "Singapour"
-    slovaquie: "Slovaquie"
-    slovenie: "Slovénie"
-    iles Salomon: "Iles Salomon"
-    somalie: "Somalie"
-    afrique du Sud: "Afrique du Sud"
-    espagne: "Espagne"
-    sri Lanka: "Sri Lanka"
-    soudan: "Soudan"
-    suriname: "Suriname"
-    swaziland: "Swaziland"
-    suede: "Suède"
-    suisse: "Suisse"
-    syrie: "Syrie"
-    taiwan: "Taïwan"
-    tadjikistan: "Tadjikistan"
-    tanzanie: "Tanzanie"
-    thailande: "Thaïlande"
-    togo: "Togo"
-    tonga: "Tonga"
-    trinite-et-Tobago: "Trinité-et-Tobago"
-    tunisie: "Tunisie"
-    turquie: "Turquie"
-    turkmenistan: "Turkménistan"
-    tuvalu: "Tuvalu"
-    ouganda: "Ouganda"
-    ukraine: "Ukraine"
-    emirats arabes unis: "Emirats arabes unis"
-    royaume-Uni: "Royaume-Uni"
-    etats-Unis: "Etats-Unis"
-    uruguay: "Uruguay"
-    ouzbekistan: "Ouzbékistan"
-    vanuatu: "Vanuatu"
-    vatican: "Vatican"
-    venezuela: "Venezuela"
-    vietnam: "Vietnam"
-    pays de Galles: "Pays de Galles"
-    wallis et Futuna: "Wallis et Futuna"
-    yemen: "Yémen"
-    zambie: "Zambie"
-    zimbabwe: "Zimbabwe"
-
-destination:
-    mediterranee: "Méditerannée"
-    manche_atlantique: "Manche Atlantique"
-    montagne: "Montagne"
-    campagne: "Campagne"
-    images_pays_title: "Le pays en image"
-    images_region_title: "La région en image"
-    images_ville_title: "La ville en image"
-    pays_title: "Camping en %item% pas cher"
-    region_title: "Location mobil home %item%"
-    ville_title: "Camping %item% pas cher (location mobil home)"
-    camping_title: "Camping %ville%"
-    retour_bottom: "Retour à la liste"
-    retour: "Retour"
-    pois_all: "Tous les lieux"
-    events_title: "En ce moment"
-    events_prefixe_subtitle: "En"
-    events_suffixe_subtitle: "..."
-    campings_selection_title: "Notre sélection de campings"
-    destination_title: "Camping en %item% pas cher"
-    pas_cher: "pas cher"
-
-listing_destination:
-    campings_map_title: "Campings Vacances directes"
-    campings_map_prefixe_subtitle: "en"
-
-listing:
-    plus_resultats: "Plus de résultats"
-    du: "du"
-    au: "au"
-    no_results_title: "Votre recherche n'a retourné aucun résultat."
-    no_results: "Nous vous invitons à modifier vos critères de recherche"
-    nos_locations_disponibles: "Nos locations disponibles"
-
-menu_destination.accroche: "3 pays, 34 régions touristiques, vos vacances avec Vacances directes."
-
-menu_bon_plan:
-    accroche:
-        prefix: "Sélectionner"
-        suffix: "un bon plan"
-    newsletter:
-        title: "Abonnement newsletter"
-        link: "S'inscrire"
-    autres_offres:
-        title: "Nos autres offres"
-    dispos:
-        subtitle:
-            prefix: "Départ le"
-    bons_plans:
-        link:
-            prefix: "Tous les"
-    categorie_bons_plans:
-        link: "Toutes nos offres"
-
-menu:
-    plus_de_regions: "Plus de régions"
-    libelle: "Libellé"
-    localisation: "Localisation"
-    title: "Vacances directes"
-    destinations: "Nos destinations"
-    locations: "Les locations"
-    bons_plans: "Les bons plans"
-    vacances: "Vos vacances"
-    weekends: "Vos week-ends"
-    tous_camping: "Tous nos campings"
-    decouvrez_locations: "Découvrez nos locations"
-    decouvrez_locations_type: "Par type"
-    decouvrez_locations_capacite: "Par capacité"
-
-etablissement:
-    activites: "Liste des activités"
-    destinations: "Liste des destinations"
-    service_complementaires: "Liste des services complementaires"
-    type_hebergements: "Liste des types d'hébergements"
-
-date_search:
-    date_debut: "Date de début du séjour"
-    destination: "Destination"
-    destination.empty_value: "Destination ?"
-    nb_jours: "Nombre de nuits"
-    nb_jours.required: "Le nombre de nuits est requis."
-    nb_jours.empty_value: "Nombre de nuits ?"
-    ville: "Ville"
-    ville.empty_value: "Ville ?"
-    camping: "Camping"
-    camping.empty_value: "Camping ?"
-    nb_adultes: "Adulte(s)"
-    nb_enfants: "Enfant(s)"
-    date_debut.required: "La date de début de séjour est requise."
-    date_fin.required: "La dete de fin de séjour est requise."
-    destination.required: "La destination est requise."
-    ville.required: "La ville ou le camping est requis."
-    nb_adultes.required: "Le nombre d'adultes est requis."
-    button.submit: "Rechercher"
-    submit: "Trouver"
-    campings: "Campings"
-    ou: "ou"
-    nuits: "nuits"
-
-
-"Les vacances à": "Les vacances à"
-"A proximité nous avons listé": "A proximité nous avons listé"
-"site à visiter": "site à visiter"
-"activités sprotives": "activités sprotives"
-"événements culturels": "événements culturels"
-"L'événement à ne pas manquer": "L'événement à ne pas manquer"
-"Vous aimerez": "Vous aimerez"
-"comme": "comme"
-"ans": "ans"
-"Toutes": "Toutes"
-
-header:
-    information: "Informations & réservations"
-    telephone:
-        number: "0825 133 400"
-        price: "(0,15€/min)"
-    130_camping: "+ de 170 campings en France, Espagne & Italie"
-    location_mobil_home: "Location de mobil home en camping (France, Espagne, Italie et Portugal)"
-
-fiche:
-    camping: "Camping"
-    situer_carte: "Situer sur la carte"
-    description_title: "Description"
-    plan_camping: "Plan du camping"
-    activite_event: "Liste des activités et évènements"
-    le_camping: "Le camping"
-    les_locations: "Les locations"
-    sur_place: "Sur place"
-    a_proximite: "A proximité"
-    infos_pratiques: "Infos pratiques"
-    video: "Vidéo"
-    photo: "Photo"
-    emplacements: "emplacements"
-    ouvert_du: "Ouverture :"
-    vous_aimerez: "Vous aimerez"
-    comme: "comme..."
-    les_vacances_a: "Les vacances à"
-    nous_avons_liste: "nous avons listé :"
-    sites_a_visiter: "sites à visiter"
-    activites_sportives: "activités sportives"
-    evenements_culturels: "événements culturels"
-    evenement_ne_pas_manquer: "L'événement à ne pas manquer :"
-    distance_camping: "Distance du camping :"
-    filtrer_par: "Filtrer par :"
-    toutes_categories: "Toutes catégories"
-    toutes_capacite: "Toutes capacités"
-    capacite: "Capacité :"
-    places: "places"
-    nombre_chambres: "Nombre de chambres :"
-    nombre_personnes: "Nombre de personnes :"
-    surface: "Surface :"
-    type_terrasse: "Type de terrasse :"
-    activites: "Activités"
-    equipements: "Equipements"
-    services_complementaires: "Services complémentaires"
-    activites_et_sites_a_visiter: "Activités et sites à visiter"
-    km: "km"
-    agenda_culturel_et_sorties: "Agenda culturel et sorties"
-    coordonnees_du_camping: "Coordonnées du camping"
-    gps: "GPS :"
-    horaires_ouverture: "Horaires d'ouverture"
-    reception: "Réception"
-    arrivees_departs: "Arrivées/Départs"
-    fax: "Fax :"
-    tel: "Tél :"
-    baignades:
-        top: "Baignade"
-        bottom: "et bien-être"
-    retour: "Retour"
-    ouvert_au: "au"
-    plan:
-        legende: "Légende du plan du camping"
-    bloc_prix:
-        type_hebergement: "pour un %categorie% - %type%"
-
-home:
-    topcamping: "Top campings"
-    topcamping.link: "Tous les top campings"
-    vacances_directes_cest: "Vacances directes c'est"
-    4_pays: "3 pays"
-    26_regions: "34 régions"
-    touristiques: "touristiques"
-    destination: "Destination"
-    destination_france: "Destination France"
-    plus_de_regions: "Plus de régions"
-    faites_le_plein_d_activites: "Faites le plein d'activités"
-    dernieres_minutes: "Dernières minutes"
-    early_booking: "Early booking"
-    dernieres_minutes.link: "Toutes les dernières minutes"
-    early_booking.link: "Tous les early booking"
-    idees_weekend.link: "Toutes les idées week-end (%number%)"
-
-compte:
-    title: "Espace client"
-    placeholder:
-        name: "Nom d'utilisateur"
-        password: "Mot de passe"
-    login:
-        error: "Le login que vous avez saisi est incorrect.\nVeuillez réessayer (vérifiez que le verrouillage des majuscules est désactivé)."
-
-general:
-    a_partir_de: "à partir de"
-    meilleur_prix: "Notre meilleur prix"
-    jouer: "Jouer"
-    en_savoir_plus: "En savoir plus"
-    la_nuit: "la nuit"
-    idees_week_end: "Bons plans"
-    filter_par: "Filtrer par"
-    campings_vacances_directes: "Campings Vacances directes"
-    decouvrir_le_camping: "Découvrir le camping"
-    au_lieu_de: "au lieu de"
-    sur_la_destination: "sur la destination"
-    plus_visite: "Plus de visites"
-    plus_evenements: "Plus d'événements"
-    decouvrir: "Découvrir"
-    reserver: "Réserver"
-    profite: "J'en profite"
-    la_semaine: "la semaine"
-    contre_proposition: "ATTENTION ! Votre recherche ne donne aucun résultat. Les propositions ci-dessous sont celles qui s'en rapprochent le plus."
-    submit: "Envoyer"
-    logout: "Se déconnecter"
-    nos_offres: "Nos offres"
-    voir_offre: "Voir l'offre"
-    plus_que: "Plus que"
-    du: "Du"
-    au: "au"
-    resultats: "Résultat(s)"
-    toggle: "Affichage résultat(s)"
-    budget_range: "Budget(s) proposé(s)"
-    list: "Liste"
-    map: "Carte"
-
-filtres:
-    affinez_recherche: "Affinez votre recherche"
-    criteres_selectionne: "critères(s) séléctionné(s)"
-    situation: "Situation"
-    categories: "Catégories"
-    baignade_bien_etre: "Baignade & bien-être"
-    animations_loisirs: "Animations et loisirs"
-    commerces_services: "Commerces et services"
-    thematiques: "Thématiques"
-    filtrer: "Filtrer"
-
-footer:
-    contact:
-        title: "Contact"
-        tel: "0825 133 400*"
-        fax: "Fax: 02 96 39 97 81"
-        price: "*(0,15 €/min)"
-        adresse:
-            name: "Vacances directes"
-            lieu_dit: "ZA les Alleux"
-            rue: "4 Rue du Suroit"
-            ville: "CS 81010 - TADEN"
-            code_postal: "22101 DINAN cedex"
-    charte_qualite: "Charte qualité"
-    conditions_generales_de_location: "Conditions générales de location"
-    faq: "FAQ"
-    guide_pratique: "Guide pratique"
-    plan_du_site: "Plan du site"
-    credits: "Crédits"
-    mentions_legales: "Mentions légales"
-    transactions_securisees: "Transactions sécurisées"
-    cb_visa: "CB visa"
-    masterCard: "MasterCard"
-    nous_joindre: "Nous joindre"
-    nous_contacter: "Nous contacter"
-    demande_catalogue: "Demande de catalogue"
-    description_catalogue: "Hoc inmaturo interitu ipse quoque sui pertaesus excessit e vita aetatis."
-    consulter_catalogue: "Consulter le catalogue"
-    telecharger_catalogue: "Télécharger le catalogue"
-    facebook:
-        titre: "Restons en contact"
-        intro: "Suivez nos idées week-end & bons plans sur"
-        like: "J'aime"
-        desc.highlight: "Partagez votre expérience Vacances directes"
-        desc: "avec d'autres vacanciers. Photos, activités, avis, rejoignez la communauté des clients Vacances directes sur"
-    jeu:
-        titre: "Grand jeu concours sur"
-        desc: "Gagnez un week-end en Italie"
-    location_camping: "Locations en camping"
-    annuaire_campings: "Annuaire des campings"
-    campings_pas_chers: "Liste des campings pas chers"
-    guide_activites: "Guide des activités"
-    campings_france: "Campings France"
-    campings_espagne: "Campings Espagne"
-    campings_italie: "Campings Italie"
-    a_propos: "À propos"
-    a_propos.desc: "Depuis plus de 35 ans, Vacances directes propose la location en camping de mobil-homes tout confort et de qualité. Venez découvrir plus de 180 destinations sélectionnées avec soin en France, Espagne et Italie pour des vacances conviviales et reposantes."
-    actualites: "Actualités"
-    qui_sommes_nous: "Qui sommmes-nous ?"
-    recrutement: "Recrutement Vacances directes"
-    ce: "Vacances comité d'entreprise"
-    newsletter: "Abonnemment newsletter"
-    newsletter.desc: "Retrouvez les bons plans et les nouvelles offres Vacances directes directement dans votre boîte mail."
-    newsletter.entrer_son_email: "ENTRER SON E-MAIL"
-    site_mobile: "Site mobile"
-    site_mobile.desc: "Retrouvez toutes les offres de Vacances directes sur votre mobile."
-    annulation: "Formulaire d'annulation"
-
-pactiv-1: "En vacances avec mes parents, j'aime"
-pactiv-2: "Envie d'un petit break, de prendre l'air"
-pactiv-3: "Des vacances sous le signe de la détente et du bonheur"
-
-encart_vacances_directes:
-    title: "Vacances directes"
-    subtitle: "Un séjour réussi"
-    item_1: "Des ambassadeurs pour vous accueillir"
-    item_2: "Des campings sélectionnés avec soin"
-    item_3: "Un site 100% sécurisé"
-    item_4: "Des mobil-homes tout confort pour des vacances dépaysantes"
-
-encart_hebergement:
-    title: "Vacances directes"
-    subtitle: "propose des hébergements"
-    standardise:
-        title: "Standardisés"
-        texte: "Une même référence offre les mêmes prestations sur tous les campings Vacances directes."
-    adapte:
-        title: "Adaptés"
-        texte: "Vacances directes s'intéresse aux évolutions de le vie de tous les jours et propose des mobil-homes et des caravanes tout confort, adaptés aux besoins de chacun."
-    varie:
-        title: "Variés"
-        texte: "Faites votre choix parmi une large gamme d'hébergements. Vacances directes, c'est plus de 10 modèles de caravanes et des mobil-homes pour s'adapter à toutes les familles et à tous les portesfeuilles."
-    equipe:
-        title: "Equipés"
-        texte: "Les hébergements sont prêts à vous recevoir. Tout est inclus (alèses, couvertures, oreillers...), apportez simplement votre linge de maison. La cuisine est aménagée et équipées."
-
-encart_informations:
-    title: "Informations & Réservations au"
-    price: "(0,15 €/min)"
-    dates_1: "Du lundi au vendredi de 9h-21h"
-    dates_2: "Samedi de 10h - 18h"
-
-encart_autres_themes:
-    title: "D'autres thèmes pour votre week-end"
-
-semainier:
-    title: "Tarifs & disponibilités"
-    choose_dates_desc: "En juillet et août, les arrivées et départs sont possibles les mercredis et samedis."
-    type_hebergement_title: "Choisissez votre période et votre type d'hébergement"
-    type_hebergement_desc: "Vérifiez les disponibilités mois par mois et cliquez sur la période et l'hébergement de votre choix pour réserver."
-    indisponible: "Indisponible"
-    type_hebergement:
-        details: Détails
-
-resalys:
-    creer_compte: "Créer mon compte"
-    total: "Total"
-    date_format: "Format de la date DD/MM/YYYY"
-    birthdate_format: "Date de naissance (DD/MM/YYYY)"
-    besoin_aide_title: "Besoin d'aide"
-    besoin_aide_subtitle: "Une question sur votre réservation&hellip;"
-    besoin_aide_contact: "Contactez-nous"
-    besoin_aide_num: "au 0825 133 400"
-    session_expire: "Séjour indisponible"
-    session_expire_texte_1: "Une erreur est survenue lors de la recherche de disponibilité."
-    session_expire_texte_2: "Modifiez votre demande ou confiez-en le soin à notre équipe de réservation en appelant au 0 825 133 400 (0,15 €/min)."
-    non_connecte: "Afin de poursuivre votre réservation,<br /> Merci de vous connecter ou de vous créer un compte ci-dessus"
-    retour_home: "Retourner sur la home"
-
-vos_week_ends: "Vos week-ends"
-
-breadcrumbs.home: "Accueil"
-breadcrumbs.bonsplans: "Bons plans"
-
-topCamping.h1: "Top destinations vacances en camping"
-dernieresMinutes.h1: "Nos offres de campings en dernières minutes (location mobil home)"
-earlyBooking.h1: "Nos offres de campings en early booking (location mobil home)"
-
-demande_annulation:
-    assure_nom:
-        label: "Nom"
-        not_blank: "Le nom est requis"
-    assure_prenom:
-        label: "Prénom"
-        not_blank: "Le prénom est requis"
-    assure_adresse:
-        label: "Adresse"
-        not_blank: "L'adresse est requise"
-    assure_code_postal:
-        label: "Code Postal"
-        not_blank: "Le code postal est requis"
-    assure_ville:
-        label: "Ville"
-        not_blank: "La ville est requise"
-    assure_pays:
-        label: "Pays"
-        empty_value: "Choisissez un pays"
-        not_blank: "Le pays est requis"
-    assure_mail:
-        label: "EMail"
-        not_blank: "L'email est requis"
-        mail: "L'adresse email renseignée n'est pas valide"
-    assure_telephone:
-        label: "Téléphone"
-        not_blank: "Le téléphone est requis"
-    camping_montant_sejour:
-        label: "Montant du séjour"
-        not_blank: "Le montant du séjour est requis"
-    camping_montant_verse:
-        label: "Montant des sommes versées"
-        not_blank: "Le montant des sommes versées est requis"
-    etablissement:
-        label: "Nom du camping"
-        empty_value: "Choisissez un camping"
-        not_blank: "Le nom du camping est requis"
-    camping_num_resa:
-        label: "N° de réservation"
-        not_blank: "Le numéro de réservation est requis"
-    sinistre_nature:
-        label: "Nature du sinistre"
-        annulation: "Annulation du séjour"
-        interruption: "Interruption du séjour"
-        not_blank: "La nature du sinistre est requise"
-    sinistre_suite:
-        label: "Suite à"
-        maladie: "Maladie"
-        accident: "Accident"
-        autre: "Autre"
-        not_blank: "La suite de la nature du sinistre est requise"
-    sinistre_date:
-        label: "Date du sinistre"
-        not_blank: "La date du sinistre est requise"
-        date: "La date de sinistre renseignée n'est pas valide"
-    sinistre_resume:
-        label: "Résumé rapide des faits et description de la nature du sinistre"
-        not_blank: "Le résumé du sinistre est requis"
-    file_1: ""
-    file_2: ""
-    file_3: ""
-    file_4: ""
-    certifie:
-        label: "Je certifie demander l'annulation référencée ci-dessus"
-        is_true: "Veuillez cocher la case pour confirmer votre demande d'annulation"
-    files:
-        label: "Joindre des pièces : (format : pdf, doc, docx, png, jpg de 2 mo maximum)"
-        mimeTypesMessage: "Type de fichier invalide (formats autorisés : pdf, doc, docx, png, jpg)"
-        notFoundMessage: "Une erreur est survenue lors du téléchargement du fichier"
-        notReadableMessage: "Une erreur est survenue lors du téléchargement du fichier"
-        uploadIniSizeErrorMessage: "Fichier trop volumineux (2 mo maximum)"
-        uploadFormSizeErrorMessage: "Fichier trop volumineux (2 mo maximum)"
-        uploadErrorMessage: "Une erreur est survenue lors du téléchargement du fichier"
-    confirmation:
-        title: "confirmation"
-        content: "Votre demande d'annulation a bien été envoyée."
-    title: "Formulaire d'annulation"
-    subtitle: "Annuler une réservation"
-    legend:
-        coordonnees: "Vos coordonnées"
-        reservation: "Votre réservation"
-    texte1: "Vous avez souscrit auprès de VACANCES DIRECTES une assurance annulation et/ou interruption de séjour et avez subi un sinistre répondant aux critères de mise en oeuvre de l'assurance tels que précisément détaillés dans les"
-    lienCGA: "Conditions Générales d'Assurances (CGA)"
-    texte2: "Il est dans ce cas impératif de remplir et de valider le présent formulaire dans un délai maximum de 5 jours suivant la date de survenance du sinistre. A défaut de respecter ce délai, l'Assureur se réserve la faculté de vous refuser le bénéfice de l'assurance (cf art.4.1 des CGA - déchéance de garantie)."
-    texte3: "En validant le présent formulaire de déclaration de sinistre, vous déclarez que les informations que vous avez saisies dans le formulaire sont exactes et sincères, et reconnaissez que le traitement de votre dossier et l'indemnisation qui vous serait due par l'assureur sont soumis à la communication des pièces et informations complémentaires qui vous seront demandées, conformément à l'article 4.2 des CGA."
-
-offreSpeciales:
-    intro: "Profitez de notre promo early booking sur votre séjour en basse saison:\n-10% pour une réservation avant le 31/01/2013\n-5% pour une réservation avant le 28/02/2013"
-    texte: "Offre applicable uniquement sur le séjour, non cumulable avec l’ensemble des offres commerciales en cours. Valable pour tout séjour hors périodes du 06/07/2013 au 31/08/2013. Cette offre ne s’applique pas aux destinations suivantes : Coteau de la Marine, Castellas, Aqua Viva, Neptune, Château de Galinée, Domaine de Kermario, Chaponnet, Sandaya Soulac Plage, Ur Onéa, Domaine des Naädes, Cupulatta, Playa Montroig, et autres exceptions éventuelles."
-
-poi:
-    informations_pratiques: "Informations pratiques"
-    acceder_site: "Accéder au site web"
-    tel: "Tél :"
-    fax: "Fax :"
-    email: "Email :"
-    categorie: "Catégorie :"
-    type: "Type :"
-    transport: "Transport :"
-    adresse: "Adresse :"
-
-event:
-    informations_pratiques: "Informations pratiques"
-    acceder_site: "Accéder au site web"
-    tel: "Tél :"
-    fax: "Fax :"
-    email: "Email :"
-    categorie: "Catégorie :"
-    type: "Type :"
-    transport: "Transport :"
-    adresse: "Adresse :"
-
-global:
-    search_message: "Nous traitons actuellement votre demande. <br/><br/>Merci de bien vouloir patienter."
-    compte:
-        btn: "Mon compte"
-        title: "vous êtes un client existant, veuillez vous identifier"
-        user: "Nom d'utilisateur"
-        password: "Mot de passe"
-        forget: "Mot de passe oublié ?"
-        submit: "Se connecter"
-        accueil: "Accueil"
-        coordonnees: "Coordonnées"
-        demande_brochure: "Demande de brochure"
-        reservation: "Réservation"
-        title: "<span>Espace</span> client"
-    site_name: "Vacances directes.com"
-
-bon_plan:
-    title: "Camping : %bonPlan%"
-
-location:
-    list:
-        title: "Nos hébergements : %type%"
-        selection: "Notre sélection d'hébergements"
-        hebergements:
-            savoir_plus: "En savoir plus"
-            plus_de_resultats: "Plus de résultats"
-            nb_places: "%nbPlaces% places"
-        notre_selection: "Notre sélection"
-    fiche:
-        subtitle: "Location %type% %nbPlaces% personnes"
-        voir_les_campings: "Voir les campings"
-        onglet:
-            logement:
-                title: "Le logement"
-                informations_pratiques:
-                    title: "Informations pratiques"
-                    capacite: "Capacité"
-                    dimensions: "Dimensions"
-                    agencement: "Agencement"
-                    equipements: "Equipements"
-                    annee_utilisation: "Année d'utilisation"
-                lien_campings: "Les campings"
-            campings:
-                title: "Les campings"
-                selection:
-                    title: "Notre selection de campings"
-                lien_logement: "Le logement"
-
-"The CSRF token is invalid. Please try to resubmit the form.": "Votre session a expiré ; veuillez soumettre le formulaire à nouveau."
-
-share:
-    facebook: "Partager sur Facebook"
-    twitter: "Partager sur Twitter"
-
-couloir:
-    menu:
-        detail: "Détails du séjour"
-        recapitulatif: "Récapitulatif"
-        paiement: "Paiement"
-    confirmation: "Confirmation"
-    title: "Bienvenue dans l’espace de"
-    title_reservation: "Réservation"
-
-err404:
-    title: "Désolé, cette page n'existe pas..."
-    content: "Retourner sur la <a href=\"%link%\">page d'accueil</a>."
-
-datepicker:
-    days: "['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche']"
-    daysShort: "['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim']"
-    daysMin: "['Di', 'Lu', 'Ma', 'Me', 'Je', 'Ve', 'Sa', 'Di']"
-    months: "['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre']"
-    monthsShort: "['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Jui', 'Jui', 'Aoû', 'Sepe', 'Oct', 'Nov', 'Déc']"
-    weekMin: "'Se'"
+seo.title.default: 'Location mobil home Espagne, France, Italie'
+seo.title.pays: 'Camping %pays% pas cher'
+seo.title.region: 'Location mobil home %region% pas cher, camping %region%'
+seo.title.departement: 'Location mobil home %departement% pas cher, camping %departement%'
+seo.title.ville: 'Camping %ville% pas cher, location mobil home %ville% pas cher'
+seo.title.destination: 'Camping en %destination% pas cher'
+seo.title.camping: 'Camping %nom%, camping %ville%'
+seo.title.camping_suffix: ' avec piscine'
+seo.title.dernieres_minutes: 'Camping derniere minutes, location mobil home derniere minutes'
+seo.title.early_booking: 'Camping early booking, location mobil home early booking'
+seo.title.dispo: 'Résultat de recherche location camping, mobil home'
+seo.title.couloir: 'Espace de réservation'
+seo.title.theme: '%theme%'
+seo.title.bonPlan: 'Camping %bonPlan%, location mobil-homes %bonPlan%'
+seo.title.topCamping: 'Top camping France, top destination vacances'
+seo.title.poi: 'Visiter %poi% : %ville%'
+seo.title.event: '%event% : %ville%'
+seo.title.location.list.categorie: 'Location %type% camping France, Italie, Espagne'
+seo.title.location.list.capacite: 'Location camping %type% France, Italie, Espagne'
+seo.title.location.fiche: 'Location %type% %personnes% personnes camping : %name%'
+seo.meta.default: 'Vacances directes : location de mobil-homes dans de nombreux campings en France, en Italie et en Espagne pour des vacances conviviales et reposantes.'
+seo.meta.pays: 'Vacances directes : découvrez nos offres de location de mobil home pas cher en %pays% pour des vacances ensoleillés en camping et réserver en ligne.'
+seo.meta.region: 'Réserver en ligne vos futures vacances dans la région %region% en %pays% avec Vacances directes (location de mobil-homes pas cher en camping).'
+seo.meta.departement: 'Réserver en ligne vos futures vacances dans le département %departement% en %pays% avec Vacances directes (location de mobil-homes pas cher en camping).'
+seo.meta.ville: 'Découvrez l''ensemble des campings à %ville% (%region%) proposés par Vacances Directes (location de mobil home pas cher) et réserver votre séjour en ligne.'
+seo.meta.destination: 'Vacances directes : découvrez nos offres de location de mobil home pas cher en %pays% pour des vacances ensoleillés en camping et réserver en ligne.'
+seo.meta.camping: 'Avec Vacances Directes, réserver en ligne votre futur séjour dans le camping %nom% : un camping %nbEtoiles% avec piscine à %ville%.'
+seo.meta.dernieres_minutes: 'Découvrez toutes les offres de locations de mobil homes en dernières minutes en camping proposées par Vacances directes et réserver en ligne.'
+seo.meta.early_booking: 'Découvrez toutes les offres de locations de mobil homes en early booking en camping proposées par Vacances directes et réserver en ligne.'
+seo.meta.dispo: 'Listing - Campings'
+seo.meta.couloir: 'Espace de réservation'
+seo.meta.theme: '%theme%'
+seo.meta.bonPlan: 'Découvrez toutes nos offres de camping : "%bonPlan%" et réservez en ligne vos futures vacances sur le site Vacances Directes.'
+seo.meta.topCamping: 'Découvrez notre top 10 des destinations pour des vacances en campings réussies avec Vacances Directes, le spécialiste de la location de mobil-home.'
+seo.meta.poi: '%poi% à %ville%, venez visiter ce lieu et passez vos vacances dans nos campings à proximité avec Vacances Directes.'
+seo.meta.event: '%event% à %ville%. Ne rater pas cet événement et passez vos vacances dans nos campings à proximité avec Vacances Directes.'
+seo.meta.location.list.categorie: 'Vous souhaitez louer un(e) %type% pour vos futures vacances ? Découvrez tous nos campings proposant cet hébergement en France, en Espagne et en Italie.'
+seo.meta.location.list.capacite: 'Location de vacances pour %type% dans de nombreux campings de qualité en France, en Espagne et en Italie avec Vacances Directes.'
+seo.meta.location.fiche: 'Passez vos prochaines vacances en %type% %name% dans de nombreux campings de qualité avec Vacances Directes.'
+seo.url.prefix: camping
+seo.url.catalogue: catalogue
+seo.url.dispo: dispo
+seo.url.couloir.index: couloir-reservation
+seo.url.couloir.detail: detail-sejour
+seo.url.couloir.recapitulatif: recapitulatif
+seo.url.couloir.confirmation: confirmation
+seo.url.destinations: destinations
+seo.url.bonsplans: bons-plans
+seo.url.compte.index: compte
+seo.url.compte.coordonnees: coordonnees
+seo.url.compte.brochure: demande-brochure
+seo.url.compte.reservations: reservations
+seo.url.compte.fidelite: avantages-fidelite
+seo.url.compte.parrainage: parrainage
+seo.url.weekends: vos-week-ends
+seo.url.lieuVisiter: lieu-a-visiter
+seo.url.evenement: evenement
+seo.url.assurance.index: assurance
+seo.url.assurance.confirmation: confirmation
+seo.url.locations: locations
+seo.url.topCampings: top-campings
+pays.afghanistan: Afghanistan
+pays.albanie: Albanie
+pays.algerie: Algérie
+pays.andorre: Andorre
+pays.angola: Angola
+pays.antigua-et-Barbuda: Antigua-et-Barbuda
+pays.argentine: Argentine
+pays.armenie: Arménie
+pays.australie: Australie
+pays.autriche: Autriche
+pays.azerbaidjan: Azerbaïdjan
+pays.bahamas: Bahamas
+pays.bahrein: Bahreïn
+pays.bangladesh: Bangladesh
+pays.barbade: Barbade
+pays.bielorussie: Biélorussie
+pays.belgique: Belgique
+pays.belize: Belize
+pays.benin: Bénin
+pays.bhoutan: Bhoutan
+pays.bolivie: Bolivie
+pays.bosnie-Herzegovine: Bosnie-Herzégovine
+pays.botswana: Botswana
+pays.bresil: Brésil
+pays.brunei: Brunei
+pays.bulgarie: Bulgarie
+'pays.burkina Faso': 'Burkina Faso'
+pays.burundi: Burundi
+pays.cambodge: Cambodge
+pays.cameroun: Cameroun
+pays.canada: Canada
+pays.cap-Vert: Cap-Vert
+'pays.republique centrafricaine': 'République centrafricaine'
+pays.tchad: Tchad
+pays.chili: Chili
+pays.chine: Chine
+pays.colombie: Colombie
+pays.comores: Comores
+pays.congo: Congo
+'pays.costa Rica': 'Costa Rica'
+'pays.cote d''Ivoire': 'Côte d''Ivoire'
+pays.croatie: Croatie
+pays.cuba: Cuba
+pays.chypre: Chypre
+'pays.republique tcheque': 'République tchèque'
+pays.danemark: Danemark
+pays.djibouti: Djibouti
+'pays.republique dominicaine': 'République dominicaine'
+'pays.timor Oriental': 'Timor Oriental'
+pays.equateur: Equateur
+pays.egypte: Egypte
+pays.salvador: Salvador
+pays.angleterre: Angleterre
+'pays.guinee equatoriale': 'Guinée équatoriale'
+pays.erythree: Erythrée
+pays.estonie: Estonie
+pays.ethiopie: Ethiopie
+'pays.iles Feroe': 'Iles Féroé'
+pays.fidji: Fidji
+pays.finlande: Finlande
+pays.france: France
+pays.gabon: Gabon
+pays.gambie: Gambie
+pays.georgie: Géorgie
+pays.allemagne: Allemagne
+pays.ghana: Ghana
+pays.grande-Bretagne: Grande-Bretagne
+pays.grece: Grèce
+pays.groenland: Groenland
+pays.grenade: Grenade
+pays.guatemala: Guatemala
+pays.guinee: Guinée
+pays.guinee-Bissau: Guinée-Bissau
+pays.haiti: Haïti
+pays.hollande: Hollande
+pays.saint-Siege: Saint-Siège
+pays.honduras: Honduras
+pays.hongrie: Hongrie
+pays.islande: Islande
+pays.inde: Inde
+pays.indonesie: Indonésie
+pays.irak: Irak
+pays.iran: Iran
+pays.irlande: Irlande
+pays.israel: Israël
+pays.italie: Italie
+pays.jamaique: Jamaïque
+pays.japon: Japon
+pays.jordanie: Jordanie
+pays.kazahstan: Kazahstan
+pays.kenya: Kenya
+pays.kiribati: Kiribati
+pays.coree: Corée
+pays.koweit: Koweït
+pays.kirghizistan: Kirghizistan
+pays.laos: Laos
+pays.lettonie: Lettonie
+pays.liban: Liban
+pays.lesotho: Lesotho
+pays.liberia: Liberia
+pays.libye: Libye
+pays.liechtenstein: Liechtenstein
+pays.lituanie: Lituanie
+pays.luxembourg: Luxembourg
+pays.macedoine: Macédoine
+pays.madagascar: Madagascar
+pays.malawi: Malawi
+pays.malaisie: Malaisie
+pays.maldives: Maldives
+pays.mali: Mali
+pays.malte: Malte
+'pays.iles Marshall': 'Iles Marshall'
+pays.mauritanie: Mauritanie
+pays.maurice: Maurice
+pays.mayotte: Mayotte
+pays.mexique: Mexique
+pays.micronesie: Micronésie
+pays.moldavie: Moldavie
+pays.monaco: Monaco
+pays.mongolie: Mongolie
+pays.montenegro: Monténégro
+pays.montserrat: Montserrat
+pays.maroc: Maroc
+pays.mozambique: Mozambique
+pays.myanmar: Myanmar
+pays.namibie: Namibie
+pays.nauru: Nauru
+pays.nepal: Népal
+pays.pays-Bas: Pays-Bas
+pays.nouvelle-Zelande: Nouvelle-Zélande
+pays.nicaragua: Nicaragua
+pays.niger: Niger
+pays.nigeria: Nigeria
+'pays.irlande du Nord': 'Irlande du Nord'
+pays.norvege: Norvège
+pays.oman: Oman
+pays.pakistan: Pakistan
+pays.palaos: Palaos
+pays.palestine: Palestine
+pays.panama: Panama
+pays.papouasie-Nouvelle-Guinee: Papouasie-Nouvelle-Guinée
+pays.paraguay: Paraguay
+pays.perou: Pérou
+pays.philippines: Philippines
+pays.pologne: Pologne
+pays.portugal: Portugal
+'pays.principaute de Monaco': 'Principauté de Monaco'
+pays.qatar: Qatar
+pays.roumanie: Roumanie
+pays.russie: Russie
+pays.rwanda: Rwanda
+pays.saint-Christophe-et-Nieves: Saint-Christophe-et-Niévès
+pays.sainte-Lucie: Sainte-Lucie
+'pays.saint Pierre and Miquelon': 'Saint Pierre and Miquelon'
+'pays.saint-Vincent-et-les Grenadines': 'Saint-Vincent-et-les Grenadines'
+pays.samoa: Samoa
+pays.saint-Marin: Saint-Marin
+'pays.sao Tome-et-Principe': 'São Tomé-et-Príncipe'
+'pays.arabie Saoudite': 'Arabie Saoudite'
+pays.ecosse: Ecosse
+pays.senegal: Sénégal
+pays.serbie: Serbie
+pays.seychelles: Seychelles
+'pays.sierra Leone': 'Sierra Leone'
+pays.singapour: Singapour
+pays.slovaquie: Slovaquie
+pays.slovenie: Slovénie
+'pays.iles Salomon': 'Iles Salomon'
+pays.somalie: Somalie
+'pays.afrique du Sud': 'Afrique du Sud'
+pays.espagne: Espagne
+'pays.sri Lanka': 'Sri Lanka'
+pays.soudan: Soudan
+pays.suriname: Suriname
+pays.swaziland: Swaziland
+pays.suede: Suède
+pays.suisse: Suisse
+pays.syrie: Syrie
+pays.taiwan: Taïwan
+pays.tadjikistan: Tadjikistan
+pays.tanzanie: Tanzanie
+pays.thailande: Thaïlande
+pays.togo: Togo
+pays.tonga: Tonga
+pays.trinite-et-Tobago: Trinité-et-Tobago
+pays.tunisie: Tunisie
+pays.turquie: Turquie
+pays.turkmenistan: Turkménistan
+pays.tuvalu: Tuvalu
+pays.ouganda: Ouganda
+pays.ukraine: Ukraine
+'pays.emirats arabes unis': 'Emirats arabes unis'
+pays.royaume-Uni: Royaume-Uni
+pays.etats-Unis: Etats-Unis
+pays.uruguay: Uruguay
+pays.ouzbekistan: Ouzbékistan
+pays.vanuatu: Vanuatu
+pays.vatican: Vatican
+pays.venezuela: Venezuela
+pays.vietnam: Vietnam
+'pays.pays de Galles': 'Pays de Galles'
+'pays.wallis et Futuna': 'Wallis et Futuna'
+pays.yemen: Yémen
+pays.zambie: Zambie
+pays.zimbabwe: Zimbabwe
+destination.mediterranee: Méditerannée
+destination.manche_atlantique: 'Manche Atlantique'
+destination.montagne: Montagne
+destination.campagne: Campagne
+destination.images_pays_title: 'Le pays en image'
+destination.images_region_title: 'La région en image'
+destination.images_ville_title: 'La ville en image'
+destination.pays_title: 'Camping en %item% pas cher'
+destination.region_title: 'Location mobil home %item%'
+destination.regionref_title: 'Location mobil home %item%'
+destination.departement_title: 'Location mobil home %item%'
+destination.ville_title: 'Camping %item% pas cher (location mobil home)'
+destination.camping_title: 'Camping %ville%'
+destination.retour_bottom: 'Retour à la liste'
+destination.retour: Retour
+destination.pois_all: 'Tous les lieux'
+destination.events_title: 'En ce moment'
+destination.events_prefixe_subtitle: En
+destination.events_suffixe_subtitle: ...
+destination.campings_selection_title: 'Notre sélection de campings'
+destination.destination_title: 'Camping en %item% pas cher'
+destination.pas_cher: 'pas cher'
+listing_destination.campings_map_title: 'Campings Vacances directes'
+listing_destination.campings_map_prefixe_subtitle: en
+listing.plus_resultats: 'Plus de résultats'
+listing.du: du
+listing.au: au
+listing.no_results_title: 'Votre recherche n''a retourné aucun résultat.'
+listing.no_results: 'Nous vous invitons à modifier vos critères de recherche'
+listing.nos_locations_disponibles: 'Nos locations disponibles'
+menu_destination.accroche: '3 pays, 34 régions touristiques, vos vacances avec Vacances directes.'
+menu_bon_plan.accroche.prefix: Sélectionner
+menu_bon_plan.accroche.suffix: 'un bon plan'
+menu_bon_plan.newsletter.title: 'Abonnement newsletter'
+menu_bon_plan.newsletter.link: 'S''inscrire'
+menu_bon_plan.autres_offres.title: 'Nos autres offres'
+menu_bon_plan.dispos.subtitle.prefix: 'Départ le'
+menu_bon_plan.bons_plans.link.prefix: 'Tous les'
+menu_bon_plan.categorie_bons_plans.link: 'Toutes nos offres'
+menu.plus_de_regions: 'Plus de régions'
+menu.libelle: Libellé
+menu.localisation: Localisation
+menu.title: 'Vacances directes'
+menu.destinations: 'Nos destinations'
+menu.locations: 'Les locations'
+menu.bons_plans: 'Les bons plans'
+menu.vacances: 'Vos vacances'
+menu.weekends: 'Vos week-ends'
+menu.tous_camping: 'Tous nos campings'
+menu.decouvrez_locations: 'Découvrez nos locations'
+menu.decouvrez_locations_type: 'Par type'
+menu.decouvrez_locations_capacite: 'Par capacité'
+etablissement.activites: 'Liste des activités'
+etablissement.destinations: 'Liste des destinations'
+etablissement.service_complementaires: 'Liste des services complementaires'
+etablissement.type_hebergements: 'Liste des types d''hébergements'
+date_search.date_debut: 'Date de début du séjour'
+date_search.destination: Destination
+date_search.destination.empty_value: 'Destination ?'
+date_search.nb_jours: 'Nombre de nuits'
+date_search.nb_jours.required: 'Le nombre de nuits est requis.'
+date_search.nb_jours.empty_value: 'Nombre de nuits ?'
+date_search.ville: Ville
+date_search.ville.empty_value: 'Ville ?'
+date_search.camping: Camping
+date_search.camping.empty_value: 'Camping ?'
+date_search.nb_adultes: Adulte(s)
+date_search.nb_enfants: Enfant(s)
+date_search.date_debut.required: 'La date de début de séjour est requise.'
+date_search.date_fin.required: 'La dete de fin de séjour est requise.'
+date_search.destination.required: 'La destination est requise.'
+date_search.ville.required: 'La ville ou le camping est requis.'
+date_search.nb_adultes.required: 'Le nombre d''adultes est requis.'
+date_search.button.submit: Rechercher
+date_search.submit: Trouver
+date_search.campings: Campings
+date_search.ou: ou
+date_search.nuits: nuits
+'Les vacances à': 'Les vacances à'
+'A proximité nous avons listé': 'A proximité nous avons listé'
+'site à visiter': 'site à visiter'
+'activités sprotives': 'activités sprotives'
+'événements culturels': 'événements culturels'
+'L''événement à ne pas manquer': 'L''événement à ne pas manquer'
+'Vous aimerez': 'Vous aimerez'
+comme: comme
+ans: ans
+Toutes: Toutes
+header.information: 'Informations & réservations'
+header.telephone.number: '0825 133 400'
+header.telephone.price: '(0,15€/min)'
+header.130_camping: '+ de 170 campings en France, Espagne & Italie'
+header.location_mobil_home: 'Location de mobil home en camping (France, Espagne, Italie et Portugal)'
+fiche.camping: Camping
+fiche.situer_carte: 'Situer sur la carte'
+fiche.description_title: Description
+fiche.plan_camping: 'Plan du camping'
+fiche.activite_event: 'Liste des activités et évènements'
+fiche.le_camping: 'Le camping'
+fiche.les_locations: 'Les locations'
+fiche.sur_place: 'Sur place'
+fiche.a_proximite: 'A proximité'
+fiche.infos_pratiques: 'Infos pratiques'
+fiche.video: Vidéo
+fiche.photo: Photo
+fiche.emplacements: emplacements
+fiche.ouvert_du: 'Ouverture :'
+fiche.vous_aimerez: 'Vous aimerez'
+fiche.comme: comme...
+fiche.les_vacances_a: 'Les vacances à'
+fiche.nous_avons_liste: 'nous avons listé :'
+fiche.sites_a_visiter: 'sites à visiter'
+fiche.activites_sportives: 'activités sportives'
+fiche.evenements_culturels: 'événements culturels'
+fiche.evenement_ne_pas_manquer: 'L''événement à ne pas manquer :'
+fiche.distance_camping: 'Distance du camping :'
+fiche.filtrer_par: 'Filtrer par :'
+fiche.toutes_categories: 'Toutes catégories'
+fiche.toutes_capacite: 'Toutes capacités'
+fiche.capacite: 'Capacité :'
+fiche.places: places
+fiche.nombre_chambres: 'Nombre de chambres :'
+fiche.nombre_personnes: 'Nombre de personnes :'
+fiche.surface: 'Surface :'
+fiche.type_terrasse: 'Type de terrasse :'
+fiche.activites: Activités
+fiche.equipements: Equipements
+fiche.services_complementaires: 'Services complémentaires'
+fiche.activites_et_sites_a_visiter: 'Activités et sites à visiter'
+fiche.km: km
+fiche.agenda_culturel_et_sorties: 'Agenda culturel et sorties'
+fiche.coordonnees_du_camping: 'Coordonnées du camping'
+fiche.gps: 'GPS :'
+fiche.horaires_ouverture: 'Horaires d''ouverture'
+fiche.reception: Réception
+fiche.arrivees_departs: Arrivées/Départs
+fiche.fax: 'Fax :'
+fiche.tel: 'Tél :'
+fiche.baignades.top: Baignade
+fiche.baignades.bottom: 'et bien-être'
+fiche.retour: Retour
+fiche.ouvert_au: au
+fiche.plan.legende: 'Légende du plan du camping'
+fiche.bloc_prix.type_hebergement: 'pour un %categorie% - %type%'
+fiche.toutes_regions: 'Toutes les régions'
+fiche.region: Région
+home.topcamping: 'Top campings'
+home.topcamping.link: 'Tous les top campings'
+home.vacances_directes_cest: 'Vacances directes c''est'
+home.4_pays: '3 pays'
+home.26_regions: '34 régions'
+home.touristiques: touristiques
+home.destination: Destination
+home.destination_france: 'Destination France'
+home.plus_de_regions: 'Plus de régions'
+home.faites_le_plein_d_activites: 'Faites le plein d''activités'
+home.dernieres_minutes: 'Dernières minutes'
+home.early_booking: 'Early booking'
+home.dernieres_minutes.link: 'Toutes les dernières minutes'
+home.early_booking.link: 'Tous les early booking'
+home.idees_weekend.link: 'Toutes les idées week-end (%number%)'
+compte.title: 'Espace client'
+compte.placeholder.name: 'Nom d''utilisateur'
+compte.placeholder.password: 'Mot de passe'
+compte.login.error: "Le login que vous avez saisi est incorrect.\nVeuillez réessayer (vérifiez que le verrouillage des majuscules est désactivé)."
+general.a_partir_de: 'à partir de'
+general.meilleur_prix: 'Notre meilleur prix'
+general.jouer: Jouer
+general.en_savoir_plus: 'En savoir plus'
+general.la_nuit: 'la nuit'
+general.idees_week_end: 'Bons plans'
+general.filter_par: 'Filtrer par'
+general.campings_vacances_directes: 'Campings Vacances directes'
+general.decouvrir_le_camping: 'Découvrir le camping'
+general.au_lieu_de: 'au lieu de'
+general.sur_la_destination: 'sur la destination'
+general.plus_visite: 'Plus de visites'
+general.plus_evenements: 'Plus d''événements'
+general.decouvrir: Découvrir
+general.reserver: Réserver
+general.profite: 'J''en profite'
+general.la_semaine: 'la semaine'
+general.contre_proposition: 'ATTENTION ! Votre recherche ne donne aucun résultat. Les propositions ci-dessous sont celles qui s''en rapprochent le plus.'
+general.submit: Envoyer
+general.logout: 'Se déconnecter'
+general.nos_offres: 'Nos offres'
+general.voir_offre: 'Voir l''offre'
+general.plus_que: 'Plus que'
+general.du: Du
+general.au: au
+general.resultats: Résultat(s)
+general.toggle: 'Affichage résultat(s)'
+general.budget_range: 'Budget(s) proposé(s)'
+general.list: Liste
+general.map: Carte
+filtres.affinez_recherche: 'Affinez votre recherche'
+filtres.criteres_selectionne: 'critères(s) séléctionné(s)'
+filtres.situation: Situation
+filtres.categories: Catégories
+filtres.baignade_bien_etre: 'Baignade & bien-être'
+filtres.animations_loisirs: 'Animations et loisirs'
+filtres.commerces_services: 'Commerces et services'
+filtres.thematiques: Thématiques
+filtres.filtrer: Filtrer
+footer.contact.title: Contact
+footer.contact.tel: '0825 133 400*'
+footer.contact.fax: 'Fax: 02 96 39 97 81'
+footer.contact.price: '*(0,15 €/min)'
+footer.contact.adresse.name: 'Vacances directes'
+footer.contact.adresse.lieu_dit: 'ZA les Alleux'
+footer.contact.adresse.rue: '4 Rue du Suroit'
+footer.contact.adresse.ville: 'CS 81010 - TADEN'
+footer.contact.adresse.code_postal: '22101 DINAN cedex'
+footer.charte_qualite: 'Charte qualité'
+footer.conditions_generales_de_location: 'Conditions générales de location'
+footer.faq: FAQ
+footer.guide_pratique: 'Guide pratique'
+footer.plan_du_site: 'Plan du site'
+footer.credits: Crédits
+footer.mentions_legales: 'Mentions légales'
+footer.transactions_securisees: 'Transactions sécurisées'
+footer.cb_visa: 'CB visa'
+footer.masterCard: MasterCard
+footer.nous_joindre: 'Nous joindre'
+footer.nous_contacter: 'Nous contacter'
+footer.demande_catalogue: 'Demande de catalogue'
+footer.description_catalogue: 'Hoc inmaturo interitu ipse quoque sui pertaesus excessit e vita aetatis.'
+footer.consulter_catalogue: 'Consulter le catalogue'
+footer.telecharger_catalogue: 'Télécharger le catalogue'
+footer.facebook.titre: 'Restons en contact'
+footer.facebook.intro: 'Suivez nos idées week-end & bons plans sur'
+footer.facebook.like: 'J''aime'
+footer.facebook.desc.highlight: 'Partagez votre expérience Vacances directes'
+footer.facebook.desc: 'avec d''autres vacanciers. Photos, activités, avis, rejoignez la communauté des clients Vacances directes sur'
+footer.jeu.titre: 'Grand jeu concours sur'
+footer.jeu.desc: 'Gagnez un week-end en Italie'
+footer.location_camping: 'Locations en camping'
+footer.annuaire_campings: 'Annuaire des campings'
+footer.campings_pas_chers: 'Liste des campings pas chers'
+footer.guide_activites: 'Guide des activités'
+footer.campings_france: 'Campings France'
+footer.campings_espagne: 'Campings Espagne'
+footer.campings_italie: 'Campings Italie'
+footer.a_propos: 'À propos'
+footer.a_propos.desc: 'Depuis plus de 35 ans, Vacances directes propose la location en camping de mobil-homes tout confort et de qualité. Venez découvrir plus de 180 destinations sélectionnées avec soin en France, Espagne et Italie pour des vacances conviviales et reposantes.'
+footer.actualites: Actualités
+footer.qui_sommes_nous: 'Qui sommmes-nous ?'
+footer.recrutement: 'Recrutement Vacances directes'
+footer.ce: 'Vacances comité d''entreprise'
+footer.newsletter: 'Abonnemment newsletter'
+footer.newsletter.desc: 'Retrouvez les bons plans et les nouvelles offres Vacances directes directement dans votre boîte mail.'
+footer.newsletter.entrer_son_email: 'ENTRER SON E-MAIL'
+footer.site_mobile: 'Site mobile'
+footer.site_mobile.desc: 'Retrouvez toutes les offres de Vacances directes sur votre mobile.'
+footer.annulation: 'Formulaire d''annulation'
+pactiv-1: 'En vacances avec mes parents, j''aime'
+pactiv-2: 'Envie d''un petit break, de prendre l''air'
+pactiv-3: 'Des vacances sous le signe de la détente et du bonheur'
+encart_vacances_directes.title: 'Vacances directes'
+encart_vacances_directes.subtitle: 'Un séjour réussi'
+encart_vacances_directes.item_1: 'Des ambassadeurs pour vous accueillir'
+encart_vacances_directes.item_2: 'Des campings sélectionnés avec soin'
+encart_vacances_directes.item_3: 'Un site 100% sécurisé'
+encart_vacances_directes.item_4: 'Des mobil-homes tout confort pour des vacances dépaysantes'
+encart_hebergement.title: 'Vacances directes'
+encart_hebergement.subtitle: 'propose des hébergements'
+encart_hebergement.standardise.title: Standardisés
+encart_hebergement.standardise.texte: 'Une même référence offre les mêmes prestations sur tous les campings Vacances directes.'
+encart_hebergement.adapte.title: Adaptés
+encart_hebergement.adapte.texte: 'Vacances directes s''intéresse aux évolutions de le vie de tous les jours et propose des mobil-homes et des caravanes tout confort, adaptés aux besoins de chacun.'
+encart_hebergement.varie.title: Variés
+encart_hebergement.varie.texte: 'Faites votre choix parmi une large gamme d''hébergements. Vacances directes, c''est plus de 10 modèles de caravanes et des mobil-homes pour s''adapter à toutes les familles et à tous les portesfeuilles.'
+encart_hebergement.equipe.title: Equipés
+encart_hebergement.equipe.texte: 'Les hébergements sont prêts à vous recevoir. Tout est inclus (alèses, couvertures, oreillers...), apportez simplement votre linge de maison. La cuisine est aménagée et équipées.'
+encart_informations.title: 'Informations & Réservations au'
+encart_informations.price: '(0,15 €/min)'
+encart_informations.dates_1: 'Du lundi au vendredi de 9h-21h'
+encart_informations.dates_2: 'Samedi de 10h - 18h'
+encart_autres_themes.title: 'D''autres thèmes pour votre week-end'
+semainier.title: 'Tarifs & disponibilités'
+semainier.choose_dates_desc: 'En juillet et août, les arrivées et départs sont possibles les mercredis et samedis.'
+semainier.type_hebergement_title: 'Choisissez votre période et votre type d''hébergement'
+semainier.type_hebergement_desc: 'Vérifiez les disponibilités mois par mois et cliquez sur la période et l''hébergement de votre choix pour réserver.'
+semainier.indisponible: Indisponible
+semainier.type_hebergement.details: Détails
+resalys.creer_compte: 'Créer mon compte'
+resalys.total: Total
+resalys.date_format: 'Format de la date DD/MM/YYYY'
+resalys.besoin_aide_title: 'Besoin d''aide'
+resalys.besoin_aide_subtitle: 'Une question sur votre réservation&hellip;'
+resalys.besoin_aide_contact: Contactez-nous
+resalys.besoin_aide_num: 'au 0825 133 400'
+resalys.session_expire: 'Séjour indisponible'
+resalys.session_expire_texte_1: 'Une erreur est survenue lors de la recherche de disponibilité.'
+resalys.session_expire_texte_2: 'Modifiez votre demande ou confiez-en le soin à notre équipe de réservation en appelant au 0 825 133 400 (0,15 €/min).'
+resalys.non_connecte: 'Afin de poursuivre votre réservation,<br /> Merci de vous connecter ou de vous créer un compte ci-dessus'
+resalys.retour_home: 'Retourner sur la home'
+vos_week_ends: 'Vos week-ends'
+breadcrumbs.home: Accueil
+breadcrumbs.bonsplans: 'Bons plans'
+topCamping.h1: 'Top destinations vacances en camping'
+dernieresMinutes.h1: 'Nos offres de campings en dernières minutes (location mobil home)'
+earlyBooking.h1: 'Nos offres de campings en early booking (location mobil home)'
+demande_annulation.assure_nom.label: Nom
+demande_annulation.assure_nom.not_blank: 'Le nom est requis'
+demande_annulation.assure_prenom.label: Prénom
+demande_annulation.assure_prenom.not_blank: 'Le prénom est requis'
+demande_annulation.assure_adresse.label: Adresse
+demande_annulation.assure_adresse.not_blank: 'L''adresse est requise'
+demande_annulation.assure_code_postal.label: 'Code Postal'
+demande_annulation.assure_code_postal.not_blank: 'Le code postal est requis'
+demande_annulation.assure_ville.label: Ville
+demande_annulation.assure_ville.not_blank: 'La ville est requise'
+demande_annulation.assure_pays.label: Pays
+demande_annulation.assure_pays.empty_value: 'Choisissez un pays'
+demande_annulation.assure_pays.not_blank: 'Le pays est requis'
+demande_annulation.assure_mail.label: EMail
+demande_annulation.assure_mail.not_blank: 'L''email est requis'
+demande_annulation.assure_mail.mail: 'L''adresse email renseignée n''est pas valide'
+demande_annulation.assure_telephone.label: Téléphone
+demande_annulation.assure_telephone.not_blank: 'Le téléphone est requis'
+demande_annulation.camping_montant_sejour.label: 'Montant du séjour'
+demande_annulation.camping_montant_sejour.not_blank: 'Le montant du séjour est requis'
+demande_annulation.camping_montant_verse.label: 'Montant des sommes versées'
+demande_annulation.camping_montant_verse.not_blank: 'Le montant des sommes versées est requis'
+demande_annulation.etablissement.label: 'Nom du camping'
+demande_annulation.etablissement.empty_value: 'Choisissez un camping'
+demande_annulation.etablissement.not_blank: 'Le nom du camping est requis'
+demande_annulation.camping_num_resa.label: 'N° de réservation'
+demande_annulation.camping_num_resa.not_blank: 'Le numéro de réservation est requis'
+demande_annulation.sinistre_nature.label: 'Nature du sinistre'
+demande_annulation.sinistre_nature.annulation: 'Annulation du séjour'
+demande_annulation.sinistre_nature.interruption: 'Interruption du séjour'
+demande_annulation.sinistre_nature.not_blank: 'La nature du sinistre est requise'
+demande_annulation.sinistre_suite.label: 'Suite à'
+demande_annulation.sinistre_suite.maladie: Maladie
+demande_annulation.sinistre_suite.accident: Accident
+demande_annulation.sinistre_suite.autre: Autre
+demande_annulation.sinistre_suite.not_blank: 'La suite de la nature du sinistre est requise'
+demande_annulation.sinistre_date.label: 'Date du sinistre'
+demande_annulation.sinistre_date.not_blank: 'La date du sinistre est requise'
+demande_annulation.sinistre_date.date: 'La date de sinistre renseignée n''est pas valide'
+demande_annulation.sinistre_resume.label: 'Résumé rapide des faits et description de la nature du sinistre'
+demande_annulation.sinistre_resume.not_blank: 'Le résumé du sinistre est requis'
+demande_annulation.file_1: ''
+demande_annulation.file_2: ''
+demande_annulation.file_3: ''
+demande_annulation.file_4: ''
+demande_annulation.certifie.label: 'Je certifie demander l''annulation référencée ci-dessus'
+demande_annulation.certifie.is_true: 'Veuillez cocher la case pour confirmer votre demande d''annulation'
+demande_annulation.files.label: 'Joindre des pièces : (format : pdf, doc, docx, png, jpg de 2 mo maximum)'
+demande_annulation.files.mimeTypesMessage: 'Type de fichier invalide (formats autorisés : pdf, doc, docx, png, jpg)'
+demande_annulation.files.notFoundMessage: 'Une erreur est survenue lors du téléchargement du fichier'
+demande_annulation.files.notReadableMessage: 'Une erreur est survenue lors du téléchargement du fichier'
+demande_annulation.files.uploadIniSizeErrorMessage: 'Fichier trop volumineux (2 mo maximum)'
+demande_annulation.files.uploadFormSizeErrorMessage: 'Fichier trop volumineux (2 mo maximum)'
+demande_annulation.files.uploadErrorMessage: 'Une erreur est survenue lors du téléchargement du fichier'
+demande_annulation.confirmation.title: confirmation
+demande_annulation.confirmation.content: 'Votre demande d''annulation a bien été envoyée.'
+demande_annulation.title: 'Formulaire d''annulation'
+demande_annulation.subtitle: 'Annuler une réservation'
+demande_annulation.legend.coordonnees: 'Vos coordonnées'
+demande_annulation.legend.reservation: 'Votre réservation'
+demande_annulation.texte1: 'Vous avez souscrit auprès de VACANCES DIRECTES une assurance annulation et/ou interruption de séjour et avez subi un sinistre répondant aux critères de mise en oeuvre de l''assurance tels que précisément détaillés dans les'
+demande_annulation.lienCGA: 'Conditions Générales d''Assurances (CGA)'
+demande_annulation.texte2: 'Il est dans ce cas impératif de remplir et de valider le présent formulaire dans un délai maximum de 5 jours suivant la date de survenance du sinistre. A défaut de respecter ce délai, l''Assureur se réserve la faculté de vous refuser le bénéfice de l''assurance (cf art.4.1 des CGA - déchéance de garantie).'
+demande_annulation.texte3: 'En validant le présent formulaire de déclaration de sinistre, vous déclarez que les informations que vous avez saisies dans le formulaire sont exactes et sincères, et reconnaissez que le traitement de votre dossier et l''indemnisation qui vous serait due par l''assureur sont soumis à la communication des pièces et informations complémentaires qui vous seront demandées, conformément à l''article 4.2 des CGA.'
+offreSpeciales.intro: "Profitez de notre promo early booking sur votre séjour en basse saison:\n-10% pour une réservation avant le 31/01/2013\n-5% pour une réservation avant le 28/02/2013"
+offreSpeciales.texte: 'Offre applicable uniquement sur le séjour, non cumulable avec l’ensemble des offres commerciales en cours. Valable pour tout séjour hors périodes du 06/07/2013 au 31/08/2013. Cette offre ne s’applique pas aux destinations suivantes : Coteau de la Marine, Castellas, Aqua Viva, Neptune, Château de Galinée, Domaine de Kermario, Chaponnet, Sandaya Soulac Plage, Ur Onéa, Domaine des Naädes, Cupulatta, Playa Montroig, et autres exceptions éventuelles.'
+poi.informations_pratiques: 'Informations pratiques'
+poi.acceder_site: 'Accéder au site web'
+poi.tel: 'Tél :'
+poi.fax: 'Fax :'
+poi.email: 'Email :'
+poi.categorie: 'Catégorie :'
+poi.type: 'Type :'
+poi.transport: 'Transport :'
+poi.adresse: 'Adresse :'
+event.informations_pratiques: 'Informations pratiques'
+event.acceder_site: 'Accéder au site web'
+event.tel: 'Tél :'
+event.fax: 'Fax :'
+event.email: 'Email :'
+event.categorie: 'Catégorie :'
+event.type: 'Type :'
+event.transport: 'Transport :'
+event.adresse: 'Adresse :'
+global.search_message: 'Nous traitons actuellement votre demande. <br/><br/>Merci de bien vouloir patienter.'
+global.compte.btn: 'Mon compte'
+global.compte.title: '<span>Espace</span> client'
+global.compte.user: 'Nom d''utilisateur'
+global.compte.password: 'Mot de passe'
+global.compte.forget: 'Mot de passe oublié ?'
+global.compte.submit: 'Se connecter'
+global.compte.accueil: Accueil
+global.compte.coordonnees: Coordonnées
+global.compte.demande_brochure: 'Demande de brochure'
+global.compte.reservation: Réservation
+global.site_name: 'Vacances directes.com'
+bon_plan.title: 'Camping : %bonPlan%'
+location.list.title: 'Nos hébergements : %type%'
+location.list.selection: 'Notre sélection d''hébergements'
+location.list.hebergements.savoir_plus: 'En savoir plus'
+location.list.hebergements.plus_de_resultats: 'Plus de résultats'
+location.list.hebergements.nb_places: '%nbPlaces% places'
+location.list.notre_selection: 'Notre sélection'
+location.fiche.subtitle: 'Location %type% %nbPlaces% personnes'
+location.fiche.voir_les_campings: 'Voir les campings'
+location.fiche.onglet.logement.title: 'Le logement'
+location.fiche.onglet.logement.informations_pratiques.title: 'Informations pratiques'
+location.fiche.onglet.logement.informations_pratiques.capacite: Capacité
+location.fiche.onglet.logement.informations_pratiques.dimensions: Dimensions
+location.fiche.onglet.logement.informations_pratiques.agencement: Agencement
+location.fiche.onglet.logement.informations_pratiques.equipements: Equipements
+location.fiche.onglet.logement.informations_pratiques.annee_utilisation: 'Année d''utilisation'
+location.fiche.onglet.logement.lien_campings: 'Les campings'
+location.fiche.onglet.campings.title: 'Les campings'
+location.fiche.onglet.campings.selection.title: 'Notre selection de campings'
+location.fiche.onglet.campings.lien_logement: 'Le logement'
+'The CSRF token is invalid. Please try to resubmit the form.': 'Votre session a expiré ; veuillez soumettre le formulaire à nouveau.'
+share.facebook: 'Partager sur Facebook'
+share.twitter: 'Partager sur Twitter'
+couloir.menu.detail: 'Détails du séjour'
+couloir.menu.recapitulatif: Récapitulatif
+couloir.menu.paiement: Paiement
+couloir.confirmation: Confirmation
+couloir.title: 'Bienvenue dans l’espace de'
+couloir.title_reservation: Réservation
+err404.title: 'Désolé, cette page n''existe pas...'
+err404.content: 'Retourner sur la <a href="%link%">page d''accueil</a>.'
+datepicker.days: '[''Dimanche'', ''Lundi'', ''Mardi'', ''Mercredi'', ''Jeudi'', ''Vendredi'', ''Samedi'', ''Dimanche'']'
+datepicker.daysShort: '[''Dim'', ''Lun'', ''Mar'', ''Mer'', ''Jeu'', ''Ven'', ''Sam'', ''Dim'']'
+datepicker.daysMin: '[''Di'', ''Lu'', ''Ma'', ''Me'', ''Je'', ''Ve'', ''Sa'', ''Di'']'
+datepicker.months: '[''Janvier'', ''Février'', ''Mars'', ''Avril'', ''Mai'', ''Juin'', ''Juillet'', ''Août'', ''Septembre'', ''Octobre'', ''Novembre'', ''Décembre'']'
+datepicker.monthsShort: '[''Jan'', ''Fév'', ''Mar'', ''Avr'', ''Mai'', ''Jui'', ''Jui'', ''Aoû'', ''Sepe'', ''Oct'', ''Nov'', ''Déc'']'
+datepicker.weekMin: '''Se'''
+widget.offres_speciales.title: 'Offres spéciales'
+widget.offres_speciales.more: 'Plus d''offres'
+widget.offres_speciales.from: 'à partir de'
+widget.offres_speciales.instead: 'au lieu de'
+widget.tracking.title: 'Vous avez déjà consulté'
+widget.tracking.from: 'à partir de'
+widget.related.title: 'Vous aimerez aussi'
+widget.related.from: 'à partir de'
+widget.reassurance.title: 'Informations & réservations au'
+widget.reassurance.tel: '0825 133 400'
+widget.reassurance.telto: '0825133400'
+widget.reassurance.price: '(0,15 €/min)'
+widget.reassurance.ouverture_du: 'Du lundi au vendredi de 9h à 21h'
+widget.reassurance.ouverture_au: 'Samedi de 10h à 18h'

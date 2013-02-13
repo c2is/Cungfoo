@@ -3067,6 +3067,54 @@ abstract class BaseDestination extends BaseObject implements Persistent
         return $this;
     }
 
+
+        /**
+         * Get the [seo_title] column value.
+         *
+         * @return string
+         */
+        public function getSeoTitle()
+        {
+        return $this->getCurrentTranslation()->getSeoTitle();
+    }
+
+
+        /**
+         * Set the value of [seo_title] column.
+         *
+         * @param string $v new value
+         * @return DestinationI18n The current object (for fluent API support)
+         */
+        public function setSeoTitle($v)
+        {    $this->getCurrentTranslation()->setSeoTitle($v);
+
+        return $this;
+    }
+
+
+        /**
+         * Get the [seo_description] column value.
+         *
+         * @return string
+         */
+        public function getSeoDescription()
+        {
+        return $this->getCurrentTranslation()->getSeoDescription();
+    }
+
+
+        /**
+         * Set the value of [seo_description] column.
+         *
+         * @param string $v new value
+         * @return DestinationI18n The current object (for fluent API support)
+         */
+        public function setSeoDescription($v)
+        {    $this->getCurrentTranslation()->setSeoDescription($v);
+
+        return $this;
+    }
+
     // crudable behavior
 
     /**

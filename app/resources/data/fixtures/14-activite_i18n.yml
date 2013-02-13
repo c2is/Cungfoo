@@ -1,0 +1,365 @@
+\Cungfoo\Model\ActiviteI18n:
+    1_de:
+        Id: 1
+        Locale: de
+        Name: 'Ping-pong (Gratuit)'
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    1_en:
+        Id: 1
+        Locale: en
+        Name: 'Ping-pong (Gratuit)'
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    1_fr:
+        Id: 1
+        Locale: fr
+        Name: 'Ping-pong (Gratuit)'
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    1_nl:
+        Id: 1
+        Locale: nl
+        Name: 'Ping-pong (Gratuit)'
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    2_de:
+        Id: 2
+        Locale: de
+        Name: Kinderclub
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    2_en:
+        Id: 2
+        Locale: en
+        Name: 'Club enfants'
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    2_fr:
+        Id: 2
+        Locale: fr
+        Name: 'Club enfants'
+        Description: 'les enfants seront accueillis au club par les animateurs du camping pour des activités sportives, ludiques et amusantes'
+        Keywords: 'enfant, jeux, activité, chasse au trésor, sport, club'
+        ActiveLocale: true
+    2_nl:
+        Id: 2
+        Locale: nl
+        Name: 'Club enfants'
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    3_de:
+        Id: 3
+        Locale: de
+        Name: 'Pétanque (Gratuit)'
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    3_en:
+        Id: 3
+        Locale: en
+        Name: 'Pétanque (Gratuit)'
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    3_fr:
+        Id: 3
+        Locale: fr
+        Name: 'Pétanque (Gratuit)'
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    3_nl:
+        Id: 3
+        Locale: nl
+        Name: 'Pétanque (Gratuit)'
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    4_de:
+        Id: 4
+        Locale: de
+        Name: 'Club ados'
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    4_en:
+        Id: 4
+        Locale: en
+        Name: 'Club ados'
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    4_fr:
+        Id: 4
+        Locale: fr
+        Name: 'Club ados'
+        Description: 'Les ados seront accueillis au club par des animateurs qui proposeront des activités ludiques et sportives'
+        Keywords: 'adolescent, animation, activité, sport, jeux, détente'
+        ActiveLocale: true
+    4_nl:
+        Id: 4
+        Locale: nl
+        Name: 'Club ados'
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    5_de:
+        Id: 5
+        Locale: de
+        Name: 'Terrain multisports'
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    5_en:
+        Id: 5
+        Locale: en
+        Name: 'Terrain multisports'
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    5_fr:
+        Id: 5
+        Locale: fr
+        Name: 'Terrain multisports'
+        Description: 'Un terrain multisports pour profiter d''un maximum d''activités sportives (foot, basket, hand et volley)'
+        Keywords: 'sport, basket, football, handball, volleyball'
+        ActiveLocale: true
+    5_nl:
+        Id: 5
+        Locale: nl
+        Name: 'Terrain multisports'
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    6_de:
+        Id: 6
+        Locale: de
+        Name: 'Salle de musculation et fitness'
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    6_en:
+        Id: 6
+        Locale: en
+        Name: 'Salle de musculation et fitness'
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    6_fr:
+        Id: 6
+        Locale: fr
+        Name: 'Salle de musculation et fitness'
+        Description: 'Soyez en forme, profitez de la salle de musculation et du fitness…'
+        Keywords: 'salle de sport, musculation, fitness, remise en forme'
+        ActiveLocale: true
+    6_nl:
+        Id: 6
+        Locale: nl
+        Name: 'Salle de musculation et fitness'
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    7_de:
+        Id: 7
+        Locale: de
+        Name: 'Discothèque à proximité'
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    7_en:
+        Id: 7
+        Locale: en
+        Name: 'Discothèque à proximité'
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    7_fr:
+        Id: 7
+        Locale: fr
+        Name: 'Discothèque à proximité'
+        Description: 'Retrouvez à proximité du camping une discothèque qui vous fera danser jusqu''au bout de la nuit !'
+        Keywords: 'discothèque, danse, soirée, animation'
+        ActiveLocale: true
+    7_nl:
+        Id: 7
+        Locale: nl
+        Name: 'Discothèque à proximité'
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    8_de:
+        Id: 8
+        Locale: de
+        Name: 'Mini golf à proximité'
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    8_en:
+        Id: 8
+        Locale: en
+        Name: 'Mini golf à proximité'
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    8_fr:
+        Id: 8
+        Locale: fr
+        Name: 'Mini golf à proximité'
+        Description: 'Retrouve- vous en famille ou entre amis pour une partie de mini golf : obstacles, contournements et autres saltos n''auront plus de secrets !'
+        Keywords: 'mini golf, parcours, jeu, famille, amis'
+        ActiveLocale: true
+    8_nl:
+        Id: 8
+        Locale: nl
+        Name: 'Mini golf à proximité'
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    9_de:
+        Id: 9
+        Locale: de
+        Name: 'Tennis à proximité'
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    9_en:
+        Id: 9
+        Locale: en
+        Name: 'Tennis à proximité'
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    9_fr:
+        Id: 9
+        Locale: fr
+        Name: 'Tennis à proximité'
+        Description: 'Pratiquez le tennis, pour des vacances placées sous le signe du sport'
+        Keywords: 'tennis, raquette, balle'
+        ActiveLocale: true
+    9_nl:
+        Id: 9
+        Locale: nl
+        Name: 'Tennis à proximité'
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    10_de:
+        Id: 10
+        Locale: de
+        Name: 'Golf à proximité'
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    10_en:
+        Id: 10
+        Locale: en
+        Name: 'Golf à proximité'
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    10_fr:
+        Id: 10
+        Locale: fr
+        Name: 'Golf à proximité'
+        Description: 'un parcours de golf, pour les initiés ou non, pour des vacances originales'
+        Keywords: 'golf, green, parcours, 9 trous, 18 trous, club, tee'
+        ActiveLocale: true
+    10_nl:
+        Id: 10
+        Locale: nl
+        Name: 'Golf à proximité'
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    11_de:
+        Id: 11
+        Locale: de
+        Name: 'Equitation à proximité'
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    11_en:
+        Id: 11
+        Locale: en
+        Name: 'Equitation à proximité'
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    11_fr:
+        Id: 11
+        Locale: fr
+        Name: 'Equitation à proximité'
+        Description: 'Balade à cheval ou à dos de poney, profitez du centre équestre pour vos vacances'
+        Keywords: 'équitation, cheval, poney, randonnée, centre équestre'
+        ActiveLocale: true
+    11_nl:
+        Id: 11
+        Locale: nl
+        Name: 'Equitation à proximité'
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    12_de:
+        Id: 12
+        Locale: de
+        Name: 'Pêche à proximité'
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    12_en:
+        Id: 12
+        Locale: en
+        Name: 'Pêche à proximité'
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    12_fr:
+        Id: 12
+        Locale: fr
+        Name: 'Pêche à proximité'
+        Description: 'Pêche à pied, en étang ou en rivière... détendez vous !'
+        Keywords: 'pêche, poisson, canne à pêche, casier, crustacés, eau douce, eau de mer, rivière, lac'
+        ActiveLocale: true
+    12_nl:
+        Id: 12
+        Locale: nl
+        Name: 'Pêche à proximité'
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    13_de:
+        Id: 13
+        Locale: de
+        Name: Canoë
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    13_en:
+        Id: 13
+        Locale: en
+        Name: Canoë
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    13_fr:
+        Id: 13
+        Locale: fr
+        Name: Canoë
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    13_nl:
+        Id: 13
+        Locale: nl
+        Name: Canoë
+        Description: null
+        Keywords: null
+        ActiveLocale: true

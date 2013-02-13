@@ -1,0 +1,141 @@
+\Cungfoo\Model\BaignadeI18n:
+    1_de:
+        Id: 1
+        Locale: de
+        Name: Wasserrutsche
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    1_en:
+        Id: 1
+        Locale: en
+        Name: 'Toboggan aquatique'
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    1_fr:
+        Id: 1
+        Locale: fr
+        Name: 'Toboggan aquatique'
+        Description: 'Et hop, une glissade sur le toboggan aquatique de la piscine : amusement garanti !'
+        Keywords: 'toboggan, glissade, pentagliss, baignade, aquatique'
+        ActiveLocale: true
+    1_nl:
+        Id: 1
+        Locale: nl
+        Name: 'Toboggan aquatique'
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    2_de:
+        Id: 2
+        Locale: de
+        Name: Schwimmbad
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    2_en:
+        Id: 2
+        Locale: en
+        Name: Piscine
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    2_fr:
+        Id: 2
+        Locale: fr
+        Name: Piscine
+        Description: 'Rendez-vous au bord de la piscine pour des instants de détente dans l''eau : jouez, nagez, plongez !'
+        Keywords: 'piscine, jeu d''eau, baignade, sport, natation'
+        ActiveLocale: true
+    2_nl:
+        Id: 2
+        Locale: nl
+        Name: Piscine
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    3_de:
+        Id: 3
+        Locale: de
+        Name: 'Überdachtes Schwimmbecken '
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    3_en:
+        Id: 3
+        Locale: en
+        Name: 'Piscine couverte'
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    3_fr:
+        Id: 3
+        Locale: fr
+        Name: 'Piscine couverte'
+        Description: 'A l''abri, profitez de la piscine couverte du camping pour des moments de baignade en famille'
+        Keywords: 'piscine couverte, abri, jeu, famille, baignade'
+        ActiveLocale: true
+    3_nl:
+        Id: 3
+        Locale: nl
+        Name: 'Piscine couverte'
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    4_de:
+        Id: 4
+        Locale: de
+        Name: 'Parc aquatique'
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    4_en:
+        Id: 4
+        Locale: en
+        Name: 'Parc aquatique'
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    4_fr:
+        Id: 4
+        Locale: fr
+        Name: 'Parc aquatique'
+        Description: 'Un espace aquatique pour profiter des joies des jeux d''eau en famille'
+        Keywords: 'espace aquatique, jeux d''eau, piscine, baignade, famille, enfants'
+        ActiveLocale: true
+    4_nl:
+        Id: 4
+        Locale: nl
+        Name: 'Parc aquatique'
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    5_de:
+        Id: 5
+        Locale: de
+        Name: 'Spa, Espace bien-être'
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    5_en:
+        Id: 5
+        Locale: en
+        Name: 'Spa, Espace bien-être'
+        Description: null
+        Keywords: null
+        ActiveLocale: true
+    5_fr:
+        Id: 5
+        Locale: fr
+        Name: 'Spa, Espace bien-être'
+        Description: 'Ressourcez-vous au sein de l''espace bien être'
+        Keywords: 'spa, massage, bien être, détente'
+        ActiveLocale: true
+    5_nl:
+        Id: 5
+        Locale: nl
+        Name: 'Spa, Espace bien-être'
+        Description: null
+        Keywords: null
+        ActiveLocale: true

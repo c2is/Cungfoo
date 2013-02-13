@@ -18,6 +18,7 @@ use Cungfoo\Model\BonPlan;
 use Cungfoo\Model\BonPlanEtablissement;
 use Cungfoo\Model\Categorie;
 use Cungfoo\Model\DemandeAnnulation;
+use Cungfoo\Model\Departement;
 use Cungfoo\Model\Destination;
 use Cungfoo\Model\Etablissement;
 use Cungfoo\Model\EtablissementActivite;
@@ -65,6 +66,7 @@ use Cungfoo\Model\Ville;
  * @method EtablissementQuery orderByOpeningDate($order = Criteria::ASC) Order by the opening_date column
  * @method EtablissementQuery orderByClosingDate($order = Criteria::ASC) Order by the closing_date column
  * @method EtablissementQuery orderByVilleId($order = Criteria::ASC) Order by the ville_id column
+ * @method EtablissementQuery orderByDepartementId($order = Criteria::ASC) Order by the departement_id column
  * @method EtablissementQuery orderByCategorieId($order = Criteria::ASC) Order by the categorie_id column
  * @method EtablissementQuery orderByGeoCoordinateX($order = Criteria::ASC) Order by the geo_coordinate_x column
  * @method EtablissementQuery orderByGeoCoordinateY($order = Criteria::ASC) Order by the geo_coordinate_y column
@@ -73,6 +75,8 @@ use Cungfoo\Model\Ville;
  * @method EtablissementQuery orderByCapacite($order = Criteria::ASC) Order by the capacite column
  * @method EtablissementQuery orderByPlanPath($order = Criteria::ASC) Order by the plan_path column
  * @method EtablissementQuery orderByVignette($order = Criteria::ASC) Order by the vignette column
+ * @method EtablissementQuery orderByRelated1($order = Criteria::ASC) Order by the related_1 column
+ * @method EtablissementQuery orderByRelated2($order = Criteria::ASC) Order by the related_2 column
  * @method EtablissementQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method EtablissementQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  * @method EtablissementQuery orderByActive($order = Criteria::ASC) Order by the active column
@@ -94,6 +98,7 @@ use Cungfoo\Model\Ville;
  * @method EtablissementQuery groupByOpeningDate() Group by the opening_date column
  * @method EtablissementQuery groupByClosingDate() Group by the closing_date column
  * @method EtablissementQuery groupByVilleId() Group by the ville_id column
+ * @method EtablissementQuery groupByDepartementId() Group by the departement_id column
  * @method EtablissementQuery groupByCategorieId() Group by the categorie_id column
  * @method EtablissementQuery groupByGeoCoordinateX() Group by the geo_coordinate_x column
  * @method EtablissementQuery groupByGeoCoordinateY() Group by the geo_coordinate_y column
@@ -102,6 +107,8 @@ use Cungfoo\Model\Ville;
  * @method EtablissementQuery groupByCapacite() Group by the capacite column
  * @method EtablissementQuery groupByPlanPath() Group by the plan_path column
  * @method EtablissementQuery groupByVignette() Group by the vignette column
+ * @method EtablissementQuery groupByRelated1() Group by the related_1 column
+ * @method EtablissementQuery groupByRelated2() Group by the related_2 column
  * @method EtablissementQuery groupByCreatedAt() Group by the created_at column
  * @method EtablissementQuery groupByUpdatedAt() Group by the updated_at column
  * @method EtablissementQuery groupByActive() Group by the active column
@@ -114,9 +121,29 @@ use Cungfoo\Model\Ville;
  * @method EtablissementQuery rightJoinVille($relationAlias = null) Adds a RIGHT JOIN clause to the query using the Ville relation
  * @method EtablissementQuery innerJoinVille($relationAlias = null) Adds a INNER JOIN clause to the query using the Ville relation
  *
+ * @method EtablissementQuery leftJoinDepartement($relationAlias = null) Adds a LEFT JOIN clause to the query using the Departement relation
+ * @method EtablissementQuery rightJoinDepartement($relationAlias = null) Adds a RIGHT JOIN clause to the query using the Departement relation
+ * @method EtablissementQuery innerJoinDepartement($relationAlias = null) Adds a INNER JOIN clause to the query using the Departement relation
+ *
  * @method EtablissementQuery leftJoinCategorie($relationAlias = null) Adds a LEFT JOIN clause to the query using the Categorie relation
  * @method EtablissementQuery rightJoinCategorie($relationAlias = null) Adds a RIGHT JOIN clause to the query using the Categorie relation
  * @method EtablissementQuery innerJoinCategorie($relationAlias = null) Adds a INNER JOIN clause to the query using the Categorie relation
+ *
+ * @method EtablissementQuery leftJoinEtablissementRelatedByRelated1($relationAlias = null) Adds a LEFT JOIN clause to the query using the EtablissementRelatedByRelated1 relation
+ * @method EtablissementQuery rightJoinEtablissementRelatedByRelated1($relationAlias = null) Adds a RIGHT JOIN clause to the query using the EtablissementRelatedByRelated1 relation
+ * @method EtablissementQuery innerJoinEtablissementRelatedByRelated1($relationAlias = null) Adds a INNER JOIN clause to the query using the EtablissementRelatedByRelated1 relation
+ *
+ * @method EtablissementQuery leftJoinEtablissementRelatedByRelated2($relationAlias = null) Adds a LEFT JOIN clause to the query using the EtablissementRelatedByRelated2 relation
+ * @method EtablissementQuery rightJoinEtablissementRelatedByRelated2($relationAlias = null) Adds a RIGHT JOIN clause to the query using the EtablissementRelatedByRelated2 relation
+ * @method EtablissementQuery innerJoinEtablissementRelatedByRelated2($relationAlias = null) Adds a INNER JOIN clause to the query using the EtablissementRelatedByRelated2 relation
+ *
+ * @method EtablissementQuery leftJoinEtablissementRelatedById0($relationAlias = null) Adds a LEFT JOIN clause to the query using the EtablissementRelatedById0 relation
+ * @method EtablissementQuery rightJoinEtablissementRelatedById0($relationAlias = null) Adds a RIGHT JOIN clause to the query using the EtablissementRelatedById0 relation
+ * @method EtablissementQuery innerJoinEtablissementRelatedById0($relationAlias = null) Adds a INNER JOIN clause to the query using the EtablissementRelatedById0 relation
+ *
+ * @method EtablissementQuery leftJoinEtablissementRelatedById1($relationAlias = null) Adds a LEFT JOIN clause to the query using the EtablissementRelatedById1 relation
+ * @method EtablissementQuery rightJoinEtablissementRelatedById1($relationAlias = null) Adds a RIGHT JOIN clause to the query using the EtablissementRelatedById1 relation
+ * @method EtablissementQuery innerJoinEtablissementRelatedById1($relationAlias = null) Adds a INNER JOIN clause to the query using the EtablissementRelatedById1 relation
  *
  * @method EtablissementQuery leftJoinEtablissementTypeHebergement($relationAlias = null) Adds a LEFT JOIN clause to the query using the EtablissementTypeHebergement relation
  * @method EtablissementQuery rightJoinEtablissementTypeHebergement($relationAlias = null) Adds a RIGHT JOIN clause to the query using the EtablissementTypeHebergement relation
@@ -197,6 +224,7 @@ use Cungfoo\Model\Ville;
  * @method Etablissement findOneByOpeningDate(string $opening_date) Return the first Etablissement filtered by the opening_date column
  * @method Etablissement findOneByClosingDate(string $closing_date) Return the first Etablissement filtered by the closing_date column
  * @method Etablissement findOneByVilleId(int $ville_id) Return the first Etablissement filtered by the ville_id column
+ * @method Etablissement findOneByDepartementId(int $departement_id) Return the first Etablissement filtered by the departement_id column
  * @method Etablissement findOneByCategorieId(int $categorie_id) Return the first Etablissement filtered by the categorie_id column
  * @method Etablissement findOneByGeoCoordinateX(string $geo_coordinate_x) Return the first Etablissement filtered by the geo_coordinate_x column
  * @method Etablissement findOneByGeoCoordinateY(string $geo_coordinate_y) Return the first Etablissement filtered by the geo_coordinate_y column
@@ -205,6 +233,8 @@ use Cungfoo\Model\Ville;
  * @method Etablissement findOneByCapacite(string $capacite) Return the first Etablissement filtered by the capacite column
  * @method Etablissement findOneByPlanPath(string $plan_path) Return the first Etablissement filtered by the plan_path column
  * @method Etablissement findOneByVignette(string $vignette) Return the first Etablissement filtered by the vignette column
+ * @method Etablissement findOneByRelated1(int $related_1) Return the first Etablissement filtered by the related_1 column
+ * @method Etablissement findOneByRelated2(int $related_2) Return the first Etablissement filtered by the related_2 column
  * @method Etablissement findOneByCreatedAt(string $created_at) Return the first Etablissement filtered by the created_at column
  * @method Etablissement findOneByUpdatedAt(string $updated_at) Return the first Etablissement filtered by the updated_at column
  * @method Etablissement findOneByActive(boolean $active) Return the first Etablissement filtered by the active column
@@ -226,6 +256,7 @@ use Cungfoo\Model\Ville;
  * @method array findByOpeningDate(string $opening_date) Return Etablissement objects filtered by the opening_date column
  * @method array findByClosingDate(string $closing_date) Return Etablissement objects filtered by the closing_date column
  * @method array findByVilleId(int $ville_id) Return Etablissement objects filtered by the ville_id column
+ * @method array findByDepartementId(int $departement_id) Return Etablissement objects filtered by the departement_id column
  * @method array findByCategorieId(int $categorie_id) Return Etablissement objects filtered by the categorie_id column
  * @method array findByGeoCoordinateX(string $geo_coordinate_x) Return Etablissement objects filtered by the geo_coordinate_x column
  * @method array findByGeoCoordinateY(string $geo_coordinate_y) Return Etablissement objects filtered by the geo_coordinate_y column
@@ -234,6 +265,8 @@ use Cungfoo\Model\Ville;
  * @method array findByCapacite(string $capacite) Return Etablissement objects filtered by the capacite column
  * @method array findByPlanPath(string $plan_path) Return Etablissement objects filtered by the plan_path column
  * @method array findByVignette(string $vignette) Return Etablissement objects filtered by the vignette column
+ * @method array findByRelated1(int $related_1) Return Etablissement objects filtered by the related_1 column
+ * @method array findByRelated2(int $related_2) Return Etablissement objects filtered by the related_2 column
  * @method array findByCreatedAt(string $created_at) Return Etablissement objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return Etablissement objects filtered by the updated_at column
  * @method array findByActive(boolean $active) Return Etablissement objects filtered by the active column
@@ -340,7 +373,7 @@ abstract class BaseEtablissementQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `code`, `slug`, `name`, `title`, `address1`, `address2`, `zip`, `city`, `mail`, `country_code`, `phone1`, `phone2`, `fax`, `opening_date`, `closing_date`, `ville_id`, `categorie_id`, `geo_coordinate_x`, `geo_coordinate_y`, `video_path`, `image_360_path`, `capacite`, `plan_path`, `vignette`, `created_at`, `updated_at`, `active` FROM `etablissement` WHERE `id` = :p0';
+        $sql = 'SELECT `id`, `code`, `slug`, `name`, `title`, `address1`, `address2`, `zip`, `city`, `mail`, `country_code`, `phone1`, `phone2`, `fax`, `opening_date`, `closing_date`, `ville_id`, `departement_id`, `categorie_id`, `geo_coordinate_x`, `geo_coordinate_y`, `video_path`, `image_360_path`, `capacite`, `plan_path`, `vignette`, `related_1`, `related_2`, `created_at`, `updated_at`, `active` FROM `etablissement` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -975,6 +1008,49 @@ abstract class BaseEtablissementQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query on the departement_id column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByDepartementId(1234); // WHERE departement_id = 1234
+     * $query->filterByDepartementId(array(12, 34)); // WHERE departement_id IN (12, 34)
+     * $query->filterByDepartementId(array('min' => 12)); // WHERE departement_id > 12
+     * </code>
+     *
+     * @see       filterByDepartement()
+     *
+     * @param     mixed $departementId The value to use as filter.
+     *              Use scalar values for equality.
+     *              Use array values for in_array() equivalent.
+     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return EtablissementQuery The current query, for fluid interface
+     */
+    public function filterByDepartementId($departementId = null, $comparison = null)
+    {
+        if (is_array($departementId)) {
+            $useMinMax = false;
+            if (isset($departementId['min'])) {
+                $this->addUsingAlias(EtablissementPeer::DEPARTEMENT_ID, $departementId['min'], Criteria::GREATER_EQUAL);
+                $useMinMax = true;
+            }
+            if (isset($departementId['max'])) {
+                $this->addUsingAlias(EtablissementPeer::DEPARTEMENT_ID, $departementId['max'], Criteria::LESS_EQUAL);
+                $useMinMax = true;
+            }
+            if ($useMinMax) {
+                return $this;
+            }
+            if (null === $comparison) {
+                $comparison = Criteria::IN;
+            }
+        }
+
+        return $this->addUsingAlias(EtablissementPeer::DEPARTEMENT_ID, $departementId, $comparison);
+    }
+
+    /**
      * Filter the query on the categorie_id column
      *
      * Example usage:
@@ -1221,6 +1297,92 @@ abstract class BaseEtablissementQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query on the related_1 column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByRelated1(1234); // WHERE related_1 = 1234
+     * $query->filterByRelated1(array(12, 34)); // WHERE related_1 IN (12, 34)
+     * $query->filterByRelated1(array('min' => 12)); // WHERE related_1 > 12
+     * </code>
+     *
+     * @see       filterByEtablissementRelatedByRelated1()
+     *
+     * @param     mixed $related1 The value to use as filter.
+     *              Use scalar values for equality.
+     *              Use array values for in_array() equivalent.
+     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return EtablissementQuery The current query, for fluid interface
+     */
+    public function filterByRelated1($related1 = null, $comparison = null)
+    {
+        if (is_array($related1)) {
+            $useMinMax = false;
+            if (isset($related1['min'])) {
+                $this->addUsingAlias(EtablissementPeer::RELATED_1, $related1['min'], Criteria::GREATER_EQUAL);
+                $useMinMax = true;
+            }
+            if (isset($related1['max'])) {
+                $this->addUsingAlias(EtablissementPeer::RELATED_1, $related1['max'], Criteria::LESS_EQUAL);
+                $useMinMax = true;
+            }
+            if ($useMinMax) {
+                return $this;
+            }
+            if (null === $comparison) {
+                $comparison = Criteria::IN;
+            }
+        }
+
+        return $this->addUsingAlias(EtablissementPeer::RELATED_1, $related1, $comparison);
+    }
+
+    /**
+     * Filter the query on the related_2 column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByRelated2(1234); // WHERE related_2 = 1234
+     * $query->filterByRelated2(array(12, 34)); // WHERE related_2 IN (12, 34)
+     * $query->filterByRelated2(array('min' => 12)); // WHERE related_2 > 12
+     * </code>
+     *
+     * @see       filterByEtablissementRelatedByRelated2()
+     *
+     * @param     mixed $related2 The value to use as filter.
+     *              Use scalar values for equality.
+     *              Use array values for in_array() equivalent.
+     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return EtablissementQuery The current query, for fluid interface
+     */
+    public function filterByRelated2($related2 = null, $comparison = null)
+    {
+        if (is_array($related2)) {
+            $useMinMax = false;
+            if (isset($related2['min'])) {
+                $this->addUsingAlias(EtablissementPeer::RELATED_2, $related2['min'], Criteria::GREATER_EQUAL);
+                $useMinMax = true;
+            }
+            if (isset($related2['max'])) {
+                $this->addUsingAlias(EtablissementPeer::RELATED_2, $related2['max'], Criteria::LESS_EQUAL);
+                $useMinMax = true;
+            }
+            if ($useMinMax) {
+                return $this;
+            }
+            if (null === $comparison) {
+                $comparison = Criteria::IN;
+            }
+        }
+
+        return $this->addUsingAlias(EtablissementPeer::RELATED_2, $related2, $comparison);
+    }
+
+    /**
      * Filter the query on the created_at column
      *
      * Example usage:
@@ -1410,6 +1572,82 @@ abstract class BaseEtablissementQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query by a related Departement object
+     *
+     * @param   Departement|PropelObjectCollection $departement The related object(s) to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   EtablissementQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByDepartement($departement, $comparison = null)
+    {
+        if ($departement instanceof Departement) {
+            return $this
+                ->addUsingAlias(EtablissementPeer::DEPARTEMENT_ID, $departement->getId(), $comparison);
+        } elseif ($departement instanceof PropelObjectCollection) {
+            if (null === $comparison) {
+                $comparison = Criteria::IN;
+            }
+
+            return $this
+                ->addUsingAlias(EtablissementPeer::DEPARTEMENT_ID, $departement->toKeyValue('PrimaryKey', 'Id'), $comparison);
+        } else {
+            throw new PropelException('filterByDepartement() only accepts arguments of type Departement or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the Departement relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return EtablissementQuery The current query, for fluid interface
+     */
+    public function joinDepartement($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('Departement');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'Departement');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the Departement relation Departement object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\DepartementQuery A secondary query class using the current class as primary query
+     */
+    public function useDepartementQuery($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        return $this
+            ->joinDepartement($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'Departement', '\Cungfoo\Model\DepartementQuery');
+    }
+
+    /**
      * Filter the query by a related Categorie object
      *
      * @param   Categorie|PropelObjectCollection $categorie The related object(s) to use as filter
@@ -1483,6 +1721,306 @@ abstract class BaseEtablissementQuery extends ModelCriteria
         return $this
             ->joinCategorie($relationAlias, $joinType)
             ->useQuery($relationAlias ? $relationAlias : 'Categorie', '\Cungfoo\Model\CategorieQuery');
+    }
+
+    /**
+     * Filter the query by a related Etablissement object
+     *
+     * @param   Etablissement|PropelObjectCollection $etablissement The related object(s) to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   EtablissementQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByEtablissementRelatedByRelated1($etablissement, $comparison = null)
+    {
+        if ($etablissement instanceof Etablissement) {
+            return $this
+                ->addUsingAlias(EtablissementPeer::RELATED_1, $etablissement->getId(), $comparison);
+        } elseif ($etablissement instanceof PropelObjectCollection) {
+            if (null === $comparison) {
+                $comparison = Criteria::IN;
+            }
+
+            return $this
+                ->addUsingAlias(EtablissementPeer::RELATED_1, $etablissement->toKeyValue('PrimaryKey', 'Id'), $comparison);
+        } else {
+            throw new PropelException('filterByEtablissementRelatedByRelated1() only accepts arguments of type Etablissement or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the EtablissementRelatedByRelated1 relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return EtablissementQuery The current query, for fluid interface
+     */
+    public function joinEtablissementRelatedByRelated1($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('EtablissementRelatedByRelated1');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'EtablissementRelatedByRelated1');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the EtablissementRelatedByRelated1 relation Etablissement object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\EtablissementQuery A secondary query class using the current class as primary query
+     */
+    public function useEtablissementRelatedByRelated1Query($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        return $this
+            ->joinEtablissementRelatedByRelated1($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'EtablissementRelatedByRelated1', '\Cungfoo\Model\EtablissementQuery');
+    }
+
+    /**
+     * Filter the query by a related Etablissement object
+     *
+     * @param   Etablissement|PropelObjectCollection $etablissement The related object(s) to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   EtablissementQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByEtablissementRelatedByRelated2($etablissement, $comparison = null)
+    {
+        if ($etablissement instanceof Etablissement) {
+            return $this
+                ->addUsingAlias(EtablissementPeer::RELATED_2, $etablissement->getId(), $comparison);
+        } elseif ($etablissement instanceof PropelObjectCollection) {
+            if (null === $comparison) {
+                $comparison = Criteria::IN;
+            }
+
+            return $this
+                ->addUsingAlias(EtablissementPeer::RELATED_2, $etablissement->toKeyValue('PrimaryKey', 'Id'), $comparison);
+        } else {
+            throw new PropelException('filterByEtablissementRelatedByRelated2() only accepts arguments of type Etablissement or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the EtablissementRelatedByRelated2 relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return EtablissementQuery The current query, for fluid interface
+     */
+    public function joinEtablissementRelatedByRelated2($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('EtablissementRelatedByRelated2');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'EtablissementRelatedByRelated2');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the EtablissementRelatedByRelated2 relation Etablissement object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\EtablissementQuery A secondary query class using the current class as primary query
+     */
+    public function useEtablissementRelatedByRelated2Query($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        return $this
+            ->joinEtablissementRelatedByRelated2($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'EtablissementRelatedByRelated2', '\Cungfoo\Model\EtablissementQuery');
+    }
+
+    /**
+     * Filter the query by a related Etablissement object
+     *
+     * @param   Etablissement|PropelObjectCollection $etablissement  the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   EtablissementQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByEtablissementRelatedById0($etablissement, $comparison = null)
+    {
+        if ($etablissement instanceof Etablissement) {
+            return $this
+                ->addUsingAlias(EtablissementPeer::ID, $etablissement->getRelated1(), $comparison);
+        } elseif ($etablissement instanceof PropelObjectCollection) {
+            return $this
+                ->useEtablissementRelatedById0Query()
+                ->filterByPrimaryKeys($etablissement->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByEtablissementRelatedById0() only accepts arguments of type Etablissement or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the EtablissementRelatedById0 relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return EtablissementQuery The current query, for fluid interface
+     */
+    public function joinEtablissementRelatedById0($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('EtablissementRelatedById0');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'EtablissementRelatedById0');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the EtablissementRelatedById0 relation Etablissement object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\EtablissementQuery A secondary query class using the current class as primary query
+     */
+    public function useEtablissementRelatedById0Query($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        return $this
+            ->joinEtablissementRelatedById0($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'EtablissementRelatedById0', '\Cungfoo\Model\EtablissementQuery');
+    }
+
+    /**
+     * Filter the query by a related Etablissement object
+     *
+     * @param   Etablissement|PropelObjectCollection $etablissement  the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   EtablissementQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByEtablissementRelatedById1($etablissement, $comparison = null)
+    {
+        if ($etablissement instanceof Etablissement) {
+            return $this
+                ->addUsingAlias(EtablissementPeer::ID, $etablissement->getRelated2(), $comparison);
+        } elseif ($etablissement instanceof PropelObjectCollection) {
+            return $this
+                ->useEtablissementRelatedById1Query()
+                ->filterByPrimaryKeys($etablissement->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByEtablissementRelatedById1() only accepts arguments of type Etablissement or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the EtablissementRelatedById1 relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return EtablissementQuery The current query, for fluid interface
+     */
+    public function joinEtablissementRelatedById1($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('EtablissementRelatedById1');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'EtablissementRelatedById1');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the EtablissementRelatedById1 relation Etablissement object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\EtablissementQuery A secondary query class using the current class as primary query
+     */
+    public function useEtablissementRelatedById1Query($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        return $this
+            ->joinEtablissementRelatedById1($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'EtablissementRelatedById1', '\Cungfoo\Model\EtablissementQuery');
     }
 
     /**

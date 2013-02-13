@@ -29,6 +29,8 @@ use Cungfoo\Model\DestinationI18nQuery;
  * @method DestinationI18nQuery orderByIntroduction($order = Criteria::ASC) Order by the introduction column
  * @method DestinationI18nQuery orderByDescription($order = Criteria::ASC) Order by the description column
  * @method DestinationI18nQuery orderByActiveLocale($order = Criteria::ASC) Order by the active_locale column
+ * @method DestinationI18nQuery orderBySeoTitle($order = Criteria::ASC) Order by the seo_title column
+ * @method DestinationI18nQuery orderBySeoDescription($order = Criteria::ASC) Order by the seo_description column
  *
  * @method DestinationI18nQuery groupById() Group by the id column
  * @method DestinationI18nQuery groupByLocale() Group by the locale column
@@ -37,6 +39,8 @@ use Cungfoo\Model\DestinationI18nQuery;
  * @method DestinationI18nQuery groupByIntroduction() Group by the introduction column
  * @method DestinationI18nQuery groupByDescription() Group by the description column
  * @method DestinationI18nQuery groupByActiveLocale() Group by the active_locale column
+ * @method DestinationI18nQuery groupBySeoTitle() Group by the seo_title column
+ * @method DestinationI18nQuery groupBySeoDescription() Group by the seo_description column
  *
  * @method DestinationI18nQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method DestinationI18nQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -56,6 +60,8 @@ use Cungfoo\Model\DestinationI18nQuery;
  * @method DestinationI18n findOneByIntroduction(string $introduction) Return the first DestinationI18n filtered by the introduction column
  * @method DestinationI18n findOneByDescription(string $description) Return the first DestinationI18n filtered by the description column
  * @method DestinationI18n findOneByActiveLocale(boolean $active_locale) Return the first DestinationI18n filtered by the active_locale column
+ * @method DestinationI18n findOneBySeoTitle(string $seo_title) Return the first DestinationI18n filtered by the seo_title column
+ * @method DestinationI18n findOneBySeoDescription(string $seo_description) Return the first DestinationI18n filtered by the seo_description column
  *
  * @method array findById(int $id) Return DestinationI18n objects filtered by the id column
  * @method array findByLocale(string $locale) Return DestinationI18n objects filtered by the locale column
@@ -64,6 +70,8 @@ use Cungfoo\Model\DestinationI18nQuery;
  * @method array findByIntroduction(string $introduction) Return DestinationI18n objects filtered by the introduction column
  * @method array findByDescription(string $description) Return DestinationI18n objects filtered by the description column
  * @method array findByActiveLocale(boolean $active_locale) Return DestinationI18n objects filtered by the active_locale column
+ * @method array findBySeoTitle(string $seo_title) Return DestinationI18n objects filtered by the seo_title column
+ * @method array findBySeoDescription(string $seo_description) Return DestinationI18n objects filtered by the seo_description column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -154,7 +162,7 @@ abstract class BaseDestinationI18nQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `locale`, `slug`, `name`, `introduction`, `description`, `active_locale` FROM `destination_i18n` WHERE `id` = :p0 AND `locale` = :p1';
+        $sql = 'SELECT `id`, `locale`, `slug`, `name`, `introduction`, `description`, `active_locale`, `seo_title`, `seo_description` FROM `destination_i18n` WHERE `id` = :p0 AND `locale` = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
@@ -454,6 +462,64 @@ abstract class BaseDestinationI18nQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(DestinationI18nPeer::ACTIVE_LOCALE, $activeLocale, $comparison);
+    }
+
+    /**
+     * Filter the query on the seo_title column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterBySeoTitle('fooValue');   // WHERE seo_title = 'fooValue'
+     * $query->filterBySeoTitle('%fooValue%'); // WHERE seo_title LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $seoTitle The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return DestinationI18nQuery The current query, for fluid interface
+     */
+    public function filterBySeoTitle($seoTitle = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($seoTitle)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $seoTitle)) {
+                $seoTitle = str_replace('*', '%', $seoTitle);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(DestinationI18nPeer::SEO_TITLE, $seoTitle, $comparison);
+    }
+
+    /**
+     * Filter the query on the seo_description column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterBySeoDescription('fooValue');   // WHERE seo_description = 'fooValue'
+     * $query->filterBySeoDescription('%fooValue%'); // WHERE seo_description LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $seoDescription The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return DestinationI18nQuery The current query, for fluid interface
+     */
+    public function filterBySeoDescription($seoDescription = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($seoDescription)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $seoDescription)) {
+                $seoDescription = str_replace('*', '%', $seoDescription);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(DestinationI18nPeer::SEO_DESCRIPTION, $seoDescription, $comparison);
     }
 
     /**

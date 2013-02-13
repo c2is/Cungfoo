@@ -69,12 +69,6 @@ class HomepageController implements ControllerProviderInterface
                 ->findOne()
             ;
 
-            $ideesweekend = IdeeWeekendQuery::create()
-                ->joinWithI18n($locale)
-                ->filterByHome(true)
-                ->findActive()
-            ;
-
             $thematiques = ThematiqueQuery::create()
                 ->joinWithI18n($locale)
                 ->findActive()
@@ -93,7 +87,6 @@ class HomepageController implements ControllerProviderInterface
                 'pays'              => $pays,
                 'mea'               => $mea,
                 'vosVacances'       => $vosVacances,
-                'ideesweekend'      => $ideesweekend,
                 'thematiques'       => $thematiques,
                 'etablissements'    => $etablissements,
                 'pleinActivites'    => $pleinActivites->process(),
