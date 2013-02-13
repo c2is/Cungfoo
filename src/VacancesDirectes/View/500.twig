@@ -7,6 +7,6 @@
 
 {% block rightColumn %}
 <div id="greyBoxes">
-    {% include 'Bloc/sejour_reussi.twig' %}
+    {{ esi(path('widget', {'name': 'sejour_reussi'})) }}
 </div>
 {% endblock %}

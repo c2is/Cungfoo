@@ -58,6 +58,7 @@ class PaysTableMap extends TableMap
     public function buildRelations()
     {
         $this->addRelation('Region', 'Cungfoo\\Model\\Region', RelationMap::ONE_TO_MANY, array('id' => 'pays_id', ), 'SET NULL', null, 'Regions');
+        $this->addRelation('RegionRef', 'Cungfoo\\Model\\RegionRef', RelationMap::ONE_TO_MANY, array('id' => 'pays_id', ), 'SET NULL', null, 'RegionRefs');
         $this->addRelation('PaysI18n', 'Cungfoo\\Model\\PaysI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'PaysI18ns');
     } // buildRelations()
 

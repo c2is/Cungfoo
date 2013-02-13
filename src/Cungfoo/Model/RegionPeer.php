@@ -18,4 +18,17 @@ use Cungfoo\Model\om\BaseRegionPeer;
  */
 class RegionPeer extends BaseRegionPeer
 {
+    public static function assertUrl($locale = 'fr')
+    {
+        $objects = RegionQuery::create()
+            ->useI18nQuery($locale)
+            ->withColumn('region_i18n.slug', 'slug')
+            ->endUse()
+            ->select('slug')
+            ->findActive()
+            ->toArray()
+        ;
+
+        return implode('|', $objects);
+    }
 }

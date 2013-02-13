@@ -1,0 +1,65 @@
+\Cungfoo\Model\TypeHebergementCapaciteI18n:
+    1_de:
+        Id: 1
+        Locale: de
+        Name: ''
+        Slug: n-a
+        Accroche: null
+        Description: null
+        ActiveLocale: true
+    1_fr:
+        Id: 1
+        Locale: fr
+        Name: '2 adultes'
+        Slug: 2-adultes
+        Accroche: 'Partez à deux !'
+        Description: 'Que vous recherchiez plutôt la simplicité, le grand confort, l''originalité ou l''authenticité, retrouvez tous nos hébergements pour vos vacances en couple.'
+        ActiveLocale: true
+    2_de:
+        Id: 2
+        Locale: de
+        Name: ''
+        Slug: n-a
+        Accroche: null
+        Description: null
+        ActiveLocale: true
+    2_fr:
+        Id: 2
+        Locale: fr
+        Name: '2 adultes + 3 enfants'
+        Slug: 2-adultes-3-enfants
+        Accroche: 'Du bonheur pour toute la famille !'
+        Description: 'Adaptés à tous les portefeuilles, aux familles plus ou moins grandes et à votre mode de vacances favori, nos hébergements vous attendent pour des vacances en famille, l''esprit libre.'
+        ActiveLocale: true
+    3_de:
+        Id: 3
+        Locale: de
+        Name: ''
+        Slug: n-a
+        Accroche: null
+        Description: null
+        ActiveLocale: true
+    3_fr:
+        Id: 3
+        Locale: fr
+        Name: '2 adultes + 2 enfants'
+        Slug: 2-adultes-2-enfants
+        Accroche: 'Les joies des vacances en famille'
+        Description: 'Nos hébergements bien équipés et adaptés à vos attentes vous permettront de passer des vacances réussies en famille.'
+        ActiveLocale: true
+    4_de:
+        Id: 4
+        Locale: de
+        Name: ''
+        Slug: n-a
+        Accroche: null
+        Description: null
+        ActiveLocale: true
+    4_fr:
+        Id: 4
+        Locale: fr
+        Name: '4 adultes'
+        Slug: 4-adultes
+        Accroche: 'Entre amis'
+        Description: 'Retrouvez-vous entre amis et profitez de nos hébergements pour vivre des bons moments de détente et de franche rigolade.'
+        ActiveLocale: true

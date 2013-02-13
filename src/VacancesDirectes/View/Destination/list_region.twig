@@ -1,0 +1,46 @@
+{% extends "Destination/base.twig" %}
+
+
+{% block topRightColumn %}
+
+    {% include 'Form/_search_engine.twig' %}
+
+{% endblock %}
+
+{% block bottomLeftColumn %}
+
+    <h1>{{ metadata.title }}</h1>
+    <h2 class="h3-like">{{ metadata.subtitle }}</h2>
+
+    {% if metadata.visuel %}
+    <div class="banner">
+        <div class="bannerStain first">
+            <div class="content">
+                <p class="headline">{{ metadata.accroche }}</p>
+            </div>
+        </div>
+        <img class="bdPict" src="{{ asset(metadata.visuel) }}" alt="">
+    </div>
+    {% endif %}
+
+    <div id="results" class="clear">
+        <div class="toggleContainer">
+            {% for paysElement in pays %}
+            <div class="toggleItem">{{ paysElement.name }}<span class="toggleArrow">&gt;</span></div>
+            <div class="toggleContent primary">
+                {% for region in paysElement.regionRefsActive %}
+                <a class="linkItem" href="{{ path('destination_region_ref',{'pays': paysElement.slug, 'regionRef': region.slug}) }}">{{ region.name }}<span class="toggleArrow">&gt;</span></a>
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block bottomRightColumn %}
+<div id="greyBoxes">
+    {{ esi(path('widget', {'name': 'sejour_reussi'})) }}
+    {{ esi(path('widget', {'name': 'reassurance'})) }}
+</div>
+{% endblock %}

@@ -1,0 +1,5 @@
+{% extends "Destination/base.twig" %}
+
+{% block title %}{{ "seo.title.departement" | trans ({'%departement%': item}) }}{% endblock %}
+
+{% block metaDescription %}{{ "seo.meta.departement" | trans  ({'%departement%': item, '%pays%': item.regionref.pays })}}{% endblock %}

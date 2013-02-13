@@ -5,6 +5,7 @@ require_once dirname(__FILE__) . '/CrudableFormTypeBehaviorBuilder.php';
 require_once dirname(__FILE__) . '/CrudableBaseListingBehaviorBuilder.php';
 require_once dirname(__FILE__) . '/CrudableListingBehaviorBuilder.php';
 require_once dirname(__FILE__) . '/CrudableBehaviorQueryBuilderModifier.php';
+require_once dirname(__FILE__) . '/CrudableBehaviorPeerBuilderModifier.php';
 
 class CrudableBehavior extends Behavior
 {
@@ -24,7 +25,9 @@ class CrudableBehavior extends Behavior
         'CrudableListingBehaviorBuilder',
     );
 
-    protected $queryBuilderModifier;
+    protected
+        $queryBuilderModifier,
+        $metadataTable;
 
     public function crudTypeFileExists()
     {
@@ -51,6 +54,85 @@ class CrudableBehavior extends Behavior
         }
 
         return $script;
+    }
+
+    public function modifyTable()
+    {
+        $this->addMetadataTable();
+    }
+
+    protected function addMetadataTable()
+    {
+        $table = $this->getTable();
+        $database = $table->getDatabase();
+        $metadataTableName = 'metadata';
+        if ($database->hasTable($metadataTableName)) {
+            $this->metadataTable = $database->getTable($metadataTableName);
+        } else {
+            $this->metadataTable = $database->addTable(array(
+                'name'      => $metadataTableName,
+                'phpName'   => ucfirst($metadataTableName),
+                'package'   => $table->getPackage(),
+                'schema'    => $table->getSchema(),
+                'namespace' => $table->getNamespace() ? '\\' . $table->getNamespace() : null,
+            ));
+
+            $this->metadataTable->addColumn(array(
+                'name'          => 'id',
+                'type'          => PropelTypes::INTEGER,
+                'size'          => 5,
+                'primaryKey'    => 'true',
+                'autoIncrement' => 'true',
+                'required'      => 'true',
+            ));
+
+            $this->metadataTable->addColumn(array(
+                'name'       => 'table_ref',
+                'type'       => PropelTypes::VARCHAR,
+                'size'       => 255,
+                'required'   => 'true',
+            ));
+
+            $this->metadataTable->addColumn(array(
+                'name'       => 'title',
+                'type'       => PropelTypes::VARCHAR,
+                'size'       => 255,
+            ));
+
+            $this->metadataTable->addColumn(array(
+                'name'       => 'subtitle',
+                'type'       => PropelTypes::VARCHAR,
+                'size'       => 255,
+            ));
+
+            $this->metadataTable->addColumn(array(
+                'name'       => 'visuel',
+                'type'       => PropelTypes::VARCHAR,
+                'size'       => 255,
+            ));
+
+            $this->metadataTable->addColumn(array(
+                'name'       => 'accroche',
+                'type'       => PropelTypes::VARCHAR,
+                'size'       => 255,
+            ));
+
+            $crudableBehavior = new CrudableBehavior();
+            $crudableBehavior->setName('crudable');
+            $crudableBehavior->addParameter(array('name' => 'crud_prefix', 'value' => '/metadata'));
+            $crudableBehavior->addParameter(array('name' => 'crud_type_file', 'value' => 'visuel'));
+            $this->metadataTable->addBehavior($crudableBehavior);
+
+            $i18nBehavior = new I18nBehavior();
+            $i18nBehavior->setName('i18n');
+            $i18nBehavior->addParameter(array('name' => 'i18n_columns', 'value' => 'title,subtitle,accroche'));
+            $this->metadataTable->addBehavior($i18nBehavior);
+
+            // every behavior adding a table should re-execute database behaviors
+            foreach ($database->getBehaviors() as $behavior) {
+                $behavior->modifyDatabase();
+            }
+        }
     }
 
     protected function addSaveFromCrud(&$script)
@@ -164,5 +246,14 @@ public function upload$columnNameCamelize(\Symfony\Component\Form\Form \$form)
         }
 
         return $this->queryBuilderModifier;
+    }
+
+    public function getPeerBuilderModifier()
+    {
+        if (is_null($this->peerBuilderModifier)) {
+            $this->peerBuilderModifier = new CrudableBehaviorPeerBuilderModifier($this);
+        }
+
+        return $this->peerBuilderModifier;
     }
 }

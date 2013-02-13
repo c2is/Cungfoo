@@ -25,15 +25,16 @@ $app->before(function(Request $request) use ($app) {
     $app['login_errors'] = $app['security.last_error']($request);
 });
 
-$app->mount('/',                                      new Controller\HomepageController());
-$app->mount('/',                                      new Controller\EditoController());
-$app->mount('/esi',                                   new Controller\EsiController());
-$app->mount('/menu',                                  new Controller\MenuController());
-$app->mount('/session',                               new Controller\SessionController());
-$app->mount('/resalys',                               new WrapperController());
-$app->mount('/camping',                               new Controller\CampingController());
-$app->mount('/search_engine',                         new Controller\SearchEngineController());
-$app->mount('/search_filter',                         new Controller\SearchFilterController());
+$app->mount('/',                                          new Controller\HomepageController());
+$app->mount('/',                                          new Controller\EditoController());
+$app->mount('/esi',                                       new Controller\EsiController());
+$app->mount('/menu',                                      new Controller\MenuController());
+$app->mount('/session',                                   new Controller\SessionController());
+$app->mount('/resalys',                                   new WrapperController());
+$app->mount('/camping',                                   new Controller\CampingController());
+$app->mount('/search_engine',                             new Controller\SearchEngineController());
+$app->mount('/search_filter',                             new Controller\SearchFilterController());
+$app->mount('/widget',                                    new Cungfoo\Controller\WidgetController());
 $app->mount('/' . $app->trans('seo.url.catalogue'),       new Controller\CatalogueController());
 $app->mount('/' . $app->trans('seo.url.dispo'),           new Controller\DispoController());
 $app->mount('/' . $app->trans('seo.url.couloir.index'),   new Controller\CouloirController());
@@ -44,7 +45,9 @@ $app->mount('/' . $app->trans('seo.url.lieuVisiter'),     new Controller\FichePO
 $app->mount('/' . $app->trans('seo.url.evenement'),       new Controller\FicheEventController());
 $app->mount('/' . $app->trans('seo.url.assurance.index'), new Controller\AnnulationController());
 $app->mount('/' . $app->trans('seo.url.locations'),       new Controller\LocationsController());
-$app->mount('/' . $app->trans('seo.url.destinations') . '/' . $app->trans('seo.url.prefix') . '-{pays}', new Controller\DestinationController());
+$app->mount('/' . $app->trans('seo.url.destinations') . '/' . $app->trans('seo.url.prefix') . '-region', new Controller\RegionController());
+$app->mount('/' . $app->trans('seo.url.destinations') . '/' . $app->trans('seo.url.prefix') . '-departement', new Controller\DepartementController());
+$app->mount('/' . $app->trans('seo.url.destinations'), new Controller\DestinationController());
 $app->match('/' . $app->trans('seo.url.topCampings'), 'VacancesDirectes\Controller\TopCampingController::indexAction')->bind('top_campings');
 
 $app->error(function (\Exception $e, $code) use ($app) {
