@@ -342,13 +342,6 @@ date_search.submit: Trouver
 date_search.campings: Campings
 date_search.ou: ou
 date_search.nuits: nuits
-'Les vacances à': 'Les vacances à'
-'A proximité nous avons listé': 'A proximité nous avons listé'
-'site à visiter': 'site à visiter'
-'activités sprotives': 'activités sprotives'
-'événements culturels': 'événements culturels'
-'L''événement à ne pas manquer': 'L''événement à ne pas manquer'
-'Vous aimerez': 'Vous aimerez'
 comme: comme
 ans: ans
 Toutes: Toutes
@@ -714,3 +707,5 @@ widget.reassurance.telto: '0825133400'
 widget.reassurance.price: '(0,15 €/min)'
 widget.reassurance.ouverture_du: 'Du lundi au vendredi de 9h à 21h'
 widget.reassurance.ouverture_au: 'Samedi de 10h à 18h'
+seo_title_default: 'Location mobil home Espagne, France, Italie'
+seo_title_pays: 'Camping %pays% pas cher lol'

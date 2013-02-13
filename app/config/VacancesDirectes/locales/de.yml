@@ -1,7 +1,7 @@
 seo.title.default: 'Vermietung Wohnwagen Spanien, Frankreich, Italien'
 seo.title.pays: 'günstiger Campingplatz %pays%'
 seo.title.region: 'Günstige Vermietung von Wohnwagen %region%, Campingplatz %region%'
-seo.title.departement: 'Location mobil home %departement% pas cher, camping %departement%'
+seo.title.departement: 'Vermietung von günstigen Mobilhomes %departement%, Camping %departement%'
 seo.title.ville: 'Günstiger Campingplatz %ville%, günstige Vermietung von Wohnwagen %ville%'
 seo.title.destination: 'Günstiger Campingplatz in %destination%'
 seo.title.camping: 'Campingplatz %nom%, Campingplatz %ville%'
@@ -21,7 +21,7 @@ seo.title.location.fiche: 'Vermietung %type% %personnes% Personen Campingplatz: 
 seo.meta.default: 'Vacances Directes: Vermietung von Wohnwagen auf zahlreichen Campingplätzen in Frankreich, Italien und Spanien für einen geselligen und entspannten Urlaub.'
 seo.meta.pays: 'Vacances Directes: Entdecken Sie unsere günstigen Angebote für die Vermietung von Wohnwagen in %pays% für einen sonnigen Urlaub auf dem Campingplatz und buchen Sie online.'
 seo.meta.region: 'Buchen Sie Ihren künftigen Urlaub in der Region %region% in %pays% mit Vacances Directes online (günstige Vermietung von Wohnwagen auf dem Campingplatz).'
-seo.meta.departement: 'Réserver en ligne vos futures vacances dans le département %departement% en %pays% avec Vacances directes (location de mobil-homes pas cher en camping).'
+seo.meta.departement: 'Reservieren Sie Ihren nächsten Urlaub online im Departement %departement% in %pays% mit Vacanes directes (Vermietung von günstigen Camping-Mobilhomes).'
 seo.meta.ville: 'Entdecken Sie alle von Vacances Directes (günstige Vermietung von Wohnwagen) angebotenen Campingplätze in %ville% (%region%) und buchen Sie Ihren Aufenthalt online.'
 seo.meta.destination: 'Vacances Directes: Entdecken Sie alle unsere Angebote für die günstige Vermietung von Wohnwagen in %pays% für einen sonnigen Urlaub auf dem Campingplatz und buchen Sie online.'
 seo.meta.camping: 'Buchen Sie Ihren künftigen Urlaub auf dem Campingplatz %nom% mit Vacances Directes online: ein %nbEtoiles% Campingplatz mit Swimmingpool in %ville%.'
@@ -273,8 +273,8 @@ destination.images_region_title: 'Die Region in Bildern'
 destination.images_ville_title: 'Die Stadt in Bildern'
 destination.pays_title: 'Günstig campen in %item%'
 destination.region_title: 'Vermietung Wohnwagen %item%'
-destination.regionref_title: 'Location mobil home %item%'
-destination.departement_title: 'Location mobil home %item%'
+destination.regionref_title: 'Vermietungsangebot Mobilhome %item%'
+destination.departement_title: 'Vermietungsangebot Mobilhome %item%'
 destination.ville_title: 'Günstig campen %item% (Vermietung Wohnwagen)'
 destination.camping_title: 'Campingplatz %ville%'
 destination.retour_bottom: 'Zurück zur Liste'
@@ -314,8 +314,8 @@ menu.vacances: 'Ihr Urlaub'
 menu.weekends: 'Ihre Wochenendtrips'
 menu.tous_camping: 'Alle unsere Campingplätze'
 menu.decouvrez_locations: 'Entdecken Sie unsere Vermietungsangebote'
-menu.decouvrez_locations_type: 'Nach Art'
-menu.decouvrez_locations_capacite: 'Nach Kapazität'
+menu.decouvrez_locations_type: 'Nach Art der Unterkunft'
+menu.decouvrez_locations_capacite: 'Nach Anzahl der Personen'
 etablissement.activites: 'Liste der Aktivitäten'
 etablissement.destinations: 'Liste der Reiseziele'
 etablissement.service_complementaires: 'Liste der Zusatzleistungen'
@@ -327,7 +327,7 @@ date_search.nb_jours: 'Anzahl der Übernachtungen'
 date_search.nb_jours.required: 'Die Anzahl der Übernachtungen ist erforderlich.'
 date_search.nb_jours.empty_value: 'Anzahl der Übernachtungen?'
 date_search.ville: Ort
-date_search.ville.empty_value: 'Stadt?'
+date_search.ville.empty_value: 'Ort?'
 date_search.camping: Campingplatz
 date_search.camping.empty_value: 'Campingplatz?'
 date_search.nb_adultes: Erwachsene(r)
@@ -342,13 +342,6 @@ date_search.submit: Finden
 date_search.campings: Campingplätze
 date_search.ou: oder
 date_search.nuits: nächte
-'Les vacances à': 'Urlaub in'
-'A proximité nous avons listé': 'In der Nähe haben wir folgende Ergebnisse'
-'site à visiter': Besichtigungsort
-'activités sprotives': 'sportliche Aktivitäten'
-'événements culturels': 'kulturelle Veranstaltungen'
-'L''événement à ne pas manquer': 'Ein absolutes Muss'
-'Vous aimerez': 'Das wird Ihnen gefallen'
 comme: wie
 ans: Jahre
 Toutes: Alle
@@ -445,7 +438,7 @@ general.plus_evenements: 'Mehr Veranstaltungen'
 general.decouvrir: Entdecken
 general.reserver: Buchen
 general.profite: Zuschlagen
-general.la_semaine: 'Pro Woche'
+general.la_semaine: 'pro Woche'
 general.contre_proposition: 'ACHTUNG! Ihre Suche ergibt keine Treffer. Die untenstehenden Angebote sind diejenigen, die Ihrer Suche am nächsten kommen.'
 general.submit: Senden
 general.logout: Anmelden
@@ -531,13 +524,13 @@ encart_vacances_directes.item_4: 'Wohnwagen mit allem Komfort für einen Urlaub,
 encart_hebergement.title: 'Vacances Directes'
 encart_hebergement.subtitle: bietet
 encart_hebergement.standardise.title: 'standardisierte Unterkünfte'
-encart_hebergement.standardise.texte: 'Die gleiche Referenz bietet die gleichen Leistungen auf allen Vacances Directes Campingplätzen.'
+encart_hebergement.standardise.texte: 'Der gleiche Mobilhome-Typ bietet die gleichen Leistungen auf allen Vacances Directes Campingplätzen.'
 encart_hebergement.adapte.title: 'individuell angepasste Unterkünfte'
 encart_hebergement.adapte.texte: 'Vacances Directes interessiert sich für die Entwicklungen des täglichen Lebens und bietet Wohnwagen mit allem Komfort, die auf die Bedürfnisse jedes einzelnen angepasst sind.'
 encart_hebergement.varie.title: 'abwechslungsreiche Unterkünfte'
 encart_hebergement.varie.texte: 'Wählen Sie zwischen einer Vielzahl verschiedener Unterkünfte. Vacances Directes steht für 10 Wohnwagen- und Wohnmobilmodelle, die sich an alle Familien und alle Budgets anpassen lassen.'
-encart_hebergement.equipe.title: 'ausgestattete Unterkünfte'
-encart_hebergement.equipe.texte: 'Die Unterkünfte vollständig ausgestattet und bereit, Sie aufzunehmen. Alles ist vorhanden und inklusive (Laken, Decken, Kopfkissen...). Bringen Sie einfach nur Ihre Haushaltswäsche mit. Es gibt eine eingebaute und ausgestattete Küche.'
+encart_hebergement.equipe.title: 'voll ausgestattete Unterkünfte'
+encart_hebergement.equipe.texte: 'Die Unterkünfte sind vollständig ausgestattet und bereit, Sie aufzunehmen. Alles ist vorhanden und inklusive (Laken, Decken, Kopfkissen ...). Bringen Sie einfach nur Ihre Haushaltswäsche mit. Es gibt eine eingebaute und voll ausgestattete Küche.'
 encart_informations.title: 'Informationen & Reservierungen unter'
 encart_informations.price: ''
 encart_informations.dates_1: "Von Montag bis Freitag 9 - 18\_Uhr"
@@ -666,7 +659,7 @@ global.compte.title_client: ''
 global.site_name: 'Vacances directes.de'
 bon_plan.title: 'Campingplatz: %bonPlan%'
 location.list.title: 'Unsere Unterkünfte: %type%'
-location.list.selection: 'Unsere Auswahl an Unterkünften'
+location.list.selection: 'Unsere Unterkünfte'
 location.list.hebergements.savoir_plus: 'Mehr erfahren'
 location.list.hebergements.plus_de_resultats: 'Mehr Ergebnisse'
 location.list.hebergements.nb_places: '%nbPlaces% Plätze'
@@ -679,7 +672,7 @@ location.fiche.onglet.logement.informations_pratiques.capacite: Kapazität
 location.fiche.onglet.logement.informations_pratiques.dimensions: Größe
 location.fiche.onglet.logement.informations_pratiques.agencement: Aufbau
 location.fiche.onglet.logement.informations_pratiques.equipements: Ausstattung
-location.fiche.onglet.logement.informations_pratiques.annee_utilisation: Nutzungsjahr
+location.fiche.onglet.logement.informations_pratiques.annee_utilisation: Nutzungsjahre
 location.fiche.onglet.logement.lien_campings: 'Die Campingplätze'
 location.fiche.onglet.campings.title: 'Die Campingplätze'
 location.fiche.onglet.campings.selection.title: 'Unsere Auswahl an Campingplätzen'
@@ -701,16 +694,19 @@ datepicker.daysMin: '[''So'', ''Mo'', ''Di'', ''Mi'', ''Do'', ''Fr'', ''Sa'', ''
 datepicker.months: '[''Januar'', ''Februar'', ''März'', ''April'', ''Mai'', ''Juni'', ''Juli'', ''August'', ''September'', ''Oktober'', ''November'', ''Dezember'']'
 datepicker.monthsShort: '[''Jan'', ''Feb'', ''Mär'', ''Apr'', ''Mai'', ''Jun'', ''Jul'', ''Aug'', ''Sep'', ''Okt'', ''Nov'', ''Dez'']'
 datepicker.weekMin: '''Wo'''
-widget.offres_speciales.title: 'Special offers'
-widget.offres_speciales.more: More
-widget.offres_speciales.from: 'Starting price'
-widget.offres_speciales.instead: 'instead of'
-widget.tracking.from: 'à partir de'
-widget.related.title: 'Vous aimerez aussi'
-widget.related.from: 'à partir de'
-widget.reassurance.title: 'Informations & réservations au'
-widget.reassurance.tel: '0825 133 400'
-widget.reassurance.telto: '0825133400'
-widget.reassurance.price: '(0,15 €/min)'
-widget.reassurance.ouverture_du: 'Du lundi au vendredi de 9h à 21h'
-widget.reassurance.ouverture_au: 'Samedi de 10h à 18h'
+widget.offres_speciales.title: 'Sonderangebote'
+widget.offres_speciales.more: Mehr
+widget.offres_speciales.from: Anfangspreis
+widget.offres_speciales.instead: statt
+widget.tracking.title: 'Schon angesehen'
+widget.tracking.from: ab
+widget.related.title: 'Dies könnte Ihnen auch gefallen'
+widget.related.from: ab
+widget.reassurance.title: 'Informationen & Reservierungen unter'
+widget.reassurance.tel: '0049 (0) 721 680 78 240'
+widget.reassurance.telto: '0049 (0) 721 680 78 240'
+widget.reassurance.price: ''
+widget.reassurance.ouverture_du: 'Von Montag bis Freitag 9 - 18 Uhr'
+widget.reassurance.ouverture_au: ''
+seo_title_default: 'Vermietung Wohnwagen Spanien, Frankreich, Italien'
+seo_title_pays: 'günstiger Campingplatz %pays%'
