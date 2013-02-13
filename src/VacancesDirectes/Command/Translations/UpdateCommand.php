@@ -32,9 +32,12 @@ class UpdateCommand extends Command
             $updatedTranslations = Yaml::parse(sprintf(self::LOCALES_PATTERN, $this->getSilexApplication()['config']->get('root_dir'), $locale, '.dist'));
 
             $diff = array_diff($updatedTranslations, $actualTranslations);
-            $actualTranslations += $diff;
-
-            file_put_contents(sprintf(self::LOCALES_PATTERN, $this->getSilexApplication()['config']->get('root_dir'), $locale, ''), Yaml::dump($actualTranslations));
+            if ($diff)
+            {
+                $output->writeln(sprintf('<comment>Lignes ajoutees</comment> : <info>%s</info>.', implode(', ', array_keys($diff))));
+                $actualTranslations += $diff;
+                file_put_contents(sprintf(self::LOCALES_PATTERN, $this->getSilexApplication()['config']->get('root_dir'), $locale, ''), Yaml::dump($actualTranslations));
+            }
         }
 
         $output->writeln(sprintf('<info>%s</info> <comment>success</comment>.', $this->getName()));
