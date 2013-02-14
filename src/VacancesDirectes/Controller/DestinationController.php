@@ -194,14 +194,6 @@ class DestinationController implements ControllerProviderInterface
                 ->bind('destination_pays')
             ;
 
-            if ($assertUrlRegionRef) {
-                $ctl->match("/$urlPrefix-{pays}/{regionRef}/", array($this, 'regionRef'))
-                    ->assert('pays', $assertUrlPays)
-                    ->assert('regionRef', $assertUrlRegionRef)
-                    ->bind('destination_region_ref')
-                ;
-            }
-
             if ($assertUrlDepartement) {
                 $ctl->match("/$urlPrefix-{pays}/{departement}/", array($this, 'departement'))
                     ->assert('pays', $assertUrlPays)
@@ -235,6 +227,14 @@ class DestinationController implements ControllerProviderInterface
                         ;
                     }
                 }
+            }
+
+            if ($assertUrlRegionRef) {
+                $ctl->match("/$urlPrefix-{pays}/{regionRef}/", array($this, 'regionRef'))
+                    ->assert('pays', $assertUrlPays)
+                    ->assert('regionRef', $assertUrlRegionRef)
+                    ->bind('destination_region_ref')
+                ;
             }
         }
 
