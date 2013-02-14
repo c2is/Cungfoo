@@ -28,7 +28,7 @@
             {% endif %}
         </span>
         {% if blocPrix.adult_price_pourcent %}
-            <span class="instead">au lieu de <span class="line-through">{{ blocPrix.adult_price_without_discounts|number_format }}<span class="fine">&nbsp;</span>€</span></span>
+            <span class="instead">{{ 'general.au_lieu_de' | trans }} <span class="line-through">{{ blocPrix.adult_price_without_discounts|number_format }}<span class="fine">&nbsp;</span>€</span></span>
         {% endif %}
         <!--  PROMO  -->
         {% if blocPrix.adult_price_pourcent %}
