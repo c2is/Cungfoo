@@ -412,8 +412,8 @@ fiche.retour: Retour
 fiche.ouvert_au: au
 fiche.plan.legende: 'Légende du plan du camping'
 fiche.bloc_prix.type_hebergement: 'pour un %categorie% - %type%'
-fiche.toutes_regions: 'Toutes les régions'
-fiche.region: Région
+fiche.toutes_regions: 'Toutes les destinations'
+fiche.region: ''
 home.topcamping: 'Top campings'
 home.topcamping.link: 'Tous les top campings'
 home.vacances_directes_cest: 'Vacances directes c''est'
@@ -718,3 +718,7 @@ widget.reassurance.telto: '0825133400'
 widget.reassurance.price: '(0,15 €/min)'
 widget.reassurance.ouverture_du: 'Du lundi au vendredi de 9h à 21h'
 widget.reassurance.ouverture_au: 'Samedi de 10h à 18h'
+destination.destination.ATL.title: 'Camping Manche et Côte Atlantique pas cher'
+destination.destination.MED.title: 'Camping en méditerrannée pas cher'
+destination.destination.CAM.title: 'Camping à la campagne pas cher'
+destination.destination.MNT.title: 'Camping à la montagne pas cher'
