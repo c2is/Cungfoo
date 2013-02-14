@@ -128,6 +128,10 @@ class CrudableBehavior extends Behavior
             $i18nBehavior->addParameter(array('name' => 'i18n_columns', 'value' => 'title,subtitle,accroche'));
             $this->metadataTable->addBehavior($i18nBehavior);
 
+            $seoBehavior = new SeoBehavior();
+            $seoBehavior->setName('seo');
+            $this->metadataTable->addBehavior($seoBehavior);
+
             // every behavior adding a table should re-execute database behaviors
             foreach ($database->getBehaviors() as $behavior) {
                 $behavior->modifyDatabase();

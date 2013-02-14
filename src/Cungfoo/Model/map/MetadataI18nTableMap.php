@@ -47,6 +47,10 @@ class MetadataI18nTableMap extends TableMap
         $this->addColumn('title', 'Title', 'VARCHAR', false, 255, null);
         $this->addColumn('subtitle', 'Subtitle', 'VARCHAR', false, 255, null);
         $this->addColumn('accroche', 'Accroche', 'VARCHAR', false, 255, null);
+        $this->addColumn('seo_title', 'SeoTitle', 'VARCHAR', false, 255, '');
+        $this->addColumn('seo_description', 'SeoDescription', 'LONGVARCHAR', false, null, null);
+        $this->addColumn('seo_h1', 'SeoH1', 'VARCHAR', false, 255, '');
+        $this->addColumn('seo_keywords', 'SeoKeywords', 'LONGVARCHAR', false, null, null);
         // validators
     } // initialize()
 

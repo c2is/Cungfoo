@@ -310,6 +310,7 @@ class DestinationController implements ControllerProviderInterface
                 break;
             case 'Cungfoo\Model\Destination':
                 $urlCanonical = $app->url($request->get('_route'), array('destination' => $object->getSlug()));
+                var_dump($object->getMetadata());die;
                 break;
             case 'Cungfoo\Model\Region':
                 $urlCanonical = $app->url($request->get('_route'), array(

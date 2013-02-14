@@ -77,6 +77,32 @@ abstract class BaseMetadataI18n extends BaseObject implements Persistent
     protected $accroche;
 
     /**
+     * The value for the seo_title field.
+     * Note: this column has a database default value of: ''
+     * @var        string
+     */
+    protected $seo_title;
+
+    /**
+     * The value for the seo_description field.
+     * @var        string
+     */
+    protected $seo_description;
+
+    /**
+     * The value for the seo_h1 field.
+     * Note: this column has a database default value of: ''
+     * @var        string
+     */
+    protected $seo_h1;
+
+    /**
+     * The value for the seo_keywords field.
+     * @var        string
+     */
+    protected $seo_keywords;
+
+    /**
      * @var        Metadata
      */
     protected $aMetadata;
@@ -104,6 +130,8 @@ abstract class BaseMetadataI18n extends BaseObject implements Persistent
     public function applyDefaultValues()
     {
         $this->locale = 'fr';
+        $this->seo_title = '';
+        $this->seo_h1 = '';
     }
 
     /**
@@ -164,6 +192,46 @@ abstract class BaseMetadataI18n extends BaseObject implements Persistent
     public function getAccroche()
     {
         return $this->accroche;
+    }
+
+    /**
+     * Get the [seo_title] column value.
+     *
+     * @return string
+     */
+    public function getSeoTitle()
+    {
+        return $this->seo_title;
+    }
+
+    /**
+     * Get the [seo_description] column value.
+     *
+     * @return string
+     */
+    public function getSeoDescription()
+    {
+        return $this->seo_description;
+    }
+
+    /**
+     * Get the [seo_h1] column value.
+     *
+     * @return string
+     */
+    public function getSeoH1()
+    {
+        return $this->seo_h1;
+    }
+
+    /**
+     * Get the [seo_keywords] column value.
+     *
+     * @return string
+     */
+    public function getSeoKeywords()
+    {
+        return $this->seo_keywords;
     }
 
     /**
@@ -276,6 +344,90 @@ abstract class BaseMetadataI18n extends BaseObject implements Persistent
     } // setAccroche()
 
     /**
+     * Set the value of [seo_title] column.
+     *
+     * @param string $v new value
+     * @return MetadataI18n The current object (for fluent API support)
+     */
+    public function setSeoTitle($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->seo_title !== $v) {
+            $this->seo_title = $v;
+            $this->modifiedColumns[] = MetadataI18nPeer::SEO_TITLE;
+        }
+
+
+        return $this;
+    } // setSeoTitle()
+
+    /**
+     * Set the value of [seo_description] column.
+     *
+     * @param string $v new value
+     * @return MetadataI18n The current object (for fluent API support)
+     */
+    public function setSeoDescription($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->seo_description !== $v) {
+            $this->seo_description = $v;
+            $this->modifiedColumns[] = MetadataI18nPeer::SEO_DESCRIPTION;
+        }
+
+
+        return $this;
+    } // setSeoDescription()
+
+    /**
+     * Set the value of [seo_h1] column.
+     *
+     * @param string $v new value
+     * @return MetadataI18n The current object (for fluent API support)
+     */
+    public function setSeoH1($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->seo_h1 !== $v) {
+            $this->seo_h1 = $v;
+            $this->modifiedColumns[] = MetadataI18nPeer::SEO_H1;
+        }
+
+
+        return $this;
+    } // setSeoH1()
+
+    /**
+     * Set the value of [seo_keywords] column.
+     *
+     * @param string $v new value
+     * @return MetadataI18n The current object (for fluent API support)
+     */
+    public function setSeoKeywords($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->seo_keywords !== $v) {
+            $this->seo_keywords = $v;
+            $this->modifiedColumns[] = MetadataI18nPeer::SEO_KEYWORDS;
+        }
+
+
+        return $this;
+    } // setSeoKeywords()
+
+    /**
      * Indicates whether the columns in this object are only set to default values.
      *
      * This method can be used in conjunction with isModified() to indicate whether an object is both
@@ -286,6 +438,14 @@ abstract class BaseMetadataI18n extends BaseObject implements Persistent
     public function hasOnlyDefaultValues()
     {
             if ($this->locale !== 'fr') {
+                return false;
+            }
+
+            if ($this->seo_title !== '') {
+                return false;
+            }
+
+            if ($this->seo_h1 !== '') {
                 return false;
             }
 
@@ -316,6 +476,10 @@ abstract class BaseMetadataI18n extends BaseObject implements Persistent
             $this->title = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
             $this->subtitle = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
             $this->accroche = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
+            $this->seo_title = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
+            $this->seo_description = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
+            $this->seo_h1 = ($row[$startcol + 7] !== null) ? (string) $row[$startcol + 7] : null;
+            $this->seo_keywords = ($row[$startcol + 8] !== null) ? (string) $row[$startcol + 8] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -324,7 +488,7 @@ abstract class BaseMetadataI18n extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 5; // 5 = MetadataI18nPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 9; // 9 = MetadataI18nPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating MetadataI18n object", $e);
@@ -563,6 +727,18 @@ abstract class BaseMetadataI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(MetadataI18nPeer::ACCROCHE)) {
             $modifiedColumns[':p' . $index++]  = '`accroche`';
         }
+        if ($this->isColumnModified(MetadataI18nPeer::SEO_TITLE)) {
+            $modifiedColumns[':p' . $index++]  = '`seo_title`';
+        }
+        if ($this->isColumnModified(MetadataI18nPeer::SEO_DESCRIPTION)) {
+            $modifiedColumns[':p' . $index++]  = '`seo_description`';
+        }
+        if ($this->isColumnModified(MetadataI18nPeer::SEO_H1)) {
+            $modifiedColumns[':p' . $index++]  = '`seo_h1`';
+        }
+        if ($this->isColumnModified(MetadataI18nPeer::SEO_KEYWORDS)) {
+            $modifiedColumns[':p' . $index++]  = '`seo_keywords`';
+        }
 
         $sql = sprintf(
             'INSERT INTO `metadata_i18n` (%s) VALUES (%s)',
@@ -588,6 +764,18 @@ abstract class BaseMetadataI18n extends BaseObject implements Persistent
                         break;
                     case '`accroche`':
                         $stmt->bindValue($identifier, $this->accroche, PDO::PARAM_STR);
+                        break;
+                    case '`seo_title`':
+                        $stmt->bindValue($identifier, $this->seo_title, PDO::PARAM_STR);
+                        break;
+                    case '`seo_description`':
+                        $stmt->bindValue($identifier, $this->seo_description, PDO::PARAM_STR);
+                        break;
+                    case '`seo_h1`':
+                        $stmt->bindValue($identifier, $this->seo_h1, PDO::PARAM_STR);
+                        break;
+                    case '`seo_keywords`':
+                        $stmt->bindValue($identifier, $this->seo_keywords, PDO::PARAM_STR);
                         break;
                 }
             }
@@ -743,6 +931,18 @@ abstract class BaseMetadataI18n extends BaseObject implements Persistent
             case 4:
                 return $this->getAccroche();
                 break;
+            case 5:
+                return $this->getSeoTitle();
+                break;
+            case 6:
+                return $this->getSeoDescription();
+                break;
+            case 7:
+                return $this->getSeoH1();
+                break;
+            case 8:
+                return $this->getSeoKeywords();
+                break;
             default:
                 return null;
                 break;
@@ -777,6 +977,10 @@ abstract class BaseMetadataI18n extends BaseObject implements Persistent
             $keys[2] => $this->getTitle(),
             $keys[3] => $this->getSubtitle(),
             $keys[4] => $this->getAccroche(),
+            $keys[5] => $this->getSeoTitle(),
+            $keys[6] => $this->getSeoDescription(),
+            $keys[7] => $this->getSeoH1(),
+            $keys[8] => $this->getSeoKeywords(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aMetadata) {
@@ -831,6 +1035,18 @@ abstract class BaseMetadataI18n extends BaseObject implements Persistent
             case 4:
                 $this->setAccroche($value);
                 break;
+            case 5:
+                $this->setSeoTitle($value);
+                break;
+            case 6:
+                $this->setSeoDescription($value);
+                break;
+            case 7:
+                $this->setSeoH1($value);
+                break;
+            case 8:
+                $this->setSeoKeywords($value);
+                break;
         } // switch()
     }
 
@@ -860,6 +1076,10 @@ abstract class BaseMetadataI18n extends BaseObject implements Persistent
         if (array_key_exists($keys[2], $arr)) $this->setTitle($arr[$keys[2]]);
         if (array_key_exists($keys[3], $arr)) $this->setSubtitle($arr[$keys[3]]);
         if (array_key_exists($keys[4], $arr)) $this->setAccroche($arr[$keys[4]]);
+        if (array_key_exists($keys[5], $arr)) $this->setSeoTitle($arr[$keys[5]]);
+        if (array_key_exists($keys[6], $arr)) $this->setSeoDescription($arr[$keys[6]]);
+        if (array_key_exists($keys[7], $arr)) $this->setSeoH1($arr[$keys[7]]);
+        if (array_key_exists($keys[8], $arr)) $this->setSeoKeywords($arr[$keys[8]]);
     }
 
     /**
@@ -876,6 +1096,10 @@ abstract class BaseMetadataI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(MetadataI18nPeer::TITLE)) $criteria->add(MetadataI18nPeer::TITLE, $this->title);
         if ($this->isColumnModified(MetadataI18nPeer::SUBTITLE)) $criteria->add(MetadataI18nPeer::SUBTITLE, $this->subtitle);
         if ($this->isColumnModified(MetadataI18nPeer::ACCROCHE)) $criteria->add(MetadataI18nPeer::ACCROCHE, $this->accroche);
+        if ($this->isColumnModified(MetadataI18nPeer::SEO_TITLE)) $criteria->add(MetadataI18nPeer::SEO_TITLE, $this->seo_title);
+        if ($this->isColumnModified(MetadataI18nPeer::SEO_DESCRIPTION)) $criteria->add(MetadataI18nPeer::SEO_DESCRIPTION, $this->seo_description);
+        if ($this->isColumnModified(MetadataI18nPeer::SEO_H1)) $criteria->add(MetadataI18nPeer::SEO_H1, $this->seo_h1);
+        if ($this->isColumnModified(MetadataI18nPeer::SEO_KEYWORDS)) $criteria->add(MetadataI18nPeer::SEO_KEYWORDS, $this->seo_keywords);
 
         return $criteria;
     }
@@ -951,6 +1175,10 @@ abstract class BaseMetadataI18n extends BaseObject implements Persistent
         $copyObj->setTitle($this->getTitle());
         $copyObj->setSubtitle($this->getSubtitle());
         $copyObj->setAccroche($this->getAccroche());
+        $copyObj->setSeoTitle($this->getSeoTitle());
+        $copyObj->setSeoDescription($this->getSeoDescription());
+        $copyObj->setSeoH1($this->getSeoH1());
+        $copyObj->setSeoKeywords($this->getSeoKeywords());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -1070,6 +1298,10 @@ abstract class BaseMetadataI18n extends BaseObject implements Persistent
         $this->title = null;
         $this->subtitle = null;
         $this->accroche = null;
+        $this->seo_title = null;
+        $this->seo_description = null;
+        $this->seo_h1 = null;
+        $this->seo_keywords = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();

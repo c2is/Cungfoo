@@ -2848,6 +2848,35 @@ abstract class BaseDestination extends BaseObject implements Persistent
 
         return $this->getRegions($criteria, $con);
     }
+    // seo behavior
+
+    /**
+     * @param PropelPDO $con
+     * @return array             The object's metadata
+     */
+    public function getMetadata(PropelPDO $con = null)
+    {
+        $metadata = array(
+            'seo_title' => $this->getSeoTitle(),
+            'seo_description' => $this->getSeoDescription(),
+            'seo_h1' => $this->getSeoH1(),
+            'seo_keywords' => $this->getSeoKeywords(),
+        );
+        $utils = new \Cungfoo\Lib\Utils();
+        if ($tableMetadata = \Cungfoo\Model\MetadataPeer::get('destination'))
+        {
+            foreach ($metadata as $seoColumn => $value)
+            {
+                if (!trim($value))
+                {
+                    $getColumn = 'get' . $utils->camelize($seoColumn);
+                    $metadata[$seoColumn] = $tableMetadata->$getColumn();
+                }
+            }
+        }
+        return $metadata;
+    }
+
     // i18n behavior
 
     /**
@@ -3111,6 +3140,54 @@ abstract class BaseDestination extends BaseObject implements Persistent
          */
         public function setSeoDescription($v)
         {    $this->getCurrentTranslation()->setSeoDescription($v);
+
+        return $this;
+    }
+
+
+        /**
+         * Get the [seo_h1] column value.
+         *
+         * @return string
+         */
+        public function getSeoH1()
+        {
+        return $this->getCurrentTranslation()->getSeoH1();
+    }
+
+
+        /**
+         * Set the value of [seo_h1] column.
+         *
+         * @param string $v new value
+         * @return DestinationI18n The current object (for fluent API support)
+         */
+        public function setSeoH1($v)
+        {    $this->getCurrentTranslation()->setSeoH1($v);
+
+        return $this;
+    }
+
+
+        /**
+         * Get the [seo_keywords] column value.
+         *
+         * @return string
+         */
+        public function getSeoKeywords()
+        {
+        return $this->getCurrentTranslation()->getSeoKeywords();
+    }
+
+
+        /**
+         * Set the value of [seo_keywords] column.
+         *
+         * @param string $v new value
+         * @return DestinationI18n The current object (for fluent API support)
+         */
+        public function setSeoKeywords($v)
+        {    $this->getCurrentTranslation()->setSeoKeywords($v);
 
         return $this;
     }

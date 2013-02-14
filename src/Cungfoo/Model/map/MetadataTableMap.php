@@ -75,11 +75,17 @@ class MetadataTableMap extends TableMap
             'i18n' =>  array (
   'i18n_table' => '%TABLE%_i18n',
   'i18n_phpname' => '%PHPNAME%I18n',
-  'i18n_columns' => 'title,subtitle,accroche',
+  'i18n_columns' => 'title,subtitle,accroche,seo_title,seo_description,seo_h1,seo_keywords',
   'i18n_pk_name' => NULL,
   'locale_column' => 'locale',
   'default_locale' => 'fr',
   'locale_alias' => '',
+),
+            'seo' =>  array (
+  'title_column' => 'seo_title',
+  'description_column' => 'seo_description',
+  'h1_column' => 'seo_h1',
+  'keywords_column' => 'seo_keywords',
 ),
         );
     } // getBehaviors()
