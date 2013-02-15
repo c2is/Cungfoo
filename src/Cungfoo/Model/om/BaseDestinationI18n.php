@@ -91,7 +91,6 @@ abstract class BaseDestinationI18n extends BaseObject implements Persistent
 
     /**
      * The value for the seo_title field.
-     * Note: this column has a database default value of: ''
      * @var        string
      */
     protected $seo_title;
@@ -104,7 +103,6 @@ abstract class BaseDestinationI18n extends BaseObject implements Persistent
 
     /**
      * The value for the seo_h1 field.
-     * Note: this column has a database default value of: ''
      * @var        string
      */
     protected $seo_h1;
@@ -144,8 +142,6 @@ abstract class BaseDestinationI18n extends BaseObject implements Persistent
     {
         $this->locale = 'fr';
         $this->active_locale = false;
-        $this->seo_title = '';
-        $this->seo_h1 = '';
     }
 
     /**
@@ -526,14 +522,6 @@ abstract class BaseDestinationI18n extends BaseObject implements Persistent
             }
 
             if ($this->active_locale !== false) {
-                return false;
-            }
-
-            if ($this->seo_title !== '') {
-                return false;
-            }
-
-            if ($this->seo_h1 !== '') {
                 return false;
             }
 

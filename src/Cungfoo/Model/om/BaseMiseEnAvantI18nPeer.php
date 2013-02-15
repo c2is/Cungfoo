@@ -37,13 +37,13 @@ abstract class BaseMiseEnAvantI18nPeer
     const TM_CLASS = 'MiseEnAvantI18nTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 7;
+    const NUM_COLUMNS = 11;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 7;
+    const NUM_HYDRATE_COLUMNS = 11;
 
     /** the column name for the id field */
     const ID = 'mise_en_avant_i18n.id';
@@ -66,6 +66,18 @@ abstract class BaseMiseEnAvantI18nPeer
     /** the column name for the active_locale field */
     const ACTIVE_LOCALE = 'mise_en_avant_i18n.active_locale';
 
+    /** the column name for the seo_title field */
+    const SEO_TITLE = 'mise_en_avant_i18n.seo_title';
+
+    /** the column name for the seo_description field */
+    const SEO_DESCRIPTION = 'mise_en_avant_i18n.seo_description';
+
+    /** the column name for the seo_h1 field */
+    const SEO_H1 = 'mise_en_avant_i18n.seo_h1';
+
+    /** the column name for the seo_keywords field */
+    const SEO_KEYWORDS = 'mise_en_avant_i18n.seo_keywords';
+
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
 
@@ -85,12 +97,12 @@ abstract class BaseMiseEnAvantI18nPeer
      * e.g. MiseEnAvantI18nPeer::$fieldNames[MiseEnAvantI18nPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Titre', 'Accroche', 'Lien', 'TitreLien', 'ActiveLocale', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'titre', 'accroche', 'lien', 'titreLien', 'activeLocale', ),
-        BasePeer::TYPE_COLNAME => array (MiseEnAvantI18nPeer::ID, MiseEnAvantI18nPeer::LOCALE, MiseEnAvantI18nPeer::TITRE, MiseEnAvantI18nPeer::ACCROCHE, MiseEnAvantI18nPeer::LIEN, MiseEnAvantI18nPeer::TITRE_LIEN, MiseEnAvantI18nPeer::ACTIVE_LOCALE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'TITRE', 'ACCROCHE', 'LIEN', 'TITRE_LIEN', 'ACTIVE_LOCALE', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'titre', 'accroche', 'lien', 'titre_lien', 'active_locale', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Titre', 'Accroche', 'Lien', 'TitreLien', 'ActiveLocale', 'SeoTitle', 'SeoDescription', 'SeoH1', 'SeoKeywords', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'titre', 'accroche', 'lien', 'titreLien', 'activeLocale', 'seoTitle', 'seoDescription', 'seoH1', 'seoKeywords', ),
+        BasePeer::TYPE_COLNAME => array (MiseEnAvantI18nPeer::ID, MiseEnAvantI18nPeer::LOCALE, MiseEnAvantI18nPeer::TITRE, MiseEnAvantI18nPeer::ACCROCHE, MiseEnAvantI18nPeer::LIEN, MiseEnAvantI18nPeer::TITRE_LIEN, MiseEnAvantI18nPeer::ACTIVE_LOCALE, MiseEnAvantI18nPeer::SEO_TITLE, MiseEnAvantI18nPeer::SEO_DESCRIPTION, MiseEnAvantI18nPeer::SEO_H1, MiseEnAvantI18nPeer::SEO_KEYWORDS, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'TITRE', 'ACCROCHE', 'LIEN', 'TITRE_LIEN', 'ACTIVE_LOCALE', 'SEO_TITLE', 'SEO_DESCRIPTION', 'SEO_H1', 'SEO_KEYWORDS', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'titre', 'accroche', 'lien', 'titre_lien', 'active_locale', 'seo_title', 'seo_description', 'seo_h1', 'seo_keywords', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, )
     );
 
     /**
@@ -100,12 +112,12 @@ abstract class BaseMiseEnAvantI18nPeer
      * e.g. MiseEnAvantI18nPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Titre' => 2, 'Accroche' => 3, 'Lien' => 4, 'TitreLien' => 5, 'ActiveLocale' => 6, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'titre' => 2, 'accroche' => 3, 'lien' => 4, 'titreLien' => 5, 'activeLocale' => 6, ),
-        BasePeer::TYPE_COLNAME => array (MiseEnAvantI18nPeer::ID => 0, MiseEnAvantI18nPeer::LOCALE => 1, MiseEnAvantI18nPeer::TITRE => 2, MiseEnAvantI18nPeer::ACCROCHE => 3, MiseEnAvantI18nPeer::LIEN => 4, MiseEnAvantI18nPeer::TITRE_LIEN => 5, MiseEnAvantI18nPeer::ACTIVE_LOCALE => 6, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'TITRE' => 2, 'ACCROCHE' => 3, 'LIEN' => 4, 'TITRE_LIEN' => 5, 'ACTIVE_LOCALE' => 6, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'titre' => 2, 'accroche' => 3, 'lien' => 4, 'titre_lien' => 5, 'active_locale' => 6, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Titre' => 2, 'Accroche' => 3, 'Lien' => 4, 'TitreLien' => 5, 'ActiveLocale' => 6, 'SeoTitle' => 7, 'SeoDescription' => 8, 'SeoH1' => 9, 'SeoKeywords' => 10, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'titre' => 2, 'accroche' => 3, 'lien' => 4, 'titreLien' => 5, 'activeLocale' => 6, 'seoTitle' => 7, 'seoDescription' => 8, 'seoH1' => 9, 'seoKeywords' => 10, ),
+        BasePeer::TYPE_COLNAME => array (MiseEnAvantI18nPeer::ID => 0, MiseEnAvantI18nPeer::LOCALE => 1, MiseEnAvantI18nPeer::TITRE => 2, MiseEnAvantI18nPeer::ACCROCHE => 3, MiseEnAvantI18nPeer::LIEN => 4, MiseEnAvantI18nPeer::TITRE_LIEN => 5, MiseEnAvantI18nPeer::ACTIVE_LOCALE => 6, MiseEnAvantI18nPeer::SEO_TITLE => 7, MiseEnAvantI18nPeer::SEO_DESCRIPTION => 8, MiseEnAvantI18nPeer::SEO_H1 => 9, MiseEnAvantI18nPeer::SEO_KEYWORDS => 10, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'TITRE' => 2, 'ACCROCHE' => 3, 'LIEN' => 4, 'TITRE_LIEN' => 5, 'ACTIVE_LOCALE' => 6, 'SEO_TITLE' => 7, 'SEO_DESCRIPTION' => 8, 'SEO_H1' => 9, 'SEO_KEYWORDS' => 10, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'titre' => 2, 'accroche' => 3, 'lien' => 4, 'titre_lien' => 5, 'active_locale' => 6, 'seo_title' => 7, 'seo_description' => 8, 'seo_h1' => 9, 'seo_keywords' => 10, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, )
     );
 
     /**
@@ -186,6 +198,10 @@ abstract class BaseMiseEnAvantI18nPeer
             $criteria->addSelectColumn(MiseEnAvantI18nPeer::LIEN);
             $criteria->addSelectColumn(MiseEnAvantI18nPeer::TITRE_LIEN);
             $criteria->addSelectColumn(MiseEnAvantI18nPeer::ACTIVE_LOCALE);
+            $criteria->addSelectColumn(MiseEnAvantI18nPeer::SEO_TITLE);
+            $criteria->addSelectColumn(MiseEnAvantI18nPeer::SEO_DESCRIPTION);
+            $criteria->addSelectColumn(MiseEnAvantI18nPeer::SEO_H1);
+            $criteria->addSelectColumn(MiseEnAvantI18nPeer::SEO_KEYWORDS);
         } else {
             $criteria->addSelectColumn($alias . '.id');
             $criteria->addSelectColumn($alias . '.locale');
@@ -194,6 +210,10 @@ abstract class BaseMiseEnAvantI18nPeer
             $criteria->addSelectColumn($alias . '.lien');
             $criteria->addSelectColumn($alias . '.titre_lien');
             $criteria->addSelectColumn($alias . '.active_locale');
+            $criteria->addSelectColumn($alias . '.seo_title');
+            $criteria->addSelectColumn($alias . '.seo_description');
+            $criteria->addSelectColumn($alias . '.seo_h1');
+            $criteria->addSelectColumn($alias . '.seo_keywords');
         }
     }
 

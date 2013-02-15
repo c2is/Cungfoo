@@ -37,13 +37,13 @@ abstract class BaseMultimediaTypeHebergementI18nPeer
     const TM_CLASS = 'MultimediaTypeHebergementI18nTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 4;
+    const NUM_COLUMNS = 8;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 4;
+    const NUM_HYDRATE_COLUMNS = 8;
 
     /** the column name for the id field */
     const ID = 'multimedia_type_hebergement_i18n.id';
@@ -56,6 +56,18 @@ abstract class BaseMultimediaTypeHebergementI18nPeer
 
     /** the column name for the active_locale field */
     const ACTIVE_LOCALE = 'multimedia_type_hebergement_i18n.active_locale';
+
+    /** the column name for the seo_title field */
+    const SEO_TITLE = 'multimedia_type_hebergement_i18n.seo_title';
+
+    /** the column name for the seo_description field */
+    const SEO_DESCRIPTION = 'multimedia_type_hebergement_i18n.seo_description';
+
+    /** the column name for the seo_h1 field */
+    const SEO_H1 = 'multimedia_type_hebergement_i18n.seo_h1';
+
+    /** the column name for the seo_keywords field */
+    const SEO_KEYWORDS = 'multimedia_type_hebergement_i18n.seo_keywords';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -76,12 +88,12 @@ abstract class BaseMultimediaTypeHebergementI18nPeer
      * e.g. MultimediaTypeHebergementI18nPeer::$fieldNames[MultimediaTypeHebergementI18nPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Titre', 'ActiveLocale', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'titre', 'activeLocale', ),
-        BasePeer::TYPE_COLNAME => array (MultimediaTypeHebergementI18nPeer::ID, MultimediaTypeHebergementI18nPeer::LOCALE, MultimediaTypeHebergementI18nPeer::TITRE, MultimediaTypeHebergementI18nPeer::ACTIVE_LOCALE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'TITRE', 'ACTIVE_LOCALE', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'titre', 'active_locale', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Titre', 'ActiveLocale', 'SeoTitle', 'SeoDescription', 'SeoH1', 'SeoKeywords', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'titre', 'activeLocale', 'seoTitle', 'seoDescription', 'seoH1', 'seoKeywords', ),
+        BasePeer::TYPE_COLNAME => array (MultimediaTypeHebergementI18nPeer::ID, MultimediaTypeHebergementI18nPeer::LOCALE, MultimediaTypeHebergementI18nPeer::TITRE, MultimediaTypeHebergementI18nPeer::ACTIVE_LOCALE, MultimediaTypeHebergementI18nPeer::SEO_TITLE, MultimediaTypeHebergementI18nPeer::SEO_DESCRIPTION, MultimediaTypeHebergementI18nPeer::SEO_H1, MultimediaTypeHebergementI18nPeer::SEO_KEYWORDS, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'TITRE', 'ACTIVE_LOCALE', 'SEO_TITLE', 'SEO_DESCRIPTION', 'SEO_H1', 'SEO_KEYWORDS', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'titre', 'active_locale', 'seo_title', 'seo_description', 'seo_h1', 'seo_keywords', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, )
     );
 
     /**
@@ -91,12 +103,12 @@ abstract class BaseMultimediaTypeHebergementI18nPeer
      * e.g. MultimediaTypeHebergementI18nPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Titre' => 2, 'ActiveLocale' => 3, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'titre' => 2, 'activeLocale' => 3, ),
-        BasePeer::TYPE_COLNAME => array (MultimediaTypeHebergementI18nPeer::ID => 0, MultimediaTypeHebergementI18nPeer::LOCALE => 1, MultimediaTypeHebergementI18nPeer::TITRE => 2, MultimediaTypeHebergementI18nPeer::ACTIVE_LOCALE => 3, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'TITRE' => 2, 'ACTIVE_LOCALE' => 3, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'titre' => 2, 'active_locale' => 3, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Titre' => 2, 'ActiveLocale' => 3, 'SeoTitle' => 4, 'SeoDescription' => 5, 'SeoH1' => 6, 'SeoKeywords' => 7, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'titre' => 2, 'activeLocale' => 3, 'seoTitle' => 4, 'seoDescription' => 5, 'seoH1' => 6, 'seoKeywords' => 7, ),
+        BasePeer::TYPE_COLNAME => array (MultimediaTypeHebergementI18nPeer::ID => 0, MultimediaTypeHebergementI18nPeer::LOCALE => 1, MultimediaTypeHebergementI18nPeer::TITRE => 2, MultimediaTypeHebergementI18nPeer::ACTIVE_LOCALE => 3, MultimediaTypeHebergementI18nPeer::SEO_TITLE => 4, MultimediaTypeHebergementI18nPeer::SEO_DESCRIPTION => 5, MultimediaTypeHebergementI18nPeer::SEO_H1 => 6, MultimediaTypeHebergementI18nPeer::SEO_KEYWORDS => 7, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'TITRE' => 2, 'ACTIVE_LOCALE' => 3, 'SEO_TITLE' => 4, 'SEO_DESCRIPTION' => 5, 'SEO_H1' => 6, 'SEO_KEYWORDS' => 7, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'titre' => 2, 'active_locale' => 3, 'seo_title' => 4, 'seo_description' => 5, 'seo_h1' => 6, 'seo_keywords' => 7, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, )
     );
 
     /**
@@ -174,11 +186,19 @@ abstract class BaseMultimediaTypeHebergementI18nPeer
             $criteria->addSelectColumn(MultimediaTypeHebergementI18nPeer::LOCALE);
             $criteria->addSelectColumn(MultimediaTypeHebergementI18nPeer::TITRE);
             $criteria->addSelectColumn(MultimediaTypeHebergementI18nPeer::ACTIVE_LOCALE);
+            $criteria->addSelectColumn(MultimediaTypeHebergementI18nPeer::SEO_TITLE);
+            $criteria->addSelectColumn(MultimediaTypeHebergementI18nPeer::SEO_DESCRIPTION);
+            $criteria->addSelectColumn(MultimediaTypeHebergementI18nPeer::SEO_H1);
+            $criteria->addSelectColumn(MultimediaTypeHebergementI18nPeer::SEO_KEYWORDS);
         } else {
             $criteria->addSelectColumn($alias . '.id');
             $criteria->addSelectColumn($alias . '.locale');
             $criteria->addSelectColumn($alias . '.titre');
             $criteria->addSelectColumn($alias . '.active_locale');
+            $criteria->addSelectColumn($alias . '.seo_title');
+            $criteria->addSelectColumn($alias . '.seo_description');
+            $criteria->addSelectColumn($alias . '.seo_h1');
+            $criteria->addSelectColumn($alias . '.seo_keywords');
         }
     }
 

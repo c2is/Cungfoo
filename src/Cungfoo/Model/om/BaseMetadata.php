@@ -1203,7 +1203,7 @@ abstract class BaseMetadata extends BaseObject implements Persistent
     }
 
     // crudable behavior
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -1218,12 +1218,12 @@ abstract class BaseMetadata extends BaseObject implements Persistent
         {
             $this->resetModified(MetadataPeer::VISUEL);
         }
-
+    
         $this->uploadVisuel($form);
-
+        
         return $this->save($con);
     }
-
+    
     /**
      * @return string
      */
@@ -1231,7 +1231,7 @@ abstract class BaseMetadata extends BaseObject implements Persistent
     {
         return 'uploads/metadatas';
     }
-
+    
     /**
      * @return string
      */
@@ -1239,7 +1239,7 @@ abstract class BaseMetadata extends BaseObject implements Persistent
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -1427,16 +1427,27 @@ abstract class BaseMetadata extends BaseObject implements Persistent
         return $this;
     }
 
-
-        /**
-         * Get the [seo_title] column value.
-         *
-         * @return string
-         */
-        public function getSeoTitle()
+    /**
+     * Get the [seo_title] column value.
+     *
+     * @return string
+     */
+    public function getSeoTitle()
+    {
+        if (trim($this->getCurrentTranslation()->getSeoTitle()))
         {
-        return $this->getCurrentTranslation()->getSeoTitle();
+            return trim($this->getCurrentTranslation()->getSeoTitle());
+        }
+
+        $peerClassName = self::PEER;
+        if ($peerClassName::getSeo())
+        {
+            return $peerClassName::getSeo()->getSeoTitle();
+        }
+
+        return '';
     }
+
 
 
         /**
@@ -1451,16 +1462,27 @@ abstract class BaseMetadata extends BaseObject implements Persistent
         return $this;
     }
 
-
-        /**
-         * Get the [seo_description] column value.
-         *
-         * @return string
-         */
-        public function getSeoDescription()
+    /**
+     * Get the [seo_description] column value.
+     *
+     * @return string
+     */
+    public function getSeoDescription()
+    {
+        if (trim($this->getCurrentTranslation()->getSeoDescription()))
         {
-        return $this->getCurrentTranslation()->getSeoDescription();
+            return trim($this->getCurrentTranslation()->getSeoDescription());
+        }
+
+        $peerClassName = self::PEER;
+        if ($peerClassName::getSeo())
+        {
+            return $peerClassName::getSeo()->getSeoDescription();
+        }
+
+        return '';
     }
+
 
 
         /**
@@ -1475,16 +1497,27 @@ abstract class BaseMetadata extends BaseObject implements Persistent
         return $this;
     }
 
-
-        /**
-         * Get the [seo_h1] column value.
-         *
-         * @return string
-         */
-        public function getSeoH1()
+    /**
+     * Get the [seo_h1] column value.
+     *
+     * @return string
+     */
+    public function getSeoH1()
+    {
+        if (trim($this->getCurrentTranslation()->getSeoH1()))
         {
-        return $this->getCurrentTranslation()->getSeoH1();
+            return trim($this->getCurrentTranslation()->getSeoH1());
+        }
+
+        $peerClassName = self::PEER;
+        if ($peerClassName::getSeo())
+        {
+            return $peerClassName::getSeo()->getSeoH1();
+        }
+
+        return '';
     }
+
 
 
         /**
@@ -1499,16 +1532,27 @@ abstract class BaseMetadata extends BaseObject implements Persistent
         return $this;
     }
 
-
-        /**
-         * Get the [seo_keywords] column value.
-         *
-         * @return string
-         */
-        public function getSeoKeywords()
+    /**
+     * Get the [seo_keywords] column value.
+     *
+     * @return string
+     */
+    public function getSeoKeywords()
+    {
+        if (trim($this->getCurrentTranslation()->getSeoKeywords()))
         {
-        return $this->getCurrentTranslation()->getSeoKeywords();
+            return trim($this->getCurrentTranslation()->getSeoKeywords());
+        }
+
+        $peerClassName = self::PEER;
+        if ($peerClassName::getSeo())
+        {
+            return $peerClassName::getSeo()->getSeoKeywords();
+        }
+
+        return '';
     }
+
 
 
         /**
@@ -1521,35 +1565,6 @@ abstract class BaseMetadata extends BaseObject implements Persistent
         {    $this->getCurrentTranslation()->setSeoKeywords($v);
 
         return $this;
-    }
-
-    // seo behavior
-
-    /**
-     * @param PropelPDO $con
-     * @return array             The object's metadata
-     */
-    public function getMetadata(PropelPDO $con = null)
-    {
-        $metadata = array(
-            'seo_title' => $this->getSeoTitle(),
-            'seo_description' => $this->getSeoDescription(),
-            'seo_h1' => $this->getSeoH1(),
-            'seo_keywords' => $this->getSeoKeywords(),
-        );
-        $utils = new \Cungfoo\Lib\Utils();
-        if ($tableMetadata = \Cungfoo\Model\MetadataPeer::get('metadata'))
-        {
-            foreach ($metadata as $seoColumn => $value)
-            {
-                if (!trim($value))
-                {
-                    $getColumn = 'get' . $utils->camelize($seoColumn);
-                    $metadata[$seoColumn] = $tableMetadata->$getColumn();
-                }
-            }
-        }
-        return $metadata;
     }
 
 }

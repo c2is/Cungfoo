@@ -207,6 +207,45 @@ class BaseDemandeAnnulationType extends AppAwareType
             'label' => 'demande_annulation.active',
             'required' => false,
         ));
+        $builder->add('demande_annulationI18ns', 'translation_collection', array(
+            'i18n_class' => 'Cungfoo\Model\DemandeAnnulationI18n',
+            'languages' => array(
+                0 => 'fr',
+                1 => 'de',
+            ),
+            'label' => 'demande_annulation.demande_annulationI18ns',
+            'columns' => array(
+                'seo_title' => array(
+                    'required' => false,
+                    'label' => 'demande_annulation.seo_title',
+                    'type' => 'text',
+                    'constraints' => array(
+                    ),
+                ),
+                'seo_description' => array(
+                    'required' => false,
+                    'label' => 'demande_annulation.seo_description',
+                    'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'seo_h1' => array(
+                    'required' => false,
+                    'label' => 'demande_annulation.seo_h1',
+                    'type' => 'text',
+                    'constraints' => array(
+                    ),
+                ),
+                'seo_keywords' => array(
+                    'required' => false,
+                    'label' => 'demande_annulation.seo_keywords',
+                    'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+            ),
+            'required' => false,
+        ));
     }
 
     /**

@@ -17,6 +17,9 @@ use Cungfoo\Lib\Listing\Listing,
     Cungfoo\Model\Metadata,
     Cungfoo\Model\MetadataQuery,
     Cungfoo\Form\Type\MetadataType,
+    Cungfoo\Model\Seo,
+    Cungfoo\Model\SeoQuery,
+    Cungfoo\Form\Type\SeoType,
     Cungfoo\Form\Type\ContextType;
 
 /**
@@ -136,7 +139,6 @@ class CrudController implements ControllerProviderInterface
             $object = new Seo();
             $object->setTableRef($peerClass::TABLE_NAME);
         }
-
 
         $form = $app['form.factory']->create(new SeoType($app), $object);
         if ('POST' == $request->getMethod()) {

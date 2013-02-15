@@ -310,7 +310,6 @@ class DestinationController implements ControllerProviderInterface
                 break;
             case 'Cungfoo\Model\Destination':
                 $urlCanonical = $app->url($request->get('_route'), array('destination' => $object->getSlug()));
-                var_dump($object->getMetadata());die;
                 break;
             case 'Cungfoo\Model\Region':
                 $urlCanonical = $app->url($request->get('_route'), array(
@@ -353,7 +352,7 @@ class DestinationController implements ControllerProviderInterface
             'firstEtab'       => $firstEtab,
             'searchForm'      => $searchEngine->getView(),
             'imagesTitle'     => $app->trans('destination.images_' . strtolower($objectName) . '_title'),
-            'title'           => $app->trans('destination.' . strtolower($objectName) . '_title', array('%item%' => $object->getName())),
+            'title'           => $app->trans($object->getSeoH1(), array('%item%' => $object->getName())),
             'urlCanonical'    => $urlCanonical
         ));
     }

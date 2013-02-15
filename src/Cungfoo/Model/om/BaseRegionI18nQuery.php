@@ -29,6 +29,10 @@ use Cungfoo\Model\RegionI18nQuery;
  * @method RegionI18nQuery orderByIntroduction($order = Criteria::ASC) Order by the introduction column
  * @method RegionI18nQuery orderByDescription($order = Criteria::ASC) Order by the description column
  * @method RegionI18nQuery orderByActiveLocale($order = Criteria::ASC) Order by the active_locale column
+ * @method RegionI18nQuery orderBySeoTitle($order = Criteria::ASC) Order by the seo_title column
+ * @method RegionI18nQuery orderBySeoDescription($order = Criteria::ASC) Order by the seo_description column
+ * @method RegionI18nQuery orderBySeoH1($order = Criteria::ASC) Order by the seo_h1 column
+ * @method RegionI18nQuery orderBySeoKeywords($order = Criteria::ASC) Order by the seo_keywords column
  *
  * @method RegionI18nQuery groupById() Group by the id column
  * @method RegionI18nQuery groupByLocale() Group by the locale column
@@ -37,6 +41,10 @@ use Cungfoo\Model\RegionI18nQuery;
  * @method RegionI18nQuery groupByIntroduction() Group by the introduction column
  * @method RegionI18nQuery groupByDescription() Group by the description column
  * @method RegionI18nQuery groupByActiveLocale() Group by the active_locale column
+ * @method RegionI18nQuery groupBySeoTitle() Group by the seo_title column
+ * @method RegionI18nQuery groupBySeoDescription() Group by the seo_description column
+ * @method RegionI18nQuery groupBySeoH1() Group by the seo_h1 column
+ * @method RegionI18nQuery groupBySeoKeywords() Group by the seo_keywords column
  *
  * @method RegionI18nQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method RegionI18nQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -56,6 +64,10 @@ use Cungfoo\Model\RegionI18nQuery;
  * @method RegionI18n findOneByIntroduction(string $introduction) Return the first RegionI18n filtered by the introduction column
  * @method RegionI18n findOneByDescription(string $description) Return the first RegionI18n filtered by the description column
  * @method RegionI18n findOneByActiveLocale(boolean $active_locale) Return the first RegionI18n filtered by the active_locale column
+ * @method RegionI18n findOneBySeoTitle(string $seo_title) Return the first RegionI18n filtered by the seo_title column
+ * @method RegionI18n findOneBySeoDescription(string $seo_description) Return the first RegionI18n filtered by the seo_description column
+ * @method RegionI18n findOneBySeoH1(string $seo_h1) Return the first RegionI18n filtered by the seo_h1 column
+ * @method RegionI18n findOneBySeoKeywords(string $seo_keywords) Return the first RegionI18n filtered by the seo_keywords column
  *
  * @method array findById(int $id) Return RegionI18n objects filtered by the id column
  * @method array findByLocale(string $locale) Return RegionI18n objects filtered by the locale column
@@ -64,6 +76,10 @@ use Cungfoo\Model\RegionI18nQuery;
  * @method array findByIntroduction(string $introduction) Return RegionI18n objects filtered by the introduction column
  * @method array findByDescription(string $description) Return RegionI18n objects filtered by the description column
  * @method array findByActiveLocale(boolean $active_locale) Return RegionI18n objects filtered by the active_locale column
+ * @method array findBySeoTitle(string $seo_title) Return RegionI18n objects filtered by the seo_title column
+ * @method array findBySeoDescription(string $seo_description) Return RegionI18n objects filtered by the seo_description column
+ * @method array findBySeoH1(string $seo_h1) Return RegionI18n objects filtered by the seo_h1 column
+ * @method array findBySeoKeywords(string $seo_keywords) Return RegionI18n objects filtered by the seo_keywords column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -154,7 +170,7 @@ abstract class BaseRegionI18nQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `locale`, `slug`, `name`, `introduction`, `description`, `active_locale` FROM `region_i18n` WHERE `id` = :p0 AND `locale` = :p1';
+        $sql = 'SELECT `id`, `locale`, `slug`, `name`, `introduction`, `description`, `active_locale`, `seo_title`, `seo_description`, `seo_h1`, `seo_keywords` FROM `region_i18n` WHERE `id` = :p0 AND `locale` = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
@@ -454,6 +470,122 @@ abstract class BaseRegionI18nQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(RegionI18nPeer::ACTIVE_LOCALE, $activeLocale, $comparison);
+    }
+
+    /**
+     * Filter the query on the seo_title column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterBySeoTitle('fooValue');   // WHERE seo_title = 'fooValue'
+     * $query->filterBySeoTitle('%fooValue%'); // WHERE seo_title LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $seoTitle The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return RegionI18nQuery The current query, for fluid interface
+     */
+    public function filterBySeoTitle($seoTitle = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($seoTitle)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $seoTitle)) {
+                $seoTitle = str_replace('*', '%', $seoTitle);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(RegionI18nPeer::SEO_TITLE, $seoTitle, $comparison);
+    }
+
+    /**
+     * Filter the query on the seo_description column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterBySeoDescription('fooValue');   // WHERE seo_description = 'fooValue'
+     * $query->filterBySeoDescription('%fooValue%'); // WHERE seo_description LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $seoDescription The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return RegionI18nQuery The current query, for fluid interface
+     */
+    public function filterBySeoDescription($seoDescription = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($seoDescription)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $seoDescription)) {
+                $seoDescription = str_replace('*', '%', $seoDescription);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(RegionI18nPeer::SEO_DESCRIPTION, $seoDescription, $comparison);
+    }
+
+    /**
+     * Filter the query on the seo_h1 column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterBySeoH1('fooValue');   // WHERE seo_h1 = 'fooValue'
+     * $query->filterBySeoH1('%fooValue%'); // WHERE seo_h1 LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $seoH1 The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return RegionI18nQuery The current query, for fluid interface
+     */
+    public function filterBySeoH1($seoH1 = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($seoH1)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $seoH1)) {
+                $seoH1 = str_replace('*', '%', $seoH1);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(RegionI18nPeer::SEO_H1, $seoH1, $comparison);
+    }
+
+    /**
+     * Filter the query on the seo_keywords column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterBySeoKeywords('fooValue');   // WHERE seo_keywords = 'fooValue'
+     * $query->filterBySeoKeywords('%fooValue%'); // WHERE seo_keywords LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $seoKeywords The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return RegionI18nQuery The current query, for fluid interface
+     */
+    public function filterBySeoKeywords($seoKeywords = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($seoKeywords)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $seoKeywords)) {
+                $seoKeywords = str_replace('*', '%', $seoKeywords);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(RegionI18nPeer::SEO_KEYWORDS, $seoKeywords, $comparison);
     }
 
     /**

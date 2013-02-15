@@ -78,7 +78,6 @@ abstract class BaseMetadataI18n extends BaseObject implements Persistent
 
     /**
      * The value for the seo_title field.
-     * Note: this column has a database default value of: ''
      * @var        string
      */
     protected $seo_title;
@@ -91,7 +90,6 @@ abstract class BaseMetadataI18n extends BaseObject implements Persistent
 
     /**
      * The value for the seo_h1 field.
-     * Note: this column has a database default value of: ''
      * @var        string
      */
     protected $seo_h1;
@@ -130,8 +128,6 @@ abstract class BaseMetadataI18n extends BaseObject implements Persistent
     public function applyDefaultValues()
     {
         $this->locale = 'fr';
-        $this->seo_title = '';
-        $this->seo_h1 = '';
     }
 
     /**
@@ -438,14 +434,6 @@ abstract class BaseMetadataI18n extends BaseObject implements Persistent
     public function hasOnlyDefaultValues()
     {
             if ($this->locale !== 'fr') {
-                return false;
-            }
-
-            if ($this->seo_title !== '') {
-                return false;
-            }
-
-            if ($this->seo_h1 !== '') {
                 return false;
             }
 

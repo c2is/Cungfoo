@@ -483,7 +483,6 @@
         <behavior name="timestampable" />
         <behavior name="sortable" />
         <behavior name="active" />
-        <behavior name="seo" />
 
         <behavior name="i18n">
             <parameter name="i18n_columns" value="slug,name,introduction,description" />

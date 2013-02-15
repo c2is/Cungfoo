@@ -29,6 +29,10 @@ use Cungfoo\Model\TypeHebergementCapaciteI18nQuery;
  * @method TypeHebergementCapaciteI18nQuery orderByAccroche($order = Criteria::ASC) Order by the accroche column
  * @method TypeHebergementCapaciteI18nQuery orderByDescription($order = Criteria::ASC) Order by the description column
  * @method TypeHebergementCapaciteI18nQuery orderByActiveLocale($order = Criteria::ASC) Order by the active_locale column
+ * @method TypeHebergementCapaciteI18nQuery orderBySeoTitle($order = Criteria::ASC) Order by the seo_title column
+ * @method TypeHebergementCapaciteI18nQuery orderBySeoDescription($order = Criteria::ASC) Order by the seo_description column
+ * @method TypeHebergementCapaciteI18nQuery orderBySeoH1($order = Criteria::ASC) Order by the seo_h1 column
+ * @method TypeHebergementCapaciteI18nQuery orderBySeoKeywords($order = Criteria::ASC) Order by the seo_keywords column
  *
  * @method TypeHebergementCapaciteI18nQuery groupById() Group by the id column
  * @method TypeHebergementCapaciteI18nQuery groupByLocale() Group by the locale column
@@ -37,6 +41,10 @@ use Cungfoo\Model\TypeHebergementCapaciteI18nQuery;
  * @method TypeHebergementCapaciteI18nQuery groupByAccroche() Group by the accroche column
  * @method TypeHebergementCapaciteI18nQuery groupByDescription() Group by the description column
  * @method TypeHebergementCapaciteI18nQuery groupByActiveLocale() Group by the active_locale column
+ * @method TypeHebergementCapaciteI18nQuery groupBySeoTitle() Group by the seo_title column
+ * @method TypeHebergementCapaciteI18nQuery groupBySeoDescription() Group by the seo_description column
+ * @method TypeHebergementCapaciteI18nQuery groupBySeoH1() Group by the seo_h1 column
+ * @method TypeHebergementCapaciteI18nQuery groupBySeoKeywords() Group by the seo_keywords column
  *
  * @method TypeHebergementCapaciteI18nQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method TypeHebergementCapaciteI18nQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -56,6 +64,10 @@ use Cungfoo\Model\TypeHebergementCapaciteI18nQuery;
  * @method TypeHebergementCapaciteI18n findOneByAccroche(string $accroche) Return the first TypeHebergementCapaciteI18n filtered by the accroche column
  * @method TypeHebergementCapaciteI18n findOneByDescription(string $description) Return the first TypeHebergementCapaciteI18n filtered by the description column
  * @method TypeHebergementCapaciteI18n findOneByActiveLocale(boolean $active_locale) Return the first TypeHebergementCapaciteI18n filtered by the active_locale column
+ * @method TypeHebergementCapaciteI18n findOneBySeoTitle(string $seo_title) Return the first TypeHebergementCapaciteI18n filtered by the seo_title column
+ * @method TypeHebergementCapaciteI18n findOneBySeoDescription(string $seo_description) Return the first TypeHebergementCapaciteI18n filtered by the seo_description column
+ * @method TypeHebergementCapaciteI18n findOneBySeoH1(string $seo_h1) Return the first TypeHebergementCapaciteI18n filtered by the seo_h1 column
+ * @method TypeHebergementCapaciteI18n findOneBySeoKeywords(string $seo_keywords) Return the first TypeHebergementCapaciteI18n filtered by the seo_keywords column
  *
  * @method array findById(int $id) Return TypeHebergementCapaciteI18n objects filtered by the id column
  * @method array findByLocale(string $locale) Return TypeHebergementCapaciteI18n objects filtered by the locale column
@@ -64,6 +76,10 @@ use Cungfoo\Model\TypeHebergementCapaciteI18nQuery;
  * @method array findByAccroche(string $accroche) Return TypeHebergementCapaciteI18n objects filtered by the accroche column
  * @method array findByDescription(string $description) Return TypeHebergementCapaciteI18n objects filtered by the description column
  * @method array findByActiveLocale(boolean $active_locale) Return TypeHebergementCapaciteI18n objects filtered by the active_locale column
+ * @method array findBySeoTitle(string $seo_title) Return TypeHebergementCapaciteI18n objects filtered by the seo_title column
+ * @method array findBySeoDescription(string $seo_description) Return TypeHebergementCapaciteI18n objects filtered by the seo_description column
+ * @method array findBySeoH1(string $seo_h1) Return TypeHebergementCapaciteI18n objects filtered by the seo_h1 column
+ * @method array findBySeoKeywords(string $seo_keywords) Return TypeHebergementCapaciteI18n objects filtered by the seo_keywords column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -154,7 +170,7 @@ abstract class BaseTypeHebergementCapaciteI18nQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `locale`, `name`, `slug`, `accroche`, `description`, `active_locale` FROM `type_hebergement_capacite_i18n` WHERE `id` = :p0 AND `locale` = :p1';
+        $sql = 'SELECT `id`, `locale`, `name`, `slug`, `accroche`, `description`, `active_locale`, `seo_title`, `seo_description`, `seo_h1`, `seo_keywords` FROM `type_hebergement_capacite_i18n` WHERE `id` = :p0 AND `locale` = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
@@ -454,6 +470,122 @@ abstract class BaseTypeHebergementCapaciteI18nQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(TypeHebergementCapaciteI18nPeer::ACTIVE_LOCALE, $activeLocale, $comparison);
+    }
+
+    /**
+     * Filter the query on the seo_title column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterBySeoTitle('fooValue');   // WHERE seo_title = 'fooValue'
+     * $query->filterBySeoTitle('%fooValue%'); // WHERE seo_title LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $seoTitle The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return TypeHebergementCapaciteI18nQuery The current query, for fluid interface
+     */
+    public function filterBySeoTitle($seoTitle = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($seoTitle)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $seoTitle)) {
+                $seoTitle = str_replace('*', '%', $seoTitle);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(TypeHebergementCapaciteI18nPeer::SEO_TITLE, $seoTitle, $comparison);
+    }
+
+    /**
+     * Filter the query on the seo_description column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterBySeoDescription('fooValue');   // WHERE seo_description = 'fooValue'
+     * $query->filterBySeoDescription('%fooValue%'); // WHERE seo_description LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $seoDescription The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return TypeHebergementCapaciteI18nQuery The current query, for fluid interface
+     */
+    public function filterBySeoDescription($seoDescription = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($seoDescription)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $seoDescription)) {
+                $seoDescription = str_replace('*', '%', $seoDescription);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(TypeHebergementCapaciteI18nPeer::SEO_DESCRIPTION, $seoDescription, $comparison);
+    }
+
+    /**
+     * Filter the query on the seo_h1 column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterBySeoH1('fooValue');   // WHERE seo_h1 = 'fooValue'
+     * $query->filterBySeoH1('%fooValue%'); // WHERE seo_h1 LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $seoH1 The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return TypeHebergementCapaciteI18nQuery The current query, for fluid interface
+     */
+    public function filterBySeoH1($seoH1 = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($seoH1)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $seoH1)) {
+                $seoH1 = str_replace('*', '%', $seoH1);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(TypeHebergementCapaciteI18nPeer::SEO_H1, $seoH1, $comparison);
+    }
+
+    /**
+     * Filter the query on the seo_keywords column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterBySeoKeywords('fooValue');   // WHERE seo_keywords = 'fooValue'
+     * $query->filterBySeoKeywords('%fooValue%'); // WHERE seo_keywords LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $seoKeywords The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return TypeHebergementCapaciteI18nQuery The current query, for fluid interface
+     */
+    public function filterBySeoKeywords($seoKeywords = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($seoKeywords)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $seoKeywords)) {
+                $seoKeywords = str_replace('*', '%', $seoKeywords);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(TypeHebergementCapaciteI18nPeer::SEO_KEYWORDS, $seoKeywords, $comparison);
     }
 
     /**

@@ -47,6 +47,10 @@ class IdeeWeekendI18nTableMap extends TableMap
         $this->addColumn('titre', 'Titre', 'VARCHAR', false, 255, null);
         $this->addColumn('lien', 'Lien', 'VARCHAR', false, 255, null);
         $this->addColumn('active_locale', 'ActiveLocale', 'BOOLEAN', false, 1, false);
+        $this->addColumn('seo_title', 'SeoTitle', 'VARCHAR', false, 255, null);
+        $this->addColumn('seo_description', 'SeoDescription', 'LONGVARCHAR', false, null, null);
+        $this->addColumn('seo_h1', 'SeoH1', 'VARCHAR', false, 255, null);
+        $this->addColumn('seo_keywords', 'SeoKeywords', 'LONGVARCHAR', false, null, null);
         // validators
     } // initialize()
 

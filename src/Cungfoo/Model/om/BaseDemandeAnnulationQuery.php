@@ -13,6 +13,7 @@ use \PropelException;
 use \PropelObjectCollection;
 use \PropelPDO;
 use Cungfoo\Model\DemandeAnnulation;
+use Cungfoo\Model\DemandeAnnulationI18n;
 use Cungfoo\Model\DemandeAnnulationPeer;
 use Cungfoo\Model\DemandeAnnulationQuery;
 use Cungfoo\Model\Etablissement;
@@ -79,6 +80,10 @@ use Cungfoo\Model\Etablissement;
  * @method DemandeAnnulationQuery leftJoinEtablissement($relationAlias = null) Adds a LEFT JOIN clause to the query using the Etablissement relation
  * @method DemandeAnnulationQuery rightJoinEtablissement($relationAlias = null) Adds a RIGHT JOIN clause to the query using the Etablissement relation
  * @method DemandeAnnulationQuery innerJoinEtablissement($relationAlias = null) Adds a INNER JOIN clause to the query using the Etablissement relation
+ *
+ * @method DemandeAnnulationQuery leftJoinDemandeAnnulationI18n($relationAlias = null) Adds a LEFT JOIN clause to the query using the DemandeAnnulationI18n relation
+ * @method DemandeAnnulationQuery rightJoinDemandeAnnulationI18n($relationAlias = null) Adds a RIGHT JOIN clause to the query using the DemandeAnnulationI18n relation
+ * @method DemandeAnnulationQuery innerJoinDemandeAnnulationI18n($relationAlias = null) Adds a INNER JOIN clause to the query using the DemandeAnnulationI18n relation
  *
  * @method DemandeAnnulation findOne(PropelPDO $con = null) Return the first DemandeAnnulation matching the query
  * @method DemandeAnnulation findOneOrCreate(PropelPDO $con = null) Return the first DemandeAnnulation matching the query, or a new DemandeAnnulation object populated from the query conditions when no match is found
@@ -1144,6 +1149,80 @@ abstract class BaseDemandeAnnulationQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query by a related DemandeAnnulationI18n object
+     *
+     * @param   DemandeAnnulationI18n|PropelObjectCollection $demandeAnnulationI18n  the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   DemandeAnnulationQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByDemandeAnnulationI18n($demandeAnnulationI18n, $comparison = null)
+    {
+        if ($demandeAnnulationI18n instanceof DemandeAnnulationI18n) {
+            return $this
+                ->addUsingAlias(DemandeAnnulationPeer::ID, $demandeAnnulationI18n->getId(), $comparison);
+        } elseif ($demandeAnnulationI18n instanceof PropelObjectCollection) {
+            return $this
+                ->useDemandeAnnulationI18nQuery()
+                ->filterByPrimaryKeys($demandeAnnulationI18n->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByDemandeAnnulationI18n() only accepts arguments of type DemandeAnnulationI18n or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the DemandeAnnulationI18n relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return DemandeAnnulationQuery The current query, for fluid interface
+     */
+    public function joinDemandeAnnulationI18n($relationAlias = null, $joinType = 'LEFT JOIN')
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('DemandeAnnulationI18n');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'DemandeAnnulationI18n');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the DemandeAnnulationI18n relation DemandeAnnulationI18n object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\DemandeAnnulationI18nQuery A secondary query class using the current class as primary query
+     */
+    public function useDemandeAnnulationI18nQuery($relationAlias = null, $joinType = 'LEFT JOIN')
+    {
+        return $this
+            ->joinDemandeAnnulationI18n($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'DemandeAnnulationI18n', '\Cungfoo\Model\DemandeAnnulationI18nQuery');
+    }
+
+    /**
      * Exclude object from result
      *
      * @param   DemandeAnnulation $demandeAnnulation Object to remove from the list of results
@@ -1238,8 +1317,68 @@ abstract class BaseDemandeAnnulationQuery extends ModelCriteria
 
         $this
             ->filterByActive(true)
+            ->useI18nQuery($locale, 'i18n_locale')
+                ->filterByActiveLocale(true)
+            ->endUse()
         ;
 
         return parent::find($con);
     }
+    // i18n behavior
+
+    /**
+     * Adds a JOIN clause to the query using the i18n relation
+     *
+     * @param     string $locale Locale to use for the join condition, e.g. 'fr_FR'
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
+     *
+     * @return    DemandeAnnulationQuery The current query, for fluid interface
+     */
+    public function joinI18n($locale = 'fr', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        $relationName = $relationAlias ? $relationAlias : 'DemandeAnnulationI18n';
+
+        return $this
+            ->joinDemandeAnnulationI18n($relationAlias, $joinType)
+            ->addJoinCondition($relationName, $relationName . '.Locale = ?', $locale);
+    }
+
+    /**
+     * Adds a JOIN clause to the query and hydrates the related I18n object.
+     * Shortcut for $c->joinI18n($locale)->with()
+     *
+     * @param     string $locale Locale to use for the join condition, e.g. 'fr_FR'
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
+     *
+     * @return    DemandeAnnulationQuery The current query, for fluid interface
+     */
+    public function joinWithI18n($locale = 'fr', $joinType = Criteria::LEFT_JOIN)
+    {
+        $this
+            ->joinI18n($locale, null, $joinType)
+            ->with('DemandeAnnulationI18n');
+        $this->with['DemandeAnnulationI18n']->setIsWithOneToMany(false);
+
+        return $this;
+    }
+
+    /**
+     * Use the I18n relation query object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $locale Locale to use for the join condition, e.g. 'fr_FR'
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
+     *
+     * @return    DemandeAnnulationI18nQuery A secondary query class using the current class as primary query
+     */
+    public function useI18nQuery($locale = 'fr', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        return $this
+            ->joinI18n($locale, $relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'DemandeAnnulationI18n', 'Cungfoo\Model\DemandeAnnulationI18nQuery');
+    }
+
 }

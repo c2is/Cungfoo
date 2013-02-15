@@ -30,6 +30,10 @@ use Cungfoo\Model\EtablissementI18nQuery;
  * @method EtablissementI18nQuery orderByArriveesDeparts($order = Criteria::ASC) Order by the arrivees_departs column
  * @method EtablissementI18nQuery orderByDescription($order = Criteria::ASC) Order by the description column
  * @method EtablissementI18nQuery orderByActiveLocale($order = Criteria::ASC) Order by the active_locale column
+ * @method EtablissementI18nQuery orderBySeoTitle($order = Criteria::ASC) Order by the seo_title column
+ * @method EtablissementI18nQuery orderBySeoDescription($order = Criteria::ASC) Order by the seo_description column
+ * @method EtablissementI18nQuery orderBySeoH1($order = Criteria::ASC) Order by the seo_h1 column
+ * @method EtablissementI18nQuery orderBySeoKeywords($order = Criteria::ASC) Order by the seo_keywords column
  *
  * @method EtablissementI18nQuery groupById() Group by the id column
  * @method EtablissementI18nQuery groupByLocale() Group by the locale column
@@ -39,6 +43,10 @@ use Cungfoo\Model\EtablissementI18nQuery;
  * @method EtablissementI18nQuery groupByArriveesDeparts() Group by the arrivees_departs column
  * @method EtablissementI18nQuery groupByDescription() Group by the description column
  * @method EtablissementI18nQuery groupByActiveLocale() Group by the active_locale column
+ * @method EtablissementI18nQuery groupBySeoTitle() Group by the seo_title column
+ * @method EtablissementI18nQuery groupBySeoDescription() Group by the seo_description column
+ * @method EtablissementI18nQuery groupBySeoH1() Group by the seo_h1 column
+ * @method EtablissementI18nQuery groupBySeoKeywords() Group by the seo_keywords column
  *
  * @method EtablissementI18nQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method EtablissementI18nQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -59,6 +67,10 @@ use Cungfoo\Model\EtablissementI18nQuery;
  * @method EtablissementI18n findOneByArriveesDeparts(string $arrivees_departs) Return the first EtablissementI18n filtered by the arrivees_departs column
  * @method EtablissementI18n findOneByDescription(string $description) Return the first EtablissementI18n filtered by the description column
  * @method EtablissementI18n findOneByActiveLocale(boolean $active_locale) Return the first EtablissementI18n filtered by the active_locale column
+ * @method EtablissementI18n findOneBySeoTitle(string $seo_title) Return the first EtablissementI18n filtered by the seo_title column
+ * @method EtablissementI18n findOneBySeoDescription(string $seo_description) Return the first EtablissementI18n filtered by the seo_description column
+ * @method EtablissementI18n findOneBySeoH1(string $seo_h1) Return the first EtablissementI18n filtered by the seo_h1 column
+ * @method EtablissementI18n findOneBySeoKeywords(string $seo_keywords) Return the first EtablissementI18n filtered by the seo_keywords column
  *
  * @method array findById(int $id) Return EtablissementI18n objects filtered by the id column
  * @method array findByLocale(string $locale) Return EtablissementI18n objects filtered by the locale column
@@ -68,6 +80,10 @@ use Cungfoo\Model\EtablissementI18nQuery;
  * @method array findByArriveesDeparts(string $arrivees_departs) Return EtablissementI18n objects filtered by the arrivees_departs column
  * @method array findByDescription(string $description) Return EtablissementI18n objects filtered by the description column
  * @method array findByActiveLocale(boolean $active_locale) Return EtablissementI18n objects filtered by the active_locale column
+ * @method array findBySeoTitle(string $seo_title) Return EtablissementI18n objects filtered by the seo_title column
+ * @method array findBySeoDescription(string $seo_description) Return EtablissementI18n objects filtered by the seo_description column
+ * @method array findBySeoH1(string $seo_h1) Return EtablissementI18n objects filtered by the seo_h1 column
+ * @method array findBySeoKeywords(string $seo_keywords) Return EtablissementI18n objects filtered by the seo_keywords column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -158,7 +174,7 @@ abstract class BaseEtablissementI18nQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `locale`, `country`, `ouverture_reception`, `ouverture_camping`, `arrivees_departs`, `description`, `active_locale` FROM `etablissement_i18n` WHERE `id` = :p0 AND `locale` = :p1';
+        $sql = 'SELECT `id`, `locale`, `country`, `ouverture_reception`, `ouverture_camping`, `arrivees_departs`, `description`, `active_locale`, `seo_title`, `seo_description`, `seo_h1`, `seo_keywords` FROM `etablissement_i18n` WHERE `id` = :p0 AND `locale` = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
@@ -487,6 +503,122 @@ abstract class BaseEtablissementI18nQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(EtablissementI18nPeer::ACTIVE_LOCALE, $activeLocale, $comparison);
+    }
+
+    /**
+     * Filter the query on the seo_title column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterBySeoTitle('fooValue');   // WHERE seo_title = 'fooValue'
+     * $query->filterBySeoTitle('%fooValue%'); // WHERE seo_title LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $seoTitle The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return EtablissementI18nQuery The current query, for fluid interface
+     */
+    public function filterBySeoTitle($seoTitle = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($seoTitle)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $seoTitle)) {
+                $seoTitle = str_replace('*', '%', $seoTitle);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(EtablissementI18nPeer::SEO_TITLE, $seoTitle, $comparison);
+    }
+
+    /**
+     * Filter the query on the seo_description column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterBySeoDescription('fooValue');   // WHERE seo_description = 'fooValue'
+     * $query->filterBySeoDescription('%fooValue%'); // WHERE seo_description LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $seoDescription The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return EtablissementI18nQuery The current query, for fluid interface
+     */
+    public function filterBySeoDescription($seoDescription = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($seoDescription)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $seoDescription)) {
+                $seoDescription = str_replace('*', '%', $seoDescription);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(EtablissementI18nPeer::SEO_DESCRIPTION, $seoDescription, $comparison);
+    }
+
+    /**
+     * Filter the query on the seo_h1 column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterBySeoH1('fooValue');   // WHERE seo_h1 = 'fooValue'
+     * $query->filterBySeoH1('%fooValue%'); // WHERE seo_h1 LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $seoH1 The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return EtablissementI18nQuery The current query, for fluid interface
+     */
+    public function filterBySeoH1($seoH1 = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($seoH1)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $seoH1)) {
+                $seoH1 = str_replace('*', '%', $seoH1);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(EtablissementI18nPeer::SEO_H1, $seoH1, $comparison);
+    }
+
+    /**
+     * Filter the query on the seo_keywords column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterBySeoKeywords('fooValue');   // WHERE seo_keywords = 'fooValue'
+     * $query->filterBySeoKeywords('%fooValue%'); // WHERE seo_keywords LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $seoKeywords The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return EtablissementI18nQuery The current query, for fluid interface
+     */
+    public function filterBySeoKeywords($seoKeywords = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($seoKeywords)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $seoKeywords)) {
+                $seoKeywords = str_replace('*', '%', $seoKeywords);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(EtablissementI18nPeer::SEO_KEYWORDS, $seoKeywords, $comparison);
     }
 
     /**

@@ -84,6 +84,7 @@ class DemandeAnnulationTableMap extends TableMap
     public function buildRelations()
     {
         $this->addRelation('Etablissement', 'Cungfoo\\Model\\Etablissement', RelationMap::MANY_TO_ONE, array('camping_id' => 'id', ), null, null);
+        $this->addRelation('DemandeAnnulationI18n', 'Cungfoo\\Model\\DemandeAnnulationI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'DemandeAnnulationI18ns');
     } // buildRelations()
 
     /**
@@ -110,6 +111,20 @@ class DemandeAnnulationTableMap extends TableMap
   'crud_model' => NULL,
   'crud_form' => NULL,
   'crud_type_file' => 'file_1, file_2, file_3, file_4',
+),
+            'seo' =>  array (
+  'seo_columns' => 'seo_title,seo_description,seo_h1,seo_keywords',
+  'seo_description' => 'LONGVARCHAR',
+  'seo_keywords' => 'LONGVARCHAR',
+),
+            'i18n' =>  array (
+  'i18n_table' => '%TABLE%_i18n',
+  'i18n_phpname' => '%PHPNAME%I18n',
+  'i18n_columns' => ',seo_title,seo_description,seo_h1,seo_keywords',
+  'i18n_pk_name' => NULL,
+  'locale_column' => 'locale',
+  'default_locale' => 'fr',
+  'locale_alias' => '',
 ),
         );
     } // getBehaviors()

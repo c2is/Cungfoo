@@ -82,10 +82,9 @@ class MetadataTableMap extends TableMap
   'locale_alias' => '',
 ),
             'seo' =>  array (
-  'title_column' => 'seo_title',
-  'description_column' => 'seo_description',
-  'h1_column' => 'seo_h1',
-  'keywords_column' => 'seo_keywords',
+  'seo_columns' => 'seo_title,seo_description,seo_h1,seo_keywords',
+  'seo_description' => 'LONGVARCHAR',
+  'seo_keywords' => 'LONGVARCHAR',
 ),
         );
     } // getBehaviors()

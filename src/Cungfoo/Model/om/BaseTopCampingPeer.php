@@ -11,6 +11,7 @@ use \PropelException;
 use \PropelPDO;
 use Cungfoo\Model\EtablissementPeer;
 use Cungfoo\Model\TopCamping;
+use Cungfoo\Model\TopCampingI18nPeer;
 use Cungfoo\Model\TopCampingPeer;
 use Cungfoo\Model\TopCampingQuery;
 use Cungfoo\Model\map\TopCampingTableMap;
@@ -70,6 +71,13 @@ abstract class BaseTopCampingPeer
     public static $instances = array();
 
 
+    // i18n behavior
+
+    /**
+     * The default locale to use for translations
+     * @var        string
+     */
+    const DEFAULT_LOCALE = 'fr';
     // sortable behavior
 
     /**
@@ -386,6 +394,9 @@ abstract class BaseTopCampingPeer
      */
     public static function clearRelatedInstancePool()
     {
+        // Invalidate objects in TopCampingI18nPeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        TopCampingI18nPeer::clearInstancePool();
     }
 
     /**
@@ -1166,6 +1177,20 @@ abstract class BaseTopCampingPeer
     public static function getMetadata(PropelPDO $con = null)
     {
         return \Cungfoo\Model\MetadataQuery::create()
+            ->joinWithI18n()
+            ->filterByTableRef(TopCampingPeer::TABLE_NAME)
+            ->findOne()
+        ;
+    }
+    // seo behavior
+    
+    /**
+     * The default locale to use for translations
+     * @var        string
+     */
+    public static function getSeo(PropelPDO $con = null)
+    {
+        return \Cungfoo\Model\SeoQuery::create()
             ->joinWithI18n()
             ->filterByTableRef(TopCampingPeer::TABLE_NAME)
             ->findOne()

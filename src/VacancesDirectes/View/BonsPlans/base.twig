@@ -2,13 +2,13 @@
 
 {% block title %}
 {% spaceless %}
-    {{ "seo.title.bonPlan" | trans ({'%bonPlan%': bonPlan.name}) }}
+    {{ bonPlan.seoTitle | trans ({'%bonPlan%': bonPlan.name}) }}
 {% endspaceless %}
 {% endblock %}
 
 {% block metaDescription %}
 {% spaceless %}
-    {{ "seo.meta.bonPlan" | trans  ({'%bonPlan%': bonPlan.name})}}
+    {{ bonPlan.seoDescription | trans  ({'%bonPlan%': bonPlan.name})}}
 {% endspaceless %}
 {% endblock %}
 

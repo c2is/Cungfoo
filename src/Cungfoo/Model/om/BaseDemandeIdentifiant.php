@@ -9,10 +9,14 @@ use \Exception;
 use \PDO;
 use \Persistent;
 use \Propel;
+use \PropelCollection;
 use \PropelDateTime;
 use \PropelException;
+use \PropelObjectCollection;
 use \PropelPDO;
 use Cungfoo\Model\DemandeIdentifiant;
+use Cungfoo\Model\DemandeIdentifiantI18n;
+use Cungfoo\Model\DemandeIdentifiantI18nQuery;
 use Cungfoo\Model\DemandeIdentifiantPeer;
 use Cungfoo\Model\DemandeIdentifiantQuery;
 use Propel\BaseObject;
@@ -203,6 +207,12 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
     protected $active;
 
     /**
+     * @var        PropelObjectCollection|DemandeIdentifiantI18n[] Collection to store aggregation of DemandeIdentifiantI18n objects.
+     */
+    protected $collDemandeIdentifiantI18ns;
+    protected $collDemandeIdentifiantI18nsPartial;
+
+    /**
      * Flag to prevent endless save loop, if this object is referenced
      * by another object which falls in this transaction.
      * @var        boolean
@@ -215,6 +225,26 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
      * @var        boolean
      */
     protected $alreadyInValidation = false;
+
+    // i18n behavior
+
+    /**
+     * Current locale
+     * @var        string
+     */
+    protected $currentLocale = 'fr';
+
+    /**
+     * Current translation objects
+     * @var        array[DemandeIdentifiantI18n]
+     */
+    protected $currentTranslations;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
+    protected $demandeIdentifiantI18nsScheduledForDeletion = null;
 
     /**
      * Applies default values to this object.
@@ -1279,6 +1309,8 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
 
         if ($deep) {  // also de-associate any related objects?
 
+            $this->collDemandeIdentifiantI18ns = null;
+
         } // if (deep)
     }
 
@@ -1412,6 +1444,23 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
                 }
                 $affectedRows += 1;
                 $this->resetModified();
+            }
+
+            if ($this->demandeIdentifiantI18nsScheduledForDeletion !== null) {
+                if (!$this->demandeIdentifiantI18nsScheduledForDeletion->isEmpty()) {
+                    DemandeIdentifiantI18nQuery::create()
+                        ->filterByPrimaryKeys($this->demandeIdentifiantI18nsScheduledForDeletion->getPrimaryKeys(false))
+                        ->delete($con);
+                    $this->demandeIdentifiantI18nsScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collDemandeIdentifiantI18ns !== null) {
+                foreach ($this->collDemandeIdentifiantI18ns as $referrerFK) {
+                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
+                        $affectedRows += $referrerFK->save($con);
+                    }
+                }
             }
 
             $this->alreadyInSave = false;
@@ -1706,6 +1755,14 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
             }
 
 
+                if ($this->collDemandeIdentifiantI18ns !== null) {
+                    foreach ($this->collDemandeIdentifiantI18ns as $referrerFK) {
+                        if (!$referrerFK->validate($columns)) {
+                            $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
+                        }
+                    }
+                }
+
 
             $this->alreadyInValidation = false;
         }
@@ -1836,10 +1893,11 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
      *                    Defaults to BasePeer::TYPE_PHPNAME.
      * @param     boolean $includeLazyLoadColumns (optional) Whether to include lazy loaded columns. Defaults to true.
      * @param     array $alreadyDumpedObjects List of objects to skip to avoid recursion
+     * @param     boolean $includeForeignObjects (optional) Whether to include hydrated related objects. Default to FALSE.
      *
      * @return array an associative array containing the field names (as keys) and field values
      */
-    public function toArray($keyType = BasePeer::TYPE_PHPNAME, $includeLazyLoadColumns = true, $alreadyDumpedObjects = array())
+    public function toArray($keyType = BasePeer::TYPE_PHPNAME, $includeLazyLoadColumns = true, $alreadyDumpedObjects = array(), $includeForeignObjects = false)
     {
         if (isset($alreadyDumpedObjects['DemandeIdentifiant'][$this->getPrimaryKey()])) {
             return '*RECURSION*';
@@ -1874,6 +1932,11 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
             $keys[24] => $this->getUpdatedAt(),
             $keys[25] => $this->getActive(),
         );
+        if ($includeForeignObjects) {
+            if (null !== $this->collDemandeIdentifiantI18ns) {
+                $result['DemandeIdentifiantI18ns'] = $this->collDemandeIdentifiantI18ns->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
+            }
+        }
 
         return $result;
     }
@@ -2160,6 +2223,24 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
         $copyObj->setActive($this->getActive());
+
+        if ($deepCopy && !$this->startCopy) {
+            // important: temporarily setNew(false) because this affects the behavior of
+            // the getter/setter methods for fkey referrer objects.
+            $copyObj->setNew(false);
+            // store object hash to prevent cycle
+            $this->startCopy = true;
+
+            foreach ($this->getDemandeIdentifiantI18ns() as $relObj) {
+                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
+                    $copyObj->addDemandeIdentifiantI18n($relObj->copy($deepCopy));
+                }
+            }
+
+            //unflag object copy
+            $this->startCopy = false;
+        } // if ($deepCopy)
+
         if ($makeNew) {
             $copyObj->setNew(true);
             $copyObj->setId(NULL); // this is a auto-increment column, so set to default value
@@ -2204,6 +2285,241 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
         }
 
         return self::$peer;
+    }
+
+
+    /**
+     * Initializes a collection based on the name of a relation.
+     * Avoids crafting an 'init[$relationName]s' method name
+     * that wouldn't work when StandardEnglishPluralizer is used.
+     *
+     * @param string $relationName The name of the relation to initialize
+     * @return void
+     */
+    public function initRelation($relationName)
+    {
+        if ('DemandeIdentifiantI18n' == $relationName) {
+            $this->initDemandeIdentifiantI18ns();
+        }
+    }
+
+    /**
+     * Clears out the collDemandeIdentifiantI18ns collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return DemandeIdentifiant The current object (for fluent API support)
+     * @see        addDemandeIdentifiantI18ns()
+     */
+    public function clearDemandeIdentifiantI18ns()
+    {
+        $this->collDemandeIdentifiantI18ns = null; // important to set this to null since that means it is uninitialized
+        $this->collDemandeIdentifiantI18nsPartial = null;
+
+        return $this;
+    }
+
+    /**
+     * reset is the collDemandeIdentifiantI18ns collection loaded partially
+     *
+     * @return void
+     */
+    public function resetPartialDemandeIdentifiantI18ns($v = true)
+    {
+        $this->collDemandeIdentifiantI18nsPartial = $v;
+    }
+
+    /**
+     * Initializes the collDemandeIdentifiantI18ns collection.
+     *
+     * By default this just sets the collDemandeIdentifiantI18ns collection to an empty array (like clearcollDemandeIdentifiantI18ns());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @param boolean $overrideExisting If set to true, the method call initializes
+     *                                        the collection even if it is not empty
+     *
+     * @return void
+     */
+    public function initDemandeIdentifiantI18ns($overrideExisting = true)
+    {
+        if (null !== $this->collDemandeIdentifiantI18ns && !$overrideExisting) {
+            return;
+        }
+        $this->collDemandeIdentifiantI18ns = new PropelObjectCollection();
+        $this->collDemandeIdentifiantI18ns->setModel('DemandeIdentifiantI18n');
+    }
+
+    /**
+     * Gets an array of DemandeIdentifiantI18n objects which contain a foreign key that references this object.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this DemandeIdentifiant is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @return PropelObjectCollection|DemandeIdentifiantI18n[] List of DemandeIdentifiantI18n objects
+     * @throws PropelException
+     */
+    public function getDemandeIdentifiantI18ns($criteria = null, PropelPDO $con = null)
+    {
+        $partial = $this->collDemandeIdentifiantI18nsPartial && !$this->isNew();
+        if (null === $this->collDemandeIdentifiantI18ns || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collDemandeIdentifiantI18ns) {
+                // return empty collection
+                $this->initDemandeIdentifiantI18ns();
+            } else {
+                $collDemandeIdentifiantI18ns = DemandeIdentifiantI18nQuery::create(null, $criteria)
+                    ->filterByDemandeIdentifiant($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    if (false !== $this->collDemandeIdentifiantI18nsPartial && count($collDemandeIdentifiantI18ns)) {
+                      $this->initDemandeIdentifiantI18ns(false);
+
+                      foreach($collDemandeIdentifiantI18ns as $obj) {
+                        if (false == $this->collDemandeIdentifiantI18ns->contains($obj)) {
+                          $this->collDemandeIdentifiantI18ns->append($obj);
+                        }
+                      }
+
+                      $this->collDemandeIdentifiantI18nsPartial = true;
+                    }
+
+                    return $collDemandeIdentifiantI18ns;
+                }
+
+                if($partial && $this->collDemandeIdentifiantI18ns) {
+                    foreach($this->collDemandeIdentifiantI18ns as $obj) {
+                        if($obj->isNew()) {
+                            $collDemandeIdentifiantI18ns[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collDemandeIdentifiantI18ns = $collDemandeIdentifiantI18ns;
+                $this->collDemandeIdentifiantI18nsPartial = false;
+            }
+        }
+
+        return $this->collDemandeIdentifiantI18ns;
+    }
+
+    /**
+     * Sets a collection of DemandeIdentifiantI18n objects related by a one-to-many relationship
+     * to the current object.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $demandeIdentifiantI18ns A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     * @return DemandeIdentifiant The current object (for fluent API support)
+     */
+    public function setDemandeIdentifiantI18ns(PropelCollection $demandeIdentifiantI18ns, PropelPDO $con = null)
+    {
+        $this->demandeIdentifiantI18nsScheduledForDeletion = $this->getDemandeIdentifiantI18ns(new Criteria(), $con)->diff($demandeIdentifiantI18ns);
+
+        foreach ($this->demandeIdentifiantI18nsScheduledForDeletion as $demandeIdentifiantI18nRemoved) {
+            $demandeIdentifiantI18nRemoved->setDemandeIdentifiant(null);
+        }
+
+        $this->collDemandeIdentifiantI18ns = null;
+        foreach ($demandeIdentifiantI18ns as $demandeIdentifiantI18n) {
+            $this->addDemandeIdentifiantI18n($demandeIdentifiantI18n);
+        }
+
+        $this->collDemandeIdentifiantI18ns = $demandeIdentifiantI18ns;
+        $this->collDemandeIdentifiantI18nsPartial = false;
+
+        return $this;
+    }
+
+    /**
+     * Returns the number of related DemandeIdentifiantI18n objects.
+     *
+     * @param Criteria $criteria
+     * @param boolean $distinct
+     * @param PropelPDO $con
+     * @return int             Count of related DemandeIdentifiantI18n objects.
+     * @throws PropelException
+     */
+    public function countDemandeIdentifiantI18ns(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        $partial = $this->collDemandeIdentifiantI18nsPartial && !$this->isNew();
+        if (null === $this->collDemandeIdentifiantI18ns || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collDemandeIdentifiantI18ns) {
+                return 0;
+            }
+
+            if($partial && !$criteria) {
+                return count($this->getDemandeIdentifiantI18ns());
+            }
+            $query = DemandeIdentifiantI18nQuery::create(null, $criteria);
+            if ($distinct) {
+                $query->distinct();
+            }
+
+            return $query
+                ->filterByDemandeIdentifiant($this)
+                ->count($con);
+        }
+
+        return count($this->collDemandeIdentifiantI18ns);
+    }
+
+    /**
+     * Method called to associate a DemandeIdentifiantI18n object to this object
+     * through the DemandeIdentifiantI18n foreign key attribute.
+     *
+     * @param    DemandeIdentifiantI18n $l DemandeIdentifiantI18n
+     * @return DemandeIdentifiant The current object (for fluent API support)
+     */
+    public function addDemandeIdentifiantI18n(DemandeIdentifiantI18n $l)
+    {
+        if ($l && $locale = $l->getLocale()) {
+            $this->setLocale($locale);
+            $this->currentTranslations[$locale] = $l;
+        }
+        if ($this->collDemandeIdentifiantI18ns === null) {
+            $this->initDemandeIdentifiantI18ns();
+            $this->collDemandeIdentifiantI18nsPartial = true;
+        }
+        if (!in_array($l, $this->collDemandeIdentifiantI18ns->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
+            $this->doAddDemandeIdentifiantI18n($l);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	DemandeIdentifiantI18n $demandeIdentifiantI18n The demandeIdentifiantI18n object to add.
+     */
+    protected function doAddDemandeIdentifiantI18n($demandeIdentifiantI18n)
+    {
+        $this->collDemandeIdentifiantI18ns[]= $demandeIdentifiantI18n;
+        $demandeIdentifiantI18n->setDemandeIdentifiant($this);
+    }
+
+    /**
+     * @param	DemandeIdentifiantI18n $demandeIdentifiantI18n The demandeIdentifiantI18n object to remove.
+     * @return DemandeIdentifiant The current object (for fluent API support)
+     */
+    public function removeDemandeIdentifiantI18n($demandeIdentifiantI18n)
+    {
+        if ($this->getDemandeIdentifiantI18ns()->contains($demandeIdentifiantI18n)) {
+            $this->collDemandeIdentifiantI18ns->remove($this->collDemandeIdentifiantI18ns->search($demandeIdentifiantI18n));
+            if (null === $this->demandeIdentifiantI18nsScheduledForDeletion) {
+                $this->demandeIdentifiantI18nsScheduledForDeletion = clone $this->collDemandeIdentifiantI18ns;
+                $this->demandeIdentifiantI18nsScheduledForDeletion->clear();
+            }
+            $this->demandeIdentifiantI18nsScheduledForDeletion[]= $demandeIdentifiantI18n;
+            $demandeIdentifiantI18n->setDemandeIdentifiant(null);
+        }
+
+        return $this;
     }
 
     /**
@@ -2258,8 +2574,21 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
     public function clearAllReferences($deep = false)
     {
         if ($deep) {
+            if ($this->collDemandeIdentifiantI18ns) {
+                foreach ($this->collDemandeIdentifiantI18ns as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
         } // if ($deep)
 
+        // i18n behavior
+        $this->currentLocale = 'fr';
+        $this->currentTranslations = null;
+
+        if ($this->collDemandeIdentifiantI18ns instanceof PropelCollection) {
+            $this->collDemandeIdentifiantI18ns->clearIterator();
+        }
+        $this->collDemandeIdentifiantI18ns = null;
     }
 
     /**
@@ -2308,8 +2637,18 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
     {
         return $this->getActive();
     }
-    // crudable behavior
 
+    /**
+     * return true is the object is active locale
+     *
+     * @return boolean
+     */
+    public function isActiveLocale()
+    {
+        return $this->getActiveLocale();
+    }
+    // crudable behavior
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -2321,6 +2660,245 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
     public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
     {
         return $this->save($con);
+    }
+
+    // i18n behavior
+
+    /**
+     * Sets the locale for translations
+     *
+     * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
+     *
+     * @return    DemandeIdentifiant The current object (for fluent API support)
+     */
+    public function setLocale($locale = 'fr')
+    {
+        $this->currentLocale = $locale;
+
+        return $this;
+    }
+
+    /**
+     * Gets the locale for translations
+     *
+     * @return    string $locale Locale to use for the translation, e.g. 'fr_FR'
+     */
+    public function getLocale()
+    {
+        return $this->currentLocale;
+    }
+
+    /**
+     * Returns the current translation for a given locale
+     *
+     * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
+     * @param     PropelPDO $con an optional connection object
+     *
+     * @return DemandeIdentifiantI18n */
+    public function getTranslation($locale = 'fr', PropelPDO $con = null)
+    {
+        if (!isset($this->currentTranslations[$locale])) {
+            if (null !== $this->collDemandeIdentifiantI18ns) {
+                foreach ($this->collDemandeIdentifiantI18ns as $translation) {
+                    if ($translation->getLocale() == $locale) {
+                        $this->currentTranslations[$locale] = $translation;
+
+                        return $translation;
+                    }
+                }
+            }
+            if ($this->isNew()) {
+                $translation = new DemandeIdentifiantI18n();
+                $translation->setLocale($locale);
+            } else {
+                $translation = DemandeIdentifiantI18nQuery::create()
+                    ->filterByPrimaryKey(array($this->getPrimaryKey(), $locale))
+                    ->findOneOrCreate($con);
+                $this->currentTranslations[$locale] = $translation;
+            }
+            $this->addDemandeIdentifiantI18n($translation);
+        }
+
+        return $this->currentTranslations[$locale];
+    }
+
+    /**
+     * Remove the translation for a given locale
+     *
+     * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
+     * @param     PropelPDO $con an optional connection object
+     *
+     * @return    DemandeIdentifiant The current object (for fluent API support)
+     */
+    public function removeTranslation($locale = 'fr', PropelPDO $con = null)
+    {
+        if (!$this->isNew()) {
+            DemandeIdentifiantI18nQuery::create()
+                ->filterByPrimaryKey(array($this->getPrimaryKey(), $locale))
+                ->delete($con);
+        }
+        if (isset($this->currentTranslations[$locale])) {
+            unset($this->currentTranslations[$locale]);
+        }
+        foreach ($this->collDemandeIdentifiantI18ns as $key => $translation) {
+            if ($translation->getLocale() == $locale) {
+                unset($this->collDemandeIdentifiantI18ns[$key]);
+                break;
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Returns the current translation
+     *
+     * @param     PropelPDO $con an optional connection object
+     *
+     * @return DemandeIdentifiantI18n */
+    public function getCurrentTranslation(PropelPDO $con = null)
+    {
+        return $this->getTranslation($this->getLocale(), $con);
+    }
+
+    /**
+     * Get the [seo_title] column value.
+     *
+     * @return string
+     */
+    public function getSeoTitle()
+    {
+        if (trim($this->getCurrentTranslation()->getSeoTitle()))
+        {
+            return trim($this->getCurrentTranslation()->getSeoTitle());
+        }
+
+        $peerClassName = self::PEER;
+        if ($peerClassName::getSeo())
+        {
+            return $peerClassName::getSeo()->getSeoTitle();
+        }
+
+        return '';
+    }
+
+
+
+        /**
+         * Set the value of [seo_title] column.
+         *
+         * @param string $v new value
+         * @return DemandeIdentifiantI18n The current object (for fluent API support)
+         */
+        public function setSeoTitle($v)
+        {    $this->getCurrentTranslation()->setSeoTitle($v);
+
+        return $this;
+    }
+
+    /**
+     * Get the [seo_description] column value.
+     *
+     * @return string
+     */
+    public function getSeoDescription()
+    {
+        if (trim($this->getCurrentTranslation()->getSeoDescription()))
+        {
+            return trim($this->getCurrentTranslation()->getSeoDescription());
+        }
+
+        $peerClassName = self::PEER;
+        if ($peerClassName::getSeo())
+        {
+            return $peerClassName::getSeo()->getSeoDescription();
+        }
+
+        return '';
+    }
+
+
+
+        /**
+         * Set the value of [seo_description] column.
+         *
+         * @param string $v new value
+         * @return DemandeIdentifiantI18n The current object (for fluent API support)
+         */
+        public function setSeoDescription($v)
+        {    $this->getCurrentTranslation()->setSeoDescription($v);
+
+        return $this;
+    }
+
+    /**
+     * Get the [seo_h1] column value.
+     *
+     * @return string
+     */
+    public function getSeoH1()
+    {
+        if (trim($this->getCurrentTranslation()->getSeoH1()))
+        {
+            return trim($this->getCurrentTranslation()->getSeoH1());
+        }
+
+        $peerClassName = self::PEER;
+        if ($peerClassName::getSeo())
+        {
+            return $peerClassName::getSeo()->getSeoH1();
+        }
+
+        return '';
+    }
+
+
+
+        /**
+         * Set the value of [seo_h1] column.
+         *
+         * @param string $v new value
+         * @return DemandeIdentifiantI18n The current object (for fluent API support)
+         */
+        public function setSeoH1($v)
+        {    $this->getCurrentTranslation()->setSeoH1($v);
+
+        return $this;
+    }
+
+    /**
+     * Get the [seo_keywords] column value.
+     *
+     * @return string
+     */
+    public function getSeoKeywords()
+    {
+        if (trim($this->getCurrentTranslation()->getSeoKeywords()))
+        {
+            return trim($this->getCurrentTranslation()->getSeoKeywords());
+        }
+
+        $peerClassName = self::PEER;
+        if ($peerClassName::getSeo())
+        {
+            return $peerClassName::getSeo()->getSeoKeywords();
+        }
+
+        return '';
+    }
+
+
+
+        /**
+         * Set the value of [seo_keywords] column.
+         *
+         * @param string $v new value
+         * @return DemandeIdentifiantI18n The current object (for fluent API support)
+         */
+        public function setSeoKeywords($v)
+        {    $this->getCurrentTranslation()->setSeoKeywords($v);
+
+        return $this;
     }
 
 }

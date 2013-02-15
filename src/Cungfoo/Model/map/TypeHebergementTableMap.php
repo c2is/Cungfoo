@@ -90,7 +90,7 @@ class TypeHebergementTableMap extends TableMap
             'i18n' =>  array (
   'i18n_table' => '%TABLE%_i18n',
   'i18n_phpname' => '%PHPNAME%I18n',
-  'i18n_columns' => 'name,slug,indice,surface,type_terrasse,description,composition,presentation,capacite_hebergement,dimensions,agencement,equipements,annee_utilisation,remarque_1,remarque_2,remarque_3,remarque_4,active_locale',
+  'i18n_columns' => 'name,slug,indice,surface,type_terrasse,description,composition,presentation,capacite_hebergement,dimensions,agencement,equipements,annee_utilisation,remarque_1,remarque_2,remarque_3,remarque_4,active_locale,seo_title,seo_description,seo_h1,seo_keywords',
   'i18n_pk_name' => NULL,
   'locale_column' => 'locale',
   'default_locale' => 'fr',
@@ -103,6 +103,11 @@ class TypeHebergementTableMap extends TableMap
   'crud_form' => NULL,
   'crud_type_file' => 'image_hebergement_path, image_composition_path',
   'crud_search' => 'name',
+),
+            'seo' =>  array (
+  'seo_columns' => 'seo_title,seo_description,seo_h1,seo_keywords',
+  'seo_description' => 'LONGVARCHAR',
+  'seo_keywords' => 'LONGVARCHAR',
 ),
         );
     } // getBehaviors()

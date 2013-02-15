@@ -9,10 +9,14 @@ use \Exception;
 use \PDO;
 use \Persistent;
 use \Propel;
+use \PropelCollection;
 use \PropelDateTime;
 use \PropelException;
+use \PropelObjectCollection;
 use \PropelPDO;
 use Cungfoo\Model\DemandeAnnulation;
+use Cungfoo\Model\DemandeAnnulationI18n;
+use Cungfoo\Model\DemandeAnnulationI18nQuery;
 use Cungfoo\Model\DemandeAnnulationPeer;
 use Cungfoo\Model\DemandeAnnulationQuery;
 use Cungfoo\Model\Etablissement;
@@ -198,6 +202,12 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
     protected $aEtablissement;
 
     /**
+     * @var        PropelObjectCollection|DemandeAnnulationI18n[] Collection to store aggregation of DemandeAnnulationI18n objects.
+     */
+    protected $collDemandeAnnulationI18ns;
+    protected $collDemandeAnnulationI18nsPartial;
+
+    /**
      * Flag to prevent endless save loop, if this object is referenced
      * by another object which falls in this transaction.
      * @var        boolean
@@ -210,6 +220,26 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
      * @var        boolean
      */
     protected $alreadyInValidation = false;
+
+    // i18n behavior
+
+    /**
+     * Current locale
+     * @var        string
+     */
+    protected $currentLocale = 'fr';
+
+    /**
+     * Current translation objects
+     * @var        array[DemandeAnnulationI18n]
+     */
+    protected $currentTranslations;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
+    protected $demandeAnnulationI18nsScheduledForDeletion = null;
 
     /**
      * Applies default values to this object.
@@ -1214,6 +1244,8 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
         if ($deep) {  // also de-associate any related objects?
 
             $this->aEtablissement = null;
+            $this->collDemandeAnnulationI18ns = null;
+
         } // if (deep)
     }
 
@@ -1359,6 +1391,23 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
                 }
                 $affectedRows += 1;
                 $this->resetModified();
+            }
+
+            if ($this->demandeAnnulationI18nsScheduledForDeletion !== null) {
+                if (!$this->demandeAnnulationI18nsScheduledForDeletion->isEmpty()) {
+                    DemandeAnnulationI18nQuery::create()
+                        ->filterByPrimaryKeys($this->demandeAnnulationI18nsScheduledForDeletion->getPrimaryKeys(false))
+                        ->delete($con);
+                    $this->demandeAnnulationI18nsScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collDemandeAnnulationI18ns !== null) {
+                foreach ($this->collDemandeAnnulationI18ns as $referrerFK) {
+                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
+                        $affectedRows += $referrerFK->save($con);
+                    }
+                }
             }
 
             $this->alreadyInSave = false;
@@ -1653,6 +1702,14 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
             }
 
 
+                if ($this->collDemandeAnnulationI18ns !== null) {
+                    foreach ($this->collDemandeAnnulationI18ns as $referrerFK) {
+                        if (!$referrerFK->validate($columns)) {
+                            $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
+                        }
+                    }
+                }
+
 
             $this->alreadyInValidation = false;
         }
@@ -1817,6 +1874,9 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
         if ($includeForeignObjects) {
             if (null !== $this->aEtablissement) {
                 $result['Etablissement'] = $this->aEtablissement->toArray($keyType, $includeLazyLoadColumns,  $alreadyDumpedObjects, true);
+            }
+            if (null !== $this->collDemandeAnnulationI18ns) {
+                $result['DemandeAnnulationI18ns'] = $this->collDemandeAnnulationI18ns->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
         }
 
@@ -2109,6 +2169,12 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
             // store object hash to prevent cycle
             $this->startCopy = true;
 
+            foreach ($this->getDemandeAnnulationI18ns() as $relObj) {
+                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
+                    $copyObj->addDemandeAnnulationI18n($relObj->copy($deepCopy));
+                }
+            }
+
             //unflag object copy
             $this->startCopy = false;
         } // if ($deepCopy)
@@ -2211,6 +2277,241 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
         return $this->aEtablissement;
     }
 
+
+    /**
+     * Initializes a collection based on the name of a relation.
+     * Avoids crafting an 'init[$relationName]s' method name
+     * that wouldn't work when StandardEnglishPluralizer is used.
+     *
+     * @param string $relationName The name of the relation to initialize
+     * @return void
+     */
+    public function initRelation($relationName)
+    {
+        if ('DemandeAnnulationI18n' == $relationName) {
+            $this->initDemandeAnnulationI18ns();
+        }
+    }
+
+    /**
+     * Clears out the collDemandeAnnulationI18ns collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return DemandeAnnulation The current object (for fluent API support)
+     * @see        addDemandeAnnulationI18ns()
+     */
+    public function clearDemandeAnnulationI18ns()
+    {
+        $this->collDemandeAnnulationI18ns = null; // important to set this to null since that means it is uninitialized
+        $this->collDemandeAnnulationI18nsPartial = null;
+
+        return $this;
+    }
+
+    /**
+     * reset is the collDemandeAnnulationI18ns collection loaded partially
+     *
+     * @return void
+     */
+    public function resetPartialDemandeAnnulationI18ns($v = true)
+    {
+        $this->collDemandeAnnulationI18nsPartial = $v;
+    }
+
+    /**
+     * Initializes the collDemandeAnnulationI18ns collection.
+     *
+     * By default this just sets the collDemandeAnnulationI18ns collection to an empty array (like clearcollDemandeAnnulationI18ns());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @param boolean $overrideExisting If set to true, the method call initializes
+     *                                        the collection even if it is not empty
+     *
+     * @return void
+     */
+    public function initDemandeAnnulationI18ns($overrideExisting = true)
+    {
+        if (null !== $this->collDemandeAnnulationI18ns && !$overrideExisting) {
+            return;
+        }
+        $this->collDemandeAnnulationI18ns = new PropelObjectCollection();
+        $this->collDemandeAnnulationI18ns->setModel('DemandeAnnulationI18n');
+    }
+
+    /**
+     * Gets an array of DemandeAnnulationI18n objects which contain a foreign key that references this object.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this DemandeAnnulation is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @return PropelObjectCollection|DemandeAnnulationI18n[] List of DemandeAnnulationI18n objects
+     * @throws PropelException
+     */
+    public function getDemandeAnnulationI18ns($criteria = null, PropelPDO $con = null)
+    {
+        $partial = $this->collDemandeAnnulationI18nsPartial && !$this->isNew();
+        if (null === $this->collDemandeAnnulationI18ns || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collDemandeAnnulationI18ns) {
+                // return empty collection
+                $this->initDemandeAnnulationI18ns();
+            } else {
+                $collDemandeAnnulationI18ns = DemandeAnnulationI18nQuery::create(null, $criteria)
+                    ->filterByDemandeAnnulation($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    if (false !== $this->collDemandeAnnulationI18nsPartial && count($collDemandeAnnulationI18ns)) {
+                      $this->initDemandeAnnulationI18ns(false);
+
+                      foreach($collDemandeAnnulationI18ns as $obj) {
+                        if (false == $this->collDemandeAnnulationI18ns->contains($obj)) {
+                          $this->collDemandeAnnulationI18ns->append($obj);
+                        }
+                      }
+
+                      $this->collDemandeAnnulationI18nsPartial = true;
+                    }
+
+                    return $collDemandeAnnulationI18ns;
+                }
+
+                if($partial && $this->collDemandeAnnulationI18ns) {
+                    foreach($this->collDemandeAnnulationI18ns as $obj) {
+                        if($obj->isNew()) {
+                            $collDemandeAnnulationI18ns[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collDemandeAnnulationI18ns = $collDemandeAnnulationI18ns;
+                $this->collDemandeAnnulationI18nsPartial = false;
+            }
+        }
+
+        return $this->collDemandeAnnulationI18ns;
+    }
+
+    /**
+     * Sets a collection of DemandeAnnulationI18n objects related by a one-to-many relationship
+     * to the current object.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $demandeAnnulationI18ns A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     * @return DemandeAnnulation The current object (for fluent API support)
+     */
+    public function setDemandeAnnulationI18ns(PropelCollection $demandeAnnulationI18ns, PropelPDO $con = null)
+    {
+        $this->demandeAnnulationI18nsScheduledForDeletion = $this->getDemandeAnnulationI18ns(new Criteria(), $con)->diff($demandeAnnulationI18ns);
+
+        foreach ($this->demandeAnnulationI18nsScheduledForDeletion as $demandeAnnulationI18nRemoved) {
+            $demandeAnnulationI18nRemoved->setDemandeAnnulation(null);
+        }
+
+        $this->collDemandeAnnulationI18ns = null;
+        foreach ($demandeAnnulationI18ns as $demandeAnnulationI18n) {
+            $this->addDemandeAnnulationI18n($demandeAnnulationI18n);
+        }
+
+        $this->collDemandeAnnulationI18ns = $demandeAnnulationI18ns;
+        $this->collDemandeAnnulationI18nsPartial = false;
+
+        return $this;
+    }
+
+    /**
+     * Returns the number of related DemandeAnnulationI18n objects.
+     *
+     * @param Criteria $criteria
+     * @param boolean $distinct
+     * @param PropelPDO $con
+     * @return int             Count of related DemandeAnnulationI18n objects.
+     * @throws PropelException
+     */
+    public function countDemandeAnnulationI18ns(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        $partial = $this->collDemandeAnnulationI18nsPartial && !$this->isNew();
+        if (null === $this->collDemandeAnnulationI18ns || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collDemandeAnnulationI18ns) {
+                return 0;
+            }
+
+            if($partial && !$criteria) {
+                return count($this->getDemandeAnnulationI18ns());
+            }
+            $query = DemandeAnnulationI18nQuery::create(null, $criteria);
+            if ($distinct) {
+                $query->distinct();
+            }
+
+            return $query
+                ->filterByDemandeAnnulation($this)
+                ->count($con);
+        }
+
+        return count($this->collDemandeAnnulationI18ns);
+    }
+
+    /**
+     * Method called to associate a DemandeAnnulationI18n object to this object
+     * through the DemandeAnnulationI18n foreign key attribute.
+     *
+     * @param    DemandeAnnulationI18n $l DemandeAnnulationI18n
+     * @return DemandeAnnulation The current object (for fluent API support)
+     */
+    public function addDemandeAnnulationI18n(DemandeAnnulationI18n $l)
+    {
+        if ($l && $locale = $l->getLocale()) {
+            $this->setLocale($locale);
+            $this->currentTranslations[$locale] = $l;
+        }
+        if ($this->collDemandeAnnulationI18ns === null) {
+            $this->initDemandeAnnulationI18ns();
+            $this->collDemandeAnnulationI18nsPartial = true;
+        }
+        if (!in_array($l, $this->collDemandeAnnulationI18ns->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
+            $this->doAddDemandeAnnulationI18n($l);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	DemandeAnnulationI18n $demandeAnnulationI18n The demandeAnnulationI18n object to add.
+     */
+    protected function doAddDemandeAnnulationI18n($demandeAnnulationI18n)
+    {
+        $this->collDemandeAnnulationI18ns[]= $demandeAnnulationI18n;
+        $demandeAnnulationI18n->setDemandeAnnulation($this);
+    }
+
+    /**
+     * @param	DemandeAnnulationI18n $demandeAnnulationI18n The demandeAnnulationI18n object to remove.
+     * @return DemandeAnnulation The current object (for fluent API support)
+     */
+    public function removeDemandeAnnulationI18n($demandeAnnulationI18n)
+    {
+        if ($this->getDemandeAnnulationI18ns()->contains($demandeAnnulationI18n)) {
+            $this->collDemandeAnnulationI18ns->remove($this->collDemandeAnnulationI18ns->search($demandeAnnulationI18n));
+            if (null === $this->demandeAnnulationI18nsScheduledForDeletion) {
+                $this->demandeAnnulationI18nsScheduledForDeletion = clone $this->collDemandeAnnulationI18ns;
+                $this->demandeAnnulationI18nsScheduledForDeletion->clear();
+            }
+            $this->demandeAnnulationI18nsScheduledForDeletion[]= $demandeAnnulationI18n;
+            $demandeAnnulationI18n->setDemandeAnnulation(null);
+        }
+
+        return $this;
+    }
+
     /**
      * Clears the current object and sets all attributes to their default values
      */
@@ -2261,8 +2562,21 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
     public function clearAllReferences($deep = false)
     {
         if ($deep) {
+            if ($this->collDemandeAnnulationI18ns) {
+                foreach ($this->collDemandeAnnulationI18ns as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
         } // if ($deep)
 
+        // i18n behavior
+        $this->currentLocale = 'fr';
+        $this->currentTranslations = null;
+
+        if ($this->collDemandeAnnulationI18ns instanceof PropelCollection) {
+            $this->collDemandeAnnulationI18ns->clearIterator();
+        }
+        $this->collDemandeAnnulationI18ns = null;
         $this->aEtablissement = null;
     }
 
@@ -2312,8 +2626,18 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
     {
         return $this->getActive();
     }
-    // crudable behavior
 
+    /**
+     * return true is the object is active locale
+     *
+     * @return boolean
+     */
+    public function isActiveLocale()
+    {
+        return $this->getActiveLocale();
+    }
+    // crudable behavior
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -2328,33 +2652,33 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
         {
             $this->resetModified(DemandeAnnulationPeer::FILE_1);
         }
-
+    
         $this->uploadFile1($form);
-
+        
         if (!$form['file_2_deleted']->getData())
         {
             $this->resetModified(DemandeAnnulationPeer::FILE_2);
         }
-
+    
         $this->uploadFile2($form);
-
+        
         if (!$form['file_3_deleted']->getData())
         {
             $this->resetModified(DemandeAnnulationPeer::FILE_3);
         }
-
+    
         $this->uploadFile3($form);
-
+        
         if (!$form['file_4_deleted']->getData())
         {
             $this->resetModified(DemandeAnnulationPeer::FILE_4);
         }
-
+    
         $this->uploadFile4($form);
-
+        
         return $this->save($con);
     }
-
+    
     /**
      * @return string
      */
@@ -2362,7 +2686,7 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
     {
         return 'uploads/demande_annulations';
     }
-
+    
     /**
      * @return string
      */
@@ -2370,7 +2694,7 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -2386,7 +2710,7 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
             }
         }
     }
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -2402,7 +2726,7 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
             }
         }
     }
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -2418,7 +2742,7 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
             }
         }
     }
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -2433,6 +2757,245 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
                 $this->setFile4($this->getUploadDir() . '/' . $image);
             }
         }
+    }
+
+    // i18n behavior
+
+    /**
+     * Sets the locale for translations
+     *
+     * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
+     *
+     * @return    DemandeAnnulation The current object (for fluent API support)
+     */
+    public function setLocale($locale = 'fr')
+    {
+        $this->currentLocale = $locale;
+
+        return $this;
+    }
+
+    /**
+     * Gets the locale for translations
+     *
+     * @return    string $locale Locale to use for the translation, e.g. 'fr_FR'
+     */
+    public function getLocale()
+    {
+        return $this->currentLocale;
+    }
+
+    /**
+     * Returns the current translation for a given locale
+     *
+     * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
+     * @param     PropelPDO $con an optional connection object
+     *
+     * @return DemandeAnnulationI18n */
+    public function getTranslation($locale = 'fr', PropelPDO $con = null)
+    {
+        if (!isset($this->currentTranslations[$locale])) {
+            if (null !== $this->collDemandeAnnulationI18ns) {
+                foreach ($this->collDemandeAnnulationI18ns as $translation) {
+                    if ($translation->getLocale() == $locale) {
+                        $this->currentTranslations[$locale] = $translation;
+
+                        return $translation;
+                    }
+                }
+            }
+            if ($this->isNew()) {
+                $translation = new DemandeAnnulationI18n();
+                $translation->setLocale($locale);
+            } else {
+                $translation = DemandeAnnulationI18nQuery::create()
+                    ->filterByPrimaryKey(array($this->getPrimaryKey(), $locale))
+                    ->findOneOrCreate($con);
+                $this->currentTranslations[$locale] = $translation;
+            }
+            $this->addDemandeAnnulationI18n($translation);
+        }
+
+        return $this->currentTranslations[$locale];
+    }
+
+    /**
+     * Remove the translation for a given locale
+     *
+     * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
+     * @param     PropelPDO $con an optional connection object
+     *
+     * @return    DemandeAnnulation The current object (for fluent API support)
+     */
+    public function removeTranslation($locale = 'fr', PropelPDO $con = null)
+    {
+        if (!$this->isNew()) {
+            DemandeAnnulationI18nQuery::create()
+                ->filterByPrimaryKey(array($this->getPrimaryKey(), $locale))
+                ->delete($con);
+        }
+        if (isset($this->currentTranslations[$locale])) {
+            unset($this->currentTranslations[$locale]);
+        }
+        foreach ($this->collDemandeAnnulationI18ns as $key => $translation) {
+            if ($translation->getLocale() == $locale) {
+                unset($this->collDemandeAnnulationI18ns[$key]);
+                break;
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Returns the current translation
+     *
+     * @param     PropelPDO $con an optional connection object
+     *
+     * @return DemandeAnnulationI18n */
+    public function getCurrentTranslation(PropelPDO $con = null)
+    {
+        return $this->getTranslation($this->getLocale(), $con);
+    }
+
+    /**
+     * Get the [seo_title] column value.
+     *
+     * @return string
+     */
+    public function getSeoTitle()
+    {
+        if (trim($this->getCurrentTranslation()->getSeoTitle()))
+        {
+            return trim($this->getCurrentTranslation()->getSeoTitle());
+        }
+
+        $peerClassName = self::PEER;
+        if ($peerClassName::getSeo())
+        {
+            return $peerClassName::getSeo()->getSeoTitle();
+        }
+
+        return '';
+    }
+
+
+
+        /**
+         * Set the value of [seo_title] column.
+         *
+         * @param string $v new value
+         * @return DemandeAnnulationI18n The current object (for fluent API support)
+         */
+        public function setSeoTitle($v)
+        {    $this->getCurrentTranslation()->setSeoTitle($v);
+
+        return $this;
+    }
+
+    /**
+     * Get the [seo_description] column value.
+     *
+     * @return string
+     */
+    public function getSeoDescription()
+    {
+        if (trim($this->getCurrentTranslation()->getSeoDescription()))
+        {
+            return trim($this->getCurrentTranslation()->getSeoDescription());
+        }
+
+        $peerClassName = self::PEER;
+        if ($peerClassName::getSeo())
+        {
+            return $peerClassName::getSeo()->getSeoDescription();
+        }
+
+        return '';
+    }
+
+
+
+        /**
+         * Set the value of [seo_description] column.
+         *
+         * @param string $v new value
+         * @return DemandeAnnulationI18n The current object (for fluent API support)
+         */
+        public function setSeoDescription($v)
+        {    $this->getCurrentTranslation()->setSeoDescription($v);
+
+        return $this;
+    }
+
+    /**
+     * Get the [seo_h1] column value.
+     *
+     * @return string
+     */
+    public function getSeoH1()
+    {
+        if (trim($this->getCurrentTranslation()->getSeoH1()))
+        {
+            return trim($this->getCurrentTranslation()->getSeoH1());
+        }
+
+        $peerClassName = self::PEER;
+        if ($peerClassName::getSeo())
+        {
+            return $peerClassName::getSeo()->getSeoH1();
+        }
+
+        return '';
+    }
+
+
+
+        /**
+         * Set the value of [seo_h1] column.
+         *
+         * @param string $v new value
+         * @return DemandeAnnulationI18n The current object (for fluent API support)
+         */
+        public function setSeoH1($v)
+        {    $this->getCurrentTranslation()->setSeoH1($v);
+
+        return $this;
+    }
+
+    /**
+     * Get the [seo_keywords] column value.
+     *
+     * @return string
+     */
+    public function getSeoKeywords()
+    {
+        if (trim($this->getCurrentTranslation()->getSeoKeywords()))
+        {
+            return trim($this->getCurrentTranslation()->getSeoKeywords());
+        }
+
+        $peerClassName = self::PEER;
+        if ($peerClassName::getSeo())
+        {
+            return $peerClassName::getSeo()->getSeoKeywords();
+        }
+
+        return '';
+    }
+
+
+
+        /**
+         * Set the value of [seo_keywords] column.
+         *
+         * @param string $v new value
+         * @return DemandeAnnulationI18n The current object (for fluent API support)
+         */
+        public function setSeoKeywords($v)
+        {    $this->getCurrentTranslation()->setSeoKeywords($v);
+
+        return $this;
     }
 
 }

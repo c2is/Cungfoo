@@ -37,13 +37,13 @@ abstract class BaseEventI18nPeer
     const TM_CLASS = 'EventI18nTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 9;
+    const NUM_COLUMNS = 13;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 9;
+    const NUM_HYDRATE_COLUMNS = 13;
 
     /** the column name for the id field */
     const ID = 'event_i18n.id';
@@ -72,6 +72,18 @@ abstract class BaseEventI18nPeer
     /** the column name for the active_locale field */
     const ACTIVE_LOCALE = 'event_i18n.active_locale';
 
+    /** the column name for the seo_title field */
+    const SEO_TITLE = 'event_i18n.seo_title';
+
+    /** the column name for the seo_description field */
+    const SEO_DESCRIPTION = 'event_i18n.seo_description';
+
+    /** the column name for the seo_h1 field */
+    const SEO_H1 = 'event_i18n.seo_h1';
+
+    /** the column name for the seo_keywords field */
+    const SEO_KEYWORDS = 'event_i18n.seo_keywords';
+
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
 
@@ -91,12 +103,12 @@ abstract class BaseEventI18nPeer
      * e.g. EventI18nPeer::$fieldNames[EventI18nPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Name', 'StrDate', 'Subtitle', 'Description', 'Transport', 'Slug', 'ActiveLocale', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'name', 'strDate', 'subtitle', 'description', 'transport', 'slug', 'activeLocale', ),
-        BasePeer::TYPE_COLNAME => array (EventI18nPeer::ID, EventI18nPeer::LOCALE, EventI18nPeer::NAME, EventI18nPeer::STR_DATE, EventI18nPeer::SUBTITLE, EventI18nPeer::DESCRIPTION, EventI18nPeer::TRANSPORT, EventI18nPeer::SLUG, EventI18nPeer::ACTIVE_LOCALE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'NAME', 'STR_DATE', 'SUBTITLE', 'DESCRIPTION', 'TRANSPORT', 'SLUG', 'ACTIVE_LOCALE', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'name', 'str_date', 'subtitle', 'description', 'transport', 'slug', 'active_locale', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Name', 'StrDate', 'Subtitle', 'Description', 'Transport', 'Slug', 'ActiveLocale', 'SeoTitle', 'SeoDescription', 'SeoH1', 'SeoKeywords', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'name', 'strDate', 'subtitle', 'description', 'transport', 'slug', 'activeLocale', 'seoTitle', 'seoDescription', 'seoH1', 'seoKeywords', ),
+        BasePeer::TYPE_COLNAME => array (EventI18nPeer::ID, EventI18nPeer::LOCALE, EventI18nPeer::NAME, EventI18nPeer::STR_DATE, EventI18nPeer::SUBTITLE, EventI18nPeer::DESCRIPTION, EventI18nPeer::TRANSPORT, EventI18nPeer::SLUG, EventI18nPeer::ACTIVE_LOCALE, EventI18nPeer::SEO_TITLE, EventI18nPeer::SEO_DESCRIPTION, EventI18nPeer::SEO_H1, EventI18nPeer::SEO_KEYWORDS, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'NAME', 'STR_DATE', 'SUBTITLE', 'DESCRIPTION', 'TRANSPORT', 'SLUG', 'ACTIVE_LOCALE', 'SEO_TITLE', 'SEO_DESCRIPTION', 'SEO_H1', 'SEO_KEYWORDS', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'name', 'str_date', 'subtitle', 'description', 'transport', 'slug', 'active_locale', 'seo_title', 'seo_description', 'seo_h1', 'seo_keywords', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, )
     );
 
     /**
@@ -106,12 +118,12 @@ abstract class BaseEventI18nPeer
      * e.g. EventI18nPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Name' => 2, 'StrDate' => 3, 'Subtitle' => 4, 'Description' => 5, 'Transport' => 6, 'Slug' => 7, 'ActiveLocale' => 8, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'strDate' => 3, 'subtitle' => 4, 'description' => 5, 'transport' => 6, 'slug' => 7, 'activeLocale' => 8, ),
-        BasePeer::TYPE_COLNAME => array (EventI18nPeer::ID => 0, EventI18nPeer::LOCALE => 1, EventI18nPeer::NAME => 2, EventI18nPeer::STR_DATE => 3, EventI18nPeer::SUBTITLE => 4, EventI18nPeer::DESCRIPTION => 5, EventI18nPeer::TRANSPORT => 6, EventI18nPeer::SLUG => 7, EventI18nPeer::ACTIVE_LOCALE => 8, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'NAME' => 2, 'STR_DATE' => 3, 'SUBTITLE' => 4, 'DESCRIPTION' => 5, 'TRANSPORT' => 6, 'SLUG' => 7, 'ACTIVE_LOCALE' => 8, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'str_date' => 3, 'subtitle' => 4, 'description' => 5, 'transport' => 6, 'slug' => 7, 'active_locale' => 8, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Name' => 2, 'StrDate' => 3, 'Subtitle' => 4, 'Description' => 5, 'Transport' => 6, 'Slug' => 7, 'ActiveLocale' => 8, 'SeoTitle' => 9, 'SeoDescription' => 10, 'SeoH1' => 11, 'SeoKeywords' => 12, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'strDate' => 3, 'subtitle' => 4, 'description' => 5, 'transport' => 6, 'slug' => 7, 'activeLocale' => 8, 'seoTitle' => 9, 'seoDescription' => 10, 'seoH1' => 11, 'seoKeywords' => 12, ),
+        BasePeer::TYPE_COLNAME => array (EventI18nPeer::ID => 0, EventI18nPeer::LOCALE => 1, EventI18nPeer::NAME => 2, EventI18nPeer::STR_DATE => 3, EventI18nPeer::SUBTITLE => 4, EventI18nPeer::DESCRIPTION => 5, EventI18nPeer::TRANSPORT => 6, EventI18nPeer::SLUG => 7, EventI18nPeer::ACTIVE_LOCALE => 8, EventI18nPeer::SEO_TITLE => 9, EventI18nPeer::SEO_DESCRIPTION => 10, EventI18nPeer::SEO_H1 => 11, EventI18nPeer::SEO_KEYWORDS => 12, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'NAME' => 2, 'STR_DATE' => 3, 'SUBTITLE' => 4, 'DESCRIPTION' => 5, 'TRANSPORT' => 6, 'SLUG' => 7, 'ACTIVE_LOCALE' => 8, 'SEO_TITLE' => 9, 'SEO_DESCRIPTION' => 10, 'SEO_H1' => 11, 'SEO_KEYWORDS' => 12, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'str_date' => 3, 'subtitle' => 4, 'description' => 5, 'transport' => 6, 'slug' => 7, 'active_locale' => 8, 'seo_title' => 9, 'seo_description' => 10, 'seo_h1' => 11, 'seo_keywords' => 12, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, )
     );
 
     /**
@@ -194,6 +206,10 @@ abstract class BaseEventI18nPeer
             $criteria->addSelectColumn(EventI18nPeer::TRANSPORT);
             $criteria->addSelectColumn(EventI18nPeer::SLUG);
             $criteria->addSelectColumn(EventI18nPeer::ACTIVE_LOCALE);
+            $criteria->addSelectColumn(EventI18nPeer::SEO_TITLE);
+            $criteria->addSelectColumn(EventI18nPeer::SEO_DESCRIPTION);
+            $criteria->addSelectColumn(EventI18nPeer::SEO_H1);
+            $criteria->addSelectColumn(EventI18nPeer::SEO_KEYWORDS);
         } else {
             $criteria->addSelectColumn($alias . '.id');
             $criteria->addSelectColumn($alias . '.locale');
@@ -204,6 +220,10 @@ abstract class BaseEventI18nPeer
             $criteria->addSelectColumn($alias . '.transport');
             $criteria->addSelectColumn($alias . '.slug');
             $criteria->addSelectColumn($alias . '.active_locale');
+            $criteria->addSelectColumn($alias . '.seo_title');
+            $criteria->addSelectColumn($alias . '.seo_description');
+            $criteria->addSelectColumn($alias . '.seo_h1');
+            $criteria->addSelectColumn($alias . '.seo_keywords');
         }
     }
 

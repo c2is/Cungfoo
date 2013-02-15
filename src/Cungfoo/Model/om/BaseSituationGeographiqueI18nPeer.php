@@ -37,13 +37,13 @@ abstract class BaseSituationGeographiqueI18nPeer
     const TM_CLASS = 'SituationGeographiqueI18nTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 6;
+    const NUM_COLUMNS = 10;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 6;
+    const NUM_HYDRATE_COLUMNS = 10;
 
     /** the column name for the id field */
     const ID = 'situation_geographique_i18n.id';
@@ -62,6 +62,18 @@ abstract class BaseSituationGeographiqueI18nPeer
 
     /** the column name for the active_locale field */
     const ACTIVE_LOCALE = 'situation_geographique_i18n.active_locale';
+
+    /** the column name for the seo_title field */
+    const SEO_TITLE = 'situation_geographique_i18n.seo_title';
+
+    /** the column name for the seo_description field */
+    const SEO_DESCRIPTION = 'situation_geographique_i18n.seo_description';
+
+    /** the column name for the seo_h1 field */
+    const SEO_H1 = 'situation_geographique_i18n.seo_h1';
+
+    /** the column name for the seo_keywords field */
+    const SEO_KEYWORDS = 'situation_geographique_i18n.seo_keywords';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -82,12 +94,12 @@ abstract class BaseSituationGeographiqueI18nPeer
      * e.g. SituationGeographiqueI18nPeer::$fieldNames[SituationGeographiqueI18nPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Name', 'Description', 'Keywords', 'ActiveLocale', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'name', 'description', 'keywords', 'activeLocale', ),
-        BasePeer::TYPE_COLNAME => array (SituationGeographiqueI18nPeer::ID, SituationGeographiqueI18nPeer::LOCALE, SituationGeographiqueI18nPeer::NAME, SituationGeographiqueI18nPeer::DESCRIPTION, SituationGeographiqueI18nPeer::KEYWORDS, SituationGeographiqueI18nPeer::ACTIVE_LOCALE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'NAME', 'DESCRIPTION', 'KEYWORDS', 'ACTIVE_LOCALE', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'name', 'description', 'keywords', 'active_locale', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Name', 'Description', 'Keywords', 'ActiveLocale', 'SeoTitle', 'SeoDescription', 'SeoH1', 'SeoKeywords', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'name', 'description', 'keywords', 'activeLocale', 'seoTitle', 'seoDescription', 'seoH1', 'seoKeywords', ),
+        BasePeer::TYPE_COLNAME => array (SituationGeographiqueI18nPeer::ID, SituationGeographiqueI18nPeer::LOCALE, SituationGeographiqueI18nPeer::NAME, SituationGeographiqueI18nPeer::DESCRIPTION, SituationGeographiqueI18nPeer::KEYWORDS, SituationGeographiqueI18nPeer::ACTIVE_LOCALE, SituationGeographiqueI18nPeer::SEO_TITLE, SituationGeographiqueI18nPeer::SEO_DESCRIPTION, SituationGeographiqueI18nPeer::SEO_H1, SituationGeographiqueI18nPeer::SEO_KEYWORDS, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'NAME', 'DESCRIPTION', 'KEYWORDS', 'ACTIVE_LOCALE', 'SEO_TITLE', 'SEO_DESCRIPTION', 'SEO_H1', 'SEO_KEYWORDS', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'name', 'description', 'keywords', 'active_locale', 'seo_title', 'seo_description', 'seo_h1', 'seo_keywords', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, )
     );
 
     /**
@@ -97,12 +109,12 @@ abstract class BaseSituationGeographiqueI18nPeer
      * e.g. SituationGeographiqueI18nPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Name' => 2, 'Description' => 3, 'Keywords' => 4, 'ActiveLocale' => 5, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'description' => 3, 'keywords' => 4, 'activeLocale' => 5, ),
-        BasePeer::TYPE_COLNAME => array (SituationGeographiqueI18nPeer::ID => 0, SituationGeographiqueI18nPeer::LOCALE => 1, SituationGeographiqueI18nPeer::NAME => 2, SituationGeographiqueI18nPeer::DESCRIPTION => 3, SituationGeographiqueI18nPeer::KEYWORDS => 4, SituationGeographiqueI18nPeer::ACTIVE_LOCALE => 5, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'NAME' => 2, 'DESCRIPTION' => 3, 'KEYWORDS' => 4, 'ACTIVE_LOCALE' => 5, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'description' => 3, 'keywords' => 4, 'active_locale' => 5, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Name' => 2, 'Description' => 3, 'Keywords' => 4, 'ActiveLocale' => 5, 'SeoTitle' => 6, 'SeoDescription' => 7, 'SeoH1' => 8, 'SeoKeywords' => 9, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'description' => 3, 'keywords' => 4, 'activeLocale' => 5, 'seoTitle' => 6, 'seoDescription' => 7, 'seoH1' => 8, 'seoKeywords' => 9, ),
+        BasePeer::TYPE_COLNAME => array (SituationGeographiqueI18nPeer::ID => 0, SituationGeographiqueI18nPeer::LOCALE => 1, SituationGeographiqueI18nPeer::NAME => 2, SituationGeographiqueI18nPeer::DESCRIPTION => 3, SituationGeographiqueI18nPeer::KEYWORDS => 4, SituationGeographiqueI18nPeer::ACTIVE_LOCALE => 5, SituationGeographiqueI18nPeer::SEO_TITLE => 6, SituationGeographiqueI18nPeer::SEO_DESCRIPTION => 7, SituationGeographiqueI18nPeer::SEO_H1 => 8, SituationGeographiqueI18nPeer::SEO_KEYWORDS => 9, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'NAME' => 2, 'DESCRIPTION' => 3, 'KEYWORDS' => 4, 'ACTIVE_LOCALE' => 5, 'SEO_TITLE' => 6, 'SEO_DESCRIPTION' => 7, 'SEO_H1' => 8, 'SEO_KEYWORDS' => 9, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'description' => 3, 'keywords' => 4, 'active_locale' => 5, 'seo_title' => 6, 'seo_description' => 7, 'seo_h1' => 8, 'seo_keywords' => 9, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, )
     );
 
     /**
@@ -182,6 +194,10 @@ abstract class BaseSituationGeographiqueI18nPeer
             $criteria->addSelectColumn(SituationGeographiqueI18nPeer::DESCRIPTION);
             $criteria->addSelectColumn(SituationGeographiqueI18nPeer::KEYWORDS);
             $criteria->addSelectColumn(SituationGeographiqueI18nPeer::ACTIVE_LOCALE);
+            $criteria->addSelectColumn(SituationGeographiqueI18nPeer::SEO_TITLE);
+            $criteria->addSelectColumn(SituationGeographiqueI18nPeer::SEO_DESCRIPTION);
+            $criteria->addSelectColumn(SituationGeographiqueI18nPeer::SEO_H1);
+            $criteria->addSelectColumn(SituationGeographiqueI18nPeer::SEO_KEYWORDS);
         } else {
             $criteria->addSelectColumn($alias . '.id');
             $criteria->addSelectColumn($alias . '.locale');
@@ -189,6 +205,10 @@ abstract class BaseSituationGeographiqueI18nPeer
             $criteria->addSelectColumn($alias . '.description');
             $criteria->addSelectColumn($alias . '.keywords');
             $criteria->addSelectColumn($alias . '.active_locale');
+            $criteria->addSelectColumn($alias . '.seo_title');
+            $criteria->addSelectColumn($alias . '.seo_description');
+            $criteria->addSelectColumn($alias . '.seo_h1');
+            $criteria->addSelectColumn($alias . '.seo_keywords');
         }
     }
 

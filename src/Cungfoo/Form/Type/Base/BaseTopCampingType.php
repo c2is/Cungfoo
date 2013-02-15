@@ -47,6 +47,45 @@ class BaseTopCampingType extends AppAwareType
             'label' => 'top_camping.active',
             'required' => false,
         ));
+        $builder->add('top_campingI18ns', 'translation_collection', array(
+            'i18n_class' => 'Cungfoo\Model\TopCampingI18n',
+            'languages' => array(
+                0 => 'fr',
+                1 => 'de',
+            ),
+            'label' => 'top_camping.top_campingI18ns',
+            'columns' => array(
+                'seo_title' => array(
+                    'required' => false,
+                    'label' => 'top_camping.seo_title',
+                    'type' => 'text',
+                    'constraints' => array(
+                    ),
+                ),
+                'seo_description' => array(
+                    'required' => false,
+                    'label' => 'top_camping.seo_description',
+                    'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'seo_h1' => array(
+                    'required' => false,
+                    'label' => 'top_camping.seo_h1',
+                    'type' => 'text',
+                    'constraints' => array(
+                    ),
+                ),
+                'seo_keywords' => array(
+                    'required' => false,
+                    'label' => 'top_camping.seo_keywords',
+                    'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+            ),
+            'required' => false,
+        ));
     }
 
     /**
