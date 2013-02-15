@@ -694,7 +694,7 @@ datepicker.daysMin: '[''So'', ''Mo'', ''Di'', ''Mi'', ''Do'', ''Fr'', ''Sa'', ''
 datepicker.months: '[''Januar'', ''Februar'', ''März'', ''April'', ''Mai'', ''Juni'', ''Juli'', ''August'', ''September'', ''Oktober'', ''November'', ''Dezember'']'
 datepicker.monthsShort: '[''Jan'', ''Feb'', ''Mär'', ''Apr'', ''Mai'', ''Jun'', ''Jul'', ''Aug'', ''Sep'', ''Okt'', ''Nov'', ''Dez'']'
 datepicker.weekMin: '''Wo'''
-widget.offres_speciales.title: Sonderangebote
+widget.offres_speciales.title: 'Sonderangebote'
 widget.offres_speciales.more: Mehr
 widget.offres_speciales.from: Anfangspreis
 widget.offres_speciales.instead: statt
