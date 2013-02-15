@@ -29,7 +29,10 @@ class I18nController implements ControllerProviderInterface
             {
                 foreach ($app['config']->get('languages') as $locale => $language)
                 {
-                    file_put_contents(sprintf(self::LOCALES_PATTERN, $app['config']->get('root_dir'), $locale), Yaml::dump($request->request->get($locale)));
+                    $translationsLocale = Yaml::parse(sprintf(self::LOCALES_PATTERN, $app['config']->get('root_dir'), $locale));
+                    $translationsLocale = array_merge($translationsLocale, $request->request->get($locale, array()));
+
+                    file_put_contents(sprintf(self::LOCALES_PATTERN, $app['config']->get('root_dir'), $locale), Yaml::dump($translationsLocale));
                 }
 
                 return $app->redirect($app->path('i18n_admin'));

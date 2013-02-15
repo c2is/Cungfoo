@@ -100,7 +100,7 @@
             <select name="capacite" id="capacite">
                 <option value="">{{ "fiche.toutes_regions" | trans }}</option>
                 {% for region in regions %}
-                    <option value="reg-{{ region.slug }}">{{ "fiche.region" | trans }} {{ region.slug }}</option>
+                    <option value="reg-{{ region.slug }}">{{ "fiche.region" | trans }}{{ region.slug }}</option>
                 {% endfor %}
             </select>
         </fieldset>
