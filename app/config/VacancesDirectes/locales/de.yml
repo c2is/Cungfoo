@@ -283,7 +283,7 @@ destination.pois_all: 'Alle Orte'
 destination.events_title: 'Zur Zeit'
 destination.events_prefixe_subtitle: In
 destination.events_suffixe_subtitle: ...
-destination.campings_selection_title: 'Unsere Auswahl an Campingplätzen'
+destination.campings_selection_title: 'Unsere Auswahl an günstigen Campingplätzen'
 destination.destination_title: 'Günstiger Campingplatz in %item%'
 destination.pas_cher: günstig
 listing_destination.campings_map_title: 'Vacances Directes Campingplätze'
