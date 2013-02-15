@@ -50,19 +50,4 @@ class BonPlanCategorie extends BaseBonPlanCategorie
             ->findActive($con)
         ;
     }
-
-    public function getCountBonPlansActifsForMenu($criteria = null, $con = null) {
-        return BonPlanQuery::create(null, $criteria)
-            ->filterByBonPlanCategorie($this)
-            ->filterByDateDebut(array('max' => 'today'))
-            ->filterByDateFin(array('min' => 'today'))
-            ->useBonPlanBonPlanCategorieQuery()
-                ->orderBySortableRank()
-            ->endUse()
-            ->useI18nQuery($this->currentLocale)
-                ->filterBySlug('', Criteria::NOT_EQUAL)
-            ->endUse()
-            ->count()
-        ;
-    }
 }

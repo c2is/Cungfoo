@@ -3,7 +3,7 @@
         <div class="title">{{ 'menu_bon_plan.accroche.prefix' | trans}}<br />{{ 'menu_bon_plan.accroche.suffix' | trans}}</div>
         <ul>
             {% for categorie in categories %}
-                {% if categorie.countBonPlansActifsForMenu > 0 %}
+                {% if categorie.bonPlansActifsForMenu | length > 0 %}
             <li class="bp{% if loop.first %} selected{% endif %}">{{ categorie.name }}</li>
                 {% endif %}
             {% endfor %}
@@ -18,7 +18,7 @@
     #}
     <div id="dealsContent">
         {% for categorie in categories %}
-            {% if categorie.countBonPlansActifsForMenu > 0 %}
+            {% if categorie.bonPlansActifsForMenu | length > 0 %}
         <div id="bp{{ loop.index }}" class="radiusBox greyC">
                 {% for bonPlan in categorie.bonPlansActifsForMenu %}
                     {% if loop.index < 3 %}
