@@ -31,6 +31,16 @@ class SituationGeographiqueType extends BaseSituationGeographiqueType
         //;
     }
 
+    public function getCodeOptions()
+    {
+        return array_merge(parent::getCodeOptions(), array('disabled' => true));
+    }
+
+    public function getNameOptions()
+    {
+        return array_merge(parent::getNameOptions(), array('disabled' => true));
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -42,7 +52,6 @@ class SituationGeographiqueType extends BaseSituationGeographiqueType
                     'title'         => 'crud.tab.datas',
                     'content'       => array(
                         'code',
-                        'etablissements',
                         'situation_geographiqueI18ns',
                     )
                 ),

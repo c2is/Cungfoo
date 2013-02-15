@@ -31,6 +31,16 @@ class CategorieType extends BaseCategorieType
         //;
     }
 
+    public function getCodeOptions()
+    {
+        return array_merge(parent::getCodeOptions(), array('disabled' => true));
+    }
+
+    public function getNameOptions()
+    {
+        return array_merge(parent::getNameOptions(), array('disabled' => true));
+    }
+
     /**
      * {@inheritdoc}
      */

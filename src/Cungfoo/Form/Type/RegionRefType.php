@@ -31,6 +31,26 @@ class RegionRefType extends BaseRegionRefType
         //;
     }
 
+    public function getCodeOptions()
+    {
+        return array_merge(parent::getCodeOptions(), array('disabled' => true));
+    }
+
+    public function getNameOptions()
+    {
+        return array_merge(parent::getNameOptions(), array('disabled' => true));
+    }
+
+    public function getSlugOptions()
+    {
+        return array_merge(parent::getSlugOptions(), array('disabled' => true));
+    }
+
+    public function getPaysOptions()
+    {
+        return array_merge(parent::getPaysOptions(), array('disabled' => true));
+    }
+
     /**
      * {@inheritdoc}
      */

@@ -31,6 +31,21 @@ class DestinationType extends BaseDestinationType
         //;
     }
 
+    public function getCodeOptions()
+    {
+        return array_merge(parent::getCodeOptions(), array('disabled' => true));
+    }
+
+    public function getNameOptions()
+    {
+        return array_merge(parent::getNameOptions(), array('disabled' => true));
+    }
+
+    public function getSlugOptions()
+    {
+        return array_merge(parent::getSlugOptions(), array('disabled' => true));
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -42,7 +57,6 @@ class DestinationType extends BaseDestinationType
                     'title'         => 'crud.tab.datas',
                     'content'       => array(
                         'code',
-                        'etablissements',
                         'destinationI18ns',
                     )
                 ),

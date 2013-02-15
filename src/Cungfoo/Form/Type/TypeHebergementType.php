@@ -31,6 +31,31 @@ class TypeHebergementType extends BaseTypeHebergementType
         //;
     }
 
+    public function getCodeOptions()
+    {
+        return array_merge(parent::getCodeOptions(), array('disabled' => true));
+    }
+
+    public function getNameOptions()
+    {
+        return array_merge(parent::getNameOptions(), array('disabled' => true));
+    }
+
+    public function getSlugOptions()
+    {
+        return array_merge(parent::getSlugOptions(), array('disabled' => true));
+    }
+
+    public function getNombrePlaceOptions()
+    {
+        return array_merge(parent::getNombrePlaceOptions(), array('disabled' => true));
+    }
+
+    public function getCategoryTypeHebergementOptions()
+    {
+        return array_merge(parent::getCategoryTypeHebergementOptions(), array('disabled' => true));
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -42,11 +67,10 @@ class TypeHebergementType extends BaseTypeHebergementType
                     'title'         => 'crud.tab.datas',
                     'content'       => array(
                         'code',
-                        'type_hebergement_capacite',
                         'category_type_hebergement',
-                        'nombre_chambre',
                         'nombre_place',
-                        'etablissements',
+                        'type_hebergement_capacite',
+                        'nombre_chambre',
                         'type_hebergementI18ns',
 
                     )

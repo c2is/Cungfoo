@@ -31,6 +31,16 @@ class ActiviteType extends BaseActiviteType
         //;
     }
 
+    public function getCodeOptions()
+    {
+        return array_merge(parent::getCodeOptions(), array('disabled' => true));
+    }
+
+    public function getNameOptions()
+    {
+        return array_merge(parent::getNameOptions(), array('disabled' => true));
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -42,8 +52,6 @@ class ActiviteType extends BaseActiviteType
                     'title'         => 'crud.tab.datas',
                     'content'       => array(
                         'code',
-                        'etablissements',
-                        'themes',
                         'activiteI18ns',
                     )
                 ),

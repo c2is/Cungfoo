@@ -31,6 +31,21 @@ class PaysType extends BasePaysType
         //;
     }
 
+    public function getCodeOptions()
+    {
+        return array_merge(parent::getCodeOptions(), array('disabled' => true));
+    }
+
+    public function getNameOptions()
+    {
+        return array_merge(parent::getNameOptions(), array('disabled' => true));
+    }
+
+    public function getSlugOptions()
+    {
+        return array_merge(parent::getSlugOptions(), array('disabled' => true));
+    }
+
     /**
      * {@inheritdoc}
      */
