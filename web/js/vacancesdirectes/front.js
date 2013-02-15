@@ -583,6 +583,8 @@ jQuery.extend( jQuery.fn, {
 
 
     // datepickers
+
+    // CE
     if ($('#searchContainer #datepicker').length) {
         var d = new Date(),
             fCurrentDate = formatDate(d),
@@ -753,7 +755,6 @@ jQuery.extend( jQuery.fn, {
         switchLinear();
 
     }
-
     if ($('#searchContainerReservation #datepicker').length) {
         var d = new Date(),
             fCurrentDate = formatDate(d),
@@ -939,6 +940,7 @@ jQuery.extend( jQuery.fn, {
 
     }
 
+    // indiv
     if ($('#searchBlocDate #datepicker').length) {
         var d = new Date(),
             fCurrentDate = formatDate(d),

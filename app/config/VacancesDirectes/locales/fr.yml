@@ -551,7 +551,7 @@ semainier.indisponible: Indisponible
 semainier.type_hebergement.details: Détails
 resalys.creer_compte: 'Créer mon compte'
 resalys.total: Total
-resalys.date_format: 'Format de la date DD/MM/YYYY'
+resalys.date_format: 'Date de naissance (DD/MM/YYYY)'
 resalys.besoin_aide_title: 'Besoin d''aide'
 resalys.besoin_aide_subtitle: 'Une question sur votre réservation&hellip;'
 resalys.besoin_aide_contact: Contactez-nous

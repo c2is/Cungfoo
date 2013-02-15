@@ -59,7 +59,7 @@ class WrapperController implements ControllerProviderInterface
 
             // start replace functions
             $this->replaceC2isLabelFunction($iframe, $app);
-            $this->replaceC2isMarker($iframe);
+            $this->replaceC2isMarker($iframe, $app);
             $this->replaceSpecifics($iframe);
 
             return new Response($iframe);
@@ -159,7 +159,7 @@ class WrapperController implements ControllerProviderInterface
         }
     }
 
-    protected function replaceC2isMarker(&$iframe)
+    protected function replaceC2isMarker(&$iframe, $app)
     {
         $this->replaceC2isMarkerFunction($iframe);
 
@@ -172,6 +172,7 @@ eof
 , $this->getAsset('')
 );
 
+        $locale = $app['context']->get('language');
             // define javascript footer source code
         $javascriptFooter = sprintf(<<<eof
 
@@ -183,6 +184,7 @@ eof
             {selectivizr: templatePath+"vendor/selectivizr-min.js"}, // extend css selectors for IE
             {jqPlugins: templatePath+"js/vacancesdirectes/plugins.js"},
             {datepicker: templatePath+"js/vacancesdirectes/jquery-ui-1.9.2.custom.min.js"},
+            {i18nDatepicker: templatePath+"js/vacancesdirectes/jquery.ui.datepicker-$locale.js"},
             {iframeFrontJS: templatePath+"js/vacancesdirectes/iframe/front.js"},
             {iframeJS: templatePath+"js/vacancesdirectes/%s.js"}
         );
