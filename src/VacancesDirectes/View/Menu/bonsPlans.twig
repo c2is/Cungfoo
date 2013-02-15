@@ -18,34 +18,35 @@
         {% for categorie in categories %}
         <div id="bp{{ loop.index }}" class="radiusBox greyC">
             {% for bonPlan in categorie.bonPlansActifsForMenu %}
-                {% if loop.index < 3 %}
+                {% if bonPlan.slug %}
+                    {% if loop.index < 3 %}
             <div class="clear">
                 <div>
                     <div class="stamp orange"><span>{% if loop.first or loop.last %}{{ bonPlan.name }}{% else %}{{ 'menu_bon_plan.autres_offres.title' | trans}}{% endif %}</span></div>
-                    {% if (loop.first or (loop.index == 2 and loop.last)) and bonPlan.dateStart %}<span class="dealsDate">{{ 'menu_bon_plan.dispos.subtitle.prefix' | trans}} {{ bonPlan.dateStart|date('d/m/Y') }}</span>{% endif %}
+                        {% if (loop.first or (loop.index == 2 and loop.last)) and bonPlan.dateStart %}<span class="dealsDate">{{ 'menu_bon_plan.dispos.subtitle.prefix' | trans}} {{ bonPlan.dateStart|date('d/m/Y') }}</span>{% endif %}
                 </div>
-                {% endif %}
-
-                {% if loop.first %}
-                    {% if loop.last %}
-                        {% set nbDispos = 6 %}
-                    {% else %}
-                        {% set nbDispos = 4 %}
                     {% endif %}
+
+                    {% if loop.first %}
+                        {% if loop.last %}
+                            {% set nbDispos = 6 %}
+                        {% else %}
+                            {% set nbDispos = 4 %}
+                        {% endif %}
                 <div class="elements">
                     {{ esi(path('esi_bon_plan', {'slug': bonPlan.slug, 'limit': nbDispos})) }}
                 </div>
                 <a href="{{ path('bonsplans', {'slug': bonPlan.slug}) }}" class="bt link right clearboth">{{ 'menu_bon_plan.bons_plans.link.prefix' | trans}} {{ bonPlan.name }}</a>
-                {% elseif loop.index < 4 %}
-                    {% if loop.index == 2 and loop.last %}
+                    {% elseif loop.index < 4 %}
+                        {% if loop.index == 2 and loop.last %}
                 <div class="elements">
                     {{ esi(path('esi_bon_plan', {'slug': bonPlan.slug, 'limit': 2})) }}
                 </div>
                 <a href="{{ path('bonsplans', {'slug': bonPlan.slug}) }}" class="bt link right clearboth">{{ 'menu_bon_plan.bons_plans.link.prefix' | trans}} {{ bonPlan.name }}</a>
-                    {% else %}
-                        {% if loop.index == 2 %}
+                        {% else %}
+                            {% if loop.index == 2 %}
                 <div class="elements">
-                        {% endif %}
+                            {% endif %}
                     <div class="element clear linkParent">
                         <img class="boxborder left" src="{{ asset(bonPlan.imageMenu) }}" width="119" height="86" alt="" />
                         <div class="details left">
@@ -55,15 +56,16 @@
                             <span class="condition"><a href="{{ path('bonsplans', {'slug': bonPlan.slug}) }}" class="price linkBlock" onclick="showWaitLayer();">{{ bonPlan.indicePrix }}</a></span>
                         </div>
                     </div>
-                        {% if loop.last %}
+                            {% if loop.last %}
                 </div>
+                            {% endif %}
                         {% endif %}
-                    {% endif %}
-                {% else %}
+                    {% else %}
                 <a href="{{ path('categorie_bonsplans', {'cat': categorie.slug }) }}" class="bt link right clearboth">{{ 'menu_bon_plan.categorie_bons_plans.link' | trans}}</a>
-                {% endif %}
-                {% if loop.first or loop.last %}
+                    {% endif %}
+                    {% if loop.first or loop.last %}
             </div>
+                    {% endif %}
                 {% endif %}
             {% endfor %}
         </div>
