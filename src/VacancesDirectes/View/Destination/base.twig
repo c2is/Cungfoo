@@ -1,7 +1,11 @@
 {% extends "base.twig" %}
 {% block bodyClass %} destination{% endblock %}
 
-{% block canonical %}<link rel="canonical" href="{{ urlCanonical }}" />{% endblock %}
+{% block canonical %}
+{% if urlCanonical %}
+<link rel="canonical" href="{{ urlCanonical }}" />
+{% endif %}
+{% endblock %}
 
 {% block content %}
     <div id="wrap" class="fixed-width clear">
