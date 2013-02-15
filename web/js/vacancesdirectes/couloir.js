@@ -37,7 +37,15 @@ $(function() {
 
 head.ready(function(){
 
-
+    // positionne le bloc prix en 1er sur l'étape 1 du couloir
+    if($('#stayPrice').length){
+        if($('.error').length){
+            $('.error').after($('#stayPrice'));
+        }
+        else {
+            $('#reservation').prepend($('#stayPrice'));
+        }
+    }
 
         // radio buttons
         var checked;
