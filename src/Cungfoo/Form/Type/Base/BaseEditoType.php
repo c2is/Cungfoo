@@ -18,61 +18,144 @@ use Cungfoo\Form\Type\AppAwareType;
  */
 class BaseEditoType extends AppAwareType
 {
+    public function getIdType()
+    {
+        return 'integer';
+    }
+
+    public function getIdOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'edito.id',
+            'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+        );
+    }
+
+    public function getSlugType()
+    {
+        return 'text';
+    }
+
+    public function getSlugOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'edito.slug',
+        );
+    }
+
+    public function getCreatedAtType()
+    {
+        return 'datetime';
+    }
+
+    public function getCreatedAtOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'edito.created_at',
+            'widget' => 'single_text',
+        );
+    }
+
+    public function getUpdatedAtType()
+    {
+        return 'datetime';
+    }
+
+    public function getUpdatedAtOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'edito.updated_at',
+            'widget' => 'single_text',
+        );
+    }
+
+    public function getActiveType()
+    {
+        return 'checkbox';
+    }
+
+    public function getActiveOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'edito.active',
+        );
+    }
+
+    public function getNameType()
+    {
+        return 'text';
+    }
+
+    public function getNameOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'edito_i18n.name',
+            'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+        );
+    }
+
+    public function getDescriptionType()
+    {
+        return 'textrich';
+    }
+
+    public function getDescriptionOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'edito_i18n.description',
+            'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+        );
+    }
+
+    public function getActiveLocaleType()
+    {
+        return 'checkbox';
+    }
+
+    public function getActiveLocaleOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'edito_i18n.active_locale',
+        );
+    }
+
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('id', 'hidden', array(
-            'label' => 'edito.id',
-            'required' => false,
-        ));
-        $builder->add('slug', 'text', array(
-            'constraints' => array(
-            ),
-            'label' => 'edito.slug',
-            'required' => false,
-        ));
-        $builder->add('active', 'checkbox', array(
-            'constraints' => array(
-            ),
-            'label' => 'edito.active',
-            'required' => false,
-        ));
-        $builder->add('editoI18ns', 'translation_collection', array(
+        $builder->add('id', $this->getIdType(), $this->getIdOptions());
+        $builder->add('slug', $this->getSlugType(), $this->getSlugOptions());
+        $builder->add('created_at', $this->getCreatedAtType(), $this->getCreatedAtOptions());
+        $builder->add('updated_at', $this->getUpdatedAtType(), $this->getUpdatedAtOptions());
+        $builder->add('active', $this->getActiveType(), $this->getActiveOptions());$builder->add('editoI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\EditoI18n',
-            'languages' => array(
-                0 => 'fr',
-                1 => 'de',
-            ),
-            'label' => 'edito.editoI18ns',
-            'columns' => array(
-                'name' => array(
-                    'required' => false,
-                    'label' => 'edito.name',
-                    'type' => 'text',
-                    'constraints' => array(
-                        new Assert\NotBlank(),
-                    ),
-                ),
-                'description' => array(
-                    'required' => false,
-                    'label' => 'edito.description',
-                    'type' => 'textrich',
-                    'constraints' => array(
-                        new Assert\NotBlank(),
-                    ),
-                ),
-                'active_locale' => array(
-                    'required' => false,
-                    'label' => 'edito.active_locale',
-                    'type' => 'checkbox',
-                    'constraints' => array(
-                    ),
-                ),
-            ),
+            'label' => 'editoI18ns',
             'required' => false,
+            'languages' => array('fr', 'de'),
+            'columns' => array(
+                'name' => array_merge(array('type' => $this->getNameType()), $this->getNameOptions()),
+                'description' => array_merge(array('type' => $this->getDescriptionType()), $this->getDescriptionOptions()),
+                'active_locale' => array_merge(array('type' => $this->getActiveLocaleType()), $this->getActiveLocaleOptions()),
+
+            )
         ));
+
+
     }
 
     /**

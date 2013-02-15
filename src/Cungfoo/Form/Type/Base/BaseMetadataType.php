@@ -18,67 +18,126 @@ use Cungfoo\Form\Type\AppAwareType;
  */
 class BaseMetadataType extends AppAwareType
 {
+    public function getIdType()
+    {
+        return 'integer';
+    }
+
+    public function getIdOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'metadata.id',
+            'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+        );
+    }
+
+    public function getTableRefType()
+    {
+        return 'text';
+    }
+
+    public function getTableRefOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'metadata.table_ref',
+            'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+        );
+    }
+
+    public function getVisuelType()
+    {
+        return 'cungfoo_file';
+    }
+
+    public function getVisuelOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'metadata.visuel',
+        );
+    }
+
+    public function getVisuelDeletedType()
+    {
+        return 'checkbox';
+    }
+
+    public function getVisuelDeletedOptions()
+    {
+        return array(
+            'property_path' => false,
+            'required' => false,
+            'label' => 'metadata.visuel_deleted',
+        );
+    }
+
+    public function getTitleType()
+    {
+        return 'text';
+    }
+
+    public function getTitleOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'metadata_i18n.title',
+        );
+    }
+
+    public function getSubtitleType()
+    {
+        return 'text';
+    }
+
+    public function getSubtitleOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'metadata_i18n.subtitle',
+        );
+    }
+
+    public function getAccrocheType()
+    {
+        return 'text';
+    }
+
+    public function getAccrocheOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'metadata_i18n.accroche',
+        );
+    }
+
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('id', 'hidden', array(
-            'label' => 'metadata.id',
-            'required' => false,
-        ));
-        $builder->add('table_ref', 'text', array(
-            'constraints' => array(
-                new Assert\NotBlank(),
-            ),
-            'label' => 'metadata.table_ref',
-            'required' => false,
-        ));
-        $builder->add('visuel', 'cungfoo_file', array(
-            'constraints' => array(
-            ),
-            'label' => 'metadata.visuel',
-            'required' => false,
-        ));
-        $builder->add('visuel_deleted', 'checkbox', array(
-            'constraints' => array(
-            ),
-            'property_path' => false,
-            'label' => 'metadata.visuel_deleted',
-            'required' => false,
-        ));
-        $builder->add('metadataI18ns', 'translation_collection', array(
+        $builder->add('id', $this->getIdType(), $this->getIdOptions());
+        $builder->add('table_ref', $this->getTableRefType(), $this->getTableRefOptions());
+        $builder->add('visuel', $this->getVisuelType(), $this->getVisuelOptions());
+        $builder->add('visuel_deleted', $this->getVisuelDeletedType(), $this->getVisuelDeletedOptions());$builder->add('metadataI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\MetadataI18n',
-            'languages' => array(
-                0 => 'fr',
-                1 => 'de',
-            ),
-            'label' => 'metadata.metadataI18ns',
-            'columns' => array(
-                'title' => array(
-                    'required' => false,
-                    'label' => 'metadata.title',
-                    'type' => 'text',
-                    'constraints' => array(
-                    ),
-                ),
-                'subtitle' => array(
-                    'required' => false,
-                    'label' => 'metadata.subtitle',
-                    'type' => 'text',
-                    'constraints' => array(
-                    ),
-                ),
-                'accroche' => array(
-                    'required' => false,
-                    'label' => 'metadata.accroche',
-                    'type' => 'text',
-                    'constraints' => array(
-                    ),
-                ),
-            ),
+            'label' => 'metadataI18ns',
             'required' => false,
+            'languages' => array('fr', 'de'),
+            'columns' => array(
+                'title' => array_merge(array('type' => $this->getTitleType()), $this->getTitleOptions()),
+                'subtitle' => array_merge(array('type' => $this->getSubtitleType()), $this->getSubtitleOptions()),
+                'accroche' => array_merge(array('type' => $this->getAccrocheType()), $this->getAccrocheOptions()),
+
+            )
         ));
+
+
     }
 
     /**

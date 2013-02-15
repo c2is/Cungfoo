@@ -18,340 +18,750 @@ use Cungfoo\Form\Type\AppAwareType;
  */
 class BaseEtablissementType extends AppAwareType
 {
+    public function getIdType()
+    {
+        return 'integer';
+    }
+
+    public function getIdOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement.id',
+            'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+        );
+    }
+
+    public function getCodeType()
+    {
+        return 'integer';
+    }
+
+    public function getCodeOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement.code',
+            'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+        );
+    }
+
+    public function getSlugType()
+    {
+        return 'text';
+    }
+
+    public function getSlugOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement.slug',
+            'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+        );
+    }
+
+    public function getNameType()
+    {
+        return 'text';
+    }
+
+    public function getNameOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement.name',
+            'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+        );
+    }
+
+    public function getTitleType()
+    {
+        return 'text';
+    }
+
+    public function getTitleOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement.title',
+        );
+    }
+
+    public function getAddress1Type()
+    {
+        return 'text';
+    }
+
+    public function getAddress1Options()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement.address1',
+        );
+    }
+
+    public function getAddress2Type()
+    {
+        return 'text';
+    }
+
+    public function getAddress2Options()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement.address2',
+        );
+    }
+
+    public function getZipType()
+    {
+        return 'text';
+    }
+
+    public function getZipOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement.zip',
+        );
+    }
+
+    public function getCityType()
+    {
+        return 'text';
+    }
+
+    public function getCityOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement.city',
+        );
+    }
+
+    public function getMailType()
+    {
+        return 'text';
+    }
+
+    public function getMailOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement.mail',
+        );
+    }
+
+    public function getCountryCodeType()
+    {
+        return 'text';
+    }
+
+    public function getCountryCodeOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement.country_code',
+        );
+    }
+
+    public function getPhone1Type()
+    {
+        return 'text';
+    }
+
+    public function getPhone1Options()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement.phone1',
+        );
+    }
+
+    public function getPhone2Type()
+    {
+        return 'text';
+    }
+
+    public function getPhone2Options()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement.phone2',
+        );
+    }
+
+    public function getFaxType()
+    {
+        return 'text';
+    }
+
+    public function getFaxOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement.fax',
+        );
+    }
+
+    public function getOpeningDateType()
+    {
+        return 'datetime';
+    }
+
+    public function getOpeningDateOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement.opening_date',
+            'widget' => 'single_text',
+        );
+    }
+
+    public function getClosingDateType()
+    {
+        return 'datetime';
+    }
+
+    public function getClosingDateOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement.closing_date',
+            'widget' => 'single_text',
+        );
+    }
+
+    public function getVilleType()
+    {
+        return 'model';
+    }
+
+    public function getVilleOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement.ville_id',
+            'class' => 'Cungfoo\Model\Ville',
+        );
+    }
+
+    public function getDepartementType()
+    {
+        return 'model';
+    }
+
+    public function getDepartementOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement.departement_id',
+            'class' => 'Cungfoo\Model\Departement',
+        );
+    }
+
+    public function getCategorieType()
+    {
+        return 'model';
+    }
+
+    public function getCategorieOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement.categorie_id',
+            'class' => 'Cungfoo\Model\Categorie',
+        );
+    }
+
+    public function getGeoCoordinateXType()
+    {
+        return 'text';
+    }
+
+    public function getGeoCoordinateXOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement.geo_coordinate_x',
+        );
+    }
+
+    public function getGeoCoordinateYType()
+    {
+        return 'text';
+    }
+
+    public function getGeoCoordinateYOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement.geo_coordinate_y',
+        );
+    }
+
+    public function getVideoPathType()
+    {
+        return 'text';
+    }
+
+    public function getVideoPathOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement.video_path',
+        );
+    }
+
+    public function getImage360PathType()
+    {
+        return 'text';
+    }
+
+    public function getImage360PathOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement.image_360_path',
+        );
+    }
+
+    public function getCapaciteType()
+    {
+        return 'text';
+    }
+
+    public function getCapaciteOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement.capacite',
+        );
+    }
+
+    public function getPlanPathType()
+    {
+        return 'cungfoo_file';
+    }
+
+    public function getPlanPathOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement.plan_path',
+        );
+    }
+
+    public function getPlanPathDeletedType()
+    {
+        return 'checkbox';
+    }
+
+    public function getPlanPathDeletedOptions()
+    {
+        return array(
+            'property_path' => false,
+            'required' => false,
+            'label' => 'etablissement.plan_path_deleted',
+        );
+    }
+
+    public function getVignetteType()
+    {
+        return 'cungfoo_file';
+    }
+
+    public function getVignetteOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement.vignette',
+        );
+    }
+
+    public function getVignetteDeletedType()
+    {
+        return 'checkbox';
+    }
+
+    public function getVignetteDeletedOptions()
+    {
+        return array(
+            'property_path' => false,
+            'required' => false,
+            'label' => 'etablissement.vignette_deleted',
+        );
+    }
+
+    public function getEtablissementRelatedByRelated1Type()
+    {
+        return 'model';
+    }
+
+    public function getEtablissementRelatedByRelated1Options()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement.related_1',
+            'class' => 'Cungfoo\Model\Etablissement',
+        );
+    }
+
+    public function getEtablissementRelatedByRelated2Type()
+    {
+        return 'model';
+    }
+
+    public function getEtablissementRelatedByRelated2Options()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement.related_2',
+            'class' => 'Cungfoo\Model\Etablissement',
+        );
+    }
+
+    public function getCreatedAtType()
+    {
+        return 'datetime';
+    }
+
+    public function getCreatedAtOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement.created_at',
+            'widget' => 'single_text',
+        );
+    }
+
+    public function getUpdatedAtType()
+    {
+        return 'datetime';
+    }
+
+    public function getUpdatedAtOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement.updated_at',
+            'widget' => 'single_text',
+        );
+    }
+
+    public function getActiveType()
+    {
+        return 'checkbox';
+    }
+
+    public function getActiveOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement.active',
+        );
+    }
+
+    public function getTypeHebergementsType()
+    {
+        return 'model';
+    }
+
+    public function getTypeHebergementsOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement_type_hebergement.type_hebergement_id',
+            'class' => 'Cungfoo\Model\TypeHebergement',
+            'multiple' => true,
+        );
+    }
+
+    public function getDestinationsType()
+    {
+        return 'model';
+    }
+
+    public function getDestinationsOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement_destination.destination_id',
+            'class' => 'Cungfoo\Model\Destination',
+            'multiple' => true,
+        );
+    }
+
+    public function getActivitesType()
+    {
+        return 'model';
+    }
+
+    public function getActivitesOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement_activite.activite_id',
+            'class' => 'Cungfoo\Model\Activite',
+            'multiple' => true,
+        );
+    }
+
+    public function getServiceComplementairesType()
+    {
+        return 'model';
+    }
+
+    public function getServiceComplementairesOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement_service_complementaire.service_complementaire_id',
+            'class' => 'Cungfoo\Model\ServiceComplementaire',
+            'multiple' => true,
+        );
+    }
+
+    public function getSituationGeographiquesType()
+    {
+        return 'model';
+    }
+
+    public function getSituationGeographiquesOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement_situation_geographique.situation_geographique_id',
+            'class' => 'Cungfoo\Model\SituationGeographique',
+            'multiple' => true,
+        );
+    }
+
+    public function getBaignadesType()
+    {
+        return 'model';
+    }
+
+    public function getBaignadesOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement_baignade.baignade_id',
+            'class' => 'Cungfoo\Model\Baignade',
+            'multiple' => true,
+        );
+    }
+
+    public function getThematiquesType()
+    {
+        return 'model';
+    }
+
+    public function getThematiquesOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement_thematique.thematique_id',
+            'class' => 'Cungfoo\Model\Thematique',
+            'multiple' => true,
+        );
+    }
+
+    public function getPointInteretsType()
+    {
+        return 'model';
+    }
+
+    public function getPointInteretsOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement_point_interet.point_interet_id',
+            'class' => 'Cungfoo\Model\PointInteret',
+            'multiple' => true,
+        );
+    }
+
+    public function getEventsType()
+    {
+        return 'model';
+    }
+
+    public function getEventsOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement_event.event_id',
+            'class' => 'Cungfoo\Model\Event',
+            'multiple' => true,
+        );
+    }
+
+    public function getBonPlansType()
+    {
+        return 'model';
+    }
+
+    public function getBonPlansOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'bon_plan_etablissement.bon_plan_id',
+            'class' => 'Cungfoo\Model\BonPlan',
+            'multiple' => true,
+        );
+    }
+
+    public function getCountryType()
+    {
+        return 'text';
+    }
+
+    public function getCountryOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement_i18n.country',
+        );
+    }
+
+    public function getOuvertureReceptionType()
+    {
+        return 'textarea';
+    }
+
+    public function getOuvertureReceptionOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement_i18n.ouverture_reception',
+        );
+    }
+
+    public function getOuvertureCampingType()
+    {
+        return 'textarea';
+    }
+
+    public function getOuvertureCampingOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement_i18n.ouverture_camping',
+        );
+    }
+
+    public function getArriveesDepartsType()
+    {
+        return 'textarea';
+    }
+
+    public function getArriveesDepartsOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement_i18n.arrivees_departs',
+        );
+    }
+
+    public function getDescriptionType()
+    {
+        return 'textrich';
+    }
+
+    public function getDescriptionOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement_i18n.description',
+        );
+    }
+
+    public function getActiveLocaleType()
+    {
+        return 'checkbox';
+    }
+
+    public function getActiveLocaleOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement_i18n.active_locale',
+        );
+    }
+
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('id', 'hidden', array(
-            'label' => 'etablissement.id',
-            'required' => false,
-        ));
-        $builder->add('code', 'integer', array(
-            'constraints' => array(
-                new Assert\NotBlank(),
-            ),
-            'label' => 'etablissement.code',
-            'required' => false,
-        ));
-        $builder->add('slug', 'text', array(
-            'constraints' => array(
-                new Assert\NotBlank(),
-            ),
-            'label' => 'etablissement.slug',
-            'required' => false,
-        ));
-        $builder->add('name', 'text', array(
-            'constraints' => array(
-                new Assert\NotBlank(),
-            ),
-            'label' => 'etablissement.name',
-            'required' => false,
-        ));
-        $builder->add('title', 'text', array(
-            'constraints' => array(
-            ),
-            'label' => 'etablissement.title',
-            'required' => false,
-        ));
-        $builder->add('address1', 'text', array(
-            'constraints' => array(
-            ),
-            'label' => 'etablissement.address1',
-            'required' => false,
-        ));
-        $builder->add('address2', 'text', array(
-            'constraints' => array(
-            ),
-            'label' => 'etablissement.address2',
-            'required' => false,
-        ));
-        $builder->add('zip', 'text', array(
-            'constraints' => array(
-            ),
-            'label' => 'etablissement.zip',
-            'required' => false,
-        ));
-        $builder->add('city', 'text', array(
-            'constraints' => array(
-            ),
-            'label' => 'etablissement.city',
-            'required' => false,
-        ));
-        $builder->add('mail', 'text', array(
-            'constraints' => array(
-            ),
-            'label' => 'etablissement.mail',
-            'required' => false,
-        ));
-        $builder->add('country_code', 'text', array(
-            'constraints' => array(
-            ),
-            'label' => 'etablissement.country_code',
-            'required' => false,
-        ));
-        $builder->add('phone1', 'text', array(
-            'constraints' => array(
-            ),
-            'label' => 'etablissement.phone1',
-            'required' => false,
-        ));
-        $builder->add('phone2', 'text', array(
-            'constraints' => array(
-            ),
-            'label' => 'etablissement.phone2',
-            'required' => false,
-        ));
-        $builder->add('fax', 'text', array(
-            'constraints' => array(
-            ),
-            'label' => 'etablissement.fax',
-            'required' => false,
-        ));
-        $builder->add('opening_date', 'datetime', array(
-            'constraints' => array(
-            ),
-            'widget' => 'single_text',
-            'label' => 'etablissement.opening_date',
-            'required' => false,
-        ));
-        $builder->add('closing_date', 'datetime', array(
-            'constraints' => array(
-            ),
-            'widget' => 'single_text',
-            'label' => 'etablissement.closing_date',
-            'required' => false,
-        ));
-        $builder->add('ville', 'model', array(
-            'class' => '\Cungfoo\Model\Ville',
-            'constraints' => array(
-            ),
-            'label' => 'etablissement.ville',
-            'required' => false,
-        ));
-        $builder->add('departement', 'model', array(
-            'class' => '\Cungfoo\Model\Departement',
-            'constraints' => array(
-            ),
-            'label' => 'etablissement.departement',
-            'required' => false,
-        ));
-        $builder->add('categorie', 'model', array(
-            'class' => '\Cungfoo\Model\Categorie',
-            'constraints' => array(
-            ),
-            'label' => 'etablissement.categorie',
-            'required' => false,
-        ));
-        $builder->add('geo_coordinate_x', 'text', array(
-            'constraints' => array(
-            ),
-            'label' => 'etablissement.geo_coordinate_x',
-            'required' => false,
-        ));
-        $builder->add('geo_coordinate_y', 'text', array(
-            'constraints' => array(
-            ),
-            'label' => 'etablissement.geo_coordinate_y',
-            'required' => false,
-        ));
-        $builder->add('video_path', 'text', array(
-            'constraints' => array(
-            ),
-            'label' => 'etablissement.video_path',
-            'required' => false,
-        ));
-        $builder->add('image_360_path', 'text', array(
-            'constraints' => array(
-            ),
-            'label' => 'etablissement.image_360_path',
-            'required' => false,
-        ));
-        $builder->add('capacite', 'text', array(
-            'constraints' => array(
-            ),
-            'label' => 'etablissement.capacite',
-            'required' => false,
-        ));
-        $builder->add('plan_path', 'cungfoo_file', array(
-            'constraints' => array(
-            ),
-            'label' => 'etablissement.plan_path',
-            'required' => false,
-        ));
-        $builder->add('plan_path_deleted', 'checkbox', array(
-            'constraints' => array(
-            ),
-            'property_path' => false,
-            'label' => 'etablissement.plan_path_deleted',
-            'required' => false,
-        ));
-        $builder->add('vignette', 'cungfoo_file', array(
-            'constraints' => array(
-            ),
-            'label' => 'etablissement.vignette',
-            'required' => false,
-        ));
-        $builder->add('vignette_deleted', 'checkbox', array(
-            'constraints' => array(
-            ),
-            'property_path' => false,
-            'label' => 'etablissement.vignette_deleted',
-            'required' => false,
-        ));
-        $builder->add('etablissement_related_by_related_1', 'model', array(
-            'class' => '\Cungfoo\Model\Etablissement',
-            'constraints' => array(
-            ),
-            'label' => 'etablissement.etablissement_related_by_related_1',
-            'required' => false,
-        ));
-        $builder->add('etablissement_related_by_related_2', 'model', array(
-            'class' => '\Cungfoo\Model\Etablissement',
-            'constraints' => array(
-            ),
-            'label' => 'etablissement.etablissement_related_by_related_2',
-            'required' => false,
-        ));
-        $builder->add('active', 'checkbox', array(
-            'constraints' => array(
-            ),
-            'label' => 'etablissement.active',
-            'required' => false,
-        ));
-        $builder->add('type_hebergements', 'model', array(
-            'class' => 'Cungfoo\Model\TypeHebergement',
-            'constraints' => array(
-            ),
-            'multiple' => true,
-            'label' => 'etablissement.type_hebergements',
-            'required' => false,
-        ));
-        $builder->add('destinations', 'model', array(
-            'class' => 'Cungfoo\Model\Destination',
-            'constraints' => array(
-            ),
-            'multiple' => true,
-            'label' => 'etablissement.destinations',
-            'required' => false,
-        ));
-        $builder->add('activites', 'model', array(
-            'class' => 'Cungfoo\Model\Activite',
-            'constraints' => array(
-            ),
-            'multiple' => true,
-            'label' => 'etablissement.activites',
-            'required' => false,
-        ));
-        $builder->add('service_complementaires', 'model', array(
-            'class' => 'Cungfoo\Model\ServiceComplementaire',
-            'constraints' => array(
-            ),
-            'multiple' => true,
-            'label' => 'etablissement.service_complementaires',
-            'required' => false,
-        ));
-        $builder->add('situation_geographiques', 'model', array(
-            'class' => 'Cungfoo\Model\SituationGeographique',
-            'constraints' => array(
-            ),
-            'multiple' => true,
-            'label' => 'etablissement.situation_geographiques',
-            'required' => false,
-        ));
-        $builder->add('baignades', 'model', array(
-            'class' => 'Cungfoo\Model\Baignade',
-            'constraints' => array(
-            ),
-            'multiple' => true,
-            'label' => 'etablissement.baignades',
-            'required' => false,
-        ));
-        $builder->add('thematiques', 'model', array(
-            'class' => 'Cungfoo\Model\Thematique',
-            'constraints' => array(
-            ),
-            'multiple' => true,
-            'label' => 'etablissement.thematiques',
-            'required' => false,
-        ));
-        $builder->add('point_interets', 'model', array(
-            'class' => 'Cungfoo\Model\PointInteret',
-            'constraints' => array(
-            ),
-            'multiple' => true,
-            'label' => 'etablissement.point_interets',
-            'required' => false,
-        ));
-        $builder->add('events', 'model', array(
-            'class' => 'Cungfoo\Model\Event',
-            'constraints' => array(
-            ),
-            'multiple' => true,
-            'label' => 'etablissement.events',
-            'required' => false,
-        ));
-        $builder->add('bon_plans', 'model', array(
-            'class' => 'Cungfoo\Model\BonPlan',
-            'constraints' => array(
-            ),
-            'multiple' => true,
-            'label' => 'etablissement.bon_plans',
-            'required' => false,
-        ));
-        $builder->add('etablissementI18ns', 'translation_collection', array(
+        $builder->add('id', $this->getIdType(), $this->getIdOptions());
+        $builder->add('code', $this->getCodeType(), $this->getCodeOptions());
+        $builder->add('slug', $this->getSlugType(), $this->getSlugOptions());
+        $builder->add('name', $this->getNameType(), $this->getNameOptions());
+        $builder->add('title', $this->getTitleType(), $this->getTitleOptions());
+        $builder->add('address1', $this->getAddress1Type(), $this->getAddress1Options());
+        $builder->add('address2', $this->getAddress2Type(), $this->getAddress2Options());
+        $builder->add('zip', $this->getZipType(), $this->getZipOptions());
+        $builder->add('city', $this->getCityType(), $this->getCityOptions());
+        $builder->add('mail', $this->getMailType(), $this->getMailOptions());
+        $builder->add('country_code', $this->getCountryCodeType(), $this->getCountryCodeOptions());
+        $builder->add('phone1', $this->getPhone1Type(), $this->getPhone1Options());
+        $builder->add('phone2', $this->getPhone2Type(), $this->getPhone2Options());
+        $builder->add('fax', $this->getFaxType(), $this->getFaxOptions());
+        $builder->add('opening_date', $this->getOpeningDateType(), $this->getOpeningDateOptions());
+        $builder->add('closing_date', $this->getClosingDateType(), $this->getClosingDateOptions());
+        $builder->add('ville', $this->getVilleType(), $this->getVilleOptions());
+        $builder->add('departement', $this->getDepartementType(), $this->getDepartementOptions());
+        $builder->add('categorie', $this->getCategorieType(), $this->getCategorieOptions());
+        $builder->add('geo_coordinate_x', $this->getGeoCoordinateXType(), $this->getGeoCoordinateXOptions());
+        $builder->add('geo_coordinate_y', $this->getGeoCoordinateYType(), $this->getGeoCoordinateYOptions());
+        $builder->add('video_path', $this->getVideoPathType(), $this->getVideoPathOptions());
+        $builder->add('image_360_path', $this->getImage360PathType(), $this->getImage360PathOptions());
+        $builder->add('capacite', $this->getCapaciteType(), $this->getCapaciteOptions());
+        $builder->add('plan_path', $this->getPlanPathType(), $this->getPlanPathOptions());
+        $builder->add('plan_path_deleted', $this->getPlanPathDeletedType(), $this->getPlanPathDeletedOptions());
+        $builder->add('vignette', $this->getVignetteType(), $this->getVignetteOptions());
+        $builder->add('vignette_deleted', $this->getVignetteDeletedType(), $this->getVignetteDeletedOptions());
+        $builder->add('etablissement_related_by_related_1', $this->getEtablissementRelatedByRelated1Type(), $this->getEtablissementRelatedByRelated1Options());
+        $builder->add('etablissement_related_by_related_2', $this->getEtablissementRelatedByRelated2Type(), $this->getEtablissementRelatedByRelated2Options());
+        $builder->add('created_at', $this->getCreatedAtType(), $this->getCreatedAtOptions());
+        $builder->add('updated_at', $this->getUpdatedAtType(), $this->getUpdatedAtOptions());
+        $builder->add('active', $this->getActiveType(), $this->getActiveOptions());
+        $builder->add('type_hebergements', $this->getTypeHebergementsType(), $this->getTypeHebergementsOptions());
+        $builder->add('destinations', $this->getDestinationsType(), $this->getDestinationsOptions());
+        $builder->add('activites', $this->getActivitesType(), $this->getActivitesOptions());
+        $builder->add('service_complementaires', $this->getServiceComplementairesType(), $this->getServiceComplementairesOptions());
+        $builder->add('situation_geographiques', $this->getSituationGeographiquesType(), $this->getSituationGeographiquesOptions());
+        $builder->add('baignades', $this->getBaignadesType(), $this->getBaignadesOptions());
+        $builder->add('thematiques', $this->getThematiquesType(), $this->getThematiquesOptions());
+        $builder->add('point_interets', $this->getPointInteretsType(), $this->getPointInteretsOptions());
+        $builder->add('events', $this->getEventsType(), $this->getEventsOptions());
+        $builder->add('bon_plans', $this->getBonPlansType(), $this->getBonPlansOptions());$builder->add('etablissementI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\EtablissementI18n',
-            'languages' => array(
-                0 => 'fr',
-                1 => 'de',
-            ),
-            'label' => 'etablissement.etablissementI18ns',
-            'columns' => array(
-                'country' => array(
-                    'required' => false,
-                    'label' => 'etablissement.country',
-                    'type' => 'text',
-                    'constraints' => array(
-                    ),
-                ),
-                'ouverture_reception' => array(
-                    'required' => false,
-                    'label' => 'etablissement.ouverture_reception',
-                    'type' => 'textarea',
-                    'constraints' => array(
-                    ),
-                ),
-                'ouverture_camping' => array(
-                    'required' => false,
-                    'label' => 'etablissement.ouverture_camping',
-                    'type' => 'textarea',
-                    'constraints' => array(
-                    ),
-                ),
-                'arrivees_departs' => array(
-                    'required' => false,
-                    'label' => 'etablissement.arrivees_departs',
-                    'type' => 'textarea',
-                    'constraints' => array(
-                    ),
-                ),
-                'description' => array(
-                    'required' => false,
-                    'label' => 'etablissement.description',
-                    'type' => 'textrich',
-                    'constraints' => array(
-                    ),
-                ),
-                'active_locale' => array(
-                    'required' => false,
-                    'label' => 'etablissement.active_locale',
-                    'type' => 'checkbox',
-                    'constraints' => array(
-                    ),
-                ),
-            ),
+            'label' => 'etablissementI18ns',
             'required' => false,
+            'languages' => array('fr', 'de'),
+            'columns' => array(
+                'country' => array_merge(array('type' => $this->getCountryType()), $this->getCountryOptions()),
+                'ouverture_reception' => array_merge(array('type' => $this->getOuvertureReceptionType()), $this->getOuvertureReceptionOptions()),
+                'ouverture_camping' => array_merge(array('type' => $this->getOuvertureCampingType()), $this->getOuvertureCampingOptions()),
+                'arrivees_departs' => array_merge(array('type' => $this->getArriveesDepartsType()), $this->getArriveesDepartsOptions()),
+                'description' => array_merge(array('type' => $this->getDescriptionType()), $this->getDescriptionOptions()),
+                'active_locale' => array_merge(array('type' => $this->getActiveLocaleType()), $this->getActiveLocaleOptions()),
+
+            )
         ));
+
+
     }
 
     /**

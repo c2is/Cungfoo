@@ -18,169 +18,384 @@ use Cungfoo\Form\Type\AppAwareType;
  */
 class BasePointInteretType extends AppAwareType
 {
+    public function getIdType()
+    {
+        return 'integer';
+    }
+
+    public function getIdOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'point_interet.id',
+            'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+        );
+    }
+
+    public function getCodeType()
+    {
+        return 'text';
+    }
+
+    public function getCodeOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'point_interet.code',
+            'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+        );
+    }
+
+    public function getAddressType()
+    {
+        return 'text';
+    }
+
+    public function getAddressOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'point_interet.address',
+        );
+    }
+
+    public function getAddress2Type()
+    {
+        return 'text';
+    }
+
+    public function getAddress2Options()
+    {
+        return array(
+            'required' => false,
+            'label' => 'point_interet.address2',
+        );
+    }
+
+    public function getZipcodeType()
+    {
+        return 'text';
+    }
+
+    public function getZipcodeOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'point_interet.zipcode',
+        );
+    }
+
+    public function getCityType()
+    {
+        return 'text';
+    }
+
+    public function getCityOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'point_interet.city',
+        );
+    }
+
+    public function getTelType()
+    {
+        return 'text';
+    }
+
+    public function getTelOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'point_interet.tel',
+        );
+    }
+
+    public function getFaxType()
+    {
+        return 'text';
+    }
+
+    public function getFaxOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'point_interet.fax',
+        );
+    }
+
+    public function getEmailType()
+    {
+        return 'text';
+    }
+
+    public function getEmailOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'point_interet.email',
+        );
+    }
+
+    public function getWebsiteType()
+    {
+        return 'text';
+    }
+
+    public function getWebsiteOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'point_interet.website',
+        );
+    }
+
+    public function getGeoCoordinateXType()
+    {
+        return 'text';
+    }
+
+    public function getGeoCoordinateXOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'point_interet.geo_coordinate_x',
+        );
+    }
+
+    public function getGeoCoordinateYType()
+    {
+        return 'text';
+    }
+
+    public function getGeoCoordinateYOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'point_interet.geo_coordinate_y',
+        );
+    }
+
+    public function getDistanceCampingType()
+    {
+        return 'text';
+    }
+
+    public function getDistanceCampingOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'point_interet.distance_camping',
+        );
+    }
+
+    public function getImageType()
+    {
+        return 'text';
+    }
+
+    public function getImageOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'point_interet.image',
+        );
+    }
+
+    public function getCreatedAtType()
+    {
+        return 'datetime';
+    }
+
+    public function getCreatedAtOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'point_interet.created_at',
+            'widget' => 'single_text',
+        );
+    }
+
+    public function getUpdatedAtType()
+    {
+        return 'datetime';
+    }
+
+    public function getUpdatedAtOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'point_interet.updated_at',
+            'widget' => 'single_text',
+        );
+    }
+
+    public function getActiveType()
+    {
+        return 'checkbox';
+    }
+
+    public function getActiveOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'point_interet.active',
+        );
+    }
+
+    public function getEtablissementsType()
+    {
+        return 'model';
+    }
+
+    public function getEtablissementsOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement_point_interet.etablissement_id',
+            'class' => 'Cungfoo\Model\Etablissement',
+            'multiple' => true,
+        );
+    }
+
+    public function getNameType()
+    {
+        return 'text';
+    }
+
+    public function getNameOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'point_interet_i18n.name',
+            'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+        );
+    }
+
+    public function getPresentationType()
+    {
+        return 'textarea';
+    }
+
+    public function getPresentationOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'point_interet_i18n.presentation',
+        );
+    }
+
+    public function getTransportType()
+    {
+        return 'textarea';
+    }
+
+    public function getTransportOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'point_interet_i18n.transport',
+        );
+    }
+
+    public function getCategorieType()
+    {
+        return 'text';
+    }
+
+    public function getCategorieOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'point_interet_i18n.categorie',
+        );
+    }
+
+    public function getTypeType()
+    {
+        return 'text';
+    }
+
+    public function getTypeOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'point_interet_i18n.type',
+        );
+    }
+
+    public function getSlugType()
+    {
+        return 'text';
+    }
+
+    public function getSlugOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'point_interet_i18n.slug',
+        );
+    }
+
+    public function getActiveLocaleType()
+    {
+        return 'checkbox';
+    }
+
+    public function getActiveLocaleOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'point_interet_i18n.active_locale',
+        );
+    }
+
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('id', 'hidden', array(
-            'label' => 'point_interet.id',
-            'required' => false,
-        ));
-        $builder->add('code', 'text', array(
-            'constraints' => array(
-                new Assert\NotBlank(),
-            ),
-            'label' => 'point_interet.code',
-            'required' => false,
-        ));
-        $builder->add('address', 'text', array(
-            'constraints' => array(
-            ),
-            'label' => 'point_interet.address',
-            'required' => false,
-        ));
-        $builder->add('address2', 'text', array(
-            'constraints' => array(
-            ),
-            'label' => 'point_interet.address2',
-            'required' => false,
-        ));
-        $builder->add('zipcode', 'text', array(
-            'constraints' => array(
-            ),
-            'label' => 'point_interet.zipcode',
-            'required' => false,
-        ));
-        $builder->add('city', 'text', array(
-            'constraints' => array(
-            ),
-            'label' => 'point_interet.city',
-            'required' => false,
-        ));
-        $builder->add('tel', 'text', array(
-            'constraints' => array(
-            ),
-            'label' => 'point_interet.tel',
-            'required' => false,
-        ));
-        $builder->add('fax', 'text', array(
-            'constraints' => array(
-            ),
-            'label' => 'point_interet.fax',
-            'required' => false,
-        ));
-        $builder->add('email', 'text', array(
-            'constraints' => array(
-            ),
-            'label' => 'point_interet.email',
-            'required' => false,
-        ));
-        $builder->add('website', 'text', array(
-            'constraints' => array(
-            ),
-            'label' => 'point_interet.website',
-            'required' => false,
-        ));
-        $builder->add('geo_coordinate_x', 'text', array(
-            'constraints' => array(
-            ),
-            'label' => 'point_interet.geo_coordinate_x',
-            'required' => false,
-        ));
-        $builder->add('geo_coordinate_y', 'text', array(
-            'constraints' => array(
-            ),
-            'label' => 'point_interet.geo_coordinate_y',
-            'required' => false,
-        ));
-        $builder->add('distance_camping', 'text', array(
-            'constraints' => array(
-            ),
-            'label' => 'point_interet.distance_camping',
-            'required' => false,
-        ));
-        $builder->add('image', 'text', array(
-            'constraints' => array(
-            ),
-            'label' => 'point_interet.image',
-            'required' => false,
-        ));
-        $builder->add('active', 'checkbox', array(
-            'constraints' => array(
-            ),
-            'label' => 'point_interet.active',
-            'required' => false,
-        ));
-        $builder->add('etablissements', 'model', array(
-            'class' => 'Cungfoo\Model\Etablissement',
-            'constraints' => array(
-            ),
-            'multiple' => true,
-            'label' => 'point_interet.etablissements',
-            'required' => false,
-        ));
-        $builder->add('point_interetI18ns', 'translation_collection', array(
+        $builder->add('id', $this->getIdType(), $this->getIdOptions());
+        $builder->add('code', $this->getCodeType(), $this->getCodeOptions());
+        $builder->add('address', $this->getAddressType(), $this->getAddressOptions());
+        $builder->add('address2', $this->getAddress2Type(), $this->getAddress2Options());
+        $builder->add('zipcode', $this->getZipcodeType(), $this->getZipcodeOptions());
+        $builder->add('city', $this->getCityType(), $this->getCityOptions());
+        $builder->add('tel', $this->getTelType(), $this->getTelOptions());
+        $builder->add('fax', $this->getFaxType(), $this->getFaxOptions());
+        $builder->add('email', $this->getEmailType(), $this->getEmailOptions());
+        $builder->add('website', $this->getWebsiteType(), $this->getWebsiteOptions());
+        $builder->add('geo_coordinate_x', $this->getGeoCoordinateXType(), $this->getGeoCoordinateXOptions());
+        $builder->add('geo_coordinate_y', $this->getGeoCoordinateYType(), $this->getGeoCoordinateYOptions());
+        $builder->add('distance_camping', $this->getDistanceCampingType(), $this->getDistanceCampingOptions());
+        $builder->add('image', $this->getImageType(), $this->getImageOptions());
+        $builder->add('created_at', $this->getCreatedAtType(), $this->getCreatedAtOptions());
+        $builder->add('updated_at', $this->getUpdatedAtType(), $this->getUpdatedAtOptions());
+        $builder->add('active', $this->getActiveType(), $this->getActiveOptions());
+        $builder->add('etablissements', $this->getEtablissementsType(), $this->getEtablissementsOptions());$builder->add('point_interetI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\PointInteretI18n',
-            'languages' => array(
-                0 => 'fr',
-                1 => 'de',
-            ),
-            'label' => 'point_interet.point_interetI18ns',
-            'columns' => array(
-                'name' => array(
-                    'required' => false,
-                    'label' => 'point_interet.name',
-                    'type' => 'text',
-                    'constraints' => array(
-                        new Assert\NotBlank(),
-                    ),
-                ),
-                'presentation' => array(
-                    'required' => false,
-                    'label' => 'point_interet.presentation',
-                    'type' => 'textarea',
-                    'constraints' => array(
-                    ),
-                ),
-                'transport' => array(
-                    'required' => false,
-                    'label' => 'point_interet.transport',
-                    'type' => 'textarea',
-                    'constraints' => array(
-                    ),
-                ),
-                'categorie' => array(
-                    'required' => false,
-                    'label' => 'point_interet.categorie',
-                    'type' => 'text',
-                    'constraints' => array(
-                    ),
-                ),
-                'type' => array(
-                    'required' => false,
-                    'label' => 'point_interet.type',
-                    'type' => 'text',
-                    'constraints' => array(
-                    ),
-                ),
-                'slug' => array(
-                    'required' => false,
-                    'label' => 'point_interet.slug',
-                    'type' => 'text',
-                    'constraints' => array(
-                    ),
-                ),
-                'active_locale' => array(
-                    'required' => false,
-                    'label' => 'point_interet.active_locale',
-                    'type' => 'checkbox',
-                    'constraints' => array(
-                    ),
-                ),
-            ),
+            'label' => 'point_interetI18ns',
             'required' => false,
+            'languages' => array('fr', 'de'),
+            'columns' => array(
+                'name' => array_merge(array('type' => $this->getNameType()), $this->getNameOptions()),
+                'presentation' => array_merge(array('type' => $this->getPresentationType()), $this->getPresentationOptions()),
+                'transport' => array_merge(array('type' => $this->getTransportType()), $this->getTransportOptions()),
+                'categorie' => array_merge(array('type' => $this->getCategorieType()), $this->getCategorieOptions()),
+                'type' => array_merge(array('type' => $this->getTypeType()), $this->getTypeOptions()),
+                'slug' => array_merge(array('type' => $this->getSlugType()), $this->getSlugOptions()),
+                'active_locale' => array_merge(array('type' => $this->getActiveLocaleType()), $this->getActiveLocaleOptions()),
+
+            )
         ));
+
+
     }
 
     /**

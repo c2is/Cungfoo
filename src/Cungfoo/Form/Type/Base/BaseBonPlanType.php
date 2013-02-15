@@ -18,241 +18,476 @@ use Cungfoo\Form\Type\AppAwareType;
  */
 class BaseBonPlanType extends AppAwareType
 {
+    public function getIdType()
+    {
+        return 'integer';
+    }
+
+    public function getIdOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'bon_plan.id',
+            'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+        );
+    }
+
+    public function getDateDebutType()
+    {
+        return 'date';
+    }
+
+    public function getDateDebutOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'bon_plan.date_debut',
+            'widget' => 'single_text',
+        );
+    }
+
+    public function getDateFinType()
+    {
+        return 'date';
+    }
+
+    public function getDateFinOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'bon_plan.date_fin',
+            'widget' => 'single_text',
+        );
+    }
+
+    public function getPrixType()
+    {
+        return 'integer';
+    }
+
+    public function getPrixOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'bon_plan.prix',
+        );
+    }
+
+    public function getPrixBarreType()
+    {
+        return 'integer';
+    }
+
+    public function getPrixBarreOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'bon_plan.prix_barre',
+        );
+    }
+
+    public function getImageMenuType()
+    {
+        return 'cungfoo_file';
+    }
+
+    public function getImageMenuOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'bon_plan.image_menu',
+        );
+    }
+
+    public function getImageMenuDeletedType()
+    {
+        return 'checkbox';
+    }
+
+    public function getImageMenuDeletedOptions()
+    {
+        return array(
+            'property_path' => false,
+            'required' => false,
+            'label' => 'bon_plan.image_menu_deleted',
+        );
+    }
+
+    public function getImagePageType()
+    {
+        return 'cungfoo_file';
+    }
+
+    public function getImagePageOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'bon_plan.image_page',
+        );
+    }
+
+    public function getImagePageDeletedType()
+    {
+        return 'checkbox';
+    }
+
+    public function getImagePageDeletedOptions()
+    {
+        return array(
+            'property_path' => false,
+            'required' => false,
+            'label' => 'bon_plan.image_page_deleted',
+        );
+    }
+
+    public function getImageListeType()
+    {
+        return 'cungfoo_file';
+    }
+
+    public function getImageListeOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'bon_plan.image_liste',
+        );
+    }
+
+    public function getImageListeDeletedType()
+    {
+        return 'checkbox';
+    }
+
+    public function getImageListeDeletedOptions()
+    {
+        return array(
+            'property_path' => false,
+            'required' => false,
+            'label' => 'bon_plan.image_liste_deleted',
+        );
+    }
+
+    public function getActiveCompteurType()
+    {
+        return 'checkbox';
+    }
+
+    public function getActiveCompteurOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'bon_plan.active_compteur',
+        );
+    }
+
+    public function getMiseEnAvantType()
+    {
+        return 'checkbox';
+    }
+
+    public function getMiseEnAvantOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'bon_plan.mise_en_avant',
+        );
+    }
+
+    public function getPushHomeType()
+    {
+        return 'checkbox';
+    }
+
+    public function getPushHomeOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'bon_plan.push_home',
+        );
+    }
+
+    public function getDateStartType()
+    {
+        return 'date';
+    }
+
+    public function getDateStartOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'bon_plan.date_start',
+            'widget' => 'single_text',
+        );
+    }
+
+    public function getDayStartType()
+    {
+        return 'choice';
+    }
+
+    public function getDayStartOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'bon_plan.day_start',
+            'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+        );
+    }
+
+    public function getDayRangeType()
+    {
+        return 'choice';
+    }
+
+    public function getDayRangeOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'bon_plan.day_range',
+            'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+        );
+    }
+
+    public function getNbAdultesType()
+    {
+        return 'integer';
+    }
+
+    public function getNbAdultesOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'bon_plan.nb_adultes',
+        );
+    }
+
+    public function getNbEnfantsType()
+    {
+        return 'integer';
+    }
+
+    public function getNbEnfantsOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'bon_plan.nb_enfants',
+        );
+    }
+
+    public function getPeriodCategoriesType()
+    {
+        return 'text';
+    }
+
+    public function getPeriodCategoriesOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'bon_plan.period_categories',
+        );
+    }
+
+    public function getActiveType()
+    {
+        return 'checkbox';
+    }
+
+    public function getActiveOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'bon_plan.active',
+        );
+    }
+
+    public function getBonPlanCategoriesType()
+    {
+        return 'model';
+    }
+
+    public function getBonPlanCategoriesOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'bon_plan_bon_plan_categorie.bon_plan_categorie_id',
+            'class' => 'Cungfoo\Model\BonPlanCategorie',
+            'multiple' => true,
+        );
+    }
+
+    public function getEtablissementsType()
+    {
+        return 'model';
+    }
+
+    public function getEtablissementsOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'bon_plan_etablissement.etablissement_id',
+            'class' => 'Cungfoo\Model\Etablissement',
+            'multiple' => true,
+        );
+    }
+
+    public function getRegionsType()
+    {
+        return 'model';
+    }
+
+    public function getRegionsOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'bon_plan_region.region_id',
+            'class' => 'Cungfoo\Model\Region',
+            'multiple' => true,
+        );
+    }
+
+    public function getNameType()
+    {
+        return 'text';
+    }
+
+    public function getNameOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'bon_plan_i18n.name',
+        );
+    }
+
+    public function getSlugType()
+    {
+        return 'text';
+    }
+
+    public function getSlugOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'bon_plan_i18n.slug',
+        );
+    }
+
+    public function getIntroductionType()
+    {
+        return 'text';
+    }
+
+    public function getIntroductionOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'bon_plan_i18n.introduction',
+        );
+    }
+
+    public function getDescriptionType()
+    {
+        return 'textarea';
+    }
+
+    public function getDescriptionOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'bon_plan_i18n.description',
+        );
+    }
+
+    public function getIndiceType()
+    {
+        return 'text';
+    }
+
+    public function getIndiceOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'bon_plan_i18n.indice',
+        );
+    }
+
+    public function getIndicePrixType()
+    {
+        return 'text';
+    }
+
+    public function getIndicePrixOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'bon_plan_i18n.indice_prix',
+        );
+    }
+
+    public function getActiveLocaleType()
+    {
+        return 'checkbox';
+    }
+
+    public function getActiveLocaleOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'bon_plan_i18n.active_locale',
+        );
+    }
+
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('id', 'hidden', array(
-            'label' => 'bon_plan.id',
-            'required' => false,
-        ));
-        $builder->add('date_debut', 'date', array(
-            'constraints' => array(
-            ),
-            'widget' => 'single_text',
-            'label' => 'bon_plan.date_debut',
-            'required' => false,
-        ));
-        $builder->add('date_fin', 'date', array(
-            'constraints' => array(
-            ),
-            'widget' => 'single_text',
-            'label' => 'bon_plan.date_fin',
-            'required' => false,
-        ));
-        $builder->add('prix', 'integer', array(
-            'constraints' => array(
-            ),
-            'label' => 'bon_plan.prix',
-            'required' => false,
-        ));
-        $builder->add('prix_barre', 'integer', array(
-            'constraints' => array(
-            ),
-            'label' => 'bon_plan.prix_barre',
-            'required' => false,
-        ));
-        $builder->add('image_menu', 'cungfoo_file', array(
-            'constraints' => array(
-            ),
-            'label' => 'bon_plan.image_menu',
-            'required' => false,
-        ));
-        $builder->add('image_menu_deleted', 'checkbox', array(
-            'constraints' => array(
-            ),
-            'property_path' => false,
-            'label' => 'bon_plan.image_menu_deleted',
-            'required' => false,
-        ));
-        $builder->add('image_page', 'cungfoo_file', array(
-            'constraints' => array(
-            ),
-            'label' => 'bon_plan.image_page',
-            'required' => false,
-        ));
-        $builder->add('image_page_deleted', 'checkbox', array(
-            'constraints' => array(
-            ),
-            'property_path' => false,
-            'label' => 'bon_plan.image_page_deleted',
-            'required' => false,
-        ));
-        $builder->add('image_liste', 'cungfoo_file', array(
-            'constraints' => array(
-            ),
-            'label' => 'bon_plan.image_liste',
-            'required' => false,
-        ));
-        $builder->add('image_liste_deleted', 'checkbox', array(
-            'constraints' => array(
-            ),
-            'property_path' => false,
-            'label' => 'bon_plan.image_liste_deleted',
-            'required' => false,
-        ));
-        $builder->add('active_compteur', 'checkbox', array(
-            'constraints' => array(
-            ),
-            'label' => 'bon_plan.active_compteur',
-            'required' => false,
-        ));
-        $builder->add('mise_en_avant', 'checkbox', array(
-            'constraints' => array(
-            ),
-            'label' => 'bon_plan.mise_en_avant',
-            'required' => false,
-        ));
-        $builder->add('push_home', 'checkbox', array(
-            'constraints' => array(
-            ),
-            'label' => 'bon_plan.push_home',
-            'required' => false,
-        ));
-        $builder->add('date_start', 'date', array(
-            'constraints' => array(
-            ),
-            'widget' => 'single_text',
-            'label' => 'bon_plan.date_start',
-            'required' => false,
-        ));
-        $builder->add('day_start', 'choice', array(
-            'constraints' => array(
-                new Assert\NotBlank(),
-            ),
-            'choices' => array(
-                'monday' => 'monday',
-                'tuesday' => 'tuesday',
-                'wednesday' => 'wednesday',
-                'thursday' => 'thursday',
-                'friday' => 'friday',
-                'saturday' => 'saturday',
-                'sunday' => 'sunday',
-            ),
-            'label' => 'bon_plan.day_start',
-            'required' => false,
-        ));
-        $builder->add('day_range', 'choice', array(
-            'constraints' => array(
-                new Assert\NotBlank(),
-            ),
-            'choices' => array(
-                7 => '7',
-                14 => '14',
-                21 => '21',
-            ),
-            'label' => 'bon_plan.day_range',
-            'required' => false,
-        ));
-        $builder->add('nb_adultes', 'integer', array(
-            'constraints' => array(
-            ),
-            'label' => 'bon_plan.nb_adultes',
-            'required' => false,
-        ));
-        $builder->add('nb_enfants', 'integer', array(
-            'constraints' => array(
-            ),
-            'label' => 'bon_plan.nb_enfants',
-            'required' => false,
-        ));
-        $builder->add('period_categories', 'text', array(
-            'constraints' => array(
-            ),
-            'label' => 'bon_plan.period_categories',
-            'required' => false,
-        ));
-        $builder->add('active', 'checkbox', array(
-            'constraints' => array(
-            ),
-            'label' => 'bon_plan.active',
-            'required' => false,
-        ));
-        $builder->add('bon_plan_categories', 'model', array(
-            'class' => 'Cungfoo\Model\BonPlanCategorie',
-            'constraints' => array(
-            ),
-            'multiple' => true,
-            'label' => 'bon_plan.bon_plan_categories',
-            'required' => false,
-        ));
-        $builder->add('etablissements', 'model', array(
-            'class' => 'Cungfoo\Model\Etablissement',
-            'constraints' => array(
-            ),
-            'multiple' => true,
-            'label' => 'bon_plan.etablissements',
-            'required' => false,
-        ));
-        $builder->add('regions', 'model', array(
-            'class' => 'Cungfoo\Model\Region',
-            'constraints' => array(
-            ),
-            'multiple' => true,
-            'label' => 'bon_plan.regions',
-            'required' => false,
-        ));
-        $builder->add('bon_planI18ns', 'translation_collection', array(
+        $builder->add('id', $this->getIdType(), $this->getIdOptions());
+        $builder->add('date_debut', $this->getDateDebutType(), $this->getDateDebutOptions());
+        $builder->add('date_fin', $this->getDateFinType(), $this->getDateFinOptions());
+        $builder->add('prix', $this->getPrixType(), $this->getPrixOptions());
+        $builder->add('prix_barre', $this->getPrixBarreType(), $this->getPrixBarreOptions());
+        $builder->add('image_menu', $this->getImageMenuType(), $this->getImageMenuOptions());
+        $builder->add('image_menu_deleted', $this->getImageMenuDeletedType(), $this->getImageMenuDeletedOptions());
+        $builder->add('image_page', $this->getImagePageType(), $this->getImagePageOptions());
+        $builder->add('image_page_deleted', $this->getImagePageDeletedType(), $this->getImagePageDeletedOptions());
+        $builder->add('image_liste', $this->getImageListeType(), $this->getImageListeOptions());
+        $builder->add('image_liste_deleted', $this->getImageListeDeletedType(), $this->getImageListeDeletedOptions());
+        $builder->add('active_compteur', $this->getActiveCompteurType(), $this->getActiveCompteurOptions());
+        $builder->add('mise_en_avant', $this->getMiseEnAvantType(), $this->getMiseEnAvantOptions());
+        $builder->add('push_home', $this->getPushHomeType(), $this->getPushHomeOptions());
+        $builder->add('date_start', $this->getDateStartType(), $this->getDateStartOptions());
+        $builder->add('day_start', $this->getDayStartType(), $this->getDayStartOptions());
+        $builder->add('day_range', $this->getDayRangeType(), $this->getDayRangeOptions());
+        $builder->add('nb_adultes', $this->getNbAdultesType(), $this->getNbAdultesOptions());
+        $builder->add('nb_enfants', $this->getNbEnfantsType(), $this->getNbEnfantsOptions());
+        $builder->add('period_categories', $this->getPeriodCategoriesType(), $this->getPeriodCategoriesOptions());
+        $builder->add('active', $this->getActiveType(), $this->getActiveOptions());
+        $builder->add('bon_plan_categories', $this->getBonPlanCategoriesType(), $this->getBonPlanCategoriesOptions());
+        $builder->add('etablissements', $this->getEtablissementsType(), $this->getEtablissementsOptions());
+        $builder->add('regions', $this->getRegionsType(), $this->getRegionsOptions());$builder->add('bon_planI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\BonPlanI18n',
-            'languages' => array(
-                0 => 'fr',
-                1 => 'de',
-            ),
-            'label' => 'bon_plan.bon_planI18ns',
-            'columns' => array(
-                'name' => array(
-                    'required' => false,
-                    'label' => 'bon_plan.name',
-                    'type' => 'text',
-                    'constraints' => array(
-                    ),
-                ),
-                'slug' => array(
-                    'required' => false,
-                    'label' => 'bon_plan.slug',
-                    'type' => 'text',
-                    'constraints' => array(
-                    ),
-                ),
-                'introduction' => array(
-                    'required' => false,
-                    'label' => 'bon_plan.introduction',
-                    'type' => 'text',
-                    'constraints' => array(
-                    ),
-                ),
-                'description' => array(
-                    'required' => false,
-                    'label' => 'bon_plan.description',
-                    'type' => 'textarea',
-                    'constraints' => array(
-                    ),
-                ),
-                'indice' => array(
-                    'required' => false,
-                    'label' => 'bon_plan.indice',
-                    'type' => 'text',
-                    'constraints' => array(
-                    ),
-                ),
-                'indice_prix' => array(
-                    'required' => false,
-                    'label' => 'bon_plan.indice_prix',
-                    'type' => 'text',
-                    'constraints' => array(
-                    ),
-                ),
-                'active_locale' => array(
-                    'required' => false,
-                    'label' => 'bon_plan.active_locale',
-                    'type' => 'checkbox',
-                    'constraints' => array(
-                    ),
-                ),
-            ),
+            'label' => 'bon_planI18ns',
             'required' => false,
+            'languages' => array('fr', 'de'),
+            'columns' => array(
+                'name' => array_merge(array('type' => $this->getNameType()), $this->getNameOptions()),
+                'slug' => array_merge(array('type' => $this->getSlugType()), $this->getSlugOptions()),
+                'introduction' => array_merge(array('type' => $this->getIntroductionType()), $this->getIntroductionOptions()),
+                'description' => array_merge(array('type' => $this->getDescriptionType()), $this->getDescriptionOptions()),
+                'indice' => array_merge(array('type' => $this->getIndiceType()), $this->getIndiceOptions()),
+                'indice_prix' => array_merge(array('type' => $this->getIndicePrixType()), $this->getIndicePrixOptions()),
+                'active_locale' => array_merge(array('type' => $this->getActiveLocaleType()), $this->getActiveLocaleOptions()),
+
+            )
         ));
+
+
     }
 
     /**

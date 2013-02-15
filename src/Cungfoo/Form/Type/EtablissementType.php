@@ -31,6 +31,106 @@ class EtablissementType extends BaseEtablissementType
         //;
     }
 
+    public function getCodeOptions()
+    {
+        return array_merge(parent::getCodeOptions(), array('disabled' => true));
+    }
+
+    public function getNameOptions()
+    {
+        return array_merge(parent::getNameOptions(), array('disabled' => true));
+    }
+
+    public function getVilleOptions()
+    {
+        return array_merge(parent::getVilleOptions(), array('disabled' => true));
+    }
+
+    public function getDepartementOptions()
+    {
+        return array_merge(parent::getDepartementOptions(), array('disabled' => true));
+    }
+
+    public function getCategorieOptions()
+    {
+        return array_merge(parent::getCategorieOptions(), array('disabled' => true));
+    }
+
+    public function getGeoCoordinateXOptions()
+    {
+        return array_merge(parent::getGeoCoordinateXOptions(), array('disabled' => true));
+    }
+
+    public function getGeoCoordinateYOptions()
+    {
+        return array_merge(parent::getGeoCoordinateYOptions(), array('disabled' => true));
+    }
+
+    public function getCapaciteOptions()
+    {
+        return array_merge(parent::getCapaciteOptions(), array('disabled' => true));
+    }
+
+    public function getAddress1Options()
+    {
+        return array_merge(parent::getAddress1Options(), array('disabled' => true));
+    }
+
+    public function getAddress2Options()
+    {
+        return array_merge(parent::getAddress2Options(), array('disabled' => true));
+    }
+
+    public function getCityOptions()
+    {
+        return array_merge(parent::getCityOptions(), array('disabled' => true));
+    }
+
+    public function getZipOptions()
+    {
+        return array_merge(parent::getZipOptions(), array('disabled' => true));
+    }
+
+    public function getCountryOptions()
+    {
+        return array_merge(parent::getCountryOptions(), array('disabled' => true));
+    }
+
+    public function getCountryCodeOptions()
+    {
+        return array_merge(parent::getCountryCodeOptions(), array('disabled' => true));
+    }
+
+    public function getMailOptions()
+    {
+        return array_merge(parent::getMailOptions(), array('disabled' => true));
+    }
+
+    public function getPhone1Options()
+    {
+        return array_merge(parent::getPhone1Options(), array('disabled' => true));
+    }
+
+    public function getPhone2Options()
+    {
+        return array_merge(parent::getPhone2Options(), array('disabled' => true));
+    }
+
+    public function getFaxOptions()
+    {
+        return array_merge(parent::getFaxOptions(), array('disabled' => true));
+    }
+
+    public function getClosingDateOptions()
+    {
+        return array_merge(parent::getClosingDateOptions(), array('disabled' => true));
+    }
+
+    public function getOpeningDateOptions()
+    {
+        return array_merge(parent::getOpeningDateOptions(), array('disabled' => true));
+    }
+
     /**
      * {@inheritdoc}
      */

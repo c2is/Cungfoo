@@ -18,82 +18,190 @@ use Cungfoo\Form\Type\AppAwareType;
  */
 class BasePersonnageType extends AppAwareType
 {
+    public function getIdType()
+    {
+        return 'integer';
+    }
+
+    public function getIdOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'personnage.id',
+            'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+        );
+    }
+
+    public function getEtablissementType()
+    {
+        return 'model';
+    }
+
+    public function getEtablissementOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'personnage.etablissement_id',
+            'class' => 'Cungfoo\Model\Etablissement',
+        );
+    }
+
+    public function getAgeType()
+    {
+        return 'text';
+    }
+
+    public function getAgeOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'personnage.age',
+            'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+        );
+    }
+
+    public function getImagePathType()
+    {
+        return 'cungfoo_file';
+    }
+
+    public function getImagePathOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'personnage.image_path',
+        );
+    }
+
+    public function getImagePathDeletedType()
+    {
+        return 'checkbox';
+    }
+
+    public function getImagePathDeletedOptions()
+    {
+        return array(
+            'property_path' => false,
+            'required' => false,
+            'label' => 'personnage.image_path_deleted',
+        );
+    }
+
+    public function getCreatedAtType()
+    {
+        return 'datetime';
+    }
+
+    public function getCreatedAtOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'personnage.created_at',
+            'widget' => 'single_text',
+        );
+    }
+
+    public function getUpdatedAtType()
+    {
+        return 'datetime';
+    }
+
+    public function getUpdatedAtOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'personnage.updated_at',
+            'widget' => 'single_text',
+        );
+    }
+
+    public function getActiveType()
+    {
+        return 'checkbox';
+    }
+
+    public function getActiveOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'personnage.active',
+        );
+    }
+
+    public function getThemesType()
+    {
+        return 'model';
+    }
+
+    public function getThemesOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'theme_personnage.theme_id',
+            'class' => 'Cungfoo\Model\Theme',
+            'multiple' => true,
+        );
+    }
+
+    public function getPrenomType()
+    {
+        return 'text';
+    }
+
+    public function getPrenomOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'personnage_i18n.prenom',
+            'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+        );
+    }
+
+    public function getActiveLocaleType()
+    {
+        return 'checkbox';
+    }
+
+    public function getActiveLocaleOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'personnage_i18n.active_locale',
+        );
+    }
+
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('id', 'hidden', array(
-            'label' => 'personnage.id',
-            'required' => false,
-        ));
-        $builder->add('etablissement', 'model', array(
-            'class' => '\Cungfoo\Model\Etablissement',
-            'constraints' => array(
-            ),
-            'label' => 'personnage.etablissement',
-            'required' => false,
-        ));
-        $builder->add('age', 'text', array(
-            'constraints' => array(
-                new Assert\NotBlank(),
-            ),
-            'label' => 'personnage.age',
-            'required' => false,
-        ));
-        $builder->add('image_path', 'cungfoo_file', array(
-            'constraints' => array(
-            ),
-            'label' => 'personnage.image_path',
-            'required' => false,
-        ));
-        $builder->add('image_path_deleted', 'checkbox', array(
-            'constraints' => array(
-            ),
-            'property_path' => false,
-            'label' => 'personnage.image_path_deleted',
-            'required' => false,
-        ));
-        $builder->add('active', 'checkbox', array(
-            'constraints' => array(
-            ),
-            'label' => 'personnage.active',
-            'required' => false,
-        ));
-        $builder->add('themes', 'model', array(
-            'class' => 'Cungfoo\Model\Theme',
-            'constraints' => array(
-            ),
-            'multiple' => true,
-            'label' => 'personnage.themes',
-            'required' => false,
-        ));
-        $builder->add('personnageI18ns', 'translation_collection', array(
+        $builder->add('id', $this->getIdType(), $this->getIdOptions());
+        $builder->add('etablissement', $this->getEtablissementType(), $this->getEtablissementOptions());
+        $builder->add('age', $this->getAgeType(), $this->getAgeOptions());
+        $builder->add('image_path', $this->getImagePathType(), $this->getImagePathOptions());
+        $builder->add('image_path_deleted', $this->getImagePathDeletedType(), $this->getImagePathDeletedOptions());
+        $builder->add('created_at', $this->getCreatedAtType(), $this->getCreatedAtOptions());
+        $builder->add('updated_at', $this->getUpdatedAtType(), $this->getUpdatedAtOptions());
+        $builder->add('active', $this->getActiveType(), $this->getActiveOptions());
+        $builder->add('themes', $this->getThemesType(), $this->getThemesOptions());$builder->add('personnageI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\PersonnageI18n',
-            'languages' => array(
-                0 => 'fr',
-                1 => 'de',
-            ),
-            'label' => 'personnage.personnageI18ns',
-            'columns' => array(
-                'prenom' => array(
-                    'required' => false,
-                    'label' => 'personnage.prenom',
-                    'type' => 'text',
-                    'constraints' => array(
-                        new Assert\NotBlank(),
-                    ),
-                ),
-                'active_locale' => array(
-                    'required' => false,
-                    'label' => 'personnage.active_locale',
-                    'type' => 'checkbox',
-                    'constraints' => array(
-                    ),
-                ),
-            ),
+            'label' => 'personnageI18ns',
             'required' => false,
+            'languages' => array('fr', 'de'),
+            'columns' => array(
+                'prenom' => array_merge(array('type' => $this->getPrenomType()), $this->getPrenomOptions()),
+                'active_locale' => array_merge(array('type' => $this->getActiveLocaleType()), $this->getActiveLocaleOptions()),
+
+            )
         ));
+
+
     }
 
     /**

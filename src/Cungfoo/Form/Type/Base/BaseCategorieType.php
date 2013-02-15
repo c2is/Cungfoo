@@ -18,54 +18,130 @@ use Cungfoo\Form\Type\AppAwareType;
  */
 class BaseCategorieType extends AppAwareType
 {
+    public function getIdType()
+    {
+        return 'integer';
+    }
+
+    public function getIdOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'categorie.id',
+            'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+        );
+    }
+
+    public function getCodeType()
+    {
+        return 'text';
+    }
+
+    public function getCodeOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'categorie.code',
+            'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+        );
+    }
+
+    public function getCreatedAtType()
+    {
+        return 'datetime';
+    }
+
+    public function getCreatedAtOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'categorie.created_at',
+            'widget' => 'single_text',
+        );
+    }
+
+    public function getUpdatedAtType()
+    {
+        return 'datetime';
+    }
+
+    public function getUpdatedAtOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'categorie.updated_at',
+            'widget' => 'single_text',
+        );
+    }
+
+    public function getActiveType()
+    {
+        return 'checkbox';
+    }
+
+    public function getActiveOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'categorie.active',
+        );
+    }
+
+    public function getNameType()
+    {
+        return 'text';
+    }
+
+    public function getNameOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'categorie_i18n.name',
+            'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+        );
+    }
+
+    public function getActiveLocaleType()
+    {
+        return 'checkbox';
+    }
+
+    public function getActiveLocaleOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'categorie_i18n.active_locale',
+        );
+    }
+
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('id', 'hidden', array(
-            'label' => 'categorie.id',
-            'required' => false,
-        ));
-        $builder->add('code', 'text', array(
-            'constraints' => array(
-                new Assert\NotBlank(),
-            ),
-            'label' => 'categorie.code',
-            'required' => false,
-        ));
-        $builder->add('active', 'checkbox', array(
-            'constraints' => array(
-            ),
-            'label' => 'categorie.active',
-            'required' => false,
-        ));
-        $builder->add('categorieI18ns', 'translation_collection', array(
+        $builder->add('id', $this->getIdType(), $this->getIdOptions());
+        $builder->add('code', $this->getCodeType(), $this->getCodeOptions());
+        $builder->add('created_at', $this->getCreatedAtType(), $this->getCreatedAtOptions());
+        $builder->add('updated_at', $this->getUpdatedAtType(), $this->getUpdatedAtOptions());
+        $builder->add('active', $this->getActiveType(), $this->getActiveOptions());$builder->add('categorieI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\CategorieI18n',
-            'languages' => array(
-                0 => 'fr',
-                1 => 'de',
-            ),
-            'label' => 'categorie.categorieI18ns',
-            'columns' => array(
-                'name' => array(
-                    'required' => false,
-                    'label' => 'categorie.name',
-                    'type' => 'text',
-                    'constraints' => array(
-                        new Assert\NotBlank(),
-                    ),
-                ),
-                'active_locale' => array(
-                    'required' => false,
-                    'label' => 'categorie.active_locale',
-                    'type' => 'checkbox',
-                    'constraints' => array(
-                    ),
-                ),
-            ),
+            'label' => 'categorieI18ns',
             'required' => false,
+            'languages' => array('fr', 'de'),
+            'columns' => array(
+                'name' => array_merge(array('type' => $this->getNameType()), $this->getNameOptions()),
+                'active_locale' => array_merge(array('type' => $this->getActiveLocaleType()), $this->getActiveLocaleOptions()),
+
+            )
         ));
+
+
     }
 
     /**

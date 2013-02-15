@@ -18,35 +18,74 @@ use Cungfoo\Form\Type\AppAwareType;
  */
 class BaseTopCampingType extends AppAwareType
 {
+    public function getIdType()
+    {
+        return 'integer';
+    }
+
+    public function getIdOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'top_camping.id',
+            'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+        );
+    }
+
+    public function getEtablissementType()
+    {
+        return 'model';
+    }
+
+    public function getEtablissementOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'top_camping.etablissement_id',
+            'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+            'class' => 'Cungfoo\Model\Etablissement',
+        );
+    }
+
+    public function getSortableRankType()
+    {
+        return 'integer';
+    }
+
+    public function getSortableRankOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'top_camping.sortable_rank',
+        );
+    }
+
+    public function getActiveType()
+    {
+        return 'checkbox';
+    }
+
+    public function getActiveOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'top_camping.active',
+        );
+    }
+
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('id', 'hidden', array(
-            'label' => 'top_camping.id',
-            'required' => false,
-        ));
-        $builder->add('etablissement', 'model', array(
-            'class' => '\Cungfoo\Model\Etablissement',
-            'constraints' => array(
-                new Assert\NotBlank(),
-            ),
-            'label' => 'top_camping.etablissement',
-            'required' => false,
-        ));
-        $builder->add('sortable_rank', 'integer', array(
-            'constraints' => array(
-            ),
-            'label' => 'top_camping.sortable_rank',
-            'required' => false,
-        ));
-        $builder->add('active', 'checkbox', array(
-            'constraints' => array(
-            ),
-            'label' => 'top_camping.active',
-            'required' => false,
-        ));
+        $builder->add('id', $this->getIdType(), $this->getIdOptions());
+        $builder->add('etablissement', $this->getEtablissementType(), $this->getEtablissementOptions());
+        $builder->add('sortable_rank', $this->getSortableRankType(), $this->getSortableRankOptions());
+        $builder->add('active', $this->getActiveType(), $this->getActiveOptions());
     }
 
     /**
