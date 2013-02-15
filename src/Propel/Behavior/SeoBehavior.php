@@ -17,9 +17,6 @@ class SeoBehavior extends Behavior
     {
         $this->builder = $builder;
         $script = '';
-
-        $this->addGetMetadata($script);
-
         return $script;
     }
 
@@ -30,10 +27,6 @@ class SeoBehavior extends Behavior
             $this->getTable()->addBehavior(array(
                 'name'    => 'i18n',
             ));
-
-            foreach ($this->getTable()->getDatabase()->getBehaviors() as $behavior) {
-                $behavior->modifyDatabase();
-            }
         }
 
         $this->getTable()->addColumn(array(
@@ -62,52 +55,76 @@ class SeoBehavior extends Behavior
             'name' => 'i18n_columns',
             'value' => $this->getTable()->getBehavior('i18n')->getParameter('i18n_columns').','.$this->getParameter('title_column').','.$this->getParameter('description_column').','.$this->getParameter('h1_column').','.$this->getParameter('keywords_column'),
         ));
-    }
 
-    protected function addGetMetadata(&$script)
-    {
-        $utils = new \Cungfoo\Lib\Utils();
+        $table = $this->getTable();
+        $database = $table->getDatabase();
+        $seoTableName = 'seo';
+        if ($database->hasTable($seoTableName)) {
+            $this->seoTable = $database->getTable($seoTableName);
+        } else {
+            $this->seoTable = $database->addTable(array(
+                'name'      => $seoTableName,
+                'phpName'   => ucfirst($seoTableName),
+                'package'   => $table->getPackage(),
+                'schema'    => $table->getSchema(),
+                'namespace' => $table->getNamespace() ? '\\' . $table->getNamespace() : null,
+            ));
 
-        $script .= "
-/**
- * @param PropelPDO \$con
- * @return array             The object's metadata
- */
-public function getMetadata(PropelPDO \$con = null)
-{
-    \$metadata = array(";
-        foreach ($this->parameters as $seoColumn)
-        {
-            $getColumn = 'get' . $utils->camelize($seoColumn);
-            $script .= "
-        '$seoColumn' => \$this->$getColumn(),";
-        }
+            $this->seoTable->addColumn(array(
+                'name'          => 'id',
+                'type'          => PropelTypes::INTEGER,
+                'size'          => 5,
+                'primaryKey'    => 'true',
+                'autoIncrement' => 'true',
+                'required'      => 'true',
+            ));
 
-        $script .= "
-    );";
+            $this->seoTable->addColumn(array(
+                'name'       => 'table_ref',
+                'type'       => PropelTypes::VARCHAR,
+                'size'       => 255,
+                'required'   => 'true',
+            ));
 
+            $this->seoTable->addColumn(array(
+                'name'       => 'title',
+                'type'       => PropelTypes::VARCHAR,
+                'size'       => 255,
+            ));
 
-    if ($this->getTable()->hasBehavior('crudable'))
-    {
-        $tableName = $this->getTable()->getName();
-        $script .= "
-    \$utils = new \Cungfoo\Lib\Utils();
-    if (\$tableMetadata = \Cungfoo\Model\MetadataPeer::get('$tableName'))
-    {
-        foreach (\$metadata as \$seoColumn => \$value) 
-        {
-            if (!trim(\$value))
-            {
-                \$getColumn = 'get' . \$utils->camelize(\$seoColumn);
-                \$metadata[\$seoColumn] = \$tableMetadata->\$getColumn();
+            $this->seoTable->addColumn(array(
+                'name'       => 'subtitle',
+                'type'       => PropelTypes::VARCHAR,
+                'size'       => 255,
+            ));
+
+            $this->seoTable->addColumn(array(
+                'name'       => 'visuel',
+                'type'       => PropelTypes::VARCHAR,
+                'size'       => 255,
+            ));
+
+            $this->seoTable->addColumn(array(
+                'name'       => 'accroche',
+                'type'       => PropelTypes::VARCHAR,
+                'size'       => 255,
+            ));
+
+            $crudableBehavior = new CrudableBehavior();
+            $crudableBehavior->setName('crudable');
+            $crudableBehavior->addParameter(array('name' => 'crud_prefix', 'value' => '/seo'));
+            $crudableBehavior->addParameter(array('name' => 'crud_type_file', 'value' => 'visuel'));
+            $this->seoTable->addBehavior($crudableBehavior);
+
+            $i18nBehavior = new I18nBehavior();
+            $i18nBehavior->setName('i18n');
+            $i18nBehavior->addParameter(array('name' => 'i18n_columns', 'value' => 'title,subtitle,accroche'));
+            $this->seoTable->addBehavior($i18nBehavior);
+
+            // every behavior adding a table should re-execute database behaviors
+            foreach ($database->getBehaviors() as $behavior) {
+                $behavior->modifyDatabase();
             }
         }
-    }";
-    }
-
-    $script .= "
-    return \$metadata;
-}
-";
     }
 }

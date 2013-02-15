@@ -59,6 +59,10 @@ class CrudController implements ControllerProviderInterface
             ->bind(sprintf('%s_crud_metadata', $this->modelName))
         ;
 
+        $controllers->match(sprintf('/%s/seo', $this->prefix), array($this, 'seo'))
+            ->bind(sprintf('%s_crud_seo', $this->modelName))
+        ;
+
         $controllers->match(sprintf('/%s/{slug}/{page}', $this->prefix), array($this, 'listing'))
             ->assert('page', '\d+')
             ->value('page', 1)
@@ -115,6 +119,37 @@ class CrudController implements ControllerProviderInterface
         }
 
         return $app['twig']->render('Crud/metadata.twig', array(
+            'name' => $this->modelName,
+            'form' => $form->createView(),
+        ));
+    }
+
+    function seo(Application $app, Request $request) {
+        $peerClass = $this->peerClass;
+
+        $object = SeoQuery::create()
+            ->filterByTableRef($peerClass::TABLE_NAME)
+            ->findOne()
+        ;
+
+        if (!$object) {
+            $object = new Seo();
+            $object->setTableRef($peerClass::TABLE_NAME);
+        }
+
+
+        $form = $app['form.factory']->create(new SeoType($app), $object);
+        if ('POST' == $request->getMethod()) {
+            $form->bindRequest($request);
+
+            if ($form->isValid()) {
+                $object->saveFromCrud($form);
+
+                return $app->redirect($app['url_generator']->generate(sprintf('%s_crud_list', $this->modelName)));
+            }
+        }
+
+        return $app['twig']->render('Crud/seo.twig', array(
             'name' => $this->modelName,
             'form' => $form->createView(),
         ));
