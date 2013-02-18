@@ -132,6 +132,14 @@ class BaseEventType extends AppAwareType
             'label' => 'event.etablissements',
             'required' => false,
         ));
+        $builder->add('regions', 'model', array(
+            'class' => 'Cungfoo\Model\Region',
+            'constraints' => array(
+            ),
+            'multiple' => true,
+            'label' => 'event.regions',
+            'required' => false,
+        ));
         $builder->add('eventI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\EventI18n',
             'languages' => array(

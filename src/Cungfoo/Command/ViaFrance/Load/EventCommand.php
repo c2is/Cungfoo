@@ -18,6 +18,7 @@ use Symfony\Component\Console\Input\InputArgument,
 use Cungfoo\Command\Command as BaseCommand,
     Cungfoo\Lib\RESTConnection,
     Cungfoo\Lib\ViaFrance\Client\EventClient,
+    Cungfoo\Lib\ViaFrance\Client\EventRegionClient,
     Cungfoo\Lib\ViaFrance\Loader\EventLoader;
 
 class EventCommand extends BaseCommand
@@ -33,9 +34,6 @@ class EventCommand extends BaseCommand
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $client = new EventClient();
-        $client->loadConfig($this->getProjectDirectory().'/app/config/ViaFrance/client.yml');
-
         $loader = new EventLoader();
 
         $con = \Propel::getConnection();
@@ -49,16 +47,47 @@ class EventCommand extends BaseCommand
                 ->find()
             ;
 
-            foreach ($etabs as $etab)
+            foreach ($this->getSilexApplication()['config']->getLanguages() as $language => $locale)
             {
-                $client->setParam('x', $etab->getGeoCoordinateX());
-                $client->setParam('y', $etab->getGeoCoordinateY());
-
-                foreach ($this->getSilexApplication()['config']->getLanguages() as $language => $locale)
+                if ($language == 'de')
                 {
-                    $client->setParam('lang', $language);
-                    $data = $client->getData(new RESTConnection());
-                    $loader->load($etab, $data, $language);
+                    $client = new EventRegionClient();
+                    $client->loadConfig($this->getProjectDirectory().'/app/config/ViaFrance/client.yml');
+
+                    $regions = \Cungfoo\Model\RegionQuery::create()
+                        ->find()
+                    ;
+
+                    $correspondanceRegions = \Symfony\Component\Yaml\Yaml::parse($this->getProjectDirectory().'/app/config/ViaFrance/regions.yml')['regions'];
+
+                    foreach ($regions as $region)
+                    {
+                        if (isset($correspondanceRegions[$region->getCode()]))
+                        {
+                            foreach ($correspondanceRegions[$region->getCode()] as $key => $value)
+                            {
+                                $client->setParam($key, $value);
+                                $client->setParam('lang', $language);
+                                $data = $client->getData(new RESTConnection());
+                                $loader->load($region, $data, $language);
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    $client = new EventClient();
+                    $client->loadConfig($this->getProjectDirectory().'/app/config/ViaFrance/client.yml');
+
+                    foreach ($etabs as $etab)
+                    {
+                        $client->setParam('x', $etab->getGeoCoordinateX());
+                        $client->setParam('y', $etab->getGeoCoordinateY());
+
+                        $client->setParam('lang', $language);
+                        $data = $client->getData(new RESTConnection());
+                        $loader->load($etab, $data, $language);
+                    }
                 }
             }
 

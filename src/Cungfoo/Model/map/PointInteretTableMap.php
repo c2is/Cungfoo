@@ -68,8 +68,10 @@ class PointInteretTableMap extends TableMap
     public function buildRelations()
     {
         $this->addRelation('EtablissementPointInteret', 'Cungfoo\\Model\\EtablissementPointInteret', RelationMap::ONE_TO_MANY, array('id' => 'point_interet_id', ), 'CASCADE', null, 'EtablissementPointInterets');
+        $this->addRelation('RegionPointInteret', 'Cungfoo\\Model\\RegionPointInteret', RelationMap::ONE_TO_MANY, array('id' => 'point_interet_id', ), 'CASCADE', null, 'RegionPointInterets');
         $this->addRelation('PointInteretI18n', 'Cungfoo\\Model\\PointInteretI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'PointInteretI18ns');
         $this->addRelation('Etablissement', 'Cungfoo\\Model\\Etablissement', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'Etablissements');
+        $this->addRelation('Region', 'Cungfoo\\Model\\Region', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'Regions');
     } // buildRelations()
 
     /**

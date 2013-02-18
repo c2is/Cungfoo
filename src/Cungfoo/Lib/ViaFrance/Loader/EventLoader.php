@@ -5,7 +5,9 @@ namespace Cungfoo\Lib\ViaFrance\Loader;
 use Cungfoo\Model\Event,
     Cungfoo\Model\EventQuery,
     Cungfoo\Model\EtablissementEvent,
-    Cungfoo\Model\EtablissementEventQuery;
+    Cungfoo\Model\EtablissementEventQuery,
+    Cungfoo\Model\RegionEvent,
+    Cungfoo\Model\RegionEventQuery;
 
 class EventLoader extends AbstractLoader
 {
@@ -33,12 +35,31 @@ class EventLoader extends AbstractLoader
         $xml   = new \SimpleXMLElement($data);
         $cache = array();
 
+        $toDelete = EventQuery::create();
         foreach ($xml->{'Event'} as $event)
         {
             if ($insertedEvent = $this->insertEvent($event, $language))
             {
-                $this->insertRelation($etab, $insertedEvent, $event['DistanceXY']);
+                $toDelete->prune($insertedEvent);
+
+                if ($language == 'de')
+                {
+                    $this->insertRegionRelation($etab, $insertedEvent);
+                }
+                else
+                {
+                    $this->insertRelation($etab, $insertedEvent, $event['DistanceXY']);
+                }
             }
+        }
+
+        if ($toDelete->find()->count())
+        {
+            $idToDelete = $toDelete->select('id')->find($this->dbConnection)->toArray();
+            $themeDeleted = EventQuery::create()
+                ->filterById($idToDelete)
+                ->delete($this->dbConnection)
+            ;
         }
     }
 
@@ -139,6 +160,25 @@ class EventLoader extends AbstractLoader
                 ->setEtablissementId($etab->getId())
                 ->setEventId($event->getId())
                 ->setDistance($distance)
+                ->save($this->dbConnection)
+            ;
+        }
+    }
+
+    public function insertRegionRelation($region, $event)
+    {
+        $regionEvent = RegionEventQuery::create()
+            ->filterByRegionId($region->getId())
+            ->filterByEventId($event->getId())
+            ->findOne($this->dbConnection)
+        ;
+
+        if (!$regionEvent)
+        {
+            $regionEvent = new RegionEvent();
+            $regionEvent
+                ->setRegionId($region->getId())
+                ->setEventId($event->getId())
                 ->save($this->dbConnection)
             ;
         }

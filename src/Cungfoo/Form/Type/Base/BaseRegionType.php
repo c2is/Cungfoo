@@ -125,6 +125,22 @@ class BaseRegionType extends AppAwareType
             'label' => 'region.active',
             'required' => false,
         ));
+        $builder->add('point_interets', 'model', array(
+            'class' => 'Cungfoo\Model\PointInteret',
+            'constraints' => array(
+            ),
+            'multiple' => true,
+            'label' => 'region.point_interets',
+            'required' => false,
+        ));
+        $builder->add('events', 'model', array(
+            'class' => 'Cungfoo\Model\Event',
+            'constraints' => array(
+            ),
+            'multiple' => true,
+            'label' => 'region.events',
+            'required' => false,
+        ));
         $builder->add('bon_plans', 'model', array(
             'class' => 'Cungfoo\Model\BonPlan',
             'constraints' => array(

@@ -13,6 +13,7 @@ use Cungfoo\Model\EtablissementPointInteretPeer;
 use Cungfoo\Model\PointInteret;
 use Cungfoo\Model\PointInteretI18nPeer;
 use Cungfoo\Model\PointInteretPeer;
+use Cungfoo\Model\RegionPointInteretPeer;
 use Cungfoo\Model\map\PointInteretTableMap;
 
 /**
@@ -454,6 +455,9 @@ abstract class BasePointInteretPeer
         // Invalidate objects in EtablissementPointInteretPeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
         EtablissementPointInteretPeer::clearInstancePool();
+        // Invalidate objects in RegionPointInteretPeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        RegionPointInteretPeer::clearInstancePool();
         // Invalidate objects in PointInteretI18nPeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
         PointInteretI18nPeer::clearInstancePool();
