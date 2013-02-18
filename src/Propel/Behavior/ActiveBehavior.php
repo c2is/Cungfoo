@@ -149,6 +149,8 @@ public function find".$this->getColumnPhpName('active_column')."(\$con = null)
             $script .= "
         ->useI18nQuery(\$locale, 'i18n_locale')
             ->filterByActiveLocale(true)
+                ->_or()
+            ->filterByActiveLocale(null, Criteria::ISNULL)
         ->endUse()";
         }
 
