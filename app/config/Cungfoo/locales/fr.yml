@@ -9,15 +9,15 @@ activite.etablissements: Établissements ayant cette activité
 activite.themes: Themes ayant cette activité
 activite.id: Id
 activite.code: Code
-activite.name: Nom
+activite_i18n.name: Nom
 activite.image_path: Image
-activite.description: Description
-activite.keywords: Mots clés
+activite_i18n.description: Description
+activite_i18n.keywords: Mots clés
 activite.image.path: Image
 activite.active: Actif
 activite.vignette: Vignette
-activite.activiteI18ns: ""
-activite.active_locale: "Activer pour cette langue"
+activiteI18ns: ""
+activite_i18n.active_locale: "Activer pour cette langue"
 activite.image_path_deleted: Supprimer l'image ?
 activite.vignette_deleted: Supprimer la vignette ?
 
@@ -28,7 +28,7 @@ category_type_hebergement.crud.update: Mettre à jour la catégorie de types d'h
 category_type_hebergement.crud.view: Détails de la catégorie de types d'hébergements
 category_type_hebergement.id: Id
 category_type_hebergement.code: Code
-category_type_hebergement.name: Nom
+category_type_hebergement_i18n.name: Nom
 category_type_hebergement.active: Actif
 category_type_hebergement.minimum_price: "Prix minimum"
 category_type_hebergement.image_menu: "Image du menu"
@@ -36,13 +36,11 @@ category_type_hebergement.image_menu_deleted: "Suppression de l'image du menu ?"
 category_type_hebergement.image_page: "Image de la page"
 category_type_hebergement.image_page_deleted: "Suppression de l'image de la page"
 category_type_hebergement.sortable_rank: "Ordre"
-category_type_hebergement.category_type_hebergementI18ns: ""
-category_type_hebergement.active_locale: "Activer pour cette langue"
-category_type_hebergement.slug: "Slug"
-category_type_hebergement.accroche: "Accroche"
-category_type_hebergement.description: "Description"
-
-type_hebergement.indice: Indice
+category_type_hebergementI18ns: ""
+category_type_hebergement_i18n.active_locale: "Activer pour cette langue"
+category_type_hebergement_i18n.slug: "Slug"
+category_type_hebergement_i18n.accroche: "Accroche"
+category_type_hebergement_i18n.description: "Description"
 
 type_hebergement_capacite.crud.metadata: Metadata de la table type hébergement capacité
 type_hebergement_capacite.crud.create: Création d'une capacité de types d'hébergements
@@ -58,12 +56,12 @@ type_hebergement_capacite.image_page: Image page
 type_hebergement_capacite.image_page_deleted: Suppression image page ?
 type_hebergement_capacite.active: Actif
 type_hebergement_capacite.sortable_rank: Ordre
-type_hebergement_capacite.type_hebergement_capaciteI18ns: ""
-type_hebergement_capacite.active_locale: "Activer pour cette langue"
-type_hebergement_capacite.name: Nom
-type_hebergement_capacite.slug: Slug
-type_hebergement_capacite.description: Description
-type_hebergement_capacite.accroche: "Accroche"
+type_hebergement_capaciteI18ns: ""
+type_hebergement_capacite_i18n.active_locale: "Activer pour cette langue"
+type_hebergement_capacite_i18n.name: Nom
+type_hebergement_capacite_i18n.slug: Slug
+type_hebergement_capacite_i18n.description: Description
+type_hebergement_capacite_i18n.accroche: "Accroche"
 
 job.crud.list: Liste jobs
 job.name: Nom
@@ -97,10 +95,10 @@ crud.tab.medias: Médias
 crud.tab.parameters: Paramètres
 crud.tab.resalys: "Resalys"
 
-metadata.metadataI18ns: ""
-metadata.title: "Titre"
-metadata.subtitle: "Sous titre"
-metadata.accroche: "Accroche"
+metadataI18ns: ""
+metadata_i18n.title: "Titre"
+metadata_i18n.subtitle: "Sous titre"
+metadata_i18n.accroche: "Accroche"
 metadata.visuel: "Visuel"
 metadata.visuel_deleted: "Supprimer le visuel ?"
 
@@ -112,23 +110,23 @@ destination.crud.view: Détails de la destination %name%
 destination.etablissements: Établissements ayant cette destination
 destination.id: Id
 destination.code: Code
-destination.name: Nom
+destination_i18n.name: Nom
 destination.active: Actif
-destination.destinationI18ns: ""
-destination.active_locale: "Activer pour cette langue"
+destinationI18ns: ""
+destination_i18n.active_locale: "Activer pour cette langue"
 destination.sortable_rank: "Ordre"
 destination.sortable.rank: "Ordre"
-destination.slug: "Slug"
-destination.introduction: "Introduction"
-destination.description: "Description"
+destination_i18n.slug: "Slug"
+destination_i18n.introduction: "Introduction"
+destination_i18n.description: "Description"
 destination.image_detail_1: "Image 1"
 destination.image.detail.1: "Image 1"
 destination.image_detail_1_deleted: "Supprimer l'image 1"
 destination.image_detail_2: "Image 2"
 destination.image.detail.2: "Image 2"
 destination.image_detail_2_deleted: "Supprimer l'image 2"
-destination.seo_title: "Titre SEO"
-destination.seo_description: "Description SEO"
+destination_i18n.seo_title: "Titre SEO"
+destination_i18n.seo_description: "Description SEO"
 
 categorie.crud.metadata: Metadata de la table catégorie
 categorie.crud.create: Création d'une catégorie
@@ -137,10 +135,10 @@ categorie.crud.update: Mettre à jour la catégorie %name%
 categorie.crud.view: Détails de la catégorie %name%
 categorie.id: Id
 categorie.code: Code
-categorie.name: Nom
+categorie_i18n.name: Nom
 categorie.active: Actif
-categorie.categorieI18ns: ""
-categorie.active_locale: "Activer pour cette langue"
+categorieI18ns: ""
+categorie_i18n.active_locale: "Activer pour cette langue"
 
 situation_geographique.crud.metadata: Metadata de la table situation géographique
 situation_geographique.crud.create: Création d'une situation géographique
@@ -149,13 +147,13 @@ situation_geographique.crud.update: Mettre à jour la situation géographique %n
 situation_geographique.crud.view: Détails de la situation géographique %name%
 situation_geographique.id: Id
 situation_geographique.code: Code
-situation_geographique.name: Nom
-situation_geographique.description: Description
-situation_geographique.keywords: Mots clés
-situation_geographique.etablissements: Établissements ayant cette situation géographique
+situation_geographique_i18n.name: Nom
+situation_geographique_i18n.description: Description
+situation_geographique_i18n.keywords: Mots clés
+situation_geographique.etablissement_id: Établissements ayant cette situation géographique
 situation_geographique.active: Actif
-situation_geographique.situation_geographiqueI18ns: ""
-situation_geographique.active_locale: "Activer pour cette langue"
+situation_geographiqueI18ns: ""
+situation_geographique_i18n.active_locale: "Activer pour cette langue"
 
 baignade.crud.metadata: Metadata de la table baignade
 baignade.crud.create: Création d'une baignade
@@ -164,17 +162,17 @@ baignade.crud.update: Mettre à jour la baignade %name%
 baignade.crud.view: Détails de la baignade %name%
 baignade.id: Id
 baignade.code: Code
-baignade.name: Nom
-baignade.etablissements: Établissements ayant cette baignade
-baignade.description: Description
-baignade.keywords: Mots clés
+baignade_i18n.name: Nom
+baignade_i18n.etablissement_id: Établissements ayant cette baignade
+baignade_i18n.description: Description
+baignade_i18n.keywords: Mots clés
 baignade.active: Actif
 baignade.image_path: Image
 baignade.image_path_deleted: "Supprimer l'image ?"
 baignade.vignette: Vignette
 baignade.vignette_deleted: "Supprimer la vignette ?"
-baignade.baignadeI18ns: ""
-baignade.active_locale: "Activer pour cette langue"
+baignadeI18ns: ""
+baignade_i18n.active_locale: "Activer pour cette langue"
 
 thematique.crud.metadata: Metadata de la table thématique
 thematique.crud.create: Création d'une thématique
@@ -183,21 +181,21 @@ thematique.crud.update: Mettre à jour la thématique %name%
 thematique.crud.view: Détails de la thématique %name%
 thematique.id: Id
 thematique.code: Code
-thematique.name: Nom
-thematique.description: Description
-thematique.keywords: Mots clés
+thematique_i18n.name: Nom
+thematique_i18n.description: Description
+thematique_i18n.keywords: Mots clés
 thematique.etablissements: Établissements ayant cette thématique
 thematique.image_path: Picto
 thematique.image.path: Picto
 thematique.active: Actif
 thematique.image_path_deleted: "Supprimer le picto ?"
-thematique.thematiqueI18ns: ""
-thematique.active_locale: "Activer pour cette langue"
+thematiqueI18ns: ""
+thematique_i18n.active_locale: "Activer pour cette langue"
 
 etablissement.crud.metadata: Metadata de la table établissement
 etablissement.activites: Liste des activités
 etablissement.city: Ville
-etablissement.country: Pays
+etablissement_i18n.country: Pays
 etablissement.address1: Adresse 1
 etablissement.address2: Adresse 2
 etablissement.country_code: Code Pays
@@ -215,9 +213,9 @@ etablissement.id: Id
 etablissement.code: Code
 etablissement.mail: Adresse électronique
 etablissement.name: Nom
-etablissement.ville: Ville
+etablissement.ville_id: Ville
 etablissement.ville.id: Code ville
-etablissement.categorie: Catégorie
+etablissement.categorie_id: Catégorie
 etablissement.situation_geographiques: Liste des situations géographiques
 etablissement.baignades: Liste des baignades
 etablissement.thematiques: Liste des thématiques
@@ -232,12 +230,12 @@ etablissement.closing_date: Fermeture
 etablissement.minimum_price: Prix 'à partir de'
 etablissement.video_path: Vidéo
 etablissement.image_360_path: Visite 360
-etablissement.description: Description
+etablissement_i18n.description: Description
 etablissement.capacite: Capacité
 etablissement.title: Titre
-etablissement.ouverture_reception: Ouverture de la réception
-etablissement.ouverture_camping: Ouverture du camping
-etablissement.arrivees_departs: Arrivées et départs
+etablissement_i18n.ouverture_reception: Ouverture de la réception
+etablissement_i18n.ouverture_camping: Ouverture du camping
+etablissement_i18n.arrivees_departs: Arrivées et départs
 etablissement.plan_path: Plan
 etablissement.published: Publié ?
 etablissement.vignette: Vignette
@@ -247,10 +245,12 @@ etablissement.group.resalys: Données résalys
 etablissement.group.cms: Données CMS
 etablissement.vignette_deleted: "Supprimer la vignette ?"
 etablissement.plan_path_deleted: "Supprimer le plan ?"
-etablissement.etablissementI18ns: ""
-etablissement.active_locale: "Activer pour cette langue"
+etablissementI18ns: ""
+etablissement_i18n.active_locale: "Activer pour cette langue"
 etablissement.active: "Active"
-etablissement.departement: "Département"
+etablissement.departement_id: "Département"
+etablissement.related_1: "Etablissement en relation 1"
+etablissement.related_2: "Etablissement en relation 2"
 
 list.actions: Actions
 
@@ -315,19 +315,19 @@ theme.crud.list: Liste des themes
 theme.crud.update: Mettre à jour le theme %name%
 theme.crud.view: Détails du theme %name%
 theme.id: Id
-theme.name: Nom
+theme_i18n.name: Nom
 theme.image.path: Image
 theme.image_path_deleted: "Supprimer l'image ?"
 theme.active: Actif
-theme.activites: Liste des activités
-theme.baignades: Liste des themes baignade
-theme.service_complementaires: Liste des themes services complémentaires
+theme_activite.activite_id: Liste des activités
+theme_baignade.baignade_id: Liste des themes baignade
+theme_service_complementaire.service_complementaire_id: Liste des themes services complémentaires
 theme.personnages: Liste des personnages
-theme.slug: Slug
-theme.introduction: Introduction
-theme.description: Description
-theme.themeI18ns: ""
-theme.active_locale: "Activer pour cette langue"
+theme_i18n.slug: Slug
+theme_i18n.introduction: Introduction
+theme_i18n.description: Description
+themeI18ns: ""
+theme_i18n.active_locale: "Activer pour cette langue"
 
 service_complementaire.crud.metadata: Metadata de la table service complémentaire
 service_complementaire.crud.create: Création d'un service complémentaire
@@ -338,17 +338,17 @@ service_complementaire.etablissements: Établissements ayant ce service complém
 service_complementaire.themes: Themes ayant ce service complémentaire
 service_complementaire.id: Id
 service_complementaire.code: Code
-service_complementaire.name: Nom
-service_complementaire.description: Description
-service_complementaire.keywords: Mots clés
+service_complementaire_i18n.name: Nom
+service_complementaire_i18n.description: Description
+service_complementaire_i18n.keywords: Mots clés
 service_complementaire.image_path: Image
 service_complementaire.image.path: Image
 service_complementaire.active: Actif
 service_complementaire.vignette: Vignette
 service_complementaire.image_path_deleted: "Supprimer l'image ?"
 service_complementaire.vignette_deleted: "Supprimer la vignette"
-service_complementaire.service_complementaireI18ns: ""
-service_complementaire.active_locale: "Activer pour cette langue"
+service_complementaireI18ns: ""
+service_complementaire_i18n.active_locale: "Activer pour cette langue"
 
 security.title: Panneau d'administration
 security.username: Nom d'utilisateur
@@ -365,19 +365,19 @@ pays.crud.update: Mettre à jour le pays %name%
 pays.crud.view: Détails du pays %name%
 pays.id: Id
 pays.code: Code
-pays.name: Nom
-pays.introduction: Introduction
-pays.description: Description
+pays_i18n.name: Nom
+pays_i18n.introduction: Introduction
+pays_i18n.description: Description
 pays.image_detail_1: Image 1
 pays.image_detail_2: Image 2
 pays.image.detail.1: Image 1
 pays.image.detail.2: Image 2
 pays.active: Actif
-pays.slug: Slug
+pays_i18n.slug: Slug
 pays.image_detail_1_deleted: Supprimer l'image 1
 pays.image_detail_2_deleted: Supprimer l'image 2
-pays.paysI18ns: ""
-pays.active_locale: "Activer pour cette langue"
+paysI18ns: ""
+pays_i18n.active_locale: "Activer pour cette langue"
 
 region_ref.crud.metadata: Metadata de la table région réferencement
 region_ref.crud.create: Création d'une region réferencement
@@ -386,20 +386,20 @@ region_ref.crud.update: Mettre à jour la region réferencement %name%
 region_ref.crud.view: Détails de la region réferencement %name%
 region_ref.id: Id
 region_ref.code: Code
-region_ref.name: Nom
-region_ref.introduction: Introduction
-region_ref.description: Description
+region_ref_i18n.name: Nom
+region_ref_i18n.introduction: Introduction
+region_ref_i18n.description: Description
 region_ref.image_detail_1: Image 1
 region_ref.image_detail_2: Image 2
 region_ref.image.detail.1: Image 1
 region_ref.image.detail.2: Image 2
 region_ref.active: Actif
-region_ref.slug: Slug
-region_ref.pays: Pays
+region_ref_i18n.slug: Slug
+region_ref.pays_id: Pays
 region_ref.image_detail_1_deleted: Supprimer l'image 1
 region_ref.image_detail_2_deleted: Supprimer l'image 2
-region_ref.region_refI18ns: ""
-region_ref.active_locale: "Activer pour cette langue"
+region_refI18ns: ""
+region_ref_i18n.active_locale: "Activer pour cette langue"
 
 departement.crud.metadata: Metadata de la table département
 departement.crud.create: Création d'un département
@@ -408,21 +408,21 @@ departement.crud.update: Mettre à jour le département %name%
 departement.crud.view: Détails de le département %name%
 departement.id: Id
 departement.code: Code
-departement.region_ref: Région réferencement
-departement.name: Nom
-departement.introduction: Introduction
-departement.description: Description
+departement.region_ref_id: Région réferencement
+departement_i18n.name: Nom
+departement_i18n.introduction: Introduction
+departement_i18n.description: Description
 departement.image_detail_1: Image 1
 departement.image_detail_2: Image 2
 departement.image.detail.1: Image 1
 departement.image.detail.2: Image 2
 departement.active: Actif
-departement.slug: Slug
+departement_i18n.slug: Slug
 departement.pays: Pays
 departement.image_detail_1_deleted: Supprimer l'image 1
 departement.image_detail_2_deleted: Supprimer l'image 2
-departement.departementI18ns: ""
-departement.active_locale: "Activer pour cette langue"
+departementI18ns: ""
+departement_i18n.active_locale: "Activer pour cette langue"
 
 region.crud.metadata: Metadata de la table region marketing
 region.crud.create: Création d'une région marketing
@@ -431,18 +431,18 @@ region.crud.update: Mettre à jour la région marketing %name%
 region.crud.view: Détails de la région marketing %name%
 region.id: Id
 region.code: Code
-region.name: Nom
+region_i18n.name: Nom
 region.image_path: Image
 region.image_path_deleted: Supprimer l'image ?
 region.image_encart_path: Image de l'encart
 region.image_encart_path_deleted: Supprimer l'image de l'encart ?
 region.image_encart_petite_path: Image de l'encart (petite)
 region.image_encart_petite_path_deleted: Supprimer l'image de l'encart (petite) ?
-region.pays: Pays
+region.pays_id: Pays
 region.pays.id: Code pays
-region.description: Description
+region_i18n.description: Description
 region.mea_home: Mise en avant sur la home
-region.introduction: Introduction
+region_i18n.introduction: Introduction
 region.image_detail_1: Image 1
 region.image_detail_2: Image 2
 region.image.encart.path: Image de l'encart
@@ -451,11 +451,11 @@ region.mea.home: Mise en avant sur la home
 region.image.detail.1: Image 1
 region.image.detail.2: Image 2
 region.active: Actif
-region.slug: Slug
-region.destination: Destination
-region.bon_plans: Bons plan ayant cette région
-region.regionI18ns: ""
-region.active_locale: "Activer pour cette langue"
+region_i18n.slug: Slug
+region.destination_id: Destination
+bon_plan_region.bon_plan_id: Bons plan ayant cette région
+regionI18ns: ""
+region_i18n.active_locale: "Activer pour cette langue"
 
 resalys.actions.import: Importer les données de Resalys
 resalys.title.import: Import Resalys
@@ -483,16 +483,16 @@ type_hebergement.crud.view: Détails du type hébergement %name%
 type_hebergement.etablissements: Établissements ayant ce type hébergement
 type_hebergement.id: Id
 type_hebergement.code: Code
-type_hebergement.type_hebergement_capacite: Capacité
-type_hebergement.name: Nom
-type_hebergement.category.type.hebergement: Catégorie
+type_hebergement.type_hebergement_capacite_id: Capacité
+type_hebergement_i18n.name: Nom
+type_hebergement.category_type_hebergement_id: Catégorie
 type_hebergement.nombre_chambre: Nombre de chambres
-type_hebergement.surface: Surface
-type_hebergement.type_terrasse: Type de terrasse
-type_hebergement.description: Description
+type_hebergement_i18n.surface: Surface
+type_hebergement_i18n.type_terrasse: Type de terrasse
+type_hebergement_i18n.description: Description
 type_hebergement.image_hebergement_path: Image de l'hébergement
 type_hebergement.image_hebergement_path_deleted: Supprimer l'image de l'hébergement
-type_hebergement.composition: Composition
+type_hebergement_i18n.composition: Composition
 type_hebergement.image_composition_path: Image de la composition
 type_hebergement.image_composition_path_deleted: Supprimer l'image de la composition
 type_hebergement.nombre.chambre: Nombre de chambres
@@ -501,19 +501,20 @@ type_hebergement.nombre_place: Nombre de place
 type_hebergement.image.hebergement.path: Image
 type_hebergement.image.composition.path: Image composition
 type_hebergement.active: Actif
-type_hebergement.type_hebergementI18ns: ""
-type_hebergement.active_locale: "Activer pour cette langue"
-type_hebergement.slug: "Slug"
-type_hebergement.presentation: "Présentation"
-type_hebergement.capacite_hebergement: "Capacité hébergement"
-type_hebergement.dimensions: "Dimensions"
-type_hebergement.agencement: "Agencement"
-type_hebergement.equipements: "Équipements"
-type_hebergement.annee_utilisation: "Année d'utilisation"
-type_hebergement.remarque_1: "Remarque 1"
-type_hebergement.remarque_2: "Remarque 2"
-type_hebergement.remarque_3: "Remarque 3"
-type_hebergement.remarque_4: "Remarque 4"
+type_hebergementI18ns: ""
+type_hebergement_i18n.active_locale: "Activer pour cette langue"
+type_hebergement_i18n.slug: "Slug"
+type_hebergement_i18n.presentation: "Présentation"
+type_hebergement_i18n.capacite_hebergement: "Capacité hébergement"
+type_hebergement_i18n.dimensions: "Dimensions"
+type_hebergement_i18n.agencement: "Agencement"
+type_hebergement_i18n.equipements: "Équipements"
+type_hebergement_i18n.annee_utilisation: "Année d'utilisation"
+type_hebergement_i18n.remarque_1: "Remarque 1"
+type_hebergement_i18n.remarque_2: "Remarque 2"
+type_hebergement_i18n.remarque_3: "Remarque 3"
+type_hebergement_i18n.remarque_4: "Remarque 4"
+type_hebergement_i18n.indice: Indice
 
 ville.crud.metadata: Metadata de la table ville
 ville.crud.create: Création d'une ville
@@ -522,11 +523,11 @@ ville.crud.update: Mettre à jour la ville %name%
 ville.crud.view: Détails de la ville %name%
 ville.id: Id
 ville.code: Code
-ville.name: Nom
-ville.region: Région
+ville_i18n.name: Nom
+ville.region_id: Région
 ville.region.id: Code région
-ville.introduction: Introduction
-ville.description: Description
+ville_i18n.introduction: Introduction
+ville_i18n.description: Description
 ville.image_detail_1: Image 1
 ville.image_detail_1_deleted: "Supprimer l'image 1"
 ville.image_detail_2: Image 2
@@ -534,8 +535,9 @@ ville.image_detail_2_deleted: "Supprimer l'image 2"
 ville.image.detail.1: Image 1
 ville.image.detail.2: Image 2
 ville.active: Actif
-ville.villeI18ns: ""
-ville.active_locale: "Activer pour cette langue"
+villeI18ns: ""
+ville_i18n.slug: "Slug"
+ville_i18n.active_locale: "Activer pour cette langue"
 
 point_interet.crud.metadata: Metadata de la table POI
 point_interet.crud.create: Création d'un POI
@@ -548,7 +550,7 @@ point_interet.address: Adresse
 point_interet.address2: Adresse 2
 point_interet.zipcode: Code Postal
 point_interet.city: Ville
-point_interet.name: Nom
+point_interet_i18n.name: Nom
 point_interet.image: Image
 point_interet.geo.coordinate.x: Latitude
 point_interet.geo.coordinate.y: Longitude
@@ -557,18 +559,20 @@ point_interet.geo_coordinate_y: Longitude
 point_interet.distance_camping: Distance du camping
 point_interet.distance.camping: Distance du camping
 point_interet.active: Actif
-point_interet.etablissements: Etablissements
-point_interet.presentation: Présentation
-point_interet.transport: Transport
-point_interet.categorie: Catégorie
-point_interet.type: Type
+etablissement_point_interet.etablissement_id: Etablissements
+point_interet_i18n.presentation: Présentation
+point_interet_i18n.transport: Transport
+point_interet_i18n.categorie: Catégorie
+point_interet_i18n.type: Type
 point_interet.tel: Tél
 point_interet.fax: Fax
 point_interet.email: Email
 point_interet.website: Site web
-point_interet.slug: Slug
-point_interet.point_interetI18ns: ""
-point_interet.active_locale: "Activer pour cette langue"
+point_interet_i18n.slug: Slug
+point_interetI18ns: ""
+point_interet_i18n.active_locale: "Activer pour cette langue"
+point_interet.created_at: "Date de création"
+point_interet.updated_at: "Date de mise à jour"
 
 event.crud.metadata: Metadata de la table évenement
 event.crud.create: Création d'un évènement
@@ -578,16 +582,16 @@ event.crud.view: Détails de l'évènement %name%
 event.id: Id
 event.code: Code interne
 event.category: Catégorie
-event.name: Nom
+event_i18n.name: Nom
 event.address: Adresse
 event.address2: Adresse 2
 event.zipcode: Code Postal
 event.city: Ville
 event.image: Image
 event.priority: Priorité
-event.etablissements: Établissements ayant cet évenement
-event.str.date: Période
-event.str_date: Date
+etablissement_event.etablissement_id: Établissements ayant cet évenement
+event_i18n.str.date: Période
+event_i18n.str_date: Date
 event.geo_coordinate_x: Latitude
 event.geo_coordinate_y: Longitude
 event.geo.coordinate.x: Latitude
@@ -595,16 +599,18 @@ event.geo.coordinate.y: Longitude
 event.distance_camping: Distance du camping
 event.distance.camping: Distance du camping
 event.active: Actif
-event.subtitle: Sous-titre
-event.description: Description
-event.transport: Transport
+event_i18n.subtitle: Sous-titre
+event_i18n.description: Description
+event_i18n.transport: Transport
 event.tel: Tél
 event.fax: Fax
 event.email: Email
 event.website: Site web
-event.slug: Slug
-event.eventI18ns: ""
-event.active_locale: "Activer pour cette langue"
+event_i18n.slug: Slug
+eventI18ns: ""
+event_i18n.active_locale: "Activer pour cette langue"
+event.created_at: "Date de création"
+event.updated_at: "Date de mise à jour"
 
 personnage.crud.metadata: Metadata de la table personnage
 personnage.crud.create: Création d'un personnage
@@ -612,14 +618,15 @@ personnage.crud.list: Liste des personnages
 personnage.crud.update: Mettre à jour le personnage %name%
 personnage.crud.view: Détails du personnage %name%
 personnage.id: Id
-personnage.etablissement: Etablissement
+personnage.etablissement_id: Etablissement
+theme_personnage.theme_id: "Themes"
 personnage.age: Age
 personnage.prenom: Prénom
 personnage.image_path: Image
 personnage.image.path: Image
 personnage.active: Actif
-personnage.personnageI18ns: ""
-personnage.active_locale: "Activer pour cette langue"
+personnageI18ns: ""
+personnage_i18n.active_locale: "Activer pour cette langue"
 personnage.image_path_deleted: "Supprimer l'image ?"
 
 avantage.crud.metadata: Metadata de la table avantage
@@ -628,15 +635,15 @@ avantage.crud.list: Liste des avantages
 avantage.crud.update: Mettre à jour l'avantage %name%
 avantage.crud.view: Détails de l'avantage %name%
 avantage.id: Id
-avantage.personnage: Personnage
-avantage.name: Titre
-avantage.description: Description
+avantage.personnage_id: Personnage
+avantage_i18n.name: Titre
+avantage_i18n.description: Description
 avantage.image_path: Image
 avantage.image_path_deleted: Supprimer l'image ?
 avantage.image.path: Image
 avantage.active: Actif
-avantage.avantageI18ns: ""
-avantage.active_locale: "Activer pour cette langue"
+avantageI18ns: ""
+avantage_i18n.active_locale: "Activer pour cette langue"
 
 edito.crud.metadata: Metadata de la table édito
 edito.crud.create: Création d'un édito
@@ -645,11 +652,11 @@ edito.crud.update: Mettre à jour l'édito %name%
 edito.crud.view: Détails de l'édito %name%
 edito.id: Id
 edito.slug: Slug
-edito.name: Titre
-edito.description: Description
+edito_i18n.name: Titre
+edito_i18n.description: Description
 edito.active: Actif
-edito.editoI18ns: ""
-edito.active_locale: "Activer pour cette langue"
+editoI18ns: ""
+edito_i18n.active_locale: "Activer pour cette langue"
 
 multimedia_etablissement.crud.metadata: Metadata de la table multimedia établissement
 multimedia_etablissement.crud.create: Création d'un média
@@ -657,15 +664,15 @@ multimedia_etablissement.crud.list: Liste des média
 multimedia_etablissement.crud.update: Mettre à jour le média %name%
 multimedia_etablissement.crud.view: Détails du média %name%
 multimedia_etablissement.id: Id
-multimedia_etablissement.etablissement: Etablissement
-multimedia_etablissement.titre: Titre
+multimedia_etablissement.etablissement_id: Etablissement
+multimedia_etablissement_i18n.titre: Titre
 multimedia_etablissement.image_path: Image
-multimedia_etablissement.tags: Tags
+multimedia_etablissement_tag.tag_id: Tags
 multimedia_etablissement.image.path: Image
 multimedia_etablissement.active: Actif
 multimedia_etablissement.image_path_deleted: "Supprimer l'image ?"
-multimedia_etablissement.multimedia_etablissementI18ns: ""
-multimedia_etablissement.active_locale: "Activer pour cette langue"
+multimedia_etablissementI18ns: ""
+multimedia_etablissement_i18n.active_locale: "Activer pour cette langue"
 
 multimedia_type_hebergement.crud.metadata: Metadata de la table multimedia type hébergement
 multimedia_type_hebergement.crud.create: Création d'un média type hébergement
@@ -674,14 +681,14 @@ multimedia_type_hebergement.crud.update: Mettre à jour le média type hébergem
 multimedia_type_hebergement.crud.view: Détails du média type hébergement %name%
 multimedia_type_hebergement.id: Id
 multimedia_type_hebergement.etablissement: Etablissement
-multimedia_type_hebergement.titre: Titre
+multimedia_type_hebergement_i18n.titre: Titre
 multimedia_type_hebergement.image_path: Image
 multimedia_type_hebergement.tags: Tags
 multimedia_type_hebergement.image.path: Image
 multimedia_type_hebergement.active: Actif
 multimedia_type_hebergement.type_hebergement: Type hebergement
-multimedia_type_hebergement.multimedia_type_hebergementI18ns: ""
-multimedia_type_hebergement.active_locale: "Activer pour cette langue"
+multimedia_type_hebergementI18ns: ""
+multimedia_type_hebergement_i18n.active_locale: "Activer pour cette langue"
 multimedia_type_hebergement.image_path_deleted: "Supprimer l'image ?"
 
 tag.crud.metadata: Metadata de la table tag multimedia
@@ -690,11 +697,11 @@ tag.crud.list: Liste des tags
 tag.crud.update: Mettre à jour le tag %name%
 tag.crud.view: Détails du tag %name%
 tag.id: Id
-tag.name: Nom
-tag.multimedia_etablissements: Média
+tag_i18n.name: Nom
+multimedia_etablissement_tag.multimedia_etablissement_id: Média
 tag.slug: Slug
-tag.tagI18ns: ""
-tag.active_locale: "Activer pour cette langue"
+tagI18ns: ""
+tag_i18n.active_locale: "Activer pour cette langue"
 tag.active: "Active"
 
 demande_identifiant.crud.list: Liste des demandes d'identifiant
@@ -733,7 +740,7 @@ top_camping.crud.list: Liste des top campings
 top_camping.crud.update: Mettre à jour le top camping %name%
 top_camping.crud.view: Détails du top camping
 top_camping.id: Id
-top_camping.etablissement: Etablissement
+top_camping.etablissement_id: Etablissement
 top_camping.sortable_rank: Ordre
 top_camping.active: Actif
 
@@ -760,10 +767,10 @@ mise_en_avant.crud.view: Détails d'une mise en avant
 mise_en_avant.id: Id
 mise_en_avant.image_fond_path: Image de fond
 mise_en_avant.image.fond.path: Image de fond
-mise_en_avant.titre: Titre
-mise_en_avant.accroche: Accroche
-mise_en_avant.lien: Lien
-mise_en_avant.titre_lien: Titre lien
+mise_en_avant_i18n.titre: Titre
+mise_en_avant_i18n.accroche: Accroche
+mise_en_avant_i18n.lien: Lien
+mise_en_avant_i18n.titre_lien: Titre lien
 mise_en_avant.titre.lien: Titre lien
 mise_en_avant.prix: Prix
 mise_en_avant.illustration_path: Illustration
@@ -774,8 +781,8 @@ mise_en_avant.sortable_rank: Ordre
 mise_en_avant.active: Actif
 mise_en_avant.image_fond_path_deleted: "Supprimer l'image de fond ?"
 mise_en_avant.illustration_path_deleted: "Supprimer l'illustration ?"
-mise_en_avant.mise_en_avantI18ns: ""
-mise_en_avant.active_locale: "Activer pour cette langue"
+mise_en_avantI18ns: ""
+mise_en_avant_i18n.active_locale: "Activer pour cette langue"
 
 vos_vacances.crud.metadata: Metadata de la table vos vacances
 vos_vacances.crud.create: Création d'un encart vos vacances
@@ -784,15 +791,15 @@ vos_vacances.crud.update: Mettre à jour l'encart vos vacances %name%
 vos_vacances.crud.view: Détails d'un encart vos vacances
 vos_vacances.id: Id
 vos_vacances.image_path: Image
-vos_vacances.titre: Titre
-vos_vacances.description: Description
+vos_vacances_i18n.titre: Titre
+vos_vacances_i18n.description: Description
 vos_vacances.age: Age
-vos_vacances.prenom: Prénom
+vos_vacances_i18n.prenom: Prénom
 vos_vacances.image.path: Image
 vos_vacances.active: Actif
 vos_vacances.image_path_deleted: "Supprimer l'image ?"
-vos_vacances.vos_vacancesI18ns: ""
-vos_vacances.active_locale: "Activer pour cette langue"
+vos_vacancesI18ns: ""
+vos_vacances_i18n.active_locale: "Activer pour cette langue"
 
 idee_weekend.crud.metadata: Metadata de la table idée weekend
 idee_weekend.crud.create: Création d'une idée weekend
@@ -802,15 +809,15 @@ idee_weekend.crud.view: Détails d'une idée weekend
 idee_weekend.id: Id
 idee_weekend.image_path: Image
 idee_weekend.image_path_deleted: "Supprimer l'image ?"
-idee_weekend.titre: Titre
+idee_weekend_i18n.titre: Titre
 idee_weekend.prix: Prix
-idee_weekend.lien: Lien
+idee_weekend_i18n.lien: Lien
 idee_weekend.home: Mise en avant home
 idee_weekend.highlight: En couleur
 idee_weekend.image.path: Image
 idee_weekend.active: Actif
-idee_weekend.idee_weekendI18ns: ""
-idee_weekend.active_locale: "Activer pour cette langue"
+idee_weekendI18ns: ""
+idee_weekend_i18n.active_locale: "Activer pour cette langue"
 
 monday: lundi
 tuesday: mardi
@@ -820,58 +827,55 @@ friday: vendredi
 saturday: samedi
 sunday: dimanche
 
-bon_plan_categorie:
-    crud:
-        metadata: Metadata de la table bon plan catégorie
-        list: Liste des catégories de bons plans
-        update: Mettre à jour la catégorie de bons plans
-        create: Ajouter une catégorie de bons plans
-    id: Identifiant
-    name: Nom
-    active: Active
-    sortable_rank: Ordre
-    bon_plans: Bons plans associés
-    bon_plan_categorieI18ns: ""
-    active_locale: "Activer pour cette langue"
-    slug: Slug
-    subtitle: Subtitle
-    description: Description
+bon_plan_categorie.crud.metadata: Metadata de la table bon plan catégorie
+bon_plan_categorie.crud.list: Liste des catégories de bons plans
+bon_plan_categorie.crud.update: Mettre à jour la catégorie de bons plans
+bon_plan_categorie.crud.create: Ajouter une catégorie de bons plans
+bon_plan_categorie.id: Identifiant
+bon_plan_categorie_i18n.name: Nom
+bon_plan_categorie.active: Active
+bon_plan_categorie.sortable_rank: Ordre
+bon_plan_bon_plan_categorie.bon_plan_id: Bons plans associés
+bon_plan_categorieI18ns: ""
+bon_plan_categorie_i18n.active_locale: "Activer pour cette langue"
+bon_plan_categorie_i18n.slug: Slug
+bon_plan_categorie_i18n.subtitle: Subtitle
+bon_plan_categorie_i18n.description: Description
 
-bon_plan:
-    crud:
-        metadata: Metadata de la table bon plan
-        list: Liste des bons plans
-        update: Mettre à jour le bon plan
-        create: Ajouter un bon plan
-    id: Identifiant
-    name: Nom
-    active: Active
-    date_debut: Date de début
-    date_fin: Date de fin
-    prix: Prix
-    prix_barre: Prix barré
-    image_menu: Vignette du menu
-    image_menu_deleted: "Supprimer la vignette du menu ?"
-    image_page: Visuel page de détail
-    image_page_deleted: "Supprimer le visuel de la page détail ?"
-    image_liste: Visuel page de listing
-    image_liste_deleted: "Supprimer le visuel de la page listing ?"
-    active_compteur: Activer le compteur
-    mise_en_avant: Mise en avant (deux colonnes sur la page de listing)
-    push_home: Afficher sur la page d'accueil
-    date_start: Date de début (dispo)
-    day_start: Jour de début (dispo)
-    day_range: Nombre de jours (dispo)
-    nb_adultes: Nombre d'adultes (dispo)
-    nb_enfants: Nombre d'enfants (dispo)
-    period_categories: Périodes (dispo)
-    bon_plan_categories: Catégories associées (dispo)
-    etablissements: Campings associés (dispo)
-    regions: Régions associées (dispo)
-    bon_planI18ns: ""
-    active_locale: "Activer pour cette langue"
-    introduction: Introduction
-    slug: Slug
-    description: Description
-    indice: Indice
-    indice_prix: Indice prix
+bon_plan.crud.metadata: Metadata de la table bon plan
+bon_plan.crud.list: Liste des bons plans
+bon_plan.crud.update: Mettre à jour le bon plan
+bon_plan.crud.create: Ajouter un bon plan
+bon_plan.id: Identifiant
+bon_plan_i18n.name: Nom
+bon_plan.active: Active
+bon_plan.date_debut: Date de début
+bon_plan.date_fin: Date de fin
+bon_plan.prix: Prix
+bon_plan.prix_barre: Prix barré
+bon_plan.image_menu: Vignette du menu
+bon_plan.image_menu_deleted: "Supprimer la vignette du menu ?"
+bon_plan.image_page: Visuel page de détail
+bon_plan.image_page_deleted: "Supprimer le visuel de la page détail ?"
+bon_plan.image_liste: Visuel page de listing
+bon_plan.image_liste_deleted: "Supprimer le visuel de la page listing ?"
+bon_plan.active_compteur: Activer le compteur
+bon_plan.mise_en_avant: Mise en avant (deux colonnes sur la page de listing)
+bon_plan.push_home: Afficher sur la page d'accueil
+bon_plan.date_start: Date de début (dispo)
+bon_plan.day_start: Jour de début (dispo)
+bon_plan.day_range: Nombre de jours (dispo)
+bon_plan.nb_adultes: Nombre d'adultes (dispo)
+bon_plan.nb_enfants: Nombre d'enfants (dispo)
+bon_plan.period_categories: Périodes (dispo)
+
+bon_plan_bon_plan_categorie.bon_plan_categorie_id: Catégories associées (dispo)
+bon_plan_etablissement.etablissement_id: Campings associés (dispo)
+bon_plan_region.region_id: Régions associées (dispo)
+bon_planI18ns: ""
+bon_plan_i18n.active_locale: "Activer pour cette langue"
+bon_plan_i18n.introduction: Introduction
+bon_plan_i18n.slug: Slug
+bon_plan_i18n.description: Description
+bon_plan_i18n.indice: Indice
+bon_plan_i18n.indice_prix: Indice prix
