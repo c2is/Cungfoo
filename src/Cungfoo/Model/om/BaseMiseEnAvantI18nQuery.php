@@ -28,11 +28,11 @@ use Cungfoo\Model\MiseEnAvantI18nQuery;
  * @method MiseEnAvantI18nQuery orderByAccroche($order = Criteria::ASC) Order by the accroche column
  * @method MiseEnAvantI18nQuery orderByLien($order = Criteria::ASC) Order by the lien column
  * @method MiseEnAvantI18nQuery orderByTitreLien($order = Criteria::ASC) Order by the titre_lien column
- * @method MiseEnAvantI18nQuery orderByActiveLocale($order = Criteria::ASC) Order by the active_locale column
  * @method MiseEnAvantI18nQuery orderBySeoTitle($order = Criteria::ASC) Order by the seo_title column
  * @method MiseEnAvantI18nQuery orderBySeoDescription($order = Criteria::ASC) Order by the seo_description column
  * @method MiseEnAvantI18nQuery orderBySeoH1($order = Criteria::ASC) Order by the seo_h1 column
  * @method MiseEnAvantI18nQuery orderBySeoKeywords($order = Criteria::ASC) Order by the seo_keywords column
+ * @method MiseEnAvantI18nQuery orderByActiveLocale($order = Criteria::ASC) Order by the active_locale column
  *
  * @method MiseEnAvantI18nQuery groupById() Group by the id column
  * @method MiseEnAvantI18nQuery groupByLocale() Group by the locale column
@@ -40,11 +40,11 @@ use Cungfoo\Model\MiseEnAvantI18nQuery;
  * @method MiseEnAvantI18nQuery groupByAccroche() Group by the accroche column
  * @method MiseEnAvantI18nQuery groupByLien() Group by the lien column
  * @method MiseEnAvantI18nQuery groupByTitreLien() Group by the titre_lien column
- * @method MiseEnAvantI18nQuery groupByActiveLocale() Group by the active_locale column
  * @method MiseEnAvantI18nQuery groupBySeoTitle() Group by the seo_title column
  * @method MiseEnAvantI18nQuery groupBySeoDescription() Group by the seo_description column
  * @method MiseEnAvantI18nQuery groupBySeoH1() Group by the seo_h1 column
  * @method MiseEnAvantI18nQuery groupBySeoKeywords() Group by the seo_keywords column
+ * @method MiseEnAvantI18nQuery groupByActiveLocale() Group by the active_locale column
  *
  * @method MiseEnAvantI18nQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method MiseEnAvantI18nQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -63,11 +63,11 @@ use Cungfoo\Model\MiseEnAvantI18nQuery;
  * @method MiseEnAvantI18n findOneByAccroche(string $accroche) Return the first MiseEnAvantI18n filtered by the accroche column
  * @method MiseEnAvantI18n findOneByLien(string $lien) Return the first MiseEnAvantI18n filtered by the lien column
  * @method MiseEnAvantI18n findOneByTitreLien(string $titre_lien) Return the first MiseEnAvantI18n filtered by the titre_lien column
- * @method MiseEnAvantI18n findOneByActiveLocale(boolean $active_locale) Return the first MiseEnAvantI18n filtered by the active_locale column
  * @method MiseEnAvantI18n findOneBySeoTitle(string $seo_title) Return the first MiseEnAvantI18n filtered by the seo_title column
  * @method MiseEnAvantI18n findOneBySeoDescription(string $seo_description) Return the first MiseEnAvantI18n filtered by the seo_description column
  * @method MiseEnAvantI18n findOneBySeoH1(string $seo_h1) Return the first MiseEnAvantI18n filtered by the seo_h1 column
  * @method MiseEnAvantI18n findOneBySeoKeywords(string $seo_keywords) Return the first MiseEnAvantI18n filtered by the seo_keywords column
+ * @method MiseEnAvantI18n findOneByActiveLocale(boolean $active_locale) Return the first MiseEnAvantI18n filtered by the active_locale column
  *
  * @method array findById(int $id) Return MiseEnAvantI18n objects filtered by the id column
  * @method array findByLocale(string $locale) Return MiseEnAvantI18n objects filtered by the locale column
@@ -75,11 +75,11 @@ use Cungfoo\Model\MiseEnAvantI18nQuery;
  * @method array findByAccroche(string $accroche) Return MiseEnAvantI18n objects filtered by the accroche column
  * @method array findByLien(string $lien) Return MiseEnAvantI18n objects filtered by the lien column
  * @method array findByTitreLien(string $titre_lien) Return MiseEnAvantI18n objects filtered by the titre_lien column
- * @method array findByActiveLocale(boolean $active_locale) Return MiseEnAvantI18n objects filtered by the active_locale column
  * @method array findBySeoTitle(string $seo_title) Return MiseEnAvantI18n objects filtered by the seo_title column
  * @method array findBySeoDescription(string $seo_description) Return MiseEnAvantI18n objects filtered by the seo_description column
  * @method array findBySeoH1(string $seo_h1) Return MiseEnAvantI18n objects filtered by the seo_h1 column
  * @method array findBySeoKeywords(string $seo_keywords) Return MiseEnAvantI18n objects filtered by the seo_keywords column
+ * @method array findByActiveLocale(boolean $active_locale) Return MiseEnAvantI18n objects filtered by the active_locale column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -170,7 +170,7 @@ abstract class BaseMiseEnAvantI18nQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `locale`, `titre`, `accroche`, `lien`, `titre_lien`, `active_locale`, `seo_title`, `seo_description`, `seo_h1`, `seo_keywords` FROM `mise_en_avant_i18n` WHERE `id` = :p0 AND `locale` = :p1';
+        $sql = 'SELECT `id`, `locale`, `titre`, `accroche`, `lien`, `titre_lien`, `seo_title`, `seo_description`, `seo_h1`, `seo_keywords`, `active_locale` FROM `mise_en_avant_i18n` WHERE `id` = :p0 AND `locale` = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
@@ -446,33 +446,6 @@ abstract class BaseMiseEnAvantI18nQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query on the active_locale column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByActiveLocale(true); // WHERE active_locale = true
-     * $query->filterByActiveLocale('yes'); // WHERE active_locale = true
-     * </code>
-     *
-     * @param     boolean|string $activeLocale The value to use as filter.
-     *              Non-boolean arguments are converted using the following rules:
-     *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
-     *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
-     *              Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return MiseEnAvantI18nQuery The current query, for fluid interface
-     */
-    public function filterByActiveLocale($activeLocale = null, $comparison = null)
-    {
-        if (is_string($activeLocale)) {
-            $active_locale = in_array(strtolower($activeLocale), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
-        }
-
-        return $this->addUsingAlias(MiseEnAvantI18nPeer::ACTIVE_LOCALE, $activeLocale, $comparison);
-    }
-
-    /**
      * Filter the query on the seo_title column
      *
      * Example usage:
@@ -586,6 +559,33 @@ abstract class BaseMiseEnAvantI18nQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(MiseEnAvantI18nPeer::SEO_KEYWORDS, $seoKeywords, $comparison);
+    }
+
+    /**
+     * Filter the query on the active_locale column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByActiveLocale(true); // WHERE active_locale = true
+     * $query->filterByActiveLocale('yes'); // WHERE active_locale = true
+     * </code>
+     *
+     * @param     boolean|string $activeLocale The value to use as filter.
+     *              Non-boolean arguments are converted using the following rules:
+     *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     *              Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return MiseEnAvantI18nQuery The current query, for fluid interface
+     */
+    public function filterByActiveLocale($activeLocale = null, $comparison = null)
+    {
+        if (is_string($activeLocale)) {
+            $active_locale = in_array(strtolower($activeLocale), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+        }
+
+        return $this->addUsingAlias(MiseEnAvantI18nPeer::ACTIVE_LOCALE, $activeLocale, $comparison);
     }
 
     /**

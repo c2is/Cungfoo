@@ -104,13 +104,6 @@ class BasePaysType extends AppAwareType
                     'constraints' => array(
                     ),
                 ),
-                'active_locale' => array(
-                    'required' => false,
-                    'label' => 'pays.active_locale',
-                    'type' => 'checkbox',
-                    'constraints' => array(
-                    ),
-                ),
                 'seo_title' => array(
                     'required' => false,
                     'label' => 'pays.seo_title',
@@ -136,6 +129,13 @@ class BasePaysType extends AppAwareType
                     'required' => false,
                     'label' => 'pays.seo_keywords',
                     'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'active_locale' => array(
+                    'required' => false,
+                    'label' => 'pays.active_locale',
+                    'type' => 'checkbox',
                     'constraints' => array(
                     ),
                 ),

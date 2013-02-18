@@ -114,13 +114,6 @@ class BaseMiseEnAvantType extends AppAwareType
                     'constraints' => array(
                     ),
                 ),
-                'active_locale' => array(
-                    'required' => false,
-                    'label' => 'mise_en_avant.active_locale',
-                    'type' => 'checkbox',
-                    'constraints' => array(
-                    ),
-                ),
                 'seo_title' => array(
                     'required' => false,
                     'label' => 'mise_en_avant.seo_title',
@@ -146,6 +139,13 @@ class BaseMiseEnAvantType extends AppAwareType
                     'required' => false,
                     'label' => 'mise_en_avant.seo_keywords',
                     'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'active_locale' => array(
+                    'required' => false,
+                    'label' => 'mise_en_avant.active_locale',
+                    'type' => 'checkbox',
                     'constraints' => array(
                     ),
                 ),

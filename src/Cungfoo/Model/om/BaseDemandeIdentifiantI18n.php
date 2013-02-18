@@ -83,6 +83,13 @@ abstract class BaseDemandeIdentifiantI18n extends BaseObject implements Persiste
     protected $seo_keywords;
 
     /**
+     * The value for the active_locale field.
+     * Note: this column has a database default value of: false
+     * @var        boolean
+     */
+    protected $active_locale;
+
+    /**
      * @var        DemandeIdentifiant
      */
     protected $aDemandeIdentifiant;
@@ -110,6 +117,7 @@ abstract class BaseDemandeIdentifiantI18n extends BaseObject implements Persiste
     public function applyDefaultValues()
     {
         $this->locale = 'fr';
+        $this->active_locale = false;
     }
 
     /**
@@ -180,6 +188,16 @@ abstract class BaseDemandeIdentifiantI18n extends BaseObject implements Persiste
     public function getSeoKeywords()
     {
         return $this->seo_keywords;
+    }
+
+    /**
+     * Get the [active_locale] column value.
+     *
+     * @return boolean
+     */
+    public function getActiveLocale()
+    {
+        return $this->active_locale;
     }
 
     /**
@@ -313,6 +331,35 @@ abstract class BaseDemandeIdentifiantI18n extends BaseObject implements Persiste
     } // setSeoKeywords()
 
     /**
+     * Sets the value of the [active_locale] column.
+     * Non-boolean arguments are converted using the following rules:
+     *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     *
+     * @param boolean|integer|string $v The new value
+     * @return DemandeIdentifiantI18n The current object (for fluent API support)
+     */
+    public function setActiveLocale($v)
+    {
+        if ($v !== null) {
+            if (is_string($v)) {
+                $v = in_array(strtolower($v), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+            } else {
+                $v = (boolean) $v;
+            }
+        }
+
+        if ($this->active_locale !== $v) {
+            $this->active_locale = $v;
+            $this->modifiedColumns[] = DemandeIdentifiantI18nPeer::ACTIVE_LOCALE;
+        }
+
+
+        return $this;
+    } // setActiveLocale()
+
+    /**
      * Indicates whether the columns in this object are only set to default values.
      *
      * This method can be used in conjunction with isModified() to indicate whether an object is both
@@ -323,6 +370,10 @@ abstract class BaseDemandeIdentifiantI18n extends BaseObject implements Persiste
     public function hasOnlyDefaultValues()
     {
             if ($this->locale !== 'fr') {
+                return false;
+            }
+
+            if ($this->active_locale !== false) {
                 return false;
             }
 
@@ -354,6 +405,7 @@ abstract class BaseDemandeIdentifiantI18n extends BaseObject implements Persiste
             $this->seo_description = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
             $this->seo_h1 = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
             $this->seo_keywords = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
+            $this->active_locale = ($row[$startcol + 6] !== null) ? (boolean) $row[$startcol + 6] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -362,7 +414,7 @@ abstract class BaseDemandeIdentifiantI18n extends BaseObject implements Persiste
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 6; // 6 = DemandeIdentifiantI18nPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 7; // 7 = DemandeIdentifiantI18nPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating DemandeIdentifiantI18n object", $e);
@@ -604,6 +656,9 @@ abstract class BaseDemandeIdentifiantI18n extends BaseObject implements Persiste
         if ($this->isColumnModified(DemandeIdentifiantI18nPeer::SEO_KEYWORDS)) {
             $modifiedColumns[':p' . $index++]  = '`seo_keywords`';
         }
+        if ($this->isColumnModified(DemandeIdentifiantI18nPeer::ACTIVE_LOCALE)) {
+            $modifiedColumns[':p' . $index++]  = '`active_locale`';
+        }
 
         $sql = sprintf(
             'INSERT INTO `demande_identifiant_i18n` (%s) VALUES (%s)',
@@ -632,6 +687,9 @@ abstract class BaseDemandeIdentifiantI18n extends BaseObject implements Persiste
                         break;
                     case '`seo_keywords`':
                         $stmt->bindValue($identifier, $this->seo_keywords, PDO::PARAM_STR);
+                        break;
+                    case '`active_locale`':
+                        $stmt->bindValue($identifier, (int) $this->active_locale, PDO::PARAM_INT);
                         break;
                 }
             }
@@ -790,6 +848,9 @@ abstract class BaseDemandeIdentifiantI18n extends BaseObject implements Persiste
             case 5:
                 return $this->getSeoKeywords();
                 break;
+            case 6:
+                return $this->getActiveLocale();
+                break;
             default:
                 return null;
                 break;
@@ -825,6 +886,7 @@ abstract class BaseDemandeIdentifiantI18n extends BaseObject implements Persiste
             $keys[3] => $this->getSeoDescription(),
             $keys[4] => $this->getSeoH1(),
             $keys[5] => $this->getSeoKeywords(),
+            $keys[6] => $this->getActiveLocale(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aDemandeIdentifiant) {
@@ -882,6 +944,9 @@ abstract class BaseDemandeIdentifiantI18n extends BaseObject implements Persiste
             case 5:
                 $this->setSeoKeywords($value);
                 break;
+            case 6:
+                $this->setActiveLocale($value);
+                break;
         } // switch()
     }
 
@@ -912,6 +977,7 @@ abstract class BaseDemandeIdentifiantI18n extends BaseObject implements Persiste
         if (array_key_exists($keys[3], $arr)) $this->setSeoDescription($arr[$keys[3]]);
         if (array_key_exists($keys[4], $arr)) $this->setSeoH1($arr[$keys[4]]);
         if (array_key_exists($keys[5], $arr)) $this->setSeoKeywords($arr[$keys[5]]);
+        if (array_key_exists($keys[6], $arr)) $this->setActiveLocale($arr[$keys[6]]);
     }
 
     /**
@@ -929,6 +995,7 @@ abstract class BaseDemandeIdentifiantI18n extends BaseObject implements Persiste
         if ($this->isColumnModified(DemandeIdentifiantI18nPeer::SEO_DESCRIPTION)) $criteria->add(DemandeIdentifiantI18nPeer::SEO_DESCRIPTION, $this->seo_description);
         if ($this->isColumnModified(DemandeIdentifiantI18nPeer::SEO_H1)) $criteria->add(DemandeIdentifiantI18nPeer::SEO_H1, $this->seo_h1);
         if ($this->isColumnModified(DemandeIdentifiantI18nPeer::SEO_KEYWORDS)) $criteria->add(DemandeIdentifiantI18nPeer::SEO_KEYWORDS, $this->seo_keywords);
+        if ($this->isColumnModified(DemandeIdentifiantI18nPeer::ACTIVE_LOCALE)) $criteria->add(DemandeIdentifiantI18nPeer::ACTIVE_LOCALE, $this->active_locale);
 
         return $criteria;
     }
@@ -1005,6 +1072,7 @@ abstract class BaseDemandeIdentifiantI18n extends BaseObject implements Persiste
         $copyObj->setSeoDescription($this->getSeoDescription());
         $copyObj->setSeoH1($this->getSeoH1());
         $copyObj->setSeoKeywords($this->getSeoKeywords());
+        $copyObj->setActiveLocale($this->getActiveLocale());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -1125,6 +1193,7 @@ abstract class BaseDemandeIdentifiantI18n extends BaseObject implements Persiste
         $this->seo_description = null;
         $this->seo_h1 = null;
         $this->seo_keywords = null;
+        $this->active_locale = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();

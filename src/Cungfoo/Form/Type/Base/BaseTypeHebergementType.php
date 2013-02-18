@@ -228,13 +228,6 @@ class BaseTypeHebergementType extends AppAwareType
                     'constraints' => array(
                     ),
                 ),
-                'active_locale' => array(
-                    'required' => false,
-                    'label' => 'type_hebergement.active_locale',
-                    'type' => 'checkbox',
-                    'constraints' => array(
-                    ),
-                ),
                 'seo_title' => array(
                     'required' => false,
                     'label' => 'type_hebergement.seo_title',
@@ -260,6 +253,13 @@ class BaseTypeHebergementType extends AppAwareType
                     'required' => false,
                     'label' => 'type_hebergement.seo_keywords',
                     'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'active_locale' => array(
+                    'required' => false,
+                    'label' => 'type_hebergement.active_locale',
+                    'type' => 'checkbox',
                     'constraints' => array(
                     ),
                 ),

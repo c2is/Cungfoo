@@ -5,6 +5,8 @@
  */
 class ActiveBehavior extends Behavior
 {
+    protected $tableModificationOrder = 60;
+
     // default parameters value
     protected $parameters = array(
         'active_column' => 'active',

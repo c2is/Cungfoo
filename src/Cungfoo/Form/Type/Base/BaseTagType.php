@@ -64,13 +64,6 @@ class BaseTagType extends AppAwareType
                         new Assert\NotBlank(),
                     ),
                 ),
-                'active_locale' => array(
-                    'required' => false,
-                    'label' => 'tag.active_locale',
-                    'type' => 'checkbox',
-                    'constraints' => array(
-                    ),
-                ),
                 'seo_title' => array(
                     'required' => false,
                     'label' => 'tag.seo_title',
@@ -96,6 +89,13 @@ class BaseTagType extends AppAwareType
                     'required' => false,
                     'label' => 'tag.seo_keywords',
                     'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'active_locale' => array(
+                    'required' => false,
+                    'label' => 'tag.active_locale',
+                    'type' => 'checkbox',
                     'constraints' => array(
                     ),
                 ),

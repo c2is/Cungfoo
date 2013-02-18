@@ -27,16 +27,16 @@ class BaseBonPlanCategorieType extends AppAwareType
             'label' => 'bon_plan_categorie.id',
             'required' => false,
         ));
-        $builder->add('active', 'checkbox', array(
-            'constraints' => array(
-            ),
-            'label' => 'bon_plan_categorie.active',
-            'required' => false,
-        ));
         $builder->add('sortable_rank', 'integer', array(
             'constraints' => array(
             ),
             'label' => 'bon_plan_categorie.sortable_rank',
+            'required' => false,
+        ));
+        $builder->add('active', 'checkbox', array(
+            'constraints' => array(
+            ),
+            'label' => 'bon_plan_categorie.active',
             'required' => false,
         ));
         $builder->add('bon_plans', 'model', array(
@@ -83,13 +83,6 @@ class BaseBonPlanCategorieType extends AppAwareType
                     'constraints' => array(
                     ),
                 ),
-                'active_locale' => array(
-                    'required' => false,
-                    'label' => 'bon_plan_categorie.active_locale',
-                    'type' => 'checkbox',
-                    'constraints' => array(
-                    ),
-                ),
                 'seo_title' => array(
                     'required' => false,
                     'label' => 'bon_plan_categorie.seo_title',
@@ -115,6 +108,13 @@ class BaseBonPlanCategorieType extends AppAwareType
                     'required' => false,
                     'label' => 'bon_plan_categorie.seo_keywords',
                     'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'active_locale' => array(
+                    'required' => false,
+                    'label' => 'bon_plan_categorie.active_locale',
+                    'type' => 'checkbox',
                     'constraints' => array(
                     ),
                 ),

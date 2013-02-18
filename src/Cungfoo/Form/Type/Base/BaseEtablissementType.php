@@ -342,13 +342,6 @@ class BaseEtablissementType extends AppAwareType
                     'constraints' => array(
                     ),
                 ),
-                'active_locale' => array(
-                    'required' => false,
-                    'label' => 'etablissement.active_locale',
-                    'type' => 'checkbox',
-                    'constraints' => array(
-                    ),
-                ),
                 'seo_title' => array(
                     'required' => false,
                     'label' => 'etablissement.seo_title',
@@ -374,6 +367,13 @@ class BaseEtablissementType extends AppAwareType
                     'required' => false,
                     'label' => 'etablissement.seo_keywords',
                     'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'active_locale' => array(
+                    'required' => false,
+                    'label' => 'etablissement.active_locale',
+                    'type' => 'checkbox',
                     'constraints' => array(
                     ),
                 ),

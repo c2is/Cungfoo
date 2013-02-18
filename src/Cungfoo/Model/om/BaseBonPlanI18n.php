@@ -95,13 +95,6 @@ abstract class BaseBonPlanI18n extends BaseObject implements Persistent
     protected $indice_prix;
 
     /**
-     * The value for the active_locale field.
-     * Note: this column has a database default value of: false
-     * @var        boolean
-     */
-    protected $active_locale;
-
-    /**
      * The value for the seo_title field.
      * @var        string
      */
@@ -124,6 +117,13 @@ abstract class BaseBonPlanI18n extends BaseObject implements Persistent
      * @var        string
      */
     protected $seo_keywords;
+
+    /**
+     * The value for the active_locale field.
+     * Note: this column has a database default value of: false
+     * @var        boolean
+     */
+    protected $active_locale;
 
     /**
      * @var        BonPlan
@@ -247,16 +247,6 @@ abstract class BaseBonPlanI18n extends BaseObject implements Persistent
     }
 
     /**
-     * Get the [active_locale] column value.
-     *
-     * @return boolean
-     */
-    public function getActiveLocale()
-    {
-        return $this->active_locale;
-    }
-
-    /**
      * Get the [seo_title] column value.
      *
      * @return string
@@ -294,6 +284,16 @@ abstract class BaseBonPlanI18n extends BaseObject implements Persistent
     public function getSeoKeywords()
     {
         return $this->seo_keywords;
+    }
+
+    /**
+     * Get the [active_locale] column value.
+     *
+     * @return boolean
+     */
+    public function getActiveLocale()
+    {
+        return $this->active_locale;
     }
 
     /**
@@ -469,35 +469,6 @@ abstract class BaseBonPlanI18n extends BaseObject implements Persistent
     } // setIndicePrix()
 
     /**
-     * Sets the value of the [active_locale] column.
-     * Non-boolean arguments are converted using the following rules:
-     *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
-     *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
-     * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
-     *
-     * @param boolean|integer|string $v The new value
-     * @return BonPlanI18n The current object (for fluent API support)
-     */
-    public function setActiveLocale($v)
-    {
-        if ($v !== null) {
-            if (is_string($v)) {
-                $v = in_array(strtolower($v), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
-            } else {
-                $v = (boolean) $v;
-            }
-        }
-
-        if ($this->active_locale !== $v) {
-            $this->active_locale = $v;
-            $this->modifiedColumns[] = BonPlanI18nPeer::ACTIVE_LOCALE;
-        }
-
-
-        return $this;
-    } // setActiveLocale()
-
-    /**
      * Set the value of [seo_title] column.
      *
      * @param string $v new value
@@ -582,6 +553,35 @@ abstract class BaseBonPlanI18n extends BaseObject implements Persistent
     } // setSeoKeywords()
 
     /**
+     * Sets the value of the [active_locale] column.
+     * Non-boolean arguments are converted using the following rules:
+     *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     *
+     * @param boolean|integer|string $v The new value
+     * @return BonPlanI18n The current object (for fluent API support)
+     */
+    public function setActiveLocale($v)
+    {
+        if ($v !== null) {
+            if (is_string($v)) {
+                $v = in_array(strtolower($v), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+            } else {
+                $v = (boolean) $v;
+            }
+        }
+
+        if ($this->active_locale !== $v) {
+            $this->active_locale = $v;
+            $this->modifiedColumns[] = BonPlanI18nPeer::ACTIVE_LOCALE;
+        }
+
+
+        return $this;
+    } // setActiveLocale()
+
+    /**
      * Indicates whether the columns in this object are only set to default values.
      *
      * This method can be used in conjunction with isModified() to indicate whether an object is both
@@ -629,11 +629,11 @@ abstract class BaseBonPlanI18n extends BaseObject implements Persistent
             $this->description = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
             $this->indice = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
             $this->indice_prix = ($row[$startcol + 7] !== null) ? (string) $row[$startcol + 7] : null;
-            $this->active_locale = ($row[$startcol + 8] !== null) ? (boolean) $row[$startcol + 8] : null;
-            $this->seo_title = ($row[$startcol + 9] !== null) ? (string) $row[$startcol + 9] : null;
-            $this->seo_description = ($row[$startcol + 10] !== null) ? (string) $row[$startcol + 10] : null;
-            $this->seo_h1 = ($row[$startcol + 11] !== null) ? (string) $row[$startcol + 11] : null;
-            $this->seo_keywords = ($row[$startcol + 12] !== null) ? (string) $row[$startcol + 12] : null;
+            $this->seo_title = ($row[$startcol + 8] !== null) ? (string) $row[$startcol + 8] : null;
+            $this->seo_description = ($row[$startcol + 9] !== null) ? (string) $row[$startcol + 9] : null;
+            $this->seo_h1 = ($row[$startcol + 10] !== null) ? (string) $row[$startcol + 10] : null;
+            $this->seo_keywords = ($row[$startcol + 11] !== null) ? (string) $row[$startcol + 11] : null;
+            $this->active_locale = ($row[$startcol + 12] !== null) ? (boolean) $row[$startcol + 12] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -890,9 +890,6 @@ abstract class BaseBonPlanI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(BonPlanI18nPeer::INDICE_PRIX)) {
             $modifiedColumns[':p' . $index++]  = '`indice_prix`';
         }
-        if ($this->isColumnModified(BonPlanI18nPeer::ACTIVE_LOCALE)) {
-            $modifiedColumns[':p' . $index++]  = '`active_locale`';
-        }
         if ($this->isColumnModified(BonPlanI18nPeer::SEO_TITLE)) {
             $modifiedColumns[':p' . $index++]  = '`seo_title`';
         }
@@ -904,6 +901,9 @@ abstract class BaseBonPlanI18n extends BaseObject implements Persistent
         }
         if ($this->isColumnModified(BonPlanI18nPeer::SEO_KEYWORDS)) {
             $modifiedColumns[':p' . $index++]  = '`seo_keywords`';
+        }
+        if ($this->isColumnModified(BonPlanI18nPeer::ACTIVE_LOCALE)) {
+            $modifiedColumns[':p' . $index++]  = '`active_locale`';
         }
 
         $sql = sprintf(
@@ -940,9 +940,6 @@ abstract class BaseBonPlanI18n extends BaseObject implements Persistent
                     case '`indice_prix`':
                         $stmt->bindValue($identifier, $this->indice_prix, PDO::PARAM_STR);
                         break;
-                    case '`active_locale`':
-                        $stmt->bindValue($identifier, (int) $this->active_locale, PDO::PARAM_INT);
-                        break;
                     case '`seo_title`':
                         $stmt->bindValue($identifier, $this->seo_title, PDO::PARAM_STR);
                         break;
@@ -954,6 +951,9 @@ abstract class BaseBonPlanI18n extends BaseObject implements Persistent
                         break;
                     case '`seo_keywords`':
                         $stmt->bindValue($identifier, $this->seo_keywords, PDO::PARAM_STR);
+                        break;
+                    case '`active_locale`':
+                        $stmt->bindValue($identifier, (int) $this->active_locale, PDO::PARAM_INT);
                         break;
                 }
             }
@@ -1119,19 +1119,19 @@ abstract class BaseBonPlanI18n extends BaseObject implements Persistent
                 return $this->getIndicePrix();
                 break;
             case 8:
-                return $this->getActiveLocale();
-                break;
-            case 9:
                 return $this->getSeoTitle();
                 break;
-            case 10:
+            case 9:
                 return $this->getSeoDescription();
                 break;
-            case 11:
+            case 10:
                 return $this->getSeoH1();
                 break;
-            case 12:
+            case 11:
                 return $this->getSeoKeywords();
+                break;
+            case 12:
+                return $this->getActiveLocale();
                 break;
             default:
                 return null;
@@ -1170,11 +1170,11 @@ abstract class BaseBonPlanI18n extends BaseObject implements Persistent
             $keys[5] => $this->getDescription(),
             $keys[6] => $this->getIndice(),
             $keys[7] => $this->getIndicePrix(),
-            $keys[8] => $this->getActiveLocale(),
-            $keys[9] => $this->getSeoTitle(),
-            $keys[10] => $this->getSeoDescription(),
-            $keys[11] => $this->getSeoH1(),
-            $keys[12] => $this->getSeoKeywords(),
+            $keys[8] => $this->getSeoTitle(),
+            $keys[9] => $this->getSeoDescription(),
+            $keys[10] => $this->getSeoH1(),
+            $keys[11] => $this->getSeoKeywords(),
+            $keys[12] => $this->getActiveLocale(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aBonPlan) {
@@ -1239,19 +1239,19 @@ abstract class BaseBonPlanI18n extends BaseObject implements Persistent
                 $this->setIndicePrix($value);
                 break;
             case 8:
-                $this->setActiveLocale($value);
-                break;
-            case 9:
                 $this->setSeoTitle($value);
                 break;
-            case 10:
+            case 9:
                 $this->setSeoDescription($value);
                 break;
-            case 11:
+            case 10:
                 $this->setSeoH1($value);
                 break;
-            case 12:
+            case 11:
                 $this->setSeoKeywords($value);
+                break;
+            case 12:
+                $this->setActiveLocale($value);
                 break;
         } // switch()
     }
@@ -1285,11 +1285,11 @@ abstract class BaseBonPlanI18n extends BaseObject implements Persistent
         if (array_key_exists($keys[5], $arr)) $this->setDescription($arr[$keys[5]]);
         if (array_key_exists($keys[6], $arr)) $this->setIndice($arr[$keys[6]]);
         if (array_key_exists($keys[7], $arr)) $this->setIndicePrix($arr[$keys[7]]);
-        if (array_key_exists($keys[8], $arr)) $this->setActiveLocale($arr[$keys[8]]);
-        if (array_key_exists($keys[9], $arr)) $this->setSeoTitle($arr[$keys[9]]);
-        if (array_key_exists($keys[10], $arr)) $this->setSeoDescription($arr[$keys[10]]);
-        if (array_key_exists($keys[11], $arr)) $this->setSeoH1($arr[$keys[11]]);
-        if (array_key_exists($keys[12], $arr)) $this->setSeoKeywords($arr[$keys[12]]);
+        if (array_key_exists($keys[8], $arr)) $this->setSeoTitle($arr[$keys[8]]);
+        if (array_key_exists($keys[9], $arr)) $this->setSeoDescription($arr[$keys[9]]);
+        if (array_key_exists($keys[10], $arr)) $this->setSeoH1($arr[$keys[10]]);
+        if (array_key_exists($keys[11], $arr)) $this->setSeoKeywords($arr[$keys[11]]);
+        if (array_key_exists($keys[12], $arr)) $this->setActiveLocale($arr[$keys[12]]);
     }
 
     /**
@@ -1309,11 +1309,11 @@ abstract class BaseBonPlanI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(BonPlanI18nPeer::DESCRIPTION)) $criteria->add(BonPlanI18nPeer::DESCRIPTION, $this->description);
         if ($this->isColumnModified(BonPlanI18nPeer::INDICE)) $criteria->add(BonPlanI18nPeer::INDICE, $this->indice);
         if ($this->isColumnModified(BonPlanI18nPeer::INDICE_PRIX)) $criteria->add(BonPlanI18nPeer::INDICE_PRIX, $this->indice_prix);
-        if ($this->isColumnModified(BonPlanI18nPeer::ACTIVE_LOCALE)) $criteria->add(BonPlanI18nPeer::ACTIVE_LOCALE, $this->active_locale);
         if ($this->isColumnModified(BonPlanI18nPeer::SEO_TITLE)) $criteria->add(BonPlanI18nPeer::SEO_TITLE, $this->seo_title);
         if ($this->isColumnModified(BonPlanI18nPeer::SEO_DESCRIPTION)) $criteria->add(BonPlanI18nPeer::SEO_DESCRIPTION, $this->seo_description);
         if ($this->isColumnModified(BonPlanI18nPeer::SEO_H1)) $criteria->add(BonPlanI18nPeer::SEO_H1, $this->seo_h1);
         if ($this->isColumnModified(BonPlanI18nPeer::SEO_KEYWORDS)) $criteria->add(BonPlanI18nPeer::SEO_KEYWORDS, $this->seo_keywords);
+        if ($this->isColumnModified(BonPlanI18nPeer::ACTIVE_LOCALE)) $criteria->add(BonPlanI18nPeer::ACTIVE_LOCALE, $this->active_locale);
 
         return $criteria;
     }
@@ -1392,11 +1392,11 @@ abstract class BaseBonPlanI18n extends BaseObject implements Persistent
         $copyObj->setDescription($this->getDescription());
         $copyObj->setIndice($this->getIndice());
         $copyObj->setIndicePrix($this->getIndicePrix());
-        $copyObj->setActiveLocale($this->getActiveLocale());
         $copyObj->setSeoTitle($this->getSeoTitle());
         $copyObj->setSeoDescription($this->getSeoDescription());
         $copyObj->setSeoH1($this->getSeoH1());
         $copyObj->setSeoKeywords($this->getSeoKeywords());
+        $copyObj->setActiveLocale($this->getActiveLocale());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -1519,11 +1519,11 @@ abstract class BaseBonPlanI18n extends BaseObject implements Persistent
         $this->description = null;
         $this->indice = null;
         $this->indice_prix = null;
-        $this->active_locale = null;
         $this->seo_title = null;
         $this->seo_description = null;
         $this->seo_h1 = null;
         $this->seo_keywords = null;
+        $this->active_locale = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();

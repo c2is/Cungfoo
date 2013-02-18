@@ -161,13 +161,6 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
     protected $remarque_4;
 
     /**
-     * The value for the active_locale field.
-     * Note: this column has a database default value of: false
-     * @var        boolean
-     */
-    protected $active_locale;
-
-    /**
      * The value for the seo_title field.
      * @var        string
      */
@@ -190,6 +183,13 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
      * @var        string
      */
     protected $seo_keywords;
+
+    /**
+     * The value for the active_locale field.
+     * Note: this column has a database default value of: false
+     * @var        boolean
+     */
+    protected $active_locale;
 
     /**
      * @var        TypeHebergement
@@ -423,16 +423,6 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
     }
 
     /**
-     * Get the [active_locale] column value.
-     *
-     * @return boolean
-     */
-    public function getActiveLocale()
-    {
-        return $this->active_locale;
-    }
-
-    /**
      * Get the [seo_title] column value.
      *
      * @return string
@@ -470,6 +460,16 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
     public function getSeoKeywords()
     {
         return $this->seo_keywords;
+    }
+
+    /**
+     * Get the [active_locale] column value.
+     *
+     * @return boolean
+     */
+    public function getActiveLocale()
+    {
+        return $this->active_locale;
     }
 
     /**
@@ -876,35 +876,6 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
     } // setRemarque4()
 
     /**
-     * Sets the value of the [active_locale] column.
-     * Non-boolean arguments are converted using the following rules:
-     *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
-     *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
-     * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
-     *
-     * @param boolean|integer|string $v The new value
-     * @return TypeHebergementI18n The current object (for fluent API support)
-     */
-    public function setActiveLocale($v)
-    {
-        if ($v !== null) {
-            if (is_string($v)) {
-                $v = in_array(strtolower($v), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
-            } else {
-                $v = (boolean) $v;
-            }
-        }
-
-        if ($this->active_locale !== $v) {
-            $this->active_locale = $v;
-            $this->modifiedColumns[] = TypeHebergementI18nPeer::ACTIVE_LOCALE;
-        }
-
-
-        return $this;
-    } // setActiveLocale()
-
-    /**
      * Set the value of [seo_title] column.
      *
      * @param string $v new value
@@ -989,6 +960,35 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
     } // setSeoKeywords()
 
     /**
+     * Sets the value of the [active_locale] column.
+     * Non-boolean arguments are converted using the following rules:
+     *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     *
+     * @param boolean|integer|string $v The new value
+     * @return TypeHebergementI18n The current object (for fluent API support)
+     */
+    public function setActiveLocale($v)
+    {
+        if ($v !== null) {
+            if (is_string($v)) {
+                $v = in_array(strtolower($v), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+            } else {
+                $v = (boolean) $v;
+            }
+        }
+
+        if ($this->active_locale !== $v) {
+            $this->active_locale = $v;
+            $this->modifiedColumns[] = TypeHebergementI18nPeer::ACTIVE_LOCALE;
+        }
+
+
+        return $this;
+    } // setActiveLocale()
+
+    /**
      * Indicates whether the columns in this object are only set to default values.
      *
      * This method can be used in conjunction with isModified() to indicate whether an object is both
@@ -1047,11 +1047,11 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
             $this->remarque_2 = ($row[$startcol + 16] !== null) ? (string) $row[$startcol + 16] : null;
             $this->remarque_3 = ($row[$startcol + 17] !== null) ? (string) $row[$startcol + 17] : null;
             $this->remarque_4 = ($row[$startcol + 18] !== null) ? (string) $row[$startcol + 18] : null;
-            $this->active_locale = ($row[$startcol + 19] !== null) ? (boolean) $row[$startcol + 19] : null;
-            $this->seo_title = ($row[$startcol + 20] !== null) ? (string) $row[$startcol + 20] : null;
-            $this->seo_description = ($row[$startcol + 21] !== null) ? (string) $row[$startcol + 21] : null;
-            $this->seo_h1 = ($row[$startcol + 22] !== null) ? (string) $row[$startcol + 22] : null;
-            $this->seo_keywords = ($row[$startcol + 23] !== null) ? (string) $row[$startcol + 23] : null;
+            $this->seo_title = ($row[$startcol + 19] !== null) ? (string) $row[$startcol + 19] : null;
+            $this->seo_description = ($row[$startcol + 20] !== null) ? (string) $row[$startcol + 20] : null;
+            $this->seo_h1 = ($row[$startcol + 21] !== null) ? (string) $row[$startcol + 21] : null;
+            $this->seo_keywords = ($row[$startcol + 22] !== null) ? (string) $row[$startcol + 22] : null;
+            $this->active_locale = ($row[$startcol + 23] !== null) ? (boolean) $row[$startcol + 23] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -1341,9 +1341,6 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(TypeHebergementI18nPeer::REMARQUE_4)) {
             $modifiedColumns[':p' . $index++]  = '`remarque_4`';
         }
-        if ($this->isColumnModified(TypeHebergementI18nPeer::ACTIVE_LOCALE)) {
-            $modifiedColumns[':p' . $index++]  = '`active_locale`';
-        }
         if ($this->isColumnModified(TypeHebergementI18nPeer::SEO_TITLE)) {
             $modifiedColumns[':p' . $index++]  = '`seo_title`';
         }
@@ -1355,6 +1352,9 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
         }
         if ($this->isColumnModified(TypeHebergementI18nPeer::SEO_KEYWORDS)) {
             $modifiedColumns[':p' . $index++]  = '`seo_keywords`';
+        }
+        if ($this->isColumnModified(TypeHebergementI18nPeer::ACTIVE_LOCALE)) {
+            $modifiedColumns[':p' . $index++]  = '`active_locale`';
         }
 
         $sql = sprintf(
@@ -1424,9 +1424,6 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
                     case '`remarque_4`':
                         $stmt->bindValue($identifier, $this->remarque_4, PDO::PARAM_STR);
                         break;
-                    case '`active_locale`':
-                        $stmt->bindValue($identifier, (int) $this->active_locale, PDO::PARAM_INT);
-                        break;
                     case '`seo_title`':
                         $stmt->bindValue($identifier, $this->seo_title, PDO::PARAM_STR);
                         break;
@@ -1438,6 +1435,9 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
                         break;
                     case '`seo_keywords`':
                         $stmt->bindValue($identifier, $this->seo_keywords, PDO::PARAM_STR);
+                        break;
+                    case '`active_locale`':
+                        $stmt->bindValue($identifier, (int) $this->active_locale, PDO::PARAM_INT);
                         break;
                 }
             }
@@ -1636,19 +1636,19 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
                 return $this->getRemarque4();
                 break;
             case 19:
-                return $this->getActiveLocale();
-                break;
-            case 20:
                 return $this->getSeoTitle();
                 break;
-            case 21:
+            case 20:
                 return $this->getSeoDescription();
                 break;
-            case 22:
+            case 21:
                 return $this->getSeoH1();
                 break;
-            case 23:
+            case 22:
                 return $this->getSeoKeywords();
+                break;
+            case 23:
+                return $this->getActiveLocale();
                 break;
             default:
                 return null;
@@ -1698,11 +1698,11 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
             $keys[16] => $this->getRemarque2(),
             $keys[17] => $this->getRemarque3(),
             $keys[18] => $this->getRemarque4(),
-            $keys[19] => $this->getActiveLocale(),
-            $keys[20] => $this->getSeoTitle(),
-            $keys[21] => $this->getSeoDescription(),
-            $keys[22] => $this->getSeoH1(),
-            $keys[23] => $this->getSeoKeywords(),
+            $keys[19] => $this->getSeoTitle(),
+            $keys[20] => $this->getSeoDescription(),
+            $keys[21] => $this->getSeoH1(),
+            $keys[22] => $this->getSeoKeywords(),
+            $keys[23] => $this->getActiveLocale(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aTypeHebergement) {
@@ -1800,19 +1800,19 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
                 $this->setRemarque4($value);
                 break;
             case 19:
-                $this->setActiveLocale($value);
-                break;
-            case 20:
                 $this->setSeoTitle($value);
                 break;
-            case 21:
+            case 20:
                 $this->setSeoDescription($value);
                 break;
-            case 22:
+            case 21:
                 $this->setSeoH1($value);
                 break;
-            case 23:
+            case 22:
                 $this->setSeoKeywords($value);
+                break;
+            case 23:
+                $this->setActiveLocale($value);
                 break;
         } // switch()
     }
@@ -1857,11 +1857,11 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
         if (array_key_exists($keys[16], $arr)) $this->setRemarque2($arr[$keys[16]]);
         if (array_key_exists($keys[17], $arr)) $this->setRemarque3($arr[$keys[17]]);
         if (array_key_exists($keys[18], $arr)) $this->setRemarque4($arr[$keys[18]]);
-        if (array_key_exists($keys[19], $arr)) $this->setActiveLocale($arr[$keys[19]]);
-        if (array_key_exists($keys[20], $arr)) $this->setSeoTitle($arr[$keys[20]]);
-        if (array_key_exists($keys[21], $arr)) $this->setSeoDescription($arr[$keys[21]]);
-        if (array_key_exists($keys[22], $arr)) $this->setSeoH1($arr[$keys[22]]);
-        if (array_key_exists($keys[23], $arr)) $this->setSeoKeywords($arr[$keys[23]]);
+        if (array_key_exists($keys[19], $arr)) $this->setSeoTitle($arr[$keys[19]]);
+        if (array_key_exists($keys[20], $arr)) $this->setSeoDescription($arr[$keys[20]]);
+        if (array_key_exists($keys[21], $arr)) $this->setSeoH1($arr[$keys[21]]);
+        if (array_key_exists($keys[22], $arr)) $this->setSeoKeywords($arr[$keys[22]]);
+        if (array_key_exists($keys[23], $arr)) $this->setActiveLocale($arr[$keys[23]]);
     }
 
     /**
@@ -1892,11 +1892,11 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(TypeHebergementI18nPeer::REMARQUE_2)) $criteria->add(TypeHebergementI18nPeer::REMARQUE_2, $this->remarque_2);
         if ($this->isColumnModified(TypeHebergementI18nPeer::REMARQUE_3)) $criteria->add(TypeHebergementI18nPeer::REMARQUE_3, $this->remarque_3);
         if ($this->isColumnModified(TypeHebergementI18nPeer::REMARQUE_4)) $criteria->add(TypeHebergementI18nPeer::REMARQUE_4, $this->remarque_4);
-        if ($this->isColumnModified(TypeHebergementI18nPeer::ACTIVE_LOCALE)) $criteria->add(TypeHebergementI18nPeer::ACTIVE_LOCALE, $this->active_locale);
         if ($this->isColumnModified(TypeHebergementI18nPeer::SEO_TITLE)) $criteria->add(TypeHebergementI18nPeer::SEO_TITLE, $this->seo_title);
         if ($this->isColumnModified(TypeHebergementI18nPeer::SEO_DESCRIPTION)) $criteria->add(TypeHebergementI18nPeer::SEO_DESCRIPTION, $this->seo_description);
         if ($this->isColumnModified(TypeHebergementI18nPeer::SEO_H1)) $criteria->add(TypeHebergementI18nPeer::SEO_H1, $this->seo_h1);
         if ($this->isColumnModified(TypeHebergementI18nPeer::SEO_KEYWORDS)) $criteria->add(TypeHebergementI18nPeer::SEO_KEYWORDS, $this->seo_keywords);
+        if ($this->isColumnModified(TypeHebergementI18nPeer::ACTIVE_LOCALE)) $criteria->add(TypeHebergementI18nPeer::ACTIVE_LOCALE, $this->active_locale);
 
         return $criteria;
     }
@@ -1986,11 +1986,11 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
         $copyObj->setRemarque2($this->getRemarque2());
         $copyObj->setRemarque3($this->getRemarque3());
         $copyObj->setRemarque4($this->getRemarque4());
-        $copyObj->setActiveLocale($this->getActiveLocale());
         $copyObj->setSeoTitle($this->getSeoTitle());
         $copyObj->setSeoDescription($this->getSeoDescription());
         $copyObj->setSeoH1($this->getSeoH1());
         $copyObj->setSeoKeywords($this->getSeoKeywords());
+        $copyObj->setActiveLocale($this->getActiveLocale());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -2124,11 +2124,11 @@ abstract class BaseTypeHebergementI18n extends BaseObject implements Persistent
         $this->remarque_2 = null;
         $this->remarque_3 = null;
         $this->remarque_4 = null;
-        $this->active_locale = null;
         $this->seo_title = null;
         $this->seo_description = null;
         $this->seo_h1 = null;
         $this->seo_keywords = null;
+        $this->active_locale = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();

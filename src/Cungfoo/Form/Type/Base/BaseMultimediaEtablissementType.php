@@ -77,13 +77,6 @@ class BaseMultimediaEtablissementType extends AppAwareType
                         new Assert\NotBlank(),
                     ),
                 ),
-                'active_locale' => array(
-                    'required' => false,
-                    'label' => 'multimedia_etablissement.active_locale',
-                    'type' => 'checkbox',
-                    'constraints' => array(
-                    ),
-                ),
                 'seo_title' => array(
                     'required' => false,
                     'label' => 'multimedia_etablissement.seo_title',
@@ -109,6 +102,13 @@ class BaseMultimediaEtablissementType extends AppAwareType
                     'required' => false,
                     'label' => 'multimedia_etablissement.seo_keywords',
                     'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'active_locale' => array(
+                    'required' => false,
+                    'label' => 'multimedia_etablissement.active_locale',
+                    'type' => 'checkbox',
                     'constraints' => array(
                     ),
                 ),

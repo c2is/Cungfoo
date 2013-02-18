@@ -82,17 +82,17 @@ abstract class BaseTypeHebergementCapacite extends BaseObject implements Persist
     protected $updated_at;
 
     /**
+     * The value for the sortable_rank field.
+     * @var        int
+     */
+    protected $sortable_rank;
+
+    /**
      * The value for the active field.
      * Note: this column has a database default value of: false
      * @var        boolean
      */
     protected $active;
-
-    /**
-     * The value for the sortable_rank field.
-     * @var        int
-     */
-    protected $sortable_rank;
 
     /**
      * @var        PropelObjectCollection|TypeHebergement[] Collection to store aggregation of TypeHebergement objects.
@@ -286,16 +286,6 @@ abstract class BaseTypeHebergementCapacite extends BaseObject implements Persist
     }
 
     /**
-     * Get the [active] column value.
-     *
-     * @return boolean
-     */
-    public function getActive()
-    {
-        return $this->active;
-    }
-
-    /**
      * Get the [sortable_rank] column value.
      *
      * @return int
@@ -303,6 +293,16 @@ abstract class BaseTypeHebergementCapacite extends BaseObject implements Persist
     public function getSortableRank()
     {
         return $this->sortable_rank;
+    }
+
+    /**
+     * Get the [active] column value.
+     *
+     * @return boolean
+     */
+    public function getActive()
+    {
+        return $this->active;
     }
 
     /**
@@ -415,6 +415,27 @@ abstract class BaseTypeHebergementCapacite extends BaseObject implements Persist
     } // setUpdatedAt()
 
     /**
+     * Set the value of [sortable_rank] column.
+     *
+     * @param int $v new value
+     * @return TypeHebergementCapacite The current object (for fluent API support)
+     */
+    public function setSortableRank($v)
+    {
+        if ($v !== null) {
+            $v = (int) $v;
+        }
+
+        if ($this->sortable_rank !== $v) {
+            $this->sortable_rank = $v;
+            $this->modifiedColumns[] = TypeHebergementCapacitePeer::SORTABLE_RANK;
+        }
+
+
+        return $this;
+    } // setSortableRank()
+
+    /**
      * Sets the value of the [active] column.
      * Non-boolean arguments are converted using the following rules:
      *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
@@ -442,27 +463,6 @@ abstract class BaseTypeHebergementCapacite extends BaseObject implements Persist
 
         return $this;
     } // setActive()
-
-    /**
-     * Set the value of [sortable_rank] column.
-     *
-     * @param int $v new value
-     * @return TypeHebergementCapacite The current object (for fluent API support)
-     */
-    public function setSortableRank($v)
-    {
-        if ($v !== null) {
-            $v = (int) $v;
-        }
-
-        if ($this->sortable_rank !== $v) {
-            $this->sortable_rank = $v;
-            $this->modifiedColumns[] = TypeHebergementCapacitePeer::SORTABLE_RANK;
-        }
-
-
-        return $this;
-    } // setSortableRank()
 
     /**
      * Indicates whether the columns in this object are only set to default values.
@@ -505,8 +505,8 @@ abstract class BaseTypeHebergementCapacite extends BaseObject implements Persist
             $this->image_page = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
             $this->created_at = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
             $this->updated_at = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
-            $this->active = ($row[$startcol + 5] !== null) ? (boolean) $row[$startcol + 5] : null;
-            $this->sortable_rank = ($row[$startcol + 6] !== null) ? (int) $row[$startcol + 6] : null;
+            $this->sortable_rank = ($row[$startcol + 5] !== null) ? (int) $row[$startcol + 5] : null;
+            $this->active = ($row[$startcol + 6] !== null) ? (boolean) $row[$startcol + 6] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -804,11 +804,11 @@ abstract class BaseTypeHebergementCapacite extends BaseObject implements Persist
         if ($this->isColumnModified(TypeHebergementCapacitePeer::UPDATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`updated_at`';
         }
-        if ($this->isColumnModified(TypeHebergementCapacitePeer::ACTIVE)) {
-            $modifiedColumns[':p' . $index++]  = '`active`';
-        }
         if ($this->isColumnModified(TypeHebergementCapacitePeer::SORTABLE_RANK)) {
             $modifiedColumns[':p' . $index++]  = '`sortable_rank`';
+        }
+        if ($this->isColumnModified(TypeHebergementCapacitePeer::ACTIVE)) {
+            $modifiedColumns[':p' . $index++]  = '`active`';
         }
 
         $sql = sprintf(
@@ -836,11 +836,11 @@ abstract class BaseTypeHebergementCapacite extends BaseObject implements Persist
                     case '`updated_at`':
                         $stmt->bindValue($identifier, $this->updated_at, PDO::PARAM_STR);
                         break;
-                    case '`active`':
-                        $stmt->bindValue($identifier, (int) $this->active, PDO::PARAM_INT);
-                        break;
                     case '`sortable_rank`':
                         $stmt->bindValue($identifier, $this->sortable_rank, PDO::PARAM_INT);
+                        break;
+                    case '`active`':
+                        $stmt->bindValue($identifier, (int) $this->active, PDO::PARAM_INT);
                         break;
                 }
             }
@@ -1008,10 +1008,10 @@ abstract class BaseTypeHebergementCapacite extends BaseObject implements Persist
                 return $this->getUpdatedAt();
                 break;
             case 5:
-                return $this->getActive();
+                return $this->getSortableRank();
                 break;
             case 6:
-                return $this->getSortableRank();
+                return $this->getActive();
                 break;
             default:
                 return null;
@@ -1047,8 +1047,8 @@ abstract class BaseTypeHebergementCapacite extends BaseObject implements Persist
             $keys[2] => $this->getImagePage(),
             $keys[3] => $this->getCreatedAt(),
             $keys[4] => $this->getUpdatedAt(),
-            $keys[5] => $this->getActive(),
-            $keys[6] => $this->getSortableRank(),
+            $keys[5] => $this->getSortableRank(),
+            $keys[6] => $this->getActive(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->collTypeHebergements) {
@@ -1107,10 +1107,10 @@ abstract class BaseTypeHebergementCapacite extends BaseObject implements Persist
                 $this->setUpdatedAt($value);
                 break;
             case 5:
-                $this->setActive($value);
+                $this->setSortableRank($value);
                 break;
             case 6:
-                $this->setSortableRank($value);
+                $this->setActive($value);
                 break;
         } // switch()
     }
@@ -1141,8 +1141,8 @@ abstract class BaseTypeHebergementCapacite extends BaseObject implements Persist
         if (array_key_exists($keys[2], $arr)) $this->setImagePage($arr[$keys[2]]);
         if (array_key_exists($keys[3], $arr)) $this->setCreatedAt($arr[$keys[3]]);
         if (array_key_exists($keys[4], $arr)) $this->setUpdatedAt($arr[$keys[4]]);
-        if (array_key_exists($keys[5], $arr)) $this->setActive($arr[$keys[5]]);
-        if (array_key_exists($keys[6], $arr)) $this->setSortableRank($arr[$keys[6]]);
+        if (array_key_exists($keys[5], $arr)) $this->setSortableRank($arr[$keys[5]]);
+        if (array_key_exists($keys[6], $arr)) $this->setActive($arr[$keys[6]]);
     }
 
     /**
@@ -1159,8 +1159,8 @@ abstract class BaseTypeHebergementCapacite extends BaseObject implements Persist
         if ($this->isColumnModified(TypeHebergementCapacitePeer::IMAGE_PAGE)) $criteria->add(TypeHebergementCapacitePeer::IMAGE_PAGE, $this->image_page);
         if ($this->isColumnModified(TypeHebergementCapacitePeer::CREATED_AT)) $criteria->add(TypeHebergementCapacitePeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(TypeHebergementCapacitePeer::UPDATED_AT)) $criteria->add(TypeHebergementCapacitePeer::UPDATED_AT, $this->updated_at);
-        if ($this->isColumnModified(TypeHebergementCapacitePeer::ACTIVE)) $criteria->add(TypeHebergementCapacitePeer::ACTIVE, $this->active);
         if ($this->isColumnModified(TypeHebergementCapacitePeer::SORTABLE_RANK)) $criteria->add(TypeHebergementCapacitePeer::SORTABLE_RANK, $this->sortable_rank);
+        if ($this->isColumnModified(TypeHebergementCapacitePeer::ACTIVE)) $criteria->add(TypeHebergementCapacitePeer::ACTIVE, $this->active);
 
         return $criteria;
     }
@@ -1228,8 +1228,8 @@ abstract class BaseTypeHebergementCapacite extends BaseObject implements Persist
         $copyObj->setImagePage($this->getImagePage());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
-        $copyObj->setActive($this->getActive());
         $copyObj->setSortableRank($this->getSortableRank());
+        $copyObj->setActive($this->getActive());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -1788,8 +1788,8 @@ abstract class BaseTypeHebergementCapacite extends BaseObject implements Persist
         $this->image_page = null;
         $this->created_at = null;
         $this->updated_at = null;
-        $this->active = null;
         $this->sortable_rank = null;
+        $this->active = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();
@@ -2448,30 +2448,6 @@ abstract class BaseTypeHebergementCapacite extends BaseObject implements Persist
         return $this;
     }
 
-
-        /**
-         * Get the [active_locale] column value.
-         *
-         * @return boolean
-         */
-        public function getActiveLocale()
-        {
-        return $this->getCurrentTranslation()->getActiveLocale();
-    }
-
-
-        /**
-         * Set the value of [active_locale] column.
-         *
-         * @param boolean $v new value
-         * @return TypeHebergementCapaciteI18n The current object (for fluent API support)
-         */
-        public function setActiveLocale($v)
-        {    $this->getCurrentTranslation()->setActiveLocale($v);
-
-        return $this;
-    }
-
     /**
      * Get the [seo_title] column value.
      *
@@ -2608,6 +2584,30 @@ abstract class BaseTypeHebergementCapacite extends BaseObject implements Persist
          */
         public function setSeoKeywords($v)
         {    $this->getCurrentTranslation()->setSeoKeywords($v);
+
+        return $this;
+    }
+
+
+        /**
+         * Get the [active_locale] column value.
+         *
+         * @return boolean
+         */
+        public function getActiveLocale()
+        {
+        return $this->getCurrentTranslation()->getActiveLocale();
+    }
+
+
+        /**
+         * Set the value of [active_locale] column.
+         *
+         * @param boolean $v new value
+         * @return TypeHebergementCapaciteI18n The current object (for fluent API support)
+         */
+        public function setActiveLocale($v)
+        {    $this->getCurrentTranslation()->setActiveLocale($v);
 
         return $this;
     }

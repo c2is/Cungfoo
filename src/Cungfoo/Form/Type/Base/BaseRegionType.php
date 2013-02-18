@@ -171,13 +171,6 @@ class BaseRegionType extends AppAwareType
                     'constraints' => array(
                     ),
                 ),
-                'active_locale' => array(
-                    'required' => false,
-                    'label' => 'region.active_locale',
-                    'type' => 'checkbox',
-                    'constraints' => array(
-                    ),
-                ),
                 'seo_title' => array(
                     'required' => false,
                     'label' => 'region.seo_title',
@@ -203,6 +196,13 @@ class BaseRegionType extends AppAwareType
                     'required' => false,
                     'label' => 'region.seo_keywords',
                     'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'active_locale' => array(
+                    'required' => false,
+                    'label' => 'region.active_locale',
+                    'type' => 'checkbox',
                     'constraints' => array(
                     ),
                 ),

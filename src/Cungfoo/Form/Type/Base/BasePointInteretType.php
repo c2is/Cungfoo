@@ -171,13 +171,6 @@ class BasePointInteretType extends AppAwareType
                     'constraints' => array(
                     ),
                 ),
-                'active_locale' => array(
-                    'required' => false,
-                    'label' => 'point_interet.active_locale',
-                    'type' => 'checkbox',
-                    'constraints' => array(
-                    ),
-                ),
                 'seo_title' => array(
                     'required' => false,
                     'label' => 'point_interet.seo_title',
@@ -203,6 +196,13 @@ class BasePointInteretType extends AppAwareType
                     'required' => false,
                     'label' => 'point_interet.seo_keywords',
                     'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'active_locale' => array(
+                    'required' => false,
+                    'label' => 'point_interet.active_locale',
+                    'type' => 'checkbox',
                     'constraints' => array(
                     ),
                 ),

@@ -69,9 +69,6 @@ abstract class BaseBonPlanI18nPeer
     /** the column name for the indice_prix field */
     const INDICE_PRIX = 'bon_plan_i18n.indice_prix';
 
-    /** the column name for the active_locale field */
-    const ACTIVE_LOCALE = 'bon_plan_i18n.active_locale';
-
     /** the column name for the seo_title field */
     const SEO_TITLE = 'bon_plan_i18n.seo_title';
 
@@ -83,6 +80,9 @@ abstract class BaseBonPlanI18nPeer
 
     /** the column name for the seo_keywords field */
     const SEO_KEYWORDS = 'bon_plan_i18n.seo_keywords';
+
+    /** the column name for the active_locale field */
+    const ACTIVE_LOCALE = 'bon_plan_i18n.active_locale';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -103,11 +103,11 @@ abstract class BaseBonPlanI18nPeer
      * e.g. BonPlanI18nPeer::$fieldNames[BonPlanI18nPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Name', 'Slug', 'Introduction', 'Description', 'Indice', 'IndicePrix', 'ActiveLocale', 'SeoTitle', 'SeoDescription', 'SeoH1', 'SeoKeywords', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'name', 'slug', 'introduction', 'description', 'indice', 'indicePrix', 'activeLocale', 'seoTitle', 'seoDescription', 'seoH1', 'seoKeywords', ),
-        BasePeer::TYPE_COLNAME => array (BonPlanI18nPeer::ID, BonPlanI18nPeer::LOCALE, BonPlanI18nPeer::NAME, BonPlanI18nPeer::SLUG, BonPlanI18nPeer::INTRODUCTION, BonPlanI18nPeer::DESCRIPTION, BonPlanI18nPeer::INDICE, BonPlanI18nPeer::INDICE_PRIX, BonPlanI18nPeer::ACTIVE_LOCALE, BonPlanI18nPeer::SEO_TITLE, BonPlanI18nPeer::SEO_DESCRIPTION, BonPlanI18nPeer::SEO_H1, BonPlanI18nPeer::SEO_KEYWORDS, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'NAME', 'SLUG', 'INTRODUCTION', 'DESCRIPTION', 'INDICE', 'INDICE_PRIX', 'ACTIVE_LOCALE', 'SEO_TITLE', 'SEO_DESCRIPTION', 'SEO_H1', 'SEO_KEYWORDS', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'name', 'slug', 'introduction', 'description', 'indice', 'indice_prix', 'active_locale', 'seo_title', 'seo_description', 'seo_h1', 'seo_keywords', ),
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Name', 'Slug', 'Introduction', 'Description', 'Indice', 'IndicePrix', 'SeoTitle', 'SeoDescription', 'SeoH1', 'SeoKeywords', 'ActiveLocale', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'name', 'slug', 'introduction', 'description', 'indice', 'indicePrix', 'seoTitle', 'seoDescription', 'seoH1', 'seoKeywords', 'activeLocale', ),
+        BasePeer::TYPE_COLNAME => array (BonPlanI18nPeer::ID, BonPlanI18nPeer::LOCALE, BonPlanI18nPeer::NAME, BonPlanI18nPeer::SLUG, BonPlanI18nPeer::INTRODUCTION, BonPlanI18nPeer::DESCRIPTION, BonPlanI18nPeer::INDICE, BonPlanI18nPeer::INDICE_PRIX, BonPlanI18nPeer::SEO_TITLE, BonPlanI18nPeer::SEO_DESCRIPTION, BonPlanI18nPeer::SEO_H1, BonPlanI18nPeer::SEO_KEYWORDS, BonPlanI18nPeer::ACTIVE_LOCALE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'NAME', 'SLUG', 'INTRODUCTION', 'DESCRIPTION', 'INDICE', 'INDICE_PRIX', 'SEO_TITLE', 'SEO_DESCRIPTION', 'SEO_H1', 'SEO_KEYWORDS', 'ACTIVE_LOCALE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'name', 'slug', 'introduction', 'description', 'indice', 'indice_prix', 'seo_title', 'seo_description', 'seo_h1', 'seo_keywords', 'active_locale', ),
         BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, )
     );
 
@@ -118,11 +118,11 @@ abstract class BaseBonPlanI18nPeer
      * e.g. BonPlanI18nPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Name' => 2, 'Slug' => 3, 'Introduction' => 4, 'Description' => 5, 'Indice' => 6, 'IndicePrix' => 7, 'ActiveLocale' => 8, 'SeoTitle' => 9, 'SeoDescription' => 10, 'SeoH1' => 11, 'SeoKeywords' => 12, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'slug' => 3, 'introduction' => 4, 'description' => 5, 'indice' => 6, 'indicePrix' => 7, 'activeLocale' => 8, 'seoTitle' => 9, 'seoDescription' => 10, 'seoH1' => 11, 'seoKeywords' => 12, ),
-        BasePeer::TYPE_COLNAME => array (BonPlanI18nPeer::ID => 0, BonPlanI18nPeer::LOCALE => 1, BonPlanI18nPeer::NAME => 2, BonPlanI18nPeer::SLUG => 3, BonPlanI18nPeer::INTRODUCTION => 4, BonPlanI18nPeer::DESCRIPTION => 5, BonPlanI18nPeer::INDICE => 6, BonPlanI18nPeer::INDICE_PRIX => 7, BonPlanI18nPeer::ACTIVE_LOCALE => 8, BonPlanI18nPeer::SEO_TITLE => 9, BonPlanI18nPeer::SEO_DESCRIPTION => 10, BonPlanI18nPeer::SEO_H1 => 11, BonPlanI18nPeer::SEO_KEYWORDS => 12, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'NAME' => 2, 'SLUG' => 3, 'INTRODUCTION' => 4, 'DESCRIPTION' => 5, 'INDICE' => 6, 'INDICE_PRIX' => 7, 'ACTIVE_LOCALE' => 8, 'SEO_TITLE' => 9, 'SEO_DESCRIPTION' => 10, 'SEO_H1' => 11, 'SEO_KEYWORDS' => 12, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'slug' => 3, 'introduction' => 4, 'description' => 5, 'indice' => 6, 'indice_prix' => 7, 'active_locale' => 8, 'seo_title' => 9, 'seo_description' => 10, 'seo_h1' => 11, 'seo_keywords' => 12, ),
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Name' => 2, 'Slug' => 3, 'Introduction' => 4, 'Description' => 5, 'Indice' => 6, 'IndicePrix' => 7, 'SeoTitle' => 8, 'SeoDescription' => 9, 'SeoH1' => 10, 'SeoKeywords' => 11, 'ActiveLocale' => 12, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'slug' => 3, 'introduction' => 4, 'description' => 5, 'indice' => 6, 'indicePrix' => 7, 'seoTitle' => 8, 'seoDescription' => 9, 'seoH1' => 10, 'seoKeywords' => 11, 'activeLocale' => 12, ),
+        BasePeer::TYPE_COLNAME => array (BonPlanI18nPeer::ID => 0, BonPlanI18nPeer::LOCALE => 1, BonPlanI18nPeer::NAME => 2, BonPlanI18nPeer::SLUG => 3, BonPlanI18nPeer::INTRODUCTION => 4, BonPlanI18nPeer::DESCRIPTION => 5, BonPlanI18nPeer::INDICE => 6, BonPlanI18nPeer::INDICE_PRIX => 7, BonPlanI18nPeer::SEO_TITLE => 8, BonPlanI18nPeer::SEO_DESCRIPTION => 9, BonPlanI18nPeer::SEO_H1 => 10, BonPlanI18nPeer::SEO_KEYWORDS => 11, BonPlanI18nPeer::ACTIVE_LOCALE => 12, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'NAME' => 2, 'SLUG' => 3, 'INTRODUCTION' => 4, 'DESCRIPTION' => 5, 'INDICE' => 6, 'INDICE_PRIX' => 7, 'SEO_TITLE' => 8, 'SEO_DESCRIPTION' => 9, 'SEO_H1' => 10, 'SEO_KEYWORDS' => 11, 'ACTIVE_LOCALE' => 12, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'slug' => 3, 'introduction' => 4, 'description' => 5, 'indice' => 6, 'indice_prix' => 7, 'seo_title' => 8, 'seo_description' => 9, 'seo_h1' => 10, 'seo_keywords' => 11, 'active_locale' => 12, ),
         BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, )
     );
 
@@ -205,11 +205,11 @@ abstract class BaseBonPlanI18nPeer
             $criteria->addSelectColumn(BonPlanI18nPeer::DESCRIPTION);
             $criteria->addSelectColumn(BonPlanI18nPeer::INDICE);
             $criteria->addSelectColumn(BonPlanI18nPeer::INDICE_PRIX);
-            $criteria->addSelectColumn(BonPlanI18nPeer::ACTIVE_LOCALE);
             $criteria->addSelectColumn(BonPlanI18nPeer::SEO_TITLE);
             $criteria->addSelectColumn(BonPlanI18nPeer::SEO_DESCRIPTION);
             $criteria->addSelectColumn(BonPlanI18nPeer::SEO_H1);
             $criteria->addSelectColumn(BonPlanI18nPeer::SEO_KEYWORDS);
+            $criteria->addSelectColumn(BonPlanI18nPeer::ACTIVE_LOCALE);
         } else {
             $criteria->addSelectColumn($alias . '.id');
             $criteria->addSelectColumn($alias . '.locale');
@@ -219,11 +219,11 @@ abstract class BaseBonPlanI18nPeer
             $criteria->addSelectColumn($alias . '.description');
             $criteria->addSelectColumn($alias . '.indice');
             $criteria->addSelectColumn($alias . '.indice_prix');
-            $criteria->addSelectColumn($alias . '.active_locale');
             $criteria->addSelectColumn($alias . '.seo_title');
             $criteria->addSelectColumn($alias . '.seo_description');
             $criteria->addSelectColumn($alias . '.seo_h1');
             $criteria->addSelectColumn($alias . '.seo_keywords');
+            $criteria->addSelectColumn($alias . '.active_locale');
         }
     }
 

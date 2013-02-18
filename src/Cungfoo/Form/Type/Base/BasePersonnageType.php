@@ -84,13 +84,6 @@ class BasePersonnageType extends AppAwareType
                         new Assert\NotBlank(),
                     ),
                 ),
-                'active_locale' => array(
-                    'required' => false,
-                    'label' => 'personnage.active_locale',
-                    'type' => 'checkbox',
-                    'constraints' => array(
-                    ),
-                ),
                 'seo_title' => array(
                     'required' => false,
                     'label' => 'personnage.seo_title',
@@ -116,6 +109,13 @@ class BasePersonnageType extends AppAwareType
                     'required' => false,
                     'label' => 'personnage.seo_keywords',
                     'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'active_locale' => array(
+                    'required' => false,
+                    'label' => 'personnage.active_locale',
+                    'type' => 'checkbox',
                     'constraints' => array(
                     ),
                 ),

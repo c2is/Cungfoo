@@ -65,13 +65,6 @@ abstract class BasePersonnageI18n extends BaseObject implements Persistent
     protected $prenom;
 
     /**
-     * The value for the active_locale field.
-     * Note: this column has a database default value of: false
-     * @var        boolean
-     */
-    protected $active_locale;
-
-    /**
      * The value for the seo_title field.
      * @var        string
      */
@@ -94,6 +87,13 @@ abstract class BasePersonnageI18n extends BaseObject implements Persistent
      * @var        string
      */
     protected $seo_keywords;
+
+    /**
+     * The value for the active_locale field.
+     * Note: this column has a database default value of: false
+     * @var        boolean
+     */
+    protected $active_locale;
 
     /**
      * @var        Personnage
@@ -167,16 +167,6 @@ abstract class BasePersonnageI18n extends BaseObject implements Persistent
     }
 
     /**
-     * Get the [active_locale] column value.
-     *
-     * @return boolean
-     */
-    public function getActiveLocale()
-    {
-        return $this->active_locale;
-    }
-
-    /**
      * Get the [seo_title] column value.
      *
      * @return string
@@ -214,6 +204,16 @@ abstract class BasePersonnageI18n extends BaseObject implements Persistent
     public function getSeoKeywords()
     {
         return $this->seo_keywords;
+    }
+
+    /**
+     * Get the [active_locale] column value.
+     *
+     * @return boolean
+     */
+    public function getActiveLocale()
+    {
+        return $this->active_locale;
     }
 
     /**
@@ -282,35 +282,6 @@ abstract class BasePersonnageI18n extends BaseObject implements Persistent
 
         return $this;
     } // setPrenom()
-
-    /**
-     * Sets the value of the [active_locale] column.
-     * Non-boolean arguments are converted using the following rules:
-     *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
-     *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
-     * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
-     *
-     * @param boolean|integer|string $v The new value
-     * @return PersonnageI18n The current object (for fluent API support)
-     */
-    public function setActiveLocale($v)
-    {
-        if ($v !== null) {
-            if (is_string($v)) {
-                $v = in_array(strtolower($v), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
-            } else {
-                $v = (boolean) $v;
-            }
-        }
-
-        if ($this->active_locale !== $v) {
-            $this->active_locale = $v;
-            $this->modifiedColumns[] = PersonnageI18nPeer::ACTIVE_LOCALE;
-        }
-
-
-        return $this;
-    } // setActiveLocale()
 
     /**
      * Set the value of [seo_title] column.
@@ -397,6 +368,35 @@ abstract class BasePersonnageI18n extends BaseObject implements Persistent
     } // setSeoKeywords()
 
     /**
+     * Sets the value of the [active_locale] column.
+     * Non-boolean arguments are converted using the following rules:
+     *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     *
+     * @param boolean|integer|string $v The new value
+     * @return PersonnageI18n The current object (for fluent API support)
+     */
+    public function setActiveLocale($v)
+    {
+        if ($v !== null) {
+            if (is_string($v)) {
+                $v = in_array(strtolower($v), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+            } else {
+                $v = (boolean) $v;
+            }
+        }
+
+        if ($this->active_locale !== $v) {
+            $this->active_locale = $v;
+            $this->modifiedColumns[] = PersonnageI18nPeer::ACTIVE_LOCALE;
+        }
+
+
+        return $this;
+    } // setActiveLocale()
+
+    /**
      * Indicates whether the columns in this object are only set to default values.
      *
      * This method can be used in conjunction with isModified() to indicate whether an object is both
@@ -439,11 +439,11 @@ abstract class BasePersonnageI18n extends BaseObject implements Persistent
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
             $this->locale = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
             $this->prenom = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
-            $this->active_locale = ($row[$startcol + 3] !== null) ? (boolean) $row[$startcol + 3] : null;
-            $this->seo_title = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
-            $this->seo_description = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
-            $this->seo_h1 = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
-            $this->seo_keywords = ($row[$startcol + 7] !== null) ? (string) $row[$startcol + 7] : null;
+            $this->seo_title = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
+            $this->seo_description = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
+            $this->seo_h1 = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
+            $this->seo_keywords = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
+            $this->active_locale = ($row[$startcol + 7] !== null) ? (boolean) $row[$startcol + 7] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -685,9 +685,6 @@ abstract class BasePersonnageI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(PersonnageI18nPeer::PRENOM)) {
             $modifiedColumns[':p' . $index++]  = '`prenom`';
         }
-        if ($this->isColumnModified(PersonnageI18nPeer::ACTIVE_LOCALE)) {
-            $modifiedColumns[':p' . $index++]  = '`active_locale`';
-        }
         if ($this->isColumnModified(PersonnageI18nPeer::SEO_TITLE)) {
             $modifiedColumns[':p' . $index++]  = '`seo_title`';
         }
@@ -699,6 +696,9 @@ abstract class BasePersonnageI18n extends BaseObject implements Persistent
         }
         if ($this->isColumnModified(PersonnageI18nPeer::SEO_KEYWORDS)) {
             $modifiedColumns[':p' . $index++]  = '`seo_keywords`';
+        }
+        if ($this->isColumnModified(PersonnageI18nPeer::ACTIVE_LOCALE)) {
+            $modifiedColumns[':p' . $index++]  = '`active_locale`';
         }
 
         $sql = sprintf(
@@ -720,9 +720,6 @@ abstract class BasePersonnageI18n extends BaseObject implements Persistent
                     case '`prenom`':
                         $stmt->bindValue($identifier, $this->prenom, PDO::PARAM_STR);
                         break;
-                    case '`active_locale`':
-                        $stmt->bindValue($identifier, (int) $this->active_locale, PDO::PARAM_INT);
-                        break;
                     case '`seo_title`':
                         $stmt->bindValue($identifier, $this->seo_title, PDO::PARAM_STR);
                         break;
@@ -734,6 +731,9 @@ abstract class BasePersonnageI18n extends BaseObject implements Persistent
                         break;
                     case '`seo_keywords`':
                         $stmt->bindValue($identifier, $this->seo_keywords, PDO::PARAM_STR);
+                        break;
+                    case '`active_locale`':
+                        $stmt->bindValue($identifier, (int) $this->active_locale, PDO::PARAM_INT);
                         break;
                 }
             }
@@ -884,19 +884,19 @@ abstract class BasePersonnageI18n extends BaseObject implements Persistent
                 return $this->getPrenom();
                 break;
             case 3:
-                return $this->getActiveLocale();
-                break;
-            case 4:
                 return $this->getSeoTitle();
                 break;
-            case 5:
+            case 4:
                 return $this->getSeoDescription();
                 break;
-            case 6:
+            case 5:
                 return $this->getSeoH1();
                 break;
-            case 7:
+            case 6:
                 return $this->getSeoKeywords();
+                break;
+            case 7:
+                return $this->getActiveLocale();
                 break;
             default:
                 return null;
@@ -930,11 +930,11 @@ abstract class BasePersonnageI18n extends BaseObject implements Persistent
             $keys[0] => $this->getId(),
             $keys[1] => $this->getLocale(),
             $keys[2] => $this->getPrenom(),
-            $keys[3] => $this->getActiveLocale(),
-            $keys[4] => $this->getSeoTitle(),
-            $keys[5] => $this->getSeoDescription(),
-            $keys[6] => $this->getSeoH1(),
-            $keys[7] => $this->getSeoKeywords(),
+            $keys[3] => $this->getSeoTitle(),
+            $keys[4] => $this->getSeoDescription(),
+            $keys[5] => $this->getSeoH1(),
+            $keys[6] => $this->getSeoKeywords(),
+            $keys[7] => $this->getActiveLocale(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aPersonnage) {
@@ -984,19 +984,19 @@ abstract class BasePersonnageI18n extends BaseObject implements Persistent
                 $this->setPrenom($value);
                 break;
             case 3:
-                $this->setActiveLocale($value);
-                break;
-            case 4:
                 $this->setSeoTitle($value);
                 break;
-            case 5:
+            case 4:
                 $this->setSeoDescription($value);
                 break;
-            case 6:
+            case 5:
                 $this->setSeoH1($value);
                 break;
-            case 7:
+            case 6:
                 $this->setSeoKeywords($value);
+                break;
+            case 7:
+                $this->setActiveLocale($value);
                 break;
         } // switch()
     }
@@ -1025,11 +1025,11 @@ abstract class BasePersonnageI18n extends BaseObject implements Persistent
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
         if (array_key_exists($keys[1], $arr)) $this->setLocale($arr[$keys[1]]);
         if (array_key_exists($keys[2], $arr)) $this->setPrenom($arr[$keys[2]]);
-        if (array_key_exists($keys[3], $arr)) $this->setActiveLocale($arr[$keys[3]]);
-        if (array_key_exists($keys[4], $arr)) $this->setSeoTitle($arr[$keys[4]]);
-        if (array_key_exists($keys[5], $arr)) $this->setSeoDescription($arr[$keys[5]]);
-        if (array_key_exists($keys[6], $arr)) $this->setSeoH1($arr[$keys[6]]);
-        if (array_key_exists($keys[7], $arr)) $this->setSeoKeywords($arr[$keys[7]]);
+        if (array_key_exists($keys[3], $arr)) $this->setSeoTitle($arr[$keys[3]]);
+        if (array_key_exists($keys[4], $arr)) $this->setSeoDescription($arr[$keys[4]]);
+        if (array_key_exists($keys[5], $arr)) $this->setSeoH1($arr[$keys[5]]);
+        if (array_key_exists($keys[6], $arr)) $this->setSeoKeywords($arr[$keys[6]]);
+        if (array_key_exists($keys[7], $arr)) $this->setActiveLocale($arr[$keys[7]]);
     }
 
     /**
@@ -1044,11 +1044,11 @@ abstract class BasePersonnageI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(PersonnageI18nPeer::ID)) $criteria->add(PersonnageI18nPeer::ID, $this->id);
         if ($this->isColumnModified(PersonnageI18nPeer::LOCALE)) $criteria->add(PersonnageI18nPeer::LOCALE, $this->locale);
         if ($this->isColumnModified(PersonnageI18nPeer::PRENOM)) $criteria->add(PersonnageI18nPeer::PRENOM, $this->prenom);
-        if ($this->isColumnModified(PersonnageI18nPeer::ACTIVE_LOCALE)) $criteria->add(PersonnageI18nPeer::ACTIVE_LOCALE, $this->active_locale);
         if ($this->isColumnModified(PersonnageI18nPeer::SEO_TITLE)) $criteria->add(PersonnageI18nPeer::SEO_TITLE, $this->seo_title);
         if ($this->isColumnModified(PersonnageI18nPeer::SEO_DESCRIPTION)) $criteria->add(PersonnageI18nPeer::SEO_DESCRIPTION, $this->seo_description);
         if ($this->isColumnModified(PersonnageI18nPeer::SEO_H1)) $criteria->add(PersonnageI18nPeer::SEO_H1, $this->seo_h1);
         if ($this->isColumnModified(PersonnageI18nPeer::SEO_KEYWORDS)) $criteria->add(PersonnageI18nPeer::SEO_KEYWORDS, $this->seo_keywords);
+        if ($this->isColumnModified(PersonnageI18nPeer::ACTIVE_LOCALE)) $criteria->add(PersonnageI18nPeer::ACTIVE_LOCALE, $this->active_locale);
 
         return $criteria;
     }
@@ -1122,11 +1122,11 @@ abstract class BasePersonnageI18n extends BaseObject implements Persistent
         $copyObj->setId($this->getId());
         $copyObj->setLocale($this->getLocale());
         $copyObj->setPrenom($this->getPrenom());
-        $copyObj->setActiveLocale($this->getActiveLocale());
         $copyObj->setSeoTitle($this->getSeoTitle());
         $copyObj->setSeoDescription($this->getSeoDescription());
         $copyObj->setSeoH1($this->getSeoH1());
         $copyObj->setSeoKeywords($this->getSeoKeywords());
+        $copyObj->setActiveLocale($this->getActiveLocale());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -1244,11 +1244,11 @@ abstract class BasePersonnageI18n extends BaseObject implements Persistent
         $this->id = null;
         $this->locale = null;
         $this->prenom = null;
-        $this->active_locale = null;
         $this->seo_title = null;
         $this->seo_description = null;
         $this->seo_h1 = null;
         $this->seo_keywords = null;
+        $this->active_locale = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();

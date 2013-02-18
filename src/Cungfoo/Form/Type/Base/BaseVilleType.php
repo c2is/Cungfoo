@@ -111,13 +111,6 @@ class BaseVilleType extends AppAwareType
                     'constraints' => array(
                     ),
                 ),
-                'active_locale' => array(
-                    'required' => false,
-                    'label' => 'ville.active_locale',
-                    'type' => 'checkbox',
-                    'constraints' => array(
-                    ),
-                ),
                 'seo_title' => array(
                     'required' => false,
                     'label' => 'ville.seo_title',
@@ -143,6 +136,13 @@ class BaseVilleType extends AppAwareType
                     'required' => false,
                     'label' => 'ville.seo_keywords',
                     'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'active_locale' => array(
+                    'required' => false,
+                    'label' => 'ville.active_locale',
+                    'type' => 'checkbox',
                     'constraints' => array(
                     ),
                 ),

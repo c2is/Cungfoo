@@ -26,21 +26,21 @@ use Cungfoo\Model\IdeeWeekendI18nQuery;
  * @method IdeeWeekendI18nQuery orderByLocale($order = Criteria::ASC) Order by the locale column
  * @method IdeeWeekendI18nQuery orderByTitre($order = Criteria::ASC) Order by the titre column
  * @method IdeeWeekendI18nQuery orderByLien($order = Criteria::ASC) Order by the lien column
- * @method IdeeWeekendI18nQuery orderByActiveLocale($order = Criteria::ASC) Order by the active_locale column
  * @method IdeeWeekendI18nQuery orderBySeoTitle($order = Criteria::ASC) Order by the seo_title column
  * @method IdeeWeekendI18nQuery orderBySeoDescription($order = Criteria::ASC) Order by the seo_description column
  * @method IdeeWeekendI18nQuery orderBySeoH1($order = Criteria::ASC) Order by the seo_h1 column
  * @method IdeeWeekendI18nQuery orderBySeoKeywords($order = Criteria::ASC) Order by the seo_keywords column
+ * @method IdeeWeekendI18nQuery orderByActiveLocale($order = Criteria::ASC) Order by the active_locale column
  *
  * @method IdeeWeekendI18nQuery groupById() Group by the id column
  * @method IdeeWeekendI18nQuery groupByLocale() Group by the locale column
  * @method IdeeWeekendI18nQuery groupByTitre() Group by the titre column
  * @method IdeeWeekendI18nQuery groupByLien() Group by the lien column
- * @method IdeeWeekendI18nQuery groupByActiveLocale() Group by the active_locale column
  * @method IdeeWeekendI18nQuery groupBySeoTitle() Group by the seo_title column
  * @method IdeeWeekendI18nQuery groupBySeoDescription() Group by the seo_description column
  * @method IdeeWeekendI18nQuery groupBySeoH1() Group by the seo_h1 column
  * @method IdeeWeekendI18nQuery groupBySeoKeywords() Group by the seo_keywords column
+ * @method IdeeWeekendI18nQuery groupByActiveLocale() Group by the active_locale column
  *
  * @method IdeeWeekendI18nQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method IdeeWeekendI18nQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -57,21 +57,21 @@ use Cungfoo\Model\IdeeWeekendI18nQuery;
  * @method IdeeWeekendI18n findOneByLocale(string $locale) Return the first IdeeWeekendI18n filtered by the locale column
  * @method IdeeWeekendI18n findOneByTitre(string $titre) Return the first IdeeWeekendI18n filtered by the titre column
  * @method IdeeWeekendI18n findOneByLien(string $lien) Return the first IdeeWeekendI18n filtered by the lien column
- * @method IdeeWeekendI18n findOneByActiveLocale(boolean $active_locale) Return the first IdeeWeekendI18n filtered by the active_locale column
  * @method IdeeWeekendI18n findOneBySeoTitle(string $seo_title) Return the first IdeeWeekendI18n filtered by the seo_title column
  * @method IdeeWeekendI18n findOneBySeoDescription(string $seo_description) Return the first IdeeWeekendI18n filtered by the seo_description column
  * @method IdeeWeekendI18n findOneBySeoH1(string $seo_h1) Return the first IdeeWeekendI18n filtered by the seo_h1 column
  * @method IdeeWeekendI18n findOneBySeoKeywords(string $seo_keywords) Return the first IdeeWeekendI18n filtered by the seo_keywords column
+ * @method IdeeWeekendI18n findOneByActiveLocale(boolean $active_locale) Return the first IdeeWeekendI18n filtered by the active_locale column
  *
  * @method array findById(int $id) Return IdeeWeekendI18n objects filtered by the id column
  * @method array findByLocale(string $locale) Return IdeeWeekendI18n objects filtered by the locale column
  * @method array findByTitre(string $titre) Return IdeeWeekendI18n objects filtered by the titre column
  * @method array findByLien(string $lien) Return IdeeWeekendI18n objects filtered by the lien column
- * @method array findByActiveLocale(boolean $active_locale) Return IdeeWeekendI18n objects filtered by the active_locale column
  * @method array findBySeoTitle(string $seo_title) Return IdeeWeekendI18n objects filtered by the seo_title column
  * @method array findBySeoDescription(string $seo_description) Return IdeeWeekendI18n objects filtered by the seo_description column
  * @method array findBySeoH1(string $seo_h1) Return IdeeWeekendI18n objects filtered by the seo_h1 column
  * @method array findBySeoKeywords(string $seo_keywords) Return IdeeWeekendI18n objects filtered by the seo_keywords column
+ * @method array findByActiveLocale(boolean $active_locale) Return IdeeWeekendI18n objects filtered by the active_locale column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -162,7 +162,7 @@ abstract class BaseIdeeWeekendI18nQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `locale`, `titre`, `lien`, `active_locale`, `seo_title`, `seo_description`, `seo_h1`, `seo_keywords` FROM `idee_weekend_i18n` WHERE `id` = :p0 AND `locale` = :p1';
+        $sql = 'SELECT `id`, `locale`, `titre`, `lien`, `seo_title`, `seo_description`, `seo_h1`, `seo_keywords`, `active_locale` FROM `idee_weekend_i18n` WHERE `id` = :p0 AND `locale` = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
@@ -380,33 +380,6 @@ abstract class BaseIdeeWeekendI18nQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query on the active_locale column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByActiveLocale(true); // WHERE active_locale = true
-     * $query->filterByActiveLocale('yes'); // WHERE active_locale = true
-     * </code>
-     *
-     * @param     boolean|string $activeLocale The value to use as filter.
-     *              Non-boolean arguments are converted using the following rules:
-     *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
-     *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
-     *              Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return IdeeWeekendI18nQuery The current query, for fluid interface
-     */
-    public function filterByActiveLocale($activeLocale = null, $comparison = null)
-    {
-        if (is_string($activeLocale)) {
-            $active_locale = in_array(strtolower($activeLocale), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
-        }
-
-        return $this->addUsingAlias(IdeeWeekendI18nPeer::ACTIVE_LOCALE, $activeLocale, $comparison);
-    }
-
-    /**
      * Filter the query on the seo_title column
      *
      * Example usage:
@@ -520,6 +493,33 @@ abstract class BaseIdeeWeekendI18nQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(IdeeWeekendI18nPeer::SEO_KEYWORDS, $seoKeywords, $comparison);
+    }
+
+    /**
+     * Filter the query on the active_locale column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByActiveLocale(true); // WHERE active_locale = true
+     * $query->filterByActiveLocale('yes'); // WHERE active_locale = true
+     * </code>
+     *
+     * @param     boolean|string $activeLocale The value to use as filter.
+     *              Non-boolean arguments are converted using the following rules:
+     *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     *              Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return IdeeWeekendI18nQuery The current query, for fluid interface
+     */
+    public function filterByActiveLocale($activeLocale = null, $comparison = null)
+    {
+        if (is_string($activeLocale)) {
+            $active_locale = in_array(strtolower($activeLocale), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+        }
+
+        return $this->addUsingAlias(IdeeWeekendI18nPeer::ACTIVE_LOCALE, $activeLocale, $comparison);
     }
 
     /**

@@ -66,16 +66,16 @@ class BaseCategoryTypeHebergementType extends AppAwareType
             'label' => 'category_type_hebergement.image_page_deleted',
             'required' => false,
         ));
-        $builder->add('active', 'checkbox', array(
-            'constraints' => array(
-            ),
-            'label' => 'category_type_hebergement.active',
-            'required' => false,
-        ));
         $builder->add('sortable_rank', 'integer', array(
             'constraints' => array(
             ),
             'label' => 'category_type_hebergement.sortable_rank',
+            'required' => false,
+        ));
+        $builder->add('active', 'checkbox', array(
+            'constraints' => array(
+            ),
+            'label' => 'category_type_hebergement.active',
             'required' => false,
         ));
         $builder->add('category_type_hebergementI18ns', 'translation_collection', array(
@@ -115,13 +115,6 @@ class BaseCategoryTypeHebergementType extends AppAwareType
                     'constraints' => array(
                     ),
                 ),
-                'active_locale' => array(
-                    'required' => false,
-                    'label' => 'category_type_hebergement.active_locale',
-                    'type' => 'checkbox',
-                    'constraints' => array(
-                    ),
-                ),
                 'seo_title' => array(
                     'required' => false,
                     'label' => 'category_type_hebergement.seo_title',
@@ -147,6 +140,13 @@ class BaseCategoryTypeHebergementType extends AppAwareType
                     'required' => false,
                     'label' => 'category_type_hebergement.seo_keywords',
                     'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'active_locale' => array(
+                    'required' => false,
+                    'label' => 'category_type_hebergement.active_locale',
+                    'type' => 'checkbox',
                     'constraints' => array(
                     ),
                 ),

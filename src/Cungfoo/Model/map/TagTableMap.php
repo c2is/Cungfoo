@@ -82,7 +82,7 @@ class TagTableMap extends TableMap
             'i18n' =>  array (
   'i18n_table' => '%TABLE%_i18n',
   'i18n_phpname' => '%PHPNAME%I18n',
-  'i18n_columns' => 'name,active_locale,seo_title,seo_description,seo_h1,seo_keywords',
+  'i18n_columns' => 'name,seo_title,seo_description,seo_h1,seo_keywords,active_locale',
   'i18n_pk_name' => NULL,
   'locale_column' => 'locale',
   'default_locale' => 'fr',

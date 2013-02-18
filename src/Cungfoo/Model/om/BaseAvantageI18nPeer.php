@@ -57,9 +57,6 @@ abstract class BaseAvantageI18nPeer
     /** the column name for the description field */
     const DESCRIPTION = 'avantage_i18n.description';
 
-    /** the column name for the active_locale field */
-    const ACTIVE_LOCALE = 'avantage_i18n.active_locale';
-
     /** the column name for the seo_title field */
     const SEO_TITLE = 'avantage_i18n.seo_title';
 
@@ -71,6 +68,9 @@ abstract class BaseAvantageI18nPeer
 
     /** the column name for the seo_keywords field */
     const SEO_KEYWORDS = 'avantage_i18n.seo_keywords';
+
+    /** the column name for the active_locale field */
+    const ACTIVE_LOCALE = 'avantage_i18n.active_locale';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -91,11 +91,11 @@ abstract class BaseAvantageI18nPeer
      * e.g. AvantageI18nPeer::$fieldNames[AvantageI18nPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Name', 'Description', 'ActiveLocale', 'SeoTitle', 'SeoDescription', 'SeoH1', 'SeoKeywords', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'name', 'description', 'activeLocale', 'seoTitle', 'seoDescription', 'seoH1', 'seoKeywords', ),
-        BasePeer::TYPE_COLNAME => array (AvantageI18nPeer::ID, AvantageI18nPeer::LOCALE, AvantageI18nPeer::NAME, AvantageI18nPeer::DESCRIPTION, AvantageI18nPeer::ACTIVE_LOCALE, AvantageI18nPeer::SEO_TITLE, AvantageI18nPeer::SEO_DESCRIPTION, AvantageI18nPeer::SEO_H1, AvantageI18nPeer::SEO_KEYWORDS, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'NAME', 'DESCRIPTION', 'ACTIVE_LOCALE', 'SEO_TITLE', 'SEO_DESCRIPTION', 'SEO_H1', 'SEO_KEYWORDS', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'name', 'description', 'active_locale', 'seo_title', 'seo_description', 'seo_h1', 'seo_keywords', ),
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Name', 'Description', 'SeoTitle', 'SeoDescription', 'SeoH1', 'SeoKeywords', 'ActiveLocale', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'name', 'description', 'seoTitle', 'seoDescription', 'seoH1', 'seoKeywords', 'activeLocale', ),
+        BasePeer::TYPE_COLNAME => array (AvantageI18nPeer::ID, AvantageI18nPeer::LOCALE, AvantageI18nPeer::NAME, AvantageI18nPeer::DESCRIPTION, AvantageI18nPeer::SEO_TITLE, AvantageI18nPeer::SEO_DESCRIPTION, AvantageI18nPeer::SEO_H1, AvantageI18nPeer::SEO_KEYWORDS, AvantageI18nPeer::ACTIVE_LOCALE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'NAME', 'DESCRIPTION', 'SEO_TITLE', 'SEO_DESCRIPTION', 'SEO_H1', 'SEO_KEYWORDS', 'ACTIVE_LOCALE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'name', 'description', 'seo_title', 'seo_description', 'seo_h1', 'seo_keywords', 'active_locale', ),
         BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, )
     );
 
@@ -106,11 +106,11 @@ abstract class BaseAvantageI18nPeer
      * e.g. AvantageI18nPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Name' => 2, 'Description' => 3, 'ActiveLocale' => 4, 'SeoTitle' => 5, 'SeoDescription' => 6, 'SeoH1' => 7, 'SeoKeywords' => 8, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'description' => 3, 'activeLocale' => 4, 'seoTitle' => 5, 'seoDescription' => 6, 'seoH1' => 7, 'seoKeywords' => 8, ),
-        BasePeer::TYPE_COLNAME => array (AvantageI18nPeer::ID => 0, AvantageI18nPeer::LOCALE => 1, AvantageI18nPeer::NAME => 2, AvantageI18nPeer::DESCRIPTION => 3, AvantageI18nPeer::ACTIVE_LOCALE => 4, AvantageI18nPeer::SEO_TITLE => 5, AvantageI18nPeer::SEO_DESCRIPTION => 6, AvantageI18nPeer::SEO_H1 => 7, AvantageI18nPeer::SEO_KEYWORDS => 8, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'NAME' => 2, 'DESCRIPTION' => 3, 'ACTIVE_LOCALE' => 4, 'SEO_TITLE' => 5, 'SEO_DESCRIPTION' => 6, 'SEO_H1' => 7, 'SEO_KEYWORDS' => 8, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'description' => 3, 'active_locale' => 4, 'seo_title' => 5, 'seo_description' => 6, 'seo_h1' => 7, 'seo_keywords' => 8, ),
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Name' => 2, 'Description' => 3, 'SeoTitle' => 4, 'SeoDescription' => 5, 'SeoH1' => 6, 'SeoKeywords' => 7, 'ActiveLocale' => 8, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'description' => 3, 'seoTitle' => 4, 'seoDescription' => 5, 'seoH1' => 6, 'seoKeywords' => 7, 'activeLocale' => 8, ),
+        BasePeer::TYPE_COLNAME => array (AvantageI18nPeer::ID => 0, AvantageI18nPeer::LOCALE => 1, AvantageI18nPeer::NAME => 2, AvantageI18nPeer::DESCRIPTION => 3, AvantageI18nPeer::SEO_TITLE => 4, AvantageI18nPeer::SEO_DESCRIPTION => 5, AvantageI18nPeer::SEO_H1 => 6, AvantageI18nPeer::SEO_KEYWORDS => 7, AvantageI18nPeer::ACTIVE_LOCALE => 8, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'NAME' => 2, 'DESCRIPTION' => 3, 'SEO_TITLE' => 4, 'SEO_DESCRIPTION' => 5, 'SEO_H1' => 6, 'SEO_KEYWORDS' => 7, 'ACTIVE_LOCALE' => 8, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'description' => 3, 'seo_title' => 4, 'seo_description' => 5, 'seo_h1' => 6, 'seo_keywords' => 7, 'active_locale' => 8, ),
         BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, )
     );
 
@@ -189,21 +189,21 @@ abstract class BaseAvantageI18nPeer
             $criteria->addSelectColumn(AvantageI18nPeer::LOCALE);
             $criteria->addSelectColumn(AvantageI18nPeer::NAME);
             $criteria->addSelectColumn(AvantageI18nPeer::DESCRIPTION);
-            $criteria->addSelectColumn(AvantageI18nPeer::ACTIVE_LOCALE);
             $criteria->addSelectColumn(AvantageI18nPeer::SEO_TITLE);
             $criteria->addSelectColumn(AvantageI18nPeer::SEO_DESCRIPTION);
             $criteria->addSelectColumn(AvantageI18nPeer::SEO_H1);
             $criteria->addSelectColumn(AvantageI18nPeer::SEO_KEYWORDS);
+            $criteria->addSelectColumn(AvantageI18nPeer::ACTIVE_LOCALE);
         } else {
             $criteria->addSelectColumn($alias . '.id');
             $criteria->addSelectColumn($alias . '.locale');
             $criteria->addSelectColumn($alias . '.name');
             $criteria->addSelectColumn($alias . '.description');
-            $criteria->addSelectColumn($alias . '.active_locale');
             $criteria->addSelectColumn($alias . '.seo_title');
             $criteria->addSelectColumn($alias . '.seo_description');
             $criteria->addSelectColumn($alias . '.seo_h1');
             $criteria->addSelectColumn($alias . '.seo_keywords');
+            $criteria->addSelectColumn($alias . '.active_locale');
         }
     }
 

@@ -56,13 +56,6 @@ class BaseCategorieType extends AppAwareType
                         new Assert\NotBlank(),
                     ),
                 ),
-                'active_locale' => array(
-                    'required' => false,
-                    'label' => 'categorie.active_locale',
-                    'type' => 'checkbox',
-                    'constraints' => array(
-                    ),
-                ),
                 'seo_title' => array(
                     'required' => false,
                     'label' => 'categorie.seo_title',
@@ -88,6 +81,13 @@ class BaseCategorieType extends AppAwareType
                     'required' => false,
                     'label' => 'categorie.seo_keywords',
                     'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'active_locale' => array(
+                    'required' => false,
+                    'label' => 'categorie.active_locale',
+                    'type' => 'checkbox',
                     'constraints' => array(
                     ),
                 ),

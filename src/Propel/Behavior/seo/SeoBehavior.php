@@ -112,12 +112,12 @@ class SeoBehavior extends Behavior
             $i18nBehavior->setName('i18n');
             $i18nBehavior->addParameter(array('name' => 'i18n_columns', 'value' => $this->getParameter('seo_columns')));
             $this->seoTable->addBehavior($i18nBehavior);
+        }
 
-            // every behavior adding a table should re-execute database behaviors
-            foreach ($database->getBehaviors() as $behavior)
-            {
-                $behavior->modifyDatabase();
-            }
+        // every behavior adding a table should re-execute database behaviors
+        foreach ($database->getBehaviors() as $behavior)
+        {
+            $behavior->modifyDatabase();
         }
     }
 

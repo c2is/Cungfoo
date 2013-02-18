@@ -86,13 +86,6 @@ class BaseIdeeWeekendType extends AppAwareType
                     'constraints' => array(
                     ),
                 ),
-                'active_locale' => array(
-                    'required' => false,
-                    'label' => 'idee_weekend.active_locale',
-                    'type' => 'checkbox',
-                    'constraints' => array(
-                    ),
-                ),
                 'seo_title' => array(
                     'required' => false,
                     'label' => 'idee_weekend.seo_title',
@@ -118,6 +111,13 @@ class BaseIdeeWeekendType extends AppAwareType
                     'required' => false,
                     'label' => 'idee_weekend.seo_keywords',
                     'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'active_locale' => array(
+                    'required' => false,
+                    'label' => 'idee_weekend.active_locale',
+                    'type' => 'checkbox',
                     'constraints' => array(
                     ),
                 ),

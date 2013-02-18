@@ -112,13 +112,6 @@ class BaseBaignadeType extends AppAwareType
                     'constraints' => array(
                     ),
                 ),
-                'active_locale' => array(
-                    'required' => false,
-                    'label' => 'baignade.active_locale',
-                    'type' => 'checkbox',
-                    'constraints' => array(
-                    ),
-                ),
                 'seo_title' => array(
                     'required' => false,
                     'label' => 'baignade.seo_title',
@@ -144,6 +137,13 @@ class BaseBaignadeType extends AppAwareType
                     'required' => false,
                     'label' => 'baignade.seo_keywords',
                     'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'active_locale' => array(
+                    'required' => false,
+                    'label' => 'baignade.active_locale',
+                    'type' => 'checkbox',
                     'constraints' => array(
                     ),
                 ),

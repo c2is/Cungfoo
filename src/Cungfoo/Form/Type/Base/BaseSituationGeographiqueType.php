@@ -78,13 +78,6 @@ class BaseSituationGeographiqueType extends AppAwareType
                     'constraints' => array(
                     ),
                 ),
-                'active_locale' => array(
-                    'required' => false,
-                    'label' => 'situation_geographique.active_locale',
-                    'type' => 'checkbox',
-                    'constraints' => array(
-                    ),
-                ),
                 'seo_title' => array(
                     'required' => false,
                     'label' => 'situation_geographique.seo_title',
@@ -110,6 +103,13 @@ class BaseSituationGeographiqueType extends AppAwareType
                     'required' => false,
                     'label' => 'situation_geographique.seo_keywords',
                     'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'active_locale' => array(
+                    'required' => false,
+                    'label' => 'situation_geographique.active_locale',
+                    'type' => 'checkbox',
                     'constraints' => array(
                     ),
                 ),

@@ -183,13 +183,6 @@ class BaseEventType extends AppAwareType
                     'constraints' => array(
                     ),
                 ),
-                'active_locale' => array(
-                    'required' => false,
-                    'label' => 'event.active_locale',
-                    'type' => 'checkbox',
-                    'constraints' => array(
-                    ),
-                ),
                 'seo_title' => array(
                     'required' => false,
                     'label' => 'event.seo_title',
@@ -215,6 +208,13 @@ class BaseEventType extends AppAwareType
                     'required' => false,
                     'label' => 'event.seo_keywords',
                     'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'active_locale' => array(
+                    'required' => false,
+                    'label' => 'event.active_locale',
+                    'type' => 'checkbox',
                     'constraints' => array(
                     ),
                 ),

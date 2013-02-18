@@ -27,22 +27,22 @@ use Cungfoo\Model\VosVacancesI18nQuery;
  * @method VosVacancesI18nQuery orderByTitre($order = Criteria::ASC) Order by the titre column
  * @method VosVacancesI18nQuery orderByDescription($order = Criteria::ASC) Order by the description column
  * @method VosVacancesI18nQuery orderByPrenom($order = Criteria::ASC) Order by the prenom column
- * @method VosVacancesI18nQuery orderByActiveLocale($order = Criteria::ASC) Order by the active_locale column
  * @method VosVacancesI18nQuery orderBySeoTitle($order = Criteria::ASC) Order by the seo_title column
  * @method VosVacancesI18nQuery orderBySeoDescription($order = Criteria::ASC) Order by the seo_description column
  * @method VosVacancesI18nQuery orderBySeoH1($order = Criteria::ASC) Order by the seo_h1 column
  * @method VosVacancesI18nQuery orderBySeoKeywords($order = Criteria::ASC) Order by the seo_keywords column
+ * @method VosVacancesI18nQuery orderByActiveLocale($order = Criteria::ASC) Order by the active_locale column
  *
  * @method VosVacancesI18nQuery groupById() Group by the id column
  * @method VosVacancesI18nQuery groupByLocale() Group by the locale column
  * @method VosVacancesI18nQuery groupByTitre() Group by the titre column
  * @method VosVacancesI18nQuery groupByDescription() Group by the description column
  * @method VosVacancesI18nQuery groupByPrenom() Group by the prenom column
- * @method VosVacancesI18nQuery groupByActiveLocale() Group by the active_locale column
  * @method VosVacancesI18nQuery groupBySeoTitle() Group by the seo_title column
  * @method VosVacancesI18nQuery groupBySeoDescription() Group by the seo_description column
  * @method VosVacancesI18nQuery groupBySeoH1() Group by the seo_h1 column
  * @method VosVacancesI18nQuery groupBySeoKeywords() Group by the seo_keywords column
+ * @method VosVacancesI18nQuery groupByActiveLocale() Group by the active_locale column
  *
  * @method VosVacancesI18nQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method VosVacancesI18nQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -60,22 +60,22 @@ use Cungfoo\Model\VosVacancesI18nQuery;
  * @method VosVacancesI18n findOneByTitre(string $titre) Return the first VosVacancesI18n filtered by the titre column
  * @method VosVacancesI18n findOneByDescription(string $description) Return the first VosVacancesI18n filtered by the description column
  * @method VosVacancesI18n findOneByPrenom(string $prenom) Return the first VosVacancesI18n filtered by the prenom column
- * @method VosVacancesI18n findOneByActiveLocale(boolean $active_locale) Return the first VosVacancesI18n filtered by the active_locale column
  * @method VosVacancesI18n findOneBySeoTitle(string $seo_title) Return the first VosVacancesI18n filtered by the seo_title column
  * @method VosVacancesI18n findOneBySeoDescription(string $seo_description) Return the first VosVacancesI18n filtered by the seo_description column
  * @method VosVacancesI18n findOneBySeoH1(string $seo_h1) Return the first VosVacancesI18n filtered by the seo_h1 column
  * @method VosVacancesI18n findOneBySeoKeywords(string $seo_keywords) Return the first VosVacancesI18n filtered by the seo_keywords column
+ * @method VosVacancesI18n findOneByActiveLocale(boolean $active_locale) Return the first VosVacancesI18n filtered by the active_locale column
  *
  * @method array findById(int $id) Return VosVacancesI18n objects filtered by the id column
  * @method array findByLocale(string $locale) Return VosVacancesI18n objects filtered by the locale column
  * @method array findByTitre(string $titre) Return VosVacancesI18n objects filtered by the titre column
  * @method array findByDescription(string $description) Return VosVacancesI18n objects filtered by the description column
  * @method array findByPrenom(string $prenom) Return VosVacancesI18n objects filtered by the prenom column
- * @method array findByActiveLocale(boolean $active_locale) Return VosVacancesI18n objects filtered by the active_locale column
  * @method array findBySeoTitle(string $seo_title) Return VosVacancesI18n objects filtered by the seo_title column
  * @method array findBySeoDescription(string $seo_description) Return VosVacancesI18n objects filtered by the seo_description column
  * @method array findBySeoH1(string $seo_h1) Return VosVacancesI18n objects filtered by the seo_h1 column
  * @method array findBySeoKeywords(string $seo_keywords) Return VosVacancesI18n objects filtered by the seo_keywords column
+ * @method array findByActiveLocale(boolean $active_locale) Return VosVacancesI18n objects filtered by the active_locale column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -166,7 +166,7 @@ abstract class BaseVosVacancesI18nQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `locale`, `titre`, `description`, `prenom`, `active_locale`, `seo_title`, `seo_description`, `seo_h1`, `seo_keywords` FROM `vos_vacances_i18n` WHERE `id` = :p0 AND `locale` = :p1';
+        $sql = 'SELECT `id`, `locale`, `titre`, `description`, `prenom`, `seo_title`, `seo_description`, `seo_h1`, `seo_keywords`, `active_locale` FROM `vos_vacances_i18n` WHERE `id` = :p0 AND `locale` = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
@@ -413,33 +413,6 @@ abstract class BaseVosVacancesI18nQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query on the active_locale column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByActiveLocale(true); // WHERE active_locale = true
-     * $query->filterByActiveLocale('yes'); // WHERE active_locale = true
-     * </code>
-     *
-     * @param     boolean|string $activeLocale The value to use as filter.
-     *              Non-boolean arguments are converted using the following rules:
-     *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
-     *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
-     *              Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return VosVacancesI18nQuery The current query, for fluid interface
-     */
-    public function filterByActiveLocale($activeLocale = null, $comparison = null)
-    {
-        if (is_string($activeLocale)) {
-            $active_locale = in_array(strtolower($activeLocale), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
-        }
-
-        return $this->addUsingAlias(VosVacancesI18nPeer::ACTIVE_LOCALE, $activeLocale, $comparison);
-    }
-
-    /**
      * Filter the query on the seo_title column
      *
      * Example usage:
@@ -553,6 +526,33 @@ abstract class BaseVosVacancesI18nQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(VosVacancesI18nPeer::SEO_KEYWORDS, $seoKeywords, $comparison);
+    }
+
+    /**
+     * Filter the query on the active_locale column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByActiveLocale(true); // WHERE active_locale = true
+     * $query->filterByActiveLocale('yes'); // WHERE active_locale = true
+     * </code>
+     *
+     * @param     boolean|string $activeLocale The value to use as filter.
+     *              Non-boolean arguments are converted using the following rules:
+     *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     *              Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return VosVacancesI18nQuery The current query, for fluid interface
+     */
+    public function filterByActiveLocale($activeLocale = null, $comparison = null)
+    {
+        if (is_string($activeLocale)) {
+            $active_locale = in_array(strtolower($activeLocale), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+        }
+
+        return $this->addUsingAlias(VosVacancesI18nPeer::ACTIVE_LOCALE, $activeLocale, $comparison);
     }
 
     /**

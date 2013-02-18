@@ -48,11 +48,11 @@ class TypeHebergementCapaciteI18nTableMap extends TableMap
         $this->addColumn('slug', 'Slug', 'VARCHAR', false, 255, null);
         $this->addColumn('accroche', 'Accroche', 'VARCHAR', false, 255, null);
         $this->addColumn('description', 'Description', 'LONGVARCHAR', false, null, null);
-        $this->addColumn('active_locale', 'ActiveLocale', 'BOOLEAN', false, 1, false);
         $this->addColumn('seo_title', 'SeoTitle', 'VARCHAR', false, 255, null);
         $this->addColumn('seo_description', 'SeoDescription', 'LONGVARCHAR', false, null, null);
         $this->addColumn('seo_h1', 'SeoH1', 'VARCHAR', false, 255, null);
         $this->addColumn('seo_keywords', 'SeoKeywords', 'LONGVARCHAR', false, null, null);
+        $this->addColumn('active_locale', 'ActiveLocale', 'BOOLEAN', false, 1, false);
         // validators
     } // initialize()
 

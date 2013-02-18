@@ -91,13 +91,6 @@ class BaseThematiqueType extends AppAwareType
                     'constraints' => array(
                     ),
                 ),
-                'active_locale' => array(
-                    'required' => false,
-                    'label' => 'thematique.active_locale',
-                    'type' => 'checkbox',
-                    'constraints' => array(
-                    ),
-                ),
                 'seo_title' => array(
                     'required' => false,
                     'label' => 'thematique.seo_title',
@@ -123,6 +116,13 @@ class BaseThematiqueType extends AppAwareType
                     'required' => false,
                     'label' => 'thematique.seo_keywords',
                     'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'active_locale' => array(
+                    'required' => false,
+                    'label' => 'thematique.active_locale',
+                    'type' => 'checkbox',
                     'constraints' => array(
                     ),
                 ),

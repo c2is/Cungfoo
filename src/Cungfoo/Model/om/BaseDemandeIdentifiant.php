@@ -2901,4 +2901,28 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
         return $this;
     }
 
+
+        /**
+         * Get the [active_locale] column value.
+         *
+         * @return boolean
+         */
+        public function getActiveLocale()
+        {
+        return $this->getCurrentTranslation()->getActiveLocale();
+    }
+
+
+        /**
+         * Set the value of [active_locale] column.
+         *
+         * @param boolean $v new value
+         * @return DemandeIdentifiantI18n The current object (for fluent API support)
+         */
+        public function setActiveLocale($v)
+        {    $this->getCurrentTranslation()->setActiveLocale($v);
+
+        return $this;
+    }
+
 }

@@ -63,13 +63,6 @@ class BaseEditoType extends AppAwareType
                         new Assert\NotBlank(),
                     ),
                 ),
-                'active_locale' => array(
-                    'required' => false,
-                    'label' => 'edito.active_locale',
-                    'type' => 'checkbox',
-                    'constraints' => array(
-                    ),
-                ),
                 'seo_title' => array(
                     'required' => false,
                     'label' => 'edito.seo_title',
@@ -95,6 +88,13 @@ class BaseEditoType extends AppAwareType
                     'required' => false,
                     'label' => 'edito.seo_keywords',
                     'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'active_locale' => array(
+                    'required' => false,
+                    'label' => 'edito.active_locale',
+                    'type' => 'checkbox',
                     'constraints' => array(
                     ),
                 ),

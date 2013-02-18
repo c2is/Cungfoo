@@ -81,13 +81,6 @@ class BaseVosVacancesType extends AppAwareType
                     'constraints' => array(
                     ),
                 ),
-                'active_locale' => array(
-                    'required' => false,
-                    'label' => 'vos_vacances.active_locale',
-                    'type' => 'checkbox',
-                    'constraints' => array(
-                    ),
-                ),
                 'seo_title' => array(
                     'required' => false,
                     'label' => 'vos_vacances.seo_title',
@@ -113,6 +106,13 @@ class BaseVosVacancesType extends AppAwareType
                     'required' => false,
                     'label' => 'vos_vacances.seo_keywords',
                     'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'active_locale' => array(
+                    'required' => false,
+                    'label' => 'vos_vacances.active_locale',
+                    'type' => 'checkbox',
                     'constraints' => array(
                     ),
                 ),

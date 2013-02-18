@@ -29,11 +29,11 @@ use Cungfoo\Model\EtablissementI18nQuery;
  * @method EtablissementI18nQuery orderByOuvertureCamping($order = Criteria::ASC) Order by the ouverture_camping column
  * @method EtablissementI18nQuery orderByArriveesDeparts($order = Criteria::ASC) Order by the arrivees_departs column
  * @method EtablissementI18nQuery orderByDescription($order = Criteria::ASC) Order by the description column
- * @method EtablissementI18nQuery orderByActiveLocale($order = Criteria::ASC) Order by the active_locale column
  * @method EtablissementI18nQuery orderBySeoTitle($order = Criteria::ASC) Order by the seo_title column
  * @method EtablissementI18nQuery orderBySeoDescription($order = Criteria::ASC) Order by the seo_description column
  * @method EtablissementI18nQuery orderBySeoH1($order = Criteria::ASC) Order by the seo_h1 column
  * @method EtablissementI18nQuery orderBySeoKeywords($order = Criteria::ASC) Order by the seo_keywords column
+ * @method EtablissementI18nQuery orderByActiveLocale($order = Criteria::ASC) Order by the active_locale column
  *
  * @method EtablissementI18nQuery groupById() Group by the id column
  * @method EtablissementI18nQuery groupByLocale() Group by the locale column
@@ -42,11 +42,11 @@ use Cungfoo\Model\EtablissementI18nQuery;
  * @method EtablissementI18nQuery groupByOuvertureCamping() Group by the ouverture_camping column
  * @method EtablissementI18nQuery groupByArriveesDeparts() Group by the arrivees_departs column
  * @method EtablissementI18nQuery groupByDescription() Group by the description column
- * @method EtablissementI18nQuery groupByActiveLocale() Group by the active_locale column
  * @method EtablissementI18nQuery groupBySeoTitle() Group by the seo_title column
  * @method EtablissementI18nQuery groupBySeoDescription() Group by the seo_description column
  * @method EtablissementI18nQuery groupBySeoH1() Group by the seo_h1 column
  * @method EtablissementI18nQuery groupBySeoKeywords() Group by the seo_keywords column
+ * @method EtablissementI18nQuery groupByActiveLocale() Group by the active_locale column
  *
  * @method EtablissementI18nQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method EtablissementI18nQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -66,11 +66,11 @@ use Cungfoo\Model\EtablissementI18nQuery;
  * @method EtablissementI18n findOneByOuvertureCamping(string $ouverture_camping) Return the first EtablissementI18n filtered by the ouverture_camping column
  * @method EtablissementI18n findOneByArriveesDeparts(string $arrivees_departs) Return the first EtablissementI18n filtered by the arrivees_departs column
  * @method EtablissementI18n findOneByDescription(string $description) Return the first EtablissementI18n filtered by the description column
- * @method EtablissementI18n findOneByActiveLocale(boolean $active_locale) Return the first EtablissementI18n filtered by the active_locale column
  * @method EtablissementI18n findOneBySeoTitle(string $seo_title) Return the first EtablissementI18n filtered by the seo_title column
  * @method EtablissementI18n findOneBySeoDescription(string $seo_description) Return the first EtablissementI18n filtered by the seo_description column
  * @method EtablissementI18n findOneBySeoH1(string $seo_h1) Return the first EtablissementI18n filtered by the seo_h1 column
  * @method EtablissementI18n findOneBySeoKeywords(string $seo_keywords) Return the first EtablissementI18n filtered by the seo_keywords column
+ * @method EtablissementI18n findOneByActiveLocale(boolean $active_locale) Return the first EtablissementI18n filtered by the active_locale column
  *
  * @method array findById(int $id) Return EtablissementI18n objects filtered by the id column
  * @method array findByLocale(string $locale) Return EtablissementI18n objects filtered by the locale column
@@ -79,11 +79,11 @@ use Cungfoo\Model\EtablissementI18nQuery;
  * @method array findByOuvertureCamping(string $ouverture_camping) Return EtablissementI18n objects filtered by the ouverture_camping column
  * @method array findByArriveesDeparts(string $arrivees_departs) Return EtablissementI18n objects filtered by the arrivees_departs column
  * @method array findByDescription(string $description) Return EtablissementI18n objects filtered by the description column
- * @method array findByActiveLocale(boolean $active_locale) Return EtablissementI18n objects filtered by the active_locale column
  * @method array findBySeoTitle(string $seo_title) Return EtablissementI18n objects filtered by the seo_title column
  * @method array findBySeoDescription(string $seo_description) Return EtablissementI18n objects filtered by the seo_description column
  * @method array findBySeoH1(string $seo_h1) Return EtablissementI18n objects filtered by the seo_h1 column
  * @method array findBySeoKeywords(string $seo_keywords) Return EtablissementI18n objects filtered by the seo_keywords column
+ * @method array findByActiveLocale(boolean $active_locale) Return EtablissementI18n objects filtered by the active_locale column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -174,7 +174,7 @@ abstract class BaseEtablissementI18nQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `locale`, `country`, `ouverture_reception`, `ouverture_camping`, `arrivees_departs`, `description`, `active_locale`, `seo_title`, `seo_description`, `seo_h1`, `seo_keywords` FROM `etablissement_i18n` WHERE `id` = :p0 AND `locale` = :p1';
+        $sql = 'SELECT `id`, `locale`, `country`, `ouverture_reception`, `ouverture_camping`, `arrivees_departs`, `description`, `seo_title`, `seo_description`, `seo_h1`, `seo_keywords`, `active_locale` FROM `etablissement_i18n` WHERE `id` = :p0 AND `locale` = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
@@ -479,33 +479,6 @@ abstract class BaseEtablissementI18nQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query on the active_locale column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByActiveLocale(true); // WHERE active_locale = true
-     * $query->filterByActiveLocale('yes'); // WHERE active_locale = true
-     * </code>
-     *
-     * @param     boolean|string $activeLocale The value to use as filter.
-     *              Non-boolean arguments are converted using the following rules:
-     *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
-     *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
-     *              Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return EtablissementI18nQuery The current query, for fluid interface
-     */
-    public function filterByActiveLocale($activeLocale = null, $comparison = null)
-    {
-        if (is_string($activeLocale)) {
-            $active_locale = in_array(strtolower($activeLocale), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
-        }
-
-        return $this->addUsingAlias(EtablissementI18nPeer::ACTIVE_LOCALE, $activeLocale, $comparison);
-    }
-
-    /**
      * Filter the query on the seo_title column
      *
      * Example usage:
@@ -619,6 +592,33 @@ abstract class BaseEtablissementI18nQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(EtablissementI18nPeer::SEO_KEYWORDS, $seoKeywords, $comparison);
+    }
+
+    /**
+     * Filter the query on the active_locale column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByActiveLocale(true); // WHERE active_locale = true
+     * $query->filterByActiveLocale('yes'); // WHERE active_locale = true
+     * </code>
+     *
+     * @param     boolean|string $activeLocale The value to use as filter.
+     *              Non-boolean arguments are converted using the following rules:
+     *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     *              Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return EtablissementI18nQuery The current query, for fluid interface
+     */
+    public function filterByActiveLocale($activeLocale = null, $comparison = null)
+    {
+        if (is_string($activeLocale)) {
+            $active_locale = in_array(strtolower($activeLocale), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+        }
+
+        return $this->addUsingAlias(EtablissementI18nPeer::ACTIVE_LOCALE, $activeLocale, $comparison);
     }
 
     /**

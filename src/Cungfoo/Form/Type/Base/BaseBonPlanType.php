@@ -243,13 +243,6 @@ class BaseBonPlanType extends AppAwareType
                     'constraints' => array(
                     ),
                 ),
-                'active_locale' => array(
-                    'required' => false,
-                    'label' => 'bon_plan.active_locale',
-                    'type' => 'checkbox',
-                    'constraints' => array(
-                    ),
-                ),
                 'seo_title' => array(
                     'required' => false,
                     'label' => 'bon_plan.seo_title',
@@ -275,6 +268,13 @@ class BaseBonPlanType extends AppAwareType
                     'required' => false,
                     'label' => 'bon_plan.seo_keywords',
                     'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'active_locale' => array(
+                    'required' => false,
+                    'label' => 'bon_plan.active_locale',
+                    'type' => 'checkbox',
                     'constraints' => array(
                     ),
                 ),

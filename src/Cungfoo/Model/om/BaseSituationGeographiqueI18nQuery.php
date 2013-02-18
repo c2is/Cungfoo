@@ -27,22 +27,22 @@ use Cungfoo\Model\SituationGeographiqueI18nQuery;
  * @method SituationGeographiqueI18nQuery orderByName($order = Criteria::ASC) Order by the name column
  * @method SituationGeographiqueI18nQuery orderByDescription($order = Criteria::ASC) Order by the description column
  * @method SituationGeographiqueI18nQuery orderByKeywords($order = Criteria::ASC) Order by the keywords column
- * @method SituationGeographiqueI18nQuery orderByActiveLocale($order = Criteria::ASC) Order by the active_locale column
  * @method SituationGeographiqueI18nQuery orderBySeoTitle($order = Criteria::ASC) Order by the seo_title column
  * @method SituationGeographiqueI18nQuery orderBySeoDescription($order = Criteria::ASC) Order by the seo_description column
  * @method SituationGeographiqueI18nQuery orderBySeoH1($order = Criteria::ASC) Order by the seo_h1 column
  * @method SituationGeographiqueI18nQuery orderBySeoKeywords($order = Criteria::ASC) Order by the seo_keywords column
+ * @method SituationGeographiqueI18nQuery orderByActiveLocale($order = Criteria::ASC) Order by the active_locale column
  *
  * @method SituationGeographiqueI18nQuery groupById() Group by the id column
  * @method SituationGeographiqueI18nQuery groupByLocale() Group by the locale column
  * @method SituationGeographiqueI18nQuery groupByName() Group by the name column
  * @method SituationGeographiqueI18nQuery groupByDescription() Group by the description column
  * @method SituationGeographiqueI18nQuery groupByKeywords() Group by the keywords column
- * @method SituationGeographiqueI18nQuery groupByActiveLocale() Group by the active_locale column
  * @method SituationGeographiqueI18nQuery groupBySeoTitle() Group by the seo_title column
  * @method SituationGeographiqueI18nQuery groupBySeoDescription() Group by the seo_description column
  * @method SituationGeographiqueI18nQuery groupBySeoH1() Group by the seo_h1 column
  * @method SituationGeographiqueI18nQuery groupBySeoKeywords() Group by the seo_keywords column
+ * @method SituationGeographiqueI18nQuery groupByActiveLocale() Group by the active_locale column
  *
  * @method SituationGeographiqueI18nQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method SituationGeographiqueI18nQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -60,22 +60,22 @@ use Cungfoo\Model\SituationGeographiqueI18nQuery;
  * @method SituationGeographiqueI18n findOneByName(string $name) Return the first SituationGeographiqueI18n filtered by the name column
  * @method SituationGeographiqueI18n findOneByDescription(string $description) Return the first SituationGeographiqueI18n filtered by the description column
  * @method SituationGeographiqueI18n findOneByKeywords(string $keywords) Return the first SituationGeographiqueI18n filtered by the keywords column
- * @method SituationGeographiqueI18n findOneByActiveLocale(boolean $active_locale) Return the first SituationGeographiqueI18n filtered by the active_locale column
  * @method SituationGeographiqueI18n findOneBySeoTitle(string $seo_title) Return the first SituationGeographiqueI18n filtered by the seo_title column
  * @method SituationGeographiqueI18n findOneBySeoDescription(string $seo_description) Return the first SituationGeographiqueI18n filtered by the seo_description column
  * @method SituationGeographiqueI18n findOneBySeoH1(string $seo_h1) Return the first SituationGeographiqueI18n filtered by the seo_h1 column
  * @method SituationGeographiqueI18n findOneBySeoKeywords(string $seo_keywords) Return the first SituationGeographiqueI18n filtered by the seo_keywords column
+ * @method SituationGeographiqueI18n findOneByActiveLocale(boolean $active_locale) Return the first SituationGeographiqueI18n filtered by the active_locale column
  *
  * @method array findById(int $id) Return SituationGeographiqueI18n objects filtered by the id column
  * @method array findByLocale(string $locale) Return SituationGeographiqueI18n objects filtered by the locale column
  * @method array findByName(string $name) Return SituationGeographiqueI18n objects filtered by the name column
  * @method array findByDescription(string $description) Return SituationGeographiqueI18n objects filtered by the description column
  * @method array findByKeywords(string $keywords) Return SituationGeographiqueI18n objects filtered by the keywords column
- * @method array findByActiveLocale(boolean $active_locale) Return SituationGeographiqueI18n objects filtered by the active_locale column
  * @method array findBySeoTitle(string $seo_title) Return SituationGeographiqueI18n objects filtered by the seo_title column
  * @method array findBySeoDescription(string $seo_description) Return SituationGeographiqueI18n objects filtered by the seo_description column
  * @method array findBySeoH1(string $seo_h1) Return SituationGeographiqueI18n objects filtered by the seo_h1 column
  * @method array findBySeoKeywords(string $seo_keywords) Return SituationGeographiqueI18n objects filtered by the seo_keywords column
+ * @method array findByActiveLocale(boolean $active_locale) Return SituationGeographiqueI18n objects filtered by the active_locale column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -166,7 +166,7 @@ abstract class BaseSituationGeographiqueI18nQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `locale`, `name`, `description`, `keywords`, `active_locale`, `seo_title`, `seo_description`, `seo_h1`, `seo_keywords` FROM `situation_geographique_i18n` WHERE `id` = :p0 AND `locale` = :p1';
+        $sql = 'SELECT `id`, `locale`, `name`, `description`, `keywords`, `seo_title`, `seo_description`, `seo_h1`, `seo_keywords`, `active_locale` FROM `situation_geographique_i18n` WHERE `id` = :p0 AND `locale` = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
@@ -413,33 +413,6 @@ abstract class BaseSituationGeographiqueI18nQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query on the active_locale column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByActiveLocale(true); // WHERE active_locale = true
-     * $query->filterByActiveLocale('yes'); // WHERE active_locale = true
-     * </code>
-     *
-     * @param     boolean|string $activeLocale The value to use as filter.
-     *              Non-boolean arguments are converted using the following rules:
-     *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
-     *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
-     *              Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return SituationGeographiqueI18nQuery The current query, for fluid interface
-     */
-    public function filterByActiveLocale($activeLocale = null, $comparison = null)
-    {
-        if (is_string($activeLocale)) {
-            $active_locale = in_array(strtolower($activeLocale), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
-        }
-
-        return $this->addUsingAlias(SituationGeographiqueI18nPeer::ACTIVE_LOCALE, $activeLocale, $comparison);
-    }
-
-    /**
      * Filter the query on the seo_title column
      *
      * Example usage:
@@ -553,6 +526,33 @@ abstract class BaseSituationGeographiqueI18nQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(SituationGeographiqueI18nPeer::SEO_KEYWORDS, $seoKeywords, $comparison);
+    }
+
+    /**
+     * Filter the query on the active_locale column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByActiveLocale(true); // WHERE active_locale = true
+     * $query->filterByActiveLocale('yes'); // WHERE active_locale = true
+     * </code>
+     *
+     * @param     boolean|string $activeLocale The value to use as filter.
+     *              Non-boolean arguments are converted using the following rules:
+     *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     *              Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return SituationGeographiqueI18nQuery The current query, for fluid interface
+     */
+    public function filterByActiveLocale($activeLocale = null, $comparison = null)
+    {
+        if (is_string($activeLocale)) {
+            $active_locale = in_array(strtolower($activeLocale), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+        }
+
+        return $this->addUsingAlias(SituationGeographiqueI18nPeer::ACTIVE_LOCALE, $activeLocale, $comparison);
     }
 
     /**

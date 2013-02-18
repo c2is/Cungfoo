@@ -118,13 +118,6 @@ class BaseDestinationType extends AppAwareType
                     'constraints' => array(
                     ),
                 ),
-                'active_locale' => array(
-                    'required' => false,
-                    'label' => 'destination.active_locale',
-                    'type' => 'checkbox',
-                    'constraints' => array(
-                    ),
-                ),
                 'seo_title' => array(
                     'required' => false,
                     'label' => 'destination.seo_title',
@@ -150,6 +143,13 @@ class BaseDestinationType extends AppAwareType
                     'required' => false,
                     'label' => 'destination.seo_keywords',
                     'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'active_locale' => array(
+                    'required' => false,
+                    'label' => 'destination.active_locale',
+                    'type' => 'checkbox',
                     'constraints' => array(
                     ),
                 ),

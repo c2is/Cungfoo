@@ -111,13 +111,6 @@ class BaseDepartementType extends AppAwareType
                     'constraints' => array(
                     ),
                 ),
-                'active_locale' => array(
-                    'required' => false,
-                    'label' => 'departement.active_locale',
-                    'type' => 'checkbox',
-                    'constraints' => array(
-                    ),
-                ),
                 'seo_title' => array(
                     'required' => false,
                     'label' => 'departement.seo_title',
@@ -143,6 +136,13 @@ class BaseDepartementType extends AppAwareType
                     'required' => false,
                     'label' => 'departement.seo_keywords',
                     'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'active_locale' => array(
+                    'required' => false,
+                    'label' => 'departement.active_locale',
+                    'type' => 'checkbox',
                     'constraints' => array(
                     ),
                 ),

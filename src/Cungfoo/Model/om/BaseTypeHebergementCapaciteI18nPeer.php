@@ -63,9 +63,6 @@ abstract class BaseTypeHebergementCapaciteI18nPeer
     /** the column name for the description field */
     const DESCRIPTION = 'type_hebergement_capacite_i18n.description';
 
-    /** the column name for the active_locale field */
-    const ACTIVE_LOCALE = 'type_hebergement_capacite_i18n.active_locale';
-
     /** the column name for the seo_title field */
     const SEO_TITLE = 'type_hebergement_capacite_i18n.seo_title';
 
@@ -77,6 +74,9 @@ abstract class BaseTypeHebergementCapaciteI18nPeer
 
     /** the column name for the seo_keywords field */
     const SEO_KEYWORDS = 'type_hebergement_capacite_i18n.seo_keywords';
+
+    /** the column name for the active_locale field */
+    const ACTIVE_LOCALE = 'type_hebergement_capacite_i18n.active_locale';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -97,11 +97,11 @@ abstract class BaseTypeHebergementCapaciteI18nPeer
      * e.g. TypeHebergementCapaciteI18nPeer::$fieldNames[TypeHebergementCapaciteI18nPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Name', 'Slug', 'Accroche', 'Description', 'ActiveLocale', 'SeoTitle', 'SeoDescription', 'SeoH1', 'SeoKeywords', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'name', 'slug', 'accroche', 'description', 'activeLocale', 'seoTitle', 'seoDescription', 'seoH1', 'seoKeywords', ),
-        BasePeer::TYPE_COLNAME => array (TypeHebergementCapaciteI18nPeer::ID, TypeHebergementCapaciteI18nPeer::LOCALE, TypeHebergementCapaciteI18nPeer::NAME, TypeHebergementCapaciteI18nPeer::SLUG, TypeHebergementCapaciteI18nPeer::ACCROCHE, TypeHebergementCapaciteI18nPeer::DESCRIPTION, TypeHebergementCapaciteI18nPeer::ACTIVE_LOCALE, TypeHebergementCapaciteI18nPeer::SEO_TITLE, TypeHebergementCapaciteI18nPeer::SEO_DESCRIPTION, TypeHebergementCapaciteI18nPeer::SEO_H1, TypeHebergementCapaciteI18nPeer::SEO_KEYWORDS, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'NAME', 'SLUG', 'ACCROCHE', 'DESCRIPTION', 'ACTIVE_LOCALE', 'SEO_TITLE', 'SEO_DESCRIPTION', 'SEO_H1', 'SEO_KEYWORDS', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'name', 'slug', 'accroche', 'description', 'active_locale', 'seo_title', 'seo_description', 'seo_h1', 'seo_keywords', ),
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Name', 'Slug', 'Accroche', 'Description', 'SeoTitle', 'SeoDescription', 'SeoH1', 'SeoKeywords', 'ActiveLocale', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'name', 'slug', 'accroche', 'description', 'seoTitle', 'seoDescription', 'seoH1', 'seoKeywords', 'activeLocale', ),
+        BasePeer::TYPE_COLNAME => array (TypeHebergementCapaciteI18nPeer::ID, TypeHebergementCapaciteI18nPeer::LOCALE, TypeHebergementCapaciteI18nPeer::NAME, TypeHebergementCapaciteI18nPeer::SLUG, TypeHebergementCapaciteI18nPeer::ACCROCHE, TypeHebergementCapaciteI18nPeer::DESCRIPTION, TypeHebergementCapaciteI18nPeer::SEO_TITLE, TypeHebergementCapaciteI18nPeer::SEO_DESCRIPTION, TypeHebergementCapaciteI18nPeer::SEO_H1, TypeHebergementCapaciteI18nPeer::SEO_KEYWORDS, TypeHebergementCapaciteI18nPeer::ACTIVE_LOCALE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'NAME', 'SLUG', 'ACCROCHE', 'DESCRIPTION', 'SEO_TITLE', 'SEO_DESCRIPTION', 'SEO_H1', 'SEO_KEYWORDS', 'ACTIVE_LOCALE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'name', 'slug', 'accroche', 'description', 'seo_title', 'seo_description', 'seo_h1', 'seo_keywords', 'active_locale', ),
         BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, )
     );
 
@@ -112,11 +112,11 @@ abstract class BaseTypeHebergementCapaciteI18nPeer
      * e.g. TypeHebergementCapaciteI18nPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Name' => 2, 'Slug' => 3, 'Accroche' => 4, 'Description' => 5, 'ActiveLocale' => 6, 'SeoTitle' => 7, 'SeoDescription' => 8, 'SeoH1' => 9, 'SeoKeywords' => 10, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'slug' => 3, 'accroche' => 4, 'description' => 5, 'activeLocale' => 6, 'seoTitle' => 7, 'seoDescription' => 8, 'seoH1' => 9, 'seoKeywords' => 10, ),
-        BasePeer::TYPE_COLNAME => array (TypeHebergementCapaciteI18nPeer::ID => 0, TypeHebergementCapaciteI18nPeer::LOCALE => 1, TypeHebergementCapaciteI18nPeer::NAME => 2, TypeHebergementCapaciteI18nPeer::SLUG => 3, TypeHebergementCapaciteI18nPeer::ACCROCHE => 4, TypeHebergementCapaciteI18nPeer::DESCRIPTION => 5, TypeHebergementCapaciteI18nPeer::ACTIVE_LOCALE => 6, TypeHebergementCapaciteI18nPeer::SEO_TITLE => 7, TypeHebergementCapaciteI18nPeer::SEO_DESCRIPTION => 8, TypeHebergementCapaciteI18nPeer::SEO_H1 => 9, TypeHebergementCapaciteI18nPeer::SEO_KEYWORDS => 10, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'NAME' => 2, 'SLUG' => 3, 'ACCROCHE' => 4, 'DESCRIPTION' => 5, 'ACTIVE_LOCALE' => 6, 'SEO_TITLE' => 7, 'SEO_DESCRIPTION' => 8, 'SEO_H1' => 9, 'SEO_KEYWORDS' => 10, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'slug' => 3, 'accroche' => 4, 'description' => 5, 'active_locale' => 6, 'seo_title' => 7, 'seo_description' => 8, 'seo_h1' => 9, 'seo_keywords' => 10, ),
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Name' => 2, 'Slug' => 3, 'Accroche' => 4, 'Description' => 5, 'SeoTitle' => 6, 'SeoDescription' => 7, 'SeoH1' => 8, 'SeoKeywords' => 9, 'ActiveLocale' => 10, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'slug' => 3, 'accroche' => 4, 'description' => 5, 'seoTitle' => 6, 'seoDescription' => 7, 'seoH1' => 8, 'seoKeywords' => 9, 'activeLocale' => 10, ),
+        BasePeer::TYPE_COLNAME => array (TypeHebergementCapaciteI18nPeer::ID => 0, TypeHebergementCapaciteI18nPeer::LOCALE => 1, TypeHebergementCapaciteI18nPeer::NAME => 2, TypeHebergementCapaciteI18nPeer::SLUG => 3, TypeHebergementCapaciteI18nPeer::ACCROCHE => 4, TypeHebergementCapaciteI18nPeer::DESCRIPTION => 5, TypeHebergementCapaciteI18nPeer::SEO_TITLE => 6, TypeHebergementCapaciteI18nPeer::SEO_DESCRIPTION => 7, TypeHebergementCapaciteI18nPeer::SEO_H1 => 8, TypeHebergementCapaciteI18nPeer::SEO_KEYWORDS => 9, TypeHebergementCapaciteI18nPeer::ACTIVE_LOCALE => 10, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'NAME' => 2, 'SLUG' => 3, 'ACCROCHE' => 4, 'DESCRIPTION' => 5, 'SEO_TITLE' => 6, 'SEO_DESCRIPTION' => 7, 'SEO_H1' => 8, 'SEO_KEYWORDS' => 9, 'ACTIVE_LOCALE' => 10, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'slug' => 3, 'accroche' => 4, 'description' => 5, 'seo_title' => 6, 'seo_description' => 7, 'seo_h1' => 8, 'seo_keywords' => 9, 'active_locale' => 10, ),
         BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, )
     );
 
@@ -197,11 +197,11 @@ abstract class BaseTypeHebergementCapaciteI18nPeer
             $criteria->addSelectColumn(TypeHebergementCapaciteI18nPeer::SLUG);
             $criteria->addSelectColumn(TypeHebergementCapaciteI18nPeer::ACCROCHE);
             $criteria->addSelectColumn(TypeHebergementCapaciteI18nPeer::DESCRIPTION);
-            $criteria->addSelectColumn(TypeHebergementCapaciteI18nPeer::ACTIVE_LOCALE);
             $criteria->addSelectColumn(TypeHebergementCapaciteI18nPeer::SEO_TITLE);
             $criteria->addSelectColumn(TypeHebergementCapaciteI18nPeer::SEO_DESCRIPTION);
             $criteria->addSelectColumn(TypeHebergementCapaciteI18nPeer::SEO_H1);
             $criteria->addSelectColumn(TypeHebergementCapaciteI18nPeer::SEO_KEYWORDS);
+            $criteria->addSelectColumn(TypeHebergementCapaciteI18nPeer::ACTIVE_LOCALE);
         } else {
             $criteria->addSelectColumn($alias . '.id');
             $criteria->addSelectColumn($alias . '.locale');
@@ -209,11 +209,11 @@ abstract class BaseTypeHebergementCapaciteI18nPeer
             $criteria->addSelectColumn($alias . '.slug');
             $criteria->addSelectColumn($alias . '.accroche');
             $criteria->addSelectColumn($alias . '.description');
-            $criteria->addSelectColumn($alias . '.active_locale');
             $criteria->addSelectColumn($alias . '.seo_title');
             $criteria->addSelectColumn($alias . '.seo_description');
             $criteria->addSelectColumn($alias . '.seo_h1');
             $criteria->addSelectColumn($alias . '.seo_keywords');
+            $criteria->addSelectColumn($alias . '.active_locale');
         }
     }
 

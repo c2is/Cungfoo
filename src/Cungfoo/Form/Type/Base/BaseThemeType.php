@@ -114,13 +114,6 @@ class BaseThemeType extends AppAwareType
                     'constraints' => array(
                     ),
                 ),
-                'active_locale' => array(
-                    'required' => false,
-                    'label' => 'theme.active_locale',
-                    'type' => 'checkbox',
-                    'constraints' => array(
-                    ),
-                ),
                 'seo_title' => array(
                     'required' => false,
                     'label' => 'theme.seo_title',
@@ -146,6 +139,13 @@ class BaseThemeType extends AppAwareType
                     'required' => false,
                     'label' => 'theme.seo_keywords',
                     'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'active_locale' => array(
+                    'required' => false,
+                    'label' => 'theme.active_locale',
+                    'type' => 'checkbox',
                     'constraints' => array(
                     ),
                 ),

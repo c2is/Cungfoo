@@ -2821,30 +2821,6 @@ abstract class BaseActivite extends BaseObject implements Persistent
         return $this;
     }
 
-
-        /**
-         * Get the [active_locale] column value.
-         *
-         * @return boolean
-         */
-        public function getActiveLocale()
-        {
-        return $this->getCurrentTranslation()->getActiveLocale();
-    }
-
-
-        /**
-         * Set the value of [active_locale] column.
-         *
-         * @param boolean $v new value
-         * @return ActiviteI18n The current object (for fluent API support)
-         */
-        public function setActiveLocale($v)
-        {    $this->getCurrentTranslation()->setActiveLocale($v);
-
-        return $this;
-    }
-
     /**
      * Get the [seo_title] column value.
      *
@@ -2981,6 +2957,30 @@ abstract class BaseActivite extends BaseObject implements Persistent
          */
         public function setSeoKeywords($v)
         {    $this->getCurrentTranslation()->setSeoKeywords($v);
+
+        return $this;
+    }
+
+
+        /**
+         * Get the [active_locale] column value.
+         *
+         * @return boolean
+         */
+        public function getActiveLocale()
+        {
+        return $this->getCurrentTranslation()->getActiveLocale();
+    }
+
+
+        /**
+         * Set the value of [active_locale] column.
+         *
+         * @param boolean $v new value
+         * @return ActiviteI18n The current object (for fluent API support)
+         */
+        public function setActiveLocale($v)
+        {    $this->getCurrentTranslation()->setActiveLocale($v);
 
         return $this;
     }

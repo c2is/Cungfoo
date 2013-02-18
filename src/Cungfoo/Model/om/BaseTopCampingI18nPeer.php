@@ -37,13 +37,13 @@ abstract class BaseTopCampingI18nPeer
     const TM_CLASS = 'TopCampingI18nTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 6;
+    const NUM_COLUMNS = 7;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 6;
+    const NUM_HYDRATE_COLUMNS = 7;
 
     /** the column name for the id field */
     const ID = 'top_camping_i18n.id';
@@ -62,6 +62,9 @@ abstract class BaseTopCampingI18nPeer
 
     /** the column name for the seo_keywords field */
     const SEO_KEYWORDS = 'top_camping_i18n.seo_keywords';
+
+    /** the column name for the active_locale field */
+    const ACTIVE_LOCALE = 'top_camping_i18n.active_locale';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -82,12 +85,12 @@ abstract class BaseTopCampingI18nPeer
      * e.g. TopCampingI18nPeer::$fieldNames[TopCampingI18nPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'SeoTitle', 'SeoDescription', 'SeoH1', 'SeoKeywords', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'seoTitle', 'seoDescription', 'seoH1', 'seoKeywords', ),
-        BasePeer::TYPE_COLNAME => array (TopCampingI18nPeer::ID, TopCampingI18nPeer::LOCALE, TopCampingI18nPeer::SEO_TITLE, TopCampingI18nPeer::SEO_DESCRIPTION, TopCampingI18nPeer::SEO_H1, TopCampingI18nPeer::SEO_KEYWORDS, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'SEO_TITLE', 'SEO_DESCRIPTION', 'SEO_H1', 'SEO_KEYWORDS', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'seo_title', 'seo_description', 'seo_h1', 'seo_keywords', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'SeoTitle', 'SeoDescription', 'SeoH1', 'SeoKeywords', 'ActiveLocale', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'seoTitle', 'seoDescription', 'seoH1', 'seoKeywords', 'activeLocale', ),
+        BasePeer::TYPE_COLNAME => array (TopCampingI18nPeer::ID, TopCampingI18nPeer::LOCALE, TopCampingI18nPeer::SEO_TITLE, TopCampingI18nPeer::SEO_DESCRIPTION, TopCampingI18nPeer::SEO_H1, TopCampingI18nPeer::SEO_KEYWORDS, TopCampingI18nPeer::ACTIVE_LOCALE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'SEO_TITLE', 'SEO_DESCRIPTION', 'SEO_H1', 'SEO_KEYWORDS', 'ACTIVE_LOCALE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'seo_title', 'seo_description', 'seo_h1', 'seo_keywords', 'active_locale', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
     );
 
     /**
@@ -97,12 +100,12 @@ abstract class BaseTopCampingI18nPeer
      * e.g. TopCampingI18nPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'SeoTitle' => 2, 'SeoDescription' => 3, 'SeoH1' => 4, 'SeoKeywords' => 5, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'seoTitle' => 2, 'seoDescription' => 3, 'seoH1' => 4, 'seoKeywords' => 5, ),
-        BasePeer::TYPE_COLNAME => array (TopCampingI18nPeer::ID => 0, TopCampingI18nPeer::LOCALE => 1, TopCampingI18nPeer::SEO_TITLE => 2, TopCampingI18nPeer::SEO_DESCRIPTION => 3, TopCampingI18nPeer::SEO_H1 => 4, TopCampingI18nPeer::SEO_KEYWORDS => 5, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'SEO_TITLE' => 2, 'SEO_DESCRIPTION' => 3, 'SEO_H1' => 4, 'SEO_KEYWORDS' => 5, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'seo_title' => 2, 'seo_description' => 3, 'seo_h1' => 4, 'seo_keywords' => 5, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'SeoTitle' => 2, 'SeoDescription' => 3, 'SeoH1' => 4, 'SeoKeywords' => 5, 'ActiveLocale' => 6, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'seoTitle' => 2, 'seoDescription' => 3, 'seoH1' => 4, 'seoKeywords' => 5, 'activeLocale' => 6, ),
+        BasePeer::TYPE_COLNAME => array (TopCampingI18nPeer::ID => 0, TopCampingI18nPeer::LOCALE => 1, TopCampingI18nPeer::SEO_TITLE => 2, TopCampingI18nPeer::SEO_DESCRIPTION => 3, TopCampingI18nPeer::SEO_H1 => 4, TopCampingI18nPeer::SEO_KEYWORDS => 5, TopCampingI18nPeer::ACTIVE_LOCALE => 6, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'SEO_TITLE' => 2, 'SEO_DESCRIPTION' => 3, 'SEO_H1' => 4, 'SEO_KEYWORDS' => 5, 'ACTIVE_LOCALE' => 6, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'seo_title' => 2, 'seo_description' => 3, 'seo_h1' => 4, 'seo_keywords' => 5, 'active_locale' => 6, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
     );
 
     /**
@@ -182,6 +185,7 @@ abstract class BaseTopCampingI18nPeer
             $criteria->addSelectColumn(TopCampingI18nPeer::SEO_DESCRIPTION);
             $criteria->addSelectColumn(TopCampingI18nPeer::SEO_H1);
             $criteria->addSelectColumn(TopCampingI18nPeer::SEO_KEYWORDS);
+            $criteria->addSelectColumn(TopCampingI18nPeer::ACTIVE_LOCALE);
         } else {
             $criteria->addSelectColumn($alias . '.id');
             $criteria->addSelectColumn($alias . '.locale');
@@ -189,6 +193,7 @@ abstract class BaseTopCampingI18nPeer
             $criteria->addSelectColumn($alias . '.seo_description');
             $criteria->addSelectColumn($alias . '.seo_h1');
             $criteria->addSelectColumn($alias . '.seo_keywords');
+            $criteria->addSelectColumn($alias . '.active_locale');
         }
     }
 

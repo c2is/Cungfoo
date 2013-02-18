@@ -112,13 +112,6 @@ class BaseServiceComplementaireType extends AppAwareType
                     'constraints' => array(
                     ),
                 ),
-                'active_locale' => array(
-                    'required' => false,
-                    'label' => 'service_complementaire.active_locale',
-                    'type' => 'checkbox',
-                    'constraints' => array(
-                    ),
-                ),
                 'seo_title' => array(
                     'required' => false,
                     'label' => 'service_complementaire.seo_title',
@@ -144,6 +137,13 @@ class BaseServiceComplementaireType extends AppAwareType
                     'required' => false,
                     'label' => 'service_complementaire.seo_keywords',
                     'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'active_locale' => array(
+                    'required' => false,
+                    'label' => 'service_complementaire.active_locale',
+                    'type' => 'checkbox',
                     'constraints' => array(
                     ),
                 ),
