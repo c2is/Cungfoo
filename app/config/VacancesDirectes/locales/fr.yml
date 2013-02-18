@@ -494,7 +494,7 @@ general:
     reserver: "Réserver"
     profite: "J'en profite"
     la_semaine: "la semaine"
-    contre_proposition: "ATTENTION ! Votre recherche ne donne aucun résultat. Les propositions ci-dessous sont celles qui s'en rapprochent le plus."
+    contre_proposition: "ATTENTION ! Votre recherche ne donne aucun résultat.<br />Les propositions ci-dessous sont celles qui s'en rapprochent le plus."
     submit: "Envoyer"
     logout: "Se déconnecter"
     nos_offres: "Nos offres"
@@ -633,7 +633,7 @@ resalys:
     session_expire: "Séjour indisponible"
     session_expire_texte_1: "Une erreur est survenue lors de la recherche de disponibilité."
     session_expire_texte_2: "Modifiez votre demande ou confiez-en le soin à notre équipe de réservation en appelant au 0 825 133 400 (0,15 €/min)."
-    non_connecte: "Afin de poursuivre votre réservation,<br /> Merci de vous connecter ou de vous créer un compte ci-dessus"
+    non_connecte: "Afin de poursuivre votre réservation,<br />Merci de vous connecter ou de vous créer un compte ci-dessus"
     retour_home: "Retourner sur la home"
 
 vos_week_ends: "Vos week-ends"
@@ -758,7 +758,7 @@ event:
     adresse: "Adresse :"
 
 global:
-    search_message: "Nous traitons actuellement votre demande. <br/><br/>Merci de bien vouloir patienter."
+    search_message: "Nous traitons actuellement votre demande.<br/><br/>Merci de bien vouloir patienter."
     compte:
         btn: "Mon compte"
         title: "vous êtes un client existant, veuillez vous identifier"
