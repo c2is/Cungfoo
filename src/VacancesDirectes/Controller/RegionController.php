@@ -43,7 +43,7 @@ class RegionController implements ControllerProviderInterface
 
         return $app->renderView('Destination/list_region.twig', array(
             'pays'       => $pays,
-            'metadata'   => RegionRefPeer::getMetadata(null, $app['context']->get('language')),
+            'metadata'   => RegionRefPeer::getMetadata($app['context']->get('language')),
             'searchForm' => $searchEngine->getView(),
         ));
     }

@@ -1650,7 +1650,7 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
     }
 
     // crudable behavior
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -1665,12 +1665,12 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
         {
             $this->resetModified(VosVacancesPeer::IMAGE_PATH);
         }
-    
+
         $this->uploadImagePath($form);
-        
+
         return $this->save($con);
     }
-    
+
     /**
      * @return string
      */
@@ -1678,7 +1678,7 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
     {
         return 'uploads/vos_vacancess';
     }
-    
+
     /**
      * @return string
      */
@@ -1686,7 +1686,7 @@ abstract class BaseVosVacances extends BaseObject implements Persistent
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void

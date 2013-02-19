@@ -2377,7 +2377,7 @@ abstract class BaseRegionRef extends BaseObject implements Persistent
     }
 
     // crudable behavior
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -2392,19 +2392,19 @@ abstract class BaseRegionRef extends BaseObject implements Persistent
         {
             $this->resetModified(RegionRefPeer::IMAGE_DETAIL_1);
         }
-    
+
         $this->uploadImageDetail1($form);
-        
+
         if (!$form['image_detail_2_deleted']->getData())
         {
             $this->resetModified(RegionRefPeer::IMAGE_DETAIL_2);
         }
-    
+
         $this->uploadImageDetail2($form);
-        
+
         return $this->save($con);
     }
-    
+
     /**
      * @return string
      */
@@ -2412,7 +2412,7 @@ abstract class BaseRegionRef extends BaseObject implements Persistent
     {
         return 'uploads/region_refs';
     }
-    
+
     /**
      * @return string
      */
@@ -2420,7 +2420,7 @@ abstract class BaseRegionRef extends BaseObject implements Persistent
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -2436,7 +2436,7 @@ abstract class BaseRegionRef extends BaseObject implements Persistent
             }
         }
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void

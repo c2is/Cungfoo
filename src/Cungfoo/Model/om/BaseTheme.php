@@ -3779,7 +3779,7 @@ abstract class BaseTheme extends BaseObject implements Persistent
     }
 
     // crudable behavior
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -3794,12 +3794,12 @@ abstract class BaseTheme extends BaseObject implements Persistent
         {
             $this->resetModified(ThemePeer::IMAGE_PATH);
         }
-    
+
         $this->uploadImagePath($form);
-        
+
         return $this->save($con);
     }
-    
+
     /**
      * @return string
      */
@@ -3807,7 +3807,7 @@ abstract class BaseTheme extends BaseObject implements Persistent
     {
         return 'uploads/themes';
     }
-    
+
     /**
      * @return string
      */
@@ -3815,7 +3815,7 @@ abstract class BaseTheme extends BaseObject implements Persistent
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
