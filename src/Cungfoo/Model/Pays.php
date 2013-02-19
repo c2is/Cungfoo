@@ -44,7 +44,7 @@ class Pays extends BasePays
             ->useI18nQuery()
                 ->orderByName()
             ->endUse()
-            ->findActive()
+            ->findActive($con)
         ;
     }
 }
