@@ -29,12 +29,14 @@
     <div id="results" class="clear">
         <div class="toggleContainer">
             {% for paysElement in pays %}
+            {% if paysElement.departementOrderByName.count %}
             <div class="toggleItem">{{ paysElement.name }}<span class="toggleArrow">&gt;</span></div>
             <div class="toggleContent primary">
                 {% for departement in paysElement.departementOrderByName %}
                 <a class="linkItem" href="{{ path('destination_departement',{'pays': paysElement.slug, 'departement': departement.slug}) }}">{{ departement.name }}<span class="toggleArrow">&gt;</span></a>
                 {% endfor %}
             </div>
+            {% endif %}
             {% endfor %}
         </div>
     </div>
