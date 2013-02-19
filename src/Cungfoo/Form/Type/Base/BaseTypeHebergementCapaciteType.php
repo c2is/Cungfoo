@@ -53,16 +53,16 @@ class BaseTypeHebergementCapaciteType extends AppAwareType
             'label' => 'type_hebergement_capacite.image_page_deleted',
             'required' => false,
         ));
-        $builder->add('active', 'checkbox', array(
-            'constraints' => array(
-            ),
-            'label' => 'type_hebergement_capacite.active',
-            'required' => false,
-        ));
         $builder->add('sortable_rank', 'integer', array(
             'constraints' => array(
             ),
             'label' => 'type_hebergement_capacite.sortable_rank',
+            'required' => false,
+        ));
+        $builder->add('active', 'checkbox', array(
+            'constraints' => array(
+            ),
+            'label' => 'type_hebergement_capacite.active',
             'required' => false,
         ));
         $builder->add('type_hebergement_capaciteI18ns', 'translation_collection', array(
@@ -98,6 +98,34 @@ class BaseTypeHebergementCapaciteType extends AppAwareType
                 'description' => array(
                     'required' => false,
                     'label' => 'type_hebergement_capacite.description',
+                    'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'seo_title' => array(
+                    'required' => false,
+                    'label' => 'type_hebergement_capacite.seo_title',
+                    'type' => 'text',
+                    'constraints' => array(
+                    ),
+                ),
+                'seo_description' => array(
+                    'required' => false,
+                    'label' => 'type_hebergement_capacite.seo_description',
+                    'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'seo_h1' => array(
+                    'required' => false,
+                    'label' => 'type_hebergement_capacite.seo_h1',
+                    'type' => 'text',
+                    'constraints' => array(
+                    ),
+                ),
+                'seo_keywords' => array(
+                    'required' => false,
+                    'label' => 'type_hebergement_capacite.seo_keywords',
                     'type' => 'textarea',
                     'constraints' => array(
                     ),

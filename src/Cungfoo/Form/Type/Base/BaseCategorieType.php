@@ -56,6 +56,34 @@ class BaseCategorieType extends AppAwareType
                         new Assert\NotBlank(),
                     ),
                 ),
+                'seo_title' => array(
+                    'required' => false,
+                    'label' => 'categorie.seo_title',
+                    'type' => 'text',
+                    'constraints' => array(
+                    ),
+                ),
+                'seo_description' => array(
+                    'required' => false,
+                    'label' => 'categorie.seo_description',
+                    'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'seo_h1' => array(
+                    'required' => false,
+                    'label' => 'categorie.seo_h1',
+                    'type' => 'text',
+                    'constraints' => array(
+                    ),
+                ),
+                'seo_keywords' => array(
+                    'required' => false,
+                    'label' => 'categorie.seo_keywords',
+                    'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
                 'active_locale' => array(
                     'required' => false,
                     'label' => 'categorie.active_locale',

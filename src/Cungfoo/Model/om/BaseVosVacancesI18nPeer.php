@@ -37,13 +37,13 @@ abstract class BaseVosVacancesI18nPeer
     const TM_CLASS = 'VosVacancesI18nTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 6;
+    const NUM_COLUMNS = 10;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 6;
+    const NUM_HYDRATE_COLUMNS = 10;
 
     /** the column name for the id field */
     const ID = 'vos_vacances_i18n.id';
@@ -59,6 +59,18 @@ abstract class BaseVosVacancesI18nPeer
 
     /** the column name for the prenom field */
     const PRENOM = 'vos_vacances_i18n.prenom';
+
+    /** the column name for the seo_title field */
+    const SEO_TITLE = 'vos_vacances_i18n.seo_title';
+
+    /** the column name for the seo_description field */
+    const SEO_DESCRIPTION = 'vos_vacances_i18n.seo_description';
+
+    /** the column name for the seo_h1 field */
+    const SEO_H1 = 'vos_vacances_i18n.seo_h1';
+
+    /** the column name for the seo_keywords field */
+    const SEO_KEYWORDS = 'vos_vacances_i18n.seo_keywords';
 
     /** the column name for the active_locale field */
     const ACTIVE_LOCALE = 'vos_vacances_i18n.active_locale';
@@ -82,12 +94,12 @@ abstract class BaseVosVacancesI18nPeer
      * e.g. VosVacancesI18nPeer::$fieldNames[VosVacancesI18nPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Titre', 'Description', 'Prenom', 'ActiveLocale', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'titre', 'description', 'prenom', 'activeLocale', ),
-        BasePeer::TYPE_COLNAME => array (VosVacancesI18nPeer::ID, VosVacancesI18nPeer::LOCALE, VosVacancesI18nPeer::TITRE, VosVacancesI18nPeer::DESCRIPTION, VosVacancesI18nPeer::PRENOM, VosVacancesI18nPeer::ACTIVE_LOCALE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'TITRE', 'DESCRIPTION', 'PRENOM', 'ACTIVE_LOCALE', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'titre', 'description', 'prenom', 'active_locale', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Titre', 'Description', 'Prenom', 'SeoTitle', 'SeoDescription', 'SeoH1', 'SeoKeywords', 'ActiveLocale', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'titre', 'description', 'prenom', 'seoTitle', 'seoDescription', 'seoH1', 'seoKeywords', 'activeLocale', ),
+        BasePeer::TYPE_COLNAME => array (VosVacancesI18nPeer::ID, VosVacancesI18nPeer::LOCALE, VosVacancesI18nPeer::TITRE, VosVacancesI18nPeer::DESCRIPTION, VosVacancesI18nPeer::PRENOM, VosVacancesI18nPeer::SEO_TITLE, VosVacancesI18nPeer::SEO_DESCRIPTION, VosVacancesI18nPeer::SEO_H1, VosVacancesI18nPeer::SEO_KEYWORDS, VosVacancesI18nPeer::ACTIVE_LOCALE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'TITRE', 'DESCRIPTION', 'PRENOM', 'SEO_TITLE', 'SEO_DESCRIPTION', 'SEO_H1', 'SEO_KEYWORDS', 'ACTIVE_LOCALE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'titre', 'description', 'prenom', 'seo_title', 'seo_description', 'seo_h1', 'seo_keywords', 'active_locale', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, )
     );
 
     /**
@@ -97,12 +109,12 @@ abstract class BaseVosVacancesI18nPeer
      * e.g. VosVacancesI18nPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Titre' => 2, 'Description' => 3, 'Prenom' => 4, 'ActiveLocale' => 5, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'titre' => 2, 'description' => 3, 'prenom' => 4, 'activeLocale' => 5, ),
-        BasePeer::TYPE_COLNAME => array (VosVacancesI18nPeer::ID => 0, VosVacancesI18nPeer::LOCALE => 1, VosVacancesI18nPeer::TITRE => 2, VosVacancesI18nPeer::DESCRIPTION => 3, VosVacancesI18nPeer::PRENOM => 4, VosVacancesI18nPeer::ACTIVE_LOCALE => 5, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'TITRE' => 2, 'DESCRIPTION' => 3, 'PRENOM' => 4, 'ACTIVE_LOCALE' => 5, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'titre' => 2, 'description' => 3, 'prenom' => 4, 'active_locale' => 5, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Titre' => 2, 'Description' => 3, 'Prenom' => 4, 'SeoTitle' => 5, 'SeoDescription' => 6, 'SeoH1' => 7, 'SeoKeywords' => 8, 'ActiveLocale' => 9, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'titre' => 2, 'description' => 3, 'prenom' => 4, 'seoTitle' => 5, 'seoDescription' => 6, 'seoH1' => 7, 'seoKeywords' => 8, 'activeLocale' => 9, ),
+        BasePeer::TYPE_COLNAME => array (VosVacancesI18nPeer::ID => 0, VosVacancesI18nPeer::LOCALE => 1, VosVacancesI18nPeer::TITRE => 2, VosVacancesI18nPeer::DESCRIPTION => 3, VosVacancesI18nPeer::PRENOM => 4, VosVacancesI18nPeer::SEO_TITLE => 5, VosVacancesI18nPeer::SEO_DESCRIPTION => 6, VosVacancesI18nPeer::SEO_H1 => 7, VosVacancesI18nPeer::SEO_KEYWORDS => 8, VosVacancesI18nPeer::ACTIVE_LOCALE => 9, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'TITRE' => 2, 'DESCRIPTION' => 3, 'PRENOM' => 4, 'SEO_TITLE' => 5, 'SEO_DESCRIPTION' => 6, 'SEO_H1' => 7, 'SEO_KEYWORDS' => 8, 'ACTIVE_LOCALE' => 9, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'titre' => 2, 'description' => 3, 'prenom' => 4, 'seo_title' => 5, 'seo_description' => 6, 'seo_h1' => 7, 'seo_keywords' => 8, 'active_locale' => 9, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, )
     );
 
     /**
@@ -181,6 +193,10 @@ abstract class BaseVosVacancesI18nPeer
             $criteria->addSelectColumn(VosVacancesI18nPeer::TITRE);
             $criteria->addSelectColumn(VosVacancesI18nPeer::DESCRIPTION);
             $criteria->addSelectColumn(VosVacancesI18nPeer::PRENOM);
+            $criteria->addSelectColumn(VosVacancesI18nPeer::SEO_TITLE);
+            $criteria->addSelectColumn(VosVacancesI18nPeer::SEO_DESCRIPTION);
+            $criteria->addSelectColumn(VosVacancesI18nPeer::SEO_H1);
+            $criteria->addSelectColumn(VosVacancesI18nPeer::SEO_KEYWORDS);
             $criteria->addSelectColumn(VosVacancesI18nPeer::ACTIVE_LOCALE);
         } else {
             $criteria->addSelectColumn($alias . '.id');
@@ -188,6 +204,10 @@ abstract class BaseVosVacancesI18nPeer
             $criteria->addSelectColumn($alias . '.titre');
             $criteria->addSelectColumn($alias . '.description');
             $criteria->addSelectColumn($alias . '.prenom');
+            $criteria->addSelectColumn($alias . '.seo_title');
+            $criteria->addSelectColumn($alias . '.seo_description');
+            $criteria->addSelectColumn($alias . '.seo_h1');
+            $criteria->addSelectColumn($alias . '.seo_keywords');
             $criteria->addSelectColumn($alias . '.active_locale');
         }
     }

@@ -4,5 +4,3 @@ resalys:
   role: ROLE_ADMIN
 viafrance:
   role: ROLE_ADMIN
-i18n_admin:
-  role: ROLE_ADMIN

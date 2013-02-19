@@ -27,16 +27,16 @@ class BaseBonPlanCategorieType extends AppAwareType
             'label' => 'bon_plan_categorie.id',
             'required' => false,
         ));
-        $builder->add('active', 'checkbox', array(
-            'constraints' => array(
-            ),
-            'label' => 'bon_plan_categorie.active',
-            'required' => false,
-        ));
         $builder->add('sortable_rank', 'integer', array(
             'constraints' => array(
             ),
             'label' => 'bon_plan_categorie.sortable_rank',
+            'required' => false,
+        ));
+        $builder->add('active', 'checkbox', array(
+            'constraints' => array(
+            ),
+            'label' => 'bon_plan_categorie.active',
             'required' => false,
         ));
         $builder->add('bon_plans', 'model', array(
@@ -79,6 +79,34 @@ class BaseBonPlanCategorieType extends AppAwareType
                 'description' => array(
                     'required' => false,
                     'label' => 'bon_plan_categorie.description',
+                    'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'seo_title' => array(
+                    'required' => false,
+                    'label' => 'bon_plan_categorie.seo_title',
+                    'type' => 'text',
+                    'constraints' => array(
+                    ),
+                ),
+                'seo_description' => array(
+                    'required' => false,
+                    'label' => 'bon_plan_categorie.seo_description',
+                    'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'seo_h1' => array(
+                    'required' => false,
+                    'label' => 'bon_plan_categorie.seo_h1',
+                    'type' => 'text',
+                    'constraints' => array(
+                    ),
+                ),
+                'seo_keywords' => array(
+                    'required' => false,
+                    'label' => 'bon_plan_categorie.seo_keywords',
                     'type' => 'textarea',
                     'constraints' => array(
                     ),

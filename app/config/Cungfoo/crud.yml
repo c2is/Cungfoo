@@ -138,3 +138,7 @@ crud:
             prefix: /metadata
             model: \Cungfoo\Model\Metadata
             form: \Cungfoo\Form\Type\MetadataType
+        seo:
+            prefix: /seo
+            model: \Cungfoo\Model\Seo
+            form: \Cungfoo\Form\Type\SeoType

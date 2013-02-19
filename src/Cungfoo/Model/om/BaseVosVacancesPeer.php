@@ -795,6 +795,20 @@ abstract class BaseVosVacancesPeer
             ->findOne()
         ;
     }
+    // seo behavior
+    
+    /**
+     * The default locale to use for translations
+     * @var        string
+     */
+    public static function getSeo(PropelPDO $con = null)
+    {
+        return \Cungfoo\Model\SeoQuery::create()
+            ->joinWithI18n()
+            ->filterByTableRef(VosVacancesPeer::TABLE_NAME)
+            ->findOne()
+        ;
+    }
 } // BaseVosVacancesPeer
 
 // This is the static code needed to register the TableMap for this table with the main Propel class.

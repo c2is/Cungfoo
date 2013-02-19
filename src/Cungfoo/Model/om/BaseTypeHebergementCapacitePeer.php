@@ -62,11 +62,11 @@ abstract class BaseTypeHebergementCapacitePeer
     /** the column name for the updated_at field */
     const UPDATED_AT = 'type_hebergement_capacite.updated_at';
 
-    /** the column name for the active field */
-    const ACTIVE = 'type_hebergement_capacite.active';
-
     /** the column name for the sortable_rank field */
     const SORTABLE_RANK = 'type_hebergement_capacite.sortable_rank';
+
+    /** the column name for the active field */
+    const ACTIVE = 'type_hebergement_capacite.active';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -101,11 +101,11 @@ abstract class BaseTypeHebergementCapacitePeer
      * e.g. TypeHebergementCapacitePeer::$fieldNames[TypeHebergementCapacitePeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'ImageMenu', 'ImagePage', 'CreatedAt', 'UpdatedAt', 'Active', 'SortableRank', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'imageMenu', 'imagePage', 'createdAt', 'updatedAt', 'active', 'sortableRank', ),
-        BasePeer::TYPE_COLNAME => array (TypeHebergementCapacitePeer::ID, TypeHebergementCapacitePeer::IMAGE_MENU, TypeHebergementCapacitePeer::IMAGE_PAGE, TypeHebergementCapacitePeer::CREATED_AT, TypeHebergementCapacitePeer::UPDATED_AT, TypeHebergementCapacitePeer::ACTIVE, TypeHebergementCapacitePeer::SORTABLE_RANK, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'IMAGE_MENU', 'IMAGE_PAGE', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', 'SORTABLE_RANK', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'image_menu', 'image_page', 'created_at', 'updated_at', 'active', 'sortable_rank', ),
+        BasePeer::TYPE_PHPNAME => array ('Id', 'ImageMenu', 'ImagePage', 'CreatedAt', 'UpdatedAt', 'SortableRank', 'Active', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'imageMenu', 'imagePage', 'createdAt', 'updatedAt', 'sortableRank', 'active', ),
+        BasePeer::TYPE_COLNAME => array (TypeHebergementCapacitePeer::ID, TypeHebergementCapacitePeer::IMAGE_MENU, TypeHebergementCapacitePeer::IMAGE_PAGE, TypeHebergementCapacitePeer::CREATED_AT, TypeHebergementCapacitePeer::UPDATED_AT, TypeHebergementCapacitePeer::SORTABLE_RANK, TypeHebergementCapacitePeer::ACTIVE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'IMAGE_MENU', 'IMAGE_PAGE', 'CREATED_AT', 'UPDATED_AT', 'SORTABLE_RANK', 'ACTIVE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'image_menu', 'image_page', 'created_at', 'updated_at', 'sortable_rank', 'active', ),
         BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
     );
 
@@ -116,11 +116,11 @@ abstract class BaseTypeHebergementCapacitePeer
      * e.g. TypeHebergementCapacitePeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'ImageMenu' => 1, 'ImagePage' => 2, 'CreatedAt' => 3, 'UpdatedAt' => 4, 'Active' => 5, 'SortableRank' => 6, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'imageMenu' => 1, 'imagePage' => 2, 'createdAt' => 3, 'updatedAt' => 4, 'active' => 5, 'sortableRank' => 6, ),
-        BasePeer::TYPE_COLNAME => array (TypeHebergementCapacitePeer::ID => 0, TypeHebergementCapacitePeer::IMAGE_MENU => 1, TypeHebergementCapacitePeer::IMAGE_PAGE => 2, TypeHebergementCapacitePeer::CREATED_AT => 3, TypeHebergementCapacitePeer::UPDATED_AT => 4, TypeHebergementCapacitePeer::ACTIVE => 5, TypeHebergementCapacitePeer::SORTABLE_RANK => 6, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'IMAGE_MENU' => 1, 'IMAGE_PAGE' => 2, 'CREATED_AT' => 3, 'UPDATED_AT' => 4, 'ACTIVE' => 5, 'SORTABLE_RANK' => 6, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'image_menu' => 1, 'image_page' => 2, 'created_at' => 3, 'updated_at' => 4, 'active' => 5, 'sortable_rank' => 6, ),
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'ImageMenu' => 1, 'ImagePage' => 2, 'CreatedAt' => 3, 'UpdatedAt' => 4, 'SortableRank' => 5, 'Active' => 6, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'imageMenu' => 1, 'imagePage' => 2, 'createdAt' => 3, 'updatedAt' => 4, 'sortableRank' => 5, 'active' => 6, ),
+        BasePeer::TYPE_COLNAME => array (TypeHebergementCapacitePeer::ID => 0, TypeHebergementCapacitePeer::IMAGE_MENU => 1, TypeHebergementCapacitePeer::IMAGE_PAGE => 2, TypeHebergementCapacitePeer::CREATED_AT => 3, TypeHebergementCapacitePeer::UPDATED_AT => 4, TypeHebergementCapacitePeer::SORTABLE_RANK => 5, TypeHebergementCapacitePeer::ACTIVE => 6, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'IMAGE_MENU' => 1, 'IMAGE_PAGE' => 2, 'CREATED_AT' => 3, 'UPDATED_AT' => 4, 'SORTABLE_RANK' => 5, 'ACTIVE' => 6, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'image_menu' => 1, 'image_page' => 2, 'created_at' => 3, 'updated_at' => 4, 'sortable_rank' => 5, 'active' => 6, ),
         BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
     );
 
@@ -200,16 +200,16 @@ abstract class BaseTypeHebergementCapacitePeer
             $criteria->addSelectColumn(TypeHebergementCapacitePeer::IMAGE_PAGE);
             $criteria->addSelectColumn(TypeHebergementCapacitePeer::CREATED_AT);
             $criteria->addSelectColumn(TypeHebergementCapacitePeer::UPDATED_AT);
-            $criteria->addSelectColumn(TypeHebergementCapacitePeer::ACTIVE);
             $criteria->addSelectColumn(TypeHebergementCapacitePeer::SORTABLE_RANK);
+            $criteria->addSelectColumn(TypeHebergementCapacitePeer::ACTIVE);
         } else {
             $criteria->addSelectColumn($alias . '.id');
             $criteria->addSelectColumn($alias . '.image_menu');
             $criteria->addSelectColumn($alias . '.image_page');
             $criteria->addSelectColumn($alias . '.created_at');
             $criteria->addSelectColumn($alias . '.updated_at');
-            $criteria->addSelectColumn($alias . '.active');
             $criteria->addSelectColumn($alias . '.sortable_rank');
+            $criteria->addSelectColumn($alias . '.active');
         }
     }
 
@@ -957,6 +957,20 @@ abstract class BaseTypeHebergementCapacitePeer
     public static function getMetadata(PropelPDO $con = null)
     {
         return \Cungfoo\Model\MetadataQuery::create()
+            ->joinWithI18n()
+            ->filterByTableRef(TypeHebergementCapacitePeer::TABLE_NAME)
+            ->findOne()
+        ;
+    }
+    // seo behavior
+    
+    /**
+     * The default locale to use for translations
+     * @var        string
+     */
+    public static function getSeo(PropelPDO $con = null)
+    {
+        return \Cungfoo\Model\SeoQuery::create()
             ->joinWithI18n()
             ->filterByTableRef(TypeHebergementCapacitePeer::TABLE_NAME)
             ->findOne()

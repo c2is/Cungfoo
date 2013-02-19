@@ -37,13 +37,13 @@ abstract class BaseCategorieI18nPeer
     const TM_CLASS = 'CategorieI18nTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 4;
+    const NUM_COLUMNS = 8;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 4;
+    const NUM_HYDRATE_COLUMNS = 8;
 
     /** the column name for the id field */
     const ID = 'categorie_i18n.id';
@@ -53,6 +53,18 @@ abstract class BaseCategorieI18nPeer
 
     /** the column name for the name field */
     const NAME = 'categorie_i18n.name';
+
+    /** the column name for the seo_title field */
+    const SEO_TITLE = 'categorie_i18n.seo_title';
+
+    /** the column name for the seo_description field */
+    const SEO_DESCRIPTION = 'categorie_i18n.seo_description';
+
+    /** the column name for the seo_h1 field */
+    const SEO_H1 = 'categorie_i18n.seo_h1';
+
+    /** the column name for the seo_keywords field */
+    const SEO_KEYWORDS = 'categorie_i18n.seo_keywords';
 
     /** the column name for the active_locale field */
     const ACTIVE_LOCALE = 'categorie_i18n.active_locale';
@@ -76,12 +88,12 @@ abstract class BaseCategorieI18nPeer
      * e.g. CategorieI18nPeer::$fieldNames[CategorieI18nPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Name', 'ActiveLocale', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'name', 'activeLocale', ),
-        BasePeer::TYPE_COLNAME => array (CategorieI18nPeer::ID, CategorieI18nPeer::LOCALE, CategorieI18nPeer::NAME, CategorieI18nPeer::ACTIVE_LOCALE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'NAME', 'ACTIVE_LOCALE', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'name', 'active_locale', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Name', 'SeoTitle', 'SeoDescription', 'SeoH1', 'SeoKeywords', 'ActiveLocale', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'name', 'seoTitle', 'seoDescription', 'seoH1', 'seoKeywords', 'activeLocale', ),
+        BasePeer::TYPE_COLNAME => array (CategorieI18nPeer::ID, CategorieI18nPeer::LOCALE, CategorieI18nPeer::NAME, CategorieI18nPeer::SEO_TITLE, CategorieI18nPeer::SEO_DESCRIPTION, CategorieI18nPeer::SEO_H1, CategorieI18nPeer::SEO_KEYWORDS, CategorieI18nPeer::ACTIVE_LOCALE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'NAME', 'SEO_TITLE', 'SEO_DESCRIPTION', 'SEO_H1', 'SEO_KEYWORDS', 'ACTIVE_LOCALE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'name', 'seo_title', 'seo_description', 'seo_h1', 'seo_keywords', 'active_locale', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, )
     );
 
     /**
@@ -91,12 +103,12 @@ abstract class BaseCategorieI18nPeer
      * e.g. CategorieI18nPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Name' => 2, 'ActiveLocale' => 3, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'activeLocale' => 3, ),
-        BasePeer::TYPE_COLNAME => array (CategorieI18nPeer::ID => 0, CategorieI18nPeer::LOCALE => 1, CategorieI18nPeer::NAME => 2, CategorieI18nPeer::ACTIVE_LOCALE => 3, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'NAME' => 2, 'ACTIVE_LOCALE' => 3, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'active_locale' => 3, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Name' => 2, 'SeoTitle' => 3, 'SeoDescription' => 4, 'SeoH1' => 5, 'SeoKeywords' => 6, 'ActiveLocale' => 7, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'seoTitle' => 3, 'seoDescription' => 4, 'seoH1' => 5, 'seoKeywords' => 6, 'activeLocale' => 7, ),
+        BasePeer::TYPE_COLNAME => array (CategorieI18nPeer::ID => 0, CategorieI18nPeer::LOCALE => 1, CategorieI18nPeer::NAME => 2, CategorieI18nPeer::SEO_TITLE => 3, CategorieI18nPeer::SEO_DESCRIPTION => 4, CategorieI18nPeer::SEO_H1 => 5, CategorieI18nPeer::SEO_KEYWORDS => 6, CategorieI18nPeer::ACTIVE_LOCALE => 7, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'NAME' => 2, 'SEO_TITLE' => 3, 'SEO_DESCRIPTION' => 4, 'SEO_H1' => 5, 'SEO_KEYWORDS' => 6, 'ACTIVE_LOCALE' => 7, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'seo_title' => 3, 'seo_description' => 4, 'seo_h1' => 5, 'seo_keywords' => 6, 'active_locale' => 7, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, )
     );
 
     /**
@@ -173,11 +185,19 @@ abstract class BaseCategorieI18nPeer
             $criteria->addSelectColumn(CategorieI18nPeer::ID);
             $criteria->addSelectColumn(CategorieI18nPeer::LOCALE);
             $criteria->addSelectColumn(CategorieI18nPeer::NAME);
+            $criteria->addSelectColumn(CategorieI18nPeer::SEO_TITLE);
+            $criteria->addSelectColumn(CategorieI18nPeer::SEO_DESCRIPTION);
+            $criteria->addSelectColumn(CategorieI18nPeer::SEO_H1);
+            $criteria->addSelectColumn(CategorieI18nPeer::SEO_KEYWORDS);
             $criteria->addSelectColumn(CategorieI18nPeer::ACTIVE_LOCALE);
         } else {
             $criteria->addSelectColumn($alias . '.id');
             $criteria->addSelectColumn($alias . '.locale');
             $criteria->addSelectColumn($alias . '.name');
+            $criteria->addSelectColumn($alias . '.seo_title');
+            $criteria->addSelectColumn($alias . '.seo_description');
+            $criteria->addSelectColumn($alias . '.seo_h1');
+            $criteria->addSelectColumn($alias . '.seo_keywords');
             $criteria->addSelectColumn($alias . '.active_locale');
         }
     }

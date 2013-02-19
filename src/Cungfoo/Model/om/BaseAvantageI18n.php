@@ -71,6 +71,30 @@ abstract class BaseAvantageI18n extends BaseObject implements Persistent
     protected $description;
 
     /**
+     * The value for the seo_title field.
+     * @var        string
+     */
+    protected $seo_title;
+
+    /**
+     * The value for the seo_description field.
+     * @var        string
+     */
+    protected $seo_description;
+
+    /**
+     * The value for the seo_h1 field.
+     * @var        string
+     */
+    protected $seo_h1;
+
+    /**
+     * The value for the seo_keywords field.
+     * @var        string
+     */
+    protected $seo_keywords;
+
+    /**
      * The value for the active_locale field.
      * Note: this column has a database default value of: false
      * @var        boolean
@@ -156,6 +180,46 @@ abstract class BaseAvantageI18n extends BaseObject implements Persistent
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Get the [seo_title] column value.
+     *
+     * @return string
+     */
+    public function getSeoTitle()
+    {
+        return $this->seo_title;
+    }
+
+    /**
+     * Get the [seo_description] column value.
+     *
+     * @return string
+     */
+    public function getSeoDescription()
+    {
+        return $this->seo_description;
+    }
+
+    /**
+     * Get the [seo_h1] column value.
+     *
+     * @return string
+     */
+    public function getSeoH1()
+    {
+        return $this->seo_h1;
+    }
+
+    /**
+     * Get the [seo_keywords] column value.
+     *
+     * @return string
+     */
+    public function getSeoKeywords()
+    {
+        return $this->seo_keywords;
     }
 
     /**
@@ -257,6 +321,90 @@ abstract class BaseAvantageI18n extends BaseObject implements Persistent
     } // setDescription()
 
     /**
+     * Set the value of [seo_title] column.
+     *
+     * @param string $v new value
+     * @return AvantageI18n The current object (for fluent API support)
+     */
+    public function setSeoTitle($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->seo_title !== $v) {
+            $this->seo_title = $v;
+            $this->modifiedColumns[] = AvantageI18nPeer::SEO_TITLE;
+        }
+
+
+        return $this;
+    } // setSeoTitle()
+
+    /**
+     * Set the value of [seo_description] column.
+     *
+     * @param string $v new value
+     * @return AvantageI18n The current object (for fluent API support)
+     */
+    public function setSeoDescription($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->seo_description !== $v) {
+            $this->seo_description = $v;
+            $this->modifiedColumns[] = AvantageI18nPeer::SEO_DESCRIPTION;
+        }
+
+
+        return $this;
+    } // setSeoDescription()
+
+    /**
+     * Set the value of [seo_h1] column.
+     *
+     * @param string $v new value
+     * @return AvantageI18n The current object (for fluent API support)
+     */
+    public function setSeoH1($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->seo_h1 !== $v) {
+            $this->seo_h1 = $v;
+            $this->modifiedColumns[] = AvantageI18nPeer::SEO_H1;
+        }
+
+
+        return $this;
+    } // setSeoH1()
+
+    /**
+     * Set the value of [seo_keywords] column.
+     *
+     * @param string $v new value
+     * @return AvantageI18n The current object (for fluent API support)
+     */
+    public function setSeoKeywords($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->seo_keywords !== $v) {
+            $this->seo_keywords = $v;
+            $this->modifiedColumns[] = AvantageI18nPeer::SEO_KEYWORDS;
+        }
+
+
+        return $this;
+    } // setSeoKeywords()
+
+    /**
      * Sets the value of the [active_locale] column.
      * Non-boolean arguments are converted using the following rules:
      *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
@@ -329,7 +477,11 @@ abstract class BaseAvantageI18n extends BaseObject implements Persistent
             $this->locale = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
             $this->name = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
             $this->description = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
-            $this->active_locale = ($row[$startcol + 4] !== null) ? (boolean) $row[$startcol + 4] : null;
+            $this->seo_title = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
+            $this->seo_description = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
+            $this->seo_h1 = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
+            $this->seo_keywords = ($row[$startcol + 7] !== null) ? (string) $row[$startcol + 7] : null;
+            $this->active_locale = ($row[$startcol + 8] !== null) ? (boolean) $row[$startcol + 8] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -338,7 +490,7 @@ abstract class BaseAvantageI18n extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 5; // 5 = AvantageI18nPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 9; // 9 = AvantageI18nPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating AvantageI18n object", $e);
@@ -574,6 +726,18 @@ abstract class BaseAvantageI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(AvantageI18nPeer::DESCRIPTION)) {
             $modifiedColumns[':p' . $index++]  = '`description`';
         }
+        if ($this->isColumnModified(AvantageI18nPeer::SEO_TITLE)) {
+            $modifiedColumns[':p' . $index++]  = '`seo_title`';
+        }
+        if ($this->isColumnModified(AvantageI18nPeer::SEO_DESCRIPTION)) {
+            $modifiedColumns[':p' . $index++]  = '`seo_description`';
+        }
+        if ($this->isColumnModified(AvantageI18nPeer::SEO_H1)) {
+            $modifiedColumns[':p' . $index++]  = '`seo_h1`';
+        }
+        if ($this->isColumnModified(AvantageI18nPeer::SEO_KEYWORDS)) {
+            $modifiedColumns[':p' . $index++]  = '`seo_keywords`';
+        }
         if ($this->isColumnModified(AvantageI18nPeer::ACTIVE_LOCALE)) {
             $modifiedColumns[':p' . $index++]  = '`active_locale`';
         }
@@ -599,6 +763,18 @@ abstract class BaseAvantageI18n extends BaseObject implements Persistent
                         break;
                     case '`description`':
                         $stmt->bindValue($identifier, $this->description, PDO::PARAM_STR);
+                        break;
+                    case '`seo_title`':
+                        $stmt->bindValue($identifier, $this->seo_title, PDO::PARAM_STR);
+                        break;
+                    case '`seo_description`':
+                        $stmt->bindValue($identifier, $this->seo_description, PDO::PARAM_STR);
+                        break;
+                    case '`seo_h1`':
+                        $stmt->bindValue($identifier, $this->seo_h1, PDO::PARAM_STR);
+                        break;
+                    case '`seo_keywords`':
+                        $stmt->bindValue($identifier, $this->seo_keywords, PDO::PARAM_STR);
                         break;
                     case '`active_locale`':
                         $stmt->bindValue($identifier, (int) $this->active_locale, PDO::PARAM_INT);
@@ -755,6 +931,18 @@ abstract class BaseAvantageI18n extends BaseObject implements Persistent
                 return $this->getDescription();
                 break;
             case 4:
+                return $this->getSeoTitle();
+                break;
+            case 5:
+                return $this->getSeoDescription();
+                break;
+            case 6:
+                return $this->getSeoH1();
+                break;
+            case 7:
+                return $this->getSeoKeywords();
+                break;
+            case 8:
                 return $this->getActiveLocale();
                 break;
             default:
@@ -790,7 +978,11 @@ abstract class BaseAvantageI18n extends BaseObject implements Persistent
             $keys[1] => $this->getLocale(),
             $keys[2] => $this->getName(),
             $keys[3] => $this->getDescription(),
-            $keys[4] => $this->getActiveLocale(),
+            $keys[4] => $this->getSeoTitle(),
+            $keys[5] => $this->getSeoDescription(),
+            $keys[6] => $this->getSeoH1(),
+            $keys[7] => $this->getSeoKeywords(),
+            $keys[8] => $this->getActiveLocale(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aAvantage) {
@@ -843,6 +1035,18 @@ abstract class BaseAvantageI18n extends BaseObject implements Persistent
                 $this->setDescription($value);
                 break;
             case 4:
+                $this->setSeoTitle($value);
+                break;
+            case 5:
+                $this->setSeoDescription($value);
+                break;
+            case 6:
+                $this->setSeoH1($value);
+                break;
+            case 7:
+                $this->setSeoKeywords($value);
+                break;
+            case 8:
                 $this->setActiveLocale($value);
                 break;
         } // switch()
@@ -873,7 +1077,11 @@ abstract class BaseAvantageI18n extends BaseObject implements Persistent
         if (array_key_exists($keys[1], $arr)) $this->setLocale($arr[$keys[1]]);
         if (array_key_exists($keys[2], $arr)) $this->setName($arr[$keys[2]]);
         if (array_key_exists($keys[3], $arr)) $this->setDescription($arr[$keys[3]]);
-        if (array_key_exists($keys[4], $arr)) $this->setActiveLocale($arr[$keys[4]]);
+        if (array_key_exists($keys[4], $arr)) $this->setSeoTitle($arr[$keys[4]]);
+        if (array_key_exists($keys[5], $arr)) $this->setSeoDescription($arr[$keys[5]]);
+        if (array_key_exists($keys[6], $arr)) $this->setSeoH1($arr[$keys[6]]);
+        if (array_key_exists($keys[7], $arr)) $this->setSeoKeywords($arr[$keys[7]]);
+        if (array_key_exists($keys[8], $arr)) $this->setActiveLocale($arr[$keys[8]]);
     }
 
     /**
@@ -889,6 +1097,10 @@ abstract class BaseAvantageI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(AvantageI18nPeer::LOCALE)) $criteria->add(AvantageI18nPeer::LOCALE, $this->locale);
         if ($this->isColumnModified(AvantageI18nPeer::NAME)) $criteria->add(AvantageI18nPeer::NAME, $this->name);
         if ($this->isColumnModified(AvantageI18nPeer::DESCRIPTION)) $criteria->add(AvantageI18nPeer::DESCRIPTION, $this->description);
+        if ($this->isColumnModified(AvantageI18nPeer::SEO_TITLE)) $criteria->add(AvantageI18nPeer::SEO_TITLE, $this->seo_title);
+        if ($this->isColumnModified(AvantageI18nPeer::SEO_DESCRIPTION)) $criteria->add(AvantageI18nPeer::SEO_DESCRIPTION, $this->seo_description);
+        if ($this->isColumnModified(AvantageI18nPeer::SEO_H1)) $criteria->add(AvantageI18nPeer::SEO_H1, $this->seo_h1);
+        if ($this->isColumnModified(AvantageI18nPeer::SEO_KEYWORDS)) $criteria->add(AvantageI18nPeer::SEO_KEYWORDS, $this->seo_keywords);
         if ($this->isColumnModified(AvantageI18nPeer::ACTIVE_LOCALE)) $criteria->add(AvantageI18nPeer::ACTIVE_LOCALE, $this->active_locale);
 
         return $criteria;
@@ -964,6 +1176,10 @@ abstract class BaseAvantageI18n extends BaseObject implements Persistent
         $copyObj->setLocale($this->getLocale());
         $copyObj->setName($this->getName());
         $copyObj->setDescription($this->getDescription());
+        $copyObj->setSeoTitle($this->getSeoTitle());
+        $copyObj->setSeoDescription($this->getSeoDescription());
+        $copyObj->setSeoH1($this->getSeoH1());
+        $copyObj->setSeoKeywords($this->getSeoKeywords());
         $copyObj->setActiveLocale($this->getActiveLocale());
 
         if ($deepCopy && !$this->startCopy) {
@@ -1083,6 +1299,10 @@ abstract class BaseAvantageI18n extends BaseObject implements Persistent
         $this->locale = null;
         $this->name = null;
         $this->description = null;
+        $this->seo_title = null;
+        $this->seo_description = null;
+        $this->seo_h1 = null;
+        $this->seo_keywords = null;
         $this->active_locale = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;

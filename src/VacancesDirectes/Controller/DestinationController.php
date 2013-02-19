@@ -341,12 +341,6 @@ class DestinationController implements ControllerProviderInterface
                 break;
         }
 
-        $title = $app->trans('destination.' . strtolower($objectName) . '_title', array('%item%' => $object->getName()));
-        if (get_class($object) == 'Cungfoo\Model\Destination')
-        {
-            $title = $app->trans('destination.destination.' . $object->getCode() . '.title');
-        }
-
         return $app->renderView(sprintf('Destination/%s.twig', strtolower($objectName)), array(
             'locale'          => $locale,
             'item'            => $object,
@@ -358,7 +352,7 @@ class DestinationController implements ControllerProviderInterface
             'firstEtab'       => $firstEtab,
             'searchForm'      => $searchEngine->getView(),
             'imagesTitle'     => $app->trans('destination.images_' . strtolower($objectName) . '_title'),
-            'title'           => $title,
+            'title'           => $app->trans($object->getSeoH1(), array('%item%' => $object->getName())),
             'urlCanonical'    => $urlCanonical
         ));
     }

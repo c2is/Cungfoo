@@ -37,13 +37,13 @@ abstract class BaseMetadataI18nPeer
     const TM_CLASS = 'MetadataI18nTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 5;
+    const NUM_COLUMNS = 9;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 5;
+    const NUM_HYDRATE_COLUMNS = 9;
 
     /** the column name for the id field */
     const ID = 'metadata_i18n.id';
@@ -59,6 +59,18 @@ abstract class BaseMetadataI18nPeer
 
     /** the column name for the accroche field */
     const ACCROCHE = 'metadata_i18n.accroche';
+
+    /** the column name for the seo_title field */
+    const SEO_TITLE = 'metadata_i18n.seo_title';
+
+    /** the column name for the seo_description field */
+    const SEO_DESCRIPTION = 'metadata_i18n.seo_description';
+
+    /** the column name for the seo_h1 field */
+    const SEO_H1 = 'metadata_i18n.seo_h1';
+
+    /** the column name for the seo_keywords field */
+    const SEO_KEYWORDS = 'metadata_i18n.seo_keywords';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -79,12 +91,12 @@ abstract class BaseMetadataI18nPeer
      * e.g. MetadataI18nPeer::$fieldNames[MetadataI18nPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Title', 'Subtitle', 'Accroche', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'title', 'subtitle', 'accroche', ),
-        BasePeer::TYPE_COLNAME => array (MetadataI18nPeer::ID, MetadataI18nPeer::LOCALE, MetadataI18nPeer::TITLE, MetadataI18nPeer::SUBTITLE, MetadataI18nPeer::ACCROCHE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'TITLE', 'SUBTITLE', 'ACCROCHE', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'title', 'subtitle', 'accroche', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Title', 'Subtitle', 'Accroche', 'SeoTitle', 'SeoDescription', 'SeoH1', 'SeoKeywords', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'title', 'subtitle', 'accroche', 'seoTitle', 'seoDescription', 'seoH1', 'seoKeywords', ),
+        BasePeer::TYPE_COLNAME => array (MetadataI18nPeer::ID, MetadataI18nPeer::LOCALE, MetadataI18nPeer::TITLE, MetadataI18nPeer::SUBTITLE, MetadataI18nPeer::ACCROCHE, MetadataI18nPeer::SEO_TITLE, MetadataI18nPeer::SEO_DESCRIPTION, MetadataI18nPeer::SEO_H1, MetadataI18nPeer::SEO_KEYWORDS, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'TITLE', 'SUBTITLE', 'ACCROCHE', 'SEO_TITLE', 'SEO_DESCRIPTION', 'SEO_H1', 'SEO_KEYWORDS', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'title', 'subtitle', 'accroche', 'seo_title', 'seo_description', 'seo_h1', 'seo_keywords', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, )
     );
 
     /**
@@ -94,12 +106,12 @@ abstract class BaseMetadataI18nPeer
      * e.g. MetadataI18nPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Title' => 2, 'Subtitle' => 3, 'Accroche' => 4, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'title' => 2, 'subtitle' => 3, 'accroche' => 4, ),
-        BasePeer::TYPE_COLNAME => array (MetadataI18nPeer::ID => 0, MetadataI18nPeer::LOCALE => 1, MetadataI18nPeer::TITLE => 2, MetadataI18nPeer::SUBTITLE => 3, MetadataI18nPeer::ACCROCHE => 4, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'TITLE' => 2, 'SUBTITLE' => 3, 'ACCROCHE' => 4, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'title' => 2, 'subtitle' => 3, 'accroche' => 4, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Title' => 2, 'Subtitle' => 3, 'Accroche' => 4, 'SeoTitle' => 5, 'SeoDescription' => 6, 'SeoH1' => 7, 'SeoKeywords' => 8, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'title' => 2, 'subtitle' => 3, 'accroche' => 4, 'seoTitle' => 5, 'seoDescription' => 6, 'seoH1' => 7, 'seoKeywords' => 8, ),
+        BasePeer::TYPE_COLNAME => array (MetadataI18nPeer::ID => 0, MetadataI18nPeer::LOCALE => 1, MetadataI18nPeer::TITLE => 2, MetadataI18nPeer::SUBTITLE => 3, MetadataI18nPeer::ACCROCHE => 4, MetadataI18nPeer::SEO_TITLE => 5, MetadataI18nPeer::SEO_DESCRIPTION => 6, MetadataI18nPeer::SEO_H1 => 7, MetadataI18nPeer::SEO_KEYWORDS => 8, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'TITLE' => 2, 'SUBTITLE' => 3, 'ACCROCHE' => 4, 'SEO_TITLE' => 5, 'SEO_DESCRIPTION' => 6, 'SEO_H1' => 7, 'SEO_KEYWORDS' => 8, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'title' => 2, 'subtitle' => 3, 'accroche' => 4, 'seo_title' => 5, 'seo_description' => 6, 'seo_h1' => 7, 'seo_keywords' => 8, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, )
     );
 
     /**
@@ -178,12 +190,20 @@ abstract class BaseMetadataI18nPeer
             $criteria->addSelectColumn(MetadataI18nPeer::TITLE);
             $criteria->addSelectColumn(MetadataI18nPeer::SUBTITLE);
             $criteria->addSelectColumn(MetadataI18nPeer::ACCROCHE);
+            $criteria->addSelectColumn(MetadataI18nPeer::SEO_TITLE);
+            $criteria->addSelectColumn(MetadataI18nPeer::SEO_DESCRIPTION);
+            $criteria->addSelectColumn(MetadataI18nPeer::SEO_H1);
+            $criteria->addSelectColumn(MetadataI18nPeer::SEO_KEYWORDS);
         } else {
             $criteria->addSelectColumn($alias . '.id');
             $criteria->addSelectColumn($alias . '.locale');
             $criteria->addSelectColumn($alias . '.title');
             $criteria->addSelectColumn($alias . '.subtitle');
             $criteria->addSelectColumn($alias . '.accroche');
+            $criteria->addSelectColumn($alias . '.seo_title');
+            $criteria->addSelectColumn($alias . '.seo_description');
+            $criteria->addSelectColumn($alias . '.seo_h1');
+            $criteria->addSelectColumn($alias . '.seo_keywords');
         }
     }
 

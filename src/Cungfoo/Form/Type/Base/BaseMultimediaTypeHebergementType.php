@@ -69,6 +69,34 @@ class BaseMultimediaTypeHebergementType extends AppAwareType
                         new Assert\NotBlank(),
                     ),
                 ),
+                'seo_title' => array(
+                    'required' => false,
+                    'label' => 'multimedia_type_hebergement.seo_title',
+                    'type' => 'text',
+                    'constraints' => array(
+                    ),
+                ),
+                'seo_description' => array(
+                    'required' => false,
+                    'label' => 'multimedia_type_hebergement.seo_description',
+                    'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'seo_h1' => array(
+                    'required' => false,
+                    'label' => 'multimedia_type_hebergement.seo_h1',
+                    'type' => 'text',
+                    'constraints' => array(
+                    ),
+                ),
+                'seo_keywords' => array(
+                    'required' => false,
+                    'label' => 'multimedia_type_hebergement.seo_keywords',
+                    'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
                 'active_locale' => array(
                     'required' => false,
                     'label' => 'multimedia_type_hebergement.active_locale',

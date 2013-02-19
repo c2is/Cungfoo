@@ -8,12 +8,12 @@
 
 {% block title %}
 {% spaceless %}
-    {{ ("seo.title.location.list." ~ currentClass) | trans ({'%type%': categoryTypeHebergement.name|lower}) }}
+    {{ categoryTypeHebergement.seoTitle | trans ({'%type%': categoryTypeHebergement.name|lower}) }}
 {% endspaceless %}
 {% endblock %}
 {% block metaDescription %}
 {% spaceless %}
-    {{ ("seo.meta.location.list." ~ currentClass) | trans ({'%type%': categoryTypeHebergement.name|lower}) }}
+    {{ categoryTypeHebergement.seoDescription | trans ({'%type%': categoryTypeHebergement.name|lower}) }}
 {% endspaceless %}
 {% endblock %}
 {% block bodyClass %} fiche{% endblock %}

@@ -50,11 +50,11 @@ abstract class BaseBonPlanCategoriePeer
     /** the column name for the id field */
     const ID = 'bon_plan_categorie.id';
 
-    /** the column name for the active field */
-    const ACTIVE = 'bon_plan_categorie.active';
-
     /** the column name for the sortable_rank field */
     const SORTABLE_RANK = 'bon_plan_categorie.sortable_rank';
+
+    /** the column name for the active field */
+    const ACTIVE = 'bon_plan_categorie.active';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -89,11 +89,11 @@ abstract class BaseBonPlanCategoriePeer
      * e.g. BonPlanCategoriePeer::$fieldNames[BonPlanCategoriePeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Active', 'SortableRank', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'active', 'sortableRank', ),
-        BasePeer::TYPE_COLNAME => array (BonPlanCategoriePeer::ID, BonPlanCategoriePeer::ACTIVE, BonPlanCategoriePeer::SORTABLE_RANK, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'ACTIVE', 'SORTABLE_RANK', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'active', 'sortable_rank', ),
+        BasePeer::TYPE_PHPNAME => array ('Id', 'SortableRank', 'Active', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'sortableRank', 'active', ),
+        BasePeer::TYPE_COLNAME => array (BonPlanCategoriePeer::ID, BonPlanCategoriePeer::SORTABLE_RANK, BonPlanCategoriePeer::ACTIVE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'SORTABLE_RANK', 'ACTIVE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'sortable_rank', 'active', ),
         BasePeer::TYPE_NUM => array (0, 1, 2, )
     );
 
@@ -104,11 +104,11 @@ abstract class BaseBonPlanCategoriePeer
      * e.g. BonPlanCategoriePeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Active' => 1, 'SortableRank' => 2, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'active' => 1, 'sortableRank' => 2, ),
-        BasePeer::TYPE_COLNAME => array (BonPlanCategoriePeer::ID => 0, BonPlanCategoriePeer::ACTIVE => 1, BonPlanCategoriePeer::SORTABLE_RANK => 2, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'ACTIVE' => 1, 'SORTABLE_RANK' => 2, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'active' => 1, 'sortable_rank' => 2, ),
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'SortableRank' => 1, 'Active' => 2, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'sortableRank' => 1, 'active' => 2, ),
+        BasePeer::TYPE_COLNAME => array (BonPlanCategoriePeer::ID => 0, BonPlanCategoriePeer::SORTABLE_RANK => 1, BonPlanCategoriePeer::ACTIVE => 2, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'SORTABLE_RANK' => 1, 'ACTIVE' => 2, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'sortable_rank' => 1, 'active' => 2, ),
         BasePeer::TYPE_NUM => array (0, 1, 2, )
     );
 
@@ -184,12 +184,12 @@ abstract class BaseBonPlanCategoriePeer
     {
         if (null === $alias) {
             $criteria->addSelectColumn(BonPlanCategoriePeer::ID);
-            $criteria->addSelectColumn(BonPlanCategoriePeer::ACTIVE);
             $criteria->addSelectColumn(BonPlanCategoriePeer::SORTABLE_RANK);
+            $criteria->addSelectColumn(BonPlanCategoriePeer::ACTIVE);
         } else {
             $criteria->addSelectColumn($alias . '.id');
-            $criteria->addSelectColumn($alias . '.active');
             $criteria->addSelectColumn($alias . '.sortable_rank');
+            $criteria->addSelectColumn($alias . '.active');
         }
     }
 
@@ -942,6 +942,20 @@ abstract class BaseBonPlanCategoriePeer
         BonPlanCategoriePeer::clearInstancePool();
     }
 
+    // seo behavior
+    
+    /**
+     * The default locale to use for translations
+     * @var        string
+     */
+    public static function getSeo(PropelPDO $con = null)
+    {
+        return \Cungfoo\Model\SeoQuery::create()
+            ->joinWithI18n()
+            ->filterByTableRef(BonPlanCategoriePeer::TABLE_NAME)
+            ->findOne()
+        ;
+    }
 } // BaseBonPlanCategoriePeer
 
 // This is the static code needed to register the TableMap for this table with the main Propel class.

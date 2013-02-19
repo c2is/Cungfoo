@@ -2,10 +2,10 @@
 
 /**
  * Data object containing the SQL and PHP code to migrate the database
- * up to version 1360577670.
- * Generated on 2013-02-11 11:14:30 by vagrant
+ * up to version 1361175980.
+ * Generated on 2013-02-18 09:26:20 by vagrant
  */
-class PropelMigration_1360577670
+class PropelMigration_1361175980
 {
 
     public function preUp($manager)
@@ -42,9 +42,14 @@ class PropelMigration_1360577670
 # It "suspends judgement" for fkey relationships until are tables are set.
 SET FOREIGN_KEY_CHECKS = 0;
 
-ALTER TABLE `destination_i18n`
-    ADD `seo_title` VARCHAR(255) DEFAULT \'\' AFTER `active_locale`,
-    ADD `seo_description` TEXT AFTER `seo_title`;
+ALTER TABLE `demande_annulation_i18n`
+    ADD `active_locale` TINYINT(1) DEFAULT 1 AFTER `seo_keywords`;
+
+ALTER TABLE `demande_identifiant_i18n`
+    ADD `active_locale` TINYINT(1) DEFAULT 1 AFTER `seo_keywords`;
+
+ALTER TABLE `top_camping_i18n`
+    ADD `active_locale` TINYINT(1) DEFAULT 1 AFTER `seo_keywords`;
 
 # This restores the fkey checks, after having unset them earlier
 SET FOREIGN_KEY_CHECKS = 1;
@@ -66,9 +71,11 @@ SET FOREIGN_KEY_CHECKS = 1;
 # It "suspends judgement" for fkey relationships until are tables are set.
 SET FOREIGN_KEY_CHECKS = 0;
 
-ALTER TABLE `destination_i18n` DROP `seo_title`;
+ALTER TABLE `demande_annulation_i18n` DROP `active_locale`;
 
-ALTER TABLE `destination_i18n` DROP `seo_description`;
+ALTER TABLE `demande_identifiant_i18n` DROP `active_locale`;
+
+ALTER TABLE `top_camping_i18n` DROP `active_locale`;
 
 # This restores the fkey checks, after having unset them earlier
 SET FOREIGN_KEY_CHECKS = 1;

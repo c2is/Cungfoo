@@ -1,11 +1,11 @@
 {% extends "base.twig" %}
 
 {% block title %}
-    {{ "seo.title.camping" | trans ({'%nom%': etab.name, '%ville%': etab.ville }) }}
+    {{ etab.seoTitle | trans ({'%nom%': etab.name, '%ville%': etab.ville }) }}
     {%if hasBaignade %}{{ "seo.title.camping_suffix" | trans }}{% endif %}
     {{ etab.categorie }}
 {% endblock %}
-{% block metaDescription %}{{ "seo.meta.camping" | trans  ({'%nom%': etab.name, '%nbEtoiles%': etab.categorie, '%ville%': etab.ville })}}{% endblock %}
+{% block metaDescription %}{{ etab.seoDescription | trans  ({'%nom%': etab.name, '%nbEtoiles%': etab.categorie, '%ville%': etab.ville })}}{% endblock %}
 
 {% block bodyClass %} fiche{% endblock %}
 
@@ -14,7 +14,7 @@
 {% block leftColumn %}
 <nav id="ficheShare">
     <a href="https://www.facebook.com/sharer/sharer.php?u={{ app.request.uri }}" class="icon facebook" target="_blank" title="{{ "share.facebook" | trans }}" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Header', 'Lien_-_Partage-SMM', 'Clic_-_Bouton-FaceBook']);">{{ "share.facebook" | trans }}</a>
-    <a href="http://twitter.com/home?status={{ etab.name }} {{ "destination.camping_title" | trans({'%ville%': etab.ville.name}) }} {% if hasBaignade %}{{ "seo.title.camping_suffix" | trans }}{% endif %} {{ app.request.uri }}" target="_blank" class="icon twitter" title="{{ "share.twitter" | trans }}" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Header', 'Lien_-_Partage-SMM', 'Clic_-_Bouton-Twitter']);">{{ "share.twitter" | trans }}</a>
+    <a href="http://twitter.com/home?status={{ etab.name }} {{ etab.seoH1 | trans({'%ville%': etab.ville.name}) }} {% if hasBaignade %}{{ "seo.title.camping_suffix" | trans }}{% endif %} {{ app.request.uri }}" target="_blank" class="icon twitter" title="{{ "share.twitter" | trans }}" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Header', 'Lien_-_Partage-SMM', 'Clic_-_Bouton-Twitter']);">{{ "share.twitter" | trans }}</a>
     {#<a href="#_" class="icon email" title="Partager par email">Partager par email</a>#}
     {#<a href="javascript:window.print()" class="icon print" title="Imprimer">Imprimer</a>#}
 </nav>
@@ -25,7 +25,7 @@
 <div itemscope itemtype="http://schema.org/Place">
     <h1 itemprop="name">
         {{ etab.name }}{{ etab.categorie.stars }}<br />
-        <span class="h2-like">{{ "destination.camping_title" | trans({'%ville%': etab.ville.name}) }} {%if hasBaignade %}{{ "seo.title.camping_suffix" | trans }}{% endif %}</span>
+        <span class="h2-like">{{ etab.seoH1 | trans({'%ville%': etab.ville.name}) }} {%if hasBaignade %}{{ "seo.title.camping_suffix" | trans }}{% endif %}</span>
     </h1>
 
     <p class="campSubtitle"><strong>{{ "fiche.ouvert_du" | trans }} {{ etab.ouvertureCamping }}</strong></p>

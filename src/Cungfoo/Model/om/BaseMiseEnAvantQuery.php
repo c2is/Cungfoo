@@ -708,6 +708,8 @@ abstract class BaseMiseEnAvantQuery extends ModelCriteria
             ->filterByActive(true)
             ->useI18nQuery($locale, 'i18n_locale')
                 ->filterByActiveLocale(true)
+                    ->_or()
+                ->filterByActiveLocale(null, Criteria::ISNULL)
             ->endUse()
         ;
 

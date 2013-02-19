@@ -6,6 +6,7 @@ require_once dirname(__FILE__) . '/CrudableBaseListingBehaviorBuilder.php';
 require_once dirname(__FILE__) . '/CrudableListingBehaviorBuilder.php';
 require_once dirname(__FILE__) . '/CrudableBehaviorQueryBuilderModifier.php';
 require_once dirname(__FILE__) . '/CrudableBehaviorPeerBuilderModifier.php';
+require_once dirname(__FILE__) . '/../seo/SeoBehavior.php';
 
 class CrudableBehavior extends Behavior
 {
@@ -59,6 +60,13 @@ class CrudableBehavior extends Behavior
     public function modifyTable()
     {
         $this->addMetadataTable();
+
+        if (!$this->getTable()->hasBehavior('seo') && $this->getTable()->getName() != 'seo')
+        {
+            $seoBehavior = new SeoBehavior();
+            $seoBehavior->setName('seo');
+            $this->getTable()->addBehavior($seoBehavior);
+        }
     }
 
     protected function addMetadataTable()

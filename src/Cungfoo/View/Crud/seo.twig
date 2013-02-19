@@ -1,0 +1,16 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+        <h2>{{ (name ~ ".crud.seo") | trans}}</h2><hr/>
+        <form action="{{ path('%s_crud_seo' | format (name)) }}" method="post" {{ form_enctype(form) }}>
+        {{ form_widget(form) }}
+        <div class="form-actions">
+            <div class="btn-toolbar">
+                <div class="btn-group">
+                    <a class="btn" href="{{ path('%s_crud_list' | format (name)) }}"><i class="icon-list"></i> {{ "crud.button.list" | trans }}</a>
+                </div>
+                <button type="submit" class="btn btn-primary pull-right" style="margin-bottom: -5px">{{ "crud.button.save" | trans }}</button>
+            </div>
+        </div>
+    </form>
+{% endblock %}

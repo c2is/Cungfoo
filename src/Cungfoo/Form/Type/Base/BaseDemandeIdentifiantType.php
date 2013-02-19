@@ -170,6 +170,52 @@ class BaseDemandeIdentifiantType extends AppAwareType
             'label' => 'demande_identifiant.active',
             'required' => false,
         ));
+        $builder->add('demande_identifiantI18ns', 'translation_collection', array(
+            'i18n_class' => 'Cungfoo\Model\DemandeIdentifiantI18n',
+            'languages' => array(
+                0 => 'fr',
+                1 => 'de',
+            ),
+            'label' => 'demande_identifiant.demande_identifiantI18ns',
+            'columns' => array(
+                'seo_title' => array(
+                    'required' => false,
+                    'label' => 'demande_identifiant.seo_title',
+                    'type' => 'text',
+                    'constraints' => array(
+                    ),
+                ),
+                'seo_description' => array(
+                    'required' => false,
+                    'label' => 'demande_identifiant.seo_description',
+                    'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'seo_h1' => array(
+                    'required' => false,
+                    'label' => 'demande_identifiant.seo_h1',
+                    'type' => 'text',
+                    'constraints' => array(
+                    ),
+                ),
+                'seo_keywords' => array(
+                    'required' => false,
+                    'label' => 'demande_identifiant.seo_keywords',
+                    'type' => 'textarea',
+                    'constraints' => array(
+                    ),
+                ),
+                'active_locale' => array(
+                    'required' => false,
+                    'label' => 'demande_identifiant.active_locale',
+                    'type' => 'checkbox',
+                    'constraints' => array(
+                    ),
+                ),
+            ),
+            'required' => false,
+        ));
     }
 
     /**
