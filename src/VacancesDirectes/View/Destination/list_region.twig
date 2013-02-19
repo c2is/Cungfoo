@@ -1,8 +1,8 @@
 {% extends "Destination/base.twig" %}
 
-{% block title %}{{ "seo.title.list_region" | trans }}{% endblock %}
+{% block title %}{{ metadata.seoTitle | trans }}{% endblock %}
 
-{% block metaDescription %}{{ "seo.meta.list_region" | trans }}{% endblock %}
+{% block metaDescription %}{{ metadata.seoDescription | trans }}{% endblock %}
 
 {% block topRightColumn %}
 
@@ -12,7 +12,7 @@
 
 {% block bottomLeftColumn %}
 
-    <h1>{{ metadata.title }}</h1>
+    <h1>{{ metadata.seoH1 }}</h1>
     <h2 class="h3-like">{{ metadata.subtitle }}</h2>
 
     {% if metadata.visuel %}

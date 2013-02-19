@@ -37,7 +37,15 @@ $(function() {
 
 head.ready(function(){
 
-
+    // positionne le bloc prix en 1er sur l'étape 1 du couloir
+    if($('#stayPrice').length){
+        if($('.error').length){
+            $('.error').after($('#stayPrice'));
+        }
+        else {
+            $('#reservation').prepend($('#stayPrice'));
+        }
+    }
 
         // radio buttons
         var checked;
@@ -92,49 +100,47 @@ head.ready(function(){
         // datepickers
         var d = new Date();
         var y = d.getFullYear();
+        var onBlurAction;
 
 //        $('.occupantHeader[style*="adult"]').parent('.anOccupant').addClass('adult');
 //        $('.occupantHeader[style*="child"]').parent('.anOccupant').addClass('child');
+        $(".anOccupant").find('.control_date').attr('readonly','readonly')
+            .on('focus',function(e){
+                $(this).attr('onblur','');
+                $(this).datepicker( "option", "disabled" );
+                //console.log($(this).attr('onblur'));
+            });
+
         $(".anOccupant").each(function(index,value){
-            var datepickerInput = $(this).find('.control_date')
-            var onBlurAction = datepickerInput.attr('onblur');
-            onBlurAction = onBlurAction.replace(';;',';').replace('if( !checkFutureDate( this ) ) return false; ','');
-            if(onBlurAction.substring(0, 1) == ';'){
-                onBlurAction = onBlurAction.substring(1, onBlurAction.length - 1);
-            }
-            function onClick(){
+            var datepickerInput = $(this).find('.control_date');
+            onBlurAction = datepickerInput.attr('onblur');
+
+            function beforeShow(){
                 //console.log("CLICK");
-                datepickerInput.removeAttr('onblur');
+                //console.log(datepickerInput.attr('onblur'));
+                onBlurAction = onBlurAction.replace(';;',';').replace('if( !checkFutureDate( this ) ) return false; ','');
+                if(onBlurAction.substring(0, 1) == ';'){
+                    onBlurAction = onBlurAction.substring(1, onBlurAction.length - 1);
+                }
             }
-//            var dateSelected = false;
             function onSelect(){
                 //console.log("SELECT");
-//                dateSelected = true;
+                //console.log(this);
+                datepickerInput.attr('onblur',onBlurAction);
+                //console.log(this);
                 eval(onBlurAction);
             }
-            function onBlur(){
-                //console.log("BLUR");
-                //console.log(this.value);
-//                if (dateSelected){
-                    datepickerInput.attr('onblur',onBlurAction);
-//                    dateSelected = false;
-//                }
-            }
-            //console.log(onBlurAction);
 
             if ($(this).hasClass('adult')){
                 datepickerInput.datepicker({
-                    dateFormat: "dd/mm/yy",
-                    dayNamesMin: [ "Di", "Lu", "Ma", "Me", "Je", "Ve", "Sa" ],
-                    firstDay: 1,
-                    monthNamesShort: [ "JAN", "FÉV", "MAR", "AVR", "MAI", "JUN", "JUL", "AOÛ", "SEP", "OCT", "NOV", "DÉC" ],
                     changeMonth: true,
                     changeYear: true,
                     yearRange: "1900:+0",
                     defaultDate: datepickerInput.val(),
                     maxDate: "-13y",
-                    showOn: "button",
-                    onClose: onBlur
+                    showOn: "both",
+                    beforeShow: beforeShow,
+                    onSelect: onSelect
                     });
                 var defaultDate = datepickerInput.datepicker( "option", "defaultDate" );
                 var maxDate = datepickerInput.datepicker( "option", "maxDate" );
@@ -143,34 +149,26 @@ head.ready(function(){
             }
             else if ($(this).hasClass('child')){
                 datepickerInput.datepicker({
-                    dateFormat: "dd/mm/yy",
-                    dayNamesMin: [ "Di", "Lu", "Ma", "Me", "Je", "Ve", "Sa" ],
-                    firstDay: 1,
-                    monthNamesShort: [ "JAN", "FÉV", "MAR", "AVR", "MAI", "JUN", "JUL", "AOÛ", "SEP", "OCT", "NOV", "DÉC" ],
                     changeMonth: true,
                     changeYear: true,
                     yearRange: "-13:+0",
                     defaultDate: datepickerInput.val(),
                     minDate: "-13y +1d",
                     maxDate: "Y",
-                    showOn: "button",
-                    onClose: onBlur
+                    showOn: "both",
+                    beforeShow: beforeShow,
+                    onSelect: onSelect
                 });
             }
             else {
                 datepickerInput.datepicker({
-                    dateFormat: "dd/mm/yy",
-                    dayNamesMin: [ "Di", "Lu", "Ma", "Me", "Je", "Ve", "Sa" ],
-                    firstDay: 1,
-                    monthNamesShort: [ "JAN", "FÉV", "MAR", "AVR", "MAI", "JUN", "JUL", "AOÛ", "SEP", "OCT", "NOV", "DÉC" ],
                     changeMonth: true,
                     changeYear: true,
                     yearRange: "1900:+0",
                     maxDate: "y",
-                    showOn: "button",
-                    beforeShow:onClick,
-                    onSelect: onSelect,
-                    onClose: onBlur
+                    showOn: "both",
+                    beforeShow: beforeShow,
+                    onSelect: onSelect
                 });
             }
 

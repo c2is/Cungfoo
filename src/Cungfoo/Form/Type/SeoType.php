@@ -27,6 +27,11 @@ class SeoType extends BaseSeoType
         //$this->getMetadata($options['data_class'])
         //    ->addPropertyConstraint('field1', new Assert\MinLength(5))
         //;
+
+        $builder->add('table_ref', 'hidden', array(
+            'label' => 'metadata.table_ref',
+            'required' => false,
+        ));
     }
 
 } // SeoType

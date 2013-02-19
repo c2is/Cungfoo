@@ -65,10 +65,10 @@
                 </ul> #}
             </div>
             <div id="infoOthers" class="left" style="height: 277px;">
-                <h3>Locations en camping</h3>
+                <h3>{{ "footer.locations_camping"|trans }}</h3>
                 <ul>
-                    <li><a class="level-1" href="{{ path('destination_region_list') }}">{{ metadata('region_ref', 'title') }}</a></li>
-                    <li><a class="level-1" href="{{ path('destination_departement_list') }}">{{ metadata('departement', 'title') }}</a></li>
+                    <li><a class="level-1" href="{{ path('destination_region_list') }}">{{ metadata('region_ref', 'title')|trans }}</a></li>
+                    <li><a class="level-1" href="{{ path('destination_departement_list') }}">{{ metadata('departement', 'title')|trans }}</a></li>
                 </ul>
             </div>
         </div>
