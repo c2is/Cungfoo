@@ -1203,7 +1203,7 @@ abstract class BaseMetadata extends BaseObject implements Persistent
     }
 
     // crudable behavior
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -1218,12 +1218,12 @@ abstract class BaseMetadata extends BaseObject implements Persistent
         {
             $this->resetModified(MetadataPeer::VISUEL);
         }
-
+    
         $this->uploadVisuel($form);
-
+        
         return $this->save($con);
     }
-
+    
     /**
      * @return string
      */
@@ -1231,7 +1231,7 @@ abstract class BaseMetadata extends BaseObject implements Persistent
     {
         return 'uploads/metadatas';
     }
-
+    
     /**
      * @return string
      */
@@ -1239,7 +1239,7 @@ abstract class BaseMetadata extends BaseObject implements Persistent
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -1442,7 +1442,7 @@ abstract class BaseMetadata extends BaseObject implements Persistent
         $peerClassName = self::PEER;
         if ($peerClassName::getSeo())
         {
-            return $peerClassName::getSeo()->getSeoTitle();
+            return $peerClassName::getSeo($this->currentLocale)->getSeoTitle();
         }
 
         return '';
@@ -1477,7 +1477,7 @@ abstract class BaseMetadata extends BaseObject implements Persistent
         $peerClassName = self::PEER;
         if ($peerClassName::getSeo())
         {
-            return $peerClassName::getSeo()->getSeoDescription();
+            return $peerClassName::getSeo($this->currentLocale)->getSeoDescription();
         }
 
         return '';
@@ -1512,7 +1512,7 @@ abstract class BaseMetadata extends BaseObject implements Persistent
         $peerClassName = self::PEER;
         if ($peerClassName::getSeo())
         {
-            return $peerClassName::getSeo()->getSeoH1();
+            return $peerClassName::getSeo($this->currentLocale)->getSeoH1();
         }
 
         return '';
@@ -1547,7 +1547,7 @@ abstract class BaseMetadata extends BaseObject implements Persistent
         $peerClassName = self::PEER;
         if ($peerClassName::getSeo())
         {
-            return $peerClassName::getSeo()->getSeoKeywords();
+            return $peerClassName::getSeo($this->currentLocale)->getSeoKeywords();
         }
 
         return '';

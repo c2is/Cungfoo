@@ -1589,8 +1589,8 @@ abstract class BaseAvantage extends BaseObject implements Persistent
     }
 
     // active behavior
-
-
+    
+    
     /**
      * return true is the object is active
      *
@@ -1600,7 +1600,7 @@ abstract class BaseAvantage extends BaseObject implements Persistent
     {
         return $this->getActive();
     }
-
+    
     /**
      * return true is the object is active locale
      *
@@ -1772,7 +1772,7 @@ abstract class BaseAvantage extends BaseObject implements Persistent
         $peerClassName = self::PEER;
         if ($peerClassName::getSeo())
         {
-            return $peerClassName::getSeo()->getSeoTitle();
+            return $peerClassName::getSeo($this->currentLocale)->getSeoTitle();
         }
 
         return '';
@@ -1807,7 +1807,7 @@ abstract class BaseAvantage extends BaseObject implements Persistent
         $peerClassName = self::PEER;
         if ($peerClassName::getSeo())
         {
-            return $peerClassName::getSeo()->getSeoDescription();
+            return $peerClassName::getSeo($this->currentLocale)->getSeoDescription();
         }
 
         return '';
@@ -1842,7 +1842,7 @@ abstract class BaseAvantage extends BaseObject implements Persistent
         $peerClassName = self::PEER;
         if ($peerClassName::getSeo())
         {
-            return $peerClassName::getSeo()->getSeoH1();
+            return $peerClassName::getSeo($this->currentLocale)->getSeoH1();
         }
 
         return '';
@@ -1877,7 +1877,7 @@ abstract class BaseAvantage extends BaseObject implements Persistent
         $peerClassName = self::PEER;
         if ($peerClassName::getSeo())
         {
-            return $peerClassName::getSeo()->getSeoKeywords();
+            return $peerClassName::getSeo($this->currentLocale)->getSeoKeywords();
         }
 
         return '';
@@ -1922,7 +1922,7 @@ abstract class BaseAvantage extends BaseObject implements Persistent
     }
 
     // crudable behavior
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -1937,12 +1937,12 @@ abstract class BaseAvantage extends BaseObject implements Persistent
         {
             $this->resetModified(AvantagePeer::IMAGE_PATH);
         }
-
+    
         $this->uploadImagePath($form);
-
+        
         return $this->save($con);
     }
-
+    
     /**
      * @return string
      */
@@ -1950,7 +1950,7 @@ abstract class BaseAvantage extends BaseObject implements Persistent
     {
         return 'uploads/avantages';
     }
-
+    
     /**
      * @return string
      */
@@ -1958,7 +1958,7 @@ abstract class BaseAvantage extends BaseObject implements Persistent
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
