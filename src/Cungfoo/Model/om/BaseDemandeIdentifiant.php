@@ -2648,7 +2648,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
         return $this->getActiveLocale();
     }
     // crudable behavior
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con

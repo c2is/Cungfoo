@@ -2336,7 +2336,7 @@ abstract class BaseSituationGeographique extends BaseObject implements Persisten
     }
 
     // crudable behavior
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con

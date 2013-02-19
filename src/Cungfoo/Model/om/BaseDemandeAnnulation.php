@@ -2637,7 +2637,7 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
         return $this->getActiveLocale();
     }
     // crudable behavior
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -2652,33 +2652,33 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
         {
             $this->resetModified(DemandeAnnulationPeer::FILE_1);
         }
-    
+
         $this->uploadFile1($form);
-        
+
         if (!$form['file_2_deleted']->getData())
         {
             $this->resetModified(DemandeAnnulationPeer::FILE_2);
         }
-    
+
         $this->uploadFile2($form);
-        
+
         if (!$form['file_3_deleted']->getData())
         {
             $this->resetModified(DemandeAnnulationPeer::FILE_3);
         }
-    
+
         $this->uploadFile3($form);
-        
+
         if (!$form['file_4_deleted']->getData())
         {
             $this->resetModified(DemandeAnnulationPeer::FILE_4);
         }
-    
+
         $this->uploadFile4($form);
-        
+
         return $this->save($con);
     }
-    
+
     /**
      * @return string
      */
@@ -2686,7 +2686,7 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
     {
         return 'uploads/demande_annulations';
     }
-    
+
     /**
      * @return string
      */
@@ -2694,7 +2694,7 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -2710,7 +2710,7 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
             }
         }
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -2726,7 +2726,7 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
             }
         }
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -2742,7 +2742,7 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
             }
         }
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
