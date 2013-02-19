@@ -30,7 +30,7 @@ class EventLoader extends AbstractLoader
         $toDelete = array_diff($events, $this->processedIds);
 
         EventQuery::create()
-            ->filterById($toDelete, \Criteria::NOT_IN)
+            ->filterById($toDelete)
             ->delete()
         ;
 
