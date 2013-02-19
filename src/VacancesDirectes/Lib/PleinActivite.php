@@ -50,6 +50,8 @@ class PleinActivite
             }
         }
 
+        $pleinActiviteFinal = array();
+
         foreach($pleinActivites as $activites)
         {
             $nameCategorie = $activites['title'];
