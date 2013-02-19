@@ -34,6 +34,7 @@ class EventCommand extends BaseCommand
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        set_time_limit(0);
         $loader = new EventLoader();
 
         $con = \Propel::getConnection();
@@ -46,6 +47,8 @@ class EventCommand extends BaseCommand
             $etabs = \Cungfoo\Model\EtablissementQuery::create()
                 ->find()
             ;
+
+            $languageCode = $input->getOption('language_code');
 
             foreach ($this->getSilexApplication()['config']->getLanguages() as $language => $locale)
             {

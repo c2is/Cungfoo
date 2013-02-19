@@ -13,6 +13,8 @@ class EventLoader extends AbstractLoader
 {
     protected $cache = array();
 
+    protected $processedIds = array();
+
     public function init($con)
     {
         parent::init($con);
@@ -20,13 +22,18 @@ class EventLoader extends AbstractLoader
         $this->cache = array();
 
         $this->dbConnection->exec("SET FOREIGN_KEY_CHECKS = 0");
-        $this->dbConnection->exec("TRUNCATE TABLE `etablissement_event`");
-        $this->dbConnection->exec("TRUNCATE TABLE `event_i18n`");
-        $this->dbConnection->exec("TRUNCATE TABLE `event`");
     }
 
     public function close()
     {
+        $events = EventQuery::create()->select('id')->find()->toArray();
+        $toDelete = array_diff($events, $this->processedIds);
+
+        EventQuery::create()
+            ->filterById($toDelete, \Criteria::NOT_IN)
+            ->delete()
+        ;
+
         $this->dbConnection->exec("SET FOREIGN_KEY_CHECKS = 1");
     }
 
@@ -35,13 +42,14 @@ class EventLoader extends AbstractLoader
         $xml   = new \SimpleXMLElement($data);
         $cache = array();
 
-        $toDelete = EventQuery::create();
         foreach ($xml->{'Event'} as $event)
         {
             if ($insertedEvent = $this->insertEvent($event, $language))
             {
-                $toDelete->prune($insertedEvent);
-
+                if (!in_array($insertedEvent->getId(), $this->processedIds))
+                {
+                    $this->processedIds[] = $insertedEvent->getId();
+                }
                 if ($language == 'de')
                 {
                     $this->insertRegionRelation($etab, $insertedEvent);
@@ -51,15 +59,6 @@ class EventLoader extends AbstractLoader
                     $this->insertRelation($etab, $insertedEvent, $event['DistanceXY']);
                 }
             }
-        }
-
-        if ($toDelete->find()->count())
-        {
-            $idToDelete = $toDelete->select('id')->find($this->dbConnection)->toArray();
-            $themeDeleted = EventQuery::create()
-                ->filterById($idToDelete)
-                ->delete($this->dbConnection)
-            ;
         }
     }
 
