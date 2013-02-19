@@ -20,9 +20,11 @@ class MetadataPeer extends BaseMetadataPeer
 {
     public static function get($name, $value = null)
     {
+        global $app;
+
         return MetadataQuery::create()
             ->filterByTableRef($name)
-            ->joinWithI18n()
+            ->joinWithI18n($app['context']->get('language'))
             ->_if($value)
             ->withColumn($value)
             ->select($value)

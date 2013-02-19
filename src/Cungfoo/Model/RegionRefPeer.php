@@ -31,4 +31,13 @@ class RegionRefPeer extends BaseRegionRefPeer
 
         return implode('|', $objects);
     }
+
+    public static function getMetadata(PropelPDO $con = null, $locale = 'fr')
+    {
+        return \Cungfoo\Model\MetadataQuery::create()
+            ->joinWithI18n($locale)
+            ->filterByTableRef(DepartementPeer::TABLE_NAME)
+            ->findOne()
+        ;
+    }
 }

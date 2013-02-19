@@ -12,14 +12,14 @@
 
 {% block bottomLeftColumn %}
 
-    <h1>{{ metadata.seoH1 }}</h1>
-    <h2 class="h3-like">{{ metadata.subtitle }}</h2>
+    <h1>{{ metadata.seoH1|trans }}</h1>
+    <h2 class="h3-like">{{ metadata.subtitle|trans }}</h2>
 
     {% if metadata.visuel %}
     <div class="banner">
         <div class="bannerStain first">
             <div class="content">
-                <p class="headline">{{ metadata.accroche }}</p>
+                <p class="headline">{{ metadata.accroche|trans }}</p>
             </div>
         </div>
         <img class="bdPict" src="{{ asset(metadata.visuel) }}" alt="">
