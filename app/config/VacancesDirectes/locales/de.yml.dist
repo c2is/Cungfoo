@@ -611,7 +611,7 @@ event.categorie: 'Kategorie:'
 event.type: 'Art:'
 event.transport: 'Transport:'
 event.adresse: 'Adresse:'
-global.search_message: 'Wir bearbeiten Ihre Anfrage. <br/><br/>Bitte warten Sie.'
+global.search_message: 'Wir bearbeiten Ihre Anfrage.<br /><br />Bitte warten Sie.'
 global.compte.btn: 'Mein Konto'
 global.compte.title: 'Kundenbereich '
 global.compte.user: Benutzername
