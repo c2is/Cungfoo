@@ -405,7 +405,7 @@ general.decouvrir: Entdecken
 general.reserver: Buchen
 general.profite: Zuschlagen
 general.la_semaine: 'pro Woche'
-general.contre_proposition: 'ACHTUNG! Ihre Suche ergibt keine Treffer. Die untenstehenden Angebote sind diejenigen, die Ihrer Suche am nächsten kommen.'
+general.contre_proposition: 'ACHTUNG! Ihre Suche ergibt keine Treffer.<br />Die untenstehenden Angebote sind diejenigen, die Ihrer Suche am nächsten kommen.'
 general.submit: Senden
 general.logout: Anmelden
 general.nos_offres: 'Unsere Angebote'
@@ -519,7 +519,7 @@ resalys.besoin_aide_num: 'unter +49 (0) 721 680 78 240'
 resalys.session_expire: 'Urlaubsangebot nicht verfügbar'
 resalys.session_expire_texte_1: 'Während der Suche nach Verfügbarkeiten ist ein Fehler aufgetreten.'
 resalys.session_expire_texte_2: 'Ändern Sie Ihre Anfrage oder vertrauen Sie sie unserem Reservierungsteam an, indem Sie unter der Nummer  +49 (0) 721 680 78 240 (0,15 /min) anrufen.'
-resalys.non_connecte: 'Um Ihre Reservierung fortzusetzen,<br /> melden Sie sich bitte an oder erstellen Sie oben ein Konto'
+resalys.non_connecte: 'Um Ihre Reservierung fortzusetzen,<br />melden Sie sich bitte an oder erstellen Sie oben ein Konto'
 resalys.retour_home: 'Zurück zur Startseite'
 vos_week_ends: 'Ihre Wochenendtrips'
 breadcrumbs.home: Startseite
