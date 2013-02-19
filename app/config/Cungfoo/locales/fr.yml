@@ -104,6 +104,16 @@ metadata.subtitle: "Sous titre"
 metadata.accroche: "Accroche"
 metadata.visuel: "Visuel"
 metadata.visuel_deleted: "Supprimer le visuel ?"
+metadata.seo_title: "Titre (SEO)"
+metadata.seo_description: "Description (SEO)"
+metadata.seo_h1: "H1 (SEO)"
+metadata.seo_keywords: "Mots clefs (SEO)"
+
+seo.seoI18ns: ""
+seo.seo_title: "Titre"
+seo.seo_description: "Description"
+seo.seo_h1: "H1"
+seo.seo_keywords: "Mots clefs"
 
 destination.crud.metadata: Metadata de la table destination
 destination.crud.create: Création d'une destination
