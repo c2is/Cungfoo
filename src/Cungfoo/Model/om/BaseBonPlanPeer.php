@@ -919,7 +919,7 @@ abstract class BaseBonPlanPeer
     }
 
     // crudable behavior
-
+    
     /**
      * The default locale to use for translations
      * @var        string
@@ -933,15 +933,15 @@ abstract class BaseBonPlanPeer
         ;
     }
     // seo behavior
-
+    
     /**
      * The default locale to use for translations
      * @var        string
      */
-    public static function getSeo(PropelPDO $con = null)
+    public static function getSeo($locale = 'fr', PropelPDO $con = null)
     {
         return \Cungfoo\Model\SeoQuery::create()
-            ->joinWithI18n()
+            ->joinWithI18n($locale)
             ->filterByTableRef(BonPlanPeer::TABLE_NAME)
             ->findOne()
         ;

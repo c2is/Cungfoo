@@ -2111,8 +2111,8 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
     }
 
     // active behavior
-
-
+    
+    
     /**
      * return true is the object is active
      *
@@ -2122,7 +2122,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
     {
         return $this->getActive();
     }
-
+    
     /**
      * return true is the object is active locale
      *
@@ -2132,22 +2132,22 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
     {
         return $this->getActiveLocale();
     }
-
+    
     public function getTagsActive($criteria = null, PropelPDO $con = null)
     {
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-
+    
         $criteria->add(\Cungfoo\Model\TagPeer::ACTIVE, true);
-
-
+    
+    
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\TagI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\TagPeer::ID, \Cungfoo\Model\TagI18nPeer::alias('i18n_locale', \Cungfoo\Model\TagI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\TagI18nPeer::alias('i18n_locale', \Cungfoo\Model\TagI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\TagI18nPeer::alias('i18n_locale', \Cungfoo\Model\TagI18nPeer::LOCALE), $this->currentLocale);
-
+    
         return $this->getTags($criteria, $con);
     }
     // i18n behavior
@@ -2288,7 +2288,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
         $peerClassName = self::PEER;
         if ($peerClassName::getSeo())
         {
-            return $peerClassName::getSeo()->getSeoTitle();
+            return $peerClassName::getSeo($this->currentLocale)->getSeoTitle();
         }
 
         return '';
@@ -2323,7 +2323,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
         $peerClassName = self::PEER;
         if ($peerClassName::getSeo())
         {
-            return $peerClassName::getSeo()->getSeoDescription();
+            return $peerClassName::getSeo($this->currentLocale)->getSeoDescription();
         }
 
         return '';
@@ -2358,7 +2358,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
         $peerClassName = self::PEER;
         if ($peerClassName::getSeo())
         {
-            return $peerClassName::getSeo()->getSeoH1();
+            return $peerClassName::getSeo($this->currentLocale)->getSeoH1();
         }
 
         return '';
@@ -2393,7 +2393,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
         $peerClassName = self::PEER;
         if ($peerClassName::getSeo())
         {
-            return $peerClassName::getSeo()->getSeoKeywords();
+            return $peerClassName::getSeo($this->currentLocale)->getSeoKeywords();
         }
 
         return '';
@@ -2438,7 +2438,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
     }
 
     // crudable behavior
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -2453,12 +2453,12 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
         {
             $this->resetModified(MultimediaEtablissementPeer::IMAGE_PATH);
         }
-
+    
         $this->uploadImagePath($form);
-
+        
         return $this->save($con);
     }
-
+    
     /**
      * @return string
      */
@@ -2466,7 +2466,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
     {
         return 'uploads/multimedia_etablissements';
     }
-
+    
     /**
      * @return string
      */
@@ -2474,7 +2474,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void

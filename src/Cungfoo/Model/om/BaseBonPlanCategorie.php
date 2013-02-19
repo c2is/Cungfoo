@@ -1780,8 +1780,8 @@ abstract class BaseBonPlanCategorie extends BaseObject implements Persistent
     }
 
     // active behavior
-
-
+    
+    
     /**
      * return true is the object is active
      *
@@ -1791,7 +1791,7 @@ abstract class BaseBonPlanCategorie extends BaseObject implements Persistent
     {
         return $this->getActive();
     }
-
+    
     /**
      * return true is the object is active locale
      *
@@ -1801,22 +1801,22 @@ abstract class BaseBonPlanCategorie extends BaseObject implements Persistent
     {
         return $this->getActiveLocale();
     }
-
+    
     public function getBonPlansActive($criteria = null, PropelPDO $con = null)
     {
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-
+    
         $criteria->add(\Cungfoo\Model\BonPlanPeer::ACTIVE, true);
-
-
+    
+    
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\BonPlanI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\BonPlanPeer::ID, \Cungfoo\Model\BonPlanI18nPeer::alias('i18n_locale', \Cungfoo\Model\BonPlanI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\BonPlanI18nPeer::alias('i18n_locale', \Cungfoo\Model\BonPlanI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\BonPlanI18nPeer::alias('i18n_locale', \Cungfoo\Model\BonPlanI18nPeer::LOCALE), $this->currentLocale);
-
+    
         return $this->getBonPlans($criteria, $con);
     }
     // i18n behavior
@@ -2029,7 +2029,7 @@ abstract class BaseBonPlanCategorie extends BaseObject implements Persistent
         $peerClassName = self::PEER;
         if ($peerClassName::getSeo())
         {
-            return $peerClassName::getSeo()->getSeoTitle();
+            return $peerClassName::getSeo($this->currentLocale)->getSeoTitle();
         }
 
         return '';
@@ -2064,7 +2064,7 @@ abstract class BaseBonPlanCategorie extends BaseObject implements Persistent
         $peerClassName = self::PEER;
         if ($peerClassName::getSeo())
         {
-            return $peerClassName::getSeo()->getSeoDescription();
+            return $peerClassName::getSeo($this->currentLocale)->getSeoDescription();
         }
 
         return '';
@@ -2099,7 +2099,7 @@ abstract class BaseBonPlanCategorie extends BaseObject implements Persistent
         $peerClassName = self::PEER;
         if ($peerClassName::getSeo())
         {
-            return $peerClassName::getSeo()->getSeoH1();
+            return $peerClassName::getSeo($this->currentLocale)->getSeoH1();
         }
 
         return '';
@@ -2134,7 +2134,7 @@ abstract class BaseBonPlanCategorie extends BaseObject implements Persistent
         $peerClassName = self::PEER;
         if ($peerClassName::getSeo())
         {
-            return $peerClassName::getSeo()->getSeoKeywords();
+            return $peerClassName::getSeo($this->currentLocale)->getSeoKeywords();
         }
 
         return '';
@@ -2179,7 +2179,7 @@ abstract class BaseBonPlanCategorie extends BaseObject implements Persistent
     }
 
     // crudable behavior
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con

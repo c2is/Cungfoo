@@ -2593,8 +2593,8 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
     }
 
     // active behavior
-
-
+    
+    
     /**
      * return true is the object is active
      *
@@ -2604,7 +2604,7 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
     {
         return $this->getActive();
     }
-
+    
     /**
      * return true is the object is active locale
      *
@@ -2614,40 +2614,40 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
     {
         return $this->getActiveLocale();
     }
-
+    
     public function getEtablissementsActive($criteria = null, PropelPDO $con = null)
     {
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-
+    
         $criteria->add(\Cungfoo\Model\EtablissementPeer::ACTIVE, true);
-
-
+    
+    
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\EtablissementI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\EtablissementPeer::ID, \Cungfoo\Model\EtablissementI18nPeer::alias('i18n_locale', \Cungfoo\Model\EtablissementI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\EtablissementI18nPeer::alias('i18n_locale', \Cungfoo\Model\EtablissementI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\EtablissementI18nPeer::alias('i18n_locale', \Cungfoo\Model\EtablissementI18nPeer::LOCALE), $this->currentLocale);
-
+    
         return $this->getEtablissements($criteria, $con);
     }
-
+    
     public function getThemesActive($criteria = null, PropelPDO $con = null)
     {
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-
+    
         $criteria->add(\Cungfoo\Model\ThemePeer::ACTIVE, true);
-
-
+    
+    
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\ThemeI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\ThemePeer::ID, \Cungfoo\Model\ThemeI18nPeer::alias('i18n_locale', \Cungfoo\Model\ThemeI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\ThemeI18nPeer::alias('i18n_locale', \Cungfoo\Model\ThemeI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\ThemeI18nPeer::alias('i18n_locale', \Cungfoo\Model\ThemeI18nPeer::LOCALE), $this->currentLocale);
-
+    
         return $this->getThemes($criteria, $con);
     }
     // i18n behavior
@@ -2836,7 +2836,7 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
         $peerClassName = self::PEER;
         if ($peerClassName::getSeo())
         {
-            return $peerClassName::getSeo()->getSeoTitle();
+            return $peerClassName::getSeo($this->currentLocale)->getSeoTitle();
         }
 
         return '';
@@ -2871,7 +2871,7 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
         $peerClassName = self::PEER;
         if ($peerClassName::getSeo())
         {
-            return $peerClassName::getSeo()->getSeoDescription();
+            return $peerClassName::getSeo($this->currentLocale)->getSeoDescription();
         }
 
         return '';
@@ -2906,7 +2906,7 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
         $peerClassName = self::PEER;
         if ($peerClassName::getSeo())
         {
-            return $peerClassName::getSeo()->getSeoH1();
+            return $peerClassName::getSeo($this->currentLocale)->getSeoH1();
         }
 
         return '';
@@ -2941,7 +2941,7 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
         $peerClassName = self::PEER;
         if ($peerClassName::getSeo())
         {
-            return $peerClassName::getSeo()->getSeoKeywords();
+            return $peerClassName::getSeo($this->currentLocale)->getSeoKeywords();
         }
 
         return '';
@@ -2986,7 +2986,7 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
     }
 
     // crudable behavior
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -3001,19 +3001,19 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
         {
             $this->resetModified(ServiceComplementairePeer::IMAGE_PATH);
         }
-
+    
         $this->uploadImagePath($form);
-
+        
         if (!$form['vignette_deleted']->getData())
         {
             $this->resetModified(ServiceComplementairePeer::VIGNETTE);
         }
-
+    
         $this->uploadVignette($form);
-
+        
         return $this->save($con);
     }
-
+    
     /**
      * @return string
      */
@@ -3021,7 +3021,7 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
     {
         return 'uploads/service_complementaires';
     }
-
+    
     /**
      * @return string
      */
@@ -3029,7 +3029,7 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -3045,7 +3045,7 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
             }
         }
     }
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void

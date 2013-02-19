@@ -1,6 +1,6 @@
 {% if campings | length %}
 <div id="alreadySeenBloc" class="clear radiusBox greyC">
-    <div class="no stamp">
+    <div class="title">
         <h2>{{ 'widget.tracking.title' | trans }}</h2>
     </div>
     {% for camping in campings if loop.index < 3 %}

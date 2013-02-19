@@ -1589,8 +1589,8 @@ abstract class BaseMultimediaTypeHebergement extends BaseObject implements Persi
     }
 
     // active behavior
-
-
+    
+    
     /**
      * return true is the object is active
      *
@@ -1600,7 +1600,7 @@ abstract class BaseMultimediaTypeHebergement extends BaseObject implements Persi
     {
         return $this->getActive();
     }
-
+    
     /**
      * return true is the object is active locale
      *
@@ -1748,7 +1748,7 @@ abstract class BaseMultimediaTypeHebergement extends BaseObject implements Persi
         $peerClassName = self::PEER;
         if ($peerClassName::getSeo())
         {
-            return $peerClassName::getSeo()->getSeoTitle();
+            return $peerClassName::getSeo($this->currentLocale)->getSeoTitle();
         }
 
         return '';
@@ -1783,7 +1783,7 @@ abstract class BaseMultimediaTypeHebergement extends BaseObject implements Persi
         $peerClassName = self::PEER;
         if ($peerClassName::getSeo())
         {
-            return $peerClassName::getSeo()->getSeoDescription();
+            return $peerClassName::getSeo($this->currentLocale)->getSeoDescription();
         }
 
         return '';
@@ -1818,7 +1818,7 @@ abstract class BaseMultimediaTypeHebergement extends BaseObject implements Persi
         $peerClassName = self::PEER;
         if ($peerClassName::getSeo())
         {
-            return $peerClassName::getSeo()->getSeoH1();
+            return $peerClassName::getSeo($this->currentLocale)->getSeoH1();
         }
 
         return '';
@@ -1853,7 +1853,7 @@ abstract class BaseMultimediaTypeHebergement extends BaseObject implements Persi
         $peerClassName = self::PEER;
         if ($peerClassName::getSeo())
         {
-            return $peerClassName::getSeo()->getSeoKeywords();
+            return $peerClassName::getSeo($this->currentLocale)->getSeoKeywords();
         }
 
         return '';
@@ -1898,7 +1898,7 @@ abstract class BaseMultimediaTypeHebergement extends BaseObject implements Persi
     }
 
     // crudable behavior
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -1913,12 +1913,12 @@ abstract class BaseMultimediaTypeHebergement extends BaseObject implements Persi
         {
             $this->resetModified(MultimediaTypeHebergementPeer::IMAGE_PATH);
         }
-
+    
         $this->uploadImagePath($form);
-
+        
         return $this->save($con);
     }
-
+    
     /**
      * @return string
      */
@@ -1926,7 +1926,7 @@ abstract class BaseMultimediaTypeHebergement extends BaseObject implements Persi
     {
         return 'uploads/multimedia_type_hebergements';
     }
-
+    
     /**
      * @return string
      */
@@ -1934,7 +1934,7 @@ abstract class BaseMultimediaTypeHebergement extends BaseObject implements Persi
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void

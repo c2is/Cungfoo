@@ -1045,7 +1045,7 @@ abstract class BaseRegionRefPeer
     }
 
     // crudable behavior
-
+    
     /**
      * The default locale to use for translations
      * @var        string
@@ -1059,15 +1059,15 @@ abstract class BaseRegionRefPeer
         ;
     }
     // seo behavior
-
+    
     /**
      * The default locale to use for translations
      * @var        string
      */
-    public static function getSeo(PropelPDO $con = null)
+    public static function getSeo($locale = 'fr', PropelPDO $con = null)
     {
         return \Cungfoo\Model\SeoQuery::create()
-            ->joinWithI18n()
+            ->joinWithI18n($locale)
             ->filterByTableRef(RegionRefPeer::TABLE_NAME)
             ->findOne()
         ;

@@ -153,7 +153,7 @@ class SeoBehavior extends Behavior
         \$peerClassName = self::PEER;
         if (\$peerClassName::getSeo())
         {
-            return \$peerClassName::getSeo()->%1\$s();
+            return \$peerClassName::getSeo(\$this->currentLocale)->%1\$s();
         }
 
         return '';
