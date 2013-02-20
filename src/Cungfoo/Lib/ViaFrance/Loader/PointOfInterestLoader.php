@@ -71,6 +71,8 @@ class PointOfInterestLoader extends AbstractLoader
             return $this->cache[$code][$language];
         }
 
+        $utils = new \Cungfoo\Lib\Utils();
+
         $poi = PointInteretQuery::create()
             ->filterByCode($code)
             ->findOne($this->dbConnection);
@@ -84,6 +86,7 @@ class PointOfInterestLoader extends AbstractLoader
         $poi
             ->setLocale($language)
             ->setName($place->{'Name'})
+            ->setSlug($utils->slugify($place->{'Name'}))
             ->setCode($code)
             ->setAddress($place->{'Address'})
             ->setAddress2($place->{'Address2'})
