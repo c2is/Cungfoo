@@ -27,7 +27,7 @@ class PrixClient extends AbstractClient
         return array(
             'base_id'       => $this->getOption('base_id', ''),
             'username'      => $this->getOption('username', ''),
-            'password'      => $this->getOption('password', ''),
+            'password'      => $this->getOption('username', ''),
             'language_code' => $this->getOption('language_code', ''),
             'object_type'   => $this->getOption('object_type', ''),
             'flow_name'     => $this->getOption('flow_name', ''),
