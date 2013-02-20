@@ -1749,8 +1749,8 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
     }
 
     // active behavior
-
-
+    
+    
     /**
      * return true is the object is active
      *
@@ -1760,7 +1760,7 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
     {
         return $this->getActive();
     }
-
+    
     /**
      * return true is the object is active locale
      *

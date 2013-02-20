@@ -24,11 +24,23 @@ class EventPeer extends BaseEventPeer
     const RANDOM_SORT      = 1;
     const SORT_BY_PRIORITY = 2;
 
-    static public function getForEtablissement(Etablissement $etab, $sort = self::NO_SORT, $count = null, $category = null, $criteriaOperation = null)
+    static protected getLocale()
     {
-        $query = EventQuery::create()
-            ->useEtablissementEventQuery()
-                ->filterByEtablissementId($etab->getId())
+        if (defined('CURRENT_LANGUAGE'))
+        {
+            return CURRENT_LANGUAGE;
+        }
+
+        return 'fr';
+    }
+
+    static public function getForQuery(\ModelCriteria $query, $sort = self::NO_SORT, $count = null, $category = null, $criteriaOperation = null)
+    {
+        $query
+            ->useI18nQuery(self::getLocale())
+                ->filterBySlug('', \Criteria::NOT_EQUAL)
+                ->filterByDescription('', \Criteria::NOT_EQUAL)
+                ->filterByName('', \Criteria::NOT_EQUAL)
             ->endUse()
         ;
 
@@ -54,6 +66,17 @@ class EventPeer extends BaseEventPeer
         }
 
         return ($count == 1) ? $query->findOne() : $query->findActive();
+    }
+
+    static public function getForEtablissement(Etablissement $etab, $sort = self::NO_SORT, $count = null, $category = null, $criteriaOperation = null)
+    {
+        $query = EventQuery::create()
+            ->useEtablissementEventQuery()
+                ->filterByEtablissementId($etab->getId())
+            ->endUse()
+        ;
+
+        return self::getForQuery($query, $sort, $count, $category, $criteriaOperation);
     }
 
     static public function getCountForEtablissement(Etablissement $etab, $category = null, $criteriaOperation = null)
@@ -92,30 +115,7 @@ class EventPeer extends BaseEventPeer
             ->endUse()
         ;
 
-        switch ($sort)
-        {
-            case self::RANDOM_SORT:
-                $query->addAscendingOrderByColumn('RAND()');
-                break;
-
-            case self::SORT_BY_PRIORITY:
-                $query->orderByPriority(\Criteria::ASC);
-                break;
-        }
-
-        if (!is_null($count))
-        {
-            $query->limit($count);
-        }
-
-        if (!is_null($category))
-        {
-            $query->filterByCategory($category, (!is_null($criteriaOperation)) ? $criteriaOperation : \Criteria::EQUAL);
-        }
-
-        $query->filterByActive(true);
-
-        return ($count == 1) ? $query->findOne() : $query->findActive();
+        return self::getForQuery($query, $sort, $count, $category, $criteriaOperation);
     }
 
     static public function getForRegion($region, $sort = self::NO_SORT, $count = null, $category = null, $criteriaOperation = null)
@@ -133,30 +133,7 @@ class EventPeer extends BaseEventPeer
             ->endUse()
         ;
 
-        switch ($sort)
-        {
-            case self::RANDOM_SORT:
-                $query->addAscendingOrderByColumn('RAND()');
-                break;
-
-            case self::SORT_BY_PRIORITY:
-                $query->orderByPriority(\Criteria::ASC);
-                break;
-        }
-
-        if (!is_null($count))
-        {
-            $query->limit($count);
-        }
-
-        if (!is_null($category))
-        {
-            $query->filterByCategory($category, (!is_null($criteriaOperation)) ? $criteriaOperation : \Criteria::EQUAL);
-        }
-
-        $query->filterByActive(true);
-
-        return ($count == 1) ? $query->findOne() : $query->findActive();
+        return self::getForQuery($query, $sort, $count, $category, $criteriaOperation);
     }
 
     static public function getForDepartement($departement, $sort = self::NO_SORT, $count = null, $category = null, $criteriaOperation = null)
@@ -173,30 +150,7 @@ class EventPeer extends BaseEventPeer
             ->endUse()
         ;
 
-        switch ($sort)
-        {
-            case self::RANDOM_SORT:
-                $query->addAscendingOrderByColumn('RAND()');
-                break;
-
-            case self::SORT_BY_PRIORITY:
-                $query->orderByPriority(\Criteria::ASC);
-                break;
-        }
-
-        if (!is_null($count))
-        {
-            $query->limit($count);
-        }
-
-        if (!is_null($category))
-        {
-            $query->filterByCategory($category, (!is_null($criteriaOperation)) ? $criteriaOperation : \Criteria::EQUAL);
-        }
-
-        $query->filterByActive(true);
-
-        return ($count == 1) ? $query->findOne() : $query->findActive();
+        return self::getForQuery($query, $sort, $count, $category, $criteriaOperation);
     }
 
     static public function getForRegionRef($region, $sort = self::NO_SORT, $count = null, $category = null, $criteriaOperation = null)
@@ -214,30 +168,7 @@ class EventPeer extends BaseEventPeer
             ->endUse()
         ;
 
-        switch ($sort)
-        {
-            case self::RANDOM_SORT:
-                $query->addAscendingOrderByColumn('RAND()');
-                break;
-
-            case self::SORT_BY_PRIORITY:
-                $query->orderByPriority(\Criteria::ASC);
-                break;
-        }
-
-        if (!is_null($count))
-        {
-            $query->limit($count);
-        }
-
-        if (!is_null($category))
-        {
-            $query->filterByCategory($category, (!is_null($criteriaOperation)) ? $criteriaOperation : \Criteria::EQUAL);
-        }
-
-        $query->filterByActive(true);
-
-        return ($count == 1) ? $query->findOne() : $query->findActive();
+        return self::getForQuery($query, $sort, $count, $category, $criteriaOperation);
     }
 
     static public function getForVille(Ville $ville, $sort = self::NO_SORT, $count = null, $category = null, $criteriaOperation = null)
@@ -252,30 +183,7 @@ class EventPeer extends BaseEventPeer
             ->endUse()
         ;
 
-        switch ($sort)
-        {
-            case self::RANDOM_SORT:
-                $query->addAscendingOrderByColumn('RAND()');
-                break;
-
-            case self::SORT_BY_PRIORITY:
-                $query->orderByPriority(\Criteria::ASC);
-                break;
-        }
-
-        if (!is_null($count))
-        {
-            $query->limit($count);
-        }
-
-        if (!is_null($category))
-        {
-            $query->filterByCategory($category, (!is_null($criteriaOperation)) ? $criteriaOperation : \Criteria::EQUAL);
-        }
-
-        $query->filterByActive(true);
-
-        return ($count == 1) ? $query->findOne() : $query->findActive();
+        return self::getForQuery($query, $sort, $count, $category, $criteriaOperation);
     }
 
     static public function getForDestination(Destination $destination, $sort = self::NO_SORT, $count = null, $category = null, $criteriaOperation = null)
@@ -290,29 +198,6 @@ class EventPeer extends BaseEventPeer
             ->endUse()
         ;
 
-        switch ($sort)
-        {
-            case self::RANDOM_SORT:
-                $query->addAscendingOrderByColumn('RAND()');
-                break;
-
-            case self::SORT_BY_PRIORITY:
-                $query->orderByPriority(\Criteria::ASC);
-                break;
-        }
-
-        if (!is_null($count))
-        {
-            $query->limit($count);
-        }
-
-        if (!is_null($category))
-        {
-            $query->filterByCategory($category, (!is_null($criteriaOperation)) ? $criteriaOperation : \Criteria::EQUAL);
-        }
-
-        $query->filterByActive(true);
-
-        return ($count == 1) ? $query->findOne() : $query->findActive();
+        return self::getForQuery($query, $sort, $count, $category, $criteriaOperation);
     }
 }

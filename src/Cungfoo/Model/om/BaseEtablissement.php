@@ -10392,8 +10392,8 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     }
 
     // active behavior
-
-
+    
+    
     /**
      * return true is the object is active
      *
@@ -10403,7 +10403,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     {
         return $this->getActive();
     }
-
+    
     /**
      * return true is the object is active locale
      *
@@ -10413,279 +10413,279 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     {
         return $this->getActiveLocale();
     }
-
+    
     public function getTypeHebergementsActive($criteria = null, PropelPDO $con = null)
     {
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-
+    
         $criteria->add(\Cungfoo\Model\TypeHebergementPeer::ACTIVE, true);
-
-
+    
+    
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\TypeHebergementI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\TypeHebergementPeer::ID, \Cungfoo\Model\TypeHebergementI18nPeer::alias('i18n_locale', \Cungfoo\Model\TypeHebergementI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\TypeHebergementI18nPeer::alias('i18n_locale', \Cungfoo\Model\TypeHebergementI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\TypeHebergementI18nPeer::alias('i18n_locale', \Cungfoo\Model\TypeHebergementI18nPeer::LOCALE), $this->currentLocale);
-
+    
         return $this->getTypeHebergements($criteria, $con);
     }
-
+    
     public function getDestinationsActive($criteria = null, PropelPDO $con = null)
     {
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-
+    
         $criteria->add(\Cungfoo\Model\DestinationPeer::ACTIVE, true);
-
-
+    
+    
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\DestinationI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\DestinationPeer::ID, \Cungfoo\Model\DestinationI18nPeer::alias('i18n_locale', \Cungfoo\Model\DestinationI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\DestinationI18nPeer::alias('i18n_locale', \Cungfoo\Model\DestinationI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\DestinationI18nPeer::alias('i18n_locale', \Cungfoo\Model\DestinationI18nPeer::LOCALE), $this->currentLocale);
-
+    
         return $this->getDestinations($criteria, $con);
     }
-
+    
     public function getActivitesActive($criteria = null, PropelPDO $con = null)
     {
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-
+    
         $criteria->add(\Cungfoo\Model\ActivitePeer::ACTIVE, true);
-
-
+    
+    
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\ActiviteI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\ActivitePeer::ID, \Cungfoo\Model\ActiviteI18nPeer::alias('i18n_locale', \Cungfoo\Model\ActiviteI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\ActiviteI18nPeer::alias('i18n_locale', \Cungfoo\Model\ActiviteI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\ActiviteI18nPeer::alias('i18n_locale', \Cungfoo\Model\ActiviteI18nPeer::LOCALE), $this->currentLocale);
-
+    
         return $this->getActivites($criteria, $con);
     }
-
+    
     public function getServiceComplementairesActive($criteria = null, PropelPDO $con = null)
     {
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-
+    
         $criteria->add(\Cungfoo\Model\ServiceComplementairePeer::ACTIVE, true);
-
-
+    
+    
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\ServiceComplementaireI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\ServiceComplementairePeer::ID, \Cungfoo\Model\ServiceComplementaireI18nPeer::alias('i18n_locale', \Cungfoo\Model\ServiceComplementaireI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\ServiceComplementaireI18nPeer::alias('i18n_locale', \Cungfoo\Model\ServiceComplementaireI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\ServiceComplementaireI18nPeer::alias('i18n_locale', \Cungfoo\Model\ServiceComplementaireI18nPeer::LOCALE), $this->currentLocale);
-
+    
         return $this->getServiceComplementaires($criteria, $con);
     }
-
+    
     public function getSituationGeographiquesActive($criteria = null, PropelPDO $con = null)
     {
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-
+    
         $criteria->add(\Cungfoo\Model\SituationGeographiquePeer::ACTIVE, true);
-
-
+    
+    
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\SituationGeographiqueI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\SituationGeographiquePeer::ID, \Cungfoo\Model\SituationGeographiqueI18nPeer::alias('i18n_locale', \Cungfoo\Model\SituationGeographiqueI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\SituationGeographiqueI18nPeer::alias('i18n_locale', \Cungfoo\Model\SituationGeographiqueI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\SituationGeographiqueI18nPeer::alias('i18n_locale', \Cungfoo\Model\SituationGeographiqueI18nPeer::LOCALE), $this->currentLocale);
-
+    
         return $this->getSituationGeographiques($criteria, $con);
     }
-
+    
     public function getBaignadesActive($criteria = null, PropelPDO $con = null)
     {
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-
+    
         $criteria->add(\Cungfoo\Model\BaignadePeer::ACTIVE, true);
-
-
+    
+    
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\BaignadeI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\BaignadePeer::ID, \Cungfoo\Model\BaignadeI18nPeer::alias('i18n_locale', \Cungfoo\Model\BaignadeI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\BaignadeI18nPeer::alias('i18n_locale', \Cungfoo\Model\BaignadeI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\BaignadeI18nPeer::alias('i18n_locale', \Cungfoo\Model\BaignadeI18nPeer::LOCALE), $this->currentLocale);
-
+    
         return $this->getBaignades($criteria, $con);
     }
-
+    
     public function getThematiquesActive($criteria = null, PropelPDO $con = null)
     {
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-
+    
         $criteria->add(\Cungfoo\Model\ThematiquePeer::ACTIVE, true);
-
-
+    
+    
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\ThematiqueI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\ThematiquePeer::ID, \Cungfoo\Model\ThematiqueI18nPeer::alias('i18n_locale', \Cungfoo\Model\ThematiqueI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\ThematiqueI18nPeer::alias('i18n_locale', \Cungfoo\Model\ThematiqueI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\ThematiqueI18nPeer::alias('i18n_locale', \Cungfoo\Model\ThematiqueI18nPeer::LOCALE), $this->currentLocale);
-
+    
         return $this->getThematiques($criteria, $con);
     }
-
+    
     public function getPointInteretsActive($criteria = null, PropelPDO $con = null)
     {
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-
+    
         $criteria->add(\Cungfoo\Model\PointInteretPeer::ACTIVE, true);
-
-
+    
+    
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\PointInteretI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\PointInteretPeer::ID, \Cungfoo\Model\PointInteretI18nPeer::alias('i18n_locale', \Cungfoo\Model\PointInteretI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\PointInteretI18nPeer::alias('i18n_locale', \Cungfoo\Model\PointInteretI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\PointInteretI18nPeer::alias('i18n_locale', \Cungfoo\Model\PointInteretI18nPeer::LOCALE), $this->currentLocale);
-
+    
         return $this->getPointInterets($criteria, $con);
     }
-
+    
     public function getEventsActive($criteria = null, PropelPDO $con = null)
     {
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-
+    
         $criteria->add(\Cungfoo\Model\EventPeer::ACTIVE, true);
-
-
+    
+    
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\EventI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\EventPeer::ID, \Cungfoo\Model\EventI18nPeer::alias('i18n_locale', \Cungfoo\Model\EventI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\EventI18nPeer::alias('i18n_locale', \Cungfoo\Model\EventI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\EventI18nPeer::alias('i18n_locale', \Cungfoo\Model\EventI18nPeer::LOCALE), $this->currentLocale);
-
+    
         return $this->getEvents($criteria, $con);
     }
-
+    
     public function getBonPlansActive($criteria = null, PropelPDO $con = null)
     {
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-
+    
         $criteria->add(\Cungfoo\Model\BonPlanPeer::ACTIVE, true);
-
-
+    
+    
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\BonPlanI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\BonPlanPeer::ID, \Cungfoo\Model\BonPlanI18nPeer::alias('i18n_locale', \Cungfoo\Model\BonPlanI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\BonPlanI18nPeer::alias('i18n_locale', \Cungfoo\Model\BonPlanI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\BonPlanI18nPeer::alias('i18n_locale', \Cungfoo\Model\BonPlanI18nPeer::LOCALE), $this->currentLocale);
-
+    
         return $this->getBonPlans($criteria, $con);
     }
-
+    
     public function getsActive($criteria = null, PropelPDO $con = null)
     {
-
+    
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-
+    
         $criteria->add(\Cungfoo\Model\Peer::ACTIVE, true);
-
-
+    
+    
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\I18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\Peer::ID, \Cungfoo\Model\I18nPeer::alias('i18n_locale', \Cungfoo\Model\I18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\I18nPeer::alias('i18n_locale', \Cungfoo\Model\I18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\I18nPeer::alias('i18n_locale', \Cungfoo\Model\I18nPeer::LOCALE), $this->currentLocale);
-
+    
         return $this->gets($criteria, $con);
     }
-
+    
     public function getPersonnagesActive($criteria = null, PropelPDO $con = null)
     {
-
+    
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-
+    
         $criteria->add(\Cungfoo\Model\PersonnagePeer::ACTIVE, true);
-
-
+    
+    
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\PersonnageI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\PersonnagePeer::ID, \Cungfoo\Model\PersonnageI18nPeer::alias('i18n_locale', \Cungfoo\Model\PersonnageI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\PersonnageI18nPeer::alias('i18n_locale', \Cungfoo\Model\PersonnageI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\PersonnageI18nPeer::alias('i18n_locale', \Cungfoo\Model\PersonnageI18nPeer::LOCALE), $this->currentLocale);
-
+    
         return $this->getPersonnages($criteria, $con);
     }
-
+    
     public function getMultimediasActive($criteria = null, PropelPDO $con = null)
     {
-
+    
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-
+    
         $criteria->add(\Cungfoo\Model\MultimediaPeer::ACTIVE, true);
-
-
+    
+    
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\MultimediaI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\MultimediaPeer::ID, \Cungfoo\Model\MultimediaI18nPeer::alias('i18n_locale', \Cungfoo\Model\MultimediaI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\MultimediaI18nPeer::alias('i18n_locale', \Cungfoo\Model\MultimediaI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\MultimediaI18nPeer::alias('i18n_locale', \Cungfoo\Model\MultimediaI18nPeer::LOCALE), $this->currentLocale);
-
+    
         return $this->getMultimedias($criteria, $con);
     }
-
+    
     public function getTopCampingsActive($criteria = null, PropelPDO $con = null)
     {
-
+    
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-
+    
         $criteria->add(\Cungfoo\Model\TopCampingPeer::ACTIVE, true);
-
-
+    
+    
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\TopCampingI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\TopCampingPeer::ID, \Cungfoo\Model\TopCampingI18nPeer::alias('i18n_locale', \Cungfoo\Model\TopCampingI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\TopCampingI18nPeer::alias('i18n_locale', \Cungfoo\Model\TopCampingI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\TopCampingI18nPeer::alias('i18n_locale', \Cungfoo\Model\TopCampingI18nPeer::LOCALE), $this->currentLocale);
-
+    
         return $this->getTopCampings($criteria, $con);
     }
-
+    
     public function getDemandeAnnulationsActive($criteria = null, PropelPDO $con = null)
     {
-
+    
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-
+    
         $criteria->add(\Cungfoo\Model\DemandeAnnulationPeer::ACTIVE, true);
-
-
+    
+    
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\DemandeAnnulationI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\DemandeAnnulationPeer::ID, \Cungfoo\Model\DemandeAnnulationI18nPeer::alias('i18n_locale', \Cungfoo\Model\DemandeAnnulationI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\DemandeAnnulationI18nPeer::alias('i18n_locale', \Cungfoo\Model\DemandeAnnulationI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\DemandeAnnulationI18nPeer::alias('i18n_locale', \Cungfoo\Model\DemandeAnnulationI18nPeer::LOCALE), $this->currentLocale);
-
+    
         return $this->getDemandeAnnulations($criteria, $con);
     }
     // i18n behavior

@@ -2748,8 +2748,8 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     }
 
     // active behavior
-
-
+    
+    
     /**
      * return true is the object is active
      *
@@ -2759,7 +2759,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     {
         return $this->getActive();
     }
-
+    
     /**
      * return true is the object is active locale
      *
@@ -2769,41 +2769,41 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     {
         return $this->getActiveLocale();
     }
-
+    
     public function getEtablissementsActive($criteria = null, PropelPDO $con = null)
     {
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-
+    
         $criteria->add(\Cungfoo\Model\EtablissementPeer::ACTIVE, true);
-
-
+    
+    
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\EtablissementI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\EtablissementPeer::ID, \Cungfoo\Model\EtablissementI18nPeer::alias('i18n_locale', \Cungfoo\Model\EtablissementI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\EtablissementI18nPeer::alias('i18n_locale', \Cungfoo\Model\EtablissementI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\EtablissementI18nPeer::alias('i18n_locale', \Cungfoo\Model\EtablissementI18nPeer::LOCALE), $this->currentLocale);
-
+    
         return $this->getEtablissements($criteria, $con);
     }
-
+    
     public function getMultimediasActive($criteria = null, PropelPDO $con = null)
     {
-
+    
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-
+    
         $criteria->add(\Cungfoo\Model\MultimediaPeer::ACTIVE, true);
-
-
+    
+    
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\MultimediaI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\MultimediaPeer::ID, \Cungfoo\Model\MultimediaI18nPeer::alias('i18n_locale', \Cungfoo\Model\MultimediaI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\MultimediaI18nPeer::alias('i18n_locale', \Cungfoo\Model\MultimediaI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\MultimediaI18nPeer::alias('i18n_locale', \Cungfoo\Model\MultimediaI18nPeer::LOCALE), $this->currentLocale);
-
+    
         return $this->getMultimedias($criteria, $con);
     }
     // i18n behavior

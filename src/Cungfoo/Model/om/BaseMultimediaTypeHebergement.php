@@ -1589,8 +1589,8 @@ abstract class BaseMultimediaTypeHebergement extends BaseObject implements Persi
     }
 
     // active behavior
-
-
+    
+    
     /**
      * return true is the object is active
      *
@@ -1600,7 +1600,7 @@ abstract class BaseMultimediaTypeHebergement extends BaseObject implements Persi
     {
         return $this->getActive();
     }
-
+    
     /**
      * return true is the object is active locale
      *

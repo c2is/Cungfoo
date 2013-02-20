@@ -1044,7 +1044,7 @@ abstract class BasePersonnagePeer
     }
 
     // crudable behavior
-
+    
     /**
      * The default locale to use for translations
      * @var        string

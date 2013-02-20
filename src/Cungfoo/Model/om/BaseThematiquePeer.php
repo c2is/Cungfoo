@@ -796,7 +796,7 @@ abstract class BaseThematiquePeer
     }
 
     // crudable behavior
-
+    
     /**
      * The default locale to use for translations
      * @var        string

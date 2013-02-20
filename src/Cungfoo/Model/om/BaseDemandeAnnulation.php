@@ -2615,8 +2615,8 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
     }
 
     // active behavior
-
-
+    
+    
     /**
      * return true is the object is active
      *
@@ -2626,7 +2626,7 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
     {
         return $this->getActive();
     }
-
+    
     /**
      * return true is the object is active locale
      *

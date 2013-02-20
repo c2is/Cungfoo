@@ -1166,7 +1166,7 @@ abstract class BaseDemandeAnnulationPeer
     }
 
     // crudable behavior
-
+    
     /**
      * The default locale to use for translations
      * @var        string

@@ -71,6 +71,8 @@ class EventLoader extends AbstractLoader
             return $this->cache[$code][$language];
         }
 
+        $utils = new \Cungfoo\Lib\Utils();
+
         $newEvent = EventQuery::create()
             ->filterByCode($code)
             ->findOne($this->dbConnection);
@@ -87,6 +89,7 @@ class EventLoader extends AbstractLoader
             $newEvent
                 ->setLocale($language)
                 ->setName($event->{'Title'})
+                ->setSlug($utils->slugify($event->{'Title'}))
                 ->setSubtitle($event->{'Subtitle'})
                 ->setStrDate($event->{'StrDate'})
                 ->setCode($code)
@@ -116,11 +119,6 @@ class EventLoader extends AbstractLoader
         }
         else
         {
-            if (!$newEvent)
-            {
-                return null;
-            }
-
             $defaultName        = $newEvent->getName();
             $defaultStrDate     = $newEvent->getStrDate();
             $defaultSubtitle    = $newEvent->getSubtitle();
@@ -130,6 +128,7 @@ class EventLoader extends AbstractLoader
             $newEvent
                 ->setLocale($language)
                 ->setName(($event->{'Title'}) ? $event->{'Title'} : $defaultName)
+                ->setSlug($utils->slugify(($event->{'Title'}) ? $event->{'Title'} : $defaultName))
                 ->setSubtitle(($event->{'Subtitle'}) ? $event->{'Subtitle'} : $defaultSubtitle)
                 ->setStrDate($event->{'StrDate'} ? $event->{'StrDate'} : $defaultStrDate)
                 ->setDescription(($event->{'Description'}) ? $event->{'Description'} : $defaultDescription)
