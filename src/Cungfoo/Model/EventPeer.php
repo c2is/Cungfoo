@@ -34,7 +34,7 @@ class EventPeer extends BaseEventPeer
         return 'fr';
     }
 
-    static public function getForQuery(\ModelCriteria $query, $sort = self::NO_SORT, $count = null, $category = null, $criteriaOperation = null)
+    static public function getForQuery(EventQuery $query, $sort = self::NO_SORT, $count = null, $category = null, $criteriaOperation = null)
     {
         $query
             ->useI18nQuery(self::getLocale())
@@ -70,11 +70,22 @@ class EventPeer extends BaseEventPeer
 
     static public function getForEtablissement(Etablissement $etab, $sort = self::NO_SORT, $count = null, $category = null, $criteriaOperation = null)
     {
-        $query = EventQuery::create()
-            ->useEtablissementEventQuery()
-                ->filterByEtablissementId($etab->getId())
-            ->endUse()
-        ;
+        if(self::getLocale() == 'de')
+        {
+            $query = EventQuery::create()
+                ->useRegionEventQuery()
+                    ->filterByRegionId($etab->getRegion()->getId())
+                ->endUse()
+            ;
+        }
+        else
+        {
+            $query = EventQuery::create()
+                ->useEtablissementEventQuery()
+                    ->filterByEtablissementId($etab->getId())
+                ->endUse()
+            ;
+        }
 
         return self::getForQuery($query, $sort, $count, $category, $criteriaOperation);
     }

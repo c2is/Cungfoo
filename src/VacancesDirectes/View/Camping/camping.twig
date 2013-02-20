@@ -204,7 +204,7 @@
                     <strong>{{ etab.eventPrioritaire.name }}<br />
                     {{ etab.eventPrioritaire.strDate }}</strong> {{ etab.eventPrioritaire.address }}<br />
                     {{ etab.eventPrioritaire.zipcode }} {{ etab.eventPrioritaire.city }}<br />
-                    {{ "fiche.distance_camping" | trans }} {{ (etab.eventPrioritaire.distanceCamping / 1000) | number_format(1, ',', ' ') }} {{ "fiche.km" | trans }}
+                    {% if etab.eventPrioritaire.distanceCamping > 0 %}{{ "fiche.distance_camping" | trans }} {{ (etab.eventPrioritaire.distanceCamping / 1000) | number_format(1, ',', ' ') }} {{ "fiche.km" | trans }}{% endif %}
                 </dd>
             </dl>
             {% endif %}
@@ -305,7 +305,7 @@
                     <p>{{ poi.address }}<br>
                         {{ poi.address2 }}<br>
                         <span>{{ poi.zipcode }} {{ poi.city }}</span><br>
-                        {{ "fiche.distance_camping" | trans }} {{ (poi.distanceForEtablissement(etab) / 1000) | number_format(1, ',', ' ') }} {{ "fiche.km" | trans }}<br>
+                        {% if poi.distanceForEtablissement(etab) > 0 %}{{ "fiche.distance_camping" | trans }} {{ (poi.distanceForEtablissement(etab) / 1000) | number_format(1, ',', ' ') }} {{ "fiche.km" | trans }}<br>{% endif %}
                         <a href="{{ path('poi', {slug: poi.slug}) }}" class="bt sombre left" title="{{ "general.en_savoir_plus" | trans }}" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'Contenu_-_A-Proximite', 'Clic_-_Detail-Activite-Sites-a-Visiter']);">{{ "general.en_savoir_plus" | trans }}</a>
                     </p>
                 </div>
@@ -325,7 +325,7 @@
                     <p>{{ event.address }}<br>
                         {{ event.address2 }}<br>
                     <span>{{ event.zipcode }} {{ event.city }}</span><br>
-                        {{ "fiche.distance_camping" | trans }} {{ (event.distanceForEtablissement(etab) / 1000) | number_format(1, ',', ' ') }} {{ "fiche.km" | trans }}<br>
+                        {% if poi.distanceForEtablissement(etab) > 0 %}{{ "fiche.distance_camping" | trans }} {{ (event.distanceForEtablissement(etab) / 1000) | number_format(1, ',', ' ') }} {{ "fiche.km" | trans }}<br>{% endif %}
                         <a href="{{ path('event', {slug: event.slug}) }}" class="bt sombre left" title="{{ "general.en_savoir_plus" | trans }}" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'Contenu_-_A-Proximite', 'Clic_-_Detail-Agenda-culturel-et-sorties']);">{{ "general.en_savoir_plus" | trans }}</a>
                     </p>
                 </div>

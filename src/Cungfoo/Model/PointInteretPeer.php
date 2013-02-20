@@ -31,7 +31,7 @@ class PointInteretPeer extends BasePointInteretPeer
         return 'fr';
     }
 
-    static public function getForQuery(\ModelCriteria $query, $sort = self::NO_SORT, $count = null)
+    static public function getForQuery(PointInteretQuery $query, $sort = self::NO_SORT, $count = null)
     {
         $query
             ->useI18nQuery(self::getLocale())
@@ -57,23 +57,22 @@ class PointInteretPeer extends BasePointInteretPeer
 
     static public function getForEtablissement(Etablissement $etab, $sort = self::NO_SORT, $count = null)
     {
-        $query = PointInteretQuery::create()
-            ->useEtablissementPointInteretQuery()
-                ->filterByEtablissementId($etab->getId())
-            ->endUse()
-        ;
-
-        if ($sort == self::RANDOM_SORT)
+        if(self::getLocale() == 'de')
         {
-            $query->addAscendingOrderByColumn('RAND()');
+            $query = PointInteretQuery::create()
+                ->useRegionPointInteretQuery()
+                    ->filterByRegionId($etab->getRegion()->getId())
+                ->endUse()
+            ;
         }
-
-        if (!is_null($count))
+        else
         {
-            $query->limit($count);
+            $query = PointInteretQuery::create()
+                ->useEtablissementPointInteretQuery()
+                    ->filterByEtablissementId($etab->getId())
+                ->endUse()
+            ;
         }
-
-        $query->filterByActive(true);
 
         return self::getForQuery($query, $sort, $count);
     }
