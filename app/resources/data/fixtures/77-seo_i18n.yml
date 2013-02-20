@@ -1,0 +1,211 @@
+\Cungfoo\Model\SeoI18n:
+    1_de:
+        Id: 1
+        Locale: de
+        SeoTitle: 'günstiger Campingplatz %pays%'
+        SeoDescription: 'Vacances Directes: Entdecken Sie unsere günstigen Angebote für die Vermietung von Wohnwagen in %pays% für einen sonnigen Urlaub auf dem Campingplatz und buchen Sie online.'
+        SeoH1: 'Günstig campen in %item%'
+        SeoKeywords: ''
+    1_fr:
+        Id: 1
+        Locale: fr
+        SeoTitle: 'Camping %pays% pas cher'
+        SeoDescription: 'Vacances directes : découvrez nos offres de location de mobil home pas cher en %pays% pour des vacances ensoleillés en camping et réserver en ligne.'
+        SeoH1: 'Camping en %item% pas cher'
+        SeoKeywords: ''
+    2_de:
+        Id: 2
+        Locale: de
+        SeoTitle: 'Günstige Vermietung von Wohnwagen %region%, Campingplatz %region%'
+        SeoDescription: 'Buchen Sie Ihren künftigen Urlaub in der Region %region% in %pays% mit Vacances Directes online (günstige Vermietung von Wohnwagen auf dem Campingplatz).'
+        SeoH1: 'Vermietung Wohnwagen %item%'
+        SeoKeywords: ''
+    2_fr:
+        Id: 2
+        Locale: fr
+        SeoTitle: 'Location mobil home %region% pas cher, camping %region%'
+        SeoDescription: 'Réserver en ligne vos futures vacances dans la région %region% en %pays% avec Vacances directes (location de mobil-homes pas cher en camping).'
+        SeoH1: 'Location mobil home %item%'
+        SeoKeywords: ''
+    3_de:
+        Id: 3
+        Locale: de
+        SeoTitle: 'Vermietung von günstigen Mobilhomes %departement%, Camping %departement%'
+        SeoDescription: 'Reservieren Sie Ihren nächsten Urlaub online im Departement %departement% in %pays% mit Vacanes directes (Vermietung von günstigen Camping-Mobilhomes).'
+        SeoH1: 'Vermietungsangebot Mobilhome %item%'
+        SeoKeywords: ''
+    3_fr:
+        Id: 3
+        Locale: fr
+        SeoTitle: 'Location mobil home %departement% pas cher, camping %departement%'
+        SeoDescription: 'Réserver en ligne vos futures vacances dans le département %departement% en %pays% avec Vacances directes (location de mobil-homes pas cher en camping).'
+        SeoH1: 'Location mobil home %item%'
+        SeoKeywords: ''
+    4_de:
+        Id: 4
+        Locale: de
+        SeoTitle: 'Günstiger Campingplatz %ville%, günstige Vermietung von Wohnwagen %ville%'
+        SeoDescription: 'Entdecken Sie alle von Vacances Directes (günstige Vermietung von Wohnwagen) angebotenen Campingplätze in %ville% (%region%) und buchen Sie Ihren Aufenthalt online.'
+        SeoH1: 'Günstig campen %item% (Vermietung Wohnwagen)'
+        SeoKeywords: ''
+    4_fr:
+        Id: 4
+        Locale: fr
+        SeoTitle: 'Camping %ville% pas cher, location mobil home %ville% pas cher'
+        SeoDescription: 'Découvrez l''ensemble des campings à %ville% (%region%) proposés par Vacances Directes (location de mobil home pas cher) et réserver votre séjour en ligne.'
+        SeoH1: 'Camping %item% pas cher (location mobil home)'
+        SeoKeywords: ''
+    5_de:
+        Id: 5
+        Locale: de
+        SeoTitle: 'Günstiger Campingplatz in %destination%'
+        SeoDescription: 'Vacances Directes: Entdecken Sie alle unsere Angebote für die günstige Vermietung von Wohnwagen in %pays% für einen sonnigen Urlaub auf dem Campingplatz und buchen Sie online.'
+        SeoH1: 'Günstiger Campingplatz in %item%'
+        SeoKeywords: ''
+    5_fr:
+        Id: 5
+        Locale: fr
+        SeoTitle: 'Camping en %destination% pas cher'
+        SeoDescription: 'Vacances directes : découvrez nos offres de location de mobil home pas cher en %pays% pour des vacances ensoleillés en camping et réserver en ligne.'
+        SeoH1: 'Camping en %item% pas cher'
+        SeoKeywords: ''
+    6_de:
+        Id: 6
+        Locale: de
+        SeoTitle: 'Campingplatz %nom%, Campingplatz %ville%'
+        SeoDescription: 'Buchen Sie Ihren künftigen Urlaub auf dem Campingplatz %nom% mit Vacances Directes online: ein %nbEtoiles% Campingplatz mit Swimmingpool in %ville%.'
+        SeoH1: 'Campingplatz %ville%'
+        SeoKeywords: ''
+    6_fr:
+        Id: 6
+        Locale: fr
+        SeoTitle: 'Camping %nom%, camping %ville%'
+        SeoDescription: 'Avec Vacances Directes, réserver en ligne votre futur séjour dans le camping %nom% : un camping %nbEtoiles% avec piscine à %ville%.'
+        SeoH1: 'Camping %ville%'
+        SeoKeywords: ''
+    7_de:
+        Id: 7
+        Locale: de
+        SeoTitle: 'Campingplatz %bonPlan%, Vermietung Wohnwagen %bonPlan%'
+        SeoDescription: 'Entdecken Sie alle unsere Campingangebote: "%bonPlan%" und buchen Sie Ihren künftigen Urlaub auf der Internetseite Vacances Directes online.'
+        SeoH1: ''
+        SeoKeywords: ''
+    7_fr:
+        Id: 7
+        Locale: fr
+        SeoTitle: 'Camping %bonPlan%, location mobil-homes %bonPlan%'
+        SeoDescription: 'Découvrez toutes nos offres de camping : "%bonPlan%" et réservez en ligne vos futures vacances sur le site Vacances Directes.'
+        SeoH1: ''
+        SeoKeywords: ''
+    8_de:
+        Id: 8
+        Locale: de
+        SeoTitle: 'Top Campingplätze Frankreich, beste Urlaubsziele'
+        SeoDescription: 'Entdecken Sie unsere 10 besten Reiseziele für einen perfekten Campingurlaub mit Vacances Directes, der Spezialist für die Vermietung von Wohnwagen.'
+        SeoH1: ''
+        SeoKeywords: ''
+    8_fr:
+        Id: 8
+        Locale: fr
+        SeoTitle: 'Top camping France, top destination vacances'
+        SeoDescription: 'Découvrez notre top 10 des destinations pour des vacances en campings réussies avec Vacances Directes, le spécialiste de la location de mobil-home.'
+        SeoH1: ''
+        SeoKeywords: ''
+    9_de:
+        Id: 9
+        Locale: de
+        SeoTitle: '%poi% besichtigen: %ville%'
+        SeoDescription: '%poi% in %ville%, besichtigen Sie diesen Ort und verbringen Sie Ihren Urlaub mit Vacances Directes auf unseren nahegelegenen Campingplätzen.'
+        SeoH1: ''
+        SeoKeywords: ''
+    9_fr:
+        Id: 9
+        Locale: fr
+        SeoTitle: 'Visiter %poi% : %ville%'
+        SeoDescription: '%poi% à %ville%, venez visiter ce lieu et passez vos vacances dans nos campings à proximité avec Vacances Directes.'
+        SeoH1: ''
+        SeoKeywords: ''
+    10_de:
+        Id: 10
+        Locale: de
+        SeoTitle: '%event% : %ville%'
+        SeoDescription: '%event% in %ville%. Verpassen Sie nicht dieses Event und verbringen Sie Ihren Urlaub mit Vacances Directes auf unseren nahegelegenen Campingplätzen.'
+        SeoH1: ''
+        SeoKeywords: ''
+    10_fr:
+        Id: 10
+        Locale: fr
+        SeoTitle: '%event% : %ville%'
+        SeoDescription: '%event% à %ville%. Ne rater pas cet événement et passez vos vacances dans nos campings à proximité avec Vacances Directes.'
+        SeoH1: ''
+        SeoKeywords: ''
+    11_de:
+        Id: 11
+        Locale: de
+        SeoTitle: 'Campingplatz %bonPlan%, Vermietung Wohnwagen %bonPlan%'
+        SeoDescription: 'Entdecken Sie alle unsere Campingangebote: "%bonPlan%" und buchen Sie Ihren künftigen Urlaub auf der Internetseite Vacances Directes online.'
+        SeoH1: ''
+        SeoKeywords: ''
+    11_fr:
+        Id: 11
+        Locale: fr
+        SeoTitle: 'Camping %bonPlan%, location mobil-homes %bonPlan%'
+        SeoDescription: 'Découvrez toutes nos offres de camping : "%bonPlan%" et réservez en ligne vos futures vacances sur le site Vacances Directes.'
+        SeoH1: ''
+        SeoKeywords: ''
+    12_de:
+        Id: 12
+        Locale: de
+        SeoTitle: 'Vermietung %type% Campingplatz Frankreich, Italien, Spanien'
+        SeoDescription: 'Sie möchten für Ihren künftigen Urlaub eine(n) %type% mieten? Entdecken Sie alle unsere Campingplätze, die diese Art Unterkunft in Frankreich, Spanien und Italien anbieten.'
+        SeoH1: ''
+        SeoKeywords: ''
+    12_fr:
+        Id: 12
+        Locale: fr
+        SeoTitle: 'Location %type% camping France, Italie, Espagne'
+        SeoDescription: 'Vous souhaitez louer un(e) %type% pour vos futures vacances ? Découvrez tous nos campings proposant cet hébergement en France, en Espagne et en Italie.'
+        SeoH1: ''
+        SeoKeywords: ''
+    13_de:
+        Id: 13
+        Locale: de
+        SeoTitle: 'Vermietung Campingplatz %type% Frankreich, Italien, Spanien'
+        SeoDescription: 'Urlaubsvermietung für  %type% auf zahlreichen erstklassigen Campingplätzen in Frankreich, Spanien und Italien mit Vacances Directes.'
+        SeoH1: ''
+        SeoKeywords: ''
+    13_fr:
+        Id: 13
+        Locale: fr
+        SeoTitle: 'Location camping %type% France, Italie, Espagne'
+        SeoDescription: 'Location de vacances pour %type% dans de nombreux campings de qualité en France, en Espagne et en Italie avec Vacances Directes.'
+        SeoH1: ''
+        SeoKeywords: ''
+    14_de:
+        Id: 14
+        Locale: de
+        SeoTitle: 'Vermietung %type% %personnes% Personen Campingplatz: %name%'
+        SeoDescription: 'Verbringen Sie Ihren nächsten Urlaub mit Vacances Directes im %type% %name% auf zahlreichen erstklassigen Campingplätzen.'
+        SeoH1: ''
+        SeoKeywords: ''
+    14_fr:
+        Id: 14
+        Locale: fr
+        SeoTitle: 'Location %type% %personnes% personnes camping : %name%'
+        SeoDescription: 'Passez vos prochaines vacances en %type% %name% dans de nombreux campings de qualité avec Vacances Directes.'
+        SeoH1: ''
+        SeoKeywords: ''
+    15_de:
+        Id: 15
+        Locale: de
+        SeoTitle: 'Location mobil home %region% pas cher, camping %region%'
+        SeoDescription: 'Réserver en ligne vos futures vacances dans la région %region% en %pays% avec Vacances directes (location de mobil-homes pas cher en camping).'
+        SeoH1: 'Location mobil home %item%'
+        SeoKeywords: ''
+    15_fr:
+        Id: 15
+        Locale: fr
+        SeoTitle: 'Location mobil home %region% pas cher, camping %region%'
+        SeoDescription: 'Réserver en ligne vos futures vacances dans la région %region% en %pays% avec Vacances directes (location de mobil-homes pas cher en camping).'
+        SeoH1: 'Location mobil home %item%'
+        SeoKeywords: ''
