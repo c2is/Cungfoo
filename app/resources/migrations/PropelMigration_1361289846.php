@@ -53,7 +53,8 @@ ALTER TABLE `etablissement_type_hebergement` CHANGE `etablissement_id` `etabliss
 ALTER TABLE `etablissement_type_hebergement` CHANGE `type_hebergement_id` `type_hebergement_id` INTEGER;
 
 ALTER TABLE `etablissement_type_hebergement`
-    ADD `id` INTEGER NOT NULL AUTO_INCREMENT FIRST;
+    ADD `id` INTEGER NOT NULL AUTO_INCREMENT FIRST,
+    ADD PRIMARY KEY (`id`);
 
 ALTER TABLE `etablissement_type_hebergement` DROP `minimum_price`;
 
@@ -62,8 +63,6 @@ ALTER TABLE `etablissement_type_hebergement` DROP `minimum_price_discount_label`
 ALTER TABLE `etablissement_type_hebergement` DROP `minimum_price_start_date`;
 
 ALTER TABLE `etablissement_type_hebergement` DROP `minimum_price_end_date`;
-
-ALTER TABLE `etablissement_type_hebergement` ADD PRIMARY KEY (`id`);
 
 CREATE INDEX `etablissement_type_hebergement_FI_1` ON `etablissement_type_hebergement` (`etablissement_id`);
 
