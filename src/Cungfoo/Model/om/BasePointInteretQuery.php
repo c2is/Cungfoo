@@ -1162,8 +1162,8 @@ abstract class BasePointInteretQuery extends ModelCriteria
         return $this->addAscendingOrderByColumn(PointInteretPeer::CREATED_AT);
     }
     // active behavior
-    
-    
+
+
     /**
      * return only active objects
      *
@@ -1172,7 +1172,7 @@ abstract class BasePointInteretQuery extends ModelCriteria
     public function findActive($con = null)
     {
         $locale = defined('CURRENT_LANGUAGE') ? CURRENT_LANGUAGE : 'fr';
-    
+
         $this
             ->filterByActive(true)
             ->useI18nQuery($locale, 'i18n_locale')
@@ -1181,7 +1181,7 @@ abstract class BasePointInteretQuery extends ModelCriteria
                 ->filterByActiveLocale(null, Criteria::ISNULL)
             ->endUse()
         ;
-    
+
         return parent::find($con);
     }
     // i18n behavior

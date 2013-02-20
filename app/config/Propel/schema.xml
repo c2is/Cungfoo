@@ -108,12 +108,17 @@
     </table>
 
     <table name="etablissement_type_hebergement" isCrossRef="true">
-        <column name="etablissement_id" type="integer" primaryKey="true" />
-        <column name="type_hebergement_id" type="integer" primaryKey="true"/>
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="etablissement_id" type="integer" />
+        <column name="type_hebergement_id" type="integer" />
         <column name="minimum_price" type="varchar" />
         <column name="minimum_price_discount_label" type="varchar" />
         <column name="minimum_price_start_date" type="date" />
         <column name="minimum_price_end_date" type="date" />
+
+        <behavior name="i18n">
+            <parameter name="i18n_columns" value="minimum_price,minimum_price_discount_label,minimum_price_start_date,minimum_price_end_date" />
+        </behavior>
 
         <foreign-key foreignTable="etablissement" onDelete="CASCADE">
             <reference local="etablissement_id" foreign="id"/>

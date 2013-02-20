@@ -23,12 +23,13 @@ class getFlowProposalsLoader extends AbstractLoader
 
             if ($objectEtabTypeHeb)
             {
-                $minimumPrice = property_exists($etabTypeHeb, 'minimum_net_price') ? $etabTypeHeb->{'minimum_net_price'} : null;
-                $startDate = property_exists($etabTypeHeb, 'start_date') ? $etabTypeHeb->{'start_date'} : null;
-                $endDate = property_exists($etabTypeHeb, 'end_date') ? $etabTypeHeb->{'end_date'} : null;
-                $discountLabel = property_exists($etabTypeHeb, 'minimum_price_discount_label') ? $etabTypeHeb->{'minimum_price_discount_label'} : null;
+                $minimumPrice = property_exists($etabTypeHeb, 'minimum_net_price') ? $etabTypeHeb->{'minimum_net_price'} : '';
+                $startDate = property_exists($etabTypeHeb, 'start_date') ? $etabTypeHeb->{'start_date'} : '';
+                $endDate = property_exists($etabTypeHeb, 'end_date') ? $etabTypeHeb->{'end_date'} : '';
+                $discountLabel = property_exists($etabTypeHeb, 'minimum_price_discount_label') ? $etabTypeHeb->{'minimum_price_discount_label'} : '';
 
                 $objectEtabTypeHeb
+                    ->setLocale($locale)
                     ->setMinimumPrice($minimumPrice)
                     ->setMinimumPriceStartDate($startDate)
                     ->setMinimumPriceEndDate($endDate)

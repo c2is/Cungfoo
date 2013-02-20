@@ -120,10 +120,12 @@ class Etablissement extends BaseEtablissement
         }
 
         return \Cungfoo\Model\EtablissementTypeHebergementQuery::create()
-             ->select('MinimumPriceDiscountLabel')
              ->filterByEtablissementId($this->getId())
-             ->filterByMinimumPrice($minimalPrice)
-             ->addAscendingOrderByColumn('minimum_price')
+             ->useI18nQuery($this->currentLocale)
+                ->select('MinimumPriceDiscountLabel')
+                ->filterByMinimumPrice($minimalPrice)
+                ->addAscendingOrderByColumn('minimum_price')
+             ->endUse()
              ->findOne()
          ;
     }
@@ -155,8 +157,11 @@ class Etablissement extends BaseEtablissement
 
         return \Cungfoo\Model\EtablissementTypeHebergementQuery::create()
              ->filterByEtablissementId($this->getId())
-             ->filterByMinimumPrice($minimalPrice)
-             ->addAscendingOrderByColumn('minimum_price')
+             ->useI18nQuery($this->currentLocale)
+                ->select('MinimumPriceDiscountLabel')
+                ->filterByMinimumPrice($minimalPrice)
+                ->addAscendingOrderByColumn('minimum_price')
+             ->endUse()
              ->findOne()
          ;
     }

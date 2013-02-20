@@ -1,0 +1,31 @@
+\Cungfoo\Model\Seo:
+    1:
+        TableRef: pays
+    2:
+        TableRef: region
+    3:
+        TableRef: departement
+    4:
+        TableRef: ville
+    5:
+        TableRef: destination
+    6:
+        TableRef: etablissement
+    7:
+        TableRef: bon_plan
+    8:
+        TableRef: top_camping
+    9:
+        TableRef: poi
+    10:
+        TableRef: event
+    11:
+        TableRef: bon_plan_categorie
+    12:
+        TableRef: category_type_hebergement
+    13:
+        TableRef: type_hebergement_capacite
+    14:
+        TableRef: type_hebergement
+    15:
+        TableRef: region_ref

@@ -5,6 +5,10 @@
         Name: 'Aufenthalte von 3/4 Nächte in der Hochsaison erlaubt'
         Description: null
         Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     1_en:
         Id: 1
@@ -12,6 +16,10 @@
         Name: 'Séjour 3/4 nuits possible en haute saison'
         Description: null
         Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     1_fr:
         Id: 1
@@ -19,6 +27,10 @@
         Name: 'Séjour 3/4 nuits possible en haute saison'
         Description: 'A vous les courts séjours, même en juillet et août, profitez-en !'
         Keywords: 'court séjour, juillet, aout, pas cher, haute saison'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     1_nl:
         Id: 1
@@ -26,6 +38,10 @@
         Name: 'Séjour 3/4 nuits possible en haute saison'
         Description: null
         Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     2_de:
         Id: 2
@@ -33,6 +49,10 @@
         Name: WLAN
         Description: null
         Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     2_en:
         Id: 2
@@ -40,6 +60,10 @@
         Name: Wifi
         Description: null
         Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     2_fr:
         Id: 2
@@ -47,6 +71,10 @@
         Name: Wifi
         Description: 'Accèdez au wifi sur ce camping'
         Keywords: 'wifi, internet, connexion'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     2_nl:
         Id: 2
@@ -54,6 +82,10 @@
         Name: Wifi
         Description: null
         Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     3_de:
         Id: 3
@@ -61,6 +93,10 @@
         Name: 'Hunde erlaubt'
         Description: null
         Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     3_en:
         Id: 3
@@ -68,6 +104,10 @@
         Name: 'Chiens autorisés'
         Description: null
         Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     3_fr:
         Id: 3
@@ -75,6 +115,10 @@
         Name: 'Chiens autorisés'
         Description: 'Votre chien est le bienvenu sur ce camping'
         Keywords: 'chien, meilleur ami de l''homme'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     3_nl:
         Id: 3
@@ -82,6 +126,10 @@
         Name: 'Chiens autorisés'
         Description: null
         Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     4_de:
         Id: 4
@@ -89,6 +137,10 @@
         Name: 'Dépannage alimentation'
         Description: null
         Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     4_en:
         Id: 4
@@ -96,6 +148,10 @@
         Name: 'Dépannage alimentation'
         Description: null
         Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     4_fr:
         Id: 4
@@ -103,6 +159,10 @@
         Name: 'Dépannage alimentation'
         Description: null
         Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     4_nl:
         Id: 4
@@ -110,6 +170,10 @@
         Name: 'Dépannage alimentation'
         Description: null
         Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     5_de:
         Id: 5
@@ -117,6 +181,10 @@
         Name: 'Location de vélos'
         Description: null
         Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     5_en:
         Id: 5
@@ -124,6 +192,10 @@
         Name: 'Location de vélos'
         Description: null
         Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     5_fr:
         Id: 5
@@ -131,6 +203,10 @@
         Name: 'Location de vélos'
         Description: 'Partez à l''assaut des paysages les plus insolites en vélo, pour des vacances sportives !'
         Keywords: 'vélos, VTT, VTC, pistes cyclables, randonnée'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     5_nl:
         Id: 5
@@ -138,6 +214,10 @@
         Name: 'Location de vélos'
         Description: null
         Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     6_de:
         Id: 6
@@ -145,6 +225,10 @@
         Name: 'TV au bar'
         Description: null
         Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     6_en:
         Id: 6
@@ -152,6 +236,10 @@
         Name: 'TV au bar'
         Description: null
         Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     6_fr:
         Id: 6
@@ -159,6 +247,10 @@
         Name: 'TV au bar'
         Description: null
         Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     6_nl:
         Id: 6
@@ -166,6 +258,10 @@
         Name: 'TV au bar'
         Description: null
         Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     7_de:
         Id: 7
@@ -173,6 +269,10 @@
         Name: 'Navette plage (gratuite)'
         Description: null
         Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     7_en:
         Id: 7
@@ -180,6 +280,10 @@
         Name: 'Navette plage (gratuite)'
         Description: null
         Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     7_fr:
         Id: 7
@@ -187,6 +291,10 @@
         Name: 'Navette plage (gratuite)'
         Description: 'Profitez de la navette gratuite qui vous emmènera jusqu''à la plage'
         Keywords: 'navette, plage, bus, car'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     7_nl:
         Id: 7
@@ -194,6 +302,10 @@
         Name: 'Navette plage (gratuite)'
         Description: null
         Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     8_de:
         Id: 8
@@ -201,6 +313,10 @@
         Name: 'Navette plage (payante)'
         Description: null
         Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     8_en:
         Id: 8
@@ -208,6 +324,10 @@
         Name: 'Navette plage (payante)'
         Description: null
         Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     8_fr:
         Id: 8
@@ -215,6 +335,10 @@
         Name: 'Navette plage (payante)'
         Description: 'Profitez de la navette qui vous emmènera jusqu''à la plage'
         Keywords: 'navette, plage, bus, car'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     8_nl:
         Id: 8
@@ -222,6 +346,10 @@
         Name: 'Navette plage (payante)'
         Description: null
         Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     9_de:
         Id: 9
@@ -229,6 +357,10 @@
         Name: Bar
         Description: null
         Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     9_en:
         Id: 9
@@ -236,6 +368,10 @@
         Name: Bar
         Description: null
         Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     9_fr:
         Id: 9
@@ -243,6 +379,10 @@
         Name: Bar
         Description: 'Retrouvez vous en famille ou entre amis autour d''un cocktail'
         Keywords: 'bar, cocktail, boire un verre, amis, apéro'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     9_nl:
         Id: 9
@@ -250,6 +390,10 @@
         Name: Bar
         Description: null
         Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     10_de:
         Id: 10
@@ -257,6 +401,10 @@
         Name: Snack
         Description: null
         Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     10_en:
         Id: 10
@@ -264,6 +412,10 @@
         Name: Snack
         Description: null
         Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     10_fr:
         Id: 10
@@ -271,6 +423,10 @@
         Name: Snack
         Description: 'Ne faites pas à manger, ce soir c''est direction le snack pour toute la famille'
         Keywords: 'snack, restauration rapide, plats à emporter, hamburger, frites'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     10_nl:
         Id: 10
@@ -278,6 +434,10 @@
         Name: Snack
         Description: null
         Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     11_de:
         Id: 11
@@ -285,6 +445,10 @@
         Name: .
         Description: null
         Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     11_en:
         Id: 11
@@ -292,6 +456,10 @@
         Name: .
         Description: null
         Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     11_fr:
         Id: 11
@@ -299,6 +467,10 @@
         Name: .
         Description: null
         Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     11_nl:
         Id: 11
@@ -306,6 +478,10 @@
         Name: .
         Description: null
         Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     12_de:
         Id: 12
@@ -313,6 +489,10 @@
         Name: 'Restauration à emporter'
         Description: null
         Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     12_en:
         Id: 12
@@ -320,6 +500,10 @@
         Name: 'Restauration à emporter'
         Description: null
         Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     12_fr:
         Id: 12
@@ -327,6 +511,10 @@
         Name: 'Restauration à emporter'
         Description: 'Ne pensez à rien, profitez des plats à emporter et de la restauration rapide'
         Keywords: 'restaurant, snack, plats à emporter, petite restauration'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     12_nl:
         Id: 12
@@ -334,6 +522,10 @@
         Name: 'Restauration à emporter'
         Description: null
         Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     13_de:
         Id: 13
@@ -341,6 +533,10 @@
         Name: Restaurant
         Description: null
         Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     13_en:
         Id: 13
@@ -348,6 +544,10 @@
         Name: Restaurant
         Description: null
         Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     13_fr:
         Id: 13
@@ -355,6 +555,10 @@
         Name: Restaurant
         Description: 'Un petit resto ? Profitez du restaurant du camping pour un déjeuner calme ou un diner animé'
         Keywords: 'restaurant, repas, formule, diner, déjeuner, souper, petit déjeuner'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     13_nl:
         Id: 13
@@ -362,6 +566,10 @@
         Name: Restaurant
         Description: null
         Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     14_de:
         Id: 14
@@ -369,6 +577,10 @@
         Name: 'Animaux interdits'
         Description: null
         Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     14_fr:
         Id: 14
@@ -376,4 +588,8 @@
         Name: 'Animaux interdits'
         Description: null
         Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true

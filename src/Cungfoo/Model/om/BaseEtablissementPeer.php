@@ -2309,7 +2309,7 @@ abstract class BaseEtablissementPeer
     }
 
     // crudable behavior
-    
+
     /**
      * The default locale to use for translations
      * @var        string
@@ -2323,7 +2323,7 @@ abstract class BaseEtablissementPeer
         ;
     }
     // seo behavior
-    
+
     /**
      * The default locale to use for translations
      * @var        string

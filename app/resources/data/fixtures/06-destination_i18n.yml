@@ -6,6 +6,10 @@
         Name: 'Manche et Côte Atlantique'
         Introduction: null
         Description: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     1_en:
         Id: 1
@@ -14,6 +18,10 @@
         Name: 'Manche et Côte Atlantique'
         Introduction: null
         Description: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     1_fr:
         Id: 1
@@ -22,6 +30,10 @@
         Name: 'Manche et Côte Atlantique'
         Introduction: null
         Description: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     1_nl:
         Id: 1
@@ -30,6 +42,10 @@
         Name: 'Manche et Côte Atlantique'
         Introduction: null
         Description: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     2_de:
         Id: 2
@@ -38,6 +54,10 @@
         Name: Méditerranée
         Introduction: null
         Description: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     2_en:
         Id: 2
@@ -46,6 +66,10 @@
         Name: Méditerranée
         Introduction: null
         Description: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     2_fr:
         Id: 2
@@ -54,6 +78,10 @@
         Name: Méditerranée
         Introduction: null
         Description: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     2_nl:
         Id: 2
@@ -62,6 +90,10 @@
         Name: Méditerranée
         Introduction: null
         Description: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     3_de:
         Id: 3
@@ -70,6 +102,10 @@
         Name: Campagne
         Introduction: null
         Description: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     3_en:
         Id: 3
@@ -78,6 +114,10 @@
         Name: 'Campagne et Montagne'
         Introduction: null
         Description: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     3_fr:
         Id: 3
@@ -86,6 +126,10 @@
         Name: Campagne
         Introduction: null
         Description: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     3_nl:
         Id: 3
@@ -94,6 +138,10 @@
         Name: 'Campagne et Montagne'
         Introduction: null
         Description: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     4_de:
         Id: 4
@@ -102,6 +150,10 @@
         Name: Montagne
         Introduction: null
         Description: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     4_fr:
         Id: 4
@@ -110,4 +162,8 @@
         Name: Montagne
         Introduction: null
         Description: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
