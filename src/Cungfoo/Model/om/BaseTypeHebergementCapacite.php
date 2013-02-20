@@ -1872,8 +1872,8 @@ abstract class BaseTypeHebergementCapacite extends BaseObject implements Persist
     }
 
     // active behavior
-    
-    
+
+
     /**
      * return true is the object is active
      *
@@ -1883,7 +1883,7 @@ abstract class BaseTypeHebergementCapacite extends BaseObject implements Persist
     {
         return $this->getActive();
     }
-    
+
     /**
      * return true is the object is active locale
      *
@@ -1893,23 +1893,23 @@ abstract class BaseTypeHebergementCapacite extends BaseObject implements Persist
     {
         return $this->getActiveLocale();
     }
-    
+
     public function getTypeHebergementsActive($criteria = null, PropelPDO $con = null)
     {
-    
+
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-    
+
         $criteria->add(\Cungfoo\Model\TypeHebergementPeer::ACTIVE, true);
-    
-    
+
+
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\TypeHebergementI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\TypeHebergementPeer::ID, \Cungfoo\Model\TypeHebergementI18nPeer::alias('i18n_locale', \Cungfoo\Model\TypeHebergementI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\TypeHebergementI18nPeer::alias('i18n_locale', \Cungfoo\Model\TypeHebergementI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\TypeHebergementI18nPeer::alias('i18n_locale', \Cungfoo\Model\TypeHebergementI18nPeer::LOCALE), $this->currentLocale);
-    
+
         return $this->getTypeHebergements($criteria, $con);
     }
     // sortable behavior
@@ -2613,7 +2613,7 @@ abstract class BaseTypeHebergementCapacite extends BaseObject implements Persist
     }
 
     // crudable behavior
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -2628,19 +2628,19 @@ abstract class BaseTypeHebergementCapacite extends BaseObject implements Persist
         {
             $this->resetModified(TypeHebergementCapacitePeer::IMAGE_MENU);
         }
-    
+
         $this->uploadImageMenu($form);
-        
+
         if (!$form['image_page_deleted']->getData())
         {
             $this->resetModified(TypeHebergementCapacitePeer::IMAGE_PAGE);
         }
-    
+
         $this->uploadImagePage($form);
-        
+
         return $this->save($con);
     }
-    
+
     /**
      * @return string
      */
@@ -2648,7 +2648,7 @@ abstract class BaseTypeHebergementCapacite extends BaseObject implements Persist
     {
         return 'uploads/type_hebergement_capacites';
     }
-    
+
     /**
      * @return string
      */
@@ -2656,7 +2656,7 @@ abstract class BaseTypeHebergementCapacite extends BaseObject implements Persist
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -2672,7 +2672,7 @@ abstract class BaseTypeHebergementCapacite extends BaseObject implements Persist
             }
         }
     }
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void

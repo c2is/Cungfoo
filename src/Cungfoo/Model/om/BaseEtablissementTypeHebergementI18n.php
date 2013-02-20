@@ -4,40 +4,40 @@ namespace Cungfoo\Model\om;
 
 use \BasePeer;
 use \Criteria;
+use \DateTime;
 use \Exception;
 use \PDO;
 use \Persistent;
 use \Propel;
-use \PropelCollection;
+use \PropelDateTime;
 use \PropelException;
-use \PropelObjectCollection;
 use \PropelPDO;
-use Cungfoo\Model\Seo;
-use Cungfoo\Model\SeoI18n;
-use Cungfoo\Model\SeoI18nQuery;
-use Cungfoo\Model\SeoPeer;
-use Cungfoo\Model\SeoQuery;
+use Cungfoo\Model\EtablissementTypeHebergement;
+use Cungfoo\Model\EtablissementTypeHebergementI18n;
+use Cungfoo\Model\EtablissementTypeHebergementI18nPeer;
+use Cungfoo\Model\EtablissementTypeHebergementI18nQuery;
+use Cungfoo\Model\EtablissementTypeHebergementQuery;
 use Propel\BaseObject;
 
 /**
- * Base class that represents a row from the 'seo' table.
+ * Base class that represents a row from the 'etablissement_type_hebergement_i18n' table.
  *
  *
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
-abstract class BaseSeo extends BaseObject implements Persistent
+abstract class BaseEtablissementTypeHebergementI18n extends BaseObject implements Persistent
 {
     /**
      * Peer class name
      */
-    const PEER = 'Cungfoo\\Model\\SeoPeer';
+    const PEER = 'Cungfoo\\Model\\EtablissementTypeHebergementI18nPeer';
 
     /**
      * The Peer class.
      * Instance provides a convenient way of calling static methods on a class
      * that calling code may not be able to identify.
-     * @var        SeoPeer
+     * @var        EtablissementTypeHebergementI18nPeer
      */
     protected static $peer;
 
@@ -54,16 +54,40 @@ abstract class BaseSeo extends BaseObject implements Persistent
     protected $id;
 
     /**
-     * The value for the table_ref field.
+     * The value for the locale field.
+     * Note: this column has a database default value of: 'fr'
      * @var        string
      */
-    protected $table_ref;
+    protected $locale;
 
     /**
-     * @var        PropelObjectCollection|SeoI18n[] Collection to store aggregation of SeoI18n objects.
+     * The value for the minimum_price field.
+     * @var        string
      */
-    protected $collSeoI18ns;
-    protected $collSeoI18nsPartial;
+    protected $minimum_price;
+
+    /**
+     * The value for the minimum_price_discount_label field.
+     * @var        string
+     */
+    protected $minimum_price_discount_label;
+
+    /**
+     * The value for the minimum_price_start_date field.
+     * @var        string
+     */
+    protected $minimum_price_start_date;
+
+    /**
+     * The value for the minimum_price_end_date field.
+     * @var        string
+     */
+    protected $minimum_price_end_date;
+
+    /**
+     * @var        EtablissementTypeHebergement
+     */
+    protected $aEtablissementTypeHebergement;
 
     /**
      * Flag to prevent endless save loop, if this object is referenced
@@ -79,25 +103,26 @@ abstract class BaseSeo extends BaseObject implements Persistent
      */
     protected $alreadyInValidation = false;
 
-    // i18n behavior
+    /**
+     * Applies default values to this object.
+     * This method should be called from the object's constructor (or
+     * equivalent initialization method).
+     * @see        __construct()
+     */
+    public function applyDefaultValues()
+    {
+        $this->locale = 'fr';
+    }
 
     /**
-     * Current locale
-     * @var        string
+     * Initializes internal state of BaseEtablissementTypeHebergementI18n object.
+     * @see        applyDefaults()
      */
-    protected $currentLocale = 'fr';
-
-    /**
-     * Current translation objects
-     * @var        array[SeoI18n]
-     */
-    protected $currentTranslations;
-
-    /**
-     * An array of objects scheduled for deletion.
-     * @var		PropelObjectCollection
-     */
-    protected $seoI18nsScheduledForDeletion = null;
+    public function __construct()
+    {
+        parent::__construct();
+        $this->applyDefaultValues();
+    }
 
     /**
      * Get the [id] column value.
@@ -110,20 +135,120 @@ abstract class BaseSeo extends BaseObject implements Persistent
     }
 
     /**
-     * Get the [table_ref] column value.
+     * Get the [locale] column value.
      *
      * @return string
      */
-    public function getTableRef()
+    public function getLocale()
     {
-        return $this->table_ref;
+        return $this->locale;
+    }
+
+    /**
+     * Get the [minimum_price] column value.
+     *
+     * @return string
+     */
+    public function getMinimumPrice()
+    {
+        return $this->minimum_price;
+    }
+
+    /**
+     * Get the [minimum_price_discount_label] column value.
+     *
+     * @return string
+     */
+    public function getMinimumPriceDiscountLabel()
+    {
+        return $this->minimum_price_discount_label;
+    }
+
+    /**
+     * Get the [optionally formatted] temporal [minimum_price_start_date] column value.
+     *
+     *
+     * @param string $format The date/time format string (either date()-style or strftime()-style).
+     *				 If format is null, then the raw DateTime object will be returned.
+     * @return mixed Formatted date/time value as string or DateTime object (if format is null), null if column is null, and 0 if column value is 0000-00-00
+     * @throws PropelException - if unable to parse/validate the date/time value.
+     */
+    public function getMinimumPriceStartDate($format = null)
+    {
+        if ($this->minimum_price_start_date === null) {
+            return null;
+        }
+
+        if ($this->minimum_price_start_date === '0000-00-00') {
+            // while technically this is not a default value of null,
+            // this seems to be closest in meaning.
+            return null;
+        }
+
+        try {
+            $dt = new DateTime($this->minimum_price_start_date);
+        } catch (Exception $x) {
+            throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->minimum_price_start_date, true), $x);
+        }
+
+        if ($format === null) {
+            // Because propel.useDateTimeClass is true, we return a DateTime object.
+            return $dt;
+        }
+
+        if (strpos($format, '%') !== false) {
+            return strftime($format, $dt->format('U'));
+        }
+
+        return $dt->format($format);
+
+    }
+
+    /**
+     * Get the [optionally formatted] temporal [minimum_price_end_date] column value.
+     *
+     *
+     * @param string $format The date/time format string (either date()-style or strftime()-style).
+     *				 If format is null, then the raw DateTime object will be returned.
+     * @return mixed Formatted date/time value as string or DateTime object (if format is null), null if column is null, and 0 if column value is 0000-00-00
+     * @throws PropelException - if unable to parse/validate the date/time value.
+     */
+    public function getMinimumPriceEndDate($format = null)
+    {
+        if ($this->minimum_price_end_date === null) {
+            return null;
+        }
+
+        if ($this->minimum_price_end_date === '0000-00-00') {
+            // while technically this is not a default value of null,
+            // this seems to be closest in meaning.
+            return null;
+        }
+
+        try {
+            $dt = new DateTime($this->minimum_price_end_date);
+        } catch (Exception $x) {
+            throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->minimum_price_end_date, true), $x);
+        }
+
+        if ($format === null) {
+            // Because propel.useDateTimeClass is true, we return a DateTime object.
+            return $dt;
+        }
+
+        if (strpos($format, '%') !== false) {
+            return strftime($format, $dt->format('U'));
+        }
+
+        return $dt->format($format);
+
     }
 
     /**
      * Set the value of [id] column.
      *
      * @param int $v new value
-     * @return Seo The current object (for fluent API support)
+     * @return EtablissementTypeHebergementI18n The current object (for fluent API support)
      */
     public function setId($v)
     {
@@ -133,7 +258,11 @@ abstract class BaseSeo extends BaseObject implements Persistent
 
         if ($this->id !== $v) {
             $this->id = $v;
-            $this->modifiedColumns[] = SeoPeer::ID;
+            $this->modifiedColumns[] = EtablissementTypeHebergementI18nPeer::ID;
+        }
+
+        if ($this->aEtablissementTypeHebergement !== null && $this->aEtablissementTypeHebergement->getId() !== $v) {
+            $this->aEtablissementTypeHebergement = null;
         }
 
 
@@ -141,25 +270,113 @@ abstract class BaseSeo extends BaseObject implements Persistent
     } // setId()
 
     /**
-     * Set the value of [table_ref] column.
+     * Set the value of [locale] column.
      *
      * @param string $v new value
-     * @return Seo The current object (for fluent API support)
+     * @return EtablissementTypeHebergementI18n The current object (for fluent API support)
      */
-    public function setTableRef($v)
+    public function setLocale($v)
     {
         if ($v !== null) {
             $v = (string) $v;
         }
 
-        if ($this->table_ref !== $v) {
-            $this->table_ref = $v;
-            $this->modifiedColumns[] = SeoPeer::TABLE_REF;
+        if ($this->locale !== $v) {
+            $this->locale = $v;
+            $this->modifiedColumns[] = EtablissementTypeHebergementI18nPeer::LOCALE;
         }
 
 
         return $this;
-    } // setTableRef()
+    } // setLocale()
+
+    /**
+     * Set the value of [minimum_price] column.
+     *
+     * @param string $v new value
+     * @return EtablissementTypeHebergementI18n The current object (for fluent API support)
+     */
+    public function setMinimumPrice($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->minimum_price !== $v) {
+            $this->minimum_price = $v;
+            $this->modifiedColumns[] = EtablissementTypeHebergementI18nPeer::MINIMUM_PRICE;
+        }
+
+
+        return $this;
+    } // setMinimumPrice()
+
+    /**
+     * Set the value of [minimum_price_discount_label] column.
+     *
+     * @param string $v new value
+     * @return EtablissementTypeHebergementI18n The current object (for fluent API support)
+     */
+    public function setMinimumPriceDiscountLabel($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->minimum_price_discount_label !== $v) {
+            $this->minimum_price_discount_label = $v;
+            $this->modifiedColumns[] = EtablissementTypeHebergementI18nPeer::MINIMUM_PRICE_DISCOUNT_LABEL;
+        }
+
+
+        return $this;
+    } // setMinimumPriceDiscountLabel()
+
+    /**
+     * Sets the value of [minimum_price_start_date] column to a normalized version of the date/time value specified.
+     *
+     * @param mixed $v string, integer (timestamp), or DateTime value.
+     *               Empty strings are treated as null.
+     * @return EtablissementTypeHebergementI18n The current object (for fluent API support)
+     */
+    public function setMinimumPriceStartDate($v)
+    {
+        $dt = PropelDateTime::newInstance($v, null, 'DateTime');
+        if ($this->minimum_price_start_date !== null || $dt !== null) {
+            $currentDateAsString = ($this->minimum_price_start_date !== null && $tmpDt = new DateTime($this->minimum_price_start_date)) ? $tmpDt->format('Y-m-d') : null;
+            $newDateAsString = $dt ? $dt->format('Y-m-d') : null;
+            if ($currentDateAsString !== $newDateAsString) {
+                $this->minimum_price_start_date = $newDateAsString;
+                $this->modifiedColumns[] = EtablissementTypeHebergementI18nPeer::MINIMUM_PRICE_START_DATE;
+            }
+        } // if either are not null
+
+
+        return $this;
+    } // setMinimumPriceStartDate()
+
+    /**
+     * Sets the value of [minimum_price_end_date] column to a normalized version of the date/time value specified.
+     *
+     * @param mixed $v string, integer (timestamp), or DateTime value.
+     *               Empty strings are treated as null.
+     * @return EtablissementTypeHebergementI18n The current object (for fluent API support)
+     */
+    public function setMinimumPriceEndDate($v)
+    {
+        $dt = PropelDateTime::newInstance($v, null, 'DateTime');
+        if ($this->minimum_price_end_date !== null || $dt !== null) {
+            $currentDateAsString = ($this->minimum_price_end_date !== null && $tmpDt = new DateTime($this->minimum_price_end_date)) ? $tmpDt->format('Y-m-d') : null;
+            $newDateAsString = $dt ? $dt->format('Y-m-d') : null;
+            if ($currentDateAsString !== $newDateAsString) {
+                $this->minimum_price_end_date = $newDateAsString;
+                $this->modifiedColumns[] = EtablissementTypeHebergementI18nPeer::MINIMUM_PRICE_END_DATE;
+            }
+        } // if either are not null
+
+
+        return $this;
+    } // setMinimumPriceEndDate()
 
     /**
      * Indicates whether the columns in this object are only set to default values.
@@ -171,6 +388,10 @@ abstract class BaseSeo extends BaseObject implements Persistent
      */
     public function hasOnlyDefaultValues()
     {
+            if ($this->locale !== 'fr') {
+                return false;
+            }
+
         // otherwise, everything was equal, so return true
         return true;
     } // hasOnlyDefaultValues()
@@ -194,7 +415,11 @@ abstract class BaseSeo extends BaseObject implements Persistent
         try {
 
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
-            $this->table_ref = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
+            $this->locale = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
+            $this->minimum_price = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
+            $this->minimum_price_discount_label = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
+            $this->minimum_price_start_date = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
+            $this->minimum_price_end_date = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -203,10 +428,10 @@ abstract class BaseSeo extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 2; // 2 = SeoPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 6; // 6 = EtablissementTypeHebergementI18nPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
-            throw new PropelException("Error populating Seo object", $e);
+            throw new PropelException("Error populating EtablissementTypeHebergementI18n object", $e);
         }
     }
 
@@ -226,6 +451,9 @@ abstract class BaseSeo extends BaseObject implements Persistent
     public function ensureConsistency()
     {
 
+        if ($this->aEtablissementTypeHebergement !== null && $this->id !== $this->aEtablissementTypeHebergement->getId()) {
+            $this->aEtablissementTypeHebergement = null;
+        }
     } // ensureConsistency
 
     /**
@@ -249,13 +477,13 @@ abstract class BaseSeo extends BaseObject implements Persistent
         }
 
         if ($con === null) {
-            $con = Propel::getConnection(SeoPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+            $con = Propel::getConnection(EtablissementTypeHebergementI18nPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
 
         // We don't need to alter the object instance pool; we're just modifying this instance
         // already in the pool.
 
-        $stmt = SeoPeer::doSelectStmt($this->buildPkeyCriteria(), $con);
+        $stmt = EtablissementTypeHebergementI18nPeer::doSelectStmt($this->buildPkeyCriteria(), $con);
         $row = $stmt->fetch(PDO::FETCH_NUM);
         $stmt->closeCursor();
         if (!$row) {
@@ -265,8 +493,7 @@ abstract class BaseSeo extends BaseObject implements Persistent
 
         if ($deep) {  // also de-associate any related objects?
 
-            $this->collSeoI18ns = null;
-
+            $this->aEtablissementTypeHebergement = null;
         } // if (deep)
     }
 
@@ -287,12 +514,12 @@ abstract class BaseSeo extends BaseObject implements Persistent
         }
 
         if ($con === null) {
-            $con = Propel::getConnection(SeoPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+            $con = Propel::getConnection(EtablissementTypeHebergementI18nPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
 
         $con->beginTransaction();
         try {
-            $deleteQuery = SeoQuery::create()
+            $deleteQuery = EtablissementTypeHebergementI18nQuery::create()
                 ->filterByPrimaryKey($this->getPrimaryKey());
             $ret = $this->preDelete($con);
             if ($ret) {
@@ -330,7 +557,7 @@ abstract class BaseSeo extends BaseObject implements Persistent
         }
 
         if ($con === null) {
-            $con = Propel::getConnection(SeoPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+            $con = Propel::getConnection(EtablissementTypeHebergementI18nPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
 
         $con->beginTransaction();
@@ -350,7 +577,7 @@ abstract class BaseSeo extends BaseObject implements Persistent
                     $this->postUpdate($con);
                 }
                 $this->postSave($con);
-                SeoPeer::addInstanceToPool($this);
+                EtablissementTypeHebergementI18nPeer::addInstanceToPool($this);
             } else {
                 $affectedRows = 0;
             }
@@ -380,6 +607,18 @@ abstract class BaseSeo extends BaseObject implements Persistent
         if (!$this->alreadyInSave) {
             $this->alreadyInSave = true;
 
+            // We call the save method on the following object(s) if they
+            // were passed to this object by their coresponding set
+            // method.  This object relates to these object(s) by a
+            // foreign key reference.
+
+            if ($this->aEtablissementTypeHebergement !== null) {
+                if ($this->aEtablissementTypeHebergement->isModified() || $this->aEtablissementTypeHebergement->isNew()) {
+                    $affectedRows += $this->aEtablissementTypeHebergement->save($con);
+                }
+                $this->setEtablissementTypeHebergement($this->aEtablissementTypeHebergement);
+            }
+
             if ($this->isNew() || $this->isModified()) {
                 // persist changes
                 if ($this->isNew()) {
@@ -389,23 +628,6 @@ abstract class BaseSeo extends BaseObject implements Persistent
                 }
                 $affectedRows += 1;
                 $this->resetModified();
-            }
-
-            if ($this->seoI18nsScheduledForDeletion !== null) {
-                if (!$this->seoI18nsScheduledForDeletion->isEmpty()) {
-                    SeoI18nQuery::create()
-                        ->filterByPrimaryKeys($this->seoI18nsScheduledForDeletion->getPrimaryKeys(false))
-                        ->delete($con);
-                    $this->seoI18nsScheduledForDeletion = null;
-                }
-            }
-
-            if ($this->collSeoI18ns !== null) {
-                foreach ($this->collSeoI18ns as $referrerFK) {
-                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
-                        $affectedRows += $referrerFK->save($con);
-                    }
-                }
             }
 
             $this->alreadyInSave = false;
@@ -428,21 +650,29 @@ abstract class BaseSeo extends BaseObject implements Persistent
         $modifiedColumns = array();
         $index = 0;
 
-        $this->modifiedColumns[] = SeoPeer::ID;
-        if (null !== $this->id) {
-            throw new PropelException('Cannot insert a value for auto-increment primary key (' . SeoPeer::ID . ')');
-        }
 
          // check the columns in natural order for more readable SQL queries
-        if ($this->isColumnModified(SeoPeer::ID)) {
+        if ($this->isColumnModified(EtablissementTypeHebergementI18nPeer::ID)) {
             $modifiedColumns[':p' . $index++]  = '`id`';
         }
-        if ($this->isColumnModified(SeoPeer::TABLE_REF)) {
-            $modifiedColumns[':p' . $index++]  = '`table_ref`';
+        if ($this->isColumnModified(EtablissementTypeHebergementI18nPeer::LOCALE)) {
+            $modifiedColumns[':p' . $index++]  = '`locale`';
+        }
+        if ($this->isColumnModified(EtablissementTypeHebergementI18nPeer::MINIMUM_PRICE)) {
+            $modifiedColumns[':p' . $index++]  = '`minimum_price`';
+        }
+        if ($this->isColumnModified(EtablissementTypeHebergementI18nPeer::MINIMUM_PRICE_DISCOUNT_LABEL)) {
+            $modifiedColumns[':p' . $index++]  = '`minimum_price_discount_label`';
+        }
+        if ($this->isColumnModified(EtablissementTypeHebergementI18nPeer::MINIMUM_PRICE_START_DATE)) {
+            $modifiedColumns[':p' . $index++]  = '`minimum_price_start_date`';
+        }
+        if ($this->isColumnModified(EtablissementTypeHebergementI18nPeer::MINIMUM_PRICE_END_DATE)) {
+            $modifiedColumns[':p' . $index++]  = '`minimum_price_end_date`';
         }
 
         $sql = sprintf(
-            'INSERT INTO `seo` (%s) VALUES (%s)',
+            'INSERT INTO `etablissement_type_hebergement_i18n` (%s) VALUES (%s)',
             implode(', ', $modifiedColumns),
             implode(', ', array_keys($modifiedColumns))
         );
@@ -454,8 +684,20 @@ abstract class BaseSeo extends BaseObject implements Persistent
                     case '`id`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`table_ref`':
-                        $stmt->bindValue($identifier, $this->table_ref, PDO::PARAM_STR);
+                    case '`locale`':
+                        $stmt->bindValue($identifier, $this->locale, PDO::PARAM_STR);
+                        break;
+                    case '`minimum_price`':
+                        $stmt->bindValue($identifier, $this->minimum_price, PDO::PARAM_STR);
+                        break;
+                    case '`minimum_price_discount_label`':
+                        $stmt->bindValue($identifier, $this->minimum_price_discount_label, PDO::PARAM_STR);
+                        break;
+                    case '`minimum_price_start_date`':
+                        $stmt->bindValue($identifier, $this->minimum_price_start_date, PDO::PARAM_STR);
+                        break;
+                    case '`minimum_price_end_date`':
+                        $stmt->bindValue($identifier, $this->minimum_price_end_date, PDO::PARAM_STR);
                         break;
                 }
             }
@@ -464,13 +706,6 @@ abstract class BaseSeo extends BaseObject implements Persistent
             Propel::log($e->getMessage(), Propel::LOG_ERR);
             throw new PropelException(sprintf('Unable to execute INSERT statement [%s]', $sql), $e);
         }
-
-        try {
-            $pk = $con->lastInsertId();
-        } catch (Exception $e) {
-            throw new PropelException('Unable to get autoincrement id.', $e);
-        }
-        $this->setId($pk);
 
         $this->setNew(false);
     }
@@ -551,18 +786,22 @@ abstract class BaseSeo extends BaseObject implements Persistent
             $failureMap = array();
 
 
-            if (($retval = SeoPeer::doValidate($this, $columns)) !== true) {
-                $failureMap = array_merge($failureMap, $retval);
+            // We call the validate method on the following object(s) if they
+            // were passed to this object by their coresponding set
+            // method.  This object relates to these object(s) by a
+            // foreign key reference.
+
+            if ($this->aEtablissementTypeHebergement !== null) {
+                if (!$this->aEtablissementTypeHebergement->validate($columns)) {
+                    $failureMap = array_merge($failureMap, $this->aEtablissementTypeHebergement->getValidationFailures());
+                }
             }
 
 
-                if ($this->collSeoI18ns !== null) {
-                    foreach ($this->collSeoI18ns as $referrerFK) {
-                        if (!$referrerFK->validate($columns)) {
-                            $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
-                        }
-                    }
-                }
+            if (($retval = EtablissementTypeHebergementI18nPeer::doValidate($this, $columns)) !== true) {
+                $failureMap = array_merge($failureMap, $retval);
+            }
+
 
 
             $this->alreadyInValidation = false;
@@ -583,7 +822,7 @@ abstract class BaseSeo extends BaseObject implements Persistent
      */
     public function getByName($name, $type = BasePeer::TYPE_PHPNAME)
     {
-        $pos = SeoPeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
+        $pos = EtablissementTypeHebergementI18nPeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
         $field = $this->getByPosition($pos);
 
         return $field;
@@ -603,7 +842,19 @@ abstract class BaseSeo extends BaseObject implements Persistent
                 return $this->getId();
                 break;
             case 1:
-                return $this->getTableRef();
+                return $this->getLocale();
+                break;
+            case 2:
+                return $this->getMinimumPrice();
+                break;
+            case 3:
+                return $this->getMinimumPriceDiscountLabel();
+                break;
+            case 4:
+                return $this->getMinimumPriceStartDate();
+                break;
+            case 5:
+                return $this->getMinimumPriceEndDate();
                 break;
             default:
                 return null;
@@ -628,18 +879,22 @@ abstract class BaseSeo extends BaseObject implements Persistent
      */
     public function toArray($keyType = BasePeer::TYPE_PHPNAME, $includeLazyLoadColumns = true, $alreadyDumpedObjects = array(), $includeForeignObjects = false)
     {
-        if (isset($alreadyDumpedObjects['Seo'][$this->getPrimaryKey()])) {
+        if (isset($alreadyDumpedObjects['EtablissementTypeHebergementI18n'][serialize($this->getPrimaryKey())])) {
             return '*RECURSION*';
         }
-        $alreadyDumpedObjects['Seo'][$this->getPrimaryKey()] = true;
-        $keys = SeoPeer::getFieldNames($keyType);
+        $alreadyDumpedObjects['EtablissementTypeHebergementI18n'][serialize($this->getPrimaryKey())] = true;
+        $keys = EtablissementTypeHebergementI18nPeer::getFieldNames($keyType);
         $result = array(
             $keys[0] => $this->getId(),
-            $keys[1] => $this->getTableRef(),
+            $keys[1] => $this->getLocale(),
+            $keys[2] => $this->getMinimumPrice(),
+            $keys[3] => $this->getMinimumPriceDiscountLabel(),
+            $keys[4] => $this->getMinimumPriceStartDate(),
+            $keys[5] => $this->getMinimumPriceEndDate(),
         );
         if ($includeForeignObjects) {
-            if (null !== $this->collSeoI18ns) {
-                $result['SeoI18ns'] = $this->collSeoI18ns->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
+            if (null !== $this->aEtablissementTypeHebergement) {
+                $result['EtablissementTypeHebergement'] = $this->aEtablissementTypeHebergement->toArray($keyType, $includeLazyLoadColumns,  $alreadyDumpedObjects, true);
             }
         }
 
@@ -659,7 +914,7 @@ abstract class BaseSeo extends BaseObject implements Persistent
      */
     public function setByName($name, $value, $type = BasePeer::TYPE_PHPNAME)
     {
-        $pos = SeoPeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
+        $pos = EtablissementTypeHebergementI18nPeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
 
         $this->setByPosition($pos, $value);
     }
@@ -679,7 +934,19 @@ abstract class BaseSeo extends BaseObject implements Persistent
                 $this->setId($value);
                 break;
             case 1:
-                $this->setTableRef($value);
+                $this->setLocale($value);
+                break;
+            case 2:
+                $this->setMinimumPrice($value);
+                break;
+            case 3:
+                $this->setMinimumPriceDiscountLabel($value);
+                break;
+            case 4:
+                $this->setMinimumPriceStartDate($value);
+                break;
+            case 5:
+                $this->setMinimumPriceEndDate($value);
                 break;
         } // switch()
     }
@@ -703,10 +970,14 @@ abstract class BaseSeo extends BaseObject implements Persistent
      */
     public function fromArray($arr, $keyType = BasePeer::TYPE_PHPNAME)
     {
-        $keys = SeoPeer::getFieldNames($keyType);
+        $keys = EtablissementTypeHebergementI18nPeer::getFieldNames($keyType);
 
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
-        if (array_key_exists($keys[1], $arr)) $this->setTableRef($arr[$keys[1]]);
+        if (array_key_exists($keys[1], $arr)) $this->setLocale($arr[$keys[1]]);
+        if (array_key_exists($keys[2], $arr)) $this->setMinimumPrice($arr[$keys[2]]);
+        if (array_key_exists($keys[3], $arr)) $this->setMinimumPriceDiscountLabel($arr[$keys[3]]);
+        if (array_key_exists($keys[4], $arr)) $this->setMinimumPriceStartDate($arr[$keys[4]]);
+        if (array_key_exists($keys[5], $arr)) $this->setMinimumPriceEndDate($arr[$keys[5]]);
     }
 
     /**
@@ -716,10 +987,14 @@ abstract class BaseSeo extends BaseObject implements Persistent
      */
     public function buildCriteria()
     {
-        $criteria = new Criteria(SeoPeer::DATABASE_NAME);
+        $criteria = new Criteria(EtablissementTypeHebergementI18nPeer::DATABASE_NAME);
 
-        if ($this->isColumnModified(SeoPeer::ID)) $criteria->add(SeoPeer::ID, $this->id);
-        if ($this->isColumnModified(SeoPeer::TABLE_REF)) $criteria->add(SeoPeer::TABLE_REF, $this->table_ref);
+        if ($this->isColumnModified(EtablissementTypeHebergementI18nPeer::ID)) $criteria->add(EtablissementTypeHebergementI18nPeer::ID, $this->id);
+        if ($this->isColumnModified(EtablissementTypeHebergementI18nPeer::LOCALE)) $criteria->add(EtablissementTypeHebergementI18nPeer::LOCALE, $this->locale);
+        if ($this->isColumnModified(EtablissementTypeHebergementI18nPeer::MINIMUM_PRICE)) $criteria->add(EtablissementTypeHebergementI18nPeer::MINIMUM_PRICE, $this->minimum_price);
+        if ($this->isColumnModified(EtablissementTypeHebergementI18nPeer::MINIMUM_PRICE_DISCOUNT_LABEL)) $criteria->add(EtablissementTypeHebergementI18nPeer::MINIMUM_PRICE_DISCOUNT_LABEL, $this->minimum_price_discount_label);
+        if ($this->isColumnModified(EtablissementTypeHebergementI18nPeer::MINIMUM_PRICE_START_DATE)) $criteria->add(EtablissementTypeHebergementI18nPeer::MINIMUM_PRICE_START_DATE, $this->minimum_price_start_date);
+        if ($this->isColumnModified(EtablissementTypeHebergementI18nPeer::MINIMUM_PRICE_END_DATE)) $criteria->add(EtablissementTypeHebergementI18nPeer::MINIMUM_PRICE_END_DATE, $this->minimum_price_end_date);
 
         return $criteria;
     }
@@ -734,30 +1009,37 @@ abstract class BaseSeo extends BaseObject implements Persistent
      */
     public function buildPkeyCriteria()
     {
-        $criteria = new Criteria(SeoPeer::DATABASE_NAME);
-        $criteria->add(SeoPeer::ID, $this->id);
+        $criteria = new Criteria(EtablissementTypeHebergementI18nPeer::DATABASE_NAME);
+        $criteria->add(EtablissementTypeHebergementI18nPeer::ID, $this->id);
+        $criteria->add(EtablissementTypeHebergementI18nPeer::LOCALE, $this->locale);
 
         return $criteria;
     }
 
     /**
-     * Returns the primary key for this object (row).
-     * @return int
+     * Returns the composite primary key for this object.
+     * The array elements will be in same order as specified in XML.
+     * @return array
      */
     public function getPrimaryKey()
     {
-        return $this->getId();
+        $pks = array();
+        $pks[0] = $this->getId();
+        $pks[1] = $this->getLocale();
+
+        return $pks;
     }
 
     /**
-     * Generic method to set the primary key (id column).
+     * Set the [composite] primary key.
      *
-     * @param  int $key Primary key.
+     * @param array $keys The elements of the composite key (order must match the order in XML file).
      * @return void
      */
-    public function setPrimaryKey($key)
+    public function setPrimaryKey($keys)
     {
-        $this->setId($key);
+        $this->setId($keys[0]);
+        $this->setLocale($keys[1]);
     }
 
     /**
@@ -767,7 +1049,7 @@ abstract class BaseSeo extends BaseObject implements Persistent
     public function isPrimaryKeyNull()
     {
 
-        return null === $this->getId();
+        return (null === $this->getId()) && (null === $this->getLocale());
     }
 
     /**
@@ -776,14 +1058,19 @@ abstract class BaseSeo extends BaseObject implements Persistent
      * If desired, this method can also make copies of all associated (fkey referrers)
      * objects.
      *
-     * @param object $copyObj An object of Seo (or compatible) type.
+     * @param object $copyObj An object of EtablissementTypeHebergementI18n (or compatible) type.
      * @param boolean $deepCopy Whether to also copy all rows that refer (by fkey) to the current row.
      * @param boolean $makeNew Whether to reset autoincrement PKs and make the object new.
      * @throws PropelException
      */
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
-        $copyObj->setTableRef($this->getTableRef());
+        $copyObj->setId($this->getId());
+        $copyObj->setLocale($this->getLocale());
+        $copyObj->setMinimumPrice($this->getMinimumPrice());
+        $copyObj->setMinimumPriceDiscountLabel($this->getMinimumPriceDiscountLabel());
+        $copyObj->setMinimumPriceStartDate($this->getMinimumPriceStartDate());
+        $copyObj->setMinimumPriceEndDate($this->getMinimumPriceEndDate());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -792,19 +1079,12 @@ abstract class BaseSeo extends BaseObject implements Persistent
             // store object hash to prevent cycle
             $this->startCopy = true;
 
-            foreach ($this->getSeoI18ns() as $relObj) {
-                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
-                    $copyObj->addSeoI18n($relObj->copy($deepCopy));
-                }
-            }
-
             //unflag object copy
             $this->startCopy = false;
         } // if ($deepCopy)
 
         if ($makeNew) {
             $copyObj->setNew(true);
-            $copyObj->setId(NULL); // this is a auto-increment column, so set to default value
         }
     }
 
@@ -817,7 +1097,7 @@ abstract class BaseSeo extends BaseObject implements Persistent
      * objects.
      *
      * @param boolean $deepCopy Whether to also copy all rows that refer (by fkey) to the current row.
-     * @return Seo Clone of current object.
+     * @return EtablissementTypeHebergementI18n Clone of current object.
      * @throws PropelException
      */
     public function copy($deepCopy = false)
@@ -837,250 +1117,67 @@ abstract class BaseSeo extends BaseObject implements Persistent
      * same instance for all member of this class. The method could therefore
      * be static, but this would prevent one from overriding the behavior.
      *
-     * @return SeoPeer
+     * @return EtablissementTypeHebergementI18nPeer
      */
     public function getPeer()
     {
         if (self::$peer === null) {
-            self::$peer = new SeoPeer();
+            self::$peer = new EtablissementTypeHebergementI18nPeer();
         }
 
         return self::$peer;
     }
 
-
     /**
-     * Initializes a collection based on the name of a relation.
-     * Avoids crafting an 'init[$relationName]s' method name
-     * that wouldn't work when StandardEnglishPluralizer is used.
+     * Declares an association between this object and a EtablissementTypeHebergement object.
      *
-     * @param string $relationName The name of the relation to initialize
-     * @return void
-     */
-    public function initRelation($relationName)
-    {
-        if ('SeoI18n' == $relationName) {
-            $this->initSeoI18ns();
-        }
-    }
-
-    /**
-     * Clears out the collSeoI18ns collection
-     *
-     * This does not modify the database; however, it will remove any associated objects, causing
-     * them to be refetched by subsequent calls to accessor method.
-     *
-     * @return Seo The current object (for fluent API support)
-     * @see        addSeoI18ns()
-     */
-    public function clearSeoI18ns()
-    {
-        $this->collSeoI18ns = null; // important to set this to null since that means it is uninitialized
-        $this->collSeoI18nsPartial = null;
-
-        return $this;
-    }
-
-    /**
-     * reset is the collSeoI18ns collection loaded partially
-     *
-     * @return void
-     */
-    public function resetPartialSeoI18ns($v = true)
-    {
-        $this->collSeoI18nsPartial = $v;
-    }
-
-    /**
-     * Initializes the collSeoI18ns collection.
-     *
-     * By default this just sets the collSeoI18ns collection to an empty array (like clearcollSeoI18ns());
-     * however, you may wish to override this method in your stub class to provide setting appropriate
-     * to your application -- for example, setting the initial array to the values stored in database.
-     *
-     * @param boolean $overrideExisting If set to true, the method call initializes
-     *                                        the collection even if it is not empty
-     *
-     * @return void
-     */
-    public function initSeoI18ns($overrideExisting = true)
-    {
-        if (null !== $this->collSeoI18ns && !$overrideExisting) {
-            return;
-        }
-        $this->collSeoI18ns = new PropelObjectCollection();
-        $this->collSeoI18ns->setModel('SeoI18n');
-    }
-
-    /**
-     * Gets an array of SeoI18n objects which contain a foreign key that references this object.
-     *
-     * If the $criteria is not null, it is used to always fetch the results from the database.
-     * Otherwise the results are fetched from the database the first time, then cached.
-     * Next time the same method is called without $criteria, the cached collection is returned.
-     * If this Seo is new, it will return
-     * an empty collection or the current collection; the criteria is ignored on a new object.
-     *
-     * @param Criteria $criteria optional Criteria object to narrow the query
-     * @param PropelPDO $con optional connection object
-     * @return PropelObjectCollection|SeoI18n[] List of SeoI18n objects
+     * @param             EtablissementTypeHebergement $v
+     * @return EtablissementTypeHebergementI18n The current object (for fluent API support)
      * @throws PropelException
      */
-    public function getSeoI18ns($criteria = null, PropelPDO $con = null)
+    public function setEtablissementTypeHebergement(EtablissementTypeHebergement $v = null)
     {
-        $partial = $this->collSeoI18nsPartial && !$this->isNew();
-        if (null === $this->collSeoI18ns || null !== $criteria  || $partial) {
-            if ($this->isNew() && null === $this->collSeoI18ns) {
-                // return empty collection
-                $this->initSeoI18ns();
-            } else {
-                $collSeoI18ns = SeoI18nQuery::create(null, $criteria)
-                    ->filterBySeo($this)
-                    ->find($con);
-                if (null !== $criteria) {
-                    if (false !== $this->collSeoI18nsPartial && count($collSeoI18ns)) {
-                      $this->initSeoI18ns(false);
-
-                      foreach($collSeoI18ns as $obj) {
-                        if (false == $this->collSeoI18ns->contains($obj)) {
-                          $this->collSeoI18ns->append($obj);
-                        }
-                      }
-
-                      $this->collSeoI18nsPartial = true;
-                    }
-
-                    return $collSeoI18ns;
-                }
-
-                if($partial && $this->collSeoI18ns) {
-                    foreach($this->collSeoI18ns as $obj) {
-                        if($obj->isNew()) {
-                            $collSeoI18ns[] = $obj;
-                        }
-                    }
-                }
-
-                $this->collSeoI18ns = $collSeoI18ns;
-                $this->collSeoI18nsPartial = false;
-            }
+        if ($v === null) {
+            $this->setId(NULL);
+        } else {
+            $this->setId($v->getId());
         }
 
-        return $this->collSeoI18ns;
-    }
+        $this->aEtablissementTypeHebergement = $v;
 
-    /**
-     * Sets a collection of SeoI18n objects related by a one-to-many relationship
-     * to the current object.
-     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
-     * and new objects from the given Propel collection.
-     *
-     * @param PropelCollection $seoI18ns A Propel collection.
-     * @param PropelPDO $con Optional connection object
-     * @return Seo The current object (for fluent API support)
-     */
-    public function setSeoI18ns(PropelCollection $seoI18ns, PropelPDO $con = null)
-    {
-        $this->seoI18nsScheduledForDeletion = $this->getSeoI18ns(new Criteria(), $con)->diff($seoI18ns);
-
-        foreach ($this->seoI18nsScheduledForDeletion as $seoI18nRemoved) {
-            $seoI18nRemoved->setSeo(null);
+        // Add binding for other direction of this n:n relationship.
+        // If this object has already been added to the EtablissementTypeHebergement object, it will not be re-added.
+        if ($v !== null) {
+            $v->addEtablissementTypeHebergementI18n($this);
         }
 
-        $this->collSeoI18ns = null;
-        foreach ($seoI18ns as $seoI18n) {
-            $this->addSeoI18n($seoI18n);
-        }
-
-        $this->collSeoI18ns = $seoI18ns;
-        $this->collSeoI18nsPartial = false;
 
         return $this;
     }
 
+
     /**
-     * Returns the number of related SeoI18n objects.
+     * Get the associated EtablissementTypeHebergement object
      *
-     * @param Criteria $criteria
-     * @param boolean $distinct
-     * @param PropelPDO $con
-     * @return int             Count of related SeoI18n objects.
+     * @param PropelPDO $con Optional Connection object.
+     * @param $doQuery Executes a query to get the object if required
+     * @return EtablissementTypeHebergement The associated EtablissementTypeHebergement object.
      * @throws PropelException
      */
-    public function countSeoI18ns(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    public function getEtablissementTypeHebergement(PropelPDO $con = null, $doQuery = true)
     {
-        $partial = $this->collSeoI18nsPartial && !$this->isNew();
-        if (null === $this->collSeoI18ns || null !== $criteria || $partial) {
-            if ($this->isNew() && null === $this->collSeoI18ns) {
-                return 0;
-            }
-
-            if($partial && !$criteria) {
-                return count($this->getSeoI18ns());
-            }
-            $query = SeoI18nQuery::create(null, $criteria);
-            if ($distinct) {
-                $query->distinct();
-            }
-
-            return $query
-                ->filterBySeo($this)
-                ->count($con);
+        if ($this->aEtablissementTypeHebergement === null && ($this->id !== null) && $doQuery) {
+            $this->aEtablissementTypeHebergement = EtablissementTypeHebergementQuery::create()->findPk($this->id, $con);
+            /* The following can be used additionally to
+                guarantee the related object contains a reference
+                to this object.  This level of coupling may, however, be
+                undesirable since it could result in an only partially populated collection
+                in the referenced object.
+                $this->aEtablissementTypeHebergement->addEtablissementTypeHebergementI18ns($this);
+             */
         }
 
-        return count($this->collSeoI18ns);
-    }
-
-    /**
-     * Method called to associate a SeoI18n object to this object
-     * through the SeoI18n foreign key attribute.
-     *
-     * @param    SeoI18n $l SeoI18n
-     * @return Seo The current object (for fluent API support)
-     */
-    public function addSeoI18n(SeoI18n $l)
-    {
-        if ($l && $locale = $l->getLocale()) {
-            $this->setLocale($locale);
-            $this->currentTranslations[$locale] = $l;
-        }
-        if ($this->collSeoI18ns === null) {
-            $this->initSeoI18ns();
-            $this->collSeoI18nsPartial = true;
-        }
-        if (!in_array($l, $this->collSeoI18ns->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
-            $this->doAddSeoI18n($l);
-        }
-
-        return $this;
-    }
-
-    /**
-     * @param	SeoI18n $seoI18n The seoI18n object to add.
-     */
-    protected function doAddSeoI18n($seoI18n)
-    {
-        $this->collSeoI18ns[]= $seoI18n;
-        $seoI18n->setSeo($this);
-    }
-
-    /**
-     * @param	SeoI18n $seoI18n The seoI18n object to remove.
-     * @return Seo The current object (for fluent API support)
-     */
-    public function removeSeoI18n($seoI18n)
-    {
-        if ($this->getSeoI18ns()->contains($seoI18n)) {
-            $this->collSeoI18ns->remove($this->collSeoI18ns->search($seoI18n));
-            if (null === $this->seoI18nsScheduledForDeletion) {
-                $this->seoI18nsScheduledForDeletion = clone $this->collSeoI18ns;
-                $this->seoI18nsScheduledForDeletion->clear();
-            }
-            $this->seoI18nsScheduledForDeletion[]= $seoI18n;
-            $seoI18n->setSeo(null);
-        }
-
-        return $this;
+        return $this->aEtablissementTypeHebergement;
     }
 
     /**
@@ -1089,10 +1186,15 @@ abstract class BaseSeo extends BaseObject implements Persistent
     public function clear()
     {
         $this->id = null;
-        $this->table_ref = null;
+        $this->locale = null;
+        $this->minimum_price = null;
+        $this->minimum_price_discount_label = null;
+        $this->minimum_price_start_date = null;
+        $this->minimum_price_end_date = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();
+        $this->applyDefaultValues();
         $this->resetModified();
         $this->setNew(true);
         $this->setDeleted(false);
@@ -1110,21 +1212,9 @@ abstract class BaseSeo extends BaseObject implements Persistent
     public function clearAllReferences($deep = false)
     {
         if ($deep) {
-            if ($this->collSeoI18ns) {
-                foreach ($this->collSeoI18ns as $o) {
-                    $o->clearAllReferences($deep);
-                }
-            }
         } // if ($deep)
 
-        // i18n behavior
-        $this->currentLocale = 'fr';
-        $this->currentTranslations = null;
-
-        if ($this->collSeoI18ns instanceof PropelCollection) {
-            $this->collSeoI18ns->clearIterator();
-        }
-        $this->collSeoI18ns = null;
+        $this->aEtablissementTypeHebergement = null;
     }
 
     /**
@@ -1134,7 +1224,7 @@ abstract class BaseSeo extends BaseObject implements Persistent
      */
     public function __toString()
     {
-        return (string) $this->exportTo(SeoPeer::DEFAULT_STRING_FORMAT);
+        return (string) $this->exportTo(EtablissementTypeHebergementI18nPeer::DEFAULT_STRING_FORMAT);
     }
 
     /**
@@ -1145,216 +1235,6 @@ abstract class BaseSeo extends BaseObject implements Persistent
     public function isAlreadyInSave()
     {
         return $this->alreadyInSave;
-    }
-
-    // crudable behavior
-
-    /**
-     * @param \Symfony\Component\Form\Form $form
-     * @param PropelPDO $con
-     * @return int             The number of rows affected by this insert/update and any referring fk objects' save() operations.
-     * @throws PropelException
-     * @throws Exception
-     * @see        doSave()
-     */
-    public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
-    {
-        return $this->save($con);
-    }
-
-    // i18n behavior
-
-    /**
-     * Sets the locale for translations
-     *
-     * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
-     *
-     * @return    Seo The current object (for fluent API support)
-     */
-    public function setLocale($locale = 'fr')
-    {
-        $this->currentLocale = $locale;
-
-        return $this;
-    }
-
-    /**
-     * Gets the locale for translations
-     *
-     * @return    string $locale Locale to use for the translation, e.g. 'fr_FR'
-     */
-    public function getLocale()
-    {
-        return $this->currentLocale;
-    }
-
-    /**
-     * Returns the current translation for a given locale
-     *
-     * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
-     * @param     PropelPDO $con an optional connection object
-     *
-     * @return SeoI18n */
-    public function getTranslation($locale = 'fr', PropelPDO $con = null)
-    {
-        if (!isset($this->currentTranslations[$locale])) {
-            if (null !== $this->collSeoI18ns) {
-                foreach ($this->collSeoI18ns as $translation) {
-                    if ($translation->getLocale() == $locale) {
-                        $this->currentTranslations[$locale] = $translation;
-
-                        return $translation;
-                    }
-                }
-            }
-            if ($this->isNew()) {
-                $translation = new SeoI18n();
-                $translation->setLocale($locale);
-            } else {
-                $translation = SeoI18nQuery::create()
-                    ->filterByPrimaryKey(array($this->getPrimaryKey(), $locale))
-                    ->findOneOrCreate($con);
-                $this->currentTranslations[$locale] = $translation;
-            }
-            $this->addSeoI18n($translation);
-        }
-
-        return $this->currentTranslations[$locale];
-    }
-
-    /**
-     * Remove the translation for a given locale
-     *
-     * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
-     * @param     PropelPDO $con an optional connection object
-     *
-     * @return    Seo The current object (for fluent API support)
-     */
-    public function removeTranslation($locale = 'fr', PropelPDO $con = null)
-    {
-        if (!$this->isNew()) {
-            SeoI18nQuery::create()
-                ->filterByPrimaryKey(array($this->getPrimaryKey(), $locale))
-                ->delete($con);
-        }
-        if (isset($this->currentTranslations[$locale])) {
-            unset($this->currentTranslations[$locale]);
-        }
-        foreach ($this->collSeoI18ns as $key => $translation) {
-            if ($translation->getLocale() == $locale) {
-                unset($this->collSeoI18ns[$key]);
-                break;
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * Returns the current translation
-     *
-     * @param     PropelPDO $con an optional connection object
-     *
-     * @return SeoI18n */
-    public function getCurrentTranslation(PropelPDO $con = null)
-    {
-        return $this->getTranslation($this->getLocale(), $con);
-    }
-
-
-        /**
-         * Get the [seo_title] column value.
-         *
-         * @return string
-         */
-        public function getSeoTitle()
-        {
-        return $this->getCurrentTranslation()->getSeoTitle();
-    }
-
-
-        /**
-         * Set the value of [seo_title] column.
-         *
-         * @param string $v new value
-         * @return SeoI18n The current object (for fluent API support)
-         */
-        public function setSeoTitle($v)
-        {    $this->getCurrentTranslation()->setSeoTitle($v);
-
-        return $this;
-    }
-
-
-        /**
-         * Get the [seo_description] column value.
-         *
-         * @return string
-         */
-        public function getSeoDescription()
-        {
-        return $this->getCurrentTranslation()->getSeoDescription();
-    }
-
-
-        /**
-         * Set the value of [seo_description] column.
-         *
-         * @param string $v new value
-         * @return SeoI18n The current object (for fluent API support)
-         */
-        public function setSeoDescription($v)
-        {    $this->getCurrentTranslation()->setSeoDescription($v);
-
-        return $this;
-    }
-
-
-        /**
-         * Get the [seo_h1] column value.
-         *
-         * @return string
-         */
-        public function getSeoH1()
-        {
-        return $this->getCurrentTranslation()->getSeoH1();
-    }
-
-
-        /**
-         * Set the value of [seo_h1] column.
-         *
-         * @param string $v new value
-         * @return SeoI18n The current object (for fluent API support)
-         */
-        public function setSeoH1($v)
-        {    $this->getCurrentTranslation()->setSeoH1($v);
-
-        return $this;
-    }
-
-
-        /**
-         * Get the [seo_keywords] column value.
-         *
-         * @return string
-         */
-        public function getSeoKeywords()
-        {
-        return $this->getCurrentTranslation()->getSeoKeywords();
-    }
-
-
-        /**
-         * Set the value of [seo_keywords] column.
-         *
-         * @param string $v new value
-         * @return SeoI18n The current object (for fluent API support)
-         */
-        public function setSeoKeywords($v)
-        {    $this->getCurrentTranslation()->setSeoKeywords($v);
-
-        return $this;
     }
 
 }

@@ -945,7 +945,7 @@ abstract class BaseMiseEnAvantPeer
     }
 
     // crudable behavior
-    
+
     /**
      * The default locale to use for translations
      * @var        string
@@ -959,7 +959,7 @@ abstract class BaseMiseEnAvantPeer
         ;
     }
     // seo behavior
-    
+
     /**
      * The default locale to use for translations
      * @var        string

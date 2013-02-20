@@ -40,15 +40,12 @@ class EtablissementTypeHebergementTableMap extends TableMap
         $this->setPhpName('EtablissementTypeHebergement');
         $this->setClassname('Cungfoo\\Model\\EtablissementTypeHebergement');
         $this->setPackage('Cungfoo.Model');
-        $this->setUseIdGenerator(false);
+        $this->setUseIdGenerator(true);
         $this->setIsCrossRef(true);
         // columns
-        $this->addForeignPrimaryKey('etablissement_id', 'EtablissementId', 'INTEGER' , 'etablissement', 'id', true, null, null);
-        $this->addForeignPrimaryKey('type_hebergement_id', 'TypeHebergementId', 'INTEGER' , 'type_hebergement', 'id', true, null, null);
-        $this->addColumn('minimum_price', 'MinimumPrice', 'VARCHAR', false, 255, null);
-        $this->addColumn('minimum_price_discount_label', 'MinimumPriceDiscountLabel', 'VARCHAR', false, 255, null);
-        $this->addColumn('minimum_price_start_date', 'MinimumPriceStartDate', 'DATE', false, null, null);
-        $this->addColumn('minimum_price_end_date', 'MinimumPriceEndDate', 'DATE', false, null, null);
+        $this->addPrimaryKey('id', 'Id', 'INTEGER', true, null, null);
+        $this->addForeignKey('etablissement_id', 'EtablissementId', 'INTEGER', 'etablissement', 'id', false, null, null);
+        $this->addForeignKey('type_hebergement_id', 'TypeHebergementId', 'INTEGER', 'type_hebergement', 'id', false, null, null);
         // validators
     } // initialize()
 
@@ -59,6 +56,28 @@ class EtablissementTypeHebergementTableMap extends TableMap
     {
         $this->addRelation('Etablissement', 'Cungfoo\\Model\\Etablissement', RelationMap::MANY_TO_ONE, array('etablissement_id' => 'id', ), 'CASCADE', null);
         $this->addRelation('TypeHebergement', 'Cungfoo\\Model\\TypeHebergement', RelationMap::MANY_TO_ONE, array('type_hebergement_id' => 'id', ), 'CASCADE', null);
+        $this->addRelation('EtablissementTypeHebergementI18n', 'Cungfoo\\Model\\EtablissementTypeHebergementI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'EtablissementTypeHebergementI18ns');
     } // buildRelations()
+
+    /**
+     *
+     * Gets the list of behaviors registered for this table
+     *
+     * @return array Associative array (name => parameters) of behaviors
+     */
+    public function getBehaviors()
+    {
+        return array(
+            'i18n' =>  array (
+  'i18n_table' => '%TABLE%_i18n',
+  'i18n_phpname' => '%PHPNAME%I18n',
+  'i18n_columns' => 'minimum_price,minimum_price_discount_label,minimum_price_start_date,minimum_price_end_date',
+  'i18n_pk_name' => NULL,
+  'locale_column' => 'locale',
+  'default_locale' => 'fr',
+  'locale_alias' => '',
+),
+        );
+    } // getBehaviors()
 
 } // EtablissementTypeHebergementTableMap
