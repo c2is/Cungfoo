@@ -42,6 +42,10 @@ class PropelMigration_1361289846
 # It "suspends judgement" for fkey relationships until are tables are set.
 SET FOREIGN_KEY_CHECKS = 0;
 
+ALTER TABLE `etablissement_type_hebergement` DROP FOREIGN KEY `etablissement_type_hebergement_FK_1`;
+
+ALTER TABLE `etablissement_type_hebergement` DROP FOREIGN KEY `etablissement_type_hebergement_FK_2`;
+
 ALTER TABLE `etablissement_type_hebergement` DROP PRIMARY KEY;
 
 ALTER TABLE `etablissement_type_hebergement` CHANGE `etablissement_id` `etablissement_id` INTEGER;
