@@ -56,6 +56,7 @@ class EventCommand extends BaseCommand
                 {
                     $client = new EventRegionClient();
                     $client->loadConfig($this->getProjectDirectory().'/app/config/ViaFrance/client.yml');
+                    $client->setParam('lang', $language);
 
                     $regions = \Cungfoo\Model\RegionQuery::create()
                         ->find()
@@ -70,7 +71,6 @@ class EventCommand extends BaseCommand
                             foreach ($correspondanceRegions[$region->getCode()] as $key => $value)
                             {
                                 $client->setParam($key, $value);
-                                $client->setParam('lang', $language);
                                 $data = $client->getData(new RESTConnection());
                                 $loader->load($region, $data, $language);
                             }
@@ -81,13 +81,13 @@ class EventCommand extends BaseCommand
                 {
                     $client = new EventClient();
                     $client->loadConfig($this->getProjectDirectory().'/app/config/ViaFrance/client.yml');
+                    $client->setParam('lang', $language);
 
                     foreach ($etabs as $etab)
                     {
                         $client->setParam('x', $etab->getGeoCoordinateX());
                         $client->setParam('y', $etab->getGeoCoordinateY());
 
-                        $client->setParam('lang', $language);
                         $data = $client->getData(new RESTConnection());
                         $loader->load($etab, $data, $language);
                     }

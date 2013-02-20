@@ -51,6 +51,7 @@ services:
             showdeptreg: yes
             showqualifiers: yes
             showpublic: yes
+            showdistancexy: yes
     poi_region:
         base: http://webservices.viafrance.com
         resource: /getplacelist.aspx
@@ -64,4 +65,5 @@ services:
             stickflag: yes
             withsubcategory: yes
             withleadingpointview: yes
+            withxy: yes
             showdeptreg: yes

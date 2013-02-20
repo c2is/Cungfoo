@@ -78,61 +78,39 @@ class EventLoader extends AbstractLoader
             ->findOne($this->dbConnection);
         ;
 
-        if ($language == 'fr')
+        if (!$newEvent)
         {
-            if ($newEvent)
-            {
-                return $newEvent;
-            }
-
             $newEvent = new Event();
-            $newEvent
-                ->setLocale($language)
-                ->setName($event->{'Title'})
-                ->setSlug($utils->slugify($event->{'Title'}))
-                ->setSubtitle($event->{'Subtitle'})
-                ->setStrDate($event->{'StrDate'})
-                ->setCode($code)
-                ->setCategory($event->{'Category'}['Id'])
-                ->setPriority($event->{'Priority'})
-                ->setGeoCoordinateX($event->attributes()->{'X'})
-                ->setGeoCoordinateY($event->attributes()->{'Y'})
-                ->setDistanceCamping($event->attributes()->{'DistanceXY'})
-                ->setImage($event->{'Image1'})
-                ->setDescription($event->{'Description'})
-                ->setTel($event->{'Tel'})
-                ->setFax($event->{'Fax'})
-                ->setEmail($event->{'Email'})
-                ->setWebsite($event->{'WebSite'})
-                ->setTransport($event->{'Transports'})
-            ;
-
-            if ($place = $event->{'Place'})
-            {
-                $newEvent
-                    ->setAddress($place->{'Address'})
-                    ->setAddress2($place->{'Address2'})
-                    ->setZipcode($place->{'ZipCode'})
-                    ->setCity($place->{'City'})
-                ;
-            }
         }
-        else
-        {
-            $defaultName        = $newEvent->getName();
-            $defaultStrDate     = $newEvent->getStrDate();
-            $defaultSubtitle    = $newEvent->getSubtitle();
-            $defaultDescription = $newEvent->getDescription();
-            $defaultTransport   = $newEvent->getTransport();
 
+        $newEvent
+            ->setLocale($language)
+            ->setName($event->{'Title'})
+            ->setSlug($utils->slugify($event->{'Title'}))
+            ->setSubtitle($event->{'Subtitle'})
+            ->setStrDate($event->{'StrDate'})
+            ->setCode($code)
+            ->setCategory($event->{'Category'}['Id'])
+            ->setPriority($event->{'Priority'})
+            ->setGeoCoordinateX($event->attributes()->{'X'})
+            ->setGeoCoordinateY($event->attributes()->{'Y'})
+            ->setDistanceCamping($event->attributes()->{'DistanceXY'})
+            ->setImage($event->{'Image1'})
+            ->setDescription($event->{'Description'})
+            ->setTel($event->{'Tel'})
+            ->setFax($event->{'Fax'})
+            ->setEmail($event->{'Email'})
+            ->setWebsite($event->{'WebSite'})
+            ->setTransport($event->{'Transports'})
+        ;
+
+        if ($place = $event->{'Place'})
+        {
             $newEvent
-                ->setLocale($language)
-                ->setName(($event->{'Title'}) ? $event->{'Title'} : $defaultName)
-                ->setSlug($utils->slugify(($event->{'Title'}) ? $event->{'Title'} : $defaultName))
-                ->setSubtitle(($event->{'Subtitle'}) ? $event->{'Subtitle'} : $defaultSubtitle)
-                ->setStrDate($event->{'StrDate'} ? $event->{'StrDate'} : $defaultStrDate)
-                ->setDescription(($event->{'Description'}) ? $event->{'Description'} : $defaultDescription)
-                ->setTransport(($event->{'Transports'}) ? $event->{'Transports)'} : $defaultTransport)
+                ->setAddress($place->{'Address'})
+                ->setAddress2($place->{'Address2'})
+                ->setZipcode($place->{'ZipCode'})
+                ->setCity($place->{'City'})
             ;
         }
 

@@ -24,7 +24,7 @@ class EventPeer extends BaseEventPeer
     const RANDOM_SORT      = 1;
     const SORT_BY_PRIORITY = 2;
 
-    static protected getLocale()
+    static protected function getLocale()
     {
         if (defined('CURRENT_LANGUAGE'))
         {

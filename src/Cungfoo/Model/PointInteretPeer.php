@@ -21,7 +21,7 @@ class PointInteretPeer extends BasePointInteretPeer
     const NO_SORT     = 0;
     const RANDOM_SORT = 1;
 
-    static protected getLocale()
+    static protected function getLocale()
     {
         if (defined('CURRENT_LANGUAGE'))
         {
