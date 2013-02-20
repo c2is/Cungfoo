@@ -65,9 +65,13 @@ class RegionTableMap extends TableMap
     {
         $this->addRelation('Pays', 'Cungfoo\\Model\\Pays', RelationMap::MANY_TO_ONE, array('pays_id' => 'id', ), 'SET NULL', null);
         $this->addRelation('Destination', 'Cungfoo\\Model\\Destination', RelationMap::MANY_TO_ONE, array('destination_id' => 'id', ), null, null);
+        $this->addRelation('RegionPointInteret', 'Cungfoo\\Model\\RegionPointInteret', RelationMap::ONE_TO_MANY, array('id' => 'region_id', ), 'CASCADE', null, 'RegionPointInterets');
+        $this->addRelation('RegionEvent', 'Cungfoo\\Model\\RegionEvent', RelationMap::ONE_TO_MANY, array('id' => 'region_id', ), 'CASCADE', null, 'RegionEvents');
         $this->addRelation('Ville', 'Cungfoo\\Model\\Ville', RelationMap::ONE_TO_MANY, array('id' => 'region_id', ), 'SET NULL', null, 'Villes');
         $this->addRelation('BonPlanRegion', 'Cungfoo\\Model\\BonPlanRegion', RelationMap::ONE_TO_MANY, array('id' => 'region_id', ), 'CASCADE', null, 'BonPlanRegions');
         $this->addRelation('RegionI18n', 'Cungfoo\\Model\\RegionI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'RegionI18ns');
+        $this->addRelation('PointInteret', 'Cungfoo\\Model\\PointInteret', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'PointInterets');
+        $this->addRelation('Event', 'Cungfoo\\Model\\Event', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'Events');
         $this->addRelation('BonPlan', 'Cungfoo\\Model\\BonPlan', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'BonPlans');
     } // buildRelations()
 

@@ -18,6 +18,8 @@ use Cungfoo\Model\PointInteret;
 use Cungfoo\Model\PointInteretI18n;
 use Cungfoo\Model\PointInteretPeer;
 use Cungfoo\Model\PointInteretQuery;
+use Cungfoo\Model\Region;
+use Cungfoo\Model\RegionPointInteret;
 
 /**
  * Base class that represents a query for the 'point_interet' table.
@@ -67,6 +69,10 @@ use Cungfoo\Model\PointInteretQuery;
  * @method PointInteretQuery leftJoinEtablissementPointInteret($relationAlias = null) Adds a LEFT JOIN clause to the query using the EtablissementPointInteret relation
  * @method PointInteretQuery rightJoinEtablissementPointInteret($relationAlias = null) Adds a RIGHT JOIN clause to the query using the EtablissementPointInteret relation
  * @method PointInteretQuery innerJoinEtablissementPointInteret($relationAlias = null) Adds a INNER JOIN clause to the query using the EtablissementPointInteret relation
+ *
+ * @method PointInteretQuery leftJoinRegionPointInteret($relationAlias = null) Adds a LEFT JOIN clause to the query using the RegionPointInteret relation
+ * @method PointInteretQuery rightJoinRegionPointInteret($relationAlias = null) Adds a RIGHT JOIN clause to the query using the RegionPointInteret relation
+ * @method PointInteretQuery innerJoinRegionPointInteret($relationAlias = null) Adds a INNER JOIN clause to the query using the RegionPointInteret relation
  *
  * @method PointInteretQuery leftJoinPointInteretI18n($relationAlias = null) Adds a LEFT JOIN clause to the query using the PointInteretI18n relation
  * @method PointInteretQuery rightJoinPointInteretI18n($relationAlias = null) Adds a RIGHT JOIN clause to the query using the PointInteretI18n relation
@@ -893,6 +899,80 @@ abstract class BasePointInteretQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query by a related RegionPointInteret object
+     *
+     * @param   RegionPointInteret|PropelObjectCollection $regionPointInteret  the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   PointInteretQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByRegionPointInteret($regionPointInteret, $comparison = null)
+    {
+        if ($regionPointInteret instanceof RegionPointInteret) {
+            return $this
+                ->addUsingAlias(PointInteretPeer::ID, $regionPointInteret->getPointInteretId(), $comparison);
+        } elseif ($regionPointInteret instanceof PropelObjectCollection) {
+            return $this
+                ->useRegionPointInteretQuery()
+                ->filterByPrimaryKeys($regionPointInteret->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByRegionPointInteret() only accepts arguments of type RegionPointInteret or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the RegionPointInteret relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return PointInteretQuery The current query, for fluid interface
+     */
+    public function joinRegionPointInteret($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('RegionPointInteret');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'RegionPointInteret');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the RegionPointInteret relation RegionPointInteret object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\RegionPointInteretQuery A secondary query class using the current class as primary query
+     */
+    public function useRegionPointInteretQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        return $this
+            ->joinRegionPointInteret($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'RegionPointInteret', '\Cungfoo\Model\RegionPointInteretQuery');
+    }
+
+    /**
      * Filter the query by a related PointInteretI18n object
      *
      * @param   PointInteretI18n|PropelObjectCollection $pointInteretI18n  the related object to use as filter
@@ -980,6 +1060,23 @@ abstract class BasePointInteretQuery extends ModelCriteria
         return $this
             ->useEtablissementPointInteretQuery()
             ->filterByEtablissement($etablissement, $comparison)
+            ->endUse();
+    }
+
+    /**
+     * Filter the query by a related Region object
+     * using the region_point_interet table as cross reference
+     *
+     * @param   Region $region the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   PointInteretQuery The current query, for fluid interface
+     */
+    public function filterByRegion($region, $comparison = Criteria::EQUAL)
+    {
+        return $this
+            ->useRegionPointInteretQuery()
+            ->filterByRegion($region, $comparison)
             ->endUse();
     }
 

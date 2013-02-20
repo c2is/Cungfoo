@@ -20,12 +20,20 @@ use Cungfoo\Model\BonPlanRegion;
 use Cungfoo\Model\BonPlanRegionQuery;
 use Cungfoo\Model\Destination;
 use Cungfoo\Model\DestinationQuery;
+use Cungfoo\Model\Event;
+use Cungfoo\Model\EventQuery;
 use Cungfoo\Model\Pays;
 use Cungfoo\Model\PaysQuery;
+use Cungfoo\Model\PointInteret;
+use Cungfoo\Model\PointInteretQuery;
 use Cungfoo\Model\Region;
+use Cungfoo\Model\RegionEvent;
+use Cungfoo\Model\RegionEventQuery;
 use Cungfoo\Model\RegionI18n;
 use Cungfoo\Model\RegionI18nQuery;
 use Cungfoo\Model\RegionPeer;
+use Cungfoo\Model\RegionPointInteret;
+use Cungfoo\Model\RegionPointInteretQuery;
 use Cungfoo\Model\RegionQuery;
 use Cungfoo\Model\Ville;
 use Cungfoo\Model\VilleQuery;
@@ -149,6 +157,18 @@ abstract class BaseRegion extends BaseObject implements Persistent
     protected $aDestination;
 
     /**
+     * @var        PropelObjectCollection|RegionPointInteret[] Collection to store aggregation of RegionPointInteret objects.
+     */
+    protected $collRegionPointInterets;
+    protected $collRegionPointInteretsPartial;
+
+    /**
+     * @var        PropelObjectCollection|RegionEvent[] Collection to store aggregation of RegionEvent objects.
+     */
+    protected $collRegionEvents;
+    protected $collRegionEventsPartial;
+
+    /**
      * @var        PropelObjectCollection|Ville[] Collection to store aggregation of Ville objects.
      */
     protected $collVilles;
@@ -165,6 +185,16 @@ abstract class BaseRegion extends BaseObject implements Persistent
      */
     protected $collRegionI18ns;
     protected $collRegionI18nsPartial;
+
+    /**
+     * @var        PropelObjectCollection|PointInteret[] Collection to store aggregation of PointInteret objects.
+     */
+    protected $collPointInterets;
+
+    /**
+     * @var        PropelObjectCollection|Event[] Collection to store aggregation of Event objects.
+     */
+    protected $collEvents;
 
     /**
      * @var        PropelObjectCollection|BonPlan[] Collection to store aggregation of BonPlan objects.
@@ -203,7 +233,31 @@ abstract class BaseRegion extends BaseObject implements Persistent
      * An array of objects scheduled for deletion.
      * @var		PropelObjectCollection
      */
+    protected $pointInteretsScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
+    protected $eventsScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
     protected $bonPlansScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
+    protected $regionPointInteretsScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
+    protected $regionEventsScheduledForDeletion = null;
 
     /**
      * An array of objects scheduled for deletion.
@@ -862,12 +916,18 @@ abstract class BaseRegion extends BaseObject implements Persistent
 
             $this->aPays = null;
             $this->aDestination = null;
+            $this->collRegionPointInterets = null;
+
+            $this->collRegionEvents = null;
+
             $this->collVilles = null;
 
             $this->collBonPlanRegions = null;
 
             $this->collRegionI18ns = null;
 
+            $this->collPointInterets = null;
+            $this->collEvents = null;
             $this->collBonPlans = null;
         } // if (deep)
     }
@@ -1023,6 +1083,46 @@ abstract class BaseRegion extends BaseObject implements Persistent
                 $this->resetModified();
             }
 
+            if ($this->pointInteretsScheduledForDeletion !== null) {
+                if (!$this->pointInteretsScheduledForDeletion->isEmpty()) {
+                    $pks = array();
+                    $pk = $this->getPrimaryKey();
+                    foreach ($this->pointInteretsScheduledForDeletion->getPrimaryKeys(false) as $remotePk) {
+                        $pks[] = array($pk, $remotePk);
+                    }
+                    RegionPointInteretQuery::create()
+                        ->filterByPrimaryKeys($pks)
+                        ->delete($con);
+                    $this->pointInteretsScheduledForDeletion = null;
+                }
+
+                foreach ($this->getPointInterets() as $pointInteret) {
+                    if ($pointInteret->isModified()) {
+                        $pointInteret->save($con);
+                    }
+                }
+            }
+
+            if ($this->eventsScheduledForDeletion !== null) {
+                if (!$this->eventsScheduledForDeletion->isEmpty()) {
+                    $pks = array();
+                    $pk = $this->getPrimaryKey();
+                    foreach ($this->eventsScheduledForDeletion->getPrimaryKeys(false) as $remotePk) {
+                        $pks[] = array($pk, $remotePk);
+                    }
+                    RegionEventQuery::create()
+                        ->filterByPrimaryKeys($pks)
+                        ->delete($con);
+                    $this->eventsScheduledForDeletion = null;
+                }
+
+                foreach ($this->getEvents() as $event) {
+                    if ($event->isModified()) {
+                        $event->save($con);
+                    }
+                }
+            }
+
             if ($this->bonPlansScheduledForDeletion !== null) {
                 if (!$this->bonPlansScheduledForDeletion->isEmpty()) {
                     $pks = array();
@@ -1039,6 +1139,40 @@ abstract class BaseRegion extends BaseObject implements Persistent
                 foreach ($this->getBonPlans() as $bonPlan) {
                     if ($bonPlan->isModified()) {
                         $bonPlan->save($con);
+                    }
+                }
+            }
+
+            if ($this->regionPointInteretsScheduledForDeletion !== null) {
+                if (!$this->regionPointInteretsScheduledForDeletion->isEmpty()) {
+                    RegionPointInteretQuery::create()
+                        ->filterByPrimaryKeys($this->regionPointInteretsScheduledForDeletion->getPrimaryKeys(false))
+                        ->delete($con);
+                    $this->regionPointInteretsScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collRegionPointInterets !== null) {
+                foreach ($this->collRegionPointInterets as $referrerFK) {
+                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
+                        $affectedRows += $referrerFK->save($con);
+                    }
+                }
+            }
+
+            if ($this->regionEventsScheduledForDeletion !== null) {
+                if (!$this->regionEventsScheduledForDeletion->isEmpty()) {
+                    RegionEventQuery::create()
+                        ->filterByPrimaryKeys($this->regionEventsScheduledForDeletion->getPrimaryKeys(false))
+                        ->delete($con);
+                    $this->regionEventsScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collRegionEvents !== null) {
+                foreach ($this->collRegionEvents as $referrerFK) {
+                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
+                        $affectedRows += $referrerFK->save($con);
                     }
                 }
             }
@@ -1327,6 +1461,22 @@ abstract class BaseRegion extends BaseObject implements Persistent
             }
 
 
+                if ($this->collRegionPointInterets !== null) {
+                    foreach ($this->collRegionPointInterets as $referrerFK) {
+                        if (!$referrerFK->validate($columns)) {
+                            $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
+                        }
+                    }
+                }
+
+                if ($this->collRegionEvents !== null) {
+                    foreach ($this->collRegionEvents as $referrerFK) {
+                        if (!$referrerFK->validate($columns)) {
+                            $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
+                        }
+                    }
+                }
+
                 if ($this->collVilles !== null) {
                     foreach ($this->collVilles as $referrerFK) {
                         if (!$referrerFK->validate($columns)) {
@@ -1474,6 +1624,12 @@ abstract class BaseRegion extends BaseObject implements Persistent
             }
             if (null !== $this->aDestination) {
                 $result['Destination'] = $this->aDestination->toArray($keyType, $includeLazyLoadColumns,  $alreadyDumpedObjects, true);
+            }
+            if (null !== $this->collRegionPointInterets) {
+                $result['RegionPointInterets'] = $this->collRegionPointInterets->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
+            }
+            if (null !== $this->collRegionEvents) {
+                $result['RegionEvents'] = $this->collRegionEvents->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
             if (null !== $this->collVilles) {
                 $result['Villes'] = $this->collVilles->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
@@ -1701,6 +1857,18 @@ abstract class BaseRegion extends BaseObject implements Persistent
             // store object hash to prevent cycle
             $this->startCopy = true;
 
+            foreach ($this->getRegionPointInterets() as $relObj) {
+                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
+                    $copyObj->addRegionPointInteret($relObj->copy($deepCopy));
+                }
+            }
+
+            foreach ($this->getRegionEvents() as $relObj) {
+                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
+                    $copyObj->addRegionEvent($relObj->copy($deepCopy));
+                }
+            }
+
             foreach ($this->getVilles() as $relObj) {
                 if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
                     $copyObj->addVille($relObj->copy($deepCopy));
@@ -1884,6 +2052,12 @@ abstract class BaseRegion extends BaseObject implements Persistent
      */
     public function initRelation($relationName)
     {
+        if ('RegionPointInteret' == $relationName) {
+            $this->initRegionPointInterets();
+        }
+        if ('RegionEvent' == $relationName) {
+            $this->initRegionEvents();
+        }
         if ('Ville' == $relationName) {
             $this->initVilles();
         }
@@ -1893,6 +2067,486 @@ abstract class BaseRegion extends BaseObject implements Persistent
         if ('RegionI18n' == $relationName) {
             $this->initRegionI18ns();
         }
+    }
+
+    /**
+     * Clears out the collRegionPointInterets collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return Region The current object (for fluent API support)
+     * @see        addRegionPointInterets()
+     */
+    public function clearRegionPointInterets()
+    {
+        $this->collRegionPointInterets = null; // important to set this to null since that means it is uninitialized
+        $this->collRegionPointInteretsPartial = null;
+
+        return $this;
+    }
+
+    /**
+     * reset is the collRegionPointInterets collection loaded partially
+     *
+     * @return void
+     */
+    public function resetPartialRegionPointInterets($v = true)
+    {
+        $this->collRegionPointInteretsPartial = $v;
+    }
+
+    /**
+     * Initializes the collRegionPointInterets collection.
+     *
+     * By default this just sets the collRegionPointInterets collection to an empty array (like clearcollRegionPointInterets());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @param boolean $overrideExisting If set to true, the method call initializes
+     *                                        the collection even if it is not empty
+     *
+     * @return void
+     */
+    public function initRegionPointInterets($overrideExisting = true)
+    {
+        if (null !== $this->collRegionPointInterets && !$overrideExisting) {
+            return;
+        }
+        $this->collRegionPointInterets = new PropelObjectCollection();
+        $this->collRegionPointInterets->setModel('RegionPointInteret');
+    }
+
+    /**
+     * Gets an array of RegionPointInteret objects which contain a foreign key that references this object.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this Region is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @return PropelObjectCollection|RegionPointInteret[] List of RegionPointInteret objects
+     * @throws PropelException
+     */
+    public function getRegionPointInterets($criteria = null, PropelPDO $con = null)
+    {
+        $partial = $this->collRegionPointInteretsPartial && !$this->isNew();
+        if (null === $this->collRegionPointInterets || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collRegionPointInterets) {
+                // return empty collection
+                $this->initRegionPointInterets();
+            } else {
+                $collRegionPointInterets = RegionPointInteretQuery::create(null, $criteria)
+                    ->filterByRegion($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    if (false !== $this->collRegionPointInteretsPartial && count($collRegionPointInterets)) {
+                      $this->initRegionPointInterets(false);
+
+                      foreach($collRegionPointInterets as $obj) {
+                        if (false == $this->collRegionPointInterets->contains($obj)) {
+                          $this->collRegionPointInterets->append($obj);
+                        }
+                      }
+
+                      $this->collRegionPointInteretsPartial = true;
+                    }
+
+                    return $collRegionPointInterets;
+                }
+
+                if($partial && $this->collRegionPointInterets) {
+                    foreach($this->collRegionPointInterets as $obj) {
+                        if($obj->isNew()) {
+                            $collRegionPointInterets[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collRegionPointInterets = $collRegionPointInterets;
+                $this->collRegionPointInteretsPartial = false;
+            }
+        }
+
+        return $this->collRegionPointInterets;
+    }
+
+    /**
+     * Sets a collection of RegionPointInteret objects related by a one-to-many relationship
+     * to the current object.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $regionPointInterets A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     * @return Region The current object (for fluent API support)
+     */
+    public function setRegionPointInterets(PropelCollection $regionPointInterets, PropelPDO $con = null)
+    {
+        $this->regionPointInteretsScheduledForDeletion = $this->getRegionPointInterets(new Criteria(), $con)->diff($regionPointInterets);
+
+        foreach ($this->regionPointInteretsScheduledForDeletion as $regionPointInteretRemoved) {
+            $regionPointInteretRemoved->setRegion(null);
+        }
+
+        $this->collRegionPointInterets = null;
+        foreach ($regionPointInterets as $regionPointInteret) {
+            $this->addRegionPointInteret($regionPointInteret);
+        }
+
+        $this->collRegionPointInterets = $regionPointInterets;
+        $this->collRegionPointInteretsPartial = false;
+
+        return $this;
+    }
+
+    /**
+     * Returns the number of related RegionPointInteret objects.
+     *
+     * @param Criteria $criteria
+     * @param boolean $distinct
+     * @param PropelPDO $con
+     * @return int             Count of related RegionPointInteret objects.
+     * @throws PropelException
+     */
+    public function countRegionPointInterets(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        $partial = $this->collRegionPointInteretsPartial && !$this->isNew();
+        if (null === $this->collRegionPointInterets || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collRegionPointInterets) {
+                return 0;
+            }
+
+            if($partial && !$criteria) {
+                return count($this->getRegionPointInterets());
+            }
+            $query = RegionPointInteretQuery::create(null, $criteria);
+            if ($distinct) {
+                $query->distinct();
+            }
+
+            return $query
+                ->filterByRegion($this)
+                ->count($con);
+        }
+
+        return count($this->collRegionPointInterets);
+    }
+
+    /**
+     * Method called to associate a RegionPointInteret object to this object
+     * through the RegionPointInteret foreign key attribute.
+     *
+     * @param    RegionPointInteret $l RegionPointInteret
+     * @return Region The current object (for fluent API support)
+     */
+    public function addRegionPointInteret(RegionPointInteret $l)
+    {
+        if ($this->collRegionPointInterets === null) {
+            $this->initRegionPointInterets();
+            $this->collRegionPointInteretsPartial = true;
+        }
+        if (!in_array($l, $this->collRegionPointInterets->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
+            $this->doAddRegionPointInteret($l);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	RegionPointInteret $regionPointInteret The regionPointInteret object to add.
+     */
+    protected function doAddRegionPointInteret($regionPointInteret)
+    {
+        $this->collRegionPointInterets[]= $regionPointInteret;
+        $regionPointInteret->setRegion($this);
+    }
+
+    /**
+     * @param	RegionPointInteret $regionPointInteret The regionPointInteret object to remove.
+     * @return Region The current object (for fluent API support)
+     */
+    public function removeRegionPointInteret($regionPointInteret)
+    {
+        if ($this->getRegionPointInterets()->contains($regionPointInteret)) {
+            $this->collRegionPointInterets->remove($this->collRegionPointInterets->search($regionPointInteret));
+            if (null === $this->regionPointInteretsScheduledForDeletion) {
+                $this->regionPointInteretsScheduledForDeletion = clone $this->collRegionPointInterets;
+                $this->regionPointInteretsScheduledForDeletion->clear();
+            }
+            $this->regionPointInteretsScheduledForDeletion[]= $regionPointInteret;
+            $regionPointInteret->setRegion(null);
+        }
+
+        return $this;
+    }
+
+
+    /**
+     * If this collection has already been initialized with
+     * an identical criteria, it returns the collection.
+     * Otherwise if this Region is new, it will return
+     * an empty collection; or if this Region has previously
+     * been saved, it will retrieve related RegionPointInterets from storage.
+     *
+     * This method is protected by default in order to keep the public
+     * api reasonable.  You can provide public methods for those you
+     * actually need in Region.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @param string $join_behavior optional join type to use (defaults to Criteria::LEFT_JOIN)
+     * @return PropelObjectCollection|RegionPointInteret[] List of RegionPointInteret objects
+     */
+    public function getRegionPointInteretsJoinPointInteret($criteria = null, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    {
+        $query = RegionPointInteretQuery::create(null, $criteria);
+        $query->joinWith('PointInteret', $join_behavior);
+
+        return $this->getRegionPointInterets($query, $con);
+    }
+
+    /**
+     * Clears out the collRegionEvents collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return Region The current object (for fluent API support)
+     * @see        addRegionEvents()
+     */
+    public function clearRegionEvents()
+    {
+        $this->collRegionEvents = null; // important to set this to null since that means it is uninitialized
+        $this->collRegionEventsPartial = null;
+
+        return $this;
+    }
+
+    /**
+     * reset is the collRegionEvents collection loaded partially
+     *
+     * @return void
+     */
+    public function resetPartialRegionEvents($v = true)
+    {
+        $this->collRegionEventsPartial = $v;
+    }
+
+    /**
+     * Initializes the collRegionEvents collection.
+     *
+     * By default this just sets the collRegionEvents collection to an empty array (like clearcollRegionEvents());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @param boolean $overrideExisting If set to true, the method call initializes
+     *                                        the collection even if it is not empty
+     *
+     * @return void
+     */
+    public function initRegionEvents($overrideExisting = true)
+    {
+        if (null !== $this->collRegionEvents && !$overrideExisting) {
+            return;
+        }
+        $this->collRegionEvents = new PropelObjectCollection();
+        $this->collRegionEvents->setModel('RegionEvent');
+    }
+
+    /**
+     * Gets an array of RegionEvent objects which contain a foreign key that references this object.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this Region is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @return PropelObjectCollection|RegionEvent[] List of RegionEvent objects
+     * @throws PropelException
+     */
+    public function getRegionEvents($criteria = null, PropelPDO $con = null)
+    {
+        $partial = $this->collRegionEventsPartial && !$this->isNew();
+        if (null === $this->collRegionEvents || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collRegionEvents) {
+                // return empty collection
+                $this->initRegionEvents();
+            } else {
+                $collRegionEvents = RegionEventQuery::create(null, $criteria)
+                    ->filterByRegion($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    if (false !== $this->collRegionEventsPartial && count($collRegionEvents)) {
+                      $this->initRegionEvents(false);
+
+                      foreach($collRegionEvents as $obj) {
+                        if (false == $this->collRegionEvents->contains($obj)) {
+                          $this->collRegionEvents->append($obj);
+                        }
+                      }
+
+                      $this->collRegionEventsPartial = true;
+                    }
+
+                    return $collRegionEvents;
+                }
+
+                if($partial && $this->collRegionEvents) {
+                    foreach($this->collRegionEvents as $obj) {
+                        if($obj->isNew()) {
+                            $collRegionEvents[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collRegionEvents = $collRegionEvents;
+                $this->collRegionEventsPartial = false;
+            }
+        }
+
+        return $this->collRegionEvents;
+    }
+
+    /**
+     * Sets a collection of RegionEvent objects related by a one-to-many relationship
+     * to the current object.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $regionEvents A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     * @return Region The current object (for fluent API support)
+     */
+    public function setRegionEvents(PropelCollection $regionEvents, PropelPDO $con = null)
+    {
+        $this->regionEventsScheduledForDeletion = $this->getRegionEvents(new Criteria(), $con)->diff($regionEvents);
+
+        foreach ($this->regionEventsScheduledForDeletion as $regionEventRemoved) {
+            $regionEventRemoved->setRegion(null);
+        }
+
+        $this->collRegionEvents = null;
+        foreach ($regionEvents as $regionEvent) {
+            $this->addRegionEvent($regionEvent);
+        }
+
+        $this->collRegionEvents = $regionEvents;
+        $this->collRegionEventsPartial = false;
+
+        return $this;
+    }
+
+    /**
+     * Returns the number of related RegionEvent objects.
+     *
+     * @param Criteria $criteria
+     * @param boolean $distinct
+     * @param PropelPDO $con
+     * @return int             Count of related RegionEvent objects.
+     * @throws PropelException
+     */
+    public function countRegionEvents(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        $partial = $this->collRegionEventsPartial && !$this->isNew();
+        if (null === $this->collRegionEvents || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collRegionEvents) {
+                return 0;
+            }
+
+            if($partial && !$criteria) {
+                return count($this->getRegionEvents());
+            }
+            $query = RegionEventQuery::create(null, $criteria);
+            if ($distinct) {
+                $query->distinct();
+            }
+
+            return $query
+                ->filterByRegion($this)
+                ->count($con);
+        }
+
+        return count($this->collRegionEvents);
+    }
+
+    /**
+     * Method called to associate a RegionEvent object to this object
+     * through the RegionEvent foreign key attribute.
+     *
+     * @param    RegionEvent $l RegionEvent
+     * @return Region The current object (for fluent API support)
+     */
+    public function addRegionEvent(RegionEvent $l)
+    {
+        if ($this->collRegionEvents === null) {
+            $this->initRegionEvents();
+            $this->collRegionEventsPartial = true;
+        }
+        if (!in_array($l, $this->collRegionEvents->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
+            $this->doAddRegionEvent($l);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	RegionEvent $regionEvent The regionEvent object to add.
+     */
+    protected function doAddRegionEvent($regionEvent)
+    {
+        $this->collRegionEvents[]= $regionEvent;
+        $regionEvent->setRegion($this);
+    }
+
+    /**
+     * @param	RegionEvent $regionEvent The regionEvent object to remove.
+     * @return Region The current object (for fluent API support)
+     */
+    public function removeRegionEvent($regionEvent)
+    {
+        if ($this->getRegionEvents()->contains($regionEvent)) {
+            $this->collRegionEvents->remove($this->collRegionEvents->search($regionEvent));
+            if (null === $this->regionEventsScheduledForDeletion) {
+                $this->regionEventsScheduledForDeletion = clone $this->collRegionEvents;
+                $this->regionEventsScheduledForDeletion->clear();
+            }
+            $this->regionEventsScheduledForDeletion[]= $regionEvent;
+            $regionEvent->setRegion(null);
+        }
+
+        return $this;
+    }
+
+
+    /**
+     * If this collection has already been initialized with
+     * an identical criteria, it returns the collection.
+     * Otherwise if this Region is new, it will return
+     * an empty collection; or if this Region has previously
+     * been saved, it will retrieve related RegionEvents from storage.
+     *
+     * This method is protected by default in order to keep the public
+     * api reasonable.  You can provide public methods for those you
+     * actually need in Region.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @param string $join_behavior optional join type to use (defaults to Criteria::LEFT_JOIN)
+     * @return PropelObjectCollection|RegionEvent[] List of RegionEvent objects
+     */
+    public function getRegionEventsJoinEvent($criteria = null, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    {
+        $query = RegionEventQuery::create(null, $criteria);
+        $query->joinWith('Event', $join_behavior);
+
+        return $this->getRegionEvents($query, $con);
     }
 
     /**
@@ -2570,6 +3224,360 @@ abstract class BaseRegion extends BaseObject implements Persistent
     }
 
     /**
+     * Clears out the collPointInterets collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return Region The current object (for fluent API support)
+     * @see        addPointInterets()
+     */
+    public function clearPointInterets()
+    {
+        $this->collPointInterets = null; // important to set this to null since that means it is uninitialized
+        $this->collPointInteretsPartial = null;
+
+        return $this;
+    }
+
+    /**
+     * Initializes the collPointInterets collection.
+     *
+     * By default this just sets the collPointInterets collection to an empty collection (like clearPointInterets());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @return void
+     */
+    public function initPointInterets()
+    {
+        $this->collPointInterets = new PropelObjectCollection();
+        $this->collPointInterets->setModel('PointInteret');
+    }
+
+    /**
+     * Gets a collection of PointInteret objects related by a many-to-many relationship
+     * to the current object by way of the region_point_interet cross-reference table.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this Region is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria Optional query object to filter the query
+     * @param PropelPDO $con Optional connection object
+     *
+     * @return PropelObjectCollection|PointInteret[] List of PointInteret objects
+     */
+    public function getPointInterets($criteria = null, PropelPDO $con = null)
+    {
+        if (null === $this->collPointInterets || null !== $criteria) {
+            if ($this->isNew() && null === $this->collPointInterets) {
+                // return empty collection
+                $this->initPointInterets();
+            } else {
+                $collPointInterets = PointInteretQuery::create(null, $criteria)
+                    ->filterByRegion($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    return $collPointInterets;
+                }
+                $this->collPointInterets = $collPointInterets;
+            }
+        }
+
+        return $this->collPointInterets;
+    }
+
+    /**
+     * Sets a collection of PointInteret objects related by a many-to-many relationship
+     * to the current object by way of the region_point_interet cross-reference table.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $pointInterets A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     * @return Region The current object (for fluent API support)
+     */
+    public function setPointInterets(PropelCollection $pointInterets, PropelPDO $con = null)
+    {
+        $this->clearPointInterets();
+        $currentPointInterets = $this->getPointInterets();
+
+        $this->pointInteretsScheduledForDeletion = $currentPointInterets->diff($pointInterets);
+
+        foreach ($pointInterets as $pointInteret) {
+            if (!$currentPointInterets->contains($pointInteret)) {
+                $this->doAddPointInteret($pointInteret);
+            }
+        }
+
+        $this->collPointInterets = $pointInterets;
+
+        return $this;
+    }
+
+    /**
+     * Gets the number of PointInteret objects related by a many-to-many relationship
+     * to the current object by way of the region_point_interet cross-reference table.
+     *
+     * @param Criteria $criteria Optional query object to filter the query
+     * @param boolean $distinct Set to true to force count distinct
+     * @param PropelPDO $con Optional connection object
+     *
+     * @return int the number of related PointInteret objects
+     */
+    public function countPointInterets($criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        if (null === $this->collPointInterets || null !== $criteria) {
+            if ($this->isNew() && null === $this->collPointInterets) {
+                return 0;
+            } else {
+                $query = PointInteretQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
+
+                return $query
+                    ->filterByRegion($this)
+                    ->count($con);
+            }
+        } else {
+            return count($this->collPointInterets);
+        }
+    }
+
+    /**
+     * Associate a PointInteret object to this object
+     * through the region_point_interet cross reference table.
+     *
+     * @param  PointInteret $pointInteret The RegionPointInteret object to relate
+     * @return Region The current object (for fluent API support)
+     */
+    public function addPointInteret(PointInteret $pointInteret)
+    {
+        if ($this->collPointInterets === null) {
+            $this->initPointInterets();
+        }
+        if (!$this->collPointInterets->contains($pointInteret)) { // only add it if the **same** object is not already associated
+            $this->doAddPointInteret($pointInteret);
+
+            $this->collPointInterets[]= $pointInteret;
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	PointInteret $pointInteret The pointInteret object to add.
+     */
+    protected function doAddPointInteret($pointInteret)
+    {
+        $regionPointInteret = new RegionPointInteret();
+        $regionPointInteret->setPointInteret($pointInteret);
+        $this->addRegionPointInteret($regionPointInteret);
+    }
+
+    /**
+     * Remove a PointInteret object to this object
+     * through the region_point_interet cross reference table.
+     *
+     * @param PointInteret $pointInteret The RegionPointInteret object to relate
+     * @return Region The current object (for fluent API support)
+     */
+    public function removePointInteret(PointInteret $pointInteret)
+    {
+        if ($this->getPointInterets()->contains($pointInteret)) {
+            $this->collPointInterets->remove($this->collPointInterets->search($pointInteret));
+            if (null === $this->pointInteretsScheduledForDeletion) {
+                $this->pointInteretsScheduledForDeletion = clone $this->collPointInterets;
+                $this->pointInteretsScheduledForDeletion->clear();
+            }
+            $this->pointInteretsScheduledForDeletion[]= $pointInteret;
+        }
+
+        return $this;
+    }
+
+    /**
+     * Clears out the collEvents collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return Region The current object (for fluent API support)
+     * @see        addEvents()
+     */
+    public function clearEvents()
+    {
+        $this->collEvents = null; // important to set this to null since that means it is uninitialized
+        $this->collEventsPartial = null;
+
+        return $this;
+    }
+
+    /**
+     * Initializes the collEvents collection.
+     *
+     * By default this just sets the collEvents collection to an empty collection (like clearEvents());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @return void
+     */
+    public function initEvents()
+    {
+        $this->collEvents = new PropelObjectCollection();
+        $this->collEvents->setModel('Event');
+    }
+
+    /**
+     * Gets a collection of Event objects related by a many-to-many relationship
+     * to the current object by way of the region_event cross-reference table.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this Region is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria Optional query object to filter the query
+     * @param PropelPDO $con Optional connection object
+     *
+     * @return PropelObjectCollection|Event[] List of Event objects
+     */
+    public function getEvents($criteria = null, PropelPDO $con = null)
+    {
+        if (null === $this->collEvents || null !== $criteria) {
+            if ($this->isNew() && null === $this->collEvents) {
+                // return empty collection
+                $this->initEvents();
+            } else {
+                $collEvents = EventQuery::create(null, $criteria)
+                    ->filterByRegion($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    return $collEvents;
+                }
+                $this->collEvents = $collEvents;
+            }
+        }
+
+        return $this->collEvents;
+    }
+
+    /**
+     * Sets a collection of Event objects related by a many-to-many relationship
+     * to the current object by way of the region_event cross-reference table.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $events A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     * @return Region The current object (for fluent API support)
+     */
+    public function setEvents(PropelCollection $events, PropelPDO $con = null)
+    {
+        $this->clearEvents();
+        $currentEvents = $this->getEvents();
+
+        $this->eventsScheduledForDeletion = $currentEvents->diff($events);
+
+        foreach ($events as $event) {
+            if (!$currentEvents->contains($event)) {
+                $this->doAddEvent($event);
+            }
+        }
+
+        $this->collEvents = $events;
+
+        return $this;
+    }
+
+    /**
+     * Gets the number of Event objects related by a many-to-many relationship
+     * to the current object by way of the region_event cross-reference table.
+     *
+     * @param Criteria $criteria Optional query object to filter the query
+     * @param boolean $distinct Set to true to force count distinct
+     * @param PropelPDO $con Optional connection object
+     *
+     * @return int the number of related Event objects
+     */
+    public function countEvents($criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        if (null === $this->collEvents || null !== $criteria) {
+            if ($this->isNew() && null === $this->collEvents) {
+                return 0;
+            } else {
+                $query = EventQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
+
+                return $query
+                    ->filterByRegion($this)
+                    ->count($con);
+            }
+        } else {
+            return count($this->collEvents);
+        }
+    }
+
+    /**
+     * Associate a Event object to this object
+     * through the region_event cross reference table.
+     *
+     * @param  Event $event The RegionEvent object to relate
+     * @return Region The current object (for fluent API support)
+     */
+    public function addEvent(Event $event)
+    {
+        if ($this->collEvents === null) {
+            $this->initEvents();
+        }
+        if (!$this->collEvents->contains($event)) { // only add it if the **same** object is not already associated
+            $this->doAddEvent($event);
+
+            $this->collEvents[]= $event;
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	Event $event The event object to add.
+     */
+    protected function doAddEvent($event)
+    {
+        $regionEvent = new RegionEvent();
+        $regionEvent->setEvent($event);
+        $this->addRegionEvent($regionEvent);
+    }
+
+    /**
+     * Remove a Event object to this object
+     * through the region_event cross reference table.
+     *
+     * @param Event $event The RegionEvent object to relate
+     * @return Region The current object (for fluent API support)
+     */
+    public function removeEvent(Event $event)
+    {
+        if ($this->getEvents()->contains($event)) {
+            $this->collEvents->remove($this->collEvents->search($event));
+            if (null === $this->eventsScheduledForDeletion) {
+                $this->eventsScheduledForDeletion = clone $this->collEvents;
+                $this->eventsScheduledForDeletion->clear();
+            }
+            $this->eventsScheduledForDeletion[]= $event;
+        }
+
+        return $this;
+    }
+
+    /**
      * Clears out the collBonPlans collection
      *
      * This does not modify the database; however, it will remove any associated objects, causing
@@ -2785,6 +3793,16 @@ abstract class BaseRegion extends BaseObject implements Persistent
     public function clearAllReferences($deep = false)
     {
         if ($deep) {
+            if ($this->collRegionPointInterets) {
+                foreach ($this->collRegionPointInterets as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
+            if ($this->collRegionEvents) {
+                foreach ($this->collRegionEvents as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
             if ($this->collVilles) {
                 foreach ($this->collVilles as $o) {
                     $o->clearAllReferences($deep);
@@ -2800,6 +3818,16 @@ abstract class BaseRegion extends BaseObject implements Persistent
                     $o->clearAllReferences($deep);
                 }
             }
+            if ($this->collPointInterets) {
+                foreach ($this->collPointInterets as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
+            if ($this->collEvents) {
+                foreach ($this->collEvents as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
             if ($this->collBonPlans) {
                 foreach ($this->collBonPlans as $o) {
                     $o->clearAllReferences($deep);
@@ -2811,6 +3839,14 @@ abstract class BaseRegion extends BaseObject implements Persistent
         $this->currentLocale = 'fr';
         $this->currentTranslations = null;
 
+        if ($this->collRegionPointInterets instanceof PropelCollection) {
+            $this->collRegionPointInterets->clearIterator();
+        }
+        $this->collRegionPointInterets = null;
+        if ($this->collRegionEvents instanceof PropelCollection) {
+            $this->collRegionEvents->clearIterator();
+        }
+        $this->collRegionEvents = null;
         if ($this->collVilles instanceof PropelCollection) {
             $this->collVilles->clearIterator();
         }
@@ -2823,6 +3859,14 @@ abstract class BaseRegion extends BaseObject implements Persistent
             $this->collRegionI18ns->clearIterator();
         }
         $this->collRegionI18ns = null;
+        if ($this->collPointInterets instanceof PropelCollection) {
+            $this->collPointInterets->clearIterator();
+        }
+        $this->collPointInterets = null;
+        if ($this->collEvents instanceof PropelCollection) {
+            $this->collEvents->clearIterator();
+        }
+        $this->collEvents = null;
         if ($this->collBonPlans instanceof PropelCollection) {
             $this->collBonPlans->clearIterator();
         }
@@ -2886,6 +3930,42 @@ abstract class BaseRegion extends BaseObject implements Persistent
     public function isActiveLocale()
     {
         return $this->getActiveLocale();
+    }
+    
+    public function getPointInteretsActive($criteria = null, PropelPDO $con = null)
+    {
+        if ($criteria === null)
+        {
+            $criteria = new \Criteria();
+        }
+    
+        $criteria->add(\Cungfoo\Model\PointInteretPeer::ACTIVE, true);
+    
+    
+        $criteria->addAlias('i18n_locale', \Cungfoo\Model\PointInteretI18nPeer::TABLE_NAME);
+        $criteria->addJoin(\Cungfoo\Model\PointInteretPeer::ID, \Cungfoo\Model\PointInteretI18nPeer::alias('i18n_locale', \Cungfoo\Model\PointInteretI18nPeer::ID), \Criteria::LEFT_JOIN);
+        $criteria->add(\Cungfoo\Model\PointInteretI18nPeer::alias('i18n_locale', \Cungfoo\Model\PointInteretI18nPeer::ACTIVE_LOCALE), true);
+        $criteria->add(\Cungfoo\Model\PointInteretI18nPeer::alias('i18n_locale', \Cungfoo\Model\PointInteretI18nPeer::LOCALE), $this->currentLocale);
+    
+        return $this->getPointInterets($criteria, $con);
+    }
+    
+    public function getEventsActive($criteria = null, PropelPDO $con = null)
+    {
+        if ($criteria === null)
+        {
+            $criteria = new \Criteria();
+        }
+    
+        $criteria->add(\Cungfoo\Model\EventPeer::ACTIVE, true);
+    
+    
+        $criteria->addAlias('i18n_locale', \Cungfoo\Model\EventI18nPeer::TABLE_NAME);
+        $criteria->addJoin(\Cungfoo\Model\EventPeer::ID, \Cungfoo\Model\EventI18nPeer::alias('i18n_locale', \Cungfoo\Model\EventI18nPeer::ID), \Criteria::LEFT_JOIN);
+        $criteria->add(\Cungfoo\Model\EventI18nPeer::alias('i18n_locale', \Cungfoo\Model\EventI18nPeer::ACTIVE_LOCALE), true);
+        $criteria->add(\Cungfoo\Model\EventI18nPeer::alias('i18n_locale', \Cungfoo\Model\EventI18nPeer::LOCALE), $this->currentLocale);
+    
+        return $this->getEvents($criteria, $con);
     }
     
     public function getBonPlansActive($criteria = null, PropelPDO $con = null)

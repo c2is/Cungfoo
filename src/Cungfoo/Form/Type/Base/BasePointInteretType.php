@@ -120,6 +120,14 @@ class BasePointInteretType extends AppAwareType
             'label' => 'point_interet.etablissements',
             'required' => false,
         ));
+        $builder->add('regions', 'model', array(
+            'class' => 'Cungfoo\Model\Region',
+            'constraints' => array(
+            ),
+            'multiple' => true,
+            'label' => 'point_interet.regions',
+            'required' => false,
+        ));
         $builder->add('point_interetI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\PointInteretI18n',
             'languages' => array(

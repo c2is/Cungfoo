@@ -21,11 +21,22 @@ class PointInteretPeer extends BasePointInteretPeer
     const NO_SORT     = 0;
     const RANDOM_SORT = 1;
 
-    static public function getForEtablissement(Etablissement $etab, $sort = self::NO_SORT, $count = null)
+    static protected function getLocale()
     {
-        $query = PointInteretQuery::create()
-            ->useEtablissementPointInteretQuery()
-                ->filterByEtablissementId($etab->getId())
+        if (defined('CURRENT_LANGUAGE'))
+        {
+            return CURRENT_LANGUAGE;
+        }
+
+        return 'fr';
+    }
+
+    static public function getForQuery(PointInteretQuery $query, $sort = self::NO_SORT, $count = null)
+    {
+        $query
+            ->useI18nQuery(self::getLocale())
+                ->filterBySlug('', \Criteria::NOT_EQUAL)
+                ->filterByName('', \Criteria::NOT_EQUAL)
             ->endUse()
         ;
 
@@ -42,6 +53,28 @@ class PointInteretPeer extends BasePointInteretPeer
         $query->filterByActive(true);
 
         return ($count == 1) ? $query->findOne() : $query->findActive();
+    }
+
+    static public function getForEtablissement(Etablissement $etab, $sort = self::NO_SORT, $count = null)
+    {
+        if(self::getLocale() == 'de')
+        {
+            $query = PointInteretQuery::create()
+                ->useRegionPointInteretQuery()
+                    ->filterByRegionId($etab->getRegion()->getId())
+                ->endUse()
+            ;
+        }
+        else
+        {
+            $query = PointInteretQuery::create()
+                ->useEtablissementPointInteretQuery()
+                    ->filterByEtablissementId($etab->getId())
+                ->endUse()
+            ;
+        }
+
+        return self::getForQuery($query, $sort, $count);
     }
 
     static public function getCountForEtablissement(Etablissement $etab)
@@ -73,19 +106,7 @@ class PointInteretPeer extends BasePointInteretPeer
             ->endUse()
         ;
 
-        if ($sort == self::RANDOM_SORT)
-        {
-            $query->addAscendingOrderByColumn('RAND()');
-        }
-
-        if (!is_null($count))
-        {
-            $query->limit($count);
-        }
-
-        $query->filterByActive(true);
-
-        return ($count == 1) ? $query->findOne() : $query->findActive();
+        return self::getForQuery($query, $sort, $count);
     }
 
     static public function getCountForPays(Pays $pays)
@@ -124,19 +145,7 @@ class PointInteretPeer extends BasePointInteretPeer
             ->endUse()
         ;
 
-        if ($sort == self::RANDOM_SORT)
-        {
-            $query->addAscendingOrderByColumn('RAND()');
-        }
-
-        if (!is_null($count))
-        {
-            $query->limit($count);
-        }
-
-        $query->filterByActive(true);
-
-        return ($count == 1) ? $query->findOne() : $query->findActive();
+        return self::getForQuery($query, $sort, $count);
     }
 
     static public function getCountForRegion($region)
@@ -172,19 +181,7 @@ class PointInteretPeer extends BasePointInteretPeer
             ->endUse()
         ;
 
-        if ($sort == self::RANDOM_SORT)
-        {
-            $query->addAscendingOrderByColumn('RAND()');
-        }
-
-        if (!is_null($count))
-        {
-            $query->limit($count);
-        }
-
-        $query->filterByActive(true);
-
-        return ($count == 1) ? $query->findOne() : $query->findActive();
+        return self::getForQuery($query, $sort, $count);
     }
 
     static public function getCountForRegionRef($region)
@@ -219,19 +216,7 @@ class PointInteretPeer extends BasePointInteretPeer
             ->endUse()
         ;
 
-        if ($sort == self::RANDOM_SORT)
-        {
-            $query->addAscendingOrderByColumn('RAND()');
-        }
-
-        if (!is_null($count))
-        {
-            $query->limit($count);
-        }
-
-        $query->filterByActive(true);
-
-        return ($count == 1) ? $query->findOne() : $query->findActive();
+        return self::getForQuery($query, $sort, $count);
     }
 
     static public function getCountForDepartement($departement, $sort = self::NO_SORT, $count = null)
@@ -262,19 +247,7 @@ class PointInteretPeer extends BasePointInteretPeer
             ->endUse()
         ;
 
-        if ($sort == self::RANDOM_SORT)
-        {
-            $query->addAscendingOrderByColumn('RAND()');
-        }
-
-        if (!is_null($count))
-        {
-            $query->limit($count);
-        }
-
-        $query->filterByActive(true);
-
-        return ($count == 1) ? $query->findOne() : $query->findActive();
+        return self::getForQuery($query, $sort, $count);
     }
 
     static public function getCountForVille(Ville $ville)
@@ -304,19 +277,7 @@ class PointInteretPeer extends BasePointInteretPeer
             ->endUse()
         ;
 
-        if ($sort == self::RANDOM_SORT)
-        {
-            $query->addAscendingOrderByColumn('RAND()');
-        }
-
-        if (!is_null($count))
-        {
-            $query->limit($count);
-        }
-
-        $query->filterByActive(true);
-
-        return ($count == 1) ? $query->findOne() : $query->findActive();
+        return self::getForQuery($query, $sort, $count);
     }
 
     static public function getCountForDestination(Destination $destination)
