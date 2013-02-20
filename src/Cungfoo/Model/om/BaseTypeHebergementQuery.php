@@ -871,7 +871,7 @@ abstract class BaseTypeHebergementQuery extends ModelCriteria
      *
      * @return TypeHebergementQuery The current query, for fluid interface
      */
-    public function joinEtablissementTypeHebergement($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    public function joinEtablissementTypeHebergement($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
     {
         $tableMap = $this->getTableMap();
         $relationMap = $tableMap->getRelation('EtablissementTypeHebergement');
@@ -906,7 +906,7 @@ abstract class BaseTypeHebergementQuery extends ModelCriteria
      *
      * @return   \Cungfoo\Model\EtablissementTypeHebergementQuery A secondary query class using the current class as primary query
      */
-    public function useEtablissementTypeHebergementQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    public function useEtablissementTypeHebergementQuery($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
     {
         return $this
             ->joinEtablissementTypeHebergement($relationAlias, $joinType)
@@ -1160,8 +1160,8 @@ abstract class BaseTypeHebergementQuery extends ModelCriteria
         return $this->addAscendingOrderByColumn(TypeHebergementPeer::CREATED_AT);
     }
     // active behavior
-    
-    
+
+
     /**
      * return only active objects
      *
@@ -1170,7 +1170,7 @@ abstract class BaseTypeHebergementQuery extends ModelCriteria
     public function findActive($con = null)
     {
         $locale = defined('CURRENT_LANGUAGE') ? CURRENT_LANGUAGE : 'fr';
-    
+
         $this
             ->filterByActive(true)
             ->useI18nQuery($locale, 'i18n_locale')
@@ -1179,7 +1179,7 @@ abstract class BaseTypeHebergementQuery extends ModelCriteria
                 ->filterByActiveLocale(null, Criteria::ISNULL)
             ->endUse()
         ;
-    
+
         return parent::find($con);
     }
     // i18n behavior

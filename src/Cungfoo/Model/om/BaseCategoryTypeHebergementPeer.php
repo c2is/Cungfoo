@@ -959,7 +959,7 @@ abstract class BaseCategoryTypeHebergementPeer
     }
 
     // crudable behavior
-    
+
     /**
      * The default locale to use for translations
      * @var        string
@@ -973,7 +973,7 @@ abstract class BaseCategoryTypeHebergementPeer
         ;
     }
     // seo behavior
-    
+
     /**
      * The default locale to use for translations
      * @var        string

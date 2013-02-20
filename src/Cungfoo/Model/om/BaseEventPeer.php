@@ -861,7 +861,7 @@ abstract class BaseEventPeer
     }
 
     // crudable behavior
-    
+
     /**
      * The default locale to use for translations
      * @var        string
@@ -875,7 +875,7 @@ abstract class BaseEventPeer
         ;
     }
     // seo behavior
-    
+
     /**
      * The default locale to use for translations
      * @var        string

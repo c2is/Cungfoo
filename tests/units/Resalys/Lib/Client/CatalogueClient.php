@@ -8,26 +8,27 @@ use Resalys\Lib\Client\CatalogueClient as Client;
 
 class CatalogueClient extends atoum\test
 {
-    protected function getLoaderTestInstance()
+    protected function getLoaderTestInstance($languagesFile = '/config/languages.yml', $clientFile = '/config/client.yml')
     {
         return new Client(__DIR__, null, array(
-            'client_file'      => '/config/client.yml',
-            'languages_file'   => '/config/languages.yml',
+            'languages_file'   => $languagesFile,
+            'client_file'      => $clientFile,
         ));
     }
 
     public function test_addOption()
     {
         $defaultOptions = array(
+            'base_id'   => 'base_id_value',
             'languages' => array(
                 'fr',
                 'en',
                 'de'
             ),
-            'base_id'   => 'base_id_value',
         );
 
         $client = $this->getLoaderTestInstance();
+
         $client->addOption('lang_1', 'lang_1');
         $this->array($client->getOptions())->isIdenticalTo($defaultOptions + array('lang_1' => 'lang_1'));
 
@@ -41,12 +42,12 @@ class CatalogueClient extends atoum\test
     public function test_addOptions()
     {
         $defaultOptions = array(
+            'base_id'   => 'base_id_value',
             'languages' => array(
                 'fr',
                 'en',
                 'de'
             ),
-            'base_id'   => 'base_id_value',
         );
 
         $client = $this->getLoaderTestInstance();
@@ -59,19 +60,8 @@ class CatalogueClient extends atoum\test
 
     public function test_loadLanguagesConfig_NoLanguagesKey()
     {
-        $client = $this->getLoaderTestInstance();
-
-        $this->exception(function() use ($client) {
-            $client->loadLanguagesConfig(__DIR__.'/config/languages-bad.yml');
-        })->hasMessage("No 'languages' key in languages configuration file : ".__DIR__.'/config/languages-bad.yml');
-    }
-
-    public function test_loadLanguagesConfig()
-    {
-        $client = $this->getLoaderTestInstance();
-        $this->array($client->getOption('languages'))->isIdenticalTo(array('fr', 'en', 'de'));
-
-        $client->loadLanguagesConfig(__DIR__.'/config/languages-other.yml');
-        $this->array($client->getOption('languages'))->isIdenticalTo(array('foo', 'bar'));
+        $this->exception(function() {
+            $this->getLoaderTestInstance('/config/languages-bad.yml');
+        })->hasMessage("No 'languages' key in languages configuration file");
     }
 }
