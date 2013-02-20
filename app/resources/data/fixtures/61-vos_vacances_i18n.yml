@@ -5,6 +5,10 @@
         Titre: null
         Description: null
         Prenom: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     1_en:
         Id: 1
@@ -12,6 +16,10 @@
         Titre: null
         Description: null
         Prenom: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     1_fr:
         Id: 1
@@ -19,6 +27,10 @@
         Titre: 'Toutes nos destinations disponibles'
         Description: 'Réservez vos vacances 2013 dès aujourd''hui !'
         Prenom: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     1_nl:
         Id: 1
@@ -26,4 +38,8 @@
         Titre: null
         Description: null
         Prenom: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true

@@ -25,6 +25,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     2:
         Code: 161
@@ -52,6 +54,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     3:
         Code: 141
@@ -79,6 +83,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     4:
         Code: 162
@@ -106,6 +112,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     5:
         Code: 149
@@ -133,6 +141,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     6:
         Code: 152
@@ -160,6 +170,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     7:
         Code: 163
@@ -187,6 +199,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     8:
         Code: 166
@@ -214,6 +228,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     9:
         Code: 172
@@ -241,6 +257,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     10:
         Code: 167
@@ -268,6 +286,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     11:
         Code: 168
@@ -295,6 +315,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     12:
         Code: 146
@@ -322,6 +344,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     13:
         Code: 148
@@ -349,6 +373,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     14:
         Code: 157
@@ -376,6 +402,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     15:
         Code: 173
@@ -403,6 +431,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     16:
         Code: 147
@@ -430,6 +460,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     17:
         Code: 139
@@ -457,6 +489,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     18:
         Code: 150
@@ -484,6 +518,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     19:
         Code: 164
@@ -511,6 +547,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     20:
         Code: 153
@@ -538,6 +576,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     21:
         Code: 159
@@ -565,6 +605,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     22:
         Code: 160
@@ -592,6 +634,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     23:
         Code: 151
@@ -619,6 +663,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     24:
         Code: 155
@@ -646,6 +692,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     25:
         Code: 174
@@ -673,6 +721,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     26:
         Code: 170
@@ -700,6 +750,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     27:
         Code: 154
@@ -727,6 +779,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     28:
         Code: 169
@@ -754,6 +808,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     29:
         Code: 142
@@ -781,6 +837,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     30:
         Code: 156
@@ -808,6 +866,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     31:
         Code: 165
@@ -835,6 +895,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     32:
         Code: 143
@@ -862,6 +924,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     33:
         Code: 144
@@ -889,6 +953,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     34:
         Code: 145
@@ -916,6 +982,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     35:
         Code: 140
@@ -943,6 +1011,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     36:
         Code: 158
@@ -970,6 +1040,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     37:
         Code: 221
@@ -987,9 +1059,9 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 19
-        DepartementId: 9
-        CategorieId: 4
+        VilleId: 1
+        DepartementId: 24
+        CategorieId: 3
         GeoCoordinateX: '43.31123649267182'
         GeoCoordinateY: '3.499166965484619'
         VideoPath: null
@@ -997,6 +1069,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: true
     38:
         Code: 249
@@ -1014,9 +1088,9 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 166
+        VilleId: 118
         DepartementId: null
-        CategorieId: 2
+        CategorieId: 6
         GeoCoordinateX: '44.433611'
         GeoCoordinateY: '12.295833'
         VideoPath: null
@@ -1024,6 +1098,8 @@
         Capacite: null
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: true
     39:
         Code: 5
@@ -1041,9 +1117,9 @@
         Fax: '05 46 47 79 67'
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 148
-        DepartementId: 15
-        CategorieId: 3
+        VilleId: 39
+        DepartementId: 10
+        CategorieId: 5
         GeoCoordinateX: '45.8828959'
         GeoCoordinateY: '-1.2042464'
         VideoPath: null
@@ -1051,6 +1127,8 @@
         Capacite: '133'
         PlanPath: uploads/etablissements/50c0bb79e91d1.jpeg
         Vignette: uploads/etablissements/50c07f9494938.jpeg
+        Related1: null
+        Related2: null
         Active: true
     40:
         Code: 222
@@ -1068,9 +1146,9 @@
         Fax: '02 51 30 37 04'
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 72
+        VilleId: 70
         DepartementId: 39
-        CategorieId: 2
+        CategorieId: 6
         GeoCoordinateX: '46.37250'
         GeoCoordinateY: '-1.41528'
         VideoPath: null
@@ -1078,6 +1156,8 @@
         Capacite: null
         PlanPath: null
         Vignette: uploads/etablissements/50c07baf6c131.jpeg
+        Related1: null
+        Related2: null
         Active: true
     41:
         Code: 247
@@ -1095,9 +1175,9 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 164
+        VilleId: 4
         DepartementId: null
-        CategorieId: 2
+        CategorieId: 6
         GeoCoordinateX: '38.5683342'
         GeoCoordinateY: '-0.0941133'
         VideoPath: null
@@ -1105,6 +1185,8 @@
         Capacite: null
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: true
     42:
         Code: 6
@@ -1122,9 +1204,9 @@
         Fax: '04 75 93 90 90'
         OpeningDate: '2013-04-13 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 78
-        DepartementId: 1
-        CategorieId: 2
+        VilleId: 122
+        DepartementId: 3
+        CategorieId: 6
         GeoCoordinateX: '44.449111'
         GeoCoordinateY: '4.3525926'
         VideoPath: null
@@ -1132,6 +1214,8 @@
         Capacite: '402'
         PlanPath: uploads/etablissements/50c0bc0e256e7.jpeg
         Vignette: uploads/etablissements/50c0804b0108a.jpeg
+        Related1: null
+        Related2: null
         Active: true
     43:
         Code: 9
@@ -1149,9 +1233,9 @@
         Fax: '0034 977 26 78 68'
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 34
+        VilleId: 5
         DepartementId: null
-        CategorieId: 2
+        CategorieId: 6
         GeoCoordinateX: '40.86483588'
         GeoCoordinateY: '0.778688192'
         VideoPath: null
@@ -1159,6 +1243,8 @@
         Capacite: '373'
         PlanPath: uploads/etablissements/50c0bdf92068c.jpeg
         Vignette: uploads/etablissements/50c081be7664e.jpeg
+        Related1: null
+        Related2: null
         Active: true
     44:
         Code: 10
@@ -1176,9 +1262,9 @@
         Fax: '02 51 58 26 09'
         OpeningDate: '2013-05-08 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 47
+        VilleId: 131
         DepartementId: 39
-        CategorieId: 2
+        CategorieId: 6
         GeoCoordinateX: '46.80806056'
         GeoCoordinateY: '-2.104654312'
         VideoPath: null
@@ -1186,6 +1272,8 @@
         Capacite: '544'
         PlanPath: uploads/etablissements/50c0aeeca983f.jpeg
         Vignette: uploads/etablissements/50c075a7c8a0b.jpeg
+        Related1: null
+        Related2: null
         Active: true
     45:
         Code: 179
@@ -1203,9 +1291,9 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 104
-        DepartementId: 6
-        CategorieId: 1
+        VilleId: 30
+        DepartementId: 14
+        CategorieId: 7
         GeoCoordinateX: '44.8669413'
         GeoCoordinateY: '1.2797356'
         VideoPath: null
@@ -1213,6 +1301,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: true
     46:
         Code: 176
@@ -1230,9 +1320,9 @@
         Fax: '05 56 09 35 64'
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 149
-        DepartementId: 21
-        CategorieId: 1
+        VilleId: 95
+        DepartementId: 19
+        CategorieId: 7
         GeoCoordinateX: '45.3770439'
         GeoCoordinateY: '-1.14430200'
         VideoPath: null
@@ -1240,6 +1330,8 @@
         Capacite: '770'
         PlanPath: uploads/etablissements/50c0b1efdcf16.jpeg
         Vignette: uploads/etablissements/50c077e07619d.jpeg
+        Related1: null
+        Related2: null
         Active: true
     47:
         Code: 181
@@ -1257,9 +1349,9 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 91
-        DepartementId: 24
-        CategorieId: 4
+        VilleId: 10
+        DepartementId: 27
+        CategorieId: 3
         GeoCoordinateX: '44.2229784'
         GeoCoordinateY: '-1.2035572'
         VideoPath: null
@@ -1267,6 +1359,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: true
     48:
         Code: 11
@@ -1284,9 +1378,9 @@
         Fax: '05 58 48 25 56'
         OpeningDate: '2013-06-01 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 93
-        DepartementId: 24
-        CategorieId: 3
+        VilleId: 12
+        DepartementId: 27
+        CategorieId: 5
         GeoCoordinateX: '43.785238'
         GeoCoordinateY: '-1.305147'
         VideoPath: null
@@ -1294,6 +1388,8 @@
         Capacite: '275'
         PlanPath: uploads/etablissements/50c0af9578b80.jpeg
         Vignette: uploads/etablissements/50c07622dd6a5.jpeg
+        Related1: null
+        Related2: null
         Active: true
     49:
         Code: 12
@@ -1311,9 +1407,9 @@
         Fax: '04 68 28 24 76'
         OpeningDate: '2013-06-01 00:00:00'
         ClosingDate: '2013-09-13 00:00:00'
-        VilleId: 17
-        DepartementId: 34
-        CategorieId: 3
+        VilleId: 75
+        DepartementId: 35
+        CategorieId: 5
         GeoCoordinateX: '42.78606298'
         GeoCoordinateY: '3.019276857'
         VideoPath: null
@@ -1321,6 +1417,8 @@
         Capacite: '210'
         PlanPath: uploads/etablissements/50c1b004a7ae6.jpeg
         Vignette: uploads/etablissements/50c0768e5ee70.jpeg
+        Related1: null
+        Related2: null
         Active: true
     50:
         Code: 182
@@ -1338,9 +1436,9 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 109
-        DepartementId: 19
-        CategorieId: 4
+        VilleId: 113
+        DepartementId: 16
+        CategorieId: 3
         GeoCoordinateX: '48.6589806'
         GeoCoordinateY: '-4.2175055'
         VideoPath: null
@@ -1348,6 +1446,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: true
     51:
         Code: 14
@@ -1365,9 +1465,9 @@
         Fax: '04 67 43 66 70'
         OpeningDate: '2013-04-13 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 9
-        DepartementId: 9
-        CategorieId: 3
+        VilleId: 91
+        DepartementId: 24
+        CategorieId: 5
         GeoCoordinateX: '43.43042156'
         GeoCoordinateY: '3.610414267'
         VideoPath: null
@@ -1375,6 +1475,8 @@
         Capacite: '234'
         PlanPath: uploads/etablissements/50c0b1464ee57.jpeg
         Vignette: uploads/etablissements/50c07798a7231.jpeg
+        Related1: null
+        Related2: null
         Active: true
     52:
         Code: 216
@@ -1392,9 +1494,9 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 120
-        DepartementId: 19
-        CategorieId: 2
+        VilleId: 134
+        DepartementId: 16
+        CategorieId: 6
         GeoCoordinateX: '47.9503856'
         GeoCoordinateY: '-3.9705276'
         VideoPath: null
@@ -1402,6 +1504,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: true
     53:
         Code: 183
@@ -1419,9 +1523,9 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 58
-        DepartementId: 18
-        CategorieId: 3
+        VilleId: 65
+        DepartementId: 29
+        CategorieId: 5
         GeoCoordinateX: '47.288836'
         GeoCoordinateY: '-2.37296'
         VideoPath: null
@@ -1429,6 +1533,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: true
     54:
         Code: 16
@@ -1446,9 +1552,9 @@
         Fax: '02 51 33 14 85'
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 77
+        VilleId: 102
         DepartementId: 39
-        CategorieId: 2
+        CategorieId: 6
         GeoCoordinateX: '46.55466987'
         GeoCoordinateY: '-1.805577278'
         VideoPath: null
@@ -1456,6 +1562,8 @@
         Capacite: '199'
         PlanPath: uploads/etablissements/50c0b1c36f57e.jpeg
         Vignette: uploads/etablissements/50c077ad1cde5.jpeg
+        Related1: null
+        Related2: null
         Active: true
     55:
         Code: 17
@@ -1473,9 +1581,9 @@
         Fax: '02 97 31 87 77'
         OpeningDate: '2013-04-13 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
-        VilleId: 55
-        DepartementId: 29
-        CategorieId: 2
+        VilleId: 78
+        DepartementId: 31
+        CategorieId: 6
         GeoCoordinateX: '47.355914'
         GeoCoordinateY: '-3.168789'
         VideoPath: null
@@ -1483,6 +1591,8 @@
         Capacite: '202'
         PlanPath: uploads/etablissements/50c0b1d39c943.jpeg
         Vignette: uploads/etablissements/50c077bc5d876.jpeg
+        Related1: null
+        Related2: null
         Active: true
     56:
         Code: 242
@@ -1500,9 +1610,9 @@
         Fax: '04 94 67 58 35'
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-04 00:00:00'
-        VilleId: 136
-        DepartementId: 33
-        CategorieId: 3
+        VilleId: 168
+        DepartementId: 38
+        CategorieId: 5
         GeoCoordinateX: '43.55726869999999'
         GeoCoordinateY: '6.286714599999982'
         VideoPath: null
@@ -1510,6 +1620,8 @@
         Capacite: null
         PlanPath: null
         Vignette: uploads/etablissements/50c07d58a0174.jpeg
+        Related1: null
+        Related2: null
         Active: true
     57:
         Code: 3
@@ -1527,9 +1639,9 @@
         Fax: '04 68 21 02 19'
         OpeningDate: '2013-05-04 00:00:00'
         ClosingDate: '2013-09-21 00:00:00'
-        VilleId: 139
-        DepartementId: 34
-        CategorieId: 1
+        VilleId: 148
+        DepartementId: 35
+        CategorieId: 7
         GeoCoordinateX: '42.59948962'
         GeoCoordinateY: '3.037636578'
         VideoPath: null
@@ -1537,6 +1649,8 @@
         Capacite: '649'
         PlanPath: uploads/etablissements/50c1b32d9b399.jpeg
         Vignette: uploads/etablissements/50c07e4f778ac.jpeg
+        Related1: null
+        Related2: null
         Active: true
     58:
         Code: 19
@@ -1554,9 +1668,9 @@
         Fax: '02 51 58 12 28'
         OpeningDate: '2013-04-26 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 47
+        VilleId: 131
         DepartementId: 39
-        CategorieId: 2
+        CategorieId: 6
         GeoCoordinateX: '46.75718789'
         GeoCoordinateY: '-1.97853148'
         VideoPath: null
@@ -1564,6 +1678,8 @@
         Capacite: '225'
         PlanPath: uploads/etablissements/50c1b17b2ac6d.jpeg
         Vignette: uploads/etablissements/50c0791bea1bb.jpeg
+        Related1: null
+        Related2: null
         Active: true
     59:
         Code: 20
@@ -1581,9 +1697,9 @@
         Fax: '04 68 28 24 76'
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-22 00:00:00'
-        VilleId: 7
-        DepartementId: 34
-        CategorieId: 2
+        VilleId: 159
+        DepartementId: 35
+        CategorieId: 6
         GeoCoordinateX: '42.767919'
         GeoCoordinateY: '3.029699922'
         VideoPath: null
@@ -1591,6 +1707,8 @@
         Capacite: '308'
         PlanPath: uploads/etablissements/50c1b21c1fdab.jpeg
         Vignette: uploads/etablissements/50c07a15e105c.jpeg
+        Related1: null
+        Related2: null
         Active: true
     60:
         Code: 21
@@ -1608,9 +1726,9 @@
         Fax: '04 92 54 23 11'
         OpeningDate: '2013-05-17 00:00:00'
         ClosingDate: '2013-09-08 00:00:00'
-        VilleId: 11
+        VilleId: 46
         DepartementId: 23
-        CategorieId: 3
+        CategorieId: 5
         GeoCoordinateX: '44.42476978'
         GeoCoordinateY: '6.031816006'
         VideoPath: null
@@ -1618,6 +1736,8 @@
         Capacite: '180'
         PlanPath: null
         Vignette: uploads/etablissements/50c07adc646ca.jpeg
+        Related1: null
+        Related2: null
         Active: true
     61:
         Code: 178
@@ -1635,9 +1755,9 @@
         Fax: '02 51 54 30 74'
         OpeningDate: '2013-04-13 00:00:00'
         ClosingDate: '2013-09-08 00:00:00'
-        VilleId: 63
+        VilleId: 130
         DepartementId: 39
-        CategorieId: 1
+        CategorieId: 7
         GeoCoordinateX: '46.740096'
         GeoCoordinateY: '-1.945052'
         VideoPath: null
@@ -1645,6 +1765,8 @@
         Capacite: '434'
         PlanPath: uploads/etablissements/50c0b20bcb83a.jpeg
         Vignette: uploads/etablissements/50c077fa54ebf.jpeg
+        Related1: null
+        Related2: null
         Active: true
     62:
         Code: 85
@@ -1662,9 +1784,9 @@
         Fax: '0034 972 66 79 51'
         OpeningDate: '2013-04-26 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 26
+        VilleId: 106
         DepartementId: null
-        CategorieId: 3
+        CategorieId: 5
         GeoCoordinateX: '41.993343'
         GeoCoordinateY: '3.188749'
         VideoPath: null
@@ -1672,6 +1794,8 @@
         Capacite: '260'
         PlanPath: uploads/etablissements/50c0bd69d449b.jpeg
         Vignette: uploads/etablissements/50c0815e99152.jpeg
+        Related1: null
+        Related2: null
         Active: true
     63:
         Code: 22
@@ -1689,9 +1813,9 @@
         Fax: '04 67 94 02 21'
         OpeningDate: '2013-04-26 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 19
-        DepartementId: 9
-        CategorieId: 3
+        VilleId: 1
+        DepartementId: 24
+        CategorieId: 5
         GeoCoordinateX: '43.310056'
         GeoCoordinateY: '3.509442'
         VideoPath: null
@@ -1699,6 +1823,8 @@
         Capacite: '258'
         PlanPath: uploads/etablissements/50c0b90441e0b.jpeg
         Vignette: uploads/etablissements/50c07b8b3c71d.jpeg
+        Related1: null
+        Related2: null
         Active: true
     64:
         Code: 23
@@ -1716,9 +1842,9 @@
         Fax: '05 53 28 51 31'
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 54
-        DepartementId: 6
-        CategorieId: 2
+        VilleId: 151
+        DepartementId: 14
+        CategorieId: 6
         GeoCoordinateX: '44.7421154'
         GeoCoordinateY: '1.263438463'
         VideoPath: null
@@ -1726,6 +1852,8 @@
         Capacite: '192'
         PlanPath: uploads/etablissements/50c1b2abeab94.jpeg
         Vignette: uploads/etablissements/50c07c3a59d9a.jpeg
+        Related1: null
+        Related2: null
         Active: true
     65:
         Code: 24
@@ -1743,9 +1871,9 @@
         Fax: '0034 972 45 23 30'
         OpeningDate: '2013-05-11 00:00:00'
         ClosingDate: '2013-09-21 00:00:00'
-        VilleId: 29
+        VilleId: 33
         DepartementId: null
-        CategorieId: 3
+        CategorieId: 5
         GeoCoordinateX: '42.2553319'
         GeoCoordinateY: '3.136843443'
         VideoPath: null
@@ -1753,6 +1881,8 @@
         Capacite: '305'
         PlanPath: uploads/etablissements/50c0b9c03cd17.jpeg
         Vignette: uploads/etablissements/50c07d30289f7.jpeg
+        Related1: null
+        Related2: null
         Active: true
     66:
         Code: 25
@@ -1770,9 +1900,9 @@
         Fax: '0034 972750906'
         OpeningDate: '2013-05-11 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
-        VilleId: 25
+        VilleId: 64
         DepartementId: null
-        CategorieId: 2
+        CategorieId: 6
         GeoCoordinateX: '42.0521756'
         GeoCoordinateY: '3.19160074'
         VideoPath: null
@@ -1780,6 +1910,8 @@
         Capacite: '1260'
         PlanPath: uploads/etablissements/50c0ba15cdcd3.jpeg
         Vignette: uploads/etablissements/50c07dcd1d7f7.jpeg
+        Related1: null
+        Related2: null
         Active: true
     67:
         Code: 217
@@ -1797,9 +1929,9 @@
         Fax: '04 67 51 63 01'
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 112
-        DepartementId: 9
-        CategorieId: 2
+        VilleId: 140
+        DepartementId: 24
+        CategorieId: 6
         GeoCoordinateX: '43.3400139093'
         GeoCoordinateY: '3.5819583307'
         VideoPath: null
@@ -1807,6 +1939,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07b54eec04.jpeg
+        Related1: null
+        Related2: null
         Active: true
     68:
         Code: 185
@@ -1824,9 +1958,9 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 157
+        VilleId: 149
         DepartementId: null
-        CategorieId: 3
+        CategorieId: 5
         GeoCoordinateX: '45.6150806'
         GeoCoordinateY: '-0.9945738'
         VideoPath: null
@@ -1834,6 +1968,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: true
     69:
         Code: 26
@@ -1851,9 +1987,9 @@
         Fax: '05 65 46 89 85'
         OpeningDate: '2013-05-06 00:00:00'
         ClosingDate: '2013-09-07 00:00:00'
-        VilleId: 62
-        DepartementId: 2
-        CategorieId: 1
+        VilleId: 26
+        DepartementId: 5
+        CategorieId: 7
         GeoCoordinateX: '44.21435585'
         GeoCoordinateY: '2.766510844'
         VideoPath: null
@@ -1861,6 +1997,8 @@
         Capacite: '108'
         PlanPath: uploads/etablissements/50c0ba2902f1d.jpeg
         Vignette: uploads/etablissements/50c07e1daf8ee.jpeg
+        Related1: null
+        Related2: null
         Active: true
     70:
         Code: 27
@@ -1878,9 +2016,9 @@
         Fax: '04 67 90 03 06'
         OpeningDate: '2013-04-20 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 5
-        DepartementId: 9
-        CategorieId: 2
+        VilleId: 164
+        DepartementId: 24
+        CategorieId: 6
         GeoCoordinateX: '43.28224717'
         GeoCoordinateY: '3.371078074'
         VideoPath: null
@@ -1888,6 +2026,8 @@
         Capacite: '176'
         PlanPath: uploads/etablissements/50c0ba33c4365.jpeg
         Vignette: uploads/etablissements/50c07e2b73189.jpeg
+        Related1: null
+        Related2: null
         Active: true
     71:
         Code: 184
@@ -1905,9 +2045,9 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 156
+        VilleId: 36
         DepartementId: null
-        CategorieId: 3
+        CategorieId: 5
         GeoCoordinateX: '45.445833'
         GeoCoordinateY: '12.460833'
         VideoPath: null
@@ -1915,6 +2055,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: true
     72:
         Code: 250
@@ -1932,9 +2074,9 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 167
+        VilleId: 38
         DepartementId: null
-        CategorieId: 4
+        CategorieId: 3
         GeoCoordinateX: '44.2150172'
         GeoCoordinateY: '12.3792958'
         VideoPath: null
@@ -1942,6 +2084,8 @@
         Capacite: null
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: true
     73:
         Code: 186
@@ -1959,7 +2103,7 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 128
+        VilleId: 81
         DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
@@ -1969,6 +2113,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     74:
         Code: 28
@@ -1986,9 +2132,9 @@
         Fax: '02 51 90 91 67'
         OpeningDate: '2013-04-06 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 65
+        VilleId: 22
         DepartementId: 39
-        CategorieId: 2
+        CategorieId: 6
         GeoCoordinateX: '46.60419665'
         GeoCoordinateY: '-1.832286716'
         VideoPath: null
@@ -1996,6 +2142,8 @@
         Capacite: '330'
         PlanPath: uploads/etablissements/50c1b315e9e13.jpeg
         Vignette: uploads/etablissements/50c07e37365d9.jpeg
+        Related1: null
+        Related2: null
         Active: true
     75:
         Code: 30
@@ -2013,9 +2161,9 @@
         Fax: '02 96 41 03 72'
         OpeningDate: '2013-05-06 00:00:00'
         ClosingDate: '2013-09-06 00:00:00'
-        VilleId: 141
+        VilleId: 124
         DepartementId: null
-        CategorieId: 1
+        CategorieId: 7
         GeoCoordinateX: '48.58438992'
         GeoCoordinateY: '-2.257309556'
         VideoPath: null
@@ -2023,6 +2171,8 @@
         Capacite: '273'
         PlanPath: null
         Vignette: uploads/etablissements/50c07e6045eb5.jpeg
+        Related1: null
+        Related2: null
         Active: true
     76:
         Code: 31
@@ -2040,9 +2190,9 @@
         Fax: '02 40 27 95 67'
         OpeningDate: '2013-04-13 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 61
-        DepartementId: 18
-        CategorieId: 2
+        VilleId: 114
+        DepartementId: 29
+        CategorieId: 6
         GeoCoordinateX: '47.11890222'
         GeoCoordinateY: '-2.072934508'
         VideoPath: null
@@ -2050,6 +2200,8 @@
         Capacite: '305'
         PlanPath: uploads/etablissements/50c1b35bdab38.jpeg
         Vignette: uploads/etablissements/50c07e6f495fa.jpeg
+        Related1: null
+        Related2: null
         Active: true
     77:
         Code: 187
@@ -2067,7 +2219,7 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 4
+        VilleId: 82
         DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
@@ -2077,6 +2229,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     78:
         Code: 33
@@ -2094,9 +2248,9 @@
         Fax: '05 58 42 91 88'
         OpeningDate: '2013-04-13 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 92
-        DepartementId: 24
-        CategorieId: 2
+        VilleId: 166
+        DepartementId: 27
+        CategorieId: 6
         GeoCoordinateX: '43.90345841'
         GeoCoordinateY: '-1.310065985'
         VideoPath: null
@@ -2104,6 +2258,8 @@
         Capacite: '812'
         PlanPath: uploads/etablissements/50c1b44790613.jpeg
         Vignette: uploads/etablissements/50c07e8f9feca.jpeg
+        Related1: null
+        Related2: null
         Active: true
     79:
         Code: 34
@@ -2121,9 +2277,9 @@
         Fax: '02 97 30 46 66'
         OpeningDate: '2013-04-13 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 53
-        DepartementId: 29
-        CategorieId: 2
+        VilleId: 120
+        DepartementId: 31
+        CategorieId: 6
         GeoCoordinateX: '47.47675288'
         GeoCoordinateY: '-3.092372417'
         VideoPath: null
@@ -2131,6 +2287,8 @@
         Capacite: '250'
         PlanPath: uploads/etablissements/50c1b46436408.jpeg
         Vignette: uploads/etablissements/50c07e9d9e32e.jpeg
+        Related1: null
+        Related2: null
         Active: true
     80:
         Code: 35
@@ -2148,9 +2306,9 @@
         Fax: '04 68 95 94 17'
         OpeningDate: '2013-04-19 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 1
-        DepartementId: 34
-        CategorieId: 3
+        VilleId: 7
+        DepartementId: 35
+        CategorieId: 5
         GeoCoordinateX: '42.532127'
         GeoCoordinateY: '3.05197'
         VideoPath: null
@@ -2158,6 +2316,8 @@
         Capacite: '145'
         PlanPath: uploads/etablissements/50c1b822cce73.jpeg
         Vignette: uploads/etablissements/50c07eaaa87b2.jpeg
+        Related1: null
+        Related2: null
         Active: true
     81:
         Code: 36
@@ -2175,9 +2335,9 @@
         Fax: '05 56 09 24 96'
         OpeningDate: '2013-05-17 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 88
-        DepartementId: 21
-        CategorieId: 1
+        VilleId: 59
+        DepartementId: 19
+        CategorieId: 7
         GeoCoordinateX: '45.22291902'
         GeoCoordinateY: '-1.164722443'
         VideoPath: null
@@ -2185,6 +2345,8 @@
         Capacite: '870'
         PlanPath: uploads/etablissements/50c1b83f38bc8.jpeg
         Vignette: uploads/etablissements/50c07eb8a72f6.jpeg
+        Related1: null
+        Related2: null
         Active: true
     82:
         Code: 190
@@ -2202,9 +2364,9 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 151
-        DepartementId: 37
-        CategorieId: 4
+        VilleId: 100
+        DepartementId: 4
+        CategorieId: 3
         GeoCoordinateX: '43.143056'
         GeoCoordinateY: '3.143611'
         VideoPath: null
@@ -2212,6 +2374,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: true
     83:
         Code: 189
@@ -2229,7 +2393,7 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 150
+        VilleId: 63
         DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
@@ -2239,6 +2403,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     84:
         Code: 191
@@ -2256,9 +2422,9 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 110
+        VilleId: 126
         DepartementId: null
-        CategorieId: 4
+        CategorieId: 3
         GeoCoordinateX: '46.2254232'
         GeoCoordinateY: '-1.5446198'
         VideoPath: null
@@ -2266,6 +2432,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: true
     85:
         Code: 192
@@ -2283,9 +2451,9 @@
         Fax: '04 92 77 59 34'
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 122
+        VilleId: 94
         DepartementId: null
-        CategorieId: 2
+        CategorieId: 6
         GeoCoordinateX: '43.74642103270366'
         GeoCoordinateY: '6.10041618347168'
         VideoPath: null
@@ -2293,6 +2461,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07959d2aee.jpeg
+        Related1: null
+        Related2: null
         Active: true
     86:
         Code: 37
@@ -2310,9 +2480,9 @@
         Fax: '04 66 87 18 66'
         OpeningDate: '2013-04-26 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 22
-        DepartementId: 13
-        CategorieId: 3
+        VilleId: 2
+        DepartementId: 7
+        CategorieId: 5
         GeoCoordinateX: '43.66136775'
         GeoCoordinateY: '4.473999739'
         VideoPath: null
@@ -2320,6 +2490,8 @@
         Capacite: '170'
         PlanPath: uploads/etablissements/50c0baa702174.jpeg
         Vignette: uploads/etablissements/50c07ecc6c0b3.jpeg
+        Related1: null
+        Related2: null
         Active: true
     87:
         Code: 38
@@ -2337,9 +2509,9 @@
         Fax: '04 95 21 45 66'
         OpeningDate: '2013-05-18 00:00:00'
         ClosingDate: '2013-09-14 00:00:00'
-        VilleId: 43
-        DepartementId: 4
-        CategorieId: 3
+        VilleId: 115
+        DepartementId: 12
+        CategorieId: 5
         GeoCoordinateX: '41.64617179'
         GeoCoordinateY: '9.293650389'
         VideoPath: null
@@ -2347,6 +2519,8 @@
         Capacite: '115'
         PlanPath: uploads/etablissements/50c1b883b4f12.jpeg
         Vignette: uploads/etablissements/50c07edb7b8ec.jpeg
+        Related1: null
+        Related2: null
         Active: true
     88:
         Code: 39
@@ -2364,9 +2538,9 @@
         Fax: '02 51 54 98 94'
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 64
+        VilleId: 129
         DepartementId: 39
-        CategorieId: 3
+        CategorieId: 5
         GeoCoordinateX: '46.6761495'
         GeoCoordinateY: '-1.913208961'
         VideoPath: null
@@ -2374,6 +2548,8 @@
         Capacite: '294'
         PlanPath: uploads/etablissements/50c1b899991c1.jpeg
         Vignette: uploads/etablissements/50c07eeacdc9f.jpeg
+        Related1: null
+        Related2: null
         Active: true
     89:
         Code: 195
@@ -2391,7 +2567,7 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 1
+        VilleId: 7
         DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
@@ -2401,6 +2577,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     90:
         Code: 196
@@ -2418,9 +2596,9 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 129
+        VilleId: 9
         DepartementId: null
-        CategorieId: 3
+        CategorieId: 5
         GeoCoordinateX: ''
         GeoCoordinateY: ''
         VideoPath: null
@@ -2428,6 +2606,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     91:
         Code: 194
@@ -2445,7 +2625,7 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 142
+        VilleId: 73
         DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
@@ -2455,6 +2635,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     92:
         Code: 40
@@ -2472,9 +2654,9 @@
         Fax: '02 98 06 71 80'
         OpeningDate: '2013-04-27 00:00:00'
         ClosingDate: '2013-09-07 00:00:00'
-        VilleId: 51
-        DepartementId: 19
-        CategorieId: 2
+        VilleId: 101
+        DepartementId: 16
+        CategorieId: 6
         GeoCoordinateX: '47.7986345'
         GeoCoordinateY: '-3.791956902'
         VideoPath: null
@@ -2482,6 +2664,8 @@
         Capacite: '293'
         PlanPath: uploads/etablissements/50c1b8c98cf46.jpeg
         Vignette: uploads/etablissements/50c07f05362d9.jpeg
+        Related1: null
+        Related2: null
         Active: true
     93:
         Code: 41
@@ -2499,9 +2683,9 @@
         Fax: '05 46 43 51 18'
         OpeningDate: '2013-04-27 00:00:00'
         ClosingDate: '2013-09-22 00:00:00'
-        VilleId: 86
-        DepartementId: 15
-        CategorieId: 2
+        VilleId: 40
+        DepartementId: 10
+        CategorieId: 6
         GeoCoordinateX: '46.08444237'
         GeoCoordinateY: '-1.093429327'
         VideoPath: null
@@ -2509,6 +2693,8 @@
         Capacite: '267'
         PlanPath: uploads/etablissements/50c1b8e15b766.jpeg
         Vignette: uploads/etablissements/50c07f12115df.jpeg
+        Related1: null
+        Related2: null
         Active: true
     94:
         Code: 42
@@ -2526,9 +2712,9 @@
         Fax: '02 99 90 40 93'
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 57
-        DepartementId: 29
-        CategorieId: 2
+        VilleId: 109
+        DepartementId: 31
+        CategorieId: 6
         GeoCoordinateX: '47.47158955'
         GeoCoordinateY: '-2.467031479'
         VideoPath: null
@@ -2536,6 +2722,8 @@
         Capacite: '500'
         PlanPath: uploads/etablissements/50c0bb68d5bdd.jpeg
         Vignette: uploads/etablissements/50c07f2104699.jpeg
+        Related1: null
+        Related2: null
         Active: true
     95:
         Code: 43
@@ -2553,9 +2741,9 @@
         Fax: '02 51 33 94 04'
         OpeningDate: '2013-04-13 00:00:00'
         ClosingDate: '2013-09-14 00:00:00'
-        VilleId: 85
-        DepartementId: 15
-        CategorieId: 2
+        VilleId: 128
+        DepartementId: 10
+        CategorieId: 6
         GeoCoordinateX: '45.96790109'
         GeoCoordinateY: '-1.31872952'
         VideoPath: null
@@ -2563,6 +2751,8 @@
         Capacite: '170'
         PlanPath: uploads/etablissements/50c1baff25886.jpeg
         Vignette: uploads/etablissements/50c07f2dde9d1.jpeg
+        Related1: null
+        Related2: null
         Active: true
     96:
         Code: 197
@@ -2580,7 +2770,7 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 123
+        VilleId: 125
         DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
@@ -2590,6 +2780,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     97:
         Code: 44
@@ -2607,9 +2799,9 @@
         Fax: '04 75 93 90 56'
         OpeningDate: '2013-04-13 00:00:00'
         ClosingDate: '2013-09-22 00:00:00'
-        VilleId: 69
-        DepartementId: 1
-        CategorieId: 1
+        VilleId: 71
+        DepartementId: 3
+        CategorieId: 7
         GeoCoordinateX: '44.44722341'
         GeoCoordinateY: '4.36678648'
         VideoPath: null
@@ -2617,6 +2809,8 @@
         Capacite: '300'
         PlanPath: uploads/etablissements/50c0bb04e5920.jpeg
         Vignette: uploads/etablissements/50c07f3bbd0f2.jpeg
+        Related1: null
+        Related2: null
         Active: true
     98:
         Code: 45
@@ -2634,9 +2828,9 @@
         Fax: '02 97 52 65 66'
         OpeningDate: '2013-03-27 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
-        VilleId: 138
-        DepartementId: 29
-        CategorieId: 2
+        VilleId: 28
+        DepartementId: 31
+        CategorieId: 6
         GeoCoordinateX: '47.59528254'
         GeoCoordinateY: '-3.066279888'
         VideoPath: null
@@ -2644,6 +2838,8 @@
         Capacite: '123'
         PlanPath: uploads/etablissements/50c0bb114fd98.jpeg
         Vignette: uploads/etablissements/50c07f47a18f3.jpeg
+        Related1: null
+        Related2: null
         Active: true
     99:
         Code: 199
@@ -2661,7 +2857,7 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 115
+        VilleId: 8
         DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
@@ -2671,6 +2867,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     100:
         Code: 233
@@ -2688,9 +2886,9 @@
         Fax: '05 58 49 00 41 '
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-04 00:00:00'
-        VilleId: 101
-        DepartementId: 24
-        CategorieId: 2
+        VilleId: 90
+        DepartementId: 27
+        CategorieId: 6
         GeoCoordinateX: '43.7963884'
         GeoCoordinateY: '-1.3931660000000647'
         VideoPath: null
@@ -2698,6 +2896,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07cce6cae0.jpeg
+        Related1: null
+        Related2: null
         Active: true
     101:
         Code: 91
@@ -2715,9 +2915,9 @@
         Fax: '05 65 37 09 58'
         OpeningDate: '2013-05-11 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 56
-        DepartementId: 28
-        CategorieId: 2
+        VilleId: 144
+        DepartementId: 30
+        CategorieId: 6
         GeoCoordinateX: '44.893626'
         GeoCoordinateY: '1.478613'
         VideoPath: null
@@ -2725,6 +2925,8 @@
         Capacite: '262'
         PlanPath: uploads/etablissements/50c0be161f801.jpeg
         Vignette: uploads/etablissements/50c081d8f233f.jpeg
+        Related1: null
+        Related2: null
         Active: true
     102:
         Code: 46
@@ -2742,9 +2944,9 @@
         Fax: '05 58 78 12 92'
         OpeningDate: '2013-04-06 00:00:00'
         ClosingDate: '2013-09-08 00:00:00'
-        VilleId: 90
-        DepartementId: 24
-        CategorieId: 1
+        VilleId: 18
+        DepartementId: 27
+        CategorieId: 7
         GeoCoordinateX: '44.46066389'
         GeoCoordinateY: '-1.130706668'
         VideoPath: null
@@ -2752,6 +2954,8 @@
         Capacite: '800'
         PlanPath: null
         Vignette: uploads/etablissements/50c07f5af3540.jpeg
+        Related1: null
+        Related2: null
         Active: true
     103:
         Code: 112
@@ -2769,9 +2973,9 @@
         Fax: '04 94 78 67 37'
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
-        VilleId: 21
-        DepartementId: 33
-        CategorieId: 2
+        VilleId: 99
+        DepartementId: 38
+        CategorieId: 6
         GeoCoordinateX: '43.37692956'
         GeoCoordinateY: '5.788040757'
         VideoPath: null
@@ -2779,6 +2983,8 @@
         Capacite: '250'
         PlanPath: uploads/etablissements/50c0afe6c63ed.jpeg
         Vignette: uploads/etablissements/50c076445e9b3.jpeg
+        Related1: null
+        Related2: null
         Active: true
     104:
         Code: 47
@@ -2796,9 +3002,9 @@
         Fax: '02 40 62 01 23'
         OpeningDate: '2013-04-06 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
-        VilleId: 60
-        DepartementId: 18
-        CategorieId: 2
+        VilleId: 58
+        DepartementId: 29
+        CategorieId: 6
         GeoCoordinateX: '47.33350768'
         GeoCoordinateY: '-2.390749454'
         VideoPath: null
@@ -2806,6 +3012,8 @@
         Capacite: '600'
         PlanPath: uploads/etablissements/50c0bb2da1f28.jpeg
         Vignette: uploads/etablissements/50c07f685eb16.jpeg
+        Related1: null
+        Related2: null
         Active: true
     105:
         Code: 198
@@ -2823,9 +3031,9 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 124
+        VilleId: 142
         DepartementId: null
-        CategorieId: 3
+        CategorieId: 5
         GeoCoordinateX: ''
         GeoCoordinateY: ''
         VideoPath: null
@@ -2833,6 +3041,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     106:
         Code: 29
@@ -2850,9 +3060,9 @@
         Fax: '05 46 84 02 84'
         OpeningDate: '2013-04-27 00:00:00'
         ClosingDate: '2013-09-14 00:00:00'
-        VilleId: 96
-        DepartementId: 15
-        CategorieId: 2
+        VilleId: 133
+        DepartementId: 10
+        CategorieId: 6
         GeoCoordinateX: '45.99008181'
         GeoCoordinateY: '-1.051871181'
         VideoPath: null
@@ -2860,6 +3070,8 @@
         Capacite: '297'
         PlanPath: uploads/etablissements/50c0ba4b261a1.jpeg
         Vignette: uploads/etablissements/50c07e438ad4e.jpeg
+        Related1: null
+        Related2: null
         Active: true
     107:
         Code: 32
@@ -2877,9 +3089,9 @@
         Fax: '05 53 31 05 51'
         OpeningDate: '2013-04-13 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 49
-        DepartementId: 6
-        CategorieId: 3
+        VilleId: 24
+        DepartementId: 14
+        CategorieId: 5
         GeoCoordinateX: '44.86323045'
         GeoCoordinateY: '1.297008991'
         VideoPath: null
@@ -2887,6 +3099,8 @@
         Capacite: '176'
         PlanPath: uploads/etablissements/50c1b42c2e166.jpeg
         Vignette: uploads/etablissements/50c07e7dc139a.jpeg
+        Related1: null
+        Related2: null
         Active: true
     108:
         Code: 200
@@ -2904,9 +3118,9 @@
         Fax: '04 42 50 55 29'
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 152
-        DepartementId: 13
-        CategorieId: 2
+        VilleId: 68
+        DepartementId: 7
+        CategorieId: 6
         GeoCoordinateX: '43.7281889'
         GeoCoordinateY: '5.3209877'
         VideoPath: null
@@ -2914,6 +3128,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07a25e504c.jpeg
+        Related1: null
+        Related2: null
         Active: true
     109:
         Code: 48
@@ -2931,9 +3147,9 @@
         Fax: '04 94 55 67 81'
         OpeningDate: '2013-03-29 00:00:00'
         ClosingDate: '2013-10-12 00:00:00'
-        VilleId: 14
-        DepartementId: 33
-        CategorieId: 2
+        VilleId: 57
+        DepartementId: 38
+        CategorieId: 6
         GeoCoordinateX: '43.28539469'
         GeoCoordinateY: '6.57928437'
         VideoPath: null
@@ -2941,6 +3157,8 @@
         Capacite: '470'
         PlanPath: uploads/etablissements/50c0bb3be691e.jpeg
         Vignette: uploads/etablissements/50c07f79a5def.jpeg
+        Related1: null
+        Related2: null
         Active: true
     110:
         Code: 175
@@ -2958,9 +3176,9 @@
         Fax: '02 51 58 29 93'
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 63
+        VilleId: 130
         DepartementId: 39
-        CategorieId: 2
+        CategorieId: 6
         GeoCoordinateX: '46.738375'
         GeoCoordinateY: '-1.978047'
         VideoPath: null
@@ -2968,6 +3186,8 @@
         Capacite: '140'
         PlanPath: uploads/etablissements/50c0b1e2e576d.jpeg
         Vignette: uploads/etablissements/50c077d39f6a9.jpeg
+        Related1: null
+        Related2: null
         Active: true
     111:
         Code: 201
@@ -2985,9 +3205,9 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 117
+        VilleId: 48
         DepartementId: null
-        CategorieId: 3
+        CategorieId: 5
         GeoCoordinateX: ''
         GeoCoordinateY: ''
         VideoPath: null
@@ -2995,6 +3215,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     112:
         Code: 49
@@ -3012,9 +3234,9 @@
         Fax: '04 75 37 01 02'
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 68
-        DepartementId: 1
-        CategorieId: 2
+        VilleId: 169
+        DepartementId: 3
+        CategorieId: 6
         GeoCoordinateX: '44.53427499'
         GeoCoordinateY: '4.406890869'
         VideoPath: null
@@ -3022,6 +3244,8 @@
         Capacite: '170'
         PlanPath: uploads/etablissements/50c0bb50766e0.jpeg
         Vignette: uploads/etablissements/50c07f87dae28.jpeg
+        Related1: null
+        Related2: null
         Active: true
     113:
         Code: 202
@@ -3039,9 +3263,9 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 125
+        VilleId: 50
         DepartementId: null
-        CategorieId: 3
+        CategorieId: 5
         GeoCoordinateX: ''
         GeoCoordinateY: ''
         VideoPath: null
@@ -3049,6 +3273,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     114:
         Code: 71
@@ -3066,9 +3292,9 @@
         Fax: '05 55 85 57 96'
         OpeningDate: '2013-05-01 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 46
-        DepartementId: 3
-        CategorieId: 3
+        VilleId: 14
+        DepartementId: 11
+        CategorieId: 5
         GeoCoordinateX: '45.13193732'
         GeoCoordinateY: '1.762683392'
         VideoPath: null
@@ -3076,6 +3302,8 @@
         Capacite: '180'
         PlanPath: uploads/etablissements/50c0bcae3dd81.jpeg
         Vignette: uploads/etablissements/50c080c38220e.jpeg
+        Related1: null
+        Related2: null
         Active: true
     115:
         Code: 50
@@ -3093,9 +3321,9 @@
         Fax: '04 92 83 69 37'
         OpeningDate: '2013-05-15 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 12
-        DepartementId: 36
-        CategorieId: 2
+        VilleId: 31
+        DepartementId: 1
+        CategorieId: 6
         GeoCoordinateX: '43.83920493'
         GeoCoordinateY: '6.493869424'
         VideoPath: null
@@ -3103,6 +3331,8 @@
         Capacite: '500'
         PlanPath: uploads/etablissements/50c0bb8a5a3e1.jpeg
         Vignette: uploads/etablissements/50c07fa7aba44.jpeg
+        Related1: null
+        Related2: null
         Active: true
     116:
         Code: 219
@@ -3120,9 +3350,9 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 114
-        DepartementId: 22
-        CategorieId: 4
+        VilleId: 32
+        DepartementId: 21
+        CategorieId: 3
         GeoCoordinateX: '42.4764651'
         GeoCoordinateY: '9.5296097'
         VideoPath: null
@@ -3130,6 +3360,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07b7d004ec.jpeg
+        Related1: null
+        Related2: null
         Active: true
     117:
         Code: 204
@@ -3147,9 +3379,9 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 116
+        VilleId: 44
         DepartementId: null
-        CategorieId: 3
+        CategorieId: 5
         GeoCoordinateX: ''
         GeoCoordinateY: ''
         VideoPath: null
@@ -3157,6 +3389,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     118:
         Code: 203
@@ -3174,9 +3408,9 @@
         Fax: '03 21 09 79 59'
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 119
-        DepartementId: 30
-        CategorieId: 5
+        VilleId: 25
+        DepartementId: 32
+        CategorieId: 1
         GeoCoordinateX: '50.5584400'
         GeoCoordinateY: '1.6182947'
         VideoPath: null
@@ -3184,6 +3418,8 @@
         Capacite: null
         PlanPath: uploads/etablissements/50c1b23ec9191.jpeg
         Vignette: uploads/etablissements/50c07a57d7e78.jpeg
+        Related1: null
+        Related2: null
         Active: true
     119:
         Code: 51
@@ -3201,9 +3437,9 @@
         Fax: '04 68 28 32 57'
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 7
-        DepartementId: 34
-        CategorieId: 3
+        VilleId: 159
+        DepartementId: 35
+        CategorieId: 5
         GeoCoordinateX: '42.76536313'
         GeoCoordinateY: '3.031582832'
         VideoPath: null
@@ -3211,6 +3447,8 @@
         Capacite: '615'
         PlanPath: uploads/etablissements/50c1bb2842e06.jpeg
         Vignette: uploads/etablissements/50c07fb512fb5.jpeg
+        Related1: null
+        Related2: null
         Active: true
     120:
         Code: 52
@@ -3228,9 +3466,9 @@
         Fax: '04 67 15 11 31'
         OpeningDate: '2013-05-01 00:00:00'
         ClosingDate: '2013-08-31 00:00:00'
-        VilleId: 20
-        DepartementId: 9
-        CategorieId: 2
+        VilleId: 74
+        DepartementId: 24
+        CategorieId: 6
         GeoCoordinateX: '43.54960955'
         GeoCoordinateY: '3.894379735'
         VideoPath: null
@@ -3238,6 +3476,8 @@
         Capacite: '302'
         PlanPath: uploads/etablissements/50c0bba15c7c2.jpeg
         Vignette: uploads/etablissements/50c07fc17bf54.jpeg
+        Related1: null
+        Related2: null
         Active: true
     121:
         Code: 53
@@ -3255,9 +3495,9 @@
         Fax: '05 56 60 04 79'
         OpeningDate: '2013-04-30 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 89
-        DepartementId: 21
-        CategorieId: 3
+        VilleId: 80
+        DepartementId: 19
+        CategorieId: 5
         GeoCoordinateX: '44.75173929'
         GeoCoordinateY: '-1.187531948'
         VideoPath: null
@@ -3265,6 +3505,8 @@
         Capacite: '750'
         PlanPath: uploads/etablissements/50c1bb53eb9c8.jpeg
         Vignette: uploads/etablissements/50c07fcd601a0.jpeg
+        Related1: null
+        Related2: null
         Active: true
     122:
         Code: 205
@@ -3282,9 +3524,9 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 105
-        DepartementId: 37
-        CategorieId: 5
+        VilleId: 141
+        DepartementId: 4
+        CategorieId: 1
         GeoCoordinateX: '43.0247845'
         GeoCoordinateY: '2.9771233'
         VideoPath: null
@@ -3292,6 +3534,8 @@
         Capacite: null
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: true
     123:
         Code: 234
@@ -3309,9 +3553,9 @@
         Fax: '01 64 04 12 28'
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-04 00:00:00'
-        VilleId: 121
-        DepartementId: 32
-        CategorieId: 3
+        VilleId: 160
+        DepartementId: 36
+        CategorieId: 5
         GeoCoordinateX: '48.731478'
         GeoCoordinateY: '3.04673600000001'
         VideoPath: null
@@ -3319,6 +3563,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07cdbf27aa.jpeg
+        Related1: null
+        Related2: null
         Active: true
     124:
         Code: 240
@@ -3336,9 +3582,9 @@
         Fax: '04 67 35 07 85'
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-04 00:00:00'
-        VilleId: 8
-        DepartementId: 9
-        CategorieId: 3
+        VilleId: 139
+        DepartementId: 24
+        CategorieId: 5
         GeoCoordinateX: '43.2690513'
         GeoCoordinateY: '3.332877100000019'
         VideoPath: null
@@ -3346,6 +3592,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07d430c3b5.jpeg
+        Related1: null
+        Related2: null
         Active: true
     125:
         Code: 54
@@ -3363,9 +3611,9 @@
         Fax: '05 58 09 41 89'
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 91
-        DepartementId: 24
-        CategorieId: 2
+        VilleId: 10
+        DepartementId: 27
+        CategorieId: 6
         GeoCoordinateX: '44.22287547'
         GeoCoordinateY: '-1.203721762'
         VideoPath: null
@@ -3373,6 +3621,8 @@
         Capacite: '560'
         PlanPath: uploads/etablissements/50c0bbb85b742.jpeg
         Vignette: uploads/etablissements/50c07fdaccdbe.jpeg
+        Related1: null
+        Related2: null
         Active: true
     126:
         Code: 206
@@ -3390,9 +3640,9 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 158
-        DepartementId: 9
-        CategorieId: 2
+        VilleId: 165
+        DepartementId: 24
+        CategorieId: 6
         GeoCoordinateX: '43.4915997'
         GeoCoordinateY: '3.7792969'
         VideoPath: null
@@ -3400,6 +3650,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07a87bdb97.jpeg
+        Related1: null
+        Related2: null
         Active: true
     127:
         Code: 55
@@ -3417,9 +3669,9 @@
         Fax: '02 31 22 12 00'
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
-        VilleId: 66
-        DepartementId: 38
-        CategorieId: 2
+        VilleId: 61
+        DepartementId: 8
+        CategorieId: 6
         GeoCoordinateX: '49.31883866'
         GeoCoordinateY: '-1.108932495'
         VideoPath: null
@@ -3427,6 +3679,8 @@
         Capacite: '240'
         PlanPath: uploads/etablissements/50c1bb73e22f8.jpeg
         Vignette: uploads/etablissements/50c07fe6b006b.jpeg
+        Related1: null
+        Related2: null
         Active: true
     128:
         Code: 56
@@ -3444,9 +3698,9 @@
         Fax: '09 70 06 76 78'
         OpeningDate: '2013-05-15 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 24
-        DepartementId: 36
-        CategorieId: 1
+        VilleId: 150
+        DepartementId: 1
+        CategorieId: 7
         GeoCoordinateX: '43.73420486'
         GeoCoordinateY: '6.077772975'
         VideoPath: null
@@ -3454,6 +3708,8 @@
         Capacite: '219'
         PlanPath: uploads/etablissements/50c1bb8a7f4a5.jpeg
         Vignette: uploads/etablissements/50c07ff28b033.jpeg
+        Related1: null
+        Related2: null
         Active: true
     129:
         Code: 116
@@ -3471,9 +3727,9 @@
         Fax: '04 50 44 81 07'
         OpeningDate: '2013-05-04 00:00:00'
         ClosingDate: '2013-09-14 00:00:00'
-        VilleId: 81
-        DepartementId: 26
-        CategorieId: 1
+        VilleId: 47
+        DepartementId: 22
+        CategorieId: 7
         GeoCoordinateX: '45.7750889'
         GeoCoordinateY: '6.226780415'
         VideoPath: null
@@ -3481,6 +3737,8 @@
         Capacite: '184'
         PlanPath: uploads/etablissements/50c1b016d6b29.jpeg
         Vignette: uploads/etablissements/50c0766602664.jpeg
+        Related1: null
+        Related2: null
         Active: true
     130:
         Code: 207
@@ -3498,9 +3756,9 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 126
+        VilleId: 15
         DepartementId: null
-        CategorieId: 3
+        CategorieId: 5
         GeoCoordinateX: ''
         GeoCoordinateY: ''
         VideoPath: null
@@ -3508,6 +3766,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     131:
         Code: 208
@@ -3525,9 +3785,9 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 118
+        VilleId: 42
         DepartementId: null
-        CategorieId: 3
+        CategorieId: 5
         GeoCoordinateX: ''
         GeoCoordinateY: ''
         VideoPath: null
@@ -3535,6 +3795,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     132:
         Code: 57
@@ -3552,9 +3814,9 @@
         Fax: '04 68 80 22 57'
         OpeningDate: '2013-05-01 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 16
-        DepartementId: 34
-        CategorieId: 3
+        VilleId: 27
+        DepartementId: 35
+        CategorieId: 5
         GeoCoordinateX: '42.68903253'
         GeoCoordinateY: '2.998972535'
         VideoPath: null
@@ -3562,6 +3824,8 @@
         Capacite: '160'
         PlanPath: uploads/etablissements/50c1bba72f8e8.jpeg
         Vignette: uploads/etablissements/50c07ffe41534.jpeg
+        Related1: null
+        Related2: null
         Active: true
     133:
         Code: 215
@@ -3579,9 +3843,9 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 111
-        DepartementId: 21
-        CategorieId: 3
+        VilleId: 119
+        DepartementId: 19
+        CategorieId: 5
         GeoCoordinateX: '44.5847824'
         GeoCoordinateY: '-1.2091827'
         VideoPath: null
@@ -3589,6 +3853,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: true
     134:
         Code: 209
@@ -3606,9 +3872,9 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 106
+        VilleId: 89
         DepartementId: null
-        CategorieId: 3
+        CategorieId: 5
         GeoCoordinateX: '43.2463281'
         GeoCoordinateY: '10.5306101'
         VideoPath: null
@@ -3616,6 +3882,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: true
     135:
         Code: 58
@@ -3633,9 +3901,9 @@
         Fax: '04 93 74 66 00'
         OpeningDate: '2013-05-18 00:00:00'
         ClosingDate: '2013-09-21 00:00:00'
-        VilleId: 15
-        DepartementId: 35
-        CategorieId: 3
+        VilleId: 6
+        DepartementId: 2
+        CategorieId: 5
         GeoCoordinateX: '43.61142443'
         GeoCoordinateY: '7.123936415'
         VideoPath: null
@@ -3643,6 +3911,8 @@
         Capacite: '110'
         PlanPath: uploads/etablissements/50c1bbbe08830.jpeg
         Vignette: uploads/etablissements/50c0800b0c8c9.jpeg
+        Related1: null
+        Related2: null
         Active: true
     136:
         Code: 59
@@ -3660,9 +3930,9 @@
         Fax: '04 68 81 87 21'
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
-        VilleId: 1
-        DepartementId: 34
-        CategorieId: 2
+        VilleId: 7
+        DepartementId: 35
+        CategorieId: 6
         GeoCoordinateX: '42.546969'
         GeoCoordinateY: '3.04659'
         VideoPath: null
@@ -3670,6 +3940,8 @@
         Capacite: '588'
         PlanPath: uploads/etablissements/50c0bc05855fe.jpeg
         Vignette: uploads/etablissements/50c0803cdc7df.jpeg
+        Related1: null
+        Related2: null
         Active: true
     137:
         Code: 252
@@ -3687,9 +3959,9 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 154
+        VilleId: 45
         DepartementId: null
-        CategorieId: 3
+        CategorieId: 5
         GeoCoordinateX: '41.15716'
         GeoCoordinateY: '1.44153'
         VideoPath: null
@@ -3697,6 +3969,8 @@
         Capacite: null
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: true
     138:
         Code: 60
@@ -3714,9 +3988,9 @@
         Fax: '04 75 39 78 62'
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 78
-        DepartementId: 1
-        CategorieId: 3
+        VilleId: 122
+        DepartementId: 3
+        CategorieId: 5
         GeoCoordinateX: '44.42471997'
         GeoCoordinateY: '4.331874847'
         VideoPath: null
@@ -3724,6 +3998,8 @@
         Capacite: '296'
         PlanPath: uploads/etablissements/50c0bc240f18a.jpeg
         Vignette: uploads/etablissements/50c08054a6bdd.jpeg
+        Related1: null
+        Related2: null
         Active: true
     139:
         Code: 136
@@ -3741,7 +4017,7 @@
         Fax: '04 15 50 68 77'
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
-        VilleId: 37
+        VilleId: 143
         DepartementId: null
         CategorieId: null
         GeoCoordinateX: '45.226879'
@@ -3751,6 +4027,8 @@
         Capacite: '135'
         PlanPath: uploads/etablissements/50c0b1185446d.jpeg
         Vignette: uploads/etablissements/50c0776c29dd7.jpeg
+        Related1: null
+        Related2: null
         Active: true
     140:
         Code: 244
@@ -3768,9 +4046,9 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-04 00:00:00'
-        VilleId: 162
-        DepartementId: 36
-        CategorieId: 2
+        VilleId: 170
+        DepartementId: 1
+        CategorieId: 6
         GeoCoordinateX: '44.106111'
         GeoCoordinateY: '6.015556'
         VideoPath: null
@@ -3778,6 +4056,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07d71e10ea.jpeg
+        Related1: null
+        Related2: null
         Active: true
     141:
         Code: 210
@@ -3795,9 +4075,9 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 150
+        VilleId: 63
         DepartementId: null
-        CategorieId: 3
+        CategorieId: 5
         GeoCoordinateX: ''
         GeoCoordinateY: ''
         VideoPath: null
@@ -3805,6 +4085,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     142:
         Code: 63
@@ -3822,9 +4104,9 @@
         Fax: '05 46 75 91 10'
         OpeningDate: '2013-04-26 00:00:00'
         ClosingDate: '2013-09-08 00:00:00'
-        VilleId: 84
-        DepartementId: 15
-        CategorieId: 2
+        VilleId: 127
+        DepartementId: 10
+        CategorieId: 6
         GeoCoordinateX: '46.01528621'
         GeoCoordinateY: '-1.39242053'
         VideoPath: null
@@ -3832,6 +4114,8 @@
         Capacite: '205'
         PlanPath: uploads/etablissements/50c1bc001ca4f.jpeg
         Vignette: uploads/etablissements/50c0806a2ba52.jpeg
+        Related1: null
+        Related2: null
         Active: true
     143:
         Code: 64
@@ -3849,9 +4133,9 @@
         Fax: '04 50 44 36 59'
         OpeningDate: '2013-04-27 00:00:00'
         ClosingDate: '2013-09-22 00:00:00'
-        VilleId: 80
-        DepartementId: 26
-        CategorieId: 2
+        VilleId: 72
+        DepartementId: 22
+        CategorieId: 6
         GeoCoordinateX: '45.795155'
         GeoCoordinateY: '6.205735803'
         VideoPath: null
@@ -3859,6 +4143,8 @@
         Capacite: '300'
         PlanPath: uploads/etablissements/50c1bc155d1bb.jpeg
         Vignette: uploads/etablissements/50c08073e5b11.jpeg
+        Related1: null
+        Related2: null
         Active: true
     144:
         Code: 65
@@ -3876,9 +4162,9 @@
         Fax: '05 46 29 06 79'
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-28 00:00:00'
-        VilleId: 94
-        DepartementId: 15
-        CategorieId: 2
+        VilleId: 87
+        DepartementId: 10
+        CategorieId: 6
         GeoCoordinateX: '46.22760164'
         GeoCoordinateY: '-1.426178813'
         VideoPath: null
@@ -3886,6 +4172,8 @@
         Capacite: '228'
         PlanPath: uploads/etablissements/50c1bc2b3d51f.jpeg
         Vignette: uploads/etablissements/50c0807d2e9eb.jpeg
+        Related1: null
+        Related2: null
         Active: true
     145:
         Code: 211
@@ -3903,9 +4191,9 @@
         Fax: '03 89 72 14 21'
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 159
-        DepartementId: 16
-        CategorieId: 4
+        VilleId: 17
+        DepartementId: 20
+        CategorieId: 3
         GeoCoordinateX: '48.0226826'
         GeoCoordinateY: '7.5783348'
         VideoPath: null
@@ -3913,6 +4201,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07afbdbe73.jpeg
+        Related1: null
+        Related2: null
         Active: true
     146:
         Code: 223
@@ -3930,9 +4220,9 @@
         Fax: '04 50 18 83 76'
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 137
-        DepartementId: 26
-        CategorieId: 3
+        VilleId: 107
+        DepartementId: 22
+        CategorieId: 5
         GeoCoordinateX: '45.9235838981'
         GeoCoordinateY: '6.65056899541'
         VideoPath: null
@@ -3940,6 +4230,8 @@
         Capacite: '223'
         PlanPath: null
         Vignette: uploads/etablissements/50c07bbf72e3e.jpeg
+        Related1: null
+        Related2: null
         Active: true
     147:
         Code: 67
@@ -3957,9 +4249,9 @@
         Fax: '0034 972 652 507'
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-30 00:00:00'
-        VilleId: 27
+        VilleId: 23
         DepartementId: null
-        CategorieId: 3
+        CategorieId: 5
         GeoCoordinateX: '41.83260316'
         GeoCoordinateY: '3.084572554'
         VideoPath: null
@@ -3967,6 +4259,8 @@
         Capacite: '712'
         PlanPath: uploads/etablissements/50c0bc72972ce.jpeg
         Vignette: uploads/etablissements/50c080930c53a.jpeg
+        Related1: null
+        Related2: null
         Active: true
     148:
         Code: 68
@@ -3984,9 +4278,9 @@
         Fax: '0034 972 31 76 26'
         OpeningDate: '2013-04-27 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 30
+        VilleId: 104
         DepartementId: null
-        CategorieId: 2
+        CategorieId: 6
         GeoCoordinateX: '41.857027'
         GeoCoordinateY: '3.137991'
         VideoPath: null
@@ -3994,6 +4288,8 @@
         Capacite: '453'
         PlanPath: uploads/etablissements/50c0bc7f3126f.jpeg
         Vignette: uploads/etablissements/50c0809db4f40.jpeg
+        Related1: null
+        Related2: null
         Active: true
     149:
         Code: 212
@@ -4011,9 +4307,9 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 107
+        VilleId: 111
         DepartementId: null
-        CategorieId: 2
+        CategorieId: 6
         GeoCoordinateX: '41.981111'
         GeoCoordinateY: '3.201111'
         VideoPath: null
@@ -4021,6 +4317,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: true
     150:
         Code: 213
@@ -4038,9 +4336,9 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 130
+        VilleId: 56
         DepartementId: null
-        CategorieId: 3
+        CategorieId: 5
         GeoCoordinateX: ''
         GeoCoordinateY: ''
         VideoPath: null
@@ -4048,6 +4346,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     151:
         Code: 69
@@ -4065,9 +4365,9 @@
         Fax: '02 51 27 42 92'
         OpeningDate: '2013-05-18 00:00:00'
         ClosingDate: '2013-09-14 00:00:00'
-        VilleId: 72
+        VilleId: 70
         DepartementId: 39
-        CategorieId: 2
+        CategorieId: 6
         GeoCoordinateX: '46.34851988'
         GeoCoordinateY: '-1.387576461'
         VideoPath: null
@@ -4075,6 +4375,8 @@
         Capacite: '350'
         PlanPath: uploads/etablissements/50c1bc40d03ea.jpeg
         Vignette: uploads/etablissements/50c080a7ab7ee.jpeg
+        Related1: null
+        Related2: null
         Active: true
     152:
         Code: 214
@@ -4092,9 +4394,9 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 108
+        VilleId: 112
         DepartementId: null
-        CategorieId: 3
+        CategorieId: 5
         GeoCoordinateX: ''
         GeoCoordinateY: ''
         VideoPath: null
@@ -4102,6 +4404,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     153:
         Code: 70
@@ -4119,9 +4423,9 @@
         Fax: '04 75 21 82 05'
         OpeningDate: '2013-04-13 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
-        VilleId: 67
-        DepartementId: 7
-        CategorieId: 3
+        VilleId: 41
+        DepartementId: 15
+        CategorieId: 5
         GeoCoordinateX: '44.68386545'
         GeoCoordinateY: '5.450313091'
         VideoPath: null
@@ -4129,6 +4433,8 @@
         Capacite: '130'
         PlanPath: uploads/etablissements/50c0bc92d3b62.jpeg
         Vignette: uploads/etablissements/50c080b41c317.jpeg
+        Related1: null
+        Related2: null
         Active: true
     154:
         Code: 72
@@ -4146,9 +4452,9 @@
         Fax: '05 62 65 74 81'
         OpeningDate: '2013-04-27 00:00:00'
         ClosingDate: '2013-09-08 00:00:00'
-        VilleId: 76
-        DepartementId: 12
-        CategorieId: 3
+        VilleId: 158
+        DepartementId: 18
+        CategorieId: 5
         GeoCoordinateX: '43.68601738'
         GeoCoordinateY: '1.00292623'
         VideoPath: null
@@ -4156,6 +4462,8 @@
         Capacite: '129'
         PlanPath: uploads/etablissements/50c0bcb99f0ec.jpeg
         Vignette: uploads/etablissements/50c080cdc4833.jpeg
+        Related1: null
+        Related2: null
         Active: true
     155:
         Code: 137
@@ -4173,9 +4481,9 @@
         Fax: '04 68 81 55 29'
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-22 00:00:00'
-        VilleId: 1
-        DepartementId: 34
-        CategorieId: 2
+        VilleId: 7
+        DepartementId: 35
+        CategorieId: 6
         GeoCoordinateX: '42.573436'
         GeoCoordinateY: '3.01918'
         VideoPath: null
@@ -4183,6 +4491,8 @@
         Capacite: '167'
         PlanPath: uploads/etablissements/50c1b08dd8556.jpeg
         Vignette: uploads/etablissements/50c077784ddea.jpeg
+        Related1: null
+        Related2: null
         Active: true
     156:
         Code: 177
@@ -4200,9 +4510,9 @@
         Fax: '02 40 24 44 37'
         OpeningDate: '2013-04-27 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 58
-        DepartementId: 18
-        CategorieId: 3
+        VilleId: 65
+        DepartementId: 29
+        CategorieId: 5
         GeoCoordinateX: '47.305775'
         GeoCoordinateY: '-2.377167'
         VideoPath: null
@@ -4210,6 +4520,8 @@
         Capacite: '215'
         PlanPath: uploads/etablissements/50c1b1503b389.jpeg
         Vignette: uploads/etablissements/50c077ecaf24e.jpeg
+        Related1: null
+        Related2: null
         Active: true
     157:
         Code: 138
@@ -4227,9 +4539,9 @@
         Fax: '04 94 66 33 57'
         OpeningDate: '2013-04-26 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 13
-        DepartementId: 33
-        CategorieId: 2
+        VilleId: 60
+        DepartementId: 38
+        CategorieId: 6
         GeoCoordinateX: '43.0935263'
         GeoCoordinateY: '6.16381530'
         VideoPath: null
@@ -4237,6 +4549,8 @@
         Capacite: '700'
         PlanPath: uploads/etablissements/50c1b0b44fc90.jpeg
         Vignette: uploads/etablissements/50c0778527a48.jpeg
+        Related1: null
+        Related2: null
         Active: true
     158:
         Code: 74
@@ -4254,9 +4568,9 @@
         Fax: '05 58 82 10 74'
         OpeningDate: '2013-04-27 00:00:00'
         ClosingDate: '2013-09-08 00:00:00'
-        VilleId: 98
-        DepartementId: 24
-        CategorieId: 2
+        VilleId: 136
+        DepartementId: 27
+        CategorieId: 6
         GeoCoordinateX: '44.4990307'
         GeoCoordinateY: '-1.079460382'
         VideoPath: null
@@ -4264,6 +4578,8 @@
         Capacite: '560'
         PlanPath: uploads/etablissements/50c0bcc732a1f.jpeg
         Vignette: uploads/etablissements/50c080da39517.jpeg
+        Related1: null
+        Related2: null
         Active: true
     159:
         Code: 75
@@ -4281,9 +4597,9 @@
         Fax: '05 58 48 26 53'
         OpeningDate: '2013-05-01 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
-        VilleId: 101
-        DepartementId: 24
-        CategorieId: 1
+        VilleId: 90
+        DepartementId: 27
+        CategorieId: 7
         GeoCoordinateX: '43.79725104'
         GeoCoordinateY: '-1.381938457'
         VideoPath: null
@@ -4291,6 +4607,8 @@
         Capacite: '430'
         PlanPath: uploads/etablissements/50c0bcd6dba4b.jpeg
         Vignette: uploads/etablissements/50c080e516e16.jpeg
+        Related1: null
+        Related2: null
         Active: true
     160:
         Code: 238
@@ -4308,9 +4626,9 @@
         Fax: '05 59 45 25 79'
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-04 00:00:00'
-        VilleId: 134
-        DepartementId: 24
-        CategorieId: 2
+        VilleId: 103
+        DepartementId: 27
+        CategorieId: 6
         GeoCoordinateX: '43.5695744'
         GeoCoordinateY: '-1.4602945000000318'
         VideoPath: null
@@ -4318,6 +4636,8 @@
         Capacite: ''
         PlanPath: uploads/etablissements/50c0b9a433c8e.jpeg
         Vignette: uploads/etablissements/50c07d136d49a.jpeg
+        Related1: null
+        Related2: null
         Active: true
     161:
         Code: 76
@@ -4335,9 +4655,9 @@
         Fax: '02 51 33 12 71'
         OpeningDate: '2013-04-06 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 77
+        VilleId: 102
         DepartementId: 39
-        CategorieId: 2
+        CategorieId: 6
         GeoCoordinateX: '46.54614044'
         GeoCoordinateY: '-1.805588007'
         VideoPath: null
@@ -4345,6 +4665,8 @@
         Capacite: '401'
         PlanPath: uploads/etablissements/50c1bc5d4785c.jpeg
         Vignette: uploads/etablissements/50c080f064c82.jpeg
+        Related1: null
+        Related2: null
         Active: true
     162:
         Code: 77
@@ -4362,9 +4684,9 @@
         Fax: '02 51 20 37 58'
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 79
+        VilleId: 156
         DepartementId: 39
-        CategorieId: 1
+        CategorieId: 7
         GeoCoordinateX: '46.46559831'
         GeoCoordinateY: '-1.652584076'
         VideoPath: null
@@ -4372,6 +4694,8 @@
         Capacite: '226'
         PlanPath: uploads/etablissements/50c0bcf14fd5d.jpeg
         Vignette: uploads/etablissements/50c080fc5f050.jpeg
+        Related1: null
+        Related2: null
         Active: true
     163:
         Code: 224
@@ -4389,9 +4713,9 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 160
-        DepartementId: 16
-        CategorieId: 3
+        VilleId: 138
+        DepartementId: 20
+        CategorieId: 5
         GeoCoordinateX: '47.5376882'
         GeoCoordinateY: '7.1824729'
         VideoPath: null
@@ -4399,6 +4723,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: true
     164:
         Code: 83
@@ -4416,9 +4742,9 @@
         Fax: '04 67 32 56 16'
         OpeningDate: '2013-04-27 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 8
-        DepartementId: 9
-        CategorieId: 3
+        VilleId: 139
+        DepartementId: 24
+        CategorieId: 5
         GeoCoordinateX: '43.27113581'
         GeoCoordinateY: '3.329329491'
         VideoPath: null
@@ -4426,6 +4752,8 @@
         Capacite: '206'
         PlanPath: null
         Vignette: uploads/etablissements/50c08145cad60.jpeg
+        Related1: null
+        Related2: null
         Active: true
     165:
         Code: 237
@@ -4443,9 +4771,9 @@
         Fax: '04 68 28 18 23'
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-04 00:00:00'
-        VilleId: 7
-        DepartementId: 34
-        CategorieId: 1
+        VilleId: 159
+        DepartementId: 35
+        CategorieId: 7
         GeoCoordinateX: '42.767187'
         GeoCoordinateY: '3.0327310000000125'
         VideoPath: null
@@ -4453,6 +4781,8 @@
         Capacite: null
         PlanPath: null
         Vignette: uploads/etablissements/50c07d042f4b4.jpeg
+        Related1: null
+        Related2: null
         Active: true
     166:
         Code: 79
@@ -4470,9 +4800,9 @@
         Fax: '0039 0533 330 052'
         OpeningDate: '2013-04-20 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 38
+        VilleId: 85
         DepartementId: null
-        CategorieId: 2
+        CategorieId: 6
         GeoCoordinateX: '44.65568393'
         GeoCoordinateY: '12.24521756'
         VideoPath: null
@@ -4480,6 +4810,8 @@
         Capacite: '1270'
         PlanPath: uploads/etablissements/50c0bd08e5a04.jpeg
         Vignette: uploads/etablissements/50c08107bd9f4.jpeg
+        Related1: null
+        Related2: null
         Active: true
     167:
         Code: 251
@@ -4497,9 +4829,9 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 166
+        VilleId: 118
         DepartementId: null
-        CategorieId: 3
+        CategorieId: 5
         GeoCoordinateX: '44.4319948'
         GeoCoordinateY: '12.2988617'
         VideoPath: null
@@ -4507,6 +4839,8 @@
         Capacite: null
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: true
     168:
         Code: 80
@@ -4524,9 +4858,9 @@
         Fax: '04 66 51 50 45'
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
-        VilleId: 2
-        DepartementId: 20
-        CategorieId: 2
+        VilleId: 77
+        DepartementId: 17
+        CategorieId: 6
         GeoCoordinateX: '43.50737094'
         GeoCoordinateY: '4.145380855'
         VideoPath: null
@@ -4534,6 +4868,8 @@
         Capacite: '293'
         PlanPath: uploads/etablissements/50c1bc7486858.jpeg
         Vignette: uploads/etablissements/50c0812258939.jpeg
+        Related1: null
+        Related2: null
         Active: true
     169:
         Code: 81
@@ -4551,9 +4887,9 @@
         Fax: '04 68 95 93 58'
         OpeningDate: '2013-05-04 00:00:00'
         ClosingDate: '2013-09-21 00:00:00'
-        VilleId: 1
-        DepartementId: 34
-        CategorieId: 2
+        VilleId: 7
+        DepartementId: 35
+        CategorieId: 6
         GeoCoordinateX: '42.56372132'
         GeoCoordinateY: '3.034651279'
         VideoPath: null
@@ -4561,6 +4897,8 @@
         Capacite: '586'
         PlanPath: null
         Vignette: uploads/etablissements/50c0812e76f6f.jpeg
+        Related1: null
+        Related2: null
         Active: true
     170:
         Code: 82
@@ -4578,7 +4916,7 @@
         Fax: '0039 564744503'
         OpeningDate: '2013-04-20 00:00:00'
         ClosingDate: '2013-09-08 00:00:00'
-        VilleId: 45
+        VilleId: 34
         DepartementId: null
         CategorieId: null
         GeoCoordinateX: '42.74528669'
@@ -4588,6 +4926,8 @@
         Capacite: '500'
         PlanPath: null
         Vignette: uploads/etablissements/50c08139ec548.jpeg
+        Related1: null
+        Related2: null
         Active: true
     171:
         Code: 2
@@ -4605,9 +4945,9 @@
         Fax: '05 53 31 12 73'
         OpeningDate: '2013-05-03 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 4
-        DepartementId: 6
-        CategorieId: 2
+        VilleId: 82
+        DepartementId: 14
+        CategorieId: 6
         GeoCoordinateX: '44.93689388'
         GeoCoordinateY: '1.085318327'
         VideoPath: null
@@ -4615,6 +4955,8 @@
         Capacite: '137'
         PlanPath: uploads/etablissements/50c1b1d5302c2.jpeg
         Vignette: uploads/etablissements/50c07a0aa125e.jpeg
+        Related1: null
+        Related2: null
         Active: true
     172:
         Code: 225
@@ -4632,9 +4974,9 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 127
+        VilleId: 35
         DepartementId: null
-        CategorieId: 3
+        CategorieId: 5
         GeoCoordinateX: ''
         GeoCoordinateY: ''
         VideoPath: null
@@ -4642,6 +4984,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     173:
         Code: 133
@@ -4659,9 +5003,9 @@
         Fax: '0034 972 33 31 28'
         OpeningDate: '2013-04-27 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 31
+        VilleId: 19
         DepartementId: null
-        CategorieId: 4
+        CategorieId: 3
         GeoCoordinateX: '41.6636747'
         GeoCoordinateY: '2.78128019'
         VideoPath: null
@@ -4669,6 +5013,8 @@
         Capacite: '757'
         PlanPath: uploads/etablissements/50c0b0df2fd9e.jpeg
         Vignette: uploads/etablissements/50c0773707b45.jpeg
+        Related1: null
+        Related2: null
         Active: true
     174:
         Code: 84
@@ -4686,9 +5032,9 @@
         Fax: '03 84 44 71 21'
         OpeningDate: '2013-04-26 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 73
-        DepartementId: 10
-        CategorieId: 2
+        VilleId: 108
+        DepartementId: 26
+        CategorieId: 6
         GeoCoordinateX: '46.58725895'
         GeoCoordinateY: '5.700777769'
         VideoPath: null
@@ -4696,6 +5042,8 @@
         Capacite: '227'
         PlanPath: uploads/etablissements/50c1bcb21bb13.jpeg
         Vignette: uploads/etablissements/50c08152150d5.jpeg
+        Related1: null
+        Related2: null
         Active: true
     175:
         Code: 218
@@ -4713,9 +5061,9 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 1
-        DepartementId: 34
-        CategorieId: 2
+        VilleId: 7
+        DepartementId: 35
+        CategorieId: 6
         GeoCoordinateX: '42.565353076621875'
         GeoCoordinateY: '3.0366790294647217'
         VideoPath: null
@@ -4723,6 +5071,8 @@
         Capacite: ''
         PlanPath: uploads/etablissements/50c0b8e686a55.jpeg
         Vignette: uploads/etablissements/50c07b6326e05.jpeg
+        Related1: null
+        Related2: null
         Active: true
     176:
         Code: 86
@@ -4740,9 +5090,9 @@
         Fax: '04 68 86 46 83'
         OpeningDate: '2013-05-04 00:00:00'
         ClosingDate: '2013-09-14 00:00:00'
-        VilleId: 17
-        DepartementId: 34
-        CategorieId: 3
+        VilleId: 75
+        DepartementId: 35
+        CategorieId: 5
         GeoCoordinateX: '42.77629471'
         GeoCoordinateY: '3.02487731'
         VideoPath: null
@@ -4750,6 +5100,8 @@
         Capacite: '492'
         PlanPath: uploads/etablissements/50c0bdb6dea7a.jpeg
         Vignette: uploads/etablissements/50c081696fe36.jpeg
+        Related1: null
+        Related2: null
         Active: true
     177:
         Code: 87
@@ -4767,9 +5119,9 @@
         Fax: '02 51 33 94 04 '
         OpeningDate: '2013-04-13 00:00:00'
         ClosingDate: '2013-09-14 00:00:00'
-        VilleId: 71
+        VilleId: 62
         DepartementId: 39
-        CategorieId: 1
+        CategorieId: 7
         GeoCoordinateX: '46.42087836'
         GeoCoordinateY: '-1.569660902'
         VideoPath: null
@@ -4777,6 +5129,8 @@
         Capacite: '450'
         PlanPath: uploads/etablissements/50c0bdc2c9aa7.jpeg
         Vignette: uploads/etablissements/50c08174ca21c.jpeg
+        Related1: null
+        Related2: null
         Active: true
     178:
         Code: 88
@@ -4794,9 +5148,9 @@
         Fax: '05 59 54 76 87'
         OpeningDate: '2013-06-15 00:00:00'
         ClosingDate: '2013-09-22 00:00:00'
-        VilleId: 103
-        DepartementId: 17
-        CategorieId: 2
+        VilleId: 16
+        DepartementId: 34
+        CategorieId: 6
         GeoCoordinateX: '43.43522086'
         GeoCoordinateY: '-1.582331657'
         VideoPath: null
@@ -4804,6 +5158,8 @@
         Capacite: '350'
         PlanPath: uploads/etablissements/50c0bda74f880.jpeg
         Vignette: uploads/etablissements/50c081a1e7f51.jpeg
+        Related1: null
+        Related2: null
         Active: true
     179:
         Code: 89
@@ -4821,9 +5177,9 @@
         Fax: '05 58 73 58 47'
         OpeningDate: '2013-05-01 00:00:00'
         ClosingDate: '2013-09-22 00:00:00'
-        VilleId: 102
-        DepartementId: 24
-        CategorieId: 2
+        VilleId: 137
+        DepartementId: 27
+        CategorieId: 6
         GeoCoordinateX: '43.724728'
         GeoCoordinateY: '-1.421765'
         VideoPath: null
@@ -4831,6 +5187,8 @@
         Capacite: '505'
         PlanPath: uploads/etablissements/50c1bcdfc4ad5.jpeg
         Vignette: uploads/etablissements/50c081ae8728f.jpeg
+        Related1: null
+        Related2: null
         Active: true
     180:
         Code: 90
@@ -4848,9 +5206,9 @@
         Fax: '04 94 55 70 95'
         OpeningDate: '2013-04-06 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
-        VilleId: 23
-        DepartementId: 33
-        CategorieId: 2
+        VilleId: 66
+        DepartementId: 38
+        CategorieId: 6
         GeoCoordinateX: '43.190284'
         GeoCoordinateY: '6.471419'
         VideoPath: null
@@ -4858,6 +5216,8 @@
         Capacite: '415'
         PlanPath: uploads/etablissements/50c0be0861d7c.jpeg
         Vignette: uploads/etablissements/50c081cc81dad.jpeg
+        Related1: null
+        Related2: null
         Active: true
     181:
         Code: 92
@@ -4875,9 +5235,9 @@
         Fax: '05 56 09 84 23'
         OpeningDate: '2013-04-06 00:00:00'
         ClosingDate: '2013-09-22 00:00:00'
-        VilleId: 97
-        DepartementId: 21
-        CategorieId: 2
+        VilleId: 145
+        DepartementId: 19
+        CategorieId: 6
         GeoCoordinateX: '45.50097801'
         GeoCoordinateY: '-1.129317284'
         VideoPath: null
@@ -4885,6 +5245,8 @@
         Capacite: '583'
         PlanPath: uploads/etablissements/50c1bcf4c36f5.jpeg
         Vignette: uploads/etablissements/50c081e4322b0.jpeg
+        Related1: null
+        Related2: null
         Active: true
     182:
         Code: 93
@@ -4902,9 +5264,9 @@
         Fax: '04 67 50 82 45'
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
-        VilleId: 3
-        DepartementId: 9
-        CategorieId: 1
+        VilleId: 105
+        DepartementId: 24
+        CategorieId: 7
         GeoCoordinateX: '43.51973054'
         GeoCoordinateY: '3.909483254'
         VideoPath: null
@@ -4912,6 +5274,8 @@
         Capacite: '438'
         PlanPath: uploads/etablissements/50c0be3ab357b.jpeg
         Vignette: uploads/etablissements/50c081f0e48d7.jpeg
+        Related1: null
+        Related2: null
         Active: true
     183:
         Code: 239
@@ -4929,9 +5293,9 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-04 00:00:00'
-        VilleId: 144
-        DepartementId: 9
-        CategorieId: 3
+        VilleId: 163
+        DepartementId: 24
+        CategorieId: 5
         GeoCoordinateX: '43.229015'
         GeoCoordinateY: '3.245628'
         VideoPath: null
@@ -4939,6 +5303,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07d1fc73c6.jpeg
+        Related1: null
+        Related2: null
         Active: true
     184:
         Code: 94
@@ -4956,9 +5322,9 @@
         Fax: '04 94 76 15 35'
         OpeningDate: '2013-04-27 00:00:00'
         ClosingDate: '2013-09-22 00:00:00'
-        VilleId: 40
-        DepartementId: 33
-        CategorieId: 2
+        VilleId: 153
+        DepartementId: 38
+        CategorieId: 6
         GeoCoordinateX: '43.58432727'
         GeoCoordinateY: '6.689981818'
         VideoPath: null
@@ -4966,6 +5332,8 @@
         Capacite: '110'
         PlanPath: uploads/etablissements/50c1bd0d38ec7.jpeg
         Vignette: uploads/etablissements/50c081fee708d.jpeg
+        Related1: null
+        Related2: null
         Active: true
     185:
         Code: 226
@@ -4983,9 +5351,9 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 131
-        DepartementId: 16
-        CategorieId: 3
+        VilleId: 96
+        DepartementId: 20
+        CategorieId: 5
         GeoCoordinateX: '48.0431584'
         GeoCoordinateY: '7.1509838'
         VideoPath: null
@@ -4993,6 +5361,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: true
     186:
         Code: 61
@@ -5010,9 +5380,9 @@
         Fax: '02 54 87 84 21'
         OpeningDate: '2013-04-20 00:00:00'
         ClosingDate: '2013-09-14 00:00:00'
-        VilleId: 74
-        DepartementId: 11
-        CategorieId: 1
+        VilleId: 155
+        DepartementId: 28
+        CategorieId: 7
         GeoCoordinateX: '47.68714583'
         GeoCoordinateY: '1.483572721'
         VideoPath: null
@@ -5020,6 +5390,8 @@
         Capacite: '280'
         PlanPath: uploads/etablissements/50c1bbe2c6a4e.jpeg
         Vignette: uploads/etablissements/50c0805f736fc.jpeg
+        Related1: null
+        Related2: null
         Active: true
     187:
         Code: 227
@@ -5037,9 +5409,9 @@
         Fax: '02 47 95 24 04 '
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 132
-        DepartementId: 27
-        CategorieId: 2
+        VilleId: 161
+        DepartementId: 25
+        CategorieId: 6
         GeoCoordinateX: '47.0974739'
         GeoCoordinateY: '0.5019379'
         VideoPath: null
@@ -5047,6 +5419,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07c03aa1f4.jpeg
+        Related1: null
+        Related2: null
         Active: true
     188:
         Code: 95
@@ -5064,9 +5438,9 @@
         Fax: '0039 0565 701400'
         OpeningDate: '2013-04-26 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 44
+        VilleId: 135
         DepartementId: null
-        CategorieId: 2
+        CategorieId: 6
         GeoCoordinateX: '43.02830997'
         GeoCoordinateY: '10.53853869'
         VideoPath: null
@@ -5074,6 +5448,8 @@
         Capacite: '885'
         PlanPath: uploads/etablissements/50c0be5728b4b.jpeg
         Vignette: uploads/etablissements/50c0820baa3b3.jpeg
+        Related1: null
+        Related2: null
         Active: true
     189:
         Code: 243
@@ -5091,9 +5467,9 @@
         Fax: '03 84 25 75 96'
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-04 00:00:00'
-        VilleId: 135
-        DepartementId: 10
-        CategorieId: 1
+        VilleId: 88
+        DepartementId: 26
+        CategorieId: 7
         GeoCoordinateX: '46.675999'
         GeoCoordinateY: '5.787104999999997'
         VideoPath: null
@@ -5101,6 +5477,8 @@
         Capacite: null
         PlanPath: null
         Vignette: uploads/etablissements/50c07d67ba280.jpeg
+        Related1: null
+        Related2: null
         Active: true
     190:
         Code: 96
@@ -5118,9 +5496,9 @@
         Fax: '04 75 93 95 50'
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 78
-        DepartementId: 1
-        CategorieId: 3
+        VilleId: 122
+        DepartementId: 3
+        CategorieId: 5
         GeoCoordinateX: '44.45909408'
         GeoCoordinateY: '4.341879487'
         VideoPath: null
@@ -5128,6 +5506,8 @@
         Capacite: '110'
         PlanPath: uploads/etablissements/50c0be636c384.jpeg
         Vignette: uploads/etablissements/50c082194a720.jpeg
+        Related1: null
+        Related2: null
         Active: true
     191:
         Code: 97
@@ -5145,9 +5525,9 @@
         Fax: '04 71 23 42 26'
         OpeningDate: '2013-04-27 00:00:00'
         ClosingDate: '2013-09-08 00:00:00'
-        VilleId: 59
-        DepartementId: 14
-        CategorieId: 3
+        VilleId: 123
+        DepartementId: 9
+        CategorieId: 5
         GeoCoordinateX: '44.99907285'
         GeoCoordinateY: '3.219047785'
         VideoPath: null
@@ -5155,6 +5535,8 @@
         Capacite: '90'
         PlanPath: uploads/etablissements/50c0be70ddf6f.jpeg
         Vignette: uploads/etablissements/50c0822661cf3.jpeg
+        Related1: null
+        Related2: null
         Active: true
     192:
         Code: 4
@@ -5172,9 +5554,9 @@
         Fax: '04 67 90 97 95'
         OpeningDate: '2013-04-19 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 5
-        DepartementId: 9
-        CategorieId: 3
+        VilleId: 164
+        DepartementId: 24
+        CategorieId: 5
         GeoCoordinateX: '43.284219'
         GeoCoordinateY: '3.381127'
         VideoPath: null
@@ -5182,6 +5564,8 @@
         Capacite: '354'
         PlanPath: uploads/etablissements/50c1b8af9f072.jpeg
         Vignette: uploads/etablissements/50c07ef93ebc1.jpeg
+        Related1: null
+        Related2: null
         Active: true
     193:
         Code: 220
@@ -5199,9 +5583,9 @@
         Fax: '03 21 92 00 83'
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 146
-        DepartementId: 30
-        CategorieId: 5
+        VilleId: 79
+        DepartementId: 32
+        CategorieId: 1
         GeoCoordinateX: '50.7040549'
         GeoCoordinateY: '1.5663028'
         VideoPath: null
@@ -5209,6 +5593,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: true
     194:
         Code: 98
@@ -5226,9 +5612,9 @@
         Fax: ''
         OpeningDate: '2013-05-01 00:00:00'
         ClosingDate: '2013-08-31 00:00:00'
-        VilleId: 18
-        DepartementId: 37
-        CategorieId: 3
+        VilleId: 51
+        DepartementId: 4
+        CategorieId: 5
         GeoCoordinateX: '43.11730606'
         GeoCoordinateY: '2.73617506'
         VideoPath: null
@@ -5236,6 +5622,8 @@
         Capacite: '110'
         PlanPath: null
         Vignette: uploads/etablissements/50c0823353b89.jpeg
+        Related1: null
+        Related2: null
         Active: true
     195:
         Code: 99
@@ -5253,9 +5641,9 @@
         Fax: '02 96 63 67 94'
         OpeningDate: '2013-04-26 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 48
-        DepartementId: 5
-        CategorieId: 2
+        VilleId: 49
+        DepartementId: 13
+        CategorieId: 6
         GeoCoordinateX: '48.63805601'
         GeoCoordinateY: '-2.455675006'
         VideoPath: null
@@ -5263,6 +5651,8 @@
         Capacite: '419'
         PlanPath: uploads/etablissements/50c0be9c8c108.jpeg
         Vignette: uploads/etablissements/50c08242e8322.jpeg
+        Related1: null
+        Related2: null
         Active: true
     196:
         Code: 100
@@ -5280,9 +5670,9 @@
         Fax: '04 94 40 81 99'
         OpeningDate: '2013-04-06 00:00:00'
         ClosingDate: '2013-09-28 00:00:00'
-        VilleId: 140
-        DepartementId: 33
-        CategorieId: 2
+        VilleId: 52
+        DepartementId: 38
+        CategorieId: 6
         GeoCoordinateX: '43.46392303'
         GeoCoordinateY: '6.725360155'
         VideoPath: null
@@ -5290,6 +5680,8 @@
         Capacite: '200'
         PlanPath: uploads/etablissements/50c0aefd8bf1a.jpeg
         Vignette: uploads/etablissements/50c075ba364bd.jpeg
+        Related1: null
+        Related2: null
         Active: true
     197:
         Code: 101
@@ -5307,9 +5699,9 @@
         Fax: '04 75 88 11 31'
         OpeningDate: '2013-04-27 00:00:00'
         ClosingDate: '2013-09-07 00:00:00'
-        VilleId: 70
-        DepartementId: 1
-        CategorieId: 1
+        VilleId: 162
+        DepartementId: 3
+        CategorieId: 7
         GeoCoordinateX: '44.412402'
         GeoCoordinateY: '4.349979'
         VideoPath: null
@@ -5317,6 +5709,8 @@
         Capacite: '299'
         PlanPath: uploads/etablissements/50c0af09d6674.jpeg
         Vignette: uploads/etablissements/50c075d348a48.jpeg
+        Related1: null
+        Related2: null
         Active: true
     198:
         Code: 135
@@ -5334,9 +5728,9 @@
         Fax: '0034 942631294'
         OpeningDate: '2013-04-19 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 28
+        VilleId: 67
         DepartementId: null
-        CategorieId: 2
+        CategorieId: 6
         GeoCoordinateX: '43.491413'
         GeoCoordinateY: '-3.537512'
         VideoPath: null
@@ -5344,6 +5738,8 @@
         Capacite: '1050'
         PlanPath: uploads/etablissements/50c0b0fc0a723.jpeg
         Vignette: uploads/etablissements/50c0776146ebb.jpeg
+        Related1: null
+        Related2: null
         Active: true
     199:
         Code: 102
@@ -5361,9 +5757,9 @@
         Fax: '0034 977 811 411'
         OpeningDate: '2013-04-06 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
-        VilleId: 33
+        VilleId: 93
         DepartementId: null
-        CategorieId: 1
+        CategorieId: 7
         GeoCoordinateX: '41.03292'
         GeoCoordinateY: '0.96921'
         VideoPath: null
@@ -5371,6 +5767,8 @@
         Capacite: '1137'
         PlanPath: uploads/etablissements/50c0af17a86ec.jpeg
         Vignette: uploads/etablissements/50c075df4d461.jpeg
+        Related1: null
+        Related2: null
         Active: true
     200:
         Code: 103
@@ -5388,9 +5786,9 @@
         Fax: '0034 964 412 805'
         OpeningDate: '2013-04-27 00:00:00'
         ClosingDate: '2012-09-15 00:00:00'
-        VilleId: 35
+        VilleId: 3
         DepartementId: null
-        CategorieId: 2
+        CategorieId: 6
         GeoCoordinateX: '40.22119452'
         GeoCoordinateY: '0.268542767'
         VideoPath: null
@@ -5398,6 +5796,8 @@
         Capacite: '380'
         PlanPath: uploads/etablissements/50c0af25a544c.jpeg
         Vignette: uploads/etablissements/50c075ea6e237.jpeg
+        Related1: null
+        Related2: null
         Active: true
     201:
         Code: 104
@@ -5415,9 +5815,9 @@
         Fax: '02 98 57 25 25'
         OpeningDate: '2013-04-06 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 50
-        DepartementId: 19
-        CategorieId: 2
+        VilleId: 13
+        DepartementId: 16
+        CategorieId: 6
         GeoCoordinateX: '47.88203498'
         GeoCoordinateY: '-4.103393555'
         VideoPath: null
@@ -5425,6 +5825,8 @@
         Capacite: '353'
         PlanPath: uploads/etablissements/50c0af45bee05.jpeg
         Vignette: uploads/etablissements/50c075fa2f012.jpeg
+        Related1: null
+        Related2: null
         Active: true
     202:
         Code: 228
@@ -5442,9 +5844,9 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 168
+        VilleId: 121
         DepartementId: null
-        CategorieId: 3
+        CategorieId: 5
         GeoCoordinateX: '43.696858773848696'
         GeoCoordinateY: '6.041450500488281'
         VideoPath: null
@@ -5452,6 +5854,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: true
     203:
         Code: 241
@@ -5469,9 +5873,9 @@
         Fax: '04 93 46 44 30'
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-04 00:00:00'
-        VilleId: 143
-        DepartementId: 35
-        CategorieId: 3
+        VilleId: 76
+        DepartementId: 2
+        CategorieId: 5
         GeoCoordinateX: '43.5740895'
         GeoCoordinateY: '7.004152500000032'
         VideoPath: null
@@ -5479,6 +5883,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07d4cbff5e.jpeg
+        Related1: null
+        Related2: null
         Active: true
     204:
         Code: 235
@@ -5496,9 +5902,9 @@
         Fax: '04 50 32 90 60 '
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-04 00:00:00'
-        VilleId: 81
-        DepartementId: 26
-        CategorieId: 2
+        VilleId: 47
+        DepartementId: 22
+        CategorieId: 6
         GeoCoordinateX: '45.7991447'
         GeoCoordinateY: '6.211576000000036'
         VideoPath: null
@@ -5506,6 +5912,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07ce853e04.jpeg
+        Related1: null
+        Related2: null
         Active: true
     205:
         Code: 106
@@ -5523,9 +5931,9 @@
         Fax: '04 73 88 68 41'
         OpeningDate: '2013-05-01 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 52
-        DepartementId: 31
-        CategorieId: 2
+        VilleId: 97
+        DepartementId: 33
+        CategorieId: 6
         GeoCoordinateX: '45.56285457'
         GeoCoordinateY: '2.938236594'
         VideoPath: null
@@ -5533,6 +5941,8 @@
         Capacite: '460'
         PlanPath: uploads/etablissements/50c1af62e89c4.jpeg
         Vignette: uploads/etablissements/50c07604c4ccc.jpeg
+        Related1: null
+        Related2: null
         Active: true
     206:
         Code: 232
@@ -5550,9 +5960,9 @@
         Fax: '03 88 74 62 89'
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 171
-        DepartementId: 8
-        CategorieId: 3
+        VilleId: 20
+        DepartementId: 6
+        CategorieId: 5
         GeoCoordinateX: '48.3291292'
         GeoCoordinateY: '7.6931870'
         VideoPath: null
@@ -5560,6 +5970,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: true
     207:
         Code: 229
@@ -5577,9 +5989,9 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 161
-        DepartementId: 25
-        CategorieId: 2
+        VilleId: 98
+        DepartementId: 37
+        CategorieId: 6
         GeoCoordinateX: '43.6486529'
         GeoCoordinateY: '2.7781248'
         VideoPath: null
@@ -5587,6 +5999,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07c2b36ac4.jpeg
+        Related1: null
+        Related2: null
         Active: true
     208:
         Code: 108
@@ -5604,9 +6018,9 @@
         Fax: '04 68 95 96 11'
         OpeningDate: '2013-05-25 00:00:00'
         ClosingDate: '2013-09-08 00:00:00'
-        VilleId: 1
-        DepartementId: 34
-        CategorieId: 3
+        VilleId: 7
+        DepartementId: 35
+        CategorieId: 5
         GeoCoordinateX: '42.56766828'
         GeoCoordinateY: '3.044221401'
         VideoPath: null
@@ -5614,6 +6028,8 @@
         Capacite: '706'
         PlanPath: uploads/etablissements/50c1af7c41ffa.jpeg
         Vignette: uploads/etablissements/50c0760e8f143.jpeg
+        Related1: null
+        Related2: null
         Active: true
     209:
         Code: 131
@@ -5631,9 +6047,9 @@
         Fax: '05 59 41 95 73'
         OpeningDate: '2013-04-27 00:00:00'
         ClosingDate: '2013-09-22 00:00:00'
-        VilleId: 103
-        DepartementId: 17
-        CategorieId: 1
+        VilleId: 16
+        DepartementId: 34
+        CategorieId: 7
         GeoCoordinateX: '43.436804'
         GeoCoordinateY: '-1.567666'
         VideoPath: null
@@ -5641,6 +6057,8 @@
         Capacite: '443'
         PlanPath: uploads/etablissements/50c1b0795fd0c.jpeg
         Vignette: uploads/etablissements/50c077240f919.jpeg
+        Related1: null
+        Related2: null
         Active: true
     210:
         Code: 109
@@ -5658,9 +6076,9 @@
         Fax: '05 46 22 51 46'
         OpeningDate: '2013-04-26 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 87
-        DepartementId: 15
-        CategorieId: 2
+        VilleId: 83
+        DepartementId: 10
+        CategorieId: 6
         GeoCoordinateX: '45.72995496'
         GeoCoordinateY: '-1.175955534'
         VideoPath: null
@@ -5668,6 +6086,8 @@
         Capacite: '150'
         PlanPath: uploads/etablissements/50c1af9184408.jpeg
         Vignette: uploads/etablissements/50c076178a370.jpeg
+        Related1: null
+        Related2: null
         Active: true
     211:
         Code: 110
@@ -5685,9 +6105,9 @@
         Fax: '04 94 81 03 16'
         OpeningDate: '2013-04-06 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
-        VilleId: 153
-        DepartementId: 33
-        CategorieId: 3
+        VilleId: 147
+        DepartementId: 38
+        CategorieId: 5
         GeoCoordinateX: '43.392481'
         GeoCoordinateY: '6.726462'
         VideoPath: null
@@ -5695,6 +6115,8 @@
         Capacite: '1100'
         PlanPath: uploads/etablissements/50c0afa4094b5.jpeg
         Vignette: uploads/etablissements/50c0762d20c4b.jpeg
+        Related1: null
+        Related2: null
         Active: true
     212:
         Code: 230
@@ -5712,7 +6134,7 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 19
+        VilleId: 1
         DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
@@ -5722,6 +6144,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     213:
         Code: 236
@@ -5739,9 +6163,9 @@
         Fax: '04 50 71 93 67'
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-04 00:00:00'
-        VilleId: 133
-        DepartementId: 26
-        CategorieId: 3
+        VilleId: 157
+        DepartementId: 22
+        CategorieId: 5
         GeoCoordinateX: '46.3993012'
         GeoCoordinateY: '6.503873800000065'
         VideoPath: null
@@ -5749,6 +6173,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07cf564de0.jpeg
+        Related1: null
+        Related2: null
         Active: true
     214:
         Code: 111
@@ -5766,9 +6192,9 @@
         Fax: ''
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
-        VilleId: 41
-        DepartementId: 35
-        CategorieId: 2
+        VilleId: 69
+        DepartementId: 2
+        CategorieId: 6
         GeoCoordinateX: '43.58853542'
         GeoCoordinateY: '6.93888545'
         VideoPath: null
@@ -5776,6 +6202,8 @@
         Capacite: '200'
         PlanPath: uploads/etablissements/50c0afb054124.jpeg
         Vignette: uploads/etablissements/50c0763716a2e.jpeg
+        Related1: null
+        Related2: null
         Active: true
     215:
         Code: 113
@@ -5793,9 +6221,9 @@
         Fax: '09 58 35 56 11'
         OpeningDate: '2013-04-26 00:00:00'
         ClosingDate: '2013-09-08 00:00:00'
-        VilleId: 6
-        DepartementId: 34
-        CategorieId: 2
+        VilleId: 154
+        DepartementId: 35
+        CategorieId: 6
         GeoCoordinateX: '42.7139833'
         GeoCoordinateY: '3.0314219'
         VideoPath: null
@@ -5803,6 +6231,8 @@
         Capacite: '300'
         PlanPath: uploads/etablissements/50c1afa391a3a.jpeg
         Vignette: uploads/etablissements/50c0764f49c1f.jpeg
+        Related1: null
+        Related2: null
         Active: true
     216:
         Code: 8
@@ -5820,9 +6250,9 @@
         Fax: '05 56 73 64 26'
         OpeningDate: '2013-04-13 00:00:00'
         ClosingDate: '2013-09-22 00:00:00'
-        VilleId: 97
+        VilleId: 145
         DepartementId: null
-        CategorieId: 2
+        CategorieId: 6
         GeoCoordinateX: '45.4856205'
         GeoCoordinateY: '-1.1477709'
         VideoPath: null
@@ -5830,6 +6260,8 @@
         Capacite: '526'
         PlanPath: uploads/etablissements/50c0bd189da71.jpeg
         Vignette: uploads/etablissements/50c0811744e94.jpeg
+        Related1: null
+        Related2: null
         Active: true
     217:
         Code: 114
@@ -5847,9 +6279,9 @@
         Fax: '05 58 42 64 56'
         OpeningDate: '2013-06-01 00:00:00'
         ClosingDate: '2013-09-08 00:00:00'
-        VilleId: 99
-        DepartementId: 24
-        CategorieId: 1
+        VilleId: 92
+        DepartementId: 27
+        CategorieId: 7
         GeoCoordinateX: '44.07217817'
         GeoCoordinateY: '-1.156412959'
         VideoPath: null
@@ -5857,6 +6289,8 @@
         Capacite: '375'
         PlanPath: uploads/etablissements/50c1afc92c505.jpeg
         Vignette: uploads/etablissements/50c0765b566f2.jpeg
+        Related1: null
+        Related2: null
         Active: true
     218:
         Code: 117
@@ -5874,9 +6308,9 @@
         Fax: '05 46 47 23 46'
         OpeningDate: '2013-04-13 00:00:00'
         ClosingDate: '2013-09-22 00:00:00'
-        VilleId: 95
-        DepartementId: 15
-        CategorieId: 2
+        VilleId: 21
+        DepartementId: 10
+        CategorieId: 6
         GeoCoordinateX: '45.96824412'
         GeoCoordinateY: '-1.245038509'
         VideoPath: null
@@ -5884,6 +6318,8 @@
         Capacite: '300'
         PlanPath: uploads/etablissements/50c0b021aa700.jpeg
         Vignette: uploads/etablissements/50c0766f8358e.jpeg
+        Related1: null
+        Related2: null
         Active: true
     219:
         Code: 118
@@ -5901,9 +6337,9 @@
         Fax: '04 68 81 44 34'
         OpeningDate: '2013-05-04 00:00:00'
         ClosingDate: '2013-09-21 00:00:00'
-        VilleId: 1
-        DepartementId: 34
-        CategorieId: 1
+        VilleId: 7
+        DepartementId: 35
+        CategorieId: 7
         GeoCoordinateX: '42.5757234'
         GeoCoordinateY: '3.042392135'
         VideoPath: null
@@ -5911,6 +6347,8 @@
         Capacite: '840'
         PlanPath: uploads/etablissements/50c1afdfca20f.jpeg
         Vignette: uploads/etablissements/50c07679cef85.jpeg
+        Related1: null
+        Related2: null
         Active: true
     220:
         Code: 119
@@ -5928,9 +6366,9 @@
         Fax: '04 68 82 50 04'
         OpeningDate: '2013-04-06 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
-        VilleId: 139
-        DepartementId: 34
-        CategorieId: 3
+        VilleId: 148
+        DepartementId: 35
+        CategorieId: 5
         GeoCoordinateX: '42.62443095'
         GeoCoordinateY: '3.025810719'
         VideoPath: null
@@ -5938,6 +6376,8 @@
         Capacite: '522'
         PlanPath: uploads/etablissements/50c1afef3933e.jpeg
         Vignette: uploads/etablissements/50c076841720b.jpeg
+        Related1: null
+        Related2: null
         Active: true
     221:
         Code: 120
@@ -5955,9 +6395,9 @@
         Fax: '03 89 75 71 98'
         OpeningDate: '2013-04-13 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 82
-        DepartementId: 16
-        CategorieId: 3
+        VilleId: 171
+        DepartementId: 20
+        CategorieId: 5
         GeoCoordinateX: '47.83392225'
         GeoCoordinateY: '7.165617943'
         VideoPath: null
@@ -5965,6 +6405,8 @@
         Capacite: '199'
         PlanPath: uploads/etablissements/50c1b037245f0.jpeg
         Vignette: uploads/etablissements/50c0769b5c096.jpeg
+        Related1: null
+        Related2: null
         Active: true
     222:
         Code: 246
@@ -5982,9 +6424,9 @@
         Fax: '0039 05 33 379700'
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-04 00:00:00'
-        VilleId: 163
+        VilleId: 84
         DepartementId: null
-        CategorieId: 2
+        CategorieId: 6
         GeoCoordinateX: '44.7343437'
         GeoCoordinateY: '12.231634299999996'
         VideoPath: null
@@ -5992,6 +6434,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07d7f143a9.jpeg
+        Related1: null
+        Related2: null
         Active: true
     223:
         Code: 134
@@ -6009,9 +6453,9 @@
         Fax: '04 68 86 23 09'
         OpeningDate: '2013-04-27 00:00:00'
         ClosingDate: '2013-09-08 00:00:00'
-        VilleId: 17
-        DepartementId: 34
-        CategorieId: 3
+        VilleId: 75
+        DepartementId: 35
+        CategorieId: 5
         GeoCoordinateX: '42.783858'
         GeoCoordinateY: '3.021154'
         VideoPath: null
@@ -6019,6 +6463,8 @@
         Capacite: '434'
         PlanPath: null
         Vignette: uploads/etablissements/50c0774c3e555.jpeg
+        Related1: null
+        Related2: null
         Active: true
     224:
         Code: 122
@@ -6036,9 +6482,9 @@
         Fax: '0039 0586 687 811'
         OpeningDate: '2013-04-13 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 39
+        VilleId: 37
         DepartementId: null
-        CategorieId: 3
+        CategorieId: 5
         GeoCoordinateX: '43.29217342'
         GeoCoordinateY: '10.51079929'
         VideoPath: null
@@ -6046,6 +6492,8 @@
         Capacite: '300'
         PlanPath: uploads/etablissements/50c1b0567994e.jpeg
         Vignette: uploads/etablissements/50c076aa87a87.jpeg
+        Related1: null
+        Related2: null
         Active: true
     225:
         Code: 123
@@ -6063,9 +6511,9 @@
         Fax: '0039 0431 896 901'
         OpeningDate: '2013-05-01 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 36
+        VilleId: 55
         DepartementId: null
-        CategorieId: 2
+        CategorieId: 6
         GeoCoordinateX: '45.69481972'
         GeoCoordinateY: '13.45171809'
         VideoPath: null
@@ -6073,6 +6521,8 @@
         Capacite: '750'
         PlanPath: uploads/etablissements/50c0b0694d86f.jpeg
         Vignette: uploads/etablissements/50c076b862805.jpeg
+        Related1: null
+        Related2: null
         Active: true
     226:
         Code: 231
@@ -6090,9 +6540,9 @@
         Fax: '05 65 44 83 07'
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 145
-        DepartementId: 2
-        CategorieId: 2
+        VilleId: 146
+        DepartementId: 5
+        CategorieId: 6
         GeoCoordinateX: '44.66761515867915'
         GeoCoordinateY: '2.6811790466308594'
         VideoPath: null
@@ -6100,6 +6550,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: uploads/etablissements/50c07cac98a8a.jpeg
+        Related1: null
+        Related2: null
         Active: true
     227:
         Code: 125
@@ -6117,9 +6569,9 @@
         Fax: '05 59 26 53 94'
         OpeningDate: '2013-04-27 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 103
-        DepartementId: 17
-        CategorieId: 3
+        VilleId: 16
+        DepartementId: 34
+        CategorieId: 5
         GeoCoordinateX: '43.43388862'
         GeoCoordinateY: '-1.590839624'
         VideoPath: null
@@ -6127,6 +6579,8 @@
         Capacite: '269'
         PlanPath: uploads/etablissements/50c0b076d5281.jpeg
         Vignette: uploads/etablissements/50c076c4c14d2.jpeg
+        Related1: null
+        Related2: null
         Active: true
     228:
         Code: 245
@@ -6154,6 +6608,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     229:
         Code: 248
@@ -6171,9 +6627,9 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 165
+        VilleId: 110
         DepartementId: null
-        CategorieId: 2
+        CategorieId: 6
         GeoCoordinateX: '41.823889'
         GeoCoordinateY: '3.052222'
         VideoPath: null
@@ -6181,6 +6637,8 @@
         Capacite: null
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: true
     230:
         Code: 126
@@ -6198,9 +6656,9 @@
         Fax: '04 95 57 07 02'
         OpeningDate: '2013-06-01 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 42
-        DepartementId: 22
-        CategorieId: 4
+        VilleId: 54
+        DepartementId: 21
+        CategorieId: 3
         GeoCoordinateX: '41.98642663'
         GeoCoordinateY: '9.398889542'
         VideoPath: null
@@ -6208,6 +6666,8 @@
         Capacite: '59'
         PlanPath: uploads/etablissements/50c0b08c59d78.jpeg
         Vignette: uploads/etablissements/50c076d71697d.jpeg
+        Related1: null
+        Related2: null
         Active: true
     231:
         Code: 127
@@ -6225,9 +6685,9 @@
         Fax: '05 58 48 01 69'
         OpeningDate: '2013-05-01 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
-        VilleId: 101
-        DepartementId: 24
-        CategorieId: 1
+        VilleId: 90
+        DepartementId: 27
+        CategorieId: 7
         GeoCoordinateX: '43.79771568'
         GeoCoordinateY: '-1.400853395'
         VideoPath: null
@@ -6235,6 +6695,8 @@
         Capacite: '1546'
         PlanPath: uploads/etablissements/50c0b09bacdbb.jpeg
         Vignette: uploads/etablissements/50c076f4477fa.jpeg
+        Related1: null
+        Related2: null
         Active: true
     232:
         Code: 128
@@ -6252,9 +6714,9 @@
         Fax: '05 58 42 74 36'
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-15 00:00:00'
-        VilleId: 100
-        DepartementId: 24
-        CategorieId: 1
+        VilleId: 86
+        DepartementId: 27
+        CategorieId: 7
         GeoCoordinateX: '44.02413608'
         GeoCoordinateY: '-1.27867341'
         VideoPath: null
@@ -6262,6 +6724,8 @@
         Capacite: '450'
         PlanPath: null
         Vignette: uploads/etablissements/50c076fd9b7ba.jpeg
+        Related1: null
+        Related2: null
         Active: true
     233:
         Code: 129
@@ -6279,9 +6743,9 @@
         Fax: '0034 93 893 32 41'
         OpeningDate: '2013-04-06 00:00:00'
         ClosingDate: '2013-09-29 00:00:00'
-        VilleId: 32
+        VilleId: 167
         DepartementId: null
-        CategorieId: 2
+        CategorieId: 6
         GeoCoordinateX: '41.23213011'
         GeoCoordinateY: '1.690725088'
         VideoPath: null
@@ -6289,6 +6753,8 @@
         Capacite: '1413'
         PlanPath: uploads/etablissements/50c0b0b4c3335.jpeg
         Vignette: uploads/etablissements/50c07709abbeb.jpeg
+        Related1: null
+        Related2: null
         Active: true
     234:
         Code: 997
@@ -6316,6 +6782,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     235:
         Code: 130
@@ -6333,9 +6801,9 @@
         Fax: '02 51 59 35 28'
         OpeningDate: '2013-04-12 00:00:00'
         ClosingDate: '2013-09-14 00:00:00'
-        VilleId: 47
+        VilleId: 131
         DepartementId: 39
-        CategorieId: 2
+        CategorieId: 6
         GeoCoordinateX: '46.7812729'
         GeoCoordinateY: '-2.017439604'
         VideoPath: null
@@ -6343,6 +6811,8 @@
         Capacite: '278'
         PlanPath: uploads/etablissements/50c0b0bff3feb.jpeg
         Vignette: uploads/etablissements/50c077161f869.jpeg
+        Related1: null
+        Related2: null
         Active: true
     236:
         Code: 7
@@ -6362,7 +6832,7 @@
         ClosingDate: '2012-09-09 00:00:00'
         VilleId: null
         DepartementId: null
-        CategorieId: 2
+        CategorieId: 6
         GeoCoordinateX: '43.71691503'
         GeoCoordinateY: '4.167069197'
         VideoPath: null
@@ -6370,6 +6840,8 @@
         Capacite: '150'
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     237:
         Code: 180
@@ -6387,7 +6859,7 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 155
+        VilleId: 29
         DepartementId: null
         CategorieId: null
         GeoCoordinateX: '43.0925'
@@ -6397,6 +6869,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: true
     238:
         Code: 15
@@ -6424,6 +6898,8 @@
         Capacite: '171'
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     239:
         Code: 18
@@ -6451,6 +6927,8 @@
         Capacite: '150'
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     240:
         Code: 188
@@ -6468,7 +6946,7 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 38
+        VilleId: 85
         DepartementId: null
         CategorieId: null
         GeoCoordinateX: ''
@@ -6478,6 +6956,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: true
     241:
         Code: 193
@@ -6495,9 +6975,9 @@
         Fax: ''
         OpeningDate: '2012-10-01 00:00:00'
         ClosingDate: '2014-01-24 00:00:00'
-        VilleId: 26
+        VilleId: 106
         DepartementId: null
-        CategorieId: 1
+        CategorieId: 7
         GeoCoordinateX: ''
         GeoCoordinateY: ''
         VideoPath: null
@@ -6505,6 +6985,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: true
     242:
         Code: 66
@@ -6524,7 +7006,7 @@
         ClosingDate: '2012-09-15 00:00:00'
         VilleId: null
         DepartementId: null
-        CategorieId: 2
+        CategorieId: 6
         GeoCoordinateX: '43.45307856'
         GeoCoordinateY: '-1.573544741'
         VideoPath: null
@@ -6532,6 +7014,8 @@
         Capacite: '374'
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     243:
         Code: 73
@@ -6559,6 +7043,8 @@
         Capacite: '92'
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     244:
         Code: 78
@@ -6586,6 +7072,8 @@
         Capacite: '285'
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     245:
         Code: 121
@@ -6605,7 +7093,7 @@
         ClosingDate: '2012-09-16 00:00:00'
         VilleId: null
         DepartementId: null
-        CategorieId: 2
+        CategorieId: 6
         GeoCoordinateX: '45.00800533'
         GeoCoordinateY: '-1.112129688'
         VideoPath: null
@@ -6613,6 +7101,8 @@
         Capacite: '476'
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     246:
         Code: 998
@@ -6640,6 +7130,8 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false
     247:
         Code: 999
@@ -6667,4 +7159,6 @@
         Capacite: ''
         PlanPath: null
         Vignette: images/vacancesdirectes/common/images/search-default.jpg
+        Related1: null
+        Related2: null
         Active: false

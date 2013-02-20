@@ -1,4 +1,4 @@
 \Cungfoo\Model\BonPlanCategorie:
     1:
-        Active: true
         SortableRank: 1
+        Active: true

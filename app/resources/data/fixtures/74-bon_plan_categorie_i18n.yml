@@ -6,6 +6,10 @@
         Slug: n-a
         Subtitle: null
         Description: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     1_en:
         Id: 1
@@ -14,6 +18,10 @@
         Slug: null
         Subtitle: null
         Description: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     1_fr:
         Id: 1
@@ -22,6 +30,10 @@
         Slug: early-booking
         Subtitle: 'Réservez tôt et profitez des promos'
         Description: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     1_nl:
         Id: 1
@@ -30,4 +42,8 @@
         Slug: null
         Subtitle: null
         Description: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true

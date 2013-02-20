@@ -1,0 +1,55 @@
+\Cungfoo\Model\PersonnageI18n:
+    1_de:
+        Id: 1
+        Locale: de
+        Prenom: 'Roger DE'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    1_en:
+        Id: 1
+        Locale: en
+        Prenom: 'Roger EN'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    1_fr:
+        Id: 1
+        Locale: fr
+        Prenom: Roger
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    2_de:
+        Id: 2
+        Locale: de
+        Prenom: 'Amélie DE'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    2_en:
+        Id: 2
+        Locale: en
+        Prenom: 'Amélie EN'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    2_fr:
+        Id: 2
+        Locale: fr
+        Prenom: Amélie
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true

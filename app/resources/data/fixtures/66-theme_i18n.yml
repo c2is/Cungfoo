@@ -6,6 +6,10 @@
         Slug: n-a
         Introduction: null
         Description: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     1_en:
         Id: 1
@@ -14,6 +18,10 @@
         Slug: null
         Introduction: null
         Description: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     1_fr:
         Id: 1
@@ -22,6 +30,10 @@
         Slug: aquatiques
         Introduction: 'Piscine, mer, jacuzzi... Jettez vous à l''eau !'
         Description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed ante non elit tincidunt imperdiet. Suspendisse at mauris purus. Nunc egestas fringilla sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris lobortis purus eu libero consectetur in malesuada massa eleifend. Duis gravida laoreet lectus, a porta velit posuere a. Fusce hendrerit tristique magna eu convallis. Pellentesque ut ornare est. Nullam non odio vitae turpis ullamcorper tempus. Suspendisse ut dolor urna, eget sagittis tortor. Aliquam eget diam tortor.'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     1_nl:
         Id: 1
@@ -30,4 +42,8 @@
         Slug: null
         Introduction: null
         Description: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true

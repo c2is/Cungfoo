@@ -1,11 +1,8 @@
-\Cungfoo\Model\PaysI18n:
+\Cungfoo\Model\TagI18n:
     1_de:
         Id: 1
         Locale: de
-        Slug: spanien
-        Name: Spanien
-        Introduction: null
-        Description: null
+        Name: Camping
         SeoTitle: null
         SeoDescription: null
         SeoH1: null
@@ -14,10 +11,7 @@
     1_en:
         Id: 1
         Locale: en
-        Slug: espagne
-        Name: Espagne
-        Introduction: null
-        Description: null
+        Name: Camping
         SeoTitle: null
         SeoDescription: null
         SeoH1: null
@@ -26,22 +20,7 @@
     1_fr:
         Id: 1
         Locale: fr
-        Slug: espagne
-        Name: Espagne
-        Introduction: null
-        Description: null
-        SeoTitle: null
-        SeoDescription: null
-        SeoH1: null
-        SeoKeywords: null
-        ActiveLocale: true
-    1_nl:
-        Id: 1
-        Locale: nl
-        Slug: espagne
-        Name: Espagne
-        Introduction: null
-        Description: null
+        Name: Camping
         SeoTitle: null
         SeoDescription: null
         SeoH1: null
@@ -50,10 +29,7 @@
     2_de:
         Id: 2
         Locale: de
-        Slug: frankreich
-        Name: Frankreich
-        Introduction: null
-        Description: null
+        Name: Locations
         SeoTitle: null
         SeoDescription: null
         SeoH1: null
@@ -62,10 +38,7 @@
     2_en:
         Id: 2
         Locale: en
-        Slug: france
-        Name: France
-        Introduction: null
-        Description: null
+        Name: Locations
         SeoTitle: null
         SeoDescription: null
         SeoH1: null
@@ -74,22 +47,7 @@
     2_fr:
         Id: 2
         Locale: fr
-        Slug: france
-        Name: France
-        Introduction: null
-        Description: null
-        SeoTitle: null
-        SeoDescription: null
-        SeoH1: null
-        SeoKeywords: null
-        ActiveLocale: true
-    2_nl:
-        Id: 2
-        Locale: nl
-        Slug: france
-        Name: France
-        Introduction: null
-        Description: null
+        Name: Locations
         SeoTitle: null
         SeoDescription: null
         SeoH1: null
@@ -98,10 +56,7 @@
     3_de:
         Id: 3
         Locale: de
-        Slug: italien
-        Name: Italien
-        Introduction: null
-        Description: null
+        Name: Activités
         SeoTitle: null
         SeoDescription: null
         SeoH1: null
@@ -110,10 +65,7 @@
     3_en:
         Id: 3
         Locale: en
-        Slug: italie
-        Name: Italie
-        Introduction: null
-        Description: null
+        Name: Activités
         SeoTitle: null
         SeoDescription: null
         SeoH1: null
@@ -122,22 +74,34 @@
     3_fr:
         Id: 3
         Locale: fr
-        Slug: italie
-        Name: Italie
-        Introduction: null
-        Description: null
+        Name: Activités
         SeoTitle: null
         SeoDescription: null
         SeoH1: null
         SeoKeywords: null
         ActiveLocale: true
-    3_nl:
-        Id: 3
-        Locale: nl
-        Slug: italie
-        Name: Italie
-        Introduction: null
-        Description: null
+    4_de:
+        Id: 4
+        Locale: de
+        Name: Régions
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    4_en:
+        Id: 4
+        Locale: en
+        Name: Régions
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    4_fr:
+        Id: 4
+        Locale: fr
+        Name: Régions
         SeoTitle: null
         SeoDescription: null
         SeoH1: null
