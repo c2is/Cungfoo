@@ -70,8 +70,10 @@ class EventTableMap extends TableMap
     public function buildRelations()
     {
         $this->addRelation('EtablissementEvent', 'Cungfoo\\Model\\EtablissementEvent', RelationMap::ONE_TO_MANY, array('id' => 'event_id', ), 'CASCADE', null, 'EtablissementEvents');
+        $this->addRelation('RegionEvent', 'Cungfoo\\Model\\RegionEvent', RelationMap::ONE_TO_MANY, array('id' => 'event_id', ), 'CASCADE', null, 'RegionEvents');
         $this->addRelation('EventI18n', 'Cungfoo\\Model\\EventI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'EventI18ns');
         $this->addRelation('Etablissement', 'Cungfoo\\Model\\Etablissement', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'Etablissements');
+        $this->addRelation('Region', 'Cungfoo\\Model\\Region', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'Regions');
     } // buildRelations()
 
     /**

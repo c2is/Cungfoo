@@ -235,6 +235,32 @@
         </foreign-key>
     </table>
 
+    <table name="region_point_interet" isCrossRef="true">
+        <column name="region_id" type="integer" primaryKey="true"/>
+        <column name="point_interet_id" type="integer" primaryKey="true"/>
+
+        <foreign-key foreignTable="region" onDelete="CASCADE">
+            <reference local="region_id" foreign="id"/>
+        </foreign-key>
+
+        <foreign-key foreignTable="point_interet" onDelete="CASCADE">
+            <reference local="point_interet_id" foreign="id"/>
+        </foreign-key>
+    </table>
+
+    <table name="region_event" isCrossRef="true">
+        <column name="region_id" type="integer" primaryKey="true"/>
+        <column name="event_id" type="integer" primaryKey="true"/>
+
+        <foreign-key foreignTable="region" onDelete="CASCADE">
+            <reference local="region_id" foreign="id"/>
+        </foreign-key>
+
+        <foreign-key foreignTable="event" onDelete="CASCADE">
+            <reference local="event_id" foreign="id"/>
+        </foreign-key>
+    </table>
+
     <table name="type_hebergement">
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="code" type="varchar" required="true" />
