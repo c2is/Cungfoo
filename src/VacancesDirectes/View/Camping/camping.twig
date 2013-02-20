@@ -325,7 +325,7 @@
                     <p>{{ event.address }}<br>
                         {{ event.address2 }}<br>
                     <span>{{ event.zipcode }} {{ event.city }}</span><br>
-                        {% if poi.distanceForEtablissement(etab) > 0 %}{{ "fiche.distance_camping" | trans }} {{ (event.distanceForEtablissement(etab) / 1000) | number_format(1, ',', ' ') }} {{ "fiche.km" | trans }}<br>{% endif %}
+                        {% if event.distanceForEtablissement(etab) > 0 %}{{ "fiche.distance_camping" | trans }} {{ (event.distanceForEtablissement(etab) / 1000) | number_format(1, ',', ' ') }} {{ "fiche.km" | trans }}<br>{% endif %}
                         <a href="{{ path('event', {slug: event.slug}) }}" class="bt sombre left" title="{{ "general.en_savoir_plus" | trans }}" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'Contenu_-_A-Proximite', 'Clic_-_Detail-Agenda-culturel-et-sorties']);">{{ "general.en_savoir_plus" | trans }}</a>
                     </p>
                 </div>
