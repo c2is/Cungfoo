@@ -35,7 +35,7 @@ class UpdateCommand extends Command
             if ($diff)
             {
                 $output->writeln(sprintf('<comment>Lignes ajoutees</comment> : <info>%s</info>.', implode(', ', array_keys($diff))));
-                $actualTranslations[$addedTranslation] = $diff;
+                $actualTranslations += $diff;
 
                 file_put_contents(sprintf(self::LOCALES_PATTERN, $this->getSilexApplication()['config']->get('root_dir'), $locale, ''), Yaml::dump($actualTranslations));
             }
