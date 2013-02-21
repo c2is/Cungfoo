@@ -96,6 +96,8 @@ crud.tab.medias: Médias
 crud.tab.parameters: Paramètres
 crud.tab.resalys: "Resalys"
 
+crud.tooltip.resalys: "Données Resalys"
+
 metadataI18ns: ""
 metadata_i18n.title: "Titre"
 metadata_i18n.subtitle: "Sous titre"

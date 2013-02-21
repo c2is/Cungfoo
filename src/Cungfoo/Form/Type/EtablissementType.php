@@ -33,102 +33,162 @@ class EtablissementType extends BaseEtablissementType
 
     public function getCodeOptions()
     {
-        return array_merge(parent::getCodeOptions(), array('disabled' => true));
+        return array_merge(parent::getCodeOptions(), array('read_only' => true, 'attr' => array(
+            'rel'   => "tooltip",
+            'title' => "crud.tooltip.resalys",
+        )));
     }
 
     public function getNameOptions()
     {
-        return array_merge(parent::getNameOptions(), array('disabled' => true));
+        return array_merge(parent::getNameOptions(), array('read_only' => true, 'attr' => array(
+            'rel'   => "tooltip",
+            'title' => "crud.tooltip.resalys",
+        )));
     }
 
     public function getVilleOptions()
     {
-        return array_merge(parent::getVilleOptions(), array('disabled' => true));
+        return array_merge(parent::getVilleOptions(), array('read_only' => true, 'attr' => array(
+            'rel'   => "tooltip",
+            'title' => "crud.tooltip.resalys",
+        )));
     }
 
     public function getDepartementOptions()
     {
-        return array_merge(parent::getDepartementOptions(), array('disabled' => true));
+        return array_merge(parent::getDepartementOptions(), array('read_only' => true, 'attr' => array(
+            'rel'   => "tooltip",
+            'title' => "crud.tooltip.resalys",
+        )));
     }
 
     public function getCategorieOptions()
     {
-        return array_merge(parent::getCategorieOptions(), array('disabled' => true));
+        return array_merge(parent::getCategorieOptions(), array('read_only' => true, 'attr' => array(
+            'rel'   => "tooltip",
+            'title' => "crud.tooltip.resalys",
+        )));
     }
 
     public function getGeoCoordinateXOptions()
     {
-        return array_merge(parent::getGeoCoordinateXOptions(), array('disabled' => true));
+        return array_merge(parent::getGeoCoordinateXOptions(), array('read_only' => true, 'attr' => array(
+            'rel'   => "tooltip",
+            'title' => "crud.tooltip.resalys",
+        )));
     }
 
     public function getGeoCoordinateYOptions()
     {
-        return array_merge(parent::getGeoCoordinateYOptions(), array('disabled' => true));
+        return array_merge(parent::getGeoCoordinateYOptions(), array('read_only' => true, 'attr' => array(
+            'rel'   => "tooltip",
+            'title' => "crud.tooltip.resalys",
+        )));
     }
 
     public function getCapaciteOptions()
     {
-        return array_merge(parent::getCapaciteOptions(), array('disabled' => true));
+        return array_merge(parent::getCapaciteOptions(), array('read_only' => true, 'attr' => array(
+            'rel'   => "tooltip",
+            'title' => "crud.tooltip.resalys",
+        )));
     }
 
     public function getAddress1Options()
     {
-        return array_merge(parent::getAddress1Options(), array('disabled' => true));
+        return array_merge(parent::getAddress1Options(), array('read_only' => true, 'attr' => array(
+            'rel'   => "tooltip",
+            'title' => "crud.tooltip.resalys",
+        )));
     }
 
     public function getAddress2Options()
     {
-        return array_merge(parent::getAddress2Options(), array('disabled' => true));
+        return array_merge(parent::getAddress2Options(), array('read_only' => true, 'attr' => array(
+            'rel'   => "tooltip",
+            'title' => "crud.tooltip.resalys",
+        )));
     }
 
     public function getCityOptions()
     {
-        return array_merge(parent::getCityOptions(), array('disabled' => true));
+        return array_merge(parent::getCityOptions(), array('read_only' => true, 'attr' => array(
+            'rel'   => "tooltip",
+            'title' => "crud.tooltip.resalys",
+        )));
     }
 
     public function getZipOptions()
     {
-        return array_merge(parent::getZipOptions(), array('disabled' => true));
+        return array_merge(parent::getZipOptions(), array('read_only' => true, 'attr' => array(
+            'rel'   => "tooltip",
+            'title' => "crud.tooltip.resalys",
+        )));
     }
 
     public function getCountryOptions()
     {
-        return array_merge(parent::getCountryOptions(), array('disabled' => true));
+        return array_merge(parent::getCountryOptions(), array('read_only' => true, 'attr' => array(
+            'rel'   => "tooltip",
+            'title' => "crud.tooltip.resalys",
+        )));
     }
 
     public function getCountryCodeOptions()
     {
-        return array_merge(parent::getCountryCodeOptions(), array('disabled' => true));
+        return array_merge(parent::getCountryCodeOptions(), array('read_only' => true, 'attr' => array(
+            'rel'   => "tooltip",
+            'title' => "crud.tooltip.resalys",
+        )));
     }
 
     public function getMailOptions()
     {
-        return array_merge(parent::getMailOptions(), array('disabled' => true));
+        return array_merge(parent::getMailOptions(), array('read_only' => true, 'attr' => array(
+            'rel'   => "tooltip",
+            'title' => "crud.tooltip.resalys",
+        )));
     }
 
     public function getPhone1Options()
     {
-        return array_merge(parent::getPhone1Options(), array('disabled' => true));
+        return array_merge(parent::getPhone1Options(), array('read_only' => true, 'attr' => array(
+            'rel'   => "tooltip",
+            'title' => "crud.tooltip.resalys",
+        )));
     }
 
     public function getPhone2Options()
     {
-        return array_merge(parent::getPhone2Options(), array('disabled' => true));
+        return array_merge(parent::getPhone2Options(), array('read_only' => true, 'attr' => array(
+            'rel'   => "tooltip",
+            'title' => "crud.tooltip.resalys",
+        )));
     }
 
     public function getFaxOptions()
     {
-        return array_merge(parent::getFaxOptions(), array('disabled' => true));
+        return array_merge(parent::getFaxOptions(), array('read_only' => true, 'attr' => array(
+            'rel'   => "tooltip",
+            'title' => "crud.tooltip.resalys",
+        )));
     }
 
     public function getClosingDateOptions()
     {
-        return array_merge(parent::getClosingDateOptions(), array('disabled' => true));
+        return array_merge(parent::getClosingDateOptions(), array('read_only' => true, 'attr' => array(
+            'rel'   => "tooltip",
+            'title' => "crud.tooltip.resalys",
+        )));
     }
 
     public function getOpeningDateOptions()
     {
-        return array_merge(parent::getOpeningDateOptions(), array('disabled' => true));
+        return array_merge(parent::getOpeningDateOptions(), array('read_only' => true, 'attr' => array(
+            'rel'   => "tooltip",
+            'title' => "crud.tooltip.resalys",
+        )));
     }
 
     /**

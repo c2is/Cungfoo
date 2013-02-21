@@ -33,27 +33,42 @@ class TypeHebergementType extends BaseTypeHebergementType
 
     public function getCodeOptions()
     {
-        return array_merge(parent::getCodeOptions(), array('disabled' => true));
+        return array_merge(parent::getCodeOptions(), array('read_only' => true, 'attr' => array(
+            'rel'   => "tooltip",
+            'title' => "crud.tooltip.resalys",
+        )));
     }
 
     public function getNameOptions()
     {
-        return array_merge(parent::getNameOptions(), array('disabled' => true));
+        return array_merge(parent::getNameOptions(), array('read_only' => true, 'attr' => array(
+            'rel'   => "tooltip",
+            'title' => "crud.tooltip.resalys",
+        )));
     }
 
     public function getSlugOptions()
     {
-        return array_merge(parent::getSlugOptions(), array('disabled' => true));
+        return array_merge(parent::getSlugOptions(), array('read_only' => true, 'attr' => array(
+            'rel'   => "tooltip",
+            'title' => "crud.tooltip.resalys",
+        )));
     }
 
     public function getNombrePlaceOptions()
     {
-        return array_merge(parent::getNombrePlaceOptions(), array('disabled' => true));
+        return array_merge(parent::getNombrePlaceOptions(), array('read_only' => true, 'attr' => array(
+            'rel'   => "tooltip",
+            'title' => "crud.tooltip.resalys",
+        )));
     }
 
     public function getCategoryTypeHebergementOptions()
     {
-        return array_merge(parent::getCategoryTypeHebergementOptions(), array('disabled' => true));
+        return array_merge(parent::getCategoryTypeHebergementOptions(), array('read_only' => true, 'attr' => array(
+            'rel'   => "tooltip",
+            'title' => "crud.tooltip.resalys",
+        )));
     }
 
     /**

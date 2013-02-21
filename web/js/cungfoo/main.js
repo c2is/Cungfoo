@@ -38,6 +38,10 @@ $(function() {
 
     $('#transGroup .nav-tabs a[href="#' + locale + '"]').tab('show');
 
+    $("select[readonly=readonly] option").not(":selected").attr("disabled", "disabled");
+
+    $("[rel='tooltip']").tooltip({placement: 'right', html: true});
+
     //via http://ivaynberg.github.com/select2/#documentation
     //$("select[multiple='multiple']").select2({
     //    placeholder: "Select a State",

@@ -33,22 +33,34 @@ class VilleType extends BaseVilleType
 
     public function getCodeOptions()
     {
-        return array_merge(parent::getCodeOptions(), array('disabled' => true));
+        return array_merge(parent::getCodeOptions(), array('read_only' => true, 'attr' => array(
+            'rel'   => "tooltip",
+            'title' => "crud.tooltip.resalys",
+        )));
     }
 
     public function getNameOptions()
     {
-        return array_merge(parent::getNameOptions(), array('disabled' => true));
+        return array_merge(parent::getNameOptions(), array('read_only' => true, 'attr' => array(
+            'rel'   => "tooltip",
+            'title' => "crud.tooltip.resalys",
+        )));
     }
 
     public function getRegionOptions()
     {
-        return array_merge(parent::getRegionOptions(), array('disabled' => true));
+        return array_merge(parent::getRegionOptions(), array('read_only' => true, 'attr' => array(
+            'rel'   => "tooltip",
+            'title' => "crud.tooltip.resalys",
+        )));
     }
 
     public function getSlugOptions()
     {
-        return array_merge(parent::getSlugOptions(), array('disabled' => true));
+        return array_merge(parent::getSlugOptions(), array('read_only' => true, 'attr' => array(
+            'rel'   => "tooltip",
+            'title' => "crud.tooltip.resalys",
+        )));
     }
 
     /**
