@@ -240,6 +240,10 @@ class BaseDemandeAnnulationType extends AppAwareType
             'constraints' => array(
                         new Assert\NotBlank(),
                     ),
+            'choices' => array(
+                        0 => 'demande_annulation.sinistre_nature.annulation',
+                        1 => 'demande_annulation.sinistre_nature.interruption',
+                    ),
         );
     }
 
@@ -255,6 +259,11 @@ class BaseDemandeAnnulationType extends AppAwareType
             'label' => 'demande_annulation.sinistre_suite',
             'constraints' => array(
                         new Assert\NotBlank(),
+                    ),
+            'choices' => array(
+                        0 => 'demande_annulation.sinistre_suite.maladie',
+                        1 => 'demande_annulation.sinistre_suite.accident',
+                        2 => 'demande_annulation.sinistre_suite.autre',
                     ),
         );
     }
