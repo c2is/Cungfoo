@@ -79,9 +79,26 @@ class PointInteretPeer extends BasePointInteretPeer
 
     static public function getCountForEtablissement(Etablissement $etab)
     {
-        return PointInteretQuery::create()
-            ->useEtablissementPointInteretQuery()
-                ->filterByEtablissementId($etab->getId())
+        if(self::getLocale() == 'de')
+        {
+            $query = PointInteretQuery::create()
+                ->useRegionPointInteretQuery()
+                    ->filterByRegionId($etab->getRegion()->getId())
+                ->endUse()
+            ;
+        }
+        else
+        {
+            $query = PointInteretQuery::create()
+                ->useEtablissementPointInteretQuery()
+                    ->filterByEtablissementId($etab->getId())
+                ->endUse()
+            ;
+        }
+
+        return $query
+            ->useI18nQuery(self::getLocale())
+                ->filterByActiveLocale(true)
             ->endUse()
             ->filterByActive(true)
             ->count()
