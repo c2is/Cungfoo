@@ -100,7 +100,12 @@ class GenerateCommand extends BaseCommand
     protected function generateEtablissements(\PropelPDO $con)
     {
         $utils = new \Cungfoo\Lib\Utils();
-        $etablissements = \Cungfoo\Model\EtablissementQuery::create()->find($con);
+        $etablissements = \Cungfoo\Model\EtablissementQuery::create()
+            ->filterBySlug(null, \Criteria::ISNULL)
+            ->_or()
+            ->filterBySlug("")
+            ->find($con)
+        ;
 
         foreach ($etablissements as $etablissement)
         {
@@ -117,6 +122,11 @@ class GenerateCommand extends BaseCommand
         foreach ($languages as $language)
         {
             $objects = $query
+                ->useI18nQuery($language)
+                    ->filterBySlug(null, \Criteria::ISNULL)
+                    ->_or()
+                    ->filterBySlug("")
+                ->endUSe()
                 ->find($con)
             ;
 
@@ -139,6 +149,11 @@ class GenerateCommand extends BaseCommand
         foreach ($languages as $language)
         {
             $objects = $query
+                ->useI18nQuery($language)
+                    ->filterBySlug(null, \Criteria::ISNULL)
+                    ->_or()
+                    ->filterBySlug("")
+                ->endUSe()
                 ->find($con)
             ;
 
@@ -162,6 +177,11 @@ class GenerateCommand extends BaseCommand
         foreach ($languages as $language)
         {
             $objects = $query
+                ->useI18nQuery($language)
+                    ->filterBySlug(null, \Criteria::ISNULL)
+                    ->_or()
+                    ->filterBySlug("")
+                ->endUSe()
                 ->find($con)
             ;
 
@@ -184,6 +204,11 @@ class GenerateCommand extends BaseCommand
         foreach ($languages as $language)
         {
             $objects = $query
+                ->useI18nQuery($language)
+                    ->filterBySlug(null, \Criteria::ISNULL)
+                    ->_or()
+                    ->filterBySlug("")
+                ->endUSe()
                 ->find($con)
             ;
 
