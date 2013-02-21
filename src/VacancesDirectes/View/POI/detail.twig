@@ -2,13 +2,13 @@
 
 {% block title %}
 {% spaceless %}
-    {{ "seo.title.poi" | trans ({'%poi%': poi.name, '%ville%': poi.city})}}
+    {{ poi.seoTitle | trans ({'%poi%': poi.name, '%ville%': poi.city})}}
 {% endspaceless %}
 {% endblock %}
 
 {% block metaDescription %}
 {% spaceless %}
-    {{ "seo.meta.poi" | trans  ({'%poi%': poi.name, '%ville%': poi.city})}}
+    {{ poi.seoDescription | trans  ({'%poi%': poi.name, '%ville%': poi.city})}}
 {% endspaceless %}
 {% endblock %}
 

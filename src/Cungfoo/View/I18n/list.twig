@@ -22,7 +22,8 @@
                             {% set translationsLocale = attribute(translations,locale) %}
                             <div class="input-prepend">
                                 <span class="add-on">{{ locale }}</span>
-                                <input class="span9" type="text" id="{{ locale}}_{{ key }}" name="{{ locale}}[{{ key }}]" value="{% if key in translationsLocale|keys %}{{ attribute(translationsLocale,key) }}{% endif %}" />
+                                <span class="add-on enableField"><i class="icon-edit"></i></span>
+                                <input class="span9" type="text" id="{{ locale}}_{{ key }}" name="{{ locale }}[{{ key }}]" value="{% if key in translationsLocale | keys %}{{ attribute(translationsLocale,key) }}{% endif %}" disabled="disabled" />
                             </div>
                         {% endfor %}
                     </div>
@@ -39,6 +40,21 @@
         {{ block('formAction') }}
     </form>
 </div>
+{% endblock %}
+
+{% block javascripts %}{{ parent() }}
+<script language="javascript">
+    $(document).ready(function() {
+        console.log($('#crudGroupContent .enableField'));
+        $('#crudGroupContent .enableField').each(function() {
+            console.log($(this));
+            $(this).bind('click', function() {
+                $(this).next('input').removeAttr('disabled');
+                $(this).hide();
+            });
+        });
+    });
+</script>
 {% endblock %}
 
 {% block formAction %}

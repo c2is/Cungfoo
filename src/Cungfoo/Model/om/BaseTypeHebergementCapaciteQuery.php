@@ -28,16 +28,16 @@ use Cungfoo\Model\TypeHebergementCapaciteQuery;
  * @method TypeHebergementCapaciteQuery orderByImagePage($order = Criteria::ASC) Order by the image_page column
  * @method TypeHebergementCapaciteQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method TypeHebergementCapaciteQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
- * @method TypeHebergementCapaciteQuery orderByActive($order = Criteria::ASC) Order by the active column
  * @method TypeHebergementCapaciteQuery orderBySortableRank($order = Criteria::ASC) Order by the sortable_rank column
+ * @method TypeHebergementCapaciteQuery orderByActive($order = Criteria::ASC) Order by the active column
  *
  * @method TypeHebergementCapaciteQuery groupById() Group by the id column
  * @method TypeHebergementCapaciteQuery groupByImageMenu() Group by the image_menu column
  * @method TypeHebergementCapaciteQuery groupByImagePage() Group by the image_page column
  * @method TypeHebergementCapaciteQuery groupByCreatedAt() Group by the created_at column
  * @method TypeHebergementCapaciteQuery groupByUpdatedAt() Group by the updated_at column
- * @method TypeHebergementCapaciteQuery groupByActive() Group by the active column
  * @method TypeHebergementCapaciteQuery groupBySortableRank() Group by the sortable_rank column
+ * @method TypeHebergementCapaciteQuery groupByActive() Group by the active column
  *
  * @method TypeHebergementCapaciteQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method TypeHebergementCapaciteQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -58,16 +58,16 @@ use Cungfoo\Model\TypeHebergementCapaciteQuery;
  * @method TypeHebergementCapacite findOneByImagePage(string $image_page) Return the first TypeHebergementCapacite filtered by the image_page column
  * @method TypeHebergementCapacite findOneByCreatedAt(string $created_at) Return the first TypeHebergementCapacite filtered by the created_at column
  * @method TypeHebergementCapacite findOneByUpdatedAt(string $updated_at) Return the first TypeHebergementCapacite filtered by the updated_at column
- * @method TypeHebergementCapacite findOneByActive(boolean $active) Return the first TypeHebergementCapacite filtered by the active column
  * @method TypeHebergementCapacite findOneBySortableRank(int $sortable_rank) Return the first TypeHebergementCapacite filtered by the sortable_rank column
+ * @method TypeHebergementCapacite findOneByActive(boolean $active) Return the first TypeHebergementCapacite filtered by the active column
  *
  * @method array findById(int $id) Return TypeHebergementCapacite objects filtered by the id column
  * @method array findByImageMenu(string $image_menu) Return TypeHebergementCapacite objects filtered by the image_menu column
  * @method array findByImagePage(string $image_page) Return TypeHebergementCapacite objects filtered by the image_page column
  * @method array findByCreatedAt(string $created_at) Return TypeHebergementCapacite objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return TypeHebergementCapacite objects filtered by the updated_at column
- * @method array findByActive(boolean $active) Return TypeHebergementCapacite objects filtered by the active column
  * @method array findBySortableRank(int $sortable_rank) Return TypeHebergementCapacite objects filtered by the sortable_rank column
+ * @method array findByActive(boolean $active) Return TypeHebergementCapacite objects filtered by the active column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -171,7 +171,7 @@ abstract class BaseTypeHebergementCapaciteQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `image_menu`, `image_page`, `created_at`, `updated_at`, `active`, `sortable_rank` FROM `type_hebergement_capacite` WHERE `id` = :p0';
+        $sql = 'SELECT `id`, `image_menu`, `image_page`, `created_at`, `updated_at`, `sortable_rank`, `active` FROM `type_hebergement_capacite` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -432,33 +432,6 @@ abstract class BaseTypeHebergementCapaciteQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query on the active column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByActive(true); // WHERE active = true
-     * $query->filterByActive('yes'); // WHERE active = true
-     * </code>
-     *
-     * @param     boolean|string $active The value to use as filter.
-     *              Non-boolean arguments are converted using the following rules:
-     *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
-     *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
-     *              Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return TypeHebergementCapaciteQuery The current query, for fluid interface
-     */
-    public function filterByActive($active = null, $comparison = null)
-    {
-        if (is_string($active)) {
-            $active = in_array(strtolower($active), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
-        }
-
-        return $this->addUsingAlias(TypeHebergementCapacitePeer::ACTIVE, $active, $comparison);
-    }
-
-    /**
      * Filter the query on the sortable_rank column
      *
      * Example usage:
@@ -497,6 +470,33 @@ abstract class BaseTypeHebergementCapaciteQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(TypeHebergementCapacitePeer::SORTABLE_RANK, $sortableRank, $comparison);
+    }
+
+    /**
+     * Filter the query on the active column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByActive(true); // WHERE active = true
+     * $query->filterByActive('yes'); // WHERE active = true
+     * </code>
+     *
+     * @param     boolean|string $active The value to use as filter.
+     *              Non-boolean arguments are converted using the following rules:
+     *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     *              Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return TypeHebergementCapaciteQuery The current query, for fluid interface
+     */
+    public function filterByActive($active = null, $comparison = null)
+    {
+        if (is_string($active)) {
+            $active = in_array(strtolower($active), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+        }
+
+        return $this->addUsingAlias(TypeHebergementCapacitePeer::ACTIVE, $active, $comparison);
     }
 
     /**
@@ -744,6 +744,8 @@ abstract class BaseTypeHebergementCapaciteQuery extends ModelCriteria
             ->filterByActive(true)
             ->useI18nQuery($locale, 'i18n_locale')
                 ->filterByActiveLocale(true)
+                    ->_or()
+                ->filterByActiveLocale(null, Criteria::ISNULL)
             ->endUse()
         ;
 

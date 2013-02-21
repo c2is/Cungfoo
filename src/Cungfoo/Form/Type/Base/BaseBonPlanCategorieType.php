@@ -34,19 +34,6 @@ class BaseBonPlanCategorieType extends AppAwareType
         );
     }
 
-    public function getActiveType()
-    {
-        return 'checkbox';
-    }
-
-    public function getActiveOptions()
-    {
-        return array(
-            'required' => false,
-            'label' => 'bon_plan_categorie.active',
-        );
-    }
-
     public function getSortableRankType()
     {
         return 'integer';
@@ -57,6 +44,19 @@ class BaseBonPlanCategorieType extends AppAwareType
         return array(
             'required' => false,
             'label' => 'bon_plan_categorie.sortable_rank',
+        );
+    }
+
+    public function getActiveType()
+    {
+        return 'checkbox';
+    }
+
+    public function getActiveOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'bon_plan_categorie.active',
         );
     }
 
@@ -127,6 +127,58 @@ class BaseBonPlanCategorieType extends AppAwareType
         );
     }
 
+    public function getSeoTitleType()
+    {
+        return 'text';
+    }
+
+    public function getSeoTitleOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'bon_plan_categorie_i18n.seo_title',
+        );
+    }
+
+    public function getSeoDescriptionType()
+    {
+        return 'textarea';
+    }
+
+    public function getSeoDescriptionOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'bon_plan_categorie_i18n.seo_description',
+        );
+    }
+
+    public function getSeoH1Type()
+    {
+        return 'text';
+    }
+
+    public function getSeoH1Options()
+    {
+        return array(
+            'required' => false,
+            'label' => 'bon_plan_categorie_i18n.seo_h1',
+        );
+    }
+
+    public function getSeoKeywordsType()
+    {
+        return 'textarea';
+    }
+
+    public function getSeoKeywordsOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'bon_plan_categorie_i18n.seo_keywords',
+        );
+    }
+
     public function getActiveLocaleType()
     {
         return 'checkbox';
@@ -146,8 +198,8 @@ class BaseBonPlanCategorieType extends AppAwareType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('id', $this->getIdType(), $this->getIdOptions());
-        $builder->add('active', $this->getActiveType(), $this->getActiveOptions());
         $builder->add('sortable_rank', $this->getSortableRankType(), $this->getSortableRankOptions());
+        $builder->add('active', $this->getActiveType(), $this->getActiveOptions());
         $builder->add('bon_plans', $this->getBonPlansType(), $this->getBonPlansOptions());$builder->add('bon_plan_categorieI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\BonPlanCategorieI18n',
             'label' => 'bon_plan_categorieI18ns',
@@ -158,6 +210,10 @@ class BaseBonPlanCategorieType extends AppAwareType
                 'slug' => array_merge(array('type' => $this->getSlugType()), $this->getSlugOptions()),
                 'subtitle' => array_merge(array('type' => $this->getSubtitleType()), $this->getSubtitleOptions()),
                 'description' => array_merge(array('type' => $this->getDescriptionType()), $this->getDescriptionOptions()),
+                'seo_title' => array_merge(array('type' => $this->getSeoTitleType()), $this->getSeoTitleOptions()),
+                'seo_description' => array_merge(array('type' => $this->getSeoDescriptionType()), $this->getSeoDescriptionOptions()),
+                'seo_h1' => array_merge(array('type' => $this->getSeoH1Type()), $this->getSeoH1Options()),
+                'seo_keywords' => array_merge(array('type' => $this->getSeoKeywordsType()), $this->getSeoKeywordsOptions()),
                 'active_locale' => array_merge(array('type' => $this->getActiveLocaleType()), $this->getActiveLocaleOptions()),
 
             )

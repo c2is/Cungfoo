@@ -1,7 +1,11 @@
 {% extends "base.twig" %}
 {% block bodyClass %} destination{% endblock %}
 
-{% block canonical %}<link rel="canonical" href="{{ urlCanonical }}" />{% endblock %}
+{% block canonical %}
+{% if urlCanonical %}
+<link rel="canonical" href="{{ urlCanonical }}" />
+{% endif %}
+{% endblock %}
 
 {% block content %}
     <div id="wrap" class="fixed-width clear">
@@ -15,13 +19,6 @@
                 <h2 class="h3-like">{{ item.introduction }}</h2> {# Accroche #}
                 <p class="destiDescription">{{ item.description }}</p> {# Description #}
             {% endblock %}
-        </div>
-        <aside class="column right">
-            {% block topRightColumn %}
-                {% include 'Form/_search_engine.twig' %}
-            {% endblock %}
-        </aside>
-        <div class="column left">
             {% block bottomLeftColumn %}
                 {# Bloc "Notre sélection de campings" #}
                 <h2 class="h3-like">{{ "destination.campings_selection_title" | trans }}{% if destination == constant("VacancesDirectes\\Controller\\DestinationController::DESTINATION_REGION") %} {{ 'destination.pas_cher' | trans }}{% endif %}</h2>
@@ -29,6 +26,9 @@
             {% endblock %}
         </div>
         <aside class="column right">
+            {% block topRightColumn %}
+                {% include 'Form/_search_engine.twig' %}
+            {% endblock %}
             {% block bottomRightColumn %}
                 <div id="greyBoxes">
                     {{ esi(path('widget', {'name': 'sejour_reussi'})) }}

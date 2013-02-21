@@ -4,17 +4,19 @@ namespace Cungfoo\Model\om;
 
 use \BasePeer;
 use \Criteria;
-use \DateTime;
 use \Exception;
 use \PDO;
 use \Persistent;
 use \Propel;
-use \PropelDateTime;
+use \PropelCollection;
 use \PropelException;
+use \PropelObjectCollection;
 use \PropelPDO;
 use Cungfoo\Model\Etablissement;
 use Cungfoo\Model\EtablissementQuery;
 use Cungfoo\Model\EtablissementTypeHebergement;
+use Cungfoo\Model\EtablissementTypeHebergementI18n;
+use Cungfoo\Model\EtablissementTypeHebergementI18nQuery;
 use Cungfoo\Model\EtablissementTypeHebergementPeer;
 use Cungfoo\Model\EtablissementTypeHebergementQuery;
 use Cungfoo\Model\TypeHebergement;
@@ -50,6 +52,12 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
     protected $startCopy = false;
 
     /**
+     * The value for the id field.
+     * @var        int
+     */
+    protected $id;
+
+    /**
      * The value for the etablissement_id field.
      * @var        int
      */
@@ -62,30 +70,6 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
     protected $type_hebergement_id;
 
     /**
-     * The value for the minimum_price field.
-     * @var        string
-     */
-    protected $minimum_price;
-
-    /**
-     * The value for the minimum_price_discount_label field.
-     * @var        string
-     */
-    protected $minimum_price_discount_label;
-
-    /**
-     * The value for the minimum_price_start_date field.
-     * @var        string
-     */
-    protected $minimum_price_start_date;
-
-    /**
-     * The value for the minimum_price_end_date field.
-     * @var        string
-     */
-    protected $minimum_price_end_date;
-
-    /**
      * @var        Etablissement
      */
     protected $aEtablissement;
@@ -94,6 +78,12 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
      * @var        TypeHebergement
      */
     protected $aTypeHebergement;
+
+    /**
+     * @var        PropelObjectCollection|EtablissementTypeHebergementI18n[] Collection to store aggregation of EtablissementTypeHebergementI18n objects.
+     */
+    protected $collEtablissementTypeHebergementI18ns;
+    protected $collEtablissementTypeHebergementI18nsPartial;
 
     /**
      * Flag to prevent endless save loop, if this object is referenced
@@ -108,6 +98,36 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
      * @var        boolean
      */
     protected $alreadyInValidation = false;
+
+    // i18n behavior
+
+    /**
+     * Current locale
+     * @var        string
+     */
+    protected $currentLocale = 'fr';
+
+    /**
+     * Current translation objects
+     * @var        array[EtablissementTypeHebergementI18n]
+     */
+    protected $currentTranslations;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
+    protected $etablissementTypeHebergementI18nsScheduledForDeletion = null;
+
+    /**
+     * Get the [id] column value.
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
     /**
      * Get the [etablissement_id] column value.
@@ -130,104 +150,25 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
     }
 
     /**
-     * Get the [minimum_price] column value.
+     * Set the value of [id] column.
      *
-     * @return string
+     * @param int $v new value
+     * @return EtablissementTypeHebergement The current object (for fluent API support)
      */
-    public function getMinimumPrice()
+    public function setId($v)
     {
-        return $this->minimum_price;
-    }
-
-    /**
-     * Get the [minimum_price_discount_label] column value.
-     *
-     * @return string
-     */
-    public function getMinimumPriceDiscountLabel()
-    {
-        return $this->minimum_price_discount_label;
-    }
-
-    /**
-     * Get the [optionally formatted] temporal [minimum_price_start_date] column value.
-     *
-     *
-     * @param string $format The date/time format string (either date()-style or strftime()-style).
-     *				 If format is null, then the raw DateTime object will be returned.
-     * @return mixed Formatted date/time value as string or DateTime object (if format is null), null if column is null, and 0 if column value is 0000-00-00
-     * @throws PropelException - if unable to parse/validate the date/time value.
-     */
-    public function getMinimumPriceStartDate($format = null)
-    {
-        if ($this->minimum_price_start_date === null) {
-            return null;
+        if ($v !== null) {
+            $v = (int) $v;
         }
 
-        if ($this->minimum_price_start_date === '0000-00-00') {
-            // while technically this is not a default value of null,
-            // this seems to be closest in meaning.
-            return null;
+        if ($this->id !== $v) {
+            $this->id = $v;
+            $this->modifiedColumns[] = EtablissementTypeHebergementPeer::ID;
         }
 
-        try {
-            $dt = new DateTime($this->minimum_price_start_date);
-        } catch (Exception $x) {
-            throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->minimum_price_start_date, true), $x);
-        }
 
-        if ($format === null) {
-            // Because propel.useDateTimeClass is true, we return a DateTime object.
-            return $dt;
-        }
-
-        if (strpos($format, '%') !== false) {
-            return strftime($format, $dt->format('U'));
-        }
-
-        return $dt->format($format);
-
-    }
-
-    /**
-     * Get the [optionally formatted] temporal [minimum_price_end_date] column value.
-     *
-     *
-     * @param string $format The date/time format string (either date()-style or strftime()-style).
-     *				 If format is null, then the raw DateTime object will be returned.
-     * @return mixed Formatted date/time value as string or DateTime object (if format is null), null if column is null, and 0 if column value is 0000-00-00
-     * @throws PropelException - if unable to parse/validate the date/time value.
-     */
-    public function getMinimumPriceEndDate($format = null)
-    {
-        if ($this->minimum_price_end_date === null) {
-            return null;
-        }
-
-        if ($this->minimum_price_end_date === '0000-00-00') {
-            // while technically this is not a default value of null,
-            // this seems to be closest in meaning.
-            return null;
-        }
-
-        try {
-            $dt = new DateTime($this->minimum_price_end_date);
-        } catch (Exception $x) {
-            throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->minimum_price_end_date, true), $x);
-        }
-
-        if ($format === null) {
-            // Because propel.useDateTimeClass is true, we return a DateTime object.
-            return $dt;
-        }
-
-        if (strpos($format, '%') !== false) {
-            return strftime($format, $dt->format('U'));
-        }
-
-        return $dt->format($format);
-
-    }
+        return $this;
+    } // setId()
 
     /**
      * Set the value of [etablissement_id] column.
@@ -280,94 +221,6 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
     } // setTypeHebergementId()
 
     /**
-     * Set the value of [minimum_price] column.
-     *
-     * @param string $v new value
-     * @return EtablissementTypeHebergement The current object (for fluent API support)
-     */
-    public function setMinimumPrice($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->minimum_price !== $v) {
-            $this->minimum_price = $v;
-            $this->modifiedColumns[] = EtablissementTypeHebergementPeer::MINIMUM_PRICE;
-        }
-
-
-        return $this;
-    } // setMinimumPrice()
-
-    /**
-     * Set the value of [minimum_price_discount_label] column.
-     *
-     * @param string $v new value
-     * @return EtablissementTypeHebergement The current object (for fluent API support)
-     */
-    public function setMinimumPriceDiscountLabel($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->minimum_price_discount_label !== $v) {
-            $this->minimum_price_discount_label = $v;
-            $this->modifiedColumns[] = EtablissementTypeHebergementPeer::MINIMUM_PRICE_DISCOUNT_LABEL;
-        }
-
-
-        return $this;
-    } // setMinimumPriceDiscountLabel()
-
-    /**
-     * Sets the value of [minimum_price_start_date] column to a normalized version of the date/time value specified.
-     *
-     * @param mixed $v string, integer (timestamp), or DateTime value.
-     *               Empty strings are treated as null.
-     * @return EtablissementTypeHebergement The current object (for fluent API support)
-     */
-    public function setMinimumPriceStartDate($v)
-    {
-        $dt = PropelDateTime::newInstance($v, null, 'DateTime');
-        if ($this->minimum_price_start_date !== null || $dt !== null) {
-            $currentDateAsString = ($this->minimum_price_start_date !== null && $tmpDt = new DateTime($this->minimum_price_start_date)) ? $tmpDt->format('Y-m-d') : null;
-            $newDateAsString = $dt ? $dt->format('Y-m-d') : null;
-            if ($currentDateAsString !== $newDateAsString) {
-                $this->minimum_price_start_date = $newDateAsString;
-                $this->modifiedColumns[] = EtablissementTypeHebergementPeer::MINIMUM_PRICE_START_DATE;
-            }
-        } // if either are not null
-
-
-        return $this;
-    } // setMinimumPriceStartDate()
-
-    /**
-     * Sets the value of [minimum_price_end_date] column to a normalized version of the date/time value specified.
-     *
-     * @param mixed $v string, integer (timestamp), or DateTime value.
-     *               Empty strings are treated as null.
-     * @return EtablissementTypeHebergement The current object (for fluent API support)
-     */
-    public function setMinimumPriceEndDate($v)
-    {
-        $dt = PropelDateTime::newInstance($v, null, 'DateTime');
-        if ($this->minimum_price_end_date !== null || $dt !== null) {
-            $currentDateAsString = ($this->minimum_price_end_date !== null && $tmpDt = new DateTime($this->minimum_price_end_date)) ? $tmpDt->format('Y-m-d') : null;
-            $newDateAsString = $dt ? $dt->format('Y-m-d') : null;
-            if ($currentDateAsString !== $newDateAsString) {
-                $this->minimum_price_end_date = $newDateAsString;
-                $this->modifiedColumns[] = EtablissementTypeHebergementPeer::MINIMUM_PRICE_END_DATE;
-            }
-        } // if either are not null
-
-
-        return $this;
-    } // setMinimumPriceEndDate()
-
-    /**
      * Indicates whether the columns in this object are only set to default values.
      *
      * This method can be used in conjunction with isModified() to indicate whether an object is both
@@ -399,12 +252,9 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
     {
         try {
 
-            $this->etablissement_id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
-            $this->type_hebergement_id = ($row[$startcol + 1] !== null) ? (int) $row[$startcol + 1] : null;
-            $this->minimum_price = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
-            $this->minimum_price_discount_label = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
-            $this->minimum_price_start_date = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
-            $this->minimum_price_end_date = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
+            $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
+            $this->etablissement_id = ($row[$startcol + 1] !== null) ? (int) $row[$startcol + 1] : null;
+            $this->type_hebergement_id = ($row[$startcol + 2] !== null) ? (int) $row[$startcol + 2] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -413,7 +263,7 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 6; // 6 = EtablissementTypeHebergementPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 3; // 3 = EtablissementTypeHebergementPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating EtablissementTypeHebergement object", $e);
@@ -483,6 +333,8 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
 
             $this->aEtablissement = null;
             $this->aTypeHebergement = null;
+            $this->collEtablissementTypeHebergementI18ns = null;
+
         } // if (deep)
     }
 
@@ -626,6 +478,23 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
                 $this->resetModified();
             }
 
+            if ($this->etablissementTypeHebergementI18nsScheduledForDeletion !== null) {
+                if (!$this->etablissementTypeHebergementI18nsScheduledForDeletion->isEmpty()) {
+                    EtablissementTypeHebergementI18nQuery::create()
+                        ->filterByPrimaryKeys($this->etablissementTypeHebergementI18nsScheduledForDeletion->getPrimaryKeys(false))
+                        ->delete($con);
+                    $this->etablissementTypeHebergementI18nsScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collEtablissementTypeHebergementI18ns !== null) {
+                foreach ($this->collEtablissementTypeHebergementI18ns as $referrerFK) {
+                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
+                        $affectedRows += $referrerFK->save($con);
+                    }
+                }
+            }
+
             $this->alreadyInSave = false;
 
         }
@@ -646,25 +515,20 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
         $modifiedColumns = array();
         $index = 0;
 
+        $this->modifiedColumns[] = EtablissementTypeHebergementPeer::ID;
+        if (null !== $this->id) {
+            throw new PropelException('Cannot insert a value for auto-increment primary key (' . EtablissementTypeHebergementPeer::ID . ')');
+        }
 
          // check the columns in natural order for more readable SQL queries
+        if ($this->isColumnModified(EtablissementTypeHebergementPeer::ID)) {
+            $modifiedColumns[':p' . $index++]  = '`id`';
+        }
         if ($this->isColumnModified(EtablissementTypeHebergementPeer::ETABLISSEMENT_ID)) {
             $modifiedColumns[':p' . $index++]  = '`etablissement_id`';
         }
         if ($this->isColumnModified(EtablissementTypeHebergementPeer::TYPE_HEBERGEMENT_ID)) {
             $modifiedColumns[':p' . $index++]  = '`type_hebergement_id`';
-        }
-        if ($this->isColumnModified(EtablissementTypeHebergementPeer::MINIMUM_PRICE)) {
-            $modifiedColumns[':p' . $index++]  = '`minimum_price`';
-        }
-        if ($this->isColumnModified(EtablissementTypeHebergementPeer::MINIMUM_PRICE_DISCOUNT_LABEL)) {
-            $modifiedColumns[':p' . $index++]  = '`minimum_price_discount_label`';
-        }
-        if ($this->isColumnModified(EtablissementTypeHebergementPeer::MINIMUM_PRICE_START_DATE)) {
-            $modifiedColumns[':p' . $index++]  = '`minimum_price_start_date`';
-        }
-        if ($this->isColumnModified(EtablissementTypeHebergementPeer::MINIMUM_PRICE_END_DATE)) {
-            $modifiedColumns[':p' . $index++]  = '`minimum_price_end_date`';
         }
 
         $sql = sprintf(
@@ -677,23 +541,14 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
+                    case '`id`':
+                        $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
+                        break;
                     case '`etablissement_id`':
                         $stmt->bindValue($identifier, $this->etablissement_id, PDO::PARAM_INT);
                         break;
                     case '`type_hebergement_id`':
                         $stmt->bindValue($identifier, $this->type_hebergement_id, PDO::PARAM_INT);
-                        break;
-                    case '`minimum_price`':
-                        $stmt->bindValue($identifier, $this->minimum_price, PDO::PARAM_STR);
-                        break;
-                    case '`minimum_price_discount_label`':
-                        $stmt->bindValue($identifier, $this->minimum_price_discount_label, PDO::PARAM_STR);
-                        break;
-                    case '`minimum_price_start_date`':
-                        $stmt->bindValue($identifier, $this->minimum_price_start_date, PDO::PARAM_STR);
-                        break;
-                    case '`minimum_price_end_date`':
-                        $stmt->bindValue($identifier, $this->minimum_price_end_date, PDO::PARAM_STR);
                         break;
                 }
             }
@@ -702,6 +557,13 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
             Propel::log($e->getMessage(), Propel::LOG_ERR);
             throw new PropelException(sprintf('Unable to execute INSERT statement [%s]', $sql), $e);
         }
+
+        try {
+            $pk = $con->lastInsertId();
+        } catch (Exception $e) {
+            throw new PropelException('Unable to get autoincrement id.', $e);
+        }
+        $this->setId($pk);
 
         $this->setNew(false);
     }
@@ -805,6 +667,14 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
             }
 
 
+                if ($this->collEtablissementTypeHebergementI18ns !== null) {
+                    foreach ($this->collEtablissementTypeHebergementI18ns as $referrerFK) {
+                        if (!$referrerFK->validate($columns)) {
+                            $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
+                        }
+                    }
+                }
+
 
             $this->alreadyInValidation = false;
         }
@@ -841,22 +711,13 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
     {
         switch ($pos) {
             case 0:
-                return $this->getEtablissementId();
+                return $this->getId();
                 break;
             case 1:
-                return $this->getTypeHebergementId();
+                return $this->getEtablissementId();
                 break;
             case 2:
-                return $this->getMinimumPrice();
-                break;
-            case 3:
-                return $this->getMinimumPriceDiscountLabel();
-                break;
-            case 4:
-                return $this->getMinimumPriceStartDate();
-                break;
-            case 5:
-                return $this->getMinimumPriceEndDate();
+                return $this->getTypeHebergementId();
                 break;
             default:
                 return null;
@@ -881,18 +742,15 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
      */
     public function toArray($keyType = BasePeer::TYPE_PHPNAME, $includeLazyLoadColumns = true, $alreadyDumpedObjects = array(), $includeForeignObjects = false)
     {
-        if (isset($alreadyDumpedObjects['EtablissementTypeHebergement'][serialize($this->getPrimaryKey())])) {
+        if (isset($alreadyDumpedObjects['EtablissementTypeHebergement'][$this->getPrimaryKey()])) {
             return '*RECURSION*';
         }
-        $alreadyDumpedObjects['EtablissementTypeHebergement'][serialize($this->getPrimaryKey())] = true;
+        $alreadyDumpedObjects['EtablissementTypeHebergement'][$this->getPrimaryKey()] = true;
         $keys = EtablissementTypeHebergementPeer::getFieldNames($keyType);
         $result = array(
-            $keys[0] => $this->getEtablissementId(),
-            $keys[1] => $this->getTypeHebergementId(),
-            $keys[2] => $this->getMinimumPrice(),
-            $keys[3] => $this->getMinimumPriceDiscountLabel(),
-            $keys[4] => $this->getMinimumPriceStartDate(),
-            $keys[5] => $this->getMinimumPriceEndDate(),
+            $keys[0] => $this->getId(),
+            $keys[1] => $this->getEtablissementId(),
+            $keys[2] => $this->getTypeHebergementId(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aEtablissement) {
@@ -900,6 +758,9 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
             }
             if (null !== $this->aTypeHebergement) {
                 $result['TypeHebergement'] = $this->aTypeHebergement->toArray($keyType, $includeLazyLoadColumns,  $alreadyDumpedObjects, true);
+            }
+            if (null !== $this->collEtablissementTypeHebergementI18ns) {
+                $result['EtablissementTypeHebergementI18ns'] = $this->collEtablissementTypeHebergementI18ns->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
         }
 
@@ -936,22 +797,13 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
     {
         switch ($pos) {
             case 0:
-                $this->setEtablissementId($value);
+                $this->setId($value);
                 break;
             case 1:
-                $this->setTypeHebergementId($value);
+                $this->setEtablissementId($value);
                 break;
             case 2:
-                $this->setMinimumPrice($value);
-                break;
-            case 3:
-                $this->setMinimumPriceDiscountLabel($value);
-                break;
-            case 4:
-                $this->setMinimumPriceStartDate($value);
-                break;
-            case 5:
-                $this->setMinimumPriceEndDate($value);
+                $this->setTypeHebergementId($value);
                 break;
         } // switch()
     }
@@ -977,12 +829,9 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
     {
         $keys = EtablissementTypeHebergementPeer::getFieldNames($keyType);
 
-        if (array_key_exists($keys[0], $arr)) $this->setEtablissementId($arr[$keys[0]]);
-        if (array_key_exists($keys[1], $arr)) $this->setTypeHebergementId($arr[$keys[1]]);
-        if (array_key_exists($keys[2], $arr)) $this->setMinimumPrice($arr[$keys[2]]);
-        if (array_key_exists($keys[3], $arr)) $this->setMinimumPriceDiscountLabel($arr[$keys[3]]);
-        if (array_key_exists($keys[4], $arr)) $this->setMinimumPriceStartDate($arr[$keys[4]]);
-        if (array_key_exists($keys[5], $arr)) $this->setMinimumPriceEndDate($arr[$keys[5]]);
+        if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
+        if (array_key_exists($keys[1], $arr)) $this->setEtablissementId($arr[$keys[1]]);
+        if (array_key_exists($keys[2], $arr)) $this->setTypeHebergementId($arr[$keys[2]]);
     }
 
     /**
@@ -994,12 +843,9 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
     {
         $criteria = new Criteria(EtablissementTypeHebergementPeer::DATABASE_NAME);
 
+        if ($this->isColumnModified(EtablissementTypeHebergementPeer::ID)) $criteria->add(EtablissementTypeHebergementPeer::ID, $this->id);
         if ($this->isColumnModified(EtablissementTypeHebergementPeer::ETABLISSEMENT_ID)) $criteria->add(EtablissementTypeHebergementPeer::ETABLISSEMENT_ID, $this->etablissement_id);
         if ($this->isColumnModified(EtablissementTypeHebergementPeer::TYPE_HEBERGEMENT_ID)) $criteria->add(EtablissementTypeHebergementPeer::TYPE_HEBERGEMENT_ID, $this->type_hebergement_id);
-        if ($this->isColumnModified(EtablissementTypeHebergementPeer::MINIMUM_PRICE)) $criteria->add(EtablissementTypeHebergementPeer::MINIMUM_PRICE, $this->minimum_price);
-        if ($this->isColumnModified(EtablissementTypeHebergementPeer::MINIMUM_PRICE_DISCOUNT_LABEL)) $criteria->add(EtablissementTypeHebergementPeer::MINIMUM_PRICE_DISCOUNT_LABEL, $this->minimum_price_discount_label);
-        if ($this->isColumnModified(EtablissementTypeHebergementPeer::MINIMUM_PRICE_START_DATE)) $criteria->add(EtablissementTypeHebergementPeer::MINIMUM_PRICE_START_DATE, $this->minimum_price_start_date);
-        if ($this->isColumnModified(EtablissementTypeHebergementPeer::MINIMUM_PRICE_END_DATE)) $criteria->add(EtablissementTypeHebergementPeer::MINIMUM_PRICE_END_DATE, $this->minimum_price_end_date);
 
         return $criteria;
     }
@@ -1015,36 +861,29 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
     public function buildPkeyCriteria()
     {
         $criteria = new Criteria(EtablissementTypeHebergementPeer::DATABASE_NAME);
-        $criteria->add(EtablissementTypeHebergementPeer::ETABLISSEMENT_ID, $this->etablissement_id);
-        $criteria->add(EtablissementTypeHebergementPeer::TYPE_HEBERGEMENT_ID, $this->type_hebergement_id);
+        $criteria->add(EtablissementTypeHebergementPeer::ID, $this->id);
 
         return $criteria;
     }
 
     /**
-     * Returns the composite primary key for this object.
-     * The array elements will be in same order as specified in XML.
-     * @return array
+     * Returns the primary key for this object (row).
+     * @return int
      */
     public function getPrimaryKey()
     {
-        $pks = array();
-        $pks[0] = $this->getEtablissementId();
-        $pks[1] = $this->getTypeHebergementId();
-
-        return $pks;
+        return $this->getId();
     }
 
     /**
-     * Set the [composite] primary key.
+     * Generic method to set the primary key (id column).
      *
-     * @param array $keys The elements of the composite key (order must match the order in XML file).
+     * @param  int $key Primary key.
      * @return void
      */
-    public function setPrimaryKey($keys)
+    public function setPrimaryKey($key)
     {
-        $this->setEtablissementId($keys[0]);
-        $this->setTypeHebergementId($keys[1]);
+        $this->setId($key);
     }
 
     /**
@@ -1054,7 +893,7 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
     public function isPrimaryKeyNull()
     {
 
-        return (null === $this->getEtablissementId()) && (null === $this->getTypeHebergementId());
+        return null === $this->getId();
     }
 
     /**
@@ -1072,10 +911,6 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
     {
         $copyObj->setEtablissementId($this->getEtablissementId());
         $copyObj->setTypeHebergementId($this->getTypeHebergementId());
-        $copyObj->setMinimumPrice($this->getMinimumPrice());
-        $copyObj->setMinimumPriceDiscountLabel($this->getMinimumPriceDiscountLabel());
-        $copyObj->setMinimumPriceStartDate($this->getMinimumPriceStartDate());
-        $copyObj->setMinimumPriceEndDate($this->getMinimumPriceEndDate());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -1084,12 +919,19 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
             // store object hash to prevent cycle
             $this->startCopy = true;
 
+            foreach ($this->getEtablissementTypeHebergementI18ns() as $relObj) {
+                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
+                    $copyObj->addEtablissementTypeHebergementI18n($relObj->copy($deepCopy));
+                }
+            }
+
             //unflag object copy
             $this->startCopy = false;
         } // if ($deepCopy)
 
         if ($makeNew) {
             $copyObj->setNew(true);
+            $copyObj->setId(NULL); // this is a auto-increment column, so set to default value
         }
     }
 
@@ -1237,17 +1079,249 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
         return $this->aTypeHebergement;
     }
 
+
+    /**
+     * Initializes a collection based on the name of a relation.
+     * Avoids crafting an 'init[$relationName]s' method name
+     * that wouldn't work when StandardEnglishPluralizer is used.
+     *
+     * @param string $relationName The name of the relation to initialize
+     * @return void
+     */
+    public function initRelation($relationName)
+    {
+        if ('EtablissementTypeHebergementI18n' == $relationName) {
+            $this->initEtablissementTypeHebergementI18ns();
+        }
+    }
+
+    /**
+     * Clears out the collEtablissementTypeHebergementI18ns collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return EtablissementTypeHebergement The current object (for fluent API support)
+     * @see        addEtablissementTypeHebergementI18ns()
+     */
+    public function clearEtablissementTypeHebergementI18ns()
+    {
+        $this->collEtablissementTypeHebergementI18ns = null; // important to set this to null since that means it is uninitialized
+        $this->collEtablissementTypeHebergementI18nsPartial = null;
+
+        return $this;
+    }
+
+    /**
+     * reset is the collEtablissementTypeHebergementI18ns collection loaded partially
+     *
+     * @return void
+     */
+    public function resetPartialEtablissementTypeHebergementI18ns($v = true)
+    {
+        $this->collEtablissementTypeHebergementI18nsPartial = $v;
+    }
+
+    /**
+     * Initializes the collEtablissementTypeHebergementI18ns collection.
+     *
+     * By default this just sets the collEtablissementTypeHebergementI18ns collection to an empty array (like clearcollEtablissementTypeHebergementI18ns());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @param boolean $overrideExisting If set to true, the method call initializes
+     *                                        the collection even if it is not empty
+     *
+     * @return void
+     */
+    public function initEtablissementTypeHebergementI18ns($overrideExisting = true)
+    {
+        if (null !== $this->collEtablissementTypeHebergementI18ns && !$overrideExisting) {
+            return;
+        }
+        $this->collEtablissementTypeHebergementI18ns = new PropelObjectCollection();
+        $this->collEtablissementTypeHebergementI18ns->setModel('EtablissementTypeHebergementI18n');
+    }
+
+    /**
+     * Gets an array of EtablissementTypeHebergementI18n objects which contain a foreign key that references this object.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this EtablissementTypeHebergement is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @return PropelObjectCollection|EtablissementTypeHebergementI18n[] List of EtablissementTypeHebergementI18n objects
+     * @throws PropelException
+     */
+    public function getEtablissementTypeHebergementI18ns($criteria = null, PropelPDO $con = null)
+    {
+        $partial = $this->collEtablissementTypeHebergementI18nsPartial && !$this->isNew();
+        if (null === $this->collEtablissementTypeHebergementI18ns || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collEtablissementTypeHebergementI18ns) {
+                // return empty collection
+                $this->initEtablissementTypeHebergementI18ns();
+            } else {
+                $collEtablissementTypeHebergementI18ns = EtablissementTypeHebergementI18nQuery::create(null, $criteria)
+                    ->filterByEtablissementTypeHebergement($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    if (false !== $this->collEtablissementTypeHebergementI18nsPartial && count($collEtablissementTypeHebergementI18ns)) {
+                      $this->initEtablissementTypeHebergementI18ns(false);
+
+                      foreach($collEtablissementTypeHebergementI18ns as $obj) {
+                        if (false == $this->collEtablissementTypeHebergementI18ns->contains($obj)) {
+                          $this->collEtablissementTypeHebergementI18ns->append($obj);
+                        }
+                      }
+
+                      $this->collEtablissementTypeHebergementI18nsPartial = true;
+                    }
+
+                    return $collEtablissementTypeHebergementI18ns;
+                }
+
+                if($partial && $this->collEtablissementTypeHebergementI18ns) {
+                    foreach($this->collEtablissementTypeHebergementI18ns as $obj) {
+                        if($obj->isNew()) {
+                            $collEtablissementTypeHebergementI18ns[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collEtablissementTypeHebergementI18ns = $collEtablissementTypeHebergementI18ns;
+                $this->collEtablissementTypeHebergementI18nsPartial = false;
+            }
+        }
+
+        return $this->collEtablissementTypeHebergementI18ns;
+    }
+
+    /**
+     * Sets a collection of EtablissementTypeHebergementI18n objects related by a one-to-many relationship
+     * to the current object.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $etablissementTypeHebergementI18ns A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     * @return EtablissementTypeHebergement The current object (for fluent API support)
+     */
+    public function setEtablissementTypeHebergementI18ns(PropelCollection $etablissementTypeHebergementI18ns, PropelPDO $con = null)
+    {
+        $this->etablissementTypeHebergementI18nsScheduledForDeletion = $this->getEtablissementTypeHebergementI18ns(new Criteria(), $con)->diff($etablissementTypeHebergementI18ns);
+
+        foreach ($this->etablissementTypeHebergementI18nsScheduledForDeletion as $etablissementTypeHebergementI18nRemoved) {
+            $etablissementTypeHebergementI18nRemoved->setEtablissementTypeHebergement(null);
+        }
+
+        $this->collEtablissementTypeHebergementI18ns = null;
+        foreach ($etablissementTypeHebergementI18ns as $etablissementTypeHebergementI18n) {
+            $this->addEtablissementTypeHebergementI18n($etablissementTypeHebergementI18n);
+        }
+
+        $this->collEtablissementTypeHebergementI18ns = $etablissementTypeHebergementI18ns;
+        $this->collEtablissementTypeHebergementI18nsPartial = false;
+
+        return $this;
+    }
+
+    /**
+     * Returns the number of related EtablissementTypeHebergementI18n objects.
+     *
+     * @param Criteria $criteria
+     * @param boolean $distinct
+     * @param PropelPDO $con
+     * @return int             Count of related EtablissementTypeHebergementI18n objects.
+     * @throws PropelException
+     */
+    public function countEtablissementTypeHebergementI18ns(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        $partial = $this->collEtablissementTypeHebergementI18nsPartial && !$this->isNew();
+        if (null === $this->collEtablissementTypeHebergementI18ns || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collEtablissementTypeHebergementI18ns) {
+                return 0;
+            }
+
+            if($partial && !$criteria) {
+                return count($this->getEtablissementTypeHebergementI18ns());
+            }
+            $query = EtablissementTypeHebergementI18nQuery::create(null, $criteria);
+            if ($distinct) {
+                $query->distinct();
+            }
+
+            return $query
+                ->filterByEtablissementTypeHebergement($this)
+                ->count($con);
+        }
+
+        return count($this->collEtablissementTypeHebergementI18ns);
+    }
+
+    /**
+     * Method called to associate a EtablissementTypeHebergementI18n object to this object
+     * through the EtablissementTypeHebergementI18n foreign key attribute.
+     *
+     * @param    EtablissementTypeHebergementI18n $l EtablissementTypeHebergementI18n
+     * @return EtablissementTypeHebergement The current object (for fluent API support)
+     */
+    public function addEtablissementTypeHebergementI18n(EtablissementTypeHebergementI18n $l)
+    {
+        if ($l && $locale = $l->getLocale()) {
+            $this->setLocale($locale);
+            $this->currentTranslations[$locale] = $l;
+        }
+        if ($this->collEtablissementTypeHebergementI18ns === null) {
+            $this->initEtablissementTypeHebergementI18ns();
+            $this->collEtablissementTypeHebergementI18nsPartial = true;
+        }
+        if (!in_array($l, $this->collEtablissementTypeHebergementI18ns->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
+            $this->doAddEtablissementTypeHebergementI18n($l);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	EtablissementTypeHebergementI18n $etablissementTypeHebergementI18n The etablissementTypeHebergementI18n object to add.
+     */
+    protected function doAddEtablissementTypeHebergementI18n($etablissementTypeHebergementI18n)
+    {
+        $this->collEtablissementTypeHebergementI18ns[]= $etablissementTypeHebergementI18n;
+        $etablissementTypeHebergementI18n->setEtablissementTypeHebergement($this);
+    }
+
+    /**
+     * @param	EtablissementTypeHebergementI18n $etablissementTypeHebergementI18n The etablissementTypeHebergementI18n object to remove.
+     * @return EtablissementTypeHebergement The current object (for fluent API support)
+     */
+    public function removeEtablissementTypeHebergementI18n($etablissementTypeHebergementI18n)
+    {
+        if ($this->getEtablissementTypeHebergementI18ns()->contains($etablissementTypeHebergementI18n)) {
+            $this->collEtablissementTypeHebergementI18ns->remove($this->collEtablissementTypeHebergementI18ns->search($etablissementTypeHebergementI18n));
+            if (null === $this->etablissementTypeHebergementI18nsScheduledForDeletion) {
+                $this->etablissementTypeHebergementI18nsScheduledForDeletion = clone $this->collEtablissementTypeHebergementI18ns;
+                $this->etablissementTypeHebergementI18nsScheduledForDeletion->clear();
+            }
+            $this->etablissementTypeHebergementI18nsScheduledForDeletion[]= $etablissementTypeHebergementI18n;
+            $etablissementTypeHebergementI18n->setEtablissementTypeHebergement(null);
+        }
+
+        return $this;
+    }
+
     /**
      * Clears the current object and sets all attributes to their default values
      */
     public function clear()
     {
+        $this->id = null;
         $this->etablissement_id = null;
         $this->type_hebergement_id = null;
-        $this->minimum_price = null;
-        $this->minimum_price_discount_label = null;
-        $this->minimum_price_start_date = null;
-        $this->minimum_price_end_date = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();
@@ -1268,8 +1342,21 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
     public function clearAllReferences($deep = false)
     {
         if ($deep) {
+            if ($this->collEtablissementTypeHebergementI18ns) {
+                foreach ($this->collEtablissementTypeHebergementI18ns as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
         } // if ($deep)
 
+        // i18n behavior
+        $this->currentLocale = 'fr';
+        $this->currentTranslations = null;
+
+        if ($this->collEtablissementTypeHebergementI18ns instanceof PropelCollection) {
+            $this->collEtablissementTypeHebergementI18ns->clearIterator();
+        }
+        $this->collEtablissementTypeHebergementI18ns = null;
         $this->aEtablissement = null;
         $this->aTypeHebergement = null;
     }
@@ -1292,6 +1379,211 @@ abstract class BaseEtablissementTypeHebergement extends BaseObject implements Pe
     public function isAlreadyInSave()
     {
         return $this->alreadyInSave;
+    }
+
+    // i18n behavior
+
+    /**
+     * Sets the locale for translations
+     *
+     * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
+     *
+     * @return    EtablissementTypeHebergement The current object (for fluent API support)
+     */
+    public function setLocale($locale = 'fr')
+    {
+        $this->currentLocale = $locale;
+
+        return $this;
+    }
+
+    /**
+     * Gets the locale for translations
+     *
+     * @return    string $locale Locale to use for the translation, e.g. 'fr_FR'
+     */
+    public function getLocale()
+    {
+        return $this->currentLocale;
+    }
+
+    /**
+     * Returns the current translation for a given locale
+     *
+     * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
+     * @param     PropelPDO $con an optional connection object
+     *
+     * @return EtablissementTypeHebergementI18n */
+    public function getTranslation($locale = 'fr', PropelPDO $con = null)
+    {
+        if (!isset($this->currentTranslations[$locale])) {
+            if (null !== $this->collEtablissementTypeHebergementI18ns) {
+                foreach ($this->collEtablissementTypeHebergementI18ns as $translation) {
+                    if ($translation->getLocale() == $locale) {
+                        $this->currentTranslations[$locale] = $translation;
+
+                        return $translation;
+                    }
+                }
+            }
+            if ($this->isNew()) {
+                $translation = new EtablissementTypeHebergementI18n();
+                $translation->setLocale($locale);
+            } else {
+                $translation = EtablissementTypeHebergementI18nQuery::create()
+                    ->filterByPrimaryKey(array($this->getPrimaryKey(), $locale))
+                    ->findOneOrCreate($con);
+                $this->currentTranslations[$locale] = $translation;
+            }
+            $this->addEtablissementTypeHebergementI18n($translation);
+        }
+
+        return $this->currentTranslations[$locale];
+    }
+
+    /**
+     * Remove the translation for a given locale
+     *
+     * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
+     * @param     PropelPDO $con an optional connection object
+     *
+     * @return    EtablissementTypeHebergement The current object (for fluent API support)
+     */
+    public function removeTranslation($locale = 'fr', PropelPDO $con = null)
+    {
+        if (!$this->isNew()) {
+            EtablissementTypeHebergementI18nQuery::create()
+                ->filterByPrimaryKey(array($this->getPrimaryKey(), $locale))
+                ->delete($con);
+        }
+        if (isset($this->currentTranslations[$locale])) {
+            unset($this->currentTranslations[$locale]);
+        }
+        foreach ($this->collEtablissementTypeHebergementI18ns as $key => $translation) {
+            if ($translation->getLocale() == $locale) {
+                unset($this->collEtablissementTypeHebergementI18ns[$key]);
+                break;
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Returns the current translation
+     *
+     * @param     PropelPDO $con an optional connection object
+     *
+     * @return EtablissementTypeHebergementI18n */
+    public function getCurrentTranslation(PropelPDO $con = null)
+    {
+        return $this->getTranslation($this->getLocale(), $con);
+    }
+
+
+        /**
+         * Get the [minimum_price] column value.
+         *
+         * @return string
+         */
+        public function getMinimumPrice()
+        {
+        return $this->getCurrentTranslation()->getMinimumPrice();
+    }
+
+
+        /**
+         * Set the value of [minimum_price] column.
+         *
+         * @param string $v new value
+         * @return EtablissementTypeHebergementI18n The current object (for fluent API support)
+         */
+        public function setMinimumPrice($v)
+        {    $this->getCurrentTranslation()->setMinimumPrice($v);
+
+        return $this;
+    }
+
+
+        /**
+         * Get the [minimum_price_discount_label] column value.
+         *
+         * @return string
+         */
+        public function getMinimumPriceDiscountLabel()
+        {
+        return $this->getCurrentTranslation()->getMinimumPriceDiscountLabel();
+    }
+
+
+        /**
+         * Set the value of [minimum_price_discount_label] column.
+         *
+         * @param string $v new value
+         * @return EtablissementTypeHebergementI18n The current object (for fluent API support)
+         */
+        public function setMinimumPriceDiscountLabel($v)
+        {    $this->getCurrentTranslation()->setMinimumPriceDiscountLabel($v);
+
+        return $this;
+    }
+
+
+        /**
+         * Get the [optionally formatted] temporal [minimum_price_start_date] column value.
+         *
+         *
+         * @param string $format The date/time format string (either date()-style or strftime()-style).
+         *				 If format is null, then the raw DateTime object will be returned.
+         * @return mixed Formatted date/time value as string or DateTime object (if format is null), null if column is null, and 0 if column value is 0000-00-00
+         * @throws PropelException - if unable to parse/validate the date/time value.
+         */
+        public function getMinimumPriceStartDate($format = null)
+        {
+        return $this->getCurrentTranslation()->getMinimumPriceStartDate($format);
+    }
+
+
+        /**
+         * Sets the value of [minimum_price_start_date] column to a normalized version of the date/time value specified.
+         *
+         * @param mixed $v string, integer (timestamp), or DateTime value.
+         *               Empty strings are treated as null.
+         * @return EtablissementTypeHebergementI18n The current object (for fluent API support)
+         */
+        public function setMinimumPriceStartDate($v)
+        {    $this->getCurrentTranslation()->setMinimumPriceStartDate($v);
+
+        return $this;
+    }
+
+
+        /**
+         * Get the [optionally formatted] temporal [minimum_price_end_date] column value.
+         *
+         *
+         * @param string $format The date/time format string (either date()-style or strftime()-style).
+         *				 If format is null, then the raw DateTime object will be returned.
+         * @return mixed Formatted date/time value as string or DateTime object (if format is null), null if column is null, and 0 if column value is 0000-00-00
+         * @throws PropelException - if unable to parse/validate the date/time value.
+         */
+        public function getMinimumPriceEndDate($format = null)
+        {
+        return $this->getCurrentTranslation()->getMinimumPriceEndDate($format);
+    }
+
+
+        /**
+         * Sets the value of [minimum_price_end_date] column to a normalized version of the date/time value specified.
+         *
+         * @param mixed $v string, integer (timestamp), or DateTime value.
+         *               Empty strings are treated as null.
+         * @return EtablissementTypeHebergementI18n The current object (for fluent API support)
+         */
+        public function setMinimumPriceEndDate($v)
+        {    $this->getCurrentTranslation()->setMinimumPriceEndDate($v);
+
+        return $this;
     }
 
 }

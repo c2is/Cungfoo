@@ -5,11 +5,15 @@ namespace Cungfoo\Lib\ViaFrance\Loader;
 use Cungfoo\Model\PointInteret,
     Cungfoo\Model\PointInteretQuery,
     Cungfoo\Model\EtablissementPointInteret,
-    Cungfoo\Model\EtablissementPointInteretQuery;
+    Cungfoo\Model\EtablissementPointInteretQuery,
+    Cungfoo\Model\RegionPointInteret,
+    Cungfoo\Model\RegionPointInteretQuery;
 
 class PointOfInterestLoader extends AbstractLoader
 {
     protected $cache = array();
+
+    protected $processedIds = array();
 
     public function init($con)
     {
@@ -18,13 +22,18 @@ class PointOfInterestLoader extends AbstractLoader
         $this->cache = array();
 
         $this->dbConnection->exec("SET FOREIGN_KEY_CHECKS = 0");
-        $this->dbConnection->exec("TRUNCATE TABLE `etablissement_point_interet`");
-        $this->dbConnection->exec("TRUNCATE TABLE `point_interet_i18n`");
-        $this->dbConnection->exec("TRUNCATE TABLE `point_interet`");
     }
 
     public function close()
     {
+        $pois = PointInteretQuery::create()->select('id')->find()->toArray();
+        $toDelete = array_diff($pois, $this->processedIds);
+
+        PointInteretQuery::create()
+            ->filterById($toDelete)
+            ->delete()
+        ;
+
         $this->dbConnection->exec("SET FOREIGN_KEY_CHECKS = 1");
     }
 
@@ -37,7 +46,18 @@ class PointOfInterestLoader extends AbstractLoader
         {
             if ($poi = $this->insertPointInteret($place, $language))
             {
-                $this->insertRelation($etab, $poi, $place['DistanceXY']);
+                if (!in_array($poi->getId(), $this->processedIds))
+                {
+                    $this->processedIds[] = $poi->getId();
+                }
+                if ($language == 'de')
+                {
+                    $this->insertRegionRelation($etab, $poi);
+                }
+                else
+                {
+                    $this->insertRelation($etab, $poi, $place['DistanceXY']);
+                }
             }
         }
     }
@@ -51,61 +71,40 @@ class PointOfInterestLoader extends AbstractLoader
             return $this->cache[$code][$language];
         }
 
+        $utils = new \Cungfoo\Lib\Utils();
+
         $poi = PointInteretQuery::create()
             ->filterByCode($code)
             ->findOne($this->dbConnection);
         ;
 
-        if ($language == 'fr')
+        if (!$poi)
         {
-            if ($poi)
-            {
-                return $poi;
-            }
-
             $poi = new PointInteret();
-            $poi
-                ->setLocale($language)
-                ->setName($place->{'Name'})
-                ->setCode($code)
-                ->setAddress($place->{'Address'})
-                ->setAddress2($place->{'Address2'})
-                ->setZipcode($place->{'ZipCode'})
-                ->setCity($place->{'City'})
-                ->setGeoCoordinateX($place->attributes()->{'X'})
-                ->setGeoCoordinateY($place->attributes()->{'Y'})
-                ->setDistanceCamping($place->attributes()->{'DistanceXY'})
-                ->setImage($place->{'Image'})
-                ->setPresentation($place->{'Presentation'})
-                ->setTel($place->{'Tel'})
-                ->setFax($place->{'Fax'})
-                ->setEmail($place->{'Email'})
-                ->setWebsite($place->{'WebSite'})
-                ->setTransport($place->{'Transports'})
-                ->setCategorie($place->{'SubCategorySet'}->{'SubCategory'})
-                ->setType($place->{'SubCategorySet'}->{'SubCategory'}[1])
-            ;
         }
-        else
-        {
-            if (!$poi)
-            {
-                return null;
-            }
 
-            $defaultName            = $poi->getName();
-            $defaultPresentation    = $poi->getPresentation();
-            $defaultTransport       = $poi->getTransport();
-
-            $poi
-                ->setLocale($language)
-                ->setName(($place->{'Name'}) ? $place->{'Name'} : $defaultName)
-                ->setPresentation(($place->{'Presentation'}) ? $place->{'Presentation'} : $defaultPresentation)
-                ->setTransport(($place->{'Transports'}) ? $place->{'Transports)'} : $defaultTransport)
-                ->setCategorie($place->{'SubCategorySet'}->{'SubCategory'})
-                ->setType($place->{'SubCategorySet'}->{'SubCategory'}[1])
-            ;
-        }
+        $poi
+            ->setLocale($language)
+            ->setName($place->{'Name'})
+            ->setSlug($utils->slugify($place->{'Name'}))
+            ->setCode($code)
+            ->setAddress($place->{'Address'})
+            ->setAddress2($place->{'Address2'})
+            ->setZipcode($place->{'ZipCode'})
+            ->setCity($place->{'City'})
+            ->setGeoCoordinateX($place->attributes()->{'X'})
+            ->setGeoCoordinateY($place->attributes()->{'Y'})
+            ->setDistanceCamping($place->attributes()->{'DistanceXY'})
+            ->setImage($place->{'Image'})
+            ->setPresentation($place->{'Presentation'})
+            ->setTel($place->{'Tel'})
+            ->setFax($place->{'Fax'})
+            ->setEmail($place->{'Email'})
+            ->setWebsite($place->{'WebSite'})
+            ->setTransport($place->{'Transports'})
+            ->setCategorie($place->{'SubCategorySet'}->{'SubCategory'})
+            ->setType($place->{'SubCategorySet'}->{'SubCategory'}[1])
+        ;
 
         $poi->save($this->dbConnection);
 
@@ -129,6 +128,25 @@ class PointOfInterestLoader extends AbstractLoader
                 ->setEtablissementId($etab->getId())
                 ->setPointInteretId($poi->getId())
                 ->setDistance($distance)
+                ->save($this->dbConnection)
+            ;
+        }
+    }
+
+    public function insertRegionRelation($region, $poi)
+    {
+        $regionPointInteret = RegionPointInteretQuery::create()
+            ->filterByRegionId($region->getId())
+            ->filterByPointInteretId($poi->getId())
+            ->findOne($this->dbConnection)
+        ;
+
+        if (!$regionPointInteret)
+        {
+            $regionPointInteret = new RegionPointInteret();
+            $regionPointInteret
+                ->setRegionId($region->getId())
+                ->setPointInteretId($poi->getId())
                 ->save($this->dbConnection)
             ;
         }

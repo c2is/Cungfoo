@@ -50,6 +50,8 @@ class PleinActivite
             }
         }
 
+        $pleinActiviteFinal = array();
+
         foreach($pleinActivites as $activites)
         {
             $nameCategorie = $activites['title'];
@@ -57,7 +59,7 @@ class PleinActivite
             {
                 foreach($objectActivites as $objet)
                 {
-                    if($item['code'] == $objet->getCode())
+                    if($objet && $item['code'] == $objet->getCode())
                     {
                         $pleinActiviteFinal[$nameCategorie][] = $objet;
                         break;

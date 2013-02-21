@@ -1,0 +1,681 @@
+seo.title.default: 'Vermietung Wohnwagen Spanien, Frankreich, Italien'
+seo.title.camping_suffix: 'mit Swimmingpool'
+seo.title.dispo: 'Suchergebnis Vermietung Campingplatz, Wohnwagen'
+seo.title.couloir: Reservierung
+seo.title.theme: '%theme%'
+seo.meta.default: 'Vacances Directes: Vermietung von Wohnwagen auf zahlreichen Campingplätzen in Frankreich, Italien und Spanien für einen geselligen und entspannten Urlaub.'
+seo.meta.dernieres_minutes: 'Entdecken Sie alle Last Minute Angebote von Vacances Directes für die Vermietung von Wohnwagen auf dem Campingplatz und buchen Sie online.'
+seo.meta.early_booking: 'Entdecken Sie alle Frühbucherangebote von Vacances Directes für die Vermietung von Wohnwagen auf dem Campingplatz und buchen Sie online.'
+seo.meta.dispo: 'Liste - Campingplätze'
+seo.meta.couloir: Reservierung
+seo.meta.theme: '%theme%'
+seo.meta.poi: '%poi% in %ville%, besichtigen Sie diesen Ort und verbringen Sie Ihren Urlaub mit Vacances Directes auf unseren nahegelegenen Campingplätzen.'
+seo.url.prefix: campingplatz
+seo.url.catalogue: katalog
+seo.url.dispo: verfugbar
+seo.url.couloir.index: reservierung
+seo.url.couloir.detail: informationen-zum-urlaub
+seo.url.couloir.recapitulatif: uberblick
+seo.url.couloir.confirmation: bestatigung
+seo.url.destinations: reiseziele
+seo.url.bonsplans: geheimtipps
+seo.url.compte.index: konto
+seo.url.compte.coordonnees: kontaktdaten
+seo.url.compte.brochure: anforderung-broschure
+seo.url.compte.reservations: reservierungen
+seo.url.compte.fidelite: treuevorteile
+seo.url.compte.parrainage: werben
+seo.url.weekends: ihre-wochenendtrips
+seo.url.lieuVisiter: zu-besichtigende-orte
+seo.url.evenement: event
+seo.url.assurance.index: versicherung
+seo.url.assurance.confirmation: bestatigung
+seo.url.locations: vermietungsangebote
+seo.url.topCampings: top-campingplatze
+pays.afghanistan: Afghanistan
+pays.albanie: Albanien
+pays.algerie: Algerien
+pays.andorre: Andorra
+pays.angola: Angola
+pays.antigua-et-Barbuda: 'Antigua und Barbuda'
+pays.argentine: Argentinien
+pays.armenie: Armenien
+pays.australie: Australien
+pays.autriche: Österreich
+pays.azerbaidjan: Aserbaidschan
+pays.bahamas: Bahamas
+pays.bahrein: Bahrain
+pays.bangladesh: Bangladesch
+pays.barbade: Barbados
+pays.bielorussie: Weißrussland
+pays.belgique: Belgien
+pays.belize: Belize
+pays.benin: Benin
+pays.bhoutan: Bhutan
+pays.bolivie: Bolivien
+pays.bosnie-Herzegovine: Bosnien-Herzegowina
+pays.botswana: Botsuana
+pays.bresil: Brasilien
+pays.brunei: Brunei
+pays.bulgarie: Bulgarien
+'pays.burkina Faso': 'Burkina Faso'
+pays.burundi: Burundi
+pays.cambodge: Kambodscha
+pays.cameroun: Kamerun
+pays.canada: Kanada
+pays.cap-Vert: 'Kap Verde'
+'pays.republique centrafricaine': 'Zentralafrikanische Republik'
+pays.tchad: Tschad
+pays.chili: Chile
+pays.chine: China
+pays.colombie: Kolumbien
+pays.comores: Komoren
+pays.congo: Kongo
+'pays.costa Rica': 'Costa Rica'
+'pays.cote d''Ivoire': Elfenbeinküste
+pays.croatie: Kroatien
+pays.cuba: Kuba
+pays.chypre: Zypern
+'pays.republique tcheque': 'Tschechische Republik'
+pays.danemark: Dänemark
+pays.djibouti: Dschibuti
+'pays.republique dominicaine': 'Dominikanische Republik'
+'pays.timor Oriental': Ost-Timor
+pays.equateur: Ecuador
+pays.egypte: Ägypten
+pays.salvador: Salvador
+pays.angleterre: England
+'pays.guinee equatoriale': Äquatorialguinea
+pays.erythree: Eritrea
+pays.estonie: Estland
+pays.ethiopie: Äthiopien
+'pays.iles Feroe': 'Färöer Inseln'
+pays.fidji: Fidschi
+pays.finlande: Finnland
+pays.france: Frankreich
+pays.gabon: Gabun
+pays.gambie: Gambia
+pays.georgie: Georgien
+pays.allemagne: Deutschland
+pays.ghana: Ghana
+pays.grande-Bretagne: Großbritannien
+pays.grece: Griechenland
+pays.groenland: Grönland
+pays.grenade: Grenada
+pays.guatemala: Guatemala
+pays.guinee: Guinea
+pays.guinee-Bissau: Guinea-Bissau
+pays.haiti: Haiti
+pays.hollande: Holland
+pays.saint-Siege: 'Der Heilige Stuhl'
+pays.honduras: Honduras
+pays.hongrie: Ungarn
+pays.islande: Island
+pays.inde: Indien
+pays.indonesie: Indonesien
+pays.irak: Irak
+pays.iran: Iran
+pays.irlande: Irland
+pays.israel: Israel
+pays.italie: Italien
+pays.jamaique: Jamaika
+pays.japon: Japan
+pays.jordanie: Jordanien
+pays.kazahstan: Kasachstan
+pays.kenya: Kenia
+pays.kiribati: Kiribati
+pays.coree: Korea
+pays.koweit: Kuwait
+pays.kirghizistan: Kirgistan
+pays.laos: Laos
+pays.lettonie: Lettland
+pays.liban: Libanon
+pays.lesotho: Lesotho
+pays.liberia: Liberia
+pays.libye: Libyen
+pays.liechtenstein: Liechtenstein
+pays.lituanie: Litauen
+pays.luxembourg: Luxemburg
+pays.macedoine: Mazedonien
+pays.madagascar: Madagaskar
+pays.malawi: Malawi
+pays.malaisie: Malaysia
+pays.maldives: Malediven
+pays.mali: Mali
+pays.malte: Malta
+'pays.iles Marshall': Marshallinseln
+pays.mauritanie: Mauretanien
+pays.maurice: Mauritius
+pays.mayotte: Mayotte
+pays.mexique: Mexiko
+pays.micronesie: Mikronesien
+pays.moldavie: Moldawien
+pays.monaco: Monaco
+pays.mongolie: Mongolei
+pays.montenegro: Montenegro
+pays.montserrat: Montserrat
+pays.maroc: Marokko
+pays.mozambique: Mosambik
+pays.myanmar: Myanmar
+pays.namibie: Namibia
+pays.nauru: Nauru
+pays.nepal: Nepal
+pays.pays-Bas: Niederlande
+pays.nouvelle-Zelande: Neuseeland
+pays.nicaragua: Nicaragua
+pays.niger: Niger
+pays.nigeria: Nigeria
+'pays.irlande du Nord': Nordirland
+pays.norvege: Norwegen
+pays.oman: Oman
+pays.pakistan: Pakistan
+pays.palaos: Palau
+pays.palestine: Palästina
+pays.panama: Panama
+pays.papouasie-Nouvelle-Guinee: Papua-Neuguinea
+pays.paraguay: Paraguay
+pays.perou: Peru
+pays.philippines: Philippinen
+pays.pologne: Polen
+pays.portugal: Portugal
+'pays.principaute de Monaco': 'Fürstentum Monaco'
+pays.qatar: Katar
+pays.roumanie: Rumänien
+pays.russie: Russland
+pays.rwanda: Ruanda
+pays.saint-Christophe-et-Nieves: 'St. Kitts und Nevis'
+pays.sainte-Lucie: 'Saint Lucia'
+'pays.saint Pierre and Miquelon': 'Saint-Pierre und Miquelon'
+'pays.saint-Vincent-et-les Grenadines': 'St. Vincent und die Grenadinen'
+pays.samoa: Samoa
+pays.saint-Marin: 'San Marino'
+'pays.sao Tome-et-Principe': 'São Tomé und Príncipe'
+'pays.arabie Saoudite': 'Saudi Arabien'
+pays.ecosse: Schottland
+pays.senegal: Senegal
+pays.serbie: Serbien
+pays.seychelles: Seychellen
+'pays.sierra Leone': 'Sierra Leone'
+pays.singapour: Singapur
+pays.slovaquie: Slowakei
+pays.slovenie: Slowenien
+'pays.iles Salomon': Salomonen
+pays.somalie: Somalia
+'pays.afrique du Sud': Südafrika
+pays.espagne: Spanien
+'pays.sri Lanka': 'Sri Lanka'
+pays.soudan: Sudan
+pays.suriname: Suriname
+pays.swaziland: Swasiland
+pays.suede: Schweden
+pays.suisse: Schweiz
+pays.syrie: Syrien
+pays.taiwan: Taiwan
+pays.tadjikistan: Tadschikistan
+pays.tanzanie: Tansania
+pays.thailande: Thailand
+pays.togo: Togo
+pays.tonga: Tonga
+pays.trinite-et-Tobago: 'Trinidad und Tobago'
+pays.tunisie: Tunesien
+pays.turquie: Türkei
+pays.turkmenistan: Turkmenistan
+pays.tuvalu: Tuvalu
+pays.ouganda: Uganda
+pays.ukraine: Ukraine
+'pays.emirats arabes unis': 'Vereinigte arabische Emirate'
+pays.royaume-Uni: 'Vereinigtes Königreich'
+pays.etats-Unis: 'Vereinigte Staaten'
+pays.uruguay: Uruguay
+pays.ouzbekistan: Usbekistan
+pays.vanuatu: Vanuatu
+pays.vatican: Vatikan
+pays.venezuela: Venezuela
+pays.vietnam: Vietnam
+'pays.pays de Galles': Wales
+'pays.wallis et Futuna': 'Wallis und Futuna'
+pays.yemen: Jemen
+pays.zambie: Sambia
+pays.zimbabwe: Simbabwe
+destination.mediterranee: Mittelmeer
+destination.manche_atlantique: 'Ärmelkanal Atlantik'
+destination.montagne: Berge
+destination.campagne: 'Ländliche Gegend'
+destination.images_pays_title: 'Das Land in Bildern'
+destination.images_region_title: 'Die Region in Bildern'
+destination.images_ville_title: 'Die Stadt in Bildern'
+destination.retour_bottom: 'Zurück zur Liste'
+destination.retour: Zurück
+destination.pois_all: 'Alle Orte'
+destination.events_title: 'Zur Zeit'
+destination.events_prefixe_subtitle: In
+destination.events_suffixe_subtitle: ...
+destination.campings_selection_title: 'Unsere Auswahl an günstigen Campingplätzen'
+destination.pas_cher: günstig
+listing_destination.campings_map_title: 'Vacances Directes Campingplätze'
+listing_destination.campings_map_prefixe_subtitle: in
+listing.plus_resultats: 'Mehr Ergebnisse'
+listing.du: vom
+listing.au: 'bis zum'
+listing.no_results_title: 'Ihre Suche ergab keine Treffer.'
+listing.no_results: 'Bitte geben Sie neue Suchkriterien ein.'
+listing.nos_locations_disponibles: 'Unsere verfügbaren Vermietungsangebote'
+menu_destination.accroche: '3 Länder, 34 touristische Regionen, Ihr Urlaub mit Vacances Directes.'
+menu_bon_plan.accroche.prefix: Geheimtipp
+menu_bon_plan.accroche.suffix: Auswählen
+menu_bon_plan.newsletter.title: 'Newsletter abonnieren'
+menu_bon_plan.newsletter.link: Anmelden
+menu_bon_plan.autres_offres.title: 'Unsere anderen Angebote'
+menu_bon_plan.dispos.subtitle.prefix: 'Anreise am'
+menu_bon_plan.bons_plans.link.prefix: Alle
+menu_bon_plan.categorie_bons_plans.link: 'Alle unsere Angebote'
+menu.plus_de_regions: 'Mehr Regionen'
+menu.libelle: Wortlaut
+menu.localisation: Lokalisierung
+menu.title: 'Vacances Directes'
+menu.destinations: 'Unsere Reiseziele'
+menu.locations: Vermietungsangebote
+menu.bons_plans: Geheimtipps
+menu.vacances: 'Ihr Urlaub'
+menu.weekends: 'Ihre Wochenendtrips'
+menu.tous_camping: 'Alle unsere Campingplätze'
+menu.decouvrez_locations: 'Entdecken Sie unsere Vermietungsangebote'
+menu.decouvrez_locations_type: 'Nach Art der Unterkunft'
+menu.decouvrez_locations_capacite: 'Nach Anzahl der Personen'
+etablissement.activites: 'Liste der Aktivitäten'
+etablissement.destinations: 'Liste der Reiseziele'
+etablissement.service_complementaires: 'Liste der Zusatzleistungen'
+etablissement.type_hebergements: 'Liste der Unterkunftsarten'
+date_search.date_debut: Anreisedatum
+date_search.destination: Reiseziel
+date_search.destination.empty_value: 'Reiseziel?'
+date_search.nb_jours: 'Anzahl der Übernachtungen'
+date_search.nb_jours.required: 'Die Anzahl der Übernachtungen ist erforderlich.'
+date_search.nb_jours.empty_value: 'Anzahl der Übernachtungen?'
+date_search.ville: Ort
+date_search.ville.empty_value: 'Ort?'
+date_search.camping: Campingplatz
+date_search.camping.empty_value: 'Campingplatz?'
+date_search.nb_adultes: Erwachsene(r)
+date_search.nb_enfants: Kind(er)
+date_search.date_debut.required: 'Das Anreisedatum ist erforderlich.'
+date_search.date_fin.required: 'Das Abreisedatum ist erforderlich.'
+date_search.destination.required: 'Das Reiseziel ist erforderlich.'
+date_search.ville.required: 'Die Stadt oder der Campingplatz ist erforderlich.'
+date_search.nb_adultes.required: 'Die Anzahl der Erwachsenen ist erforderlich.'
+date_search.button.submit: Suchen
+date_search.submit: Finden
+date_search.campings: Campingplätze
+date_search.ou: oder
+date_search.nuits: nächte
+comme: wie
+ans: Jahre
+Toutes: Alle
+header.information: 'Informationen & Reservierungen'
+header.telephone.number: '+49 (0) 721 680 78 240'
+header.telephone.price: ''
+header.130_camping: 'mehr als 170 Campingplätze in Frankreich, Spanien & Italien'
+header.location_mobil_home: 'Vermietung von Wohnwagen auf Campingplätzen (Frankreich, Spanien, Italien und Portugal)'
+fiche.camping: Campingplatz
+fiche.situer_carte: 'Auf der Karte anzeigen'
+fiche.description_title: Beschreibung
+fiche.plan_camping: 'Plan des Campingplatzes'
+fiche.activite_event: 'Liste der Aktivitäten und Veranstaltungen'
+fiche.le_camping: 'Der Campingplatz'
+fiche.les_locations: Vermietungsangebote
+fiche.sur_place: 'Vor Ort'
+fiche.a_proximite: 'in der Nähe'
+fiche.infos_pratiques: 'Praktische Infos'
+fiche.video: Video
+fiche.photo: Foto
+fiche.emplacements: Stellplätze
+fiche.ouvert_du: 'Öffnen:'
+fiche.vous_aimerez: 'Das wird Ihnen gefallen'
+fiche.comme: wie...
+fiche.les_vacances_a: 'Urlaub in'
+fiche.nous_avons_liste: 'Wir haben folgende Ergebnisse:'
+fiche.sites_a_visiter: Besichtigungsorte
+fiche.activites_sportives: 'sportliche Aktivitäten'
+fiche.evenements_culturels: 'kulturelle Veranstaltungen'
+fiche.evenement_ne_pas_manquer: 'Ein absolutes Muss:'
+fiche.distance_camping: 'Entfernung des Campingplatzes:'
+fiche.filtrer_par: 'Filtern nach:'
+fiche.toutes_categories: 'Alle Kategorien'
+fiche.toutes_capacite: 'Alle Kapazitäten'
+fiche.capacite: 'Kapazität:'
+fiche.places: Plätze
+fiche.nombre_chambres: 'Anzahl der Zimmer:'
+fiche.nombre_personnes: 'Anzahl der Personen:'
+fiche.surface: 'Fläche:'
+fiche.type_terrasse: 'Art der Terrasse:'
+fiche.activites: Aktivitäten
+fiche.equipements: Ausstattung
+fiche.services_complementaires: Zusatzleistungen
+fiche.activites_et_sites_a_visiter: 'Aktivitäten und Besichtigungsorte'
+fiche.km: km
+fiche.agenda_culturel_et_sorties: 'Kulturelles Programm und Veranstaltungen'
+fiche.coordonnees_du_camping: 'Kontaktdaten des Campingplatzes'
+fiche.gps: 'GPS:'
+fiche.horaires_ouverture: Öffnungszeiten
+fiche.reception: Rezeption
+fiche.arrivees_departs: Anreise/Abreise
+fiche.fax: 'Fax:'
+fiche.tel: 'Tel.:'
+fiche.baignades.top: Baden
+fiche.baignades.bottom: 'und Wellness'
+fiche.retour: Zurück
+fiche.ouvert_au: 'bis zum'
+fiche.plan.legende: 'Legende zum Plan des Campingplatzes'
+fiche.bloc_prix.type_hebergement: 'für ein(e/n) %categorie% - %type%'
+fiche.toutes_regions: 'All regions'
+fiche.region: Region
+home.topcamping: 'Top Campingplätze'
+home.topcamping.link: 'Alle top Campingplätze'
+home.vacances_directes_cest: 'Vacances Directes steht für'
+home.4_pays: '3 Länder'
+home.26_regions: '34 Regionen'
+home.touristiques: Regionen
+home.destination: Reiseziel
+home.destination_france: 'Reiseziel Frankreich'
+home.plus_de_regions: 'Mehr Regionen'
+home.faites_le_plein_d_activites: 'Machen Sie viele Aktivitäten'
+home.dernieres_minutes: 'Last Minute'
+home.early_booking: Frühbucher
+home.dernieres_minutes.link: 'Alle Last Minute Angebote'
+home.early_booking.link: 'Alle Frühbucherangebote'
+home.idees_weekend.link: 'Alle Wochenendtrips (%number%)'
+compte.title: Kundenbereich
+compte.placeholder.name: Benutzername
+compte.placeholder.password: Passwort
+compte.login.error: "Die von Ihnen eingegebenen Login-Informationen sind nicht korrekt.\nVersuchen Sie es bitte noch einmal (vergewissern Sie sich, dass die Umschalttaste nicht aktiviert ist)."
+general.a_partir_de: ab
+general.meilleur_prix: 'Unser bester Preis'
+general.jouer: Spielen
+general.en_savoir_plus: 'Mehr erfahren'
+general.la_nuit: nachts
+general.idees_week_end: 'Unsere tipps für sie'
+general.filter_par: 'Filtern nach'
+general.campings_vacances_directes: 'Vacances Directes Campingplätze'
+general.decouvrir_le_camping: 'Den Campingplatz entdecken'
+general.au_lieu_de: statt
+general.sur_la_destination: 'über das Reiseziel'
+general.plus_visite: 'Mehr Besichtigungen'
+general.plus_evenements: 'Mehr Veranstaltungen'
+general.decouvrir: Entdecken
+general.reserver: Buchen
+general.profite: Zuschlagen
+general.la_semaine: 'pro Woche'
+general.contre_proposition: 'ACHTUNG! Ihre Suche ergibt keine Treffer.<br />Die untenstehenden Angebote sind diejenigen, die Ihrer Suche am nächsten kommen.'
+general.submit: Senden
+general.logout: Anmelden
+general.nos_offres: 'Unsere Angebote'
+general.voir_offre: 'Angebot ansehen'
+general.plus_que: 'Mehr als'
+general.du: Vom
+general.au: 'bis zum'
+general.resultats: Ergebnis(se)
+general.toggle: 'Anzeige Ergebnis(se)'
+general.budget_range: 'Angebotene(s) Budget(s)'
+general.list: Liste
+general.map: Karte
+filtres.affinez_recherche: 'Verfeinern Sie Ihre Suche'
+filtres.criteres_selectionne: 'Ausgewählte Kriterien'
+filtres.situation: Situation
+filtres.categories: Kategorien
+filtres.baignade_bien_etre: 'Baden & Wellness'
+filtres.animations_loisirs: 'Animationen und Freizeitaktivitäten'
+filtres.commerces_services: 'Einkaufsmöglichkeiten und Services'
+filtres.thematiques: Thematisch
+filtres.filtrer: Filtern
+footer.contact.title: Kontakt
+footer.contact.tel: '+49 (0) 721 680 78 240'
+footer.contact.fax: 'Fax: +49 (0) 721 96 14 12 60'
+footer.contact.price: ''
+footer.contact.adresse.name: 'Vacances directes'
+footer.contact.adresse.lieu_dit: 'Ettlinger-Tor-Platz 3'
+footer.contact.adresse.rue: 'D-76137 Karlsruhe'
+footer.contact.adresse.ville: ''
+footer.contact.adresse.code_postal: ''
+footer.charte_qualite: Qualitätscharta
+footer.conditions_generales_de_location: 'Allgemeine Vermietungsbedingungen'
+footer.faq: FAQ
+footer.guide_pratique: Hilfe
+footer.plan_du_site: Sitemap
+footer.credits: Credits
+footer.mentions_legales: Impressum
+footer.transactions_securisees: 'Sichere Zahlung'
+footer.cb_visa: 'Kreditkarte Visa'
+footer.masterCard: MasterCard
+footer.nous_joindre: 'Bitte kontaktieren Sie uns unter'
+footer.nous_contacter: 'Uns kontaktieren'
+footer.demande_catalogue: Kataloganfrage
+footer.description_catalogue: 'Hoc inmaturo interitu ipse quoque sui pertaesus excessit e vita aetatis.'
+footer.consulter_catalogue: 'Katalog ansehen'
+footer.telecharger_catalogue: 'Katalog herunterladen'
+footer.facebook.titre: 'Lassen Sie uns in Kontakt bleiben'
+footer.facebook.intro: 'Erfahren Sie alles über unsere Wochenendtrips & Geheimtipps auf'
+footer.facebook.like: 'Gefällt mir'
+footer.facebook.desc.highlight: 'Teilen Sie Ihre Vacances Directes Erfahrung'
+footer.facebook.desc: 'mit anderen Urlaubern. Fotos, Aktivitäten, Meinungen  treten Sie der Vacances Directes Community bei auf'
+footer.jeu.titre: 'Großes Gewinnspiel auf'
+footer.jeu.desc: 'Gewinnen Sie ein Wochenende in Italien'
+footer.location_camping: 'Vermietungsangebote auf Campingplätzen'
+footer.annuaire_campings: Campingplatzverzeichnis
+footer.campings_pas_chers: 'Liste mit günstigen Campingplätzen'
+footer.guide_activites: 'Die Angebote an Aktivitäten'
+footer.campings_france: 'Campingplätze Frankreich'
+footer.campings_espagne: 'Campingplätze Spanien'
+footer.campings_italie: 'Campingplätze Italien'
+footer.a_propos: 'Über uns'
+footer.a_propos.desc: 'Seit über 35 Jahren bietet Vacances Directes die Vermietung von komfortabel eingerichteten und erstklassigen Wohnwagen auf Campingplätzen an. Entdecken Sie mehr als 180 sorgfältig ausgewählte Reiseziele in Frankreich, Spanien und Italien für einen geselligen und entspannten Urlaub.'
+footer.actualites: Aktuelles
+footer.qui_sommes_nous: 'Wer sind wir?'
+footer.recrutement: 'Jobs bei Vacances Directes'
+footer.ce: 'Vacances Betriebsrat'
+footer.newsletter: 'Newsletter abonnieren'
+footer.newsletter.desc: 'Erhalten Sie die Geheimtipps und die neuesten Angebote von Vacances Directes direkt in Ihrem E-Mail-Postfach.'
+footer.newsletter.entrer_son_email: 'E-MAIL EINGEBEN'
+footer.site_mobile: Mobiltelefonseite
+footer.site_mobile.desc: 'Erhalten Sie alle Angebote von Vacances Directes auf Ihrem Mobiltelefon.'
+footer.annulation: Stornierungsformular
+footer.locations_camping: 'Camping Mieten'
+pactiv-1: 'Urlaub mit meinen Eltern  das gefällt mir'
+pactiv-2: 'Lust auf eine kleine Auszeit, um Luft zu schnappen'
+pactiv-3: 'Urlaub voller Entspannung und Lebensfreude'
+encart_vacances_directes.title: 'Vacances Directes'
+encart_vacances_directes.subtitle: 'Ein perfekter Urlaub'
+encart_vacances_directes.item_1: 'Unsere Mitarbeiter heißen Sie herzlich willkommen!'
+encart_vacances_directes.item_2: 'Sorgfältig ausgewählte Campingplätze'
+encart_vacances_directes.item_3: 'Eine zu 100% gesicherte Website'
+encart_vacances_directes.item_4: 'Wohnwagen mit allem Komfort für einen Urlaub, der Sie auf andere Gedanken bringt'
+encart_hebergement.title: 'Vacances Directes'
+encart_hebergement.subtitle: bietet
+encart_hebergement.standardise.title: 'standardisierte Unterkünfte'
+encart_hebergement.standardise.texte: 'Der gleiche Mobilhome-Typ bietet die gleichen Leistungen auf allen Vacances Directes Campingplätzen.'
+encart_hebergement.adapte.title: 'individuell angepasste Unterkünfte'
+encart_hebergement.adapte.texte: 'Vacances Directes interessiert sich für die Entwicklungen des täglichen Lebens und bietet Wohnwagen mit allem Komfort, die auf die Bedürfnisse jedes einzelnen angepasst sind.'
+encart_hebergement.varie.title: 'abwechslungsreiche Unterkünfte'
+encart_hebergement.varie.texte: 'Wählen Sie zwischen einer Vielzahl verschiedener Unterkünfte. Vacances Directes steht für 10 Wohnwagen- und Wohnmobilmodelle, die sich an alle Familien und alle Budgets anpassen lassen.'
+encart_hebergement.equipe.title: 'voll ausgestattete Unterkünfte'
+encart_hebergement.equipe.texte: 'Die Unterkünfte sind vollständig ausgestattet und bereit, Sie aufzunehmen. Alles ist vorhanden und inklusive (Laken, Decken, Kopfkissen ...). Bringen Sie einfach nur Ihre Haushaltswäsche mit. Es gibt eine eingebaute und voll ausgestattete Küche.'
+encart_informations.title: 'Informationen & Reservierungen unter'
+encart_informations.price: ''
+encart_informations.dates_1: "Von Montag bis Freitag 9 - 18\_Uhr"
+encart_informations.dates_2: ''
+encart_autres_themes.title: 'Andere Möglichkeiten für Ihr Wochenende'
+semainier.title: 'Tarife & Verfügbarkeiten'
+semainier.choose_dates_desc: 'Im Juli und August sind die An- und Abreise mittwochs und samstags möglich.'
+semainier.type_hebergement_title: 'Wählen Sie Ihren Zeitraum und die Art Ihrer Unterkunft'
+semainier.type_hebergement_desc: 'Überprüfen Sie die Verfügbarkeiten für jeden einzelnen Monat und klicken Sie auf den Zeitraum und die Unterkunft Ihrer Wahl, um zu buchen.'
+semainier.indisponible: 'Nicht verfügbar'
+semainier.type_hebergement.details: Details
+resalys.creer_compte: 'Mein Konto erstellen'
+resalys.total: Gesamt
+resalys.date_format: 'Format für das Datum TT/MM/JJJJ'
+resalys.besoin_aide_title: Hilfe
+resalys.besoin_aide_subtitle: 'Eine Frage zu Ihrer Reservierung&hellip;'
+resalys.besoin_aide_contact: 'Kontaktieren Sie uns'
+resalys.besoin_aide_num: 'unter +49 (0) 721 680 78 240'
+resalys.session_expire: 'Urlaubsangebot nicht verfügbar'
+resalys.session_expire_texte_1: 'Während der Suche nach Verfügbarkeiten ist ein Fehler aufgetreten.'
+resalys.session_expire_texte_2: 'Ändern Sie Ihre Anfrage oder vertrauen Sie sie unserem Reservierungsteam an, indem Sie unter der Nummer  +49 (0) 721 680 78 240 (0,15 /min) anrufen.'
+resalys.non_connecte: 'Um Ihre Reservierung fortzusetzen,<br />melden Sie sich bitte an oder erstellen Sie oben ein Konto'
+resalys.retour_home: 'Zurück zur Startseite'
+vos_week_ends: 'Ihre Wochenendtrips'
+breadcrumbs.home: Startseite
+breadcrumbs.bonsplans: Geheimtipps
+topCamping.h1: 'Die besten Urlaubsziele zum Campen'
+dernieresMinutes.h1: 'Unsere Last Minute Campingangebote (Vermietung Wohnwagen)'
+earlyBooking.h1: 'Unsere Campingangebote für Frühbucher (Vermietung Wohnwagen)'
+demande_annulation.assure_nom.label: Name
+demande_annulation.assure_nom.not_blank: 'Der Name ist erforderlich'
+demande_annulation.assure_prenom.label: Vorname
+demande_annulation.assure_prenom.not_blank: 'Der Vorname ist erforderlich'
+demande_annulation.assure_adresse.label: Adresse
+demande_annulation.assure_adresse.not_blank: 'Die Adresse ist erforderlich'
+demande_annulation.assure_code_postal.label: Postleitzahl
+demande_annulation.assure_code_postal.not_blank: 'Die Postleitzahl ist erforderlich'
+demande_annulation.assure_ville.label: Stadt
+demande_annulation.assure_ville.not_blank: 'Die Stadt ist erforderlich'
+demande_annulation.assure_pays.label: Land
+demande_annulation.assure_pays.empty_value: 'Wählen Sie ein Land'
+demande_annulation.assure_pays.not_blank: 'Das Land ist erforderlich'
+demande_annulation.assure_mail.label: E-Mail
+demande_annulation.assure_mail.not_blank: 'Die E-Mail ist erforderlich'
+demande_annulation.assure_mail.mail: 'Die angegebene E-Mail-Adresse ist nicht gültig'
+demande_annulation.assure_telephone.label: Telefon
+demande_annulation.assure_telephone.not_blank: 'Die Telefonnummer ist erforderlich'
+demande_annulation.camping_montant_sejour.label: 'Betrag des Urlaubs'
+demande_annulation.camping_montant_sejour.not_blank: 'Der Betrag des Urlaubs ist erforderlich'
+demande_annulation.camping_montant_verse.label: 'Betrag der überwiesenen Summe'
+demande_annulation.camping_montant_verse.not_blank: 'Der Betrag der überwiesenen Summe ist erforderlich'
+demande_annulation.etablissement.label: 'Name des Campingplatzes'
+demande_annulation.etablissement.empty_value: 'Wählen Sie einen Campingplatz'
+demande_annulation.etablissement.not_blank: 'Der Name des Campingplatzes ist erforderlich'
+demande_annulation.camping_num_resa.label: Reservierungsnummer
+demande_annulation.camping_num_resa.not_blank: 'Die Reservierungsnummer ist erforderlich'
+demande_annulation.sinistre_nature.label: 'Art des Schadens'
+demande_annulation.sinistre_nature.annulation: 'Stornierung des Urlaubs'
+demande_annulation.sinistre_nature.interruption: 'Abbruch des Urlaubs'
+demande_annulation.sinistre_nature.not_blank: 'Die Art des Schadens ist erforderlich'
+demande_annulation.sinistre_suite.label: 'In Folge von'
+demande_annulation.sinistre_suite.maladie: Krankheit
+demande_annulation.sinistre_suite.accident: Unfall
+demande_annulation.sinistre_suite.autre: Andere
+demande_annulation.sinistre_suite.not_blank: 'Die Folge der Art des Schadens ist erforderlich'
+demande_annulation.sinistre_date.label: 'Datum des Schadens'
+demande_annulation.sinistre_date.not_blank: 'Das Datum des Schadens ist erforderlich'
+demande_annulation.sinistre_date.date: 'Das angegebene Datum des Schadens ist nicht gültig'
+demande_annulation.sinistre_resume.label: 'Kurze Zusammenfassung der Fakten und Beschreibung der Art des Schadens'
+demande_annulation.sinistre_resume.not_blank: 'Die Zusammenfassung des Schadens ist erforderlich'
+demande_annulation.file_1: ''
+demande_annulation.file_2: ''
+demande_annulation.file_3: ''
+demande_annulation.file_4: ''
+demande_annulation.certifie.label: 'Ich bestätige hiermit, dass ich um die oben verzeichnete Stornierung bitte'
+demande_annulation.certifie.is_true: 'Bitte kreuzen Sie das Kästchen an, um Ihre Stornierungsanfrage zu bestätigen'
+demande_annulation.files.label: 'Anhang beifügen: (Format : pdf, doc, docx, png, jpg von max. 2 MB)'
+demande_annulation.files.mimeTypesMessage: 'Ungültiger Dateityp (autorisierte Formate: pdf, doc, docx, png, jpg)'
+demande_annulation.files.notFoundMessage: 'Beim Hochladen der Datei ist ein Fehler aufgetreten'
+demande_annulation.files.notReadableMessage: 'Beim Hochladen der Datei ist ein Fehler aufgetreten'
+demande_annulation.files.uploadIniSizeErrorMessage: 'Die Datei ist zu groß (max. 2 MB)'
+demande_annulation.files.uploadFormSizeErrorMessage: 'Die Datei ist zu groß (max. 2 MB)'
+demande_annulation.files.uploadErrorMessage: 'Beim Hochladen der Datei ist ein Fehler aufgetreten'
+demande_annulation.confirmation.title: Bestätigung
+demande_annulation.confirmation.content: 'Ihre Stornierungsanfrage wurde erfolgreich versendet.'
+demande_annulation.title: Stornierungsformular
+demande_annulation.subtitle: 'Eine Reservierung stornieren'
+demande_annulation.legend.coordonnees: 'Ihre Kontaktdaten'
+demande_annulation.legend.reservation: 'Ihre Reservierung'
+demande_annulation.texte1: 'Sie haben mit VACANCES DIRECTES eine Versicherung für die Stornierung und/oder den Abbruch des Urlaubs abgeschlossen und Ihnen ist ein Schaden zugestoßen, der den Kriterien zur Inanspruchnahme der Versicherung entspricht wie sie in den'
+demande_annulation.lienCGA: 'Allgemeinen Versicherungsbedingungen (AVB) genau aufgelistet sind.'
+demande_annulation.texte2: 'In diesem Fall ist es zwingend erforderlich, das vorliegende Formular innerhalb der 5 auf das Auftreten des Schadens folgenden Tage auszufüllen und zu bestätigen. Sollte diese Frist nicht eingehalten werden, behält sich der Versicherer das Recht vor, Ihnen die Vorteile der Versicherung zu verweigern (s. Art.4.1 der AVB - Verfall der Garantieleistung).'
+demande_annulation.texte3: 'Mit der Bestätigung des vorliegenden Formulars zur Schadenserklärung erklären Sie, dass die von Ihnen in diesem Formular angegebenen Informationen korrekt sind und der Wahrheit entsprechen. Zudem erklären Sie sich damit einverstanden, dass die Bearbeitung Ihres Falls und die Ihnen vom Versicherer geschuldete Entschädigung der Einhändigung zusätzlicher Dokumente und Informationen, die gemäß dem Artikel 4.2 der AVB von Ihnen verlangt werden, unterliegen.'
+offreSpeciales.intro: "Nutzen Sie unsere Frühbucheraktion für Ihren Urlaub in der Nebensaison:\n-10% für eine Reservierung vor dem 31.01.2013\n-5% für eine Reservierung vor dem 28.02.2013"
+offreSpeciales.texte: 'Angebot nur für den Aufenthalt gültig, nicht mit den anderen aktuellen Spezialangeboten kombinierbar. Für alle Aufenthalte außerhalb des Zeitraums vom 06.07.2013 bis 31.08.2013 gültig. Dieses Angebot gilt nicht für folgende Reiseziele: Coteau de la Marine, Castellas, Aqua Viva, Neptune, Château de Galinée, Domaine de Kermario, Chaponnet, Sandaya Soulac Plage, Ur Onéa, Domaine des Naädes, Cupulatta, Playa Montroig und andere eventuelle Ausnahmen.'
+poi.informations_pratiques: 'Praktische Informationen'
+poi.acceder_site: 'Zur Website'
+poi.tel: 'Tel.:'
+poi.fax: 'Fax:'
+poi.email: 'E-Mail:'
+poi.categorie: 'Kategorie:'
+poi.type: 'Art:'
+poi.transport: 'Transport:'
+poi.adresse: 'Adresse:'
+event.informations_pratiques: 'Praktische Informationen'
+event.acceder_site: 'Zur Website'
+event.tel: 'Tel.:'
+event.fax: 'Fax:'
+event.email: 'E-Mail:'
+event.categorie: 'Kategorie:'
+event.type: 'Art:'
+event.transport: 'Transport:'
+event.adresse: 'Adresse:'
+global.search_message: 'Wir bearbeiten Ihre Anfrage.<br /><br />Bitte warten Sie.'
+global.compte.btn: 'Mein Konto'
+global.compte.title: 'Kundenbereich '
+global.compte.user: Benutzername
+global.compte.password: Passwort
+global.compte.forget: 'Passwort vergessen?'
+global.compte.submit: Anmelden
+global.compte.accueil: Startseite
+global.compte.coordonnees: Kontaktinformationen
+global.compte.demande_brochure: 'Broschüre anfordern'
+global.compte.reservation: Buchung
+global.compte.title_client: ''
+global.site_name: 'Vacances directes.de'
+bon_plan.title: 'Campingplatz: %bonPlan%'
+location.list.title: 'Unsere Unterkünfte: %type%'
+location.list.selection: 'Unsere Unterkünfte'
+location.list.hebergements.savoir_plus: 'Mehr erfahren'
+location.list.hebergements.plus_de_resultats: 'Mehr Ergebnisse'
+location.list.hebergements.nb_places: '%nbPlaces% Plätze'
+location.list.notre_selection: 'Unsere Auswahl'
+location.fiche.subtitle: 'Vermietung %type% %nbPlaces% Personen'
+location.fiche.voir_les_campings: 'Campingplätze ansehen'
+location.fiche.onglet.logement.title: 'Die Unterkunft'
+location.fiche.onglet.logement.informations_pratiques.title: 'Praktische Informationen'
+location.fiche.onglet.logement.informations_pratiques.capacite: Kapazität
+location.fiche.onglet.logement.informations_pratiques.dimensions: Größe
+location.fiche.onglet.logement.informations_pratiques.agencement: Aufbau
+location.fiche.onglet.logement.informations_pratiques.equipements: Ausstattung
+location.fiche.onglet.logement.informations_pratiques.annee_utilisation: Nutzungsjahre
+location.fiche.onglet.logement.lien_campings: 'Die Campingplätze'
+location.fiche.onglet.campings.title: 'Die Campingplätze'
+location.fiche.onglet.campings.selection.title: 'Unsere Auswahl an Campingplätzen'
+location.fiche.onglet.campings.lien_logement: 'Die Unterkunft'
+'The CSRF token is invalid. Please try to resubmit the form.': 'Ihre Sitzung ist abgelaufen. Bitte geben Sie das Formular noch einmal ein.'
+share.facebook: 'Auf Facebook teilen'
+share.twitter: 'Auf Twitter teilen'
+couloir.menu.detail: 'Details des Aufenthaltes'
+couloir.menu.recapitulatif: Übersicht
+couloir.menu.paiement: Bezahlung
+couloir.confirmation: Bestätigung
+couloir.title: 'Willkommen im'
+couloir.title_reservation: ' Buchungsbereich'
+err404.title: 'Sorry, diese Seite existiert'
+err404.content: 'Zurück zur <a href="%link%">Startseite</a>.'
+datepicker.days: '[''Sonntag'', ''Montag'', ''Dienstag'', ''Mittwoch'', ''Donnerstag'', ''Freitag'', ''Samstag'', ''Sonntag'']'
+datepicker.daysShort: '[''Son'', ''Mon'', ''Die'', ''Mit'', ''Don'', ''Fre'', ''Sam'', ''Son'']'
+datepicker.daysMin: '[''So'', ''Mo'', ''Di'', ''Mi'', ''Do'', ''Fr'', ''Sa'', ''So'']'
+datepicker.months: '[''Januar'', ''Februar'', ''März'', ''April'', ''Mai'', ''Juni'', ''Juli'', ''August'', ''September'', ''Oktober'', ''November'', ''Dezember'']'
+datepicker.monthsShort: '[''Jan'', ''Feb'', ''Mär'', ''Apr'', ''Mai'', ''Jun'', ''Jul'', ''Aug'', ''Sep'', ''Okt'', ''Nov'', ''Dez'']'
+datepicker.weekMin: '''Wo'''
+widget.offres_speciales.title: Sonderangebote
+widget.offres_speciales.more: Mehr
+widget.offres_speciales.from: Anfangspreis
+widget.offres_speciales.instead: statt
+widget.tracking.title: 'Schon angesehen'
+widget.tracking.from: ab
+widget.related.title: 'Dies könnte Ihnen auch gefallen'
+widget.related.from: ab
+widget.reassurance.title: 'Informationen & Reservierungen unter'
+widget.reassurance.tel: '0049 (0) 721 680 78 240'
+widget.reassurance.telto: '0049 (0) 721 680 78 240'
+widget.reassurance.price: ''
+widget.reassurance.ouverture_du: 'Von Montag bis Freitag 9 - 18 Uhr'
+widget.reassurance.ouverture_au: ''
+seo_title_default: 'Vermietung Wohnwagen Spanien, Frankreich, Italien'
+seo_title_pays: 'günstiger Campingplatz %pays%'
+err500.title: 'Désolé, une erreur s''est produite ...'
+err500.content: 'Retourner sur la <a href="%link%">page d''accueil</a>.'

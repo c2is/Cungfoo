@@ -429,6 +429,58 @@ class BaseBonPlanType extends AppAwareType
         );
     }
 
+    public function getSeoTitleType()
+    {
+        return 'text';
+    }
+
+    public function getSeoTitleOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'bon_plan_i18n.seo_title',
+        );
+    }
+
+    public function getSeoDescriptionType()
+    {
+        return 'textarea';
+    }
+
+    public function getSeoDescriptionOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'bon_plan_i18n.seo_description',
+        );
+    }
+
+    public function getSeoH1Type()
+    {
+        return 'text';
+    }
+
+    public function getSeoH1Options()
+    {
+        return array(
+            'required' => false,
+            'label' => 'bon_plan_i18n.seo_h1',
+        );
+    }
+
+    public function getSeoKeywordsType()
+    {
+        return 'textarea';
+    }
+
+    public function getSeoKeywordsOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'bon_plan_i18n.seo_keywords',
+        );
+    }
+
     public function getActiveLocaleType()
     {
         return 'checkbox';
@@ -482,6 +534,10 @@ class BaseBonPlanType extends AppAwareType
                 'description' => array_merge(array('type' => $this->getDescriptionType()), $this->getDescriptionOptions()),
                 'indice' => array_merge(array('type' => $this->getIndiceType()), $this->getIndiceOptions()),
                 'indice_prix' => array_merge(array('type' => $this->getIndicePrixType()), $this->getIndicePrixOptions()),
+                'seo_title' => array_merge(array('type' => $this->getSeoTitleType()), $this->getSeoTitleOptions()),
+                'seo_description' => array_merge(array('type' => $this->getSeoDescriptionType()), $this->getSeoDescriptionOptions()),
+                'seo_h1' => array_merge(array('type' => $this->getSeoH1Type()), $this->getSeoH1Options()),
+                'seo_keywords' => array_merge(array('type' => $this->getSeoKeywordsType()), $this->getSeoKeywordsOptions()),
                 'active_locale' => array_merge(array('type' => $this->getActiveLocaleType()), $this->getActiveLocaleOptions()),
 
             )

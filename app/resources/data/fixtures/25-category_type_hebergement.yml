@@ -4,61 +4,61 @@
         MinimumPrice: null
         ImageMenu: null
         ImagePage: null
-        Active: true
         SortableRank: 1
+        Active: true
     2:
         Code: MH
         MinimumPrice: '23'
         ImageMenu: uploads/category_type_hebergements/50f027b099c3f.jpeg
         ImagePage: uploads/category_type_hebergements/50f027b09a625.jpeg
-        Active: true
         SortableRank: 2
+        Active: true
     3:
         Code: CHA
         MinimumPrice: '29'
         ImageMenu: uploads/category_type_hebergements/50f027e7a891b.jpeg
         ImagePage: uploads/category_type_hebergements/50f027e7a9130.jpeg
-        Active: true
         SortableRank: 3
+        Active: true
     4:
         Code: MAIS
         MinimumPrice: '36'
         ImageMenu: uploads/category_type_hebergements/50f027f6dd0e6.jpeg
         ImagePage: uploads/category_type_hebergements/50f027f6dd567.jpeg
-        Active: true
         SortableRank: 4
+        Active: true
     5:
         Code: CAR
         MinimumPrice: '24'
         ImageMenu: uploads/category_type_hebergements/50f028054f09a.jpeg
         ImagePage: uploads/category_type_hebergements/50f028054f57f.jpeg
-        Active: true
         SortableRank: 5
+        Active: true
     6:
         Code: GITE
         MinimumPrice: '36'
         ImageMenu: uploads/category_type_hebergements/50f028115ee34.jpeg
         ImagePage: uploads/category_type_hebergements/50f028115f2b5.jpeg
-        Active: true
         SortableRank: 6
+        Active: true
     7:
         Code: EMP
         MinimumPrice: '17'
         ImageMenu: uploads/category_type_hebergements/50f0282a35a72.jpeg
         ImagePage: uploads/category_type_hebergements/50f0282a35f99.jpeg
-        Active: true
         SortableRank: 7
+        Active: true
     8:
         Code: TENT
         MinimumPrice: '21'
         ImageMenu: uploads/category_type_hebergements/50f02841b567b.jpeg
         ImagePage: uploads/category_type_hebergements/50f02841b5f36.jpeg
-        Active: true
         SortableRank: 8
+        Active: true
     9:
         Code: APT
         MinimumPrice: null
         ImageMenu: null
         ImagePage: null
-        Active: true
         SortableRank: 1
+        Active: true

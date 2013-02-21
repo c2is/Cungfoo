@@ -1,8 +1,8 @@
 {% extends "base.twig" %}
 
 {% block leftColumn %}
-    <h1>Désolé, une erreur s'est produite ...</h1>
-    <p>Retourner sur la <a href="{{path('homepage')}}">page d'accueil</a>.</p>
+    <h1>{{ 'err500.title' | trans }}</h1>
+    <p>{{ 'err500.content' | trans({'%link%': path('homepage')}) | raw }}</p>
 {% endblock %}
 
 {% block rightColumn %}

@@ -6,6 +6,10 @@
         Slug: empfangssaal
         Accroche: 'Au camping comme à la maison'
         Description: "Découvrez ici les hébergements proposé par Vacances directes : mobil-homes jusqu'à 8 places, caravanes, gîtes, chalets, bungalows sur des campins de qualité en France, en Espagne et en Italie. Pour un séjour réussi en famille ou entre amis, retrouvez le confort d'un hébergement de qualité.\nNos hébergements sont régulièrement entretenus et renouvelés afin de vous proposer un confort maximum."
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     1_en:
         Id: 1
@@ -14,6 +18,10 @@
         Slug: null
         Accroche: 'Au camping comme à la maison'
         Description: "Découvrez ici les hébergements proposé par Vacances directes : mobil-homes jusqu'à 8 places, caravanes, gîtes, chalets, bungalows sur des campins de qualité en France, en Espagne et en Italie. Pour un séjour réussi en famille ou entre amis, retrouvez le confort d'un hébergement de qualité.\nNos hébergements sont régulièrement entretenus et renouvelés afin de vous proposer un confort maximum."
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     1_fr:
         Id: 1
@@ -22,6 +30,10 @@
         Slug: salles-de-reception
         Accroche: 'Au camping comme à la maison'
         Description: "Découvrez ici les hébergements proposé par Vacances directes : mobil-homes jusqu'à 8 places, caravanes, gîtes, chalets, bungalows sur des campins de qualité en France, en Espagne et en Italie. Pour un séjour réussi en famille ou entre amis, retrouvez le confort d'un hébergement de qualité.\nNos hébergements sont régulièrement entretenus et renouvelés afin de vous proposer un confort maximum."
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     1_nl:
         Id: 1
@@ -30,6 +42,10 @@
         Slug: null
         Accroche: 'Au camping comme à la maison'
         Description: "Découvrez ici les hébergements proposé par Vacances directes : mobil-homes jusqu'à 8 places, caravanes, gîtes, chalets, bungalows sur des campins de qualité en France, en Espagne et en Italie. Pour un séjour réussi en famille ou entre amis, retrouvez le confort d'un hébergement de qualité.\nNos hébergements sont régulièrement entretenus et renouvelés afin de vous proposer un confort maximum."
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     2_de:
         Id: 2
@@ -38,6 +54,10 @@
         Slug: mobilhomes
         Accroche: 'Au camping comme à la maison'
         Description: 'Pour des vacances en famille ou entre amis, profitez de nos mobil-homes tout confort. Choisissez celui qui vous ressemble et vivez vos vacances à votre rythme.'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     2_en:
         Id: 2
@@ -46,6 +66,10 @@
         Slug: null
         Accroche: 'Au camping comme à la maison'
         Description: 'Pour des vacances en famille ou entre amis, profitez de nos mobil-homes tout confort. Choisissez celui qui vous ressemble et vivez vos vacances à votre rythme.'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     2_fr:
         Id: 2
@@ -54,6 +78,10 @@
         Slug: mobil-homes
         Accroche: 'Au camping comme à la maison'
         Description: 'Pour des vacances en famille ou entre amis, profitez de nos mobil-homes tout confort. Choisissez celui qui vous ressemble et vivez vos vacances à votre rythme.'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     2_nl:
         Id: 2
@@ -62,6 +90,10 @@
         Slug: null
         Accroche: 'Au camping comme à la maison'
         Description: 'Pour des vacances en famille ou entre amis, profitez de nos mobil-homes tout confort. Choisissez celui qui vous ressemble et vivez vos vacances à votre rythme.'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     3_de:
         Id: 3
@@ -70,6 +102,10 @@
         Slug: chalets
         Accroche: 'Changez d’air !'
         Description: 'Parfaitement intégrés à l''environnement, nos chalets vous attendent pour un séjour original et dépaysant. Vous apprécierez la terrasse couverte et l''équipement confortable de cet hébergement atypique.'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     3_en:
         Id: 3
@@ -78,6 +114,10 @@
         Slug: null
         Accroche: 'Changez d’air !'
         Description: 'Parfaitement intégrés à l''environnement, nos chalets vous attendent pour un séjour original et dépaysant. Vous apprécierez la terrasse couverte et l''équipement confortable de cet hébergement atypique.'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     3_fr:
         Id: 3
@@ -86,6 +126,10 @@
         Slug: chalets
         Accroche: 'Changez d’air !'
         Description: 'Parfaitement intégrés à l''environnement, nos chalets vous attendent pour un séjour original et dépaysant. Vous apprécierez la terrasse couverte et l''équipement confortable de cet hébergement atypique.'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     3_nl:
         Id: 3
@@ -94,6 +138,10 @@
         Slug: null
         Accroche: 'Changez d’air !'
         Description: 'Parfaitement intégrés à l''environnement, nos chalets vous attendent pour un séjour original et dépaysant. Vous apprécierez la terrasse couverte et l''équipement confortable de cet hébergement atypique.'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     4_de:
         Id: 4
@@ -102,6 +150,10 @@
         Slug: n-a
         Accroche: 'Un séjour haut en couleur'
         Description: 'Découvrez le charme des bungalows sur le Domaine d''Anghione en Corse et leur terrasse nature à l’ombre de la pinède. Ces hébergements tout confort vous attendent pour des vacances inoubliables sur l’ile de Beauté.'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     4_en:
         Id: 4
@@ -110,6 +162,10 @@
         Slug: null
         Accroche: 'Un séjour haut en couleur'
         Description: 'Découvrez le charme des bungalows sur le Domaine d''Anghione en Corse et leur terrasse nature à l’ombre de la pinède. Ces hébergements tout confort vous attendent pour des vacances inoubliables sur l’ile de Beauté.'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     4_fr:
         Id: 4
@@ -118,6 +174,10 @@
         Slug: maisonnette
         Accroche: 'Un séjour haut en couleur'
         Description: 'Découvrez le charme des bungalows sur le Domaine d''Anghione en Corse et leur terrasse nature à l’ombre de la pinède. Ces hébergements tout confort vous attendent pour des vacances inoubliables sur l’ile de Beauté.'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     4_nl:
         Id: 4
@@ -126,6 +186,10 @@
         Slug: null
         Accroche: 'Un séjour haut en couleur'
         Description: 'Découvrez le charme des bungalows sur le Domaine d''Anghione en Corse et leur terrasse nature à l’ombre de la pinède. Ces hébergements tout confort vous attendent pour des vacances inoubliables sur l’ile de Beauté.'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     5_de:
         Id: 5
@@ -134,6 +198,10 @@
         Slug: caravans
         Accroche: 'Les plaisirs simples'
         Description: 'Vous souhaitez allier confort et simplicité ? Nos caravanes avec ou sans sanitaires vous permettront de passer des vacances sous le signe de la liberté et de l''authenticité.'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     5_en:
         Id: 5
@@ -142,6 +210,10 @@
         Slug: null
         Accroche: 'Les plaisirs simples'
         Description: 'Vous souhaitez allier confort et simplicité ? Nos caravanes avec ou sans sanitaires vous permettront de passer des vacances sous le signe de la liberté et de l''authenticité.'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     5_fr:
         Id: 5
@@ -150,6 +222,10 @@
         Slug: caravanes
         Accroche: 'Les plaisirs simples'
         Description: 'Vous souhaitez allier confort et simplicité ? Nos caravanes avec ou sans sanitaires vous permettront de passer des vacances sous le signe de la liberté et de l''authenticité.'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     5_nl:
         Id: 5
@@ -158,6 +234,10 @@
         Slug: null
         Accroche: 'Les plaisirs simples'
         Description: 'Vous souhaitez allier confort et simplicité ? Nos caravanes avec ou sans sanitaires vous permettront de passer des vacances sous le signe de la liberté et de l''authenticité.'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     6_de:
         Id: 6
@@ -166,6 +246,10 @@
         Slug: ferienhauser
         Accroche: 'Le charme de la Bretagne'
         Description: 'De 2 à 9 places, les gîtes du Domaine de Kermario offrent un cachet incroyable pour un séjour dépaysant. Découverte et détente vous attendent au pays des menhirs.'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     6_en:
         Id: 6
@@ -174,6 +258,10 @@
         Slug: null
         Accroche: 'Le charme de la Bretagne'
         Description: 'De 2 à 9 places, les gîtes du Domaine de Kermario offrent un cachet incroyable pour un séjour dépaysant. Découverte et détente vous attendent au pays des menhirs.'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     6_fr:
         Id: 6
@@ -182,6 +270,10 @@
         Slug: gites
         Accroche: 'Le charme de la Bretagne'
         Description: 'De 2 à 9 places, les gîtes du Domaine de Kermario offrent un cachet incroyable pour un séjour dépaysant. Découverte et détente vous attendent au pays des menhirs.'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     6_nl:
         Id: 6
@@ -190,6 +282,10 @@
         Slug: null
         Accroche: 'Le charme de la Bretagne'
         Description: 'De 2 à 9 places, les gîtes du Domaine de Kermario offrent un cachet incroyable pour un séjour dépaysant. Découverte et détente vous attendent au pays des menhirs.'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     7_de:
         Id: 7
@@ -198,6 +294,10 @@
         Slug: stellplatz-fur-zelt-wohnwagen-oder-wohnmobil
         Accroche: 'La liberté à l''état pur'
         Description: 'Passez quelques jours ou plus en tente, en caravane ou en camping-car sur l''un de nos 3 000 emplacements et profitez des joies du plein-air.'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     7_en:
         Id: 7
@@ -206,6 +306,10 @@
         Slug: null
         Accroche: 'La liberté à l''état pur'
         Description: 'Passez quelques jours ou plus en tente, en caravane ou en camping-car sur l''un de nos 3 000 emplacements et profitez des joies du plein-air.'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     7_fr:
         Id: 7
@@ -214,6 +318,10 @@
         Slug: emplacements
         Accroche: 'La liberté à l''état pur'
         Description: 'Passez quelques jours ou plus en tente, en caravane ou en camping-car sur l''un de nos 3 000 emplacements et profitez des joies du plein-air.'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     7_nl:
         Id: 7
@@ -222,6 +330,10 @@
         Slug: null
         Accroche: 'La liberté à l''état pur'
         Description: 'Passez quelques jours ou plus en tente, en caravane ou en camping-car sur l''un de nos 3 000 emplacements et profitez des joies du plein-air.'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     8_de:
         Id: 8
@@ -230,6 +342,10 @@
         Slug: n-a
         Accroche: 'Gardez l''esprit campeur !'
         Description: 'Pour ceux qui veulent garder l''esprit campeur, Vacances directes vous propose ses tentes équipées. Jusqu''à 5 places, avec ou sans sanitaire, vous pourrez vivre des moments de détente et de convivialité.'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     8_en:
         Id: 8
@@ -238,6 +354,10 @@
         Slug: null
         Accroche: 'Gardez l''esprit campeur !'
         Description: 'Pour ceux qui veulent garder l''esprit campeur, Vacances directes vous propose ses tentes équipées. Jusqu''à 5 places, avec ou sans sanitaire, vous pourrez vivre des moments de détente et de convivialité.'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     8_fr:
         Id: 8
@@ -246,6 +366,10 @@
         Slug: tente
         Accroche: 'Gardez l''esprit campeur !'
         Description: 'Pour ceux qui veulent garder l''esprit campeur, Vacances directes vous propose ses tentes équipées. Jusqu''à 5 places, avec ou sans sanitaire, vous pourrez vivre des moments de détente et de convivialité.'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     8_nl:
         Id: 8
@@ -254,6 +378,10 @@
         Slug: null
         Accroche: 'Gardez l''esprit campeur !'
         Description: 'Pour ceux qui veulent garder l''esprit campeur, Vacances directes vous propose ses tentes équipées. Jusqu''à 5 places, avec ou sans sanitaire, vous pourrez vivre des moments de détente et de convivialité.'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     9_de:
         Id: 9
@@ -262,6 +390,10 @@
         Slug: n-a
         Accroche: null
         Description: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true
     9_fr:
         Id: 9
@@ -270,4 +402,8 @@
         Slug: appartement
         Accroche: null
         Description: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
         ActiveLocale: true

@@ -59,6 +59,7 @@ class DestinationController implements ControllerProviderInterface
                 ->useI18nQuery($app['context']->get('language'))
                 ->filterBySlug($pays)
                 ->endUse()
+                ->filterByActive(true)
                 ->findOne()
             ;
 
@@ -76,6 +77,7 @@ class DestinationController implements ControllerProviderInterface
                 ->useI18nQuery($app['context']->get('language'))
                 ->filterBySlug($destination)
                 ->endUse()
+                ->filterByActive(true)
                 ->findOne()
             ;
 
@@ -93,6 +95,7 @@ class DestinationController implements ControllerProviderInterface
                 ->useI18nQuery($app['context']->get('language'))
                 ->filterBySlug($region)
                 ->endUse()
+                ->filterByActive(true)
                 ->findOne()
             ;
 
@@ -110,6 +113,7 @@ class DestinationController implements ControllerProviderInterface
                 ->useI18nQuery($app['context']->get('language'))
                 ->filterBySlug($regionRef)
                 ->endUse()
+                ->filterByActive(true)
                 ->findOne()
             ;
 
@@ -127,6 +131,7 @@ class DestinationController implements ControllerProviderInterface
                 ->useI18nQuery($app['context']->get('language'))
                 ->filterBySlug($departement)
                 ->endUse()
+                ->filterByActive(true)
                 ->findOne()
             ;
 
@@ -144,6 +149,7 @@ class DestinationController implements ControllerProviderInterface
                 ->useI18nQuery($app['context']->get('language'))
                 ->filterBySlug($ville)
                 ->endUse()
+                ->filterByActive(true)
                 ->findOne()
             ;
 
@@ -159,6 +165,7 @@ class DestinationController implements ControllerProviderInterface
 
             $objectItem = EtablissementQuery::create()
                 ->filterBySlug($camping)
+                ->filterByActive(true)
                 ->findOne()
             ;
 
@@ -352,7 +359,7 @@ class DestinationController implements ControllerProviderInterface
             'firstEtab'       => $firstEtab,
             'searchForm'      => $searchEngine->getView(),
             'imagesTitle'     => $app->trans('destination.images_' . strtolower($objectName) . '_title'),
-            'title'           => $app->trans('destination.' . strtolower($objectName) . '_title', array('%item%' => $object->getName())),
+            'title'           => $app->trans($object->getSeoH1(), array('%item%' => $object->getName())),
             'urlCanonical'    => $urlCanonical
         ));
     }

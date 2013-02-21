@@ -26,7 +26,6 @@ class TypeHebergementCapacite extends BaseTypeHebergementCapacite
     public function getCategoriesTypeHergement()
     {
         return \Cungfoo\Model\CategoryTypeHebergementQuery::create()
-            ->joinWithI18n()
             ->useTypeHebergementQuery()
                 ->filterByTypeHebergementCapaciteId($this->getId())
             ->endUse()

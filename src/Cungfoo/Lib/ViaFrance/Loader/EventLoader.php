@@ -5,11 +5,15 @@ namespace Cungfoo\Lib\ViaFrance\Loader;
 use Cungfoo\Model\Event,
     Cungfoo\Model\EventQuery,
     Cungfoo\Model\EtablissementEvent,
-    Cungfoo\Model\EtablissementEventQuery;
+    Cungfoo\Model\EtablissementEventQuery,
+    Cungfoo\Model\RegionEvent,
+    Cungfoo\Model\RegionEventQuery;
 
 class EventLoader extends AbstractLoader
 {
     protected $cache = array();
+
+    protected $processedIds = array();
 
     public function init($con)
     {
@@ -18,13 +22,18 @@ class EventLoader extends AbstractLoader
         $this->cache = array();
 
         $this->dbConnection->exec("SET FOREIGN_KEY_CHECKS = 0");
-        $this->dbConnection->exec("TRUNCATE TABLE `etablissement_event`");
-        $this->dbConnection->exec("TRUNCATE TABLE `event_i18n`");
-        $this->dbConnection->exec("TRUNCATE TABLE `event`");
     }
 
     public function close()
     {
+        $events = EventQuery::create()->select('id')->find()->toArray();
+        $toDelete = array_diff($events, $this->processedIds);
+
+        EventQuery::create()
+            ->filterById($toDelete)
+            ->delete()
+        ;
+
         $this->dbConnection->exec("SET FOREIGN_KEY_CHECKS = 1");
     }
 
@@ -37,7 +46,18 @@ class EventLoader extends AbstractLoader
         {
             if ($insertedEvent = $this->insertEvent($event, $language))
             {
-                $this->insertRelation($etab, $insertedEvent, $event['DistanceXY']);
+                if (!in_array($insertedEvent->getId(), $this->processedIds))
+                {
+                    $this->processedIds[] = $insertedEvent->getId();
+                }
+                if ($language == 'de')
+                {
+                    $this->insertRegionRelation($etab, $insertedEvent);
+                }
+                else
+                {
+                    $this->insertRelation($etab, $insertedEvent, $event['DistanceXY']);
+                }
             }
         }
     }
@@ -51,69 +71,46 @@ class EventLoader extends AbstractLoader
             return $this->cache[$code][$language];
         }
 
+        $utils = new \Cungfoo\Lib\Utils();
+
         $newEvent = EventQuery::create()
             ->filterByCode($code)
             ->findOne($this->dbConnection);
         ;
 
-        if ($language == 'fr')
+        if (!$newEvent)
         {
-            if ($newEvent)
-            {
-                return $newEvent;
-            }
-
             $newEvent = new Event();
-            $newEvent
-                ->setLocale($language)
-                ->setName($event->{'Title'})
-                ->setSubtitle($event->{'Subtitle'})
-                ->setStrDate($event->{'StrDate'})
-                ->setCode($code)
-                ->setCategory($event->{'Category'}['Id'])
-                ->setPriority($event->{'Priority'})
-                ->setGeoCoordinateX($event->attributes()->{'X'})
-                ->setGeoCoordinateY($event->attributes()->{'Y'})
-                ->setDistanceCamping($event->attributes()->{'DistanceXY'})
-                ->setImage($event->{'Image1'})
-                ->setDescription($event->{'Description'})
-                ->setTel($event->{'Tel'})
-                ->setFax($event->{'Fax'})
-                ->setEmail($event->{'Email'})
-                ->setWebsite($event->{'WebSite'})
-                ->setTransport($event->{'Transports'})
-            ;
-
-            if ($place = $event->{'Place'})
-            {
-                $newEvent
-                    ->setAddress($place->{'Address'})
-                    ->setAddress2($place->{'Address2'})
-                    ->setZipcode($place->{'ZipCode'})
-                    ->setCity($place->{'City'})
-                ;
-            }
         }
-        else
+
+        $newEvent
+            ->setLocale($language)
+            ->setName($event->{'Title'})
+            ->setSlug($utils->slugify($event->{'Title'}))
+            ->setSubtitle($event->{'Subtitle'})
+            ->setStrDate($event->{'StrDate'})
+            ->setCode($code)
+            ->setCategory($event->{'Category'}['Id'])
+            ->setPriority($event->{'Priority'})
+            ->setGeoCoordinateX($event->attributes()->{'X'})
+            ->setGeoCoordinateY($event->attributes()->{'Y'})
+            ->setDistanceCamping($event->attributes()->{'DistanceXY'})
+            ->setImage($event->{'Image1'})
+            ->setDescription($event->{'Description'})
+            ->setTel($event->{'Tel'})
+            ->setFax($event->{'Fax'})
+            ->setEmail($event->{'Email'})
+            ->setWebsite($event->{'WebSite'})
+            ->setTransport($event->{'Transports'})
+        ;
+
+        if ($place = $event->{'Place'})
         {
-            if (!$newEvent)
-            {
-                return null;
-            }
-
-            $defaultName        = $newEvent->getName();
-            $defaultStrDate     = $newEvent->getStrDate();
-            $defaultSubtitle    = $newEvent->getSubtitle();
-            $defaultDescription = $newEvent->getDescription();
-            $defaultTransport   = $newEvent->getTransport();
-
             $newEvent
-                ->setLocale($language)
-                ->setName(($event->{'Title'}) ? $event->{'Title'} : $defaultName)
-                ->setSubtitle(($event->{'Subtitle'}) ? $event->{'Subtitle'} : $defaultSubtitle)
-                ->setStrDate($event->{'StrDate'} ? $event->{'StrDate'} : $defaultStrDate)
-                ->setDescription(($event->{'Description'}) ? $event->{'Description'} : $defaultDescription)
-                ->setTransport(($event->{'Transports'}) ? $event->{'Transports)'} : $defaultTransport)
+                ->setAddress($place->{'Address'})
+                ->setAddress2($place->{'Address2'})
+                ->setZipcode($place->{'ZipCode'})
+                ->setCity($place->{'City'})
             ;
         }
 
@@ -139,6 +136,25 @@ class EventLoader extends AbstractLoader
                 ->setEtablissementId($etab->getId())
                 ->setEventId($event->getId())
                 ->setDistance($distance)
+                ->save($this->dbConnection)
+            ;
+        }
+    }
+
+    public function insertRegionRelation($region, $event)
+    {
+        $regionEvent = RegionEventQuery::create()
+            ->filterByRegionId($region->getId())
+            ->filterByEventId($event->getId())
+            ->findOne($this->dbConnection)
+        ;
+
+        if (!$regionEvent)
+        {
+            $regionEvent = new RegionEvent();
+            $regionEvent
+                ->setRegionId($region->getId())
+                ->setEventId($event->getId())
                 ->save($this->dbConnection)
             ;
         }

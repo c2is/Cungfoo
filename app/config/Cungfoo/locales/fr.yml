@@ -84,6 +84,7 @@ crud.button.delete: Supprimer
 crud.button.edit: Éditer
 crud.button.list: Liste
 crud.button.metadata: Metadata
+crud.button.seo: Seo
 crud.button.read: Détails
 crud.button.save: Enregistrer
 crud.modal.delete.title: Confirmation de suppression
@@ -101,6 +102,16 @@ metadata_i18n.subtitle: "Sous titre"
 metadata_i18n.accroche: "Accroche"
 metadata.visuel: "Visuel"
 metadata.visuel_deleted: "Supprimer le visuel ?"
+metadata.seo_title: "Titre (SEO)"
+metadata.seo_description: "Description (SEO)"
+metadata.seo_h1: "H1 (SEO)"
+metadata.seo_keywords: "Mots clefs (SEO)"
+
+seo.seoI18ns: ""
+seo.seo_title: "Titre"
+seo.seo_description: "Description"
+seo.seo_h1: "H1"
+seo.seo_keywords: "Mots clefs"
 
 destination.crud.metadata: Metadata de la table destination
 destination.crud.create: Création d'une destination

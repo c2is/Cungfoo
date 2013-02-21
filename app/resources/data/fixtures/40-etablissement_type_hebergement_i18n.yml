@@ -1,0 +1,2423 @@
+\Cungfoo\Model\EtablissementTypeHebergementI18n:
+    2_fr:
+        Id: 2
+        Locale: fr
+        MinimumPrice: '199.50'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-27 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-05-04 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    8_fr:
+        Id: 8
+        Locale: fr
+        MinimumPrice: '390.00'
+        MinimumPriceDiscountLabel: 'promotion 7=6 vacances de paques'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-27 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-05-04 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    9_de:
+        Id: 9
+        Locale: de
+        MinimumPrice: '259.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-08-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    9_fr:
+        Id: 9
+        Locale: fr
+        MinimumPrice: '246.05'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-08-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    12_fr:
+        Id: 12
+        Locale: fr
+        MinimumPrice: '206.15'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    14_de:
+        Id: 14
+        Locale: de
+        MinimumPrice: '252.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    14_fr:
+        Id: 14
+        Locale: fr
+        MinimumPrice: '239.40'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    16_fr:
+        Id: 16
+        Locale: fr
+        MinimumPrice: '399.00'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-15 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-22 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    18_de:
+        Id: 18
+        Locale: de
+        MinimumPrice: '322.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    18_fr:
+        Id: 18
+        Locale: fr
+        MinimumPrice: '305.90'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    21_de:
+        Id: 21
+        Locale: de
+        MinimumPrice: '371.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    21_fr:
+        Id: 21
+        Locale: fr
+        MinimumPrice: '352.45'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    23_de:
+        Id: 23
+        Locale: de
+        MinimumPrice: '273.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    23_fr:
+        Id: 23
+        Locale: fr
+        MinimumPrice: '259.35'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    26_de:
+        Id: 26
+        Locale: de
+        MinimumPrice: '238.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    26_fr:
+        Id: 26
+        Locale: fr
+        MinimumPrice: '226.10'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    30_de:
+        Id: 30
+        Locale: de
+        MinimumPrice: '308.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    30_fr:
+        Id: 30
+        Locale: fr
+        MinimumPrice: '292.60'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    33_de:
+        Id: 33
+        Locale: de
+        MinimumPrice: '266.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-27 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-05-04 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    33_fr:
+        Id: 33
+        Locale: fr
+        MinimumPrice: '252.70'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-27 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-05-04 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    34_fr:
+        Id: 34
+        Locale: fr
+        MinimumPrice: '252.70'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    38_de:
+        Id: 38
+        Locale: de
+        MinimumPrice: '308.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    38_fr:
+        Id: 38
+        Locale: fr
+        MinimumPrice: '292.60'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    41_de:
+        Id: 41
+        Locale: de
+        MinimumPrice: '245.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    41_fr:
+        Id: 41
+        Locale: fr
+        MinimumPrice: '232.75'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    44_fr:
+        Id: 44
+        Locale: fr
+        MinimumPrice: '172.90'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    45_de:
+        Id: 45
+        Locale: de
+        MinimumPrice: '203.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    45_fr:
+        Id: 45
+        Locale: fr
+        MinimumPrice: '192.85'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    49_de:
+        Id: 49
+        Locale: de
+        MinimumPrice: '301.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    49_fr:
+        Id: 49
+        Locale: fr
+        MinimumPrice: '285.95'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    52_de:
+        Id: 52
+        Locale: de
+        MinimumPrice: '196.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    52_fr:
+        Id: 52
+        Locale: fr
+        MinimumPrice: '186.20'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    56_fr:
+        Id: 56
+        Locale: fr
+        MinimumPrice: '192.85'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    57_de:
+        Id: 57
+        Locale: de
+        MinimumPrice: '238.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    57_fr:
+        Id: 57
+        Locale: fr
+        MinimumPrice: '226.10'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    62_de:
+        Id: 62
+        Locale: de
+        MinimumPrice: '245.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    62_fr:
+        Id: 62
+        Locale: fr
+        MinimumPrice: '232.75'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    66_de:
+        Id: 66
+        Locale: de
+        MinimumPrice: '266.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    66_fr:
+        Id: 66
+        Locale: fr
+        MinimumPrice: '252.70'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    67_de:
+        Id: 67
+        Locale: de
+        MinimumPrice: '280.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    67_fr:
+        Id: 67
+        Locale: fr
+        MinimumPrice: '266.00'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    68_de:
+        Id: 68
+        Locale: de
+        MinimumPrice: '357.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    68_fr:
+        Id: 68
+        Locale: fr
+        MinimumPrice: '339.15'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    70_de:
+        Id: 70
+        Locale: de
+        MinimumPrice: '210.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    70_fr:
+        Id: 70
+        Locale: fr
+        MinimumPrice: '199.50'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    77_de:
+        Id: 77
+        Locale: de
+        MinimumPrice: '280.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    77_fr:
+        Id: 77
+        Locale: fr
+        MinimumPrice: '266.00'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    83_de:
+        Id: 83
+        Locale: de
+        MinimumPrice: '231.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    83_fr:
+        Id: 83
+        Locale: fr
+        MinimumPrice: '219.45'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    87_de:
+        Id: 87
+        Locale: de
+        MinimumPrice: '287.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    87_fr:
+        Id: 87
+        Locale: fr
+        MinimumPrice: '272.65'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    90_de:
+        Id: 90
+        Locale: de
+        MinimumPrice: '329.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    90_fr:
+        Id: 90
+        Locale: fr
+        MinimumPrice: '312.55'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    93_de:
+        Id: 93
+        Locale: de
+        MinimumPrice: '287.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    93_fr:
+        Id: 93
+        Locale: fr
+        MinimumPrice: '272.65'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    96_de:
+        Id: 96
+        Locale: de
+        MinimumPrice: '231.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    96_fr:
+        Id: 96
+        Locale: fr
+        MinimumPrice: '219.45'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    102_de:
+        Id: 102
+        Locale: de
+        MinimumPrice: '336.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    102_fr:
+        Id: 102
+        Locale: fr
+        MinimumPrice: '319.20'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    105_de:
+        Id: 105
+        Locale: de
+        MinimumPrice: '392.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    105_fr:
+        Id: 105
+        Locale: fr
+        MinimumPrice: '372.40'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    107_fr:
+        Id: 107
+        Locale: fr
+        MinimumPrice: '222.00'
+        MinimumPriceDiscountLabel: 'promotion 7=6 vacances de paques'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    108_de:
+        Id: 108
+        Locale: de
+        MinimumPrice: '280.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-09 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    108_fr:
+        Id: 108
+        Locale: fr
+        MinimumPrice: '266.00'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-09 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    112_fr:
+        Id: 112
+        Locale: fr
+        MinimumPrice: '192.85'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    113_de:
+        Id: 113
+        Locale: de
+        MinimumPrice: '147.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-08-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    113_fr:
+        Id: 113
+        Locale: fr
+        MinimumPrice: '139.65'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-08-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    116_de:
+        Id: 116
+        Locale: de
+        MinimumPrice: '273.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    116_fr:
+        Id: 116
+        Locale: fr
+        MinimumPrice: '259.35'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    117_de:
+        Id: 117
+        Locale: de
+        MinimumPrice: '301.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    117_fr:
+        Id: 117
+        Locale: fr
+        MinimumPrice: '285.95'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    120_fr:
+        Id: 120
+        Locale: fr
+        MinimumPrice: '276.00'
+        MinimumPriceDiscountLabel: 'promotion 7=6 vacances de paques'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-27 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-05-04 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    121_fr:
+        Id: 121
+        Locale: fr
+        MinimumPrice: '480.00'
+        MinimumPriceDiscountLabel: 'promotion 7=6 vacances de paques'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-27 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-05-04 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    126_de:
+        Id: 126
+        Locale: de
+        MinimumPrice: '273.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    126_fr:
+        Id: 126
+        Locale: fr
+        MinimumPrice: '259.35'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    130_de:
+        Id: 130
+        Locale: de
+        MinimumPrice: '266.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    130_fr:
+        Id: 130
+        Locale: fr
+        MinimumPrice: '252.70'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    133_de:
+        Id: 133
+        Locale: de
+        MinimumPrice: '252.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-08-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    133_fr:
+        Id: 133
+        Locale: fr
+        MinimumPrice: '239.40'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    143_de:
+        Id: 143
+        Locale: de
+        MinimumPrice: '224.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    143_fr:
+        Id: 143
+        Locale: fr
+        MinimumPrice: '212.80'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    146_de:
+        Id: 146
+        Locale: de
+        MinimumPrice: '266.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    146_fr:
+        Id: 146
+        Locale: fr
+        MinimumPrice: '252.70'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    150_de:
+        Id: 150
+        Locale: de
+        MinimumPrice: '273.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    150_fr:
+        Id: 150
+        Locale: fr
+        MinimumPrice: '259.35'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    151_de:
+        Id: 151
+        Locale: de
+        MinimumPrice: '350.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    151_fr:
+        Id: 151
+        Locale: fr
+        MinimumPrice: '332.50'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    154_fr:
+        Id: 154
+        Locale: fr
+        MinimumPrice: '272.65'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    163_de:
+        Id: 163
+        Locale: de
+        MinimumPrice: '245.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-27 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-05-04 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    163_fr:
+        Id: 163
+        Locale: fr
+        MinimumPrice: '245.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    170_de:
+        Id: 170
+        Locale: de
+        MinimumPrice: '245.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    170_fr:
+        Id: 170
+        Locale: fr
+        MinimumPrice: '232.75'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    173_de:
+        Id: 173
+        Locale: de
+        MinimumPrice: '336.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    173_fr:
+        Id: 173
+        Locale: fr
+        MinimumPrice: '336.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    177_de:
+        Id: 177
+        Locale: de
+        MinimumPrice: '245.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    177_fr:
+        Id: 177
+        Locale: fr
+        MinimumPrice: '232.75'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    193_de:
+        Id: 193
+        Locale: de
+        MinimumPrice: '266.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    193_fr:
+        Id: 193
+        Locale: fr
+        MinimumPrice: '252.70'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    196_de:
+        Id: 196
+        Locale: de
+        MinimumPrice: '266.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-08-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    196_fr:
+        Id: 196
+        Locale: fr
+        MinimumPrice: '252.70'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-08-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    198_de:
+        Id: 198
+        Locale: de
+        MinimumPrice: '280.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    198_fr:
+        Id: 198
+        Locale: fr
+        MinimumPrice: '266.00'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    201_de:
+        Id: 201
+        Locale: de
+        MinimumPrice: '280.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    201_fr:
+        Id: 201
+        Locale: fr
+        MinimumPrice: '266.00'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    206_de:
+        Id: 206
+        Locale: de
+        MinimumPrice: '287.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    206_fr:
+        Id: 206
+        Locale: fr
+        MinimumPrice: '246.00'
+        MinimumPriceDiscountLabel: 'promotion 7=6 vacances de paques'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    220_de:
+        Id: 220
+        Locale: de
+        MinimumPrice: '217.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-09 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    220_fr:
+        Id: 220
+        Locale: fr
+        MinimumPrice: '206.15'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-09 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    238_de:
+        Id: 238
+        Locale: de
+        MinimumPrice: '301.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    238_fr:
+        Id: 238
+        Locale: fr
+        MinimumPrice: '285.95'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    239_de:
+        Id: 239
+        Locale: de
+        MinimumPrice: '287.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    239_fr:
+        Id: 239
+        Locale: fr
+        MinimumPrice: '272.65'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    242_de:
+        Id: 242
+        Locale: de
+        MinimumPrice: '385.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    242_fr:
+        Id: 242
+        Locale: fr
+        MinimumPrice: '365.75'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    244_de:
+        Id: 244
+        Locale: de
+        MinimumPrice: '308.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-09 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    244_fr:
+        Id: 244
+        Locale: fr
+        MinimumPrice: '292.60'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-09 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    247_de:
+        Id: 247
+        Locale: de
+        MinimumPrice: '266.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-08-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    247_fr:
+        Id: 247
+        Locale: fr
+        MinimumPrice: '252.70'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-08-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    248_fr:
+        Id: 248
+        Locale: fr
+        MinimumPrice: '252.70'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    259_de:
+        Id: 259
+        Locale: de
+        MinimumPrice: '273.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    259_fr:
+        Id: 259
+        Locale: fr
+        MinimumPrice: '259.35'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    263_de:
+        Id: 263
+        Locale: de
+        MinimumPrice: '224.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-08-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    263_fr:
+        Id: 263
+        Locale: fr
+        MinimumPrice: '212.80'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-08-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    264_de:
+        Id: 264
+        Locale: de
+        MinimumPrice: '238.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    264_fr:
+        Id: 264
+        Locale: fr
+        MinimumPrice: '226.10'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    266_de:
+        Id: 266
+        Locale: de
+        MinimumPrice: '406.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-09 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    266_fr:
+        Id: 266
+        Locale: fr
+        MinimumPrice: '406.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-09 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    268_de:
+        Id: 268
+        Locale: de
+        MinimumPrice: '280.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    268_fr:
+        Id: 268
+        Locale: fr
+        MinimumPrice: '266.00'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    274_de:
+        Id: 274
+        Locale: de
+        MinimumPrice: '287.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    274_fr:
+        Id: 274
+        Locale: fr
+        MinimumPrice: '272.65'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    281_de:
+        Id: 281
+        Locale: de
+        MinimumPrice: '238.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    281_fr:
+        Id: 281
+        Locale: fr
+        MinimumPrice: '226.10'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    282_fr:
+        Id: 282
+        Locale: fr
+        MinimumPrice: '226.10'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    288_de:
+        Id: 288
+        Locale: de
+        MinimumPrice: '231.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    288_fr:
+        Id: 288
+        Locale: fr
+        MinimumPrice: '219.45'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    290_de:
+        Id: 290
+        Locale: de
+        MinimumPrice: '357.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-09 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    291_fr:
+        Id: 291
+        Locale: fr
+        MinimumPrice: '239.40'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    296_de:
+        Id: 296
+        Locale: de
+        MinimumPrice: '245.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    296_fr:
+        Id: 296
+        Locale: fr
+        MinimumPrice: '232.75'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    298_de:
+        Id: 298
+        Locale: de
+        MinimumPrice: '280.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    298_fr:
+        Id: 298
+        Locale: fr
+        MinimumPrice: '266.00'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    305_de:
+        Id: 305
+        Locale: de
+        MinimumPrice: '203.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    305_fr:
+        Id: 305
+        Locale: fr
+        MinimumPrice: '192.85'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    307_de:
+        Id: 307
+        Locale: de
+        MinimumPrice: '259.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    307_fr:
+        Id: 307
+        Locale: fr
+        MinimumPrice: '246.05'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    311_de:
+        Id: 311
+        Locale: de
+        MinimumPrice: '210.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    311_fr:
+        Id: 311
+        Locale: fr
+        MinimumPrice: '199.50'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    315_de:
+        Id: 315
+        Locale: de
+        MinimumPrice: '245.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    315_fr:
+        Id: 315
+        Locale: fr
+        MinimumPrice: '232.75'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    317_de:
+        Id: 317
+        Locale: de
+        MinimumPrice: '273.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    317_fr:
+        Id: 317
+        Locale: fr
+        MinimumPrice: '259.35'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    319_de:
+        Id: 319
+        Locale: de
+        MinimumPrice: '266.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-09 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    319_fr:
+        Id: 319
+        Locale: fr
+        MinimumPrice: '252.70'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-09 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    322_de:
+        Id: 322
+        Locale: de
+        MinimumPrice: '238.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    322_fr:
+        Id: 322
+        Locale: fr
+        MinimumPrice: '226.10'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    324_de:
+        Id: 324
+        Locale: de
+        MinimumPrice: '245.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    324_fr:
+        Id: 324
+        Locale: fr
+        MinimumPrice: '232.75'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    328_de:
+        Id: 328
+        Locale: de
+        MinimumPrice: '266.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    328_fr:
+        Id: 328
+        Locale: fr
+        MinimumPrice: '252.70'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    331_de:
+        Id: 331
+        Locale: de
+        MinimumPrice: '266.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    331_fr:
+        Id: 331
+        Locale: fr
+        MinimumPrice: '252.70'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    340_de:
+        Id: 340
+        Locale: de
+        MinimumPrice: '259.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    340_fr:
+        Id: 340
+        Locale: fr
+        MinimumPrice: '246.05'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    343_fr:
+        Id: 343
+        Locale: fr
+        MinimumPrice: '246.05'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    344_fr:
+        Id: 344
+        Locale: fr
+        MinimumPrice: '192.85'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    346_de:
+        Id: 346
+        Locale: de
+        MinimumPrice: '238.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    352_de:
+        Id: 352
+        Locale: de
+        MinimumPrice: '301.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    352_fr:
+        Id: 352
+        Locale: fr
+        MinimumPrice: '285.95'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    356_de:
+        Id: 356
+        Locale: de
+        MinimumPrice: '308.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    356_fr:
+        Id: 356
+        Locale: fr
+        MinimumPrice: '292.60'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    360_de:
+        Id: 360
+        Locale: de
+        MinimumPrice: '287.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    360_fr:
+        Id: 360
+        Locale: fr
+        MinimumPrice: '272.65'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    363_de:
+        Id: 363
+        Locale: de
+        MinimumPrice: '350.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    363_fr:
+        Id: 363
+        Locale: fr
+        MinimumPrice: '332.50'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    364_de:
+        Id: 364
+        Locale: de
+        MinimumPrice: '322.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    364_fr:
+        Id: 364
+        Locale: fr
+        MinimumPrice: '305.90'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    366_de:
+        Id: 366
+        Locale: de
+        MinimumPrice: '168.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    366_fr:
+        Id: 366
+        Locale: fr
+        MinimumPrice: '159.60'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    371_de:
+        Id: 371
+        Locale: de
+        MinimumPrice: '287.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-08-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    371_fr:
+        Id: 371
+        Locale: fr
+        MinimumPrice: '272.65'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-08-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    374_de:
+        Id: 374
+        Locale: de
+        MinimumPrice: '301.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    374_fr:
+        Id: 374
+        Locale: fr
+        MinimumPrice: '285.95'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    377_fr:
+        Id: 377
+        Locale: fr
+        MinimumPrice: '266.00'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    379_fr:
+        Id: 379
+        Locale: fr
+        MinimumPrice: '192.85'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    380_de:
+        Id: 380
+        Locale: de
+        MinimumPrice: '217.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    382_de:
+        Id: 382
+        Locale: de
+        MinimumPrice: '336.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    382_fr:
+        Id: 382
+        Locale: fr
+        MinimumPrice: '319.20'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    383_de:
+        Id: 383
+        Locale: de
+        MinimumPrice: '322.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    383_fr:
+        Id: 383
+        Locale: fr
+        MinimumPrice: '305.90'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    384_fr:
+        Id: 384
+        Locale: fr
+        MinimumPrice: '405.65'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    390_de:
+        Id: 390
+        Locale: de
+        MinimumPrice: '245.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    390_fr:
+        Id: 390
+        Locale: fr
+        MinimumPrice: '232.75'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    399_de:
+        Id: 399
+        Locale: de
+        MinimumPrice: '217.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-08-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    399_fr:
+        Id: 399
+        Locale: fr
+        MinimumPrice: '206.15'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-08-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    403_de:
+        Id: 403
+        Locale: de
+        MinimumPrice: '217.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    403_fr:
+        Id: 403
+        Locale: fr
+        MinimumPrice: '206.15'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    406_de:
+        Id: 406
+        Locale: de
+        MinimumPrice: '301.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    406_fr:
+        Id: 406
+        Locale: fr
+        MinimumPrice: '285.95'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    408_de:
+        Id: 408
+        Locale: de
+        MinimumPrice: '231.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    408_fr:
+        Id: 408
+        Locale: fr
+        MinimumPrice: '219.45'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    411_de:
+        Id: 411
+        Locale: de
+        MinimumPrice: '308.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    411_fr:
+        Id: 411
+        Locale: fr
+        MinimumPrice: '292.60'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    419_de:
+        Id: 419
+        Locale: de
+        MinimumPrice: '210.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    419_fr:
+        Id: 419
+        Locale: fr
+        MinimumPrice: '199.50'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    425_de:
+        Id: 425
+        Locale: de
+        MinimumPrice: '245.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    425_fr:
+        Id: 425
+        Locale: fr
+        MinimumPrice: '232.75'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    427_de:
+        Id: 427
+        Locale: de
+        MinimumPrice: '287.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    427_fr:
+        Id: 427
+        Locale: fr
+        MinimumPrice: '272.65'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    431_de:
+        Id: 431
+        Locale: de
+        MinimumPrice: '273.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    431_fr:
+        Id: 431
+        Locale: fr
+        MinimumPrice: '259.35'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    434_de:
+        Id: 434
+        Locale: de
+        MinimumPrice: '238.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    434_fr:
+        Id: 434
+        Locale: fr
+        MinimumPrice: '226.10'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    436_fr:
+        Id: 436
+        Locale: fr
+        MinimumPrice: '204.00'
+        MinimumPriceDiscountLabel: 'promotion 7=6 vacances de paques'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    443_de:
+        Id: 443
+        Locale: de
+        MinimumPrice: '273.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    443_fr:
+        Id: 443
+        Locale: fr
+        MinimumPrice: '259.35'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    446_de:
+        Id: 446
+        Locale: de
+        MinimumPrice: '329.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    446_fr:
+        Id: 446
+        Locale: fr
+        MinimumPrice: '312.55'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    447_de:
+        Id: 447
+        Locale: de
+        MinimumPrice: '308.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    447_fr:
+        Id: 447
+        Locale: fr
+        MinimumPrice: '292.60'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    450_fr:
+        Id: 450
+        Locale: fr
+        MinimumPrice: '365.75'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    451_de:
+        Id: 451
+        Locale: de
+        MinimumPrice: '273.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-09 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    451_fr:
+        Id: 451
+        Locale: fr
+        MinimumPrice: '259.35'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-09 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    460_de:
+        Id: 460
+        Locale: de
+        MinimumPrice: '308.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    460_fr:
+        Id: 460
+        Locale: fr
+        MinimumPrice: '308.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    462_fr:
+        Id: 462
+        Locale: fr
+        MinimumPrice: '292.60'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    463_de:
+        Id: 463
+        Locale: de
+        MinimumPrice: '308.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    463_fr:
+        Id: 463
+        Locale: fr
+        MinimumPrice: '292.60'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    466_fr:
+        Id: 466
+        Locale: fr
+        MinimumPrice: '219.45'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    470_de:
+        Id: 470
+        Locale: de
+        MinimumPrice: '189.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    470_fr:
+        Id: 470
+        Locale: fr
+        MinimumPrice: '179.55'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    478_de:
+        Id: 478
+        Locale: de
+        MinimumPrice: '350.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    478_fr:
+        Id: 478
+        Locale: fr
+        MinimumPrice: '332.50'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    483_de:
+        Id: 483
+        Locale: de
+        MinimumPrice: '203.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    483_fr:
+        Id: 483
+        Locale: fr
+        MinimumPrice: '192.85'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    485_de:
+        Id: 485
+        Locale: de
+        MinimumPrice: '280.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    485_fr:
+        Id: 485
+        Locale: fr
+        MinimumPrice: '280.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    489_de:
+        Id: 489
+        Locale: de
+        MinimumPrice: '273.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    489_fr:
+        Id: 489
+        Locale: fr
+        MinimumPrice: '259.35'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    492_de:
+        Id: 492
+        Locale: de
+        MinimumPrice: '245.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    492_fr:
+        Id: 492
+        Locale: fr
+        MinimumPrice: '232.75'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    498_de:
+        Id: 498
+        Locale: de
+        MinimumPrice: '231.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-09 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    498_fr:
+        Id: 498
+        Locale: fr
+        MinimumPrice: '219.45'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-09 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    499_de:
+        Id: 499
+        Locale: de
+        MinimumPrice: '259.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    499_fr:
+        Id: 499
+        Locale: fr
+        MinimumPrice: '246.05'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    504_de:
+        Id: 504
+        Locale: de
+        MinimumPrice: '392.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    504_fr:
+        Id: 504
+        Locale: fr
+        MinimumPrice: '372.40'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    506_de:
+        Id: 506
+        Locale: de
+        MinimumPrice: '280.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    506_fr:
+        Id: 506
+        Locale: fr
+        MinimumPrice: '266.00'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    520_de:
+        Id: 520
+        Locale: de
+        MinimumPrice: '245.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    520_fr:
+        Id: 520
+        Locale: fr
+        MinimumPrice: '232.75'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    521_de:
+        Id: 521
+        Locale: de
+        MinimumPrice: '301.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    521_fr:
+        Id: 521
+        Locale: fr
+        MinimumPrice: '285.95'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    526_de:
+        Id: 526
+        Locale: de
+        MinimumPrice: '217.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    526_fr:
+        Id: 526
+        Locale: fr
+        MinimumPrice: '206.15'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    530_de:
+        Id: 530
+        Locale: de
+        MinimumPrice: '252.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    530_fr:
+        Id: 530
+        Locale: fr
+        MinimumPrice: '239.40'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    533_de:
+        Id: 533
+        Locale: de
+        MinimumPrice: '252.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    533_fr:
+        Id: 533
+        Locale: fr
+        MinimumPrice: '239.40'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-12-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2014-01-04 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    535_de:
+        Id: 535
+        Locale: de
+        MinimumPrice: '329.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-08-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    535_fr:
+        Id: 535
+        Locale: fr
+        MinimumPrice: '312.55'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-08-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    538_de:
+        Id: 538
+        Locale: de
+        MinimumPrice: '301.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    538_fr:
+        Id: 538
+        Locale: fr
+        MinimumPrice: '285.95'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-08-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    540_de:
+        Id: 540
+        Locale: de
+        MinimumPrice: '280.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-09 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    540_fr:
+        Id: 540
+        Locale: fr
+        MinimumPrice: '266.00'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-09 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    543_de:
+        Id: 543
+        Locale: de
+        MinimumPrice: '161.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    543_fr:
+        Id: 543
+        Locale: fr
+        MinimumPrice: '152.95'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    554_de:
+        Id: 554
+        Locale: de
+        MinimumPrice: '245.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    554_fr:
+        Id: 554
+        Locale: fr
+        MinimumPrice: '232.75'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    556_fr:
+        Id: 556
+        Locale: fr
+        MinimumPrice: '192.85'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    557_de:
+        Id: 557
+        Locale: de
+        MinimumPrice: '217.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    560_de:
+        Id: 560
+        Locale: de
+        MinimumPrice: '217.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    560_fr:
+        Id: 560
+        Locale: fr
+        MinimumPrice: '206.15'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-22 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-29 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    564_de:
+        Id: 564
+        Locale: de
+        MinimumPrice: '266.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    564_fr:
+        Id: 564
+        Locale: fr
+        MinimumPrice: '252.70'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    567_de:
+        Id: 567
+        Locale: de
+        MinimumPrice: '301.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    567_fr:
+        Id: 567
+        Locale: fr
+        MinimumPrice: '285.95'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    569_de:
+        Id: 569
+        Locale: de
+        MinimumPrice: '301.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    569_fr:
+        Id: 569
+        Locale: fr
+        MinimumPrice: '285.95'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    573_de:
+        Id: 573
+        Locale: de
+        MinimumPrice: '322.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    573_fr:
+        Id: 573
+        Locale: fr
+        MinimumPrice: '305.90'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    574_de:
+        Id: 574
+        Locale: de
+        MinimumPrice: '434.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-09 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    574_fr:
+        Id: 574
+        Locale: fr
+        MinimumPrice: '434.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-02 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-09 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    576_de:
+        Id: 576
+        Locale: de
+        MinimumPrice: '280.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    576_fr:
+        Id: 576
+        Locale: fr
+        MinimumPrice: '266.00'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    578_de:
+        Id: 578
+        Locale: de
+        MinimumPrice: '280.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-09 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    578_fr:
+        Id: 578
+        Locale: fr
+        MinimumPrice: '266.00'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-02 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-09 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    582_de:
+        Id: 582
+        Locale: de
+        MinimumPrice: '210.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    582_fr:
+        Id: 582
+        Locale: fr
+        MinimumPrice: '199.50'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    586_de:
+        Id: 586
+        Locale: de
+        MinimumPrice: '266.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    586_fr:
+        Id: 586
+        Locale: fr
+        MinimumPrice: '252.70'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-10-05 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-10-12 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    587_de:
+        Id: 587
+        Locale: de
+        MinimumPrice: '266.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    587_fr:
+        Id: 587
+        Locale: fr
+        MinimumPrice: '252.70'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    589_de:
+        Id: 589
+        Locale: de
+        MinimumPrice: '301.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    589_fr:
+        Id: 589
+        Locale: fr
+        MinimumPrice: '285.95'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    593_fr:
+        Id: 593
+        Locale: fr
+        MinimumPrice: '300.00'
+        MinimumPriceDiscountLabel: 'promotion 7=6 vacances de paques'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-27 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-05-04 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    596_de:
+        Id: 596
+        Locale: de
+        MinimumPrice: '203.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-27 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-05-04 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    596_fr:
+        Id: 596
+        Locale: fr
+        MinimumPrice: '192.85'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    602_de:
+        Id: 602
+        Locale: de
+        MinimumPrice: '217.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    602_fr:
+        Id: 602
+        Locale: fr
+        MinimumPrice: '206.15'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    603_de:
+        Id: 603
+        Locale: de
+        MinimumPrice: '329.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-08-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    603_fr:
+        Id: 603
+        Locale: fr
+        MinimumPrice: '312.55'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    607_de:
+        Id: 607
+        Locale: de
+        MinimumPrice: '273.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    607_fr:
+        Id: 607
+        Locale: fr
+        MinimumPrice: '259.35'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    608_de:
+        Id: 608
+        Locale: de
+        MinimumPrice: '308.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-09 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    608_fr:
+        Id: 608
+        Locale: fr
+        MinimumPrice: '292.60'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-09 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    615_de:
+        Id: 615
+        Locale: de
+        MinimumPrice: '266.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    615_fr:
+        Id: 615
+        Locale: fr
+        MinimumPrice: '252.70'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    617_de:
+        Id: 617
+        Locale: de
+        MinimumPrice: '245.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-09 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    617_fr:
+        Id: 617
+        Locale: fr
+        MinimumPrice: '210.00'
+        MinimumPriceDiscountLabel: 'promotion 7=6 vacances de paques'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    620_de:
+        Id: 620
+        Locale: de
+        MinimumPrice: '224.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-05-25 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    620_fr:
+        Id: 620
+        Locale: fr
+        MinimumPrice: '212.80'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    622_de:
+        Id: 622
+        Locale: de
+        MinimumPrice: '280.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    622_fr:
+        Id: 622
+        Locale: fr
+        MinimumPrice: '280.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-20 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    630_de:
+        Id: 630
+        Locale: de
+        MinimumPrice: '231.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    630_fr:
+        Id: 630
+        Locale: fr
+        MinimumPrice: '219.45'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    635_de:
+        Id: 635
+        Locale: de
+        MinimumPrice: '203.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    635_fr:
+        Id: 635
+        Locale: fr
+        MinimumPrice: '192.85'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    636_de:
+        Id: 636
+        Locale: de
+        MinimumPrice: '371.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    636_fr:
+        Id: 636
+        Locale: fr
+        MinimumPrice: '371.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-22 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-29 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    641_de:
+        Id: 641
+        Locale: de
+        MinimumPrice: '273.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    641_fr:
+        Id: 641
+        Locale: fr
+        MinimumPrice: '259.35'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    645_de:
+        Id: 645
+        Locale: de
+        MinimumPrice: '266.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    645_fr:
+        Id: 645
+        Locale: fr
+        MinimumPrice: '228.00'
+        MinimumPriceDiscountLabel: 'promotion 7=6 vacances de paques'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    648_de:
+        Id: 648
+        Locale: de
+        MinimumPrice: '350.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-08-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    648_fr:
+        Id: 648
+        Locale: fr
+        MinimumPrice: '332.50'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    649_de:
+        Id: 649
+        Locale: de
+        MinimumPrice: '301.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    649_fr:
+        Id: 649
+        Locale: fr
+        MinimumPrice: '285.95'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    650_de:
+        Id: 650
+        Locale: de
+        MinimumPrice: '308.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    650_fr:
+        Id: 650
+        Locale: fr
+        MinimumPrice: '292.60'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    653_de:
+        Id: 653
+        Locale: de
+        MinimumPrice: '308.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    653_fr:
+        Id: 653
+        Locale: fr
+        MinimumPrice: '292.60'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    657_de:
+        Id: 657
+        Locale: de
+        MinimumPrice: '238.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-27 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-05-04 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    657_fr:
+        Id: 657
+        Locale: fr
+        MinimumPrice: '226.10'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-21 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-28 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    663_de:
+        Id: 663
+        Locale: de
+        MinimumPrice: '231.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    663_fr:
+        Id: 663
+        Locale: fr
+        MinimumPrice: '219.45'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-08-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    668_de:
+        Id: 668
+        Locale: de
+        MinimumPrice: '238.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-08-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    668_fr:
+        Id: 668
+        Locale: fr
+        MinimumPrice: '226.10'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-08-31 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-09-07 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    671_de:
+        Id: 671
+        Locale: de
+        MinimumPrice: '266.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    671_fr:
+        Id: 671
+        Locale: fr
+        MinimumPrice: '252.70'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    674_de:
+        Id: 674
+        Locale: de
+        MinimumPrice: '301.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-09 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    674_fr:
+        Id: 674
+        Locale: fr
+        MinimumPrice: '285.95'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-09 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-03-16 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    680_de:
+        Id: 680
+        Locale: de
+        MinimumPrice: '357.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    680_fr:
+        Id: 680
+        Locale: fr
+        MinimumPrice: '339.15'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-01 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-06-08 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    683_de:
+        Id: 683
+        Locale: de
+        MinimumPrice: '259.00'
+        MinimumPriceDiscountLabel: ''
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+    683_fr:
+        Id: 683
+        Locale: fr
+        MinimumPrice: '246.05'
+        MinimumPriceDiscountLabel: 'Early booking 5%'
+        MinimumPriceStartDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-06 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}
+        MinimumPriceEndDate: !!php/object:O:8:"DateTime":3:{s:4:"date";s:19:"2013-04-13 00:00:00";s:13:"timezone_type";i:3;s:8:"timezone";s:12:"Europe/Paris";}

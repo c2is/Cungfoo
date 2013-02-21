@@ -1,25 +1,19 @@
-{% extends "Destination/base.twig" %}
+{% extends "base.twig" %}
 
-{% block title %}{{ "seo.title.list_departement" | trans }}{% endblock %}
+{% block title %}{{ metadata.seoTitle | trans }}{% endblock %}
 
-{% block metaDescription %}{{ "seo.meta.list_departement" | trans }}{% endblock %}
+{% block metaDescription %}{{ metadata.seoDescription | trans }}{% endblock %}
 
-{% block topRightColumn %}
+{% block leftColumn %}
 
-    {% include 'Form/_search_engine.twig' %}
-
-{% endblock %}
-
-{% block bottomLeftColumn %}
-
-    <h1>{{ metadata.title }}</h1>
-    <h2 class="h3-like">{{ metadata.subtitle }}</h2>
+    <h1>{{ metadata.seoH1|trans }}</h1>
+    <h2 class="h3-like">{{ metadata.subtitle|trans }}</h2>
 
     {% if metadata.visuel %}
     <div class="banner">
         <div class="bannerStain first">
             <div class="content">
-                <p class="headline">{{ metadata.accroche }}</p>
+                <p class="headline">{{ metadata.accroche|trans }}</p>
             </div>
         </div>
         <img class="bdPict" src="{{ asset(metadata.visuel) }}" alt="">
@@ -29,21 +23,25 @@
     <div id="results" class="clear">
         <div class="toggleContainer">
             {% for paysElement in pays %}
+            {% if paysElement.departementOrderByName.count %}
             <div class="toggleItem">{{ paysElement.name }}<span class="toggleArrow">&gt;</span></div>
             <div class="toggleContent primary">
                 {% for departement in paysElement.departementOrderByName %}
                 <a class="linkItem" href="{{ path('destination_departement',{'pays': paysElement.slug, 'departement': departement.slug}) }}">{{ departement.name }}<span class="toggleArrow">&gt;</span></a>
                 {% endfor %}
             </div>
+            {% endif %}
             {% endfor %}
         </div>
     </div>
 
 {% endblock %}
 
-{% block bottomRightColumn %}
-<div id="greyBoxes">
-    {{ esi(path('widget', {'name': 'sejour_reussi'})) }}
-    {{ esi(path('widget', {'name': 'reassurance'})) }}
-</div>
+{% block rightColumn %}
+    {% include 'Form/_search_engine.twig' %}
+
+    <div id="greyBoxes">
+        {{ esi(path('widget', {'name': 'sejour_reussi'})) }}
+        {{ esi(path('widget', {'name': 'reassurance'})) }}
+    </div>
 {% endblock %}

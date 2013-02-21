@@ -18,6 +18,8 @@ use Cungfoo\Model\Event;
 use Cungfoo\Model\EventI18n;
 use Cungfoo\Model\EventPeer;
 use Cungfoo\Model\EventQuery;
+use Cungfoo\Model\Region;
+use Cungfoo\Model\RegionEvent;
 
 /**
  * Base class that represents a query for the 'event' table.
@@ -71,6 +73,10 @@ use Cungfoo\Model\EventQuery;
  * @method EventQuery leftJoinEtablissementEvent($relationAlias = null) Adds a LEFT JOIN clause to the query using the EtablissementEvent relation
  * @method EventQuery rightJoinEtablissementEvent($relationAlias = null) Adds a RIGHT JOIN clause to the query using the EtablissementEvent relation
  * @method EventQuery innerJoinEtablissementEvent($relationAlias = null) Adds a INNER JOIN clause to the query using the EtablissementEvent relation
+ *
+ * @method EventQuery leftJoinRegionEvent($relationAlias = null) Adds a LEFT JOIN clause to the query using the RegionEvent relation
+ * @method EventQuery rightJoinRegionEvent($relationAlias = null) Adds a RIGHT JOIN clause to the query using the RegionEvent relation
+ * @method EventQuery innerJoinRegionEvent($relationAlias = null) Adds a INNER JOIN clause to the query using the RegionEvent relation
  *
  * @method EventQuery leftJoinEventI18n($relationAlias = null) Adds a LEFT JOIN clause to the query using the EventI18n relation
  * @method EventQuery rightJoinEventI18n($relationAlias = null) Adds a RIGHT JOIN clause to the query using the EventI18n relation
@@ -959,6 +965,80 @@ abstract class BaseEventQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query by a related RegionEvent object
+     *
+     * @param   RegionEvent|PropelObjectCollection $regionEvent  the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   EventQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByRegionEvent($regionEvent, $comparison = null)
+    {
+        if ($regionEvent instanceof RegionEvent) {
+            return $this
+                ->addUsingAlias(EventPeer::ID, $regionEvent->getEventId(), $comparison);
+        } elseif ($regionEvent instanceof PropelObjectCollection) {
+            return $this
+                ->useRegionEventQuery()
+                ->filterByPrimaryKeys($regionEvent->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByRegionEvent() only accepts arguments of type RegionEvent or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the RegionEvent relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return EventQuery The current query, for fluid interface
+     */
+    public function joinRegionEvent($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('RegionEvent');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'RegionEvent');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the RegionEvent relation RegionEvent object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\RegionEventQuery A secondary query class using the current class as primary query
+     */
+    public function useRegionEventQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        return $this
+            ->joinRegionEvent($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'RegionEvent', '\Cungfoo\Model\RegionEventQuery');
+    }
+
+    /**
      * Filter the query by a related EventI18n object
      *
      * @param   EventI18n|PropelObjectCollection $eventI18n  the related object to use as filter
@@ -1046,6 +1126,23 @@ abstract class BaseEventQuery extends ModelCriteria
         return $this
             ->useEtablissementEventQuery()
             ->filterByEtablissement($etablissement, $comparison)
+            ->endUse();
+    }
+
+    /**
+     * Filter the query by a related Region object
+     * using the region_event table as cross reference
+     *
+     * @param   Region $region the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   EventQuery The current query, for fluid interface
+     */
+    public function filterByRegion($region, $comparison = Criteria::EQUAL)
+    {
+        return $this
+            ->useRegionEventQuery()
+            ->filterByRegion($region, $comparison)
             ->endUse();
     }
 
@@ -1146,6 +1243,8 @@ abstract class BaseEventQuery extends ModelCriteria
             ->filterByActive(true)
             ->useI18nQuery($locale, 'i18n_locale')
                 ->filterByActiveLocale(true)
+                    ->_or()
+                ->filterByActiveLocale(null, Criteria::ISNULL)
             ->endUse()
         ;
 

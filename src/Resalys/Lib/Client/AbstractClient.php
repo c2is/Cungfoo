@@ -15,6 +15,9 @@ abstract class AbstractClient
     protected $locale           = null;
     protected $rootdir          = '';
 
+    protected $clientConfig     = null;
+    protected $languagesConfig  = null;
+
     protected $location         = null;
     protected $options          = array();
 
@@ -29,9 +32,13 @@ abstract class AbstractClient
         $this->rootdir = $rootdir;
         $this->locale  = $locale;
 
+        // load default data
+        $this->clientConfig    = Yaml::parse($this->rootdir . (empty($configFiles['client_file']) ? self::DEFAULT_CLIENT_FILE : $configFiles['client_file']));
+        $this->languagesConfig = Yaml::parse($this->rootdir . (empty($configFiles['languages_file']) ? self::DEFAULT_LANGUAGE_FILE: $configFiles['languages_file']));
+
         // load default configurations
-        $this->loadClientConfig($this->rootdir . (empty($configFiles['client_file']) ? self::DEFAULT_CLIENT_FILE : $configFiles['client_file']));
-        $this->loadLanguagesConfig($this->rootdir . (empty($configFiles['languages_file']) ? self::DEFAULT_LANGUAGE_FILE: $configFiles['languages_file']));
+        $this->loadClientConfig();
+        $this->loadLanguagesConfig();
     }
 
     public function addOptions(array $options)
@@ -61,43 +68,34 @@ abstract class AbstractClient
         return $this->data;
     }
 
-    public function loadClientConfig($clientConfigFile)
+    public function loadClientConfig()
     {
-        $clientConfig = Yaml::parse($clientConfigFile);
-
-        if (empty($clientConfig['services'][$this->getName()]))
+        if (empty($this->clientConfig['services'][$this->getName()]))
         {
             throw new \Exception(sprintf("No configuration found for '%s' client", $this->getName()));
         }
 
-        $this->location = $clientConfig['services'][$this->getName()]['location'];
-        foreach ($clientConfig['services'][$this->getName()]['default_envelope'] as $optionName => $optionValue)
+        $this->location = $this->clientConfig['services'][$this->getName()]['location'];
+        foreach ($this->clientConfig['services'][$this->getName()]['default_envelope'] as $optionName => $optionValue)
         {
             $this->addOption($optionName, $optionValue);
         }
     }
 
-    public function loadLanguagesConfig($languagesConfigFile)
+    public function loadLanguagesConfig()
     {
-        $languagesConfig = Yaml::parse($languagesConfigFile);
-        if (!array_key_exists('languages', $languagesConfig))
+        if (!array_key_exists('languages', $this->languagesConfig))
         {
-            throw new \Exception("No 'languages' key in languages configuration file : ".$languagesConfigFile);
+            throw new \Exception("No 'languages' key in languages configuration file");
         }
 
-        $languagesKeys = array_keys($languagesConfig['languages']);
+        $languagesKeys = array_keys($this->languagesConfig['languages']);
         if (!count($languagesKeys))
         {
-            throw new \Exception("No language in languages configuration file : ".$languagesConfigFile);
+            throw new \Exception("No language in languages configuration file");
         }
 
         $this->addOption('languages', array_values($languagesKeys));
-
-        if (null !== $this->locale && isset($languagesConfig['languages'][$this->locale]) && isset($languagesConfig['languages'][$this->locale]['resalys_username']))
-        {
-            $this->addOption('username', $languagesConfig['languages'][$this->locale]['resalys_username']);
-            $this->addOption('webuser', $languagesConfig['languages'][$this->locale]['resalys_username']);
-        }
     }
 
     public function parse()
@@ -105,6 +103,20 @@ abstract class AbstractClient
         foreach ($this->getOption('languages', array('FR')) as $language)
         {
             $this->addOption('language', strtoupper($language));
+            $this->addOption('language_code', strtoupper($language));
+
+            if (isset($this->languagesConfig['languages'][$language])) {
+                $languageConfig = $this->languagesConfig['languages'][$language];
+
+                if (isset($languageConfig['resalys_username'])) {
+                    $this->addOption('username', $languageConfig['resalys_username']);
+                    $this->addOption('webuser', $languageConfig['resalys_username']);
+                }
+
+                if (isset($languageConfig['resalys_flow_name'])) {
+                    $this->addOption('flow_name', $languageConfig['resalys_flow_name']);
+                }
+            }
 
             foreach ($this->getRequests() as $request)
             {

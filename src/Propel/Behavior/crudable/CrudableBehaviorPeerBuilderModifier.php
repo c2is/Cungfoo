@@ -40,10 +40,10 @@ class CrudableBehaviorPeerBuilderModifier
  * The default locale to use for translations
  * @var        string
  */
-public static function getMetadata(PropelPDO \$con = null)
+public static function getMetadata(\$locale = 'fr', PropelPDO \$con = null)
 {
     return \\".$namespace."\\MetadataQuery::create()
-        ->joinWithI18n()
+        ->joinWithI18n(\$locale)
         ->filterByTableRef(".$peerClassname."::TABLE_NAME)
         ->findOne()
     ;

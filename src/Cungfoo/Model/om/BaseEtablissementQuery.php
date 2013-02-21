@@ -2055,7 +2055,7 @@ abstract class BaseEtablissementQuery extends ModelCriteria
      *
      * @return EtablissementQuery The current query, for fluid interface
      */
-    public function joinEtablissementTypeHebergement($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    public function joinEtablissementTypeHebergement($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
     {
         $tableMap = $this->getTableMap();
         $relationMap = $tableMap->getRelation('EtablissementTypeHebergement');
@@ -2090,7 +2090,7 @@ abstract class BaseEtablissementQuery extends ModelCriteria
      *
      * @return   \Cungfoo\Model\EtablissementTypeHebergementQuery A secondary query class using the current class as primary query
      */
-    public function useEtablissementTypeHebergementQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    public function useEtablissementTypeHebergementQuery($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
     {
         return $this
             ->joinEtablissementTypeHebergement($relationAlias, $joinType)
@@ -3400,6 +3400,8 @@ abstract class BaseEtablissementQuery extends ModelCriteria
             ->filterByActive(true)
             ->useI18nQuery($locale, 'i18n_locale')
                 ->filterByActiveLocale(true)
+                    ->_or()
+                ->filterByActiveLocale(null, Criteria::ISNULL)
             ->endUse()
         ;
 

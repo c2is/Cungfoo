@@ -118,23 +118,31 @@ jQuery.extend( jQuery.fn, {
             var sVal1 = $(this).val();
             var nbTypes = $('.typLocation').length;
             var nbCampings = $('.itemResult').length;
+            var btnMoreResults = $('#btPlusResults');
+            var hasMoreResults = btnMoreResults.length > 0;
+            var nbSetVisible = 0;
 
             if (nbTypes) {
                 var siblingSelect = $(this).siblings('select');
                 var sVal2 = siblingSelect.length > 0 ? siblingSelect.val() : '';
 
                 $('.typLocation').each( function() {
-                    if (sVal1 == "" && sVal2 == "") {
-                        $(this).fadeIn();
-                    } else if (sVal1 == "") {
-                        $(this).not('.'+sVal2).hide();
-                        $('.'+sVal2).fadeIn();
-                    } else if (sVal2 == "") {
-                        $(this).not('.'+sVal1).hide();
-                        $('.'+sVal1).fadeIn();
+                    $(this).removeClass('nextItem');
+
+                    if (
+                        (sVal1 == "" && sVal2 == "") ||
+                        (sVal1 == "" && $(this).hasClass(sVal2)) ||
+                        (sVal2 == "" && $(this).hasClass(sVal1)) ||
+                        ($(this).hasClass(sVal1) && $(this).hasClass(sVal2))
+                    ) {
+                        if (!hasMoreResults || nbSetVisible < nbToShow) {
+                            $(this).fadeIn();
+                            nbSetVisible ++;
+                        } else {
+                            $(this).addClass('nextItem');
+                        }
                     } else {
-                        $(this).not('.'+sVal1+'.'+sVal2).hide();
-                        $('.'+sVal1+'.'+sVal2).fadeIn();
+                        $(this).hide();
                     }
                 });
 
@@ -145,13 +153,23 @@ jQuery.extend( jQuery.fn, {
                 }
             } else if (nbCampings) {
                 $('.itemResult').each(function() {
-                    if (sVal1 == '') {
-                        $(this).fadeIn();
+                    if (sVal1 == '' || $(this).hasClass(sVal1)) {
+                        if (!hasMoreResults || nbSetVisible < nbToShow) {
+                            $(this).fadeIn();
+                            nbSetVisible ++;
+                        } else {
+                            $(this).addClass('nextItem');
+                        }
                     } else {
-                        $(this).not('.' + sVal1).hide();
-                        $('.' + sVal1).fadeIn();
+                        $(this).hide();
                     }
                 });
+            }
+            
+            if (hasMoreResults && $('.nextItem').length > 0) {
+                btnMoreResults.show();
+            } else if (hasMoreResults) {
+                btnMoreResults.hide();
             }
         });
     }
@@ -583,6 +601,8 @@ jQuery.extend( jQuery.fn, {
 
 
     // datepickers
+
+    // CE
     if ($('#searchContainer #datepicker').length) {
         var d = new Date(),
             fCurrentDate = formatDate(d),
@@ -753,7 +773,6 @@ jQuery.extend( jQuery.fn, {
         switchLinear();
 
     }
-
     if ($('#searchContainerReservation #datepicker').length) {
         var d = new Date(),
             fCurrentDate = formatDate(d),
@@ -939,6 +958,7 @@ jQuery.extend( jQuery.fn, {
 
     }
 
+    // indiv
     if ($('#searchBlocDate #datepicker').length) {
         var d = new Date(),
             fCurrentDate = formatDate(d),

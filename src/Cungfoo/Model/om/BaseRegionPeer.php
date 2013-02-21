@@ -13,8 +13,10 @@ use Cungfoo\Model\BonPlanRegionPeer;
 use Cungfoo\Model\DestinationPeer;
 use Cungfoo\Model\PaysPeer;
 use Cungfoo\Model\Region;
+use Cungfoo\Model\RegionEventPeer;
 use Cungfoo\Model\RegionI18nPeer;
 use Cungfoo\Model\RegionPeer;
+use Cungfoo\Model\RegionPointInteretPeer;
 use Cungfoo\Model\VillePeer;
 use Cungfoo\Model\map\RegionTableMap;
 
@@ -434,6 +436,12 @@ abstract class BaseRegionPeer
      */
     public static function clearRelatedInstancePool()
     {
+        // Invalidate objects in RegionPointInteretPeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        RegionPointInteretPeer::clearInstancePool();
+        // Invalidate objects in RegionEventPeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        RegionEventPeer::clearInstancePool();
         // Invalidate objects in VillePeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
         VillePeer::clearInstancePool();
@@ -1473,10 +1481,24 @@ abstract class BaseRegionPeer
      * The default locale to use for translations
      * @var        string
      */
-    public static function getMetadata(PropelPDO $con = null)
+    public static function getMetadata($locale = 'fr', PropelPDO $con = null)
     {
         return \Cungfoo\Model\MetadataQuery::create()
-            ->joinWithI18n()
+            ->joinWithI18n($locale)
+            ->filterByTableRef(RegionPeer::TABLE_NAME)
+            ->findOne()
+        ;
+    }
+    // seo behavior
+
+    /**
+     * The default locale to use for translations
+     * @var        string
+     */
+    public static function getSeo($locale = 'fr', PropelPDO $con = null)
+    {
+        return \Cungfoo\Model\SeoQuery::create()
+            ->joinWithI18n($locale)
             ->filterByTableRef(RegionPeer::TABLE_NAME)
             ->findOne()
         ;

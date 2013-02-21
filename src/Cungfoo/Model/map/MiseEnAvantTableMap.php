@@ -81,7 +81,7 @@ class MiseEnAvantTableMap extends TableMap
             'i18n' =>  array (
   'i18n_table' => '%TABLE%_i18n',
   'i18n_phpname' => '%PHPNAME%I18n',
-  'i18n_columns' => 'titre, accroche, lien, titre_lien,active_locale',
+  'i18n_columns' => 'titre, accroche, lien, titre_lien,seo_title,seo_description,seo_h1,seo_keywords,active_locale',
   'i18n_pk_name' => NULL,
   'locale_column' => 'locale',
   'default_locale' => 'fr',
@@ -93,6 +93,11 @@ class MiseEnAvantTableMap extends TableMap
   'crud_model' => NULL,
   'crud_form' => NULL,
   'crud_type_file' => 'image_fond_path, illustration_path',
+),
+            'seo' =>  array (
+  'seo_columns' => 'seo_title,seo_description,seo_h1,seo_keywords',
+  'seo_description' => 'LONGVARCHAR',
+  'seo_keywords' => 'LONGVARCHAR',
 ),
         );
     } // getBehaviors()

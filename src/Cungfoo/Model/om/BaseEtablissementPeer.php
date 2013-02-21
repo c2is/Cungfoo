@@ -2314,10 +2314,24 @@ abstract class BaseEtablissementPeer
      * The default locale to use for translations
      * @var        string
      */
-    public static function getMetadata(PropelPDO $con = null)
+    public static function getMetadata($locale = 'fr', PropelPDO $con = null)
     {
         return \Cungfoo\Model\MetadataQuery::create()
-            ->joinWithI18n()
+            ->joinWithI18n($locale)
+            ->filterByTableRef(EtablissementPeer::TABLE_NAME)
+            ->findOne()
+        ;
+    }
+    // seo behavior
+
+    /**
+     * The default locale to use for translations
+     * @var        string
+     */
+    public static function getSeo($locale = 'fr', PropelPDO $con = null)
+    {
+        return \Cungfoo\Model\SeoQuery::create()
+            ->joinWithI18n($locale)
             ->filterByTableRef(EtablissementPeer::TABLE_NAME)
             ->findOne()
         ;

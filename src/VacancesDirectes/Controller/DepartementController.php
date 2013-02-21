@@ -45,7 +45,7 @@ class DepartementController implements ControllerProviderInterface
         return $app->renderView('Destination/list_departement.twig', array(
             'pays'       => $pays,
             'searchForm' => $searchEngine->getView(),
-            'metadata'   => DepartementPeer::getMetadata(),
+            'metadata'   => DepartementPeer::getMetadata($app['context']->get('language')),
         ));
     }
 }

@@ -1,18 +1,12 @@
-{% extends "Destination/base.twig" %}
+{% extends "base.twig" %}
 
-{% block title %}{{ "seo.title.list_region" | trans }}{% endblock %}
+{% block title %}{{ metadata.seoTitle | trans }}{% endblock %}
 
-{% block metaDescription %}{{ "seo.meta.list_region" | trans }}{% endblock %}
+{% block metaDescription %}{{ metadata.seoDescription | trans }}{% endblock %}
 
-{% block topRightColumn %}
+{% block leftColumn %}
 
-    {% include 'Form/_search_engine.twig' %}
-
-{% endblock %}
-
-{% block bottomLeftColumn %}
-
-    <h1>{{ metadata.title }}</h1>
+    <h1>{{ metadata.seoH1 }}</h1>
     <h2 class="h3-like">{{ metadata.subtitle }}</h2>
 
     {% if metadata.visuel %}
@@ -41,9 +35,11 @@
 
 {% endblock %}
 
-{% block bottomRightColumn %}
-<div id="greyBoxes">
-    {{ esi(path('widget', {'name': 'sejour_reussi'})) }}
-    {{ esi(path('widget', {'name': 'reassurance'})) }}
-</div>
+{% block rightColumn %}
+    {% include 'Form/_search_engine.twig' %}
+
+    <div id="greyBoxes">
+        {{ esi(path('widget', {'name': 'sejour_reussi'})) }}
+        {{ esi(path('widget', {'name': 'reassurance'})) }}
+    </div>
 {% endblock %}
