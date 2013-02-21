@@ -6,7 +6,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 class CrudableBaseFormTypeBehaviorBuilder extends OMBuilder
 {
-    const TAB_CHARACTER = "\t";
+    const TAB_CHARACTER = "    ";
 
     const CRUDABLE_TYPE_TEXTRICH = 'textrich';
     const CRUDABLE_TYPE_FILE     = 'cungfoo_file';
@@ -29,6 +29,16 @@ class CrudableBaseFormTypeBehaviorBuilder extends OMBuilder
     public function getUnprefixedClassname()
     {
         return 'Base' . $this->getStubObjectBuilder()->getUnprefixedClassname() . 'Type';
+    }
+
+    public function camelize($string)
+    {
+        $string = preg_replace("/([_-\s]?([a-zA-Z0-9]+))/e",
+            "ucwords('\\2')",
+            $string
+        );
+
+        return strtoupper($string[0]) . substr($string, 1);
     }
 
     /**
@@ -66,29 +76,15 @@ class {$this->getClassname()} extends AppAwareType
      */
     protected function addClassBody(&$script)
     {
+
+        $this->fileFields     = array_map(array('CrudableBaseFormTypeBehaviorBuilder', 'trimArray'), explode(',', $this->getTable()->getBehavior('crudable')->getParameter('crud_type_file')));
+        $this->richtextFields = array_map(array('CrudableBaseFormTypeBehaviorBuilder', 'trimArray'), explode(',', $this->getTable()->getBehavior('crudable')->getParameter('crud_type_richtext')));
+
         $this->addBuildForm($script);
         $this->addSetDefaultOptions($script);
         $this->addGetName($script);
 
         $this->addRoute();
-    }
-
-    /**
-     * Adding builder
-     *
-     * @param string $columnName
-     * @param string $type
-     * @param array  $options
-     * @return string
-     */
-    private function addBuilder($columnName, $type = "text", $options = array())
-    {
-        $options = array_merge($options, array(
-            'label'    => sprintf('%s.%s', $this->getTable()->getName(), $columnName),
-            'required' => false,
-        ));
-
-        return sprintf("\n%s\$builder->add('%s', '%s'%s);", str_repeat(self::TAB_CHARACTER, 2), $columnName, $type, $this->exportOptionsArray($options));
     }
 
     /**
@@ -107,14 +103,14 @@ class {$this->getClassname()} extends AppAwareType
         {
             if ($iteration == 1)
             {
-                $ouput .= sprintf(", array(\n");
+                $ouput .= sprintf("array(\n");
             }
 
             foreach ($options as $key => $value)
             {
                 if (is_array($value))
                 {
-                    $ouput .= sprintf("%s'%s' => array(\n%s", str_repeat(self::TAB_CHARACTER, $iteration +2), $key, $this->exportOptionsArray($value, $iteration));
+                    $ouput .= sprintf("%s'%s' => array(\n%s", str_repeat(self::TAB_CHARACTER, $iteration +2), $key, $this->exportOptionsArray($value, $iteration +2));
                 }
                 else
                 {
@@ -150,29 +146,39 @@ class {$this->getClassname()} extends AppAwareType
         return $ouput;
     }
 
-    /**
-     * Adding add builder method.
-     *
-     * @param Column $column
-     * @return string
-     */
-    private function addBuilderAccordingToColumn(Column $column, $options = array())
+    private function trimArray($value)
     {
-        if (!in_array($column->getName(), array('created_at', 'updated_at')))
-        {
-            if (PropelTypes::ENUM === $column->getType())
-            {
-                $choices = array_combine($column->getValueSet(), $column->getValueSet());
-                $options = array_merge($options, array('choices' => $choices));
-            }
+        return trim($value);
+    }
 
-            if (PropelTypes::DATE === $column->getType() || PropelTypes::TIMESTAMP === $column->getType())
-            {
-                $options = array_merge($options, array('widget' => 'single_text'));
-            }
-
-            return $this->addBuilder($column->getName(), $this->getColumnType($column), array_merge(array('constraints' => $this->addConstraints($column)), $options));
+    private function getFieldType($column)
+    {
+        if (in_array($column->getName(), $this->fileFields)) {
+            return 'cungfoo_file';
         }
+
+        switch ($column->getType()) {
+            case \PropelTypes::VARCHAR:
+            case \PropelTypes::FLOAT:
+                return 'text';
+            case \PropelTypes::LONGVARCHAR:
+                return 'textarea';
+            case \PropelTypes::INTEGER:
+                return 'integer';
+            case \PropelTypes::BOOLEAN:
+                return 'checkbox';
+            case \PropelTypes::ENUM:
+                return 'choice';
+            case \PropelTypes::DATE:
+                return 'date';
+            case \PropelTypes::TIMESTAMP:
+                return 'datetime';
+            case self::CRUDABLE_TYPE_TEXTRICH:
+                $column->setType(PropelTypes::LONGVARCHAR);
+                return 'textrich';
+        }
+
+        return null;
     }
 
     /**
@@ -181,78 +187,37 @@ class {$this->getClassname()} extends AppAwareType
      * @param Column $column
      * @return array
      */
-    private function addConstraints(Column $column)
+    private function getConstraints(Column $column)
     {
         $constraints = array();
-        if ($column->getAttribute('required', false))
-        {
+
+        if ($column->getAttribute('required', false)) {
             $constraints[] = 'new Assert\NotBlank()';
         }
 
         return $constraints;
     }
 
-    /**
-     * @param Column $column
-     * @return string
-     */
-    private function getColumnType(Column $column)
+    private function getFieldOptions($column)
     {
-        if ($column->getAttribute('widget', false))
-        {
-            return $column->getAttribute('widget');
-        }
-        elseif (PropelTypes::VARCHAR === $column->getType())
-        {
-            return 'text';
-        }
-        elseif (PropelTypes::LONGVARCHAR === $column->getType())
-        {
-            return 'textarea';
-        }
-        elseif (PropelTypes::INTEGER === $column->getType())
-        {
-            return 'integer';
-        }
-        elseif (PropelTypes::BOOLEAN === $column->getType())
-        {
-            return 'checkbox';
-        }
-        elseif (PropelTypes::FLOAT === $column->getType())
-        {
-            return 'text';
-        }
-        elseif (PropelTypes::DATE === $column->getType())
-        {
-            return 'date';
-        }
-        elseif (PropelTypes::TIMESTAMP === $column->getType())
-        {
-            return 'datetime';
-        }
-        elseif (PropelTypes::ENUM === $column->getType())
-        {
-            return 'choice';
-        }
-        elseif (self::CRUDABLE_TYPE_TEXTRICH === $column->getType())
-        {
-            $column->setType(PropelTypes::LONGVARCHAR);
-            return 'textrich';
-        }
-        elseif (self::CRUDABLE_TYPE_FILE === $column->getType())
-        {
-            $column->setType(PropelTypes::VARCHAR);
-            return 'cungfoo_file';
-        }
-        else
-        {
-            return $column->getType();
-        }
-    }
+        $options = array();
 
-    protected function trimArray($value)
-    {
-        return trim($value);
+        $options += array('required' => false);
+        $options += array('label' => sprintf('%s.%s', $column->getTable()->getName(), $column->getName()));
+
+        $constraints = $this->getConstraints($column);
+        if (count($constraints)) {
+            $options += array('constraints' => $constraints);
+        }
+
+        switch ($column->getType()) {
+            case \PropelTypes::TIMESTAMP:
+            case \PropelTypes::DATE:
+                $options += array('widget' => 'single_text');
+                break;
+        }
+
+        return $options;
     }
 
     /**
@@ -262,20 +227,106 @@ class {$this->getClassname()} extends AppAwareType
      */
     protected function addBuildForm(&$script)
     {
-        $builders = "";
+        $tableFields = $this->getTableFields($this->getTable()->getColumns());
+        $joinTableFields = $this->getJoinTableFields();
+        $tableI18nFields = $this->getTable()->hasBehavior('i18n') ? $this->getTableFields($this->getTable()->getBehavior('i18n')->getI18nColumns()) : array();
 
-        $fileFields     = array_map(array('CrudableBaseFormTypeBehaviorBuilder', 'trimArray'), explode(',', $this->getTable()->getBehavior('crudable')->getParameter('crud_type_file')));
-        $richtextFields = array_map(array('CrudableBaseFormTypeBehaviorBuilder', 'trimArray'), explode(',', $this->getTable()->getBehavior('crudable')->getParameter('crud_type_richtext')));
+        foreach ($tableFields as $fieldname => $field) {
+            $this->addFieldMethods($fieldname, $field, $script);
+        }
 
+        foreach ($joinTableFields as $fieldname => $field) {
+            $this->addFieldMethods($fieldname, $field, $script);
+        }
+
+        foreach ($tableI18nFields as $fieldname => $field) {
+            $this->addFieldMethods($fieldname, $field, $script);
+        }
+
+        $script .= "
+    /**
+     * {@inheritdoc}
+     */
+    public function buildForm(FormBuilderInterface \$builder, array \$options)
+    {";
+
+        foreach ($tableFields as $fieldname => $field) {
+            $camelName = $this->camelize($fieldname);
+
+            $script .= "
+        \$builder->add('{$fieldname}', \$this->get{$camelName}Type(), \$this->get{$camelName}Options());";
+        }
+
+        foreach ($joinTableFields as $fieldname => $field) {
+            $camelName = $this->camelize($fieldname);
+
+            $script .= "
+        \$builder->add('{$fieldname}', \$this->get{$camelName}Type(), \$this->get{$camelName}Options());";
+        }
+
+        if (count($tableI18nFields)) {
+            $i18nTableName = sprintf('%sI18ns', $this->getTable()->getName());
+            $i18nTableClassname = sprintf('%s\\%sI18n', $this->getTable()->getNamespace(), $this->getTable()->getPhpName());
+
+            $script .= "\$builder->add('{$i18nTableName}', 'translation_collection', array(
+            'i18n_class' => '{$i18nTableClassname}',
+            'label' => '{$i18nTableName}',
+            'required' => false,
+            'languages' => array('fr', 'de'),
+            'columns' => array(\n";
+
+            foreach ($tableI18nFields as $fieldname => $field) {
+                $camelName = $this->camelize($fieldname);
+
+                $script .= "                '{$fieldname}' => array_merge(array('type' => \$this->get{$camelName}Type()), \$this->get{$camelName}Options()),\n";
+            }
+
+
+            $script .= "
+            )
+        ));
+
+";
+        }
+
+        $script .= "
+    }
+";
+    }
+
+    protected function addBuilder($fieldname, $field, &$script)
+    {
+
+    }
+
+    protected function addFieldMethods($fieldname, $field, &$script)
+    {
+        $camelName = $this->camelize($fieldname);
+        $type = $field['type'];
+        $options = $this->exportOptionsArray($field['options']);
+
+        $script .= "
+    public function get{$camelName}Type()
+    {
+        return '{$type}';
+    }
+
+    public function get{$camelName}Options()
+    {
+        return {$options};
+    }
+";
+    }
+
+    protected function getTableFields($columns)
+    {
+        $fields = array();
         $foreignKeysByTable = array();
-        foreach ($this->getTable()->getColumns() as $column)
-        {
-            if ($column->isForeignKey())
-            {
-                foreach ($column->getForeignKeys() as $fColumn)
-                {
-                    if (empty($foreignKeysByTable[$fColumn->getForeignTable()->getName()]))
-                    {
+
+        foreach ($columns as $column) {
+            if ($column->isForeignKey()) {
+                foreach ($column->getForeignKeys() as $fColumn) {
+                    if (empty($foreignKeysByTable[$fColumn->getForeignTable()->getName()])) {
                         $foreignKeysByTable[$fColumn->getForeignTable()->getName()] = 0;
                     }
 
@@ -284,67 +335,44 @@ class {$this->getClassname()} extends AppAwareType
             }
         }
 
-        // Manage table columns
-        foreach ($this->getTable()->getColumns() as $column)
-        {
-            // For the primary key
-            if ($column->isPrimaryKey())
-            {
-                $builders .= $this->addBuilder($column->getName(), 'hidden');
-            }
-            // for the foreign key
-            elseif ($column->isForeignKey())
-            {
-                foreach ($column->getForeignKeys() as $fColumn)
-                {
-                    if ($foreignKeysByTable[$fColumn->getForeignTable()->getName()]  < 2)
-                    {
-                        $options['class'] = sprintf('\\%s\\%s', $fColumn->getForeignTable()->getNamespace(), $fColumn->getForeignTable()->getPhpName());
-                        $options['constraints'] = $this->addConstraints($column);
-                        $builders .= $this->addBuilder($fColumn->getForeignTable()->getName(), 'model', $options);
+        foreach ($columns as $column) {
+            if ($column->isForeignKey()) {
+                foreach ($column->getForeignKeys() as $fColumn) {
+                    $columnName = $fColumn->getForeignTable()->getName();
+                    if ($foreignKeysByTable[$fColumn->getForeignTable()->getName()] > 1) {
+                        $columnName = sprintf("%s_related_by_%s", $columnName, $column->getName());
                     }
-                    else
-                    {
-                        $name = sprintf("%s_related_by_%s",
-                            $fColumn->getForeignTable()->getName(),
-                            $column->getName()
-                        );
 
-                        $options['class'] = sprintf('\\%s\\%s', $fColumn->getForeignTable()->getNamespace(), $fColumn->getForeignTable()->getPhpName());
-                        $options['constraints'] = $this->addConstraints($column);
-                        $builders .= $this->addBuilder($name, 'model', $options);
-                    }
+                    $fields[$columnName]['type'] = 'model';
+                    $fields[$columnName]['options'] = array_merge($this->getFieldOptions($column), array(
+                        'class' => sprintf('%s\\%s', $fColumn->getForeignTable()->getNamespace(), ucfirst($fColumn->getForeignTable()->getPhpName())),
+                    ));
                 }
             }
-            // for the other columns
-            else
-            {
-                $addDeletedField = false;
-
-                if (in_array($column->getName(), $fileFields))
-                {
-                    $column->setType(self::CRUDABLE_TYPE_FILE);
-                    $addDeletedField = true;
-                }
-                else if (in_array($column->getName(), $richtextFields))
-                {
+            else {
+                if (in_array($column->getName(), $this->richtextFields)) {
                     $column->setType(self::CRUDABLE_TYPE_TEXTRICH);
                 }
 
-                $builders .= $this->addBuilderAccordingToColumn($column);
+                $fields[$column->getName()]['type'] = $this->getFieldType($column);
+                $fields[$column->getName()]['options'] = $this->getFieldOptions($column);
 
-                if ($addDeletedField)
-                {
+                if (in_array($column->getName(), $this->fileFields)) {
                     $columnDeleted = clone $column;
-                    $columnDeleted->setType(PropelTypes::BOOLEAN);
-                    $columnDeleted->setName($columnDeleted->getName() . '_deleted');
-                    $builders .= $this->addBuilderAccordingToColumn($columnDeleted, array('property_path' => false));
+                    $columnDeleted->setName($column->getName().'_deleted');
+                    $fields[$columnDeleted->getName()]['type'] = 'checkbox';
+                    $fields[$columnDeleted->getName()]['options'] = array_merge(array('property_path' => false), $this->getFieldOptions($columnDeleted));
                 }
             }
         }
 
-        // Manage foreign key with multiple value
-        /** @var Table $otherTable */
+        return $fields;
+    }
+
+    protected function getJoinTableFields()
+    {
+        $fields = array();
+
         foreach ($this->getDatabase()->getTables() as $otherTable)
         {
             if ($otherTable->getName() == $this->getTable()->getName())
@@ -381,15 +409,12 @@ class {$this->getClassname()} extends AppAwareType
                         {
                             if ($otherColumnFK->getForeignTable()->getName() != $this->getTable()->getName())
                             {
-                                $builders .= $this->addBuilder(
-                                    sprintf('%ss', $otherColumnFK->getForeignTable()->getName()),
-                                    'model',
-                                    array(
-                                        'class'         => sprintf('%s\\%s', $otherTable->getNamespace(), ucfirst($otherColumnFK->getForeignTable()->getPhpName())),
-                                        'constraints'   => $this->addConstraints($otherColumn),
-                                        'multiple'      => true,
-                                    )
-                                );
+                                    $columnName = sprintf('%ss', $otherColumnFK->getForeignTable()->getName());
+                                    $fields[$columnName]['type'] = 'model';
+                                    $fields[$columnName]['options'] = array_merge($this->getFieldOptions($otherColumn), array(
+                                        'class' => sprintf('%s\\%s', $otherTable->getNamespace(), ucfirst($otherColumnFK->getForeignTable()->getPhpName())),
+                                        'multiple' => true
+                                    ));
 
                                 break 2;
                             }
@@ -399,82 +424,7 @@ class {$this->getClassname()} extends AppAwareType
             }
         }
 
-        // Manage i18n behavior
-        if ($this->getTable()->hasBehavior('i18n'))
-        {
-            $i18nColumns = array();
-            foreach ($this->getTable()->getBehavior('i18n')->getI18nColumns() as $i18nColumn)
-            {
-                $columnType = $this->getColumnType($i18nColumn);
-
-                $addDeletedField = false;
-
-                if (in_array($i18nColumn->getName(), $fileFields))
-                {
-                    $columnType = self::CRUDABLE_TYPE_FILE;
-                    $addDeletedField = true;
-                }
-
-                if (in_array($i18nColumn->getName(), $richtextFields))
-                {
-                    $columnType = self::CRUDABLE_TYPE_TEXTRICH;
-                }
-
-                $i18nColumns[$i18nColumn->getName()] = array(
-                    'required'      => false,
-                    'label'         => sprintf('%s.%s', $this->getTable()->getName(), $i18nColumn->getName()),
-                    'type'          => $columnType,
-                    'constraints'   => $this->addConstraints($i18nColumn),
-                );
-
-                if ($addDeletedField)
-                {
-                    $columnDeleted = clone $i18nColumn;
-                    $columnDeleted->setType(PropelTypes::BOOLEAN);
-                    $columnDeleted->setName($columnDeleted->getName() . '_deleted');
-
-                    $i18nColumns[$columnDeleted->getName()] = array(
-                        'required'      => false,
-                        'label'         => sprintf('%s.%s', $this->getTable()->getName(), $columnDeleted->getName()),
-                        'type'          => $this->getColumnType($columnDeleted),
-                        'constraints'   => $this->addConstraints($columnDeleted),
-                        'property_path' => false,
-                    );
-                }
-            }
-
-            // set default languages
-            $languagesConfiguration = array('fr');
-
-            // get the configuration of the site languages
-            $languageFilename = $this->getDatabase()->getGeneratorConfig()->getBuildProperties()['behaviorCrudableLanguagesConf'];
-            if (file_exists($languageFilename))
-            {
-                $languagesConfiguration = array_keys(Yaml::parse($languageFilename)['languages']);
-            }
-
-            $options = array(
-                'i18n_class' => sprintf('%s\\%sI18n', $this->getTable()->getNamespace(), $this->getTable()->getPhpName()),
-                'languages' => $languagesConfiguration,
-                'label' => 'Translations',
-                'columns' => $i18nColumns
-            );
-
-            $builders .= $this->addBuilder(
-                sprintf('%sI18ns', $this->getTable()->getName()),
-                'translation_collection',
-                $options
-            );
-        }
-
-        $script .= "
-    /**
-     * {@inheritdoc}
-     */
-    public function buildForm(FormBuilderInterface \$builder, array \$options)
-    {{$builders}
-    }
-";
+        return $fields;
     }
 
     /**
@@ -523,6 +473,17 @@ class {$this->getClassname()} extends AppAwareType
     }
 
     /**
+     * Closes class.
+     * @param      string &$script The script will be modified in this method.
+     */
+    protected function addClassClose(&$script)
+    {
+        $script .= "
+} // " . $this->getClassname() . "
+";
+    }
+
+    /**
      * Return the user-defined namespace for this table,
      * or the database namespace otherwise.
      *
@@ -548,17 +509,6 @@ class {$this->getClassname()} extends AppAwareType
         }
 
         return str_replace('Model', 'Form\Type', $namespace);
-    }
-
-    /**
-     * Closes class.
-     * @param      string &$script The script will be modified in this method.
-     */
-    protected function addClassClose(&$script)
-    {
-        $script .= "
-} // " . $this->getClassname() . "
-";
     }
 
     /**

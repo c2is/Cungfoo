@@ -18,213 +18,468 @@ use Cungfoo\Form\Type\AppAwareType;
  */
 class BaseRegionType extends AppAwareType
 {
+    public function getIdType()
+    {
+        return 'integer';
+    }
+
+    public function getIdOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'region.id',
+            'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+        );
+    }
+
+    public function getCodeType()
+    {
+        return 'text';
+    }
+
+    public function getCodeOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'region.code',
+            'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+        );
+    }
+
+    public function getImagePathType()
+    {
+        return 'cungfoo_file';
+    }
+
+    public function getImagePathOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'region.image_path',
+        );
+    }
+
+    public function getImagePathDeletedType()
+    {
+        return 'checkbox';
+    }
+
+    public function getImagePathDeletedOptions()
+    {
+        return array(
+            'property_path' => false,
+            'required' => false,
+            'label' => 'region.image_path_deleted',
+        );
+    }
+
+    public function getImageEncartPathType()
+    {
+        return 'cungfoo_file';
+    }
+
+    public function getImageEncartPathOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'region.image_encart_path',
+        );
+    }
+
+    public function getImageEncartPathDeletedType()
+    {
+        return 'checkbox';
+    }
+
+    public function getImageEncartPathDeletedOptions()
+    {
+        return array(
+            'property_path' => false,
+            'required' => false,
+            'label' => 'region.image_encart_path_deleted',
+        );
+    }
+
+    public function getImageEncartPetitePathType()
+    {
+        return 'cungfoo_file';
+    }
+
+    public function getImageEncartPetitePathOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'region.image_encart_petite_path',
+        );
+    }
+
+    public function getImageEncartPetitePathDeletedType()
+    {
+        return 'checkbox';
+    }
+
+    public function getImageEncartPetitePathDeletedOptions()
+    {
+        return array(
+            'property_path' => false,
+            'required' => false,
+            'label' => 'region.image_encart_petite_path_deleted',
+        );
+    }
+
+    public function getPaysType()
+    {
+        return 'model';
+    }
+
+    public function getPaysOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'region.pays_id',
+            'class' => 'Cungfoo\Model\Pays',
+        );
+    }
+
+    public function getDestinationType()
+    {
+        return 'model';
+    }
+
+    public function getDestinationOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'region.destination_id',
+            'class' => 'Cungfoo\Model\Destination',
+        );
+    }
+
+    public function getMeaHomeType()
+    {
+        return 'checkbox';
+    }
+
+    public function getMeaHomeOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'region.mea_home',
+        );
+    }
+
+    public function getImageDetail1Type()
+    {
+        return 'cungfoo_file';
+    }
+
+    public function getImageDetail1Options()
+    {
+        return array(
+            'required' => false,
+            'label' => 'region.image_detail_1',
+        );
+    }
+
+    public function getImageDetail1DeletedType()
+    {
+        return 'checkbox';
+    }
+
+    public function getImageDetail1DeletedOptions()
+    {
+        return array(
+            'property_path' => false,
+            'required' => false,
+            'label' => 'region.image_detail_1_deleted',
+        );
+    }
+
+    public function getImageDetail2Type()
+    {
+        return 'cungfoo_file';
+    }
+
+    public function getImageDetail2Options()
+    {
+        return array(
+            'required' => false,
+            'label' => 'region.image_detail_2',
+        );
+    }
+
+    public function getImageDetail2DeletedType()
+    {
+        return 'checkbox';
+    }
+
+    public function getImageDetail2DeletedOptions()
+    {
+        return array(
+            'property_path' => false,
+            'required' => false,
+            'label' => 'region.image_detail_2_deleted',
+        );
+    }
+
+    public function getCreatedAtType()
+    {
+        return 'datetime';
+    }
+
+    public function getCreatedAtOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'region.created_at',
+            'widget' => 'single_text',
+        );
+    }
+
+    public function getUpdatedAtType()
+    {
+        return 'datetime';
+    }
+
+    public function getUpdatedAtOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'region.updated_at',
+            'widget' => 'single_text',
+        );
+    }
+
+    public function getActiveType()
+    {
+        return 'checkbox';
+    }
+
+    public function getActiveOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'region.active',
+        );
+    }
+
+    public function getPointInteretsType()
+    {
+        return 'model';
+    }
+
+    public function getPointInteretsOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'region_point_interet.point_interet_id',
+            'class' => 'Cungfoo\Model\PointInteret',
+            'multiple' => true,
+        );
+    }
+
+    public function getEventsType()
+    {
+        return 'model';
+    }
+
+    public function getEventsOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'region_event.event_id',
+            'class' => 'Cungfoo\Model\Event',
+            'multiple' => true,
+        );
+    }
+
+    public function getBonPlansType()
+    {
+        return 'model';
+    }
+
+    public function getBonPlansOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'bon_plan_region.bon_plan_id',
+            'class' => 'Cungfoo\Model\BonPlan',
+            'multiple' => true,
+        );
+    }
+
+    public function getSlugType()
+    {
+        return 'text';
+    }
+
+    public function getSlugOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'region_i18n.slug',
+            'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+        );
+    }
+
+    public function getNameType()
+    {
+        return 'text';
+    }
+
+    public function getNameOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'region_i18n.name',
+            'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+        );
+    }
+
+    public function getIntroductionType()
+    {
+        return 'text';
+    }
+
+    public function getIntroductionOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'region_i18n.introduction',
+        );
+    }
+
+    public function getDescriptionType()
+    {
+        return 'textarea';
+    }
+
+    public function getDescriptionOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'region_i18n.description',
+        );
+    }
+
+    public function getSeoTitleType()
+    {
+        return 'text';
+    }
+
+    public function getSeoTitleOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'region_i18n.seo_title',
+        );
+    }
+
+    public function getSeoDescriptionType()
+    {
+        return 'textarea';
+    }
+
+    public function getSeoDescriptionOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'region_i18n.seo_description',
+        );
+    }
+
+    public function getSeoH1Type()
+    {
+        return 'text';
+    }
+
+    public function getSeoH1Options()
+    {
+        return array(
+            'required' => false,
+            'label' => 'region_i18n.seo_h1',
+        );
+    }
+
+    public function getSeoKeywordsType()
+    {
+        return 'textarea';
+    }
+
+    public function getSeoKeywordsOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'region_i18n.seo_keywords',
+        );
+    }
+
+    public function getActiveLocaleType()
+    {
+        return 'checkbox';
+    }
+
+    public function getActiveLocaleOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'region_i18n.active_locale',
+        );
+    }
+
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('id', 'hidden', array(
-            'label' => 'region.id',
-            'required' => false,
-        ));
-        $builder->add('code', 'text', array(
-            'constraints' => array(
-                new Assert\NotBlank(),
-            ),
-            'label' => 'region.code',
-            'required' => false,
-        ));
-        $builder->add('image_path', 'cungfoo_file', array(
-            'constraints' => array(
-            ),
-            'label' => 'region.image_path',
-            'required' => false,
-        ));
-        $builder->add('image_path_deleted', 'checkbox', array(
-            'constraints' => array(
-            ),
-            'property_path' => false,
-            'label' => 'region.image_path_deleted',
-            'required' => false,
-        ));
-        $builder->add('image_encart_path', 'cungfoo_file', array(
-            'constraints' => array(
-            ),
-            'label' => 'region.image_encart_path',
-            'required' => false,
-        ));
-        $builder->add('image_encart_path_deleted', 'checkbox', array(
-            'constraints' => array(
-            ),
-            'property_path' => false,
-            'label' => 'region.image_encart_path_deleted',
-            'required' => false,
-        ));
-        $builder->add('image_encart_petite_path', 'cungfoo_file', array(
-            'constraints' => array(
-            ),
-            'label' => 'region.image_encart_petite_path',
-            'required' => false,
-        ));
-        $builder->add('image_encart_petite_path_deleted', 'checkbox', array(
-            'constraints' => array(
-            ),
-            'property_path' => false,
-            'label' => 'region.image_encart_petite_path_deleted',
-            'required' => false,
-        ));
-        $builder->add('pays', 'model', array(
-            'class' => '\Cungfoo\Model\Pays',
-            'constraints' => array(
-            ),
-            'label' => 'region.pays',
-            'required' => false,
-        ));
-        $builder->add('destination', 'model', array(
-            'class' => '\Cungfoo\Model\Destination',
-            'constraints' => array(
-            ),
-            'label' => 'region.destination',
-            'required' => false,
-        ));
-        $builder->add('mea_home', 'checkbox', array(
-            'constraints' => array(
-            ),
-            'label' => 'region.mea_home',
-            'required' => false,
-        ));
-        $builder->add('image_detail_1', 'cungfoo_file', array(
-            'constraints' => array(
-            ),
-            'label' => 'region.image_detail_1',
-            'required' => false,
-        ));
-        $builder->add('image_detail_1_deleted', 'checkbox', array(
-            'constraints' => array(
-            ),
-            'property_path' => false,
-            'label' => 'region.image_detail_1_deleted',
-            'required' => false,
-        ));
-        $builder->add('image_detail_2', 'cungfoo_file', array(
-            'constraints' => array(
-            ),
-            'label' => 'region.image_detail_2',
-            'required' => false,
-        ));
-        $builder->add('image_detail_2_deleted', 'checkbox', array(
-            'constraints' => array(
-            ),
-            'property_path' => false,
-            'label' => 'region.image_detail_2_deleted',
-            'required' => false,
-        ));
-        $builder->add('active', 'checkbox', array(
-            'constraints' => array(
-            ),
-            'label' => 'region.active',
-            'required' => false,
-        ));
-        $builder->add('point_interets', 'model', array(
-            'class' => 'Cungfoo\Model\PointInteret',
-            'constraints' => array(
-            ),
-            'multiple' => true,
-            'label' => 'region.point_interets',
-            'required' => false,
-        ));
-        $builder->add('events', 'model', array(
-            'class' => 'Cungfoo\Model\Event',
-            'constraints' => array(
-            ),
-            'multiple' => true,
-            'label' => 'region.events',
-            'required' => false,
-        ));
-        $builder->add('bon_plans', 'model', array(
-            'class' => 'Cungfoo\Model\BonPlan',
-            'constraints' => array(
-            ),
-            'multiple' => true,
-            'label' => 'region.bon_plans',
-            'required' => false,
-        ));
-        $builder->add('regionI18ns', 'translation_collection', array(
+        $builder->add('id', $this->getIdType(), $this->getIdOptions());
+        $builder->add('code', $this->getCodeType(), $this->getCodeOptions());
+        $builder->add('image_path', $this->getImagePathType(), $this->getImagePathOptions());
+        $builder->add('image_path_deleted', $this->getImagePathDeletedType(), $this->getImagePathDeletedOptions());
+        $builder->add('image_encart_path', $this->getImageEncartPathType(), $this->getImageEncartPathOptions());
+        $builder->add('image_encart_path_deleted', $this->getImageEncartPathDeletedType(), $this->getImageEncartPathDeletedOptions());
+        $builder->add('image_encart_petite_path', $this->getImageEncartPetitePathType(), $this->getImageEncartPetitePathOptions());
+        $builder->add('image_encart_petite_path_deleted', $this->getImageEncartPetitePathDeletedType(), $this->getImageEncartPetitePathDeletedOptions());
+        $builder->add('pays', $this->getPaysType(), $this->getPaysOptions());
+        $builder->add('destination', $this->getDestinationType(), $this->getDestinationOptions());
+        $builder->add('mea_home', $this->getMeaHomeType(), $this->getMeaHomeOptions());
+        $builder->add('image_detail_1', $this->getImageDetail1Type(), $this->getImageDetail1Options());
+        $builder->add('image_detail_1_deleted', $this->getImageDetail1DeletedType(), $this->getImageDetail1DeletedOptions());
+        $builder->add('image_detail_2', $this->getImageDetail2Type(), $this->getImageDetail2Options());
+        $builder->add('image_detail_2_deleted', $this->getImageDetail2DeletedType(), $this->getImageDetail2DeletedOptions());
+        $builder->add('created_at', $this->getCreatedAtType(), $this->getCreatedAtOptions());
+        $builder->add('updated_at', $this->getUpdatedAtType(), $this->getUpdatedAtOptions());
+        $builder->add('active', $this->getActiveType(), $this->getActiveOptions());
+        $builder->add('point_interets', $this->getPointInteretsType(), $this->getPointInteretsOptions());
+        $builder->add('events', $this->getEventsType(), $this->getEventsOptions());
+        $builder->add('bon_plans', $this->getBonPlansType(), $this->getBonPlansOptions());$builder->add('regionI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\RegionI18n',
-            'languages' => array(
-                0 => 'fr',
-                1 => 'de',
-            ),
-            'label' => 'region.regionI18ns',
-            'columns' => array(
-                'slug' => array(
-                    'required' => false,
-                    'label' => 'region.slug',
-                    'type' => 'text',
-                    'constraints' => array(
-                        new Assert\NotBlank(),
-                    ),
-                ),
-                'name' => array(
-                    'required' => false,
-                    'label' => 'region.name',
-                    'type' => 'text',
-                    'constraints' => array(
-                        new Assert\NotBlank(),
-                    ),
-                ),
-                'introduction' => array(
-                    'required' => false,
-                    'label' => 'region.introduction',
-                    'type' => 'text',
-                    'constraints' => array(
-                    ),
-                ),
-                'description' => array(
-                    'required' => false,
-                    'label' => 'region.description',
-                    'type' => 'textarea',
-                    'constraints' => array(
-                    ),
-                ),
-                'seo_title' => array(
-                    'required' => false,
-                    'label' => 'region.seo_title',
-                    'type' => 'text',
-                    'constraints' => array(
-                    ),
-                ),
-                'seo_description' => array(
-                    'required' => false,
-                    'label' => 'region.seo_description',
-                    'type' => 'textarea',
-                    'constraints' => array(
-                    ),
-                ),
-                'seo_h1' => array(
-                    'required' => false,
-                    'label' => 'region.seo_h1',
-                    'type' => 'text',
-                    'constraints' => array(
-                    ),
-                ),
-                'seo_keywords' => array(
-                    'required' => false,
-                    'label' => 'region.seo_keywords',
-                    'type' => 'textarea',
-                    'constraints' => array(
-                    ),
-                ),
-                'active_locale' => array(
-                    'required' => false,
-                    'label' => 'region.active_locale',
-                    'type' => 'checkbox',
-                    'constraints' => array(
-                    ),
-                ),
-            ),
+            'label' => 'regionI18ns',
             'required' => false,
+            'languages' => array('fr', 'de'),
+            'columns' => array(
+                'slug' => array_merge(array('type' => $this->getSlugType()), $this->getSlugOptions()),
+                'name' => array_merge(array('type' => $this->getNameType()), $this->getNameOptions()),
+                'introduction' => array_merge(array('type' => $this->getIntroductionType()), $this->getIntroductionOptions()),
+                'description' => array_merge(array('type' => $this->getDescriptionType()), $this->getDescriptionOptions()),
+                'seo_title' => array_merge(array('type' => $this->getSeoTitleType()), $this->getSeoTitleOptions()),
+                'seo_description' => array_merge(array('type' => $this->getSeoDescriptionType()), $this->getSeoDescriptionOptions()),
+                'seo_h1' => array_merge(array('type' => $this->getSeoH1Type()), $this->getSeoH1Options()),
+                'seo_keywords' => array_merge(array('type' => $this->getSeoKeywordsType()), $this->getSeoKeywordsOptions()),
+                'active_locale' => array_merge(array('type' => $this->getActiveLocaleType()), $this->getActiveLocaleOptions()),
+
+            )
         ));
+
+
     }
 
     /**

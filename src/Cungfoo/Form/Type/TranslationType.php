@@ -53,6 +53,7 @@ class TranslationType extends AbstractType
                 if (array_key_exists('type', $options))
                 {
                     $type = $options['type'];
+                    unset($options['type']);
                 }
                 $label = $column;
                 if (array_key_exists('label', $options))
@@ -65,10 +66,6 @@ class TranslationType extends AbstractType
                 {
                     $customOptions = $options['options'];
                 }
-
-                $options = array(
-                    'label' => $label
-                );
 
                 $options = array_merge($options, $customOptions);
 

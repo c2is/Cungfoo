@@ -18,128 +18,283 @@ use Cungfoo\Form\Type\AppAwareType;
  */
 class BaseTypeHebergementCapaciteType extends AppAwareType
 {
+    public function getIdType()
+    {
+        return 'integer';
+    }
+
+    public function getIdOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'type_hebergement_capacite.id',
+            'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+        );
+    }
+
+    public function getImageMenuType()
+    {
+        return 'cungfoo_file';
+    }
+
+    public function getImageMenuOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'type_hebergement_capacite.image_menu',
+        );
+    }
+
+    public function getImageMenuDeletedType()
+    {
+        return 'checkbox';
+    }
+
+    public function getImageMenuDeletedOptions()
+    {
+        return array(
+            'property_path' => false,
+            'required' => false,
+            'label' => 'type_hebergement_capacite.image_menu_deleted',
+        );
+    }
+
+    public function getImagePageType()
+    {
+        return 'cungfoo_file';
+    }
+
+    public function getImagePageOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'type_hebergement_capacite.image_page',
+        );
+    }
+
+    public function getImagePageDeletedType()
+    {
+        return 'checkbox';
+    }
+
+    public function getImagePageDeletedOptions()
+    {
+        return array(
+            'property_path' => false,
+            'required' => false,
+            'label' => 'type_hebergement_capacite.image_page_deleted',
+        );
+    }
+
+    public function getCreatedAtType()
+    {
+        return 'datetime';
+    }
+
+    public function getCreatedAtOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'type_hebergement_capacite.created_at',
+            'widget' => 'single_text',
+        );
+    }
+
+    public function getUpdatedAtType()
+    {
+        return 'datetime';
+    }
+
+    public function getUpdatedAtOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'type_hebergement_capacite.updated_at',
+            'widget' => 'single_text',
+        );
+    }
+
+    public function getSortableRankType()
+    {
+        return 'integer';
+    }
+
+    public function getSortableRankOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'type_hebergement_capacite.sortable_rank',
+        );
+    }
+
+    public function getActiveType()
+    {
+        return 'checkbox';
+    }
+
+    public function getActiveOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'type_hebergement_capacite.active',
+        );
+    }
+
+    public function getNameType()
+    {
+        return 'text';
+    }
+
+    public function getNameOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'type_hebergement_capacite_i18n.name',
+            'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+        );
+    }
+
+    public function getSlugType()
+    {
+        return 'text';
+    }
+
+    public function getSlugOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'type_hebergement_capacite_i18n.slug',
+        );
+    }
+
+    public function getAccrocheType()
+    {
+        return 'text';
+    }
+
+    public function getAccrocheOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'type_hebergement_capacite_i18n.accroche',
+        );
+    }
+
+    public function getDescriptionType()
+    {
+        return 'textarea';
+    }
+
+    public function getDescriptionOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'type_hebergement_capacite_i18n.description',
+        );
+    }
+
+    public function getSeoTitleType()
+    {
+        return 'text';
+    }
+
+    public function getSeoTitleOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'type_hebergement_capacite_i18n.seo_title',
+        );
+    }
+
+    public function getSeoDescriptionType()
+    {
+        return 'textarea';
+    }
+
+    public function getSeoDescriptionOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'type_hebergement_capacite_i18n.seo_description',
+        );
+    }
+
+    public function getSeoH1Type()
+    {
+        return 'text';
+    }
+
+    public function getSeoH1Options()
+    {
+        return array(
+            'required' => false,
+            'label' => 'type_hebergement_capacite_i18n.seo_h1',
+        );
+    }
+
+    public function getSeoKeywordsType()
+    {
+        return 'textarea';
+    }
+
+    public function getSeoKeywordsOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'type_hebergement_capacite_i18n.seo_keywords',
+        );
+    }
+
+    public function getActiveLocaleType()
+    {
+        return 'checkbox';
+    }
+
+    public function getActiveLocaleOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'type_hebergement_capacite_i18n.active_locale',
+        );
+    }
+
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('id', 'hidden', array(
-            'label' => 'type_hebergement_capacite.id',
-            'required' => false,
-        ));
-        $builder->add('image_menu', 'cungfoo_file', array(
-            'constraints' => array(
-            ),
-            'label' => 'type_hebergement_capacite.image_menu',
-            'required' => false,
-        ));
-        $builder->add('image_menu_deleted', 'checkbox', array(
-            'constraints' => array(
-            ),
-            'property_path' => false,
-            'label' => 'type_hebergement_capacite.image_menu_deleted',
-            'required' => false,
-        ));
-        $builder->add('image_page', 'cungfoo_file', array(
-            'constraints' => array(
-            ),
-            'label' => 'type_hebergement_capacite.image_page',
-            'required' => false,
-        ));
-        $builder->add('image_page_deleted', 'checkbox', array(
-            'constraints' => array(
-            ),
-            'property_path' => false,
-            'label' => 'type_hebergement_capacite.image_page_deleted',
-            'required' => false,
-        ));
-        $builder->add('sortable_rank', 'integer', array(
-            'constraints' => array(
-            ),
-            'label' => 'type_hebergement_capacite.sortable_rank',
-            'required' => false,
-        ));
-        $builder->add('active', 'checkbox', array(
-            'constraints' => array(
-            ),
-            'label' => 'type_hebergement_capacite.active',
-            'required' => false,
-        ));
-        $builder->add('type_hebergement_capaciteI18ns', 'translation_collection', array(
+        $builder->add('id', $this->getIdType(), $this->getIdOptions());
+        $builder->add('image_menu', $this->getImageMenuType(), $this->getImageMenuOptions());
+        $builder->add('image_menu_deleted', $this->getImageMenuDeletedType(), $this->getImageMenuDeletedOptions());
+        $builder->add('image_page', $this->getImagePageType(), $this->getImagePageOptions());
+        $builder->add('image_page_deleted', $this->getImagePageDeletedType(), $this->getImagePageDeletedOptions());
+        $builder->add('created_at', $this->getCreatedAtType(), $this->getCreatedAtOptions());
+        $builder->add('updated_at', $this->getUpdatedAtType(), $this->getUpdatedAtOptions());
+        $builder->add('sortable_rank', $this->getSortableRankType(), $this->getSortableRankOptions());
+        $builder->add('active', $this->getActiveType(), $this->getActiveOptions());$builder->add('type_hebergement_capaciteI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\TypeHebergementCapaciteI18n',
-            'languages' => array(
-                0 => 'fr',
-                1 => 'de',
-            ),
-            'label' => 'type_hebergement_capacite.type_hebergement_capaciteI18ns',
-            'columns' => array(
-                'name' => array(
-                    'required' => false,
-                    'label' => 'type_hebergement_capacite.name',
-                    'type' => 'text',
-                    'constraints' => array(
-                        new Assert\NotBlank(),
-                    ),
-                ),
-                'slug' => array(
-                    'required' => false,
-                    'label' => 'type_hebergement_capacite.slug',
-                    'type' => 'text',
-                    'constraints' => array(
-                    ),
-                ),
-                'accroche' => array(
-                    'required' => false,
-                    'label' => 'type_hebergement_capacite.accroche',
-                    'type' => 'text',
-                    'constraints' => array(
-                    ),
-                ),
-                'description' => array(
-                    'required' => false,
-                    'label' => 'type_hebergement_capacite.description',
-                    'type' => 'textarea',
-                    'constraints' => array(
-                    ),
-                ),
-                'seo_title' => array(
-                    'required' => false,
-                    'label' => 'type_hebergement_capacite.seo_title',
-                    'type' => 'text',
-                    'constraints' => array(
-                    ),
-                ),
-                'seo_description' => array(
-                    'required' => false,
-                    'label' => 'type_hebergement_capacite.seo_description',
-                    'type' => 'textarea',
-                    'constraints' => array(
-                    ),
-                ),
-                'seo_h1' => array(
-                    'required' => false,
-                    'label' => 'type_hebergement_capacite.seo_h1',
-                    'type' => 'text',
-                    'constraints' => array(
-                    ),
-                ),
-                'seo_keywords' => array(
-                    'required' => false,
-                    'label' => 'type_hebergement_capacite.seo_keywords',
-                    'type' => 'textarea',
-                    'constraints' => array(
-                    ),
-                ),
-                'active_locale' => array(
-                    'required' => false,
-                    'label' => 'type_hebergement_capacite.active_locale',
-                    'type' => 'checkbox',
-                    'constraints' => array(
-                    ),
-                ),
-            ),
+            'label' => 'type_hebergement_capaciteI18ns',
             'required' => false,
+            'languages' => array('fr', 'de'),
+            'columns' => array(
+                'name' => array_merge(array('type' => $this->getNameType()), $this->getNameOptions()),
+                'slug' => array_merge(array('type' => $this->getSlugType()), $this->getSlugOptions()),
+                'accroche' => array_merge(array('type' => $this->getAccrocheType()), $this->getAccrocheOptions()),
+                'description' => array_merge(array('type' => $this->getDescriptionType()), $this->getDescriptionOptions()),
+                'seo_title' => array_merge(array('type' => $this->getSeoTitleType()), $this->getSeoTitleOptions()),
+                'seo_description' => array_merge(array('type' => $this->getSeoDescriptionType()), $this->getSeoDescriptionOptions()),
+                'seo_h1' => array_merge(array('type' => $this->getSeoH1Type()), $this->getSeoH1Options()),
+                'seo_keywords' => array_merge(array('type' => $this->getSeoKeywordsType()), $this->getSeoKeywordsOptions()),
+                'active_locale' => array_merge(array('type' => $this->getActiveLocaleType()), $this->getActiveLocaleOptions()),
+
+            )
         ));
+
+
     }
 
     /**

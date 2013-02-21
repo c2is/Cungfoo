@@ -31,6 +31,22 @@ class BaignadeType extends BaseBaignadeType
         //;
     }
 
+    public function getCodeOptions()
+    {
+        return array_merge(parent::getCodeOptions(), array('read_only' => true, 'attr' => array(
+            'rel'   => "tooltip",
+            'title' => "crud.tooltip.resalys",
+        )));
+    }
+
+    public function getNameOptions()
+    {
+        return array_merge(parent::getNameOptions(), array('read_only' => true, 'attr' => array(
+            'rel'   => "tooltip",
+            'title' => "crud.tooltip.resalys",
+        )));
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -42,7 +58,6 @@ class BaignadeType extends BaseBaignadeType
                     'title'         => 'crud.tab.datas',
                     'content'       => array(
                         'code',
-                        'etablissements',
                         'baignadeI18ns',
                     )
                 ),

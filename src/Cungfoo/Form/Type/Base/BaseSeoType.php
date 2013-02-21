@@ -18,61 +18,111 @@ use Cungfoo\Form\Type\AppAwareType;
  */
 class BaseSeoType extends AppAwareType
 {
+    public function getIdType()
+    {
+        return 'integer';
+    }
+
+    public function getIdOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'seo.id',
+            'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+        );
+    }
+
+    public function getTableRefType()
+    {
+        return 'text';
+    }
+
+    public function getTableRefOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'seo.table_ref',
+            'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+        );
+    }
+
+    public function getSeoTitleType()
+    {
+        return 'text';
+    }
+
+    public function getSeoTitleOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'seo_i18n.seo_title',
+        );
+    }
+
+    public function getSeoDescriptionType()
+    {
+        return 'textarea';
+    }
+
+    public function getSeoDescriptionOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'seo_i18n.seo_description',
+        );
+    }
+
+    public function getSeoH1Type()
+    {
+        return 'text';
+    }
+
+    public function getSeoH1Options()
+    {
+        return array(
+            'required' => false,
+            'label' => 'seo_i18n.seo_h1',
+        );
+    }
+
+    public function getSeoKeywordsType()
+    {
+        return 'textarea';
+    }
+
+    public function getSeoKeywordsOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'seo_i18n.seo_keywords',
+        );
+    }
+
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('id', 'hidden', array(
-            'label' => 'seo.id',
-            'required' => false,
-        ));
-        $builder->add('table_ref', 'text', array(
-            'constraints' => array(
-                new Assert\NotBlank(),
-            ),
-            'label' => 'seo.table_ref',
-            'required' => false,
-        ));
-        $builder->add('seoI18ns', 'translation_collection', array(
+        $builder->add('id', $this->getIdType(), $this->getIdOptions());
+        $builder->add('table_ref', $this->getTableRefType(), $this->getTableRefOptions());$builder->add('seoI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\SeoI18n',
-            'languages' => array(
-                0 => 'fr',
-                1 => 'de',
-            ),
-            'label' => 'seo.seoI18ns',
-            'columns' => array(
-                'seo_title' => array(
-                    'required' => false,
-                    'label' => 'seo.seo_title',
-                    'type' => 'text',
-                    'constraints' => array(
-                    ),
-                ),
-                'seo_description' => array(
-                    'required' => false,
-                    'label' => 'seo.seo_description',
-                    'type' => 'textarea',
-                    'constraints' => array(
-                    ),
-                ),
-                'seo_h1' => array(
-                    'required' => false,
-                    'label' => 'seo.seo_h1',
-                    'type' => 'text',
-                    'constraints' => array(
-                    ),
-                ),
-                'seo_keywords' => array(
-                    'required' => false,
-                    'label' => 'seo.seo_keywords',
-                    'type' => 'textarea',
-                    'constraints' => array(
-                    ),
-                ),
-            ),
+            'label' => 'seoI18ns',
             'required' => false,
+            'languages' => array('fr', 'de'),
+            'columns' => array(
+                'seo_title' => array_merge(array('type' => $this->getSeoTitleType()), $this->getSeoTitleOptions()),
+                'seo_description' => array_merge(array('type' => $this->getSeoDescriptionType()), $this->getSeoDescriptionOptions()),
+                'seo_h1' => array_merge(array('type' => $this->getSeoH1Type()), $this->getSeoH1Options()),
+                'seo_keywords' => array_merge(array('type' => $this->getSeoKeywordsType()), $this->getSeoKeywordsOptions()),
+
+            )
         ));
+
+
     }
 
     /**

@@ -31,6 +31,46 @@ class TypeHebergementType extends BaseTypeHebergementType
         //;
     }
 
+    public function getCodeOptions()
+    {
+        return array_merge(parent::getCodeOptions(), array('read_only' => true, 'attr' => array(
+            'rel'   => "tooltip",
+            'title' => "crud.tooltip.resalys",
+        )));
+    }
+
+    public function getNameOptions()
+    {
+        return array_merge(parent::getNameOptions(), array('read_only' => true, 'attr' => array(
+            'rel'   => "tooltip",
+            'title' => "crud.tooltip.resalys",
+        )));
+    }
+
+    public function getSlugOptions()
+    {
+        return array_merge(parent::getSlugOptions(), array('read_only' => true, 'attr' => array(
+            'rel'   => "tooltip",
+            'title' => "crud.tooltip.resalys",
+        )));
+    }
+
+    public function getNombrePlaceOptions()
+    {
+        return array_merge(parent::getNombrePlaceOptions(), array('read_only' => true, 'attr' => array(
+            'rel'   => "tooltip",
+            'title' => "crud.tooltip.resalys",
+        )));
+    }
+
+    public function getCategoryTypeHebergementOptions()
+    {
+        return array_merge(parent::getCategoryTypeHebergementOptions(), array('read_only' => true, 'attr' => array(
+            'rel'   => "tooltip",
+            'title' => "crud.tooltip.resalys",
+        )));
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -42,11 +82,10 @@ class TypeHebergementType extends BaseTypeHebergementType
                     'title'         => 'crud.tab.datas',
                     'content'       => array(
                         'code',
-                        'type_hebergement_capacite',
                         'category_type_hebergement',
-                        'nombre_chambre',
                         'nombre_place',
-                        'etablissements',
+                        'type_hebergement_capacite',
+                        'nombre_chambre',
                         'type_hebergementI18ns',
 
                     )

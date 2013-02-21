@@ -31,6 +31,38 @@ class DepartementType extends BaseDepartementType
         //;
     }
 
+    public function getCodeOptions()
+    {
+        return array_merge(parent::getCodeOptions(), array('read_only' => true, 'attr' => array(
+            'rel'   => "tooltip",
+            'title' => "crud.tooltip.resalys",
+        )));
+    }
+
+    public function getNameOptions()
+    {
+        return array_merge(parent::getNameOptions(), array('read_only' => true, 'attr' => array(
+            'rel'   => "tooltip",
+            'title' => "crud.tooltip.resalys",
+        )));
+    }
+
+    public function getRegionRefOptions()
+    {
+        return array_merge(parent::getRegionRefOptions(), array('read_only' => true, 'attr' => array(
+            'rel'   => "tooltip",
+            'title' => "crud.tooltip.resalys",
+        )));
+    }
+
+    public function getSlugOptions()
+    {
+        return array_merge(parent::getSlugOptions(), array('read_only' => true, 'attr' => array(
+            'rel'   => "tooltip",
+            'title' => "crud.tooltip.resalys",
+        )));
+    }
+
     /**
      * {@inheritdoc}
      */
