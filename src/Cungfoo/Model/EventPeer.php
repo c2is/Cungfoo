@@ -92,18 +92,34 @@ class EventPeer extends BaseEventPeer
 
     static public function getCountForEtablissement(Etablissement $etab, $category = null, $criteriaOperation = null)
     {
-        $query = EventQuery::create()
-            ->useEtablissementEventQuery()
-                ->filterByEtablissementId($etab->getId())
-            ->endUse()
-        ;
+        if(self::getLocale() == 'de')
+        {
+            $query = EventQuery::create()
+                ->useRegionEventQuery()
+                    ->filterByRegionId($etab->getRegion()->getId())
+                ->endUse()
+            ;
+        }
+        else
+        {
+            $query = EventQuery::create()
+                ->useEtablissementEventQuery()
+                    ->filterByEtablissementId($etab->getId())
+                ->endUse()
+            ;
+        }
 
         if (!is_null($category))
         {
             $query->filterByCategory($category, (!is_null($criteriaOperation)) ? $criteriaOperation : \Criteria::EQUAL);
         }
 
-        $query->filterByActive(true);
+        $query
+            ->useI18nQuery(self::getLocale())
+                ->filterByActiveLocale(true)
+            ->endUse()
+            ->filterByActive(true)
+        ;
 
         return $query->count();
     }

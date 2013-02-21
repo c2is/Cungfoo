@@ -68,12 +68,16 @@ class EventCommand extends BaseCommand
                     {
                         if (isset($correspondanceRegions[$region->getCode()]))
                         {
+                            $client->setParam('departement', '');
+                            $client->setParam('region', '');
+
                             foreach ($correspondanceRegions[$region->getCode()] as $key => $value)
                             {
                                 $client->setParam($key, $value);
-                                $data = $client->getData(new RESTConnection());
-                                $loader->load($region, $data, $language);
                             }
+                            
+                            $data = $client->getData(new RESTConnection());
+                            $loader->load($region, $data, $language);
                         }
                     }
                 }

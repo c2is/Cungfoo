@@ -45,7 +45,6 @@ class RegionType extends BaseRegionType
                         'pays',
                         'destination',
                         'bon_plans',
-                        'events',
                         'regionI18ns',
                     )
                 ),
