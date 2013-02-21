@@ -235,6 +235,15 @@ class BaseBonPlanType extends AppAwareType
             'constraints' => array(
                         new Assert\NotBlank(),
                     ),
+            'choices' => array(
+                        0 => 'monday',
+                        1 => 'tuesday',
+                        2 => 'wednesday',
+                        3 => 'thursday',
+                        4 => 'friday',
+                        5 => 'saturday',
+                        6 => 'sunday',
+                    ),
         );
     }
 
@@ -250,6 +259,11 @@ class BaseBonPlanType extends AppAwareType
             'label' => 'bon_plan.day_range',
             'constraints' => array(
                         new Assert\NotBlank(),
+                    ),
+            'choices' => array(
+                        0 => '7',
+                        1 => '14',
+                        2 => '21',
                     ),
         );
     }
