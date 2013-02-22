@@ -31,8 +31,7 @@ class OffresSpecialesWidget extends AbstractWidget
                 ->useBonPlanEtablissementQuery()
                     ->filterByEtablissementId($etab)
                 ->endUse()
-                ->filterByDateDebut(array('max' => 'today'))
-                ->filterByDateFin(array('min' => 'today'))
+                ->addDateFilters()
                 ->limit(2)
                 ->findActive()
             ;

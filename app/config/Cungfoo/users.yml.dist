@@ -20,3 +20,9 @@ users:
     m.auffret:
         - "ROLE_USER"
         - "5ldAFqC9LL1vqmeivlu0hlakys00GYPFd0tNxbgOIwQovZRPgmL6cgedE7r2O/S51ZYlr4LIY1jvzU96pl+VLg=="
+    w.werle:
+        - "ROLE_USER"
+        - "6dl0ec3fK7LsTqryEz9oAK2bHmkdycioM7z+ctw1s/IleoRnX4ahpNCfaqt730k0Gw+0fXjpOaY+FQqaa7So4A=="
+    l.lacalmontie:
+        - "ROLE_USER"
+        - "sTn4lVLlDvHXy0xY7hxLRqne2kNV2SNU1HqbEZmnb+oclaeriEwlAneZH+C0LL87gJFKxqs0qJT7LaI+xBUe8A=="
