@@ -215,6 +215,9 @@ class {$this->getClassname()} extends AppAwareType
             case \PropelTypes::DATE:
                 $options += array('widget' => 'single_text');
                 break;
+            case \PropelTypes::ENUM:
+                $options += array('choices' => $column->getValueSet());
+                break;
         }
 
         return $options;
