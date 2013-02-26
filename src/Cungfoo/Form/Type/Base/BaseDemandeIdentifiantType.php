@@ -20,7 +20,7 @@ class BaseDemandeIdentifiantType extends AppAwareType
 {
     public function getIdType()
     {
-        return 'integer';
+        return 'hidden';
     }
 
     public function getIdOptions()
@@ -28,9 +28,6 @@ class BaseDemandeIdentifiantType extends AppAwareType
         return array(
             'required' => false,
             'label' => 'demande_identifiant.id',
-            'constraints' => array(
-                        new Assert\NotBlank(),
-                    ),
         );
     }
 

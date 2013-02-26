@@ -20,7 +20,7 @@ class BaseVosVacancesType extends AppAwareType
 {
     public function getIdType()
     {
-        return 'integer';
+        return 'hidden';
     }
 
     public function getIdOptions()
@@ -28,9 +28,6 @@ class BaseVosVacancesType extends AppAwareType
         return array(
             'required' => false,
             'label' => 'vos_vacances.id',
-            'constraints' => array(
-                        new Assert\NotBlank(),
-                    ),
         );
     }
 

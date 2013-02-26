@@ -20,7 +20,7 @@ class BaseTopCampingType extends AppAwareType
 {
     public function getIdType()
     {
-        return 'integer';
+        return 'hidden';
     }
 
     public function getIdOptions()
@@ -28,9 +28,6 @@ class BaseTopCampingType extends AppAwareType
         return array(
             'required' => false,
             'label' => 'top_camping.id',
-            'constraints' => array(
-                        new Assert\NotBlank(),
-                    ),
         );
     }
 

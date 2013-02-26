@@ -20,7 +20,7 @@ class BaseSituationGeographiqueType extends AppAwareType
 {
     public function getIdType()
     {
-        return 'integer';
+        return 'hidden';
     }
 
     public function getIdOptions()
@@ -28,9 +28,6 @@ class BaseSituationGeographiqueType extends AppAwareType
         return array(
             'required' => false,
             'label' => 'situation_geographique.id',
-            'constraints' => array(
-                        new Assert\NotBlank(),
-                    ),
         );
     }
 

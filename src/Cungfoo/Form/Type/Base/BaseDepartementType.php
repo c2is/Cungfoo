@@ -20,7 +20,7 @@ class BaseDepartementType extends AppAwareType
 {
     public function getIdType()
     {
-        return 'integer';
+        return 'hidden';
     }
 
     public function getIdOptions()
@@ -28,9 +28,6 @@ class BaseDepartementType extends AppAwareType
         return array(
             'required' => false,
             'label' => 'departement.id',
-            'constraints' => array(
-                        new Assert\NotBlank(),
-                    ),
         );
     }
 

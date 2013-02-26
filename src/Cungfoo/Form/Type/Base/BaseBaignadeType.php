@@ -20,7 +20,7 @@ class BaseBaignadeType extends AppAwareType
 {
     public function getIdType()
     {
-        return 'integer';
+        return 'hidden';
     }
 
     public function getIdOptions()
@@ -28,9 +28,6 @@ class BaseBaignadeType extends AppAwareType
         return array(
             'required' => false,
             'label' => 'baignade.id',
-            'constraints' => array(
-                        new Assert\NotBlank(),
-                    ),
         );
     }
 

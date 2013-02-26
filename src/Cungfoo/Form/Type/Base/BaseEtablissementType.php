@@ -20,7 +20,7 @@ class BaseEtablissementType extends AppAwareType
 {
     public function getIdType()
     {
-        return 'integer';
+        return 'hidden';
     }
 
     public function getIdOptions()
@@ -28,9 +28,6 @@ class BaseEtablissementType extends AppAwareType
         return array(
             'required' => false,
             'label' => 'etablissement.id',
-            'constraints' => array(
-                        new Assert\NotBlank(),
-                    ),
         );
     }
 

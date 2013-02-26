@@ -20,7 +20,7 @@ class BaseIdeeWeekendType extends AppAwareType
 {
     public function getIdType()
     {
-        return 'integer';
+        return 'hidden';
     }
 
     public function getIdOptions()
@@ -28,9 +28,6 @@ class BaseIdeeWeekendType extends AppAwareType
         return array(
             'required' => false,
             'label' => 'idee_weekend.id',
-            'constraints' => array(
-                        new Assert\NotBlank(),
-                    ),
         );
     }
 

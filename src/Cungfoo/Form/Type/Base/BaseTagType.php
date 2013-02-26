@@ -20,7 +20,7 @@ class BaseTagType extends AppAwareType
 {
     public function getIdType()
     {
-        return 'integer';
+        return 'hidden';
     }
 
     public function getIdOptions()
@@ -28,9 +28,6 @@ class BaseTagType extends AppAwareType
         return array(
             'required' => false,
             'label' => 'tag.id',
-            'constraints' => array(
-                        new Assert\NotBlank(),
-                    ),
         );
     }
 

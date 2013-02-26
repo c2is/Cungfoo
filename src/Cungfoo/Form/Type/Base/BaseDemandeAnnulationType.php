@@ -20,7 +20,7 @@ class BaseDemandeAnnulationType extends AppAwareType
 {
     public function getIdType()
     {
-        return 'integer';
+        return 'hidden';
     }
 
     public function getIdOptions()
@@ -28,9 +28,6 @@ class BaseDemandeAnnulationType extends AppAwareType
         return array(
             'required' => false,
             'label' => 'demande_annulation.id',
-            'constraints' => array(
-                        new Assert\NotBlank(),
-                    ),
         );
     }
 
@@ -241,8 +238,8 @@ class BaseDemandeAnnulationType extends AppAwareType
                         new Assert\NotBlank(),
                     ),
             'choices' => array(
-                        0 => 'demande_annulation.sinistre_nature.annulation',
-                        1 => 'demande_annulation.sinistre_nature.interruption',
+                        'demande_annulation.sinistre_nature.annulation' => 'demande_annulation.sinistre_nature.annulation',
+                        'demande_annulation.sinistre_nature.interruption' => 'demande_annulation.sinistre_nature.interruption',
                     ),
         );
     }
@@ -261,9 +258,9 @@ class BaseDemandeAnnulationType extends AppAwareType
                         new Assert\NotBlank(),
                     ),
             'choices' => array(
-                        0 => 'demande_annulation.sinistre_suite.maladie',
-                        1 => 'demande_annulation.sinistre_suite.accident',
-                        2 => 'demande_annulation.sinistre_suite.autre',
+                        'demande_annulation.sinistre_suite.maladie' => 'demande_annulation.sinistre_suite.maladie',
+                        'demande_annulation.sinistre_suite.accident' => 'demande_annulation.sinistre_suite.accident',
+                        'demande_annulation.sinistre_suite.autre' => 'demande_annulation.sinistre_suite.autre',
                     ),
         );
     }

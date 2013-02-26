@@ -20,7 +20,7 @@ class BasePointInteretType extends AppAwareType
 {
     public function getIdType()
     {
-        return 'integer';
+        return 'hidden';
     }
 
     public function getIdOptions()
@@ -28,9 +28,6 @@ class BasePointInteretType extends AppAwareType
         return array(
             'required' => false,
             'label' => 'point_interet.id',
-            'constraints' => array(
-                        new Assert\NotBlank(),
-                    ),
         );
     }
 

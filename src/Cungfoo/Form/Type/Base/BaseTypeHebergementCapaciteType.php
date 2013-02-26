@@ -20,7 +20,7 @@ class BaseTypeHebergementCapaciteType extends AppAwareType
 {
     public function getIdType()
     {
-        return 'integer';
+        return 'hidden';
     }
 
     public function getIdOptions()
@@ -28,9 +28,6 @@ class BaseTypeHebergementCapaciteType extends AppAwareType
         return array(
             'required' => false,
             'label' => 'type_hebergement_capacite.id',
-            'constraints' => array(
-                        new Assert\NotBlank(),
-                    ),
         );
     }
 
