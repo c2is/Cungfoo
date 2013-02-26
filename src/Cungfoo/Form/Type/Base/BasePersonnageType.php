@@ -20,7 +20,7 @@ class BasePersonnageType extends AppAwareType
 {
     public function getIdType()
     {
-        return 'integer';
+        return 'hidden';
     }
 
     public function getIdOptions()
@@ -28,9 +28,6 @@ class BasePersonnageType extends AppAwareType
         return array(
             'required' => false,
             'label' => 'personnage.id',
-            'constraints' => array(
-                        new Assert\NotBlank(),
-                    ),
         );
     }
 

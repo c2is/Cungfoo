@@ -20,7 +20,7 @@ class BaseAvantageType extends AppAwareType
 {
     public function getIdType()
     {
-        return 'integer';
+        return 'hidden';
     }
 
     public function getIdOptions()
@@ -28,9 +28,6 @@ class BaseAvantageType extends AppAwareType
         return array(
             'required' => false,
             'label' => 'avantage.id',
-            'constraints' => array(
-                        new Assert\NotBlank(),
-                    ),
         );
     }
 

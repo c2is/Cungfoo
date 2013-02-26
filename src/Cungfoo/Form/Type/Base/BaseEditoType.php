@@ -20,7 +20,7 @@ class BaseEditoType extends AppAwareType
 {
     public function getIdType()
     {
-        return 'integer';
+        return 'hidden';
     }
 
     public function getIdOptions()
@@ -28,9 +28,6 @@ class BaseEditoType extends AppAwareType
         return array(
             'required' => false,
             'label' => 'edito.id',
-            'constraints' => array(
-                        new Assert\NotBlank(),
-                    ),
         );
     }
 

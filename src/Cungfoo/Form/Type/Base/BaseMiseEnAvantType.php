@@ -20,7 +20,7 @@ class BaseMiseEnAvantType extends AppAwareType
 {
     public function getIdType()
     {
-        return 'integer';
+        return 'hidden';
     }
 
     public function getIdOptions()
@@ -28,9 +28,6 @@ class BaseMiseEnAvantType extends AppAwareType
         return array(
             'required' => false,
             'label' => 'mise_en_avant.id',
-            'constraints' => array(
-                        new Assert\NotBlank(),
-                    ),
         );
     }
 

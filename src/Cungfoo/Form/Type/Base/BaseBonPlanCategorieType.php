@@ -20,7 +20,7 @@ class BaseBonPlanCategorieType extends AppAwareType
 {
     public function getIdType()
     {
-        return 'integer';
+        return 'hidden';
     }
 
     public function getIdOptions()
@@ -28,9 +28,6 @@ class BaseBonPlanCategorieType extends AppAwareType
         return array(
             'required' => false,
             'label' => 'bon_plan_categorie.id',
-            'constraints' => array(
-                        new Assert\NotBlank(),
-                    ),
         );
     }
 

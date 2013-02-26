@@ -20,7 +20,7 @@ class BaseVilleType extends AppAwareType
 {
     public function getIdType()
     {
-        return 'integer';
+        return 'hidden';
     }
 
     public function getIdOptions()
@@ -28,9 +28,6 @@ class BaseVilleType extends AppAwareType
         return array(
             'required' => false,
             'label' => 'ville.id',
-            'constraints' => array(
-                        new Assert\NotBlank(),
-                    ),
         );
     }
 

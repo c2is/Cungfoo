@@ -20,7 +20,7 @@ class BaseBonPlanType extends AppAwareType
 {
     public function getIdType()
     {
-        return 'integer';
+        return 'hidden';
     }
 
     public function getIdOptions()
@@ -28,9 +28,6 @@ class BaseBonPlanType extends AppAwareType
         return array(
             'required' => false,
             'label' => 'bon_plan.id',
-            'constraints' => array(
-                        new Assert\NotBlank(),
-                    ),
         );
     }
 
@@ -236,13 +233,13 @@ class BaseBonPlanType extends AppAwareType
                         new Assert\NotBlank(),
                     ),
             'choices' => array(
-                        0 => 'monday',
-                        1 => 'tuesday',
-                        2 => 'wednesday',
-                        3 => 'thursday',
-                        4 => 'friday',
-                        5 => 'saturday',
-                        6 => 'sunday',
+                        'monday' => 'monday',
+                        'tuesday' => 'tuesday',
+                        'wednesday' => 'wednesday',
+                        'thursday' => 'thursday',
+                        'friday' => 'friday',
+                        'saturday' => 'saturday',
+                        'sunday' => 'sunday',
                     ),
         );
     }
@@ -261,9 +258,9 @@ class BaseBonPlanType extends AppAwareType
                         new Assert\NotBlank(),
                     ),
             'choices' => array(
-                        0 => '7',
-                        1 => '14',
-                        2 => '21',
+                        7 => '7',
+                        14 => '14',
+                        21 => '21',
                     ),
         );
     }

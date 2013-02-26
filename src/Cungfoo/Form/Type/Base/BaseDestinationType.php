@@ -20,7 +20,7 @@ class BaseDestinationType extends AppAwareType
 {
     public function getIdType()
     {
-        return 'integer';
+        return 'hidden';
     }
 
     public function getIdOptions()
@@ -28,9 +28,6 @@ class BaseDestinationType extends AppAwareType
         return array(
             'required' => false,
             'label' => 'destination.id',
-            'constraints' => array(
-                        new Assert\NotBlank(),
-                    ),
         );
     }
 

@@ -20,7 +20,7 @@ class BasePaysType extends AppAwareType
 {
     public function getIdType()
     {
-        return 'integer';
+        return 'hidden';
     }
 
     public function getIdOptions()
@@ -28,9 +28,6 @@ class BasePaysType extends AppAwareType
         return array(
             'required' => false,
             'label' => 'pays.id',
-            'constraints' => array(
-                        new Assert\NotBlank(),
-                    ),
         );
     }
 

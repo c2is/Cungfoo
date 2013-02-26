@@ -153,6 +153,10 @@ class {$this->getClassname()} extends AppAwareType
 
     private function getFieldType($column)
     {
+        if ($column->getName() == 'id') {
+            return 'hidden';
+        }
+
         if (in_array($column->getName(), $this->fileFields)) {
             return 'cungfoo_file';
         }
@@ -191,6 +195,10 @@ class {$this->getClassname()} extends AppAwareType
     {
         $constraints = array();
 
+        if ($column->getName() == 'id') {
+            return $constraints;
+        }
+
         if ($column->getAttribute('required', false)) {
             $constraints[] = 'new Assert\NotBlank()';
         }
@@ -216,7 +224,7 @@ class {$this->getClassname()} extends AppAwareType
                 $options += array('widget' => 'single_text');
                 break;
             case \PropelTypes::ENUM:
-                $options += array('choices' => $column->getValueSet());
+                $options += array('choices' => array_combine($column->getValueSet(), $column->getValueSet()));
                 break;
         }
 
