@@ -27,7 +27,28 @@ class PointOfInterestLoader extends AbstractLoader
     public function close()
     {
         $pois = PointInteretQuery::create()->select('id')->find()->toArray();
-        $toDelete = array_diff($pois, $this->processedIds);
+        $processedIds = array();
+        foreach ($this->processedIds as $lang => $idsByLang)
+        {
+            $processedIds = array_merge($processedIds, $idsByLang);
+
+            $poisToDeactivate = PointInteretQuery::create()
+                ->filterById(array_diff($pois, $idsByLang))
+                ->find()
+            ;
+
+            foreach ($poisToDeactivate as $poiToDeactivate)
+            {
+                $poiToDeactivate
+                    ->setLocale($lang)
+                    ->setActiveLocale(false)
+                    ->save()
+                ;
+
+            }
+        }
+        
+        $toDelete = array_diff($pois, $processedIds);
 
         PointInteretQuery::create()
             ->filterById($toDelete)
@@ -42,13 +63,18 @@ class PointOfInterestLoader extends AbstractLoader
         $xml   = new \SimpleXMLElement($data);
         $cache = array();
 
+        if (!isset($this->processedIds[$language]))
+        {
+            $this->processedIds[$language] = array();
+        }
+
         foreach ($xml->{'Place'} as $place)
         {
             if ($poi = $this->insertPointInteret($place, $language))
             {
-                if (!in_array($poi->getId(), $this->processedIds))
+                if (!in_array($poi->getId(), $this->processedIds[$language]))
                 {
-                    $this->processedIds[] = $poi->getId();
+                    $this->processedIds[$language][] = $poi->getId();
                 }
                 if ($language == 'de')
                 {
@@ -104,6 +130,7 @@ class PointOfInterestLoader extends AbstractLoader
             ->setTransport($place->{'Transports'})
             ->setCategorie($place->{'SubCategorySet'}->{'SubCategory'})
             ->setType($place->{'SubCategorySet'}->{'SubCategory'}[1])
+            ->setActiveLocale(true)
         ;
 
         $poi->save($this->dbConnection);
