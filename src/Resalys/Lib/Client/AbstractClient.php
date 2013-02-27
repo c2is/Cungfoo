@@ -105,7 +105,8 @@ abstract class AbstractClient
             $this->addOption('language', strtoupper($language));
             $this->addOption('language_code', strtoupper($language));
 
-            if (isset($this->languagesConfig['languages'][$language])) {
+            // @TOOD Fixer le bug site CE
+            if (isset($this->languagesConfig['languages'][$language]) && $this->getName() !== 'auth') {
                 $languageConfig = $this->languagesConfig['languages'][$language];
 
                 if (isset($languageConfig['resalys_username'])) {
