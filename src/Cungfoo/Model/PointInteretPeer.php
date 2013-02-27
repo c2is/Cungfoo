@@ -412,8 +412,7 @@ class PointInteretPeer extends BasePointInteretPeer
                 ->useRegionPointInteretQuery()
                     ->useRegionQuery()
                         ->filterByActive(true)
-                            ->filterByVille($ville)
-                        ->endUse()
+                        ->filterByVille($ville)
                     ->endUse()
                 ->endUse()
             ;
@@ -443,8 +442,7 @@ class PointInteretPeer extends BasePointInteretPeer
                 ->useRegionPointInteretQuery()
                     ->useRegionQuery()
                         ->filterByActive(true)
-                            ->filterByVille($ville)
-                        ->endUse()
+                        ->filterByVille($ville)
                     ->endUse()
                 ->endUse()
             ;
