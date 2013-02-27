@@ -48,6 +48,12 @@ class GenerateCommand extends BaseCommand
             $this->generateTheme(\Cungfoo\Model\RegionQuery::create(), $languages, $con);
             $output->writeln(sprintf('<info>%s</info> slug added on <comment>region</comment> table.', $this->getName()));
 
+            $this->generateTheme(\Cungfoo\Model\RegionRefQuery::create(), $languages, $con);
+            $output->writeln(sprintf('<info>%s</info> slug added on <comment>region ref</comment> table.', $this->getName()));
+
+            $this->generateTheme(\Cungfoo\Model\DepartementQuery::create(), $languages, $con);
+            $output->writeln(sprintf('<info>%s</info> slug added on <comment>departement</comment> table.', $this->getName()));
+
             $this->generateTheme(\Cungfoo\Model\PaysQuery::create(), $languages, $con);
             $output->writeln(sprintf('<info>%s</info> slug added on <comment>pays</comment> table.', $this->getName()));
 
@@ -94,7 +100,12 @@ class GenerateCommand extends BaseCommand
     protected function generateEtablissements(\PropelPDO $con)
     {
         $utils = new \Cungfoo\Lib\Utils();
-        $etablissements = \Cungfoo\Model\EtablissementQuery::create()->find($con);
+        $etablissements = \Cungfoo\Model\EtablissementQuery::create()
+            ->filterBySlug(null, \Criteria::ISNULL)
+            ->_or()
+            ->filterBySlug("")
+            ->find($con)
+        ;
 
         foreach ($etablissements as $etablissement)
         {
@@ -111,6 +122,11 @@ class GenerateCommand extends BaseCommand
         foreach ($languages as $language)
         {
             $objects = $query
+                ->useI18nQuery($language)
+                    ->filterBySlug(null, \Criteria::ISNULL)
+                    ->_or()
+                    ->filterBySlug("")
+                ->endUSe()
                 ->find($con)
             ;
 
@@ -133,6 +149,11 @@ class GenerateCommand extends BaseCommand
         foreach ($languages as $language)
         {
             $objects = $query
+                ->useI18nQuery($language)
+                    ->filterBySlug(null, \Criteria::ISNULL)
+                    ->_or()
+                    ->filterBySlug("")
+                ->endUSe()
                 ->find($con)
             ;
 
@@ -156,6 +177,11 @@ class GenerateCommand extends BaseCommand
         foreach ($languages as $language)
         {
             $objects = $query
+                ->useI18nQuery($language)
+                    ->filterBySlug(null, \Criteria::ISNULL)
+                    ->_or()
+                    ->filterBySlug("")
+                ->endUSe()
                 ->find($con)
             ;
 
@@ -178,6 +204,11 @@ class GenerateCommand extends BaseCommand
         foreach ($languages as $language)
         {
             $objects = $query
+                ->useI18nQuery($language)
+                    ->filterBySlug(null, \Criteria::ISNULL)
+                    ->_or()
+                    ->filterBySlug("")
+                ->endUSe()
                 ->find($con)
             ;
 

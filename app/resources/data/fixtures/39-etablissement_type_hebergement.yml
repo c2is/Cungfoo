@@ -1,0 +1,2299 @@
+\Cungfoo\Model\EtablissementTypeHebergement:
+    1:
+        EtablissementId: 37
+        TypeHebergementId: 12
+    2:
+        EtablissementId: 37
+        TypeHebergementId: 17
+    3:
+        EtablissementId: 37
+        TypeHebergementId: 26
+    4:
+        EtablissementId: 37
+        TypeHebergementId: 39
+    5:
+        EtablissementId: 37
+        TypeHebergementId: 54
+    6:
+        EtablissementId: 37
+        TypeHebergementId: 62
+    7:
+        EtablissementId: 37
+        TypeHebergementId: 63
+    8:
+        EtablissementId: 38
+        TypeHebergementId: 27
+    9:
+        EtablissementId: 39
+        TypeHebergementId: 37
+    10:
+        EtablissementId: 39
+        TypeHebergementId: 40
+    11:
+        EtablissementId: 39
+        TypeHebergementId: 41
+    12:
+        EtablissementId: 40
+        TypeHebergementId: 9
+    13:
+        EtablissementId: 40
+        TypeHebergementId: 26
+    14:
+        EtablissementId: 40
+        TypeHebergementId: 39
+    15:
+        EtablissementId: 40
+        TypeHebergementId: 63
+    16:
+        EtablissementId: 41
+        TypeHebergementId: 25
+    17:
+        EtablissementId: 41
+        TypeHebergementId: 27
+    18:
+        EtablissementId: 42
+        TypeHebergementId: 26
+    19:
+        EtablissementId: 42
+        TypeHebergementId: 40
+    20:
+        EtablissementId: 42
+        TypeHebergementId: 41
+    21:
+        EtablissementId: 43
+        TypeHebergementId: 26
+    22:
+        EtablissementId: 44
+        TypeHebergementId: 26
+    23:
+        EtablissementId: 44
+        TypeHebergementId: 37
+    24:
+        EtablissementId: 44
+        TypeHebergementId: 40
+    25:
+        EtablissementId: 44
+        TypeHebergementId: 41
+    26:
+        EtablissementId: 45
+        TypeHebergementId: 26
+    27:
+        EtablissementId: 45
+        TypeHebergementId: 39
+    28:
+        EtablissementId: 45
+        TypeHebergementId: 53
+    29:
+        EtablissementId: 45
+        TypeHebergementId: 63
+    30:
+        EtablissementId: 46
+        TypeHebergementId: 26
+    31:
+        EtablissementId: 46
+        TypeHebergementId: 40
+    32:
+        EtablissementId: 46
+        TypeHebergementId: 41
+    33:
+        EtablissementId: 47
+        TypeHebergementId: 18
+    34:
+        EtablissementId: 47
+        TypeHebergementId: 26
+    35:
+        EtablissementId: 47
+        TypeHebergementId: 39
+    36:
+        EtablissementId: 47
+        TypeHebergementId: 54
+    37:
+        EtablissementId: 47
+        TypeHebergementId: 63
+    38:
+        EtablissementId: 48
+        TypeHebergementId: 26
+    39:
+        EtablissementId: 48
+        TypeHebergementId: 40
+    40:
+        EtablissementId: 48
+        TypeHebergementId: 41
+    41:
+        EtablissementId: 49
+        TypeHebergementId: 9
+    42:
+        EtablissementId: 49
+        TypeHebergementId: 20
+    43:
+        EtablissementId: 49
+        TypeHebergementId: 26
+    44:
+        EtablissementId: 50
+        TypeHebergementId: 9
+    45:
+        EtablissementId: 50
+        TypeHebergementId: 26
+    46:
+        EtablissementId: 50
+        TypeHebergementId: 39
+    47:
+        EtablissementId: 50
+        TypeHebergementId: 54
+    48:
+        EtablissementId: 50
+        TypeHebergementId: 63
+    49:
+        EtablissementId: 51
+        TypeHebergementId: 26
+    50:
+        EtablissementId: 51
+        TypeHebergementId: 40
+    51:
+        EtablissementId: 51
+        TypeHebergementId: 41
+    52:
+        EtablissementId: 52
+        TypeHebergementId: 26
+    53:
+        EtablissementId: 52
+        TypeHebergementId: 39
+    54:
+        EtablissementId: 52
+        TypeHebergementId: 54
+    55:
+        EtablissementId: 52
+        TypeHebergementId: 63
+    56:
+        EtablissementId: 53
+        TypeHebergementId: 9
+    57:
+        EtablissementId: 53
+        TypeHebergementId: 26
+    58:
+        EtablissementId: 53
+        TypeHebergementId: 39
+    59:
+        EtablissementId: 53
+        TypeHebergementId: 53
+    60:
+        EtablissementId: 53
+        TypeHebergementId: 63
+    61:
+        EtablissementId: 54
+        TypeHebergementId: 26
+    62:
+        EtablissementId: 54
+        TypeHebergementId: 37
+    63:
+        EtablissementId: 54
+        TypeHebergementId: 40
+    64:
+        EtablissementId: 54
+        TypeHebergementId: 41
+    65:
+        EtablissementId: 55
+        TypeHebergementId: 26
+    66:
+        EtablissementId: 55
+        TypeHebergementId: 37
+    67:
+        EtablissementId: 56
+        TypeHebergementId: 26
+    68:
+        EtablissementId: 57
+        TypeHebergementId: 18
+    69:
+        EtablissementId: 57
+        TypeHebergementId: 26
+    70:
+        EtablissementId: 58
+        TypeHebergementId: 9
+    71:
+        EtablissementId: 58
+        TypeHebergementId: 18
+    72:
+        EtablissementId: 58
+        TypeHebergementId: 20
+    73:
+        EtablissementId: 58
+        TypeHebergementId: 26
+    74:
+        EtablissementId: 58
+        TypeHebergementId: 37
+    75:
+        EtablissementId: 58
+        TypeHebergementId: 40
+    76:
+        EtablissementId: 58
+        TypeHebergementId: 41
+    77:
+        EtablissementId: 59
+        TypeHebergementId: 9
+    78:
+        EtablissementId: 59
+        TypeHebergementId: 26
+    79:
+        EtablissementId: 59
+        TypeHebergementId: 37
+    80:
+        EtablissementId: 59
+        TypeHebergementId: 40
+    81:
+        EtablissementId: 59
+        TypeHebergementId: 41
+    82:
+        EtablissementId: 60
+        TypeHebergementId: 16
+    83:
+        EtablissementId: 60
+        TypeHebergementId: 18
+    84:
+        EtablissementId: 60
+        TypeHebergementId: 26
+    85:
+        EtablissementId: 60
+        TypeHebergementId: 40
+    86:
+        EtablissementId: 60
+        TypeHebergementId: 41
+    87:
+        EtablissementId: 61
+        TypeHebergementId: 26
+    88:
+        EtablissementId: 61
+        TypeHebergementId: 40
+    89:
+        EtablissementId: 61
+        TypeHebergementId: 41
+    90:
+        EtablissementId: 62
+        TypeHebergementId: 26
+    91:
+        EtablissementId: 62
+        TypeHebergementId: 40
+    92:
+        EtablissementId: 62
+        TypeHebergementId: 41
+    93:
+        EtablissementId: 63
+        TypeHebergementId: 26
+    94:
+        EtablissementId: 63
+        TypeHebergementId: 40
+    95:
+        EtablissementId: 63
+        TypeHebergementId: 41
+    96:
+        EtablissementId: 64
+        TypeHebergementId: 9
+    97:
+        EtablissementId: 64
+        TypeHebergementId: 26
+    98:
+        EtablissementId: 64
+        TypeHebergementId: 37
+    99:
+        EtablissementId: 64
+        TypeHebergementId: 40
+    100:
+        EtablissementId: 64
+        TypeHebergementId: 41
+    101:
+        EtablissementId: 65
+        TypeHebergementId: 24
+    102:
+        EtablissementId: 65
+        TypeHebergementId: 37
+    103:
+        EtablissementId: 65
+        TypeHebergementId: 53
+    104:
+        EtablissementId: 66
+        TypeHebergementId: 26
+    105:
+        EtablissementId: 66
+        TypeHebergementId: 37
+    106:
+        EtablissementId: 67
+        TypeHebergementId: 12
+    107:
+        EtablissementId: 67
+        TypeHebergementId: 17
+    108:
+        EtablissementId: 67
+        TypeHebergementId: 26
+    109:
+        EtablissementId: 67
+        TypeHebergementId: 39
+    110:
+        EtablissementId: 67
+        TypeHebergementId: 61
+    111:
+        EtablissementId: 67
+        TypeHebergementId: 63
+    112:
+        EtablissementId: 68
+        TypeHebergementId: 26
+    113:
+        EtablissementId: 68
+        TypeHebergementId: 39
+    114:
+        EtablissementId: 68
+        TypeHebergementId: 63
+    115:
+        EtablissementId: 69
+        TypeHebergementId: 26
+    116:
+        EtablissementId: 69
+        TypeHebergementId: 30
+    117:
+        EtablissementId: 70
+        TypeHebergementId: 26
+    118:
+        EtablissementId: 70
+        TypeHebergementId: 40
+    119:
+        EtablissementId: 70
+        TypeHebergementId: 41
+    120:
+        EtablissementId: 71
+        TypeHebergementId: 18
+    121:
+        EtablissementId: 72
+        TypeHebergementId: 27
+    122:
+        EtablissementId: 73
+        TypeHebergementId: 66
+    123:
+        EtablissementId: 73
+        TypeHebergementId: 68
+    124:
+        EtablissementId: 73
+        TypeHebergementId: 72
+    125:
+        EtablissementId: 74
+        TypeHebergementId: 26
+    126:
+        EtablissementId: 74
+        TypeHebergementId: 37
+    127:
+        EtablissementId: 74
+        TypeHebergementId: 40
+    128:
+        EtablissementId: 74
+        TypeHebergementId: 41
+    129:
+        EtablissementId: 75
+        TypeHebergementId: 26
+    130:
+        EtablissementId: 75
+        TypeHebergementId: 37
+    131:
+        EtablissementId: 75
+        TypeHebergementId: 40
+    132:
+        EtablissementId: 75
+        TypeHebergementId: 41
+    133:
+        EtablissementId: 76
+        TypeHebergementId: 26
+    134:
+        EtablissementId: 76
+        TypeHebergementId: 40
+    135:
+        EtablissementId: 76
+        TypeHebergementId: 41
+    136:
+        EtablissementId: 77
+        TypeHebergementId: 68
+    137:
+        EtablissementId: 77
+        TypeHebergementId: 70
+    138:
+        EtablissementId: 77
+        TypeHebergementId: 73
+    139:
+        EtablissementId: 77
+        TypeHebergementId: 86
+    140:
+        EtablissementId: 78
+        TypeHebergementId: 18
+    141:
+        EtablissementId: 78
+        TypeHebergementId: 30
+    142:
+        EtablissementId: 78
+        TypeHebergementId: 37
+    143:
+        EtablissementId: 78
+        TypeHebergementId: 58
+    144:
+        EtablissementId: 79
+        TypeHebergementId: 20
+    145:
+        EtablissementId: 79
+        TypeHebergementId: 26
+    146:
+        EtablissementId: 79
+        TypeHebergementId: 30
+    147:
+        EtablissementId: 79
+        TypeHebergementId: 37
+    148:
+        EtablissementId: 79
+        TypeHebergementId: 40
+    149:
+        EtablissementId: 80
+        TypeHebergementId: 26
+    150:
+        EtablissementId: 80
+        TypeHebergementId: 37
+    151:
+        EtablissementId: 81
+        TypeHebergementId: 26
+    152:
+        EtablissementId: 81
+        TypeHebergementId: 40
+    153:
+        EtablissementId: 81
+        TypeHebergementId: 41
+    154:
+        EtablissementId: 82
+        TypeHebergementId: 26
+    155:
+        EtablissementId: 83
+        TypeHebergementId: 70
+    156:
+        EtablissementId: 83
+        TypeHebergementId: 73
+    157:
+        EtablissementId: 83
+        TypeHebergementId: 74
+    158:
+        EtablissementId: 83
+        TypeHebergementId: 77
+    159:
+        EtablissementId: 84
+        TypeHebergementId: 12
+    160:
+        EtablissementId: 84
+        TypeHebergementId: 60
+    161:
+        EtablissementId: 84
+        TypeHebergementId: 63
+    162:
+        EtablissementId: 84
+        TypeHebergementId: 64
+    163:
+        EtablissementId: 85
+        TypeHebergementId: 26
+    164:
+        EtablissementId: 85
+        TypeHebergementId: 28
+    165:
+        EtablissementId: 85
+        TypeHebergementId: 39
+    166:
+        EtablissementId: 85
+        TypeHebergementId: 43
+    167:
+        EtablissementId: 85
+        TypeHebergementId: 52
+    168:
+        EtablissementId: 85
+        TypeHebergementId: 53
+    169:
+        EtablissementId: 85
+        TypeHebergementId: 63
+    170:
+        EtablissementId: 86
+        TypeHebergementId: 26
+    171:
+        EtablissementId: 86
+        TypeHebergementId: 40
+    172:
+        EtablissementId: 86
+        TypeHebergementId: 41
+    173:
+        EtablissementId: 87
+        TypeHebergementId: 26
+    174:
+        EtablissementId: 87
+        TypeHebergementId: 40
+    175:
+        EtablissementId: 87
+        TypeHebergementId: 41
+    176:
+        EtablissementId: 88
+        TypeHebergementId: 26
+    177:
+        EtablissementId: 88
+        TypeHebergementId: 37
+    178:
+        EtablissementId: 88
+        TypeHebergementId: 40
+    179:
+        EtablissementId: 88
+        TypeHebergementId: 41
+    180:
+        EtablissementId: 89
+        TypeHebergementId: 70
+    181:
+        EtablissementId: 89
+        TypeHebergementId: 73
+    182:
+        EtablissementId: 89
+        TypeHebergementId: 82
+    183:
+        EtablissementId: 89
+        TypeHebergementId: 85
+    184:
+        EtablissementId: 90
+        TypeHebergementId: 79
+    185:
+        EtablissementId: 90
+        TypeHebergementId: 82
+    186:
+        EtablissementId: 90
+        TypeHebergementId: 83
+    187:
+        EtablissementId: 91
+        TypeHebergementId: 70
+    188:
+        EtablissementId: 91
+        TypeHebergementId: 73
+    189:
+        EtablissementId: 91
+        TypeHebergementId: 80
+    190:
+        EtablissementId: 91
+        TypeHebergementId: 84
+    191:
+        EtablissementId: 92
+        TypeHebergementId: 19
+    192:
+        EtablissementId: 92
+        TypeHebergementId: 26
+    193:
+        EtablissementId: 92
+        TypeHebergementId: 37
+    194:
+        EtablissementId: 92
+        TypeHebergementId: 40
+    195:
+        EtablissementId: 92
+        TypeHebergementId: 41
+    196:
+        EtablissementId: 93
+        TypeHebergementId: 20
+    197:
+        EtablissementId: 93
+        TypeHebergementId: 26
+    198:
+        EtablissementId: 94
+        TypeHebergementId: 26
+    199:
+        EtablissementId: 94
+        TypeHebergementId: 40
+    200:
+        EtablissementId: 94
+        TypeHebergementId: 41
+    201:
+        EtablissementId: 95
+        TypeHebergementId: 26
+    202:
+        EtablissementId: 96
+        TypeHebergementId: 78
+    203:
+        EtablissementId: 96
+        TypeHebergementId: 79
+    204:
+        EtablissementId: 96
+        TypeHebergementId: 82
+    205:
+        EtablissementId: 97
+        TypeHebergementId: 26
+    206:
+        EtablissementId: 97
+        TypeHebergementId: 37
+    207:
+        EtablissementId: 97
+        TypeHebergementId: 40
+    208:
+        EtablissementId: 97
+        TypeHebergementId: 41
+    209:
+        EtablissementId: 98
+        TypeHebergementId: 1
+    210:
+        EtablissementId: 98
+        TypeHebergementId: 2
+    211:
+        EtablissementId: 98
+        TypeHebergementId: 3
+    212:
+        EtablissementId: 98
+        TypeHebergementId: 4
+    213:
+        EtablissementId: 98
+        TypeHebergementId: 5
+    214:
+        EtablissementId: 98
+        TypeHebergementId: 6
+    215:
+        EtablissementId: 98
+        TypeHebergementId: 7
+    216:
+        EtablissementId: 98
+        TypeHebergementId: 8
+    217:
+        EtablissementId: 98
+        TypeHebergementId: 20
+    218:
+        EtablissementId: 98
+        TypeHebergementId: 23
+    219:
+        EtablissementId: 98
+        TypeHebergementId: 26
+    220:
+        EtablissementId: 98
+        TypeHebergementId: 37
+    221:
+        EtablissementId: 98
+        TypeHebergementId: 38
+    222:
+        EtablissementId: 98
+        TypeHebergementId: 40
+    223:
+        EtablissementId: 98
+        TypeHebergementId: 41
+    224:
+        EtablissementId: 98
+        TypeHebergementId: 46
+    225:
+        EtablissementId: 98
+        TypeHebergementId: 47
+    226:
+        EtablissementId: 98
+        TypeHebergementId: 48
+    227:
+        EtablissementId: 98
+        TypeHebergementId: 49
+    228:
+        EtablissementId: 98
+        TypeHebergementId: 50
+    229:
+        EtablissementId: 98
+        TypeHebergementId: 51
+    230:
+        EtablissementId: 98
+        TypeHebergementId: 55
+    231:
+        EtablissementId: 98
+        TypeHebergementId: 56
+    232:
+        EtablissementId: 98
+        TypeHebergementId: 57
+    233:
+        EtablissementId: 99
+        TypeHebergementId: 66
+    234:
+        EtablissementId: 99
+        TypeHebergementId: 71
+    235:
+        EtablissementId: 99
+        TypeHebergementId: 74
+    236:
+        EtablissementId: 99
+        TypeHebergementId: 79
+    237:
+        EtablissementId: 99
+        TypeHebergementId: 82
+    238:
+        EtablissementId: 100
+        TypeHebergementId: 26
+    239:
+        EtablissementId: 101
+        TypeHebergementId: 26
+    240:
+        EtablissementId: 101
+        TypeHebergementId: 40
+    241:
+        EtablissementId: 101
+        TypeHebergementId: 41
+    242:
+        EtablissementId: 102
+        TypeHebergementId: 37
+    243:
+        EtablissementId: 103
+        TypeHebergementId: 26
+    244:
+        EtablissementId: 103
+        TypeHebergementId: 37
+    245:
+        EtablissementId: 103
+        TypeHebergementId: 40
+    246:
+        EtablissementId: 103
+        TypeHebergementId: 41
+    247:
+        EtablissementId: 104
+        TypeHebergementId: 19
+    248:
+        EtablissementId: 104
+        TypeHebergementId: 26
+    249:
+        EtablissementId: 104
+        TypeHebergementId: 40
+    250:
+        EtablissementId: 104
+        TypeHebergementId: 41
+    251:
+        EtablissementId: 105
+        TypeHebergementId: 66
+    252:
+        EtablissementId: 105
+        TypeHebergementId: 69
+    253:
+        EtablissementId: 105
+        TypeHebergementId: 74
+    254:
+        EtablissementId: 105
+        TypeHebergementId: 76
+    255:
+        EtablissementId: 105
+        TypeHebergementId: 78
+    256:
+        EtablissementId: 105
+        TypeHebergementId: 79
+    257:
+        EtablissementId: 105
+        TypeHebergementId: 82
+    258:
+        EtablissementId: 106
+        TypeHebergementId: 26
+    259:
+        EtablissementId: 106
+        TypeHebergementId: 37
+    260:
+        EtablissementId: 106
+        TypeHebergementId: 40
+    261:
+        EtablissementId: 106
+        TypeHebergementId: 41
+    262:
+        EtablissementId: 107
+        TypeHebergementId: 26
+    263:
+        EtablissementId: 107
+        TypeHebergementId: 37
+    264:
+        EtablissementId: 108
+        TypeHebergementId: 26
+    265:
+        EtablissementId: 108
+        TypeHebergementId: 39
+    266:
+        EtablissementId: 109
+        TypeHebergementId: 40
+    267:
+        EtablissementId: 109
+        TypeHebergementId: 41
+    268:
+        EtablissementId: 110
+        TypeHebergementId: 26
+    269:
+        EtablissementId: 110
+        TypeHebergementId: 40
+    270:
+        EtablissementId: 110
+        TypeHebergementId: 41
+    271:
+        EtablissementId: 111
+        TypeHebergementId: 79
+    272:
+        EtablissementId: 111
+        TypeHebergementId: 82
+    273:
+        EtablissementId: 112
+        TypeHebergementId: 26
+    274:
+        EtablissementId: 112
+        TypeHebergementId: 37
+    275:
+        EtablissementId: 112
+        TypeHebergementId: 40
+    276:
+        EtablissementId: 112
+        TypeHebergementId: 41
+    277:
+        EtablissementId: 113
+        TypeHebergementId: 78
+    278:
+        EtablissementId: 113
+        TypeHebergementId: 82
+    279:
+        EtablissementId: 113
+        TypeHebergementId: 83
+    280:
+        EtablissementId: 113
+        TypeHebergementId: 85
+    281:
+        EtablissementId: 114
+        TypeHebergementId: 26
+    282:
+        EtablissementId: 114
+        TypeHebergementId: 29
+    283:
+        EtablissementId: 114
+        TypeHebergementId: 40
+    284:
+        EtablissementId: 114
+        TypeHebergementId: 41
+    285:
+        EtablissementId: 115
+        TypeHebergementId: 26
+    286:
+        EtablissementId: 115
+        TypeHebergementId: 37
+    287:
+        EtablissementId: 115
+        TypeHebergementId: 39
+    288:
+        EtablissementId: 115
+        TypeHebergementId: 58
+    289:
+        EtablissementId: 116
+        TypeHebergementId: 31
+    290:
+        EtablissementId: 116
+        TypeHebergementId: 32
+    291:
+        EtablissementId: 116
+        TypeHebergementId: 44
+    292:
+        EtablissementId: 116
+        TypeHebergementId: 45
+    293:
+        EtablissementId: 117
+        TypeHebergementId: 78
+    294:
+        EtablissementId: 117
+        TypeHebergementId: 81
+    295:
+        EtablissementId: 117
+        TypeHebergementId: 82
+    296:
+        EtablissementId: 118
+        TypeHebergementId: 26
+    297:
+        EtablissementId: 119
+        TypeHebergementId: 26
+    298:
+        EtablissementId: 119
+        TypeHebergementId: 37
+    299:
+        EtablissementId: 119
+        TypeHebergementId: 40
+    300:
+        EtablissementId: 119
+        TypeHebergementId: 41
+    301:
+        EtablissementId: 120
+        TypeHebergementId: 26
+    302:
+        EtablissementId: 120
+        TypeHebergementId: 30
+    303:
+        EtablissementId: 120
+        TypeHebergementId: 37
+    304:
+        EtablissementId: 120
+        TypeHebergementId: 39
+    305:
+        EtablissementId: 120
+        TypeHebergementId: 58
+    306:
+        EtablissementId: 121
+        TypeHebergementId: 26
+    307:
+        EtablissementId: 121
+        TypeHebergementId: 37
+    308:
+        EtablissementId: 121
+        TypeHebergementId: 40
+    309:
+        EtablissementId: 121
+        TypeHebergementId: 41
+    310:
+        EtablissementId: 122
+        TypeHebergementId: 12
+    311:
+        EtablissementId: 122
+        TypeHebergementId: 26
+    312:
+        EtablissementId: 122
+        TypeHebergementId: 39
+    313:
+        EtablissementId: 122
+        TypeHebergementId: 53
+    314:
+        EtablissementId: 122
+        TypeHebergementId: 63
+    315:
+        EtablissementId: 123
+        TypeHebergementId: 26
+    316:
+        EtablissementId: 123
+        TypeHebergementId: 40
+    317:
+        EtablissementId: 124
+        TypeHebergementId: 26
+    318:
+        EtablissementId: 125
+        TypeHebergementId: 26
+    319:
+        EtablissementId: 125
+        TypeHebergementId: 37
+    320:
+        EtablissementId: 125
+        TypeHebergementId: 40
+    321:
+        EtablissementId: 125
+        TypeHebergementId: 41
+    322:
+        EtablissementId: 126
+        TypeHebergementId: 26
+    323:
+        EtablissementId: 126
+        TypeHebergementId: 39
+    324:
+        EtablissementId: 127
+        TypeHebergementId: 26
+    325:
+        EtablissementId: 127
+        TypeHebergementId: 40
+    326:
+        EtablissementId: 127
+        TypeHebergementId: 41
+    327:
+        EtablissementId: 128
+        TypeHebergementId: 26
+    328:
+        EtablissementId: 128
+        TypeHebergementId: 37
+    329:
+        EtablissementId: 128
+        TypeHebergementId: 40
+    330:
+        EtablissementId: 128
+        TypeHebergementId: 41
+    331:
+        EtablissementId: 129
+        TypeHebergementId: 26
+    332:
+        EtablissementId: 129
+        TypeHebergementId: 40
+    333:
+        EtablissementId: 129
+        TypeHebergementId: 41
+    334:
+        EtablissementId: 130
+        TypeHebergementId: 66
+    335:
+        EtablissementId: 130
+        TypeHebergementId: 74
+    336:
+        EtablissementId: 131
+        TypeHebergementId: 44
+    337:
+        EtablissementId: 131
+        TypeHebergementId: 66
+    338:
+        EtablissementId: 131
+        TypeHebergementId: 67
+    339:
+        EtablissementId: 131
+        TypeHebergementId: 87
+    340:
+        EtablissementId: 132
+        TypeHebergementId: 18
+    341:
+        EtablissementId: 132
+        TypeHebergementId: 20
+    342:
+        EtablissementId: 132
+        TypeHebergementId: 26
+    343:
+        EtablissementId: 132
+        TypeHebergementId: 37
+    344:
+        EtablissementId: 133
+        TypeHebergementId: 9
+    345:
+        EtablissementId: 133
+        TypeHebergementId: 12
+    346:
+        EtablissementId: 133
+        TypeHebergementId: 26
+    347:
+        EtablissementId: 133
+        TypeHebergementId: 29
+    348:
+        EtablissementId: 133
+        TypeHebergementId: 39
+    349:
+        EtablissementId: 133
+        TypeHebergementId: 53
+    350:
+        EtablissementId: 133
+        TypeHebergementId: 63
+    351:
+        EtablissementId: 134
+        TypeHebergementId: 35
+    352:
+        EtablissementId: 135
+        TypeHebergementId: 26
+    353:
+        EtablissementId: 135
+        TypeHebergementId: 40
+    354:
+        EtablissementId: 135
+        TypeHebergementId: 41
+    355:
+        EtablissementId: 136
+        TypeHebergementId: 26
+    356:
+        EtablissementId: 136
+        TypeHebergementId: 37
+    357:
+        EtablissementId: 136
+        TypeHebergementId: 39
+    358:
+        EtablissementId: 137
+        TypeHebergementId: 25
+    359:
+        EtablissementId: 138
+        TypeHebergementId: 26
+    360:
+        EtablissementId: 138
+        TypeHebergementId: 37
+    361:
+        EtablissementId: 138
+        TypeHebergementId: 40
+    362:
+        EtablissementId: 138
+        TypeHebergementId: 41
+    363:
+        EtablissementId: 139
+        TypeHebergementId: 26
+    364:
+        EtablissementId: 140
+        TypeHebergementId: 26
+    365:
+        EtablissementId: 140
+        TypeHebergementId: 40
+    366:
+        EtablissementId: 142
+        TypeHebergementId: 16
+    367:
+        EtablissementId: 142
+        TypeHebergementId: 26
+    368:
+        EtablissementId: 142
+        TypeHebergementId: 37
+    369:
+        EtablissementId: 142
+        TypeHebergementId: 40
+    370:
+        EtablissementId: 142
+        TypeHebergementId: 41
+    371:
+        EtablissementId: 143
+        TypeHebergementId: 26
+    372:
+        EtablissementId: 143
+        TypeHebergementId: 40
+    373:
+        EtablissementId: 143
+        TypeHebergementId: 41
+    374:
+        EtablissementId: 144
+        TypeHebergementId: 26
+    375:
+        EtablissementId: 144
+        TypeHebergementId: 40
+    376:
+        EtablissementId: 144
+        TypeHebergementId: 41
+    377:
+        EtablissementId: 145
+        TypeHebergementId: 26
+    378:
+        EtablissementId: 145
+        TypeHebergementId: 63
+    379:
+        EtablissementId: 146
+        TypeHebergementId: 26
+    380:
+        EtablissementId: 146
+        TypeHebergementId: 39
+    381:
+        EtablissementId: 146
+        TypeHebergementId: 63
+    382:
+        EtablissementId: 147
+        TypeHebergementId: 37
+    383:
+        EtablissementId: 148
+        TypeHebergementId: 18
+    384:
+        EtablissementId: 149
+        TypeHebergementId: 18
+    385:
+        EtablissementId: 150
+        TypeHebergementId: 66
+    386:
+        EtablissementId: 150
+        TypeHebergementId: 70
+    387:
+        EtablissementId: 150
+        TypeHebergementId: 71
+    388:
+        EtablissementId: 150
+        TypeHebergementId: 73
+    389:
+        EtablissementId: 151
+        TypeHebergementId: 26
+    390:
+        EtablissementId: 151
+        TypeHebergementId: 37
+    391:
+        EtablissementId: 151
+        TypeHebergementId: 40
+    392:
+        EtablissementId: 151
+        TypeHebergementId: 41
+    393:
+        EtablissementId: 152
+        TypeHebergementId: 66
+    394:
+        EtablissementId: 152
+        TypeHebergementId: 73
+    395:
+        EtablissementId: 152
+        TypeHebergementId: 74
+    396:
+        EtablissementId: 152
+        TypeHebergementId: 77
+    397:
+        EtablissementId: 152
+        TypeHebergementId: 82
+    398:
+        EtablissementId: 153
+        TypeHebergementId: 26
+    399:
+        EtablissementId: 153
+        TypeHebergementId: 37
+    400:
+        EtablissementId: 153
+        TypeHebergementId: 40
+    401:
+        EtablissementId: 153
+        TypeHebergementId: 41
+    402:
+        EtablissementId: 154
+        TypeHebergementId: 26
+    403:
+        EtablissementId: 154
+        TypeHebergementId: 37
+    404:
+        EtablissementId: 154
+        TypeHebergementId: 40
+    405:
+        EtablissementId: 154
+        TypeHebergementId: 41
+    406:
+        EtablissementId: 155
+        TypeHebergementId: 26
+    407:
+        EtablissementId: 156
+        TypeHebergementId: 26
+    408:
+        EtablissementId: 156
+        TypeHebergementId: 37
+    409:
+        EtablissementId: 156
+        TypeHebergementId: 40
+    410:
+        EtablissementId: 156
+        TypeHebergementId: 41
+    411:
+        EtablissementId: 157
+        TypeHebergementId: 26
+    412:
+        EtablissementId: 157
+        TypeHebergementId: 40
+    413:
+        EtablissementId: 157
+        TypeHebergementId: 41
+    414:
+        EtablissementId: 158
+        TypeHebergementId: 26
+    415:
+        EtablissementId: 158
+        TypeHebergementId: 30
+    416:
+        EtablissementId: 158
+        TypeHebergementId: 37
+    417:
+        EtablissementId: 158
+        TypeHebergementId: 40
+    418:
+        EtablissementId: 158
+        TypeHebergementId: 41
+    419:
+        EtablissementId: 158
+        TypeHebergementId: 58
+    420:
+        EtablissementId: 159
+        TypeHebergementId: 9
+    421:
+        EtablissementId: 159
+        TypeHebergementId: 18
+    422:
+        EtablissementId: 159
+        TypeHebergementId: 26
+    423:
+        EtablissementId: 159
+        TypeHebergementId: 34
+    424:
+        EtablissementId: 159
+        TypeHebergementId: 37
+    425:
+        EtablissementId: 159
+        TypeHebergementId: 58
+    426:
+        EtablissementId: 160
+        TypeHebergementId: 26
+    427:
+        EtablissementId: 160
+        TypeHebergementId: 37
+    428:
+        EtablissementId: 160
+        TypeHebergementId: 40
+    429:
+        EtablissementId: 161
+        TypeHebergementId: 20
+    430:
+        EtablissementId: 161
+        TypeHebergementId: 26
+    431:
+        EtablissementId: 161
+        TypeHebergementId: 37
+    432:
+        EtablissementId: 161
+        TypeHebergementId: 40
+    433:
+        EtablissementId: 161
+        TypeHebergementId: 41
+    434:
+        EtablissementId: 162
+        TypeHebergementId: 19
+    435:
+        EtablissementId: 162
+        TypeHebergementId: 21
+    436:
+        EtablissementId: 162
+        TypeHebergementId: 26
+    437:
+        EtablissementId: 162
+        TypeHebergementId: 40
+    438:
+        EtablissementId: 162
+        TypeHebergementId: 41
+    439:
+        EtablissementId: 163
+        TypeHebergementId: 13
+    440:
+        EtablissementId: 163
+        TypeHebergementId: 15
+    441:
+        EtablissementId: 163
+        TypeHebergementId: 26
+    442:
+        EtablissementId: 163
+        TypeHebergementId: 63
+    443:
+        EtablissementId: 164
+        TypeHebergementId: 26
+    444:
+        EtablissementId: 164
+        TypeHebergementId: 40
+    445:
+        EtablissementId: 164
+        TypeHebergementId: 41
+    446:
+        EtablissementId: 165
+        TypeHebergementId: 26
+    447:
+        EtablissementId: 166
+        TypeHebergementId: 18
+    448:
+        EtablissementId: 166
+        TypeHebergementId: 40
+    449:
+        EtablissementId: 166
+        TypeHebergementId: 41
+    450:
+        EtablissementId: 167
+        TypeHebergementId: 27
+    451:
+        EtablissementId: 168
+        TypeHebergementId: 9
+    452:
+        EtablissementId: 168
+        TypeHebergementId: 18
+    453:
+        EtablissementId: 168
+        TypeHebergementId: 24
+    454:
+        EtablissementId: 168
+        TypeHebergementId: 26
+    455:
+        EtablissementId: 168
+        TypeHebergementId: 30
+    456:
+        EtablissementId: 168
+        TypeHebergementId: 40
+    457:
+        EtablissementId: 168
+        TypeHebergementId: 41
+    458:
+        EtablissementId: 168
+        TypeHebergementId: 53
+    459:
+        EtablissementId: 168
+        TypeHebergementId: 58
+    460:
+        EtablissementId: 169
+        TypeHebergementId: 18
+    461:
+        EtablissementId: 169
+        TypeHebergementId: 26
+    462:
+        EtablissementId: 169
+        TypeHebergementId: 37
+    463:
+        EtablissementId: 170
+        TypeHebergementId: 18
+    464:
+        EtablissementId: 170
+        TypeHebergementId: 40
+    465:
+        EtablissementId: 170
+        TypeHebergementId: 41
+    466:
+        EtablissementId: 171
+        TypeHebergementId: 9
+    467:
+        EtablissementId: 171
+        TypeHebergementId: 14
+    468:
+        EtablissementId: 171
+        TypeHebergementId: 18
+    469:
+        EtablissementId: 171
+        TypeHebergementId: 21
+    470:
+        EtablissementId: 171
+        TypeHebergementId: 24
+    471:
+        EtablissementId: 171
+        TypeHebergementId: 26
+    472:
+        EtablissementId: 171
+        TypeHebergementId: 30
+    473:
+        EtablissementId: 171
+        TypeHebergementId: 40
+    474:
+        EtablissementId: 171
+        TypeHebergementId: 41
+    475:
+        EtablissementId: 171
+        TypeHebergementId: 53
+    476:
+        EtablissementId: 172
+        TypeHebergementId: 79
+    477:
+        EtablissementId: 172
+        TypeHebergementId: 82
+    478:
+        EtablissementId: 173
+        TypeHebergementId: 26
+    479:
+        EtablissementId: 173
+        TypeHebergementId: 27
+    480:
+        EtablissementId: 173
+        TypeHebergementId: 40
+    481:
+        EtablissementId: 173
+        TypeHebergementId: 41
+    482:
+        EtablissementId: 173
+        TypeHebergementId: 42
+    483:
+        EtablissementId: 174
+        TypeHebergementId: 9
+    484:
+        EtablissementId: 174
+        TypeHebergementId: 26
+    485:
+        EtablissementId: 175
+        TypeHebergementId: 26
+    486:
+        EtablissementId: 175
+        TypeHebergementId: 39
+    487:
+        EtablissementId: 175
+        TypeHebergementId: 54
+    488:
+        EtablissementId: 176
+        TypeHebergementId: 26
+    489:
+        EtablissementId: 176
+        TypeHebergementId: 37
+    490:
+        EtablissementId: 176
+        TypeHebergementId: 40
+    491:
+        EtablissementId: 176
+        TypeHebergementId: 41
+    492:
+        EtablissementId: 177
+        TypeHebergementId: 9
+    493:
+        EtablissementId: 177
+        TypeHebergementId: 26
+    494:
+        EtablissementId: 178
+        TypeHebergementId: 26
+    495:
+        EtablissementId: 178
+        TypeHebergementId: 37
+    496:
+        EtablissementId: 178
+        TypeHebergementId: 40
+    497:
+        EtablissementId: 178
+        TypeHebergementId: 41
+    498:
+        EtablissementId: 178
+        TypeHebergementId: 58
+    499:
+        EtablissementId: 179
+        TypeHebergementId: 9
+    500:
+        EtablissementId: 179
+        TypeHebergementId: 26
+    501:
+        EtablissementId: 179
+        TypeHebergementId: 37
+    502:
+        EtablissementId: 179
+        TypeHebergementId: 40
+    503:
+        EtablissementId: 179
+        TypeHebergementId: 41
+    504:
+        EtablissementId: 180
+        TypeHebergementId: 26
+    505:
+        EtablissementId: 181
+        TypeHebergementId: 26
+    506:
+        EtablissementId: 181
+        TypeHebergementId: 37
+    507:
+        EtablissementId: 181
+        TypeHebergementId: 40
+    508:
+        EtablissementId: 181
+        TypeHebergementId: 41
+    509:
+        EtablissementId: 182
+        TypeHebergementId: 9
+    510:
+        EtablissementId: 182
+        TypeHebergementId: 22
+    511:
+        EtablissementId: 182
+        TypeHebergementId: 23
+    512:
+        EtablissementId: 182
+        TypeHebergementId: 26
+    513:
+        EtablissementId: 182
+        TypeHebergementId: 30
+    514:
+        EtablissementId: 182
+        TypeHebergementId: 33
+    515:
+        EtablissementId: 182
+        TypeHebergementId: 36
+    516:
+        EtablissementId: 182
+        TypeHebergementId: 37
+    517:
+        EtablissementId: 182
+        TypeHebergementId: 39
+    518:
+        EtablissementId: 182
+        TypeHebergementId: 40
+    519:
+        EtablissementId: 182
+        TypeHebergementId: 41
+    520:
+        EtablissementId: 182
+        TypeHebergementId: 58
+    521:
+        EtablissementId: 183
+        TypeHebergementId: 26
+    522:
+        EtablissementId: 184
+        TypeHebergementId: 26
+    523:
+        EtablissementId: 184
+        TypeHebergementId: 37
+    524:
+        EtablissementId: 184
+        TypeHebergementId: 40
+    525:
+        EtablissementId: 184
+        TypeHebergementId: 41
+    526:
+        EtablissementId: 184
+        TypeHebergementId: 58
+    527:
+        EtablissementId: 185
+        TypeHebergementId: 26
+    528:
+        EtablissementId: 185
+        TypeHebergementId: 39
+    529:
+        EtablissementId: 185
+        TypeHebergementId: 63
+    530:
+        EtablissementId: 186
+        TypeHebergementId: 26
+    531:
+        EtablissementId: 186
+        TypeHebergementId: 40
+    532:
+        EtablissementId: 186
+        TypeHebergementId: 41
+    533:
+        EtablissementId: 187
+        TypeHebergementId: 26
+    534:
+        EtablissementId: 187
+        TypeHebergementId: 40
+    535:
+        EtablissementId: 188
+        TypeHebergementId: 18
+    536:
+        EtablissementId: 188
+        TypeHebergementId: 40
+    537:
+        EtablissementId: 188
+        TypeHebergementId: 41
+    538:
+        EtablissementId: 189
+        TypeHebergementId: 26
+    539:
+        EtablissementId: 190
+        TypeHebergementId: 26
+    540:
+        EtablissementId: 190
+        TypeHebergementId: 37
+    541:
+        EtablissementId: 190
+        TypeHebergementId: 40
+    542:
+        EtablissementId: 190
+        TypeHebergementId: 41
+    543:
+        EtablissementId: 191
+        TypeHebergementId: 9
+    544:
+        EtablissementId: 191
+        TypeHebergementId: 40
+    545:
+        EtablissementId: 191
+        TypeHebergementId: 41
+    546:
+        EtablissementId: 192
+        TypeHebergementId: 9
+    547:
+        EtablissementId: 192
+        TypeHebergementId: 14
+    548:
+        EtablissementId: 192
+        TypeHebergementId: 20
+    549:
+        EtablissementId: 192
+        TypeHebergementId: 26
+    550:
+        EtablissementId: 192
+        TypeHebergementId: 30
+    551:
+        EtablissementId: 192
+        TypeHebergementId: 37
+    552:
+        EtablissementId: 192
+        TypeHebergementId: 40
+    553:
+        EtablissementId: 192
+        TypeHebergementId: 41
+    554:
+        EtablissementId: 192
+        TypeHebergementId: 58
+    555:
+        EtablissementId: 192
+        TypeHebergementId: 59
+    556:
+        EtablissementId: 193
+        TypeHebergementId: 26
+    557:
+        EtablissementId: 193
+        TypeHebergementId: 39
+    558:
+        EtablissementId: 193
+        TypeHebergementId: 62
+    559:
+        EtablissementId: 193
+        TypeHebergementId: 63
+    560:
+        EtablissementId: 194
+        TypeHebergementId: 9
+    561:
+        EtablissementId: 194
+        TypeHebergementId: 18
+    562:
+        EtablissementId: 194
+        TypeHebergementId: 30
+    563:
+        EtablissementId: 195
+        TypeHebergementId: 26
+    564:
+        EtablissementId: 195
+        TypeHebergementId: 37
+    565:
+        EtablissementId: 195
+        TypeHebergementId: 40
+    566:
+        EtablissementId: 195
+        TypeHebergementId: 41
+    567:
+        EtablissementId: 196
+        TypeHebergementId: 26
+    568:
+        EtablissementId: 196
+        TypeHebergementId: 39
+    569:
+        EtablissementId: 197
+        TypeHebergementId: 26
+    570:
+        EtablissementId: 197
+        TypeHebergementId: 40
+    571:
+        EtablissementId: 197
+        TypeHebergementId: 41
+    572:
+        EtablissementId: 198
+        TypeHebergementId: 26
+    573:
+        EtablissementId: 198
+        TypeHebergementId: 37
+    574:
+        EtablissementId: 199
+        TypeHebergementId: 39
+    575:
+        EtablissementId: 200
+        TypeHebergementId: 37
+    576:
+        EtablissementId: 200
+        TypeHebergementId: 58
+    577:
+        EtablissementId: 201
+        TypeHebergementId: 26
+    578:
+        EtablissementId: 201
+        TypeHebergementId: 37
+    579:
+        EtablissementId: 201
+        TypeHebergementId: 40
+    580:
+        EtablissementId: 201
+        TypeHebergementId: 41
+    581:
+        EtablissementId: 202
+        TypeHebergementId: 12
+    582:
+        EtablissementId: 202
+        TypeHebergementId: 26
+    583:
+        EtablissementId: 202
+        TypeHebergementId: 39
+    584:
+        EtablissementId: 202
+        TypeHebergementId: 54
+    585:
+        EtablissementId: 202
+        TypeHebergementId: 63
+    586:
+        EtablissementId: 203
+        TypeHebergementId: 26
+    587:
+        EtablissementId: 204
+        TypeHebergementId: 26
+    588:
+        EtablissementId: 205
+        TypeHebergementId: 26
+    589:
+        EtablissementId: 205
+        TypeHebergementId: 30
+    590:
+        EtablissementId: 205
+        TypeHebergementId: 40
+    591:
+        EtablissementId: 205
+        TypeHebergementId: 41
+    592:
+        EtablissementId: 206
+        TypeHebergementId: 26
+    593:
+        EtablissementId: 206
+        TypeHebergementId: 37
+    594:
+        EtablissementId: 206
+        TypeHebergementId: 39
+    595:
+        EtablissementId: 207
+        TypeHebergementId: 13
+    596:
+        EtablissementId: 207
+        TypeHebergementId: 26
+    597:
+        EtablissementId: 207
+        TypeHebergementId: 39
+    598:
+        EtablissementId: 207
+        TypeHebergementId: 53
+    599:
+        EtablissementId: 207
+        TypeHebergementId: 63
+    600:
+        EtablissementId: 208
+        TypeHebergementId: 9
+    601:
+        EtablissementId: 208
+        TypeHebergementId: 26
+    602:
+        EtablissementId: 208
+        TypeHebergementId: 58
+    603:
+        EtablissementId: 209
+        TypeHebergementId: 26
+    604:
+        EtablissementId: 209
+        TypeHebergementId: 40
+    605:
+        EtablissementId: 209
+        TypeHebergementId: 41
+    606:
+        EtablissementId: 210
+        TypeHebergementId: 26
+    607:
+        EtablissementId: 210
+        TypeHebergementId: 37
+    608:
+        EtablissementId: 211
+        TypeHebergementId: 26
+    609:
+        EtablissementId: 211
+        TypeHebergementId: 39
+    610:
+        EtablissementId: 212
+        TypeHebergementId: 65
+    611:
+        EtablissementId: 212
+        TypeHebergementId: 66
+    612:
+        EtablissementId: 212
+        TypeHebergementId: 74
+    613:
+        EtablissementId: 212
+        TypeHebergementId: 75
+    614:
+        EtablissementId: 212
+        TypeHebergementId: 86
+    615:
+        EtablissementId: 213
+        TypeHebergementId: 26
+    616:
+        EtablissementId: 213
+        TypeHebergementId: 40
+    617:
+        EtablissementId: 214
+        TypeHebergementId: 9
+    618:
+        EtablissementId: 214
+        TypeHebergementId: 18
+    619:
+        EtablissementId: 215
+        TypeHebergementId: 18
+    620:
+        EtablissementId: 215
+        TypeHebergementId: 58
+    621:
+        EtablissementId: 216
+        TypeHebergementId: 26
+    622:
+        EtablissementId: 216
+        TypeHebergementId: 37
+    623:
+        EtablissementId: 216
+        TypeHebergementId: 40
+    624:
+        EtablissementId: 216
+        TypeHebergementId: 41
+    625:
+        EtablissementId: 217
+        TypeHebergementId: 26
+    626:
+        EtablissementId: 217
+        TypeHebergementId: 37
+    627:
+        EtablissementId: 217
+        TypeHebergementId: 39
+    628:
+        EtablissementId: 217
+        TypeHebergementId: 40
+    629:
+        EtablissementId: 217
+        TypeHebergementId: 41
+    630:
+        EtablissementId: 217
+        TypeHebergementId: 58
+    631:
+        EtablissementId: 218
+        TypeHebergementId: 26
+    632:
+        EtablissementId: 218
+        TypeHebergementId: 37
+    633:
+        EtablissementId: 218
+        TypeHebergementId: 40
+    634:
+        EtablissementId: 218
+        TypeHebergementId: 41
+    635:
+        EtablissementId: 218
+        TypeHebergementId: 58
+    636:
+        EtablissementId: 219
+        TypeHebergementId: 18
+    637:
+        EtablissementId: 219
+        TypeHebergementId: 26
+    638:
+        EtablissementId: 219
+        TypeHebergementId: 40
+    639:
+        EtablissementId: 219
+        TypeHebergementId: 41
+    640:
+        EtablissementId: 220
+        TypeHebergementId: 26
+    641:
+        EtablissementId: 220
+        TypeHebergementId: 37
+    642:
+        EtablissementId: 220
+        TypeHebergementId: 40
+    643:
+        EtablissementId: 220
+        TypeHebergementId: 41
+    644:
+        EtablissementId: 221
+        TypeHebergementId: 24
+    645:
+        EtablissementId: 221
+        TypeHebergementId: 26
+    646:
+        EtablissementId: 221
+        TypeHebergementId: 40
+    647:
+        EtablissementId: 221
+        TypeHebergementId: 41
+    648:
+        EtablissementId: 222
+        TypeHebergementId: 26
+    649:
+        EtablissementId: 223
+        TypeHebergementId: 26
+    650:
+        EtablissementId: 224
+        TypeHebergementId: 18
+    651:
+        EtablissementId: 224
+        TypeHebergementId: 40
+    652:
+        EtablissementId: 224
+        TypeHebergementId: 41
+    653:
+        EtablissementId: 225
+        TypeHebergementId: 18
+    654:
+        EtablissementId: 225
+        TypeHebergementId: 40
+    655:
+        EtablissementId: 225
+        TypeHebergementId: 41
+    656:
+        EtablissementId: 226
+        TypeHebergementId: 9
+    657:
+        EtablissementId: 226
+        TypeHebergementId: 26
+    658:
+        EtablissementId: 226
+        TypeHebergementId: 39
+    659:
+        EtablissementId: 226
+        TypeHebergementId: 53
+    660:
+        EtablissementId: 226
+        TypeHebergementId: 63
+    661:
+        EtablissementId: 227
+        TypeHebergementId: 26
+    662:
+        EtablissementId: 227
+        TypeHebergementId: 53
+    663:
+        EtablissementId: 227
+        TypeHebergementId: 58
+    664:
+        EtablissementId: 229
+        TypeHebergementId: 25
+    665:
+        EtablissementId: 230
+        TypeHebergementId: 26
+    666:
+        EtablissementId: 230
+        TypeHebergementId: 40
+    667:
+        EtablissementId: 230
+        TypeHebergementId: 41
+    668:
+        EtablissementId: 230
+        TypeHebergementId: 58
+    669:
+        EtablissementId: 231
+        TypeHebergementId: 18
+    670:
+        EtablissementId: 231
+        TypeHebergementId: 26
+    671:
+        EtablissementId: 231
+        TypeHebergementId: 58
+    672:
+        EtablissementId: 232
+        TypeHebergementId: 20
+    673:
+        EtablissementId: 232
+        TypeHebergementId: 26
+    674:
+        EtablissementId: 232
+        TypeHebergementId: 30
+    675:
+        EtablissementId: 232
+        TypeHebergementId: 37
+    676:
+        EtablissementId: 232
+        TypeHebergementId: 39
+    677:
+        EtablissementId: 232
+        TypeHebergementId: 40
+    678:
+        EtablissementId: 232
+        TypeHebergementId: 41
+    679:
+        EtablissementId: 233
+        TypeHebergementId: 26
+    680:
+        EtablissementId: 233
+        TypeHebergementId: 37
+    681:
+        EtablissementId: 234
+        TypeHebergementId: 26
+    682:
+        EtablissementId: 235
+        TypeHebergementId: 26
+    683:
+        EtablissementId: 235
+        TypeHebergementId: 37
+    684:
+        EtablissementId: 235
+        TypeHebergementId: 40
+    685:
+        EtablissementId: 235
+        TypeHebergementId: 41
+    686:
+        EtablissementId: 236
+        TypeHebergementId: 24
+    687:
+        EtablissementId: 236
+        TypeHebergementId: 26
+    688:
+        EtablissementId: 237
+        TypeHebergementId: 9
+    689:
+        EtablissementId: 238
+        TypeHebergementId: 26
+    690:
+        EtablissementId: 238
+        TypeHebergementId: 37
+    691:
+        EtablissementId: 238
+        TypeHebergementId: 40
+    692:
+        EtablissementId: 238
+        TypeHebergementId: 41
+    693:
+        EtablissementId: 239
+        TypeHebergementId: 26
+    694:
+        EtablissementId: 239
+        TypeHebergementId: 41
+    695:
+        EtablissementId: 242
+        TypeHebergementId: 9
+    696:
+        EtablissementId: 242
+        TypeHebergementId: 26
+    697:
+        EtablissementId: 242
+        TypeHebergementId: 39
+    698:
+        EtablissementId: 243
+        TypeHebergementId: 10
+    699:
+        EtablissementId: 243
+        TypeHebergementId: 11
+    700:
+        EtablissementId: 244
+        TypeHebergementId: 37
+    701:
+        EtablissementId: 245
+        TypeHebergementId: 26
+    702:
+        EtablissementId: 245
+        TypeHebergementId: 37
+    703:
+        EtablissementId: 245
+        TypeHebergementId: 40
+    704:
+        EtablissementId: 245
+        TypeHebergementId: 41
+    705:
+        EtablissementId: 247
+        TypeHebergementId: 1
+    706:
+        EtablissementId: 247
+        TypeHebergementId: 2
+    707:
+        EtablissementId: 247
+        TypeHebergementId: 3
+    708:
+        EtablissementId: 247
+        TypeHebergementId: 4
+    709:
+        EtablissementId: 247
+        TypeHebergementId: 5
+    710:
+        EtablissementId: 247
+        TypeHebergementId: 6
+    711:
+        EtablissementId: 247
+        TypeHebergementId: 7
+    712:
+        EtablissementId: 247
+        TypeHebergementId: 8
+    713:
+        EtablissementId: 247
+        TypeHebergementId: 9
+    714:
+        EtablissementId: 247
+        TypeHebergementId: 10
+    715:
+        EtablissementId: 247
+        TypeHebergementId: 11
+    716:
+        EtablissementId: 247
+        TypeHebergementId: 12
+    717:
+        EtablissementId: 247
+        TypeHebergementId: 13
+    718:
+        EtablissementId: 247
+        TypeHebergementId: 14
+    719:
+        EtablissementId: 247
+        TypeHebergementId: 15
+    720:
+        EtablissementId: 247
+        TypeHebergementId: 16
+    721:
+        EtablissementId: 247
+        TypeHebergementId: 17
+    722:
+        EtablissementId: 247
+        TypeHebergementId: 18
+    723:
+        EtablissementId: 247
+        TypeHebergementId: 19
+    724:
+        EtablissementId: 247
+        TypeHebergementId: 20
+    725:
+        EtablissementId: 247
+        TypeHebergementId: 21
+    726:
+        EtablissementId: 247
+        TypeHebergementId: 22
+    727:
+        EtablissementId: 247
+        TypeHebergementId: 23
+    728:
+        EtablissementId: 247
+        TypeHebergementId: 24
+    729:
+        EtablissementId: 247
+        TypeHebergementId: 25
+    730:
+        EtablissementId: 247
+        TypeHebergementId: 26
+    731:
+        EtablissementId: 247
+        TypeHebergementId: 28
+    732:
+        EtablissementId: 247
+        TypeHebergementId: 29
+    733:
+        EtablissementId: 247
+        TypeHebergementId: 30
+    734:
+        EtablissementId: 247
+        TypeHebergementId: 31
+    735:
+        EtablissementId: 247
+        TypeHebergementId: 32
+    736:
+        EtablissementId: 247
+        TypeHebergementId: 33
+    737:
+        EtablissementId: 247
+        TypeHebergementId: 34
+    738:
+        EtablissementId: 247
+        TypeHebergementId: 35
+    739:
+        EtablissementId: 247
+        TypeHebergementId: 36
+    740:
+        EtablissementId: 247
+        TypeHebergementId: 37
+    741:
+        EtablissementId: 247
+        TypeHebergementId: 38
+    742:
+        EtablissementId: 247
+        TypeHebergementId: 39
+    743:
+        EtablissementId: 247
+        TypeHebergementId: 40
+    744:
+        EtablissementId: 247
+        TypeHebergementId: 41
+    745:
+        EtablissementId: 247
+        TypeHebergementId: 43
+    746:
+        EtablissementId: 247
+        TypeHebergementId: 44
+    747:
+        EtablissementId: 247
+        TypeHebergementId: 45
+    748:
+        EtablissementId: 247
+        TypeHebergementId: 46
+    749:
+        EtablissementId: 247
+        TypeHebergementId: 47
+    750:
+        EtablissementId: 247
+        TypeHebergementId: 48
+    751:
+        EtablissementId: 247
+        TypeHebergementId: 49
+    752:
+        EtablissementId: 247
+        TypeHebergementId: 50
+    753:
+        EtablissementId: 247
+        TypeHebergementId: 51
+    754:
+        EtablissementId: 247
+        TypeHebergementId: 52
+    755:
+        EtablissementId: 247
+        TypeHebergementId: 53
+    756:
+        EtablissementId: 247
+        TypeHebergementId: 54
+    757:
+        EtablissementId: 247
+        TypeHebergementId: 55
+    758:
+        EtablissementId: 247
+        TypeHebergementId: 56
+    759:
+        EtablissementId: 247
+        TypeHebergementId: 57
+    760:
+        EtablissementId: 247
+        TypeHebergementId: 58
+    761:
+        EtablissementId: 247
+        TypeHebergementId: 59
+    762:
+        EtablissementId: 247
+        TypeHebergementId: 60
+    763:
+        EtablissementId: 247
+        TypeHebergementId: 61
+    764:
+        EtablissementId: 247
+        TypeHebergementId: 62
+    765:
+        EtablissementId: 247
+        TypeHebergementId: 63
+    766:
+        EtablissementId: 247
+        TypeHebergementId: 64

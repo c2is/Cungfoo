@@ -1,0 +1,109 @@
+\Cungfoo\Model\TagI18n:
+    1_de:
+        Id: 1
+        Locale: de
+        Name: Camping
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    1_en:
+        Id: 1
+        Locale: en
+        Name: Camping
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    1_fr:
+        Id: 1
+        Locale: fr
+        Name: Camping
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    2_de:
+        Id: 2
+        Locale: de
+        Name: Locations
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    2_en:
+        Id: 2
+        Locale: en
+        Name: Locations
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    2_fr:
+        Id: 2
+        Locale: fr
+        Name: Locations
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    3_de:
+        Id: 3
+        Locale: de
+        Name: Activités
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    3_en:
+        Id: 3
+        Locale: en
+        Name: Activités
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    3_fr:
+        Id: 3
+        Locale: fr
+        Name: Activités
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    4_de:
+        Id: 4
+        Locale: de
+        Name: Régions
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    4_en:
+        Id: 4
+        Locale: en
+        Name: Régions
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    4_fr:
+        Id: 4
+        Locale: fr
+        Name: Régions
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true

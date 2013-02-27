@@ -14,6 +14,7 @@ use \PropelObjectCollection;
 use \PropelPDO;
 use Cungfoo\Model\Etablissement;
 use Cungfoo\Model\TopCamping;
+use Cungfoo\Model\TopCampingI18n;
 use Cungfoo\Model\TopCampingPeer;
 use Cungfoo\Model\TopCampingQuery;
 
@@ -39,6 +40,10 @@ use Cungfoo\Model\TopCampingQuery;
  * @method TopCampingQuery leftJoinEtablissement($relationAlias = null) Adds a LEFT JOIN clause to the query using the Etablissement relation
  * @method TopCampingQuery rightJoinEtablissement($relationAlias = null) Adds a RIGHT JOIN clause to the query using the Etablissement relation
  * @method TopCampingQuery innerJoinEtablissement($relationAlias = null) Adds a INNER JOIN clause to the query using the Etablissement relation
+ *
+ * @method TopCampingQuery leftJoinTopCampingI18n($relationAlias = null) Adds a LEFT JOIN clause to the query using the TopCampingI18n relation
+ * @method TopCampingQuery rightJoinTopCampingI18n($relationAlias = null) Adds a RIGHT JOIN clause to the query using the TopCampingI18n relation
+ * @method TopCampingQuery innerJoinTopCampingI18n($relationAlias = null) Adds a INNER JOIN clause to the query using the TopCampingI18n relation
  *
  * @method TopCamping findOne(PropelPDO $con = null) Return the first TopCamping matching the query
  * @method TopCamping findOneOrCreate(PropelPDO $con = null) Return the first TopCamping matching the query, or a new TopCamping object populated from the query conditions when no match is found
@@ -458,6 +463,80 @@ abstract class BaseTopCampingQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query by a related TopCampingI18n object
+     *
+     * @param   TopCampingI18n|PropelObjectCollection $topCampingI18n  the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   TopCampingQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByTopCampingI18n($topCampingI18n, $comparison = null)
+    {
+        if ($topCampingI18n instanceof TopCampingI18n) {
+            return $this
+                ->addUsingAlias(TopCampingPeer::ID, $topCampingI18n->getId(), $comparison);
+        } elseif ($topCampingI18n instanceof PropelObjectCollection) {
+            return $this
+                ->useTopCampingI18nQuery()
+                ->filterByPrimaryKeys($topCampingI18n->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByTopCampingI18n() only accepts arguments of type TopCampingI18n or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the TopCampingI18n relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return TopCampingQuery The current query, for fluid interface
+     */
+    public function joinTopCampingI18n($relationAlias = null, $joinType = 'LEFT JOIN')
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('TopCampingI18n');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'TopCampingI18n');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the TopCampingI18n relation TopCampingI18n object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\TopCampingI18nQuery A secondary query class using the current class as primary query
+     */
+    public function useTopCampingI18nQuery($relationAlias = null, $joinType = 'LEFT JOIN')
+    {
+        return $this
+            ->joinTopCampingI18n($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'TopCampingI18n', '\Cungfoo\Model\TopCampingI18nQuery');
+    }
+
+    /**
      * Exclude object from result
      *
      * @param   TopCamping $topCamping Object to remove from the list of results
@@ -609,8 +688,70 @@ abstract class BaseTopCampingQuery extends ModelCriteria
 
         $this
             ->filterByActive(true)
+            ->useI18nQuery($locale, 'i18n_locale')
+                ->filterByActiveLocale(true)
+                    ->_or()
+                ->filterByActiveLocale(null, Criteria::ISNULL)
+            ->endUse()
         ;
 
         return parent::find($con);
     }
+    // i18n behavior
+
+    /**
+     * Adds a JOIN clause to the query using the i18n relation
+     *
+     * @param     string $locale Locale to use for the join condition, e.g. 'fr_FR'
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
+     *
+     * @return    TopCampingQuery The current query, for fluid interface
+     */
+    public function joinI18n($locale = 'fr', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        $relationName = $relationAlias ? $relationAlias : 'TopCampingI18n';
+
+        return $this
+            ->joinTopCampingI18n($relationAlias, $joinType)
+            ->addJoinCondition($relationName, $relationName . '.Locale = ?', $locale);
+    }
+
+    /**
+     * Adds a JOIN clause to the query and hydrates the related I18n object.
+     * Shortcut for $c->joinI18n($locale)->with()
+     *
+     * @param     string $locale Locale to use for the join condition, e.g. 'fr_FR'
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
+     *
+     * @return    TopCampingQuery The current query, for fluid interface
+     */
+    public function joinWithI18n($locale = 'fr', $joinType = Criteria::LEFT_JOIN)
+    {
+        $this
+            ->joinI18n($locale, null, $joinType)
+            ->with('TopCampingI18n');
+        $this->with['TopCampingI18n']->setIsWithOneToMany(false);
+
+        return $this;
+    }
+
+    /**
+     * Use the I18n relation query object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $locale Locale to use for the join condition, e.g. 'fr_FR'
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
+     *
+     * @return    TopCampingI18nQuery A secondary query class using the current class as primary query
+     */
+    public function useI18nQuery($locale = 'fr', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        return $this
+            ->joinI18n($locale, $relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'TopCampingI18n', 'Cungfoo\Model\TopCampingI18nQuery');
+    }
+
 }

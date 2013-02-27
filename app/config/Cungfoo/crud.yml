@@ -126,3 +126,19 @@ crud:
             prefix: /type-hebergement-capacite
             model: \Cungfoo\Model\TypeHebergementCapacite
             form: \Cungfoo\Form\Type\TypeHebergementCapaciteType
+        region_ref:
+            prefix: /regions_ref
+            model: \Cungfoo\Model\RegionRef
+            form: \Cungfoo\Form\Type\RegionRefType
+        departement:
+            prefix: /departements
+            model: \Cungfoo\Model\Departement
+            form: \Cungfoo\Form\Type\DepartementType
+        metadata:
+            prefix: /metadata
+            model: \Cungfoo\Model\Metadata
+            form: \Cungfoo\Form\Type\MetadataType
+        seo:
+            prefix: /seo
+            model: \Cungfoo\Model\Seo
+            form: \Cungfoo\Form\Type\SeoType

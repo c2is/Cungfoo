@@ -23,7 +23,7 @@ class UnitCommand extends Command
         $atoum     = $this->getProjectDirectory().'/vendor/bin/atoum';
         $unitTests = $this->getProjectDirectory().'/tests';
 
-        passthru(sprintf('%s -d %s', $atoum, $unitTests), $status);
+        passthru(sprintf('%s -d %s -ft', $atoum, $unitTests), $status);
 
         // $status is not correct (php 5.4 bug)
 

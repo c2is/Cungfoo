@@ -5,12 +5,15 @@ namespace Cungfoo\Model\om;
 use \Criteria;
 use \Exception;
 use \ModelCriteria;
+use \ModelJoin;
 use \PDO;
 use \Propel;
+use \PropelCollection;
 use \PropelException;
 use \PropelObjectCollection;
 use \PropelPDO;
 use Cungfoo\Model\DemandeIdentifiant;
+use Cungfoo\Model\DemandeIdentifiantI18n;
 use Cungfoo\Model\DemandeIdentifiantPeer;
 use Cungfoo\Model\DemandeIdentifiantQuery;
 
@@ -76,6 +79,10 @@ use Cungfoo\Model\DemandeIdentifiantQuery;
  * @method DemandeIdentifiantQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method DemandeIdentifiantQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
  * @method DemandeIdentifiantQuery innerJoin($relation) Adds a INNER JOIN clause to the query
+ *
+ * @method DemandeIdentifiantQuery leftJoinDemandeIdentifiantI18n($relationAlias = null) Adds a LEFT JOIN clause to the query using the DemandeIdentifiantI18n relation
+ * @method DemandeIdentifiantQuery rightJoinDemandeIdentifiantI18n($relationAlias = null) Adds a RIGHT JOIN clause to the query using the DemandeIdentifiantI18n relation
+ * @method DemandeIdentifiantQuery innerJoinDemandeIdentifiantI18n($relationAlias = null) Adds a INNER JOIN clause to the query using the DemandeIdentifiantI18n relation
  *
  * @method DemandeIdentifiant findOne(PropelPDO $con = null) Return the first DemandeIdentifiant matching the query
  * @method DemandeIdentifiant findOneOrCreate(PropelPDO $con = null) Return the first DemandeIdentifiant matching the query, or a new DemandeIdentifiant object populated from the query conditions when no match is found
@@ -1095,6 +1102,80 @@ abstract class BaseDemandeIdentifiantQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query by a related DemandeIdentifiantI18n object
+     *
+     * @param   DemandeIdentifiantI18n|PropelObjectCollection $demandeIdentifiantI18n  the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   DemandeIdentifiantQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByDemandeIdentifiantI18n($demandeIdentifiantI18n, $comparison = null)
+    {
+        if ($demandeIdentifiantI18n instanceof DemandeIdentifiantI18n) {
+            return $this
+                ->addUsingAlias(DemandeIdentifiantPeer::ID, $demandeIdentifiantI18n->getId(), $comparison);
+        } elseif ($demandeIdentifiantI18n instanceof PropelObjectCollection) {
+            return $this
+                ->useDemandeIdentifiantI18nQuery()
+                ->filterByPrimaryKeys($demandeIdentifiantI18n->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByDemandeIdentifiantI18n() only accepts arguments of type DemandeIdentifiantI18n or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the DemandeIdentifiantI18n relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return DemandeIdentifiantQuery The current query, for fluid interface
+     */
+    public function joinDemandeIdentifiantI18n($relationAlias = null, $joinType = 'LEFT JOIN')
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('DemandeIdentifiantI18n');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'DemandeIdentifiantI18n');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the DemandeIdentifiantI18n relation DemandeIdentifiantI18n object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\DemandeIdentifiantI18nQuery A secondary query class using the current class as primary query
+     */
+    public function useDemandeIdentifiantI18nQuery($relationAlias = null, $joinType = 'LEFT JOIN')
+    {
+        return $this
+            ->joinDemandeIdentifiantI18n($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'DemandeIdentifiantI18n', '\Cungfoo\Model\DemandeIdentifiantI18nQuery');
+    }
+
+    /**
      * Exclude object from result
      *
      * @param   DemandeIdentifiant $demandeIdentifiant Object to remove from the list of results
@@ -1189,8 +1270,70 @@ abstract class BaseDemandeIdentifiantQuery extends ModelCriteria
 
         $this
             ->filterByActive(true)
+            ->useI18nQuery($locale, 'i18n_locale')
+                ->filterByActiveLocale(true)
+                    ->_or()
+                ->filterByActiveLocale(null, Criteria::ISNULL)
+            ->endUse()
         ;
 
         return parent::find($con);
     }
+    // i18n behavior
+
+    /**
+     * Adds a JOIN clause to the query using the i18n relation
+     *
+     * @param     string $locale Locale to use for the join condition, e.g. 'fr_FR'
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
+     *
+     * @return    DemandeIdentifiantQuery The current query, for fluid interface
+     */
+    public function joinI18n($locale = 'fr', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        $relationName = $relationAlias ? $relationAlias : 'DemandeIdentifiantI18n';
+
+        return $this
+            ->joinDemandeIdentifiantI18n($relationAlias, $joinType)
+            ->addJoinCondition($relationName, $relationName . '.Locale = ?', $locale);
+    }
+
+    /**
+     * Adds a JOIN clause to the query and hydrates the related I18n object.
+     * Shortcut for $c->joinI18n($locale)->with()
+     *
+     * @param     string $locale Locale to use for the join condition, e.g. 'fr_FR'
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
+     *
+     * @return    DemandeIdentifiantQuery The current query, for fluid interface
+     */
+    public function joinWithI18n($locale = 'fr', $joinType = Criteria::LEFT_JOIN)
+    {
+        $this
+            ->joinI18n($locale, null, $joinType)
+            ->with('DemandeIdentifiantI18n');
+        $this->with['DemandeIdentifiantI18n']->setIsWithOneToMany(false);
+
+        return $this;
+    }
+
+    /**
+     * Use the I18n relation query object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $locale Locale to use for the join condition, e.g. 'fr_FR'
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
+     *
+     * @return    DemandeIdentifiantI18nQuery A secondary query class using the current class as primary query
+     */
+    public function useI18nQuery($locale = 'fr', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        return $this
+            ->joinI18n($locale, $relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'DemandeIdentifiantI18n', 'Cungfoo\Model\DemandeIdentifiantI18nQuery');
+    }
+
 }

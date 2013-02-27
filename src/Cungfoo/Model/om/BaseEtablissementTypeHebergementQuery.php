@@ -14,6 +14,7 @@ use \PropelObjectCollection;
 use \PropelPDO;
 use Cungfoo\Model\Etablissement;
 use Cungfoo\Model\EtablissementTypeHebergement;
+use Cungfoo\Model\EtablissementTypeHebergementI18n;
 use Cungfoo\Model\EtablissementTypeHebergementPeer;
 use Cungfoo\Model\EtablissementTypeHebergementQuery;
 use Cungfoo\Model\TypeHebergement;
@@ -23,19 +24,13 @@ use Cungfoo\Model\TypeHebergement;
  *
  *
  *
+ * @method EtablissementTypeHebergementQuery orderById($order = Criteria::ASC) Order by the id column
  * @method EtablissementTypeHebergementQuery orderByEtablissementId($order = Criteria::ASC) Order by the etablissement_id column
  * @method EtablissementTypeHebergementQuery orderByTypeHebergementId($order = Criteria::ASC) Order by the type_hebergement_id column
- * @method EtablissementTypeHebergementQuery orderByMinimumPrice($order = Criteria::ASC) Order by the minimum_price column
- * @method EtablissementTypeHebergementQuery orderByMinimumPriceDiscountLabel($order = Criteria::ASC) Order by the minimum_price_discount_label column
- * @method EtablissementTypeHebergementQuery orderByMinimumPriceStartDate($order = Criteria::ASC) Order by the minimum_price_start_date column
- * @method EtablissementTypeHebergementQuery orderByMinimumPriceEndDate($order = Criteria::ASC) Order by the minimum_price_end_date column
  *
+ * @method EtablissementTypeHebergementQuery groupById() Group by the id column
  * @method EtablissementTypeHebergementQuery groupByEtablissementId() Group by the etablissement_id column
  * @method EtablissementTypeHebergementQuery groupByTypeHebergementId() Group by the type_hebergement_id column
- * @method EtablissementTypeHebergementQuery groupByMinimumPrice() Group by the minimum_price column
- * @method EtablissementTypeHebergementQuery groupByMinimumPriceDiscountLabel() Group by the minimum_price_discount_label column
- * @method EtablissementTypeHebergementQuery groupByMinimumPriceStartDate() Group by the minimum_price_start_date column
- * @method EtablissementTypeHebergementQuery groupByMinimumPriceEndDate() Group by the minimum_price_end_date column
  *
  * @method EtablissementTypeHebergementQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method EtablissementTypeHebergementQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -49,22 +44,19 @@ use Cungfoo\Model\TypeHebergement;
  * @method EtablissementTypeHebergementQuery rightJoinTypeHebergement($relationAlias = null) Adds a RIGHT JOIN clause to the query using the TypeHebergement relation
  * @method EtablissementTypeHebergementQuery innerJoinTypeHebergement($relationAlias = null) Adds a INNER JOIN clause to the query using the TypeHebergement relation
  *
+ * @method EtablissementTypeHebergementQuery leftJoinEtablissementTypeHebergementI18n($relationAlias = null) Adds a LEFT JOIN clause to the query using the EtablissementTypeHebergementI18n relation
+ * @method EtablissementTypeHebergementQuery rightJoinEtablissementTypeHebergementI18n($relationAlias = null) Adds a RIGHT JOIN clause to the query using the EtablissementTypeHebergementI18n relation
+ * @method EtablissementTypeHebergementQuery innerJoinEtablissementTypeHebergementI18n($relationAlias = null) Adds a INNER JOIN clause to the query using the EtablissementTypeHebergementI18n relation
+ *
  * @method EtablissementTypeHebergement findOne(PropelPDO $con = null) Return the first EtablissementTypeHebergement matching the query
  * @method EtablissementTypeHebergement findOneOrCreate(PropelPDO $con = null) Return the first EtablissementTypeHebergement matching the query, or a new EtablissementTypeHebergement object populated from the query conditions when no match is found
  *
  * @method EtablissementTypeHebergement findOneByEtablissementId(int $etablissement_id) Return the first EtablissementTypeHebergement filtered by the etablissement_id column
  * @method EtablissementTypeHebergement findOneByTypeHebergementId(int $type_hebergement_id) Return the first EtablissementTypeHebergement filtered by the type_hebergement_id column
- * @method EtablissementTypeHebergement findOneByMinimumPrice(string $minimum_price) Return the first EtablissementTypeHebergement filtered by the minimum_price column
- * @method EtablissementTypeHebergement findOneByMinimumPriceDiscountLabel(string $minimum_price_discount_label) Return the first EtablissementTypeHebergement filtered by the minimum_price_discount_label column
- * @method EtablissementTypeHebergement findOneByMinimumPriceStartDate(string $minimum_price_start_date) Return the first EtablissementTypeHebergement filtered by the minimum_price_start_date column
- * @method EtablissementTypeHebergement findOneByMinimumPriceEndDate(string $minimum_price_end_date) Return the first EtablissementTypeHebergement filtered by the minimum_price_end_date column
  *
+ * @method array findById(int $id) Return EtablissementTypeHebergement objects filtered by the id column
  * @method array findByEtablissementId(int $etablissement_id) Return EtablissementTypeHebergement objects filtered by the etablissement_id column
  * @method array findByTypeHebergementId(int $type_hebergement_id) Return EtablissementTypeHebergement objects filtered by the type_hebergement_id column
- * @method array findByMinimumPrice(string $minimum_price) Return EtablissementTypeHebergement objects filtered by the minimum_price column
- * @method array findByMinimumPriceDiscountLabel(string $minimum_price_discount_label) Return EtablissementTypeHebergement objects filtered by the minimum_price_discount_label column
- * @method array findByMinimumPriceStartDate(string $minimum_price_start_date) Return EtablissementTypeHebergement objects filtered by the minimum_price_start_date column
- * @method array findByMinimumPriceEndDate(string $minimum_price_end_date) Return EtablissementTypeHebergement objects filtered by the minimum_price_end_date column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -112,11 +104,10 @@ abstract class BaseEtablissementTypeHebergementQuery extends ModelCriteria
      * Go fast if the query is untouched.
      *
      * <code>
-     * $obj = $c->findPk(array(12, 34), $con);
+     * $obj  = $c->findPk(12, $con);
      * </code>
      *
-     * @param array $key Primary key to use for the query
-                         A Primary key composition: [$etablissement_id, $type_hebergement_id]
+     * @param mixed $key Primary key to use for the query
      * @param     PropelPDO $con an optional connection object
      *
      * @return   EtablissementTypeHebergement|EtablissementTypeHebergement[]|mixed the result, formatted by the current formatter
@@ -126,7 +117,7 @@ abstract class BaseEtablissementTypeHebergementQuery extends ModelCriteria
         if ($key === null) {
             return null;
         }
-        if ((null !== ($obj = EtablissementTypeHebergementPeer::getInstanceFromPool(serialize(array((string) $key[0], (string) $key[1]))))) && !$this->formatter) {
+        if ((null !== ($obj = EtablissementTypeHebergementPeer::getInstanceFromPool((string) $key))) && !$this->formatter) {
             // the object is alredy in the instance pool
             return $obj;
         }
@@ -144,6 +135,20 @@ abstract class BaseEtablissementTypeHebergementQuery extends ModelCriteria
     }
 
     /**
+     * Alias of findPk to use instance pooling
+     *
+     * @param     mixed $key Primary key to use for the query
+     * @param     PropelPDO $con A connection object
+     *
+     * @return   EtablissementTypeHebergement A model object, or null if the key is not found
+     * @throws   PropelException
+     */
+     public function findOneById($key, $con = null)
+     {
+        return $this->findPk($key, $con);
+     }
+
+    /**
      * Find object by primary key using raw SQL to go fast.
      * Bypass doSelect() and the object formatter by using generated code.
      *
@@ -155,11 +160,10 @@ abstract class BaseEtablissementTypeHebergementQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `etablissement_id`, `type_hebergement_id`, `minimum_price`, `minimum_price_discount_label`, `minimum_price_start_date`, `minimum_price_end_date` FROM `etablissement_type_hebergement` WHERE `etablissement_id` = :p0 AND `type_hebergement_id` = :p1';
+        $sql = 'SELECT `id`, `etablissement_id`, `type_hebergement_id` FROM `etablissement_type_hebergement` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
-            $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
-            $stmt->bindValue(':p1', $key[1], PDO::PARAM_INT);
+            $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception $e) {
             Propel::log($e->getMessage(), Propel::LOG_ERR);
@@ -169,7 +173,7 @@ abstract class BaseEtablissementTypeHebergementQuery extends ModelCriteria
         if ($row = $stmt->fetch(PDO::FETCH_NUM)) {
             $obj = new EtablissementTypeHebergement();
             $obj->hydrate($row);
-            EtablissementTypeHebergementPeer::addInstanceToPool($obj, serialize(array((string) $key[0], (string) $key[1])));
+            EtablissementTypeHebergementPeer::addInstanceToPool($obj, (string) $key);
         }
         $stmt->closeCursor();
 
@@ -198,7 +202,7 @@ abstract class BaseEtablissementTypeHebergementQuery extends ModelCriteria
     /**
      * Find objects by primary key
      * <code>
-     * $objs = $c->findPks(array(array(12, 56), array(832, 123), array(123, 456)), $con);
+     * $objs = $c->findPks(array(12, 56, 832), $con);
      * </code>
      * @param     array $keys Primary keys to use for the query
      * @param     PropelPDO $con an optional connection object
@@ -228,10 +232,8 @@ abstract class BaseEtablissementTypeHebergementQuery extends ModelCriteria
      */
     public function filterByPrimaryKey($key)
     {
-        $this->addUsingAlias(EtablissementTypeHebergementPeer::ETABLISSEMENT_ID, $key[0], Criteria::EQUAL);
-        $this->addUsingAlias(EtablissementTypeHebergementPeer::TYPE_HEBERGEMENT_ID, $key[1], Criteria::EQUAL);
 
-        return $this;
+        return $this->addUsingAlias(EtablissementTypeHebergementPeer::ID, $key, Criteria::EQUAL);
     }
 
     /**
@@ -243,17 +245,35 @@ abstract class BaseEtablissementTypeHebergementQuery extends ModelCriteria
      */
     public function filterByPrimaryKeys($keys)
     {
-        if (empty($keys)) {
-            return $this->add(null, '1<>1', Criteria::CUSTOM);
-        }
-        foreach ($keys as $key) {
-            $cton0 = $this->getNewCriterion(EtablissementTypeHebergementPeer::ETABLISSEMENT_ID, $key[0], Criteria::EQUAL);
-            $cton1 = $this->getNewCriterion(EtablissementTypeHebergementPeer::TYPE_HEBERGEMENT_ID, $key[1], Criteria::EQUAL);
-            $cton0->addAnd($cton1);
-            $this->addOr($cton0);
+
+        return $this->addUsingAlias(EtablissementTypeHebergementPeer::ID, $keys, Criteria::IN);
+    }
+
+    /**
+     * Filter the query on the id column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterById(1234); // WHERE id = 1234
+     * $query->filterById(array(12, 34)); // WHERE id IN (12, 34)
+     * $query->filterById(array('min' => 12)); // WHERE id > 12
+     * </code>
+     *
+     * @param     mixed $id The value to use as filter.
+     *              Use scalar values for equality.
+     *              Use array values for in_array() equivalent.
+     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return EtablissementTypeHebergementQuery The current query, for fluid interface
+     */
+    public function filterById($id = null, $comparison = null)
+    {
+        if (is_array($id) && null === $comparison) {
+            $comparison = Criteria::IN;
         }
 
-        return $this;
+        return $this->addUsingAlias(EtablissementTypeHebergementPeer::ID, $id, $comparison);
     }
 
     /**
@@ -278,8 +298,22 @@ abstract class BaseEtablissementTypeHebergementQuery extends ModelCriteria
      */
     public function filterByEtablissementId($etablissementId = null, $comparison = null)
     {
-        if (is_array($etablissementId) && null === $comparison) {
-            $comparison = Criteria::IN;
+        if (is_array($etablissementId)) {
+            $useMinMax = false;
+            if (isset($etablissementId['min'])) {
+                $this->addUsingAlias(EtablissementTypeHebergementPeer::ETABLISSEMENT_ID, $etablissementId['min'], Criteria::GREATER_EQUAL);
+                $useMinMax = true;
+            }
+            if (isset($etablissementId['max'])) {
+                $this->addUsingAlias(EtablissementTypeHebergementPeer::ETABLISSEMENT_ID, $etablissementId['max'], Criteria::LESS_EQUAL);
+                $useMinMax = true;
+            }
+            if ($useMinMax) {
+                return $this;
+            }
+            if (null === $comparison) {
+                $comparison = Criteria::IN;
+            }
         }
 
         return $this->addUsingAlias(EtablissementTypeHebergementPeer::ETABLISSEMENT_ID, $etablissementId, $comparison);
@@ -307,155 +341,25 @@ abstract class BaseEtablissementTypeHebergementQuery extends ModelCriteria
      */
     public function filterByTypeHebergementId($typeHebergementId = null, $comparison = null)
     {
-        if (is_array($typeHebergementId) && null === $comparison) {
-            $comparison = Criteria::IN;
+        if (is_array($typeHebergementId)) {
+            $useMinMax = false;
+            if (isset($typeHebergementId['min'])) {
+                $this->addUsingAlias(EtablissementTypeHebergementPeer::TYPE_HEBERGEMENT_ID, $typeHebergementId['min'], Criteria::GREATER_EQUAL);
+                $useMinMax = true;
+            }
+            if (isset($typeHebergementId['max'])) {
+                $this->addUsingAlias(EtablissementTypeHebergementPeer::TYPE_HEBERGEMENT_ID, $typeHebergementId['max'], Criteria::LESS_EQUAL);
+                $useMinMax = true;
+            }
+            if ($useMinMax) {
+                return $this;
+            }
+            if (null === $comparison) {
+                $comparison = Criteria::IN;
+            }
         }
 
         return $this->addUsingAlias(EtablissementTypeHebergementPeer::TYPE_HEBERGEMENT_ID, $typeHebergementId, $comparison);
-    }
-
-    /**
-     * Filter the query on the minimum_price column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByMinimumPrice('fooValue');   // WHERE minimum_price = 'fooValue'
-     * $query->filterByMinimumPrice('%fooValue%'); // WHERE minimum_price LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $minimumPrice The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return EtablissementTypeHebergementQuery The current query, for fluid interface
-     */
-    public function filterByMinimumPrice($minimumPrice = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($minimumPrice)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $minimumPrice)) {
-                $minimumPrice = str_replace('*', '%', $minimumPrice);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(EtablissementTypeHebergementPeer::MINIMUM_PRICE, $minimumPrice, $comparison);
-    }
-
-    /**
-     * Filter the query on the minimum_price_discount_label column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByMinimumPriceDiscountLabel('fooValue');   // WHERE minimum_price_discount_label = 'fooValue'
-     * $query->filterByMinimumPriceDiscountLabel('%fooValue%'); // WHERE minimum_price_discount_label LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $minimumPriceDiscountLabel The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return EtablissementTypeHebergementQuery The current query, for fluid interface
-     */
-    public function filterByMinimumPriceDiscountLabel($minimumPriceDiscountLabel = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($minimumPriceDiscountLabel)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $minimumPriceDiscountLabel)) {
-                $minimumPriceDiscountLabel = str_replace('*', '%', $minimumPriceDiscountLabel);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(EtablissementTypeHebergementPeer::MINIMUM_PRICE_DISCOUNT_LABEL, $minimumPriceDiscountLabel, $comparison);
-    }
-
-    /**
-     * Filter the query on the minimum_price_start_date column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByMinimumPriceStartDate('2011-03-14'); // WHERE minimum_price_start_date = '2011-03-14'
-     * $query->filterByMinimumPriceStartDate('now'); // WHERE minimum_price_start_date = '2011-03-14'
-     * $query->filterByMinimumPriceStartDate(array('max' => 'yesterday')); // WHERE minimum_price_start_date > '2011-03-13'
-     * </code>
-     *
-     * @param     mixed $minimumPriceStartDate The value to use as filter.
-     *              Values can be integers (unix timestamps), DateTime objects, or strings.
-     *              Empty strings are treated as NULL.
-     *              Use scalar values for equality.
-     *              Use array values for in_array() equivalent.
-     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return EtablissementTypeHebergementQuery The current query, for fluid interface
-     */
-    public function filterByMinimumPriceStartDate($minimumPriceStartDate = null, $comparison = null)
-    {
-        if (is_array($minimumPriceStartDate)) {
-            $useMinMax = false;
-            if (isset($minimumPriceStartDate['min'])) {
-                $this->addUsingAlias(EtablissementTypeHebergementPeer::MINIMUM_PRICE_START_DATE, $minimumPriceStartDate['min'], Criteria::GREATER_EQUAL);
-                $useMinMax = true;
-            }
-            if (isset($minimumPriceStartDate['max'])) {
-                $this->addUsingAlias(EtablissementTypeHebergementPeer::MINIMUM_PRICE_START_DATE, $minimumPriceStartDate['max'], Criteria::LESS_EQUAL);
-                $useMinMax = true;
-            }
-            if ($useMinMax) {
-                return $this;
-            }
-            if (null === $comparison) {
-                $comparison = Criteria::IN;
-            }
-        }
-
-        return $this->addUsingAlias(EtablissementTypeHebergementPeer::MINIMUM_PRICE_START_DATE, $minimumPriceStartDate, $comparison);
-    }
-
-    /**
-     * Filter the query on the minimum_price_end_date column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByMinimumPriceEndDate('2011-03-14'); // WHERE minimum_price_end_date = '2011-03-14'
-     * $query->filterByMinimumPriceEndDate('now'); // WHERE minimum_price_end_date = '2011-03-14'
-     * $query->filterByMinimumPriceEndDate(array('max' => 'yesterday')); // WHERE minimum_price_end_date > '2011-03-13'
-     * </code>
-     *
-     * @param     mixed $minimumPriceEndDate The value to use as filter.
-     *              Values can be integers (unix timestamps), DateTime objects, or strings.
-     *              Empty strings are treated as NULL.
-     *              Use scalar values for equality.
-     *              Use array values for in_array() equivalent.
-     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return EtablissementTypeHebergementQuery The current query, for fluid interface
-     */
-    public function filterByMinimumPriceEndDate($minimumPriceEndDate = null, $comparison = null)
-    {
-        if (is_array($minimumPriceEndDate)) {
-            $useMinMax = false;
-            if (isset($minimumPriceEndDate['min'])) {
-                $this->addUsingAlias(EtablissementTypeHebergementPeer::MINIMUM_PRICE_END_DATE, $minimumPriceEndDate['min'], Criteria::GREATER_EQUAL);
-                $useMinMax = true;
-            }
-            if (isset($minimumPriceEndDate['max'])) {
-                $this->addUsingAlias(EtablissementTypeHebergementPeer::MINIMUM_PRICE_END_DATE, $minimumPriceEndDate['max'], Criteria::LESS_EQUAL);
-                $useMinMax = true;
-            }
-            if ($useMinMax) {
-                return $this;
-            }
-            if (null === $comparison) {
-                $comparison = Criteria::IN;
-            }
-        }
-
-        return $this->addUsingAlias(EtablissementTypeHebergementPeer::MINIMUM_PRICE_END_DATE, $minimumPriceEndDate, $comparison);
     }
 
     /**
@@ -492,7 +396,7 @@ abstract class BaseEtablissementTypeHebergementQuery extends ModelCriteria
      *
      * @return EtablissementTypeHebergementQuery The current query, for fluid interface
      */
-    public function joinEtablissement($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    public function joinEtablissement($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
     {
         $tableMap = $this->getTableMap();
         $relationMap = $tableMap->getRelation('Etablissement');
@@ -527,7 +431,7 @@ abstract class BaseEtablissementTypeHebergementQuery extends ModelCriteria
      *
      * @return   \Cungfoo\Model\EtablissementQuery A secondary query class using the current class as primary query
      */
-    public function useEtablissementQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    public function useEtablissementQuery($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
     {
         return $this
             ->joinEtablissement($relationAlias, $joinType)
@@ -568,7 +472,7 @@ abstract class BaseEtablissementTypeHebergementQuery extends ModelCriteria
      *
      * @return EtablissementTypeHebergementQuery The current query, for fluid interface
      */
-    public function joinTypeHebergement($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    public function joinTypeHebergement($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
     {
         $tableMap = $this->getTableMap();
         $relationMap = $tableMap->getRelation('TypeHebergement');
@@ -603,11 +507,85 @@ abstract class BaseEtablissementTypeHebergementQuery extends ModelCriteria
      *
      * @return   \Cungfoo\Model\TypeHebergementQuery A secondary query class using the current class as primary query
      */
-    public function useTypeHebergementQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    public function useTypeHebergementQuery($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
     {
         return $this
             ->joinTypeHebergement($relationAlias, $joinType)
             ->useQuery($relationAlias ? $relationAlias : 'TypeHebergement', '\Cungfoo\Model\TypeHebergementQuery');
+    }
+
+    /**
+     * Filter the query by a related EtablissementTypeHebergementI18n object
+     *
+     * @param   EtablissementTypeHebergementI18n|PropelObjectCollection $etablissementTypeHebergementI18n  the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   EtablissementTypeHebergementQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByEtablissementTypeHebergementI18n($etablissementTypeHebergementI18n, $comparison = null)
+    {
+        if ($etablissementTypeHebergementI18n instanceof EtablissementTypeHebergementI18n) {
+            return $this
+                ->addUsingAlias(EtablissementTypeHebergementPeer::ID, $etablissementTypeHebergementI18n->getId(), $comparison);
+        } elseif ($etablissementTypeHebergementI18n instanceof PropelObjectCollection) {
+            return $this
+                ->useEtablissementTypeHebergementI18nQuery()
+                ->filterByPrimaryKeys($etablissementTypeHebergementI18n->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByEtablissementTypeHebergementI18n() only accepts arguments of type EtablissementTypeHebergementI18n or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the EtablissementTypeHebergementI18n relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return EtablissementTypeHebergementQuery The current query, for fluid interface
+     */
+    public function joinEtablissementTypeHebergementI18n($relationAlias = null, $joinType = 'LEFT JOIN')
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('EtablissementTypeHebergementI18n');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'EtablissementTypeHebergementI18n');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the EtablissementTypeHebergementI18n relation EtablissementTypeHebergementI18n object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\EtablissementTypeHebergementI18nQuery A secondary query class using the current class as primary query
+     */
+    public function useEtablissementTypeHebergementI18nQuery($relationAlias = null, $joinType = 'LEFT JOIN')
+    {
+        return $this
+            ->joinEtablissementTypeHebergementI18n($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'EtablissementTypeHebergementI18n', '\Cungfoo\Model\EtablissementTypeHebergementI18nQuery');
     }
 
     /**
@@ -620,12 +598,67 @@ abstract class BaseEtablissementTypeHebergementQuery extends ModelCriteria
     public function prune($etablissementTypeHebergement = null)
     {
         if ($etablissementTypeHebergement) {
-            $this->addCond('pruneCond0', $this->getAliasedColName(EtablissementTypeHebergementPeer::ETABLISSEMENT_ID), $etablissementTypeHebergement->getEtablissementId(), Criteria::NOT_EQUAL);
-            $this->addCond('pruneCond1', $this->getAliasedColName(EtablissementTypeHebergementPeer::TYPE_HEBERGEMENT_ID), $etablissementTypeHebergement->getTypeHebergementId(), Criteria::NOT_EQUAL);
-            $this->combine(array('pruneCond0', 'pruneCond1'), Criteria::LOGICAL_OR);
+            $this->addUsingAlias(EtablissementTypeHebergementPeer::ID, $etablissementTypeHebergement->getId(), Criteria::NOT_EQUAL);
         }
 
         return $this;
+    }
+
+    // i18n behavior
+
+    /**
+     * Adds a JOIN clause to the query using the i18n relation
+     *
+     * @param     string $locale Locale to use for the join condition, e.g. 'fr_FR'
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
+     *
+     * @return    EtablissementTypeHebergementQuery The current query, for fluid interface
+     */
+    public function joinI18n($locale = 'fr', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        $relationName = $relationAlias ? $relationAlias : 'EtablissementTypeHebergementI18n';
+
+        return $this
+            ->joinEtablissementTypeHebergementI18n($relationAlias, $joinType)
+            ->addJoinCondition($relationName, $relationName . '.Locale = ?', $locale);
+    }
+
+    /**
+     * Adds a JOIN clause to the query and hydrates the related I18n object.
+     * Shortcut for $c->joinI18n($locale)->with()
+     *
+     * @param     string $locale Locale to use for the join condition, e.g. 'fr_FR'
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
+     *
+     * @return    EtablissementTypeHebergementQuery The current query, for fluid interface
+     */
+    public function joinWithI18n($locale = 'fr', $joinType = Criteria::LEFT_JOIN)
+    {
+        $this
+            ->joinI18n($locale, null, $joinType)
+            ->with('EtablissementTypeHebergementI18n');
+        $this->with['EtablissementTypeHebergementI18n']->setIsWithOneToMany(false);
+
+        return $this;
+    }
+
+    /**
+     * Use the I18n relation query object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $locale Locale to use for the join condition, e.g. 'fr_FR'
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
+     *
+     * @return    EtablissementTypeHebergementI18nQuery A secondary query class using the current class as primary query
+     */
+    public function useI18nQuery($locale = 'fr', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        return $this
+            ->joinI18n($locale, $relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'EtablissementTypeHebergementI18n', 'Cungfoo\Model\EtablissementTypeHebergementI18nQuery');
     }
 
 }

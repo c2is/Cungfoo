@@ -18,4 +18,17 @@ use Cungfoo\Model\om\BasePaysPeer;
  */
 class PaysPeer extends BasePaysPeer
 {
+    public static function assertUrl($locale = 'fr')
+    {
+        $objects = PaysQuery::create()
+            ->useI18nQuery($locale)
+            ->withColumn('pays_i18n.slug', 'slug')
+            ->endUse()
+            ->select('slug')
+            ->findActive()
+            ->toArray()
+        ;
+
+        return implode('|', $objects);
+    }
 }

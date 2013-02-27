@@ -23,6 +23,10 @@ use Cungfoo\Model\PointInteretI18n;
 use Cungfoo\Model\PointInteretI18nQuery;
 use Cungfoo\Model\PointInteretPeer;
 use Cungfoo\Model\PointInteretQuery;
+use Cungfoo\Model\Region;
+use Cungfoo\Model\RegionPointInteret;
+use Cungfoo\Model\RegionPointInteretQuery;
+use Cungfoo\Model\RegionQuery;
 use Propel\BaseObject;
 
 /**
@@ -163,6 +167,12 @@ abstract class BasePointInteret extends BaseObject implements Persistent
     protected $collEtablissementPointInteretsPartial;
 
     /**
+     * @var        PropelObjectCollection|RegionPointInteret[] Collection to store aggregation of RegionPointInteret objects.
+     */
+    protected $collRegionPointInterets;
+    protected $collRegionPointInteretsPartial;
+
+    /**
      * @var        PropelObjectCollection|PointInteretI18n[] Collection to store aggregation of PointInteretI18n objects.
      */
     protected $collPointInteretI18ns;
@@ -172,6 +182,11 @@ abstract class BasePointInteret extends BaseObject implements Persistent
      * @var        PropelObjectCollection|Etablissement[] Collection to store aggregation of Etablissement objects.
      */
     protected $collEtablissements;
+
+    /**
+     * @var        PropelObjectCollection|Region[] Collection to store aggregation of Region objects.
+     */
+    protected $collRegions;
 
     /**
      * Flag to prevent endless save loop, if this object is referenced
@@ -211,7 +226,19 @@ abstract class BasePointInteret extends BaseObject implements Persistent
      * An array of objects scheduled for deletion.
      * @var		PropelObjectCollection
      */
+    protected $regionsScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
     protected $etablissementPointInteretsScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
+    protected $regionPointInteretsScheduledForDeletion = null;
 
     /**
      * An array of objects scheduled for deletion.
@@ -964,9 +991,12 @@ abstract class BasePointInteret extends BaseObject implements Persistent
 
             $this->collEtablissementPointInterets = null;
 
+            $this->collRegionPointInterets = null;
+
             $this->collPointInteretI18ns = null;
 
             $this->collEtablissements = null;
+            $this->collRegions = null;
         } // if (deep)
     }
 
@@ -1122,6 +1152,26 @@ abstract class BasePointInteret extends BaseObject implements Persistent
                 }
             }
 
+            if ($this->regionsScheduledForDeletion !== null) {
+                if (!$this->regionsScheduledForDeletion->isEmpty()) {
+                    $pks = array();
+                    $pk = $this->getPrimaryKey();
+                    foreach ($this->regionsScheduledForDeletion->getPrimaryKeys(false) as $remotePk) {
+                        $pks[] = array($remotePk, $pk);
+                    }
+                    RegionPointInteretQuery::create()
+                        ->filterByPrimaryKeys($pks)
+                        ->delete($con);
+                    $this->regionsScheduledForDeletion = null;
+                }
+
+                foreach ($this->getRegions() as $region) {
+                    if ($region->isModified()) {
+                        $region->save($con);
+                    }
+                }
+            }
+
             if ($this->etablissementPointInteretsScheduledForDeletion !== null) {
                 if (!$this->etablissementPointInteretsScheduledForDeletion->isEmpty()) {
                     EtablissementPointInteretQuery::create()
@@ -1133,6 +1183,23 @@ abstract class BasePointInteret extends BaseObject implements Persistent
 
             if ($this->collEtablissementPointInterets !== null) {
                 foreach ($this->collEtablissementPointInterets as $referrerFK) {
+                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
+                        $affectedRows += $referrerFK->save($con);
+                    }
+                }
+            }
+
+            if ($this->regionPointInteretsScheduledForDeletion !== null) {
+                if (!$this->regionPointInteretsScheduledForDeletion->isEmpty()) {
+                    RegionPointInteretQuery::create()
+                        ->filterByPrimaryKeys($this->regionPointInteretsScheduledForDeletion->getPrimaryKeys(false))
+                        ->delete($con);
+                    $this->regionPointInteretsScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collRegionPointInterets !== null) {
+                foreach ($this->collRegionPointInterets as $referrerFK) {
                     if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
                         $affectedRows += $referrerFK->save($con);
                     }
@@ -1402,6 +1469,14 @@ abstract class BasePointInteret extends BaseObject implements Persistent
                     }
                 }
 
+                if ($this->collRegionPointInterets !== null) {
+                    foreach ($this->collRegionPointInterets as $referrerFK) {
+                        if (!$referrerFK->validate($columns)) {
+                            $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
+                        }
+                    }
+                }
+
                 if ($this->collPointInteretI18ns !== null) {
                     foreach ($this->collPointInteretI18ns as $referrerFK) {
                         if (!$referrerFK->validate($columns)) {
@@ -1546,6 +1621,9 @@ abstract class BasePointInteret extends BaseObject implements Persistent
         if ($includeForeignObjects) {
             if (null !== $this->collEtablissementPointInterets) {
                 $result['EtablissementPointInterets'] = $this->collEtablissementPointInterets->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
+            }
+            if (null !== $this->collRegionPointInterets) {
+                $result['RegionPointInterets'] = $this->collRegionPointInterets->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
             if (null !== $this->collPointInteretI18ns) {
                 $result['PointInteretI18ns'] = $this->collPointInteretI18ns->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
@@ -1797,6 +1875,12 @@ abstract class BasePointInteret extends BaseObject implements Persistent
                 }
             }
 
+            foreach ($this->getRegionPointInterets() as $relObj) {
+                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
+                    $copyObj->addRegionPointInteret($relObj->copy($deepCopy));
+                }
+            }
+
             foreach ($this->getPointInteretI18ns() as $relObj) {
                 if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
                     $copyObj->addPointInteretI18n($relObj->copy($deepCopy));
@@ -1866,6 +1950,9 @@ abstract class BasePointInteret extends BaseObject implements Persistent
     {
         if ('EtablissementPointInteret' == $relationName) {
             $this->initEtablissementPointInterets();
+        }
+        if ('RegionPointInteret' == $relationName) {
+            $this->initRegionPointInterets();
         }
         if ('PointInteretI18n' == $relationName) {
             $this->initPointInteretI18ns();
@@ -2110,6 +2197,246 @@ abstract class BasePointInteret extends BaseObject implements Persistent
         $query->joinWith('Etablissement', $join_behavior);
 
         return $this->getEtablissementPointInterets($query, $con);
+    }
+
+    /**
+     * Clears out the collRegionPointInterets collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return PointInteret The current object (for fluent API support)
+     * @see        addRegionPointInterets()
+     */
+    public function clearRegionPointInterets()
+    {
+        $this->collRegionPointInterets = null; // important to set this to null since that means it is uninitialized
+        $this->collRegionPointInteretsPartial = null;
+
+        return $this;
+    }
+
+    /**
+     * reset is the collRegionPointInterets collection loaded partially
+     *
+     * @return void
+     */
+    public function resetPartialRegionPointInterets($v = true)
+    {
+        $this->collRegionPointInteretsPartial = $v;
+    }
+
+    /**
+     * Initializes the collRegionPointInterets collection.
+     *
+     * By default this just sets the collRegionPointInterets collection to an empty array (like clearcollRegionPointInterets());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @param boolean $overrideExisting If set to true, the method call initializes
+     *                                        the collection even if it is not empty
+     *
+     * @return void
+     */
+    public function initRegionPointInterets($overrideExisting = true)
+    {
+        if (null !== $this->collRegionPointInterets && !$overrideExisting) {
+            return;
+        }
+        $this->collRegionPointInterets = new PropelObjectCollection();
+        $this->collRegionPointInterets->setModel('RegionPointInteret');
+    }
+
+    /**
+     * Gets an array of RegionPointInteret objects which contain a foreign key that references this object.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this PointInteret is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @return PropelObjectCollection|RegionPointInteret[] List of RegionPointInteret objects
+     * @throws PropelException
+     */
+    public function getRegionPointInterets($criteria = null, PropelPDO $con = null)
+    {
+        $partial = $this->collRegionPointInteretsPartial && !$this->isNew();
+        if (null === $this->collRegionPointInterets || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collRegionPointInterets) {
+                // return empty collection
+                $this->initRegionPointInterets();
+            } else {
+                $collRegionPointInterets = RegionPointInteretQuery::create(null, $criteria)
+                    ->filterByPointInteret($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    if (false !== $this->collRegionPointInteretsPartial && count($collRegionPointInterets)) {
+                      $this->initRegionPointInterets(false);
+
+                      foreach($collRegionPointInterets as $obj) {
+                        if (false == $this->collRegionPointInterets->contains($obj)) {
+                          $this->collRegionPointInterets->append($obj);
+                        }
+                      }
+
+                      $this->collRegionPointInteretsPartial = true;
+                    }
+
+                    return $collRegionPointInterets;
+                }
+
+                if($partial && $this->collRegionPointInterets) {
+                    foreach($this->collRegionPointInterets as $obj) {
+                        if($obj->isNew()) {
+                            $collRegionPointInterets[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collRegionPointInterets = $collRegionPointInterets;
+                $this->collRegionPointInteretsPartial = false;
+            }
+        }
+
+        return $this->collRegionPointInterets;
+    }
+
+    /**
+     * Sets a collection of RegionPointInteret objects related by a one-to-many relationship
+     * to the current object.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $regionPointInterets A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     * @return PointInteret The current object (for fluent API support)
+     */
+    public function setRegionPointInterets(PropelCollection $regionPointInterets, PropelPDO $con = null)
+    {
+        $this->regionPointInteretsScheduledForDeletion = $this->getRegionPointInterets(new Criteria(), $con)->diff($regionPointInterets);
+
+        foreach ($this->regionPointInteretsScheduledForDeletion as $regionPointInteretRemoved) {
+            $regionPointInteretRemoved->setPointInteret(null);
+        }
+
+        $this->collRegionPointInterets = null;
+        foreach ($regionPointInterets as $regionPointInteret) {
+            $this->addRegionPointInteret($regionPointInteret);
+        }
+
+        $this->collRegionPointInterets = $regionPointInterets;
+        $this->collRegionPointInteretsPartial = false;
+
+        return $this;
+    }
+
+    /**
+     * Returns the number of related RegionPointInteret objects.
+     *
+     * @param Criteria $criteria
+     * @param boolean $distinct
+     * @param PropelPDO $con
+     * @return int             Count of related RegionPointInteret objects.
+     * @throws PropelException
+     */
+    public function countRegionPointInterets(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        $partial = $this->collRegionPointInteretsPartial && !$this->isNew();
+        if (null === $this->collRegionPointInterets || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collRegionPointInterets) {
+                return 0;
+            }
+
+            if($partial && !$criteria) {
+                return count($this->getRegionPointInterets());
+            }
+            $query = RegionPointInteretQuery::create(null, $criteria);
+            if ($distinct) {
+                $query->distinct();
+            }
+
+            return $query
+                ->filterByPointInteret($this)
+                ->count($con);
+        }
+
+        return count($this->collRegionPointInterets);
+    }
+
+    /**
+     * Method called to associate a RegionPointInteret object to this object
+     * through the RegionPointInteret foreign key attribute.
+     *
+     * @param    RegionPointInteret $l RegionPointInteret
+     * @return PointInteret The current object (for fluent API support)
+     */
+    public function addRegionPointInteret(RegionPointInteret $l)
+    {
+        if ($this->collRegionPointInterets === null) {
+            $this->initRegionPointInterets();
+            $this->collRegionPointInteretsPartial = true;
+        }
+        if (!in_array($l, $this->collRegionPointInterets->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
+            $this->doAddRegionPointInteret($l);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	RegionPointInteret $regionPointInteret The regionPointInteret object to add.
+     */
+    protected function doAddRegionPointInteret($regionPointInteret)
+    {
+        $this->collRegionPointInterets[]= $regionPointInteret;
+        $regionPointInteret->setPointInteret($this);
+    }
+
+    /**
+     * @param	RegionPointInteret $regionPointInteret The regionPointInteret object to remove.
+     * @return PointInteret The current object (for fluent API support)
+     */
+    public function removeRegionPointInteret($regionPointInteret)
+    {
+        if ($this->getRegionPointInterets()->contains($regionPointInteret)) {
+            $this->collRegionPointInterets->remove($this->collRegionPointInterets->search($regionPointInteret));
+            if (null === $this->regionPointInteretsScheduledForDeletion) {
+                $this->regionPointInteretsScheduledForDeletion = clone $this->collRegionPointInterets;
+                $this->regionPointInteretsScheduledForDeletion->clear();
+            }
+            $this->regionPointInteretsScheduledForDeletion[]= $regionPointInteret;
+            $regionPointInteret->setPointInteret(null);
+        }
+
+        return $this;
+    }
+
+
+    /**
+     * If this collection has already been initialized with
+     * an identical criteria, it returns the collection.
+     * Otherwise if this PointInteret is new, it will return
+     * an empty collection; or if this PointInteret has previously
+     * been saved, it will retrieve related RegionPointInterets from storage.
+     *
+     * This method is protected by default in order to keep the public
+     * api reasonable.  You can provide public methods for those you
+     * actually need in PointInteret.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @param string $join_behavior optional join type to use (defaults to Criteria::LEFT_JOIN)
+     * @return PropelObjectCollection|RegionPointInteret[] List of RegionPointInteret objects
+     */
+    public function getRegionPointInteretsJoinRegion($criteria = null, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    {
+        $query = RegionPointInteretQuery::create(null, $criteria);
+        $query->joinWith('Region', $join_behavior);
+
+        return $this->getRegionPointInterets($query, $con);
     }
 
     /**
@@ -2509,6 +2836,183 @@ abstract class BasePointInteret extends BaseObject implements Persistent
     }
 
     /**
+     * Clears out the collRegions collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return PointInteret The current object (for fluent API support)
+     * @see        addRegions()
+     */
+    public function clearRegions()
+    {
+        $this->collRegions = null; // important to set this to null since that means it is uninitialized
+        $this->collRegionsPartial = null;
+
+        return $this;
+    }
+
+    /**
+     * Initializes the collRegions collection.
+     *
+     * By default this just sets the collRegions collection to an empty collection (like clearRegions());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @return void
+     */
+    public function initRegions()
+    {
+        $this->collRegions = new PropelObjectCollection();
+        $this->collRegions->setModel('Region');
+    }
+
+    /**
+     * Gets a collection of Region objects related by a many-to-many relationship
+     * to the current object by way of the region_point_interet cross-reference table.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this PointInteret is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria Optional query object to filter the query
+     * @param PropelPDO $con Optional connection object
+     *
+     * @return PropelObjectCollection|Region[] List of Region objects
+     */
+    public function getRegions($criteria = null, PropelPDO $con = null)
+    {
+        if (null === $this->collRegions || null !== $criteria) {
+            if ($this->isNew() && null === $this->collRegions) {
+                // return empty collection
+                $this->initRegions();
+            } else {
+                $collRegions = RegionQuery::create(null, $criteria)
+                    ->filterByPointInteret($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    return $collRegions;
+                }
+                $this->collRegions = $collRegions;
+            }
+        }
+
+        return $this->collRegions;
+    }
+
+    /**
+     * Sets a collection of Region objects related by a many-to-many relationship
+     * to the current object by way of the region_point_interet cross-reference table.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $regions A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     * @return PointInteret The current object (for fluent API support)
+     */
+    public function setRegions(PropelCollection $regions, PropelPDO $con = null)
+    {
+        $this->clearRegions();
+        $currentRegions = $this->getRegions();
+
+        $this->regionsScheduledForDeletion = $currentRegions->diff($regions);
+
+        foreach ($regions as $region) {
+            if (!$currentRegions->contains($region)) {
+                $this->doAddRegion($region);
+            }
+        }
+
+        $this->collRegions = $regions;
+
+        return $this;
+    }
+
+    /**
+     * Gets the number of Region objects related by a many-to-many relationship
+     * to the current object by way of the region_point_interet cross-reference table.
+     *
+     * @param Criteria $criteria Optional query object to filter the query
+     * @param boolean $distinct Set to true to force count distinct
+     * @param PropelPDO $con Optional connection object
+     *
+     * @return int the number of related Region objects
+     */
+    public function countRegions($criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        if (null === $this->collRegions || null !== $criteria) {
+            if ($this->isNew() && null === $this->collRegions) {
+                return 0;
+            } else {
+                $query = RegionQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
+
+                return $query
+                    ->filterByPointInteret($this)
+                    ->count($con);
+            }
+        } else {
+            return count($this->collRegions);
+        }
+    }
+
+    /**
+     * Associate a Region object to this object
+     * through the region_point_interet cross reference table.
+     *
+     * @param  Region $region The RegionPointInteret object to relate
+     * @return PointInteret The current object (for fluent API support)
+     */
+    public function addRegion(Region $region)
+    {
+        if ($this->collRegions === null) {
+            $this->initRegions();
+        }
+        if (!$this->collRegions->contains($region)) { // only add it if the **same** object is not already associated
+            $this->doAddRegion($region);
+
+            $this->collRegions[]= $region;
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	Region $region The region object to add.
+     */
+    protected function doAddRegion($region)
+    {
+        $regionPointInteret = new RegionPointInteret();
+        $regionPointInteret->setRegion($region);
+        $this->addRegionPointInteret($regionPointInteret);
+    }
+
+    /**
+     * Remove a Region object to this object
+     * through the region_point_interet cross reference table.
+     *
+     * @param Region $region The RegionPointInteret object to relate
+     * @return PointInteret The current object (for fluent API support)
+     */
+    public function removeRegion(Region $region)
+    {
+        if ($this->getRegions()->contains($region)) {
+            $this->collRegions->remove($this->collRegions->search($region));
+            if (null === $this->regionsScheduledForDeletion) {
+                $this->regionsScheduledForDeletion = clone $this->collRegions;
+                $this->regionsScheduledForDeletion->clear();
+            }
+            $this->regionsScheduledForDeletion[]= $region;
+        }
+
+        return $this;
+    }
+
+    /**
      * Clears the current object and sets all attributes to their default values
      */
     public function clear()
@@ -2556,6 +3060,11 @@ abstract class BasePointInteret extends BaseObject implements Persistent
                     $o->clearAllReferences($deep);
                 }
             }
+            if ($this->collRegionPointInterets) {
+                foreach ($this->collRegionPointInterets as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
             if ($this->collPointInteretI18ns) {
                 foreach ($this->collPointInteretI18ns as $o) {
                     $o->clearAllReferences($deep);
@@ -2563,6 +3072,11 @@ abstract class BasePointInteret extends BaseObject implements Persistent
             }
             if ($this->collEtablissements) {
                 foreach ($this->collEtablissements as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
+            if ($this->collRegions) {
+                foreach ($this->collRegions as $o) {
                     $o->clearAllReferences($deep);
                 }
             }
@@ -2576,6 +3090,10 @@ abstract class BasePointInteret extends BaseObject implements Persistent
             $this->collEtablissementPointInterets->clearIterator();
         }
         $this->collEtablissementPointInterets = null;
+        if ($this->collRegionPointInterets instanceof PropelCollection) {
+            $this->collRegionPointInterets->clearIterator();
+        }
+        $this->collRegionPointInterets = null;
         if ($this->collPointInteretI18ns instanceof PropelCollection) {
             $this->collPointInteretI18ns->clearIterator();
         }
@@ -2584,6 +3102,10 @@ abstract class BasePointInteret extends BaseObject implements Persistent
             $this->collEtablissements->clearIterator();
         }
         $this->collEtablissements = null;
+        if ($this->collRegions instanceof PropelCollection) {
+            $this->collRegions->clearIterator();
+        }
+        $this->collRegions = null;
     }
 
     /**
@@ -2659,6 +3181,24 @@ abstract class BasePointInteret extends BaseObject implements Persistent
         $criteria->add(\Cungfoo\Model\EtablissementI18nPeer::alias('i18n_locale', \Cungfoo\Model\EtablissementI18nPeer::LOCALE), $this->currentLocale);
 
         return $this->getEtablissements($criteria, $con);
+    }
+
+    public function getRegionsActive($criteria = null, PropelPDO $con = null)
+    {
+        if ($criteria === null)
+        {
+            $criteria = new \Criteria();
+        }
+
+        $criteria->add(\Cungfoo\Model\RegionPeer::ACTIVE, true);
+
+
+        $criteria->addAlias('i18n_locale', \Cungfoo\Model\RegionI18nPeer::TABLE_NAME);
+        $criteria->addJoin(\Cungfoo\Model\RegionPeer::ID, \Cungfoo\Model\RegionI18nPeer::alias('i18n_locale', \Cungfoo\Model\RegionI18nPeer::ID), \Criteria::LEFT_JOIN);
+        $criteria->add(\Cungfoo\Model\RegionI18nPeer::alias('i18n_locale', \Cungfoo\Model\RegionI18nPeer::ACTIVE_LOCALE), true);
+        $criteria->add(\Cungfoo\Model\RegionI18nPeer::alias('i18n_locale', \Cungfoo\Model\RegionI18nPeer::LOCALE), $this->currentLocale);
+
+        return $this->getRegions($criteria, $con);
     }
     // i18n behavior
 
@@ -2899,6 +3439,146 @@ abstract class BasePointInteret extends BaseObject implements Persistent
          */
         public function setSlug($v)
         {    $this->getCurrentTranslation()->setSlug($v);
+
+        return $this;
+    }
+
+    /**
+     * Get the [seo_title] column value.
+     *
+     * @return string
+     */
+    public function getSeoTitle()
+    {
+        if (trim($this->getCurrentTranslation()->getSeoTitle()))
+        {
+            return trim($this->getCurrentTranslation()->getSeoTitle());
+        }
+
+        $peerClassName = self::PEER;
+        if ($peerClassName::getSeo())
+        {
+            return $peerClassName::getSeo($this->currentLocale)->getSeoTitle();
+        }
+
+        return '';
+    }
+
+
+
+        /**
+         * Set the value of [seo_title] column.
+         *
+         * @param string $v new value
+         * @return PointInteretI18n The current object (for fluent API support)
+         */
+        public function setSeoTitle($v)
+        {    $this->getCurrentTranslation()->setSeoTitle($v);
+
+        return $this;
+    }
+
+    /**
+     * Get the [seo_description] column value.
+     *
+     * @return string
+     */
+    public function getSeoDescription()
+    {
+        if (trim($this->getCurrentTranslation()->getSeoDescription()))
+        {
+            return trim($this->getCurrentTranslation()->getSeoDescription());
+        }
+
+        $peerClassName = self::PEER;
+        if ($peerClassName::getSeo())
+        {
+            return $peerClassName::getSeo($this->currentLocale)->getSeoDescription();
+        }
+
+        return '';
+    }
+
+
+
+        /**
+         * Set the value of [seo_description] column.
+         *
+         * @param string $v new value
+         * @return PointInteretI18n The current object (for fluent API support)
+         */
+        public function setSeoDescription($v)
+        {    $this->getCurrentTranslation()->setSeoDescription($v);
+
+        return $this;
+    }
+
+    /**
+     * Get the [seo_h1] column value.
+     *
+     * @return string
+     */
+    public function getSeoH1()
+    {
+        if (trim($this->getCurrentTranslation()->getSeoH1()))
+        {
+            return trim($this->getCurrentTranslation()->getSeoH1());
+        }
+
+        $peerClassName = self::PEER;
+        if ($peerClassName::getSeo())
+        {
+            return $peerClassName::getSeo($this->currentLocale)->getSeoH1();
+        }
+
+        return '';
+    }
+
+
+
+        /**
+         * Set the value of [seo_h1] column.
+         *
+         * @param string $v new value
+         * @return PointInteretI18n The current object (for fluent API support)
+         */
+        public function setSeoH1($v)
+        {    $this->getCurrentTranslation()->setSeoH1($v);
+
+        return $this;
+    }
+
+    /**
+     * Get the [seo_keywords] column value.
+     *
+     * @return string
+     */
+    public function getSeoKeywords()
+    {
+        if (trim($this->getCurrentTranslation()->getSeoKeywords()))
+        {
+            return trim($this->getCurrentTranslation()->getSeoKeywords());
+        }
+
+        $peerClassName = self::PEER;
+        if ($peerClassName::getSeo())
+        {
+            return $peerClassName::getSeo($this->currentLocale)->getSeoKeywords();
+        }
+
+        return '';
+    }
+
+
+
+        /**
+         * Set the value of [seo_keywords] column.
+         *
+         * @param string $v new value
+         * @return PointInteretI18n The current object (for fluent API support)
+         */
+        public function setSeoKeywords($v)
+        {    $this->getCurrentTranslation()->setSeoKeywords($v);
 
         return $this;
     }

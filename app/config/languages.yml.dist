@@ -3,7 +3,9 @@ languages:
         name:  locale.french
         domain: ##domain_fr##
         resalys_username: web_fr
+        resalys_flow_name: "prix_min"
     de:
         name:  locale.german
         domain: ##domain_de##
         resalys_username: web_de
+        resalys_flow_name: "prix_min_de"

@@ -42,6 +42,7 @@ class TopCampingType extends BaseTopCampingType
                     'title'         => 'crud.tab.datas',
                     'content'       => array(
                         'etablissement',
+                        'top_campingI18ns',
                     )
                 ),
                 array(

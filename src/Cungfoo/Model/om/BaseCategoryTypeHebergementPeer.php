@@ -68,11 +68,11 @@ abstract class BaseCategoryTypeHebergementPeer
     /** the column name for the updated_at field */
     const UPDATED_AT = 'category_type_hebergement.updated_at';
 
-    /** the column name for the active field */
-    const ACTIVE = 'category_type_hebergement.active';
-
     /** the column name for the sortable_rank field */
     const SORTABLE_RANK = 'category_type_hebergement.sortable_rank';
+
+    /** the column name for the active field */
+    const ACTIVE = 'category_type_hebergement.active';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -107,11 +107,11 @@ abstract class BaseCategoryTypeHebergementPeer
      * e.g. CategoryTypeHebergementPeer::$fieldNames[CategoryTypeHebergementPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'MinimumPrice', 'ImageMenu', 'ImagePage', 'CreatedAt', 'UpdatedAt', 'Active', 'SortableRank', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'minimumPrice', 'imageMenu', 'imagePage', 'createdAt', 'updatedAt', 'active', 'sortableRank', ),
-        BasePeer::TYPE_COLNAME => array (CategoryTypeHebergementPeer::ID, CategoryTypeHebergementPeer::CODE, CategoryTypeHebergementPeer::MINIMUM_PRICE, CategoryTypeHebergementPeer::IMAGE_MENU, CategoryTypeHebergementPeer::IMAGE_PAGE, CategoryTypeHebergementPeer::CREATED_AT, CategoryTypeHebergementPeer::UPDATED_AT, CategoryTypeHebergementPeer::ACTIVE, CategoryTypeHebergementPeer::SORTABLE_RANK, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'MINIMUM_PRICE', 'IMAGE_MENU', 'IMAGE_PAGE', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', 'SORTABLE_RANK', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'minimum_price', 'image_menu', 'image_page', 'created_at', 'updated_at', 'active', 'sortable_rank', ),
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'MinimumPrice', 'ImageMenu', 'ImagePage', 'CreatedAt', 'UpdatedAt', 'SortableRank', 'Active', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'minimumPrice', 'imageMenu', 'imagePage', 'createdAt', 'updatedAt', 'sortableRank', 'active', ),
+        BasePeer::TYPE_COLNAME => array (CategoryTypeHebergementPeer::ID, CategoryTypeHebergementPeer::CODE, CategoryTypeHebergementPeer::MINIMUM_PRICE, CategoryTypeHebergementPeer::IMAGE_MENU, CategoryTypeHebergementPeer::IMAGE_PAGE, CategoryTypeHebergementPeer::CREATED_AT, CategoryTypeHebergementPeer::UPDATED_AT, CategoryTypeHebergementPeer::SORTABLE_RANK, CategoryTypeHebergementPeer::ACTIVE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'MINIMUM_PRICE', 'IMAGE_MENU', 'IMAGE_PAGE', 'CREATED_AT', 'UPDATED_AT', 'SORTABLE_RANK', 'ACTIVE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'minimum_price', 'image_menu', 'image_page', 'created_at', 'updated_at', 'sortable_rank', 'active', ),
         BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, )
     );
 
@@ -122,11 +122,11 @@ abstract class BaseCategoryTypeHebergementPeer
      * e.g. CategoryTypeHebergementPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'MinimumPrice' => 2, 'ImageMenu' => 3, 'ImagePage' => 4, 'CreatedAt' => 5, 'UpdatedAt' => 6, 'Active' => 7, 'SortableRank' => 8, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'minimumPrice' => 2, 'imageMenu' => 3, 'imagePage' => 4, 'createdAt' => 5, 'updatedAt' => 6, 'active' => 7, 'sortableRank' => 8, ),
-        BasePeer::TYPE_COLNAME => array (CategoryTypeHebergementPeer::ID => 0, CategoryTypeHebergementPeer::CODE => 1, CategoryTypeHebergementPeer::MINIMUM_PRICE => 2, CategoryTypeHebergementPeer::IMAGE_MENU => 3, CategoryTypeHebergementPeer::IMAGE_PAGE => 4, CategoryTypeHebergementPeer::CREATED_AT => 5, CategoryTypeHebergementPeer::UPDATED_AT => 6, CategoryTypeHebergementPeer::ACTIVE => 7, CategoryTypeHebergementPeer::SORTABLE_RANK => 8, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'MINIMUM_PRICE' => 2, 'IMAGE_MENU' => 3, 'IMAGE_PAGE' => 4, 'CREATED_AT' => 5, 'UPDATED_AT' => 6, 'ACTIVE' => 7, 'SORTABLE_RANK' => 8, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'minimum_price' => 2, 'image_menu' => 3, 'image_page' => 4, 'created_at' => 5, 'updated_at' => 6, 'active' => 7, 'sortable_rank' => 8, ),
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'MinimumPrice' => 2, 'ImageMenu' => 3, 'ImagePage' => 4, 'CreatedAt' => 5, 'UpdatedAt' => 6, 'SortableRank' => 7, 'Active' => 8, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'minimumPrice' => 2, 'imageMenu' => 3, 'imagePage' => 4, 'createdAt' => 5, 'updatedAt' => 6, 'sortableRank' => 7, 'active' => 8, ),
+        BasePeer::TYPE_COLNAME => array (CategoryTypeHebergementPeer::ID => 0, CategoryTypeHebergementPeer::CODE => 1, CategoryTypeHebergementPeer::MINIMUM_PRICE => 2, CategoryTypeHebergementPeer::IMAGE_MENU => 3, CategoryTypeHebergementPeer::IMAGE_PAGE => 4, CategoryTypeHebergementPeer::CREATED_AT => 5, CategoryTypeHebergementPeer::UPDATED_AT => 6, CategoryTypeHebergementPeer::SORTABLE_RANK => 7, CategoryTypeHebergementPeer::ACTIVE => 8, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'MINIMUM_PRICE' => 2, 'IMAGE_MENU' => 3, 'IMAGE_PAGE' => 4, 'CREATED_AT' => 5, 'UPDATED_AT' => 6, 'SORTABLE_RANK' => 7, 'ACTIVE' => 8, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'minimum_price' => 2, 'image_menu' => 3, 'image_page' => 4, 'created_at' => 5, 'updated_at' => 6, 'sortable_rank' => 7, 'active' => 8, ),
         BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, )
     );
 
@@ -208,8 +208,8 @@ abstract class BaseCategoryTypeHebergementPeer
             $criteria->addSelectColumn(CategoryTypeHebergementPeer::IMAGE_PAGE);
             $criteria->addSelectColumn(CategoryTypeHebergementPeer::CREATED_AT);
             $criteria->addSelectColumn(CategoryTypeHebergementPeer::UPDATED_AT);
-            $criteria->addSelectColumn(CategoryTypeHebergementPeer::ACTIVE);
             $criteria->addSelectColumn(CategoryTypeHebergementPeer::SORTABLE_RANK);
+            $criteria->addSelectColumn(CategoryTypeHebergementPeer::ACTIVE);
         } else {
             $criteria->addSelectColumn($alias . '.id');
             $criteria->addSelectColumn($alias . '.code');
@@ -218,8 +218,8 @@ abstract class BaseCategoryTypeHebergementPeer
             $criteria->addSelectColumn($alias . '.image_page');
             $criteria->addSelectColumn($alias . '.created_at');
             $criteria->addSelectColumn($alias . '.updated_at');
-            $criteria->addSelectColumn($alias . '.active');
             $criteria->addSelectColumn($alias . '.sortable_rank');
+            $criteria->addSelectColumn($alias . '.active');
         }
     }
 
@@ -958,6 +958,34 @@ abstract class BaseCategoryTypeHebergementPeer
         CategoryTypeHebergementPeer::clearInstancePool();
     }
 
+    // crudable behavior
+
+    /**
+     * The default locale to use for translations
+     * @var        string
+     */
+    public static function getMetadata($locale = 'fr', PropelPDO $con = null)
+    {
+        return \Cungfoo\Model\MetadataQuery::create()
+            ->joinWithI18n($locale)
+            ->filterByTableRef(CategoryTypeHebergementPeer::TABLE_NAME)
+            ->findOne()
+        ;
+    }
+    // seo behavior
+
+    /**
+     * The default locale to use for translations
+     * @var        string
+     */
+    public static function getSeo($locale = 'fr', PropelPDO $con = null)
+    {
+        return \Cungfoo\Model\SeoQuery::create()
+            ->joinWithI18n($locale)
+            ->filterByTableRef(CategoryTypeHebergementPeer::TABLE_NAME)
+            ->findOne()
+        ;
+    }
 } // BaseCategoryTypeHebergementPeer
 
 // This is the static code needed to register the TableMap for this table with the main Propel class.

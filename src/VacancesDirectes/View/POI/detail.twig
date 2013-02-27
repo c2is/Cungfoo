@@ -2,13 +2,13 @@
 
 {% block title %}
 {% spaceless %}
-    {{ "seo.title.poi" | trans ({'%poi%': poi.name, '%ville%': poi.city})}}
+    {{ poi.seoTitle | trans ({'%poi%': poi.name, '%ville%': poi.city})}}
 {% endspaceless %}
 {% endblock %}
 
 {% block metaDescription %}
 {% spaceless %}
-    {{ "seo.meta.poi" | trans  ({'%poi%': poi.name, '%ville%': poi.city})}}
+    {{ poi.seoDescription | trans  ({'%poi%': poi.name, '%ville%': poi.city})}}
 {% endspaceless %}
 {% endblock %}
 
@@ -68,8 +68,7 @@
 
 {% block bottomRightColumn %}
 <div id="greyBoxes">
-    {% include 'Bloc/sejour_reussi.twig' %}
-
-    {% include 'Bloc/informations.twig' %}
+    {{ esi(path('widget', {'name': 'sejour_reussi'})) }}
+    {{ esi(path('widget', {'name': 'reassurance'})) }}
 </div>
 {% endblock %}

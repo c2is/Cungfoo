@@ -37,13 +37,13 @@ abstract class BaseVilleI18nPeer
     const TM_CLASS = 'VilleI18nTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 7;
+    const NUM_COLUMNS = 11;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 7;
+    const NUM_HYDRATE_COLUMNS = 11;
 
     /** the column name for the id field */
     const ID = 'ville_i18n.id';
@@ -62,6 +62,18 @@ abstract class BaseVilleI18nPeer
 
     /** the column name for the description field */
     const DESCRIPTION = 'ville_i18n.description';
+
+    /** the column name for the seo_title field */
+    const SEO_TITLE = 'ville_i18n.seo_title';
+
+    /** the column name for the seo_description field */
+    const SEO_DESCRIPTION = 'ville_i18n.seo_description';
+
+    /** the column name for the seo_h1 field */
+    const SEO_H1 = 'ville_i18n.seo_h1';
+
+    /** the column name for the seo_keywords field */
+    const SEO_KEYWORDS = 'ville_i18n.seo_keywords';
 
     /** the column name for the active_locale field */
     const ACTIVE_LOCALE = 'ville_i18n.active_locale';
@@ -85,12 +97,12 @@ abstract class BaseVilleI18nPeer
      * e.g. VilleI18nPeer::$fieldNames[VilleI18nPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Slug', 'Name', 'Introduction', 'Description', 'ActiveLocale', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'slug', 'name', 'introduction', 'description', 'activeLocale', ),
-        BasePeer::TYPE_COLNAME => array (VilleI18nPeer::ID, VilleI18nPeer::LOCALE, VilleI18nPeer::SLUG, VilleI18nPeer::NAME, VilleI18nPeer::INTRODUCTION, VilleI18nPeer::DESCRIPTION, VilleI18nPeer::ACTIVE_LOCALE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'SLUG', 'NAME', 'INTRODUCTION', 'DESCRIPTION', 'ACTIVE_LOCALE', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'slug', 'name', 'introduction', 'description', 'active_locale', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Slug', 'Name', 'Introduction', 'Description', 'SeoTitle', 'SeoDescription', 'SeoH1', 'SeoKeywords', 'ActiveLocale', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'slug', 'name', 'introduction', 'description', 'seoTitle', 'seoDescription', 'seoH1', 'seoKeywords', 'activeLocale', ),
+        BasePeer::TYPE_COLNAME => array (VilleI18nPeer::ID, VilleI18nPeer::LOCALE, VilleI18nPeer::SLUG, VilleI18nPeer::NAME, VilleI18nPeer::INTRODUCTION, VilleI18nPeer::DESCRIPTION, VilleI18nPeer::SEO_TITLE, VilleI18nPeer::SEO_DESCRIPTION, VilleI18nPeer::SEO_H1, VilleI18nPeer::SEO_KEYWORDS, VilleI18nPeer::ACTIVE_LOCALE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'SLUG', 'NAME', 'INTRODUCTION', 'DESCRIPTION', 'SEO_TITLE', 'SEO_DESCRIPTION', 'SEO_H1', 'SEO_KEYWORDS', 'ACTIVE_LOCALE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'slug', 'name', 'introduction', 'description', 'seo_title', 'seo_description', 'seo_h1', 'seo_keywords', 'active_locale', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, )
     );
 
     /**
@@ -100,12 +112,12 @@ abstract class BaseVilleI18nPeer
      * e.g. VilleI18nPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Slug' => 2, 'Name' => 3, 'Introduction' => 4, 'Description' => 5, 'ActiveLocale' => 6, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'slug' => 2, 'name' => 3, 'introduction' => 4, 'description' => 5, 'activeLocale' => 6, ),
-        BasePeer::TYPE_COLNAME => array (VilleI18nPeer::ID => 0, VilleI18nPeer::LOCALE => 1, VilleI18nPeer::SLUG => 2, VilleI18nPeer::NAME => 3, VilleI18nPeer::INTRODUCTION => 4, VilleI18nPeer::DESCRIPTION => 5, VilleI18nPeer::ACTIVE_LOCALE => 6, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'SLUG' => 2, 'NAME' => 3, 'INTRODUCTION' => 4, 'DESCRIPTION' => 5, 'ACTIVE_LOCALE' => 6, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'slug' => 2, 'name' => 3, 'introduction' => 4, 'description' => 5, 'active_locale' => 6, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Slug' => 2, 'Name' => 3, 'Introduction' => 4, 'Description' => 5, 'SeoTitle' => 6, 'SeoDescription' => 7, 'SeoH1' => 8, 'SeoKeywords' => 9, 'ActiveLocale' => 10, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'slug' => 2, 'name' => 3, 'introduction' => 4, 'description' => 5, 'seoTitle' => 6, 'seoDescription' => 7, 'seoH1' => 8, 'seoKeywords' => 9, 'activeLocale' => 10, ),
+        BasePeer::TYPE_COLNAME => array (VilleI18nPeer::ID => 0, VilleI18nPeer::LOCALE => 1, VilleI18nPeer::SLUG => 2, VilleI18nPeer::NAME => 3, VilleI18nPeer::INTRODUCTION => 4, VilleI18nPeer::DESCRIPTION => 5, VilleI18nPeer::SEO_TITLE => 6, VilleI18nPeer::SEO_DESCRIPTION => 7, VilleI18nPeer::SEO_H1 => 8, VilleI18nPeer::SEO_KEYWORDS => 9, VilleI18nPeer::ACTIVE_LOCALE => 10, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'SLUG' => 2, 'NAME' => 3, 'INTRODUCTION' => 4, 'DESCRIPTION' => 5, 'SEO_TITLE' => 6, 'SEO_DESCRIPTION' => 7, 'SEO_H1' => 8, 'SEO_KEYWORDS' => 9, 'ACTIVE_LOCALE' => 10, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'slug' => 2, 'name' => 3, 'introduction' => 4, 'description' => 5, 'seo_title' => 6, 'seo_description' => 7, 'seo_h1' => 8, 'seo_keywords' => 9, 'active_locale' => 10, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, )
     );
 
     /**
@@ -185,6 +197,10 @@ abstract class BaseVilleI18nPeer
             $criteria->addSelectColumn(VilleI18nPeer::NAME);
             $criteria->addSelectColumn(VilleI18nPeer::INTRODUCTION);
             $criteria->addSelectColumn(VilleI18nPeer::DESCRIPTION);
+            $criteria->addSelectColumn(VilleI18nPeer::SEO_TITLE);
+            $criteria->addSelectColumn(VilleI18nPeer::SEO_DESCRIPTION);
+            $criteria->addSelectColumn(VilleI18nPeer::SEO_H1);
+            $criteria->addSelectColumn(VilleI18nPeer::SEO_KEYWORDS);
             $criteria->addSelectColumn(VilleI18nPeer::ACTIVE_LOCALE);
         } else {
             $criteria->addSelectColumn($alias . '.id');
@@ -193,6 +209,10 @@ abstract class BaseVilleI18nPeer
             $criteria->addSelectColumn($alias . '.name');
             $criteria->addSelectColumn($alias . '.introduction');
             $criteria->addSelectColumn($alias . '.description');
+            $criteria->addSelectColumn($alias . '.seo_title');
+            $criteria->addSelectColumn($alias . '.seo_description');
+            $criteria->addSelectColumn($alias . '.seo_h1');
+            $criteria->addSelectColumn($alias . '.seo_keywords');
             $criteria->addSelectColumn($alias . '.active_locale');
         }
     }

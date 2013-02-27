@@ -18,4 +18,17 @@ use Cungfoo\Model\om\BaseDestinationPeer;
  */
 class DestinationPeer extends BaseDestinationPeer
 {
+    public static function assertUrl($locale = 'fr')
+    {
+        $objects = DestinationQuery::create()
+            ->useI18nQuery($locale)
+            ->withColumn('destination_i18n.slug', 'slug')
+            ->endUse()
+            ->select('slug')
+            ->findActive()
+            ->toArray()
+        ;
+
+        return implode('|', $objects);
+    }
 }

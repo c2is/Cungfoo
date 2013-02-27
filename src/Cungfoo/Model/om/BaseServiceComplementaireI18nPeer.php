@@ -37,13 +37,13 @@ abstract class BaseServiceComplementaireI18nPeer
     const TM_CLASS = 'ServiceComplementaireI18nTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 6;
+    const NUM_COLUMNS = 10;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 6;
+    const NUM_HYDRATE_COLUMNS = 10;
 
     /** the column name for the id field */
     const ID = 'service_complementaire_i18n.id';
@@ -59,6 +59,18 @@ abstract class BaseServiceComplementaireI18nPeer
 
     /** the column name for the keywords field */
     const KEYWORDS = 'service_complementaire_i18n.keywords';
+
+    /** the column name for the seo_title field */
+    const SEO_TITLE = 'service_complementaire_i18n.seo_title';
+
+    /** the column name for the seo_description field */
+    const SEO_DESCRIPTION = 'service_complementaire_i18n.seo_description';
+
+    /** the column name for the seo_h1 field */
+    const SEO_H1 = 'service_complementaire_i18n.seo_h1';
+
+    /** the column name for the seo_keywords field */
+    const SEO_KEYWORDS = 'service_complementaire_i18n.seo_keywords';
 
     /** the column name for the active_locale field */
     const ACTIVE_LOCALE = 'service_complementaire_i18n.active_locale';
@@ -82,12 +94,12 @@ abstract class BaseServiceComplementaireI18nPeer
      * e.g. ServiceComplementaireI18nPeer::$fieldNames[ServiceComplementaireI18nPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Name', 'Description', 'Keywords', 'ActiveLocale', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'name', 'description', 'keywords', 'activeLocale', ),
-        BasePeer::TYPE_COLNAME => array (ServiceComplementaireI18nPeer::ID, ServiceComplementaireI18nPeer::LOCALE, ServiceComplementaireI18nPeer::NAME, ServiceComplementaireI18nPeer::DESCRIPTION, ServiceComplementaireI18nPeer::KEYWORDS, ServiceComplementaireI18nPeer::ACTIVE_LOCALE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'NAME', 'DESCRIPTION', 'KEYWORDS', 'ACTIVE_LOCALE', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'name', 'description', 'keywords', 'active_locale', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Name', 'Description', 'Keywords', 'SeoTitle', 'SeoDescription', 'SeoH1', 'SeoKeywords', 'ActiveLocale', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'name', 'description', 'keywords', 'seoTitle', 'seoDescription', 'seoH1', 'seoKeywords', 'activeLocale', ),
+        BasePeer::TYPE_COLNAME => array (ServiceComplementaireI18nPeer::ID, ServiceComplementaireI18nPeer::LOCALE, ServiceComplementaireI18nPeer::NAME, ServiceComplementaireI18nPeer::DESCRIPTION, ServiceComplementaireI18nPeer::KEYWORDS, ServiceComplementaireI18nPeer::SEO_TITLE, ServiceComplementaireI18nPeer::SEO_DESCRIPTION, ServiceComplementaireI18nPeer::SEO_H1, ServiceComplementaireI18nPeer::SEO_KEYWORDS, ServiceComplementaireI18nPeer::ACTIVE_LOCALE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'NAME', 'DESCRIPTION', 'KEYWORDS', 'SEO_TITLE', 'SEO_DESCRIPTION', 'SEO_H1', 'SEO_KEYWORDS', 'ACTIVE_LOCALE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'name', 'description', 'keywords', 'seo_title', 'seo_description', 'seo_h1', 'seo_keywords', 'active_locale', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, )
     );
 
     /**
@@ -97,12 +109,12 @@ abstract class BaseServiceComplementaireI18nPeer
      * e.g. ServiceComplementaireI18nPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Name' => 2, 'Description' => 3, 'Keywords' => 4, 'ActiveLocale' => 5, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'description' => 3, 'keywords' => 4, 'activeLocale' => 5, ),
-        BasePeer::TYPE_COLNAME => array (ServiceComplementaireI18nPeer::ID => 0, ServiceComplementaireI18nPeer::LOCALE => 1, ServiceComplementaireI18nPeer::NAME => 2, ServiceComplementaireI18nPeer::DESCRIPTION => 3, ServiceComplementaireI18nPeer::KEYWORDS => 4, ServiceComplementaireI18nPeer::ACTIVE_LOCALE => 5, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'NAME' => 2, 'DESCRIPTION' => 3, 'KEYWORDS' => 4, 'ACTIVE_LOCALE' => 5, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'description' => 3, 'keywords' => 4, 'active_locale' => 5, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Name' => 2, 'Description' => 3, 'Keywords' => 4, 'SeoTitle' => 5, 'SeoDescription' => 6, 'SeoH1' => 7, 'SeoKeywords' => 8, 'ActiveLocale' => 9, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'description' => 3, 'keywords' => 4, 'seoTitle' => 5, 'seoDescription' => 6, 'seoH1' => 7, 'seoKeywords' => 8, 'activeLocale' => 9, ),
+        BasePeer::TYPE_COLNAME => array (ServiceComplementaireI18nPeer::ID => 0, ServiceComplementaireI18nPeer::LOCALE => 1, ServiceComplementaireI18nPeer::NAME => 2, ServiceComplementaireI18nPeer::DESCRIPTION => 3, ServiceComplementaireI18nPeer::KEYWORDS => 4, ServiceComplementaireI18nPeer::SEO_TITLE => 5, ServiceComplementaireI18nPeer::SEO_DESCRIPTION => 6, ServiceComplementaireI18nPeer::SEO_H1 => 7, ServiceComplementaireI18nPeer::SEO_KEYWORDS => 8, ServiceComplementaireI18nPeer::ACTIVE_LOCALE => 9, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'NAME' => 2, 'DESCRIPTION' => 3, 'KEYWORDS' => 4, 'SEO_TITLE' => 5, 'SEO_DESCRIPTION' => 6, 'SEO_H1' => 7, 'SEO_KEYWORDS' => 8, 'ACTIVE_LOCALE' => 9, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'description' => 3, 'keywords' => 4, 'seo_title' => 5, 'seo_description' => 6, 'seo_h1' => 7, 'seo_keywords' => 8, 'active_locale' => 9, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, )
     );
 
     /**
@@ -181,6 +193,10 @@ abstract class BaseServiceComplementaireI18nPeer
             $criteria->addSelectColumn(ServiceComplementaireI18nPeer::NAME);
             $criteria->addSelectColumn(ServiceComplementaireI18nPeer::DESCRIPTION);
             $criteria->addSelectColumn(ServiceComplementaireI18nPeer::KEYWORDS);
+            $criteria->addSelectColumn(ServiceComplementaireI18nPeer::SEO_TITLE);
+            $criteria->addSelectColumn(ServiceComplementaireI18nPeer::SEO_DESCRIPTION);
+            $criteria->addSelectColumn(ServiceComplementaireI18nPeer::SEO_H1);
+            $criteria->addSelectColumn(ServiceComplementaireI18nPeer::SEO_KEYWORDS);
             $criteria->addSelectColumn(ServiceComplementaireI18nPeer::ACTIVE_LOCALE);
         } else {
             $criteria->addSelectColumn($alias . '.id');
@@ -188,6 +204,10 @@ abstract class BaseServiceComplementaireI18nPeer
             $criteria->addSelectColumn($alias . '.name');
             $criteria->addSelectColumn($alias . '.description');
             $criteria->addSelectColumn($alias . '.keywords');
+            $criteria->addSelectColumn($alias . '.seo_title');
+            $criteria->addSelectColumn($alias . '.seo_description');
+            $criteria->addSelectColumn($alias . '.seo_h1');
+            $criteria->addSelectColumn($alias . '.seo_keywords');
             $criteria->addSelectColumn($alias . '.active_locale');
         }
     }

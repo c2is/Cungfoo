@@ -1,0 +1,169 @@
+\Cungfoo\Model\DestinationI18n:
+    1_de:
+        Id: 1
+        Locale: de
+        Slug: manche-et-cote-atlantique
+        Name: 'Manche et Côte Atlantique'
+        Introduction: null
+        Description: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    1_en:
+        Id: 1
+        Locale: en
+        Slug: ''
+        Name: 'Manche et Côte Atlantique'
+        Introduction: null
+        Description: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    1_fr:
+        Id: 1
+        Locale: fr
+        Slug: manche-et-cote-atlantique
+        Name: 'Manche et Côte Atlantique'
+        Introduction: null
+        Description: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    1_nl:
+        Id: 1
+        Locale: nl
+        Slug: ''
+        Name: 'Manche et Côte Atlantique'
+        Introduction: null
+        Description: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    2_de:
+        Id: 2
+        Locale: de
+        Slug: mediterranee
+        Name: Méditerranée
+        Introduction: null
+        Description: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    2_en:
+        Id: 2
+        Locale: en
+        Slug: ''
+        Name: Méditerranée
+        Introduction: null
+        Description: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    2_fr:
+        Id: 2
+        Locale: fr
+        Slug: mediterranee
+        Name: Méditerranée
+        Introduction: null
+        Description: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    2_nl:
+        Id: 2
+        Locale: nl
+        Slug: ''
+        Name: Méditerranée
+        Introduction: null
+        Description: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    3_de:
+        Id: 3
+        Locale: de
+        Slug: campagne
+        Name: Campagne
+        Introduction: null
+        Description: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    3_en:
+        Id: 3
+        Locale: en
+        Slug: ''
+        Name: 'Campagne et Montagne'
+        Introduction: null
+        Description: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    3_fr:
+        Id: 3
+        Locale: fr
+        Slug: campagne
+        Name: Campagne
+        Introduction: null
+        Description: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    3_nl:
+        Id: 3
+        Locale: nl
+        Slug: ''
+        Name: 'Campagne et Montagne'
+        Introduction: null
+        Description: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    4_de:
+        Id: 4
+        Locale: de
+        Slug: montagne
+        Name: Montagne
+        Introduction: null
+        Description: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    4_fr:
+        Id: 4
+        Locale: fr
+        Slug: montagne
+        Name: Montagne
+        Introduction: null
+        Description: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true

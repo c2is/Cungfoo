@@ -20,7 +20,7 @@ class PointInteret extends BasePointInteret
 {
     public function __toString()
     {
-        return $this->getName();
+        return (string) $this->getName();
     }
 
     public function getDistanceForEtablissement(Etablissement $etab)

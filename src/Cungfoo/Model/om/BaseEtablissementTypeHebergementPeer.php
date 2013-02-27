@@ -11,6 +11,7 @@ use \PropelException;
 use \PropelPDO;
 use Cungfoo\Model\EtablissementPeer;
 use Cungfoo\Model\EtablissementTypeHebergement;
+use Cungfoo\Model\EtablissementTypeHebergementI18nPeer;
 use Cungfoo\Model\EtablissementTypeHebergementPeer;
 use Cungfoo\Model\TypeHebergementPeer;
 use Cungfoo\Model\map\EtablissementTypeHebergementTableMap;
@@ -38,31 +39,22 @@ abstract class BaseEtablissementTypeHebergementPeer
     const TM_CLASS = 'EtablissementTypeHebergementTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 6;
+    const NUM_COLUMNS = 3;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 6;
+    const NUM_HYDRATE_COLUMNS = 3;
+
+    /** the column name for the id field */
+    const ID = 'etablissement_type_hebergement.id';
 
     /** the column name for the etablissement_id field */
     const ETABLISSEMENT_ID = 'etablissement_type_hebergement.etablissement_id';
 
     /** the column name for the type_hebergement_id field */
     const TYPE_HEBERGEMENT_ID = 'etablissement_type_hebergement.type_hebergement_id';
-
-    /** the column name for the minimum_price field */
-    const MINIMUM_PRICE = 'etablissement_type_hebergement.minimum_price';
-
-    /** the column name for the minimum_price_discount_label field */
-    const MINIMUM_PRICE_DISCOUNT_LABEL = 'etablissement_type_hebergement.minimum_price_discount_label';
-
-    /** the column name for the minimum_price_start_date field */
-    const MINIMUM_PRICE_START_DATE = 'etablissement_type_hebergement.minimum_price_start_date';
-
-    /** the column name for the minimum_price_end_date field */
-    const MINIMUM_PRICE_END_DATE = 'etablissement_type_hebergement.minimum_price_end_date';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -76,6 +68,13 @@ abstract class BaseEtablissementTypeHebergementPeer
     public static $instances = array();
 
 
+    // i18n behavior
+
+    /**
+     * The default locale to use for translations
+     * @var        string
+     */
+    const DEFAULT_LOCALE = 'fr';
     /**
      * holds an array of fieldnames
      *
@@ -83,12 +82,12 @@ abstract class BaseEtablissementTypeHebergementPeer
      * e.g. EtablissementTypeHebergementPeer::$fieldNames[EtablissementTypeHebergementPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('EtablissementId', 'TypeHebergementId', 'MinimumPrice', 'MinimumPriceDiscountLabel', 'MinimumPriceStartDate', 'MinimumPriceEndDate', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('etablissementId', 'typeHebergementId', 'minimumPrice', 'minimumPriceDiscountLabel', 'minimumPriceStartDate', 'minimumPriceEndDate', ),
-        BasePeer::TYPE_COLNAME => array (EtablissementTypeHebergementPeer::ETABLISSEMENT_ID, EtablissementTypeHebergementPeer::TYPE_HEBERGEMENT_ID, EtablissementTypeHebergementPeer::MINIMUM_PRICE, EtablissementTypeHebergementPeer::MINIMUM_PRICE_DISCOUNT_LABEL, EtablissementTypeHebergementPeer::MINIMUM_PRICE_START_DATE, EtablissementTypeHebergementPeer::MINIMUM_PRICE_END_DATE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ETABLISSEMENT_ID', 'TYPE_HEBERGEMENT_ID', 'MINIMUM_PRICE', 'MINIMUM_PRICE_DISCOUNT_LABEL', 'MINIMUM_PRICE_START_DATE', 'MINIMUM_PRICE_END_DATE', ),
-        BasePeer::TYPE_FIELDNAME => array ('etablissement_id', 'type_hebergement_id', 'minimum_price', 'minimum_price_discount_label', 'minimum_price_start_date', 'minimum_price_end_date', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'EtablissementId', 'TypeHebergementId', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'etablissementId', 'typeHebergementId', ),
+        BasePeer::TYPE_COLNAME => array (EtablissementTypeHebergementPeer::ID, EtablissementTypeHebergementPeer::ETABLISSEMENT_ID, EtablissementTypeHebergementPeer::TYPE_HEBERGEMENT_ID, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'ETABLISSEMENT_ID', 'TYPE_HEBERGEMENT_ID', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'etablissement_id', 'type_hebergement_id', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, )
     );
 
     /**
@@ -98,12 +97,12 @@ abstract class BaseEtablissementTypeHebergementPeer
      * e.g. EtablissementTypeHebergementPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('EtablissementId' => 0, 'TypeHebergementId' => 1, 'MinimumPrice' => 2, 'MinimumPriceDiscountLabel' => 3, 'MinimumPriceStartDate' => 4, 'MinimumPriceEndDate' => 5, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('etablissementId' => 0, 'typeHebergementId' => 1, 'minimumPrice' => 2, 'minimumPriceDiscountLabel' => 3, 'minimumPriceStartDate' => 4, 'minimumPriceEndDate' => 5, ),
-        BasePeer::TYPE_COLNAME => array (EtablissementTypeHebergementPeer::ETABLISSEMENT_ID => 0, EtablissementTypeHebergementPeer::TYPE_HEBERGEMENT_ID => 1, EtablissementTypeHebergementPeer::MINIMUM_PRICE => 2, EtablissementTypeHebergementPeer::MINIMUM_PRICE_DISCOUNT_LABEL => 3, EtablissementTypeHebergementPeer::MINIMUM_PRICE_START_DATE => 4, EtablissementTypeHebergementPeer::MINIMUM_PRICE_END_DATE => 5, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ETABLISSEMENT_ID' => 0, 'TYPE_HEBERGEMENT_ID' => 1, 'MINIMUM_PRICE' => 2, 'MINIMUM_PRICE_DISCOUNT_LABEL' => 3, 'MINIMUM_PRICE_START_DATE' => 4, 'MINIMUM_PRICE_END_DATE' => 5, ),
-        BasePeer::TYPE_FIELDNAME => array ('etablissement_id' => 0, 'type_hebergement_id' => 1, 'minimum_price' => 2, 'minimum_price_discount_label' => 3, 'minimum_price_start_date' => 4, 'minimum_price_end_date' => 5, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'EtablissementId' => 1, 'TypeHebergementId' => 2, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'etablissementId' => 1, 'typeHebergementId' => 2, ),
+        BasePeer::TYPE_COLNAME => array (EtablissementTypeHebergementPeer::ID => 0, EtablissementTypeHebergementPeer::ETABLISSEMENT_ID => 1, EtablissementTypeHebergementPeer::TYPE_HEBERGEMENT_ID => 2, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'ETABLISSEMENT_ID' => 1, 'TYPE_HEBERGEMENT_ID' => 2, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'etablissement_id' => 1, 'type_hebergement_id' => 2, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, )
     );
 
     /**
@@ -177,19 +176,13 @@ abstract class BaseEtablissementTypeHebergementPeer
     public static function addSelectColumns(Criteria $criteria, $alias = null)
     {
         if (null === $alias) {
+            $criteria->addSelectColumn(EtablissementTypeHebergementPeer::ID);
             $criteria->addSelectColumn(EtablissementTypeHebergementPeer::ETABLISSEMENT_ID);
             $criteria->addSelectColumn(EtablissementTypeHebergementPeer::TYPE_HEBERGEMENT_ID);
-            $criteria->addSelectColumn(EtablissementTypeHebergementPeer::MINIMUM_PRICE);
-            $criteria->addSelectColumn(EtablissementTypeHebergementPeer::MINIMUM_PRICE_DISCOUNT_LABEL);
-            $criteria->addSelectColumn(EtablissementTypeHebergementPeer::MINIMUM_PRICE_START_DATE);
-            $criteria->addSelectColumn(EtablissementTypeHebergementPeer::MINIMUM_PRICE_END_DATE);
         } else {
+            $criteria->addSelectColumn($alias . '.id');
             $criteria->addSelectColumn($alias . '.etablissement_id');
             $criteria->addSelectColumn($alias . '.type_hebergement_id');
-            $criteria->addSelectColumn($alias . '.minimum_price');
-            $criteria->addSelectColumn($alias . '.minimum_price_discount_label');
-            $criteria->addSelectColumn($alias . '.minimum_price_start_date');
-            $criteria->addSelectColumn($alias . '.minimum_price_end_date');
         }
     }
 
@@ -316,7 +309,7 @@ abstract class BaseEtablissementTypeHebergementPeer
     {
         if (Propel::isInstancePoolingEnabled()) {
             if ($key === null) {
-                $key = serialize(array((string) $obj->getEtablissementId(), (string) $obj->getTypeHebergementId()));
+                $key = (string) $obj->getId();
             } // if key === null
             EtablissementTypeHebergementPeer::$instances[$key] = $obj;
         }
@@ -339,10 +332,10 @@ abstract class BaseEtablissementTypeHebergementPeer
     {
         if (Propel::isInstancePoolingEnabled() && $value !== null) {
             if (is_object($value) && $value instanceof EtablissementTypeHebergement) {
-                $key = serialize(array((string) $value->getEtablissementId(), (string) $value->getTypeHebergementId()));
-            } elseif (is_array($value) && count($value) === 2) {
+                $key = (string) $value->getId();
+            } elseif (is_scalar($value)) {
                 // assume we've been passed a primary key
-                $key = serialize(array((string) $value[0], (string) $value[1]));
+                $key = (string) $value;
             } else {
                 $e = new PropelException("Invalid value passed to removeInstanceFromPool().  Expected primary key or EtablissementTypeHebergement object; got " . (is_object($value) ? get_class($value) . ' object.' : var_export($value,true)));
                 throw $e;
@@ -389,6 +382,9 @@ abstract class BaseEtablissementTypeHebergementPeer
      */
     public static function clearRelatedInstancePool()
     {
+        // Invalidate objects in EtablissementTypeHebergementI18nPeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        EtablissementTypeHebergementI18nPeer::clearInstancePool();
     }
 
     /**
@@ -404,11 +400,11 @@ abstract class BaseEtablissementTypeHebergementPeer
     public static function getPrimaryKeyHashFromRow($row, $startcol = 0)
     {
         // If the PK cannot be derived from the row, return null.
-        if ($row[$startcol] === null && $row[$startcol + 1] === null) {
+        if ($row[$startcol] === null) {
             return null;
         }
 
-        return serialize(array((string) $row[$startcol], (string) $row[$startcol + 1]));
+        return (string) $row[$startcol];
     }
 
     /**
@@ -423,7 +419,7 @@ abstract class BaseEtablissementTypeHebergementPeer
     public static function getPrimaryKeyFromRow($row, $startcol = 0)
     {
 
-        return array((int) $row[$startcol], (int) $row[$startcol + 1]);
+        return (int) $row[$startcol];
     }
 
     /**
@@ -1171,6 +1167,10 @@ abstract class BaseEtablissementTypeHebergementPeer
             $criteria = $values->buildCriteria(); // build Criteria from EtablissementTypeHebergement object
         }
 
+        if ($criteria->containsKey(EtablissementTypeHebergementPeer::ID) && $criteria->keyContainsValue(EtablissementTypeHebergementPeer::ID) ) {
+            throw new PropelException('Cannot insert a value for auto-increment primary key ('.EtablissementTypeHebergementPeer::ID.')');
+        }
+
 
         // Set the correct dbName
         $criteria->setDbName(EtablissementTypeHebergementPeer::DATABASE_NAME);
@@ -1209,18 +1209,10 @@ abstract class BaseEtablissementTypeHebergementPeer
         if ($values instanceof Criteria) {
             $criteria = clone $values; // rename for clarity
 
-            $comparison = $criteria->getComparison(EtablissementTypeHebergementPeer::ETABLISSEMENT_ID);
-            $value = $criteria->remove(EtablissementTypeHebergementPeer::ETABLISSEMENT_ID);
+            $comparison = $criteria->getComparison(EtablissementTypeHebergementPeer::ID);
+            $value = $criteria->remove(EtablissementTypeHebergementPeer::ID);
             if ($value) {
-                $selectCriteria->add(EtablissementTypeHebergementPeer::ETABLISSEMENT_ID, $value, $comparison);
-            } else {
-                $selectCriteria->setPrimaryTableName(EtablissementTypeHebergementPeer::TABLE_NAME);
-            }
-
-            $comparison = $criteria->getComparison(EtablissementTypeHebergementPeer::TYPE_HEBERGEMENT_ID);
-            $value = $criteria->remove(EtablissementTypeHebergementPeer::TYPE_HEBERGEMENT_ID);
-            if ($value) {
-                $selectCriteria->add(EtablissementTypeHebergementPeer::TYPE_HEBERGEMENT_ID, $value, $comparison);
+                $selectCriteria->add(EtablissementTypeHebergementPeer::ID, $value, $comparison);
             } else {
                 $selectCriteria->setPrimaryTableName(EtablissementTypeHebergementPeer::TABLE_NAME);
             }
@@ -1299,18 +1291,10 @@ abstract class BaseEtablissementTypeHebergementPeer
             $criteria = $values->buildPkeyCriteria();
         } else { // it's a primary key, or an array of pks
             $criteria = new Criteria(EtablissementTypeHebergementPeer::DATABASE_NAME);
-            // primary key is composite; we therefore, expect
-            // the primary key passed to be an array of pkey values
-            if (count($values) == count($values, COUNT_RECURSIVE)) {
-                // array is not multi-dimensional
-                $values = array($values);
-            }
-            foreach ($values as $value) {
-                $criterion = $criteria->getNewCriterion(EtablissementTypeHebergementPeer::ETABLISSEMENT_ID, $value[0]);
-                $criterion->addAnd($criteria->getNewCriterion(EtablissementTypeHebergementPeer::TYPE_HEBERGEMENT_ID, $value[1]));
-                $criteria->addOr($criterion);
-                // we can invalidate the cache for this single PK
-                EtablissementTypeHebergementPeer::removeInstanceFromPool($value);
+            $criteria->add(EtablissementTypeHebergementPeer::ID, (array) $values, Criteria::IN);
+            // invalidate the cache for this object(s)
+            foreach ((array) $values as $singleval) {
+                EtablissementTypeHebergementPeer::removeInstanceFromPool($singleval);
             }
         }
 
@@ -1373,28 +1357,58 @@ abstract class BaseEtablissementTypeHebergementPeer
     }
 
     /**
-     * Retrieve object using using composite pkey values.
-     * @param   int $etablissement_id
-     * @param   int $type_hebergement_id
-     * @param      PropelPDO $con
-     * @return   EtablissementTypeHebergement
+     * Retrieve a single object by pkey.
+     *
+     * @param      int $pk the primary key.
+     * @param      PropelPDO $con the connection to use
+     * @return EtablissementTypeHebergement
      */
-    public static function retrieveByPK($etablissement_id, $type_hebergement_id, PropelPDO $con = null) {
-        $_instancePoolKey = serialize(array((string) $etablissement_id, (string) $type_hebergement_id));
-         if (null !== ($obj = EtablissementTypeHebergementPeer::getInstanceFromPool($_instancePoolKey))) {
-             return $obj;
+    public static function retrieveByPK($pk, PropelPDO $con = null)
+    {
+
+        if (null !== ($obj = EtablissementTypeHebergementPeer::getInstanceFromPool((string) $pk))) {
+            return $obj;
         }
 
         if ($con === null) {
             $con = Propel::getConnection(EtablissementTypeHebergementPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
+
         $criteria = new Criteria(EtablissementTypeHebergementPeer::DATABASE_NAME);
-        $criteria->add(EtablissementTypeHebergementPeer::ETABLISSEMENT_ID, $etablissement_id);
-        $criteria->add(EtablissementTypeHebergementPeer::TYPE_HEBERGEMENT_ID, $type_hebergement_id);
+        $criteria->add(EtablissementTypeHebergementPeer::ID, $pk);
+
         $v = EtablissementTypeHebergementPeer::doSelect($criteria, $con);
 
-        return !empty($v) ? $v[0] : null;
+        return !empty($v) > 0 ? $v[0] : null;
     }
+
+    /**
+     * Retrieve multiple objects by pkey.
+     *
+     * @param      array $pks List of primary keys
+     * @param      PropelPDO $con the connection to use
+     * @return EtablissementTypeHebergement[]
+     * @throws PropelException Any exceptions caught during processing will be
+     *		 rethrown wrapped into a PropelException.
+     */
+    public static function retrieveByPKs($pks, PropelPDO $con = null)
+    {
+        if ($con === null) {
+            $con = Propel::getConnection(EtablissementTypeHebergementPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+        }
+
+        $objs = null;
+        if (empty($pks)) {
+            $objs = array();
+        } else {
+            $criteria = new Criteria(EtablissementTypeHebergementPeer::DATABASE_NAME);
+            $criteria->add(EtablissementTypeHebergementPeer::ID, $pks, Criteria::IN);
+            $objs = EtablissementTypeHebergementPeer::doSelect($criteria, $con);
+        }
+
+        return $objs;
+    }
+
 } // BaseEtablissementTypeHebergementPeer
 
 // This is the static code needed to register the TableMap for this table with the main Propel class.

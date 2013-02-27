@@ -1,7 +1,7 @@
 {% extends "base.twig" %}
 
-{% block title %}{{ "seo.title.location.fiche" | trans ({'%name%': typeHebergement.name|lower, '%type%': typeHebergement.categoryTypeHebergement|lower, '%personnes%': typeHebergement.nombrePlace}) }}{% endblock %}
-{% block metaDescription %}{{ "seo.meta.location.fiche" | trans ({'%name%': typeHebergement.name|lower, '%type%': typeHebergement.categoryTypeHebergement|lower, '%personnes%': typeHebergement.nombrePlace}) }}{% endblock %}
+{% block title %}{{ typeHebergement.seoTitle | trans ({'%name%': typeHebergement.name|lower, '%type%': typeHebergement.categoryTypeHebergement|lower, '%personnes%': typeHebergement.nombrePlace}) }}{% endblock %}
+{% block metaDescription %}{{ typeHebergement.seoDescription | trans ({'%name%': typeHebergement.name|lower, '%type%': typeHebergement.categoryTypeHebergement|lower, '%personnes%': typeHebergement.nombrePlace}) }}{% endblock %}
 {% block bodyClass %} fiche{% endblock %}
 
 {% block canonical %}{% if canonical %}<link rel="canonical" href="{{ canonical }}" />{% endif %}{% endblock %}
@@ -94,6 +94,17 @@
 <!-- tab Locations -->
 <div id="tabCampings" class="tabs">
     <h2 class="h3-like">{{ 'location.fiche.onglet.campings.selection.title' | trans }}</h2><br>
+    <form class="filterBy" action="">
+        <fieldset>
+            <span>{{ "fiche.filtrer_par" | trans }}</span>
+            <select name="capacite" id="capacite">
+                <option value="">{{ "fiche.toutes_regions" | trans }}</option>
+                {% for region in regions %}
+                    <option value="reg-{{ region.slug }}">{{ "fiche.region" | trans }}{{ region.slug }}</option>
+                {% endfor %}
+            </select>
+        </fieldset>
+    </form>
     {% include 'Listing/_listing.twig' %}
 
     <nav class="paginationTabs clear">

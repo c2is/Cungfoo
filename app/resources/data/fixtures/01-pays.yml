@@ -1,16 +1,16 @@
 \Cungfoo\Model\Pays:
     1:
-        Code: FRA
+        Code: ESP
         ImageDetail1: null
         ImageDetail2: null
         Active: true
     2:
-        Code: ITA
+        Code: FRA
         ImageDetail1: null
         ImageDetail2: null
         Active: true
     3:
-        Code: ESP
+        Code: ITA
         ImageDetail1: null
         ImageDetail2: null
         Active: true

@@ -13,6 +13,7 @@ use Cungfoo\Model\Pays;
 use Cungfoo\Model\PaysI18nPeer;
 use Cungfoo\Model\PaysPeer;
 use Cungfoo\Model\RegionPeer;
+use Cungfoo\Model\RegionRefPeer;
 use Cungfoo\Model\map\PaysTableMap;
 
 /**
@@ -404,6 +405,9 @@ abstract class BasePaysPeer
         // Invalidate objects in RegionPeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
         RegionPeer::clearInstancePool();
+        // Invalidate objects in RegionRefPeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        RegionRefPeer::clearInstancePool();
         // Invalidate objects in PaysI18nPeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
         PaysI18nPeer::clearInstancePool();
@@ -800,6 +804,34 @@ abstract class BasePaysPeer
         return $objs;
     }
 
+    // crudable behavior
+
+    /**
+     * The default locale to use for translations
+     * @var        string
+     */
+    public static function getMetadata($locale = 'fr', PropelPDO $con = null)
+    {
+        return \Cungfoo\Model\MetadataQuery::create()
+            ->joinWithI18n($locale)
+            ->filterByTableRef(PaysPeer::TABLE_NAME)
+            ->findOne()
+        ;
+    }
+    // seo behavior
+
+    /**
+     * The default locale to use for translations
+     * @var        string
+     */
+    public static function getSeo($locale = 'fr', PropelPDO $con = null)
+    {
+        return \Cungfoo\Model\SeoQuery::create()
+            ->joinWithI18n($locale)
+            ->filterByTableRef(PaysPeer::TABLE_NAME)
+            ->findOne()
+        ;
+    }
 } // BasePaysPeer
 
 // This is the static code needed to register the TableMap for this table with the main Propel class.

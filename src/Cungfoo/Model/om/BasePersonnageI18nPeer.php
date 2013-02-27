@@ -37,13 +37,13 @@ abstract class BasePersonnageI18nPeer
     const TM_CLASS = 'PersonnageI18nTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 4;
+    const NUM_COLUMNS = 8;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 4;
+    const NUM_HYDRATE_COLUMNS = 8;
 
     /** the column name for the id field */
     const ID = 'personnage_i18n.id';
@@ -53,6 +53,18 @@ abstract class BasePersonnageI18nPeer
 
     /** the column name for the prenom field */
     const PRENOM = 'personnage_i18n.prenom';
+
+    /** the column name for the seo_title field */
+    const SEO_TITLE = 'personnage_i18n.seo_title';
+
+    /** the column name for the seo_description field */
+    const SEO_DESCRIPTION = 'personnage_i18n.seo_description';
+
+    /** the column name for the seo_h1 field */
+    const SEO_H1 = 'personnage_i18n.seo_h1';
+
+    /** the column name for the seo_keywords field */
+    const SEO_KEYWORDS = 'personnage_i18n.seo_keywords';
 
     /** the column name for the active_locale field */
     const ACTIVE_LOCALE = 'personnage_i18n.active_locale';
@@ -76,12 +88,12 @@ abstract class BasePersonnageI18nPeer
      * e.g. PersonnageI18nPeer::$fieldNames[PersonnageI18nPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Prenom', 'ActiveLocale', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'prenom', 'activeLocale', ),
-        BasePeer::TYPE_COLNAME => array (PersonnageI18nPeer::ID, PersonnageI18nPeer::LOCALE, PersonnageI18nPeer::PRENOM, PersonnageI18nPeer::ACTIVE_LOCALE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'PRENOM', 'ACTIVE_LOCALE', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'prenom', 'active_locale', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Prenom', 'SeoTitle', 'SeoDescription', 'SeoH1', 'SeoKeywords', 'ActiveLocale', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'prenom', 'seoTitle', 'seoDescription', 'seoH1', 'seoKeywords', 'activeLocale', ),
+        BasePeer::TYPE_COLNAME => array (PersonnageI18nPeer::ID, PersonnageI18nPeer::LOCALE, PersonnageI18nPeer::PRENOM, PersonnageI18nPeer::SEO_TITLE, PersonnageI18nPeer::SEO_DESCRIPTION, PersonnageI18nPeer::SEO_H1, PersonnageI18nPeer::SEO_KEYWORDS, PersonnageI18nPeer::ACTIVE_LOCALE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'PRENOM', 'SEO_TITLE', 'SEO_DESCRIPTION', 'SEO_H1', 'SEO_KEYWORDS', 'ACTIVE_LOCALE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'prenom', 'seo_title', 'seo_description', 'seo_h1', 'seo_keywords', 'active_locale', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, )
     );
 
     /**
@@ -91,12 +103,12 @@ abstract class BasePersonnageI18nPeer
      * e.g. PersonnageI18nPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Prenom' => 2, 'ActiveLocale' => 3, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'prenom' => 2, 'activeLocale' => 3, ),
-        BasePeer::TYPE_COLNAME => array (PersonnageI18nPeer::ID => 0, PersonnageI18nPeer::LOCALE => 1, PersonnageI18nPeer::PRENOM => 2, PersonnageI18nPeer::ACTIVE_LOCALE => 3, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'PRENOM' => 2, 'ACTIVE_LOCALE' => 3, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'prenom' => 2, 'active_locale' => 3, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Prenom' => 2, 'SeoTitle' => 3, 'SeoDescription' => 4, 'SeoH1' => 5, 'SeoKeywords' => 6, 'ActiveLocale' => 7, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'prenom' => 2, 'seoTitle' => 3, 'seoDescription' => 4, 'seoH1' => 5, 'seoKeywords' => 6, 'activeLocale' => 7, ),
+        BasePeer::TYPE_COLNAME => array (PersonnageI18nPeer::ID => 0, PersonnageI18nPeer::LOCALE => 1, PersonnageI18nPeer::PRENOM => 2, PersonnageI18nPeer::SEO_TITLE => 3, PersonnageI18nPeer::SEO_DESCRIPTION => 4, PersonnageI18nPeer::SEO_H1 => 5, PersonnageI18nPeer::SEO_KEYWORDS => 6, PersonnageI18nPeer::ACTIVE_LOCALE => 7, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'PRENOM' => 2, 'SEO_TITLE' => 3, 'SEO_DESCRIPTION' => 4, 'SEO_H1' => 5, 'SEO_KEYWORDS' => 6, 'ACTIVE_LOCALE' => 7, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'prenom' => 2, 'seo_title' => 3, 'seo_description' => 4, 'seo_h1' => 5, 'seo_keywords' => 6, 'active_locale' => 7, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, )
     );
 
     /**
@@ -173,11 +185,19 @@ abstract class BasePersonnageI18nPeer
             $criteria->addSelectColumn(PersonnageI18nPeer::ID);
             $criteria->addSelectColumn(PersonnageI18nPeer::LOCALE);
             $criteria->addSelectColumn(PersonnageI18nPeer::PRENOM);
+            $criteria->addSelectColumn(PersonnageI18nPeer::SEO_TITLE);
+            $criteria->addSelectColumn(PersonnageI18nPeer::SEO_DESCRIPTION);
+            $criteria->addSelectColumn(PersonnageI18nPeer::SEO_H1);
+            $criteria->addSelectColumn(PersonnageI18nPeer::SEO_KEYWORDS);
             $criteria->addSelectColumn(PersonnageI18nPeer::ACTIVE_LOCALE);
         } else {
             $criteria->addSelectColumn($alias . '.id');
             $criteria->addSelectColumn($alias . '.locale');
             $criteria->addSelectColumn($alias . '.prenom');
+            $criteria->addSelectColumn($alias . '.seo_title');
+            $criteria->addSelectColumn($alias . '.seo_description');
+            $criteria->addSelectColumn($alias . '.seo_h1');
+            $criteria->addSelectColumn($alias . '.seo_keywords');
             $criteria->addSelectColumn($alias . '.active_locale');
         }
     }

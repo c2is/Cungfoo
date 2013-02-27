@@ -2,13 +2,13 @@
 
 {% block title %}
 {% spaceless %}
-    {{ "seo.title.bonPlan" | trans ({'%bonPlan%': bonPlan.name}) }}
+    {{ bonPlan.seoTitle | trans ({'%bonPlan%': bonPlan.name}) }}
 {% endspaceless %}
 {% endblock %}
 
 {% block metaDescription %}
 {% spaceless %}
-    {{ "seo.meta.bonPlan" | trans  ({'%bonPlan%': bonPlan.name})}}
+    {{ bonPlan.seoDescription | trans  ({'%bonPlan%': bonPlan.name})}}
 {% endspaceless %}
 {% endblock %}
 
@@ -34,6 +34,6 @@
 {% block rightColumn %}
     {% include 'Form/_search_engine.twig' %}
     <div id="greyBoxes">
-        {% include 'Bloc/informations.twig' %}
+        {{ esi(path('widget', {'name': 'reassurance'})) }}
     </div>
 {% endblock %}

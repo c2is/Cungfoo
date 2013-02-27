@@ -37,13 +37,13 @@ abstract class BaseIdeeWeekendI18nPeer
     const TM_CLASS = 'IdeeWeekendI18nTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 5;
+    const NUM_COLUMNS = 9;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 5;
+    const NUM_HYDRATE_COLUMNS = 9;
 
     /** the column name for the id field */
     const ID = 'idee_weekend_i18n.id';
@@ -56,6 +56,18 @@ abstract class BaseIdeeWeekendI18nPeer
 
     /** the column name for the lien field */
     const LIEN = 'idee_weekend_i18n.lien';
+
+    /** the column name for the seo_title field */
+    const SEO_TITLE = 'idee_weekend_i18n.seo_title';
+
+    /** the column name for the seo_description field */
+    const SEO_DESCRIPTION = 'idee_weekend_i18n.seo_description';
+
+    /** the column name for the seo_h1 field */
+    const SEO_H1 = 'idee_weekend_i18n.seo_h1';
+
+    /** the column name for the seo_keywords field */
+    const SEO_KEYWORDS = 'idee_weekend_i18n.seo_keywords';
 
     /** the column name for the active_locale field */
     const ACTIVE_LOCALE = 'idee_weekend_i18n.active_locale';
@@ -79,12 +91,12 @@ abstract class BaseIdeeWeekendI18nPeer
      * e.g. IdeeWeekendI18nPeer::$fieldNames[IdeeWeekendI18nPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Titre', 'Lien', 'ActiveLocale', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'titre', 'lien', 'activeLocale', ),
-        BasePeer::TYPE_COLNAME => array (IdeeWeekendI18nPeer::ID, IdeeWeekendI18nPeer::LOCALE, IdeeWeekendI18nPeer::TITRE, IdeeWeekendI18nPeer::LIEN, IdeeWeekendI18nPeer::ACTIVE_LOCALE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'TITRE', 'LIEN', 'ACTIVE_LOCALE', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'titre', 'lien', 'active_locale', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Titre', 'Lien', 'SeoTitle', 'SeoDescription', 'SeoH1', 'SeoKeywords', 'ActiveLocale', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'titre', 'lien', 'seoTitle', 'seoDescription', 'seoH1', 'seoKeywords', 'activeLocale', ),
+        BasePeer::TYPE_COLNAME => array (IdeeWeekendI18nPeer::ID, IdeeWeekendI18nPeer::LOCALE, IdeeWeekendI18nPeer::TITRE, IdeeWeekendI18nPeer::LIEN, IdeeWeekendI18nPeer::SEO_TITLE, IdeeWeekendI18nPeer::SEO_DESCRIPTION, IdeeWeekendI18nPeer::SEO_H1, IdeeWeekendI18nPeer::SEO_KEYWORDS, IdeeWeekendI18nPeer::ACTIVE_LOCALE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'TITRE', 'LIEN', 'SEO_TITLE', 'SEO_DESCRIPTION', 'SEO_H1', 'SEO_KEYWORDS', 'ACTIVE_LOCALE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'titre', 'lien', 'seo_title', 'seo_description', 'seo_h1', 'seo_keywords', 'active_locale', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, )
     );
 
     /**
@@ -94,12 +106,12 @@ abstract class BaseIdeeWeekendI18nPeer
      * e.g. IdeeWeekendI18nPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Titre' => 2, 'Lien' => 3, 'ActiveLocale' => 4, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'titre' => 2, 'lien' => 3, 'activeLocale' => 4, ),
-        BasePeer::TYPE_COLNAME => array (IdeeWeekendI18nPeer::ID => 0, IdeeWeekendI18nPeer::LOCALE => 1, IdeeWeekendI18nPeer::TITRE => 2, IdeeWeekendI18nPeer::LIEN => 3, IdeeWeekendI18nPeer::ACTIVE_LOCALE => 4, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'TITRE' => 2, 'LIEN' => 3, 'ACTIVE_LOCALE' => 4, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'titre' => 2, 'lien' => 3, 'active_locale' => 4, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Titre' => 2, 'Lien' => 3, 'SeoTitle' => 4, 'SeoDescription' => 5, 'SeoH1' => 6, 'SeoKeywords' => 7, 'ActiveLocale' => 8, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'titre' => 2, 'lien' => 3, 'seoTitle' => 4, 'seoDescription' => 5, 'seoH1' => 6, 'seoKeywords' => 7, 'activeLocale' => 8, ),
+        BasePeer::TYPE_COLNAME => array (IdeeWeekendI18nPeer::ID => 0, IdeeWeekendI18nPeer::LOCALE => 1, IdeeWeekendI18nPeer::TITRE => 2, IdeeWeekendI18nPeer::LIEN => 3, IdeeWeekendI18nPeer::SEO_TITLE => 4, IdeeWeekendI18nPeer::SEO_DESCRIPTION => 5, IdeeWeekendI18nPeer::SEO_H1 => 6, IdeeWeekendI18nPeer::SEO_KEYWORDS => 7, IdeeWeekendI18nPeer::ACTIVE_LOCALE => 8, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'TITRE' => 2, 'LIEN' => 3, 'SEO_TITLE' => 4, 'SEO_DESCRIPTION' => 5, 'SEO_H1' => 6, 'SEO_KEYWORDS' => 7, 'ACTIVE_LOCALE' => 8, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'titre' => 2, 'lien' => 3, 'seo_title' => 4, 'seo_description' => 5, 'seo_h1' => 6, 'seo_keywords' => 7, 'active_locale' => 8, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, )
     );
 
     /**
@@ -177,12 +189,20 @@ abstract class BaseIdeeWeekendI18nPeer
             $criteria->addSelectColumn(IdeeWeekendI18nPeer::LOCALE);
             $criteria->addSelectColumn(IdeeWeekendI18nPeer::TITRE);
             $criteria->addSelectColumn(IdeeWeekendI18nPeer::LIEN);
+            $criteria->addSelectColumn(IdeeWeekendI18nPeer::SEO_TITLE);
+            $criteria->addSelectColumn(IdeeWeekendI18nPeer::SEO_DESCRIPTION);
+            $criteria->addSelectColumn(IdeeWeekendI18nPeer::SEO_H1);
+            $criteria->addSelectColumn(IdeeWeekendI18nPeer::SEO_KEYWORDS);
             $criteria->addSelectColumn(IdeeWeekendI18nPeer::ACTIVE_LOCALE);
         } else {
             $criteria->addSelectColumn($alias . '.id');
             $criteria->addSelectColumn($alias . '.locale');
             $criteria->addSelectColumn($alias . '.titre');
             $criteria->addSelectColumn($alias . '.lien');
+            $criteria->addSelectColumn($alias . '.seo_title');
+            $criteria->addSelectColumn($alias . '.seo_description');
+            $criteria->addSelectColumn($alias . '.seo_h1');
+            $criteria->addSelectColumn($alias . '.seo_keywords');
             $criteria->addSelectColumn($alias . '.active_locale');
         }
     }

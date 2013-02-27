@@ -1,0 +1,133 @@
+\Cungfoo\Model\RegionRef:
+    1:
+        Code: ALS
+        PaysId: 2
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    2:
+        Code: AQUI
+        PaysId: 2
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    3:
+        Code: AUVG
+        PaysId: 2
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    4:
+        Code: BNOR
+        PaysId: 2
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    5:
+        Code: BRE
+        PaysId: 2
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    6:
+        Code: CTRE
+        PaysId: 2
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    7:
+        Code: BRAV
+        PaysId: 1
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    8:
+        Code: AZAH
+        PaysId: 1
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    9:
+        Code: DORA
+        PaysId: 1
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    10:
+        Code: EMIR
+        PaysId: 3
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    11:
+        Code: FRCO
+        PaysId: 2
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    12:
+        Code: IDF
+        PaysId: 2
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    13:
+        Code: LR
+        PaysId: 2
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    14:
+        Code: LIMO
+        PaysId: 2
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    15:
+        Code: MPYR
+        PaysId: 2
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    16:
+        Code: NPDC
+        PaysId: 2
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    17:
+        Code: PDLL
+        PaysId: 2
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    18:
+        Code: PTCH
+        PaysId: 2
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    19:
+        Code: PACA
+        PaysId: 2
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    20:
+        Code: RA
+        PaysId: 2
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    21:
+        Code: TOS
+        PaysId: 3
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    22:
+        Code: VENE
+        PaysId: 3
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true

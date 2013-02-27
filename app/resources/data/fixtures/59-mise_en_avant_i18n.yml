@@ -1,0 +1,193 @@
+\Cungfoo\Model\MiseEnAvantI18n:
+    1_de:
+        Id: 1
+        Locale: de
+        Titre: null
+        Accroche: null
+        Lien: null
+        TitreLien: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    1_en:
+        Id: 1
+        Locale: en
+        Titre: null
+        Accroche: null
+        Lien: null
+        TitreLien: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    1_fr:
+        Id: 1
+        Locale: fr
+        Titre: 'Early booking'
+        Accroche: "Réservez tôt et profitez des promos basse saison\_!"
+        Lien: 'http://www.vacances-directes.com/bons-plans/camping-early-booking-vacances-de-paques/'
+        TitreLien: Réserver
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    1_nl:
+        Id: 1
+        Locale: nl
+        Titre: null
+        Accroche: null
+        Lien: null
+        TitreLien: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    2_de:
+        Id: 2
+        Locale: de
+        Titre: null
+        Accroche: null
+        Lien: null
+        TitreLien: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    2_en:
+        Id: 2
+        Locale: en
+        Titre: null
+        Accroche: null
+        Lien: null
+        TitreLien: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    2_fr:
+        Id: 2
+        Locale: fr
+        Titre: '+ de destinations'
+        Accroche: "Découvrez plus de 50 nouveaux campings\_!"
+        Lien: null
+        TitreLien: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    2_nl:
+        Id: 2
+        Locale: nl
+        Titre: null
+        Accroche: null
+        Lien: null
+        TitreLien: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    3_de:
+        Id: 3
+        Locale: de
+        Titre: null
+        Accroche: null
+        Lien: null
+        TitreLien: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    3_en:
+        Id: 3
+        Locale: en
+        Titre: null
+        Accroche: null
+        Lien: null
+        TitreLien: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    3_fr:
+        Id: 3
+        Locale: fr
+        Titre: 'Vacances d’été'
+        Accroche: 'Choisissez dès maintenant votre camping !'
+        Lien: null
+        TitreLien: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    3_nl:
+        Id: 3
+        Locale: nl
+        Titre: null
+        Accroche: null
+        Lien: null
+        TitreLien: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    4_de:
+        Id: 4
+        Locale: de
+        Titre: null
+        Accroche: null
+        Lien: null
+        TitreLien: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    4_en:
+        Id: 4
+        Locale: en
+        Titre: null
+        Accroche: null
+        Lien: null
+        TitreLien: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    4_fr:
+        Id: 4
+        Locale: fr
+        Titre: 'Nouveau site !'
+        Accroche: 'Découvrez et voyagez ...'
+        Lien: null
+        TitreLien: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    4_nl:
+        Id: 4
+        Locale: nl
+        Titre: null
+        Accroche: null
+        Lien: null
+        TitreLien: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true

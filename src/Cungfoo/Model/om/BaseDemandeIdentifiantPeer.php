@@ -10,6 +10,7 @@ use \Propel;
 use \PropelException;
 use \PropelPDO;
 use Cungfoo\Model\DemandeIdentifiant;
+use Cungfoo\Model\DemandeIdentifiantI18nPeer;
 use Cungfoo\Model\DemandeIdentifiantPeer;
 use Cungfoo\Model\map\DemandeIdentifiantTableMap;
 
@@ -134,6 +135,13 @@ abstract class BaseDemandeIdentifiantPeer
     public static $instances = array();
 
 
+    // i18n behavior
+
+    /**
+     * The default locale to use for translations
+     * @var        string
+     */
+    const DEFAULT_LOCALE = 'fr';
     /**
      * holds an array of fieldnames
      *
@@ -487,6 +495,9 @@ abstract class BaseDemandeIdentifiantPeer
      */
     public static function clearRelatedInstancePool()
     {
+        // Invalidate objects in DemandeIdentifiantI18nPeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        DemandeIdentifiantI18nPeer::clearInstancePool();
     }
 
     /**
@@ -880,6 +891,34 @@ abstract class BaseDemandeIdentifiantPeer
         return $objs;
     }
 
+    // crudable behavior
+
+    /**
+     * The default locale to use for translations
+     * @var        string
+     */
+    public static function getMetadata($locale = 'fr', PropelPDO $con = null)
+    {
+        return \Cungfoo\Model\MetadataQuery::create()
+            ->joinWithI18n($locale)
+            ->filterByTableRef(DemandeIdentifiantPeer::TABLE_NAME)
+            ->findOne()
+        ;
+    }
+    // seo behavior
+
+    /**
+     * The default locale to use for translations
+     * @var        string
+     */
+    public static function getSeo($locale = 'fr', PropelPDO $con = null)
+    {
+        return \Cungfoo\Model\SeoQuery::create()
+            ->joinWithI18n($locale)
+            ->filterByTableRef(DemandeIdentifiantPeer::TABLE_NAME)
+            ->findOne()
+        ;
+    }
 } // BaseDemandeIdentifiantPeer
 
 // This is the static code needed to register the TableMap for this table with the main Propel class.

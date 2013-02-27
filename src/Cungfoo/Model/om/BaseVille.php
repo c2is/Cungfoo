@@ -1679,10 +1679,85 @@ abstract class BaseVille extends BaseObject implements Persistent
      * @param string $join_behavior optional join type to use (defaults to Criteria::LEFT_JOIN)
      * @return PropelObjectCollection|Etablissement[] List of Etablissement objects
      */
+    public function getEtablissementsJoinDepartement($criteria = null, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    {
+        $query = EtablissementQuery::create(null, $criteria);
+        $query->joinWith('Departement', $join_behavior);
+
+        return $this->getEtablissements($query, $con);
+    }
+
+
+    /**
+     * If this collection has already been initialized with
+     * an identical criteria, it returns the collection.
+     * Otherwise if this Ville is new, it will return
+     * an empty collection; or if this Ville has previously
+     * been saved, it will retrieve related Etablissements from storage.
+     *
+     * This method is protected by default in order to keep the public
+     * api reasonable.  You can provide public methods for those you
+     * actually need in Ville.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @param string $join_behavior optional join type to use (defaults to Criteria::LEFT_JOIN)
+     * @return PropelObjectCollection|Etablissement[] List of Etablissement objects
+     */
     public function getEtablissementsJoinCategorie($criteria = null, $con = null, $join_behavior = Criteria::LEFT_JOIN)
     {
         $query = EtablissementQuery::create(null, $criteria);
         $query->joinWith('Categorie', $join_behavior);
+
+        return $this->getEtablissements($query, $con);
+    }
+
+
+    /**
+     * If this collection has already been initialized with
+     * an identical criteria, it returns the collection.
+     * Otherwise if this Ville is new, it will return
+     * an empty collection; or if this Ville has previously
+     * been saved, it will retrieve related Etablissements from storage.
+     *
+     * This method is protected by default in order to keep the public
+     * api reasonable.  You can provide public methods for those you
+     * actually need in Ville.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @param string $join_behavior optional join type to use (defaults to Criteria::LEFT_JOIN)
+     * @return PropelObjectCollection|Etablissement[] List of Etablissement objects
+     */
+    public function getEtablissementsJoinEtablissementRelatedByRelated1($criteria = null, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    {
+        $query = EtablissementQuery::create(null, $criteria);
+        $query->joinWith('EtablissementRelatedByRelated1', $join_behavior);
+
+        return $this->getEtablissements($query, $con);
+    }
+
+
+    /**
+     * If this collection has already been initialized with
+     * an identical criteria, it returns the collection.
+     * Otherwise if this Ville is new, it will return
+     * an empty collection; or if this Ville has previously
+     * been saved, it will retrieve related Etablissements from storage.
+     *
+     * This method is protected by default in order to keep the public
+     * api reasonable.  You can provide public methods for those you
+     * actually need in Ville.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @param string $join_behavior optional join type to use (defaults to Criteria::LEFT_JOIN)
+     * @return PropelObjectCollection|Etablissement[] List of Etablissement objects
+     */
+    public function getEtablissementsJoinEtablissementRelatedByRelated2($criteria = null, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    {
+        $query = EtablissementQuery::create(null, $criteria);
+        $query->joinWith('EtablissementRelatedByRelated2', $join_behavior);
 
         return $this->getEtablissements($query, $con);
     }
@@ -2233,6 +2308,146 @@ abstract class BaseVille extends BaseObject implements Persistent
          */
         public function setDescription($v)
         {    $this->getCurrentTranslation()->setDescription($v);
+
+        return $this;
+    }
+
+    /**
+     * Get the [seo_title] column value.
+     *
+     * @return string
+     */
+    public function getSeoTitle()
+    {
+        if (trim($this->getCurrentTranslation()->getSeoTitle()))
+        {
+            return trim($this->getCurrentTranslation()->getSeoTitle());
+        }
+
+        $peerClassName = self::PEER;
+        if ($peerClassName::getSeo())
+        {
+            return $peerClassName::getSeo($this->currentLocale)->getSeoTitle();
+        }
+
+        return '';
+    }
+
+
+
+        /**
+         * Set the value of [seo_title] column.
+         *
+         * @param string $v new value
+         * @return VilleI18n The current object (for fluent API support)
+         */
+        public function setSeoTitle($v)
+        {    $this->getCurrentTranslation()->setSeoTitle($v);
+
+        return $this;
+    }
+
+    /**
+     * Get the [seo_description] column value.
+     *
+     * @return string
+     */
+    public function getSeoDescription()
+    {
+        if (trim($this->getCurrentTranslation()->getSeoDescription()))
+        {
+            return trim($this->getCurrentTranslation()->getSeoDescription());
+        }
+
+        $peerClassName = self::PEER;
+        if ($peerClassName::getSeo())
+        {
+            return $peerClassName::getSeo($this->currentLocale)->getSeoDescription();
+        }
+
+        return '';
+    }
+
+
+
+        /**
+         * Set the value of [seo_description] column.
+         *
+         * @param string $v new value
+         * @return VilleI18n The current object (for fluent API support)
+         */
+        public function setSeoDescription($v)
+        {    $this->getCurrentTranslation()->setSeoDescription($v);
+
+        return $this;
+    }
+
+    /**
+     * Get the [seo_h1] column value.
+     *
+     * @return string
+     */
+    public function getSeoH1()
+    {
+        if (trim($this->getCurrentTranslation()->getSeoH1()))
+        {
+            return trim($this->getCurrentTranslation()->getSeoH1());
+        }
+
+        $peerClassName = self::PEER;
+        if ($peerClassName::getSeo())
+        {
+            return $peerClassName::getSeo($this->currentLocale)->getSeoH1();
+        }
+
+        return '';
+    }
+
+
+
+        /**
+         * Set the value of [seo_h1] column.
+         *
+         * @param string $v new value
+         * @return VilleI18n The current object (for fluent API support)
+         */
+        public function setSeoH1($v)
+        {    $this->getCurrentTranslation()->setSeoH1($v);
+
+        return $this;
+    }
+
+    /**
+     * Get the [seo_keywords] column value.
+     *
+     * @return string
+     */
+    public function getSeoKeywords()
+    {
+        if (trim($this->getCurrentTranslation()->getSeoKeywords()))
+        {
+            return trim($this->getCurrentTranslation()->getSeoKeywords());
+        }
+
+        $peerClassName = self::PEER;
+        if ($peerClassName::getSeo())
+        {
+            return $peerClassName::getSeo($this->currentLocale)->getSeoKeywords();
+        }
+
+        return '';
+    }
+
+
+
+        /**
+         * Set the value of [seo_keywords] column.
+         *
+         * @param string $v new value
+         * @return VilleI18n The current object (for fluent API support)
+         */
+        public function setSeoKeywords($v)
+        {    $this->getCurrentTranslation()->setSeoKeywords($v);
 
         return $this;
     }

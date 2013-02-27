@@ -1,0 +1,595 @@
+\Cungfoo\Model\ServiceComplementaireI18n:
+    1_de:
+        Id: 1
+        Locale: de
+        Name: 'Aufenthalte von 3/4 Nächte in der Hochsaison erlaubt'
+        Description: null
+        Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    1_en:
+        Id: 1
+        Locale: en
+        Name: 'Séjour 3/4 nuits possible en haute saison'
+        Description: null
+        Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    1_fr:
+        Id: 1
+        Locale: fr
+        Name: 'Séjour 3/4 nuits possible en haute saison'
+        Description: 'A vous les courts séjours, même en juillet et août, profitez-en !'
+        Keywords: 'court séjour, juillet, aout, pas cher, haute saison'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    1_nl:
+        Id: 1
+        Locale: nl
+        Name: 'Séjour 3/4 nuits possible en haute saison'
+        Description: null
+        Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    2_de:
+        Id: 2
+        Locale: de
+        Name: WLAN
+        Description: null
+        Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    2_en:
+        Id: 2
+        Locale: en
+        Name: Wifi
+        Description: null
+        Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    2_fr:
+        Id: 2
+        Locale: fr
+        Name: Wifi
+        Description: 'Accèdez au wifi sur ce camping'
+        Keywords: 'wifi, internet, connexion'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    2_nl:
+        Id: 2
+        Locale: nl
+        Name: Wifi
+        Description: null
+        Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    3_de:
+        Id: 3
+        Locale: de
+        Name: 'Hunde erlaubt'
+        Description: null
+        Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    3_en:
+        Id: 3
+        Locale: en
+        Name: 'Chiens autorisés'
+        Description: null
+        Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    3_fr:
+        Id: 3
+        Locale: fr
+        Name: 'Chiens autorisés'
+        Description: 'Votre chien est le bienvenu sur ce camping'
+        Keywords: 'chien, meilleur ami de l''homme'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    3_nl:
+        Id: 3
+        Locale: nl
+        Name: 'Chiens autorisés'
+        Description: null
+        Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    4_de:
+        Id: 4
+        Locale: de
+        Name: 'Dépannage alimentation'
+        Description: null
+        Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    4_en:
+        Id: 4
+        Locale: en
+        Name: 'Dépannage alimentation'
+        Description: null
+        Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    4_fr:
+        Id: 4
+        Locale: fr
+        Name: 'Dépannage alimentation'
+        Description: null
+        Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    4_nl:
+        Id: 4
+        Locale: nl
+        Name: 'Dépannage alimentation'
+        Description: null
+        Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    5_de:
+        Id: 5
+        Locale: de
+        Name: 'Location de vélos'
+        Description: null
+        Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    5_en:
+        Id: 5
+        Locale: en
+        Name: 'Location de vélos'
+        Description: null
+        Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    5_fr:
+        Id: 5
+        Locale: fr
+        Name: 'Location de vélos'
+        Description: 'Partez à l''assaut des paysages les plus insolites en vélo, pour des vacances sportives !'
+        Keywords: 'vélos, VTT, VTC, pistes cyclables, randonnée'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    5_nl:
+        Id: 5
+        Locale: nl
+        Name: 'Location de vélos'
+        Description: null
+        Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    6_de:
+        Id: 6
+        Locale: de
+        Name: 'TV au bar'
+        Description: null
+        Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    6_en:
+        Id: 6
+        Locale: en
+        Name: 'TV au bar'
+        Description: null
+        Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    6_fr:
+        Id: 6
+        Locale: fr
+        Name: 'TV au bar'
+        Description: null
+        Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    6_nl:
+        Id: 6
+        Locale: nl
+        Name: 'TV au bar'
+        Description: null
+        Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    7_de:
+        Id: 7
+        Locale: de
+        Name: 'Navette plage (gratuite)'
+        Description: null
+        Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    7_en:
+        Id: 7
+        Locale: en
+        Name: 'Navette plage (gratuite)'
+        Description: null
+        Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    7_fr:
+        Id: 7
+        Locale: fr
+        Name: 'Navette plage (gratuite)'
+        Description: 'Profitez de la navette gratuite qui vous emmènera jusqu''à la plage'
+        Keywords: 'navette, plage, bus, car'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    7_nl:
+        Id: 7
+        Locale: nl
+        Name: 'Navette plage (gratuite)'
+        Description: null
+        Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    8_de:
+        Id: 8
+        Locale: de
+        Name: 'Navette plage (payante)'
+        Description: null
+        Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    8_en:
+        Id: 8
+        Locale: en
+        Name: 'Navette plage (payante)'
+        Description: null
+        Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    8_fr:
+        Id: 8
+        Locale: fr
+        Name: 'Navette plage (payante)'
+        Description: 'Profitez de la navette qui vous emmènera jusqu''à la plage'
+        Keywords: 'navette, plage, bus, car'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    8_nl:
+        Id: 8
+        Locale: nl
+        Name: 'Navette plage (payante)'
+        Description: null
+        Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    9_de:
+        Id: 9
+        Locale: de
+        Name: Bar
+        Description: null
+        Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    9_en:
+        Id: 9
+        Locale: en
+        Name: Bar
+        Description: null
+        Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    9_fr:
+        Id: 9
+        Locale: fr
+        Name: Bar
+        Description: 'Retrouvez vous en famille ou entre amis autour d''un cocktail'
+        Keywords: 'bar, cocktail, boire un verre, amis, apéro'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    9_nl:
+        Id: 9
+        Locale: nl
+        Name: Bar
+        Description: null
+        Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    10_de:
+        Id: 10
+        Locale: de
+        Name: Snack
+        Description: null
+        Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    10_en:
+        Id: 10
+        Locale: en
+        Name: Snack
+        Description: null
+        Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    10_fr:
+        Id: 10
+        Locale: fr
+        Name: Snack
+        Description: 'Ne faites pas à manger, ce soir c''est direction le snack pour toute la famille'
+        Keywords: 'snack, restauration rapide, plats à emporter, hamburger, frites'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    10_nl:
+        Id: 10
+        Locale: nl
+        Name: Snack
+        Description: null
+        Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    11_de:
+        Id: 11
+        Locale: de
+        Name: .
+        Description: null
+        Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    11_en:
+        Id: 11
+        Locale: en
+        Name: .
+        Description: null
+        Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    11_fr:
+        Id: 11
+        Locale: fr
+        Name: .
+        Description: null
+        Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    11_nl:
+        Id: 11
+        Locale: nl
+        Name: .
+        Description: null
+        Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    12_de:
+        Id: 12
+        Locale: de
+        Name: 'Restauration à emporter'
+        Description: null
+        Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    12_en:
+        Id: 12
+        Locale: en
+        Name: 'Restauration à emporter'
+        Description: null
+        Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    12_fr:
+        Id: 12
+        Locale: fr
+        Name: 'Restauration à emporter'
+        Description: 'Ne pensez à rien, profitez des plats à emporter et de la restauration rapide'
+        Keywords: 'restaurant, snack, plats à emporter, petite restauration'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    12_nl:
+        Id: 12
+        Locale: nl
+        Name: 'Restauration à emporter'
+        Description: null
+        Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    13_de:
+        Id: 13
+        Locale: de
+        Name: Restaurant
+        Description: null
+        Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    13_en:
+        Id: 13
+        Locale: en
+        Name: Restaurant
+        Description: null
+        Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    13_fr:
+        Id: 13
+        Locale: fr
+        Name: Restaurant
+        Description: 'Un petit resto ? Profitez du restaurant du camping pour un déjeuner calme ou un diner animé'
+        Keywords: 'restaurant, repas, formule, diner, déjeuner, souper, petit déjeuner'
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    13_nl:
+        Id: 13
+        Locale: nl
+        Name: Restaurant
+        Description: null
+        Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    14_de:
+        Id: 14
+        Locale: de
+        Name: 'Animaux interdits'
+        Description: null
+        Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    14_fr:
+        Id: 14
+        Locale: fr
+        Name: 'Animaux interdits'
+        Description: null
+        Keywords: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true

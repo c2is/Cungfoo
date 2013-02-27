@@ -31,6 +31,22 @@ class ThematiqueType extends BaseThematiqueType
         //;
     }
 
+    public function getCodeOptions()
+    {
+        return array_merge(parent::getCodeOptions(), array('read_only' => true, 'attr' => array(
+            'rel'   => "tooltip",
+            'title' => "crud.tooltip.resalys",
+        )));
+    }
+
+    public function getNameOptions()
+    {
+        return array_merge(parent::getNameOptions(), array('read_only' => true, 'attr' => array(
+            'rel'   => "tooltip",
+            'title' => "crud.tooltip.resalys",
+        )));
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -42,7 +58,6 @@ class ThematiqueType extends BaseThematiqueType
                     'title'         => 'crud.tab.datas',
                     'content'       => array(
                         'code',
-                        'etablissements',
                         'thematiqueI18ns',
                     )
                 ),

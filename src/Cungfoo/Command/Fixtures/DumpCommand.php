@@ -27,14 +27,18 @@ class DumpCommand extends BaseCommand
     protected $models = array(
         "\\Cungfoo\\Model\\Pays",
         "\\Cungfoo\\Model\\PaysI18n",
+        "\\Cungfoo\\Model\\RegionRef",
+        "\\Cungfoo\\Model\\RegionRefI18n",
+        "\\Cungfoo\\Model\\Destination",
+        "\\Cungfoo\\Model\\DestinationI18n",
         "\\Cungfoo\\Model\\Region",
         "\\Cungfoo\\Model\\RegionI18n",
+        "\\Cungfoo\\Model\\Departement",
+        "\\Cungfoo\\Model\\DepartementI18n",
         "\\Cungfoo\\Model\\Ville",
         "\\Cungfoo\\Model\\VilleI18n",
         "\\Cungfoo\\Model\\Activite",
         "\\Cungfoo\\Model\\ActiviteI18n",
-        "\\Cungfoo\\Model\\Destination",
-        "\\Cungfoo\\Model\\DestinationI18n",
         "\\Cungfoo\\Model\\Thematique",
         "\\Cungfoo\\Model\\ThematiqueI18n",
         "\\Cungfoo\\Model\\SituationGeographique",
@@ -60,6 +64,7 @@ class DumpCommand extends BaseCommand
         "\\Cungfoo\\Model\\EtablissementThematique",
         "\\Cungfoo\\Model\\EtablissementServiceComplementaire",
         "\\Cungfoo\\Model\\EtablissementTypeHebergement",
+        "\\Cungfoo\\Model\\EtablissementTypeHebergementI18n",
         "\\Cungfoo\\Model\\PointInteret",
         "\\Cungfoo\\Model\\PointInteretI18n",
         "\\Cungfoo\\Model\\EtablissementPointInteret",
@@ -95,6 +100,8 @@ class DumpCommand extends BaseCommand
         "\\Cungfoo\\Model\\BonPlanCategorie",
         "\\Cungfoo\\Model\\BonPlanCategorieI18n",
         "\\Cungfoo\\Model\\BonPlanBonPlanCategorie",
+        "\\Cungfoo\\Model\\Seo",
+        "\\Cungfoo\\Model\\SeoI18n",
     );
 
     protected function configure()

@@ -58,6 +58,7 @@ class PaysTableMap extends TableMap
     public function buildRelations()
     {
         $this->addRelation('Region', 'Cungfoo\\Model\\Region', RelationMap::ONE_TO_MANY, array('id' => 'pays_id', ), 'SET NULL', null, 'Regions');
+        $this->addRelation('RegionRef', 'Cungfoo\\Model\\RegionRef', RelationMap::ONE_TO_MANY, array('id' => 'pays_id', ), 'SET NULL', null, 'RegionRefs');
         $this->addRelation('PaysI18n', 'Cungfoo\\Model\\PaysI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'PaysI18ns');
     } // buildRelations()
 
@@ -82,7 +83,7 @@ class PaysTableMap extends TableMap
             'i18n' =>  array (
   'i18n_table' => '%TABLE%_i18n',
   'i18n_phpname' => '%PHPNAME%I18n',
-  'i18n_columns' => 'slug,name,introduction,description,active_locale',
+  'i18n_columns' => 'slug,name,introduction,description,seo_title,seo_description,seo_h1,seo_keywords,active_locale',
   'i18n_pk_name' => NULL,
   'locale_column' => 'locale',
   'default_locale' => 'fr',
@@ -95,6 +96,11 @@ class PaysTableMap extends TableMap
   'crud_form' => NULL,
   'crud_type_file' => 'image_detail_1,image_detail_2',
   'crud_search' => 'name',
+),
+            'seo' =>  array (
+  'seo_columns' => 'seo_title,seo_description,seo_h1,seo_keywords',
+  'seo_description' => 'LONGVARCHAR',
+  'seo_keywords' => 'LONGVARCHAR',
 ),
         );
     } // getBehaviors()

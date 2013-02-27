@@ -59,6 +59,7 @@ class EtablissementTableMap extends TableMap
         $this->addColumn('opening_date', 'OpeningDate', 'TIMESTAMP', false, null, null);
         $this->addColumn('closing_date', 'ClosingDate', 'TIMESTAMP', false, null, null);
         $this->addForeignKey('ville_id', 'VilleId', 'INTEGER', 'ville', 'id', false, null, null);
+        $this->addForeignKey('departement_id', 'DepartementId', 'INTEGER', 'departement', 'id', false, null, null);
         $this->addForeignKey('categorie_id', 'CategorieId', 'INTEGER', 'categorie', 'id', false, null, null);
         $this->addColumn('geo_coordinate_x', 'GeoCoordinateX', 'VARCHAR', false, 255, null);
         $this->addColumn('geo_coordinate_y', 'GeoCoordinateY', 'VARCHAR', false, 255, null);
@@ -67,6 +68,8 @@ class EtablissementTableMap extends TableMap
         $this->addColumn('capacite', 'Capacite', 'VARCHAR', false, 255, null);
         $this->addColumn('plan_path', 'PlanPath', 'VARCHAR', false, 255, null);
         $this->addColumn('vignette', 'Vignette', 'VARCHAR', false, 255, null);
+        $this->addForeignKey('related_1', 'Related1', 'INTEGER', 'etablissement', 'id', false, null, null);
+        $this->addForeignKey('related_2', 'Related2', 'INTEGER', 'etablissement', 'id', false, null, null);
         $this->addColumn('created_at', 'CreatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('updated_at', 'UpdatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('active', 'Active', 'BOOLEAN', false, 1, false);
@@ -79,7 +82,12 @@ class EtablissementTableMap extends TableMap
     public function buildRelations()
     {
         $this->addRelation('Ville', 'Cungfoo\\Model\\Ville', RelationMap::MANY_TO_ONE, array('ville_id' => 'id', ), 'SET NULL', null);
+        $this->addRelation('Departement', 'Cungfoo\\Model\\Departement', RelationMap::MANY_TO_ONE, array('departement_id' => 'id', ), 'SET NULL', null);
         $this->addRelation('Categorie', 'Cungfoo\\Model\\Categorie', RelationMap::MANY_TO_ONE, array('categorie_id' => 'id', ), 'SET NULL', null);
+        $this->addRelation('EtablissementRelatedByRelated1', 'Cungfoo\\Model\\Etablissement', RelationMap::MANY_TO_ONE, array('related_1' => 'id', ), 'SET NULL', null);
+        $this->addRelation('EtablissementRelatedByRelated2', 'Cungfoo\\Model\\Etablissement', RelationMap::MANY_TO_ONE, array('related_2' => 'id', ), 'SET NULL', null);
+        $this->addRelation('EtablissementRelatedById0', 'Cungfoo\\Model\\Etablissement', RelationMap::ONE_TO_MANY, array('id' => 'related_1', ), 'SET NULL', null, 'EtablissementsRelatedById0');
+        $this->addRelation('EtablissementRelatedById1', 'Cungfoo\\Model\\Etablissement', RelationMap::ONE_TO_MANY, array('id' => 'related_2', ), 'SET NULL', null, 'EtablissementsRelatedById1');
         $this->addRelation('EtablissementTypeHebergement', 'Cungfoo\\Model\\EtablissementTypeHebergement', RelationMap::ONE_TO_MANY, array('id' => 'etablissement_id', ), 'CASCADE', null, 'EtablissementTypeHebergements');
         $this->addRelation('EtablissementDestination', 'Cungfoo\\Model\\EtablissementDestination', RelationMap::ONE_TO_MANY, array('id' => 'etablissement_id', ), 'CASCADE', null, 'EtablissementDestinations');
         $this->addRelation('EtablissementActivite', 'Cungfoo\\Model\\EtablissementActivite', RelationMap::ONE_TO_MANY, array('id' => 'etablissement_id', ), 'CASCADE', null, 'EtablissementActivites');
@@ -128,7 +136,7 @@ class EtablissementTableMap extends TableMap
             'i18n' =>  array (
   'i18n_table' => '%TABLE%_i18n',
   'i18n_phpname' => '%PHPNAME%I18n',
-  'i18n_columns' => 'country,ouverture_reception,ouverture_camping,arrivees_departs,description,active_locale',
+  'i18n_columns' => 'country,ouverture_reception,ouverture_camping,arrivees_departs,description,seo_title,seo_description,seo_h1,seo_keywords,active_locale',
   'i18n_pk_name' => NULL,
   'locale_column' => 'locale',
   'default_locale' => 'fr',
@@ -142,6 +150,11 @@ class EtablissementTableMap extends TableMap
   'crud_type_file' => 'plan_path, vignette',
   'crud_search' => 'name, title',
   'crud_type_richtext' => 'description',
+),
+            'seo' =>  array (
+  'seo_columns' => 'seo_title,seo_description,seo_h1,seo_keywords',
+  'seo_description' => 'LONGVARCHAR',
+  'seo_keywords' => 'LONGVARCHAR',
 ),
         );
     } // getBehaviors()

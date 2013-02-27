@@ -18,112 +18,268 @@ use Cungfoo\Form\Type\AppAwareType;
  */
 class BaseThemeType extends AppAwareType
 {
+    public function getIdType()
+    {
+        return 'hidden';
+    }
+
+    public function getIdOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'theme.id',
+        );
+    }
+
+    public function getImagePathType()
+    {
+        return 'cungfoo_file';
+    }
+
+    public function getImagePathOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'theme.image_path',
+        );
+    }
+
+    public function getImagePathDeletedType()
+    {
+        return 'checkbox';
+    }
+
+    public function getImagePathDeletedOptions()
+    {
+        return array(
+            'property_path' => false,
+            'required' => false,
+            'label' => 'theme.image_path_deleted',
+        );
+    }
+
+    public function getActiveType()
+    {
+        return 'checkbox';
+    }
+
+    public function getActiveOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'theme.active',
+        );
+    }
+
+    public function getActivitesType()
+    {
+        return 'model';
+    }
+
+    public function getActivitesOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'theme_activite.activite_id',
+            'class' => 'Cungfoo\Model\Activite',
+            'multiple' => true,
+        );
+    }
+
+    public function getBaignadesType()
+    {
+        return 'model';
+    }
+
+    public function getBaignadesOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'theme_baignade.baignade_id',
+            'class' => 'Cungfoo\Model\Baignade',
+            'multiple' => true,
+        );
+    }
+
+    public function getServiceComplementairesType()
+    {
+        return 'model';
+    }
+
+    public function getServiceComplementairesOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'theme_service_complementaire.service_complementaire_id',
+            'class' => 'Cungfoo\Model\ServiceComplementaire',
+            'multiple' => true,
+        );
+    }
+
+    public function getPersonnagesType()
+    {
+        return 'model';
+    }
+
+    public function getPersonnagesOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'theme_personnage.personnage_id',
+            'class' => 'Cungfoo\Model\Personnage',
+            'multiple' => true,
+        );
+    }
+
+    public function getNameType()
+    {
+        return 'text';
+    }
+
+    public function getNameOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'theme_i18n.name',
+        );
+    }
+
+    public function getSlugType()
+    {
+        return 'text';
+    }
+
+    public function getSlugOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'theme_i18n.slug',
+        );
+    }
+
+    public function getIntroductionType()
+    {
+        return 'text';
+    }
+
+    public function getIntroductionOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'theme_i18n.introduction',
+        );
+    }
+
+    public function getDescriptionType()
+    {
+        return 'textarea';
+    }
+
+    public function getDescriptionOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'theme_i18n.description',
+        );
+    }
+
+    public function getSeoTitleType()
+    {
+        return 'text';
+    }
+
+    public function getSeoTitleOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'theme_i18n.seo_title',
+        );
+    }
+
+    public function getSeoDescriptionType()
+    {
+        return 'textarea';
+    }
+
+    public function getSeoDescriptionOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'theme_i18n.seo_description',
+        );
+    }
+
+    public function getSeoH1Type()
+    {
+        return 'text';
+    }
+
+    public function getSeoH1Options()
+    {
+        return array(
+            'required' => false,
+            'label' => 'theme_i18n.seo_h1',
+        );
+    }
+
+    public function getSeoKeywordsType()
+    {
+        return 'textarea';
+    }
+
+    public function getSeoKeywordsOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'theme_i18n.seo_keywords',
+        );
+    }
+
+    public function getActiveLocaleType()
+    {
+        return 'checkbox';
+    }
+
+    public function getActiveLocaleOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'theme_i18n.active_locale',
+        );
+    }
+
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('id', 'hidden', array(
-            'label' => 'theme.id',
-            'required' => false,
-        ));
-        $builder->add('image_path', 'cungfoo_file', array(
-            'constraints' => array(
-            ),
-            'label' => 'theme.image_path',
-            'required' => false,
-        ));
-        $builder->add('image_path_deleted', 'checkbox', array(
-            'constraints' => array(
-            ),
-            'property_path' => false,
-            'label' => 'theme.image_path_deleted',
-            'required' => false,
-        ));
-        $builder->add('active', 'checkbox', array(
-            'constraints' => array(
-            ),
-            'label' => 'theme.active',
-            'required' => false,
-        ));
-        $builder->add('activites', 'model', array(
-            'class' => 'Cungfoo\Model\Activite',
-            'constraints' => array(
-            ),
-            'multiple' => true,
-            'label' => 'theme.activites',
-            'required' => false,
-        ));
-        $builder->add('baignades', 'model', array(
-            'class' => 'Cungfoo\Model\Baignade',
-            'constraints' => array(
-            ),
-            'multiple' => true,
-            'label' => 'theme.baignades',
-            'required' => false,
-        ));
-        $builder->add('service_complementaires', 'model', array(
-            'class' => 'Cungfoo\Model\ServiceComplementaire',
-            'constraints' => array(
-            ),
-            'multiple' => true,
-            'label' => 'theme.service_complementaires',
-            'required' => false,
-        ));
-        $builder->add('personnages', 'model', array(
-            'class' => 'Cungfoo\Model\Personnage',
-            'constraints' => array(
-            ),
-            'multiple' => true,
-            'label' => 'theme.personnages',
-            'required' => false,
-        ));
-        $builder->add('themeI18ns', 'translation_collection', array(
+        $builder->add('id', $this->getIdType(), $this->getIdOptions());
+        $builder->add('image_path', $this->getImagePathType(), $this->getImagePathOptions());
+        $builder->add('image_path_deleted', $this->getImagePathDeletedType(), $this->getImagePathDeletedOptions());
+        $builder->add('active', $this->getActiveType(), $this->getActiveOptions());
+        $builder->add('activites', $this->getActivitesType(), $this->getActivitesOptions());
+        $builder->add('baignades', $this->getBaignadesType(), $this->getBaignadesOptions());
+        $builder->add('service_complementaires', $this->getServiceComplementairesType(), $this->getServiceComplementairesOptions());
+        $builder->add('personnages', $this->getPersonnagesType(), $this->getPersonnagesOptions());$builder->add('themeI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\ThemeI18n',
-            'languages' => array(
-                0 => 'fr',
-                1 => 'de',
-            ),
-            'label' => 'theme.themeI18ns',
-            'columns' => array(
-                'name' => array(
-                    'required' => false,
-                    'label' => 'theme.name',
-                    'type' => 'text',
-                    'constraints' => array(
-                    ),
-                ),
-                'slug' => array(
-                    'required' => false,
-                    'label' => 'theme.slug',
-                    'type' => 'text',
-                    'constraints' => array(
-                    ),
-                ),
-                'introduction' => array(
-                    'required' => false,
-                    'label' => 'theme.introduction',
-                    'type' => 'text',
-                    'constraints' => array(
-                    ),
-                ),
-                'description' => array(
-                    'required' => false,
-                    'label' => 'theme.description',
-                    'type' => 'textarea',
-                    'constraints' => array(
-                    ),
-                ),
-                'active_locale' => array(
-                    'required' => false,
-                    'label' => 'theme.active_locale',
-                    'type' => 'checkbox',
-                    'constraints' => array(
-                    ),
-                ),
-            ),
+            'label' => 'themeI18ns',
             'required' => false,
+            'languages' => array('fr', 'de'),
+            'columns' => array(
+                'name' => array_merge(array('type' => $this->getNameType()), $this->getNameOptions()),
+                'slug' => array_merge(array('type' => $this->getSlugType()), $this->getSlugOptions()),
+                'introduction' => array_merge(array('type' => $this->getIntroductionType()), $this->getIntroductionOptions()),
+                'description' => array_merge(array('type' => $this->getDescriptionType()), $this->getDescriptionOptions()),
+                'seo_title' => array_merge(array('type' => $this->getSeoTitleType()), $this->getSeoTitleOptions()),
+                'seo_description' => array_merge(array('type' => $this->getSeoDescriptionType()), $this->getSeoDescriptionOptions()),
+                'seo_h1' => array_merge(array('type' => $this->getSeoH1Type()), $this->getSeoH1Options()),
+                'seo_keywords' => array_merge(array('type' => $this->getSeoKeywordsType()), $this->getSeoKeywordsOptions()),
+                'active_locale' => array_merge(array('type' => $this->getActiveLocaleType()), $this->getActiveLocaleOptions()),
+
+            )
         ));
+
+
     }
 
     /**

@@ -18,4 +18,17 @@ use Cungfoo\Model\om\BaseBonPlanQuery;
  */
 class BonPlanQuery extends BaseBonPlanQuery
 {
+    public function addDateFilters()
+    {
+        return $this
+            ->condition('dateDeb1', 'bon_plan.date_debut IS NULL')
+            ->condition('dateDeb2', 'bon_plan.date_debut = ?', '')
+            ->condition('dateDeb3', 'bon_plan.date_debut <= ?', date('Y-m-d'))
+            ->combine(array('dateDeb1', 'dateDeb2', 'dateDeb3'), 'or', 'dateDeb')
+            ->condition('dateFin1', 'bon_plan.date_fin IS NULL')
+            ->condition('dateFin2', 'bon_plan.date_fin = ?', '')
+            ->condition('dateFin3', 'bon_plan.date_fin >= ?', date('Y-m-d'))
+            ->combine(array('dateFin1', 'dateFin2', 'dateFin3'), 'or', 'dateFin')
+        ;
+    }
 }

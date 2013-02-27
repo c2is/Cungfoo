@@ -15,10 +15,14 @@ use \PropelPDO;
 use Cungfoo\Model\BonPlan;
 use Cungfoo\Model\BonPlanRegion;
 use Cungfoo\Model\Destination;
+use Cungfoo\Model\Event;
 use Cungfoo\Model\Pays;
+use Cungfoo\Model\PointInteret;
 use Cungfoo\Model\Region;
+use Cungfoo\Model\RegionEvent;
 use Cungfoo\Model\RegionI18n;
 use Cungfoo\Model\RegionPeer;
+use Cungfoo\Model\RegionPointInteret;
 use Cungfoo\Model\RegionQuery;
 use Cungfoo\Model\Ville;
 
@@ -66,6 +70,14 @@ use Cungfoo\Model\Ville;
  * @method RegionQuery leftJoinDestination($relationAlias = null) Adds a LEFT JOIN clause to the query using the Destination relation
  * @method RegionQuery rightJoinDestination($relationAlias = null) Adds a RIGHT JOIN clause to the query using the Destination relation
  * @method RegionQuery innerJoinDestination($relationAlias = null) Adds a INNER JOIN clause to the query using the Destination relation
+ *
+ * @method RegionQuery leftJoinRegionPointInteret($relationAlias = null) Adds a LEFT JOIN clause to the query using the RegionPointInteret relation
+ * @method RegionQuery rightJoinRegionPointInteret($relationAlias = null) Adds a RIGHT JOIN clause to the query using the RegionPointInteret relation
+ * @method RegionQuery innerJoinRegionPointInteret($relationAlias = null) Adds a INNER JOIN clause to the query using the RegionPointInteret relation
+ *
+ * @method RegionQuery leftJoinRegionEvent($relationAlias = null) Adds a LEFT JOIN clause to the query using the RegionEvent relation
+ * @method RegionQuery rightJoinRegionEvent($relationAlias = null) Adds a RIGHT JOIN clause to the query using the RegionEvent relation
+ * @method RegionQuery innerJoinRegionEvent($relationAlias = null) Adds a INNER JOIN clause to the query using the RegionEvent relation
  *
  * @method RegionQuery leftJoinVille($relationAlias = null) Adds a LEFT JOIN clause to the query using the Ville relation
  * @method RegionQuery rightJoinVille($relationAlias = null) Adds a RIGHT JOIN clause to the query using the Ville relation
@@ -880,6 +892,154 @@ abstract class BaseRegionQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query by a related RegionPointInteret object
+     *
+     * @param   RegionPointInteret|PropelObjectCollection $regionPointInteret  the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   RegionQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByRegionPointInteret($regionPointInteret, $comparison = null)
+    {
+        if ($regionPointInteret instanceof RegionPointInteret) {
+            return $this
+                ->addUsingAlias(RegionPeer::ID, $regionPointInteret->getRegionId(), $comparison);
+        } elseif ($regionPointInteret instanceof PropelObjectCollection) {
+            return $this
+                ->useRegionPointInteretQuery()
+                ->filterByPrimaryKeys($regionPointInteret->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByRegionPointInteret() only accepts arguments of type RegionPointInteret or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the RegionPointInteret relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return RegionQuery The current query, for fluid interface
+     */
+    public function joinRegionPointInteret($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('RegionPointInteret');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'RegionPointInteret');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the RegionPointInteret relation RegionPointInteret object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\RegionPointInteretQuery A secondary query class using the current class as primary query
+     */
+    public function useRegionPointInteretQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        return $this
+            ->joinRegionPointInteret($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'RegionPointInteret', '\Cungfoo\Model\RegionPointInteretQuery');
+    }
+
+    /**
+     * Filter the query by a related RegionEvent object
+     *
+     * @param   RegionEvent|PropelObjectCollection $regionEvent  the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   RegionQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByRegionEvent($regionEvent, $comparison = null)
+    {
+        if ($regionEvent instanceof RegionEvent) {
+            return $this
+                ->addUsingAlias(RegionPeer::ID, $regionEvent->getRegionId(), $comparison);
+        } elseif ($regionEvent instanceof PropelObjectCollection) {
+            return $this
+                ->useRegionEventQuery()
+                ->filterByPrimaryKeys($regionEvent->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByRegionEvent() only accepts arguments of type RegionEvent or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the RegionEvent relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return RegionQuery The current query, for fluid interface
+     */
+    public function joinRegionEvent($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('RegionEvent');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'RegionEvent');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the RegionEvent relation RegionEvent object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\RegionEventQuery A secondary query class using the current class as primary query
+     */
+    public function useRegionEventQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        return $this
+            ->joinRegionEvent($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'RegionEvent', '\Cungfoo\Model\RegionEventQuery');
+    }
+
+    /**
      * Filter the query by a related Ville object
      *
      * @param   Ville|PropelObjectCollection $ville  the related object to use as filter
@@ -1102,6 +1262,40 @@ abstract class BaseRegionQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query by a related PointInteret object
+     * using the region_point_interet table as cross reference
+     *
+     * @param   PointInteret $pointInteret the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   RegionQuery The current query, for fluid interface
+     */
+    public function filterByPointInteret($pointInteret, $comparison = Criteria::EQUAL)
+    {
+        return $this
+            ->useRegionPointInteretQuery()
+            ->filterByPointInteret($pointInteret, $comparison)
+            ->endUse();
+    }
+
+    /**
+     * Filter the query by a related Event object
+     * using the region_event table as cross reference
+     *
+     * @param   Event $event the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   RegionQuery The current query, for fluid interface
+     */
+    public function filterByEvent($event, $comparison = Criteria::EQUAL)
+    {
+        return $this
+            ->useRegionEventQuery()
+            ->filterByEvent($event, $comparison)
+            ->endUse();
+    }
+
+    /**
      * Filter the query by a related BonPlan object
      * using the bon_plan_region table as cross reference
      *
@@ -1215,6 +1409,8 @@ abstract class BaseRegionQuery extends ModelCriteria
             ->filterByActive(true)
             ->useI18nQuery($locale, 'i18n_locale')
                 ->filterByActiveLocale(true)
+                    ->_or()
+                ->filterByActiveLocale(null, Criteria::ISNULL)
             ->endUse()
         ;
 

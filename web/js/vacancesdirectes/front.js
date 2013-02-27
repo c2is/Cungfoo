@@ -112,32 +112,64 @@ jQuery.extend( jQuery.fn, {
         });
     }
 
-    if ($('#tabLocations').length > 0) {
-        var oForm = $('.filterBy');
+    if ($('form.filterBy').length > 0) {
+        var oForm = $('form.filterBy');
         oForm.find('select').change( function(){
             var sVal1 = $(this).val();
-            var sVal2 = $(this).siblings('select').val();
-            var nElt = $('.typLocation').length;
+            var nbTypes = $('.typLocation').length;
+            var nbCampings = $('.itemResult').length;
+            var btnMoreResults = $('#btPlusResults');
+            var hasMoreResults = btnMoreResults.length > 0;
+            var nbSetVisible = 0;
 
-            $('.typLocation').each( function() {
-                if (sVal1 == "" && sVal2 == "") {
-                    $(this).fadeIn();
-                } else if (sVal1 == "") {
-                    $(this).not('.'+sVal2).hide();
-                    $('.'+sVal2).fadeIn();
-                } else if (sVal2 == "") {
-                    $(this).not('.'+sVal1).hide();
-                    $('.'+sVal1).fadeIn();
-                } else {
-                    $(this).not('.'+sVal1+'.'+sVal2).hide();
-                    $('.'+sVal1+'.'+sVal2).fadeIn();
+            if (nbTypes) {
+                var siblingSelect = $(this).siblings('select');
+                var sVal2 = siblingSelect.length > 0 ? siblingSelect.val() : '';
+
+                $('.typLocation').each( function() {
+                    $(this).removeClass('nextItem');
+
+                    if (
+                        (sVal1 == "" && sVal2 == "") ||
+                        (sVal1 == "" && $(this).hasClass(sVal2)) ||
+                        (sVal2 == "" && $(this).hasClass(sVal1)) ||
+                        ($(this).hasClass(sVal1) && $(this).hasClass(sVal2))
+                    ) {
+                        if (!hasMoreResults || nbSetVisible < nbToShow) {
+                            $(this).fadeIn();
+                            nbSetVisible ++;
+                        } else {
+                            $(this).addClass('nextItem');
+                        }
+                    } else {
+                        $(this).hide();
+                    }
+                });
+
+                if ($('.typLocation').not(':visible').length >= nbTypes) {
+                    $('.noResultTyp').fadeIn();
+                }else{
+                    $('.noResultTyp').fadeOut();
                 }
-            });
-
-            if ($('.typLocation').not(':visible').length >= nElt) {
-                $('.noResultTyp').fadeIn();
-            }else{
-                $('.noResultTyp').fadeOut();
+            } else if (nbCampings) {
+                $('.itemResult').each(function() {
+                    if (sVal1 == '' || $(this).hasClass(sVal1)) {
+                        if (!hasMoreResults || nbSetVisible < nbToShow) {
+                            $(this).fadeIn();
+                            nbSetVisible ++;
+                        } else {
+                            $(this).addClass('nextItem');
+                        }
+                    } else {
+                        $(this).hide();
+                    }
+                });
+            }
+            
+            if (hasMoreResults && $('.nextItem').length > 0) {
+                btnMoreResults.show();
+            } else if (hasMoreResults) {
+                btnMoreResults.hide();
             }
         });
     }
@@ -569,6 +601,8 @@ jQuery.extend( jQuery.fn, {
 
 
     // datepickers
+
+    // CE
     if ($('#searchContainer #datepicker').length) {
         var d = new Date(),
             fCurrentDate = formatDate(d),
@@ -739,7 +773,6 @@ jQuery.extend( jQuery.fn, {
         switchLinear();
 
     }
-
     if ($('#searchContainerReservation #datepicker').length) {
         var d = new Date(),
             fCurrentDate = formatDate(d),
@@ -925,6 +958,7 @@ jQuery.extend( jQuery.fn, {
 
     }
 
+    // indiv
     if ($('#searchBlocDate #datepicker').length) {
         var d = new Date(),
             fCurrentDate = formatDate(d),

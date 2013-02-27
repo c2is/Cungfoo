@@ -1,11 +1,11 @@
 {% extends "base.twig" %}
 
 {% block title %}
-    {{ "seo.title.camping" | trans ({'%nom%': etab.name, '%ville%': etab.ville }) }}
+    {{ etab.seoTitle | trans ({'%nom%': etab.name, '%ville%': etab.ville }) }}
     {%if hasBaignade %}{{ "seo.title.camping_suffix" | trans }}{% endif %}
     {{ etab.categorie }}
 {% endblock %}
-{% block metaDescription %}{{ "seo.meta.camping" | trans  ({'%nom%': etab.name, '%nbEtoiles%': etab.categorie, '%ville%': etab.ville })}}{% endblock %}
+{% block metaDescription %}{{ etab.seoDescription | trans  ({'%nom%': etab.name, '%nbEtoiles%': etab.categorie, '%ville%': etab.ville })}}{% endblock %}
 
 {% block bodyClass %} fiche{% endblock %}
 
@@ -14,7 +14,7 @@
 {% block leftColumn %}
 <nav id="ficheShare">
     <a href="https://www.facebook.com/sharer/sharer.php?u={{ app.request.uri }}" class="icon facebook" target="_blank" title="{{ "share.facebook" | trans }}" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Header', 'Lien_-_Partage-SMM', 'Clic_-_Bouton-FaceBook']);">{{ "share.facebook" | trans }}</a>
-    <a href="http://twitter.com/home?status={{ etab.name }} {{ "destination.camping_title" | trans({'%ville%': etab.ville.name}) }} {% if hasBaignade %}{{ "seo.title.camping_suffix" | trans }}{% endif %} {{ app.request.uri }}" target="_blank" class="icon twitter" title="{{ "share.twitter" | trans }}" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Header', 'Lien_-_Partage-SMM', 'Clic_-_Bouton-Twitter']);">{{ "share.twitter" | trans }}</a>
+    <a href="http://twitter.com/home?status={{ etab.name }} {{ etab.seoH1 | trans({'%ville%': etab.ville.name}) }} {% if hasBaignade %}{{ "seo.title.camping_suffix" | trans }}{% endif %} {{ app.request.uri }}" target="_blank" class="icon twitter" title="{{ "share.twitter" | trans }}" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Header', 'Lien_-_Partage-SMM', 'Clic_-_Bouton-Twitter']);">{{ "share.twitter" | trans }}</a>
     {#<a href="#_" class="icon email" title="Partager par email">Partager par email</a>#}
     {#<a href="javascript:window.print()" class="icon print" title="Imprimer">Imprimer</a>#}
 </nav>
@@ -25,7 +25,7 @@
 <div itemscope itemtype="http://schema.org/Place">
     <h1 itemprop="name">
         {{ etab.name }}{{ etab.categorie.stars }}<br />
-        <span class="h2-like">{{ "destination.camping_title" | trans({'%ville%': etab.ville.name}) }} {%if hasBaignade %}{{ "seo.title.camping_suffix" | trans }}{% endif %}</span>
+        <span class="h2-like">{{ etab.seoH1 | trans({'%ville%': etab.ville.name}) }} {%if hasBaignade %}{{ "seo.title.camping_suffix" | trans }}{% endif %}</span>
     </h1>
 
     <p class="campSubtitle"><strong>{{ "fiche.ouvert_du" | trans }} {{ etab.ouvertureCamping }}</strong></p>
@@ -204,7 +204,7 @@
                     <strong>{{ etab.eventPrioritaire.name }}<br />
                     {{ etab.eventPrioritaire.strDate }}</strong> {{ etab.eventPrioritaire.address }}<br />
                     {{ etab.eventPrioritaire.zipcode }} {{ etab.eventPrioritaire.city }}<br />
-                    {{ "fiche.distance_camping" | trans }} {{ (etab.eventPrioritaire.distanceCamping / 1000) | number_format(1, ',', ' ') }} {{ "fiche.km" | trans }}
+                    {% if etab.eventPrioritaire.distanceCamping > 0 %}{{ "fiche.distance_camping" | trans }} {{ (etab.eventPrioritaire.distanceCamping / 1000) | number_format(0, ',', ' ') }} {{ "fiche.km" | trans }}{% endif %}
                 </dd>
             </dl>
             {% endif %}
@@ -305,7 +305,7 @@
                     <p>{{ poi.address }}<br>
                         {{ poi.address2 }}<br>
                         <span>{{ poi.zipcode }} {{ poi.city }}</span><br>
-                        {{ "fiche.distance_camping" | trans }} {{ (poi.distanceForEtablissement(etab) / 1000) | number_format(1, ',', ' ') }} {{ "fiche.km" | trans }}<br>
+                        {% if poi.distanceForEtablissement(etab) > 0 %}{{ "fiche.distance_camping" | trans }} {{ (poi.distanceForEtablissement(etab) / 1000) | number_format(0, ',', ' ') }} {{ "fiche.km" | trans }}<br>{% endif %}
                         <a href="{{ path('poi', {slug: poi.slug}) }}" class="bt sombre left" title="{{ "general.en_savoir_plus" | trans }}" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'Contenu_-_A-Proximite', 'Clic_-_Detail-Activite-Sites-a-Visiter']);">{{ "general.en_savoir_plus" | trans }}</a>
                     </p>
                 </div>
@@ -325,7 +325,7 @@
                     <p>{{ event.address }}<br>
                         {{ event.address2 }}<br>
                     <span>{{ event.zipcode }} {{ event.city }}</span><br>
-                        {{ "fiche.distance_camping" | trans }} {{ (event.distanceForEtablissement(etab) / 1000) | number_format(1, ',', ' ') }} {{ "fiche.km" | trans }}<br>
+                        {% if event.distanceForEtablissement(etab) > 0 %}{{ "fiche.distance_camping" | trans }} {{ (event.distanceForEtablissement(etab) / 1000) | number_format(0, ',', ' ') }} {{ "fiche.km" | trans }}<br>{% endif %}
                         <a href="{{ path('event', {slug: event.slug}) }}" class="bt sombre left" title="{{ "general.en_savoir_plus" | trans }}" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'Contenu_-_A-Proximite', 'Clic_-_Detail-Agenda-culturel-et-sorties']);">{{ "general.en_savoir_plus" | trans }}</a>
                     </p>
                 </div>
@@ -402,7 +402,6 @@
     </nav>
 </div>
 
-{% if blocPrix.adult_price_without_discounts != 0 %}
 <iframe id="frameResalys" src="{{ path('resalys_wrapper', {
     webuser: webuser,
     display: 'semainier',
@@ -410,12 +409,15 @@
     campaign_code: "now"|date("Y"),
     referer: referer
 }) }}" width="960px" height="700px" marginheight="0" marginwidth="0" frameborder="0"></iframe>
-{% endif %}
 {% endblock %}
 
 {% block rightColumn %}
-    {% include 'Bloc/prix.twig' %}
+    {{ esi(path('widget', {'name': 'bloc_prix', 'etab': etab.code})) }}
 <div id="greyBoxes">
-    {% include 'Bloc/sejour_reussi.twig' %}
+    {{ esi(path('widget', {'name': 'offres_speciales', 'etab': etab.id})) }}
+    {{ esi(path('widget', {'name': 'tracking', 'etab': etab.code})) }}
+    {{ esi(path('widget', {'name': 'related', 'etab': etab.code})) }}
+    {{ esi(path('widget', {'name': 'sejour_reussi'})) }}
+    {{ esi(path('widget', {'name': 'reassurance'})) }}
 </div>
 {% endblock %}

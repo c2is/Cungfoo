@@ -1,0 +1,19 @@
+{% if campings | length %}
+<div id="discoverBloc" class="clear radiusBox greyC">
+    <div class="title">
+        <h2>{{ 'widget.related.title' | trans }}</h2>
+    </div>
+    {% for camping in campings %}
+    <div class="element clear">
+        <div class="left">
+            <img class="boxborder" src="{{ asset(camping.vignette) }}" width="119" height="86" alt="" />
+        </div>
+        <div class="details left">
+            <span class="title">{{ camping.name }}{{ etab.categorie.stars }}</span>
+            <span class="region">{{ camping.region.pays.name }} - {{ camping.region.name }}</span>
+        </div>
+        <a href="{{ path('destination_camping', { pays: camping.pays.slug, region: camping.region.slug, ville: camping.ville.slug, camping: camping.slug }) }}" class="stain cover"><span>{{ 'widget.related.from' | trans }}<br /><span class="price">{{ camping.minimumPriceType.minimumPrice | number_format }}<span class="fine">&nbsp;</span>€</span></span></a>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}

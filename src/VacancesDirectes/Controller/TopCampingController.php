@@ -13,7 +13,8 @@ use Symfony\Component\HttpFoundation\Request,
 use Cungfoo\Model\EtablissementQuery,
     Cungfoo\Model\PaysQuery,
     Cungfoo\Model\RegionQuery,
-    Cungfoo\Model\VilleQuery;
+    Cungfoo\Model\VilleQuery,
+    Cungfoo\Model\MetadataPeer;
 
 use VacancesDirectes\Lib\Listing\CatalogueListing,
     VacancesDirectes\Lib\SearchEngine;
@@ -59,8 +60,8 @@ class TopCampingController
         $listingContent = $list->process();
 
         return $app->renderView('Research\dispo.twig', array(
-            'title'           => $app->trans('seo.title.topCamping'),
-            'metaDescription' => $app->trans('seo.meta.topCamping'),
+            'title'           => MetadataPeer::get('top_camping', 'seo_title'),
+            'metaDescription' => MetadataPeer::get('top_camping', 'seo_description'),
             'h1' => $app->trans('topCamping.h1'),
             'list'       => $listingContent,
             'firstEtab'  => reset($listingContent['element']),

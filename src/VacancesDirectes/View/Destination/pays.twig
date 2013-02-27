@@ -1,0 +1,5 @@
+{% extends "Destination/base.twig" %}
+
+{% block title %}{{ item.seoTitle | trans ({'%pays%': item}) }}{% endblock %}
+
+{% block metaDescription %}{{ item.seoDescription | trans  ({'%pays%': item})}}{% endblock %}

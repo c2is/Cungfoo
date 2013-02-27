@@ -25,12 +25,12 @@ use Cungfoo\Model\BonPlanCategorieQuery;
  *
  *
  * @method BonPlanCategorieQuery orderById($order = Criteria::ASC) Order by the id column
- * @method BonPlanCategorieQuery orderByActive($order = Criteria::ASC) Order by the active column
  * @method BonPlanCategorieQuery orderBySortableRank($order = Criteria::ASC) Order by the sortable_rank column
+ * @method BonPlanCategorieQuery orderByActive($order = Criteria::ASC) Order by the active column
  *
  * @method BonPlanCategorieQuery groupById() Group by the id column
- * @method BonPlanCategorieQuery groupByActive() Group by the active column
  * @method BonPlanCategorieQuery groupBySortableRank() Group by the sortable_rank column
+ * @method BonPlanCategorieQuery groupByActive() Group by the active column
  *
  * @method BonPlanCategorieQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method BonPlanCategorieQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -47,12 +47,12 @@ use Cungfoo\Model\BonPlanCategorieQuery;
  * @method BonPlanCategorie findOne(PropelPDO $con = null) Return the first BonPlanCategorie matching the query
  * @method BonPlanCategorie findOneOrCreate(PropelPDO $con = null) Return the first BonPlanCategorie matching the query, or a new BonPlanCategorie object populated from the query conditions when no match is found
  *
- * @method BonPlanCategorie findOneByActive(boolean $active) Return the first BonPlanCategorie filtered by the active column
  * @method BonPlanCategorie findOneBySortableRank(int $sortable_rank) Return the first BonPlanCategorie filtered by the sortable_rank column
+ * @method BonPlanCategorie findOneByActive(boolean $active) Return the first BonPlanCategorie filtered by the active column
  *
  * @method array findById(int $id) Return BonPlanCategorie objects filtered by the id column
- * @method array findByActive(boolean $active) Return BonPlanCategorie objects filtered by the active column
  * @method array findBySortableRank(int $sortable_rank) Return BonPlanCategorie objects filtered by the sortable_rank column
+ * @method array findByActive(boolean $active) Return BonPlanCategorie objects filtered by the active column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -156,7 +156,7 @@ abstract class BaseBonPlanCategorieQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `active`, `sortable_rank` FROM `bon_plan_categorie` WHERE `id` = :p0';
+        $sql = 'SELECT `id`, `sortable_rank`, `active` FROM `bon_plan_categorie` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -273,33 +273,6 @@ abstract class BaseBonPlanCategorieQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query on the active column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByActive(true); // WHERE active = true
-     * $query->filterByActive('yes'); // WHERE active = true
-     * </code>
-     *
-     * @param     boolean|string $active The value to use as filter.
-     *              Non-boolean arguments are converted using the following rules:
-     *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
-     *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
-     *              Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return BonPlanCategorieQuery The current query, for fluid interface
-     */
-    public function filterByActive($active = null, $comparison = null)
-    {
-        if (is_string($active)) {
-            $active = in_array(strtolower($active), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
-        }
-
-        return $this->addUsingAlias(BonPlanCategoriePeer::ACTIVE, $active, $comparison);
-    }
-
-    /**
      * Filter the query on the sortable_rank column
      *
      * Example usage:
@@ -338,6 +311,33 @@ abstract class BaseBonPlanCategorieQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(BonPlanCategoriePeer::SORTABLE_RANK, $sortableRank, $comparison);
+    }
+
+    /**
+     * Filter the query on the active column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByActive(true); // WHERE active = true
+     * $query->filterByActive('yes'); // WHERE active = true
+     * </code>
+     *
+     * @param     boolean|string $active The value to use as filter.
+     *              Non-boolean arguments are converted using the following rules:
+     *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     *              Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return BonPlanCategorieQuery The current query, for fluid interface
+     */
+    public function filterByActive($active = null, $comparison = null)
+    {
+        if (is_string($active)) {
+            $active = in_array(strtolower($active), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+        }
+
+        return $this->addUsingAlias(BonPlanCategoriePeer::ACTIVE, $active, $comparison);
     }
 
     /**
@@ -537,6 +537,8 @@ abstract class BaseBonPlanCategorieQuery extends ModelCriteria
             ->filterByActive(true)
             ->useI18nQuery($locale, 'i18n_locale')
                 ->filterByActiveLocale(true)
+                    ->_or()
+                ->filterByActiveLocale(null, Criteria::ISNULL)
             ->endUse()
         ;
 

@@ -10,6 +10,7 @@ use \Propel;
 use \PropelException;
 use \PropelPDO;
 use Cungfoo\Model\DemandeAnnulation;
+use Cungfoo\Model\DemandeAnnulationI18nPeer;
 use Cungfoo\Model\DemandeAnnulationPeer;
 use Cungfoo\Model\EtablissementPeer;
 use Cungfoo\Model\map\DemandeAnnulationTableMap;
@@ -138,6 +139,13 @@ abstract class BaseDemandeAnnulationPeer
     public static $instances = array();
 
 
+    // i18n behavior
+
+    /**
+     * The default locale to use for translations
+     * @var        string
+     */
+    const DEFAULT_LOCALE = 'fr';
     /**
      * holds an array of fieldnames
      *
@@ -523,6 +531,9 @@ abstract class BaseDemandeAnnulationPeer
      */
     public static function clearRelatedInstancePool()
     {
+        // Invalidate objects in DemandeAnnulationI18nPeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        DemandeAnnulationI18nPeer::clearInstancePool();
     }
 
     /**
@@ -1154,6 +1165,34 @@ abstract class BaseDemandeAnnulationPeer
         return $objs;
     }
 
+    // crudable behavior
+
+    /**
+     * The default locale to use for translations
+     * @var        string
+     */
+    public static function getMetadata($locale = 'fr', PropelPDO $con = null)
+    {
+        return \Cungfoo\Model\MetadataQuery::create()
+            ->joinWithI18n($locale)
+            ->filterByTableRef(DemandeAnnulationPeer::TABLE_NAME)
+            ->findOne()
+        ;
+    }
+    // seo behavior
+
+    /**
+     * The default locale to use for translations
+     * @var        string
+     */
+    public static function getSeo($locale = 'fr', PropelPDO $con = null)
+    {
+        return \Cungfoo\Model\SeoQuery::create()
+            ->joinWithI18n($locale)
+            ->filterByTableRef(DemandeAnnulationPeer::TABLE_NAME)
+            ->findOne()
+        ;
+    }
 } // BaseDemandeAnnulationPeer
 
 // This is the static code needed to register the TableMap for this table with the main Propel class.

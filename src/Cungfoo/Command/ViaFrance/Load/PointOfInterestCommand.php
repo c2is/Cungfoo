@@ -18,6 +18,7 @@ use Symfony\Component\Console\Input\InputArgument,
 use Cungfoo\Command\Command as BaseCommand,
     Cungfoo\Lib\RESTConnection,
     Cungfoo\Lib\ViaFrance\Client\PointOfInterestClient,
+    Cungfoo\Lib\ViaFrance\Client\PointOfInterestRegionClient,
     Cungfoo\Lib\ViaFrance\Loader\PointOfInterestLoader;
 
 class PointOfInterestCommand extends BaseCommand
@@ -33,9 +34,6 @@ class PointOfInterestCommand extends BaseCommand
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $client = new PointOfInterestClient();
-        $client->loadConfig($this->getProjectDirectory().'/app/config/ViaFrance/client.yml');
-
         $loader = new PointOfInterestLoader();
 
         $con = \Propel::getConnection();
@@ -49,16 +47,51 @@ class PointOfInterestCommand extends BaseCommand
                 ->find()
             ;
 
-            foreach ($etabs as $etab)
+            foreach ($this->getSilexApplication()['config']->getLanguages() as $language => $locale)
             {
-                $client->setParam('x', $etab->getGeoCoordinateX());
-                $client->setParam('y', $etab->getGeoCoordinateY());
-
-                foreach ($this->getSilexApplication()['config']->getLanguages() as $language => $locale)
+                if ($language == 'de')
                 {
+                    $client = new PointOfInterestRegionClient();
+                    $client->loadConfig($this->getProjectDirectory().'/app/config/ViaFrance/client.yml');
                     $client->setParam('lang', $language);
-                    $data = $client->getData(new RESTConnection());
-                    $loader->load($etab, $data, $language);
+
+                    $regions = \Cungfoo\Model\RegionQuery::create()
+                        ->find()
+                    ;
+
+                    $correspondanceRegions = \Symfony\Component\Yaml\Yaml::parse($this->getProjectDirectory().'/app/config/ViaFrance/regions.yml')['regions'];
+
+                    foreach ($regions as $region)
+                    {
+                        if (isset($correspondanceRegions[$region->getCode()]))
+                        {
+                            $client->setParam('departement', '');
+                            $client->setParam('region', '');
+
+                            foreach ($correspondanceRegions[$region->getCode()] as $key => $value)
+                            {
+                                $client->setParam($key, $value);
+                            }
+
+                            $data = $client->getData(new RESTConnection());
+                            $loader->load($region, $data, $language);
+                        }
+                    }
+                }
+                else
+                {
+                    $client = new PointOfInterestClient();
+                    $client->loadConfig($this->getProjectDirectory().'/app/config/ViaFrance/client.yml');
+                    $client->setParam('lang', $language);
+
+                    foreach ($etabs as $etab)
+                    {
+                        $client->setParam('x', $etab->getGeoCoordinateX());
+                        $client->setParam('y', $etab->getGeoCoordinateY());
+
+                        $data = $client->getData(new RESTConnection());
+                        $loader->load($etab, $data, $language);
+                    }
                 }
             }
 

@@ -1,0 +1,1027 @@
+\Cungfoo\Model\Ville:
+    1:
+        Code: AGDE
+        RegionId: 29
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    2:
+        Code: ALSA
+        RegionId: 36
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    3:
+        Code: ALCO
+        RegionId: 15
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    4:
+        Code: ALFA
+        RegionId: 13
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    5:
+        Code: AMDM
+        RegionId: 16
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    6:
+        Code: ANTI
+        RegionId: 36
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    7:
+        Code: ARGE
+        RegionId: 29
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    8:
+        Code: AUBE
+        RegionId: 33
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    9:
+        Code: AUBI
+        RegionId: 36
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    10:
+        Code: AURE
+        RegionId: 28
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    11:
+        Code: AXLT
+        RegionId: 37
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    12:
+        Code: AZUR
+        RegionId: 28
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    13:
+        Code: BENO
+        RegionId: 8
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    14:
+        Code: BEYN
+        RegionId: 11
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    15:
+        Code: BEZI
+        RegionId: 29
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    16:
+        Code: BIDA
+        RegionId: 35
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    17:
+        Code: BIE
+        RegionId: 2
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    18:
+        Code: BISC
+        RegionId: 28
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    19:
+        Code: BLAN
+        RegionId: 14
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    20:
+        Code: BOOF
+        RegionId: 2
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    21:
+        Code: BOYA
+        RegionId: 10
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    22:
+        Code: BREM
+        RegionId: 40
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    23:
+        Code: CALO
+        RegionId: 14
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    24:
+        Code: CALP
+        RegionId: 17
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    25:
+        Code: CAMI
+        RegionId: 34
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    26:
+        Code: CADS
+        RegionId: 7
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    27:
+        Code: CROU
+        RegionId: 29
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    28:
+        Code: CARN
+        RegionId: 8
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    29:
+        Code: CAR
+        RegionId: 36
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    30:
+        Code: CARS
+        RegionId: 17
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    31:
+        Code: CAST
+        RegionId: 36
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    32:
+        Code: CDIC
+        RegionId: 12
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    33:
+        Code: CAEM
+        RegionId: 14
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    34:
+        Code: CADE
+        RegionId: 26
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    35:
+        Code: CSTR
+        RegionId: 29
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    36:
+        Code: CAVA
+        RegionId: 25
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    37:
+        Code: CECI
+        RegionId: 26
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    38:
+        Code: CESE
+        RegionId: 25
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    39:
+        Code: CHOL
+        RegionId: 10
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    40:
+        Code: CHPL
+        RegionId: 10
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    41:
+        Code: CHAT
+        RegionId: 18
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    42:
+        Code: CHEV
+        RegionId: 23
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    43:
+        Code: CLAO
+        RegionId: 8
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    44:
+        Code: COLO
+        RegionId: 29
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    45:
+        Code: CRE
+        RegionId: 16
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    46:
+        Code: CURB
+        RegionId: 36
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    47:
+        Code: DOUS
+        RegionId: 1
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    48:
+        Code: EGLE
+        RegionId: 30
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    49:
+        Code: ERQU
+        RegionId: 8
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    50:
+        Code: FBRE
+        RegionId: 29
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    51:
+        Code: FABR
+        RegionId: 29
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    52:
+        Code: FREJ
+        RegionId: 36
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    53:
+        Code: GLMO
+        RegionId: 29
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    54:
+        Code: GHIS
+        RegionId: 12
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    55:
+        Code: GRAD
+        RegionId: 25
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    56:
+        Code: GRMA
+        RegionId: 33
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    57:
+        Code: GRIM
+        RegionId: 36
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    58:
+        Code: GUER
+        RegionId: 32
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    59:
+        Code: HOUR
+        RegionId: 21
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    60:
+        Code: HYER
+        RegionId: 36
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    61:
+        Code: ISI
+        RegionId: 33
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    62:
+        Code: JARD
+        RegionId: 40
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    63:
+        Code: JUVI
+        RegionId: 29
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    64:
+        Code: ESTA
+        RegionId: 14
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    65:
+        Code: LABA
+        RegionId: 32
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    66:
+        Code: LAMO
+        RegionId: 36
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    67:
+        Code: LANO
+        RegionId: 9
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    68:
+        Code: ROQA
+        RegionId: 36
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    69:
+        Code: LRSS
+        RegionId: 36
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    70:
+        Code: LATR
+        RegionId: 40
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    71:
+        Code: LAGO
+        RegionId: 3
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    72:
+        Code: LATH
+        RegionId: 1
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    73:
+        Code: LABE
+        RegionId: 29
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    74:
+        Code: LATT
+        RegionId: 29
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    75:
+        Code: LBAR
+        RegionId: 29
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    76:
+        Code: CANN
+        RegionId: 36
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    77:
+        Code: GRAU
+        RegionId: 29
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    78:
+        Code: LEPA
+        RegionId: 8
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    79:
+        Code: PORT
+        RegionId: 34
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    80:
+        Code: LEGE
+        RegionId: 21
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    81:
+        Code: ANGL
+        RegionId: 29
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    82:
+        Code: EYZ
+        RegionId: 17
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    83:
+        Code: LESM
+        RegionId: 10
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    84:
+        Code: LID
+        RegionId: 25
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    85:
+        Code: LIDO
+        RegionId: 25
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    86:
+        Code: LIMI
+        RegionId: 28
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    87:
+        Code: LOIX
+        RegionId: 10
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    88:
+        Code: MAR
+        RegionId: 27
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    89:
+        Code: MARI
+        RegionId: 26
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    90:
+        Code: MESS
+        RegionId: 28
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    91:
+        Code: MEZE
+        RegionId: 29
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    92:
+        Code: MEZO
+        RegionId: 28
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    93:
+        Code: MTRO
+        RegionId: 16
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    94:
+        Code: MTMP
+        RegionId: 36
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    95:
+        Code: MTLV
+        RegionId: 21
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    96:
+        Code: MUN
+        RegionId: 2
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    97:
+        Code: MURO
+        RegionId: 6
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    98:
+        Code: NAG
+        RegionId: 38
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    99:
+        Code: NALP
+        RegionId: 36
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    100:
+        Code: NARB
+        RegionId: 29
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    101:
+        Code: NEVE
+        RegionId: 8
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    102:
+        Code: OLON
+        RegionId: 40
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    103:
+        Code: ONDR
+        RegionId: 28
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    104:
+        Code: PALM
+        RegionId: 14
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    105:
+        Code: PALA
+        RegionId: 29
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    106:
+        Code: PALS
+        RegionId: 14
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    107:
+        Code: PASS
+        RegionId: 1
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    108:
+        Code: PATO
+        RegionId: 27
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    109:
+        Code: PENE
+        RegionId: 8
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    110:
+        Code: ARO
+        RegionId: 14
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    111:
+        Code: PLAT
+        RegionId: 14
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    112:
+        Code: PLES
+        RegionId: 8
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    113:
+        Code: PLOU
+        RegionId: 8
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    114:
+        Code: PORN
+        RegionId: 32
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    115:
+        Code: PORV
+        RegionId: 12
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    116:
+        Code: PRE
+        RegionId: 36
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    117:
+        Code: PUIL
+        RegionId: 10
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    118:
+        Code: PUNT
+        RegionId: 25
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    119:
+        Code: PYLA
+        RegionId: 21
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    120:
+        Code: QUIB
+        RegionId: 8
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    121:
+        Code: QUI
+        RegionId: 36
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    122:
+        Code: RUOM
+        RegionId: 3
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    123:
+        Code: RUYN
+        RegionId: 6
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    124:
+        Code: STCA
+        RegionId: 8
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    125:
+        Code: STCH
+        RegionId: 29
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    126:
+        Code: STCL
+        RegionId: 10
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    127:
+        Code: STDE
+        RegionId: 10
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    128:
+        Code: STGE
+        RegionId: 10
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    129:
+        Code: STGI
+        RegionId: 40
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    130:
+        Code: STHI
+        RegionId: 40
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    131:
+        Code: STJE
+        RegionId: 40
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    132:
+        Code: STJU
+        RegionId: 40
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    133:
+        Code: STLA
+        RegionId: 10
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    134:
+        Code: STYV
+        RegionId: 8
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    135:
+        Code: SANV
+        RegionId: 26
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    136:
+        Code: SANG
+        RegionId: 28
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    137:
+        Code: SEIG
+        RegionId: 28
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    138:
+        Code: SEP
+        RegionId: 2
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    139:
+        Code: SERI
+        RegionId: 29
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    140:
+        Code: SETE
+        RegionId: 29
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    141:
+        Code: SIGE
+        RegionId: 29
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    142:
+        Code: SIGN
+        RegionId: 36
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    143:
+        Code: SOTO
+        RegionId: 25
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    144:
+        Code: SOUI
+        RegionId: 17
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    145:
+        Code: SOUL
+        RegionId: 21
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    146:
+        Code: AMAN
+        RegionId: 7
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    147:
+        Code: STAY
+        RegionId: 36
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    148:
+        Code: STCY
+        RegionId: 29
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    149:
+        Code: DID
+        RegionId: 10
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    150:
+        Code: STLV
+        RegionId: 36
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    151:
+        Code: STMN
+        RegionId: 17
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    152:
+        Code: MAUA
+        RegionId: 3
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    153:
+        Code: STPF
+        RegionId: 36
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    154:
+        Code: STMA
+        RegionId: 29
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    155:
+        Code: SUEV
+        RegionId: 31
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    156:
+        Code: TALM
+        RegionId: 40
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    157:
+        Code: THON
+        RegionId: 1
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    158:
+        Code: THOU
+        RegionId: 20
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    159:
+        Code: TORP
+        RegionId: 29
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    160:
+        Code: TOUQ
+        RegionId: 23
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    161:
+        Code: TRO
+        RegionId: 24
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    162:
+        Code: VALP
+        RegionId: 3
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    163:
+        Code: VEN
+        RegionId: 29
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    164:
+        Code: VIAS
+        RegionId: 29
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    165:
+        Code: VIC
+        RegionId: 29
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    166:
+        Code: VIEL
+        RegionId: 28
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    167:
+        Code: VILA
+        RegionId: 16
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    168:
+        Code: VILL
+        RegionId: 36
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    169:
+        Code: VOGU
+        RegionId: 3
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    170:
+        Code: VOL
+        RegionId: 36
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true
+    171:
+        Code: WATT
+        RegionId: 2
+        ImageDetail1: null
+        ImageDetail2: null
+        Active: true

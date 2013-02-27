@@ -8,11 +8,15 @@ use \Exception;
 use \PDO;
 use \Persistent;
 use \Propel;
+use \PropelCollection;
 use \PropelException;
+use \PropelObjectCollection;
 use \PropelPDO;
 use Cungfoo\Model\Etablissement;
 use Cungfoo\Model\EtablissementQuery;
 use Cungfoo\Model\TopCamping;
+use Cungfoo\Model\TopCampingI18n;
+use Cungfoo\Model\TopCampingI18nQuery;
 use Cungfoo\Model\TopCampingPeer;
 use Cungfoo\Model\TopCampingQuery;
 use Propel\BaseObject;
@@ -76,6 +80,12 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
     protected $aEtablissement;
 
     /**
+     * @var        PropelObjectCollection|TopCampingI18n[] Collection to store aggregation of TopCampingI18n objects.
+     */
+    protected $collTopCampingI18ns;
+    protected $collTopCampingI18nsPartial;
+
+    /**
      * Flag to prevent endless save loop, if this object is referenced
      * by another object which falls in this transaction.
      * @var        boolean
@@ -96,6 +106,26 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
      * @var        array
      */
     protected $sortableQueries = array();
+
+    // i18n behavior
+
+    /**
+     * Current locale
+     * @var        string
+     */
+    protected $currentLocale = 'fr';
+
+    /**
+     * Current translation objects
+     * @var        array[TopCampingI18n]
+     */
+    protected $currentTranslations;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
+    protected $topCampingI18nsScheduledForDeletion = null;
 
     /**
      * Applies default values to this object.
@@ -368,6 +398,8 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
         if ($deep) {  // also de-associate any related objects?
 
             $this->aEtablissement = null;
+            $this->collTopCampingI18ns = null;
+
         } // if (deep)
     }
 
@@ -514,6 +546,23 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
                 }
                 $affectedRows += 1;
                 $this->resetModified();
+            }
+
+            if ($this->topCampingI18nsScheduledForDeletion !== null) {
+                if (!$this->topCampingI18nsScheduledForDeletion->isEmpty()) {
+                    TopCampingI18nQuery::create()
+                        ->filterByPrimaryKeys($this->topCampingI18nsScheduledForDeletion->getPrimaryKeys(false))
+                        ->delete($con);
+                    $this->topCampingI18nsScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collTopCampingI18ns !== null) {
+                foreach ($this->collTopCampingI18ns as $referrerFK) {
+                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
+                        $affectedRows += $referrerFK->save($con);
+                    }
+                }
             }
 
             $this->alreadyInSave = false;
@@ -688,6 +737,14 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
             }
 
 
+                if ($this->collTopCampingI18ns !== null) {
+                    foreach ($this->collTopCampingI18ns as $referrerFK) {
+                        if (!$referrerFK->validate($columns)) {
+                            $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
+                        }
+                    }
+                }
+
 
             $this->alreadyInValidation = false;
         }
@@ -772,6 +829,9 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
         if ($includeForeignObjects) {
             if (null !== $this->aEtablissement) {
                 $result['Etablissement'] = $this->aEtablissement->toArray($keyType, $includeLazyLoadColumns,  $alreadyDumpedObjects, true);
+            }
+            if (null !== $this->collTopCampingI18ns) {
+                $result['TopCampingI18ns'] = $this->collTopCampingI18ns->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
         }
 
@@ -936,6 +996,12 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
             // store object hash to prevent cycle
             $this->startCopy = true;
 
+            foreach ($this->getTopCampingI18ns() as $relObj) {
+                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
+                    $copyObj->addTopCampingI18n($relObj->copy($deepCopy));
+                }
+            }
+
             //unflag object copy
             $this->startCopy = false;
         } // if ($deepCopy)
@@ -1038,6 +1104,241 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
         return $this->aEtablissement;
     }
 
+
+    /**
+     * Initializes a collection based on the name of a relation.
+     * Avoids crafting an 'init[$relationName]s' method name
+     * that wouldn't work when StandardEnglishPluralizer is used.
+     *
+     * @param string $relationName The name of the relation to initialize
+     * @return void
+     */
+    public function initRelation($relationName)
+    {
+        if ('TopCampingI18n' == $relationName) {
+            $this->initTopCampingI18ns();
+        }
+    }
+
+    /**
+     * Clears out the collTopCampingI18ns collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return TopCamping The current object (for fluent API support)
+     * @see        addTopCampingI18ns()
+     */
+    public function clearTopCampingI18ns()
+    {
+        $this->collTopCampingI18ns = null; // important to set this to null since that means it is uninitialized
+        $this->collTopCampingI18nsPartial = null;
+
+        return $this;
+    }
+
+    /**
+     * reset is the collTopCampingI18ns collection loaded partially
+     *
+     * @return void
+     */
+    public function resetPartialTopCampingI18ns($v = true)
+    {
+        $this->collTopCampingI18nsPartial = $v;
+    }
+
+    /**
+     * Initializes the collTopCampingI18ns collection.
+     *
+     * By default this just sets the collTopCampingI18ns collection to an empty array (like clearcollTopCampingI18ns());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @param boolean $overrideExisting If set to true, the method call initializes
+     *                                        the collection even if it is not empty
+     *
+     * @return void
+     */
+    public function initTopCampingI18ns($overrideExisting = true)
+    {
+        if (null !== $this->collTopCampingI18ns && !$overrideExisting) {
+            return;
+        }
+        $this->collTopCampingI18ns = new PropelObjectCollection();
+        $this->collTopCampingI18ns->setModel('TopCampingI18n');
+    }
+
+    /**
+     * Gets an array of TopCampingI18n objects which contain a foreign key that references this object.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this TopCamping is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @return PropelObjectCollection|TopCampingI18n[] List of TopCampingI18n objects
+     * @throws PropelException
+     */
+    public function getTopCampingI18ns($criteria = null, PropelPDO $con = null)
+    {
+        $partial = $this->collTopCampingI18nsPartial && !$this->isNew();
+        if (null === $this->collTopCampingI18ns || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collTopCampingI18ns) {
+                // return empty collection
+                $this->initTopCampingI18ns();
+            } else {
+                $collTopCampingI18ns = TopCampingI18nQuery::create(null, $criteria)
+                    ->filterByTopCamping($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    if (false !== $this->collTopCampingI18nsPartial && count($collTopCampingI18ns)) {
+                      $this->initTopCampingI18ns(false);
+
+                      foreach($collTopCampingI18ns as $obj) {
+                        if (false == $this->collTopCampingI18ns->contains($obj)) {
+                          $this->collTopCampingI18ns->append($obj);
+                        }
+                      }
+
+                      $this->collTopCampingI18nsPartial = true;
+                    }
+
+                    return $collTopCampingI18ns;
+                }
+
+                if($partial && $this->collTopCampingI18ns) {
+                    foreach($this->collTopCampingI18ns as $obj) {
+                        if($obj->isNew()) {
+                            $collTopCampingI18ns[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collTopCampingI18ns = $collTopCampingI18ns;
+                $this->collTopCampingI18nsPartial = false;
+            }
+        }
+
+        return $this->collTopCampingI18ns;
+    }
+
+    /**
+     * Sets a collection of TopCampingI18n objects related by a one-to-many relationship
+     * to the current object.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $topCampingI18ns A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     * @return TopCamping The current object (for fluent API support)
+     */
+    public function setTopCampingI18ns(PropelCollection $topCampingI18ns, PropelPDO $con = null)
+    {
+        $this->topCampingI18nsScheduledForDeletion = $this->getTopCampingI18ns(new Criteria(), $con)->diff($topCampingI18ns);
+
+        foreach ($this->topCampingI18nsScheduledForDeletion as $topCampingI18nRemoved) {
+            $topCampingI18nRemoved->setTopCamping(null);
+        }
+
+        $this->collTopCampingI18ns = null;
+        foreach ($topCampingI18ns as $topCampingI18n) {
+            $this->addTopCampingI18n($topCampingI18n);
+        }
+
+        $this->collTopCampingI18ns = $topCampingI18ns;
+        $this->collTopCampingI18nsPartial = false;
+
+        return $this;
+    }
+
+    /**
+     * Returns the number of related TopCampingI18n objects.
+     *
+     * @param Criteria $criteria
+     * @param boolean $distinct
+     * @param PropelPDO $con
+     * @return int             Count of related TopCampingI18n objects.
+     * @throws PropelException
+     */
+    public function countTopCampingI18ns(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        $partial = $this->collTopCampingI18nsPartial && !$this->isNew();
+        if (null === $this->collTopCampingI18ns || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collTopCampingI18ns) {
+                return 0;
+            }
+
+            if($partial && !$criteria) {
+                return count($this->getTopCampingI18ns());
+            }
+            $query = TopCampingI18nQuery::create(null, $criteria);
+            if ($distinct) {
+                $query->distinct();
+            }
+
+            return $query
+                ->filterByTopCamping($this)
+                ->count($con);
+        }
+
+        return count($this->collTopCampingI18ns);
+    }
+
+    /**
+     * Method called to associate a TopCampingI18n object to this object
+     * through the TopCampingI18n foreign key attribute.
+     *
+     * @param    TopCampingI18n $l TopCampingI18n
+     * @return TopCamping The current object (for fluent API support)
+     */
+    public function addTopCampingI18n(TopCampingI18n $l)
+    {
+        if ($l && $locale = $l->getLocale()) {
+            $this->setLocale($locale);
+            $this->currentTranslations[$locale] = $l;
+        }
+        if ($this->collTopCampingI18ns === null) {
+            $this->initTopCampingI18ns();
+            $this->collTopCampingI18nsPartial = true;
+        }
+        if (!in_array($l, $this->collTopCampingI18ns->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
+            $this->doAddTopCampingI18n($l);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	TopCampingI18n $topCampingI18n The topCampingI18n object to add.
+     */
+    protected function doAddTopCampingI18n($topCampingI18n)
+    {
+        $this->collTopCampingI18ns[]= $topCampingI18n;
+        $topCampingI18n->setTopCamping($this);
+    }
+
+    /**
+     * @param	TopCampingI18n $topCampingI18n The topCampingI18n object to remove.
+     * @return TopCamping The current object (for fluent API support)
+     */
+    public function removeTopCampingI18n($topCampingI18n)
+    {
+        if ($this->getTopCampingI18ns()->contains($topCampingI18n)) {
+            $this->collTopCampingI18ns->remove($this->collTopCampingI18ns->search($topCampingI18n));
+            if (null === $this->topCampingI18nsScheduledForDeletion) {
+                $this->topCampingI18nsScheduledForDeletion = clone $this->collTopCampingI18ns;
+                $this->topCampingI18nsScheduledForDeletion->clear();
+            }
+            $this->topCampingI18nsScheduledForDeletion[]= $topCampingI18n;
+            $topCampingI18n->setTopCamping(null);
+        }
+
+        return $this;
+    }
+
     /**
      * Clears the current object and sets all attributes to their default values
      */
@@ -1068,8 +1369,21 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
     public function clearAllReferences($deep = false)
     {
         if ($deep) {
+            if ($this->collTopCampingI18ns) {
+                foreach ($this->collTopCampingI18ns as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
         } // if ($deep)
 
+        // i18n behavior
+        $this->currentLocale = 'fr';
+        $this->currentTranslations = null;
+
+        if ($this->collTopCampingI18ns instanceof PropelCollection) {
+            $this->collTopCampingI18ns->clearIterator();
+        }
+        $this->collTopCampingI18ns = null;
         $this->aEtablissement = null;
     }
 
@@ -1446,6 +1760,16 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
     {
         return $this->getActive();
     }
+
+    /**
+     * return true is the object is active locale
+     *
+     * @return boolean
+     */
+    public function isActiveLocale()
+    {
+        return $this->getActiveLocale();
+    }
     // crudable behavior
 
     /**
@@ -1459,6 +1783,269 @@ abstract class BaseTopCamping extends BaseObject implements Persistent
     public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
     {
         return $this->save($con);
+    }
+
+    // i18n behavior
+
+    /**
+     * Sets the locale for translations
+     *
+     * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
+     *
+     * @return    TopCamping The current object (for fluent API support)
+     */
+    public function setLocale($locale = 'fr')
+    {
+        $this->currentLocale = $locale;
+
+        return $this;
+    }
+
+    /**
+     * Gets the locale for translations
+     *
+     * @return    string $locale Locale to use for the translation, e.g. 'fr_FR'
+     */
+    public function getLocale()
+    {
+        return $this->currentLocale;
+    }
+
+    /**
+     * Returns the current translation for a given locale
+     *
+     * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
+     * @param     PropelPDO $con an optional connection object
+     *
+     * @return TopCampingI18n */
+    public function getTranslation($locale = 'fr', PropelPDO $con = null)
+    {
+        if (!isset($this->currentTranslations[$locale])) {
+            if (null !== $this->collTopCampingI18ns) {
+                foreach ($this->collTopCampingI18ns as $translation) {
+                    if ($translation->getLocale() == $locale) {
+                        $this->currentTranslations[$locale] = $translation;
+
+                        return $translation;
+                    }
+                }
+            }
+            if ($this->isNew()) {
+                $translation = new TopCampingI18n();
+                $translation->setLocale($locale);
+            } else {
+                $translation = TopCampingI18nQuery::create()
+                    ->filterByPrimaryKey(array($this->getPrimaryKey(), $locale))
+                    ->findOneOrCreate($con);
+                $this->currentTranslations[$locale] = $translation;
+            }
+            $this->addTopCampingI18n($translation);
+        }
+
+        return $this->currentTranslations[$locale];
+    }
+
+    /**
+     * Remove the translation for a given locale
+     *
+     * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
+     * @param     PropelPDO $con an optional connection object
+     *
+     * @return    TopCamping The current object (for fluent API support)
+     */
+    public function removeTranslation($locale = 'fr', PropelPDO $con = null)
+    {
+        if (!$this->isNew()) {
+            TopCampingI18nQuery::create()
+                ->filterByPrimaryKey(array($this->getPrimaryKey(), $locale))
+                ->delete($con);
+        }
+        if (isset($this->currentTranslations[$locale])) {
+            unset($this->currentTranslations[$locale]);
+        }
+        foreach ($this->collTopCampingI18ns as $key => $translation) {
+            if ($translation->getLocale() == $locale) {
+                unset($this->collTopCampingI18ns[$key]);
+                break;
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Returns the current translation
+     *
+     * @param     PropelPDO $con an optional connection object
+     *
+     * @return TopCampingI18n */
+    public function getCurrentTranslation(PropelPDO $con = null)
+    {
+        return $this->getTranslation($this->getLocale(), $con);
+    }
+
+    /**
+     * Get the [seo_title] column value.
+     *
+     * @return string
+     */
+    public function getSeoTitle()
+    {
+        if (trim($this->getCurrentTranslation()->getSeoTitle()))
+        {
+            return trim($this->getCurrentTranslation()->getSeoTitle());
+        }
+
+        $peerClassName = self::PEER;
+        if ($peerClassName::getSeo())
+        {
+            return $peerClassName::getSeo($this->currentLocale)->getSeoTitle();
+        }
+
+        return '';
+    }
+
+
+
+        /**
+         * Set the value of [seo_title] column.
+         *
+         * @param string $v new value
+         * @return TopCampingI18n The current object (for fluent API support)
+         */
+        public function setSeoTitle($v)
+        {    $this->getCurrentTranslation()->setSeoTitle($v);
+
+        return $this;
+    }
+
+    /**
+     * Get the [seo_description] column value.
+     *
+     * @return string
+     */
+    public function getSeoDescription()
+    {
+        if (trim($this->getCurrentTranslation()->getSeoDescription()))
+        {
+            return trim($this->getCurrentTranslation()->getSeoDescription());
+        }
+
+        $peerClassName = self::PEER;
+        if ($peerClassName::getSeo())
+        {
+            return $peerClassName::getSeo($this->currentLocale)->getSeoDescription();
+        }
+
+        return '';
+    }
+
+
+
+        /**
+         * Set the value of [seo_description] column.
+         *
+         * @param string $v new value
+         * @return TopCampingI18n The current object (for fluent API support)
+         */
+        public function setSeoDescription($v)
+        {    $this->getCurrentTranslation()->setSeoDescription($v);
+
+        return $this;
+    }
+
+    /**
+     * Get the [seo_h1] column value.
+     *
+     * @return string
+     */
+    public function getSeoH1()
+    {
+        if (trim($this->getCurrentTranslation()->getSeoH1()))
+        {
+            return trim($this->getCurrentTranslation()->getSeoH1());
+        }
+
+        $peerClassName = self::PEER;
+        if ($peerClassName::getSeo())
+        {
+            return $peerClassName::getSeo($this->currentLocale)->getSeoH1();
+        }
+
+        return '';
+    }
+
+
+
+        /**
+         * Set the value of [seo_h1] column.
+         *
+         * @param string $v new value
+         * @return TopCampingI18n The current object (for fluent API support)
+         */
+        public function setSeoH1($v)
+        {    $this->getCurrentTranslation()->setSeoH1($v);
+
+        return $this;
+    }
+
+    /**
+     * Get the [seo_keywords] column value.
+     *
+     * @return string
+     */
+    public function getSeoKeywords()
+    {
+        if (trim($this->getCurrentTranslation()->getSeoKeywords()))
+        {
+            return trim($this->getCurrentTranslation()->getSeoKeywords());
+        }
+
+        $peerClassName = self::PEER;
+        if ($peerClassName::getSeo())
+        {
+            return $peerClassName::getSeo($this->currentLocale)->getSeoKeywords();
+        }
+
+        return '';
+    }
+
+
+
+        /**
+         * Set the value of [seo_keywords] column.
+         *
+         * @param string $v new value
+         * @return TopCampingI18n The current object (for fluent API support)
+         */
+        public function setSeoKeywords($v)
+        {    $this->getCurrentTranslation()->setSeoKeywords($v);
+
+        return $this;
+    }
+
+
+        /**
+         * Get the [active_locale] column value.
+         *
+         * @return boolean
+         */
+        public function getActiveLocale()
+        {
+        return $this->getCurrentTranslation()->getActiveLocale();
+    }
+
+
+        /**
+         * Set the value of [active_locale] column.
+         *
+         * @param boolean $v new value
+         * @return TopCampingI18n The current object (for fluent API support)
+         */
+        public function setActiveLocale($v)
+        {    $this->getCurrentTranslation()->setActiveLocale($v);
+
+        return $this;
     }
 
 }
