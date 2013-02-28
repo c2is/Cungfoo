@@ -94,9 +94,7 @@ class TypeHebergementType extends BaseTypeHebergementType
                     'title'         => 'crud.tab.medias',
                     'content'       => array(
                         'image_hebergement_path',
-                        'image_hebergement_path_deleted',
                         'image_composition_path',
-                        'image_composition_path_deleted'
                     )
                 ),
                 array(

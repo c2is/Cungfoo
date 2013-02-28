@@ -2488,20 +2488,6 @@ abstract class BaseVille extends BaseObject implements Persistent
      */
     public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
     {
-        if (!$form['image_detail_1_deleted']->getData())
-        {
-            $this->resetModified(VillePeer::IMAGE_DETAIL_1);
-        }
-
-        $this->uploadImageDetail1($form);
-
-        if (!$form['image_detail_2_deleted']->getData())
-        {
-            $this->resetModified(VillePeer::IMAGE_DETAIL_2);
-        }
-
-        $this->uploadImageDetail2($form);
-
         return $this->save($con);
     }
 
@@ -2519,38 +2505,6 @@ abstract class BaseVille extends BaseObject implements Persistent
     public function getUploadRootDir()
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
-    }
-
-    /**
-     * @param \Symfony\Component\Form\Form $form
-     * @return void
-     */
-    public function uploadImageDetail1(\Symfony\Component\Form\Form $form)
-    {
-        if (!file_exists($this->getUploadRootDir() . '/' . $form['image_detail_1']->getData()))
-        {
-            if ($form['image_detail_1']->getData()) {
-                $image = uniqid().'.'.$form['image_detail_1']->getData()->guessExtension();
-                $form['image_detail_1']->getData()->move($this->getUploadRootDir(), $image);
-                $this->setImageDetail1($this->getUploadDir() . '/' . $image);
-            }
-        }
-    }
-
-    /**
-     * @param \Symfony\Component\Form\Form $form
-     * @return void
-     */
-    public function uploadImageDetail2(\Symfony\Component\Form\Form $form)
-    {
-        if (!file_exists($this->getUploadRootDir() . '/' . $form['image_detail_2']->getData()))
-        {
-            if ($form['image_detail_2']->getData()) {
-                $image = uniqid().'.'.$form['image_detail_2']->getData()->guessExtension();
-                $form['image_detail_2']->getData()->move($this->getUploadRootDir(), $image);
-                $this->setImageDetail2($this->getUploadDir() . '/' . $image);
-            }
-        }
     }
 
 }

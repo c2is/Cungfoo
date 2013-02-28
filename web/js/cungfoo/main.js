@@ -42,11 +42,34 @@ $(function() {
 
     $("[rel='tooltip']").tooltip({placement: 'right', html: true});
 
-    //via http://ivaynberg.github.com/select2/#documentation
-    //$("select[multiple='multiple']").select2({
-    //    placeholder: "Select a State",
-    //    allowClear: true,
-    //});
+    // gestion edition au double click
+    $('#list .line').bind('dblclick', function () {
+        window.location.href = $('.edit', this).attr('href');
+    });
+
+    // gestion active/desactive depuis la liste du crud
+    $('#list .active').bind('click', function() {
+        var $this = $(this);
+
+        $.get($this.attr('href'), function(data) {
+            var $icon = $('i', $this).removeClass();
+            var $line = $this.parent('td').parent('tr');
+
+            if (data.active) {
+                $icon.addClass('icon-eye-open');
+                $line.removeClass('disabled');
+            }
+            else {
+                $icon.addClass('icon-eye-close');
+                $line.addClass('disabled');
+            }
+        });
+
+        return false;
+    });
+
+    // suppression d'un éléments depuis la liste
+    $('.actions-item .delete').confirmModal();
 });
 
 // Extend jQuery.fn with our new method
@@ -60,4 +83,3 @@ jQuery.extend( jQuery.fn, {
         });
     }
 });
-

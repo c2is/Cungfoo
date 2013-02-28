@@ -2997,20 +2997,6 @@ abstract class BaseActivite extends BaseObject implements Persistent
      */
     public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
     {
-        if (!$form['image_path_deleted']->getData())
-        {
-            $this->resetModified(ActivitePeer::IMAGE_PATH);
-        }
-
-        $this->uploadImagePath($form);
-
-        if (!$form['vignette_deleted']->getData())
-        {
-            $this->resetModified(ActivitePeer::VIGNETTE);
-        }
-
-        $this->uploadVignette($form);
-
         return $this->save($con);
     }
 
@@ -3028,38 +3014,6 @@ abstract class BaseActivite extends BaseObject implements Persistent
     public function getUploadRootDir()
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
-    }
-
-    /**
-     * @param \Symfony\Component\Form\Form $form
-     * @return void
-     */
-    public function uploadImagePath(\Symfony\Component\Form\Form $form)
-    {
-        if (!file_exists($this->getUploadRootDir() . '/' . $form['image_path']->getData()))
-        {
-            if ($form['image_path']->getData()) {
-                $image = uniqid().'.'.$form['image_path']->getData()->guessExtension();
-                $form['image_path']->getData()->move($this->getUploadRootDir(), $image);
-                $this->setImagePath($this->getUploadDir() . '/' . $image);
-            }
-        }
-    }
-
-    /**
-     * @param \Symfony\Component\Form\Form $form
-     * @return void
-     */
-    public function uploadVignette(\Symfony\Component\Form\Form $form)
-    {
-        if (!file_exists($this->getUploadRootDir() . '/' . $form['vignette']->getData()))
-        {
-            if ($form['vignette']->getData()) {
-                $image = uniqid().'.'.$form['vignette']->getData()->guessExtension();
-                $form['vignette']->getData()->move($this->getUploadRootDir(), $image);
-                $this->setVignette($this->getUploadDir() . '/' . $image);
-            }
-        }
     }
 
 }

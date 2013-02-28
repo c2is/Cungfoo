@@ -1,38 +1,7 @@
 {% extends 'base.twig' %}
 
-{% block javascripts %}{{ parent() }}
-    <script type="text/javascript" src="{{ asset('js/cungfoo/confirm-bootstrap.js') }}"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('#list .line').bind('dblclick', function () {
-                console.log($('.edit', this).attr('href'));
-                window.location.href = $('.edit', this).attr('href');
-            });
-
-            $('.active').bind('click', function() {
-                var $this = $(this);
-
-                $.get($this.attr('href'), function(data) {
-                    var $icon = $('i', $this).removeClass();
-                    var $line = $this.parent('td').parent('tr');
-
-                    if (data.active) {
-                        $icon.addClass('icon-eye-open');
-                        $line.removeClass('disabled');
-                    }
-                    else {
-                        $icon.addClass('icon-eye-close');
-                        $line.addClass('disabled');
-                    }
-                });
-
-                return false;
-            })
-        });
-    </script>
-{% endblock %}
-
 {% block content %}
+
     <div class="btn-group pull-right">
         <a class="btn edit" href="{{ path('%s_crud_metadata' | format (name)) }}"><i class="icon-pencil"></i> {{ "crud.button.metadata" | trans }}</a>
         <a class="btn edit" href="{{ path('%s_crud_seo' | format (name)) }}"><i class="icon-pencil"></i> {{ "crud.button.seo" | trans }}</a>
@@ -75,9 +44,6 @@
         </tbody>
     </table>
 
-    <script type="text/javascript">
-        $('.actions-item .delete').confirmModal();
-    </script>
     {% if (paginator.nextPage != paginator.page or paginator.previousPage != paginator.page) and lines | length != 0 %}
     {% include 'Crud/paginator.twig'%}
     {% endif %}

@@ -50,7 +50,6 @@ class CrudableBehavior extends Behavior
             foreach (explode(',', $this->getTable()->getBehavior('crudable')->getParameter('crud_type_file')) as $columnName)
             {
                 $columnName = trim($columnName);
-                $this->addUploadFile($columnName, $script);
             }
         }
 
@@ -155,32 +154,7 @@ class CrudableBehavior extends Behavior
  * @see        doSave()
  */
 public function saveFromCrud(\Symfony\Component\Form\Form \$form, PropelPDO \$con = null)
-{";
-
-
-        if ($this->crudTypeFileExists())
-        {
-            foreach (explode(',', $this->getTable()->getBehavior('crudable')->getParameter('crud_type_file')) as $columnName)
-            {
-                $columnName = trim($columnName);
-                $utils = new \Cungfoo\Lib\Utils();
-                $columnNameDeleted  = $columnName . '_deleted';
-                $columnNameCamelize = $utils->camelize($columnName);
-
-                $columnPeerName = $utils->camelize($this->getTable()->getName()) . 'Peer::' . strtoupper($columnName);
-
-                $script .= "
-    if (!\$form['$columnNameDeleted']->getData())
-    {
-        \$this->resetModified($columnPeerName);
-    }
-
-    \$this->upload$columnNameCamelize(\$form);
-    ";
-
-            }
-        }
-        $script .= "
+{
     return \$this->save(\$con);
 }
 ";
@@ -218,30 +192,6 @@ public function getUploadDir()
 public function getUploadRootDir()
 {
     return __DIR__.'$subDirectoryLevel/$relativeWebDir/'.\$this->getUploadDir();
-}
-";
-    }
-
-    protected function addUploadFile($columnName, &$script)
-    {
-        $utils = new \Cungfoo\Lib\Utils();
-        $columnNameCamelize = $utils->camelize($columnName);
-
-        $script .= "
-/**
- * @param \Symfony\Component\Form\Form \$form
- * @return void
- */
-public function upload$columnNameCamelize(\Symfony\Component\Form\Form \$form)
-{
-    if (!file_exists(\$this->getUploadRootDir() . '/' . \$form['$columnName']->getData()))
-    {
-        if (\$form['$columnName']->getData()) {
-            \$image = uniqid().'.'.\$form['$columnName']->getData()->guessExtension();
-            \$form['$columnName']->getData()->move(\$this->getUploadRootDir(), \$image);
-            \$this->set$columnNameCamelize(\$this->getUploadDir() . '/' . \$image);
-        }
-    }
 }
 ";
     }

@@ -1182,4 +1182,61 @@
         </behavior>
     </table>
 
+    <table name="portfolio_media">
+        <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true"/>
+        <column name="file" type="varchar"/>
+        <column name="title" type="varchar" required="true"/>
+        <column name="description" type="longvarchar"/>
+        <column name="width" type="varchar"/>
+        <column name="height" type="varchar"/>
+        <column name="size" type="varchar"/>
+        <column name="type" type="varchar"/>
+        <behavior name="timestampable"/>
+        <behavior name="active"/>
+
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/portfolio/medias" />
+            <parameter name="crud_type_file" value="file" />
+        </behavior>
+    </table>
+
+    <table name="portfolio_tag">
+        <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true"/>
+        <column name="name" type="varchar" required="true"/>
+        <column name="description" type="longvarchar"/>
+        <behavior name="timestampable"/>
+        <behavior name="active"/>
+
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/portfolio/tags" />
+        </behavior>
+    </table>
+
+    <table name="portfolio_media_tag" isCrossRef="true">
+        <column name="media_id" type="integer" primaryKey="true"/>
+        <column name="tag_id" type="integer" primaryKey="true"/>
+
+        <foreign-key foreignTable="portfolio_media" onDelete="CASCADE">
+            <reference local="media_id" foreign="id"/>
+        </foreign-key>
+
+        <foreign-key foreignTable="portfolio_tag" onDelete="CASCADE">
+            <reference local="tag_id" foreign="id"/>
+        </foreign-key>
+    </table>
+
+    <table name="portfolio_usage">
+        <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true"/>
+        <column name="media_id" type="integer" required="true"/>
+        <column name="table_ref" type="varchar" required="true"/>
+        <column name="column_ref" type="varchar" required="true"/>
+        <column name="element_id" type="integer" required="true"/>
+        <behavior name="timestampable"/>
+        <behavior name="active"/>
+
+        <foreign-key foreignTable="portfolio_media" onDelete="CASCADE">
+            <reference local="media_id" foreign="id"/>
+        </foreign-key>
+    </table>
+
 </database>

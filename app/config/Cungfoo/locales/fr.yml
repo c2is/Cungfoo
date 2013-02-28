@@ -87,6 +87,8 @@ crud.button.metadata: Metadata
 crud.button.seo: Seo
 crud.button.read: Détails
 crud.button.save: Enregistrer
+crud.button.use: Utiliser ce media
+crud.button.upload: Télécharger les images
 crud.modal.delete.title: Confirmation de suppression
 crud.modal.delete.message: Ètes vous sur de vouloir supprimer l'item <strong>%code%</strong> ?
 crud.modal.delete.ok: Valider
@@ -892,3 +894,13 @@ bon_plan_i18n.slug: Slug
 bon_plan_i18n.description: Description
 bon_plan_i18n.indice: Indice
 bon_plan_i18n.indice_prix: Indice prix
+
+portfolio_media.id: "Id"
+portfolio_media.file: "Media"
+portfolio_media.title: "Titre"
+portfolio_media.width: "Largeur"
+portfolio_media.height: "Hauteur"
+portfolio_media.size: "Taille"
+portfolio_media.type: "Type"
+portfolio_media.description: "Description"
+portfolio_media.active: "Active"

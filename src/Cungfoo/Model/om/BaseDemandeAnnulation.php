@@ -2648,34 +2648,6 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
      */
     public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
     {
-        if (!$form['file_1_deleted']->getData())
-        {
-            $this->resetModified(DemandeAnnulationPeer::FILE_1);
-        }
-
-        $this->uploadFile1($form);
-
-        if (!$form['file_2_deleted']->getData())
-        {
-            $this->resetModified(DemandeAnnulationPeer::FILE_2);
-        }
-
-        $this->uploadFile2($form);
-
-        if (!$form['file_3_deleted']->getData())
-        {
-            $this->resetModified(DemandeAnnulationPeer::FILE_3);
-        }
-
-        $this->uploadFile3($form);
-
-        if (!$form['file_4_deleted']->getData())
-        {
-            $this->resetModified(DemandeAnnulationPeer::FILE_4);
-        }
-
-        $this->uploadFile4($form);
-
         return $this->save($con);
     }
 
@@ -2693,70 +2665,6 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
     public function getUploadRootDir()
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
-    }
-
-    /**
-     * @param \Symfony\Component\Form\Form $form
-     * @return void
-     */
-    public function uploadFile1(\Symfony\Component\Form\Form $form)
-    {
-        if (!file_exists($this->getUploadRootDir() . '/' . $form['file_1']->getData()))
-        {
-            if ($form['file_1']->getData()) {
-                $image = uniqid().'.'.$form['file_1']->getData()->guessExtension();
-                $form['file_1']->getData()->move($this->getUploadRootDir(), $image);
-                $this->setFile1($this->getUploadDir() . '/' . $image);
-            }
-        }
-    }
-
-    /**
-     * @param \Symfony\Component\Form\Form $form
-     * @return void
-     */
-    public function uploadFile2(\Symfony\Component\Form\Form $form)
-    {
-        if (!file_exists($this->getUploadRootDir() . '/' . $form['file_2']->getData()))
-        {
-            if ($form['file_2']->getData()) {
-                $image = uniqid().'.'.$form['file_2']->getData()->guessExtension();
-                $form['file_2']->getData()->move($this->getUploadRootDir(), $image);
-                $this->setFile2($this->getUploadDir() . '/' . $image);
-            }
-        }
-    }
-
-    /**
-     * @param \Symfony\Component\Form\Form $form
-     * @return void
-     */
-    public function uploadFile3(\Symfony\Component\Form\Form $form)
-    {
-        if (!file_exists($this->getUploadRootDir() . '/' . $form['file_3']->getData()))
-        {
-            if ($form['file_3']->getData()) {
-                $image = uniqid().'.'.$form['file_3']->getData()->guessExtension();
-                $form['file_3']->getData()->move($this->getUploadRootDir(), $image);
-                $this->setFile3($this->getUploadDir() . '/' . $image);
-            }
-        }
-    }
-
-    /**
-     * @param \Symfony\Component\Form\Form $form
-     * @return void
-     */
-    public function uploadFile4(\Symfony\Component\Form\Form $form)
-    {
-        if (!file_exists($this->getUploadRootDir() . '/' . $form['file_4']->getData()))
-        {
-            if ($form['file_4']->getData()) {
-                $image = uniqid().'.'.$form['file_4']->getData()->guessExtension();
-                $form['file_4']->getData()->move($this->getUploadRootDir(), $image);
-                $this->setFile4($this->getUploadDir() . '/' . $image);
-            }
-        }
     }
 
     // i18n behavior

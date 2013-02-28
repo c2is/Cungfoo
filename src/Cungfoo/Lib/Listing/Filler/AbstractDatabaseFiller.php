@@ -48,6 +48,15 @@ abstract class AbstractDatabaseFiller extends AbstractFiller
                 ;
                 break;
 
+            case 'image':
+                $cell
+                    ->setText($info[0]['text'])
+                    ->setOptions(array(
+                        'base_url' => ''
+                    ))
+                ;
+                break;
+
             case 'text_list':
                 $cell->setOptions(array(
                     'list_items' => $info

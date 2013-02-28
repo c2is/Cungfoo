@@ -3490,20 +3490,6 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
      */
     public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
     {
-        if (!$form['image_hebergement_path_deleted']->getData())
-        {
-            $this->resetModified(TypeHebergementPeer::IMAGE_HEBERGEMENT_PATH);
-        }
-
-        $this->uploadImageHebergementPath($form);
-
-        if (!$form['image_composition_path_deleted']->getData())
-        {
-            $this->resetModified(TypeHebergementPeer::IMAGE_COMPOSITION_PATH);
-        }
-
-        $this->uploadImageCompositionPath($form);
-
         return $this->save($con);
     }
 
@@ -3521,38 +3507,6 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     public function getUploadRootDir()
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
-    }
-
-    /**
-     * @param \Symfony\Component\Form\Form $form
-     * @return void
-     */
-    public function uploadImageHebergementPath(\Symfony\Component\Form\Form $form)
-    {
-        if (!file_exists($this->getUploadRootDir() . '/' . $form['image_hebergement_path']->getData()))
-        {
-            if ($form['image_hebergement_path']->getData()) {
-                $image = uniqid().'.'.$form['image_hebergement_path']->getData()->guessExtension();
-                $form['image_hebergement_path']->getData()->move($this->getUploadRootDir(), $image);
-                $this->setImageHebergementPath($this->getUploadDir() . '/' . $image);
-            }
-        }
-    }
-
-    /**
-     * @param \Symfony\Component\Form\Form $form
-     * @return void
-     */
-    public function uploadImageCompositionPath(\Symfony\Component\Form\Form $form)
-    {
-        if (!file_exists($this->getUploadRootDir() . '/' . $form['image_composition_path']->getData()))
-        {
-            if ($form['image_composition_path']->getData()) {
-                $image = uniqid().'.'.$form['image_composition_path']->getData()->guessExtension();
-                $form['image_composition_path']->getData()->move($this->getUploadRootDir(), $image);
-                $this->setImageCompositionPath($this->getUploadDir() . '/' . $image);
-            }
-        }
     }
 
 }

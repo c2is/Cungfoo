@@ -53,7 +53,6 @@ class MetadataType extends BaseMetadataType
                     'title'         => 'crud.tab.medias',
                     'content'       => array(
                         'visuel',
-                        'visuel_deleted',
                     )
                 ),
             )

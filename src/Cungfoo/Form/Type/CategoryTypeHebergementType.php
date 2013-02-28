@@ -74,9 +74,7 @@ class CategoryTypeHebergementType extends BaseCategoryTypeHebergementType
                     'title'         => 'crud.tab.medias',
                     'content'       => array(
                         'image_menu',
-                        'image_menu_deleted',
                         'image_page',
-                        'image_page_deleted',
                     )
                 ),
                 array(

@@ -4375,41 +4375,6 @@ abstract class BaseRegion extends BaseObject implements Persistent
      */
     public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
     {
-        if (!$form['image_path_deleted']->getData())
-        {
-            $this->resetModified(RegionPeer::IMAGE_PATH);
-        }
-
-        $this->uploadImagePath($form);
-
-        if (!$form['image_encart_path_deleted']->getData())
-        {
-            $this->resetModified(RegionPeer::IMAGE_ENCART_PATH);
-        }
-
-        $this->uploadImageEncartPath($form);
-
-        if (!$form['image_encart_petite_path_deleted']->getData())
-        {
-            $this->resetModified(RegionPeer::IMAGE_ENCART_PETITE_PATH);
-        }
-
-        $this->uploadImageEncartPetitePath($form);
-
-        if (!$form['image_detail_1_deleted']->getData())
-        {
-            $this->resetModified(RegionPeer::IMAGE_DETAIL_1);
-        }
-
-        $this->uploadImageDetail1($form);
-
-        if (!$form['image_detail_2_deleted']->getData())
-        {
-            $this->resetModified(RegionPeer::IMAGE_DETAIL_2);
-        }
-
-        $this->uploadImageDetail2($form);
-
         return $this->save($con);
     }
 
@@ -4427,86 +4392,6 @@ abstract class BaseRegion extends BaseObject implements Persistent
     public function getUploadRootDir()
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
-    }
-
-    /**
-     * @param \Symfony\Component\Form\Form $form
-     * @return void
-     */
-    public function uploadImagePath(\Symfony\Component\Form\Form $form)
-    {
-        if (!file_exists($this->getUploadRootDir() . '/' . $form['image_path']->getData()))
-        {
-            if ($form['image_path']->getData()) {
-                $image = uniqid().'.'.$form['image_path']->getData()->guessExtension();
-                $form['image_path']->getData()->move($this->getUploadRootDir(), $image);
-                $this->setImagePath($this->getUploadDir() . '/' . $image);
-            }
-        }
-    }
-
-    /**
-     * @param \Symfony\Component\Form\Form $form
-     * @return void
-     */
-    public function uploadImageEncartPath(\Symfony\Component\Form\Form $form)
-    {
-        if (!file_exists($this->getUploadRootDir() . '/' . $form['image_encart_path']->getData()))
-        {
-            if ($form['image_encart_path']->getData()) {
-                $image = uniqid().'.'.$form['image_encart_path']->getData()->guessExtension();
-                $form['image_encart_path']->getData()->move($this->getUploadRootDir(), $image);
-                $this->setImageEncartPath($this->getUploadDir() . '/' . $image);
-            }
-        }
-    }
-
-    /**
-     * @param \Symfony\Component\Form\Form $form
-     * @return void
-     */
-    public function uploadImageEncartPetitePath(\Symfony\Component\Form\Form $form)
-    {
-        if (!file_exists($this->getUploadRootDir() . '/' . $form['image_encart_petite_path']->getData()))
-        {
-            if ($form['image_encart_petite_path']->getData()) {
-                $image = uniqid().'.'.$form['image_encart_petite_path']->getData()->guessExtension();
-                $form['image_encart_petite_path']->getData()->move($this->getUploadRootDir(), $image);
-                $this->setImageEncartPetitePath($this->getUploadDir() . '/' . $image);
-            }
-        }
-    }
-
-    /**
-     * @param \Symfony\Component\Form\Form $form
-     * @return void
-     */
-    public function uploadImageDetail1(\Symfony\Component\Form\Form $form)
-    {
-        if (!file_exists($this->getUploadRootDir() . '/' . $form['image_detail_1']->getData()))
-        {
-            if ($form['image_detail_1']->getData()) {
-                $image = uniqid().'.'.$form['image_detail_1']->getData()->guessExtension();
-                $form['image_detail_1']->getData()->move($this->getUploadRootDir(), $image);
-                $this->setImageDetail1($this->getUploadDir() . '/' . $image);
-            }
-        }
-    }
-
-    /**
-     * @param \Symfony\Component\Form\Form $form
-     * @return void
-     */
-    public function uploadImageDetail2(\Symfony\Component\Form\Form $form)
-    {
-        if (!file_exists($this->getUploadRootDir() . '/' . $form['image_detail_2']->getData()))
-        {
-            if ($form['image_detail_2']->getData()) {
-                $image = uniqid().'.'.$form['image_detail_2']->getData()->guessExtension();
-                $form['image_detail_2']->getData()->move($this->getUploadRootDir(), $image);
-                $this->setImageDetail2($this->getUploadDir() . '/' . $image);
-            }
-        }
     }
 
 }

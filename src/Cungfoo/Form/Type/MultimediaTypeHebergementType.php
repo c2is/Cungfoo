@@ -48,7 +48,6 @@ class MultimediaTypeHebergementType extends BaseMultimediaTypeHebergementType
                     'title'         => 'crud.tab.medias',
                     'content'       => array(
                         'image_path',
-                        'image_path_deleted',
                     )
                 ),
                 array(

@@ -65,9 +65,7 @@ class BaignadeType extends BaseBaignadeType
                     'title'         => 'crud.tab.medias',
                     'content'       => array(
                         'image_path',
-                        'image_path_deleted',
                         'vignette',
-                        'vignette_deleted',
                     )
                 ),
                 array(

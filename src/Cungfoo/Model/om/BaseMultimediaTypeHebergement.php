@@ -1909,13 +1909,6 @@ abstract class BaseMultimediaTypeHebergement extends BaseObject implements Persi
      */
     public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
     {
-        if (!$form['image_path_deleted']->getData())
-        {
-            $this->resetModified(MultimediaTypeHebergementPeer::IMAGE_PATH);
-        }
-
-        $this->uploadImagePath($form);
-
         return $this->save($con);
     }
 
@@ -1933,22 +1926,6 @@ abstract class BaseMultimediaTypeHebergement extends BaseObject implements Persi
     public function getUploadRootDir()
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
-    }
-
-    /**
-     * @param \Symfony\Component\Form\Form $form
-     * @return void
-     */
-    public function uploadImagePath(\Symfony\Component\Form\Form $form)
-    {
-        if (!file_exists($this->getUploadRootDir() . '/' . $form['image_path']->getData()))
-        {
-            if ($form['image_path']->getData()) {
-                $image = uniqid().'.'.$form['image_path']->getData()->guessExtension();
-                $form['image_path']->getData()->move($this->getUploadRootDir(), $image);
-                $this->setImagePath($this->getUploadDir() . '/' . $image);
-            }
-        }
     }
 
 }

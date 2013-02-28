@@ -142,3 +142,11 @@ crud:
             prefix: /seo
             model: \Cungfoo\Model\Seo
             form: \Cungfoo\Form\Type\SeoType
+        portfolio_media:
+            prefix: /portfolio/medias
+            model: \Cungfoo\Model\PortfolioMedia
+            form: \Cungfoo\Form\Type\PortfolioMediaType
+        portfolio_tag:
+            prefix: /portfolio/tags
+            model: \Cungfoo\Model\PortfolioTag
+            form: \Cungfoo\Form\Type\PortfolioTagType

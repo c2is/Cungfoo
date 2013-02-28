@@ -230,9 +230,7 @@ class EtablissementType extends BaseEtablissementType
                     'title'         => 'crud.tab.medias',
                     'content'       => array(
                         'vignette',
-                        'vignette_deleted',
                         'plan_path',
-                        'plan_path_deleted',
                         'video_path',
                         'image_360_path',
                     )

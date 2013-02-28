@@ -2245,20 +2245,6 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
      */
     public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
     {
-        if (!$form['image_fond_path_deleted']->getData())
-        {
-            $this->resetModified(MiseEnAvantPeer::IMAGE_FOND_PATH);
-        }
-
-        $this->uploadImageFondPath($form);
-
-        if (!$form['illustration_path_deleted']->getData())
-        {
-            $this->resetModified(MiseEnAvantPeer::ILLUSTRATION_PATH);
-        }
-
-        $this->uploadIllustrationPath($form);
-
         return $this->save($con);
     }
 
@@ -2276,38 +2262,6 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
     public function getUploadRootDir()
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
-    }
-
-    /**
-     * @param \Symfony\Component\Form\Form $form
-     * @return void
-     */
-    public function uploadImageFondPath(\Symfony\Component\Form\Form $form)
-    {
-        if (!file_exists($this->getUploadRootDir() . '/' . $form['image_fond_path']->getData()))
-        {
-            if ($form['image_fond_path']->getData()) {
-                $image = uniqid().'.'.$form['image_fond_path']->getData()->guessExtension();
-                $form['image_fond_path']->getData()->move($this->getUploadRootDir(), $image);
-                $this->setImageFondPath($this->getUploadDir() . '/' . $image);
-            }
-        }
-    }
-
-    /**
-     * @param \Symfony\Component\Form\Form $form
-     * @return void
-     */
-    public function uploadIllustrationPath(\Symfony\Component\Form\Form $form)
-    {
-        if (!file_exists($this->getUploadRootDir() . '/' . $form['illustration_path']->getData()))
-        {
-            if ($form['illustration_path']->getData()) {
-                $image = uniqid().'.'.$form['illustration_path']->getData()->guessExtension();
-                $form['illustration_path']->getData()->move($this->getUploadRootDir(), $image);
-                $this->setIllustrationPath($this->getUploadDir() . '/' . $image);
-            }
-        }
     }
 
 }

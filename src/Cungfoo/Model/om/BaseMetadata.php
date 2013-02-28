@@ -1214,13 +1214,6 @@ abstract class BaseMetadata extends BaseObject implements Persistent
      */
     public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
     {
-        if (!$form['visuel_deleted']->getData())
-        {
-            $this->resetModified(MetadataPeer::VISUEL);
-        }
-
-        $this->uploadVisuel($form);
-
         return $this->save($con);
     }
 
@@ -1238,22 +1231,6 @@ abstract class BaseMetadata extends BaseObject implements Persistent
     public function getUploadRootDir()
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
-    }
-
-    /**
-     * @param \Symfony\Component\Form\Form $form
-     * @return void
-     */
-    public function uploadVisuel(\Symfony\Component\Form\Form $form)
-    {
-        if (!file_exists($this->getUploadRootDir() . '/' . $form['visuel']->getData()))
-        {
-            if ($form['visuel']->getData()) {
-                $image = uniqid().'.'.$form['visuel']->getData()->guessExtension();
-                $form['visuel']->getData()->move($this->getUploadRootDir(), $image);
-                $this->setVisuel($this->getUploadDir() . '/' . $image);
-            }
-        }
     }
 
     // i18n behavior
