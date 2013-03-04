@@ -19,7 +19,6 @@ $(function() {
         language:'fr'
     });
 
-
     $('#crudGroup a').click(function (e) {
         e.preventDefault();
         $(this).tab('show');

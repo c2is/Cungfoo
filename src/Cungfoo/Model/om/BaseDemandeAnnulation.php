@@ -2648,6 +2648,14 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
      */
     public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
     {
+        $this->saveFile1PortfolioUsage();
+
+        $this->saveFile2PortfolioUsage();
+
+        $this->saveFile3PortfolioUsage();
+
+        $this->saveFile4PortfolioUsage();
+
         return $this->save($con);
     }
 
@@ -2665,6 +2673,150 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
     public function getUploadRootDir()
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
+    }
+
+    /**
+     * @return void
+     */
+    public function saveFile1PortfolioUsage()
+    {
+        $peer = self::PEER;
+
+        $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+            ->filterByTableRef($peer::TABLE_NAME)
+            ->filterByColumnRef($peer::TABLE_NAME.'.file_1')
+            ->filterByElementId($this->getId())
+            ->findOne()
+        ;
+
+        if ($this->getFile1()) {
+            if (!$usage) {
+                $usage = new \Cungfoo\Model\PortfolioUsage();
+                $usage
+                    ->setTableRef($peer::TABLE_NAME)
+                    ->setColumnRef($peer::TABLE_NAME.'.file_1')
+                    ->setElementId($this->getId())
+                ;
+            }
+
+            $usage
+                ->setMediaId($this->getFile1())
+                ->save()
+            ;
+        }
+        else {
+            if ($usage) {
+                $usage->delete();
+            }
+        }
+    }
+
+    /**
+     * @return void
+     */
+    public function saveFile2PortfolioUsage()
+    {
+        $peer = self::PEER;
+
+        $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+            ->filterByTableRef($peer::TABLE_NAME)
+            ->filterByColumnRef($peer::TABLE_NAME.'.file_2')
+            ->filterByElementId($this->getId())
+            ->findOne()
+        ;
+
+        if ($this->getFile2()) {
+            if (!$usage) {
+                $usage = new \Cungfoo\Model\PortfolioUsage();
+                $usage
+                    ->setTableRef($peer::TABLE_NAME)
+                    ->setColumnRef($peer::TABLE_NAME.'.file_2')
+                    ->setElementId($this->getId())
+                ;
+            }
+
+            $usage
+                ->setMediaId($this->getFile2())
+                ->save()
+            ;
+        }
+        else {
+            if ($usage) {
+                $usage->delete();
+            }
+        }
+    }
+
+    /**
+     * @return void
+     */
+    public function saveFile3PortfolioUsage()
+    {
+        $peer = self::PEER;
+
+        $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+            ->filterByTableRef($peer::TABLE_NAME)
+            ->filterByColumnRef($peer::TABLE_NAME.'.file_3')
+            ->filterByElementId($this->getId())
+            ->findOne()
+        ;
+
+        if ($this->getFile3()) {
+            if (!$usage) {
+                $usage = new \Cungfoo\Model\PortfolioUsage();
+                $usage
+                    ->setTableRef($peer::TABLE_NAME)
+                    ->setColumnRef($peer::TABLE_NAME.'.file_3')
+                    ->setElementId($this->getId())
+                ;
+            }
+
+            $usage
+                ->setMediaId($this->getFile3())
+                ->save()
+            ;
+        }
+        else {
+            if ($usage) {
+                $usage->delete();
+            }
+        }
+    }
+
+    /**
+     * @return void
+     */
+    public function saveFile4PortfolioUsage()
+    {
+        $peer = self::PEER;
+
+        $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+            ->filterByTableRef($peer::TABLE_NAME)
+            ->filterByColumnRef($peer::TABLE_NAME.'.file_4')
+            ->filterByElementId($this->getId())
+            ->findOne()
+        ;
+
+        if ($this->getFile4()) {
+            if (!$usage) {
+                $usage = new \Cungfoo\Model\PortfolioUsage();
+                $usage
+                    ->setTableRef($peer::TABLE_NAME)
+                    ->setColumnRef($peer::TABLE_NAME.'.file_4')
+                    ->setElementId($this->getId())
+                ;
+            }
+
+            $usage
+                ->setMediaId($this->getFile4())
+                ->save()
+            ;
+        }
+        else {
+            if ($usage) {
+                $usage->delete();
+            }
+        }
     }
 
     // i18n behavior

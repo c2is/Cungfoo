@@ -11084,6 +11084,10 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      */
     public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
     {
+        $this->savePlanPathPortfolioUsage();
+
+        $this->saveVignettePortfolioUsage();
+
         return $this->save($con);
     }
 
@@ -11101,6 +11105,78 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     public function getUploadRootDir()
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
+    }
+
+    /**
+     * @return void
+     */
+    public function savePlanPathPortfolioUsage()
+    {
+        $peer = self::PEER;
+
+        $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+            ->filterByTableRef($peer::TABLE_NAME)
+            ->filterByColumnRef($peer::TABLE_NAME.'.plan_path')
+            ->filterByElementId($this->getId())
+            ->findOne()
+        ;
+
+        if ($this->getPlanPath()) {
+            if (!$usage) {
+                $usage = new \Cungfoo\Model\PortfolioUsage();
+                $usage
+                    ->setTableRef($peer::TABLE_NAME)
+                    ->setColumnRef($peer::TABLE_NAME.'.plan_path')
+                    ->setElementId($this->getId())
+                ;
+            }
+
+            $usage
+                ->setMediaId($this->getPlanPath())
+                ->save()
+            ;
+        }
+        else {
+            if ($usage) {
+                $usage->delete();
+            }
+        }
+    }
+
+    /**
+     * @return void
+     */
+    public function saveVignettePortfolioUsage()
+    {
+        $peer = self::PEER;
+
+        $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+            ->filterByTableRef($peer::TABLE_NAME)
+            ->filterByColumnRef($peer::TABLE_NAME.'.vignette')
+            ->filterByElementId($this->getId())
+            ->findOne()
+        ;
+
+        if ($this->getVignette()) {
+            if (!$usage) {
+                $usage = new \Cungfoo\Model\PortfolioUsage();
+                $usage
+                    ->setTableRef($peer::TABLE_NAME)
+                    ->setColumnRef($peer::TABLE_NAME.'.vignette')
+                    ->setElementId($this->getId())
+                ;
+            }
+
+            $usage
+                ->setMediaId($this->getVignette())
+                ->save()
+            ;
+        }
+        else {
+            if ($usage) {
+                $usage->delete();
+            }
+        }
     }
 
 }

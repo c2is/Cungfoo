@@ -2660,22 +2660,6 @@ abstract class BasePortfolioMedia extends BaseObject implements Persistent
         return $this->save($con);
     }
 
-    /**
-     * @return string
-     */
-    public function getUploadDir()
-    {
-        return 'uploads/portfolio_medias';
-    }
-
-    /**
-     * @return string
-     */
-    public function getUploadRootDir()
-    {
-        return __DIR__.'/../../../../web/'.$this->getUploadDir();
-    }
-
     // i18n behavior
 
     /**

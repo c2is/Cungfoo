@@ -1,0 +1,8 @@
+<tr id="media-{{ line.id }}" class="media-line" data-edit="formMedia{{ line.id }}">
+    <td><img class="crud-column-media" src="{{asset(line.file)}}" /></td>
+    <td>{{ line.title }}</td>
+    <td>
+        <a class="toggle toggle-on" href="{{ path('portfolio_edit', {id: line.id}) }}">afficher</a>
+        <a class="toggle toggle-off" href="{{ path('portfolio_edit', {id: line.id}) }}" style="display:none">cacher</a>
+    </td>
+</tr>

@@ -50,4 +50,14 @@ class PortfolioMedia extends BasePortfolioMedia
                 return $bytes;
         }
     }
+
+    public function getUploadDir()
+    {
+        return 'portfolio';
+    }
+
+    public function getUploadRootDir()
+    {
+        return __DIR__.'/../../../web/'.$this->getUploadDir();
+    }
 }

@@ -50,6 +50,7 @@ class CrudableBehavior extends Behavior
             foreach (explode(',', $this->getTable()->getBehavior('crudable')->getParameter('crud_type_file')) as $columnName)
             {
                 $columnName = trim($columnName);
+                $this->addSavePortfolioUsage($columnName, $script);
             }
         }
 
@@ -154,7 +155,25 @@ class CrudableBehavior extends Behavior
  * @see        doSave()
  */
 public function saveFromCrud(\Symfony\Component\Form\Form \$form, PropelPDO \$con = null)
-{
+{";
+        if ($this->crudTypeFileExists())
+        {
+            foreach (explode(',', $this->getTable()->getBehavior('crudable')->getParameter('crud_type_file')) as $columnName)
+            {
+                $columnName = trim($columnName);
+                $utils = new \Cungfoo\Lib\Utils();
+                $columnNameDeleted  = $columnName . '_deleted';
+                $columnNameCamelize = $utils->camelize($columnName);
+
+                $columnPeerName = $utils->camelize($this->getTable()->getName()) . 'Peer::' . strtoupper($columnName);
+
+                $script .= "
+    \$this->save{$columnNameCamelize}PortfolioUsage();
+    ";
+
+            }
+        }
+        $script .= "
     return \$this->save(\$con);
 }
 ";
@@ -170,6 +189,50 @@ public function saveFromCrud(\Symfony\Component\Form\Form \$form, PropelPDO \$co
 public function getUploadDir()
 {
     return 'uploads/$tableName';
+}
+";
+    }
+
+    protected function addSavePortfolioUsage($columnName, &$script)
+    {
+        $utils = new \Cungfoo\Lib\Utils();
+        $columnNameCamelize = $utils->camelize($columnName);
+
+        $script .= "
+/**
+ * @return void
+ */
+public function save{$columnNameCamelize}PortfolioUsage()
+{
+    \$peer = self::PEER;
+
+    \$usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+        ->filterByTableRef(\$peer::TABLE_NAME)
+        ->filterByColumnRef(\$peer::TABLE_NAME.'.{$columnName}')
+        ->filterByElementId(\$this->getId())
+        ->findOne()
+    ;
+
+    if (\$this->get{$columnNameCamelize}()) {
+        if (!\$usage) {
+            \$usage = new \Cungfoo\Model\PortfolioUsage();
+            \$usage
+                ->setTableRef(\$peer::TABLE_NAME)
+                ->setColumnRef(\$peer::TABLE_NAME.'.{$columnName}')
+                ->setElementId(\$this->getId())
+            ;
+        }
+
+        \$usage
+            ->setMediaId(\$this->get{$columnNameCamelize}())
+            ->save()
+        ;
+    }
+    else {
+        if (\$usage) {
+            \$usage->delete();
+        }
+    }
 }
 ";
     }

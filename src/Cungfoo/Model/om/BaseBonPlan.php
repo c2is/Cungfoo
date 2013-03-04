@@ -4312,6 +4312,12 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
      */
     public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
     {
+        $this->saveImageMenuPortfolioUsage();
+
+        $this->saveImagePagePortfolioUsage();
+
+        $this->saveImageListePortfolioUsage();
+
         return $this->save($con);
     }
 
@@ -4329,6 +4335,114 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
     public function getUploadRootDir()
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
+    }
+
+    /**
+     * @return void
+     */
+    public function saveImageMenuPortfolioUsage()
+    {
+        $peer = self::PEER;
+
+        $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+            ->filterByTableRef($peer::TABLE_NAME)
+            ->filterByColumnRef($peer::TABLE_NAME.'.image_menu')
+            ->filterByElementId($this->getId())
+            ->findOne()
+        ;
+
+        if ($this->getImageMenu()) {
+            if (!$usage) {
+                $usage = new \Cungfoo\Model\PortfolioUsage();
+                $usage
+                    ->setTableRef($peer::TABLE_NAME)
+                    ->setColumnRef($peer::TABLE_NAME.'.image_menu')
+                    ->setElementId($this->getId())
+                ;
+            }
+
+            $usage
+                ->setMediaId($this->getImageMenu())
+                ->save()
+            ;
+        }
+        else {
+            if ($usage) {
+                $usage->delete();
+            }
+        }
+    }
+
+    /**
+     * @return void
+     */
+    public function saveImagePagePortfolioUsage()
+    {
+        $peer = self::PEER;
+
+        $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+            ->filterByTableRef($peer::TABLE_NAME)
+            ->filterByColumnRef($peer::TABLE_NAME.'.image_page')
+            ->filterByElementId($this->getId())
+            ->findOne()
+        ;
+
+        if ($this->getImagePage()) {
+            if (!$usage) {
+                $usage = new \Cungfoo\Model\PortfolioUsage();
+                $usage
+                    ->setTableRef($peer::TABLE_NAME)
+                    ->setColumnRef($peer::TABLE_NAME.'.image_page')
+                    ->setElementId($this->getId())
+                ;
+            }
+
+            $usage
+                ->setMediaId($this->getImagePage())
+                ->save()
+            ;
+        }
+        else {
+            if ($usage) {
+                $usage->delete();
+            }
+        }
+    }
+
+    /**
+     * @return void
+     */
+    public function saveImageListePortfolioUsage()
+    {
+        $peer = self::PEER;
+
+        $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+            ->filterByTableRef($peer::TABLE_NAME)
+            ->filterByColumnRef($peer::TABLE_NAME.'.image_liste')
+            ->filterByElementId($this->getId())
+            ->findOne()
+        ;
+
+        if ($this->getImageListe()) {
+            if (!$usage) {
+                $usage = new \Cungfoo\Model\PortfolioUsage();
+                $usage
+                    ->setTableRef($peer::TABLE_NAME)
+                    ->setColumnRef($peer::TABLE_NAME.'.image_liste')
+                    ->setElementId($this->getId())
+                ;
+            }
+
+            $usage
+                ->setMediaId($this->getImageListe())
+                ->save()
+            ;
+        }
+        else {
+            if ($usage) {
+                $usage->delete();
+            }
+        }
     }
 
 }

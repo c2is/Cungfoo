@@ -1214,6 +1214,8 @@ abstract class BaseMetadata extends BaseObject implements Persistent
      */
     public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
     {
+        $this->saveVisuelPortfolioUsage();
+
         return $this->save($con);
     }
 
@@ -1231,6 +1233,42 @@ abstract class BaseMetadata extends BaseObject implements Persistent
     public function getUploadRootDir()
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
+    }
+
+    /**
+     * @return void
+     */
+    public function saveVisuelPortfolioUsage()
+    {
+        $peer = self::PEER;
+
+        $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+            ->filterByTableRef($peer::TABLE_NAME)
+            ->filterByColumnRef($peer::TABLE_NAME.'.visuel')
+            ->filterByElementId($this->getId())
+            ->findOne()
+        ;
+
+        if ($this->getVisuel()) {
+            if (!$usage) {
+                $usage = new \Cungfoo\Model\PortfolioUsage();
+                $usage
+                    ->setTableRef($peer::TABLE_NAME)
+                    ->setColumnRef($peer::TABLE_NAME.'.visuel')
+                    ->setElementId($this->getId())
+                ;
+            }
+
+            $usage
+                ->setMediaId($this->getVisuel())
+                ->save()
+            ;
+        }
+        else {
+            if ($usage) {
+                $usage->delete();
+            }
+        }
     }
 
     // i18n behavior

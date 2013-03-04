@@ -3490,6 +3490,10 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
      */
     public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
     {
+        $this->saveImageHebergementPathPortfolioUsage();
+
+        $this->saveImageCompositionPathPortfolioUsage();
+
         return $this->save($con);
     }
 
@@ -3507,6 +3511,78 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     public function getUploadRootDir()
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
+    }
+
+    /**
+     * @return void
+     */
+    public function saveImageHebergementPathPortfolioUsage()
+    {
+        $peer = self::PEER;
+
+        $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+            ->filterByTableRef($peer::TABLE_NAME)
+            ->filterByColumnRef($peer::TABLE_NAME.'.image_hebergement_path')
+            ->filterByElementId($this->getId())
+            ->findOne()
+        ;
+
+        if ($this->getImageHebergementPath()) {
+            if (!$usage) {
+                $usage = new \Cungfoo\Model\PortfolioUsage();
+                $usage
+                    ->setTableRef($peer::TABLE_NAME)
+                    ->setColumnRef($peer::TABLE_NAME.'.image_hebergement_path')
+                    ->setElementId($this->getId())
+                ;
+            }
+
+            $usage
+                ->setMediaId($this->getImageHebergementPath())
+                ->save()
+            ;
+        }
+        else {
+            if ($usage) {
+                $usage->delete();
+            }
+        }
+    }
+
+    /**
+     * @return void
+     */
+    public function saveImageCompositionPathPortfolioUsage()
+    {
+        $peer = self::PEER;
+
+        $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+            ->filterByTableRef($peer::TABLE_NAME)
+            ->filterByColumnRef($peer::TABLE_NAME.'.image_composition_path')
+            ->filterByElementId($this->getId())
+            ->findOne()
+        ;
+
+        if ($this->getImageCompositionPath()) {
+            if (!$usage) {
+                $usage = new \Cungfoo\Model\PortfolioUsage();
+                $usage
+                    ->setTableRef($peer::TABLE_NAME)
+                    ->setColumnRef($peer::TABLE_NAME.'.image_composition_path')
+                    ->setElementId($this->getId())
+                ;
+            }
+
+            $usage
+                ->setMediaId($this->getImageCompositionPath())
+                ->save()
+            ;
+        }
+        else {
+            if ($usage) {
+                $usage->delete();
+            }
+        }
     }
 
 }

@@ -90,7 +90,7 @@ class PortfolioMediaTableMap extends TableMap
   'crud_prefix' => '/portfolio/medias',
   'crud_model' => NULL,
   'crud_form' => NULL,
-  'crud_type_file' => 'file',
+  'crud_type_file' => NULL,
 ),
             'seo' =>  array (
   'seo_columns' => 'seo_title,seo_description,seo_h1,seo_keywords',

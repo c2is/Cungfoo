@@ -33,7 +33,7 @@ class BasePortfolioMediaType extends AppAwareType
 
     public function getFileType()
     {
-        return 'cungfoo_file';
+        return 'text';
     }
 
     public function getFileOptions()
@@ -41,20 +41,6 @@ class BasePortfolioMediaType extends AppAwareType
         return array(
             'required' => false,
             'label' => 'portfolio_media.file',
-        );
-    }
-
-    public function getFileDeletedType()
-    {
-        return 'checkbox';
-    }
-
-    public function getFileDeletedOptions()
-    {
-        return array(
-            'property_path' => false,
-            'required' => false,
-            'label' => 'portfolio_media.file_deleted',
         );
     }
 
@@ -267,7 +253,6 @@ class BasePortfolioMediaType extends AppAwareType
     {
         $builder->add('id', $this->getIdType(), $this->getIdOptions());
         $builder->add('file', $this->getFileType(), $this->getFileOptions());
-        $builder->add('file_deleted', $this->getFileDeletedType(), $this->getFileDeletedOptions());
         $builder->add('title', $this->getTitleType(), $this->getTitleOptions());
         $builder->add('description', $this->getDescriptionType(), $this->getDescriptionOptions());
         $builder->add('width', $this->getWidthType(), $this->getWidthOptions());

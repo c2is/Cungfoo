@@ -31,9 +31,4 @@ class PortfolioMediaType extends BasePortfolioMediaType
         //;
     }
 
-    public function getFileDeletedOptions()
-    {
-        return array_merge(parent::getFileDeletedOptions(), array('constraints' => array()));
-    }
-
 } // PortfolioMediaType
