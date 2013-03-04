@@ -3,3 +3,5 @@
 {% block title %}{{ item.seoTitle | trans ({'%region%': item}) }}{% endblock %}
 
 {% block metaDescription %}{{ item.seoDescription | trans  ({'%region%': item, '%pays%': item.pays})}}{% endblock %}
+
+{% block h2Suffix %} {{ 'destination.pas_cher' | trans }}{% endblock %}
