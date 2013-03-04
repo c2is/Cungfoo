@@ -56,3 +56,17 @@ regions:
     region: 'R12'
   PYRO:
     departement: '66'
+  COR:
+    departement: '19'
+  GAR:
+    departement: '30'
+  INDR:
+    departement: '37'
+  JUR:
+    departement: '39'
+  LIM:
+    region: 'R12'
+  TAR:
+    departement: '81'
+  VERD:
+    departement: '83,04'

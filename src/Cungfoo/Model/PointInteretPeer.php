@@ -107,41 +107,73 @@ class PointInteretPeer extends BasePointInteretPeer
 
     static public function getForPays(Pays $pays, $sort = self::NO_SORT, $count = null)
     {
-        $query = PointInteretQuery::create()
-            ->setDistinct()
-            ->useEtablissementPointInteretQuery()
-                ->useEtablissementQuery()
-                    ->filterByActive(true)
-                    ->useVilleQuery()
+        if(self::getLocale() == 'de')
+        {
+            $query = PointInteretQuery::create()
+                ->useRegionPointInteretQuery()
+                    ->useRegionQuery()
                         ->filterByActive(true)
-                        ->useRegionQuery()
+                        ->filterByPays($pays)
+                    ->endUse()
+                ->endUse()
+            ;
+        }
+        else
+        {
+            $query = PointInteretQuery::create()
+                ->useEtablissementPointInteretQuery()
+                    ->useEtablissementQuery()
+                        ->filterByActive(true)
+                        ->useVilleQuery()
                             ->filterByActive(true)
-                            ->filterByPays($pays)
+                            ->useRegionQuery()
+                                ->filterByActive(true)
+                                ->filterByPays($pays)
+                            ->endUse()
                         ->endUse()
                     ->endUse()
                 ->endUse()
-            ->endUse()
-        ;
+            ;
+        }
+
+        $query->setDistinct();
 
         return self::getForQuery($query, $sort, $count);
     }
 
     static public function getCountForPays(Pays $pays)
     {
-        return PointInteretQuery::create()
-            ->setDistinct()
-            ->useEtablissementPointInteretQuery()
-                ->useEtablissementQuery()
-                    ->filterByActive(true)
-                    ->useVilleQuery()
+        if(self::getLocale() == 'de')
+        {
+            $query = PointInteretQuery::create()
+                ->useRegionPointInteretQuery()
+                    ->useRegionQuery()
                         ->filterByActive(true)
-                        ->useRegionQuery()
+                        ->filterByPays($pays)
+                    ->endUse()
+                ->endUse()
+            ;
+        }
+        else
+        {
+            $query = PointInteretQuery::create()
+                ->useEtablissementPointInteretQuery()
+                    ->useEtablissementQuery()
+                        ->filterByActive(true)
+                        ->useVilleQuery()
                             ->filterByActive(true)
-                            ->filterByPays($pays)
+                            ->useRegionQuery()
+                                ->filterByActive(true)
+                                ->filterByPays($pays)
+                            ->endUse()
                         ->endUse()
                     ->endUse()
                 ->endUse()
-            ->endUse()
+            ;
+        }
+
+        return $query
+            ->setDistinct()
             ->filterByActive(true)
             ->count()
             ;
@@ -149,166 +181,362 @@ class PointInteretPeer extends BasePointInteretPeer
 
     static public function getForRegion($region, $sort = self::NO_SORT, $count = null)
     {
-        $query = PointInteretQuery::create()
-            ->setDistinct()
-            ->useEtablissementPointInteretQuery()
-                ->useEtablissementQuery()
-                    ->filterByActive(true)
-                    ->useVilleQuery()
+        if(self::getLocale() == 'de')
+        {
+            $query = PointInteretQuery::create()
+                ->useRegionPointInteretQuery()
+                    ->filterByRegion($region)
+                ->endUse()
+            ;
+        }
+        else
+        {
+            $query = PointInteretQuery::create()
+                ->useEtablissementPointInteretQuery()
+                    ->useEtablissementQuery()
                         ->filterByActive(true)
-                        ->filterByRegion($region)
+                        ->useVilleQuery()
+                            ->filterByActive(true)
+                            ->filterByRegion($region)
+                        ->endUse()
                     ->endUse()
                 ->endUse()
-            ->endUse()
-        ;
+            ;
+        }
+
+        $query->setDistinct();
 
         return self::getForQuery($query, $sort, $count);
     }
 
     static public function getCountForRegion($region)
     {
-        return PointInteretQuery::create()
-            ->setDistinct()
-            ->useEtablissementPointInteretQuery()
-                ->useEtablissementQuery()
-                    ->filterByActive(true)
-                    ->useVilleQuery()
+        if(self::getLocale() == 'de')
+        {
+            $query = PointInteretQuery::create()
+                ->useRegionPointInteretQuery()
+                    ->filterByRegion($region)
+                ->endUse()
+            ;
+        }
+        else
+        {
+            $query = PointInteretQuery::create()
+                ->useEtablissementPointInteretQuery()
+                    ->useEtablissementQuery()
                         ->filterByActive(true)
-                        ->filterByRegion($region)
+                        ->useVilleQuery()
+                            ->filterByActive(true)
+                            ->filterByRegion($region)
+                        ->endUse()
                     ->endUse()
                 ->endUse()
-            ->endUse()
+            ;
+        }
+
+        return $query
+            ->setDistinct()
             ->filterByActive(true)
             ->count()
-            ;
+        ;
     }
 
     static public function getForRegionRef($region, $sort = self::NO_SORT, $count = null)
     {
-        $query = PointInteretQuery::create()
-            ->setDistinct()
-            ->useEtablissementPointInteretQuery()
-                ->useEtablissementQuery()
-                    ->filterByActive(true)
-                    ->useDepartementQuery()
+        if(self::getLocale() == 'de')
+        {
+            $query = PointInteretQuery::create()
+                ->useRegionPointInteretQuery()
+                    ->useRegionQuery()
                         ->filterByActive(true)
-                        ->filterByRegionRef($region)
+                        ->useVilleQuery()
+                            ->filterByActive(true)
+                            ->useEtablissementQuery()
+                                ->filterByActive(true)
+                                ->useDepartementQuery()
+                                    ->filterByActive(true)
+                                    ->filterByRegionRef($region)
+                                ->endUse()
+                            ->endUse()
+                        ->endUse()
                     ->endUse()
                 ->endUse()
-            ->endUse()
-        ;
+            ;
+        }
+        else
+        {
+            $query = PointInteretQuery::create()
+                ->useEtablissementPointInteretQuery()
+                    ->useEtablissementQuery()
+                        ->filterByActive(true)
+                        ->useDepartementQuery()
+                            ->filterByActive(true)
+                            ->filterByRegionRef($region)
+                        ->endUse()
+                    ->endUse()
+                ->endUse()
+            ;
+        }
+
+        $query->setDistinct();
 
         return self::getForQuery($query, $sort, $count);
     }
 
     static public function getCountForRegionRef($region)
     {
-        return PointInteretQuery::create()
-            ->setDistinct()
-            ->useEtablissementPointInteretQuery()
-                ->useEtablissementQuery()
-                    ->filterByActive(true)
-                    ->useDepartementQuery()
+        if(self::getLocale() == 'de')
+        {
+            $query = PointInteretQuery::create()
+                ->useRegionPointInteretQuery()
+                    ->useRegionQuery()
                         ->filterByActive(true)
-                        ->filterByRegionRef($region)
+                        ->useVilleQuery()
+                            ->filterByActive(true)
+                            ->useEtablissementQuery()
+                                ->filterByActive(true)
+                                ->useDepartementQuery()
+                                    ->filterByActive(true)
+                                    ->filterByRegionRef($region)
+                                ->endUse()
+                            ->endUse()
+                        ->endUse()
                     ->endUse()
                 ->endUse()
-            ->endUse()
+            ;
+        }
+        else
+        {
+            $query = PointInteretQuery::create()
+                ->useEtablissementPointInteretQuery()
+                    ->useEtablissementQuery()
+                        ->filterByActive(true)
+                        ->useDepartementQuery()
+                            ->filterByActive(true)
+                            ->filterByRegionRef($region)
+                        ->endUse()
+                    ->endUse()
+                ->endUse()
+            ;
+        }
+
+        return $query
+            ->setDistinct()
             ->filterByActive(true)
             ->count()
-            ;
+        ;
     }
 
     static public function getForDepartement($departement, $sort = self::NO_SORT, $count = null)
     {
-        $query = PointInteretQuery::create()
-            ->setDistinct()
-            ->useEtablissementPointInteretQuery()
-                ->useEtablissementQuery()
-                    ->filterByDepartement($departement)
-                    ->useDepartementQuery()
-                    ->filterByActive(true)
+        if(self::getLocale() == 'de')
+        {
+            $query = PointInteretQuery::create()
+                ->useRegionPointInteretQuery()
+                    ->useRegionQuery()
+                        ->filterByActive(true)
+                        ->useVilleQuery()
+                            ->filterByActive(true)
+                            ->useEtablissementQuery()
+                                ->filterByActive(true)
+                                ->filterByDepartement($departement)
+                            ->endUse()
+                        ->endUse()
                     ->endUse()
                 ->endUse()
-            ->endUse()
-        ;
+            ;
+        }
+        else
+        {
+            $query = PointInteretQuery::create()
+                ->useEtablissementPointInteretQuery()
+                    ->useEtablissementQuery()
+                        ->filterByDepartement($departement)
+                        ->useDepartementQuery()
+                            ->filterByActive(true)
+                        ->endUse()
+                    ->endUse()
+                ->endUse()
+            ;
+        }
+
+        $query->setDistinct();
 
         return self::getForQuery($query, $sort, $count);
     }
 
     static public function getCountForDepartement($departement, $sort = self::NO_SORT, $count = null)
     {
-        return PointInteretQuery::create()
-            ->setDistinct()
-            ->useEtablissementPointInteretQuery()
-                ->useEtablissementQuery()
-                    ->filterByDepartement($departement)
-                    ->useDepartementQuery()
-                    ->filterByActive(true)
+        if(self::getLocale() == 'de')
+        {
+            $query = PointInteretQuery::create()
+                ->useRegionPointInteretQuery()
+                    ->useRegionQuery()
+                        ->filterByActive(true)
+                        ->useVilleQuery()
+                            ->filterByActive(true)
+                            ->useEtablissementQuery()
+                                ->filterByActive(true)
+                                ->filterByDepartement($departement)
+                            ->endUse()
+                        ->endUse()
                     ->endUse()
                 ->endUse()
-            ->endUse()
+            ;
+        }
+        else
+        {
+            $query = PointInteretQuery::create()
+                ->useEtablissementPointInteretQuery()
+                    ->useEtablissementQuery()
+                        ->filterByDepartement($departement)
+                        ->useDepartementQuery()
+                            ->filterByActive(true)
+                        ->endUse()
+                    ->endUse()
+                ->endUse()
+            ;
+        }
+
+        $query
+            ->setDistinct()
             ->count()
         ;
     }
 
     static public function getForVille(Ville $ville, $sort = self::NO_SORT, $count = null)
     {
-        $query = PointInteretQuery::create()
-            ->setDistinct()
-            ->useEtablissementPointInteretQuery()
-                ->useEtablissementQuery()
-                    ->filterByActive(true)
-                    ->filterByVille($ville)
+        if(self::getLocale() == 'de')
+        {
+            $query = PointInteretQuery::create()
+                ->useRegionPointInteretQuery()
+                    ->useRegionQuery()
+                        ->filterByActive(true)
+                        ->filterByVille($ville)
+                    ->endUse()
                 ->endUse()
-            ->endUse()
-        ;
+            ;
+        }
+        else
+        {
+            $query = PointInteretQuery::create()
+                ->useEtablissementPointInteretQuery()
+                    ->useEtablissementQuery()
+                        ->filterByActive(true)
+                        ->filterByVille($ville)
+                    ->endUse()
+                ->endUse()
+            ;
+        }
+
+        $query->setDistinct();
 
         return self::getForQuery($query, $sort, $count);
     }
 
     static public function getCountForVille(Ville $ville)
     {
-        return PointInteretQuery::create()
-            ->setDistinct()
-            ->useEtablissementPointInteretQuery()
-                ->useEtablissementQuery()
-                    ->filterByActive(true)
-                    ->filterByVille($ville)
+        if(self::getLocale() == 'de')
+        {
+            $query = PointInteretQuery::create()
+                ->useRegionPointInteretQuery()
+                    ->useRegionQuery()
+                        ->filterByActive(true)
+                        ->filterByVille($ville)
+                    ->endUse()
                 ->endUse()
-            ->endUse()
+            ;
+        }
+        else
+        {
+            $query = PointInteretQuery::create()
+                ->useEtablissementPointInteretQuery()
+                    ->useEtablissementQuery()
+                        ->filterByActive(true)
+                        ->filterByVille($ville)
+                    ->endUse()
+                ->endUse()
+            ;
+        }
+
+        $query
+            ->setDistinct()
             ->filterByActive(true)
             ->count()
-            ;
+        ;
     }
 
     static public function getForDestination(Destination $destination, $sort = self::NO_SORT, $count = null)
     {
-        $query = PointInteretQuery::create()
-            ->setDistinct()
-            ->useEtablissementPointInteretQuery()
-                ->useEtablissementQuery()
-                    ->filterByActive(true)
-                    ->filterByDestination($destination)
+        if(self::getLocale() == 'de')
+        {
+            $query = PointInteretQuery::create()
+                ->useRegionPointInteretQuery()
+                    ->useRegionQuery()
+                        ->filterByActive(true)
+                        ->useVilleQuery()
+                            ->filterByActive(true)
+                            ->useEtablissementQuery()
+                                ->filterByActive(true)
+                                ->filterByDestination($destination)
+                            ->endUse()
+                        ->endUse()
+                    ->endUse()
                 ->endUse()
-            ->endUse()
-        ;
+            ;
+        }
+        else
+        {
+            $query = PointInteretQuery::create()
+                ->useEtablissementPointInteretQuery()
+                    ->useEtablissementQuery()
+                        ->filterByActive(true)
+                        ->filterByDestination($destination)
+                    ->endUse()
+                ->endUse()
+            ;
+        }
+
+        $query->setDistinct();
 
         return self::getForQuery($query, $sort, $count);
     }
 
     static public function getCountForDestination(Destination $destination)
     {
+        if(self::getLocale() == 'de')
+        {
+            $query = PointInteretQuery::create()
+                ->useRegionPointInteretQuery()
+                    ->useRegionQuery()
+                        ->filterByActive(true)
+                        ->useVilleQuery()
+                            ->filterByActive(true)
+                            ->useEtablissementQuery()
+                                ->filterByActive(true)
+                                ->filterByDestination($destination)
+                            ->endUse()
+                        ->endUse()
+                    ->endUse()
+                ->endUse()
+            ;
+        }
+        else
+        {
+            $query = PointInteretQuery::create()
+                ->useEtablissementPointInteretQuery()
+                    ->useEtablissementQuery()
+                        ->filterByActive(true)
+                        ->filterByDestination($destination)
+                    ->endUse()
+                ->endUse()
+            ;
+        }
+
         return PointInteretQuery::create()
             ->setDistinct()
-            ->useEtablissementPointInteretQuery()
-                ->useEtablissementQuery()
-                    ->filterByActive(true)
-                    ->filterByDestination($destination)
-                ->endUse()
-            ->endUse()
             ->filterByActive(true)
             ->count()
-            ;
+        ;
     }
 }
