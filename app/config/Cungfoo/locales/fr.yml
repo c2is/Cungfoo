@@ -892,3 +892,5 @@ bon_plan_i18n.slug: Slug
 bon_plan_i18n.description: Description
 bon_plan_i18n.indice: Indice
 bon_plan_i18n.indice_prix: Indice prix
+
+'The CSRF token is invalid. Please try to resubmit the form.': 'Votre session a expiré ; veuillez soumettre le formulaire à nouveau.'
