@@ -34,7 +34,7 @@ class ApiController implements ControllerProviderInterface
             foreach ($campings as $camping)
             {
                 $campingDom = $dom->createElement('product');
-                $campingDom->setattribute('id', $camping->getId());
+                $campingDom->setattribute('id', $camping->getCode());
                 $root->appendChild($campingDom);
 
                 $node = $dom->createElement('name');
@@ -88,7 +88,7 @@ class ApiController implements ControllerProviderInterface
             foreach ($campings as $camping)
             {
                 $lines[] = implode('|', array(
-                    $camping->getId(),
+                    $camping->getCode(),
                     '"' . str_replace('"', '""', $camping->getName()) . '"',
                     '',
                     '',
