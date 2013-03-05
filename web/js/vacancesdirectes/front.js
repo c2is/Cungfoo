@@ -1835,7 +1835,8 @@ function sliderActivite() {
 
 function tabs(tView, load) {
     var sView = tView.split('#')[1],
-        slider = $('.tabCampDiapo');
+        slider = $('.tabCampDiapo'),
+        sFilter = $('#formSearchRefined');
 
     if (sView == 'tabCamp' || sView == 'tabLocations' || sView == 'tabLogement' || sView == 'tabCampings') {
         slider.fadeIn();
@@ -1843,6 +1844,11 @@ function tabs(tView, load) {
             $('[name="affPhoto"][value="locations"]').parent('label').trigger('click');
         } else {
             $('[name="affPhoto"][value="all"]').parent('label').trigger('click');
+        }
+        if (sFilter.length > 0 && sView == 'tabCampings') {
+            sFilter.fadeIn();
+        } else if (sFilter.length > 0) {
+            sFilter.hide();
         }
     } else {
         slider.hide();
