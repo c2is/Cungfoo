@@ -41,6 +41,14 @@ class ApiController implements ControllerProviderInterface
                 $node->appendChild($dom->createTextNode($camping->getName()));
                 $campingDom->appendChild($node);
 
+                $node = $dom->createElement('smallimage');
+                $node->appendChild($dom->createTextNode(''));
+                $campingDom->appendChild($node);
+
+                $node = $dom->createElement('bigimage');
+                $node->appendChild($dom->createTextNode(''));
+                $campingDom->appendChild($node);
+
                 $node = $dom->createElement('producturl');
                 $node->appendChild($dom->createTextNode(
                     $app->url('destination_camping', array(
