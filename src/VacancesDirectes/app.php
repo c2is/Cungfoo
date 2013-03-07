@@ -47,5 +47,15 @@ $app['swiftmailer.options'] = array(
     'auth_mode' => null
 );
 
+$app->after(function (Symfony\Component\HttpFoundation\Request $request, Symfony\Component\HttpFoundation\Response $response) use ($app) {
+    if ($tagUci = $request->query->get('tag_uci')) {
+        $dateTime = new \DateTime();
+        $dateTime->modify('+4 days');
+        $cookie = new Symfony\Component\HttpFoundation\Cookie('vd_tag_uci', $tagUci, $dateTime);
+
+        $response->headers->setCookie($cookie);
+    }
+});
+
 return $app;
 

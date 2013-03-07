@@ -66,6 +66,12 @@ class CouloirController implements ControllerProviderInterface
                 "referer"       => $request->headers->get('referer'),
             );
 
+            $cookies = $request->cookies;
+            if($cookies->has('vd_tag_uci'))
+            {
+                $query['vd_tag_uci'] = $cookies->get('vd_tag_uci');
+            }
+
             $query = array_merge($query, $request->request->all());
 
             $query = $this->pushCookieSession($request, $query);
