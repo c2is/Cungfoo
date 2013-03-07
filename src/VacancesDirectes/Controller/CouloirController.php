@@ -66,12 +66,6 @@ class CouloirController implements ControllerProviderInterface
                 "referer"       => $request->headers->get('referer'),
             );
 
-            $cookies = $request->cookies;
-            if($cookies->has('tag_uci'))
-            {
-                $query['tag_uci'] = $cookies->get('tag_uci');
-            }
-
             $query = array_merge($query, $request->request->all());
 
             $query = $this->pushCookieSession($request, $query);
@@ -134,6 +128,12 @@ class CouloirController implements ControllerProviderInterface
             $query = array_merge($query, $request->request->all());
 
             $query = $this->pushCookieSession($request, $query);
+
+            $cookies = $request->cookies;
+            if($cookies->has('tag_uci'))
+            {
+                $query['tag_uci'] = $cookies->get('tag_uci');
+            }
 
             return $app->renderView('Couloir\confirmation.twig', array(
                 'query' => $query,
