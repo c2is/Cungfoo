@@ -20,7 +20,7 @@ class ApiController implements ControllerProviderInterface
     {
         $controllers = $app['controllers_factory'];
 
-        $controllers->match('/criteo.xml', function (Request $request) use ($app)
+        $controllers->match('/xml/criteo', function (Request $request) use ($app)
         {
             $campings = EtablissementQuery::create()
                 ->findActive()
@@ -73,7 +73,7 @@ class ApiController implements ControllerProviderInterface
         })
         ->bind('api_criteo_xml');
 
-        $controllers->match('/criteo.csv', function (Request $request) use ($app)
+        $controllers->match('/csv/criteo', function (Request $request) use ($app)
         {
             $campings = EtablissementQuery::create()
                 ->findActive()
