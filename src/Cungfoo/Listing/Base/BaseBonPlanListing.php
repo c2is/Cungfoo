@@ -22,9 +22,6 @@ class BaseBonPlanListing extends Listing
         $this->addColumn(new Column\TextColumn('id'));
         $this->addColumn(new Column\DateColumn('date_debut'));
         $this->addColumn(new Column\DateColumn('date_fin'));
-        $this->addColumn(new Column\TextColumn('image_menu'));
-        $this->addColumn(new Column\TextColumn('image_page'));
-        $this->addColumn(new Column\TextColumn('image_liste'));
         $this->addColumn(new Column\TextColumn('active_compteur'));
         $this->addColumn(new Column\TextColumn('mise_en_avant'));
         $this->addColumn(new Column\TextColumn('push_home'));

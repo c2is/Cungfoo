@@ -39,13 +39,13 @@ abstract class BaseRegionRefPeer
     const TM_CLASS = 'RegionRefTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 8;
+    const NUM_COLUMNS = 6;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 8;
+    const NUM_HYDRATE_COLUMNS = 6;
 
     /** the column name for the id field */
     const ID = 'region_ref.id';
@@ -55,12 +55,6 @@ abstract class BaseRegionRefPeer
 
     /** the column name for the pays_id field */
     const PAYS_ID = 'region_ref.pays_id';
-
-    /** the column name for the image_detail_1 field */
-    const IMAGE_DETAIL_1 = 'region_ref.image_detail_1';
-
-    /** the column name for the image_detail_2 field */
-    const IMAGE_DETAIL_2 = 'region_ref.image_detail_2';
 
     /** the column name for the created_at field */
     const CREATED_AT = 'region_ref.created_at';
@@ -97,12 +91,12 @@ abstract class BaseRegionRefPeer
      * e.g. RegionRefPeer::$fieldNames[RegionRefPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'PaysId', 'ImageDetail1', 'ImageDetail2', 'CreatedAt', 'UpdatedAt', 'Active', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'paysId', 'imageDetail1', 'imageDetail2', 'createdAt', 'updatedAt', 'active', ),
-        BasePeer::TYPE_COLNAME => array (RegionRefPeer::ID, RegionRefPeer::CODE, RegionRefPeer::PAYS_ID, RegionRefPeer::IMAGE_DETAIL_1, RegionRefPeer::IMAGE_DETAIL_2, RegionRefPeer::CREATED_AT, RegionRefPeer::UPDATED_AT, RegionRefPeer::ACTIVE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'PAYS_ID', 'IMAGE_DETAIL_1', 'IMAGE_DETAIL_2', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'pays_id', 'image_detail_1', 'image_detail_2', 'created_at', 'updated_at', 'active', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'PaysId', 'CreatedAt', 'UpdatedAt', 'Active', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'paysId', 'createdAt', 'updatedAt', 'active', ),
+        BasePeer::TYPE_COLNAME => array (RegionRefPeer::ID, RegionRefPeer::CODE, RegionRefPeer::PAYS_ID, RegionRefPeer::CREATED_AT, RegionRefPeer::UPDATED_AT, RegionRefPeer::ACTIVE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'PAYS_ID', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'pays_id', 'created_at', 'updated_at', 'active', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
     );
 
     /**
@@ -112,12 +106,12 @@ abstract class BaseRegionRefPeer
      * e.g. RegionRefPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'PaysId' => 2, 'ImageDetail1' => 3, 'ImageDetail2' => 4, 'CreatedAt' => 5, 'UpdatedAt' => 6, 'Active' => 7, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'paysId' => 2, 'imageDetail1' => 3, 'imageDetail2' => 4, 'createdAt' => 5, 'updatedAt' => 6, 'active' => 7, ),
-        BasePeer::TYPE_COLNAME => array (RegionRefPeer::ID => 0, RegionRefPeer::CODE => 1, RegionRefPeer::PAYS_ID => 2, RegionRefPeer::IMAGE_DETAIL_1 => 3, RegionRefPeer::IMAGE_DETAIL_2 => 4, RegionRefPeer::CREATED_AT => 5, RegionRefPeer::UPDATED_AT => 6, RegionRefPeer::ACTIVE => 7, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'PAYS_ID' => 2, 'IMAGE_DETAIL_1' => 3, 'IMAGE_DETAIL_2' => 4, 'CREATED_AT' => 5, 'UPDATED_AT' => 6, 'ACTIVE' => 7, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'pays_id' => 2, 'image_detail_1' => 3, 'image_detail_2' => 4, 'created_at' => 5, 'updated_at' => 6, 'active' => 7, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'PaysId' => 2, 'CreatedAt' => 3, 'UpdatedAt' => 4, 'Active' => 5, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'paysId' => 2, 'createdAt' => 3, 'updatedAt' => 4, 'active' => 5, ),
+        BasePeer::TYPE_COLNAME => array (RegionRefPeer::ID => 0, RegionRefPeer::CODE => 1, RegionRefPeer::PAYS_ID => 2, RegionRefPeer::CREATED_AT => 3, RegionRefPeer::UPDATED_AT => 4, RegionRefPeer::ACTIVE => 5, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'PAYS_ID' => 2, 'CREATED_AT' => 3, 'UPDATED_AT' => 4, 'ACTIVE' => 5, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'pays_id' => 2, 'created_at' => 3, 'updated_at' => 4, 'active' => 5, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
     );
 
     /**
@@ -194,8 +188,6 @@ abstract class BaseRegionRefPeer
             $criteria->addSelectColumn(RegionRefPeer::ID);
             $criteria->addSelectColumn(RegionRefPeer::CODE);
             $criteria->addSelectColumn(RegionRefPeer::PAYS_ID);
-            $criteria->addSelectColumn(RegionRefPeer::IMAGE_DETAIL_1);
-            $criteria->addSelectColumn(RegionRefPeer::IMAGE_DETAIL_2);
             $criteria->addSelectColumn(RegionRefPeer::CREATED_AT);
             $criteria->addSelectColumn(RegionRefPeer::UPDATED_AT);
             $criteria->addSelectColumn(RegionRefPeer::ACTIVE);
@@ -203,8 +195,6 @@ abstract class BaseRegionRefPeer
             $criteria->addSelectColumn($alias . '.id');
             $criteria->addSelectColumn($alias . '.code');
             $criteria->addSelectColumn($alias . '.pays_id');
-            $criteria->addSelectColumn($alias . '.image_detail_1');
-            $criteria->addSelectColumn($alias . '.image_detail_2');
             $criteria->addSelectColumn($alias . '.created_at');
             $criteria->addSelectColumn($alias . '.updated_at');
             $criteria->addSelectColumn($alias . '.active');

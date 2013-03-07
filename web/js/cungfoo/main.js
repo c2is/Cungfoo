@@ -69,6 +69,8 @@ $(function() {
 
     // suppression d'un éléments depuis la liste
     $('.actions-item .delete').confirmModal();
+
+    $.c2is.portfolio();
 });
 
 // Extend jQuery.fn with our new method

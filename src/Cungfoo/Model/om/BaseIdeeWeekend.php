@@ -72,12 +72,6 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
     protected $home;
 
     /**
-     * The value for the image_path field.
-     * @var        string
-     */
-    protected $image_path;
-
-    /**
      * The value for the active field.
      * Note: this column has a database default value of: false
      * @var        boolean
@@ -183,16 +177,6 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
     public function getHome()
     {
         return $this->home;
-    }
-
-    /**
-     * Get the [image_path] column value.
-     *
-     * @return string
-     */
-    public function getImagePath()
-    {
-        return $this->image_path;
     }
 
     /**
@@ -306,27 +290,6 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
     } // setHome()
 
     /**
-     * Set the value of [image_path] column.
-     *
-     * @param string $v new value
-     * @return IdeeWeekend The current object (for fluent API support)
-     */
-    public function setImagePath($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->image_path !== $v) {
-            $this->image_path = $v;
-            $this->modifiedColumns[] = IdeeWeekendPeer::IMAGE_PATH;
-        }
-
-
-        return $this;
-    } // setImagePath()
-
-    /**
      * Sets the value of the [active] column.
      * Non-boolean arguments are converted using the following rules:
      *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
@@ -395,8 +358,7 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
             $this->highlight = ($row[$startcol + 1] !== null) ? (boolean) $row[$startcol + 1] : null;
             $this->prix = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
             $this->home = ($row[$startcol + 3] !== null) ? (boolean) $row[$startcol + 3] : null;
-            $this->image_path = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
-            $this->active = ($row[$startcol + 5] !== null) ? (boolean) $row[$startcol + 5] : null;
+            $this->active = ($row[$startcol + 4] !== null) ? (boolean) $row[$startcol + 4] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -405,7 +367,7 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 6; // 6 = IdeeWeekendPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 5; // 5 = IdeeWeekendPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating IdeeWeekend object", $e);
@@ -648,9 +610,6 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
         if ($this->isColumnModified(IdeeWeekendPeer::HOME)) {
             $modifiedColumns[':p' . $index++]  = '`home`';
         }
-        if ($this->isColumnModified(IdeeWeekendPeer::IMAGE_PATH)) {
-            $modifiedColumns[':p' . $index++]  = '`image_path`';
-        }
         if ($this->isColumnModified(IdeeWeekendPeer::ACTIVE)) {
             $modifiedColumns[':p' . $index++]  = '`active`';
         }
@@ -676,9 +635,6 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
                         break;
                     case '`home`':
                         $stmt->bindValue($identifier, (int) $this->home, PDO::PARAM_INT);
-                        break;
-                    case '`image_path`':
-                        $stmt->bindValue($identifier, $this->image_path, PDO::PARAM_STR);
                         break;
                     case '`active`':
                         $stmt->bindValue($identifier, (int) $this->active, PDO::PARAM_INT);
@@ -838,9 +794,6 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
                 return $this->getHome();
                 break;
             case 4:
-                return $this->getImagePath();
-                break;
-            case 5:
                 return $this->getActive();
                 break;
             default:
@@ -876,8 +829,7 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
             $keys[1] => $this->getHighlight(),
             $keys[2] => $this->getPrix(),
             $keys[3] => $this->getHome(),
-            $keys[4] => $this->getImagePath(),
-            $keys[5] => $this->getActive(),
+            $keys[4] => $this->getActive(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->collIdeeWeekendI18ns) {
@@ -930,9 +882,6 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
                 $this->setHome($value);
                 break;
             case 4:
-                $this->setImagePath($value);
-                break;
-            case 5:
                 $this->setActive($value);
                 break;
         } // switch()
@@ -963,8 +912,7 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
         if (array_key_exists($keys[1], $arr)) $this->setHighlight($arr[$keys[1]]);
         if (array_key_exists($keys[2], $arr)) $this->setPrix($arr[$keys[2]]);
         if (array_key_exists($keys[3], $arr)) $this->setHome($arr[$keys[3]]);
-        if (array_key_exists($keys[4], $arr)) $this->setImagePath($arr[$keys[4]]);
-        if (array_key_exists($keys[5], $arr)) $this->setActive($arr[$keys[5]]);
+        if (array_key_exists($keys[4], $arr)) $this->setActive($arr[$keys[4]]);
     }
 
     /**
@@ -980,7 +928,6 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
         if ($this->isColumnModified(IdeeWeekendPeer::HIGHLIGHT)) $criteria->add(IdeeWeekendPeer::HIGHLIGHT, $this->highlight);
         if ($this->isColumnModified(IdeeWeekendPeer::PRIX)) $criteria->add(IdeeWeekendPeer::PRIX, $this->prix);
         if ($this->isColumnModified(IdeeWeekendPeer::HOME)) $criteria->add(IdeeWeekendPeer::HOME, $this->home);
-        if ($this->isColumnModified(IdeeWeekendPeer::IMAGE_PATH)) $criteria->add(IdeeWeekendPeer::IMAGE_PATH, $this->image_path);
         if ($this->isColumnModified(IdeeWeekendPeer::ACTIVE)) $criteria->add(IdeeWeekendPeer::ACTIVE, $this->active);
 
         return $criteria;
@@ -1048,7 +995,6 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
         $copyObj->setHighlight($this->getHighlight());
         $copyObj->setPrix($this->getPrix());
         $copyObj->setHome($this->getHome());
-        $copyObj->setImagePath($this->getImagePath());
         $copyObj->setActive($this->getActive());
 
         if ($deepCopy && !$this->startCopy) {
@@ -1358,7 +1304,6 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
         $this->highlight = null;
         $this->prix = null;
         $this->home = null;
-        $this->image_path = null;
         $this->active = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
@@ -1763,8 +1708,6 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
      */
     public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
     {
-        $this->saveImagePathPortfolioUsage();
-
         return $this->save($con);
     }
 
@@ -1787,36 +1730,68 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
     /**
      * @return void
      */
-    public function saveImagePathPortfolioUsage()
+    public function getImagePath()
     {
         $peer = self::PEER;
 
-        $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+        $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
+            ->select('id')
+            ->usePortfolioUsageQuery()
+                ->filterByTableRef($peer::TABLE_NAME)
+                ->filterByColumnRef($peer::TABLE_NAME.'.image_path')
+                ->filterByElementId($this->getId())
+            ->endUse()
+            ->find()
+            ->toArray()
+        ;
+
+        return implode(';', $medias);
+    }
+
+    /**
+     * @return void
+     */
+    public function setImagePath($v)
+    {
+        $peer = self::PEER;
+
+        $values = explode(';', $v);
+
+        \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
             ->filterByColumnRef($peer::TABLE_NAME.'.image_path')
             ->filterByElementId($this->getId())
-            ->findOne()
+            ->filterByMediaId($values, \Criteria::NOT_IN)
+            ->find()
+            ->delete()
         ;
 
-        if ($this->getImagePath()) {
-            if (!$usage) {
-                $usage = new \Cungfoo\Model\PortfolioUsage();
+        if ($v) {
+            foreach ($values as $index => $value) {
+                $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+                    ->filterByTableRef($peer::TABLE_NAME)
+                    ->filterByColumnRef($peer::TABLE_NAME.'.image_path')
+                    ->filterByElementId($this->getId())
+                    ->filterByMediaId($value)
+                    ->findOne()
+                ;
+
+                if (!$usage) {
+                    $usage = new \Cungfoo\Model\PortfolioUsage();
+                    $usage
+                        ->setTableRef($peer::TABLE_NAME)
+                        ->setColumnRef($peer::TABLE_NAME.'.image_path')
+                        ->setElementId($this->getId())
+                        ->setMediaId($value)
+                    ;
+                }
+
                 $usage
-                    ->setTableRef($peer::TABLE_NAME)
-                    ->setColumnRef($peer::TABLE_NAME.'.image_path')
-                    ->setElementId($this->getId())
+                    ->setSortableRank($index)
+                    ->save()
                 ;
             }
 
-            $usage
-                ->setMediaId($this->getImagePath())
-                ->save()
-            ;
-        }
-        else {
-            if ($usage) {
-                $usage->delete();
-            }
         }
     }
 

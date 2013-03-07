@@ -45,33 +45,6 @@ class BaseMultimediaTypeHebergementType extends AppAwareType
         );
     }
 
-    public function getImagePathType()
-    {
-        return 'cungfoo_file';
-    }
-
-    public function getImagePathOptions()
-    {
-        return array(
-            'required' => false,
-            'label' => 'multimedia_type_hebergement.image_path',
-        );
-    }
-
-    public function getImagePathDeletedType()
-    {
-        return 'checkbox';
-    }
-
-    public function getImagePathDeletedOptions()
-    {
-        return array(
-            'property_path' => false,
-            'required' => false,
-            'label' => 'multimedia_type_hebergement.image_path_deleted',
-        );
-    }
-
     public function getCreatedAtType()
     {
         return 'datetime';
@@ -110,6 +83,19 @@ class BaseMultimediaTypeHebergementType extends AppAwareType
         return array(
             'required' => false,
             'label' => 'multimedia_type_hebergement.active',
+        );
+    }
+
+    public function getImagePathType()
+    {
+        return 'cungfoo_file';
+    }
+
+    public function getImagePathOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'multimedia_type_hebergement.image_path',
         );
     }
 
@@ -201,11 +187,10 @@ class BaseMultimediaTypeHebergementType extends AppAwareType
     {
         $builder->add('id', $this->getIdType(), $this->getIdOptions());
         $builder->add('type_hebergement', $this->getTypeHebergementType(), $this->getTypeHebergementOptions());
-        $builder->add('image_path', $this->getImagePathType(), $this->getImagePathOptions());
-        $builder->add('image_path_deleted', $this->getImagePathDeletedType(), $this->getImagePathDeletedOptions());
         $builder->add('created_at', $this->getCreatedAtType(), $this->getCreatedAtOptions());
         $builder->add('updated_at', $this->getUpdatedAtType(), $this->getUpdatedAtOptions());
-        $builder->add('active', $this->getActiveType(), $this->getActiveOptions());$builder->add('multimedia_type_hebergementI18ns', 'translation_collection', array(
+        $builder->add('active', $this->getActiveType(), $this->getActiveOptions());
+        $builder->add('image_path', $this->getImagePathType(), $this->getImagePathOptions());$builder->add('multimedia_type_hebergementI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\MultimediaTypeHebergementI18n',
             'label' => 'multimedia_type_hebergementI18ns',
             'required' => false,

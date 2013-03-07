@@ -38,22 +38,19 @@ abstract class BaseMultimediaTypeHebergementPeer
     const TM_CLASS = 'MultimediaTypeHebergementTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 6;
+    const NUM_COLUMNS = 5;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 6;
+    const NUM_HYDRATE_COLUMNS = 5;
 
     /** the column name for the id field */
     const ID = 'multimedia_type_hebergement.id';
 
     /** the column name for the type_hebergement_id field */
     const TYPE_HEBERGEMENT_ID = 'multimedia_type_hebergement.type_hebergement_id';
-
-    /** the column name for the image_path field */
-    const IMAGE_PATH = 'multimedia_type_hebergement.image_path';
 
     /** the column name for the created_at field */
     const CREATED_AT = 'multimedia_type_hebergement.created_at';
@@ -90,12 +87,12 @@ abstract class BaseMultimediaTypeHebergementPeer
      * e.g. MultimediaTypeHebergementPeer::$fieldNames[MultimediaTypeHebergementPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'TypeHebergementId', 'ImagePath', 'CreatedAt', 'UpdatedAt', 'Active', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'typeHebergementId', 'imagePath', 'createdAt', 'updatedAt', 'active', ),
-        BasePeer::TYPE_COLNAME => array (MultimediaTypeHebergementPeer::ID, MultimediaTypeHebergementPeer::TYPE_HEBERGEMENT_ID, MultimediaTypeHebergementPeer::IMAGE_PATH, MultimediaTypeHebergementPeer::CREATED_AT, MultimediaTypeHebergementPeer::UPDATED_AT, MultimediaTypeHebergementPeer::ACTIVE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'TYPE_HEBERGEMENT_ID', 'IMAGE_PATH', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'type_hebergement_id', 'image_path', 'created_at', 'updated_at', 'active', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'TypeHebergementId', 'CreatedAt', 'UpdatedAt', 'Active', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'typeHebergementId', 'createdAt', 'updatedAt', 'active', ),
+        BasePeer::TYPE_COLNAME => array (MultimediaTypeHebergementPeer::ID, MultimediaTypeHebergementPeer::TYPE_HEBERGEMENT_ID, MultimediaTypeHebergementPeer::CREATED_AT, MultimediaTypeHebergementPeer::UPDATED_AT, MultimediaTypeHebergementPeer::ACTIVE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'TYPE_HEBERGEMENT_ID', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'type_hebergement_id', 'created_at', 'updated_at', 'active', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
     );
 
     /**
@@ -105,12 +102,12 @@ abstract class BaseMultimediaTypeHebergementPeer
      * e.g. MultimediaTypeHebergementPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'TypeHebergementId' => 1, 'ImagePath' => 2, 'CreatedAt' => 3, 'UpdatedAt' => 4, 'Active' => 5, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'typeHebergementId' => 1, 'imagePath' => 2, 'createdAt' => 3, 'updatedAt' => 4, 'active' => 5, ),
-        BasePeer::TYPE_COLNAME => array (MultimediaTypeHebergementPeer::ID => 0, MultimediaTypeHebergementPeer::TYPE_HEBERGEMENT_ID => 1, MultimediaTypeHebergementPeer::IMAGE_PATH => 2, MultimediaTypeHebergementPeer::CREATED_AT => 3, MultimediaTypeHebergementPeer::UPDATED_AT => 4, MultimediaTypeHebergementPeer::ACTIVE => 5, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'TYPE_HEBERGEMENT_ID' => 1, 'IMAGE_PATH' => 2, 'CREATED_AT' => 3, 'UPDATED_AT' => 4, 'ACTIVE' => 5, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'type_hebergement_id' => 1, 'image_path' => 2, 'created_at' => 3, 'updated_at' => 4, 'active' => 5, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'TypeHebergementId' => 1, 'CreatedAt' => 2, 'UpdatedAt' => 3, 'Active' => 4, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'typeHebergementId' => 1, 'createdAt' => 2, 'updatedAt' => 3, 'active' => 4, ),
+        BasePeer::TYPE_COLNAME => array (MultimediaTypeHebergementPeer::ID => 0, MultimediaTypeHebergementPeer::TYPE_HEBERGEMENT_ID => 1, MultimediaTypeHebergementPeer::CREATED_AT => 2, MultimediaTypeHebergementPeer::UPDATED_AT => 3, MultimediaTypeHebergementPeer::ACTIVE => 4, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'TYPE_HEBERGEMENT_ID' => 1, 'CREATED_AT' => 2, 'UPDATED_AT' => 3, 'ACTIVE' => 4, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'type_hebergement_id' => 1, 'created_at' => 2, 'updated_at' => 3, 'active' => 4, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
     );
 
     /**
@@ -186,14 +183,12 @@ abstract class BaseMultimediaTypeHebergementPeer
         if (null === $alias) {
             $criteria->addSelectColumn(MultimediaTypeHebergementPeer::ID);
             $criteria->addSelectColumn(MultimediaTypeHebergementPeer::TYPE_HEBERGEMENT_ID);
-            $criteria->addSelectColumn(MultimediaTypeHebergementPeer::IMAGE_PATH);
             $criteria->addSelectColumn(MultimediaTypeHebergementPeer::CREATED_AT);
             $criteria->addSelectColumn(MultimediaTypeHebergementPeer::UPDATED_AT);
             $criteria->addSelectColumn(MultimediaTypeHebergementPeer::ACTIVE);
         } else {
             $criteria->addSelectColumn($alias . '.id');
             $criteria->addSelectColumn($alias . '.type_hebergement_id');
-            $criteria->addSelectColumn($alias . '.image_path');
             $criteria->addSelectColumn($alias . '.created_at');
             $criteria->addSelectColumn($alias . '.updated_at');
             $criteria->addSelectColumn($alias . '.active');

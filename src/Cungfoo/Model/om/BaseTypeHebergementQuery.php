@@ -33,8 +33,6 @@ use Cungfoo\Model\TypeHebergementQuery;
  * @method TypeHebergementQuery orderByCategoryTypeHebergementId($order = Criteria::ASC) Order by the category_type_hebergement_id column
  * @method TypeHebergementQuery orderByNombreChambre($order = Criteria::ASC) Order by the nombre_chambre column
  * @method TypeHebergementQuery orderByNombrePlace($order = Criteria::ASC) Order by the nombre_place column
- * @method TypeHebergementQuery orderByImageHebergementPath($order = Criteria::ASC) Order by the image_hebergement_path column
- * @method TypeHebergementQuery orderByImageCompositionPath($order = Criteria::ASC) Order by the image_composition_path column
  * @method TypeHebergementQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method TypeHebergementQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  * @method TypeHebergementQuery orderByActive($order = Criteria::ASC) Order by the active column
@@ -45,8 +43,6 @@ use Cungfoo\Model\TypeHebergementQuery;
  * @method TypeHebergementQuery groupByCategoryTypeHebergementId() Group by the category_type_hebergement_id column
  * @method TypeHebergementQuery groupByNombreChambre() Group by the nombre_chambre column
  * @method TypeHebergementQuery groupByNombrePlace() Group by the nombre_place column
- * @method TypeHebergementQuery groupByImageHebergementPath() Group by the image_hebergement_path column
- * @method TypeHebergementQuery groupByImageCompositionPath() Group by the image_composition_path column
  * @method TypeHebergementQuery groupByCreatedAt() Group by the created_at column
  * @method TypeHebergementQuery groupByUpdatedAt() Group by the updated_at column
  * @method TypeHebergementQuery groupByActive() Group by the active column
@@ -83,8 +79,6 @@ use Cungfoo\Model\TypeHebergementQuery;
  * @method TypeHebergement findOneByCategoryTypeHebergementId(int $category_type_hebergement_id) Return the first TypeHebergement filtered by the category_type_hebergement_id column
  * @method TypeHebergement findOneByNombreChambre(int $nombre_chambre) Return the first TypeHebergement filtered by the nombre_chambre column
  * @method TypeHebergement findOneByNombrePlace(int $nombre_place) Return the first TypeHebergement filtered by the nombre_place column
- * @method TypeHebergement findOneByImageHebergementPath(string $image_hebergement_path) Return the first TypeHebergement filtered by the image_hebergement_path column
- * @method TypeHebergement findOneByImageCompositionPath(string $image_composition_path) Return the first TypeHebergement filtered by the image_composition_path column
  * @method TypeHebergement findOneByCreatedAt(string $created_at) Return the first TypeHebergement filtered by the created_at column
  * @method TypeHebergement findOneByUpdatedAt(string $updated_at) Return the first TypeHebergement filtered by the updated_at column
  * @method TypeHebergement findOneByActive(boolean $active) Return the first TypeHebergement filtered by the active column
@@ -95,8 +89,6 @@ use Cungfoo\Model\TypeHebergementQuery;
  * @method array findByCategoryTypeHebergementId(int $category_type_hebergement_id) Return TypeHebergement objects filtered by the category_type_hebergement_id column
  * @method array findByNombreChambre(int $nombre_chambre) Return TypeHebergement objects filtered by the nombre_chambre column
  * @method array findByNombrePlace(int $nombre_place) Return TypeHebergement objects filtered by the nombre_place column
- * @method array findByImageHebergementPath(string $image_hebergement_path) Return TypeHebergement objects filtered by the image_hebergement_path column
- * @method array findByImageCompositionPath(string $image_composition_path) Return TypeHebergement objects filtered by the image_composition_path column
  * @method array findByCreatedAt(string $created_at) Return TypeHebergement objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return TypeHebergement objects filtered by the updated_at column
  * @method array findByActive(boolean $active) Return TypeHebergement objects filtered by the active column
@@ -203,7 +195,7 @@ abstract class BaseTypeHebergementQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `code`, `type_hebergement_capacite_id`, `category_type_hebergement_id`, `nombre_chambre`, `nombre_place`, `image_hebergement_path`, `image_composition_path`, `created_at`, `updated_at`, `active` FROM `type_hebergement` WHERE `id` = :p0';
+        $sql = 'SELECT `id`, `code`, `type_hebergement_capacite_id`, `category_type_hebergement_id`, `nombre_chambre`, `nombre_place`, `created_at`, `updated_at`, `active` FROM `type_hebergement` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -514,64 +506,6 @@ abstract class BaseTypeHebergementQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(TypeHebergementPeer::NOMBRE_PLACE, $nombrePlace, $comparison);
-    }
-
-    /**
-     * Filter the query on the image_hebergement_path column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByImageHebergementPath('fooValue');   // WHERE image_hebergement_path = 'fooValue'
-     * $query->filterByImageHebergementPath('%fooValue%'); // WHERE image_hebergement_path LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $imageHebergementPath The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return TypeHebergementQuery The current query, for fluid interface
-     */
-    public function filterByImageHebergementPath($imageHebergementPath = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($imageHebergementPath)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $imageHebergementPath)) {
-                $imageHebergementPath = str_replace('*', '%', $imageHebergementPath);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(TypeHebergementPeer::IMAGE_HEBERGEMENT_PATH, $imageHebergementPath, $comparison);
-    }
-
-    /**
-     * Filter the query on the image_composition_path column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByImageCompositionPath('fooValue');   // WHERE image_composition_path = 'fooValue'
-     * $query->filterByImageCompositionPath('%fooValue%'); // WHERE image_composition_path LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $imageCompositionPath The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return TypeHebergementQuery The current query, for fluid interface
-     */
-    public function filterByImageCompositionPath($imageCompositionPath = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($imageCompositionPath)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $imageCompositionPath)) {
-                $imageCompositionPath = str_replace('*', '%', $imageCompositionPath);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(TypeHebergementPeer::IMAGE_COMPOSITION_PATH, $imageCompositionPath, $comparison);
     }
 
     /**

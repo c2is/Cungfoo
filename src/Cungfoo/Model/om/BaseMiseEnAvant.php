@@ -56,22 +56,10 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
     protected $id;
 
     /**
-     * The value for the image_fond_path field.
-     * @var        string
-     */
-    protected $image_fond_path;
-
-    /**
      * The value for the prix field.
      * @var        string
      */
     protected $prix;
-
-    /**
-     * The value for the illustration_path field.
-     * @var        string
-     */
-    protected $illustration_path;
 
     /**
      * The value for the date_fin_validite field.
@@ -172,16 +160,6 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
     }
 
     /**
-     * Get the [image_fond_path] column value.
-     *
-     * @return string
-     */
-    public function getImageFondPath()
-    {
-        return $this->image_fond_path;
-    }
-
-    /**
      * Get the [prix] column value.
      *
      * @return string
@@ -189,16 +167,6 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
     public function getPrix()
     {
         return $this->prix;
-    }
-
-    /**
-     * Get the [illustration_path] column value.
-     *
-     * @return string
-     */
-    public function getIllustrationPath()
-    {
-        return $this->illustration_path;
     }
 
     /**
@@ -283,27 +251,6 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
     } // setId()
 
     /**
-     * Set the value of [image_fond_path] column.
-     *
-     * @param string $v new value
-     * @return MiseEnAvant The current object (for fluent API support)
-     */
-    public function setImageFondPath($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->image_fond_path !== $v) {
-            $this->image_fond_path = $v;
-            $this->modifiedColumns[] = MiseEnAvantPeer::IMAGE_FOND_PATH;
-        }
-
-
-        return $this;
-    } // setImageFondPath()
-
-    /**
      * Set the value of [prix] column.
      *
      * @param string $v new value
@@ -323,27 +270,6 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
 
         return $this;
     } // setPrix()
-
-    /**
-     * Set the value of [illustration_path] column.
-     *
-     * @param string $v new value
-     * @return MiseEnAvant The current object (for fluent API support)
-     */
-    public function setIllustrationPath($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->illustration_path !== $v) {
-            $this->illustration_path = $v;
-            $this->modifiedColumns[] = MiseEnAvantPeer::ILLUSTRATION_PATH;
-        }
-
-
-        return $this;
-    } // setIllustrationPath()
 
     /**
      * Sets the value of [date_fin_validite] column to a normalized version of the date/time value specified.
@@ -455,12 +381,10 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
         try {
 
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
-            $this->image_fond_path = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
-            $this->prix = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
-            $this->illustration_path = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
-            $this->date_fin_validite = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
-            $this->sortable_rank = ($row[$startcol + 5] !== null) ? (int) $row[$startcol + 5] : null;
-            $this->active = ($row[$startcol + 6] !== null) ? (boolean) $row[$startcol + 6] : null;
+            $this->prix = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
+            $this->date_fin_validite = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
+            $this->sortable_rank = ($row[$startcol + 3] !== null) ? (int) $row[$startcol + 3] : null;
+            $this->active = ($row[$startcol + 4] !== null) ? (boolean) $row[$startcol + 4] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -469,7 +393,7 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 7; // 7 = MiseEnAvantPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 5; // 5 = MiseEnAvantPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating MiseEnAvant object", $e);
@@ -715,14 +639,8 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
         if ($this->isColumnModified(MiseEnAvantPeer::ID)) {
             $modifiedColumns[':p' . $index++]  = '`id`';
         }
-        if ($this->isColumnModified(MiseEnAvantPeer::IMAGE_FOND_PATH)) {
-            $modifiedColumns[':p' . $index++]  = '`image_fond_path`';
-        }
         if ($this->isColumnModified(MiseEnAvantPeer::PRIX)) {
             $modifiedColumns[':p' . $index++]  = '`prix`';
-        }
-        if ($this->isColumnModified(MiseEnAvantPeer::ILLUSTRATION_PATH)) {
-            $modifiedColumns[':p' . $index++]  = '`illustration_path`';
         }
         if ($this->isColumnModified(MiseEnAvantPeer::DATE_FIN_VALIDITE)) {
             $modifiedColumns[':p' . $index++]  = '`date_fin_validite`';
@@ -747,14 +665,8 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
                     case '`id`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`image_fond_path`':
-                        $stmt->bindValue($identifier, $this->image_fond_path, PDO::PARAM_STR);
-                        break;
                     case '`prix`':
                         $stmt->bindValue($identifier, $this->prix, PDO::PARAM_STR);
-                        break;
-                    case '`illustration_path`':
-                        $stmt->bindValue($identifier, $this->illustration_path, PDO::PARAM_STR);
                         break;
                     case '`date_fin_validite`':
                         $stmt->bindValue($identifier, $this->date_fin_validite, PDO::PARAM_STR);
@@ -911,21 +823,15 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
                 return $this->getId();
                 break;
             case 1:
-                return $this->getImageFondPath();
-                break;
-            case 2:
                 return $this->getPrix();
                 break;
-            case 3:
-                return $this->getIllustrationPath();
-                break;
-            case 4:
+            case 2:
                 return $this->getDateFinValidite();
                 break;
-            case 5:
+            case 3:
                 return $this->getSortableRank();
                 break;
-            case 6:
+            case 4:
                 return $this->getActive();
                 break;
             default:
@@ -958,12 +864,10 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
         $keys = MiseEnAvantPeer::getFieldNames($keyType);
         $result = array(
             $keys[0] => $this->getId(),
-            $keys[1] => $this->getImageFondPath(),
-            $keys[2] => $this->getPrix(),
-            $keys[3] => $this->getIllustrationPath(),
-            $keys[4] => $this->getDateFinValidite(),
-            $keys[5] => $this->getSortableRank(),
-            $keys[6] => $this->getActive(),
+            $keys[1] => $this->getPrix(),
+            $keys[2] => $this->getDateFinValidite(),
+            $keys[3] => $this->getSortableRank(),
+            $keys[4] => $this->getActive(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->collMiseEnAvantI18ns) {
@@ -1007,21 +911,15 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
                 $this->setId($value);
                 break;
             case 1:
-                $this->setImageFondPath($value);
-                break;
-            case 2:
                 $this->setPrix($value);
                 break;
-            case 3:
-                $this->setIllustrationPath($value);
-                break;
-            case 4:
+            case 2:
                 $this->setDateFinValidite($value);
                 break;
-            case 5:
+            case 3:
                 $this->setSortableRank($value);
                 break;
-            case 6:
+            case 4:
                 $this->setActive($value);
                 break;
         } // switch()
@@ -1049,12 +947,10 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
         $keys = MiseEnAvantPeer::getFieldNames($keyType);
 
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
-        if (array_key_exists($keys[1], $arr)) $this->setImageFondPath($arr[$keys[1]]);
-        if (array_key_exists($keys[2], $arr)) $this->setPrix($arr[$keys[2]]);
-        if (array_key_exists($keys[3], $arr)) $this->setIllustrationPath($arr[$keys[3]]);
-        if (array_key_exists($keys[4], $arr)) $this->setDateFinValidite($arr[$keys[4]]);
-        if (array_key_exists($keys[5], $arr)) $this->setSortableRank($arr[$keys[5]]);
-        if (array_key_exists($keys[6], $arr)) $this->setActive($arr[$keys[6]]);
+        if (array_key_exists($keys[1], $arr)) $this->setPrix($arr[$keys[1]]);
+        if (array_key_exists($keys[2], $arr)) $this->setDateFinValidite($arr[$keys[2]]);
+        if (array_key_exists($keys[3], $arr)) $this->setSortableRank($arr[$keys[3]]);
+        if (array_key_exists($keys[4], $arr)) $this->setActive($arr[$keys[4]]);
     }
 
     /**
@@ -1067,9 +963,7 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
         $criteria = new Criteria(MiseEnAvantPeer::DATABASE_NAME);
 
         if ($this->isColumnModified(MiseEnAvantPeer::ID)) $criteria->add(MiseEnAvantPeer::ID, $this->id);
-        if ($this->isColumnModified(MiseEnAvantPeer::IMAGE_FOND_PATH)) $criteria->add(MiseEnAvantPeer::IMAGE_FOND_PATH, $this->image_fond_path);
         if ($this->isColumnModified(MiseEnAvantPeer::PRIX)) $criteria->add(MiseEnAvantPeer::PRIX, $this->prix);
-        if ($this->isColumnModified(MiseEnAvantPeer::ILLUSTRATION_PATH)) $criteria->add(MiseEnAvantPeer::ILLUSTRATION_PATH, $this->illustration_path);
         if ($this->isColumnModified(MiseEnAvantPeer::DATE_FIN_VALIDITE)) $criteria->add(MiseEnAvantPeer::DATE_FIN_VALIDITE, $this->date_fin_validite);
         if ($this->isColumnModified(MiseEnAvantPeer::SORTABLE_RANK)) $criteria->add(MiseEnAvantPeer::SORTABLE_RANK, $this->sortable_rank);
         if ($this->isColumnModified(MiseEnAvantPeer::ACTIVE)) $criteria->add(MiseEnAvantPeer::ACTIVE, $this->active);
@@ -1136,9 +1030,7 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
      */
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
-        $copyObj->setImageFondPath($this->getImageFondPath());
         $copyObj->setPrix($this->getPrix());
-        $copyObj->setIllustrationPath($this->getIllustrationPath());
         $copyObj->setDateFinValidite($this->getDateFinValidite());
         $copyObj->setSortableRank($this->getSortableRank());
         $copyObj->setActive($this->getActive());
@@ -1447,9 +1339,7 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
     public function clear()
     {
         $this->id = null;
-        $this->image_fond_path = null;
         $this->prix = null;
-        $this->illustration_path = null;
         $this->date_fin_validite = null;
         $this->sortable_rank = null;
         $this->active = null;
@@ -2245,10 +2135,6 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
      */
     public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
     {
-        $this->saveImageFondPathPortfolioUsage();
-
-        $this->saveIllustrationPathPortfolioUsage();
-
         return $this->save($con);
     }
 
@@ -2271,72 +2157,136 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
     /**
      * @return void
      */
-    public function saveImageFondPathPortfolioUsage()
+    public function getImageFondPath()
     {
         $peer = self::PEER;
 
-        $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+        $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
+            ->select('id')
+            ->usePortfolioUsageQuery()
+                ->filterByTableRef($peer::TABLE_NAME)
+                ->filterByColumnRef($peer::TABLE_NAME.'.image_fond_path')
+                ->filterByElementId($this->getId())
+            ->endUse()
+            ->find()
+            ->toArray()
+        ;
+
+        return implode(';', $medias);
+    }
+
+    /**
+     * @return void
+     */
+    public function setImageFondPath($v)
+    {
+        $peer = self::PEER;
+
+        $values = explode(';', $v);
+
+        \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
             ->filterByColumnRef($peer::TABLE_NAME.'.image_fond_path')
             ->filterByElementId($this->getId())
-            ->findOne()
+            ->filterByMediaId($values, \Criteria::NOT_IN)
+            ->find()
+            ->delete()
         ;
 
-        if ($this->getImageFondPath()) {
-            if (!$usage) {
-                $usage = new \Cungfoo\Model\PortfolioUsage();
+        if ($v) {
+            foreach ($values as $index => $value) {
+                $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+                    ->filterByTableRef($peer::TABLE_NAME)
+                    ->filterByColumnRef($peer::TABLE_NAME.'.image_fond_path')
+                    ->filterByElementId($this->getId())
+                    ->filterByMediaId($value)
+                    ->findOne()
+                ;
+
+                if (!$usage) {
+                    $usage = new \Cungfoo\Model\PortfolioUsage();
+                    $usage
+                        ->setTableRef($peer::TABLE_NAME)
+                        ->setColumnRef($peer::TABLE_NAME.'.image_fond_path')
+                        ->setElementId($this->getId())
+                        ->setMediaId($value)
+                    ;
+                }
+
                 $usage
-                    ->setTableRef($peer::TABLE_NAME)
-                    ->setColumnRef($peer::TABLE_NAME.'.image_fond_path')
-                    ->setElementId($this->getId())
+                    ->setSortableRank($index)
+                    ->save()
                 ;
             }
 
-            $usage
-                ->setMediaId($this->getImageFondPath())
-                ->save()
-            ;
-        }
-        else {
-            if ($usage) {
-                $usage->delete();
-            }
         }
     }
 
     /**
      * @return void
      */
-    public function saveIllustrationPathPortfolioUsage()
+    public function getIllustrationPath()
     {
         $peer = self::PEER;
 
-        $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+        $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
+            ->select('id')
+            ->usePortfolioUsageQuery()
+                ->filterByTableRef($peer::TABLE_NAME)
+                ->filterByColumnRef($peer::TABLE_NAME.'.illustration_path')
+                ->filterByElementId($this->getId())
+            ->endUse()
+            ->find()
+            ->toArray()
+        ;
+
+        return implode(';', $medias);
+    }
+
+    /**
+     * @return void
+     */
+    public function setIllustrationPath($v)
+    {
+        $peer = self::PEER;
+
+        $values = explode(';', $v);
+
+        \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
             ->filterByColumnRef($peer::TABLE_NAME.'.illustration_path')
             ->filterByElementId($this->getId())
-            ->findOne()
+            ->filterByMediaId($values, \Criteria::NOT_IN)
+            ->find()
+            ->delete()
         ;
 
-        if ($this->getIllustrationPath()) {
-            if (!$usage) {
-                $usage = new \Cungfoo\Model\PortfolioUsage();
+        if ($v) {
+            foreach ($values as $index => $value) {
+                $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+                    ->filterByTableRef($peer::TABLE_NAME)
+                    ->filterByColumnRef($peer::TABLE_NAME.'.illustration_path')
+                    ->filterByElementId($this->getId())
+                    ->filterByMediaId($value)
+                    ->findOne()
+                ;
+
+                if (!$usage) {
+                    $usage = new \Cungfoo\Model\PortfolioUsage();
+                    $usage
+                        ->setTableRef($peer::TABLE_NAME)
+                        ->setColumnRef($peer::TABLE_NAME.'.illustration_path')
+                        ->setElementId($this->getId())
+                        ->setMediaId($value)
+                    ;
+                }
+
                 $usage
-                    ->setTableRef($peer::TABLE_NAME)
-                    ->setColumnRef($peer::TABLE_NAME.'.illustration_path')
-                    ->setElementId($this->getId())
+                    ->setSortableRank($index)
+                    ->save()
                 ;
             }
 
-            $usage
-                ->setMediaId($this->getIllustrationPath())
-                ->save()
-            ;
-        }
-        else {
-            if ($usage) {
-                $usage->delete();
-            }
         }
     }
 

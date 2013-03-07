@@ -96,18 +96,6 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     protected $nombre_place;
 
     /**
-     * The value for the image_hebergement_path field.
-     * @var        string
-     */
-    protected $image_hebergement_path;
-
-    /**
-     * The value for the image_composition_path field.
-     * @var        string
-     */
-    protected $image_composition_path;
-
-    /**
      * The value for the created_at field.
      * @var        string
      */
@@ -290,26 +278,6 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     public function getNombrePlace()
     {
         return $this->nombre_place;
-    }
-
-    /**
-     * Get the [image_hebergement_path] column value.
-     *
-     * @return string
-     */
-    public function getImageHebergementPath()
-    {
-        return $this->image_hebergement_path;
-    }
-
-    /**
-     * Get the [image_composition_path] column value.
-     *
-     * @return string
-     */
-    public function getImageCompositionPath()
-    {
-        return $this->image_composition_path;
     }
 
     /**
@@ -537,48 +505,6 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     } // setNombrePlace()
 
     /**
-     * Set the value of [image_hebergement_path] column.
-     *
-     * @param string $v new value
-     * @return TypeHebergement The current object (for fluent API support)
-     */
-    public function setImageHebergementPath($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->image_hebergement_path !== $v) {
-            $this->image_hebergement_path = $v;
-            $this->modifiedColumns[] = TypeHebergementPeer::IMAGE_HEBERGEMENT_PATH;
-        }
-
-
-        return $this;
-    } // setImageHebergementPath()
-
-    /**
-     * Set the value of [image_composition_path] column.
-     *
-     * @param string $v new value
-     * @return TypeHebergement The current object (for fluent API support)
-     */
-    public function setImageCompositionPath($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->image_composition_path !== $v) {
-            $this->image_composition_path = $v;
-            $this->modifiedColumns[] = TypeHebergementPeer::IMAGE_COMPOSITION_PATH;
-        }
-
-
-        return $this;
-    } // setImageCompositionPath()
-
-    /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
      *
      * @param mixed $v string, integer (timestamp), or DateTime value.
@@ -695,11 +621,9 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
             $this->category_type_hebergement_id = ($row[$startcol + 3] !== null) ? (int) $row[$startcol + 3] : null;
             $this->nombre_chambre = ($row[$startcol + 4] !== null) ? (int) $row[$startcol + 4] : null;
             $this->nombre_place = ($row[$startcol + 5] !== null) ? (int) $row[$startcol + 5] : null;
-            $this->image_hebergement_path = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
-            $this->image_composition_path = ($row[$startcol + 7] !== null) ? (string) $row[$startcol + 7] : null;
-            $this->created_at = ($row[$startcol + 8] !== null) ? (string) $row[$startcol + 8] : null;
-            $this->updated_at = ($row[$startcol + 9] !== null) ? (string) $row[$startcol + 9] : null;
-            $this->active = ($row[$startcol + 10] !== null) ? (boolean) $row[$startcol + 10] : null;
+            $this->created_at = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
+            $this->updated_at = ($row[$startcol + 7] !== null) ? (string) $row[$startcol + 7] : null;
+            $this->active = ($row[$startcol + 8] !== null) ? (boolean) $row[$startcol + 8] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -708,7 +632,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 11; // 11 = TypeHebergementPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 9; // 9 = TypeHebergementPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating TypeHebergement object", $e);
@@ -1056,12 +980,6 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
         if ($this->isColumnModified(TypeHebergementPeer::NOMBRE_PLACE)) {
             $modifiedColumns[':p' . $index++]  = '`nombre_place`';
         }
-        if ($this->isColumnModified(TypeHebergementPeer::IMAGE_HEBERGEMENT_PATH)) {
-            $modifiedColumns[':p' . $index++]  = '`image_hebergement_path`';
-        }
-        if ($this->isColumnModified(TypeHebergementPeer::IMAGE_COMPOSITION_PATH)) {
-            $modifiedColumns[':p' . $index++]  = '`image_composition_path`';
-        }
         if ($this->isColumnModified(TypeHebergementPeer::CREATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`created_at`';
         }
@@ -1099,12 +1017,6 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
                         break;
                     case '`nombre_place`':
                         $stmt->bindValue($identifier, $this->nombre_place, PDO::PARAM_INT);
-                        break;
-                    case '`image_hebergement_path`':
-                        $stmt->bindValue($identifier, $this->image_hebergement_path, PDO::PARAM_STR);
-                        break;
-                    case '`image_composition_path`':
-                        $stmt->bindValue($identifier, $this->image_composition_path, PDO::PARAM_STR);
                         break;
                     case '`created_at`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
@@ -1310,18 +1222,12 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
                 return $this->getNombrePlace();
                 break;
             case 6:
-                return $this->getImageHebergementPath();
-                break;
-            case 7:
-                return $this->getImageCompositionPath();
-                break;
-            case 8:
                 return $this->getCreatedAt();
                 break;
-            case 9:
+            case 7:
                 return $this->getUpdatedAt();
                 break;
-            case 10:
+            case 8:
                 return $this->getActive();
                 break;
             default:
@@ -1359,11 +1265,9 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
             $keys[3] => $this->getCategoryTypeHebergementId(),
             $keys[4] => $this->getNombreChambre(),
             $keys[5] => $this->getNombrePlace(),
-            $keys[6] => $this->getImageHebergementPath(),
-            $keys[7] => $this->getImageCompositionPath(),
-            $keys[8] => $this->getCreatedAt(),
-            $keys[9] => $this->getUpdatedAt(),
-            $keys[10] => $this->getActive(),
+            $keys[6] => $this->getCreatedAt(),
+            $keys[7] => $this->getUpdatedAt(),
+            $keys[8] => $this->getActive(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aCategoryTypeHebergement) {
@@ -1434,18 +1338,12 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
                 $this->setNombrePlace($value);
                 break;
             case 6:
-                $this->setImageHebergementPath($value);
-                break;
-            case 7:
-                $this->setImageCompositionPath($value);
-                break;
-            case 8:
                 $this->setCreatedAt($value);
                 break;
-            case 9:
+            case 7:
                 $this->setUpdatedAt($value);
                 break;
-            case 10:
+            case 8:
                 $this->setActive($value);
                 break;
         } // switch()
@@ -1478,11 +1376,9 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
         if (array_key_exists($keys[3], $arr)) $this->setCategoryTypeHebergementId($arr[$keys[3]]);
         if (array_key_exists($keys[4], $arr)) $this->setNombreChambre($arr[$keys[4]]);
         if (array_key_exists($keys[5], $arr)) $this->setNombrePlace($arr[$keys[5]]);
-        if (array_key_exists($keys[6], $arr)) $this->setImageHebergementPath($arr[$keys[6]]);
-        if (array_key_exists($keys[7], $arr)) $this->setImageCompositionPath($arr[$keys[7]]);
-        if (array_key_exists($keys[8], $arr)) $this->setCreatedAt($arr[$keys[8]]);
-        if (array_key_exists($keys[9], $arr)) $this->setUpdatedAt($arr[$keys[9]]);
-        if (array_key_exists($keys[10], $arr)) $this->setActive($arr[$keys[10]]);
+        if (array_key_exists($keys[6], $arr)) $this->setCreatedAt($arr[$keys[6]]);
+        if (array_key_exists($keys[7], $arr)) $this->setUpdatedAt($arr[$keys[7]]);
+        if (array_key_exists($keys[8], $arr)) $this->setActive($arr[$keys[8]]);
     }
 
     /**
@@ -1500,8 +1396,6 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
         if ($this->isColumnModified(TypeHebergementPeer::CATEGORY_TYPE_HEBERGEMENT_ID)) $criteria->add(TypeHebergementPeer::CATEGORY_TYPE_HEBERGEMENT_ID, $this->category_type_hebergement_id);
         if ($this->isColumnModified(TypeHebergementPeer::NOMBRE_CHAMBRE)) $criteria->add(TypeHebergementPeer::NOMBRE_CHAMBRE, $this->nombre_chambre);
         if ($this->isColumnModified(TypeHebergementPeer::NOMBRE_PLACE)) $criteria->add(TypeHebergementPeer::NOMBRE_PLACE, $this->nombre_place);
-        if ($this->isColumnModified(TypeHebergementPeer::IMAGE_HEBERGEMENT_PATH)) $criteria->add(TypeHebergementPeer::IMAGE_HEBERGEMENT_PATH, $this->image_hebergement_path);
-        if ($this->isColumnModified(TypeHebergementPeer::IMAGE_COMPOSITION_PATH)) $criteria->add(TypeHebergementPeer::IMAGE_COMPOSITION_PATH, $this->image_composition_path);
         if ($this->isColumnModified(TypeHebergementPeer::CREATED_AT)) $criteria->add(TypeHebergementPeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(TypeHebergementPeer::UPDATED_AT)) $criteria->add(TypeHebergementPeer::UPDATED_AT, $this->updated_at);
         if ($this->isColumnModified(TypeHebergementPeer::ACTIVE)) $criteria->add(TypeHebergementPeer::ACTIVE, $this->active);
@@ -1573,8 +1467,6 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
         $copyObj->setCategoryTypeHebergementId($this->getCategoryTypeHebergementId());
         $copyObj->setNombreChambre($this->getNombreChambre());
         $copyObj->setNombrePlace($this->getNombrePlace());
-        $copyObj->setImageHebergementPath($this->getImageHebergementPath());
-        $copyObj->setImageCompositionPath($this->getImageCompositionPath());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
         $copyObj->setActive($this->getActive());
@@ -2642,8 +2534,6 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
         $this->category_type_hebergement_id = null;
         $this->nombre_chambre = null;
         $this->nombre_place = null;
-        $this->image_hebergement_path = null;
-        $this->image_composition_path = null;
         $this->created_at = null;
         $this->updated_at = null;
         $this->active = null;
@@ -3490,10 +3380,6 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
      */
     public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
     {
-        $this->saveImageHebergementPathPortfolioUsage();
-
-        $this->saveImageCompositionPathPortfolioUsage();
-
         return $this->save($con);
     }
 
@@ -3516,72 +3402,136 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     /**
      * @return void
      */
-    public function saveImageHebergementPathPortfolioUsage()
+    public function getImageHebergementPath()
     {
         $peer = self::PEER;
 
-        $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+        $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
+            ->select('id')
+            ->usePortfolioUsageQuery()
+                ->filterByTableRef($peer::TABLE_NAME)
+                ->filterByColumnRef($peer::TABLE_NAME.'.image_hebergement_path')
+                ->filterByElementId($this->getId())
+            ->endUse()
+            ->find()
+            ->toArray()
+        ;
+
+        return implode(';', $medias);
+    }
+
+    /**
+     * @return void
+     */
+    public function setImageHebergementPath($v)
+    {
+        $peer = self::PEER;
+
+        $values = explode(';', $v);
+
+        \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
             ->filterByColumnRef($peer::TABLE_NAME.'.image_hebergement_path')
             ->filterByElementId($this->getId())
-            ->findOne()
+            ->filterByMediaId($values, \Criteria::NOT_IN)
+            ->find()
+            ->delete()
         ;
 
-        if ($this->getImageHebergementPath()) {
-            if (!$usage) {
-                $usage = new \Cungfoo\Model\PortfolioUsage();
+        if ($v) {
+            foreach ($values as $index => $value) {
+                $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+                    ->filterByTableRef($peer::TABLE_NAME)
+                    ->filterByColumnRef($peer::TABLE_NAME.'.image_hebergement_path')
+                    ->filterByElementId($this->getId())
+                    ->filterByMediaId($value)
+                    ->findOne()
+                ;
+
+                if (!$usage) {
+                    $usage = new \Cungfoo\Model\PortfolioUsage();
+                    $usage
+                        ->setTableRef($peer::TABLE_NAME)
+                        ->setColumnRef($peer::TABLE_NAME.'.image_hebergement_path')
+                        ->setElementId($this->getId())
+                        ->setMediaId($value)
+                    ;
+                }
+
                 $usage
-                    ->setTableRef($peer::TABLE_NAME)
-                    ->setColumnRef($peer::TABLE_NAME.'.image_hebergement_path')
-                    ->setElementId($this->getId())
+                    ->setSortableRank($index)
+                    ->save()
                 ;
             }
 
-            $usage
-                ->setMediaId($this->getImageHebergementPath())
-                ->save()
-            ;
-        }
-        else {
-            if ($usage) {
-                $usage->delete();
-            }
         }
     }
 
     /**
      * @return void
      */
-    public function saveImageCompositionPathPortfolioUsage()
+    public function getImageCompositionPath()
     {
         $peer = self::PEER;
 
-        $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+        $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
+            ->select('id')
+            ->usePortfolioUsageQuery()
+                ->filterByTableRef($peer::TABLE_NAME)
+                ->filterByColumnRef($peer::TABLE_NAME.'.image_composition_path')
+                ->filterByElementId($this->getId())
+            ->endUse()
+            ->find()
+            ->toArray()
+        ;
+
+        return implode(';', $medias);
+    }
+
+    /**
+     * @return void
+     */
+    public function setImageCompositionPath($v)
+    {
+        $peer = self::PEER;
+
+        $values = explode(';', $v);
+
+        \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
             ->filterByColumnRef($peer::TABLE_NAME.'.image_composition_path')
             ->filterByElementId($this->getId())
-            ->findOne()
+            ->filterByMediaId($values, \Criteria::NOT_IN)
+            ->find()
+            ->delete()
         ;
 
-        if ($this->getImageCompositionPath()) {
-            if (!$usage) {
-                $usage = new \Cungfoo\Model\PortfolioUsage();
+        if ($v) {
+            foreach ($values as $index => $value) {
+                $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+                    ->filterByTableRef($peer::TABLE_NAME)
+                    ->filterByColumnRef($peer::TABLE_NAME.'.image_composition_path')
+                    ->filterByElementId($this->getId())
+                    ->filterByMediaId($value)
+                    ->findOne()
+                ;
+
+                if (!$usage) {
+                    $usage = new \Cungfoo\Model\PortfolioUsage();
+                    $usage
+                        ->setTableRef($peer::TABLE_NAME)
+                        ->setColumnRef($peer::TABLE_NAME.'.image_composition_path')
+                        ->setElementId($this->getId())
+                        ->setMediaId($value)
+                    ;
+                }
+
                 $usage
-                    ->setTableRef($peer::TABLE_NAME)
-                    ->setColumnRef($peer::TABLE_NAME.'.image_composition_path')
-                    ->setElementId($this->getId())
+                    ->setSortableRank($index)
+                    ->save()
                 ;
             }
 
-            $usage
-                ->setMediaId($this->getImageCompositionPath())
-                ->save()
-            ;
-        }
-        else {
-            if ($usage) {
-                $usage->delete();
-            }
         }
     }
 

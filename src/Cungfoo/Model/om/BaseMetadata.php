@@ -60,12 +60,6 @@ abstract class BaseMetadata extends BaseObject implements Persistent
     protected $table_ref;
 
     /**
-     * The value for the visuel field.
-     * @var        string
-     */
-    protected $visuel;
-
-    /**
      * @var        PropelObjectCollection|MetadataI18n[] Collection to store aggregation of MetadataI18n objects.
      */
     protected $collMetadataI18ns;
@@ -126,16 +120,6 @@ abstract class BaseMetadata extends BaseObject implements Persistent
     }
 
     /**
-     * Get the [visuel] column value.
-     *
-     * @return string
-     */
-    public function getVisuel()
-    {
-        return $this->visuel;
-    }
-
-    /**
      * Set the value of [id] column.
      *
      * @param int $v new value
@@ -178,27 +162,6 @@ abstract class BaseMetadata extends BaseObject implements Persistent
     } // setTableRef()
 
     /**
-     * Set the value of [visuel] column.
-     *
-     * @param string $v new value
-     * @return Metadata The current object (for fluent API support)
-     */
-    public function setVisuel($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->visuel !== $v) {
-            $this->visuel = $v;
-            $this->modifiedColumns[] = MetadataPeer::VISUEL;
-        }
-
-
-        return $this;
-    } // setVisuel()
-
-    /**
      * Indicates whether the columns in this object are only set to default values.
      *
      * This method can be used in conjunction with isModified() to indicate whether an object is both
@@ -232,7 +195,6 @@ abstract class BaseMetadata extends BaseObject implements Persistent
 
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
             $this->table_ref = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
-            $this->visuel = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -241,7 +203,7 @@ abstract class BaseMetadata extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 3; // 3 = MetadataPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 2; // 2 = MetadataPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Metadata object", $e);
@@ -478,9 +440,6 @@ abstract class BaseMetadata extends BaseObject implements Persistent
         if ($this->isColumnModified(MetadataPeer::TABLE_REF)) {
             $modifiedColumns[':p' . $index++]  = '`table_ref`';
         }
-        if ($this->isColumnModified(MetadataPeer::VISUEL)) {
-            $modifiedColumns[':p' . $index++]  = '`visuel`';
-        }
 
         $sql = sprintf(
             'INSERT INTO `metadata` (%s) VALUES (%s)',
@@ -497,9 +456,6 @@ abstract class BaseMetadata extends BaseObject implements Persistent
                         break;
                     case '`table_ref`':
                         $stmt->bindValue($identifier, $this->table_ref, PDO::PARAM_STR);
-                        break;
-                    case '`visuel`':
-                        $stmt->bindValue($identifier, $this->visuel, PDO::PARAM_STR);
                         break;
                 }
             }
@@ -649,9 +605,6 @@ abstract class BaseMetadata extends BaseObject implements Persistent
             case 1:
                 return $this->getTableRef();
                 break;
-            case 2:
-                return $this->getVisuel();
-                break;
             default:
                 return null;
                 break;
@@ -683,7 +636,6 @@ abstract class BaseMetadata extends BaseObject implements Persistent
         $result = array(
             $keys[0] => $this->getId(),
             $keys[1] => $this->getTableRef(),
-            $keys[2] => $this->getVisuel(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->collMetadataI18ns) {
@@ -729,9 +681,6 @@ abstract class BaseMetadata extends BaseObject implements Persistent
             case 1:
                 $this->setTableRef($value);
                 break;
-            case 2:
-                $this->setVisuel($value);
-                break;
         } // switch()
     }
 
@@ -758,7 +707,6 @@ abstract class BaseMetadata extends BaseObject implements Persistent
 
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
         if (array_key_exists($keys[1], $arr)) $this->setTableRef($arr[$keys[1]]);
-        if (array_key_exists($keys[2], $arr)) $this->setVisuel($arr[$keys[2]]);
     }
 
     /**
@@ -772,7 +720,6 @@ abstract class BaseMetadata extends BaseObject implements Persistent
 
         if ($this->isColumnModified(MetadataPeer::ID)) $criteria->add(MetadataPeer::ID, $this->id);
         if ($this->isColumnModified(MetadataPeer::TABLE_REF)) $criteria->add(MetadataPeer::TABLE_REF, $this->table_ref);
-        if ($this->isColumnModified(MetadataPeer::VISUEL)) $criteria->add(MetadataPeer::VISUEL, $this->visuel);
 
         return $criteria;
     }
@@ -837,7 +784,6 @@ abstract class BaseMetadata extends BaseObject implements Persistent
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
         $copyObj->setTableRef($this->getTableRef());
-        $copyObj->setVisuel($this->getVisuel());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -1144,7 +1090,6 @@ abstract class BaseMetadata extends BaseObject implements Persistent
     {
         $this->id = null;
         $this->table_ref = null;
-        $this->visuel = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();
@@ -1214,8 +1159,6 @@ abstract class BaseMetadata extends BaseObject implements Persistent
      */
     public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
     {
-        $this->saveVisuelPortfolioUsage();
-
         return $this->save($con);
     }
 
@@ -1238,36 +1181,68 @@ abstract class BaseMetadata extends BaseObject implements Persistent
     /**
      * @return void
      */
-    public function saveVisuelPortfolioUsage()
+    public function getVisuel()
     {
         $peer = self::PEER;
 
-        $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+        $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
+            ->select('id')
+            ->usePortfolioUsageQuery()
+                ->filterByTableRef($peer::TABLE_NAME)
+                ->filterByColumnRef($peer::TABLE_NAME.'.visuel')
+                ->filterByElementId($this->getId())
+            ->endUse()
+            ->find()
+            ->toArray()
+        ;
+
+        return implode(';', $medias);
+    }
+
+    /**
+     * @return void
+     */
+    public function setVisuel($v)
+    {
+        $peer = self::PEER;
+
+        $values = explode(';', $v);
+
+        \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
             ->filterByColumnRef($peer::TABLE_NAME.'.visuel')
             ->filterByElementId($this->getId())
-            ->findOne()
+            ->filterByMediaId($values, \Criteria::NOT_IN)
+            ->find()
+            ->delete()
         ;
 
-        if ($this->getVisuel()) {
-            if (!$usage) {
-                $usage = new \Cungfoo\Model\PortfolioUsage();
+        if ($v) {
+            foreach ($values as $index => $value) {
+                $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+                    ->filterByTableRef($peer::TABLE_NAME)
+                    ->filterByColumnRef($peer::TABLE_NAME.'.visuel')
+                    ->filterByElementId($this->getId())
+                    ->filterByMediaId($value)
+                    ->findOne()
+                ;
+
+                if (!$usage) {
+                    $usage = new \Cungfoo\Model\PortfolioUsage();
+                    $usage
+                        ->setTableRef($peer::TABLE_NAME)
+                        ->setColumnRef($peer::TABLE_NAME.'.visuel')
+                        ->setElementId($this->getId())
+                        ->setMediaId($value)
+                    ;
+                }
+
                 $usage
-                    ->setTableRef($peer::TABLE_NAME)
-                    ->setColumnRef($peer::TABLE_NAME.'.visuel')
-                    ->setElementId($this->getId())
+                    ->setSortableRank($index)
+                    ->save()
                 ;
             }
 
-            $usage
-                ->setMediaId($this->getVisuel())
-                ->save()
-            ;
-        }
-        else {
-            if ($usage) {
-                $usage->delete();
-            }
         }
     }
 

@@ -44,7 +44,6 @@ class MetadataTableMap extends TableMap
         // columns
         $this->addPrimaryKey('id', 'Id', 'INTEGER', true, 5, null);
         $this->addColumn('table_ref', 'TableRef', 'VARCHAR', true, 255, null);
-        $this->addColumn('visuel', 'Visuel', 'VARCHAR', false, 255, null);
         // validators
     } // initialize()
 

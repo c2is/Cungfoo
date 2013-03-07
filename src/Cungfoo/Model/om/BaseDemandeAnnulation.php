@@ -154,30 +154,6 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
     protected $sinistre_resume;
 
     /**
-     * The value for the file_1 field.
-     * @var        string
-     */
-    protected $file_1;
-
-    /**
-     * The value for the file_2 field.
-     * @var        string
-     */
-    protected $file_2;
-
-    /**
-     * The value for the file_3 field.
-     * @var        string
-     */
-    protected $file_3;
-
-    /**
-     * The value for the file_4 field.
-     * @var        string
-     */
-    protected $file_4;
-
-    /**
      * The value for the created_at field.
      * @var        string
      */
@@ -448,46 +424,6 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
     public function getSinistreResume()
     {
         return $this->sinistre_resume;
-    }
-
-    /**
-     * Get the [file_1] column value.
-     *
-     * @return string
-     */
-    public function getFile1()
-    {
-        return $this->file_1;
-    }
-
-    /**
-     * Get the [file_2] column value.
-     *
-     * @return string
-     */
-    public function getFile2()
-    {
-        return $this->file_2;
-    }
-
-    /**
-     * Get the [file_3] column value.
-     *
-     * @return string
-     */
-    public function getFile3()
-    {
-        return $this->file_3;
-    }
-
-    /**
-     * Get the [file_4] column value.
-     *
-     * @return string
-     */
-    public function getFile4()
-    {
-        return $this->file_4;
     }
 
     /**
@@ -952,90 +888,6 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
     } // setSinistreResume()
 
     /**
-     * Set the value of [file_1] column.
-     *
-     * @param string $v new value
-     * @return DemandeAnnulation The current object (for fluent API support)
-     */
-    public function setFile1($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->file_1 !== $v) {
-            $this->file_1 = $v;
-            $this->modifiedColumns[] = DemandeAnnulationPeer::FILE_1;
-        }
-
-
-        return $this;
-    } // setFile1()
-
-    /**
-     * Set the value of [file_2] column.
-     *
-     * @param string $v new value
-     * @return DemandeAnnulation The current object (for fluent API support)
-     */
-    public function setFile2($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->file_2 !== $v) {
-            $this->file_2 = $v;
-            $this->modifiedColumns[] = DemandeAnnulationPeer::FILE_2;
-        }
-
-
-        return $this;
-    } // setFile2()
-
-    /**
-     * Set the value of [file_3] column.
-     *
-     * @param string $v new value
-     * @return DemandeAnnulation The current object (for fluent API support)
-     */
-    public function setFile3($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->file_3 !== $v) {
-            $this->file_3 = $v;
-            $this->modifiedColumns[] = DemandeAnnulationPeer::FILE_3;
-        }
-
-
-        return $this;
-    } // setFile3()
-
-    /**
-     * Set the value of [file_4] column.
-     *
-     * @param string $v new value
-     * @return DemandeAnnulation The current object (for fluent API support)
-     */
-    public function setFile4($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->file_4 !== $v) {
-            $this->file_4 = $v;
-            $this->modifiedColumns[] = DemandeAnnulationPeer::FILE_4;
-        }
-
-
-        return $this;
-    } // setFile4()
-
-    /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
      *
      * @param mixed $v string, integer (timestamp), or DateTime value.
@@ -1163,13 +1015,9 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
             $this->sinistre_suite = ($row[$startcol + 14] !== null) ? (int) $row[$startcol + 14] : null;
             $this->sinistre_date = ($row[$startcol + 15] !== null) ? (string) $row[$startcol + 15] : null;
             $this->sinistre_resume = ($row[$startcol + 16] !== null) ? (string) $row[$startcol + 16] : null;
-            $this->file_1 = ($row[$startcol + 17] !== null) ? (string) $row[$startcol + 17] : null;
-            $this->file_2 = ($row[$startcol + 18] !== null) ? (string) $row[$startcol + 18] : null;
-            $this->file_3 = ($row[$startcol + 19] !== null) ? (string) $row[$startcol + 19] : null;
-            $this->file_4 = ($row[$startcol + 20] !== null) ? (string) $row[$startcol + 20] : null;
-            $this->created_at = ($row[$startcol + 21] !== null) ? (string) $row[$startcol + 21] : null;
-            $this->updated_at = ($row[$startcol + 22] !== null) ? (string) $row[$startcol + 22] : null;
-            $this->active = ($row[$startcol + 23] !== null) ? (boolean) $row[$startcol + 23] : null;
+            $this->created_at = ($row[$startcol + 17] !== null) ? (string) $row[$startcol + 17] : null;
+            $this->updated_at = ($row[$startcol + 18] !== null) ? (string) $row[$startcol + 18] : null;
+            $this->active = ($row[$startcol + 19] !== null) ? (boolean) $row[$startcol + 19] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -1178,7 +1026,7 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 24; // 24 = DemandeAnnulationPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 20; // 20 = DemandeAnnulationPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating DemandeAnnulation object", $e);
@@ -1487,18 +1335,6 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
         if ($this->isColumnModified(DemandeAnnulationPeer::SINISTRE_RESUME)) {
             $modifiedColumns[':p' . $index++]  = '`sinistre_resume`';
         }
-        if ($this->isColumnModified(DemandeAnnulationPeer::FILE_1)) {
-            $modifiedColumns[':p' . $index++]  = '`file_1`';
-        }
-        if ($this->isColumnModified(DemandeAnnulationPeer::FILE_2)) {
-            $modifiedColumns[':p' . $index++]  = '`file_2`';
-        }
-        if ($this->isColumnModified(DemandeAnnulationPeer::FILE_3)) {
-            $modifiedColumns[':p' . $index++]  = '`file_3`';
-        }
-        if ($this->isColumnModified(DemandeAnnulationPeer::FILE_4)) {
-            $modifiedColumns[':p' . $index++]  = '`file_4`';
-        }
         if ($this->isColumnModified(DemandeAnnulationPeer::CREATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`created_at`';
         }
@@ -1569,18 +1405,6 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
                         break;
                     case '`sinistre_resume`':
                         $stmt->bindValue($identifier, $this->sinistre_resume, PDO::PARAM_STR);
-                        break;
-                    case '`file_1`':
-                        $stmt->bindValue($identifier, $this->file_1, PDO::PARAM_STR);
-                        break;
-                    case '`file_2`':
-                        $stmt->bindValue($identifier, $this->file_2, PDO::PARAM_STR);
-                        break;
-                    case '`file_3`':
-                        $stmt->bindValue($identifier, $this->file_3, PDO::PARAM_STR);
-                        break;
-                    case '`file_4`':
-                        $stmt->bindValue($identifier, $this->file_4, PDO::PARAM_STR);
                         break;
                     case '`created_at`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
@@ -1797,24 +1621,12 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
                 return $this->getSinistreResume();
                 break;
             case 17:
-                return $this->getFile1();
-                break;
-            case 18:
-                return $this->getFile2();
-                break;
-            case 19:
-                return $this->getFile3();
-                break;
-            case 20:
-                return $this->getFile4();
-                break;
-            case 21:
                 return $this->getCreatedAt();
                 break;
-            case 22:
+            case 18:
                 return $this->getUpdatedAt();
                 break;
-            case 23:
+            case 19:
                 return $this->getActive();
                 break;
             default:
@@ -1863,13 +1675,9 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
             $keys[14] => $this->getSinistreSuite(),
             $keys[15] => $this->getSinistreDate(),
             $keys[16] => $this->getSinistreResume(),
-            $keys[17] => $this->getFile1(),
-            $keys[18] => $this->getFile2(),
-            $keys[19] => $this->getFile3(),
-            $keys[20] => $this->getFile4(),
-            $keys[21] => $this->getCreatedAt(),
-            $keys[22] => $this->getUpdatedAt(),
-            $keys[23] => $this->getActive(),
+            $keys[17] => $this->getCreatedAt(),
+            $keys[18] => $this->getUpdatedAt(),
+            $keys[19] => $this->getActive(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aEtablissement) {
@@ -1972,24 +1780,12 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
                 $this->setSinistreResume($value);
                 break;
             case 17:
-                $this->setFile1($value);
-                break;
-            case 18:
-                $this->setFile2($value);
-                break;
-            case 19:
-                $this->setFile3($value);
-                break;
-            case 20:
-                $this->setFile4($value);
-                break;
-            case 21:
                 $this->setCreatedAt($value);
                 break;
-            case 22:
+            case 18:
                 $this->setUpdatedAt($value);
                 break;
-            case 23:
+            case 19:
                 $this->setActive($value);
                 break;
         } // switch()
@@ -2033,13 +1829,9 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
         if (array_key_exists($keys[14], $arr)) $this->setSinistreSuite($arr[$keys[14]]);
         if (array_key_exists($keys[15], $arr)) $this->setSinistreDate($arr[$keys[15]]);
         if (array_key_exists($keys[16], $arr)) $this->setSinistreResume($arr[$keys[16]]);
-        if (array_key_exists($keys[17], $arr)) $this->setFile1($arr[$keys[17]]);
-        if (array_key_exists($keys[18], $arr)) $this->setFile2($arr[$keys[18]]);
-        if (array_key_exists($keys[19], $arr)) $this->setFile3($arr[$keys[19]]);
-        if (array_key_exists($keys[20], $arr)) $this->setFile4($arr[$keys[20]]);
-        if (array_key_exists($keys[21], $arr)) $this->setCreatedAt($arr[$keys[21]]);
-        if (array_key_exists($keys[22], $arr)) $this->setUpdatedAt($arr[$keys[22]]);
-        if (array_key_exists($keys[23], $arr)) $this->setActive($arr[$keys[23]]);
+        if (array_key_exists($keys[17], $arr)) $this->setCreatedAt($arr[$keys[17]]);
+        if (array_key_exists($keys[18], $arr)) $this->setUpdatedAt($arr[$keys[18]]);
+        if (array_key_exists($keys[19], $arr)) $this->setActive($arr[$keys[19]]);
     }
 
     /**
@@ -2068,10 +1860,6 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
         if ($this->isColumnModified(DemandeAnnulationPeer::SINISTRE_SUITE)) $criteria->add(DemandeAnnulationPeer::SINISTRE_SUITE, $this->sinistre_suite);
         if ($this->isColumnModified(DemandeAnnulationPeer::SINISTRE_DATE)) $criteria->add(DemandeAnnulationPeer::SINISTRE_DATE, $this->sinistre_date);
         if ($this->isColumnModified(DemandeAnnulationPeer::SINISTRE_RESUME)) $criteria->add(DemandeAnnulationPeer::SINISTRE_RESUME, $this->sinistre_resume);
-        if ($this->isColumnModified(DemandeAnnulationPeer::FILE_1)) $criteria->add(DemandeAnnulationPeer::FILE_1, $this->file_1);
-        if ($this->isColumnModified(DemandeAnnulationPeer::FILE_2)) $criteria->add(DemandeAnnulationPeer::FILE_2, $this->file_2);
-        if ($this->isColumnModified(DemandeAnnulationPeer::FILE_3)) $criteria->add(DemandeAnnulationPeer::FILE_3, $this->file_3);
-        if ($this->isColumnModified(DemandeAnnulationPeer::FILE_4)) $criteria->add(DemandeAnnulationPeer::FILE_4, $this->file_4);
         if ($this->isColumnModified(DemandeAnnulationPeer::CREATED_AT)) $criteria->add(DemandeAnnulationPeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(DemandeAnnulationPeer::UPDATED_AT)) $criteria->add(DemandeAnnulationPeer::UPDATED_AT, $this->updated_at);
         if ($this->isColumnModified(DemandeAnnulationPeer::ACTIVE)) $criteria->add(DemandeAnnulationPeer::ACTIVE, $this->active);
@@ -2154,10 +1942,6 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
         $copyObj->setSinistreSuite($this->getSinistreSuite());
         $copyObj->setSinistreDate($this->getSinistreDate());
         $copyObj->setSinistreResume($this->getSinistreResume());
-        $copyObj->setFile1($this->getFile1());
-        $copyObj->setFile2($this->getFile2());
-        $copyObj->setFile3($this->getFile3());
-        $copyObj->setFile4($this->getFile4());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
         $copyObj->setActive($this->getActive());
@@ -2534,10 +2318,6 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
         $this->sinistre_suite = null;
         $this->sinistre_date = null;
         $this->sinistre_resume = null;
-        $this->file_1 = null;
-        $this->file_2 = null;
-        $this->file_3 = null;
-        $this->file_4 = null;
         $this->created_at = null;
         $this->updated_at = null;
         $this->active = null;
@@ -2648,14 +2428,6 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
      */
     public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
     {
-        $this->saveFile1PortfolioUsage();
-
-        $this->saveFile2PortfolioUsage();
-
-        $this->saveFile3PortfolioUsage();
-
-        $this->saveFile4PortfolioUsage();
-
         return $this->save($con);
     }
 
@@ -2678,144 +2450,272 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
     /**
      * @return void
      */
-    public function saveFile1PortfolioUsage()
+    public function getFile1()
     {
         $peer = self::PEER;
 
-        $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+        $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
+            ->select('id')
+            ->usePortfolioUsageQuery()
+                ->filterByTableRef($peer::TABLE_NAME)
+                ->filterByColumnRef($peer::TABLE_NAME.'.file_1')
+                ->filterByElementId($this->getId())
+            ->endUse()
+            ->find()
+            ->toArray()
+        ;
+
+        return implode(';', $medias);
+    }
+
+    /**
+     * @return void
+     */
+    public function setFile1($v)
+    {
+        $peer = self::PEER;
+
+        $values = explode(';', $v);
+
+        \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
             ->filterByColumnRef($peer::TABLE_NAME.'.file_1')
             ->filterByElementId($this->getId())
-            ->findOne()
+            ->filterByMediaId($values, \Criteria::NOT_IN)
+            ->find()
+            ->delete()
         ;
 
-        if ($this->getFile1()) {
-            if (!$usage) {
-                $usage = new \Cungfoo\Model\PortfolioUsage();
+        if ($v) {
+            foreach ($values as $index => $value) {
+                $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+                    ->filterByTableRef($peer::TABLE_NAME)
+                    ->filterByColumnRef($peer::TABLE_NAME.'.file_1')
+                    ->filterByElementId($this->getId())
+                    ->filterByMediaId($value)
+                    ->findOne()
+                ;
+
+                if (!$usage) {
+                    $usage = new \Cungfoo\Model\PortfolioUsage();
+                    $usage
+                        ->setTableRef($peer::TABLE_NAME)
+                        ->setColumnRef($peer::TABLE_NAME.'.file_1')
+                        ->setElementId($this->getId())
+                        ->setMediaId($value)
+                    ;
+                }
+
                 $usage
-                    ->setTableRef($peer::TABLE_NAME)
-                    ->setColumnRef($peer::TABLE_NAME.'.file_1')
-                    ->setElementId($this->getId())
+                    ->setSortableRank($index)
+                    ->save()
                 ;
             }
 
-            $usage
-                ->setMediaId($this->getFile1())
-                ->save()
-            ;
-        }
-        else {
-            if ($usage) {
-                $usage->delete();
-            }
         }
     }
 
     /**
      * @return void
      */
-    public function saveFile2PortfolioUsage()
+    public function getFile2()
     {
         $peer = self::PEER;
 
-        $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+        $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
+            ->select('id')
+            ->usePortfolioUsageQuery()
+                ->filterByTableRef($peer::TABLE_NAME)
+                ->filterByColumnRef($peer::TABLE_NAME.'.file_2')
+                ->filterByElementId($this->getId())
+            ->endUse()
+            ->find()
+            ->toArray()
+        ;
+
+        return implode(';', $medias);
+    }
+
+    /**
+     * @return void
+     */
+    public function setFile2($v)
+    {
+        $peer = self::PEER;
+
+        $values = explode(';', $v);
+
+        \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
             ->filterByColumnRef($peer::TABLE_NAME.'.file_2')
             ->filterByElementId($this->getId())
-            ->findOne()
+            ->filterByMediaId($values, \Criteria::NOT_IN)
+            ->find()
+            ->delete()
         ;
 
-        if ($this->getFile2()) {
-            if (!$usage) {
-                $usage = new \Cungfoo\Model\PortfolioUsage();
+        if ($v) {
+            foreach ($values as $index => $value) {
+                $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+                    ->filterByTableRef($peer::TABLE_NAME)
+                    ->filterByColumnRef($peer::TABLE_NAME.'.file_2')
+                    ->filterByElementId($this->getId())
+                    ->filterByMediaId($value)
+                    ->findOne()
+                ;
+
+                if (!$usage) {
+                    $usage = new \Cungfoo\Model\PortfolioUsage();
+                    $usage
+                        ->setTableRef($peer::TABLE_NAME)
+                        ->setColumnRef($peer::TABLE_NAME.'.file_2')
+                        ->setElementId($this->getId())
+                        ->setMediaId($value)
+                    ;
+                }
+
                 $usage
-                    ->setTableRef($peer::TABLE_NAME)
-                    ->setColumnRef($peer::TABLE_NAME.'.file_2')
-                    ->setElementId($this->getId())
+                    ->setSortableRank($index)
+                    ->save()
                 ;
             }
 
-            $usage
-                ->setMediaId($this->getFile2())
-                ->save()
-            ;
-        }
-        else {
-            if ($usage) {
-                $usage->delete();
-            }
         }
     }
 
     /**
      * @return void
      */
-    public function saveFile3PortfolioUsage()
+    public function getFile3()
     {
         $peer = self::PEER;
 
-        $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+        $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
+            ->select('id')
+            ->usePortfolioUsageQuery()
+                ->filterByTableRef($peer::TABLE_NAME)
+                ->filterByColumnRef($peer::TABLE_NAME.'.file_3')
+                ->filterByElementId($this->getId())
+            ->endUse()
+            ->find()
+            ->toArray()
+        ;
+
+        return implode(';', $medias);
+    }
+
+    /**
+     * @return void
+     */
+    public function setFile3($v)
+    {
+        $peer = self::PEER;
+
+        $values = explode(';', $v);
+
+        \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
             ->filterByColumnRef($peer::TABLE_NAME.'.file_3')
             ->filterByElementId($this->getId())
-            ->findOne()
+            ->filterByMediaId($values, \Criteria::NOT_IN)
+            ->find()
+            ->delete()
         ;
 
-        if ($this->getFile3()) {
-            if (!$usage) {
-                $usage = new \Cungfoo\Model\PortfolioUsage();
+        if ($v) {
+            foreach ($values as $index => $value) {
+                $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+                    ->filterByTableRef($peer::TABLE_NAME)
+                    ->filterByColumnRef($peer::TABLE_NAME.'.file_3')
+                    ->filterByElementId($this->getId())
+                    ->filterByMediaId($value)
+                    ->findOne()
+                ;
+
+                if (!$usage) {
+                    $usage = new \Cungfoo\Model\PortfolioUsage();
+                    $usage
+                        ->setTableRef($peer::TABLE_NAME)
+                        ->setColumnRef($peer::TABLE_NAME.'.file_3')
+                        ->setElementId($this->getId())
+                        ->setMediaId($value)
+                    ;
+                }
+
                 $usage
-                    ->setTableRef($peer::TABLE_NAME)
-                    ->setColumnRef($peer::TABLE_NAME.'.file_3')
-                    ->setElementId($this->getId())
+                    ->setSortableRank($index)
+                    ->save()
                 ;
             }
 
-            $usage
-                ->setMediaId($this->getFile3())
-                ->save()
-            ;
-        }
-        else {
-            if ($usage) {
-                $usage->delete();
-            }
         }
     }
 
     /**
      * @return void
      */
-    public function saveFile4PortfolioUsage()
+    public function getFile4()
     {
         $peer = self::PEER;
 
-        $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+        $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
+            ->select('id')
+            ->usePortfolioUsageQuery()
+                ->filterByTableRef($peer::TABLE_NAME)
+                ->filterByColumnRef($peer::TABLE_NAME.'.file_4')
+                ->filterByElementId($this->getId())
+            ->endUse()
+            ->find()
+            ->toArray()
+        ;
+
+        return implode(';', $medias);
+    }
+
+    /**
+     * @return void
+     */
+    public function setFile4($v)
+    {
+        $peer = self::PEER;
+
+        $values = explode(';', $v);
+
+        \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
             ->filterByColumnRef($peer::TABLE_NAME.'.file_4')
             ->filterByElementId($this->getId())
-            ->findOne()
+            ->filterByMediaId($values, \Criteria::NOT_IN)
+            ->find()
+            ->delete()
         ;
 
-        if ($this->getFile4()) {
-            if (!$usage) {
-                $usage = new \Cungfoo\Model\PortfolioUsage();
+        if ($v) {
+            foreach ($values as $index => $value) {
+                $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+                    ->filterByTableRef($peer::TABLE_NAME)
+                    ->filterByColumnRef($peer::TABLE_NAME.'.file_4')
+                    ->filterByElementId($this->getId())
+                    ->filterByMediaId($value)
+                    ->findOne()
+                ;
+
+                if (!$usage) {
+                    $usage = new \Cungfoo\Model\PortfolioUsage();
+                    $usage
+                        ->setTableRef($peer::TABLE_NAME)
+                        ->setColumnRef($peer::TABLE_NAME.'.file_4')
+                        ->setElementId($this->getId())
+                        ->setMediaId($value)
+                    ;
+                }
+
                 $usage
-                    ->setTableRef($peer::TABLE_NAME)
-                    ->setColumnRef($peer::TABLE_NAME.'.file_4')
-                    ->setElementId($this->getId())
+                    ->setSortableRank($index)
+                    ->save()
                 ;
             }
 
-            $usage
-                ->setMediaId($this->getFile4())
-                ->save()
-            ;
-        }
-        else {
-            if ($usage) {
-                $usage->delete();
-            }
         }
     }
 

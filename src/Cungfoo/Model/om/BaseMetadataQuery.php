@@ -24,11 +24,9 @@ use Cungfoo\Model\MetadataQuery;
  *
  * @method MetadataQuery orderById($order = Criteria::ASC) Order by the id column
  * @method MetadataQuery orderByTableRef($order = Criteria::ASC) Order by the table_ref column
- * @method MetadataQuery orderByVisuel($order = Criteria::ASC) Order by the visuel column
  *
  * @method MetadataQuery groupById() Group by the id column
  * @method MetadataQuery groupByTableRef() Group by the table_ref column
- * @method MetadataQuery groupByVisuel() Group by the visuel column
  *
  * @method MetadataQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method MetadataQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -42,11 +40,9 @@ use Cungfoo\Model\MetadataQuery;
  * @method Metadata findOneOrCreate(PropelPDO $con = null) Return the first Metadata matching the query, or a new Metadata object populated from the query conditions when no match is found
  *
  * @method Metadata findOneByTableRef(string $table_ref) Return the first Metadata filtered by the table_ref column
- * @method Metadata findOneByVisuel(string $visuel) Return the first Metadata filtered by the visuel column
  *
  * @method array findById(int $id) Return Metadata objects filtered by the id column
  * @method array findByTableRef(string $table_ref) Return Metadata objects filtered by the table_ref column
- * @method array findByVisuel(string $visuel) Return Metadata objects filtered by the visuel column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -150,7 +146,7 @@ abstract class BaseMetadataQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `table_ref`, `visuel` FROM `metadata` WHERE `id` = :p0';
+        $sql = 'SELECT `id`, `table_ref` FROM `metadata` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -293,35 +289,6 @@ abstract class BaseMetadataQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(MetadataPeer::TABLE_REF, $tableRef, $comparison);
-    }
-
-    /**
-     * Filter the query on the visuel column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByVisuel('fooValue');   // WHERE visuel = 'fooValue'
-     * $query->filterByVisuel('%fooValue%'); // WHERE visuel LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $visuel The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return MetadataQuery The current query, for fluid interface
-     */
-    public function filterByVisuel($visuel = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($visuel)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $visuel)) {
-                $visuel = str_replace('*', '%', $visuel);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(MetadataPeer::VISUEL, $visuel, $comparison);
     }
 
     /**

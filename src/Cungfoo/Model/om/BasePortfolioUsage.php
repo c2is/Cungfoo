@@ -78,6 +78,12 @@ abstract class BasePortfolioUsage extends BaseObject implements Persistent
     protected $element_id;
 
     /**
+     * The value for the sortable_rank field.
+     * @var        int
+     */
+    protected $sortable_rank;
+
+    /**
      * The value for the created_at field.
      * @var        string
      */
@@ -114,6 +120,14 @@ abstract class BasePortfolioUsage extends BaseObject implements Persistent
      * @var        boolean
      */
     protected $alreadyInValidation = false;
+
+    // sortable behavior
+
+    /**
+     * Queries to be executed in the save transaction
+     * @var        array
+     */
+    protected $sortableQueries = array();
 
     /**
      * Applies default values to this object.
@@ -184,6 +198,16 @@ abstract class BasePortfolioUsage extends BaseObject implements Persistent
     public function getElementId()
     {
         return $this->element_id;
+    }
+
+    /**
+     * Get the [sortable_rank] column value.
+     *
+     * @return int
+     */
+    public function getSortableRank()
+    {
+        return $this->sortable_rank;
     }
 
     /**
@@ -386,6 +410,27 @@ abstract class BasePortfolioUsage extends BaseObject implements Persistent
     } // setElementId()
 
     /**
+     * Set the value of [sortable_rank] column.
+     *
+     * @param int $v new value
+     * @return PortfolioUsage The current object (for fluent API support)
+     */
+    public function setSortableRank($v)
+    {
+        if ($v !== null) {
+            $v = (int) $v;
+        }
+
+        if ($this->sortable_rank !== $v) {
+            $this->sortable_rank = $v;
+            $this->modifiedColumns[] = PortfolioUsagePeer::SORTABLE_RANK;
+        }
+
+
+        return $this;
+    } // setSortableRank()
+
+    /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
      *
      * @param mixed $v string, integer (timestamp), or DateTime value.
@@ -501,9 +546,10 @@ abstract class BasePortfolioUsage extends BaseObject implements Persistent
             $this->table_ref = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
             $this->column_ref = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
             $this->element_id = ($row[$startcol + 4] !== null) ? (int) $row[$startcol + 4] : null;
-            $this->created_at = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
-            $this->updated_at = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
-            $this->active = ($row[$startcol + 7] !== null) ? (boolean) $row[$startcol + 7] : null;
+            $this->sortable_rank = ($row[$startcol + 5] !== null) ? (int) $row[$startcol + 5] : null;
+            $this->created_at = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
+            $this->updated_at = ($row[$startcol + 7] !== null) ? (string) $row[$startcol + 7] : null;
+            $this->active = ($row[$startcol + 8] !== null) ? (boolean) $row[$startcol + 8] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -512,7 +558,7 @@ abstract class BasePortfolioUsage extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 8; // 8 = PortfolioUsagePeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 9; // 9 = PortfolioUsagePeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating PortfolioUsage object", $e);
@@ -606,6 +652,11 @@ abstract class BasePortfolioUsage extends BaseObject implements Persistent
             $deleteQuery = PortfolioUsageQuery::create()
                 ->filterByPrimaryKey($this->getPrimaryKey());
             $ret = $this->preDelete($con);
+            // sortable behavior
+
+            PortfolioUsagePeer::shiftRank(-1, $this->getSortableRank() + 1, null, $con);
+            PortfolioUsagePeer::clearInstancePool();
+
             if ($ret) {
                 $deleteQuery->delete($con);
                 $this->postDelete($con);
@@ -648,8 +699,15 @@ abstract class BasePortfolioUsage extends BaseObject implements Persistent
         $isInsert = $this->isNew();
         try {
             $ret = $this->preSave($con);
+            // sortable behavior
+            $this->processSortableQueries($con);
             if ($isInsert) {
                 $ret = $ret && $this->preInsert($con);
+                // sortable behavior
+                if (!$this->isColumnModified(PortfolioUsagePeer::RANK_COL)) {
+                    $this->setSortableRank(PortfolioUsageQuery::create()->getMaxRank($con) + 1);
+                }
+
                 // timestampable behavior
                 if (!$this->isColumnModified(PortfolioUsagePeer::CREATED_AT)) {
                     $this->setCreatedAt(time());
@@ -766,6 +824,9 @@ abstract class BasePortfolioUsage extends BaseObject implements Persistent
         if ($this->isColumnModified(PortfolioUsagePeer::ELEMENT_ID)) {
             $modifiedColumns[':p' . $index++]  = '`element_id`';
         }
+        if ($this->isColumnModified(PortfolioUsagePeer::SORTABLE_RANK)) {
+            $modifiedColumns[':p' . $index++]  = '`sortable_rank`';
+        }
         if ($this->isColumnModified(PortfolioUsagePeer::CREATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`created_at`';
         }
@@ -800,6 +861,9 @@ abstract class BasePortfolioUsage extends BaseObject implements Persistent
                         break;
                     case '`element_id`':
                         $stmt->bindValue($identifier, $this->element_id, PDO::PARAM_INT);
+                        break;
+                    case '`sortable_rank`':
+                        $stmt->bindValue($identifier, $this->sortable_rank, PDO::PARAM_INT);
                         break;
                     case '`created_at`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
@@ -972,12 +1036,15 @@ abstract class BasePortfolioUsage extends BaseObject implements Persistent
                 return $this->getElementId();
                 break;
             case 5:
-                return $this->getCreatedAt();
+                return $this->getSortableRank();
                 break;
             case 6:
-                return $this->getUpdatedAt();
+                return $this->getCreatedAt();
                 break;
             case 7:
+                return $this->getUpdatedAt();
+                break;
+            case 8:
                 return $this->getActive();
                 break;
             default:
@@ -1014,9 +1081,10 @@ abstract class BasePortfolioUsage extends BaseObject implements Persistent
             $keys[2] => $this->getTableRef(),
             $keys[3] => $this->getColumnRef(),
             $keys[4] => $this->getElementId(),
-            $keys[5] => $this->getCreatedAt(),
-            $keys[6] => $this->getUpdatedAt(),
-            $keys[7] => $this->getActive(),
+            $keys[5] => $this->getSortableRank(),
+            $keys[6] => $this->getCreatedAt(),
+            $keys[7] => $this->getUpdatedAt(),
+            $keys[8] => $this->getActive(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aPortfolioMedia) {
@@ -1072,12 +1140,15 @@ abstract class BasePortfolioUsage extends BaseObject implements Persistent
                 $this->setElementId($value);
                 break;
             case 5:
-                $this->setCreatedAt($value);
+                $this->setSortableRank($value);
                 break;
             case 6:
-                $this->setUpdatedAt($value);
+                $this->setCreatedAt($value);
                 break;
             case 7:
+                $this->setUpdatedAt($value);
+                break;
+            case 8:
                 $this->setActive($value);
                 break;
         } // switch()
@@ -1109,9 +1180,10 @@ abstract class BasePortfolioUsage extends BaseObject implements Persistent
         if (array_key_exists($keys[2], $arr)) $this->setTableRef($arr[$keys[2]]);
         if (array_key_exists($keys[3], $arr)) $this->setColumnRef($arr[$keys[3]]);
         if (array_key_exists($keys[4], $arr)) $this->setElementId($arr[$keys[4]]);
-        if (array_key_exists($keys[5], $arr)) $this->setCreatedAt($arr[$keys[5]]);
-        if (array_key_exists($keys[6], $arr)) $this->setUpdatedAt($arr[$keys[6]]);
-        if (array_key_exists($keys[7], $arr)) $this->setActive($arr[$keys[7]]);
+        if (array_key_exists($keys[5], $arr)) $this->setSortableRank($arr[$keys[5]]);
+        if (array_key_exists($keys[6], $arr)) $this->setCreatedAt($arr[$keys[6]]);
+        if (array_key_exists($keys[7], $arr)) $this->setUpdatedAt($arr[$keys[7]]);
+        if (array_key_exists($keys[8], $arr)) $this->setActive($arr[$keys[8]]);
     }
 
     /**
@@ -1128,6 +1200,7 @@ abstract class BasePortfolioUsage extends BaseObject implements Persistent
         if ($this->isColumnModified(PortfolioUsagePeer::TABLE_REF)) $criteria->add(PortfolioUsagePeer::TABLE_REF, $this->table_ref);
         if ($this->isColumnModified(PortfolioUsagePeer::COLUMN_REF)) $criteria->add(PortfolioUsagePeer::COLUMN_REF, $this->column_ref);
         if ($this->isColumnModified(PortfolioUsagePeer::ELEMENT_ID)) $criteria->add(PortfolioUsagePeer::ELEMENT_ID, $this->element_id);
+        if ($this->isColumnModified(PortfolioUsagePeer::SORTABLE_RANK)) $criteria->add(PortfolioUsagePeer::SORTABLE_RANK, $this->sortable_rank);
         if ($this->isColumnModified(PortfolioUsagePeer::CREATED_AT)) $criteria->add(PortfolioUsagePeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(PortfolioUsagePeer::UPDATED_AT)) $criteria->add(PortfolioUsagePeer::UPDATED_AT, $this->updated_at);
         if ($this->isColumnModified(PortfolioUsagePeer::ACTIVE)) $criteria->add(PortfolioUsagePeer::ACTIVE, $this->active);
@@ -1198,6 +1271,7 @@ abstract class BasePortfolioUsage extends BaseObject implements Persistent
         $copyObj->setTableRef($this->getTableRef());
         $copyObj->setColumnRef($this->getColumnRef());
         $copyObj->setElementId($this->getElementId());
+        $copyObj->setSortableRank($this->getSortableRank());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
         $copyObj->setActive($this->getActive());
@@ -1321,6 +1395,7 @@ abstract class BasePortfolioUsage extends BaseObject implements Persistent
         $this->table_ref = null;
         $this->column_ref = null;
         $this->element_id = null;
+        $this->sortable_rank = null;
         $this->created_at = null;
         $this->updated_at = null;
         $this->active = null;
@@ -1368,6 +1443,347 @@ abstract class BasePortfolioUsage extends BaseObject implements Persistent
     public function isAlreadyInSave()
     {
         return $this->alreadyInSave;
+    }
+
+    // sortable behavior
+
+    /**
+     * Wrap the getter for rank value
+     *
+     * @return    int
+     */
+    public function getRank()
+    {
+        return $this->sortable_rank;
+    }
+
+    /**
+     * Wrap the setter for rank value
+     *
+     * @param     int
+     * @return    PortfolioUsage
+     */
+    public function setRank($v)
+    {
+        return $this->setSortableRank($v);
+    }
+
+    /**
+     * Check if the object is first in the list, i.e. if it has 1 for rank
+     *
+     * @return    boolean
+     */
+    public function isFirst()
+    {
+        return $this->getSortableRank() == 1;
+    }
+
+    /**
+     * Check if the object is last in the list, i.e. if its rank is the highest rank
+     *
+     * @param     PropelPDO  $con      optional connection
+     *
+     * @return    boolean
+     */
+    public function isLast(PropelPDO $con = null)
+    {
+        return $this->getSortableRank() == PortfolioUsageQuery::create()->getMaxRank($con);
+    }
+
+    /**
+     * Get the next item in the list, i.e. the one for which rank is immediately higher
+     *
+     * @param     PropelPDO  $con      optional connection
+     *
+     * @return    PortfolioUsage
+     */
+    public function getNext(PropelPDO $con = null)
+    {
+
+        return PortfolioUsageQuery::create()->findOneByRank($this->getSortableRank() + 1, $con);
+    }
+
+    /**
+     * Get the previous item in the list, i.e. the one for which rank is immediately lower
+     *
+     * @param     PropelPDO  $con      optional connection
+     *
+     * @return    PortfolioUsage
+     */
+    public function getPrevious(PropelPDO $con = null)
+    {
+
+        return PortfolioUsageQuery::create()->findOneByRank($this->getSortableRank() - 1, $con);
+    }
+
+    /**
+     * Insert at specified rank
+     * The modifications are not persisted until the object is saved.
+     *
+     * @param     integer    $rank rank value
+     * @param     PropelPDO  $con      optional connection
+     *
+     * @return    PortfolioUsage the current object
+     *
+     * @throws    PropelException
+     */
+    public function insertAtRank($rank, PropelPDO $con = null)
+    {
+        $maxRank = PortfolioUsageQuery::create()->getMaxRank($con);
+        if ($rank < 1 || $rank > $maxRank + 1) {
+            throw new PropelException('Invalid rank ' . $rank);
+        }
+        // move the object in the list, at the given rank
+        $this->setSortableRank($rank);
+        if ($rank != $maxRank + 1) {
+            // Keep the list modification query for the save() transaction
+            $this->sortableQueries []= array(
+                'callable'  => array(self::PEER, 'shiftRank'),
+                'arguments' => array(1, $rank, null, )
+            );
+        }
+
+        return $this;
+    }
+
+    /**
+     * Insert in the last rank
+     * The modifications are not persisted until the object is saved.
+     *
+     * @param PropelPDO $con optional connection
+     *
+     * @return    PortfolioUsage the current object
+     *
+     * @throws    PropelException
+     */
+    public function insertAtBottom(PropelPDO $con = null)
+    {
+        $this->setSortableRank(PortfolioUsageQuery::create()->getMaxRank($con) + 1);
+
+        return $this;
+    }
+
+    /**
+     * Insert in the first rank
+     * The modifications are not persisted until the object is saved.
+     *
+     * @return    PortfolioUsage the current object
+     */
+    public function insertAtTop()
+    {
+        return $this->insertAtRank(1);
+    }
+
+    /**
+     * Move the object to a new rank, and shifts the rank
+     * Of the objects inbetween the old and new rank accordingly
+     *
+     * @param     integer   $newRank rank value
+     * @param     PropelPDO $con optional connection
+     *
+     * @return    PortfolioUsage the current object
+     *
+     * @throws    PropelException
+     */
+    public function moveToRank($newRank, PropelPDO $con = null)
+    {
+        if ($this->isNew()) {
+            throw new PropelException('New objects cannot be moved. Please use insertAtRank() instead');
+        }
+        if ($con === null) {
+            $con = Propel::getConnection(PortfolioUsagePeer::DATABASE_NAME);
+        }
+        if ($newRank < 1 || $newRank > PortfolioUsageQuery::create()->getMaxRank($con)) {
+            throw new PropelException('Invalid rank ' . $newRank);
+        }
+
+        $oldRank = $this->getSortableRank();
+        if ($oldRank == $newRank) {
+            return $this;
+        }
+
+        $con->beginTransaction();
+        try {
+            // shift the objects between the old and the new rank
+            $delta = ($oldRank < $newRank) ? -1 : 1;
+            PortfolioUsagePeer::shiftRank($delta, min($oldRank, $newRank), max($oldRank, $newRank), $con);
+
+            // move the object to its new rank
+            $this->setSortableRank($newRank);
+            $this->save($con);
+
+            $con->commit();
+
+            return $this;
+        } catch (Exception $e) {
+            $con->rollback();
+            throw $e;
+        }
+    }
+
+    /**
+     * Exchange the rank of the object with the one passed as argument, and saves both objects
+     *
+     * @param     PortfolioUsage $object
+     * @param     PropelPDO $con optional connection
+     *
+     * @return    PortfolioUsage the current object
+     *
+     * @throws Exception if the database cannot execute the two updates
+     */
+    public function swapWith($object, PropelPDO $con = null)
+    {
+        if ($con === null) {
+            $con = Propel::getConnection(PortfolioUsagePeer::DATABASE_NAME);
+        }
+        $con->beginTransaction();
+        try {
+            $oldRank = $this->getSortableRank();
+            $newRank = $object->getSortableRank();
+            $this->setSortableRank($newRank);
+            $this->save($con);
+            $object->setSortableRank($oldRank);
+            $object->save($con);
+            $con->commit();
+
+            return $this;
+        } catch (Exception $e) {
+            $con->rollback();
+            throw $e;
+        }
+    }
+
+    /**
+     * Move the object higher in the list, i.e. exchanges its rank with the one of the previous object
+     *
+     * @param     PropelPDO $con optional connection
+     *
+     * @return    PortfolioUsage the current object
+     */
+    public function moveUp(PropelPDO $con = null)
+    {
+        if ($this->isFirst()) {
+            return $this;
+        }
+        if ($con === null) {
+            $con = Propel::getConnection(PortfolioUsagePeer::DATABASE_NAME);
+        }
+        $con->beginTransaction();
+        try {
+            $prev = $this->getPrevious($con);
+            $this->swapWith($prev, $con);
+            $con->commit();
+
+            return $this;
+        } catch (Exception $e) {
+            $con->rollback();
+            throw $e;
+        }
+    }
+
+    /**
+     * Move the object higher in the list, i.e. exchanges its rank with the one of the next object
+     *
+     * @param     PropelPDO $con optional connection
+     *
+     * @return    PortfolioUsage the current object
+     */
+    public function moveDown(PropelPDO $con = null)
+    {
+        if ($this->isLast($con)) {
+            return $this;
+        }
+        if ($con === null) {
+            $con = Propel::getConnection(PortfolioUsagePeer::DATABASE_NAME);
+        }
+        $con->beginTransaction();
+        try {
+            $next = $this->getNext($con);
+            $this->swapWith($next, $con);
+            $con->commit();
+
+            return $this;
+        } catch (Exception $e) {
+            $con->rollback();
+            throw $e;
+        }
+    }
+
+    /**
+     * Move the object to the top of the list
+     *
+     * @param     PropelPDO $con optional connection
+     *
+     * @return    PortfolioUsage the current object
+     */
+    public function moveToTop(PropelPDO $con = null)
+    {
+        if ($this->isFirst()) {
+            return $this;
+        }
+
+        return $this->moveToRank(1, $con);
+    }
+
+    /**
+     * Move the object to the bottom of the list
+     *
+     * @param     PropelPDO $con optional connection
+     *
+     * @return integer the old object's rank
+     */
+    public function moveToBottom(PropelPDO $con = null)
+    {
+        if ($this->isLast($con)) {
+            return false;
+        }
+        if ($con === null) {
+            $con = Propel::getConnection(PortfolioUsagePeer::DATABASE_NAME);
+        }
+        $con->beginTransaction();
+        try {
+            $bottom = PortfolioUsageQuery::create()->getMaxRank($con);
+            $res = $this->moveToRank($bottom, $con);
+            $con->commit();
+
+            return $res;
+        } catch (Exception $e) {
+            $con->rollback();
+            throw $e;
+        }
+    }
+
+    /**
+     * Removes the current object from the list.
+     * The modifications are not persisted until the object is saved.
+     *
+     * @param     PropelPDO $con optional connection
+     *
+     * @return    PortfolioUsage the current object
+     */
+    public function removeFromList(PropelPDO $con = null)
+    {
+        // Keep the list modification query for the save() transaction
+        $this->sortableQueries []= array(
+            'callable'  => array(self::PEER, 'shiftRank'),
+            'arguments' => array(-1, $this->getSortableRank() + 1, null)
+        );
+        // remove the object from the list
+        $this->setSortableRank(null);
+
+        return $this;
+    }
+
+    /**
+     * Execute queries that were saved to be run inside the save transaction
+     */
+    protected function processSortableQueries($con)
+    {
+        foreach ($this->sortableQueries as $query) {
+            $query['arguments'][]= $con;
+            call_user_func_array($query['callable'], $query['arguments']);
+        }
+        $this->sortableQueries = array();
     }
 
     // timestampable behavior

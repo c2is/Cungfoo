@@ -92,24 +92,6 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
     protected $prix_barre;
 
     /**
-     * The value for the image_menu field.
-     * @var        string
-     */
-    protected $image_menu;
-
-    /**
-     * The value for the image_page field.
-     * @var        string
-     */
-    protected $image_page;
-
-    /**
-     * The value for the image_liste field.
-     * @var        string
-     */
-    protected $image_liste;
-
-    /**
      * The value for the active_compteur field.
      * @var        boolean
      */
@@ -415,36 +397,6 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
     }
 
     /**
-     * Get the [image_menu] column value.
-     *
-     * @return string
-     */
-    public function getImageMenu()
-    {
-        return $this->image_menu;
-    }
-
-    /**
-     * Get the [image_page] column value.
-     *
-     * @return string
-     */
-    public function getImagePage()
-    {
-        return $this->image_page;
-    }
-
-    /**
-     * Get the [image_liste] column value.
-     *
-     * @return string
-     */
-    public function getImageListe()
-    {
-        return $this->image_liste;
-    }
-
-    /**
      * Get the [active_compteur] column value.
      *
      * @return boolean
@@ -700,69 +652,6 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
 
         return $this;
     } // setPrixBarre()
-
-    /**
-     * Set the value of [image_menu] column.
-     *
-     * @param string $v new value
-     * @return BonPlan The current object (for fluent API support)
-     */
-    public function setImageMenu($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->image_menu !== $v) {
-            $this->image_menu = $v;
-            $this->modifiedColumns[] = BonPlanPeer::IMAGE_MENU;
-        }
-
-
-        return $this;
-    } // setImageMenu()
-
-    /**
-     * Set the value of [image_page] column.
-     *
-     * @param string $v new value
-     * @return BonPlan The current object (for fluent API support)
-     */
-    public function setImagePage($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->image_page !== $v) {
-            $this->image_page = $v;
-            $this->modifiedColumns[] = BonPlanPeer::IMAGE_PAGE;
-        }
-
-
-        return $this;
-    } // setImagePage()
-
-    /**
-     * Set the value of [image_liste] column.
-     *
-     * @param string $v new value
-     * @return BonPlan The current object (for fluent API support)
-     */
-    public function setImageListe($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->image_liste !== $v) {
-            $this->image_liste = $v;
-            $this->modifiedColumns[] = BonPlanPeer::IMAGE_LISTE;
-        }
-
-
-        return $this;
-    } // setImageListe()
 
     /**
      * Sets the value of the [active_compteur] column.
@@ -1067,19 +956,16 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
             $this->date_fin = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
             $this->prix = ($row[$startcol + 3] !== null) ? (int) $row[$startcol + 3] : null;
             $this->prix_barre = ($row[$startcol + 4] !== null) ? (int) $row[$startcol + 4] : null;
-            $this->image_menu = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
-            $this->image_page = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
-            $this->image_liste = ($row[$startcol + 7] !== null) ? (string) $row[$startcol + 7] : null;
-            $this->active_compteur = ($row[$startcol + 8] !== null) ? (boolean) $row[$startcol + 8] : null;
-            $this->mise_en_avant = ($row[$startcol + 9] !== null) ? (boolean) $row[$startcol + 9] : null;
-            $this->push_home = ($row[$startcol + 10] !== null) ? (boolean) $row[$startcol + 10] : null;
-            $this->date_start = ($row[$startcol + 11] !== null) ? (string) $row[$startcol + 11] : null;
-            $this->day_start = ($row[$startcol + 12] !== null) ? (int) $row[$startcol + 12] : null;
-            $this->day_range = ($row[$startcol + 13] !== null) ? (int) $row[$startcol + 13] : null;
-            $this->nb_adultes = ($row[$startcol + 14] !== null) ? (int) $row[$startcol + 14] : null;
-            $this->nb_enfants = ($row[$startcol + 15] !== null) ? (int) $row[$startcol + 15] : null;
-            $this->period_categories = ($row[$startcol + 16] !== null) ? (string) $row[$startcol + 16] : null;
-            $this->active = ($row[$startcol + 17] !== null) ? (boolean) $row[$startcol + 17] : null;
+            $this->active_compteur = ($row[$startcol + 5] !== null) ? (boolean) $row[$startcol + 5] : null;
+            $this->mise_en_avant = ($row[$startcol + 6] !== null) ? (boolean) $row[$startcol + 6] : null;
+            $this->push_home = ($row[$startcol + 7] !== null) ? (boolean) $row[$startcol + 7] : null;
+            $this->date_start = ($row[$startcol + 8] !== null) ? (string) $row[$startcol + 8] : null;
+            $this->day_start = ($row[$startcol + 9] !== null) ? (int) $row[$startcol + 9] : null;
+            $this->day_range = ($row[$startcol + 10] !== null) ? (int) $row[$startcol + 10] : null;
+            $this->nb_adultes = ($row[$startcol + 11] !== null) ? (int) $row[$startcol + 11] : null;
+            $this->nb_enfants = ($row[$startcol + 12] !== null) ? (int) $row[$startcol + 12] : null;
+            $this->period_categories = ($row[$startcol + 13] !== null) ? (string) $row[$startcol + 13] : null;
+            $this->active = ($row[$startcol + 14] !== null) ? (boolean) $row[$startcol + 14] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -1088,7 +974,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 18; // 18 = BonPlanPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 15; // 15 = BonPlanPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating BonPlan object", $e);
@@ -1454,15 +1340,6 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
         if ($this->isColumnModified(BonPlanPeer::PRIX_BARRE)) {
             $modifiedColumns[':p' . $index++]  = '`prix_barre`';
         }
-        if ($this->isColumnModified(BonPlanPeer::IMAGE_MENU)) {
-            $modifiedColumns[':p' . $index++]  = '`image_menu`';
-        }
-        if ($this->isColumnModified(BonPlanPeer::IMAGE_PAGE)) {
-            $modifiedColumns[':p' . $index++]  = '`image_page`';
-        }
-        if ($this->isColumnModified(BonPlanPeer::IMAGE_LISTE)) {
-            $modifiedColumns[':p' . $index++]  = '`image_liste`';
-        }
         if ($this->isColumnModified(BonPlanPeer::ACTIVE_COMPTEUR)) {
             $modifiedColumns[':p' . $index++]  = '`active_compteur`';
         }
@@ -1518,15 +1395,6 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
                         break;
                     case '`prix_barre`':
                         $stmt->bindValue($identifier, $this->prix_barre, PDO::PARAM_INT);
-                        break;
-                    case '`image_menu`':
-                        $stmt->bindValue($identifier, $this->image_menu, PDO::PARAM_STR);
-                        break;
-                    case '`image_page`':
-                        $stmt->bindValue($identifier, $this->image_page, PDO::PARAM_STR);
-                        break;
-                    case '`image_liste`':
-                        $stmt->bindValue($identifier, $this->image_liste, PDO::PARAM_STR);
                         break;
                     case '`active_compteur`':
                         $stmt->bindValue($identifier, (int) $this->active_compteur, PDO::PARAM_INT);
@@ -1740,42 +1608,33 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
                 return $this->getPrixBarre();
                 break;
             case 5:
-                return $this->getImageMenu();
-                break;
-            case 6:
-                return $this->getImagePage();
-                break;
-            case 7:
-                return $this->getImageListe();
-                break;
-            case 8:
                 return $this->getActiveCompteur();
                 break;
-            case 9:
+            case 6:
                 return $this->getMiseEnAvant();
                 break;
-            case 10:
+            case 7:
                 return $this->getPushHome();
                 break;
-            case 11:
+            case 8:
                 return $this->getDateStart();
                 break;
-            case 12:
+            case 9:
                 return $this->getDayStart();
                 break;
-            case 13:
+            case 10:
                 return $this->getDayRange();
                 break;
-            case 14:
+            case 11:
                 return $this->getNbAdultes();
                 break;
-            case 15:
+            case 12:
                 return $this->getNbEnfants();
                 break;
-            case 16:
+            case 13:
                 return $this->getPeriodCategories();
                 break;
-            case 17:
+            case 14:
                 return $this->getActive();
                 break;
             default:
@@ -1812,19 +1671,16 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
             $keys[2] => $this->getDateFin(),
             $keys[3] => $this->getPrix(),
             $keys[4] => $this->getPrixBarre(),
-            $keys[5] => $this->getImageMenu(),
-            $keys[6] => $this->getImagePage(),
-            $keys[7] => $this->getImageListe(),
-            $keys[8] => $this->getActiveCompteur(),
-            $keys[9] => $this->getMiseEnAvant(),
-            $keys[10] => $this->getPushHome(),
-            $keys[11] => $this->getDateStart(),
-            $keys[12] => $this->getDayStart(),
-            $keys[13] => $this->getDayRange(),
-            $keys[14] => $this->getNbAdultes(),
-            $keys[15] => $this->getNbEnfants(),
-            $keys[16] => $this->getPeriodCategories(),
-            $keys[17] => $this->getActive(),
+            $keys[5] => $this->getActiveCompteur(),
+            $keys[6] => $this->getMiseEnAvant(),
+            $keys[7] => $this->getPushHome(),
+            $keys[8] => $this->getDateStart(),
+            $keys[9] => $this->getDayStart(),
+            $keys[10] => $this->getDayRange(),
+            $keys[11] => $this->getNbAdultes(),
+            $keys[12] => $this->getNbEnfants(),
+            $keys[13] => $this->getPeriodCategories(),
+            $keys[14] => $this->getActive(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->collBonPlanBonPlanCategories) {
@@ -1889,50 +1745,41 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
                 $this->setPrixBarre($value);
                 break;
             case 5:
-                $this->setImageMenu($value);
-                break;
-            case 6:
-                $this->setImagePage($value);
-                break;
-            case 7:
-                $this->setImageListe($value);
-                break;
-            case 8:
                 $this->setActiveCompteur($value);
                 break;
-            case 9:
+            case 6:
                 $this->setMiseEnAvant($value);
                 break;
-            case 10:
+            case 7:
                 $this->setPushHome($value);
                 break;
-            case 11:
+            case 8:
                 $this->setDateStart($value);
                 break;
-            case 12:
+            case 9:
                 $valueSet = BonPlanPeer::getValueSet(BonPlanPeer::DAY_START);
                 if (isset($valueSet[$value])) {
                     $value = $valueSet[$value];
                 }
                 $this->setDayStart($value);
                 break;
-            case 13:
+            case 10:
                 $valueSet = BonPlanPeer::getValueSet(BonPlanPeer::DAY_RANGE);
                 if (isset($valueSet[$value])) {
                     $value = $valueSet[$value];
                 }
                 $this->setDayRange($value);
                 break;
-            case 14:
+            case 11:
                 $this->setNbAdultes($value);
                 break;
-            case 15:
+            case 12:
                 $this->setNbEnfants($value);
                 break;
-            case 16:
+            case 13:
                 $this->setPeriodCategories($value);
                 break;
-            case 17:
+            case 14:
                 $this->setActive($value);
                 break;
         } // switch()
@@ -1964,19 +1811,16 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
         if (array_key_exists($keys[2], $arr)) $this->setDateFin($arr[$keys[2]]);
         if (array_key_exists($keys[3], $arr)) $this->setPrix($arr[$keys[3]]);
         if (array_key_exists($keys[4], $arr)) $this->setPrixBarre($arr[$keys[4]]);
-        if (array_key_exists($keys[5], $arr)) $this->setImageMenu($arr[$keys[5]]);
-        if (array_key_exists($keys[6], $arr)) $this->setImagePage($arr[$keys[6]]);
-        if (array_key_exists($keys[7], $arr)) $this->setImageListe($arr[$keys[7]]);
-        if (array_key_exists($keys[8], $arr)) $this->setActiveCompteur($arr[$keys[8]]);
-        if (array_key_exists($keys[9], $arr)) $this->setMiseEnAvant($arr[$keys[9]]);
-        if (array_key_exists($keys[10], $arr)) $this->setPushHome($arr[$keys[10]]);
-        if (array_key_exists($keys[11], $arr)) $this->setDateStart($arr[$keys[11]]);
-        if (array_key_exists($keys[12], $arr)) $this->setDayStart($arr[$keys[12]]);
-        if (array_key_exists($keys[13], $arr)) $this->setDayRange($arr[$keys[13]]);
-        if (array_key_exists($keys[14], $arr)) $this->setNbAdultes($arr[$keys[14]]);
-        if (array_key_exists($keys[15], $arr)) $this->setNbEnfants($arr[$keys[15]]);
-        if (array_key_exists($keys[16], $arr)) $this->setPeriodCategories($arr[$keys[16]]);
-        if (array_key_exists($keys[17], $arr)) $this->setActive($arr[$keys[17]]);
+        if (array_key_exists($keys[5], $arr)) $this->setActiveCompteur($arr[$keys[5]]);
+        if (array_key_exists($keys[6], $arr)) $this->setMiseEnAvant($arr[$keys[6]]);
+        if (array_key_exists($keys[7], $arr)) $this->setPushHome($arr[$keys[7]]);
+        if (array_key_exists($keys[8], $arr)) $this->setDateStart($arr[$keys[8]]);
+        if (array_key_exists($keys[9], $arr)) $this->setDayStart($arr[$keys[9]]);
+        if (array_key_exists($keys[10], $arr)) $this->setDayRange($arr[$keys[10]]);
+        if (array_key_exists($keys[11], $arr)) $this->setNbAdultes($arr[$keys[11]]);
+        if (array_key_exists($keys[12], $arr)) $this->setNbEnfants($arr[$keys[12]]);
+        if (array_key_exists($keys[13], $arr)) $this->setPeriodCategories($arr[$keys[13]]);
+        if (array_key_exists($keys[14], $arr)) $this->setActive($arr[$keys[14]]);
     }
 
     /**
@@ -1993,9 +1837,6 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
         if ($this->isColumnModified(BonPlanPeer::DATE_FIN)) $criteria->add(BonPlanPeer::DATE_FIN, $this->date_fin);
         if ($this->isColumnModified(BonPlanPeer::PRIX)) $criteria->add(BonPlanPeer::PRIX, $this->prix);
         if ($this->isColumnModified(BonPlanPeer::PRIX_BARRE)) $criteria->add(BonPlanPeer::PRIX_BARRE, $this->prix_barre);
-        if ($this->isColumnModified(BonPlanPeer::IMAGE_MENU)) $criteria->add(BonPlanPeer::IMAGE_MENU, $this->image_menu);
-        if ($this->isColumnModified(BonPlanPeer::IMAGE_PAGE)) $criteria->add(BonPlanPeer::IMAGE_PAGE, $this->image_page);
-        if ($this->isColumnModified(BonPlanPeer::IMAGE_LISTE)) $criteria->add(BonPlanPeer::IMAGE_LISTE, $this->image_liste);
         if ($this->isColumnModified(BonPlanPeer::ACTIVE_COMPTEUR)) $criteria->add(BonPlanPeer::ACTIVE_COMPTEUR, $this->active_compteur);
         if ($this->isColumnModified(BonPlanPeer::MISE_EN_AVANT)) $criteria->add(BonPlanPeer::MISE_EN_AVANT, $this->mise_en_avant);
         if ($this->isColumnModified(BonPlanPeer::PUSH_HOME)) $criteria->add(BonPlanPeer::PUSH_HOME, $this->push_home);
@@ -2073,9 +1914,6 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
         $copyObj->setDateFin($this->getDateFin());
         $copyObj->setPrix($this->getPrix());
         $copyObj->setPrixBarre($this->getPrixBarre());
-        $copyObj->setImageMenu($this->getImageMenu());
-        $copyObj->setImagePage($this->getImagePage());
-        $copyObj->setImageListe($this->getImageListe());
         $copyObj->setActiveCompteur($this->getActiveCompteur());
         $copyObj->setMiseEnAvant($this->getMiseEnAvant());
         $copyObj->setPushHome($this->getPushHome());
@@ -3673,9 +3511,6 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
         $this->date_fin = null;
         $this->prix = null;
         $this->prix_barre = null;
-        $this->image_menu = null;
-        $this->image_page = null;
-        $this->image_liste = null;
         $this->active_compteur = null;
         $this->mise_en_avant = null;
         $this->push_home = null;
@@ -4312,12 +4147,6 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
      */
     public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
     {
-        $this->saveImageMenuPortfolioUsage();
-
-        $this->saveImagePagePortfolioUsage();
-
-        $this->saveImageListePortfolioUsage();
-
         return $this->save($con);
     }
 
@@ -4340,108 +4169,204 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
     /**
      * @return void
      */
-    public function saveImageMenuPortfolioUsage()
+    public function getImageMenu()
     {
         $peer = self::PEER;
 
-        $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+        $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
+            ->select('id')
+            ->usePortfolioUsageQuery()
+                ->filterByTableRef($peer::TABLE_NAME)
+                ->filterByColumnRef($peer::TABLE_NAME.'.image_menu')
+                ->filterByElementId($this->getId())
+            ->endUse()
+            ->find()
+            ->toArray()
+        ;
+
+        return implode(';', $medias);
+    }
+
+    /**
+     * @return void
+     */
+    public function setImageMenu($v)
+    {
+        $peer = self::PEER;
+
+        $values = explode(';', $v);
+
+        \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
             ->filterByColumnRef($peer::TABLE_NAME.'.image_menu')
             ->filterByElementId($this->getId())
-            ->findOne()
+            ->filterByMediaId($values, \Criteria::NOT_IN)
+            ->find()
+            ->delete()
         ;
 
-        if ($this->getImageMenu()) {
-            if (!$usage) {
-                $usage = new \Cungfoo\Model\PortfolioUsage();
+        if ($v) {
+            foreach ($values as $index => $value) {
+                $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+                    ->filterByTableRef($peer::TABLE_NAME)
+                    ->filterByColumnRef($peer::TABLE_NAME.'.image_menu')
+                    ->filterByElementId($this->getId())
+                    ->filterByMediaId($value)
+                    ->findOne()
+                ;
+
+                if (!$usage) {
+                    $usage = new \Cungfoo\Model\PortfolioUsage();
+                    $usage
+                        ->setTableRef($peer::TABLE_NAME)
+                        ->setColumnRef($peer::TABLE_NAME.'.image_menu')
+                        ->setElementId($this->getId())
+                        ->setMediaId($value)
+                    ;
+                }
+
                 $usage
-                    ->setTableRef($peer::TABLE_NAME)
-                    ->setColumnRef($peer::TABLE_NAME.'.image_menu')
-                    ->setElementId($this->getId())
+                    ->setSortableRank($index)
+                    ->save()
                 ;
             }
 
-            $usage
-                ->setMediaId($this->getImageMenu())
-                ->save()
-            ;
-        }
-        else {
-            if ($usage) {
-                $usage->delete();
-            }
         }
     }
 
     /**
      * @return void
      */
-    public function saveImagePagePortfolioUsage()
+    public function getImagePage()
     {
         $peer = self::PEER;
 
-        $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+        $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
+            ->select('id')
+            ->usePortfolioUsageQuery()
+                ->filterByTableRef($peer::TABLE_NAME)
+                ->filterByColumnRef($peer::TABLE_NAME.'.image_page')
+                ->filterByElementId($this->getId())
+            ->endUse()
+            ->find()
+            ->toArray()
+        ;
+
+        return implode(';', $medias);
+    }
+
+    /**
+     * @return void
+     */
+    public function setImagePage($v)
+    {
+        $peer = self::PEER;
+
+        $values = explode(';', $v);
+
+        \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
             ->filterByColumnRef($peer::TABLE_NAME.'.image_page')
             ->filterByElementId($this->getId())
-            ->findOne()
+            ->filterByMediaId($values, \Criteria::NOT_IN)
+            ->find()
+            ->delete()
         ;
 
-        if ($this->getImagePage()) {
-            if (!$usage) {
-                $usage = new \Cungfoo\Model\PortfolioUsage();
+        if ($v) {
+            foreach ($values as $index => $value) {
+                $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+                    ->filterByTableRef($peer::TABLE_NAME)
+                    ->filterByColumnRef($peer::TABLE_NAME.'.image_page')
+                    ->filterByElementId($this->getId())
+                    ->filterByMediaId($value)
+                    ->findOne()
+                ;
+
+                if (!$usage) {
+                    $usage = new \Cungfoo\Model\PortfolioUsage();
+                    $usage
+                        ->setTableRef($peer::TABLE_NAME)
+                        ->setColumnRef($peer::TABLE_NAME.'.image_page')
+                        ->setElementId($this->getId())
+                        ->setMediaId($value)
+                    ;
+                }
+
                 $usage
-                    ->setTableRef($peer::TABLE_NAME)
-                    ->setColumnRef($peer::TABLE_NAME.'.image_page')
-                    ->setElementId($this->getId())
+                    ->setSortableRank($index)
+                    ->save()
                 ;
             }
 
-            $usage
-                ->setMediaId($this->getImagePage())
-                ->save()
-            ;
-        }
-        else {
-            if ($usage) {
-                $usage->delete();
-            }
         }
     }
 
     /**
      * @return void
      */
-    public function saveImageListePortfolioUsage()
+    public function getImageListe()
     {
         $peer = self::PEER;
 
-        $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+        $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
+            ->select('id')
+            ->usePortfolioUsageQuery()
+                ->filterByTableRef($peer::TABLE_NAME)
+                ->filterByColumnRef($peer::TABLE_NAME.'.image_liste')
+                ->filterByElementId($this->getId())
+            ->endUse()
+            ->find()
+            ->toArray()
+        ;
+
+        return implode(';', $medias);
+    }
+
+    /**
+     * @return void
+     */
+    public function setImageListe($v)
+    {
+        $peer = self::PEER;
+
+        $values = explode(';', $v);
+
+        \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
             ->filterByColumnRef($peer::TABLE_NAME.'.image_liste')
             ->filterByElementId($this->getId())
-            ->findOne()
+            ->filterByMediaId($values, \Criteria::NOT_IN)
+            ->find()
+            ->delete()
         ;
 
-        if ($this->getImageListe()) {
-            if (!$usage) {
-                $usage = new \Cungfoo\Model\PortfolioUsage();
+        if ($v) {
+            foreach ($values as $index => $value) {
+                $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+                    ->filterByTableRef($peer::TABLE_NAME)
+                    ->filterByColumnRef($peer::TABLE_NAME.'.image_liste')
+                    ->filterByElementId($this->getId())
+                    ->filterByMediaId($value)
+                    ->findOne()
+                ;
+
+                if (!$usage) {
+                    $usage = new \Cungfoo\Model\PortfolioUsage();
+                    $usage
+                        ->setTableRef($peer::TABLE_NAME)
+                        ->setColumnRef($peer::TABLE_NAME.'.image_liste')
+                        ->setElementId($this->getId())
+                        ->setMediaId($value)
+                    ;
+                }
+
                 $usage
-                    ->setTableRef($peer::TABLE_NAME)
-                    ->setColumnRef($peer::TABLE_NAME.'.image_liste')
-                    ->setElementId($this->getId())
+                    ->setSortableRank($index)
+                    ->save()
                 ;
             }
 
-            $usage
-                ->setMediaId($this->getImageListe())
-                ->save()
-            ;
-        }
-        else {
-            if ($usage) {
-                $usage->delete();
-            }
         }
     }
 

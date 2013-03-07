@@ -31,9 +31,9 @@
 {% spaceless %}
 <div class="field-media">
     {% if value %}
-    <a class="portfolio-popin-btn" href="{{ path('portfolio_popin', {'id': value}) }}"><img class="crud-column-media" src="{{ asset(value|media) }}" /></a>
+    <a class="portfolio-popin-open" href="{{ path('portfolio_popin', {'id': value}) }}"><img class="crud-column-media" src="{{ asset(value|media) }}" /></a>
     {% else %}
-    <a class="portfolio-popin-btn btn" href="{{ path('portfolio_popin') }}">Choisissez un media</a>
+    <a class="portfolio-popin-open btn" href="{{ path('portfolio_popin') }}">Choisissez un media</a>
     {% endif %}
     {% set type = 'hidden' %}
     {{ block('form_widget_simple') }}

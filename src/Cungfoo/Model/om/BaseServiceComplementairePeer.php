@@ -39,25 +39,19 @@ abstract class BaseServiceComplementairePeer
     const TM_CLASS = 'ServiceComplementaireTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 7;
+    const NUM_COLUMNS = 5;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 7;
+    const NUM_HYDRATE_COLUMNS = 5;
 
     /** the column name for the id field */
     const ID = 'service_complementaire.id';
 
     /** the column name for the code field */
     const CODE = 'service_complementaire.code';
-
-    /** the column name for the image_path field */
-    const IMAGE_PATH = 'service_complementaire.image_path';
-
-    /** the column name for the vignette field */
-    const VIGNETTE = 'service_complementaire.vignette';
 
     /** the column name for the created_at field */
     const CREATED_AT = 'service_complementaire.created_at';
@@ -94,12 +88,12 @@ abstract class BaseServiceComplementairePeer
      * e.g. ServiceComplementairePeer::$fieldNames[ServiceComplementairePeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'ImagePath', 'Vignette', 'CreatedAt', 'UpdatedAt', 'Active', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'imagePath', 'vignette', 'createdAt', 'updatedAt', 'active', ),
-        BasePeer::TYPE_COLNAME => array (ServiceComplementairePeer::ID, ServiceComplementairePeer::CODE, ServiceComplementairePeer::IMAGE_PATH, ServiceComplementairePeer::VIGNETTE, ServiceComplementairePeer::CREATED_AT, ServiceComplementairePeer::UPDATED_AT, ServiceComplementairePeer::ACTIVE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'IMAGE_PATH', 'VIGNETTE', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'image_path', 'vignette', 'created_at', 'updated_at', 'active', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'CreatedAt', 'UpdatedAt', 'Active', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'createdAt', 'updatedAt', 'active', ),
+        BasePeer::TYPE_COLNAME => array (ServiceComplementairePeer::ID, ServiceComplementairePeer::CODE, ServiceComplementairePeer::CREATED_AT, ServiceComplementairePeer::UPDATED_AT, ServiceComplementairePeer::ACTIVE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'created_at', 'updated_at', 'active', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
     );
 
     /**
@@ -109,12 +103,12 @@ abstract class BaseServiceComplementairePeer
      * e.g. ServiceComplementairePeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'ImagePath' => 2, 'Vignette' => 3, 'CreatedAt' => 4, 'UpdatedAt' => 5, 'Active' => 6, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'imagePath' => 2, 'vignette' => 3, 'createdAt' => 4, 'updatedAt' => 5, 'active' => 6, ),
-        BasePeer::TYPE_COLNAME => array (ServiceComplementairePeer::ID => 0, ServiceComplementairePeer::CODE => 1, ServiceComplementairePeer::IMAGE_PATH => 2, ServiceComplementairePeer::VIGNETTE => 3, ServiceComplementairePeer::CREATED_AT => 4, ServiceComplementairePeer::UPDATED_AT => 5, ServiceComplementairePeer::ACTIVE => 6, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'IMAGE_PATH' => 2, 'VIGNETTE' => 3, 'CREATED_AT' => 4, 'UPDATED_AT' => 5, 'ACTIVE' => 6, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'image_path' => 2, 'vignette' => 3, 'created_at' => 4, 'updated_at' => 5, 'active' => 6, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'CreatedAt' => 2, 'UpdatedAt' => 3, 'Active' => 4, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'createdAt' => 2, 'updatedAt' => 3, 'active' => 4, ),
+        BasePeer::TYPE_COLNAME => array (ServiceComplementairePeer::ID => 0, ServiceComplementairePeer::CODE => 1, ServiceComplementairePeer::CREATED_AT => 2, ServiceComplementairePeer::UPDATED_AT => 3, ServiceComplementairePeer::ACTIVE => 4, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'CREATED_AT' => 2, 'UPDATED_AT' => 3, 'ACTIVE' => 4, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'created_at' => 2, 'updated_at' => 3, 'active' => 4, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
     );
 
     /**
@@ -190,16 +184,12 @@ abstract class BaseServiceComplementairePeer
         if (null === $alias) {
             $criteria->addSelectColumn(ServiceComplementairePeer::ID);
             $criteria->addSelectColumn(ServiceComplementairePeer::CODE);
-            $criteria->addSelectColumn(ServiceComplementairePeer::IMAGE_PATH);
-            $criteria->addSelectColumn(ServiceComplementairePeer::VIGNETTE);
             $criteria->addSelectColumn(ServiceComplementairePeer::CREATED_AT);
             $criteria->addSelectColumn(ServiceComplementairePeer::UPDATED_AT);
             $criteria->addSelectColumn(ServiceComplementairePeer::ACTIVE);
         } else {
             $criteria->addSelectColumn($alias . '.id');
             $criteria->addSelectColumn($alias . '.code');
-            $criteria->addSelectColumn($alias . '.image_path');
-            $criteria->addSelectColumn($alias . '.vignette');
             $criteria->addSelectColumn($alias . '.created_at');
             $criteria->addSelectColumn($alias . '.updated_at');
             $criteria->addSelectColumn($alias . '.active');

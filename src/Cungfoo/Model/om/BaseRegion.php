@@ -80,24 +80,6 @@ abstract class BaseRegion extends BaseObject implements Persistent
     protected $code;
 
     /**
-     * The value for the image_path field.
-     * @var        string
-     */
-    protected $image_path;
-
-    /**
-     * The value for the image_encart_path field.
-     * @var        string
-     */
-    protected $image_encart_path;
-
-    /**
-     * The value for the image_encart_petite_path field.
-     * @var        string
-     */
-    protected $image_encart_petite_path;
-
-    /**
      * The value for the pays_id field.
      * @var        int
      */
@@ -114,18 +96,6 @@ abstract class BaseRegion extends BaseObject implements Persistent
      * @var        boolean
      */
     protected $mea_home;
-
-    /**
-     * The value for the image_detail_1 field.
-     * @var        string
-     */
-    protected $image_detail_1;
-
-    /**
-     * The value for the image_detail_2 field.
-     * @var        string
-     */
-    protected $image_detail_2;
 
     /**
      * The value for the created_at field.
@@ -319,36 +289,6 @@ abstract class BaseRegion extends BaseObject implements Persistent
     }
 
     /**
-     * Get the [image_path] column value.
-     *
-     * @return string
-     */
-    public function getImagePath()
-    {
-        return $this->image_path;
-    }
-
-    /**
-     * Get the [image_encart_path] column value.
-     *
-     * @return string
-     */
-    public function getImageEncartPath()
-    {
-        return $this->image_encart_path;
-    }
-
-    /**
-     * Get the [image_encart_petite_path] column value.
-     *
-     * @return string
-     */
-    public function getImageEncartPetitePath()
-    {
-        return $this->image_encart_petite_path;
-    }
-
-    /**
      * Get the [pays_id] column value.
      *
      * @return int
@@ -376,26 +316,6 @@ abstract class BaseRegion extends BaseObject implements Persistent
     public function getMeaHome()
     {
         return $this->mea_home;
-    }
-
-    /**
-     * Get the [image_detail_1] column value.
-     *
-     * @return string
-     */
-    public function getImageDetail1()
-    {
-        return $this->image_detail_1;
-    }
-
-    /**
-     * Get the [image_detail_2] column value.
-     *
-     * @return string
-     */
-    public function getImageDetail2()
-    {
-        return $this->image_detail_2;
     }
 
     /**
@@ -531,69 +451,6 @@ abstract class BaseRegion extends BaseObject implements Persistent
     } // setCode()
 
     /**
-     * Set the value of [image_path] column.
-     *
-     * @param string $v new value
-     * @return Region The current object (for fluent API support)
-     */
-    public function setImagePath($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->image_path !== $v) {
-            $this->image_path = $v;
-            $this->modifiedColumns[] = RegionPeer::IMAGE_PATH;
-        }
-
-
-        return $this;
-    } // setImagePath()
-
-    /**
-     * Set the value of [image_encart_path] column.
-     *
-     * @param string $v new value
-     * @return Region The current object (for fluent API support)
-     */
-    public function setImageEncartPath($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->image_encart_path !== $v) {
-            $this->image_encart_path = $v;
-            $this->modifiedColumns[] = RegionPeer::IMAGE_ENCART_PATH;
-        }
-
-
-        return $this;
-    } // setImageEncartPath()
-
-    /**
-     * Set the value of [image_encart_petite_path] column.
-     *
-     * @param string $v new value
-     * @return Region The current object (for fluent API support)
-     */
-    public function setImageEncartPetitePath($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->image_encart_petite_path !== $v) {
-            $this->image_encart_petite_path = $v;
-            $this->modifiedColumns[] = RegionPeer::IMAGE_ENCART_PETITE_PATH;
-        }
-
-
-        return $this;
-    } // setImageEncartPetitePath()
-
-    /**
      * Set the value of [pays_id] column.
      *
      * @param int $v new value
@@ -671,48 +528,6 @@ abstract class BaseRegion extends BaseObject implements Persistent
 
         return $this;
     } // setMeaHome()
-
-    /**
-     * Set the value of [image_detail_1] column.
-     *
-     * @param string $v new value
-     * @return Region The current object (for fluent API support)
-     */
-    public function setImageDetail1($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->image_detail_1 !== $v) {
-            $this->image_detail_1 = $v;
-            $this->modifiedColumns[] = RegionPeer::IMAGE_DETAIL_1;
-        }
-
-
-        return $this;
-    } // setImageDetail1()
-
-    /**
-     * Set the value of [image_detail_2] column.
-     *
-     * @param string $v new value
-     * @return Region The current object (for fluent API support)
-     */
-    public function setImageDetail2($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->image_detail_2 !== $v) {
-            $this->image_detail_2 = $v;
-            $this->modifiedColumns[] = RegionPeer::IMAGE_DETAIL_2;
-        }
-
-
-        return $this;
-    } // setImageDetail2()
 
     /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
@@ -827,17 +642,12 @@ abstract class BaseRegion extends BaseObject implements Persistent
 
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
             $this->code = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
-            $this->image_path = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
-            $this->image_encart_path = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
-            $this->image_encart_petite_path = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
-            $this->pays_id = ($row[$startcol + 5] !== null) ? (int) $row[$startcol + 5] : null;
-            $this->destination_id = ($row[$startcol + 6] !== null) ? (int) $row[$startcol + 6] : null;
-            $this->mea_home = ($row[$startcol + 7] !== null) ? (boolean) $row[$startcol + 7] : null;
-            $this->image_detail_1 = ($row[$startcol + 8] !== null) ? (string) $row[$startcol + 8] : null;
-            $this->image_detail_2 = ($row[$startcol + 9] !== null) ? (string) $row[$startcol + 9] : null;
-            $this->created_at = ($row[$startcol + 10] !== null) ? (string) $row[$startcol + 10] : null;
-            $this->updated_at = ($row[$startcol + 11] !== null) ? (string) $row[$startcol + 11] : null;
-            $this->active = ($row[$startcol + 12] !== null) ? (boolean) $row[$startcol + 12] : null;
+            $this->pays_id = ($row[$startcol + 2] !== null) ? (int) $row[$startcol + 2] : null;
+            $this->destination_id = ($row[$startcol + 3] !== null) ? (int) $row[$startcol + 3] : null;
+            $this->mea_home = ($row[$startcol + 4] !== null) ? (boolean) $row[$startcol + 4] : null;
+            $this->created_at = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
+            $this->updated_at = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
+            $this->active = ($row[$startcol + 7] !== null) ? (boolean) $row[$startcol + 7] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -846,7 +656,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 13; // 13 = RegionPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 8; // 8 = RegionPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Region object", $e);
@@ -1261,15 +1071,6 @@ abstract class BaseRegion extends BaseObject implements Persistent
         if ($this->isColumnModified(RegionPeer::CODE)) {
             $modifiedColumns[':p' . $index++]  = '`code`';
         }
-        if ($this->isColumnModified(RegionPeer::IMAGE_PATH)) {
-            $modifiedColumns[':p' . $index++]  = '`image_path`';
-        }
-        if ($this->isColumnModified(RegionPeer::IMAGE_ENCART_PATH)) {
-            $modifiedColumns[':p' . $index++]  = '`image_encart_path`';
-        }
-        if ($this->isColumnModified(RegionPeer::IMAGE_ENCART_PETITE_PATH)) {
-            $modifiedColumns[':p' . $index++]  = '`image_encart_petite_path`';
-        }
         if ($this->isColumnModified(RegionPeer::PAYS_ID)) {
             $modifiedColumns[':p' . $index++]  = '`pays_id`';
         }
@@ -1278,12 +1079,6 @@ abstract class BaseRegion extends BaseObject implements Persistent
         }
         if ($this->isColumnModified(RegionPeer::MEA_HOME)) {
             $modifiedColumns[':p' . $index++]  = '`mea_home`';
-        }
-        if ($this->isColumnModified(RegionPeer::IMAGE_DETAIL_1)) {
-            $modifiedColumns[':p' . $index++]  = '`image_detail_1`';
-        }
-        if ($this->isColumnModified(RegionPeer::IMAGE_DETAIL_2)) {
-            $modifiedColumns[':p' . $index++]  = '`image_detail_2`';
         }
         if ($this->isColumnModified(RegionPeer::CREATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`created_at`';
@@ -1311,15 +1106,6 @@ abstract class BaseRegion extends BaseObject implements Persistent
                     case '`code`':
                         $stmt->bindValue($identifier, $this->code, PDO::PARAM_STR);
                         break;
-                    case '`image_path`':
-                        $stmt->bindValue($identifier, $this->image_path, PDO::PARAM_STR);
-                        break;
-                    case '`image_encart_path`':
-                        $stmt->bindValue($identifier, $this->image_encart_path, PDO::PARAM_STR);
-                        break;
-                    case '`image_encart_petite_path`':
-                        $stmt->bindValue($identifier, $this->image_encart_petite_path, PDO::PARAM_STR);
-                        break;
                     case '`pays_id`':
                         $stmt->bindValue($identifier, $this->pays_id, PDO::PARAM_INT);
                         break;
@@ -1328,12 +1114,6 @@ abstract class BaseRegion extends BaseObject implements Persistent
                         break;
                     case '`mea_home`':
                         $stmt->bindValue($identifier, (int) $this->mea_home, PDO::PARAM_INT);
-                        break;
-                    case '`image_detail_1`':
-                        $stmt->bindValue($identifier, $this->image_detail_1, PDO::PARAM_STR);
-                        break;
-                    case '`image_detail_2`':
-                        $stmt->bindValue($identifier, $this->image_detail_2, PDO::PARAM_STR);
                         break;
                     case '`created_at`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
@@ -1543,36 +1323,21 @@ abstract class BaseRegion extends BaseObject implements Persistent
                 return $this->getCode();
                 break;
             case 2:
-                return $this->getImagePath();
-                break;
-            case 3:
-                return $this->getImageEncartPath();
-                break;
-            case 4:
-                return $this->getImageEncartPetitePath();
-                break;
-            case 5:
                 return $this->getPaysId();
                 break;
-            case 6:
+            case 3:
                 return $this->getDestinationId();
                 break;
-            case 7:
+            case 4:
                 return $this->getMeaHome();
                 break;
-            case 8:
-                return $this->getImageDetail1();
-                break;
-            case 9:
-                return $this->getImageDetail2();
-                break;
-            case 10:
+            case 5:
                 return $this->getCreatedAt();
                 break;
-            case 11:
+            case 6:
                 return $this->getUpdatedAt();
                 break;
-            case 12:
+            case 7:
                 return $this->getActive();
                 break;
             default:
@@ -1606,17 +1371,12 @@ abstract class BaseRegion extends BaseObject implements Persistent
         $result = array(
             $keys[0] => $this->getId(),
             $keys[1] => $this->getCode(),
-            $keys[2] => $this->getImagePath(),
-            $keys[3] => $this->getImageEncartPath(),
-            $keys[4] => $this->getImageEncartPetitePath(),
-            $keys[5] => $this->getPaysId(),
-            $keys[6] => $this->getDestinationId(),
-            $keys[7] => $this->getMeaHome(),
-            $keys[8] => $this->getImageDetail1(),
-            $keys[9] => $this->getImageDetail2(),
-            $keys[10] => $this->getCreatedAt(),
-            $keys[11] => $this->getUpdatedAt(),
-            $keys[12] => $this->getActive(),
+            $keys[2] => $this->getPaysId(),
+            $keys[3] => $this->getDestinationId(),
+            $keys[4] => $this->getMeaHome(),
+            $keys[5] => $this->getCreatedAt(),
+            $keys[6] => $this->getUpdatedAt(),
+            $keys[7] => $this->getActive(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aPays) {
@@ -1681,36 +1441,21 @@ abstract class BaseRegion extends BaseObject implements Persistent
                 $this->setCode($value);
                 break;
             case 2:
-                $this->setImagePath($value);
-                break;
-            case 3:
-                $this->setImageEncartPath($value);
-                break;
-            case 4:
-                $this->setImageEncartPetitePath($value);
-                break;
-            case 5:
                 $this->setPaysId($value);
                 break;
-            case 6:
+            case 3:
                 $this->setDestinationId($value);
                 break;
-            case 7:
+            case 4:
                 $this->setMeaHome($value);
                 break;
-            case 8:
-                $this->setImageDetail1($value);
-                break;
-            case 9:
-                $this->setImageDetail2($value);
-                break;
-            case 10:
+            case 5:
                 $this->setCreatedAt($value);
                 break;
-            case 11:
+            case 6:
                 $this->setUpdatedAt($value);
                 break;
-            case 12:
+            case 7:
                 $this->setActive($value);
                 break;
         } // switch()
@@ -1739,17 +1484,12 @@ abstract class BaseRegion extends BaseObject implements Persistent
 
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
         if (array_key_exists($keys[1], $arr)) $this->setCode($arr[$keys[1]]);
-        if (array_key_exists($keys[2], $arr)) $this->setImagePath($arr[$keys[2]]);
-        if (array_key_exists($keys[3], $arr)) $this->setImageEncartPath($arr[$keys[3]]);
-        if (array_key_exists($keys[4], $arr)) $this->setImageEncartPetitePath($arr[$keys[4]]);
-        if (array_key_exists($keys[5], $arr)) $this->setPaysId($arr[$keys[5]]);
-        if (array_key_exists($keys[6], $arr)) $this->setDestinationId($arr[$keys[6]]);
-        if (array_key_exists($keys[7], $arr)) $this->setMeaHome($arr[$keys[7]]);
-        if (array_key_exists($keys[8], $arr)) $this->setImageDetail1($arr[$keys[8]]);
-        if (array_key_exists($keys[9], $arr)) $this->setImageDetail2($arr[$keys[9]]);
-        if (array_key_exists($keys[10], $arr)) $this->setCreatedAt($arr[$keys[10]]);
-        if (array_key_exists($keys[11], $arr)) $this->setUpdatedAt($arr[$keys[11]]);
-        if (array_key_exists($keys[12], $arr)) $this->setActive($arr[$keys[12]]);
+        if (array_key_exists($keys[2], $arr)) $this->setPaysId($arr[$keys[2]]);
+        if (array_key_exists($keys[3], $arr)) $this->setDestinationId($arr[$keys[3]]);
+        if (array_key_exists($keys[4], $arr)) $this->setMeaHome($arr[$keys[4]]);
+        if (array_key_exists($keys[5], $arr)) $this->setCreatedAt($arr[$keys[5]]);
+        if (array_key_exists($keys[6], $arr)) $this->setUpdatedAt($arr[$keys[6]]);
+        if (array_key_exists($keys[7], $arr)) $this->setActive($arr[$keys[7]]);
     }
 
     /**
@@ -1763,14 +1503,9 @@ abstract class BaseRegion extends BaseObject implements Persistent
 
         if ($this->isColumnModified(RegionPeer::ID)) $criteria->add(RegionPeer::ID, $this->id);
         if ($this->isColumnModified(RegionPeer::CODE)) $criteria->add(RegionPeer::CODE, $this->code);
-        if ($this->isColumnModified(RegionPeer::IMAGE_PATH)) $criteria->add(RegionPeer::IMAGE_PATH, $this->image_path);
-        if ($this->isColumnModified(RegionPeer::IMAGE_ENCART_PATH)) $criteria->add(RegionPeer::IMAGE_ENCART_PATH, $this->image_encart_path);
-        if ($this->isColumnModified(RegionPeer::IMAGE_ENCART_PETITE_PATH)) $criteria->add(RegionPeer::IMAGE_ENCART_PETITE_PATH, $this->image_encart_petite_path);
         if ($this->isColumnModified(RegionPeer::PAYS_ID)) $criteria->add(RegionPeer::PAYS_ID, $this->pays_id);
         if ($this->isColumnModified(RegionPeer::DESTINATION_ID)) $criteria->add(RegionPeer::DESTINATION_ID, $this->destination_id);
         if ($this->isColumnModified(RegionPeer::MEA_HOME)) $criteria->add(RegionPeer::MEA_HOME, $this->mea_home);
-        if ($this->isColumnModified(RegionPeer::IMAGE_DETAIL_1)) $criteria->add(RegionPeer::IMAGE_DETAIL_1, $this->image_detail_1);
-        if ($this->isColumnModified(RegionPeer::IMAGE_DETAIL_2)) $criteria->add(RegionPeer::IMAGE_DETAIL_2, $this->image_detail_2);
         if ($this->isColumnModified(RegionPeer::CREATED_AT)) $criteria->add(RegionPeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(RegionPeer::UPDATED_AT)) $criteria->add(RegionPeer::UPDATED_AT, $this->updated_at);
         if ($this->isColumnModified(RegionPeer::ACTIVE)) $criteria->add(RegionPeer::ACTIVE, $this->active);
@@ -1838,14 +1573,9 @@ abstract class BaseRegion extends BaseObject implements Persistent
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
         $copyObj->setCode($this->getCode());
-        $copyObj->setImagePath($this->getImagePath());
-        $copyObj->setImageEncartPath($this->getImageEncartPath());
-        $copyObj->setImageEncartPetitePath($this->getImageEncartPetitePath());
         $copyObj->setPaysId($this->getPaysId());
         $copyObj->setDestinationId($this->getDestinationId());
         $copyObj->setMeaHome($this->getMeaHome());
-        $copyObj->setImageDetail1($this->getImageDetail1());
-        $copyObj->setImageDetail2($this->getImageDetail2());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
         $copyObj->setActive($this->getActive());
@@ -3761,14 +3491,9 @@ abstract class BaseRegion extends BaseObject implements Persistent
     {
         $this->id = null;
         $this->code = null;
-        $this->image_path = null;
-        $this->image_encart_path = null;
-        $this->image_encart_petite_path = null;
         $this->pays_id = null;
         $this->destination_id = null;
         $this->mea_home = null;
-        $this->image_detail_1 = null;
-        $this->image_detail_2 = null;
         $this->created_at = null;
         $this->updated_at = null;
         $this->active = null;
@@ -4375,16 +4100,6 @@ abstract class BaseRegion extends BaseObject implements Persistent
      */
     public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
     {
-        $this->saveImagePathPortfolioUsage();
-
-        $this->saveImageEncartPathPortfolioUsage();
-
-        $this->saveImageEncartPetitePathPortfolioUsage();
-
-        $this->saveImageDetail1PortfolioUsage();
-
-        $this->saveImageDetail2PortfolioUsage();
-
         return $this->save($con);
     }
 
@@ -4407,180 +4122,340 @@ abstract class BaseRegion extends BaseObject implements Persistent
     /**
      * @return void
      */
-    public function saveImagePathPortfolioUsage()
+    public function getImagePath()
     {
         $peer = self::PEER;
 
-        $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+        $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
+            ->select('id')
+            ->usePortfolioUsageQuery()
+                ->filterByTableRef($peer::TABLE_NAME)
+                ->filterByColumnRef($peer::TABLE_NAME.'.image_path')
+                ->filterByElementId($this->getId())
+            ->endUse()
+            ->find()
+            ->toArray()
+        ;
+
+        return implode(';', $medias);
+    }
+
+    /**
+     * @return void
+     */
+    public function setImagePath($v)
+    {
+        $peer = self::PEER;
+
+        $values = explode(';', $v);
+
+        \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
             ->filterByColumnRef($peer::TABLE_NAME.'.image_path')
             ->filterByElementId($this->getId())
-            ->findOne()
+            ->filterByMediaId($values, \Criteria::NOT_IN)
+            ->find()
+            ->delete()
         ;
 
-        if ($this->getImagePath()) {
-            if (!$usage) {
-                $usage = new \Cungfoo\Model\PortfolioUsage();
+        if ($v) {
+            foreach ($values as $index => $value) {
+                $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+                    ->filterByTableRef($peer::TABLE_NAME)
+                    ->filterByColumnRef($peer::TABLE_NAME.'.image_path')
+                    ->filterByElementId($this->getId())
+                    ->filterByMediaId($value)
+                    ->findOne()
+                ;
+
+                if (!$usage) {
+                    $usage = new \Cungfoo\Model\PortfolioUsage();
+                    $usage
+                        ->setTableRef($peer::TABLE_NAME)
+                        ->setColumnRef($peer::TABLE_NAME.'.image_path')
+                        ->setElementId($this->getId())
+                        ->setMediaId($value)
+                    ;
+                }
+
                 $usage
-                    ->setTableRef($peer::TABLE_NAME)
-                    ->setColumnRef($peer::TABLE_NAME.'.image_path')
-                    ->setElementId($this->getId())
+                    ->setSortableRank($index)
+                    ->save()
                 ;
             }
 
-            $usage
-                ->setMediaId($this->getImagePath())
-                ->save()
-            ;
-        }
-        else {
-            if ($usage) {
-                $usage->delete();
-            }
         }
     }
 
     /**
      * @return void
      */
-    public function saveImageEncartPathPortfolioUsage()
+    public function getImageEncartPath()
     {
         $peer = self::PEER;
 
-        $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+        $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
+            ->select('id')
+            ->usePortfolioUsageQuery()
+                ->filterByTableRef($peer::TABLE_NAME)
+                ->filterByColumnRef($peer::TABLE_NAME.'.image_encart_path')
+                ->filterByElementId($this->getId())
+            ->endUse()
+            ->find()
+            ->toArray()
+        ;
+
+        return implode(';', $medias);
+    }
+
+    /**
+     * @return void
+     */
+    public function setImageEncartPath($v)
+    {
+        $peer = self::PEER;
+
+        $values = explode(';', $v);
+
+        \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
             ->filterByColumnRef($peer::TABLE_NAME.'.image_encart_path')
             ->filterByElementId($this->getId())
-            ->findOne()
+            ->filterByMediaId($values, \Criteria::NOT_IN)
+            ->find()
+            ->delete()
         ;
 
-        if ($this->getImageEncartPath()) {
-            if (!$usage) {
-                $usage = new \Cungfoo\Model\PortfolioUsage();
+        if ($v) {
+            foreach ($values as $index => $value) {
+                $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+                    ->filterByTableRef($peer::TABLE_NAME)
+                    ->filterByColumnRef($peer::TABLE_NAME.'.image_encart_path')
+                    ->filterByElementId($this->getId())
+                    ->filterByMediaId($value)
+                    ->findOne()
+                ;
+
+                if (!$usage) {
+                    $usage = new \Cungfoo\Model\PortfolioUsage();
+                    $usage
+                        ->setTableRef($peer::TABLE_NAME)
+                        ->setColumnRef($peer::TABLE_NAME.'.image_encart_path')
+                        ->setElementId($this->getId())
+                        ->setMediaId($value)
+                    ;
+                }
+
                 $usage
-                    ->setTableRef($peer::TABLE_NAME)
-                    ->setColumnRef($peer::TABLE_NAME.'.image_encart_path')
-                    ->setElementId($this->getId())
+                    ->setSortableRank($index)
+                    ->save()
                 ;
             }
 
-            $usage
-                ->setMediaId($this->getImageEncartPath())
-                ->save()
-            ;
-        }
-        else {
-            if ($usage) {
-                $usage->delete();
-            }
         }
     }
 
     /**
      * @return void
      */
-    public function saveImageEncartPetitePathPortfolioUsage()
+    public function getImageEncartPetitePath()
     {
         $peer = self::PEER;
 
-        $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+        $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
+            ->select('id')
+            ->usePortfolioUsageQuery()
+                ->filterByTableRef($peer::TABLE_NAME)
+                ->filterByColumnRef($peer::TABLE_NAME.'.image_encart_petite_path')
+                ->filterByElementId($this->getId())
+            ->endUse()
+            ->find()
+            ->toArray()
+        ;
+
+        return implode(';', $medias);
+    }
+
+    /**
+     * @return void
+     */
+    public function setImageEncartPetitePath($v)
+    {
+        $peer = self::PEER;
+
+        $values = explode(';', $v);
+
+        \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
             ->filterByColumnRef($peer::TABLE_NAME.'.image_encart_petite_path')
             ->filterByElementId($this->getId())
-            ->findOne()
+            ->filterByMediaId($values, \Criteria::NOT_IN)
+            ->find()
+            ->delete()
         ;
 
-        if ($this->getImageEncartPetitePath()) {
-            if (!$usage) {
-                $usage = new \Cungfoo\Model\PortfolioUsage();
+        if ($v) {
+            foreach ($values as $index => $value) {
+                $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+                    ->filterByTableRef($peer::TABLE_NAME)
+                    ->filterByColumnRef($peer::TABLE_NAME.'.image_encart_petite_path')
+                    ->filterByElementId($this->getId())
+                    ->filterByMediaId($value)
+                    ->findOne()
+                ;
+
+                if (!$usage) {
+                    $usage = new \Cungfoo\Model\PortfolioUsage();
+                    $usage
+                        ->setTableRef($peer::TABLE_NAME)
+                        ->setColumnRef($peer::TABLE_NAME.'.image_encart_petite_path')
+                        ->setElementId($this->getId())
+                        ->setMediaId($value)
+                    ;
+                }
+
                 $usage
-                    ->setTableRef($peer::TABLE_NAME)
-                    ->setColumnRef($peer::TABLE_NAME.'.image_encart_petite_path')
-                    ->setElementId($this->getId())
+                    ->setSortableRank($index)
+                    ->save()
                 ;
             }
 
-            $usage
-                ->setMediaId($this->getImageEncartPetitePath())
-                ->save()
-            ;
-        }
-        else {
-            if ($usage) {
-                $usage->delete();
-            }
         }
     }
 
     /**
      * @return void
      */
-    public function saveImageDetail1PortfolioUsage()
+    public function getImageDetail1()
     {
         $peer = self::PEER;
 
-        $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+        $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
+            ->select('id')
+            ->usePortfolioUsageQuery()
+                ->filterByTableRef($peer::TABLE_NAME)
+                ->filterByColumnRef($peer::TABLE_NAME.'.image_detail_1')
+                ->filterByElementId($this->getId())
+            ->endUse()
+            ->find()
+            ->toArray()
+        ;
+
+        return implode(';', $medias);
+    }
+
+    /**
+     * @return void
+     */
+    public function setImageDetail1($v)
+    {
+        $peer = self::PEER;
+
+        $values = explode(';', $v);
+
+        \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
             ->filterByColumnRef($peer::TABLE_NAME.'.image_detail_1')
             ->filterByElementId($this->getId())
-            ->findOne()
+            ->filterByMediaId($values, \Criteria::NOT_IN)
+            ->find()
+            ->delete()
         ;
 
-        if ($this->getImageDetail1()) {
-            if (!$usage) {
-                $usage = new \Cungfoo\Model\PortfolioUsage();
+        if ($v) {
+            foreach ($values as $index => $value) {
+                $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+                    ->filterByTableRef($peer::TABLE_NAME)
+                    ->filterByColumnRef($peer::TABLE_NAME.'.image_detail_1')
+                    ->filterByElementId($this->getId())
+                    ->filterByMediaId($value)
+                    ->findOne()
+                ;
+
+                if (!$usage) {
+                    $usage = new \Cungfoo\Model\PortfolioUsage();
+                    $usage
+                        ->setTableRef($peer::TABLE_NAME)
+                        ->setColumnRef($peer::TABLE_NAME.'.image_detail_1')
+                        ->setElementId($this->getId())
+                        ->setMediaId($value)
+                    ;
+                }
+
                 $usage
-                    ->setTableRef($peer::TABLE_NAME)
-                    ->setColumnRef($peer::TABLE_NAME.'.image_detail_1')
-                    ->setElementId($this->getId())
+                    ->setSortableRank($index)
+                    ->save()
                 ;
             }
 
-            $usage
-                ->setMediaId($this->getImageDetail1())
-                ->save()
-            ;
-        }
-        else {
-            if ($usage) {
-                $usage->delete();
-            }
         }
     }
 
     /**
      * @return void
      */
-    public function saveImageDetail2PortfolioUsage()
+    public function getImageDetail2()
     {
         $peer = self::PEER;
 
-        $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+        $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
+            ->select('id')
+            ->usePortfolioUsageQuery()
+                ->filterByTableRef($peer::TABLE_NAME)
+                ->filterByColumnRef($peer::TABLE_NAME.'.image_detail_2')
+                ->filterByElementId($this->getId())
+            ->endUse()
+            ->find()
+            ->toArray()
+        ;
+
+        return implode(';', $medias);
+    }
+
+    /**
+     * @return void
+     */
+    public function setImageDetail2($v)
+    {
+        $peer = self::PEER;
+
+        $values = explode(';', $v);
+
+        \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
             ->filterByColumnRef($peer::TABLE_NAME.'.image_detail_2')
             ->filterByElementId($this->getId())
-            ->findOne()
+            ->filterByMediaId($values, \Criteria::NOT_IN)
+            ->find()
+            ->delete()
         ;
 
-        if ($this->getImageDetail2()) {
-            if (!$usage) {
-                $usage = new \Cungfoo\Model\PortfolioUsage();
+        if ($v) {
+            foreach ($values as $index => $value) {
+                $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+                    ->filterByTableRef($peer::TABLE_NAME)
+                    ->filterByColumnRef($peer::TABLE_NAME.'.image_detail_2')
+                    ->filterByElementId($this->getId())
+                    ->filterByMediaId($value)
+                    ->findOne()
+                ;
+
+                if (!$usage) {
+                    $usage = new \Cungfoo\Model\PortfolioUsage();
+                    $usage
+                        ->setTableRef($peer::TABLE_NAME)
+                        ->setColumnRef($peer::TABLE_NAME.'.image_detail_2')
+                        ->setElementId($this->getId())
+                        ->setMediaId($value)
+                    ;
+                }
+
                 $usage
-                    ->setTableRef($peer::TABLE_NAME)
-                    ->setColumnRef($peer::TABLE_NAME.'.image_detail_2')
-                    ->setElementId($this->getId())
+                    ->setSortableRank($index)
+                    ->save()
                 ;
             }
 
-            $usage
-                ->setMediaId($this->getImageDetail2())
-                ->save()
-            ;
-        }
-        else {
-            if ($usage) {
-                $usage->delete();
-            }
         }
     }
 

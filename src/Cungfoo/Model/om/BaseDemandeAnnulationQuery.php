@@ -40,10 +40,6 @@ use Cungfoo\Model\Etablissement;
  * @method DemandeAnnulationQuery orderBySinistreSuite($order = Criteria::ASC) Order by the sinistre_suite column
  * @method DemandeAnnulationQuery orderBySinistreDate($order = Criteria::ASC) Order by the sinistre_date column
  * @method DemandeAnnulationQuery orderBySinistreResume($order = Criteria::ASC) Order by the sinistre_resume column
- * @method DemandeAnnulationQuery orderByFile1($order = Criteria::ASC) Order by the file_1 column
- * @method DemandeAnnulationQuery orderByFile2($order = Criteria::ASC) Order by the file_2 column
- * @method DemandeAnnulationQuery orderByFile3($order = Criteria::ASC) Order by the file_3 column
- * @method DemandeAnnulationQuery orderByFile4($order = Criteria::ASC) Order by the file_4 column
  * @method DemandeAnnulationQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method DemandeAnnulationQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  * @method DemandeAnnulationQuery orderByActive($order = Criteria::ASC) Order by the active column
@@ -65,10 +61,6 @@ use Cungfoo\Model\Etablissement;
  * @method DemandeAnnulationQuery groupBySinistreSuite() Group by the sinistre_suite column
  * @method DemandeAnnulationQuery groupBySinistreDate() Group by the sinistre_date column
  * @method DemandeAnnulationQuery groupBySinistreResume() Group by the sinistre_resume column
- * @method DemandeAnnulationQuery groupByFile1() Group by the file_1 column
- * @method DemandeAnnulationQuery groupByFile2() Group by the file_2 column
- * @method DemandeAnnulationQuery groupByFile3() Group by the file_3 column
- * @method DemandeAnnulationQuery groupByFile4() Group by the file_4 column
  * @method DemandeAnnulationQuery groupByCreatedAt() Group by the created_at column
  * @method DemandeAnnulationQuery groupByUpdatedAt() Group by the updated_at column
  * @method DemandeAnnulationQuery groupByActive() Group by the active column
@@ -104,10 +96,6 @@ use Cungfoo\Model\Etablissement;
  * @method DemandeAnnulation findOneBySinistreSuite(int $sinistre_suite) Return the first DemandeAnnulation filtered by the sinistre_suite column
  * @method DemandeAnnulation findOneBySinistreDate(string $sinistre_date) Return the first DemandeAnnulation filtered by the sinistre_date column
  * @method DemandeAnnulation findOneBySinistreResume(string $sinistre_resume) Return the first DemandeAnnulation filtered by the sinistre_resume column
- * @method DemandeAnnulation findOneByFile1(string $file_1) Return the first DemandeAnnulation filtered by the file_1 column
- * @method DemandeAnnulation findOneByFile2(string $file_2) Return the first DemandeAnnulation filtered by the file_2 column
- * @method DemandeAnnulation findOneByFile3(string $file_3) Return the first DemandeAnnulation filtered by the file_3 column
- * @method DemandeAnnulation findOneByFile4(string $file_4) Return the first DemandeAnnulation filtered by the file_4 column
  * @method DemandeAnnulation findOneByCreatedAt(string $created_at) Return the first DemandeAnnulation filtered by the created_at column
  * @method DemandeAnnulation findOneByUpdatedAt(string $updated_at) Return the first DemandeAnnulation filtered by the updated_at column
  * @method DemandeAnnulation findOneByActive(boolean $active) Return the first DemandeAnnulation filtered by the active column
@@ -129,10 +117,6 @@ use Cungfoo\Model\Etablissement;
  * @method array findBySinistreSuite(int $sinistre_suite) Return DemandeAnnulation objects filtered by the sinistre_suite column
  * @method array findBySinistreDate(string $sinistre_date) Return DemandeAnnulation objects filtered by the sinistre_date column
  * @method array findBySinistreResume(string $sinistre_resume) Return DemandeAnnulation objects filtered by the sinistre_resume column
- * @method array findByFile1(string $file_1) Return DemandeAnnulation objects filtered by the file_1 column
- * @method array findByFile2(string $file_2) Return DemandeAnnulation objects filtered by the file_2 column
- * @method array findByFile3(string $file_3) Return DemandeAnnulation objects filtered by the file_3 column
- * @method array findByFile4(string $file_4) Return DemandeAnnulation objects filtered by the file_4 column
  * @method array findByCreatedAt(string $created_at) Return DemandeAnnulation objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return DemandeAnnulation objects filtered by the updated_at column
  * @method array findByActive(boolean $active) Return DemandeAnnulation objects filtered by the active column
@@ -239,7 +223,7 @@ abstract class BaseDemandeAnnulationQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `assure_nom`, `assure_prenom`, `assure_adresse`, `assure_code_postal`, `assure_ville`, `assure_pays`, `assure_mail`, `assure_telephone`, `camping_id`, `camping_num_resa`, `camping_montant_sejour`, `camping_montant_verse`, `sinistre_nature`, `sinistre_suite`, `sinistre_date`, `sinistre_resume`, `file_1`, `file_2`, `file_3`, `file_4`, `created_at`, `updated_at`, `active` FROM `demande_annulation` WHERE `id` = :p0';
+        $sql = 'SELECT `id`, `assure_nom`, `assure_prenom`, `assure_adresse`, `assure_code_postal`, `assure_ville`, `assure_pays`, `assure_mail`, `assure_telephone`, `camping_id`, `camping_num_resa`, `camping_montant_sejour`, `camping_montant_verse`, `sinistre_nature`, `sinistre_suite`, `sinistre_date`, `sinistre_resume`, `created_at`, `updated_at`, `active` FROM `demande_annulation` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -841,122 +825,6 @@ abstract class BaseDemandeAnnulationQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(DemandeAnnulationPeer::SINISTRE_RESUME, $sinistreResume, $comparison);
-    }
-
-    /**
-     * Filter the query on the file_1 column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByFile1('fooValue');   // WHERE file_1 = 'fooValue'
-     * $query->filterByFile1('%fooValue%'); // WHERE file_1 LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $file1 The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return DemandeAnnulationQuery The current query, for fluid interface
-     */
-    public function filterByFile1($file1 = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($file1)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $file1)) {
-                $file1 = str_replace('*', '%', $file1);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(DemandeAnnulationPeer::FILE_1, $file1, $comparison);
-    }
-
-    /**
-     * Filter the query on the file_2 column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByFile2('fooValue');   // WHERE file_2 = 'fooValue'
-     * $query->filterByFile2('%fooValue%'); // WHERE file_2 LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $file2 The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return DemandeAnnulationQuery The current query, for fluid interface
-     */
-    public function filterByFile2($file2 = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($file2)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $file2)) {
-                $file2 = str_replace('*', '%', $file2);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(DemandeAnnulationPeer::FILE_2, $file2, $comparison);
-    }
-
-    /**
-     * Filter the query on the file_3 column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByFile3('fooValue');   // WHERE file_3 = 'fooValue'
-     * $query->filterByFile3('%fooValue%'); // WHERE file_3 LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $file3 The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return DemandeAnnulationQuery The current query, for fluid interface
-     */
-    public function filterByFile3($file3 = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($file3)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $file3)) {
-                $file3 = str_replace('*', '%', $file3);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(DemandeAnnulationPeer::FILE_3, $file3, $comparison);
-    }
-
-    /**
-     * Filter the query on the file_4 column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByFile4('fooValue');   // WHERE file_4 = 'fooValue'
-     * $query->filterByFile4('%fooValue%'); // WHERE file_4 LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $file4 The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return DemandeAnnulationQuery The current query, for fluid interface
-     */
-    public function filterByFile4($file4 = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($file4)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $file4)) {
-                $file4 = str_replace('*', '%', $file4);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(DemandeAnnulationPeer::FILE_4, $file4, $comparison);
     }
 
     /**

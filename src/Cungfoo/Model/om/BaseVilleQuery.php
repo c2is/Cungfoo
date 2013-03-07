@@ -27,8 +27,6 @@ use Cungfoo\Model\VilleQuery;
  * @method VilleQuery orderById($order = Criteria::ASC) Order by the id column
  * @method VilleQuery orderByCode($order = Criteria::ASC) Order by the code column
  * @method VilleQuery orderByRegionId($order = Criteria::ASC) Order by the region_id column
- * @method VilleQuery orderByImageDetail1($order = Criteria::ASC) Order by the image_detail_1 column
- * @method VilleQuery orderByImageDetail2($order = Criteria::ASC) Order by the image_detail_2 column
  * @method VilleQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method VilleQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  * @method VilleQuery orderByActive($order = Criteria::ASC) Order by the active column
@@ -36,8 +34,6 @@ use Cungfoo\Model\VilleQuery;
  * @method VilleQuery groupById() Group by the id column
  * @method VilleQuery groupByCode() Group by the code column
  * @method VilleQuery groupByRegionId() Group by the region_id column
- * @method VilleQuery groupByImageDetail1() Group by the image_detail_1 column
- * @method VilleQuery groupByImageDetail2() Group by the image_detail_2 column
  * @method VilleQuery groupByCreatedAt() Group by the created_at column
  * @method VilleQuery groupByUpdatedAt() Group by the updated_at column
  * @method VilleQuery groupByActive() Group by the active column
@@ -63,8 +59,6 @@ use Cungfoo\Model\VilleQuery;
  *
  * @method Ville findOneByCode(string $code) Return the first Ville filtered by the code column
  * @method Ville findOneByRegionId(int $region_id) Return the first Ville filtered by the region_id column
- * @method Ville findOneByImageDetail1(string $image_detail_1) Return the first Ville filtered by the image_detail_1 column
- * @method Ville findOneByImageDetail2(string $image_detail_2) Return the first Ville filtered by the image_detail_2 column
  * @method Ville findOneByCreatedAt(string $created_at) Return the first Ville filtered by the created_at column
  * @method Ville findOneByUpdatedAt(string $updated_at) Return the first Ville filtered by the updated_at column
  * @method Ville findOneByActive(boolean $active) Return the first Ville filtered by the active column
@@ -72,8 +66,6 @@ use Cungfoo\Model\VilleQuery;
  * @method array findById(int $id) Return Ville objects filtered by the id column
  * @method array findByCode(string $code) Return Ville objects filtered by the code column
  * @method array findByRegionId(int $region_id) Return Ville objects filtered by the region_id column
- * @method array findByImageDetail1(string $image_detail_1) Return Ville objects filtered by the image_detail_1 column
- * @method array findByImageDetail2(string $image_detail_2) Return Ville objects filtered by the image_detail_2 column
  * @method array findByCreatedAt(string $created_at) Return Ville objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return Ville objects filtered by the updated_at column
  * @method array findByActive(boolean $active) Return Ville objects filtered by the active column
@@ -180,7 +172,7 @@ abstract class BaseVilleQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `code`, `region_id`, `image_detail_1`, `image_detail_2`, `created_at`, `updated_at`, `active` FROM `ville` WHERE `id` = :p0';
+        $sql = 'SELECT `id`, `code`, `region_id`, `created_at`, `updated_at`, `active` FROM `ville` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -366,64 +358,6 @@ abstract class BaseVilleQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(VillePeer::REGION_ID, $regionId, $comparison);
-    }
-
-    /**
-     * Filter the query on the image_detail_1 column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByImageDetail1('fooValue');   // WHERE image_detail_1 = 'fooValue'
-     * $query->filterByImageDetail1('%fooValue%'); // WHERE image_detail_1 LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $imageDetail1 The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return VilleQuery The current query, for fluid interface
-     */
-    public function filterByImageDetail1($imageDetail1 = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($imageDetail1)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $imageDetail1)) {
-                $imageDetail1 = str_replace('*', '%', $imageDetail1);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(VillePeer::IMAGE_DETAIL_1, $imageDetail1, $comparison);
-    }
-
-    /**
-     * Filter the query on the image_detail_2 column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByImageDetail2('fooValue');   // WHERE image_detail_2 = 'fooValue'
-     * $query->filterByImageDetail2('%fooValue%'); // WHERE image_detail_2 LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $imageDetail2 The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return VilleQuery The current query, for fluid interface
-     */
-    public function filterByImageDetail2($imageDetail2 = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($imageDetail2)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $imageDetail2)) {
-                $imageDetail2 = str_replace('*', '%', $imageDetail2);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(VillePeer::IMAGE_DETAIL_2, $imageDetail2, $comparison);
     }
 
     /**

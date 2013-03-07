@@ -85,87 +85,6 @@ class BaseBonPlanType extends AppAwareType
         );
     }
 
-    public function getImageMenuType()
-    {
-        return 'cungfoo_file';
-    }
-
-    public function getImageMenuOptions()
-    {
-        return array(
-            'required' => false,
-            'label' => 'bon_plan.image_menu',
-        );
-    }
-
-    public function getImageMenuDeletedType()
-    {
-        return 'checkbox';
-    }
-
-    public function getImageMenuDeletedOptions()
-    {
-        return array(
-            'property_path' => false,
-            'required' => false,
-            'label' => 'bon_plan.image_menu_deleted',
-        );
-    }
-
-    public function getImagePageType()
-    {
-        return 'cungfoo_file';
-    }
-
-    public function getImagePageOptions()
-    {
-        return array(
-            'required' => false,
-            'label' => 'bon_plan.image_page',
-        );
-    }
-
-    public function getImagePageDeletedType()
-    {
-        return 'checkbox';
-    }
-
-    public function getImagePageDeletedOptions()
-    {
-        return array(
-            'property_path' => false,
-            'required' => false,
-            'label' => 'bon_plan.image_page_deleted',
-        );
-    }
-
-    public function getImageListeType()
-    {
-        return 'cungfoo_file';
-    }
-
-    public function getImageListeOptions()
-    {
-        return array(
-            'required' => false,
-            'label' => 'bon_plan.image_liste',
-        );
-    }
-
-    public function getImageListeDeletedType()
-    {
-        return 'checkbox';
-    }
-
-    public function getImageListeDeletedOptions()
-    {
-        return array(
-            'property_path' => false,
-            'required' => false,
-            'label' => 'bon_plan.image_liste_deleted',
-        );
-    }
-
     public function getActiveCompteurType()
     {
         return 'checkbox';
@@ -314,6 +233,45 @@ class BaseBonPlanType extends AppAwareType
         return array(
             'required' => false,
             'label' => 'bon_plan.active',
+        );
+    }
+
+    public function getImageMenuType()
+    {
+        return 'cungfoo_file';
+    }
+
+    public function getImageMenuOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'bon_plan.image_menu',
+        );
+    }
+
+    public function getImagePageType()
+    {
+        return 'cungfoo_file';
+    }
+
+    public function getImagePageOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'bon_plan.image_page',
+        );
+    }
+
+    public function getImageListeType()
+    {
+        return 'cungfoo_file';
+    }
+
+    public function getImageListeOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'bon_plan.image_liste',
         );
     }
 
@@ -515,12 +473,6 @@ class BaseBonPlanType extends AppAwareType
         $builder->add('date_fin', $this->getDateFinType(), $this->getDateFinOptions());
         $builder->add('prix', $this->getPrixType(), $this->getPrixOptions());
         $builder->add('prix_barre', $this->getPrixBarreType(), $this->getPrixBarreOptions());
-        $builder->add('image_menu', $this->getImageMenuType(), $this->getImageMenuOptions());
-        $builder->add('image_menu_deleted', $this->getImageMenuDeletedType(), $this->getImageMenuDeletedOptions());
-        $builder->add('image_page', $this->getImagePageType(), $this->getImagePageOptions());
-        $builder->add('image_page_deleted', $this->getImagePageDeletedType(), $this->getImagePageDeletedOptions());
-        $builder->add('image_liste', $this->getImageListeType(), $this->getImageListeOptions());
-        $builder->add('image_liste_deleted', $this->getImageListeDeletedType(), $this->getImageListeDeletedOptions());
         $builder->add('active_compteur', $this->getActiveCompteurType(), $this->getActiveCompteurOptions());
         $builder->add('mise_en_avant', $this->getMiseEnAvantType(), $this->getMiseEnAvantOptions());
         $builder->add('push_home', $this->getPushHomeType(), $this->getPushHomeOptions());
@@ -531,6 +483,9 @@ class BaseBonPlanType extends AppAwareType
         $builder->add('nb_enfants', $this->getNbEnfantsType(), $this->getNbEnfantsOptions());
         $builder->add('period_categories', $this->getPeriodCategoriesType(), $this->getPeriodCategoriesOptions());
         $builder->add('active', $this->getActiveType(), $this->getActiveOptions());
+        $builder->add('image_menu', $this->getImageMenuType(), $this->getImageMenuOptions());
+        $builder->add('image_page', $this->getImagePageType(), $this->getImagePageOptions());
+        $builder->add('image_liste', $this->getImageListeType(), $this->getImageListeOptions());
         $builder->add('bon_plan_categories', $this->getBonPlanCategoriesType(), $this->getBonPlanCategoriesOptions());
         $builder->add('etablissements', $this->getEtablissementsType(), $this->getEtablissementsOptions());
         $builder->add('regions', $this->getRegionsType(), $this->getRegionsOptions());$builder->add('bon_planI18ns', 'translation_collection', array(

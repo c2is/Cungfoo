@@ -27,8 +27,6 @@ use Cungfoo\Model\RegionRef;
  * @method DepartementQuery orderById($order = Criteria::ASC) Order by the id column
  * @method DepartementQuery orderByCode($order = Criteria::ASC) Order by the code column
  * @method DepartementQuery orderByRegionRefId($order = Criteria::ASC) Order by the region_ref_id column
- * @method DepartementQuery orderByImageDetail1($order = Criteria::ASC) Order by the image_detail_1 column
- * @method DepartementQuery orderByImageDetail2($order = Criteria::ASC) Order by the image_detail_2 column
  * @method DepartementQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method DepartementQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  * @method DepartementQuery orderByActive($order = Criteria::ASC) Order by the active column
@@ -36,8 +34,6 @@ use Cungfoo\Model\RegionRef;
  * @method DepartementQuery groupById() Group by the id column
  * @method DepartementQuery groupByCode() Group by the code column
  * @method DepartementQuery groupByRegionRefId() Group by the region_ref_id column
- * @method DepartementQuery groupByImageDetail1() Group by the image_detail_1 column
- * @method DepartementQuery groupByImageDetail2() Group by the image_detail_2 column
  * @method DepartementQuery groupByCreatedAt() Group by the created_at column
  * @method DepartementQuery groupByUpdatedAt() Group by the updated_at column
  * @method DepartementQuery groupByActive() Group by the active column
@@ -63,8 +59,6 @@ use Cungfoo\Model\RegionRef;
  *
  * @method Departement findOneByCode(string $code) Return the first Departement filtered by the code column
  * @method Departement findOneByRegionRefId(int $region_ref_id) Return the first Departement filtered by the region_ref_id column
- * @method Departement findOneByImageDetail1(string $image_detail_1) Return the first Departement filtered by the image_detail_1 column
- * @method Departement findOneByImageDetail2(string $image_detail_2) Return the first Departement filtered by the image_detail_2 column
  * @method Departement findOneByCreatedAt(string $created_at) Return the first Departement filtered by the created_at column
  * @method Departement findOneByUpdatedAt(string $updated_at) Return the first Departement filtered by the updated_at column
  * @method Departement findOneByActive(boolean $active) Return the first Departement filtered by the active column
@@ -72,8 +66,6 @@ use Cungfoo\Model\RegionRef;
  * @method array findById(int $id) Return Departement objects filtered by the id column
  * @method array findByCode(string $code) Return Departement objects filtered by the code column
  * @method array findByRegionRefId(int $region_ref_id) Return Departement objects filtered by the region_ref_id column
- * @method array findByImageDetail1(string $image_detail_1) Return Departement objects filtered by the image_detail_1 column
- * @method array findByImageDetail2(string $image_detail_2) Return Departement objects filtered by the image_detail_2 column
  * @method array findByCreatedAt(string $created_at) Return Departement objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return Departement objects filtered by the updated_at column
  * @method array findByActive(boolean $active) Return Departement objects filtered by the active column
@@ -180,7 +172,7 @@ abstract class BaseDepartementQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `code`, `region_ref_id`, `image_detail_1`, `image_detail_2`, `created_at`, `updated_at`, `active` FROM `departement` WHERE `id` = :p0';
+        $sql = 'SELECT `id`, `code`, `region_ref_id`, `created_at`, `updated_at`, `active` FROM `departement` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -366,64 +358,6 @@ abstract class BaseDepartementQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(DepartementPeer::REGION_REF_ID, $regionRefId, $comparison);
-    }
-
-    /**
-     * Filter the query on the image_detail_1 column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByImageDetail1('fooValue');   // WHERE image_detail_1 = 'fooValue'
-     * $query->filterByImageDetail1('%fooValue%'); // WHERE image_detail_1 LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $imageDetail1 The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return DepartementQuery The current query, for fluid interface
-     */
-    public function filterByImageDetail1($imageDetail1 = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($imageDetail1)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $imageDetail1)) {
-                $imageDetail1 = str_replace('*', '%', $imageDetail1);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(DepartementPeer::IMAGE_DETAIL_1, $imageDetail1, $comparison);
-    }
-
-    /**
-     * Filter the query on the image_detail_2 column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByImageDetail2('fooValue');   // WHERE image_detail_2 = 'fooValue'
-     * $query->filterByImageDetail2('%fooValue%'); // WHERE image_detail_2 LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $imageDetail2 The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return DepartementQuery The current query, for fluid interface
-     */
-    public function filterByImageDetail2($imageDetail2 = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($imageDetail2)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $imageDetail2)) {
-                $imageDetail2 = str_replace('*', '%', $imageDetail2);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(DepartementPeer::IMAGE_DETAIL_2, $imageDetail2, $comparison);
     }
 
     /**

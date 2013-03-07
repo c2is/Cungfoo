@@ -39,17 +39,19 @@ class PortfolioController implements ControllerProviderInterface
 
             $paginator = $queryContextualized->paginate(0, 50);
 
-            $media = PortfolioMediaQuery::create()
-                ->filterById($id)
-                ->findOne()
+            $ids = explode(';', $id);
+
+            $medias = PortfolioMediaQuery::create()
+                ->filterById($ids, \Criteria::IN)
+                ->find()
             ;
 
             return $app['twig']->render('Crud/Portfolio/popin.twig', array(
                 'paginator' => $paginator,
-                'media' => $media,
+                'medias' => $medias,
+                'mediaIds' => $ids,
             ));
         })
-        ->assert('id', '\d+')
         ->value('id', null)
         ->bind('portfolio_popin');
 
@@ -77,6 +79,7 @@ class PortfolioController implements ControllerProviderInterface
                         'object' => $object->toArray(),
                         'html' => $app['twig']->render('Crud/Portfolio/table_line.twig', array(
                             'line' => $object,
+                            'used' => false,
                         )),
                     ));
                 }
@@ -87,6 +90,21 @@ class PortfolioController implements ControllerProviderInterface
             ));
         })
         ->bind('portfolio_edit');
+
+        $controllers->match('/popin/{id}/delete', function (Request $request, $id) use ($app)
+        {
+            $object = PortfolioMediaQuery::create()
+                ->filterById($id)
+                ->findOne()
+                ->delete()
+            ;
+
+            return json_encode(array(
+                'id' => $id,
+                'success' => true,
+            ));
+        })
+        ->bind('portfolio_delete');
 
         $controllers->post('/upload', function (Request $request) use ($app)
         {
@@ -134,6 +152,7 @@ class PortfolioController implements ControllerProviderInterface
                 $json['success'] = true;
                 $json['html'] = $app['twig']->render('Crud/Portfolio/table_line.twig', array(
                     'line' => $media,
+                    'used' => false,
                 ));
             }
 

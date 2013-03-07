@@ -64,12 +64,6 @@ abstract class BaseMultimediaTypeHebergement extends BaseObject implements Persi
     protected $type_hebergement_id;
 
     /**
-     * The value for the image_path field.
-     * @var        string
-     */
-    protected $image_path;
-
-    /**
      * The value for the created_at field.
      * @var        string
      */
@@ -172,16 +166,6 @@ abstract class BaseMultimediaTypeHebergement extends BaseObject implements Persi
     public function getTypeHebergementId()
     {
         return $this->type_hebergement_id;
-    }
-
-    /**
-     * Get the [image_path] column value.
-     *
-     * @return string
-     */
-    public function getImagePath()
-    {
-        return $this->image_path;
     }
 
     /**
@@ -321,27 +305,6 @@ abstract class BaseMultimediaTypeHebergement extends BaseObject implements Persi
     } // setTypeHebergementId()
 
     /**
-     * Set the value of [image_path] column.
-     *
-     * @param string $v new value
-     * @return MultimediaTypeHebergement The current object (for fluent API support)
-     */
-    public function setImagePath($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->image_path !== $v) {
-            $this->image_path = $v;
-            $this->modifiedColumns[] = MultimediaTypeHebergementPeer::IMAGE_PATH;
-        }
-
-
-        return $this;
-    } // setImagePath()
-
-    /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
      *
      * @param mixed $v string, integer (timestamp), or DateTime value.
@@ -454,10 +417,9 @@ abstract class BaseMultimediaTypeHebergement extends BaseObject implements Persi
 
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
             $this->type_hebergement_id = ($row[$startcol + 1] !== null) ? (int) $row[$startcol + 1] : null;
-            $this->image_path = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
-            $this->created_at = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
-            $this->updated_at = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
-            $this->active = ($row[$startcol + 5] !== null) ? (boolean) $row[$startcol + 5] : null;
+            $this->created_at = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
+            $this->updated_at = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
+            $this->active = ($row[$startcol + 4] !== null) ? (boolean) $row[$startcol + 4] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -466,7 +428,7 @@ abstract class BaseMultimediaTypeHebergement extends BaseObject implements Persi
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 6; // 6 = MultimediaTypeHebergementPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 5; // 5 = MultimediaTypeHebergementPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating MultimediaTypeHebergement object", $e);
@@ -730,9 +692,6 @@ abstract class BaseMultimediaTypeHebergement extends BaseObject implements Persi
         if ($this->isColumnModified(MultimediaTypeHebergementPeer::TYPE_HEBERGEMENT_ID)) {
             $modifiedColumns[':p' . $index++]  = '`type_hebergement_id`';
         }
-        if ($this->isColumnModified(MultimediaTypeHebergementPeer::IMAGE_PATH)) {
-            $modifiedColumns[':p' . $index++]  = '`image_path`';
-        }
         if ($this->isColumnModified(MultimediaTypeHebergementPeer::CREATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`created_at`';
         }
@@ -758,9 +717,6 @@ abstract class BaseMultimediaTypeHebergement extends BaseObject implements Persi
                         break;
                     case '`type_hebergement_id`':
                         $stmt->bindValue($identifier, $this->type_hebergement_id, PDO::PARAM_INT);
-                        break;
-                    case '`image_path`':
-                        $stmt->bindValue($identifier, $this->image_path, PDO::PARAM_STR);
                         break;
                     case '`created_at`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
@@ -932,15 +888,12 @@ abstract class BaseMultimediaTypeHebergement extends BaseObject implements Persi
                 return $this->getTypeHebergementId();
                 break;
             case 2:
-                return $this->getImagePath();
-                break;
-            case 3:
                 return $this->getCreatedAt();
                 break;
-            case 4:
+            case 3:
                 return $this->getUpdatedAt();
                 break;
-            case 5:
+            case 4:
                 return $this->getActive();
                 break;
             default:
@@ -974,10 +927,9 @@ abstract class BaseMultimediaTypeHebergement extends BaseObject implements Persi
         $result = array(
             $keys[0] => $this->getId(),
             $keys[1] => $this->getTypeHebergementId(),
-            $keys[2] => $this->getImagePath(),
-            $keys[3] => $this->getCreatedAt(),
-            $keys[4] => $this->getUpdatedAt(),
-            $keys[5] => $this->getActive(),
+            $keys[2] => $this->getCreatedAt(),
+            $keys[3] => $this->getUpdatedAt(),
+            $keys[4] => $this->getActive(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aTypeHebergement) {
@@ -1027,15 +979,12 @@ abstract class BaseMultimediaTypeHebergement extends BaseObject implements Persi
                 $this->setTypeHebergementId($value);
                 break;
             case 2:
-                $this->setImagePath($value);
-                break;
-            case 3:
                 $this->setCreatedAt($value);
                 break;
-            case 4:
+            case 3:
                 $this->setUpdatedAt($value);
                 break;
-            case 5:
+            case 4:
                 $this->setActive($value);
                 break;
         } // switch()
@@ -1064,10 +1013,9 @@ abstract class BaseMultimediaTypeHebergement extends BaseObject implements Persi
 
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
         if (array_key_exists($keys[1], $arr)) $this->setTypeHebergementId($arr[$keys[1]]);
-        if (array_key_exists($keys[2], $arr)) $this->setImagePath($arr[$keys[2]]);
-        if (array_key_exists($keys[3], $arr)) $this->setCreatedAt($arr[$keys[3]]);
-        if (array_key_exists($keys[4], $arr)) $this->setUpdatedAt($arr[$keys[4]]);
-        if (array_key_exists($keys[5], $arr)) $this->setActive($arr[$keys[5]]);
+        if (array_key_exists($keys[2], $arr)) $this->setCreatedAt($arr[$keys[2]]);
+        if (array_key_exists($keys[3], $arr)) $this->setUpdatedAt($arr[$keys[3]]);
+        if (array_key_exists($keys[4], $arr)) $this->setActive($arr[$keys[4]]);
     }
 
     /**
@@ -1081,7 +1029,6 @@ abstract class BaseMultimediaTypeHebergement extends BaseObject implements Persi
 
         if ($this->isColumnModified(MultimediaTypeHebergementPeer::ID)) $criteria->add(MultimediaTypeHebergementPeer::ID, $this->id);
         if ($this->isColumnModified(MultimediaTypeHebergementPeer::TYPE_HEBERGEMENT_ID)) $criteria->add(MultimediaTypeHebergementPeer::TYPE_HEBERGEMENT_ID, $this->type_hebergement_id);
-        if ($this->isColumnModified(MultimediaTypeHebergementPeer::IMAGE_PATH)) $criteria->add(MultimediaTypeHebergementPeer::IMAGE_PATH, $this->image_path);
         if ($this->isColumnModified(MultimediaTypeHebergementPeer::CREATED_AT)) $criteria->add(MultimediaTypeHebergementPeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(MultimediaTypeHebergementPeer::UPDATED_AT)) $criteria->add(MultimediaTypeHebergementPeer::UPDATED_AT, $this->updated_at);
         if ($this->isColumnModified(MultimediaTypeHebergementPeer::ACTIVE)) $criteria->add(MultimediaTypeHebergementPeer::ACTIVE, $this->active);
@@ -1149,7 +1096,6 @@ abstract class BaseMultimediaTypeHebergement extends BaseObject implements Persi
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
         $copyObj->setTypeHebergementId($this->getTypeHebergementId());
-        $copyObj->setImagePath($this->getImagePath());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
         $copyObj->setActive($this->getActive());
@@ -1511,7 +1457,6 @@ abstract class BaseMultimediaTypeHebergement extends BaseObject implements Persi
     {
         $this->id = null;
         $this->type_hebergement_id = null;
-        $this->image_path = null;
         $this->created_at = null;
         $this->updated_at = null;
         $this->active = null;
@@ -1909,8 +1854,6 @@ abstract class BaseMultimediaTypeHebergement extends BaseObject implements Persi
      */
     public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
     {
-        $this->saveImagePathPortfolioUsage();
-
         return $this->save($con);
     }
 
@@ -1933,36 +1876,68 @@ abstract class BaseMultimediaTypeHebergement extends BaseObject implements Persi
     /**
      * @return void
      */
-    public function saveImagePathPortfolioUsage()
+    public function getImagePath()
     {
         $peer = self::PEER;
 
-        $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+        $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
+            ->select('id')
+            ->usePortfolioUsageQuery()
+                ->filterByTableRef($peer::TABLE_NAME)
+                ->filterByColumnRef($peer::TABLE_NAME.'.image_path')
+                ->filterByElementId($this->getId())
+            ->endUse()
+            ->find()
+            ->toArray()
+        ;
+
+        return implode(';', $medias);
+    }
+
+    /**
+     * @return void
+     */
+    public function setImagePath($v)
+    {
+        $peer = self::PEER;
+
+        $values = explode(';', $v);
+
+        \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
             ->filterByColumnRef($peer::TABLE_NAME.'.image_path')
             ->filterByElementId($this->getId())
-            ->findOne()
+            ->filterByMediaId($values, \Criteria::NOT_IN)
+            ->find()
+            ->delete()
         ;
 
-        if ($this->getImagePath()) {
-            if (!$usage) {
-                $usage = new \Cungfoo\Model\PortfolioUsage();
+        if ($v) {
+            foreach ($values as $index => $value) {
+                $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+                    ->filterByTableRef($peer::TABLE_NAME)
+                    ->filterByColumnRef($peer::TABLE_NAME.'.image_path')
+                    ->filterByElementId($this->getId())
+                    ->filterByMediaId($value)
+                    ->findOne()
+                ;
+
+                if (!$usage) {
+                    $usage = new \Cungfoo\Model\PortfolioUsage();
+                    $usage
+                        ->setTableRef($peer::TABLE_NAME)
+                        ->setColumnRef($peer::TABLE_NAME.'.image_path')
+                        ->setElementId($this->getId())
+                        ->setMediaId($value)
+                    ;
+                }
+
                 $usage
-                    ->setTableRef($peer::TABLE_NAME)
-                    ->setColumnRef($peer::TABLE_NAME.'.image_path')
-                    ->setElementId($this->getId())
+                    ->setSortableRank($index)
+                    ->save()
                 ;
             }
 
-            $usage
-                ->setMediaId($this->getImagePath())
-                ->save()
-            ;
-        }
-        else {
-            if ($usage) {
-                $usage->delete();
-            }
         }
     }
 

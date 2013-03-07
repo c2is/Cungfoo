@@ -20,8 +20,6 @@ class BaseTypeHebergementCapaciteListing extends Listing
     public function configure()
     {
         $this->addColumn(new Column\TextColumn('id'));
-        $this->addColumn(new Column\TextColumn('image_menu'));
-        $this->addColumn(new Column\TextColumn('image_page'));
         $this->addColumn(new Column\TextColumn('active'));
     }
 

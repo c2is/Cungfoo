@@ -23,17 +23,13 @@ use Cungfoo\Model\MiseEnAvantQuery;
  *
  *
  * @method MiseEnAvantQuery orderById($order = Criteria::ASC) Order by the id column
- * @method MiseEnAvantQuery orderByImageFondPath($order = Criteria::ASC) Order by the image_fond_path column
  * @method MiseEnAvantQuery orderByPrix($order = Criteria::ASC) Order by the prix column
- * @method MiseEnAvantQuery orderByIllustrationPath($order = Criteria::ASC) Order by the illustration_path column
  * @method MiseEnAvantQuery orderByDateFinValidite($order = Criteria::ASC) Order by the date_fin_validite column
  * @method MiseEnAvantQuery orderBySortableRank($order = Criteria::ASC) Order by the sortable_rank column
  * @method MiseEnAvantQuery orderByActive($order = Criteria::ASC) Order by the active column
  *
  * @method MiseEnAvantQuery groupById() Group by the id column
- * @method MiseEnAvantQuery groupByImageFondPath() Group by the image_fond_path column
  * @method MiseEnAvantQuery groupByPrix() Group by the prix column
- * @method MiseEnAvantQuery groupByIllustrationPath() Group by the illustration_path column
  * @method MiseEnAvantQuery groupByDateFinValidite() Group by the date_fin_validite column
  * @method MiseEnAvantQuery groupBySortableRank() Group by the sortable_rank column
  * @method MiseEnAvantQuery groupByActive() Group by the active column
@@ -49,17 +45,13 @@ use Cungfoo\Model\MiseEnAvantQuery;
  * @method MiseEnAvant findOne(PropelPDO $con = null) Return the first MiseEnAvant matching the query
  * @method MiseEnAvant findOneOrCreate(PropelPDO $con = null) Return the first MiseEnAvant matching the query, or a new MiseEnAvant object populated from the query conditions when no match is found
  *
- * @method MiseEnAvant findOneByImageFondPath(string $image_fond_path) Return the first MiseEnAvant filtered by the image_fond_path column
  * @method MiseEnAvant findOneByPrix(string $prix) Return the first MiseEnAvant filtered by the prix column
- * @method MiseEnAvant findOneByIllustrationPath(string $illustration_path) Return the first MiseEnAvant filtered by the illustration_path column
  * @method MiseEnAvant findOneByDateFinValidite(string $date_fin_validite) Return the first MiseEnAvant filtered by the date_fin_validite column
  * @method MiseEnAvant findOneBySortableRank(int $sortable_rank) Return the first MiseEnAvant filtered by the sortable_rank column
  * @method MiseEnAvant findOneByActive(boolean $active) Return the first MiseEnAvant filtered by the active column
  *
  * @method array findById(int $id) Return MiseEnAvant objects filtered by the id column
- * @method array findByImageFondPath(string $image_fond_path) Return MiseEnAvant objects filtered by the image_fond_path column
  * @method array findByPrix(string $prix) Return MiseEnAvant objects filtered by the prix column
- * @method array findByIllustrationPath(string $illustration_path) Return MiseEnAvant objects filtered by the illustration_path column
  * @method array findByDateFinValidite(string $date_fin_validite) Return MiseEnAvant objects filtered by the date_fin_validite column
  * @method array findBySortableRank(int $sortable_rank) Return MiseEnAvant objects filtered by the sortable_rank column
  * @method array findByActive(boolean $active) Return MiseEnAvant objects filtered by the active column
@@ -166,7 +158,7 @@ abstract class BaseMiseEnAvantQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `image_fond_path`, `prix`, `illustration_path`, `date_fin_validite`, `sortable_rank`, `active` FROM `mise_en_avant` WHERE `id` = :p0';
+        $sql = 'SELECT `id`, `prix`, `date_fin_validite`, `sortable_rank`, `active` FROM `mise_en_avant` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -283,35 +275,6 @@ abstract class BaseMiseEnAvantQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query on the image_fond_path column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByImageFondPath('fooValue');   // WHERE image_fond_path = 'fooValue'
-     * $query->filterByImageFondPath('%fooValue%'); // WHERE image_fond_path LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $imageFondPath The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return MiseEnAvantQuery The current query, for fluid interface
-     */
-    public function filterByImageFondPath($imageFondPath = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($imageFondPath)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $imageFondPath)) {
-                $imageFondPath = str_replace('*', '%', $imageFondPath);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(MiseEnAvantPeer::IMAGE_FOND_PATH, $imageFondPath, $comparison);
-    }
-
-    /**
      * Filter the query on the prix column
      *
      * Example usage:
@@ -338,35 +301,6 @@ abstract class BaseMiseEnAvantQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(MiseEnAvantPeer::PRIX, $prix, $comparison);
-    }
-
-    /**
-     * Filter the query on the illustration_path column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByIllustrationPath('fooValue');   // WHERE illustration_path = 'fooValue'
-     * $query->filterByIllustrationPath('%fooValue%'); // WHERE illustration_path LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $illustrationPath The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return MiseEnAvantQuery The current query, for fluid interface
-     */
-    public function filterByIllustrationPath($illustrationPath = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($illustrationPath)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $illustrationPath)) {
-                $illustrationPath = str_replace('*', '%', $illustrationPath);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(MiseEnAvantPeer::ILLUSTRATION_PATH, $illustrationPath, $comparison);
     }
 
     /**

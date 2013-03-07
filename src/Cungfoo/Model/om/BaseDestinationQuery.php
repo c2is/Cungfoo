@@ -27,8 +27,6 @@ use Cungfoo\Model\Region;
  *
  * @method DestinationQuery orderById($order = Criteria::ASC) Order by the id column
  * @method DestinationQuery orderByCode($order = Criteria::ASC) Order by the code column
- * @method DestinationQuery orderByImageDetail1($order = Criteria::ASC) Order by the image_detail_1 column
- * @method DestinationQuery orderByImageDetail2($order = Criteria::ASC) Order by the image_detail_2 column
  * @method DestinationQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method DestinationQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  * @method DestinationQuery orderBySortableRank($order = Criteria::ASC) Order by the sortable_rank column
@@ -36,8 +34,6 @@ use Cungfoo\Model\Region;
  *
  * @method DestinationQuery groupById() Group by the id column
  * @method DestinationQuery groupByCode() Group by the code column
- * @method DestinationQuery groupByImageDetail1() Group by the image_detail_1 column
- * @method DestinationQuery groupByImageDetail2() Group by the image_detail_2 column
  * @method DestinationQuery groupByCreatedAt() Group by the created_at column
  * @method DestinationQuery groupByUpdatedAt() Group by the updated_at column
  * @method DestinationQuery groupBySortableRank() Group by the sortable_rank column
@@ -63,8 +59,6 @@ use Cungfoo\Model\Region;
  * @method Destination findOneOrCreate(PropelPDO $con = null) Return the first Destination matching the query, or a new Destination object populated from the query conditions when no match is found
  *
  * @method Destination findOneByCode(string $code) Return the first Destination filtered by the code column
- * @method Destination findOneByImageDetail1(string $image_detail_1) Return the first Destination filtered by the image_detail_1 column
- * @method Destination findOneByImageDetail2(string $image_detail_2) Return the first Destination filtered by the image_detail_2 column
  * @method Destination findOneByCreatedAt(string $created_at) Return the first Destination filtered by the created_at column
  * @method Destination findOneByUpdatedAt(string $updated_at) Return the first Destination filtered by the updated_at column
  * @method Destination findOneBySortableRank(int $sortable_rank) Return the first Destination filtered by the sortable_rank column
@@ -72,8 +66,6 @@ use Cungfoo\Model\Region;
  *
  * @method array findById(int $id) Return Destination objects filtered by the id column
  * @method array findByCode(string $code) Return Destination objects filtered by the code column
- * @method array findByImageDetail1(string $image_detail_1) Return Destination objects filtered by the image_detail_1 column
- * @method array findByImageDetail2(string $image_detail_2) Return Destination objects filtered by the image_detail_2 column
  * @method array findByCreatedAt(string $created_at) Return Destination objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return Destination objects filtered by the updated_at column
  * @method array findBySortableRank(int $sortable_rank) Return Destination objects filtered by the sortable_rank column
@@ -181,7 +173,7 @@ abstract class BaseDestinationQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `code`, `image_detail_1`, `image_detail_2`, `created_at`, `updated_at`, `sortable_rank`, `active` FROM `destination` WHERE `id` = :p0';
+        $sql = 'SELECT `id`, `code`, `created_at`, `updated_at`, `sortable_rank`, `active` FROM `destination` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -324,64 +316,6 @@ abstract class BaseDestinationQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(DestinationPeer::CODE, $code, $comparison);
-    }
-
-    /**
-     * Filter the query on the image_detail_1 column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByImageDetail1('fooValue');   // WHERE image_detail_1 = 'fooValue'
-     * $query->filterByImageDetail1('%fooValue%'); // WHERE image_detail_1 LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $imageDetail1 The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return DestinationQuery The current query, for fluid interface
-     */
-    public function filterByImageDetail1($imageDetail1 = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($imageDetail1)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $imageDetail1)) {
-                $imageDetail1 = str_replace('*', '%', $imageDetail1);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(DestinationPeer::IMAGE_DETAIL_1, $imageDetail1, $comparison);
-    }
-
-    /**
-     * Filter the query on the image_detail_2 column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByImageDetail2('fooValue');   // WHERE image_detail_2 = 'fooValue'
-     * $query->filterByImageDetail2('%fooValue%'); // WHERE image_detail_2 LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $imageDetail2 The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return DestinationQuery The current query, for fluid interface
-     */
-    public function filterByImageDetail2($imageDetail2 = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($imageDetail2)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $imageDetail2)) {
-                $imageDetail2 = str_replace('*', '%', $imageDetail2);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(DestinationPeer::IMAGE_DETAIL_2, $imageDetail2, $comparison);
     }
 
     /**

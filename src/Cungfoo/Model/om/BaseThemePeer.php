@@ -41,19 +41,16 @@ abstract class BaseThemePeer
     const TM_CLASS = 'ThemeTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 3;
+    const NUM_COLUMNS = 2;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 3;
+    const NUM_HYDRATE_COLUMNS = 2;
 
     /** the column name for the id field */
     const ID = 'theme.id';
-
-    /** the column name for the image_path field */
-    const IMAGE_PATH = 'theme.image_path';
 
     /** the column name for the active field */
     const ACTIVE = 'theme.active';
@@ -84,12 +81,12 @@ abstract class BaseThemePeer
      * e.g. ThemePeer::$fieldNames[ThemePeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'ImagePath', 'Active', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'imagePath', 'active', ),
-        BasePeer::TYPE_COLNAME => array (ThemePeer::ID, ThemePeer::IMAGE_PATH, ThemePeer::ACTIVE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'IMAGE_PATH', 'ACTIVE', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'image_path', 'active', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Active', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'active', ),
+        BasePeer::TYPE_COLNAME => array (ThemePeer::ID, ThemePeer::ACTIVE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'ACTIVE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'active', ),
+        BasePeer::TYPE_NUM => array (0, 1, )
     );
 
     /**
@@ -99,12 +96,12 @@ abstract class BaseThemePeer
      * e.g. ThemePeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'ImagePath' => 1, 'Active' => 2, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'imagePath' => 1, 'active' => 2, ),
-        BasePeer::TYPE_COLNAME => array (ThemePeer::ID => 0, ThemePeer::IMAGE_PATH => 1, ThemePeer::ACTIVE => 2, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'IMAGE_PATH' => 1, 'ACTIVE' => 2, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'image_path' => 1, 'active' => 2, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Active' => 1, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'active' => 1, ),
+        BasePeer::TYPE_COLNAME => array (ThemePeer::ID => 0, ThemePeer::ACTIVE => 1, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'ACTIVE' => 1, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'active' => 1, ),
+        BasePeer::TYPE_NUM => array (0, 1, )
     );
 
     /**
@@ -179,11 +176,9 @@ abstract class BaseThemePeer
     {
         if (null === $alias) {
             $criteria->addSelectColumn(ThemePeer::ID);
-            $criteria->addSelectColumn(ThemePeer::IMAGE_PATH);
             $criteria->addSelectColumn(ThemePeer::ACTIVE);
         } else {
             $criteria->addSelectColumn($alias . '.id');
-            $criteria->addSelectColumn($alias . '.image_path');
             $criteria->addSelectColumn($alias . '.active');
         }
     }

@@ -76,8 +76,14 @@ class {$this->getClassname()} extends AppAwareType
      */
     protected function addClassBody(&$script)
     {
+        $this->fileFields = array();
+        if ($this->getTable()->getBehavior('crudable')->getParameter('crud_type_file')) {
+            foreach (explode(',', $this->getTable()->getBehavior('crudable')->getParameter('crud_type_file')) as $columnName) {
+                $columnName = trim($columnName);
+                $this->fileFields[] = $columnName;
+            }
+        }
 
-        $this->fileFields     = array_map(array('CrudableBaseFormTypeBehaviorBuilder', 'trimArray'), explode(',', $this->getTable()->getBehavior('crudable')->getParameter('crud_type_file')));
         $this->richtextFields = array_map(array('CrudableBaseFormTypeBehaviorBuilder', 'trimArray'), explode(',', $this->getTable()->getBehavior('crudable')->getParameter('crud_type_richtext')));
 
         $this->addBuildForm($script);
@@ -155,10 +161,6 @@ class {$this->getClassname()} extends AppAwareType
     {
         if ($column->getName() == 'id') {
             return 'hidden';
-        }
-
-        if (in_array($column->getName(), $this->fileFields)) {
-            return 'cungfoo_file';
         }
 
         switch ($column->getType()) {
@@ -239,6 +241,18 @@ class {$this->getClassname()} extends AppAwareType
     protected function addBuildForm(&$script)
     {
         $tableFields = $this->getTableFields($this->getTable()->getColumns());
+
+        // add media field
+        foreach ($this->fileFields as $field) {
+            $tableFields[$field] = array(
+                'type' => 'cungfoo_file',
+                'options' => array(
+                    'required' => false,
+                    'label' => $this->getTable()->getName().'.'.$field,
+                ),
+            );
+        }
+
         $joinTableFields = $this->getJoinTableFields();
         $tableI18nFields = $this->getTable()->hasBehavior('i18n') ? $this->getTableFields($this->getTable()->getBehavior('i18n')->getI18nColumns()) : array();
 

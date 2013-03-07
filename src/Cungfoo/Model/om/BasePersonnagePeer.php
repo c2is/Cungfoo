@@ -40,13 +40,13 @@ abstract class BasePersonnagePeer
     const TM_CLASS = 'PersonnageTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 7;
+    const NUM_COLUMNS = 6;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 7;
+    const NUM_HYDRATE_COLUMNS = 6;
 
     /** the column name for the id field */
     const ID = 'personnage.id';
@@ -56,9 +56,6 @@ abstract class BasePersonnagePeer
 
     /** the column name for the age field */
     const AGE = 'personnage.age';
-
-    /** the column name for the image_path field */
-    const IMAGE_PATH = 'personnage.image_path';
 
     /** the column name for the created_at field */
     const CREATED_AT = 'personnage.created_at';
@@ -95,12 +92,12 @@ abstract class BasePersonnagePeer
      * e.g. PersonnagePeer::$fieldNames[PersonnagePeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'EtablissementId', 'Age', 'ImagePath', 'CreatedAt', 'UpdatedAt', 'Active', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'etablissementId', 'age', 'imagePath', 'createdAt', 'updatedAt', 'active', ),
-        BasePeer::TYPE_COLNAME => array (PersonnagePeer::ID, PersonnagePeer::ETABLISSEMENT_ID, PersonnagePeer::AGE, PersonnagePeer::IMAGE_PATH, PersonnagePeer::CREATED_AT, PersonnagePeer::UPDATED_AT, PersonnagePeer::ACTIVE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'ETABLISSEMENT_ID', 'AGE', 'IMAGE_PATH', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'etablissement_id', 'age', 'image_path', 'created_at', 'updated_at', 'active', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'EtablissementId', 'Age', 'CreatedAt', 'UpdatedAt', 'Active', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'etablissementId', 'age', 'createdAt', 'updatedAt', 'active', ),
+        BasePeer::TYPE_COLNAME => array (PersonnagePeer::ID, PersonnagePeer::ETABLISSEMENT_ID, PersonnagePeer::AGE, PersonnagePeer::CREATED_AT, PersonnagePeer::UPDATED_AT, PersonnagePeer::ACTIVE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'ETABLISSEMENT_ID', 'AGE', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'etablissement_id', 'age', 'created_at', 'updated_at', 'active', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
     );
 
     /**
@@ -110,12 +107,12 @@ abstract class BasePersonnagePeer
      * e.g. PersonnagePeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'EtablissementId' => 1, 'Age' => 2, 'ImagePath' => 3, 'CreatedAt' => 4, 'UpdatedAt' => 5, 'Active' => 6, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'etablissementId' => 1, 'age' => 2, 'imagePath' => 3, 'createdAt' => 4, 'updatedAt' => 5, 'active' => 6, ),
-        BasePeer::TYPE_COLNAME => array (PersonnagePeer::ID => 0, PersonnagePeer::ETABLISSEMENT_ID => 1, PersonnagePeer::AGE => 2, PersonnagePeer::IMAGE_PATH => 3, PersonnagePeer::CREATED_AT => 4, PersonnagePeer::UPDATED_AT => 5, PersonnagePeer::ACTIVE => 6, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'ETABLISSEMENT_ID' => 1, 'AGE' => 2, 'IMAGE_PATH' => 3, 'CREATED_AT' => 4, 'UPDATED_AT' => 5, 'ACTIVE' => 6, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'etablissement_id' => 1, 'age' => 2, 'image_path' => 3, 'created_at' => 4, 'updated_at' => 5, 'active' => 6, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'EtablissementId' => 1, 'Age' => 2, 'CreatedAt' => 3, 'UpdatedAt' => 4, 'Active' => 5, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'etablissementId' => 1, 'age' => 2, 'createdAt' => 3, 'updatedAt' => 4, 'active' => 5, ),
+        BasePeer::TYPE_COLNAME => array (PersonnagePeer::ID => 0, PersonnagePeer::ETABLISSEMENT_ID => 1, PersonnagePeer::AGE => 2, PersonnagePeer::CREATED_AT => 3, PersonnagePeer::UPDATED_AT => 4, PersonnagePeer::ACTIVE => 5, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'ETABLISSEMENT_ID' => 1, 'AGE' => 2, 'CREATED_AT' => 3, 'UPDATED_AT' => 4, 'ACTIVE' => 5, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'etablissement_id' => 1, 'age' => 2, 'created_at' => 3, 'updated_at' => 4, 'active' => 5, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
     );
 
     /**
@@ -192,7 +189,6 @@ abstract class BasePersonnagePeer
             $criteria->addSelectColumn(PersonnagePeer::ID);
             $criteria->addSelectColumn(PersonnagePeer::ETABLISSEMENT_ID);
             $criteria->addSelectColumn(PersonnagePeer::AGE);
-            $criteria->addSelectColumn(PersonnagePeer::IMAGE_PATH);
             $criteria->addSelectColumn(PersonnagePeer::CREATED_AT);
             $criteria->addSelectColumn(PersonnagePeer::UPDATED_AT);
             $criteria->addSelectColumn(PersonnagePeer::ACTIVE);
@@ -200,7 +196,6 @@ abstract class BasePersonnagePeer
             $criteria->addSelectColumn($alias . '.id');
             $criteria->addSelectColumn($alias . '.etablissement_id');
             $criteria->addSelectColumn($alias . '.age');
-            $criteria->addSelectColumn($alias . '.image_path');
             $criteria->addSelectColumn($alias . '.created_at');
             $criteria->addSelectColumn($alias . '.updated_at');
             $criteria->addSelectColumn($alias . '.active');

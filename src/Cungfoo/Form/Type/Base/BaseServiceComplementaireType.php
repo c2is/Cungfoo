@@ -47,60 +47,6 @@ class BaseServiceComplementaireType extends AppAwareType
         );
     }
 
-    public function getImagePathType()
-    {
-        return 'cungfoo_file';
-    }
-
-    public function getImagePathOptions()
-    {
-        return array(
-            'required' => false,
-            'label' => 'service_complementaire.image_path',
-        );
-    }
-
-    public function getImagePathDeletedType()
-    {
-        return 'checkbox';
-    }
-
-    public function getImagePathDeletedOptions()
-    {
-        return array(
-            'property_path' => false,
-            'required' => false,
-            'label' => 'service_complementaire.image_path_deleted',
-        );
-    }
-
-    public function getVignetteType()
-    {
-        return 'cungfoo_file';
-    }
-
-    public function getVignetteOptions()
-    {
-        return array(
-            'required' => false,
-            'label' => 'service_complementaire.vignette',
-        );
-    }
-
-    public function getVignetteDeletedType()
-    {
-        return 'checkbox';
-    }
-
-    public function getVignetteDeletedOptions()
-    {
-        return array(
-            'property_path' => false,
-            'required' => false,
-            'label' => 'service_complementaire.vignette_deleted',
-        );
-    }
-
     public function getCreatedAtType()
     {
         return 'datetime';
@@ -139,6 +85,32 @@ class BaseServiceComplementaireType extends AppAwareType
         return array(
             'required' => false,
             'label' => 'service_complementaire.active',
+        );
+    }
+
+    public function getImagePathType()
+    {
+        return 'cungfoo_file';
+    }
+
+    public function getImagePathOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'service_complementaire.image_path',
+        );
+    }
+
+    public function getVignetteType()
+    {
+        return 'cungfoo_file';
+    }
+
+    public function getVignetteOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'service_complementaire.vignette',
         );
     }
 
@@ -286,13 +258,11 @@ class BaseServiceComplementaireType extends AppAwareType
     {
         $builder->add('id', $this->getIdType(), $this->getIdOptions());
         $builder->add('code', $this->getCodeType(), $this->getCodeOptions());
-        $builder->add('image_path', $this->getImagePathType(), $this->getImagePathOptions());
-        $builder->add('image_path_deleted', $this->getImagePathDeletedType(), $this->getImagePathDeletedOptions());
-        $builder->add('vignette', $this->getVignetteType(), $this->getVignetteOptions());
-        $builder->add('vignette_deleted', $this->getVignetteDeletedType(), $this->getVignetteDeletedOptions());
         $builder->add('created_at', $this->getCreatedAtType(), $this->getCreatedAtOptions());
         $builder->add('updated_at', $this->getUpdatedAtType(), $this->getUpdatedAtOptions());
         $builder->add('active', $this->getActiveType(), $this->getActiveOptions());
+        $builder->add('image_path', $this->getImagePathType(), $this->getImagePathOptions());
+        $builder->add('vignette', $this->getVignetteType(), $this->getVignetteOptions());
         $builder->add('etablissements', $this->getEtablissementsType(), $this->getEtablissementsOptions());
         $builder->add('themes', $this->getThemesType(), $this->getThemesOptions());$builder->add('service_complementaireI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\ServiceComplementaireI18n',

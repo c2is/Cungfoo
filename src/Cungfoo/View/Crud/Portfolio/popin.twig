@@ -1,30 +1,32 @@
-<div id="portfolioPopin" class="modal">
+<div class="modal portfolio-popin">
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
         <ul class="nav nav-tabs">
-            {% if media %}
-            <li class="active"><a href="#media" data-toggle="tab">Media</a></li>
-            {% endif %}
-            <li{% if media == null %} class="active"{% endif %}><a href="#portfolio" data-toggle="tab">Portfolio</a></li>
+            <li{% if medias.count > 0 %} class="active"{% endif %}><a href="#media" data-toggle="tab">Media</a></li>
+            <li{% if medias.count == 0 %} class="active"{% endif %}><a href="#portfolio" data-toggle="tab">Portfolio</a></li>
             <li><a href="#upload" data-toggle="tab">Choose file</a></li>
         </ul>
     </div>
     <div class="modal-body">
         <div class="tab-content">
-            {% if media %}
-            <div class="tab-pane active" id="media">
+            <div class="tab-pane {% if medias.count > 0 %} active{% endif %}" id="media">
                 <table id="list" class="table table-striped ">
                     <tbody>
-                        {% include 'Crud/Portfolio/table_line.twig' with {'line': media} %}
+                        {% for media in medias %}
+                        {% include 'Crud/Portfolio/table_line.twig' with {'line': media, 'used': true} %}
+                        {% endfor %}
                     </tbody>
                 </table>
             </div>
-            {% endif %}
-            <div class="tab-pane{% if media == null %} active{% endif %}" id="portfolio">
+            <div class="tab-pane{% if medias.count == 0 %} active{% endif %}" id="portfolio">
                 <table id="list" class="table table-striped ">
                     <tbody>
                     {% for line in paginator %}
-                    {% include 'Crud/Portfolio/table_line.twig' with {'line': line} %}
+                    {% set used = false %}
+                    {% if line.id in mediaIds %}
+                    {% set used = true %}
+                    {% endif %}
+                    {% include 'Crud/Portfolio/table_line.twig' with {'line': line, 'used': used} %}
                     {% endfor %}
                     </tbody>
                 </table>
@@ -39,6 +41,6 @@
         </div>
     </div>
     <div class="modal-footer">
-        Portfolio baby
+        <a class="portfolio-validate btn" href="#">Valider</a>
     </div>
 </div>

@@ -67,8 +67,6 @@
         <column name="ouverture_reception" type="longvarchar" />
         <column name="ouverture_camping" type="longvarchar" />
         <column name="arrivees_departs" type="longvarchar" />
-        <column name="plan_path" type="varchar" />
-        <column name="vignette" type="varchar" />
         <column name="related_1" type="integer" />
         <column name="related_2" type="integer" />
 
@@ -102,7 +100,7 @@
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/etablissement" />
             <parameter name="crud_search" value="name, title" />
-            <parameter name="crud_type_file" value="plan_path, vignette" />
+            <parameter name="crud_type_file" value="plan, vignette, slider" />
             <parameter name="crud_type_richtext" value="description" />
         </behavior>
     </table>
@@ -274,9 +272,7 @@
         <column name="surface" type="varchar" />
         <column name="type_terrasse" type="varchar" />
         <column name="description" type="longvarchar" />
-        <column name="image_hebergement_path" type="varchar" />
         <column name="composition" type="longvarchar" />
-        <column name="image_composition_path" type="varchar" />
         <column name="presentation" type="longvarchar" />
         <column name="capacite_hebergement" type="longvarchar" />
         <column name="dimensions" type="longvarchar" />
@@ -315,8 +311,6 @@
         <column name="slug" type="varchar" />
         <column name="accroche" type="varchar" />
         <column name="description" type="longvarchar" />
-        <column name="image_menu" type="varchar" />
-        <column name="image_page" type="varchar" />
         <behavior name="timestampable" />
         <behavior name="active" />
         <behavior name="sortable" />
@@ -340,8 +334,6 @@
         <column name="accroche" type="varchar" />
         <column name="minimum_price" type="varchar" />
         <column name="description" type="longvarchar" />
-        <column name="image_menu" type="varchar" />
-        <column name="image_page" type="varchar" />
         <behavior name="timestampable" />
         <behavior name="active" />
         <behavior name="sortable" />
@@ -365,8 +357,6 @@
         <column name="introduction" type="varchar" />
         <column name="description" type="longvarchar" />
         <column name="region_id" type="integer" />
-        <column name="image_detail_1" type="varchar" />
-        <column name="image_detail_2" type="varchar" />
         <behavior name="timestampable" />
         <behavior name="active" />
 
@@ -392,14 +382,9 @@
         <column name="name" type="varchar" required="true" />
         <column name="introduction" type="varchar" />
         <column name="description" type="longvarchar" />
-        <column name="image_path" type="varchar" />
-        <column name="image_encart_path" type="varchar" />
-        <column name="image_encart_petite_path" type="varchar" />
         <column name="pays_id" type="integer" />
         <column name="destination_id" type="integer" />
         <column name="mea_home" type="boolean" />
-        <column name="image_detail_1" type="varchar" />
-        <column name="image_detail_2" type="varchar" />
         <behavior name="timestampable" />
         <behavior name="active" />
 
@@ -430,8 +415,6 @@
         <column name="name" type="varchar" required="true" />
         <column name="introduction" type="varchar" />
         <column name="description" type="longvarchar" />
-        <column name="image_detail_1" type="varchar" />
-        <column name="image_detail_2" type="varchar" />
         <behavior name="timestampable" />
         <behavior name="active" />
 
@@ -458,8 +441,6 @@
         <column name="name" type="varchar" required="true" />
         <column name="introduction" type="varchar" />
         <column name="description" type="longvarchar" />
-        <column name="image_detail_1" type="varchar" />
-        <column name="image_detail_2" type="varchar" />
         <behavior name="timestampable" />
         <behavior name="active" />
 
@@ -485,8 +466,6 @@
         <column name="name" type="varchar" required="true" />
         <column name="introduction" type="varchar" />
         <column name="description" type="longvarchar" />
-        <column name="image_detail_1" type="varchar" />
-        <column name="image_detail_2" type="varchar" />
         <behavior name="timestampable" />
         <behavior name="active" />
 
@@ -508,8 +487,6 @@
         <column name="name" type="varchar" required="true" />
         <column name="introduction" type="varchar" />
         <column name="description" type="longvarchar" />
-        <column name="image_detail_1" type="varchar" />
-        <column name="image_detail_2" type="varchar" />
 
         <behavior name="timestampable" />
         <behavior name="sortable" />
@@ -532,8 +509,6 @@
         <column name="name" type="varchar" required="true" />
         <column name="description" type="varchar" />
         <column name="keywords" type="varchar" />
-        <column name="image_path" type="varchar" />
-        <column name="vignette" type="varchar" />
         <behavior name="timestampable" />
         <behavior name="active" />
 
@@ -590,8 +565,6 @@
         <column name="name" type="varchar" required="true" />
         <column name="description" type="varchar" />
         <column name="keywords" type="varchar" />
-        <column name="image_path" type="varchar" />
-        <column name="vignette" type="varchar" />
         <behavior name="timestampable" />
         <behavior name="active" />
 
@@ -612,7 +585,6 @@
         <column name="name" type="varchar" required="true" />
         <column name="description" type="varchar" />
         <column name="keywords" type="varchar" />
-        <column name="image_path" type="varchar" />
         <behavior name="timestampable" />
         <behavior name="active" />
 
@@ -633,8 +605,6 @@
         <column name="name" type="varchar" required="true" />
         <column name="description" type="varchar" />
         <column name="keywords" type="varchar" />
-        <column name="image_path" type="varchar" />
-        <column name="vignette" type="varchar" />
         <behavior name="timestampable" />
         <behavior name="active" />
 
@@ -724,7 +694,6 @@
         <column name="etablissement_id" type="integer" />
         <column name="prenom" type="varchar" required="true" />
         <column name="age" type="varchar" required="true" />
-        <column name="image_path" type="varchar" />
         <behavior name="timestampable" />
         <behavior name="active" />
 
@@ -747,7 +716,6 @@
         <column name="personnage_id" type="integer" />
         <column name="name" type="varchar" required="true" />
         <column name="description" type="longvarchar" required="true" />
-        <column name="image_path" type="varchar" />
         <behavior name="timestampable" />
         <behavior name="active" />
 
@@ -770,7 +738,6 @@
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="type_hebergement_id" type="integer" />
         <column name="titre" type="varchar" required="true" />
-        <column name="image_path" type="varchar" />
         <behavior name="timestampable" />
         <behavior name="active" />
 
@@ -786,41 +753,6 @@
             <parameter name="crud_prefix" value="/multimedias/type-hebergement" />
             <parameter name="crud_type_file" value="image_path" />
         </behavior>
-    </table>
-
-    <table name="multimedia_etablissement">
-        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
-        <column name="etablissement_id" type="integer" />
-        <column name="titre" type="varchar" required="true" />
-        <column name="image_path" type="varchar" />
-        <behavior name="timestampable" />
-        <behavior name="active" />
-
-        <foreign-key foreignTable="etablissement" onDelete="CASCADE">
-            <reference local="etablissement_id" foreign="id"/>
-        </foreign-key>
-
-        <behavior name="i18n">
-            <parameter name="i18n_columns" value="titre" />
-        </behavior>
-
-        <behavior name="crudable">
-            <parameter name="crud_prefix" value="/multimedias/etablissement" />
-            <parameter name="crud_type_file" value="image_path" />
-        </behavior>
-    </table>
-
-    <table name="multimedia_etablissement_tag" isCrossRef="true">
-        <column name="multimedia_etablissement_id" type="integer" primaryKey="true"/>
-        <column name="tag_id" type="integer" primaryKey="true"/>
-
-        <foreign-key foreignTable="multimedia_etablissement" onDelete="CASCADE">
-            <reference local="multimedia_etablissement_id" foreign="id"/>
-        </foreign-key>
-
-        <foreign-key foreignTable="tag" onDelete="CASCADE">
-            <reference local="tag_id" foreign="id"/>
-        </foreign-key>
     </table>
 
     <table name="tag">
@@ -911,13 +843,11 @@
 
     <table name="mise_en_avant">
         <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true"/>
-        <column name="image_fond_path" type="varchar"/>
         <column name="titre" type="varchar"/>
         <column name="accroche" type="varchar"/>
         <column name="lien" type="varchar"/>
         <column name="titre_lien" type="varchar"/>
         <column name="prix" type="varchar"/>
-        <column name="illustration_path" type="varchar"/>
         <column name="date_fin_validite" type="date"/>
         <behavior name="sortable"/>
         <behavior name="active" />
@@ -938,7 +868,6 @@
         <column name="description" type="varchar"/>
         <column name="prenom" type="varchar"/>
         <column name="age" type="varchar"/>
-        <column name="image_path" type="varchar"/>
 
         <behavior name="active" />
 
@@ -959,7 +888,6 @@
         <column name="prix" type="varchar"/>
         <column name="home" type="boolean"/>
         <column name="lien" type="varchar"/>
-        <column name="image_path" type="varchar"/>
 
         <behavior name="active" />
 
@@ -979,7 +907,6 @@
         <column name="slug" type="varchar"/>
         <column name="introduction" type="varchar"/>
         <column name="description" type="longvarchar"/>
-        <column name="image_path" type="varchar"/>
 
         <behavior name="active" />
 
@@ -1078,9 +1005,6 @@
         <column name="prix_barre" type="integer" />
         <column name="indice" type="varchar" />
         <column name="indice_prix" type="varchar" />
-        <column name="image_menu" type="varchar" />
-        <column name="image_page" type="varchar" />
-        <column name="image_liste" type="varchar" />
         <column name="active_compteur" type="boolean"/>
         <column name="mise_en_avant" type="boolean"/>
         <column name="push_home" type="boolean"/>
@@ -1165,10 +1089,6 @@
         <column name="sinistre_suite" type="enum" valueSet="demande_annulation.sinistre_suite.maladie, demande_annulation.sinistre_suite.accident, demande_annulation.sinistre_suite.autre" required="true"/>
         <column name="sinistre_date" type="varchar" required="true"/>
         <column name="sinistre_resume" type="longvarchar" required="true"/>
-        <column name="file_1" type="varchar"/>
-        <column name="file_2" type="varchar"/>
-        <column name="file_3" type="varchar"/>
-        <column name="file_4" type="varchar"/>
         <behavior name="timestampable" />
         <behavior name="active" />
 
@@ -1230,6 +1150,7 @@
         <column name="table_ref" type="varchar" required="true"/>
         <column name="column_ref" type="varchar" required="true"/>
         <column name="element_id" type="integer" required="true"/>
+        <behavior name="sortable" />
         <behavior name="timestampable"/>
         <behavior name="active"/>
 

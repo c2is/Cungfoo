@@ -47,6 +47,7 @@ class PortfolioUsageTableMap extends TableMap
         $this->addColumn('table_ref', 'TableRef', 'VARCHAR', true, 255, null);
         $this->addColumn('column_ref', 'ColumnRef', 'VARCHAR', true, 255, null);
         $this->addColumn('element_id', 'ElementId', 'INTEGER', true, null, null);
+        $this->addColumn('sortable_rank', 'SortableRank', 'INTEGER', false, null, null);
         $this->addColumn('created_at', 'CreatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('updated_at', 'UpdatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('active', 'Active', 'BOOLEAN', false, 1, false);
@@ -70,6 +71,11 @@ class PortfolioUsageTableMap extends TableMap
     public function getBehaviors()
     {
         return array(
+            'sortable' =>  array (
+  'rank_column' => 'sortable_rank',
+  'use_scope' => 'false',
+  'scope_column' => 'sortable_scope',
+),
             'timestampable' =>  array (
   'create_column' => 'created_at',
   'update_column' => 'updated_at',

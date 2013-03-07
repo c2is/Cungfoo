@@ -12,6 +12,7 @@ use \PropelPDO;
 use Cungfoo\Model\PortfolioMediaPeer;
 use Cungfoo\Model\PortfolioUsage;
 use Cungfoo\Model\PortfolioUsagePeer;
+use Cungfoo\Model\PortfolioUsageQuery;
 use Cungfoo\Model\map\PortfolioUsageTableMap;
 
 /**
@@ -37,13 +38,13 @@ abstract class BasePortfolioUsagePeer
     const TM_CLASS = 'PortfolioUsageTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 8;
+    const NUM_COLUMNS = 9;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 8;
+    const NUM_HYDRATE_COLUMNS = 9;
 
     /** the column name for the id field */
     const ID = 'portfolio_usage.id';
@@ -59,6 +60,9 @@ abstract class BasePortfolioUsagePeer
 
     /** the column name for the element_id field */
     const ELEMENT_ID = 'portfolio_usage.element_id';
+
+    /** the column name for the sortable_rank field */
+    const SORTABLE_RANK = 'portfolio_usage.sortable_rank';
 
     /** the column name for the created_at field */
     const CREATED_AT = 'portfolio_usage.created_at';
@@ -81,6 +85,13 @@ abstract class BasePortfolioUsagePeer
     public static $instances = array();
 
 
+    // sortable behavior
+
+    /**
+     * rank column
+     */
+    const RANK_COL = 'portfolio_usage.sortable_rank';
+
     /**
      * holds an array of fieldnames
      *
@@ -88,12 +99,12 @@ abstract class BasePortfolioUsagePeer
      * e.g. PortfolioUsagePeer::$fieldNames[PortfolioUsagePeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'MediaId', 'TableRef', 'ColumnRef', 'ElementId', 'CreatedAt', 'UpdatedAt', 'Active', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'mediaId', 'tableRef', 'columnRef', 'elementId', 'createdAt', 'updatedAt', 'active', ),
-        BasePeer::TYPE_COLNAME => array (PortfolioUsagePeer::ID, PortfolioUsagePeer::MEDIA_ID, PortfolioUsagePeer::TABLE_REF, PortfolioUsagePeer::COLUMN_REF, PortfolioUsagePeer::ELEMENT_ID, PortfolioUsagePeer::CREATED_AT, PortfolioUsagePeer::UPDATED_AT, PortfolioUsagePeer::ACTIVE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'MEDIA_ID', 'TABLE_REF', 'COLUMN_REF', 'ELEMENT_ID', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'media_id', 'table_ref', 'column_ref', 'element_id', 'created_at', 'updated_at', 'active', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'MediaId', 'TableRef', 'ColumnRef', 'ElementId', 'SortableRank', 'CreatedAt', 'UpdatedAt', 'Active', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'mediaId', 'tableRef', 'columnRef', 'elementId', 'sortableRank', 'createdAt', 'updatedAt', 'active', ),
+        BasePeer::TYPE_COLNAME => array (PortfolioUsagePeer::ID, PortfolioUsagePeer::MEDIA_ID, PortfolioUsagePeer::TABLE_REF, PortfolioUsagePeer::COLUMN_REF, PortfolioUsagePeer::ELEMENT_ID, PortfolioUsagePeer::SORTABLE_RANK, PortfolioUsagePeer::CREATED_AT, PortfolioUsagePeer::UPDATED_AT, PortfolioUsagePeer::ACTIVE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'MEDIA_ID', 'TABLE_REF', 'COLUMN_REF', 'ELEMENT_ID', 'SORTABLE_RANK', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'media_id', 'table_ref', 'column_ref', 'element_id', 'sortable_rank', 'created_at', 'updated_at', 'active', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, )
     );
 
     /**
@@ -103,12 +114,12 @@ abstract class BasePortfolioUsagePeer
      * e.g. PortfolioUsagePeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'MediaId' => 1, 'TableRef' => 2, 'ColumnRef' => 3, 'ElementId' => 4, 'CreatedAt' => 5, 'UpdatedAt' => 6, 'Active' => 7, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'mediaId' => 1, 'tableRef' => 2, 'columnRef' => 3, 'elementId' => 4, 'createdAt' => 5, 'updatedAt' => 6, 'active' => 7, ),
-        BasePeer::TYPE_COLNAME => array (PortfolioUsagePeer::ID => 0, PortfolioUsagePeer::MEDIA_ID => 1, PortfolioUsagePeer::TABLE_REF => 2, PortfolioUsagePeer::COLUMN_REF => 3, PortfolioUsagePeer::ELEMENT_ID => 4, PortfolioUsagePeer::CREATED_AT => 5, PortfolioUsagePeer::UPDATED_AT => 6, PortfolioUsagePeer::ACTIVE => 7, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'MEDIA_ID' => 1, 'TABLE_REF' => 2, 'COLUMN_REF' => 3, 'ELEMENT_ID' => 4, 'CREATED_AT' => 5, 'UPDATED_AT' => 6, 'ACTIVE' => 7, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'media_id' => 1, 'table_ref' => 2, 'column_ref' => 3, 'element_id' => 4, 'created_at' => 5, 'updated_at' => 6, 'active' => 7, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'MediaId' => 1, 'TableRef' => 2, 'ColumnRef' => 3, 'ElementId' => 4, 'SortableRank' => 5, 'CreatedAt' => 6, 'UpdatedAt' => 7, 'Active' => 8, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'mediaId' => 1, 'tableRef' => 2, 'columnRef' => 3, 'elementId' => 4, 'sortableRank' => 5, 'createdAt' => 6, 'updatedAt' => 7, 'active' => 8, ),
+        BasePeer::TYPE_COLNAME => array (PortfolioUsagePeer::ID => 0, PortfolioUsagePeer::MEDIA_ID => 1, PortfolioUsagePeer::TABLE_REF => 2, PortfolioUsagePeer::COLUMN_REF => 3, PortfolioUsagePeer::ELEMENT_ID => 4, PortfolioUsagePeer::SORTABLE_RANK => 5, PortfolioUsagePeer::CREATED_AT => 6, PortfolioUsagePeer::UPDATED_AT => 7, PortfolioUsagePeer::ACTIVE => 8, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'MEDIA_ID' => 1, 'TABLE_REF' => 2, 'COLUMN_REF' => 3, 'ELEMENT_ID' => 4, 'SORTABLE_RANK' => 5, 'CREATED_AT' => 6, 'UPDATED_AT' => 7, 'ACTIVE' => 8, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'media_id' => 1, 'table_ref' => 2, 'column_ref' => 3, 'element_id' => 4, 'sortable_rank' => 5, 'created_at' => 6, 'updated_at' => 7, 'active' => 8, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, )
     );
 
     /**
@@ -187,6 +198,7 @@ abstract class BasePortfolioUsagePeer
             $criteria->addSelectColumn(PortfolioUsagePeer::TABLE_REF);
             $criteria->addSelectColumn(PortfolioUsagePeer::COLUMN_REF);
             $criteria->addSelectColumn(PortfolioUsagePeer::ELEMENT_ID);
+            $criteria->addSelectColumn(PortfolioUsagePeer::SORTABLE_RANK);
             $criteria->addSelectColumn(PortfolioUsagePeer::CREATED_AT);
             $criteria->addSelectColumn(PortfolioUsagePeer::UPDATED_AT);
             $criteria->addSelectColumn(PortfolioUsagePeer::ACTIVE);
@@ -196,6 +208,7 @@ abstract class BasePortfolioUsagePeer
             $criteria->addSelectColumn($alias . '.table_ref');
             $criteria->addSelectColumn($alias . '.column_ref');
             $criteria->addSelectColumn($alias . '.element_id');
+            $criteria->addSelectColumn($alias . '.sortable_rank');
             $criteria->addSelectColumn($alias . '.created_at');
             $criteria->addSelectColumn($alias . '.updated_at');
             $criteria->addSelectColumn($alias . '.active');
@@ -1027,6 +1040,146 @@ abstract class BasePortfolioUsagePeer
         }
 
         return $objs;
+    }
+
+    // sortable behavior
+
+    /**
+     * Get the highest rank
+     *
+     * @param     PropelPDO optional connection
+     *
+     * @return    integer highest position
+     */
+    public static function getMaxRank(PropelPDO $con = null)
+    {
+        if ($con === null) {
+            $con = Propel::getConnection(PortfolioUsagePeer::DATABASE_NAME);
+        }
+        // shift the objects with a position lower than the one of object
+        $c = new Criteria();
+        $c->addSelectColumn('MAX(' . PortfolioUsagePeer::RANK_COL . ')');
+        $stmt = PortfolioUsagePeer::doSelectStmt($c, $con);
+
+        return $stmt->fetchColumn();
+    }
+
+    /**
+     * Get an item from the list based on its rank
+     *
+     * @param     integer   $rank rank
+     * @param     PropelPDO $con optional connection
+     *
+     * @return PortfolioUsage
+     */
+    public static function retrieveByRank($rank, PropelPDO $con = null)
+    {
+        if ($con === null) {
+            $con = Propel::getConnection(PortfolioUsagePeer::DATABASE_NAME);
+        }
+
+        $c = new Criteria;
+        $c->add(PortfolioUsagePeer::RANK_COL, $rank);
+
+        return PortfolioUsagePeer::doSelectOne($c, $con);
+    }
+
+    /**
+     * Reorder a set of sortable objects based on a list of id/position
+     * Beware that there is no check made on the positions passed
+     * So incoherent positions will result in an incoherent list
+     *
+     * @param     array     $order id => rank pairs
+     * @param     PropelPDO $con   optional connection
+     *
+     * @return    boolean true if the reordering took place, false if a database problem prevented it
+     */
+    public static function reorder(array $order, PropelPDO $con = null)
+    {
+        if ($con === null) {
+            $con = Propel::getConnection(PortfolioUsagePeer::DATABASE_NAME);
+        }
+
+        $con->beginTransaction();
+        try {
+            $ids = array_keys($order);
+            $objects = PortfolioUsagePeer::retrieveByPKs($ids);
+            foreach ($objects as $object) {
+                $pk = $object->getPrimaryKey();
+                if ($object->getSortableRank() != $order[$pk]) {
+                    $object->setSortableRank($order[$pk]);
+                    $object->save($con);
+                }
+            }
+            $con->commit();
+
+            return true;
+        } catch (PropelException $e) {
+            $con->rollback();
+            throw $e;
+        }
+    }
+
+    /**
+     * Return an array of sortable objects ordered by position
+     *
+     * @param     Criteria  $criteria  optional criteria object
+     * @param     string    $order     sorting order, to be chosen between Criteria::ASC (default) and Criteria::DESC
+     * @param     PropelPDO $con       optional connection
+     *
+     * @return    array list of sortable objects
+     */
+    public static function doSelectOrderByRank(Criteria $criteria = null, $order = Criteria::ASC, PropelPDO $con = null)
+    {
+        if ($con === null) {
+            $con = Propel::getConnection(PortfolioUsagePeer::DATABASE_NAME);
+        }
+
+        if ($criteria === null) {
+            $criteria = new Criteria();
+        } elseif ($criteria instanceof Criteria) {
+            $criteria = clone $criteria;
+        }
+
+        $criteria->clearOrderByColumns();
+
+        if ($order == Criteria::ASC) {
+            $criteria->addAscendingOrderByColumn(PortfolioUsagePeer::RANK_COL);
+        } else {
+            $criteria->addDescendingOrderByColumn(PortfolioUsagePeer::RANK_COL);
+        }
+
+        return PortfolioUsagePeer::doSelect($criteria, $con);
+    }
+
+    /**
+     * Adds $delta to all Rank values that are >= $first and <= $last.
+     * '$delta' can also be negative.
+     *
+     * @param      int $delta Value to be shifted by, can be negative
+     * @param      int $first First node to be shifted
+     * @param      int $last  Last node to be shifted
+     * @param      PropelPDO $con Connection to use.
+     */
+    public static function shiftRank($delta, $first = null, $last = null, PropelPDO $con = null)
+    {
+        if ($con === null) {
+            $con = Propel::getConnection(PortfolioUsagePeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+        }
+
+        $whereCriteria = PortfolioUsageQuery::create();
+        if (null !== $first) {
+            $whereCriteria->add(PortfolioUsagePeer::RANK_COL, $first, Criteria::GREATER_EQUAL);
+        }
+        if (null !== $last) {
+            $whereCriteria->addAnd(PortfolioUsagePeer::RANK_COL, $last, Criteria::LESS_EQUAL);
+        }
+
+        $valuesCriteria = new Criteria(PortfolioUsagePeer::DATABASE_NAME);
+        $valuesCriteria->add(PortfolioUsagePeer::RANK_COL, array('raw' => PortfolioUsagePeer::RANK_COL . ' + ?', 'value' => $delta), Criteria::CUSTOM_EQUAL);
+
+        BasePeer::doUpdate($whereCriteria, $valuesCriteria, $con);
+        PortfolioUsagePeer::clearInstancePool();
     }
 
 } // BasePortfolioUsagePeer

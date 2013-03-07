@@ -33,28 +33,18 @@ use Cungfoo\Model\Ville;
  *
  * @method RegionQuery orderById($order = Criteria::ASC) Order by the id column
  * @method RegionQuery orderByCode($order = Criteria::ASC) Order by the code column
- * @method RegionQuery orderByImagePath($order = Criteria::ASC) Order by the image_path column
- * @method RegionQuery orderByImageEncartPath($order = Criteria::ASC) Order by the image_encart_path column
- * @method RegionQuery orderByImageEncartPetitePath($order = Criteria::ASC) Order by the image_encart_petite_path column
  * @method RegionQuery orderByPaysId($order = Criteria::ASC) Order by the pays_id column
  * @method RegionQuery orderByDestinationId($order = Criteria::ASC) Order by the destination_id column
  * @method RegionQuery orderByMeaHome($order = Criteria::ASC) Order by the mea_home column
- * @method RegionQuery orderByImageDetail1($order = Criteria::ASC) Order by the image_detail_1 column
- * @method RegionQuery orderByImageDetail2($order = Criteria::ASC) Order by the image_detail_2 column
  * @method RegionQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method RegionQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  * @method RegionQuery orderByActive($order = Criteria::ASC) Order by the active column
  *
  * @method RegionQuery groupById() Group by the id column
  * @method RegionQuery groupByCode() Group by the code column
- * @method RegionQuery groupByImagePath() Group by the image_path column
- * @method RegionQuery groupByImageEncartPath() Group by the image_encart_path column
- * @method RegionQuery groupByImageEncartPetitePath() Group by the image_encart_petite_path column
  * @method RegionQuery groupByPaysId() Group by the pays_id column
  * @method RegionQuery groupByDestinationId() Group by the destination_id column
  * @method RegionQuery groupByMeaHome() Group by the mea_home column
- * @method RegionQuery groupByImageDetail1() Group by the image_detail_1 column
- * @method RegionQuery groupByImageDetail2() Group by the image_detail_2 column
  * @method RegionQuery groupByCreatedAt() Group by the created_at column
  * @method RegionQuery groupByUpdatedAt() Group by the updated_at column
  * @method RegionQuery groupByActive() Group by the active column
@@ -95,28 +85,18 @@ use Cungfoo\Model\Ville;
  * @method Region findOneOrCreate(PropelPDO $con = null) Return the first Region matching the query, or a new Region object populated from the query conditions when no match is found
  *
  * @method Region findOneByCode(string $code) Return the first Region filtered by the code column
- * @method Region findOneByImagePath(string $image_path) Return the first Region filtered by the image_path column
- * @method Region findOneByImageEncartPath(string $image_encart_path) Return the first Region filtered by the image_encart_path column
- * @method Region findOneByImageEncartPetitePath(string $image_encart_petite_path) Return the first Region filtered by the image_encart_petite_path column
  * @method Region findOneByPaysId(int $pays_id) Return the first Region filtered by the pays_id column
  * @method Region findOneByDestinationId(int $destination_id) Return the first Region filtered by the destination_id column
  * @method Region findOneByMeaHome(boolean $mea_home) Return the first Region filtered by the mea_home column
- * @method Region findOneByImageDetail1(string $image_detail_1) Return the first Region filtered by the image_detail_1 column
- * @method Region findOneByImageDetail2(string $image_detail_2) Return the first Region filtered by the image_detail_2 column
  * @method Region findOneByCreatedAt(string $created_at) Return the first Region filtered by the created_at column
  * @method Region findOneByUpdatedAt(string $updated_at) Return the first Region filtered by the updated_at column
  * @method Region findOneByActive(boolean $active) Return the first Region filtered by the active column
  *
  * @method array findById(int $id) Return Region objects filtered by the id column
  * @method array findByCode(string $code) Return Region objects filtered by the code column
- * @method array findByImagePath(string $image_path) Return Region objects filtered by the image_path column
- * @method array findByImageEncartPath(string $image_encart_path) Return Region objects filtered by the image_encart_path column
- * @method array findByImageEncartPetitePath(string $image_encart_petite_path) Return Region objects filtered by the image_encart_petite_path column
  * @method array findByPaysId(int $pays_id) Return Region objects filtered by the pays_id column
  * @method array findByDestinationId(int $destination_id) Return Region objects filtered by the destination_id column
  * @method array findByMeaHome(boolean $mea_home) Return Region objects filtered by the mea_home column
- * @method array findByImageDetail1(string $image_detail_1) Return Region objects filtered by the image_detail_1 column
- * @method array findByImageDetail2(string $image_detail_2) Return Region objects filtered by the image_detail_2 column
  * @method array findByCreatedAt(string $created_at) Return Region objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return Region objects filtered by the updated_at column
  * @method array findByActive(boolean $active) Return Region objects filtered by the active column
@@ -223,7 +203,7 @@ abstract class BaseRegionQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `code`, `image_path`, `image_encart_path`, `image_encart_petite_path`, `pays_id`, `destination_id`, `mea_home`, `image_detail_1`, `image_detail_2`, `created_at`, `updated_at`, `active` FROM `region` WHERE `id` = :p0';
+        $sql = 'SELECT `id`, `code`, `pays_id`, `destination_id`, `mea_home`, `created_at`, `updated_at`, `active` FROM `region` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -369,93 +349,6 @@ abstract class BaseRegionQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query on the image_path column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByImagePath('fooValue');   // WHERE image_path = 'fooValue'
-     * $query->filterByImagePath('%fooValue%'); // WHERE image_path LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $imagePath The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return RegionQuery The current query, for fluid interface
-     */
-    public function filterByImagePath($imagePath = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($imagePath)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $imagePath)) {
-                $imagePath = str_replace('*', '%', $imagePath);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(RegionPeer::IMAGE_PATH, $imagePath, $comparison);
-    }
-
-    /**
-     * Filter the query on the image_encart_path column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByImageEncartPath('fooValue');   // WHERE image_encart_path = 'fooValue'
-     * $query->filterByImageEncartPath('%fooValue%'); // WHERE image_encart_path LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $imageEncartPath The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return RegionQuery The current query, for fluid interface
-     */
-    public function filterByImageEncartPath($imageEncartPath = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($imageEncartPath)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $imageEncartPath)) {
-                $imageEncartPath = str_replace('*', '%', $imageEncartPath);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(RegionPeer::IMAGE_ENCART_PATH, $imageEncartPath, $comparison);
-    }
-
-    /**
-     * Filter the query on the image_encart_petite_path column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByImageEncartPetitePath('fooValue');   // WHERE image_encart_petite_path = 'fooValue'
-     * $query->filterByImageEncartPetitePath('%fooValue%'); // WHERE image_encart_petite_path LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $imageEncartPetitePath The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return RegionQuery The current query, for fluid interface
-     */
-    public function filterByImageEncartPetitePath($imageEncartPetitePath = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($imageEncartPetitePath)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $imageEncartPetitePath)) {
-                $imageEncartPetitePath = str_replace('*', '%', $imageEncartPetitePath);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(RegionPeer::IMAGE_ENCART_PETITE_PATH, $imageEncartPetitePath, $comparison);
-    }
-
-    /**
      * Filter the query on the pays_id column
      *
      * Example usage:
@@ -566,64 +459,6 @@ abstract class BaseRegionQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(RegionPeer::MEA_HOME, $meaHome, $comparison);
-    }
-
-    /**
-     * Filter the query on the image_detail_1 column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByImageDetail1('fooValue');   // WHERE image_detail_1 = 'fooValue'
-     * $query->filterByImageDetail1('%fooValue%'); // WHERE image_detail_1 LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $imageDetail1 The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return RegionQuery The current query, for fluid interface
-     */
-    public function filterByImageDetail1($imageDetail1 = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($imageDetail1)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $imageDetail1)) {
-                $imageDetail1 = str_replace('*', '%', $imageDetail1);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(RegionPeer::IMAGE_DETAIL_1, $imageDetail1, $comparison);
-    }
-
-    /**
-     * Filter the query on the image_detail_2 column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByImageDetail2('fooValue');   // WHERE image_detail_2 = 'fooValue'
-     * $query->filterByImageDetail2('%fooValue%'); // WHERE image_detail_2 LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $imageDetail2 The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return RegionQuery The current query, for fluid interface
-     */
-    public function filterByImageDetail2($imageDetail2 = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($imageDetail2)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $imageDetail2)) {
-                $imageDetail2 = str_replace('*', '%', $imageDetail2);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(RegionPeer::IMAGE_DETAIL_2, $imageDetail2, $comparison);
     }
 
     /**

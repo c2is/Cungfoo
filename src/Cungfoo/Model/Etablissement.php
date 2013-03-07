@@ -30,7 +30,7 @@ class Etablissement extends BaseEtablissement
 
     public function getVignette()
     {
-        return parent::getVignette()?: "images/vacancesdirectes/common/images/search-default.jpg";
+        return parent::getVignette();
 
     }
 

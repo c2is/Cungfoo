@@ -68,10 +68,6 @@ class DemandeAnnulationTableMap extends TableMap
 ));
         $this->addColumn('sinistre_date', 'SinistreDate', 'VARCHAR', true, 255, null);
         $this->addColumn('sinistre_resume', 'SinistreResume', 'LONGVARCHAR', true, null, null);
-        $this->addColumn('file_1', 'File1', 'VARCHAR', false, 255, null);
-        $this->addColumn('file_2', 'File2', 'VARCHAR', false, 255, null);
-        $this->addColumn('file_3', 'File3', 'VARCHAR', false, 255, null);
-        $this->addColumn('file_4', 'File4', 'VARCHAR', false, 255, null);
         $this->addColumn('created_at', 'CreatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('updated_at', 'UpdatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('active', 'Active', 'BOOLEAN', false, 1, false);

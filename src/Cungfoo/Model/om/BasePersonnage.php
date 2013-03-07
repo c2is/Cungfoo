@@ -76,12 +76,6 @@ abstract class BasePersonnage extends BaseObject implements Persistent
     protected $age;
 
     /**
-     * The value for the image_path field.
-     * @var        string
-     */
-    protected $image_path;
-
-    /**
      * The value for the created_at field.
      * @var        string
      */
@@ -229,16 +223,6 @@ abstract class BasePersonnage extends BaseObject implements Persistent
     public function getAge()
     {
         return $this->age;
-    }
-
-    /**
-     * Get the [image_path] column value.
-     *
-     * @return string
-     */
-    public function getImagePath()
-    {
-        return $this->image_path;
     }
 
     /**
@@ -399,27 +383,6 @@ abstract class BasePersonnage extends BaseObject implements Persistent
     } // setAge()
 
     /**
-     * Set the value of [image_path] column.
-     *
-     * @param string $v new value
-     * @return Personnage The current object (for fluent API support)
-     */
-    public function setImagePath($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->image_path !== $v) {
-            $this->image_path = $v;
-            $this->modifiedColumns[] = PersonnagePeer::IMAGE_PATH;
-        }
-
-
-        return $this;
-    } // setImagePath()
-
-    /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
      *
      * @param mixed $v string, integer (timestamp), or DateTime value.
@@ -533,10 +496,9 @@ abstract class BasePersonnage extends BaseObject implements Persistent
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
             $this->etablissement_id = ($row[$startcol + 1] !== null) ? (int) $row[$startcol + 1] : null;
             $this->age = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
-            $this->image_path = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
-            $this->created_at = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
-            $this->updated_at = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
-            $this->active = ($row[$startcol + 6] !== null) ? (boolean) $row[$startcol + 6] : null;
+            $this->created_at = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
+            $this->updated_at = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
+            $this->active = ($row[$startcol + 5] !== null) ? (boolean) $row[$startcol + 5] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -545,7 +507,7 @@ abstract class BasePersonnage extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 7; // 7 = PersonnagePeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 6; // 6 = PersonnagePeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Personnage object", $e);
@@ -872,9 +834,6 @@ abstract class BasePersonnage extends BaseObject implements Persistent
         if ($this->isColumnModified(PersonnagePeer::AGE)) {
             $modifiedColumns[':p' . $index++]  = '`age`';
         }
-        if ($this->isColumnModified(PersonnagePeer::IMAGE_PATH)) {
-            $modifiedColumns[':p' . $index++]  = '`image_path`';
-        }
         if ($this->isColumnModified(PersonnagePeer::CREATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`created_at`';
         }
@@ -903,9 +862,6 @@ abstract class BasePersonnage extends BaseObject implements Persistent
                         break;
                     case '`age`':
                         $stmt->bindValue($identifier, $this->age, PDO::PARAM_STR);
-                        break;
-                    case '`image_path`':
-                        $stmt->bindValue($identifier, $this->image_path, PDO::PARAM_STR);
                         break;
                     case '`created_at`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
@@ -1096,15 +1052,12 @@ abstract class BasePersonnage extends BaseObject implements Persistent
                 return $this->getAge();
                 break;
             case 3:
-                return $this->getImagePath();
-                break;
-            case 4:
                 return $this->getCreatedAt();
                 break;
-            case 5:
+            case 4:
                 return $this->getUpdatedAt();
                 break;
-            case 6:
+            case 5:
                 return $this->getActive();
                 break;
             default:
@@ -1139,10 +1092,9 @@ abstract class BasePersonnage extends BaseObject implements Persistent
             $keys[0] => $this->getId(),
             $keys[1] => $this->getEtablissementId(),
             $keys[2] => $this->getAge(),
-            $keys[3] => $this->getImagePath(),
-            $keys[4] => $this->getCreatedAt(),
-            $keys[5] => $this->getUpdatedAt(),
-            $keys[6] => $this->getActive(),
+            $keys[3] => $this->getCreatedAt(),
+            $keys[4] => $this->getUpdatedAt(),
+            $keys[5] => $this->getActive(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aEtablissement) {
@@ -1201,15 +1153,12 @@ abstract class BasePersonnage extends BaseObject implements Persistent
                 $this->setAge($value);
                 break;
             case 3:
-                $this->setImagePath($value);
-                break;
-            case 4:
                 $this->setCreatedAt($value);
                 break;
-            case 5:
+            case 4:
                 $this->setUpdatedAt($value);
                 break;
-            case 6:
+            case 5:
                 $this->setActive($value);
                 break;
         } // switch()
@@ -1239,10 +1188,9 @@ abstract class BasePersonnage extends BaseObject implements Persistent
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
         if (array_key_exists($keys[1], $arr)) $this->setEtablissementId($arr[$keys[1]]);
         if (array_key_exists($keys[2], $arr)) $this->setAge($arr[$keys[2]]);
-        if (array_key_exists($keys[3], $arr)) $this->setImagePath($arr[$keys[3]]);
-        if (array_key_exists($keys[4], $arr)) $this->setCreatedAt($arr[$keys[4]]);
-        if (array_key_exists($keys[5], $arr)) $this->setUpdatedAt($arr[$keys[5]]);
-        if (array_key_exists($keys[6], $arr)) $this->setActive($arr[$keys[6]]);
+        if (array_key_exists($keys[3], $arr)) $this->setCreatedAt($arr[$keys[3]]);
+        if (array_key_exists($keys[4], $arr)) $this->setUpdatedAt($arr[$keys[4]]);
+        if (array_key_exists($keys[5], $arr)) $this->setActive($arr[$keys[5]]);
     }
 
     /**
@@ -1257,7 +1205,6 @@ abstract class BasePersonnage extends BaseObject implements Persistent
         if ($this->isColumnModified(PersonnagePeer::ID)) $criteria->add(PersonnagePeer::ID, $this->id);
         if ($this->isColumnModified(PersonnagePeer::ETABLISSEMENT_ID)) $criteria->add(PersonnagePeer::ETABLISSEMENT_ID, $this->etablissement_id);
         if ($this->isColumnModified(PersonnagePeer::AGE)) $criteria->add(PersonnagePeer::AGE, $this->age);
-        if ($this->isColumnModified(PersonnagePeer::IMAGE_PATH)) $criteria->add(PersonnagePeer::IMAGE_PATH, $this->image_path);
         if ($this->isColumnModified(PersonnagePeer::CREATED_AT)) $criteria->add(PersonnagePeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(PersonnagePeer::UPDATED_AT)) $criteria->add(PersonnagePeer::UPDATED_AT, $this->updated_at);
         if ($this->isColumnModified(PersonnagePeer::ACTIVE)) $criteria->add(PersonnagePeer::ACTIVE, $this->active);
@@ -1326,7 +1273,6 @@ abstract class BasePersonnage extends BaseObject implements Persistent
     {
         $copyObj->setEtablissementId($this->getEtablissementId());
         $copyObj->setAge($this->getAge());
-        $copyObj->setImagePath($this->getImagePath());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
         $copyObj->setActive($this->getActive());
@@ -2339,7 +2285,6 @@ abstract class BasePersonnage extends BaseObject implements Persistent
         $this->id = null;
         $this->etablissement_id = null;
         $this->age = null;
-        $this->image_path = null;
         $this->created_at = null;
         $this->updated_at = null;
         $this->active = null;
@@ -2801,8 +2746,6 @@ abstract class BasePersonnage extends BaseObject implements Persistent
      */
     public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
     {
-        $this->saveImagePathPortfolioUsage();
-
         return $this->save($con);
     }
 
@@ -2825,36 +2768,68 @@ abstract class BasePersonnage extends BaseObject implements Persistent
     /**
      * @return void
      */
-    public function saveImagePathPortfolioUsage()
+    public function getImagePath()
     {
         $peer = self::PEER;
 
-        $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+        $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
+            ->select('id')
+            ->usePortfolioUsageQuery()
+                ->filterByTableRef($peer::TABLE_NAME)
+                ->filterByColumnRef($peer::TABLE_NAME.'.image_path')
+                ->filterByElementId($this->getId())
+            ->endUse()
+            ->find()
+            ->toArray()
+        ;
+
+        return implode(';', $medias);
+    }
+
+    /**
+     * @return void
+     */
+    public function setImagePath($v)
+    {
+        $peer = self::PEER;
+
+        $values = explode(';', $v);
+
+        \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
             ->filterByColumnRef($peer::TABLE_NAME.'.image_path')
             ->filterByElementId($this->getId())
-            ->findOne()
+            ->filterByMediaId($values, \Criteria::NOT_IN)
+            ->find()
+            ->delete()
         ;
 
-        if ($this->getImagePath()) {
-            if (!$usage) {
-                $usage = new \Cungfoo\Model\PortfolioUsage();
+        if ($v) {
+            foreach ($values as $index => $value) {
+                $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+                    ->filterByTableRef($peer::TABLE_NAME)
+                    ->filterByColumnRef($peer::TABLE_NAME.'.image_path')
+                    ->filterByElementId($this->getId())
+                    ->filterByMediaId($value)
+                    ->findOne()
+                ;
+
+                if (!$usage) {
+                    $usage = new \Cungfoo\Model\PortfolioUsage();
+                    $usage
+                        ->setTableRef($peer::TABLE_NAME)
+                        ->setColumnRef($peer::TABLE_NAME.'.image_path')
+                        ->setElementId($this->getId())
+                        ->setMediaId($value)
+                    ;
+                }
+
                 $usage
-                    ->setTableRef($peer::TABLE_NAME)
-                    ->setColumnRef($peer::TABLE_NAME.'.image_path')
-                    ->setElementId($this->getId())
+                    ->setSortableRank($index)
+                    ->save()
                 ;
             }
 
-            $usage
-                ->setMediaId($this->getImagePath())
-                ->save()
-            ;
-        }
-        else {
-            if ($usage) {
-                $usage->delete();
-            }
         }
     }
 

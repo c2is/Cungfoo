@@ -101,60 +101,6 @@ class BaseTypeHebergementType extends AppAwareType
         );
     }
 
-    public function getImageHebergementPathType()
-    {
-        return 'cungfoo_file';
-    }
-
-    public function getImageHebergementPathOptions()
-    {
-        return array(
-            'required' => false,
-            'label' => 'type_hebergement.image_hebergement_path',
-        );
-    }
-
-    public function getImageHebergementPathDeletedType()
-    {
-        return 'checkbox';
-    }
-
-    public function getImageHebergementPathDeletedOptions()
-    {
-        return array(
-            'property_path' => false,
-            'required' => false,
-            'label' => 'type_hebergement.image_hebergement_path_deleted',
-        );
-    }
-
-    public function getImageCompositionPathType()
-    {
-        return 'cungfoo_file';
-    }
-
-    public function getImageCompositionPathOptions()
-    {
-        return array(
-            'required' => false,
-            'label' => 'type_hebergement.image_composition_path',
-        );
-    }
-
-    public function getImageCompositionPathDeletedType()
-    {
-        return 'checkbox';
-    }
-
-    public function getImageCompositionPathDeletedOptions()
-    {
-        return array(
-            'property_path' => false,
-            'required' => false,
-            'label' => 'type_hebergement.image_composition_path_deleted',
-        );
-    }
-
     public function getCreatedAtType()
     {
         return 'datetime';
@@ -193,6 +139,32 @@ class BaseTypeHebergementType extends AppAwareType
         return array(
             'required' => false,
             'label' => 'type_hebergement.active',
+        );
+    }
+
+    public function getImageHebergementPathType()
+    {
+        return 'cungfoo_file';
+    }
+
+    public function getImageHebergementPathOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'type_hebergement.image_hebergement_path',
+        );
+    }
+
+    public function getImageCompositionPathType()
+    {
+        return 'cungfoo_file';
+    }
+
+    public function getImageCompositionPathOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'type_hebergement.image_composition_path',
         );
     }
 
@@ -511,13 +483,11 @@ class BaseTypeHebergementType extends AppAwareType
         $builder->add('category_type_hebergement', $this->getCategoryTypeHebergementType(), $this->getCategoryTypeHebergementOptions());
         $builder->add('nombre_chambre', $this->getNombreChambreType(), $this->getNombreChambreOptions());
         $builder->add('nombre_place', $this->getNombrePlaceType(), $this->getNombrePlaceOptions());
-        $builder->add('image_hebergement_path', $this->getImageHebergementPathType(), $this->getImageHebergementPathOptions());
-        $builder->add('image_hebergement_path_deleted', $this->getImageHebergementPathDeletedType(), $this->getImageHebergementPathDeletedOptions());
-        $builder->add('image_composition_path', $this->getImageCompositionPathType(), $this->getImageCompositionPathOptions());
-        $builder->add('image_composition_path_deleted', $this->getImageCompositionPathDeletedType(), $this->getImageCompositionPathDeletedOptions());
         $builder->add('created_at', $this->getCreatedAtType(), $this->getCreatedAtOptions());
         $builder->add('updated_at', $this->getUpdatedAtType(), $this->getUpdatedAtOptions());
         $builder->add('active', $this->getActiveType(), $this->getActiveOptions());
+        $builder->add('image_hebergement_path', $this->getImageHebergementPathType(), $this->getImageHebergementPathOptions());
+        $builder->add('image_composition_path', $this->getImageCompositionPathType(), $this->getImageCompositionPathOptions());
         $builder->add('etablissements', $this->getEtablissementsType(), $this->getEtablissementsOptions());$builder->add('type_hebergementI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\TypeHebergementI18n',
             'label' => 'type_hebergementI18ns',

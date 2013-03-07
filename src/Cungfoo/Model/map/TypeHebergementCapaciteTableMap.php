@@ -43,8 +43,6 @@ class TypeHebergementCapaciteTableMap extends TableMap
         $this->setUseIdGenerator(true);
         // columns
         $this->addPrimaryKey('id', 'Id', 'INTEGER', true, null, null);
-        $this->addColumn('image_menu', 'ImageMenu', 'VARCHAR', false, 255, null);
-        $this->addColumn('image_page', 'ImagePage', 'VARCHAR', false, 255, null);
         $this->addColumn('created_at', 'CreatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('updated_at', 'UpdatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('sortable_rank', 'SortableRank', 'INTEGER', false, null, null);

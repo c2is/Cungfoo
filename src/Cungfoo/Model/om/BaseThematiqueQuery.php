@@ -26,14 +26,12 @@ use Cungfoo\Model\ThematiqueQuery;
  *
  * @method ThematiqueQuery orderById($order = Criteria::ASC) Order by the id column
  * @method ThematiqueQuery orderByCode($order = Criteria::ASC) Order by the code column
- * @method ThematiqueQuery orderByImagePath($order = Criteria::ASC) Order by the image_path column
  * @method ThematiqueQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method ThematiqueQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  * @method ThematiqueQuery orderByActive($order = Criteria::ASC) Order by the active column
  *
  * @method ThematiqueQuery groupById() Group by the id column
  * @method ThematiqueQuery groupByCode() Group by the code column
- * @method ThematiqueQuery groupByImagePath() Group by the image_path column
  * @method ThematiqueQuery groupByCreatedAt() Group by the created_at column
  * @method ThematiqueQuery groupByUpdatedAt() Group by the updated_at column
  * @method ThematiqueQuery groupByActive() Group by the active column
@@ -54,14 +52,12 @@ use Cungfoo\Model\ThematiqueQuery;
  * @method Thematique findOneOrCreate(PropelPDO $con = null) Return the first Thematique matching the query, or a new Thematique object populated from the query conditions when no match is found
  *
  * @method Thematique findOneByCode(string $code) Return the first Thematique filtered by the code column
- * @method Thematique findOneByImagePath(string $image_path) Return the first Thematique filtered by the image_path column
  * @method Thematique findOneByCreatedAt(string $created_at) Return the first Thematique filtered by the created_at column
  * @method Thematique findOneByUpdatedAt(string $updated_at) Return the first Thematique filtered by the updated_at column
  * @method Thematique findOneByActive(boolean $active) Return the first Thematique filtered by the active column
  *
  * @method array findById(int $id) Return Thematique objects filtered by the id column
  * @method array findByCode(string $code) Return Thematique objects filtered by the code column
- * @method array findByImagePath(string $image_path) Return Thematique objects filtered by the image_path column
  * @method array findByCreatedAt(string $created_at) Return Thematique objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return Thematique objects filtered by the updated_at column
  * @method array findByActive(boolean $active) Return Thematique objects filtered by the active column
@@ -168,7 +164,7 @@ abstract class BaseThematiqueQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `code`, `image_path`, `created_at`, `updated_at`, `active` FROM `thematique` WHERE `id` = :p0';
+        $sql = 'SELECT `id`, `code`, `created_at`, `updated_at`, `active` FROM `thematique` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -311,35 +307,6 @@ abstract class BaseThematiqueQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(ThematiquePeer::CODE, $code, $comparison);
-    }
-
-    /**
-     * Filter the query on the image_path column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByImagePath('fooValue');   // WHERE image_path = 'fooValue'
-     * $query->filterByImagePath('%fooValue%'); // WHERE image_path LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $imagePath The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return ThematiqueQuery The current query, for fluid interface
-     */
-    public function filterByImagePath($imagePath = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($imagePath)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $imagePath)) {
-                $imagePath = str_replace('*', '%', $imagePath);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(ThematiquePeer::IMAGE_PATH, $imagePath, $comparison);
     }
 
     /**

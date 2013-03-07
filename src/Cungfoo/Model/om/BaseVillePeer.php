@@ -39,13 +39,13 @@ abstract class BaseVillePeer
     const TM_CLASS = 'VilleTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 8;
+    const NUM_COLUMNS = 6;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 8;
+    const NUM_HYDRATE_COLUMNS = 6;
 
     /** the column name for the id field */
     const ID = 'ville.id';
@@ -55,12 +55,6 @@ abstract class BaseVillePeer
 
     /** the column name for the region_id field */
     const REGION_ID = 'ville.region_id';
-
-    /** the column name for the image_detail_1 field */
-    const IMAGE_DETAIL_1 = 'ville.image_detail_1';
-
-    /** the column name for the image_detail_2 field */
-    const IMAGE_DETAIL_2 = 'ville.image_detail_2';
 
     /** the column name for the created_at field */
     const CREATED_AT = 'ville.created_at';
@@ -97,12 +91,12 @@ abstract class BaseVillePeer
      * e.g. VillePeer::$fieldNames[VillePeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'RegionId', 'ImageDetail1', 'ImageDetail2', 'CreatedAt', 'UpdatedAt', 'Active', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'regionId', 'imageDetail1', 'imageDetail2', 'createdAt', 'updatedAt', 'active', ),
-        BasePeer::TYPE_COLNAME => array (VillePeer::ID, VillePeer::CODE, VillePeer::REGION_ID, VillePeer::IMAGE_DETAIL_1, VillePeer::IMAGE_DETAIL_2, VillePeer::CREATED_AT, VillePeer::UPDATED_AT, VillePeer::ACTIVE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'REGION_ID', 'IMAGE_DETAIL_1', 'IMAGE_DETAIL_2', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'region_id', 'image_detail_1', 'image_detail_2', 'created_at', 'updated_at', 'active', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'RegionId', 'CreatedAt', 'UpdatedAt', 'Active', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'regionId', 'createdAt', 'updatedAt', 'active', ),
+        BasePeer::TYPE_COLNAME => array (VillePeer::ID, VillePeer::CODE, VillePeer::REGION_ID, VillePeer::CREATED_AT, VillePeer::UPDATED_AT, VillePeer::ACTIVE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'REGION_ID', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'region_id', 'created_at', 'updated_at', 'active', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
     );
 
     /**
@@ -112,12 +106,12 @@ abstract class BaseVillePeer
      * e.g. VillePeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'RegionId' => 2, 'ImageDetail1' => 3, 'ImageDetail2' => 4, 'CreatedAt' => 5, 'UpdatedAt' => 6, 'Active' => 7, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'regionId' => 2, 'imageDetail1' => 3, 'imageDetail2' => 4, 'createdAt' => 5, 'updatedAt' => 6, 'active' => 7, ),
-        BasePeer::TYPE_COLNAME => array (VillePeer::ID => 0, VillePeer::CODE => 1, VillePeer::REGION_ID => 2, VillePeer::IMAGE_DETAIL_1 => 3, VillePeer::IMAGE_DETAIL_2 => 4, VillePeer::CREATED_AT => 5, VillePeer::UPDATED_AT => 6, VillePeer::ACTIVE => 7, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'REGION_ID' => 2, 'IMAGE_DETAIL_1' => 3, 'IMAGE_DETAIL_2' => 4, 'CREATED_AT' => 5, 'UPDATED_AT' => 6, 'ACTIVE' => 7, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'region_id' => 2, 'image_detail_1' => 3, 'image_detail_2' => 4, 'created_at' => 5, 'updated_at' => 6, 'active' => 7, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'RegionId' => 2, 'CreatedAt' => 3, 'UpdatedAt' => 4, 'Active' => 5, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'regionId' => 2, 'createdAt' => 3, 'updatedAt' => 4, 'active' => 5, ),
+        BasePeer::TYPE_COLNAME => array (VillePeer::ID => 0, VillePeer::CODE => 1, VillePeer::REGION_ID => 2, VillePeer::CREATED_AT => 3, VillePeer::UPDATED_AT => 4, VillePeer::ACTIVE => 5, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'REGION_ID' => 2, 'CREATED_AT' => 3, 'UPDATED_AT' => 4, 'ACTIVE' => 5, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'region_id' => 2, 'created_at' => 3, 'updated_at' => 4, 'active' => 5, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
     );
 
     /**
@@ -194,8 +188,6 @@ abstract class BaseVillePeer
             $criteria->addSelectColumn(VillePeer::ID);
             $criteria->addSelectColumn(VillePeer::CODE);
             $criteria->addSelectColumn(VillePeer::REGION_ID);
-            $criteria->addSelectColumn(VillePeer::IMAGE_DETAIL_1);
-            $criteria->addSelectColumn(VillePeer::IMAGE_DETAIL_2);
             $criteria->addSelectColumn(VillePeer::CREATED_AT);
             $criteria->addSelectColumn(VillePeer::UPDATED_AT);
             $criteria->addSelectColumn(VillePeer::ACTIVE);
@@ -203,8 +195,6 @@ abstract class BaseVillePeer
             $criteria->addSelectColumn($alias . '.id');
             $criteria->addSelectColumn($alias . '.code');
             $criteria->addSelectColumn($alias . '.region_id');
-            $criteria->addSelectColumn($alias . '.image_detail_1');
-            $criteria->addSelectColumn($alias . '.image_detail_2');
             $criteria->addSelectColumn($alias . '.created_at');
             $criteria->addSelectColumn($alias . '.updated_at');
             $criteria->addSelectColumn($alias . '.active');

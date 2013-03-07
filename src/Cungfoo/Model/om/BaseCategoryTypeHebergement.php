@@ -70,18 +70,6 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
     protected $minimum_price;
 
     /**
-     * The value for the image_menu field.
-     * @var        string
-     */
-    protected $image_menu;
-
-    /**
-     * The value for the image_page field.
-     * @var        string
-     */
-    protected $image_page;
-
-    /**
      * The value for the created_at field.
      * @var        string
      */
@@ -215,26 +203,6 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
     public function getMinimumPrice()
     {
         return $this->minimum_price;
-    }
-
-    /**
-     * Get the [image_menu] column value.
-     *
-     * @return string
-     */
-    public function getImageMenu()
-    {
-        return $this->image_menu;
-    }
-
-    /**
-     * Get the [image_page] column value.
-     *
-     * @return string
-     */
-    public function getImagePage()
-    {
-        return $this->image_page;
     }
 
     /**
@@ -401,48 +369,6 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
     } // setMinimumPrice()
 
     /**
-     * Set the value of [image_menu] column.
-     *
-     * @param string $v new value
-     * @return CategoryTypeHebergement The current object (for fluent API support)
-     */
-    public function setImageMenu($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->image_menu !== $v) {
-            $this->image_menu = $v;
-            $this->modifiedColumns[] = CategoryTypeHebergementPeer::IMAGE_MENU;
-        }
-
-
-        return $this;
-    } // setImageMenu()
-
-    /**
-     * Set the value of [image_page] column.
-     *
-     * @param string $v new value
-     * @return CategoryTypeHebergement The current object (for fluent API support)
-     */
-    public function setImagePage($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->image_page !== $v) {
-            $this->image_page = $v;
-            $this->modifiedColumns[] = CategoryTypeHebergementPeer::IMAGE_PAGE;
-        }
-
-
-        return $this;
-    } // setImagePage()
-
-    /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
      *
      * @param mixed $v string, integer (timestamp), or DateTime value.
@@ -577,12 +503,10 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
             $this->code = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
             $this->minimum_price = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
-            $this->image_menu = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
-            $this->image_page = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
-            $this->created_at = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
-            $this->updated_at = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
-            $this->sortable_rank = ($row[$startcol + 7] !== null) ? (int) $row[$startcol + 7] : null;
-            $this->active = ($row[$startcol + 8] !== null) ? (boolean) $row[$startcol + 8] : null;
+            $this->created_at = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
+            $this->updated_at = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
+            $this->sortable_rank = ($row[$startcol + 5] !== null) ? (int) $row[$startcol + 5] : null;
+            $this->active = ($row[$startcol + 6] !== null) ? (boolean) $row[$startcol + 6] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -591,7 +515,7 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 9; // 9 = CategoryTypeHebergementPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 7; // 7 = CategoryTypeHebergementPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating CategoryTypeHebergement object", $e);
@@ -874,12 +798,6 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
         if ($this->isColumnModified(CategoryTypeHebergementPeer::MINIMUM_PRICE)) {
             $modifiedColumns[':p' . $index++]  = '`minimum_price`';
         }
-        if ($this->isColumnModified(CategoryTypeHebergementPeer::IMAGE_MENU)) {
-            $modifiedColumns[':p' . $index++]  = '`image_menu`';
-        }
-        if ($this->isColumnModified(CategoryTypeHebergementPeer::IMAGE_PAGE)) {
-            $modifiedColumns[':p' . $index++]  = '`image_page`';
-        }
         if ($this->isColumnModified(CategoryTypeHebergementPeer::CREATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`created_at`';
         }
@@ -911,12 +829,6 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
                         break;
                     case '`minimum_price`':
                         $stmt->bindValue($identifier, $this->minimum_price, PDO::PARAM_STR);
-                        break;
-                    case '`image_menu`':
-                        $stmt->bindValue($identifier, $this->image_menu, PDO::PARAM_STR);
-                        break;
-                    case '`image_page`':
-                        $stmt->bindValue($identifier, $this->image_page, PDO::PARAM_STR);
                         break;
                     case '`created_at`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
@@ -1090,21 +1002,15 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
                 return $this->getMinimumPrice();
                 break;
             case 3:
-                return $this->getImageMenu();
-                break;
-            case 4:
-                return $this->getImagePage();
-                break;
-            case 5:
                 return $this->getCreatedAt();
                 break;
-            case 6:
+            case 4:
                 return $this->getUpdatedAt();
                 break;
-            case 7:
+            case 5:
                 return $this->getSortableRank();
                 break;
-            case 8:
+            case 6:
                 return $this->getActive();
                 break;
             default:
@@ -1139,12 +1045,10 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
             $keys[0] => $this->getId(),
             $keys[1] => $this->getCode(),
             $keys[2] => $this->getMinimumPrice(),
-            $keys[3] => $this->getImageMenu(),
-            $keys[4] => $this->getImagePage(),
-            $keys[5] => $this->getCreatedAt(),
-            $keys[6] => $this->getUpdatedAt(),
-            $keys[7] => $this->getSortableRank(),
-            $keys[8] => $this->getActive(),
+            $keys[3] => $this->getCreatedAt(),
+            $keys[4] => $this->getUpdatedAt(),
+            $keys[5] => $this->getSortableRank(),
+            $keys[6] => $this->getActive(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->collTypeHebergements) {
@@ -1197,21 +1101,15 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
                 $this->setMinimumPrice($value);
                 break;
             case 3:
-                $this->setImageMenu($value);
-                break;
-            case 4:
-                $this->setImagePage($value);
-                break;
-            case 5:
                 $this->setCreatedAt($value);
                 break;
-            case 6:
+            case 4:
                 $this->setUpdatedAt($value);
                 break;
-            case 7:
+            case 5:
                 $this->setSortableRank($value);
                 break;
-            case 8:
+            case 6:
                 $this->setActive($value);
                 break;
         } // switch()
@@ -1241,12 +1139,10 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
         if (array_key_exists($keys[1], $arr)) $this->setCode($arr[$keys[1]]);
         if (array_key_exists($keys[2], $arr)) $this->setMinimumPrice($arr[$keys[2]]);
-        if (array_key_exists($keys[3], $arr)) $this->setImageMenu($arr[$keys[3]]);
-        if (array_key_exists($keys[4], $arr)) $this->setImagePage($arr[$keys[4]]);
-        if (array_key_exists($keys[5], $arr)) $this->setCreatedAt($arr[$keys[5]]);
-        if (array_key_exists($keys[6], $arr)) $this->setUpdatedAt($arr[$keys[6]]);
-        if (array_key_exists($keys[7], $arr)) $this->setSortableRank($arr[$keys[7]]);
-        if (array_key_exists($keys[8], $arr)) $this->setActive($arr[$keys[8]]);
+        if (array_key_exists($keys[3], $arr)) $this->setCreatedAt($arr[$keys[3]]);
+        if (array_key_exists($keys[4], $arr)) $this->setUpdatedAt($arr[$keys[4]]);
+        if (array_key_exists($keys[5], $arr)) $this->setSortableRank($arr[$keys[5]]);
+        if (array_key_exists($keys[6], $arr)) $this->setActive($arr[$keys[6]]);
     }
 
     /**
@@ -1261,8 +1157,6 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
         if ($this->isColumnModified(CategoryTypeHebergementPeer::ID)) $criteria->add(CategoryTypeHebergementPeer::ID, $this->id);
         if ($this->isColumnModified(CategoryTypeHebergementPeer::CODE)) $criteria->add(CategoryTypeHebergementPeer::CODE, $this->code);
         if ($this->isColumnModified(CategoryTypeHebergementPeer::MINIMUM_PRICE)) $criteria->add(CategoryTypeHebergementPeer::MINIMUM_PRICE, $this->minimum_price);
-        if ($this->isColumnModified(CategoryTypeHebergementPeer::IMAGE_MENU)) $criteria->add(CategoryTypeHebergementPeer::IMAGE_MENU, $this->image_menu);
-        if ($this->isColumnModified(CategoryTypeHebergementPeer::IMAGE_PAGE)) $criteria->add(CategoryTypeHebergementPeer::IMAGE_PAGE, $this->image_page);
         if ($this->isColumnModified(CategoryTypeHebergementPeer::CREATED_AT)) $criteria->add(CategoryTypeHebergementPeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(CategoryTypeHebergementPeer::UPDATED_AT)) $criteria->add(CategoryTypeHebergementPeer::UPDATED_AT, $this->updated_at);
         if ($this->isColumnModified(CategoryTypeHebergementPeer::SORTABLE_RANK)) $criteria->add(CategoryTypeHebergementPeer::SORTABLE_RANK, $this->sortable_rank);
@@ -1332,8 +1226,6 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
     {
         $copyObj->setCode($this->getCode());
         $copyObj->setMinimumPrice($this->getMinimumPrice());
-        $copyObj->setImageMenu($this->getImageMenu());
-        $copyObj->setImagePage($this->getImagePage());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
         $copyObj->setSortableRank($this->getSortableRank());
@@ -1894,8 +1786,6 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
         $this->id = null;
         $this->code = null;
         $this->minimum_price = null;
-        $this->image_menu = null;
-        $this->image_page = null;
         $this->created_at = null;
         $this->updated_at = null;
         $this->sortable_rank = null;
@@ -2734,10 +2624,6 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
      */
     public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
     {
-        $this->saveImageMenuPortfolioUsage();
-
-        $this->saveImagePagePortfolioUsage();
-
         return $this->save($con);
     }
 
@@ -2760,72 +2646,136 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
     /**
      * @return void
      */
-    public function saveImageMenuPortfolioUsage()
+    public function getImageMenu()
     {
         $peer = self::PEER;
 
-        $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+        $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
+            ->select('id')
+            ->usePortfolioUsageQuery()
+                ->filterByTableRef($peer::TABLE_NAME)
+                ->filterByColumnRef($peer::TABLE_NAME.'.image_menu')
+                ->filterByElementId($this->getId())
+            ->endUse()
+            ->find()
+            ->toArray()
+        ;
+
+        return implode(';', $medias);
+    }
+
+    /**
+     * @return void
+     */
+    public function setImageMenu($v)
+    {
+        $peer = self::PEER;
+
+        $values = explode(';', $v);
+
+        \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
             ->filterByColumnRef($peer::TABLE_NAME.'.image_menu')
             ->filterByElementId($this->getId())
-            ->findOne()
+            ->filterByMediaId($values, \Criteria::NOT_IN)
+            ->find()
+            ->delete()
         ;
 
-        if ($this->getImageMenu()) {
-            if (!$usage) {
-                $usage = new \Cungfoo\Model\PortfolioUsage();
+        if ($v) {
+            foreach ($values as $index => $value) {
+                $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+                    ->filterByTableRef($peer::TABLE_NAME)
+                    ->filterByColumnRef($peer::TABLE_NAME.'.image_menu')
+                    ->filterByElementId($this->getId())
+                    ->filterByMediaId($value)
+                    ->findOne()
+                ;
+
+                if (!$usage) {
+                    $usage = new \Cungfoo\Model\PortfolioUsage();
+                    $usage
+                        ->setTableRef($peer::TABLE_NAME)
+                        ->setColumnRef($peer::TABLE_NAME.'.image_menu')
+                        ->setElementId($this->getId())
+                        ->setMediaId($value)
+                    ;
+                }
+
                 $usage
-                    ->setTableRef($peer::TABLE_NAME)
-                    ->setColumnRef($peer::TABLE_NAME.'.image_menu')
-                    ->setElementId($this->getId())
+                    ->setSortableRank($index)
+                    ->save()
                 ;
             }
 
-            $usage
-                ->setMediaId($this->getImageMenu())
-                ->save()
-            ;
-        }
-        else {
-            if ($usage) {
-                $usage->delete();
-            }
         }
     }
 
     /**
      * @return void
      */
-    public function saveImagePagePortfolioUsage()
+    public function getImagePage()
     {
         $peer = self::PEER;
 
-        $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+        $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
+            ->select('id')
+            ->usePortfolioUsageQuery()
+                ->filterByTableRef($peer::TABLE_NAME)
+                ->filterByColumnRef($peer::TABLE_NAME.'.image_page')
+                ->filterByElementId($this->getId())
+            ->endUse()
+            ->find()
+            ->toArray()
+        ;
+
+        return implode(';', $medias);
+    }
+
+    /**
+     * @return void
+     */
+    public function setImagePage($v)
+    {
+        $peer = self::PEER;
+
+        $values = explode(';', $v);
+
+        \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
             ->filterByColumnRef($peer::TABLE_NAME.'.image_page')
             ->filterByElementId($this->getId())
-            ->findOne()
+            ->filterByMediaId($values, \Criteria::NOT_IN)
+            ->find()
+            ->delete()
         ;
 
-        if ($this->getImagePage()) {
-            if (!$usage) {
-                $usage = new \Cungfoo\Model\PortfolioUsage();
+        if ($v) {
+            foreach ($values as $index => $value) {
+                $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+                    ->filterByTableRef($peer::TABLE_NAME)
+                    ->filterByColumnRef($peer::TABLE_NAME.'.image_page')
+                    ->filterByElementId($this->getId())
+                    ->filterByMediaId($value)
+                    ->findOne()
+                ;
+
+                if (!$usage) {
+                    $usage = new \Cungfoo\Model\PortfolioUsage();
+                    $usage
+                        ->setTableRef($peer::TABLE_NAME)
+                        ->setColumnRef($peer::TABLE_NAME.'.image_page')
+                        ->setElementId($this->getId())
+                        ->setMediaId($value)
+                    ;
+                }
+
                 $usage
-                    ->setTableRef($peer::TABLE_NAME)
-                    ->setColumnRef($peer::TABLE_NAME.'.image_page')
-                    ->setElementId($this->getId())
+                    ->setSortableRank($index)
+                    ->save()
                 ;
             }
 
-            $usage
-                ->setMediaId($this->getImagePage())
-                ->save()
-            ;
-        }
-        else {
-            if ($usage) {
-                $usage->delete();
-            }
         }
     }
 

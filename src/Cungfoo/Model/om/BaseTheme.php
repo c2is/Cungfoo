@@ -70,12 +70,6 @@ abstract class BaseTheme extends BaseObject implements Persistent
     protected $id;
 
     /**
-     * The value for the image_path field.
-     * @var        string
-     */
-    protected $image_path;
-
-    /**
      * The value for the active field.
      * Note: this column has a database default value of: false
      * @var        boolean
@@ -246,16 +240,6 @@ abstract class BaseTheme extends BaseObject implements Persistent
     }
 
     /**
-     * Get the [image_path] column value.
-     *
-     * @return string
-     */
-    public function getImagePath()
-    {
-        return $this->image_path;
-    }
-
-    /**
      * Get the [active] column value.
      *
      * @return boolean
@@ -285,27 +269,6 @@ abstract class BaseTheme extends BaseObject implements Persistent
 
         return $this;
     } // setId()
-
-    /**
-     * Set the value of [image_path] column.
-     *
-     * @param string $v new value
-     * @return Theme The current object (for fluent API support)
-     */
-    public function setImagePath($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->image_path !== $v) {
-            $this->image_path = $v;
-            $this->modifiedColumns[] = ThemePeer::IMAGE_PATH;
-        }
-
-
-        return $this;
-    } // setImagePath()
 
     /**
      * Sets the value of the [active] column.
@@ -373,8 +336,7 @@ abstract class BaseTheme extends BaseObject implements Persistent
         try {
 
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
-            $this->image_path = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
-            $this->active = ($row[$startcol + 2] !== null) ? (boolean) $row[$startcol + 2] : null;
+            $this->active = ($row[$startcol + 1] !== null) ? (boolean) $row[$startcol + 1] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -383,7 +345,7 @@ abstract class BaseTheme extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 3; // 3 = ThemePeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 2; // 2 = ThemePeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Theme object", $e);
@@ -777,9 +739,6 @@ abstract class BaseTheme extends BaseObject implements Persistent
         if ($this->isColumnModified(ThemePeer::ID)) {
             $modifiedColumns[':p' . $index++]  = '`id`';
         }
-        if ($this->isColumnModified(ThemePeer::IMAGE_PATH)) {
-            $modifiedColumns[':p' . $index++]  = '`image_path`';
-        }
         if ($this->isColumnModified(ThemePeer::ACTIVE)) {
             $modifiedColumns[':p' . $index++]  = '`active`';
         }
@@ -796,9 +755,6 @@ abstract class BaseTheme extends BaseObject implements Persistent
                 switch ($columnName) {
                     case '`id`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
-                        break;
-                    case '`image_path`':
-                        $stmt->bindValue($identifier, $this->image_path, PDO::PARAM_STR);
                         break;
                     case '`active`':
                         $stmt->bindValue($identifier, (int) $this->active, PDO::PARAM_INT);
@@ -981,9 +937,6 @@ abstract class BaseTheme extends BaseObject implements Persistent
                 return $this->getId();
                 break;
             case 1:
-                return $this->getImagePath();
-                break;
-            case 2:
                 return $this->getActive();
                 break;
             default:
@@ -1016,8 +969,7 @@ abstract class BaseTheme extends BaseObject implements Persistent
         $keys = ThemePeer::getFieldNames($keyType);
         $result = array(
             $keys[0] => $this->getId(),
-            $keys[1] => $this->getImagePath(),
-            $keys[2] => $this->getActive(),
+            $keys[1] => $this->getActive(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->collThemeActivites) {
@@ -1073,9 +1025,6 @@ abstract class BaseTheme extends BaseObject implements Persistent
                 $this->setId($value);
                 break;
             case 1:
-                $this->setImagePath($value);
-                break;
-            case 2:
                 $this->setActive($value);
                 break;
         } // switch()
@@ -1103,8 +1052,7 @@ abstract class BaseTheme extends BaseObject implements Persistent
         $keys = ThemePeer::getFieldNames($keyType);
 
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
-        if (array_key_exists($keys[1], $arr)) $this->setImagePath($arr[$keys[1]]);
-        if (array_key_exists($keys[2], $arr)) $this->setActive($arr[$keys[2]]);
+        if (array_key_exists($keys[1], $arr)) $this->setActive($arr[$keys[1]]);
     }
 
     /**
@@ -1117,7 +1065,6 @@ abstract class BaseTheme extends BaseObject implements Persistent
         $criteria = new Criteria(ThemePeer::DATABASE_NAME);
 
         if ($this->isColumnModified(ThemePeer::ID)) $criteria->add(ThemePeer::ID, $this->id);
-        if ($this->isColumnModified(ThemePeer::IMAGE_PATH)) $criteria->add(ThemePeer::IMAGE_PATH, $this->image_path);
         if ($this->isColumnModified(ThemePeer::ACTIVE)) $criteria->add(ThemePeer::ACTIVE, $this->active);
 
         return $criteria;
@@ -1182,7 +1129,6 @@ abstract class BaseTheme extends BaseObject implements Persistent
      */
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
-        $copyObj->setImagePath($this->getImagePath());
         $copyObj->setActive($this->getActive());
 
         if ($deepCopy && !$this->startCopy) {
@@ -3193,7 +3139,6 @@ abstract class BaseTheme extends BaseObject implements Persistent
     public function clear()
     {
         $this->id = null;
-        $this->image_path = null;
         $this->active = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
@@ -3790,8 +3735,6 @@ abstract class BaseTheme extends BaseObject implements Persistent
      */
     public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
     {
-        $this->saveImagePathPortfolioUsage();
-
         return $this->save($con);
     }
 
@@ -3814,36 +3757,68 @@ abstract class BaseTheme extends BaseObject implements Persistent
     /**
      * @return void
      */
-    public function saveImagePathPortfolioUsage()
+    public function getImagePath()
     {
         $peer = self::PEER;
 
-        $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+        $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
+            ->select('id')
+            ->usePortfolioUsageQuery()
+                ->filterByTableRef($peer::TABLE_NAME)
+                ->filterByColumnRef($peer::TABLE_NAME.'.image_path')
+                ->filterByElementId($this->getId())
+            ->endUse()
+            ->find()
+            ->toArray()
+        ;
+
+        return implode(';', $medias);
+    }
+
+    /**
+     * @return void
+     */
+    public function setImagePath($v)
+    {
+        $peer = self::PEER;
+
+        $values = explode(';', $v);
+
+        \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
             ->filterByColumnRef($peer::TABLE_NAME.'.image_path')
             ->filterByElementId($this->getId())
-            ->findOne()
+            ->filterByMediaId($values, \Criteria::NOT_IN)
+            ->find()
+            ->delete()
         ;
 
-        if ($this->getImagePath()) {
-            if (!$usage) {
-                $usage = new \Cungfoo\Model\PortfolioUsage();
+        if ($v) {
+            foreach ($values as $index => $value) {
+                $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+                    ->filterByTableRef($peer::TABLE_NAME)
+                    ->filterByColumnRef($peer::TABLE_NAME.'.image_path')
+                    ->filterByElementId($this->getId())
+                    ->filterByMediaId($value)
+                    ->findOne()
+                ;
+
+                if (!$usage) {
+                    $usage = new \Cungfoo\Model\PortfolioUsage();
+                    $usage
+                        ->setTableRef($peer::TABLE_NAME)
+                        ->setColumnRef($peer::TABLE_NAME.'.image_path')
+                        ->setElementId($this->getId())
+                        ->setMediaId($value)
+                    ;
+                }
+
                 $usage
-                    ->setTableRef($peer::TABLE_NAME)
-                    ->setColumnRef($peer::TABLE_NAME.'.image_path')
-                    ->setElementId($this->getId())
+                    ->setSortableRank($index)
+                    ->save()
                 ;
             }
 
-            $usage
-                ->setMediaId($this->getImagePath())
-                ->save()
-            ;
-        }
-        else {
-            if ($usage) {
-                $usage->delete();
-            }
         }
     }
 

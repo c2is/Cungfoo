@@ -44,33 +44,6 @@ class BaseVosVacancesType extends AppAwareType
         );
     }
 
-    public function getImagePathType()
-    {
-        return 'cungfoo_file';
-    }
-
-    public function getImagePathOptions()
-    {
-        return array(
-            'required' => false,
-            'label' => 'vos_vacances.image_path',
-        );
-    }
-
-    public function getImagePathDeletedType()
-    {
-        return 'checkbox';
-    }
-
-    public function getImagePathDeletedOptions()
-    {
-        return array(
-            'property_path' => false,
-            'required' => false,
-            'label' => 'vos_vacances.image_path_deleted',
-        );
-    }
-
     public function getActiveType()
     {
         return 'checkbox';
@@ -81,6 +54,19 @@ class BaseVosVacancesType extends AppAwareType
         return array(
             'required' => false,
             'label' => 'vos_vacances.active',
+        );
+    }
+
+    public function getImagePathType()
+    {
+        return 'cungfoo_file';
+    }
+
+    public function getImagePathOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'vos_vacances.image_path',
         );
     }
 
@@ -195,9 +181,8 @@ class BaseVosVacancesType extends AppAwareType
     {
         $builder->add('id', $this->getIdType(), $this->getIdOptions());
         $builder->add('age', $this->getAgeType(), $this->getAgeOptions());
-        $builder->add('image_path', $this->getImagePathType(), $this->getImagePathOptions());
-        $builder->add('image_path_deleted', $this->getImagePathDeletedType(), $this->getImagePathDeletedOptions());
-        $builder->add('active', $this->getActiveType(), $this->getActiveOptions());$builder->add('vos_vacancesI18ns', 'translation_collection', array(
+        $builder->add('active', $this->getActiveType(), $this->getActiveOptions());
+        $builder->add('image_path', $this->getImagePathType(), $this->getImagePathOptions());$builder->add('vos_vacancesI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\VosVacancesI18n',
             'label' => 'vos_vacancesI18ns',
             'required' => false,
