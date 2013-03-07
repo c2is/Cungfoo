@@ -69,7 +69,7 @@ class ApiController implements ControllerProviderInterface
                 $campingDom->appendChild($node);
             }
 
-            return new Response( $dom->saveXML(), 200, array('content-type' => 'application/xml'));
+            return new Response($dom->saveXML(), 200, array('Content-Type' => 'application/xml'));
         })
         ->bind('api_criteo_xml');
 
@@ -115,7 +115,7 @@ class ApiController implements ControllerProviderInterface
                 ));
             }
 
-            return new Response(implode("\n", $lines), 200, array('content-type' => 'text/csv'));
+            return new Response(implode("\n", $lines), 200, array('Content-Type' => 'text/csv', 'Content-Disposition' => 'attachment'));
         })
         ->bind('api_criteo_csv');
 
