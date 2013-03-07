@@ -51,7 +51,7 @@ $app->after(function (Symfony\Component\HttpFoundation\Request $request, Symfony
     if ($tagUci = $request->query->get('tag_uci')) {
         $dateTime = new \DateTime();
         $dateTime->modify('+4 days');
-        $cookie = new Symfony\Component\HttpFoundation\Cookie('vd_tag_uci', $tagUci, $dateTime);
+        $cookie = new Symfony\Component\HttpFoundation\Cookie('tag_uci', $tagUci, $dateTime);
 
         $response->headers->setCookie($cookie);
     }

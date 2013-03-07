@@ -67,9 +67,9 @@ class CouloirController implements ControllerProviderInterface
             );
 
             $cookies = $request->cookies;
-            if($cookies->has('vd_tag_uci'))
+            if($cookies->has('tag_uci'))
             {
-                $query['vd_tag_uci'] = $cookies->get('vd_tag_uci');
+                $query['tag_uci'] = $cookies->get('tag_uci');
             }
 
             $query = array_merge($query, $request->request->all());
