@@ -21,7 +21,7 @@
             {% endblock %}
             {% block bottomLeftColumn %}
                 {# Bloc "Notre sélection de campings" #}
-                <h2 class="h3-like">{{ "destination.campings_selection_title" | trans }}{% if destination == constant("VacancesDirectes\\Controller\\DestinationController::DESTINATION_REGION") %} {{ 'destination.pas_cher' | trans }}{% endif %}</h2>
+                <h2 class="h3-like">{{ "destination.campings_selection_title" | trans }}{% block h2Suffix %}{% endblock %}</h2>
                 {% include 'Listing/_listing.twig' %}
             {% endblock %}
         </div>

@@ -27,7 +27,28 @@ class EventLoader extends AbstractLoader
     public function close()
     {
         $events = EventQuery::create()->select('id')->find()->toArray();
-        $toDelete = array_diff($events, $this->processedIds);
+        $processedIds = array();
+        foreach ($this->processedIds as $lang => $idsByLang)
+        {
+            $processedIds = array_merge($processedIds, $idsByLang);
+
+            $eventsToDeactivate = EventQuery::create()
+                ->filterById(array_diff($events, $idsByLang))
+                ->find()
+            ;
+
+            foreach ($eventsToDeactivate as $eventToDeactivate)
+            {
+                $eventToDeactivate
+                    ->setLocale($lang)
+                    ->setActiveLocale(false)
+                    ->save()
+                ;
+
+            }
+        }
+        
+        $toDelete = array_diff($events, $processedIds);
 
         EventQuery::create()
             ->filterById($toDelete)
@@ -42,13 +63,18 @@ class EventLoader extends AbstractLoader
         $xml   = new \SimpleXMLElement($data);
         $cache = array();
 
+        if (!isset($this->processedIds[$language]))
+        {
+            $this->processedIds[$language] = array();
+        }
+
         foreach ($xml->{'Event'} as $event)
         {
             if ($insertedEvent = $this->insertEvent($event, $language))
             {
-                if (!in_array($insertedEvent->getId(), $this->processedIds))
+                if (!in_array($insertedEvent->getId(), $this->processedIds[$language]))
                 {
-                    $this->processedIds[] = $insertedEvent->getId();
+                    $this->processedIds[$language][] = $insertedEvent->getId();
                 }
                 if ($language == 'de')
                 {

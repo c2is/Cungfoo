@@ -126,104 +126,212 @@ class EventPeer extends BaseEventPeer
 
     static public function getForPays(Pays $pays, $sort = self::NO_SORT, $count = null, $category = null, $criteriaOperation = null)
     {
-        $query = EventQuery::create()
-            ->setDistinct()
-            ->useEtablissementEventQuery()
-                ->useEtablissementQuery()
-                    ->filterByActive(true)
-                    ->useVilleQuery()
+        if(self::getLocale() == 'de')
+        {
+            $query = EventQuery::create()
+                ->useRegionEventQuery()
+                    ->useRegionQuery()
                         ->filterByActive(true)
-                        ->useRegionQuery()
+                        ->filterByPays($pays)
+                    ->endUse()
+                ->endUse()
+            ;
+        }
+        else
+        {
+            $query = EventQuery::create()
+                ->useEtablissementEventQuery()
+                    ->useEtablissementQuery()
+                        ->filterByActive(true)
+                        ->useVilleQuery()
                             ->filterByActive(true)
-                            ->filterByPays($pays)
+                            ->useRegionQuery()
+                                ->filterByActive(true)
+                                ->filterByPays($pays)
+                            ->endUse()
                         ->endUse()
                     ->endUse()
                 ->endUse()
-            ->endUse()
-        ;
+            ;
+        }
+
+        $query->setDistinct();
 
         return self::getForQuery($query, $sort, $count, $category, $criteriaOperation);
     }
 
     static public function getForRegion($region, $sort = self::NO_SORT, $count = null, $category = null, $criteriaOperation = null)
     {
-        $query = EventQuery::create()
-            ->setDistinct()
-            ->useEtablissementEventQuery()
-                ->useEtablissementQuery()
-                    ->filterByActive(true)
-                    ->useVilleQuery()
+        if(self::getLocale() == 'de')
+        {
+            $query = EventQuery::create()
+                ->useRegionEventQuery()
+                    ->filterByRegion($region)
+                ->endUse()
+            ;
+        }
+        else
+        {
+            $query = EventQuery::create()
+                ->useEtablissementEventQuery()
+                    ->useEtablissementQuery()
                         ->filterByActive(true)
-                        ->filterByRegion($region)
+                        ->useVilleQuery()
+                            ->filterByActive(true)
+                            ->filterByRegion($region)
+                        ->endUse()
                     ->endUse()
                 ->endUse()
-            ->endUse()
-        ;
+            ;
+        }
+
+        $query->setDistinct();
 
         return self::getForQuery($query, $sort, $count, $category, $criteriaOperation);
     }
 
     static public function getForDepartement($departement, $sort = self::NO_SORT, $count = null, $category = null, $criteriaOperation = null)
     {
-        $query = EventQuery::create()
-            ->setDistinct()
-            ->useEtablissementEventQuery()
-                ->useEtablissementQuery()
-                    ->filterByDepartement($departement)
-                    ->useDepartementQuery()
-                    ->filterByActive(true)
+        if(self::getLocale() == 'de')
+        {
+            $query = EventQuery::create()
+                ->useRegionEventQuery()
+                    ->useRegionQuery()
+                        ->filterByActive(true)
+                        ->useVilleQuery()
+                            ->filterByActive(true)
+                            ->useEtablissementQuery()
+                                ->filterByActive(true)
+                                ->filterByDepartement($departement)
+                            ->endUse()
+                        ->endUse()
                     ->endUse()
                 ->endUse()
-            ->endUse()
-        ;
+            ;
+        }
+        else
+        {
+            $query = EventQuery::create()
+                ->useEtablissementEventQuery()
+                    ->useEtablissementQuery()
+                        ->filterByDepartement($departement)
+                        ->useDepartementQuery()
+                            ->filterByActive(true)
+                        ->endUse()
+                    ->endUse()
+                ->endUse()
+            ;
+        }
+
+        $query->setDistinct();
 
         return self::getForQuery($query, $sort, $count, $category, $criteriaOperation);
     }
 
     static public function getForRegionRef($region, $sort = self::NO_SORT, $count = null, $category = null, $criteriaOperation = null)
     {
-        $query = EventQuery::create()
-            ->setDistinct()
-            ->useEtablissementEventQuery()
-                ->useEtablissementQuery()
-                    ->filterByActive(true)
-                    ->useDepartementQuery()
+        if(self::getLocale() == 'de')
+        {
+            $query = EventQuery::create()
+                ->useRegionEventQuery()
+                    ->useRegionQuery()
                         ->filterByActive(true)
-                        ->filterByRegionRef($region)
+                        ->useVilleQuery()
+                            ->filterByActive(true)
+                            ->useEtablissementQuery()
+                                ->filterByActive(true)
+                                ->useDepartementQuery()
+                                    ->filterByActive(true)
+                                    ->filterByRegionRef($region)
+                                ->endUse()
+                            ->endUse()
+                        ->endUse()
                     ->endUse()
                 ->endUse()
-            ->endUse()
-        ;
+            ;
+        }
+        else
+        {
+            $query = EventQuery::create()
+                ->useEtablissementEventQuery()
+                    ->useEtablissementQuery()
+                        ->filterByActive(true)
+                        ->useDepartementQuery()
+                            ->filterByActive(true)
+                            ->filterByRegionRef($region)
+                        ->endUse()
+                    ->endUse()
+                ->endUse()
+            ;
+        }
+
+        $query->setDistinct();
 
         return self::getForQuery($query, $sort, $count, $category, $criteriaOperation);
     }
 
     static public function getForVille(Ville $ville, $sort = self::NO_SORT, $count = null, $category = null, $criteriaOperation = null)
     {
-        $query = EventQuery::create()
-            ->setDistinct()
-            ->useEtablissementEventQuery()
-                ->useEtablissementQuery()
-                    ->filterByActive(true)
-                    ->filterByVille($ville)
+        if(self::getLocale() == 'de')
+        {
+            $query = EventQuery::create()
+                ->useRegionEventQuery()
+                    ->useRegionQuery()
+                        ->filterByActive(true)
+                        ->filterByVille($ville)
+                    ->endUse()
                 ->endUse()
-            ->endUse()
-        ;
+            ;
+        }
+        else
+        {
+            $query = EventQuery::create()
+                ->useEtablissementEventQuery()
+                    ->useEtablissementQuery()
+                        ->filterByActive(true)
+                        ->filterByVille($ville)
+                    ->endUse()
+                ->endUse()
+            ;
+        }
+
+        $query->setDistinct();
 
         return self::getForQuery($query, $sort, $count, $category, $criteriaOperation);
     }
 
     static public function getForDestination(Destination $destination, $sort = self::NO_SORT, $count = null, $category = null, $criteriaOperation = null)
     {
-        $query = EventQuery::create()
-            ->setDistinct()
-            ->useEtablissementEventQuery()
-                ->useEtablissementQuery()
-                    ->filterByActive(true)
-                    ->filterByDestination($destination)
+        if(self::getLocale() == 'de')
+        {
+            $query = EventQuery::create()
+                ->useRegionEventQuery()
+                    ->useRegionQuery()
+                        ->filterByActive(true)
+                        ->useVilleQuery()
+                            ->filterByActive(true)
+                            ->useEtablissementQuery()
+                                ->filterByActive(true)
+                                ->filterByDestination($destination)
+                            ->endUse()
+                        ->endUse()
+                    ->endUse()
                 ->endUse()
-            ->endUse()
-        ;
+            ;
+        }
+        else
+        {
+            $query = EventQuery::create()
+                ->useEtablissementEventQuery()
+                    ->useEtablissementQuery()
+                        ->filterByActive(true)
+                        ->filterByDestination($destination)
+                    ->endUse()
+                ->endUse()
+            ;
+        }
+
+        $query->setDistinct();
 
         return self::getForQuery($query, $sort, $count, $category, $criteriaOperation);
     }

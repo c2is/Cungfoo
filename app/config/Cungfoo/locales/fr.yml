@@ -904,3 +904,5 @@ portfolio_media.size: "Taille"
 portfolio_media.type: "Type"
 portfolio_media.description: "Description"
 portfolio_media.active: "Active"
+
+'The CSRF token is invalid. Please try to resubmit the form.': 'Votre session a expiré ; veuillez soumettre le formulaire à nouveau.'
