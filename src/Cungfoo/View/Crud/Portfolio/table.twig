@@ -1,0 +1,11 @@
+<table id="list" class="table table-striped portfolio-list">
+    <tbody>
+    {% for line in paginator %}
+    {% set used = false %}
+    {% if line.id in mediaIds %}
+    {% set used = true %}
+    {% endif %}
+    {% include 'Crud/Portfolio/table_line.twig' with {'line': line, 'used': used} %}
+    {% endfor %}
+    </tbody>
+</table>

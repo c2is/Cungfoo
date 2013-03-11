@@ -29,6 +29,7 @@
             $('body').delegate(base.options['portfolioToggleUseClass'], 'click', base.useMedia);
             $('body').delegate(base.options['portfolioMediaDeleteClass'], 'click', base.deleteMedia);
             $('body').delegate(base.options['portfolioValidateClass'], 'click', base.validate);
+            $('body').delegate(base.options['portfolioSearchFormClass'], 'submit', base.submitSearchForm);
         }
 
         base.preventDefault = function(e) {
@@ -152,6 +153,23 @@
             return false;
         }
 
+        base.submitSearchForm = function(e) {
+            base.preventDefault(e);
+
+            var searchForm = $(this);
+            var sMediaIds = $('#' + $(base.options['portfolioPopinClass']).data('field-id')).val();
+
+            $.post(searchForm.attr('action') + '?ids=' + sMediaIds, searchForm.serialize(), function (json) {
+                console.log(json);
+                var jsonObject     = JSON.parse(json);
+                var portfolioList   = $(base.options['portfolioListClass']);
+
+                portfolioList.replaceWith(jsonObject.html);
+            });
+
+            return false;
+        }
+
         base.useMedia = function(e) {
             base.preventDefault(e);
 
@@ -228,6 +246,8 @@
         'portfolioToggleEditClass': '.portfolio-toggle-edit',
         'portfolioToggleUseClass': '.portfolio-toggle-use',
         'portfolioAddTagClass': '.portfolio-add-tag',
+        'portfolioSearchFormClass': '.portfolio-search-form',
+        'portfolioListClass': '.portfolio-list',
         'portfolioLimit': 1,
         'portfolioType': ["image"],
     };
