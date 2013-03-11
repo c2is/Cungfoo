@@ -1364,8 +1364,8 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
     }
 
     // active behavior
-
-
+    
+    
     /**
      * return true is the object is active
      *
@@ -1375,7 +1375,7 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
     {
         return $this->getActive();
     }
-
+    
     /**
      * return true is the object is active locale
      *
@@ -1697,7 +1697,7 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
     }
 
     // crudable behavior
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -1710,7 +1710,7 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
     {
         return $this->save($con);
     }
-
+    
     /**
      * @return string
      */
@@ -1718,7 +1718,7 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
     {
         return 'uploads/idee_weekends';
     }
-
+    
     /**
      * @return string
      */
@@ -1726,14 +1726,14 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-
+    
     /**
      * @return void
      */
     public function getImagePath()
     {
         $peer = self::PEER;
-
+    
         $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
             ->select('id')
             ->usePortfolioUsageQuery()
@@ -1744,19 +1744,19 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
             ->find()
             ->toArray()
         ;
-
+    
         return implode(';', $medias);
     }
-
+    
     /**
      * @return void
      */
     public function setImagePath($v)
     {
         $peer = self::PEER;
-
+    
         $values = explode(';', $v);
-
+    
         \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
             ->filterByColumnRef($peer::TABLE_NAME.'.image_path')
@@ -1765,7 +1765,7 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
             ->find()
             ->delete()
         ;
-
+    
         if ($v) {
             foreach ($values as $index => $value) {
                 $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
@@ -1775,7 +1775,7 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
                     ->filterByMediaId($value)
                     ->findOne()
                 ;
-
+    
                 if (!$usage) {
                     $usage = new \Cungfoo\Model\PortfolioUsage();
                     $usage
@@ -1785,13 +1785,13 @@ abstract class BaseIdeeWeekend extends BaseObject implements Persistent
                         ->setMediaId($value)
                     ;
                 }
-
+    
                 $usage
                     ->setSortableRank($index)
                     ->save()
                 ;
             }
-
+    
         }
     }
 

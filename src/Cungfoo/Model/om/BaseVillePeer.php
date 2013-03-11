@@ -1035,7 +1035,7 @@ abstract class BaseVillePeer
     }
 
     // crudable behavior
-
+    
     /**
      * The default locale to use for translations
      * @var        string
@@ -1049,7 +1049,7 @@ abstract class BaseVillePeer
         ;
     }
     // seo behavior
-
+    
     /**
      * The default locale to use for translations
      * @var        string

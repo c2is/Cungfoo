@@ -825,7 +825,7 @@ abstract class BasePortfolioMediaPeer
     }
 
     // crudable behavior
-
+    
     /**
      * The default locale to use for translations
      * @var        string
@@ -839,7 +839,7 @@ abstract class BasePortfolioMediaPeer
         ;
     }
     // seo behavior
-
+    
     /**
      * The default locale to use for translations
      * @var        string

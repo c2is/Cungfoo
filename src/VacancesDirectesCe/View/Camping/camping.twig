@@ -48,9 +48,9 @@
 
     <div class="tabCampDiapo">
         <div class="slider"><div class="slide clear">
-            {% if multimedia | length %}
-            {% for media in multimedia %}
-                <img src="{{ asset(media.imagePath) }}" width="616" height="326" alt="{{ media.titre }}" class="{{ media.tagsForDisplay }}"/>
+            {% if etab.slider %}
+            {% for media in etab.slider | medias %}
+                <img src="{{ asset(media.file) }}" width="616" height="326" alt="{{ media.title }}" class="{{ media.title }}"/>
             {% endfor %}
             {% endif %}
         </div></div>
@@ -96,7 +96,7 @@
             {% endif %}
             <h4>Les vacances à {{ etab.city }}</h4>
             <dl>
-                <dd class="img"><img src="{{ asset(etab.ville.region.imagePath) }}"></dd>
+                <dd class="img"><img src="{{ asset(etab.ville.region.imagePath | media('file')) }}"></dd>
                 <dt>A proximité<br> nous avons listé :</dt>
                 <dd class="list">
                    <ul>
@@ -149,10 +149,10 @@
         {% if etab.typeHebergements | length %}
         {% for hebergement in etab.typeHebergementsActive %}
             <div class="typLocation {{ hebergement.categoryTypeHebergement.name }} cap{{ hebergement.nombrePlace }} clear">
-                <img src="{{ asset(hebergement.imageHebergementPath) }}" width="181" height="134" alt="{{ hebergement.name | trans }}" class="left boxborder">
+                <img src="{{ asset(hebergement.imageHebergementPath | media('file')) }}" width="181" height="134" alt="{{ hebergement.name | trans }}" class="left boxborder">
                 <div style="overflow:hidden;">
                 <span class="h4-like">{{ hebergement.name | trans }}</span>
-                <span class="nbPlace"><img src="{{ asset(hebergement.imageCompositionPath) }}" width="92" height="33" alt="">{{ hebergement.composition | trans | nl2br }}</span>
+                <span class="nbPlace"><img src="{{ asset(hebergement.imageCompositionPath | media('file')) }}" width="92" height="33" alt="">{{ hebergement.composition | trans | nl2br }}</span>
                 <strong>Nombre de chambres : {{ hebergement.nombreChambre }}<br>
                 Surface : {{ hebergement.surface | trans }}<br>
                 Type de terrasse : {{ hebergement.typeTerrasse | trans }}</strong>
@@ -169,7 +169,7 @@
     </div>
     <!-- tab Sur place -->
     <div id="tabSurplace" class="tabs">
-        <img src="{{ asset(etab.planPath) }}" width="616" height="402" alt="{{ etab.name }}">
+        <img src="{{ asset(etab.planPath | media('file')) }}" width="616" height="402" alt="{{ etab.name }}">
         <img src="../../../web/images/vacancesdirectes/common/pict/ficheLegendMap.png" alt="Légende du plan du camping" class="right">
         <div class="colSurPlace clearboth">
             {% if etab.activites | length %}
@@ -177,7 +177,7 @@
                 <dt><span>Activités</span></dt>
                 <dd class="activites"><ul>
                     {% for activite in etab.activitesActive %}
-                        <li><img src="{{ asset(activite.imagePath) }}" alt="{{ activite.name }}"><span>{{ activite.name }}</span></span></li>
+                        <li><img src="{{ asset(activite.imagePath | media('file')) }}" alt="{{ activite.name }}"><span>{{ activite.name }}</span></span></li>
                     {% endfor %}
                 </ul></dd>
             </dl>
@@ -212,7 +212,7 @@
             <div class="slider"><div class="slide">
                 {% for avantage in personnageAleatoire.avantagesActive %}
                     <dl>
-                        <dd><img src="{{ asset(avantage.imagePath) }}" alt="{{ avantage.name }}" class="boxborder"></dd>
+                        <dd><img src="{{ asset(avantage.imagePath | media('file')) }}" alt="{{ avantage.name }}" class="boxborder"></dd>
                         <dt>{{ avantage.name }}</dt>
                         <dd>{{ avantage.description }}</dd>
                     </dl>
@@ -288,8 +288,8 @@
             <h3>{{ region.name }}</h3>
             <p>{{ region.description }}</p>
 
-            <img class="iDestImg1 boxborder" src="{{ asset(region.imageEncartPath) }}" width="211" height="93" alt="{{ region.name }}">
-            <img class="iDestImg2 boxborder" src="{{ asset(region.imageEncartPetitePath) }}" width="146" height="65" alt="{{ region.name }}">
+            <img class="iDestImg1 boxborder" src="{{ asset(region.imageEncartPath | media('file')) }}" width="211" height="93" alt="{{ region.name }}">
+            <img class="iDestImg2 boxborder" src="{{ asset(region.imageEncartPetitePath | media('file')) }}" width="146" height="65" alt="{{ region.name }}">
         </div>
 
         <nav class="paginationTabs clear">

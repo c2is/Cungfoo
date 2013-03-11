@@ -17,7 +17,7 @@
         </div>
         <!-- item.left -->
         <div class="itemResultLeft">
-            <img src="{{ asset(etab.model.vignette) }}" alt="" class="boxborder" width="145" height="108">
+            <img src="{{ asset(etab.model.vignette | media('file')) }}" alt="" class="boxborder" width="145" height="108">
         </div>
         <!-- item.center -->
         <div class="itemResultCenter">
@@ -37,7 +37,7 @@
         </div>
         <!-- item.right -->
         <div class="itemResultRight">
-            <img width="75" height="77" alt="" src="{{ asset(etab.model.ville.region.imagePath) }}">
+            <img width="75" height="77" alt="" src="{{ asset(etab.model.ville.region.imagePath | media('file')) }}">
             <span class="titDest">
                 <a href="{{ path('destination_pays', {'pays': etab.model.pays.slug}) }}" title="{{ etab.model.pays }}">{{ etab.model.pays }}</a><br>
                 <a href="{{ path('destination_region', {'pays': etab.model.pays.slug, 'region': etab.model.region.slug}) }}" title="{{ etab.model.region }}">{{ etab.model.region }}</a><br>
@@ -47,8 +47,8 @@
 
             <div class="itemResultPopDest" style="display:none;"><div>
                 <h3>{{ etab.model.ville }}</h3>
-                <img height="93" width="211" alt="{{ etab.model.region }}" src="{{ asset(etab.model.region.ImageEncartPath) }}" class="iDestImg1 boxborder">
-                <img height="65" width="146" alt="{{ etab.model.region }}" src="{{ asset(etab.model.region.ImageEncartPetitePath) }}" class="iDestImg2 boxborder">
+                <img height="93" width="211" alt="{{ etab.model.region }}" src="{{ asset(etab.model.region.ImageEncartPath | media('file')) }}" class="iDestImg1 boxborder">
+                <img height="65" width="146" alt="{{ etab.model.region }}" src="{{ asset(etab.model.region.ImageEncartPetitePath | media('file')) }}" class="iDestImg2 boxborder">
 
                 <div class="infoPop">
                 {% if etab.model.eventPrioritaire %}

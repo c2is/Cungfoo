@@ -5,7 +5,7 @@
     {% for idee in ideesweekend %}
         <div class="element clear{% if idee.prix == "" %} noprice{% endif %}{% if loop.last %} last{% endif %}{# TODO linkParent #}">
             <div class="left">
-                <img class="view" src="{{ asset(idee.imagePath) }}" width="96" height="86" alt="" />
+                <img class="view" src="{{ asset(idee.imagePath | media('file')) }}" width="96" height="86" alt="" />
             </div>
             <div class="details left">
                 <span class="title">{{ idee.titre }}</span>

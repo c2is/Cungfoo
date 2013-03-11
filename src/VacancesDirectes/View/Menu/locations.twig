@@ -4,7 +4,7 @@
     <div class="clear"> 
         {% for categoryTypeHebergement in categoryTypeHebergements %}
         <div class="radiusBox2 greyC left bgImg linkParent">
-            <div class="view" style="background-image:url('{{ asset(categoryTypeHebergement.imageMenu) }}')">
+            <div class="view" style="background-image:url('{{ asset(categoryTypeHebergement.imageMenu | media('file')) }}')">
                 <div class="stamp grey"><span>{{ categoryTypeHebergement }}</span></div>
             </div>
             <a class="stain fushia cover linkBlock" href="{{ path('location_category_type_hebergement', {'categoryTypeHebergement': categoryTypeHebergement.slug}) }}"><span>{{ 'general.a_partir_de' | trans }}<br /><span class="price">{{categoryTypeHebergement.minimumPrice}}<span class="fine">&nbsp;</span>€</span></span></a>
@@ -17,7 +17,7 @@
         {% for capacite in capacites %}
         <div class="radiusBox greyC left bgImg capacity linkParent">
             <a class="linkBlock" href="{{ path('location_category_type_hebergement', {'categoryTypeHebergement': capacite.slug}) }}">
-                <img class="view" src="{{ asset(capacite.imageMenu) }}" alt="" />
+                <img class="view" src="{{ asset(capacite.imageMenu | media('file')) }}" alt="" />
                 <span>{{ capacite.name }}</span>
             </a>
         </div>

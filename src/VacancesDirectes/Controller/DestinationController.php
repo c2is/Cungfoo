@@ -402,7 +402,7 @@ class DestinationController implements ControllerProviderInterface
             ->limit(3)
             ->findActive()
         ;
-
+/*
         $multimedia = \Cungfoo\Model\MultimediaEtablissementQuery::create()
             ->joinWithI18n($locale)
             ->filterByEtablissementId($camping->getId())
@@ -418,7 +418,7 @@ class DestinationController implements ControllerProviderInterface
                 $tags[$tag->getSlug()] = $tag;
             }
         }
-
+*/
         $personnageAleatoire = \Cungfoo\Model\PersonnageQuery::create()
             ->joinWithI18n($locale)
             ->filterByEtablissementId($camping->getId())
@@ -447,8 +447,8 @@ class DestinationController implements ControllerProviderInterface
             'locale'                  => $locale,
             'etab'                    => $camping,
             'personnages'             => $personnages,
-            'multimedia'              => $multimedia,
-            'tags'                    => $tags,
+            /*'multimedia'              => $multimedia,*/
+            /*'tags'                    => $tags,*/
             'personnageAleatoire'     => $personnageAleatoire,
             'sitesAVisiter'           => $sitesAVisiter,
             'events'                  => $events,

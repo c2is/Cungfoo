@@ -6,7 +6,7 @@
     {% for camping in campings %}
     <div class="element clear">
         <div class="left">
-            <img class="boxborder" src="{{ asset(camping.vignette) }}" width="119" height="86" alt="" />
+            <img class="boxborder" src="{{ asset(camping.vignette | media('file')) }}" width="119" height="86" alt="" />
         </div>
         <div class="details left">
             <span class="title">{{ camping.name }}{{ etab.categorie.stars }}</span>
