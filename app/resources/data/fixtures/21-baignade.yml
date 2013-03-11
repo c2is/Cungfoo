@@ -1,26 +1,16 @@
 \Cungfoo\Model\Baignade:
     1:
         Code: TOBO
-        ImagePath: null
-        Vignette: uploads/baignades/50c84993872f8.png
         Active: true
     2:
         Code: PISC
-        ImagePath: null
-        Vignette: null
         Active: true
     3:
         Code: PCOU
-        ImagePath: null
-        Vignette: null
         Active: true
     4:
         Code: PAAQ
-        ImagePath: null
-        Vignette: null
         Active: true
     5:
         Code: SPAJ
-        ImagePath: null
-        Vignette: null
         Active: true

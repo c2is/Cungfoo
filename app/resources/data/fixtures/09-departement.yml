@@ -2,234 +2,156 @@
     1:
         Code: AHP
         RegionRefId: 22
-        ImageDetail1: null
-        ImageDetail2: null
         Active: true
     2:
         Code: ALMA
         RegionRefId: 19
-        ImageDetail1: null
-        ImageDetail2: null
         Active: true
     3:
         Code: ARD
         RegionRefId: 20
-        ImageDetail1: null
-        ImageDetail2: null
         Active: true
     4:
         Code: AUD
         RegionRefId: 13
-        ImageDetail1: null
-        ImageDetail2: null
         Active: true
     5:
         Code: AVE
         RegionRefId: 15
-        ImageDetail1: null
-        ImageDetail2: null
         Active: true
     6:
         Code: BRH
         RegionRefId: 1
-        ImageDetail1: null
-        ImageDetail2: null
         Active: true
     7:
         Code: BDR
         RegionRefId: 19
-        ImageDetail1: null
-        ImageDetail2: null
         Active: true
     8:
         Code: CAL
         RegionRefId: 4
-        ImageDetail1: null
-        ImageDetail2: null
         Active: true
     9:
         Code: CANT
         RegionRefId: 3
-        ImageDetail1: null
-        ImageDetail2: null
         Active: true
     10:
         Code: CMA
         RegionRefId: 18
-        ImageDetail1: null
-        ImageDetail2: null
         Active: true
     11:
         Code: CORR
         RegionRefId: 14
-        ImageDetail1: null
-        ImageDetail2: null
         Active: true
     12:
         Code: CDS
         RegionRefId: 22
-        ImageDetail1: null
-        ImageDetail2: null
         Active: true
     13:
         Code: CODA
         RegionRefId: 5
-        ImageDetail1: null
-        ImageDetail2: null
         Active: true
     14:
         Code: DORD
         RegionRefId: 2
-        ImageDetail1: null
-        ImageDetail2: null
         Active: true
     15:
         Code: DROM
         RegionRefId: 20
-        ImageDetail1: null
-        ImageDetail2: null
         Active: true
     16:
         Code: FINI
         RegionRefId: 5
-        ImageDetail1: null
-        ImageDetail2: null
         Active: true
     17:
         Code: GARD
         RegionRefId: 13
-        ImageDetail1: null
-        ImageDetail2: null
         Active: true
     18:
         Code: GER
         RegionRefId: 15
-        ImageDetail1: null
-        ImageDetail2: null
         Active: true
     19:
         Code: GIR
         RegionRefId: 2
-        ImageDetail1: null
-        ImageDetail2: null
         Active: true
     20:
         Code: HTRH
         RegionRefId: 1
-        ImageDetail1: null
-        ImageDetail2: null
         Active: true
     21:
         Code: HC
         RegionRefId: 22
-        ImageDetail1: null
-        ImageDetail2: null
         Active: true
     22:
         Code: HS
         RegionRefId: 20
-        ImageDetail1: null
-        ImageDetail2: null
         Active: true
     23:
         Code: HA
         RegionRefId: 19
-        ImageDetail1: null
-        ImageDetail2: null
         Active: true
     24:
         Code: HER
         RegionRefId: 13
-        ImageDetail1: null
-        ImageDetail2: null
         Active: true
     25:
         Code: IEL
         RegionRefId: 6
-        ImageDetail1: null
-        ImageDetail2: null
         Active: true
     26:
         Code: JURA
         RegionRefId: 11
-        ImageDetail1: null
-        ImageDetail2: null
         Active: true
     27:
         Code: LAN
         RegionRefId: 2
-        ImageDetail1: null
-        ImageDetail2: null
         Active: true
     28:
         Code: LCH
         RegionRefId: 6
-        ImageDetail1: null
-        ImageDetail2: null
         Active: true
     29:
         Code: LOAT
         RegionRefId: 5
-        ImageDetail1: null
-        ImageDetail2: null
         Active: true
     30:
         Code: LOT
         RegionRefId: 15
-        ImageDetail1: null
-        ImageDetail2: null
         Active: true
     31:
         Code: MORB
         RegionRefId: 5
-        ImageDetail1: null
-        ImageDetail2: null
         Active: true
     32:
         Code: PDC
         RegionRefId: 16
-        ImageDetail1: null
-        ImageDetail2: null
         Active: true
     33:
         Code: PDD
         RegionRefId: 3
-        ImageDetail1: null
-        ImageDetail2: null
         Active: true
     34:
         Code: PA
         RegionRefId: 2
-        ImageDetail1: null
-        ImageDetail2: null
         Active: true
     35:
         Code: PO
         RegionRefId: 13
-        ImageDetail1: null
-        ImageDetail2: null
         Active: true
     36:
         Code: SEMA
         RegionRefId: 12
-        ImageDetail1: null
-        ImageDetail2: null
         Active: true
     37:
         Code: TARN
         RegionRefId: 15
-        ImageDetail1: null
-        ImageDetail2: null
         Active: true
     38:
         Code: VAR
         RegionRefId: 19
-        ImageDetail1: null
-        ImageDetail2: null
         Active: true
     39:
         Code: VE
         RegionRefId: 17
-        ImageDetail1: null
-        ImageDetail2: null
         Active: true

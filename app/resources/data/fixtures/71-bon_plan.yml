@@ -4,9 +4,6 @@
         DateFin: '2013-07-14 00:00:00'
         Prix: null
         PrixBarre: 137
-        ImageMenu: null
-        ImagePage: uploads/bon_plans/50feaa9d501ce.jpeg
-        ImageListe: null
         ActiveCompteur: false
         MiseEnAvant: true
         PushHome: true
@@ -22,9 +19,6 @@
         DateFin: '2013-08-31 00:00:00'
         Prix: null
         PrixBarre: null
-        ImageMenu: uploads/bon_plans/50fec19945bb3.jpeg
-        ImagePage: uploads/bon_plans/50fea8e18bf47.jpeg
-        ImageListe: null
         ActiveCompteur: false
         MiseEnAvant: false
         PushHome: false
