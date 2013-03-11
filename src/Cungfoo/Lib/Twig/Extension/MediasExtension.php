@@ -8,33 +8,34 @@ use Cungfoo\Model\PortfolioMediaQuery;
  * @author Morgan Brunot <brunot.morgan@gmail.com>
  * @date 02/08/12
  */
-class MediaExtension extends \Twig_Extension
+class MediasExtension extends \Twig_Extension
 {
     public function getFilters()
     {
         return array(
-            'media' => new \Twig_Filter_Method($this, 'doMediaFilter'),
+            'medias' => new \Twig_Filter_Method($this, 'doMediasFilter'),
         );
     }
 
-    public function doMediaFilter($id, $value = null)
+    public function doMediasFilter($value = null)
     {
-        $id = explode(';', $id);
+        if ($value === null) {
+            return array();
+        }
+
+        $value = explode(';', $value);
 
         return PortfolioMediaQuery::create()
-            ->_if($value)
-                ->select($value)
-            ->_endif()
-            ->filterById($id)
+            ->filterById($value)
             ->usePortfolioUsageQuery()
                 ->orderByRank()
             ->endUse()
-            ->findOne()
+            ->find()
         ;
     }
 
     public function getName()
     {
-        return 'media';
+        return 'medias';
     }
 }

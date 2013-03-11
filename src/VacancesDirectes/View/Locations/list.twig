@@ -37,7 +37,7 @@
         </div>
     </div>
     {% endif %}
-    <img class="bdPict" src="{{ asset(categoryTypeHebergement.imagePage) }}" alt="" width="616" height="253">
+    <img class="bdPict" src="{{ asset(categoryTypeHebergement.imagePage | media('file')) }}" alt="" width="616" height="253">
 </div>
 {% endif %}
 
@@ -69,7 +69,7 @@
            <a href="{{ path('location_type_hebergement', {'categoryTypeHebergement': categoryTypeHebergement.slug, 'typeHebergement': hebergement.slug}) }}">{{ hebergement.name }}</a>
         </div>
         <div class="itemResultLeft itemResultLeftHbgt">
-            <img src="{{ asset(hebergement.imageHebergementPath) }}" alt="" class="boxborder">
+            <img src="{{ asset(hebergement.imageHebergementPath | media('file')) }}" alt="" class="boxborder">
         </div>
         <div class="itemResultCenter itemResultCenterHbgt">
             <span class="ircHbgtTitle">{{ 'location.list.hebergements.nb_places' | trans({'%nbPlaces%': hebergement.nombrePlace}) }}</span>

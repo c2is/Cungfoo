@@ -1534,8 +1534,8 @@ abstract class BaseMultimediaTypeHebergement extends BaseObject implements Persi
     }
 
     // active behavior
-
-
+    
+    
     /**
      * return true is the object is active
      *
@@ -1545,7 +1545,7 @@ abstract class BaseMultimediaTypeHebergement extends BaseObject implements Persi
     {
         return $this->getActive();
     }
-
+    
     /**
      * return true is the object is active locale
      *
@@ -1843,7 +1843,7 @@ abstract class BaseMultimediaTypeHebergement extends BaseObject implements Persi
     }
 
     // crudable behavior
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -1856,7 +1856,7 @@ abstract class BaseMultimediaTypeHebergement extends BaseObject implements Persi
     {
         return $this->save($con);
     }
-
+    
     /**
      * @return string
      */
@@ -1864,7 +1864,7 @@ abstract class BaseMultimediaTypeHebergement extends BaseObject implements Persi
     {
         return 'uploads/multimedia_type_hebergements';
     }
-
+    
     /**
      * @return string
      */
@@ -1872,14 +1872,14 @@ abstract class BaseMultimediaTypeHebergement extends BaseObject implements Persi
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-
+    
     /**
      * @return void
      */
     public function getImagePath()
     {
         $peer = self::PEER;
-
+    
         $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
             ->select('id')
             ->usePortfolioUsageQuery()
@@ -1890,19 +1890,19 @@ abstract class BaseMultimediaTypeHebergement extends BaseObject implements Persi
             ->find()
             ->toArray()
         ;
-
+    
         return implode(';', $medias);
     }
-
+    
     /**
      * @return void
      */
     public function setImagePath($v)
     {
         $peer = self::PEER;
-
+    
         $values = explode(';', $v);
-
+    
         \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
             ->filterByColumnRef($peer::TABLE_NAME.'.image_path')
@@ -1911,7 +1911,7 @@ abstract class BaseMultimediaTypeHebergement extends BaseObject implements Persi
             ->find()
             ->delete()
         ;
-
+    
         if ($v) {
             foreach ($values as $index => $value) {
                 $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
@@ -1921,7 +1921,7 @@ abstract class BaseMultimediaTypeHebergement extends BaseObject implements Persi
                     ->filterByMediaId($value)
                     ->findOne()
                 ;
-
+    
                 if (!$usage) {
                     $usage = new \Cungfoo\Model\PortfolioUsage();
                     $usage
@@ -1931,13 +1931,13 @@ abstract class BaseMultimediaTypeHebergement extends BaseObject implements Persi
                         ->setMediaId($value)
                     ;
                 }
-
+    
                 $usage
                     ->setSortableRank($index)
                     ->save()
                 ;
             }
-
+    
         }
     }
 

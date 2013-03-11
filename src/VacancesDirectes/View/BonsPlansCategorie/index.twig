@@ -34,7 +34,7 @@
         <div class="bpItem itemResult bgImg {% if bonPlan.miseEnAvant == false %}half{% endif %}">
             <div class="itemResultTitle">{{ bonPlan.name }}</div>
             <div class="view">
-                <img class="bg" src="{{ asset(bonPlan.imageListe) }}" alt="{{ bonPlan.name }}" />
+                <img class="bg" src="{{ asset(bonPlan.imageListe | media('file')) }}" alt="{{ bonPlan.name }}" />
             </div>
             <div class="content clear">
                 <p>{{ bonPlan.description }}</p>

@@ -38,7 +38,7 @@
     <div class="activites radiusBox greyC left clear">
         {% for activite in theme.activitesActive %}
             <div class="miniEncart clear">
-                <img src="{{ asset(activite.vignette) }}" alt="{{ activite.name }}" class="boxborder left">
+                <img src="{{ asset(activite.vignette | media('file')) }}" alt="{{ activite.name }}" class="boxborder left">
                 <div class="details">
                     <h3>{{ activite.name }}</h3>
                     <span>{{ activite.description }}</span>
@@ -47,7 +47,7 @@
         {% endfor %}
         {% for baignade in theme.baignadesActive %}
             <div class="miniEncart clear">
-                <img src="{{ asset(baignade.vignette) }}" alt="{{ baignade.name }}" class="boxborder left">
+                <img src="{{ asset(baignade.vignette | media('file')) }}" alt="{{ baignade.name }}" class="boxborder left">
                 <div class="details">
                     <h3>{{ baignade.name }}</h3>
                     <span>{{ baignade.description }}</span>
@@ -56,7 +56,7 @@
         {% endfor %}
         {% for serviceComplementaire in theme.serviceComplementairesActive %}
             <div class="miniEncart clear">
-                <img src="{{ asset(serviceComplementaire.vignette) }}" alt="{{ serviceComplementaire.name }}" class="boxborder left">
+                <img src="{{ asset(serviceComplementaire.vignette | media('file')) }}" alt="{{ serviceComplementaire.name }}" class="boxborder left">
                 <div class="details">
                     <h3>{{ serviceComplementaire.name }}</h3>
                     <span>{{ serviceComplementaire.description }}</span>

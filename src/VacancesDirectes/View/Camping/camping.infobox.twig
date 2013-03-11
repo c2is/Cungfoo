@@ -1,5 +1,5 @@
 <div class="content">
-    <img class="boxborder" src="{{ asset(etab.vignette) }}" alt="{{ etab.name }}{{ etab.categorie.stars }}" width="124" height="93">
+    <img class="boxborder" src="{{ asset(etab.vignette | media('file')) }}" alt="{{ etab.name }}{{ etab.categorie.stars }}" width="124" height="93">
     <p class="title">{{ etab.name }}{{ etab.categorie.stars }}</p>
     <p class="country">{{ etab.country }}</p>
     <p class="reg">{{ etab.ville.region }}</p>

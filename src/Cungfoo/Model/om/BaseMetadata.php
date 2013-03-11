@@ -1148,7 +1148,7 @@ abstract class BaseMetadata extends BaseObject implements Persistent
     }
 
     // crudable behavior
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -1161,7 +1161,7 @@ abstract class BaseMetadata extends BaseObject implements Persistent
     {
         return $this->save($con);
     }
-
+    
     /**
      * @return string
      */
@@ -1169,7 +1169,7 @@ abstract class BaseMetadata extends BaseObject implements Persistent
     {
         return 'uploads/metadatas';
     }
-
+    
     /**
      * @return string
      */
@@ -1177,14 +1177,14 @@ abstract class BaseMetadata extends BaseObject implements Persistent
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-
+    
     /**
      * @return void
      */
     public function getVisuel()
     {
         $peer = self::PEER;
-
+    
         $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
             ->select('id')
             ->usePortfolioUsageQuery()
@@ -1195,19 +1195,19 @@ abstract class BaseMetadata extends BaseObject implements Persistent
             ->find()
             ->toArray()
         ;
-
+    
         return implode(';', $medias);
     }
-
+    
     /**
      * @return void
      */
     public function setVisuel($v)
     {
         $peer = self::PEER;
-
+    
         $values = explode(';', $v);
-
+    
         \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
             ->filterByColumnRef($peer::TABLE_NAME.'.visuel')
@@ -1216,7 +1216,7 @@ abstract class BaseMetadata extends BaseObject implements Persistent
             ->find()
             ->delete()
         ;
-
+    
         if ($v) {
             foreach ($values as $index => $value) {
                 $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
@@ -1226,7 +1226,7 @@ abstract class BaseMetadata extends BaseObject implements Persistent
                     ->filterByMediaId($value)
                     ->findOne()
                 ;
-
+    
                 if (!$usage) {
                     $usage = new \Cungfoo\Model\PortfolioUsage();
                     $usage
@@ -1236,13 +1236,13 @@ abstract class BaseMetadata extends BaseObject implements Persistent
                         ->setMediaId($value)
                     ;
                 }
-
+    
                 $usage
                     ->setSortableRank($index)
                     ->save()
                 ;
             }
-
+    
         }
     }
 

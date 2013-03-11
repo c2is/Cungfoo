@@ -787,7 +787,7 @@ abstract class BaseTagPeer
     }
 
     // crudable behavior
-
+    
     /**
      * The default locale to use for translations
      * @var        string
@@ -801,7 +801,7 @@ abstract class BaseTagPeer
         ;
     }
     // seo behavior
-
+    
     /**
      * The default locale to use for translations
      * @var        string

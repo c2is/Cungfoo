@@ -4,7 +4,7 @@
     <form id="camping-{{ etab.model.slug }}" method="POST" class="element">
         <input type="hidden" name="{{ "camp" ~ etab.model.code }}-{{ loopParent.index }}" value="{{ proposal|serialize }}" />
         <div class="clear linkParent itemGetCampingFiche">
-            <img class="boxborder left" src="{{ asset(etab.model.vignette) }}" width="119" height="86" alt="" />
+            <img class="boxborder left" src="{{ asset(etab.model.vignette | media('file')) }}" width="119" height="86" alt="" />
             <div class="details left">
                 <span class="title">{{ etab.model.name }} {{ etab.model.categorie.stars }}</span>
                 <span class="region">{{ etab.model.ville.region }}</span>

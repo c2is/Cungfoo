@@ -1801,8 +1801,8 @@ abstract class BasePortfolioUsage extends BaseObject implements Persistent
     }
 
     // active behavior
-
-
+    
+    
     /**
      * return true is the object is active
      *
