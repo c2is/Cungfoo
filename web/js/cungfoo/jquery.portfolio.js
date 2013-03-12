@@ -30,6 +30,7 @@
             $('body').delegate(base.options['portfolioMediaDeleteClass'], 'click', base.deleteMedia);
             $('body').delegate(base.options['portfolioValidateClass'], 'click', base.validate);
             $('body').delegate(base.options['portfolioSearchFormClass'], 'submit', base.submitSearchForm);
+            $('body').delegate(base.options['portfolioSearchFormTableClass'], 'change', base.changeTableSelection);
         }
 
         base.preventDefault = function(e) {
@@ -160,7 +161,6 @@
             var sMediaIds = $(base.options['portfolioPopinClass']).data('selected');
 
             $.post(searchForm.attr('action') + '?ids=' + sMediaIds, searchForm.serialize(), function (json) {
-                console.log(json);
                 var jsonObject     = JSON.parse(json);
                 var portfolioList   = $(base.options['portfolioListClass']);
 
@@ -244,6 +244,31 @@
             return false;
         }
 
+        base.changeTableSelection = function(e) {
+            base.preventDefault(e);
+
+            var tableField = $(base.options['portfolioSearchFormTableClass']);
+            var columnField = $(base.options['portfolioSearchFormColumnClass']);
+
+            columnField.children('option:not(:first)').remove();
+            if (tableField.val()) {
+                $.get(defaultPortfolioRoute + 'list-fields?table=' + tableField.val(), function(json) {
+                    var jsonObject = JSON.parse(json);
+                    $.each(jsonObject, function (key, item) {
+                        columnField.append($('<option>', { 
+                            value: key,
+                            text : item 
+                        }));
+                    });
+                });
+                columnField.removeAttr('disabled');
+            } else {
+                columnField.attr('disabled', 'disabled');
+            }
+
+            return false;
+        }
+
         base.init();
     };
 
@@ -259,6 +284,8 @@
         'portfolioToggleUseClass': '.portfolio-toggle-use',
         'portfolioAddTagClass': '.portfolio-add-tag',
         'portfolioSearchFormClass': '.portfolio-search-form',
+        'portfolioSearchFormTableClass': '.portfolio-search-form-table',
+        'portfolioSearchFormColumnClass': '.portfolio-search-form-column',
         'portfolioListClass': '.portfolio-list',
         'portfolioLimit': 1,
         'portfolioType': ["image"],
