@@ -43,8 +43,6 @@ class PortfolioTagTableMap extends TableMap
         $this->setUseIdGenerator(true);
         // columns
         $this->addPrimaryKey('id', 'Id', 'INTEGER', true, null, null);
-        $this->addColumn('name', 'Name', 'VARCHAR', true, 255, null);
-        $this->addColumn('description', 'Description', 'LONGVARCHAR', false, null, null);
         $this->addColumn('created_at', 'CreatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('updated_at', 'UpdatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('active', 'Active', 'BOOLEAN', false, 1, false);
@@ -79,6 +77,15 @@ class PortfolioTagTableMap extends TableMap
   'active_column' => 'active',
   'active_locale_column' => 'active_locale',
 ),
+            'i18n' =>  array (
+  'i18n_table' => '%TABLE%_i18n',
+  'i18n_phpname' => '%PHPNAME%I18n',
+  'i18n_columns' => 'name, slug, description,seo_title,seo_description,seo_h1,seo_keywords,active_locale',
+  'i18n_pk_name' => NULL,
+  'locale_column' => 'locale',
+  'default_locale' => 'fr',
+  'locale_alias' => '',
+),
             'crudable' =>  array (
   'route_prefix' => '/',
   'crud_prefix' => '/portfolio/tags',
@@ -90,15 +97,6 @@ class PortfolioTagTableMap extends TableMap
   'seo_columns' => 'seo_title,seo_description,seo_h1,seo_keywords',
   'seo_description' => 'LONGVARCHAR',
   'seo_keywords' => 'LONGVARCHAR',
-),
-            'i18n' =>  array (
-  'i18n_table' => '%TABLE%_i18n',
-  'i18n_phpname' => '%PHPNAME%I18n',
-  'i18n_columns' => ',seo_title,seo_description,seo_h1,seo_keywords,active_locale',
-  'i18n_pk_name' => NULL,
-  'locale_column' => 'locale',
-  'default_locale' => 'fr',
-  'locale_alias' => '',
 ),
         );
     } // getBehaviors()

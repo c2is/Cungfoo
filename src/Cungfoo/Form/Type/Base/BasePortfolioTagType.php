@@ -31,35 +31,6 @@ class BasePortfolioTagType extends AppAwareType
         );
     }
 
-    public function getNameType()
-    {
-        return 'text';
-    }
-
-    public function getNameOptions()
-    {
-        return array(
-            'required' => false,
-            'label' => 'portfolio_tag.name',
-            'constraints' => array(
-                        new Assert\NotBlank(),
-                    ),
-        );
-    }
-
-    public function getDescriptionType()
-    {
-        return 'textarea';
-    }
-
-    public function getDescriptionOptions()
-    {
-        return array(
-            'required' => false,
-            'label' => 'portfolio_tag.description',
-        );
-    }
-
     public function getCreatedAtType()
     {
         return 'datetime';
@@ -113,6 +84,51 @@ class BasePortfolioTagType extends AppAwareType
             'label' => 'portfolio_media_tag.media_id',
             'class' => 'Cungfoo\Model\PortfolioMedia',
             'multiple' => true,
+        );
+    }
+
+    public function getNameType()
+    {
+        return 'text';
+    }
+
+    public function getNameOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'portfolio_tag_i18n.name',
+            'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+        );
+    }
+
+    public function getSlugType()
+    {
+        return 'text';
+    }
+
+    public function getSlugOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'portfolio_tag_i18n.slug',
+            'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+        );
+    }
+
+    public function getDescriptionType()
+    {
+        return 'textarea';
+    }
+
+    public function getDescriptionOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'portfolio_tag_i18n.description',
         );
     }
 
@@ -187,8 +203,6 @@ class BasePortfolioTagType extends AppAwareType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('id', $this->getIdType(), $this->getIdOptions());
-        $builder->add('name', $this->getNameType(), $this->getNameOptions());
-        $builder->add('description', $this->getDescriptionType(), $this->getDescriptionOptions());
         $builder->add('created_at', $this->getCreatedAtType(), $this->getCreatedAtOptions());
         $builder->add('updated_at', $this->getUpdatedAtType(), $this->getUpdatedAtOptions());
         $builder->add('active', $this->getActiveType(), $this->getActiveOptions());
@@ -198,6 +212,9 @@ class BasePortfolioTagType extends AppAwareType
             'required' => false,
             'languages' => array('fr', 'de'),
             'columns' => array(
+                'name' => array_merge(array('type' => $this->getNameType()), $this->getNameOptions()),
+                'slug' => array_merge(array('type' => $this->getSlugType()), $this->getSlugOptions()),
+                'description' => array_merge(array('type' => $this->getDescriptionType()), $this->getDescriptionOptions()),
                 'seo_title' => array_merge(array('type' => $this->getSeoTitleType()), $this->getSeoTitleOptions()),
                 'seo_description' => array_merge(array('type' => $this->getSeoDescriptionType()), $this->getSeoDescriptionOptions()),
                 'seo_h1' => array_merge(array('type' => $this->getSeoH1Type()), $this->getSeoH1Options()),

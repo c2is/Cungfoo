@@ -21,7 +21,6 @@ class BasePortfolioMediaListing extends Listing
     {
         $this->addColumn(new Column\TextColumn('id'));
         $this->addColumn(new Column\TextColumn('file'));
-        $this->addColumn(new Column\TextColumn('title'));
         $this->addColumn(new Column\TextColumn('width'));
         $this->addColumn(new Column\TextColumn('height'));
         $this->addColumn(new Column\TextColumn('size'));

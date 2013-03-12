@@ -38,22 +38,16 @@ abstract class BasePortfolioTagPeer
     const TM_CLASS = 'PortfolioTagTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 6;
+    const NUM_COLUMNS = 4;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 6;
+    const NUM_HYDRATE_COLUMNS = 4;
 
     /** the column name for the id field */
     const ID = 'portfolio_tag.id';
-
-    /** the column name for the name field */
-    const NAME = 'portfolio_tag.name';
-
-    /** the column name for the description field */
-    const DESCRIPTION = 'portfolio_tag.description';
 
     /** the column name for the created_at field */
     const CREATED_AT = 'portfolio_tag.created_at';
@@ -90,12 +84,12 @@ abstract class BasePortfolioTagPeer
      * e.g. PortfolioTagPeer::$fieldNames[PortfolioTagPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Name', 'Description', 'CreatedAt', 'UpdatedAt', 'Active', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'name', 'description', 'createdAt', 'updatedAt', 'active', ),
-        BasePeer::TYPE_COLNAME => array (PortfolioTagPeer::ID, PortfolioTagPeer::NAME, PortfolioTagPeer::DESCRIPTION, PortfolioTagPeer::CREATED_AT, PortfolioTagPeer::UPDATED_AT, PortfolioTagPeer::ACTIVE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'NAME', 'DESCRIPTION', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'name', 'description', 'created_at', 'updated_at', 'active', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'CreatedAt', 'UpdatedAt', 'Active', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'createdAt', 'updatedAt', 'active', ),
+        BasePeer::TYPE_COLNAME => array (PortfolioTagPeer::ID, PortfolioTagPeer::CREATED_AT, PortfolioTagPeer::UPDATED_AT, PortfolioTagPeer::ACTIVE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'created_at', 'updated_at', 'active', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
     );
 
     /**
@@ -105,12 +99,12 @@ abstract class BasePortfolioTagPeer
      * e.g. PortfolioTagPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Name' => 1, 'Description' => 2, 'CreatedAt' => 3, 'UpdatedAt' => 4, 'Active' => 5, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'name' => 1, 'description' => 2, 'createdAt' => 3, 'updatedAt' => 4, 'active' => 5, ),
-        BasePeer::TYPE_COLNAME => array (PortfolioTagPeer::ID => 0, PortfolioTagPeer::NAME => 1, PortfolioTagPeer::DESCRIPTION => 2, PortfolioTagPeer::CREATED_AT => 3, PortfolioTagPeer::UPDATED_AT => 4, PortfolioTagPeer::ACTIVE => 5, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'NAME' => 1, 'DESCRIPTION' => 2, 'CREATED_AT' => 3, 'UPDATED_AT' => 4, 'ACTIVE' => 5, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'name' => 1, 'description' => 2, 'created_at' => 3, 'updated_at' => 4, 'active' => 5, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'CreatedAt' => 1, 'UpdatedAt' => 2, 'Active' => 3, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'createdAt' => 1, 'updatedAt' => 2, 'active' => 3, ),
+        BasePeer::TYPE_COLNAME => array (PortfolioTagPeer::ID => 0, PortfolioTagPeer::CREATED_AT => 1, PortfolioTagPeer::UPDATED_AT => 2, PortfolioTagPeer::ACTIVE => 3, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CREATED_AT' => 1, 'UPDATED_AT' => 2, 'ACTIVE' => 3, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'created_at' => 1, 'updated_at' => 2, 'active' => 3, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
     );
 
     /**
@@ -185,15 +179,11 @@ abstract class BasePortfolioTagPeer
     {
         if (null === $alias) {
             $criteria->addSelectColumn(PortfolioTagPeer::ID);
-            $criteria->addSelectColumn(PortfolioTagPeer::NAME);
-            $criteria->addSelectColumn(PortfolioTagPeer::DESCRIPTION);
             $criteria->addSelectColumn(PortfolioTagPeer::CREATED_AT);
             $criteria->addSelectColumn(PortfolioTagPeer::UPDATED_AT);
             $criteria->addSelectColumn(PortfolioTagPeer::ACTIVE);
         } else {
             $criteria->addSelectColumn($alias . '.id');
-            $criteria->addSelectColumn($alias . '.name');
-            $criteria->addSelectColumn($alias . '.description');
             $criteria->addSelectColumn($alias . '.created_at');
             $criteria->addSelectColumn($alias . '.updated_at');
             $criteria->addSelectColumn($alias . '.active');

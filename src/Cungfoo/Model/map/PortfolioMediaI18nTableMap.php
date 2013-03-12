@@ -44,6 +44,8 @@ class PortfolioMediaI18nTableMap extends TableMap
         // columns
         $this->addForeignPrimaryKey('id', 'Id', 'INTEGER' , 'portfolio_media', 'id', true, null, null);
         $this->addPrimaryKey('locale', 'Locale', 'VARCHAR', true, 5, 'fr');
+        $this->addColumn('title', 'Title', 'VARCHAR', true, 255, null);
+        $this->addColumn('description', 'Description', 'LONGVARCHAR', false, null, null);
         $this->addColumn('seo_title', 'SeoTitle', 'VARCHAR', false, 255, null);
         $this->addColumn('seo_description', 'SeoDescription', 'LONGVARCHAR', false, null, null);
         $this->addColumn('seo_h1', 'SeoH1', 'VARCHAR', false, 255, null);

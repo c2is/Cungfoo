@@ -59,6 +59,18 @@ abstract class BasePortfolioMediaI18n extends BaseObject implements Persistent
     protected $locale;
 
     /**
+     * The value for the title field.
+     * @var        string
+     */
+    protected $title;
+
+    /**
+     * The value for the description field.
+     * @var        string
+     */
+    protected $description;
+
+    /**
      * The value for the seo_title field.
      * @var        string
      */
@@ -148,6 +160,26 @@ abstract class BasePortfolioMediaI18n extends BaseObject implements Persistent
     public function getLocale()
     {
         return $this->locale;
+    }
+
+    /**
+     * Get the [title] column value.
+     *
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * Get the [description] column value.
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
     }
 
     /**
@@ -245,6 +277,48 @@ abstract class BasePortfolioMediaI18n extends BaseObject implements Persistent
 
         return $this;
     } // setLocale()
+
+    /**
+     * Set the value of [title] column.
+     *
+     * @param string $v new value
+     * @return PortfolioMediaI18n The current object (for fluent API support)
+     */
+    public function setTitle($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->title !== $v) {
+            $this->title = $v;
+            $this->modifiedColumns[] = PortfolioMediaI18nPeer::TITLE;
+        }
+
+
+        return $this;
+    } // setTitle()
+
+    /**
+     * Set the value of [description] column.
+     *
+     * @param string $v new value
+     * @return PortfolioMediaI18n The current object (for fluent API support)
+     */
+    public function setDescription($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->description !== $v) {
+            $this->description = $v;
+            $this->modifiedColumns[] = PortfolioMediaI18nPeer::DESCRIPTION;
+        }
+
+
+        return $this;
+    } // setDescription()
 
     /**
      * Set the value of [seo_title] column.
@@ -401,11 +475,13 @@ abstract class BasePortfolioMediaI18n extends BaseObject implements Persistent
 
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
             $this->locale = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
-            $this->seo_title = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
-            $this->seo_description = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
-            $this->seo_h1 = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
-            $this->seo_keywords = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
-            $this->active_locale = ($row[$startcol + 6] !== null) ? (boolean) $row[$startcol + 6] : null;
+            $this->title = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
+            $this->description = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
+            $this->seo_title = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
+            $this->seo_description = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
+            $this->seo_h1 = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
+            $this->seo_keywords = ($row[$startcol + 7] !== null) ? (string) $row[$startcol + 7] : null;
+            $this->active_locale = ($row[$startcol + 8] !== null) ? (boolean) $row[$startcol + 8] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -414,7 +490,7 @@ abstract class BasePortfolioMediaI18n extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 7; // 7 = PortfolioMediaI18nPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 9; // 9 = PortfolioMediaI18nPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating PortfolioMediaI18n object", $e);
@@ -644,6 +720,12 @@ abstract class BasePortfolioMediaI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(PortfolioMediaI18nPeer::LOCALE)) {
             $modifiedColumns[':p' . $index++]  = '`locale`';
         }
+        if ($this->isColumnModified(PortfolioMediaI18nPeer::TITLE)) {
+            $modifiedColumns[':p' . $index++]  = '`title`';
+        }
+        if ($this->isColumnModified(PortfolioMediaI18nPeer::DESCRIPTION)) {
+            $modifiedColumns[':p' . $index++]  = '`description`';
+        }
         if ($this->isColumnModified(PortfolioMediaI18nPeer::SEO_TITLE)) {
             $modifiedColumns[':p' . $index++]  = '`seo_title`';
         }
@@ -675,6 +757,12 @@ abstract class BasePortfolioMediaI18n extends BaseObject implements Persistent
                         break;
                     case '`locale`':
                         $stmt->bindValue($identifier, $this->locale, PDO::PARAM_STR);
+                        break;
+                    case '`title`':
+                        $stmt->bindValue($identifier, $this->title, PDO::PARAM_STR);
+                        break;
+                    case '`description`':
+                        $stmt->bindValue($identifier, $this->description, PDO::PARAM_STR);
                         break;
                     case '`seo_title`':
                         $stmt->bindValue($identifier, $this->seo_title, PDO::PARAM_STR);
@@ -837,18 +925,24 @@ abstract class BasePortfolioMediaI18n extends BaseObject implements Persistent
                 return $this->getLocale();
                 break;
             case 2:
-                return $this->getSeoTitle();
+                return $this->getTitle();
                 break;
             case 3:
-                return $this->getSeoDescription();
+                return $this->getDescription();
                 break;
             case 4:
-                return $this->getSeoH1();
+                return $this->getSeoTitle();
                 break;
             case 5:
-                return $this->getSeoKeywords();
+                return $this->getSeoDescription();
                 break;
             case 6:
+                return $this->getSeoH1();
+                break;
+            case 7:
+                return $this->getSeoKeywords();
+                break;
+            case 8:
                 return $this->getActiveLocale();
                 break;
             default:
@@ -882,11 +976,13 @@ abstract class BasePortfolioMediaI18n extends BaseObject implements Persistent
         $result = array(
             $keys[0] => $this->getId(),
             $keys[1] => $this->getLocale(),
-            $keys[2] => $this->getSeoTitle(),
-            $keys[3] => $this->getSeoDescription(),
-            $keys[4] => $this->getSeoH1(),
-            $keys[5] => $this->getSeoKeywords(),
-            $keys[6] => $this->getActiveLocale(),
+            $keys[2] => $this->getTitle(),
+            $keys[3] => $this->getDescription(),
+            $keys[4] => $this->getSeoTitle(),
+            $keys[5] => $this->getSeoDescription(),
+            $keys[6] => $this->getSeoH1(),
+            $keys[7] => $this->getSeoKeywords(),
+            $keys[8] => $this->getActiveLocale(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aPortfolioMedia) {
@@ -933,18 +1029,24 @@ abstract class BasePortfolioMediaI18n extends BaseObject implements Persistent
                 $this->setLocale($value);
                 break;
             case 2:
-                $this->setSeoTitle($value);
+                $this->setTitle($value);
                 break;
             case 3:
-                $this->setSeoDescription($value);
+                $this->setDescription($value);
                 break;
             case 4:
-                $this->setSeoH1($value);
+                $this->setSeoTitle($value);
                 break;
             case 5:
-                $this->setSeoKeywords($value);
+                $this->setSeoDescription($value);
                 break;
             case 6:
+                $this->setSeoH1($value);
+                break;
+            case 7:
+                $this->setSeoKeywords($value);
+                break;
+            case 8:
                 $this->setActiveLocale($value);
                 break;
         } // switch()
@@ -973,11 +1075,13 @@ abstract class BasePortfolioMediaI18n extends BaseObject implements Persistent
 
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
         if (array_key_exists($keys[1], $arr)) $this->setLocale($arr[$keys[1]]);
-        if (array_key_exists($keys[2], $arr)) $this->setSeoTitle($arr[$keys[2]]);
-        if (array_key_exists($keys[3], $arr)) $this->setSeoDescription($arr[$keys[3]]);
-        if (array_key_exists($keys[4], $arr)) $this->setSeoH1($arr[$keys[4]]);
-        if (array_key_exists($keys[5], $arr)) $this->setSeoKeywords($arr[$keys[5]]);
-        if (array_key_exists($keys[6], $arr)) $this->setActiveLocale($arr[$keys[6]]);
+        if (array_key_exists($keys[2], $arr)) $this->setTitle($arr[$keys[2]]);
+        if (array_key_exists($keys[3], $arr)) $this->setDescription($arr[$keys[3]]);
+        if (array_key_exists($keys[4], $arr)) $this->setSeoTitle($arr[$keys[4]]);
+        if (array_key_exists($keys[5], $arr)) $this->setSeoDescription($arr[$keys[5]]);
+        if (array_key_exists($keys[6], $arr)) $this->setSeoH1($arr[$keys[6]]);
+        if (array_key_exists($keys[7], $arr)) $this->setSeoKeywords($arr[$keys[7]]);
+        if (array_key_exists($keys[8], $arr)) $this->setActiveLocale($arr[$keys[8]]);
     }
 
     /**
@@ -991,6 +1095,8 @@ abstract class BasePortfolioMediaI18n extends BaseObject implements Persistent
 
         if ($this->isColumnModified(PortfolioMediaI18nPeer::ID)) $criteria->add(PortfolioMediaI18nPeer::ID, $this->id);
         if ($this->isColumnModified(PortfolioMediaI18nPeer::LOCALE)) $criteria->add(PortfolioMediaI18nPeer::LOCALE, $this->locale);
+        if ($this->isColumnModified(PortfolioMediaI18nPeer::TITLE)) $criteria->add(PortfolioMediaI18nPeer::TITLE, $this->title);
+        if ($this->isColumnModified(PortfolioMediaI18nPeer::DESCRIPTION)) $criteria->add(PortfolioMediaI18nPeer::DESCRIPTION, $this->description);
         if ($this->isColumnModified(PortfolioMediaI18nPeer::SEO_TITLE)) $criteria->add(PortfolioMediaI18nPeer::SEO_TITLE, $this->seo_title);
         if ($this->isColumnModified(PortfolioMediaI18nPeer::SEO_DESCRIPTION)) $criteria->add(PortfolioMediaI18nPeer::SEO_DESCRIPTION, $this->seo_description);
         if ($this->isColumnModified(PortfolioMediaI18nPeer::SEO_H1)) $criteria->add(PortfolioMediaI18nPeer::SEO_H1, $this->seo_h1);
@@ -1068,6 +1174,8 @@ abstract class BasePortfolioMediaI18n extends BaseObject implements Persistent
     {
         $copyObj->setId($this->getId());
         $copyObj->setLocale($this->getLocale());
+        $copyObj->setTitle($this->getTitle());
+        $copyObj->setDescription($this->getDescription());
         $copyObj->setSeoTitle($this->getSeoTitle());
         $copyObj->setSeoDescription($this->getSeoDescription());
         $copyObj->setSeoH1($this->getSeoH1());
@@ -1189,6 +1297,8 @@ abstract class BasePortfolioMediaI18n extends BaseObject implements Persistent
     {
         $this->id = null;
         $this->locale = null;
+        $this->title = null;
+        $this->description = null;
         $this->seo_title = null;
         $this->seo_description = null;
         $this->seo_h1 = null;

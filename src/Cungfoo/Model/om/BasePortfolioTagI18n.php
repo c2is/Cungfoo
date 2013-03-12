@@ -59,6 +59,24 @@ abstract class BasePortfolioTagI18n extends BaseObject implements Persistent
     protected $locale;
 
     /**
+     * The value for the name field.
+     * @var        string
+     */
+    protected $name;
+
+    /**
+     * The value for the slug field.
+     * @var        string
+     */
+    protected $slug;
+
+    /**
+     * The value for the description field.
+     * @var        string
+     */
+    protected $description;
+
+    /**
      * The value for the seo_title field.
      * @var        string
      */
@@ -148,6 +166,36 @@ abstract class BasePortfolioTagI18n extends BaseObject implements Persistent
     public function getLocale()
     {
         return $this->locale;
+    }
+
+    /**
+     * Get the [name] column value.
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Get the [slug] column value.
+     *
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * Get the [description] column value.
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
     }
 
     /**
@@ -245,6 +293,69 @@ abstract class BasePortfolioTagI18n extends BaseObject implements Persistent
 
         return $this;
     } // setLocale()
+
+    /**
+     * Set the value of [name] column.
+     *
+     * @param string $v new value
+     * @return PortfolioTagI18n The current object (for fluent API support)
+     */
+    public function setName($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->name !== $v) {
+            $this->name = $v;
+            $this->modifiedColumns[] = PortfolioTagI18nPeer::NAME;
+        }
+
+
+        return $this;
+    } // setName()
+
+    /**
+     * Set the value of [slug] column.
+     *
+     * @param string $v new value
+     * @return PortfolioTagI18n The current object (for fluent API support)
+     */
+    public function setSlug($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->slug !== $v) {
+            $this->slug = $v;
+            $this->modifiedColumns[] = PortfolioTagI18nPeer::SLUG;
+        }
+
+
+        return $this;
+    } // setSlug()
+
+    /**
+     * Set the value of [description] column.
+     *
+     * @param string $v new value
+     * @return PortfolioTagI18n The current object (for fluent API support)
+     */
+    public function setDescription($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->description !== $v) {
+            $this->description = $v;
+            $this->modifiedColumns[] = PortfolioTagI18nPeer::DESCRIPTION;
+        }
+
+
+        return $this;
+    } // setDescription()
 
     /**
      * Set the value of [seo_title] column.
@@ -401,11 +512,14 @@ abstract class BasePortfolioTagI18n extends BaseObject implements Persistent
 
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
             $this->locale = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
-            $this->seo_title = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
-            $this->seo_description = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
-            $this->seo_h1 = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
-            $this->seo_keywords = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
-            $this->active_locale = ($row[$startcol + 6] !== null) ? (boolean) $row[$startcol + 6] : null;
+            $this->name = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
+            $this->slug = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
+            $this->description = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
+            $this->seo_title = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
+            $this->seo_description = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
+            $this->seo_h1 = ($row[$startcol + 7] !== null) ? (string) $row[$startcol + 7] : null;
+            $this->seo_keywords = ($row[$startcol + 8] !== null) ? (string) $row[$startcol + 8] : null;
+            $this->active_locale = ($row[$startcol + 9] !== null) ? (boolean) $row[$startcol + 9] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -414,7 +528,7 @@ abstract class BasePortfolioTagI18n extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 7; // 7 = PortfolioTagI18nPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 10; // 10 = PortfolioTagI18nPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating PortfolioTagI18n object", $e);
@@ -644,6 +758,15 @@ abstract class BasePortfolioTagI18n extends BaseObject implements Persistent
         if ($this->isColumnModified(PortfolioTagI18nPeer::LOCALE)) {
             $modifiedColumns[':p' . $index++]  = '`locale`';
         }
+        if ($this->isColumnModified(PortfolioTagI18nPeer::NAME)) {
+            $modifiedColumns[':p' . $index++]  = '`name`';
+        }
+        if ($this->isColumnModified(PortfolioTagI18nPeer::SLUG)) {
+            $modifiedColumns[':p' . $index++]  = '`slug`';
+        }
+        if ($this->isColumnModified(PortfolioTagI18nPeer::DESCRIPTION)) {
+            $modifiedColumns[':p' . $index++]  = '`description`';
+        }
         if ($this->isColumnModified(PortfolioTagI18nPeer::SEO_TITLE)) {
             $modifiedColumns[':p' . $index++]  = '`seo_title`';
         }
@@ -675,6 +798,15 @@ abstract class BasePortfolioTagI18n extends BaseObject implements Persistent
                         break;
                     case '`locale`':
                         $stmt->bindValue($identifier, $this->locale, PDO::PARAM_STR);
+                        break;
+                    case '`name`':
+                        $stmt->bindValue($identifier, $this->name, PDO::PARAM_STR);
+                        break;
+                    case '`slug`':
+                        $stmt->bindValue($identifier, $this->slug, PDO::PARAM_STR);
+                        break;
+                    case '`description`':
+                        $stmt->bindValue($identifier, $this->description, PDO::PARAM_STR);
                         break;
                     case '`seo_title`':
                         $stmt->bindValue($identifier, $this->seo_title, PDO::PARAM_STR);
@@ -837,18 +969,27 @@ abstract class BasePortfolioTagI18n extends BaseObject implements Persistent
                 return $this->getLocale();
                 break;
             case 2:
-                return $this->getSeoTitle();
+                return $this->getName();
                 break;
             case 3:
-                return $this->getSeoDescription();
+                return $this->getSlug();
                 break;
             case 4:
-                return $this->getSeoH1();
+                return $this->getDescription();
                 break;
             case 5:
-                return $this->getSeoKeywords();
+                return $this->getSeoTitle();
                 break;
             case 6:
+                return $this->getSeoDescription();
+                break;
+            case 7:
+                return $this->getSeoH1();
+                break;
+            case 8:
+                return $this->getSeoKeywords();
+                break;
+            case 9:
                 return $this->getActiveLocale();
                 break;
             default:
@@ -882,11 +1023,14 @@ abstract class BasePortfolioTagI18n extends BaseObject implements Persistent
         $result = array(
             $keys[0] => $this->getId(),
             $keys[1] => $this->getLocale(),
-            $keys[2] => $this->getSeoTitle(),
-            $keys[3] => $this->getSeoDescription(),
-            $keys[4] => $this->getSeoH1(),
-            $keys[5] => $this->getSeoKeywords(),
-            $keys[6] => $this->getActiveLocale(),
+            $keys[2] => $this->getName(),
+            $keys[3] => $this->getSlug(),
+            $keys[4] => $this->getDescription(),
+            $keys[5] => $this->getSeoTitle(),
+            $keys[6] => $this->getSeoDescription(),
+            $keys[7] => $this->getSeoH1(),
+            $keys[8] => $this->getSeoKeywords(),
+            $keys[9] => $this->getActiveLocale(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aPortfolioTag) {
@@ -933,18 +1077,27 @@ abstract class BasePortfolioTagI18n extends BaseObject implements Persistent
                 $this->setLocale($value);
                 break;
             case 2:
-                $this->setSeoTitle($value);
+                $this->setName($value);
                 break;
             case 3:
-                $this->setSeoDescription($value);
+                $this->setSlug($value);
                 break;
             case 4:
-                $this->setSeoH1($value);
+                $this->setDescription($value);
                 break;
             case 5:
-                $this->setSeoKeywords($value);
+                $this->setSeoTitle($value);
                 break;
             case 6:
+                $this->setSeoDescription($value);
+                break;
+            case 7:
+                $this->setSeoH1($value);
+                break;
+            case 8:
+                $this->setSeoKeywords($value);
+                break;
+            case 9:
                 $this->setActiveLocale($value);
                 break;
         } // switch()
@@ -973,11 +1126,14 @@ abstract class BasePortfolioTagI18n extends BaseObject implements Persistent
 
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
         if (array_key_exists($keys[1], $arr)) $this->setLocale($arr[$keys[1]]);
-        if (array_key_exists($keys[2], $arr)) $this->setSeoTitle($arr[$keys[2]]);
-        if (array_key_exists($keys[3], $arr)) $this->setSeoDescription($arr[$keys[3]]);
-        if (array_key_exists($keys[4], $arr)) $this->setSeoH1($arr[$keys[4]]);
-        if (array_key_exists($keys[5], $arr)) $this->setSeoKeywords($arr[$keys[5]]);
-        if (array_key_exists($keys[6], $arr)) $this->setActiveLocale($arr[$keys[6]]);
+        if (array_key_exists($keys[2], $arr)) $this->setName($arr[$keys[2]]);
+        if (array_key_exists($keys[3], $arr)) $this->setSlug($arr[$keys[3]]);
+        if (array_key_exists($keys[4], $arr)) $this->setDescription($arr[$keys[4]]);
+        if (array_key_exists($keys[5], $arr)) $this->setSeoTitle($arr[$keys[5]]);
+        if (array_key_exists($keys[6], $arr)) $this->setSeoDescription($arr[$keys[6]]);
+        if (array_key_exists($keys[7], $arr)) $this->setSeoH1($arr[$keys[7]]);
+        if (array_key_exists($keys[8], $arr)) $this->setSeoKeywords($arr[$keys[8]]);
+        if (array_key_exists($keys[9], $arr)) $this->setActiveLocale($arr[$keys[9]]);
     }
 
     /**
@@ -991,6 +1147,9 @@ abstract class BasePortfolioTagI18n extends BaseObject implements Persistent
 
         if ($this->isColumnModified(PortfolioTagI18nPeer::ID)) $criteria->add(PortfolioTagI18nPeer::ID, $this->id);
         if ($this->isColumnModified(PortfolioTagI18nPeer::LOCALE)) $criteria->add(PortfolioTagI18nPeer::LOCALE, $this->locale);
+        if ($this->isColumnModified(PortfolioTagI18nPeer::NAME)) $criteria->add(PortfolioTagI18nPeer::NAME, $this->name);
+        if ($this->isColumnModified(PortfolioTagI18nPeer::SLUG)) $criteria->add(PortfolioTagI18nPeer::SLUG, $this->slug);
+        if ($this->isColumnModified(PortfolioTagI18nPeer::DESCRIPTION)) $criteria->add(PortfolioTagI18nPeer::DESCRIPTION, $this->description);
         if ($this->isColumnModified(PortfolioTagI18nPeer::SEO_TITLE)) $criteria->add(PortfolioTagI18nPeer::SEO_TITLE, $this->seo_title);
         if ($this->isColumnModified(PortfolioTagI18nPeer::SEO_DESCRIPTION)) $criteria->add(PortfolioTagI18nPeer::SEO_DESCRIPTION, $this->seo_description);
         if ($this->isColumnModified(PortfolioTagI18nPeer::SEO_H1)) $criteria->add(PortfolioTagI18nPeer::SEO_H1, $this->seo_h1);
@@ -1068,6 +1227,9 @@ abstract class BasePortfolioTagI18n extends BaseObject implements Persistent
     {
         $copyObj->setId($this->getId());
         $copyObj->setLocale($this->getLocale());
+        $copyObj->setName($this->getName());
+        $copyObj->setSlug($this->getSlug());
+        $copyObj->setDescription($this->getDescription());
         $copyObj->setSeoTitle($this->getSeoTitle());
         $copyObj->setSeoDescription($this->getSeoDescription());
         $copyObj->setSeoH1($this->getSeoH1());
@@ -1189,6 +1351,9 @@ abstract class BasePortfolioTagI18n extends BaseObject implements Persistent
     {
         $this->id = null;
         $this->locale = null;
+        $this->name = null;
+        $this->slug = null;
+        $this->description = null;
         $this->seo_title = null;
         $this->seo_description = null;
         $this->seo_h1 = null;

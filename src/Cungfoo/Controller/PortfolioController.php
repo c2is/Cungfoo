@@ -92,7 +92,8 @@ class PortfolioController implements ControllerProviderInterface
             }
 
             return $app['twig']->render('Crud/Portfolio/edit.twig', array(
-                'form' => $form->createView(),
+                'form'  => $form->createView(),
+                'media' => $object,
             ));
         })
         ->bind('portfolio_edit');
