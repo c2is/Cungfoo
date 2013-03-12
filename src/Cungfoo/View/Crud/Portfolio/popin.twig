@@ -19,14 +19,16 @@
                 </table>
             </div>
             <div class="tab-pane{% if medias.count == 0 %} active{% endif %}" id="portfolio">
-                <form class="form-search form-inline portfolio-search-form" action="{{ path('portfolio_search') }}" method="post">
-                    <fieldset>
-                        <div class="well">
-                            {{ form_widget(searchForm) }}
+                <div class="well">
+                    <form class="form-search form-inline portfolio-search-form" action="{{ path('portfolio_search') }}" method="post">
+                        <fieldset>
+                            <div class="span1">{{ form_label(form.search) }}</div>
+                            <div class="span4">{{ form_widget(form.search) }}</div>
+                            {{ form_rest(form) }}
                             <button type="submit" class="btn">Submit</button>
-                        </div>
-                    </fieldset>
-                </form>
+                        </fieldset>
+                    </form>
+                </div>
                 {% include 'Crud/Portfolio/table.twig' with {'paginator': paginator, 'mediaIds': mediaIds} %}
             </div>
             <div class="tab-pane" id="upload">
