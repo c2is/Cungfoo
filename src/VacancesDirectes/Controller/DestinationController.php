@@ -32,6 +32,7 @@ use Cungfoo\Model\Pays,
     Cungfoo\Model\DestinationQuery,
     Cungfoo\Model\DestinationPeer,
     Cungfoo\Model\PointInteretPeer,
+    Cungfoo\Model\PortfolioMediaQuery,
     Cungfoo\Model\EventPeer;
 
 use VacancesDirectes\Lib\Listing\CatalogueListing,
@@ -408,17 +409,25 @@ class DestinationController implements ControllerProviderInterface
             ->filterByEtablissementId($camping->getId())
             ->findActive()
         ;
+*/
+        $sliderIds = $camping->getSlider();
 
         $tags = array();
-        foreach ($multimedia as $multi)
+        foreach (explode(';', $sliderIds) as $sliderId)
         {
-            $multimediaTags = $multi->getTags();
+            $slider = PortfolioMediaQuery::create()
+                ->filterById($sliderId)
+                ->findOne()
+            ;
+
+            $multimediaTags = $slider->getPortfolioTags();
+
             foreach ($multimediaTags as $tag)
             {
-                $tags[$tag->getSlug()] = $tag;
+                $tags[$tag->getName()] = $tag;
             }
         }
-*/
+
         $personnageAleatoire = \Cungfoo\Model\PersonnageQuery::create()
             ->joinWithI18n($locale)
             ->filterByEtablissementId($camping->getId())
@@ -448,7 +457,7 @@ class DestinationController implements ControllerProviderInterface
             'etab'                    => $camping,
             'personnages'             => $personnages,
             /*'multimedia'              => $multimedia,*/
-            /*'tags'                    => $tags,*/
+            'tags'                    => $tags,
             'personnageAleatoire'     => $personnageAleatoire,
             'sitesAVisiter'           => $sitesAVisiter,
             'events'                  => $events,

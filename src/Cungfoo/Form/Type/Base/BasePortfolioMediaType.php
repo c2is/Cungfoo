@@ -44,35 +44,6 @@ class BasePortfolioMediaType extends AppAwareType
         );
     }
 
-    public function getTitleType()
-    {
-        return 'text';
-    }
-
-    public function getTitleOptions()
-    {
-        return array(
-            'required' => false,
-            'label' => 'portfolio_media.title',
-            'constraints' => array(
-                        new Assert\NotBlank(),
-                    ),
-        );
-    }
-
-    public function getDescriptionType()
-    {
-        return 'textarea';
-    }
-
-    public function getDescriptionOptions()
-    {
-        return array(
-            'required' => false,
-            'label' => 'portfolio_media.description',
-        );
-    }
-
     public function getWidthType()
     {
         return 'text';
@@ -181,6 +152,35 @@ class BasePortfolioMediaType extends AppAwareType
         );
     }
 
+    public function getTitleType()
+    {
+        return 'text';
+    }
+
+    public function getTitleOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'portfolio_media_i18n.title',
+            'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+        );
+    }
+
+    public function getDescriptionType()
+    {
+        return 'textarea';
+    }
+
+    public function getDescriptionOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'portfolio_media_i18n.description',
+        );
+    }
+
     public function getSeoTitleType()
     {
         return 'text';
@@ -253,8 +253,6 @@ class BasePortfolioMediaType extends AppAwareType
     {
         $builder->add('id', $this->getIdType(), $this->getIdOptions());
         $builder->add('file', $this->getFileType(), $this->getFileOptions());
-        $builder->add('title', $this->getTitleType(), $this->getTitleOptions());
-        $builder->add('description', $this->getDescriptionType(), $this->getDescriptionOptions());
         $builder->add('width', $this->getWidthType(), $this->getWidthOptions());
         $builder->add('height', $this->getHeightType(), $this->getHeightOptions());
         $builder->add('size', $this->getSizeType(), $this->getSizeOptions());
@@ -268,6 +266,8 @@ class BasePortfolioMediaType extends AppAwareType
             'required' => false,
             'languages' => array('fr', 'de'),
             'columns' => array(
+                'title' => array_merge(array('type' => $this->getTitleType()), $this->getTitleOptions()),
+                'description' => array_merge(array('type' => $this->getDescriptionType()), $this->getDescriptionOptions()),
                 'seo_title' => array_merge(array('type' => $this->getSeoTitleType()), $this->getSeoTitleOptions()),
                 'seo_description' => array_merge(array('type' => $this->getSeoDescriptionType()), $this->getSeoDescriptionOptions()),
                 'seo_h1' => array_merge(array('type' => $this->getSeoH1Type()), $this->getSeoH1Options()),

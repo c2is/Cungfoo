@@ -25,15 +25,11 @@ use Cungfoo\Model\PortfolioTagQuery;
  *
  *
  * @method PortfolioTagQuery orderById($order = Criteria::ASC) Order by the id column
- * @method PortfolioTagQuery orderByName($order = Criteria::ASC) Order by the name column
- * @method PortfolioTagQuery orderByDescription($order = Criteria::ASC) Order by the description column
  * @method PortfolioTagQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method PortfolioTagQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  * @method PortfolioTagQuery orderByActive($order = Criteria::ASC) Order by the active column
  *
  * @method PortfolioTagQuery groupById() Group by the id column
- * @method PortfolioTagQuery groupByName() Group by the name column
- * @method PortfolioTagQuery groupByDescription() Group by the description column
  * @method PortfolioTagQuery groupByCreatedAt() Group by the created_at column
  * @method PortfolioTagQuery groupByUpdatedAt() Group by the updated_at column
  * @method PortfolioTagQuery groupByActive() Group by the active column
@@ -53,15 +49,11 @@ use Cungfoo\Model\PortfolioTagQuery;
  * @method PortfolioTag findOne(PropelPDO $con = null) Return the first PortfolioTag matching the query
  * @method PortfolioTag findOneOrCreate(PropelPDO $con = null) Return the first PortfolioTag matching the query, or a new PortfolioTag object populated from the query conditions when no match is found
  *
- * @method PortfolioTag findOneByName(string $name) Return the first PortfolioTag filtered by the name column
- * @method PortfolioTag findOneByDescription(string $description) Return the first PortfolioTag filtered by the description column
  * @method PortfolioTag findOneByCreatedAt(string $created_at) Return the first PortfolioTag filtered by the created_at column
  * @method PortfolioTag findOneByUpdatedAt(string $updated_at) Return the first PortfolioTag filtered by the updated_at column
  * @method PortfolioTag findOneByActive(boolean $active) Return the first PortfolioTag filtered by the active column
  *
  * @method array findById(int $id) Return PortfolioTag objects filtered by the id column
- * @method array findByName(string $name) Return PortfolioTag objects filtered by the name column
- * @method array findByDescription(string $description) Return PortfolioTag objects filtered by the description column
  * @method array findByCreatedAt(string $created_at) Return PortfolioTag objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return PortfolioTag objects filtered by the updated_at column
  * @method array findByActive(boolean $active) Return PortfolioTag objects filtered by the active column
@@ -168,7 +160,7 @@ abstract class BasePortfolioTagQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `name`, `description`, `created_at`, `updated_at`, `active` FROM `portfolio_tag` WHERE `id` = :p0';
+        $sql = 'SELECT `id`, `created_at`, `updated_at`, `active` FROM `portfolio_tag` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -282,64 +274,6 @@ abstract class BasePortfolioTagQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(PortfolioTagPeer::ID, $id, $comparison);
-    }
-
-    /**
-     * Filter the query on the name column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByName('fooValue');   // WHERE name = 'fooValue'
-     * $query->filterByName('%fooValue%'); // WHERE name LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $name The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return PortfolioTagQuery The current query, for fluid interface
-     */
-    public function filterByName($name = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($name)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $name)) {
-                $name = str_replace('*', '%', $name);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(PortfolioTagPeer::NAME, $name, $comparison);
-    }
-
-    /**
-     * Filter the query on the description column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByDescription('fooValue');   // WHERE description = 'fooValue'
-     * $query->filterByDescription('%fooValue%'); // WHERE description LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $description The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return PortfolioTagQuery The current query, for fluid interface
-     */
-    public function filterByDescription($description = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($description)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $description)) {
-                $description = str_replace('*', '%', $description);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(PortfolioTagPeer::DESCRIPTION, $description, $comparison);
     }
 
     /**
@@ -702,8 +636,8 @@ abstract class BasePortfolioTagQuery extends ModelCriteria
         return $this->addAscendingOrderByColumn(PortfolioTagPeer::CREATED_AT);
     }
     // active behavior
-    
-    
+
+
     /**
      * return only active objects
      *
@@ -712,7 +646,7 @@ abstract class BasePortfolioTagQuery extends ModelCriteria
     public function findActive($con = null)
     {
         $locale = defined('CURRENT_LANGUAGE') ? CURRENT_LANGUAGE : 'fr';
-    
+
         $this
             ->filterByActive(true)
             ->useI18nQuery($locale, 'i18n_locale')
@@ -721,7 +655,7 @@ abstract class BasePortfolioTagQuery extends ModelCriteria
                 ->filterByActiveLocale(null, Criteria::ISNULL)
             ->endUse()
         ;
-    
+
         return parent::find($con);
     }
     // i18n behavior

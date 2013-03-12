@@ -24,6 +24,9 @@ use Cungfoo\Model\PortfolioTagI18nQuery;
  *
  * @method PortfolioTagI18nQuery orderById($order = Criteria::ASC) Order by the id column
  * @method PortfolioTagI18nQuery orderByLocale($order = Criteria::ASC) Order by the locale column
+ * @method PortfolioTagI18nQuery orderByName($order = Criteria::ASC) Order by the name column
+ * @method PortfolioTagI18nQuery orderBySlug($order = Criteria::ASC) Order by the slug column
+ * @method PortfolioTagI18nQuery orderByDescription($order = Criteria::ASC) Order by the description column
  * @method PortfolioTagI18nQuery orderBySeoTitle($order = Criteria::ASC) Order by the seo_title column
  * @method PortfolioTagI18nQuery orderBySeoDescription($order = Criteria::ASC) Order by the seo_description column
  * @method PortfolioTagI18nQuery orderBySeoH1($order = Criteria::ASC) Order by the seo_h1 column
@@ -32,6 +35,9 @@ use Cungfoo\Model\PortfolioTagI18nQuery;
  *
  * @method PortfolioTagI18nQuery groupById() Group by the id column
  * @method PortfolioTagI18nQuery groupByLocale() Group by the locale column
+ * @method PortfolioTagI18nQuery groupByName() Group by the name column
+ * @method PortfolioTagI18nQuery groupBySlug() Group by the slug column
+ * @method PortfolioTagI18nQuery groupByDescription() Group by the description column
  * @method PortfolioTagI18nQuery groupBySeoTitle() Group by the seo_title column
  * @method PortfolioTagI18nQuery groupBySeoDescription() Group by the seo_description column
  * @method PortfolioTagI18nQuery groupBySeoH1() Group by the seo_h1 column
@@ -51,6 +57,9 @@ use Cungfoo\Model\PortfolioTagI18nQuery;
  *
  * @method PortfolioTagI18n findOneById(int $id) Return the first PortfolioTagI18n filtered by the id column
  * @method PortfolioTagI18n findOneByLocale(string $locale) Return the first PortfolioTagI18n filtered by the locale column
+ * @method PortfolioTagI18n findOneByName(string $name) Return the first PortfolioTagI18n filtered by the name column
+ * @method PortfolioTagI18n findOneBySlug(string $slug) Return the first PortfolioTagI18n filtered by the slug column
+ * @method PortfolioTagI18n findOneByDescription(string $description) Return the first PortfolioTagI18n filtered by the description column
  * @method PortfolioTagI18n findOneBySeoTitle(string $seo_title) Return the first PortfolioTagI18n filtered by the seo_title column
  * @method PortfolioTagI18n findOneBySeoDescription(string $seo_description) Return the first PortfolioTagI18n filtered by the seo_description column
  * @method PortfolioTagI18n findOneBySeoH1(string $seo_h1) Return the first PortfolioTagI18n filtered by the seo_h1 column
@@ -59,6 +68,9 @@ use Cungfoo\Model\PortfolioTagI18nQuery;
  *
  * @method array findById(int $id) Return PortfolioTagI18n objects filtered by the id column
  * @method array findByLocale(string $locale) Return PortfolioTagI18n objects filtered by the locale column
+ * @method array findByName(string $name) Return PortfolioTagI18n objects filtered by the name column
+ * @method array findBySlug(string $slug) Return PortfolioTagI18n objects filtered by the slug column
+ * @method array findByDescription(string $description) Return PortfolioTagI18n objects filtered by the description column
  * @method array findBySeoTitle(string $seo_title) Return PortfolioTagI18n objects filtered by the seo_title column
  * @method array findBySeoDescription(string $seo_description) Return PortfolioTagI18n objects filtered by the seo_description column
  * @method array findBySeoH1(string $seo_h1) Return PortfolioTagI18n objects filtered by the seo_h1 column
@@ -154,7 +166,7 @@ abstract class BasePortfolioTagI18nQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `locale`, `seo_title`, `seo_description`, `seo_h1`, `seo_keywords`, `active_locale` FROM `portfolio_tag_i18n` WHERE `id` = :p0 AND `locale` = :p1';
+        $sql = 'SELECT `id`, `locale`, `name`, `slug`, `description`, `seo_title`, `seo_description`, `seo_h1`, `seo_keywords`, `active_locale` FROM `portfolio_tag_i18n` WHERE `id` = :p0 AND `locale` = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
@@ -311,6 +323,93 @@ abstract class BasePortfolioTagI18nQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(PortfolioTagI18nPeer::LOCALE, $locale, $comparison);
+    }
+
+    /**
+     * Filter the query on the name column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByName('fooValue');   // WHERE name = 'fooValue'
+     * $query->filterByName('%fooValue%'); // WHERE name LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $name The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return PortfolioTagI18nQuery The current query, for fluid interface
+     */
+    public function filterByName($name = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($name)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $name)) {
+                $name = str_replace('*', '%', $name);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(PortfolioTagI18nPeer::NAME, $name, $comparison);
+    }
+
+    /**
+     * Filter the query on the slug column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterBySlug('fooValue');   // WHERE slug = 'fooValue'
+     * $query->filterBySlug('%fooValue%'); // WHERE slug LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $slug The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return PortfolioTagI18nQuery The current query, for fluid interface
+     */
+    public function filterBySlug($slug = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($slug)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $slug)) {
+                $slug = str_replace('*', '%', $slug);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(PortfolioTagI18nPeer::SLUG, $slug, $comparison);
+    }
+
+    /**
+     * Filter the query on the description column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByDescription('fooValue');   // WHERE description = 'fooValue'
+     * $query->filterByDescription('%fooValue%'); // WHERE description LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $description The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return PortfolioTagI18nQuery The current query, for fluid interface
+     */
+    public function filterByDescription($description = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($description)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $description)) {
+                $description = str_replace('*', '%', $description);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(PortfolioTagI18nPeer::DESCRIPTION, $description, $comparison);
     }
 
     /**

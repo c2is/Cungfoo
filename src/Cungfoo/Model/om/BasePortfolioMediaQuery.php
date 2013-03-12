@@ -27,8 +27,6 @@ use Cungfoo\Model\PortfolioUsage;
  *
  * @method PortfolioMediaQuery orderById($order = Criteria::ASC) Order by the id column
  * @method PortfolioMediaQuery orderByFile($order = Criteria::ASC) Order by the file column
- * @method PortfolioMediaQuery orderByTitle($order = Criteria::ASC) Order by the title column
- * @method PortfolioMediaQuery orderByDescription($order = Criteria::ASC) Order by the description column
  * @method PortfolioMediaQuery orderByWidth($order = Criteria::ASC) Order by the width column
  * @method PortfolioMediaQuery orderByHeight($order = Criteria::ASC) Order by the height column
  * @method PortfolioMediaQuery orderBySize($order = Criteria::ASC) Order by the size column
@@ -39,8 +37,6 @@ use Cungfoo\Model\PortfolioUsage;
  *
  * @method PortfolioMediaQuery groupById() Group by the id column
  * @method PortfolioMediaQuery groupByFile() Group by the file column
- * @method PortfolioMediaQuery groupByTitle() Group by the title column
- * @method PortfolioMediaQuery groupByDescription() Group by the description column
  * @method PortfolioMediaQuery groupByWidth() Group by the width column
  * @method PortfolioMediaQuery groupByHeight() Group by the height column
  * @method PortfolioMediaQuery groupBySize() Group by the size column
@@ -69,8 +65,6 @@ use Cungfoo\Model\PortfolioUsage;
  * @method PortfolioMedia findOneOrCreate(PropelPDO $con = null) Return the first PortfolioMedia matching the query, or a new PortfolioMedia object populated from the query conditions when no match is found
  *
  * @method PortfolioMedia findOneByFile(string $file) Return the first PortfolioMedia filtered by the file column
- * @method PortfolioMedia findOneByTitle(string $title) Return the first PortfolioMedia filtered by the title column
- * @method PortfolioMedia findOneByDescription(string $description) Return the first PortfolioMedia filtered by the description column
  * @method PortfolioMedia findOneByWidth(string $width) Return the first PortfolioMedia filtered by the width column
  * @method PortfolioMedia findOneByHeight(string $height) Return the first PortfolioMedia filtered by the height column
  * @method PortfolioMedia findOneBySize(string $size) Return the first PortfolioMedia filtered by the size column
@@ -81,8 +75,6 @@ use Cungfoo\Model\PortfolioUsage;
  *
  * @method array findById(int $id) Return PortfolioMedia objects filtered by the id column
  * @method array findByFile(string $file) Return PortfolioMedia objects filtered by the file column
- * @method array findByTitle(string $title) Return PortfolioMedia objects filtered by the title column
- * @method array findByDescription(string $description) Return PortfolioMedia objects filtered by the description column
  * @method array findByWidth(string $width) Return PortfolioMedia objects filtered by the width column
  * @method array findByHeight(string $height) Return PortfolioMedia objects filtered by the height column
  * @method array findBySize(string $size) Return PortfolioMedia objects filtered by the size column
@@ -193,7 +185,7 @@ abstract class BasePortfolioMediaQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `file`, `title`, `description`, `width`, `height`, `size`, `type`, `created_at`, `updated_at`, `active` FROM `portfolio_media` WHERE `id` = :p0';
+        $sql = 'SELECT `id`, `file`, `width`, `height`, `size`, `type`, `created_at`, `updated_at`, `active` FROM `portfolio_media` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -336,64 +328,6 @@ abstract class BasePortfolioMediaQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(PortfolioMediaPeer::FILE, $file, $comparison);
-    }
-
-    /**
-     * Filter the query on the title column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByTitle('fooValue');   // WHERE title = 'fooValue'
-     * $query->filterByTitle('%fooValue%'); // WHERE title LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $title The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return PortfolioMediaQuery The current query, for fluid interface
-     */
-    public function filterByTitle($title = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($title)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $title)) {
-                $title = str_replace('*', '%', $title);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(PortfolioMediaPeer::TITLE, $title, $comparison);
-    }
-
-    /**
-     * Filter the query on the description column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByDescription('fooValue');   // WHERE description = 'fooValue'
-     * $query->filterByDescription('%fooValue%'); // WHERE description LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $description The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return PortfolioMediaQuery The current query, for fluid interface
-     */
-    public function filterByDescription($description = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($description)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $description)) {
-                $description = str_replace('*', '%', $description);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(PortfolioMediaPeer::DESCRIPTION, $description, $comparison);
     }
 
     /**
@@ -946,8 +880,8 @@ abstract class BasePortfolioMediaQuery extends ModelCriteria
         return $this->addAscendingOrderByColumn(PortfolioMediaPeer::CREATED_AT);
     }
     // active behavior
-    
-    
+
+
     /**
      * return only active objects
      *
@@ -956,7 +890,7 @@ abstract class BasePortfolioMediaQuery extends ModelCriteria
     public function findActive($con = null)
     {
         $locale = defined('CURRENT_LANGUAGE') ? CURRENT_LANGUAGE : 'fr';
-    
+
         $this
             ->filterByActive(true)
             ->useI18nQuery($locale, 'i18n_locale')
@@ -965,7 +899,7 @@ abstract class BasePortfolioMediaQuery extends ModelCriteria
                 ->filterByActiveLocale(null, Criteria::ISNULL)
             ->endUse()
         ;
-    
+
         return parent::find($con);
     }
     // i18n behavior

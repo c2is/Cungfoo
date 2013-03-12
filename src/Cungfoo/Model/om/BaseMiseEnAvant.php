@@ -1743,8 +1743,8 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
     }
 
     // active behavior
-    
-    
+
+
     /**
      * return true is the object is active
      *
@@ -1754,7 +1754,7 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
     {
         return $this->getActive();
     }
-    
+
     /**
      * return true is the object is active locale
      *
@@ -2124,7 +2124,7 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
     }
 
     // crudable behavior
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -2137,7 +2137,7 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
     {
         return $this->save($con);
     }
-    
+
     /**
      * @return string
      */
@@ -2145,7 +2145,7 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
     {
         return 'uploads/mise_en_avants';
     }
-    
+
     /**
      * @return string
      */
@@ -2153,140 +2153,140 @@ abstract class BaseMiseEnAvant extends BaseObject implements Persistent
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-    
+
     /**
      * @return void
      */
     public function getImageFondPath()
     {
         $peer = self::PEER;
-    
+
         $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
             ->select('id')
             ->usePortfolioUsageQuery()
                 ->filterByTableRef($peer::TABLE_NAME)
-                ->filterByColumnRef($peer::TABLE_NAME.'.image_fond_path')
+                ->filterByColumnRef('image_fond_path')
                 ->filterByElementId($this->getId())
             ->endUse()
             ->find()
             ->toArray()
         ;
-    
+
         return implode(';', $medias);
     }
-    
+
     /**
      * @return void
      */
     public function setImageFondPath($v)
     {
         $peer = self::PEER;
-    
+
         $values = explode(';', $v);
-    
+
         \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
-            ->filterByColumnRef($peer::TABLE_NAME.'.image_fond_path')
+            ->filterByColumnRef('image_fond_path')
             ->filterByElementId($this->getId())
             ->filterByMediaId($values, \Criteria::NOT_IN)
             ->find()
             ->delete()
         ;
-    
+
         if ($v) {
             foreach ($values as $index => $value) {
                 $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
                     ->filterByTableRef($peer::TABLE_NAME)
-                    ->filterByColumnRef($peer::TABLE_NAME.'.image_fond_path')
+                    ->filterByColumnRef('image_fond_path')
                     ->filterByElementId($this->getId())
                     ->filterByMediaId($value)
                     ->findOne()
                 ;
-    
+
                 if (!$usage) {
                     $usage = new \Cungfoo\Model\PortfolioUsage();
                     $usage
                         ->setTableRef($peer::TABLE_NAME)
-                        ->setColumnRef($peer::TABLE_NAME.'.image_fond_path')
+                        ->setColumnRef('image_fond_path')
                         ->setElementId($this->getId())
                         ->setMediaId($value)
                     ;
                 }
-    
+
                 $usage
                     ->setSortableRank($index)
                     ->save()
                 ;
             }
-    
+
         }
     }
-    
+
     /**
      * @return void
      */
     public function getIllustrationPath()
     {
         $peer = self::PEER;
-    
+
         $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
             ->select('id')
             ->usePortfolioUsageQuery()
                 ->filterByTableRef($peer::TABLE_NAME)
-                ->filterByColumnRef($peer::TABLE_NAME.'.illustration_path')
+                ->filterByColumnRef('illustration_path')
                 ->filterByElementId($this->getId())
             ->endUse()
             ->find()
             ->toArray()
         ;
-    
+
         return implode(';', $medias);
     }
-    
+
     /**
      * @return void
      */
     public function setIllustrationPath($v)
     {
         $peer = self::PEER;
-    
+
         $values = explode(';', $v);
-    
+
         \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
-            ->filterByColumnRef($peer::TABLE_NAME.'.illustration_path')
+            ->filterByColumnRef('illustration_path')
             ->filterByElementId($this->getId())
             ->filterByMediaId($values, \Criteria::NOT_IN)
             ->find()
             ->delete()
         ;
-    
+
         if ($v) {
             foreach ($values as $index => $value) {
                 $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
                     ->filterByTableRef($peer::TABLE_NAME)
-                    ->filterByColumnRef($peer::TABLE_NAME.'.illustration_path')
+                    ->filterByColumnRef('illustration_path')
                     ->filterByElementId($this->getId())
                     ->filterByMediaId($value)
                     ->findOne()
                 ;
-    
+
                 if (!$usage) {
                     $usage = new \Cungfoo\Model\PortfolioUsage();
                     $usage
                         ->setTableRef($peer::TABLE_NAME)
-                        ->setColumnRef($peer::TABLE_NAME.'.illustration_path')
+                        ->setColumnRef('illustration_path')
                         ->setElementId($this->getId())
                         ->setMediaId($value)
                     ;
                 }
-    
+
                 $usage
                     ->setSortableRank($index)
                     ->save()
                 ;
             }
-    
+
         }
     }
 

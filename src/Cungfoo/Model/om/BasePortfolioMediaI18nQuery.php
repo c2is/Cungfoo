@@ -24,6 +24,8 @@ use Cungfoo\Model\PortfolioMediaI18nQuery;
  *
  * @method PortfolioMediaI18nQuery orderById($order = Criteria::ASC) Order by the id column
  * @method PortfolioMediaI18nQuery orderByLocale($order = Criteria::ASC) Order by the locale column
+ * @method PortfolioMediaI18nQuery orderByTitle($order = Criteria::ASC) Order by the title column
+ * @method PortfolioMediaI18nQuery orderByDescription($order = Criteria::ASC) Order by the description column
  * @method PortfolioMediaI18nQuery orderBySeoTitle($order = Criteria::ASC) Order by the seo_title column
  * @method PortfolioMediaI18nQuery orderBySeoDescription($order = Criteria::ASC) Order by the seo_description column
  * @method PortfolioMediaI18nQuery orderBySeoH1($order = Criteria::ASC) Order by the seo_h1 column
@@ -32,6 +34,8 @@ use Cungfoo\Model\PortfolioMediaI18nQuery;
  *
  * @method PortfolioMediaI18nQuery groupById() Group by the id column
  * @method PortfolioMediaI18nQuery groupByLocale() Group by the locale column
+ * @method PortfolioMediaI18nQuery groupByTitle() Group by the title column
+ * @method PortfolioMediaI18nQuery groupByDescription() Group by the description column
  * @method PortfolioMediaI18nQuery groupBySeoTitle() Group by the seo_title column
  * @method PortfolioMediaI18nQuery groupBySeoDescription() Group by the seo_description column
  * @method PortfolioMediaI18nQuery groupBySeoH1() Group by the seo_h1 column
@@ -51,6 +55,8 @@ use Cungfoo\Model\PortfolioMediaI18nQuery;
  *
  * @method PortfolioMediaI18n findOneById(int $id) Return the first PortfolioMediaI18n filtered by the id column
  * @method PortfolioMediaI18n findOneByLocale(string $locale) Return the first PortfolioMediaI18n filtered by the locale column
+ * @method PortfolioMediaI18n findOneByTitle(string $title) Return the first PortfolioMediaI18n filtered by the title column
+ * @method PortfolioMediaI18n findOneByDescription(string $description) Return the first PortfolioMediaI18n filtered by the description column
  * @method PortfolioMediaI18n findOneBySeoTitle(string $seo_title) Return the first PortfolioMediaI18n filtered by the seo_title column
  * @method PortfolioMediaI18n findOneBySeoDescription(string $seo_description) Return the first PortfolioMediaI18n filtered by the seo_description column
  * @method PortfolioMediaI18n findOneBySeoH1(string $seo_h1) Return the first PortfolioMediaI18n filtered by the seo_h1 column
@@ -59,6 +65,8 @@ use Cungfoo\Model\PortfolioMediaI18nQuery;
  *
  * @method array findById(int $id) Return PortfolioMediaI18n objects filtered by the id column
  * @method array findByLocale(string $locale) Return PortfolioMediaI18n objects filtered by the locale column
+ * @method array findByTitle(string $title) Return PortfolioMediaI18n objects filtered by the title column
+ * @method array findByDescription(string $description) Return PortfolioMediaI18n objects filtered by the description column
  * @method array findBySeoTitle(string $seo_title) Return PortfolioMediaI18n objects filtered by the seo_title column
  * @method array findBySeoDescription(string $seo_description) Return PortfolioMediaI18n objects filtered by the seo_description column
  * @method array findBySeoH1(string $seo_h1) Return PortfolioMediaI18n objects filtered by the seo_h1 column
@@ -154,7 +162,7 @@ abstract class BasePortfolioMediaI18nQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `locale`, `seo_title`, `seo_description`, `seo_h1`, `seo_keywords`, `active_locale` FROM `portfolio_media_i18n` WHERE `id` = :p0 AND `locale` = :p1';
+        $sql = 'SELECT `id`, `locale`, `title`, `description`, `seo_title`, `seo_description`, `seo_h1`, `seo_keywords`, `active_locale` FROM `portfolio_media_i18n` WHERE `id` = :p0 AND `locale` = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
@@ -311,6 +319,64 @@ abstract class BasePortfolioMediaI18nQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(PortfolioMediaI18nPeer::LOCALE, $locale, $comparison);
+    }
+
+    /**
+     * Filter the query on the title column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByTitle('fooValue');   // WHERE title = 'fooValue'
+     * $query->filterByTitle('%fooValue%'); // WHERE title LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $title The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return PortfolioMediaI18nQuery The current query, for fluid interface
+     */
+    public function filterByTitle($title = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($title)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $title)) {
+                $title = str_replace('*', '%', $title);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(PortfolioMediaI18nPeer::TITLE, $title, $comparison);
+    }
+
+    /**
+     * Filter the query on the description column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByDescription('fooValue');   // WHERE description = 'fooValue'
+     * $query->filterByDescription('%fooValue%'); // WHERE description LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $description The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return PortfolioMediaI18nQuery The current query, for fluid interface
+     */
+    public function filterByDescription($description = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($description)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $description)) {
+                $description = str_replace('*', '%', $description);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(PortfolioMediaI18nPeer::DESCRIPTION, $description, $comparison);
     }
 
     /**

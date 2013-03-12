@@ -60,18 +60,6 @@ abstract class BasePortfolioTag extends BaseObject implements Persistent
     protected $id;
 
     /**
-     * The value for the name field.
-     * @var        string
-     */
-    protected $name;
-
-    /**
-     * The value for the description field.
-     * @var        string
-     */
-    protected $description;
-
-    /**
      * The value for the created_at field.
      * @var        string
      */
@@ -182,26 +170,6 @@ abstract class BasePortfolioTag extends BaseObject implements Persistent
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Get the [name] column value.
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * Get the [description] column value.
-     *
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->description;
     }
 
     /**
@@ -316,48 +284,6 @@ abstract class BasePortfolioTag extends BaseObject implements Persistent
     } // setId()
 
     /**
-     * Set the value of [name] column.
-     *
-     * @param string $v new value
-     * @return PortfolioTag The current object (for fluent API support)
-     */
-    public function setName($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->name !== $v) {
-            $this->name = $v;
-            $this->modifiedColumns[] = PortfolioTagPeer::NAME;
-        }
-
-
-        return $this;
-    } // setName()
-
-    /**
-     * Set the value of [description] column.
-     *
-     * @param string $v new value
-     * @return PortfolioTag The current object (for fluent API support)
-     */
-    public function setDescription($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->description !== $v) {
-            $this->description = $v;
-            $this->modifiedColumns[] = PortfolioTagPeer::DESCRIPTION;
-        }
-
-
-        return $this;
-    } // setDescription()
-
-    /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
      *
      * @param mixed $v string, integer (timestamp), or DateTime value.
@@ -469,11 +395,9 @@ abstract class BasePortfolioTag extends BaseObject implements Persistent
         try {
 
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
-            $this->name = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
-            $this->description = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
-            $this->created_at = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
-            $this->updated_at = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
-            $this->active = ($row[$startcol + 5] !== null) ? (boolean) $row[$startcol + 5] : null;
+            $this->created_at = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
+            $this->updated_at = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
+            $this->active = ($row[$startcol + 3] !== null) ? (boolean) $row[$startcol + 3] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -482,7 +406,7 @@ abstract class BasePortfolioTag extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 6; // 6 = PortfolioTagPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 4; // 4 = PortfolioTagPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating PortfolioTag object", $e);
@@ -767,12 +691,6 @@ abstract class BasePortfolioTag extends BaseObject implements Persistent
         if ($this->isColumnModified(PortfolioTagPeer::ID)) {
             $modifiedColumns[':p' . $index++]  = '`id`';
         }
-        if ($this->isColumnModified(PortfolioTagPeer::NAME)) {
-            $modifiedColumns[':p' . $index++]  = '`name`';
-        }
-        if ($this->isColumnModified(PortfolioTagPeer::DESCRIPTION)) {
-            $modifiedColumns[':p' . $index++]  = '`description`';
-        }
         if ($this->isColumnModified(PortfolioTagPeer::CREATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`created_at`';
         }
@@ -795,12 +713,6 @@ abstract class BasePortfolioTag extends BaseObject implements Persistent
                 switch ($columnName) {
                     case '`id`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
-                        break;
-                    case '`name`':
-                        $stmt->bindValue($identifier, $this->name, PDO::PARAM_STR);
-                        break;
-                    case '`description`':
-                        $stmt->bindValue($identifier, $this->description, PDO::PARAM_STR);
                         break;
                     case '`created_at`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
@@ -965,18 +877,12 @@ abstract class BasePortfolioTag extends BaseObject implements Persistent
                 return $this->getId();
                 break;
             case 1:
-                return $this->getName();
-                break;
-            case 2:
-                return $this->getDescription();
-                break;
-            case 3:
                 return $this->getCreatedAt();
                 break;
-            case 4:
+            case 2:
                 return $this->getUpdatedAt();
                 break;
-            case 5:
+            case 3:
                 return $this->getActive();
                 break;
             default:
@@ -1009,11 +915,9 @@ abstract class BasePortfolioTag extends BaseObject implements Persistent
         $keys = PortfolioTagPeer::getFieldNames($keyType);
         $result = array(
             $keys[0] => $this->getId(),
-            $keys[1] => $this->getName(),
-            $keys[2] => $this->getDescription(),
-            $keys[3] => $this->getCreatedAt(),
-            $keys[4] => $this->getUpdatedAt(),
-            $keys[5] => $this->getActive(),
+            $keys[1] => $this->getCreatedAt(),
+            $keys[2] => $this->getUpdatedAt(),
+            $keys[3] => $this->getActive(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->collPortfolioMediaTags) {
@@ -1060,18 +964,12 @@ abstract class BasePortfolioTag extends BaseObject implements Persistent
                 $this->setId($value);
                 break;
             case 1:
-                $this->setName($value);
-                break;
-            case 2:
-                $this->setDescription($value);
-                break;
-            case 3:
                 $this->setCreatedAt($value);
                 break;
-            case 4:
+            case 2:
                 $this->setUpdatedAt($value);
                 break;
-            case 5:
+            case 3:
                 $this->setActive($value);
                 break;
         } // switch()
@@ -1099,11 +997,9 @@ abstract class BasePortfolioTag extends BaseObject implements Persistent
         $keys = PortfolioTagPeer::getFieldNames($keyType);
 
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
-        if (array_key_exists($keys[1], $arr)) $this->setName($arr[$keys[1]]);
-        if (array_key_exists($keys[2], $arr)) $this->setDescription($arr[$keys[2]]);
-        if (array_key_exists($keys[3], $arr)) $this->setCreatedAt($arr[$keys[3]]);
-        if (array_key_exists($keys[4], $arr)) $this->setUpdatedAt($arr[$keys[4]]);
-        if (array_key_exists($keys[5], $arr)) $this->setActive($arr[$keys[5]]);
+        if (array_key_exists($keys[1], $arr)) $this->setCreatedAt($arr[$keys[1]]);
+        if (array_key_exists($keys[2], $arr)) $this->setUpdatedAt($arr[$keys[2]]);
+        if (array_key_exists($keys[3], $arr)) $this->setActive($arr[$keys[3]]);
     }
 
     /**
@@ -1116,8 +1012,6 @@ abstract class BasePortfolioTag extends BaseObject implements Persistent
         $criteria = new Criteria(PortfolioTagPeer::DATABASE_NAME);
 
         if ($this->isColumnModified(PortfolioTagPeer::ID)) $criteria->add(PortfolioTagPeer::ID, $this->id);
-        if ($this->isColumnModified(PortfolioTagPeer::NAME)) $criteria->add(PortfolioTagPeer::NAME, $this->name);
-        if ($this->isColumnModified(PortfolioTagPeer::DESCRIPTION)) $criteria->add(PortfolioTagPeer::DESCRIPTION, $this->description);
         if ($this->isColumnModified(PortfolioTagPeer::CREATED_AT)) $criteria->add(PortfolioTagPeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(PortfolioTagPeer::UPDATED_AT)) $criteria->add(PortfolioTagPeer::UPDATED_AT, $this->updated_at);
         if ($this->isColumnModified(PortfolioTagPeer::ACTIVE)) $criteria->add(PortfolioTagPeer::ACTIVE, $this->active);
@@ -1184,8 +1078,6 @@ abstract class BasePortfolioTag extends BaseObject implements Persistent
      */
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
-        $copyObj->setName($this->getName());
-        $copyObj->setDescription($this->getDescription());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
         $copyObj->setActive($this->getActive());
@@ -1920,8 +1812,6 @@ abstract class BasePortfolioTag extends BaseObject implements Persistent
     public function clear()
     {
         $this->id = null;
-        $this->name = null;
-        $this->description = null;
         $this->created_at = null;
         $this->updated_at = null;
         $this->active = null;
@@ -2016,8 +1906,8 @@ abstract class BasePortfolioTag extends BaseObject implements Persistent
     }
 
     // active behavior
-    
-    
+
+
     /**
      * return true is the object is active
      *
@@ -2027,7 +1917,7 @@ abstract class BasePortfolioTag extends BaseObject implements Persistent
     {
         return $this->getActive();
     }
-    
+
     /**
      * return true is the object is active locale
      *
@@ -2037,58 +1927,43 @@ abstract class BasePortfolioTag extends BaseObject implements Persistent
     {
         return $this->getActiveLocale();
     }
-    
+
     public function getPortfolioMediasActive($criteria = null, PropelPDO $con = null)
     {
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-    
+
         $criteria->add(\Cungfoo\Model\PortfolioMediaPeer::ACTIVE, true);
-    
-    
+
+
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\PortfolioMediaI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\PortfolioMediaPeer::ID, \Cungfoo\Model\PortfolioMediaI18nPeer::alias('i18n_locale', \Cungfoo\Model\PortfolioMediaI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\PortfolioMediaI18nPeer::alias('i18n_locale', \Cungfoo\Model\PortfolioMediaI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\PortfolioMediaI18nPeer::alias('i18n_locale', \Cungfoo\Model\PortfolioMediaI18nPeer::LOCALE), $this->currentLocale);
-    
+
         return $this->getPortfolioMedias($criteria, $con);
     }
-    
+
     public function getPortfolioMediaTagsActive($criteria = null, PropelPDO $con = null)
     {
-    
+
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-    
+
         $criteria->add(\Cungfoo\Model\PortfolioMediaTagPeer::ACTIVE, true);
-    
-    
+
+
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\PortfolioMediaTagI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\PortfolioMediaTagPeer::ID, \Cungfoo\Model\PortfolioMediaTagI18nPeer::alias('i18n_locale', \Cungfoo\Model\PortfolioMediaTagI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\PortfolioMediaTagI18nPeer::alias('i18n_locale', \Cungfoo\Model\PortfolioMediaTagI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\PortfolioMediaTagI18nPeer::alias('i18n_locale', \Cungfoo\Model\PortfolioMediaTagI18nPeer::LOCALE), $this->currentLocale);
-    
+
         return $this->getPortfolioMediaTags($criteria, $con);
     }
-    // crudable behavior
-    
-    /**
-     * @param \Symfony\Component\Form\Form $form
-     * @param PropelPDO $con
-     * @return int             The number of rows affected by this insert/update and any referring fk objects' save() operations.
-     * @throws PropelException
-     * @throws Exception
-     * @see        doSave()
-     */
-    public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
-    {
-        return $this->save($con);
-    }
-
     // i18n behavior
 
     /**
@@ -2186,6 +2061,78 @@ abstract class BasePortfolioTag extends BaseObject implements Persistent
     public function getCurrentTranslation(PropelPDO $con = null)
     {
         return $this->getTranslation($this->getLocale(), $con);
+    }
+
+
+        /**
+         * Get the [name] column value.
+         *
+         * @return string
+         */
+        public function getName()
+        {
+        return $this->getCurrentTranslation()->getName();
+    }
+
+
+        /**
+         * Set the value of [name] column.
+         *
+         * @param string $v new value
+         * @return PortfolioTagI18n The current object (for fluent API support)
+         */
+        public function setName($v)
+        {    $this->getCurrentTranslation()->setName($v);
+
+        return $this;
+    }
+
+
+        /**
+         * Get the [slug] column value.
+         *
+         * @return string
+         */
+        public function getSlug()
+        {
+        return $this->getCurrentTranslation()->getSlug();
+    }
+
+
+        /**
+         * Set the value of [slug] column.
+         *
+         * @param string $v new value
+         * @return PortfolioTagI18n The current object (for fluent API support)
+         */
+        public function setSlug($v)
+        {    $this->getCurrentTranslation()->setSlug($v);
+
+        return $this;
+    }
+
+
+        /**
+         * Get the [description] column value.
+         *
+         * @return string
+         */
+        public function getDescription()
+        {
+        return $this->getCurrentTranslation()->getDescription();
+    }
+
+
+        /**
+         * Set the value of [description] column.
+         *
+         * @param string $v new value
+         * @return PortfolioTagI18n The current object (for fluent API support)
+         */
+        public function setDescription($v)
+        {    $this->getCurrentTranslation()->setDescription($v);
+
+        return $this;
     }
 
     /**
@@ -2350,6 +2297,21 @@ abstract class BasePortfolioTag extends BaseObject implements Persistent
         {    $this->getCurrentTranslation()->setActiveLocale($v);
 
         return $this;
+    }
+
+    // crudable behavior
+
+    /**
+     * @param \Symfony\Component\Form\Form $form
+     * @param PropelPDO $con
+     * @return int             The number of rows affected by this insert/update and any referring fk objects' save() operations.
+     * @throws PropelException
+     * @throws Exception
+     * @see        doSave()
+     */
+    public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
+    {
+        return $this->save($con);
     }
 
 }

@@ -2395,8 +2395,8 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
     }
 
     // active behavior
-    
-    
+
+
     /**
      * return true is the object is active
      *
@@ -2406,7 +2406,7 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
     {
         return $this->getActive();
     }
-    
+
     /**
      * return true is the object is active locale
      *
@@ -2417,7 +2417,7 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
         return $this->getActiveLocale();
     }
     // crudable behavior
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -2430,7 +2430,7 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
     {
         return $this->save($con);
     }
-    
+
     /**
      * @return string
      */
@@ -2438,7 +2438,7 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
     {
         return 'uploads/demande_annulations';
     }
-    
+
     /**
      * @return string
      */
@@ -2446,276 +2446,276 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-    
+
     /**
      * @return void
      */
     public function getFile1()
     {
         $peer = self::PEER;
-    
+
         $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
             ->select('id')
             ->usePortfolioUsageQuery()
                 ->filterByTableRef($peer::TABLE_NAME)
-                ->filterByColumnRef($peer::TABLE_NAME.'.file_1')
+                ->filterByColumnRef('file_1')
                 ->filterByElementId($this->getId())
             ->endUse()
             ->find()
             ->toArray()
         ;
-    
+
         return implode(';', $medias);
     }
-    
+
     /**
      * @return void
      */
     public function setFile1($v)
     {
         $peer = self::PEER;
-    
+
         $values = explode(';', $v);
-    
+
         \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
-            ->filterByColumnRef($peer::TABLE_NAME.'.file_1')
+            ->filterByColumnRef('file_1')
             ->filterByElementId($this->getId())
             ->filterByMediaId($values, \Criteria::NOT_IN)
             ->find()
             ->delete()
         ;
-    
+
         if ($v) {
             foreach ($values as $index => $value) {
                 $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
                     ->filterByTableRef($peer::TABLE_NAME)
-                    ->filterByColumnRef($peer::TABLE_NAME.'.file_1')
+                    ->filterByColumnRef('file_1')
                     ->filterByElementId($this->getId())
                     ->filterByMediaId($value)
                     ->findOne()
                 ;
-    
+
                 if (!$usage) {
                     $usage = new \Cungfoo\Model\PortfolioUsage();
                     $usage
                         ->setTableRef($peer::TABLE_NAME)
-                        ->setColumnRef($peer::TABLE_NAME.'.file_1')
+                        ->setColumnRef('file_1')
                         ->setElementId($this->getId())
                         ->setMediaId($value)
                     ;
                 }
-    
+
                 $usage
                     ->setSortableRank($index)
                     ->save()
                 ;
             }
-    
+
         }
     }
-    
+
     /**
      * @return void
      */
     public function getFile2()
     {
         $peer = self::PEER;
-    
+
         $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
             ->select('id')
             ->usePortfolioUsageQuery()
                 ->filterByTableRef($peer::TABLE_NAME)
-                ->filterByColumnRef($peer::TABLE_NAME.'.file_2')
+                ->filterByColumnRef('file_2')
                 ->filterByElementId($this->getId())
             ->endUse()
             ->find()
             ->toArray()
         ;
-    
+
         return implode(';', $medias);
     }
-    
+
     /**
      * @return void
      */
     public function setFile2($v)
     {
         $peer = self::PEER;
-    
+
         $values = explode(';', $v);
-    
+
         \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
-            ->filterByColumnRef($peer::TABLE_NAME.'.file_2')
+            ->filterByColumnRef('file_2')
             ->filterByElementId($this->getId())
             ->filterByMediaId($values, \Criteria::NOT_IN)
             ->find()
             ->delete()
         ;
-    
+
         if ($v) {
             foreach ($values as $index => $value) {
                 $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
                     ->filterByTableRef($peer::TABLE_NAME)
-                    ->filterByColumnRef($peer::TABLE_NAME.'.file_2')
+                    ->filterByColumnRef('file_2')
                     ->filterByElementId($this->getId())
                     ->filterByMediaId($value)
                     ->findOne()
                 ;
-    
+
                 if (!$usage) {
                     $usage = new \Cungfoo\Model\PortfolioUsage();
                     $usage
                         ->setTableRef($peer::TABLE_NAME)
-                        ->setColumnRef($peer::TABLE_NAME.'.file_2')
+                        ->setColumnRef('file_2')
                         ->setElementId($this->getId())
                         ->setMediaId($value)
                     ;
                 }
-    
+
                 $usage
                     ->setSortableRank($index)
                     ->save()
                 ;
             }
-    
+
         }
     }
-    
+
     /**
      * @return void
      */
     public function getFile3()
     {
         $peer = self::PEER;
-    
+
         $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
             ->select('id')
             ->usePortfolioUsageQuery()
                 ->filterByTableRef($peer::TABLE_NAME)
-                ->filterByColumnRef($peer::TABLE_NAME.'.file_3')
+                ->filterByColumnRef('file_3')
                 ->filterByElementId($this->getId())
             ->endUse()
             ->find()
             ->toArray()
         ;
-    
+
         return implode(';', $medias);
     }
-    
+
     /**
      * @return void
      */
     public function setFile3($v)
     {
         $peer = self::PEER;
-    
+
         $values = explode(';', $v);
-    
+
         \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
-            ->filterByColumnRef($peer::TABLE_NAME.'.file_3')
+            ->filterByColumnRef('file_3')
             ->filterByElementId($this->getId())
             ->filterByMediaId($values, \Criteria::NOT_IN)
             ->find()
             ->delete()
         ;
-    
+
         if ($v) {
             foreach ($values as $index => $value) {
                 $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
                     ->filterByTableRef($peer::TABLE_NAME)
-                    ->filterByColumnRef($peer::TABLE_NAME.'.file_3')
+                    ->filterByColumnRef('file_3')
                     ->filterByElementId($this->getId())
                     ->filterByMediaId($value)
                     ->findOne()
                 ;
-    
+
                 if (!$usage) {
                     $usage = new \Cungfoo\Model\PortfolioUsage();
                     $usage
                         ->setTableRef($peer::TABLE_NAME)
-                        ->setColumnRef($peer::TABLE_NAME.'.file_3')
+                        ->setColumnRef('file_3')
                         ->setElementId($this->getId())
                         ->setMediaId($value)
                     ;
                 }
-    
+
                 $usage
                     ->setSortableRank($index)
                     ->save()
                 ;
             }
-    
+
         }
     }
-    
+
     /**
      * @return void
      */
     public function getFile4()
     {
         $peer = self::PEER;
-    
+
         $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
             ->select('id')
             ->usePortfolioUsageQuery()
                 ->filterByTableRef($peer::TABLE_NAME)
-                ->filterByColumnRef($peer::TABLE_NAME.'.file_4')
+                ->filterByColumnRef('file_4')
                 ->filterByElementId($this->getId())
             ->endUse()
             ->find()
             ->toArray()
         ;
-    
+
         return implode(';', $medias);
     }
-    
+
     /**
      * @return void
      */
     public function setFile4($v)
     {
         $peer = self::PEER;
-    
+
         $values = explode(';', $v);
-    
+
         \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
-            ->filterByColumnRef($peer::TABLE_NAME.'.file_4')
+            ->filterByColumnRef('file_4')
             ->filterByElementId($this->getId())
             ->filterByMediaId($values, \Criteria::NOT_IN)
             ->find()
             ->delete()
         ;
-    
+
         if ($v) {
             foreach ($values as $index => $value) {
                 $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
                     ->filterByTableRef($peer::TABLE_NAME)
-                    ->filterByColumnRef($peer::TABLE_NAME.'.file_4')
+                    ->filterByColumnRef('file_4')
                     ->filterByElementId($this->getId())
                     ->filterByMediaId($value)
                     ->findOne()
                 ;
-    
+
                 if (!$usage) {
                     $usage = new \Cungfoo\Model\PortfolioUsage();
                     $usage
                         ->setTableRef($peer::TABLE_NAME)
-                        ->setColumnRef($peer::TABLE_NAME.'.file_4')
+                        ->setColumnRef('file_4')
                         ->setElementId($this->getId())
                         ->setMediaId($value)
                     ;
                 }
-    
+
                 $usage
                     ->setSortableRank($index)
                     ->save()
                 ;
             }
-    
+
         }
     }
 

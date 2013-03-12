@@ -789,7 +789,7 @@ abstract class BaseBonPlanCategoriePeer
     }
 
     // crudable behavior
-    
+
     /**
      * The default locale to use for translations
      * @var        string
@@ -943,7 +943,7 @@ abstract class BaseBonPlanCategoriePeer
     }
 
     // seo behavior
-    
+
     /**
      * The default locale to use for translations
      * @var        string

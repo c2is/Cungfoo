@@ -39,25 +39,19 @@ abstract class BasePortfolioMediaPeer
     const TM_CLASS = 'PortfolioMediaTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 11;
+    const NUM_COLUMNS = 9;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 11;
+    const NUM_HYDRATE_COLUMNS = 9;
 
     /** the column name for the id field */
     const ID = 'portfolio_media.id';
 
     /** the column name for the file field */
     const FILE = 'portfolio_media.file';
-
-    /** the column name for the title field */
-    const TITLE = 'portfolio_media.title';
-
-    /** the column name for the description field */
-    const DESCRIPTION = 'portfolio_media.description';
 
     /** the column name for the width field */
     const WIDTH = 'portfolio_media.width';
@@ -106,12 +100,12 @@ abstract class BasePortfolioMediaPeer
      * e.g. PortfolioMediaPeer::$fieldNames[PortfolioMediaPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'File', 'Title', 'Description', 'Width', 'Height', 'Size', 'Type', 'CreatedAt', 'UpdatedAt', 'Active', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'file', 'title', 'description', 'width', 'height', 'size', 'type', 'createdAt', 'updatedAt', 'active', ),
-        BasePeer::TYPE_COLNAME => array (PortfolioMediaPeer::ID, PortfolioMediaPeer::FILE, PortfolioMediaPeer::TITLE, PortfolioMediaPeer::DESCRIPTION, PortfolioMediaPeer::WIDTH, PortfolioMediaPeer::HEIGHT, PortfolioMediaPeer::SIZE, PortfolioMediaPeer::TYPE, PortfolioMediaPeer::CREATED_AT, PortfolioMediaPeer::UPDATED_AT, PortfolioMediaPeer::ACTIVE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'FILE', 'TITLE', 'DESCRIPTION', 'WIDTH', 'HEIGHT', 'SIZE', 'TYPE', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'file', 'title', 'description', 'width', 'height', 'size', 'type', 'created_at', 'updated_at', 'active', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'File', 'Width', 'Height', 'Size', 'Type', 'CreatedAt', 'UpdatedAt', 'Active', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'file', 'width', 'height', 'size', 'type', 'createdAt', 'updatedAt', 'active', ),
+        BasePeer::TYPE_COLNAME => array (PortfolioMediaPeer::ID, PortfolioMediaPeer::FILE, PortfolioMediaPeer::WIDTH, PortfolioMediaPeer::HEIGHT, PortfolioMediaPeer::SIZE, PortfolioMediaPeer::TYPE, PortfolioMediaPeer::CREATED_AT, PortfolioMediaPeer::UPDATED_AT, PortfolioMediaPeer::ACTIVE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'FILE', 'WIDTH', 'HEIGHT', 'SIZE', 'TYPE', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'file', 'width', 'height', 'size', 'type', 'created_at', 'updated_at', 'active', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, )
     );
 
     /**
@@ -121,12 +115,12 @@ abstract class BasePortfolioMediaPeer
      * e.g. PortfolioMediaPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'File' => 1, 'Title' => 2, 'Description' => 3, 'Width' => 4, 'Height' => 5, 'Size' => 6, 'Type' => 7, 'CreatedAt' => 8, 'UpdatedAt' => 9, 'Active' => 10, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'file' => 1, 'title' => 2, 'description' => 3, 'width' => 4, 'height' => 5, 'size' => 6, 'type' => 7, 'createdAt' => 8, 'updatedAt' => 9, 'active' => 10, ),
-        BasePeer::TYPE_COLNAME => array (PortfolioMediaPeer::ID => 0, PortfolioMediaPeer::FILE => 1, PortfolioMediaPeer::TITLE => 2, PortfolioMediaPeer::DESCRIPTION => 3, PortfolioMediaPeer::WIDTH => 4, PortfolioMediaPeer::HEIGHT => 5, PortfolioMediaPeer::SIZE => 6, PortfolioMediaPeer::TYPE => 7, PortfolioMediaPeer::CREATED_AT => 8, PortfolioMediaPeer::UPDATED_AT => 9, PortfolioMediaPeer::ACTIVE => 10, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'FILE' => 1, 'TITLE' => 2, 'DESCRIPTION' => 3, 'WIDTH' => 4, 'HEIGHT' => 5, 'SIZE' => 6, 'TYPE' => 7, 'CREATED_AT' => 8, 'UPDATED_AT' => 9, 'ACTIVE' => 10, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'file' => 1, 'title' => 2, 'description' => 3, 'width' => 4, 'height' => 5, 'size' => 6, 'type' => 7, 'created_at' => 8, 'updated_at' => 9, 'active' => 10, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'File' => 1, 'Width' => 2, 'Height' => 3, 'Size' => 4, 'Type' => 5, 'CreatedAt' => 6, 'UpdatedAt' => 7, 'Active' => 8, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'file' => 1, 'width' => 2, 'height' => 3, 'size' => 4, 'type' => 5, 'createdAt' => 6, 'updatedAt' => 7, 'active' => 8, ),
+        BasePeer::TYPE_COLNAME => array (PortfolioMediaPeer::ID => 0, PortfolioMediaPeer::FILE => 1, PortfolioMediaPeer::WIDTH => 2, PortfolioMediaPeer::HEIGHT => 3, PortfolioMediaPeer::SIZE => 4, PortfolioMediaPeer::TYPE => 5, PortfolioMediaPeer::CREATED_AT => 6, PortfolioMediaPeer::UPDATED_AT => 7, PortfolioMediaPeer::ACTIVE => 8, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'FILE' => 1, 'WIDTH' => 2, 'HEIGHT' => 3, 'SIZE' => 4, 'TYPE' => 5, 'CREATED_AT' => 6, 'UPDATED_AT' => 7, 'ACTIVE' => 8, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'file' => 1, 'width' => 2, 'height' => 3, 'size' => 4, 'type' => 5, 'created_at' => 6, 'updated_at' => 7, 'active' => 8, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, )
     );
 
     /**
@@ -202,8 +196,6 @@ abstract class BasePortfolioMediaPeer
         if (null === $alias) {
             $criteria->addSelectColumn(PortfolioMediaPeer::ID);
             $criteria->addSelectColumn(PortfolioMediaPeer::FILE);
-            $criteria->addSelectColumn(PortfolioMediaPeer::TITLE);
-            $criteria->addSelectColumn(PortfolioMediaPeer::DESCRIPTION);
             $criteria->addSelectColumn(PortfolioMediaPeer::WIDTH);
             $criteria->addSelectColumn(PortfolioMediaPeer::HEIGHT);
             $criteria->addSelectColumn(PortfolioMediaPeer::SIZE);
@@ -214,8 +206,6 @@ abstract class BasePortfolioMediaPeer
         } else {
             $criteria->addSelectColumn($alias . '.id');
             $criteria->addSelectColumn($alias . '.file');
-            $criteria->addSelectColumn($alias . '.title');
-            $criteria->addSelectColumn($alias . '.description');
             $criteria->addSelectColumn($alias . '.width');
             $criteria->addSelectColumn($alias . '.height');
             $criteria->addSelectColumn($alias . '.size');
@@ -825,7 +815,7 @@ abstract class BasePortfolioMediaPeer
     }
 
     // crudable behavior
-    
+
     /**
      * The default locale to use for translations
      * @var        string
@@ -839,7 +829,7 @@ abstract class BasePortfolioMediaPeer
         ;
     }
     // seo behavior
-    
+
     /**
      * The default locale to use for translations
      * @var        string

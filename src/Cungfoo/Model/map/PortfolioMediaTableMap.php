@@ -44,8 +44,6 @@ class PortfolioMediaTableMap extends TableMap
         // columns
         $this->addPrimaryKey('id', 'Id', 'INTEGER', true, null, null);
         $this->addColumn('file', 'File', 'VARCHAR', false, 255, null);
-        $this->addColumn('title', 'Title', 'VARCHAR', true, 255, null);
-        $this->addColumn('description', 'Description', 'LONGVARCHAR', false, null, null);
         $this->addColumn('width', 'Width', 'VARCHAR', false, 255, null);
         $this->addColumn('height', 'Height', 'VARCHAR', false, 255, null);
         $this->addColumn('size', 'Size', 'VARCHAR', false, 255, null);
@@ -85,6 +83,15 @@ class PortfolioMediaTableMap extends TableMap
   'active_column' => 'active',
   'active_locale_column' => 'active_locale',
 ),
+            'i18n' =>  array (
+  'i18n_table' => '%TABLE%_i18n',
+  'i18n_phpname' => '%PHPNAME%I18n',
+  'i18n_columns' => 'title, description,seo_title,seo_description,seo_h1,seo_keywords,active_locale',
+  'i18n_pk_name' => NULL,
+  'locale_column' => 'locale',
+  'default_locale' => 'fr',
+  'locale_alias' => '',
+),
             'crudable' =>  array (
   'route_prefix' => '/',
   'crud_prefix' => '/portfolio/medias',
@@ -96,15 +103,6 @@ class PortfolioMediaTableMap extends TableMap
   'seo_columns' => 'seo_title,seo_description,seo_h1,seo_keywords',
   'seo_description' => 'LONGVARCHAR',
   'seo_keywords' => 'LONGVARCHAR',
-),
-            'i18n' =>  array (
-  'i18n_table' => '%TABLE%_i18n',
-  'i18n_phpname' => '%PHPNAME%I18n',
-  'i18n_columns' => ',seo_title,seo_description,seo_h1,seo_keywords,active_locale',
-  'i18n_pk_name' => NULL,
-  'locale_column' => 'locale',
-  'default_locale' => 'fr',
-  'locale_alias' => '',
 ),
         );
     } // getBehaviors()

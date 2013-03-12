@@ -37,19 +37,28 @@ abstract class BasePortfolioTagI18nPeer
     const TM_CLASS = 'PortfolioTagI18nTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 7;
+    const NUM_COLUMNS = 10;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 7;
+    const NUM_HYDRATE_COLUMNS = 10;
 
     /** the column name for the id field */
     const ID = 'portfolio_tag_i18n.id';
 
     /** the column name for the locale field */
     const LOCALE = 'portfolio_tag_i18n.locale';
+
+    /** the column name for the name field */
+    const NAME = 'portfolio_tag_i18n.name';
+
+    /** the column name for the slug field */
+    const SLUG = 'portfolio_tag_i18n.slug';
+
+    /** the column name for the description field */
+    const DESCRIPTION = 'portfolio_tag_i18n.description';
 
     /** the column name for the seo_title field */
     const SEO_TITLE = 'portfolio_tag_i18n.seo_title';
@@ -85,12 +94,12 @@ abstract class BasePortfolioTagI18nPeer
      * e.g. PortfolioTagI18nPeer::$fieldNames[PortfolioTagI18nPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'SeoTitle', 'SeoDescription', 'SeoH1', 'SeoKeywords', 'ActiveLocale', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'seoTitle', 'seoDescription', 'seoH1', 'seoKeywords', 'activeLocale', ),
-        BasePeer::TYPE_COLNAME => array (PortfolioTagI18nPeer::ID, PortfolioTagI18nPeer::LOCALE, PortfolioTagI18nPeer::SEO_TITLE, PortfolioTagI18nPeer::SEO_DESCRIPTION, PortfolioTagI18nPeer::SEO_H1, PortfolioTagI18nPeer::SEO_KEYWORDS, PortfolioTagI18nPeer::ACTIVE_LOCALE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'SEO_TITLE', 'SEO_DESCRIPTION', 'SEO_H1', 'SEO_KEYWORDS', 'ACTIVE_LOCALE', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'seo_title', 'seo_description', 'seo_h1', 'seo_keywords', 'active_locale', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Locale', 'Name', 'Slug', 'Description', 'SeoTitle', 'SeoDescription', 'SeoH1', 'SeoKeywords', 'ActiveLocale', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'locale', 'name', 'slug', 'description', 'seoTitle', 'seoDescription', 'seoH1', 'seoKeywords', 'activeLocale', ),
+        BasePeer::TYPE_COLNAME => array (PortfolioTagI18nPeer::ID, PortfolioTagI18nPeer::LOCALE, PortfolioTagI18nPeer::NAME, PortfolioTagI18nPeer::SLUG, PortfolioTagI18nPeer::DESCRIPTION, PortfolioTagI18nPeer::SEO_TITLE, PortfolioTagI18nPeer::SEO_DESCRIPTION, PortfolioTagI18nPeer::SEO_H1, PortfolioTagI18nPeer::SEO_KEYWORDS, PortfolioTagI18nPeer::ACTIVE_LOCALE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'LOCALE', 'NAME', 'SLUG', 'DESCRIPTION', 'SEO_TITLE', 'SEO_DESCRIPTION', 'SEO_H1', 'SEO_KEYWORDS', 'ACTIVE_LOCALE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'locale', 'name', 'slug', 'description', 'seo_title', 'seo_description', 'seo_h1', 'seo_keywords', 'active_locale', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, )
     );
 
     /**
@@ -100,12 +109,12 @@ abstract class BasePortfolioTagI18nPeer
      * e.g. PortfolioTagI18nPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'SeoTitle' => 2, 'SeoDescription' => 3, 'SeoH1' => 4, 'SeoKeywords' => 5, 'ActiveLocale' => 6, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'seoTitle' => 2, 'seoDescription' => 3, 'seoH1' => 4, 'seoKeywords' => 5, 'activeLocale' => 6, ),
-        BasePeer::TYPE_COLNAME => array (PortfolioTagI18nPeer::ID => 0, PortfolioTagI18nPeer::LOCALE => 1, PortfolioTagI18nPeer::SEO_TITLE => 2, PortfolioTagI18nPeer::SEO_DESCRIPTION => 3, PortfolioTagI18nPeer::SEO_H1 => 4, PortfolioTagI18nPeer::SEO_KEYWORDS => 5, PortfolioTagI18nPeer::ACTIVE_LOCALE => 6, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'SEO_TITLE' => 2, 'SEO_DESCRIPTION' => 3, 'SEO_H1' => 4, 'SEO_KEYWORDS' => 5, 'ACTIVE_LOCALE' => 6, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'seo_title' => 2, 'seo_description' => 3, 'seo_h1' => 4, 'seo_keywords' => 5, 'active_locale' => 6, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Locale' => 1, 'Name' => 2, 'Slug' => 3, 'Description' => 4, 'SeoTitle' => 5, 'SeoDescription' => 6, 'SeoH1' => 7, 'SeoKeywords' => 8, 'ActiveLocale' => 9, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'slug' => 3, 'description' => 4, 'seoTitle' => 5, 'seoDescription' => 6, 'seoH1' => 7, 'seoKeywords' => 8, 'activeLocale' => 9, ),
+        BasePeer::TYPE_COLNAME => array (PortfolioTagI18nPeer::ID => 0, PortfolioTagI18nPeer::LOCALE => 1, PortfolioTagI18nPeer::NAME => 2, PortfolioTagI18nPeer::SLUG => 3, PortfolioTagI18nPeer::DESCRIPTION => 4, PortfolioTagI18nPeer::SEO_TITLE => 5, PortfolioTagI18nPeer::SEO_DESCRIPTION => 6, PortfolioTagI18nPeer::SEO_H1 => 7, PortfolioTagI18nPeer::SEO_KEYWORDS => 8, PortfolioTagI18nPeer::ACTIVE_LOCALE => 9, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'LOCALE' => 1, 'NAME' => 2, 'SLUG' => 3, 'DESCRIPTION' => 4, 'SEO_TITLE' => 5, 'SEO_DESCRIPTION' => 6, 'SEO_H1' => 7, 'SEO_KEYWORDS' => 8, 'ACTIVE_LOCALE' => 9, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'locale' => 1, 'name' => 2, 'slug' => 3, 'description' => 4, 'seo_title' => 5, 'seo_description' => 6, 'seo_h1' => 7, 'seo_keywords' => 8, 'active_locale' => 9, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, )
     );
 
     /**
@@ -181,6 +190,9 @@ abstract class BasePortfolioTagI18nPeer
         if (null === $alias) {
             $criteria->addSelectColumn(PortfolioTagI18nPeer::ID);
             $criteria->addSelectColumn(PortfolioTagI18nPeer::LOCALE);
+            $criteria->addSelectColumn(PortfolioTagI18nPeer::NAME);
+            $criteria->addSelectColumn(PortfolioTagI18nPeer::SLUG);
+            $criteria->addSelectColumn(PortfolioTagI18nPeer::DESCRIPTION);
             $criteria->addSelectColumn(PortfolioTagI18nPeer::SEO_TITLE);
             $criteria->addSelectColumn(PortfolioTagI18nPeer::SEO_DESCRIPTION);
             $criteria->addSelectColumn(PortfolioTagI18nPeer::SEO_H1);
@@ -189,6 +201,9 @@ abstract class BasePortfolioTagI18nPeer
         } else {
             $criteria->addSelectColumn($alias . '.id');
             $criteria->addSelectColumn($alias . '.locale');
+            $criteria->addSelectColumn($alias . '.name');
+            $criteria->addSelectColumn($alias . '.slug');
+            $criteria->addSelectColumn($alias . '.description');
             $criteria->addSelectColumn($alias . '.seo_title');
             $criteria->addSelectColumn($alias . '.seo_description');
             $criteria->addSelectColumn($alias . '.seo_h1');

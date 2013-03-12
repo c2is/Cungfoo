@@ -68,18 +68,6 @@ abstract class BasePortfolioMedia extends BaseObject implements Persistent
     protected $file;
 
     /**
-     * The value for the title field.
-     * @var        string
-     */
-    protected $title;
-
-    /**
-     * The value for the description field.
-     * @var        string
-     */
-    protected $description;
-
-    /**
      * The value for the width field.
      * @var        string
      */
@@ -236,26 +224,6 @@ abstract class BasePortfolioMedia extends BaseObject implements Persistent
     public function getFile()
     {
         return $this->file;
-    }
-
-    /**
-     * Get the [title] column value.
-     *
-     * @return string
-     */
-    public function getTitle()
-    {
-        return $this->title;
-    }
-
-    /**
-     * Get the [description] column value.
-     *
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->description;
     }
 
     /**
@@ -429,48 +397,6 @@ abstract class BasePortfolioMedia extends BaseObject implements Persistent
 
         return $this;
     } // setFile()
-
-    /**
-     * Set the value of [title] column.
-     *
-     * @param string $v new value
-     * @return PortfolioMedia The current object (for fluent API support)
-     */
-    public function setTitle($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->title !== $v) {
-            $this->title = $v;
-            $this->modifiedColumns[] = PortfolioMediaPeer::TITLE;
-        }
-
-
-        return $this;
-    } // setTitle()
-
-    /**
-     * Set the value of [description] column.
-     *
-     * @param string $v new value
-     * @return PortfolioMedia The current object (for fluent API support)
-     */
-    public function setDescription($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->description !== $v) {
-            $this->description = $v;
-            $this->modifiedColumns[] = PortfolioMediaPeer::DESCRIPTION;
-        }
-
-
-        return $this;
-    } // setDescription()
 
     /**
      * Set the value of [width] column.
@@ -669,15 +595,13 @@ abstract class BasePortfolioMedia extends BaseObject implements Persistent
 
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
             $this->file = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
-            $this->title = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
-            $this->description = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
-            $this->width = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
-            $this->height = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
-            $this->size = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
-            $this->type = ($row[$startcol + 7] !== null) ? (string) $row[$startcol + 7] : null;
-            $this->created_at = ($row[$startcol + 8] !== null) ? (string) $row[$startcol + 8] : null;
-            $this->updated_at = ($row[$startcol + 9] !== null) ? (string) $row[$startcol + 9] : null;
-            $this->active = ($row[$startcol + 10] !== null) ? (boolean) $row[$startcol + 10] : null;
+            $this->width = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
+            $this->height = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
+            $this->size = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
+            $this->type = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
+            $this->created_at = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
+            $this->updated_at = ($row[$startcol + 7] !== null) ? (string) $row[$startcol + 7] : null;
+            $this->active = ($row[$startcol + 8] !== null) ? (boolean) $row[$startcol + 8] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -686,7 +610,7 @@ abstract class BasePortfolioMedia extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 11; // 11 = PortfolioMediaPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 9; // 9 = PortfolioMediaPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating PortfolioMedia object", $e);
@@ -993,12 +917,6 @@ abstract class BasePortfolioMedia extends BaseObject implements Persistent
         if ($this->isColumnModified(PortfolioMediaPeer::FILE)) {
             $modifiedColumns[':p' . $index++]  = '`file`';
         }
-        if ($this->isColumnModified(PortfolioMediaPeer::TITLE)) {
-            $modifiedColumns[':p' . $index++]  = '`title`';
-        }
-        if ($this->isColumnModified(PortfolioMediaPeer::DESCRIPTION)) {
-            $modifiedColumns[':p' . $index++]  = '`description`';
-        }
         if ($this->isColumnModified(PortfolioMediaPeer::WIDTH)) {
             $modifiedColumns[':p' . $index++]  = '`width`';
         }
@@ -1036,12 +954,6 @@ abstract class BasePortfolioMedia extends BaseObject implements Persistent
                         break;
                     case '`file`':
                         $stmt->bindValue($identifier, $this->file, PDO::PARAM_STR);
-                        break;
-                    case '`title`':
-                        $stmt->bindValue($identifier, $this->title, PDO::PARAM_STR);
-                        break;
-                    case '`description`':
-                        $stmt->bindValue($identifier, $this->description, PDO::PARAM_STR);
                         break;
                     case '`width`':
                         $stmt->bindValue($identifier, $this->width, PDO::PARAM_STR);
@@ -1229,30 +1141,24 @@ abstract class BasePortfolioMedia extends BaseObject implements Persistent
                 return $this->getFile();
                 break;
             case 2:
-                return $this->getTitle();
-                break;
-            case 3:
-                return $this->getDescription();
-                break;
-            case 4:
                 return $this->getWidth();
                 break;
-            case 5:
+            case 3:
                 return $this->getHeight();
                 break;
-            case 6:
+            case 4:
                 return $this->getSize();
                 break;
-            case 7:
+            case 5:
                 return $this->getType();
                 break;
-            case 8:
+            case 6:
                 return $this->getCreatedAt();
                 break;
-            case 9:
+            case 7:
                 return $this->getUpdatedAt();
                 break;
-            case 10:
+            case 8:
                 return $this->getActive();
                 break;
             default:
@@ -1286,15 +1192,13 @@ abstract class BasePortfolioMedia extends BaseObject implements Persistent
         $result = array(
             $keys[0] => $this->getId(),
             $keys[1] => $this->getFile(),
-            $keys[2] => $this->getTitle(),
-            $keys[3] => $this->getDescription(),
-            $keys[4] => $this->getWidth(),
-            $keys[5] => $this->getHeight(),
-            $keys[6] => $this->getSize(),
-            $keys[7] => $this->getType(),
-            $keys[8] => $this->getCreatedAt(),
-            $keys[9] => $this->getUpdatedAt(),
-            $keys[10] => $this->getActive(),
+            $keys[2] => $this->getWidth(),
+            $keys[3] => $this->getHeight(),
+            $keys[4] => $this->getSize(),
+            $keys[5] => $this->getType(),
+            $keys[6] => $this->getCreatedAt(),
+            $keys[7] => $this->getUpdatedAt(),
+            $keys[8] => $this->getActive(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->collPortfolioMediaTags) {
@@ -1347,30 +1251,24 @@ abstract class BasePortfolioMedia extends BaseObject implements Persistent
                 $this->setFile($value);
                 break;
             case 2:
-                $this->setTitle($value);
-                break;
-            case 3:
-                $this->setDescription($value);
-                break;
-            case 4:
                 $this->setWidth($value);
                 break;
-            case 5:
+            case 3:
                 $this->setHeight($value);
                 break;
-            case 6:
+            case 4:
                 $this->setSize($value);
                 break;
-            case 7:
+            case 5:
                 $this->setType($value);
                 break;
-            case 8:
+            case 6:
                 $this->setCreatedAt($value);
                 break;
-            case 9:
+            case 7:
                 $this->setUpdatedAt($value);
                 break;
-            case 10:
+            case 8:
                 $this->setActive($value);
                 break;
         } // switch()
@@ -1399,15 +1297,13 @@ abstract class BasePortfolioMedia extends BaseObject implements Persistent
 
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
         if (array_key_exists($keys[1], $arr)) $this->setFile($arr[$keys[1]]);
-        if (array_key_exists($keys[2], $arr)) $this->setTitle($arr[$keys[2]]);
-        if (array_key_exists($keys[3], $arr)) $this->setDescription($arr[$keys[3]]);
-        if (array_key_exists($keys[4], $arr)) $this->setWidth($arr[$keys[4]]);
-        if (array_key_exists($keys[5], $arr)) $this->setHeight($arr[$keys[5]]);
-        if (array_key_exists($keys[6], $arr)) $this->setSize($arr[$keys[6]]);
-        if (array_key_exists($keys[7], $arr)) $this->setType($arr[$keys[7]]);
-        if (array_key_exists($keys[8], $arr)) $this->setCreatedAt($arr[$keys[8]]);
-        if (array_key_exists($keys[9], $arr)) $this->setUpdatedAt($arr[$keys[9]]);
-        if (array_key_exists($keys[10], $arr)) $this->setActive($arr[$keys[10]]);
+        if (array_key_exists($keys[2], $arr)) $this->setWidth($arr[$keys[2]]);
+        if (array_key_exists($keys[3], $arr)) $this->setHeight($arr[$keys[3]]);
+        if (array_key_exists($keys[4], $arr)) $this->setSize($arr[$keys[4]]);
+        if (array_key_exists($keys[5], $arr)) $this->setType($arr[$keys[5]]);
+        if (array_key_exists($keys[6], $arr)) $this->setCreatedAt($arr[$keys[6]]);
+        if (array_key_exists($keys[7], $arr)) $this->setUpdatedAt($arr[$keys[7]]);
+        if (array_key_exists($keys[8], $arr)) $this->setActive($arr[$keys[8]]);
     }
 
     /**
@@ -1421,8 +1317,6 @@ abstract class BasePortfolioMedia extends BaseObject implements Persistent
 
         if ($this->isColumnModified(PortfolioMediaPeer::ID)) $criteria->add(PortfolioMediaPeer::ID, $this->id);
         if ($this->isColumnModified(PortfolioMediaPeer::FILE)) $criteria->add(PortfolioMediaPeer::FILE, $this->file);
-        if ($this->isColumnModified(PortfolioMediaPeer::TITLE)) $criteria->add(PortfolioMediaPeer::TITLE, $this->title);
-        if ($this->isColumnModified(PortfolioMediaPeer::DESCRIPTION)) $criteria->add(PortfolioMediaPeer::DESCRIPTION, $this->description);
         if ($this->isColumnModified(PortfolioMediaPeer::WIDTH)) $criteria->add(PortfolioMediaPeer::WIDTH, $this->width);
         if ($this->isColumnModified(PortfolioMediaPeer::HEIGHT)) $criteria->add(PortfolioMediaPeer::HEIGHT, $this->height);
         if ($this->isColumnModified(PortfolioMediaPeer::SIZE)) $criteria->add(PortfolioMediaPeer::SIZE, $this->size);
@@ -1494,8 +1388,6 @@ abstract class BasePortfolioMedia extends BaseObject implements Persistent
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
         $copyObj->setFile($this->getFile());
-        $copyObj->setTitle($this->getTitle());
-        $copyObj->setDescription($this->getDescription());
         $copyObj->setWidth($this->getWidth());
         $copyObj->setHeight($this->getHeight());
         $copyObj->setSize($this->getSize());
@@ -2459,8 +2351,6 @@ abstract class BasePortfolioMedia extends BaseObject implements Persistent
     {
         $this->id = null;
         $this->file = null;
-        $this->title = null;
-        $this->description = null;
         $this->width = null;
         $this->height = null;
         $this->size = null;
@@ -2568,8 +2458,8 @@ abstract class BasePortfolioMedia extends BaseObject implements Persistent
     }
 
     // active behavior
-    
-    
+
+
     /**
      * return true is the object is active
      *
@@ -2579,7 +2469,7 @@ abstract class BasePortfolioMedia extends BaseObject implements Persistent
     {
         return $this->getActive();
     }
-    
+
     /**
      * return true is the object is active locale
      *
@@ -2589,77 +2479,62 @@ abstract class BasePortfolioMedia extends BaseObject implements Persistent
     {
         return $this->getActiveLocale();
     }
-    
+
     public function getPortfolioTagsActive($criteria = null, PropelPDO $con = null)
     {
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-    
+
         $criteria->add(\Cungfoo\Model\PortfolioTagPeer::ACTIVE, true);
-    
-    
+
+
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\PortfolioTagI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\PortfolioTagPeer::ID, \Cungfoo\Model\PortfolioTagI18nPeer::alias('i18n_locale', \Cungfoo\Model\PortfolioTagI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\PortfolioTagI18nPeer::alias('i18n_locale', \Cungfoo\Model\PortfolioTagI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\PortfolioTagI18nPeer::alias('i18n_locale', \Cungfoo\Model\PortfolioTagI18nPeer::LOCALE), $this->currentLocale);
-    
+
         return $this->getPortfolioTags($criteria, $con);
     }
-    
+
     public function getTagsActive($criteria = null, PropelPDO $con = null)
     {
-    
+
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-    
+
         $criteria->add(\Cungfoo\Model\TagPeer::ACTIVE, true);
-    
-    
+
+
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\TagI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\TagPeer::ID, \Cungfoo\Model\TagI18nPeer::alias('i18n_locale', \Cungfoo\Model\TagI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\TagI18nPeer::alias('i18n_locale', \Cungfoo\Model\TagI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\TagI18nPeer::alias('i18n_locale', \Cungfoo\Model\TagI18nPeer::LOCALE), $this->currentLocale);
-    
+
         return $this->getTags($criteria, $con);
     }
-    
+
     public function getPortfolioUsagesActive($criteria = null, PropelPDO $con = null)
     {
-    
+
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-    
+
         $criteria->add(\Cungfoo\Model\PortfolioUsagePeer::ACTIVE, true);
-    
-    
+
+
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\PortfolioUsageI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\PortfolioUsagePeer::ID, \Cungfoo\Model\PortfolioUsageI18nPeer::alias('i18n_locale', \Cungfoo\Model\PortfolioUsageI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\PortfolioUsageI18nPeer::alias('i18n_locale', \Cungfoo\Model\PortfolioUsageI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\PortfolioUsageI18nPeer::alias('i18n_locale', \Cungfoo\Model\PortfolioUsageI18nPeer::LOCALE), $this->currentLocale);
-    
+
         return $this->getPortfolioUsages($criteria, $con);
     }
-    // crudable behavior
-    
-    /**
-     * @param \Symfony\Component\Form\Form $form
-     * @param PropelPDO $con
-     * @return int             The number of rows affected by this insert/update and any referring fk objects' save() operations.
-     * @throws PropelException
-     * @throws Exception
-     * @see        doSave()
-     */
-    public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
-    {
-        return $this->save($con);
-    }
-
     // i18n behavior
 
     /**
@@ -2757,6 +2632,54 @@ abstract class BasePortfolioMedia extends BaseObject implements Persistent
     public function getCurrentTranslation(PropelPDO $con = null)
     {
         return $this->getTranslation($this->getLocale(), $con);
+    }
+
+
+        /**
+         * Get the [title] column value.
+         *
+         * @return string
+         */
+        public function getTitle()
+        {
+        return $this->getCurrentTranslation()->getTitle();
+    }
+
+
+        /**
+         * Set the value of [title] column.
+         *
+         * @param string $v new value
+         * @return PortfolioMediaI18n The current object (for fluent API support)
+         */
+        public function setTitle($v)
+        {    $this->getCurrentTranslation()->setTitle($v);
+
+        return $this;
+    }
+
+
+        /**
+         * Get the [description] column value.
+         *
+         * @return string
+         */
+        public function getDescription()
+        {
+        return $this->getCurrentTranslation()->getDescription();
+    }
+
+
+        /**
+         * Set the value of [description] column.
+         *
+         * @param string $v new value
+         * @return PortfolioMediaI18n The current object (for fluent API support)
+         */
+        public function setDescription($v)
+        {    $this->getCurrentTranslation()->setDescription($v);
+
+        return $this;
     }
 
     /**
@@ -2921,6 +2844,21 @@ abstract class BasePortfolioMedia extends BaseObject implements Persistent
         {    $this->getCurrentTranslation()->setActiveLocale($v);
 
         return $this;
+    }
+
+    // crudable behavior
+
+    /**
+     * @param \Symfony\Component\Form\Form $form
+     * @param PropelPDO $con
+     * @return int             The number of rows affected by this insert/update and any referring fk objects' save() operations.
+     * @throws PropelException
+     * @throws Exception
+     * @see        doSave()
+     */
+    public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
+    {
+        return $this->save($con);
     }
 
 }

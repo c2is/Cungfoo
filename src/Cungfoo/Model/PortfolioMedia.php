@@ -18,6 +18,11 @@ use Cungfoo\Model\om\BasePortfolioMedia;
  */
 class PortfolioMedia extends BasePortfolioMedia
 {
+    public function __toString()
+    {
+        return $this->getFile();
+    }
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void

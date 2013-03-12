@@ -13,8 +13,6 @@
             {% for mea in mea %}
                 <li class="slide">
                     <a class="sliderPhoto" href="{{ mea.lien }}" title="{{ mea.titre }}">
-                        {{ mea.illustrationPath }}
-                        {{ mea.illustrationPath | media }}
                         <img class="large boxborder" src="{{ asset(mea.illustrationPath | media('file')) }}" alt="{{ mea.titre }}" />
                         <img class="sliderPostmark" src="{{ asset('images/vacancesdirectes/common/ui/postmark.png') }}" alt="" />
                     </a>
