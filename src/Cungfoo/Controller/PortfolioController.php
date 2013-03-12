@@ -11,6 +11,7 @@ Symfony\Component\HttpKernel\Exception\NotFoundHttpException,
 Symfony\Component\Routing\Route;
 
 use Cungfoo\Model\PortfolioMediaQuery;
+use Cungfoo\Model\PortfolioUsageQuery;
 use Cungfoo\Model\PortfolioMedia;
 use Cungfoo\Listing\PortfolioMediaListing;
 use Cungfoo\Form\Type\ContextType;
@@ -106,11 +107,10 @@ class PortfolioController implements ControllerProviderInterface
             $searchForm->bindRequest($request);
 
             if ($searchForm->isValid()) {
-                $queryContextualized = $app['context']->contextualizeQuery(new PortfolioMediaQuery());
+                $queryContextualized = $app['context']->contextualizeQuery(new PortfolioMediaQuery())->distinct();
                 if ($searchData->getSearch()) {
                     $stringToSearch = sprintf('%%%s%%', $searchData->getSearch());
                     $queryContextualized = $queryContextualized
-                        ->distinct()
                         ->filterByTitle($stringToSearch)
                         ->_or()
                         ->filterByDescription($stringToSearch)
@@ -123,6 +123,18 @@ class PortfolioController implements ControllerProviderInterface
                             ->endUse()
                         ->endUse()
                     ;
+                }
+                if ($searchData->getTable()) {
+                    $queryContextualized = $queryContextualized
+                        ->usePortfolioUsageQuery()
+                            ->filterByTableRef($searchData->getTable())
+                    ;
+                    if ($searchData->getColumn()) {
+                        $queryContextualized = $queryContextualized
+                            ->filterByColumnRef($searchData->getColumn())
+                        ;
+                    }
+                    $queryContextualized = $queryContextualized->endUse();
                 }
                 $paginator = $queryContextualized->paginate(0, 50);
 
@@ -222,6 +234,20 @@ class PortfolioController implements ControllerProviderInterface
             return json_encode(array('html' => '<option value="'.$tag->getId().'">'.$tag->getName().'</option>'));
         })
         ->bind('portfolio_tag_add');
+
+        $controllers->get('/list-fields', function(Request $request) use ($app)
+        {
+            $table = $request->get('table', '');
+
+            $tablesUsed = PortfolioUsageQuery::create()->select('column_ref')->filterByTableRef($table)->find()->toArray();
+            $tableChoices = array();
+            foreach ($tablesUsed as $table) {
+                $tableChoices[$table] = $table;
+            }
+
+            return json_encode($tableChoices);
+        })
+        ->bind('portfolio_list_fields');
 
         return $controllers;
     }

@@ -20,10 +20,19 @@
             </div>
             <div class="tab-pane{% if medias.count == 0 %} active{% endif %}" id="portfolio">
                 <div class="well">
-                    <form class="form-search form-inline portfolio-search-form" action="{{ path('portfolio_search') }}" method="post">
+                    <form class="form-search portfolio-search-form" action="{{ path('portfolio_search') }}" method="post">
                         <fieldset>
-                            <div class="span1">{{ form_label(form.search) }}</div>
-                            <div class="span4">{{ form_widget(form.search) }}</div>
+                            <legend>Rechercher des médias</legend>
+                            <div class="row control-group">
+                                <div class="span1 control-label">{{ form_label(form.table) }}</div>
+                                <div class="span4 controls">{{ form_widget(form.table) }}</div>
+                                <div class="span1 control-label">{{ form_label(form.column) }}</div>
+                                <div class="span4 controls">{{ form_widget(form.column) }}</div>
+                            </div>
+                            <div class="row control-group">
+                                <div class="span1 control-label">{{ form_label(form.search) }}</div>
+                                <div class="span4 controls">{{ form_widget(form.search) }}</div>
+                            </div>
                             {{ form_rest(form) }}
                             <button type="submit" class="btn">Submit</button>
                         </fieldset>
