@@ -14,6 +14,8 @@ use Cungfoo\Model\PortfolioMediaQuery;
 use Cungfoo\Model\PortfolioMedia;
 use Cungfoo\Listing\PortfolioMediaListing;
 use Cungfoo\Form\Type\ContextType;
+use Cungfoo\Form\Type\PortfolioSearchType;
+use Cungfoo\Form\Data\PortfolioSearchData;
 use Cungfoo\Lib\Listing\Filler;
 use Cungfoo\Form\Type\PortfolioMediaType;
 use Cungfoo\Model\PortfolioTag;
@@ -46,10 +48,14 @@ class PortfolioController implements ControllerProviderInterface
                 ->find()
             ;
 
+            $searchData = new PortfolioSearchData();
+            $searchForm = $app['form.factory']->create(new PortfolioSearchType($app), $searchData);
+
             return $app['twig']->render('Crud/Portfolio/popin.twig', array(
                 'paginator' => $paginator,
                 'medias' => $medias,
                 'mediaIds' => $ids,
+                'searchForm' => $searchForm->createView(),
             ));
         })
         ->value('id', null)
@@ -90,6 +96,40 @@ class PortfolioController implements ControllerProviderInterface
             ));
         })
         ->bind('portfolio_edit');
+
+        $controllers->post('/popin/search', function (Request $request) use ($app)
+        {
+            $ids = $request->get('ids');
+
+            $searchData = new PortfolioSearchData();
+            $searchForm = $app['form.factory']->create(new PortfolioSearchType($app), $searchData);
+            $searchForm->bindRequest($request);
+
+            if ($searchForm->isValid()) {
+                $queryContextualized = $app['context']->contextualizeQuery(new PortfolioMediaQuery());
+                $paginator = $queryContextualized
+                    ->filterByTitle(sprintf('%%%s%%', $searchData->getSearch()))
+                    ->_or()
+                    ->filterByDescription(sprintf('%%%s%%', $searchData->getSearch()))
+                    ->_or()
+                    ->filterByFile(sprintf('%%%s%%', $searchData->getSearch()))
+                    ->paginate(0, 50)
+                ;
+                
+                return json_encode(array(
+                    'success' => true,
+                    'html' => $app['twig']->render('Crud/Portfolio/table.twig', array(
+                        'paginator' => $paginator,
+                        'mediaIds' => explode(';', $ids),
+                    )),
+                ));
+            }
+
+            return json_encode(array(
+                'success' => false,
+            ));
+        })
+        ->bind('portfolio_search');
 
         $controllers->match('/popin/{id}/delete', function (Request $request, $id) use ($app)
         {
