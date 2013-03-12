@@ -107,17 +107,28 @@ class PortfolioController implements ControllerProviderInterface
 
             if ($searchForm->isValid()) {
                 $queryContextualized = $app['context']->contextualizeQuery(new PortfolioMediaQuery());
-                $paginator = $queryContextualized
-                    ->filterByTitle(sprintf('%%%s%%', $searchData->getSearch()))
-                    ->_or()
-                    ->filterByDescription(sprintf('%%%s%%', $searchData->getSearch()))
-                    ->_or()
-                    ->filterByFile(sprintf('%%%s%%', $searchData->getSearch()))
-                    ->paginate(0, 50)
-                ;
-                
+                if ($searchData->getSearch()) {
+                    $stringToSearch = sprintf('%%%s%%', $searchData->getSearch());
+                    $queryContextualized = $queryContextualized
+                        ->distinct()
+                        ->filterByTitle($stringToSearch)
+                        ->_or()
+                        ->filterByDescription($stringToSearch)
+                        ->_or()
+                        ->filterByFile($stringToSearch)
+                        ->_or()
+                        ->usePortfolioMediaTagQuery(null, \Criteria::LEFT_JOIN)
+                            ->usePortfolioTagQuery(null, \Criteria::LEFT_JOIN)
+                                ->filterByName($stringToSearch)
+                            ->endUse()
+                        ->endUse()
+                    ;
+                }
+                $paginator = $queryContextualized->paginate(0, 50);
+
                 return json_encode(array(
                     'success' => true,
+                    'sql'   => $queryContextualized->toString(),
                     'html' => $app['twig']->render('Crud/Portfolio/table.twig', array(
                         'paginator' => $paginator,
                         'mediaIds' => explode(';', $ids),
