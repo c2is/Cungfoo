@@ -55,7 +55,7 @@ class PortfolioController implements ControllerProviderInterface
                 'paginator' => $paginator,
                 'medias' => $medias,
                 'mediaIds' => $ids,
-                'searchForm' => $searchForm->createView(),
+                'form' => $searchForm->createView(),
             ));
         })
         ->value('id', null)
