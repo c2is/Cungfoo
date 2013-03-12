@@ -97,9 +97,6 @@ class BasePortfolioTagType extends AppAwareType
         return array(
             'required' => false,
             'label' => 'portfolio_tag_i18n.name',
-            'constraints' => array(
-                        new Assert\NotBlank(),
-                    ),
         );
     }
 
@@ -113,9 +110,6 @@ class BasePortfolioTagType extends AppAwareType
         return array(
             'required' => false,
             'label' => 'portfolio_tag_i18n.slug',
-            'constraints' => array(
-                        new Assert\NotBlank(),
-                    ),
         );
     }
 
