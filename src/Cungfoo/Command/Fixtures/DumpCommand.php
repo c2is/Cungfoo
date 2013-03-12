@@ -73,9 +73,6 @@ class DumpCommand extends BaseCommand
         "\\Cungfoo\\Model\\EtablissementEvent",
         "\\Cungfoo\\Model\\Tag",
         "\\Cungfoo\\Model\\TagI18n",
-        "\\Cungfoo\\Model\\MultimediaEtablissement",
-        "\\Cungfoo\\Model\\MultimediaEtablissementI18n",
-        "\\Cungfoo\\Model\\MultimediaEtablissementTag",
         "\\Cungfoo\\Model\\Personnage",
         "\\Cungfoo\\Model\\PersonnageI18n",
         "\\Cungfoo\\Model\\Avantage",
@@ -102,6 +99,12 @@ class DumpCommand extends BaseCommand
         "\\Cungfoo\\Model\\BonPlanBonPlanCategorie",
         "\\Cungfoo\\Model\\Seo",
         "\\Cungfoo\\Model\\SeoI18n",
+        "\\Cungfoo\\Model\\PortfolioMedia",
+        "\\Cungfoo\\Model\\PortfolioMediaI18n",
+        "\\Cungfoo\\Model\\PortfolioTag",
+        "\\Cungfoo\\Model\\PortfolioTagI18n",
+        "\\Cungfoo\\Model\\PortfolioUsage",
+        "\\Cungfoo\\Model\\PortfolioMediaTag",
     );
 
     protected function configure()
@@ -136,6 +139,7 @@ class DumpCommand extends BaseCommand
 
             // remove all files before dump
             $filesystem->remove($fixturesDirectory.'/uploads/*');
+            $filesystem->remove($fixturesDirectory.'/portfolio/*');
 
             foreach ($this->models as $model)
             {
@@ -174,7 +178,7 @@ class DumpCommand extends BaseCommand
                                 $file = $this->getProjectDirectory().'/web/'.$field;
                                 if ($field != '.' && file_exists($file))
                                 {
-                                    $filesystem->copy($file, $fixturesDirectory.'/'.$field);
+                                    //$filesystem->copy($file, $fixturesDirectory.'/'.$field);
                                 }
                             }
                             else if (is_object($field) && get_class($field) == "DateTime")
