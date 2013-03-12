@@ -64,8 +64,16 @@ class ApiController implements ControllerProviderInterface
                 $node->appendChild($dom->createTextNode($camping->getDescription()));
                 $campingDom->appendChild($node);
 
-                $node = $dom->createElement('price');
-                $node->appendChild($dom->createTextNode($camping->getMinimumPrice()));
+                $node = $dom->createElement('categoryid1');
+                $node->appendChild($dom->createTextNode($camping->getRegion()->getPays()->getName()));
+                $campingDom->appendChild($node);
+
+                $node = $dom->createElement('categoryid2');
+                $node->appendChild($dom->createTextNode($camping->getRegion()->getName()));
+                $campingDom->appendChild($node);
+
+                $node = $dom->createElement('categoryid3');
+                $node->appendChild($dom->createTextNode($camping->getVille()->getName()));
                 $campingDom->appendChild($node);
             }
 
@@ -92,6 +100,9 @@ class ApiController implements ControllerProviderInterface
                 'discount',
                 'recommendable',
                 'instock',
+                'categoryid1',
+                'categoryid2',
+                'categoryid3',
             ));
             foreach ($campings as $camping)
             {
@@ -112,10 +123,13 @@ class ApiController implements ControllerProviderInterface
                     '',
                     '',
                     '',
+                    $camping->getRegion()->getPays()->getName(),
+                    $camping->getRegion()->getName(),
+                    $camping->getVille()->getName(),
                 ));
             }
 
-            return new Response(implode("\n", $lines), 200, array('Content-Type' => 'text/csv', 'Content-Disposition' => 'attachment'));
+            return new Response(implode("\n", $lines), 200, array('Content-Type' => 'text/csv', 'Content-Disposition' => 'attachment; filename="criteo.csv'));
         })
         ->bind('api_criteo_csv');
 
