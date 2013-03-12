@@ -157,7 +157,7 @@
             base.preventDefault(e);
 
             var searchForm = $(this);
-            var sMediaIds = $('#' + $(base.options['portfolioPopinClass']).data('field-id')).val();
+            var sMediaIds = $(base.options['portfolioPopinClass']).data('selected');
 
             $.post(searchForm.attr('action') + '?ids=' + sMediaIds, searchForm.serialize(), function (json) {
                 console.log(json);
@@ -173,21 +173,33 @@
         base.useMedia = function(e) {
             base.preventDefault(e);
 
-            var linkUse        = $(this);
-            var mediaItem      = linkUse.parent('td').parent('tr');
-            var sMediaItemList = base.options['portfolioMediaItemClass'] +'[data-media-id="' + mediaItem.attr('data-media-id') + '"]';
-            var mediaItemList  = $(sMediaItemList);
+            var popin           = $(base.options['portfolioPopinClass']);
+            var selectedIds     = popin.data('selected') ? popin.data('selected').split(';') : new Array();
+            var linkUse         = $(this);
+            var mediaItem       = linkUse.parent('td').parent('tr');
+            var mediaItemId     = mediaItem.data('media-id');
+            var sMediaItemList  = base.options['portfolioMediaItemClass'] +'[data-media-id="' + mediaItem.attr('data-media-id') + '"]';
+            var mediaItemList   = $(sMediaItemList);
 
             $(base.options['portfolioToggleUseClass'], mediaItemList).toggle();
 
             if (linkUse.hasClass('on')) {
                 $(sMediaItemList, $('#media')).remove();
                 mediaItemList.removeClass('used').addClass('unused');
+                for (var i in selectedIds) {
+                    if (selectedIds[i] == mediaItemId) {
+                        selectedIds.splice(i, 1);
+                        break;
+                    }
+                }
             }
             else {
                 $('table tbody', $('#media')).append(mediaItem.clone());
                 mediaItemList.removeClass('unused').addClass('used');
+                selectedIds.push(mediaItemId);
             }
+
+            popin.data('selected', selectedIds.join(';'));
         }
 
         base.deleteMedia = function(e) {
