@@ -408,17 +408,19 @@ class DestinationController implements ControllerProviderInterface
             ->filterByEtablissementId($camping->getId())
             ->findActive()
         ;
+*/
+        $sliderIds = $camping->getSlider()
 
         $tags = array();
-        foreach ($multimedia as $multi)
+        foreach (explode(';', $sliderIds) as $slider)
         {
-            $multimediaTags = $multi->getTags();
+            $multimediaTags = $slider->getTags();
             foreach ($multimediaTags as $tag)
             {
-                $tags[$tag->getSlug()] = $tag;
+                $tags[$tag->getName()] = $tag;
             }
         }
-*/
+
         $personnageAleatoire = \Cungfoo\Model\PersonnageQuery::create()
             ->joinWithI18n($locale)
             ->filterByEtablissementId($camping->getId())

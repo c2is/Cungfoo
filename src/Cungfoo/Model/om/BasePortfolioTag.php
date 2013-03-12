@@ -2016,8 +2016,8 @@ abstract class BasePortfolioTag extends BaseObject implements Persistent
     }
 
     // active behavior
-    
-    
+
+
     /**
      * return true is the object is active
      *
@@ -2027,7 +2027,7 @@ abstract class BasePortfolioTag extends BaseObject implements Persistent
     {
         return $this->getActive();
     }
-    
+
     /**
      * return true is the object is active locale
      *
@@ -2037,45 +2037,45 @@ abstract class BasePortfolioTag extends BaseObject implements Persistent
     {
         return $this->getActiveLocale();
     }
-    
+
     public function getPortfolioMediasActive($criteria = null, PropelPDO $con = null)
     {
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-    
+
         $criteria->add(\Cungfoo\Model\PortfolioMediaPeer::ACTIVE, true);
-    
-    
+
+
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\PortfolioMediaI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\PortfolioMediaPeer::ID, \Cungfoo\Model\PortfolioMediaI18nPeer::alias('i18n_locale', \Cungfoo\Model\PortfolioMediaI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\PortfolioMediaI18nPeer::alias('i18n_locale', \Cungfoo\Model\PortfolioMediaI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\PortfolioMediaI18nPeer::alias('i18n_locale', \Cungfoo\Model\PortfolioMediaI18nPeer::LOCALE), $this->currentLocale);
-    
+
         return $this->getPortfolioMedias($criteria, $con);
     }
-    
+
     public function getPortfolioMediaTagsActive($criteria = null, PropelPDO $con = null)
     {
-    
+
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-    
+
         $criteria->add(\Cungfoo\Model\PortfolioMediaTagPeer::ACTIVE, true);
-    
-    
+
+
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\PortfolioMediaTagI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\PortfolioMediaTagPeer::ID, \Cungfoo\Model\PortfolioMediaTagI18nPeer::alias('i18n_locale', \Cungfoo\Model\PortfolioMediaTagI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\PortfolioMediaTagI18nPeer::alias('i18n_locale', \Cungfoo\Model\PortfolioMediaTagI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\PortfolioMediaTagI18nPeer::alias('i18n_locale', \Cungfoo\Model\PortfolioMediaTagI18nPeer::LOCALE), $this->currentLocale);
-    
+
         return $this->getPortfolioMediaTags($criteria, $con);
     }
     // crudable behavior
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con

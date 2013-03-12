@@ -3271,8 +3271,8 @@ abstract class BaseTheme extends BaseObject implements Persistent
     }
 
     // active behavior
-    
-    
+
+
     /**
      * return true is the object is active
      *
@@ -3282,7 +3282,7 @@ abstract class BaseTheme extends BaseObject implements Persistent
     {
         return $this->getActive();
     }
-    
+
     /**
      * return true is the object is active locale
      *
@@ -3292,76 +3292,76 @@ abstract class BaseTheme extends BaseObject implements Persistent
     {
         return $this->getActiveLocale();
     }
-    
+
     public function getActivitesActive($criteria = null, PropelPDO $con = null)
     {
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-    
+
         $criteria->add(\Cungfoo\Model\ActivitePeer::ACTIVE, true);
-    
-    
+
+
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\ActiviteI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\ActivitePeer::ID, \Cungfoo\Model\ActiviteI18nPeer::alias('i18n_locale', \Cungfoo\Model\ActiviteI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\ActiviteI18nPeer::alias('i18n_locale', \Cungfoo\Model\ActiviteI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\ActiviteI18nPeer::alias('i18n_locale', \Cungfoo\Model\ActiviteI18nPeer::LOCALE), $this->currentLocale);
-    
+
         return $this->getActivites($criteria, $con);
     }
-    
+
     public function getBaignadesActive($criteria = null, PropelPDO $con = null)
     {
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-    
+
         $criteria->add(\Cungfoo\Model\BaignadePeer::ACTIVE, true);
-    
-    
+
+
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\BaignadeI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\BaignadePeer::ID, \Cungfoo\Model\BaignadeI18nPeer::alias('i18n_locale', \Cungfoo\Model\BaignadeI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\BaignadeI18nPeer::alias('i18n_locale', \Cungfoo\Model\BaignadeI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\BaignadeI18nPeer::alias('i18n_locale', \Cungfoo\Model\BaignadeI18nPeer::LOCALE), $this->currentLocale);
-    
+
         return $this->getBaignades($criteria, $con);
     }
-    
+
     public function getServiceComplementairesActive($criteria = null, PropelPDO $con = null)
     {
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-    
+
         $criteria->add(\Cungfoo\Model\ServiceComplementairePeer::ACTIVE, true);
-    
-    
+
+
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\ServiceComplementaireI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\ServiceComplementairePeer::ID, \Cungfoo\Model\ServiceComplementaireI18nPeer::alias('i18n_locale', \Cungfoo\Model\ServiceComplementaireI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\ServiceComplementaireI18nPeer::alias('i18n_locale', \Cungfoo\Model\ServiceComplementaireI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\ServiceComplementaireI18nPeer::alias('i18n_locale', \Cungfoo\Model\ServiceComplementaireI18nPeer::LOCALE), $this->currentLocale);
-    
+
         return $this->getServiceComplementaires($criteria, $con);
     }
-    
+
     public function getPersonnagesActive($criteria = null, PropelPDO $con = null)
     {
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-    
+
         $criteria->add(\Cungfoo\Model\PersonnagePeer::ACTIVE, true);
-    
-    
+
+
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\PersonnageI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\PersonnagePeer::ID, \Cungfoo\Model\PersonnageI18nPeer::alias('i18n_locale', \Cungfoo\Model\PersonnageI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\PersonnageI18nPeer::alias('i18n_locale', \Cungfoo\Model\PersonnageI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\PersonnageI18nPeer::alias('i18n_locale', \Cungfoo\Model\PersonnageI18nPeer::LOCALE), $this->currentLocale);
-    
+
         return $this->getPersonnages($criteria, $con);
     }
     // i18n behavior
@@ -3724,7 +3724,7 @@ abstract class BaseTheme extends BaseObject implements Persistent
     }
 
     // crudable behavior
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -3737,7 +3737,7 @@ abstract class BaseTheme extends BaseObject implements Persistent
     {
         return $this->save($con);
     }
-    
+
     /**
      * @return string
      */
@@ -3745,7 +3745,7 @@ abstract class BaseTheme extends BaseObject implements Persistent
     {
         return 'uploads/themes';
     }
-    
+
     /**
      * @return string
      */
@@ -3753,72 +3753,72 @@ abstract class BaseTheme extends BaseObject implements Persistent
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-    
+
     /**
      * @return void
      */
     public function getImagePath()
     {
         $peer = self::PEER;
-    
+
         $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
             ->select('id')
             ->usePortfolioUsageQuery()
                 ->filterByTableRef($peer::TABLE_NAME)
-                ->filterByColumnRef($peer::TABLE_NAME.'.image_path')
+                ->filterByColumnRef('image_path')
                 ->filterByElementId($this->getId())
             ->endUse()
             ->find()
             ->toArray()
         ;
-    
+
         return implode(';', $medias);
     }
-    
+
     /**
      * @return void
      */
     public function setImagePath($v)
     {
         $peer = self::PEER;
-    
+
         $values = explode(';', $v);
-    
+
         \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
-            ->filterByColumnRef($peer::TABLE_NAME.'.image_path')
+            ->filterByColumnRef('image_path')
             ->filterByElementId($this->getId())
             ->filterByMediaId($values, \Criteria::NOT_IN)
             ->find()
             ->delete()
         ;
-    
+
         if ($v) {
             foreach ($values as $index => $value) {
                 $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
                     ->filterByTableRef($peer::TABLE_NAME)
-                    ->filterByColumnRef($peer::TABLE_NAME.'.image_path')
+                    ->filterByColumnRef('image_path')
                     ->filterByElementId($this->getId())
                     ->filterByMediaId($value)
                     ->findOne()
                 ;
-    
+
                 if (!$usage) {
                     $usage = new \Cungfoo\Model\PortfolioUsage();
                     $usage
                         ->setTableRef($peer::TABLE_NAME)
-                        ->setColumnRef($peer::TABLE_NAME.'.image_path')
+                        ->setColumnRef('image_path')
                         ->setElementId($this->getId())
                         ->setMediaId($value)
                     ;
                 }
-    
+
                 $usage
                     ->setSortableRank($index)
                     ->save()
                 ;
             }
-    
+
         }
     }
 

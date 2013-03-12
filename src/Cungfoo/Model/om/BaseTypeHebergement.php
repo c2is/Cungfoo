@@ -2639,8 +2639,8 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     }
 
     // active behavior
-    
-    
+
+
     /**
      * return true is the object is active
      *
@@ -2650,7 +2650,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     {
         return $this->getActive();
     }
-    
+
     /**
      * return true is the object is active locale
      *
@@ -2660,41 +2660,41 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     {
         return $this->getActiveLocale();
     }
-    
+
     public function getEtablissementsActive($criteria = null, PropelPDO $con = null)
     {
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-    
+
         $criteria->add(\Cungfoo\Model\EtablissementPeer::ACTIVE, true);
-    
-    
+
+
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\EtablissementI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\EtablissementPeer::ID, \Cungfoo\Model\EtablissementI18nPeer::alias('i18n_locale', \Cungfoo\Model\EtablissementI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\EtablissementI18nPeer::alias('i18n_locale', \Cungfoo\Model\EtablissementI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\EtablissementI18nPeer::alias('i18n_locale', \Cungfoo\Model\EtablissementI18nPeer::LOCALE), $this->currentLocale);
-    
+
         return $this->getEtablissements($criteria, $con);
     }
-    
+
     public function getMultimediasActive($criteria = null, PropelPDO $con = null)
     {
-    
+
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-    
+
         $criteria->add(\Cungfoo\Model\MultimediaPeer::ACTIVE, true);
-    
-    
+
+
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\MultimediaI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\MultimediaPeer::ID, \Cungfoo\Model\MultimediaI18nPeer::alias('i18n_locale', \Cungfoo\Model\MultimediaI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\MultimediaI18nPeer::alias('i18n_locale', \Cungfoo\Model\MultimediaI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\MultimediaI18nPeer::alias('i18n_locale', \Cungfoo\Model\MultimediaI18nPeer::LOCALE), $this->currentLocale);
-    
+
         return $this->getMultimedias($criteria, $con);
     }
     // i18n behavior
@@ -3369,7 +3369,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     }
 
     // crudable behavior
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -3382,7 +3382,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     {
         return $this->save($con);
     }
-    
+
     /**
      * @return string
      */
@@ -3390,7 +3390,7 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     {
         return 'uploads/type_hebergements';
     }
-    
+
     /**
      * @return string
      */
@@ -3398,140 +3398,140 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-    
+
     /**
      * @return void
      */
     public function getImageHebergementPath()
     {
         $peer = self::PEER;
-    
+
         $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
             ->select('id')
             ->usePortfolioUsageQuery()
                 ->filterByTableRef($peer::TABLE_NAME)
-                ->filterByColumnRef($peer::TABLE_NAME.'.image_hebergement_path')
+                ->filterByColumnRef('image_hebergement_path')
                 ->filterByElementId($this->getId())
             ->endUse()
             ->find()
             ->toArray()
         ;
-    
+
         return implode(';', $medias);
     }
-    
+
     /**
      * @return void
      */
     public function setImageHebergementPath($v)
     {
         $peer = self::PEER;
-    
+
         $values = explode(';', $v);
-    
+
         \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
-            ->filterByColumnRef($peer::TABLE_NAME.'.image_hebergement_path')
+            ->filterByColumnRef('image_hebergement_path')
             ->filterByElementId($this->getId())
             ->filterByMediaId($values, \Criteria::NOT_IN)
             ->find()
             ->delete()
         ;
-    
+
         if ($v) {
             foreach ($values as $index => $value) {
                 $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
                     ->filterByTableRef($peer::TABLE_NAME)
-                    ->filterByColumnRef($peer::TABLE_NAME.'.image_hebergement_path')
+                    ->filterByColumnRef('image_hebergement_path')
                     ->filterByElementId($this->getId())
                     ->filterByMediaId($value)
                     ->findOne()
                 ;
-    
+
                 if (!$usage) {
                     $usage = new \Cungfoo\Model\PortfolioUsage();
                     $usage
                         ->setTableRef($peer::TABLE_NAME)
-                        ->setColumnRef($peer::TABLE_NAME.'.image_hebergement_path')
+                        ->setColumnRef('image_hebergement_path')
                         ->setElementId($this->getId())
                         ->setMediaId($value)
                     ;
                 }
-    
+
                 $usage
                     ->setSortableRank($index)
                     ->save()
                 ;
             }
-    
+
         }
     }
-    
+
     /**
      * @return void
      */
     public function getImageCompositionPath()
     {
         $peer = self::PEER;
-    
+
         $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
             ->select('id')
             ->usePortfolioUsageQuery()
                 ->filterByTableRef($peer::TABLE_NAME)
-                ->filterByColumnRef($peer::TABLE_NAME.'.image_composition_path')
+                ->filterByColumnRef('image_composition_path')
                 ->filterByElementId($this->getId())
             ->endUse()
             ->find()
             ->toArray()
         ;
-    
+
         return implode(';', $medias);
     }
-    
+
     /**
      * @return void
      */
     public function setImageCompositionPath($v)
     {
         $peer = self::PEER;
-    
+
         $values = explode(';', $v);
-    
+
         \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
-            ->filterByColumnRef($peer::TABLE_NAME.'.image_composition_path')
+            ->filterByColumnRef('image_composition_path')
             ->filterByElementId($this->getId())
             ->filterByMediaId($values, \Criteria::NOT_IN)
             ->find()
             ->delete()
         ;
-    
+
         if ($v) {
             foreach ($values as $index => $value) {
                 $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
                     ->filterByTableRef($peer::TABLE_NAME)
-                    ->filterByColumnRef($peer::TABLE_NAME.'.image_composition_path')
+                    ->filterByColumnRef('image_composition_path')
                     ->filterByElementId($this->getId())
                     ->filterByMediaId($value)
                     ->findOne()
                 ;
-    
+
                 if (!$usage) {
                     $usage = new \Cungfoo\Model\PortfolioUsage();
                     $usage
                         ->setTableRef($peer::TABLE_NAME)
-                        ->setColumnRef($peer::TABLE_NAME.'.image_composition_path')
+                        ->setColumnRef('image_composition_path')
                         ->setElementId($this->getId())
                         ->setMediaId($value)
                     ;
                 }
-    
+
                 $usage
                     ->setSortableRank($index)
                     ->save()
                 ;
             }
-    
+
         }
     }
 

@@ -3635,8 +3635,8 @@ abstract class BaseRegion extends BaseObject implements Persistent
     }
 
     // active behavior
-    
-    
+
+
     /**
      * return true is the object is active
      *
@@ -3646,7 +3646,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
     {
         return $this->getActive();
     }
-    
+
     /**
      * return true is the object is active locale
      *
@@ -3656,77 +3656,77 @@ abstract class BaseRegion extends BaseObject implements Persistent
     {
         return $this->getActiveLocale();
     }
-    
+
     public function getPointInteretsActive($criteria = null, PropelPDO $con = null)
     {
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-    
+
         $criteria->add(\Cungfoo\Model\PointInteretPeer::ACTIVE, true);
-    
-    
+
+
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\PointInteretI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\PointInteretPeer::ID, \Cungfoo\Model\PointInteretI18nPeer::alias('i18n_locale', \Cungfoo\Model\PointInteretI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\PointInteretI18nPeer::alias('i18n_locale', \Cungfoo\Model\PointInteretI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\PointInteretI18nPeer::alias('i18n_locale', \Cungfoo\Model\PointInteretI18nPeer::LOCALE), $this->currentLocale);
-    
+
         return $this->getPointInterets($criteria, $con);
     }
-    
+
     public function getEventsActive($criteria = null, PropelPDO $con = null)
     {
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-    
+
         $criteria->add(\Cungfoo\Model\EventPeer::ACTIVE, true);
-    
-    
+
+
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\EventI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\EventPeer::ID, \Cungfoo\Model\EventI18nPeer::alias('i18n_locale', \Cungfoo\Model\EventI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\EventI18nPeer::alias('i18n_locale', \Cungfoo\Model\EventI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\EventI18nPeer::alias('i18n_locale', \Cungfoo\Model\EventI18nPeer::LOCALE), $this->currentLocale);
-    
+
         return $this->getEvents($criteria, $con);
     }
-    
+
     public function getBonPlansActive($criteria = null, PropelPDO $con = null)
     {
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-    
+
         $criteria->add(\Cungfoo\Model\BonPlanPeer::ACTIVE, true);
-    
-    
+
+
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\BonPlanI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\BonPlanPeer::ID, \Cungfoo\Model\BonPlanI18nPeer::alias('i18n_locale', \Cungfoo\Model\BonPlanI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\BonPlanI18nPeer::alias('i18n_locale', \Cungfoo\Model\BonPlanI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\BonPlanI18nPeer::alias('i18n_locale', \Cungfoo\Model\BonPlanI18nPeer::LOCALE), $this->currentLocale);
-    
+
         return $this->getBonPlans($criteria, $con);
     }
-    
+
     public function getVillesActive($criteria = null, PropelPDO $con = null)
     {
-    
+
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-    
+
         $criteria->add(\Cungfoo\Model\VillePeer::ACTIVE, true);
-    
-    
+
+
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\VilleI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\VillePeer::ID, \Cungfoo\Model\VilleI18nPeer::alias('i18n_locale', \Cungfoo\Model\VilleI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\VilleI18nPeer::alias('i18n_locale', \Cungfoo\Model\VilleI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\VilleI18nPeer::alias('i18n_locale', \Cungfoo\Model\VilleI18nPeer::LOCALE), $this->currentLocale);
-    
+
         return $this->getVilles($criteria, $con);
     }
     // i18n behavior
@@ -4089,7 +4089,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
     }
 
     // crudable behavior
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -4102,7 +4102,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
     {
         return $this->save($con);
     }
-    
+
     /**
      * @return string
      */
@@ -4110,7 +4110,7 @@ abstract class BaseRegion extends BaseObject implements Persistent
     {
         return 'uploads/regions';
     }
-    
+
     /**
      * @return string
      */
@@ -4118,344 +4118,344 @@ abstract class BaseRegion extends BaseObject implements Persistent
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-    
+
     /**
      * @return void
      */
     public function getImagePath()
     {
         $peer = self::PEER;
-    
+
         $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
             ->select('id')
             ->usePortfolioUsageQuery()
                 ->filterByTableRef($peer::TABLE_NAME)
-                ->filterByColumnRef($peer::TABLE_NAME.'.image_path')
+                ->filterByColumnRef('image_path')
                 ->filterByElementId($this->getId())
             ->endUse()
             ->find()
             ->toArray()
         ;
-    
+
         return implode(';', $medias);
     }
-    
+
     /**
      * @return void
      */
     public function setImagePath($v)
     {
         $peer = self::PEER;
-    
+
         $values = explode(';', $v);
-    
+
         \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
-            ->filterByColumnRef($peer::TABLE_NAME.'.image_path')
+            ->filterByColumnRef('image_path')
             ->filterByElementId($this->getId())
             ->filterByMediaId($values, \Criteria::NOT_IN)
             ->find()
             ->delete()
         ;
-    
+
         if ($v) {
             foreach ($values as $index => $value) {
                 $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
                     ->filterByTableRef($peer::TABLE_NAME)
-                    ->filterByColumnRef($peer::TABLE_NAME.'.image_path')
+                    ->filterByColumnRef('image_path')
                     ->filterByElementId($this->getId())
                     ->filterByMediaId($value)
                     ->findOne()
                 ;
-    
+
                 if (!$usage) {
                     $usage = new \Cungfoo\Model\PortfolioUsage();
                     $usage
                         ->setTableRef($peer::TABLE_NAME)
-                        ->setColumnRef($peer::TABLE_NAME.'.image_path')
+                        ->setColumnRef('image_path')
                         ->setElementId($this->getId())
                         ->setMediaId($value)
                     ;
                 }
-    
+
                 $usage
                     ->setSortableRank($index)
                     ->save()
                 ;
             }
-    
+
         }
     }
-    
+
     /**
      * @return void
      */
     public function getImageEncartPath()
     {
         $peer = self::PEER;
-    
+
         $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
             ->select('id')
             ->usePortfolioUsageQuery()
                 ->filterByTableRef($peer::TABLE_NAME)
-                ->filterByColumnRef($peer::TABLE_NAME.'.image_encart_path')
+                ->filterByColumnRef('image_encart_path')
                 ->filterByElementId($this->getId())
             ->endUse()
             ->find()
             ->toArray()
         ;
-    
+
         return implode(';', $medias);
     }
-    
+
     /**
      * @return void
      */
     public function setImageEncartPath($v)
     {
         $peer = self::PEER;
-    
+
         $values = explode(';', $v);
-    
+
         \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
-            ->filterByColumnRef($peer::TABLE_NAME.'.image_encart_path')
+            ->filterByColumnRef('image_encart_path')
             ->filterByElementId($this->getId())
             ->filterByMediaId($values, \Criteria::NOT_IN)
             ->find()
             ->delete()
         ;
-    
+
         if ($v) {
             foreach ($values as $index => $value) {
                 $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
                     ->filterByTableRef($peer::TABLE_NAME)
-                    ->filterByColumnRef($peer::TABLE_NAME.'.image_encart_path')
+                    ->filterByColumnRef('image_encart_path')
                     ->filterByElementId($this->getId())
                     ->filterByMediaId($value)
                     ->findOne()
                 ;
-    
+
                 if (!$usage) {
                     $usage = new \Cungfoo\Model\PortfolioUsage();
                     $usage
                         ->setTableRef($peer::TABLE_NAME)
-                        ->setColumnRef($peer::TABLE_NAME.'.image_encart_path')
+                        ->setColumnRef('image_encart_path')
                         ->setElementId($this->getId())
                         ->setMediaId($value)
                     ;
                 }
-    
+
                 $usage
                     ->setSortableRank($index)
                     ->save()
                 ;
             }
-    
+
         }
     }
-    
+
     /**
      * @return void
      */
     public function getImageEncartPetitePath()
     {
         $peer = self::PEER;
-    
+
         $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
             ->select('id')
             ->usePortfolioUsageQuery()
                 ->filterByTableRef($peer::TABLE_NAME)
-                ->filterByColumnRef($peer::TABLE_NAME.'.image_encart_petite_path')
+                ->filterByColumnRef('image_encart_petite_path')
                 ->filterByElementId($this->getId())
             ->endUse()
             ->find()
             ->toArray()
         ;
-    
+
         return implode(';', $medias);
     }
-    
+
     /**
      * @return void
      */
     public function setImageEncartPetitePath($v)
     {
         $peer = self::PEER;
-    
+
         $values = explode(';', $v);
-    
+
         \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
-            ->filterByColumnRef($peer::TABLE_NAME.'.image_encart_petite_path')
+            ->filterByColumnRef('image_encart_petite_path')
             ->filterByElementId($this->getId())
             ->filterByMediaId($values, \Criteria::NOT_IN)
             ->find()
             ->delete()
         ;
-    
+
         if ($v) {
             foreach ($values as $index => $value) {
                 $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
                     ->filterByTableRef($peer::TABLE_NAME)
-                    ->filterByColumnRef($peer::TABLE_NAME.'.image_encart_petite_path')
+                    ->filterByColumnRef('image_encart_petite_path')
                     ->filterByElementId($this->getId())
                     ->filterByMediaId($value)
                     ->findOne()
                 ;
-    
+
                 if (!$usage) {
                     $usage = new \Cungfoo\Model\PortfolioUsage();
                     $usage
                         ->setTableRef($peer::TABLE_NAME)
-                        ->setColumnRef($peer::TABLE_NAME.'.image_encart_petite_path')
+                        ->setColumnRef('image_encart_petite_path')
                         ->setElementId($this->getId())
                         ->setMediaId($value)
                     ;
                 }
-    
+
                 $usage
                     ->setSortableRank($index)
                     ->save()
                 ;
             }
-    
+
         }
     }
-    
+
     /**
      * @return void
      */
     public function getImageDetail1()
     {
         $peer = self::PEER;
-    
+
         $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
             ->select('id')
             ->usePortfolioUsageQuery()
                 ->filterByTableRef($peer::TABLE_NAME)
-                ->filterByColumnRef($peer::TABLE_NAME.'.image_detail_1')
+                ->filterByColumnRef('image_detail_1')
                 ->filterByElementId($this->getId())
             ->endUse()
             ->find()
             ->toArray()
         ;
-    
+
         return implode(';', $medias);
     }
-    
+
     /**
      * @return void
      */
     public function setImageDetail1($v)
     {
         $peer = self::PEER;
-    
+
         $values = explode(';', $v);
-    
+
         \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
-            ->filterByColumnRef($peer::TABLE_NAME.'.image_detail_1')
+            ->filterByColumnRef('image_detail_1')
             ->filterByElementId($this->getId())
             ->filterByMediaId($values, \Criteria::NOT_IN)
             ->find()
             ->delete()
         ;
-    
+
         if ($v) {
             foreach ($values as $index => $value) {
                 $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
                     ->filterByTableRef($peer::TABLE_NAME)
-                    ->filterByColumnRef($peer::TABLE_NAME.'.image_detail_1')
+                    ->filterByColumnRef('image_detail_1')
                     ->filterByElementId($this->getId())
                     ->filterByMediaId($value)
                     ->findOne()
                 ;
-    
+
                 if (!$usage) {
                     $usage = new \Cungfoo\Model\PortfolioUsage();
                     $usage
                         ->setTableRef($peer::TABLE_NAME)
-                        ->setColumnRef($peer::TABLE_NAME.'.image_detail_1')
+                        ->setColumnRef('image_detail_1')
                         ->setElementId($this->getId())
                         ->setMediaId($value)
                     ;
                 }
-    
+
                 $usage
                     ->setSortableRank($index)
                     ->save()
                 ;
             }
-    
+
         }
     }
-    
+
     /**
      * @return void
      */
     public function getImageDetail2()
     {
         $peer = self::PEER;
-    
+
         $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
             ->select('id')
             ->usePortfolioUsageQuery()
                 ->filterByTableRef($peer::TABLE_NAME)
-                ->filterByColumnRef($peer::TABLE_NAME.'.image_detail_2')
+                ->filterByColumnRef('image_detail_2')
                 ->filterByElementId($this->getId())
             ->endUse()
             ->find()
             ->toArray()
         ;
-    
+
         return implode(';', $medias);
     }
-    
+
     /**
      * @return void
      */
     public function setImageDetail2($v)
     {
         $peer = self::PEER;
-    
+
         $values = explode(';', $v);
-    
+
         \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
-            ->filterByColumnRef($peer::TABLE_NAME.'.image_detail_2')
+            ->filterByColumnRef('image_detail_2')
             ->filterByElementId($this->getId())
             ->filterByMediaId($values, \Criteria::NOT_IN)
             ->find()
             ->delete()
         ;
-    
+
         if ($v) {
             foreach ($values as $index => $value) {
                 $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
                     ->filterByTableRef($peer::TABLE_NAME)
-                    ->filterByColumnRef($peer::TABLE_NAME.'.image_detail_2')
+                    ->filterByColumnRef('image_detail_2')
                     ->filterByElementId($this->getId())
                     ->filterByMediaId($value)
                     ->findOne()
                 ;
-    
+
                 if (!$usage) {
                     $usage = new \Cungfoo\Model\PortfolioUsage();
                     $usage
                         ->setTableRef($peer::TABLE_NAME)
-                        ->setColumnRef($peer::TABLE_NAME.'.image_detail_2')
+                        ->setColumnRef('image_detail_2')
                         ->setElementId($this->getId())
                         ->setMediaId($value)
                     ;
                 }
-    
+
                 $usage
                     ->setSortableRank($index)
                     ->save()
                 ;
             }
-    
+
         }
     }
 

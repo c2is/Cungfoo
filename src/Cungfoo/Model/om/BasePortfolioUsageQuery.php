@@ -866,8 +866,8 @@ abstract class BasePortfolioUsageQuery extends ModelCriteria
         return $this->addAscendingOrderByColumn(PortfolioUsagePeer::CREATED_AT);
     }
     // active behavior
-    
-    
+
+
     /**
      * return only active objects
      *
@@ -876,11 +876,11 @@ abstract class BasePortfolioUsageQuery extends ModelCriteria
     public function findActive($con = null)
     {
         $locale = defined('CURRENT_LANGUAGE') ? CURRENT_LANGUAGE : 'fr';
-    
+
         $this
             ->filterByActive(true)
         ;
-    
+
         return parent::find($con);
     }
 }
