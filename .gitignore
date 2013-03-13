@@ -10,8 +10,6 @@
 /app/resources/data/sql/*
 /web/uploads/*
 /web/portfolio/*
-/web/portfolio/.thumbs/*
-/web/portfolio/images/*
 .idea/
 .vagrant
 Vagrantfile
