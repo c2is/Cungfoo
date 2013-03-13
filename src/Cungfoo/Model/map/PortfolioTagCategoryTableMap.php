@@ -54,6 +54,40 @@ class PortfolioTagCategoryTableMap extends TableMap
     public function buildRelations()
     {
         $this->addRelation('PortfolioTag', 'Cungfoo\\Model\\PortfolioTag', RelationMap::ONE_TO_MANY, array('id' => 'category_id', ), 'SET NULL', null, 'PortfolioTags');
+        $this->addRelation('PortfolioTagCategoryI18n', 'Cungfoo\\Model\\PortfolioTagCategoryI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'PortfolioTagCategoryI18ns');
     } // buildRelations()
+
+    /**
+     *
+     * Gets the list of behaviors registered for this table
+     *
+     * @return array Associative array (name => parameters) of behaviors
+     */
+    public function getBehaviors()
+    {
+        return array(
+            'crudable' =>  array (
+  'route_prefix' => '/',
+  'crud_prefix' => '/portfolio/tags-categories',
+  'crud_model' => NULL,
+  'crud_form' => NULL,
+  'crud_type_file' => NULL,
+),
+            'seo' =>  array (
+  'seo_columns' => 'seo_title,seo_description,seo_h1,seo_keywords',
+  'seo_description' => 'LONGVARCHAR',
+  'seo_keywords' => 'LONGVARCHAR',
+),
+            'i18n' =>  array (
+  'i18n_table' => '%TABLE%_i18n',
+  'i18n_phpname' => '%PHPNAME%I18n',
+  'i18n_columns' => ',seo_title,seo_description,seo_h1,seo_keywords',
+  'i18n_pk_name' => NULL,
+  'locale_column' => 'locale',
+  'default_locale' => 'fr',
+  'locale_alias' => '',
+),
+        );
+    } // getBehaviors()
 
 } // PortfolioTagCategoryTableMap

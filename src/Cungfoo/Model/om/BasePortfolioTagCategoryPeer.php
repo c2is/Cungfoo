@@ -10,6 +10,7 @@ use \Propel;
 use \PropelException;
 use \PropelPDO;
 use Cungfoo\Model\PortfolioTagCategory;
+use Cungfoo\Model\PortfolioTagCategoryI18nPeer;
 use Cungfoo\Model\PortfolioTagCategoryPeer;
 use Cungfoo\Model\PortfolioTagPeer;
 use Cungfoo\Model\map\PortfolioTagCategoryTableMap;
@@ -66,6 +67,13 @@ abstract class BasePortfolioTagCategoryPeer
     public static $instances = array();
 
 
+    // i18n behavior
+
+    /**
+     * The default locale to use for translations
+     * @var        string
+     */
+    const DEFAULT_LOCALE = 'fr';
     /**
      * holds an array of fieldnames
      *
@@ -376,6 +384,9 @@ abstract class BasePortfolioTagCategoryPeer
         // Invalidate objects in PortfolioTagPeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
         PortfolioTagPeer::clearInstancePool();
+        // Invalidate objects in PortfolioTagCategoryI18nPeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        PortfolioTagCategoryI18nPeer::clearInstancePool();
     }
 
     /**
@@ -769,6 +780,34 @@ abstract class BasePortfolioTagCategoryPeer
         return $objs;
     }
 
+    // crudable behavior
+    
+    /**
+     * The default locale to use for translations
+     * @var        string
+     */
+    public static function getMetadata($locale = 'fr', PropelPDO $con = null)
+    {
+        return \Cungfoo\Model\MetadataQuery::create()
+            ->joinWithI18n($locale)
+            ->filterByTableRef(PortfolioTagCategoryPeer::TABLE_NAME)
+            ->findOne()
+        ;
+    }
+    // seo behavior
+    
+    /**
+     * The default locale to use for translations
+     * @var        string
+     */
+    public static function getSeo($locale = 'fr', PropelPDO $con = null)
+    {
+        return \Cungfoo\Model\SeoQuery::create()
+            ->joinWithI18n($locale)
+            ->filterByTableRef(PortfolioTagCategoryPeer::TABLE_NAME)
+            ->findOne()
+        ;
+    }
 } // BasePortfolioTagCategoryPeer
 
 // This is the static code needed to register the TableMap for this table with the main Propel class.

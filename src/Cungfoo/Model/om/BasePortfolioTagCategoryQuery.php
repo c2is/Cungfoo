@@ -14,6 +14,7 @@ use \PropelObjectCollection;
 use \PropelPDO;
 use Cungfoo\Model\PortfolioTag;
 use Cungfoo\Model\PortfolioTagCategory;
+use Cungfoo\Model\PortfolioTagCategoryI18n;
 use Cungfoo\Model\PortfolioTagCategoryPeer;
 use Cungfoo\Model\PortfolioTagCategoryQuery;
 
@@ -37,6 +38,10 @@ use Cungfoo\Model\PortfolioTagCategoryQuery;
  * @method PortfolioTagCategoryQuery leftJoinPortfolioTag($relationAlias = null) Adds a LEFT JOIN clause to the query using the PortfolioTag relation
  * @method PortfolioTagCategoryQuery rightJoinPortfolioTag($relationAlias = null) Adds a RIGHT JOIN clause to the query using the PortfolioTag relation
  * @method PortfolioTagCategoryQuery innerJoinPortfolioTag($relationAlias = null) Adds a INNER JOIN clause to the query using the PortfolioTag relation
+ *
+ * @method PortfolioTagCategoryQuery leftJoinPortfolioTagCategoryI18n($relationAlias = null) Adds a LEFT JOIN clause to the query using the PortfolioTagCategoryI18n relation
+ * @method PortfolioTagCategoryQuery rightJoinPortfolioTagCategoryI18n($relationAlias = null) Adds a RIGHT JOIN clause to the query using the PortfolioTagCategoryI18n relation
+ * @method PortfolioTagCategoryQuery innerJoinPortfolioTagCategoryI18n($relationAlias = null) Adds a INNER JOIN clause to the query using the PortfolioTagCategoryI18n relation
  *
  * @method PortfolioTagCategory findOne(PropelPDO $con = null) Return the first PortfolioTagCategory matching the query
  * @method PortfolioTagCategory findOneOrCreate(PropelPDO $con = null) Return the first PortfolioTagCategory matching the query, or a new PortfolioTagCategory object populated from the query conditions when no match is found
@@ -399,6 +404,80 @@ abstract class BasePortfolioTagCategoryQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query by a related PortfolioTagCategoryI18n object
+     *
+     * @param   PortfolioTagCategoryI18n|PropelObjectCollection $portfolioTagCategoryI18n  the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   PortfolioTagCategoryQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByPortfolioTagCategoryI18n($portfolioTagCategoryI18n, $comparison = null)
+    {
+        if ($portfolioTagCategoryI18n instanceof PortfolioTagCategoryI18n) {
+            return $this
+                ->addUsingAlias(PortfolioTagCategoryPeer::ID, $portfolioTagCategoryI18n->getId(), $comparison);
+        } elseif ($portfolioTagCategoryI18n instanceof PropelObjectCollection) {
+            return $this
+                ->usePortfolioTagCategoryI18nQuery()
+                ->filterByPrimaryKeys($portfolioTagCategoryI18n->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByPortfolioTagCategoryI18n() only accepts arguments of type PortfolioTagCategoryI18n or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the PortfolioTagCategoryI18n relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return PortfolioTagCategoryQuery The current query, for fluid interface
+     */
+    public function joinPortfolioTagCategoryI18n($relationAlias = null, $joinType = 'LEFT JOIN')
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('PortfolioTagCategoryI18n');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'PortfolioTagCategoryI18n');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the PortfolioTagCategoryI18n relation PortfolioTagCategoryI18n object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\PortfolioTagCategoryI18nQuery A secondary query class using the current class as primary query
+     */
+    public function usePortfolioTagCategoryI18nQuery($relationAlias = null, $joinType = 'LEFT JOIN')
+    {
+        return $this
+            ->joinPortfolioTagCategoryI18n($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'PortfolioTagCategoryI18n', '\Cungfoo\Model\PortfolioTagCategoryI18nQuery');
+    }
+
+    /**
      * Exclude object from result
      *
      * @param   PortfolioTagCategory $portfolioTagCategory Object to remove from the list of results
@@ -412,6 +491,63 @@ abstract class BasePortfolioTagCategoryQuery extends ModelCriteria
         }
 
         return $this;
+    }
+
+    // i18n behavior
+
+    /**
+     * Adds a JOIN clause to the query using the i18n relation
+     *
+     * @param     string $locale Locale to use for the join condition, e.g. 'fr_FR'
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
+     *
+     * @return    PortfolioTagCategoryQuery The current query, for fluid interface
+     */
+    public function joinI18n($locale = 'fr', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        $relationName = $relationAlias ? $relationAlias : 'PortfolioTagCategoryI18n';
+
+        return $this
+            ->joinPortfolioTagCategoryI18n($relationAlias, $joinType)
+            ->addJoinCondition($relationName, $relationName . '.Locale = ?', $locale);
+    }
+
+    /**
+     * Adds a JOIN clause to the query and hydrates the related I18n object.
+     * Shortcut for $c->joinI18n($locale)->with()
+     *
+     * @param     string $locale Locale to use for the join condition, e.g. 'fr_FR'
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
+     *
+     * @return    PortfolioTagCategoryQuery The current query, for fluid interface
+     */
+    public function joinWithI18n($locale = 'fr', $joinType = Criteria::LEFT_JOIN)
+    {
+        $this
+            ->joinI18n($locale, null, $joinType)
+            ->with('PortfolioTagCategoryI18n');
+        $this->with['PortfolioTagCategoryI18n']->setIsWithOneToMany(false);
+
+        return $this;
+    }
+
+    /**
+     * Use the I18n relation query object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $locale Locale to use for the join condition, e.g. 'fr_FR'
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'. Defaults to left join.
+     *
+     * @return    PortfolioTagCategoryI18nQuery A secondary query class using the current class as primary query
+     */
+    public function useI18nQuery($locale = 'fr', $relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        return $this
+            ->joinI18n($locale, $relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'PortfolioTagCategoryI18n', 'Cungfoo\Model\PortfolioTagCategoryI18nQuery');
     }
 
 }
