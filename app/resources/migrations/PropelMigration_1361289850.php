@@ -202,87 +202,6 @@ ALTER TABLE `personnage`
     CHANGE `active` `active` tinyint(1)   NULL DEFAULT '1' after `updated_at`,
     DROP COLUMN `image_path`;
 
-/* Create table in target */
-CREATE TABLE `portfolio_media`(
-    `id` int(11) NOT NULL  auto_increment ,
-    `file` varchar(255) COLLATE utf8_general_ci NULL  ,
-    `width` varchar(255) COLLATE utf8_general_ci NULL  ,
-    `height` varchar(255) COLLATE utf8_general_ci NULL  ,
-    `size` varchar(255) COLLATE utf8_general_ci NULL  ,
-    `type` varchar(255) COLLATE utf8_general_ci NULL  ,
-    `created_at` datetime NULL  ,
-    `updated_at` datetime NULL  ,
-    `active` tinyint(1) NULL  DEFAULT '1' ,
-    PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET='utf8';
-
-
-/* Create table in target */
-CREATE TABLE `portfolio_media_i18n`(
-    `id` int(11) NOT NULL  ,
-    `locale` varchar(5) COLLATE utf8_general_ci NOT NULL  DEFAULT 'fr' ,
-    `title` varchar(255) COLLATE utf8_general_ci NOT NULL  ,
-    `description` text COLLATE utf8_general_ci NULL  ,
-    `seo_title` varchar(255) COLLATE utf8_general_ci NULL  ,
-    `seo_description` text COLLATE utf8_general_ci NULL  ,
-    `seo_h1` varchar(255) COLLATE utf8_general_ci NULL  ,
-    `seo_keywords` text COLLATE utf8_general_ci NULL  ,
-    `active_locale` tinyint(1) NULL  DEFAULT '1' ,
-    PRIMARY KEY (`id`,`locale`)
-) ENGINE=InnoDB DEFAULT CHARSET='utf8';
-
-
-/* Create table in target */
-CREATE TABLE `portfolio_media_tag`(
-    `media_id` int(11) NOT NULL  ,
-    `tag_id` int(11) NOT NULL  ,
-    PRIMARY KEY (`media_id`,`tag_id`) ,
-    KEY `portfolio_media_tag_FI_2`(`tag_id`)
-) ENGINE=InnoDB DEFAULT CHARSET='utf8';
-
-
-/* Create table in target */
-CREATE TABLE `portfolio_tag`(
-    `id` int(11) NOT NULL  auto_increment ,
-    `created_at` datetime NULL  ,
-    `updated_at` datetime NULL  ,
-    `active` tinyint(1) NULL  DEFAULT '1' ,
-    PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET='utf8';
-
-
-/* Create table in target */
-CREATE TABLE `portfolio_tag_i18n`(
-    `id` int(11) NOT NULL  ,
-    `locale` varchar(5) COLLATE utf8_general_ci NOT NULL  DEFAULT 'fr' ,
-    `name` varchar(255) COLLATE utf8_general_ci NULL  ,
-    `slug` varchar(255) COLLATE utf8_general_ci NULL  ,
-    `description` text COLLATE utf8_general_ci NULL  ,
-    `seo_title` varchar(255) COLLATE utf8_general_ci NULL  ,
-    `seo_description` text COLLATE utf8_general_ci NULL  ,
-    `seo_h1` varchar(255) COLLATE utf8_general_ci NULL  ,
-    `seo_keywords` text COLLATE utf8_general_ci NULL  ,
-    `active_locale` tinyint(1) NULL  DEFAULT '1' ,
-    PRIMARY KEY (`id`,`locale`)
-) ENGINE=InnoDB DEFAULT CHARSET='utf8';
-
-
-/* Create table in target */
-CREATE TABLE `portfolio_usage`(
-    `id` int(11) NOT NULL  auto_increment ,
-    `media_id` int(11) NOT NULL  ,
-    `table_ref` varchar(255) COLLATE utf8_general_ci NOT NULL  ,
-    `column_ref` varchar(255) COLLATE utf8_general_ci NOT NULL  ,
-    `element_id` int(11) NOT NULL  ,
-    `sortable_rank` int(11) NULL  ,
-    `created_at` datetime NULL  ,
-    `updated_at` datetime NULL  ,
-    `active` tinyint(1) NULL  DEFAULT '1' ,
-    PRIMARY KEY (`id`) ,
-    KEY `portfolio_usage_FI_1`(`media_id`)
-) ENGINE=InnoDB DEFAULT CHARSET='utf8';
-
-
 /* Alter table in target */
 ALTER TABLE `region`
     CHANGE `pays_id` `pays_id` int(11)   NULL after `code`,
@@ -825,7 +744,6 @@ FOREIGN KEY (`type_hebergement_capacite_id`) REFERENCES `type_hebergement_capaci
 ALTER TABLE `ville`
 ADD CONSTRAINT `ville_FK_1`
 FOREIGN KEY (`region_id`) REFERENCES `region` (`id`) ON DELETE SET NULL;
-
 
 # This restores the fkey checks, after having unset them earlier
 SET FOREIGN_KEY_CHECKS = 1;
