@@ -37,7 +37,7 @@ class PropelMigration_1361289848
     public function getUpSQL()
     {
         return array (
-  'cungfoo' => '
+  'cungfoo' => <<<EOF
 # This is a fix for InnoDB in MySQL >= 4.1.x
 # It "suspends judgement" for fkey relationships until are tables are set.
 SET FOREIGN_KEY_CHECKS = 0;
@@ -83,10 +83,25 @@ CREATE TABLE `portfolio_media_tag`(
 
 /* Create table in target */
 CREATE TABLE `portfolio_tag`(
-    `id` int(11) NOT NULL  auto_increment ,
-    `created_at` datetime NULL  ,
-    `updated_at` datetime NULL  ,
-    `active` tinyint(1) NULL  DEFAULT '1' ,
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `category_id` INTEGER,
+    `created_at` DATETIME,
+    `updated_at` DATETIME,
+    `active` TINYINT(1) DEFAULT 1,
+    PRIMARY KEY (`id`),
+    INDEX `portfolio_tag_FI_1` (`category_id`),
+    CONSTRAINT `portfolio_tag_FK_1`
+        FOREIGN KEY (`category_id`)
+        REFERENCES `portfolio_tag_category` (`id`)
+        ON DELETE SET NULL
+) ENGINE=InnoDB DEFAULT CHARSET='utf8';
+
+
+/* Create table in target */
+CREATE TABLE `portfolio_tag_category` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `name` VARCHAR(255),
+    `slug` VARCHAR(255),
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET='utf8';
 
@@ -142,7 +157,8 @@ CREATE TABLE `portfolio_tag_category`
 
 # This restores the fkey checks, after having unset them earlier
 SET FOREIGN_KEY_CHECKS = 1;
-',
+EOF
+,
 );
     }
 
