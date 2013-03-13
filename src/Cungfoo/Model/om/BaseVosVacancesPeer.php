@@ -782,7 +782,7 @@ abstract class BaseVosVacancesPeer
     }
 
     // crudable behavior
-
+    
     /**
      * The default locale to use for translations
      * @var        string
@@ -796,7 +796,7 @@ abstract class BaseVosVacancesPeer
         ;
     }
     // seo behavior
-
+    
     /**
      * The default locale to use for translations
      * @var        string

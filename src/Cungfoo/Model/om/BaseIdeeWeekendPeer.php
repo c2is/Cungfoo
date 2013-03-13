@@ -792,7 +792,7 @@ abstract class BaseIdeeWeekendPeer
     }
 
     // crudable behavior
-
+    
     /**
      * The default locale to use for translations
      * @var        string
@@ -806,7 +806,7 @@ abstract class BaseIdeeWeekendPeer
         ;
     }
     // seo behavior
-
+    
     /**
      * The default locale to use for translations
      * @var        string

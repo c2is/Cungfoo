@@ -1045,7 +1045,7 @@ abstract class BaseRegionRefPeer
     }
 
     // crudable behavior
-
+    
     /**
      * The default locale to use for translations
      * @var        string
@@ -1059,7 +1059,7 @@ abstract class BaseRegionRefPeer
         ;
     }
     // seo behavior
-
+    
     /**
      * The default locale to use for translations
      * @var        string

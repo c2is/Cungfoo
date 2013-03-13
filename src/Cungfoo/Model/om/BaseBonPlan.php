@@ -3799,8 +3799,8 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
     }
 
     // active behavior
-
-
+    
+    
     /**
      * return true is the object is active
      *
@@ -3810,7 +3810,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
     {
         return $this->getActive();
     }
-
+    
     /**
      * return true is the object is active locale
      *
@@ -3820,77 +3820,77 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
     {
         return $this->getActiveLocale();
     }
-
+    
     public function getBonPlanCategoriesActive($criteria = null, PropelPDO $con = null)
     {
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-
+    
         $criteria->add(\Cungfoo\Model\BonPlanCategoriePeer::ACTIVE, true);
-
-
+    
+    
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\BonPlanCategorieI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\BonPlanCategoriePeer::ID, \Cungfoo\Model\BonPlanCategorieI18nPeer::alias('i18n_locale', \Cungfoo\Model\BonPlanCategorieI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\BonPlanCategorieI18nPeer::alias('i18n_locale', \Cungfoo\Model\BonPlanCategorieI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\BonPlanCategorieI18nPeer::alias('i18n_locale', \Cungfoo\Model\BonPlanCategorieI18nPeer::LOCALE), $this->currentLocale);
-
+    
         return $this->getBonPlanCategories($criteria, $con);
     }
-
+    
     public function getEtablissementsActive($criteria = null, PropelPDO $con = null)
     {
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-
+    
         $criteria->add(\Cungfoo\Model\EtablissementPeer::ACTIVE, true);
-
-
+    
+    
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\EtablissementI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\EtablissementPeer::ID, \Cungfoo\Model\EtablissementI18nPeer::alias('i18n_locale', \Cungfoo\Model\EtablissementI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\EtablissementI18nPeer::alias('i18n_locale', \Cungfoo\Model\EtablissementI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\EtablissementI18nPeer::alias('i18n_locale', \Cungfoo\Model\EtablissementI18nPeer::LOCALE), $this->currentLocale);
-
+    
         return $this->getEtablissements($criteria, $con);
     }
-
+    
     public function getRegionsActive($criteria = null, PropelPDO $con = null)
     {
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-
+    
         $criteria->add(\Cungfoo\Model\RegionPeer::ACTIVE, true);
-
-
+    
+    
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\RegionI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\RegionPeer::ID, \Cungfoo\Model\RegionI18nPeer::alias('i18n_locale', \Cungfoo\Model\RegionI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\RegionI18nPeer::alias('i18n_locale', \Cungfoo\Model\RegionI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\RegionI18nPeer::alias('i18n_locale', \Cungfoo\Model\RegionI18nPeer::LOCALE), $this->currentLocale);
-
+    
         return $this->getRegions($criteria, $con);
     }
-
+    
     public function getCategoriesActive($criteria = null, PropelPDO $con = null)
     {
-
+    
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-
+    
         $criteria->add(\Cungfoo\Model\CategoriePeer::ACTIVE, true);
-
-
+    
+    
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\CategorieI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\CategoriePeer::ID, \Cungfoo\Model\CategorieI18nPeer::alias('i18n_locale', \Cungfoo\Model\CategorieI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\CategorieI18nPeer::alias('i18n_locale', \Cungfoo\Model\CategorieI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\CategorieI18nPeer::alias('i18n_locale', \Cungfoo\Model\CategorieI18nPeer::LOCALE), $this->currentLocale);
-
+    
         return $this->getCategories($criteria, $con);
     }
     // i18n behavior
@@ -4301,7 +4301,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
     }
 
     // crudable behavior
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -4316,26 +4316,26 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
         {
             $this->resetModified(BonPlanPeer::IMAGE_MENU);
         }
-
+    
         $this->uploadImageMenu($form);
-
+        
         if (!$form['image_page_deleted']->getData())
         {
             $this->resetModified(BonPlanPeer::IMAGE_PAGE);
         }
-
+    
         $this->uploadImagePage($form);
-
+        
         if (!$form['image_liste_deleted']->getData())
         {
             $this->resetModified(BonPlanPeer::IMAGE_LISTE);
         }
-
+    
         $this->uploadImageListe($form);
-
+        
         return $this->save($con);
     }
-
+    
     /**
      * @return string
      */
@@ -4343,7 +4343,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
     {
         return 'uploads/bon_plans';
     }
-
+    
     /**
      * @return string
      */
@@ -4351,7 +4351,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -4367,7 +4367,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
             }
         }
     }
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void
@@ -4383,7 +4383,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
             }
         }
     }
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @return void

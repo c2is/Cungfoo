@@ -2626,8 +2626,8 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
     }
 
     // active behavior
-
-
+    
+    
     /**
      * return true is the object is active
      *
@@ -2637,7 +2637,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
     {
         return $this->getActive();
     }
-
+    
     /**
      * return true is the object is active locale
      *
@@ -2648,7 +2648,7 @@ abstract class BaseDemandeIdentifiant extends BaseObject implements Persistent
         return $this->getActiveLocale();
     }
     // crudable behavior
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con

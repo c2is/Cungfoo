@@ -122,6 +122,24 @@ CREATE TABLE `portfolio_usage`(
     KEY `portfolio_usage_FI_1`(`media_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET='utf8';
 
+ALTER TABLE `portfolio_tag`
+    ADD `category_id` INTEGER AFTER `id`;
+
+CREATE INDEX `portfolio_tag_FI_1` ON `portfolio_tag` (`category_id`);
+
+ALTER TABLE `portfolio_tag` ADD CONSTRAINT `portfolio_tag_FK_1`
+    FOREIGN KEY (`category_id`)
+    REFERENCES `portfolio_tag_category` (`id`)
+    ON DELETE SET NULL;
+
+CREATE TABLE `portfolio_tag_category`
+(
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `name` VARCHAR(255),
+    `slug` VARCHAR(255),
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB;
+
 # This restores the fkey checks, after having unset them earlier
 SET FOREIGN_KEY_CHECKS = 1;
 ',

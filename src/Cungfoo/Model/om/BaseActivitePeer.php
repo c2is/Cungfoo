@@ -805,7 +805,7 @@ abstract class BaseActivitePeer
     }
 
     // crudable behavior
-
+    
     /**
      * The default locale to use for translations
      * @var        string
@@ -819,7 +819,7 @@ abstract class BaseActivitePeer
         ;
     }
     // seo behavior
-
+    
     /**
      * The default locale to use for translations
      * @var        string
