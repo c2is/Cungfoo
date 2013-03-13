@@ -126,6 +126,7 @@ class PortfolioCommand extends Command
                         break;
 
                     default:
+                        $this->insertTag($con, $this->getTag($table));
                         $this->insertMediaUsage($con, $elementId, $table, $option, $this->getImage($value[$option], true));
                         break;
                 }
