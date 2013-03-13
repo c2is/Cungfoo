@@ -74,7 +74,7 @@
     <div class="slider"><div class="slide clear">
         {% if etab.slider %}
         {% for media in etab.slider | medias %}
-            <img src="{{ asset(media.file) }}" width="616" height="326" alt="{{ media.title }}" class="{{ media.title }}"/>
+            <img src="{{ asset(media.file) }}" width="616" height="326" alt="{{ media.title }}" class="{{ media.getTagsForSlider | join(' ') }}"/>
         {% endfor %}
         {% endif %}
     </div></div>

@@ -65,4 +65,18 @@ class PortfolioMedia extends BasePortfolioMedia
     {
         return __DIR__.'/../../../web/'.$this->getUploadDir();
     }
+
+    public function getTagsForSlider()
+    {
+        $toReturn = array();
+        foreach ($this->getPortfolioTags() as $tag)
+        {
+            if ($tag->getPortfolioTagCategory()->getSlug() == 'camping')
+            {
+                $toReturn[] = $tag->getSlug();
+            }
+        }
+
+        return $toReturn;
+    }
 }

@@ -403,13 +403,7 @@ class DestinationController implements ControllerProviderInterface
             ->limit(3)
             ->findActive()
         ;
-/*
-        $multimedia = \Cungfoo\Model\MultimediaEtablissementQuery::create()
-            ->joinWithI18n($locale)
-            ->filterByEtablissementId($camping->getId())
-            ->findActive()
-        ;
-*/
+
         $sliderIds = $camping->getSlider();
 
         $tags = array();
@@ -420,11 +414,17 @@ class DestinationController implements ControllerProviderInterface
                 ->findOne()
             ;
 
-            $multimediaTags = $slider->getPortfolioTags();
-
-            foreach ($multimediaTags as $tag)
+            if ($slider)
             {
-                $tags[$tag->getName()] = $tag;
+                $multimediaTags = $slider->getPortfolioTags();
+
+                foreach ($multimediaTags as $tag)
+                {
+                    if ($tag->getPortfolioTagCategory()->getSlug() == 'camping')
+                    {
+                        $tags[$tag->getSlug()] = $tag;
+                    }
+                }
             }
         }
 
@@ -456,7 +456,6 @@ class DestinationController implements ControllerProviderInterface
             'locale'                  => $locale,
             'etab'                    => $camping,
             'personnages'             => $personnages,
-            /*'multimedia'              => $multimedia,*/
             'tags'                    => $tags,
             'personnageAleatoire'     => $personnageAleatoire,
             'sitesAVisiter'           => $sitesAVisiter,
