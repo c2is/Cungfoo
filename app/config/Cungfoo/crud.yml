@@ -150,3 +150,7 @@ crud:
             prefix: /portfolio/tags
             model: \Cungfoo\Model\PortfolioTag
             form: \Cungfoo\Form\Type\PortfolioTagType
+        portfolio_tag_category:
+            prefix: /portfolio/tags-categories
+            model: \Cungfoo\Model\PortfolioTagCategory
+            form: \Cungfoo\Form\Type\PortfolioTagCategoryType
