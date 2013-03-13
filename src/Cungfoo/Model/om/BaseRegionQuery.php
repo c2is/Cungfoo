@@ -1229,8 +1229,8 @@ abstract class BaseRegionQuery extends ModelCriteria
         return $this->addAscendingOrderByColumn(RegionPeer::CREATED_AT);
     }
     // active behavior
-    
-    
+
+
     /**
      * return only active objects
      *
@@ -1239,7 +1239,7 @@ abstract class BaseRegionQuery extends ModelCriteria
     public function findActive($con = null)
     {
         $locale = defined('CURRENT_LANGUAGE') ? CURRENT_LANGUAGE : 'fr';
-    
+
         $this
             ->filterByActive(true)
             ->useI18nQuery($locale, 'i18n_locale')
@@ -1248,7 +1248,7 @@ abstract class BaseRegionQuery extends ModelCriteria
                 ->filterByActiveLocale(null, Criteria::ISNULL)
             ->endUse()
         ;
-    
+
         return parent::find($con);
     }
     // i18n behavior
@@ -1309,11 +1309,11 @@ abstract class BaseRegionQuery extends ModelCriteria
     }
 
     // crudable behavior
-    
+
     public function filterByTerm($term)
     {
         $term = '%' . $term . '%';
-    
+
         return $this
             ->_or()
             ->useI18nQuery()

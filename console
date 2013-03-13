@@ -44,4 +44,6 @@ $console->add(new \VacancesDirectes\Command\Translations\UpdateCommand());
 $console->add(new \VacancesDirectes\Command\InitCommand());
 $console->add(new \VacancesDirectes\Command\UpdateCommand());
 
+$console->add(new \Cungfoo\Command\Patch\PortfolioCommand());
+
 $console->run();

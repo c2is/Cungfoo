@@ -58,5 +58,4 @@ class PortfolioMediaType extends BasePortfolioMediaType
             )
         );
     }
-
 } // PortfolioMediaType

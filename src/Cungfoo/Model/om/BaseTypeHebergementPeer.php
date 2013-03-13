@@ -1448,7 +1448,7 @@ abstract class BaseTypeHebergementPeer
     }
 
     // crudable behavior
-    
+
     /**
      * The default locale to use for translations
      * @var        string
@@ -1462,7 +1462,7 @@ abstract class BaseTypeHebergementPeer
         ;
     }
     // seo behavior
-    
+
     /**
      * The default locale to use for translations
      * @var        string
