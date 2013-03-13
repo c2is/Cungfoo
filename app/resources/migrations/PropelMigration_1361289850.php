@@ -37,7 +37,7 @@ class PropelMigration_1361289850
     public function getUpSQL()
     {
         return array (
-  'cungfoo' => '
+  'cungfoo' => <<<EOF
 # This is a fix for InnoDB in MySQL >= 4.1.x
 # It "suspends judgement" for fkey relationships until are tables are set.
 SET FOREIGN_KEY_CHECKS = 0;
@@ -451,7 +451,8 @@ FOREIGN KEY (`region_id`) REFERENCES `region` (`id`) ON DELETE SET NULL;
 
 # This restores the fkey checks, after having unset them earlier
 SET FOREIGN_KEY_CHECKS = 1;
-',
+EOF
+,
 );
     }
 
@@ -464,7 +465,7 @@ SET FOREIGN_KEY_CHECKS = 1;
     public function getDownSQL()
     {
         return array (
-  'cungfoo' => '
+  'cungfoo' => <<<EOF
 # This is a fix for InnoDB in MySQL >= 4.1.x
 # It "suspends judgement" for fkey relationships until are tables are set.
 SET FOREIGN_KEY_CHECKS = 0;
@@ -828,7 +829,8 @@ FOREIGN KEY (`region_id`) REFERENCES `region` (`id`) ON DELETE SET NULL;
 
 # This restores the fkey checks, after having unset them earlier
 SET FOREIGN_KEY_CHECKS = 1;
-',
+EOF
+,
 );
     }
 
