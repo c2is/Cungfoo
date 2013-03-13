@@ -12,32 +12,32 @@ use \PropelCollection;
 use \PropelException;
 use \PropelObjectCollection;
 use \PropelPDO;
-use Cungfoo\Model\Seo;
-use Cungfoo\Model\SeoI18n;
-use Cungfoo\Model\SeoI18nQuery;
-use Cungfoo\Model\SeoPeer;
-use Cungfoo\Model\SeoQuery;
+use Cungfoo\Model\PortfolioTag;
+use Cungfoo\Model\PortfolioTagCategory;
+use Cungfoo\Model\PortfolioTagCategoryPeer;
+use Cungfoo\Model\PortfolioTagCategoryQuery;
+use Cungfoo\Model\PortfolioTagQuery;
 use Propel\BaseObject;
 
 /**
- * Base class that represents a row from the 'seo' table.
+ * Base class that represents a row from the 'portfolio_tag_category' table.
  *
  *
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
-abstract class BaseSeo extends BaseObject implements Persistent
+abstract class BasePortfolioTagCategory extends BaseObject implements Persistent
 {
     /**
      * Peer class name
      */
-    const PEER = 'Cungfoo\\Model\\SeoPeer';
+    const PEER = 'Cungfoo\\Model\\PortfolioTagCategoryPeer';
 
     /**
      * The Peer class.
      * Instance provides a convenient way of calling static methods on a class
      * that calling code may not be able to identify.
-     * @var        SeoPeer
+     * @var        PortfolioTagCategoryPeer
      */
     protected static $peer;
 
@@ -54,16 +54,22 @@ abstract class BaseSeo extends BaseObject implements Persistent
     protected $id;
 
     /**
-     * The value for the table_ref field.
+     * The value for the name field.
      * @var        string
      */
-    protected $table_ref;
+    protected $name;
 
     /**
-     * @var        PropelObjectCollection|SeoI18n[] Collection to store aggregation of SeoI18n objects.
+     * The value for the slug field.
+     * @var        string
      */
-    protected $collSeoI18ns;
-    protected $collSeoI18nsPartial;
+    protected $slug;
+
+    /**
+     * @var        PropelObjectCollection|PortfolioTag[] Collection to store aggregation of PortfolioTag objects.
+     */
+    protected $collPortfolioTags;
+    protected $collPortfolioTagsPartial;
 
     /**
      * Flag to prevent endless save loop, if this object is referenced
@@ -79,25 +85,11 @@ abstract class BaseSeo extends BaseObject implements Persistent
      */
     protected $alreadyInValidation = false;
 
-    // i18n behavior
-
-    /**
-     * Current locale
-     * @var        string
-     */
-    protected $currentLocale = 'fr';
-
-    /**
-     * Current translation objects
-     * @var        array[SeoI18n]
-     */
-    protected $currentTranslations;
-
     /**
      * An array of objects scheduled for deletion.
      * @var		PropelObjectCollection
      */
-    protected $seoI18nsScheduledForDeletion = null;
+    protected $portfolioTagsScheduledForDeletion = null;
 
     /**
      * Get the [id] column value.
@@ -110,20 +102,30 @@ abstract class BaseSeo extends BaseObject implements Persistent
     }
 
     /**
-     * Get the [table_ref] column value.
+     * Get the [name] column value.
      *
      * @return string
      */
-    public function getTableRef()
+    public function getName()
     {
-        return $this->table_ref;
+        return $this->name;
+    }
+
+    /**
+     * Get the [slug] column value.
+     *
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
     }
 
     /**
      * Set the value of [id] column.
      *
      * @param int $v new value
-     * @return Seo The current object (for fluent API support)
+     * @return PortfolioTagCategory The current object (for fluent API support)
      */
     public function setId($v)
     {
@@ -133,7 +135,7 @@ abstract class BaseSeo extends BaseObject implements Persistent
 
         if ($this->id !== $v) {
             $this->id = $v;
-            $this->modifiedColumns[] = SeoPeer::ID;
+            $this->modifiedColumns[] = PortfolioTagCategoryPeer::ID;
         }
 
 
@@ -141,25 +143,46 @@ abstract class BaseSeo extends BaseObject implements Persistent
     } // setId()
 
     /**
-     * Set the value of [table_ref] column.
+     * Set the value of [name] column.
      *
      * @param string $v new value
-     * @return Seo The current object (for fluent API support)
+     * @return PortfolioTagCategory The current object (for fluent API support)
      */
-    public function setTableRef($v)
+    public function setName($v)
     {
         if ($v !== null) {
             $v = (string) $v;
         }
 
-        if ($this->table_ref !== $v) {
-            $this->table_ref = $v;
-            $this->modifiedColumns[] = SeoPeer::TABLE_REF;
+        if ($this->name !== $v) {
+            $this->name = $v;
+            $this->modifiedColumns[] = PortfolioTagCategoryPeer::NAME;
         }
 
 
         return $this;
-    } // setTableRef()
+    } // setName()
+
+    /**
+     * Set the value of [slug] column.
+     *
+     * @param string $v new value
+     * @return PortfolioTagCategory The current object (for fluent API support)
+     */
+    public function setSlug($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->slug !== $v) {
+            $this->slug = $v;
+            $this->modifiedColumns[] = PortfolioTagCategoryPeer::SLUG;
+        }
+
+
+        return $this;
+    } // setSlug()
 
     /**
      * Indicates whether the columns in this object are only set to default values.
@@ -194,7 +217,8 @@ abstract class BaseSeo extends BaseObject implements Persistent
         try {
 
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
-            $this->table_ref = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
+            $this->name = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
+            $this->slug = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -203,10 +227,10 @@ abstract class BaseSeo extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 2; // 2 = SeoPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 3; // 3 = PortfolioTagCategoryPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
-            throw new PropelException("Error populating Seo object", $e);
+            throw new PropelException("Error populating PortfolioTagCategory object", $e);
         }
     }
 
@@ -249,13 +273,13 @@ abstract class BaseSeo extends BaseObject implements Persistent
         }
 
         if ($con === null) {
-            $con = Propel::getConnection(SeoPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+            $con = Propel::getConnection(PortfolioTagCategoryPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
 
         // We don't need to alter the object instance pool; we're just modifying this instance
         // already in the pool.
 
-        $stmt = SeoPeer::doSelectStmt($this->buildPkeyCriteria(), $con);
+        $stmt = PortfolioTagCategoryPeer::doSelectStmt($this->buildPkeyCriteria(), $con);
         $row = $stmt->fetch(PDO::FETCH_NUM);
         $stmt->closeCursor();
         if (!$row) {
@@ -265,7 +289,7 @@ abstract class BaseSeo extends BaseObject implements Persistent
 
         if ($deep) {  // also de-associate any related objects?
 
-            $this->collSeoI18ns = null;
+            $this->collPortfolioTags = null;
 
         } // if (deep)
     }
@@ -287,12 +311,12 @@ abstract class BaseSeo extends BaseObject implements Persistent
         }
 
         if ($con === null) {
-            $con = Propel::getConnection(SeoPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+            $con = Propel::getConnection(PortfolioTagCategoryPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
 
         $con->beginTransaction();
         try {
-            $deleteQuery = SeoQuery::create()
+            $deleteQuery = PortfolioTagCategoryQuery::create()
                 ->filterByPrimaryKey($this->getPrimaryKey());
             $ret = $this->preDelete($con);
             if ($ret) {
@@ -330,7 +354,7 @@ abstract class BaseSeo extends BaseObject implements Persistent
         }
 
         if ($con === null) {
-            $con = Propel::getConnection(SeoPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+            $con = Propel::getConnection(PortfolioTagCategoryPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
 
         $con->beginTransaction();
@@ -350,7 +374,7 @@ abstract class BaseSeo extends BaseObject implements Persistent
                     $this->postUpdate($con);
                 }
                 $this->postSave($con);
-                SeoPeer::addInstanceToPool($this);
+                PortfolioTagCategoryPeer::addInstanceToPool($this);
             } else {
                 $affectedRows = 0;
             }
@@ -391,17 +415,18 @@ abstract class BaseSeo extends BaseObject implements Persistent
                 $this->resetModified();
             }
 
-            if ($this->seoI18nsScheduledForDeletion !== null) {
-                if (!$this->seoI18nsScheduledForDeletion->isEmpty()) {
-                    SeoI18nQuery::create()
-                        ->filterByPrimaryKeys($this->seoI18nsScheduledForDeletion->getPrimaryKeys(false))
-                        ->delete($con);
-                    $this->seoI18nsScheduledForDeletion = null;
+            if ($this->portfolioTagsScheduledForDeletion !== null) {
+                if (!$this->portfolioTagsScheduledForDeletion->isEmpty()) {
+                    foreach ($this->portfolioTagsScheduledForDeletion as $portfolioTag) {
+                        // need to save related object because we set the relation to null
+                        $portfolioTag->save($con);
+                    }
+                    $this->portfolioTagsScheduledForDeletion = null;
                 }
             }
 
-            if ($this->collSeoI18ns !== null) {
-                foreach ($this->collSeoI18ns as $referrerFK) {
+            if ($this->collPortfolioTags !== null) {
+                foreach ($this->collPortfolioTags as $referrerFK) {
                     if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
                         $affectedRows += $referrerFK->save($con);
                     }
@@ -428,21 +453,24 @@ abstract class BaseSeo extends BaseObject implements Persistent
         $modifiedColumns = array();
         $index = 0;
 
-        $this->modifiedColumns[] = SeoPeer::ID;
+        $this->modifiedColumns[] = PortfolioTagCategoryPeer::ID;
         if (null !== $this->id) {
-            throw new PropelException('Cannot insert a value for auto-increment primary key (' . SeoPeer::ID . ')');
+            throw new PropelException('Cannot insert a value for auto-increment primary key (' . PortfolioTagCategoryPeer::ID . ')');
         }
 
          // check the columns in natural order for more readable SQL queries
-        if ($this->isColumnModified(SeoPeer::ID)) {
+        if ($this->isColumnModified(PortfolioTagCategoryPeer::ID)) {
             $modifiedColumns[':p' . $index++]  = '`id`';
         }
-        if ($this->isColumnModified(SeoPeer::TABLE_REF)) {
-            $modifiedColumns[':p' . $index++]  = '`table_ref`';
+        if ($this->isColumnModified(PortfolioTagCategoryPeer::NAME)) {
+            $modifiedColumns[':p' . $index++]  = '`name`';
+        }
+        if ($this->isColumnModified(PortfolioTagCategoryPeer::SLUG)) {
+            $modifiedColumns[':p' . $index++]  = '`slug`';
         }
 
         $sql = sprintf(
-            'INSERT INTO `seo` (%s) VALUES (%s)',
+            'INSERT INTO `portfolio_tag_category` (%s) VALUES (%s)',
             implode(', ', $modifiedColumns),
             implode(', ', array_keys($modifiedColumns))
         );
@@ -454,8 +482,11 @@ abstract class BaseSeo extends BaseObject implements Persistent
                     case '`id`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`table_ref`':
-                        $stmt->bindValue($identifier, $this->table_ref, PDO::PARAM_STR);
+                    case '`name`':
+                        $stmt->bindValue($identifier, $this->name, PDO::PARAM_STR);
+                        break;
+                    case '`slug`':
+                        $stmt->bindValue($identifier, $this->slug, PDO::PARAM_STR);
                         break;
                 }
             }
@@ -551,13 +582,13 @@ abstract class BaseSeo extends BaseObject implements Persistent
             $failureMap = array();
 
 
-            if (($retval = SeoPeer::doValidate($this, $columns)) !== true) {
+            if (($retval = PortfolioTagCategoryPeer::doValidate($this, $columns)) !== true) {
                 $failureMap = array_merge($failureMap, $retval);
             }
 
 
-                if ($this->collSeoI18ns !== null) {
-                    foreach ($this->collSeoI18ns as $referrerFK) {
+                if ($this->collPortfolioTags !== null) {
+                    foreach ($this->collPortfolioTags as $referrerFK) {
                         if (!$referrerFK->validate($columns)) {
                             $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
                         }
@@ -583,7 +614,7 @@ abstract class BaseSeo extends BaseObject implements Persistent
      */
     public function getByName($name, $type = BasePeer::TYPE_PHPNAME)
     {
-        $pos = SeoPeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
+        $pos = PortfolioTagCategoryPeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
         $field = $this->getByPosition($pos);
 
         return $field;
@@ -603,7 +634,10 @@ abstract class BaseSeo extends BaseObject implements Persistent
                 return $this->getId();
                 break;
             case 1:
-                return $this->getTableRef();
+                return $this->getName();
+                break;
+            case 2:
+                return $this->getSlug();
                 break;
             default:
                 return null;
@@ -628,18 +662,19 @@ abstract class BaseSeo extends BaseObject implements Persistent
      */
     public function toArray($keyType = BasePeer::TYPE_PHPNAME, $includeLazyLoadColumns = true, $alreadyDumpedObjects = array(), $includeForeignObjects = false)
     {
-        if (isset($alreadyDumpedObjects['Seo'][$this->getPrimaryKey()])) {
+        if (isset($alreadyDumpedObjects['PortfolioTagCategory'][$this->getPrimaryKey()])) {
             return '*RECURSION*';
         }
-        $alreadyDumpedObjects['Seo'][$this->getPrimaryKey()] = true;
-        $keys = SeoPeer::getFieldNames($keyType);
+        $alreadyDumpedObjects['PortfolioTagCategory'][$this->getPrimaryKey()] = true;
+        $keys = PortfolioTagCategoryPeer::getFieldNames($keyType);
         $result = array(
             $keys[0] => $this->getId(),
-            $keys[1] => $this->getTableRef(),
+            $keys[1] => $this->getName(),
+            $keys[2] => $this->getSlug(),
         );
         if ($includeForeignObjects) {
-            if (null !== $this->collSeoI18ns) {
-                $result['SeoI18ns'] = $this->collSeoI18ns->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
+            if (null !== $this->collPortfolioTags) {
+                $result['PortfolioTags'] = $this->collPortfolioTags->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
         }
 
@@ -659,7 +694,7 @@ abstract class BaseSeo extends BaseObject implements Persistent
      */
     public function setByName($name, $value, $type = BasePeer::TYPE_PHPNAME)
     {
-        $pos = SeoPeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
+        $pos = PortfolioTagCategoryPeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
 
         $this->setByPosition($pos, $value);
     }
@@ -679,7 +714,10 @@ abstract class BaseSeo extends BaseObject implements Persistent
                 $this->setId($value);
                 break;
             case 1:
-                $this->setTableRef($value);
+                $this->setName($value);
+                break;
+            case 2:
+                $this->setSlug($value);
                 break;
         } // switch()
     }
@@ -703,10 +741,11 @@ abstract class BaseSeo extends BaseObject implements Persistent
      */
     public function fromArray($arr, $keyType = BasePeer::TYPE_PHPNAME)
     {
-        $keys = SeoPeer::getFieldNames($keyType);
+        $keys = PortfolioTagCategoryPeer::getFieldNames($keyType);
 
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
-        if (array_key_exists($keys[1], $arr)) $this->setTableRef($arr[$keys[1]]);
+        if (array_key_exists($keys[1], $arr)) $this->setName($arr[$keys[1]]);
+        if (array_key_exists($keys[2], $arr)) $this->setSlug($arr[$keys[2]]);
     }
 
     /**
@@ -716,10 +755,11 @@ abstract class BaseSeo extends BaseObject implements Persistent
      */
     public function buildCriteria()
     {
-        $criteria = new Criteria(SeoPeer::DATABASE_NAME);
+        $criteria = new Criteria(PortfolioTagCategoryPeer::DATABASE_NAME);
 
-        if ($this->isColumnModified(SeoPeer::ID)) $criteria->add(SeoPeer::ID, $this->id);
-        if ($this->isColumnModified(SeoPeer::TABLE_REF)) $criteria->add(SeoPeer::TABLE_REF, $this->table_ref);
+        if ($this->isColumnModified(PortfolioTagCategoryPeer::ID)) $criteria->add(PortfolioTagCategoryPeer::ID, $this->id);
+        if ($this->isColumnModified(PortfolioTagCategoryPeer::NAME)) $criteria->add(PortfolioTagCategoryPeer::NAME, $this->name);
+        if ($this->isColumnModified(PortfolioTagCategoryPeer::SLUG)) $criteria->add(PortfolioTagCategoryPeer::SLUG, $this->slug);
 
         return $criteria;
     }
@@ -734,8 +774,8 @@ abstract class BaseSeo extends BaseObject implements Persistent
      */
     public function buildPkeyCriteria()
     {
-        $criteria = new Criteria(SeoPeer::DATABASE_NAME);
-        $criteria->add(SeoPeer::ID, $this->id);
+        $criteria = new Criteria(PortfolioTagCategoryPeer::DATABASE_NAME);
+        $criteria->add(PortfolioTagCategoryPeer::ID, $this->id);
 
         return $criteria;
     }
@@ -776,14 +816,15 @@ abstract class BaseSeo extends BaseObject implements Persistent
      * If desired, this method can also make copies of all associated (fkey referrers)
      * objects.
      *
-     * @param object $copyObj An object of Seo (or compatible) type.
+     * @param object $copyObj An object of PortfolioTagCategory (or compatible) type.
      * @param boolean $deepCopy Whether to also copy all rows that refer (by fkey) to the current row.
      * @param boolean $makeNew Whether to reset autoincrement PKs and make the object new.
      * @throws PropelException
      */
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
-        $copyObj->setTableRef($this->getTableRef());
+        $copyObj->setName($this->getName());
+        $copyObj->setSlug($this->getSlug());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -792,9 +833,9 @@ abstract class BaseSeo extends BaseObject implements Persistent
             // store object hash to prevent cycle
             $this->startCopy = true;
 
-            foreach ($this->getSeoI18ns() as $relObj) {
+            foreach ($this->getPortfolioTags() as $relObj) {
                 if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
-                    $copyObj->addSeoI18n($relObj->copy($deepCopy));
+                    $copyObj->addPortfolioTag($relObj->copy($deepCopy));
                 }
             }
 
@@ -817,7 +858,7 @@ abstract class BaseSeo extends BaseObject implements Persistent
      * objects.
      *
      * @param boolean $deepCopy Whether to also copy all rows that refer (by fkey) to the current row.
-     * @return Seo Clone of current object.
+     * @return PortfolioTagCategory Clone of current object.
      * @throws PropelException
      */
     public function copy($deepCopy = false)
@@ -837,12 +878,12 @@ abstract class BaseSeo extends BaseObject implements Persistent
      * same instance for all member of this class. The method could therefore
      * be static, but this would prevent one from overriding the behavior.
      *
-     * @return SeoPeer
+     * @return PortfolioTagCategoryPeer
      */
     public function getPeer()
     {
         if (self::$peer === null) {
-            self::$peer = new SeoPeer();
+            self::$peer = new PortfolioTagCategoryPeer();
         }
 
         return self::$peer;
@@ -859,42 +900,42 @@ abstract class BaseSeo extends BaseObject implements Persistent
      */
     public function initRelation($relationName)
     {
-        if ('SeoI18n' == $relationName) {
-            $this->initSeoI18ns();
+        if ('PortfolioTag' == $relationName) {
+            $this->initPortfolioTags();
         }
     }
 
     /**
-     * Clears out the collSeoI18ns collection
+     * Clears out the collPortfolioTags collection
      *
      * This does not modify the database; however, it will remove any associated objects, causing
      * them to be refetched by subsequent calls to accessor method.
      *
-     * @return Seo The current object (for fluent API support)
-     * @see        addSeoI18ns()
+     * @return PortfolioTagCategory The current object (for fluent API support)
+     * @see        addPortfolioTags()
      */
-    public function clearSeoI18ns()
+    public function clearPortfolioTags()
     {
-        $this->collSeoI18ns = null; // important to set this to null since that means it is uninitialized
-        $this->collSeoI18nsPartial = null;
+        $this->collPortfolioTags = null; // important to set this to null since that means it is uninitialized
+        $this->collPortfolioTagsPartial = null;
 
         return $this;
     }
 
     /**
-     * reset is the collSeoI18ns collection loaded partially
+     * reset is the collPortfolioTags collection loaded partially
      *
      * @return void
      */
-    public function resetPartialSeoI18ns($v = true)
+    public function resetPartialPortfolioTags($v = true)
     {
-        $this->collSeoI18nsPartial = $v;
+        $this->collPortfolioTagsPartial = $v;
     }
 
     /**
-     * Initializes the collSeoI18ns collection.
+     * Initializes the collPortfolioTags collection.
      *
-     * By default this just sets the collSeoI18ns collection to an empty array (like clearcollSeoI18ns());
+     * By default this just sets the collPortfolioTags collection to an empty array (like clearcollPortfolioTags());
      * however, you may wish to override this method in your stub class to provide setting appropriate
      * to your application -- for example, setting the initial array to the values stored in database.
      *
@@ -903,181 +944,177 @@ abstract class BaseSeo extends BaseObject implements Persistent
      *
      * @return void
      */
-    public function initSeoI18ns($overrideExisting = true)
+    public function initPortfolioTags($overrideExisting = true)
     {
-        if (null !== $this->collSeoI18ns && !$overrideExisting) {
+        if (null !== $this->collPortfolioTags && !$overrideExisting) {
             return;
         }
-        $this->collSeoI18ns = new PropelObjectCollection();
-        $this->collSeoI18ns->setModel('SeoI18n');
+        $this->collPortfolioTags = new PropelObjectCollection();
+        $this->collPortfolioTags->setModel('PortfolioTag');
     }
 
     /**
-     * Gets an array of SeoI18n objects which contain a foreign key that references this object.
+     * Gets an array of PortfolioTag objects which contain a foreign key that references this object.
      *
      * If the $criteria is not null, it is used to always fetch the results from the database.
      * Otherwise the results are fetched from the database the first time, then cached.
      * Next time the same method is called without $criteria, the cached collection is returned.
-     * If this Seo is new, it will return
+     * If this PortfolioTagCategory is new, it will return
      * an empty collection or the current collection; the criteria is ignored on a new object.
      *
      * @param Criteria $criteria optional Criteria object to narrow the query
      * @param PropelPDO $con optional connection object
-     * @return PropelObjectCollection|SeoI18n[] List of SeoI18n objects
+     * @return PropelObjectCollection|PortfolioTag[] List of PortfolioTag objects
      * @throws PropelException
      */
-    public function getSeoI18ns($criteria = null, PropelPDO $con = null)
+    public function getPortfolioTags($criteria = null, PropelPDO $con = null)
     {
-        $partial = $this->collSeoI18nsPartial && !$this->isNew();
-        if (null === $this->collSeoI18ns || null !== $criteria  || $partial) {
-            if ($this->isNew() && null === $this->collSeoI18ns) {
+        $partial = $this->collPortfolioTagsPartial && !$this->isNew();
+        if (null === $this->collPortfolioTags || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collPortfolioTags) {
                 // return empty collection
-                $this->initSeoI18ns();
+                $this->initPortfolioTags();
             } else {
-                $collSeoI18ns = SeoI18nQuery::create(null, $criteria)
-                    ->filterBySeo($this)
+                $collPortfolioTags = PortfolioTagQuery::create(null, $criteria)
+                    ->filterByPortfolioTagCategory($this)
                     ->find($con);
                 if (null !== $criteria) {
-                    if (false !== $this->collSeoI18nsPartial && count($collSeoI18ns)) {
-                      $this->initSeoI18ns(false);
+                    if (false !== $this->collPortfolioTagsPartial && count($collPortfolioTags)) {
+                      $this->initPortfolioTags(false);
 
-                      foreach($collSeoI18ns as $obj) {
-                        if (false == $this->collSeoI18ns->contains($obj)) {
-                          $this->collSeoI18ns->append($obj);
+                      foreach($collPortfolioTags as $obj) {
+                        if (false == $this->collPortfolioTags->contains($obj)) {
+                          $this->collPortfolioTags->append($obj);
                         }
                       }
 
-                      $this->collSeoI18nsPartial = true;
+                      $this->collPortfolioTagsPartial = true;
                     }
 
-                    return $collSeoI18ns;
+                    return $collPortfolioTags;
                 }
 
-                if($partial && $this->collSeoI18ns) {
-                    foreach($this->collSeoI18ns as $obj) {
+                if($partial && $this->collPortfolioTags) {
+                    foreach($this->collPortfolioTags as $obj) {
                         if($obj->isNew()) {
-                            $collSeoI18ns[] = $obj;
+                            $collPortfolioTags[] = $obj;
                         }
                     }
                 }
 
-                $this->collSeoI18ns = $collSeoI18ns;
-                $this->collSeoI18nsPartial = false;
+                $this->collPortfolioTags = $collPortfolioTags;
+                $this->collPortfolioTagsPartial = false;
             }
         }
 
-        return $this->collSeoI18ns;
+        return $this->collPortfolioTags;
     }
 
     /**
-     * Sets a collection of SeoI18n objects related by a one-to-many relationship
+     * Sets a collection of PortfolioTag objects related by a one-to-many relationship
      * to the current object.
      * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
      * and new objects from the given Propel collection.
      *
-     * @param PropelCollection $seoI18ns A Propel collection.
+     * @param PropelCollection $portfolioTags A Propel collection.
      * @param PropelPDO $con Optional connection object
-     * @return Seo The current object (for fluent API support)
+     * @return PortfolioTagCategory The current object (for fluent API support)
      */
-    public function setSeoI18ns(PropelCollection $seoI18ns, PropelPDO $con = null)
+    public function setPortfolioTags(PropelCollection $portfolioTags, PropelPDO $con = null)
     {
-        $this->seoI18nsScheduledForDeletion = $this->getSeoI18ns(new Criteria(), $con)->diff($seoI18ns);
+        $this->portfolioTagsScheduledForDeletion = $this->getPortfolioTags(new Criteria(), $con)->diff($portfolioTags);
 
-        foreach ($this->seoI18nsScheduledForDeletion as $seoI18nRemoved) {
-            $seoI18nRemoved->setSeo(null);
+        foreach ($this->portfolioTagsScheduledForDeletion as $portfolioTagRemoved) {
+            $portfolioTagRemoved->setPortfolioTagCategory(null);
         }
 
-        $this->collSeoI18ns = null;
-        foreach ($seoI18ns as $seoI18n) {
-            $this->addSeoI18n($seoI18n);
+        $this->collPortfolioTags = null;
+        foreach ($portfolioTags as $portfolioTag) {
+            $this->addPortfolioTag($portfolioTag);
         }
 
-        $this->collSeoI18ns = $seoI18ns;
-        $this->collSeoI18nsPartial = false;
+        $this->collPortfolioTags = $portfolioTags;
+        $this->collPortfolioTagsPartial = false;
 
         return $this;
     }
 
     /**
-     * Returns the number of related SeoI18n objects.
+     * Returns the number of related PortfolioTag objects.
      *
      * @param Criteria $criteria
      * @param boolean $distinct
      * @param PropelPDO $con
-     * @return int             Count of related SeoI18n objects.
+     * @return int             Count of related PortfolioTag objects.
      * @throws PropelException
      */
-    public function countSeoI18ns(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    public function countPortfolioTags(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
     {
-        $partial = $this->collSeoI18nsPartial && !$this->isNew();
-        if (null === $this->collSeoI18ns || null !== $criteria || $partial) {
-            if ($this->isNew() && null === $this->collSeoI18ns) {
+        $partial = $this->collPortfolioTagsPartial && !$this->isNew();
+        if (null === $this->collPortfolioTags || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collPortfolioTags) {
                 return 0;
             }
 
             if($partial && !$criteria) {
-                return count($this->getSeoI18ns());
+                return count($this->getPortfolioTags());
             }
-            $query = SeoI18nQuery::create(null, $criteria);
+            $query = PortfolioTagQuery::create(null, $criteria);
             if ($distinct) {
                 $query->distinct();
             }
 
             return $query
-                ->filterBySeo($this)
+                ->filterByPortfolioTagCategory($this)
                 ->count($con);
         }
 
-        return count($this->collSeoI18ns);
+        return count($this->collPortfolioTags);
     }
 
     /**
-     * Method called to associate a SeoI18n object to this object
-     * through the SeoI18n foreign key attribute.
+     * Method called to associate a PortfolioTag object to this object
+     * through the PortfolioTag foreign key attribute.
      *
-     * @param    SeoI18n $l SeoI18n
-     * @return Seo The current object (for fluent API support)
+     * @param    PortfolioTag $l PortfolioTag
+     * @return PortfolioTagCategory The current object (for fluent API support)
      */
-    public function addSeoI18n(SeoI18n $l)
+    public function addPortfolioTag(PortfolioTag $l)
     {
-        if ($l && $locale = $l->getLocale()) {
-            $this->setLocale($locale);
-            $this->currentTranslations[$locale] = $l;
+        if ($this->collPortfolioTags === null) {
+            $this->initPortfolioTags();
+            $this->collPortfolioTagsPartial = true;
         }
-        if ($this->collSeoI18ns === null) {
-            $this->initSeoI18ns();
-            $this->collSeoI18nsPartial = true;
-        }
-        if (!in_array($l, $this->collSeoI18ns->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
-            $this->doAddSeoI18n($l);
+        if (!in_array($l, $this->collPortfolioTags->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
+            $this->doAddPortfolioTag($l);
         }
 
         return $this;
     }
 
     /**
-     * @param	SeoI18n $seoI18n The seoI18n object to add.
+     * @param	PortfolioTag $portfolioTag The portfolioTag object to add.
      */
-    protected function doAddSeoI18n($seoI18n)
+    protected function doAddPortfolioTag($portfolioTag)
     {
-        $this->collSeoI18ns[]= $seoI18n;
-        $seoI18n->setSeo($this);
+        $this->collPortfolioTags[]= $portfolioTag;
+        $portfolioTag->setPortfolioTagCategory($this);
     }
 
     /**
-     * @param	SeoI18n $seoI18n The seoI18n object to remove.
-     * @return Seo The current object (for fluent API support)
+     * @param	PortfolioTag $portfolioTag The portfolioTag object to remove.
+     * @return PortfolioTagCategory The current object (for fluent API support)
      */
-    public function removeSeoI18n($seoI18n)
+    public function removePortfolioTag($portfolioTag)
     {
-        if ($this->getSeoI18ns()->contains($seoI18n)) {
-            $this->collSeoI18ns->remove($this->collSeoI18ns->search($seoI18n));
-            if (null === $this->seoI18nsScheduledForDeletion) {
-                $this->seoI18nsScheduledForDeletion = clone $this->collSeoI18ns;
-                $this->seoI18nsScheduledForDeletion->clear();
+        if ($this->getPortfolioTags()->contains($portfolioTag)) {
+            $this->collPortfolioTags->remove($this->collPortfolioTags->search($portfolioTag));
+            if (null === $this->portfolioTagsScheduledForDeletion) {
+                $this->portfolioTagsScheduledForDeletion = clone $this->collPortfolioTags;
+                $this->portfolioTagsScheduledForDeletion->clear();
             }
-            $this->seoI18nsScheduledForDeletion[]= $seoI18n;
-            $seoI18n->setSeo(null);
+            $this->portfolioTagsScheduledForDeletion[]= $portfolioTag;
+            $portfolioTag->setPortfolioTagCategory(null);
         }
 
         return $this;
@@ -1089,7 +1126,8 @@ abstract class BaseSeo extends BaseObject implements Persistent
     public function clear()
     {
         $this->id = null;
-        $this->table_ref = null;
+        $this->name = null;
+        $this->slug = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();
@@ -1110,21 +1148,17 @@ abstract class BaseSeo extends BaseObject implements Persistent
     public function clearAllReferences($deep = false)
     {
         if ($deep) {
-            if ($this->collSeoI18ns) {
-                foreach ($this->collSeoI18ns as $o) {
+            if ($this->collPortfolioTags) {
+                foreach ($this->collPortfolioTags as $o) {
                     $o->clearAllReferences($deep);
                 }
             }
         } // if ($deep)
 
-        // i18n behavior
-        $this->currentLocale = 'fr';
-        $this->currentTranslations = null;
-
-        if ($this->collSeoI18ns instanceof PropelCollection) {
-            $this->collSeoI18ns->clearIterator();
+        if ($this->collPortfolioTags instanceof PropelCollection) {
+            $this->collPortfolioTags->clearIterator();
         }
-        $this->collSeoI18ns = null;
+        $this->collPortfolioTags = null;
     }
 
     /**
@@ -1134,7 +1168,7 @@ abstract class BaseSeo extends BaseObject implements Persistent
      */
     public function __toString()
     {
-        return (string) $this->exportTo(SeoPeer::DEFAULT_STRING_FORMAT);
+        return (string) $this->exportTo(PortfolioTagCategoryPeer::DEFAULT_STRING_FORMAT);
     }
 
     /**
@@ -1145,216 +1179,6 @@ abstract class BaseSeo extends BaseObject implements Persistent
     public function isAlreadyInSave()
     {
         return $this->alreadyInSave;
-    }
-
-    // crudable behavior
-    
-    /**
-     * @param \Symfony\Component\Form\Form $form
-     * @param PropelPDO $con
-     * @return int             The number of rows affected by this insert/update and any referring fk objects' save() operations.
-     * @throws PropelException
-     * @throws Exception
-     * @see        doSave()
-     */
-    public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
-    {
-        return $this->save($con);
-    }
-
-    // i18n behavior
-
-    /**
-     * Sets the locale for translations
-     *
-     * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
-     *
-     * @return    Seo The current object (for fluent API support)
-     */
-    public function setLocale($locale = 'fr')
-    {
-        $this->currentLocale = $locale;
-
-        return $this;
-    }
-
-    /**
-     * Gets the locale for translations
-     *
-     * @return    string $locale Locale to use for the translation, e.g. 'fr_FR'
-     */
-    public function getLocale()
-    {
-        return $this->currentLocale;
-    }
-
-    /**
-     * Returns the current translation for a given locale
-     *
-     * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
-     * @param     PropelPDO $con an optional connection object
-     *
-     * @return SeoI18n */
-    public function getTranslation($locale = 'fr', PropelPDO $con = null)
-    {
-        if (!isset($this->currentTranslations[$locale])) {
-            if (null !== $this->collSeoI18ns) {
-                foreach ($this->collSeoI18ns as $translation) {
-                    if ($translation->getLocale() == $locale) {
-                        $this->currentTranslations[$locale] = $translation;
-
-                        return $translation;
-                    }
-                }
-            }
-            if ($this->isNew()) {
-                $translation = new SeoI18n();
-                $translation->setLocale($locale);
-            } else {
-                $translation = SeoI18nQuery::create()
-                    ->filterByPrimaryKey(array($this->getPrimaryKey(), $locale))
-                    ->findOneOrCreate($con);
-                $this->currentTranslations[$locale] = $translation;
-            }
-            $this->addSeoI18n($translation);
-        }
-
-        return $this->currentTranslations[$locale];
-    }
-
-    /**
-     * Remove the translation for a given locale
-     *
-     * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
-     * @param     PropelPDO $con an optional connection object
-     *
-     * @return    Seo The current object (for fluent API support)
-     */
-    public function removeTranslation($locale = 'fr', PropelPDO $con = null)
-    {
-        if (!$this->isNew()) {
-            SeoI18nQuery::create()
-                ->filterByPrimaryKey(array($this->getPrimaryKey(), $locale))
-                ->delete($con);
-        }
-        if (isset($this->currentTranslations[$locale])) {
-            unset($this->currentTranslations[$locale]);
-        }
-        foreach ($this->collSeoI18ns as $key => $translation) {
-            if ($translation->getLocale() == $locale) {
-                unset($this->collSeoI18ns[$key]);
-                break;
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * Returns the current translation
-     *
-     * @param     PropelPDO $con an optional connection object
-     *
-     * @return SeoI18n */
-    public function getCurrentTranslation(PropelPDO $con = null)
-    {
-        return $this->getTranslation($this->getLocale(), $con);
-    }
-
-
-        /**
-         * Get the [seo_title] column value.
-         *
-         * @return string
-         */
-        public function getSeoTitle()
-        {
-        return $this->getCurrentTranslation()->getSeoTitle();
-    }
-
-
-        /**
-         * Set the value of [seo_title] column.
-         *
-         * @param string $v new value
-         * @return SeoI18n The current object (for fluent API support)
-         */
-        public function setSeoTitle($v)
-        {    $this->getCurrentTranslation()->setSeoTitle($v);
-
-        return $this;
-    }
-
-
-        /**
-         * Get the [seo_description] column value.
-         *
-         * @return string
-         */
-        public function getSeoDescription()
-        {
-        return $this->getCurrentTranslation()->getSeoDescription();
-    }
-
-
-        /**
-         * Set the value of [seo_description] column.
-         *
-         * @param string $v new value
-         * @return SeoI18n The current object (for fluent API support)
-         */
-        public function setSeoDescription($v)
-        {    $this->getCurrentTranslation()->setSeoDescription($v);
-
-        return $this;
-    }
-
-
-        /**
-         * Get the [seo_h1] column value.
-         *
-         * @return string
-         */
-        public function getSeoH1()
-        {
-        return $this->getCurrentTranslation()->getSeoH1();
-    }
-
-
-        /**
-         * Set the value of [seo_h1] column.
-         *
-         * @param string $v new value
-         * @return SeoI18n The current object (for fluent API support)
-         */
-        public function setSeoH1($v)
-        {    $this->getCurrentTranslation()->setSeoH1($v);
-
-        return $this;
-    }
-
-
-        /**
-         * Get the [seo_keywords] column value.
-         *
-         * @return string
-         */
-        public function getSeoKeywords()
-        {
-        return $this->getCurrentTranslation()->getSeoKeywords();
-    }
-
-
-        /**
-         * Set the value of [seo_keywords] column.
-         *
-         * @param string $v new value
-         * @return SeoI18n The current object (for fluent API support)
-         */
-        public function setSeoKeywords($v)
-        {    $this->getCurrentTranslation()->setSeoKeywords($v);
-
-        return $this;
     }
 
 }

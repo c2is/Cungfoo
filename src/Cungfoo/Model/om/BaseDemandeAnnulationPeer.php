@@ -1146,7 +1146,7 @@ abstract class BaseDemandeAnnulationPeer
     }
 
     // crudable behavior
-
+    
     /**
      * The default locale to use for translations
      * @var        string
@@ -1160,7 +1160,7 @@ abstract class BaseDemandeAnnulationPeer
         ;
     }
     // seo behavior
-
+    
     /**
      * The default locale to use for translations
      * @var        string

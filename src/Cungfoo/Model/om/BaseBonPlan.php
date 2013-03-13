@@ -3634,8 +3634,8 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
     }
 
     // active behavior
-
-
+    
+    
     /**
      * return true is the object is active
      *
@@ -3645,7 +3645,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
     {
         return $this->getActive();
     }
-
+    
     /**
      * return true is the object is active locale
      *
@@ -3655,77 +3655,77 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
     {
         return $this->getActiveLocale();
     }
-
+    
     public function getBonPlanCategoriesActive($criteria = null, PropelPDO $con = null)
     {
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-
+    
         $criteria->add(\Cungfoo\Model\BonPlanCategoriePeer::ACTIVE, true);
-
-
+    
+    
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\BonPlanCategorieI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\BonPlanCategoriePeer::ID, \Cungfoo\Model\BonPlanCategorieI18nPeer::alias('i18n_locale', \Cungfoo\Model\BonPlanCategorieI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\BonPlanCategorieI18nPeer::alias('i18n_locale', \Cungfoo\Model\BonPlanCategorieI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\BonPlanCategorieI18nPeer::alias('i18n_locale', \Cungfoo\Model\BonPlanCategorieI18nPeer::LOCALE), $this->currentLocale);
-
+    
         return $this->getBonPlanCategories($criteria, $con);
     }
-
+    
     public function getEtablissementsActive($criteria = null, PropelPDO $con = null)
     {
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-
+    
         $criteria->add(\Cungfoo\Model\EtablissementPeer::ACTIVE, true);
-
-
+    
+    
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\EtablissementI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\EtablissementPeer::ID, \Cungfoo\Model\EtablissementI18nPeer::alias('i18n_locale', \Cungfoo\Model\EtablissementI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\EtablissementI18nPeer::alias('i18n_locale', \Cungfoo\Model\EtablissementI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\EtablissementI18nPeer::alias('i18n_locale', \Cungfoo\Model\EtablissementI18nPeer::LOCALE), $this->currentLocale);
-
+    
         return $this->getEtablissements($criteria, $con);
     }
-
+    
     public function getRegionsActive($criteria = null, PropelPDO $con = null)
     {
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-
+    
         $criteria->add(\Cungfoo\Model\RegionPeer::ACTIVE, true);
-
-
+    
+    
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\RegionI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\RegionPeer::ID, \Cungfoo\Model\RegionI18nPeer::alias('i18n_locale', \Cungfoo\Model\RegionI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\RegionI18nPeer::alias('i18n_locale', \Cungfoo\Model\RegionI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\RegionI18nPeer::alias('i18n_locale', \Cungfoo\Model\RegionI18nPeer::LOCALE), $this->currentLocale);
-
+    
         return $this->getRegions($criteria, $con);
     }
-
+    
     public function getCategoriesActive($criteria = null, PropelPDO $con = null)
     {
-
+    
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-
+    
         $criteria->add(\Cungfoo\Model\CategoriePeer::ACTIVE, true);
-
-
+    
+    
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\CategorieI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\CategoriePeer::ID, \Cungfoo\Model\CategorieI18nPeer::alias('i18n_locale', \Cungfoo\Model\CategorieI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\CategorieI18nPeer::alias('i18n_locale', \Cungfoo\Model\CategorieI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\CategorieI18nPeer::alias('i18n_locale', \Cungfoo\Model\CategorieI18nPeer::LOCALE), $this->currentLocale);
-
+    
         return $this->getCategories($criteria, $con);
     }
     // i18n behavior
@@ -4136,7 +4136,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
     }
 
     // crudable behavior
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -4149,7 +4149,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
     {
         return $this->save($con);
     }
-
+    
     /**
      * @return string
      */
@@ -4157,7 +4157,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
     {
         return 'uploads/bon_plans';
     }
-
+    
     /**
      * @return string
      */
@@ -4165,14 +4165,14 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-
+    
     /**
      * @return void
      */
     public function getImageMenu()
     {
         $peer = self::PEER;
-
+    
         $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
             ->select('id')
             ->usePortfolioUsageQuery()
@@ -4183,19 +4183,19 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
             ->find()
             ->toArray()
         ;
-
+    
         return implode(';', $medias);
     }
-
+    
     /**
      * @return void
      */
     public function setImageMenu($v)
     {
         $peer = self::PEER;
-
+    
         $values = explode(';', $v);
-
+    
         \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
             ->filterByColumnRef('image_menu')
@@ -4204,7 +4204,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
             ->find()
             ->delete()
         ;
-
+    
         if ($v) {
             foreach ($values as $index => $value) {
                 $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
@@ -4214,7 +4214,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
                     ->filterByMediaId($value)
                     ->findOne()
                 ;
-
+    
                 if (!$usage) {
                     $usage = new \Cungfoo\Model\PortfolioUsage();
                     $usage
@@ -4224,23 +4224,23 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
                         ->setMediaId($value)
                     ;
                 }
-
+    
                 $usage
                     ->setSortableRank($index)
                     ->save()
                 ;
             }
-
+    
         }
     }
-
+    
     /**
      * @return void
      */
     public function getImagePage()
     {
         $peer = self::PEER;
-
+    
         $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
             ->select('id')
             ->usePortfolioUsageQuery()
@@ -4251,19 +4251,19 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
             ->find()
             ->toArray()
         ;
-
+    
         return implode(';', $medias);
     }
-
+    
     /**
      * @return void
      */
     public function setImagePage($v)
     {
         $peer = self::PEER;
-
+    
         $values = explode(';', $v);
-
+    
         \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
             ->filterByColumnRef('image_page')
@@ -4272,7 +4272,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
             ->find()
             ->delete()
         ;
-
+    
         if ($v) {
             foreach ($values as $index => $value) {
                 $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
@@ -4282,7 +4282,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
                     ->filterByMediaId($value)
                     ->findOne()
                 ;
-
+    
                 if (!$usage) {
                     $usage = new \Cungfoo\Model\PortfolioUsage();
                     $usage
@@ -4292,23 +4292,23 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
                         ->setMediaId($value)
                     ;
                 }
-
+    
                 $usage
                     ->setSortableRank($index)
                     ->save()
                 ;
             }
-
+    
         }
     }
-
+    
     /**
      * @return void
      */
     public function getImageListe()
     {
         $peer = self::PEER;
-
+    
         $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
             ->select('id')
             ->usePortfolioUsageQuery()
@@ -4319,19 +4319,19 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
             ->find()
             ->toArray()
         ;
-
+    
         return implode(';', $medias);
     }
-
+    
     /**
      * @return void
      */
     public function setImageListe($v)
     {
         $peer = self::PEER;
-
+    
         $values = explode(';', $v);
-
+    
         \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
             ->filterByColumnRef('image_liste')
@@ -4340,7 +4340,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
             ->find()
             ->delete()
         ;
-
+    
         if ($v) {
             foreach ($values as $index => $value) {
                 $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
@@ -4350,7 +4350,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
                     ->filterByMediaId($value)
                     ->findOne()
                 ;
-
+    
                 if (!$usage) {
                     $usage = new \Cungfoo\Model\PortfolioUsage();
                     $usage
@@ -4360,13 +4360,13 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
                         ->setMediaId($value)
                     ;
                 }
-
+    
                 $usage
                     ->setSortableRank($index)
                     ->save()
                 ;
             }
-
+    
         }
     }
 

@@ -31,6 +31,20 @@ class BasePortfolioTagType extends AppAwareType
         );
     }
 
+    public function getPortfolioTagCategoryType()
+    {
+        return 'model';
+    }
+
+    public function getPortfolioTagCategoryOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'portfolio_tag.category_id',
+            'class' => 'Cungfoo\Model\PortfolioTagCategory',
+        );
+    }
+
     public function getCreatedAtType()
     {
         return 'datetime';
@@ -197,6 +211,7 @@ class BasePortfolioTagType extends AppAwareType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('id', $this->getIdType(), $this->getIdOptions());
+        $builder->add('portfolio_tag_category', $this->getPortfolioTagCategoryType(), $this->getPortfolioTagCategoryOptions());
         $builder->add('created_at', $this->getCreatedAtType(), $this->getCreatedAtOptions());
         $builder->add('updated_at', $this->getUpdatedAtType(), $this->getUpdatedAtOptions());
         $builder->add('active', $this->getActiveType(), $this->getActiveOptions());

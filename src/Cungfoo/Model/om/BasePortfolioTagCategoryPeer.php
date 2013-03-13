@@ -9,118 +9,91 @@ use \PDOStatement;
 use \Propel;
 use \PropelException;
 use \PropelPDO;
-use Cungfoo\Model\PortfolioMedia;
-use Cungfoo\Model\PortfolioMediaI18nPeer;
-use Cungfoo\Model\PortfolioMediaPeer;
-use Cungfoo\Model\PortfolioMediaTagPeer;
-use Cungfoo\Model\PortfolioUsagePeer;
-use Cungfoo\Model\map\PortfolioMediaTableMap;
+use Cungfoo\Model\PortfolioTagCategory;
+use Cungfoo\Model\PortfolioTagCategoryPeer;
+use Cungfoo\Model\PortfolioTagPeer;
+use Cungfoo\Model\map\PortfolioTagCategoryTableMap;
 
 /**
- * Base static class for performing query and update operations on the 'portfolio_media' table.
+ * Base static class for performing query and update operations on the 'portfolio_tag_category' table.
  *
  *
  *
  * @package propel.generator.Cungfoo.Model.om
  */
-abstract class BasePortfolioMediaPeer
+abstract class BasePortfolioTagCategoryPeer
 {
 
     /** the default database name for this class */
     const DATABASE_NAME = 'cungfoo';
 
     /** the table name for this class */
-    const TABLE_NAME = 'portfolio_media';
+    const TABLE_NAME = 'portfolio_tag_category';
 
     /** the related Propel class for this table */
-    const OM_CLASS = 'Cungfoo\\Model\\PortfolioMedia';
+    const OM_CLASS = 'Cungfoo\\Model\\PortfolioTagCategory';
 
     /** the related TableMap class for this table */
-    const TM_CLASS = 'PortfolioMediaTableMap';
+    const TM_CLASS = 'PortfolioTagCategoryTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 9;
+    const NUM_COLUMNS = 3;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 9;
+    const NUM_HYDRATE_COLUMNS = 3;
 
     /** the column name for the id field */
-    const ID = 'portfolio_media.id';
+    const ID = 'portfolio_tag_category.id';
 
-    /** the column name for the file field */
-    const FILE = 'portfolio_media.file';
+    /** the column name for the name field */
+    const NAME = 'portfolio_tag_category.name';
 
-    /** the column name for the width field */
-    const WIDTH = 'portfolio_media.width';
-
-    /** the column name for the height field */
-    const HEIGHT = 'portfolio_media.height';
-
-    /** the column name for the size field */
-    const SIZE = 'portfolio_media.size';
-
-    /** the column name for the type field */
-    const TYPE = 'portfolio_media.type';
-
-    /** the column name for the created_at field */
-    const CREATED_AT = 'portfolio_media.created_at';
-
-    /** the column name for the updated_at field */
-    const UPDATED_AT = 'portfolio_media.updated_at';
-
-    /** the column name for the active field */
-    const ACTIVE = 'portfolio_media.active';
+    /** the column name for the slug field */
+    const SLUG = 'portfolio_tag_category.slug';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
 
     /**
-     * An identiy map to hold any loaded instances of PortfolioMedia objects.
+     * An identiy map to hold any loaded instances of PortfolioTagCategory objects.
      * This must be public so that other peer classes can access this when hydrating from JOIN
      * queries.
-     * @var        array PortfolioMedia[]
+     * @var        array PortfolioTagCategory[]
      */
     public static $instances = array();
 
 
-    // i18n behavior
-
-    /**
-     * The default locale to use for translations
-     * @var        string
-     */
-    const DEFAULT_LOCALE = 'fr';
     /**
      * holds an array of fieldnames
      *
      * first dimension keys are the type constants
-     * e.g. PortfolioMediaPeer::$fieldNames[PortfolioMediaPeer::TYPE_PHPNAME][0] = 'Id'
+     * e.g. PortfolioTagCategoryPeer::$fieldNames[PortfolioTagCategoryPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'File', 'Width', 'Height', 'Size', 'Type', 'CreatedAt', 'UpdatedAt', 'Active', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'file', 'width', 'height', 'size', 'type', 'createdAt', 'updatedAt', 'active', ),
-        BasePeer::TYPE_COLNAME => array (PortfolioMediaPeer::ID, PortfolioMediaPeer::FILE, PortfolioMediaPeer::WIDTH, PortfolioMediaPeer::HEIGHT, PortfolioMediaPeer::SIZE, PortfolioMediaPeer::TYPE, PortfolioMediaPeer::CREATED_AT, PortfolioMediaPeer::UPDATED_AT, PortfolioMediaPeer::ACTIVE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'FILE', 'WIDTH', 'HEIGHT', 'SIZE', 'TYPE', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'file', 'width', 'height', 'size', 'type', 'created_at', 'updated_at', 'active', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Name', 'Slug', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'name', 'slug', ),
+        BasePeer::TYPE_COLNAME => array (PortfolioTagCategoryPeer::ID, PortfolioTagCategoryPeer::NAME, PortfolioTagCategoryPeer::SLUG, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'NAME', 'SLUG', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'name', 'slug', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, )
     );
 
     /**
      * holds an array of keys for quick access to the fieldnames array
      *
      * first dimension keys are the type constants
-     * e.g. PortfolioMediaPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
+     * e.g. PortfolioTagCategoryPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'File' => 1, 'Width' => 2, 'Height' => 3, 'Size' => 4, 'Type' => 5, 'CreatedAt' => 6, 'UpdatedAt' => 7, 'Active' => 8, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'file' => 1, 'width' => 2, 'height' => 3, 'size' => 4, 'type' => 5, 'createdAt' => 6, 'updatedAt' => 7, 'active' => 8, ),
-        BasePeer::TYPE_COLNAME => array (PortfolioMediaPeer::ID => 0, PortfolioMediaPeer::FILE => 1, PortfolioMediaPeer::WIDTH => 2, PortfolioMediaPeer::HEIGHT => 3, PortfolioMediaPeer::SIZE => 4, PortfolioMediaPeer::TYPE => 5, PortfolioMediaPeer::CREATED_AT => 6, PortfolioMediaPeer::UPDATED_AT => 7, PortfolioMediaPeer::ACTIVE => 8, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'FILE' => 1, 'WIDTH' => 2, 'HEIGHT' => 3, 'SIZE' => 4, 'TYPE' => 5, 'CREATED_AT' => 6, 'UPDATED_AT' => 7, 'ACTIVE' => 8, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'file' => 1, 'width' => 2, 'height' => 3, 'size' => 4, 'type' => 5, 'created_at' => 6, 'updated_at' => 7, 'active' => 8, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Name' => 1, 'Slug' => 2, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'name' => 1, 'slug' => 2, ),
+        BasePeer::TYPE_COLNAME => array (PortfolioTagCategoryPeer::ID => 0, PortfolioTagCategoryPeer::NAME => 1, PortfolioTagCategoryPeer::SLUG => 2, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'NAME' => 1, 'SLUG' => 2, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'name' => 1, 'slug' => 2, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, )
     );
 
     /**
@@ -135,10 +108,10 @@ abstract class BasePortfolioMediaPeer
      */
     public static function translateFieldName($name, $fromType, $toType)
     {
-        $toNames = PortfolioMediaPeer::getFieldNames($toType);
-        $key = isset(PortfolioMediaPeer::$fieldKeys[$fromType][$name]) ? PortfolioMediaPeer::$fieldKeys[$fromType][$name] : null;
+        $toNames = PortfolioTagCategoryPeer::getFieldNames($toType);
+        $key = isset(PortfolioTagCategoryPeer::$fieldKeys[$fromType][$name]) ? PortfolioTagCategoryPeer::$fieldKeys[$fromType][$name] : null;
         if ($key === null) {
-            throw new PropelException("'$name' could not be found in the field names of type '$fromType'. These are: " . print_r(PortfolioMediaPeer::$fieldKeys[$fromType], true));
+            throw new PropelException("'$name' could not be found in the field names of type '$fromType'. These are: " . print_r(PortfolioTagCategoryPeer::$fieldKeys[$fromType], true));
         }
 
         return $toNames[$key];
@@ -155,11 +128,11 @@ abstract class BasePortfolioMediaPeer
      */
     public static function getFieldNames($type = BasePeer::TYPE_PHPNAME)
     {
-        if (!array_key_exists($type, PortfolioMediaPeer::$fieldNames)) {
+        if (!array_key_exists($type, PortfolioTagCategoryPeer::$fieldNames)) {
             throw new PropelException('Method getFieldNames() expects the parameter $type to be one of the class constants BasePeer::TYPE_PHPNAME, BasePeer::TYPE_STUDLYPHPNAME, BasePeer::TYPE_COLNAME, BasePeer::TYPE_FIELDNAME, BasePeer::TYPE_NUM. ' . $type . ' was given.');
         }
 
-        return PortfolioMediaPeer::$fieldNames[$type];
+        return PortfolioTagCategoryPeer::$fieldNames[$type];
     }
 
     /**
@@ -171,12 +144,12 @@ abstract class BasePortfolioMediaPeer
      *		$c->addJoin(TablePeer::alias("alias1", TablePeer::PRIMARY_KEY_COLUMN), TablePeer::PRIMARY_KEY_COLUMN);
      * </code>
      * @param      string $alias The alias for the current table.
-     * @param      string $column The column name for current table. (i.e. PortfolioMediaPeer::COLUMN_NAME).
+     * @param      string $column The column name for current table. (i.e. PortfolioTagCategoryPeer::COLUMN_NAME).
      * @return string
      */
     public static function alias($alias, $column)
     {
-        return str_replace(PortfolioMediaPeer::TABLE_NAME.'.', $alias.'.', $column);
+        return str_replace(PortfolioTagCategoryPeer::TABLE_NAME.'.', $alias.'.', $column);
     }
 
     /**
@@ -194,25 +167,13 @@ abstract class BasePortfolioMediaPeer
     public static function addSelectColumns(Criteria $criteria, $alias = null)
     {
         if (null === $alias) {
-            $criteria->addSelectColumn(PortfolioMediaPeer::ID);
-            $criteria->addSelectColumn(PortfolioMediaPeer::FILE);
-            $criteria->addSelectColumn(PortfolioMediaPeer::WIDTH);
-            $criteria->addSelectColumn(PortfolioMediaPeer::HEIGHT);
-            $criteria->addSelectColumn(PortfolioMediaPeer::SIZE);
-            $criteria->addSelectColumn(PortfolioMediaPeer::TYPE);
-            $criteria->addSelectColumn(PortfolioMediaPeer::CREATED_AT);
-            $criteria->addSelectColumn(PortfolioMediaPeer::UPDATED_AT);
-            $criteria->addSelectColumn(PortfolioMediaPeer::ACTIVE);
+            $criteria->addSelectColumn(PortfolioTagCategoryPeer::ID);
+            $criteria->addSelectColumn(PortfolioTagCategoryPeer::NAME);
+            $criteria->addSelectColumn(PortfolioTagCategoryPeer::SLUG);
         } else {
             $criteria->addSelectColumn($alias . '.id');
-            $criteria->addSelectColumn($alias . '.file');
-            $criteria->addSelectColumn($alias . '.width');
-            $criteria->addSelectColumn($alias . '.height');
-            $criteria->addSelectColumn($alias . '.size');
-            $criteria->addSelectColumn($alias . '.type');
-            $criteria->addSelectColumn($alias . '.created_at');
-            $criteria->addSelectColumn($alias . '.updated_at');
-            $criteria->addSelectColumn($alias . '.active');
+            $criteria->addSelectColumn($alias . '.name');
+            $criteria->addSelectColumn($alias . '.slug');
         }
     }
 
@@ -232,21 +193,21 @@ abstract class BasePortfolioMediaPeer
         // We need to set the primary table name, since in the case that there are no WHERE columns
         // it will be impossible for the BasePeer::createSelectSql() method to determine which
         // tables go into the FROM clause.
-        $criteria->setPrimaryTableName(PortfolioMediaPeer::TABLE_NAME);
+        $criteria->setPrimaryTableName(PortfolioTagCategoryPeer::TABLE_NAME);
 
         if ($distinct && !in_array(Criteria::DISTINCT, $criteria->getSelectModifiers())) {
             $criteria->setDistinct();
         }
 
         if (!$criteria->hasSelectClause()) {
-            PortfolioMediaPeer::addSelectColumns($criteria);
+            PortfolioTagCategoryPeer::addSelectColumns($criteria);
         }
 
         $criteria->clearOrderByColumns(); // ORDER BY won't ever affect the count
-        $criteria->setDbName(PortfolioMediaPeer::DATABASE_NAME); // Set the correct dbName
+        $criteria->setDbName(PortfolioTagCategoryPeer::DATABASE_NAME); // Set the correct dbName
 
         if ($con === null) {
-            $con = Propel::getConnection(PortfolioMediaPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+            $con = Propel::getConnection(PortfolioTagCategoryPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
         // BasePeer returns a PDOStatement
         $stmt = BasePeer::doCount($criteria, $con);
@@ -265,7 +226,7 @@ abstract class BasePortfolioMediaPeer
      *
      * @param      Criteria $criteria object used to create the SELECT statement.
      * @param      PropelPDO $con
-     * @return                 PortfolioMedia
+     * @return                 PortfolioTagCategory
      * @throws PropelException Any exceptions caught during processing will be
      *		 rethrown wrapped into a PropelException.
      */
@@ -273,7 +234,7 @@ abstract class BasePortfolioMediaPeer
     {
         $critcopy = clone $criteria;
         $critcopy->setLimit(1);
-        $objects = PortfolioMediaPeer::doSelect($critcopy, $con);
+        $objects = PortfolioTagCategoryPeer::doSelect($critcopy, $con);
         if ($objects) {
             return $objects[0];
         }
@@ -291,7 +252,7 @@ abstract class BasePortfolioMediaPeer
      */
     public static function doSelect(Criteria $criteria, PropelPDO $con = null)
     {
-        return PortfolioMediaPeer::populateObjects(PortfolioMediaPeer::doSelectStmt($criteria, $con));
+        return PortfolioTagCategoryPeer::populateObjects(PortfolioTagCategoryPeer::doSelectStmt($criteria, $con));
     }
     /**
      * Prepares the Criteria object and uses the parent doSelect() method to execute a PDOStatement.
@@ -309,16 +270,16 @@ abstract class BasePortfolioMediaPeer
     public static function doSelectStmt(Criteria $criteria, PropelPDO $con = null)
     {
         if ($con === null) {
-            $con = Propel::getConnection(PortfolioMediaPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+            $con = Propel::getConnection(PortfolioTagCategoryPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
 
         if (!$criteria->hasSelectClause()) {
             $criteria = clone $criteria;
-            PortfolioMediaPeer::addSelectColumns($criteria);
+            PortfolioTagCategoryPeer::addSelectColumns($criteria);
         }
 
         // Set the correct dbName
-        $criteria->setDbName(PortfolioMediaPeer::DATABASE_NAME);
+        $criteria->setDbName(PortfolioTagCategoryPeer::DATABASE_NAME);
 
         // BasePeer returns a PDOStatement
         return BasePeer::doSelect($criteria, $con);
@@ -332,7 +293,7 @@ abstract class BasePortfolioMediaPeer
      * to the cache in order to ensure that the same objects are always returned by doSelect*()
      * and retrieveByPK*() calls.
      *
-     * @param      PortfolioMedia $obj A PortfolioMedia object.
+     * @param      PortfolioTagCategory $obj A PortfolioTagCategory object.
      * @param      string $key (optional) key to use for instance map (for performance boost if key was already calculated externally).
      */
     public static function addInstanceToPool($obj, $key = null)
@@ -341,7 +302,7 @@ abstract class BasePortfolioMediaPeer
             if ($key === null) {
                 $key = (string) $obj->getId();
             } // if key === null
-            PortfolioMediaPeer::$instances[$key] = $obj;
+            PortfolioTagCategoryPeer::$instances[$key] = $obj;
         }
     }
 
@@ -353,7 +314,7 @@ abstract class BasePortfolioMediaPeer
      * methods in your stub classes -- you may need to explicitly remove objects
      * from the cache in order to prevent returning objects that no longer exist.
      *
-     * @param      mixed $value A PortfolioMedia object or a primary key value.
+     * @param      mixed $value A PortfolioTagCategory object or a primary key value.
      *
      * @return void
      * @throws PropelException - if the value is invalid.
@@ -361,17 +322,17 @@ abstract class BasePortfolioMediaPeer
     public static function removeInstanceFromPool($value)
     {
         if (Propel::isInstancePoolingEnabled() && $value !== null) {
-            if (is_object($value) && $value instanceof PortfolioMedia) {
+            if (is_object($value) && $value instanceof PortfolioTagCategory) {
                 $key = (string) $value->getId();
             } elseif (is_scalar($value)) {
                 // assume we've been passed a primary key
                 $key = (string) $value;
             } else {
-                $e = new PropelException("Invalid value passed to removeInstanceFromPool().  Expected primary key or PortfolioMedia object; got " . (is_object($value) ? get_class($value) . ' object.' : var_export($value,true)));
+                $e = new PropelException("Invalid value passed to removeInstanceFromPool().  Expected primary key or PortfolioTagCategory object; got " . (is_object($value) ? get_class($value) . ' object.' : var_export($value,true)));
                 throw $e;
             }
 
-            unset(PortfolioMediaPeer::$instances[$key]);
+            unset(PortfolioTagCategoryPeer::$instances[$key]);
         }
     } // removeInstanceFromPool()
 
@@ -382,14 +343,14 @@ abstract class BasePortfolioMediaPeer
      * a multi-column primary key, a serialize()d version of the primary key will be returned.
      *
      * @param      string $key The key (@see getPrimaryKeyHash()) for this instance.
-     * @return   PortfolioMedia Found object or null if 1) no instance exists for specified key or 2) instance pooling has been disabled.
+     * @return   PortfolioTagCategory Found object or null if 1) no instance exists for specified key or 2) instance pooling has been disabled.
      * @see        getPrimaryKeyHash()
      */
     public static function getInstanceFromPool($key)
     {
         if (Propel::isInstancePoolingEnabled()) {
-            if (isset(PortfolioMediaPeer::$instances[$key])) {
-                return PortfolioMediaPeer::$instances[$key];
+            if (isset(PortfolioTagCategoryPeer::$instances[$key])) {
+                return PortfolioTagCategoryPeer::$instances[$key];
             }
         }
 
@@ -403,24 +364,18 @@ abstract class BasePortfolioMediaPeer
      */
     public static function clearInstancePool()
     {
-        PortfolioMediaPeer::$instances = array();
+        PortfolioTagCategoryPeer::$instances = array();
     }
 
     /**
-     * Method to invalidate the instance pool of all tables related to portfolio_media
+     * Method to invalidate the instance pool of all tables related to portfolio_tag_category
      * by a foreign key with ON DELETE CASCADE
      */
     public static function clearRelatedInstancePool()
     {
-        // Invalidate objects in PortfolioMediaTagPeer instance pool,
+        // Invalidate objects in PortfolioTagPeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
-        PortfolioMediaTagPeer::clearInstancePool();
-        // Invalidate objects in PortfolioUsagePeer instance pool,
-        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
-        PortfolioUsagePeer::clearInstancePool();
-        // Invalidate objects in PortfolioMediaI18nPeer instance pool,
-        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
-        PortfolioMediaI18nPeer::clearInstancePool();
+        PortfolioTagPeer::clearInstancePool();
     }
 
     /**
@@ -470,11 +425,11 @@ abstract class BasePortfolioMediaPeer
         $results = array();
 
         // set the class once to avoid overhead in the loop
-        $cls = PortfolioMediaPeer::getOMClass();
+        $cls = PortfolioTagCategoryPeer::getOMClass();
         // populate the object(s)
         while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-            $key = PortfolioMediaPeer::getPrimaryKeyHashFromRow($row, 0);
-            if (null !== ($obj = PortfolioMediaPeer::getInstanceFromPool($key))) {
+            $key = PortfolioTagCategoryPeer::getPrimaryKeyHashFromRow($row, 0);
+            if (null !== ($obj = PortfolioTagCategoryPeer::getInstanceFromPool($key))) {
                 // We no longer rehydrate the object, since this can cause data loss.
                 // See http://www.propelorm.org/ticket/509
                 // $obj->hydrate($row, 0, true); // rehydrate
@@ -483,7 +438,7 @@ abstract class BasePortfolioMediaPeer
                 $obj = new $cls();
                 $obj->hydrate($row);
                 $results[] = $obj;
-                PortfolioMediaPeer::addInstanceToPool($obj, $key);
+                PortfolioTagCategoryPeer::addInstanceToPool($obj, $key);
             } // if key exists
         }
         $stmt->closeCursor();
@@ -497,21 +452,21 @@ abstract class BasePortfolioMediaPeer
      * @param      int $startcol The 0-based offset for reading from the resultset row.
      * @throws PropelException Any exceptions caught during processing will be
      *		 rethrown wrapped into a PropelException.
-     * @return array (PortfolioMedia object, last column rank)
+     * @return array (PortfolioTagCategory object, last column rank)
      */
     public static function populateObject($row, $startcol = 0)
     {
-        $key = PortfolioMediaPeer::getPrimaryKeyHashFromRow($row, $startcol);
-        if (null !== ($obj = PortfolioMediaPeer::getInstanceFromPool($key))) {
+        $key = PortfolioTagCategoryPeer::getPrimaryKeyHashFromRow($row, $startcol);
+        if (null !== ($obj = PortfolioTagCategoryPeer::getInstanceFromPool($key))) {
             // We no longer rehydrate the object, since this can cause data loss.
             // See http://www.propelorm.org/ticket/509
             // $obj->hydrate($row, $startcol, true); // rehydrate
-            $col = $startcol + PortfolioMediaPeer::NUM_HYDRATE_COLUMNS;
+            $col = $startcol + PortfolioTagCategoryPeer::NUM_HYDRATE_COLUMNS;
         } else {
-            $cls = PortfolioMediaPeer::OM_CLASS;
+            $cls = PortfolioTagCategoryPeer::OM_CLASS;
             $obj = new $cls();
             $col = $obj->hydrate($row, $startcol);
-            PortfolioMediaPeer::addInstanceToPool($obj, $key);
+            PortfolioTagCategoryPeer::addInstanceToPool($obj, $key);
         }
 
         return array($obj, $col);
@@ -526,7 +481,7 @@ abstract class BasePortfolioMediaPeer
      */
     public static function getTableMap()
     {
-        return Propel::getDatabaseMap(PortfolioMediaPeer::DATABASE_NAME)->getTable(PortfolioMediaPeer::TABLE_NAME);
+        return Propel::getDatabaseMap(PortfolioTagCategoryPeer::DATABASE_NAME)->getTable(PortfolioTagCategoryPeer::TABLE_NAME);
     }
 
     /**
@@ -534,9 +489,9 @@ abstract class BasePortfolioMediaPeer
      */
     public static function buildTableMap()
     {
-      $dbMap = Propel::getDatabaseMap(BasePortfolioMediaPeer::DATABASE_NAME);
-      if (!$dbMap->hasTable(BasePortfolioMediaPeer::TABLE_NAME)) {
-        $dbMap->addTableObject(new PortfolioMediaTableMap());
+      $dbMap = Propel::getDatabaseMap(BasePortfolioTagCategoryPeer::DATABASE_NAME);
+      if (!$dbMap->hasTable(BasePortfolioTagCategoryPeer::TABLE_NAME)) {
+        $dbMap->addTableObject(new PortfolioTagCategoryTableMap());
       }
     }
 
@@ -548,13 +503,13 @@ abstract class BasePortfolioMediaPeer
      */
     public static function getOMClass()
     {
-        return PortfolioMediaPeer::OM_CLASS;
+        return PortfolioTagCategoryPeer::OM_CLASS;
     }
 
     /**
-     * Performs an INSERT on the database, given a PortfolioMedia or Criteria object.
+     * Performs an INSERT on the database, given a PortfolioTagCategory or Criteria object.
      *
-     * @param      mixed $values Criteria or PortfolioMedia object containing data that is used to create the INSERT statement.
+     * @param      mixed $values Criteria or PortfolioTagCategory object containing data that is used to create the INSERT statement.
      * @param      PropelPDO $con the PropelPDO connection to use
      * @return mixed           The new primary key.
      * @throws PropelException Any exceptions caught during processing will be
@@ -563,22 +518,22 @@ abstract class BasePortfolioMediaPeer
     public static function doInsert($values, PropelPDO $con = null)
     {
         if ($con === null) {
-            $con = Propel::getConnection(PortfolioMediaPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+            $con = Propel::getConnection(PortfolioTagCategoryPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
 
         if ($values instanceof Criteria) {
             $criteria = clone $values; // rename for clarity
         } else {
-            $criteria = $values->buildCriteria(); // build Criteria from PortfolioMedia object
+            $criteria = $values->buildCriteria(); // build Criteria from PortfolioTagCategory object
         }
 
-        if ($criteria->containsKey(PortfolioMediaPeer::ID) && $criteria->keyContainsValue(PortfolioMediaPeer::ID) ) {
-            throw new PropelException('Cannot insert a value for auto-increment primary key ('.PortfolioMediaPeer::ID.')');
+        if ($criteria->containsKey(PortfolioTagCategoryPeer::ID) && $criteria->keyContainsValue(PortfolioTagCategoryPeer::ID) ) {
+            throw new PropelException('Cannot insert a value for auto-increment primary key ('.PortfolioTagCategoryPeer::ID.')');
         }
 
 
         // Set the correct dbName
-        $criteria->setDbName(PortfolioMediaPeer::DATABASE_NAME);
+        $criteria->setDbName(PortfolioTagCategoryPeer::DATABASE_NAME);
 
         try {
             // use transaction because $criteria could contain info
@@ -595,9 +550,9 @@ abstract class BasePortfolioMediaPeer
     }
 
     /**
-     * Performs an UPDATE on the database, given a PortfolioMedia or Criteria object.
+     * Performs an UPDATE on the database, given a PortfolioTagCategory or Criteria object.
      *
-     * @param      mixed $values Criteria or PortfolioMedia object containing data that is used to create the UPDATE statement.
+     * @param      mixed $values Criteria or PortfolioTagCategory object containing data that is used to create the UPDATE statement.
      * @param      PropelPDO $con The connection to use (specify PropelPDO connection object to exert more control over transactions).
      * @return int             The number of affected rows (if supported by underlying database driver).
      * @throws PropelException Any exceptions caught during processing will be
@@ -606,35 +561,35 @@ abstract class BasePortfolioMediaPeer
     public static function doUpdate($values, PropelPDO $con = null)
     {
         if ($con === null) {
-            $con = Propel::getConnection(PortfolioMediaPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+            $con = Propel::getConnection(PortfolioTagCategoryPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
 
-        $selectCriteria = new Criteria(PortfolioMediaPeer::DATABASE_NAME);
+        $selectCriteria = new Criteria(PortfolioTagCategoryPeer::DATABASE_NAME);
 
         if ($values instanceof Criteria) {
             $criteria = clone $values; // rename for clarity
 
-            $comparison = $criteria->getComparison(PortfolioMediaPeer::ID);
-            $value = $criteria->remove(PortfolioMediaPeer::ID);
+            $comparison = $criteria->getComparison(PortfolioTagCategoryPeer::ID);
+            $value = $criteria->remove(PortfolioTagCategoryPeer::ID);
             if ($value) {
-                $selectCriteria->add(PortfolioMediaPeer::ID, $value, $comparison);
+                $selectCriteria->add(PortfolioTagCategoryPeer::ID, $value, $comparison);
             } else {
-                $selectCriteria->setPrimaryTableName(PortfolioMediaPeer::TABLE_NAME);
+                $selectCriteria->setPrimaryTableName(PortfolioTagCategoryPeer::TABLE_NAME);
             }
 
-        } else { // $values is PortfolioMedia object
+        } else { // $values is PortfolioTagCategory object
             $criteria = $values->buildCriteria(); // gets full criteria
             $selectCriteria = $values->buildPkeyCriteria(); // gets criteria w/ primary key(s)
         }
 
         // set the correct dbName
-        $criteria->setDbName(PortfolioMediaPeer::DATABASE_NAME);
+        $criteria->setDbName(PortfolioTagCategoryPeer::DATABASE_NAME);
 
         return BasePeer::doUpdate($selectCriteria, $criteria, $con);
     }
 
     /**
-     * Deletes all rows from the portfolio_media table.
+     * Deletes all rows from the portfolio_tag_category table.
      *
      * @param      PropelPDO $con the connection to use
      * @return int             The number of affected rows (if supported by underlying database driver).
@@ -643,19 +598,19 @@ abstract class BasePortfolioMediaPeer
     public static function doDeleteAll(PropelPDO $con = null)
     {
         if ($con === null) {
-            $con = Propel::getConnection(PortfolioMediaPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+            $con = Propel::getConnection(PortfolioTagCategoryPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
         $affectedRows = 0; // initialize var to track total num of affected rows
         try {
             // use transaction because $criteria could contain info
             // for more than one table or we could emulating ON DELETE CASCADE, etc.
             $con->beginTransaction();
-            $affectedRows += BasePeer::doDeleteAll(PortfolioMediaPeer::TABLE_NAME, $con, PortfolioMediaPeer::DATABASE_NAME);
+            $affectedRows += BasePeer::doDeleteAll(PortfolioTagCategoryPeer::TABLE_NAME, $con, PortfolioTagCategoryPeer::DATABASE_NAME);
             // Because this db requires some delete cascade/set null emulation, we have to
             // clear the cached instance *after* the emulation has happened (since
             // instances get re-added by the select statement contained therein).
-            PortfolioMediaPeer::clearInstancePool();
-            PortfolioMediaPeer::clearRelatedInstancePool();
+            PortfolioTagCategoryPeer::clearInstancePool();
+            PortfolioTagCategoryPeer::clearRelatedInstancePool();
             $con->commit();
 
             return $affectedRows;
@@ -666,9 +621,9 @@ abstract class BasePortfolioMediaPeer
     }
 
     /**
-     * Performs a DELETE on the database, given a PortfolioMedia or Criteria object OR a primary key value.
+     * Performs a DELETE on the database, given a PortfolioTagCategory or Criteria object OR a primary key value.
      *
-     * @param      mixed $values Criteria or PortfolioMedia object or primary key or array of primary keys
+     * @param      mixed $values Criteria or PortfolioTagCategory object or primary key or array of primary keys
      *              which is used to create the DELETE statement
      * @param      PropelPDO $con the connection to use
      * @return int The number of affected rows (if supported by underlying database driver).  This includes CASCADE-related rows
@@ -679,32 +634,32 @@ abstract class BasePortfolioMediaPeer
      public static function doDelete($values, PropelPDO $con = null)
      {
         if ($con === null) {
-            $con = Propel::getConnection(PortfolioMediaPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+            $con = Propel::getConnection(PortfolioTagCategoryPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
 
         if ($values instanceof Criteria) {
             // invalidate the cache for all objects of this type, since we have no
             // way of knowing (without running a query) what objects should be invalidated
             // from the cache based on this Criteria.
-            PortfolioMediaPeer::clearInstancePool();
+            PortfolioTagCategoryPeer::clearInstancePool();
             // rename for clarity
             $criteria = clone $values;
-        } elseif ($values instanceof PortfolioMedia) { // it's a model object
+        } elseif ($values instanceof PortfolioTagCategory) { // it's a model object
             // invalidate the cache for this single object
-            PortfolioMediaPeer::removeInstanceFromPool($values);
+            PortfolioTagCategoryPeer::removeInstanceFromPool($values);
             // create criteria based on pk values
             $criteria = $values->buildPkeyCriteria();
         } else { // it's a primary key, or an array of pks
-            $criteria = new Criteria(PortfolioMediaPeer::DATABASE_NAME);
-            $criteria->add(PortfolioMediaPeer::ID, (array) $values, Criteria::IN);
+            $criteria = new Criteria(PortfolioTagCategoryPeer::DATABASE_NAME);
+            $criteria->add(PortfolioTagCategoryPeer::ID, (array) $values, Criteria::IN);
             // invalidate the cache for this object(s)
             foreach ((array) $values as $singleval) {
-                PortfolioMediaPeer::removeInstanceFromPool($singleval);
+                PortfolioTagCategoryPeer::removeInstanceFromPool($singleval);
             }
         }
 
         // Set the correct dbName
-        $criteria->setDbName(PortfolioMediaPeer::DATABASE_NAME);
+        $criteria->setDbName(PortfolioTagCategoryPeer::DATABASE_NAME);
 
         $affectedRows = 0; // initialize var to track total num of affected rows
 
@@ -714,7 +669,7 @@ abstract class BasePortfolioMediaPeer
             $con->beginTransaction();
 
             $affectedRows += BasePeer::doDelete($criteria, $con);
-            PortfolioMediaPeer::clearRelatedInstancePool();
+            PortfolioTagCategoryPeer::clearRelatedInstancePool();
             $con->commit();
 
             return $affectedRows;
@@ -725,13 +680,13 @@ abstract class BasePortfolioMediaPeer
     }
 
     /**
-     * Validates all modified columns of given PortfolioMedia object.
+     * Validates all modified columns of given PortfolioTagCategory object.
      * If parameter $columns is either a single column name or an array of column names
      * than only those columns are validated.
      *
      * NOTICE: This does not apply to primary or foreign keys for now.
      *
-     * @param      PortfolioMedia $obj The object to validate.
+     * @param      PortfolioTagCategory $obj The object to validate.
      * @param      mixed $cols Column name or array of column names.
      *
      * @return mixed TRUE if all columns are valid or the error message of the first invalid column.
@@ -741,8 +696,8 @@ abstract class BasePortfolioMediaPeer
         $columns = array();
 
         if ($cols) {
-            $dbMap = Propel::getDatabaseMap(PortfolioMediaPeer::DATABASE_NAME);
-            $tableMap = $dbMap->getTable(PortfolioMediaPeer::TABLE_NAME);
+            $dbMap = Propel::getDatabaseMap(PortfolioTagCategoryPeer::DATABASE_NAME);
+            $tableMap = $dbMap->getTable(PortfolioTagCategoryPeer::TABLE_NAME);
 
             if (! is_array($cols)) {
                 $cols = array($cols);
@@ -758,7 +713,7 @@ abstract class BasePortfolioMediaPeer
 
         }
 
-        return BasePeer::doValidate(PortfolioMediaPeer::DATABASE_NAME, PortfolioMediaPeer::TABLE_NAME, $columns);
+        return BasePeer::doValidate(PortfolioTagCategoryPeer::DATABASE_NAME, PortfolioTagCategoryPeer::TABLE_NAME, $columns);
     }
 
     /**
@@ -766,23 +721,23 @@ abstract class BasePortfolioMediaPeer
      *
      * @param      int $pk the primary key.
      * @param      PropelPDO $con the connection to use
-     * @return PortfolioMedia
+     * @return PortfolioTagCategory
      */
     public static function retrieveByPK($pk, PropelPDO $con = null)
     {
 
-        if (null !== ($obj = PortfolioMediaPeer::getInstanceFromPool((string) $pk))) {
+        if (null !== ($obj = PortfolioTagCategoryPeer::getInstanceFromPool((string) $pk))) {
             return $obj;
         }
 
         if ($con === null) {
-            $con = Propel::getConnection(PortfolioMediaPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+            $con = Propel::getConnection(PortfolioTagCategoryPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
 
-        $criteria = new Criteria(PortfolioMediaPeer::DATABASE_NAME);
-        $criteria->add(PortfolioMediaPeer::ID, $pk);
+        $criteria = new Criteria(PortfolioTagCategoryPeer::DATABASE_NAME);
+        $criteria->add(PortfolioTagCategoryPeer::ID, $pk);
 
-        $v = PortfolioMediaPeer::doSelect($criteria, $con);
+        $v = PortfolioTagCategoryPeer::doSelect($criteria, $con);
 
         return !empty($v) > 0 ? $v[0] : null;
     }
@@ -792,59 +747,31 @@ abstract class BasePortfolioMediaPeer
      *
      * @param      array $pks List of primary keys
      * @param      PropelPDO $con the connection to use
-     * @return PortfolioMedia[]
+     * @return PortfolioTagCategory[]
      * @throws PropelException Any exceptions caught during processing will be
      *		 rethrown wrapped into a PropelException.
      */
     public static function retrieveByPKs($pks, PropelPDO $con = null)
     {
         if ($con === null) {
-            $con = Propel::getConnection(PortfolioMediaPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+            $con = Propel::getConnection(PortfolioTagCategoryPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
 
         $objs = null;
         if (empty($pks)) {
             $objs = array();
         } else {
-            $criteria = new Criteria(PortfolioMediaPeer::DATABASE_NAME);
-            $criteria->add(PortfolioMediaPeer::ID, $pks, Criteria::IN);
-            $objs = PortfolioMediaPeer::doSelect($criteria, $con);
+            $criteria = new Criteria(PortfolioTagCategoryPeer::DATABASE_NAME);
+            $criteria->add(PortfolioTagCategoryPeer::ID, $pks, Criteria::IN);
+            $objs = PortfolioTagCategoryPeer::doSelect($criteria, $con);
         }
 
         return $objs;
     }
 
-    // crudable behavior
-    
-    /**
-     * The default locale to use for translations
-     * @var        string
-     */
-    public static function getMetadata($locale = 'fr', PropelPDO $con = null)
-    {
-        return \Cungfoo\Model\MetadataQuery::create()
-            ->joinWithI18n($locale)
-            ->filterByTableRef(PortfolioMediaPeer::TABLE_NAME)
-            ->findOne()
-        ;
-    }
-    // seo behavior
-    
-    /**
-     * The default locale to use for translations
-     * @var        string
-     */
-    public static function getSeo($locale = 'fr', PropelPDO $con = null)
-    {
-        return \Cungfoo\Model\SeoQuery::create()
-            ->joinWithI18n($locale)
-            ->filterByTableRef(PortfolioMediaPeer::TABLE_NAME)
-            ->findOne()
-        ;
-    }
-} // BasePortfolioMediaPeer
+} // BasePortfolioTagCategoryPeer
 
 // This is the static code needed to register the TableMap for this table with the main Propel class.
 //
-BasePortfolioMediaPeer::buildTableMap();
+BasePortfolioTagCategoryPeer::buildTableMap();
 

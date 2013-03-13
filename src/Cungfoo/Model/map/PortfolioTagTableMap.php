@@ -43,6 +43,7 @@ class PortfolioTagTableMap extends TableMap
         $this->setUseIdGenerator(true);
         // columns
         $this->addPrimaryKey('id', 'Id', 'INTEGER', true, null, null);
+        $this->addForeignKey('category_id', 'CategoryId', 'INTEGER', 'portfolio_tag_category', 'id', false, null, null);
         $this->addColumn('created_at', 'CreatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('updated_at', 'UpdatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('active', 'Active', 'BOOLEAN', false, 1, false);
@@ -54,6 +55,7 @@ class PortfolioTagTableMap extends TableMap
      */
     public function buildRelations()
     {
+        $this->addRelation('PortfolioTagCategory', 'Cungfoo\\Model\\PortfolioTagCategory', RelationMap::MANY_TO_ONE, array('category_id' => 'id', ), 'SET NULL', null);
         $this->addRelation('PortfolioMediaTag', 'Cungfoo\\Model\\PortfolioMediaTag', RelationMap::ONE_TO_MANY, array('id' => 'tag_id', ), 'CASCADE', null, 'PortfolioMediaTags');
         $this->addRelation('PortfolioTagI18n', 'Cungfoo\\Model\\PortfolioTagI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'PortfolioTagI18ns');
         $this->addRelation('PortfolioMedia', 'Cungfoo\\Model\\PortfolioMedia', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'PortfolioMedias');
