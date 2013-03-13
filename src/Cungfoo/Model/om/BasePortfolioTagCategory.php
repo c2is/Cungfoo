@@ -14,6 +14,8 @@ use \PropelObjectCollection;
 use \PropelPDO;
 use Cungfoo\Model\PortfolioTag;
 use Cungfoo\Model\PortfolioTagCategory;
+use Cungfoo\Model\PortfolioTagCategoryI18n;
+use Cungfoo\Model\PortfolioTagCategoryI18nQuery;
 use Cungfoo\Model\PortfolioTagCategoryPeer;
 use Cungfoo\Model\PortfolioTagCategoryQuery;
 use Cungfoo\Model\PortfolioTagQuery;
@@ -66,10 +68,23 @@ abstract class BasePortfolioTagCategory extends BaseObject implements Persistent
     protected $slug;
 
     /**
+     * The value for the active field.
+     * Note: this column has a database default value of: false
+     * @var        boolean
+     */
+    protected $active;
+
+    /**
      * @var        PropelObjectCollection|PortfolioTag[] Collection to store aggregation of PortfolioTag objects.
      */
     protected $collPortfolioTags;
     protected $collPortfolioTagsPartial;
+
+    /**
+     * @var        PropelObjectCollection|PortfolioTagCategoryI18n[] Collection to store aggregation of PortfolioTagCategoryI18n objects.
+     */
+    protected $collPortfolioTagCategoryI18ns;
+    protected $collPortfolioTagCategoryI18nsPartial;
 
     /**
      * Flag to prevent endless save loop, if this object is referenced
@@ -85,11 +100,52 @@ abstract class BasePortfolioTagCategory extends BaseObject implements Persistent
      */
     protected $alreadyInValidation = false;
 
+    // i18n behavior
+
+    /**
+     * Current locale
+     * @var        string
+     */
+    protected $currentLocale = 'fr';
+
+    /**
+     * Current translation objects
+     * @var        array[PortfolioTagCategoryI18n]
+     */
+    protected $currentTranslations;
+
     /**
      * An array of objects scheduled for deletion.
      * @var		PropelObjectCollection
      */
     protected $portfolioTagsScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
+    protected $portfolioTagCategoryI18nsScheduledForDeletion = null;
+
+    /**
+     * Applies default values to this object.
+     * This method should be called from the object's constructor (or
+     * equivalent initialization method).
+     * @see        __construct()
+     */
+    public function applyDefaultValues()
+    {
+        $this->active = false;
+    }
+
+    /**
+     * Initializes internal state of BasePortfolioTagCategory object.
+     * @see        applyDefaults()
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->applyDefaultValues();
+    }
 
     /**
      * Get the [id] column value.
@@ -119,6 +175,16 @@ abstract class BasePortfolioTagCategory extends BaseObject implements Persistent
     public function getSlug()
     {
         return $this->slug;
+    }
+
+    /**
+     * Get the [active] column value.
+     *
+     * @return boolean
+     */
+    public function getActive()
+    {
+        return $this->active;
     }
 
     /**
@@ -185,6 +251,35 @@ abstract class BasePortfolioTagCategory extends BaseObject implements Persistent
     } // setSlug()
 
     /**
+     * Sets the value of the [active] column.
+     * Non-boolean arguments are converted using the following rules:
+     *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     *
+     * @param boolean|integer|string $v The new value
+     * @return PortfolioTagCategory The current object (for fluent API support)
+     */
+    public function setActive($v)
+    {
+        if ($v !== null) {
+            if (is_string($v)) {
+                $v = in_array(strtolower($v), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+            } else {
+                $v = (boolean) $v;
+            }
+        }
+
+        if ($this->active !== $v) {
+            $this->active = $v;
+            $this->modifiedColumns[] = PortfolioTagCategoryPeer::ACTIVE;
+        }
+
+
+        return $this;
+    } // setActive()
+
+    /**
      * Indicates whether the columns in this object are only set to default values.
      *
      * This method can be used in conjunction with isModified() to indicate whether an object is both
@@ -194,6 +289,10 @@ abstract class BasePortfolioTagCategory extends BaseObject implements Persistent
      */
     public function hasOnlyDefaultValues()
     {
+            if ($this->active !== false) {
+                return false;
+            }
+
         // otherwise, everything was equal, so return true
         return true;
     } // hasOnlyDefaultValues()
@@ -219,6 +318,7 @@ abstract class BasePortfolioTagCategory extends BaseObject implements Persistent
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
             $this->name = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
             $this->slug = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
+            $this->active = ($row[$startcol + 3] !== null) ? (boolean) $row[$startcol + 3] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -227,7 +327,7 @@ abstract class BasePortfolioTagCategory extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 3; // 3 = PortfolioTagCategoryPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 4; // 4 = PortfolioTagCategoryPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating PortfolioTagCategory object", $e);
@@ -290,6 +390,8 @@ abstract class BasePortfolioTagCategory extends BaseObject implements Persistent
         if ($deep) {  // also de-associate any related objects?
 
             $this->collPortfolioTags = null;
+
+            $this->collPortfolioTagCategoryI18ns = null;
 
         } // if (deep)
     }
@@ -433,6 +535,23 @@ abstract class BasePortfolioTagCategory extends BaseObject implements Persistent
                 }
             }
 
+            if ($this->portfolioTagCategoryI18nsScheduledForDeletion !== null) {
+                if (!$this->portfolioTagCategoryI18nsScheduledForDeletion->isEmpty()) {
+                    PortfolioTagCategoryI18nQuery::create()
+                        ->filterByPrimaryKeys($this->portfolioTagCategoryI18nsScheduledForDeletion->getPrimaryKeys(false))
+                        ->delete($con);
+                    $this->portfolioTagCategoryI18nsScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collPortfolioTagCategoryI18ns !== null) {
+                foreach ($this->collPortfolioTagCategoryI18ns as $referrerFK) {
+                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
+                        $affectedRows += $referrerFK->save($con);
+                    }
+                }
+            }
+
             $this->alreadyInSave = false;
 
         }
@@ -468,6 +587,9 @@ abstract class BasePortfolioTagCategory extends BaseObject implements Persistent
         if ($this->isColumnModified(PortfolioTagCategoryPeer::SLUG)) {
             $modifiedColumns[':p' . $index++]  = '`slug`';
         }
+        if ($this->isColumnModified(PortfolioTagCategoryPeer::ACTIVE)) {
+            $modifiedColumns[':p' . $index++]  = '`active`';
+        }
 
         $sql = sprintf(
             'INSERT INTO `portfolio_tag_category` (%s) VALUES (%s)',
@@ -487,6 +609,9 @@ abstract class BasePortfolioTagCategory extends BaseObject implements Persistent
                         break;
                     case '`slug`':
                         $stmt->bindValue($identifier, $this->slug, PDO::PARAM_STR);
+                        break;
+                    case '`active`':
+                        $stmt->bindValue($identifier, (int) $this->active, PDO::PARAM_INT);
                         break;
                 }
             }
@@ -595,6 +720,14 @@ abstract class BasePortfolioTagCategory extends BaseObject implements Persistent
                     }
                 }
 
+                if ($this->collPortfolioTagCategoryI18ns !== null) {
+                    foreach ($this->collPortfolioTagCategoryI18ns as $referrerFK) {
+                        if (!$referrerFK->validate($columns)) {
+                            $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
+                        }
+                    }
+                }
+
 
             $this->alreadyInValidation = false;
         }
@@ -639,6 +772,9 @@ abstract class BasePortfolioTagCategory extends BaseObject implements Persistent
             case 2:
                 return $this->getSlug();
                 break;
+            case 3:
+                return $this->getActive();
+                break;
             default:
                 return null;
                 break;
@@ -671,10 +807,14 @@ abstract class BasePortfolioTagCategory extends BaseObject implements Persistent
             $keys[0] => $this->getId(),
             $keys[1] => $this->getName(),
             $keys[2] => $this->getSlug(),
+            $keys[3] => $this->getActive(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->collPortfolioTags) {
                 $result['PortfolioTags'] = $this->collPortfolioTags->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
+            }
+            if (null !== $this->collPortfolioTagCategoryI18ns) {
+                $result['PortfolioTagCategoryI18ns'] = $this->collPortfolioTagCategoryI18ns->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
         }
 
@@ -719,6 +859,9 @@ abstract class BasePortfolioTagCategory extends BaseObject implements Persistent
             case 2:
                 $this->setSlug($value);
                 break;
+            case 3:
+                $this->setActive($value);
+                break;
         } // switch()
     }
 
@@ -746,6 +889,7 @@ abstract class BasePortfolioTagCategory extends BaseObject implements Persistent
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
         if (array_key_exists($keys[1], $arr)) $this->setName($arr[$keys[1]]);
         if (array_key_exists($keys[2], $arr)) $this->setSlug($arr[$keys[2]]);
+        if (array_key_exists($keys[3], $arr)) $this->setActive($arr[$keys[3]]);
     }
 
     /**
@@ -760,6 +904,7 @@ abstract class BasePortfolioTagCategory extends BaseObject implements Persistent
         if ($this->isColumnModified(PortfolioTagCategoryPeer::ID)) $criteria->add(PortfolioTagCategoryPeer::ID, $this->id);
         if ($this->isColumnModified(PortfolioTagCategoryPeer::NAME)) $criteria->add(PortfolioTagCategoryPeer::NAME, $this->name);
         if ($this->isColumnModified(PortfolioTagCategoryPeer::SLUG)) $criteria->add(PortfolioTagCategoryPeer::SLUG, $this->slug);
+        if ($this->isColumnModified(PortfolioTagCategoryPeer::ACTIVE)) $criteria->add(PortfolioTagCategoryPeer::ACTIVE, $this->active);
 
         return $criteria;
     }
@@ -825,6 +970,7 @@ abstract class BasePortfolioTagCategory extends BaseObject implements Persistent
     {
         $copyObj->setName($this->getName());
         $copyObj->setSlug($this->getSlug());
+        $copyObj->setActive($this->getActive());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -836,6 +982,12 @@ abstract class BasePortfolioTagCategory extends BaseObject implements Persistent
             foreach ($this->getPortfolioTags() as $relObj) {
                 if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
                     $copyObj->addPortfolioTag($relObj->copy($deepCopy));
+                }
+            }
+
+            foreach ($this->getPortfolioTagCategoryI18ns() as $relObj) {
+                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
+                    $copyObj->addPortfolioTagCategoryI18n($relObj->copy($deepCopy));
                 }
             }
 
@@ -902,6 +1054,9 @@ abstract class BasePortfolioTagCategory extends BaseObject implements Persistent
     {
         if ('PortfolioTag' == $relationName) {
             $this->initPortfolioTags();
+        }
+        if ('PortfolioTagCategoryI18n' == $relationName) {
+            $this->initPortfolioTagCategoryI18ns();
         }
     }
 
@@ -1121,6 +1276,225 @@ abstract class BasePortfolioTagCategory extends BaseObject implements Persistent
     }
 
     /**
+     * Clears out the collPortfolioTagCategoryI18ns collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return PortfolioTagCategory The current object (for fluent API support)
+     * @see        addPortfolioTagCategoryI18ns()
+     */
+    public function clearPortfolioTagCategoryI18ns()
+    {
+        $this->collPortfolioTagCategoryI18ns = null; // important to set this to null since that means it is uninitialized
+        $this->collPortfolioTagCategoryI18nsPartial = null;
+
+        return $this;
+    }
+
+    /**
+     * reset is the collPortfolioTagCategoryI18ns collection loaded partially
+     *
+     * @return void
+     */
+    public function resetPartialPortfolioTagCategoryI18ns($v = true)
+    {
+        $this->collPortfolioTagCategoryI18nsPartial = $v;
+    }
+
+    /**
+     * Initializes the collPortfolioTagCategoryI18ns collection.
+     *
+     * By default this just sets the collPortfolioTagCategoryI18ns collection to an empty array (like clearcollPortfolioTagCategoryI18ns());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @param boolean $overrideExisting If set to true, the method call initializes
+     *                                        the collection even if it is not empty
+     *
+     * @return void
+     */
+    public function initPortfolioTagCategoryI18ns($overrideExisting = true)
+    {
+        if (null !== $this->collPortfolioTagCategoryI18ns && !$overrideExisting) {
+            return;
+        }
+        $this->collPortfolioTagCategoryI18ns = new PropelObjectCollection();
+        $this->collPortfolioTagCategoryI18ns->setModel('PortfolioTagCategoryI18n');
+    }
+
+    /**
+     * Gets an array of PortfolioTagCategoryI18n objects which contain a foreign key that references this object.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this PortfolioTagCategory is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @return PropelObjectCollection|PortfolioTagCategoryI18n[] List of PortfolioTagCategoryI18n objects
+     * @throws PropelException
+     */
+    public function getPortfolioTagCategoryI18ns($criteria = null, PropelPDO $con = null)
+    {
+        $partial = $this->collPortfolioTagCategoryI18nsPartial && !$this->isNew();
+        if (null === $this->collPortfolioTagCategoryI18ns || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collPortfolioTagCategoryI18ns) {
+                // return empty collection
+                $this->initPortfolioTagCategoryI18ns();
+            } else {
+                $collPortfolioTagCategoryI18ns = PortfolioTagCategoryI18nQuery::create(null, $criteria)
+                    ->filterByPortfolioTagCategory($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    if (false !== $this->collPortfolioTagCategoryI18nsPartial && count($collPortfolioTagCategoryI18ns)) {
+                      $this->initPortfolioTagCategoryI18ns(false);
+
+                      foreach($collPortfolioTagCategoryI18ns as $obj) {
+                        if (false == $this->collPortfolioTagCategoryI18ns->contains($obj)) {
+                          $this->collPortfolioTagCategoryI18ns->append($obj);
+                        }
+                      }
+
+                      $this->collPortfolioTagCategoryI18nsPartial = true;
+                    }
+
+                    return $collPortfolioTagCategoryI18ns;
+                }
+
+                if($partial && $this->collPortfolioTagCategoryI18ns) {
+                    foreach($this->collPortfolioTagCategoryI18ns as $obj) {
+                        if($obj->isNew()) {
+                            $collPortfolioTagCategoryI18ns[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collPortfolioTagCategoryI18ns = $collPortfolioTagCategoryI18ns;
+                $this->collPortfolioTagCategoryI18nsPartial = false;
+            }
+        }
+
+        return $this->collPortfolioTagCategoryI18ns;
+    }
+
+    /**
+     * Sets a collection of PortfolioTagCategoryI18n objects related by a one-to-many relationship
+     * to the current object.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $portfolioTagCategoryI18ns A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     * @return PortfolioTagCategory The current object (for fluent API support)
+     */
+    public function setPortfolioTagCategoryI18ns(PropelCollection $portfolioTagCategoryI18ns, PropelPDO $con = null)
+    {
+        $this->portfolioTagCategoryI18nsScheduledForDeletion = $this->getPortfolioTagCategoryI18ns(new Criteria(), $con)->diff($portfolioTagCategoryI18ns);
+
+        foreach ($this->portfolioTagCategoryI18nsScheduledForDeletion as $portfolioTagCategoryI18nRemoved) {
+            $portfolioTagCategoryI18nRemoved->setPortfolioTagCategory(null);
+        }
+
+        $this->collPortfolioTagCategoryI18ns = null;
+        foreach ($portfolioTagCategoryI18ns as $portfolioTagCategoryI18n) {
+            $this->addPortfolioTagCategoryI18n($portfolioTagCategoryI18n);
+        }
+
+        $this->collPortfolioTagCategoryI18ns = $portfolioTagCategoryI18ns;
+        $this->collPortfolioTagCategoryI18nsPartial = false;
+
+        return $this;
+    }
+
+    /**
+     * Returns the number of related PortfolioTagCategoryI18n objects.
+     *
+     * @param Criteria $criteria
+     * @param boolean $distinct
+     * @param PropelPDO $con
+     * @return int             Count of related PortfolioTagCategoryI18n objects.
+     * @throws PropelException
+     */
+    public function countPortfolioTagCategoryI18ns(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        $partial = $this->collPortfolioTagCategoryI18nsPartial && !$this->isNew();
+        if (null === $this->collPortfolioTagCategoryI18ns || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collPortfolioTagCategoryI18ns) {
+                return 0;
+            }
+
+            if($partial && !$criteria) {
+                return count($this->getPortfolioTagCategoryI18ns());
+            }
+            $query = PortfolioTagCategoryI18nQuery::create(null, $criteria);
+            if ($distinct) {
+                $query->distinct();
+            }
+
+            return $query
+                ->filterByPortfolioTagCategory($this)
+                ->count($con);
+        }
+
+        return count($this->collPortfolioTagCategoryI18ns);
+    }
+
+    /**
+     * Method called to associate a PortfolioTagCategoryI18n object to this object
+     * through the PortfolioTagCategoryI18n foreign key attribute.
+     *
+     * @param    PortfolioTagCategoryI18n $l PortfolioTagCategoryI18n
+     * @return PortfolioTagCategory The current object (for fluent API support)
+     */
+    public function addPortfolioTagCategoryI18n(PortfolioTagCategoryI18n $l)
+    {
+        if ($l && $locale = $l->getLocale()) {
+            $this->setLocale($locale);
+            $this->currentTranslations[$locale] = $l;
+        }
+        if ($this->collPortfolioTagCategoryI18ns === null) {
+            $this->initPortfolioTagCategoryI18ns();
+            $this->collPortfolioTagCategoryI18nsPartial = true;
+        }
+        if (!in_array($l, $this->collPortfolioTagCategoryI18ns->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
+            $this->doAddPortfolioTagCategoryI18n($l);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	PortfolioTagCategoryI18n $portfolioTagCategoryI18n The portfolioTagCategoryI18n object to add.
+     */
+    protected function doAddPortfolioTagCategoryI18n($portfolioTagCategoryI18n)
+    {
+        $this->collPortfolioTagCategoryI18ns[]= $portfolioTagCategoryI18n;
+        $portfolioTagCategoryI18n->setPortfolioTagCategory($this);
+    }
+
+    /**
+     * @param	PortfolioTagCategoryI18n $portfolioTagCategoryI18n The portfolioTagCategoryI18n object to remove.
+     * @return PortfolioTagCategory The current object (for fluent API support)
+     */
+    public function removePortfolioTagCategoryI18n($portfolioTagCategoryI18n)
+    {
+        if ($this->getPortfolioTagCategoryI18ns()->contains($portfolioTagCategoryI18n)) {
+            $this->collPortfolioTagCategoryI18ns->remove($this->collPortfolioTagCategoryI18ns->search($portfolioTagCategoryI18n));
+            if (null === $this->portfolioTagCategoryI18nsScheduledForDeletion) {
+                $this->portfolioTagCategoryI18nsScheduledForDeletion = clone $this->collPortfolioTagCategoryI18ns;
+                $this->portfolioTagCategoryI18nsScheduledForDeletion->clear();
+            }
+            $this->portfolioTagCategoryI18nsScheduledForDeletion[]= $portfolioTagCategoryI18n;
+            $portfolioTagCategoryI18n->setPortfolioTagCategory(null);
+        }
+
+        return $this;
+    }
+
+    /**
      * Clears the current object and sets all attributes to their default values
      */
     public function clear()
@@ -1128,9 +1502,11 @@ abstract class BasePortfolioTagCategory extends BaseObject implements Persistent
         $this->id = null;
         $this->name = null;
         $this->slug = null;
+        $this->active = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();
+        $this->applyDefaultValues();
         $this->resetModified();
         $this->setNew(true);
         $this->setDeleted(false);
@@ -1153,12 +1529,25 @@ abstract class BasePortfolioTagCategory extends BaseObject implements Persistent
                     $o->clearAllReferences($deep);
                 }
             }
+            if ($this->collPortfolioTagCategoryI18ns) {
+                foreach ($this->collPortfolioTagCategoryI18ns as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
         } // if ($deep)
+
+        // i18n behavior
+        $this->currentLocale = 'fr';
+        $this->currentTranslations = null;
 
         if ($this->collPortfolioTags instanceof PropelCollection) {
             $this->collPortfolioTags->clearIterator();
         }
         $this->collPortfolioTags = null;
+        if ($this->collPortfolioTagCategoryI18ns instanceof PropelCollection) {
+            $this->collPortfolioTagCategoryI18ns->clearIterator();
+        }
+        $this->collPortfolioTagCategoryI18ns = null;
     }
 
     /**
@@ -1179,6 +1568,325 @@ abstract class BasePortfolioTagCategory extends BaseObject implements Persistent
     public function isAlreadyInSave()
     {
         return $this->alreadyInSave;
+    }
+
+    // active behavior
+    
+    
+    /**
+     * return true is the object is active
+     *
+     * @return boolean
+     */
+    public function isActive()
+    {
+        return $this->getActive();
+    }
+    
+    /**
+     * return true is the object is active locale
+     *
+     * @return boolean
+     */
+    public function isActiveLocale()
+    {
+        return $this->getActiveLocale();
+    }
+    
+    public function getPortfolioTagsActive($criteria = null, PropelPDO $con = null)
+    {
+    
+        if ($criteria === null)
+        {
+            $criteria = new \Criteria();
+        }
+    
+        $criteria->add(\Cungfoo\Model\PortfolioTagPeer::ACTIVE, true);
+    
+    
+        $criteria->addAlias('i18n_locale', \Cungfoo\Model\PortfolioTagI18nPeer::TABLE_NAME);
+        $criteria->addJoin(\Cungfoo\Model\PortfolioTagPeer::ID, \Cungfoo\Model\PortfolioTagI18nPeer::alias('i18n_locale', \Cungfoo\Model\PortfolioTagI18nPeer::ID), \Criteria::LEFT_JOIN);
+        $criteria->add(\Cungfoo\Model\PortfolioTagI18nPeer::alias('i18n_locale', \Cungfoo\Model\PortfolioTagI18nPeer::ACTIVE_LOCALE), true);
+        $criteria->add(\Cungfoo\Model\PortfolioTagI18nPeer::alias('i18n_locale', \Cungfoo\Model\PortfolioTagI18nPeer::LOCALE), $this->currentLocale);
+    
+        return $this->getPortfolioTags($criteria, $con);
+    }
+    // crudable behavior
+    
+    /**
+     * @param \Symfony\Component\Form\Form $form
+     * @param PropelPDO $con
+     * @return int             The number of rows affected by this insert/update and any referring fk objects' save() operations.
+     * @throws PropelException
+     * @throws Exception
+     * @see        doSave()
+     */
+    public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
+    {
+        return $this->save($con);
+    }
+
+    // i18n behavior
+
+    /**
+     * Sets the locale for translations
+     *
+     * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
+     *
+     * @return    PortfolioTagCategory The current object (for fluent API support)
+     */
+    public function setLocale($locale = 'fr')
+    {
+        $this->currentLocale = $locale;
+
+        return $this;
+    }
+
+    /**
+     * Gets the locale for translations
+     *
+     * @return    string $locale Locale to use for the translation, e.g. 'fr_FR'
+     */
+    public function getLocale()
+    {
+        return $this->currentLocale;
+    }
+
+    /**
+     * Returns the current translation for a given locale
+     *
+     * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
+     * @param     PropelPDO $con an optional connection object
+     *
+     * @return PortfolioTagCategoryI18n */
+    public function getTranslation($locale = 'fr', PropelPDO $con = null)
+    {
+        if (!isset($this->currentTranslations[$locale])) {
+            if (null !== $this->collPortfolioTagCategoryI18ns) {
+                foreach ($this->collPortfolioTagCategoryI18ns as $translation) {
+                    if ($translation->getLocale() == $locale) {
+                        $this->currentTranslations[$locale] = $translation;
+
+                        return $translation;
+                    }
+                }
+            }
+            if ($this->isNew()) {
+                $translation = new PortfolioTagCategoryI18n();
+                $translation->setLocale($locale);
+            } else {
+                $translation = PortfolioTagCategoryI18nQuery::create()
+                    ->filterByPrimaryKey(array($this->getPrimaryKey(), $locale))
+                    ->findOneOrCreate($con);
+                $this->currentTranslations[$locale] = $translation;
+            }
+            $this->addPortfolioTagCategoryI18n($translation);
+        }
+
+        return $this->currentTranslations[$locale];
+    }
+
+    /**
+     * Remove the translation for a given locale
+     *
+     * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
+     * @param     PropelPDO $con an optional connection object
+     *
+     * @return    PortfolioTagCategory The current object (for fluent API support)
+     */
+    public function removeTranslation($locale = 'fr', PropelPDO $con = null)
+    {
+        if (!$this->isNew()) {
+            PortfolioTagCategoryI18nQuery::create()
+                ->filterByPrimaryKey(array($this->getPrimaryKey(), $locale))
+                ->delete($con);
+        }
+        if (isset($this->currentTranslations[$locale])) {
+            unset($this->currentTranslations[$locale]);
+        }
+        foreach ($this->collPortfolioTagCategoryI18ns as $key => $translation) {
+            if ($translation->getLocale() == $locale) {
+                unset($this->collPortfolioTagCategoryI18ns[$key]);
+                break;
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Returns the current translation
+     *
+     * @param     PropelPDO $con an optional connection object
+     *
+     * @return PortfolioTagCategoryI18n */
+    public function getCurrentTranslation(PropelPDO $con = null)
+    {
+        return $this->getTranslation($this->getLocale(), $con);
+    }
+
+    /**
+     * Get the [seo_title] column value.
+     *
+     * @return string
+     */
+    public function getSeoTitle()
+    {
+        if (trim($this->getCurrentTranslation()->getSeoTitle()))
+        {
+            return trim($this->getCurrentTranslation()->getSeoTitle());
+        }
+
+        $peerClassName = self::PEER;
+        if ($peerClassName::getSeo())
+        {
+            return $peerClassName::getSeo($this->currentLocale)->getSeoTitle();
+        }
+
+        return '';
+    }
+
+
+
+        /**
+         * Set the value of [seo_title] column.
+         *
+         * @param string $v new value
+         * @return PortfolioTagCategoryI18n The current object (for fluent API support)
+         */
+        public function setSeoTitle($v)
+        {    $this->getCurrentTranslation()->setSeoTitle($v);
+
+        return $this;
+    }
+
+    /**
+     * Get the [seo_description] column value.
+     *
+     * @return string
+     */
+    public function getSeoDescription()
+    {
+        if (trim($this->getCurrentTranslation()->getSeoDescription()))
+        {
+            return trim($this->getCurrentTranslation()->getSeoDescription());
+        }
+
+        $peerClassName = self::PEER;
+        if ($peerClassName::getSeo())
+        {
+            return $peerClassName::getSeo($this->currentLocale)->getSeoDescription();
+        }
+
+        return '';
+    }
+
+
+
+        /**
+         * Set the value of [seo_description] column.
+         *
+         * @param string $v new value
+         * @return PortfolioTagCategoryI18n The current object (for fluent API support)
+         */
+        public function setSeoDescription($v)
+        {    $this->getCurrentTranslation()->setSeoDescription($v);
+
+        return $this;
+    }
+
+    /**
+     * Get the [seo_h1] column value.
+     *
+     * @return string
+     */
+    public function getSeoH1()
+    {
+        if (trim($this->getCurrentTranslation()->getSeoH1()))
+        {
+            return trim($this->getCurrentTranslation()->getSeoH1());
+        }
+
+        $peerClassName = self::PEER;
+        if ($peerClassName::getSeo())
+        {
+            return $peerClassName::getSeo($this->currentLocale)->getSeoH1();
+        }
+
+        return '';
+    }
+
+
+
+        /**
+         * Set the value of [seo_h1] column.
+         *
+         * @param string $v new value
+         * @return PortfolioTagCategoryI18n The current object (for fluent API support)
+         */
+        public function setSeoH1($v)
+        {    $this->getCurrentTranslation()->setSeoH1($v);
+
+        return $this;
+    }
+
+    /**
+     * Get the [seo_keywords] column value.
+     *
+     * @return string
+     */
+    public function getSeoKeywords()
+    {
+        if (trim($this->getCurrentTranslation()->getSeoKeywords()))
+        {
+            return trim($this->getCurrentTranslation()->getSeoKeywords());
+        }
+
+        $peerClassName = self::PEER;
+        if ($peerClassName::getSeo())
+        {
+            return $peerClassName::getSeo($this->currentLocale)->getSeoKeywords();
+        }
+
+        return '';
+    }
+
+
+
+        /**
+         * Set the value of [seo_keywords] column.
+         *
+         * @param string $v new value
+         * @return PortfolioTagCategoryI18n The current object (for fluent API support)
+         */
+        public function setSeoKeywords($v)
+        {    $this->getCurrentTranslation()->setSeoKeywords($v);
+
+        return $this;
+    }
+
+
+        /**
+         * Get the [active_locale] column value.
+         *
+         * @return boolean
+         */
+        public function getActiveLocale()
+        {
+        return $this->getCurrentTranslation()->getActiveLocale();
+    }
+
+
+        /**
+         * Set the value of [active_locale] column.
+         *
+         * @param boolean $v new value
+         * @return PortfolioTagCategoryI18n The current object (for fluent API support)
+         */
+        public function setActiveLocale($v)
+        {    $this->getCurrentTranslation()->setActiveLocale($v);
+
+        return $this;
     }
 
 }
