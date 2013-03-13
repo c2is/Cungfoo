@@ -26,10 +26,12 @@ use Cungfoo\Model\PortfolioTagCategoryQuery;
  * @method PortfolioTagCategoryQuery orderById($order = Criteria::ASC) Order by the id column
  * @method PortfolioTagCategoryQuery orderByName($order = Criteria::ASC) Order by the name column
  * @method PortfolioTagCategoryQuery orderBySlug($order = Criteria::ASC) Order by the slug column
+ * @method PortfolioTagCategoryQuery orderByActive($order = Criteria::ASC) Order by the active column
  *
  * @method PortfolioTagCategoryQuery groupById() Group by the id column
  * @method PortfolioTagCategoryQuery groupByName() Group by the name column
  * @method PortfolioTagCategoryQuery groupBySlug() Group by the slug column
+ * @method PortfolioTagCategoryQuery groupByActive() Group by the active column
  *
  * @method PortfolioTagCategoryQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method PortfolioTagCategoryQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -48,10 +50,12 @@ use Cungfoo\Model\PortfolioTagCategoryQuery;
  *
  * @method PortfolioTagCategory findOneByName(string $name) Return the first PortfolioTagCategory filtered by the name column
  * @method PortfolioTagCategory findOneBySlug(string $slug) Return the first PortfolioTagCategory filtered by the slug column
+ * @method PortfolioTagCategory findOneByActive(boolean $active) Return the first PortfolioTagCategory filtered by the active column
  *
  * @method array findById(int $id) Return PortfolioTagCategory objects filtered by the id column
  * @method array findByName(string $name) Return PortfolioTagCategory objects filtered by the name column
  * @method array findBySlug(string $slug) Return PortfolioTagCategory objects filtered by the slug column
+ * @method array findByActive(boolean $active) Return PortfolioTagCategory objects filtered by the active column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -155,7 +159,7 @@ abstract class BasePortfolioTagCategoryQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `name`, `slug` FROM `portfolio_tag_category` WHERE `id` = :p0';
+        $sql = 'SELECT `id`, `name`, `slug`, `active` FROM `portfolio_tag_category` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -330,6 +334,33 @@ abstract class BasePortfolioTagCategoryQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query on the active column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByActive(true); // WHERE active = true
+     * $query->filterByActive('yes'); // WHERE active = true
+     * </code>
+     *
+     * @param     boolean|string $active The value to use as filter.
+     *              Non-boolean arguments are converted using the following rules:
+     *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     *              Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return PortfolioTagCategoryQuery The current query, for fluid interface
+     */
+    public function filterByActive($active = null, $comparison = null)
+    {
+        if (is_string($active)) {
+            $active = in_array(strtolower($active), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+        }
+
+        return $this->addUsingAlias(PortfolioTagCategoryPeer::ACTIVE, $active, $comparison);
+    }
+
+    /**
      * Filter the query by a related PortfolioTag object
      *
      * @param   PortfolioTag|PropelObjectCollection $portfolioTag  the related object to use as filter
@@ -493,6 +524,29 @@ abstract class BasePortfolioTagCategoryQuery extends ModelCriteria
         return $this;
     }
 
+    // active behavior
+    
+    
+    /**
+     * return only active objects
+     *
+     * @return boolean
+     */
+    public function findActive($con = null)
+    {
+        $locale = defined('CURRENT_LANGUAGE') ? CURRENT_LANGUAGE : 'fr';
+    
+        $this
+            ->filterByActive(true)
+            ->useI18nQuery($locale, 'i18n_locale')
+                ->filterByActiveLocale(true)
+                    ->_or()
+                ->filterByActiveLocale(null, Criteria::ISNULL)
+            ->endUse()
+        ;
+    
+        return parent::find($con);
+    }
     // i18n behavior
 
     /**

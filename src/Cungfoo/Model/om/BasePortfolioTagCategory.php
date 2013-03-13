@@ -68,6 +68,13 @@ abstract class BasePortfolioTagCategory extends BaseObject implements Persistent
     protected $slug;
 
     /**
+     * The value for the active field.
+     * Note: this column has a database default value of: false
+     * @var        boolean
+     */
+    protected $active;
+
+    /**
      * @var        PropelObjectCollection|PortfolioTag[] Collection to store aggregation of PortfolioTag objects.
      */
     protected $collPortfolioTags;
@@ -120,6 +127,27 @@ abstract class BasePortfolioTagCategory extends BaseObject implements Persistent
     protected $portfolioTagCategoryI18nsScheduledForDeletion = null;
 
     /**
+     * Applies default values to this object.
+     * This method should be called from the object's constructor (or
+     * equivalent initialization method).
+     * @see        __construct()
+     */
+    public function applyDefaultValues()
+    {
+        $this->active = false;
+    }
+
+    /**
+     * Initializes internal state of BasePortfolioTagCategory object.
+     * @see        applyDefaults()
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->applyDefaultValues();
+    }
+
+    /**
      * Get the [id] column value.
      *
      * @return int
@@ -147,6 +175,16 @@ abstract class BasePortfolioTagCategory extends BaseObject implements Persistent
     public function getSlug()
     {
         return $this->slug;
+    }
+
+    /**
+     * Get the [active] column value.
+     *
+     * @return boolean
+     */
+    public function getActive()
+    {
+        return $this->active;
     }
 
     /**
@@ -213,6 +251,35 @@ abstract class BasePortfolioTagCategory extends BaseObject implements Persistent
     } // setSlug()
 
     /**
+     * Sets the value of the [active] column.
+     * Non-boolean arguments are converted using the following rules:
+     *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     *
+     * @param boolean|integer|string $v The new value
+     * @return PortfolioTagCategory The current object (for fluent API support)
+     */
+    public function setActive($v)
+    {
+        if ($v !== null) {
+            if (is_string($v)) {
+                $v = in_array(strtolower($v), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+            } else {
+                $v = (boolean) $v;
+            }
+        }
+
+        if ($this->active !== $v) {
+            $this->active = $v;
+            $this->modifiedColumns[] = PortfolioTagCategoryPeer::ACTIVE;
+        }
+
+
+        return $this;
+    } // setActive()
+
+    /**
      * Indicates whether the columns in this object are only set to default values.
      *
      * This method can be used in conjunction with isModified() to indicate whether an object is both
@@ -222,6 +289,10 @@ abstract class BasePortfolioTagCategory extends BaseObject implements Persistent
      */
     public function hasOnlyDefaultValues()
     {
+            if ($this->active !== false) {
+                return false;
+            }
+
         // otherwise, everything was equal, so return true
         return true;
     } // hasOnlyDefaultValues()
@@ -247,6 +318,7 @@ abstract class BasePortfolioTagCategory extends BaseObject implements Persistent
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
             $this->name = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
             $this->slug = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
+            $this->active = ($row[$startcol + 3] !== null) ? (boolean) $row[$startcol + 3] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -255,7 +327,7 @@ abstract class BasePortfolioTagCategory extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 3; // 3 = PortfolioTagCategoryPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 4; // 4 = PortfolioTagCategoryPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating PortfolioTagCategory object", $e);
@@ -515,6 +587,9 @@ abstract class BasePortfolioTagCategory extends BaseObject implements Persistent
         if ($this->isColumnModified(PortfolioTagCategoryPeer::SLUG)) {
             $modifiedColumns[':p' . $index++]  = '`slug`';
         }
+        if ($this->isColumnModified(PortfolioTagCategoryPeer::ACTIVE)) {
+            $modifiedColumns[':p' . $index++]  = '`active`';
+        }
 
         $sql = sprintf(
             'INSERT INTO `portfolio_tag_category` (%s) VALUES (%s)',
@@ -534,6 +609,9 @@ abstract class BasePortfolioTagCategory extends BaseObject implements Persistent
                         break;
                     case '`slug`':
                         $stmt->bindValue($identifier, $this->slug, PDO::PARAM_STR);
+                        break;
+                    case '`active`':
+                        $stmt->bindValue($identifier, (int) $this->active, PDO::PARAM_INT);
                         break;
                 }
             }
@@ -694,6 +772,9 @@ abstract class BasePortfolioTagCategory extends BaseObject implements Persistent
             case 2:
                 return $this->getSlug();
                 break;
+            case 3:
+                return $this->getActive();
+                break;
             default:
                 return null;
                 break;
@@ -726,6 +807,7 @@ abstract class BasePortfolioTagCategory extends BaseObject implements Persistent
             $keys[0] => $this->getId(),
             $keys[1] => $this->getName(),
             $keys[2] => $this->getSlug(),
+            $keys[3] => $this->getActive(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->collPortfolioTags) {
@@ -777,6 +859,9 @@ abstract class BasePortfolioTagCategory extends BaseObject implements Persistent
             case 2:
                 $this->setSlug($value);
                 break;
+            case 3:
+                $this->setActive($value);
+                break;
         } // switch()
     }
 
@@ -804,6 +889,7 @@ abstract class BasePortfolioTagCategory extends BaseObject implements Persistent
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
         if (array_key_exists($keys[1], $arr)) $this->setName($arr[$keys[1]]);
         if (array_key_exists($keys[2], $arr)) $this->setSlug($arr[$keys[2]]);
+        if (array_key_exists($keys[3], $arr)) $this->setActive($arr[$keys[3]]);
     }
 
     /**
@@ -818,6 +904,7 @@ abstract class BasePortfolioTagCategory extends BaseObject implements Persistent
         if ($this->isColumnModified(PortfolioTagCategoryPeer::ID)) $criteria->add(PortfolioTagCategoryPeer::ID, $this->id);
         if ($this->isColumnModified(PortfolioTagCategoryPeer::NAME)) $criteria->add(PortfolioTagCategoryPeer::NAME, $this->name);
         if ($this->isColumnModified(PortfolioTagCategoryPeer::SLUG)) $criteria->add(PortfolioTagCategoryPeer::SLUG, $this->slug);
+        if ($this->isColumnModified(PortfolioTagCategoryPeer::ACTIVE)) $criteria->add(PortfolioTagCategoryPeer::ACTIVE, $this->active);
 
         return $criteria;
     }
@@ -883,6 +970,7 @@ abstract class BasePortfolioTagCategory extends BaseObject implements Persistent
     {
         $copyObj->setName($this->getName());
         $copyObj->setSlug($this->getSlug());
+        $copyObj->setActive($this->getActive());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -1414,9 +1502,11 @@ abstract class BasePortfolioTagCategory extends BaseObject implements Persistent
         $this->id = null;
         $this->name = null;
         $this->slug = null;
+        $this->active = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->clearAllReferences();
+        $this->applyDefaultValues();
         $this->resetModified();
         $this->setNew(true);
         $this->setDeleted(false);
@@ -1480,6 +1570,47 @@ abstract class BasePortfolioTagCategory extends BaseObject implements Persistent
         return $this->alreadyInSave;
     }
 
+    // active behavior
+    
+    
+    /**
+     * return true is the object is active
+     *
+     * @return boolean
+     */
+    public function isActive()
+    {
+        return $this->getActive();
+    }
+    
+    /**
+     * return true is the object is active locale
+     *
+     * @return boolean
+     */
+    public function isActiveLocale()
+    {
+        return $this->getActiveLocale();
+    }
+    
+    public function getPortfolioTagsActive($criteria = null, PropelPDO $con = null)
+    {
+    
+        if ($criteria === null)
+        {
+            $criteria = new \Criteria();
+        }
+    
+        $criteria->add(\Cungfoo\Model\PortfolioTagPeer::ACTIVE, true);
+    
+    
+        $criteria->addAlias('i18n_locale', \Cungfoo\Model\PortfolioTagI18nPeer::TABLE_NAME);
+        $criteria->addJoin(\Cungfoo\Model\PortfolioTagPeer::ID, \Cungfoo\Model\PortfolioTagI18nPeer::alias('i18n_locale', \Cungfoo\Model\PortfolioTagI18nPeer::ID), \Criteria::LEFT_JOIN);
+        $criteria->add(\Cungfoo\Model\PortfolioTagI18nPeer::alias('i18n_locale', \Cungfoo\Model\PortfolioTagI18nPeer::ACTIVE_LOCALE), true);
+        $criteria->add(\Cungfoo\Model\PortfolioTagI18nPeer::alias('i18n_locale', \Cungfoo\Model\PortfolioTagI18nPeer::LOCALE), $this->currentLocale);
+    
+        return $this->getPortfolioTags($criteria, $con);
+    }
     // crudable behavior
     
     /**
@@ -1730,6 +1861,30 @@ abstract class BasePortfolioTagCategory extends BaseObject implements Persistent
          */
         public function setSeoKeywords($v)
         {    $this->getCurrentTranslation()->setSeoKeywords($v);
+
+        return $this;
+    }
+
+
+        /**
+         * Get the [active_locale] column value.
+         *
+         * @return boolean
+         */
+        public function getActiveLocale()
+        {
+        return $this->getCurrentTranslation()->getActiveLocale();
+    }
+
+
+        /**
+         * Set the value of [active_locale] column.
+         *
+         * @param boolean $v new value
+         * @return PortfolioTagCategoryI18n The current object (for fluent API support)
+         */
+        public function setActiveLocale($v)
+        {    $this->getCurrentTranslation()->setActiveLocale($v);
 
         return $this;
     }

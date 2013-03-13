@@ -45,6 +45,7 @@ class PortfolioTagCategoryTableMap extends TableMap
         $this->addPrimaryKey('id', 'Id', 'INTEGER', true, null, null);
         $this->addColumn('name', 'Name', 'VARCHAR', false, 255, null);
         $this->addColumn('slug', 'Slug', 'VARCHAR', false, 255, null);
+        $this->addColumn('active', 'Active', 'BOOLEAN', false, 1, false);
         // validators
     } // initialize()
 
@@ -66,6 +67,10 @@ class PortfolioTagCategoryTableMap extends TableMap
     public function getBehaviors()
     {
         return array(
+            'active' =>  array (
+  'active_column' => 'active',
+  'active_locale_column' => 'active_locale',
+),
             'crudable' =>  array (
   'route_prefix' => '/',
   'crud_prefix' => '/portfolio/tags-categories',
@@ -81,7 +86,7 @@ class PortfolioTagCategoryTableMap extends TableMap
             'i18n' =>  array (
   'i18n_table' => '%TABLE%_i18n',
   'i18n_phpname' => '%PHPNAME%I18n',
-  'i18n_columns' => ',seo_title,seo_description,seo_h1,seo_keywords',
+  'i18n_columns' => ',seo_title,seo_description,seo_h1,seo_keywords,active_locale',
   'i18n_pk_name' => NULL,
   'locale_column' => 'locale',
   'default_locale' => 'fr',

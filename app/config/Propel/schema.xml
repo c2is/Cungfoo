@@ -1230,6 +1230,7 @@
         <column name="name" type="varchar"/>
         <column name="slug" type="varchar"/>
 
+        <behavior name="active"/>
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/portfolio/tags-categories" />
         </behavior>

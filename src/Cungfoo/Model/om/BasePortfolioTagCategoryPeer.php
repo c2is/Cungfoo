@@ -38,13 +38,13 @@ abstract class BasePortfolioTagCategoryPeer
     const TM_CLASS = 'PortfolioTagCategoryTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 3;
+    const NUM_COLUMNS = 4;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 3;
+    const NUM_HYDRATE_COLUMNS = 4;
 
     /** the column name for the id field */
     const ID = 'portfolio_tag_category.id';
@@ -54,6 +54,9 @@ abstract class BasePortfolioTagCategoryPeer
 
     /** the column name for the slug field */
     const SLUG = 'portfolio_tag_category.slug';
+
+    /** the column name for the active field */
+    const ACTIVE = 'portfolio_tag_category.active';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -81,12 +84,12 @@ abstract class BasePortfolioTagCategoryPeer
      * e.g. PortfolioTagCategoryPeer::$fieldNames[PortfolioTagCategoryPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Name', 'Slug', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'name', 'slug', ),
-        BasePeer::TYPE_COLNAME => array (PortfolioTagCategoryPeer::ID, PortfolioTagCategoryPeer::NAME, PortfolioTagCategoryPeer::SLUG, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'NAME', 'SLUG', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'name', 'slug', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Name', 'Slug', 'Active', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'name', 'slug', 'active', ),
+        BasePeer::TYPE_COLNAME => array (PortfolioTagCategoryPeer::ID, PortfolioTagCategoryPeer::NAME, PortfolioTagCategoryPeer::SLUG, PortfolioTagCategoryPeer::ACTIVE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'NAME', 'SLUG', 'ACTIVE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'name', 'slug', 'active', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
     );
 
     /**
@@ -96,12 +99,12 @@ abstract class BasePortfolioTagCategoryPeer
      * e.g. PortfolioTagCategoryPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Name' => 1, 'Slug' => 2, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'name' => 1, 'slug' => 2, ),
-        BasePeer::TYPE_COLNAME => array (PortfolioTagCategoryPeer::ID => 0, PortfolioTagCategoryPeer::NAME => 1, PortfolioTagCategoryPeer::SLUG => 2, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'NAME' => 1, 'SLUG' => 2, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'name' => 1, 'slug' => 2, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Name' => 1, 'Slug' => 2, 'Active' => 3, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'name' => 1, 'slug' => 2, 'active' => 3, ),
+        BasePeer::TYPE_COLNAME => array (PortfolioTagCategoryPeer::ID => 0, PortfolioTagCategoryPeer::NAME => 1, PortfolioTagCategoryPeer::SLUG => 2, PortfolioTagCategoryPeer::ACTIVE => 3, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'NAME' => 1, 'SLUG' => 2, 'ACTIVE' => 3, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'name' => 1, 'slug' => 2, 'active' => 3, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
     );
 
     /**
@@ -178,10 +181,12 @@ abstract class BasePortfolioTagCategoryPeer
             $criteria->addSelectColumn(PortfolioTagCategoryPeer::ID);
             $criteria->addSelectColumn(PortfolioTagCategoryPeer::NAME);
             $criteria->addSelectColumn(PortfolioTagCategoryPeer::SLUG);
+            $criteria->addSelectColumn(PortfolioTagCategoryPeer::ACTIVE);
         } else {
             $criteria->addSelectColumn($alias . '.id');
             $criteria->addSelectColumn($alias . '.name');
             $criteria->addSelectColumn($alias . '.slug');
+            $criteria->addSelectColumn($alias . '.active');
         }
     }
 

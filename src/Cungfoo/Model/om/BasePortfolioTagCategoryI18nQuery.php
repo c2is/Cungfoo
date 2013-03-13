@@ -28,6 +28,7 @@ use Cungfoo\Model\PortfolioTagCategoryI18nQuery;
  * @method PortfolioTagCategoryI18nQuery orderBySeoDescription($order = Criteria::ASC) Order by the seo_description column
  * @method PortfolioTagCategoryI18nQuery orderBySeoH1($order = Criteria::ASC) Order by the seo_h1 column
  * @method PortfolioTagCategoryI18nQuery orderBySeoKeywords($order = Criteria::ASC) Order by the seo_keywords column
+ * @method PortfolioTagCategoryI18nQuery orderByActiveLocale($order = Criteria::ASC) Order by the active_locale column
  *
  * @method PortfolioTagCategoryI18nQuery groupById() Group by the id column
  * @method PortfolioTagCategoryI18nQuery groupByLocale() Group by the locale column
@@ -35,6 +36,7 @@ use Cungfoo\Model\PortfolioTagCategoryI18nQuery;
  * @method PortfolioTagCategoryI18nQuery groupBySeoDescription() Group by the seo_description column
  * @method PortfolioTagCategoryI18nQuery groupBySeoH1() Group by the seo_h1 column
  * @method PortfolioTagCategoryI18nQuery groupBySeoKeywords() Group by the seo_keywords column
+ * @method PortfolioTagCategoryI18nQuery groupByActiveLocale() Group by the active_locale column
  *
  * @method PortfolioTagCategoryI18nQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method PortfolioTagCategoryI18nQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -53,6 +55,7 @@ use Cungfoo\Model\PortfolioTagCategoryI18nQuery;
  * @method PortfolioTagCategoryI18n findOneBySeoDescription(string $seo_description) Return the first PortfolioTagCategoryI18n filtered by the seo_description column
  * @method PortfolioTagCategoryI18n findOneBySeoH1(string $seo_h1) Return the first PortfolioTagCategoryI18n filtered by the seo_h1 column
  * @method PortfolioTagCategoryI18n findOneBySeoKeywords(string $seo_keywords) Return the first PortfolioTagCategoryI18n filtered by the seo_keywords column
+ * @method PortfolioTagCategoryI18n findOneByActiveLocale(boolean $active_locale) Return the first PortfolioTagCategoryI18n filtered by the active_locale column
  *
  * @method array findById(int $id) Return PortfolioTagCategoryI18n objects filtered by the id column
  * @method array findByLocale(string $locale) Return PortfolioTagCategoryI18n objects filtered by the locale column
@@ -60,6 +63,7 @@ use Cungfoo\Model\PortfolioTagCategoryI18nQuery;
  * @method array findBySeoDescription(string $seo_description) Return PortfolioTagCategoryI18n objects filtered by the seo_description column
  * @method array findBySeoH1(string $seo_h1) Return PortfolioTagCategoryI18n objects filtered by the seo_h1 column
  * @method array findBySeoKeywords(string $seo_keywords) Return PortfolioTagCategoryI18n objects filtered by the seo_keywords column
+ * @method array findByActiveLocale(boolean $active_locale) Return PortfolioTagCategoryI18n objects filtered by the active_locale column
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
@@ -150,7 +154,7 @@ abstract class BasePortfolioTagCategoryI18nQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `locale`, `seo_title`, `seo_description`, `seo_h1`, `seo_keywords` FROM `portfolio_tag_category_i18n` WHERE `id` = :p0 AND `locale` = :p1';
+        $sql = 'SELECT `id`, `locale`, `seo_title`, `seo_description`, `seo_h1`, `seo_keywords`, `active_locale` FROM `portfolio_tag_category_i18n` WHERE `id` = :p0 AND `locale` = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
@@ -423,6 +427,33 @@ abstract class BasePortfolioTagCategoryI18nQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(PortfolioTagCategoryI18nPeer::SEO_KEYWORDS, $seoKeywords, $comparison);
+    }
+
+    /**
+     * Filter the query on the active_locale column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByActiveLocale(true); // WHERE active_locale = true
+     * $query->filterByActiveLocale('yes'); // WHERE active_locale = true
+     * </code>
+     *
+     * @param     boolean|string $activeLocale The value to use as filter.
+     *              Non-boolean arguments are converted using the following rules:
+     *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     *              Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return PortfolioTagCategoryI18nQuery The current query, for fluid interface
+     */
+    public function filterByActiveLocale($activeLocale = null, $comparison = null)
+    {
+        if (is_string($activeLocale)) {
+            $active_locale = in_array(strtolower($activeLocale), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+        }
+
+        return $this->addUsingAlias(PortfolioTagCategoryI18nPeer::ACTIVE_LOCALE, $activeLocale, $comparison);
     }
 
     /**
