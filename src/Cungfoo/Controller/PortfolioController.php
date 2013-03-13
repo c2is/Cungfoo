@@ -112,26 +112,32 @@ class PortfolioController implements ControllerProviderInterface
                 if ($searchData->getSearch()) {
                     $stringToSearch = sprintf('%%%s%%', $searchData->getSearch());
                     $queryContextualized = $queryContextualized
-                        ->filterByTitle($stringToSearch)
-                        ->_or()
-                        ->filterByDescription($stringToSearch)
+                        ->useI18nQuery()
+                            ->filterByTitle($stringToSearch)
+                            ->_or()
+                            ->filterByDescription($stringToSearch)
+                        ->endUse()
                         ->_or()
                         ->filterByFile($stringToSearch)
                         ->_or()
                         ->usePortfolioMediaTagQuery(null, \Criteria::LEFT_JOIN)
                             ->usePortfolioTagQuery(null, \Criteria::LEFT_JOIN)
-                                ->filterByName($stringToSearch)
+                                ->useI18nQuery()
+                                    ->filterByName($stringToSearch)
+                                ->endUse()
                             ->endUse()
                         ->endUse()
                     ;
                 }
                 if ($searchData->getTable()) {
                     $queryContextualized = $queryContextualized
+                        ->_and()
                         ->usePortfolioUsageQuery()
                             ->filterByTableRef($searchData->getTable())
                     ;
                     if ($searchData->getColumn()) {
                         $queryContextualized = $queryContextualized
+                            ->_and()
                             ->filterByColumnRef($searchData->getColumn())
                         ;
                     }
@@ -141,7 +147,6 @@ class PortfolioController implements ControllerProviderInterface
 
                 return json_encode(array(
                     'success' => true,
-                    'sql'   => $queryContextualized->toString(),
                     'html' => $app['twig']->render('Crud/Portfolio/table.twig', array(
                         'paginator' => $paginator,
                         'mediaIds' => explode(';', $ids),
