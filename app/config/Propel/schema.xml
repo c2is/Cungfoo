@@ -1125,11 +1125,16 @@
 
     <table name="portfolio_tag">
         <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true"/>
+        <column name="category_id" type="integer"/>
         <column name="name" type="varchar"/>
         <column name="slug" type="varchar"/>
         <column name="description" type="longvarchar"/>
         <behavior name="timestampable"/>
         <behavior name="active"/>
+
+        <foreign-key foreignTable="portfolio_tag_category" onDelete="SETNULL">
+            <reference local="category_id" foreign="id"/>
+        </foreign-key>
 
         <behavior name="i18n">
             <parameter name="i18n_columns" value="name, slug, description" />
@@ -1138,6 +1143,12 @@
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/portfolio/tags" />
         </behavior>
+    </table>
+
+    <table name="portfolio_tag_category">
+        <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true" />
+        <column name="name" type="varchar"/>
+        <column name="slug" type="varchar"/>
     </table>
 
     <table name="portfolio_media_tag" isCrossRef="true">
