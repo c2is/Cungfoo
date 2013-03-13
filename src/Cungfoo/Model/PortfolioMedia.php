@@ -71,7 +71,7 @@ class PortfolioMedia extends BasePortfolioMedia
         $toReturn = array();
         foreach ($this->getPortfolioTags() as $tag)
         {
-            if ($tag->getPortfolioTagCategory()->getSlug() == 'camping')
+            if ($tag->getPortfolioTagCategory() && $tag->getPortfolioTagCategory()->getSlug() == 'camping')
             {
                 $toReturn[] = $tag->getSlug();
             }

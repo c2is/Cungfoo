@@ -420,7 +420,7 @@ class DestinationController implements ControllerProviderInterface
 
                 foreach ($multimediaTags as $tag)
                 {
-                    if ($tag->getPortfolioTagCategory()->getSlug() == 'camping')
+                    if ($tag->getPortfolioTagCategory() && $tag->getPortfolioTagCategory()->getSlug() == 'camping')
                     {
                         $tags[$tag->getSlug()] = $tag;
                     }

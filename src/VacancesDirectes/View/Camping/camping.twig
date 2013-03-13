@@ -83,7 +83,7 @@
             <span>{{ "fiche.photo" | trans }}</span>
             <label for="photosToutes"><input type="radio" id="photosToutes" name="affPhoto" value="all" checked="checked">{{ "Toutes" | trans }}</label>
             {% for tag in tags %}
-                <label for="photos{{ tag.name }}"><input type="radio" id="photos{{ tag.name }}" name="affPhoto" value="{{ tag.name }}" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'Contenu_-_Visionneuse', 'Clic_-_Bouton-Radio']);">{{ tag.name }}</label>
+                <label for="photos{{ tag.name }}"><input type="radio" id="photos{{ tag.name }}" name="affPhoto" value="{{ tag.slug }}" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'Contenu_-_Visionneuse', 'Clic_-_Bouton-Radio']);">{{ tag.name }}</label>
             {% endfor %}
         </fieldset>
         <fieldset class="right">

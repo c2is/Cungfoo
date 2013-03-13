@@ -18,4 +18,8 @@ use Cungfoo\Model\om\BasePortfolioTagCategory;
  */
 class PortfolioTagCategory extends BasePortfolioTagCategory
 {
+    public function __toString()
+    {
+        return (string) $this->getName();
+    }
 }
