@@ -152,6 +152,7 @@ CREATE TABLE `portfolio_tag_category`
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(255),
     `slug` VARCHAR(255),
+    `active` tinyint(1) NULL  DEFAULT '1' ,
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB;
 
