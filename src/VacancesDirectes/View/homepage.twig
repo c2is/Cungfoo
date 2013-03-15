@@ -131,7 +131,9 @@
             {{ vosVacances.prenom }}
             {% if vosVacances.age != "" %}<span>{{ vosVacances.age }} {{ "ans" | trans }}</span>{% endif %}
         </div>
+        {% if vosVacances.description != "" %}
         <div id="forwardBlocHeadline"><span>{{ vosVacances.description }}</span></div>
+        {% endif %}
     </div>
 </div>
 
