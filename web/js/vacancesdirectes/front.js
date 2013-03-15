@@ -165,7 +165,7 @@ jQuery.extend( jQuery.fn, {
                     }
                 });
             }
-            
+
             if (hasMoreResults && $('.nextItem').length > 0) {
                 btnMoreResults.show();
             } else if (hasMoreResults) {
@@ -970,7 +970,7 @@ jQuery.extend( jQuery.fn, {
             highSeasonEndDate = numDate(fHighSeasonEndDate),
             fHighSeasonDates = [fHighSeasonStartDate,fHighSeasonEndDate],
             arrivalDate,
-            visibleMonths = 8,
+            visibleMonths = 10,
             displayMonths = 2;
 
 
@@ -989,7 +989,7 @@ jQuery.extend( jQuery.fn, {
         $('#datepickerCalendar').DatePicker({
             flat: true,
             date: '',
-            current: '2013/07/01',
+            current: '2013/08/01',
             calendars: visibleMonths,
             mode: 'single',
             starts: 1,
