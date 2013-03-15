@@ -3,3 +3,5 @@
 {% block title %}{{ item.seoTitle | trans ({'%destination%': item.name }) }}{% endblock %}
 
 {% block metaDescription %}{{ item.seoDescription | trans ({'%destination%': item.name }) }}{% endblock %}
+
+{% block h2Suffix %} {{ 'destination.pas_cher' | trans }}{% endblock %}

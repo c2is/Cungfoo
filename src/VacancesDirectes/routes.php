@@ -34,6 +34,7 @@ $app->mount('/resalys',                                   new WrapperController(
 $app->mount('/camping',                                   new Controller\CampingController());
 $app->mount('/search_engine',                             new Controller\SearchEngineController());
 $app->mount('/search_filter',                             new Controller\SearchFilterController());
+$app->mount('/api',                             new Controller\ApiController());
 $app->mount('/widget',                                    new Cungfoo\Controller\WidgetController());
 $app->mount('/' . $app->trans('seo.url.catalogue'),       new Controller\CatalogueController());
 $app->mount('/' . $app->trans('seo.url.dispo'),           new Controller\DispoController());

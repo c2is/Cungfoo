@@ -36,7 +36,7 @@ class CouloirController implements ControllerProviderInterface
     {
         $session = base64_decode(str_replace('B64_', '', $request->cookies->get('session_name')));
 
-        if (!$session && $options['session'])
+        if (!$session && isset($options['session']) && $options['session'])
         {
             setcookie("session_name", 'B64_'.base64_encode($options['session']), time() +900);
             $session = $options['session'];
@@ -128,6 +128,12 @@ class CouloirController implements ControllerProviderInterface
             $query = array_merge($query, $request->request->all());
 
             $query = $this->pushCookieSession($request, $query);
+
+            $cookies = $request->cookies;
+            if($cookies->has('tag_uci'))
+            {
+                $query['tag_uci'] = $cookies->get('tag_uci');
+            }
 
             return $app->renderView('Couloir\confirmation.twig', array(
                 'query' => $query,
