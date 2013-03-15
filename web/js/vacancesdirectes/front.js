@@ -165,6 +165,7 @@ jQuery.extend( jQuery.fn, {
                     }
                 });
             }
+            
             if (hasMoreResults && $('.nextItem').length > 0) {
                 btnMoreResults.show();
             } else if (hasMoreResults) {
@@ -383,7 +384,7 @@ jQuery.extend( jQuery.fn, {
 //                $('#holidayGallery .polaroid:nth-child(4n)').css({border:"1px solid blue"});
                 var x=$(this).parent().position().left;
                 var y=$(this).parent().position().top;
-//                console.log($(this).parent().position());
+                //console.log($(this).parent().position());
                 if(y<100 && x<400){
                     $(this).css({top:"+30px",bottom:"-30px"});
                 }
@@ -411,7 +412,7 @@ jQuery.extend( jQuery.fn, {
             $("#holidayGallery .polaroid a").hover(function(e){
                 currentDeg = $(this).rotate();
                 currentZIndex++;
-//                console.log(currentDeg);
+                //console.log(currentDeg);
 
                 $(this).css({zIndex:currentZIndex}).animate({
                     rotate: '0deg'
@@ -614,7 +615,7 @@ jQuery.extend( jQuery.fn, {
             fHighSeasonDates = [fHighSeasonStartDate,fHighSeasonEndDate],
             arrivalDate,
             departureDate,
-            yearSeason = fStartDate.split('/')[0],
+            rangeYear = fStartDate.split('/')[0],
             visibleMonths = 7,
             displayMonths = 5;
 
@@ -633,7 +634,7 @@ jQuery.extend( jQuery.fn, {
         $('#datepickerCalendar').DatePicker({
             flat: true,
             date: '',
-            current: yearSeason+'/07/01',
+            current: rangeYear+'/07/01',
             calendars: visibleMonths,
             mode: 'range',
             starts: 1,
@@ -781,7 +782,7 @@ jQuery.extend( jQuery.fn, {
             endDate = numDate(fEndDate),
             arrivalDate,
             departureDate,
-            yearSeason = fStartDate.split('/')[0],
+            rangeYear = fStartDate.split('/')[0],
             visibleMonths = 7,
             displayMonths = 5;
 
@@ -800,7 +801,7 @@ jQuery.extend( jQuery.fn, {
         $('#datepickerCalendar').DatePicker({
             flat: true,
             date: '',
-            current: yearSeason+'/07/01',
+            current: rangeYear+'/07/01',
             calendars: visibleMonths,
             mode: 'range',
             starts: 1,
@@ -971,9 +972,9 @@ jQuery.extend( jQuery.fn, {
             highSeasonEndDate = numDate(fHighSeasonEndDate),
             fHighSeasonDates = [fHighSeasonStartDate,fHighSeasonEndDate],
             arrivalDate,
-            yearSeason = fStartDate.split('/')[0],
-            middleRangeMonth = ((''+Math.floor(parseInt(fStartDate.split('/')[1],10)+(visibleMonths/2))).length<2 ? '0' : '') + Math.floor(parseInt(fStartDate.split('/')[1],10)+(visibleMonths/2)),
             visibleMonths = ( parseInt(fEndDate.split('/')[1],10) - parseInt(fStartDate.split('/')[1],10) ) + 1,
+            rangeYear = fStartDate.split('/')[0],
+            middleRangeMonth = ((''+Math.floor(parseInt(fStartDate.split('/')[1],10)+(visibleMonths/2))).length<2 ? '0' : '') + Math.floor(parseInt(fStartDate.split('/')[1],10)+(visibleMonths/2)),
             displayMonths = 2;
 
 
@@ -993,7 +994,7 @@ jQuery.extend( jQuery.fn, {
         $('#datepickerCalendar').DatePicker({
             flat: true,
             date: '',
-            current: yearSeason+'/'+middleRangeMonth+'/01',
+            current: rangeYear+'/'+middleRangeMonth+'/01',
             calendars: visibleMonths,
             mode: 'single',
             starts: 1,
@@ -1164,7 +1165,7 @@ jQuery.extend( jQuery.fn, {
  * ############################################################
  */
 
-    if ($('#results .itemResult').length ){
+    if ($('#results .itemResult').length){
         initCritResult();
         $('.itemResultRight .bt').click( function(){
             $(this).next('.itemResultPopDest').fadeIn();
