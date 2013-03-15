@@ -64,7 +64,6 @@ class CouloirController implements ControllerProviderInterface
                 "actions"       => 'cancelReservation;buildProposalFromKey;chooseProposal',
                 "proposal_key"  => $proposalKey,
                 "referer"       => $request->headers->get('referer'),
-                "version"       => $app['config']->get('version'),
             );
 
             $query = array_merge($query, $request->request->all());

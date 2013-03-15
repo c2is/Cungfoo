@@ -85,10 +85,11 @@ class WrapperController implements ControllerProviderInterface
     {
         $asset = $this->app['twig']->getExtension('asset')->asset($url);
 
-        $output = sprintf('<link rel="stylesheet" href="%s://%s%s">',
+        $output = sprintf('<link rel="stylesheet" href="%s://%s%s?v=%s">',
             $this->request->getScheme(),
             $this->request->getHttpHost(),
-            $asset
+            $asset,
+            $this->app['config']->get('version')
         );
 
         if ($condition !== null)
@@ -103,10 +104,11 @@ class WrapperController implements ControllerProviderInterface
     {
         $asset = $this->app['twig']->getExtension('asset')->asset($url);
 
-        return sprintf('<link rel="stylesheet" href="%s://%s%s" media="print">',
+        return sprintf('<link rel="stylesheet" href="%s://%s%s?v=%s" media="print">',
             $this->request->getScheme(),
             $this->request->getHttpHost(),
-            $asset
+            $asset,
+            $this->app['config']->get('version')
         );
     }
 
@@ -114,10 +116,11 @@ class WrapperController implements ControllerProviderInterface
     {
         $asset = $this->app['twig']->getExtension('asset')->asset($url);
 
-        return sprintf('<link rel="stylesheet" href="%s://%s%s" media="screen">',
+        return sprintf('<link rel="stylesheet" href="%s://%s%s?v=%s" media="screen">',
             $this->request->getScheme(),
             $this->request->getHttpHost(),
-            $asset
+            $asset,
+            $this->app['config']->get('version')
         );
     }
 
@@ -125,10 +128,11 @@ class WrapperController implements ControllerProviderInterface
     {
         $asset = $this->app['twig']->getExtension('asset')->asset($url);
 
-        return sprintf('<script type="text/javascript" src="%s://%s%s"></script>',
+        return sprintf('<script type="text/javascript" src="%s://%s%s?v="></script>',
             $this->request->getScheme(),
             $this->request->getHttpHost(),
-            $asset
+            $asset,
+            $this->app['config']->get('version')
         );
     }
 
