@@ -36,7 +36,7 @@ class CouloirController implements ControllerProviderInterface
     {
         $session = base64_decode(str_replace('B64_', '', $request->cookies->get('session_name')));
 
-        if (!$session && $options['session'])
+        if (!$session && isset($options['session']) && $options['session'])
         {
             setcookie("session_name", 'B64_'.base64_encode($options['session']), time() +900);
             $session = $options['session'];
@@ -64,6 +64,7 @@ class CouloirController implements ControllerProviderInterface
                 "actions"       => 'cancelReservation;buildProposalFromKey;chooseProposal',
                 "proposal_key"  => $proposalKey,
                 "referer"       => $request->headers->get('referer'),
+                "version"       => $app['config']->get('version'),
             );
 
             $query = array_merge($query, $request->request->all());
