@@ -165,6 +165,7 @@ jQuery.extend( jQuery.fn, {
                     }
                 });
             }
+            
             if (hasMoreResults && $('.nextItem').length > 0) {
                 btnMoreResults.show();
             } else if (hasMoreResults) {
@@ -383,7 +384,7 @@ jQuery.extend( jQuery.fn, {
 //                $('#holidayGallery .polaroid:nth-child(4n)').css({border:"1px solid blue"});
                 var x=$(this).parent().position().left;
                 var y=$(this).parent().position().top;
-//                console.log($(this).parent().position());
+                //console.log($(this).parent().position());
                 if(y<100 && x<400){
                     $(this).css({top:"+30px",bottom:"-30px"});
                 }
@@ -411,7 +412,7 @@ jQuery.extend( jQuery.fn, {
             $("#holidayGallery .polaroid a").hover(function(e){
                 currentDeg = $(this).rotate();
                 currentZIndex++;
-//                console.log(currentDeg);
+                //console.log(currentDeg);
 
                 $(this).css({zIndex:currentZIndex}).animate({
                     rotate: '0deg'
@@ -971,9 +972,9 @@ jQuery.extend( jQuery.fn, {
             highSeasonEndDate = numDate(fHighSeasonEndDate),
             fHighSeasonDates = [fHighSeasonStartDate,fHighSeasonEndDate],
             arrivalDate,
+            visibleMonths = ( parseInt(fEndDate.split('/')[1],10) - parseInt(fStartDate.split('/')[1],10) ) + 1,
             yearSeason = fStartDate.split('/')[0],
             middleRangeMonth = ((''+Math.floor(parseInt(fStartDate.split('/')[1],10)+(visibleMonths/2))).length<2 ? '0' : '') + Math.floor(parseInt(fStartDate.split('/')[1],10)+(visibleMonths/2)),
-            visibleMonths = ( parseInt(fEndDate.split('/')[1],10) - parseInt(fStartDate.split('/')[1],10) ) + 1,
             displayMonths = 2;
 
 
@@ -1164,7 +1165,7 @@ jQuery.extend( jQuery.fn, {
  * ############################################################
  */
 
-    if ($('#results .itemResult').length ){
+    if ($('#results').length ){
         initCritResult();
         $('.itemResultRight .bt').click( function(){
             $(this).next('.itemResultPopDest').fadeIn();
@@ -1853,12 +1854,6 @@ function tabs(tView, load) {
     }
     $(tView).css({'position':'static'}).animate({'opacity':1}).siblings('.tabs').css({position:'absolute',opacity:'0'});
     if (!load){ $('html, body').animate({scrollTop: 0},0); }
-
-    if (sView == 'tabCampings') {
-        $('#formSearchRefined').fadeIn();
-    } else {
-        $('#formSearchRefined').hide();
-    }
 }
 
 
