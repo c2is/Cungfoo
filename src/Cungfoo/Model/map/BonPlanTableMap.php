@@ -119,6 +119,7 @@ class BonPlanTableMap extends TableMap
   'crud_model' => NULL,
   'crud_form' => NULL,
   'crud_type_file' => 'image_menu,image_page,image_liste',
+  'crud_type_richtext' => 'description',
 ),
             'seo' =>  array (
   'seo_columns' => 'seo_title,seo_description,seo_h1,seo_keywords',
