@@ -184,13 +184,13 @@ eof
 
     <script>
         head.js(
-            {modernizr: templatePath+"vendor/modernizr-2.6.1.min.js"}, // test support html5 functionality
-            {selectivizr: templatePath+"vendor/selectivizr-min.js"}, // extend css selectors for IE
-            {jqPlugins: templatePath+"js/vacancesdirectes/plugins.js"},
-            {datepicker: templatePath+"js/vacancesdirectes/jquery-ui-1.9.2.custom.min.js"},
-            {i18nDatepicker: templatePath+"js/vacancesdirectes/jquery.ui.datepicker-$locale.js"},
-            {iframeFrontJS: templatePath+"js/vacancesdirectes/iframe/front.js"},
-            {iframeJS: templatePath+"js/vacancesdirectes/%s.js"}
+            {modernizr: templatePath+"vendor/modernizr-2.6.1.min.js?v=%2$s"}, // test support html5 functionality
+            {selectivizr: templatePath+"vendor/selectivizr-min.js?v=%2$s"}, // extend css selectors for IE
+            {jqPlugins: templatePath+"js/vacancesdirectes/plugins.js?v=%2$s"},
+            {datepicker: templatePath+"js/vacancesdirectes/jquery-ui-1.9.2.custom.min.js?v=%2$s"},
+            {i18nDatepicker: templatePath+"js/vacancesdirectes/jquery.ui.datepicker-$locale.js?v=%2$s"},
+            {iframeFrontJS: templatePath+"js/vacancesdirectes/iframe/front.js?v=%2$s"},
+            {iframeJS: templatePath+"js/vacancesdirectes/%1$s.js?v=%2$s"}
         );
     </script>
 
@@ -200,7 +200,7 @@ eof
     <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
     <![endif]-->
 eof
-, $this->specificFiles);
+, $this->specificFiles, $this->app['config']->get('version'));
 
         $iframe = str_replace(array(
             '{_c2is.uri}',
