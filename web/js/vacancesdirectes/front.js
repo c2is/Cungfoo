@@ -1160,7 +1160,7 @@ jQuery.extend( jQuery.fn, {
  * ############################################################
  */
 
-    if ($('#results').length ){
+    if ($('#results .itemResult').length ){
         initCritResult();
         $('.itemResultRight .bt').click( function(){
             $(this).next('.itemResultPopDest').fadeIn();
@@ -1849,6 +1849,12 @@ function tabs(tView, load) {
     }
     $(tView).css({'position':'static'}).animate({'opacity':1}).siblings('.tabs').css({position:'absolute',opacity:'0'});
     if (!load){ $('html, body').animate({scrollTop: 0},0); }
+
+    if (sView == 'tabCampings') {
+        $('#formSearchRefined').fadeIn();
+    } else {
+        $('#formSearchRefined').hide();
+    }
 }
 
 

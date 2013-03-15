@@ -130,7 +130,7 @@
 
 </div>
 
-{% if list.type == 1 or app.request.get('_route') == "catalogue" %}
+{% if list.element|length > 0 %}
 {{ esi(path('widget', {'name': 'search_filter'})) }}
 {% endif %}
 
