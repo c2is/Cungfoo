@@ -11,14 +11,14 @@
     <ul class="nav nav-tabs">
         {% for child in form %}
             {% if not child.rendered %}
-            <li class="{% if loop.first %}active{% endif %}"><a href="#{{ child.vars.value.locale }}" data-toggle="tab"><img src="{{ asset('images/cungfoo/flags/' ~ child.vars.value.locale ~ '.gif') }}" /></a></li>
+            <li class="{% if loop.first %}active{% endif %}"><a href="#{{ form.name }}_{{ child.vars.value.locale }}" data-toggle="tab"><img src="{{ asset('images/cungfoo/flags/' ~ child.vars.value.locale ~ '.gif') }}" /></a></li>
             {% endif %}
         {% endfor %}
     </ul>
     <div class="tab-content">
         {% for child in form %}
             {% if not child.rendered %}
-            <div class="tab-pane {% if loop.first %}active{% endif %}" id="{{ child.vars.value.locale }}">
+            <div class="tab-pane {% if loop.first %}active{% endif %}" id="{{ form.name }}_{{ child.vars.value.locale }}">
                 {{ form_widget(child) }}
             </div>
             {% endif %}
