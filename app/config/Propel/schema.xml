@@ -1100,6 +1100,7 @@
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/bons-plans" />
             <parameter name="crud_type_file" value="image_menu,image_page,image_liste" />
+            <parameter name="crud_type_richtext" value="description" />
         </behavior>
     </table>
 

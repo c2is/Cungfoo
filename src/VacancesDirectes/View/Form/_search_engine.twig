@@ -1,14 +1,3 @@
-{% form_theme searchForm _self %}
-
-{% block _SearchDate_destination_widget %}
-    {% set listPays = list_pays() %}
-    <select id="SearchDate_destination" name="SearchDate[destination]">
-        {% for choice in choices %}
-        <option value="{{ choice.value }}"{% if choice.value in listPays %} class="optGroup-like"{% endif %}{% if choice is selectedchoice(value) %} selected="selected"{% endif %}>{{ choice.label | trans }}</option>
-        {% endfor %}
-    </select>
-{% endblock %}
-
 <div id="searchBloc" class="radiusBox fushia">
     <ul id="switchForm" class="clear">
         <li><a id="tabSearchBlocDate" class="active" href="#searchBlocDate"><span>Date</span></a></li>
@@ -130,13 +119,13 @@
 
 </div>
 
-{% if list.type == 1 or app.request.get('_route') == "catalogue" %}
+{% if list.element|length > 0 %}
 {{ esi(path('widget', {'name': 'search_filter'})) }}
 {% endif %}
 
 <script type="text/javascript">
     var fStartDate = '2013/03/01',
-        fEndDate = '2013/10/31',
+        fEndDate = '2013/12/31',
         fHighSeasonStartDate = '2013/06/29',    // must be a saturday
         fHighSeasonEndDate = '2013/08/31',      // must be a saturday
         linear = "reservation",

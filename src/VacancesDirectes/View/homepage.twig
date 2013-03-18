@@ -62,7 +62,7 @@
                 <div class="details left">
                     <span class="title">{{ camping.etablissement.name }} {{ camping.etablissement.categorie.stars }}</span>
                     <span class="region">{{ camping.etablissement.ville.region }}</span>
-                    <span class="condition">{{ camping.etablissement.minimumPriceLabel }}</span>
+                    {#<span class="condition">{{ camping.etablissement.minimumPriceLabel }}</span>#}
                 </div>
                 <a{% if camping.etablissement.minimumPrice == 0 %} style="display: none"{% endif %} href="{{ campingPath }}" class="stain fushia cover linkBlock">
                         <span>
@@ -131,7 +131,9 @@
             {{ vosVacances.prenom }}
             {% if vosVacances.age != "" %}<span>{{ vosVacances.age }} {{ "ans" | trans }}</span>{% endif %}
         </div>
+        {% if vosVacances.description != "" %}
         <div id="forwardBlocHeadline"><span>{{ vosVacances.description }}</span></div>
+        {% endif %}
     </div>
 </div>
 

@@ -64,6 +64,26 @@ class ApiController implements ControllerProviderInterface
                 $node->appendChild($dom->createTextNode($camping->getDescription()));
                 $campingDom->appendChild($node);
 
+                $node = $dom->createElement('price');
+                $node->appendChild($dom->createTextNode($camping->getMinimumPrice()));
+                $campingDom->appendChild($node);
+
+                $node = $dom->createElement('retailprice');
+                $node->appendChild($dom->createTextNode(''));
+                $campingDom->appendChild($node);
+
+                $node = $dom->createElement('discount');
+                $node->appendChild($dom->createTextNode(''));
+                $campingDom->appendChild($node);
+
+                $node = $dom->createElement('recommendable');
+                $node->appendChild($dom->createTextNode(''));
+                $campingDom->appendChild($node);
+
+                $node = $dom->createElement('instock');
+                $node->appendChild($dom->createTextNode(''));
+                $campingDom->appendChild($node);
+
                 $node = $dom->createElement('categoryid1');
                 $node->appendChild($dom->createTextNode($camping->getRegion()->getPays()->getName()));
                 $campingDom->appendChild($node);
@@ -123,9 +143,9 @@ class ApiController implements ControllerProviderInterface
                     '',
                     '',
                     '',
-                    $camping->getRegion()->getPays()->getName(),
-                    $camping->getRegion()->getName(),
-                    $camping->getVille()->getName(),
+                    '"' . str_replace('"', '""', $camping->getRegion()->getPays()->getName()) . '"',
+                    '"' . str_replace('"', '""', getRegion()->getName()) . '"',
+                    '"' . str_replace('"', '""', getVille()->getName()) . '"',
                 ));
             }
 
