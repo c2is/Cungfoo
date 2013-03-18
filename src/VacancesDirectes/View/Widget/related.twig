@@ -12,7 +12,11 @@
             <span class="title">{{ camping.name }}{{ etab.categorie.stars }}</span>
             <span class="region">{{ camping.region.pays.name }} - {{ camping.region.name }}</span>
         </div>
-        <a href="{{ path('destination_camping', { pays: camping.pays.slug, region: camping.region.slug, ville: camping.ville.slug, camping: camping.slug }) }}" class="stain cover"><span>{{ 'widget.related.from' | trans }}<br /><span class="price">{{ camping.minimumPriceType.minimumPrice | number_format }}<span class="fine">&nbsp;</span>€</span></span></a>
+        <a href="{{ path('destination_camping', { pays: camping.pays.slug, region: camping.region.slug, ville: camping.ville.slug, camping: camping.slug }) }}" class="{% if camping.minimumPriceType.minimumPrice > 0 %}stain {% endif %}cover">
+            {% if camping.minimumPriceType.minimumPrice > 0 %}
+            <span>{{ 'widget.related.from' | trans }}<br /><span class="price">{{ camping.minimumPriceType.minimumPrice | number_format }}<span class="fine">&nbsp;</span>€</span></span>
+            {% endif %}
+        </a>
     </div>
     {% endfor %}
 </div>

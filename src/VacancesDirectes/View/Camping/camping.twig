@@ -29,6 +29,16 @@
     </h1>
 
     <p class="campSubtitle"><strong>{{ "fiche.ouvert_du" | trans }} {{ etab.ouvertureCamping }}</strong></p>
+    <p class="campSubtitle">
+        {% if etab.getSituationGeographiques | length %}
+            {% for situationGeographiques in etab.getSituationGeographiques %}
+                {% if loop.index <= 2 %}
+                    {{ situationGeographiques.name }}
+                    {% if loop.index < 2 %} - {% endif %}
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    </p>
 
     <p class="keywordsFiche">
         {% if etab.activites | length %}

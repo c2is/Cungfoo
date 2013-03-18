@@ -65,7 +65,9 @@ class HomepageController implements ControllerProviderInterface
             ;
 
             $vosVacances = VosVacancesQuery::create()
-                ->joinWithI18n($locale)
+                ->useI18nQuery($locale)
+                    ->filterByActiveLocale(true)
+                ->endUse()
                 ->findOne()
             ;
 

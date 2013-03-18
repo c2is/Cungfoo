@@ -34,8 +34,12 @@ class LoadCommand extends BaseCommand
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        $defaultSocketTimeout = ini_get('default_socket_timeout');
+
         try
         {
+            ini_set('default_socket_timeout', 60);
+
             $clientClassName = sprintf('Resalys\Lib\Client\%sClient', ucfirst(strtolower($input->getArgument('type'))));
             $client = new $clientClassName($this->getProjectDirectory());
 
@@ -46,9 +50,12 @@ class LoadCommand extends BaseCommand
 
             $client->loadData();
 
+            ini_set('default_socket_timeout', $defaultSocketTimeout);
         }
         catch (\Exception $exception)
         {
+            ini_set('default_socket_timeout', $defaultSocketTimeout);
+
             $output->writeln(sprintf('<info>%s</info> <error>%s:</error>.', $this->getName(), $exception->getMessage()));
 
             return false;

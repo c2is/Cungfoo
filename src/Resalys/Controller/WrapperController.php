@@ -85,10 +85,11 @@ class WrapperController implements ControllerProviderInterface
     {
         $asset = $this->app['twig']->getExtension('asset')->asset($url);
 
-        $output = sprintf('<link rel="stylesheet" href="%s://%s%s">',
+        $output = sprintf('<link rel="stylesheet" href="%s://%s%s?v=%s">',
             $this->request->getScheme(),
             $this->request->getHttpHost(),
-            $asset
+            $asset,
+            $this->app['config']->get('version')
         );
 
         if ($condition !== null)
@@ -103,10 +104,11 @@ class WrapperController implements ControllerProviderInterface
     {
         $asset = $this->app['twig']->getExtension('asset')->asset($url);
 
-        return sprintf('<link rel="stylesheet" href="%s://%s%s" media="print">',
+        return sprintf('<link rel="stylesheet" href="%s://%s%s?v=%s" media="print">',
             $this->request->getScheme(),
             $this->request->getHttpHost(),
-            $asset
+            $asset,
+            $this->app['config']->get('version')
         );
     }
 
@@ -114,10 +116,11 @@ class WrapperController implements ControllerProviderInterface
     {
         $asset = $this->app['twig']->getExtension('asset')->asset($url);
 
-        return sprintf('<link rel="stylesheet" href="%s://%s%s" media="screen">',
+        return sprintf('<link rel="stylesheet" href="%s://%s%s?v=%s" media="screen">',
             $this->request->getScheme(),
             $this->request->getHttpHost(),
-            $asset
+            $asset,
+            $this->app['config']->get('version')
         );
     }
 
@@ -125,10 +128,11 @@ class WrapperController implements ControllerProviderInterface
     {
         $asset = $this->app['twig']->getExtension('asset')->asset($url);
 
-        return sprintf('<script type="text/javascript" src="%s://%s%s"></script>',
+        return sprintf('<script type="text/javascript" src="%s://%s%s?v="></script>',
             $this->request->getScheme(),
             $this->request->getHttpHost(),
-            $asset
+            $asset,
+            $this->app['config']->get('version')
         );
     }
 
@@ -179,14 +183,16 @@ eof
     <script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
 
     <script>
+        var version = '%s';
+
         head.js(
-            {modernizr: templatePath+"vendor/modernizr-2.6.1.min.js"}, // test support html5 functionality
-            {selectivizr: templatePath+"vendor/selectivizr-min.js"}, // extend css selectors for IE
-            {jqPlugins: templatePath+"js/vacancesdirectes/plugins.js"},
-            {datepicker: templatePath+"js/vacancesdirectes/jquery-ui-1.9.2.custom.min.js"},
-            {i18nDatepicker: templatePath+"js/vacancesdirectes/jquery.ui.datepicker-$locale.js"},
-            {iframeFrontJS: templatePath+"js/vacancesdirectes/iframe/front.js"},
-            {iframeJS: templatePath+"js/vacancesdirectes/%s.js"}
+            {modernizr: templatePath+"vendor/modernizr-2.6.1.min.js?v=" + version}, // test support html5 functionality
+            {selectivizr: templatePath+"vendor/selectivizr-min.js?v=" + version}, // extend css selectors for IE
+            {jqPlugins: templatePath+"js/vacancesdirectes/plugins.js?v=" + version},
+            {datepicker: templatePath+"js/vacancesdirectes/jquery-ui-1.9.2.custom.min.js?v=" + version},
+            {i18nDatepicker: templatePath+"js/vacancesdirectes/jquery.ui.datepicker-$locale.js?v=" + version},
+            {iframeFrontJS: templatePath+"js/vacancesdirectes/iframe/front.js?v=" + version},
+            {iframeJS: templatePath+"js/vacancesdirectes/%s.js?v=" + version}
         );
     </script>
 
@@ -196,7 +202,8 @@ eof
     <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
     <![endif]-->
 eof
-, $this->specificFiles);
+            , $app['config']->get('version')
+            , $this->specificFiles);
 
         $iframe = str_replace(array(
             '{_c2is.uri}',

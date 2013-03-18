@@ -37,7 +37,7 @@
                 <img class="bg" src="{{ asset(bonPlan.imageListe | media('file')) }}" alt="{{ bonPlan.name }}" />
             </div>
             <div class="content clear">
-                <p>{{ bonPlan.description }}</p>
+                <p>{{ bonPlan.description | raw }}</p>
                 {% if bonPlan.activeCompteur == true %}
                     <div class="bpCount left">
                         {{ "general.plus_que" | trans }}<br />
