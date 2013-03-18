@@ -260,7 +260,8 @@ class BasePortfolioMediaType extends AppAwareType
         $builder->add('created_at', $this->getCreatedAtType(), $this->getCreatedAtOptions());
         $builder->add('updated_at', $this->getUpdatedAtType(), $this->getUpdatedAtOptions());
         $builder->add('active', $this->getActiveType(), $this->getActiveOptions());
-        $builder->add('portfolio_tags', $this->getPortfolioTagsType(), $this->getPortfolioTagsOptions());$builder->add('portfolio_mediaI18ns', 'translation_collection', array(
+        $builder->add('portfolio_tags', $this->getPortfolioTagsType(), $this->getPortfolioTagsOptions());
+        $builder->add('portfolio_mediaI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\PortfolioMediaI18n',
             'label' => 'portfolio_mediaI18ns',
             'required' => false,

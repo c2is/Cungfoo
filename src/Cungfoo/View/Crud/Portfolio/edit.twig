@@ -2,10 +2,8 @@
     <td colspan="9">
         <form action="{{ path('portfolio_edit', {id: form.id.get('value')}) }}" class="portfolio-edit-form" method="post" {{ form_enctype(form) }}>
             <div class="row-fluid">
-                <div class="span6">
+                <div class="span12">
                 {{ form_widget(form.portfolio_mediaI18ns) }}
-                </div>
-                <div class="span6">
                     {{ form_widget(form) }}
                     {{ form_widget(form.portfolio_tags) }}
                     {{ form_label(form.portfolio_tags) }}
