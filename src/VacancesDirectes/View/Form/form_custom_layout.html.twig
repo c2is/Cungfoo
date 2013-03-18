@@ -22,3 +22,15 @@
     </script>
     {{ block('form_widget_simple') }}
 {% endblock %}
+
+{% block _SearchDate_destination_widget %}
+    {% set listPays = list_pays() %}
+    <select id="SearchDate_destination" name="SearchDate[destination]">
+        {% if empty_value is not none %}
+            <option value="">{{ empty_value|trans({}, translation_domain) }}</option>
+        {% endif %}
+        {% for choice in choices %}
+        <option value="{{ choice.value }}"{% if choice.value in listPays %} class="optGroup-like"{% endif %}{% if choice is selectedchoice(value) %} selected="selected"{% endif %}>{{ choice.label | trans }}</option>
+        {% endfor %}
+    </select>
+{% endblock %}

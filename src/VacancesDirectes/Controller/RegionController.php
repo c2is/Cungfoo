@@ -25,7 +25,7 @@ class RegionController implements ControllerProviderInterface
     {
         $ctl = $app['controllers_factory'];
 
-        $ctl->get('/', array($this, 'region'))
+        $ctl->match('/', array($this, 'region'))
             ->bind('destination_region_list')
         ;
 
@@ -36,6 +36,10 @@ class RegionController implements ControllerProviderInterface
 
         $searchEngine = new SearchEngine($app, $request);
         $searchEngine->process();
+        if ($searchEngine->getRedirect())
+        {
+            return $app->redirect($searchEngine->getRedirect());
+        }
 
         $pays = PaysQuery::create()
             ->findActive()
