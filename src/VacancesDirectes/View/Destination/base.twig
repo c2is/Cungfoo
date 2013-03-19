@@ -17,7 +17,7 @@
                 {% endif %}
                 <h1>{{ title }}</h1> {# Titre #}
                 <h2 class="h3-like">{{ item.introduction }}</h2> {# Accroche #}
-                <p class="destiDescription">{{ item.description | raw }}</p> {# Description #}
+                <div class="richText destiDescription">{{ item.description | raw }}</div> {# Description #}
             {% endblock %}
             {% block bottomLeftColumn %}
                 {# Bloc "Notre sélection de campings" #}

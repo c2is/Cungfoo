@@ -20,7 +20,7 @@
 
     <h1>{{ title }}</h1>
     <h2 class="h3-like">{{ accroche }}</h2> {# Accroche #}
-    <p class="destiDescription">{{ description | raw }}</p> {# Description #}
+    <div class="richText">{{ description | raw }}</div> {# Description #}
 {% endblock %}
 
 {% block rightColumn %}
