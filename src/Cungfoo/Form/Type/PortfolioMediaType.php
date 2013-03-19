@@ -56,6 +56,11 @@ class PortfolioMediaType extends BasePortfolioMediaType
         return 'hidden';
     }
 
+    public function getTypeType()
+    {
+        return 'hidden';
+    }
+
     public function getSeoTitleType()
     {
         return 'hidden';
@@ -80,13 +85,4 @@ class PortfolioMediaType extends BasePortfolioMediaType
     {
         return 'hidden';
     }
-
-    /**
-
-                'seo_title' => array_merge(array('type' => $this->getSeoTitleType()), $this->getSeoTitleOptions()),
-                'seo_description' => array_merge(array('type' => $this->getSeoDescriptionType()), $this->getSeoDescriptionOptions()),
-                'seo_h1' => array_merge(array('type' => $this->getSeoH1Type()), $this->getSeoH1Options()),
-                'seo_keywords' => array_merge(array('type' => $this->getSeoKeywordsType()), $this->getSeoKeywordsOptions()),
-                'active_locale' => array_merge(array('type' => $this->getActiveLocaleType()), $this->getActiveLocaleOptions()),
-    */
 } // PortfolioMediaType

@@ -209,12 +209,15 @@ class PortfolioController implements ControllerProviderInterface
                 $imageInfos   = getimagesize($absolutePath);
 
                 $media
-                    ->setTitle($name)
                     ->setWidth($imageInfos[0])
                     ->setHeight($imageInfos[1])
                     ->setType($imageInfos['mime'])
                     ->setSize($media->convertFileSize(filesize($absolutePath)))
                     ->setFile($relativePath)
+                    ->setLocale('fr')
+                    ->setTitle($name)
+                    ->setLocale('de')
+                    ->setTitle($name)
                     ->save()
                 ;
 

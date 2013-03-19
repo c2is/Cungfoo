@@ -18,7 +18,7 @@ class PortfolioSearchType extends AppAwareType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('search', 'text', array(
-            'label'     => 'Search',
+            'label'     => 'context.term',
             'required'  => false,
         ));
 

@@ -144,8 +144,8 @@ body .tab-content {
 }
 
 body textarea {
-    width:686px;
-    min-height:150px;
+    width:90%;
+    min-height:120px;
 }
 
 body .redactor_box iframe {
@@ -153,7 +153,7 @@ body .redactor_box iframe {
 }
 
 body select[multiple=multiple] {
-    height:200px;
+    min-height:150px;
     width:100%;
 }
 

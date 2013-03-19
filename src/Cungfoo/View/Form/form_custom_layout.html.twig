@@ -93,10 +93,12 @@
 
 {% block form_row %}
 {% spaceless %}
-    <div class="row">
-        <div class="span12">{{ form_errors(form) }}</div>
-        <div class="span3">{{ form_label(form) }}</div>
-        <div class="span9">{{ form_widget(form) }}</div>
+    <div class="control-group">
+        <span class="control-label">{{ form_errors(form) }}</span>
+        <div class="controls form-inline row-fluid">
+            <div class="span3">{{ form_label(form) }}</div>
+            <div class="span9">{{ form_widget(form) }}</div>
+        </div>
     </div>
 {% endspaceless %}
 {% endblock form_row %}
