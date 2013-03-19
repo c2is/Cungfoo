@@ -175,11 +175,11 @@ class ApiController implements ControllerProviderInterface
                 $campingDom->appendChild($node);
 
                 $node = $dom->createElement('smallimage');
-                $node->appendChild($dom->createTextNode(''));
+                $node->appendChild($dom->createTextNode('http://' . $app['request']->getHttpHost() . '/images/passerelle/min/' . $camping->getId() . '.jpg'));
                 $campingDom->appendChild($node);
 
                 $node = $dom->createElement('bigimage');
-                $node->appendChild($dom->createTextNode(''));
+                $node->appendChild($dom->createTextNode('http://' . $app['request']->getHttpHost() . '/images/passerelle/max/' . $camping->getId() . '.jpg'));
                 $campingDom->appendChild($node);
 
                 $node = $dom->createElement('producturl');
