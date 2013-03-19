@@ -12,7 +12,7 @@
 
 <h1>{{ typeHebergement.name }}</h1>
 <h2 class="h3-like">{{ 'location.fiche.subtitle' | trans({'%type%': categoryTypeHebergement.name, '%nbPlaces%': typeHebergement.nombrePlace}) }}</h2>
-<p>{{ typeHebergement.presentation }}</p>
+<p>{{ typeHebergement.presentation | raw }}</p>
 <br/>
 
 <button data-triggerlink="#tabCampings" class="bt fushia big right triggerClick">{{ 'location.fiche.voir_les_campings' | trans }}</button>
