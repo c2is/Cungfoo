@@ -18,7 +18,7 @@
 
     <h1> {{ "bon_plan.title" | trans ({'%bonPlan%': bonPlan.name}) }}</h1>
 
-    <p class="description">{{ bonPlan.description | nl2br }}</p>{# Description #}
+    <div class="richText">{{ bonPlan.description | raw }}</div>{# Description #}
 
     {% if bonPlan.imagePage %}
     <img class="bdPict" src="{{ asset(bonPlan.imagePage) }}" alt="">
