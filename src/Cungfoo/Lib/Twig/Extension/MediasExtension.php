@@ -30,6 +30,7 @@ class MediasExtension extends \Twig_Extension
             ->usePortfolioUsageQuery()
                 ->orderByRank()
             ->endUse()
+            ->distinct()
             ->find()
         ;
     }

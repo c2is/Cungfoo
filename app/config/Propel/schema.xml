@@ -301,7 +301,7 @@
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/type-hebergement" />
             <parameter name="crud_search" value="name" />
-            <parameter name="crud_type_file" value="image_hebergement_path, image_composition_path" />
+            <parameter name="crud_type_file" value="image_hebergement_path, image_composition_path, slider" />
         </behavior>
     </table>
 
@@ -730,27 +730,6 @@
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/personnages-avantages" />
             <parameter name="crud_search" value="name" />
-            <parameter name="crud_type_file" value="image_path" />
-        </behavior>
-    </table>
-
-    <table name="multimedia_type_hebergement">
-        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
-        <column name="type_hebergement_id" type="integer" />
-        <column name="titre" type="varchar" required="true" />
-        <behavior name="timestampable" />
-        <behavior name="active" />
-
-        <foreign-key foreignTable="type_hebergement" onDelete="CASCADE">
-            <reference local="type_hebergement_id" foreign="id"/>
-        </foreign-key>
-
-        <behavior name="i18n">
-            <parameter name="i18n_columns" value="titre" />
-        </behavior>
-
-        <behavior name="crudable">
-            <parameter name="crud_prefix" value="/multimedias/type-hebergement" />
             <parameter name="crud_type_file" value="image_path" />
         </behavior>
     </table>

@@ -168,6 +168,19 @@ class BaseTypeHebergementType extends AppAwareType
         );
     }
 
+    public function getSliderType()
+    {
+        return 'cungfoo_file';
+    }
+
+    public function getSliderOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'type_hebergement.slider',
+        );
+    }
+
     public function getEtablissementsType()
     {
         return 'model';
@@ -488,6 +501,7 @@ class BaseTypeHebergementType extends AppAwareType
         $builder->add('active', $this->getActiveType(), $this->getActiveOptions());
         $builder->add('image_hebergement_path', $this->getImageHebergementPathType(), $this->getImageHebergementPathOptions());
         $builder->add('image_composition_path', $this->getImageCompositionPathType(), $this->getImageCompositionPathOptions());
+        $builder->add('slider', $this->getSliderType(), $this->getSliderOptions());
         $builder->add('etablissements', $this->getEtablissementsType(), $this->getEtablissementsOptions());$builder->add('type_hebergementI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\TypeHebergementI18n',
             'label' => 'type_hebergementI18ns',

@@ -516,6 +516,7 @@ type_hebergement.nombre_place: Nombre de place
 type_hebergement.image.hebergement.path: Image
 type_hebergement.image.composition.path: Image composition
 type_hebergement.active: Actif
+type_hebergement.slider: Media du slider
 type_hebergementI18ns: ""
 type_hebergement_i18n.active_locale: "Activer pour cette langue"
 type_hebergement_i18n.slug: "Slug"

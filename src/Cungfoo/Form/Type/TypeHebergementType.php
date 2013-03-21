@@ -95,6 +95,7 @@ class TypeHebergementType extends BaseTypeHebergementType
                     'content'       => array(
                         'image_hebergement_path',
                         'image_composition_path',
+                        'slider',
                     )
                 ),
                 array(

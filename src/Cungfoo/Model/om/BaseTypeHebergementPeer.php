@@ -11,7 +11,6 @@ use \PropelException;
 use \PropelPDO;
 use Cungfoo\Model\CategoryTypeHebergementPeer;
 use Cungfoo\Model\EtablissementTypeHebergementPeer;
-use Cungfoo\Model\MultimediaTypeHebergementPeer;
 use Cungfoo\Model\TypeHebergement;
 use Cungfoo\Model\TypeHebergementCapacitePeer;
 use Cungfoo\Model\TypeHebergementI18nPeer;
@@ -417,9 +416,6 @@ abstract class BaseTypeHebergementPeer
         // Invalidate objects in EtablissementTypeHebergementPeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
         EtablissementTypeHebergementPeer::clearInstancePool();
-        // Invalidate objects in MultimediaTypeHebergementPeer instance pool,
-        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
-        MultimediaTypeHebergementPeer::clearInstancePool();
         // Invalidate objects in TypeHebergementI18nPeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
         TypeHebergementI18nPeer::clearInstancePool();
