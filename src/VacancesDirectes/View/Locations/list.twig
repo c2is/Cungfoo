@@ -24,7 +24,7 @@
 
 <h1>{{ ("location.list.title") | trans ({'%type%': categoryTypeHebergement.name}) }}</h1>
 <h2 class="h3-like">{{ categoryTypeHebergement.name }}</h2>
-<p class="description">{{ categoryTypeHebergement.description }}</p>
+<div class="richText">{{ categoryTypeHebergement.description | raw }}</div>
 
  <a href="#results" class="bt big fushia right goto">{{ 'location.list.notre_selection' | trans }}</a>
 

@@ -107,7 +107,7 @@
 <div id="tabCamp" class="tabs">
 
     <h3>{{ 'fiche.description_title' | trans }}</h3>
-    <p class="campDesc">{{ etab.description|raw }}</p>
+    <div class="richText campDesc">{{ etab.description|raw }}</div>
 
     {% if etab.plan != "" %}
     <h3>{{ 'fiche.plan_camping' | trans }}</h3>

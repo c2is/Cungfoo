@@ -19,7 +19,7 @@
     <div class="clear">
         <h1>{{ categorie.name }}</h1>
         <span class="h2-like">{{ categorie.subtitle }}</span>
-        <p class="description">{{ categorie.description }}</p> {# Description #}
+        <div class="richText">{{ categorie.description | raw }}</div> {# Description #}
     </div>
 {% endblock %}
 
