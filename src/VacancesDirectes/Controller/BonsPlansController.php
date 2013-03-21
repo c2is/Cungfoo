@@ -157,7 +157,6 @@ class BonsPlansController implements ControllerProviderInterface
                 ->useI18nQuery($locale)
                     ->filterBySlug($cat)
                 ->endUse()
-                ->filterByActive(true)
                 ->findOne()
             ;
 

@@ -165,7 +165,7 @@ jQuery.extend( jQuery.fn, {
                     }
                 });
             }
-            
+
             if (hasMoreResults && $('.nextItem').length > 0) {
                 btnMoreResults.show();
             } else if (hasMoreResults) {
@@ -1290,7 +1290,7 @@ function countItem() {
         var $input = $button.siblings(".spin-tb");
         var oldValue = $input.val();
         if ($button.hasClass('spin-bt-up')) {
-            if (oldValue < 10) {
+            if (oldValue < 6) {
                 var newVal = parseFloat(oldValue) + 1;
             }
             else {

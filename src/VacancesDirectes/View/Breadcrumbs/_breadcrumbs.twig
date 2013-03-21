@@ -51,4 +51,10 @@
         <li>&gt; <a href="{{ path('location_type_hebergement', {'categoryTypeHebergement': categoryTypeHebergement.slug, 'typeHebergement': typeHebergement.slug}) }}"><span itemprop="title">{{ typeHebergement.name }}</span></a></li>
         {% endif %}
     {% endif %}
+    {% if 'event' in breadcrumbsRoute %}
+    <li>&gt; <a href="{{ path('event', {'slug': event.slug}) }}" itemprop="url"><span itemprop="title">{{ event.name }}</span></a></li>
+    {% endif %}
+    {% if 'poi' in breadcrumbsRoute %}
+    <li>&gt; <a href="{{ path('poi', {'slug': poi.slug}) }}" itemprop="url"><span itemprop="title">{{ poi.name }}</span></a></li>
+    {% endif %}
 </ol>
