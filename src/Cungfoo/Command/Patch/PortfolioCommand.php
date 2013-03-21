@@ -137,14 +137,16 @@ class PortfolioCommand extends Command
     {
         if (!$image) return;
 
+        $title = str_replace(array(end(explode('.', addslashes($image))), '-', '.'), array('', ' ', ''), addslashes($image));
+
         $media = new PortfolioMedia();
         $media
             ->setLocale('fr')
             ->setFile('portfolio/'.addslashes($image))
-            ->setTitle(addslashes($image))
+            ->setTitle($title)
             ->setLocale('de')
             ->setFile('portfolio/'.addslashes($image))
-            ->setTitle(addslashes($image))
+            ->setTitle($title)
             ->setActive(true)
             ->save($con)
         ;
