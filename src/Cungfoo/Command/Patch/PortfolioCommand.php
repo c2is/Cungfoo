@@ -69,7 +69,6 @@ class PortfolioCommand extends Command
             $this->process($con, 'ServiceComplementaire', 'service_complementaire', array('image_path', 'vignette'));
             $this->process($con, 'Personnage', 'personnage', array('image_path'));
             $this->process($con, 'Avantage', 'avantage', array('image_path'));
-            $this->process($con, 'MultimediaTypeHebergement', 'multimedia_type_hebergement', array('image_path'));
             $this->process($con, 'MultimediaEtablissement', 'etablissement', array('image_path'));
             $this->process($con, 'MiseEnAvant', 'mise_en_avant', array('image_fond_path', 'illustration_path'));
             $this->process($con, 'VosVacances', 'vos_vacances', array('image_path'));
