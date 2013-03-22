@@ -2429,6 +2429,16 @@ function listPagination() {
     //contreProp();
 };
 
+// verifier la presence du tracker GA
+function test_analytics(Url) {
+    if (window._gat && window._gat._getTracker) {
+        _gaq.push(['_link', Url]);
+    }
+    else {
+        window.location= Url;
+    }
+}
+
 //contre propositions
 /*
  function contreProp() {

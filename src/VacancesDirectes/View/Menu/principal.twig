@@ -12,11 +12,11 @@
     {% endfor %}
     <li id="lang">
         {% if app.context.get('language') == 'fr' %}
-        <a href="http://www.vacances-directes.de"{% if currentRoute == "destination_camping" %} onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_ MenuPrincipal ', 'Lien_-_Version-Langue', 'Clic_-_Bouton-DE']);"{% endif %}><img src="{{ asset('images/vacancesdirectes/dyn/ui/lang-flag-de.jpg') }}" width="26" height="17" alt="DE"/></a>
+        <a href="http://www.vacances-directes.de" onclick="javascript:{% if currentRoute == "destination_camping" %}_gaq.push(['_trackEvent', 'Nav-VD_-_ MenuPrincipal ', 'Lien_-_Version-Langue', 'Clic_-_Bouton-DE']);{% endif %}test_analytics(this.href); return false;"><img src="{{ asset('images/vacancesdirectes/dyn/ui/lang-flag-de.jpg') }}" width="26" height="17" alt="DE"/></a>
         {% elseif app.context.get('language') == 'de' %}
-        <a href="http://www.vacances-directes.com"><img src="{{ asset('images/vacancesdirectes/dyn/ui/lang-flag-fr.jpg') }}" width="26" height="17" alt="FR"/></a>
+        <a href="http://www.vacances-directes.com" onclick="javascript:test_analytics(this.href); return false;"><img src="{{ asset('images/vacancesdirectes/dyn/ui/lang-flag-fr.jpg') }}" width="26" height="17" alt="FR"/></a>
         {% endif %}
-        <a href="http://www.vacances-directes.nl"{% if currentRoute == "destination_camping" %} onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_ MenuPrincipal ', 'Lien_-_Version-Langue', 'Clic_-_Bouton-NL']);"{% endif %}><img src="{{ asset('images/vacancesdirectes/dyn/ui/lang-flag-nl.jpg') }}" width="26" height="17" alt="NL"/></a>
+        <a href="http://www.vacances-directes.nl" onclick="javascript:{% if currentRoute == "destination_camping" %}_gaq.push(['_trackEvent', 'Nav-VD_-_ MenuPrincipal ', 'Lien_-_Version-Langue', 'Clic_-_Bouton-NL']);{% endif %}test_analytics(this.href); return false;"><img src="{{ asset('images/vacancesdirectes/dyn/ui/lang-flag-nl.jpg') }}" width="26" height="17" alt="NL"/></a>
     </li>
     </ul>
 </nav>
