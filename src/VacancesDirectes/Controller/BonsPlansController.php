@@ -140,7 +140,7 @@ class BonsPlansController implements ControllerProviderInterface
 
         $controllers->match('/camping-ascension/', function (Request $request) use ($app)
         {
-            return $app['twig']->render('BonsPlans/index.twig', array(
+            return $app->renderView('BonsPlans/index.twig', array(
                 'seo' => "pont de l'ascension",
                 'title' => "NOS OFFRES CAMPINGS : PONT DE L'ASCENSION",
                 'accroche' => "Besoin d'un week-end prolongé sous le soleil printanier du mois de mai pour l'Ascension ?!",
@@ -151,7 +151,7 @@ class BonsPlansController implements ControllerProviderInterface
 
         $controllers->match('/camping-8-mai/', function (Request $request) use ($app)
         {
-            return $app['twig']->render('BonsPlans/index.twig', array(
+            return $app->renderView('BonsPlans/index.twig', array(
                 'seo' => "pont du 8 mai",
                 'title' => "NOS OFFRES CAMPINGS : PONT DU 8 MAI",
                 'accroche' => "Besoin d'un week-end prolongé sous le soleil printanier pour le pont du 8 mai ?!",
@@ -162,7 +162,7 @@ class BonsPlansController implements ControllerProviderInterface
 
         $controllers->match('/camping-1er-mai/', function (Request $request) use ($app)
         {
-            return $app['twig']->render('BonsPlans/index.twig', array(
+            return $app->renderView('BonsPlans/index.twig', array(
                 'seo' => "pont du 1er mai",
                 'title' => "NOS OFFRES CAMPINGS : PONT DU 1ER MAI",
                 'accroche' => "Besoin d'un week-end prolongé sous le soleil printanier pour le pont du 1er mai ?!",
@@ -173,7 +173,7 @@ class BonsPlansController implements ControllerProviderInterface
 
         $controllers->match('/camping-pentecote/', function (Request $request) use ($app)
         {
-            return $app['twig']->render('BonsPlans/index.twig', array(
+            return $app->renderView('BonsPlans/index.twig', array(
                 'seo' => "week-end de la pentecôte",
                 'title' => "NOS OFFRES CAMPINGS : WEEK-END DE LA PENTECÔTE",
                 'accroche' => "Besoin d'un week-end prolongé sous le soleil printanier du mois de mai pour la Pentecôte ?!",
@@ -184,7 +184,7 @@ class BonsPlansController implements ControllerProviderInterface
 
         $controllers->match('/camping-dernieres-minutes/', function (Request $request) use ($app)
         {
-            return $app['twig']->render('BonsPlans/index.twig', array(
+            return $app->renderView('BonsPlans/index.twig', array(
                 'seo' => "dernieres minutes",
                 'title' => "NOS OFFRES DE CAMPINGS EN DERNIÈRES MINUTES (LOCATION MOBIL HOME)",
                 'description' => "Découvrez toutes les offres de locations de mobil homes en dernières minutes en camping proposées par Vacances directes et réserver en ligne.",
