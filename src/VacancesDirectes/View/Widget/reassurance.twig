@@ -1,13 +1,14 @@
-<div id="infoBloc" class="clear radiusBox greyF">
+<div id="infoBloc" class="content clear radiusBox greyF">
     <h3>{{ 'widget.reassurance.title' | trans }}</h3>
-    <div class="content">
+    <div class="content clear">
         <p>
             <a class="tel" href="tel:{{ 'widget.reassurance.telto' | trans }}">{{ 'widget.reassurance.tel' | trans }}</a>
+            <span class="price">{{ 'widget.reassurance.price' | trans }}</span>
         </p>
-        <span class="price">{{ 'widget.reassurance.price' | trans }}</span>
         <p class="small">
             {{ 'widget.reassurance.ouverture_du' | trans }}<br />
             {{ 'widget.reassurance.ouverture_au' | trans }}
-        </p>
+        </p><br />
+        <a  class="bt ib gris2" href="mailto:contact@vacances-directes.com">{{ "footer.nous_contacter" | trans }}</a>
     </div>
 </div>
