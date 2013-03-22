@@ -18,4 +18,17 @@ use Cungfoo\Model\om\BaseBonPlanPeer;
  */
 class BonPlanPeer extends BaseBonPlanPeer
 {
+    public static function assertUrl($locale)
+    {
+        $objects = BonPlanQuery::create()
+            ->useI18nQuery($locale)
+            ->withColumn('bon_plan_i18n.slug', 'slug')
+            ->endUse()
+            ->select('slug')
+            ->find()
+            ->toArray()
+        ;
+
+        return implode('|', $objects);
+    }
 }
