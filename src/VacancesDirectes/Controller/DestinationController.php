@@ -306,9 +306,10 @@ class DestinationController implements ControllerProviderInterface
 
         // On parcourt tous les campings pour trouver le premier qui a bien des coordonnees saisies afin d'afficher la GMap centree sur cet element
         $firstEtab = null;
+        $listContentElement = array_values($listContent['element']);
         for($i = 0; $i < $nbCampings && (!$firstEtab['model'] || (!$firstEtab['model']->getGeoCoordinateX() && !$firstEtab['model']->getGeoCoordinateY())); $i++)
         {
-            $firstEtab = $listContent['element'][$i];
+            $firstEtab = $listContentElement[$i];
         }
 
         // gestion des canonical

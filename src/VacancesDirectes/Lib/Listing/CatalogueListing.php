@@ -17,13 +17,23 @@ class CatalogueListing extends AbstractListing
             'element' => array()
         );
 
+        $prefix  = 0;
+        $element = array();
+
         foreach ($this->data as $data)
         {
-            $results['element'][] = array(
+            $prefix++;
+            $index  = ($data->getMinimumPrice() *100) . str_pad($prefix, 3, '0', STR_PAD_LEFT);
+
+            $element[$index] = array(
                 'model' => $data,
                 'extra' => 'extra',
             );
         }
+
+        ksort($element);
+
+        $results['element'] = $element;
 
         return $results;
     }
