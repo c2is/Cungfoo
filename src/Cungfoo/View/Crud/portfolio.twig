@@ -1,0 +1,7 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+    <h1>{{ ("portfolio_dashboard.crud.list") | trans }}</h1>
+
+    <a class="portfolio-popin-btn btn" href="{{ path('portfolio_popin') }}">Add Media</a>
+{% endblock %}

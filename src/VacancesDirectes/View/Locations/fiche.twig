@@ -23,10 +23,10 @@
 </ul>
 
 <div class="tabCampDiapo">
-    {% if typeHebergement.multimediaTypeHebergements|length > 0 %}
+    {% if typeHebergement.slider|length > 0 %}
     <div class="slider"><div class="slide clear">
-        {% for multimedia in typeHebergement.multimediaTypeHebergements %}
-        <img src="{{ asset(multimedia.imagePath) }}" width="616" height="326" class="locations" title="{{multimedia.titre}}" alt="{{multimedia.titre}}"/>
+        {% for multimedia in typeHebergement.slider|medias %}
+        <img src="{{ asset(multimedia.file) }}" width="616" height="326" class="locations" title="{{multimedia.title}}" alt="{{multimedia.title}}"/>
         {% endfor %}
     </div></div>
     {% endif %}

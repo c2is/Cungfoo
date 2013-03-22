@@ -37,22 +37,19 @@ abstract class BaseMetadataPeer
     const TM_CLASS = 'MetadataTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 3;
+    const NUM_COLUMNS = 2;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 3;
+    const NUM_HYDRATE_COLUMNS = 2;
 
     /** the column name for the id field */
     const ID = 'metadata.id';
 
     /** the column name for the table_ref field */
     const TABLE_REF = 'metadata.table_ref';
-
-    /** the column name for the visuel field */
-    const VISUEL = 'metadata.visuel';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -80,12 +77,12 @@ abstract class BaseMetadataPeer
      * e.g. MetadataPeer::$fieldNames[MetadataPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'TableRef', 'Visuel', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'tableRef', 'visuel', ),
-        BasePeer::TYPE_COLNAME => array (MetadataPeer::ID, MetadataPeer::TABLE_REF, MetadataPeer::VISUEL, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'TABLE_REF', 'VISUEL', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'table_ref', 'visuel', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'TableRef', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'tableRef', ),
+        BasePeer::TYPE_COLNAME => array (MetadataPeer::ID, MetadataPeer::TABLE_REF, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'TABLE_REF', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'table_ref', ),
+        BasePeer::TYPE_NUM => array (0, 1, )
     );
 
     /**
@@ -95,12 +92,12 @@ abstract class BaseMetadataPeer
      * e.g. MetadataPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'TableRef' => 1, 'Visuel' => 2, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'tableRef' => 1, 'visuel' => 2, ),
-        BasePeer::TYPE_COLNAME => array (MetadataPeer::ID => 0, MetadataPeer::TABLE_REF => 1, MetadataPeer::VISUEL => 2, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'TABLE_REF' => 1, 'VISUEL' => 2, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'table_ref' => 1, 'visuel' => 2, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'TableRef' => 1, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'tableRef' => 1, ),
+        BasePeer::TYPE_COLNAME => array (MetadataPeer::ID => 0, MetadataPeer::TABLE_REF => 1, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'TABLE_REF' => 1, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'table_ref' => 1, ),
+        BasePeer::TYPE_NUM => array (0, 1, )
     );
 
     /**
@@ -176,11 +173,9 @@ abstract class BaseMetadataPeer
         if (null === $alias) {
             $criteria->addSelectColumn(MetadataPeer::ID);
             $criteria->addSelectColumn(MetadataPeer::TABLE_REF);
-            $criteria->addSelectColumn(MetadataPeer::VISUEL);
         } else {
             $criteria->addSelectColumn($alias . '.id');
             $criteria->addSelectColumn($alias . '.table_ref');
-            $criteria->addSelectColumn($alias . '.visuel');
         }
     }
 

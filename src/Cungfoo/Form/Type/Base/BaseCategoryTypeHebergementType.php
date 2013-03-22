@@ -60,60 +60,6 @@ class BaseCategoryTypeHebergementType extends AppAwareType
         );
     }
 
-    public function getImageMenuType()
-    {
-        return 'cungfoo_file';
-    }
-
-    public function getImageMenuOptions()
-    {
-        return array(
-            'required' => false,
-            'label' => 'category_type_hebergement.image_menu',
-        );
-    }
-
-    public function getImageMenuDeletedType()
-    {
-        return 'checkbox';
-    }
-
-    public function getImageMenuDeletedOptions()
-    {
-        return array(
-            'property_path' => false,
-            'required' => false,
-            'label' => 'category_type_hebergement.image_menu_deleted',
-        );
-    }
-
-    public function getImagePageType()
-    {
-        return 'cungfoo_file';
-    }
-
-    public function getImagePageOptions()
-    {
-        return array(
-            'required' => false,
-            'label' => 'category_type_hebergement.image_page',
-        );
-    }
-
-    public function getImagePageDeletedType()
-    {
-        return 'checkbox';
-    }
-
-    public function getImagePageDeletedOptions()
-    {
-        return array(
-            'property_path' => false,
-            'required' => false,
-            'label' => 'category_type_hebergement.image_page_deleted',
-        );
-    }
-
     public function getCreatedAtType()
     {
         return 'datetime';
@@ -165,6 +111,32 @@ class BaseCategoryTypeHebergementType extends AppAwareType
         return array(
             'required' => false,
             'label' => 'category_type_hebergement.active',
+        );
+    }
+
+    public function getImageMenuType()
+    {
+        return 'cungfoo_file';
+    }
+
+    public function getImageMenuOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'category_type_hebergement.image_menu',
+        );
+    }
+
+    public function getImagePageType()
+    {
+        return 'cungfoo_file';
+    }
+
+    public function getImagePageOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'category_type_hebergement.image_page',
         );
     }
 
@@ -296,14 +268,12 @@ class BaseCategoryTypeHebergementType extends AppAwareType
         $builder->add('id', $this->getIdType(), $this->getIdOptions());
         $builder->add('code', $this->getCodeType(), $this->getCodeOptions());
         $builder->add('minimum_price', $this->getMinimumPriceType(), $this->getMinimumPriceOptions());
-        $builder->add('image_menu', $this->getImageMenuType(), $this->getImageMenuOptions());
-        $builder->add('image_menu_deleted', $this->getImageMenuDeletedType(), $this->getImageMenuDeletedOptions());
-        $builder->add('image_page', $this->getImagePageType(), $this->getImagePageOptions());
-        $builder->add('image_page_deleted', $this->getImagePageDeletedType(), $this->getImagePageDeletedOptions());
         $builder->add('created_at', $this->getCreatedAtType(), $this->getCreatedAtOptions());
         $builder->add('updated_at', $this->getUpdatedAtType(), $this->getUpdatedAtOptions());
         $builder->add('sortable_rank', $this->getSortableRankType(), $this->getSortableRankOptions());
-        $builder->add('active', $this->getActiveType(), $this->getActiveOptions());$builder->add('category_type_hebergementI18ns', 'translation_collection', array(
+        $builder->add('active', $this->getActiveType(), $this->getActiveOptions());
+        $builder->add('image_menu', $this->getImageMenuType(), $this->getImageMenuOptions());
+        $builder->add('image_page', $this->getImagePageType(), $this->getImagePageOptions());$builder->add('category_type_hebergementI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\CategoryTypeHebergementI18n',
             'label' => 'category_type_hebergementI18ns',
             'required' => false,

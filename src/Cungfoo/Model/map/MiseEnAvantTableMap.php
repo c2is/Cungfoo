@@ -43,9 +43,7 @@ class MiseEnAvantTableMap extends TableMap
         $this->setUseIdGenerator(true);
         // columns
         $this->addPrimaryKey('id', 'Id', 'INTEGER', true, null, null);
-        $this->addColumn('image_fond_path', 'ImageFondPath', 'VARCHAR', false, 255, null);
         $this->addColumn('prix', 'Prix', 'VARCHAR', false, 255, null);
-        $this->addColumn('illustration_path', 'IllustrationPath', 'VARCHAR', false, 255, null);
         $this->addColumn('date_fin_validite', 'DateFinValidite', 'DATE', false, null, null);
         $this->addColumn('sortable_rank', 'SortableRank', 'INTEGER', false, null, null);
         $this->addColumn('active', 'Active', 'BOOLEAN', false, 1, false);

@@ -44,14 +44,9 @@ class RegionTableMap extends TableMap
         // columns
         $this->addPrimaryKey('id', 'Id', 'INTEGER', true, null, null);
         $this->addColumn('code', 'Code', 'VARCHAR', true, 255, null);
-        $this->addColumn('image_path', 'ImagePath', 'VARCHAR', false, 255, null);
-        $this->addColumn('image_encart_path', 'ImageEncartPath', 'VARCHAR', false, 255, null);
-        $this->addColumn('image_encart_petite_path', 'ImageEncartPetitePath', 'VARCHAR', false, 255, null);
         $this->addForeignKey('pays_id', 'PaysId', 'INTEGER', 'pays', 'id', false, null, null);
         $this->addForeignKey('destination_id', 'DestinationId', 'INTEGER', 'destination', 'id', false, null, null);
         $this->addColumn('mea_home', 'MeaHome', 'BOOLEAN', false, 1, null);
-        $this->addColumn('image_detail_1', 'ImageDetail1', 'VARCHAR', false, 255, null);
-        $this->addColumn('image_detail_2', 'ImageDetail2', 'VARCHAR', false, 255, null);
         $this->addColumn('created_at', 'CreatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('updated_at', 'UpdatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('active', 'Active', 'BOOLEAN', false, 1, false);

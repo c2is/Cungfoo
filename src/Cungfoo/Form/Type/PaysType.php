@@ -73,9 +73,7 @@ class PaysType extends BasePaysType
                     'title'         => 'crud.tab.medias',
                     'content'       => array(
                         'image_detail_1',
-                        'image_detail_1_deleted',
                         'image_detail_2',
-                        'image_detail_2_deleted',
                     )
                 ),
                 array(

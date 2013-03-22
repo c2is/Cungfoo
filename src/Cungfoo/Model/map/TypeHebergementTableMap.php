@@ -48,8 +48,6 @@ class TypeHebergementTableMap extends TableMap
         $this->addForeignKey('category_type_hebergement_id', 'CategoryTypeHebergementId', 'INTEGER', 'category_type_hebergement', 'id', false, null, null);
         $this->addColumn('nombre_chambre', 'NombreChambre', 'INTEGER', false, null, null);
         $this->addColumn('nombre_place', 'NombrePlace', 'INTEGER', false, null, null);
-        $this->addColumn('image_hebergement_path', 'ImageHebergementPath', 'VARCHAR', false, 255, null);
-        $this->addColumn('image_composition_path', 'ImageCompositionPath', 'VARCHAR', false, 255, null);
         $this->addColumn('created_at', 'CreatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('updated_at', 'UpdatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('active', 'Active', 'BOOLEAN', false, 1, false);
@@ -64,7 +62,6 @@ class TypeHebergementTableMap extends TableMap
         $this->addRelation('CategoryTypeHebergement', 'Cungfoo\\Model\\CategoryTypeHebergement', RelationMap::MANY_TO_ONE, array('category_type_hebergement_id' => 'id', ), 'SET NULL', null);
         $this->addRelation('TypeHebergementCapacite', 'Cungfoo\\Model\\TypeHebergementCapacite', RelationMap::MANY_TO_ONE, array('type_hebergement_capacite_id' => 'id', ), 'SET NULL', null);
         $this->addRelation('EtablissementTypeHebergement', 'Cungfoo\\Model\\EtablissementTypeHebergement', RelationMap::ONE_TO_MANY, array('id' => 'type_hebergement_id', ), 'CASCADE', null, 'EtablissementTypeHebergements');
-        $this->addRelation('MultimediaTypeHebergement', 'Cungfoo\\Model\\MultimediaTypeHebergement', RelationMap::ONE_TO_MANY, array('id' => 'type_hebergement_id', ), 'CASCADE', null, 'MultimediaTypeHebergements');
         $this->addRelation('TypeHebergementI18n', 'Cungfoo\\Model\\TypeHebergementI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'TypeHebergementI18ns');
         $this->addRelation('Etablissement', 'Cungfoo\\Model\\Etablissement', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'Etablissements');
     } // buildRelations()
@@ -101,7 +98,7 @@ class TypeHebergementTableMap extends TableMap
   'crud_prefix' => '/type-hebergement',
   'crud_model' => NULL,
   'crud_form' => NULL,
-  'crud_type_file' => 'image_hebergement_path, image_composition_path',
+  'crud_type_file' => 'image_hebergement_path, image_composition_path, slider',
   'crud_search' => 'name',
 ),
             'seo' =>  array (

@@ -47,10 +47,13 @@ class CrudableBehavior extends Behavior
             $this->addGetUploadDir($script);
             $this->addGetUploadRootDir($script);
 
-            foreach (explode(',', $this->getTable()->getBehavior('crudable')->getParameter('crud_type_file')) as $columnName)
-            {
-                $columnName = trim($columnName);
-                $this->addUploadFile($columnName, $script);
+            if ($this->getTable()->getBehavior('crudable')->getParameter('crud_type_file')) {
+                foreach (explode(',', $this->getTable()->getBehavior('crudable')->getParameter('crud_type_file')) as $columnName)
+                {
+                    $columnName = trim($columnName);
+                    $this->addGetPortfolioMedia($columnName, $script);
+                    $this->addSavePortfolioUsage($columnName, $script);
+                }
             }
         }
 
@@ -114,12 +117,6 @@ class CrudableBehavior extends Behavior
             ));
 
             $this->metadataTable->addColumn(array(
-                'name'       => 'visuel',
-                'type'       => PropelTypes::VARCHAR,
-                'size'       => 255,
-            ));
-
-            $this->metadataTable->addColumn(array(
                 'name'       => 'accroche',
                 'type'       => PropelTypes::VARCHAR,
                 'size'       => 255,
@@ -155,32 +152,7 @@ class CrudableBehavior extends Behavior
  * @see        doSave()
  */
 public function saveFromCrud(\Symfony\Component\Form\Form \$form, PropelPDO \$con = null)
-{";
-
-
-        if ($this->crudTypeFileExists())
-        {
-            foreach (explode(',', $this->getTable()->getBehavior('crudable')->getParameter('crud_type_file')) as $columnName)
-            {
-                $columnName = trim($columnName);
-                $utils = new \Cungfoo\Lib\Utils();
-                $columnNameDeleted  = $columnName . '_deleted';
-                $columnNameCamelize = $utils->camelize($columnName);
-
-                $columnPeerName = $utils->camelize($this->getTable()->getName()) . 'Peer::' . strtoupper($columnName);
-
-                $script .= "
-    if (!\$form['$columnNameDeleted']->getData())
-    {
-        \$this->resetModified($columnPeerName);
-    }
-
-    \$this->upload$columnNameCamelize(\$form);
-    ";
-
-            }
-        }
-        $script .= "
+{
     return \$this->save(\$con);
 }
 ";
@@ -196,6 +168,90 @@ public function saveFromCrud(\Symfony\Component\Form\Form \$form, PropelPDO \$co
 public function getUploadDir()
 {
     return 'uploads/$tableName';
+}
+";
+    }
+
+    protected function addGetPortfolioMedia($columnName, &$script)
+    {
+        $utils = new \Cungfoo\Lib\Utils();
+        $columnNameCamelize = $utils->camelize($columnName);
+
+        $script .= "
+/**
+ * @return void
+ */
+public function get{$columnNameCamelize}()
+{
+    \$peer = self::PEER;
+
+    \$medias = \Cungfoo\Model\PortfolioMediaQuery::create()
+        ->select('id')
+        ->usePortfolioUsageQuery()
+            ->filterByTableRef(\$peer::TABLE_NAME)
+            ->filterByColumnRef('{$columnName}')
+            ->filterByElementId(\$this->getId())
+        ->endUse()
+        ->find()
+        ->toArray()
+    ;
+
+    return implode(';', \$medias);
+}
+";
+    }
+
+    protected function addSavePortfolioUsage($columnName, &$script)
+    {
+        $utils = new \Cungfoo\Lib\Utils();
+        $columnNameCamelize = $utils->camelize($columnName);
+
+        $script .= "
+/**
+ * @return void
+ */
+public function set{$columnNameCamelize}(\$v)
+{
+    \$peer = self::PEER;
+
+    \$values = explode(';', \$v);
+
+    \Cungfoo\Model\PortfolioUsageQuery::create()
+        ->filterByTableRef(\$peer::TABLE_NAME)
+        ->filterByColumnRef('{$columnName}')
+        ->filterByElementId(\$this->getId())
+        ->filterByMediaId(\$values, \Criteria::NOT_IN)
+        ->find()
+        ->delete()
+    ;
+
+    if (\$v) {
+        foreach (\$values as \$index => \$value) {
+            \$usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+                ->filterByTableRef(\$peer::TABLE_NAME)
+                ->filterByColumnRef('{$columnName}')
+                ->filterByElementId(\$this->getId())
+                ->filterByMediaId(\$value)
+                ->findOne()
+            ;
+
+            if (!\$usage) {
+                \$usage = new \Cungfoo\Model\PortfolioUsage();
+                \$usage
+                    ->setTableRef(\$peer::TABLE_NAME)
+                    ->setColumnRef('{$columnName}')
+                    ->setElementId(\$this->getId())
+                    ->setMediaId(\$value)
+                ;
+            }
+
+            \$usage
+                ->setSortableRank(\$index)
+                ->save()
+            ;
+        }
+
+    }
 }
 ";
     }
@@ -218,30 +274,6 @@ public function getUploadDir()
 public function getUploadRootDir()
 {
     return __DIR__.'$subDirectoryLevel/$relativeWebDir/'.\$this->getUploadDir();
-}
-";
-    }
-
-    protected function addUploadFile($columnName, &$script)
-    {
-        $utils = new \Cungfoo\Lib\Utils();
-        $columnNameCamelize = $utils->camelize($columnName);
-
-        $script .= "
-/**
- * @param \Symfony\Component\Form\Form \$form
- * @return void
- */
-public function upload$columnNameCamelize(\Symfony\Component\Form\Form \$form)
-{
-    if (!file_exists(\$this->getUploadRootDir() . '/' . \$form['$columnName']->getData()))
-    {
-        if (\$form['$columnName']->getData()) {
-            \$image = uniqid().'.'.\$form['$columnName']->getData()->guessExtension();
-            \$form['$columnName']->getData()->move(\$this->getUploadRootDir(), \$image);
-            \$this->set$columnNameCamelize(\$this->getUploadDir() . '/' . \$image);
-        }
-    }
 }
 ";
     }

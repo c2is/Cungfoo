@@ -29,7 +29,6 @@ use Cungfoo\Model\ThemePersonnage;
  * @method PersonnageQuery orderById($order = Criteria::ASC) Order by the id column
  * @method PersonnageQuery orderByEtablissementId($order = Criteria::ASC) Order by the etablissement_id column
  * @method PersonnageQuery orderByAge($order = Criteria::ASC) Order by the age column
- * @method PersonnageQuery orderByImagePath($order = Criteria::ASC) Order by the image_path column
  * @method PersonnageQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method PersonnageQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  * @method PersonnageQuery orderByActive($order = Criteria::ASC) Order by the active column
@@ -37,7 +36,6 @@ use Cungfoo\Model\ThemePersonnage;
  * @method PersonnageQuery groupById() Group by the id column
  * @method PersonnageQuery groupByEtablissementId() Group by the etablissement_id column
  * @method PersonnageQuery groupByAge() Group by the age column
- * @method PersonnageQuery groupByImagePath() Group by the image_path column
  * @method PersonnageQuery groupByCreatedAt() Group by the created_at column
  * @method PersonnageQuery groupByUpdatedAt() Group by the updated_at column
  * @method PersonnageQuery groupByActive() Group by the active column
@@ -67,7 +65,6 @@ use Cungfoo\Model\ThemePersonnage;
  *
  * @method Personnage findOneByEtablissementId(int $etablissement_id) Return the first Personnage filtered by the etablissement_id column
  * @method Personnage findOneByAge(string $age) Return the first Personnage filtered by the age column
- * @method Personnage findOneByImagePath(string $image_path) Return the first Personnage filtered by the image_path column
  * @method Personnage findOneByCreatedAt(string $created_at) Return the first Personnage filtered by the created_at column
  * @method Personnage findOneByUpdatedAt(string $updated_at) Return the first Personnage filtered by the updated_at column
  * @method Personnage findOneByActive(boolean $active) Return the first Personnage filtered by the active column
@@ -75,7 +72,6 @@ use Cungfoo\Model\ThemePersonnage;
  * @method array findById(int $id) Return Personnage objects filtered by the id column
  * @method array findByEtablissementId(int $etablissement_id) Return Personnage objects filtered by the etablissement_id column
  * @method array findByAge(string $age) Return Personnage objects filtered by the age column
- * @method array findByImagePath(string $image_path) Return Personnage objects filtered by the image_path column
  * @method array findByCreatedAt(string $created_at) Return Personnage objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return Personnage objects filtered by the updated_at column
  * @method array findByActive(boolean $active) Return Personnage objects filtered by the active column
@@ -182,7 +178,7 @@ abstract class BasePersonnageQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `etablissement_id`, `age`, `image_path`, `created_at`, `updated_at`, `active` FROM `personnage` WHERE `id` = :p0';
+        $sql = 'SELECT `id`, `etablissement_id`, `age`, `created_at`, `updated_at`, `active` FROM `personnage` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -368,35 +364,6 @@ abstract class BasePersonnageQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(PersonnagePeer::AGE, $age, $comparison);
-    }
-
-    /**
-     * Filter the query on the image_path column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByImagePath('fooValue');   // WHERE image_path = 'fooValue'
-     * $query->filterByImagePath('%fooValue%'); // WHERE image_path LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $imagePath The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return PersonnageQuery The current query, for fluid interface
-     */
-    public function filterByImagePath($imagePath = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($imagePath)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $imagePath)) {
-                $imagePath = str_replace('*', '%', $imagePath);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(PersonnagePeer::IMAGE_PATH, $imagePath, $comparison);
     }
 
     /**

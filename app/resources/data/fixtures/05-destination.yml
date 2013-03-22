@@ -1,25 +1,17 @@
 \Cungfoo\Model\Destination:
     1:
         Code: ATL
-        ImageDetail1: null
-        ImageDetail2: null
         SortableRank: 2
         Active: true
     2:
         Code: MED
-        ImageDetail1: null
-        ImageDetail2: null
         SortableRank: 1
         Active: true
     3:
         Code: CAM
-        ImageDetail1: null
-        ImageDetail2: null
         SortableRank: 3
         Active: true
     4:
         Code: MNT
-        ImageDetail1: null
-        ImageDetail2: null
         SortableRank: 4
         Active: true

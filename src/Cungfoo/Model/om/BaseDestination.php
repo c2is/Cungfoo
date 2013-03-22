@@ -68,18 +68,6 @@ abstract class BaseDestination extends BaseObject implements Persistent
     protected $code;
 
     /**
-     * The value for the image_detail_1 field.
-     * @var        string
-     */
-    protected $image_detail_1;
-
-    /**
-     * The value for the image_detail_2 field.
-     * @var        string
-     */
-    protected $image_detail_2;
-
-    /**
      * The value for the created_at field.
      * @var        string
      */
@@ -229,26 +217,6 @@ abstract class BaseDestination extends BaseObject implements Persistent
     }
 
     /**
-     * Get the [image_detail_1] column value.
-     *
-     * @return string
-     */
-    public function getImageDetail1()
-    {
-        return $this->image_detail_1;
-    }
-
-    /**
-     * Get the [image_detail_2] column value.
-     *
-     * @return string
-     */
-    public function getImageDetail2()
-    {
-        return $this->image_detail_2;
-    }
-
-    /**
      * Get the [optionally formatted] temporal [created_at] column value.
      *
      *
@@ -391,48 +359,6 @@ abstract class BaseDestination extends BaseObject implements Persistent
     } // setCode()
 
     /**
-     * Set the value of [image_detail_1] column.
-     *
-     * @param string $v new value
-     * @return Destination The current object (for fluent API support)
-     */
-    public function setImageDetail1($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->image_detail_1 !== $v) {
-            $this->image_detail_1 = $v;
-            $this->modifiedColumns[] = DestinationPeer::IMAGE_DETAIL_1;
-        }
-
-
-        return $this;
-    } // setImageDetail1()
-
-    /**
-     * Set the value of [image_detail_2] column.
-     *
-     * @param string $v new value
-     * @return Destination The current object (for fluent API support)
-     */
-    public function setImageDetail2($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->image_detail_2 !== $v) {
-            $this->image_detail_2 = $v;
-            $this->modifiedColumns[] = DestinationPeer::IMAGE_DETAIL_2;
-        }
-
-
-        return $this;
-    } // setImageDetail2()
-
-    /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
      *
      * @param mixed $v string, integer (timestamp), or DateTime value.
@@ -566,12 +492,10 @@ abstract class BaseDestination extends BaseObject implements Persistent
 
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
             $this->code = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
-            $this->image_detail_1 = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
-            $this->image_detail_2 = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
-            $this->created_at = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
-            $this->updated_at = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
-            $this->sortable_rank = ($row[$startcol + 6] !== null) ? (int) $row[$startcol + 6] : null;
-            $this->active = ($row[$startcol + 7] !== null) ? (boolean) $row[$startcol + 7] : null;
+            $this->created_at = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
+            $this->updated_at = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
+            $this->sortable_rank = ($row[$startcol + 4] !== null) ? (int) $row[$startcol + 4] : null;
+            $this->active = ($row[$startcol + 5] !== null) ? (boolean) $row[$startcol + 5] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -580,7 +504,7 @@ abstract class BaseDestination extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 8; // 8 = DestinationPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 6; // 6 = DestinationPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Destination object", $e);
@@ -900,12 +824,6 @@ abstract class BaseDestination extends BaseObject implements Persistent
         if ($this->isColumnModified(DestinationPeer::CODE)) {
             $modifiedColumns[':p' . $index++]  = '`code`';
         }
-        if ($this->isColumnModified(DestinationPeer::IMAGE_DETAIL_1)) {
-            $modifiedColumns[':p' . $index++]  = '`image_detail_1`';
-        }
-        if ($this->isColumnModified(DestinationPeer::IMAGE_DETAIL_2)) {
-            $modifiedColumns[':p' . $index++]  = '`image_detail_2`';
-        }
         if ($this->isColumnModified(DestinationPeer::CREATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`created_at`';
         }
@@ -934,12 +852,6 @@ abstract class BaseDestination extends BaseObject implements Persistent
                         break;
                     case '`code`':
                         $stmt->bindValue($identifier, $this->code, PDO::PARAM_STR);
-                        break;
-                    case '`image_detail_1`':
-                        $stmt->bindValue($identifier, $this->image_detail_1, PDO::PARAM_STR);
-                        break;
-                    case '`image_detail_2`':
-                        $stmt->bindValue($identifier, $this->image_detail_2, PDO::PARAM_STR);
                         break;
                     case '`created_at`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
@@ -1118,21 +1030,15 @@ abstract class BaseDestination extends BaseObject implements Persistent
                 return $this->getCode();
                 break;
             case 2:
-                return $this->getImageDetail1();
-                break;
-            case 3:
-                return $this->getImageDetail2();
-                break;
-            case 4:
                 return $this->getCreatedAt();
                 break;
-            case 5:
+            case 3:
                 return $this->getUpdatedAt();
                 break;
-            case 6:
+            case 4:
                 return $this->getSortableRank();
                 break;
-            case 7:
+            case 5:
                 return $this->getActive();
                 break;
             default:
@@ -1166,12 +1072,10 @@ abstract class BaseDestination extends BaseObject implements Persistent
         $result = array(
             $keys[0] => $this->getId(),
             $keys[1] => $this->getCode(),
-            $keys[2] => $this->getImageDetail1(),
-            $keys[3] => $this->getImageDetail2(),
-            $keys[4] => $this->getCreatedAt(),
-            $keys[5] => $this->getUpdatedAt(),
-            $keys[6] => $this->getSortableRank(),
-            $keys[7] => $this->getActive(),
+            $keys[2] => $this->getCreatedAt(),
+            $keys[3] => $this->getUpdatedAt(),
+            $keys[4] => $this->getSortableRank(),
+            $keys[5] => $this->getActive(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->collEtablissementDestinations) {
@@ -1224,21 +1128,15 @@ abstract class BaseDestination extends BaseObject implements Persistent
                 $this->setCode($value);
                 break;
             case 2:
-                $this->setImageDetail1($value);
-                break;
-            case 3:
-                $this->setImageDetail2($value);
-                break;
-            case 4:
                 $this->setCreatedAt($value);
                 break;
-            case 5:
+            case 3:
                 $this->setUpdatedAt($value);
                 break;
-            case 6:
+            case 4:
                 $this->setSortableRank($value);
                 break;
-            case 7:
+            case 5:
                 $this->setActive($value);
                 break;
         } // switch()
@@ -1267,12 +1165,10 @@ abstract class BaseDestination extends BaseObject implements Persistent
 
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
         if (array_key_exists($keys[1], $arr)) $this->setCode($arr[$keys[1]]);
-        if (array_key_exists($keys[2], $arr)) $this->setImageDetail1($arr[$keys[2]]);
-        if (array_key_exists($keys[3], $arr)) $this->setImageDetail2($arr[$keys[3]]);
-        if (array_key_exists($keys[4], $arr)) $this->setCreatedAt($arr[$keys[4]]);
-        if (array_key_exists($keys[5], $arr)) $this->setUpdatedAt($arr[$keys[5]]);
-        if (array_key_exists($keys[6], $arr)) $this->setSortableRank($arr[$keys[6]]);
-        if (array_key_exists($keys[7], $arr)) $this->setActive($arr[$keys[7]]);
+        if (array_key_exists($keys[2], $arr)) $this->setCreatedAt($arr[$keys[2]]);
+        if (array_key_exists($keys[3], $arr)) $this->setUpdatedAt($arr[$keys[3]]);
+        if (array_key_exists($keys[4], $arr)) $this->setSortableRank($arr[$keys[4]]);
+        if (array_key_exists($keys[5], $arr)) $this->setActive($arr[$keys[5]]);
     }
 
     /**
@@ -1286,8 +1182,6 @@ abstract class BaseDestination extends BaseObject implements Persistent
 
         if ($this->isColumnModified(DestinationPeer::ID)) $criteria->add(DestinationPeer::ID, $this->id);
         if ($this->isColumnModified(DestinationPeer::CODE)) $criteria->add(DestinationPeer::CODE, $this->code);
-        if ($this->isColumnModified(DestinationPeer::IMAGE_DETAIL_1)) $criteria->add(DestinationPeer::IMAGE_DETAIL_1, $this->image_detail_1);
-        if ($this->isColumnModified(DestinationPeer::IMAGE_DETAIL_2)) $criteria->add(DestinationPeer::IMAGE_DETAIL_2, $this->image_detail_2);
         if ($this->isColumnModified(DestinationPeer::CREATED_AT)) $criteria->add(DestinationPeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(DestinationPeer::UPDATED_AT)) $criteria->add(DestinationPeer::UPDATED_AT, $this->updated_at);
         if ($this->isColumnModified(DestinationPeer::SORTABLE_RANK)) $criteria->add(DestinationPeer::SORTABLE_RANK, $this->sortable_rank);
@@ -1356,8 +1250,6 @@ abstract class BaseDestination extends BaseObject implements Persistent
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
         $copyObj->setCode($this->getCode());
-        $copyObj->setImageDetail1($this->getImageDetail1());
-        $copyObj->setImageDetail2($this->getImageDetail2());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
         $copyObj->setSortableRank($this->getSortableRank());
@@ -2343,8 +2235,6 @@ abstract class BaseDestination extends BaseObject implements Persistent
     {
         $this->id = null;
         $this->code = null;
-        $this->image_detail_1 = null;
-        $this->image_detail_2 = null;
         $this->created_at = null;
         $this->updated_at = null;
         $this->sortable_rank = null;
@@ -3219,20 +3109,6 @@ abstract class BaseDestination extends BaseObject implements Persistent
      */
     public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
     {
-        if (!$form['image_detail_1_deleted']->getData())
-        {
-            $this->resetModified(DestinationPeer::IMAGE_DETAIL_1);
-        }
-
-        $this->uploadImageDetail1($form);
-
-        if (!$form['image_detail_2_deleted']->getData())
-        {
-            $this->resetModified(DestinationPeer::IMAGE_DETAIL_2);
-        }
-
-        $this->uploadImageDetail2($form);
-
         return $this->save($con);
     }
 
@@ -3253,34 +3129,138 @@ abstract class BaseDestination extends BaseObject implements Persistent
     }
 
     /**
-     * @param \Symfony\Component\Form\Form $form
      * @return void
      */
-    public function uploadImageDetail1(\Symfony\Component\Form\Form $form)
+    public function getImageDetail1()
     {
-        if (!file_exists($this->getUploadRootDir() . '/' . $form['image_detail_1']->getData()))
-        {
-            if ($form['image_detail_1']->getData()) {
-                $image = uniqid().'.'.$form['image_detail_1']->getData()->guessExtension();
-                $form['image_detail_1']->getData()->move($this->getUploadRootDir(), $image);
-                $this->setImageDetail1($this->getUploadDir() . '/' . $image);
+        $peer = self::PEER;
+
+        $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
+            ->select('id')
+            ->usePortfolioUsageQuery()
+                ->filterByTableRef($peer::TABLE_NAME)
+                ->filterByColumnRef('image_detail_1')
+                ->filterByElementId($this->getId())
+            ->endUse()
+            ->find()
+            ->toArray()
+        ;
+
+        return implode(';', $medias);
+    }
+
+    /**
+     * @return void
+     */
+    public function setImageDetail1($v)
+    {
+        $peer = self::PEER;
+
+        $values = explode(';', $v);
+
+        \Cungfoo\Model\PortfolioUsageQuery::create()
+            ->filterByTableRef($peer::TABLE_NAME)
+            ->filterByColumnRef('image_detail_1')
+            ->filterByElementId($this->getId())
+            ->filterByMediaId($values, \Criteria::NOT_IN)
+            ->find()
+            ->delete()
+        ;
+
+        if ($v) {
+            foreach ($values as $index => $value) {
+                $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+                    ->filterByTableRef($peer::TABLE_NAME)
+                    ->filterByColumnRef('image_detail_1')
+                    ->filterByElementId($this->getId())
+                    ->filterByMediaId($value)
+                    ->findOne()
+                ;
+
+                if (!$usage) {
+                    $usage = new \Cungfoo\Model\PortfolioUsage();
+                    $usage
+                        ->setTableRef($peer::TABLE_NAME)
+                        ->setColumnRef('image_detail_1')
+                        ->setElementId($this->getId())
+                        ->setMediaId($value)
+                    ;
+                }
+
+                $usage
+                    ->setSortableRank($index)
+                    ->save()
+                ;
             }
+
         }
     }
 
     /**
-     * @param \Symfony\Component\Form\Form $form
      * @return void
      */
-    public function uploadImageDetail2(\Symfony\Component\Form\Form $form)
+    public function getImageDetail2()
     {
-        if (!file_exists($this->getUploadRootDir() . '/' . $form['image_detail_2']->getData()))
-        {
-            if ($form['image_detail_2']->getData()) {
-                $image = uniqid().'.'.$form['image_detail_2']->getData()->guessExtension();
-                $form['image_detail_2']->getData()->move($this->getUploadRootDir(), $image);
-                $this->setImageDetail2($this->getUploadDir() . '/' . $image);
+        $peer = self::PEER;
+
+        $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
+            ->select('id')
+            ->usePortfolioUsageQuery()
+                ->filterByTableRef($peer::TABLE_NAME)
+                ->filterByColumnRef('image_detail_2')
+                ->filterByElementId($this->getId())
+            ->endUse()
+            ->find()
+            ->toArray()
+        ;
+
+        return implode(';', $medias);
+    }
+
+    /**
+     * @return void
+     */
+    public function setImageDetail2($v)
+    {
+        $peer = self::PEER;
+
+        $values = explode(';', $v);
+
+        \Cungfoo\Model\PortfolioUsageQuery::create()
+            ->filterByTableRef($peer::TABLE_NAME)
+            ->filterByColumnRef('image_detail_2')
+            ->filterByElementId($this->getId())
+            ->filterByMediaId($values, \Criteria::NOT_IN)
+            ->find()
+            ->delete()
+        ;
+
+        if ($v) {
+            foreach ($values as $index => $value) {
+                $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+                    ->filterByTableRef($peer::TABLE_NAME)
+                    ->filterByColumnRef('image_detail_2')
+                    ->filterByElementId($this->getId())
+                    ->filterByMediaId($value)
+                    ->findOne()
+                ;
+
+                if (!$usage) {
+                    $usage = new \Cungfoo\Model\PortfolioUsage();
+                    $usage
+                        ->setTableRef($peer::TABLE_NAME)
+                        ->setColumnRef('image_detail_2')
+                        ->setElementId($this->getId())
+                        ->setMediaId($value)
+                    ;
+                }
+
+                $usage
+                    ->setSortableRank($index)
+                    ->save()
+                ;
             }
+
         }
     }
 

@@ -11,14 +11,14 @@
     <ul class="nav nav-tabs">
         {% for child in form %}
             {% if not child.rendered %}
-            <li class="{% if loop.first %}active{% endif %}"><a href="#{{ child.vars.value.locale }}" data-toggle="tab"><img src="{{ asset('images/cungfoo/flags/' ~ child.vars.value.locale ~ '.gif') }}" /></a></li>
+            <li class="{% if loop.first %}active{% endif %}"><a href="#{{ form.name }}_{{ child.vars.value.locale }}" data-toggle="tab"><img src="{{ asset('images/cungfoo/flags/' ~ child.vars.value.locale ~ '.gif') }}" /></a></li>
             {% endif %}
         {% endfor %}
     </ul>
     <div class="tab-content">
         {% for child in form %}
             {% if not child.rendered %}
-            <div class="tab-pane {% if loop.first %}active{% endif %}" id="{{ child.vars.value.locale }}">
+            <div class="tab-pane {% if loop.first %}active{% endif %}" id="{{ form.name }}_{{ child.vars.value.locale }}">
                 {{ form_widget(child) }}
             </div>
             {% endif %}
@@ -29,11 +29,16 @@
 
 {% block cungfoo_file_widget %}
 {% spaceless %}
-{% if value %}
-<a href="{{ asset(value) }}"><img class="thumbnail" src="{{ asset(value) }}" style="max-width: 128px"/></a>
-{% endif %}
-{{ block('form_widget_simple') }}
-{% endspaceless %}
+<div class="field-media">
+    {% if value %}
+    <a class="portfolio-popin-open" href="{{ path('portfolio_popin', {'id': value}) }}"><img class="crud-column-media" src="{{ asset(value|media) }}" /></a>
+    {% else %}
+    <a class="portfolio-popin-open btn" href="{{ path('portfolio_popin') }}">Choisissez un media</a>
+    {% endif %}
+    {% set type = 'hidden' %}
+    {{ block('form_widget_simple') }}
+    {% endspaceless %}
+</div>
 {% endblock %}
 
 {% block date_widget %}
@@ -88,10 +93,12 @@
 
 {% block form_row %}
 {% spaceless %}
-    <div class="row">
-        <div class="span12">{{ form_errors(form) }}</div>
-        <div class="span3">{{ form_label(form) }}</div>
-        <div class="span9">{{ form_widget(form) }}</div>
+    <div class="control-group">
+        <span class="control-label">{{ form_errors(form) }}</span>
+        <div class="controls form-inline row-fluid">
+            <div class="span3">{{ form_label(form) }}</div>
+            <div class="span9">{{ form_widget(form) }}</div>
+        </div>
     </div>
 {% endspaceless %}
 {% endblock form_row %}

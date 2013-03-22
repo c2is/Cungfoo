@@ -72,18 +72,6 @@ abstract class BaseDepartement extends BaseObject implements Persistent
     protected $region_ref_id;
 
     /**
-     * The value for the image_detail_1 field.
-     * @var        string
-     */
-    protected $image_detail_1;
-
-    /**
-     * The value for the image_detail_2 field.
-     * @var        string
-     */
-    protected $image_detail_2;
-
-    /**
      * The value for the created_at field.
      * @var        string
      */
@@ -208,26 +196,6 @@ abstract class BaseDepartement extends BaseObject implements Persistent
     public function getRegionRefId()
     {
         return $this->region_ref_id;
-    }
-
-    /**
-     * Get the [image_detail_1] column value.
-     *
-     * @return string
-     */
-    public function getImageDetail1()
-    {
-        return $this->image_detail_1;
-    }
-
-    /**
-     * Get the [image_detail_2] column value.
-     *
-     * @return string
-     */
-    public function getImageDetail2()
-    {
-        return $this->image_detail_2;
     }
 
     /**
@@ -388,48 +356,6 @@ abstract class BaseDepartement extends BaseObject implements Persistent
     } // setRegionRefId()
 
     /**
-     * Set the value of [image_detail_1] column.
-     *
-     * @param string $v new value
-     * @return Departement The current object (for fluent API support)
-     */
-    public function setImageDetail1($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->image_detail_1 !== $v) {
-            $this->image_detail_1 = $v;
-            $this->modifiedColumns[] = DepartementPeer::IMAGE_DETAIL_1;
-        }
-
-
-        return $this;
-    } // setImageDetail1()
-
-    /**
-     * Set the value of [image_detail_2] column.
-     *
-     * @param string $v new value
-     * @return Departement The current object (for fluent API support)
-     */
-    public function setImageDetail2($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->image_detail_2 !== $v) {
-            $this->image_detail_2 = $v;
-            $this->modifiedColumns[] = DepartementPeer::IMAGE_DETAIL_2;
-        }
-
-
-        return $this;
-    } // setImageDetail2()
-
-    /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
      *
      * @param mixed $v string, integer (timestamp), or DateTime value.
@@ -543,11 +469,9 @@ abstract class BaseDepartement extends BaseObject implements Persistent
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
             $this->code = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
             $this->region_ref_id = ($row[$startcol + 2] !== null) ? (int) $row[$startcol + 2] : null;
-            $this->image_detail_1 = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
-            $this->image_detail_2 = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
-            $this->created_at = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
-            $this->updated_at = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
-            $this->active = ($row[$startcol + 7] !== null) ? (boolean) $row[$startcol + 7] : null;
+            $this->created_at = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
+            $this->updated_at = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
+            $this->active = ($row[$startcol + 5] !== null) ? (boolean) $row[$startcol + 5] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -556,7 +480,7 @@ abstract class BaseDepartement extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 8; // 8 = DepartementPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 6; // 6 = DepartementPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Departement object", $e);
@@ -843,12 +767,6 @@ abstract class BaseDepartement extends BaseObject implements Persistent
         if ($this->isColumnModified(DepartementPeer::REGION_REF_ID)) {
             $modifiedColumns[':p' . $index++]  = '`region_ref_id`';
         }
-        if ($this->isColumnModified(DepartementPeer::IMAGE_DETAIL_1)) {
-            $modifiedColumns[':p' . $index++]  = '`image_detail_1`';
-        }
-        if ($this->isColumnModified(DepartementPeer::IMAGE_DETAIL_2)) {
-            $modifiedColumns[':p' . $index++]  = '`image_detail_2`';
-        }
         if ($this->isColumnModified(DepartementPeer::CREATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`created_at`';
         }
@@ -877,12 +795,6 @@ abstract class BaseDepartement extends BaseObject implements Persistent
                         break;
                     case '`region_ref_id`':
                         $stmt->bindValue($identifier, $this->region_ref_id, PDO::PARAM_INT);
-                        break;
-                    case '`image_detail_1`':
-                        $stmt->bindValue($identifier, $this->image_detail_1, PDO::PARAM_STR);
-                        break;
-                    case '`image_detail_2`':
-                        $stmt->bindValue($identifier, $this->image_detail_2, PDO::PARAM_STR);
                         break;
                     case '`created_at`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
@@ -1065,18 +977,12 @@ abstract class BaseDepartement extends BaseObject implements Persistent
                 return $this->getRegionRefId();
                 break;
             case 3:
-                return $this->getImageDetail1();
-                break;
-            case 4:
-                return $this->getImageDetail2();
-                break;
-            case 5:
                 return $this->getCreatedAt();
                 break;
-            case 6:
+            case 4:
                 return $this->getUpdatedAt();
                 break;
-            case 7:
+            case 5:
                 return $this->getActive();
                 break;
             default:
@@ -1111,11 +1017,9 @@ abstract class BaseDepartement extends BaseObject implements Persistent
             $keys[0] => $this->getId(),
             $keys[1] => $this->getCode(),
             $keys[2] => $this->getRegionRefId(),
-            $keys[3] => $this->getImageDetail1(),
-            $keys[4] => $this->getImageDetail2(),
-            $keys[5] => $this->getCreatedAt(),
-            $keys[6] => $this->getUpdatedAt(),
-            $keys[7] => $this->getActive(),
+            $keys[3] => $this->getCreatedAt(),
+            $keys[4] => $this->getUpdatedAt(),
+            $keys[5] => $this->getActive(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aRegionRef) {
@@ -1171,18 +1075,12 @@ abstract class BaseDepartement extends BaseObject implements Persistent
                 $this->setRegionRefId($value);
                 break;
             case 3:
-                $this->setImageDetail1($value);
-                break;
-            case 4:
-                $this->setImageDetail2($value);
-                break;
-            case 5:
                 $this->setCreatedAt($value);
                 break;
-            case 6:
+            case 4:
                 $this->setUpdatedAt($value);
                 break;
-            case 7:
+            case 5:
                 $this->setActive($value);
                 break;
         } // switch()
@@ -1212,11 +1110,9 @@ abstract class BaseDepartement extends BaseObject implements Persistent
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
         if (array_key_exists($keys[1], $arr)) $this->setCode($arr[$keys[1]]);
         if (array_key_exists($keys[2], $arr)) $this->setRegionRefId($arr[$keys[2]]);
-        if (array_key_exists($keys[3], $arr)) $this->setImageDetail1($arr[$keys[3]]);
-        if (array_key_exists($keys[4], $arr)) $this->setImageDetail2($arr[$keys[4]]);
-        if (array_key_exists($keys[5], $arr)) $this->setCreatedAt($arr[$keys[5]]);
-        if (array_key_exists($keys[6], $arr)) $this->setUpdatedAt($arr[$keys[6]]);
-        if (array_key_exists($keys[7], $arr)) $this->setActive($arr[$keys[7]]);
+        if (array_key_exists($keys[3], $arr)) $this->setCreatedAt($arr[$keys[3]]);
+        if (array_key_exists($keys[4], $arr)) $this->setUpdatedAt($arr[$keys[4]]);
+        if (array_key_exists($keys[5], $arr)) $this->setActive($arr[$keys[5]]);
     }
 
     /**
@@ -1231,8 +1127,6 @@ abstract class BaseDepartement extends BaseObject implements Persistent
         if ($this->isColumnModified(DepartementPeer::ID)) $criteria->add(DepartementPeer::ID, $this->id);
         if ($this->isColumnModified(DepartementPeer::CODE)) $criteria->add(DepartementPeer::CODE, $this->code);
         if ($this->isColumnModified(DepartementPeer::REGION_REF_ID)) $criteria->add(DepartementPeer::REGION_REF_ID, $this->region_ref_id);
-        if ($this->isColumnModified(DepartementPeer::IMAGE_DETAIL_1)) $criteria->add(DepartementPeer::IMAGE_DETAIL_1, $this->image_detail_1);
-        if ($this->isColumnModified(DepartementPeer::IMAGE_DETAIL_2)) $criteria->add(DepartementPeer::IMAGE_DETAIL_2, $this->image_detail_2);
         if ($this->isColumnModified(DepartementPeer::CREATED_AT)) $criteria->add(DepartementPeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(DepartementPeer::UPDATED_AT)) $criteria->add(DepartementPeer::UPDATED_AT, $this->updated_at);
         if ($this->isColumnModified(DepartementPeer::ACTIVE)) $criteria->add(DepartementPeer::ACTIVE, $this->active);
@@ -1301,8 +1195,6 @@ abstract class BaseDepartement extends BaseObject implements Persistent
     {
         $copyObj->setCode($this->getCode());
         $copyObj->setRegionRefId($this->getRegionRefId());
-        $copyObj->setImageDetail1($this->getImageDetail1());
-        $copyObj->setImageDetail2($this->getImageDetail2());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
         $copyObj->setActive($this->getActive());
@@ -1989,8 +1881,6 @@ abstract class BaseDepartement extends BaseObject implements Persistent
         $this->id = null;
         $this->code = null;
         $this->region_ref_id = null;
-        $this->image_detail_1 = null;
-        $this->image_detail_2 = null;
         $this->created_at = null;
         $this->updated_at = null;
         $this->active = null;
@@ -2488,20 +2378,6 @@ abstract class BaseDepartement extends BaseObject implements Persistent
      */
     public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
     {
-        if (!$form['image_detail_1_deleted']->getData())
-        {
-            $this->resetModified(DepartementPeer::IMAGE_DETAIL_1);
-        }
-
-        $this->uploadImageDetail1($form);
-
-        if (!$form['image_detail_2_deleted']->getData())
-        {
-            $this->resetModified(DepartementPeer::IMAGE_DETAIL_2);
-        }
-
-        $this->uploadImageDetail2($form);
-
         return $this->save($con);
     }
 
@@ -2522,34 +2398,138 @@ abstract class BaseDepartement extends BaseObject implements Persistent
     }
 
     /**
-     * @param \Symfony\Component\Form\Form $form
      * @return void
      */
-    public function uploadImageDetail1(\Symfony\Component\Form\Form $form)
+    public function getImageDetail1()
     {
-        if (!file_exists($this->getUploadRootDir() . '/' . $form['image_detail_1']->getData()))
-        {
-            if ($form['image_detail_1']->getData()) {
-                $image = uniqid().'.'.$form['image_detail_1']->getData()->guessExtension();
-                $form['image_detail_1']->getData()->move($this->getUploadRootDir(), $image);
-                $this->setImageDetail1($this->getUploadDir() . '/' . $image);
+        $peer = self::PEER;
+
+        $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
+            ->select('id')
+            ->usePortfolioUsageQuery()
+                ->filterByTableRef($peer::TABLE_NAME)
+                ->filterByColumnRef('image_detail_1')
+                ->filterByElementId($this->getId())
+            ->endUse()
+            ->find()
+            ->toArray()
+        ;
+
+        return implode(';', $medias);
+    }
+
+    /**
+     * @return void
+     */
+    public function setImageDetail1($v)
+    {
+        $peer = self::PEER;
+
+        $values = explode(';', $v);
+
+        \Cungfoo\Model\PortfolioUsageQuery::create()
+            ->filterByTableRef($peer::TABLE_NAME)
+            ->filterByColumnRef('image_detail_1')
+            ->filterByElementId($this->getId())
+            ->filterByMediaId($values, \Criteria::NOT_IN)
+            ->find()
+            ->delete()
+        ;
+
+        if ($v) {
+            foreach ($values as $index => $value) {
+                $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+                    ->filterByTableRef($peer::TABLE_NAME)
+                    ->filterByColumnRef('image_detail_1')
+                    ->filterByElementId($this->getId())
+                    ->filterByMediaId($value)
+                    ->findOne()
+                ;
+
+                if (!$usage) {
+                    $usage = new \Cungfoo\Model\PortfolioUsage();
+                    $usage
+                        ->setTableRef($peer::TABLE_NAME)
+                        ->setColumnRef('image_detail_1')
+                        ->setElementId($this->getId())
+                        ->setMediaId($value)
+                    ;
+                }
+
+                $usage
+                    ->setSortableRank($index)
+                    ->save()
+                ;
             }
+
         }
     }
 
     /**
-     * @param \Symfony\Component\Form\Form $form
      * @return void
      */
-    public function uploadImageDetail2(\Symfony\Component\Form\Form $form)
+    public function getImageDetail2()
     {
-        if (!file_exists($this->getUploadRootDir() . '/' . $form['image_detail_2']->getData()))
-        {
-            if ($form['image_detail_2']->getData()) {
-                $image = uniqid().'.'.$form['image_detail_2']->getData()->guessExtension();
-                $form['image_detail_2']->getData()->move($this->getUploadRootDir(), $image);
-                $this->setImageDetail2($this->getUploadDir() . '/' . $image);
+        $peer = self::PEER;
+
+        $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
+            ->select('id')
+            ->usePortfolioUsageQuery()
+                ->filterByTableRef($peer::TABLE_NAME)
+                ->filterByColumnRef('image_detail_2')
+                ->filterByElementId($this->getId())
+            ->endUse()
+            ->find()
+            ->toArray()
+        ;
+
+        return implode(';', $medias);
+    }
+
+    /**
+     * @return void
+     */
+    public function setImageDetail2($v)
+    {
+        $peer = self::PEER;
+
+        $values = explode(';', $v);
+
+        \Cungfoo\Model\PortfolioUsageQuery::create()
+            ->filterByTableRef($peer::TABLE_NAME)
+            ->filterByColumnRef('image_detail_2')
+            ->filterByElementId($this->getId())
+            ->filterByMediaId($values, \Criteria::NOT_IN)
+            ->find()
+            ->delete()
+        ;
+
+        if ($v) {
+            foreach ($values as $index => $value) {
+                $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+                    ->filterByTableRef($peer::TABLE_NAME)
+                    ->filterByColumnRef('image_detail_2')
+                    ->filterByElementId($this->getId())
+                    ->filterByMediaId($value)
+                    ->findOne()
+                ;
+
+                if (!$usage) {
+                    $usage = new \Cungfoo\Model\PortfolioUsage();
+                    $usage
+                        ->setTableRef($peer::TABLE_NAME)
+                        ->setColumnRef('image_detail_2')
+                        ->setElementId($this->getId())
+                        ->setMediaId($value)
+                    ;
+                }
+
+                $usage
+                    ->setSortableRank($index)
+                    ->save()
+                ;
             }
+
         }
     }
 

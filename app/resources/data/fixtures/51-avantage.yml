@@ -1,0 +1,19 @@
+\Cungfoo\Model\Avantage:
+    1:
+        PersonnageId: 2
+        Active: true
+    2:
+        PersonnageId: 2
+        Active: true
+    3:
+        PersonnageId: 2
+        Active: true
+    4:
+        PersonnageId: 1
+        Active: true
+    5:
+        PersonnageId: 1
+        Active: true
+    6:
+        PersonnageId: 1
+        Active: true

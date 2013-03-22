@@ -50,9 +50,7 @@ class MiseEnAvantType extends BaseMiseEnAvantType
                     'title'         => 'crud.tab.medias',
                     'content'       => array(
                         'image_fond_path',
-                        'image_fond_path_deleted',
                         'illustration_path',
-                        'illustration_path_deleted',
                     )
                 ),
                 array(

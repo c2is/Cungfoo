@@ -11,7 +11,6 @@ use \PropelException;
 use \PropelPDO;
 use Cungfoo\Model\CategoryTypeHebergementPeer;
 use Cungfoo\Model\EtablissementTypeHebergementPeer;
-use Cungfoo\Model\MultimediaTypeHebergementPeer;
 use Cungfoo\Model\TypeHebergement;
 use Cungfoo\Model\TypeHebergementCapacitePeer;
 use Cungfoo\Model\TypeHebergementI18nPeer;
@@ -41,13 +40,13 @@ abstract class BaseTypeHebergementPeer
     const TM_CLASS = 'TypeHebergementTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 11;
+    const NUM_COLUMNS = 9;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 11;
+    const NUM_HYDRATE_COLUMNS = 9;
 
     /** the column name for the id field */
     const ID = 'type_hebergement.id';
@@ -66,12 +65,6 @@ abstract class BaseTypeHebergementPeer
 
     /** the column name for the nombre_place field */
     const NOMBRE_PLACE = 'type_hebergement.nombre_place';
-
-    /** the column name for the image_hebergement_path field */
-    const IMAGE_HEBERGEMENT_PATH = 'type_hebergement.image_hebergement_path';
-
-    /** the column name for the image_composition_path field */
-    const IMAGE_COMPOSITION_PATH = 'type_hebergement.image_composition_path';
 
     /** the column name for the created_at field */
     const CREATED_AT = 'type_hebergement.created_at';
@@ -108,12 +101,12 @@ abstract class BaseTypeHebergementPeer
      * e.g. TypeHebergementPeer::$fieldNames[TypeHebergementPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'TypeHebergementCapaciteId', 'CategoryTypeHebergementId', 'NombreChambre', 'NombrePlace', 'ImageHebergementPath', 'ImageCompositionPath', 'CreatedAt', 'UpdatedAt', 'Active', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'typeHebergementCapaciteId', 'categoryTypeHebergementId', 'nombreChambre', 'nombrePlace', 'imageHebergementPath', 'imageCompositionPath', 'createdAt', 'updatedAt', 'active', ),
-        BasePeer::TYPE_COLNAME => array (TypeHebergementPeer::ID, TypeHebergementPeer::CODE, TypeHebergementPeer::TYPE_HEBERGEMENT_CAPACITE_ID, TypeHebergementPeer::CATEGORY_TYPE_HEBERGEMENT_ID, TypeHebergementPeer::NOMBRE_CHAMBRE, TypeHebergementPeer::NOMBRE_PLACE, TypeHebergementPeer::IMAGE_HEBERGEMENT_PATH, TypeHebergementPeer::IMAGE_COMPOSITION_PATH, TypeHebergementPeer::CREATED_AT, TypeHebergementPeer::UPDATED_AT, TypeHebergementPeer::ACTIVE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'TYPE_HEBERGEMENT_CAPACITE_ID', 'CATEGORY_TYPE_HEBERGEMENT_ID', 'NOMBRE_CHAMBRE', 'NOMBRE_PLACE', 'IMAGE_HEBERGEMENT_PATH', 'IMAGE_COMPOSITION_PATH', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'type_hebergement_capacite_id', 'category_type_hebergement_id', 'nombre_chambre', 'nombre_place', 'image_hebergement_path', 'image_composition_path', 'created_at', 'updated_at', 'active', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'TypeHebergementCapaciteId', 'CategoryTypeHebergementId', 'NombreChambre', 'NombrePlace', 'CreatedAt', 'UpdatedAt', 'Active', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'typeHebergementCapaciteId', 'categoryTypeHebergementId', 'nombreChambre', 'nombrePlace', 'createdAt', 'updatedAt', 'active', ),
+        BasePeer::TYPE_COLNAME => array (TypeHebergementPeer::ID, TypeHebergementPeer::CODE, TypeHebergementPeer::TYPE_HEBERGEMENT_CAPACITE_ID, TypeHebergementPeer::CATEGORY_TYPE_HEBERGEMENT_ID, TypeHebergementPeer::NOMBRE_CHAMBRE, TypeHebergementPeer::NOMBRE_PLACE, TypeHebergementPeer::CREATED_AT, TypeHebergementPeer::UPDATED_AT, TypeHebergementPeer::ACTIVE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'TYPE_HEBERGEMENT_CAPACITE_ID', 'CATEGORY_TYPE_HEBERGEMENT_ID', 'NOMBRE_CHAMBRE', 'NOMBRE_PLACE', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'type_hebergement_capacite_id', 'category_type_hebergement_id', 'nombre_chambre', 'nombre_place', 'created_at', 'updated_at', 'active', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, )
     );
 
     /**
@@ -123,12 +116,12 @@ abstract class BaseTypeHebergementPeer
      * e.g. TypeHebergementPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'TypeHebergementCapaciteId' => 2, 'CategoryTypeHebergementId' => 3, 'NombreChambre' => 4, 'NombrePlace' => 5, 'ImageHebergementPath' => 6, 'ImageCompositionPath' => 7, 'CreatedAt' => 8, 'UpdatedAt' => 9, 'Active' => 10, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'typeHebergementCapaciteId' => 2, 'categoryTypeHebergementId' => 3, 'nombreChambre' => 4, 'nombrePlace' => 5, 'imageHebergementPath' => 6, 'imageCompositionPath' => 7, 'createdAt' => 8, 'updatedAt' => 9, 'active' => 10, ),
-        BasePeer::TYPE_COLNAME => array (TypeHebergementPeer::ID => 0, TypeHebergementPeer::CODE => 1, TypeHebergementPeer::TYPE_HEBERGEMENT_CAPACITE_ID => 2, TypeHebergementPeer::CATEGORY_TYPE_HEBERGEMENT_ID => 3, TypeHebergementPeer::NOMBRE_CHAMBRE => 4, TypeHebergementPeer::NOMBRE_PLACE => 5, TypeHebergementPeer::IMAGE_HEBERGEMENT_PATH => 6, TypeHebergementPeer::IMAGE_COMPOSITION_PATH => 7, TypeHebergementPeer::CREATED_AT => 8, TypeHebergementPeer::UPDATED_AT => 9, TypeHebergementPeer::ACTIVE => 10, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'TYPE_HEBERGEMENT_CAPACITE_ID' => 2, 'CATEGORY_TYPE_HEBERGEMENT_ID' => 3, 'NOMBRE_CHAMBRE' => 4, 'NOMBRE_PLACE' => 5, 'IMAGE_HEBERGEMENT_PATH' => 6, 'IMAGE_COMPOSITION_PATH' => 7, 'CREATED_AT' => 8, 'UPDATED_AT' => 9, 'ACTIVE' => 10, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'type_hebergement_capacite_id' => 2, 'category_type_hebergement_id' => 3, 'nombre_chambre' => 4, 'nombre_place' => 5, 'image_hebergement_path' => 6, 'image_composition_path' => 7, 'created_at' => 8, 'updated_at' => 9, 'active' => 10, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'TypeHebergementCapaciteId' => 2, 'CategoryTypeHebergementId' => 3, 'NombreChambre' => 4, 'NombrePlace' => 5, 'CreatedAt' => 6, 'UpdatedAt' => 7, 'Active' => 8, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'typeHebergementCapaciteId' => 2, 'categoryTypeHebergementId' => 3, 'nombreChambre' => 4, 'nombrePlace' => 5, 'createdAt' => 6, 'updatedAt' => 7, 'active' => 8, ),
+        BasePeer::TYPE_COLNAME => array (TypeHebergementPeer::ID => 0, TypeHebergementPeer::CODE => 1, TypeHebergementPeer::TYPE_HEBERGEMENT_CAPACITE_ID => 2, TypeHebergementPeer::CATEGORY_TYPE_HEBERGEMENT_ID => 3, TypeHebergementPeer::NOMBRE_CHAMBRE => 4, TypeHebergementPeer::NOMBRE_PLACE => 5, TypeHebergementPeer::CREATED_AT => 6, TypeHebergementPeer::UPDATED_AT => 7, TypeHebergementPeer::ACTIVE => 8, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'TYPE_HEBERGEMENT_CAPACITE_ID' => 2, 'CATEGORY_TYPE_HEBERGEMENT_ID' => 3, 'NOMBRE_CHAMBRE' => 4, 'NOMBRE_PLACE' => 5, 'CREATED_AT' => 6, 'UPDATED_AT' => 7, 'ACTIVE' => 8, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'type_hebergement_capacite_id' => 2, 'category_type_hebergement_id' => 3, 'nombre_chambre' => 4, 'nombre_place' => 5, 'created_at' => 6, 'updated_at' => 7, 'active' => 8, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, )
     );
 
     /**
@@ -208,8 +201,6 @@ abstract class BaseTypeHebergementPeer
             $criteria->addSelectColumn(TypeHebergementPeer::CATEGORY_TYPE_HEBERGEMENT_ID);
             $criteria->addSelectColumn(TypeHebergementPeer::NOMBRE_CHAMBRE);
             $criteria->addSelectColumn(TypeHebergementPeer::NOMBRE_PLACE);
-            $criteria->addSelectColumn(TypeHebergementPeer::IMAGE_HEBERGEMENT_PATH);
-            $criteria->addSelectColumn(TypeHebergementPeer::IMAGE_COMPOSITION_PATH);
             $criteria->addSelectColumn(TypeHebergementPeer::CREATED_AT);
             $criteria->addSelectColumn(TypeHebergementPeer::UPDATED_AT);
             $criteria->addSelectColumn(TypeHebergementPeer::ACTIVE);
@@ -220,8 +211,6 @@ abstract class BaseTypeHebergementPeer
             $criteria->addSelectColumn($alias . '.category_type_hebergement_id');
             $criteria->addSelectColumn($alias . '.nombre_chambre');
             $criteria->addSelectColumn($alias . '.nombre_place');
-            $criteria->addSelectColumn($alias . '.image_hebergement_path');
-            $criteria->addSelectColumn($alias . '.image_composition_path');
             $criteria->addSelectColumn($alias . '.created_at');
             $criteria->addSelectColumn($alias . '.updated_at');
             $criteria->addSelectColumn($alias . '.active');
@@ -427,9 +416,6 @@ abstract class BaseTypeHebergementPeer
         // Invalidate objects in EtablissementTypeHebergementPeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
         EtablissementTypeHebergementPeer::clearInstancePool();
-        // Invalidate objects in MultimediaTypeHebergementPeer instance pool,
-        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
-        MultimediaTypeHebergementPeer::clearInstancePool();
         // Invalidate objects in TypeHebergementI18nPeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
         TypeHebergementI18nPeer::clearInstancePool();

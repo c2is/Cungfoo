@@ -50,7 +50,7 @@
                 <div class="elements">
                             {% endif %}
                     <div class="element clear linkParent">
-                        <img class="boxborder left" src="{{ asset(bonPlan.imageMenu) }}" width="119" height="86" alt="" />
+                        <img class="boxborder left" src="{{ asset(bonPlan.imageMenu | media('file')) }}" width="119" height="86" alt="" />
                         <div class="details left">
                             <span class="title">{{ bonPlan.name }}</span>
                             <span class="region">{{ bonPlan.indice }}</span>

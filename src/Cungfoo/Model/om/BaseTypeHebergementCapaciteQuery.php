@@ -24,16 +24,12 @@ use Cungfoo\Model\TypeHebergementCapaciteQuery;
  *
  *
  * @method TypeHebergementCapaciteQuery orderById($order = Criteria::ASC) Order by the id column
- * @method TypeHebergementCapaciteQuery orderByImageMenu($order = Criteria::ASC) Order by the image_menu column
- * @method TypeHebergementCapaciteQuery orderByImagePage($order = Criteria::ASC) Order by the image_page column
  * @method TypeHebergementCapaciteQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method TypeHebergementCapaciteQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  * @method TypeHebergementCapaciteQuery orderBySortableRank($order = Criteria::ASC) Order by the sortable_rank column
  * @method TypeHebergementCapaciteQuery orderByActive($order = Criteria::ASC) Order by the active column
  *
  * @method TypeHebergementCapaciteQuery groupById() Group by the id column
- * @method TypeHebergementCapaciteQuery groupByImageMenu() Group by the image_menu column
- * @method TypeHebergementCapaciteQuery groupByImagePage() Group by the image_page column
  * @method TypeHebergementCapaciteQuery groupByCreatedAt() Group by the created_at column
  * @method TypeHebergementCapaciteQuery groupByUpdatedAt() Group by the updated_at column
  * @method TypeHebergementCapaciteQuery groupBySortableRank() Group by the sortable_rank column
@@ -54,16 +50,12 @@ use Cungfoo\Model\TypeHebergementCapaciteQuery;
  * @method TypeHebergementCapacite findOne(PropelPDO $con = null) Return the first TypeHebergementCapacite matching the query
  * @method TypeHebergementCapacite findOneOrCreate(PropelPDO $con = null) Return the first TypeHebergementCapacite matching the query, or a new TypeHebergementCapacite object populated from the query conditions when no match is found
  *
- * @method TypeHebergementCapacite findOneByImageMenu(string $image_menu) Return the first TypeHebergementCapacite filtered by the image_menu column
- * @method TypeHebergementCapacite findOneByImagePage(string $image_page) Return the first TypeHebergementCapacite filtered by the image_page column
  * @method TypeHebergementCapacite findOneByCreatedAt(string $created_at) Return the first TypeHebergementCapacite filtered by the created_at column
  * @method TypeHebergementCapacite findOneByUpdatedAt(string $updated_at) Return the first TypeHebergementCapacite filtered by the updated_at column
  * @method TypeHebergementCapacite findOneBySortableRank(int $sortable_rank) Return the first TypeHebergementCapacite filtered by the sortable_rank column
  * @method TypeHebergementCapacite findOneByActive(boolean $active) Return the first TypeHebergementCapacite filtered by the active column
  *
  * @method array findById(int $id) Return TypeHebergementCapacite objects filtered by the id column
- * @method array findByImageMenu(string $image_menu) Return TypeHebergementCapacite objects filtered by the image_menu column
- * @method array findByImagePage(string $image_page) Return TypeHebergementCapacite objects filtered by the image_page column
  * @method array findByCreatedAt(string $created_at) Return TypeHebergementCapacite objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return TypeHebergementCapacite objects filtered by the updated_at column
  * @method array findBySortableRank(int $sortable_rank) Return TypeHebergementCapacite objects filtered by the sortable_rank column
@@ -171,7 +163,7 @@ abstract class BaseTypeHebergementCapaciteQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `image_menu`, `image_page`, `created_at`, `updated_at`, `sortable_rank`, `active` FROM `type_hebergement_capacite` WHERE `id` = :p0';
+        $sql = 'SELECT `id`, `created_at`, `updated_at`, `sortable_rank`, `active` FROM `type_hebergement_capacite` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -285,64 +277,6 @@ abstract class BaseTypeHebergementCapaciteQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(TypeHebergementCapacitePeer::ID, $id, $comparison);
-    }
-
-    /**
-     * Filter the query on the image_menu column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByImageMenu('fooValue');   // WHERE image_menu = 'fooValue'
-     * $query->filterByImageMenu('%fooValue%'); // WHERE image_menu LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $imageMenu The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return TypeHebergementCapaciteQuery The current query, for fluid interface
-     */
-    public function filterByImageMenu($imageMenu = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($imageMenu)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $imageMenu)) {
-                $imageMenu = str_replace('*', '%', $imageMenu);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(TypeHebergementCapacitePeer::IMAGE_MENU, $imageMenu, $comparison);
-    }
-
-    /**
-     * Filter the query on the image_page column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByImagePage('fooValue');   // WHERE image_page = 'fooValue'
-     * $query->filterByImagePage('%fooValue%'); // WHERE image_page LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $imagePage The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return TypeHebergementCapaciteQuery The current query, for fluid interface
-     */
-    public function filterByImagePage($imagePage = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($imagePage)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $imagePage)) {
-                $imagePage = str_replace('*', '%', $imagePage);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(TypeHebergementCapacitePeer::IMAGE_PAGE, $imagePage, $comparison);
     }
 
     /**

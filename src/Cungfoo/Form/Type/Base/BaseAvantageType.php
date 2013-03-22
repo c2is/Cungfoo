@@ -45,33 +45,6 @@ class BaseAvantageType extends AppAwareType
         );
     }
 
-    public function getImagePathType()
-    {
-        return 'cungfoo_file';
-    }
-
-    public function getImagePathOptions()
-    {
-        return array(
-            'required' => false,
-            'label' => 'avantage.image_path',
-        );
-    }
-
-    public function getImagePathDeletedType()
-    {
-        return 'checkbox';
-    }
-
-    public function getImagePathDeletedOptions()
-    {
-        return array(
-            'property_path' => false,
-            'required' => false,
-            'label' => 'avantage.image_path_deleted',
-        );
-    }
-
     public function getCreatedAtType()
     {
         return 'datetime';
@@ -110,6 +83,19 @@ class BaseAvantageType extends AppAwareType
         return array(
             'required' => false,
             'label' => 'avantage.active',
+        );
+    }
+
+    public function getImagePathType()
+    {
+        return 'cungfoo_file';
+    }
+
+    public function getImagePathOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'avantage.image_path',
         );
     }
 
@@ -217,11 +203,10 @@ class BaseAvantageType extends AppAwareType
     {
         $builder->add('id', $this->getIdType(), $this->getIdOptions());
         $builder->add('personnage', $this->getPersonnageType(), $this->getPersonnageOptions());
-        $builder->add('image_path', $this->getImagePathType(), $this->getImagePathOptions());
-        $builder->add('image_path_deleted', $this->getImagePathDeletedType(), $this->getImagePathDeletedOptions());
         $builder->add('created_at', $this->getCreatedAtType(), $this->getCreatedAtOptions());
         $builder->add('updated_at', $this->getUpdatedAtType(), $this->getUpdatedAtOptions());
-        $builder->add('active', $this->getActiveType(), $this->getActiveOptions());$builder->add('avantageI18ns', 'translation_collection', array(
+        $builder->add('active', $this->getActiveType(), $this->getActiveOptions());
+        $builder->add('image_path', $this->getImagePathType(), $this->getImagePathOptions());$builder->add('avantageI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\AvantageI18n',
             'label' => 'avantageI18ns',
             'required' => false,

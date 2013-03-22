@@ -40,7 +40,7 @@ class DisponibiliteClient extends AbstractClient
             "search_form_nb_children_1"          => $this->getOption('nb_children_1', ''),
             "search_form_nb_children_2"          => $this->getOption('nb_children_2', ''),
             "search_form_nb_babies"              => $this->getOption('nb_babies', ''),
-            "search_form_max_results"            => $this->getOption('max_results', '150'),
+            "search_form_max_results"            => $this->getOption('max_results', '50'),
             "search_form_product_code"           => $this->getOption('product_code', ''),
             "search_form_room_type"              => $this->getOption('room_type', ''),
             "search_form_room_type_category"     => $this->getOption('room_type_category', ''),

@@ -2449,12 +2449,7 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
      */
     public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
     {
-        if (!$form['image_path_deleted']->getData())
-        {
-            $this->resetModified(MultimediaEtablissementPeer::IMAGE_PATH);
-        }
-
-        $this->uploadImagePath($form);
+        $this->saveImagePathPortfolioUsage();
 
         return $this->save($con);
     }
@@ -2476,17 +2471,37 @@ abstract class BaseMultimediaEtablissement extends BaseObject implements Persist
     }
 
     /**
-     * @param \Symfony\Component\Form\Form $form
      * @return void
      */
-    public function uploadImagePath(\Symfony\Component\Form\Form $form)
+    public function saveImagePathPortfolioUsage()
     {
-        if (!file_exists($this->getUploadRootDir() . '/' . $form['image_path']->getData()))
-        {
-            if ($form['image_path']->getData()) {
-                $image = uniqid().'.'.$form['image_path']->getData()->guessExtension();
-                $form['image_path']->getData()->move($this->getUploadRootDir(), $image);
-                $this->setImagePath($this->getUploadDir() . '/' . $image);
+        $peer = self::PEER;
+
+        $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+            ->filterByTableRef($peer::TABLE_NAME)
+            ->filterByColumnRef($peer::TABLE_NAME.'.image_path')
+            ->filterByElementId($this->getId())
+            ->findOne()
+        ;
+
+        if ($this->getImagePath()) {
+            if (!$usage) {
+                $usage = new \Cungfoo\Model\PortfolioUsage();
+                $usage
+                    ->setTableRef($peer::TABLE_NAME)
+                    ->setColumnRef($peer::TABLE_NAME.'.image_path')
+                    ->setElementId($this->getId())
+                ;
+            }
+
+            $usage
+                ->setMediaId($this->getImagePath())
+                ->save()
+            ;
+        }
+        else {
+            if ($usage) {
+                $usage->delete();
             }
         }
     }

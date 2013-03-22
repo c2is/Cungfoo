@@ -344,60 +344,6 @@ class BaseEtablissementType extends AppAwareType
         );
     }
 
-    public function getPlanPathType()
-    {
-        return 'cungfoo_file';
-    }
-
-    public function getPlanPathOptions()
-    {
-        return array(
-            'required' => false,
-            'label' => 'etablissement.plan_path',
-        );
-    }
-
-    public function getPlanPathDeletedType()
-    {
-        return 'checkbox';
-    }
-
-    public function getPlanPathDeletedOptions()
-    {
-        return array(
-            'property_path' => false,
-            'required' => false,
-            'label' => 'etablissement.plan_path_deleted',
-        );
-    }
-
-    public function getVignetteType()
-    {
-        return 'cungfoo_file';
-    }
-
-    public function getVignetteOptions()
-    {
-        return array(
-            'required' => false,
-            'label' => 'etablissement.vignette',
-        );
-    }
-
-    public function getVignetteDeletedType()
-    {
-        return 'checkbox';
-    }
-
-    public function getVignetteDeletedOptions()
-    {
-        return array(
-            'property_path' => false,
-            'required' => false,
-            'label' => 'etablissement.vignette_deleted',
-        );
-    }
-
     public function getEtablissementRelatedByRelated1Type()
     {
         return 'model';
@@ -464,6 +410,45 @@ class BaseEtablissementType extends AppAwareType
         return array(
             'required' => false,
             'label' => 'etablissement.active',
+        );
+    }
+
+    public function getPlanType()
+    {
+        return 'cungfoo_file';
+    }
+
+    public function getPlanOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement.plan',
+        );
+    }
+
+    public function getVignetteType()
+    {
+        return 'cungfoo_file';
+    }
+
+    public function getVignetteOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement.vignette',
+        );
+    }
+
+    public function getSliderType()
+    {
+        return 'cungfoo_file';
+    }
+
+    public function getSliderOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'etablissement.slider',
         );
     }
 
@@ -776,15 +761,14 @@ class BaseEtablissementType extends AppAwareType
         $builder->add('video_path', $this->getVideoPathType(), $this->getVideoPathOptions());
         $builder->add('image_360_path', $this->getImage360PathType(), $this->getImage360PathOptions());
         $builder->add('capacite', $this->getCapaciteType(), $this->getCapaciteOptions());
-        $builder->add('plan_path', $this->getPlanPathType(), $this->getPlanPathOptions());
-        $builder->add('plan_path_deleted', $this->getPlanPathDeletedType(), $this->getPlanPathDeletedOptions());
-        $builder->add('vignette', $this->getVignetteType(), $this->getVignetteOptions());
-        $builder->add('vignette_deleted', $this->getVignetteDeletedType(), $this->getVignetteDeletedOptions());
         $builder->add('etablissement_related_by_related_1', $this->getEtablissementRelatedByRelated1Type(), $this->getEtablissementRelatedByRelated1Options());
         $builder->add('etablissement_related_by_related_2', $this->getEtablissementRelatedByRelated2Type(), $this->getEtablissementRelatedByRelated2Options());
         $builder->add('created_at', $this->getCreatedAtType(), $this->getCreatedAtOptions());
         $builder->add('updated_at', $this->getUpdatedAtType(), $this->getUpdatedAtOptions());
         $builder->add('active', $this->getActiveType(), $this->getActiveOptions());
+        $builder->add('plan', $this->getPlanType(), $this->getPlanOptions());
+        $builder->add('vignette', $this->getVignetteType(), $this->getVignetteOptions());
+        $builder->add('slider', $this->getSliderType(), $this->getSliderOptions());
         $builder->add('type_hebergements', $this->getTypeHebergementsType(), $this->getTypeHebergementsOptions());
         $builder->add('destinations', $this->getDestinationsType(), $this->getDestinationsOptions());
         $builder->add('activites', $this->getActivitesType(), $this->getActivitesOptions());

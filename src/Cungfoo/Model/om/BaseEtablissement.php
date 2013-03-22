@@ -55,8 +55,6 @@ use Cungfoo\Model\EtablissementTypeHebergement;
 use Cungfoo\Model\EtablissementTypeHebergementQuery;
 use Cungfoo\Model\Event;
 use Cungfoo\Model\EventQuery;
-use Cungfoo\Model\MultimediaEtablissement;
-use Cungfoo\Model\MultimediaEtablissementQuery;
 use Cungfoo\Model\Personnage;
 use Cungfoo\Model\PersonnageQuery;
 use Cungfoo\Model\PointInteret;
@@ -248,18 +246,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     protected $capacite;
 
     /**
-     * The value for the plan_path field.
-     * @var        string
-     */
-    protected $plan_path;
-
-    /**
-     * The value for the vignette field.
-     * @var        string
-     */
-    protected $vignette;
-
-    /**
      * The value for the related_1 field.
      * @var        int
      */
@@ -386,12 +372,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      */
     protected $collPersonnages;
     protected $collPersonnagesPartial;
-
-    /**
-     * @var        PropelObjectCollection|MultimediaEtablissement[] Collection to store aggregation of MultimediaEtablissement objects.
-     */
-    protected $collMultimediaEtablissements;
-    protected $collMultimediaEtablissementsPartial;
 
     /**
      * @var        PropelObjectCollection|TopCamping[] Collection to store aggregation of TopCamping objects.
@@ -626,12 +606,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      * @var		PropelObjectCollection
      */
     protected $personnagesScheduledForDeletion = null;
-
-    /**
-     * An array of objects scheduled for deletion.
-     * @var		PropelObjectCollection
-     */
-    protected $multimediaEtablissementsScheduledForDeletion = null;
 
     /**
      * An array of objects scheduled for deletion.
@@ -976,26 +950,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     public function getCapacite()
     {
         return $this->capacite;
-    }
-
-    /**
-     * Get the [plan_path] column value.
-     *
-     * @return string
-     */
-    public function getPlanPath()
-    {
-        return $this->plan_path;
-    }
-
-    /**
-     * Get the [vignette] column value.
-     *
-     * @return string
-     */
-    public function getVignette()
-    {
-        return $this->vignette;
     }
 
     /**
@@ -1629,48 +1583,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     } // setCapacite()
 
     /**
-     * Set the value of [plan_path] column.
-     *
-     * @param string $v new value
-     * @return Etablissement The current object (for fluent API support)
-     */
-    public function setPlanPath($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->plan_path !== $v) {
-            $this->plan_path = $v;
-            $this->modifiedColumns[] = EtablissementPeer::PLAN_PATH;
-        }
-
-
-        return $this;
-    } // setPlanPath()
-
-    /**
-     * Set the value of [vignette] column.
-     *
-     * @param string $v new value
-     * @return Etablissement The current object (for fluent API support)
-     */
-    public function setVignette($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->vignette !== $v) {
-            $this->vignette = $v;
-            $this->modifiedColumns[] = EtablissementPeer::VIGNETTE;
-        }
-
-
-        return $this;
-    } // setVignette()
-
-    /**
      * Set the value of [related_1] column.
      *
      * @param int $v new value
@@ -1855,13 +1767,11 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $this->video_path = ($row[$startcol + 21] !== null) ? (string) $row[$startcol + 21] : null;
             $this->image_360_path = ($row[$startcol + 22] !== null) ? (string) $row[$startcol + 22] : null;
             $this->capacite = ($row[$startcol + 23] !== null) ? (string) $row[$startcol + 23] : null;
-            $this->plan_path = ($row[$startcol + 24] !== null) ? (string) $row[$startcol + 24] : null;
-            $this->vignette = ($row[$startcol + 25] !== null) ? (string) $row[$startcol + 25] : null;
-            $this->related_1 = ($row[$startcol + 26] !== null) ? (int) $row[$startcol + 26] : null;
-            $this->related_2 = ($row[$startcol + 27] !== null) ? (int) $row[$startcol + 27] : null;
-            $this->created_at = ($row[$startcol + 28] !== null) ? (string) $row[$startcol + 28] : null;
-            $this->updated_at = ($row[$startcol + 29] !== null) ? (string) $row[$startcol + 29] : null;
-            $this->active = ($row[$startcol + 30] !== null) ? (boolean) $row[$startcol + 30] : null;
+            $this->related_1 = ($row[$startcol + 24] !== null) ? (int) $row[$startcol + 24] : null;
+            $this->related_2 = ($row[$startcol + 25] !== null) ? (int) $row[$startcol + 25] : null;
+            $this->created_at = ($row[$startcol + 26] !== null) ? (string) $row[$startcol + 26] : null;
+            $this->updated_at = ($row[$startcol + 27] !== null) ? (string) $row[$startcol + 27] : null;
+            $this->active = ($row[$startcol + 28] !== null) ? (boolean) $row[$startcol + 28] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -1870,7 +1780,7 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 31; // 31 = EtablissementPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 29; // 29 = EtablissementPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating Etablissement object", $e);
@@ -1975,8 +1885,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $this->collEtablissementEvents = null;
 
             $this->collPersonnages = null;
-
-            $this->collMultimediaEtablissements = null;
 
             $this->collTopCampings = null;
 
@@ -2579,24 +2487,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 }
             }
 
-            if ($this->multimediaEtablissementsScheduledForDeletion !== null) {
-                if (!$this->multimediaEtablissementsScheduledForDeletion->isEmpty()) {
-                    foreach ($this->multimediaEtablissementsScheduledForDeletion as $multimediaEtablissement) {
-                        // need to save related object because we set the relation to null
-                        $multimediaEtablissement->save($con);
-                    }
-                    $this->multimediaEtablissementsScheduledForDeletion = null;
-                }
-            }
-
-            if ($this->collMultimediaEtablissements !== null) {
-                foreach ($this->collMultimediaEtablissements as $referrerFK) {
-                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
-                        $affectedRows += $referrerFK->save($con);
-                    }
-                }
-            }
-
             if ($this->topCampingsScheduledForDeletion !== null) {
                 if (!$this->topCampingsScheduledForDeletion->isEmpty()) {
                     TopCampingQuery::create()
@@ -2763,12 +2653,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if ($this->isColumnModified(EtablissementPeer::CAPACITE)) {
             $modifiedColumns[':p' . $index++]  = '`capacite`';
         }
-        if ($this->isColumnModified(EtablissementPeer::PLAN_PATH)) {
-            $modifiedColumns[':p' . $index++]  = '`plan_path`';
-        }
-        if ($this->isColumnModified(EtablissementPeer::VIGNETTE)) {
-            $modifiedColumns[':p' . $index++]  = '`vignette`';
-        }
         if ($this->isColumnModified(EtablissementPeer::RELATED_1)) {
             $modifiedColumns[':p' . $index++]  = '`related_1`';
         }
@@ -2866,12 +2750,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                         break;
                     case '`capacite`':
                         $stmt->bindValue($identifier, $this->capacite, PDO::PARAM_STR);
-                        break;
-                    case '`plan_path`':
-                        $stmt->bindValue($identifier, $this->plan_path, PDO::PARAM_STR);
-                        break;
-                    case '`vignette`':
-                        $stmt->bindValue($identifier, $this->vignette, PDO::PARAM_STR);
                         break;
                     case '`related_1`':
                         $stmt->bindValue($identifier, $this->related_1, PDO::PARAM_INT);
@@ -3119,14 +2997,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                     }
                 }
 
-                if ($this->collMultimediaEtablissements !== null) {
-                    foreach ($this->collMultimediaEtablissements as $referrerFK) {
-                        if (!$referrerFK->validate($columns)) {
-                            $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
-                        }
-                    }
-                }
-
                 if ($this->collTopCampings !== null) {
                     foreach ($this->collTopCampings as $referrerFK) {
                         if (!$referrerFK->validate($columns)) {
@@ -3267,24 +3137,18 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 return $this->getCapacite();
                 break;
             case 24:
-                return $this->getPlanPath();
-                break;
-            case 25:
-                return $this->getVignette();
-                break;
-            case 26:
                 return $this->getRelated1();
                 break;
-            case 27:
+            case 25:
                 return $this->getRelated2();
                 break;
-            case 28:
+            case 26:
                 return $this->getCreatedAt();
                 break;
-            case 29:
+            case 27:
                 return $this->getUpdatedAt();
                 break;
-            case 30:
+            case 28:
                 return $this->getActive();
                 break;
             default:
@@ -3340,13 +3204,11 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $keys[21] => $this->getVideoPath(),
             $keys[22] => $this->getImage360Path(),
             $keys[23] => $this->getCapacite(),
-            $keys[24] => $this->getPlanPath(),
-            $keys[25] => $this->getVignette(),
-            $keys[26] => $this->getRelated1(),
-            $keys[27] => $this->getRelated2(),
-            $keys[28] => $this->getCreatedAt(),
-            $keys[29] => $this->getUpdatedAt(),
-            $keys[30] => $this->getActive(),
+            $keys[24] => $this->getRelated1(),
+            $keys[25] => $this->getRelated2(),
+            $keys[26] => $this->getCreatedAt(),
+            $keys[27] => $this->getUpdatedAt(),
+            $keys[28] => $this->getActive(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aVille) {
@@ -3399,9 +3261,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             }
             if (null !== $this->collPersonnages) {
                 $result['Personnages'] = $this->collPersonnages->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
-            }
-            if (null !== $this->collMultimediaEtablissements) {
-                $result['MultimediaEtablissements'] = $this->collMultimediaEtablissements->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
             if (null !== $this->collTopCampings) {
                 $result['TopCampings'] = $this->collTopCampings->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
@@ -3522,24 +3381,18 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
                 $this->setCapacite($value);
                 break;
             case 24:
-                $this->setPlanPath($value);
-                break;
-            case 25:
-                $this->setVignette($value);
-                break;
-            case 26:
                 $this->setRelated1($value);
                 break;
-            case 27:
+            case 25:
                 $this->setRelated2($value);
                 break;
-            case 28:
+            case 26:
                 $this->setCreatedAt($value);
                 break;
-            case 29:
+            case 27:
                 $this->setUpdatedAt($value);
                 break;
-            case 30:
+            case 28:
                 $this->setActive($value);
                 break;
         } // switch()
@@ -3590,13 +3443,11 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if (array_key_exists($keys[21], $arr)) $this->setVideoPath($arr[$keys[21]]);
         if (array_key_exists($keys[22], $arr)) $this->setImage360Path($arr[$keys[22]]);
         if (array_key_exists($keys[23], $arr)) $this->setCapacite($arr[$keys[23]]);
-        if (array_key_exists($keys[24], $arr)) $this->setPlanPath($arr[$keys[24]]);
-        if (array_key_exists($keys[25], $arr)) $this->setVignette($arr[$keys[25]]);
-        if (array_key_exists($keys[26], $arr)) $this->setRelated1($arr[$keys[26]]);
-        if (array_key_exists($keys[27], $arr)) $this->setRelated2($arr[$keys[27]]);
-        if (array_key_exists($keys[28], $arr)) $this->setCreatedAt($arr[$keys[28]]);
-        if (array_key_exists($keys[29], $arr)) $this->setUpdatedAt($arr[$keys[29]]);
-        if (array_key_exists($keys[30], $arr)) $this->setActive($arr[$keys[30]]);
+        if (array_key_exists($keys[24], $arr)) $this->setRelated1($arr[$keys[24]]);
+        if (array_key_exists($keys[25], $arr)) $this->setRelated2($arr[$keys[25]]);
+        if (array_key_exists($keys[26], $arr)) $this->setCreatedAt($arr[$keys[26]]);
+        if (array_key_exists($keys[27], $arr)) $this->setUpdatedAt($arr[$keys[27]]);
+        if (array_key_exists($keys[28], $arr)) $this->setActive($arr[$keys[28]]);
     }
 
     /**
@@ -3632,8 +3483,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         if ($this->isColumnModified(EtablissementPeer::VIDEO_PATH)) $criteria->add(EtablissementPeer::VIDEO_PATH, $this->video_path);
         if ($this->isColumnModified(EtablissementPeer::IMAGE_360_PATH)) $criteria->add(EtablissementPeer::IMAGE_360_PATH, $this->image_360_path);
         if ($this->isColumnModified(EtablissementPeer::CAPACITE)) $criteria->add(EtablissementPeer::CAPACITE, $this->capacite);
-        if ($this->isColumnModified(EtablissementPeer::PLAN_PATH)) $criteria->add(EtablissementPeer::PLAN_PATH, $this->plan_path);
-        if ($this->isColumnModified(EtablissementPeer::VIGNETTE)) $criteria->add(EtablissementPeer::VIGNETTE, $this->vignette);
         if ($this->isColumnModified(EtablissementPeer::RELATED_1)) $criteria->add(EtablissementPeer::RELATED_1, $this->related_1);
         if ($this->isColumnModified(EtablissementPeer::RELATED_2)) $criteria->add(EtablissementPeer::RELATED_2, $this->related_2);
         if ($this->isColumnModified(EtablissementPeer::CREATED_AT)) $criteria->add(EtablissementPeer::CREATED_AT, $this->created_at);
@@ -3725,8 +3574,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $copyObj->setVideoPath($this->getVideoPath());
         $copyObj->setImage360Path($this->getImage360Path());
         $copyObj->setCapacite($this->getCapacite());
-        $copyObj->setPlanPath($this->getPlanPath());
-        $copyObj->setVignette($this->getVignette());
         $copyObj->setRelated1($this->getRelated1());
         $copyObj->setRelated2($this->getRelated2());
         $copyObj->setCreatedAt($this->getCreatedAt());
@@ -3809,12 +3656,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             foreach ($this->getPersonnages() as $relObj) {
                 if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
                     $copyObj->addPersonnage($relObj->copy($deepCopy));
-                }
-            }
-
-            foreach ($this->getMultimediaEtablissements() as $relObj) {
-                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
-                    $copyObj->addMultimediaEtablissement($relObj->copy($deepCopy));
                 }
             }
 
@@ -4198,9 +4039,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         }
         if ('Personnage' == $relationName) {
             $this->initPersonnages();
-        }
-        if ('MultimediaEtablissement' == $relationName) {
-            $this->initMultimediaEtablissements();
         }
         if ('TopCamping' == $relationName) {
             $this->initTopCampings();
@@ -7172,221 +7010,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     }
 
     /**
-     * Clears out the collMultimediaEtablissements collection
-     *
-     * This does not modify the database; however, it will remove any associated objects, causing
-     * them to be refetched by subsequent calls to accessor method.
-     *
-     * @return Etablissement The current object (for fluent API support)
-     * @see        addMultimediaEtablissements()
-     */
-    public function clearMultimediaEtablissements()
-    {
-        $this->collMultimediaEtablissements = null; // important to set this to null since that means it is uninitialized
-        $this->collMultimediaEtablissementsPartial = null;
-
-        return $this;
-    }
-
-    /**
-     * reset is the collMultimediaEtablissements collection loaded partially
-     *
-     * @return void
-     */
-    public function resetPartialMultimediaEtablissements($v = true)
-    {
-        $this->collMultimediaEtablissementsPartial = $v;
-    }
-
-    /**
-     * Initializes the collMultimediaEtablissements collection.
-     *
-     * By default this just sets the collMultimediaEtablissements collection to an empty array (like clearcollMultimediaEtablissements());
-     * however, you may wish to override this method in your stub class to provide setting appropriate
-     * to your application -- for example, setting the initial array to the values stored in database.
-     *
-     * @param boolean $overrideExisting If set to true, the method call initializes
-     *                                        the collection even if it is not empty
-     *
-     * @return void
-     */
-    public function initMultimediaEtablissements($overrideExisting = true)
-    {
-        if (null !== $this->collMultimediaEtablissements && !$overrideExisting) {
-            return;
-        }
-        $this->collMultimediaEtablissements = new PropelObjectCollection();
-        $this->collMultimediaEtablissements->setModel('MultimediaEtablissement');
-    }
-
-    /**
-     * Gets an array of MultimediaEtablissement objects which contain a foreign key that references this object.
-     *
-     * If the $criteria is not null, it is used to always fetch the results from the database.
-     * Otherwise the results are fetched from the database the first time, then cached.
-     * Next time the same method is called without $criteria, the cached collection is returned.
-     * If this Etablissement is new, it will return
-     * an empty collection or the current collection; the criteria is ignored on a new object.
-     *
-     * @param Criteria $criteria optional Criteria object to narrow the query
-     * @param PropelPDO $con optional connection object
-     * @return PropelObjectCollection|MultimediaEtablissement[] List of MultimediaEtablissement objects
-     * @throws PropelException
-     */
-    public function getMultimediaEtablissements($criteria = null, PropelPDO $con = null)
-    {
-        $partial = $this->collMultimediaEtablissementsPartial && !$this->isNew();
-        if (null === $this->collMultimediaEtablissements || null !== $criteria  || $partial) {
-            if ($this->isNew() && null === $this->collMultimediaEtablissements) {
-                // return empty collection
-                $this->initMultimediaEtablissements();
-            } else {
-                $collMultimediaEtablissements = MultimediaEtablissementQuery::create(null, $criteria)
-                    ->filterByEtablissement($this)
-                    ->find($con);
-                if (null !== $criteria) {
-                    if (false !== $this->collMultimediaEtablissementsPartial && count($collMultimediaEtablissements)) {
-                      $this->initMultimediaEtablissements(false);
-
-                      foreach($collMultimediaEtablissements as $obj) {
-                        if (false == $this->collMultimediaEtablissements->contains($obj)) {
-                          $this->collMultimediaEtablissements->append($obj);
-                        }
-                      }
-
-                      $this->collMultimediaEtablissementsPartial = true;
-                    }
-
-                    return $collMultimediaEtablissements;
-                }
-
-                if($partial && $this->collMultimediaEtablissements) {
-                    foreach($this->collMultimediaEtablissements as $obj) {
-                        if($obj->isNew()) {
-                            $collMultimediaEtablissements[] = $obj;
-                        }
-                    }
-                }
-
-                $this->collMultimediaEtablissements = $collMultimediaEtablissements;
-                $this->collMultimediaEtablissementsPartial = false;
-            }
-        }
-
-        return $this->collMultimediaEtablissements;
-    }
-
-    /**
-     * Sets a collection of MultimediaEtablissement objects related by a one-to-many relationship
-     * to the current object.
-     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
-     * and new objects from the given Propel collection.
-     *
-     * @param PropelCollection $multimediaEtablissements A Propel collection.
-     * @param PropelPDO $con Optional connection object
-     * @return Etablissement The current object (for fluent API support)
-     */
-    public function setMultimediaEtablissements(PropelCollection $multimediaEtablissements, PropelPDO $con = null)
-    {
-        $this->multimediaEtablissementsScheduledForDeletion = $this->getMultimediaEtablissements(new Criteria(), $con)->diff($multimediaEtablissements);
-
-        foreach ($this->multimediaEtablissementsScheduledForDeletion as $multimediaEtablissementRemoved) {
-            $multimediaEtablissementRemoved->setEtablissement(null);
-        }
-
-        $this->collMultimediaEtablissements = null;
-        foreach ($multimediaEtablissements as $multimediaEtablissement) {
-            $this->addMultimediaEtablissement($multimediaEtablissement);
-        }
-
-        $this->collMultimediaEtablissements = $multimediaEtablissements;
-        $this->collMultimediaEtablissementsPartial = false;
-
-        return $this;
-    }
-
-    /**
-     * Returns the number of related MultimediaEtablissement objects.
-     *
-     * @param Criteria $criteria
-     * @param boolean $distinct
-     * @param PropelPDO $con
-     * @return int             Count of related MultimediaEtablissement objects.
-     * @throws PropelException
-     */
-    public function countMultimediaEtablissements(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
-    {
-        $partial = $this->collMultimediaEtablissementsPartial && !$this->isNew();
-        if (null === $this->collMultimediaEtablissements || null !== $criteria || $partial) {
-            if ($this->isNew() && null === $this->collMultimediaEtablissements) {
-                return 0;
-            }
-
-            if($partial && !$criteria) {
-                return count($this->getMultimediaEtablissements());
-            }
-            $query = MultimediaEtablissementQuery::create(null, $criteria);
-            if ($distinct) {
-                $query->distinct();
-            }
-
-            return $query
-                ->filterByEtablissement($this)
-                ->count($con);
-        }
-
-        return count($this->collMultimediaEtablissements);
-    }
-
-    /**
-     * Method called to associate a MultimediaEtablissement object to this object
-     * through the MultimediaEtablissement foreign key attribute.
-     *
-     * @param    MultimediaEtablissement $l MultimediaEtablissement
-     * @return Etablissement The current object (for fluent API support)
-     */
-    public function addMultimediaEtablissement(MultimediaEtablissement $l)
-    {
-        if ($this->collMultimediaEtablissements === null) {
-            $this->initMultimediaEtablissements();
-            $this->collMultimediaEtablissementsPartial = true;
-        }
-        if (!in_array($l, $this->collMultimediaEtablissements->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
-            $this->doAddMultimediaEtablissement($l);
-        }
-
-        return $this;
-    }
-
-    /**
-     * @param	MultimediaEtablissement $multimediaEtablissement The multimediaEtablissement object to add.
-     */
-    protected function doAddMultimediaEtablissement($multimediaEtablissement)
-    {
-        $this->collMultimediaEtablissements[]= $multimediaEtablissement;
-        $multimediaEtablissement->setEtablissement($this);
-    }
-
-    /**
-     * @param	MultimediaEtablissement $multimediaEtablissement The multimediaEtablissement object to remove.
-     * @return Etablissement The current object (for fluent API support)
-     */
-    public function removeMultimediaEtablissement($multimediaEtablissement)
-    {
-        if ($this->getMultimediaEtablissements()->contains($multimediaEtablissement)) {
-            $this->collMultimediaEtablissements->remove($this->collMultimediaEtablissements->search($multimediaEtablissement));
-            if (null === $this->multimediaEtablissementsScheduledForDeletion) {
-                $this->multimediaEtablissementsScheduledForDeletion = clone $this->collMultimediaEtablissements;
-                $this->multimediaEtablissementsScheduledForDeletion->clear();
-            }
-            $this->multimediaEtablissementsScheduledForDeletion[]= $multimediaEtablissement;
-            $multimediaEtablissement->setEtablissement(null);
-        }
-
-        return $this;
-    }
-
-    /**
      * Clears out the collTopCampings collection
      *
      * This does not modify the database; however, it will remove any associated objects, causing
@@ -10074,8 +9697,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $this->video_path = null;
         $this->image_360_path = null;
         $this->capacite = null;
-        $this->plan_path = null;
-        $this->vignette = null;
         $this->related_1 = null;
         $this->related_2 = null;
         $this->created_at = null;
@@ -10159,11 +9780,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             }
             if ($this->collPersonnages) {
                 foreach ($this->collPersonnages as $o) {
-                    $o->clearAllReferences($deep);
-                }
-            }
-            if ($this->collMultimediaEtablissements) {
-                foreach ($this->collMultimediaEtablissements as $o) {
                     $o->clearAllReferences($deep);
                 }
             }
@@ -10291,10 +9907,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
             $this->collPersonnages->clearIterator();
         }
         $this->collPersonnages = null;
-        if ($this->collMultimediaEtablissements instanceof PropelCollection) {
-            $this->collMultimediaEtablissements->clearIterator();
-        }
-        $this->collMultimediaEtablissements = null;
         if ($this->collTopCampings instanceof PropelCollection) {
             $this->collTopCampings->clearIterator();
         }
@@ -10631,25 +10243,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
         $criteria->add(\Cungfoo\Model\PersonnageI18nPeer::alias('i18n_locale', \Cungfoo\Model\PersonnageI18nPeer::LOCALE), $this->currentLocale);
 
         return $this->getPersonnages($criteria, $con);
-    }
-
-    public function getMultimediasActive($criteria = null, PropelPDO $con = null)
-    {
-
-        if ($criteria === null)
-        {
-            $criteria = new \Criteria();
-        }
-
-        $criteria->add(\Cungfoo\Model\MultimediaPeer::ACTIVE, true);
-
-
-        $criteria->addAlias('i18n_locale', \Cungfoo\Model\MultimediaI18nPeer::TABLE_NAME);
-        $criteria->addJoin(\Cungfoo\Model\MultimediaPeer::ID, \Cungfoo\Model\MultimediaI18nPeer::alias('i18n_locale', \Cungfoo\Model\MultimediaI18nPeer::ID), \Criteria::LEFT_JOIN);
-        $criteria->add(\Cungfoo\Model\MultimediaI18nPeer::alias('i18n_locale', \Cungfoo\Model\MultimediaI18nPeer::ACTIVE_LOCALE), true);
-        $criteria->add(\Cungfoo\Model\MultimediaI18nPeer::alias('i18n_locale', \Cungfoo\Model\MultimediaI18nPeer::LOCALE), $this->currentLocale);
-
-        return $this->getMultimedias($criteria, $con);
     }
 
     public function getTopCampingsActive($criteria = null, PropelPDO $con = null)
@@ -11084,20 +10677,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      */
     public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
     {
-        if (!$form['plan_path_deleted']->getData())
-        {
-            $this->resetModified(EtablissementPeer::PLAN_PATH);
-        }
-
-        $this->uploadPlanPath($form);
-
-        if (!$form['vignette_deleted']->getData())
-        {
-            $this->resetModified(EtablissementPeer::VIGNETTE);
-        }
-
-        $this->uploadVignette($form);
-
         return $this->save($con);
     }
 
@@ -11118,34 +10697,206 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     }
 
     /**
-     * @param \Symfony\Component\Form\Form $form
      * @return void
      */
-    public function uploadPlanPath(\Symfony\Component\Form\Form $form)
+    public function getPlan()
     {
-        if (!file_exists($this->getUploadRootDir() . '/' . $form['plan_path']->getData()))
-        {
-            if ($form['plan_path']->getData()) {
-                $image = uniqid().'.'.$form['plan_path']->getData()->guessExtension();
-                $form['plan_path']->getData()->move($this->getUploadRootDir(), $image);
-                $this->setPlanPath($this->getUploadDir() . '/' . $image);
+        $peer = self::PEER;
+
+        $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
+            ->select('id')
+            ->usePortfolioUsageQuery()
+                ->filterByTableRef($peer::TABLE_NAME)
+                ->filterByColumnRef('plan')
+                ->filterByElementId($this->getId())
+            ->endUse()
+            ->find()
+            ->toArray()
+        ;
+
+        return implode(';', $medias);
+    }
+
+    /**
+     * @return void
+     */
+    public function setPlan($v)
+    {
+        $peer = self::PEER;
+
+        $values = explode(';', $v);
+
+        \Cungfoo\Model\PortfolioUsageQuery::create()
+            ->filterByTableRef($peer::TABLE_NAME)
+            ->filterByColumnRef('plan')
+            ->filterByElementId($this->getId())
+            ->filterByMediaId($values, \Criteria::NOT_IN)
+            ->find()
+            ->delete()
+        ;
+
+        if ($v) {
+            foreach ($values as $index => $value) {
+                $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+                    ->filterByTableRef($peer::TABLE_NAME)
+                    ->filterByColumnRef('plan')
+                    ->filterByElementId($this->getId())
+                    ->filterByMediaId($value)
+                    ->findOne()
+                ;
+
+                if (!$usage) {
+                    $usage = new \Cungfoo\Model\PortfolioUsage();
+                    $usage
+                        ->setTableRef($peer::TABLE_NAME)
+                        ->setColumnRef('plan')
+                        ->setElementId($this->getId())
+                        ->setMediaId($value)
+                    ;
+                }
+
+                $usage
+                    ->setSortableRank($index)
+                    ->save()
+                ;
             }
+
         }
     }
 
     /**
-     * @param \Symfony\Component\Form\Form $form
      * @return void
      */
-    public function uploadVignette(\Symfony\Component\Form\Form $form)
+    public function getVignette()
     {
-        if (!file_exists($this->getUploadRootDir() . '/' . $form['vignette']->getData()))
-        {
-            if ($form['vignette']->getData()) {
-                $image = uniqid().'.'.$form['vignette']->getData()->guessExtension();
-                $form['vignette']->getData()->move($this->getUploadRootDir(), $image);
-                $this->setVignette($this->getUploadDir() . '/' . $image);
+        $peer = self::PEER;
+
+        $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
+            ->select('id')
+            ->usePortfolioUsageQuery()
+                ->filterByTableRef($peer::TABLE_NAME)
+                ->filterByColumnRef('vignette')
+                ->filterByElementId($this->getId())
+            ->endUse()
+            ->find()
+            ->toArray()
+        ;
+
+        return implode(';', $medias);
+    }
+
+    /**
+     * @return void
+     */
+    public function setVignette($v)
+    {
+        $peer = self::PEER;
+
+        $values = explode(';', $v);
+
+        \Cungfoo\Model\PortfolioUsageQuery::create()
+            ->filterByTableRef($peer::TABLE_NAME)
+            ->filterByColumnRef('vignette')
+            ->filterByElementId($this->getId())
+            ->filterByMediaId($values, \Criteria::NOT_IN)
+            ->find()
+            ->delete()
+        ;
+
+        if ($v) {
+            foreach ($values as $index => $value) {
+                $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+                    ->filterByTableRef($peer::TABLE_NAME)
+                    ->filterByColumnRef('vignette')
+                    ->filterByElementId($this->getId())
+                    ->filterByMediaId($value)
+                    ->findOne()
+                ;
+
+                if (!$usage) {
+                    $usage = new \Cungfoo\Model\PortfolioUsage();
+                    $usage
+                        ->setTableRef($peer::TABLE_NAME)
+                        ->setColumnRef('vignette')
+                        ->setElementId($this->getId())
+                        ->setMediaId($value)
+                    ;
+                }
+
+                $usage
+                    ->setSortableRank($index)
+                    ->save()
+                ;
             }
+
+        }
+    }
+
+    /**
+     * @return void
+     */
+    public function getSlider()
+    {
+        $peer = self::PEER;
+
+        $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
+            ->select('id')
+            ->usePortfolioUsageQuery()
+                ->filterByTableRef($peer::TABLE_NAME)
+                ->filterByColumnRef('slider')
+                ->filterByElementId($this->getId())
+            ->endUse()
+            ->find()
+            ->toArray()
+        ;
+
+        return implode(';', $medias);
+    }
+
+    /**
+     * @return void
+     */
+    public function setSlider($v)
+    {
+        $peer = self::PEER;
+
+        $values = explode(';', $v);
+
+        \Cungfoo\Model\PortfolioUsageQuery::create()
+            ->filterByTableRef($peer::TABLE_NAME)
+            ->filterByColumnRef('slider')
+            ->filterByElementId($this->getId())
+            ->filterByMediaId($values, \Criteria::NOT_IN)
+            ->find()
+            ->delete()
+        ;
+
+        if ($v) {
+            foreach ($values as $index => $value) {
+                $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+                    ->filterByTableRef($peer::TABLE_NAME)
+                    ->filterByColumnRef('slider')
+                    ->filterByElementId($this->getId())
+                    ->filterByMediaId($value)
+                    ->findOne()
+                ;
+
+                if (!$usage) {
+                    $usage = new \Cungfoo\Model\PortfolioUsage();
+                    $usage
+                        ->setTableRef($peer::TABLE_NAME)
+                        ->setColumnRef('slider')
+                        ->setElementId($this->getId())
+                        ->setMediaId($value)
+                    ;
+                }
+
+                $usage
+                    ->setSortableRank($index)
+                    ->save()
+                ;
+            }
+
         }
     }
 

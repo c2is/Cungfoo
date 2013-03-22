@@ -34,7 +34,7 @@
 
     {# Bloc titre + accroche + picto #}
     {% if item['imagePath'] is defined %}
-        <img class="right" width="127" height="127" src="{{ asset(item.imagePath) }}"> {# Picto région #}
+        <img class="right" width="127" height="127" src="{{ asset(item.imagePath | media('file')) }}"> {# Picto région #}
     {% endif %}
     <h1>{{ title }}</h1> {# Titre #}
     <h2 class="h3-like">{{ item.introduction }}</h2> {# Accroche #}
@@ -134,10 +134,10 @@
 {% if item.imageDetail1 or item.imageDetail2 %}}
 <h3>{{ imagesTitle }}</h3>
     {% if item.imageDetail1 %}}
-<img src="{{ asset(item.imageDetail1) }}" class="boxborder large imgDesti">
+<img src="{{ asset(item.imageDetail1 | media('file')) }}" class="boxborder large imgDesti">
     {% endif %}
     {% if item.imageDetail2 %}
-<img src="{{ asset(item.imageDetail2) }}" class="boxborder large imgDesti">
+<img src="{{ asset(item.imageDetail2 | media('file')) }}" class="boxborder large imgDesti">
     {% endif %}
 {% endif %}
 

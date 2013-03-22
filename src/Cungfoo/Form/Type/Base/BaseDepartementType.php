@@ -61,60 +61,6 @@ class BaseDepartementType extends AppAwareType
         );
     }
 
-    public function getImageDetail1Type()
-    {
-        return 'cungfoo_file';
-    }
-
-    public function getImageDetail1Options()
-    {
-        return array(
-            'required' => false,
-            'label' => 'departement.image_detail_1',
-        );
-    }
-
-    public function getImageDetail1DeletedType()
-    {
-        return 'checkbox';
-    }
-
-    public function getImageDetail1DeletedOptions()
-    {
-        return array(
-            'property_path' => false,
-            'required' => false,
-            'label' => 'departement.image_detail_1_deleted',
-        );
-    }
-
-    public function getImageDetail2Type()
-    {
-        return 'cungfoo_file';
-    }
-
-    public function getImageDetail2Options()
-    {
-        return array(
-            'required' => false,
-            'label' => 'departement.image_detail_2',
-        );
-    }
-
-    public function getImageDetail2DeletedType()
-    {
-        return 'checkbox';
-    }
-
-    public function getImageDetail2DeletedOptions()
-    {
-        return array(
-            'property_path' => false,
-            'required' => false,
-            'label' => 'departement.image_detail_2_deleted',
-        );
-    }
-
     public function getCreatedAtType()
     {
         return 'datetime';
@@ -153,6 +99,32 @@ class BaseDepartementType extends AppAwareType
         return array(
             'required' => false,
             'label' => 'departement.active',
+        );
+    }
+
+    public function getImageDetail1Type()
+    {
+        return 'cungfoo_file';
+    }
+
+    public function getImageDetail1Options()
+    {
+        return array(
+            'required' => false,
+            'label' => 'departement.image_detail_1',
+        );
+    }
+
+    public function getImageDetail2Type()
+    {
+        return 'cungfoo_file';
+    }
+
+    public function getImageDetail2Options()
+    {
+        return array(
+            'required' => false,
+            'label' => 'departement.image_detail_2',
         );
     }
 
@@ -287,13 +259,11 @@ class BaseDepartementType extends AppAwareType
         $builder->add('id', $this->getIdType(), $this->getIdOptions());
         $builder->add('code', $this->getCodeType(), $this->getCodeOptions());
         $builder->add('region_ref', $this->getRegionRefType(), $this->getRegionRefOptions());
-        $builder->add('image_detail_1', $this->getImageDetail1Type(), $this->getImageDetail1Options());
-        $builder->add('image_detail_1_deleted', $this->getImageDetail1DeletedType(), $this->getImageDetail1DeletedOptions());
-        $builder->add('image_detail_2', $this->getImageDetail2Type(), $this->getImageDetail2Options());
-        $builder->add('image_detail_2_deleted', $this->getImageDetail2DeletedType(), $this->getImageDetail2DeletedOptions());
         $builder->add('created_at', $this->getCreatedAtType(), $this->getCreatedAtOptions());
         $builder->add('updated_at', $this->getUpdatedAtType(), $this->getUpdatedAtOptions());
-        $builder->add('active', $this->getActiveType(), $this->getActiveOptions());$builder->add('departementI18ns', 'translation_collection', array(
+        $builder->add('active', $this->getActiveType(), $this->getActiveOptions());
+        $builder->add('image_detail_1', $this->getImageDetail1Type(), $this->getImageDetail1Options());
+        $builder->add('image_detail_2', $this->getImageDetail2Type(), $this->getImageDetail2Options());$builder->add('departementI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\DepartementI18n',
             'label' => 'departementI18ns',
             'required' => false,

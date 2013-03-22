@@ -60,20 +60,6 @@ class BaseMetadataType extends AppAwareType
         );
     }
 
-    public function getVisuelDeletedType()
-    {
-        return 'checkbox';
-    }
-
-    public function getVisuelDeletedOptions()
-    {
-        return array(
-            'property_path' => false,
-            'required' => false,
-            'label' => 'metadata.visuel_deleted',
-        );
-    }
-
     public function getTitleType()
     {
         return 'text';
@@ -172,8 +158,7 @@ class BaseMetadataType extends AppAwareType
     {
         $builder->add('id', $this->getIdType(), $this->getIdOptions());
         $builder->add('table_ref', $this->getTableRefType(), $this->getTableRefOptions());
-        $builder->add('visuel', $this->getVisuelType(), $this->getVisuelOptions());
-        $builder->add('visuel_deleted', $this->getVisuelDeletedType(), $this->getVisuelDeletedOptions());$builder->add('metadataI18ns', 'translation_collection', array(
+        $builder->add('visuel', $this->getVisuelType(), $this->getVisuelOptions());$builder->add('metadataI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\MetadataI18n',
             'label' => 'metadataI18ns',
             'required' => false,

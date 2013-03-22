@@ -16,7 +16,7 @@
                 <p class="headline">{{ metadata.accroche|trans }}</p>
             </div>
         </div>
-        <img class="bdPict" src="{{ asset(metadata.visuel) }}" alt="">
+        <img class="bdPict" src="{{ asset(metadata.visuel | media('file')) }}" alt="">
     </div>
     {% endif %}
 

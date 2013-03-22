@@ -39,13 +39,13 @@ abstract class BaseDepartementPeer
     const TM_CLASS = 'DepartementTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 8;
+    const NUM_COLUMNS = 6;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 8;
+    const NUM_HYDRATE_COLUMNS = 6;
 
     /** the column name for the id field */
     const ID = 'departement.id';
@@ -55,12 +55,6 @@ abstract class BaseDepartementPeer
 
     /** the column name for the region_ref_id field */
     const REGION_REF_ID = 'departement.region_ref_id';
-
-    /** the column name for the image_detail_1 field */
-    const IMAGE_DETAIL_1 = 'departement.image_detail_1';
-
-    /** the column name for the image_detail_2 field */
-    const IMAGE_DETAIL_2 = 'departement.image_detail_2';
 
     /** the column name for the created_at field */
     const CREATED_AT = 'departement.created_at';
@@ -97,12 +91,12 @@ abstract class BaseDepartementPeer
      * e.g. DepartementPeer::$fieldNames[DepartementPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'RegionRefId', 'ImageDetail1', 'ImageDetail2', 'CreatedAt', 'UpdatedAt', 'Active', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'regionRefId', 'imageDetail1', 'imageDetail2', 'createdAt', 'updatedAt', 'active', ),
-        BasePeer::TYPE_COLNAME => array (DepartementPeer::ID, DepartementPeer::CODE, DepartementPeer::REGION_REF_ID, DepartementPeer::IMAGE_DETAIL_1, DepartementPeer::IMAGE_DETAIL_2, DepartementPeer::CREATED_AT, DepartementPeer::UPDATED_AT, DepartementPeer::ACTIVE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'REGION_REF_ID', 'IMAGE_DETAIL_1', 'IMAGE_DETAIL_2', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'region_ref_id', 'image_detail_1', 'image_detail_2', 'created_at', 'updated_at', 'active', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'RegionRefId', 'CreatedAt', 'UpdatedAt', 'Active', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'regionRefId', 'createdAt', 'updatedAt', 'active', ),
+        BasePeer::TYPE_COLNAME => array (DepartementPeer::ID, DepartementPeer::CODE, DepartementPeer::REGION_REF_ID, DepartementPeer::CREATED_AT, DepartementPeer::UPDATED_AT, DepartementPeer::ACTIVE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'REGION_REF_ID', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'region_ref_id', 'created_at', 'updated_at', 'active', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
     );
 
     /**
@@ -112,12 +106,12 @@ abstract class BaseDepartementPeer
      * e.g. DepartementPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'RegionRefId' => 2, 'ImageDetail1' => 3, 'ImageDetail2' => 4, 'CreatedAt' => 5, 'UpdatedAt' => 6, 'Active' => 7, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'regionRefId' => 2, 'imageDetail1' => 3, 'imageDetail2' => 4, 'createdAt' => 5, 'updatedAt' => 6, 'active' => 7, ),
-        BasePeer::TYPE_COLNAME => array (DepartementPeer::ID => 0, DepartementPeer::CODE => 1, DepartementPeer::REGION_REF_ID => 2, DepartementPeer::IMAGE_DETAIL_1 => 3, DepartementPeer::IMAGE_DETAIL_2 => 4, DepartementPeer::CREATED_AT => 5, DepartementPeer::UPDATED_AT => 6, DepartementPeer::ACTIVE => 7, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'REGION_REF_ID' => 2, 'IMAGE_DETAIL_1' => 3, 'IMAGE_DETAIL_2' => 4, 'CREATED_AT' => 5, 'UPDATED_AT' => 6, 'ACTIVE' => 7, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'region_ref_id' => 2, 'image_detail_1' => 3, 'image_detail_2' => 4, 'created_at' => 5, 'updated_at' => 6, 'active' => 7, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'RegionRefId' => 2, 'CreatedAt' => 3, 'UpdatedAt' => 4, 'Active' => 5, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'regionRefId' => 2, 'createdAt' => 3, 'updatedAt' => 4, 'active' => 5, ),
+        BasePeer::TYPE_COLNAME => array (DepartementPeer::ID => 0, DepartementPeer::CODE => 1, DepartementPeer::REGION_REF_ID => 2, DepartementPeer::CREATED_AT => 3, DepartementPeer::UPDATED_AT => 4, DepartementPeer::ACTIVE => 5, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'REGION_REF_ID' => 2, 'CREATED_AT' => 3, 'UPDATED_AT' => 4, 'ACTIVE' => 5, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'region_ref_id' => 2, 'created_at' => 3, 'updated_at' => 4, 'active' => 5, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
     );
 
     /**
@@ -194,8 +188,6 @@ abstract class BaseDepartementPeer
             $criteria->addSelectColumn(DepartementPeer::ID);
             $criteria->addSelectColumn(DepartementPeer::CODE);
             $criteria->addSelectColumn(DepartementPeer::REGION_REF_ID);
-            $criteria->addSelectColumn(DepartementPeer::IMAGE_DETAIL_1);
-            $criteria->addSelectColumn(DepartementPeer::IMAGE_DETAIL_2);
             $criteria->addSelectColumn(DepartementPeer::CREATED_AT);
             $criteria->addSelectColumn(DepartementPeer::UPDATED_AT);
             $criteria->addSelectColumn(DepartementPeer::ACTIVE);
@@ -203,8 +195,6 @@ abstract class BaseDepartementPeer
             $criteria->addSelectColumn($alias . '.id');
             $criteria->addSelectColumn($alias . '.code');
             $criteria->addSelectColumn($alias . '.region_ref_id');
-            $criteria->addSelectColumn($alias . '.image_detail_1');
-            $criteria->addSelectColumn($alias . '.image_detail_2');
             $criteria->addSelectColumn($alias . '.created_at');
             $criteria->addSelectColumn($alias . '.updated_at');
             $criteria->addSelectColumn($alias . '.active');

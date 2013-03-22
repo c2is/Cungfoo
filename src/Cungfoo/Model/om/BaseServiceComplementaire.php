@@ -70,18 +70,6 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
     protected $code;
 
     /**
-     * The value for the image_path field.
-     * @var        string
-     */
-    protected $image_path;
-
-    /**
-     * The value for the vignette field.
-     * @var        string
-     */
-    protected $vignette;
-
-    /**
      * The value for the created_at field.
      * @var        string
      */
@@ -228,26 +216,6 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
     }
 
     /**
-     * Get the [image_path] column value.
-     *
-     * @return string
-     */
-    public function getImagePath()
-    {
-        return $this->image_path;
-    }
-
-    /**
-     * Get the [vignette] column value.
-     *
-     * @return string
-     */
-    public function getVignette()
-    {
-        return $this->vignette;
-    }
-
-    /**
      * Get the [optionally formatted] temporal [created_at] column value.
      *
      *
@@ -380,48 +348,6 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
     } // setCode()
 
     /**
-     * Set the value of [image_path] column.
-     *
-     * @param string $v new value
-     * @return ServiceComplementaire The current object (for fluent API support)
-     */
-    public function setImagePath($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->image_path !== $v) {
-            $this->image_path = $v;
-            $this->modifiedColumns[] = ServiceComplementairePeer::IMAGE_PATH;
-        }
-
-
-        return $this;
-    } // setImagePath()
-
-    /**
-     * Set the value of [vignette] column.
-     *
-     * @param string $v new value
-     * @return ServiceComplementaire The current object (for fluent API support)
-     */
-    public function setVignette($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->vignette !== $v) {
-            $this->vignette = $v;
-            $this->modifiedColumns[] = ServiceComplementairePeer::VIGNETTE;
-        }
-
-
-        return $this;
-    } // setVignette()
-
-    /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
      *
      * @param mixed $v string, integer (timestamp), or DateTime value.
@@ -534,11 +460,9 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
 
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
             $this->code = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
-            $this->image_path = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
-            $this->vignette = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
-            $this->created_at = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
-            $this->updated_at = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
-            $this->active = ($row[$startcol + 6] !== null) ? (boolean) $row[$startcol + 6] : null;
+            $this->created_at = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
+            $this->updated_at = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
+            $this->active = ($row[$startcol + 4] !== null) ? (boolean) $row[$startcol + 4] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -547,7 +471,7 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 7; // 7 = ServiceComplementairePeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 5; // 5 = ServiceComplementairePeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating ServiceComplementaire object", $e);
@@ -875,12 +799,6 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
         if ($this->isColumnModified(ServiceComplementairePeer::CODE)) {
             $modifiedColumns[':p' . $index++]  = '`code`';
         }
-        if ($this->isColumnModified(ServiceComplementairePeer::IMAGE_PATH)) {
-            $modifiedColumns[':p' . $index++]  = '`image_path`';
-        }
-        if ($this->isColumnModified(ServiceComplementairePeer::VIGNETTE)) {
-            $modifiedColumns[':p' . $index++]  = '`vignette`';
-        }
         if ($this->isColumnModified(ServiceComplementairePeer::CREATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`created_at`';
         }
@@ -906,12 +824,6 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
                         break;
                     case '`code`':
                         $stmt->bindValue($identifier, $this->code, PDO::PARAM_STR);
-                        break;
-                    case '`image_path`':
-                        $stmt->bindValue($identifier, $this->image_path, PDO::PARAM_STR);
-                        break;
-                    case '`vignette`':
-                        $stmt->bindValue($identifier, $this->vignette, PDO::PARAM_STR);
                         break;
                     case '`created_at`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
@@ -1087,18 +999,12 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
                 return $this->getCode();
                 break;
             case 2:
-                return $this->getImagePath();
-                break;
-            case 3:
-                return $this->getVignette();
-                break;
-            case 4:
                 return $this->getCreatedAt();
                 break;
-            case 5:
+            case 3:
                 return $this->getUpdatedAt();
                 break;
-            case 6:
+            case 4:
                 return $this->getActive();
                 break;
             default:
@@ -1132,11 +1038,9 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
         $result = array(
             $keys[0] => $this->getId(),
             $keys[1] => $this->getCode(),
-            $keys[2] => $this->getImagePath(),
-            $keys[3] => $this->getVignette(),
-            $keys[4] => $this->getCreatedAt(),
-            $keys[5] => $this->getUpdatedAt(),
-            $keys[6] => $this->getActive(),
+            $keys[2] => $this->getCreatedAt(),
+            $keys[3] => $this->getUpdatedAt(),
+            $keys[4] => $this->getActive(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->collEtablissementServiceComplementaires) {
@@ -1189,18 +1093,12 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
                 $this->setCode($value);
                 break;
             case 2:
-                $this->setImagePath($value);
-                break;
-            case 3:
-                $this->setVignette($value);
-                break;
-            case 4:
                 $this->setCreatedAt($value);
                 break;
-            case 5:
+            case 3:
                 $this->setUpdatedAt($value);
                 break;
-            case 6:
+            case 4:
                 $this->setActive($value);
                 break;
         } // switch()
@@ -1229,11 +1127,9 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
 
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
         if (array_key_exists($keys[1], $arr)) $this->setCode($arr[$keys[1]]);
-        if (array_key_exists($keys[2], $arr)) $this->setImagePath($arr[$keys[2]]);
-        if (array_key_exists($keys[3], $arr)) $this->setVignette($arr[$keys[3]]);
-        if (array_key_exists($keys[4], $arr)) $this->setCreatedAt($arr[$keys[4]]);
-        if (array_key_exists($keys[5], $arr)) $this->setUpdatedAt($arr[$keys[5]]);
-        if (array_key_exists($keys[6], $arr)) $this->setActive($arr[$keys[6]]);
+        if (array_key_exists($keys[2], $arr)) $this->setCreatedAt($arr[$keys[2]]);
+        if (array_key_exists($keys[3], $arr)) $this->setUpdatedAt($arr[$keys[3]]);
+        if (array_key_exists($keys[4], $arr)) $this->setActive($arr[$keys[4]]);
     }
 
     /**
@@ -1247,8 +1143,6 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
 
         if ($this->isColumnModified(ServiceComplementairePeer::ID)) $criteria->add(ServiceComplementairePeer::ID, $this->id);
         if ($this->isColumnModified(ServiceComplementairePeer::CODE)) $criteria->add(ServiceComplementairePeer::CODE, $this->code);
-        if ($this->isColumnModified(ServiceComplementairePeer::IMAGE_PATH)) $criteria->add(ServiceComplementairePeer::IMAGE_PATH, $this->image_path);
-        if ($this->isColumnModified(ServiceComplementairePeer::VIGNETTE)) $criteria->add(ServiceComplementairePeer::VIGNETTE, $this->vignette);
         if ($this->isColumnModified(ServiceComplementairePeer::CREATED_AT)) $criteria->add(ServiceComplementairePeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(ServiceComplementairePeer::UPDATED_AT)) $criteria->add(ServiceComplementairePeer::UPDATED_AT, $this->updated_at);
         if ($this->isColumnModified(ServiceComplementairePeer::ACTIVE)) $criteria->add(ServiceComplementairePeer::ACTIVE, $this->active);
@@ -1316,8 +1210,6 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
         $copyObj->setCode($this->getCode());
-        $copyObj->setImagePath($this->getImagePath());
-        $copyObj->setVignette($this->getVignette());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
         $copyObj->setActive($this->getActive());
@@ -2479,8 +2371,6 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
     {
         $this->id = null;
         $this->code = null;
-        $this->image_path = null;
-        $this->vignette = null;
         $this->created_at = null;
         $this->updated_at = null;
         $this->active = null;
@@ -2997,20 +2887,6 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
      */
     public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
     {
-        if (!$form['image_path_deleted']->getData())
-        {
-            $this->resetModified(ServiceComplementairePeer::IMAGE_PATH);
-        }
-
-        $this->uploadImagePath($form);
-
-        if (!$form['vignette_deleted']->getData())
-        {
-            $this->resetModified(ServiceComplementairePeer::VIGNETTE);
-        }
-
-        $this->uploadVignette($form);
-
         return $this->save($con);
     }
 
@@ -3031,34 +2907,138 @@ abstract class BaseServiceComplementaire extends BaseObject implements Persisten
     }
 
     /**
-     * @param \Symfony\Component\Form\Form $form
      * @return void
      */
-    public function uploadImagePath(\Symfony\Component\Form\Form $form)
+    public function getImagePath()
     {
-        if (!file_exists($this->getUploadRootDir() . '/' . $form['image_path']->getData()))
-        {
-            if ($form['image_path']->getData()) {
-                $image = uniqid().'.'.$form['image_path']->getData()->guessExtension();
-                $form['image_path']->getData()->move($this->getUploadRootDir(), $image);
-                $this->setImagePath($this->getUploadDir() . '/' . $image);
+        $peer = self::PEER;
+
+        $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
+            ->select('id')
+            ->usePortfolioUsageQuery()
+                ->filterByTableRef($peer::TABLE_NAME)
+                ->filterByColumnRef('image_path')
+                ->filterByElementId($this->getId())
+            ->endUse()
+            ->find()
+            ->toArray()
+        ;
+
+        return implode(';', $medias);
+    }
+
+    /**
+     * @return void
+     */
+    public function setImagePath($v)
+    {
+        $peer = self::PEER;
+
+        $values = explode(';', $v);
+
+        \Cungfoo\Model\PortfolioUsageQuery::create()
+            ->filterByTableRef($peer::TABLE_NAME)
+            ->filterByColumnRef('image_path')
+            ->filterByElementId($this->getId())
+            ->filterByMediaId($values, \Criteria::NOT_IN)
+            ->find()
+            ->delete()
+        ;
+
+        if ($v) {
+            foreach ($values as $index => $value) {
+                $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+                    ->filterByTableRef($peer::TABLE_NAME)
+                    ->filterByColumnRef('image_path')
+                    ->filterByElementId($this->getId())
+                    ->filterByMediaId($value)
+                    ->findOne()
+                ;
+
+                if (!$usage) {
+                    $usage = new \Cungfoo\Model\PortfolioUsage();
+                    $usage
+                        ->setTableRef($peer::TABLE_NAME)
+                        ->setColumnRef('image_path')
+                        ->setElementId($this->getId())
+                        ->setMediaId($value)
+                    ;
+                }
+
+                $usage
+                    ->setSortableRank($index)
+                    ->save()
+                ;
             }
+
         }
     }
 
     /**
-     * @param \Symfony\Component\Form\Form $form
      * @return void
      */
-    public function uploadVignette(\Symfony\Component\Form\Form $form)
+    public function getVignette()
     {
-        if (!file_exists($this->getUploadRootDir() . '/' . $form['vignette']->getData()))
-        {
-            if ($form['vignette']->getData()) {
-                $image = uniqid().'.'.$form['vignette']->getData()->guessExtension();
-                $form['vignette']->getData()->move($this->getUploadRootDir(), $image);
-                $this->setVignette($this->getUploadDir() . '/' . $image);
+        $peer = self::PEER;
+
+        $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
+            ->select('id')
+            ->usePortfolioUsageQuery()
+                ->filterByTableRef($peer::TABLE_NAME)
+                ->filterByColumnRef('vignette')
+                ->filterByElementId($this->getId())
+            ->endUse()
+            ->find()
+            ->toArray()
+        ;
+
+        return implode(';', $medias);
+    }
+
+    /**
+     * @return void
+     */
+    public function setVignette($v)
+    {
+        $peer = self::PEER;
+
+        $values = explode(';', $v);
+
+        \Cungfoo\Model\PortfolioUsageQuery::create()
+            ->filterByTableRef($peer::TABLE_NAME)
+            ->filterByColumnRef('vignette')
+            ->filterByElementId($this->getId())
+            ->filterByMediaId($values, \Criteria::NOT_IN)
+            ->find()
+            ->delete()
+        ;
+
+        if ($v) {
+            foreach ($values as $index => $value) {
+                $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+                    ->filterByTableRef($peer::TABLE_NAME)
+                    ->filterByColumnRef('vignette')
+                    ->filterByElementId($this->getId())
+                    ->filterByMediaId($value)
+                    ->findOne()
+                ;
+
+                if (!$usage) {
+                    $usage = new \Cungfoo\Model\PortfolioUsage();
+                    $usage
+                        ->setTableRef($peer::TABLE_NAME)
+                        ->setColumnRef('vignette')
+                        ->setElementId($this->getId())
+                        ->setMediaId($value)
+                    ;
+                }
+
+                $usage
+                    ->setSortableRank($index)
+                    ->save()
+                ;
             }
+
         }
     }
 

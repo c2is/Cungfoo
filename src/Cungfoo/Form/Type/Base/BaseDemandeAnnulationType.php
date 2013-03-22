@@ -297,114 +297,6 @@ class BaseDemandeAnnulationType extends AppAwareType
         );
     }
 
-    public function getFile1Type()
-    {
-        return 'cungfoo_file';
-    }
-
-    public function getFile1Options()
-    {
-        return array(
-            'required' => false,
-            'label' => 'demande_annulation.file_1',
-        );
-    }
-
-    public function getFile1DeletedType()
-    {
-        return 'checkbox';
-    }
-
-    public function getFile1DeletedOptions()
-    {
-        return array(
-            'property_path' => false,
-            'required' => false,
-            'label' => 'demande_annulation.file_1_deleted',
-        );
-    }
-
-    public function getFile2Type()
-    {
-        return 'cungfoo_file';
-    }
-
-    public function getFile2Options()
-    {
-        return array(
-            'required' => false,
-            'label' => 'demande_annulation.file_2',
-        );
-    }
-
-    public function getFile2DeletedType()
-    {
-        return 'checkbox';
-    }
-
-    public function getFile2DeletedOptions()
-    {
-        return array(
-            'property_path' => false,
-            'required' => false,
-            'label' => 'demande_annulation.file_2_deleted',
-        );
-    }
-
-    public function getFile3Type()
-    {
-        return 'cungfoo_file';
-    }
-
-    public function getFile3Options()
-    {
-        return array(
-            'required' => false,
-            'label' => 'demande_annulation.file_3',
-        );
-    }
-
-    public function getFile3DeletedType()
-    {
-        return 'checkbox';
-    }
-
-    public function getFile3DeletedOptions()
-    {
-        return array(
-            'property_path' => false,
-            'required' => false,
-            'label' => 'demande_annulation.file_3_deleted',
-        );
-    }
-
-    public function getFile4Type()
-    {
-        return 'cungfoo_file';
-    }
-
-    public function getFile4Options()
-    {
-        return array(
-            'required' => false,
-            'label' => 'demande_annulation.file_4',
-        );
-    }
-
-    public function getFile4DeletedType()
-    {
-        return 'checkbox';
-    }
-
-    public function getFile4DeletedOptions()
-    {
-        return array(
-            'property_path' => false,
-            'required' => false,
-            'label' => 'demande_annulation.file_4_deleted',
-        );
-    }
-
     public function getCreatedAtType()
     {
         return 'datetime';
@@ -443,6 +335,58 @@ class BaseDemandeAnnulationType extends AppAwareType
         return array(
             'required' => false,
             'label' => 'demande_annulation.active',
+        );
+    }
+
+    public function getFile1Type()
+    {
+        return 'cungfoo_file';
+    }
+
+    public function getFile1Options()
+    {
+        return array(
+            'required' => false,
+            'label' => 'demande_annulation.file_1',
+        );
+    }
+
+    public function getFile2Type()
+    {
+        return 'cungfoo_file';
+    }
+
+    public function getFile2Options()
+    {
+        return array(
+            'required' => false,
+            'label' => 'demande_annulation.file_2',
+        );
+    }
+
+    public function getFile3Type()
+    {
+        return 'cungfoo_file';
+    }
+
+    public function getFile3Options()
+    {
+        return array(
+            'required' => false,
+            'label' => 'demande_annulation.file_3',
+        );
+    }
+
+    public function getFile4Type()
+    {
+        return 'cungfoo_file';
+    }
+
+    public function getFile4Options()
+    {
+        return array(
+            'required' => false,
+            'label' => 'demande_annulation.file_4',
         );
     }
 
@@ -533,17 +477,13 @@ class BaseDemandeAnnulationType extends AppAwareType
         $builder->add('sinistre_suite', $this->getSinistreSuiteType(), $this->getSinistreSuiteOptions());
         $builder->add('sinistre_date', $this->getSinistreDateType(), $this->getSinistreDateOptions());
         $builder->add('sinistre_resume', $this->getSinistreResumeType(), $this->getSinistreResumeOptions());
-        $builder->add('file_1', $this->getFile1Type(), $this->getFile1Options());
-        $builder->add('file_1_deleted', $this->getFile1DeletedType(), $this->getFile1DeletedOptions());
-        $builder->add('file_2', $this->getFile2Type(), $this->getFile2Options());
-        $builder->add('file_2_deleted', $this->getFile2DeletedType(), $this->getFile2DeletedOptions());
-        $builder->add('file_3', $this->getFile3Type(), $this->getFile3Options());
-        $builder->add('file_3_deleted', $this->getFile3DeletedType(), $this->getFile3DeletedOptions());
-        $builder->add('file_4', $this->getFile4Type(), $this->getFile4Options());
-        $builder->add('file_4_deleted', $this->getFile4DeletedType(), $this->getFile4DeletedOptions());
         $builder->add('created_at', $this->getCreatedAtType(), $this->getCreatedAtOptions());
         $builder->add('updated_at', $this->getUpdatedAtType(), $this->getUpdatedAtOptions());
-        $builder->add('active', $this->getActiveType(), $this->getActiveOptions());$builder->add('demande_annulationI18ns', 'translation_collection', array(
+        $builder->add('active', $this->getActiveType(), $this->getActiveOptions());
+        $builder->add('file_1', $this->getFile1Type(), $this->getFile1Options());
+        $builder->add('file_2', $this->getFile2Type(), $this->getFile2Options());
+        $builder->add('file_3', $this->getFile3Type(), $this->getFile3Options());
+        $builder->add('file_4', $this->getFile4Type(), $this->getFile4Options());$builder->add('demande_annulationI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\DemandeAnnulationI18n',
             'label' => 'demande_annulationI18ns',
             'required' => false,

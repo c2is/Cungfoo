@@ -1,0 +1,21 @@
+\Cungfoo\Model\MiseEnAvant:
+    1:
+        Prix: null
+        DateFinValidite: '2013-11-15 00:00:00'
+        SortableRank: 1
+        Active: true
+    2:
+        Prix: '21'
+        DateFinValidite: '2013-01-08 00:00:00'
+        SortableRank: 2
+        Active: true
+    3:
+        Prix: null
+        DateFinValidite: '2013-11-29 00:00:00'
+        SortableRank: 3
+        Active: true
+    4:
+        Prix: null
+        DateFinValidite: '2013-03-24 00:00:00'
+        SortableRank: 4
+        Active: true

@@ -1,0 +1,13 @@
+\Cungfoo\Model\PortfolioTag:
+    1:
+        Name: regions
+        Description: null
+        Active: true
+    2:
+        Name: camping
+        Description: null
+        Active: true
+    3:
+        Name: activites
+        Description: null
+        Active: true

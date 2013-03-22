@@ -31,11 +31,9 @@ use Cungfoo\Model\ThemeServiceComplementaire;
  *
  *
  * @method ThemeQuery orderById($order = Criteria::ASC) Order by the id column
- * @method ThemeQuery orderByImagePath($order = Criteria::ASC) Order by the image_path column
  * @method ThemeQuery orderByActive($order = Criteria::ASC) Order by the active column
  *
  * @method ThemeQuery groupById() Group by the id column
- * @method ThemeQuery groupByImagePath() Group by the image_path column
  * @method ThemeQuery groupByActive() Group by the active column
  *
  * @method ThemeQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
@@ -65,11 +63,9 @@ use Cungfoo\Model\ThemeServiceComplementaire;
  * @method Theme findOne(PropelPDO $con = null) Return the first Theme matching the query
  * @method Theme findOneOrCreate(PropelPDO $con = null) Return the first Theme matching the query, or a new Theme object populated from the query conditions when no match is found
  *
- * @method Theme findOneByImagePath(string $image_path) Return the first Theme filtered by the image_path column
  * @method Theme findOneByActive(boolean $active) Return the first Theme filtered by the active column
  *
  * @method array findById(int $id) Return Theme objects filtered by the id column
- * @method array findByImagePath(string $image_path) Return Theme objects filtered by the image_path column
  * @method array findByActive(boolean $active) Return Theme objects filtered by the active column
  *
  * @package    propel.generator.Cungfoo.Model.om
@@ -174,7 +170,7 @@ abstract class BaseThemeQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `image_path`, `active` FROM `theme` WHERE `id` = :p0';
+        $sql = 'SELECT `id`, `active` FROM `theme` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -288,35 +284,6 @@ abstract class BaseThemeQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(ThemePeer::ID, $id, $comparison);
-    }
-
-    /**
-     * Filter the query on the image_path column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByImagePath('fooValue');   // WHERE image_path = 'fooValue'
-     * $query->filterByImagePath('%fooValue%'); // WHERE image_path LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $imagePath The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return ThemeQuery The current query, for fluid interface
-     */
-    public function filterByImagePath($imagePath = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($imagePath)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $imagePath)) {
-                $imagePath = str_replace('*', '%', $imagePath);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(ThemePeer::IMAGE_PATH, $imagePath, $comparison);
     }
 
     /**

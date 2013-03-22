@@ -66,8 +66,6 @@ class EtablissementTableMap extends TableMap
         $this->addColumn('video_path', 'VideoPath', 'VARCHAR', false, 255, null);
         $this->addColumn('image_360_path', 'Image360Path', 'VARCHAR', false, 255, null);
         $this->addColumn('capacite', 'Capacite', 'VARCHAR', false, 255, null);
-        $this->addColumn('plan_path', 'PlanPath', 'VARCHAR', false, 255, null);
-        $this->addColumn('vignette', 'Vignette', 'VARCHAR', false, 255, null);
         $this->addForeignKey('related_1', 'Related1', 'INTEGER', 'etablissement', 'id', false, null, null);
         $this->addForeignKey('related_2', 'Related2', 'INTEGER', 'etablissement', 'id', false, null, null);
         $this->addColumn('created_at', 'CreatedAt', 'TIMESTAMP', false, null, null);
@@ -98,7 +96,6 @@ class EtablissementTableMap extends TableMap
         $this->addRelation('EtablissementPointInteret', 'Cungfoo\\Model\\EtablissementPointInteret', RelationMap::ONE_TO_MANY, array('id' => 'etablissement_id', ), 'CASCADE', null, 'EtablissementPointInterets');
         $this->addRelation('EtablissementEvent', 'Cungfoo\\Model\\EtablissementEvent', RelationMap::ONE_TO_MANY, array('id' => 'etablissement_id', ), 'CASCADE', null, 'EtablissementEvents');
         $this->addRelation('Personnage', 'Cungfoo\\Model\\Personnage', RelationMap::ONE_TO_MANY, array('id' => 'etablissement_id', ), 'CASCADE', null, 'Personnages');
-        $this->addRelation('MultimediaEtablissement', 'Cungfoo\\Model\\MultimediaEtablissement', RelationMap::ONE_TO_MANY, array('id' => 'etablissement_id', ), 'CASCADE', null, 'MultimediaEtablissements');
         $this->addRelation('TopCamping', 'Cungfoo\\Model\\TopCamping', RelationMap::ONE_TO_MANY, array('id' => 'etablissement_id', ), 'CASCADE', null, 'TopCampings');
         $this->addRelation('BonPlanEtablissement', 'Cungfoo\\Model\\BonPlanEtablissement', RelationMap::ONE_TO_MANY, array('id' => 'etablissement_id', ), 'CASCADE', null, 'BonPlanEtablissements');
         $this->addRelation('DemandeAnnulation', 'Cungfoo\\Model\\DemandeAnnulation', RelationMap::ONE_TO_MANY, array('id' => 'camping_id', ), null, null, 'DemandeAnnulations');
@@ -147,7 +144,7 @@ class EtablissementTableMap extends TableMap
   'crud_prefix' => '/etablissement',
   'crud_model' => NULL,
   'crud_form' => NULL,
-  'crud_type_file' => 'plan_path, vignette',
+  'crud_type_file' => 'plan, vignette, slider',
   'crud_search' => 'name, title',
   'crud_type_richtext' => 'description',
 ),

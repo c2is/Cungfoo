@@ -38,22 +38,19 @@ abstract class BaseAvantagePeer
     const TM_CLASS = 'AvantageTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 6;
+    const NUM_COLUMNS = 5;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 6;
+    const NUM_HYDRATE_COLUMNS = 5;
 
     /** the column name for the id field */
     const ID = 'avantage.id';
 
     /** the column name for the personnage_id field */
     const PERSONNAGE_ID = 'avantage.personnage_id';
-
-    /** the column name for the image_path field */
-    const IMAGE_PATH = 'avantage.image_path';
 
     /** the column name for the created_at field */
     const CREATED_AT = 'avantage.created_at';
@@ -90,12 +87,12 @@ abstract class BaseAvantagePeer
      * e.g. AvantagePeer::$fieldNames[AvantagePeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'PersonnageId', 'ImagePath', 'CreatedAt', 'UpdatedAt', 'Active', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'personnageId', 'imagePath', 'createdAt', 'updatedAt', 'active', ),
-        BasePeer::TYPE_COLNAME => array (AvantagePeer::ID, AvantagePeer::PERSONNAGE_ID, AvantagePeer::IMAGE_PATH, AvantagePeer::CREATED_AT, AvantagePeer::UPDATED_AT, AvantagePeer::ACTIVE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'PERSONNAGE_ID', 'IMAGE_PATH', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'personnage_id', 'image_path', 'created_at', 'updated_at', 'active', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'PersonnageId', 'CreatedAt', 'UpdatedAt', 'Active', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'personnageId', 'createdAt', 'updatedAt', 'active', ),
+        BasePeer::TYPE_COLNAME => array (AvantagePeer::ID, AvantagePeer::PERSONNAGE_ID, AvantagePeer::CREATED_AT, AvantagePeer::UPDATED_AT, AvantagePeer::ACTIVE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'PERSONNAGE_ID', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'personnage_id', 'created_at', 'updated_at', 'active', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
     );
 
     /**
@@ -105,12 +102,12 @@ abstract class BaseAvantagePeer
      * e.g. AvantagePeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'PersonnageId' => 1, 'ImagePath' => 2, 'CreatedAt' => 3, 'UpdatedAt' => 4, 'Active' => 5, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'personnageId' => 1, 'imagePath' => 2, 'createdAt' => 3, 'updatedAt' => 4, 'active' => 5, ),
-        BasePeer::TYPE_COLNAME => array (AvantagePeer::ID => 0, AvantagePeer::PERSONNAGE_ID => 1, AvantagePeer::IMAGE_PATH => 2, AvantagePeer::CREATED_AT => 3, AvantagePeer::UPDATED_AT => 4, AvantagePeer::ACTIVE => 5, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'PERSONNAGE_ID' => 1, 'IMAGE_PATH' => 2, 'CREATED_AT' => 3, 'UPDATED_AT' => 4, 'ACTIVE' => 5, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'personnage_id' => 1, 'image_path' => 2, 'created_at' => 3, 'updated_at' => 4, 'active' => 5, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'PersonnageId' => 1, 'CreatedAt' => 2, 'UpdatedAt' => 3, 'Active' => 4, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'personnageId' => 1, 'createdAt' => 2, 'updatedAt' => 3, 'active' => 4, ),
+        BasePeer::TYPE_COLNAME => array (AvantagePeer::ID => 0, AvantagePeer::PERSONNAGE_ID => 1, AvantagePeer::CREATED_AT => 2, AvantagePeer::UPDATED_AT => 3, AvantagePeer::ACTIVE => 4, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'PERSONNAGE_ID' => 1, 'CREATED_AT' => 2, 'UPDATED_AT' => 3, 'ACTIVE' => 4, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'personnage_id' => 1, 'created_at' => 2, 'updated_at' => 3, 'active' => 4, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
     );
 
     /**
@@ -186,14 +183,12 @@ abstract class BaseAvantagePeer
         if (null === $alias) {
             $criteria->addSelectColumn(AvantagePeer::ID);
             $criteria->addSelectColumn(AvantagePeer::PERSONNAGE_ID);
-            $criteria->addSelectColumn(AvantagePeer::IMAGE_PATH);
             $criteria->addSelectColumn(AvantagePeer::CREATED_AT);
             $criteria->addSelectColumn(AvantagePeer::UPDATED_AT);
             $criteria->addSelectColumn(AvantagePeer::ACTIVE);
         } else {
             $criteria->addSelectColumn($alias . '.id');
             $criteria->addSelectColumn($alias . '.personnage_id');
-            $criteria->addSelectColumn($alias . '.image_path');
             $criteria->addSelectColumn($alias . '.created_at');
             $criteria->addSelectColumn($alias . '.updated_at');
             $criteria->addSelectColumn($alias . '.active');

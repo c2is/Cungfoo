@@ -33,9 +33,6 @@ use Cungfoo\Model\Region;
  * @method BonPlanQuery orderByDateFin($order = Criteria::ASC) Order by the date_fin column
  * @method BonPlanQuery orderByPrix($order = Criteria::ASC) Order by the prix column
  * @method BonPlanQuery orderByPrixBarre($order = Criteria::ASC) Order by the prix_barre column
- * @method BonPlanQuery orderByImageMenu($order = Criteria::ASC) Order by the image_menu column
- * @method BonPlanQuery orderByImagePage($order = Criteria::ASC) Order by the image_page column
- * @method BonPlanQuery orderByImageListe($order = Criteria::ASC) Order by the image_liste column
  * @method BonPlanQuery orderByActiveCompteur($order = Criteria::ASC) Order by the active_compteur column
  * @method BonPlanQuery orderByMiseEnAvant($order = Criteria::ASC) Order by the mise_en_avant column
  * @method BonPlanQuery orderByPushHome($order = Criteria::ASC) Order by the push_home column
@@ -52,9 +49,6 @@ use Cungfoo\Model\Region;
  * @method BonPlanQuery groupByDateFin() Group by the date_fin column
  * @method BonPlanQuery groupByPrix() Group by the prix column
  * @method BonPlanQuery groupByPrixBarre() Group by the prix_barre column
- * @method BonPlanQuery groupByImageMenu() Group by the image_menu column
- * @method BonPlanQuery groupByImagePage() Group by the image_page column
- * @method BonPlanQuery groupByImageListe() Group by the image_liste column
  * @method BonPlanQuery groupByActiveCompteur() Group by the active_compteur column
  * @method BonPlanQuery groupByMiseEnAvant() Group by the mise_en_avant column
  * @method BonPlanQuery groupByPushHome() Group by the push_home column
@@ -93,9 +87,6 @@ use Cungfoo\Model\Region;
  * @method BonPlan findOneByDateFin(string $date_fin) Return the first BonPlan filtered by the date_fin column
  * @method BonPlan findOneByPrix(int $prix) Return the first BonPlan filtered by the prix column
  * @method BonPlan findOneByPrixBarre(int $prix_barre) Return the first BonPlan filtered by the prix_barre column
- * @method BonPlan findOneByImageMenu(string $image_menu) Return the first BonPlan filtered by the image_menu column
- * @method BonPlan findOneByImagePage(string $image_page) Return the first BonPlan filtered by the image_page column
- * @method BonPlan findOneByImageListe(string $image_liste) Return the first BonPlan filtered by the image_liste column
  * @method BonPlan findOneByActiveCompteur(boolean $active_compteur) Return the first BonPlan filtered by the active_compteur column
  * @method BonPlan findOneByMiseEnAvant(boolean $mise_en_avant) Return the first BonPlan filtered by the mise_en_avant column
  * @method BonPlan findOneByPushHome(boolean $push_home) Return the first BonPlan filtered by the push_home column
@@ -112,9 +103,6 @@ use Cungfoo\Model\Region;
  * @method array findByDateFin(string $date_fin) Return BonPlan objects filtered by the date_fin column
  * @method array findByPrix(int $prix) Return BonPlan objects filtered by the prix column
  * @method array findByPrixBarre(int $prix_barre) Return BonPlan objects filtered by the prix_barre column
- * @method array findByImageMenu(string $image_menu) Return BonPlan objects filtered by the image_menu column
- * @method array findByImagePage(string $image_page) Return BonPlan objects filtered by the image_page column
- * @method array findByImageListe(string $image_liste) Return BonPlan objects filtered by the image_liste column
  * @method array findByActiveCompteur(boolean $active_compteur) Return BonPlan objects filtered by the active_compteur column
  * @method array findByMiseEnAvant(boolean $mise_en_avant) Return BonPlan objects filtered by the mise_en_avant column
  * @method array findByPushHome(boolean $push_home) Return BonPlan objects filtered by the push_home column
@@ -228,7 +216,7 @@ abstract class BaseBonPlanQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `date_debut`, `date_fin`, `prix`, `prix_barre`, `image_menu`, `image_page`, `image_liste`, `active_compteur`, `mise_en_avant`, `push_home`, `date_start`, `day_start`, `day_range`, `nb_adultes`, `nb_enfants`, `period_categories`, `active` FROM `bon_plan` WHERE `id` = :p0';
+        $sql = 'SELECT `id`, `date_debut`, `date_fin`, `prix`, `prix_barre`, `active_compteur`, `mise_en_avant`, `push_home`, `date_start`, `day_start`, `day_range`, `nb_adultes`, `nb_enfants`, `period_categories`, `active` FROM `bon_plan` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -510,93 +498,6 @@ abstract class BaseBonPlanQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(BonPlanPeer::PRIX_BARRE, $prixBarre, $comparison);
-    }
-
-    /**
-     * Filter the query on the image_menu column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByImageMenu('fooValue');   // WHERE image_menu = 'fooValue'
-     * $query->filterByImageMenu('%fooValue%'); // WHERE image_menu LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $imageMenu The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return BonPlanQuery The current query, for fluid interface
-     */
-    public function filterByImageMenu($imageMenu = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($imageMenu)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $imageMenu)) {
-                $imageMenu = str_replace('*', '%', $imageMenu);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(BonPlanPeer::IMAGE_MENU, $imageMenu, $comparison);
-    }
-
-    /**
-     * Filter the query on the image_page column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByImagePage('fooValue');   // WHERE image_page = 'fooValue'
-     * $query->filterByImagePage('%fooValue%'); // WHERE image_page LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $imagePage The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return BonPlanQuery The current query, for fluid interface
-     */
-    public function filterByImagePage($imagePage = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($imagePage)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $imagePage)) {
-                $imagePage = str_replace('*', '%', $imagePage);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(BonPlanPeer::IMAGE_PAGE, $imagePage, $comparison);
-    }
-
-    /**
-     * Filter the query on the image_liste column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByImageListe('fooValue');   // WHERE image_liste = 'fooValue'
-     * $query->filterByImageListe('%fooValue%'); // WHERE image_liste LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $imageListe The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return BonPlanQuery The current query, for fluid interface
-     */
-    public function filterByImageListe($imageListe = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($imageListe)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $imageListe)) {
-                $imageListe = str_replace('*', '%', $imageListe);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(BonPlanPeer::IMAGE_LISTE, $imageListe, $comparison);
     }
 
     /**

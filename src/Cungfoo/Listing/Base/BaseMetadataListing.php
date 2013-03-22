@@ -21,7 +21,6 @@ class BaseMetadataListing extends Listing
     {
         $this->addColumn(new Column\TextColumn('id'));
         $this->addColumn(new Column\TextColumn('table_ref'));
-        $this->addColumn(new Column\TextColumn('visuel'));
     }
 
     /**

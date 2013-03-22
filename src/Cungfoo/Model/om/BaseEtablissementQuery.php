@@ -34,7 +34,6 @@ use Cungfoo\Model\EtablissementSituationGeographique;
 use Cungfoo\Model\EtablissementThematique;
 use Cungfoo\Model\EtablissementTypeHebergement;
 use Cungfoo\Model\Event;
-use Cungfoo\Model\MultimediaEtablissement;
 use Cungfoo\Model\Personnage;
 use Cungfoo\Model\PointInteret;
 use Cungfoo\Model\ServiceComplementaire;
@@ -73,8 +72,6 @@ use Cungfoo\Model\Ville;
  * @method EtablissementQuery orderByVideoPath($order = Criteria::ASC) Order by the video_path column
  * @method EtablissementQuery orderByImage360Path($order = Criteria::ASC) Order by the image_360_path column
  * @method EtablissementQuery orderByCapacite($order = Criteria::ASC) Order by the capacite column
- * @method EtablissementQuery orderByPlanPath($order = Criteria::ASC) Order by the plan_path column
- * @method EtablissementQuery orderByVignette($order = Criteria::ASC) Order by the vignette column
  * @method EtablissementQuery orderByRelated1($order = Criteria::ASC) Order by the related_1 column
  * @method EtablissementQuery orderByRelated2($order = Criteria::ASC) Order by the related_2 column
  * @method EtablissementQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
@@ -105,8 +102,6 @@ use Cungfoo\Model\Ville;
  * @method EtablissementQuery groupByVideoPath() Group by the video_path column
  * @method EtablissementQuery groupByImage360Path() Group by the image_360_path column
  * @method EtablissementQuery groupByCapacite() Group by the capacite column
- * @method EtablissementQuery groupByPlanPath() Group by the plan_path column
- * @method EtablissementQuery groupByVignette() Group by the vignette column
  * @method EtablissementQuery groupByRelated1() Group by the related_1 column
  * @method EtablissementQuery groupByRelated2() Group by the related_2 column
  * @method EtablissementQuery groupByCreatedAt() Group by the created_at column
@@ -185,10 +180,6 @@ use Cungfoo\Model\Ville;
  * @method EtablissementQuery rightJoinPersonnage($relationAlias = null) Adds a RIGHT JOIN clause to the query using the Personnage relation
  * @method EtablissementQuery innerJoinPersonnage($relationAlias = null) Adds a INNER JOIN clause to the query using the Personnage relation
  *
- * @method EtablissementQuery leftJoinMultimediaEtablissement($relationAlias = null) Adds a LEFT JOIN clause to the query using the MultimediaEtablissement relation
- * @method EtablissementQuery rightJoinMultimediaEtablissement($relationAlias = null) Adds a RIGHT JOIN clause to the query using the MultimediaEtablissement relation
- * @method EtablissementQuery innerJoinMultimediaEtablissement($relationAlias = null) Adds a INNER JOIN clause to the query using the MultimediaEtablissement relation
- *
  * @method EtablissementQuery leftJoinTopCamping($relationAlias = null) Adds a LEFT JOIN clause to the query using the TopCamping relation
  * @method EtablissementQuery rightJoinTopCamping($relationAlias = null) Adds a RIGHT JOIN clause to the query using the TopCamping relation
  * @method EtablissementQuery innerJoinTopCamping($relationAlias = null) Adds a INNER JOIN clause to the query using the TopCamping relation
@@ -231,8 +222,6 @@ use Cungfoo\Model\Ville;
  * @method Etablissement findOneByVideoPath(string $video_path) Return the first Etablissement filtered by the video_path column
  * @method Etablissement findOneByImage360Path(string $image_360_path) Return the first Etablissement filtered by the image_360_path column
  * @method Etablissement findOneByCapacite(string $capacite) Return the first Etablissement filtered by the capacite column
- * @method Etablissement findOneByPlanPath(string $plan_path) Return the first Etablissement filtered by the plan_path column
- * @method Etablissement findOneByVignette(string $vignette) Return the first Etablissement filtered by the vignette column
  * @method Etablissement findOneByRelated1(int $related_1) Return the first Etablissement filtered by the related_1 column
  * @method Etablissement findOneByRelated2(int $related_2) Return the first Etablissement filtered by the related_2 column
  * @method Etablissement findOneByCreatedAt(string $created_at) Return the first Etablissement filtered by the created_at column
@@ -263,8 +252,6 @@ use Cungfoo\Model\Ville;
  * @method array findByVideoPath(string $video_path) Return Etablissement objects filtered by the video_path column
  * @method array findByImage360Path(string $image_360_path) Return Etablissement objects filtered by the image_360_path column
  * @method array findByCapacite(string $capacite) Return Etablissement objects filtered by the capacite column
- * @method array findByPlanPath(string $plan_path) Return Etablissement objects filtered by the plan_path column
- * @method array findByVignette(string $vignette) Return Etablissement objects filtered by the vignette column
  * @method array findByRelated1(int $related_1) Return Etablissement objects filtered by the related_1 column
  * @method array findByRelated2(int $related_2) Return Etablissement objects filtered by the related_2 column
  * @method array findByCreatedAt(string $created_at) Return Etablissement objects filtered by the created_at column
@@ -373,7 +360,7 @@ abstract class BaseEtablissementQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `code`, `slug`, `name`, `title`, `address1`, `address2`, `zip`, `city`, `mail`, `country_code`, `phone1`, `phone2`, `fax`, `opening_date`, `closing_date`, `ville_id`, `departement_id`, `categorie_id`, `geo_coordinate_x`, `geo_coordinate_y`, `video_path`, `image_360_path`, `capacite`, `plan_path`, `vignette`, `related_1`, `related_2`, `created_at`, `updated_at`, `active` FROM `etablissement` WHERE `id` = :p0';
+        $sql = 'SELECT `id`, `code`, `slug`, `name`, `title`, `address1`, `address2`, `zip`, `city`, `mail`, `country_code`, `phone1`, `phone2`, `fax`, `opening_date`, `closing_date`, `ville_id`, `departement_id`, `categorie_id`, `geo_coordinate_x`, `geo_coordinate_y`, `video_path`, `image_360_path`, `capacite`, `related_1`, `related_2`, `created_at`, `updated_at`, `active` FROM `etablissement` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -1236,64 +1223,6 @@ abstract class BaseEtablissementQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(EtablissementPeer::CAPACITE, $capacite, $comparison);
-    }
-
-    /**
-     * Filter the query on the plan_path column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByPlanPath('fooValue');   // WHERE plan_path = 'fooValue'
-     * $query->filterByPlanPath('%fooValue%'); // WHERE plan_path LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $planPath The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return EtablissementQuery The current query, for fluid interface
-     */
-    public function filterByPlanPath($planPath = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($planPath)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $planPath)) {
-                $planPath = str_replace('*', '%', $planPath);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(EtablissementPeer::PLAN_PATH, $planPath, $comparison);
-    }
-
-    /**
-     * Filter the query on the vignette column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByVignette('fooValue');   // WHERE vignette = 'fooValue'
-     * $query->filterByVignette('%fooValue%'); // WHERE vignette LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $vignette The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return EtablissementQuery The current query, for fluid interface
-     */
-    public function filterByVignette($vignette = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($vignette)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $vignette)) {
-                $vignette = str_replace('*', '%', $vignette);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(EtablissementPeer::VIGNETTE, $vignette, $comparison);
     }
 
     /**
@@ -2761,80 +2690,6 @@ abstract class BaseEtablissementQuery extends ModelCriteria
         return $this
             ->joinPersonnage($relationAlias, $joinType)
             ->useQuery($relationAlias ? $relationAlias : 'Personnage', '\Cungfoo\Model\PersonnageQuery');
-    }
-
-    /**
-     * Filter the query by a related MultimediaEtablissement object
-     *
-     * @param   MultimediaEtablissement|PropelObjectCollection $multimediaEtablissement  the related object to use as filter
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return   EtablissementQuery The current query, for fluid interface
-     * @throws   PropelException - if the provided filter is invalid.
-     */
-    public function filterByMultimediaEtablissement($multimediaEtablissement, $comparison = null)
-    {
-        if ($multimediaEtablissement instanceof MultimediaEtablissement) {
-            return $this
-                ->addUsingAlias(EtablissementPeer::ID, $multimediaEtablissement->getEtablissementId(), $comparison);
-        } elseif ($multimediaEtablissement instanceof PropelObjectCollection) {
-            return $this
-                ->useMultimediaEtablissementQuery()
-                ->filterByPrimaryKeys($multimediaEtablissement->getPrimaryKeys())
-                ->endUse();
-        } else {
-            throw new PropelException('filterByMultimediaEtablissement() only accepts arguments of type MultimediaEtablissement or PropelCollection');
-        }
-    }
-
-    /**
-     * Adds a JOIN clause to the query using the MultimediaEtablissement relation
-     *
-     * @param     string $relationAlias optional alias for the relation
-     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
-     *
-     * @return EtablissementQuery The current query, for fluid interface
-     */
-    public function joinMultimediaEtablissement($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
-    {
-        $tableMap = $this->getTableMap();
-        $relationMap = $tableMap->getRelation('MultimediaEtablissement');
-
-        // create a ModelJoin object for this join
-        $join = new ModelJoin();
-        $join->setJoinType($joinType);
-        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
-        if ($previousJoin = $this->getPreviousJoin()) {
-            $join->setPreviousJoin($previousJoin);
-        }
-
-        // add the ModelJoin to the current object
-        if ($relationAlias) {
-            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
-            $this->addJoinObject($join, $relationAlias);
-        } else {
-            $this->addJoinObject($join, 'MultimediaEtablissement');
-        }
-
-        return $this;
-    }
-
-    /**
-     * Use the MultimediaEtablissement relation MultimediaEtablissement object
-     *
-     * @see       useQuery()
-     *
-     * @param     string $relationAlias optional alias for the relation,
-     *                                   to be used as main alias in the secondary query
-     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
-     *
-     * @return   \Cungfoo\Model\MultimediaEtablissementQuery A secondary query class using the current class as primary query
-     */
-    public function useMultimediaEtablissementQuery($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
-    {
-        return $this
-            ->joinMultimediaEtablissement($relationAlias, $joinType)
-            ->useQuery($relationAlias ? $relationAlias : 'MultimediaEtablissement', '\Cungfoo\Model\MultimediaEtablissementQuery');
     }
 
     /**

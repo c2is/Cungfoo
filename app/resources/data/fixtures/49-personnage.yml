@@ -1,0 +1,9 @@
+\Cungfoo\Model\Personnage:
+    1:
+        EtablissementId: null
+        Age: '45'
+        Active: true
+    2:
+        EtablissementId: null
+        Age: '10'
+        Active: true

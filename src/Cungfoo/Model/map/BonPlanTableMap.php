@@ -47,9 +47,6 @@ class BonPlanTableMap extends TableMap
         $this->addColumn('date_fin', 'DateFin', 'DATE', false, null, null);
         $this->addColumn('prix', 'Prix', 'INTEGER', false, null, null);
         $this->addColumn('prix_barre', 'PrixBarre', 'INTEGER', false, null, null);
-        $this->addColumn('image_menu', 'ImageMenu', 'VARCHAR', false, 255, null);
-        $this->addColumn('image_page', 'ImagePage', 'VARCHAR', false, 255, null);
-        $this->addColumn('image_liste', 'ImageListe', 'VARCHAR', false, 255, null);
         $this->addColumn('active_compteur', 'ActiveCompteur', 'BOOLEAN', false, 1, null);
         $this->addColumn('mise_en_avant', 'MiseEnAvant', 'BOOLEAN', false, 1, null);
         $this->addColumn('push_home', 'PushHome', 'BOOLEAN', false, 1, null);

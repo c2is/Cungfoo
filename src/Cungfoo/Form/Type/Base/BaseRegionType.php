@@ -47,87 +47,6 @@ class BaseRegionType extends AppAwareType
         );
     }
 
-    public function getImagePathType()
-    {
-        return 'cungfoo_file';
-    }
-
-    public function getImagePathOptions()
-    {
-        return array(
-            'required' => false,
-            'label' => 'region.image_path',
-        );
-    }
-
-    public function getImagePathDeletedType()
-    {
-        return 'checkbox';
-    }
-
-    public function getImagePathDeletedOptions()
-    {
-        return array(
-            'property_path' => false,
-            'required' => false,
-            'label' => 'region.image_path_deleted',
-        );
-    }
-
-    public function getImageEncartPathType()
-    {
-        return 'cungfoo_file';
-    }
-
-    public function getImageEncartPathOptions()
-    {
-        return array(
-            'required' => false,
-            'label' => 'region.image_encart_path',
-        );
-    }
-
-    public function getImageEncartPathDeletedType()
-    {
-        return 'checkbox';
-    }
-
-    public function getImageEncartPathDeletedOptions()
-    {
-        return array(
-            'property_path' => false,
-            'required' => false,
-            'label' => 'region.image_encart_path_deleted',
-        );
-    }
-
-    public function getImageEncartPetitePathType()
-    {
-        return 'cungfoo_file';
-    }
-
-    public function getImageEncartPetitePathOptions()
-    {
-        return array(
-            'required' => false,
-            'label' => 'region.image_encart_petite_path',
-        );
-    }
-
-    public function getImageEncartPetitePathDeletedType()
-    {
-        return 'checkbox';
-    }
-
-    public function getImageEncartPetitePathDeletedOptions()
-    {
-        return array(
-            'property_path' => false,
-            'required' => false,
-            'label' => 'region.image_encart_petite_path_deleted',
-        );
-    }
-
     public function getPaysType()
     {
         return 'model';
@@ -169,60 +88,6 @@ class BaseRegionType extends AppAwareType
         );
     }
 
-    public function getImageDetail1Type()
-    {
-        return 'cungfoo_file';
-    }
-
-    public function getImageDetail1Options()
-    {
-        return array(
-            'required' => false,
-            'label' => 'region.image_detail_1',
-        );
-    }
-
-    public function getImageDetail1DeletedType()
-    {
-        return 'checkbox';
-    }
-
-    public function getImageDetail1DeletedOptions()
-    {
-        return array(
-            'property_path' => false,
-            'required' => false,
-            'label' => 'region.image_detail_1_deleted',
-        );
-    }
-
-    public function getImageDetail2Type()
-    {
-        return 'cungfoo_file';
-    }
-
-    public function getImageDetail2Options()
-    {
-        return array(
-            'required' => false,
-            'label' => 'region.image_detail_2',
-        );
-    }
-
-    public function getImageDetail2DeletedType()
-    {
-        return 'checkbox';
-    }
-
-    public function getImageDetail2DeletedOptions()
-    {
-        return array(
-            'property_path' => false,
-            'required' => false,
-            'label' => 'region.image_detail_2_deleted',
-        );
-    }
-
     public function getCreatedAtType()
     {
         return 'datetime';
@@ -261,6 +126,71 @@ class BaseRegionType extends AppAwareType
         return array(
             'required' => false,
             'label' => 'region.active',
+        );
+    }
+
+    public function getImagePathType()
+    {
+        return 'cungfoo_file';
+    }
+
+    public function getImagePathOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'region.image_path',
+        );
+    }
+
+    public function getImageEncartPathType()
+    {
+        return 'cungfoo_file';
+    }
+
+    public function getImageEncartPathOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'region.image_encart_path',
+        );
+    }
+
+    public function getImageEncartPetitePathType()
+    {
+        return 'cungfoo_file';
+    }
+
+    public function getImageEncartPetitePathOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'region.image_encart_petite_path',
+        );
+    }
+
+    public function getImageDetail1Type()
+    {
+        return 'cungfoo_file';
+    }
+
+    public function getImageDetail1Options()
+    {
+        return array(
+            'required' => false,
+            'label' => 'region.image_detail_1',
+        );
+    }
+
+    public function getImageDetail2Type()
+    {
+        return 'cungfoo_file';
+    }
+
+    public function getImageDetail2Options()
+    {
+        return array(
+            'required' => false,
+            'label' => 'region.image_detail_2',
         );
     }
 
@@ -439,22 +369,17 @@ class BaseRegionType extends AppAwareType
     {
         $builder->add('id', $this->getIdType(), $this->getIdOptions());
         $builder->add('code', $this->getCodeType(), $this->getCodeOptions());
-        $builder->add('image_path', $this->getImagePathType(), $this->getImagePathOptions());
-        $builder->add('image_path_deleted', $this->getImagePathDeletedType(), $this->getImagePathDeletedOptions());
-        $builder->add('image_encart_path', $this->getImageEncartPathType(), $this->getImageEncartPathOptions());
-        $builder->add('image_encart_path_deleted', $this->getImageEncartPathDeletedType(), $this->getImageEncartPathDeletedOptions());
-        $builder->add('image_encart_petite_path', $this->getImageEncartPetitePathType(), $this->getImageEncartPetitePathOptions());
-        $builder->add('image_encart_petite_path_deleted', $this->getImageEncartPetitePathDeletedType(), $this->getImageEncartPetitePathDeletedOptions());
         $builder->add('pays', $this->getPaysType(), $this->getPaysOptions());
         $builder->add('destination', $this->getDestinationType(), $this->getDestinationOptions());
         $builder->add('mea_home', $this->getMeaHomeType(), $this->getMeaHomeOptions());
-        $builder->add('image_detail_1', $this->getImageDetail1Type(), $this->getImageDetail1Options());
-        $builder->add('image_detail_1_deleted', $this->getImageDetail1DeletedType(), $this->getImageDetail1DeletedOptions());
-        $builder->add('image_detail_2', $this->getImageDetail2Type(), $this->getImageDetail2Options());
-        $builder->add('image_detail_2_deleted', $this->getImageDetail2DeletedType(), $this->getImageDetail2DeletedOptions());
         $builder->add('created_at', $this->getCreatedAtType(), $this->getCreatedAtOptions());
         $builder->add('updated_at', $this->getUpdatedAtType(), $this->getUpdatedAtOptions());
         $builder->add('active', $this->getActiveType(), $this->getActiveOptions());
+        $builder->add('image_path', $this->getImagePathType(), $this->getImagePathOptions());
+        $builder->add('image_encart_path', $this->getImageEncartPathType(), $this->getImageEncartPathOptions());
+        $builder->add('image_encart_petite_path', $this->getImageEncartPetitePathType(), $this->getImageEncartPetitePathOptions());
+        $builder->add('image_detail_1', $this->getImageDetail1Type(), $this->getImageDetail1Options());
+        $builder->add('image_detail_2', $this->getImageDetail2Type(), $this->getImageDetail2Options());
         $builder->add('point_interets', $this->getPointInteretsType(), $this->getPointInteretsOptions());
         $builder->add('events', $this->getEventsType(), $this->getEventsOptions());
         $builder->add('bon_plans', $this->getBonPlansType(), $this->getBonPlansOptions());$builder->add('regionI18ns', 'translation_collection', array(

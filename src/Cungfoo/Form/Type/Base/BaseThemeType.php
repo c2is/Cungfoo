@@ -31,33 +31,6 @@ class BaseThemeType extends AppAwareType
         );
     }
 
-    public function getImagePathType()
-    {
-        return 'cungfoo_file';
-    }
-
-    public function getImagePathOptions()
-    {
-        return array(
-            'required' => false,
-            'label' => 'theme.image_path',
-        );
-    }
-
-    public function getImagePathDeletedType()
-    {
-        return 'checkbox';
-    }
-
-    public function getImagePathDeletedOptions()
-    {
-        return array(
-            'property_path' => false,
-            'required' => false,
-            'label' => 'theme.image_path_deleted',
-        );
-    }
-
     public function getActiveType()
     {
         return 'checkbox';
@@ -68,6 +41,19 @@ class BaseThemeType extends AppAwareType
         return array(
             'required' => false,
             'label' => 'theme.active',
+        );
+    }
+
+    public function getImagePathType()
+    {
+        return 'cungfoo_file';
+    }
+
+    public function getImagePathOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'theme.image_path',
         );
     }
 
@@ -254,9 +240,8 @@ class BaseThemeType extends AppAwareType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('id', $this->getIdType(), $this->getIdOptions());
-        $builder->add('image_path', $this->getImagePathType(), $this->getImagePathOptions());
-        $builder->add('image_path_deleted', $this->getImagePathDeletedType(), $this->getImagePathDeletedOptions());
         $builder->add('active', $this->getActiveType(), $this->getActiveOptions());
+        $builder->add('image_path', $this->getImagePathType(), $this->getImagePathOptions());
         $builder->add('activites', $this->getActivitesType(), $this->getActivitesOptions());
         $builder->add('baignades', $this->getBaignadesType(), $this->getBaignadesOptions());
         $builder->add('service_complementaires', $this->getServiceComplementairesType(), $this->getServiceComplementairesOptions());

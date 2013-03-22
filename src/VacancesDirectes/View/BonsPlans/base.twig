@@ -21,7 +21,7 @@
     <div class="richText">{{ bonPlan.description | raw }}</div>{# Description #}
 
     {% if bonPlan.imagePage %}
-    <img class="bdPict" src="{{ asset(bonPlan.imagePage) }}" alt="">
+    <img class="bdPict" src="{{ asset(bonPlan.imagePage | media('file')) }}" alt="">
     {% endif %}
 
     {% if list.element|length > 0 %}

@@ -24,12 +24,10 @@ use Cungfoo\Model\VosVacancesQuery;
  *
  * @method VosVacancesQuery orderById($order = Criteria::ASC) Order by the id column
  * @method VosVacancesQuery orderByAge($order = Criteria::ASC) Order by the age column
- * @method VosVacancesQuery orderByImagePath($order = Criteria::ASC) Order by the image_path column
  * @method VosVacancesQuery orderByActive($order = Criteria::ASC) Order by the active column
  *
  * @method VosVacancesQuery groupById() Group by the id column
  * @method VosVacancesQuery groupByAge() Group by the age column
- * @method VosVacancesQuery groupByImagePath() Group by the image_path column
  * @method VosVacancesQuery groupByActive() Group by the active column
  *
  * @method VosVacancesQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
@@ -44,12 +42,10 @@ use Cungfoo\Model\VosVacancesQuery;
  * @method VosVacances findOneOrCreate(PropelPDO $con = null) Return the first VosVacances matching the query, or a new VosVacances object populated from the query conditions when no match is found
  *
  * @method VosVacances findOneByAge(string $age) Return the first VosVacances filtered by the age column
- * @method VosVacances findOneByImagePath(string $image_path) Return the first VosVacances filtered by the image_path column
  * @method VosVacances findOneByActive(boolean $active) Return the first VosVacances filtered by the active column
  *
  * @method array findById(int $id) Return VosVacances objects filtered by the id column
  * @method array findByAge(string $age) Return VosVacances objects filtered by the age column
- * @method array findByImagePath(string $image_path) Return VosVacances objects filtered by the image_path column
  * @method array findByActive(boolean $active) Return VosVacances objects filtered by the active column
  *
  * @package    propel.generator.Cungfoo.Model.om
@@ -154,7 +150,7 @@ abstract class BaseVosVacancesQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `age`, `image_path`, `active` FROM `vos_vacances` WHERE `id` = :p0';
+        $sql = 'SELECT `id`, `age`, `active` FROM `vos_vacances` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -297,35 +293,6 @@ abstract class BaseVosVacancesQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(VosVacancesPeer::AGE, $age, $comparison);
-    }
-
-    /**
-     * Filter the query on the image_path column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByImagePath('fooValue');   // WHERE image_path = 'fooValue'
-     * $query->filterByImagePath('%fooValue%'); // WHERE image_path LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $imagePath The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return VosVacancesQuery The current query, for fluid interface
-     */
-    public function filterByImagePath($imagePath = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($imagePath)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $imagePath)) {
-                $imagePath = str_replace('*', '%', $imagePath);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(VosVacancesPeer::IMAGE_PATH, $imagePath, $comparison);
     }
 
     /**

@@ -20,7 +20,6 @@ class BaseAvantageListing extends Listing
     public function configure()
     {
         $this->addColumn(new Column\TextColumn('id'));
-        $this->addColumn(new Column\TextColumn('image_path'));
         $this->addColumn(new Column\TextColumn('active'));
     }
 

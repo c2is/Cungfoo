@@ -13,7 +13,7 @@
             {% for mea in mea %}
                 <li class="slide">
                     <a class="sliderPhoto" href="{{ mea.lien }}" title="{{ mea.titre }}">
-                        <img class="large boxborder" src="{{ asset(mea.illustrationPath) }}" alt="{{ mea.titre }}" />
+                        <img class="large boxborder" src="{{ asset(mea.illustrationPath | media('file')) }}" alt="{{ mea.titre }}" />
                         <img class="sliderPostmark" src="{{ asset('images/vacancesdirectes/common/ui/postmark.png') }}" alt="" />
                     </a>
                     <div class="sliderBackground"></div>
@@ -56,7 +56,7 @@
             {% set campingPath = url('destination_camping', {'pays': camping.etablissement.pays.slug, 'region': camping.etablissement.region.slug, 'ville': camping.etablissement.ville.slug, 'camping': camping.etablissement.slug }) %}
             <div class="element clear linkParent">
                 <div class="left">
-                    <img class="boxborder" src="{{ asset(camping.etablissement.vignette) }}" width="119" height="86" alt="" />
+                    <img class="boxborder" src="{{ asset(camping.etablissement.vignette | media('file')) }}" width="119" height="86" alt="" />
                     {#<iframe src="//www.facebook.com/plugins/like.php?href={{ campingPath }}&amp;send=false&amp;layout=button_count&amp;width=119&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=20&amp;locale={{ app.context.get('language') }}_{{ app.context.get('language') | upper }}" scrolling="no" frameborder="0" style="border:none; width:119px; height:20px;" allowTransparency="true"></iframe>#}
                 </div>
                 <div class="details left">
@@ -125,7 +125,7 @@
         </div>
     </div>
     {% endif %}
-    <div id="forwardBloc" class="radiusBox greyF" style="background: url({{ asset(vosVacances.imagePath) }})">
+    <div id="forwardBloc" class="radiusBox greyF" style="background: url({{ asset(vosVacances.imagePath | media('file')) }})">
         <h4 id="forwardBlocTitle">{{ vosVacances.titre }}</h4>
         <div id="forwardBlocSubtitle">
             {{ vosVacances.prenom }}
@@ -233,7 +233,7 @@
             <ul id="mapFilters">
                 {% for thematique in thematiques %}
 
-                <li><a id="{{ thematique.code }}" href="#" style="background-image: url({{ asset(thematique.imagePath) }})"><span>{{ thematique.name }}</span></a></li>
+                <li><a id="{{ thematique.code }}" href="#" style="background-image: url({{ asset(thematique.imagePath | media('file')) }})"><span>{{ thematique.name }}</span></a></li>
 
                 {% endfor %}
             </ul>

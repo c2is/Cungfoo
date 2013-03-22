@@ -8,6 +8,7 @@
         <h2>{{ (name ~ ".crud.create") | trans}}</h2><hr/>
         <form action="{{ path('%s_crud_create' | format (name)) }}" method="post" {{ form_enctype(form) }}>
     {% endif %}
+        {{ form_errors(form) }}
         {{ form_widget(form) }}
         <div class="form-actions">
             <div class="btn-toolbar">

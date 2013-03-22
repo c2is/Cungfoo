@@ -1,0 +1,16 @@
+\Cungfoo\Model\IdeeWeekend:
+    1:
+        Highlight: false
+        Prix: null
+        Home: true
+        Active: true
+    2:
+        Highlight: false
+        Prix: null
+        Home: true
+        Active: true
+    3:
+        Highlight: false
+        Prix: null
+        Home: true
+        Active: true

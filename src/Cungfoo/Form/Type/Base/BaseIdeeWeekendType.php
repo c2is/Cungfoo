@@ -70,33 +70,6 @@ class BaseIdeeWeekendType extends AppAwareType
         );
     }
 
-    public function getImagePathType()
-    {
-        return 'cungfoo_file';
-    }
-
-    public function getImagePathOptions()
-    {
-        return array(
-            'required' => false,
-            'label' => 'idee_weekend.image_path',
-        );
-    }
-
-    public function getImagePathDeletedType()
-    {
-        return 'checkbox';
-    }
-
-    public function getImagePathDeletedOptions()
-    {
-        return array(
-            'property_path' => false,
-            'required' => false,
-            'label' => 'idee_weekend.image_path_deleted',
-        );
-    }
-
     public function getActiveType()
     {
         return 'checkbox';
@@ -107,6 +80,19 @@ class BaseIdeeWeekendType extends AppAwareType
         return array(
             'required' => false,
             'label' => 'idee_weekend.active',
+        );
+    }
+
+    public function getImagePathType()
+    {
+        return 'cungfoo_file';
+    }
+
+    public function getImagePathOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'idee_weekend.image_path',
         );
     }
 
@@ -210,9 +196,8 @@ class BaseIdeeWeekendType extends AppAwareType
         $builder->add('highlight', $this->getHighlightType(), $this->getHighlightOptions());
         $builder->add('prix', $this->getPrixType(), $this->getPrixOptions());
         $builder->add('home', $this->getHomeType(), $this->getHomeOptions());
-        $builder->add('image_path', $this->getImagePathType(), $this->getImagePathOptions());
-        $builder->add('image_path_deleted', $this->getImagePathDeletedType(), $this->getImagePathDeletedOptions());
-        $builder->add('active', $this->getActiveType(), $this->getActiveOptions());$builder->add('idee_weekendI18ns', 'translation_collection', array(
+        $builder->add('active', $this->getActiveType(), $this->getActiveOptions());
+        $builder->add('image_path', $this->getImagePathType(), $this->getImagePathOptions());$builder->add('idee_weekendI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\IdeeWeekendI18n',
             'label' => 'idee_weekendI18ns',
             'required' => false,

@@ -191,6 +191,13 @@ class EtablissementType extends BaseEtablissementType
         )));
     }
 
+    public function getSliderOptions()
+    {
+        return array_merge(parent::getSliderOptions(), array('attr' => array(
+            'data-limit' => -1,
+        )));
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -230,9 +237,8 @@ class EtablissementType extends BaseEtablissementType
                     'title'         => 'crud.tab.medias',
                     'content'       => array(
                         'vignette',
-                        'vignette_deleted',
-                        'plan_path',
-                        'plan_path_deleted',
+                        'plan',
+                        'slider',
                         'video_path',
                         'image_360_path',
                     )

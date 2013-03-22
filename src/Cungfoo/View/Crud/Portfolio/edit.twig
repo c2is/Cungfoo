@@ -1,0 +1,30 @@
+<tr class="well portfolio-edit-form-{{ form.id.get('value') }}">
+    <td colspan="9">
+        <form action="{{ path('portfolio_edit', {id: form.id.get('value')}) }}" class="portfolio-edit-form" method="post" {{ form_enctype(form) }}>
+            <div class="row-fluid">
+                <div class="span12">
+                    {{ form_widget(form.portfolio_mediaI18ns) }}
+                    <hr/>
+                    <div class="control-group">
+                        <div class="controls form-inline row-fluid">
+                            <div class="span3">{{ form_label(form.portfolio_tags) }}</div>
+                            <div class="span9">
+                                <div class="control-group">
+                                    <div class="controls form-inline">
+                                        <input id="portfolio_tags_add" name="Portfolio[tags_add]" type="text"/>
+                                        <a class="portfolio-add-tag btn" href="{{ path('portfolio_tag_add') }}" data-field-id="portfolio_tags_add">Créer un nouveau tag</a>
+                                    </div>
+                                </div>
+                                {{ form_widget(form.portfolio_tags) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{ form_errors(form) }}
+            <hr/>
+            <button type="submit" class="btn pull-right" style="margin-bottom: -5px">{{ "crud.button.save" | trans }}</button><br/>
+            <div style="display:none">{{ form_rest(form) }}</div>
+        </form>
+    </td>
+</tr>

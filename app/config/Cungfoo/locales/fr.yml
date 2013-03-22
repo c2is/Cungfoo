@@ -87,6 +87,8 @@ crud.button.metadata: Metadata
 crud.button.seo: Seo
 crud.button.read: Détails
 crud.button.save: Enregistrer
+crud.button.use: Utiliser ce media
+crud.button.upload: Télécharger les images
 crud.modal.delete.title: Confirmation de suppression
 crud.modal.delete.message: Ètes vous sur de vouloir supprimer l'item <strong>%code%</strong> ?
 crud.modal.delete.ok: Valider
@@ -514,6 +516,7 @@ type_hebergement.nombre_place: Nombre de place
 type_hebergement.image.hebergement.path: Image
 type_hebergement.image.composition.path: Image composition
 type_hebergement.active: Actif
+type_hebergement.slider: Media du slider
 type_hebergementI18ns: ""
 type_hebergement_i18n.active_locale: "Activer pour cette langue"
 type_hebergement_i18n.slug: "Slug"
@@ -892,5 +895,29 @@ bon_plan_i18n.slug: Slug
 bon_plan_i18n.description: Description
 bon_plan_i18n.indice: Indice
 bon_plan_i18n.indice_prix: Indice prix
+
+portfolio_media.crud.create: "Création d'un media"
+portfolio_media.crud.update: "Mise à jour du media"
+portfolio_media.crud.list: "Liste des medias"
+portfolio_media.id: "Id"
+portfolio_media.file: "Media"
+portfolio_media.title: "Titre"
+portfolio_media.width: "Largeur"
+portfolio_media.height: "Hauteur"
+portfolio_media.size: "Taille"
+portfolio_media.type: "Type"
+portfolio_media.description: "Description"
+portfolio_media.active: "Active"
+portfolio_media.created_at: "Date de création"
+portfolio_media.updated_at: "Dernière mise à jour"
+portfolio_media_tag.tag_id: "Tags associés à ce media"
+portfolio_mediaI18ns: ""
+portfolio_media_i18n.title: "Titre"
+portfolio_media_i18n.description: "Description"
+portfolio_media_i18n.seo_title: "Seo title"
+portfolio_media_i18n.seo_description: "Seo description"
+portfolio_media_i18n.seo_h1: "Seo balise H1"
+portfolio_media_i18n.seo_keywords: "Seo mots clés"
+portfolio_media_i18n.active_locale: "Activer pour cette langue"
 
 'The CSRF token is invalid. Please try to resubmit the form.': 'Votre session a expiré ; veuillez soumettre le formulaire à nouveau.'

@@ -39,25 +39,19 @@ abstract class BaseDestinationPeer
     const TM_CLASS = 'DestinationTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 8;
+    const NUM_COLUMNS = 6;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 8;
+    const NUM_HYDRATE_COLUMNS = 6;
 
     /** the column name for the id field */
     const ID = 'destination.id';
 
     /** the column name for the code field */
     const CODE = 'destination.code';
-
-    /** the column name for the image_detail_1 field */
-    const IMAGE_DETAIL_1 = 'destination.image_detail_1';
-
-    /** the column name for the image_detail_2 field */
-    const IMAGE_DETAIL_2 = 'destination.image_detail_2';
 
     /** the column name for the created_at field */
     const CREATED_AT = 'destination.created_at';
@@ -104,12 +98,12 @@ abstract class BaseDestinationPeer
      * e.g. DestinationPeer::$fieldNames[DestinationPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'ImageDetail1', 'ImageDetail2', 'CreatedAt', 'UpdatedAt', 'SortableRank', 'Active', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'imageDetail1', 'imageDetail2', 'createdAt', 'updatedAt', 'sortableRank', 'active', ),
-        BasePeer::TYPE_COLNAME => array (DestinationPeer::ID, DestinationPeer::CODE, DestinationPeer::IMAGE_DETAIL_1, DestinationPeer::IMAGE_DETAIL_2, DestinationPeer::CREATED_AT, DestinationPeer::UPDATED_AT, DestinationPeer::SORTABLE_RANK, DestinationPeer::ACTIVE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'IMAGE_DETAIL_1', 'IMAGE_DETAIL_2', 'CREATED_AT', 'UPDATED_AT', 'SORTABLE_RANK', 'ACTIVE', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'image_detail_1', 'image_detail_2', 'created_at', 'updated_at', 'sortable_rank', 'active', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Code', 'CreatedAt', 'UpdatedAt', 'SortableRank', 'Active', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'code', 'createdAt', 'updatedAt', 'sortableRank', 'active', ),
+        BasePeer::TYPE_COLNAME => array (DestinationPeer::ID, DestinationPeer::CODE, DestinationPeer::CREATED_AT, DestinationPeer::UPDATED_AT, DestinationPeer::SORTABLE_RANK, DestinationPeer::ACTIVE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CODE', 'CREATED_AT', 'UPDATED_AT', 'SORTABLE_RANK', 'ACTIVE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'code', 'created_at', 'updated_at', 'sortable_rank', 'active', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
     );
 
     /**
@@ -119,12 +113,12 @@ abstract class BaseDestinationPeer
      * e.g. DestinationPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'ImageDetail1' => 2, 'ImageDetail2' => 3, 'CreatedAt' => 4, 'UpdatedAt' => 5, 'SortableRank' => 6, 'Active' => 7, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'imageDetail1' => 2, 'imageDetail2' => 3, 'createdAt' => 4, 'updatedAt' => 5, 'sortableRank' => 6, 'active' => 7, ),
-        BasePeer::TYPE_COLNAME => array (DestinationPeer::ID => 0, DestinationPeer::CODE => 1, DestinationPeer::IMAGE_DETAIL_1 => 2, DestinationPeer::IMAGE_DETAIL_2 => 3, DestinationPeer::CREATED_AT => 4, DestinationPeer::UPDATED_AT => 5, DestinationPeer::SORTABLE_RANK => 6, DestinationPeer::ACTIVE => 7, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'IMAGE_DETAIL_1' => 2, 'IMAGE_DETAIL_2' => 3, 'CREATED_AT' => 4, 'UPDATED_AT' => 5, 'SORTABLE_RANK' => 6, 'ACTIVE' => 7, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'image_detail_1' => 2, 'image_detail_2' => 3, 'created_at' => 4, 'updated_at' => 5, 'sortable_rank' => 6, 'active' => 7, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Code' => 1, 'CreatedAt' => 2, 'UpdatedAt' => 3, 'SortableRank' => 4, 'Active' => 5, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'code' => 1, 'createdAt' => 2, 'updatedAt' => 3, 'sortableRank' => 4, 'active' => 5, ),
+        BasePeer::TYPE_COLNAME => array (DestinationPeer::ID => 0, DestinationPeer::CODE => 1, DestinationPeer::CREATED_AT => 2, DestinationPeer::UPDATED_AT => 3, DestinationPeer::SORTABLE_RANK => 4, DestinationPeer::ACTIVE => 5, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CODE' => 1, 'CREATED_AT' => 2, 'UPDATED_AT' => 3, 'SORTABLE_RANK' => 4, 'ACTIVE' => 5, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'code' => 1, 'created_at' => 2, 'updated_at' => 3, 'sortable_rank' => 4, 'active' => 5, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, )
     );
 
     /**
@@ -200,8 +194,6 @@ abstract class BaseDestinationPeer
         if (null === $alias) {
             $criteria->addSelectColumn(DestinationPeer::ID);
             $criteria->addSelectColumn(DestinationPeer::CODE);
-            $criteria->addSelectColumn(DestinationPeer::IMAGE_DETAIL_1);
-            $criteria->addSelectColumn(DestinationPeer::IMAGE_DETAIL_2);
             $criteria->addSelectColumn(DestinationPeer::CREATED_AT);
             $criteria->addSelectColumn(DestinationPeer::UPDATED_AT);
             $criteria->addSelectColumn(DestinationPeer::SORTABLE_RANK);
@@ -209,8 +201,6 @@ abstract class BaseDestinationPeer
         } else {
             $criteria->addSelectColumn($alias . '.id');
             $criteria->addSelectColumn($alias . '.code');
-            $criteria->addSelectColumn($alias . '.image_detail_1');
-            $criteria->addSelectColumn($alias . '.image_detail_2');
             $criteria->addSelectColumn($alias . '.created_at');
             $criteria->addSelectColumn($alias . '.updated_at');
             $criteria->addSelectColumn($alias . '.sortable_rank');

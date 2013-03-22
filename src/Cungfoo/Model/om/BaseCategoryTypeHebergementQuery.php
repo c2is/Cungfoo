@@ -26,8 +26,6 @@ use Cungfoo\Model\TypeHebergement;
  * @method CategoryTypeHebergementQuery orderById($order = Criteria::ASC) Order by the id column
  * @method CategoryTypeHebergementQuery orderByCode($order = Criteria::ASC) Order by the code column
  * @method CategoryTypeHebergementQuery orderByMinimumPrice($order = Criteria::ASC) Order by the minimum_price column
- * @method CategoryTypeHebergementQuery orderByImageMenu($order = Criteria::ASC) Order by the image_menu column
- * @method CategoryTypeHebergementQuery orderByImagePage($order = Criteria::ASC) Order by the image_page column
  * @method CategoryTypeHebergementQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method CategoryTypeHebergementQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  * @method CategoryTypeHebergementQuery orderBySortableRank($order = Criteria::ASC) Order by the sortable_rank column
@@ -36,8 +34,6 @@ use Cungfoo\Model\TypeHebergement;
  * @method CategoryTypeHebergementQuery groupById() Group by the id column
  * @method CategoryTypeHebergementQuery groupByCode() Group by the code column
  * @method CategoryTypeHebergementQuery groupByMinimumPrice() Group by the minimum_price column
- * @method CategoryTypeHebergementQuery groupByImageMenu() Group by the image_menu column
- * @method CategoryTypeHebergementQuery groupByImagePage() Group by the image_page column
  * @method CategoryTypeHebergementQuery groupByCreatedAt() Group by the created_at column
  * @method CategoryTypeHebergementQuery groupByUpdatedAt() Group by the updated_at column
  * @method CategoryTypeHebergementQuery groupBySortableRank() Group by the sortable_rank column
@@ -60,8 +56,6 @@ use Cungfoo\Model\TypeHebergement;
  *
  * @method CategoryTypeHebergement findOneByCode(string $code) Return the first CategoryTypeHebergement filtered by the code column
  * @method CategoryTypeHebergement findOneByMinimumPrice(string $minimum_price) Return the first CategoryTypeHebergement filtered by the minimum_price column
- * @method CategoryTypeHebergement findOneByImageMenu(string $image_menu) Return the first CategoryTypeHebergement filtered by the image_menu column
- * @method CategoryTypeHebergement findOneByImagePage(string $image_page) Return the first CategoryTypeHebergement filtered by the image_page column
  * @method CategoryTypeHebergement findOneByCreatedAt(string $created_at) Return the first CategoryTypeHebergement filtered by the created_at column
  * @method CategoryTypeHebergement findOneByUpdatedAt(string $updated_at) Return the first CategoryTypeHebergement filtered by the updated_at column
  * @method CategoryTypeHebergement findOneBySortableRank(int $sortable_rank) Return the first CategoryTypeHebergement filtered by the sortable_rank column
@@ -70,8 +64,6 @@ use Cungfoo\Model\TypeHebergement;
  * @method array findById(int $id) Return CategoryTypeHebergement objects filtered by the id column
  * @method array findByCode(string $code) Return CategoryTypeHebergement objects filtered by the code column
  * @method array findByMinimumPrice(string $minimum_price) Return CategoryTypeHebergement objects filtered by the minimum_price column
- * @method array findByImageMenu(string $image_menu) Return CategoryTypeHebergement objects filtered by the image_menu column
- * @method array findByImagePage(string $image_page) Return CategoryTypeHebergement objects filtered by the image_page column
  * @method array findByCreatedAt(string $created_at) Return CategoryTypeHebergement objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return CategoryTypeHebergement objects filtered by the updated_at column
  * @method array findBySortableRank(int $sortable_rank) Return CategoryTypeHebergement objects filtered by the sortable_rank column
@@ -179,7 +171,7 @@ abstract class BaseCategoryTypeHebergementQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `code`, `minimum_price`, `image_menu`, `image_page`, `created_at`, `updated_at`, `sortable_rank`, `active` FROM `category_type_hebergement` WHERE `id` = :p0';
+        $sql = 'SELECT `id`, `code`, `minimum_price`, `created_at`, `updated_at`, `sortable_rank`, `active` FROM `category_type_hebergement` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -351,64 +343,6 @@ abstract class BaseCategoryTypeHebergementQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(CategoryTypeHebergementPeer::MINIMUM_PRICE, $minimumPrice, $comparison);
-    }
-
-    /**
-     * Filter the query on the image_menu column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByImageMenu('fooValue');   // WHERE image_menu = 'fooValue'
-     * $query->filterByImageMenu('%fooValue%'); // WHERE image_menu LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $imageMenu The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return CategoryTypeHebergementQuery The current query, for fluid interface
-     */
-    public function filterByImageMenu($imageMenu = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($imageMenu)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $imageMenu)) {
-                $imageMenu = str_replace('*', '%', $imageMenu);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(CategoryTypeHebergementPeer::IMAGE_MENU, $imageMenu, $comparison);
-    }
-
-    /**
-     * Filter the query on the image_page column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByImagePage('fooValue');   // WHERE image_page = 'fooValue'
-     * $query->filterByImagePage('%fooValue%'); // WHERE image_page LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $imagePage The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return CategoryTypeHebergementQuery The current query, for fluid interface
-     */
-    public function filterByImagePage($imagePage = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($imagePage)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $imagePage)) {
-                $imagePage = str_replace('*', '%', $imagePage);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(CategoryTypeHebergementPeer::IMAGE_PAGE, $imagePage, $comparison);
     }
 
     /**

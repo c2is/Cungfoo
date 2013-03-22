@@ -82,9 +82,9 @@
 
 <div class="tabCampDiapo">
     <div class="slider"><div class="slide clear">
-        {% if multimedia | length %}
-        {% for media in multimedia %}
-            <img src="{{ asset(media.imagePath) }}" width="616" height="326" alt="{{ media.titre }}" class="{{ media.tagsForDisplay }}"/>
+        {% if etab.slider %}
+        {% for media in etab.slider | medias %}
+            <img src="{{ asset(media.file) }}" width="616" height="326" alt="{{ media.title }}" class="{{ media.getTagsForSlider | join(' ') }}"/>
         {% endfor %}
         {% endif %}
     </div></div>
@@ -93,7 +93,7 @@
             <span>{{ "fiche.photo" | trans }}</span>
             <label for="photosToutes"><input type="radio" id="photosToutes" name="affPhoto" value="all" checked="checked">{{ "Toutes" | trans }}</label>
             {% for tag in tags %}
-                <label for="photos{{ tag.slug }}"><input type="radio" id="photos{{ tag.slug }}" name="affPhoto" value="{{ tag.slug }}" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'Contenu_-_Visionneuse', 'Clic_-_Bouton-Radio']);">{{ tag.name }}</label>
+                <label for="photos{{ tag.name }}"><input type="radio" id="photos{{ tag.name }}" name="affPhoto" value="{{ tag.slug }}" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'Contenu_-_Visionneuse', 'Clic_-_Bouton-Radio']);">{{ tag.name }}</label>
             {% endfor %}
         </fieldset>
         <fieldset class="right">
@@ -109,10 +109,10 @@
     <h3>{{ 'fiche.description_title' | trans }}</h3>
     <div class="richText campDesc">{{ etab.description|raw }}</div>
 
-    {% if etab.planPath != "" %}
+    {% if etab.plan != "" %}
     <h3>{{ 'fiche.plan_camping' | trans }}</h3>
     <div>
-        <img src="{{ asset(etab.planPath) }}" width="616" alt="{{ etab.name }}">
+        <img src="{{ asset(etab.plan | media('file')) }}" width="616" alt="{{ etab.name }}">
         <img src="{{ asset('images/vacancesdirectes/common/pict/ficheLegendMap.png') }}" alt="{{ "fiche.plan.legende" | trans }}">
     </div>
     {% endif %}
@@ -124,7 +124,7 @@
             <dt><span>{{ "fiche.activites" | trans }}</span></dt>
             <dd class="activites"><ul>
                 {% for activite in etab.activitesActive %}
-                    <li>{% if activite.imagePath != "." and activite.imagePath != null %}<img src="{{ asset(activite.imagePath) }}" width="36" height="43" alt="{{ activite.name }}">{% endif %}<span>{{ activite.name }}</span></li>
+                    <li>{% if activite.imagePath != "." and activite.imagePath != null %}<img src="{{ asset(activite.imagePath | media('file')) }}" width="36" height="43" alt="{{ activite.name }}">{% endif %}<span>{{ activite.name }}</span></li>
                 {% endfor %}
             </ul></dd>
         </dl>
@@ -134,7 +134,7 @@
             <dt><span>{{ "fiche.baignades.top" | trans }}<br />{{ "fiche.baignades.bottom" | trans }}</span></dt>
             <dd class="equipements"><ul>
                 {% for baignade in etab.baignadesActive %}
-                    <li>{% if baignade.imagePath != "." and baignade.imagePath != null %}<img src="{{ asset(baignade.imagePath) }}" width="36" height="43" alt="{{ baignade.name }}">{% endif %}<span>{{ baignade.name }}</span></li>
+                    <li>{% if baignade.imagePath != "." and baignade.imagePath != null %}<img src="{{ asset(baignade.imagePath | media('file')) }}" width="36" height="43" alt="{{ baignade.name }}">{% endif %}<span>{{ baignade.name }}</span></li>
                 {% endfor %}
             </ul></dd>
         </dl>
@@ -144,7 +144,7 @@
             <dt><span>{{ "fiche.services_complementaires" | trans }}</span></dt>
             <dd class="services"><ul>
                 {% for serviceComplementaire in etab.serviceComplementairesActive %}
-                    <li>{% if serviceComplementaire.imagePath != "." and serviceComplementaire.imagePath != null %}<img src="{{ asset(serviceComplementaire.imagePath) }}" width="36" height="43" alt="{{ serviceComplementaire.name }}">{% endif %}<span>{{ serviceComplementaire.name }}</span></li>
+                    <li>{% if serviceComplementaire.imagePath != "." and serviceComplementaire.imagePath != null %}<img src="{{ asset(serviceComplementaire.imagePath | media('file')) }}" width="36" height="43" alt="{{ serviceComplementaire.name }}">{% endif %}<span>{{ serviceComplementaire.name }}</span></li>
                 {% endfor %}
             </ul></dd>
         </dl>
@@ -164,7 +164,7 @@
         <div class="slider"><div class="slide">
             {% for avantage in personnageAleatoire.avantagesActive %}
                 <dl>
-                    <dd><img src="{{ asset(avantage.imagePath) }}" alt="{{ avantage.name }}" class="boxborder"></dd>
+                    <dd><img src="{{ asset(avantage.imagePath | media('file')) }}" alt="{{ avantage.name }}" class="boxborder"></dd>
                     <dt>{{ avantage.name }}</dt>
                     <dd>{{ avantage.description }}</dd>
                 </dl>
@@ -197,7 +197,7 @@
             <div>
                 <dl>
                     <dt>{{ "fiche.a_proximite" | trans }} {{ "fiche.nous_avons_liste" | trans }}</dt>
-                    <dd class="img"><img src="{{ asset(etab.ville.region.imagePath) }}" width="75"></dd>
+                    <dd class="img"><img src="{{ asset(etab.ville.region.imagePath | media('file')) }}" width="75"></dd>
                     <dd class="list">
                         <ul>
                             {% if etab.countPoi != 0 %}<li>{{ etab.countPoi }} {{ "fiche.sites_a_visiter" | trans }}</li>{% endif %}
@@ -252,7 +252,7 @@
     {% if etab.typeHebergements | length %}
     {% for hebergement in etab.typeHebergementsActive %}
         <div class="typLocation {{ hebergement.categoryTypeHebergement.name }} cap{{ hebergement.nombrePlace }} clear" data-type="{{ hebergement.code }}">
-            <img src="{{ asset(hebergement.imageHebergementPath) }}" width="181" height="134" alt="{{ hebergement.name | trans }}" class="left boxborder">
+            <img src="{{ asset(hebergement.imageHebergementPath | media('file')) }}" width="181" height="134" alt="{{ hebergement.name | trans }}" class="left boxborder">
             <div style="overflow:hidden;">
             <span class="h4-like"><a href="{{ path('location_category_type_hebergement', {'categoryTypeHebergement':hebergement.categoryTypeHebergement.slug}) }}" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'Contenu_-_Location', 'Clic_-_Detail-Hebergement']);">{{ hebergement.categoryTypeHebergement.name | trans }}</a> - <a href="{{ path('location_type_hebergement', {'categoryTypeHebergement':hebergement.categoryTypeHebergement.slug ,'typeHebergement':hebergement.slug }) }}" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'Contenu_-_Location', 'Clic_-_Detail-Hebergement']);">{{ hebergement.name | trans }}</a></span>
             {# TODO <span class="nbPlace"><img src="{{ asset(hebergement.imageCompositionPath) }}" width="92" height="33" alt="">  {{ hebergement.composition | trans | nl2br }}</span>#}
@@ -348,8 +348,8 @@
         <h3>{{ etab.ville.region.name }}</h3>
         <p>{{ etab.ville.region.description }}</p>
 
-        <img class="iDestImg1 boxborder" src="{{ asset(etab.ville.region.imageEncartPath) }}" width="211" height="93" alt="{{ etab.ville.region.name }}">
-        <img class="iDestImg2 boxborder" src="{{ asset(etab.ville.region.imageEncartPetitePath) }}" width="146" height="65" alt="{{ etab.ville.region.name }}">
+        <img class="iDestImg1 boxborder" src="{{ asset(etab.ville.region.imageEncartPath | media('file')) }}" width="211" height="93" alt="{{ etab.ville.region.name }}">
+        <img class="iDestImg2 boxborder" src="{{ asset(etab.ville.region.imageEncartPetitePath | media('file')) }}" width="146" height="65" alt="{{ etab.ville.region.name }}">
     </div>
 
     <nav class="paginationTabs clear">

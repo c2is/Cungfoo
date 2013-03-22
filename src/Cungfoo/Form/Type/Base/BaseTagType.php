@@ -88,21 +88,6 @@ class BaseTagType extends AppAwareType
         );
     }
 
-    public function getMultimediaEtablissementsType()
-    {
-        return 'model';
-    }
-
-    public function getMultimediaEtablissementsOptions()
-    {
-        return array(
-            'required' => false,
-            'label' => 'multimedia_etablissement_tag.multimedia_etablissement_id',
-            'class' => 'Cungfoo\Model\MultimediaEtablissement',
-            'multiple' => true,
-        );
-    }
-
     public function getNameType()
     {
         return 'text';
@@ -193,8 +178,7 @@ class BaseTagType extends AppAwareType
         $builder->add('slug', $this->getSlugType(), $this->getSlugOptions());
         $builder->add('created_at', $this->getCreatedAtType(), $this->getCreatedAtOptions());
         $builder->add('updated_at', $this->getUpdatedAtType(), $this->getUpdatedAtOptions());
-        $builder->add('active', $this->getActiveType(), $this->getActiveOptions());
-        $builder->add('multimedia_etablissements', $this->getMultimediaEtablissementsType(), $this->getMultimediaEtablissementsOptions());$builder->add('tagI18ns', 'translation_collection', array(
+        $builder->add('active', $this->getActiveType(), $this->getActiveOptions());$builder->add('tagI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\TagI18n',
             'label' => 'tagI18ns',
             'required' => false,

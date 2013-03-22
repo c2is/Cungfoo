@@ -39,22 +39,16 @@ abstract class BaseTypeHebergementCapacitePeer
     const TM_CLASS = 'TypeHebergementCapaciteTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 7;
+    const NUM_COLUMNS = 5;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 7;
+    const NUM_HYDRATE_COLUMNS = 5;
 
     /** the column name for the id field */
     const ID = 'type_hebergement_capacite.id';
-
-    /** the column name for the image_menu field */
-    const IMAGE_MENU = 'type_hebergement_capacite.image_menu';
-
-    /** the column name for the image_page field */
-    const IMAGE_PAGE = 'type_hebergement_capacite.image_page';
 
     /** the column name for the created_at field */
     const CREATED_AT = 'type_hebergement_capacite.created_at';
@@ -101,12 +95,12 @@ abstract class BaseTypeHebergementCapacitePeer
      * e.g. TypeHebergementCapacitePeer::$fieldNames[TypeHebergementCapacitePeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'ImageMenu', 'ImagePage', 'CreatedAt', 'UpdatedAt', 'SortableRank', 'Active', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'imageMenu', 'imagePage', 'createdAt', 'updatedAt', 'sortableRank', 'active', ),
-        BasePeer::TYPE_COLNAME => array (TypeHebergementCapacitePeer::ID, TypeHebergementCapacitePeer::IMAGE_MENU, TypeHebergementCapacitePeer::IMAGE_PAGE, TypeHebergementCapacitePeer::CREATED_AT, TypeHebergementCapacitePeer::UPDATED_AT, TypeHebergementCapacitePeer::SORTABLE_RANK, TypeHebergementCapacitePeer::ACTIVE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'IMAGE_MENU', 'IMAGE_PAGE', 'CREATED_AT', 'UPDATED_AT', 'SORTABLE_RANK', 'ACTIVE', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'image_menu', 'image_page', 'created_at', 'updated_at', 'sortable_rank', 'active', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'CreatedAt', 'UpdatedAt', 'SortableRank', 'Active', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'createdAt', 'updatedAt', 'sortableRank', 'active', ),
+        BasePeer::TYPE_COLNAME => array (TypeHebergementCapacitePeer::ID, TypeHebergementCapacitePeer::CREATED_AT, TypeHebergementCapacitePeer::UPDATED_AT, TypeHebergementCapacitePeer::SORTABLE_RANK, TypeHebergementCapacitePeer::ACTIVE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CREATED_AT', 'UPDATED_AT', 'SORTABLE_RANK', 'ACTIVE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'created_at', 'updated_at', 'sortable_rank', 'active', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
     );
 
     /**
@@ -116,12 +110,12 @@ abstract class BaseTypeHebergementCapacitePeer
      * e.g. TypeHebergementCapacitePeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'ImageMenu' => 1, 'ImagePage' => 2, 'CreatedAt' => 3, 'UpdatedAt' => 4, 'SortableRank' => 5, 'Active' => 6, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'imageMenu' => 1, 'imagePage' => 2, 'createdAt' => 3, 'updatedAt' => 4, 'sortableRank' => 5, 'active' => 6, ),
-        BasePeer::TYPE_COLNAME => array (TypeHebergementCapacitePeer::ID => 0, TypeHebergementCapacitePeer::IMAGE_MENU => 1, TypeHebergementCapacitePeer::IMAGE_PAGE => 2, TypeHebergementCapacitePeer::CREATED_AT => 3, TypeHebergementCapacitePeer::UPDATED_AT => 4, TypeHebergementCapacitePeer::SORTABLE_RANK => 5, TypeHebergementCapacitePeer::ACTIVE => 6, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'IMAGE_MENU' => 1, 'IMAGE_PAGE' => 2, 'CREATED_AT' => 3, 'UPDATED_AT' => 4, 'SORTABLE_RANK' => 5, 'ACTIVE' => 6, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'image_menu' => 1, 'image_page' => 2, 'created_at' => 3, 'updated_at' => 4, 'sortable_rank' => 5, 'active' => 6, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'CreatedAt' => 1, 'UpdatedAt' => 2, 'SortableRank' => 3, 'Active' => 4, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'createdAt' => 1, 'updatedAt' => 2, 'sortableRank' => 3, 'active' => 4, ),
+        BasePeer::TYPE_COLNAME => array (TypeHebergementCapacitePeer::ID => 0, TypeHebergementCapacitePeer::CREATED_AT => 1, TypeHebergementCapacitePeer::UPDATED_AT => 2, TypeHebergementCapacitePeer::SORTABLE_RANK => 3, TypeHebergementCapacitePeer::ACTIVE => 4, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CREATED_AT' => 1, 'UPDATED_AT' => 2, 'SORTABLE_RANK' => 3, 'ACTIVE' => 4, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'created_at' => 1, 'updated_at' => 2, 'sortable_rank' => 3, 'active' => 4, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
     );
 
     /**
@@ -196,16 +190,12 @@ abstract class BaseTypeHebergementCapacitePeer
     {
         if (null === $alias) {
             $criteria->addSelectColumn(TypeHebergementCapacitePeer::ID);
-            $criteria->addSelectColumn(TypeHebergementCapacitePeer::IMAGE_MENU);
-            $criteria->addSelectColumn(TypeHebergementCapacitePeer::IMAGE_PAGE);
             $criteria->addSelectColumn(TypeHebergementCapacitePeer::CREATED_AT);
             $criteria->addSelectColumn(TypeHebergementCapacitePeer::UPDATED_AT);
             $criteria->addSelectColumn(TypeHebergementCapacitePeer::SORTABLE_RANK);
             $criteria->addSelectColumn(TypeHebergementCapacitePeer::ACTIVE);
         } else {
             $criteria->addSelectColumn($alias . '.id');
-            $criteria->addSelectColumn($alias . '.image_menu');
-            $criteria->addSelectColumn($alias . '.image_page');
             $criteria->addSelectColumn($alias . '.created_at');
             $criteria->addSelectColumn($alias . '.updated_at');
             $criteria->addSelectColumn($alias . '.sortable_rank');
