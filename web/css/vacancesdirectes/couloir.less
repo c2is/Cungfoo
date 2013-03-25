@@ -250,7 +250,7 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
 
 /*LEFT*/
 #contentContener{
-  .radiusBox{margin-bottom:35px;padding-top:10px;
+  .radiusBox{margin-bottom:35px;padding-top:15px;
     .stamp{margin: 0 -20px 15px;padding-left:48px;text-align:left;
       &:before,
       &:after{content:"";}
@@ -299,8 +299,9 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
                 table{border-spacing:0;}
               }
               .insurance{position:relative;
-                .insuranceInfo{
-                  background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat scroll 0 -324px transparent;display:block;width:27px;height:27px;position:absolute;top:-7px;right:-32px;}
+                .insuranceInfo{background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat scroll 0 -324px transparent;display:block;width:27px;height:27px;position:absolute;top:-7px;right:-32px;
+                  &.tooltip span.bubble{left:115%;max-width:500px;}
+                }
               }
               .proposal{font:normal 14px/19px @arial;padding-bottom:60px;text-align:left;
                 .proposalDates{font:bold 18px/23px @arial;color:@colorGris2;}
