@@ -274,13 +274,30 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
   }
 
   p{margin-bottom:10px;}
-  table{width:100%;border-collapse:separate;border-spacing: 0 10px;}
+  table{width:100%;}
   .whiteBg{background-color:@colorBgBlanc;padding: 20px 20px 20px 38px;clear:both;}
+
+// step 1 & 2
+  .proposal{font:normal 14px/19px @arial;padding-bottom:60px;text-align:left;
+    .stamp h2 > span{background-color:@colorGris2;}
+    .proposalDates{font:bold 18px/23px @arial;color:@colorGris2;}
+    .proposalPicture{width:246px;}
+    .total{
+      span{font:bold 16px/17px @ptnarrow;
+        .price{font:normal 19px/18px @ptnarrow;margin:0;}
+      }
+    }
+    table{border-top:7px solid @colorBgBlanc;display:block;margin:10px 0;padding-top:10px;text-align:left;width:100%;
+      .optionPrice,
+      .optionPriceDiscount{padding-left:5px;text-align:right;}
+    }
+  }
+
 // step 1
   &.detail{
     #reservation{
+      table{border-collapse:separate;border-spacing: 0 10px;}
       .aRoom{
-        &#stayPrice,
         &#yourStay{
           .stamp h2 > span{background-color:@colorGris2;}
         }
@@ -306,19 +323,6 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
               .insurance{position:relative;
                 .insuranceInfo{background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat scroll 0 -324px transparent;display:block;width:27px;height:27px;position:absolute;top:-7px;right:-32px;
                   &.tooltip span.bubble{left:115%;max-width:500px;}
-                }
-              }
-              .proposal{font:normal 14px/19px @arial;padding-bottom:60px;text-align:left;
-                .proposalDates{font:bold 18px/23px @arial;color:@colorGris2;}
-                .proposalPicture{width:246px;}
-                .total{
-                  span{font:bold 16px/17px @ptnarrow;
-                    .price{font:normal 19px/18px @ptnarrow;margin:0;}
-                  }
-                }
-                table{border-top:7px solid @colorBgBlanc;display:block;margin:10px 0;padding-top:10px;text-align:left;width:100%;
-                  .optionPrice,
-                  .optionPriceDiscount{padding-left:5px;text-align:right;}
                 }
               }
             }
