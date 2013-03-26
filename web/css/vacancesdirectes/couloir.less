@@ -287,9 +287,32 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
         .price{font:normal 19px/18px @ptnarrow;margin:0;}
       }
     }
-    table{border-top:7px solid @colorBgBlanc;display:block;margin:10px 0;padding-top:10px;text-align:left;width:100%;
-      .optionPrice,
-      .optionPriceDiscount{padding-left:5px;text-align:right;}
+    tr{
+      &.productDiscounts{font-weight:bold;}
+      &.productsNotSelectedYet{font-weight:normal;height:30px;}
+      td{vertical-align:middle;
+        &.optionQuantity{width:27px;}
+        &.optionLabel{width:400px;padding:5px;
+          &.staySummary{background-color:@colorBgBlanc;color:@colorGris0;
+            table{border-spacing:0;}
+          }
+          .costsIncluded{font-style:italic;font-size:11px;}
+          .insurance{position:relative;
+            .insuranceInfo{background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat scroll 0 -324px transparent;display:block;width:27px;height:27px;position:absolute;top:-7px;right:-32px;
+              &.tooltip span.bubble{left:115%;max-width:500px;}
+            }
+          }
+        }
+        &.price{width:110px;font:bold 19px/18px @ptnarrow;text-align:right;border:0 none !important;
+          >div{background-color:@colorBgBlanc;padding:0 10px;display:block;height:30px;line-height:30px;}
+        }
+        &.action{text-align:right;width:27px;}
+        .control_checkbox{margin-top:0;margin-right:5px;}
+        .hiddenIfCheckbox{display:none;}
+        .deleteLink{position:relative;display:block;width:27px;height:24px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 5px -243px transparent;float:left;
+          span{display:none;}
+        }
+      }
     }
   }
 
@@ -297,46 +320,46 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
   &.detail{
     #reservation{
       table{border-collapse:separate;border-spacing: 0 10px;}
+      tr{
+        &.productDiscounts{font-weight:bold;}
+        &.productsNotSelectedYet{font-weight:normal;height:30px;}
+        td{vertical-align:middle;
+          &.optionQuantity{width:27px;}
+          &.optionLabel{width:400px;padding:5px;
+            &.staySummary{background-color:@colorBgBlanc;color:@colorGris0;
+              table{border-spacing:0;}
+            }
+            .costsIncluded{font-style:italic;font-size:11px;}
+            .insurance{position:relative;
+              .insuranceInfo{background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat scroll 0 -324px transparent;display:block;width:27px;height:27px;position:absolute;top:-7px;right:-32px;
+                &.tooltip span.bubble{left:115%;max-width:500px;}
+              }
+            }
+          }
+          &.price{width:110px;font:bold 19px/18px @ptnarrow;text-align:right;border:0 none !important;
+            >div{background-color:@colorBgBlanc;padding:0 10px;display:block;height:30px;line-height:30px;}
+          }
+          &.action{text-align:right;width:27px;}
+          .control_checkbox{margin-top:0;margin-right:5px;}
+          .hiddenIfCheckbox{display:none;}
+          .deleteLink{position:relative;display:block;width:27px;height:24px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 5px -243px transparent;float:left;
+            span{display:none;}
+          }
+        }
+      }
       .aRoom{
         &#yourStay{
           .stamp h2 > span{background-color:@colorGris2;}
         }
-        .stain{width:131px;height:131px;background-position:0 0;top:0;bottom:auto;right:17px;left:auto;
-          .price{font:bold 27px/131px @ptnarrow;display:block;margin:3px 0 0px;letter-spacing:normal;}
-        }
+//        .stain{width:131px;height:131px;background-position:0 0;top:0;bottom:auto;right:17px;left:auto;
+//          .price{font:bold 27px/131px @ptnarrow;display:block;margin:3px 0 0px;letter-spacing:normal;}
+//        }
         .changeOccupantCount{height:auto;background-color:@colorBgGrisM;padding:10px 5px 0;position:relative;
           &>span{margin:0 5px 10px;._verticalCenter(27px);font:bold 17px @ptnarrow;color:@colorBlanc;text-transform:uppercase;display:inline-block;}
 //          .addAction a{position:absolute;top:10px;right:10px;display:block;width:27px;height:27px;text-indent:-9999px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -162px transparent;}
             .addAction{display:none;}
         }
-        #occupants{background-color:@colorBgBlanc;padding-top:10px;}
-        tr{
-          &.productDiscounts{font-weight:bold;}
-          &.productsNotSelectedYet{font-weight:normal;height:30px;}
-          td{vertical-align:middle;
-            &.optionQuantity{width:27px;}
-            &.optionLabel{width:400px;padding:5px;
-              &.staySummary{background-color:@colorBgBlanc;color:@colorGris0;
-                table{border-spacing:0;}
-              }
-              .costsIncluded{font-style:italic;font-size:11px;}
-              .insurance{position:relative;
-                .insuranceInfo{background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat scroll 0 -324px transparent;display:block;width:27px;height:27px;position:absolute;top:-7px;right:-32px;
-                  &.tooltip span.bubble{left:115%;max-width:500px;}
-                }
-              }
-            }
-            &.price{width:110px;font:bold 19px/18px @ptnarrow;text-align:right;border:0 none !important;
-              >div{background-color:@colorBgBlanc;padding:0 10px;display:block;height:30px;line-height:30px;}
-            }
-            &.action{text-align:right;width:27px;}
-            .control_checkbox{margin-top:0;margin-right:5px;}
-            .hiddenIfCheckbox{display:none;}
-            .deleteLink{position:relative;display:block;width:27px;height:24px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 5px -243px transparent;float:left;
-              span{display:none;}
-            }
-          }
-        }
+        #occupants{background-color:@colorBgBlanc;padding-top:20px;}
         .anOccupant{background-color:@colorBlanc;
           h3{background-image:none !important;background-color:@colorFushia;color:@colorBlanc;padding:5px 35px 5px 0;position:relative;font-size:23px;margin-bottom:10px;
             .occupantHeaderLeft{._verticalCenter(27px);
@@ -345,8 +368,8 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
             }
             .deleteAction a{position:absolute;top:6px;right:-3px;display:block;text-indent:-9999px;width:27px;height:27px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -243px transparent;float:left;margin:0 10px;}
           }
-          .occupantFields{padding:10px 5px;margin-bottom:0;position:relative;
-            .occupantFieldsInfo{background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat scroll 0 -324px transparent;display:block;width:27px;height:27px;position:absolute;top:10px;right:5px;
+          .occupantFields{padding:5px;margin-bottom:0;position:relative;
+            .occupantFieldsInfo{background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat scroll 0 -324px transparent;display:block;width:27px;height:27px;position:absolute;top:5px;right:5px;
               &.tooltip span.bubble{left:115%;max-width:342px;}
             }
             &.tooltip span.bubble{left:95%;bottom:5px;max-width:362px;}
