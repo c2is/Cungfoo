@@ -289,12 +289,13 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
         }
         .changeOccupantCount{height:auto;background-color:@colorBgGrisM;padding:10px 5px 0;position:relative;
           &>span{margin:0 5px 10px;._verticalCenter(27px);font:bold 17px @ptnarrow;color:@colorBlanc;text-transform:uppercase;display:inline-block;}
-          .addAction a{position:absolute;top:10px;right:10px;display:block;width:27px;height:27px;text-indent:-9999px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -162px transparent;}
+//          .addAction a{position:absolute;top:10px;right:10px;display:block;width:27px;height:27px;text-indent:-9999px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -162px transparent;}
+            .addAction{display:none;}
         }
         #occupants{background-color:@colorBgBlanc;padding-top:10px;}
         tr{
           &.productDiscounts{font-weight:bold;}
-          &.productsNotSelectedYet{font-weight:normal;min-height:30px;}
+          &.productsNotSelectedYet{font-weight:normal;height:30px;}
           td{vertical-align:middle;
             &.optionQuantity{width:27px;}
             &.optionLabel{width:400px;padding:5px;
@@ -341,6 +342,9 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
             .deleteAction a{position:absolute;top:6px;right:-3px;display:block;text-indent:-9999px;width:27px;height:27px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -243px transparent;float:left;margin:0 10px;}
           }
           .occupantFields{padding:10px 5px;margin-bottom:0;position:relative;
+            .occupantFieldsInfo{background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat scroll 0 -324px transparent;display:block;width:27px;height:27px;position:absolute;top:10px;right:5px;
+              &.tooltip span.bubble{left:115%;max-width:500px;}
+            }
             &.tooltip span.bubble{left:95%;bottom:5px;max-width:362px;}
             &>*{margin:0 5px 10px;}
             input{border:1px solid @colorBorderGris;}
@@ -579,8 +583,8 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
   }
   .footerNavigation.gauche a,
   .footerNavigation.droite a{display:block;border:0;text-transform:uppercase;text-decoration:none;font:bold 14px/22px @ptnarrow;padding:3px 12px;._border-radius(7px);color:@colorBlanc;background-image:url('../../images/vacancesdirectes/common/ui/lrArrowResalys.png');background-repeat:no-repeat;}
-  .footerNavigation.gauche a{background-position:5px 0;padding-left:25px;background-color:@colorBgGrisF;}
-  .footerNavigation.droite a{background-image:none;background-color:@colorFushia;}
+  .footerNavigation.gauche a{background-position:5px -2px;padding:0px 5px 1px 20px;background-color:@colorBgGrisC;color:@colorFushia;}
+  .footerNavigation.droite a{background-image:none;background-color:@colorFushia;font-size:15px;padding:3px 15px;}
   .footerNavigation.pageListe{._border-radius(3px);._box-shadow(0 1px 2px rgba(0, 0, 0, 0.05));float:right;
     a, b{float:left;padding:0 10px;line-height:24px;text-decoration:none;border:1px solid #ddd;border-left-width:0;
       &:hover{background-color:#f5f5f5;}
