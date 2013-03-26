@@ -357,8 +357,9 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
           .field{
             &>*{float:left;min-height:46px;line-height:46px;margin:0 10px 10px 0;}
             input{clear:left;}
-            div{line-height:15px;width:484px;
+            .radioDesc{line-height:15px;width:484px;
               .title{font-weight:bold;}
+              p{font-style:italic;font-size:11px;}
             }
           }
         }
@@ -370,6 +371,12 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
           input{border:1px solid @colorBorderGris;}
           .label{margin-right:10px;._verticalCenter(27px);}
           .field{}
+        }
+      }
+      #stayPrice{
+        .optionLabel{font-weight:bold;}
+        .price{color:@colorFushia;width:auto;
+          &>div{padding-left:50px;white-space:nowrap;}
         }
       }
     }
