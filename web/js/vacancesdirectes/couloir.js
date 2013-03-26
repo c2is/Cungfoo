@@ -38,12 +38,12 @@ $(function() {
 head.ready(function(){
 
     // positionne le bloc prix en 1er sur l'étape 1 du couloir
-    if($('#stayPrice').length){
+    if($('#yourStay').length){
         if($('.error').length){
-            $('.error').after($('#stayPrice'));
+            $('.error').after($('#yourStay'));
         }
         else {
-            $('#reservation').prepend($('#stayPrice'));
+            $('#reservation').prepend($('#yourStay'));
         }
     }
 
