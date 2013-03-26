@@ -15,35 +15,33 @@ use \PropelException;
 use \PropelObjectCollection;
 use \PropelPDO;
 use Cungfoo\Model\Edito;
-use Cungfoo\Model\EditoComponent;
-use Cungfoo\Model\EditoComponentQuery;
-use Cungfoo\Model\EditoI18n;
-use Cungfoo\Model\EditoI18nQuery;
-use Cungfoo\Model\EditoPeer;
 use Cungfoo\Model\EditoQuery;
 use Cungfoo\Model\EditoView;
+use Cungfoo\Model\EditoViewI18n;
+use Cungfoo\Model\EditoViewI18nQuery;
+use Cungfoo\Model\EditoViewPeer;
 use Cungfoo\Model\EditoViewQuery;
 use Propel\BaseObject;
 
 /**
- * Base class that represents a row from the 'edito' table.
+ * Base class that represents a row from the 'edito_view' table.
  *
  *
  *
  * @package    propel.generator.Cungfoo.Model.om
  */
-abstract class BaseEdito extends BaseObject implements Persistent
+abstract class BaseEditoView extends BaseObject implements Persistent
 {
     /**
      * Peer class name
      */
-    const PEER = 'Cungfoo\\Model\\EditoPeer';
+    const PEER = 'Cungfoo\\Model\\EditoViewPeer';
 
     /**
      * The Peer class.
      * Instance provides a convenient way of calling static methods on a class
      * that calling code may not be able to identify.
-     * @var        EditoPeer
+     * @var        EditoViewPeer
      */
     protected static $peer;
 
@@ -60,22 +58,22 @@ abstract class BaseEdito extends BaseObject implements Persistent
     protected $id;
 
     /**
-     * The value for the view_id field.
-     * @var        int
-     */
-    protected $view_id;
-
-    /**
-     * The value for the component_id field.
-     * @var        int
-     */
-    protected $component_id;
-
-    /**
-     * The value for the slug field.
+     * The value for the name field.
      * @var        string
      */
-    protected $slug;
+    protected $name;
+
+    /**
+     * The value for the source field.
+     * @var        string
+     */
+    protected $source;
+
+    /**
+     * The value for the preview field.
+     * @var        string
+     */
+    protected $preview;
 
     /**
      * The value for the created_at field.
@@ -97,20 +95,16 @@ abstract class BaseEdito extends BaseObject implements Persistent
     protected $active;
 
     /**
-     * @var        EditoView
+     * @var        PropelObjectCollection|Edito[] Collection to store aggregation of Edito objects.
      */
-    protected $aEditoView;
+    protected $collEditos;
+    protected $collEditosPartial;
 
     /**
-     * @var        EditoComponent
+     * @var        PropelObjectCollection|EditoViewI18n[] Collection to store aggregation of EditoViewI18n objects.
      */
-    protected $aEditoComponent;
-
-    /**
-     * @var        PropelObjectCollection|EditoI18n[] Collection to store aggregation of EditoI18n objects.
-     */
-    protected $collEditoI18ns;
-    protected $collEditoI18nsPartial;
+    protected $collEditoViewI18ns;
+    protected $collEditoViewI18nsPartial;
 
     /**
      * Flag to prevent endless save loop, if this object is referenced
@@ -136,7 +130,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
 
     /**
      * Current translation objects
-     * @var        array[EditoI18n]
+     * @var        array[EditoViewI18n]
      */
     protected $currentTranslations;
 
@@ -144,7 +138,13 @@ abstract class BaseEdito extends BaseObject implements Persistent
      * An array of objects scheduled for deletion.
      * @var		PropelObjectCollection
      */
-    protected $editoI18nsScheduledForDeletion = null;
+    protected $editosScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
+    protected $editoViewI18nsScheduledForDeletion = null;
 
     /**
      * Applies default values to this object.
@@ -158,7 +158,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
     }
 
     /**
-     * Initializes internal state of BaseEdito object.
+     * Initializes internal state of BaseEditoView object.
      * @see        applyDefaults()
      */
     public function __construct()
@@ -178,33 +178,33 @@ abstract class BaseEdito extends BaseObject implements Persistent
     }
 
     /**
-     * Get the [view_id] column value.
-     *
-     * @return int
-     */
-    public function getViewId()
-    {
-        return $this->view_id;
-    }
-
-    /**
-     * Get the [component_id] column value.
-     *
-     * @return int
-     */
-    public function getComponentId()
-    {
-        return $this->component_id;
-    }
-
-    /**
-     * Get the [slug] column value.
+     * Get the [name] column value.
      *
      * @return string
      */
-    public function getSlug()
+    public function getName()
     {
-        return $this->slug;
+        return $this->name;
+    }
+
+    /**
+     * Get the [source] column value.
+     *
+     * @return string
+     */
+    public function getSource()
+    {
+        return $this->source;
+    }
+
+    /**
+     * Get the [preview] column value.
+     *
+     * @return string
+     */
+    public function getPreview()
+    {
+        return $this->preview;
     }
 
     /**
@@ -301,7 +301,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
      * Set the value of [id] column.
      *
      * @param int $v new value
-     * @return Edito The current object (for fluent API support)
+     * @return EditoView The current object (for fluent API support)
      */
     public function setId($v)
     {
@@ -311,7 +311,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
 
         if ($this->id !== $v) {
             $this->id = $v;
-            $this->modifiedColumns[] = EditoPeer::ID;
+            $this->modifiedColumns[] = EditoViewPeer::ID;
         }
 
 
@@ -319,82 +319,74 @@ abstract class BaseEdito extends BaseObject implements Persistent
     } // setId()
 
     /**
-     * Set the value of [view_id] column.
-     *
-     * @param int $v new value
-     * @return Edito The current object (for fluent API support)
-     */
-    public function setViewId($v)
-    {
-        if ($v !== null) {
-            $v = (int) $v;
-        }
-
-        if ($this->view_id !== $v) {
-            $this->view_id = $v;
-            $this->modifiedColumns[] = EditoPeer::VIEW_ID;
-        }
-
-        if ($this->aEditoView !== null && $this->aEditoView->getId() !== $v) {
-            $this->aEditoView = null;
-        }
-
-
-        return $this;
-    } // setViewId()
-
-    /**
-     * Set the value of [component_id] column.
-     *
-     * @param int $v new value
-     * @return Edito The current object (for fluent API support)
-     */
-    public function setComponentId($v)
-    {
-        if ($v !== null) {
-            $v = (int) $v;
-        }
-
-        if ($this->component_id !== $v) {
-            $this->component_id = $v;
-            $this->modifiedColumns[] = EditoPeer::COMPONENT_ID;
-        }
-
-        if ($this->aEditoComponent !== null && $this->aEditoComponent->getId() !== $v) {
-            $this->aEditoComponent = null;
-        }
-
-
-        return $this;
-    } // setComponentId()
-
-    /**
-     * Set the value of [slug] column.
+     * Set the value of [name] column.
      *
      * @param string $v new value
-     * @return Edito The current object (for fluent API support)
+     * @return EditoView The current object (for fluent API support)
      */
-    public function setSlug($v)
+    public function setName($v)
     {
         if ($v !== null) {
             $v = (string) $v;
         }
 
-        if ($this->slug !== $v) {
-            $this->slug = $v;
-            $this->modifiedColumns[] = EditoPeer::SLUG;
+        if ($this->name !== $v) {
+            $this->name = $v;
+            $this->modifiedColumns[] = EditoViewPeer::NAME;
         }
 
 
         return $this;
-    } // setSlug()
+    } // setName()
+
+    /**
+     * Set the value of [source] column.
+     *
+     * @param string $v new value
+     * @return EditoView The current object (for fluent API support)
+     */
+    public function setSource($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->source !== $v) {
+            $this->source = $v;
+            $this->modifiedColumns[] = EditoViewPeer::SOURCE;
+        }
+
+
+        return $this;
+    } // setSource()
+
+    /**
+     * Set the value of [preview] column.
+     *
+     * @param string $v new value
+     * @return EditoView The current object (for fluent API support)
+     */
+    public function setPreview($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->preview !== $v) {
+            $this->preview = $v;
+            $this->modifiedColumns[] = EditoViewPeer::PREVIEW;
+        }
+
+
+        return $this;
+    } // setPreview()
 
     /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
      *
      * @param mixed $v string, integer (timestamp), or DateTime value.
      *               Empty strings are treated as null.
-     * @return Edito The current object (for fluent API support)
+     * @return EditoView The current object (for fluent API support)
      */
     public function setCreatedAt($v)
     {
@@ -404,7 +396,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
             $newDateAsString = $dt ? $dt->format('Y-m-d H:i:s') : null;
             if ($currentDateAsString !== $newDateAsString) {
                 $this->created_at = $newDateAsString;
-                $this->modifiedColumns[] = EditoPeer::CREATED_AT;
+                $this->modifiedColumns[] = EditoViewPeer::CREATED_AT;
             }
         } // if either are not null
 
@@ -417,7 +409,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
      *
      * @param mixed $v string, integer (timestamp), or DateTime value.
      *               Empty strings are treated as null.
-     * @return Edito The current object (for fluent API support)
+     * @return EditoView The current object (for fluent API support)
      */
     public function setUpdatedAt($v)
     {
@@ -427,7 +419,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
             $newDateAsString = $dt ? $dt->format('Y-m-d H:i:s') : null;
             if ($currentDateAsString !== $newDateAsString) {
                 $this->updated_at = $newDateAsString;
-                $this->modifiedColumns[] = EditoPeer::UPDATED_AT;
+                $this->modifiedColumns[] = EditoViewPeer::UPDATED_AT;
             }
         } // if either are not null
 
@@ -443,7 +435,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
      * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
      *
      * @param boolean|integer|string $v The new value
-     * @return Edito The current object (for fluent API support)
+     * @return EditoView The current object (for fluent API support)
      */
     public function setActive($v)
     {
@@ -457,7 +449,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
 
         if ($this->active !== $v) {
             $this->active = $v;
-            $this->modifiedColumns[] = EditoPeer::ACTIVE;
+            $this->modifiedColumns[] = EditoViewPeer::ACTIVE;
         }
 
 
@@ -501,9 +493,9 @@ abstract class BaseEdito extends BaseObject implements Persistent
         try {
 
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
-            $this->view_id = ($row[$startcol + 1] !== null) ? (int) $row[$startcol + 1] : null;
-            $this->component_id = ($row[$startcol + 2] !== null) ? (int) $row[$startcol + 2] : null;
-            $this->slug = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
+            $this->name = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
+            $this->source = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
+            $this->preview = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
             $this->created_at = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
             $this->updated_at = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
             $this->active = ($row[$startcol + 6] !== null) ? (boolean) $row[$startcol + 6] : null;
@@ -515,10 +507,10 @@ abstract class BaseEdito extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 7; // 7 = EditoPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 7; // 7 = EditoViewPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
-            throw new PropelException("Error populating Edito object", $e);
+            throw new PropelException("Error populating EditoView object", $e);
         }
     }
 
@@ -538,12 +530,6 @@ abstract class BaseEdito extends BaseObject implements Persistent
     public function ensureConsistency()
     {
 
-        if ($this->aEditoView !== null && $this->view_id !== $this->aEditoView->getId()) {
-            $this->aEditoView = null;
-        }
-        if ($this->aEditoComponent !== null && $this->component_id !== $this->aEditoComponent->getId()) {
-            $this->aEditoComponent = null;
-        }
     } // ensureConsistency
 
     /**
@@ -567,13 +553,13 @@ abstract class BaseEdito extends BaseObject implements Persistent
         }
 
         if ($con === null) {
-            $con = Propel::getConnection(EditoPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+            $con = Propel::getConnection(EditoViewPeer::DATABASE_NAME, Propel::CONNECTION_READ);
         }
 
         // We don't need to alter the object instance pool; we're just modifying this instance
         // already in the pool.
 
-        $stmt = EditoPeer::doSelectStmt($this->buildPkeyCriteria(), $con);
+        $stmt = EditoViewPeer::doSelectStmt($this->buildPkeyCriteria(), $con);
         $row = $stmt->fetch(PDO::FETCH_NUM);
         $stmt->closeCursor();
         if (!$row) {
@@ -583,9 +569,9 @@ abstract class BaseEdito extends BaseObject implements Persistent
 
         if ($deep) {  // also de-associate any related objects?
 
-            $this->aEditoView = null;
-            $this->aEditoComponent = null;
-            $this->collEditoI18ns = null;
+            $this->collEditos = null;
+
+            $this->collEditoViewI18ns = null;
 
         } // if (deep)
     }
@@ -607,12 +593,12 @@ abstract class BaseEdito extends BaseObject implements Persistent
         }
 
         if ($con === null) {
-            $con = Propel::getConnection(EditoPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+            $con = Propel::getConnection(EditoViewPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
 
         $con->beginTransaction();
         try {
-            $deleteQuery = EditoQuery::create()
+            $deleteQuery = EditoViewQuery::create()
                 ->filterByPrimaryKey($this->getPrimaryKey());
             $ret = $this->preDelete($con);
             if ($ret) {
@@ -650,7 +636,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
         }
 
         if ($con === null) {
-            $con = Propel::getConnection(EditoPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+            $con = Propel::getConnection(EditoViewPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
         }
 
         $con->beginTransaction();
@@ -660,16 +646,16 @@ abstract class BaseEdito extends BaseObject implements Persistent
             if ($isInsert) {
                 $ret = $ret && $this->preInsert($con);
                 // timestampable behavior
-                if (!$this->isColumnModified(EditoPeer::CREATED_AT)) {
+                if (!$this->isColumnModified(EditoViewPeer::CREATED_AT)) {
                     $this->setCreatedAt(time());
                 }
-                if (!$this->isColumnModified(EditoPeer::UPDATED_AT)) {
+                if (!$this->isColumnModified(EditoViewPeer::UPDATED_AT)) {
                     $this->setUpdatedAt(time());
                 }
             } else {
                 $ret = $ret && $this->preUpdate($con);
                 // timestampable behavior
-                if ($this->isModified() && !$this->isColumnModified(EditoPeer::UPDATED_AT)) {
+                if ($this->isModified() && !$this->isColumnModified(EditoViewPeer::UPDATED_AT)) {
                     $this->setUpdatedAt(time());
                 }
             }
@@ -681,7 +667,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
                     $this->postUpdate($con);
                 }
                 $this->postSave($con);
-                EditoPeer::addInstanceToPool($this);
+                EditoViewPeer::addInstanceToPool($this);
             } else {
                 $affectedRows = 0;
             }
@@ -711,25 +697,6 @@ abstract class BaseEdito extends BaseObject implements Persistent
         if (!$this->alreadyInSave) {
             $this->alreadyInSave = true;
 
-            // We call the save method on the following object(s) if they
-            // were passed to this object by their coresponding set
-            // method.  This object relates to these object(s) by a
-            // foreign key reference.
-
-            if ($this->aEditoView !== null) {
-                if ($this->aEditoView->isModified() || $this->aEditoView->isNew()) {
-                    $affectedRows += $this->aEditoView->save($con);
-                }
-                $this->setEditoView($this->aEditoView);
-            }
-
-            if ($this->aEditoComponent !== null) {
-                if ($this->aEditoComponent->isModified() || $this->aEditoComponent->isNew()) {
-                    $affectedRows += $this->aEditoComponent->save($con);
-                }
-                $this->setEditoComponent($this->aEditoComponent);
-            }
-
             if ($this->isNew() || $this->isModified()) {
                 // persist changes
                 if ($this->isNew()) {
@@ -741,17 +708,34 @@ abstract class BaseEdito extends BaseObject implements Persistent
                 $this->resetModified();
             }
 
-            if ($this->editoI18nsScheduledForDeletion !== null) {
-                if (!$this->editoI18nsScheduledForDeletion->isEmpty()) {
-                    EditoI18nQuery::create()
-                        ->filterByPrimaryKeys($this->editoI18nsScheduledForDeletion->getPrimaryKeys(false))
+            if ($this->editosScheduledForDeletion !== null) {
+                if (!$this->editosScheduledForDeletion->isEmpty()) {
+                    EditoQuery::create()
+                        ->filterByPrimaryKeys($this->editosScheduledForDeletion->getPrimaryKeys(false))
                         ->delete($con);
-                    $this->editoI18nsScheduledForDeletion = null;
+                    $this->editosScheduledForDeletion = null;
                 }
             }
 
-            if ($this->collEditoI18ns !== null) {
-                foreach ($this->collEditoI18ns as $referrerFK) {
+            if ($this->collEditos !== null) {
+                foreach ($this->collEditos as $referrerFK) {
+                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
+                        $affectedRows += $referrerFK->save($con);
+                    }
+                }
+            }
+
+            if ($this->editoViewI18nsScheduledForDeletion !== null) {
+                if (!$this->editoViewI18nsScheduledForDeletion->isEmpty()) {
+                    EditoViewI18nQuery::create()
+                        ->filterByPrimaryKeys($this->editoViewI18nsScheduledForDeletion->getPrimaryKeys(false))
+                        ->delete($con);
+                    $this->editoViewI18nsScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collEditoViewI18ns !== null) {
+                foreach ($this->collEditoViewI18ns as $referrerFK) {
                     if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
                         $affectedRows += $referrerFK->save($con);
                     }
@@ -778,36 +762,36 @@ abstract class BaseEdito extends BaseObject implements Persistent
         $modifiedColumns = array();
         $index = 0;
 
-        $this->modifiedColumns[] = EditoPeer::ID;
+        $this->modifiedColumns[] = EditoViewPeer::ID;
         if (null !== $this->id) {
-            throw new PropelException('Cannot insert a value for auto-increment primary key (' . EditoPeer::ID . ')');
+            throw new PropelException('Cannot insert a value for auto-increment primary key (' . EditoViewPeer::ID . ')');
         }
 
          // check the columns in natural order for more readable SQL queries
-        if ($this->isColumnModified(EditoPeer::ID)) {
+        if ($this->isColumnModified(EditoViewPeer::ID)) {
             $modifiedColumns[':p' . $index++]  = '`id`';
         }
-        if ($this->isColumnModified(EditoPeer::VIEW_ID)) {
-            $modifiedColumns[':p' . $index++]  = '`view_id`';
+        if ($this->isColumnModified(EditoViewPeer::NAME)) {
+            $modifiedColumns[':p' . $index++]  = '`name`';
         }
-        if ($this->isColumnModified(EditoPeer::COMPONENT_ID)) {
-            $modifiedColumns[':p' . $index++]  = '`component_id`';
+        if ($this->isColumnModified(EditoViewPeer::SOURCE)) {
+            $modifiedColumns[':p' . $index++]  = '`source`';
         }
-        if ($this->isColumnModified(EditoPeer::SLUG)) {
-            $modifiedColumns[':p' . $index++]  = '`slug`';
+        if ($this->isColumnModified(EditoViewPeer::PREVIEW)) {
+            $modifiedColumns[':p' . $index++]  = '`preview`';
         }
-        if ($this->isColumnModified(EditoPeer::CREATED_AT)) {
+        if ($this->isColumnModified(EditoViewPeer::CREATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`created_at`';
         }
-        if ($this->isColumnModified(EditoPeer::UPDATED_AT)) {
+        if ($this->isColumnModified(EditoViewPeer::UPDATED_AT)) {
             $modifiedColumns[':p' . $index++]  = '`updated_at`';
         }
-        if ($this->isColumnModified(EditoPeer::ACTIVE)) {
+        if ($this->isColumnModified(EditoViewPeer::ACTIVE)) {
             $modifiedColumns[':p' . $index++]  = '`active`';
         }
 
         $sql = sprintf(
-            'INSERT INTO `edito` (%s) VALUES (%s)',
+            'INSERT INTO `edito_view` (%s) VALUES (%s)',
             implode(', ', $modifiedColumns),
             implode(', ', array_keys($modifiedColumns))
         );
@@ -819,14 +803,14 @@ abstract class BaseEdito extends BaseObject implements Persistent
                     case '`id`':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case '`view_id`':
-                        $stmt->bindValue($identifier, $this->view_id, PDO::PARAM_INT);
+                    case '`name`':
+                        $stmt->bindValue($identifier, $this->name, PDO::PARAM_STR);
                         break;
-                    case '`component_id`':
-                        $stmt->bindValue($identifier, $this->component_id, PDO::PARAM_INT);
+                    case '`source`':
+                        $stmt->bindValue($identifier, $this->source, PDO::PARAM_STR);
                         break;
-                    case '`slug`':
-                        $stmt->bindValue($identifier, $this->slug, PDO::PARAM_STR);
+                    case '`preview`':
+                        $stmt->bindValue($identifier, $this->preview, PDO::PARAM_STR);
                         break;
                     case '`created_at`':
                         $stmt->bindValue($identifier, $this->created_at, PDO::PARAM_STR);
@@ -931,31 +915,21 @@ abstract class BaseEdito extends BaseObject implements Persistent
             $failureMap = array();
 
 
-            // We call the validate method on the following object(s) if they
-            // were passed to this object by their coresponding set
-            // method.  This object relates to these object(s) by a
-            // foreign key reference.
-
-            if ($this->aEditoView !== null) {
-                if (!$this->aEditoView->validate($columns)) {
-                    $failureMap = array_merge($failureMap, $this->aEditoView->getValidationFailures());
-                }
-            }
-
-            if ($this->aEditoComponent !== null) {
-                if (!$this->aEditoComponent->validate($columns)) {
-                    $failureMap = array_merge($failureMap, $this->aEditoComponent->getValidationFailures());
-                }
-            }
-
-
-            if (($retval = EditoPeer::doValidate($this, $columns)) !== true) {
+            if (($retval = EditoViewPeer::doValidate($this, $columns)) !== true) {
                 $failureMap = array_merge($failureMap, $retval);
             }
 
 
-                if ($this->collEditoI18ns !== null) {
-                    foreach ($this->collEditoI18ns as $referrerFK) {
+                if ($this->collEditos !== null) {
+                    foreach ($this->collEditos as $referrerFK) {
+                        if (!$referrerFK->validate($columns)) {
+                            $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
+                        }
+                    }
+                }
+
+                if ($this->collEditoViewI18ns !== null) {
+                    foreach ($this->collEditoViewI18ns as $referrerFK) {
                         if (!$referrerFK->validate($columns)) {
                             $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
                         }
@@ -981,7 +955,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
      */
     public function getByName($name, $type = BasePeer::TYPE_PHPNAME)
     {
-        $pos = EditoPeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
+        $pos = EditoViewPeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
         $field = $this->getByPosition($pos);
 
         return $field;
@@ -1001,13 +975,13 @@ abstract class BaseEdito extends BaseObject implements Persistent
                 return $this->getId();
                 break;
             case 1:
-                return $this->getViewId();
+                return $this->getName();
                 break;
             case 2:
-                return $this->getComponentId();
+                return $this->getSource();
                 break;
             case 3:
-                return $this->getSlug();
+                return $this->getPreview();
                 break;
             case 4:
                 return $this->getCreatedAt();
@@ -1041,29 +1015,26 @@ abstract class BaseEdito extends BaseObject implements Persistent
      */
     public function toArray($keyType = BasePeer::TYPE_PHPNAME, $includeLazyLoadColumns = true, $alreadyDumpedObjects = array(), $includeForeignObjects = false)
     {
-        if (isset($alreadyDumpedObjects['Edito'][$this->getPrimaryKey()])) {
+        if (isset($alreadyDumpedObjects['EditoView'][$this->getPrimaryKey()])) {
             return '*RECURSION*';
         }
-        $alreadyDumpedObjects['Edito'][$this->getPrimaryKey()] = true;
-        $keys = EditoPeer::getFieldNames($keyType);
+        $alreadyDumpedObjects['EditoView'][$this->getPrimaryKey()] = true;
+        $keys = EditoViewPeer::getFieldNames($keyType);
         $result = array(
             $keys[0] => $this->getId(),
-            $keys[1] => $this->getViewId(),
-            $keys[2] => $this->getComponentId(),
-            $keys[3] => $this->getSlug(),
+            $keys[1] => $this->getName(),
+            $keys[2] => $this->getSource(),
+            $keys[3] => $this->getPreview(),
             $keys[4] => $this->getCreatedAt(),
             $keys[5] => $this->getUpdatedAt(),
             $keys[6] => $this->getActive(),
         );
         if ($includeForeignObjects) {
-            if (null !== $this->aEditoView) {
-                $result['EditoView'] = $this->aEditoView->toArray($keyType, $includeLazyLoadColumns,  $alreadyDumpedObjects, true);
+            if (null !== $this->collEditos) {
+                $result['Editos'] = $this->collEditos->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
-            if (null !== $this->aEditoComponent) {
-                $result['EditoComponent'] = $this->aEditoComponent->toArray($keyType, $includeLazyLoadColumns,  $alreadyDumpedObjects, true);
-            }
-            if (null !== $this->collEditoI18ns) {
-                $result['EditoI18ns'] = $this->collEditoI18ns->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
+            if (null !== $this->collEditoViewI18ns) {
+                $result['EditoViewI18ns'] = $this->collEditoViewI18ns->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
         }
 
@@ -1083,7 +1054,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
      */
     public function setByName($name, $value, $type = BasePeer::TYPE_PHPNAME)
     {
-        $pos = EditoPeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
+        $pos = EditoViewPeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
 
         $this->setByPosition($pos, $value);
     }
@@ -1103,13 +1074,13 @@ abstract class BaseEdito extends BaseObject implements Persistent
                 $this->setId($value);
                 break;
             case 1:
-                $this->setViewId($value);
+                $this->setName($value);
                 break;
             case 2:
-                $this->setComponentId($value);
+                $this->setSource($value);
                 break;
             case 3:
-                $this->setSlug($value);
+                $this->setPreview($value);
                 break;
             case 4:
                 $this->setCreatedAt($value);
@@ -1142,12 +1113,12 @@ abstract class BaseEdito extends BaseObject implements Persistent
      */
     public function fromArray($arr, $keyType = BasePeer::TYPE_PHPNAME)
     {
-        $keys = EditoPeer::getFieldNames($keyType);
+        $keys = EditoViewPeer::getFieldNames($keyType);
 
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
-        if (array_key_exists($keys[1], $arr)) $this->setViewId($arr[$keys[1]]);
-        if (array_key_exists($keys[2], $arr)) $this->setComponentId($arr[$keys[2]]);
-        if (array_key_exists($keys[3], $arr)) $this->setSlug($arr[$keys[3]]);
+        if (array_key_exists($keys[1], $arr)) $this->setName($arr[$keys[1]]);
+        if (array_key_exists($keys[2], $arr)) $this->setSource($arr[$keys[2]]);
+        if (array_key_exists($keys[3], $arr)) $this->setPreview($arr[$keys[3]]);
         if (array_key_exists($keys[4], $arr)) $this->setCreatedAt($arr[$keys[4]]);
         if (array_key_exists($keys[5], $arr)) $this->setUpdatedAt($arr[$keys[5]]);
         if (array_key_exists($keys[6], $arr)) $this->setActive($arr[$keys[6]]);
@@ -1160,15 +1131,15 @@ abstract class BaseEdito extends BaseObject implements Persistent
      */
     public function buildCriteria()
     {
-        $criteria = new Criteria(EditoPeer::DATABASE_NAME);
+        $criteria = new Criteria(EditoViewPeer::DATABASE_NAME);
 
-        if ($this->isColumnModified(EditoPeer::ID)) $criteria->add(EditoPeer::ID, $this->id);
-        if ($this->isColumnModified(EditoPeer::VIEW_ID)) $criteria->add(EditoPeer::VIEW_ID, $this->view_id);
-        if ($this->isColumnModified(EditoPeer::COMPONENT_ID)) $criteria->add(EditoPeer::COMPONENT_ID, $this->component_id);
-        if ($this->isColumnModified(EditoPeer::SLUG)) $criteria->add(EditoPeer::SLUG, $this->slug);
-        if ($this->isColumnModified(EditoPeer::CREATED_AT)) $criteria->add(EditoPeer::CREATED_AT, $this->created_at);
-        if ($this->isColumnModified(EditoPeer::UPDATED_AT)) $criteria->add(EditoPeer::UPDATED_AT, $this->updated_at);
-        if ($this->isColumnModified(EditoPeer::ACTIVE)) $criteria->add(EditoPeer::ACTIVE, $this->active);
+        if ($this->isColumnModified(EditoViewPeer::ID)) $criteria->add(EditoViewPeer::ID, $this->id);
+        if ($this->isColumnModified(EditoViewPeer::NAME)) $criteria->add(EditoViewPeer::NAME, $this->name);
+        if ($this->isColumnModified(EditoViewPeer::SOURCE)) $criteria->add(EditoViewPeer::SOURCE, $this->source);
+        if ($this->isColumnModified(EditoViewPeer::PREVIEW)) $criteria->add(EditoViewPeer::PREVIEW, $this->preview);
+        if ($this->isColumnModified(EditoViewPeer::CREATED_AT)) $criteria->add(EditoViewPeer::CREATED_AT, $this->created_at);
+        if ($this->isColumnModified(EditoViewPeer::UPDATED_AT)) $criteria->add(EditoViewPeer::UPDATED_AT, $this->updated_at);
+        if ($this->isColumnModified(EditoViewPeer::ACTIVE)) $criteria->add(EditoViewPeer::ACTIVE, $this->active);
 
         return $criteria;
     }
@@ -1183,8 +1154,8 @@ abstract class BaseEdito extends BaseObject implements Persistent
      */
     public function buildPkeyCriteria()
     {
-        $criteria = new Criteria(EditoPeer::DATABASE_NAME);
-        $criteria->add(EditoPeer::ID, $this->id);
+        $criteria = new Criteria(EditoViewPeer::DATABASE_NAME);
+        $criteria->add(EditoViewPeer::ID, $this->id);
 
         return $criteria;
     }
@@ -1225,16 +1196,16 @@ abstract class BaseEdito extends BaseObject implements Persistent
      * If desired, this method can also make copies of all associated (fkey referrers)
      * objects.
      *
-     * @param object $copyObj An object of Edito (or compatible) type.
+     * @param object $copyObj An object of EditoView (or compatible) type.
      * @param boolean $deepCopy Whether to also copy all rows that refer (by fkey) to the current row.
      * @param boolean $makeNew Whether to reset autoincrement PKs and make the object new.
      * @throws PropelException
      */
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
-        $copyObj->setViewId($this->getViewId());
-        $copyObj->setComponentId($this->getComponentId());
-        $copyObj->setSlug($this->getSlug());
+        $copyObj->setName($this->getName());
+        $copyObj->setSource($this->getSource());
+        $copyObj->setPreview($this->getPreview());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
         $copyObj->setActive($this->getActive());
@@ -1246,9 +1217,15 @@ abstract class BaseEdito extends BaseObject implements Persistent
             // store object hash to prevent cycle
             $this->startCopy = true;
 
-            foreach ($this->getEditoI18ns() as $relObj) {
+            foreach ($this->getEditos() as $relObj) {
                 if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
-                    $copyObj->addEditoI18n($relObj->copy($deepCopy));
+                    $copyObj->addEdito($relObj->copy($deepCopy));
+                }
+            }
+
+            foreach ($this->getEditoViewI18ns() as $relObj) {
+                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
+                    $copyObj->addEditoViewI18n($relObj->copy($deepCopy));
                 }
             }
 
@@ -1271,7 +1248,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
      * objects.
      *
      * @param boolean $deepCopy Whether to also copy all rows that refer (by fkey) to the current row.
-     * @return Edito Clone of current object.
+     * @return EditoView Clone of current object.
      * @throws PropelException
      */
     public function copy($deepCopy = false)
@@ -1291,119 +1268,15 @@ abstract class BaseEdito extends BaseObject implements Persistent
      * same instance for all member of this class. The method could therefore
      * be static, but this would prevent one from overriding the behavior.
      *
-     * @return EditoPeer
+     * @return EditoViewPeer
      */
     public function getPeer()
     {
         if (self::$peer === null) {
-            self::$peer = new EditoPeer();
+            self::$peer = new EditoViewPeer();
         }
 
         return self::$peer;
-    }
-
-    /**
-     * Declares an association between this object and a EditoView object.
-     *
-     * @param             EditoView $v
-     * @return Edito The current object (for fluent API support)
-     * @throws PropelException
-     */
-    public function setEditoView(EditoView $v = null)
-    {
-        if ($v === null) {
-            $this->setViewId(NULL);
-        } else {
-            $this->setViewId($v->getId());
-        }
-
-        $this->aEditoView = $v;
-
-        // Add binding for other direction of this n:n relationship.
-        // If this object has already been added to the EditoView object, it will not be re-added.
-        if ($v !== null) {
-            $v->addEdito($this);
-        }
-
-
-        return $this;
-    }
-
-
-    /**
-     * Get the associated EditoView object
-     *
-     * @param PropelPDO $con Optional Connection object.
-     * @param $doQuery Executes a query to get the object if required
-     * @return EditoView The associated EditoView object.
-     * @throws PropelException
-     */
-    public function getEditoView(PropelPDO $con = null, $doQuery = true)
-    {
-        if ($this->aEditoView === null && ($this->view_id !== null) && $doQuery) {
-            $this->aEditoView = EditoViewQuery::create()->findPk($this->view_id, $con);
-            /* The following can be used additionally to
-                guarantee the related object contains a reference
-                to this object.  This level of coupling may, however, be
-                undesirable since it could result in an only partially populated collection
-                in the referenced object.
-                $this->aEditoView->addEditos($this);
-             */
-        }
-
-        return $this->aEditoView;
-    }
-
-    /**
-     * Declares an association between this object and a EditoComponent object.
-     *
-     * @param             EditoComponent $v
-     * @return Edito The current object (for fluent API support)
-     * @throws PropelException
-     */
-    public function setEditoComponent(EditoComponent $v = null)
-    {
-        if ($v === null) {
-            $this->setComponentId(NULL);
-        } else {
-            $this->setComponentId($v->getId());
-        }
-
-        $this->aEditoComponent = $v;
-
-        // Add binding for other direction of this n:n relationship.
-        // If this object has already been added to the EditoComponent object, it will not be re-added.
-        if ($v !== null) {
-            $v->addEdito($this);
-        }
-
-
-        return $this;
-    }
-
-
-    /**
-     * Get the associated EditoComponent object
-     *
-     * @param PropelPDO $con Optional Connection object.
-     * @param $doQuery Executes a query to get the object if required
-     * @return EditoComponent The associated EditoComponent object.
-     * @throws PropelException
-     */
-    public function getEditoComponent(PropelPDO $con = null, $doQuery = true)
-    {
-        if ($this->aEditoComponent === null && ($this->component_id !== null) && $doQuery) {
-            $this->aEditoComponent = EditoComponentQuery::create()->findPk($this->component_id, $con);
-            /* The following can be used additionally to
-                guarantee the related object contains a reference
-                to this object.  This level of coupling may, however, be
-                undesirable since it could result in an only partially populated collection
-                in the referenced object.
-                $this->aEditoComponent->addEditos($this);
-             */
-        }
-
-        return $this->aEditoComponent;
     }
 
 
@@ -1417,42 +1290,45 @@ abstract class BaseEdito extends BaseObject implements Persistent
      */
     public function initRelation($relationName)
     {
-        if ('EditoI18n' == $relationName) {
-            $this->initEditoI18ns();
+        if ('Edito' == $relationName) {
+            $this->initEditos();
+        }
+        if ('EditoViewI18n' == $relationName) {
+            $this->initEditoViewI18ns();
         }
     }
 
     /**
-     * Clears out the collEditoI18ns collection
+     * Clears out the collEditos collection
      *
      * This does not modify the database; however, it will remove any associated objects, causing
      * them to be refetched by subsequent calls to accessor method.
      *
-     * @return Edito The current object (for fluent API support)
-     * @see        addEditoI18ns()
+     * @return EditoView The current object (for fluent API support)
+     * @see        addEditos()
      */
-    public function clearEditoI18ns()
+    public function clearEditos()
     {
-        $this->collEditoI18ns = null; // important to set this to null since that means it is uninitialized
-        $this->collEditoI18nsPartial = null;
+        $this->collEditos = null; // important to set this to null since that means it is uninitialized
+        $this->collEditosPartial = null;
 
         return $this;
     }
 
     /**
-     * reset is the collEditoI18ns collection loaded partially
+     * reset is the collEditos collection loaded partially
      *
      * @return void
      */
-    public function resetPartialEditoI18ns($v = true)
+    public function resetPartialEditos($v = true)
     {
-        $this->collEditoI18nsPartial = $v;
+        $this->collEditosPartial = $v;
     }
 
     /**
-     * Initializes the collEditoI18ns collection.
+     * Initializes the collEditos collection.
      *
-     * By default this just sets the collEditoI18ns collection to an empty array (like clearcollEditoI18ns());
+     * By default this just sets the collEditos collection to an empty array (like clearcollEditos());
      * however, you may wish to override this method in your stub class to provide setting appropriate
      * to your application -- for example, setting the initial array to the values stored in database.
      *
@@ -1461,181 +1337,421 @@ abstract class BaseEdito extends BaseObject implements Persistent
      *
      * @return void
      */
-    public function initEditoI18ns($overrideExisting = true)
+    public function initEditos($overrideExisting = true)
     {
-        if (null !== $this->collEditoI18ns && !$overrideExisting) {
+        if (null !== $this->collEditos && !$overrideExisting) {
             return;
         }
-        $this->collEditoI18ns = new PropelObjectCollection();
-        $this->collEditoI18ns->setModel('EditoI18n');
+        $this->collEditos = new PropelObjectCollection();
+        $this->collEditos->setModel('Edito');
     }
 
     /**
-     * Gets an array of EditoI18n objects which contain a foreign key that references this object.
+     * Gets an array of Edito objects which contain a foreign key that references this object.
      *
      * If the $criteria is not null, it is used to always fetch the results from the database.
      * Otherwise the results are fetched from the database the first time, then cached.
      * Next time the same method is called without $criteria, the cached collection is returned.
-     * If this Edito is new, it will return
+     * If this EditoView is new, it will return
      * an empty collection or the current collection; the criteria is ignored on a new object.
      *
      * @param Criteria $criteria optional Criteria object to narrow the query
      * @param PropelPDO $con optional connection object
-     * @return PropelObjectCollection|EditoI18n[] List of EditoI18n objects
+     * @return PropelObjectCollection|Edito[] List of Edito objects
      * @throws PropelException
      */
-    public function getEditoI18ns($criteria = null, PropelPDO $con = null)
+    public function getEditos($criteria = null, PropelPDO $con = null)
     {
-        $partial = $this->collEditoI18nsPartial && !$this->isNew();
-        if (null === $this->collEditoI18ns || null !== $criteria  || $partial) {
-            if ($this->isNew() && null === $this->collEditoI18ns) {
+        $partial = $this->collEditosPartial && !$this->isNew();
+        if (null === $this->collEditos || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collEditos) {
                 // return empty collection
-                $this->initEditoI18ns();
+                $this->initEditos();
             } else {
-                $collEditoI18ns = EditoI18nQuery::create(null, $criteria)
-                    ->filterByEdito($this)
+                $collEditos = EditoQuery::create(null, $criteria)
+                    ->filterByEditoView($this)
                     ->find($con);
                 if (null !== $criteria) {
-                    if (false !== $this->collEditoI18nsPartial && count($collEditoI18ns)) {
-                      $this->initEditoI18ns(false);
+                    if (false !== $this->collEditosPartial && count($collEditos)) {
+                      $this->initEditos(false);
 
-                      foreach($collEditoI18ns as $obj) {
-                        if (false == $this->collEditoI18ns->contains($obj)) {
-                          $this->collEditoI18ns->append($obj);
+                      foreach($collEditos as $obj) {
+                        if (false == $this->collEditos->contains($obj)) {
+                          $this->collEditos->append($obj);
                         }
                       }
 
-                      $this->collEditoI18nsPartial = true;
+                      $this->collEditosPartial = true;
                     }
 
-                    return $collEditoI18ns;
+                    return $collEditos;
                 }
 
-                if($partial && $this->collEditoI18ns) {
-                    foreach($this->collEditoI18ns as $obj) {
+                if($partial && $this->collEditos) {
+                    foreach($this->collEditos as $obj) {
                         if($obj->isNew()) {
-                            $collEditoI18ns[] = $obj;
+                            $collEditos[] = $obj;
                         }
                     }
                 }
 
-                $this->collEditoI18ns = $collEditoI18ns;
-                $this->collEditoI18nsPartial = false;
+                $this->collEditos = $collEditos;
+                $this->collEditosPartial = false;
             }
         }
 
-        return $this->collEditoI18ns;
+        return $this->collEditos;
     }
 
     /**
-     * Sets a collection of EditoI18n objects related by a one-to-many relationship
+     * Sets a collection of Edito objects related by a one-to-many relationship
      * to the current object.
      * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
      * and new objects from the given Propel collection.
      *
-     * @param PropelCollection $editoI18ns A Propel collection.
+     * @param PropelCollection $editos A Propel collection.
      * @param PropelPDO $con Optional connection object
-     * @return Edito The current object (for fluent API support)
+     * @return EditoView The current object (for fluent API support)
      */
-    public function setEditoI18ns(PropelCollection $editoI18ns, PropelPDO $con = null)
+    public function setEditos(PropelCollection $editos, PropelPDO $con = null)
     {
-        $this->editoI18nsScheduledForDeletion = $this->getEditoI18ns(new Criteria(), $con)->diff($editoI18ns);
+        $this->editosScheduledForDeletion = $this->getEditos(new Criteria(), $con)->diff($editos);
 
-        foreach ($this->editoI18nsScheduledForDeletion as $editoI18nRemoved) {
-            $editoI18nRemoved->setEdito(null);
+        foreach ($this->editosScheduledForDeletion as $editoRemoved) {
+            $editoRemoved->setEditoView(null);
         }
 
-        $this->collEditoI18ns = null;
-        foreach ($editoI18ns as $editoI18n) {
-            $this->addEditoI18n($editoI18n);
+        $this->collEditos = null;
+        foreach ($editos as $edito) {
+            $this->addEdito($edito);
         }
 
-        $this->collEditoI18ns = $editoI18ns;
-        $this->collEditoI18nsPartial = false;
+        $this->collEditos = $editos;
+        $this->collEditosPartial = false;
 
         return $this;
     }
 
     /**
-     * Returns the number of related EditoI18n objects.
+     * Returns the number of related Edito objects.
      *
      * @param Criteria $criteria
      * @param boolean $distinct
      * @param PropelPDO $con
-     * @return int             Count of related EditoI18n objects.
+     * @return int             Count of related Edito objects.
      * @throws PropelException
      */
-    public function countEditoI18ns(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    public function countEditos(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
     {
-        $partial = $this->collEditoI18nsPartial && !$this->isNew();
-        if (null === $this->collEditoI18ns || null !== $criteria || $partial) {
-            if ($this->isNew() && null === $this->collEditoI18ns) {
+        $partial = $this->collEditosPartial && !$this->isNew();
+        if (null === $this->collEditos || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collEditos) {
                 return 0;
             }
 
             if($partial && !$criteria) {
-                return count($this->getEditoI18ns());
+                return count($this->getEditos());
             }
-            $query = EditoI18nQuery::create(null, $criteria);
+            $query = EditoQuery::create(null, $criteria);
             if ($distinct) {
                 $query->distinct();
             }
 
             return $query
-                ->filterByEdito($this)
+                ->filterByEditoView($this)
                 ->count($con);
         }
 
-        return count($this->collEditoI18ns);
+        return count($this->collEditos);
     }
 
     /**
-     * Method called to associate a EditoI18n object to this object
-     * through the EditoI18n foreign key attribute.
+     * Method called to associate a Edito object to this object
+     * through the Edito foreign key attribute.
      *
-     * @param    EditoI18n $l EditoI18n
-     * @return Edito The current object (for fluent API support)
+     * @param    Edito $l Edito
+     * @return EditoView The current object (for fluent API support)
      */
-    public function addEditoI18n(EditoI18n $l)
+    public function addEdito(Edito $l)
     {
-        if ($l && $locale = $l->getLocale()) {
-            $this->setLocale($locale);
-            $this->currentTranslations[$locale] = $l;
+        if ($this->collEditos === null) {
+            $this->initEditos();
+            $this->collEditosPartial = true;
         }
-        if ($this->collEditoI18ns === null) {
-            $this->initEditoI18ns();
-            $this->collEditoI18nsPartial = true;
-        }
-        if (!in_array($l, $this->collEditoI18ns->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
-            $this->doAddEditoI18n($l);
+        if (!in_array($l, $this->collEditos->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
+            $this->doAddEdito($l);
         }
 
         return $this;
     }
 
     /**
-     * @param	EditoI18n $editoI18n The editoI18n object to add.
+     * @param	Edito $edito The edito object to add.
      */
-    protected function doAddEditoI18n($editoI18n)
+    protected function doAddEdito($edito)
     {
-        $this->collEditoI18ns[]= $editoI18n;
-        $editoI18n->setEdito($this);
+        $this->collEditos[]= $edito;
+        $edito->setEditoView($this);
     }
 
     /**
-     * @param	EditoI18n $editoI18n The editoI18n object to remove.
-     * @return Edito The current object (for fluent API support)
+     * @param	Edito $edito The edito object to remove.
+     * @return EditoView The current object (for fluent API support)
      */
-    public function removeEditoI18n($editoI18n)
+    public function removeEdito($edito)
     {
-        if ($this->getEditoI18ns()->contains($editoI18n)) {
-            $this->collEditoI18ns->remove($this->collEditoI18ns->search($editoI18n));
-            if (null === $this->editoI18nsScheduledForDeletion) {
-                $this->editoI18nsScheduledForDeletion = clone $this->collEditoI18ns;
-                $this->editoI18nsScheduledForDeletion->clear();
+        if ($this->getEditos()->contains($edito)) {
+            $this->collEditos->remove($this->collEditos->search($edito));
+            if (null === $this->editosScheduledForDeletion) {
+                $this->editosScheduledForDeletion = clone $this->collEditos;
+                $this->editosScheduledForDeletion->clear();
             }
-            $this->editoI18nsScheduledForDeletion[]= $editoI18n;
-            $editoI18n->setEdito(null);
+            $this->editosScheduledForDeletion[]= $edito;
+            $edito->setEditoView(null);
+        }
+
+        return $this;
+    }
+
+
+    /**
+     * If this collection has already been initialized with
+     * an identical criteria, it returns the collection.
+     * Otherwise if this EditoView is new, it will return
+     * an empty collection; or if this EditoView has previously
+     * been saved, it will retrieve related Editos from storage.
+     *
+     * This method is protected by default in order to keep the public
+     * api reasonable.  You can provide public methods for those you
+     * actually need in EditoView.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @param string $join_behavior optional join type to use (defaults to Criteria::LEFT_JOIN)
+     * @return PropelObjectCollection|Edito[] List of Edito objects
+     */
+    public function getEditosJoinEditoComponent($criteria = null, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    {
+        $query = EditoQuery::create(null, $criteria);
+        $query->joinWith('EditoComponent', $join_behavior);
+
+        return $this->getEditos($query, $con);
+    }
+
+    /**
+     * Clears out the collEditoViewI18ns collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return EditoView The current object (for fluent API support)
+     * @see        addEditoViewI18ns()
+     */
+    public function clearEditoViewI18ns()
+    {
+        $this->collEditoViewI18ns = null; // important to set this to null since that means it is uninitialized
+        $this->collEditoViewI18nsPartial = null;
+
+        return $this;
+    }
+
+    /**
+     * reset is the collEditoViewI18ns collection loaded partially
+     *
+     * @return void
+     */
+    public function resetPartialEditoViewI18ns($v = true)
+    {
+        $this->collEditoViewI18nsPartial = $v;
+    }
+
+    /**
+     * Initializes the collEditoViewI18ns collection.
+     *
+     * By default this just sets the collEditoViewI18ns collection to an empty array (like clearcollEditoViewI18ns());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @param boolean $overrideExisting If set to true, the method call initializes
+     *                                        the collection even if it is not empty
+     *
+     * @return void
+     */
+    public function initEditoViewI18ns($overrideExisting = true)
+    {
+        if (null !== $this->collEditoViewI18ns && !$overrideExisting) {
+            return;
+        }
+        $this->collEditoViewI18ns = new PropelObjectCollection();
+        $this->collEditoViewI18ns->setModel('EditoViewI18n');
+    }
+
+    /**
+     * Gets an array of EditoViewI18n objects which contain a foreign key that references this object.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this EditoView is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @return PropelObjectCollection|EditoViewI18n[] List of EditoViewI18n objects
+     * @throws PropelException
+     */
+    public function getEditoViewI18ns($criteria = null, PropelPDO $con = null)
+    {
+        $partial = $this->collEditoViewI18nsPartial && !$this->isNew();
+        if (null === $this->collEditoViewI18ns || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collEditoViewI18ns) {
+                // return empty collection
+                $this->initEditoViewI18ns();
+            } else {
+                $collEditoViewI18ns = EditoViewI18nQuery::create(null, $criteria)
+                    ->filterByEditoView($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    if (false !== $this->collEditoViewI18nsPartial && count($collEditoViewI18ns)) {
+                      $this->initEditoViewI18ns(false);
+
+                      foreach($collEditoViewI18ns as $obj) {
+                        if (false == $this->collEditoViewI18ns->contains($obj)) {
+                          $this->collEditoViewI18ns->append($obj);
+                        }
+                      }
+
+                      $this->collEditoViewI18nsPartial = true;
+                    }
+
+                    return $collEditoViewI18ns;
+                }
+
+                if($partial && $this->collEditoViewI18ns) {
+                    foreach($this->collEditoViewI18ns as $obj) {
+                        if($obj->isNew()) {
+                            $collEditoViewI18ns[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collEditoViewI18ns = $collEditoViewI18ns;
+                $this->collEditoViewI18nsPartial = false;
+            }
+        }
+
+        return $this->collEditoViewI18ns;
+    }
+
+    /**
+     * Sets a collection of EditoViewI18n objects related by a one-to-many relationship
+     * to the current object.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $editoViewI18ns A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     * @return EditoView The current object (for fluent API support)
+     */
+    public function setEditoViewI18ns(PropelCollection $editoViewI18ns, PropelPDO $con = null)
+    {
+        $this->editoViewI18nsScheduledForDeletion = $this->getEditoViewI18ns(new Criteria(), $con)->diff($editoViewI18ns);
+
+        foreach ($this->editoViewI18nsScheduledForDeletion as $editoViewI18nRemoved) {
+            $editoViewI18nRemoved->setEditoView(null);
+        }
+
+        $this->collEditoViewI18ns = null;
+        foreach ($editoViewI18ns as $editoViewI18n) {
+            $this->addEditoViewI18n($editoViewI18n);
+        }
+
+        $this->collEditoViewI18ns = $editoViewI18ns;
+        $this->collEditoViewI18nsPartial = false;
+
+        return $this;
+    }
+
+    /**
+     * Returns the number of related EditoViewI18n objects.
+     *
+     * @param Criteria $criteria
+     * @param boolean $distinct
+     * @param PropelPDO $con
+     * @return int             Count of related EditoViewI18n objects.
+     * @throws PropelException
+     */
+    public function countEditoViewI18ns(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        $partial = $this->collEditoViewI18nsPartial && !$this->isNew();
+        if (null === $this->collEditoViewI18ns || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collEditoViewI18ns) {
+                return 0;
+            }
+
+            if($partial && !$criteria) {
+                return count($this->getEditoViewI18ns());
+            }
+            $query = EditoViewI18nQuery::create(null, $criteria);
+            if ($distinct) {
+                $query->distinct();
+            }
+
+            return $query
+                ->filterByEditoView($this)
+                ->count($con);
+        }
+
+        return count($this->collEditoViewI18ns);
+    }
+
+    /**
+     * Method called to associate a EditoViewI18n object to this object
+     * through the EditoViewI18n foreign key attribute.
+     *
+     * @param    EditoViewI18n $l EditoViewI18n
+     * @return EditoView The current object (for fluent API support)
+     */
+    public function addEditoViewI18n(EditoViewI18n $l)
+    {
+        if ($l && $locale = $l->getLocale()) {
+            $this->setLocale($locale);
+            $this->currentTranslations[$locale] = $l;
+        }
+        if ($this->collEditoViewI18ns === null) {
+            $this->initEditoViewI18ns();
+            $this->collEditoViewI18nsPartial = true;
+        }
+        if (!in_array($l, $this->collEditoViewI18ns->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
+            $this->doAddEditoViewI18n($l);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	EditoViewI18n $editoViewI18n The editoViewI18n object to add.
+     */
+    protected function doAddEditoViewI18n($editoViewI18n)
+    {
+        $this->collEditoViewI18ns[]= $editoViewI18n;
+        $editoViewI18n->setEditoView($this);
+    }
+
+    /**
+     * @param	EditoViewI18n $editoViewI18n The editoViewI18n object to remove.
+     * @return EditoView The current object (for fluent API support)
+     */
+    public function removeEditoViewI18n($editoViewI18n)
+    {
+        if ($this->getEditoViewI18ns()->contains($editoViewI18n)) {
+            $this->collEditoViewI18ns->remove($this->collEditoViewI18ns->search($editoViewI18n));
+            if (null === $this->editoViewI18nsScheduledForDeletion) {
+                $this->editoViewI18nsScheduledForDeletion = clone $this->collEditoViewI18ns;
+                $this->editoViewI18nsScheduledForDeletion->clear();
+            }
+            $this->editoViewI18nsScheduledForDeletion[]= $editoViewI18n;
+            $editoViewI18n->setEditoView(null);
         }
 
         return $this;
@@ -1647,9 +1763,9 @@ abstract class BaseEdito extends BaseObject implements Persistent
     public function clear()
     {
         $this->id = null;
-        $this->view_id = null;
-        $this->component_id = null;
-        $this->slug = null;
+        $this->name = null;
+        $this->source = null;
+        $this->preview = null;
         $this->created_at = null;
         $this->updated_at = null;
         $this->active = null;
@@ -1674,8 +1790,13 @@ abstract class BaseEdito extends BaseObject implements Persistent
     public function clearAllReferences($deep = false)
     {
         if ($deep) {
-            if ($this->collEditoI18ns) {
-                foreach ($this->collEditoI18ns as $o) {
+            if ($this->collEditos) {
+                foreach ($this->collEditos as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
+            if ($this->collEditoViewI18ns) {
+                foreach ($this->collEditoViewI18ns as $o) {
                     $o->clearAllReferences($deep);
                 }
             }
@@ -1685,22 +1806,24 @@ abstract class BaseEdito extends BaseObject implements Persistent
         $this->currentLocale = 'fr';
         $this->currentTranslations = null;
 
-        if ($this->collEditoI18ns instanceof PropelCollection) {
-            $this->collEditoI18ns->clearIterator();
+        if ($this->collEditos instanceof PropelCollection) {
+            $this->collEditos->clearIterator();
         }
-        $this->collEditoI18ns = null;
-        $this->aEditoView = null;
-        $this->aEditoComponent = null;
+        $this->collEditos = null;
+        if ($this->collEditoViewI18ns instanceof PropelCollection) {
+            $this->collEditoViewI18ns->clearIterator();
+        }
+        $this->collEditoViewI18ns = null;
     }
 
     /**
      * return the string representation of this object
      *
-     * @return string
+     * @return string The value of the 'name' column
      */
     public function __toString()
     {
-        return (string) $this->exportTo(EditoPeer::DEFAULT_STRING_FORMAT);
+        return (string) $this->getName();
     }
 
     /**
@@ -1718,11 +1841,11 @@ abstract class BaseEdito extends BaseObject implements Persistent
     /**
      * Mark the current object so that the update date doesn't get updated during next save
      *
-     * @return     Edito The current object (for fluent API support)
+     * @return     EditoView The current object (for fluent API support)
      */
     public function keepUpdateDateUnchanged()
     {
-        $this->modifiedColumns[] = EditoPeer::UPDATED_AT;
+        $this->modifiedColumns[] = EditoViewPeer::UPDATED_AT;
 
         return $this;
     }
@@ -1749,6 +1872,40 @@ abstract class BaseEdito extends BaseObject implements Persistent
     {
         return $this->getActiveLocale();
     }
+
+    public function getEditosActive($criteria = null, PropelPDO $con = null)
+    {
+
+        if ($criteria === null)
+        {
+            $criteria = new \Criteria();
+        }
+
+        $criteria->add(\Cungfoo\Model\EditoPeer::ACTIVE, true);
+
+
+        $criteria->addAlias('i18n_locale', \Cungfoo\Model\EditoI18nPeer::TABLE_NAME);
+        $criteria->addJoin(\Cungfoo\Model\EditoPeer::ID, \Cungfoo\Model\EditoI18nPeer::alias('i18n_locale', \Cungfoo\Model\EditoI18nPeer::ID), \Criteria::LEFT_JOIN);
+        $criteria->add(\Cungfoo\Model\EditoI18nPeer::alias('i18n_locale', \Cungfoo\Model\EditoI18nPeer::ACTIVE_LOCALE), true);
+        $criteria->add(\Cungfoo\Model\EditoI18nPeer::alias('i18n_locale', \Cungfoo\Model\EditoI18nPeer::LOCALE), $this->currentLocale);
+
+        return $this->getEditos($criteria, $con);
+    }
+    // crudable behavior
+
+    /**
+     * @param \Symfony\Component\Form\Form $form
+     * @param PropelPDO $con
+     * @return int             The number of rows affected by this insert/update and any referring fk objects' save() operations.
+     * @throws PropelException
+     * @throws Exception
+     * @see        doSave()
+     */
+    public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
+    {
+        return $this->save($con);
+    }
+
     // i18n behavior
 
     /**
@@ -1756,7 +1913,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
      *
      * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
      *
-     * @return    Edito The current object (for fluent API support)
+     * @return    EditoView The current object (for fluent API support)
      */
     public function setLocale($locale = 'fr')
     {
@@ -1781,12 +1938,12 @@ abstract class BaseEdito extends BaseObject implements Persistent
      * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
      * @param     PropelPDO $con an optional connection object
      *
-     * @return EditoI18n */
+     * @return EditoViewI18n */
     public function getTranslation($locale = 'fr', PropelPDO $con = null)
     {
         if (!isset($this->currentTranslations[$locale])) {
-            if (null !== $this->collEditoI18ns) {
-                foreach ($this->collEditoI18ns as $translation) {
+            if (null !== $this->collEditoViewI18ns) {
+                foreach ($this->collEditoViewI18ns as $translation) {
                     if ($translation->getLocale() == $locale) {
                         $this->currentTranslations[$locale] = $translation;
 
@@ -1795,15 +1952,15 @@ abstract class BaseEdito extends BaseObject implements Persistent
                 }
             }
             if ($this->isNew()) {
-                $translation = new EditoI18n();
+                $translation = new EditoViewI18n();
                 $translation->setLocale($locale);
             } else {
-                $translation = EditoI18nQuery::create()
+                $translation = EditoViewI18nQuery::create()
                     ->filterByPrimaryKey(array($this->getPrimaryKey(), $locale))
                     ->findOneOrCreate($con);
                 $this->currentTranslations[$locale] = $translation;
             }
-            $this->addEditoI18n($translation);
+            $this->addEditoViewI18n($translation);
         }
 
         return $this->currentTranslations[$locale];
@@ -1815,21 +1972,21 @@ abstract class BaseEdito extends BaseObject implements Persistent
      * @param     string $locale Locale to use for the translation, e.g. 'fr_FR'
      * @param     PropelPDO $con an optional connection object
      *
-     * @return    Edito The current object (for fluent API support)
+     * @return    EditoView The current object (for fluent API support)
      */
     public function removeTranslation($locale = 'fr', PropelPDO $con = null)
     {
         if (!$this->isNew()) {
-            EditoI18nQuery::create()
+            EditoViewI18nQuery::create()
                 ->filterByPrimaryKey(array($this->getPrimaryKey(), $locale))
                 ->delete($con);
         }
         if (isset($this->currentTranslations[$locale])) {
             unset($this->currentTranslations[$locale]);
         }
-        foreach ($this->collEditoI18ns as $key => $translation) {
+        foreach ($this->collEditoViewI18ns as $key => $translation) {
             if ($translation->getLocale() == $locale) {
-                unset($this->collEditoI18ns[$key]);
+                unset($this->collEditoViewI18ns[$key]);
                 break;
             }
         }
@@ -1842,58 +1999,10 @@ abstract class BaseEdito extends BaseObject implements Persistent
      *
      * @param     PropelPDO $con an optional connection object
      *
-     * @return EditoI18n */
+     * @return EditoViewI18n */
     public function getCurrentTranslation(PropelPDO $con = null)
     {
         return $this->getTranslation($this->getLocale(), $con);
-    }
-
-
-        /**
-         * Get the [name] column value.
-         *
-         * @return string
-         */
-        public function getName()
-        {
-        return $this->getCurrentTranslation()->getName();
-    }
-
-
-        /**
-         * Set the value of [name] column.
-         *
-         * @param string $v new value
-         * @return EditoI18n The current object (for fluent API support)
-         */
-        public function setName($v)
-        {    $this->getCurrentTranslation()->setName($v);
-
-        return $this;
-    }
-
-
-        /**
-         * Get the [description] column value.
-         *
-         * @return string
-         */
-        public function getDescription()
-        {
-        return $this->getCurrentTranslation()->getDescription();
-    }
-
-
-        /**
-         * Set the value of [description] column.
-         *
-         * @param string $v new value
-         * @return EditoI18n The current object (for fluent API support)
-         */
-        public function setDescription($v)
-        {    $this->getCurrentTranslation()->setDescription($v);
-
-        return $this;
     }
 
     /**
@@ -1923,7 +2032,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
          * Set the value of [seo_title] column.
          *
          * @param string $v new value
-         * @return EditoI18n The current object (for fluent API support)
+         * @return EditoViewI18n The current object (for fluent API support)
          */
         public function setSeoTitle($v)
         {    $this->getCurrentTranslation()->setSeoTitle($v);
@@ -1958,7 +2067,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
          * Set the value of [seo_description] column.
          *
          * @param string $v new value
-         * @return EditoI18n The current object (for fluent API support)
+         * @return EditoViewI18n The current object (for fluent API support)
          */
         public function setSeoDescription($v)
         {    $this->getCurrentTranslation()->setSeoDescription($v);
@@ -1993,7 +2102,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
          * Set the value of [seo_h1] column.
          *
          * @param string $v new value
-         * @return EditoI18n The current object (for fluent API support)
+         * @return EditoViewI18n The current object (for fluent API support)
          */
         public function setSeoH1($v)
         {    $this->getCurrentTranslation()->setSeoH1($v);
@@ -2028,7 +2137,7 @@ abstract class BaseEdito extends BaseObject implements Persistent
          * Set the value of [seo_keywords] column.
          *
          * @param string $v new value
-         * @return EditoI18n The current object (for fluent API support)
+         * @return EditoViewI18n The current object (for fluent API support)
          */
         public function setSeoKeywords($v)
         {    $this->getCurrentTranslation()->setSeoKeywords($v);
@@ -2052,111 +2161,12 @@ abstract class BaseEdito extends BaseObject implements Persistent
          * Set the value of [active_locale] column.
          *
          * @param boolean $v new value
-         * @return EditoI18n The current object (for fluent API support)
+         * @return EditoViewI18n The current object (for fluent API support)
          */
         public function setActiveLocale($v)
         {    $this->getCurrentTranslation()->setActiveLocale($v);
 
         return $this;
-    }
-
-    // crudable behavior
-
-    /**
-     * @param \Symfony\Component\Form\Form $form
-     * @param PropelPDO $con
-     * @return int             The number of rows affected by this insert/update and any referring fk objects' save() operations.
-     * @throws PropelException
-     * @throws Exception
-     * @see        doSave()
-     */
-    public function saveFromCrud(\Symfony\Component\Form\Form $form, PropelPDO $con = null)
-    {
-        return $this->save($con);
-    }
-
-    /**
-     * @return string
-     */
-    public function getUploadDir()
-    {
-        return 'uploads/editos';
-    }
-
-    /**
-     * @return string
-     */
-    public function getUploadRootDir()
-    {
-        return __DIR__.'/../../../../web/'.$this->getUploadDir();
-    }
-
-    /**
-     * @return void
-     */
-    public function getImage()
-    {
-        $peer = self::PEER;
-
-        $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
-            ->select('id')
-            ->usePortfolioUsageQuery()
-                ->filterByTableRef($peer::TABLE_NAME)
-                ->filterByColumnRef('image')
-                ->filterByElementId($this->getId())
-            ->endUse()
-            ->find()
-            ->toArray()
-        ;
-
-        return implode(';', $medias);
-    }
-
-    /**
-     * @return void
-     */
-    public function setImage($v)
-    {
-        $peer = self::PEER;
-
-        $values = explode(';', $v);
-
-        \Cungfoo\Model\PortfolioUsageQuery::create()
-            ->filterByTableRef($peer::TABLE_NAME)
-            ->filterByColumnRef('image')
-            ->filterByElementId($this->getId())
-            ->filterByMediaId($values, \Criteria::NOT_IN)
-            ->find()
-            ->delete()
-        ;
-
-        if ($v) {
-            foreach ($values as $index => $value) {
-                $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
-                    ->filterByTableRef($peer::TABLE_NAME)
-                    ->filterByColumnRef('image')
-                    ->filterByElementId($this->getId())
-                    ->filterByMediaId($value)
-                    ->findOne()
-                ;
-
-                if (!$usage) {
-                    $usage = new \Cungfoo\Model\PortfolioUsage();
-                    $usage
-                        ->setTableRef($peer::TABLE_NAME)
-                        ->setColumnRef('image')
-                        ->setElementId($this->getId())
-                        ->setMediaId($value)
-                    ;
-                }
-
-                $usage
-                    ->setSortableRank($index)
-                    ->save()
-                ;
-            }
-
-        }
     }
 
 }

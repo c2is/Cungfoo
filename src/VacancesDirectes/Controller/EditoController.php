@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\Request,
     Symfony\Component\Routing\Route;
 
 use Cungfoo\Model\EditoQuery;
+use VacancesDirectes\Controller\Component;
 
 class EditoController implements ControllerProviderInterface
 {
@@ -20,47 +21,65 @@ class EditoController implements ControllerProviderInterface
      */
     public function connect(Application $app)
     {
-        // creates a new controller based on the default route
-        $controllers = $app['controllers_factory'];
+        $ctl = $app['controllers_factory'];
 
-        $controllers->match('/{slug}.html', function (Request $request, $slug) use ($app)
-        {
-            $locale = $app['context']->get('language');
+        $ctl->match('/{edito}.html', array($this, 'edito'))
+            ->convert('edito', array($this, 'getEditoBySlug'))
+            ->bind('edito_by_slug')
+        ;
 
-            return $app->renderView('Edito/view.twig', array(
-                'edito' => $this->getEditoBySlug($slug, $locale),
-            ));
-        })->bind('edito_by_slug');
+        $ctl->match('/{edito}', array($this, 'edito'))
+            ->convert('edito', array($this, 'getEditoById'))
+            ->assert('id', '\d+')
+            ->bind('edito_by_id')
+        ;
 
-        $controllers->match('/{id}', function (Request $request, $id) use ($app)
-        {
-            $locale = $app['context']->get('language');
-
-            return $app->renderView('Edito/view.twig', array(
-                'edito' => $this->getEditoById($locale),
-            ));
-        })
-        ->assert('id', '\d+')
-        ->bind('edito_by_id');
-
-        return $controllers;
+        return $ctl;
     }
 
-    public function getEditoBySlug($slug, $locale)
-    {
+    function getEditoBySlug($edito) {
         return EditoQuery::create()
-            ->joinWithI18n($locale)
-            ->filterBySlug($slug)
+            ->joinWithI18n()
+            ->filterBySlug($edito)
             ->findOne()
         ;
     }
 
-    public function getEditoById($id, $locale)
-    {
+    function getEditoById($edito) {
         return EditoQuery::create()
-            ->joinWithI18n($locale)
-            ->filterById($id)
+            ->joinWithI18n()
+            ->filterById($edito)
             ->findOne()
         ;
+    }
+
+    function edito(Application $app, Request $request, $edito) {
+        if (!$edito) {
+            $app->abort(404);
+        }
+
+        $template  = $edito->getEditoView()->getSource();
+        $component = $this-> getComponent($edito, $app, $request);
+
+        return $app->renderView(sprintf('Edito/%s', $template), array(
+            'edito'     => $edito,
+            'component' => $component,
+        ));
+    }
+
+    function getComponent($edito, Application $app, Request $request) {
+        if ($editoComponent = $edito->getEditoComponent()) {
+            $editoComponentClass = $editoComponent->getAction();
+
+            if ($editoComponentClass) {
+                $componentClass = sprintf("\VacancesDirectes\Controller\Component\%s", $editoComponentClass);
+
+                if (class_exists($componentClass)) {
+                    return $componentClass::render($app, $request);
+                }
+            }
+        }
+
+        return null;
     }
 }

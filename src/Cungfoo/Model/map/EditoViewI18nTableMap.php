@@ -7,7 +7,7 @@ use \TableMap;
 
 
 /**
- * This class defines the structure of the 'edito_i18n' table.
+ * This class defines the structure of the 'edito_view_i18n' table.
  *
  *
  *
@@ -18,13 +18,13 @@ use \TableMap;
  *
  * @package    propel.generator.Cungfoo.Model.map
  */
-class EditoI18nTableMap extends TableMap
+class EditoViewI18nTableMap extends TableMap
 {
 
     /**
      * The (dot-path) name of this class
      */
-    const CLASS_NAME = 'Cungfoo.Model.map.EditoI18nTableMap';
+    const CLASS_NAME = 'Cungfoo.Model.map.EditoViewI18nTableMap';
 
     /**
      * Initialize the table attributes, columns and validators
@@ -36,16 +36,14 @@ class EditoI18nTableMap extends TableMap
     public function initialize()
     {
         // attributes
-        $this->setName('edito_i18n');
-        $this->setPhpName('EditoI18n');
-        $this->setClassname('Cungfoo\\Model\\EditoI18n');
+        $this->setName('edito_view_i18n');
+        $this->setPhpName('EditoViewI18n');
+        $this->setClassname('Cungfoo\\Model\\EditoViewI18n');
         $this->setPackage('Cungfoo.Model');
         $this->setUseIdGenerator(false);
         // columns
-        $this->addForeignPrimaryKey('id', 'Id', 'INTEGER' , 'edito', 'id', true, null, null);
+        $this->addForeignPrimaryKey('id', 'Id', 'INTEGER' , 'edito_view', 'id', true, null, null);
         $this->addPrimaryKey('locale', 'Locale', 'VARCHAR', true, 5, 'fr');
-        $this->addColumn('name', 'Name', 'VARCHAR', false, 255, null);
-        $this->addColumn('description', 'Description', 'LONGVARCHAR', false, null, null);
         $this->addColumn('seo_title', 'SeoTitle', 'VARCHAR', false, 255, null);
         $this->addColumn('seo_description', 'SeoDescription', 'LONGVARCHAR', false, null, null);
         $this->addColumn('seo_h1', 'SeoH1', 'VARCHAR', false, 255, null);
@@ -59,7 +57,7 @@ class EditoI18nTableMap extends TableMap
      */
     public function buildRelations()
     {
-        $this->addRelation('Edito', 'Cungfoo\\Model\\Edito', RelationMap::MANY_TO_ONE, array('id' => 'id', ), 'CASCADE', null);
+        $this->addRelation('EditoView', 'Cungfoo\\Model\\EditoView', RelationMap::MANY_TO_ONE, array('id' => 'id', ), 'CASCADE', null);
     } // buildRelations()
 
-} // EditoI18nTableMap
+} // EditoViewI18nTableMap

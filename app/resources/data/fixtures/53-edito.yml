@@ -2,33 +2,44 @@
     1:
         Slug: conditions-generales-de-location
         Active: true
+        ViewId: 1
     2:
         Slug: mentions-legales-credits
         Active: true
+        ViewId: 1
     3:
         Slug: charte-qualite
         Active: true
+        ViewId: 1
     4:
         Slug: faq
         Active: true
+        ViewId: 1
     5:
         Slug: guide-pratique
         Active: true
+        ViewId: 1
     6:
         Slug: plan-du-site
         Active: true
+        ViewId: 1
     7:
         Slug: credits
         Active: true
+        ViewId: 1
     8:
         Slug: mentions-legales
         Active: true
+        ViewId: 1
     9:
         Slug: offre-speciale-noel
         Active: true
+        ViewId: 1
     10:
         Slug: conditions-generales
         Active: true
+        ViewId: 1
     11:
         Slug: bouyguestelecom
         Active: true
+        ViewId: 1

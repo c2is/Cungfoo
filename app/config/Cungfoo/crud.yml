@@ -154,3 +154,11 @@ crud:
             prefix: /portfolio/tags-categories
             model: \Cungfoo\Model\PortfolioTagCategory
             form: \Cungfoo\Form\Type\PortfolioTagCategoryType
+        edito_view:
+            prefix: /editos/views
+            model: \Cungfoo\Model\EditoView
+            form: \Cungfoo\Form\Type\EditoViewType
+        edito_component:
+            prefix: /editos/components
+            model: \Cungfoo\Model\EditoComponent
+            form: \Cungfoo\Form\Type\EditoComponentType

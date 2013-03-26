@@ -7,7 +7,7 @@ use \TableMap;
 
 
 /**
- * This class defines the structure of the 'edito' table.
+ * This class defines the structure of the 'edito_component' table.
  *
  *
  *
@@ -18,13 +18,13 @@ use \TableMap;
  *
  * @package    propel.generator.Cungfoo.Model.map
  */
-class EditoTableMap extends TableMap
+class EditoComponentTableMap extends TableMap
 {
 
     /**
      * The (dot-path) name of this class
      */
-    const CLASS_NAME = 'Cungfoo.Model.map.EditoTableMap';
+    const CLASS_NAME = 'Cungfoo.Model.map.EditoComponentTableMap';
 
     /**
      * Initialize the table attributes, columns and validators
@@ -36,16 +36,17 @@ class EditoTableMap extends TableMap
     public function initialize()
     {
         // attributes
-        $this->setName('edito');
-        $this->setPhpName('Edito');
-        $this->setClassname('Cungfoo\\Model\\Edito');
+        $this->setName('edito_component');
+        $this->setPhpName('EditoComponent');
+        $this->setClassname('Cungfoo\\Model\\EditoComponent');
         $this->setPackage('Cungfoo.Model');
         $this->setUseIdGenerator(true);
         // columns
         $this->addPrimaryKey('id', 'Id', 'INTEGER', true, null, null);
-        $this->addForeignKey('view_id', 'ViewId', 'INTEGER', 'edito_view', 'id', true, null, null);
-        $this->addForeignKey('component_id', 'ComponentId', 'INTEGER', 'edito_component', 'id', false, null, null);
-        $this->addColumn('slug', 'Slug', 'VARCHAR', false, 255, null);
+        $this->addColumn('name', 'Name', 'VARCHAR', false, 255, null);
+        $this->getColumn('name', false)->setPrimaryString(true);
+        $this->addColumn('action', 'Action', 'LONGVARCHAR', true, null, null);
+        $this->addColumn('description', 'Description', 'LONGVARCHAR', false, null, null);
         $this->addColumn('created_at', 'CreatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('updated_at', 'UpdatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('active', 'Active', 'BOOLEAN', false, 1, false);
@@ -57,9 +58,8 @@ class EditoTableMap extends TableMap
      */
     public function buildRelations()
     {
-        $this->addRelation('EditoView', 'Cungfoo\\Model\\EditoView', RelationMap::MANY_TO_ONE, array('view_id' => 'id', ), 'CASCADE', null);
-        $this->addRelation('EditoComponent', 'Cungfoo\\Model\\EditoComponent', RelationMap::MANY_TO_ONE, array('component_id' => 'id', ), 'CASCADE', null);
-        $this->addRelation('EditoI18n', 'Cungfoo\\Model\\EditoI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'EditoI18ns');
+        $this->addRelation('Edito', 'Cungfoo\\Model\\Edito', RelationMap::ONE_TO_MANY, array('id' => 'component_id', ), 'CASCADE', null, 'Editos');
+        $this->addRelation('EditoComponentI18n', 'Cungfoo\\Model\\EditoComponentI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'EditoComponentI18ns');
     } // buildRelations()
 
     /**
@@ -80,30 +80,29 @@ class EditoTableMap extends TableMap
   'active_column' => 'active',
   'active_locale_column' => 'active_locale',
 ),
-            'i18n' =>  array (
-  'i18n_table' => '%TABLE%_i18n',
-  'i18n_phpname' => '%PHPNAME%I18n',
-  'i18n_columns' => 'name, description,seo_title,seo_description,seo_h1,seo_keywords,active_locale',
-  'i18n_pk_name' => NULL,
-  'locale_column' => 'locale',
-  'default_locale' => 'fr',
-  'locale_alias' => '',
-),
             'crudable' =>  array (
   'route_prefix' => '/',
-  'crud_prefix' => '/editos',
+  'crud_prefix' => '/editos/components',
   'crud_model' => NULL,
   'crud_form' => NULL,
-  'crud_type_file' => 'image',
+  'crud_type_file' => NULL,
   'crud_search' => 'name',
-  'crud_type_richtext' => 'description',
 ),
             'seo' =>  array (
   'seo_columns' => 'seo_title,seo_description,seo_h1,seo_keywords',
   'seo_description' => 'LONGVARCHAR',
   'seo_keywords' => 'LONGVARCHAR',
 ),
+            'i18n' =>  array (
+  'i18n_table' => '%TABLE%_i18n',
+  'i18n_phpname' => '%PHPNAME%I18n',
+  'i18n_columns' => ',seo_title,seo_description,seo_h1,seo_keywords,active_locale',
+  'i18n_pk_name' => NULL,
+  'locale_column' => 'locale',
+  'default_locale' => 'fr',
+  'locale_alias' => '',
+),
         );
     } // getBehaviors()
 
-} // EditoTableMap
+} // EditoComponentTableMap

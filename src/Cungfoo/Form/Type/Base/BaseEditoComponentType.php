@@ -10,13 +10,13 @@ use Symfony\Component\Form\FormBuilderInterface,
 use Cungfoo\Form\Type\AppAwareType;
 
 /**
- * Test class for Additional builder enabled on the 'edito' table.
+ * Test class for Additional builder enabled on the 'edito_component' table.
  *
  * @author  Morgan Brunot <brunot.morgan@gmail.com>
  *          Denis Roussel <denis.roussel@gmail.com>
  * @package propel.generator.Cungfoo.Form.Type.Base
  */
-class BaseEditoType extends AppAwareType
+class BaseEditoComponentType extends AppAwareType
 {
     public function getIdType()
     {
@@ -27,51 +27,49 @@ class BaseEditoType extends AppAwareType
     {
         return array(
             'required' => false,
-            'label' => 'edito.id',
+            'label' => 'edito_component.id',
         );
     }
 
-    public function getEditoViewType()
-    {
-        return 'model';
-    }
-
-    public function getEditoViewOptions()
-    {
-        return array(
-            'required' => false,
-            'label' => 'edito.view_id',
-            'constraints' => array(
-                        new Assert\NotBlank(),
-                    ),
-            'class' => 'Cungfoo\Model\EditoView',
-        );
-    }
-
-    public function getEditoComponentType()
-    {
-        return 'model';
-    }
-
-    public function getEditoComponentOptions()
-    {
-        return array(
-            'required' => false,
-            'label' => 'edito.component_id',
-            'class' => 'Cungfoo\Model\EditoComponent',
-        );
-    }
-
-    public function getSlugType()
+    public function getNameType()
     {
         return 'text';
     }
 
-    public function getSlugOptions()
+    public function getNameOptions()
     {
         return array(
             'required' => false,
-            'label' => 'edito.slug',
+            'label' => 'edito_component.name',
+        );
+    }
+
+    public function getActionType()
+    {
+        return 'textarea';
+    }
+
+    public function getActionOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'edito_component.action',
+            'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+        );
+    }
+
+    public function getDescriptionType()
+    {
+        return 'textarea';
+    }
+
+    public function getDescriptionOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'edito_component.description',
         );
     }
 
@@ -84,7 +82,7 @@ class BaseEditoType extends AppAwareType
     {
         return array(
             'required' => false,
-            'label' => 'edito.created_at',
+            'label' => 'edito_component.created_at',
             'widget' => 'single_text',
         );
     }
@@ -98,7 +96,7 @@ class BaseEditoType extends AppAwareType
     {
         return array(
             'required' => false,
-            'label' => 'edito.updated_at',
+            'label' => 'edito_component.updated_at',
             'widget' => 'single_text',
         );
     }
@@ -112,46 +110,7 @@ class BaseEditoType extends AppAwareType
     {
         return array(
             'required' => false,
-            'label' => 'edito.active',
-        );
-    }
-
-    public function getImageType()
-    {
-        return 'cungfoo_file';
-    }
-
-    public function getImageOptions()
-    {
-        return array(
-            'required' => false,
-            'label' => 'edito.image',
-        );
-    }
-
-    public function getNameType()
-    {
-        return 'text';
-    }
-
-    public function getNameOptions()
-    {
-        return array(
-            'required' => false,
-            'label' => 'edito_i18n.name',
-        );
-    }
-
-    public function getDescriptionType()
-    {
-        return 'textrich';
-    }
-
-    public function getDescriptionOptions()
-    {
-        return array(
-            'required' => false,
-            'label' => 'edito_i18n.description',
+            'label' => 'edito_component.active',
         );
     }
 
@@ -164,7 +123,7 @@ class BaseEditoType extends AppAwareType
     {
         return array(
             'required' => false,
-            'label' => 'edito_i18n.seo_title',
+            'label' => 'edito_component_i18n.seo_title',
         );
     }
 
@@ -177,7 +136,7 @@ class BaseEditoType extends AppAwareType
     {
         return array(
             'required' => false,
-            'label' => 'edito_i18n.seo_description',
+            'label' => 'edito_component_i18n.seo_description',
         );
     }
 
@@ -190,7 +149,7 @@ class BaseEditoType extends AppAwareType
     {
         return array(
             'required' => false,
-            'label' => 'edito_i18n.seo_h1',
+            'label' => 'edito_component_i18n.seo_h1',
         );
     }
 
@@ -203,7 +162,7 @@ class BaseEditoType extends AppAwareType
     {
         return array(
             'required' => false,
-            'label' => 'edito_i18n.seo_keywords',
+            'label' => 'edito_component_i18n.seo_keywords',
         );
     }
 
@@ -216,7 +175,7 @@ class BaseEditoType extends AppAwareType
     {
         return array(
             'required' => false,
-            'label' => 'edito_i18n.active_locale',
+            'label' => 'edito_component_i18n.active_locale',
         );
     }
 
@@ -226,20 +185,17 @@ class BaseEditoType extends AppAwareType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('id', $this->getIdType(), $this->getIdOptions());
-        $builder->add('edito_view', $this->getEditoViewType(), $this->getEditoViewOptions());
-        $builder->add('edito_component', $this->getEditoComponentType(), $this->getEditoComponentOptions());
-        $builder->add('slug', $this->getSlugType(), $this->getSlugOptions());
+        $builder->add('name', $this->getNameType(), $this->getNameOptions());
+        $builder->add('action', $this->getActionType(), $this->getActionOptions());
+        $builder->add('description', $this->getDescriptionType(), $this->getDescriptionOptions());
         $builder->add('created_at', $this->getCreatedAtType(), $this->getCreatedAtOptions());
         $builder->add('updated_at', $this->getUpdatedAtType(), $this->getUpdatedAtOptions());
-        $builder->add('active', $this->getActiveType(), $this->getActiveOptions());
-        $builder->add('image', $this->getImageType(), $this->getImageOptions());$builder->add('editoI18ns', 'translation_collection', array(
-            'i18n_class' => 'Cungfoo\Model\EditoI18n',
-            'label' => 'editoI18ns',
+        $builder->add('active', $this->getActiveType(), $this->getActiveOptions());$builder->add('edito_componentI18ns', 'translation_collection', array(
+            'i18n_class' => 'Cungfoo\Model\EditoComponentI18n',
+            'label' => 'edito_componentI18ns',
             'required' => false,
             'languages' => array('fr', 'de'),
             'columns' => array(
-                'name' => array_merge(array('type' => $this->getNameType()), $this->getNameOptions()),
-                'description' => array_merge(array('type' => $this->getDescriptionType()), $this->getDescriptionOptions()),
                 'seo_title' => array_merge(array('type' => $this->getSeoTitleType()), $this->getSeoTitleOptions()),
                 'seo_description' => array_merge(array('type' => $this->getSeoDescriptionType()), $this->getSeoDescriptionOptions()),
                 'seo_h1' => array_merge(array('type' => $this->getSeoH1Type()), $this->getSeoH1Options()),
@@ -258,7 +214,7 @@ class BaseEditoType extends AppAwareType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Cungfoo\Model\Edito',
+            'data_class' => 'Cungfoo\Model\EditoComponent',
         ));
     }
 
@@ -267,7 +223,7 @@ class BaseEditoType extends AppAwareType
      */
     public function getName()
     {
-        return 'Edito';
+        return 'EditoComponent';
     }
 
-} // BaseEditoType
+} // BaseEditoComponentType

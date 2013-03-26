@@ -31,13 +31,6 @@ class EditoType extends BaseEditoType
         //;
     }
 
-    public function getSlugOptions()
-    {
-        return array_merge(parent::getSlugOptions(), array('attr' => array(
-            'readonly' => 'readonly',
-        )));
-    }
-
     /**
      * {@inheritdoc}
      */
@@ -49,7 +42,15 @@ class EditoType extends BaseEditoType
                     'title'         => 'crud.tab.datas',
                     'content'       => array(
                         'slug',
+                        'edito_view',
+                        'edito_component',
                         'editoI18ns'
+                    )
+                ),
+                array(
+                    'title'         => 'crud.tab.medias',
+                    'content'       => array(
+                        'image',
                     )
                 ),
                 array(

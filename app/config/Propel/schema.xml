@@ -752,11 +752,21 @@
 
     <table name="edito">
         <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true"/>
+        <column name="view_id" type="integer" required="true"/>
+        <column name="component_id" type="integer"/>
         <column name="slug" type="varchar"/>
-        <column name="name" type="varchar" required="false"/>
-        <column name="description" type="longvarchar" required="true"/>
+        <column name="name" type="varchar"/>
+        <column name="description" type="longvarchar"/>
         <behavior name="timestampable" />
         <behavior name="active" />
+
+        <foreign-key foreignTable="edito_view" onDelete="CASCADE">
+            <reference local="view_id" foreign="id"/>
+        </foreign-key>
+
+        <foreign-key foreignTable="edito_component" onDelete="CASCADE">
+            <reference local="component_id" foreign="id"/>
+        </foreign-key>
 
         <unique name="unique_slug">
             <unique-column name="slug"/>
@@ -770,6 +780,35 @@
             <parameter name="crud_prefix" value="/editos" />
             <parameter name="crud_search" value="name" />
             <parameter name="crud_type_richtext" value="description" />
+            <parameter name="crud_type_file" value="image" />
+        </behavior>
+    </table>
+
+    <table name="edito_view">
+        <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true"/>
+        <column name="name" type="varchar" primaryString="true"/>
+        <column name="source" type="longvarchar" required="true"/>
+        <column name="preview" type="longvarchar"/>
+        <behavior name="timestampable" />
+        <behavior name="active" />
+
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/editos/views" />
+            <parameter name="crud_search" value="name" />
+        </behavior>
+    </table>
+
+    <table name="edito_component">
+        <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true"/>
+        <column name="name" type="varchar" primaryString="true"/>
+        <column name="action" type="longvarchar" required="true"/>
+        <column name="description" type="longvarchar"/>
+        <behavior name="timestampable" />
+        <behavior name="active" />
+
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/editos/components" />
+            <parameter name="crud_search" value="name" />
         </behavior>
     </table>
 

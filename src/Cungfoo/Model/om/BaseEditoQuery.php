@@ -13,9 +13,11 @@ use \PropelException;
 use \PropelObjectCollection;
 use \PropelPDO;
 use Cungfoo\Model\Edito;
+use Cungfoo\Model\EditoComponent;
 use Cungfoo\Model\EditoI18n;
 use Cungfoo\Model\EditoPeer;
 use Cungfoo\Model\EditoQuery;
+use Cungfoo\Model\EditoView;
 
 /**
  * Base class that represents a query for the 'edito' table.
@@ -23,12 +25,16 @@ use Cungfoo\Model\EditoQuery;
  *
  *
  * @method EditoQuery orderById($order = Criteria::ASC) Order by the id column
+ * @method EditoQuery orderByViewId($order = Criteria::ASC) Order by the view_id column
+ * @method EditoQuery orderByComponentId($order = Criteria::ASC) Order by the component_id column
  * @method EditoQuery orderBySlug($order = Criteria::ASC) Order by the slug column
  * @method EditoQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method EditoQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  * @method EditoQuery orderByActive($order = Criteria::ASC) Order by the active column
  *
  * @method EditoQuery groupById() Group by the id column
+ * @method EditoQuery groupByViewId() Group by the view_id column
+ * @method EditoQuery groupByComponentId() Group by the component_id column
  * @method EditoQuery groupBySlug() Group by the slug column
  * @method EditoQuery groupByCreatedAt() Group by the created_at column
  * @method EditoQuery groupByUpdatedAt() Group by the updated_at column
@@ -38,6 +44,14 @@ use Cungfoo\Model\EditoQuery;
  * @method EditoQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
  * @method EditoQuery innerJoin($relation) Adds a INNER JOIN clause to the query
  *
+ * @method EditoQuery leftJoinEditoView($relationAlias = null) Adds a LEFT JOIN clause to the query using the EditoView relation
+ * @method EditoQuery rightJoinEditoView($relationAlias = null) Adds a RIGHT JOIN clause to the query using the EditoView relation
+ * @method EditoQuery innerJoinEditoView($relationAlias = null) Adds a INNER JOIN clause to the query using the EditoView relation
+ *
+ * @method EditoQuery leftJoinEditoComponent($relationAlias = null) Adds a LEFT JOIN clause to the query using the EditoComponent relation
+ * @method EditoQuery rightJoinEditoComponent($relationAlias = null) Adds a RIGHT JOIN clause to the query using the EditoComponent relation
+ * @method EditoQuery innerJoinEditoComponent($relationAlias = null) Adds a INNER JOIN clause to the query using the EditoComponent relation
+ *
  * @method EditoQuery leftJoinEditoI18n($relationAlias = null) Adds a LEFT JOIN clause to the query using the EditoI18n relation
  * @method EditoQuery rightJoinEditoI18n($relationAlias = null) Adds a RIGHT JOIN clause to the query using the EditoI18n relation
  * @method EditoQuery innerJoinEditoI18n($relationAlias = null) Adds a INNER JOIN clause to the query using the EditoI18n relation
@@ -45,12 +59,16 @@ use Cungfoo\Model\EditoQuery;
  * @method Edito findOne(PropelPDO $con = null) Return the first Edito matching the query
  * @method Edito findOneOrCreate(PropelPDO $con = null) Return the first Edito matching the query, or a new Edito object populated from the query conditions when no match is found
  *
+ * @method Edito findOneByViewId(int $view_id) Return the first Edito filtered by the view_id column
+ * @method Edito findOneByComponentId(int $component_id) Return the first Edito filtered by the component_id column
  * @method Edito findOneBySlug(string $slug) Return the first Edito filtered by the slug column
  * @method Edito findOneByCreatedAt(string $created_at) Return the first Edito filtered by the created_at column
  * @method Edito findOneByUpdatedAt(string $updated_at) Return the first Edito filtered by the updated_at column
  * @method Edito findOneByActive(boolean $active) Return the first Edito filtered by the active column
  *
  * @method array findById(int $id) Return Edito objects filtered by the id column
+ * @method array findByViewId(int $view_id) Return Edito objects filtered by the view_id column
+ * @method array findByComponentId(int $component_id) Return Edito objects filtered by the component_id column
  * @method array findBySlug(string $slug) Return Edito objects filtered by the slug column
  * @method array findByCreatedAt(string $created_at) Return Edito objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return Edito objects filtered by the updated_at column
@@ -158,7 +176,7 @@ abstract class BaseEditoQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `slug`, `created_at`, `updated_at`, `active` FROM `edito` WHERE `id` = :p0';
+        $sql = 'SELECT `id`, `view_id`, `component_id`, `slug`, `created_at`, `updated_at`, `active` FROM `edito` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -272,6 +290,92 @@ abstract class BaseEditoQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(EditoPeer::ID, $id, $comparison);
+    }
+
+    /**
+     * Filter the query on the view_id column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByViewId(1234); // WHERE view_id = 1234
+     * $query->filterByViewId(array(12, 34)); // WHERE view_id IN (12, 34)
+     * $query->filterByViewId(array('min' => 12)); // WHERE view_id > 12
+     * </code>
+     *
+     * @see       filterByEditoView()
+     *
+     * @param     mixed $viewId The value to use as filter.
+     *              Use scalar values for equality.
+     *              Use array values for in_array() equivalent.
+     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return EditoQuery The current query, for fluid interface
+     */
+    public function filterByViewId($viewId = null, $comparison = null)
+    {
+        if (is_array($viewId)) {
+            $useMinMax = false;
+            if (isset($viewId['min'])) {
+                $this->addUsingAlias(EditoPeer::VIEW_ID, $viewId['min'], Criteria::GREATER_EQUAL);
+                $useMinMax = true;
+            }
+            if (isset($viewId['max'])) {
+                $this->addUsingAlias(EditoPeer::VIEW_ID, $viewId['max'], Criteria::LESS_EQUAL);
+                $useMinMax = true;
+            }
+            if ($useMinMax) {
+                return $this;
+            }
+            if (null === $comparison) {
+                $comparison = Criteria::IN;
+            }
+        }
+
+        return $this->addUsingAlias(EditoPeer::VIEW_ID, $viewId, $comparison);
+    }
+
+    /**
+     * Filter the query on the component_id column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByComponentId(1234); // WHERE component_id = 1234
+     * $query->filterByComponentId(array(12, 34)); // WHERE component_id IN (12, 34)
+     * $query->filterByComponentId(array('min' => 12)); // WHERE component_id > 12
+     * </code>
+     *
+     * @see       filterByEditoComponent()
+     *
+     * @param     mixed $componentId The value to use as filter.
+     *              Use scalar values for equality.
+     *              Use array values for in_array() equivalent.
+     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return EditoQuery The current query, for fluid interface
+     */
+    public function filterByComponentId($componentId = null, $comparison = null)
+    {
+        if (is_array($componentId)) {
+            $useMinMax = false;
+            if (isset($componentId['min'])) {
+                $this->addUsingAlias(EditoPeer::COMPONENT_ID, $componentId['min'], Criteria::GREATER_EQUAL);
+                $useMinMax = true;
+            }
+            if (isset($componentId['max'])) {
+                $this->addUsingAlias(EditoPeer::COMPONENT_ID, $componentId['max'], Criteria::LESS_EQUAL);
+                $useMinMax = true;
+            }
+            if ($useMinMax) {
+                return $this;
+            }
+            if (null === $comparison) {
+                $comparison = Criteria::IN;
+            }
+        }
+
+        return $this->addUsingAlias(EditoPeer::COMPONENT_ID, $componentId, $comparison);
     }
 
     /**
@@ -414,6 +518,158 @@ abstract class BaseEditoQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(EditoPeer::ACTIVE, $active, $comparison);
+    }
+
+    /**
+     * Filter the query by a related EditoView object
+     *
+     * @param   EditoView|PropelObjectCollection $editoView The related object(s) to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   EditoQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByEditoView($editoView, $comparison = null)
+    {
+        if ($editoView instanceof EditoView) {
+            return $this
+                ->addUsingAlias(EditoPeer::VIEW_ID, $editoView->getId(), $comparison);
+        } elseif ($editoView instanceof PropelObjectCollection) {
+            if (null === $comparison) {
+                $comparison = Criteria::IN;
+            }
+
+            return $this
+                ->addUsingAlias(EditoPeer::VIEW_ID, $editoView->toKeyValue('PrimaryKey', 'Id'), $comparison);
+        } else {
+            throw new PropelException('filterByEditoView() only accepts arguments of type EditoView or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the EditoView relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return EditoQuery The current query, for fluid interface
+     */
+    public function joinEditoView($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('EditoView');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'EditoView');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the EditoView relation EditoView object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\EditoViewQuery A secondary query class using the current class as primary query
+     */
+    public function useEditoViewQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        return $this
+            ->joinEditoView($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'EditoView', '\Cungfoo\Model\EditoViewQuery');
+    }
+
+    /**
+     * Filter the query by a related EditoComponent object
+     *
+     * @param   EditoComponent|PropelObjectCollection $editoComponent The related object(s) to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   EditoQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByEditoComponent($editoComponent, $comparison = null)
+    {
+        if ($editoComponent instanceof EditoComponent) {
+            return $this
+                ->addUsingAlias(EditoPeer::COMPONENT_ID, $editoComponent->getId(), $comparison);
+        } elseif ($editoComponent instanceof PropelObjectCollection) {
+            if (null === $comparison) {
+                $comparison = Criteria::IN;
+            }
+
+            return $this
+                ->addUsingAlias(EditoPeer::COMPONENT_ID, $editoComponent->toKeyValue('PrimaryKey', 'Id'), $comparison);
+        } else {
+            throw new PropelException('filterByEditoComponent() only accepts arguments of type EditoComponent or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the EditoComponent relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return EditoQuery The current query, for fluid interface
+     */
+    public function joinEditoComponent($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('EditoComponent');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'EditoComponent');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the EditoComponent relation EditoComponent object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\EditoComponentQuery A secondary query class using the current class as primary query
+     */
+    public function useEditoComponentQuery($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    {
+        return $this
+            ->joinEditoComponent($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'EditoComponent', '\Cungfoo\Model\EditoComponentQuery');
     }
 
     /**
