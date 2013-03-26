@@ -4,3 +4,8 @@
         Source: default.html.twig
         Preview: null
         Active: true
+    2:
+        Name: Image
+        Source: image.html.twig
+        Preview: null
+        Active: true

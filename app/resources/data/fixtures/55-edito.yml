@@ -1,45 +1,61 @@
 \Cungfoo\Model\Edito:
     1:
+        ViewId: 1
+        ComponentId: null
         Slug: conditions-generales-de-location
         Active: true
-        ViewId: 1
     2:
+        ViewId: 1
+        ComponentId: null
         Slug: mentions-legales-credits
         Active: true
-        ViewId: 1
     3:
+        ViewId: 1
+        ComponentId: null
         Slug: charte-qualite
         Active: true
-        ViewId: 1
     4:
+        ViewId: 1
+        ComponentId: null
         Slug: faq
         Active: true
-        ViewId: 1
     5:
+        ViewId: 1
+        ComponentId: null
         Slug: guide-pratique
         Active: true
-        ViewId: 1
     6:
+        ViewId: 1
+        ComponentId: null
         Slug: plan-du-site
         Active: true
-        ViewId: 1
     7:
+        ViewId: 1
+        ComponentId: null
         Slug: credits
         Active: true
-        ViewId: 1
     8:
+        ViewId: 1
+        ComponentId: null
         Slug: mentions-legales
         Active: true
-        ViewId: 1
     9:
+        ViewId: 1
+        ComponentId: null
         Slug: offre-speciale-noel
         Active: true
-        ViewId: 1
     10:
+        ViewId: 1
+        ComponentId: null
         Slug: conditions-generales
         Active: true
-        ViewId: 1
     11:
+        ViewId: 1
+        ComponentId: null
         Slug: bouyguestelecom
         Active: true
-        ViewId: 1
+    12:
+        ViewId: 2
+        ComponentId: 1
+        Slug: demande-de-brochure
+        Active: true

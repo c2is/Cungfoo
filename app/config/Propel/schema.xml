@@ -1203,4 +1203,26 @@
         </foreign-key>
     </table>
 
+    <table name="coordonnees_contact">
+        <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true"/>
+        <column name="civilite" type="enum" valueSet="madame,mademoiselle,monsieur"/>
+        <column name="nom" type="varchar" required="true"/>
+        <column name="prenom" type="varchar" required="true"/>
+        <column name="type" type="enum" valueSet="particulier,professionnel"/>
+        <column name="adresse" type="longvarchar"/>
+        <column name="ville" type="varchar" required="true"/>
+        <column name="code_postal" type="varchar" required="true"/>
+        <column name="pays" type="varchar" required="true"/>
+        <column name="email" type="varchar" required="true"/>
+        <column name="telephone" type="varchar"/>
+        <column name="fax" type="varchar"/>
+        <column name="message" type="longvarchar" required="true"/>
+        <behavior name="timestampable"/>
+        <behavior name="active"/>
+
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/coordonnees/contacts" />
+        </behavior>
+    </table>
+
 </database>

@@ -32262,3 +32262,24 @@
         ElementId: 2
         SortableRank: 0
         Active: true
+    4610:
+        MediaId: 2693
+        TableRef: edito
+        ColumnRef: image
+        ElementId: 8
+        SortableRank: 0
+        Active: true
+    4611:
+        MediaId: 2693
+        TableRef: edito
+        ColumnRef: image
+        ElementId: 0
+        SortableRank: 0
+        Active: true
+    4612:
+        MediaId: 2693
+        TableRef: edito
+        ColumnRef: image
+        ElementId: 12
+        SortableRank: 0
+        Active: true

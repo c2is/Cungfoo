@@ -1,0 +1,6 @@
+\Cungfoo\Model\EditoComponent:
+    1:
+        Name: 'Demande de brochure'
+        Action: DemandeBrochureComponent
+        Description: null
+        Active: true

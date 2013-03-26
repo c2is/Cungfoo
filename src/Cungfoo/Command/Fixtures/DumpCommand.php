@@ -77,6 +77,8 @@ class DumpCommand extends BaseCommand
         "\\Cungfoo\\Model\\PersonnageI18n",
         "\\Cungfoo\\Model\\Avantage",
         "\\Cungfoo\\Model\\AvantageI18n",
+        "\\Cungfoo\\Model\\EditoView",
+        "\\Cungfoo\\Model\\EditoComponent",
         "\\Cungfoo\\Model\\Edito",
         "\\Cungfoo\\Model\\TopCamping",
         "\\Cungfoo\\Model\\MiseEnAvant",
@@ -105,7 +107,6 @@ class DumpCommand extends BaseCommand
         "\\Cungfoo\\Model\\PortfolioTagI18n",
         "\\Cungfoo\\Model\\PortfolioUsage",
         "\\Cungfoo\\Model\\PortfolioMediaTag",
-        "\\Cungfoo\\Model\\EditoView",
     );
 
     protected function configure()

@@ -162,3 +162,7 @@ crud:
             prefix: /editos/components
             model: \Cungfoo\Model\EditoComponent
             form: \Cungfoo\Form\Type\EditoComponentType
+        coordonnees_contact:
+            prefix: /coordonnees/contacts
+            model: \Cungfoo\Model\CoordonneesContact
+            form: \Cungfoo\Form\Type\CoordonneesContactType
