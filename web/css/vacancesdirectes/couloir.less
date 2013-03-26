@@ -278,16 +278,22 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
   .whiteBg{background-color:@colorBgBlanc;padding: 20px 20px 20px 38px;clear:both;}
 
 // step 1 & 2
-  .proposal{font:normal 14px/19px @arial;padding-bottom:60px;text-align:left;
+  .proposal{
+//    font:normal 14px/19px @arial;padding-bottom:60px;text-align:left;
     .stamp h2 > span{background-color:@colorGris2;}
     .proposalDates{font:bold 18px/23px @arial;color:@colorGris2;}
-    .proposalPicture{width:246px;}
+    .proposalPicture{width:240px;}
     .total{
       span{font:bold 16px/17px @ptnarrow;
         .price{font:normal 19px/18px @ptnarrow;margin:0;}
       }
     }
-    tr{
+    table{border-collapse:separate;border-spacing: 0 10px;}
+    tr{font-size:12px;
+      hr{
+        border:1px outset @colorBgGrisM2;
+        border:1px inset @colorBgGrisM;
+      }
       &.productDiscounts{font-weight:bold;}
       &.productsNotSelectedYet{font-weight:normal;height:30px;}
       td{vertical-align:middle;
@@ -368,8 +374,8 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
             }
             .deleteAction a{position:absolute;top:6px;right:-3px;display:block;text-indent:-9999px;width:27px;height:27px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -243px transparent;float:left;margin:0 10px;}
           }
-          .occupantFields{padding:5px;margin-bottom:0;position:relative;
-            .occupantFieldsInfo{background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat scroll 0 -324px transparent;display:block;width:27px;height:27px;position:absolute;top:5px;right:5px;
+          .occupantFields{padding:0 5px;margin-bottom:0;position:relative;
+            .occupantFieldsInfo{background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat scroll 0 -324px transparent;display:block;width:27px;height:27px;position:absolute;top:0;right:5px;
               &.tooltip span.bubble{left:115%;max-width:342px;}
             }
             &.tooltip span.bubble{left:95%;bottom:5px;max-width:362px;}
