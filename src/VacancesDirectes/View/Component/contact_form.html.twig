@@ -1,0 +1,62 @@
+<div class="radiusBox2 greyM form">
+        <h2>{{ "coordonnees_contact.vos_coordonnees"|trans }}</h2>
+        <form id="annulationForm" method="post" action="{{ app.requesr.requestUri }}" novalidate="" enctype="multipart/form-data">
+            <div class="errors"></div>
+            <fieldset>
+                <legend class="h4-like">{{ "coordonnees_contact.vos_coordonnees"|trans }}</legend>
+                <table>
+                    <tbody>
+                    <tr>
+                        <td class="label">{{ form_label(form.civilite) }}</td>
+                        <td class="field">{{ form_widget(form.civilite) }}</td>
+                        <td class="label">{{ form_label(form.prenom) }}</td>
+                        <td class="field">{{ form_widget(form.prenom) }}</td>
+                    </tr>
+                    <tr>
+                        <td class="label">{{ form_label(form.nom) }}</td>
+                        <td class="field">{{ form_widget(form.nom) }}</td>
+                    </tr>
+                    <tr>
+                        <td class="label">{{ form_label(form.type) }}</td>
+                        <td class="field">{{ form_widget(form.type) }}</td>
+                    </tr>
+                    <tr>
+                        <td class="label">{{ form_label(form.ville) }}</td>
+                        <td class="field">{{ form_widget(form.ville) }}</td>
+                        <td class="label">{{ form_label(form.adresse) }}</td>
+                        <td class="field" rowspan="2">{{ form_widget(form.adresse) }}</td>
+                    </tr>
+                    <tr>
+                        <td class="label">{{ form_label(form.code_postal) }}</td>
+                        <td class="field">{{ form_widget(form.code_postal) }}</td>
+                    </tr>
+                    <tr>
+                        <td class="label">{{ form_label(form.pays) }}</td>
+                        <td class="field">{{ form_widget(form.pays) }}</td>
+                        <td class="label">{{ form_label(form.email) }}</td>
+                        <td class="field">{{ form_widget(form.email) }}</td>
+                    </tr>
+                    <tr>
+                        <td class="label">{{ form_label(form.telephone) }}</td>
+                        <td class="field">{{ form_widget(form.telephone) }}</td>
+                        <td class="label">{{ form_label(form.fax) }}</td>
+                        <td class="field">{{ form_widget(form.fax) }}</td>
+                    </tr>
+                </tbody></table>
+            </fieldset>
+            <fieldset>
+                <legend class="h4-like">{{ "coordonnees_contact.votre_message"|trans }}</legend>
+                <table>
+                    <tbody><tr>
+                        <td class="label"></td>
+                        <td class="field">{{ form_widget(form.message) }}</td>
+                    </tr>
+                </tbody>
+                </table>
+                <button type="submit" class="bt fushia big right" name="annulationForm">Envoyer</button>
+                <div style="display: none;">
+                    {{ form_rest(form) }}
+                </div>
+            </fieldset>
+        </form>
+</div>

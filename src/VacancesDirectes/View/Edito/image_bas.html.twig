@@ -1,0 +1,28 @@
+{% extends "base.twig" %}
+
+{% block title %}
+    {% if edito %}
+        {{ edito.name }} | Vacances Directes
+    {% else %}
+        404 Not Found
+    {% endif %}
+{% endblock %}
+{% block bodyClass %}edito{% endblock %}
+
+{% block content %}
+    <div id="wrap" class="fixed-width clear">
+        <div class="column">
+            {% if edito %}
+                {% include "Breadcrumbs/_breadcrumbs.twig" %}
+                <h1>{{ edito.name}}</h1>
+                <div>
+                    <div>{{ edito.description | raw }}</div>
+                    <div><img src="{{ asset(edito.image|media) }}"/></div>
+                </div>
+                {{ component | raw }}
+            {% else %}
+                <h1><span>404 Not Found</span></h1>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
