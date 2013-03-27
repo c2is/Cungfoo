@@ -38,63 +38,63 @@ $(function() {
 head.ready(function(){
 
     // positionne le bloc prix en 1er sur l'étape 1 du couloir
-    if($('#yourStay').length){
-        if($('.error').length){
-            $('.error').after($('#yourStay'));
+    if($('#yourStay').length  && $('#contentContener').hasClass('detail') ){
+        $('#reservationContener').prepend($('#yourStay'));
+    }
+
+    // égalise la hauteur des choix de paiement de l'étape 1 du couloir
+    if ( $('#financialContener .radioDesc').length ){
+        $('#financialContener .radioDesc').equalizeHeights();
+    }
+
+    // radio buttons
+    var checked;
+    if($('#authentication').length){
+        $('.authenticationChoice').click(function(e){
+            resize_myframe();
+        });
+        if(checked != undefined){
+            $('#returningCustomerYes').trigger("click");
         }
-        else {
-            $('#reservation').prepend($('#yourStay'));
+        else{
+            if($('#returningCustomerYes').is(':checked')) {
+                checked = true
+                $('#existingCustomerLayer').show();
+                $('#newCustomerLayer').hide();
+            }
+            else if($('#returningCustomerNo').is(':checked')) {
+                checked = false;
+                $('#existingCustomerLayer').hide();
+                $('#newCustomerLayer').show();
+            }
         }
     }
 
-        // radio buttons
-        var checked;
-        if($('#authentication').length){
-            $('.authenticationChoice').click(function(e){
-                resize_myframe();
-            });
-            if(checked != undefined){
-                $('#returningCustomerYes').trigger("click");
+    // selects
+    $('.selectedTxt').click(function(){
+
+        if ( !$(this).parent().hasClass('newListSelFocus') ){
+            var selectWidth = $(this).parent().width();
+            $(this).next('.SSContainerDivWrapper').show();
+            var selectUlWidth = $(this).next('.SSContainerDivWrapper').width();
+            //console.log(selectWidth);
+            //console.log(selectUlWidth);
+            //console.log( $(this).next('.SSContainerDivWrapper').hasClass('maxHeight') );
+            //console.log( !$(this).next('.SSContainerDivWrapper').hasClass('minWidth') );
+            //console.log( selectUlWidth >= selectWidth );
+            if ( $(this).next('.SSContainerDivWrapper').hasClass('maxHeight') && !$(this).next('.SSContainerDivWrapper').hasClass('minWidth') && selectUlWidth >= selectWidth ){
+
+                $(this).next('.SSContainerDivWrapper').css({
+                    minWidth: selectUlWidth + 33
+                });
+                $(this).next('.SSContainerDivWrapper').addClass('minWidth')
             }
-            else{
-                if($('#returningCustomerYes').is(':checked')) {
-                    checked = true
-                    $('#existingCustomerLayer').show();
-                    $('#newCustomerLayer').hide();
-                }
-                else if($('#returningCustomerNo').is(':checked')) {
-                    checked = false;
-                    $('#existingCustomerLayer').hide();
-                    $('#newCustomerLayer').show();
-                }
+            else if ( $(this).next('.SSContainerDivWrapper').hasClass('minWidth') ){
+                return false;
             }
         }
 
-        // selects
-        $('.selectedTxt').click(function(){
-
-            if ( !$(this).parent().hasClass('newListSelFocus') ){
-                var selectWidth = $(this).parent().width();
-                $(this).next('.SSContainerDivWrapper').show();
-                var selectUlWidth = $(this).next('.SSContainerDivWrapper').width();
-                  //console.log(selectWidth);
-                  //console.log(selectUlWidth);
-                  //console.log( $(this).next('.SSContainerDivWrapper').hasClass('maxHeight') );
-                  //console.log( !$(this).next('.SSContainerDivWrapper').hasClass('minWidth') );
-                  //console.log( selectUlWidth >= selectWidth );
-                if ( $(this).next('.SSContainerDivWrapper').hasClass('maxHeight') && !$(this).next('.SSContainerDivWrapper').hasClass('minWidth') && selectUlWidth >= selectWidth ){
-
-                    $(this).next('.SSContainerDivWrapper').css({
-                        minWidth: selectUlWidth + 33
-                    });
-                    $(this).next('.SSContainerDivWrapper').addClass('minWidth')
-                }
-                else if ( $(this).next('.SSContainerDivWrapper').hasClass('minWidth') ){
-                    return false;
-                }
-            }
-
-        });
+    });
 
     if($('#contentContener.detail').length){
         // datepickers
@@ -141,7 +141,7 @@ head.ready(function(){
                     showOn: "both",
                     beforeShow: beforeShow,
                     onSelect: onSelect
-                    });
+                });
                 var defaultDate = datepickerInput.datepicker( "option", "defaultDate" );
                 var maxDate = datepickerInput.datepicker( "option", "maxDate" );
                 //console.log(defaultDate);
@@ -199,8 +199,8 @@ head.ready(function(){
                 e.preventDefault();
             }
         }).blur(function(e) {
-            $(this).val($(this).val().replace(/ /g,''));
-        });
+                $(this).val($(this).val().replace(/ /g,''));
+            });
     }
 
     if($('#existingCustomerLayer').length){
@@ -224,6 +224,14 @@ function consoleLog (data) {
 function parentExists() {
     return (parent.location == window.location)? false : true;
 }
+
+$.fn.equalizeHeights = function() {
+    var maxHeight = this.map(function(i,e) {
+        return $(e).height();
+    }).get();
+
+    return this.height( Math.max.apply(this, maxHeight) );
+};
 
 function resize_myframe() {
     //var height = $('html').height();

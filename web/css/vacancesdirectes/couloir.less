@@ -48,7 +48,7 @@
 ._margin(right, @dist:@gutter) {
   padding-left:@dist;
 }
-  ._box-shadow(@shadow:3px 3px 10px 0px rgba(0,0,0,0.3)) {
+._box-shadow(@shadow:3px 3px 10px 0px rgba(0,0,0,0.3)) {
   -webkit-box-shadow:@shadow;
   box-shadow:@shadow;
 }
@@ -238,6 +238,9 @@ body.clear{background:#fff;color:@colorGris2;font:12px @arial;margin:0;}
 .tooltip span.bubble{._box-shadow(0 10px 10px -12px @colorGris2);}
 
 .indication {font:bold 12px/35px @arial;background:@colorBgBlanc;color:@colorBgGrisM;border:4px solid @colorBgGrisM;text-transform:uppercase;padding:5px 10px;margin-bottom:35px;text-decoration:none;._border-radius(10px);position:relative;line-height:16px;}
+.warning, .error {font:bold 12px/35px @arial;background:@colorBgBlanc;color:@colorFushia;border:4px solid @colorFushia;text-transform:uppercase;padding:5px 10px;margin-bottom:35px;text-decoration:none;._border-radius(10px);position:relative;line-height:16px;}
+
+
 
 input,
 textarea{font:bold 12px @arial;color:@colorGris0;}
@@ -279,7 +282,7 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
 
 // step 1 & 2
   .proposal{
-//    font:normal 14px/19px @arial;padding-bottom:60px;text-align:left;
+  //    font:normal 14px/19px @arial;padding-bottom:60px;text-align:left;
     .stamp h2 > span{background-color:@colorGris2;}
     .proposalDates{font:bold 18px/23px @arial;color:@colorGris2;}
     .proposalPicture{width:240px;}
@@ -303,11 +306,6 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
             table{border-spacing:0;}
           }
           .costsIncluded{font-style:italic;font-size:11px;}
-          .insurance{position:relative;
-            .insuranceInfo{background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat scroll 0 -324px transparent;display:block;width:27px;height:27px;position:absolute;top:-7px;right:-32px;
-              &.tooltip span.bubble{left:115%;max-width:500px;}
-            }
-          }
         }
         &.price{width:110px;font:bold 19px/18px @ptnarrow;text-align:right;border:0 none !important;
           >div{background-color:@colorBgBlanc;padding:0 10px;display:block;height:30px;line-height:30px;}
@@ -332,13 +330,11 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
         td{vertical-align:middle;
           &.optionQuantity{width:27px;}
           &.optionLabel{width:400px;padding:5px;
-            &.staySummary{background-color:@colorBgBlanc;color:@colorGris0;
-              table{border-spacing:0;}
-            }
-            .costsIncluded{font-style:italic;font-size:11px;}
             .insurance{position:relative;
               .insuranceInfo{background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat scroll 0 -324px transparent;display:block;width:27px;height:27px;position:absolute;top:-7px;right:-32px;
-                &.tooltip span.bubble{left:115%;max-width:500px;}
+                &.tooltip span.bubble{width:308px;white-space:normal;position:absolute;bottom:32px;left:-142px;text-align:left;
+                  &:after{top:100%;right:auto;margin-top:0;border:solid transparent;content:"";height:0;width:0;position:absolute;pointer-events:none;border-color:rgba(140, 138, 138, 0);border-top-color: #8C8A8A;border-width:5px;left:50%;margin-left:-5px;}
+                }
               }
             }
           }
@@ -354,13 +350,13 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
         }
       }
       .aRoom{
-//        .stain{width:131px;height:131px;background-position:0 0;top:0;bottom:auto;right:17px;left:auto;
-//          .price{font:bold 27px/131px @ptnarrow;display:block;margin:3px 0 0px;letter-spacing:normal;}
-//        }
+      //        .stain{width:131px;height:131px;background-position:0 0;top:0;bottom:auto;right:17px;left:auto;
+      //          .price{font:bold 27px/131px @ptnarrow;display:block;margin:3px 0 0px;letter-spacing:normal;}
+      //        }
         .changeOccupantCount{height:auto;background-color:@colorBgGrisM;padding:10px 5px 0;position:relative;
           &>span{margin:0 5px 10px;._verticalCenter(27px);font:bold 17px @ptnarrow;color:@colorBlanc;text-transform:uppercase;display:inline-block;}
-//          .addAction a{position:absolute;top:10px;right:10px;display:block;width:27px;height:27px;text-indent:-9999px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -162px transparent;}
-            .addAction{display:none;}
+        //          .addAction a{position:absolute;top:10px;right:10px;display:block;width:27px;height:27px;text-indent:-9999px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -162px transparent;}
+          .addAction{display:none;}
         }
         #occupants{background-color:@colorBgBlanc;padding-top:20px;}
         .anOccupant{background-color:@colorBlanc;
