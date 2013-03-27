@@ -166,3 +166,7 @@ crud:
             prefix: /coordonnees/contacts
             model: \Cungfoo\Model\CoordonneesContact
             form: \Cungfoo\Form\Type\CoordonneesContactType
+        newsletter:
+            prefix: /coordonnees/newsletters
+            model: \Cungfoo\Model\Newsletter
+            form: \Cungfoo\Form\Type\NewsletterType

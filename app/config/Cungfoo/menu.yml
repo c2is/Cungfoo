@@ -1,126 +1,129 @@
 menu:
     title: menu.title
     items:
-        etablissements:
-          title: menu.etablissements
-          items:
-            liste:
-              title:  menu.liste_etablissements
-              route:  etablissement_crud_list
-            multimedia:
-              title:  menu.multimedia
-              route:  multimedia_etablissement_crud_list
-            tag_multimedia:
-              title:  menu.tag_multimedia
-              route:  tag_crud_list
-            top_camping:
-              title:  menu.top_camping
-              route:  top_camping_crud_list
         theme:
             title: menu.themes
             items:
-              ville:
-                  title:  menu.ville
-                  route:  ville_crud_list
-              departement:
-                  title:  menu.departement
-                  route:  departement_crud_list
-              region:
-                  title:  menu.region
-                  route:  region_crud_list
-              region_ref:
-                  title:  menu.region_ref
-                  route:  region_ref_crud_list
-              pays:
-                  title:  menu.pays
-                  route:  pays_crud_list
-                  divider: ~
-              destination:
-                  title:  menu.destination
-                  route:  destination_crud_list
-              activite:
-                  title:  menu.activite
-                  route:  activite_crud_list
-              categorie:
-                  title:  menu.categorie
-                  route:  categorie_crud_list
-              situation_geographique:
-                  title:  menu.situation_geographique
-                  route:  situation_geographique_crud_list
-              baignade:
-                  title:  menu.baignade
-                  route:  baignade_crud_list
-              thematique:
-                  title:  menu.thematique
-                  route:  thematique_crud_list
-              service_complementaire:
-                  title:  menu.service_complementaire
-                  route:  service_complementaire_crud_list
-              theme:
-                  title:  menu.theme
-                  route:  theme_crud_list
-                  divider: ~
-              type_hebergement:
-                  title:  menu.type_hebergement
-                  route:  type_hebergement_crud_list
-              type_hebergement_capacite:
-                  title:  menu.type_hebergement_capacite
-                  route:  type_hebergement_capacite_crud_list
-              type_hebergement_multimedia:
-                  title:  menu.type_hebergement_multimedia
-                  route:  multimedia_type_hebergement_crud_list
-              category_type_hebergement:
-                  title:  menu.category_type_hebergement
-                  route:  category_type_hebergement_crud_list
-                  divider: ~
-              poi:
-                  title:  menu.poi
-                  route:  point_interet_crud_list
-              event:
-                  title:  menu.event
-                  route:  event_crud_list
+                liste:
+                    title:  menu.etablissements
+                    route:  etablissement_crud_list
+                top_camping:
+                    title:  menu.top_camping
+                    route:  top_camping_crud_list
+                theme_geo:
+                    title: menu.themes_geo
+                    items:
+                        ville:
+                            title:  menu.ville
+                            route:  ville_crud_list
+                        departement:
+                            title:  menu.departement
+                            route:  departement_crud_list
+                        region:
+                            title:  menu.region
+                            route:  region_crud_list
+                        region_ref:
+                            title:  menu.region_ref
+                            route:  region_ref_crud_list
+                        pays:
+                            title:  menu.pays
+                            route:  pays_crud_list
+                        destination:
+                            title:  menu.destination
+                            route:  destination_crud_list
+                theme_resalys:
+                    title: menu.themes_resalys
+                    items:
+                        activite:
+                            title:  menu.activite
+                            route:  activite_crud_list
+                        categorie:
+                            title:  menu.categorie
+                            route:  categorie_crud_list
+                        situation_geographique:
+                            title:  menu.situation_geographique
+                            route:  situation_geographique_crud_list
+                        baignade:
+                            title:  menu.baignade
+                            route:  baignade_crud_list
+                        thematique:
+                            title:  menu.thematique
+                            route:  thematique_crud_list
+                        service_complementaire:
+                            title:  menu.service_complementaire
+                            route:  service_complementaire_crud_list
+                        theme:
+                            title:  menu.theme
+                            route:  theme_crud_list
+                type_hebergement:
+                    divider: ~
+                    title:  menu.type_hebergement
+                    route:  type_hebergement_crud_list
+                type_hebergement_capacite:
+                    title:  menu.type_hebergement_capacite
+                    route:  type_hebergement_capacite_crud_list
+                category_type_hebergement:
+                    title:  menu.category_type_hebergement
+                    route:  category_type_hebergement_crud_list
+                poi:
+                    divider: ~
+                    title:  menu.poi
+                    route:  point_interet_crud_list
+                event:
+                    title:  menu.event
+                    route:  event_crud_list
         cms:
             title: menu.cms
             items:
-              personnages:
-                  title:  menu.personnages
-                  route:  personnage_crud_list
-              personnages_avantages:
-                  title:  menu.avantages
-                  route:  avantage_crud_list
-              edito:
-                  title:  menu.editos
-                  route:  edito_crud_list
-              mise_en_avant:
-                  title:  menu.mise_en_avant
-                  route:  mise_en_avant_crud_list
-              vos_vacances:
-                  title:  menu.vos_vacances
-                  route:  vos_vacances_crud_list
-              idee_weekend:
-                  title:  menu.idee_weekend
-                  route:  idee_weekend_crud_list
-                  divider: ~
-              bon_plan_categories:
-                  title:  menu.bon_plan_categorie
-                  route:  bon_plan_categorie_crud_list
-              bons_plans:
-                  title:  menu.bon_plan
-                  route:  bon_plan_crud_list
-                  divider: ~
-              i18n:
-                  title: Traductions
-                  route: i18n_admin
+                personnages:
+                    title:  menu.personnages
+                    route:  personnage_crud_list
+                personnages_avantages:
+                    title:  menu.avantages
+                    route:  avantage_crud_list
+                edito:
+                    title:  menu.editos
+                    route:  edito_crud_list
+                mise_en_avant:
+                    title:  menu.mise_en_avant
+                    route:  mise_en_avant_crud_list
+                vos_vacances:
+                    title:  menu.vos_vacances
+                    route:  vos_vacances_crud_list
+                coordonnees:
+                    divider: ~
+                    title: menu.coordonnees
+                    items:
+                        activite:
+                            title:  menu.coordonnees_contacts
+                            route:  coordonnees_contact_crud_list
+                        categorie:
+                            title:  menu.coordonnees_newsletter
+                            route:  newsletter_crud_list
+                idee_weekend:
+                    divider: ~
+                    title:  menu.idee_weekend
+                    route:  idee_weekend_crud_list
+                bon_plan_categories:
+                    title:  menu.bon_plan_categorie
+                    route:  bon_plan_categorie_crud_list
+                bons_plans:
+                    title:  menu.bon_plan
+                    route:  bon_plan_crud_list
+                    divider: ~
+                i18n:
+                    title: Traductions
+                    route: i18n_admin
         parameter:
             title: menu.parameters
             items:
-              resalys:
-                  title:  menu.parameters.resalys
-                  route:  resalys_actions
-              viafrance:
-                  title:  menu.parameters.viafrance
-                  route:  viafrance_actions
-                  divider: ~
-              job:
-                  title:  menu.job
-                  route:  job_list
+                resalys:
+                    title:  menu.parameters.resalys
+                    route:  resalys_actions
+                viafrance:
+                    title:  menu.parameters.viafrance
+                    route:  viafrance_actions
+                    divider: ~
+                job:
+                    title:  menu.job
+                    route:  job_list

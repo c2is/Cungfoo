@@ -1225,4 +1225,16 @@
         </behavior>
     </table>
 
+    <table name="newsletter">
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="email" type="varchar" primaryString="true" required="true" />
+        <behavior name="timestampable" />
+        <behavior name="active" />
+
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/coordonnees/newsletters" />
+            <parameter name="crud_search" value="email" />
+        </behavior>
+    </table>
+
 </database>
