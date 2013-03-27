@@ -63,6 +63,7 @@
                             {% endif %}
                         {% endif %}
                     {% else %}
+                </div>
                 <a href="{{ path('categorie_bonsplans', {'cat': categorie.slug }) }}" class="bt link right clearboth">{{ 'menu_bon_plan.categorie_bons_plans.link' | trans}}</a>
                     {% endif %}
                     {% if loop.first or loop.last %}
