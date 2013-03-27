@@ -171,7 +171,7 @@ class ApiController implements ControllerProviderInterface
                 $root->appendChild($campingDom);
 
                 $node = $dom->createElement('name');
-                $node->appendChild($dom->createTextNode(sprintf('%s | %s | %s', $camping->getVille()->getName(), $camping->getName(), $app->trans('criteo.name.suffix'))));
+                $node->appendChild($dom->createTextNode(sprintf('%s | %s | %s', preg_replace("/\([^)]+\)/", "", $camping->getVille()->getName()), $camping->getName(), $app->trans('criteo.name.suffix'))));
                 $campingDom->appendChild($node);
 
                 $node = $dom->createElement('smallimage');
@@ -241,12 +241,13 @@ class ApiController implements ControllerProviderInterface
                 $node->appendChild($dom->createTextNode(''));
                 $campingDom->appendChild($node);
 
+                $inStock = $camping->getMinimumPrice() ? 1 : 0;
                 $node = $dom->createElement('recommendable');
-                $node->appendChild($dom->createTextNode(''));
+                $node->appendChild($dom->createTextNode($inStock));
                 $campingDom->appendChild($node);
 
                 $node = $dom->createElement('instock');
-                $node->appendChild($dom->createTextNode(''));
+                $node->appendChild($dom->createTextNode($inStock));
                 $campingDom->appendChild($node);
 
                 $node = $dom->createElement('categoryid1');
