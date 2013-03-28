@@ -30,7 +30,7 @@ class EsiController implements ControllerProviderInterface
         $controllers->match('/bon-plan-home', function (Request $request) use ($app)
         {
             $listing = null;
-            $maxAge = 600;
+            $maxAge = 3600;
 
             try
             {
@@ -97,7 +97,7 @@ class EsiController implements ControllerProviderInterface
         $controllers->match('/bon-plan/{slug}/{limit}', function (Request $request, $slug, $limit) use ($app)
         {
             $listing = null;
-            $maxAge = 600;
+            $maxAge = 3600;
 
             try
             {
