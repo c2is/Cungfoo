@@ -2459,3 +2459,19 @@ function test_analytics(Url) {
  //console.log('/--- contreProp ---/');
  };*/
 
+$(document).ready(function() {
+    $('#newsletterFooterForm').bind('submit', function (e) {
+        var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        var email = $('#Newsletter_email');
+        if (regex.test(email.val())) {
+            var form = $(this);
+            $.post(form.attr('action'), form.serialize(), function (json) {
+                form.replaceWith('<p>'+newsletterSuccessMessage+'</p>');
+            });
+        } else {
+            email.addClass('error');
+        }
+
+        return false;
+    });
+});

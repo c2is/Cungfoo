@@ -475,6 +475,8 @@ footer.ce: 'Vacances Betriebsrat'
 footer.newsletter: 'Newsletter abonnieren'
 footer.newsletter.desc: 'Erhalten Sie die Geheimtipps und die neuesten Angebote von Vacances Directes direkt in Ihrem E-Mail-Postfach.'
 footer.newsletter.entrer_son_email: 'E-MAIL EINGEBEN'
+footer.newsletter.link: Anmelden
+footer.newsletter.success_message: 'Votre inscription a bien été prise en compte'
 footer.site_mobile: Mobiltelefonseite
 footer.site_mobile.desc: 'Erhalten Sie alle Angebote von Vacances Directes auf Ihrem Mobiltelefon.'
 footer.annulation: Stornierungsformular

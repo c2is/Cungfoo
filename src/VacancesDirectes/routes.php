@@ -15,6 +15,8 @@ use Symfony\Component\HttpFoundation\Request,
     Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 use Cungfoo\Lib\Crud\Router as CrudRouter;
+use Cungfoo\Form\Type\NewsletterType;
+use Cungfoo\Model\Newsletter;
 
 use VacancesDirectes\Controller;
 
@@ -23,7 +25,13 @@ use Resalys\Controller\WrapperController;
 $app->before(function(Request $request) use ($app) {
     // gestion de la remonté d'erreurs du formulaire de connexion à mon compte
     $app['login_errors'] = $app['security.last_error']($request);
+
+    // adding newsletter form on global template
+    $newsletterObject = new Newsletter();
+    $newsletterForm = $app['form.factory']->create(new NewsletterType($app), $newsletterObject);
+    $app['twig']->addGlobal('newsletter_form', $newsletterForm->createView());
 });
+
 
 $app->mount('/',                                          new Controller\HomepageController());
 $app->mount('/',                                          new Controller\EditoController());
@@ -36,6 +44,7 @@ $app->mount('/search_engine',                             new Controller\SearchE
 $app->mount('/search_filter',                             new Controller\SearchFilterController());
 $app->mount('/api',                                       new Controller\ApiController());
 $app->mount('/widget',                                    new Cungfoo\Controller\WidgetController());
+$app->mount('/async',                                     new Controller\AsyncController());
 $app->mount('/' . $app->trans('seo.url.catalogue'),       new Controller\CatalogueController());
 $app->mount('/' . $app->trans('seo.url.dispo'),           new Controller\DispoController());
 $app->mount('/' . $app->trans('seo.url.couloir.index'),   new Controller\CouloirController());

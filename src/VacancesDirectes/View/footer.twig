@@ -68,12 +68,14 @@
             <div id="infoOthers" class="left" style="height: 277px;">
 
                 <div id="infoNewsletter" class="clear">
-                    <h3>Abonnemment newsletter</h3>
-                    <p>
-                        Retrouvez les bons plans et les nouvelles offres Vacances Directes directement dans votre boîte mail.
-                    </p>
-                    <input type="email" name="footer-email" id="footerEmail" class="left" placeholder="ENTRER SON E-MAIL" />
-                    <a class="bt big sombre left" href="#">En savoir plus</a>
+                    <h3>{{ "footer.newsletter"|trans }}</h3>
+                    <p>{{ "footer.newsletter.desc"|trans }}</p>
+                    <script>var newsletterSuccessMessage = '{{ "footer.newsletter.success_message"|trans }}';</script>
+
+                    <form action="{{ path('async_newsletter') }}" method="post" id="newsletterFooterForm">
+                        {{ form_widget(newsletter_form.email, {'attr': {'class': 'left', 'placeholder': "footer.newsletter.entrer_son_email"|trans}}) }}
+                        <button class="bt big sombre left">{{ "footer.newsletter.link"|trans }}</button>
+                    </form>
                 </div>
 
                 <div class="clear">
