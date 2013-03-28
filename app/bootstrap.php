@@ -52,8 +52,13 @@ $app['propel.config_file'] = $app['config']->get('config_dir').'/Propel/generate
 $app->register(new Propel\Silex\PropelServiceProvider());
 
 $app->register(new Silex\Provider\SessionServiceProvider(), array(
-    'session.storage.options' => array('auto_start' => true)
+    'session.storage.options' => array('auto_start' => true),
 ));
+
+$memcache = new Memcache();
+$memcache->addServer('localhost', 11211) or die ('erreur');
+
+$app['session.storage.handler'] = new Symfony\Component\HttpFoundation\Session\Storage\Handler\MemcacheSessionHandler($memcache);
 
 /* C O N S O L E */
 $app->register(new Knp\Provider\ConsoleServiceProvider(), array(
