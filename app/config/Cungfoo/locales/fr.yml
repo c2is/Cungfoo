@@ -315,6 +315,12 @@ menu.idee_weekend: Idées weekend
 menu.theme: Theme CMS
 menu.bon_plan_categorie: Catégories de bons plans
 menu.bon_plan: Bons plans
+menu.coordonnees: "Coordonnées"
+menu.coordonnees_contacts: "Contacts"
+menu.coordonnees_newsletter: "Newsletter"
+menu.themes_geo: "Themes géographiques"
+menu.themes_resalys: "Themes resalys"
+menu.hebergement: "hébergement"
 
 category_type_hebergement.crud.create: Création d'une catégorie de types hébergements
 category_type_hebergement.crud.list: Liste catégories de types hébergements
@@ -946,3 +952,9 @@ coordonnees_contact_i18n.seo_description: "Seo Description"
 coordonnees_contact_i18n.seo_h1: "Seo H1"
 coordonnees_contact_i18n.seo_keywords: "Seo mots-clés"
 coordonnees_contact_i18n.active_locale: "Activer localement ?"
+
+newsletter.email: "Mail"
+newsletter.crud.create: "Création d'un contact newsletter"
+newsletter.crud.update: "Mise à jour d'un contact newsletter"
+newsletter.crud.list: "Newsletter"
+newsletter.id: "Id"

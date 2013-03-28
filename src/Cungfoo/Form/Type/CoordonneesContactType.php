@@ -53,13 +53,6 @@ class CoordonneesContactType extends BaseCoordonneesContactType
                         'telephone',
                         'fax',
                         'message',
-                        'coordonnees_contactI18ns',
-                    )
-                ),
-                array(
-                    'title'         => 'crud.tab.parameters',
-                    'content'       => array(
-                        'active',
                     )
                 ),
             )

@@ -11,6 +11,7 @@ menu:
                     title:  menu.top_camping
                     route:  top_camping_crud_list
                 theme_geo:
+                    divider: ~
                     title: menu.themes_geo
                     items:
                         ville:
@@ -56,7 +57,7 @@ menu:
                             title:  menu.theme
                             route:  theme_crud_list
                 type_hebergement:
-                    divider: ~
+                    divider: menu.hebergement
                     title:  menu.type_hebergement
                     route:  type_hebergement_crud_list
                 type_hebergement_capacite:

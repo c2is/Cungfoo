@@ -15,6 +15,9 @@
                     {% if level2.items is defined %}
                     {% if level2.divider is defined %}
                         <li class="divider"></li>
+                        {% if level2.divider != "~" %}
+                        <li class="nav-header">{{ level2.divider|trans }}</li>
+                        {% endif %}
                     {% endif %}
                     <li class="dropdown">
 
@@ -28,6 +31,9 @@
                                 {% else %}
                                 {% if level3.divider is defined %}
                                     <li class="divider"></li>
+                                    {% if level3.divider != "~" %}
+                                    <li class="nav-header">{{ level3.divider|trans }}</li>
+                                    {% endif %}
                                 {% endif %}
                                 <li><a href="{{ path( level3.route ) }}">{{ level3.title|trans }}</a></li>
                                 {% endif %}
