@@ -20,6 +20,9 @@ $app['config']->addParams(array(
     'version'   => trim(file_get_contents(sprintf('%s/version', $app['config']->get('config_dir')))),
     'security'  => new Cungfoo\Lib\Crud\Security($app),
 ));
+if (file_exists(sprintf('%s/memcache.yml', $app['config']->get('config_dir')))) {
+    $app['config']->addParam('memcache', Symfony\Component\Yaml\Yaml::parse(sprintf('%s/memcache.yml', $app['config']->get('config_dir')))['memcache']);
+}
 
 /* T W I G  C O N F I G U R A T I O N  */
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
@@ -55,10 +58,17 @@ $app->register(new Silex\Provider\SessionServiceProvider(), array(
     'session.storage.options' => array('auto_start' => true),
 ));
 
-$memcache = new Memcache();
-$memcache->addServer('localhost', 11211) or die ('erreur');
+try {
+    // La conf memcache n'est chargée que si le fichier existe ; si elle n'est pas chargée, la méthode get() de config throw une exception, d'où le try/catch
+    $memConf = $app['config']->get('memcache');
 
-$app['session.storage.handler'] = new Symfony\Component\HttpFoundation\Session\Storage\Handler\MemcacheSessionHandler($memcache);
+    $memcache = new Memcache();
+    $memcache->addServer($memConf['host'], $memConf['port']);
+
+    $app['session.storage.handler'] = new Symfony\Component\HttpFoundation\Session\Storage\Handler\MemcacheSessionHandler($memcache);
+} catch (Exception $e) {
+    // Si pas de conf définie, on laisse le StorageHandler par défaut
+}
 
 /* C O N S O L E */
 $app->register(new Knp\Provider\ConsoleServiceProvider(), array(
