@@ -17,4 +17,4 @@ Vagrantfile
 /portfolio/
 /app/config/VacancesDirectes/locales/de.yml
 /app/config/VacancesDirectes/locales/fr.yml
-/app/config/VacancesDirectes/memcache.yml
+/app/config/memcache.yml
