@@ -39,13 +39,27 @@ head.ready(function(){
 
     // positionne le bloc prix en 1er sur l'étape 1 du couloir
     if($('#yourStay').length  && $('#contentContener').hasClass('detail') ){
-        $('#reservationContener').prepend($('#yourStay'));
+        $('#reservationContener form').prepend($('#yourStay'));
     }
 
-    // égalise la hauteur des choix de paiement de l'étape 1 du couloir
-    if ( $('#financialContener .radioDesc').length ){
-        $('#financialContener .radioDesc').equalizeHeights();
+    if($('#reservation').length){
+
+        // convertit les <span> des checkbox en <label> pour rendre le texte cliquable
+        if($('#stayOptions').find('.control_checkbox').length){
+            enableClickOnLabel($('#stayOptions').find('.control_checkbox'));
+        }
+        if($('#accomodationOptions').find('.control_checkbox').length){
+            enableClickOnLabel($('#accomodationOptions').find('.control_checkbox'));
+        }
+
+        // égalise la hauteur des choix de paiement de l'étape 1 du couloir
+        if ( $('#financialContener .radioDesc').length ){
+            $('#financialContener .radioDesc').equalizeHeights();
+        }
+
     }
+
+
 
     // radio buttons
     var checked;
@@ -239,4 +253,29 @@ function resize_myframe() {
     height += 70;
     window.parent.document.getElementById('frameResalys').style.height = height + 'px';
     //console.log(height);
+}
+
+function enableClickOnLabel(checkboxes){
+    checkboxes.each(function(i,v){
+        if ( $(this).parent().next().hasClass('optionLabel') ){
+            var checkbox = $(this);
+            var labelCheckbox =checkbox.parent().next();
+            labelCheckbox.wrapInner('<label />');
+            labelCheckbox = labelCheckbox.children('label');
+            var forId;
+            if (checkbox.attr('id') == undefined){
+                if(checkbox.parents('#stayOptions').length){
+                    forId = 'stayOption'+i;
+                }
+                else if(checkbox.parents('#accomodationOptions').length){
+                    forId = 'accomodationOption'+i;
+                }
+            }
+            else{
+                forId = checkbox.attr('id');
+            }
+            checkbox.attr('id',forId);
+            labelCheckbox.attr('for',forId)
+        }
+    });
 }
