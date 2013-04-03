@@ -45,6 +45,7 @@ $app->mount('/search_filter',                             new Controller\SearchF
 $app->mount('/api',                                       new Controller\ApiController());
 $app->mount('/widget',                                    new Cungfoo\Controller\WidgetController());
 $app->mount('/async',                                     new Controller\AsyncController());
+$app->mount('/extra',                                     new Controller\ExtraController());
 $app->mount('/' . $app->trans('seo.url.catalogue'),       new Controller\CatalogueController());
 $app->mount('/' . $app->trans('seo.url.dispo'),           new Controller\DispoController());
 $app->mount('/' . $app->trans('seo.url.couloir.index'),   new Controller\CouloirController());

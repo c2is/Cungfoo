@@ -7,39 +7,39 @@
                 <table>
                     <tbody>
                     <tr>
-                        <td class="label">{{ form_label(form.civilite) }}</td>
+                        <th class="label">{{ form_label(form.civilite) }}</th>
                         <td class="field">{{ form_widget(form.civilite) }}</td>
-                        <td class="label">{{ form_label(form.prenom) }}</td>
+                        <th class="label">{{ form_label(form.prenom) }}</th>
                         <td class="field">{{ form_widget(form.prenom) }}</td>
                     </tr>
                     <tr>
-                        <td class="label">{{ form_label(form.nom) }}</td>
+                        <th class="label">{{ form_label(form.nom) }}</th>
                         <td class="field">{{ form_widget(form.nom) }}</td>
                     </tr>
                     <tr>
-                        <td class="label">{{ form_label(form.type) }}</td>
+                        <th class="label">{{ form_label(form.type) }}</th>
                         <td class="field">{{ form_widget(form.type) }}</td>
                     </tr>
                     <tr>
-                        <td class="label">{{ form_label(form.ville) }}</td>
+                        <th class="label">{{ form_label(form.ville) }}</th>
                         <td class="field">{{ form_widget(form.ville) }}</td>
-                        <td class="label">{{ form_label(form.adresse) }}</td>
+                        <th class="label">{{ form_label(form.adresse) }}</th>
                         <td class="field" rowspan="2">{{ form_widget(form.adresse) }}</td>
                     </tr>
                     <tr>
-                        <td class="label">{{ form_label(form.code_postal) }}</td>
+                        <th class="label">{{ form_label(form.code_postal) }}</th>
                         <td class="field">{{ form_widget(form.code_postal) }}</td>
                     </tr>
                     <tr>
-                        <td class="label">{{ form_label(form.pays) }}</td>
+                        <th class="label">{{ form_label(form.pays) }}</th>
                         <td class="field">{{ form_widget(form.pays) }}</td>
-                        <td class="label">{{ form_label(form.email) }}</td>
+                        <th class="label">{{ form_label(form.email) }}</th>
                         <td class="field">{{ form_widget(form.email) }}</td>
                     </tr>
                     <tr>
-                        <td class="label">{{ form_label(form.telephone) }}</td>
+                        <th class="label">{{ form_label(form.telephone) }}</th>
                         <td class="field">{{ form_widget(form.telephone) }}</td>
-                        <td class="label">{{ form_label(form.fax) }}</td>
+                        <th class="label">{{ form_label(form.fax) }}</th>
                         <td class="field">{{ form_widget(form.fax) }}</td>
                     </tr>
                 </tbody></table>
@@ -49,12 +49,16 @@
                 <table>
                     <tbody>
                         <tr>
-                            <td class="label">{{ form_label(form.sujet) }}</td>
+                            <th class="label">{{ form_label(form.sujet) }}</th>
                             <td class="field">{{ form_widget(form.sujet) }}</td>
                         </tr>
                         <tr>
-                            <td class="label"></td>
+                            <th class="label"></th>
                             <td class="field">{{ form_widget(form.message) }}</td>
+                        </tr>
+                        <tr>
+                            <th class="label"></th>
+                            <td class="field">{{ form_widget(form.captcha) }}</td>
                         </tr>
                     </tbody>
                 </table>

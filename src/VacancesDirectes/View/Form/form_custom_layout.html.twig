@@ -34,3 +34,10 @@
         {% endfor %}
     </select>
 {% endblock %}
+
+{% block captcha_widget %}
+{% spaceless %}
+<img src="{{path('extra_captcha')}}" width="150" height="40" />
+{{ block('form_widget_simple') }}
+{% endspaceless %}
+{% endblock %}

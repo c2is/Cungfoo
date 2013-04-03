@@ -48,6 +48,12 @@ class CoordonneesContactType extends BaseCoordonneesContactType
     {
         parent::buildForm($builder, $options);
 
+        $builder->add('captcha', 'captcha', array(
+            'required'      => false,
+            'property_path' => false,
+            'label'         => 'coordonnees_contact_i18n.captcha',
+        ));
+
         //$this->getMetadata($options['data_class'])
         //    ->addPropertyConstraint('field1', new Assert\MinLength(5))
         //;
