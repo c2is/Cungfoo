@@ -59,7 +59,7 @@ $app->register(new Silex\Provider\SessionServiceProvider(), array(
 ));
 
 $app->register(new Silex\Provider\MonologServiceProvider(), array(
-    'monolog.logfile' => __DIR__.'/../logs/cungfoo.log',
+    'monolog.logfile' => __DIR__.'/logs/cungfoo.log',
 ));
 
 $app['monolog.name'] = 'Cungfoo';
