@@ -58,7 +58,7 @@ $app->register(new Silex\Provider\SessionServiceProvider(), array(
     'session.storage.options' => array('auto_start' => true),
 ));
 
-$app->register(new MonologServiceProvider(), array(
+$app->register(new Silex\Provider\MonologServiceProvider(), array(
     'monolog.logfile' => __DIR__.'/../logs/cungfoo.log',
 ));
 

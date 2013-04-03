@@ -6,8 +6,6 @@
  * @var \Silex\Application $app
  */
 
-use Silex\Provider\MonologServiceProvider;
-
 // include the prod configuration
 require __DIR__ . '/prod.php';
 
