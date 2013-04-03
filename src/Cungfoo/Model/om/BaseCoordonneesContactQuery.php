@@ -34,6 +34,7 @@ use Cungfoo\Model\CoordonneesContactQuery;
  * @method CoordonneesContactQuery orderByEmail($order = Criteria::ASC) Order by the email column
  * @method CoordonneesContactQuery orderByTelephone($order = Criteria::ASC) Order by the telephone column
  * @method CoordonneesContactQuery orderByFax($order = Criteria::ASC) Order by the fax column
+ * @method CoordonneesContactQuery orderBySujet($order = Criteria::ASC) Order by the sujet column
  * @method CoordonneesContactQuery orderByMessage($order = Criteria::ASC) Order by the message column
  * @method CoordonneesContactQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method CoordonneesContactQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
@@ -51,6 +52,7 @@ use Cungfoo\Model\CoordonneesContactQuery;
  * @method CoordonneesContactQuery groupByEmail() Group by the email column
  * @method CoordonneesContactQuery groupByTelephone() Group by the telephone column
  * @method CoordonneesContactQuery groupByFax() Group by the fax column
+ * @method CoordonneesContactQuery groupBySujet() Group by the sujet column
  * @method CoordonneesContactQuery groupByMessage() Group by the message column
  * @method CoordonneesContactQuery groupByCreatedAt() Group by the created_at column
  * @method CoordonneesContactQuery groupByUpdatedAt() Group by the updated_at column
@@ -78,6 +80,7 @@ use Cungfoo\Model\CoordonneesContactQuery;
  * @method CoordonneesContact findOneByEmail(string $email) Return the first CoordonneesContact filtered by the email column
  * @method CoordonneesContact findOneByTelephone(string $telephone) Return the first CoordonneesContact filtered by the telephone column
  * @method CoordonneesContact findOneByFax(string $fax) Return the first CoordonneesContact filtered by the fax column
+ * @method CoordonneesContact findOneBySujet(string $sujet) Return the first CoordonneesContact filtered by the sujet column
  * @method CoordonneesContact findOneByMessage(string $message) Return the first CoordonneesContact filtered by the message column
  * @method CoordonneesContact findOneByCreatedAt(string $created_at) Return the first CoordonneesContact filtered by the created_at column
  * @method CoordonneesContact findOneByUpdatedAt(string $updated_at) Return the first CoordonneesContact filtered by the updated_at column
@@ -95,6 +98,7 @@ use Cungfoo\Model\CoordonneesContactQuery;
  * @method array findByEmail(string $email) Return CoordonneesContact objects filtered by the email column
  * @method array findByTelephone(string $telephone) Return CoordonneesContact objects filtered by the telephone column
  * @method array findByFax(string $fax) Return CoordonneesContact objects filtered by the fax column
+ * @method array findBySujet(string $sujet) Return CoordonneesContact objects filtered by the sujet column
  * @method array findByMessage(string $message) Return CoordonneesContact objects filtered by the message column
  * @method array findByCreatedAt(string $created_at) Return CoordonneesContact objects filtered by the created_at column
  * @method array findByUpdatedAt(string $updated_at) Return CoordonneesContact objects filtered by the updated_at column
@@ -202,7 +206,7 @@ abstract class BaseCoordonneesContactQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `civilite`, `nom`, `prenom`, `type`, `adresse`, `ville`, `code_postal`, `pays`, `email`, `telephone`, `fax`, `message`, `created_at`, `updated_at`, `active` FROM `coordonnees_contact` WHERE `id` = :p0';
+        $sql = 'SELECT `id`, `civilite`, `nom`, `prenom`, `type`, `adresse`, `ville`, `code_postal`, `pays`, `email`, `telephone`, `fax`, `sujet`, `message`, `created_at`, `updated_at`, `active` FROM `coordonnees_contact` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -645,6 +649,35 @@ abstract class BaseCoordonneesContactQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(CoordonneesContactPeer::FAX, $fax, $comparison);
+    }
+
+    /**
+     * Filter the query on the sujet column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterBySujet('fooValue');   // WHERE sujet = 'fooValue'
+     * $query->filterBySujet('%fooValue%'); // WHERE sujet LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $sujet The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return CoordonneesContactQuery The current query, for fluid interface
+     */
+    public function filterBySujet($sujet = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($sujet)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $sujet)) {
+                $sujet = str_replace('*', '%', $sujet);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(CoordonneesContactPeer::SUJET, $sujet, $comparison);
     }
 
     /**

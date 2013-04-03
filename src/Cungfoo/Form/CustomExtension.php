@@ -29,6 +29,7 @@ class CustomExtension extends AbstractExtension
             new Type\TranslationCollectionType(),
             new Type\TextrichType(),
             new Type\CungfooFileType(),
+            new Type\CaptchaType(),
         );
     }
 }

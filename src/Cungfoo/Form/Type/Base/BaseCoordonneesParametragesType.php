@@ -33,7 +33,7 @@ class BaseCoordonneesParametragesType extends AppAwareType
 
     public function getNameType()
     {
-        return 'choice';
+        return 'text';
     }
 
     public function getNameOptions()
@@ -44,9 +44,21 @@ class BaseCoordonneesParametragesType extends AppAwareType
             'constraints' => array(
                         new Assert\NotBlank(),
                     ),
-            'choices' => array(
-                        'coordonnees_parametrages.mail_particulier' => 'coordonnees_parametrages.mail_particulier',
-                        'coordonnees_parametrages.mail_professionnel' => 'coordonnees_parametrages.mail_professionnel',
+        );
+    }
+
+    public function getDescriptionType()
+    {
+        return 'textarea';
+    }
+
+    public function getDescriptionOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'coordonnees_parametrages.description',
+            'constraints' => array(
+                        new Assert\NotBlank(),
                     ),
         );
     }
@@ -193,6 +205,7 @@ class BaseCoordonneesParametragesType extends AppAwareType
     {
         $builder->add('id', $this->getIdType(), $this->getIdOptions());
         $builder->add('name', $this->getNameType(), $this->getNameOptions());
+        $builder->add('description', $this->getDescriptionType(), $this->getDescriptionOptions());
         $builder->add('value', $this->getValueType(), $this->getValueOptions());
         $builder->add('is_usine', $this->getIsUsineType(), $this->getIsUsineOptions());
         $builder->add('created_at', $this->getCreatedAtType(), $this->getCreatedAtOptions());

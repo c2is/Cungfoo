@@ -57,9 +57,15 @@ abstract class BaseCoordonneesParametrages extends BaseObject implements Persist
 
     /**
      * The value for the name field.
-     * @var        int
+     * @var        string
      */
     protected $name;
+
+    /**
+     * The value for the description field.
+     * @var        string
+     */
+    protected $description;
 
     /**
      * The value for the value field.
@@ -168,20 +174,21 @@ abstract class BaseCoordonneesParametrages extends BaseObject implements Persist
     /**
      * Get the [name] column value.
      *
-     * @return int
-     * @throws PropelException - if the stored enum key is unknown.
+     * @return string
      */
     public function getName()
     {
-        if (null === $this->name) {
-            return null;
-        }
-        $valueSet = CoordonneesParametragesPeer::getValueSet(CoordonneesParametragesPeer::NAME);
-        if (!isset($valueSet[$this->name])) {
-            throw new PropelException('Unknown stored enum key: ' . $this->name);
-        }
+        return $this->name;
+    }
 
-        return $valueSet[$this->name];
+    /**
+     * Get the [description] column value.
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
     }
 
     /**
@@ -318,18 +325,13 @@ abstract class BaseCoordonneesParametrages extends BaseObject implements Persist
     /**
      * Set the value of [name] column.
      *
-     * @param int $v new value
+     * @param string $v new value
      * @return CoordonneesParametrages The current object (for fluent API support)
-     * @throws PropelException - if the value is not accepted by this enum.
      */
     public function setName($v)
     {
         if ($v !== null) {
-            $valueSet = CoordonneesParametragesPeer::getValueSet(CoordonneesParametragesPeer::NAME);
-            if (!in_array($v, $valueSet)) {
-                throw new PropelException(sprintf('Value "%s" is not accepted in this enumerated column', $v));
-            }
-            $v = array_search($v, $valueSet);
+            $v = (string) $v;
         }
 
         if ($this->name !== $v) {
@@ -340,6 +342,27 @@ abstract class BaseCoordonneesParametrages extends BaseObject implements Persist
 
         return $this;
     } // setName()
+
+    /**
+     * Set the value of [description] column.
+     *
+     * @param string $v new value
+     * @return CoordonneesParametrages The current object (for fluent API support)
+     */
+    public function setDescription($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->description !== $v) {
+            $this->description = $v;
+            $this->modifiedColumns[] = CoordonneesParametragesPeer::DESCRIPTION;
+        }
+
+
+        return $this;
+    } // setDescription()
 
     /**
      * Set the value of [value] column.
@@ -507,12 +530,13 @@ abstract class BaseCoordonneesParametrages extends BaseObject implements Persist
         try {
 
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
-            $this->name = ($row[$startcol + 1] !== null) ? (int) $row[$startcol + 1] : null;
-            $this->value = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
-            $this->is_usine = ($row[$startcol + 3] !== null) ? (boolean) $row[$startcol + 3] : null;
-            $this->created_at = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
-            $this->updated_at = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
-            $this->active = ($row[$startcol + 6] !== null) ? (boolean) $row[$startcol + 6] : null;
+            $this->name = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
+            $this->description = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
+            $this->value = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
+            $this->is_usine = ($row[$startcol + 4] !== null) ? (boolean) $row[$startcol + 4] : null;
+            $this->created_at = ($row[$startcol + 5] !== null) ? (string) $row[$startcol + 5] : null;
+            $this->updated_at = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
+            $this->active = ($row[$startcol + 7] !== null) ? (boolean) $row[$startcol + 7] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -521,7 +545,7 @@ abstract class BaseCoordonneesParametrages extends BaseObject implements Persist
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 7; // 7 = CoordonneesParametragesPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 8; // 8 = CoordonneesParametragesPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating CoordonneesParametrages object", $e);
@@ -769,6 +793,9 @@ abstract class BaseCoordonneesParametrages extends BaseObject implements Persist
         if ($this->isColumnModified(CoordonneesParametragesPeer::NAME)) {
             $modifiedColumns[':p' . $index++]  = '`name`';
         }
+        if ($this->isColumnModified(CoordonneesParametragesPeer::DESCRIPTION)) {
+            $modifiedColumns[':p' . $index++]  = '`description`';
+        }
         if ($this->isColumnModified(CoordonneesParametragesPeer::VALUE)) {
             $modifiedColumns[':p' . $index++]  = '`value`';
         }
@@ -799,7 +826,10 @@ abstract class BaseCoordonneesParametrages extends BaseObject implements Persist
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
                     case '`name`':
-                        $stmt->bindValue($identifier, $this->name, PDO::PARAM_INT);
+                        $stmt->bindValue($identifier, $this->name, PDO::PARAM_STR);
+                        break;
+                    case '`description`':
+                        $stmt->bindValue($identifier, $this->description, PDO::PARAM_STR);
                         break;
                     case '`value`':
                         $stmt->bindValue($identifier, $this->value, PDO::PARAM_STR);
@@ -965,18 +995,21 @@ abstract class BaseCoordonneesParametrages extends BaseObject implements Persist
                 return $this->getName();
                 break;
             case 2:
-                return $this->getValue();
+                return $this->getDescription();
                 break;
             case 3:
-                return $this->getIsUsine();
+                return $this->getValue();
                 break;
             case 4:
-                return $this->getCreatedAt();
+                return $this->getIsUsine();
                 break;
             case 5:
-                return $this->getUpdatedAt();
+                return $this->getCreatedAt();
                 break;
             case 6:
+                return $this->getUpdatedAt();
+                break;
+            case 7:
                 return $this->getActive();
                 break;
             default:
@@ -1010,11 +1043,12 @@ abstract class BaseCoordonneesParametrages extends BaseObject implements Persist
         $result = array(
             $keys[0] => $this->getId(),
             $keys[1] => $this->getName(),
-            $keys[2] => $this->getValue(),
-            $keys[3] => $this->getIsUsine(),
-            $keys[4] => $this->getCreatedAt(),
-            $keys[5] => $this->getUpdatedAt(),
-            $keys[6] => $this->getActive(),
+            $keys[2] => $this->getDescription(),
+            $keys[3] => $this->getValue(),
+            $keys[4] => $this->getIsUsine(),
+            $keys[5] => $this->getCreatedAt(),
+            $keys[6] => $this->getUpdatedAt(),
+            $keys[7] => $this->getActive(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->collCoordonneesParametragesI18ns) {
@@ -1058,25 +1092,24 @@ abstract class BaseCoordonneesParametrages extends BaseObject implements Persist
                 $this->setId($value);
                 break;
             case 1:
-                $valueSet = CoordonneesParametragesPeer::getValueSet(CoordonneesParametragesPeer::NAME);
-                if (isset($valueSet[$value])) {
-                    $value = $valueSet[$value];
-                }
                 $this->setName($value);
                 break;
             case 2:
-                $this->setValue($value);
+                $this->setDescription($value);
                 break;
             case 3:
-                $this->setIsUsine($value);
+                $this->setValue($value);
                 break;
             case 4:
-                $this->setCreatedAt($value);
+                $this->setIsUsine($value);
                 break;
             case 5:
-                $this->setUpdatedAt($value);
+                $this->setCreatedAt($value);
                 break;
             case 6:
+                $this->setUpdatedAt($value);
+                break;
+            case 7:
                 $this->setActive($value);
                 break;
         } // switch()
@@ -1105,11 +1138,12 @@ abstract class BaseCoordonneesParametrages extends BaseObject implements Persist
 
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
         if (array_key_exists($keys[1], $arr)) $this->setName($arr[$keys[1]]);
-        if (array_key_exists($keys[2], $arr)) $this->setValue($arr[$keys[2]]);
-        if (array_key_exists($keys[3], $arr)) $this->setIsUsine($arr[$keys[3]]);
-        if (array_key_exists($keys[4], $arr)) $this->setCreatedAt($arr[$keys[4]]);
-        if (array_key_exists($keys[5], $arr)) $this->setUpdatedAt($arr[$keys[5]]);
-        if (array_key_exists($keys[6], $arr)) $this->setActive($arr[$keys[6]]);
+        if (array_key_exists($keys[2], $arr)) $this->setDescription($arr[$keys[2]]);
+        if (array_key_exists($keys[3], $arr)) $this->setValue($arr[$keys[3]]);
+        if (array_key_exists($keys[4], $arr)) $this->setIsUsine($arr[$keys[4]]);
+        if (array_key_exists($keys[5], $arr)) $this->setCreatedAt($arr[$keys[5]]);
+        if (array_key_exists($keys[6], $arr)) $this->setUpdatedAt($arr[$keys[6]]);
+        if (array_key_exists($keys[7], $arr)) $this->setActive($arr[$keys[7]]);
     }
 
     /**
@@ -1123,6 +1157,7 @@ abstract class BaseCoordonneesParametrages extends BaseObject implements Persist
 
         if ($this->isColumnModified(CoordonneesParametragesPeer::ID)) $criteria->add(CoordonneesParametragesPeer::ID, $this->id);
         if ($this->isColumnModified(CoordonneesParametragesPeer::NAME)) $criteria->add(CoordonneesParametragesPeer::NAME, $this->name);
+        if ($this->isColumnModified(CoordonneesParametragesPeer::DESCRIPTION)) $criteria->add(CoordonneesParametragesPeer::DESCRIPTION, $this->description);
         if ($this->isColumnModified(CoordonneesParametragesPeer::VALUE)) $criteria->add(CoordonneesParametragesPeer::VALUE, $this->value);
         if ($this->isColumnModified(CoordonneesParametragesPeer::IS_USINE)) $criteria->add(CoordonneesParametragesPeer::IS_USINE, $this->is_usine);
         if ($this->isColumnModified(CoordonneesParametragesPeer::CREATED_AT)) $criteria->add(CoordonneesParametragesPeer::CREATED_AT, $this->created_at);
@@ -1192,6 +1227,7 @@ abstract class BaseCoordonneesParametrages extends BaseObject implements Persist
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
         $copyObj->setName($this->getName());
+        $copyObj->setDescription($this->getDescription());
         $copyObj->setValue($this->getValue());
         $copyObj->setIsUsine($this->getIsUsine());
         $copyObj->setCreatedAt($this->getCreatedAt());
@@ -1503,6 +1539,7 @@ abstract class BaseCoordonneesParametrages extends BaseObject implements Persist
     {
         $this->id = null;
         $this->name = null;
+        $this->description = null;
         $this->value = null;
         $this->is_usine = null;
         $this->created_at = null;

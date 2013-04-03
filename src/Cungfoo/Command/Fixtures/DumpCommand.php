@@ -107,6 +107,7 @@ class DumpCommand extends BaseCommand
         "\\Cungfoo\\Model\\PortfolioTagI18n",
         "\\Cungfoo\\Model\\PortfolioUsage",
         "\\Cungfoo\\Model\\PortfolioMediaTag",
+        "\\Cungfoo\\Model\\CoordonneesParametrages",
     );
 
     protected function configure()

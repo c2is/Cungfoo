@@ -42,6 +42,7 @@ class CoordonneesParametragesType extends BaseCoordonneesParametragesType
                     'title'         => 'crud.tab.datas',
                     'content'       => array(
                         'name',
+                        'description',
                         'value',
                     )
                 ),

@@ -1,0 +1,37 @@
+\Cungfoo\Model\CoordonneesParametrages:
+    1:
+        Name: 'demande_information'
+        Description: 'Demande d''information'
+        Value: contact@vacances-directes.com
+        IsUsine: false
+        Active: true
+    2:
+        Name: 'demande_catalogue'
+        Description: 'Demande de catalogue'
+        Value: 'http://www.vacances-directes.com/demande-de-brochure.html'
+        IsUsine: false
+        Active: true
+    3:
+        Name: 'reservation_groupe'
+        Description: 'Réservation Groupe'
+        Value: m.aa@vacances-directes.com
+        IsUsine: false
+        Active: true
+    4:
+        Name: 'recrutement'
+        Description: Recrutement
+        Value: recrutement@vacances-directes.com
+        IsUsine: false
+        Active: true
+    5:
+        Name: 'achat_mobil_home'
+        Description: 'Achat de mobil-home'
+        Value: 'http://mobil-home.village-center.fr/contact.php?utm_source=vacancesdirectes&utm_medium=contact_form&utm_campaign=achat%2Bde%2Bmobil-home'
+        IsUsine: false
+        Active: true
+    6:
+        Name: 'informations_ce'
+        Description: 'Informations CE'
+        Value: ce@vacances-directes.com
+        IsUsine: false
+        Active: true

@@ -47,11 +47,16 @@
             <fieldset>
                 <legend class="h4-like">{{ "coordonnees_contact.votre_message"|trans }}</legend>
                 <table>
-                    <tbody><tr>
-                        <td class="label"></td>
-                        <td class="field">{{ form_widget(form.message) }}</td>
-                    </tr>
-                </tbody>
+                    <tbody>
+                        <tr>
+                            <td class="label">{{ form_label(form.sujet) }}</td>
+                            <td class="field">{{ form_widget(form.sujet) }}</td>
+                        </tr>
+                        <tr>
+                            <td class="label"></td>
+                            <td class="field">{{ form_widget(form.message) }}</td>
+                        </tr>
+                    </tbody>
                 </table>
                 <button type="submit" class="bt fushia big right" name="annulationForm">Envoyer</button>
                 <div style="display: none;">

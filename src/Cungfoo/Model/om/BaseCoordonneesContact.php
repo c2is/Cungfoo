@@ -122,6 +122,12 @@ abstract class BaseCoordonneesContact extends BaseObject implements Persistent
     protected $fax;
 
     /**
+     * The value for the sujet field.
+     * @var        string
+     */
+    protected $sujet;
+
+    /**
      * The value for the message field.
      * @var        string
      */
@@ -343,6 +349,16 @@ abstract class BaseCoordonneesContact extends BaseObject implements Persistent
     public function getFax()
     {
         return $this->fax;
+    }
+
+    /**
+     * Get the [sujet] column value.
+     *
+     * @return string
+     */
+    public function getSujet()
+    {
+        return $this->sujet;
     }
 
     /**
@@ -708,6 +724,27 @@ abstract class BaseCoordonneesContact extends BaseObject implements Persistent
     } // setFax()
 
     /**
+     * Set the value of [sujet] column.
+     *
+     * @param string $v new value
+     * @return CoordonneesContact The current object (for fluent API support)
+     */
+    public function setSujet($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->sujet !== $v) {
+            $this->sujet = $v;
+            $this->modifiedColumns[] = CoordonneesContactPeer::SUJET;
+        }
+
+
+        return $this;
+    } // setSujet()
+
+    /**
      * Set the value of [message] column.
      *
      * @param string $v new value
@@ -851,10 +888,11 @@ abstract class BaseCoordonneesContact extends BaseObject implements Persistent
             $this->email = ($row[$startcol + 9] !== null) ? (string) $row[$startcol + 9] : null;
             $this->telephone = ($row[$startcol + 10] !== null) ? (string) $row[$startcol + 10] : null;
             $this->fax = ($row[$startcol + 11] !== null) ? (string) $row[$startcol + 11] : null;
-            $this->message = ($row[$startcol + 12] !== null) ? (string) $row[$startcol + 12] : null;
-            $this->created_at = ($row[$startcol + 13] !== null) ? (string) $row[$startcol + 13] : null;
-            $this->updated_at = ($row[$startcol + 14] !== null) ? (string) $row[$startcol + 14] : null;
-            $this->active = ($row[$startcol + 15] !== null) ? (boolean) $row[$startcol + 15] : null;
+            $this->sujet = ($row[$startcol + 12] !== null) ? (string) $row[$startcol + 12] : null;
+            $this->message = ($row[$startcol + 13] !== null) ? (string) $row[$startcol + 13] : null;
+            $this->created_at = ($row[$startcol + 14] !== null) ? (string) $row[$startcol + 14] : null;
+            $this->updated_at = ($row[$startcol + 15] !== null) ? (string) $row[$startcol + 15] : null;
+            $this->active = ($row[$startcol + 16] !== null) ? (boolean) $row[$startcol + 16] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -863,7 +901,7 @@ abstract class BaseCoordonneesContact extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 16; // 16 = CoordonneesContactPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 17; // 17 = CoordonneesContactPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating CoordonneesContact object", $e);
@@ -1141,6 +1179,9 @@ abstract class BaseCoordonneesContact extends BaseObject implements Persistent
         if ($this->isColumnModified(CoordonneesContactPeer::FAX)) {
             $modifiedColumns[':p' . $index++]  = '`fax`';
         }
+        if ($this->isColumnModified(CoordonneesContactPeer::SUJET)) {
+            $modifiedColumns[':p' . $index++]  = '`sujet`';
+        }
         if ($this->isColumnModified(CoordonneesContactPeer::MESSAGE)) {
             $modifiedColumns[':p' . $index++]  = '`message`';
         }
@@ -1199,6 +1240,9 @@ abstract class BaseCoordonneesContact extends BaseObject implements Persistent
                         break;
                     case '`fax`':
                         $stmt->bindValue($identifier, $this->fax, PDO::PARAM_STR);
+                        break;
+                    case '`sujet`':
+                        $stmt->bindValue($identifier, $this->sujet, PDO::PARAM_STR);
                         break;
                     case '`message`':
                         $stmt->bindValue($identifier, $this->message, PDO::PARAM_STR);
@@ -1391,15 +1435,18 @@ abstract class BaseCoordonneesContact extends BaseObject implements Persistent
                 return $this->getFax();
                 break;
             case 12:
-                return $this->getMessage();
+                return $this->getSujet();
                 break;
             case 13:
-                return $this->getCreatedAt();
+                return $this->getMessage();
                 break;
             case 14:
-                return $this->getUpdatedAt();
+                return $this->getCreatedAt();
                 break;
             case 15:
+                return $this->getUpdatedAt();
+                break;
+            case 16:
                 return $this->getActive();
                 break;
             default:
@@ -1443,10 +1490,11 @@ abstract class BaseCoordonneesContact extends BaseObject implements Persistent
             $keys[9] => $this->getEmail(),
             $keys[10] => $this->getTelephone(),
             $keys[11] => $this->getFax(),
-            $keys[12] => $this->getMessage(),
-            $keys[13] => $this->getCreatedAt(),
-            $keys[14] => $this->getUpdatedAt(),
-            $keys[15] => $this->getActive(),
+            $keys[12] => $this->getSujet(),
+            $keys[13] => $this->getMessage(),
+            $keys[14] => $this->getCreatedAt(),
+            $keys[15] => $this->getUpdatedAt(),
+            $keys[16] => $this->getActive(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->collCoordonneesContactI18ns) {
@@ -1531,15 +1579,18 @@ abstract class BaseCoordonneesContact extends BaseObject implements Persistent
                 $this->setFax($value);
                 break;
             case 12:
-                $this->setMessage($value);
+                $this->setSujet($value);
                 break;
             case 13:
-                $this->setCreatedAt($value);
+                $this->setMessage($value);
                 break;
             case 14:
-                $this->setUpdatedAt($value);
+                $this->setCreatedAt($value);
                 break;
             case 15:
+                $this->setUpdatedAt($value);
+                break;
+            case 16:
                 $this->setActive($value);
                 break;
         } // switch()
@@ -1578,10 +1629,11 @@ abstract class BaseCoordonneesContact extends BaseObject implements Persistent
         if (array_key_exists($keys[9], $arr)) $this->setEmail($arr[$keys[9]]);
         if (array_key_exists($keys[10], $arr)) $this->setTelephone($arr[$keys[10]]);
         if (array_key_exists($keys[11], $arr)) $this->setFax($arr[$keys[11]]);
-        if (array_key_exists($keys[12], $arr)) $this->setMessage($arr[$keys[12]]);
-        if (array_key_exists($keys[13], $arr)) $this->setCreatedAt($arr[$keys[13]]);
-        if (array_key_exists($keys[14], $arr)) $this->setUpdatedAt($arr[$keys[14]]);
-        if (array_key_exists($keys[15], $arr)) $this->setActive($arr[$keys[15]]);
+        if (array_key_exists($keys[12], $arr)) $this->setSujet($arr[$keys[12]]);
+        if (array_key_exists($keys[13], $arr)) $this->setMessage($arr[$keys[13]]);
+        if (array_key_exists($keys[14], $arr)) $this->setCreatedAt($arr[$keys[14]]);
+        if (array_key_exists($keys[15], $arr)) $this->setUpdatedAt($arr[$keys[15]]);
+        if (array_key_exists($keys[16], $arr)) $this->setActive($arr[$keys[16]]);
     }
 
     /**
@@ -1605,6 +1657,7 @@ abstract class BaseCoordonneesContact extends BaseObject implements Persistent
         if ($this->isColumnModified(CoordonneesContactPeer::EMAIL)) $criteria->add(CoordonneesContactPeer::EMAIL, $this->email);
         if ($this->isColumnModified(CoordonneesContactPeer::TELEPHONE)) $criteria->add(CoordonneesContactPeer::TELEPHONE, $this->telephone);
         if ($this->isColumnModified(CoordonneesContactPeer::FAX)) $criteria->add(CoordonneesContactPeer::FAX, $this->fax);
+        if ($this->isColumnModified(CoordonneesContactPeer::SUJET)) $criteria->add(CoordonneesContactPeer::SUJET, $this->sujet);
         if ($this->isColumnModified(CoordonneesContactPeer::MESSAGE)) $criteria->add(CoordonneesContactPeer::MESSAGE, $this->message);
         if ($this->isColumnModified(CoordonneesContactPeer::CREATED_AT)) $criteria->add(CoordonneesContactPeer::CREATED_AT, $this->created_at);
         if ($this->isColumnModified(CoordonneesContactPeer::UPDATED_AT)) $criteria->add(CoordonneesContactPeer::UPDATED_AT, $this->updated_at);
@@ -1683,6 +1736,7 @@ abstract class BaseCoordonneesContact extends BaseObject implements Persistent
         $copyObj->setEmail($this->getEmail());
         $copyObj->setTelephone($this->getTelephone());
         $copyObj->setFax($this->getFax());
+        $copyObj->setSujet($this->getSujet());
         $copyObj->setMessage($this->getMessage());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
@@ -2003,6 +2057,7 @@ abstract class BaseCoordonneesContact extends BaseObject implements Persistent
         $this->email = null;
         $this->telephone = null;
         $this->fax = null;
+        $this->sujet = null;
         $this->message = null;
         $this->created_at = null;
         $this->updated_at = null;

@@ -43,11 +43,8 @@ class CoordonneesParametragesTableMap extends TableMap
         $this->setUseIdGenerator(true);
         // columns
         $this->addPrimaryKey('id', 'Id', 'INTEGER', true, null, null);
-        $this->addColumn('name', 'Name', 'ENUM', true, null, null);
-        $this->getColumn('name', false)->setValueSet(array (
-  0 => 'coordonnees_parametrages.mail_particulier',
-  1 => 'coordonnees_parametrages.mail_professionnel',
-));
+        $this->addColumn('name', 'Name', 'VARCHAR', true, 255, null);
+        $this->addColumn('description', 'Description', 'LONGVARCHAR', true, null, null);
         $this->addColumn('value', 'Value', 'VARCHAR', true, 255, null);
         $this->addColumn('is_usine', 'IsUsine', 'BOOLEAN', false, 1, false);
         $this->addColumn('created_at', 'CreatedAt', 'TIMESTAMP', false, null, null);

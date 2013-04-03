@@ -20,6 +20,7 @@ class BaseCoordonneesParametragesListing extends Listing
     public function configure()
     {
         $this->addColumn(new Column\TextColumn('id'));
+        $this->addColumn(new Column\TextColumn('name'));
         $this->addColumn(new Column\TextColumn('value'));
         $this->addColumn(new Column\TextColumn('is_usine'));
         $this->addColumn(new Column\TextColumn('active'));

@@ -9,6 +9,8 @@ use Symfony\Component\Form\FormBuilderInterface,
 
 use Cungfoo\Form\Type\Base\BaseCoordonneesContactType;
 
+use Cungfoo\Model\CoordonneesParametragesPeer as Parameters;
+
 /**
  * Test class for Additional builder enabled on the 'coordonnees_contact' table.
  *
@@ -18,6 +20,26 @@ use Cungfoo\Form\Type\Base\BaseCoordonneesContactType;
  */
 class CoordonneesContactType extends BaseCoordonneesContactType
 {
+    public function getSujetType()
+    {
+        return 'choice';
+    }
+
+    public function getSujetOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'coordonnees_contact.sujet',
+            'choices' => array(
+                Parameters::DEMANDE_INFORMATION => Parameters::get(Parameters::DEMANDE_INFORMATION),
+                Parameters::DEMANDE_CATALOGUE   => Parameters::get(Parameters::DEMANDE_CATALOGUE),
+                Parameters::RESERVATION_GROÜP   => Parameters::get(Parameters::RESERVATION_GROÜP),
+                Parameters::RECRUTEMENT         => Parameters::get(Parameters::RECRUTEMENT),
+                Parameters::ACHAT_DE_MOBIL_HOME => Parameters::get(Parameters::ACHAT_DE_MOBIL_HOME),
+                Parameters::INFORMATIONS_CE     => Parameters::get(Parameters::INFORMATIONS_CE),
+            )
+        );
+    }
 
     /**
      * {@inheritdoc}
@@ -52,6 +74,7 @@ class CoordonneesContactType extends BaseCoordonneesContactType
                         'email',
                         'telephone',
                         'fax',
+                        'sujet',
                         'message',
                     )
                 ),

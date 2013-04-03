@@ -63,6 +63,7 @@ class CoordonneesContactTableMap extends TableMap
         $this->addColumn('email', 'Email', 'VARCHAR', true, 255, null);
         $this->addColumn('telephone', 'Telephone', 'VARCHAR', false, 255, null);
         $this->addColumn('fax', 'Fax', 'VARCHAR', false, 255, null);
+        $this->addColumn('sujet', 'Sujet', 'VARCHAR', false, 255, null);
         $this->addColumn('message', 'Message', 'LONGVARCHAR', true, null, null);
         $this->addColumn('created_at', 'CreatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('updated_at', 'UpdatedAt', 'TIMESTAMP', false, null, null);

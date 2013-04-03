@@ -24,6 +24,7 @@ use Cungfoo\Model\CoordonneesParametragesQuery;
  *
  * @method CoordonneesParametragesQuery orderById($order = Criteria::ASC) Order by the id column
  * @method CoordonneesParametragesQuery orderByName($order = Criteria::ASC) Order by the name column
+ * @method CoordonneesParametragesQuery orderByDescription($order = Criteria::ASC) Order by the description column
  * @method CoordonneesParametragesQuery orderByValue($order = Criteria::ASC) Order by the value column
  * @method CoordonneesParametragesQuery orderByIsUsine($order = Criteria::ASC) Order by the is_usine column
  * @method CoordonneesParametragesQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
@@ -32,6 +33,7 @@ use Cungfoo\Model\CoordonneesParametragesQuery;
  *
  * @method CoordonneesParametragesQuery groupById() Group by the id column
  * @method CoordonneesParametragesQuery groupByName() Group by the name column
+ * @method CoordonneesParametragesQuery groupByDescription() Group by the description column
  * @method CoordonneesParametragesQuery groupByValue() Group by the value column
  * @method CoordonneesParametragesQuery groupByIsUsine() Group by the is_usine column
  * @method CoordonneesParametragesQuery groupByCreatedAt() Group by the created_at column
@@ -49,7 +51,8 @@ use Cungfoo\Model\CoordonneesParametragesQuery;
  * @method CoordonneesParametrages findOne(PropelPDO $con = null) Return the first CoordonneesParametrages matching the query
  * @method CoordonneesParametrages findOneOrCreate(PropelPDO $con = null) Return the first CoordonneesParametrages matching the query, or a new CoordonneesParametrages object populated from the query conditions when no match is found
  *
- * @method CoordonneesParametrages findOneByName(int $name) Return the first CoordonneesParametrages filtered by the name column
+ * @method CoordonneesParametrages findOneByName(string $name) Return the first CoordonneesParametrages filtered by the name column
+ * @method CoordonneesParametrages findOneByDescription(string $description) Return the first CoordonneesParametrages filtered by the description column
  * @method CoordonneesParametrages findOneByValue(string $value) Return the first CoordonneesParametrages filtered by the value column
  * @method CoordonneesParametrages findOneByIsUsine(boolean $is_usine) Return the first CoordonneesParametrages filtered by the is_usine column
  * @method CoordonneesParametrages findOneByCreatedAt(string $created_at) Return the first CoordonneesParametrages filtered by the created_at column
@@ -57,7 +60,8 @@ use Cungfoo\Model\CoordonneesParametragesQuery;
  * @method CoordonneesParametrages findOneByActive(boolean $active) Return the first CoordonneesParametrages filtered by the active column
  *
  * @method array findById(int $id) Return CoordonneesParametrages objects filtered by the id column
- * @method array findByName(int $name) Return CoordonneesParametrages objects filtered by the name column
+ * @method array findByName(string $name) Return CoordonneesParametrages objects filtered by the name column
+ * @method array findByDescription(string $description) Return CoordonneesParametrages objects filtered by the description column
  * @method array findByValue(string $value) Return CoordonneesParametrages objects filtered by the value column
  * @method array findByIsUsine(boolean $is_usine) Return CoordonneesParametrages objects filtered by the is_usine column
  * @method array findByCreatedAt(string $created_at) Return CoordonneesParametrages objects filtered by the created_at column
@@ -166,7 +170,7 @@ abstract class BaseCoordonneesParametragesQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `name`, `value`, `is_usine`, `created_at`, `updated_at`, `active` FROM `coordonnees_parametrages` WHERE `id` = :p0';
+        $sql = 'SELECT `id`, `name`, `description`, `value`, `is_usine`, `created_at`, `updated_at`, `active` FROM `coordonnees_parametrages` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -285,35 +289,59 @@ abstract class BaseCoordonneesParametragesQuery extends ModelCriteria
     /**
      * Filter the query on the name column
      *
-     * @param     mixed $name The value to use as filter
+     * Example usage:
+     * <code>
+     * $query->filterByName('fooValue');   // WHERE name = 'fooValue'
+     * $query->filterByName('%fooValue%'); // WHERE name LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $name The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return CoordonneesParametragesQuery The current query, for fluid interface
-     * @throws PropelException - if the value is not accepted by the enum.
      */
     public function filterByName($name = null, $comparison = null)
     {
-        $valueSet = CoordonneesParametragesPeer::getValueSet(CoordonneesParametragesPeer::NAME);
-        if (is_scalar($name)) {
-            if (!in_array($name, $valueSet)) {
-                throw new PropelException(sprintf('Value "%s" is not accepted in this enumerated column', $name));
-            }
-            $name = array_search($name, $valueSet);
-        } elseif (is_array($name)) {
-            $convertedValues = array();
-            foreach ($name as $value) {
-                if (!in_array($value, $valueSet)) {
-                    throw new PropelException(sprintf('Value "%s" is not accepted in this enumerated column', $value));
-                }
-                $convertedValues []= array_search($value, $valueSet);
-            }
-            $name = $convertedValues;
-            if (null === $comparison) {
+        if (null === $comparison) {
+            if (is_array($name)) {
                 $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $name)) {
+                $name = str_replace('*', '%', $name);
+                $comparison = Criteria::LIKE;
             }
         }
 
         return $this->addUsingAlias(CoordonneesParametragesPeer::NAME, $name, $comparison);
+    }
+
+    /**
+     * Filter the query on the description column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByDescription('fooValue');   // WHERE description = 'fooValue'
+     * $query->filterByDescription('%fooValue%'); // WHERE description LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $description The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return CoordonneesParametragesQuery The current query, for fluid interface
+     */
+    public function filterByDescription($description = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($description)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $description)) {
+                $description = str_replace('*', '%', $description);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(CoordonneesParametragesPeer::DESCRIPTION, $description, $comparison);
     }
 
     /**

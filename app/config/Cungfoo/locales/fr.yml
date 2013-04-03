@@ -317,6 +317,7 @@ menu.bon_plan_categorie: Catégories de bons plans
 menu.bon_plan: Bons plans
 menu.coordonnees: "Coordonnées"
 menu.coordonnees_contacts: "Contacts"
+menu.coordonnees_parametrages: "Paramétrages"
 menu.coordonnees_newsletter: "Newsletter"
 menu.themes_geo: "Themes géographiques"
 menu.themes_resalys: "Themes resalys"
@@ -938,6 +939,7 @@ portfolio_media_i18n.active_locale: "Activer pour cette langue"
 
 coordonnees_contact.crud.create: "Créer un contact"
 coordonnees_contact.crud.seo: "SEO contact"
+coordonnees_contact.sujet: "Sujet"
 coordonnees_contact.crud.metadata: "Metadata contact"
 coordonnees_contact.crud.list: "List des contacts"
 coordonnees_contact.civilite: "Civilité"
@@ -971,6 +973,7 @@ coordonnees_parametrages.crud.update: "Mettre à jour le paramètre coordonnées
 coordonnees_parametrages.crud.list: "Liste des paramètres coordonnées"
 coordonnees_parametrages.id: "Id"
 coordonnees_parametrages.name: "Nom"
+coordonnees_parametrages.description: "Déscription"
 coordonnees_parametrages.value: "Valeur"
 coordonnees_parametrages.is_usine: "Usine ?"
 coordonnees_parametrages.is.usine: "Usine ?"

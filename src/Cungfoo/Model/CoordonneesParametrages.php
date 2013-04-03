@@ -18,4 +18,8 @@ use Cungfoo\Model\om\BaseCoordonneesParametrages;
  */
 class CoordonneesParametrages extends BaseCoordonneesParametrages
 {
+    public function __toString()
+    {
+        return $this->getDescription();
+    }
 }

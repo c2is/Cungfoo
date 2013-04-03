@@ -201,6 +201,19 @@ class BaseCoordonneesContactType extends AppAwareType
         );
     }
 
+    public function getSujetType()
+    {
+        return 'text';
+    }
+
+    public function getSujetOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'coordonnees_contact.sujet',
+        );
+    }
+
     public function getMessageType()
     {
         return 'textarea';
@@ -340,6 +353,7 @@ class BaseCoordonneesContactType extends AppAwareType
         $builder->add('email', $this->getEmailType(), $this->getEmailOptions());
         $builder->add('telephone', $this->getTelephoneType(), $this->getTelephoneOptions());
         $builder->add('fax', $this->getFaxType(), $this->getFaxOptions());
+        $builder->add('sujet', $this->getSujetType(), $this->getSujetOptions());
         $builder->add('message', $this->getMessageType(), $this->getMessageOptions());
         $builder->add('created_at', $this->getCreatedAtType(), $this->getCreatedAtOptions());
         $builder->add('updated_at', $this->getUpdatedAtType(), $this->getUpdatedAtOptions());

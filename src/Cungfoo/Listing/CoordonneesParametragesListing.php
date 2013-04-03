@@ -23,9 +23,10 @@ class CoordonneesParametragesListing extends BaseCoordonneesParametragesListing
     public function configure()
     {
         parent::configure();
+        $this->removeColumn('name');
         $this->removeColumn('value');
         $this->removeColumn('is_usine');
-        $this->addColumn(new Column\TextColumn('name'));
+        $this->addColumn(new Column\TextColumn('description'));
         $this->addColumn(new Column\TextColumn('value'));
 
     }

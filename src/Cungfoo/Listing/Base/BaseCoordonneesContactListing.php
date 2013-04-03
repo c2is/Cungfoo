@@ -28,6 +28,7 @@ class BaseCoordonneesContactListing extends Listing
         $this->addColumn(new Column\TextColumn('email'));
         $this->addColumn(new Column\TextColumn('telephone'));
         $this->addColumn(new Column\TextColumn('fax'));
+        $this->addColumn(new Column\TextColumn('sujet'));
         $this->addColumn(new Column\TextColumn('active'));
     }
 

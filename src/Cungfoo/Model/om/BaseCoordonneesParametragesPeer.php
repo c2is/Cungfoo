@@ -37,19 +37,22 @@ abstract class BaseCoordonneesParametragesPeer
     const TM_CLASS = 'CoordonneesParametragesTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 7;
+    const NUM_COLUMNS = 8;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 7;
+    const NUM_HYDRATE_COLUMNS = 8;
 
     /** the column name for the id field */
     const ID = 'coordonnees_parametrages.id';
 
     /** the column name for the name field */
     const NAME = 'coordonnees_parametrages.name';
+
+    /** the column name for the description field */
+    const DESCRIPTION = 'coordonnees_parametrages.description';
 
     /** the column name for the value field */
     const VALUE = 'coordonnees_parametrages.value';
@@ -65,10 +68,6 @@ abstract class BaseCoordonneesParametragesPeer
 
     /** the column name for the active field */
     const ACTIVE = 'coordonnees_parametrages.active';
-
-    /** The enumerated values for the name field */
-    const NAME_COORDONNEES_PARAMETRAGES_MAIL_PARTICULIER = 'coordonnees_parametrages.mail_particulier';
-    const NAME_COORDONNEES_PARAMETRAGES_MAIL_PROFESSIONNEL = 'coordonnees_parametrages.mail_professionnel';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -96,12 +95,12 @@ abstract class BaseCoordonneesParametragesPeer
      * e.g. CoordonneesParametragesPeer::$fieldNames[CoordonneesParametragesPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Name', 'Value', 'IsUsine', 'CreatedAt', 'UpdatedAt', 'Active', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'name', 'value', 'isUsine', 'createdAt', 'updatedAt', 'active', ),
-        BasePeer::TYPE_COLNAME => array (CoordonneesParametragesPeer::ID, CoordonneesParametragesPeer::NAME, CoordonneesParametragesPeer::VALUE, CoordonneesParametragesPeer::IS_USINE, CoordonneesParametragesPeer::CREATED_AT, CoordonneesParametragesPeer::UPDATED_AT, CoordonneesParametragesPeer::ACTIVE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'NAME', 'VALUE', 'IS_USINE', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'name', 'value', 'is_usine', 'created_at', 'updated_at', 'active', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Name', 'Description', 'Value', 'IsUsine', 'CreatedAt', 'UpdatedAt', 'Active', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'name', 'description', 'value', 'isUsine', 'createdAt', 'updatedAt', 'active', ),
+        BasePeer::TYPE_COLNAME => array (CoordonneesParametragesPeer::ID, CoordonneesParametragesPeer::NAME, CoordonneesParametragesPeer::DESCRIPTION, CoordonneesParametragesPeer::VALUE, CoordonneesParametragesPeer::IS_USINE, CoordonneesParametragesPeer::CREATED_AT, CoordonneesParametragesPeer::UPDATED_AT, CoordonneesParametragesPeer::ACTIVE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'NAME', 'DESCRIPTION', 'VALUE', 'IS_USINE', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'name', 'description', 'value', 'is_usine', 'created_at', 'updated_at', 'active', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, )
     );
 
     /**
@@ -111,20 +110,12 @@ abstract class BaseCoordonneesParametragesPeer
      * e.g. CoordonneesParametragesPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Name' => 1, 'Value' => 2, 'IsUsine' => 3, 'CreatedAt' => 4, 'UpdatedAt' => 5, 'Active' => 6, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'name' => 1, 'value' => 2, 'isUsine' => 3, 'createdAt' => 4, 'updatedAt' => 5, 'active' => 6, ),
-        BasePeer::TYPE_COLNAME => array (CoordonneesParametragesPeer::ID => 0, CoordonneesParametragesPeer::NAME => 1, CoordonneesParametragesPeer::VALUE => 2, CoordonneesParametragesPeer::IS_USINE => 3, CoordonneesParametragesPeer::CREATED_AT => 4, CoordonneesParametragesPeer::UPDATED_AT => 5, CoordonneesParametragesPeer::ACTIVE => 6, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'NAME' => 1, 'VALUE' => 2, 'IS_USINE' => 3, 'CREATED_AT' => 4, 'UPDATED_AT' => 5, 'ACTIVE' => 6, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'name' => 1, 'value' => 2, 'is_usine' => 3, 'created_at' => 4, 'updated_at' => 5, 'active' => 6, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
-    );
-
-    /** The enumerated values for this table */
-    protected static $enumValueSets = array(
-        CoordonneesParametragesPeer::NAME => array(
-            CoordonneesParametragesPeer::NAME_COORDONNEES_PARAMETRAGES_MAIL_PARTICULIER,
-            CoordonneesParametragesPeer::NAME_COORDONNEES_PARAMETRAGES_MAIL_PROFESSIONNEL,
-        ),
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Name' => 1, 'Description' => 2, 'Value' => 3, 'IsUsine' => 4, 'CreatedAt' => 5, 'UpdatedAt' => 6, 'Active' => 7, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'name' => 1, 'description' => 2, 'value' => 3, 'isUsine' => 4, 'createdAt' => 5, 'updatedAt' => 6, 'active' => 7, ),
+        BasePeer::TYPE_COLNAME => array (CoordonneesParametragesPeer::ID => 0, CoordonneesParametragesPeer::NAME => 1, CoordonneesParametragesPeer::DESCRIPTION => 2, CoordonneesParametragesPeer::VALUE => 3, CoordonneesParametragesPeer::IS_USINE => 4, CoordonneesParametragesPeer::CREATED_AT => 5, CoordonneesParametragesPeer::UPDATED_AT => 6, CoordonneesParametragesPeer::ACTIVE => 7, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'NAME' => 1, 'DESCRIPTION' => 2, 'VALUE' => 3, 'IS_USINE' => 4, 'CREATED_AT' => 5, 'UPDATED_AT' => 6, 'ACTIVE' => 7, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'name' => 1, 'description' => 2, 'value' => 3, 'is_usine' => 4, 'created_at' => 5, 'updated_at' => 6, 'active' => 7, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, )
     );
 
     /**
@@ -167,29 +158,6 @@ abstract class BaseCoordonneesParametragesPeer
     }
 
     /**
-     * Gets the list of values for all ENUM columns
-     * @return array
-     */
-    public static function getValueSets()
-    {
-      return CoordonneesParametragesPeer::$enumValueSets;
-    }
-
-    /**
-     * Gets the list of values for an ENUM column
-     *
-     * @param string $colname The ENUM column name.
-     *
-     * @return array list of possible values for the column
-     */
-    public static function getValueSet($colname)
-    {
-        $valueSets = CoordonneesParametragesPeer::getValueSets();
-
-        return $valueSets[$colname];
-    }
-
-    /**
      * Convenience method which changes table.column to alias.column.
      *
      * Using this method you can maintain SQL abstraction while using column aliases.
@@ -223,6 +191,7 @@ abstract class BaseCoordonneesParametragesPeer
         if (null === $alias) {
             $criteria->addSelectColumn(CoordonneesParametragesPeer::ID);
             $criteria->addSelectColumn(CoordonneesParametragesPeer::NAME);
+            $criteria->addSelectColumn(CoordonneesParametragesPeer::DESCRIPTION);
             $criteria->addSelectColumn(CoordonneesParametragesPeer::VALUE);
             $criteria->addSelectColumn(CoordonneesParametragesPeer::IS_USINE);
             $criteria->addSelectColumn(CoordonneesParametragesPeer::CREATED_AT);
@@ -231,6 +200,7 @@ abstract class BaseCoordonneesParametragesPeer
         } else {
             $criteria->addSelectColumn($alias . '.id');
             $criteria->addSelectColumn($alias . '.name');
+            $criteria->addSelectColumn($alias . '.description');
             $criteria->addSelectColumn($alias . '.value');
             $criteria->addSelectColumn($alias . '.is_usine');
             $criteria->addSelectColumn($alias . '.created_at');

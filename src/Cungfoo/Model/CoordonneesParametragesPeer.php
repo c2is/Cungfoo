@@ -18,4 +18,18 @@ use Cungfoo\Model\om\BaseCoordonneesParametragesPeer;
  */
 class CoordonneesParametragesPeer extends BaseCoordonneesParametragesPeer
 {
+    const DEMANDE_INFORMATION = 'demande_information';
+    const DEMANDE_CATALOGUE   = 'demande_catalogue';
+    const RESERVATION_GROÜP   = 'reservation_groupe';
+    const RECRUTEMENT         = 'recrutement';
+    const ACHAT_DE_MOBIL_HOME = 'achat_mobil_home';
+    const INFORMATIONS_CE     = 'informations_ce';
+
+    public static function get($name)
+    {
+        return CoordonneesParametragesQuery::create()
+            ->filterByName($name)
+            ->findOne()
+        ;
+    }
 }

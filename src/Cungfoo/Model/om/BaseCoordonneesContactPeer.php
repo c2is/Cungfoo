@@ -37,13 +37,13 @@ abstract class BaseCoordonneesContactPeer
     const TM_CLASS = 'CoordonneesContactTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 16;
+    const NUM_COLUMNS = 17;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 16;
+    const NUM_HYDRATE_COLUMNS = 17;
 
     /** the column name for the id field */
     const ID = 'coordonnees_contact.id';
@@ -80,6 +80,9 @@ abstract class BaseCoordonneesContactPeer
 
     /** the column name for the fax field */
     const FAX = 'coordonnees_contact.fax';
+
+    /** the column name for the sujet field */
+    const SUJET = 'coordonnees_contact.sujet';
 
     /** the column name for the message field */
     const MESSAGE = 'coordonnees_contact.message';
@@ -128,12 +131,12 @@ abstract class BaseCoordonneesContactPeer
      * e.g. CoordonneesContactPeer::$fieldNames[CoordonneesContactPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Civilite', 'Nom', 'Prenom', 'Type', 'Adresse', 'Ville', 'CodePostal', 'Pays', 'Email', 'Telephone', 'Fax', 'Message', 'CreatedAt', 'UpdatedAt', 'Active', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'civilite', 'nom', 'prenom', 'type', 'adresse', 'ville', 'codePostal', 'pays', 'email', 'telephone', 'fax', 'message', 'createdAt', 'updatedAt', 'active', ),
-        BasePeer::TYPE_COLNAME => array (CoordonneesContactPeer::ID, CoordonneesContactPeer::CIVILITE, CoordonneesContactPeer::NOM, CoordonneesContactPeer::PRENOM, CoordonneesContactPeer::TYPE, CoordonneesContactPeer::ADRESSE, CoordonneesContactPeer::VILLE, CoordonneesContactPeer::CODE_POSTAL, CoordonneesContactPeer::PAYS, CoordonneesContactPeer::EMAIL, CoordonneesContactPeer::TELEPHONE, CoordonneesContactPeer::FAX, CoordonneesContactPeer::MESSAGE, CoordonneesContactPeer::CREATED_AT, CoordonneesContactPeer::UPDATED_AT, CoordonneesContactPeer::ACTIVE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CIVILITE', 'NOM', 'PRENOM', 'TYPE', 'ADRESSE', 'VILLE', 'CODE_POSTAL', 'PAYS', 'EMAIL', 'TELEPHONE', 'FAX', 'MESSAGE', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'civilite', 'nom', 'prenom', 'type', 'adresse', 'ville', 'code_postal', 'pays', 'email', 'telephone', 'fax', 'message', 'created_at', 'updated_at', 'active', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Civilite', 'Nom', 'Prenom', 'Type', 'Adresse', 'Ville', 'CodePostal', 'Pays', 'Email', 'Telephone', 'Fax', 'Sujet', 'Message', 'CreatedAt', 'UpdatedAt', 'Active', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'civilite', 'nom', 'prenom', 'type', 'adresse', 'ville', 'codePostal', 'pays', 'email', 'telephone', 'fax', 'sujet', 'message', 'createdAt', 'updatedAt', 'active', ),
+        BasePeer::TYPE_COLNAME => array (CoordonneesContactPeer::ID, CoordonneesContactPeer::CIVILITE, CoordonneesContactPeer::NOM, CoordonneesContactPeer::PRENOM, CoordonneesContactPeer::TYPE, CoordonneesContactPeer::ADRESSE, CoordonneesContactPeer::VILLE, CoordonneesContactPeer::CODE_POSTAL, CoordonneesContactPeer::PAYS, CoordonneesContactPeer::EMAIL, CoordonneesContactPeer::TELEPHONE, CoordonneesContactPeer::FAX, CoordonneesContactPeer::SUJET, CoordonneesContactPeer::MESSAGE, CoordonneesContactPeer::CREATED_AT, CoordonneesContactPeer::UPDATED_AT, CoordonneesContactPeer::ACTIVE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'CIVILITE', 'NOM', 'PRENOM', 'TYPE', 'ADRESSE', 'VILLE', 'CODE_POSTAL', 'PAYS', 'EMAIL', 'TELEPHONE', 'FAX', 'SUJET', 'MESSAGE', 'CREATED_AT', 'UPDATED_AT', 'ACTIVE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'civilite', 'nom', 'prenom', 'type', 'adresse', 'ville', 'code_postal', 'pays', 'email', 'telephone', 'fax', 'sujet', 'message', 'created_at', 'updated_at', 'active', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, )
     );
 
     /**
@@ -143,12 +146,12 @@ abstract class BaseCoordonneesContactPeer
      * e.g. CoordonneesContactPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Civilite' => 1, 'Nom' => 2, 'Prenom' => 3, 'Type' => 4, 'Adresse' => 5, 'Ville' => 6, 'CodePostal' => 7, 'Pays' => 8, 'Email' => 9, 'Telephone' => 10, 'Fax' => 11, 'Message' => 12, 'CreatedAt' => 13, 'UpdatedAt' => 14, 'Active' => 15, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'civilite' => 1, 'nom' => 2, 'prenom' => 3, 'type' => 4, 'adresse' => 5, 'ville' => 6, 'codePostal' => 7, 'pays' => 8, 'email' => 9, 'telephone' => 10, 'fax' => 11, 'message' => 12, 'createdAt' => 13, 'updatedAt' => 14, 'active' => 15, ),
-        BasePeer::TYPE_COLNAME => array (CoordonneesContactPeer::ID => 0, CoordonneesContactPeer::CIVILITE => 1, CoordonneesContactPeer::NOM => 2, CoordonneesContactPeer::PRENOM => 3, CoordonneesContactPeer::TYPE => 4, CoordonneesContactPeer::ADRESSE => 5, CoordonneesContactPeer::VILLE => 6, CoordonneesContactPeer::CODE_POSTAL => 7, CoordonneesContactPeer::PAYS => 8, CoordonneesContactPeer::EMAIL => 9, CoordonneesContactPeer::TELEPHONE => 10, CoordonneesContactPeer::FAX => 11, CoordonneesContactPeer::MESSAGE => 12, CoordonneesContactPeer::CREATED_AT => 13, CoordonneesContactPeer::UPDATED_AT => 14, CoordonneesContactPeer::ACTIVE => 15, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CIVILITE' => 1, 'NOM' => 2, 'PRENOM' => 3, 'TYPE' => 4, 'ADRESSE' => 5, 'VILLE' => 6, 'CODE_POSTAL' => 7, 'PAYS' => 8, 'EMAIL' => 9, 'TELEPHONE' => 10, 'FAX' => 11, 'MESSAGE' => 12, 'CREATED_AT' => 13, 'UPDATED_AT' => 14, 'ACTIVE' => 15, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'civilite' => 1, 'nom' => 2, 'prenom' => 3, 'type' => 4, 'adresse' => 5, 'ville' => 6, 'code_postal' => 7, 'pays' => 8, 'email' => 9, 'telephone' => 10, 'fax' => 11, 'message' => 12, 'created_at' => 13, 'updated_at' => 14, 'active' => 15, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Civilite' => 1, 'Nom' => 2, 'Prenom' => 3, 'Type' => 4, 'Adresse' => 5, 'Ville' => 6, 'CodePostal' => 7, 'Pays' => 8, 'Email' => 9, 'Telephone' => 10, 'Fax' => 11, 'Sujet' => 12, 'Message' => 13, 'CreatedAt' => 14, 'UpdatedAt' => 15, 'Active' => 16, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'civilite' => 1, 'nom' => 2, 'prenom' => 3, 'type' => 4, 'adresse' => 5, 'ville' => 6, 'codePostal' => 7, 'pays' => 8, 'email' => 9, 'telephone' => 10, 'fax' => 11, 'sujet' => 12, 'message' => 13, 'createdAt' => 14, 'updatedAt' => 15, 'active' => 16, ),
+        BasePeer::TYPE_COLNAME => array (CoordonneesContactPeer::ID => 0, CoordonneesContactPeer::CIVILITE => 1, CoordonneesContactPeer::NOM => 2, CoordonneesContactPeer::PRENOM => 3, CoordonneesContactPeer::TYPE => 4, CoordonneesContactPeer::ADRESSE => 5, CoordonneesContactPeer::VILLE => 6, CoordonneesContactPeer::CODE_POSTAL => 7, CoordonneesContactPeer::PAYS => 8, CoordonneesContactPeer::EMAIL => 9, CoordonneesContactPeer::TELEPHONE => 10, CoordonneesContactPeer::FAX => 11, CoordonneesContactPeer::SUJET => 12, CoordonneesContactPeer::MESSAGE => 13, CoordonneesContactPeer::CREATED_AT => 14, CoordonneesContactPeer::UPDATED_AT => 15, CoordonneesContactPeer::ACTIVE => 16, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'CIVILITE' => 1, 'NOM' => 2, 'PRENOM' => 3, 'TYPE' => 4, 'ADRESSE' => 5, 'VILLE' => 6, 'CODE_POSTAL' => 7, 'PAYS' => 8, 'EMAIL' => 9, 'TELEPHONE' => 10, 'FAX' => 11, 'SUJET' => 12, 'MESSAGE' => 13, 'CREATED_AT' => 14, 'UPDATED_AT' => 15, 'ACTIVE' => 16, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'civilite' => 1, 'nom' => 2, 'prenom' => 3, 'type' => 4, 'adresse' => 5, 'ville' => 6, 'code_postal' => 7, 'pays' => 8, 'email' => 9, 'telephone' => 10, 'fax' => 11, 'sujet' => 12, 'message' => 13, 'created_at' => 14, 'updated_at' => 15, 'active' => 16, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, )
     );
 
     /** The enumerated values for this table */
@@ -270,6 +273,7 @@ abstract class BaseCoordonneesContactPeer
             $criteria->addSelectColumn(CoordonneesContactPeer::EMAIL);
             $criteria->addSelectColumn(CoordonneesContactPeer::TELEPHONE);
             $criteria->addSelectColumn(CoordonneesContactPeer::FAX);
+            $criteria->addSelectColumn(CoordonneesContactPeer::SUJET);
             $criteria->addSelectColumn(CoordonneesContactPeer::MESSAGE);
             $criteria->addSelectColumn(CoordonneesContactPeer::CREATED_AT);
             $criteria->addSelectColumn(CoordonneesContactPeer::UPDATED_AT);
@@ -287,6 +291,7 @@ abstract class BaseCoordonneesContactPeer
             $criteria->addSelectColumn($alias . '.email');
             $criteria->addSelectColumn($alias . '.telephone');
             $criteria->addSelectColumn($alias . '.fax');
+            $criteria->addSelectColumn($alias . '.sujet');
             $criteria->addSelectColumn($alias . '.message');
             $criteria->addSelectColumn($alias . '.created_at');
             $criteria->addSelectColumn($alias . '.updated_at');
