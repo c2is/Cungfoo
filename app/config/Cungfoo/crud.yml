@@ -170,3 +170,7 @@ crud:
             prefix: /coordonnees/newsletters
             model: \Cungfoo\Model\Newsletter
             form: \Cungfoo\Form\Type\NewsletterType
+        coordonnees_parametrages:
+            prefix: /coordonnees/parametrages
+            model: \Cungfoo\Model\CoordonneesParametrages
+            form: \Cungfoo\Form\Type\CoordonneesParametragesType

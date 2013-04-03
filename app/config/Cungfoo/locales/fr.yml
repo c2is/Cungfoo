@@ -676,9 +676,16 @@ edito.id: Id
 edito.slug: Slug
 edito_i18n.name: Titre
 edito_i18n.description: Description
+edito.view_id: "Vue"
+edito.component_id: "Composant"
+edito.image: "Image"
 edito.active: Actif
 editoI18ns: ""
 edito_i18n.active_locale: "Activer pour cette langue"
+edito_i18n.seo_title: "Titre (SEO)"
+edito_i18n.seo_description: "Déscription (SEO)"
+edito_i18n.seo_h1: "H1 (SEO)"
+edito_i18n.seo_keywords: "mots-clés (SEO)"
 
 multimedia_etablissement.crud.metadata: Metadata de la table multimedia établissement
 multimedia_etablissement.crud.create: Création d'un média
@@ -958,3 +965,23 @@ newsletter.crud.create: "Création d'un contact newsletter"
 newsletter.crud.update: "Mise à jour d'un contact newsletter"
 newsletter.crud.list: "Newsletter"
 newsletter.id: "Id"
+
+coordonnees_parametrages.crud.create: "Créer un paramètre coordonnées"
+coordonnees_parametrages.crud.update: "Mettre à jour le paramètre coordonnées"
+coordonnees_parametrages.crud.list: "Liste des paramètres coordonnées"
+coordonnees_parametrages.id: "Id"
+coordonnees_parametrages.name: "Nom"
+coordonnees_parametrages.value: "Valeur"
+coordonnees_parametrages.is_usine: "Usine ?"
+coordonnees_parametrages.is.usine: "Usine ?"
+coordonnees_parametrages.created_at: "Date de création"
+coordonnees_parametrages.updated_at: "Date de mise à jour"
+coordonnees_parametrages.active: "Active"
+coordonnees_parametragesI18ns: ""
+coordonnees_parametrages_i18n.seo_title: "Titre (SEO)"
+coordonnees_parametrages_i18n.seo_description: "Déscription (SEO)"
+coordonnees_parametrages_i18n.seo_h1: "H1 (SEO)"
+coordonnees_parametrages_i18n.seo_keywords: "Mots clefs (SEO)"
+coordonnees_parametrages_i18n.active_locale: "Activer localement ?"
+coordonnees_parametrages.mail_particulier: "mail particulier"
+coordonnees_parametrages.mail_professionnel: "mail professionnel"

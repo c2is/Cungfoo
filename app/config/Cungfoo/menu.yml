@@ -101,6 +101,10 @@ menu:
                         categorie:
                             title:  menu.coordonnees_newsletter
                             route:  newsletter_crud_list
+                        parameters:
+                            divider: ~
+                            title:  menu.coordonnees_parametrages
+                            route:  coordonnees_parametrages_crud_list
                 idee_weekend:
                     divider: ~
                     title:  menu.idee_weekend

@@ -33,7 +33,7 @@
         <tr class="line{% if line.active != true %} disabled{% endif %}">
             {% for column_name,column in line %}
             {% if column_name != "active" %}
-                <td>{{ column | raw }}</td>
+                <td>{{ column | raw | trans }}</td>
             {% endif %}
             {% endfor %}
             <td class="actions-item"><a class="edit" href="{{ path('%s_crud_update' | format (name), {'id': line.id}) }}"><i class="icon-edit"></i></a></td>

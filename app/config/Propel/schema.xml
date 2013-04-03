@@ -1225,6 +1225,19 @@
         </behavior>
     </table>
 
+    <table name="coordonnees_parametrages">
+        <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true"/>
+        <column name="name" type="enum" valueSet="coordonnees_parametrages.mail_particulier, coordonnees_parametrages.mail_professionnel" required="true"/>
+        <column name="value" type="varchar" required="true"/>
+        <column name="is_usine" type="boolean" defaultValue="false" />
+        <behavior name="timestampable"/>
+        <behavior name="active"/>
+
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/coordonnees/parametrages" />
+        </behavior>
+    </table>
+
     <table name="newsletter">
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
         <column name="email" type="varchar" primaryString="true" required="true" />
