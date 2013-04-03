@@ -32283,3 +32283,10 @@
         ElementId: 12
         SortableRank: 0
         Active: true
+    4613:
+        MediaId: 2174
+        TableRef: edito
+        ColumnRef: image
+        ElementId: 13
+        SortableRank: 0
+        Active: true

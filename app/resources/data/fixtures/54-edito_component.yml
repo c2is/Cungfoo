@@ -4,3 +4,8 @@
         Action: DemandeBrochureComponent
         Description: null
         Active: true
+    2:
+        Name: 'Demande de contact'
+        Action: ContactFormComponent
+        Description: null
+        Active: true

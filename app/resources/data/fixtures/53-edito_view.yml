@@ -1,11 +1,16 @@
 \Cungfoo\Model\EditoView:
     1:
-        Name: Default
+        Name: 'Texte uniquement'
         Source: default.html.twig
         Preview: null
         Active: true
     2:
-        Name: Image
+        Name: 'Image à droite'
         Source: image.html.twig
+        Preview: null
+        Active: true
+    3:
+        Name: 'Image en bas'
+        Source: image_bas.html.twig
         Preview: null
         Active: true

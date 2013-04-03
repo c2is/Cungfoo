@@ -59,3 +59,8 @@
         ComponentId: 1
         Slug: demande-de-brochure
         Active: true
+    13:
+        ViewId: 3
+        ComponentId: 2
+        Slug: nous-contactez
+        Active: true
