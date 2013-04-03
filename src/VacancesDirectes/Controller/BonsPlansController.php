@@ -69,31 +69,8 @@ class BonsPlansController implements ControllerProviderInterface
                 return $app->redirect($searchEngine->getRedirect());
             }
 
-            $startDate  = $bonPlanObject->getDateStart('U') ?: date('U');
-            $dayRange = $bonPlanObject->getDayRange() ?: 7;
-
-            $searchParams = new SearchParams($app);
-            $searchParams
-                ->setStartDate(date('Y-m-d', $startDate))
-                ->setNbDays($dayRange)
-                ->addTheme($bonPlanObject->getRegionsCodes())
-                ->addEtab($bonPlanObject->getEtablissementsCodes())
-                ->setNbAdults($bonPlanObject->getNbAdultes())
-                ->setNbChildren($bonPlanObject->getNbEnfants())
-            ;
-
-            $client = new DisponibiliteClient($app['config']->get('root_dir'), $app['context']->get('language'));
-            $client->addOptions($searchParams->generate());
-
-            $listing = new DispoListing($app);
-            $listing->setClient($client);
-
-            $listingContent = $listing->process();
-
             return $app->renderView('BonsPlans\base.twig', array(
                 'bonPlan'         => $bonPlanObject,
-                'list'            => $listingContent,
-                'firstEtab'       => reset($listingContent['element']),
                 'searchForm'      => $searchEngine->getView(),
             ));
         })
