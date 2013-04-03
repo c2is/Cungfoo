@@ -9,7 +9,6 @@
  */
 
 /* S E C U R I T Y   M A N A G E R */
-$app->register(new Silex\Provider\SessionServiceProvider());
 $app->register(new Silex\Provider\SecurityServiceProvider());
 $app['security.firewalls'] =  array(
     'resalys' => array('pattern' => '^/resalys'),
