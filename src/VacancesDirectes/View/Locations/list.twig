@@ -72,7 +72,7 @@
             <img src="{{ asset(hebergement.imageHebergementPath | media('file')) }}" alt="" class="boxborder">
         </div>
         <div class="itemResultCenter itemResultCenterHbgt">
-            <span class="ircHbgtTitle">{{ 'location.list.hebergements.nb_places' | trans({'%nbPlaces%': hebergement.nombrePlace}) }}</span>
+            {# <span class="ircHbgtTitle">{{ 'location.list.hebergements.nb_places' | trans({'%nbPlaces%': hebergement.nombrePlace}) }}</span> #}
             <span class="ircHbgtSubTitle">{{ hebergement.indice }}</span>
             <span class="ircHbgtDesc">{{ hebergement.presentation | nl2br }}</span>
         </div>
