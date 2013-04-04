@@ -167,7 +167,49 @@ class EsiController implements ControllerProviderInterface
             return new Response($view, 200, array('Cache-Control' => sprintf('s-maxage=%s, public', $maxAge)));
 
         })->bind('esi_bon_plan')
-          ->value('limit', '5');
+          ->value('limit', '5')
+        ;
+
+        $controllers->convert('bonPlan', function($bonPlan) {
+            $bonPlanObject = BonPlanQuery::create()
+                ->filterById($bonPlan)
+                ->findOne()
+            ;
+
+            return $bonPlanObject;
+        });
+
+        $controllers->get('/bon-plan-page/{bonPlan}', function (Request $request, $bonPlan) use ($app) {
+            $maxAge = 2700;
+
+            $startDate  = $bonPlan->getDateStart('U') ?: date('U');
+            $dayRange = $bonPlan->getDayRange() ?: 7;
+
+            $searchParams = new SearchParams($app);
+            $searchParams
+                ->setStartDate(date('Y-m-d', $startDate))
+                ->setNbDays($dayRange)
+                ->addTheme($bonPlan->getRegionsCodes())
+                ->addEtab($bonPlan->getEtablissementsCodes())
+                ->setNbAdults($bonPlan->getNbAdultes())
+                ->setNbChildren($bonPlan->getNbEnfants())
+            ;
+
+            $client = new DisponibiliteClient($app['config']->get('root_dir'), $app['context']->get('language'));
+            $client->addOptions($searchParams->generate());
+
+            $listing = new DispoListing($app);
+            $listing->setClient($client);
+
+            $listingContent = $listing->process();
+
+            $view = $app['twig']->render('Esi/bonPlanPage.twig', array(
+                'list' => $listingContent,
+            ));
+
+            return new Response($view, 200, array('Cache-Control' => sprintf('s-maxage=%s, public', $maxAge)));
+        })
+        ->bind('esi_bon_plan_page');
 
         return $controllers;
     }
