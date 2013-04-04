@@ -967,6 +967,7 @@
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/bon-plan-categories" />
+            <parameter name="crud_type_richtext" value="description" />
         </behavior>
 
         <behavior name="sortable"/>
