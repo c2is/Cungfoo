@@ -24,11 +24,7 @@
     <img class="bdPict" src="{{ asset(bonPlan.imagePage | media('file')) }}" alt="">
     {% endif %}
 
-    {% if list.element|length > 0 %}
-    {% include 'Listing/_filters.twig' %}
-    {% endif %}
-    {% include 'Listing/_gmap.twig' %}
-    {% include 'Listing/_listing.twig' %}
+    {{ esi(path('esi_bon_plan_page', {'bonPlan': bonPlan.getId })) }}
 {% endblock %}
 
 {% block rightColumn %}

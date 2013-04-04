@@ -65,6 +65,7 @@ class CompteController implements ControllerProviderInterface
         {
             $query            = $this->getDefaultResalysParameters($app, $request);
             $query['display'] = 'request';
+            $query['request_type'] = 'booklet';
 
             return $app->renderView('Compte/index.twig', array('query' => $query));
 
