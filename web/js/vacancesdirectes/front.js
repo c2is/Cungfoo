@@ -972,10 +972,10 @@ jQuery.extend( jQuery.fn, {
             highSeasonEndDate = numDate(fHighSeasonEndDate),
             fHighSeasonDates = [fHighSeasonStartDate,fHighSeasonEndDate],
             arrivalDate,
-            visibleMonths = ( parseInt(fEndDate.split('/')[1],10) - parseInt(fStartDate.split('/')[1],10) ) + 1,
-            rangeYear = fStartDate.split('/')[0],
-            middleRangeMonth = ((''+Math.floor(parseInt(fStartDate.split('/')[1],10)+(visibleMonths/2))).length<2 ? '0' : '') + Math.floor(parseInt(fStartDate.split('/')[1],10)+(visibleMonths/2)),
-            displayMonths = 2;
+            displayMonths = 2,
+            visibleMonths,
+            rangeYear,
+            middleRangeMonth;
 
 
         //console.log(fSeasonDates);
@@ -985,8 +985,11 @@ jQuery.extend( jQuery.fn, {
         //console.log(middleRangeMonth);
 
         if (currentDate > startDate){
-            fStartDate = fCurrentDate;
+            fStartDate = fCurrentDate
         }
+        visibleMonths = ( parseInt(fEndDate.split('/')[1],10) - parseInt(fStartDate.split('/')[1],10) ) + 1,
+        rangeYear = fStartDate.split('/')[0],
+        middleRangeMonth = ((''+Math.floor(parseInt(fStartDate.split('/')[1],10)+(visibleMonths/2))).length<2 ? '0' : '') + Math.floor(parseInt(fStartDate.split('/')[1],10)+(visibleMonths/2));
         //console.log(currentDate);
         //console.log(startDate);
         //console.log(fStartDate);
@@ -1049,8 +1052,8 @@ jQuery.extend( jQuery.fn, {
                 //console.log(endDate);
                 //console.log(renderWeekDay);
 
-                if ( ((renderDate > highSeasonStartDate && renderDate < highSeasonEndDate) && (renderWeekDay != 6 && renderWeekDay != 3)) || (renderDate < startDate || renderDate > endDate) || ((renderDate > startDate && renderDate < endDate) && renderWeekDay == 2) ){
-                    //                    //console.log("DISABLED: " + renderDate);
+                if ( ((renderDate > highSeasonStartDate && renderDate < highSeasonEndDate) && (renderWeekDay != 6 && renderWeekDay != 3)) || (renderDate < startDate || renderDate > endDate) || ((renderDate > startDate && renderDate < endDate) && renderWeekDay == 2) || (renderDate < currentDate) ){
+                    //console.log("DISABLED: " + renderDate);
                     disabledDate = renderDate;
                 }
 
@@ -1106,7 +1109,7 @@ jQuery.extend( jQuery.fn, {
             return false;
         });
         $('#datepickerCalendar div.datepicker').css('position', 'absolute');
-        $('#datepickerCalendar div.datepickerContainer').css('margin-left', '-5px');
+//        $('#datepickerCalendar div.datepickerContainer').css('margin-left', '-5px');
         $('.datepicker>.datepickerGoPrev a').hide();
 
         var preselectedFDate,
