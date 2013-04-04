@@ -621,7 +621,6 @@ global.compte.accueil: Startseite
 global.compte.coordonnees: Kontaktinformationen
 global.compte.demande_brochure: 'Broschüre anfordern'
 global.compte.reservation: Buchung
-global.compte.title_client: ''
 global.site_name: 'Vacances directes.de'
 bon_plan.title: 'Campingplatz: %bonPlan%'
 location.list.title: 'Unsere Unterkünfte: %type%'
