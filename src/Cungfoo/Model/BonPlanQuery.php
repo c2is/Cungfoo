@@ -29,6 +29,7 @@ class BonPlanQuery extends BaseBonPlanQuery
             ->condition('dateFin2', 'bon_plan.date_fin = ?', '')
             ->condition('dateFin3', 'bon_plan.date_fin >= ?', date('Y-m-d'))
             ->combine(array('dateFin1', 'dateFin2', 'dateFin3'), 'or', 'dateFin')
+            ->combine(array('dateDeb', 'dateFin'), 'and')
         ;
     }
 }
