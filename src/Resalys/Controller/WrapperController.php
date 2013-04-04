@@ -191,7 +191,6 @@ eof
             {jqPlugins: templatePath+"js/vacancesdirectes/plugins.js?v=" + version},
             {datepicker: templatePath+"js/vacancesdirectes/jquery-ui-1.9.2.custom.min.js?v=" + version},
             {i18nDatepicker: templatePath+"js/vacancesdirectes/jquery.ui.datepicker-$locale.js?v=" + version},
-            {iframeFrontJS: templatePath+"js/vacancesdirectes/iframe/front.js?v=" + version},
             {iframeJS: templatePath+"js/vacancesdirectes/%s.js?v=" + version}
         );
     </script>
