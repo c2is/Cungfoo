@@ -989,7 +989,7 @@
         <column name="push_home" type="boolean"/>
         <column name="date_start" type="date"/>
         <column name="day_start" type="enum" valueSet="monday, tuesday, wednesday, thursday, friday, saturday, sunday" required="true"/>
-        <column name="day_range" type="enum" valueSet="7, 14, 21" required="true"/>
+        <column name="day_range" type="enum" valueSet="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21" required="true"/>
         <column name="nb_adultes" type="integer" defaultValue="1" />
         <column name="nb_enfants" type="integer" defaultValue="0" />
         <column name="period_categories" type="varchar" />
