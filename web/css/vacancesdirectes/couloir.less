@@ -271,7 +271,7 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
           top: 0;
           left: 0;
         }
-        &>small{font-size:18px;}
+        &>small{font-size:17px;margin-top:-3px;}
       }
     }
   }
@@ -764,3 +764,53 @@ input[disabled],
   }
 }
 //}
+
+@media print {
+  body {
+    background: white;
+    font-size: 12pt;
+  }
+  #header,
+  #ficheShare,
+  .bt,
+  #stepNav,
+  footer{
+    display: none;
+  }
+  #wrapper, #content {
+    width: auto;
+    margin: 0 5%;
+    padding: 0;
+    border: 0;
+    float: none !important;
+    color: black;
+    background: transparent none;
+  }
+  div#content {
+    margin-left: 10%;
+    padding-top: 1em;
+    border-top: 1px solid #930;
+  }
+  div#mast {
+    margin-bottom: -8px;
+  }
+  div#mast img {
+    vertical-align: bottom;
+  }
+  a:link, a:visited {
+    color: #520;
+    background: transparent;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  #content a:link:after, #content a:visited:after {
+    content: " (" attr(href) ") ";
+    font-size: 90%;
+  }
+  html[lang="fr"] #content a[href^="/"]:after {
+    content: " (http://www.vacances-directes.fr" attr(href) ") ";
+  }
+  html[lang="de"] #content a[href^="/"]:after {
+    content: " (http://www.vacances-directes.de" attr(href) ") ";
+  }
+}

@@ -161,24 +161,44 @@ aside{
     #datepickerField{
       ::-webkit-input-placeholder { text-transform:uppercase; }
     }
-    #datepickerCalendar {width: 362px;top:22px;right:32px;left:auto;}
+    #datepickerCalendar {width: 351px;top:22px;right:32px;left:auto;
+//      .datepickerContainer > table > tbody > tr > td table.datepickerViewDays{background-color:@colorGris3;}
+//      .datepickerContainer > table > tbody > tr > td:nth-child(4n+1) table.datepickerViewDays{background-color:#eee;}
+      .datepickerContainer {
+        left: 0;
+      }
+    }
     #datepickerCalendar .datepicker {
-      width: 362px !important;
+      width: 352px !important;
     }
     #datepickerCalendar button {display:none;}
     #datepickerCalendar .datepickerGoPrev,
     #datepickerCalendar .datepickerGoNext,
     .datepickerContainer {
-      top: 10px;
+      top: 0;
     }
-    #datepickerCalendar .datepickerGoPrev,
-    #datepickerCalendar .datepickerGoNext,
+    #datepickerCalendar .datepickerGoPrev a,
+    #datepickerCalendar .datepickerGoNext a{display:block;width:22px;
+      span{background-color:@colorFushia;display:block;width:17px;}
+    }
+    #datepickerCalendar .datepickerGoPrev{left:0;
+      a{padding-right:5px;
+        span{padding-left:5px;}
+      }
+    }
+    #datepickerCalendar .datepickerGoNext{right:3px;
+      a{padding-left:5px;
+        span{padding-right:5px;}
+      }
+    }
+    #datepickerCalendar .datepickerViewDays{border-right:1px solid #adadad;}
+    #datepickerCalendar .datepickerDays td.datepickerNotInMonth.datepickerSelected {background-color:transparent;visibility:visible;}
     .datepickerBorderTL,
     .datepickerBorderT,
     .datepickerBorderTR,
     .datepickerBorderB,
     .datepickerBorderBL,
-    .datepickerBorderBR {height: 10px;}
+    .datepickerBorderBR {display:none;}
     #datepickerField{width:248px;
       span {height: 27px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -27px @colorBgGrisF;}
       input {height: 27px;line-height: 27px;width:216px;background-color:@colorBlanc;padding:0 7px;}

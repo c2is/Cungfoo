@@ -21,6 +21,7 @@
     {% if app.context.get('language') != "fr" %}
     <link rel="stylesheet" href="{{ asset('css/vacancesdirectes/screen_'~app.context.get('language')~'.css?v='~app.config.get('version')) }}">
     {% endif %}
+    <link rel="stylesheet" href="{{ asset('css/vacancesdirectes/screen_'~app.context.get('language')~'.css?v='~app.config.get('version')) }}">
     <script src="{{ asset('vendor/head.extended.js?v='~app.config.get('version')) }}"></script>
     <script>
         var templatePath = '{{ asset('') }}';<!-- templatePath : chemin du template en absolue -->

@@ -363,9 +363,9 @@ div.datepicker .datepickerDays td.datepickerSpecial.datepickerUnselectable a:hov
 #datepickerCalendar .datepickerMonth a {
   font-size:14px;
   text-align: center;
-  ._verticalCenter(23px);
+  padding:5px 0;
 }
-#datepickerCalendar .datepickerMonth a {cursor:default;}
+#datepickerCalendar .datepickerMonth a {cursor:default;padding:6px 0 4px;}
 #datepickerCalendar .datepickerGoNext a,
 #datepickerCalendar .datepickerGoPrev a {width: 20px;cursor:pointer;}
 #datepickerCalendar .datepickerGoNPrev a{left:0;}
@@ -380,6 +380,8 @@ div.datepicker .datepickerDays td.datepickerSpecial.datepickerUnselectable a:hov
 .datepickerLegend {margin-left:28px;bottom:5px;color:@colorGris2;}
 .datepickerLegend:before {content:"";width:19px;height:19px;background-color:#e7cad3;position:absolute;top:0;left:-28px}
 #datepickerCalendar .bt{position:absolute;right:10px;bottom:5px;}
+#datepickerCalendar .datepickerViewDays .datepickerSaturday,
+#datepickerCalendar .datepickerViewDays .datepickerSunday{background:url("../../images/vacancesdirectes/common/ui/bg-calendar-weekend.png") repeat 0 0 transparent;}
 table.datepickerViewDays tbody.datepickerMonths,
 table.datepickerViewDays tbody.datepickerYears {
   display: none;

@@ -19,13 +19,18 @@ head.ready(function(){
     // selects
     if( $('#authentication').length ){
         $('#authentication').find('select').each(function(i,v){
-            if( $(this).is(':disabled') ){
-                $(this).removeAttr('disabled');
-                $(this).sSelect({ddMaxHeight: '300px'});
-                $(this).next('.newListSelected').addClass('newListDisabled').children('.SSContainerDivWrapper').empty();
+            if ($(this).attr('multiple') == "multiple"){
+                $(this).sMultSelect({msgNull: 'Pas de réponse'});
             }
             else{
-                $(this).sSelect({ddMaxHeight: '300px'});
+                if( $(this).is(':disabled') ){
+                    $(this).removeAttr('disabled');
+                    $(this).sSelect({ddMaxHeight: '300px'});
+                    $(this).next('.newListSelected').addClass('newListDisabled').children('.SSContainerDivWrapper').empty();
+                }
+                else{
+                    $(this).sSelect({ddMaxHeight: '300px'});
+                }
             }
         });
     }
