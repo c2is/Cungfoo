@@ -2431,8 +2431,6 @@ function listPagination() {
 
 // verifier la presence du tracker GA
 function test_analytics(Url) {
-    window.location= Url;
-
     if (window._gat && window._gat._getTracker) {
         _gaq.push(['_link', Url]);
     }
