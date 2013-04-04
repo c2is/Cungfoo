@@ -84,7 +84,7 @@ class TypeHebergementType extends BaseTypeHebergementType
                         'code',
                         'category_type_hebergement',
                         'nombre_place',
-                        'type_hebergement_capacite',
+                        'type_hebergement_capacites',
                         'nombre_chambre',
                         'type_hebergementI18ns',
 

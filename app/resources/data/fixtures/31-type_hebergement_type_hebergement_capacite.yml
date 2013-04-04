@@ -1,0 +1,202 @@
+\Cungfoo\Model\TypeHebergementTypeHebergementCapacite:
+    1_1:
+        TypeHebergementId: 1
+        TypeHebergementCapaciteId: 1
+    44_1:
+        TypeHebergementId: 44
+        TypeHebergementCapaciteId: 1
+    57_1:
+        TypeHebergementId: 57
+        TypeHebergementCapaciteId: 1
+    1_2:
+        TypeHebergementId: 1
+        TypeHebergementCapaciteId: 2
+    9_2:
+        TypeHebergementId: 9
+        TypeHebergementCapaciteId: 2
+    53_2:
+        TypeHebergementId: 53
+        TypeHebergementCapaciteId: 2
+    1_3:
+        TypeHebergementId: 1
+        TypeHebergementCapaciteId: 3
+    10_3:
+        TypeHebergementId: 10
+        TypeHebergementCapaciteId: 3
+    12_3:
+        TypeHebergementId: 12
+        TypeHebergementCapaciteId: 3
+    14_3:
+        TypeHebergementId: 14
+        TypeHebergementCapaciteId: 3
+    16_3:
+        TypeHebergementId: 16
+        TypeHebergementCapaciteId: 3
+    17_3:
+        TypeHebergementId: 17
+        TypeHebergementCapaciteId: 3
+    24_3:
+        TypeHebergementId: 24
+        TypeHebergementCapaciteId: 3
+    30_3:
+        TypeHebergementId: 30
+        TypeHebergementCapaciteId: 3
+    32_3:
+        TypeHebergementId: 32
+        TypeHebergementCapaciteId: 3
+    33_3:
+        TypeHebergementId: 33
+        TypeHebergementCapaciteId: 3
+    36_3:
+        TypeHebergementId: 36
+        TypeHebergementCapaciteId: 3
+    37_3:
+        TypeHebergementId: 37
+        TypeHebergementCapaciteId: 3
+    45_3:
+        TypeHebergementId: 45
+        TypeHebergementCapaciteId: 3
+    58_3:
+        TypeHebergementId: 58
+        TypeHebergementCapaciteId: 3
+    59_3:
+        TypeHebergementId: 59
+        TypeHebergementCapaciteId: 3
+    60_3:
+        TypeHebergementId: 60
+        TypeHebergementCapaciteId: 3
+    1_4:
+        TypeHebergementId: 1
+        TypeHebergementCapaciteId: 4
+    2_4:
+        TypeHebergementId: 2
+        TypeHebergementCapaciteId: 4
+    3_4:
+        TypeHebergementId: 3
+        TypeHebergementCapaciteId: 4
+    4_4:
+        TypeHebergementId: 4
+        TypeHebergementCapaciteId: 4
+    5_4:
+        TypeHebergementId: 5
+        TypeHebergementCapaciteId: 4
+    6_4:
+        TypeHebergementId: 6
+        TypeHebergementCapaciteId: 4
+    7_4:
+        TypeHebergementId: 7
+        TypeHebergementCapaciteId: 4
+    8_4:
+        TypeHebergementId: 8
+        TypeHebergementCapaciteId: 4
+    11_4:
+        TypeHebergementId: 11
+        TypeHebergementCapaciteId: 4
+    13_4:
+        TypeHebergementId: 13
+        TypeHebergementCapaciteId: 4
+    15_4:
+        TypeHebergementId: 15
+        TypeHebergementCapaciteId: 4
+    18_4:
+        TypeHebergementId: 18
+        TypeHebergementCapaciteId: 4
+    19_4:
+        TypeHebergementId: 19
+        TypeHebergementCapaciteId: 4
+    20_4:
+        TypeHebergementId: 20
+        TypeHebergementCapaciteId: 4
+    21_4:
+        TypeHebergementId: 21
+        TypeHebergementCapaciteId: 4
+    22_4:
+        TypeHebergementId: 22
+        TypeHebergementCapaciteId: 4
+    23_4:
+        TypeHebergementId: 23
+        TypeHebergementCapaciteId: 4
+    25_4:
+        TypeHebergementId: 25
+        TypeHebergementCapaciteId: 4
+    26_4:
+        TypeHebergementId: 26
+        TypeHebergementCapaciteId: 4
+    27_4:
+        TypeHebergementId: 27
+        TypeHebergementCapaciteId: 4
+    28_4:
+        TypeHebergementId: 28
+        TypeHebergementCapaciteId: 4
+    29_4:
+        TypeHebergementId: 29
+        TypeHebergementCapaciteId: 4
+    31_4:
+        TypeHebergementId: 31
+        TypeHebergementCapaciteId: 4
+    34_4:
+        TypeHebergementId: 34
+        TypeHebergementCapaciteId: 4
+    35_4:
+        TypeHebergementId: 35
+        TypeHebergementCapaciteId: 4
+    38_4:
+        TypeHebergementId: 38
+        TypeHebergementCapaciteId: 4
+    39_4:
+        TypeHebergementId: 39
+        TypeHebergementCapaciteId: 4
+    40_4:
+        TypeHebergementId: 40
+        TypeHebergementCapaciteId: 4
+    41_4:
+        TypeHebergementId: 41
+        TypeHebergementCapaciteId: 4
+    42_4:
+        TypeHebergementId: 42
+        TypeHebergementCapaciteId: 4
+    43_4:
+        TypeHebergementId: 43
+        TypeHebergementCapaciteId: 4
+    46_4:
+        TypeHebergementId: 46
+        TypeHebergementCapaciteId: 4
+    47_4:
+        TypeHebergementId: 47
+        TypeHebergementCapaciteId: 4
+    48_4:
+        TypeHebergementId: 48
+        TypeHebergementCapaciteId: 4
+    49_4:
+        TypeHebergementId: 49
+        TypeHebergementCapaciteId: 4
+    50_4:
+        TypeHebergementId: 50
+        TypeHebergementCapaciteId: 4
+    51_4:
+        TypeHebergementId: 51
+        TypeHebergementCapaciteId: 4
+    52_4:
+        TypeHebergementId: 52
+        TypeHebergementCapaciteId: 4
+    54_4:
+        TypeHebergementId: 54
+        TypeHebergementCapaciteId: 4
+    55_4:
+        TypeHebergementId: 55
+        TypeHebergementCapaciteId: 4
+    56_4:
+        TypeHebergementId: 56
+        TypeHebergementCapaciteId: 4
+    61_4:
+        TypeHebergementId: 61
+        TypeHebergementCapaciteId: 4
+    62_4:
+        TypeHebergementId: 62
+        TypeHebergementCapaciteId: 4
+    63_4:
+        TypeHebergementId: 63
+        TypeHebergementCapaciteId: 4
+    64_4:
+        TypeHebergementId: 64
+        TypeHebergementCapaciteId: 4

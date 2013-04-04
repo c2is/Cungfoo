@@ -55,6 +55,7 @@ class DumpCommand extends BaseCommand
         "\\Cungfoo\\Model\\TypeHebergementCapaciteI18n",
         "\\Cungfoo\\Model\\TypeHebergement",
         "\\Cungfoo\\Model\\TypeHebergementI18n",
+        "\\Cungfoo\\Model\\TypeHebergementTypeHebergementCapacite",
         "\\Cungfoo\\Model\\Etablissement",
         "\\Cungfoo\\Model\\EtablissementI18n",
         "\\Cungfoo\\Model\\EtablissementActivite",

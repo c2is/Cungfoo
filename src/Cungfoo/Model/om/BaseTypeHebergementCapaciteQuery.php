@@ -17,6 +17,7 @@ use Cungfoo\Model\TypeHebergementCapacite;
 use Cungfoo\Model\TypeHebergementCapaciteI18n;
 use Cungfoo\Model\TypeHebergementCapacitePeer;
 use Cungfoo\Model\TypeHebergementCapaciteQuery;
+use Cungfoo\Model\TypeHebergementTypeHebergementCapacite;
 
 /**
  * Base class that represents a query for the 'type_hebergement_capacite' table.
@@ -39,9 +40,9 @@ use Cungfoo\Model\TypeHebergementCapaciteQuery;
  * @method TypeHebergementCapaciteQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
  * @method TypeHebergementCapaciteQuery innerJoin($relation) Adds a INNER JOIN clause to the query
  *
- * @method TypeHebergementCapaciteQuery leftJoinTypeHebergement($relationAlias = null) Adds a LEFT JOIN clause to the query using the TypeHebergement relation
- * @method TypeHebergementCapaciteQuery rightJoinTypeHebergement($relationAlias = null) Adds a RIGHT JOIN clause to the query using the TypeHebergement relation
- * @method TypeHebergementCapaciteQuery innerJoinTypeHebergement($relationAlias = null) Adds a INNER JOIN clause to the query using the TypeHebergement relation
+ * @method TypeHebergementCapaciteQuery leftJoinTypeHebergementTypeHebergementCapacite($relationAlias = null) Adds a LEFT JOIN clause to the query using the TypeHebergementTypeHebergementCapacite relation
+ * @method TypeHebergementCapaciteQuery rightJoinTypeHebergementTypeHebergementCapacite($relationAlias = null) Adds a RIGHT JOIN clause to the query using the TypeHebergementTypeHebergementCapacite relation
+ * @method TypeHebergementCapaciteQuery innerJoinTypeHebergementTypeHebergementCapacite($relationAlias = null) Adds a INNER JOIN clause to the query using the TypeHebergementTypeHebergementCapacite relation
  *
  * @method TypeHebergementCapaciteQuery leftJoinTypeHebergementCapaciteI18n($relationAlias = null) Adds a LEFT JOIN clause to the query using the TypeHebergementCapaciteI18n relation
  * @method TypeHebergementCapaciteQuery rightJoinTypeHebergementCapaciteI18n($relationAlias = null) Adds a RIGHT JOIN clause to the query using the TypeHebergementCapaciteI18n relation
@@ -434,41 +435,41 @@ abstract class BaseTypeHebergementCapaciteQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query by a related TypeHebergement object
+     * Filter the query by a related TypeHebergementTypeHebergementCapacite object
      *
-     * @param   TypeHebergement|PropelObjectCollection $typeHebergement  the related object to use as filter
+     * @param   TypeHebergementTypeHebergementCapacite|PropelObjectCollection $typeHebergementTypeHebergementCapacite  the related object to use as filter
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return   TypeHebergementCapaciteQuery The current query, for fluid interface
      * @throws   PropelException - if the provided filter is invalid.
      */
-    public function filterByTypeHebergement($typeHebergement, $comparison = null)
+    public function filterByTypeHebergementTypeHebergementCapacite($typeHebergementTypeHebergementCapacite, $comparison = null)
     {
-        if ($typeHebergement instanceof TypeHebergement) {
+        if ($typeHebergementTypeHebergementCapacite instanceof TypeHebergementTypeHebergementCapacite) {
             return $this
-                ->addUsingAlias(TypeHebergementCapacitePeer::ID, $typeHebergement->getTypeHebergementCapaciteId(), $comparison);
-        } elseif ($typeHebergement instanceof PropelObjectCollection) {
+                ->addUsingAlias(TypeHebergementCapacitePeer::ID, $typeHebergementTypeHebergementCapacite->getTypeHebergementCapaciteId(), $comparison);
+        } elseif ($typeHebergementTypeHebergementCapacite instanceof PropelObjectCollection) {
             return $this
-                ->useTypeHebergementQuery()
-                ->filterByPrimaryKeys($typeHebergement->getPrimaryKeys())
+                ->useTypeHebergementTypeHebergementCapaciteQuery()
+                ->filterByPrimaryKeys($typeHebergementTypeHebergementCapacite->getPrimaryKeys())
                 ->endUse();
         } else {
-            throw new PropelException('filterByTypeHebergement() only accepts arguments of type TypeHebergement or PropelCollection');
+            throw new PropelException('filterByTypeHebergementTypeHebergementCapacite() only accepts arguments of type TypeHebergementTypeHebergementCapacite or PropelCollection');
         }
     }
 
     /**
-     * Adds a JOIN clause to the query using the TypeHebergement relation
+     * Adds a JOIN clause to the query using the TypeHebergementTypeHebergementCapacite relation
      *
      * @param     string $relationAlias optional alias for the relation
      * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
      *
      * @return TypeHebergementCapaciteQuery The current query, for fluid interface
      */
-    public function joinTypeHebergement($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    public function joinTypeHebergementTypeHebergementCapacite($relationAlias = null, $joinType = Criteria::INNER_JOIN)
     {
         $tableMap = $this->getTableMap();
-        $relationMap = $tableMap->getRelation('TypeHebergement');
+        $relationMap = $tableMap->getRelation('TypeHebergementTypeHebergementCapacite');
 
         // create a ModelJoin object for this join
         $join = new ModelJoin();
@@ -483,14 +484,14 @@ abstract class BaseTypeHebergementCapaciteQuery extends ModelCriteria
             $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
             $this->addJoinObject($join, $relationAlias);
         } else {
-            $this->addJoinObject($join, 'TypeHebergement');
+            $this->addJoinObject($join, 'TypeHebergementTypeHebergementCapacite');
         }
 
         return $this;
     }
 
     /**
-     * Use the TypeHebergement relation TypeHebergement object
+     * Use the TypeHebergementTypeHebergementCapacite relation TypeHebergementTypeHebergementCapacite object
      *
      * @see       useQuery()
      *
@@ -498,13 +499,13 @@ abstract class BaseTypeHebergementCapaciteQuery extends ModelCriteria
      *                                   to be used as main alias in the secondary query
      * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
      *
-     * @return   \Cungfoo\Model\TypeHebergementQuery A secondary query class using the current class as primary query
+     * @return   \Cungfoo\Model\TypeHebergementTypeHebergementCapaciteQuery A secondary query class using the current class as primary query
      */
-    public function useTypeHebergementQuery($relationAlias = null, $joinType = Criteria::LEFT_JOIN)
+    public function useTypeHebergementTypeHebergementCapaciteQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
     {
         return $this
-            ->joinTypeHebergement($relationAlias, $joinType)
-            ->useQuery($relationAlias ? $relationAlias : 'TypeHebergement', '\Cungfoo\Model\TypeHebergementQuery');
+            ->joinTypeHebergementTypeHebergementCapacite($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'TypeHebergementTypeHebergementCapacite', '\Cungfoo\Model\TypeHebergementTypeHebergementCapaciteQuery');
     }
 
     /**
@@ -579,6 +580,23 @@ abstract class BaseTypeHebergementCapaciteQuery extends ModelCriteria
         return $this
             ->joinTypeHebergementCapaciteI18n($relationAlias, $joinType)
             ->useQuery($relationAlias ? $relationAlias : 'TypeHebergementCapaciteI18n', '\Cungfoo\Model\TypeHebergementCapaciteI18nQuery');
+    }
+
+    /**
+     * Filter the query by a related TypeHebergement object
+     * using the type_hebergement_type_hebergement_capacite table as cross reference
+     *
+     * @param   TypeHebergement $typeHebergement the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   TypeHebergementCapaciteQuery The current query, for fluid interface
+     */
+    public function filterByTypeHebergement($typeHebergement, $comparison = Criteria::EQUAL)
+    {
+        return $this
+            ->useTypeHebergementTypeHebergementCapaciteQuery()
+            ->filterByTypeHebergement($typeHebergement, $comparison)
+            ->endUse();
     }
 
     /**

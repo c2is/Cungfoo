@@ -55,8 +55,9 @@ class TypeHebergementCapaciteTableMap extends TableMap
      */
     public function buildRelations()
     {
-        $this->addRelation('TypeHebergement', 'Cungfoo\\Model\\TypeHebergement', RelationMap::ONE_TO_MANY, array('id' => 'type_hebergement_capacite_id', ), 'SET NULL', null, 'TypeHebergements');
+        $this->addRelation('TypeHebergementTypeHebergementCapacite', 'Cungfoo\\Model\\TypeHebergementTypeHebergementCapacite', RelationMap::ONE_TO_MANY, array('id' => 'type_hebergement_capacite_id', ), 'CASCADE', null, 'TypeHebergementTypeHebergementCapacites');
         $this->addRelation('TypeHebergementCapaciteI18n', 'Cungfoo\\Model\\TypeHebergementCapaciteI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'TypeHebergementCapaciteI18ns');
+        $this->addRelation('TypeHebergement', 'Cungfoo\\Model\\TypeHebergement', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'TypeHebergements');
     } // buildRelations()
 
     /**
