@@ -14,7 +14,6 @@ seo.meta.early_booking: 'Découvrez toutes les offres de locations de mobil home
 seo.meta.dispo: 'Listing - Campings'
 seo.meta.couloir: 'Espace de réservation'
 seo.meta.theme: '%theme%'
-seo.meta.bonPlan: 'Découvrez toutes nos offres de camping : "%bonPlan%" et réservez en ligne vos futures vacances sur le site Vacances Directes.'
 seo.url.prefix: camping
 seo.url.catalogue: catalogue
 seo.url.dispo: dispo

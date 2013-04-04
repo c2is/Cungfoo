@@ -9,7 +9,6 @@ seo.meta.early_booking: 'Entdecken Sie alle Frühbucherangebote von Vacances Dir
 seo.meta.dispo: 'Liste - Campingplätze'
 seo.meta.couloir: Reservierung
 seo.meta.theme: '%theme%'
-seo.meta.poi: '%poi% in %ville%, besichtigen Sie diesen Ort und verbringen Sie Ihren Urlaub mit Vacances Directes auf unseren nahegelegenen Campingplätzen.'
 seo.url.prefix: campingplatz
 seo.url.catalogue: katalog
 seo.url.dispo: verfugbar
