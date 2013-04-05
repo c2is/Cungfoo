@@ -161,7 +161,7 @@ aside{
     #datepickerField{
       ::-webkit-input-placeholder { text-transform:uppercase; }
     }
-    #datepickerCalendar {width: 351px;top:22px;right:32px;left:auto;
+    #datepickerCalendar {width: 351px;top:22px;right:32px;left:auto;background-color:#fff;
 //      .datepickerContainer > table > tbody > tr > td table.datepickerViewDays{background-color:@colorGris3;}
 //      .datepickerContainer > table > tbody > tr > td:nth-child(4n+1) table.datepickerViewDays{background-color:#eee;}
       .datepickerContainer {
@@ -204,6 +204,15 @@ aside{
       input {height: 27px;line-height: 27px;width:216px;background-color:@colorBlanc;padding:0 7px;}
     }
     .datepickerLegend{display:none;}
+    #datepickerCalendar .datepickerViewDays .datepickerSaturday,
+    #datepickerCalendar .datepickerViewDays .datepickerSunday{background:url("../../images/vacancesdirectes/common/ui/bg-calendar-weekend.png") repeat 0 0 transparent;}
+    div.datepicker .datepickerDays td.datepickerSelected a {color:@colorBlanc;width:24px;}
+    div.datepicker .datepickerDays td.datepickerSelected a:hover {background-color:@colorFushia;}
+    div.datepicker .datepickerDays td.datepickerSelected a:hover > *{margin-right:0;}
+    .datepickerDays a{border:1px solid transparent;}
+    .datepickerDays a:hover{border:1px solid @colorFushia;width:24px;}
+    .datepickerDays a:hover > *{margin-right:-1px;}
+    div.datepicker .datepickerDays td.datepickerDisabled a:hover, div.datepicker .datepickerDays td.datepickerUnselectable a:hover{border:1px solid transparent;}
     .spinner label{font:bold 17px/27px @ptnarrow;text-transform:uppercase;margin-right:10px;width:81px;}
     .spinner{
       input{width:40px;height:27px;border:0 none;color:@colorFushia;font:bold 21px/27px @ptnarrow;text-align:center;}

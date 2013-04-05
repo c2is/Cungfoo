@@ -21,7 +21,7 @@
     <script src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
 </head>
 <body class="booking">
-    <header class="clear">
+    <header class="clear noprint">
         {% include "Menu/couloir.twig" %}
         <div id="header" class="fixed-width clear">
             <div id="headerRight">
@@ -38,7 +38,7 @@
     </header>
 
     <div id="wrap" class="fixed-width clear">
-        <div id="headerContainer" class="column clear">
+        <div id="headerContainer" class="column clear noprint">
             <h1><span>{{ "couloir.title" | trans }} </span>{{ "couloir.title_reservation" | trans }}</h1>
             <nav id="stepNav" class="clearboth">
                 <ul class="topnav fixed-width clear">

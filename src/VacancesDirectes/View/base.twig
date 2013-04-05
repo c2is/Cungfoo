@@ -17,11 +17,12 @@
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
     <!--[if lt IE 9]><link rel="stylesheet" href="{{ asset('css/vacancesdirectes/ie.css?v='~app.config.get('version')) }}"><![endif]-->
-    <link rel="stylesheet" href="{{ asset('css/vacancesdirectes/screen.css?v='~app.config.get('version')) }}">
+    <link rel="stylesheet" href="{{ asset('css/vacancesdirectes/screen.css?v='~app.config.get('version')) }}" media="screen">
     {% if app.context.get('language') != "fr" %}
-    <link rel="stylesheet" href="{{ asset('css/vacancesdirectes/screen_'~app.context.get('language')~'.css?v='~app.config.get('version')) }}">
+    <link rel="stylesheet" href="{{ asset('css/vacancesdirectes/screen_'~app.context.get('language')~'.css?v='~app.config.get('version')) }}" media="screen">
     {% endif %}
-    <link rel="stylesheet" href="{{ asset('css/vacancesdirectes/screen_'~app.context.get('language')~'.css?v='~app.config.get('version')) }}">
+    <link rel="stylesheet" href="{{ asset('css/vacancesdirectes/print.css') }}" media="print">
+
     <script src="{{ asset('vendor/head.extended.js?v='~app.config.get('version')) }}"></script>
     <script>
         var templatePath = '{{ asset('') }}';<!-- templatePath : chemin du template en absolue -->
