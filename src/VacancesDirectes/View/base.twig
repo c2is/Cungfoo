@@ -2,7 +2,7 @@
 <html class="js-false" lang="{{ app.context.get('language') }}">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width">
     <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>{% block title %}{{ "seo.title.default" | trans }}{% endblock %}{% if app.request.get('_route') == 'homepage' %} | Vacances Directes{% endif %}</title>
@@ -65,7 +65,7 @@
             {% if app.request.get('_route') == 'homepage' %}
                 <h1 id="logoTitle">{{ "header.location_mobil_home" | trans }}</h1>
             {% endif %}
-                <img src="{{ asset('images/vacancesdirectes/common/pict/vacancesdirectes-logo_' ~ app.context.get('language') ~ '.png') }}" alt="Vacances directes | Le camping tout simplement !" />
+                <img src="{{ asset('images/vacancesdirectes/common/pict/vacancesdirectes-logo_' ~ app.context.get('language') ~ '.png') }}" width="288px" height="131px" alt="Vacances directes | Le camping tout simplement !" />
             </a>
             {% if app.request.get('_route') == 'homepage' %}
             <h2 id="catchline">{{ "header.130_camping" | trans }}</h2>

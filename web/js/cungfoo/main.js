@@ -35,7 +35,7 @@ $(function() {
         $('.tabbable .nav-tabs a[href="#' + localizedPaneId + '"]').tab('show');
     }
 
-    $('#transGroup .nav-tabs a[href="#' + locale + '"]').tab('show');
+    $('#transGroup .nav-tabs a[href$=_' + locale + ']').tab('show');
 
     $("select[readonly=readonly] option").not(":selected").attr("disabled", "disabled");
 
@@ -69,6 +69,8 @@ $(function() {
 
     // suppression d'un éléments depuis la liste
     $('.actions-item .delete').confirmModal();
+
+    $("select").width($("select").width()).select2();
 
     $.c2is.portfolio();
 });
