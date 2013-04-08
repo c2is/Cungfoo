@@ -10,8 +10,9 @@ use Cungfoo\Model\VilleQuery,
 class SearchParams
 {
     protected $app;
-    protected $themes = array();
-    protected $etabs  = array();
+    protected $themes    = array();
+    protected $etabs     = array();
+    protected $roomTypes = array();
 
     protected $largeScope       = '';
     protected $smallScope       = '';
@@ -101,6 +102,16 @@ class SearchParams
         return $this;
     }
 
+    public function addRoomType($roomType)
+    {
+        if ($roomType)
+        {
+            $this->roomTypes[] = $roomType;
+        }
+
+        return $this;
+    }
+
     public function addEtab($etab)
     {
         if ($etab)
@@ -123,6 +134,7 @@ class SearchParams
         return array(
             'search_themes'     => implode(',', $this->themes),
             'etab_list'         => implode(',', $this->etabs),
+            'room_type'         => implode(',', $this->roomTypes),
             'start_date'        => $startDate->format('d/m/Y'),
             'nb_days'           => $this->nbDays,
             'nb_adults'         => $this->nbAdults,

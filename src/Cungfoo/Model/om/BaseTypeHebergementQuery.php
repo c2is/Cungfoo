@@ -12,6 +12,8 @@ use \PropelCollection;
 use \PropelException;
 use \PropelObjectCollection;
 use \PropelPDO;
+use Cungfoo\Model\BonPlan;
+use Cungfoo\Model\BonPlanTypeHebergement;
 use Cungfoo\Model\CategoryTypeHebergement;
 use Cungfoo\Model\Etablissement;
 use Cungfoo\Model\EtablissementTypeHebergement;
@@ -60,6 +62,10 @@ use Cungfoo\Model\TypeHebergementTypeHebergementCapacite;
  * @method TypeHebergementQuery leftJoinTypeHebergementTypeHebergementCapacite($relationAlias = null) Adds a LEFT JOIN clause to the query using the TypeHebergementTypeHebergementCapacite relation
  * @method TypeHebergementQuery rightJoinTypeHebergementTypeHebergementCapacite($relationAlias = null) Adds a RIGHT JOIN clause to the query using the TypeHebergementTypeHebergementCapacite relation
  * @method TypeHebergementQuery innerJoinTypeHebergementTypeHebergementCapacite($relationAlias = null) Adds a INNER JOIN clause to the query using the TypeHebergementTypeHebergementCapacite relation
+ *
+ * @method TypeHebergementQuery leftJoinBonPlanTypeHebergement($relationAlias = null) Adds a LEFT JOIN clause to the query using the BonPlanTypeHebergement relation
+ * @method TypeHebergementQuery rightJoinBonPlanTypeHebergement($relationAlias = null) Adds a RIGHT JOIN clause to the query using the BonPlanTypeHebergement relation
+ * @method TypeHebergementQuery innerJoinBonPlanTypeHebergement($relationAlias = null) Adds a INNER JOIN clause to the query using the BonPlanTypeHebergement relation
  *
  * @method TypeHebergementQuery leftJoinTypeHebergementI18n($relationAlias = null) Adds a LEFT JOIN clause to the query using the TypeHebergementI18n relation
  * @method TypeHebergementQuery rightJoinTypeHebergementI18n($relationAlias = null) Adds a RIGHT JOIN clause to the query using the TypeHebergementI18n relation
@@ -795,6 +801,80 @@ abstract class BaseTypeHebergementQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query by a related BonPlanTypeHebergement object
+     *
+     * @param   BonPlanTypeHebergement|PropelObjectCollection $bonPlanTypeHebergement  the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   TypeHebergementQuery The current query, for fluid interface
+     * @throws   PropelException - if the provided filter is invalid.
+     */
+    public function filterByBonPlanTypeHebergement($bonPlanTypeHebergement, $comparison = null)
+    {
+        if ($bonPlanTypeHebergement instanceof BonPlanTypeHebergement) {
+            return $this
+                ->addUsingAlias(TypeHebergementPeer::ID, $bonPlanTypeHebergement->getTypeHebergementId(), $comparison);
+        } elseif ($bonPlanTypeHebergement instanceof PropelObjectCollection) {
+            return $this
+                ->useBonPlanTypeHebergementQuery()
+                ->filterByPrimaryKeys($bonPlanTypeHebergement->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByBonPlanTypeHebergement() only accepts arguments of type BonPlanTypeHebergement or PropelCollection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the BonPlanTypeHebergement relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return TypeHebergementQuery The current query, for fluid interface
+     */
+    public function joinBonPlanTypeHebergement($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('BonPlanTypeHebergement');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'BonPlanTypeHebergement');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the BonPlanTypeHebergement relation BonPlanTypeHebergement object
+     *
+     * @see       useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return   \Cungfoo\Model\BonPlanTypeHebergementQuery A secondary query class using the current class as primary query
+     */
+    public function useBonPlanTypeHebergementQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        return $this
+            ->joinBonPlanTypeHebergement($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'BonPlanTypeHebergement', '\Cungfoo\Model\BonPlanTypeHebergementQuery');
+    }
+
+    /**
      * Filter the query by a related TypeHebergementI18n object
      *
      * @param   TypeHebergementI18n|PropelObjectCollection $typeHebergementI18n  the related object to use as filter
@@ -899,6 +979,23 @@ abstract class BaseTypeHebergementQuery extends ModelCriteria
         return $this
             ->useTypeHebergementTypeHebergementCapaciteQuery()
             ->filterByTypeHebergementCapacite($typeHebergementCapacite, $comparison)
+            ->endUse();
+    }
+
+    /**
+     * Filter the query by a related BonPlan object
+     * using the bon_plan_type_hebergement table as cross reference
+     *
+     * @param   BonPlan $bonPlan the related object to use as filter
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return   TypeHebergementQuery The current query, for fluid interface
+     */
+    public function filterByBonPlan($bonPlan, $comparison = Criteria::EQUAL)
+    {
+        return $this
+            ->useBonPlanTypeHebergementQuery()
+            ->filterByBonPlan($bonPlan, $comparison)
             ->endUse();
     }
 

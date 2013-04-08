@@ -14,6 +14,10 @@ use \PropelDateTime;
 use \PropelException;
 use \PropelObjectCollection;
 use \PropelPDO;
+use Cungfoo\Model\BonPlan;
+use Cungfoo\Model\BonPlanQuery;
+use Cungfoo\Model\BonPlanTypeHebergement;
+use Cungfoo\Model\BonPlanTypeHebergementQuery;
 use Cungfoo\Model\CategoryTypeHebergement;
 use Cungfoo\Model\CategoryTypeHebergementQuery;
 use Cungfoo\Model\Etablissement;
@@ -126,6 +130,12 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     protected $collTypeHebergementTypeHebergementCapacitesPartial;
 
     /**
+     * @var        PropelObjectCollection|BonPlanTypeHebergement[] Collection to store aggregation of BonPlanTypeHebergement objects.
+     */
+    protected $collBonPlanTypeHebergements;
+    protected $collBonPlanTypeHebergementsPartial;
+
+    /**
      * @var        PropelObjectCollection|TypeHebergementI18n[] Collection to store aggregation of TypeHebergementI18n objects.
      */
     protected $collTypeHebergementI18ns;
@@ -140,6 +150,11 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
      * @var        PropelObjectCollection|TypeHebergementCapacite[] Collection to store aggregation of TypeHebergementCapacite objects.
      */
     protected $collTypeHebergementCapacites;
+
+    /**
+     * @var        PropelObjectCollection|BonPlan[] Collection to store aggregation of BonPlan objects.
+     */
+    protected $collBonPlans;
 
     /**
      * Flag to prevent endless save loop, if this object is referenced
@@ -185,6 +200,12 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
      * An array of objects scheduled for deletion.
      * @var		PropelObjectCollection
      */
+    protected $bonPlansScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
     protected $etablissementTypeHebergementsScheduledForDeletion = null;
 
     /**
@@ -192,6 +213,12 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
      * @var		PropelObjectCollection
      */
     protected $typeHebergementTypeHebergementCapacitesScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var		PropelObjectCollection
+     */
+    protected $bonPlanTypeHebergementsScheduledForDeletion = null;
 
     /**
      * An array of objects scheduled for deletion.
@@ -666,10 +693,13 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
 
             $this->collTypeHebergementTypeHebergementCapacites = null;
 
+            $this->collBonPlanTypeHebergements = null;
+
             $this->collTypeHebergementI18ns = null;
 
             $this->collEtablissements = null;
             $this->collTypeHebergementCapacites = null;
+            $this->collBonPlans = null;
         } // if (deep)
     }
 
@@ -857,6 +887,26 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
                 }
             }
 
+            if ($this->bonPlansScheduledForDeletion !== null) {
+                if (!$this->bonPlansScheduledForDeletion->isEmpty()) {
+                    $pks = array();
+                    $pk = $this->getPrimaryKey();
+                    foreach ($this->bonPlansScheduledForDeletion->getPrimaryKeys(false) as $remotePk) {
+                        $pks[] = array($remotePk, $pk);
+                    }
+                    BonPlanTypeHebergementQuery::create()
+                        ->filterByPrimaryKeys($pks)
+                        ->delete($con);
+                    $this->bonPlansScheduledForDeletion = null;
+                }
+
+                foreach ($this->getBonPlans() as $bonPlan) {
+                    if ($bonPlan->isModified()) {
+                        $bonPlan->save($con);
+                    }
+                }
+            }
+
             if ($this->etablissementTypeHebergementsScheduledForDeletion !== null) {
                 if (!$this->etablissementTypeHebergementsScheduledForDeletion->isEmpty()) {
                     foreach ($this->etablissementTypeHebergementsScheduledForDeletion as $etablissementTypeHebergement) {
@@ -886,6 +936,23 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
 
             if ($this->collTypeHebergementTypeHebergementCapacites !== null) {
                 foreach ($this->collTypeHebergementTypeHebergementCapacites as $referrerFK) {
+                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
+                        $affectedRows += $referrerFK->save($con);
+                    }
+                }
+            }
+
+            if ($this->bonPlanTypeHebergementsScheduledForDeletion !== null) {
+                if (!$this->bonPlanTypeHebergementsScheduledForDeletion->isEmpty()) {
+                    BonPlanTypeHebergementQuery::create()
+                        ->filterByPrimaryKeys($this->bonPlanTypeHebergementsScheduledForDeletion->getPrimaryKeys(false))
+                        ->delete($con);
+                    $this->bonPlanTypeHebergementsScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collBonPlanTypeHebergements !== null) {
+                foreach ($this->collBonPlanTypeHebergements as $referrerFK) {
                     if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
                         $affectedRows += $referrerFK->save($con);
                     }
@@ -1121,6 +1188,14 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
                     }
                 }
 
+                if ($this->collBonPlanTypeHebergements !== null) {
+                    foreach ($this->collBonPlanTypeHebergements as $referrerFK) {
+                        if (!$referrerFK->validate($columns)) {
+                            $failureMap = array_merge($failureMap, $referrerFK->getValidationFailures());
+                        }
+                    }
+                }
+
                 if ($this->collTypeHebergementI18ns !== null) {
                     foreach ($this->collTypeHebergementI18ns as $referrerFK) {
                         if (!$referrerFK->validate($columns)) {
@@ -1235,6 +1310,9 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
             }
             if (null !== $this->collTypeHebergementTypeHebergementCapacites) {
                 $result['TypeHebergementTypeHebergementCapacites'] = $this->collTypeHebergementTypeHebergementCapacites->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
+            }
+            if (null !== $this->collBonPlanTypeHebergements) {
+                $result['BonPlanTypeHebergements'] = $this->collBonPlanTypeHebergements->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
             if (null !== $this->collTypeHebergementI18ns) {
                 $result['TypeHebergementI18ns'] = $this->collTypeHebergementI18ns->toArray(null, true, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
@@ -1438,6 +1516,12 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
                 }
             }
 
+            foreach ($this->getBonPlanTypeHebergements() as $relObj) {
+                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
+                    $copyObj->addBonPlanTypeHebergement($relObj->copy($deepCopy));
+                }
+            }
+
             foreach ($this->getTypeHebergementI18ns() as $relObj) {
                 if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
                     $copyObj->addTypeHebergementI18n($relObj->copy($deepCopy));
@@ -1562,6 +1646,9 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
         }
         if ('TypeHebergementTypeHebergementCapacite' == $relationName) {
             $this->initTypeHebergementTypeHebergementCapacites();
+        }
+        if ('BonPlanTypeHebergement' == $relationName) {
+            $this->initBonPlanTypeHebergements();
         }
         if ('TypeHebergementI18n' == $relationName) {
             $this->initTypeHebergementI18ns();
@@ -2046,6 +2133,246 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
         $query->joinWith('TypeHebergementCapacite', $join_behavior);
 
         return $this->getTypeHebergementTypeHebergementCapacites($query, $con);
+    }
+
+    /**
+     * Clears out the collBonPlanTypeHebergements collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return TypeHebergement The current object (for fluent API support)
+     * @see        addBonPlanTypeHebergements()
+     */
+    public function clearBonPlanTypeHebergements()
+    {
+        $this->collBonPlanTypeHebergements = null; // important to set this to null since that means it is uninitialized
+        $this->collBonPlanTypeHebergementsPartial = null;
+
+        return $this;
+    }
+
+    /**
+     * reset is the collBonPlanTypeHebergements collection loaded partially
+     *
+     * @return void
+     */
+    public function resetPartialBonPlanTypeHebergements($v = true)
+    {
+        $this->collBonPlanTypeHebergementsPartial = $v;
+    }
+
+    /**
+     * Initializes the collBonPlanTypeHebergements collection.
+     *
+     * By default this just sets the collBonPlanTypeHebergements collection to an empty array (like clearcollBonPlanTypeHebergements());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @param boolean $overrideExisting If set to true, the method call initializes
+     *                                        the collection even if it is not empty
+     *
+     * @return void
+     */
+    public function initBonPlanTypeHebergements($overrideExisting = true)
+    {
+        if (null !== $this->collBonPlanTypeHebergements && !$overrideExisting) {
+            return;
+        }
+        $this->collBonPlanTypeHebergements = new PropelObjectCollection();
+        $this->collBonPlanTypeHebergements->setModel('BonPlanTypeHebergement');
+    }
+
+    /**
+     * Gets an array of BonPlanTypeHebergement objects which contain a foreign key that references this object.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this TypeHebergement is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @return PropelObjectCollection|BonPlanTypeHebergement[] List of BonPlanTypeHebergement objects
+     * @throws PropelException
+     */
+    public function getBonPlanTypeHebergements($criteria = null, PropelPDO $con = null)
+    {
+        $partial = $this->collBonPlanTypeHebergementsPartial && !$this->isNew();
+        if (null === $this->collBonPlanTypeHebergements || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collBonPlanTypeHebergements) {
+                // return empty collection
+                $this->initBonPlanTypeHebergements();
+            } else {
+                $collBonPlanTypeHebergements = BonPlanTypeHebergementQuery::create(null, $criteria)
+                    ->filterByTypeHebergement($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    if (false !== $this->collBonPlanTypeHebergementsPartial && count($collBonPlanTypeHebergements)) {
+                      $this->initBonPlanTypeHebergements(false);
+
+                      foreach($collBonPlanTypeHebergements as $obj) {
+                        if (false == $this->collBonPlanTypeHebergements->contains($obj)) {
+                          $this->collBonPlanTypeHebergements->append($obj);
+                        }
+                      }
+
+                      $this->collBonPlanTypeHebergementsPartial = true;
+                    }
+
+                    return $collBonPlanTypeHebergements;
+                }
+
+                if($partial && $this->collBonPlanTypeHebergements) {
+                    foreach($this->collBonPlanTypeHebergements as $obj) {
+                        if($obj->isNew()) {
+                            $collBonPlanTypeHebergements[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collBonPlanTypeHebergements = $collBonPlanTypeHebergements;
+                $this->collBonPlanTypeHebergementsPartial = false;
+            }
+        }
+
+        return $this->collBonPlanTypeHebergements;
+    }
+
+    /**
+     * Sets a collection of BonPlanTypeHebergement objects related by a one-to-many relationship
+     * to the current object.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $bonPlanTypeHebergements A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     * @return TypeHebergement The current object (for fluent API support)
+     */
+    public function setBonPlanTypeHebergements(PropelCollection $bonPlanTypeHebergements, PropelPDO $con = null)
+    {
+        $this->bonPlanTypeHebergementsScheduledForDeletion = $this->getBonPlanTypeHebergements(new Criteria(), $con)->diff($bonPlanTypeHebergements);
+
+        foreach ($this->bonPlanTypeHebergementsScheduledForDeletion as $bonPlanTypeHebergementRemoved) {
+            $bonPlanTypeHebergementRemoved->setTypeHebergement(null);
+        }
+
+        $this->collBonPlanTypeHebergements = null;
+        foreach ($bonPlanTypeHebergements as $bonPlanTypeHebergement) {
+            $this->addBonPlanTypeHebergement($bonPlanTypeHebergement);
+        }
+
+        $this->collBonPlanTypeHebergements = $bonPlanTypeHebergements;
+        $this->collBonPlanTypeHebergementsPartial = false;
+
+        return $this;
+    }
+
+    /**
+     * Returns the number of related BonPlanTypeHebergement objects.
+     *
+     * @param Criteria $criteria
+     * @param boolean $distinct
+     * @param PropelPDO $con
+     * @return int             Count of related BonPlanTypeHebergement objects.
+     * @throws PropelException
+     */
+    public function countBonPlanTypeHebergements(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        $partial = $this->collBonPlanTypeHebergementsPartial && !$this->isNew();
+        if (null === $this->collBonPlanTypeHebergements || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collBonPlanTypeHebergements) {
+                return 0;
+            }
+
+            if($partial && !$criteria) {
+                return count($this->getBonPlanTypeHebergements());
+            }
+            $query = BonPlanTypeHebergementQuery::create(null, $criteria);
+            if ($distinct) {
+                $query->distinct();
+            }
+
+            return $query
+                ->filterByTypeHebergement($this)
+                ->count($con);
+        }
+
+        return count($this->collBonPlanTypeHebergements);
+    }
+
+    /**
+     * Method called to associate a BonPlanTypeHebergement object to this object
+     * through the BonPlanTypeHebergement foreign key attribute.
+     *
+     * @param    BonPlanTypeHebergement $l BonPlanTypeHebergement
+     * @return TypeHebergement The current object (for fluent API support)
+     */
+    public function addBonPlanTypeHebergement(BonPlanTypeHebergement $l)
+    {
+        if ($this->collBonPlanTypeHebergements === null) {
+            $this->initBonPlanTypeHebergements();
+            $this->collBonPlanTypeHebergementsPartial = true;
+        }
+        if (!in_array($l, $this->collBonPlanTypeHebergements->getArrayCopy(), true)) { // only add it if the **same** object is not already associated
+            $this->doAddBonPlanTypeHebergement($l);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	BonPlanTypeHebergement $bonPlanTypeHebergement The bonPlanTypeHebergement object to add.
+     */
+    protected function doAddBonPlanTypeHebergement($bonPlanTypeHebergement)
+    {
+        $this->collBonPlanTypeHebergements[]= $bonPlanTypeHebergement;
+        $bonPlanTypeHebergement->setTypeHebergement($this);
+    }
+
+    /**
+     * @param	BonPlanTypeHebergement $bonPlanTypeHebergement The bonPlanTypeHebergement object to remove.
+     * @return TypeHebergement The current object (for fluent API support)
+     */
+    public function removeBonPlanTypeHebergement($bonPlanTypeHebergement)
+    {
+        if ($this->getBonPlanTypeHebergements()->contains($bonPlanTypeHebergement)) {
+            $this->collBonPlanTypeHebergements->remove($this->collBonPlanTypeHebergements->search($bonPlanTypeHebergement));
+            if (null === $this->bonPlanTypeHebergementsScheduledForDeletion) {
+                $this->bonPlanTypeHebergementsScheduledForDeletion = clone $this->collBonPlanTypeHebergements;
+                $this->bonPlanTypeHebergementsScheduledForDeletion->clear();
+            }
+            $this->bonPlanTypeHebergementsScheduledForDeletion[]= $bonPlanTypeHebergement;
+            $bonPlanTypeHebergement->setTypeHebergement(null);
+        }
+
+        return $this;
+    }
+
+
+    /**
+     * If this collection has already been initialized with
+     * an identical criteria, it returns the collection.
+     * Otherwise if this TypeHebergement is new, it will return
+     * an empty collection; or if this TypeHebergement has previously
+     * been saved, it will retrieve related BonPlanTypeHebergements from storage.
+     *
+     * This method is protected by default in order to keep the public
+     * api reasonable.  You can provide public methods for those you
+     * actually need in TypeHebergement.
+     *
+     * @param Criteria $criteria optional Criteria object to narrow the query
+     * @param PropelPDO $con optional connection object
+     * @param string $join_behavior optional join type to use (defaults to Criteria::LEFT_JOIN)
+     * @return PropelObjectCollection|BonPlanTypeHebergement[] List of BonPlanTypeHebergement objects
+     */
+    public function getBonPlanTypeHebergementsJoinBonPlan($criteria = null, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+    {
+        $query = BonPlanTypeHebergementQuery::create(null, $criteria);
+        $query->joinWith('BonPlan', $join_behavior);
+
+        return $this->getBonPlanTypeHebergements($query, $con);
     }
 
     /**
@@ -2622,6 +2949,183 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
     }
 
     /**
+     * Clears out the collBonPlans collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return TypeHebergement The current object (for fluent API support)
+     * @see        addBonPlans()
+     */
+    public function clearBonPlans()
+    {
+        $this->collBonPlans = null; // important to set this to null since that means it is uninitialized
+        $this->collBonPlansPartial = null;
+
+        return $this;
+    }
+
+    /**
+     * Initializes the collBonPlans collection.
+     *
+     * By default this just sets the collBonPlans collection to an empty collection (like clearBonPlans());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @return void
+     */
+    public function initBonPlans()
+    {
+        $this->collBonPlans = new PropelObjectCollection();
+        $this->collBonPlans->setModel('BonPlan');
+    }
+
+    /**
+     * Gets a collection of BonPlan objects related by a many-to-many relationship
+     * to the current object by way of the bon_plan_type_hebergement cross-reference table.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this TypeHebergement is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param Criteria $criteria Optional query object to filter the query
+     * @param PropelPDO $con Optional connection object
+     *
+     * @return PropelObjectCollection|BonPlan[] List of BonPlan objects
+     */
+    public function getBonPlans($criteria = null, PropelPDO $con = null)
+    {
+        if (null === $this->collBonPlans || null !== $criteria) {
+            if ($this->isNew() && null === $this->collBonPlans) {
+                // return empty collection
+                $this->initBonPlans();
+            } else {
+                $collBonPlans = BonPlanQuery::create(null, $criteria)
+                    ->filterByTypeHebergement($this)
+                    ->find($con);
+                if (null !== $criteria) {
+                    return $collBonPlans;
+                }
+                $this->collBonPlans = $collBonPlans;
+            }
+        }
+
+        return $this->collBonPlans;
+    }
+
+    /**
+     * Sets a collection of BonPlan objects related by a many-to-many relationship
+     * to the current object by way of the bon_plan_type_hebergement cross-reference table.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param PropelCollection $bonPlans A Propel collection.
+     * @param PropelPDO $con Optional connection object
+     * @return TypeHebergement The current object (for fluent API support)
+     */
+    public function setBonPlans(PropelCollection $bonPlans, PropelPDO $con = null)
+    {
+        $this->clearBonPlans();
+        $currentBonPlans = $this->getBonPlans();
+
+        $this->bonPlansScheduledForDeletion = $currentBonPlans->diff($bonPlans);
+
+        foreach ($bonPlans as $bonPlan) {
+            if (!$currentBonPlans->contains($bonPlan)) {
+                $this->doAddBonPlan($bonPlan);
+            }
+        }
+
+        $this->collBonPlans = $bonPlans;
+
+        return $this;
+    }
+
+    /**
+     * Gets the number of BonPlan objects related by a many-to-many relationship
+     * to the current object by way of the bon_plan_type_hebergement cross-reference table.
+     *
+     * @param Criteria $criteria Optional query object to filter the query
+     * @param boolean $distinct Set to true to force count distinct
+     * @param PropelPDO $con Optional connection object
+     *
+     * @return int the number of related BonPlan objects
+     */
+    public function countBonPlans($criteria = null, $distinct = false, PropelPDO $con = null)
+    {
+        if (null === $this->collBonPlans || null !== $criteria) {
+            if ($this->isNew() && null === $this->collBonPlans) {
+                return 0;
+            } else {
+                $query = BonPlanQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
+
+                return $query
+                    ->filterByTypeHebergement($this)
+                    ->count($con);
+            }
+        } else {
+            return count($this->collBonPlans);
+        }
+    }
+
+    /**
+     * Associate a BonPlan object to this object
+     * through the bon_plan_type_hebergement cross reference table.
+     *
+     * @param  BonPlan $bonPlan The BonPlanTypeHebergement object to relate
+     * @return TypeHebergement The current object (for fluent API support)
+     */
+    public function addBonPlan(BonPlan $bonPlan)
+    {
+        if ($this->collBonPlans === null) {
+            $this->initBonPlans();
+        }
+        if (!$this->collBonPlans->contains($bonPlan)) { // only add it if the **same** object is not already associated
+            $this->doAddBonPlan($bonPlan);
+
+            $this->collBonPlans[]= $bonPlan;
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param	BonPlan $bonPlan The bonPlan object to add.
+     */
+    protected function doAddBonPlan($bonPlan)
+    {
+        $bonPlanTypeHebergement = new BonPlanTypeHebergement();
+        $bonPlanTypeHebergement->setBonPlan($bonPlan);
+        $this->addBonPlanTypeHebergement($bonPlanTypeHebergement);
+    }
+
+    /**
+     * Remove a BonPlan object to this object
+     * through the bon_plan_type_hebergement cross reference table.
+     *
+     * @param BonPlan $bonPlan The BonPlanTypeHebergement object to relate
+     * @return TypeHebergement The current object (for fluent API support)
+     */
+    public function removeBonPlan(BonPlan $bonPlan)
+    {
+        if ($this->getBonPlans()->contains($bonPlan)) {
+            $this->collBonPlans->remove($this->collBonPlans->search($bonPlan));
+            if (null === $this->bonPlansScheduledForDeletion) {
+                $this->bonPlansScheduledForDeletion = clone $this->collBonPlans;
+                $this->bonPlansScheduledForDeletion->clear();
+            }
+            $this->bonPlansScheduledForDeletion[]= $bonPlan;
+        }
+
+        return $this;
+    }
+
+    /**
      * Clears the current object and sets all attributes to their default values
      */
     public function clear()
@@ -2665,6 +3169,11 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
                     $o->clearAllReferences($deep);
                 }
             }
+            if ($this->collBonPlanTypeHebergements) {
+                foreach ($this->collBonPlanTypeHebergements as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
             if ($this->collTypeHebergementI18ns) {
                 foreach ($this->collTypeHebergementI18ns as $o) {
                     $o->clearAllReferences($deep);
@@ -2677,6 +3186,11 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
             }
             if ($this->collTypeHebergementCapacites) {
                 foreach ($this->collTypeHebergementCapacites as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
+            if ($this->collBonPlans) {
+                foreach ($this->collBonPlans as $o) {
                     $o->clearAllReferences($deep);
                 }
             }
@@ -2694,6 +3208,10 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
             $this->collTypeHebergementTypeHebergementCapacites->clearIterator();
         }
         $this->collTypeHebergementTypeHebergementCapacites = null;
+        if ($this->collBonPlanTypeHebergements instanceof PropelCollection) {
+            $this->collBonPlanTypeHebergements->clearIterator();
+        }
+        $this->collBonPlanTypeHebergements = null;
         if ($this->collTypeHebergementI18ns instanceof PropelCollection) {
             $this->collTypeHebergementI18ns->clearIterator();
         }
@@ -2706,6 +3224,10 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
             $this->collTypeHebergementCapacites->clearIterator();
         }
         $this->collTypeHebergementCapacites = null;
+        if ($this->collBonPlans instanceof PropelCollection) {
+            $this->collBonPlans->clearIterator();
+        }
+        $this->collBonPlans = null;
         $this->aCategoryTypeHebergement = null;
     }
 
@@ -2800,6 +3322,24 @@ abstract class BaseTypeHebergement extends BaseObject implements Persistent
         $criteria->add(\Cungfoo\Model\TypeHebergementCapaciteI18nPeer::alias('i18n_locale', \Cungfoo\Model\TypeHebergementCapaciteI18nPeer::LOCALE), $this->currentLocale);
 
         return $this->getTypeHebergementCapacites($criteria, $con);
+    }
+
+    public function getBonPlansActive($criteria = null, PropelPDO $con = null)
+    {
+        if ($criteria === null)
+        {
+            $criteria = new \Criteria();
+        }
+
+        $criteria->add(\Cungfoo\Model\BonPlanPeer::ACTIVE, true);
+
+
+        $criteria->addAlias('i18n_locale', \Cungfoo\Model\BonPlanI18nPeer::TABLE_NAME);
+        $criteria->addJoin(\Cungfoo\Model\BonPlanPeer::ID, \Cungfoo\Model\BonPlanI18nPeer::alias('i18n_locale', \Cungfoo\Model\BonPlanI18nPeer::ID), \Criteria::LEFT_JOIN);
+        $criteria->add(\Cungfoo\Model\BonPlanI18nPeer::alias('i18n_locale', \Cungfoo\Model\BonPlanI18nPeer::ACTIVE_LOCALE), true);
+        $criteria->add(\Cungfoo\Model\BonPlanI18nPeer::alias('i18n_locale', \Cungfoo\Model\BonPlanI18nPeer::LOCALE), $this->currentLocale);
+
+        return $this->getBonPlans($criteria, $con);
     }
 
     public function getCapacitesActive($criteria = null, PropelPDO $con = null)

@@ -15,6 +15,7 @@ use Cungfoo\Model\BonPlanEtablissementPeer;
 use Cungfoo\Model\BonPlanI18nPeer;
 use Cungfoo\Model\BonPlanPeer;
 use Cungfoo\Model\BonPlanRegionPeer;
+use Cungfoo\Model\BonPlanTypeHebergementPeer;
 use Cungfoo\Model\map\BonPlanTableMap;
 
 /**
@@ -543,6 +544,9 @@ abstract class BaseBonPlanPeer
         // Invalidate objects in BonPlanRegionPeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
         BonPlanRegionPeer::clearInstancePool();
+        // Invalidate objects in BonPlanTypeHebergementPeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        BonPlanTypeHebergementPeer::clearInstancePool();
         // Invalidate objects in BonPlanI18nPeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
         BonPlanI18nPeer::clearInstancePool();

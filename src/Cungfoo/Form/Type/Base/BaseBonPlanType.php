@@ -338,6 +338,21 @@ class BaseBonPlanType extends AppAwareType
         );
     }
 
+    public function getTypeHebergementsType()
+    {
+        return 'model';
+    }
+
+    public function getTypeHebergementsOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'bon_plan_type_hebergement.type_hebergement_id',
+            'class' => 'Cungfoo\Model\TypeHebergement',
+            'multiple' => true,
+        );
+    }
+
     public function getNameType()
     {
         return 'text';
@@ -506,7 +521,8 @@ class BaseBonPlanType extends AppAwareType
         $builder->add('image_liste', $this->getImageListeType(), $this->getImageListeOptions());
         $builder->add('bon_plan_categories', $this->getBonPlanCategoriesType(), $this->getBonPlanCategoriesOptions());
         $builder->add('etablissements', $this->getEtablissementsType(), $this->getEtablissementsOptions());
-        $builder->add('regions', $this->getRegionsType(), $this->getRegionsOptions());$builder->add('bon_planI18ns', 'translation_collection', array(
+        $builder->add('regions', $this->getRegionsType(), $this->getRegionsOptions());
+        $builder->add('type_hebergements', $this->getTypeHebergementsType(), $this->getTypeHebergementsOptions());$builder->add('bon_planI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\BonPlanI18n',
             'label' => 'bon_planI18ns',
             'required' => false,

@@ -61,9 +61,11 @@ class TypeHebergementTableMap extends TableMap
         $this->addRelation('CategoryTypeHebergement', 'Cungfoo\\Model\\CategoryTypeHebergement', RelationMap::MANY_TO_ONE, array('category_type_hebergement_id' => 'id', ), 'SET NULL', null);
         $this->addRelation('EtablissementTypeHebergement', 'Cungfoo\\Model\\EtablissementTypeHebergement', RelationMap::ONE_TO_MANY, array('id' => 'type_hebergement_id', ), 'CASCADE', null, 'EtablissementTypeHebergements');
         $this->addRelation('TypeHebergementTypeHebergementCapacite', 'Cungfoo\\Model\\TypeHebergementTypeHebergementCapacite', RelationMap::ONE_TO_MANY, array('id' => 'type_hebergement_id', ), 'CASCADE', null, 'TypeHebergementTypeHebergementCapacites');
+        $this->addRelation('BonPlanTypeHebergement', 'Cungfoo\\Model\\BonPlanTypeHebergement', RelationMap::ONE_TO_MANY, array('id' => 'type_hebergement_id', ), 'CASCADE', null, 'BonPlanTypeHebergements');
         $this->addRelation('TypeHebergementI18n', 'Cungfoo\\Model\\TypeHebergementI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'TypeHebergementI18ns');
         $this->addRelation('Etablissement', 'Cungfoo\\Model\\Etablissement', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'Etablissements');
         $this->addRelation('TypeHebergementCapacite', 'Cungfoo\\Model\\TypeHebergementCapacite', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'TypeHebergementCapacites');
+        $this->addRelation('BonPlan', 'Cungfoo\\Model\\BonPlan', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'BonPlans');
     } // buildRelations()
 
     /**

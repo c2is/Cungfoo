@@ -1060,6 +1060,19 @@
         </foreign-key>
     </table>
 
+    <table name="bon_plan_type_hebergement" isCrossRef="true">
+        <column name="bon_plan_id" type="integer" primaryKey="true"/>
+        <column name="type_hebergement_id" type="integer" primaryKey="true"/>
+
+        <foreign-key foreignTable="bon_plan" onDelete="CASCADE">
+            <reference local="bon_plan_id" foreign="id"/>
+        </foreign-key>
+
+        <foreign-key foreignTable="type_hebergement" onDelete="CASCADE">
+            <reference local="type_hebergement_id" foreign="id"/>
+        </foreign-key>
+    </table>
+
     <table name="demande_annulation">
         <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true"/>
         <column name="assure_nom" type="varchar" required="true"/>

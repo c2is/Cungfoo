@@ -884,6 +884,7 @@ bon_plan.day_range: Nombre de jours (dispo)
 bon_plan.nb_adultes: Nombre d'adultes (dispo)
 bon_plan.nb_enfants: Nombre d'enfants (dispo)
 bon_plan.period_categories: Périodes (dispo)
+bon_plan_type_hebergement.type_hebergement_id: Types hébergements associés (dispo)
 
 bon_plan_bon_plan_categorie.bon_plan_categorie_id: Catégories associées (dispo)
 bon_plan_etablissement.etablissement_id: Campings associés (dispo)

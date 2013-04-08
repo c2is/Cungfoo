@@ -53,6 +53,7 @@ class EsiController implements ControllerProviderInterface
                         ->setNbDays($dayRange)
                         ->addTheme($bonPlan->getRegionsCodes())
                         ->addEtab($bonPlan->getEtablissementsCodes())
+                        ->addRoomType($bonPlan->getTypeHebergementsCodes())
                         ->setNbAdults($bonPlan->getNbAdultes())
                         ->setPeriodCategories($bonPlan->getPeriodCategories())
                         ->setMaxResults(15)
@@ -129,6 +130,7 @@ class EsiController implements ControllerProviderInterface
                     ->setNbDays($dayRange)
                     ->addTheme($bonPlanObject->getRegionsCodes())
                     ->addEtab($bonPlanObject->getEtablissementsCodes())
+                    ->addRoomType($bonPlanObject->getTypeHebergementsCodes())
                     ->setNbAdults($bonPlanObject->getNbAdultes())
                     ->setPeriodCategories($bonPlanObject->getPeriodCategories())
                     ->setMaxResults(15)
@@ -191,6 +193,7 @@ class EsiController implements ControllerProviderInterface
                 ->setNbDays($dayRange)
                 ->addTheme($bonPlan->getRegionsCodes())
                 ->addEtab($bonPlan->getEtablissementsCodes())
+                ->addRoomType($bonPlan->getTypeHebergementsCodes())
                 ->setNbAdults($bonPlan->getNbAdultes())
                 ->setNbChildren($bonPlan->getNbEnfants())
             ;

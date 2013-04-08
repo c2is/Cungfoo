@@ -60,6 +60,7 @@ class BonPlanType extends BaseBonPlanType
                         'bon_plan_categories',
                         'etablissements',
                         'regions',
+                        'type_hebergements',
                         'bon_planI18ns',
                     )
                 ),

@@ -27,6 +27,18 @@ class BonPlan extends BaseBonPlan
     {
         $codes = array();
 
+        foreach ($this->getTypeHebergements() as $typeHebergement)
+        {
+            $codes[] = $typeHebergement->getCode();
+        }
+
+        return implode(',', $codes);
+    }
+
+    public function getTypeHebergementsCodes()
+    {
+        $codes = array();
+
         foreach ($this->getRegions() as $Region)
         {
             $codes[] = $Region->getCode();
