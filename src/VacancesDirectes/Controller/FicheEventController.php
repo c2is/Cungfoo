@@ -47,6 +47,10 @@ class FicheEventController implements ControllerProviderInterface
                 ->findOne()
             ;
 
+            if (!$event) {
+                return $app->redirect($app['url_generator']->generate('homepage'));
+            }
+
             $campings = $event->getEtablissements();
             $list = new CatalogueListing($app);
             $list
@@ -56,10 +60,10 @@ class FicheEventController implements ControllerProviderInterface
             $listContent = $list->process();
 
             return $app->renderView('Event/detail.twig', array(
-                'locale'            => $locale,
-                'event'               => $event,
-                'list'              => $listContent,
-                'searchForm'        => $searchEngine->getView(),
+                'locale'     => $locale,
+                'event'      => $event,
+                'list'       => $listContent,
+                'searchForm' => $searchEngine->getView(),
             ));
         })
         ->bind('event');
