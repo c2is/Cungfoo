@@ -22,4 +22,9 @@ class RegionRef extends BaseRegionRef
     {
         return $this->getName();
     }
+
+    public function isFrance()
+    {
+        return $this->getPays()->isFrance();
+    }
 }

@@ -22,4 +22,9 @@ class Departement extends BaseDepartement
     {
         return $this->getName();
     }
+
+    public function isFrance()
+    {
+        return $this->getRegionRef()->isFrance();
+    }
 }
