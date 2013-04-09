@@ -175,11 +175,11 @@ class ApiController implements ControllerProviderInterface
                 $campingDom->appendChild($node);
 
                 $node = $dom->createElement('smallimage');
-                $node->appendChild($dom->createTextNode('http://' . $app['request']->getHttpHost() . '/images/passerelle/min/' . $camping->getId() . '.jpg'));
+                $node->appendChild($dom->createTextNode('http://' . $app['request']->getHttpHost() . '/images/passerelle/min/' . $camping->getCode() . '.jpg'));
                 $campingDom->appendChild($node);
 
                 $node = $dom->createElement('bigimage');
-                $node->appendChild($dom->createTextNode('http://' . $app['request']->getHttpHost() . '/images/passerelle/max/' . $camping->getId() . '.jpg'));
+                $node->appendChild($dom->createTextNode('http://' . $app['request']->getHttpHost() . '/images/passerelle/max/' . $camping->getCode() . '.jpg'));
                 $campingDom->appendChild($node);
 
                 $node = $dom->createElement('producturl');
@@ -210,15 +210,15 @@ class ApiController implements ControllerProviderInterface
                 if (!$description) {
                     $baignades = $camping->getBaignades();
                     foreach ($baignades as $baignade) {
-                        if ($baignade->getCode() == 'PCOU ') {
+                        if ($baignade->getCode() == 'PCOU') {
                             $description = $baignade->getName();
                             break;
                         }
-                        if ($baignade->getCode() == 'PAAQ ') {
+                        if ($baignade->getCode() == 'PAAQ') {
                             $description = $baignade->getName();
                             break;
                         }
-                        if ($baignade->getCode() == 'TOBO  ') {
+                        if ($baignade->getCode() == 'TOBO') {
                             $description = $baignade->getName();
                             break;
                         }
