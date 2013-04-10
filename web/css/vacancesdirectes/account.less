@@ -29,7 +29,7 @@ iframe{width:100%;min-height:500px;overflow:hidden;}
 /* SEARCH */
 #headerContainer #nav{margin-left:-@gutter;width:976px;height:auto;font-size:18px;font-weight:bold;
   ul{width:858px;margin:0 auto;text-align:center;
-    li.tab{width:186px;margin:0 12px;float:none;display:inline-block;
+    li.tab{width:186px;margin:0 12px;float:none;display:inline-block;*display:inline;*zoom:1;
       a{text-decoration:underline;
         &:hover{text-decoration:none;}
       }
@@ -37,7 +37,7 @@ iframe{width:100%;min-height:500px;overflow:hidden;}
     }
   }
   .topnavSub{width:100%;background:@colorFushia;text-align:center;
-    li.tab{float:none;display:inline-block;}
+    li.tab{float:none;display:inline-block;*display:inline;*zoom:1;}
   }
 }
 

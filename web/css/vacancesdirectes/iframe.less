@@ -72,7 +72,7 @@
 /*Centrer verticalement plusieurs lignes de texte dans un conteneur de hauteur fixe*/
 ._verticalCenter(@height, @lineHeight, @case) when (@case = multiple) {
   ._verticalCenter(@height);
-  &>* {vertical-align:middle;display:inline-block;line-height:@lineHeight;}
+  &>* {vertical-align:middle;display:inline-block;*display:inline;*zoom:1;line-height:@lineHeight;}
 }
 /*Centrer verticalement une image de taille variable dans un conteneur de hauteur fixe*/
 ._verticalCenter(@height, @case) when (@case = image) {
@@ -82,7 +82,7 @@
 
 
 ._h3Decroch(@colorBg, @color){
-  display:inline-block;position:relative;text-transform:uppercase;._border-radius(10px 0 10px 0);background-color:@colorBg;color:@color;font:bold 18px @ptnarrow;padding:5px 10px;margin:0 0 10px -20px;
+  display:inline-block;*display:inline;*zoom:1;position:relative;text-transform:uppercase;._border-radius(10px 0 10px 0);background-color:@colorBg;color:@color;font:bold 18px @ptnarrow;padding:5px 10px;margin:0 0 10px -20px;
   &:after{content:"";position:absolute;top:100%;left:0;border-left:10px solid transparent;border-right:0 solid transparent;border-top:6px solid #23408f;z-index:1;}
 }
 
@@ -282,7 +282,7 @@ body{background:#fff;color:@colorGris2;font:12px @arial;margin:0 24px;}
   .proposals > .total{background-color:@colorBgBleu2;position:relative;padding:0 20px;float:right;
     &:before{content:url('../../images/vacancesdirectes/common/ui/stamp-left-blanc.png');width:12px;height:24px;position:absolute;left:0;top:50%;margin-top:-12px;}
     &:after{content:url('../../images/vacancesdirectes/common/ui/stamp-right-blanc.png');width:12px;height:24px;position:absolute;right:0;top:50%;margin-top:-12px;}
-    div{display:inline-block;color:@colorBlanc;height:40px;text-align:center;font:bold 24px/40px @ptnarrow;text-transform:uppercase;
+    div{display:inline-block;*display:inline;*zoom:1;color:@colorBlanc;height:40px;text-align:center;font:bold 24px/40px @ptnarrow;text-transform:uppercase;
       &.label{content:':';margin:0 3px}
     }
   }
@@ -330,7 +330,7 @@ body{background:#fff;color:@colorGris2;font:12px @arial;margin:0 24px;}
   }
   .bt{margin:30px;
     img{display:none;}
-    &:before{    border: 2px solid #FFFFFF;._border-radius(50%);content:"+";display:inline-block;line-height:12px;margin-right:3px;padding:0 3px;}
+    &:before{    border: 2px solid #FFFFFF;._border-radius(50%);content:"+";display:inline-block;*display:inline;*zoom:1;line-height:12px;margin-right:3px;padding:0 3px;}
   }
 }
 
@@ -354,7 +354,7 @@ body{background:#fff;color:@colorGris2;font:12px @arial;margin:0 24px;}
   }
   #option{background-color:transparent;border-radius:0;padding:0;margin:0;
     p{margin:0 !important;}
-    .label{display:inline-block;margin-right:15px;}
+    .label{display:inline-block;*display:inline;*zoom:1;margin-right:15px;}
     select{width:185px;border:0;padding:4px;color:@colorBgGrisM;font:bold 16px/16px @ptnarrow;margin-bottom:5px;margin-right:50px}
   }
   #address, #option{margin-top:25px;}
@@ -393,7 +393,7 @@ body{background:#fff;color:@colorGris2;font:12px @arial;margin:0 24px;}
     }
     p > span{float:left;margin-right:8px;}
     .newListSelected{margin-top:-3px;}
-    .chooseButton{display:inline-block;margin-top:-10px;margin-left:10px;}
+    .chooseButton{display:inline-block;*display:inline;*zoom:1;margin-top:-10px;margin-left:10px;}
   }
   #searchResult{
     .proposal{background-color:@colorBgGrisC;border-radius:10px;padding:10px;margin:15px 0;position:relative;
@@ -405,7 +405,7 @@ body{background:#fff;color:@colorGris2;font:12px @arial;margin:0 24px;}
         .label{font:bold 24px @ptnarrow;text-transform:uppercase;width:77px;height:30px;margin:0 auto;overflow:hidden;}
         .field{font:bold 18px @ptnarrow;text-transform:uppercase;}
       }
-      .popinIframe{display:inline-block;margin-bottom:10px;}
+      .popinIframe{display:inline-block;*display:inline;*zoom:1;margin-bottom:10px;}
       .proposalEtab{font-size:11px;color:@colorGris1;text-transform:uppercase;margin-bottom:5px;}
       table{width:570px;
         tr{margin-bottom:2px;
@@ -492,7 +492,7 @@ body{background:#fff;color:@colorGris2;font:12px @arial;margin:0 24px;}
   .title{font:bold 25px/24px @ptnarrow;margin-bottom:10px;}
   #semainierContener{background-color:@colorBgFushia;color:#fff;._border-radius(10px);padding:15px 20px;margin:15px 0;position:relative;
     .semainierType{margin-bottom:10px;display:none;
-      span{border:1px solid #fff;._border-radius(5px);color:#fff;display:inline-block;font-size:12px;padding:6px 5px 4px;font-weight:bold;
+      span{border:1px solid #fff;._border-radius(5px);color:#fff;display:inline-block;*display:inline;*zoom:1;font-size:12px;padding:6px 5px 4px;font-weight:bold;
         a{color:#fff;text-decoration:none;}
         &.selected{background:#fff;color:@colorFushia;display:block;}
       }
@@ -501,7 +501,7 @@ body{background:#fff;color:@colorGris2;font:12px @arial;margin:0 24px;}
       tr:nth-child(2){font-size:12px;font-weight:bold;text-transform:uppercase;}
       td{color:#464545;padding:8px 9px;border:1px solid #e1e1e1;
         .orderPrice{font:bold 19px/19px Arial;}
-        .orderLink{font:bold 14px/18px @ptnarrow;display:inline-block;margin-top:5px;text-transform:uppercase;text-decoration:underline;}
+        .orderLink{font:bold 14px/18px @ptnarrow;display:inline-block;*display:inline;*zoom:1;margin-top:5px;text-transform:uppercase;text-decoration:underline;}
         &.reserver{text-align:center;vertical-align:middle;
           .orderPrice, .orderLink{color:@colorFushia;}
           &:hover{background-color:@colorBgFushia;color:@colorBlanc;
@@ -546,7 +546,7 @@ body{background:#fff;color:@colorGris2;font:12px @arial;margin:0 24px;}
     }
   }
   .monthList{text-align:center;
-    li{background:#e6e5e5;border-radius:5px 5px 0 0;display:inline-block;padding:3px 8px;text-transform:uppercase;
+    li{background:#e6e5e5;border-radius:5px 5px 0 0;display:inline-block;*display:inline;*zoom:1;padding:3px 8px;text-transform:uppercase;
       a{text-decoration:none;color:#464545;font:bold 11px Arial;}
       &.on{background:#8c8a8a;
         a{color:#fff;}

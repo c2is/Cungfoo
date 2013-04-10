@@ -45,6 +45,7 @@
         .sliderPostmark{position:absolute;top:-30px;right:-10px;z-index:1;}
         .sliderBackground{position:absolute;bottom:0;left:0;height:100px;width:976px;background-color:@colorBlanc;z-index:2}
         .sliderStain{position:absolute;text-align:center;
+          *{text-decoration:none;}
           &.first{left:50px;top:-100px;width:298px;._verticalCenter(286px,15px);background:url("../../images/vacancesdirectes/common/ui/stain-1.png") no-repeat 0 0 transparent;z-index:3;
             .content{width:190px;color:@colorOrange;
               .headline{font:bold 32px/32px @ptnarrow;text-transform:uppercase;overflow:hidden;text-overflow:ellipsis;max-height:76px;}
@@ -74,7 +75,7 @@
       width: 24px;
       height: 30px;
       margin: 0 5px 0 0;
-      display: inline-block;
+      display: inline-block; *display: inline; *zoom: 1;
     }
     .pagination a.selected {
       background-position: 0px -60px;
@@ -181,4 +182,3 @@
     }
   }
 }
-.ie-lte7 .stain .span{display:inline;}

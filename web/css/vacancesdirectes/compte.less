@@ -73,7 +73,7 @@
 ._verticalCenter(@height, @lineHeight:inherit) {
   height: @height;                                                            /* Centrer verticalement une ligne de texte */
   line-height: @height;
-  &>* {vertical-align:middle;display:inline-block;line-height:@lineHeight;}   /* Centrer verticalement plusieurs lignes de texte */
+  &>* {vertical-align:middle;display:inline-block;*display:inline;*zoom:1;line-height:@lineHeight;}   /* Centrer verticalement plusieurs lignes de texte */
   &>img {vertical-align:middle;}                                               /* Centrer verticalement une image de taille variable */
 }
 
@@ -89,7 +89,7 @@
   &.big{padding:5px 10px;}
   &.small{padding:1px 10px;font-size:12px;._border-radius(10px)}
   &.full{clear:both;width:100%;text-align:center;font-size:26px;margin:15px 0;}
-  &.ib{display:inline-block;}
+  &.ib{display:inline-block;*display:inline;*zoom:1;}
 }
 
 @ptnarrow:'PT Sans Narrow', @arial;
@@ -205,10 +205,10 @@ body{background:#fff;color:@colorGris2;font:12px @arial;margin:0;}
   &:before{content:url('../../images/vacancesdirectes/common/ui/stamp-left-blanc.png');width:12px;height:24px;position:absolute;left:0;top:50%;margin-top:-12px;}
   &:after{content:url('../../images/vacancesdirectes/common/ui/stamp-right-blanc.png');width:12px;height:24px;position:absolute;right:0;top:50%;margin-top:-12px;}
 
-  h2{color:@colorBlanc;text-align:center;text-transform:uppercase;position:relative;display:inline-block;}
+  h2{color:@colorBlanc;text-align:center;text-transform:uppercase;position:relative;display:inline-block;*display:inline;*zoom:1;}
 }
 
-.tooltip {outline:none;position:relative;display:inline-block;}
+.tooltip {outline:none;position:relative;display:inline-block;*display:inline;*zoom:1;}
 .tooltip strong {line-height:30px;}
 .tooltip:hover {text-decoration:none;}
 .tooltip span.bubble {font:bold 12px/35px @arial;background:@colorBgGrisM;color:@colorBlanc;text-transform:none;padding:10px;text-decoration:none;text-align:center;._border-radius(10px);z-index:10;display:none;margin:0;width:auto; line-height:16px;left:233px;bottom:-5px;white-space:nowrap;}
@@ -243,7 +243,7 @@ input,
 textarea{font:bold 12px @arial;color:@colorGris0;}
 input[type="text"],input[type="password"]{background-color:@colorBgGrisC;width:216px;._verticalCenter(27px);padding: 0 7px;border:0 none;}
 textarea{background-color:@colorBgGrisC;width:216px;height:81px;padding: 0 7px;border:0 none;}
-.label{font:bold 15px @ptnarrow;color:@colorGris2;text-transform:uppercase;display:inline-block;}
+.label{font:bold 15px @ptnarrow;color:@colorGris2;text-transform:uppercase;display:inline-block;*display:inline;*zoom:1;}
 .bold{font-weight:bold;}
 
 
@@ -346,7 +346,7 @@ textarea{background-color:@colorBgGrisC;width:216px;height:81px;padding: 0 7px;b
           .action{text-align:right;}
           .changeOccupantCount{height:auto;background-color:@colorBgGrisF;padding:10px 5px 0;margin-bottom:15px;position:relative;
             .selectedTxt{background-color:@colorBgBlanc !important;}
-            &>span{margin:0 5px 10px;._verticalCenter(27px);font:bold 17px @ptnarrow;color:@colorBlanc;text-transform:uppercase;display:inline-block;}
+            &>span{margin:0 5px 10px;._verticalCenter(27px);font:bold 17px @ptnarrow;color:@colorBlanc;text-transform:uppercase;display:inline-block;*display:inline;*zoom:1;}
             .addAction a{position:absolute;top:10px;right:10px;display:block;width:27px;height:27px;text-indent:-9999px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -162px transparent;}
           }
           tr{font-weight:bold;
@@ -415,7 +415,7 @@ textarea{background-color:@colorBgGrisC;width:216px;height:81px;padding: 0 7px;b
     }
 
     .rsl-date-input,
-    .control_date {position:relative;display:inline-block;
+    .control_date {position:relative;display:inline-block;*display:inline;*zoom:1;
       a#date_sRowID_link{display:none;position:absolute;top:-6px;right:15px;width:27px;height:27px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -216px transparent;
         img{display:none;}
       }
@@ -424,7 +424,7 @@ textarea{background-color:@colorBgGrisC;width:216px;height:81px;padding: 0 7px;b
 
 
     label,input[type="radio"] {vertical-align:middle;}
-    input[type="radio"] + label{display:inline-block;margin:3px 5px 0 0;}
+    input[type="radio"] + label{display:inline-block;*display:inline;*zoom:1;margin:3px 5px 0 0;}
     input[type="radio"] {height:auto;}
 
   }

@@ -16,12 +16,14 @@
 
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
-    <!--[if lt IE 9]><link rel="stylesheet" href="{{ asset('css/vacancesdirectes/ie.css?v='~app.config.get('version')) }}"><![endif]-->
     <link rel="stylesheet" href="{{ asset('css/vacancesdirectes/screen.css?v='~app.config.get('version')) }}" media="screen">
     {% if app.context.get('language') != "fr" %}
-    <link rel="stylesheet" href="{{ asset('css/vacancesdirectes/screen_'~app.context.get('language')~'.css?v='~app.config.get('version')) }}" media="screen">
+        <link rel="stylesheet" href="{{ asset('css/vacancesdirectes/screen_'~app.context.get('language')~'.css?v='~app.config.get('version')) }}" media="screen">
     {% endif %}
     <link rel="stylesheet" href="{{ asset('css/vacancesdirectes/print.css') }}" media="print">
+    <!--[if lt IE 9]><link rel="stylesheet" href="{{ asset('css/vacancesdirectes/ie.css?v='~app.config.get('version')) }}"><![endif]-->
+    <!--[if IE 7]><link rel="stylesheet" href="{{ asset('css/vacancesdirectes/ie7.css') }}"><![endif]-->
+
 
     <script src="{{ asset('vendor/head.extended.js?v='~app.config.get('version')) }}"></script>
     <script>
@@ -53,14 +55,6 @@
     <header class="clear noprint">
         {{ render(path('menu_principal', {currentRoute: app.request.get('_route')})) }}
         <div id="header" class="fixed-width clear">
-            <div id="headerRight">
-                {% include 'header.twig' %}
-                <div id="telephone">
-                    <span>{{ "header.information" | trans }}
-                        <span class="phoneNum">{{ "header.telephone.number" | trans }}</span><span class="phonePrice">{{ "header.telephone.price" | trans }}</span>
-                    </span>
-                </div>
-            </div>
             <a href="{{ path( 'homepage' ) }}" title="Vacances directes | Le camping tout simplement !" id="logo"{% if app.request.get('_route') == "destination_camping" %} onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Header', 'Lien_-_Logo', 'Clic_-_Logo']);"{% endif %}>
             {% if app.request.get('_route') == 'homepage' %}
                 <h1 id="logoTitle">{{ "header.location_mobil_home" | trans }}</h1>
@@ -70,6 +64,14 @@
             {% if app.request.get('_route') == 'homepage' %}
             <h2 id="catchline">{{ "header.130_camping" | trans }}</h2>
             {% endif %}
+            <div id="headerRight">
+                {% include 'header.twig' %}
+                <div id="telephone">
+                    <span class="clear">{{ "header.information" | trans }}
+                        <span class="phoneNum">{{ "header.telephone.number" | trans }}</span><span class="phonePrice">{{ "header.telephone.price" | trans }}</span>
+                    </span>
+                </div>
+            </div>
         </div>
 
         {% block slider %}
@@ -121,7 +123,7 @@
     </script>
 
     <!-- Prompt IE 6 users to install Chrome Frame -->
-    <!--[if lt IE 8 ]>
+    <!--[if lt IE 7 ]>
     <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
     <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
     <![endif]--><!-- Google ADWORDS remarketing VD -->

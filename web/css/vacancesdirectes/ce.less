@@ -87,7 +87,7 @@ iframe{width:100%;}
 /* SEARCH */
   #stepNav{width:976px;/*height:50px;*/font:bold 23px @ptnarrow;text-transform:uppercase;position:relative;background:@colorBgGrisF;margin:20px 0 0 -@gutter;z-index:1;
     ul{width:858px;margin:0 auto;text-align:center;
-      li.tab{width:186px;margin:0 12px;float:none;display:inline-block;position:static;color:@colorBlanc;padding:0;
+      li.tab{width:186px;margin:0 12px;float:none;display:inline-block;*display:inline;*zoom:1;position:static;color:@colorBlanc;padding:0;
         &.current{background:@colorFushia;}
         a{position:relative;display:block;padding:0 10px;color:@colorBlanc;text-decoration:none;._verticalCenter(50px);}
         &.current a{text-decoration:none;}
@@ -95,13 +95,13 @@ iframe{width:100%;}
       }
     }
     .topnavSub{width:100%;background:@colorFushia;text-align:center;
-      li.tab{float:none;display:inline-block;}
+      li.tab{float:none;display:inline-block;*display:inline;*zoom:1;}
     }
   }
 
 
 #searchContainer, #searchContainerReservation{margin-bottom:20px;z-index:1;margin-top:50px;
-  .searchBox{padding:20px 0;display:inline-block;background-color:transparent;}
+  .searchBox{padding:20px 0;display:inline-block;*display:inline;*zoom:1;background-color:transparent;}
   .date input {width:96px;height:23px;padding: 0 0 0 5px;background-color:@colorBgGrisC;border:0 none;}
   #searchForm{position:relative;float:left;
     ol > li {margin-bottom:20px;
@@ -136,7 +136,7 @@ iframe{width:100%;}
   /*legend{background-color:@colorBgBleu;position:relative;margin-bottom:25px;text-align:center;
     &:before{content:url('../../images/vacancesdirectes/common/ui/stamp-left.png');width:12px;height:24px;position:absolute;left:0;top:50%;margin-top:-12px;}
     &:after{content:url('../../images/vacancesdirectes/common/ui/stamp-right.png');width:12px;height:24px;position:absolute;right:0;top:50%;margin-top:-12px;}
-    span{color:@colorBlanc;height:40px;text-align:center;font:bold 24px/40px @ptnarrow;text-transform:uppercase;display:inline-block;margin:0 25px;}
+    span{color:@colorBlanc;height:40px;text-align:center;font:bold 24px/40px @ptnarrow;text-transform:uppercase;display:inline-block;*display:inline;*zoom:1;margin:0 25px;}
   }*/
   fieldset{padding-bottom:40px;}
   legend{font-family:@ptnarrow;font-size:24px;text-transform:uppercase;color:@colorBleu;margin:0 0 15px 0;position:relative;
@@ -147,7 +147,7 @@ iframe{width:100%;}
       &:after{content:":";padding-left:3px;}
     }
     &.fieldbox{margin-bottom:5px;
-      label{display:inline-block;}
+      label{display:inline-block;*display:inline;*zoom:1;}
       input{float:left;margin-right:10px;}
     }
     &.fieldline{margin-bottom:25px;
@@ -163,7 +163,7 @@ iframe{width:100%;}
   }
   #DemandeIdentifiant_permanence_choices{font:bold 16px/16px @ptnarrow;float:left;margin-right:15px;
     .fieldline{float:left;width:100px;}
-    label{margin-right:15px;display:inline-block;
+    label{margin-right:15px;display:inline-block;*display:inline;*zoom:1;
       &:after{content:"";}
     }
     //input{margin-left:0;}
