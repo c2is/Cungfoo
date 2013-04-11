@@ -41,6 +41,11 @@ class CrudableBaseFormTypeBehaviorBuilder extends OMBuilder
         return strtoupper($string[0]) . substr($string, 1);
     }
 
+    public function normalize($appName)
+    {
+        return preg_replace('/[^a-z_-]+/', '_', strtolower($appName));
+    }
+
     /**
      * Adds class phpdoc comment and openning of class.
      * @param      string &$script The script will be modified in this method.
@@ -201,7 +206,7 @@ class {$this->getClassname()} extends AppAwareType
             return $constraints;
         }
 
-        if ($column->getAttribute('required', false)) {
+        if ($column->getAttribute('required', false) === 'true') {
             $constraints[] = 'new Assert\NotBlank()';
         }
 
@@ -366,6 +371,8 @@ class {$this->getClassname()} extends AppAwareType
                     $columnName = $fColumn->getForeignTable()->getName();
                     if ($foreignKeysByTable[$fColumn->getForeignTable()->getName()] > 1) {
                         $columnName = sprintf("%s_related_by_%s", $columnName, $column->getName());
+                    } elseif ($columnName == $column->getTable()->getName()) {
+                        $columnName = $this->normalize($fColumn->getPhpName());
                     }
 
                     $fields[$columnName]['type'] = 'model';

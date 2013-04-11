@@ -47,6 +47,10 @@ $app['swiftmailer.options'] = array(
     'auth_mode' => null
 );
 
+$app['navigation'] = $app->share(function ($name) {
+    return new Cungfoo\Model\NavigationPeer();
+});
+
 $app->after(function (Symfony\Component\HttpFoundation\Request $request, Symfony\Component\HttpFoundation\Response $response) use ($app) {
     if ($tagUci = $request->query->get('tag_uci')) {
         $dateTime = new \DateTime();

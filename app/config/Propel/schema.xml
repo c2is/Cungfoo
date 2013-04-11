@@ -1164,4 +1164,41 @@
         </foreign-key>
     </table>
 
+    <table name="navigation">
+        <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true"/>
+        <column name="name" type="varchar" required="true" primaryString="true"/>
+        <behavior name="active"/>
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/navigation" />
+        </behavior>
+    </table>
+
+    <table name="navigation_item">
+        <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true"/>
+        <column name="parent_id" type="integer"/>
+        <column name="navigation_id" type="integer" required="true"/>
+        <column name="title" type="varchar" required="true" primaryString="true"/>
+        <column name="path" type="varchar" required="true"/>
+
+        <foreign-key foreignTable="navigation_item" onDelete="CASCADE" phpName="Parent" refPhpName="Child">
+            <reference local="parent_id" foreign="id"/>
+        </foreign-key>
+
+        <foreign-key foreignTable="navigation" onDelete="CASCADE">
+            <reference local="navigation_id" foreign="id"/>
+        </foreign-key>
+
+        <behavior name="sortable" />
+        <behavior name="timestampable"/>
+        <behavior name="active"/>
+
+        <behavior name="i18n">
+            <parameter name="i18n_columns" value="title,path" />
+        </behavior>
+
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/navigation/items" />
+        </behavior>
+    </table>
+
 </database>

@@ -10,13 +10,13 @@ use Symfony\Component\Form\FormBuilderInterface,
 use Cungfoo\Form\Type\AppAwareType;
 
 /**
- * Test class for Additional builder enabled on the 'edito' table.
+ * Test class for Additional builder enabled on the 'navigation_item' table.
  *
  * @author  Morgan Brunot <brunot.morgan@gmail.com>
  *          Denis Roussel <denis.roussel@gmail.com>
  * @package propel.generator.Cungfoo.Form.Type.Base
  */
-class BaseEditoType extends AppAwareType
+class BaseNavigationItemType extends AppAwareType
 {
     public function getIdType()
     {
@@ -27,20 +27,51 @@ class BaseEditoType extends AppAwareType
     {
         return array(
             'required' => false,
-            'label' => 'edito.id',
+            'label' => 'navigation_item.id',
         );
     }
 
-    public function getSlugType()
+    public function getParentType()
     {
-        return 'text';
+        return 'model';
     }
 
-    public function getSlugOptions()
+    public function getParentOptions()
     {
         return array(
             'required' => false,
-            'label' => 'edito.slug',
+            'label' => 'navigation_item.parent_id',
+            'class' => 'Cungfoo\Model\NavigationItem',
+        );
+    }
+
+    public function getNavigationType()
+    {
+        return 'model';
+    }
+
+    public function getNavigationOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'navigation_item.navigation_id',
+            'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
+            'class' => 'Cungfoo\Model\Navigation',
+        );
+    }
+
+    public function getSortableRankType()
+    {
+        return 'integer';
+    }
+
+    public function getSortableRankOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'navigation_item.sortable_rank',
         );
     }
 
@@ -53,7 +84,7 @@ class BaseEditoType extends AppAwareType
     {
         return array(
             'required' => false,
-            'label' => 'edito.created_at',
+            'label' => 'navigation_item.created_at',
             'widget' => 'single_text',
         );
     }
@@ -67,7 +98,7 @@ class BaseEditoType extends AppAwareType
     {
         return array(
             'required' => false,
-            'label' => 'edito.updated_at',
+            'label' => 'navigation_item.updated_at',
             'widget' => 'single_text',
         );
     }
@@ -81,33 +112,36 @@ class BaseEditoType extends AppAwareType
     {
         return array(
             'required' => false,
-            'label' => 'edito.active',
+            'label' => 'navigation_item.active',
         );
     }
 
-    public function getNameType()
+    public function getTitleType()
     {
         return 'text';
     }
 
-    public function getNameOptions()
+    public function getTitleOptions()
     {
         return array(
             'required' => false,
-            'label' => 'edito_i18n.name',
+            'label' => 'navigation_item_i18n.title',
+            'constraints' => array(
+                        new Assert\NotBlank(),
+                    ),
         );
     }
 
-    public function getDescriptionType()
+    public function getPathType()
     {
-        return 'textrich';
+        return 'text';
     }
 
-    public function getDescriptionOptions()
+    public function getPathOptions()
     {
         return array(
             'required' => false,
-            'label' => 'edito_i18n.description',
+            'label' => 'navigation_item_i18n.path',
             'constraints' => array(
                         new Assert\NotBlank(),
                     ),
@@ -123,7 +157,7 @@ class BaseEditoType extends AppAwareType
     {
         return array(
             'required' => false,
-            'label' => 'edito_i18n.seo_title',
+            'label' => 'navigation_item_i18n.seo_title',
         );
     }
 
@@ -136,7 +170,7 @@ class BaseEditoType extends AppAwareType
     {
         return array(
             'required' => false,
-            'label' => 'edito_i18n.seo_description',
+            'label' => 'navigation_item_i18n.seo_description',
         );
     }
 
@@ -149,7 +183,7 @@ class BaseEditoType extends AppAwareType
     {
         return array(
             'required' => false,
-            'label' => 'edito_i18n.seo_h1',
+            'label' => 'navigation_item_i18n.seo_h1',
         );
     }
 
@@ -162,7 +196,7 @@ class BaseEditoType extends AppAwareType
     {
         return array(
             'required' => false,
-            'label' => 'edito_i18n.seo_keywords',
+            'label' => 'navigation_item_i18n.seo_keywords',
         );
     }
 
@@ -175,7 +209,7 @@ class BaseEditoType extends AppAwareType
     {
         return array(
             'required' => false,
-            'label' => 'edito_i18n.active_locale',
+            'label' => 'navigation_item_i18n.active_locale',
         );
     }
 
@@ -185,17 +219,19 @@ class BaseEditoType extends AppAwareType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('id', $this->getIdType(), $this->getIdOptions());
-        $builder->add('slug', $this->getSlugType(), $this->getSlugOptions());
+        $builder->add('parent', $this->getParentType(), $this->getParentOptions());
+        $builder->add('navigation', $this->getNavigationType(), $this->getNavigationOptions());
+        $builder->add('sortable_rank', $this->getSortableRankType(), $this->getSortableRankOptions());
         $builder->add('created_at', $this->getCreatedAtType(), $this->getCreatedAtOptions());
         $builder->add('updated_at', $this->getUpdatedAtType(), $this->getUpdatedAtOptions());
-        $builder->add('active', $this->getActiveType(), $this->getActiveOptions());$builder->add('editoI18ns', 'translation_collection', array(
-            'i18n_class' => 'Cungfoo\Model\EditoI18n',
-            'label' => 'editoI18ns',
+        $builder->add('active', $this->getActiveType(), $this->getActiveOptions());$builder->add('navigation_itemI18ns', 'translation_collection', array(
+            'i18n_class' => 'Cungfoo\Model\NavigationItemI18n',
+            'label' => 'navigation_itemI18ns',
             'required' => false,
             'languages' => array('fr', 'de'),
             'columns' => array(
-                'name' => array_merge(array('type' => $this->getNameType()), $this->getNameOptions()),
-                'description' => array_merge(array('type' => $this->getDescriptionType()), $this->getDescriptionOptions()),
+                'title' => array_merge(array('type' => $this->getTitleType()), $this->getTitleOptions()),
+                'path' => array_merge(array('type' => $this->getPathType()), $this->getPathOptions()),
                 'seo_title' => array_merge(array('type' => $this->getSeoTitleType()), $this->getSeoTitleOptions()),
                 'seo_description' => array_merge(array('type' => $this->getSeoDescriptionType()), $this->getSeoDescriptionOptions()),
                 'seo_h1' => array_merge(array('type' => $this->getSeoH1Type()), $this->getSeoH1Options()),
@@ -214,7 +250,7 @@ class BaseEditoType extends AppAwareType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Cungfoo\Model\Edito',
+            'data_class' => 'Cungfoo\Model\NavigationItem',
         ));
     }
 
@@ -223,7 +259,7 @@ class BaseEditoType extends AppAwareType
      */
     public function getName()
     {
-        return 'Edito';
+        return 'NavigationItem';
     }
 
-} // BaseEditoType
+} // BaseNavigationItemType
