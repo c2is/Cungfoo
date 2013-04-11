@@ -194,34 +194,33 @@ class ApiController implements ControllerProviderInterface
                 ));
                 $campingDom->appendChild($node);
 
-                $situationsGeographiques = $camping->getSituationGeographiques();
                 $description = '';
-                foreach ($situationsGeographiques as $situation) {
-                    if ($situation->getCode() == 'MDIR') {
-                        $description = $situation->getName();
-                        break;
-                    }
-                    if ($situation->getCode() == 'M2K') {
-                        $description = $situation->getName();
-                        break;
-                    }
+                $codes = array();
+                foreach ($camping->getSituationGeographiques() as $situation) {
+                    $codes[$situation->getCode()] = $situation->getName();
+                }
+
+                if (array_key_exists('MDIR', $codes)) {
+                    $description = $codes['MDIR'];
+                }
+                else if (array_key_exists('M2K', $codes)) {
+                    $description = $codes['M2K'];
                 }
 
                 if (!$description) {
-                    $baignades = $camping->getBaignades();
-                    foreach ($baignades as $baignade) {
-                        if ($baignade->getCode() == 'PCOU') {
-                            $description = $baignade->getName();
-                            break;
-                        }
-                        if ($baignade->getCode() == 'PAAQ') {
-                            $description = $baignade->getName();
-                            break;
-                        }
-                        if ($baignade->getCode() == 'TOBO') {
-                            $description = $baignade->getName();
-                            break;
-                        }
+                    $codes = array();
+                    foreach ($camping->getBaignades() as $baignade) {
+                        $codes[$baignade->getCode()] = $baignade->getName();
+                    }
+
+                    if (array_key_exists('PCOU', $codes)) {
+                        $description = $codes['PCOU'];
+                    }
+                    else if (array_key_exists('PAAQ', $codes)) {
+                        $description = $codes['PAAQ'];
+                    }
+                    else if (array_key_exists('TOBO', $codes)) {
+                        $description = $codes['TOBO'];
                     }
                 }
 
