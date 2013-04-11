@@ -1,0 +1,34 @@
+\Cungfoo\Model\PortfolioTagI18n:
+    1_fr:
+        Id: 1
+        Locale: fr
+        Name: regions
+        Slug: null
+        Description: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    2_fr:
+        Id: 2
+        Locale: fr
+        Name: camping
+        Slug: null
+        Description: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true
+    3_fr:
+        Id: 3
+        Locale: fr
+        Name: activites
+        Slug: null
+        Description: null
+        SeoTitle: null
+        SeoDescription: null
+        SeoH1: null
+        SeoKeywords: null
+        ActiveLocale: true

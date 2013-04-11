@@ -111,6 +111,21 @@ class BaseTypeHebergementCapaciteType extends AppAwareType
         );
     }
 
+    public function getTypeHebergementsType()
+    {
+        return 'model';
+    }
+
+    public function getTypeHebergementsOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'type_hebergement_type_hebergement_capacite.type_hebergement_id',
+            'class' => 'Cungfoo\Model\TypeHebergement',
+            'multiple' => true,
+        );
+    }
+
     public function getNameType()
     {
         return 'text';
@@ -242,7 +257,8 @@ class BaseTypeHebergementCapaciteType extends AppAwareType
         $builder->add('sortable_rank', $this->getSortableRankType(), $this->getSortableRankOptions());
         $builder->add('active', $this->getActiveType(), $this->getActiveOptions());
         $builder->add('image_menu', $this->getImageMenuType(), $this->getImageMenuOptions());
-        $builder->add('image_page', $this->getImagePageType(), $this->getImagePageOptions());$builder->add('type_hebergement_capaciteI18ns', 'translation_collection', array(
+        $builder->add('image_page', $this->getImagePageType(), $this->getImagePageOptions());
+        $builder->add('type_hebergements', $this->getTypeHebergementsType(), $this->getTypeHebergementsOptions());$builder->add('type_hebergement_capaciteI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\TypeHebergementCapaciteI18n',
             'label' => 'type_hebergement_capaciteI18ns',
             'required' => false,

@@ -177,8 +177,26 @@ class BaseBonPlanType extends AppAwareType
                         new Assert\NotBlank(),
                     ),
             'choices' => array(
+                        1 => '1',
+                        2 => '2',
+                        3 => '3',
+                        4 => '4',
+                        5 => '5',
+                        6 => '6',
                         7 => '7',
+                        8 => '8',
+                        9 => '9',
+                        10 => '10',
+                        11 => '11',
+                        12 => '12',
+                        13 => '13',
                         14 => '14',
+                        15 => '15',
+                        16 => '16',
+                        17 => '17',
+                        18 => '18',
+                        19 => '19',
+                        20 => '20',
                         21 => '21',
                     ),
         );
@@ -316,6 +334,21 @@ class BaseBonPlanType extends AppAwareType
             'required' => false,
             'label' => 'bon_plan_region.region_id',
             'class' => 'Cungfoo\Model\Region',
+            'multiple' => true,
+        );
+    }
+
+    public function getTypeHebergementsType()
+    {
+        return 'model';
+    }
+
+    public function getTypeHebergementsOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'bon_plan_type_hebergement.type_hebergement_id',
+            'class' => 'Cungfoo\Model\TypeHebergement',
             'multiple' => true,
         );
     }
@@ -488,7 +521,8 @@ class BaseBonPlanType extends AppAwareType
         $builder->add('image_liste', $this->getImageListeType(), $this->getImageListeOptions());
         $builder->add('bon_plan_categories', $this->getBonPlanCategoriesType(), $this->getBonPlanCategoriesOptions());
         $builder->add('etablissements', $this->getEtablissementsType(), $this->getEtablissementsOptions());
-        $builder->add('regions', $this->getRegionsType(), $this->getRegionsOptions());$builder->add('bon_planI18ns', 'translation_collection', array(
+        $builder->add('regions', $this->getRegionsType(), $this->getRegionsOptions());
+        $builder->add('type_hebergements', $this->getTypeHebergementsType(), $this->getTypeHebergementsOptions());$builder->add('bon_planI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\BonPlanI18n',
             'label' => 'bon_planI18ns',
             'required' => false,

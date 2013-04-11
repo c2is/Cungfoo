@@ -23,6 +23,11 @@ class Pays extends BasePays
         return $this->getName();
     }
 
+    public function isFrance()
+    {
+        return $this->getCode() == 'FRA';
+    }
+
     public function getRegionMeaHome()
     {
         return \Cungfoo\Model\RegionQuery::create()

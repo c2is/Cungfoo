@@ -47,20 +47,6 @@ class BaseTypeHebergementType extends AppAwareType
         );
     }
 
-    public function getTypeHebergementCapaciteType()
-    {
-        return 'model';
-    }
-
-    public function getTypeHebergementCapaciteOptions()
-    {
-        return array(
-            'required' => false,
-            'label' => 'type_hebergement.type_hebergement_capacite_id',
-            'class' => 'Cungfoo\Model\TypeHebergementCapacite',
-        );
-    }
-
     public function getCategoryTypeHebergementType()
     {
         return 'model';
@@ -192,6 +178,36 @@ class BaseTypeHebergementType extends AppAwareType
             'required' => false,
             'label' => 'etablissement_type_hebergement.etablissement_id',
             'class' => 'Cungfoo\Model\Etablissement',
+            'multiple' => true,
+        );
+    }
+
+    public function getTypeHebergementCapacitesType()
+    {
+        return 'model';
+    }
+
+    public function getTypeHebergementCapacitesOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'type_hebergement_type_hebergement_capacite.type_hebergement_capacite_id',
+            'class' => 'Cungfoo\Model\TypeHebergementCapacite',
+            'multiple' => true,
+        );
+    }
+
+    public function getBonPlansType()
+    {
+        return 'model';
+    }
+
+    public function getBonPlansOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'bon_plan_type_hebergement.bon_plan_id',
+            'class' => 'Cungfoo\Model\BonPlan',
             'multiple' => true,
         );
     }
@@ -492,7 +508,6 @@ class BaseTypeHebergementType extends AppAwareType
     {
         $builder->add('id', $this->getIdType(), $this->getIdOptions());
         $builder->add('code', $this->getCodeType(), $this->getCodeOptions());
-        $builder->add('type_hebergement_capacite', $this->getTypeHebergementCapaciteType(), $this->getTypeHebergementCapaciteOptions());
         $builder->add('category_type_hebergement', $this->getCategoryTypeHebergementType(), $this->getCategoryTypeHebergementOptions());
         $builder->add('nombre_chambre', $this->getNombreChambreType(), $this->getNombreChambreOptions());
         $builder->add('nombre_place', $this->getNombrePlaceType(), $this->getNombrePlaceOptions());
@@ -502,7 +517,9 @@ class BaseTypeHebergementType extends AppAwareType
         $builder->add('image_hebergement_path', $this->getImageHebergementPathType(), $this->getImageHebergementPathOptions());
         $builder->add('image_composition_path', $this->getImageCompositionPathType(), $this->getImageCompositionPathOptions());
         $builder->add('slider', $this->getSliderType(), $this->getSliderOptions());
-        $builder->add('etablissements', $this->getEtablissementsType(), $this->getEtablissementsOptions());$builder->add('type_hebergementI18ns', 'translation_collection', array(
+        $builder->add('etablissements', $this->getEtablissementsType(), $this->getEtablissementsOptions());
+        $builder->add('type_hebergement_capacites', $this->getTypeHebergementCapacitesType(), $this->getTypeHebergementCapacitesOptions());
+        $builder->add('bon_plans', $this->getBonPlansType(), $this->getBonPlansOptions());$builder->add('type_hebergementI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\TypeHebergementI18n',
             'label' => 'type_hebergementI18ns',
             'required' => false,

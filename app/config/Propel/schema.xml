@@ -265,7 +265,6 @@
         <column name="name" type="varchar" required="true" />
         <column name="slug" type="varchar" />
         <column name="indice" type="varchar" />
-        <column name="type_hebergement_capacite_id" type="integer" />
         <column name="category_type_hebergement_id" type="integer" />
         <column name="nombre_chambre" type="integer" />
         <column name="nombre_place" type="integer" />
@@ -288,10 +287,6 @@
 
         <foreign-key foreignTable="category_type_hebergement" onDelete="SETNULL">
             <reference local="category_type_hebergement_id" foreign="id"></reference>
-        </foreign-key>
-
-        <foreign-key foreignTable="type_hebergement_capacite" onDelete="SETNULL">
-            <reference local="type_hebergement_capacite_id" foreign="id"></reference>
         </foreign-key>
 
         <behavior name="i18n">
@@ -324,6 +319,19 @@
             <parameter name="crud_search" value="name" />
             <parameter name="crud_type_file" value="image_menu,image_page" />
         </behavior>
+    </table>
+
+    <table name="type_hebergement_type_hebergement_capacite" isCrossRef="true">
+        <column name="type_hebergement_id" type="integer" primaryKey="true"/>
+        <column name="type_hebergement_capacite_id" type="integer" primaryKey="true"/>
+
+        <foreign-key foreignTable="type_hebergement" onDelete="CASCADE">
+            <reference local="type_hebergement_id" foreign="id"/>
+        </foreign-key>
+
+        <foreign-key foreignTable="type_hebergement_capacite" onDelete="CASCADE">
+            <reference local="type_hebergement_capacite_id" foreign="id"/>
+        </foreign-key>
     </table>
 
     <table name="category_type_hebergement">
@@ -967,6 +975,7 @@
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/bon-plan-categories" />
+            <parameter name="crud_type_richtext" value="description" />
         </behavior>
 
         <behavior name="sortable"/>
@@ -989,7 +998,7 @@
         <column name="push_home" type="boolean"/>
         <column name="date_start" type="date"/>
         <column name="day_start" type="enum" valueSet="monday, tuesday, wednesday, thursday, friday, saturday, sunday" required="true"/>
-        <column name="day_range" type="enum" valueSet="7, 14, 21" required="true"/>
+        <column name="day_range" type="enum" valueSet="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21" required="true"/>
         <column name="nb_adultes" type="integer" defaultValue="1" />
         <column name="nb_enfants" type="integer" defaultValue="0" />
         <column name="period_categories" type="varchar" />
@@ -1048,6 +1057,19 @@
 
         <foreign-key foreignTable="region" onDelete="CASCADE">
             <reference local="region_id" foreign="id"/>
+        </foreign-key>
+    </table>
+
+    <table name="bon_plan_type_hebergement" isCrossRef="true">
+        <column name="bon_plan_id" type="integer" primaryKey="true"/>
+        <column name="type_hebergement_id" type="integer" primaryKey="true"/>
+
+        <foreign-key foreignTable="bon_plan" onDelete="CASCADE">
+            <reference local="bon_plan_id" foreign="id"/>
+        </foreign-key>
+
+        <foreign-key foreignTable="type_hebergement" onDelete="CASCADE">
+            <reference local="type_hebergement_id" foreign="id"/>
         </foreign-key>
     </table>
 

@@ -63,9 +63,27 @@ class BonPlanTableMap extends TableMap
 ));
         $this->addColumn('day_range', 'DayRange', 'ENUM', true, null, null);
         $this->getColumn('day_range', false)->setValueSet(array (
-  0 => '7',
-  1 => '14',
-  2 => '21',
+  0 => '1',
+  1 => '2',
+  2 => '3',
+  3 => '4',
+  4 => '5',
+  5 => '6',
+  6 => '7',
+  7 => '8',
+  8 => '9',
+  9 => '10',
+  10 => '11',
+  11 => '12',
+  12 => '13',
+  13 => '14',
+  14 => '15',
+  15 => '16',
+  16 => '17',
+  17 => '18',
+  18 => '19',
+  19 => '20',
+  20 => '21',
 ));
         $this->addColumn('nb_adultes', 'NbAdultes', 'INTEGER', false, null, 1);
         $this->addColumn('nb_enfants', 'NbEnfants', 'INTEGER', false, null, 0);
@@ -82,10 +100,12 @@ class BonPlanTableMap extends TableMap
         $this->addRelation('BonPlanBonPlanCategorie', 'Cungfoo\\Model\\BonPlanBonPlanCategorie', RelationMap::ONE_TO_MANY, array('id' => 'bon_plan_id', ), 'CASCADE', null, 'BonPlanBonPlanCategories');
         $this->addRelation('BonPlanEtablissement', 'Cungfoo\\Model\\BonPlanEtablissement', RelationMap::ONE_TO_MANY, array('id' => 'bon_plan_id', ), 'CASCADE', null, 'BonPlanEtablissements');
         $this->addRelation('BonPlanRegion', 'Cungfoo\\Model\\BonPlanRegion', RelationMap::ONE_TO_MANY, array('id' => 'bon_plan_id', ), 'CASCADE', null, 'BonPlanRegions');
+        $this->addRelation('BonPlanTypeHebergement', 'Cungfoo\\Model\\BonPlanTypeHebergement', RelationMap::ONE_TO_MANY, array('id' => 'bon_plan_id', ), 'CASCADE', null, 'BonPlanTypeHebergements');
         $this->addRelation('BonPlanI18n', 'Cungfoo\\Model\\BonPlanI18n', RelationMap::ONE_TO_MANY, array('id' => 'id', ), 'CASCADE', null, 'BonPlanI18ns');
         $this->addRelation('BonPlanCategorie', 'Cungfoo\\Model\\BonPlanCategorie', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'BonPlanCategories');
         $this->addRelation('Etablissement', 'Cungfoo\\Model\\Etablissement', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'Etablissements');
         $this->addRelation('Region', 'Cungfoo\\Model\\Region', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'Regions');
+        $this->addRelation('TypeHebergement', 'Cungfoo\\Model\\TypeHebergement', RelationMap::MANY_TO_MANY, array(), 'CASCADE', null, 'TypeHebergements');
     } // buildRelations()
 
     /**

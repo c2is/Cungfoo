@@ -47,6 +47,10 @@ class FichePOIController implements ControllerProviderInterface
                 ->findOne()
             ;
 
+            if (!$poi) {
+                return $app->redirect($app['url_generator']->generate('homepage'));
+            }
+
             $campings = $poi->getEtablissements();
 
             $list = new CatalogueListing($app);
@@ -57,10 +61,10 @@ class FichePOIController implements ControllerProviderInterface
             $listContent = $list->process();
 
             return $app->renderView('POI/detail.twig', array(
-                'locale'            => $locale,
-                'poi'               => $poi,
-                'list'              => $listContent,
-                'searchForm'        => $searchEngine->getView(),
+                'locale'     => $locale,
+                'poi'        => $poi,
+                'list'       => $listContent,
+                'searchForm' => $searchEngine->getView(),
             ));
         })
         ->bind('poi');

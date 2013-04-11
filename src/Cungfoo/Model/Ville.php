@@ -22,4 +22,9 @@ class Ville extends BaseVille
     {
         return $this->getName();
     }
+
+    public function isFrance()
+    {
+        return $this->getRegion()->isFrance();
+    }
 }

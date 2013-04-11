@@ -70,6 +70,10 @@ class EventPeer extends BaseEventPeer
 
     static public function getForEtablissement(Etablissement $etab, $sort = self::NO_SORT, $count = null, $category = null, $criteriaOperation = null)
     {
+        if (!$etab->isFrance()) {
+            return null;
+        }
+
         if(self::getLocale() == 'de')
         {
             $query = EventQuery::create()
@@ -92,6 +96,10 @@ class EventPeer extends BaseEventPeer
 
     static public function getCountForEtablissement(Etablissement $etab, $category = null, $criteriaOperation = null)
     {
+        if (!$etab->isFrance()) {
+            return 0;
+        }
+
         if(self::getLocale() == 'de')
         {
             $query = EventQuery::create()
@@ -126,6 +134,10 @@ class EventPeer extends BaseEventPeer
 
     static public function getForPays(Pays $pays, $sort = self::NO_SORT, $count = null, $category = null, $criteriaOperation = null)
     {
+        if (!$pays->isFrance()) {
+            return null;
+        }
+
         if(self::getLocale() == 'de')
         {
             $query = EventQuery::create()
@@ -162,6 +174,10 @@ class EventPeer extends BaseEventPeer
 
     static public function getForRegion($region, $sort = self::NO_SORT, $count = null, $category = null, $criteriaOperation = null)
     {
+        if (!$region->isFrance()) {
+            return null;
+        }
+
         if(self::getLocale() == 'de')
         {
             $query = EventQuery::create()
@@ -192,6 +208,10 @@ class EventPeer extends BaseEventPeer
 
     static public function getForDepartement($departement, $sort = self::NO_SORT, $count = null, $category = null, $criteriaOperation = null)
     {
+        if (!$departement->isFrance()) {
+            return null;
+        }
+
         if(self::getLocale() == 'de')
         {
             $query = EventQuery::create()
@@ -230,6 +250,10 @@ class EventPeer extends BaseEventPeer
 
     static public function getForRegionRef($region, $sort = self::NO_SORT, $count = null, $category = null, $criteriaOperation = null)
     {
+        if (!$region->isFrance()) {
+            return null;
+        }
+
         if(self::getLocale() == 'de')
         {
             $query = EventQuery::create()
@@ -272,6 +296,10 @@ class EventPeer extends BaseEventPeer
 
     static public function getForVille(Ville $ville, $sort = self::NO_SORT, $count = null, $category = null, $criteriaOperation = null)
     {
+        if (!$ville->isFrance()) {
+            return null;
+        }
+
         if(self::getLocale() == 'de')
         {
             $query = EventQuery::create()

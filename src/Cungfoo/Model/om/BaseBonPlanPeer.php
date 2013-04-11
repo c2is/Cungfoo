@@ -15,6 +15,7 @@ use Cungfoo\Model\BonPlanEtablissementPeer;
 use Cungfoo\Model\BonPlanI18nPeer;
 use Cungfoo\Model\BonPlanPeer;
 use Cungfoo\Model\BonPlanRegionPeer;
+use Cungfoo\Model\BonPlanTypeHebergementPeer;
 use Cungfoo\Model\map\BonPlanTableMap;
 
 /**
@@ -103,8 +104,26 @@ abstract class BaseBonPlanPeer
     const DAY_START_SUNDAY = 'sunday';
 
     /** The enumerated values for the day_range field */
+    const DAY_RANGE_1 = '1';
+    const DAY_RANGE_2 = '2';
+    const DAY_RANGE_3 = '3';
+    const DAY_RANGE_4 = '4';
+    const DAY_RANGE_5 = '5';
+    const DAY_RANGE_6 = '6';
     const DAY_RANGE_7 = '7';
+    const DAY_RANGE_8 = '8';
+    const DAY_RANGE_9 = '9';
+    const DAY_RANGE_10 = '10';
+    const DAY_RANGE_11 = '11';
+    const DAY_RANGE_12 = '12';
+    const DAY_RANGE_13 = '13';
     const DAY_RANGE_14 = '14';
+    const DAY_RANGE_15 = '15';
+    const DAY_RANGE_16 = '16';
+    const DAY_RANGE_17 = '17';
+    const DAY_RANGE_18 = '18';
+    const DAY_RANGE_19 = '19';
+    const DAY_RANGE_20 = '20';
     const DAY_RANGE_21 = '21';
 
     /** The default string format for model objects of the related table **/
@@ -168,8 +187,26 @@ abstract class BaseBonPlanPeer
             BonPlanPeer::DAY_START_SUNDAY,
         ),
         BonPlanPeer::DAY_RANGE => array(
+            BonPlanPeer::DAY_RANGE_1,
+            BonPlanPeer::DAY_RANGE_2,
+            BonPlanPeer::DAY_RANGE_3,
+            BonPlanPeer::DAY_RANGE_4,
+            BonPlanPeer::DAY_RANGE_5,
+            BonPlanPeer::DAY_RANGE_6,
             BonPlanPeer::DAY_RANGE_7,
+            BonPlanPeer::DAY_RANGE_8,
+            BonPlanPeer::DAY_RANGE_9,
+            BonPlanPeer::DAY_RANGE_10,
+            BonPlanPeer::DAY_RANGE_11,
+            BonPlanPeer::DAY_RANGE_12,
+            BonPlanPeer::DAY_RANGE_13,
             BonPlanPeer::DAY_RANGE_14,
+            BonPlanPeer::DAY_RANGE_15,
+            BonPlanPeer::DAY_RANGE_16,
+            BonPlanPeer::DAY_RANGE_17,
+            BonPlanPeer::DAY_RANGE_18,
+            BonPlanPeer::DAY_RANGE_19,
+            BonPlanPeer::DAY_RANGE_20,
             BonPlanPeer::DAY_RANGE_21,
         ),
     );
@@ -507,6 +544,9 @@ abstract class BaseBonPlanPeer
         // Invalidate objects in BonPlanRegionPeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
         BonPlanRegionPeer::clearInstancePool();
+        // Invalidate objects in BonPlanTypeHebergementPeer instance pool,
+        // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
+        BonPlanTypeHebergementPeer::clearInstancePool();
         // Invalidate objects in BonPlanI18nPeer instance pool,
         // since one or more of them may be deleted by ON DELETE CASCADE/SETNULL rule.
         BonPlanI18nPeer::clearInstancePool();

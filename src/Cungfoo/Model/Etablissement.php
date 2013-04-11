@@ -31,12 +31,16 @@ class Etablissement extends BaseEtablissement
     public function getVignette()
     {
         return parent::getVignette();
-
     }
 
     public function getPays()
     {
         return $this->getRegion()->getPays();
+    }
+
+    public function isFrance()
+    {
+        return $this->getPays()->isFrance();
     }
 
     public function getDmsCoordinates()
