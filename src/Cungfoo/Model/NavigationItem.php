@@ -18,4 +18,8 @@ use Cungfoo\Model\om\BaseNavigationItem;
  */
 class NavigationItem extends BaseNavigationItem
 {
+    public function __toString()
+    {
+        return (string) $this->getTitle();
+    }
 }
