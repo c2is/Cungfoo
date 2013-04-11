@@ -28,14 +28,13 @@ class PropelMigration_1365157270
             $stmt->execute();
             $navigation = $stmt->fetch();
 
-            $sql  = 'INSERT INTO navigation_item (navigation_id, created_at) VALUES (:navigation_id, :created_at)';
+            $sql  = 'INSERT INTO navigation_item (navigation_id) VALUES (:navigation_id)';
             $stmt = $pdo->prepare($sql);
             $stmt->execute(array(
               ':navigation_id' => $navigation['id'],
-              ':created_at'    => date(),
             ));
 
-            $sql  = 'SELECT id FROM navigation_item ORDER BY created_at DESC';
+            $sql  = 'SELECT id FROM navigation_item ORDER BY id DESC';
             $stmt = $pdo->prepare($sql);
             $stmt->execute();
             $item = $stmt->fetch();
@@ -48,14 +47,13 @@ class PropelMigration_1365157270
             $stmt = $pdo->prepare($sql);
             $stmt->execute(array(':id' => $item['id']));
 
-            $sql  = 'INSERT INTO navigation_item (navigation_id, created_at) VALUES (:navigation_id, :created_at)';
+            $sql  = 'INSERT INTO navigation_item (navigation_id) VALUES (:navigation_id)';
             $stmt = $pdo->prepare($sql);
             $stmt->execute(array(
               ':navigation_id' => $navigation['id'],
-              ':created_at'    => date(),
             ));
 
-            $sql  = 'SELECT id FROM navigation_item ORDER BY created_at DESC';
+            $sql  = 'SELECT id FROM navigation_item ORDER BY id DESC';
             $stmt = $pdo->prepare($sql);
             $stmt->execute();
             $item = $stmt->fetch();
@@ -70,7 +68,7 @@ class PropelMigration_1365157270
         }
         catch (\Exception $e)
         {
-            $this->capaciteByTypeHebergement = array();
+
         }
     }
 
@@ -97,8 +95,6 @@ class PropelMigration_1365157270
 # This is a fix for InnoDB in MySQL >= 4.1.x
 # It 'suspends judgement' for fkey relationships until are tables are set.
 SET FOREIGN_KEY_CHECKS = 0;
-
-USE `vacancesdirectes`;
 
 /* Create table in target */
 CREATE TABLE `navigation`(
