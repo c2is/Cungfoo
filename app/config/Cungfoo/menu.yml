@@ -111,6 +111,9 @@ menu:
               i18n:
                   title: Traductions
                   route: i18n_admin
+              navigation:
+                  title: menu.navigation_item
+                  route: navigation_item_crud_list
         parameter:
             title: menu.parameters
             items:

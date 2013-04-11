@@ -154,3 +154,11 @@ crud:
             prefix: /portfolio/tags-categories
             model: \Cungfoo\Model\PortfolioTagCategory
             form: \Cungfoo\Form\Type\PortfolioTagCategoryType
+        navigation:
+            prefix: /navigation
+            model: \Cungfoo\Model\Navigation
+            form: \Cungfoo\Form\Type\NavigationType
+        navigation_item:
+            prefix: /navigation/items
+            model: \Cungfoo\Model\NavigationItem
+            form: \Cungfoo\Form\Type\NavigationItemType

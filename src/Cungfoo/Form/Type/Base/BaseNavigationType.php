@@ -10,13 +10,13 @@ use Symfony\Component\Form\FormBuilderInterface,
 use Cungfoo\Form\Type\AppAwareType;
 
 /**
- * Test class for Additional builder enabled on the 'edito' table.
+ * Test class for Additional builder enabled on the 'navigation' table.
  *
  * @author  Morgan Brunot <brunot.morgan@gmail.com>
  *          Denis Roussel <denis.roussel@gmail.com>
  * @package propel.generator.Cungfoo.Form.Type.Base
  */
-class BaseEditoType extends AppAwareType
+class BaseNavigationType extends AppAwareType
 {
     public function getIdType()
     {
@@ -27,61 +27,7 @@ class BaseEditoType extends AppAwareType
     {
         return array(
             'required' => false,
-            'label' => 'edito.id',
-        );
-    }
-
-    public function getSlugType()
-    {
-        return 'text';
-    }
-
-    public function getSlugOptions()
-    {
-        return array(
-            'required' => false,
-            'label' => 'edito.slug',
-        );
-    }
-
-    public function getCreatedAtType()
-    {
-        return 'datetime';
-    }
-
-    public function getCreatedAtOptions()
-    {
-        return array(
-            'required' => false,
-            'label' => 'edito.created_at',
-            'widget' => 'single_text',
-        );
-    }
-
-    public function getUpdatedAtType()
-    {
-        return 'datetime';
-    }
-
-    public function getUpdatedAtOptions()
-    {
-        return array(
-            'required' => false,
-            'label' => 'edito.updated_at',
-            'widget' => 'single_text',
-        );
-    }
-
-    public function getActiveType()
-    {
-        return 'checkbox';
-    }
-
-    public function getActiveOptions()
-    {
-        return array(
-            'required' => false,
-            'label' => 'edito.active',
+            'label' => 'navigation.id',
         );
     }
 
@@ -94,23 +40,23 @@ class BaseEditoType extends AppAwareType
     {
         return array(
             'required' => false,
-            'label' => 'edito_i18n.name',
-        );
-    }
-
-    public function getDescriptionType()
-    {
-        return 'textrich';
-    }
-
-    public function getDescriptionOptions()
-    {
-        return array(
-            'required' => false,
-            'label' => 'edito_i18n.description',
+            'label' => 'navigation.name',
             'constraints' => array(
                         new Assert\NotBlank(),
                     ),
+        );
+    }
+
+    public function getActiveType()
+    {
+        return 'checkbox';
+    }
+
+    public function getActiveOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'navigation.active',
         );
     }
 
@@ -123,7 +69,7 @@ class BaseEditoType extends AppAwareType
     {
         return array(
             'required' => false,
-            'label' => 'edito_i18n.seo_title',
+            'label' => 'navigation_i18n.seo_title',
         );
     }
 
@@ -136,7 +82,7 @@ class BaseEditoType extends AppAwareType
     {
         return array(
             'required' => false,
-            'label' => 'edito_i18n.seo_description',
+            'label' => 'navigation_i18n.seo_description',
         );
     }
 
@@ -149,7 +95,7 @@ class BaseEditoType extends AppAwareType
     {
         return array(
             'required' => false,
-            'label' => 'edito_i18n.seo_h1',
+            'label' => 'navigation_i18n.seo_h1',
         );
     }
 
@@ -162,7 +108,7 @@ class BaseEditoType extends AppAwareType
     {
         return array(
             'required' => false,
-            'label' => 'edito_i18n.seo_keywords',
+            'label' => 'navigation_i18n.seo_keywords',
         );
     }
 
@@ -175,7 +121,7 @@ class BaseEditoType extends AppAwareType
     {
         return array(
             'required' => false,
-            'label' => 'edito_i18n.active_locale',
+            'label' => 'navigation_i18n.active_locale',
         );
     }
 
@@ -185,17 +131,13 @@ class BaseEditoType extends AppAwareType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('id', $this->getIdType(), $this->getIdOptions());
-        $builder->add('slug', $this->getSlugType(), $this->getSlugOptions());
-        $builder->add('created_at', $this->getCreatedAtType(), $this->getCreatedAtOptions());
-        $builder->add('updated_at', $this->getUpdatedAtType(), $this->getUpdatedAtOptions());
-        $builder->add('active', $this->getActiveType(), $this->getActiveOptions());$builder->add('editoI18ns', 'translation_collection', array(
-            'i18n_class' => 'Cungfoo\Model\EditoI18n',
-            'label' => 'editoI18ns',
+        $builder->add('name', $this->getNameType(), $this->getNameOptions());
+        $builder->add('active', $this->getActiveType(), $this->getActiveOptions());$builder->add('navigationI18ns', 'translation_collection', array(
+            'i18n_class' => 'Cungfoo\Model\NavigationI18n',
+            'label' => 'navigationI18ns',
             'required' => false,
             'languages' => array('fr', 'de'),
             'columns' => array(
-                'name' => array_merge(array('type' => $this->getNameType()), $this->getNameOptions()),
-                'description' => array_merge(array('type' => $this->getDescriptionType()), $this->getDescriptionOptions()),
                 'seo_title' => array_merge(array('type' => $this->getSeoTitleType()), $this->getSeoTitleOptions()),
                 'seo_description' => array_merge(array('type' => $this->getSeoDescriptionType()), $this->getSeoDescriptionOptions()),
                 'seo_h1' => array_merge(array('type' => $this->getSeoH1Type()), $this->getSeoH1Options()),
@@ -214,7 +156,7 @@ class BaseEditoType extends AppAwareType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Cungfoo\Model\Edito',
+            'data_class' => 'Cungfoo\Model\Navigation',
         ));
     }
 
@@ -223,7 +165,7 @@ class BaseEditoType extends AppAwareType
      */
     public function getName()
     {
-        return 'Edito';
+        return 'Navigation';
     }
 
-} // BaseEditoType
+} // BaseNavigationType
