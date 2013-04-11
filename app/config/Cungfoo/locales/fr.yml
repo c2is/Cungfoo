@@ -315,6 +315,7 @@ menu.idee_weekend: Idées weekend
 menu.theme: Theme CMS
 menu.bon_plan_categorie: Catégories de bons plans
 menu.bon_plan: Bons plans
+menu.navigation_item: "Navigations"
 
 category_type_hebergement.crud.create: Création d'une catégorie de types hébergements
 category_type_hebergement.crud.list: Liste catégories de types hébergements
