@@ -44,9 +44,9 @@ class NavigationItemI18nTableMap extends TableMap
         // columns
         $this->addForeignPrimaryKey('id', 'Id', 'INTEGER' , 'navigation_item', 'id', true, null, null);
         $this->addPrimaryKey('locale', 'Locale', 'VARCHAR', true, 5, 'fr');
-        $this->addColumn('title', 'Title', 'VARCHAR', true, 255, null);
+        $this->addColumn('title', 'Title', 'VARCHAR', false, 255, null);
         $this->getColumn('title', false)->setPrimaryString(true);
-        $this->addColumn('path', 'Path', 'VARCHAR', true, 255, null);
+        $this->addColumn('path', 'Path', 'VARCHAR', false, 255, null);
         $this->addColumn('seo_title', 'SeoTitle', 'VARCHAR', false, 255, null);
         $this->addColumn('seo_description', 'SeoDescription', 'LONGVARCHAR', false, null, null);
         $this->addColumn('seo_h1', 'SeoH1', 'VARCHAR', false, 255, null);

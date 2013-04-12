@@ -126,9 +126,6 @@ class BaseNavigationItemType extends AppAwareType
         return array(
             'required' => false,
             'label' => 'navigation_item_i18n.title',
-            'constraints' => array(
-                        new Assert\NotBlank(),
-                    ),
         );
     }
 
@@ -142,9 +139,6 @@ class BaseNavigationItemType extends AppAwareType
         return array(
             'required' => false,
             'label' => 'navigation_item_i18n.path',
-            'constraints' => array(
-                        new Assert\NotBlank(),
-                    ),
         );
     }
 
