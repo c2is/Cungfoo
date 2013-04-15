@@ -152,6 +152,12 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
     protected $period_categories;
 
     /**
+     * The value for the sortable_rank field.
+     * @var        int
+     */
+    protected $sortable_rank;
+
+    /**
      * The value for the active field.
      * Note: this column has a database default value of: false
      * @var        boolean
@@ -221,6 +227,14 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
      * @var        boolean
      */
     protected $alreadyInValidation = false;
+
+    // sortable behavior
+
+    /**
+     * Queries to be executed in the save transaction
+     * @var        array
+     */
+    protected $sortableQueries = array();
 
     // i18n behavior
 
@@ -559,6 +573,16 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
     public function getPeriodCategories()
     {
         return $this->period_categories;
+    }
+
+    /**
+     * Get the [sortable_rank] column value.
+     *
+     * @return int
+     */
+    public function getSortableRank()
+    {
+        return $this->sortable_rank;
     }
 
     /**
@@ -906,6 +930,27 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
     } // setPeriodCategories()
 
     /**
+     * Set the value of [sortable_rank] column.
+     *
+     * @param int $v new value
+     * @return BonPlan The current object (for fluent API support)
+     */
+    public function setSortableRank($v)
+    {
+        if ($v !== null) {
+            $v = (int) $v;
+        }
+
+        if ($this->sortable_rank !== $v) {
+            $this->sortable_rank = $v;
+            $this->modifiedColumns[] = BonPlanPeer::SORTABLE_RANK;
+        }
+
+
+        return $this;
+    } // setSortableRank()
+
+    /**
      * Sets the value of the [active] column.
      * Non-boolean arguments are converted using the following rules:
      *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
@@ -992,7 +1037,8 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
             $this->nb_adultes = ($row[$startcol + 11] !== null) ? (int) $row[$startcol + 11] : null;
             $this->nb_enfants = ($row[$startcol + 12] !== null) ? (int) $row[$startcol + 12] : null;
             $this->period_categories = ($row[$startcol + 13] !== null) ? (string) $row[$startcol + 13] : null;
-            $this->active = ($row[$startcol + 14] !== null) ? (boolean) $row[$startcol + 14] : null;
+            $this->sortable_rank = ($row[$startcol + 14] !== null) ? (int) $row[$startcol + 14] : null;
+            $this->active = ($row[$startcol + 15] !== null) ? (boolean) $row[$startcol + 15] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -1001,7 +1047,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 15; // 15 = BonPlanPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 16; // 16 = BonPlanPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating BonPlan object", $e);
@@ -1105,6 +1151,11 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
             $deleteQuery = BonPlanQuery::create()
                 ->filterByPrimaryKey($this->getPrimaryKey());
             $ret = $this->preDelete($con);
+            // sortable behavior
+
+            BonPlanPeer::shiftRank(-1, $this->getSortableRank() + 1, null, $con);
+            BonPlanPeer::clearInstancePool();
+
             if ($ret) {
                 $deleteQuery->delete($con);
                 $this->postDelete($con);
@@ -1147,8 +1198,15 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
         $isInsert = $this->isNew();
         try {
             $ret = $this->preSave($con);
+            // sortable behavior
+            $this->processSortableQueries($con);
             if ($isInsert) {
                 $ret = $ret && $this->preInsert($con);
+                // sortable behavior
+                if (!$this->isColumnModified(BonPlanPeer::RANK_COL)) {
+                    $this->setSortableRank(BonPlanQuery::create()->getMaxRank($con) + 1);
+                }
+
             } else {
                 $ret = $ret && $this->preUpdate($con);
             }
@@ -1434,6 +1492,9 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
         if ($this->isColumnModified(BonPlanPeer::PERIOD_CATEGORIES)) {
             $modifiedColumns[':p' . $index++]  = '`period_categories`';
         }
+        if ($this->isColumnModified(BonPlanPeer::SORTABLE_RANK)) {
+            $modifiedColumns[':p' . $index++]  = '`sortable_rank`';
+        }
         if ($this->isColumnModified(BonPlanPeer::ACTIVE)) {
             $modifiedColumns[':p' . $index++]  = '`active`';
         }
@@ -1489,6 +1550,9 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
                         break;
                     case '`period_categories`':
                         $stmt->bindValue($identifier, $this->period_categories, PDO::PARAM_STR);
+                        break;
+                    case '`sortable_rank`':
+                        $stmt->bindValue($identifier, $this->sortable_rank, PDO::PARAM_INT);
                         break;
                     case '`active`':
                         $stmt->bindValue($identifier, (int) $this->active, PDO::PARAM_INT);
@@ -1710,6 +1774,9 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
                 return $this->getPeriodCategories();
                 break;
             case 14:
+                return $this->getSortableRank();
+                break;
+            case 15:
                 return $this->getActive();
                 break;
             default:
@@ -1755,7 +1822,8 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
             $keys[11] => $this->getNbAdultes(),
             $keys[12] => $this->getNbEnfants(),
             $keys[13] => $this->getPeriodCategories(),
-            $keys[14] => $this->getActive(),
+            $keys[14] => $this->getSortableRank(),
+            $keys[15] => $this->getActive(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->collBonPlanBonPlanCategories) {
@@ -1858,6 +1926,9 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
                 $this->setPeriodCategories($value);
                 break;
             case 14:
+                $this->setSortableRank($value);
+                break;
+            case 15:
                 $this->setActive($value);
                 break;
         } // switch()
@@ -1898,7 +1969,8 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
         if (array_key_exists($keys[11], $arr)) $this->setNbAdultes($arr[$keys[11]]);
         if (array_key_exists($keys[12], $arr)) $this->setNbEnfants($arr[$keys[12]]);
         if (array_key_exists($keys[13], $arr)) $this->setPeriodCategories($arr[$keys[13]]);
-        if (array_key_exists($keys[14], $arr)) $this->setActive($arr[$keys[14]]);
+        if (array_key_exists($keys[14], $arr)) $this->setSortableRank($arr[$keys[14]]);
+        if (array_key_exists($keys[15], $arr)) $this->setActive($arr[$keys[15]]);
     }
 
     /**
@@ -1924,6 +1996,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
         if ($this->isColumnModified(BonPlanPeer::NB_ADULTES)) $criteria->add(BonPlanPeer::NB_ADULTES, $this->nb_adultes);
         if ($this->isColumnModified(BonPlanPeer::NB_ENFANTS)) $criteria->add(BonPlanPeer::NB_ENFANTS, $this->nb_enfants);
         if ($this->isColumnModified(BonPlanPeer::PERIOD_CATEGORIES)) $criteria->add(BonPlanPeer::PERIOD_CATEGORIES, $this->period_categories);
+        if ($this->isColumnModified(BonPlanPeer::SORTABLE_RANK)) $criteria->add(BonPlanPeer::SORTABLE_RANK, $this->sortable_rank);
         if ($this->isColumnModified(BonPlanPeer::ACTIVE)) $criteria->add(BonPlanPeer::ACTIVE, $this->active);
 
         return $criteria;
@@ -2001,6 +2074,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
         $copyObj->setNbAdultes($this->getNbAdultes());
         $copyObj->setNbEnfants($this->getNbEnfants());
         $copyObj->setPeriodCategories($this->getPeriodCategories());
+        $copyObj->setSortableRank($this->getSortableRank());
         $copyObj->setActive($this->getActive());
 
         if ($deepCopy && !$this->startCopy) {
@@ -4024,6 +4098,7 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
         $this->nb_adultes = null;
         $this->nb_enfants = null;
         $this->period_categories = null;
+        $this->sortable_rank = null;
         $this->active = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
@@ -4268,6 +4343,347 @@ abstract class BaseBonPlan extends BaseObject implements Persistent
 
         return $this->getCategories($criteria, $con);
     }
+    // sortable behavior
+
+    /**
+     * Wrap the getter for rank value
+     *
+     * @return    int
+     */
+    public function getRank()
+    {
+        return $this->sortable_rank;
+    }
+
+    /**
+     * Wrap the setter for rank value
+     *
+     * @param     int
+     * @return    BonPlan
+     */
+    public function setRank($v)
+    {
+        return $this->setSortableRank($v);
+    }
+
+    /**
+     * Check if the object is first in the list, i.e. if it has 1 for rank
+     *
+     * @return    boolean
+     */
+    public function isFirst()
+    {
+        return $this->getSortableRank() == 1;
+    }
+
+    /**
+     * Check if the object is last in the list, i.e. if its rank is the highest rank
+     *
+     * @param     PropelPDO  $con      optional connection
+     *
+     * @return    boolean
+     */
+    public function isLast(PropelPDO $con = null)
+    {
+        return $this->getSortableRank() == BonPlanQuery::create()->getMaxRank($con);
+    }
+
+    /**
+     * Get the next item in the list, i.e. the one for which rank is immediately higher
+     *
+     * @param     PropelPDO  $con      optional connection
+     *
+     * @return    BonPlan
+     */
+    public function getNext(PropelPDO $con = null)
+    {
+
+        return BonPlanQuery::create()->findOneByRank($this->getSortableRank() + 1, $con);
+    }
+
+    /**
+     * Get the previous item in the list, i.e. the one for which rank is immediately lower
+     *
+     * @param     PropelPDO  $con      optional connection
+     *
+     * @return    BonPlan
+     */
+    public function getPrevious(PropelPDO $con = null)
+    {
+
+        return BonPlanQuery::create()->findOneByRank($this->getSortableRank() - 1, $con);
+    }
+
+    /**
+     * Insert at specified rank
+     * The modifications are not persisted until the object is saved.
+     *
+     * @param     integer    $rank rank value
+     * @param     PropelPDO  $con      optional connection
+     *
+     * @return    BonPlan the current object
+     *
+     * @throws    PropelException
+     */
+    public function insertAtRank($rank, PropelPDO $con = null)
+    {
+        $maxRank = BonPlanQuery::create()->getMaxRank($con);
+        if ($rank < 1 || $rank > $maxRank + 1) {
+            throw new PropelException('Invalid rank ' . $rank);
+        }
+        // move the object in the list, at the given rank
+        $this->setSortableRank($rank);
+        if ($rank != $maxRank + 1) {
+            // Keep the list modification query for the save() transaction
+            $this->sortableQueries []= array(
+                'callable'  => array(self::PEER, 'shiftRank'),
+                'arguments' => array(1, $rank, null, )
+            );
+        }
+
+        return $this;
+    }
+
+    /**
+     * Insert in the last rank
+     * The modifications are not persisted until the object is saved.
+     *
+     * @param PropelPDO $con optional connection
+     *
+     * @return    BonPlan the current object
+     *
+     * @throws    PropelException
+     */
+    public function insertAtBottom(PropelPDO $con = null)
+    {
+        $this->setSortableRank(BonPlanQuery::create()->getMaxRank($con) + 1);
+
+        return $this;
+    }
+
+    /**
+     * Insert in the first rank
+     * The modifications are not persisted until the object is saved.
+     *
+     * @return    BonPlan the current object
+     */
+    public function insertAtTop()
+    {
+        return $this->insertAtRank(1);
+    }
+
+    /**
+     * Move the object to a new rank, and shifts the rank
+     * Of the objects inbetween the old and new rank accordingly
+     *
+     * @param     integer   $newRank rank value
+     * @param     PropelPDO $con optional connection
+     *
+     * @return    BonPlan the current object
+     *
+     * @throws    PropelException
+     */
+    public function moveToRank($newRank, PropelPDO $con = null)
+    {
+        if ($this->isNew()) {
+            throw new PropelException('New objects cannot be moved. Please use insertAtRank() instead');
+        }
+        if ($con === null) {
+            $con = Propel::getConnection(BonPlanPeer::DATABASE_NAME);
+        }
+        if ($newRank < 1 || $newRank > BonPlanQuery::create()->getMaxRank($con)) {
+            throw new PropelException('Invalid rank ' . $newRank);
+        }
+
+        $oldRank = $this->getSortableRank();
+        if ($oldRank == $newRank) {
+            return $this;
+        }
+
+        $con->beginTransaction();
+        try {
+            // shift the objects between the old and the new rank
+            $delta = ($oldRank < $newRank) ? -1 : 1;
+            BonPlanPeer::shiftRank($delta, min($oldRank, $newRank), max($oldRank, $newRank), $con);
+
+            // move the object to its new rank
+            $this->setSortableRank($newRank);
+            $this->save($con);
+
+            $con->commit();
+
+            return $this;
+        } catch (Exception $e) {
+            $con->rollback();
+            throw $e;
+        }
+    }
+
+    /**
+     * Exchange the rank of the object with the one passed as argument, and saves both objects
+     *
+     * @param     BonPlan $object
+     * @param     PropelPDO $con optional connection
+     *
+     * @return    BonPlan the current object
+     *
+     * @throws Exception if the database cannot execute the two updates
+     */
+    public function swapWith($object, PropelPDO $con = null)
+    {
+        if ($con === null) {
+            $con = Propel::getConnection(BonPlanPeer::DATABASE_NAME);
+        }
+        $con->beginTransaction();
+        try {
+            $oldRank = $this->getSortableRank();
+            $newRank = $object->getSortableRank();
+            $this->setSortableRank($newRank);
+            $this->save($con);
+            $object->setSortableRank($oldRank);
+            $object->save($con);
+            $con->commit();
+
+            return $this;
+        } catch (Exception $e) {
+            $con->rollback();
+            throw $e;
+        }
+    }
+
+    /**
+     * Move the object higher in the list, i.e. exchanges its rank with the one of the previous object
+     *
+     * @param     PropelPDO $con optional connection
+     *
+     * @return    BonPlan the current object
+     */
+    public function moveUp(PropelPDO $con = null)
+    {
+        if ($this->isFirst()) {
+            return $this;
+        }
+        if ($con === null) {
+            $con = Propel::getConnection(BonPlanPeer::DATABASE_NAME);
+        }
+        $con->beginTransaction();
+        try {
+            $prev = $this->getPrevious($con);
+            $this->swapWith($prev, $con);
+            $con->commit();
+
+            return $this;
+        } catch (Exception $e) {
+            $con->rollback();
+            throw $e;
+        }
+    }
+
+    /**
+     * Move the object higher in the list, i.e. exchanges its rank with the one of the next object
+     *
+     * @param     PropelPDO $con optional connection
+     *
+     * @return    BonPlan the current object
+     */
+    public function moveDown(PropelPDO $con = null)
+    {
+        if ($this->isLast($con)) {
+            return $this;
+        }
+        if ($con === null) {
+            $con = Propel::getConnection(BonPlanPeer::DATABASE_NAME);
+        }
+        $con->beginTransaction();
+        try {
+            $next = $this->getNext($con);
+            $this->swapWith($next, $con);
+            $con->commit();
+
+            return $this;
+        } catch (Exception $e) {
+            $con->rollback();
+            throw $e;
+        }
+    }
+
+    /**
+     * Move the object to the top of the list
+     *
+     * @param     PropelPDO $con optional connection
+     *
+     * @return    BonPlan the current object
+     */
+    public function moveToTop(PropelPDO $con = null)
+    {
+        if ($this->isFirst()) {
+            return $this;
+        }
+
+        return $this->moveToRank(1, $con);
+    }
+
+    /**
+     * Move the object to the bottom of the list
+     *
+     * @param     PropelPDO $con optional connection
+     *
+     * @return integer the old object's rank
+     */
+    public function moveToBottom(PropelPDO $con = null)
+    {
+        if ($this->isLast($con)) {
+            return false;
+        }
+        if ($con === null) {
+            $con = Propel::getConnection(BonPlanPeer::DATABASE_NAME);
+        }
+        $con->beginTransaction();
+        try {
+            $bottom = BonPlanQuery::create()->getMaxRank($con);
+            $res = $this->moveToRank($bottom, $con);
+            $con->commit();
+
+            return $res;
+        } catch (Exception $e) {
+            $con->rollback();
+            throw $e;
+        }
+    }
+
+    /**
+     * Removes the current object from the list.
+     * The modifications are not persisted until the object is saved.
+     *
+     * @param     PropelPDO $con optional connection
+     *
+     * @return    BonPlan the current object
+     */
+    public function removeFromList(PropelPDO $con = null)
+    {
+        // Keep the list modification query for the save() transaction
+        $this->sortableQueries []= array(
+            'callable'  => array(self::PEER, 'shiftRank'),
+            'arguments' => array(-1, $this->getSortableRank() + 1, null)
+        );
+        // remove the object from the list
+        $this->setSortableRank(null);
+
+        return $this;
+    }
+
+    /**
+     * Execute queries that were saved to be run inside the save transaction
+     */
+    protected function processSortableQueries($con)
+    {
+        foreach ($this->sortableQueries as $query) {
+            $query['arguments'][]= $con;
+            call_user_func_array($query['callable'], $query['arguments']);
+        }
+        $this->sortableQueries = array();
+    }
+
     // i18n behavior
 
     /**

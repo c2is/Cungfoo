@@ -976,6 +976,7 @@
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/bon-plan-categories" />
             <parameter name="crud_type_richtext" value="description" />
+            <parameter name="crud_type_file" value="visuel" />
         </behavior>
 
         <behavior name="sortable"/>
@@ -1004,6 +1005,7 @@
         <column name="period_categories" type="varchar" />
 
         <behavior name="active" />
+        <behavior name="sortable" />
 
         <behavior name="i18n">
             <parameter name="i18n_columns" value="name, slug, introduction, description, indice, indice_prix" />

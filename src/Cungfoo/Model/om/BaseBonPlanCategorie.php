@@ -2193,6 +2193,90 @@ abstract class BaseBonPlanCategorie extends BaseObject implements Persistent
         return $this->save($con);
     }
 
+    /**
+     * @return string
+     */
+    public function getUploadDir()
+    {
+        return 'uploads/bon_plan_categories';
+    }
+
+    /**
+     * @return string
+     */
+    public function getUploadRootDir()
+    {
+        return __DIR__.'/../../../../web/'.$this->getUploadDir();
+    }
+
+    /**
+     * @return void
+     */
+    public function getVisuel()
+    {
+        $peer = self::PEER;
+
+        $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
+            ->select('id')
+            ->usePortfolioUsageQuery()
+                ->filterByTableRef($peer::TABLE_NAME)
+                ->filterByColumnRef('visuel')
+                ->filterByElementId($this->getId())
+            ->endUse()
+            ->find()
+            ->toArray()
+        ;
+
+        return implode(';', $medias);
+    }
+
+    /**
+     * @return void
+     */
+    public function setVisuel($v)
+    {
+        $peer = self::PEER;
+
+        $values = explode(';', $v);
+
+        \Cungfoo\Model\PortfolioUsageQuery::create()
+            ->filterByTableRef($peer::TABLE_NAME)
+            ->filterByColumnRef('visuel')
+            ->filterByElementId($this->getId())
+            ->filterByMediaId($values, \Criteria::NOT_IN)
+            ->find()
+            ->delete()
+        ;
+
+        if ($v) {
+            foreach ($values as $index => $value) {
+                $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
+                    ->filterByTableRef($peer::TABLE_NAME)
+                    ->filterByColumnRef('visuel')
+                    ->filterByElementId($this->getId())
+                    ->filterByMediaId($value)
+                    ->findOne()
+                ;
+
+                if (!$usage) {
+                    $usage = new \Cungfoo\Model\PortfolioUsage();
+                    $usage
+                        ->setTableRef($peer::TABLE_NAME)
+                        ->setColumnRef('visuel')
+                        ->setElementId($this->getId())
+                        ->setMediaId($value)
+                    ;
+                }
+
+                $usage
+                    ->setSortableRank($index)
+                    ->save()
+                ;
+            }
+
+        }
+    }
+
     // sortable behavior
 
     /**

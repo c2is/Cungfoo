@@ -85,7 +85,7 @@ class BonPlanCategorieTableMap extends TableMap
   'crud_prefix' => '/bon-plan-categories',
   'crud_model' => NULL,
   'crud_form' => NULL,
-  'crud_type_file' => NULL,
+  'crud_type_file' => 'visuel',
   'crud_type_richtext' => 'description',
 ),
             'sortable' =>  array (

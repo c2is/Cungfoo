@@ -14,6 +14,7 @@ use Cungfoo\Model\BonPlanBonPlanCategoriePeer;
 use Cungfoo\Model\BonPlanEtablissementPeer;
 use Cungfoo\Model\BonPlanI18nPeer;
 use Cungfoo\Model\BonPlanPeer;
+use Cungfoo\Model\BonPlanQuery;
 use Cungfoo\Model\BonPlanRegionPeer;
 use Cungfoo\Model\BonPlanTypeHebergementPeer;
 use Cungfoo\Model\map\BonPlanTableMap;
@@ -41,13 +42,13 @@ abstract class BaseBonPlanPeer
     const TM_CLASS = 'BonPlanTableMap';
 
     /** The total number of columns. */
-    const NUM_COLUMNS = 15;
+    const NUM_COLUMNS = 16;
 
     /** The number of lazy-loaded columns. */
     const NUM_LAZY_LOAD_COLUMNS = 0;
 
     /** The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS) */
-    const NUM_HYDRATE_COLUMNS = 15;
+    const NUM_HYDRATE_COLUMNS = 16;
 
     /** the column name for the id field */
     const ID = 'bon_plan.id';
@@ -90,6 +91,9 @@ abstract class BaseBonPlanPeer
 
     /** the column name for the period_categories field */
     const PERIOD_CATEGORIES = 'bon_plan.period_categories';
+
+    /** the column name for the sortable_rank field */
+    const SORTABLE_RANK = 'bon_plan.sortable_rank';
 
     /** the column name for the active field */
     const ACTIVE = 'bon_plan.active';
@@ -145,6 +149,13 @@ abstract class BaseBonPlanPeer
      * @var        string
      */
     const DEFAULT_LOCALE = 'fr';
+    // sortable behavior
+
+    /**
+     * rank column
+     */
+    const RANK_COL = 'bon_plan.sortable_rank';
+
     /**
      * holds an array of fieldnames
      *
@@ -152,12 +163,12 @@ abstract class BaseBonPlanPeer
      * e.g. BonPlanPeer::$fieldNames[BonPlanPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'DateDebut', 'DateFin', 'Prix', 'PrixBarre', 'ActiveCompteur', 'MiseEnAvant', 'PushHome', 'DateStart', 'DayStart', 'DayRange', 'NbAdultes', 'NbEnfants', 'PeriodCategories', 'Active', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'dateDebut', 'dateFin', 'prix', 'prixBarre', 'activeCompteur', 'miseEnAvant', 'pushHome', 'dateStart', 'dayStart', 'dayRange', 'nbAdultes', 'nbEnfants', 'periodCategories', 'active', ),
-        BasePeer::TYPE_COLNAME => array (BonPlanPeer::ID, BonPlanPeer::DATE_DEBUT, BonPlanPeer::DATE_FIN, BonPlanPeer::PRIX, BonPlanPeer::PRIX_BARRE, BonPlanPeer::ACTIVE_COMPTEUR, BonPlanPeer::MISE_EN_AVANT, BonPlanPeer::PUSH_HOME, BonPlanPeer::DATE_START, BonPlanPeer::DAY_START, BonPlanPeer::DAY_RANGE, BonPlanPeer::NB_ADULTES, BonPlanPeer::NB_ENFANTS, BonPlanPeer::PERIOD_CATEGORIES, BonPlanPeer::ACTIVE, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'DATE_DEBUT', 'DATE_FIN', 'PRIX', 'PRIX_BARRE', 'ACTIVE_COMPTEUR', 'MISE_EN_AVANT', 'PUSH_HOME', 'DATE_START', 'DAY_START', 'DAY_RANGE', 'NB_ADULTES', 'NB_ENFANTS', 'PERIOD_CATEGORIES', 'ACTIVE', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'date_debut', 'date_fin', 'prix', 'prix_barre', 'active_compteur', 'mise_en_avant', 'push_home', 'date_start', 'day_start', 'day_range', 'nb_adultes', 'nb_enfants', 'period_categories', 'active', ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, )
+        BasePeer::TYPE_PHPNAME => array ('Id', 'DateDebut', 'DateFin', 'Prix', 'PrixBarre', 'ActiveCompteur', 'MiseEnAvant', 'PushHome', 'DateStart', 'DayStart', 'DayRange', 'NbAdultes', 'NbEnfants', 'PeriodCategories', 'SortableRank', 'Active', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'dateDebut', 'dateFin', 'prix', 'prixBarre', 'activeCompteur', 'miseEnAvant', 'pushHome', 'dateStart', 'dayStart', 'dayRange', 'nbAdultes', 'nbEnfants', 'periodCategories', 'sortableRank', 'active', ),
+        BasePeer::TYPE_COLNAME => array (BonPlanPeer::ID, BonPlanPeer::DATE_DEBUT, BonPlanPeer::DATE_FIN, BonPlanPeer::PRIX, BonPlanPeer::PRIX_BARRE, BonPlanPeer::ACTIVE_COMPTEUR, BonPlanPeer::MISE_EN_AVANT, BonPlanPeer::PUSH_HOME, BonPlanPeer::DATE_START, BonPlanPeer::DAY_START, BonPlanPeer::DAY_RANGE, BonPlanPeer::NB_ADULTES, BonPlanPeer::NB_ENFANTS, BonPlanPeer::PERIOD_CATEGORIES, BonPlanPeer::SORTABLE_RANK, BonPlanPeer::ACTIVE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'DATE_DEBUT', 'DATE_FIN', 'PRIX', 'PRIX_BARRE', 'ACTIVE_COMPTEUR', 'MISE_EN_AVANT', 'PUSH_HOME', 'DATE_START', 'DAY_START', 'DAY_RANGE', 'NB_ADULTES', 'NB_ENFANTS', 'PERIOD_CATEGORIES', 'SORTABLE_RANK', 'ACTIVE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'date_debut', 'date_fin', 'prix', 'prix_barre', 'active_compteur', 'mise_en_avant', 'push_home', 'date_start', 'day_start', 'day_range', 'nb_adultes', 'nb_enfants', 'period_categories', 'sortable_rank', 'active', ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, )
     );
 
     /**
@@ -167,12 +178,12 @@ abstract class BaseBonPlanPeer
      * e.g. BonPlanPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'DateDebut' => 1, 'DateFin' => 2, 'Prix' => 3, 'PrixBarre' => 4, 'ActiveCompteur' => 5, 'MiseEnAvant' => 6, 'PushHome' => 7, 'DateStart' => 8, 'DayStart' => 9, 'DayRange' => 10, 'NbAdultes' => 11, 'NbEnfants' => 12, 'PeriodCategories' => 13, 'Active' => 14, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'dateDebut' => 1, 'dateFin' => 2, 'prix' => 3, 'prixBarre' => 4, 'activeCompteur' => 5, 'miseEnAvant' => 6, 'pushHome' => 7, 'dateStart' => 8, 'dayStart' => 9, 'dayRange' => 10, 'nbAdultes' => 11, 'nbEnfants' => 12, 'periodCategories' => 13, 'active' => 14, ),
-        BasePeer::TYPE_COLNAME => array (BonPlanPeer::ID => 0, BonPlanPeer::DATE_DEBUT => 1, BonPlanPeer::DATE_FIN => 2, BonPlanPeer::PRIX => 3, BonPlanPeer::PRIX_BARRE => 4, BonPlanPeer::ACTIVE_COMPTEUR => 5, BonPlanPeer::MISE_EN_AVANT => 6, BonPlanPeer::PUSH_HOME => 7, BonPlanPeer::DATE_START => 8, BonPlanPeer::DAY_START => 9, BonPlanPeer::DAY_RANGE => 10, BonPlanPeer::NB_ADULTES => 11, BonPlanPeer::NB_ENFANTS => 12, BonPlanPeer::PERIOD_CATEGORIES => 13, BonPlanPeer::ACTIVE => 14, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'DATE_DEBUT' => 1, 'DATE_FIN' => 2, 'PRIX' => 3, 'PRIX_BARRE' => 4, 'ACTIVE_COMPTEUR' => 5, 'MISE_EN_AVANT' => 6, 'PUSH_HOME' => 7, 'DATE_START' => 8, 'DAY_START' => 9, 'DAY_RANGE' => 10, 'NB_ADULTES' => 11, 'NB_ENFANTS' => 12, 'PERIOD_CATEGORIES' => 13, 'ACTIVE' => 14, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'date_debut' => 1, 'date_fin' => 2, 'prix' => 3, 'prix_barre' => 4, 'active_compteur' => 5, 'mise_en_avant' => 6, 'push_home' => 7, 'date_start' => 8, 'day_start' => 9, 'day_range' => 10, 'nb_adultes' => 11, 'nb_enfants' => 12, 'period_categories' => 13, 'active' => 14, ),
-        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, )
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'DateDebut' => 1, 'DateFin' => 2, 'Prix' => 3, 'PrixBarre' => 4, 'ActiveCompteur' => 5, 'MiseEnAvant' => 6, 'PushHome' => 7, 'DateStart' => 8, 'DayStart' => 9, 'DayRange' => 10, 'NbAdultes' => 11, 'NbEnfants' => 12, 'PeriodCategories' => 13, 'SortableRank' => 14, 'Active' => 15, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'dateDebut' => 1, 'dateFin' => 2, 'prix' => 3, 'prixBarre' => 4, 'activeCompteur' => 5, 'miseEnAvant' => 6, 'pushHome' => 7, 'dateStart' => 8, 'dayStart' => 9, 'dayRange' => 10, 'nbAdultes' => 11, 'nbEnfants' => 12, 'periodCategories' => 13, 'sortableRank' => 14, 'active' => 15, ),
+        BasePeer::TYPE_COLNAME => array (BonPlanPeer::ID => 0, BonPlanPeer::DATE_DEBUT => 1, BonPlanPeer::DATE_FIN => 2, BonPlanPeer::PRIX => 3, BonPlanPeer::PRIX_BARRE => 4, BonPlanPeer::ACTIVE_COMPTEUR => 5, BonPlanPeer::MISE_EN_AVANT => 6, BonPlanPeer::PUSH_HOME => 7, BonPlanPeer::DATE_START => 8, BonPlanPeer::DAY_START => 9, BonPlanPeer::DAY_RANGE => 10, BonPlanPeer::NB_ADULTES => 11, BonPlanPeer::NB_ENFANTS => 12, BonPlanPeer::PERIOD_CATEGORIES => 13, BonPlanPeer::SORTABLE_RANK => 14, BonPlanPeer::ACTIVE => 15, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'DATE_DEBUT' => 1, 'DATE_FIN' => 2, 'PRIX' => 3, 'PRIX_BARRE' => 4, 'ACTIVE_COMPTEUR' => 5, 'MISE_EN_AVANT' => 6, 'PUSH_HOME' => 7, 'DATE_START' => 8, 'DAY_START' => 9, 'DAY_RANGE' => 10, 'NB_ADULTES' => 11, 'NB_ENFANTS' => 12, 'PERIOD_CATEGORIES' => 13, 'SORTABLE_RANK' => 14, 'ACTIVE' => 15, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'date_debut' => 1, 'date_fin' => 2, 'prix' => 3, 'prix_barre' => 4, 'active_compteur' => 5, 'mise_en_avant' => 6, 'push_home' => 7, 'date_start' => 8, 'day_start' => 9, 'day_range' => 10, 'nb_adultes' => 11, 'nb_enfants' => 12, 'period_categories' => 13, 'sortable_rank' => 14, 'active' => 15, ),
+        BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, )
     );
 
     /** The enumerated values for this table */
@@ -319,6 +330,7 @@ abstract class BaseBonPlanPeer
             $criteria->addSelectColumn(BonPlanPeer::NB_ADULTES);
             $criteria->addSelectColumn(BonPlanPeer::NB_ENFANTS);
             $criteria->addSelectColumn(BonPlanPeer::PERIOD_CATEGORIES);
+            $criteria->addSelectColumn(BonPlanPeer::SORTABLE_RANK);
             $criteria->addSelectColumn(BonPlanPeer::ACTIVE);
         } else {
             $criteria->addSelectColumn($alias . '.id');
@@ -335,6 +347,7 @@ abstract class BaseBonPlanPeer
             $criteria->addSelectColumn($alias . '.nb_adultes');
             $criteria->addSelectColumn($alias . '.nb_enfants');
             $criteria->addSelectColumn($alias . '.period_categories');
+            $criteria->addSelectColumn($alias . '.sortable_rank');
             $criteria->addSelectColumn($alias . '.active');
         }
     }
@@ -941,6 +954,146 @@ abstract class BaseBonPlanPeer
         }
 
         return $objs;
+    }
+
+    // sortable behavior
+
+    /**
+     * Get the highest rank
+     *
+     * @param     PropelPDO optional connection
+     *
+     * @return    integer highest position
+     */
+    public static function getMaxRank(PropelPDO $con = null)
+    {
+        if ($con === null) {
+            $con = Propel::getConnection(BonPlanPeer::DATABASE_NAME);
+        }
+        // shift the objects with a position lower than the one of object
+        $c = new Criteria();
+        $c->addSelectColumn('MAX(' . BonPlanPeer::RANK_COL . ')');
+        $stmt = BonPlanPeer::doSelectStmt($c, $con);
+
+        return $stmt->fetchColumn();
+    }
+
+    /**
+     * Get an item from the list based on its rank
+     *
+     * @param     integer   $rank rank
+     * @param     PropelPDO $con optional connection
+     *
+     * @return BonPlan
+     */
+    public static function retrieveByRank($rank, PropelPDO $con = null)
+    {
+        if ($con === null) {
+            $con = Propel::getConnection(BonPlanPeer::DATABASE_NAME);
+        }
+
+        $c = new Criteria;
+        $c->add(BonPlanPeer::RANK_COL, $rank);
+
+        return BonPlanPeer::doSelectOne($c, $con);
+    }
+
+    /**
+     * Reorder a set of sortable objects based on a list of id/position
+     * Beware that there is no check made on the positions passed
+     * So incoherent positions will result in an incoherent list
+     *
+     * @param     array     $order id => rank pairs
+     * @param     PropelPDO $con   optional connection
+     *
+     * @return    boolean true if the reordering took place, false if a database problem prevented it
+     */
+    public static function reorder(array $order, PropelPDO $con = null)
+    {
+        if ($con === null) {
+            $con = Propel::getConnection(BonPlanPeer::DATABASE_NAME);
+        }
+
+        $con->beginTransaction();
+        try {
+            $ids = array_keys($order);
+            $objects = BonPlanPeer::retrieveByPKs($ids);
+            foreach ($objects as $object) {
+                $pk = $object->getPrimaryKey();
+                if ($object->getSortableRank() != $order[$pk]) {
+                    $object->setSortableRank($order[$pk]);
+                    $object->save($con);
+                }
+            }
+            $con->commit();
+
+            return true;
+        } catch (PropelException $e) {
+            $con->rollback();
+            throw $e;
+        }
+    }
+
+    /**
+     * Return an array of sortable objects ordered by position
+     *
+     * @param     Criteria  $criteria  optional criteria object
+     * @param     string    $order     sorting order, to be chosen between Criteria::ASC (default) and Criteria::DESC
+     * @param     PropelPDO $con       optional connection
+     *
+     * @return    array list of sortable objects
+     */
+    public static function doSelectOrderByRank(Criteria $criteria = null, $order = Criteria::ASC, PropelPDO $con = null)
+    {
+        if ($con === null) {
+            $con = Propel::getConnection(BonPlanPeer::DATABASE_NAME);
+        }
+
+        if ($criteria === null) {
+            $criteria = new Criteria();
+        } elseif ($criteria instanceof Criteria) {
+            $criteria = clone $criteria;
+        }
+
+        $criteria->clearOrderByColumns();
+
+        if ($order == Criteria::ASC) {
+            $criteria->addAscendingOrderByColumn(BonPlanPeer::RANK_COL);
+        } else {
+            $criteria->addDescendingOrderByColumn(BonPlanPeer::RANK_COL);
+        }
+
+        return BonPlanPeer::doSelect($criteria, $con);
+    }
+
+    /**
+     * Adds $delta to all Rank values that are >= $first and <= $last.
+     * '$delta' can also be negative.
+     *
+     * @param      int $delta Value to be shifted by, can be negative
+     * @param      int $first First node to be shifted
+     * @param      int $last  Last node to be shifted
+     * @param      PropelPDO $con Connection to use.
+     */
+    public static function shiftRank($delta, $first = null, $last = null, PropelPDO $con = null)
+    {
+        if ($con === null) {
+            $con = Propel::getConnection(BonPlanPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+        }
+
+        $whereCriteria = BonPlanQuery::create();
+        if (null !== $first) {
+            $whereCriteria->add(BonPlanPeer::RANK_COL, $first, Criteria::GREATER_EQUAL);
+        }
+        if (null !== $last) {
+            $whereCriteria->addAnd(BonPlanPeer::RANK_COL, $last, Criteria::LESS_EQUAL);
+        }
+
+        $valuesCriteria = new Criteria(BonPlanPeer::DATABASE_NAME);
+        $valuesCriteria->add(BonPlanPeer::RANK_COL, array('raw' => BonPlanPeer::RANK_COL . ' + ?', 'value' => $delta), Criteria::CUSTOM_EQUAL);
+
+        BasePeer::doUpdate($whereCriteria, $valuesCriteria, $con);
+        BonPlanPeer::clearInstancePool();
     }
 
     // crudable behavior
