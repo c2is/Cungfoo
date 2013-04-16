@@ -516,10 +516,6 @@ class PointInteretPeer extends BasePointInteretPeer
 
     static public function getForDestination(Destination $destination, $sort = self::NO_SORT, $count = null)
     {
-        if (!$destination->isFrance()) {
-            return null;
-        }
-
         if(self::getLocale() == 'de')
         {
             $query = PointInteretQuery::create()
@@ -556,10 +552,6 @@ class PointInteretPeer extends BasePointInteretPeer
 
     static public function getCountForDestination(Destination $destination)
     {
-        if (!$destination->isFrance()) {
-            return 0;
-        }
-
         if(self::getLocale() == 'de')
         {
             $query = PointInteretQuery::create()
