@@ -119,8 +119,12 @@ abstract class AbstractClient
                 }
             }
 
+            global $timeResalys;
+
             foreach ($this->getRequests() as $request)
             {
+                $time = microtime(true);
+
                 try {
                     $client = new \SoapClient($this->location, array('cache_wsdl' => WSDL_CACHE_NONE));
                     $result = call_user_func_array(array($client, $request), $this->getEnvelopeFormat());
@@ -134,7 +138,7 @@ abstract class AbstractClient
                     $this->data[$request][$language] = '';
                 }
 
-
+                $timeResalys[] = microtime(true) - $time;
             }
         }
     }
