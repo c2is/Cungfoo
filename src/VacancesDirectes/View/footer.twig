@@ -67,8 +67,9 @@
             <div id="infoOthers" class="left" style="height: 277px;">
                 <h3>{{ "footer.locations_camping"|trans }}</h3>
                 <ul>
-                    <li><a class="level-1" href="{{ path('destination_region_list') }}">{{ metadata('region_ref', 'title')|trans }}</a></li>
-                    <li><a class="level-1" href="{{ path('destination_departement_list') }}">{{ metadata('departement', 'title')|trans }}</a></li>
+                    {% for item in app.navigation.get('footer_home').getNavigationItems() %}
+                        <li><a class="level-1" href="{{ item.path }}">{{ item.title }}</a></li>
+                    {% endfor %}
                 </ul>
             </div>
         </div>

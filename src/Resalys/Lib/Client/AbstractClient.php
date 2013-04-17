@@ -119,26 +119,26 @@ abstract class AbstractClient
                 }
             }
 
+            global $timeResalys;
+
             foreach ($this->getRequests() as $request)
             {
-                try
-                {
-                    $soapContent = file_get_contents($this->location);
-                }
-                catch (Exception $e)
-                {
-                    $soapContent = false;
-                }
+                $time = microtime(true);
 
-                if ($soapContent)
-                {
+                try {
                     $client = new \SoapClient($this->location, array('cache_wsdl' => WSDL_CACHE_NONE));
-                    $this->data[$request][$language] = call_user_func_array(array($client, $request), $this->getEnvelopeFormat());
+                    $result = call_user_func_array(array($client, $request), $this->getEnvelopeFormat());
+                    if (is_soap_fault($result)) {
+                        throw new \SoapFault("Error Processing Request", 1);
+                    }
+
+                    $this->data[$request][$language] = $result;
                 }
-                else
-                {
+                catch (\SoapFault $fault) {
                     $this->data[$request][$language] = '';
                 }
+
+                $timeResalys[] = microtime(true) - $time;
             }
         }
     }
