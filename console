@@ -46,4 +46,7 @@ $console->add(new \VacancesDirectes\Command\UpdateCommand());
 
 $console->add(new \Cungfoo\Command\Patch\PortfolioCommand());
 
+$console->add(new \Cungfoo\Command\Assets\JsCompileCommand());
+$console->add(new \Cungfoo\Command\Assets\ImageCompileCommand());
+
 $console->run();
