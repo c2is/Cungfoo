@@ -8,6 +8,9 @@
  * @package Cungfoo by C2IS
  */
 
+$timeSilex  = microtime(true);
+$timeResalys = array();
+
 ini_set('display_errors', 0);
 
 // loaded the libraries
@@ -32,3 +35,9 @@ require __DIR__ . '/../src/VacancesDirectesCe/context.php';
 require __DIR__ . '/../src/VacancesDirectesCe/routes.php';
 
 $app['http_cache']->run();
+
+$timeSilex = microtime(true) - $timeSilex;
+
+if ($_SERVER['REMOTE_ADDR'] == "82.235.17.159") {
+    file_put_contents(__DIR__.'/../app/logs/trace.log', "\n\nCUNGFOO TRACE | \n".var_export(array('silex' => $timeSilex, 'resalys' => $timeResalys), true), FILE_APPEND);
+}
