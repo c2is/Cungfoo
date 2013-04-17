@@ -17,6 +17,8 @@
     {% endif %}
 
     <script src="{{ asset('vendor/head.extended.js?v='~app.config.get('version')) }}"></script>
+    <script src="{{ asset('vendor/modernizr-2.6.1.min.js?v='~app.config.get('version')) }}"></script>
+    <!--[if lt IE 9]><script src="{{ asset('vendor/selectivizr-min.js?v='~app.config.get('version')) }}"></script><![endif]-->
     <script>var templatePath = '{{ asset('') }}';</script><!-- templatePath : chemin du template en absolue -->
     <script src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
 </head>
@@ -74,15 +76,12 @@
 
     {% include 'footer.twig' %}
 
-    <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
-    <script>window.jQuery || document.write('<script src='+ templatePath + 'vendor/jquery-1.8.3.min.js">\x3C/script>')</script>
+    <script src="{{ asset('vendor/jquery-1.8.3.min.js?v='~app.config.get('version')) }}"></script>
 
     <script>
         head.js(
-            {modernizr: templatePath + "vendor/modernizr-2.6.1.min.js?v={{ app.config.get('version') }}"}, // test support html5 functionality
-            {selectivizr: templatePath+"vendor/selectivizr-min.js?v={{ app.config.get('version') }}"}, // extend css selectors for IE
-            {jqPlugins: templatePath + "js/vacancesdirectes/plugins.js?v={{ app.config.get('version') }}"},
-            {search: templatePath + "js/vacancesdirectes/searchSelectChange.js?v={{ app.config.get('version') }}"}
+            {jqPlugins: templatePath + "js/vacancesdirectes/plugins.min.js?v={{ app.config.get('version') }}"},
+            {search: templatePath + "js/vacancesdirectes/searchSelectChange.min.js?v={{ app.config.get('version') }}"}
             {% block headjs %}{% endblock %}
         );
     </script>
