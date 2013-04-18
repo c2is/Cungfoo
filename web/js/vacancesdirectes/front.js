@@ -2042,6 +2042,13 @@ function initCritResult(){
         displayResults();
     });
 
+    $('#filterTri').find('select').change(function() {
+        //var nbCritChecked = $('#formSearchRefined input:checked').length;
+        //$('#nbCrit').text(nbCritChecked);
+        //critSelection();
+        displayResults();
+    });
+
     if ( $('.formSearchRefined').length ) {
         var nbCritChecked = $('#formSearchRefined input:checked').length;
         $('#nbCrit').text(nbCritChecked);
@@ -2079,6 +2086,8 @@ function launchFilters() {
     items.attr('data-filtered', true);
     items.attr('data-filteredPlus', true);
     items.attr('data-ranged', true);
+    items.attr('data-dateCrit', true);
+    items.attr('data-regCrit', true);
 
     items.each( function(){
         var critPlus = $(this).attr('data-critplus');
