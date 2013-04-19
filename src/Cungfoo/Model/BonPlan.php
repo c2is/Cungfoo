@@ -86,4 +86,9 @@ class BonPlan extends BaseBonPlan
             return 0;
         }
     }
+
+    public function getDateEnd()
+    {
+        return strtotime(date("Y-m-d", strtotime($this->getDateStart('Y-m-d'))) . " +".$this->getDayRange()." day");
+    }
 }
