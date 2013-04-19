@@ -91,7 +91,7 @@ class Utils
 
       if (empty($string))
       {
-        return 'n-a';
+        return '';
       }
 
       return $string;
