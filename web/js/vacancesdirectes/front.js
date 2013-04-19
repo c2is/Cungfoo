@@ -215,8 +215,9 @@ jQuery.extend( jQuery.fn, {
      */
 
      if ( $('#accountBox').length ) {
+
          $('#accountBox').css({
-             opacity: 1
+             visibility:"visible"
          }).hide();
          $('#account').click(function(e){
             $(this).next().toggle();
