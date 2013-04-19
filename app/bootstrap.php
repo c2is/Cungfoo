@@ -88,8 +88,8 @@ $app->register(new Knp\Provider\ConsoleServiceProvider(), array(
 $app->register(new Silex\Provider\HttpCacheServiceProvider(), array(
     'http_cache.cache_dir' => $app['config']->get('root_dir').'/app/cache',
     'http_cache.options'    => array(
-        'allow_reload'      => true,
-        'allow_revalidate'  => true
+        'allow_reload'      => false,
+        'allow_revalidate'  => false
     )
 ));
 
