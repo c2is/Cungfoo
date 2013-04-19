@@ -90,7 +90,7 @@ jQuery.extend( jQuery.fn, {
             tView = oTabControls.find('a.active').attr('href');
 
         oTabs.css({position:'absolute',left:'-999em', top:'-999em'});
-        if (oHash != '') {
+        if (oHash != '' && oHash != '#frameResalys') {
             setTimeout( function(){
                 if ($(oHash).length > 0)
                     $('.tabControls').find('[href='+oHash+']').trigger('click');
