@@ -74,6 +74,10 @@ class WrapperController implements ControllerProviderInterface
     {
         $asset = $this->app['twig']->getExtension('asset')->asset($url);
 
+        if ($this->app['config']->settings['assets_base_url']) {
+            return str_replace('http://', sprintf("%s://", $this->request->getScheme()), $asset);
+        }
+
         return sprintf('%s://%s%s',
             $this->request->getScheme(),
             $this->request->getHttpHost(),
@@ -83,11 +87,9 @@ class WrapperController implements ControllerProviderInterface
 
     protected function getStylesheetTag($url, $condition = null)
     {
-        $asset = $this->app['twig']->getExtension('asset')->asset($url);
+        $asset = $this->getAsset($url);
 
-        $output = sprintf('<link rel="stylesheet" href="%s://%s%s?v=%s">',
-            $this->request->getScheme(),
-            $this->request->getHttpHost(),
+        $output = sprintf('<link rel="stylesheet" href="%s?v=%s">',
             $asset,
             $this->app['config']->get('version')
         );
@@ -102,11 +104,9 @@ class WrapperController implements ControllerProviderInterface
 
     protected function getStylesheetPrintTag($url)
     {
-        $asset = $this->app['twig']->getExtension('asset')->asset($url);
+        $asset = $this->getAsset($url);
 
-        return sprintf('<link rel="stylesheet" href="%s://%s%s?v=%s" media="print">',
-            $this->request->getScheme(),
-            $this->request->getHttpHost(),
+        return sprintf('<link rel="stylesheet" href="%s?v=%s" media="print">',
             $asset,
             $this->app['config']->get('version')
         );
@@ -114,11 +114,9 @@ class WrapperController implements ControllerProviderInterface
 
     protected function getStylesheetDatepickerTag($url)
     {
-        $asset = $this->app['twig']->getExtension('asset')->asset($url);
+        $asset = $this->getAsset($url);
 
-        return sprintf('<link rel="stylesheet" href="%s://%s%s?v=%s" media="screen">',
-            $this->request->getScheme(),
-            $this->request->getHttpHost(),
+        return sprintf('<link rel="stylesheet" href="%s?v=%s" media="screen">',
             $asset,
             $this->app['config']->get('version')
         );
@@ -126,11 +124,9 @@ class WrapperController implements ControllerProviderInterface
 
     protected function getJavscriptTag($url)
     {
-        $asset = $this->app['twig']->getExtension('asset')->asset($url);
+        $asset = $this->getAsset($url);
 
-        return sprintf('<script type="text/javascript" src="%s://%s%s?v="></script>',
-            $this->request->getScheme(),
-            $this->request->getHttpHost(),
+        return sprintf('<script type="text/javascript" src="%s?v="></script>',
             $asset,
             $this->app['config']->get('version')
         );

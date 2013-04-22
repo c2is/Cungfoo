@@ -19,7 +19,9 @@ $app['config']->addParams(array(
     'languages' => Symfony\Component\Yaml\Yaml::parse(sprintf('%s/languages.yml', $app['config']->get('config_dir')))['languages'],
     'version'   => trim(file_get_contents(sprintf('%s/version', $app['config']->get('config_dir')))),
     'security'  => new Cungfoo\Lib\Crud\Security($app),
+    'settings'  => Symfony\Component\Yaml\Yaml::parse(sprintf('%s/settings.yml', $app['config']->get('config_dir'))),
 ));
+
 if (file_exists(sprintf('%s/memcache.yml', $app['config']->get('config_dir')))) {
     $app['config']->addParam('memcache', Symfony\Component\Yaml\Yaml::parse(sprintf('%s/memcache.yml', $app['config']->get('config_dir')))['memcache']);
 }
