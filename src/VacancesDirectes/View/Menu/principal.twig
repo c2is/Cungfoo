@@ -1,7 +1,7 @@
 <nav id="nav"><ul class="topnav fixed-width clear">
     <li class="tab{% if currentRoute == "homepage" %} current{% endif %}">
         <a id="home" href="{{ path( 'homepage' ) }}"{% if currentRoute == "destination_camping" %} onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_MenuPrincipal', 'Lien_-_Home', 'Clic_-_Picto-Accueil']);"{% endif %}>
-            <img  src="{{ asset('images/vacancesdirectes/common/pict/home.png') }}" alt="{{ menu.title|trans }}">
+            <img width="27" height="27" src="{{ asset('images/vacancesdirectes/common/pict/home.png') }}" alt="{{ menu.title|trans }}">
         </a>
     </li>
     {% for key,item in menu.items %}

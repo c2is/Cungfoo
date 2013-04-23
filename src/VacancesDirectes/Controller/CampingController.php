@@ -24,6 +24,26 @@ class CampingController implements ControllerProviderInterface
     {
         $controllers = $app['controllers_factory'];
 
+        $controllers->get('/list/item/{camping}', function (Request $request, $camping) use ($app)
+        {
+            $maxAge = 3600;
+
+            $locale = $app['context']->get('language');
+
+            $etab = \Cungfoo\Model\EtablissementQuery::create()
+                ->joinWithI18n($locale)
+                ->filterById($camping)
+                ->findOne()
+            ;
+
+            $view = $app['twig']->render('Camping/list_item.twig', array(
+                'list' => array('type' => 0),
+                'etab' => array('model' => $etab),
+            ));
+
+            return new Response($view, 200, array('Cache-Control' => sprintf('s-maxage=%s, public', $maxAge)));
+        })->bind('camping_list_item');
+
         $controllers->match('/infobox/{idResalys}', function ($idResalys, $_route) use ($app)
         {
             $locale = $app['context']->get('language');

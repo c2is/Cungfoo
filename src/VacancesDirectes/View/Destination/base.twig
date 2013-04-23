@@ -43,7 +43,7 @@
                     {% for poi in sitesAVisiter %}
                     {# Le nombre de POIs est limité en PHP en amont, tous les POIs presents ici sont a afficher #}
                     <div class="miniEncart clear linkParent">
-                        <a href="{{ path('poi', {slug: poi.slug}) }}" title="{{ poi.name | trans }}" class="linkBlock"><img src="{{ poi.image }}"  class="left boxborder" alt=""></a>
+                        <a href="{{ path('poi', {slug: poi.slug}) }}" title="{{ poi.name | trans }}" class="linkBlock"><img width="150" height="150" src="{{ poi.image }}" class="left boxborder" alt=""></a>
                         <span class="h5-like">{{ poi.name }}</span>
                         <p> {{ poi.presentation | truncate(300, true, '...') }}</p>
                     </div>

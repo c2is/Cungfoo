@@ -197,7 +197,7 @@
             <div>
                 <dl>
                     <dt>{{ "fiche.a_proximite" | trans }} {{ "fiche.nous_avons_liste" | trans }}</dt>
-                    <dd class="img"><img src="{{ asset(etab.ville.region.imagePath | media('file')) }}" width="75"></dd>
+                    <dd class="img"><img width="80" height="80" src="{{ asset(etab.ville.region.imagePath | media('file')) }}" width="75"></dd>
                     <dd class="list">
                         <ul>
                             {% if etab.countPoi != 0 %}<li>{{ etab.countPoi }} {{ "fiche.sites_a_visiter" | trans }}</li>{% endif %}
@@ -209,7 +209,7 @@
             {% if etab.eventPrioritaire | length %}
             <dl>
                 <dt>{{ "fiche.evenement_ne_pas_manquer" | trans }}</dt>
-                <dd class="img"><img src="{{ etab.eventPrioritaire.image }}" /></dd>
+                <dd class="img"><img width="80" height="80" src="{{ etab.eventPrioritaire.image }}" /></dd>
                 <dd class="list event">
                     <strong>{{ etab.eventPrioritaire.name }}<br />
                     {{ etab.eventPrioritaire.strDate }}</strong> {{ etab.eventPrioritaire.address }}<br />

@@ -1,0 +1,112 @@
+
+    <form id="camping-{{ etab.model.slug }}" method="POST" data-id="{{ path('infobox_camping', {idResalys: etab.model.code}) }}" class="itemResult {% if list.type == 0 %}itemCatalogue{% endif %} clear
+    reg-{{ etab.model.region.slug }}" data-crit="{{ etab.model.categorie.code }}" data-critplus="{{ etab.model.situationGeographique }}{% if etab.model.situationGeographique != "" %} {% endif %}{{ etab.model.baignade }}{% if etab.model.baignade != "" %} {% endif %}{{ etab.model.activite }}{% if etab.model.activite != "" %} {% endif %}{{ etab.model.service }}{% if etab.model.service != "" %} {% endif %}{{ etab.model.thematique }}">
+        <!-- item.title -->
+        <div class="itemResultTitle">
+            <input type="checkbox" name="compar" value="idCamp1">
+            <a href="{{ path('destination_camping', { pays: etab.model.pays.slug, region: etab.model.region.slug, ville: etab.model.ville.slug, camping: etab.model.slug }) }}">{{ etab.model.name }} {{ etab.model.categorie.stars }}</a>
+            {% if list.type == 1 %}
+            <span class="dates">{{ "listing.du" | trans }} {{ etab.start_date }} {{ "listing.au" | trans }} {{ etab.end_date }}</span>
+            {% endif %}
+        </div>
+        <!-- item.left -->
+        <div class="itemResultLeft">
+            <img src="{{ asset(etab.model.vignette | media('file')) }}" alt="" class="boxborder" width="145" height="108">
+        </div>
+        <!-- item.center -->
+        <div class="itemResultCenter">
+            <p>{{ etab.model.description | trans | truncate(100,true,'...') | raw }}</p>
+
+            <a class="bt sombre itemGetCampingFiche" href="{{ path('destination_camping', { pays: etab.model.pays.slug, region: etab.model.region.slug, ville: etab.model.ville.slug, camping: etab.model.slug }) }}">
+                {{ "general.decouvrir_le_camping" | trans }}
+            </a>
+        </div>
+        <!-- item.right -->
+        <div class="itemResultRight">
+            <img width="75" height="77" alt="" src="{{ asset(etab.model.ville.region.imagePath | media('file')) }}">
+            <span class="titDest">
+                <a href="{{ path('destination_pays', {'pays': etab.model.pays.slug}) }}" title="{{ etab.model.pays }}">{{ etab.model.pays }}</a><br>
+                <a href="{{ path('destination_region', {'pays': etab.model.pays.slug, 'region': etab.model.region.slug}) }}" title="{{ etab.model.region }}">{{ etab.model.region }}</a><br>
+                <a href="{{ path('destination_ville', {'pays': etab.model.pays.slug, 'region': etab.model.region.slug, 'ville': etab.model.ville.slug}) }}" class="ville" title="{{ etab.model.ville }}">{{ etab.model.ville }}</a>
+            </span>
+            <span class="bt trans">{{ "general.en_savoir_plus" | trans }}<br>{{ "general.sur_la_destination" | trans }}</span>
+
+            <div class="itemResultPopDest" style="display:none;"><div>
+                <h3>{{ etab.model.ville }}</h3>
+                <img height="93" width="211" alt="{{ etab.model.region }}" src="{{ asset(etab.model.region.ImageEncartPath | media('file')) }}" class="iDestImg1 boxborder">
+                <img height="65" width="146" alt="{{ etab.model.region }}" src="{{ asset(etab.model.region.ImageEncartPetitePath | media('file')) }}" class="iDestImg2 boxborder">
+
+                <div class="infoPop">
+                {% if etab.model.eventPrioritaire %}
+                    <img height="66" width="67" class="left boxborder" alt="{{ etab.model.eventPrioritaire.name }}" src="{{ etab.model.eventPrioritaire.image }}">
+                    {{ etab.model.eventPrioritaire.name }} - {{ etab.model.eventPrioritaire.address }} - {{ etab.model.eventPrioritaire.zipcode }} {{ etab.model.eventPrioritaire.city }}
+                    {{ etab.model.eventPrioritaire.strDate }}
+                {% endif %}
+                </div>
+
+                <div class="infoPop">
+                {% if etab.model.poiPrioritaire %}
+                    <img height="66" width="67" class="left boxborder" alt="{{ etab.model.poiPrioritaire.name }}" src="{{ etab.model.poiPrioritaire.image }}">
+                    {{ etab.model.poiPrioritaire.name }}
+                {% endif %}
+                </div>
+
+                <a class="bt big grisC" href="{{ path('destination_ville', {pays: etab.model.pays.slug, region: etab.model.region.slug, ville: etab.model.ville.slug })}}">{{ "general.decouvrir" | trans }} {{ etab.model.ville }}</a>
+            </div></div>
+        </div>
+
+        <!-- item.bottom -->
+        <div class="itemResultBottom clear">
+            {% if list.type == 1 %}
+                {% set loopParent = loop %}
+                {% for proposal in etab.extra %}
+                    {% set discount = proposal.adult_price != proposal.adult_price_without_discounts %}
+                    <div class="linePrice {% if discount %}promotion{% endif %} {% if loop.first %}checked{% endif %}">
+                        <label for="{{ "camp" ~ etab.model.code }}-{{ loopParent.index ~ loop.index }}">
+                            <input type="radio" id="{{ "camp" ~ etab.model.code }}-{{ loopParent.index ~ loop.index }}" name="{{ "camp" ~ etab.model.code }}-{{ loopParent.index }}" {% if loop.first %}checked="checked"{% endif %} value="{{ proposal|serialize }}" />
+                            {% for roomType in proposal.room_types.room_type %}
+                                {% if roomType.room_type_count > 2 %}{{ roomType.room_type_count }} * {% endif %}{{ roomType.room_type_label }}{% if not loop.last %}<br/> + {% endif %}
+                            {% else %}
+                                {% if proposal.room_types.room_type.room_type_count > 1 %}{{ proposal.room_types.room_type.room_type_count }} * {% endif %}{{ proposal.room_types.room_type.room_type_label }}
+                            {% endfor %}
+                            <span class="price">{{ proposal.adult_price|number_format }} €</span>
+                        </label>
+
+                        {% if discount %}
+                        <span class="stain fushia cover">
+                            <span class="promo">-{{ ((proposal.adult_price_without_discounts|number_format - proposal.adult_price|number_format) * 100 / proposal.adult_price_without_discounts)|number_format }}%</span>
+                            <span class="price">{{ proposal.adult_price|number_format }}€</span>
+                            <span class="aulieude">{{ "general.au_lieu_de" | trans }} {{ proposal.adult_price_without_discounts|number_format }} €</span>
+                        </span>
+                        {% else %}
+                        <span class="stain fushia cover">
+                            <span class="price">{{ proposal.adult_price|number_format }} €</span>
+                        </span>
+                        {% endif %}
+                        <a class="bt big" href="{{ path('couloir_detail_sejour', {proposalKey: proposal.proposal_key}) }}">{{ "general.reserver" | trans }}</a>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="linePrice catalogue checked">
+                    {% if etab.model.typeHebergements %}
+                    <dl class="roomTypeList">
+                        <dt class="roomTypeListTitle">{{ "listing.nos_locations_disponibles" | trans }}&nbsp;:</dt>
+                        <dd>
+                            <ul>
+                                {% for typeHebergement in etab.model.typeHebergementsActive if loop.index < 6 %}
+                                    <li>{% if loop.index >= 5 %}...{% else %}{{ typeHebergement.categoryTypeHebergement.name }} - {{ typeHebergement.name }}{% endif %}</li>
+                                {% endfor %}
+                            </ul>
+                        </dd>
+                    </dl>
+                    {% endif %}
+                    <span class="stain fushia cover"{% if etab.model.minimumPrice == 0 %} style="display: none"{% endif %}>
+                        <span class="apartirde">{{ "general.a_partir_de" | trans }} </span>
+                        <span class="price">{{ etab.model.minimumPrice|number_format }} €</span>
+                        <span>{{ "general.la_semaine" | trans }}</span>
+                    </span>
+                    <a class="bt big" href="{{ path('destination_camping', {pays: etab.model.pays.slug, region: etab.model.region.slug, ville: etab.model.ville.slug, camping: etab.model.slug}) }}#frameResalys">{{ "general.reserver" | trans }}</a>
+                </div>
+            {% endif %}
+        </div>
+    </form><!-- // .itemResult -->
