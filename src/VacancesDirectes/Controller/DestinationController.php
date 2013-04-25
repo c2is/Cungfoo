@@ -415,10 +415,33 @@ class DestinationController implements ControllerProviderInterface
         }
         $cookie = new Cookie('tracking', serialize($trackingCamping), time() + 3600 * 24 * 7);
 
+        // récupère les informations du form de recherche stocké en session
+        $dateData = $app['session']->get('search_engine_data');
+        if (!$dateData) {
+            $dateData = new DateData();
+        }
+
+        $dateData->destination = $camping->getRegion()->getCode();
+        $dateData->camping = $camping->getCode();
+        $dateData->isCamping = true;
+
+        // modification des informations du form de recherche
+        $app['session']->set('search_engine_data', $dateData);
+
+        // création du formulaire de recherche
+        $searchEngine = new SearchEngine($app, $request);
+        $searchEngine->process($dateData);
+
+        // si le formulaire de recherche vient d'être soumis on redirige
+        if ($searchEngine->getRedirect()) {
+            return $app->redirect($searchEngine->getRedirect());
+        }
+
         $view = $app['twig']->render('Camping/camping.twig', array(
             'etab'                    => $camping,
             'webuser'                 => $webuser,
             'hasBaignade'             => count($camping->getEtablissementBaignades()) > 0,
+            'searchForm'              => $searchEngine->getView(),
             'referer'                 => $app['url_generator']->generate($request->get('_route'), array(
                 'pays'      => $camping->getPays()->getSlug(),
                 'region'    => $camping->getRegion()->getSlug(),

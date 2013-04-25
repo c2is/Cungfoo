@@ -44,6 +44,7 @@ $app['twig'] = $app->share($app->extend('twig', function($twig, $app) {
     $twig->addExtension(new \Cungfoo\Lib\Twig\Extension\MediasExtension($app));
     $twig->addExtension(new \VacancesDirectes\Lib\Twig\Extension\ListPaysExtension($app));
     $twig->addExtension(new \Cungfoo\Lib\Twig\Extension\MetadataExtension($app));
+    $twig->addExtension(new \Cungfoo\Lib\Twig\Extension\TruncateHtmlExtension($app));
 
     return $twig;
 }));
