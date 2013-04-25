@@ -41,36 +41,12 @@ class HomepageController implements ControllerProviderInterface
 
             $locale = $app['context']->get('language');
 
-            $pays = \Cungfoo\Model\PaysQuery::create()
-                ->findActive()
-            ;
-
-            $vosVacances = VosVacancesQuery::create()
-                ->useI18nQuery($locale)
-                    ->filterByActiveLocale(true)
-                ->endUse()
-                ->findOne()
-            ;
-
-            $thematiques = ThematiqueQuery::create()
-                ->joinWithI18n($locale)
-                ->findActive()
-            ;
-
-            $etablissements = EtablissementQuery::create()
-                ->findActive()
-            ;
-
-            $pleinActivites = new PleinActivite($app);
+            //$pleinActivites = new PleinActivite($app);
 
             return $view = $app->renderView('homepage.twig', array(
                 'searchForm'        => $searchEngine->getView(),
                 'locale'            => $locale,
-                'pays'              => $pays,
-                'vosVacances'       => $vosVacances,
-                'thematiques'       => $thematiques,
-                'etablissements'    => $etablissements,
-                'pleinActivites'    => $pleinActivites->process(),
+                /*'pleinActivites'    => $pleinActivites->process(),*/
                 'urlCanonical'      => $app['url_generator']->generate('homepage', array(), true),
             ));
         })

@@ -27,47 +27,8 @@
 
 {% block columnClearboth %}
 <div class="column clearboth clear">
-    {% if pays | length %}
-    <div id="destinationsBloc" class="radiusBox greyC">
-        <h2><span>{{ "home.vacances_directes_cest" | trans }}</span> {{ "home.4_pays" | trans }}<span> & </span>{{ "home.26_regions" | trans }}<span> {{ "home.touristiques" | trans }}</span></h2>
-        {% for p in pays %}
-        {% if p.code == 'FRA' %}
-        <div class="left">
-            <div id="national">
-                <a class="country" href="{{ path('destination_pays', {'pays': p.slug}) }}">{{ "home.destination_france" | trans }}</a>
-                <ul>
-                {% for region in p.regionMeaHome %}
-                    {% if loop.index <= 5 %}
-                    <li>- <a class="region" href="{{ path('destination_region', {'pays': region.pays.slug, 'region': region.slug}) }}">{{region.name}}</a></li>
-                    {% endif %}
-                {% endfor %}
-                </ul>
-                {# TODO <a class="bt link" href="#">{{ "home.plus_de_regions" | trans }}</a> #}
-            </div>
-        </div>
-        {% endif %}
-        {% endfor %}
-        <div class="right">
-            <div id="international">
-                {% for p in pays %}
-                    {% if p.code != 'FRA' %}
-                        <a class="country" href="{{ path('destination_pays', {'pays': p.slug}) }}">{{ "home.destination" | trans }} {{p.name}}</a>
-                    {% endif %}
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-    {% endif %}
-    <div id="forwardBloc" class="radiusBox greyF" style="background: url({{ asset(vosVacances.imagePath | media('file')) }})">
-        <h4 id="forwardBlocTitle">{{ vosVacances.titre }}</h4>
-        <div id="forwardBlocSubtitle">
-            {{ vosVacances.prenom }}
-            {% if vosVacances.age != "" %}<span>{{ vosVacances.age }} {{ "ans" | trans }}</span>{% endif %}
-        </div>
-        {% if vosVacances.description != "" %}
-        <div id="forwardBlocHeadline"><span>{{ vosVacances.description }}</span></div>
-        {% endif %}
-    </div>
+    {{ esi(path('widget', {'name': 'destination'})) }}
+    {{ esi(path('widget', {'name': 'forward'})) }}
 </div>
 
 {# TODO<div class="column clearboth clear">
@@ -89,89 +50,7 @@
 </div> #}
 
 <div class="column clearboth">
-    <div id="mapBloc" class="radiusBox greyC clear">
-        <div id="homeMap" class="gmap left" style="width:604px;height:392px;">
-            <script>
-                /*function homeInit() {
-                    var homeMap;
-                    var homeMkrs = [
-                        {# ['title', lat, lont, zindex, 'idAjaxCamping', couleurMarker, filterNew, filter....] #}
-                        ['Chalon sur Saone', 45.764544, 4.846512, 5, 'blocs/smallInfoBox.php?ID=12', markerFushia, ['NV12', 'PDLE']]
-                        ,['Lyon', 46.764544, 4.846512, 5, 'blocs/smallInfoBox.php?ID=12', markerBleu, ['NV12', 'PAQU']]
-                        {#{% for etab in etablissements %}
-                            ['{{ etab.name }}', {{ etab.geoCoordinateX }}, {{ etab.geoCoordinateY }}, {{ loop.index }}, '{{ path('infobox_camping', {idResalys: etab.code}) }}', markerFushia, ['{{etab.thematiques.toArray("Code")|keys|join("','")|raw}}']],
-                        {% endfor %}#}
-                    ];
-                    var centerhomeMkr = new google.maps.LatLng(46.31279,4.828434),
-                            mapOptions = {
-                                zoom: 5,
-                                mapTypeId: google.maps.MapTypeId.ROADMAP,
-                                center: centerhomeMkr
-                            };
-                    homeMap = new google.maps.Map(document.getElementById('homeMap'), mapOptions);
-                    setMarkers(homeMap, homeMkrs);
-
-                    $('#mapFilters').find('a')
-                        .click( function(){
-                            var theme = this.id;
-                            for (var i = 0; i < aMarkers.length; i++) {
-                                var marker = aMarkers[i];
-                                marker.setVisible( $.inArray(theme, marker.filters) != -1 ? true : false );
-                            }
-                            $(this).addClass('active').parents('li').siblings('li').children('a').removeClass('active');
-                            ib.close();
-                            return false;
-                        })
-                        .eq(0).trigger('click');
-                }*/
-                function homeInit() {
-                    var homeMap;
-                    var markerController = new google.maps.MVCObject();
-                    var homeMkrs = [
-                        {% for etab in etablissements %}
-                        {% if etab.geoCoordinateX != '' and etab.geoCoordinateY != '' %}
-                            ['{{ etab.name }}', {{ etab.geoCoordinateX }}, {{ etab.geoCoordinateY }}, {{ loop.index }}, '{{ path('infobox_camping', {idResalys: etab.code}) }}', markerFushia, ['{{etab.thematiques.toArray("Code")|keys|join("','")|raw}}']] {% if not loop.last %} ,{% endif %}
-                        {% endif %}
-                        {% endfor %}
-                    ];
-                    var centerhomeMkr = new google.maps.LatLng(46.31279,4.828434),
-                        mapOptions = {
-                            zoom: 5,
-                            mapTypeId: google.maps.MapTypeId.ROADMAP,
-                            center: centerhomeMkr
-                        };
-                    homeMap = new google.maps.Map(document.getElementById('homeMap'), mapOptions);
-//                    consoleLog(homeMkrs);
-                    setMarkers(homeMap, homeMkrs);
-
-
-                    $('#mapFilters').find('a')
-                        .click( function(){
-                            var theme = this.id;
-                            for (var i = 0; i < aMarkers.length; i++) {
-                                var marker = aMarkers[i];
-                                marker.setVisible( $.inArray(theme, marker.filters) != -1 ? true : false );
-                            }
-                            $(this).addClass('active').parents('li').siblings('li').children('a').removeClass('active');
-                            ib.close();
-                            return false;
-                        });
-                }
-            </script>
-        </div>
-
-        <div id="mapContent" class="left">
-            <h2>{{ "general.campings_vacances_directes" | trans }}</h2>
-            <h3>{{ "general.filter_par" | trans }}</h3>
-            <ul id="mapFilters">
-                {% for thematique in thematiques %}
-
-                <li><a id="{{ thematique.code }}" href="#" style="background-image: url({{ asset(thematique.imagePath | media('file')) }})"><span>{{ thematique.name }}</span></a></li>
-
-                {% endfor %}
-            </ul>
-        </div>
-    </div>
+    {{ esi(path('widget', {'name': 'map_interactive'})) }}
 </div>
 {% endblock %}
 

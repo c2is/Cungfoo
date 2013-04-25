@@ -1,0 +1,49 @@
+<div id="mapBloc" class="radiusBox greyC clear">
+    <div id="homeMap" class="gmap left" style="width:604px;height:392px;">
+        <script>
+            function homeInit() {
+                var homeMap;
+                var markerController = new google.maps.MVCObject();
+                var homeMkrs = [
+                    {% for etab in etablissements %}
+                    {% if etab.geoCoordinateX != '' and etab.geoCoordinateY != '' %}
+                        ['{{ etab.name }}', {{ etab.geoCoordinateX }}, {{ etab.geoCoordinateY }}, {{ loop.index }}, '{{ path('infobox_camping', {idResalys: etab.code}) }}', markerFushia, ['{{etab.thematiques.toArray("Code")|keys|join("','")|raw}}']] {% if not loop.last %} ,{% endif %}
+                    {% endif %}
+                    {% endfor %}
+                ];
+                var centerhomeMkr = new google.maps.LatLng(46.31279,4.828434),
+                    mapOptions = {
+                        zoom: 5,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP,
+                        center: centerhomeMkr
+                    };
+                homeMap = new google.maps.Map(document.getElementById('homeMap'), mapOptions);
+                setMarkers(homeMap, homeMkrs);
+
+                $('#mapFilters').find('a')
+                    .click( function(){
+                        var theme = this.id;
+                        for (var i = 0; i < aMarkers.length; i++) {
+                            var marker = aMarkers[i];
+                            marker.setVisible( $.inArray(theme, marker.filters) != -1 ? true : false );
+                        }
+                        $(this).addClass('active').parents('li').siblings('li').children('a').removeClass('active');
+                        ib.close();
+                        return false;
+                    });
+            }
+        </script>
+    </div>
+
+    <div id="mapContent" class="left">
+        <h2>{{ "general.campings_vacances_directes" | trans }}</h2>
+        <h3>{{ "general.filter_par" | trans }}</h3>
+        <ul id="mapFilters">
+            {% for thematique in thematiques %}
+
+            <li><a id="{{ thematique.code }}" href="#" style="background-image: url({{ asset(thematique.imagePath | media('file')) }})"><span>{{ thematique.name }}</span></a></li>
+
+            {% endfor %}
+        </ul>
+    </div>
+</div>

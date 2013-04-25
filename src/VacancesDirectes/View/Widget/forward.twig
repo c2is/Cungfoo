@@ -1,0 +1,10 @@
+<div id="forwardBloc" class="radiusBox greyF" style="background: url({{ asset(vosVacances.imagePath | media('file')) }})">
+    <h4 id="forwardBlocTitle">{{ vosVacances.titre }}</h4>
+    <div id="forwardBlocSubtitle">
+        {{ vosVacances.prenom }}
+        {% if vosVacances.age != "" %}<span>{{ vosVacances.age }} {{ "ans" | trans }}</span>{% endif %}
+    </div>
+    {% if vosVacances.description != "" %}
+    <div id="forwardBlocHeadline"><span>{{ vosVacances.description }}</span></div>
+    {% endif %}
+</div>
