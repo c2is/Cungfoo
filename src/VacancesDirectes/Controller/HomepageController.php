@@ -32,7 +32,6 @@ class HomepageController implements ControllerProviderInterface
 
         $controllers->match('/', function (Request $request) use ($app)
         {
-
             $searchEngine = new SearchEngine($app, $request);
             $searchEngine->process($app['session']->get('search_engine_data'));
             if ($searchEngine->getRedirect())
@@ -41,24 +40,6 @@ class HomepageController implements ControllerProviderInterface
             }
 
             $locale = $app['context']->get('language');
-
-            $topCampings = \Cungfoo\Model\TopCampingQuery::create()
-                ->addAscendingOrderByColumn('sortable_rank')
-                ->useEtablissementQuery()
-                    ->useI18nQuery($locale)
-                        ->filterByActiveLocale(true)
-                    ->endUse()
-                    ->filterByActive(true)
-                ->endUse()
-                ->findActive()
-            ;
-
-            $mea = \Cungfoo\Model\MiseEnAvantQuery::create()
-                ->joinWithI18n($locale)
-                ->addAscendingOrderByColumn('sortable_rank')
-                ->filterByDateFinValidite(date('Y-m-d H:i:s'), \Criteria::GREATER_EQUAL)
-                ->findActive()
-            ;
 
             $pays = \Cungfoo\Model\PaysQuery::create()
                 ->findActive()
@@ -85,9 +66,7 @@ class HomepageController implements ControllerProviderInterface
             return $view = $app->renderView('homepage.twig', array(
                 'searchForm'        => $searchEngine->getView(),
                 'locale'            => $locale,
-                'topCampings'       => $topCampings,
                 'pays'              => $pays,
-                'mea'               => $mea,
                 'vosVacances'       => $vosVacances,
                 'thematiques'       => $thematiques,
                 'etablissements'    => $etablissements,
@@ -96,6 +75,48 @@ class HomepageController implements ControllerProviderInterface
             ));
         })
         ->bind('homepage');
+
+        $controllers->match('/esi-mea', function (Request $request) use ($app)
+        {
+            $locale = $app['context']->get('language');
+
+            $mea = \Cungfoo\Model\MiseEnAvantQuery::create()
+                ->joinWithI18n($locale)
+                ->addAscendingOrderByColumn('sortable_rank')
+                ->filterByDateFinValidite(date('Y-m-d H:i:s'), \Criteria::GREATER_EQUAL)
+                ->findActive()
+            ;
+
+            $view = $app['twig']->render('Homepage/mea.twig', array(
+                'mea' => $mea,
+            ));
+
+            return new Response($view, 200, array('Cache-Control' => sprintf('s-maxage=%s, public', $app['config']->get('vd_config')['httpcache']['home'])));
+        })
+        ->bind('homepage_mea');
+
+        $controllers->match('/esi-top', function (Request $request) use ($app)
+        {
+            $locale = $app['context']->get('language');
+
+            $topCampings = \Cungfoo\Model\TopCampingQuery::create()
+                ->addAscendingOrderByColumn('sortable_rank')
+                ->useEtablissementQuery()
+                    ->useI18nQuery($locale)
+                        ->filterByActiveLocale(true)
+                    ->endUse()
+                    ->filterByActive(true)
+                ->endUse()
+                ->findActive()
+            ;
+
+            $view = $app['twig']->render('Homepage/top.twig', array(
+                'topCampings' => $topCampings,
+            ));
+
+            return new Response($view, 200, array('Cache-Control' => sprintf('s-maxage=%s, public', $app['config']->get('vd_config')['httpcache']['home'])));
+        })
+        ->bind('homepage_top');
 
         return $controllers;
     }

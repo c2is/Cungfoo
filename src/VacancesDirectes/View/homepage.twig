@@ -5,79 +5,12 @@
 {% block canonical %}<link rel="canonical" href="{{ urlCanonical }}" />{% endblock %}
 
 {% block slider %}
-<div id="sliderWrapper">
-    <a id="sliderPrev" class="radiusBox yellow arrowLeft"></a>
-    <div id="sliderContainer">
-        <div id="sliderBackground"></div>
-        <ul id="slider" class="fixed-width clear">
-            {% for mea in mea %}
-                <li class="slide">
-                    <a class="sliderPhoto" href="{{ mea.lien }}" title="{{ mea.titre }}">
-                        <img class="large boxborder" width="340" height="220" src="{{ asset(mea.illustrationPath | media('file')) }}" alt="{{ mea.titre }}" />
-                        <img class="sliderPostmark" width="181" height="100" src="{{ asset('images/vacancesdirectes/common/ui/postmark.png') }}" alt="" />
-                    </a>
-                    <div class="sliderBackground"></div>
-                    <a href="{{ mea.lien }}" class="sliderStain first">
-                        <div class="content">
-                            <p class="headline" title="{{ mea.titre }}">{{ mea.titre }}</p>
-                            <p class="catchline">{{ mea.accroche }}</p>
-                            {% if mea.lien != "" %}<button class="bt orange big ib" type="submit">{{ mea.titreLien }}</button>{% endif %}
-                        </div>
-                    </a>
-                    {% if mea.prix != "" %}
-                    <a href="{{ mea.lien }}" class="sliderStain second">
-                        <div class="content">
-                            <p>{{ "general.a_partir_de" | trans }}</p>
-                            <p class="price">{{ mea.prix }}<span class="fine"> </span>€</p>
-                            <p class="duration">{{ "general.la_nuit" | trans }}</p>
-                        </div>
-                    </a>
-                    {% endif %}
-                </li>
-            {% endfor %}
-        </ul>
-    </div>
-
-    <a id="sliderNext" class="radiusBox yellow arrowRight"></a>
-
-    <div class="pagination clear" id="sliderPager"></div>
-</div>
+{{ esi(path('homepage_mea')) }}
 {% endblock %}
 
 {% block leftColumn %}
 <div class="ratio-33 left">
-    <div id="topLocations" class="locationForwards clear">
-        <div class="stamp grey">
-            <h2>{{ "home.topcamping" | trans }}</h2>
-        </div>
-        {% if topCampings | length %}
-        {% for camping in topCampings %}
-            {% if loop.index <= 3 %}
-            {% set campingPath = url('destination_camping', {'pays': camping.etablissement.pays.slug, 'region': camping.etablissement.region.slug, 'ville': camping.etablissement.ville.slug, 'camping': camping.etablissement.slug }) %}
-            <div class="element clear linkParent">
-                <div class="left">
-                    <img class="boxborder" src="{{ asset(camping.etablissement.vignette | media('file')) }}" width="119" height="86" alt="" />
-                    {#<iframe src="//www.facebook.com/plugins/like.php?href={{ campingPath }}&amp;send=false&amp;layout=button_count&amp;width=119&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=20&amp;locale={{ app.context.get('language') }}_{{ app.context.get('language') | upper }}" scrolling="no" frameborder="0" style="border:none; width:119px; height:20px;" allowTransparency="true"></iframe>#}
-                </div>
-                <div class="details left">
-                    <span class="title">{{ camping.etablissement.name }} {{ camping.etablissement.categorie.stars }}</span>
-                    <span class="region">{{ camping.etablissement.ville.region }}</span>
-                    {#<span class="condition">{{ camping.etablissement.minimumPriceLabel }}</span>#}
-                </div>
-                <a{% if camping.etablissement.minimumPrice == 0 %} style="display: none"{% endif %} href="{{ campingPath }}" class="stain fushia cover linkBlock">
-                        <span>
-                            {{ "general.a_partir_de" | trans }}<br />
-                            <span class="price linkBlock">{{ camping.etablissement.minimumPrice | number_format(0,'','') }}<span class="fine">&nbsp;</span>€</span>
-                            {{ "general.la_semaine" | trans }}
-                        </span>
-                </a>
-            </div>
-            {% endif %}
-        {% endfor %}
-        {% endif %}
-
-        <a href="{{ path('top_campings') }}" class="bt link right">{{ "home.topcamping.link" | trans  ({'%number%': topCampings|length }) }}</a>
-    </div>
+    {{ esi(path('homepage_top')) }}
 </div>
 <div class="ratio-33 left clear">
     {{ esi(path('esi_home_widget')) }}

@@ -7,5 +7,7 @@ demande_annulation:
     from: Vacances Directes
     sujet: Demande d'annulation
 httpcache:
-    long: 2592000 #30 days
-    short: 600 #10 min
+    long: 2592000 # 30 days
+    medium: 3600 # 1 h
+    short: 600 # 10 min
+    home: 3600
