@@ -95,29 +95,6 @@ class HomepageController implements ControllerProviderInterface
         })
         ->bind('homepage_mea');
 
-        $controllers->match('/esi-top', function (Request $request) use ($app)
-        {
-            $locale = $app['context']->get('language');
-
-            $topCampings = \Cungfoo\Model\TopCampingQuery::create()
-                ->addAscendingOrderByColumn('sortable_rank')
-                ->useEtablissementQuery()
-                    ->useI18nQuery($locale)
-                        ->filterByActiveLocale(true)
-                    ->endUse()
-                    ->filterByActive(true)
-                ->endUse()
-                ->findActive()
-            ;
-
-            $view = $app['twig']->render('Homepage/top.twig', array(
-                'topCampings' => $topCampings,
-            ));
-
-            return new Response($view, 200, array('Cache-Control' => sprintf('s-maxage=%s, public', $app['config']->get('vd_config')['httpcache']['home'])));
-        })
-        ->bind('homepage_top');
-
         return $controllers;
     }
 }
