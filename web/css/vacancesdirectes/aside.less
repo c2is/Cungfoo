@@ -17,9 +17,12 @@ aside{
   h2,h3{color:@colorBlanc;font-size:22px;line-height:22px;}
   .title h2{font:bold 22px/22px @ptnarrow;color:@colorGris1;text-transform:uppercase;text-align:center;margin-bottom:10px;}
   p{line-height:11px;}
-  #dispoBloc{position:relative;margin:20px 0;padding-bottom:0;
-    .stain.cover {._verticalCenter(66px);margin:10px 0 0;position:relative;float:left;}
-    .bt{position:absolute;bottom:15px;right:20px;}
+  #dispoBloc{position:relative;margin:20px 0;
+    .stain.cover {._verticalCenter(66px,30px);margin:10px 0 0;position:relative;float:left;padding-top:13px;
+      .from{top:auto;}
+      .price{font-size:30px;}
+    }
+    .bt{position:absolute;bottom:15px;right:20px;font-size:17px;}
   }
   #greyBoxes{
     #infoBloc{width:288px;color:@colorBlanc;background:url("../../images/vacancesdirectes/common/pict/info-bloc.jpg") no-repeat 0 0 transparent;
@@ -155,6 +158,7 @@ aside{
     label[for="SearchDate_nbAdultes"],
     label[for="SearchDate_nbEnfants"],
     .toggleContainer label {display:inline;}
+    li.toggleButton{display:none;}
     a.toggleButton{color:@colorBlanc;font:bold 14px/16px @ptnarrow;text-transform:uppercase;text-decoration:underline;}
     div.toggleContainer{display:none;}
     p{margin-bottom:15px;}

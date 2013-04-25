@@ -1158,11 +1158,11 @@ jQuery.extend( jQuery.fn, {
         $('#searchBlocDate').find('select').sSelect({ddMaxHeight: '300px'});
         switchPlaceSelect();
         defineDurationSelect();
-        if ( $('body').hasClass('home') ) {
-            toggleSearchCriteria();
-        }
-        else if ( $('body').hasClass('fiche') ) {
+        if ( $('body').hasClass('fiche') ) {
             toggleSearchDestination();
+        }
+        else if ( $('body').hasClass('home') ) {
+            toggleSearchCriteria();
         }
     }
 
@@ -1390,6 +1390,7 @@ function toggleSearchCriteria(){
 // toggle search destination
 function toggleSearchDestination(){
     var toggleSearchDestinationState = 0;
+    $('.toggleContainer').hide();
     //console.log("################################## toggleSearchDestination()  ##################################");
     $('.toggleButton').live('click', function(e){
         toggleSearchDestinationState = toggleSearchDestinationState == 0 ? 1 : 0;
