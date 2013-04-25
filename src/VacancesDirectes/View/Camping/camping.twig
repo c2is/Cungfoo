@@ -422,6 +422,7 @@
 {% endblock %}
 
 {% block rightColumn %}
+    {% include 'Form/_search_engine.twig' %}
     {{ esi(path('widget', {'name': 'bloc_prix', 'etab': etab.code})) }}
 <div id="greyBoxes">
     {{ esi(path('widget', {'name': 'offres_speciales', 'etab': etab.id})) }}
