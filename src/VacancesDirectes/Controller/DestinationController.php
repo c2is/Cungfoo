@@ -512,6 +512,6 @@ class DestinationController implements ControllerProviderInterface
             'historyBack'             => $request->headers->get('referer'),
         ));
 
-        return new Response($view, 200, array('Cache-Control' => sprintf('s-maxage=%s, public', 60)));
+        return new Response($view, 200, array('Cache-Control' => sprintf('s-maxage=%s, public', $app['config']->get('vd_config')['httpcache']['camping'])));
     }
 }

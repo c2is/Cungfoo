@@ -10,4 +10,5 @@ httpcache:
     long: 2592000 # 30 days
     medium: 3600 # 1 h
     short: 600 # 10 min
-    home: 3600
+    home: 3600 # 1 h
+    camping: 3600 # 1 h
