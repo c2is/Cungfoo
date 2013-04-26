@@ -127,3 +127,6 @@ menu:
               job:
                   title:  menu.job
                   route:  job_list
+              cache:
+                  title:  menu.cache
+                  route:  cache_generator_crud_list

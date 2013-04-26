@@ -162,3 +162,7 @@ crud:
             prefix: /navigation/items
             model: \Cungfoo\Model\NavigationItem
             form: \Cungfoo\Form\Type\NavigationItemType
+        cache_generator:
+            prefix: /cache
+            model: \Cungfoo\Model\CacheGenerator
+            form: \Cungfoo\Form\Type\CacheGeneratorType
