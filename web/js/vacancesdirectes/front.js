@@ -197,7 +197,7 @@ jQuery.extend( jQuery.fn, {
             if ( oAnchor ==  "#searchBloc" && !clicked ){
                 setTimeout(function() {
                     $('#datepickerField').trigger('click');
-                }, 1000);
+                }, 300);
                 clicked = true;
             }
         });
