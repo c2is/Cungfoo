@@ -43,7 +43,7 @@ class CacheGeneratorType extends BaseCacheGeneratorType
     public function getCachedAtOptions()
     {
         $options = parent::getCachedAtOptions();
-        $options['read_only'] = true;
+        $options['disabled'] = true;
 
         return $options;
     }
