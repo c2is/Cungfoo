@@ -452,7 +452,7 @@ class DestinationController implements ControllerProviderInterface
 
         ));
 
-        $response = new Response($view, 200, array('Surrogate-Control' => 'content="ESI/1.0"'));
+        $response = new Response($view, 200, array('Surrogate-Control' => 'content="ESI/1.0"', 'Cache-Control' => 'max-age=0, s-maxage=0, no-cache, public'));
         $response->headers->setCookie($cookie);
         return $response;
     }
