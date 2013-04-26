@@ -37,7 +37,10 @@ class GenerateCommand extends BaseCommand
 
         try
         {
-            
+            $urls = \Cungfoo\Model\CacheGeneratorQuery::create()
+                ->findActive($con)
+            ;
+
             $con->commit();
         }
         catch (\Exception $exception)
