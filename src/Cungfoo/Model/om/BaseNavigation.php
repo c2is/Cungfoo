@@ -1540,8 +1540,8 @@ abstract class BaseNavigation extends BaseObject implements Persistent
     }
 
     // active behavior
-
-
+    
+    
     /**
      * return true is the object is active
      *
@@ -1551,7 +1551,7 @@ abstract class BaseNavigation extends BaseObject implements Persistent
     {
         return $this->getActive();
     }
-
+    
     /**
      * return true is the object is active locale
      *
@@ -1561,27 +1561,27 @@ abstract class BaseNavigation extends BaseObject implements Persistent
     {
         return $this->getActiveLocale();
     }
-
+    
     public function getItemsActive($criteria = null, PropelPDO $con = null)
     {
-
+    
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-
+    
         $criteria->add(\Cungfoo\Model\ItemPeer::ACTIVE, true);
-
-
+    
+    
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\ItemI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\ItemPeer::ID, \Cungfoo\Model\ItemI18nPeer::alias('i18n_locale', \Cungfoo\Model\ItemI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\ItemI18nPeer::alias('i18n_locale', \Cungfoo\Model\ItemI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\ItemI18nPeer::alias('i18n_locale', \Cungfoo\Model\ItemI18nPeer::LOCALE), $this->currentLocale);
-
+    
         return $this->getItems($criteria, $con);
     }
     // crudable behavior
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
