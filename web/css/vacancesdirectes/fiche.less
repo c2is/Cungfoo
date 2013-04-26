@@ -1,11 +1,9 @@
 
 /*fiche*/
 .fiche{
-  #searchBloc{
-    #searchBlocDate{
-      li.toggleButton{display:block;
-        a{color:@colorBlanc;font:bold 14px/16px @ptnarrow;text-transform:uppercase;text-decoration:underline;}
-      }
+  a.goto{
+    &[href="#searchBloc"]{
+      font-size:21px;
     }
   }
 }
@@ -114,7 +112,7 @@ h3{margin-top:40px;}
 }
 
 /*tabs pagination*/
-.paginationTabs{
+.paginationTabs{margin-bottom:30px;
   .bt{font-size:18px;text-decoration:underline;
     &:hover{text-decoration:none;}
     &.left{
