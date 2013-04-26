@@ -46,7 +46,7 @@ CREATE TABLE `cache_generator`
 (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `url` VARCHAR(255) NOT NULL,
-    `cache_time` INTEGER NOT NULL,
+    `cache_time` INTEGER DEFAULT 1800,
     `cached_at` DATETIME,
     `created_at` DATETIME,
     `updated_at` DATETIME,

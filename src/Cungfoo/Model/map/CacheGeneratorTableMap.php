@@ -44,7 +44,7 @@ class CacheGeneratorTableMap extends TableMap
         // columns
         $this->addPrimaryKey('id', 'Id', 'INTEGER', true, null, null);
         $this->addColumn('url', 'Url', 'VARCHAR', true, 255, null);
-        $this->addColumn('cache_time', 'CacheTime', 'INTEGER', true, null, null);
+        $this->addColumn('cache_time', 'CacheTime', 'INTEGER', false, null, 1800);
         $this->addColumn('cached_at', 'CachedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('created_at', 'CreatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('updated_at', 'UpdatedAt', 'TIMESTAMP', false, null, null);

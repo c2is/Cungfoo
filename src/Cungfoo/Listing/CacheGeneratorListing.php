@@ -23,6 +23,8 @@ class CacheGeneratorListing extends BaseCacheGeneratorListing
     public function configure()
     {
         parent::configure();
+        $this->removeColumn('cached_at');
+        $this->addColumn(new Column\DateColumn('cache_time'));
     }
 
 } // CacheGeneratorListing

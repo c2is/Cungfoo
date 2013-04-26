@@ -8,7 +8,7 @@
  * @package Cungfoo by C2IS
  */
 
-namespace VacancesDirectes\Command\Slug;
+namespace VacancesDirectes\Command\Cache;
 
 use Cungfoo\Command\Command as BaseCommand;
 
@@ -42,11 +42,12 @@ class GenerateCommand extends BaseCommand
             ;
 
             foreach ($urls as $url) {
-                if (!$url->getCachedAt() or $url->getCachedAt()->add(new \DateInterval(sprintf('PT%sS', $url->getCacheTime()))) < new \DateTime()) {
-                    echo $url;
-                    //file_get_contents($url);
+                if (!$url->getCachedAt() or $url->getCachedAt()->add(new \DateInterval(sprintf('PT%sS', $url->getCacheTime() ?: 1800))) < new \DateTime()) {
+                    file_get_contents($url->getUrl());
+                    $url->setCachedAt(new \DateTime())->save();
+                    $output->writeln(sprintf('<info>%s</info> <comment>called for cache generation</comment>.', $url->getUrl()));
+                    sleep(20);
                 }
-                sleep(20);
             }
 
             $con->commit();

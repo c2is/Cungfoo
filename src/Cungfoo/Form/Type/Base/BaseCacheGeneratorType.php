@@ -57,9 +57,6 @@ class BaseCacheGeneratorType extends AppAwareType
         return array(
             'required' => false,
             'label' => 'cache_generator.cache_time',
-            'constraints' => array(
-                        new Assert\NotBlank(),
-                    ),
         );
     }
 

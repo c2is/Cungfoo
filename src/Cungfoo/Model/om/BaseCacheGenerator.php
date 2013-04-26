@@ -63,6 +63,7 @@ abstract class BaseCacheGenerator extends BaseObject implements Persistent
 
     /**
      * The value for the cache_time field.
+     * Note: this column has a database default value of: 1800
      * @var        int
      */
     protected $cache_time;
@@ -140,6 +141,7 @@ abstract class BaseCacheGenerator extends BaseObject implements Persistent
      */
     public function applyDefaultValues()
     {
+        $this->cache_time = 1800;
         $this->active = false;
     }
 
@@ -484,6 +486,10 @@ abstract class BaseCacheGenerator extends BaseObject implements Persistent
      */
     public function hasOnlyDefaultValues()
     {
+            if ($this->cache_time !== 1800) {
+                return false;
+            }
+
             if ($this->active !== false) {
                 return false;
             }
