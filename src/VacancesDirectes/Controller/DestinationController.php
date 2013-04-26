@@ -442,6 +442,7 @@ class DestinationController implements ControllerProviderInterface
             'webuser'                 => $webuser,
             'hasBaignade'             => count($camping->getEtablissementBaignades()) > 0,
             'searchForm'              => $searchEngine->getView(),
+            'historyBack'             => $request->headers->get('referer'),
             'referer'                 => $app['url_generator']->generate($request->get('_route'), array(
                 'pays'      => $camping->getPays()->getSlug(),
                 'region'    => $camping->getRegion()->getSlug(),
@@ -509,7 +510,6 @@ class DestinationController implements ControllerProviderInterface
             'personnageAleatoire'     => $personnageAleatoire,
             'sitesAVisiter'           => $sitesAVisiter,
             'events'                  => $events,
-            'historyBack'             => $request->headers->get('referer'),
         ));
 
         return new Response($view, 200, array('Cache-Control' => sprintf('s-maxage=%s, public', $app['config']->get('vd_config')['httpcache']['camping'])));

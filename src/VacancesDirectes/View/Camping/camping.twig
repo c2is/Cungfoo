@@ -12,6 +12,14 @@
 {% block canonical %}<link rel="canonical" href="{{ referer }}" />{% endblock %}
 
 {% block leftColumn %}
+<nav id="ficheShare">
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{ app.request.uri }}" class="icon facebook" target="_blank" title="{{ "share.facebook" | trans }}" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Header', 'Lien_-_Partage-SMM', 'Clic_-_Bouton-FaceBook']);">{{ "share.facebook" | trans }}</a>
+    <a href="http://twitter.com/home?status={{ etab.name }} {{ etab.seoH1 | trans({'%ville%': etab.ville.name}) }} {% if hasBaignade %}{{ "seo.title.camping_suffix" | trans }}{% endif %} {{ app.request.uri }}" target="_blank" class="icon twitter" title="{{ "share.twitter" | trans }}" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Header', 'Lien_-_Partage-SMM', 'Clic_-_Bouton-Twitter']);">{{ "share.twitter" | trans }}</a>
+    {#<a href="#_" class="icon email" title="Partager par email">Partager par email</a>#}
+    {#<a href="javascript:window.print()" class="icon print" title="Imprimer">Imprimer</a>#}
+</nav>
+
+<a class="bt gris left" href="{{ historyBack ~ "#camping-" ~ etab.slug }}" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'Lien_-_Retour', 'Clic_-_Bouton-Retour']);">&lt; {{ "fiche.retour" | trans }}</a>
 {{ esi(path('esi_camping', {camping: etab.getSlug})) }}
 
 <div id="stayBooking">
