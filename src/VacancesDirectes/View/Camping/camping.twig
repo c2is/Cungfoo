@@ -20,6 +20,9 @@
 </nav>
 
 <a class="bt gris left" href="{{ historyBack ~ "#camping-" ~ etab.slug }}" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'Lien_-_Retour', 'Clic_-_Bouton-Retour']);">&lt; {{ "fiche.retour" | trans }}</a>
+
+{% include "Breadcrumbs/_breadcrumbs.twig" %}
+
 {{ esi(path('esi_camping', {camping: etab.getSlug})) }}
 
 <div id="stayBooking">
