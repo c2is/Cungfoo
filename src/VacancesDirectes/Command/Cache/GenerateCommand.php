@@ -41,6 +41,14 @@ class GenerateCommand extends BaseCommand
                 ->findActive($con)
             ;
 
+            foreach ($urls as $url) {
+                if (!$url->getCachedAt() or $url->getCachedAt()->add(new \DateInterval(sprintf('PT%sS', $url->getCacheTime()))) < new \DateTime()) {
+                    echo $url;
+                    //file_get_contents($url);
+                }
+                sleep(20);
+            }
+
             $con->commit();
         }
         catch (\Exception $exception)
