@@ -285,6 +285,8 @@ etablissement.activites: 'Liste der Aktivitäten'
 etablissement.destinations: 'Liste der Reiseziele'
 etablissement.service_complementaires: 'Liste der Zusatzleistungen'
 etablissement.type_hebergements: 'Liste der Unterkunftsarten'
+search.title: 'Je recherche'
+search.linkto: 'Pour réserver vos courts séjours, cliquez ici'
 date_search.date_debut: Anreisedatum
 date_search.destination: Reiseziel
 date_search.destination.empty_value: 'Reiseziel?'

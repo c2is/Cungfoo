@@ -189,7 +189,18 @@ jQuery.extend( jQuery.fn, {
         var oAnchor = this.hash;
         var targetOffset = $(oAnchor).offset().top;
         //consoleLog(targetOffset);
-        $('html, body').animate({scrollTop: targetOffset},400);
+        var bodyelem;
+        var clicked = false;
+        if($.browser.safari) bodyelem = $("body")
+        else bodyelem = $('html,body');
+        bodyelem.animate({scrollTop: targetOffset},400,function(){
+            if ( oAnchor ==  "#searchBloc" && !clicked ){
+                setTimeout(function() {
+                    $('#datepickerField').trigger('click');
+                }, 1000);
+                clicked = true;
+            }
+        });
         return false;
     });
 
@@ -1158,10 +1169,7 @@ jQuery.extend( jQuery.fn, {
         $('#searchBlocDate').find('select').sSelect({ddMaxHeight: '300px'});
         switchPlaceSelect();
         defineDurationSelect();
-        if ( $('body').hasClass('fiche') ) {
-            toggleSearchDestination();
-        }
-        else if ( $('body').hasClass('home') ) {
+        if ( $('body').hasClass('home') ) {
             toggleSearchCriteria();
         }
     }
@@ -1383,22 +1391,6 @@ function toggleSearchCriteria(){
         var buttonText = $button.text().replace(toggleSearchCriteriaState == 0 ? '-' : '+',toggleSearchCriteriaState == 0 ? '+' : '-');
         $button.html(buttonText);
         var $container = $button.prev('.toggleContainer');
-        $container.stop().toggle();
-    });
-}
-
-// toggle search destination
-function toggleSearchDestination(){
-    var toggleSearchDestinationState = 0;
-    $('.toggleContainer').hide();
-    //console.log("################################## toggleSearchDestination()  ##################################");
-    $('.toggleButton').live('click', function(e){
-        toggleSearchDestinationState = toggleSearchDestinationState == 0 ? 1 : 0;
-        $(this).parents('#searchBloc').toggleClass('opened');
-        e.preventDefault();
-        var $button = $(this);
-        var $container = $button.siblings('.toggleContainer');
-        $button.remove();
         $container.stop().toggle();
     });
 }
