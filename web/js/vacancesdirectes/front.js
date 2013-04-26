@@ -189,7 +189,18 @@ jQuery.extend( jQuery.fn, {
         var oAnchor = this.hash;
         var targetOffset = $(oAnchor).offset().top;
         //consoleLog(targetOffset);
-        $('html, body').animate({scrollTop: targetOffset},400);
+        var bodyelem;
+        var clicked = false;
+        if($.browser.safari) bodyelem = $("body")
+        else bodyelem = $('html,body');
+        bodyelem.animate({scrollTop: targetOffset},400,function(){
+            if ( oAnchor ==  "#searchBloc" && !clicked ){
+                setTimeout(function() {
+                    $('#datepickerField').trigger('click');
+                }, 300);
+                clicked = true;
+            }
+        });
         return false;
     });
 
@@ -1158,7 +1169,9 @@ jQuery.extend( jQuery.fn, {
         $('#searchBlocDate').find('select').sSelect({ddMaxHeight: '300px'});
         switchPlaceSelect();
         defineDurationSelect();
-        toggleSearchCriteria();
+        if ( $('body').hasClass('home') ) {
+            toggleSearchCriteria();
+        }
     }
 
 
@@ -1367,17 +1380,17 @@ function defineDurationSelect(){
 }
 
 // toggle search criteria
-var toggleState = 0;
 function toggleSearchCriteria(){
+    var toggleSearchCriteriaState = 0;
     //console.log("################################## toggleSearchCriteria()  ##################################");
     $('.toggleButton').live('click', function(e){
-        toggleState = toggleState == 0 ? 1 : 0;
+        toggleSearchCriteriaState = toggleSearchCriteriaState == 0 ? 1 : 0;
         $(this).parents('#searchBloc').toggleClass('opened');
         e.preventDefault();
         var $button = $(this);
-        var buttonText = $button.text().replace(toggleState == 0 ? '-' : '+',toggleState == 0 ? '+' : '-');
+        var buttonText = $button.text().replace(toggleSearchCriteriaState == 0 ? '-' : '+',toggleSearchCriteriaState == 0 ? '+' : '-');
         $button.html(buttonText);
-        var $container = $button.prev();
+        var $container = $button.prev('.toggleContainer');
         $container.stop().toggle();
     });
 }

@@ -5,79 +5,12 @@
 {% block canonical %}<link rel="canonical" href="{{ urlCanonical }}" />{% endblock %}
 
 {% block slider %}
-<div id="sliderWrapper">
-    <a id="sliderPrev" class="radiusBox yellow arrowLeft"></a>
-    <div id="sliderContainer">
-        <div id="sliderBackground"></div>
-        <ul id="slider" class="fixed-width clear">
-            {% for mea in mea %}
-                <li class="slide">
-                    <a class="sliderPhoto" href="{{ mea.lien }}" title="{{ mea.titre }}">
-                        <img class="large boxborder" width="340" height="220" src="{{ asset(mea.illustrationPath | media('file')) }}" alt="{{ mea.titre }}" />
-                        <img class="sliderPostmark" width="181" height="100" src="{{ asset('images/vacancesdirectes/common/ui/postmark.png') }}" alt="" />
-                    </a>
-                    <div class="sliderBackground"></div>
-                    <a href="{{ mea.lien }}" class="sliderStain first">
-                        <div class="content">
-                            <p class="headline" title="{{ mea.titre }}">{{ mea.titre }}</p>
-                            <p class="catchline">{{ mea.accroche }}</p>
-                            {% if mea.lien != "" %}<button class="bt orange big ib" type="submit">{{ mea.titreLien }}</button>{% endif %}
-                        </div>
-                    </a>
-                    {% if mea.prix != "" %}
-                    <a href="{{ mea.lien }}" class="sliderStain second">
-                        <div class="content">
-                            <p>{{ "general.a_partir_de" | trans }}</p>
-                            <p class="price">{{ mea.prix }}<span class="fine"> </span>€</p>
-                            <p class="duration">{{ "general.la_nuit" | trans }}</p>
-                        </div>
-                    </a>
-                    {% endif %}
-                </li>
-            {% endfor %}
-        </ul>
-    </div>
-
-    <a id="sliderNext" class="radiusBox yellow arrowRight"></a>
-
-    <div class="pagination clear" id="sliderPager"></div>
-</div>
+{{ esi(path('homepage_mea')) }}
 {% endblock %}
 
 {% block leftColumn %}
 <div class="ratio-33 left">
-    <div id="topLocations" class="locationForwards clear">
-        <div class="stamp grey">
-            <h2>{{ "home.topcamping" | trans }}</h2>
-        </div>
-        {% if topCampings | length %}
-        {% for camping in topCampings %}
-            {% if loop.index <= 3 %}
-            {% set campingPath = url('destination_camping', {'pays': camping.etablissement.pays.slug, 'region': camping.etablissement.region.slug, 'ville': camping.etablissement.ville.slug, 'camping': camping.etablissement.slug }) %}
-            <div class="element clear linkParent">
-                <div class="left">
-                    <img class="boxborder" src="{{ asset(camping.etablissement.vignette | media('file')) }}" width="119" height="86" alt="" />
-                    {#<iframe src="//www.facebook.com/plugins/like.php?href={{ campingPath }}&amp;send=false&amp;layout=button_count&amp;width=119&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=20&amp;locale={{ app.context.get('language') }}_{{ app.context.get('language') | upper }}" scrolling="no" frameborder="0" style="border:none; width:119px; height:20px;" allowTransparency="true"></iframe>#}
-                </div>
-                <div class="details left">
-                    <span class="title">{{ camping.etablissement.name }} {{ camping.etablissement.categorie.stars }}</span>
-                    <span class="region">{{ camping.etablissement.ville.region }}</span>
-                    {#<span class="condition">{{ camping.etablissement.minimumPriceLabel }}</span>#}
-                </div>
-                <a{% if camping.etablissement.minimumPrice == 0 %} style="display: none"{% endif %} href="{{ campingPath }}" class="stain fushia cover linkBlock">
-                        <span>
-                            {{ "general.a_partir_de" | trans }}<br />
-                            <span class="price linkBlock">{{ camping.etablissement.minimumPrice | number_format(0,'','') }}<span class="fine">&nbsp;</span>€</span>
-                            {{ "general.la_semaine" | trans }}
-                        </span>
-                </a>
-            </div>
-            {% endif %}
-        {% endfor %}
-        {% endif %}
-
-        <a href="{{ path('top_campings') }}" class="bt link right">{{ "home.topcamping.link" | trans  ({'%number%': topCampings|length }) }}</a>
-    </div>
+    {{ esi(path('widget', {'name': 'top_camping'})) }}
 </div>
 <div class="ratio-33 left clear">
     {{ esi(path('esi_home_widget')) }}
@@ -94,47 +27,8 @@
 
 {% block columnClearboth %}
 <div class="column clearboth clear">
-    {% if pays | length %}
-    <div id="destinationsBloc" class="radiusBox greyC">
-        <h2><span>{{ "home.vacances_directes_cest" | trans }}</span> {{ "home.4_pays" | trans }}<span> & </span>{{ "home.26_regions" | trans }}<span> {{ "home.touristiques" | trans }}</span></h2>
-        {% for p in pays %}
-        {% if p.code == 'FRA' %}
-        <div class="left">
-            <div id="national">
-                <a class="country" href="{{ path('destination_pays', {'pays': p.slug}) }}">{{ "home.destination_france" | trans }}</a>
-                <ul>
-                {% for region in p.regionMeaHome %}
-                    {% if loop.index <= 5 %}
-                    <li>- <a class="region" href="{{ path('destination_region', {'pays': region.pays.slug, 'region': region.slug}) }}">{{region.name}}</a></li>
-                    {% endif %}
-                {% endfor %}
-                </ul>
-                {# TODO <a class="bt link" href="#">{{ "home.plus_de_regions" | trans }}</a> #}
-            </div>
-        </div>
-        {% endif %}
-        {% endfor %}
-        <div class="right">
-            <div id="international">
-                {% for p in pays %}
-                    {% if p.code != 'FRA' %}
-                        <a class="country" href="{{ path('destination_pays', {'pays': p.slug}) }}">{{ "home.destination" | trans }} {{p.name}}</a>
-                    {% endif %}
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-    {% endif %}
-    <div id="forwardBloc" class="radiusBox greyF" style="background: url({{ asset(vosVacances.imagePath | media('file')) }})">
-        <h4 id="forwardBlocTitle">{{ vosVacances.titre }}</h4>
-        <div id="forwardBlocSubtitle">
-            {{ vosVacances.prenom }}
-            {% if vosVacances.age != "" %}<span>{{ vosVacances.age }} {{ "ans" | trans }}</span>{% endif %}
-        </div>
-        {% if vosVacances.description != "" %}
-        <div id="forwardBlocHeadline"><span>{{ vosVacances.description }}</span></div>
-        {% endif %}
-    </div>
+    {{ esi(path('widget', {'name': 'destination'})) }}
+    {{ esi(path('widget', {'name': 'forward'})) }}
 </div>
 
 {# TODO<div class="column clearboth clear">
@@ -156,89 +50,7 @@
 </div> #}
 
 <div class="column clearboth">
-    <div id="mapBloc" class="radiusBox greyC clear">
-        <div id="homeMap" class="gmap left" style="width:604px;height:392px;">
-            <script>
-                /*function homeInit() {
-                    var homeMap;
-                    var homeMkrs = [
-                        {# ['title', lat, lont, zindex, 'idAjaxCamping', couleurMarker, filterNew, filter....] #}
-                        ['Chalon sur Saone', 45.764544, 4.846512, 5, 'blocs/smallInfoBox.php?ID=12', markerFushia, ['NV12', 'PDLE']]
-                        ,['Lyon', 46.764544, 4.846512, 5, 'blocs/smallInfoBox.php?ID=12', markerBleu, ['NV12', 'PAQU']]
-                        {#{% for etab in etablissements %}
-                            ['{{ etab.name }}', {{ etab.geoCoordinateX }}, {{ etab.geoCoordinateY }}, {{ loop.index }}, '{{ path('infobox_camping', {idResalys: etab.code}) }}', markerFushia, ['{{etab.thematiques.toArray("Code")|keys|join("','")|raw}}']],
-                        {% endfor %}#}
-                    ];
-                    var centerhomeMkr = new google.maps.LatLng(46.31279,4.828434),
-                            mapOptions = {
-                                zoom: 5,
-                                mapTypeId: google.maps.MapTypeId.ROADMAP,
-                                center: centerhomeMkr
-                            };
-                    homeMap = new google.maps.Map(document.getElementById('homeMap'), mapOptions);
-                    setMarkers(homeMap, homeMkrs);
-
-                    $('#mapFilters').find('a')
-                        .click( function(){
-                            var theme = this.id;
-                            for (var i = 0; i < aMarkers.length; i++) {
-                                var marker = aMarkers[i];
-                                marker.setVisible( $.inArray(theme, marker.filters) != -1 ? true : false );
-                            }
-                            $(this).addClass('active').parents('li').siblings('li').children('a').removeClass('active');
-                            ib.close();
-                            return false;
-                        })
-                        .eq(0).trigger('click');
-                }*/
-                function homeInit() {
-                    var homeMap;
-                    var markerController = new google.maps.MVCObject();
-                    var homeMkrs = [
-                        {% for etab in etablissements %}
-                        {% if etab.geoCoordinateX != '' and etab.geoCoordinateY != '' %}
-                            ['{{ etab.name }}', {{ etab.geoCoordinateX }}, {{ etab.geoCoordinateY }}, {{ loop.index }}, '{{ path('infobox_camping', {idResalys: etab.code}) }}', markerFushia, ['{{etab.thematiques.toArray("Code")|keys|join("','")|raw}}']] {% if not loop.last %} ,{% endif %}
-                        {% endif %}
-                        {% endfor %}
-                    ];
-                    var centerhomeMkr = new google.maps.LatLng(46.31279,4.828434),
-                        mapOptions = {
-                            zoom: 5,
-                            mapTypeId: google.maps.MapTypeId.ROADMAP,
-                            center: centerhomeMkr
-                        };
-                    homeMap = new google.maps.Map(document.getElementById('homeMap'), mapOptions);
-//                    consoleLog(homeMkrs);
-                    setMarkers(homeMap, homeMkrs);
-
-
-                    $('#mapFilters').find('a')
-                        .click( function(){
-                            var theme = this.id;
-                            for (var i = 0; i < aMarkers.length; i++) {
-                                var marker = aMarkers[i];
-                                marker.setVisible( $.inArray(theme, marker.filters) != -1 ? true : false );
-                            }
-                            $(this).addClass('active').parents('li').siblings('li').children('a').removeClass('active');
-                            ib.close();
-                            return false;
-                        });
-                }
-            </script>
-        </div>
-
-        <div id="mapContent" class="left">
-            <h2>{{ "general.campings_vacances_directes" | trans }}</h2>
-            <h3>{{ "general.filter_par" | trans }}</h3>
-            <ul id="mapFilters">
-                {% for thematique in thematiques %}
-
-                <li><a id="{{ thematique.code }}" href="#" style="background-image: url({{ asset(thematique.imagePath | media('file')) }})"><span>{{ thematique.name }}</span></a></li>
-
-                {% endfor %}
-            </ul>
-        </div>
-    </div>
+    {{ esi(path('widget', {'name': 'map_interactive'})) }}
 </div>
 {% endblock %}
 

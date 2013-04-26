@@ -892,7 +892,7 @@ abstract class BaseDemandeIdentifiantPeer
     }
 
     // crudable behavior
-
+    
     /**
      * The default locale to use for translations
      * @var        string
@@ -906,7 +906,7 @@ abstract class BaseDemandeIdentifiantPeer
         ;
     }
     // seo behavior
-
+    
     /**
      * The default locale to use for translations
      * @var        string

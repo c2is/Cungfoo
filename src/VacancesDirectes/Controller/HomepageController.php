@@ -32,7 +32,6 @@ class HomepageController implements ControllerProviderInterface
 
         $controllers->match('/', function (Request $request) use ($app)
         {
-
             $searchEngine = new SearchEngine($app, $request);
             $searchEngine->process($app['session']->get('search_engine_data'));
             if ($searchEngine->getRedirect())
@@ -42,16 +41,20 @@ class HomepageController implements ControllerProviderInterface
 
             $locale = $app['context']->get('language');
 
-            $topCampings = \Cungfoo\Model\TopCampingQuery::create()
-                ->addAscendingOrderByColumn('sortable_rank')
-                ->useEtablissementQuery()
-                    ->useI18nQuery($locale)
-                        ->filterByActiveLocale(true)
-                    ->endUse()
-                    ->filterByActive(true)
-                ->endUse()
-                ->findActive()
-            ;
+            //$pleinActivites = new PleinActivite($app);
+
+            return $view = $app->renderView('homepage.twig', array(
+                'searchForm'        => $searchEngine->getView(),
+                'locale'            => $locale,
+                /*'pleinActivites'    => $pleinActivites->process(),*/
+                'urlCanonical'      => $app['url_generator']->generate('homepage', array(), true),
+            ));
+        })
+        ->bind('homepage');
+
+        $controllers->match('/esi-mea', function (Request $request) use ($app)
+        {
+            $locale = $app['context']->get('language');
 
             $mea = \Cungfoo\Model\MiseEnAvantQuery::create()
                 ->joinWithI18n($locale)
@@ -60,42 +63,13 @@ class HomepageController implements ControllerProviderInterface
                 ->findActive()
             ;
 
-            $pays = \Cungfoo\Model\PaysQuery::create()
-                ->findActive()
-            ;
-
-            $vosVacances = VosVacancesQuery::create()
-                ->useI18nQuery($locale)
-                    ->filterByActiveLocale(true)
-                ->endUse()
-                ->findOne()
-            ;
-
-            $thematiques = ThematiqueQuery::create()
-                ->joinWithI18n($locale)
-                ->findActive()
-            ;
-
-            $etablissements = EtablissementQuery::create()
-                ->findActive()
-            ;
-
-            $pleinActivites = new PleinActivite($app);
-
-            return $view = $app->renderView('homepage.twig', array(
-                'searchForm'        => $searchEngine->getView(),
-                'locale'            => $locale,
-                'topCampings'       => $topCampings,
-                'pays'              => $pays,
-                'mea'               => $mea,
-                'vosVacances'       => $vosVacances,
-                'thematiques'       => $thematiques,
-                'etablissements'    => $etablissements,
-                'pleinActivites'    => $pleinActivites->process(),
-                'urlCanonical'      => $app['url_generator']->generate('homepage', array(), true),
+            $view = $app['twig']->render('Homepage/mea.twig', array(
+                'mea' => $mea,
             ));
+
+            return new Response($view, 200, array('Cache-Control' => sprintf('s-maxage=%s, public', $app['config']->get('vd_config')['httpcache']['home'])));
         })
-        ->bind('homepage');
+        ->bind('homepage_mea');
 
         return $controllers;
     }

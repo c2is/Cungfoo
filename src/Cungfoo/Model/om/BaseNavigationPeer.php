@@ -781,7 +781,7 @@ abstract class BaseNavigationPeer
     }
 
     // crudable behavior
-
+    
     /**
      * The default locale to use for translations
      * @var        string
@@ -795,7 +795,7 @@ abstract class BaseNavigationPeer
         ;
     }
     // seo behavior
-
+    
     /**
      * The default locale to use for translations
      * @var        string

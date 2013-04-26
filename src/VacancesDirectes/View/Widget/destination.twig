@@ -1,0 +1,31 @@
+{% if pays | length %}
+<div id="destinationsBloc" class="radiusBox greyC">
+    <h2><span>{{ "home.vacances_directes_cest" | trans }}</span> {{ "home.4_pays" | trans }}<span> & </span>{{ "home.26_regions" | trans }}<span> {{ "home.touristiques" | trans }}</span></h2>
+    {% for p in pays %}
+    {% if p.code == 'FRA' %}
+    <div class="left">
+        <div id="national">
+            <a class="country" href="{{ path('destination_pays', {'pays': p.slug}) }}">{{ "home.destination_france" | trans }}</a>
+            <ul>
+            {% for region in p.regionMeaHome %}
+                {% if loop.index <= 5 %}
+                <li>- <a class="region" href="{{ path('destination_region', {'pays': region.pays.slug, 'region': region.slug}) }}">{{region.name}}</a></li>
+                {% endif %}
+            {% endfor %}
+            </ul>
+            {# TODO <a class="bt link" href="#">{{ "home.plus_de_regions" | trans }}</a> #}
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+    <div class="right">
+        <div id="international">
+            {% for p in pays %}
+                {% if p.code != 'FRA' %}
+                    <a class="country" href="{{ path('destination_pays', {'pays': p.slug}) }}">{{ "home.destination" | trans }} {{p.name}}</a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endif %}

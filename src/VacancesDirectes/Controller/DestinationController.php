@@ -244,6 +244,11 @@ class DestinationController implements ControllerProviderInterface
                     ->bind('destination_region_ref')
                 ;
             }
+
+            $ctl->match("/esi-{camping}", array($this, 'esiCamping'))
+                ->assert('camping', $assertUrlCamping)
+                ->bind('esi_camping')
+            ;
         }
 
         return $ctl;
@@ -391,7 +396,67 @@ class DestinationController implements ControllerProviderInterface
     }
 
     function camping(Application $app, Request $request, Pays $pays, Region $region, Etablissement $camping) {
+        $locale = $app['context']->get('language');
 
+        $webuser = $app['config']->get('languages')[$locale]['resalys_username'];
+
+        $trackingCamping = unserialize($app['request']->cookies->get('tracking'));
+        if (!$trackingCamping)
+        {
+            $trackingCamping = array();
+        }
+        if (!in_array($camping->getCode(), $trackingCamping))
+        {
+            array_unshift($trackingCamping, $camping->getCode());
+        }
+        if (count($trackingCamping) > 5)
+        {
+            array_pop($trackingCamping);
+        }
+        $cookie = new Cookie('tracking', serialize($trackingCamping), time() + 3600 * 24 * 7);
+
+        // récupère les informations du form de recherche stocké en session
+        $dateData = $app['session']->get('search_engine_data');
+        if (!$dateData) {
+            $dateData = new DateData();
+        }
+
+        $dateData->destination = $camping->getRegion()->getCode();
+        $dateData->camping = $camping->getCode();
+        $dateData->isCamping = true;
+
+        // modification des informations du form de recherche
+        $app['session']->set('search_engine_data', $dateData);
+
+        // création du formulaire de recherche
+        $searchEngine = new SearchEngine($app, $request);
+        $searchEngine->process($dateData);
+
+        // si le formulaire de recherche vient d'être soumis on redirige
+        if ($searchEngine->getRedirect()) {
+            return $app->redirect($searchEngine->getRedirect());
+        }
+
+        $view = $app['twig']->render('Camping/camping.twig', array(
+            'etab'                    => $camping,
+            'webuser'                 => $webuser,
+            'hasBaignade'             => count($camping->getEtablissementBaignades()) > 0,
+            'searchForm'              => $searchEngine->getView(),
+            'referer'                 => $app['url_generator']->generate($request->get('_route'), array(
+                'pays'      => $camping->getPays()->getSlug(),
+                'region'    => $camping->getRegion()->getSlug(),
+                'ville'     => $camping->getVille()->getSlug(),
+                'camping'   => $camping->getSlug()
+            ), true)
+
+        ));
+
+        $response = new Response($view, 200, array('Surrogate-Control' => 'content="ESI/1.0"'));
+        $response->headers->setCookie($cookie);
+        return $response;
+    }
+
+    function esiCamping(Application $app, Request $request, Etablissement $camping) {
         $locale = $app['context']->get('language');
 
         $sitesAVisiter = PointInteretPeer::getForEtablissement($camping, PointInteretPeer::RANDOM_SORT, 4);
@@ -436,24 +501,7 @@ class DestinationController implements ControllerProviderInterface
             ->findOne()
         ;
 
-        $webuser = $app['config']->get('languages')[$locale]['resalys_username'];
-
-        $trackingCamping = unserialize($app['request']->cookies->get('tracking'));
-        if (!$trackingCamping)
-        {
-            $trackingCamping = array();
-        }
-        if (!in_array($camping->getCode(), $trackingCamping))
-        {
-            array_unshift($trackingCamping, $camping->getCode());
-        }
-        if (count($trackingCamping) > 5)
-        {
-            array_pop($trackingCamping);
-        }
-        $cookie = new Cookie('tracking', serialize($trackingCamping), time() + 3600 * 24 * 7);
-
-        $view = $app['twig']->render('Camping/camping.twig', array(
+        $view = $app['twig']->render('Camping/camping.esi.twig', array(
             'locale'                  => $locale,
             'etab'                    => $camping,
             'personnages'             => $personnages,
@@ -461,20 +509,9 @@ class DestinationController implements ControllerProviderInterface
             'personnageAleatoire'     => $personnageAleatoire,
             'sitesAVisiter'           => $sitesAVisiter,
             'events'                  => $events,
-            'webuser'                 => $webuser,
             'historyBack'             => $request->headers->get('referer'),
-            'hasBaignade'             => count($camping->getEtablissementBaignades()) > 0,
-            'referer'                 => $app['url_generator']->generate($request->get('_route'), array(
-                'pays'      => $camping->getPays()->getSlug(),
-                'region'    => $camping->getRegion()->getSlug(),
-                'ville'     => $camping->getVille()->getSlug(),
-                'camping'   => $camping->getSlug()
-            ), true)
-
         ));
 
-        $response = new Response($view, 200, array('Surrogate-Control' => 'content="ESI/1.0"'));
-        $response->headers->setCookie($cookie);
-        return $response;
+        return new Response($view, 200, array('Cache-Control' => sprintf('s-maxage=%s, public', $app['config']->get('vd_config')['httpcache']['camping'])));
     }
 }
