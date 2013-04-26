@@ -1,9 +1,12 @@
 <div id="searchBloc" class="radiusBox fushia">
-    <ul id="switchForm" class="clear">
+    <!--ul id="switchForm" class="clear">
         <li><a id="tabSearchBlocDate" class="active" href="#searchBlocDate"><span>Date</span></a></li>
         <li><a id="tabSearchBlocTrajet" href="#searchBlocTrajet"><span>Trajet</span></a></li>
         <li><a id="tabSearchBlocBudget" href="#searchBlocBudget"><span>Budget</span></a></li>
-    </ul>
+    </ul-->
+    <div class="title">
+        <h2>Je recherche</h2>
+    </div>
     <form id="searchBlocDate" method="post" action="{{ app.request.getRequestURI() }}">
         <fieldset>
             {{ form_errors(searchForm) }}
