@@ -17,7 +17,7 @@
             {% endif %}
             <span class="price linkBlock">
             {% if blocPrix.adult_price_pourcent %}
-                {{ blocPrix.adult_price|number_format }}<span class="fine">&nbsp;</span>
+                {{ blocPrix.adult_price|number_format }}<span class="fine">&nbsp;</span>€
             {% else %}
                 {{ blocPrix.adult_price_without_discounts|number_format }}<span class="fine">&nbsp;</span>€
             {% endif %}
@@ -35,7 +35,7 @@
         {% if blocPrix.proposal_key %}
             <a class="bt sombre big ib" href="{{ path('couloir_detail_sejour', {'proposalKey': blocPrix.proposal_key}) }}" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'SideBar_-_Lien-Reserver', 'Clic_-_Bouton-Reserver']);">{{ "general.reserver"|trans }}</a>
         {% else %}
-            <a class="bt sombre big ib goto" href="#frameResalys" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'SideBar_-_Lien-Prix', 'Clic_-_Bouton-J-en-Profite']);">{{ "general.profite"|trans }}</a>
+            <a class="bt sombre big ib goto" href="#stayBooking" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'SideBar_-_Lien-Prix', 'Clic_-_Bouton-J-en-Profite']);">{{ "general.profite"|trans }}</a>
         {% endif %}
     </div>
 
