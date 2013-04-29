@@ -207,7 +207,8 @@ class EsiController implements ControllerProviderInterface
             $listingContent = $listing->process();
 
             $view = $app['twig']->render('Esi/bonPlanPage.twig', array(
-                'list' => $listingContent,
+                'list'      => $listingContent,
+                'firstEtab' => reset($listingContent['element']),
             ));
 
             return new Response($view, 200, array('Cache-Control' => sprintf('s-maxage=%s, public', $maxAge)));
