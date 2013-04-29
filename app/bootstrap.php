@@ -19,7 +19,9 @@ $app['config']->addParams(array(
     'languages' => Symfony\Component\Yaml\Yaml::parse(sprintf('%s/languages.yml', $app['config']->get('config_dir')))['languages'],
     'version'   => trim(file_get_contents(sprintf('%s/version', $app['config']->get('config_dir')))),
     'security'  => new Cungfoo\Lib\Crud\Security($app),
+    'settings'  => Symfony\Component\Yaml\Yaml::parse(sprintf('%s/settings.yml', $app['config']->get('config_dir'))),
 ));
+
 if (file_exists(sprintf('%s/memcache.yml', $app['config']->get('config_dir')))) {
     $app['config']->addParam('memcache', Symfony\Component\Yaml\Yaml::parse(sprintf('%s/memcache.yml', $app['config']->get('config_dir')))['memcache']);
 }
@@ -42,6 +44,7 @@ $app['twig'] = $app->share($app->extend('twig', function($twig, $app) {
     $twig->addExtension(new \Cungfoo\Lib\Twig\Extension\MediasExtension($app));
     $twig->addExtension(new \VacancesDirectes\Lib\Twig\Extension\ListPaysExtension($app));
     $twig->addExtension(new \Cungfoo\Lib\Twig\Extension\MetadataExtension($app));
+    $twig->addExtension(new \Cungfoo\Lib\Twig\Extension\TruncateHtmlExtension($app));
 
     return $twig;
 }));
@@ -88,8 +91,8 @@ $app->register(new Knp\Provider\ConsoleServiceProvider(), array(
 $app->register(new Silex\Provider\HttpCacheServiceProvider(), array(
     'http_cache.cache_dir' => $app['config']->get('root_dir').'/app/cache',
     'http_cache.options'    => array(
-        'allow_reload'      => true,
-        'allow_revalidate'  => true
+        'allow_reload'      => false,
+        'allow_revalidate'  => false
     )
 ));
 

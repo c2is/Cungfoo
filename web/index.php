@@ -10,7 +10,6 @@
 
 $timeSilex  = microtime(true);
 $timeResalys = array();
-$timeMenu = array();
 
 ini_set('display_errors', 0);
 

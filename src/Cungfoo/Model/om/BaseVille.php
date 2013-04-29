@@ -1967,8 +1967,8 @@ abstract class BaseVille extends BaseObject implements Persistent
     }
 
     // active behavior
-
-
+    
+    
     /**
      * return true is the object is active
      *
@@ -1978,7 +1978,7 @@ abstract class BaseVille extends BaseObject implements Persistent
     {
         return $this->getActive();
     }
-
+    
     /**
      * return true is the object is active locale
      *
@@ -1988,23 +1988,23 @@ abstract class BaseVille extends BaseObject implements Persistent
     {
         return $this->getActiveLocale();
     }
-
+    
     public function getEtablissementsActive($criteria = null, PropelPDO $con = null)
     {
-
+    
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-
+    
         $criteria->add(\Cungfoo\Model\EtablissementPeer::ACTIVE, true);
-
-
+    
+    
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\EtablissementI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\EtablissementPeer::ID, \Cungfoo\Model\EtablissementI18nPeer::alias('i18n_locale', \Cungfoo\Model\EtablissementI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\EtablissementI18nPeer::alias('i18n_locale', \Cungfoo\Model\EtablissementI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\EtablissementI18nPeer::alias('i18n_locale', \Cungfoo\Model\EtablissementI18nPeer::LOCALE), $this->currentLocale);
-
+    
         return $this->getEtablissements($criteria, $con);
     }
     // i18n behavior
@@ -2367,7 +2367,7 @@ abstract class BaseVille extends BaseObject implements Persistent
     }
 
     // crudable behavior
-
+    
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -2380,7 +2380,7 @@ abstract class BaseVille extends BaseObject implements Persistent
     {
         return $this->save($con);
     }
-
+    
     /**
      * @return string
      */
@@ -2388,7 +2388,7 @@ abstract class BaseVille extends BaseObject implements Persistent
     {
         return 'uploads/villes';
     }
-
+    
     /**
      * @return string
      */
@@ -2396,14 +2396,14 @@ abstract class BaseVille extends BaseObject implements Persistent
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-
+    
     /**
      * @return void
      */
     public function getImageDetail1()
     {
         $peer = self::PEER;
-
+    
         $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
             ->select('id')
             ->usePortfolioUsageQuery()
@@ -2414,19 +2414,19 @@ abstract class BaseVille extends BaseObject implements Persistent
             ->find()
             ->toArray()
         ;
-
+    
         return implode(';', $medias);
     }
-
+    
     /**
      * @return void
      */
     public function setImageDetail1($v)
     {
         $peer = self::PEER;
-
+    
         $values = explode(';', $v);
-
+    
         \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
             ->filterByColumnRef('image_detail_1')
@@ -2435,7 +2435,7 @@ abstract class BaseVille extends BaseObject implements Persistent
             ->find()
             ->delete()
         ;
-
+    
         if ($v) {
             foreach ($values as $index => $value) {
                 $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
@@ -2445,7 +2445,7 @@ abstract class BaseVille extends BaseObject implements Persistent
                     ->filterByMediaId($value)
                     ->findOne()
                 ;
-
+    
                 if (!$usage) {
                     $usage = new \Cungfoo\Model\PortfolioUsage();
                     $usage
@@ -2455,23 +2455,23 @@ abstract class BaseVille extends BaseObject implements Persistent
                         ->setMediaId($value)
                     ;
                 }
-
+    
                 $usage
                     ->setSortableRank($index)
                     ->save()
                 ;
             }
-
+    
         }
     }
-
+    
     /**
      * @return void
      */
     public function getImageDetail2()
     {
         $peer = self::PEER;
-
+    
         $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
             ->select('id')
             ->usePortfolioUsageQuery()
@@ -2482,19 +2482,19 @@ abstract class BaseVille extends BaseObject implements Persistent
             ->find()
             ->toArray()
         ;
-
+    
         return implode(';', $medias);
     }
-
+    
     /**
      * @return void
      */
     public function setImageDetail2($v)
     {
         $peer = self::PEER;
-
+    
         $values = explode(';', $v);
-
+    
         \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
             ->filterByColumnRef('image_detail_2')
@@ -2503,7 +2503,7 @@ abstract class BaseVille extends BaseObject implements Persistent
             ->find()
             ->delete()
         ;
-
+    
         if ($v) {
             foreach ($values as $index => $value) {
                 $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
@@ -2513,7 +2513,7 @@ abstract class BaseVille extends BaseObject implements Persistent
                     ->filterByMediaId($value)
                     ->findOne()
                 ;
-
+    
                 if (!$usage) {
                     $usage = new \Cungfoo\Model\PortfolioUsage();
                     $usage
@@ -2523,13 +2523,13 @@ abstract class BaseVille extends BaseObject implements Persistent
                         ->setMediaId($value)
                     ;
                 }
-
+    
                 $usage
                     ->setSortableRank($index)
                     ->save()
                 ;
             }
-
+    
         }
     }
 

@@ -1,13 +1,13 @@
 <nav id="nav"><ul class="topnav fixed-width clear">
     <li class="tab{% if currentRoute == "homepage" %} current{% endif %}">
         <a id="home" href="{{ path( 'homepage' ) }}"{% if currentRoute == "destination_camping" %} onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_MenuPrincipal', 'Lien_-_Home', 'Clic_-_Picto-Accueil']);"{% endif %}>
-            <img  src="{{ asset('images/vacancesdirectes/common/pict/home.png') }}" alt="{{ menu.title|trans }}">
+            <img width="27" height="27" src="{{ asset('images/vacancesdirectes/common/pict/home.png') }}" alt="{{ menu.title|trans }}">
         </a>
     </li>
     {% for key,item in menu.items %}
         <li class="tab{% if key in currentRoute %} current{% endif %}">
             <a>{{ item.title|trans }}{% if item.count is not null %} <small>({{ item.count }})</small>{% endif %}</a>
-            {{ render ( path ( item.route ) ) }}
+            {{ esi ( path ( item.route ) ) }}
         </li>
     {% endfor %}
     <li id="lang">

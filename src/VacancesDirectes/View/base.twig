@@ -21,12 +21,11 @@
     {% if app.context.get('language') != "fr" %}
     <link rel="stylesheet" href="{{ asset('css/vacancesdirectes/screen_'~app.context.get('language')~'.css?v='~app.config.get('version')) }}" media="screen">
     {% endif %}
-    <link rel="stylesheet" href="{{ asset('css/vacancesdirectes/print.css?v='~app.config.get('version')) }}') }}" media="print">
+    <link rel="stylesheet" href="{{ asset('css/vacancesdirectes/print.css?v='~app.config.get('version')) }}" media="print">
 
     <script src="{{ asset('vendor/head.extended.js?v='~app.config.get('version')) }}"></script>
     <script src="{{ asset('vendor/modernizr-2.6.1.min.js?v='~app.config.get('version')) }}"></script>
     <!--[if lt IE 9]><script src="{{ asset('vendor/selectivizr-min.js?v='~app.config.get('version')) }}"></script><![endif]-->
-
 
     <script>
         var templatePath = '{{ asset('') }}';<!-- templatePath : chemin du template en absolue -->
