@@ -77,8 +77,6 @@ jQuery.extend( jQuery.fn, {
     if ($('.tabCampDiapo .slider').length > 0) { sliderPict(); }
     if ($('#tabSurplace .slider').length > 0) { sliderActivite(); }
 
-//Focus champ de connexion
-    if ($('#username').length > 0) { $("#username").focus(); }
 
 
 // init tabs navigation
@@ -90,7 +88,7 @@ jQuery.extend( jQuery.fn, {
             tView = oTabControls.find('a.active').attr('href');
 
         oTabs.css({position:'absolute',left:'-999em', top:'-999em'});
-        if (oHash != '' && oHash != '#frameResalys') {
+        if (oHash.substring(1,4) == 'tab') {
             setTimeout( function(){
                 if ($(oHash).length > 0)
                     $('.tabControls').find('[href='+oHash+']').trigger('click');
@@ -98,7 +96,7 @@ jQuery.extend( jQuery.fn, {
                     tabs(tView, false);
             }, 0);
         } else {
-            tabs(tView, false);
+            //tabs(tView, false);
         }
         oTabLink.click( function(e) {
             var tTabs = $(this),
@@ -259,6 +257,9 @@ jQuery.extend( jQuery.fn, {
     function setZIndex(){
         if ( $('#accountBox').is(':visible') ){
             $('#header').css({zIndex:21});
+
+            //Focus champ de connexion
+            if ($('#username').length > 0) { $("#username").focus(); }
         }
         else {
             $('#header').css({zIndex:20});

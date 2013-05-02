@@ -20,6 +20,6 @@ class ContactWidget extends AbstractWidget
 
     public function getMaxAge()
     {
-        return $this->app['config']->get('vd_config')['httpcache']['long'];
+        return $this->app['config']->get('vd_config')['httpcache']['static'];
     }
 }

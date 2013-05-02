@@ -41,3 +41,13 @@
 
 </div>
 {% endif %}
+
+{% if blocPrix.proposal_key %}
+<script type="text/javascript">
+head.ready(function() {
+    $("#frameResalys").load(function() {
+        $("#frameResalys")[0].contentWindow.handleMonthDisplay({{ blocPrix.start_date[3:2]}});
+    });
+});
+</script>
+{% endif %}
