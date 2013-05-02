@@ -96,7 +96,7 @@ jQuery.extend( jQuery.fn, {
                     tabs(tView, false);
             }, 0);
         } else {
-            //tabs(tView, false);
+            tabs(tView, false);
         }
         oTabLink.click( function(e) {
             var tTabs = $(this),
