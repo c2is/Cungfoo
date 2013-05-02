@@ -455,14 +455,18 @@ class DestinationController implements ControllerProviderInterface
 
         $lastProposal = $app['session']->get('last_proposal');
         if ($lastProposal) {
-            $roomType = explode('-', $lastProposal['proposal']->{'proposal_key'});
+            $periodType = $lastProposal['proposal']->{'period_type_code'};
+            $roomType   = explode('-', $lastProposal['proposal']->{'proposal_key'});
 
-            $semainierQuery = array_merge($semainierQuery, array(
-                'room_type'     => end($roomType),
-                'period_type'   => $lastProposal['proposal']->{'period_type_code'},
-                'start_date'    => $lastProposal['proposal']->{'start_date'},
-                'end_date'      => $lastProposal['proposal']->{'end_date'},
-            ));
+            if (in_array($periodType, array('SS7', 'SS14', 'SS21', 'MM7', 'MM14', 'MS10', 'SM11', 'MS3', 'SM4'))) {
+                $semainierQuery = array_merge($semainierQuery, array(
+                    'room_type'     => end($roomType),
+                    'period_type'   => $periodType,
+                    'start_date'    => $lastProposal['proposal']->{'start_date'},
+                    'end_date'      => $lastProposal['proposal']->{'end_date'},
+                ));
+            }
+
         }
 
         $view = $app['twig']->render('Camping/camping.twig', array(
