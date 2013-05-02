@@ -40,7 +40,7 @@ head.ready(function(){
     // positionne le bloc prix en 1er sur l'étape 1 du couloir
     if($('#yourStay').length  && $('#contentContener').hasClass('detail') ){
         //$('#reservationContener form').prepend($('#yourStay'));
-        $('#stayPrice').before($('#stayOptions'));
+        $('#promoContener').before($('#stayOptions'));
     }
 
 
