@@ -34,7 +34,7 @@ require __DIR__ . '/../src/VacancesDirectes/security.php';
 // load routes code
 require __DIR__ . '/../src/VacancesDirectes/routes.php';
 
-$app['http_cache']->run();
+$app->run();
 
 $timeSilex = microtime(true) - $timeSilex;
 

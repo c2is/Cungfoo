@@ -89,7 +89,7 @@ $app->register(new Knp\Provider\ConsoleServiceProvider(), array(
 
 /* H T T P   C A C H E */
 $app->register(new Silex\Provider\HttpCacheServiceProvider(), array(
-    'http_cache.cache_dir' => $app['config']->get('root_dir').'/app/cache',
+    'http_cache.cache_dir' => $app['config']->get('root_dir').'/app/cache/esi',
     'http_cache.options'    => array(
         'allow_reload'      => false,
         'allow_revalidate'  => false
