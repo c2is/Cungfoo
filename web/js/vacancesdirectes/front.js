@@ -2052,15 +2052,47 @@ function initCritResult(){
     $('.formSearchRefined').find(':checkbox').change(function() {
         var nbCritChecked = $('#formSearchRefined input:checked').length;
         $('#nbCrit').text(nbCritChecked);
-        critSelection();
         displayResults();
+        critSelection();
     });
 
-    $('#filterTri').find('select').change(function() {
-        //var nbCritChecked = $('#formSearchRefined input:checked').length;
-        //$('#nbCrit').text(nbCritChecked);
-        //critSelection();
+    $('#filterTri').find('#dateCrit').change(function() {
+        var dataCritDate = $('#dateCrit').val();
+        if ( dataCritDate == '' ) {
+            items.each( function(){
+                $(this).attr('data-datecrit', true);
+            });
+        } else {
+            items.each( function(){
+                var iDateCrit = $(this).attr('data-date');
+                if ( iDateCrit == dataCritDate ) {
+                    $(this).attr('data-datecrit', true);
+                } else {
+                    $(this).attr('data-datecrit', false);
+                }
+            });
+        }
         displayResults();
+        critSelection();
+    });
+    $('#filterTri').find('#regCrit').change(function() {
+        var dataCritReg = $('#regCrit').val();
+        if ( dataCritReg == '' ) {
+            items.each( function(){
+                $(this).attr('data-regcrit', true);
+            });
+        } else {
+            items.each( function(){
+                var iRegCrit = $(this).attr('data-reg');
+                if ( iRegCrit == dataCritReg ) {
+                   $(this).attr('data-regcrit', true);
+                } else {
+                    $(this).attr('data-regcrit', false);
+                }
+            });
+        }
+        displayResults();
+        critSelection();
     });
 
     if ( $('.formSearchRefined').length ) {
@@ -2099,13 +2131,16 @@ function initCritResult(){
 function launchFilters() {
     items.attr('data-filtered', true);
     items.attr('data-filteredPlus', true);
+    items.attr('data-filtered', true);
+    items.attr('data-filteredPlus', true);
     items.attr('data-ranged', true);
-    items.attr('data-dateCrit', true);
-    items.attr('data-regCrit', true);
+    items.attr('data-datecrit', true);
+    items.attr('data-regcrit', true);
 
     items.each( function(){
         var critPlus = $(this).attr('data-critplus');
         var critPlusReg = new RegExp("(,)", "g");
+
         $(this).attr('data-critplus', critPlus.replace(critPlusReg,' '));
     });
 
@@ -2113,8 +2148,8 @@ function launchFilters() {
     var nbResultsItems = items.length;
     $('.nbResult .nb').text(nbResultsItems);
 
-    //identification des items pour le tri par pertinence
     items.each(function(i) {
+        //identification des items pour le tri par pertinence
         $(this).attr('data-pertinenceID', i);
     });
 
@@ -2337,6 +2372,26 @@ function critSelection() {
         }
     });
 
+     $('#dateCrit').find('option:gt(0)').each( function(){
+        var date = $(this).attr('value');
+        var dateInItems = $(".itemResult[data-filtered=true][data-filteredplus=true][data-ranged=true][data-regcrit=true][data-date="+date+"]").length;
+        if ( dateInItems == 0 ) {
+            $(this).attr('disabled', true);
+        } else {
+            $(this).attr('disabled', false);
+        }
+    });
+     $('#regCrit').find('option:gt(0)').each( function(){
+        var reg = $(this).attr('value');
+         consoleLog(reg);
+        var regInItems = $(".itemResult[data-filtered=true][data-filteredplus=true][data-ranged=true][data-datecrit=true][data-reg="+reg+"]").length;
+        if ( regInItems == 0 ) {
+            $(this).attr('disabled', true);
+        } else {
+            $(this).attr('disabled', false);
+        }
+    });
+
     //console.log('/--- critSelection ---/');
 };
 
@@ -2350,11 +2405,13 @@ function displayResults() {
     var gMarkers = [];
 
     items.each(function() {
-        var dataRanged = $(this).attr('data-ranged');
-        var dataFiltered = $(this).attr('data-filtered');
-        var dataFilteredPlus = $(this).attr('data-filteredPlus');
+        var dataRanged = $(this).attr('data-ranged'),
+            dataFiltered = $(this).attr('data-filtered'),
+            dataFilteredPlus = $(this).attr('data-filteredPlus'),
+            dataDated = $(this).attr('data-datecrit'),
+            dataReged = $(this).attr('data-regcrit');
 
-        if ( dataFiltered == 'true' && dataFilteredPlus == 'true' && dataRanged == 'true' ) {
+        if ( dataFiltered == 'true' && dataFilteredPlus == 'true' && dataRanged == 'true' && dataDated == 'true' && dataReged == 'true' ) {
             $(this).addClass('pagination').fadeIn().next('.disclaim').fadeIn();
             nbItemsDisplayed++;
             var idRsl = $(this).attr('data-id');

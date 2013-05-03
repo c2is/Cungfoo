@@ -701,8 +701,9 @@ h3{margin-top:40px;}
 #widgetRange .noUi-midBar{background-color:#ed145b;}
 #filterTri{clear:both;}#filterTri legend{text-transform:uppercase;color:#8c8a8a;font:bold 17px/20px 'PT Sans Narrow',Arial,Helvetica,sans-serif;margin-left:10px;margin-bottom:10px;}
 #filterTri fieldset{background-color:#e6e5e5;color:#8c8a8a;padding:8px 15px;-webkit-border-radius:10px;border-radius:10px;margin-bottom:20px;}
-#filterTri select{float:left;text-transform:uppercase;font:bold 17px/20px 'PT Sans Narrow',Arial,Helvetica,sans-serif;color:#999;width:240px;margin-right:10px;border:1px solid #e6e5e5;}
+#filterTri select{float:left;text-transform:uppercase;font:bold 17px/20px 'PT Sans Narrow',Arial,Helvetica,sans-serif;color:#999;width:240px;margin-right:10px;border:1px solid #fff;}
 #filterTri .regCritPict,#filterTri .dateCritPict{background:#464545 url(../../images/vacancesdirectes/common/sprites/sprite-27.png) no-repeat 0 -27px;float:left;width:27px;height:26px;margin:2px 1px 0 10px;}
+#filterTri .regCritPict{background-image:url(../../images/vacancesdirectes/common/pict/filtreRegionIcon.png);background-position:0 0;}
 .infoComp{display:none;}
 .disclaim{display:none !important;}
 #results{clear:both;}#results .itemResult{padding:0;}
