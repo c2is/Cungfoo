@@ -77,8 +77,6 @@ jQuery.extend( jQuery.fn, {
     if ($('.tabCampDiapo .slider').length > 0) { sliderPict(); }
     if ($('#tabSurplace .slider').length > 0) { sliderActivite(); }
 
-//Focus champ de connexion
-    if ($('#username').length > 0) { $("#username").focus(); }
 
 
 // init tabs navigation
@@ -90,7 +88,7 @@ jQuery.extend( jQuery.fn, {
             tView = oTabControls.find('a.active').attr('href');
 
         oTabs.css({position:'absolute',left:'-999em', top:'-999em'});
-        if (oHash != '') {
+        if (oHash.substring(1,4) == 'tab') {
             setTimeout( function(){
                 if ($(oHash).length > 0)
                     $('.tabControls').find('[href='+oHash+']').trigger('click');
@@ -189,7 +187,18 @@ jQuery.extend( jQuery.fn, {
         var oAnchor = this.hash;
         var targetOffset = $(oAnchor).offset().top;
         //consoleLog(targetOffset);
-        $('html, body').animate({scrollTop: targetOffset},400);
+        var bodyelem;
+        var clicked = false;
+        if($.browser.safari) bodyelem = $("body")
+        else bodyelem = $('html,body');
+        bodyelem.animate({scrollTop: targetOffset},400,function(){
+            if ( oAnchor ==  "#searchBloc" && !clicked ){
+                setTimeout(function() {
+                    $('#datepickerField').trigger('click');
+                }, 300);
+                clicked = true;
+            }
+        });
         return false;
     });
 
@@ -248,6 +257,9 @@ jQuery.extend( jQuery.fn, {
     function setZIndex(){
         if ( $('#accountBox').is(':visible') ){
             $('#header').css({zIndex:21});
+
+            //Focus champ de connexion
+            if ($('#username').length > 0) { $("#username").focus(); }
         }
         else {
             $('#header').css({zIndex:20});
@@ -1158,7 +1170,9 @@ jQuery.extend( jQuery.fn, {
         $('#searchBlocDate').find('select').sSelect({ddMaxHeight: '300px'});
         switchPlaceSelect();
         defineDurationSelect();
-        toggleSearchCriteria();
+        if ( $('body').hasClass('home') ) {
+            toggleSearchCriteria();
+        }
     }
 
 
@@ -1367,17 +1381,17 @@ function defineDurationSelect(){
 }
 
 // toggle search criteria
-var toggleState = 0;
 function toggleSearchCriteria(){
+    var toggleSearchCriteriaState = 0;
     //console.log("################################## toggleSearchCriteria()  ##################################");
     $('.toggleButton').live('click', function(e){
-        toggleState = toggleState == 0 ? 1 : 0;
+        toggleSearchCriteriaState = toggleSearchCriteriaState == 0 ? 1 : 0;
         $(this).parents('#searchBloc').toggleClass('opened');
         e.preventDefault();
         var $button = $(this);
-        var buttonText = $button.text().replace(toggleState == 0 ? '-' : '+',toggleState == 0 ? '+' : '-');
+        var buttonText = $button.text().replace(toggleSearchCriteriaState == 0 ? '-' : '+',toggleSearchCriteriaState == 0 ? '+' : '-');
         $button.html(buttonText);
-        var $container = $button.prev();
+        var $container = $button.prev('.toggleContainer');
         $container.stop().toggle();
     });
 }
@@ -2038,8 +2052,47 @@ function initCritResult(){
     $('.formSearchRefined').find(':checkbox').change(function() {
         var nbCritChecked = $('#formSearchRefined input:checked').length;
         $('#nbCrit').text(nbCritChecked);
-        critSelection();
         displayResults();
+        critSelection();
+    });
+
+    $('#filterTri').find('#dateCrit').change(function() {
+        var dataCritDate = $('#dateCrit').val();
+        if ( dataCritDate == '' ) {
+            items.each( function(){
+                $(this).attr('data-datecrit', true);
+            });
+        } else {
+            items.each( function(){
+                var iDateCrit = $(this).attr('data-date');
+                if ( iDateCrit == dataCritDate ) {
+                    $(this).attr('data-datecrit', true);
+                } else {
+                    $(this).attr('data-datecrit', false);
+                }
+            });
+        }
+        displayResults();
+        critSelection();
+    });
+    $('#filterTri').find('#regCrit').change(function() {
+        var dataCritReg = $('#regCrit').val();
+        if ( dataCritReg == '' ) {
+            items.each( function(){
+                $(this).attr('data-regcrit', true);
+            });
+        } else {
+            items.each( function(){
+                var iRegCrit = $(this).attr('data-reg');
+                if ( iRegCrit == dataCritReg ) {
+                   $(this).attr('data-regcrit', true);
+                } else {
+                    $(this).attr('data-regcrit', false);
+                }
+            });
+        }
+        displayResults();
+        critSelection();
     });
 
     if ( $('.formSearchRefined').length ) {
@@ -2078,11 +2131,16 @@ function initCritResult(){
 function launchFilters() {
     items.attr('data-filtered', true);
     items.attr('data-filteredPlus', true);
+    items.attr('data-filtered', true);
+    items.attr('data-filteredPlus', true);
     items.attr('data-ranged', true);
+    items.attr('data-datecrit', true);
+    items.attr('data-regcrit', true);
 
     items.each( function(){
         var critPlus = $(this).attr('data-critplus');
         var critPlusReg = new RegExp("(,)", "g");
+
         $(this).attr('data-critplus', critPlus.replace(critPlusReg,' '));
     });
 
@@ -2090,8 +2148,8 @@ function launchFilters() {
     var nbResultsItems = items.length;
     $('.nbResult .nb').text(nbResultsItems);
 
-    //identification des items pour le tri par pertinence
     items.each(function(i) {
+        //identification des items pour le tri par pertinence
         $(this).attr('data-pertinenceID', i);
     });
 
@@ -2314,6 +2372,26 @@ function critSelection() {
         }
     });
 
+     $('#dateCrit').find('option:gt(0)').each( function(){
+        var date = $(this).attr('value');
+        var dateInItems = $(".itemResult[data-filtered=true][data-filteredplus=true][data-ranged=true][data-regcrit=true][data-date="+date+"]").length;
+        if ( dateInItems == 0 ) {
+            $(this).attr('disabled', true);
+        } else {
+            $(this).attr('disabled', false);
+        }
+    });
+     $('#regCrit').find('option:gt(0)').each( function(){
+        var reg = $(this).attr('value');
+         consoleLog(reg);
+        var regInItems = $(".itemResult[data-filtered=true][data-filteredplus=true][data-ranged=true][data-datecrit=true][data-reg="+reg+"]").length;
+        if ( regInItems == 0 ) {
+            $(this).attr('disabled', true);
+        } else {
+            $(this).attr('disabled', false);
+        }
+    });
+
     //console.log('/--- critSelection ---/');
 };
 
@@ -2327,11 +2405,13 @@ function displayResults() {
     var gMarkers = [];
 
     items.each(function() {
-        var dataRanged = $(this).attr('data-ranged');
-        var dataFiltered = $(this).attr('data-filtered');
-        var dataFilteredPlus = $(this).attr('data-filteredPlus');
+        var dataRanged = $(this).attr('data-ranged'),
+            dataFiltered = $(this).attr('data-filtered'),
+            dataFilteredPlus = $(this).attr('data-filteredPlus'),
+            dataDated = $(this).attr('data-datecrit'),
+            dataReged = $(this).attr('data-regcrit');
 
-        if ( dataFiltered == 'true' && dataFilteredPlus == 'true' && dataRanged == 'true' ) {
+        if ( dataFiltered == 'true' && dataFilteredPlus == 'true' && dataRanged == 'true' && dataDated == 'true' && dataReged == 'true' ) {
             $(this).addClass('pagination').fadeIn().next('.disclaim').fadeIn();
             nbItemsDisplayed++;
             var idRsl = $(this).attr('data-id');

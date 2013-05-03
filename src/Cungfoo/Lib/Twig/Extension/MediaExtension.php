@@ -21,7 +21,7 @@ class MediaExtension extends \Twig_Extension
     {
         $id = explode(';', $id);
 
-        return PortfolioMediaQuery::create()
+        $mediaString = PortfolioMediaQuery::create()
             ->_if($value)
                 ->select($value)
             ->_endif()
@@ -31,6 +31,12 @@ class MediaExtension extends \Twig_Extension
             ->endUse()
             ->findOne()
         ;
+
+        if (!is_null($value) && is_null($mediaString)) {
+            $mediaString = 'images/vacancesdirectes/common/images/search-default.jpg';
+        }
+
+        return $mediaString;
     }
 
     public function getName()

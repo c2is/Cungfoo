@@ -41,15 +41,27 @@ include('includes/top.php'); ?>
             </div>
 
             <form id="filterTri" action="">
+                <legend>Trouver les meilleurs bon plans</legend>
                 <fieldset>
-                    <label for="">Trier par</label>
+                    <span class="dateCritPict">&nbsp;</span>
+                    <select id="dateCrit">
+                        <option value="">Toutes les dates</option>
+                        <option value="dateCrit1">du 11/08/2012 au 28/08/2012</option>
+                        <option value="dateCrit2">du 20/04/2013 au 27/04/2013</option>
+                    </select>
+                    <span class="regCritPict">&nbsp;</span>
+                    <select id="regCrit">
+                        <option value="">Toutes les régions</option>
+                        <option value="regCrit1">Bretagne</option>
+                        <option value="regCrit2">Belgique</option>
+                    </select>
                 </fieldset>
             </form>
 
             <span class="infoComp">Comparateur</span>
 
             <div id="results" class="clear">
-                <div data-id="/c2is/Cungfoo/web/index_dev.php/camping/infobox/4" class="itemResult clear" data-critplus="SRV1,SRV3,SRV7,AL1,TH4,TH3,TH2,TH5,SC1,SC2,SC3,SC4,SC5,TH1,AL2" data-crit="SIT4,SIT3,SIT7,DST1,">
+                <form data-id="/c2is/Cungfoo/web/index_dev.php/camping/infobox/4" class="itemResult clear" data-critplus="SRV1,SRV3,SRV7,AL1,TH4,TH3,TH2,TH5,SC1,SC2,SC3,SC4,SC5,TH1,AL2" data-crit="SIT4,SIT3,SIT7,DST1," data-date="dateCrit1" data-reg="regCrit1">
                     <!-- item.title -->
                     <div class="itemResultTitle">
                         <input type="checkbox" name="compar" value="idCamp1">
@@ -150,7 +162,7 @@ include('includes/top.php'); ?>
                         </div>
 
                     </div>
-                </div>
+                </form>
 
                 <div class="disclaim">
                     Utiliser le comparateur en cliquant sur
@@ -158,12 +170,12 @@ include('includes/top.php'); ?>
                 </div>
 
 
-                <div data-id="/c2is/Cungfoo/web/index_dev.php/camping/infobox/2" class="itemResult clear" data-critplus="SRV2,SRV6,SRV7,AL1,TH4,TH3,TH2,TH5,SC1,SC2,SC3,SC4,SC5,TH1,AL2" data-crit="SIT4,SIT3,SIT7,DST1,">
+                <form data-id="/c2is/Cungfoo/web/index_dev.php/camping/infobox/2" class="itemResult clear" data-critplus="SRV2,SRV6,SRV7,AL1,TH4,TH3,TH2,TH5,SC1,SC2,SC3,SC4,SC5,TH1,AL2" data-crit="SIT4,SIT3,SIT7,DST1," data-date="dateCrit2" data-reg="regCrit2">
                     <!-- item.title -->
                     <div class="itemResultTitle">
                         <input type="checkbox" name="compar" value="idCamp1">
                         Palavas Camping ******
-                        <span class="dates">du 11/08/2012 au 28/08/2012</span>
+                        <span class="dates">du 20/04/2013 au 27/04/2013</span>
                     </div>
                     <!-- item.left -->
                     <div class="itemResultLeft">
@@ -259,9 +271,9 @@ include('includes/top.php'); ?>
                         </div>
 
                     </div>
-                </div>
+                </form>
 
-                <div data-id="/c2is/Cungfoo/web/index_dev.php/camping/infobox/3" class="itemResult clear" data-critplus="SRV4,SRV5,AL1,TH4,TH3,TH2,TH5,SC1,SC2,SC3,SC4,SC5,TH1,AL2" data-crit="SIT4,SIT3,SIT7,DST1,">
+                <form data-id="/c2is/Cungfoo/web/index_dev.php/camping/infobox/3" class="itemResult clear" data-critplus="SRV4,SRV5,AL1,TH4,TH3,TH2,TH5,SC1,SC2,SC3,SC4,SC5,TH1,AL2" data-crit="SIT4,SIT3,SIT7,DST1," data-date="dateCrit1" data-reg="regCrit2">
                     <!-- item.title -->
                     <div class="itemResultTitle">
                         <input type="checkbox" name="compar" value="idCamp3">
@@ -362,10 +374,10 @@ include('includes/top.php'); ?>
                         </div>
 
                     </div>
-                </div>
+                </form>
 
 
-                <div data-id="/c2is/Cungfoo/web/index_dev.php/camping/infobox/1" class="itemResult clear" data-critplus="SRV1,SRV2,SRV3,AL1,TH4,TH3,TH2,TH5,SC1,SC2,SC3,SC4,SC5,TH1,AL2" data-crit="SIT4,SIT3,SIT7,DST1,">
+                <form data-id="/c2is/Cungfoo/web/index_dev.php/camping/infobox/1" class="itemResult clear" data-critplus="SRV1,SRV2,SRV3,AL1,TH4,TH3,TH2,TH5,SC1,SC2,SC3,SC4,SC5,TH1,AL2" data-crit="SIT4,SIT3,SIT7,DST1," data-date="dateCrit1" data-reg="regCrit1">
                     <!-- item.title -->
                     <div class="itemResultTitle">
                         <input type="checkbox" name="compar" value="idCamp4">
@@ -466,7 +478,7 @@ include('includes/top.php'); ?>
                         </div>
 
                     </div>
-                </div>
+                </form>
 
             </div><!-- // #result -->
 

@@ -1,7 +1,7 @@
 <div id="locations" class="subnav">
     <div class="title">{{ "menu.decouvrez_locations" | trans }}</div>
     <div class="subtitle">{{ "menu.decouvrez_locations_type" | trans }}</div>
-    <div class="clear"> 
+    <div class="clear">
         {% for categoryTypeHebergement in categoryTypeHebergements %}
         <div class="radiusBox2 greyC left bgImg linkParent">
             <div class="view" style="background-image:url('{{ asset(categoryTypeHebergement.imageMenu | media('file')) }}')">
@@ -17,7 +17,7 @@
         {% for capacite in capacites %}
         <div class="radiusBox greyC left bgImg capacity linkParent">
             <a class="linkBlock" href="{{ path('location_category_type_hebergement', {'categoryTypeHebergement': capacite.slug}) }}">
-                <img class="view" src="{{ asset(capacite.imageMenu | media('file')) }}" alt="" />
+                <img class="view" width="100" height="50" src="{{ asset(capacite.imageMenu | media('file')) }}" alt="" />
                 <span>{{ capacite.name }}</span>
             </a>
         </div>

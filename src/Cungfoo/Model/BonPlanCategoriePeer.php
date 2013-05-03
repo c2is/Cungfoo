@@ -22,13 +22,15 @@ class BonPlanCategoriePeer extends BaseBonPlanCategoriePeer
     {
         $objects = BonPlanCategorieQuery::create()
             ->useI18nQuery($locale)
-            ->withColumn('bon_plan_categorie_i18n.slug', 'slug')
             ->endUse()
-            ->select('slug')
             ->find()
-            ->toArray()
         ;
 
-        return implode('|', $objects);
+        $outputs = array();
+        foreach ($objects as $object) {
+            $outputs[] = $object->getSlug();
+        }
+
+        return implode('|', $outputs);
     }
 }

@@ -207,25 +207,34 @@ class PortfolioController implements ControllerProviderInterface
             if (file_put_contents($absolutePath, $decodedData)) {
                 $relativePath = $media->getUploadDir().'/'.$image;
                 $imageInfos   = getimagesize($absolutePath);
+                if ($imageInfos['channels'] == 3) { // channels sera 3 pour des images RGB et 4 pour des images CMYK.
 
-                $media
-                    ->setWidth($imageInfos[0])
-                    ->setHeight($imageInfos[1])
-                    ->setType($imageInfos['mime'])
-                    ->setSize($media->convertFileSize(filesize($absolutePath)))
-                    ->setFile($relativePath)
-                    ->setLocale('fr')
-                    ->setTitle($name)
-                    ->setLocale('de')
-                    ->setTitle($name)
-                    ->save()
-                ;
+                    $media
+                        ->setWidth($imageInfos[0])
+                        ->setHeight($imageInfos[1])
+                        ->setType($imageInfos['mime'])
+                        ->setSize($media->convertFileSize(filesize($absolutePath)))
+                        ->setFile($relativePath)
+                        ->setLocale('fr')
+                        ->setTitle($name)
+                        ->setLocale('de')
+                        ->setTitle($name)
+                        ->save()
+                    ;
 
-                $json['success'] = true;
-                $json['html'] = $app['twig']->render('Crud/Portfolio/table_line.twig', array(
-                    'line' => $media,
-                    'used' => false,
-                ));
+                    $json['success'] = true;
+                    $json['html'] = $app['twig']->render('Crud/Portfolio/table_line.twig', array(
+                        'line' => $media,
+                        'used' => false,
+                    ));
+                }
+                else {
+                    $json['html'] = sprintf('<tr class="portfolio-media-item unused"><td colspan="9">%s</td></tr>',
+                        $app->trans('portfolio_media.format_ignore')
+                    );
+
+                    unlink($absolutePath);
+                }
             }
 
             return json_encode($json);

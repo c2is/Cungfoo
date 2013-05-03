@@ -59,5 +59,5 @@ $app->error(function (\Exception $e, $code) use ($app) {
 
     $page = 404 == $code ? '404.twig' : '500.twig';
 
-    return new Response($app['twig']->render($page, array('code' => $code)), $code);
+    return new Response($app['twig']->render($page, array('code' => $code)), $code, array('Surrogate-Control' => 'content="ESI/1.0"', 'Cache-Control' => 'no-cache'));
 });

@@ -1,9 +1,12 @@
 <div id="searchBloc" class="radiusBox fushia">
-    <ul id="switchForm" class="clear">
+    <!--ul id="switchForm" class="clear">
         <li><a id="tabSearchBlocDate" class="active" href="#searchBlocDate"><span>Date</span></a></li>
         <li><a id="tabSearchBlocTrajet" href="#searchBlocTrajet"><span>Trajet</span></a></li>
         <li><a id="tabSearchBlocBudget" href="#searchBlocBudget"><span>Budget</span></a></li>
-    </ul>
+    </ul-->
+    <div class="title">
+        <h2>{{ "search.title" | trans }}</h2>
+    </div>
     <form id="searchBlocDate" method="post" action="{{ app.request.getRequestURI() }}">
         <fieldset>
             {{ form_errors(searchForm) }}
@@ -20,7 +23,6 @@
                     </div>
                 </li>
                 <li>
-                <li>
                     <div id="SearchDate_selectContainer0" class="selectContainer clear">
                         {{ form_widget(searchForm.isBasseSaison) }}
                         {{ form_label(searchForm.nbJoursHauteSaison) }}
@@ -29,9 +31,8 @@
                         {{ form_widget(searchForm.nbJoursBasseSaison) }}
                     </div>
                 </li>
-                </li>
-                <li id="SearchDate_selectContainer1" class="selectContainer clear">
-                    <div class="selectContainer clear">
+                <li>
+                    <div id="SearchDate_selectContainer1" class="selectContainer clear">
                         {{ form_label(searchForm.destination) }}
                         {{ form_widget(searchForm.destination) }}
                     </div>

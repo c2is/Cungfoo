@@ -35,6 +35,22 @@
     </table>
 
     <!-- ====================
+                CACHE
+         ==================== -->
+    <table name="cache_generator">
+        <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true"/>
+        <column name="url" type="varchar" required="true"/>
+        <column name="cache_time" type="integer" required="false" defaultValue="1800"/>
+        <column name="cached_at" type="timestamp" required="false"/>
+
+        <behavior name="timestampable"/>
+        <behavior name="active"/>
+        <behavior name="crudable">
+            <parameter name="crud_prefix" value="/cache" />
+        </behavior>
+    </table>
+
+    <!-- ====================
                 SCHEMA
          ==================== -->
     <table name="etablissement">

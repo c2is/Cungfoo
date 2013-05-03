@@ -197,7 +197,8 @@ class DateType extends AppAwareType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'constraints' => new Assert\Callback(array('methods' => array('isValide')))
+            'constraints'     => new Assert\Callback(array('methods' => array('isValide'))),
+            'csrf_protection' => false,
         ));
     }
 

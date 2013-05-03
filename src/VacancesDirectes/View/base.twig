@@ -16,14 +16,17 @@
 
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
-    <!--[if lt IE 9]><link rel="stylesheet" href="{{ asset('css/vacancesdirectes/ie.css?v='~app.config.get('version')) }}"><![endif]-->
     <link rel="stylesheet" href="{{ asset('css/vacancesdirectes/screen.css?v='~app.config.get('version')) }}" media="screen">
+    <!--[if lt IE 9]><link rel="stylesheet" href="{{ asset('css/vacancesdirectes/ie.css?v='~app.config.get('version')) }}"><![endif]-->
     {% if app.context.get('language') != "fr" %}
     <link rel="stylesheet" href="{{ asset('css/vacancesdirectes/screen_'~app.context.get('language')~'.css?v='~app.config.get('version')) }}" media="screen">
     {% endif %}
-    <link rel="stylesheet" href="{{ asset('css/vacancesdirectes/print.css') }}" media="print">
+    <link rel="stylesheet" href="{{ asset('css/vacancesdirectes/print.css?v='~app.config.get('version')) }}" media="print">
 
     <script src="{{ asset('vendor/head.extended.js?v='~app.config.get('version')) }}"></script>
+    <script src="{{ asset('vendor/modernizr-2.6.1.min.js?v='~app.config.get('version')) }}"></script>
+    <!--[if lt IE 9]><script src="{{ asset('vendor/selectivizr-min.js?v='~app.config.get('version')) }}"></script><![endif]-->
+
     <script>
         var templatePath = '{{ asset('') }}';<!-- templatePath : chemin du template en absolue -->
         var sGoogleApiKey = 'AIzaSyBaRlrfkxxMWr5zLkbCBJL21MnYNIYIm9I';
@@ -95,16 +98,11 @@
 
     {% include 'footer.twig' %}
 
-    <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
-    <script>window.jQuery || document.write('<script src='+ templatePath + '"vendor/jquery-1.8.3.min.js">\x3C/script>')</script>
+    <script src="{{ asset('vendor/jquery-1.8.3.min.js?v='~app.config.get('version')) }}"></script>
 
     <script>
         head.js(
-            {modernizr: templatePath + "vendor/modernizr-2.6.1.min.js?v={{ app.config.get('version') }}"}, // test support html5 functionality
-            {selectivizr: templatePath+"vendor/selectivizr-min.js?v={{ app.config.get('version') }}"}, // extend css selectors for IE
-            {jqPlugins: templatePath + "js/vacancesdirectes/plugins.js?v={{ app.config.get('version') }}"},
-            {frontJS: templatePath + "js/vacancesdirectes/front.js?v={{ app.config.get('version') }}"},
-            {search: templatePath + "js/vacancesdirectes/searchSelectChange.js?v={{ app.config.get('version') }}"}
+            {front: templatePath + "js/vacancesdirectes/plugFront.min.js?v={{ app.config.get('version') }}"}
             {% block headjs %}{% endblock %}
         );
 
@@ -112,11 +110,8 @@
             $('.itemGetCampingFiche').bind('click', function() {
                 var form = $(this).closest('form');
                 var target = $(this).hasClass('linkParent') ? $(this).find('a.linkBlock').attr('href') : $(this).attr('href');
-
                 form.attr('action', "{{ path('session_proposal') }}?target=" + target);
-
                 form.submit();
-
                 return false;
             });
         });

@@ -1,0 +1,32 @@
+<div id="topLocations" class="locationForwards clear">
+    <div class="stamp grey">
+        <h2>{{ "home.topcamping" | trans }}</h2>
+    </div>
+    {% if topCampings | length %}
+    {% for camping in topCampings %}
+        {% if loop.index <= 3 %}
+        {% set campingPath = url('destination_camping', {'pays': camping.etablissement.pays.slug, 'region': camping.etablissement.region.slug, 'ville': camping.etablissement.ville.slug, 'camping': camping.etablissement.slug }) %}
+        <div class="element clear linkParent">
+            <div class="left">
+                <img class="boxborder" src="{{ asset(camping.etablissement.vignette | media('file')) }}" width="119" height="86" alt="" />
+                {#<iframe src="//www.facebook.com/plugins/like.php?href={{ campingPath }}&amp;send=false&amp;layout=button_count&amp;width=119&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=20&amp;locale={{ app.context.get('language') }}_{{ app.context.get('language') | upper }}" scrolling="no" frameborder="0" style="border:none; width:119px; height:20px;" allowTransparency="true"></iframe>#}
+            </div>
+            <div class="details left">
+                <span class="title">{{ camping.etablissement.name }} {{ camping.etablissement.categorie.stars }}</span>
+                <span class="region">{{ camping.etablissement.ville.region }}</span>
+                {#<span class="condition">{{ camping.etablissement.minimumPriceLabel }}</span>#}
+            </div>
+            <a{% if camping.etablissement.minimumPrice == 0 %} style="display: none"{% endif %} href="{{ campingPath }}" class="stain fushia cover linkBlock">
+                    <span>
+                        {{ "general.a_partir_de" | trans }}<br />
+                        <span class="price linkBlock">{{ camping.etablissement.minimumPrice | number_format(0,'','') }}<span class="fine">&nbsp;</span>€</span>
+                        {{ "general.la_semaine" | trans }}
+                    </span>
+            </a>
+        </div>
+        {% endif %}
+    {% endfor %}
+    {% endif %}
+
+    <a href="{{ path('top_campings') }}" class="bt link right">{{ "home.topcamping.link" | trans  ({'%number%': topCampings|length }) }}</a>
+</div>

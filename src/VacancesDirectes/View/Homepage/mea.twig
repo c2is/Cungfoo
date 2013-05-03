@@ -1,0 +1,37 @@
+<div id="sliderWrapper">
+    <a id="sliderPrev" class="radiusBox yellow arrowLeft"></a>
+    <div id="sliderContainer">
+        <div id="sliderBackground"></div>
+        <ul id="slider" class="fixed-width clear">
+            {% for mea in mea %}
+                <li class="slide">
+                    <a class="sliderPhoto" href="{{ mea.lien }}" title="{{ mea.titre }}">
+                        <img class="large boxborder" width="340" height="220" src="{{ asset(mea.illustrationPath | media('file')) }}" alt="{{ mea.titre }}" />
+                        <img class="sliderPostmark" width="181" height="100" src="{{ asset('images/vacancesdirectes/common/ui/postmark.png') }}" alt="" />
+                    </a>
+                    <div class="sliderBackground"></div>
+                    <a href="{{ mea.lien }}" class="sliderStain first">
+                        <div class="content">
+                            <p class="headline" title="{{ mea.titre }}">{{ mea.titre }}</p>
+                            <p class="catchline">{{ mea.accroche }}</p>
+                            {% if mea.lien != "" %}<button class="bt orange big ib" type="submit">{{ mea.titreLien }}</button>{% endif %}
+                        </div>
+                    </a>
+                    {% if mea.prix != "" %}
+                    <a href="{{ mea.lien }}" class="sliderStain second">
+                        <div class="content">
+                            <p>{{ "general.a_partir_de" | trans }}</p>
+                            <p class="price">{{ mea.prix }}<span class="fine"> </span>€</p>
+                            <p class="duration">{{ "general.la_nuit" | trans }}</p>
+                        </div>
+                    </a>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <a id="sliderNext" class="radiusBox yellow arrowRight"></a>
+
+    <div class="pagination clear" id="sliderPager"></div>
+</div>

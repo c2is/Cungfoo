@@ -7,6 +7,7 @@ use Silex\Application,
     Silex\ControllerProviderInterface;
 
 use Symfony\Component\HttpFoundation\Request,
+    Symfony\Component\HttpFoundation\Response,
     Symfony\Component\HttpKernel\Exception\NotFoundHttpException,
     Symfony\Component\Routing\Route;
 
@@ -56,13 +57,15 @@ class MenuController implements ControllerProviderInterface
         {
             $searchForm = $app['form.factory']->create(new AutocompleteType($app));
 
-            return $app['twig']->render('Menu/destinations.twig', array(
+            $view = $app['twig']->render('Menu/destinations.twig', array(
                 'searchForm'                => $searchForm->createView(),
                 'etabByAlphabeticalOrder'   => $this->getEtablissementByAlphabeticalOrder($app),
                 'regionsByDestinations'     => $this->getRegionsByDestinations($app),
                 'regionEspagne'             => $this->getRegionByCode($app, 'ESP'),
                 'regionItalie'              => $this->getRegionByCode($app, 'ITA'),
             ));
+
+            return new Response($view, 200, array('Cache-Control' => sprintf('s-maxage=%s, public', $app['config']->get('vd_config')['httpcache']['long'])));
         })
         ->bind('menu_destinations');
 
@@ -83,15 +86,19 @@ class MenuController implements ControllerProviderInterface
                 ->findActive()
             ;
 
-            return $app['twig']->render('Menu/locations.twig', array(
+            $view = $app['twig']->render('Menu/locations.twig', array(
                 'categoryTypeHebergements' => $categoryTypeHebergements,
                 'capacites'                => $capacites,
             ));
+
+            return new Response($view, 200, array('Cache-Control' => sprintf('s-maxage=%s, public', $app['config']->get('vd_config')['httpcache']['long'])));
         })
         ->bind('menu_locations');
 
         $controllers->get('/bons-plans', function () use ($app)
         {
+            $maxAge = 0;
+
             $categories = BonPlanCategorieQuery::create()
                 ->distinct()
                 ->addAscendingOrderByColumn('sortable_rank')
@@ -101,9 +108,11 @@ class MenuController implements ControllerProviderInterface
                 ->findActive()
             ;
 
-            return $app['twig']->render('Menu/bonsPlans.twig', array(
+            $view = $app['twig']->render('Menu/bonsPlans.twig', array(
                 'categories'    => $categories,
             ));
+
+            return new Response($view, 200, array('Cache-Control' => sprintf('s-maxage=%s, public', $app['config']->get('vd_config')['httpcache']['medium'])));
         })
         ->bind('menu_bons_plans');
 

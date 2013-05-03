@@ -39,11 +39,15 @@ $console->add(new \Cungfoo\Command\Job\DaemonCommand());
 $console->add(new \VacancesDirectes\Command\Load\Etablissement\CoordinatesCommand());
 $console->add(new \VacancesDirectes\Command\Load\Etablissement\RelatedCommand());
 $console->add(new \VacancesDirectes\Command\Slug\GenerateCommand());
+$console->add(new \VacancesDirectes\Command\Cache\GenerateCommand());
 $console->add(new \VacancesDirectes\Command\Database\CheckIntegrityCommand());
 $console->add(new \VacancesDirectes\Command\Translations\UpdateCommand());
 $console->add(new \VacancesDirectes\Command\InitCommand());
 $console->add(new \VacancesDirectes\Command\UpdateCommand());
 
 $console->add(new \Cungfoo\Command\Patch\PortfolioCommand());
+
+$console->add(new \Cungfoo\Command\Assets\JsCompileCommand());
+$console->add(new \Cungfoo\Command\Assets\ImageCompileCommand());
 
 $console->run();

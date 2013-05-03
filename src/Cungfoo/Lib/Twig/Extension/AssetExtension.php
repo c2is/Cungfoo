@@ -24,7 +24,16 @@ class AssetExtension extends Twig_Extension
 
     public function asset($url)
     {
-        return sprintf('%s/%s', $this->app['request']->getBasePath(), ltrim($url, '/'));
+        $basePath = $this->app['config']->settings['assets_base_url'];
+
+        if ($basePath) {
+            $basePath = sprintf("%s://%s", $this->app['request']->getScheme(), $basePath);
+        }
+        else {
+            $basePath = $this->app['request']->getBasePath();
+        }
+
+        return sprintf('%s/%s', rtrim($basePath, '/'), ltrim($url, '/'));
     }
 
     /**

@@ -17,12 +17,13 @@
     {% endif %}
 
     <script src="{{ asset('vendor/head.extended.js?v='~app.config.get('version')) }}"></script>
+    <script src="{{ asset('vendor/modernizr-2.6.1.min.js?v='~app.config.get('version')) }}"></script>
+    <!--[if lt IE 9]><script src="{{ asset('vendor/selectivizr-min.js?v='~app.config.get('version')) }}"></script><![endif]-->
     <script>var templatePath = '{{ asset('') }}';</script><!-- templatePath : chemin du template en absolue -->
     <script src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
 </head>
 <body class="booking">
     <header class="clear noprint">
-        {% include "Menu/couloir.twig" %}
         <div id="header" class="fixed-width clear">
             <div id="headerRight">
                 {#<a id="account" href="#">Mon compte</a>#}
@@ -72,17 +73,31 @@
         {% endblock %}
     </div>
 
-    {% include 'footer.twig' %}
+    <footer>
+        <div class="footer-links" class="full-width">
+            {% if app.context.get('language') == 'fr' %}<a href="http://ce.vacances-directes.com/"{% if app.request.get('_route') == 'destination_camping' %} onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Footer', 'Lien_-_Footer-Bottom', 'Clic_-_Lien-VD-CE']);"{% endif %}>Vacances Directes CE</a>&nbsp;-&nbsp;{% endif %}
+            {# TODO <a href="#_">{{ "footer.contact" | trans }}</a> - #}
+            {# TODO <a href="{{ path('edito_by_slug', {slug: 'charte-qualite'}) }}">{{ "footer.charte_qualite" | trans }}</a> - #}
+            <a href="{{ path('edito_by_slug', {slug: 'conditions-generales'}) }}"{% if app.request.get('_route') == 'destination_camping' %} onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Footer', 'Lien_-_Footer-Bottom', 'Clic_-_Lien-CGV']);"{% endif %}>{{ "footer.conditions_generales_de_location" | trans }}</a> -
+            {% if app.context.get('language') != 'de' %}<a href="{{ path('demande_annulation_form') }}"{% if app.request.get('_route') == 'destination_camping' %} onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Footer', 'Lien_-_Footer-Bottom', 'Clic_-_Lien-Annulation']);"{% endif %}>{{ "footer.annulation" | trans }}</a> -{% endif %}
+            {# TODO <a href="{{ path('edito_by_slug', {slug: 'faq'}) }}">{{ "footer.faq" | trans }}</a> - #}
+            {# TODO <a href="{{ path('edito_by_slug', {slug: 'guide-pratique'}) }}">{{ "footer.guide_pratique" | trans }}</a> - #}
+            {# TODO <a href="{{ path('edito_by_slug', {slug: 'plan-du-site'}) }}">{{ "footer.plan_du_site" | trans }}</a> - #}
+            {# TODO <a href="{{ path('edito_by_slug', {slug: 'credits'}) }}">{{ "footer.credits" | trans }}</a> - #}
+            <a href="{{ path('edito_by_slug', {slug: 'mentions-legales'}) }}"{% if app.request.get('_route') == 'destination_camping' %} onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Footer', 'Lien_-_Footer-Bottom', 'Clic_-_Lien-Mentions-Legales']);"{% endif %}>{{ "footer.mentions_legales" | trans }}</a>
+            <span class="card transac">{{ "footer.transactions_securisees" | trans }}</span>
+            {% if app.context.get('language') != 'de' %}<span class="card visa">{{ "footer.cb_visa" | trans }}</span>{% endif %}
+            <span class="card master">{{ "footer.masterCard" | trans }}</span>
+        </div>
+    </footer>
 
-    <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
-    <script>window.jQuery || document.write('<script src='+ templatePath + 'vendor/jquery-1.8.3.min.js">\x3C/script>')</script>
+
+    <script src="{{ asset('vendor/jquery-1.8.3.min.js?v='~app.config.get('version')) }}"></script>
 
     <script>
         head.js(
-            {modernizr: templatePath + "vendor/modernizr-2.6.1.min.js?v={{ app.config.get('version') }}"}, // test support html5 functionality
-            {selectivizr: templatePath+"vendor/selectivizr-min.js?v={{ app.config.get('version') }}"}, // extend css selectors for IE
-            {jqPlugins: templatePath + "js/vacancesdirectes/plugins.js?v={{ app.config.get('version') }}"},
-            {search: templatePath + "js/vacancesdirectes/searchSelectChange.js?v={{ app.config.get('version') }}"}
+            {jqPlugins: templatePath + "js/vacancesdirectes/plugins.min.js?v={{ app.config.get('version') }}"},
+            {search: templatePath + "js/vacancesdirectes/searchSelectChange.min.js?v={{ app.config.get('version') }}"}
             {% block headjs %}{% endblock %}
         );
     </script>
