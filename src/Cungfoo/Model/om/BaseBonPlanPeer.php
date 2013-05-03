@@ -944,7 +944,7 @@ abstract class BaseBonPlanPeer
     }
 
     // crudable behavior
-    
+
     /**
      * The default locale to use for translations
      * @var        string
@@ -958,7 +958,7 @@ abstract class BaseBonPlanPeer
         ;
     }
     // seo behavior
-    
+
     /**
      * The default locale to use for translations
      * @var        string

@@ -1026,7 +1026,7 @@ abstract class BaseAvantagePeer
     }
 
     // crudable behavior
-    
+
     /**
      * The default locale to use for translations
      * @var        string
@@ -1040,7 +1040,7 @@ abstract class BaseAvantagePeer
         ;
     }
     // seo behavior
-    
+
     /**
      * The default locale to use for translations
      * @var        string

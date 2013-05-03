@@ -855,7 +855,7 @@ abstract class BasePointInteretPeer
     }
 
     // crudable behavior
-    
+
     /**
      * The default locale to use for translations
      * @var        string
@@ -869,7 +869,7 @@ abstract class BasePointInteretPeer
         ;
     }
     // seo behavior
-    
+
     /**
      * The default locale to use for translations
      * @var        string
