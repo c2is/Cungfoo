@@ -33,6 +33,10 @@ $(function() {
         $('#customerAreaContener').find('select').sSelect({ddMaxHeight: '300px'});
     }
 
+    if ($('#reservation').length) {
+        setTimeout( '$.colorbox({href:"#fiveMinutes", top:"10%", overlayClose: false, escKey: false, className: "fiveM", inline:true, width:288});',100*60 );
+    }
+
 });
 
 head.ready(function(){
@@ -60,6 +64,10 @@ head.ready(function(){
         }
 
     }
+
+    /*if($('#greyBoxes').length){
+        $('#greyBoxes').waypoint('sticky');
+    }*/
 
 
 

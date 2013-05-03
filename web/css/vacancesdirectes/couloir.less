@@ -600,7 +600,7 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
 }
 
 /*RIGHT*/
-#greyBoxes{
+//#greyBoxes{
   #needHelpBloc{width:288px;height:246px;color:@colorBlanc;background:url("../../images/vacancesdirectes/common/pict/help-bloc.jpg") no-repeat 0 0;
     .stamp{margin-bottom:10px;}
     h2{margin-left:0;position:relative;
@@ -622,7 +622,12 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
       .master{background-position:0 -80px;width:48px;height:28px;}
     }
   }
-}
+  #fiveMinutes{margin:0;padding: 10px 15px;border: 4px solid;
+    .content{padding: 10px 0;}
+    .text{line-height: 1.5;}
+    .bouton{text-align: center;margin-top: 10px;}
+  }
+//}
 
 #please_wait_layer{position:absolute;top:0;left:0;width:100%;height:100%;background:url(../../images/vacancesdirectes/common/ui/loadingResalys.gif) no-repeat fixed 50% 50% @colorBgBlanc;text-align:center;font:normal 15px @arial;padding:100px 20px;opacity:0.8;
   #please_wait_layer_content{position:fixed;top:50%;left:50%;padding:33px 20px 20px;width:976px;margin-left:-488px;}
@@ -656,6 +661,61 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
 }
 
 
+/*
+    ColorBox Core Style:
+    The following CSS is consistent between example themes and should not be altered.
+*/
+#colorbox, #cboxOverlay, #cboxWrapper{position:absolute; top:0; left:0; z-index:9999; overflow:hidden;}
+#cboxOverlay{position:fixed; width:100%; height:100%;}
+#cboxMiddleLeft, #cboxBottomLeft{clear:left;}
+#cboxContent{position:relative;}
+#cboxLoadedContent{overflow:auto;}
+#cboxTitle{margin:0;}
+#cboxLoadingOverlay, #cboxLoadingGraphic{position:absolute; top:0; left:0; width:100%; height:100%;}
+#cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow{cursor:pointer;}
+.cboxPhoto{float:left; margin:auto; border:0; display:block; max-width:none;}
+.cboxIframe{width:100%; height:100%; display:block; border:0;}
+#colorbox, #cboxContent, #cboxLoadedContent{box-sizing:content-box;}
+
+/*Colorbox Bons Plans */
+#colorbox.cbBP{overflow:visible;
+  #cboxWrapper{background-color:@colorRubricOrange;._border-radius(25px);}
+  #cboxTitle{display:none;}
+  #cboxLoadedContent{background-color:transparent;border:0;}
+  #cboxWrapper, #cboxContent, #cboxLoadedContent{overflow:visible !important;}
+  #cboxClose{right:10px;}
+}
+
+/*
+    User Style:
+    Change the following styles to modify the appearance of ColorBox.  They are
+    ordered & tabbed in a way that represents the nesting of the generated HTML.
+*/
+#cboxOverlay{background:#464545;}
+#cboxOverlay.fiveM{background:#fff;}
+#colorbox,
+#colorbox * {
+  -webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing: content-box;
+}
+#cboxContent{margin-top:32px; overflow:visible;}
+.cboxIframe{background:@colorBlanc;}
+#cboxError{padding:50px; }
+
+#cboxLoadingOverlay{background:#000;}
+#cboxTitle{position:absolute; top:-22px; left:0; color:@colorBlanc; font-size:15px; font-weight:bold;}
+#cboxCurrent{position:absolute; top:-22px; right:205px; text-indent:-9999px;}
+#cboxSlideshow, #cboxPrevious, #cboxNext/*, #cboxClose*/{text-indent:-9999px; width:20px; height:20px; position:absolute; top:-20px; background:url(../../images/vacancesdirectes/common/ui/controls.png) no-repeat 0 0;}
+#cboxPrevious{background-position:0px 0px; right:44px;}
+#cboxPrevious:hover{background-position:0px -25px;}
+#cboxNext{background-position:-25px 0px; right:22px;}
+#cboxNext:hover{background-position:-25px -25px;}
+.fiveM #cboxClose{display: none;}
+#cboxClose:hover{/*background-position:-50px -25px;*/}
+.cboxSlideshow_on #cboxPrevious, .cboxSlideshow_off #cboxPrevious{right:66px;}
+.cboxSlideshow_on #cboxSlideshow{background-position:-75px -25px; right:44px;}
+.cboxSlideshow_on #cboxSlideshow:hover{background-position:-100px -25px;}
+.cboxSlideshow_off #cboxSlideshow{background-position:-100px 0px; right:44px;}
+.cboxSlideshow_off #cboxSlideshow:hover{background-position:-75px -25px;}
 
 /*
 * Vacances directes select style
