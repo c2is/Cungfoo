@@ -76,7 +76,13 @@ class WrapperController implements ControllerProviderInterface
         $asset = $this->app['twig']->getExtension('asset')->asset($url);
 
         if (!$absolute) {
-            return $this->app['request']->getBasePath() . '/' . ltrim($url, '/');
+            $currentUrl = rtrim($this->app->url('homepage'), '/');
+            $currentUrlExploded = explode('/', $currentUrl);
+
+            unset($currentUrlExploded[count($currentUrlExploded) -1]);
+
+            $domain = implode('/', $currentUrlExploded);
+            return $domain . '/' . ltrim($url, '/');
         }
 
         if ($this->app['config']->settings['assets_base_url']) {
