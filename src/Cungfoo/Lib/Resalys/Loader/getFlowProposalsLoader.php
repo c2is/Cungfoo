@@ -9,6 +9,17 @@ class getFlowProposalsLoader extends AbstractLoader
 {
     public function load($data, $locale, \PropelPDO $con)
     {
+        foreach (EtablissementTypeHebergementQuery::create()->find() as $etabTypeHeb) {
+            $etabTypeHeb
+                ->setLocale($locale)
+                ->setMinimumPrice(null)
+                ->setMinimumPriceStartDate(null)
+                ->setMinimumPriceEndDate(null)
+                ->setMinimumPriceDiscountLabel(null)
+                ->save($con)
+            ;
+        }
+
         foreach ($data->etabListFlowProposals->etabListFlowProposal as $etabTypeHeb)
         {
             $objectEtabTypeHeb = EtablissementTypeHebergementQuery::create()
@@ -23,9 +34,9 @@ class getFlowProposalsLoader extends AbstractLoader
 
             if ($objectEtabTypeHeb)
             {
-                $minimumPrice = property_exists($etabTypeHeb, 'minimum_net_price') ? $etabTypeHeb->{'minimum_net_price'} : '';
-                $startDate = property_exists($etabTypeHeb, 'start_date') ? $etabTypeHeb->{'start_date'} : '';
-                $endDate = property_exists($etabTypeHeb, 'end_date') ? $etabTypeHeb->{'end_date'} : '';
+                $minimumPrice  = property_exists($etabTypeHeb, 'minimum_net_price') ? $etabTypeHeb->{'minimum_net_price'} : '';
+                $startDate     = property_exists($etabTypeHeb, 'start_date') ? $etabTypeHeb->{'start_date'} : '';
+                $endDate       = property_exists($etabTypeHeb, 'end_date') ? $etabTypeHeb->{'end_date'} : '';
                 $discountLabel = property_exists($etabTypeHeb, 'minimum_price_discount_label') ? $etabTypeHeb->{'minimum_price_discount_label'} : '';
 
                 $objectEtabTypeHeb
