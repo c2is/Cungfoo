@@ -14,6 +14,7 @@ use Symfony\Component\HttpFoundation\Request,
 use Cungfoo\Model\EtablissementQuery,
     Cungfoo\Model\PointInteretPeer,
     Cungfoo\Model\EventPeer,
+    Cungfoo\Model\BonPlan,
     Cungfoo\Model\BonPlanQuery,
     Cungfoo\Model\BonPlanPeer,
     Cungfoo\Model\BonPlanCategoriePeer,
@@ -22,7 +23,8 @@ use Cungfoo\Model\EtablissementQuery,
 use VacancesDirectes\Lib\Listing,
     VacancesDirectes\Lib\SearchEngine,
     VacancesDirectes\Lib\SearchParams,
-    VacancesDirectes\Lib\Listing\DispoListing;
+    VacancesDirectes\Lib\Listing\DispoListing,
+    VacancesDirectes\Form\Type\BonPlan\TopFilterType;
 
 use Resalys\Lib\Client\DisponibiliteClient;
 
@@ -100,16 +102,24 @@ class BonsPlansController implements ControllerProviderInterface
                 return $app->redirect($searchEngine->getRedirect());
             }
 
-            $bonsPlans = BonPlanQuery::create()
-                ->joinWithI18n($locale)
-                ->filterByBonPlanCategorie($categorie)
-                ->findActive()
-            ;
+            $listingContent = array();
+            foreach ($categorie->getBonPlansActifs() as $bonPlan) {
+                if (count($listingContent) == 0) {
+                    $listingContent = $this->runClient($app, $bonPlan);
+                }
+                else {
+                    $listingContent = $this->runClient($app, $bonPlan, $listingContent);
+                }
+            }
+
+            $topFilterForm = $app['form.factory']->create(new TopFilterType($app), $categorie);
 
             return $app->renderView('BonsPlansCategorie\index.twig', array(
-                'categorie'       => $categorie,
-                'bonsPlans'       => $bonsPlans,
-                'searchForm'      => $searchEngine->getView(),
+                'categorie'     => $categorie,
+                'searchForm'    => $searchEngine->getView(),
+                'topFilterForm' => $topFilterForm->createView(),
+                'list'          => $listingContent,
+                'firstEtab'     => reset($listingContent['element']),
             ));
         })
         ->assert('cat', $assertUrlBonPlanCategorie)
@@ -171,5 +181,41 @@ class BonsPlansController implements ControllerProviderInterface
         })->bind('bonsplans_dernieres_minutes');
 
         return $controllers;
+    }
+
+    protected function runClient(Application $app, BonPlan $bonPlan, $elements = null)
+    {
+        $startDate  = $bonPlan->getDateStart('U') ?: date('U');
+        $dayRange = $bonPlan->getDayRange() ?: 7;
+
+        $searchParams = new SearchParams($app);
+        $searchParams
+            ->setStartDate(date('Y-m-d', $startDate))
+            ->setNbDays($dayRange)
+            ->addTheme($bonPlan->getRegionsCodes())
+            ->addEtab($bonPlan->getEtablissementsCodes())
+            ->addRoomType($bonPlan->getTypeHebergementsCodes())
+            ->setNbAdults($bonPlan->getNbAdultes())
+            ->setNbChildren($bonPlan->getNbEnfants())
+        ;
+
+        $client = new DisponibiliteClient($app['config']->get('root_dir'), $app['context']->get('language'));
+        $client->addOptions($searchParams->generate());
+
+        $listing = new DispoListing($app);
+        $listing->setClient($client);
+
+        $result = $listing->process();
+
+        foreach ($result['element'] as $key => $element) {
+            $result['element'][$key]['bon_plan'] = $bonPlan->getId();
+        }
+
+        if ($elements != null) {
+            $result['element'] = array_merge($elements['element'], $result['element']);
+            $result = $listing->orderByPrice($result);
+        }
+
+        return $result;
     }
 }

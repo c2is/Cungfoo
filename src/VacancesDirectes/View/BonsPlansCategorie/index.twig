@@ -1,4 +1,4 @@
-{% extends "BonsPlansCategorie/base.twig" %}
+{% extends "base.twig" %}
 
 {% block title %}
 {% spaceless %}
@@ -12,54 +12,40 @@
 {% endspaceless %}
 {% endblock %}
 
-{% block topLeftColumn %}
+{% block leftColumn %}
 
-    {% include "Breadcrumbs/_breadcrumbs.twig" %}
+{% include "Breadcrumbs/_breadcrumbs.twig" %}
 
-    <div class="clear">
+<div class="clear">
         {% if categorie.seoH1 %}
         <h1>{{ categorie.seoH1 }}</h1>
         {% else %}
         <h1>{{ categorie.name }}</h1>
         {% endif %}
-        <span class="h2-like">{{ categorie.subtitle }}</span>
-        <div class="richText">{{ categorie.description | raw }}</div> {# Description #}
-    </div>
-{% endblock %}
-
-{% block topRightColumn %}
-    {% include 'Form/_search_engine.twig' %}
-{% endblock %}
-
-{% block column %}
-<h2 class="h3-like">{{ "general.nos_offres" | trans }}</h2>
-<div id="bpItemsList" class="clear">
-    {% for bonPlan in bonsPlans %}
-        <div class="bpItem itemResult bgImg {% if bonPlan.miseEnAvant == false %}half{% endif %}">
-            <div class="itemResultTitle">{{ bonPlan.name }}</div>
-            <div class="view">
-                <img class="bg" src="{{ asset(bonPlan.imageListe | media('file')) }}" alt="{{ bonPlan.name }}" />
-            </div>
-            <div class="content clear">
-                <p>{{ bonPlan.description | raw }}</p>
-                {% if bonPlan.activeCompteur == true %}
-                    <div class="bpCount left">
-                        {{ "general.plus_que" | trans }}<br />
-                        <span>{{ bonPlan.compteur.d }} J</span>
-                        <span>{{ bonPlan.compteur.h }} H</span>
-                        <span>{{ bonPlan.compteur.i }} MN</span>
-                    </div>
-                {% endif %}
-                <div class="stain fushia cover linkBlock" href="#" style="background-size: cover;">
-                    <span>
-                        {{ "general.a_partir_de" | trans }}<br>
-                        <span class="price linkBlock">{{ bonPlan.prix }}<span class="fine">&nbsp;</span>€</span>
-                        {{ "general.la_semaine" | trans }}
-                    </span>
-                </div>
-                <a href="{{ path('bonsplans', {'slug': bonPlan.slug}) }}" class="bt fushia big ib right">{{ "general.voir_offre" | trans }}</a>
-            </div>
-        </div>
-    {% endfor %}
+    <span class="h2-like">{{ categorie.subtitle }}</span>
+    <div class="richText">{{ categorie.description | raw }}</div> {# Description #}
 </div>
+
+<h2 class="h3-like">{{ "general.nos_offres" | trans }}</h2>
+
+{% if list.element|length > 0 %}
+{% include 'Listing/_filters.twig' %}
+{% endif %}
+{% include 'Listing/_gmap.twig' %}
+
+<form id="filterTri" action="">
+    <fieldset>
+        <span class="dateCritPict">&nbsp;</span>
+        {{ form_widget(topFilterForm.bon_plans) }}
+        <span class="regCritPict">&nbsp;</span>
+        {{ form_widget(topFilterForm.regions) }}
+    </fieldset>
+</form>
+
+{% include 'Listing/_listing.twig' %}
+
+{% endblock %}
+
+{% block rightColumn %}
+    {% include 'Form/_search_engine.twig' %}
 {% endblock %}

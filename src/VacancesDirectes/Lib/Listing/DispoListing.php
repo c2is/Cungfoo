@@ -71,7 +71,7 @@ class DispoListing extends AbstractListing
             }
         }
 
-        return $results;
+        return $this->orderByPrice($results);
     }
 
     protected function addElement($proposal, $results, &$loopIndex)
@@ -125,6 +125,28 @@ class DispoListing extends AbstractListing
         $results['contrePropos'] = $this->contrePropos;
 
         $loopIndex++;
+
+        return $results;
+    }
+
+    public function orderByPrice($results)
+    {
+        $elementsOrderByPrice = array();
+        foreach ($results['element'] as $key => $element) {
+            $proposal = reset($element['extra']);
+            $elementsOrderByPrice[(int)$proposal->{'adult_price'}][$key] = $element;
+        }
+
+        ksort($elementsOrderByPrice);
+
+        $results['element'] = array();
+        foreach ($elementsOrderByPrice as $elementOrderByPrice) {
+            ksort($elementOrderByPrice);
+
+            foreach ($elementOrderByPrice as $key => $element) {
+                $results['element'][$key] = $element;
+            }
+        }
 
         return $results;
     }

@@ -3,6 +3,7 @@
 namespace Cungfoo\Lib\Twig\Extension;
 
 use \Twig_Extension;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * @author Guillaume Manen <guillaume.manen@gmail.com>
@@ -24,6 +25,9 @@ class EsiExtension extends Twig_Extension
 
     public function esi($path)
     {
+        $test = $this->app['twig']->getExtension('silex')->render($this->app['twig'], $path);
+        var_dump((string)$test);die;
+
         if ($this->app['debug'])
         {
             return $this->app['twig']->getExtension('silex')->render($this->app['twig'], $path);

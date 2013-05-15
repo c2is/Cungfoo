@@ -2056,8 +2056,8 @@ function initCritResult(){
         critSelection();
     });
 
-    $('#filterTri').find('#dateCrit').change(function() {
-        var dataCritDate = $('#dateCrit').val();
+    $('#filterTri').find('#TopFilter_bon_plans').change(function() {
+        var dataCritDate = $('#TopFilter_bon_plans').val();
         if ( dataCritDate == '' ) {
             items.each( function(){
                 $(this).attr('data-datecrit', true);
@@ -2075,8 +2075,8 @@ function initCritResult(){
         displayResults();
         critSelection();
     });
-    $('#filterTri').find('#regCrit').change(function() {
-        var dataCritReg = $('#regCrit').val();
+    $('#filterTri').find('#TopFilter_regions').change(function() {
+        var dataCritReg = $('#TopFilter_regions').val();
         if ( dataCritReg == '' ) {
             items.each( function(){
                 $(this).attr('data-regcrit', true);
@@ -2372,7 +2372,7 @@ function critSelection() {
         }
     });
 
-     $('#dateCrit').find('option:gt(0)').each( function(){
+     $('#TopFilter_bon_plans').find('option:gt(0)').each( function(){
         var date = $(this).attr('value');
         var dateInItems = $(".itemResult[data-filtered=true][data-filteredplus=true][data-ranged=true][data-regcrit=true][data-date="+date+"]").length;
         if ( dateInItems == 0 ) {
@@ -2381,7 +2381,7 @@ function critSelection() {
             $(this).attr('disabled', false);
         }
     });
-     $('#regCrit').find('option:gt(0)').each( function(){
+     $('#TopFilter_regions').find('option:gt(0)').each( function(){
         var reg = $(this).attr('value');
          consoleLog(reg);
         var regInItems = $(".itemResult[data-filtered=true][data-filteredplus=true][data-ranged=true][data-datecrit=true][data-reg="+reg+"]").length;
