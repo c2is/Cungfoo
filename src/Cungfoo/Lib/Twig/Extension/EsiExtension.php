@@ -26,7 +26,6 @@ class EsiExtension extends Twig_Extension
     public function esi($path)
     {
         $test = $this->app['twig']->getExtension('silex')->render($this->app['twig'], $path);
-        var_dump((string)$test);die;
 
         if ($this->app['debug'])
         {

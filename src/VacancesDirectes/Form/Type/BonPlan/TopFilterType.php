@@ -10,6 +10,7 @@ use Symfony\Component\Form\FormBuilderInterface,
 use Symfony\Component\Validator\ExecutionContext;
 
 use Cungfoo\Form\Type\AppAwareType,
+    Cungfoo\Model\RegionQuery,
     Cungfoo\Model\BonPlanQuery;
 
 class TopFilterType extends AppAwareType
@@ -19,25 +20,41 @@ class TopFilterType extends AppAwareType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        $app = $this->getApplication();
+
         $category = $options['data'];
 
-        $bonPlansQuery = BonPlanQuery::create()
+        $bonPlans = BonPlanQuery::create()
             ->filterByBonPlanCategorie($category)
+            ->findActive()
         ;
 
-        $builder->add('bon_plans', 'model', array(
+        $bonsPlansChoices = array();
+        foreach ($bonPlans as $bonPlan) {
+            $bonsPlansChoices['dateCrit'.$bonPlan->getId()] = $app->trans('general.du').' '.$bonPlan->getDateStart('d/m/Y').' '.$app->trans('general.du').' '.date('d/m/Y', $bonPlan->getDateEnd());
+        }
+
+        $builder->add('bon_plans', 'choice', array(
+            'choices'       => $bonsPlansChoices,
             'required'      => false,
             'label'         => 'top_filter.bon_plans',
-            'class'         => 'Cungfoo\Model\BonPlan',
-            'query'         => $bonPlansQuery,
             'empty_value'   => false,
             'property_path' => false,
         ));
 
-        $builder->add('regions', 'model', array(
+        $regions = RegionQuery::create()
+            ->findActive()
+        ;
+
+        $regionsChoices = array();
+        foreach ($regions as $region) {
+            $regionsChoices['regCrit'.$region->getId()] = (string) $region;
+        }
+
+        $builder->add('regions', 'choice', array(
+            'choices'       => $regionsChoices,
             'required'      => false,
             'label'         => 'top_filter.regions',
-            'class'         => 'Cungfoo\Model\Region',
             'empty_value'   => 'top_filter.all_regions',
             'property_path' => false,
         ));

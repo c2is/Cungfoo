@@ -44,13 +44,13 @@ include('includes/top.php'); ?>
                 <legend>Trouver les meilleurs bon plans</legend>
                 <fieldset>
                     <span class="dateCritPict">&nbsp;</span>
-                    <select id="dateCrit">
+                    <select id="TopFilter_bon_plans">
                         <option value="">Toutes les dates</option>
                         <option value="dateCrit1">du 11/08/2012 au 28/08/2012</option>
                         <option value="dateCrit2">du 20/04/2013 au 27/04/2013</option>
                     </select>
                     <span class="regCritPict">&nbsp;</span>
-                    <select id="regCrit">
+                    <select id="TopFilter_regions">
                         <option value="">Toutes les régions</option>
                         <option value="regCrit1">Bretagne</option>
                         <option value="regCrit2">Belgique</option>
