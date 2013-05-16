@@ -2351,7 +2351,7 @@ function critSelection() {
     //init de l'affichage du nombre de resultats par critere
     $('.contentCritPlus').find('input').each( function(){
         var rslTypePlus = $(this).attr('id');
-        var rslTypeinresultPlus = $(".itemResult[data-filtered=true][data-filteredplus=true][data-ranged=true][data-critplus~="+rslTypePlus+"]").length;
+        var rslTypeinresultPlus = $(".itemResult[data-filtered=true][data-datecrit=true][data-regcrit=true][data-filteredplus=true][data-ranged=true][data-critplus~="+rslTypePlus+"]").length;
         if ( rslTypeinresultPlus == 0 ) {
             $(this).siblings('.nbItem').text('');
             $(this).attr('disabled', true).parent().addClass('disableLabel');
@@ -2362,7 +2362,7 @@ function critSelection() {
     });
     $('.contentCrit').find('input').each( function(){
         var rslType = $(this).attr('id');
-        var rslTypeinresult = $('.itemResult[data-filteredplus=true][data-ranged=true][data-crit='+rslType+']').length;
+        var rslTypeinresult = $('.itemResult[data-filteredplus=true][data-datecrit=true][data-regcrit=true][data-ranged=true][data-crit='+rslType+']').length;
         if ( rslTypeinresult == 0 ) {
             $(this).siblings('.nbItem').text('');
             $(this).attr('disabled', true).parent().addClass('disableLabel');
@@ -2372,24 +2372,27 @@ function critSelection() {
         }
     });
 
-     $('#TopFilter_bon_plans').find('option:gt(0)').each( function(){
+     $('#TopFilter_bon_plans').find('option').each( function(){
         var date = $(this).attr('value');
-        var dateInItems = $(".itemResult[data-filtered=true][data-filteredplus=true][data-ranged=true][data-regcrit=true][data-date="+date+"]").length;
-        if ( dateInItems == 0 ) {
-            $(this).attr('disabled', true);
-        } else {
-            $(this).attr('disabled', false);
-        }
+        if ( date != 0 )
+            var dateInItems = $(".itemResult[data-filtered=true][data-filteredplus=true][data-ranged=true][data-regcrit=true][data-date="+date+"]").length;
+             consoleLog(dateInItems);
+            if ( dateInItems == 0 ) {
+                $(this).attr('disabled', true);
+            } else {
+                $(this).attr('disabled', false);
+            }
     });
-     $('#TopFilter_regions').find('option:gt(0)').each( function(){
+     $('#TopFilter_regions').find('option').each( function(){
         var reg = $(this).attr('value');
-         consoleLog(reg);
-        var regInItems = $(".itemResult[data-filtered=true][data-filteredplus=true][data-ranged=true][data-datecrit=true][data-reg="+reg+"]").length;
-        if ( regInItems == 0 ) {
-            $(this).attr('disabled', true);
-        } else {
-            $(this).attr('disabled', false);
-        }
+        if ( reg != 0 )
+            var regInItems = $(".itemResult[data-filtered=true][data-filteredplus=true][data-ranged=true][data-datecrit=true][data-reg="+reg+"]").length;
+             consoleLog(regInItems);
+            if ( regInItems == 0 ) {
+                $(this).attr('disabled', true);
+            } else {
+                $(this).attr('disabled', false);
+            }
     });
 
     //console.log('/--- critSelection ---/');
@@ -2484,7 +2487,7 @@ function orderList() {
 //pagination liste de resultats
 function listPagination() {
     $('#results .itemResult').attr('data-num', '');
-    var itemsPagination = $('[data-filtered=true][data-filteredPlus=true][data-ranged=true]');
+    var itemsPagination = $('[data-filtered=true][data-filteredPlus=true][data-datecrit=true][data-regcrit=true]');
     var nbResults = itemsPagination.length;
     var btNext = $('#btPlusResults');
 
