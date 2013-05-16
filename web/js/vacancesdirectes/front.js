@@ -74,7 +74,7 @@ jQuery.extend( jQuery.fn, {
     if ($('.linkParent').length > 0) { addLinkBlock(); }
 
 // init Sliders
-    if ($('.tabCampDiapo .slider').length > 0) { sliderPict(); }
+    if ($('.tabCampDiapo .slider').length > 0) { makeSlider(); }
     if ($('#tabSurplace .slider').length > 0) { sliderActivite(); }
 
 
@@ -1782,7 +1782,35 @@ function numDate(d){
  *                       FICHE SLIDER
  * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
  */
+function makeSlider(){
+    var loadSliderBt = '<span class="makeSlider" onclick="loadSlider();"><span class="bt big">Load Slider</span></span>',
+        slider = $('.tabCampDiapo').find('.slider');
+    slider.append(loadSliderBt);
+    /*loadSliderBt.live('click', function(){
+        aSlider.replaceWith('<img />');
+    });*/
+    //sliderPict();
+}
+function loadSlider(){
+    var slider = $('.tabCampDiapo').find('.slider'),
+        aSlider = slider.find('a'),
+        loadSliderBt = $('.makeSlider');
+    aSlider.replaceWith('<img />');
+    loadSliderBt.fadeOut().remove();
+    sliderPict();
 
+}
+jQuery.fn.replaceWith = function(replacement) {
+    return this.each (function()     {
+        var element = $(this);
+        $(this).after(replacement);
+        for (var i = 0; i < this.attributes.length; i++) {
+            element.next().attr(this.attributes[i].nodeName, this.attributes[i].nodeValue).attr;
+            element.next().attr({ src : element.attr('href') }).removeAttr('href');
+        }
+        element.remove();
+    })
+}
 function sliderPict() {
     var slider = $('.tabCampDiapo').find('.slider'),
         btLeft = '<button class="prev" onclick="javascript:_gaq.push([\'_trackEvent\', \'Nav-VD_-_Page_-_Fiche-Camping\', \'Contenu_-_Visionneuse\', \'Clic_-_Bouton-Precedent\']);">&lt;</button>',
