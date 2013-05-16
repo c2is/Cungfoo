@@ -1783,22 +1783,31 @@ function numDate(d){
  * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
  */
 function makeSlider(){
-    var loadSliderBt = '<span class="makeSlider" onclick="loadSlider();"><span class="bt big">Load Slider</span></span>',
-        slider = $('.tabCampDiapo').find('.slider');
-    slider.append(loadSliderBt);
+    var btLeft = '<button class="prev" onclick="loadSlider(\'prev\');">&lt;</button>',
+        btRight = '<button class="next" onclick="loadSlider(\'next\');">&gt;</button>',
+        //loadSliderBt = '<span class="makeSlider" onclick="loadSlider();"><span class="bt big">Load Slider</span></span>',
+        slider = $('.tabCampDiapo').find('.slider'),
+        btns = btLeft + btRight;
+    slider.append(btns);
+    //slider.append(loadSliderBt);
     /*loadSliderBt.live('click', function(){
         aSlider.replaceWith('<img />');
     });*/
     //sliderPict();
 }
-function loadSlider(){
-    var slider = $('.tabCampDiapo').find('.slider'),
+function loadSlider(dir){
+    var direct = dir,
+        slider = $('.tabCampDiapo').find('.slider'),
         aSlider = slider.find('a'),
-        loadSliderBt = $('.makeSlider');
+        //loadSliderBt = $('.makeSlider'),
+        btLeft = slider.find('.prev'),
+        btRight = slider.find('.next'),
+        loader = '<span class="loadingSlider" />';
+    slider.append(loader);
     aSlider.replaceWith('<img />');
-    loadSliderBt.fadeOut().remove();
-    sliderPict();
-
+    btLeft.attr("onclick", 'javascript:_gaq.push([\'_trackEvent\', \'Nav-VD_-_Page_-_Fiche-Camping\', \'Contenu_-_Visionneuse\', \'Clic_-_Bouton-Precedent\']);');
+    btRight.attr("onclick", 'javascript:_gaq.push([\'_trackEvent\', \'Nav-VD_-_Page_-_Fiche-Camping\', \'Contenu_-_Visionneuse\', \'Clic_-_Bouton-Suivant\']);');
+    sliderPict(direct);
 }
 jQuery.fn.replaceWith = function(replacement) {
     return this.each (function()     {
@@ -1811,14 +1820,16 @@ jQuery.fn.replaceWith = function(replacement) {
         element.remove();
     })
 }
-function sliderPict() {
-    var slider = $('.tabCampDiapo').find('.slider'),
-        btLeft = '<button class="prev" onclick="javascript:_gaq.push([\'_trackEvent\', \'Nav-VD_-_Page_-_Fiche-Camping\', \'Contenu_-_Visionneuse\', \'Clic_-_Bouton-Precedent\']);">&lt;</button>',
-        btRight = '<button class="next" onclick="javascript:_gaq.push([\'_trackEvent\', \'Nav-VD_-_Page_-_Fiche-Camping\', \'Contenu_-_Visionneuse\', \'Clic_-_Bouton-Suivant\']);">&gt;</button>',
-        btns = btLeft + btRight;
-    slider.append(btns);
+function sliderPict(dir) {
+    var dirSlide = dir,
+        slider = $('.tabCampDiapo').find('.slider');
+        //btLeft = '<button class="prev" onclick="javascript:_gaq.push([\'_trackEvent\', \'Nav-VD_-_Page_-_Fiche-Camping\', \'Contenu_-_Visionneuse\', \'Clic_-_Bouton-Precedent\']);">&lt;</button>',
+        //btRight = '<button class="next" onclick="javascript:_gaq.push([\'_trackEvent\', \'Nav-VD_-_Page_-_Fiche-Camping\', \'Contenu_-_Visionneuse\', \'Clic_-_Bouton-Suivant\']);">&gt;</button>',
+        //btns = btLeft + btRight;
+    //slider.append(btns);
 
     $('.slide', slider).carouFredSel({
+        onCreate: function(){ slider.find('.loadingSlider').remove(); },
         circular: true,
         infinite: true,
         prev:{
@@ -1832,7 +1843,8 @@ function sliderPict() {
             }
         },
         auto: false
-    });
+    }).trigger(dirSlide, 1);
+
     $('[name="affPhoto"]').change( function() {
         var nVal = $(this).val();
         if (nVal == "all") {
