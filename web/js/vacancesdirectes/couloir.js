@@ -33,9 +33,10 @@ $(function() {
         $('#customerAreaContener').find('select').sSelect({ddMaxHeight: '300px'});
     }
 
-    if ($('#reservation').length) {
+    // [TODO] A activer => LGU : script pour lancement popin out-of-session
+    /*if ($('#reservation').length) {
         setTimeout( '$.colorbox({href:"#fiveMinutes", top:"10%", overlayClose: false, escKey: false, className: "fiveM", inline:true, width:288});',100*60 );
-    }
+    }*/
 
 });
 
