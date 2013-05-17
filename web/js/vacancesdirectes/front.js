@@ -1785,21 +1785,22 @@ function numDate(d){
 function makeSlider(){
     var btLeft = '<button class="prev" onclick="loadSlider(\'prev\');">&lt;</button>',
         btRight = '<button class="next" onclick="loadSlider(\'next\');">&gt;</button>',
-        //loadSliderBt = '<span class="makeSlider" onclick="loadSlider();"><span class="bt big">Load Slider</span></span>',
         slider = $('.tabCampDiapo').find('.slider'),
         btns = btLeft + btRight;
     slider.append(btns);
-    //slider.append(loadSliderBt);
-    /*loadSliderBt.live('click', function(){
-        aSlider.replaceWith('<img />');
-    });*/
-    //sliderPict();
+    $('[name="affPhoto"]').change( function() {
+        var filter = $(this).val();
+        if ( $('.caroufredsel_wrapper', slider).length ){
+            filterSlider(filter);
+        } else {
+            loadSlider(filter);
+        }
+    });
 }
 function loadSlider(dir){
     var direct = dir,
         slider = $('.tabCampDiapo').find('.slider'),
         aSlider = slider.find('a'),
-        //loadSliderBt = $('.makeSlider'),
         btLeft = slider.find('.prev'),
         btRight = slider.find('.next'),
         loader = '<span class="loadingSlider" />';
@@ -1808,6 +1809,7 @@ function loadSlider(dir){
     btLeft.attr("onclick", 'javascript:_gaq.push([\'_trackEvent\', \'Nav-VD_-_Page_-_Fiche-Camping\', \'Contenu_-_Visionneuse\', \'Clic_-_Bouton-Precedent\']);');
     btRight.attr("onclick", 'javascript:_gaq.push([\'_trackEvent\', \'Nav-VD_-_Page_-_Fiche-Camping\', \'Contenu_-_Visionneuse\', \'Clic_-_Bouton-Suivant\']);');
     sliderPict(direct);
+
 }
 jQuery.fn.replaceWith = function(replacement) {
     return this.each (function()     {
@@ -1823,13 +1825,11 @@ jQuery.fn.replaceWith = function(replacement) {
 function sliderPict(dir) {
     var dirSlide = dir,
         slider = $('.tabCampDiapo').find('.slider');
-        //btLeft = '<button class="prev" onclick="javascript:_gaq.push([\'_trackEvent\', \'Nav-VD_-_Page_-_Fiche-Camping\', \'Contenu_-_Visionneuse\', \'Clic_-_Bouton-Precedent\']);">&lt;</button>',
-        //btRight = '<button class="next" onclick="javascript:_gaq.push([\'_trackEvent\', \'Nav-VD_-_Page_-_Fiche-Camping\', \'Contenu_-_Visionneuse\', \'Clic_-_Bouton-Suivant\']);">&gt;</button>',
-        //btns = btLeft + btRight;
-    //slider.append(btns);
-
     $('.slide', slider).carouFredSel({
-        onCreate: function(){ slider.find('.loadingSlider').remove(); },
+        onCreate: function(){
+            slider.find('.loadingSlider').remove();
+            filterSlider(dirSlide);
+        },
         circular: true,
         infinite: true,
         prev:{
@@ -1843,10 +1843,12 @@ function sliderPict(dir) {
             }
         },
         auto: false
-    }).trigger(dirSlide, 1);
+    });
 
-    $('[name="affPhoto"]').change( function() {
+    /*$('[name="affPhoto"]').change( function() {
         var nVal = $(this).val();
+
+        consoleLog(nVal);
         if (nVal == "all") {
             slider.find('img').not(':visible').fadeIn();
             slider.find('.slide').trigger("configuration",["items.filter",":visible"]);
@@ -1855,8 +1857,8 @@ function sliderPict(dir) {
             slider.find('img').not('.'+nVal).hide();
             slider.find('.slide').trigger("configuration",["items.filter",":visible"]);
         }
-    });
-    slider.find('img').each(function() {
+    });*/
+    /*slider.find('img').each(function() {
         var tip = $(this).attr("alt");
         if (tip != "") {
             $(this).hover( function() {
@@ -1867,7 +1869,23 @@ function sliderPict(dir) {
                 });
             });
         }
-    });
+    });*/
+}
+function filterSlider(dirSlide){
+    var nVal = dirSlide,
+        slider = $('.tabCampDiapo').find('.slider');
+    if ( nVal == 'prev' || nVal == 'next' ) {
+        $('.slide', slider).trigger(nVal, 1);
+    } else {
+        if (nVal == "all") {
+            slider.find('img').not(':visible').fadeIn();
+            slider.find('.slide').trigger("configuration",["items.filter",":visible"]);
+        } else {
+            slider.find('.'+nVal).fadeIn();
+            slider.find('img').not('.'+nVal).hide();
+            slider.find('.slide').trigger("configuration",["items.filter",":visible"]);
+        }
+    }
 }
 
 function sliderActivite() {
