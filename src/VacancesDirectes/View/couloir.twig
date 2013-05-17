@@ -80,8 +80,7 @@
 
     <script>
         head.js(
-            {jqPlugins: templatePath + "js/vacancesdirectes/plugins.min.js?v={{ app.config.get('version') }}"},
-            {search: templatePath + "js/vacancesdirectes/searchSelectChange.min.js?v={{ app.config.get('version') }}"}
+            {front: templatePath + "js/vacancesdirectes/plugFront.min.js?v={{ app.config.get('version') }}"}
             {% block headjs %}{% endblock %}
         );
     </script>

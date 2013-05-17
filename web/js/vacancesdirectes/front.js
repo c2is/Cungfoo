@@ -1415,6 +1415,11 @@ function openPopinIframe(url){
     //console.log("################################## openPopinIframe()  ##################################");
     $.colorbox({href:url, iframe:true, fixed: true, width:'80%', height:'80%', close:"&times;"});
 }
+
+function cboxMdP(url) {
+    $.colorbox({href:url, iframe:true, fixed: true, width:450, height:250, close:"&times;"});
+    return false;
+}
 function openPopinInline(type){
     //console.log("################################## openPopinInline()  ##################################");
     if ($('*[data-type="' + type + '"]').length > 0){
@@ -2484,4 +2489,3 @@ function test_analytics(Url) {
  };
  //console.log('/--- contreProp ---/');
  };*/
-
