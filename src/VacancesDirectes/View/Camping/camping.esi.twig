@@ -75,6 +75,7 @@
             {% for tag in tags %}
                 <label for="photos{{ tag.name }}"><input type="radio" id="photos{{ tag.name }}" name="affPhoto" value="{{ tag.slug }}" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'Contenu_-_Visionneuse', 'Clic_-_Bouton-Radio']);">{{ tag.name }}</label>
             {% endfor %}
+             <label for="photosactivites"><input type="radio" id="photosactivites" name="affPhoto" value="activites">activites</label>
         </fieldset>
         <fieldset class="right">
             {# TODO <a class="popinVideo tabCampVideo" href="{{ etab.videoPath }}" title="">{{ "fiche.video" | trans }}</a> #}
