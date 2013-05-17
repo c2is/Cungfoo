@@ -17,7 +17,11 @@
     {% include "Breadcrumbs/_breadcrumbs.twig" %}
 
     <div class="clear">
+        {% if categorie.seoH1 %}
+        <h1>{{ categorie.seoH1 }}</h1>
+        {% else %}
         <h1>{{ categorie.name }}</h1>
+        {% endif %}
         <span class="h2-like">{{ categorie.subtitle }}</span>
         <div class="richText">{{ categorie.description | raw }}</div> {# Description #}
     </div>

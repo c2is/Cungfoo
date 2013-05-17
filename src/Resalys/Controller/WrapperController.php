@@ -71,9 +71,19 @@ class WrapperController implements ControllerProviderInterface
         return $controllers;
     }
 
-    protected function getAsset($url)
+    protected function getAsset($url, $absolute = true)
     {
         $asset = $this->app['twig']->getExtension('asset')->asset($url);
+
+        if (!$absolute) {
+            $currentUrl = rtrim($this->app->url('homepage'), '/');
+            $currentUrlExploded = explode('/', $currentUrl);
+
+            unset($currentUrlExploded[count($currentUrlExploded) -1]);
+
+            $domain = implode('/', $currentUrlExploded);
+            return $domain . '/' . ltrim($url, '/');
+        }
 
         if ($this->app['config']->settings['assets_base_url']) {
             return str_replace('http://', sprintf("%s://", $this->request->getScheme()), $asset);
@@ -86,9 +96,9 @@ class WrapperController implements ControllerProviderInterface
         );
     }
 
-    protected function getStylesheetTag($url, $condition = null)
+    protected function getStylesheetTag($url, $condition = null, $cdn = true)
     {
-        $asset = $this->getAsset($url);
+        $asset = $this->getAsset($url, $cdn);
 
         $output = sprintf('<link rel="stylesheet" href="%s?v=%s">',
             $asset,
@@ -97,7 +107,14 @@ class WrapperController implements ControllerProviderInterface
 
         if ($condition !== null)
         {
-            $output = sprintf("<!--[if %s]>%s<![endif]-->", $condition, $output);
+            if ($cdn) {
+                $conditionString = "<!--[if %s]><!-->%s<!--<![endif]-->";
+            }
+            else {
+                $conditionString = "<!--[if %s]>%s<![endif]-->";
+            }
+
+            $output = sprintf($conditionString, $condition, $output);
         }
 
         return $output;
@@ -210,8 +227,9 @@ eof
             '{_c2is.javascript.footer}',
         ), array(
             $this->websiteUri,
-            $this->getStylesheetTag('css/vacancesdirectes/ie.css', "lt IE 9").
-            $this->getStylesheetTag(sprintf('css/vacancesdirectes/%s.css', $this->specificFiles)),
+            $this->getStylesheetTag(sprintf('css/vacancesdirectes/%s.css', $this->specificFiles), "gte IE 9").
+            $this->getStylesheetTag(sprintf('css/vacancesdirectes/%s.css', $this->specificFiles), "lt IE 9", false).
+            $this->getStylesheetTag('css/vacancesdirectes/ie.css', "lt IE 9", false).
             $this->getStylesheetPrintTag('css/vacancesdirectes/print.css'),
             $this->getStylesheetDatepickerTag('css/vacancesdirectes/vd-theme/jquery-ui-1.9.2.custom.min.css'),
             $javascriptHeader,
