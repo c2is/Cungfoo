@@ -238,7 +238,7 @@ eof
             $this->websiteUri,
             $this->getStylesheetTag(sprintf('css/vacancesdirectes/%s.css', $this->specificFiles), "gte IE 9").
             $this->getStylesheetTag(sprintf('css/vacancesdirectes/%s.css', $this->specificFiles), "lt IE 9", false).
-            $this->getStylesheetTag('css/vacancesdirectes/ie.css', "lt IE 9", false).
+            $this->getStylesheetTag('css/vacancesdirectes/ie.css', "lt IE 9", false),
             $this->getStylesheetPrintTag('css/vacancesdirectes/print.css'),
             $this->getStylesheetDatepickerTag('css/vacancesdirectes/vd-theme/jquery-ui-1.9.2.custom.min.css'),
             $javascriptHeader,
