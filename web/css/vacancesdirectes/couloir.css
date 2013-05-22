@@ -238,17 +238,20 @@ textarea{background-color:#ffffff;width:216px;height:81px;padding:0 7px;border:0
 #contentContener label,#contentContener input[type="radio"]{vertical-align:middle;}
 #contentContener input[type="radio"]+label{display:inline-block;margin:3px 5px 0 0;}
 #contentContener input[type="radio"]{height:auto;}
-#greyBoxes #needHelpBloc{width:288px;height:246px;color:#ffffff;background:url("../../images/vacancesdirectes/common/pict/help-bloc.jpg") no-repeat 0 0;}#greyBoxes #needHelpBloc .stamp{margin-bottom:10px;}
-#greyBoxes #needHelpBloc h2{margin-left:0;position:relative;}#greyBoxes #needHelpBloc h2:before{content:"";background:none;}
-#greyBoxes #needHelpBloc .content{width:113px;margin-left:65px;color:#464545;font:bold 15px/17px Arial,Helvetica,sans-serif;position:absolute;top:70px;left:100px;}
-#greyBoxes #needHelpBloc span{font:bold 14px/16px 'PT Sans Narrow',Arial,Helvetica,sans-serif;text-transform:uppercase;text-align:center;width:160px;position:absolute;top:178px;left:130px;}#greyBoxes #needHelpBloc span a{font:bold 22px/25px 'PT Sans Narrow',Arial,Helvetica,sans-serif;color:#ffffff;text-decoration:none;display:block;}
-#greyBoxes #assurThawte.radiusBox .stamp>h2{font-size:16px;}
-#greyBoxes #assurThawte .content{padding:10px 0;}#greyBoxes #assurThawte .content strong{font:bold 15px/17px Arial,Helvetica,sans-serif;margin-bottom:5px;}
-#greyBoxes #assurThawte .content hr{margin-bottom:20px;}
-#greyBoxes #assurThawte .content .thawte a{display:block;width:100%;height:101px;background:url(../../images/vacancesdirectes/common/images/thawteSecure.png) no-repeat bottom center;text-indent:-999em;}
-#greyBoxes #assurThawte .content .card{display:inline-block;background-image:url(../../images/vacancesdirectes/common/pict/footerCards.png);background-repeat:none;text-indent:-999em;vertical-align:middle;margin-right:5px;margin-top:10px;}
-#greyBoxes #assurThawte .content .visa{background-position:0 -40px;width:50px;height:32px;margin-left:10px;}
-#greyBoxes #assurThawte .content .master{background-position:0 -80px;width:48px;height:28px;}
+#needHelpBloc{width:288px;height:246px;color:#ffffff;background:url("../../images/vacancesdirectes/common/pict/help-bloc.jpg") no-repeat 0 0;}#needHelpBloc .stamp{margin-bottom:10px;}
+#needHelpBloc h2{margin-left:0;position:relative;}#needHelpBloc h2:before{content:"";background:none;}
+#needHelpBloc .content{width:113px;margin-left:65px;color:#464545;font:bold 15px/17px Arial,Helvetica,sans-serif;position:absolute;top:70px;left:100px;}
+#needHelpBloc span{font:bold 14px/16px 'PT Sans Narrow',Arial,Helvetica,sans-serif;text-transform:uppercase;text-align:center;width:160px;position:absolute;top:178px;left:130px;}#needHelpBloc span a{font:bold 22px/25px 'PT Sans Narrow',Arial,Helvetica,sans-serif;color:#ffffff;text-decoration:none;display:block;}
+#assurThawte.radiusBox .stamp>h2{font-size:16px;}
+#assurThawte .content{padding:10px 0;}#assurThawte .content strong{font:bold 15px/17px Arial,Helvetica,sans-serif;margin-bottom:5px;}
+#assurThawte .content hr{margin-bottom:20px;}
+#assurThawte .content .thawte a{display:block;width:100%;height:101px;background:url(../../images/vacancesdirectes/common/images/thawteSecure.png) no-repeat bottom center;text-indent:-999em;}
+#assurThawte .content .card{display:inline-block;background-image:url(../../images/vacancesdirectes/common/pict/footerCards.png);background-repeat:none;text-indent:-999em;vertical-align:middle;margin-right:5px;margin-top:10px;}
+#assurThawte .content .visa{background-position:0 -40px;width:50px;height:32px;margin-left:10px;}
+#assurThawte .content .master{background-position:0 -80px;width:48px;height:28px;}
+#fiveMinutes{margin:0;padding:10px 15px;border:4px solid;}#fiveMinutes .content{padding:10px 0;}
+#fiveMinutes .text{line-height:1.5;}
+#fiveMinutes .bouton{text-align:center;margin-top:10px;}
 #please_wait_layer{position:absolute;top:0;left:0;width:100%;height:100%;background:url(../../images/vacancesdirectes/common/ui/loadingResalys.gif) no-repeat fixed 50% 50% #ffffff;text-align:center;font:normal 15px Arial,Helvetica,sans-serif;padding:100px 20px;opacity:0.8;}#please_wait_layer #please_wait_layer_content{position:fixed;top:50%;left:50%;padding:33px 20px 20px;width:976px;margin-left:-488px;}
 #footerContener{overflow:hidden;margin-top:20px;clear:both;}#footerContener .mentions,#footerContener .footerNavigation{display:none;}#footerContener .mentions.gauche,#footerContener .footerNavigation.gauche,#footerContener .mentions.droite,#footerContener .footerNavigation.droite,#footerContener .mentions.pageListe,#footerContener .footerNavigation.pageListe{display:block;}
 #footerContener .mentions.gauche,#footerContener .footerNavigation.gauche{float:left;}
@@ -261,6 +264,43 @@ textarea{background-color:#ffffff;width:216px;height:81px;padding:0 7px;border:0
 #footerContener .footerNavigation.pageListe a:last-child,#footerContener .footerNavigation.pageListe b:last-child{-webkit-border-radius:0 3px 3px 0;-moz-border-radius:0 3px 3px 0;border-radius:0 3px 3px 0;}
 #footerContener .footerNavigation.pageListe b{background-color:#f5f5f5;}
 #footerContener .mentions{clear:both;padding-bottom:15px;text-align:center;}#footerContener .mentions a{color:#005ea6;}
+#colorbox,#cboxOverlay,#cboxWrapper{position:absolute;top:0;left:0;z-index:9999;overflow:hidden;}
+#cboxOverlay{position:fixed;width:100%;height:100%;}
+#cboxMiddleLeft,#cboxBottomLeft{clear:left;}
+#cboxContent{position:relative;}
+#cboxLoadedContent{overflow:auto;}
+#cboxTitle{margin:0;}
+#cboxLoadingOverlay,#cboxLoadingGraphic{position:absolute;top:0;left:0;width:100%;height:100%;}
+#cboxPrevious,#cboxNext,#cboxClose,#cboxSlideshow{cursor:pointer;}
+.cboxPhoto{float:left;margin:auto;border:0;display:block;max-width:none;}
+.cboxIframe{width:100%;height:100%;display:block;border:0;}
+#colorbox,#cboxContent,#cboxLoadedContent{box-sizing:content-box;}
+#colorbox.cbBP{overflow:visible;}#colorbox.cbBP #cboxWrapper{background-color:#f58220;-webkit-border-radius:25px;border-radius:25px;}
+#colorbox.cbBP #cboxTitle{display:none;}
+#colorbox.cbBP #cboxLoadedContent{background-color:transparent;border:0;}
+#colorbox.cbBP #cboxWrapper,#colorbox.cbBP #cboxContent,#colorbox.cbBP #cboxLoadedContent{overflow:visible !important;}
+#colorbox.cbBP #cboxClose{right:10px;}
+#cboxOverlay{background:#464545;}
+#cboxOverlay.fiveM{background:#fff;}
+#colorbox,#colorbox *{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;}
+#cboxContent{margin-top:32px;overflow:visible;}
+.cboxIframe{background:#ffffff;}
+#cboxError{padding:50px;}
+#cboxLoadingOverlay{background:#000;}
+#cboxTitle{position:absolute;top:-22px;left:0;color:#ffffff;font-size:15px;font-weight:bold;}
+#cboxCurrent{position:absolute;top:-22px;right:205px;text-indent:-9999px;}
+#cboxSlideshow,#cboxPrevious,#cboxNext{text-indent:-9999px;width:20px;height:20px;position:absolute;top:-20px;background:url(../../images/vacancesdirectes/common/ui/controls.png) no-repeat 0 0;}
+#cboxPrevious{background-position:0px 0px;right:44px;}
+#cboxPrevious:hover{background-position:0px -25px;}
+#cboxNext{background-position:-25px 0px;right:22px;}
+#cboxNext:hover{background-position:-25px -25px;}
+.fiveM #cboxClose{display:none;}
+#cboxClose:hover{}
+.cboxSlideshow_on #cboxPrevious,.cboxSlideshow_off #cboxPrevious{right:66px;}
+.cboxSlideshow_on #cboxSlideshow{background-position:-75px -25px;right:44px;}
+.cboxSlideshow_on #cboxSlideshow:hover{background-position:-100px -25px;}
+.cboxSlideshow_off #cboxSlideshow{background-position:-100px 0px;right:44px;}
+.cboxSlideshow_off #cboxSlideshow:hover{background-position:-75px -25px;}
 #authentication #newCustomerLayer .SSContainerDivWrapper{min-width:134px;}
 #authentication #newCustomerLayer ul.newList a{height:27px;line-height:27px;}#authentication #newCustomerLayer ul.newList a>*{vertical-align:middle;display:inline-block;line-height:inherit;}
 #authentication #newCustomerLayer ul.newList a>img{vertical-align:middle;}
@@ -330,5 +370,9 @@ input[disabled],.newListDisabled,.newListItemDisabled,.newListOptionDisabled{opa
 .ie-lte8 #contentContener.summary #option .criterias .criteria .label{line-height:13px;}
 .ie-eq7 #please_wait_layer{filter:alpha(opacity=80);}
 .ie-eq8 #please_wait_layer{-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";}
+body.popup{background:#e6e5e5;}
+#forgetPassword{padding:15px 15px 0;margin:0;border-radius:0;font:12px Arial;}#forgetPassword p{margin:1em 0 0;line-height:1.4em;}
+#forgetPassword label{width:110px;}
+#forgetPassword [type="text"]{margin-right:10px;}
 #contentContener.detail #reservation .aRoom .anOccupant h3{font-size:23px;}
 #contentContener.detail #reservation .aRoom .anOccupant .occupantFields .control_text{width:170px;}
