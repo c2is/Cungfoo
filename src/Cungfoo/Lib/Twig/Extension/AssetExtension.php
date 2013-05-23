@@ -36,12 +36,15 @@ class AssetExtension extends Twig_Extension
 
         try {
             $conf = $this->app['config']->settings['assets_base_url'];
-            if (isset($conf[$mediaType])) {
+            if (isset($conf[$mediaType]) && $conf[$mediaType]) {
                 $basePath = $conf[$mediaType];
             } else {
                 $basePath = $conf['default'];
             }
-            $basePath = sprintf("%s://%s", $this->app['request']->getScheme(), $basePath ? $basePath : $this->app['request']->getBasePath());
+
+            if ($basePath) {
+                $basePath = sprintf("%s://%s", $this->app['request']->getScheme(), $basePath);
+            }
         } catch (\Exception $e) {
             $basePath = $this->app['request']->getBasePath();
         }
