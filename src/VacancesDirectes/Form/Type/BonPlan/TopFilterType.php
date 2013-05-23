@@ -38,7 +38,7 @@ class TopFilterType extends AppAwareType
             'choices'       => $bonsPlansChoices,
             'required'      => false,
             'label'         => 'top_filter.bon_plans',
-            'empty_value'   => false,
+            'empty_value'   => 'top_filter.all_bon_plans',
             'property_path' => false,
         ));
 
