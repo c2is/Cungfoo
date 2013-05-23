@@ -24,12 +24,20 @@ class AssetExtension extends Twig_Extension
 
     public function asset($url)
     {
-        $basePath = $this->app['config']->settings['assets_base_url'];
+        $extension = pathinfo(strstr(basename($url), '?', true), PATHINFO_EXTENSION);
 
-        if ($basePath) {
-            $basePath = sprintf("%s://%s", $this->app['request']->getScheme(), $basePath);
+        if ($extension == 'css') {
+            $mediaType = 'css';
+        } elseif ($extension == 'js') {
+            $mediaType = 'js';
+        } else {
+            $mediaType = 'default';
         }
-        else {
+
+        try {
+            $basePath = $this->app['config']->settings['assets_base_url'][$mediaType];
+            $basePath = sprintf("%s://%s", $this->app['request']->getScheme(), $basePath);
+        } catch (\Exception $e) {
             $basePath = $this->app['request']->getBasePath();
         }
 
