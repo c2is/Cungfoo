@@ -2119,14 +2119,15 @@ function findMinMaxRange() {
         $('#widgetRange').hide();
     }
 
+    rangeSliderPrice();
     launchFilters();
 }
 
 //creation du rangeSlider de prix
 function rangeSliderPrice() {
     var $range = $("#noUiSlider"),
-        valueMin,
-        valueMax,
+        //valueMin,
+        //valueMax,
         minScale = minPrice/*-20*/,
         maxScale = maxPrice/*+20*/,
         minStart = minPrice,
@@ -2144,13 +2145,10 @@ function rangeSliderPrice() {
             },
             end: function(type){
                 var values = $(this).noUiSlider('value');
-                valueMin = values[0];
-                valueMax = values[1];
-
-                $('.items').each(function() {
+                $('.itemResult').each(function() {
                     $(this).find('.linePrice').each( function(){
                         var originPriceLine = parseInt($(this).find('.stain .price').text());
-                        if ( parseInt(originPriceLine) >= parseInt(valueMin) && parseInt(originPriceLine) <= parseInt(valueMax) ) {
+                        if ( parseInt(originPriceLine) >= parseInt(values[0]) && parseInt(originPriceLine) <= parseInt(values[1]) ) {
                             $(this).addClass('visiblePrice').fadeIn();
                         }else{
                             $(this).removeClass('visiblePrice').fadeOut();
@@ -2172,7 +2170,7 @@ function rangeSliderPrice() {
                     }
                 });
 
-                //displayResults();
+                displayResults();
             }
         }).find('.noUi-handle div').each(function(index){
             $(this).append('<span class="rangeBox">'+$(this).parent().parent().noUiSlider( 'value' )[index]+' €</span>');
@@ -2294,7 +2292,7 @@ function launchFilters() {
         });
     }
 
-    rangeSliderPrice();
+    //rangeSliderPrice();
     displayResults();
 };
 
