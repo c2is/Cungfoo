@@ -7,7 +7,7 @@
     <div class="title">
         <h2>{{ "search.title" | trans }}</h2>
     </div>
-    <form id="searchBlocDate" method="post" action="{{ app.request.getRequestURI() }}">
+    <form id="searchBlocDate" method="post" action="{{ app.request.getRequestURI() }}" onsubmit="showDidacticielLayer('{{ 'didacticiel.title' | trans | e('js') }}', getDidacticielContentFromSearch(this));">
         <fieldset>
             {{ form_errors(searchForm) }}
             <ol>
@@ -99,12 +99,52 @@
                     <a class="toggleButton" href="#">+ de critères</a>
                 </li>#}
                 <li>
-                    <button type="submit" class="bt sombre big" name="searchForm" onclick="showWaitLayer();">{{ "date_search.submit"|trans }}</button>
+                    <button type="submit" class="bt sombre big" name="searchForm">{{ "date_search.submit"|trans }}</button>
                 </li>
             </ol>
             {{ form_rest(searchForm) }}
         </fieldset>
     </form>
+    <script type="text/javascript">
+    function showDidacticielLayer(title, content) {
+    
+}
+
+        function getDidacticielContentFromSearch(form) {
+            var $form = $(form);
+            var dateDebut = $('input[type="hidden"]#SearchDate_dateDebut', $form).val();
+            var basseSaison = $('input[type="hidden"]#SearchDate_isBasseSaison', $form).val();
+            if (basseSaison) {
+                var range = $('select#SearchDate_nbJoursBasseSaison', $form).val();
+            } else {
+                var range = $('select#SearchDate_nbJoursHauteSaison', $form).val();
+            }
+            var nbAdultes = $('input[type="text"]#SearchDate_nbAdultes', $form).val();
+            var nbEnfants = $('input[type="text"]#SearchDate_nbEnfants', $form).val();
+            var destinationValue = $('select#SearchDate_destination', $form).val();
+            var destinationText = $('select#SearchDate_destination option:selected', $form).text();
+
+            var content = [];
+            if (dateDebut) {
+                content.push('{{ 'didacticiel.depart_le' | trans | e('js') }} ' + dateDebut);
+            }
+            if (range) {
+                content.push('{{ 'didacticiel.duree' | trans | e('js') }} : ' + range + ' {{ 'didacticiel.jours' | trans | e('js') }}');
+            }
+            if (nbAdultes && nbAdultes > 0) {
+                var occupantsString = nbAdultes + ' {{ 'didacticiel.adultes' | trans | e('js') }}';
+                if (nbEnfants && nbEnfants > 0) {
+                    occupantsString += ' {{ 'didacticiel.et' | trans | e('js') }} ' + nbEnfants + ' {{ 'didacticiel.enfants' | trans | e('js') }}';
+                }
+                content.push(occupantsString);
+            }
+            if (destinationValue) {
+                content.push('{{ 'didacticiel.destination' | trans | e('js') }} : ' + destinationText);
+            }
+
+            return content.join('<br />');
+        }
+    </script>
     {# TODO
     <form id="searchBlocTrajet" action="#_">
         <fieldset>

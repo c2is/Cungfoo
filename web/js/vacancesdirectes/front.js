@@ -1401,6 +1401,19 @@ function showWaitLayer(){
     $('#please_wait_layer').show();
 }
 
+// didacticiel layer
+/*
+ * Pour référence, cette fonction est appelée dans les fichiers src/VacancesDirectes/View/Menu/bonsPlans.twig et src/VacancesDirectes/View/Form/_search_engine.twig
+ * La popin à affichée est présente dans le fichier src/VacancesDirectes/View/footer.twig (id = didacticiel_layer)
+ *
+ * Params :
+ * string title Le contenu HTML à afficher dans le H2 de la popin
+ * string content le contenu HTML à afficher dans le p de la popin
+ */
+function showDidacticielLayer(title, content) {
+    $('#didacticiel_layer').show();
+}
+
 /*
  * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
  *                          POPIN
