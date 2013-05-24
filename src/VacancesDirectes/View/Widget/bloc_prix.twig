@@ -1,5 +1,5 @@
 {% if blocPrix.adult_price_without_discounts != 0 %}
-<div id="dispoBloc" class="proposal radiusBox fushia promo arrowLeft">
+<div id="dispoBloc" class="proposal radiusBox fushia promo arrowLeft{% if blocPrix.proposal_key %} votreSelection{% endif %}">
     {% if not blocPrix.proposal_key %}
     <p class="proposalTitle">{{ 'general.meilleur_prix'|trans }}</p>
     {% endif %}
