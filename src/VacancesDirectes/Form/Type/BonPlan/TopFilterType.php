@@ -38,7 +38,7 @@ class TopFilterType extends AppAwareType
             'choices'       => $bonsPlansChoices,
             'required'      => false,
             'label'         => 'top_filter.bon_plans',
-            'empty_value'   => 'top_filter.all_bon_plans',
+            'empty_value'   => $app->trans('top_filter.all_bon_plans'),
             'property_path' => false,
         ));
 
@@ -55,7 +55,7 @@ class TopFilterType extends AppAwareType
             'choices'       => $regionsChoices,
             'required'      => false,
             'label'         => 'top_filter.regions',
-            'empty_value'   => 'top_filter.all_regions',
+            'empty_value'   => $app->trans('top_filter.all_regions'),
             'property_path' => false,
         ));
     }

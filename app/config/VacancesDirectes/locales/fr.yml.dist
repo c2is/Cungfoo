@@ -682,3 +682,5 @@ err500.content: 'Retourner sur la <a href="%link%">page d''accueil</a>.'
 criteo.name.suffix: '7 nuits'
 search.title: 'Je recherche'
 search.linkto: 'Autre recherche'
+top_filter.all_bon_plans: "Tous les bons plans"
+top_filter.all_regions: "Toutes les régions"
