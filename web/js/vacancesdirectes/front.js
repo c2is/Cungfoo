@@ -2081,9 +2081,7 @@ function initCritResult(){
     iSlcReg.change(function() { launchFilters(); });
 
 // First-time launchFilter function
-
     findMinMaxRange();
-    launchFilters();
 }
 
 function openCrit() {
@@ -2120,11 +2118,15 @@ function findMinMaxRange() {
     if ( minPrice == maxPrice) {
         $('#widgetRange').hide();
     }
+
+    launchFilters();
 }
 
 //creation du rangeSlider de prix
 function rangeSliderPrice() {
     var $range = $("#noUiSlider"),
+        valueMin,
+        valueMax,
         minScale = minPrice/*-20*/,
         maxScale = maxPrice/*+20*/,
         minStart = minPrice,
@@ -2145,7 +2147,7 @@ function rangeSliderPrice() {
                 valueMin = values[0];
                 valueMax = values[1];
 
-                $('.itemRanged').each(function() {
+                $('.items').each(function() {
                     $(this).find('.linePrice').each( function(){
                         var originPriceLine = parseInt($(this).find('.stain .price').text());
                         if ( parseInt(originPriceLine) >= parseInt(valueMin) && parseInt(originPriceLine) <= parseInt(valueMax) ) {
@@ -2170,7 +2172,7 @@ function rangeSliderPrice() {
                     }
                 });
 
-                displayResults();
+                //displayResults();
             }
         }).find('.noUi-handle div').each(function(index){
             $(this).append('<span class="rangeBox">'+$(this).parent().parent().noUiSlider( 'value' )[index]+' €</span>');
@@ -2182,6 +2184,9 @@ function rangeSliderPrice() {
 
 //selection des criteres
 function launchFilters() {
+
+    consoleLog('launchFilter');
+
     //init des tableaux
     var arrayCrit = [];         //tableau des criteres
     var arrayCritPlus = [];     //tableau des criteres cumulatifs
@@ -2290,6 +2295,7 @@ function launchFilters() {
     }
 
     rangeSliderPrice();
+    displayResults();
 };
 
 //gestion de l'affichage en fonction des criteres + rangeSlider
@@ -2345,7 +2351,7 @@ function displayResults() {
         }
     });
 
-     $('#TopFilter_bon_plans').find('option').each( function(){
+    $('#TopFilter_bon_plans').find('option').each( function(){
         var date = $(this).attr('value');
         if ( date != 0 )
             var dateInItems = $(".itemRanged[data-date="+date+"]").length;
@@ -2355,7 +2361,7 @@ function displayResults() {
                 $(this).attr('disabled', false);
             }
     });
-     $('#TopFilter_regions').find('option').each( function(){
+    $('#TopFilter_regions').find('option').each( function(){
         var reg = $(this).attr('value');
         if ( reg != 0 )
             var regInItems = $(".itemRanged[data-reg="+reg+"]").length;
