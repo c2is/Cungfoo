@@ -688,7 +688,7 @@ h3{margin-top:40px;}
 .condArrDep{margin:10px 0 35px 10px;list-style:disc outside;}.condArrDep li{margin-bottom:5px;}
 #colorbox .typLocation{background-color:#ffffff;margin:0;padding:20px;border:0 none;}
 .bdPict{margin:20px 0;}
-.nbResult{font:18px/0px 'PT Sans Narrow',Arial,Helvetica,sans-serif;color:#ed145b;width:125px;height:98px;float:left;border-right:1px solid #ed145b;text-align:center;text-transform:uppercase;padding-top:22px;margin-bottom:30px;}.nbResult .nb{display:block;font:bold 45px Arial,sans-serif;}
+.nbResult{font:18px/0px 'PT Sans Narrow',Arial,Helvetica,sans-serif;color:#ed145b;width:125px;height:98px;float:left;border-right:1px solid #ed145b;text-align:center;text-transform:uppercase;padding-top:22px;margin-bottom:30px;}.nbResult .nb{display:block;font:bold 45px Arial,sans-serif;opacity:0;}
 .typeAff{float:left;width:143px;height:98px;border-right:1px solid #ed145b;padding:11px 0 0 23px;}.typeAff span{font-weight:bold;color:#464545;display:block;padding-right:15px;margin-bottom:5px;}
 .typeAff button{width:50px;height:50px;border:0;text-indent:-999em;}
 .typeAff #btList{background:url(../../images/vacancesdirectes/common/sprites/switchListMap.png) no-repeat 0 100%;}.typeAff #btList.active{background-position:0 0;}
