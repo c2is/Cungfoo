@@ -284,8 +284,9 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
   .proposal{
   //    font:normal 14px/19px @arial;padding-bottom:60px;text-align:left;
     .stamp h2 > span{background-color:@colorGris2;}
+    .proposalCamping{font:bold 20px/22px @arial;color:@colorGris2;}
     .proposalDates{font:bold 18px/23px @arial;color:@colorGris2;}
-    .proposalPicture{width:240px;}
+    .proposalPicture{width:200px;}
     .total{
       span{font:bold 16px/17px @ptnarrow;
         .price{font:normal 19px/18px @ptnarrow;margin:0;}
@@ -363,11 +364,10 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
         //          .addAction a{position:absolute;top:10px;right:10px;display:block;width:27px;height:27px;text-indent:-9999px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -162px transparent;}
           .addAction{display:none;}
         }
-        #occupants{background-color:@colorBgBlanc;padding-top:20px;
-          .totalPersonneSupplementaire,
-          .totalTaxeSejour{padding:0 10px 20px;}
+        #occupants{background-color:@colorBgBlanc;padding:20px 0 10px;
+          .totalTaxeSejour{padding:10px 25px;margin-bottom:5px;}
         }
-        .anOccupant{background-color:@colorBlanc;
+        .anOccupant{background-color:@colorBgGrisC;margin:0 27px 10px;border:1px solid @colorBorderGris;
           h3{background-image:none !important;background-color:@colorFushia;color:@colorBlanc;padding:5px 35px 5px 0;position:relative;font-size:23px;margin-bottom:10px;
             .occupantHeaderLeft{._verticalCenter(27px);
               small{font:bold 17px @arial;text-transform:none;}
@@ -375,20 +375,23 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
             }
             .deleteAction a{position:absolute;top:6px;right:-3px;display:block;text-indent:-9999px;width:27px;height:27px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -243px transparent;float:left;margin:0 10px;}
           }
-          .occupantFields{padding:0 5px;margin-bottom:0;position:relative;
-            .occupantFieldsInfo{background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat scroll 0 -324px transparent;display:block;width:27px;height:27px;position:absolute;top:0;right:5px;cursor:pointer;
+          .occupantFields{padding:10px 5px 0;margin-bottom:0;position:relative;
+            .occupantFieldsInfo{background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat scroll 0 -324px transparent;display:block;width:27px;height:27px;position:absolute;top:10px;right:5px;cursor:pointer;
               &.tooltip span.bubble{left:115%;max-width:342px;}
             }
             &.tooltip span.bubble{left:95%;bottom:5px;max-width:362px;}
             &>*{margin:0 5px 10px;}
             input{border:1px solid @colorBorderGris;}
-            .control_text{width:182px;margin-right:40px;}
+            .control_text{width:182px;margin-right:10px;}
             .control_date{width:120px;}
             #date_sRowID_link{right:0 !important;}
             .tooltip span.bubble{left:130px;}
           }
           h4{display:none;}
         }
+      }
+      #yourStay{
+        table{border-spacing:0 5px;}
       }
       #accomodationOptions{
         tr.products{font-weight:bold;}
