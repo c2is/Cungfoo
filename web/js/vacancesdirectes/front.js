@@ -1411,6 +1411,8 @@ function showWaitLayer(){
  * string content le contenu HTML à afficher dans le p de la popin
  */
 function showDidacticielLayer(title, content) {
+    $('#didacticiel_layer_content h2').html(title);
+    $('#didacticiel_layer_content p').html(content);
     $('#didacticiel_layer').show();
 }
 
