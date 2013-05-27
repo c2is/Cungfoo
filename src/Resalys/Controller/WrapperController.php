@@ -55,6 +55,8 @@ class WrapperController implements ControllerProviderInterface
                 http_build_query($this->request->request->all())
             );
 
+            $http_response_header = array();
+
             $iframe = file_get_contents($resalysUri);
 
             // start replace functions
@@ -62,8 +64,15 @@ class WrapperController implements ControllerProviderInterface
             $this->replaceC2isMarker($iframe, $app);
             $this->replaceSpecifics($iframe);
 
-            $maxAge = $request->get('maxAge', 0);
-            return new Response($iframe, 200, array('Cache-Control' => sprintf('public, max-age=%s, must-revalidate', $maxAge)));
+            $responseHeader = array('Cache-Control' => sprintf('public, max-age=%s, must-revalidate', $request->get('maxAge', 0)));
+
+            foreach ($http_response_header as $resalysHeader) {
+                if (strpos($resalysHeader, 'AP-RSL-Front') !== false) {
+                    $responseHeader['AP-RSL-Front'] = str_replace('AP-RSL-Front: ', '', $resalysHeader);
+                }
+            }
+
+            return new Response($iframe, 200, $responseHeader);
         })
         ->value('specificFiles', 'iframe')
         ->bind('resalys_wrapper');
