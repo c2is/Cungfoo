@@ -63,7 +63,7 @@ class WrapperController implements ControllerProviderInterface
             $this->replaceSpecifics($iframe);
 
             $maxAge = $request->get('maxAge', 0);
-            return new Response($iframe, 200, array('Cache-Control' => sprintf('s-maxage=%s, public', $maxAge)));
+            return new Response($iframe, 200, array('Cache-Control' => sprintf('public, max-age=%s, must-revalidate', $maxAge)));
         })
         ->value('specificFiles', 'iframe')
         ->bind('resalys_wrapper');

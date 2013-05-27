@@ -34,7 +34,7 @@ class WidgetController implements ControllerProviderInterface
 
             $maxAge = (int) $request->query->get('maxage', $widget->getMaxAge());
 
-            return new Response($widget->render(), 200, array('Cache-Control' => sprintf('s-maxage=%s, public', $maxAge)));
+            return new Response($widget->render(), 200, array('Cache-Control' => sprintf('public, max-age=%s, must-revalidate', $maxAge)));
         })
         ->bind('widget');
 

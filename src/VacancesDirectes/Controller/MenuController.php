@@ -65,7 +65,7 @@ class MenuController implements ControllerProviderInterface
                 'regionItalie'              => $this->getRegionByCode($app, 'ITA'),
             ));
 
-            return new Response($view, 200, array('Cache-Control' => sprintf('s-maxage=%s, public', $app['config']->get('vd_config')['httpcache']['long'])));
+            return new Response($view, 200, array('Cache-Control' => sprintf('public, max-age=%s, must-revalidate', $app['config']->get('vd_config')['httpcache']['long'])));
         })
         ->bind('menu_destinations');
 
@@ -91,7 +91,7 @@ class MenuController implements ControllerProviderInterface
                 'capacites'                => $capacites,
             ));
 
-            return new Response($view, 200, array('Cache-Control' => sprintf('s-maxage=%s, public', $app['config']->get('vd_config')['httpcache']['long'])));
+            return new Response($view, 200, array('Cache-Control' => sprintf('public, max-age=%s, must-revalidate', $app['config']->get('vd_config')['httpcache']['long'])));
         })
         ->bind('menu_locations');
 
@@ -112,7 +112,7 @@ class MenuController implements ControllerProviderInterface
                 'categories'    => $categories,
             ));
 
-            return new Response($view, 200, array('Cache-Control' => sprintf('s-maxage=%s, public', $app['config']->get('vd_config')['httpcache']['medium'])));
+            return new Response($view, 200, array('Cache-Control' => sprintf('public, max-age=%s, must-revalidate', $app['config']->get('vd_config')['httpcache']['medium'])));
         })
         ->bind('menu_bons_plans');
 

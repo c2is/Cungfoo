@@ -12,6 +12,13 @@ use Symfony\Component\HttpFoundation\Request,
     Symfony\Component\Routing\Route;
 
 use Cungfoo\Model\BonPlanQuery;
+use Cungfoo\Model\Etablissement;
+use Cungfoo\Model\EtablissementQuery;
+use Cungfoo\Model\EtablissementPeer;
+use Cungfoo\Model\PointInteretPeer;
+use Cungfoo\Model\EventPeer;
+use Cungfoo\Model\PortfolioMediaQuery;
+use Cungfoo\Model\PersonnageQuery;
 
 use VacancesDirectes\Lib\SearchParams,
     VacancesDirectes\Lib\Listing\DispoListing;
@@ -25,7 +32,25 @@ class EsiController implements ControllerProviderInterface
      */
     public function connect(Application $app)
     {
+        $assertUrlCamping = EtablissementPeer::assertUrl();
+
         $controllers = $app['controllers_factory'];
+
+        $controllers->convert('camping', function ($camping) use ($app) {
+            if (!$camping) return;
+
+            $objectItem = EtablissementQuery::create()
+                ->filterBySlug($camping)
+                ->filterByActive(true)
+                ->findOne()
+            ;
+
+            if (!$objectItem) {
+                $app->abort(404, "L'url $camping ne correspond à aucun camping.");
+            }
+
+            return $objectItem;
+        });
 
         $controllers->match('/bon-plan-home', function (Request $request) use ($app)
         {
@@ -91,7 +116,7 @@ class EsiController implements ControllerProviderInterface
                 'dispos'    => $liste,
             ));
 
-            return new Response($view, 200, array('Cache-Control' => sprintf('s-maxage=%s, public', $maxAge)));
+            return new Response($view, 200, array('Cache-Control' => sprintf('public, max-age=%s, must-revalidate', $maxAge)));
 
         })->bind('esi_home_widget');
 
@@ -166,7 +191,7 @@ class EsiController implements ControllerProviderInterface
                 'bon_plan' => $liste,
             ));
 
-            return new Response($view, 200, array('Cache-Control' => sprintf('s-maxage=%s, public', $maxAge)));
+            return new Response($view, 200, array('Cache-Control' => sprintf('public, max-age=%s, must-revalidate', $maxAge)));
 
         })->bind('esi_bon_plan')
           ->value('limit', '5')
@@ -211,9 +236,104 @@ class EsiController implements ControllerProviderInterface
                 'firstEtab' => reset($listingContent['element']),
             ));
 
-            return new Response($view, 200, array('Cache-Control' => sprintf('s-maxage=%s, public', $maxAge)));
+            return new Response($view, 200, array('Cache-Control' => sprintf('public, max-age=%s, must-revalidate', $maxAge)));
         })
         ->bind('esi_bon_plan_page');
+
+        $controllers->match('/esi-mea', function (Request $request) use ($app)
+        {
+            $locale = $app['context']->get('language');
+
+            $mea = \Cungfoo\Model\MiseEnAvantQuery::create()
+                ->joinWithI18n($locale)
+                ->addAscendingOrderByColumn('sortable_rank')
+                ->filterByDateFinValidite(date('Y-m-d H:i:s'), \Criteria::GREATER_EQUAL)
+                ->findActive()
+            ;
+
+            $view = $app['twig']->render('Homepage/mea.twig', array(
+                'mea' => $mea,
+            ));
+
+            return new Response($view, 200, array('Cache-Control' => sprintf('public, max-age=%s, must-revalidate', $app['config']->get('vd_config')['httpcache']['home'])));
+        })
+        ->bind('homepage_mea');
+
+        $controllers->match("/esi-{camping}", function (Request $request, Etablissement $camping) use ($app)
+        {
+            $locale = $app['context']->get('language');
+
+            $sitesAVisiter = PointInteretPeer::getForEtablissement($camping, PointInteretPeer::RANDOM_SORT, 4);
+            $events        = EventPeer::getForEtablissement($camping, EventPeer::RANDOM_SORT, 4);
+
+            $personnages = \Cungfoo\Model\PersonnageQuery::create()
+                ->joinWithI18n($locale)
+                ->filterByEtablissementId($camping->getId())
+                ->orderByAge(\Criteria::ASC)
+                ->limit(3)
+                ->findActive()
+            ;
+
+            $sliderIds = $camping->getSlider();
+
+            $tags = array();
+            foreach (explode(';', $sliderIds) as $sliderId)
+            {
+                $slider = PortfolioMediaQuery::create()
+                    ->filterById($sliderId)
+                    ->findOne()
+                ;
+
+                if ($slider)
+                {
+                    $multimediaTags = $slider->getPortfolioTags();
+
+                    foreach ($multimediaTags as $tag)
+                    {
+                        if ($tag->getPortfolioTagCategory() && $tag->getPortfolioTagCategory()->getSlug() == 'camping')
+                        {
+                            $tags[$tag->getSlug()] = $tag;
+                        }
+                    }
+                }
+            }
+
+            $personnageAleatoire = \Cungfoo\Model\PersonnageQuery::create()
+                ->joinWithI18n($locale)
+                ->filterByEtablissementId($camping->getId())
+                ->addAscendingOrderByColumn('RAND()')
+                ->findOne()
+            ;
+
+            $view = $app['twig']->render('Camping/camping.esi.twig', array(
+                'locale'                  => $locale,
+                'etab'                    => $camping,
+                'personnages'             => $personnages,
+                'tags'                    => $tags,
+                'personnageAleatoire'     => $personnageAleatoire,
+                'sitesAVisiter'           => $sitesAVisiter,
+                'events'                  => $events,
+            ));
+
+            return new Response($view, 200, array('Cache-Control' => sprintf('public, max-age=%s, must-revalidate', $app['config']->get('vd_config')['httpcache']['camping'])));
+        })
+        ->assert('camping', $assertUrlCamping)
+        ->bind('esi_camping')
+        ;
+
+        $controllers->get('/list/item/{camping}', function (Request $request, Etablissement $camping) use ($app)
+        {
+            $maxAge = 3600;
+
+            $locale = $app['context']->get('language');
+
+            $view = $app['twig']->render('Camping/list_item.twig', array(
+                'list' => array('type' => 0),
+                'etab' => array('model' => $camping),
+            ));
+
+            return new Response($view, 200, array('Cache-Control' => sprintf('public, max-age=%s, must-revalidate', $maxAge)));
+        })->bind('camping_list_item');
 
         return $controllers;
     }

@@ -19,6 +19,6 @@ class Application extends BaseApplication
     {
         $response = $this['twig']->render($view, $parameters);
 
-        return new Response($response, 200, array('Surrogate-Control' => 'content="ESI/1.0"', 'Cache-Control' => 'max-age=0, s-maxage=0, no-cache, public'));
+        return new Response($response, 200, array('Surrogate-Control' => 'content="ESI/1.0"', 'Cache-Control' => 'max-age=600, s-maxage=600, public'));
     }
 }

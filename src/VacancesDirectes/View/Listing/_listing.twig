@@ -8,7 +8,7 @@
         {% if list.type == 1 %}
         {% include 'Camping/list_item.twig' %}
         {% else %}
-        {{ esi(path('camping_list_item', {camping: etab.model.id})) }}
+        {{ esi(path('camping_list_item', {camping: etab.model.getSlug})) }}
         {% endif %}
     {% else %}
     <h2>{{ "listing.no_results_title" | trans }}</h2>
