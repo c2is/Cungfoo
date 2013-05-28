@@ -313,7 +313,9 @@ h6, .h6-like{color:@colorFushia;}
 .radiusBox2{._border-radius(10px);padding:15px 20px;margin:15px 0;position:relative;
   &.bgImg{overflow:hidden;}
   &.greyC{background-color:@colorBgBlanc;border:5px solid @colorBgGrisC;}
-  &.greyM{background-color:@colorBgGrisC;border:5px solid @colorBgGrisM;}
+  &.greyM{background-color:@colorBgGrisC;border:5px solid @colorBgGrisM;
+    &.arrowLeft:after{right:100%;top:50%;border:solid transparent;content:"";height:0;width:0;position:absolute;pointer-events:none;border-color:rgba(140, 138, 138, 0);border-right-color:@colorBgGrisM;border-width:18px;margin-top:-18px;margin-left:-18px;}
+  }
   &.greyF{background-color:@colorBgBlanc;border:5px solid @colorBgGrisF;}
   &.fushia{background-color:@colorBgBlanc;border:5px solid @colorFushia;}
   .stamp{color:@colorBlanc;background:url('../../images/vacancesdirectes/common/ui/stamp-half.png') no-repeat top right transparent;._verticalCenter(38px);padding:0 30px;margin-top:10px;display:inline-block;text-transform:uppercase;font-family: @ptnarrow;font-size:15px;font-weight:bold;
