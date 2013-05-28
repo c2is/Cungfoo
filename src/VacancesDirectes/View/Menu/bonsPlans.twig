@@ -27,7 +27,7 @@
                         <span class="title">{{ bonPlan.name }}</span>
                         <span class="region">{{ bonPlan.indice }}</span>
                         <span class="period">{{ 'general.du' | trans}} {{ bonPlan.dateStart|date('d/m/Y') }} {{ 'general.au' | trans}} {{ bonPlan.dateEnd|date('d/m/Y') }}</span>
-                        <span class="condition"><a href="{{ path('bonsplans', {'slug': bonPlan.slug}) }}" class="price linkBlock" onclick="showWaitLayer();">{{ bonPlan.indicePrix }}</a></span>
+                        <span class="condition"><a href="{{ path('bonsplans', {'slug': bonPlan.slug}) }}" class="price linkBlock" onclick="showDidacticielLayer('{{ 'didacticiel.title' | trans | e('js') }}', '{{ bonPlan.name | e('js') }}');" data-bon-plan="{{ bonPlan.name }}">{{ bonPlan.indicePrix }}</a></span>
                     </div>
                 </div>
                 {% endfor %}
