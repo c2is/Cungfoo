@@ -336,7 +336,7 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
         td{vertical-align:middle;
           &.optionQuantity{width:27px;}
           &.optionLabel{width:400px;padding:5px;
-            .insurance{position:relative;display:block;width:375px;
+            .insurance{position:relative;display:inline;width:375px;
               .insuranceInfo{background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat scroll 0 -324px transparent;display:block;width:27px;height:27px;position:absolute;top:-7px;right:-27px;cursor:pointer;
                 &.tooltip span.bubble{width:308px;white-space:normal;position:absolute;bottom:32px;left:-142px;text-align:left;
                   &:after{top:100%;right:auto;margin-top:0;border:solid transparent;content:"";height:0;width:0;position:absolute;pointer-events:none;border-color:rgba(140, 138, 138, 0);border-top-color: #8C8A8A;border-width:5px;left:50%;margin-left:-5px;}
@@ -364,10 +364,10 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
         //          .addAction a{position:absolute;top:10px;right:10px;display:block;width:27px;height:27px;text-indent:-9999px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -162px transparent;}
           .addAction{display:none;}
         }
-        #occupants{background-color:@colorBgBlanc;padding:20px 0 10px;
+        #occupants{background-color:@colorBgGrisC;padding-top:10px;
           .totalTaxeSejour{padding:10px 25px;margin-bottom:5px;}
         }
-        .anOccupant{background-color:@colorBgGrisC;margin:0 27px 10px;border:5px solid @colorBgGrisC;
+        .anOccupant{background-color:@colorBgBlanc;margin:0 0 10px;
           h3{background-image:none !important;background-color:@colorFushia;color:@colorBlanc;padding:5px 35px 5px 0;position:relative;font-size:23px;margin-bottom:10px;
             .occupantHeaderLeft{._verticalCenter(27px);
               small{font:bold 17px @arial;text-transform:none;}
@@ -376,16 +376,20 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
             .deleteAction a{position:absolute;top:6px;right:-3px;display:block;text-indent:-9999px;width:27px;height:27px;background:url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat 0 -243px transparent;float:left;margin:0 10px;}
           }
           .occupantFields{padding:10px 5px 0;margin-bottom:0;position:relative;
-            .occupantFieldsInfo{background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat scroll 0 -324px transparent;display:block;width:27px;height:27px;position:absolute;top:10px;right:5px;cursor:pointer;
+            .occupantFieldsInfo{background: url("../../images/vacancesdirectes/common/sprites/sprite-27.png") no-repeat scroll 0 -324px transparent;display:block;width:27px;height:27px;position:absolute;top:10px;right:140px;cursor:pointer;
               &.tooltip span.bubble{left:115%;max-width:342px;}
             }
             &.tooltip span.bubble{left:95%;bottom:5px;max-width:362px;}
             &>*{margin:0 5px 10px;}
             input{border:1px solid @colorBorderGris;}
-            .control_text{width:182px;margin-right:10px;}
+            .control_text{width:132px;margin-right:10px;}
             .control_date{width:120px;}
             #date_sRowID_link{right:0 !important;}
             .tooltip span.bubble{left:130px;}
+          }
+          table{border-spacing:0;padding-top:0;
+            td{padding-bottom:10px;}
+            td.price > div{background-color:@colorBgGrisC;}
           }
           h4{display:none;}
         }
@@ -808,7 +812,6 @@ input[disabled],
     &.summary #option .criterias .criteria .label{line-height:13px;}
   }
 
-
 }
 .ie-eq7{
   #please_wait_layer {filter: alpha(opacity=80);}
@@ -824,29 +827,3 @@ body.popup{background: @colorBgGrisC;}
   label{width: 110px;}
   [type="text"]{margin-right: 10px;}
 }
-/* // POPIN MOT DE PASS */
-
-
-/**** DE ****/
-
-//html[lang="de"]{
-
-/*LEFT*/
-#contentContener{
-
-// step 1
-  &.detail{
-    #reservation{
-      .aRoom{
-        .anOccupant{
-          h3{font-size:23px;}
-          .occupantFields{
-            .control_text{width:170px;}
-          }
-        }
-      }
-    }
-  }
-}
-//}
-
