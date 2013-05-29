@@ -22,6 +22,7 @@ class BlocPrixWidget extends AbstractWidget
     public function render()
     {
         $etab = (int) $this->app['request']->query->get('etab');
+        $selection = (boolean) $this->app['request']->query->get('selection');
         
         $camping = EtablissementQuery::create()
             ->filterByCode($etab)
@@ -57,7 +58,9 @@ class BlocPrixWidget extends AbstractWidget
             $blocPrix['category_hebergement']          = $minimumPriceType ? $minimumPriceType->getTypeHebergement()->getCategoryTypeHebergement()->getName() : '';
         }
 
-        return $this->app['twig']->render('Widget\\bloc_prix.twig', array(
+        $template = $selection ? 'bloc_selection.twig' : 'bloc_prix.twig';
+
+        return $this->app['twig']->render('Widget\\' . $template, array(
             'blocPrix' => $blocPrix
         ));
     }

@@ -142,6 +142,21 @@ class CouloirController implements ControllerProviderInterface
         })
         ->bind('couloir_confirmation');
 
+        $controllers->get('/error', function (Request $request) use ($app) {
+            var_dump(
+                'Query ###',
+                $request->query->all(),
+                'Request ###',
+                $request->request->all(),
+                'Server ###',
+                $request->server->all(),
+                'Cookies ###',
+                $request->cookies->all()
+            );
+            die;
+        })
+        ->bind('couloir_error');
+
         return $controllers;
     }
 }

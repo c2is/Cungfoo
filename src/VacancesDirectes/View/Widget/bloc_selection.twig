@@ -1,0 +1,35 @@
+{% if blocPrix.adult_price_without_discounts != 0 and blocPrix.proposal_key %}
+    <div id="resultBloc" class="arrowLeft itemResult radiusBox2 greyM">
+        <p class="proposalDates itemResultTitle">{{ "listing.du" | trans }} {{ blocPrix.start_date }} {{ "listing.au" | trans }} {{ blocPrix.end_date }}</p>
+        <div class="itemResultBottom">
+            <div class="linePrice {% if blocPrix.adult_price_pourcent %}promotion {% endif %}checked">
+                <div class="stain cover">
+                    <!--  PROMO  -->
+                    {% if blocPrix.adult_price_pourcent %}
+                        <span class="promo">-{{ blocPrix.adult_price_pourcent }}%</span>
+                    {% endif %}
+                    <!--  FIN / PROMO  -->
+                    <span class="price linkBlock">
+                        {% if blocPrix.adult_price_pourcent %}
+                            {{ blocPrix.adult_price|number_format }}<span class="fine">&nbsp;</span>&euro;
+                        {% else %}
+                            {{ blocPrix.adult_price_without_discounts|number_format }}<span class="fine">&nbsp;</span>&euro;
+                        {% endif %}
+                    </span>
+                    {% if blocPrix.adult_price_pourcent %}
+                        <span class="aulieude">{{ 'general.au_lieu_de' | trans }} <span class="line-through">{{ blocPrix.adult_price_without_discounts|number_format }}<span class="fine">&nbsp;</span>€</span></span>
+                    {% endif %}
+
+                </div>
+            </div>
+
+            {% if blocPrix.type_hebergement %}
+            <p class="proposalType">{{ blocPrix.category_hebergement }} - {{ blocPrix.type_hebergement }}
+            {% else %}
+            <p class="proposalType">{% if blocPrix.category_hebergement %}{{ blocPrix.category_hebergement }} - {% endif %}{{ blocPrix.room_type_label }}</p>
+            {% endif %}
+            
+            <a class="bt {% if blocPrix.adult_price_pourcent %}orange {% else %}fushia {% endif %}big ib" href="{{ path('couloir_detail_sejour', {'proposalKey': blocPrix.proposal_key}) }}" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'SideBar_-_Lien-Reserver', 'Clic_-_Bouton-Reserver']);">{{ "general.reserver"|trans }}</a>
+        </div>
+    </div>
+{% endif %}
