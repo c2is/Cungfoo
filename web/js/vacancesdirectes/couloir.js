@@ -36,7 +36,7 @@ $(function() {
     // [TODO] A activer => LGU : script pour lancement popin out-of-session
     if ($('#reservation').length) {
 //        setTimeout( 'parent.$.colorbox({href:"#fiveMinutes", top:"10%", overlayClose: false, escKey: false, className: "fiveM", inline:true, width:500});',1000/**60*5*/);
-        setTimeout( "$('#refresh_layer', window.parent.document).show()",1000/**60*5*/);
+        setTimeout( "$('#refresh_layer', window.parent.document).show()",1000*60*5);
     }
 
 });
