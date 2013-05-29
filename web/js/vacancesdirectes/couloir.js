@@ -34,9 +34,10 @@ $(function() {
     }
 
     // [TODO] A activer => LGU : script pour lancement popin out-of-session
-    /*if ($('#reservation').length) {
-        setTimeout( '$.colorbox({href:"#fiveMinutes", top:"10%", overlayClose: false, escKey: false, className: "fiveM", inline:true, width:288});',100*60 );
-    }*/
+    if ($('#reservation').length) {
+//        setTimeout( 'parent.$.colorbox({href:"#fiveMinutes", top:"10%", overlayClose: false, escKey: false, className: "fiveM", inline:true, width:500});',1000/**60*5*/);
+        setTimeout( "$('#refresh_layer', window.parent.document).show()",1000/**60*5*/);
+    }
 
 });
 
@@ -262,7 +263,8 @@ function resize_myframe() {
     //var height = $('html').height();
     var height = $('body').height();
     height += 70;
-    window.parent.document.getElementById('frameResalys').style.height = height + 'px';
+    $('#frameResalys', window.parent.document).css({height:height+'px'});
+//    window.parent.document.getElementById('frameResalys').style.height = height + 'px';
     //console.log(height);
 }
 

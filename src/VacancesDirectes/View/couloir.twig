@@ -80,6 +80,15 @@
         {% endblock %}
     </div>
 
+    <div id="refresh_layer" class="refreshLayer">
+        <div class="layerOverlay"></div>
+        <div id="refresh_layer_content">
+            <h2>Session bientôt expirée !</h2>
+            <p>Afin ne pas perdre la session en cours, merci de rafraîchir la page.</p>
+            <a class="bt ib gris2" href="#">Rafraîchir</a>
+        </div>
+    </div>
+
     {% include 'footer.twig' %}
 
     <script src="{{ asset('vendor/jquery-1.8.3.min.js?v='~app.config.get('version')) }}"></script>

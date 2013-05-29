@@ -1222,6 +1222,13 @@ if($('#footerInfo').length){
     });
 }
 
+if($('#refresh_layer').length){
+    $('#refresh_layer a.bt').click(function(e) {
+        e.preventDefault();
+        location.reload();
+    });
+}
+
 
 /*
  *  //////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -229,8 +229,8 @@ header, section, footer {position:relative;}
     img{margin-bottom:15px;}
   }
 }
+.layerOverlay{position:fixed;top:0;left:0;width:100%;height:100%;background-color:@colorBgBlanc;text-align:center;font:normal 15px @arial;opacity:0.8;}
 #didacticiel_layer{z-index:101;position:relative;display:none;
-  #didacticiel_layer_overlay{position:fixed;top:0;left:0;width:100%;height:100%;background-color:@colorBgBlanc;text-align:center;font:normal 15px @arial;opacity:0.8;}
   #didacticiel_layer_content{width:500px;min-height:270px;margin:-135px 0 0 -250px;position:fixed;top:50%;left:50%;background:@colorGris2 url('../../images/vacancesdirectes/common/pict/loading-bloc.jpg') no-repeat 0px 10px;._border-radius(10px);color:@colorBlanc;padding:15px;
     h2,
     p{margin-left:237px;}
@@ -238,6 +238,15 @@ header, section, footer {position:relative;}
     p{font:normal 15px @arial;padding-bottom:45px;}
     span{font:normal 11px @arial;position:absolute;bottom:15px;left:15px;}
     img{position:absolute;bottom:15px;right:15px;}
+  }
+}
+#refresh_layer{z-index:101;position:relative;display:none;
+  #refresh_layer_content{width:358px;min-height:210px;margin:-105px 0 0 -179px;position:fixed;top:50%;left:50%;background:@colorGris2 url('../../images/vacancesdirectes/common/ui/timeout-early.png') no-repeat 15px 15px;._border-radius(10px);color:@colorBlanc;padding:15px;
+    h2,
+    p{margin-left:95px;}
+    h2{font:bold 25px/24px @ptnarrow;color:@colorBlanc;margin-bottom:10px;text-transform:uppercase;}
+    p{font:normal 15px @arial;padding-bottom:51px;margin-top: 10px;text-align:left;}
+    a.bt{position:absolute;bottom:15px;right:15px;}
   }
 }
 
