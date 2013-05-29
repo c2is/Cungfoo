@@ -2187,6 +2187,16 @@ function rangeSliderPrice() {
     initRange.call();
 }
 
+function reInitFilter(){
+    setTimeout( function(){
+        alert('Pas de dispo -> reinit()');
+        $('#TopFilter_regions').val('');
+        launchFilters();
+    }, 100);
+}
+
+var firstTime = true;
+
 //selection des criteres
 function launchFilters() {
     //remize a zero
@@ -2334,62 +2344,77 @@ function displayResults() {
 
     });
 
-//init de l'affichage du nombre de resultats par critere
-    $('.contentCritPlus').find('input').each( function(){
-        var rslTypePlus = $(this).attr('id');
-        var rslTypeinresultPlus = $(".itemRanged[data-critplus~="+rslTypePlus+"]").length;
-        if ( rslTypeinresultPlus == 0 ) {
-            $(this).siblings('.nbItem').text('');
-            $(this).attr('disabled', true).parent().addClass('disableLabel');
-        } else {
-            $(this).siblings('.nbItem').text('('+rslTypeinresultPlus+')');
-            $(this).attr('disabled', false).parent().removeClass('disableLabel');
-        }
-    });
-    $('.contentCrit').find('input').each( function(){
-        var rslType = $(this).attr('id');
-        var rslTypeinresult = $('.itemRanged[data-crit='+rslType+']').length;
-        if ( rslTypeinresult == 0 ) {
-            $(this).siblings('.nbItem').text('');
-            $(this).attr('disabled', true).parent().addClass('disableLabel');
-        } else {
-            $(this).siblings('.nbItem').text('('+rslTypeinresult+')');
-            $(this).attr('disabled', false).parent().removeClass('disableLabel');
-        }
-    });
-
-    $('#TopFilter_bon_plans').find('option').each( function(){
-        var date = $(this).attr('value');
-        if ( date != 0 )
-            var dateInItems = $(".itemRanged[data-date="+date+"]").length;
-            if ( dateInItems == 0 ) {
-                $(this).attr('disabled', true);
+    if ( nbItemsDisplayed == 0 ) {
+        reInitFilter();
+    } else {
+        //init de l'affichage du nombre de resultats par critere
+        $('.contentCritPlus').find('input').each( function(){
+            var rslTypePlus = $(this).attr('id');
+            var rslTypeinresultPlus = $(".itemRanged[data-critplus~="+rslTypePlus+"]").length;
+            if ( rslTypeinresultPlus == 0 ) {
+                $(this).siblings('.nbItem').text('');
+                $(this).attr('disabled', true).parent().addClass('disableLabel');
             } else {
-                $(this).attr('disabled', false);
+                $(this).siblings('.nbItem').text('('+rslTypeinresultPlus+')');
+                $(this).attr('disabled', false).parent().removeClass('disableLabel');
             }
-    });
-    $('#TopFilter_regions').find('option').each( function(){
-        var reg = $(this).attr('value');
-        if ( reg != 0 )
-            var regInItems = $(".itemRanged[data-reg="+reg+"]").length;
-            if ( regInItems == 0 ) {
-                $(this).attr('disabled', true);
+        });
+        $('.contentCrit').find('input').each( function(){
+            var rslType = $(this).attr('id');
+            var rslTypeinresult = $('.itemRanged[data-crit='+rslType+']').length;
+            if ( rslTypeinresult == 0 ) {
+                $(this).siblings('.nbItem').text('');
+                $(this).attr('disabled', true).parent().addClass('disableLabel');
             } else {
-                $(this).attr('disabled', false);
+                $(this).siblings('.nbItem').text('('+rslTypeinresult+')');
+                $(this).attr('disabled', false).parent().removeClass('disableLabel');
             }
-    });
+        });
 
-// Affichage du nombre de criteres selectionnes
-    var nbCritChecked = $('#formSearchRefined input:checked').length;
-    $('#nbCrit').text(nbCritChecked);
+        consoleLog(firstTime);
+        if (firstTime == true) {
+            $('#TopFilter_regions').find('option').each( function(){
+                var reg = $(this).attr('value');
+                if ( reg != 0 ){
+                    var regInItems = $(".itemRanged[data-reg="+reg+"]").length;
+                    if ( regInItems == 0 ) { $(this).remove(); }
+                }
+            });
+            firstTime = false;
+        }
+        /*$('#TopFilter_bon_plans').find('option').each( function(){
+            var date = $(this).attr('value');
+            if ( date != 0 )
+                var dateInItems = $(".itemRanged[data-date="+date+"]").length;
+                if ( dateInItems == 0 ) {
+                    $(this).attr('disabled', true);
+                } else {
+                    $(this).attr('disabled', false);
+                }
+        });
+        $('#TopFilter_regions').find('option').each( function(){
+            var reg = $(this).attr('value');
+            if ( reg != 0 )
+                var regInItems = $(".itemRanged[data-reg="+reg+"]").length;
+                if ( regInItems == 0 ) {
+                    $(this).attr('disabled', true);
+                } else {
+                    $(this).attr('disabled', false);
+                }
+        });*/
+
+    // Affichage du nombre de criteres selectionnes
+        var nbCritChecked = $('#formSearchRefined input:checked').length;
+        $('#nbCrit').text(nbCritChecked);
 
 
 
-    //gestion de la pagination
-    listPagination();
+        //gestion de la pagination
+        listPagination();
 
-    //mise a jour du nombre d'items affiches
-    $('.nbResult .nb').text(nbItemsDisplayed).animate({'opacity':1});
+        //mise a jour du nombre d'items affiches
+        $('.nbResult .nb').text(nbItemsDisplayed).animate({'opacity':1});
+    }
 };
 
 
