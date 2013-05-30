@@ -2295,7 +2295,7 @@ function rangeSliderPrice() {
 function reInitFilter(){
     setTimeout( function(){
         //alert('Pas de dispo -> reinit()');
-        $('#results').prepend('<p id="noResult">Pas de résultat correspondant à votre sélection</p>');
+        //$('#results').prepend('<p id="noResult">Pas de résultat correspondant à votre sélection</p>');
         $('#TopFilter_regions').val('');
         launchFilters();
     }, 100);
@@ -2307,11 +2307,6 @@ function launchFilters() {
     $('.nbResult .nb').css({'opacity':0});
     items.removeClass('itemRanged');
     items.removeClass('nextItem');
-    if ( $('#noResult').length ) {
-        setTimeout( function(){
-            $('#noResult').fadeOut().remove();
-        }, 3000);
-    }
 
     //init des tableaux
     var arrayCrit = [];         //tableau des criteres
@@ -2460,6 +2455,13 @@ function displayResults() {
     if ( nbItemsDisplayed == 0 ) {
         reInitFilter();
     } else {
+        //Suppression du message d'erreur
+        /*if ( $('#noResult').length ) {
+          setTimeout( function(){
+            $('#noResult').fadeOut().remove();
+          }, 3000);
+        }*/
+
         //init de l'affichage du nombre de resultats par critere
         $('.contentCritPlus').find('input').each( function(){
             var rslTypePlus = $(this).attr('id');
