@@ -2123,7 +2123,7 @@ function initCritResult(){
                 $('#TopFilter_bon_plans').val(option);
                 launchFilters();
                 $('#deals').hide();
-                $('#please_wait_layer').hide();
+                $('#didacticiel_layer').hide();
             }
 
         });
