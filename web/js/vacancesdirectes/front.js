@@ -2029,12 +2029,18 @@ function initCritResult(){
     //we come from the same page
     if ( $('#results').length ){
         $('#dealsContent').find('.linkParent').click( function(){
-            var hash = window.location.hash;
-            var option = hash.split('#')[1];
-            $('#TopFilter_bon_plans').val(option);
-            launchFilters();
-            $('#deals').hide();
-            $('#please_wait_layer').hide();
+            var host = window.location.pathname;
+            var hrefLink = $(this).find('a').attr('href').split('#')[0];
+
+            if ( host == hrefLink ){
+                var hash = window.location.hash;
+                var option = hash.split('#')[1];
+                $('#TopFilter_bon_plans').val(option);
+                launchFilters();
+                $('#deals').hide();
+                $('#please_wait_layer').hide();
+            }
+
         });
     }
 
