@@ -2061,12 +2061,12 @@ function initCritResult(){
     });
 
 // init du nombre de resultats
-    var nbResultsItems = items.length;
-    $('.nbResult .nb').text(nbResultsItems);
+    /*var nbResultsItems = items.length;
+    $('.nbResult .nb').text(nbResultsItems);*/
 
-    items.each(function(i) {
+   /* items.each(function(i) {
         $(this).attr('data-pertinenceID', i);
-    });
+    });*/
 
 // affichage des filtres
     $('.sectionTitle').not('.open').next('fieldset').fadeToggle();
@@ -2279,36 +2279,40 @@ function launchFilters() {
         }
     };
 
-    var dataCritDate = $('#TopFilter_bon_plans').val();
-    if ( dataCritDate == '' ) {
-        items.each( function(){
-            $(this).attr('data-datecrit', true);
-        });
-    } else {
-        items.each( function(){
-            var iDateCrit = $(this).attr('data-date');
-            if ( iDateCrit == dataCritDate ) {
+    if ( $('#TopFilter_bon_plans').length ){
+        var dataCritDate = $('#TopFilter_bon_plans').val();
+        if ( dataCritDate == '' ) {
+            items.each( function(){
                 $(this).attr('data-datecrit', true);
-            } else {
-                $(this).attr('data-datecrit', false);
-            }
-        });
+            });
+        } else {
+            items.each( function(){
+                var iDateCrit = $(this).attr('data-date');
+                if ( iDateCrit == dataCritDate ) {
+                    $(this).attr('data-datecrit', true);
+                } else {
+                    $(this).attr('data-datecrit', false);
+                }
+            });
+        }
     }
 
-    var dataCritReg = $('#TopFilter_regions').val();
-    if ( dataCritReg == '' ) {
-        items.each( function(){
-            $(this).attr('data-regcrit', true);
-        });
-    } else {
-        items.each( function(){
-            var iRegCrit = $(this).attr('data-reg');
-            if ( iRegCrit == dataCritReg ) {
-               $(this).attr('data-regcrit', true);
-            } else {
-                $(this).attr('data-regcrit', false);
-            }
-        });
+    if ( $('#TopFilter_regions').length ){
+        var dataCritReg = $('#TopFilter_regions').val();
+        if ( dataCritReg == '' ) {
+            items.each( function(){
+                $(this).attr('data-regcrit', true);
+            });
+        } else {
+            items.each( function(){
+                var iRegCrit = $(this).attr('data-reg');
+                if ( iRegCrit == dataCritReg ) {
+                   $(this).attr('data-regcrit', true);
+                } else {
+                    $(this).attr('data-regcrit', false);
+                }
+            });
+        }
     }
 
     //rangeSliderPrice();
