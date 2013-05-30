@@ -2111,6 +2111,18 @@ function initializeAllGmap() {
 
 function initCritResult(){
 
+    //we come from the same page
+    if ( $('#results').length ){
+        $('#dealsContent').find('.linkParent').click( function(){
+            var hash = window.location.hash;
+            var option = hash.split('#')[1];
+            $('#TopFilter_bon_plans').val(option);
+            launchFilters();
+            $('#deals').hide();
+            $('#please_wait_layer').hide();
+        });
+    }
+
     if(window.location.hash != '') {
         var hash = window.location.hash;
         if(hash === '#carte') {
@@ -2146,12 +2158,12 @@ function initCritResult(){
     });
 
 // init du nombre de resultats
-    var nbResultsItems = items.length;
-    $('.nbResult .nb').text(nbResultsItems);
+    /*var nbResultsItems = items.length;
+    $('.nbResult .nb').text(nbResultsItems);*/
 
-    items.each(function(i) {
+   /* items.each(function(i) {
         $(this).attr('data-pertinenceID', i);
-    });
+    });*/
 
 // affichage des filtres
     $('.sectionTitle').not('.open').next('fieldset').fadeToggle();
@@ -2272,6 +2284,16 @@ function rangeSliderPrice() {
     initRange.call();
 }
 
+function reInitFilter(){
+    setTimeout( function(){
+        alert('Pas de dispo -> reinit()');
+        $('#TopFilter_regions').val('');
+        launchFilters();
+    }, 100);
+}
+
+var firstTime = true;
+
 //selection des criteres
 function launchFilters() {
     //remize a zero
@@ -2354,36 +2376,40 @@ function launchFilters() {
         }
     };
 
-    var dataCritDate = $('#TopFilter_bon_plans').val();
-    if ( dataCritDate == '' ) {
-        items.each( function(){
-            $(this).attr('data-datecrit', true);
-        });
-    } else {
-        items.each( function(){
-            var iDateCrit = $(this).attr('data-date');
-            if ( iDateCrit == dataCritDate ) {
+    if ( $('#TopFilter_bon_plans').length ){
+        var dataCritDate = $('#TopFilter_bon_plans').val();
+        if ( dataCritDate == '' ) {
+            items.each( function(){
                 $(this).attr('data-datecrit', true);
-            } else {
-                $(this).attr('data-datecrit', false);
-            }
-        });
+            });
+        } else {
+            items.each( function(){
+                var iDateCrit = $(this).attr('data-date');
+                if ( iDateCrit == dataCritDate ) {
+                    $(this).attr('data-datecrit', true);
+                } else {
+                    $(this).attr('data-datecrit', false);
+                }
+            });
+        }
     }
 
-    var dataCritReg = $('#TopFilter_regions').val();
-    if ( dataCritReg == '' ) {
-        items.each( function(){
-            $(this).attr('data-regcrit', true);
-        });
-    } else {
-        items.each( function(){
-            var iRegCrit = $(this).attr('data-reg');
-            if ( iRegCrit == dataCritReg ) {
-               $(this).attr('data-regcrit', true);
-            } else {
-                $(this).attr('data-regcrit', false);
-            }
-        });
+    if ( $('#TopFilter_regions').length ){
+        var dataCritReg = $('#TopFilter_regions').val();
+        if ( dataCritReg == '' ) {
+            items.each( function(){
+                $(this).attr('data-regcrit', true);
+            });
+        } else {
+            items.each( function(){
+                var iRegCrit = $(this).attr('data-reg');
+                if ( iRegCrit == dataCritReg ) {
+                   $(this).attr('data-regcrit', true);
+                } else {
+                    $(this).attr('data-regcrit', false);
+                }
+            });
+        }
     }
 
     //rangeSliderPrice();
@@ -2419,62 +2445,77 @@ function displayResults() {
 
     });
 
-//init de l'affichage du nombre de resultats par critere
-    $('.contentCritPlus').find('input').each( function(){
-        var rslTypePlus = $(this).attr('id');
-        var rslTypeinresultPlus = $(".itemRanged[data-critplus~="+rslTypePlus+"]").length;
-        if ( rslTypeinresultPlus == 0 ) {
-            $(this).siblings('.nbItem').text('');
-            $(this).attr('disabled', true).parent().addClass('disableLabel');
-        } else {
-            $(this).siblings('.nbItem').text('('+rslTypeinresultPlus+')');
-            $(this).attr('disabled', false).parent().removeClass('disableLabel');
-        }
-    });
-    $('.contentCrit').find('input').each( function(){
-        var rslType = $(this).attr('id');
-        var rslTypeinresult = $('.itemRanged[data-crit='+rslType+']').length;
-        if ( rslTypeinresult == 0 ) {
-            $(this).siblings('.nbItem').text('');
-            $(this).attr('disabled', true).parent().addClass('disableLabel');
-        } else {
-            $(this).siblings('.nbItem').text('('+rslTypeinresult+')');
-            $(this).attr('disabled', false).parent().removeClass('disableLabel');
-        }
-    });
-
-    $('#TopFilter_bon_plans').find('option').each( function(){
-        var date = $(this).attr('value');
-        if ( date != 0 )
-            var dateInItems = $(".itemRanged[data-date="+date+"]").length;
-            if ( dateInItems == 0 ) {
-                $(this).attr('disabled', true);
+    if ( nbItemsDisplayed == 0 ) {
+        reInitFilter();
+    } else {
+        //init de l'affichage du nombre de resultats par critere
+        $('.contentCritPlus').find('input').each( function(){
+            var rslTypePlus = $(this).attr('id');
+            var rslTypeinresultPlus = $(".itemRanged[data-critplus~="+rslTypePlus+"]").length;
+            if ( rslTypeinresultPlus == 0 ) {
+                $(this).siblings('.nbItem').text('');
+                $(this).attr('disabled', true).parent().addClass('disableLabel');
             } else {
-                $(this).attr('disabled', false);
+                $(this).siblings('.nbItem').text('('+rslTypeinresultPlus+')');
+                $(this).attr('disabled', false).parent().removeClass('disableLabel');
             }
-    });
-    $('#TopFilter_regions').find('option').each( function(){
-        var reg = $(this).attr('value');
-        if ( reg != 0 )
-            var regInItems = $(".itemRanged[data-reg="+reg+"]").length;
-            if ( regInItems == 0 ) {
-                $(this).attr('disabled', true);
+        });
+        $('.contentCrit').find('input').each( function(){
+            var rslType = $(this).attr('id');
+            var rslTypeinresult = $('.itemRanged[data-crit='+rslType+']').length;
+            if ( rslTypeinresult == 0 ) {
+                $(this).siblings('.nbItem').text('');
+                $(this).attr('disabled', true).parent().addClass('disableLabel');
             } else {
-                $(this).attr('disabled', false);
+                $(this).siblings('.nbItem').text('('+rslTypeinresult+')');
+                $(this).attr('disabled', false).parent().removeClass('disableLabel');
             }
-    });
+        });
 
-// Affichage du nombre de criteres selectionnes
-    var nbCritChecked = $('#formSearchRefined input:checked').length;
-    $('#nbCrit').text(nbCritChecked);
+        consoleLog(firstTime);
+        if (firstTime == true) {
+            $('#TopFilter_regions').find('option').each( function(){
+                var reg = $(this).attr('value');
+                if ( reg != 0 ){
+                    var regInItems = $(".itemRanged[data-reg="+reg+"]").length;
+                    if ( regInItems == 0 ) { $(this).remove(); }
+                }
+            });
+            firstTime = false;
+        }
+        /*$('#TopFilter_bon_plans').find('option').each( function(){
+            var date = $(this).attr('value');
+            if ( date != 0 )
+                var dateInItems = $(".itemRanged[data-date="+date+"]").length;
+                if ( dateInItems == 0 ) {
+                    $(this).attr('disabled', true);
+                } else {
+                    $(this).attr('disabled', false);
+                }
+        });
+        $('#TopFilter_regions').find('option').each( function(){
+            var reg = $(this).attr('value');
+            if ( reg != 0 )
+                var regInItems = $(".itemRanged[data-reg="+reg+"]").length;
+                if ( regInItems == 0 ) {
+                    $(this).attr('disabled', true);
+                } else {
+                    $(this).attr('disabled', false);
+                }
+        });*/
+
+    // Affichage du nombre de criteres selectionnes
+        var nbCritChecked = $('#formSearchRefined input:checked').length;
+        $('#nbCrit').text(nbCritChecked);
 
 
 
-    //gestion de la pagination
-    listPagination();
+        //gestion de la pagination
+        listPagination();
 
-    //mise a jour du nombre d'items affiches
-    $('.nbResult .nb').text(nbItemsDisplayed).animate({'opacity':1});
+        //mise a jour du nombre d'items affiches
+        $('.nbResult .nb').text(nbItemsDisplayed).animate({'opacity':1});
+    }
 };
 
 
