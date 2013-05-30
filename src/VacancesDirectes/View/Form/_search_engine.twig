@@ -119,6 +119,11 @@
             var nbEnfants = $('input[type="text"]#SearchDate_nbEnfants', $form).val();
             var destinationValue = $('select#SearchDate_destination', $form).val();
             var destinationText = $('select#SearchDate_destination option:selected', $form).text();
+            var isCamping = $('input[type="hidden"]#SearchDate_isCamping', $form).val() == '1';
+            var campingId = $('select#SearchDate_camping', $form).val();
+            var campingText = $('select#SearchDate_camping option:selected', $form).text();
+            var villeId = $('select#SearchDate_ville', $form).val();
+            var villeText = $('select#SearchDate_ville option:selected', $form).text();
 
             var content = [];
             if (dateDebut) {
@@ -134,8 +139,15 @@
                 }
                 content.push(occupantsString);
             }
+            
             if (destinationValue) {
                 content.push('{{ 'didacticiel.destination' | trans | e('js') }} : ' + destinationText);
+            }
+
+            if (isCamping && campingId) {
+                content.push('{{ 'didacticiel.camping' | trans | e('js') }} : ' + campingText);
+            } else if (!isCamping && villeId) {
+                content.push('{{ 'didacticiel.ville' | trans | e('js') }} : ' + villeText);
             }
 
             return content.join('<br />');
