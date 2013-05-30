@@ -25,6 +25,7 @@ class TopFilterType extends AppAwareType
         $category = $options['data'];
 
         $bonPlans = BonPlanQuery::create()
+            ->orderByDateStart()
             ->filterByBonPlanCategorie($category)
             ->findActive()
         ;
@@ -43,6 +44,9 @@ class TopFilterType extends AppAwareType
         ));
 
         $regions = RegionQuery::create()
+            ->useI18nQuery()
+                ->orderByName()
+            ->endUse()
             ->findActive()
         ;
 

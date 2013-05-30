@@ -44,6 +44,8 @@ class AssetExtension extends Twig_Extension
 
             if ($basePath) {
                 $basePath = sprintf("%s://%s", $this->app['request']->getScheme(), $basePath);
+            } else {
+                $basePath = $this->app['request']->getBasePath();
             }
         } catch (\Exception $e) {
             $basePath = $this->app['request']->getBasePath();
