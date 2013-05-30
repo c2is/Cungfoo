@@ -795,7 +795,7 @@ abstract class BaseBaignadePeer
     }
 
     // crudable behavior
-    
+
     /**
      * The default locale to use for translations
      * @var        string
@@ -809,7 +809,7 @@ abstract class BaseBaignadePeer
         ;
     }
     // seo behavior
-    
+
     /**
      * The default locale to use for translations
      * @var        string

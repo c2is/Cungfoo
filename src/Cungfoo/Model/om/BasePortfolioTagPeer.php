@@ -1030,7 +1030,7 @@ abstract class BasePortfolioTagPeer
     }
 
     // crudable behavior
-    
+
     /**
      * The default locale to use for translations
      * @var        string
@@ -1044,7 +1044,7 @@ abstract class BasePortfolioTagPeer
         ;
     }
     // seo behavior
-    
+
     /**
      * The default locale to use for translations
      * @var        string

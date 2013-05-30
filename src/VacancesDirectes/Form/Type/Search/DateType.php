@@ -70,18 +70,18 @@ class DateType extends AppAwareType
 
         $builder->add('nbJoursHauteSaison', 'choice', array(
             'choices'     => array(
-                3  => "3 nuits",
-                4  => "4 nuits",
-                7  => "7 nuits",
-                10 => "10 nuits",
-                11 => "11 nuits",
-                14 => "14 nuits",
-                17 => "17 nuits",
-                18 => "18 nuits",
-                21 => "21 nuits",
-                24 => "24 nuits",
-                25 => "25 nuits",
-                28 => "28 nuits"
+                3  => "3 " . $app->trans('date_search.nuits'),
+                4  => "4 " . $app->trans('date_search.nuits'),
+                7  => "7 " . $app->trans('date_search.nuits'),
+                10 => "10 " . $app->trans('date_search.nuits'),
+                11 => "11 " . $app->trans('date_search.nuits'),
+                14 => "14 " . $app->trans('date_search.nuits'),
+                17 => "17 " . $app->trans('date_search.nuits'),
+                18 => "18 " . $app->trans('date_search.nuits'),
+                21 => "21 " . $app->trans('date_search.nuits'),
+                24 => "24 " . $app->trans('date_search.nuits'),
+                25 => "25 " . $app->trans('date_search.nuits'),
+                28 => "28 " . $app->trans('date_search.nuits')
             ),
             'label'       => 'date_search.nb_jours',
             'empty_value' => "date_search.nb_jours.empty_value",

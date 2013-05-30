@@ -57,6 +57,19 @@ class BaseBonPlanCategorieType extends AppAwareType
         );
     }
 
+    public function getVisuelType()
+    {
+        return 'cungfoo_file';
+    }
+
+    public function getVisuelOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'bon_plan_categorie.visuel',
+        );
+    }
+
     public function getBonPlansType()
     {
         return 'model';
@@ -197,6 +210,7 @@ class BaseBonPlanCategorieType extends AppAwareType
         $builder->add('id', $this->getIdType(), $this->getIdOptions());
         $builder->add('sortable_rank', $this->getSortableRankType(), $this->getSortableRankOptions());
         $builder->add('active', $this->getActiveType(), $this->getActiveOptions());
+        $builder->add('visuel', $this->getVisuelType(), $this->getVisuelOptions());
         $builder->add('bon_plans', $this->getBonPlansType(), $this->getBonPlansOptions());$builder->add('bon_plan_categorieI18ns', 'translation_collection', array(
             'i18n_class' => 'Cungfoo\Model\BonPlanCategorieI18n',
             'label' => 'bon_plan_categorieI18ns',

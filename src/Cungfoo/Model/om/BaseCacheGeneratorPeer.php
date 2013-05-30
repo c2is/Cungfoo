@@ -797,7 +797,7 @@ abstract class BaseCacheGeneratorPeer
     }
 
     // crudable behavior
-    
+
     /**
      * The default locale to use for translations
      * @var        string
@@ -811,7 +811,7 @@ abstract class BaseCacheGeneratorPeer
         ;
     }
     // seo behavior
-    
+
     /**
      * The default locale to use for translations
      * @var        string

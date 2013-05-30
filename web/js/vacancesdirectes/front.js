@@ -2110,15 +2110,36 @@ function initializeAllGmap() {
  */
 
 function initCritResult(){
-// affichage des filtres
-    $('.sectionTitle').not('.open').next('fieldset').fadeToggle();
-    openCrit();
 
-// affichage carte
-    if(window.location.hash === '#carte') {
-        $('#btMap').addClass('active').siblings('button').removeClass('active');
-        $('#resultMap').addClass('active');
+    //we come from the same page
+    if ( $('#results').length ){
+        $('#dealsContent').find('.linkParent').click( function(){
+            var host = window.location.pathname;
+            var hrefLink = $(this).find('a').attr('href').split('#')[0];
+
+            if ( host == hrefLink ){
+                var hash = window.location.hash;
+                var option = hash.split('#')[1];
+                $('#TopFilter_bon_plans').val(option);
+                launchFilters();
+                $('#deals').hide();
+                $('#didacticiel_layer').hide();
+            }
+
+        });
     }
+
+    if(window.location.hash != '') {
+        var hash = window.location.hash;
+        if(hash === '#carte') {
+            $('#btMap').addClass('active').siblings('button').removeClass('active');
+            $('#resultMap').addClass('active');
+        }else{
+            var option = hash.split('#')[1];
+            $('#TopFilter_bon_plans').val(option);
+        }
+    }
+
     $('.typeAff').find('button').click( function(){
         $(this).addClass('active').siblings('button').removeClass('active');
         if ( $(this).attr('id') == 'btMap' ) {
@@ -2128,65 +2149,13 @@ function initCritResult(){
         }
     });
 
-// change on click
-    $('.itemResult .linePrice :radio').change( function(){
-        var oCheck = $(this);
-        oCheck.parents('.linePrice').addClass('checked').siblings().removeClass('checked');
-    });
-
-    $('.formSearchRefined').find(':checkbox').change(function() {
-        var nbCritChecked = $('#formSearchRefined input:checked').length;
-        $('#nbCrit').text(nbCritChecked);
-        critSelection();
-        displayResults();
-    });
-
-    $('#filterTri').find('select').change(function() {
-        //var nbCritChecked = $('#formSearchRefined input:checked').length;
-        //$('#nbCrit').text(nbCritChecked);
-        //critSelection();
-        displayResults();
-    });
-
-    if ( $('.formSearchRefined').length ) {
-        var nbCritChecked = $('#formSearchRefined input:checked').length;
-        $('#nbCrit').text(nbCritChecked);
-    }
-    if ( $('#results').length ) {
-        launchFilters();
-    }
-
-    $('#btPlusResults').click( function() {
-        var nextItems = $('#results .nextItem');
-
-        if ( nextItems.length <= nbToShow ) {
-            $('#results').find('.nextItem[data-filtered=true][data-filteredPlus=true][data-ranged=true]').fadeIn().removeClass('nextItem');
-            //nextItems.fadeIn().removeClass('nextItem');
-            $(this).hide();
-        }else if ( nextItems.length > nbToShow ) {
-            var nbDisclaim = 0;
-
-            $('#results').find('.nextItem[data-filtered=true][data-filteredPlus=true][data-ranged=true]:lt('+nbToShow+')').each(function() {
-                if ( $(this).hasClass('disclaim') ) {
-                    nbDisclaim++;
-                };
-            });
-            nbToShow = nbToShow+nbDisclaim;
-            //console.log('nbDisclaim = ' +nbDisclaim+' et nbToShow = '+nbToShow);
-
-            $('#results').find('.nextItem[data-filtered=true][data-filteredPlus=true][data-ranged=true]:lt('+nbToShow+')').fadeIn().removeClass('nextItem');
-        }
-        //console.log('/--- listPagination : affichage des '+nbToShow+' items suivants ---/');
-    });
-}
-
-//launcher des filtres
-function launchFilters() {
-    items.attr('data-filtered', true);
-    items.attr('data-filteredPlus', true);
-    items.attr('data-ranged', true);
-    items.attr('data-dateCrit', true);
-    items.attr('data-regCrit', true);
+// init resultat first pass
+    items.attr('data-filtered', true)
+         .attr('data-filteredPlus', true)
+         .attr('data-ranged', true)
+         .attr('data-datecrit', true)
+         .attr('data-regcrit', true)
+        .addClass('itemRanged');
 
     items.each( function(){
         var critPlus = $(this).attr('data-critplus');
@@ -2194,31 +2163,35 @@ function launchFilters() {
         $(this).attr('data-critplus', critPlus.replace(critPlusReg,' '));
     });
 
-    //init du nombre de resultats
-    var nbResultsItems = items.length;
-    $('.nbResult .nb').text(nbResultsItems);
+// init du nombre de resultats
+    /*var nbResultsItems = items.length;
+    $('.nbResult .nb').text(nbResultsItems);*/
 
-    //identification des items pour le tri par pertinence
-    items.each(function(i) {
+   /* items.each(function(i) {
         $(this).attr('data-pertinenceID', i);
+    });*/
+
+// affichage des filtres
+    $('.sectionTitle').not('.open').next('fieldset').fadeToggle();
+    openCrit();
+
+// change on click
+    $('.itemResult .linePrice :radio').change( function(){
+        var oCheck = $(this);
+        oCheck.parents('.linePrice').addClass('checked').siblings().removeClass('checked');
     });
 
-    //attribution min/max pour le range slider
+// change on click
+    var iBox = $('.formSearchRefined').find(':checkbox'),
+        iSlcDate = $('#filterTri').find('#TopFilter_bon_plans'),
+        iSlcReg = $('#filterTri').find('#TopFilter_regions');
+
+    iBox.change(function() { launchFilters(); });
+    iSlcDate.change(function() { launchFilters(); });
+    iSlcReg.change(function() { launchFilters(); });
+
+// First-time launchFilter function
     findMinMaxRange();
-
-    //creation du rangeSlider de prix
-    rangeSliderPrice();
-
-    //selection des criteres
-    /*if ( containerCrit.find('input:checked').length ) {*/
-    critSelection();
-    /*};*/
-
-    //gestion du tri par prix ou pertinence
-    orderList();
-
-    //Pagination de la liste de resultats
-    listPagination();
 }
 
 function openCrit() {
@@ -2231,7 +2204,7 @@ function openCrit() {
 //attribution min/max prix pour le range slider
 function findMinMaxRange() {
     var allPrices = [];
-    $('[data-ranged="true"][data-filtered="true"][data-filteredPlus="true"]').each(function() {
+    items.each(function() {
         $(this).find('.linePrice').each( function(){
             var itemPrice = parseInt($(this).find('.stain .price').text());
             allPrices.push(itemPrice);
@@ -2255,11 +2228,16 @@ function findMinMaxRange() {
     if ( minPrice == maxPrice) {
         $('#widgetRange').hide();
     }
+
+    rangeSliderPrice();
+    launchFilters();
 }
 
 //creation du rangeSlider de prix
 function rangeSliderPrice() {
     var $range = $("#noUiSlider"),
+        //valueMin,
+        //valueMax,
         minScale = minPrice/*-20*/,
         maxScale = maxPrice/*+20*/,
         minStart = minPrice,
@@ -2277,13 +2255,10 @@ function rangeSliderPrice() {
             },
             end: function(type){
                 var values = $(this).noUiSlider('value');
-                valueMin = values[0];
-                valueMax = values[1];
-
-                items.each(function() {
+                $('.itemResult').each(function() {
                     $(this).find('.linePrice').each( function(){
                         var originPriceLine = parseInt($(this).find('.stain .price').text());
-                        if ( parseInt(originPriceLine) >= parseInt(valueMin) && parseInt(originPriceLine) <= parseInt(valueMax) ) {
+                        if ( parseInt(originPriceLine) >= parseInt(values[0]) && parseInt(originPriceLine) <= parseInt(values[1]) ) {
                             $(this).addClass('visiblePrice').fadeIn();
                         }else{
                             $(this).removeClass('visiblePrice').fadeOut();
@@ -2305,22 +2280,32 @@ function rangeSliderPrice() {
                     }
                 });
 
-                paginationAfterRange = true;
-                critSelection();
                 displayResults();
-                //console.log('/--- rangeSliderPrice (event: change) ---/');
             }
         }).find('.noUi-handle div').each(function(index){
-                $(this).append('<span class="rangeBox">'+$(this).parent().parent().noUiSlider( 'value' )[index]+' €</span>');
-            });
+            $(this).append('<span class="rangeBox">'+$(this).parent().parent().noUiSlider( 'value' )[index]+' €</span>');
+        });
     };
 
     initRange.call();
 }
 
-//selection des criteres
-function critSelection() {
+function reInitFilter(){
+    setTimeout( function(){
+        alert('Pas de dispo -> reinit()');
+        $('#TopFilter_regions').val('');
+        launchFilters();
+    }, 100);
+}
 
+var firstTime = true;
+
+//selection des criteres
+function launchFilters() {
+    //remize a zero
+    $('.nbResult .nb').css({'opacity':0});
+    items.removeClass('itemRanged');
+    items.removeClass('nextItem');
 
     //init des tableaux
     var arrayCrit = [];         //tableau des criteres
@@ -2397,57 +2382,67 @@ function critSelection() {
         }
     };
 
-
-    //init de l'affichage du nombre de resultats par critere
-    $('.contentCritPlus').find('input').each( function(){
-        var rslTypePlus = $(this).attr('id');
-        var rslTypeinresultPlus = $(".itemResult[data-filtered=true][data-filteredplus=true][data-ranged=true][data-critplus~="+rslTypePlus+"]").length;
-        if ( rslTypeinresultPlus == 0 ) {
-            $(this).siblings('.nbItem').text('');
-            $(this).attr('disabled', true).parent().addClass('disableLabel');
+    if ( $('#TopFilter_bon_plans').length ){
+        var dataCritDate = $('#TopFilter_bon_plans').val();
+        if ( dataCritDate == '' ) {
+            items.each( function(){
+                $(this).attr('data-datecrit', true);
+            });
         } else {
-            $(this).siblings('.nbItem').text('('+rslTypeinresultPlus+')');
-            $(this).attr('disabled', false).parent().removeClass('disableLabel');
+            items.each( function(){
+                var iDateCrit = $(this).attr('data-date');
+                if ( iDateCrit == dataCritDate ) {
+                    $(this).attr('data-datecrit', true);
+                } else {
+                    $(this).attr('data-datecrit', false);
+                }
+            });
         }
-    });
-    $('.contentCrit').find('input').each( function(){
-        var rslType = $(this).attr('id');
-        var rslTypeinresult = $('.itemResult[data-filteredplus=true][data-ranged=true][data-crit='+rslType+']').length;
-        if ( rslTypeinresult == 0 ) {
-            $(this).siblings('.nbItem').text('');
-            $(this).attr('disabled', true).parent().addClass('disableLabel');
-        } else {
-            $(this).siblings('.nbItem').text('('+rslTypeinresult+')');
-            $(this).attr('disabled', false).parent().removeClass('disableLabel');
-        }
-    });
+    }
 
-    //console.log('/--- critSelection ---/');
+    if ( $('#TopFilter_regions').length ){
+        var dataCritReg = $('#TopFilter_regions').val();
+        if ( dataCritReg == '' ) {
+            items.each( function(){
+                $(this).attr('data-regcrit', true);
+            });
+        } else {
+            items.each( function(){
+                var iRegCrit = $(this).attr('data-reg');
+                if ( iRegCrit == dataCritReg ) {
+                   $(this).attr('data-regcrit', true);
+                } else {
+                    $(this).attr('data-regcrit', false);
+                }
+            });
+        }
+    }
+
+    //rangeSliderPrice();
+    displayResults();
 };
 
 //gestion de l'affichage en fonction des criteres + rangeSlider
 function displayResults() {
-
-    /*var targetOffset = $('#searchBloc').offset().top;
-    $('html, body').animate({scrollTop: targetOffset},400);*/
-
     var nbItemsDisplayed = 0;
     var gMarkers = [];
 
     items.each(function() {
-        var dataRanged = $(this).attr('data-ranged');
-        var dataFiltered = $(this).attr('data-filtered');
-        var dataFilteredPlus = $(this).attr('data-filteredPlus');
+        var dataRanged = $(this).attr('data-ranged'),
+            dataFiltered = $(this).attr('data-filtered'),
+            dataFilteredPlus = $(this).attr('data-filteredPlus'),
+            dataDated = $(this).attr('data-datecrit'),
+            dataReged = $(this).attr('data-regcrit');
 
-        if ( dataFiltered == 'true' && dataFilteredPlus == 'true' && dataRanged == 'true' ) {
-            $(this).addClass('pagination').fadeIn().next('.disclaim').fadeIn();
+        if ( dataFiltered == 'true' && dataFilteredPlus == 'true' && dataRanged == 'true' && dataDated == 'true' && dataReged == 'true' ) {
+            $(this).addClass('itemRanged');
             nbItemsDisplayed++;
             var idRsl = $(this).attr('data-id');
             gMarkers.push(idRsl);
-        }else{
+        }/*else{
             var id = $(this).attr('id');
-            $(this).removeClass('pagination').fadeOut().next('.disclaim').fadeOut();
-        };
+            $(this).removeClass('itemRanged');
+        };*/
 
         for (var i = 0; i < aMarkers.length; i++) {
             var marker = aMarkers[i];
@@ -2456,14 +2451,116 @@ function displayResults() {
 
     });
 
-    //gestion de la pagination
-    listPagination();
+    if ( nbItemsDisplayed == 0 ) {
+        reInitFilter();
+    } else {
+        //init de l'affichage du nombre de resultats par critere
+        $('.contentCritPlus').find('input').each( function(){
+            var rslTypePlus = $(this).attr('id');
+            var rslTypeinresultPlus = $(".itemRanged[data-critplus~="+rslTypePlus+"]").length;
+            if ( rslTypeinresultPlus == 0 ) {
+                $(this).siblings('.nbItem').text('');
+                $(this).attr('disabled', true).parent().addClass('disableLabel');
+            } else {
+                $(this).siblings('.nbItem').text('('+rslTypeinresultPlus+')');
+                $(this).attr('disabled', false).parent().removeClass('disableLabel');
+            }
+        });
+        $('.contentCrit').find('input').each( function(){
+            var rslType = $(this).attr('id');
+            var rslTypeinresult = $('.itemRanged[data-crit='+rslType+']').length;
+            if ( rslTypeinresult == 0 ) {
+                $(this).siblings('.nbItem').text('');
+                $(this).attr('disabled', true).parent().addClass('disableLabel');
+            } else {
+                $(this).siblings('.nbItem').text('('+rslTypeinresult+')');
+                $(this).attr('disabled', false).parent().removeClass('disableLabel');
+            }
+        });
 
-    //mise a jour du nombre d'items affiches
-    $('.nbResult .nb').text(nbItemsDisplayed);
+        consoleLog(firstTime);
+        if (firstTime == true) {
+            $('#TopFilter_regions').find('option').each( function(){
+                var reg = $(this).attr('value');
+                if ( reg != 0 ){
+                    var regInItems = $(".itemRanged[data-reg="+reg+"]").length;
+                    if ( regInItems == 0 ) { $(this).remove(); }
+                }
+            });
+            firstTime = false;
+        }
+        /*$('#TopFilter_bon_plans').find('option').each( function(){
+            var date = $(this).attr('value');
+            if ( date != 0 )
+                var dateInItems = $(".itemRanged[data-date="+date+"]").length;
+                if ( dateInItems == 0 ) {
+                    $(this).attr('disabled', true);
+                } else {
+                    $(this).attr('disabled', false);
+                }
+        });
+        $('#TopFilter_regions').find('option').each( function(){
+            var reg = $(this).attr('value');
+            if ( reg != 0 )
+                var regInItems = $(".itemRanged[data-reg="+reg+"]").length;
+                if ( regInItems == 0 ) {
+                    $(this).attr('disabled', true);
+                } else {
+                    $(this).attr('disabled', false);
+                }
+        });*/
 
-    //console.log('/--- displayResults : '+nbItemsDisplayed+' ---/');
+    // Affichage du nombre de criteres selectionnes
+        var nbCritChecked = $('#formSearchRefined input:checked').length;
+        $('#nbCrit').text(nbCritChecked);
+
+
+
+        //gestion de la pagination
+        listPagination();
+
+        //mise a jour du nombre d'items affiches
+        $('.nbResult .nb').text(nbItemsDisplayed).animate({'opacity':1});
+    }
 };
+
+
+//pagination liste de resultats
+function listPagination() {
+    var itemsPagination = $('.itemRanged'),
+        nbResults = itemsPagination.length,
+        btNext = $('#btPlusResults');
+
+    items.hide();
+    $('.itemRanged').not(':lt('+nbVisible+')').addClass('nextItem');
+    $('.itemRanged:lt('+nbVisible+')').fadeIn();
+
+    if ( nbResults > nbVisible ) {
+        $('#btPlusResults').show();
+    }else{
+        btNext.hide();
+    };
+
+// click bt MoreResults
+    $('#btPlusResults').click( function() {
+        var nextItems = $('.nextItem'),
+            nextItemsLength = nextItems.length;
+
+        if ( nextItemsLength <= nbToShow ) {
+            $('#results').find('.nextItem').fadeIn().removeClass('nextItem');
+            $(this).hide();
+        }else if ( nextItemsLength > nbToShow ) {
+            $('#results').find('.nextItem:lt('+nbToShow+')').fadeIn().removeClass('nextItem');
+        }
+    });
+};
+
+/*function showResults(){
+    $('.itemRanged').not('.itemVisible').fadeOut();
+    $('.itemVisible').show();
+
+    //listPagination();
+}*/
 
 //gestion du tri par prix ou pertinence
 function orderList() {
@@ -2509,37 +2606,6 @@ function orderList() {
     //console.log('/--- orderList ---/');
 };
 
-//pagination liste de resultats
-function listPagination() {
-    $('#results .itemResult').attr('data-num', '');
-    var itemsPagination = $('[data-filtered=true][data-filteredPlus=true][data-ranged=true]');
-    var nbResults = itemsPagination.length;
-    var btNext = $('#btPlusResults');
-
-    //console.log('nb pagination : '+nbResults);
-
-    if ( nbResults > nbVisible ) {
-        $('#btPlusResults').show();
-
-        itemsPagination.each(function(i) {
-            $(this).attr('data-num', i);
-            if ( $(this).attr('data-num') < nbVisible ) {
-                $(this).show();
-            }else{
-                $(this).hide().addClass('nextItem').next('.disclaim').addClass('nextItem').hide();
-            }
-        })
-        //console.log('/--- listPagination : superieur a '+nbVisible+' ---/');
-    }else{
-        btNext.hide();
-        //console.log('/--- listPagination : inferieur a '+nbVisible+' ---/');
-    };
-
-
-    //contre-propositions
-    //contreProp();
-};
-
 // verifier la presence du tracker GA
 function test_analytics(Url) {
     if (window._gat && window._gat._getTracker) {
@@ -2549,23 +2615,3 @@ function test_analytics(Url) {
         window.location= Url;
     }
 }
-
-//contre propositions
-/*
- function contreProp() {
- var nbContreProp = 0;
-
- //on compte le nombre de contre-proposition
- items.each(function() {
- if ( $(this).hasClass('isContrePro') ) {
- nbContreProp++;
- };
- });
-
- if (nbContreProp == 0) {
- $('.contreProp').hide();
- }else{
- $('.contreProp').show();
- };
- //console.log('/--- contreProp ---/');
- };*/

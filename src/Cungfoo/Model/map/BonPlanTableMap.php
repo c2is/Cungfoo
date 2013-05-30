@@ -88,6 +88,7 @@ class BonPlanTableMap extends TableMap
         $this->addColumn('nb_adultes', 'NbAdultes', 'INTEGER', false, null, 1);
         $this->addColumn('nb_enfants', 'NbEnfants', 'INTEGER', false, null, 0);
         $this->addColumn('period_categories', 'PeriodCategories', 'VARCHAR', false, 255, null);
+        $this->addColumn('sortable_rank', 'SortableRank', 'INTEGER', false, null, null);
         $this->addColumn('active', 'Active', 'BOOLEAN', false, 1, false);
         // validators
     } // initialize()
@@ -120,6 +121,11 @@ class BonPlanTableMap extends TableMap
             'active' =>  array (
   'active_column' => 'active',
   'active_locale_column' => 'active_locale',
+),
+            'sortable' =>  array (
+  'rank_column' => 'sortable_rank',
+  'use_scope' => 'false',
+  'scope_column' => 'sortable_scope',
 ),
             'i18n' =>  array (
   'i18n_table' => '%TABLE%_i18n',

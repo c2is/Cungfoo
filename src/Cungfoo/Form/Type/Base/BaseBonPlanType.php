@@ -241,6 +241,19 @@ class BaseBonPlanType extends AppAwareType
         );
     }
 
+    public function getSortableRankType()
+    {
+        return 'integer';
+    }
+
+    public function getSortableRankOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'bon_plan.sortable_rank',
+        );
+    }
+
     public function getActiveType()
     {
         return 'checkbox';
@@ -515,6 +528,7 @@ class BaseBonPlanType extends AppAwareType
         $builder->add('nb_adultes', $this->getNbAdultesType(), $this->getNbAdultesOptions());
         $builder->add('nb_enfants', $this->getNbEnfantsType(), $this->getNbEnfantsOptions());
         $builder->add('period_categories', $this->getPeriodCategoriesType(), $this->getPeriodCategoriesOptions());
+        $builder->add('sortable_rank', $this->getSortableRankType(), $this->getSortableRankOptions());
         $builder->add('active', $this->getActiveType(), $this->getActiveOptions());
         $builder->add('image_menu', $this->getImageMenuType(), $this->getImageMenuOptions());
         $builder->add('image_page', $this->getImagePageType(), $this->getImagePageOptions());

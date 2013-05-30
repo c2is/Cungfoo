@@ -44,6 +44,7 @@ use Cungfoo\Model\TypeHebergement;
  * @method BonPlanQuery orderByNbAdultes($order = Criteria::ASC) Order by the nb_adultes column
  * @method BonPlanQuery orderByNbEnfants($order = Criteria::ASC) Order by the nb_enfants column
  * @method BonPlanQuery orderByPeriodCategories($order = Criteria::ASC) Order by the period_categories column
+ * @method BonPlanQuery orderBySortableRank($order = Criteria::ASC) Order by the sortable_rank column
  * @method BonPlanQuery orderByActive($order = Criteria::ASC) Order by the active column
  *
  * @method BonPlanQuery groupById() Group by the id column
@@ -60,6 +61,7 @@ use Cungfoo\Model\TypeHebergement;
  * @method BonPlanQuery groupByNbAdultes() Group by the nb_adultes column
  * @method BonPlanQuery groupByNbEnfants() Group by the nb_enfants column
  * @method BonPlanQuery groupByPeriodCategories() Group by the period_categories column
+ * @method BonPlanQuery groupBySortableRank() Group by the sortable_rank column
  * @method BonPlanQuery groupByActive() Group by the active column
  *
  * @method BonPlanQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
@@ -102,6 +104,7 @@ use Cungfoo\Model\TypeHebergement;
  * @method BonPlan findOneByNbAdultes(int $nb_adultes) Return the first BonPlan filtered by the nb_adultes column
  * @method BonPlan findOneByNbEnfants(int $nb_enfants) Return the first BonPlan filtered by the nb_enfants column
  * @method BonPlan findOneByPeriodCategories(string $period_categories) Return the first BonPlan filtered by the period_categories column
+ * @method BonPlan findOneBySortableRank(int $sortable_rank) Return the first BonPlan filtered by the sortable_rank column
  * @method BonPlan findOneByActive(boolean $active) Return the first BonPlan filtered by the active column
  *
  * @method array findById(int $id) Return BonPlan objects filtered by the id column
@@ -118,6 +121,7 @@ use Cungfoo\Model\TypeHebergement;
  * @method array findByNbAdultes(int $nb_adultes) Return BonPlan objects filtered by the nb_adultes column
  * @method array findByNbEnfants(int $nb_enfants) Return BonPlan objects filtered by the nb_enfants column
  * @method array findByPeriodCategories(string $period_categories) Return BonPlan objects filtered by the period_categories column
+ * @method array findBySortableRank(int $sortable_rank) Return BonPlan objects filtered by the sortable_rank column
  * @method array findByActive(boolean $active) Return BonPlan objects filtered by the active column
  *
  * @package    propel.generator.Cungfoo.Model.om
@@ -222,7 +226,7 @@ abstract class BaseBonPlanQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `date_debut`, `date_fin`, `prix`, `prix_barre`, `active_compteur`, `mise_en_avant`, `push_home`, `date_start`, `day_start`, `day_range`, `nb_adultes`, `nb_enfants`, `period_categories`, `active` FROM `bon_plan` WHERE `id` = :p0';
+        $sql = 'SELECT `id`, `date_debut`, `date_fin`, `prix`, `prix_barre`, `active_compteur`, `mise_en_avant`, `push_home`, `date_start`, `day_start`, `day_range`, `nb_adultes`, `nb_enfants`, `period_categories`, `sortable_rank`, `active` FROM `bon_plan` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -810,6 +814,47 @@ abstract class BaseBonPlanQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query on the sortable_rank column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterBySortableRank(1234); // WHERE sortable_rank = 1234
+     * $query->filterBySortableRank(array(12, 34)); // WHERE sortable_rank IN (12, 34)
+     * $query->filterBySortableRank(array('min' => 12)); // WHERE sortable_rank > 12
+     * </code>
+     *
+     * @param     mixed $sortableRank The value to use as filter.
+     *              Use scalar values for equality.
+     *              Use array values for in_array() equivalent.
+     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return BonPlanQuery The current query, for fluid interface
+     */
+    public function filterBySortableRank($sortableRank = null, $comparison = null)
+    {
+        if (is_array($sortableRank)) {
+            $useMinMax = false;
+            if (isset($sortableRank['min'])) {
+                $this->addUsingAlias(BonPlanPeer::SORTABLE_RANK, $sortableRank['min'], Criteria::GREATER_EQUAL);
+                $useMinMax = true;
+            }
+            if (isset($sortableRank['max'])) {
+                $this->addUsingAlias(BonPlanPeer::SORTABLE_RANK, $sortableRank['max'], Criteria::LESS_EQUAL);
+                $useMinMax = true;
+            }
+            if ($useMinMax) {
+                return $this;
+            }
+            if (null === $comparison) {
+                $comparison = Criteria::IN;
+            }
+        }
+
+        return $this->addUsingAlias(BonPlanPeer::SORTABLE_RANK, $sortableRank, $comparison);
+    }
+
+    /**
      * Filter the query on the active column
      *
      * Example usage:
@@ -1291,8 +1336,8 @@ abstract class BaseBonPlanQuery extends ModelCriteria
     }
 
     // active behavior
-    
-    
+
+
     /**
      * return only active objects
      *
@@ -1301,7 +1346,7 @@ abstract class BaseBonPlanQuery extends ModelCriteria
     public function findActive($con = null)
     {
         $locale = defined('CURRENT_LANGUAGE') ? CURRENT_LANGUAGE : 'fr';
-    
+
         $this
             ->filterByActive(true)
             ->useI18nQuery($locale, 'i18n_locale')
@@ -1310,9 +1355,131 @@ abstract class BaseBonPlanQuery extends ModelCriteria
                 ->filterByActiveLocale(null, Criteria::ISNULL)
             ->endUse()
         ;
-    
+
         return parent::find($con);
     }
+    // sortable behavior
+
+    /**
+     * Filter the query based on a rank in the list
+     *
+     * @param     integer   $rank rank
+     *
+     * @return    BonPlanQuery The current query, for fluid interface
+     */
+    public function filterByRank($rank)
+    {
+        return $this
+            ->addUsingAlias(BonPlanPeer::RANK_COL, $rank, Criteria::EQUAL);
+    }
+
+    /**
+     * Order the query based on the rank in the list.
+     * Using the default $order, returns the item with the lowest rank first
+     *
+     * @param     string $order either Criteria::ASC (default) or Criteria::DESC
+     *
+     * @return    BonPlanQuery The current query, for fluid interface
+     */
+    public function orderByRank($order = Criteria::ASC)
+    {
+        $order = strtoupper($order);
+        switch ($order) {
+            case Criteria::ASC:
+                return $this->addAscendingOrderByColumn($this->getAliasedColName(BonPlanPeer::RANK_COL));
+                break;
+            case Criteria::DESC:
+                return $this->addDescendingOrderByColumn($this->getAliasedColName(BonPlanPeer::RANK_COL));
+                break;
+            default:
+                throw new PropelException('BonPlanQuery::orderBy() only accepts "asc" or "desc" as argument');
+        }
+    }
+
+    /**
+     * Get an item from the list based on its rank
+     *
+     * @param     integer   $rank rank
+     * @param     PropelPDO $con optional connection
+     *
+     * @return    BonPlan
+     */
+    public function findOneByRank($rank, PropelPDO $con = null)
+    {
+        return $this
+            ->filterByRank($rank)
+            ->findOne($con);
+    }
+
+    /**
+     * Returns the list of objects
+     *
+     * @param      PropelPDO $con	Connection to use.
+     *
+     * @return     mixed the list of results, formatted by the current formatter
+     */
+    public function findList($con = null)
+    {
+        return $this
+            ->orderByRank()
+            ->find($con);
+    }
+
+    /**
+     * Get the highest rank
+     *
+     * @param     PropelPDO optional connection
+     *
+     * @return    integer highest position
+     */
+    public function getMaxRank(PropelPDO $con = null)
+    {
+        if ($con === null) {
+            $con = Propel::getConnection(BonPlanPeer::DATABASE_NAME);
+        }
+        // shift the objects with a position lower than the one of object
+        $this->addSelectColumn('MAX(' . BonPlanPeer::RANK_COL . ')');
+        $stmt = $this->doSelect($con);
+
+        return $stmt->fetchColumn();
+    }
+
+    /**
+     * Reorder a set of sortable objects based on a list of id/position
+     * Beware that there is no check made on the positions passed
+     * So incoherent positions will result in an incoherent list
+     *
+     * @param     array     $order id => rank pairs
+     * @param     PropelPDO $con   optional connection
+     *
+     * @return    boolean true if the reordering took place, false if a database problem prevented it
+     */
+    public function reorder(array $order, PropelPDO $con = null)
+    {
+        if ($con === null) {
+            $con = Propel::getConnection(BonPlanPeer::DATABASE_NAME);
+        }
+
+        $con->beginTransaction();
+        try {
+            $ids = array_keys($order);
+            $objects = $this->findPks($ids, $con);
+            foreach ($objects as $object) {
+                $pk = $object->getPrimaryKey();
+                if ($object->getSortableRank() != $order[$pk]) {
+                    $object->setSortableRank($order[$pk]);
+                    $object->save($con);
+                }
+            }
+            $con->commit();
+
+            return true;
+        } catch (PropelException $e) {
+            $con->rollback();
+            throw $e;
+        }
+    }
+
     // i18n behavior
 
     /**

@@ -1867,8 +1867,8 @@ abstract class BaseRegionRef extends BaseObject implements Persistent
     }
 
     // active behavior
-    
-    
+
+
     /**
      * return true is the object is active
      *
@@ -1878,7 +1878,7 @@ abstract class BaseRegionRef extends BaseObject implements Persistent
     {
         return $this->getActive();
     }
-    
+
     /**
      * return true is the object is active locale
      *
@@ -1888,23 +1888,23 @@ abstract class BaseRegionRef extends BaseObject implements Persistent
     {
         return $this->getActiveLocale();
     }
-    
+
     public function getDepartementsActive($criteria = null, PropelPDO $con = null)
     {
-    
+
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-    
+
         $criteria->add(\Cungfoo\Model\DepartementPeer::ACTIVE, true);
-    
-    
+
+
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\DepartementI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\DepartementPeer::ID, \Cungfoo\Model\DepartementI18nPeer::alias('i18n_locale', \Cungfoo\Model\DepartementI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\DepartementI18nPeer::alias('i18n_locale', \Cungfoo\Model\DepartementI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\DepartementI18nPeer::alias('i18n_locale', \Cungfoo\Model\DepartementI18nPeer::LOCALE), $this->currentLocale);
-    
+
         return $this->getDepartements($criteria, $con);
     }
     // i18n behavior
@@ -2267,7 +2267,7 @@ abstract class BaseRegionRef extends BaseObject implements Persistent
     }
 
     // crudable behavior
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -2280,7 +2280,7 @@ abstract class BaseRegionRef extends BaseObject implements Persistent
     {
         return $this->save($con);
     }
-    
+
     /**
      * @return string
      */
@@ -2288,7 +2288,7 @@ abstract class BaseRegionRef extends BaseObject implements Persistent
     {
         return 'uploads/region_refs';
     }
-    
+
     /**
      * @return string
      */
@@ -2296,14 +2296,14 @@ abstract class BaseRegionRef extends BaseObject implements Persistent
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-    
+
     /**
      * @return void
      */
     public function getImageDetail1()
     {
         $peer = self::PEER;
-    
+
         $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
             ->select('id')
             ->usePortfolioUsageQuery()
@@ -2314,19 +2314,19 @@ abstract class BaseRegionRef extends BaseObject implements Persistent
             ->find()
             ->toArray()
         ;
-    
+
         return implode(';', $medias);
     }
-    
+
     /**
      * @return void
      */
     public function setImageDetail1($v)
     {
         $peer = self::PEER;
-    
+
         $values = explode(';', $v);
-    
+
         \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
             ->filterByColumnRef('image_detail_1')
@@ -2335,7 +2335,7 @@ abstract class BaseRegionRef extends BaseObject implements Persistent
             ->find()
             ->delete()
         ;
-    
+
         if ($v) {
             foreach ($values as $index => $value) {
                 $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
@@ -2345,7 +2345,7 @@ abstract class BaseRegionRef extends BaseObject implements Persistent
                     ->filterByMediaId($value)
                     ->findOne()
                 ;
-    
+
                 if (!$usage) {
                     $usage = new \Cungfoo\Model\PortfolioUsage();
                     $usage
@@ -2355,23 +2355,23 @@ abstract class BaseRegionRef extends BaseObject implements Persistent
                         ->setMediaId($value)
                     ;
                 }
-    
+
                 $usage
                     ->setSortableRank($index)
                     ->save()
                 ;
             }
-    
+
         }
     }
-    
+
     /**
      * @return void
      */
     public function getImageDetail2()
     {
         $peer = self::PEER;
-    
+
         $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
             ->select('id')
             ->usePortfolioUsageQuery()
@@ -2382,19 +2382,19 @@ abstract class BaseRegionRef extends BaseObject implements Persistent
             ->find()
             ->toArray()
         ;
-    
+
         return implode(';', $medias);
     }
-    
+
     /**
      * @return void
      */
     public function setImageDetail2($v)
     {
         $peer = self::PEER;
-    
+
         $values = explode(';', $v);
-    
+
         \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
             ->filterByColumnRef('image_detail_2')
@@ -2403,7 +2403,7 @@ abstract class BaseRegionRef extends BaseObject implements Persistent
             ->find()
             ->delete()
         ;
-    
+
         if ($v) {
             foreach ($values as $index => $value) {
                 $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
@@ -2413,7 +2413,7 @@ abstract class BaseRegionRef extends BaseObject implements Persistent
                     ->filterByMediaId($value)
                     ->findOne()
                 ;
-    
+
                 if (!$usage) {
                     $usage = new \Cungfoo\Model\PortfolioUsage();
                     $usage
@@ -2423,13 +2423,13 @@ abstract class BaseRegionRef extends BaseObject implements Persistent
                         ->setMediaId($value)
                     ;
                 }
-    
+
                 $usage
                     ->setSortableRank($index)
                     ->save()
                 ;
             }
-    
+
         }
     }
 

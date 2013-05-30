@@ -1847,8 +1847,8 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
     }
 
     // active behavior
-    
-    
+
+
     /**
      * return true is the object is active
      *
@@ -1858,7 +1858,7 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
     {
         return $this->getActive();
     }
-    
+
     /**
      * return true is the object is active locale
      *
@@ -1868,23 +1868,23 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
     {
         return $this->getActiveLocale();
     }
-    
+
     public function getTypeHebergementsActive($criteria = null, PropelPDO $con = null)
     {
-    
+
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-    
+
         $criteria->add(\Cungfoo\Model\TypeHebergementPeer::ACTIVE, true);
-    
-    
+
+
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\TypeHebergementI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\TypeHebergementPeer::ID, \Cungfoo\Model\TypeHebergementI18nPeer::alias('i18n_locale', \Cungfoo\Model\TypeHebergementI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\TypeHebergementI18nPeer::alias('i18n_locale', \Cungfoo\Model\TypeHebergementI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\TypeHebergementI18nPeer::alias('i18n_locale', \Cungfoo\Model\TypeHebergementI18nPeer::LOCALE), $this->currentLocale);
-    
+
         return $this->getTypeHebergements($criteria, $con);
     }
     // sortable behavior
@@ -2588,7 +2588,7 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
     }
 
     // crudable behavior
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -2601,7 +2601,7 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
     {
         return $this->save($con);
     }
-    
+
     /**
      * @return string
      */
@@ -2609,7 +2609,7 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
     {
         return 'uploads/category_type_hebergements';
     }
-    
+
     /**
      * @return string
      */
@@ -2617,14 +2617,14 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-    
+
     /**
      * @return void
      */
     public function getImageMenu()
     {
         $peer = self::PEER;
-    
+
         $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
             ->select('id')
             ->usePortfolioUsageQuery()
@@ -2635,19 +2635,19 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
             ->find()
             ->toArray()
         ;
-    
+
         return implode(';', $medias);
     }
-    
+
     /**
      * @return void
      */
     public function setImageMenu($v)
     {
         $peer = self::PEER;
-    
+
         $values = explode(';', $v);
-    
+
         \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
             ->filterByColumnRef('image_menu')
@@ -2656,7 +2656,7 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
             ->find()
             ->delete()
         ;
-    
+
         if ($v) {
             foreach ($values as $index => $value) {
                 $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
@@ -2666,7 +2666,7 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
                     ->filterByMediaId($value)
                     ->findOne()
                 ;
-    
+
                 if (!$usage) {
                     $usage = new \Cungfoo\Model\PortfolioUsage();
                     $usage
@@ -2676,23 +2676,23 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
                         ->setMediaId($value)
                     ;
                 }
-    
+
                 $usage
                     ->setSortableRank($index)
                     ->save()
                 ;
             }
-    
+
         }
     }
-    
+
     /**
      * @return void
      */
     public function getImagePage()
     {
         $peer = self::PEER;
-    
+
         $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
             ->select('id')
             ->usePortfolioUsageQuery()
@@ -2703,19 +2703,19 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
             ->find()
             ->toArray()
         ;
-    
+
         return implode(';', $medias);
     }
-    
+
     /**
      * @return void
      */
     public function setImagePage($v)
     {
         $peer = self::PEER;
-    
+
         $values = explode(';', $v);
-    
+
         \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
             ->filterByColumnRef('image_page')
@@ -2724,7 +2724,7 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
             ->find()
             ->delete()
         ;
-    
+
         if ($v) {
             foreach ($values as $index => $value) {
                 $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
@@ -2734,7 +2734,7 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
                     ->filterByMediaId($value)
                     ->findOne()
                 ;
-    
+
                 if (!$usage) {
                     $usage = new \Cungfoo\Model\PortfolioUsage();
                     $usage
@@ -2744,13 +2744,13 @@ abstract class BaseCategoryTypeHebergement extends BaseObject implements Persist
                         ->setMediaId($value)
                     ;
                 }
-    
+
                 $usage
                     ->setSortableRank($index)
                     ->save()
                 ;
             }
-    
+
         }
     }
 

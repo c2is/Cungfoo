@@ -1,7 +1,7 @@
 .bdPict{margin:20px 0;}
 
 .nbResult{font:18px/0px @ptnarrow;color:@colorFushia;width:125px;height:98px;float:left;border-right: 1px solid @colorFushia;text-align:center;text-transform: uppercase;padding-top:22px;margin-bottom:30px;
-  .nb{display:block;font:bold 45px Arial, sans-serif;}
+  .nb{display:block;font:bold 45px Arial, sans-serif;opacity: 0;}
 }
 .typeAff{float:left;width:143px;height:98px;border-right: 1px solid @colorFushia;padding:11px 0 0 23px;
   span{font-weight:bold;color:@colorGris2;display:block;padding-right:15px;margin-bottom:5px;}
@@ -25,9 +25,11 @@
 #filterTri{clear:both;
   legend{text-transform: uppercase;color: @colorGris0;font: bold 17px/20px @ptnarrow;margin-left: 10px;margin-bottom: 10px;}
   fieldset{background-color:@colorBgGrisC;color:@colorGris0;padding:8px 15px;._border-radius(10px);margin-bottom:20px;}
-  select{float: left;text-transform:uppercase;font: bold 17px/20px @ptnarrow;color:#999;width:240px;margin-right:10px;border: 1px solid @colorBgGrisC;}
+  select{float: left;text-transform:uppercase;font: bold 17px/20px @ptnarrow;color:#999;width:240px;margin-right:10px;border: 1px solid #fff;}
+  option[disabled]{color: #d6d6d6;}
   .regCritPict,
-  .dateCritPict{background:@colorBgGrisF url(../../images/vacancesdirectes/common/sprites/sprite-27.png) no-repeat 0 -27px;float:left;width: 27px;height: 26px;margin: 2px 1px 0 10px;}
+ .dateCritPict{background:@colorBgGrisF url(../../images/vacancesdirectes/common/sprites/sprite-27.png) no-repeat 0 -27px;float:left;width: 27px;height: 26px;margin: 2px 1px 0 10px;}
+  .regCritPict{background-image:url(../../images/vacancesdirectes/common/pict/filtreRegionIcon.png);background-position: 0 0;}
 }
 .infoComp{display:none;}
 

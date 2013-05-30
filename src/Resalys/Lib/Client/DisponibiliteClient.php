@@ -34,7 +34,7 @@ class DisponibiliteClient extends AbstractClient
             "webuser"                            => $this->getOption('webuser', ''),
             "partner_code"                       => $this->getOption('partner_code', ''),
             "service_id"                         => $this->getOption('service_id', ''),
-            "search_form_sort_string"            => $this->getOption('sort_string', 'Price,Priority,StartDate,Etab,RoomType(2),ProductPriority'),
+            "search_form_sort_string"            => $this->getOption('sort_string', 'Priority,StartDate,Etab,RoomType(2),ProductPriority'),
             "search_form_search_themes"          => $this->getOption('search_themes', ''),
             "search_form_period_categories"      => $this->getOption('period_categories', ''),
             "search_form_nb_children_1"          => $this->getOption('nb_children_1', ''),

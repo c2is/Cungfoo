@@ -1571,8 +1571,8 @@ abstract class BasePortfolioTagCategory extends BaseObject implements Persistent
     }
 
     // active behavior
-    
-    
+
+
     /**
      * return true is the object is active
      *
@@ -1582,7 +1582,7 @@ abstract class BasePortfolioTagCategory extends BaseObject implements Persistent
     {
         return $this->getActive();
     }
-    
+
     /**
      * return true is the object is active locale
      *
@@ -1592,27 +1592,27 @@ abstract class BasePortfolioTagCategory extends BaseObject implements Persistent
     {
         return $this->getActiveLocale();
     }
-    
+
     public function getPortfolioTagsActive($criteria = null, PropelPDO $con = null)
     {
-    
+
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-    
+
         $criteria->add(\Cungfoo\Model\PortfolioTagPeer::ACTIVE, true);
-    
-    
+
+
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\PortfolioTagI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\PortfolioTagPeer::ID, \Cungfoo\Model\PortfolioTagI18nPeer::alias('i18n_locale', \Cungfoo\Model\PortfolioTagI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\PortfolioTagI18nPeer::alias('i18n_locale', \Cungfoo\Model\PortfolioTagI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\PortfolioTagI18nPeer::alias('i18n_locale', \Cungfoo\Model\PortfolioTagI18nPeer::LOCALE), $this->currentLocale);
-    
+
         return $this->getPortfolioTags($criteria, $con);
     }
     // crudable behavior
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con

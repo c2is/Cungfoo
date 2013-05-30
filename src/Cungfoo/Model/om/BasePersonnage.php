@@ -2389,8 +2389,8 @@ abstract class BasePersonnage extends BaseObject implements Persistent
     }
 
     // active behavior
-    
-    
+
+
     /**
      * return true is the object is active
      *
@@ -2400,7 +2400,7 @@ abstract class BasePersonnage extends BaseObject implements Persistent
     {
         return $this->getActive();
     }
-    
+
     /**
      * return true is the object is active locale
      *
@@ -2410,41 +2410,41 @@ abstract class BasePersonnage extends BaseObject implements Persistent
     {
         return $this->getActiveLocale();
     }
-    
+
     public function getThemesActive($criteria = null, PropelPDO $con = null)
     {
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-    
+
         $criteria->add(\Cungfoo\Model\ThemePeer::ACTIVE, true);
-    
-    
+
+
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\ThemeI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\ThemePeer::ID, \Cungfoo\Model\ThemeI18nPeer::alias('i18n_locale', \Cungfoo\Model\ThemeI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\ThemeI18nPeer::alias('i18n_locale', \Cungfoo\Model\ThemeI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\ThemeI18nPeer::alias('i18n_locale', \Cungfoo\Model\ThemeI18nPeer::LOCALE), $this->currentLocale);
-    
+
         return $this->getThemes($criteria, $con);
     }
-    
+
     public function getAvantagesActive($criteria = null, PropelPDO $con = null)
     {
-    
+
         if ($criteria === null)
         {
             $criteria = new \Criteria();
         }
-    
+
         $criteria->add(\Cungfoo\Model\AvantagePeer::ACTIVE, true);
-    
-    
+
+
         $criteria->addAlias('i18n_locale', \Cungfoo\Model\AvantageI18nPeer::TABLE_NAME);
         $criteria->addJoin(\Cungfoo\Model\AvantagePeer::ID, \Cungfoo\Model\AvantageI18nPeer::alias('i18n_locale', \Cungfoo\Model\AvantageI18nPeer::ID), \Criteria::LEFT_JOIN);
         $criteria->add(\Cungfoo\Model\AvantageI18nPeer::alias('i18n_locale', \Cungfoo\Model\AvantageI18nPeer::ACTIVE_LOCALE), true);
         $criteria->add(\Cungfoo\Model\AvantageI18nPeer::alias('i18n_locale', \Cungfoo\Model\AvantageI18nPeer::LOCALE), $this->currentLocale);
-    
+
         return $this->getAvantages($criteria, $con);
     }
     // i18n behavior
@@ -2735,7 +2735,7 @@ abstract class BasePersonnage extends BaseObject implements Persistent
     }
 
     // crudable behavior
-    
+
     /**
      * @param \Symfony\Component\Form\Form $form
      * @param PropelPDO $con
@@ -2748,7 +2748,7 @@ abstract class BasePersonnage extends BaseObject implements Persistent
     {
         return $this->save($con);
     }
-    
+
     /**
      * @return string
      */
@@ -2756,7 +2756,7 @@ abstract class BasePersonnage extends BaseObject implements Persistent
     {
         return 'uploads/personnages';
     }
-    
+
     /**
      * @return string
      */
@@ -2764,14 +2764,14 @@ abstract class BasePersonnage extends BaseObject implements Persistent
     {
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
-    
+
     /**
      * @return void
      */
     public function getImagePath()
     {
         $peer = self::PEER;
-    
+
         $medias = \Cungfoo\Model\PortfolioMediaQuery::create()
             ->select('id')
             ->usePortfolioUsageQuery()
@@ -2782,19 +2782,19 @@ abstract class BasePersonnage extends BaseObject implements Persistent
             ->find()
             ->toArray()
         ;
-    
+
         return implode(';', $medias);
     }
-    
+
     /**
      * @return void
      */
     public function setImagePath($v)
     {
         $peer = self::PEER;
-    
+
         $values = explode(';', $v);
-    
+
         \Cungfoo\Model\PortfolioUsageQuery::create()
             ->filterByTableRef($peer::TABLE_NAME)
             ->filterByColumnRef('image_path')
@@ -2803,7 +2803,7 @@ abstract class BasePersonnage extends BaseObject implements Persistent
             ->find()
             ->delete()
         ;
-    
+
         if ($v) {
             foreach ($values as $index => $value) {
                 $usage = \Cungfoo\Model\PortfolioUsageQuery::create()
@@ -2813,7 +2813,7 @@ abstract class BasePersonnage extends BaseObject implements Persistent
                     ->filterByMediaId($value)
                     ->findOne()
                 ;
-    
+
                 if (!$usage) {
                     $usage = new \Cungfoo\Model\PortfolioUsage();
                     $usage
@@ -2823,13 +2823,13 @@ abstract class BasePersonnage extends BaseObject implements Persistent
                         ->setMediaId($value)
                     ;
                 }
-    
+
                 $usage
                     ->setSortableRank($index)
                     ->save()
                 ;
             }
-    
+
         }
     }
 
