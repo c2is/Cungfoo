@@ -2026,6 +2026,18 @@ function initializeAllGmap() {
 
 function initCritResult(){
 
+    //we come from the same page
+    if ( $('#results').length ){
+        $('#dealsContent').find('.linkParent').click( function(){
+            var hash = window.location.hash;
+            var option = hash.split('#')[1];
+            $('#TopFilter_bon_plans').val(option);
+            launchFilters();
+            $('#deals').hide();
+            $('#please_wait_layer').hide();
+        });
+    }
+
     if(window.location.hash != '') {
         var hash = window.location.hash;
         if(hash === '#carte') {
