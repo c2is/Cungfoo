@@ -18,7 +18,7 @@ var
 //switch select of search engine
     selectNum = 0,
 //resultCrit
-    paginationAfterRange = false,
+    firstTime = true,
     list = $('#results'),                                   // la liste a trier
     items = list.find('.itemResult'),                       // les items de cette liste
     minPrice,                                               // le prix minimum de la liste
@@ -2111,6 +2111,8 @@ function initializeAllGmap() {
 
 function initCritResult(){
 
+    firstTime = false;
+
     //we come from the same page
     if ( $('#results').length ){
         $('#dealsContent').find('.linkParent').click( function(){
@@ -2292,13 +2294,12 @@ function rangeSliderPrice() {
 
 function reInitFilter(){
     setTimeout( function(){
-        alert('Pas de dispo -> reinit()');
+        //alert('Pas de dispo -> reinit()');
+        $('#results').prepend('<p id="noResult">Pas de résultat correspondant à votre sélection</p>');
         $('#TopFilter_regions').val('');
         launchFilters();
     }, 100);
 }
-
-var firstTime = true;
 
 //selection des criteres
 function launchFilters() {
@@ -2306,6 +2307,11 @@ function launchFilters() {
     $('.nbResult .nb').css({'opacity':0});
     items.removeClass('itemRanged');
     items.removeClass('nextItem');
+    if ( $('#noResult').length ) {
+        setTimeout( function(){
+            $('#noResult').fadeOut().remove();
+        }, 3000);
+    }
 
     //init des tableaux
     var arrayCrit = [];         //tableau des criteres
@@ -2478,13 +2484,14 @@ function displayResults() {
             }
         });
 
-        consoleLog(firstTime);
+        //consoleLog(firstTime);
         if (firstTime == true) {
             $('#TopFilter_regions').find('option').each( function(){
                 var reg = $(this).attr('value');
                 if ( reg != 0 ){
-                    var regInItems = $(".itemRanged[data-reg="+reg+"]").length;
-                    if ( regInItems == 0 ) { $(this).remove(); }
+                    var regInItems = $("[data-reg="+reg+"]").length;
+                    //consoleLog(reg + regInItems);
+                    //if ( regInItems == 0 ) { $(this).remove(); }
                 }
             });
             firstTime = false;
