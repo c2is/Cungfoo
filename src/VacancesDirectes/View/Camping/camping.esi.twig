@@ -60,7 +60,11 @@
     <div class="slider"><div class="slide clear">
         {% if etab.slider %}
         {% for media in etab.slider | medias %}
-            <img src="{{ asset(media.file) }}" width="616" height="326" alt="{{ media.title }}" class="{{ media.getTagsForSlider | join(' ') }}"/>
+            {% if loop.index == 1 %}
+            <img src="{{ asset(media.file) }}" width="616" height="326" alt="Vacances directes {{ etab.name }} - {{ media.title }}" class="{{ media.getTagsForSlider | join(' ') }}"/>
+            {% else %}
+            <a href="{{ asset(media.file) }}" width="616" height="326" alt="Vacances directes {{ etab.name }} - {{ media.title }}" class="{{ media.getTagsForSlider | join(' ') }}">Vacances directes {{ etab.name }} - {{ media.title }}</a>
+            {% endif %}
         {% endfor %}
         {% endif %}
     </div></div>

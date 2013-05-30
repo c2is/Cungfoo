@@ -229,6 +229,26 @@ header, section, footer {position:relative;}
     img{margin-bottom:15px;}
   }
 }
+.layerOverlay{position:fixed;top:0;left:0;width:100%;height:100%;background-color:@colorBgBlanc;text-align:center;font:normal 15px @arial;opacity:0.8;}
+#didacticiel_layer{z-index:101;position:relative;display:none;
+  #didacticiel_layer_content{width:500px;min-height:270px;margin:-135px 0 0 -250px;position:fixed;top:50%;left:50%;background:@colorGris2 url('../../images/vacancesdirectes/common/pict/loading-bloc.jpg') no-repeat 0px 10px;._border-radius(10px);color:@colorBlanc;padding:15px;
+    h2,
+    p{margin-left:237px;}
+    h2{font:bold 25px/24px @ptnarrow;color:@colorBlanc;margin-bottom:10px;text-transform:uppercase;}
+    p{font:normal 15px @arial;padding-bottom:45px;}
+    span{font:normal 11px @arial;position:absolute;bottom:15px;left:15px;}
+    img{position:absolute;bottom:15px;right:15px;}
+  }
+}
+#refresh_layer{z-index:101;position:relative;display:none;
+  #refresh_layer_content{width:358px;min-height:192px;margin:-96px 0 0 -179px;position:fixed;top:50%;left:50%;background:@colorGris2 url('../../images/vacancesdirectes/common/ui/timeout-early.png') no-repeat 15px 15px;._border-radius(10px);color:@colorBlanc;padding:15px;
+    h2,
+    p{margin-left:95px;}
+    h2{font:bold 25px/24px @ptnarrow;color:@colorBlanc;margin-bottom:10px;text-transform:uppercase;}
+    p{font:normal 15px @arial;padding-bottom:51px;margin-top: 10px;text-align:left;}
+    a.bt{position:absolute;bottom:15px;right:15px;}
+  }
+}
 
 .left{float:left;}
 .right{float:right;}
@@ -313,7 +333,9 @@ h6, .h6-like{color:@colorFushia;}
 .radiusBox2{._border-radius(10px);padding:15px 20px;margin:15px 0;position:relative;
   &.bgImg{overflow:hidden;}
   &.greyC{background-color:@colorBgBlanc;border:5px solid @colorBgGrisC;}
-  &.greyM{background-color:@colorBgGrisC;border:5px solid @colorBgGrisM;}
+  &.greyM{background-color:@colorBgGrisC;border:5px solid @colorBgGrisM;
+    &.arrowLeft:after{right:100%;top:50%;border:solid transparent;content:"";height:0;width:0;position:absolute;pointer-events:none;border-color:rgba(140, 138, 138, 0);border-right-color:@colorBgGrisM;border-width:18px;margin-top:-18px;margin-left:-18px;}
+  }
   &.greyF{background-color:@colorBgBlanc;border:5px solid @colorBgGrisF;}
   &.fushia{background-color:@colorBgBlanc;border:5px solid @colorFushia;}
   .stamp{color:@colorBlanc;background:url('../../images/vacancesdirectes/common/ui/stamp-half.png') no-repeat top right transparent;._verticalCenter(38px);padding:0 30px;margin-top:10px;display:inline-block;text-transform:uppercase;font-family: @ptnarrow;font-size:15px;font-weight:bold;

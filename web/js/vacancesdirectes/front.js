@@ -74,7 +74,7 @@ jQuery.extend( jQuery.fn, {
     if ($('.linkParent').length > 0) { addLinkBlock(); }
 
 // init Sliders
-    if ($('.tabCampDiapo .slider').length > 0) { sliderPict(); }
+    if ($('.tabCampDiapo .slider').length > 0) { makeSlider(); }
     if ($('#tabSurplace .slider').length > 0) { sliderActivite(); }
 
 
@@ -1222,6 +1222,13 @@ if($('#footerInfo').length){
     });
 }
 
+if($('#refresh_layer').length){
+    $('#refresh_layer a.bt').click(function(e) {
+        e.preventDefault();
+        location.reload();
+    });
+}
+
 
 /*
  *  //////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1401,6 +1408,21 @@ function showWaitLayer(){
     $('#please_wait_layer').show();
 }
 
+// didacticiel layer
+/*
+ * Pour référence, cette fonction est appelée dans les fichiers src/VacancesDirectes/View/Menu/bonsPlans.twig et src/VacancesDirectes/View/Form/_search_engine.twig
+ * La popin à affichée est présente dans le fichier src/VacancesDirectes/View/footer.twig (id = didacticiel_layer)
+ *
+ * Params :
+ * string title Le contenu HTML à afficher dans le H2 de la popin
+ * string content le contenu HTML à afficher dans le p de la popin
+ */
+function showDidacticielLayer(title, content) {
+    $('#didacticiel_layer_content h2').html(title);
+    $('#didacticiel_layer_content p').html(content);
+    $('#didacticiel_layer').show();
+}
+
 /*
  * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
  *                          POPIN
@@ -1414,6 +1436,11 @@ function openPopinRoomType(url){
 function openPopinIframe(url){
     //console.log("################################## openPopinIframe()  ##################################");
     $.colorbox({href:url, iframe:true, fixed: true, width:'80%', height:'80%', close:"&times;"});
+}
+
+function cboxMdP(url) {
+    $.colorbox({href:url, iframe:true, fixed: true, width:450, height:250, close:"&times;"});
+    return false;
 }
 function openPopinInline(type){
     //console.log("################################## openPopinInline()  ##################################");
@@ -1782,15 +1809,54 @@ function numDate(d){
  *                       FICHE SLIDER
  * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
  */
-
-function sliderPict() {
-    var slider = $('.tabCampDiapo').find('.slider'),
-        btLeft = '<button class="prev" onclick="javascript:_gaq.push([\'_trackEvent\', \'Nav-VD_-_Page_-_Fiche-Camping\', \'Contenu_-_Visionneuse\', \'Clic_-_Bouton-Precedent\']);">&lt;</button>',
-        btRight = '<button class="next" onclick="javascript:_gaq.push([\'_trackEvent\', \'Nav-VD_-_Page_-_Fiche-Camping\', \'Contenu_-_Visionneuse\', \'Clic_-_Bouton-Suivant\']);">&gt;</button>',
+function makeSlider(){
+    var btLeft = '<button class="prev" onclick="loadSlider(\'prev\');">&lt;</button>',
+        btRight = '<button class="next" onclick="loadSlider(\'next\');">&gt;</button>',
+        slider = $('.tabCampDiapo').find('.slider'),
         btns = btLeft + btRight;
     slider.append(btns);
+    $('[name="affPhoto"]').change( function() {
+        var filter = $(this).val();
+        if ( $('.caroufredsel_wrapper', slider).length ){
+            filterSlider(filter);
+        } else {
+            loadSlider(filter);
+        }
+    });
+}
+function loadSlider(dir){
+    var direct = dir,
+        slider = $('.tabCampDiapo').find('.slider'),
+        aSlider = slider.find('a'),
+        btLeft = slider.find('.prev'),
+        btRight = slider.find('.next'),
+        loader = '<span class="loadingSlider" />';
+    slider.append(loader);
+    aSlider.replaceWith('<img />');
+    btLeft.attr("onclick", 'javascript:_gaq.push([\'_trackEvent\', \'Nav-VD_-_Page_-_Fiche-Camping\', \'Contenu_-_Visionneuse\', \'Clic_-_Bouton-Precedent\']);');
+    btRight.attr("onclick", 'javascript:_gaq.push([\'_trackEvent\', \'Nav-VD_-_Page_-_Fiche-Camping\', \'Contenu_-_Visionneuse\', \'Clic_-_Bouton-Suivant\']);');
+    sliderPict(direct);
 
+}
+jQuery.fn.replaceWith = function(replacement) {
+    return this.each (function()     {
+        var element = $(this);
+        $(this).after(replacement);
+        for (var i = 0; i < this.attributes.length; i++) {
+            element.next().attr(this.attributes[i].nodeName, this.attributes[i].nodeValue).attr;
+            element.next().attr({ src : element.attr('href') }).removeAttr('href');
+        }
+        element.remove();
+    })
+}
+function sliderPict(dir) {
+    var dirSlide = dir,
+        slider = $('.tabCampDiapo').find('.slider');
     $('.slide', slider).carouFredSel({
+        onCreate: function(){
+            slider.find('.loadingSlider').remove();
+            filterSlider(dirSlide);
+        },
         circular: true,
         infinite: true,
         prev:{
@@ -1805,8 +1871,11 @@ function sliderPict() {
         },
         auto: false
     });
-    $('[name="affPhoto"]').change( function() {
+
+    /*$('[name="affPhoto"]').change( function() {
         var nVal = $(this).val();
+
+        consoleLog(nVal);
         if (nVal == "all") {
             slider.find('img').not(':visible').fadeIn();
             slider.find('.slide').trigger("configuration",["items.filter",":visible"]);
@@ -1815,8 +1884,8 @@ function sliderPict() {
             slider.find('img').not('.'+nVal).hide();
             slider.find('.slide').trigger("configuration",["items.filter",":visible"]);
         }
-    });
-    slider.find('img').each(function() {
+    });*/
+    /*slider.find('img').each(function() {
         var tip = $(this).attr("alt");
         if (tip != "") {
             $(this).hover( function() {
@@ -1827,7 +1896,23 @@ function sliderPict() {
                 });
             });
         }
-    });
+    });*/
+}
+function filterSlider(dirSlide){
+    var nVal = dirSlide,
+        slider = $('.tabCampDiapo').find('.slider');
+    if ( nVal == 'prev' || nVal == 'next' ) {
+        $('.slide', slider).trigger(nVal, 1);
+    } else {
+        if (nVal == "all") {
+            slider.find('img').not(':visible').fadeIn();
+            slider.find('.slide').trigger("configuration",["items.filter",":visible"]);
+        } else {
+            slider.find('.'+nVal).fadeIn();
+            slider.find('img').not('.'+nVal).hide();
+            slider.find('.slide').trigger("configuration",["items.filter",":visible"]);
+        }
+    }
 }
 
 function sliderActivite() {
