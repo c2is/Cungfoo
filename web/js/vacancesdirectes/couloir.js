@@ -84,7 +84,7 @@ head.ready(function(){
         }
         else{
             if($('#returningCustomerYes').is(':checked')) {
-                checked = true
+                checked = true;
                 $('#existingCustomerLayer').show();
                 $('#newCustomerLayer').hide();
             }
