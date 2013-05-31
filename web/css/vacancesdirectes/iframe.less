@@ -7,6 +7,7 @@
 @colorBlanc: #fff; /* Gris 1 */
 @colorFushia: #ed145b;
 @colorVert: #b0c700;
+@colorVertSemainier: #459C00;
 @colorBleu: #009ab0;
 @colorBleuF:#005ea6;
 @colorOrange: #f58220;
@@ -502,9 +503,12 @@ body{background:#fff;color:@colorGris2;font:12px @arial;margin:0 24px;}
       td{color:#464545;padding:8px 9px;border:1px solid #e1e1e1;
         .orderPrice{font:bold 19px/19px Arial;}
         .orderLink{font:bold 14px/18px @ptnarrow;display:inline-block;margin-top:5px;text-transform:uppercase;text-decoration:underline;}
+        &.hightlighted{text-align:center;vertical-align:middle;background-color: @colorVertSemainier;color:@colorBlanc;
+          span, a{color:@colorBlanc;}
+        }
         &.reserver{text-align:center;vertical-align:middle;
-          .orderPrice, .orderLink{color:@colorFushia;}
-          &:hover{background-color:@colorBgFushia;color:@colorBlanc;
+          .orderPrice, .orderLink{color:@colorVertSemainier;}
+          &:hover{background-color:@colorVertSemainier;color:@colorBlanc;
             span, a{color:@colorBlanc;}
           }
         }

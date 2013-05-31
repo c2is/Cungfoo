@@ -437,19 +437,46 @@ class DestinationController implements ControllerProviderInterface
             return $app->redirect($searchEngine->getRedirect());
         }
 
-        $view = $app['twig']->render('Camping/camping.twig', array(
-            'etab'                    => $camping,
-            'webuser'                 => $webuser,
-            'hasBaignade'             => count($camping->getEtablissementBaignades()) > 0,
-            'searchForm'              => $searchEngine->getView(),
-            'historyBack'             => $request->headers->get('referer'),
-            'referer'                 => $app['url_generator']->generate($request->get('_route'), array(
-                'pays'      => $camping->getPays()->getSlug(),
-                'region'    => $camping->getRegion()->getSlug(),
-                'ville'     => $camping->getVille()->getSlug(),
-                'camping'   => $camping->getSlug()
-            ), true)
+        $referer = $app['url_generator']->generate($request->get('_route'), array(
+            'pays'    => $camping->getPays()->getSlug(),
+            'region'  => $camping->getRegion()->getSlug(),
+            'ville'   => $camping->getVille()->getSlug(),
+            'camping' => $camping->getSlug()
+        ), true);
 
+        $semainierQuery = array(
+            'webuser'       => $webuser,
+            'display'       => 'semainier',
+            'etab_id'       => $camping->getCode(),
+            'campaign_code' => date('Y'),
+            'referer'       => $referer,
+            'maxAge'        => 3600,
+        );
+
+        $lastProposal = $app['session']->get('last_proposal');
+        if ($lastProposal) {
+            $periodType = $lastProposal['proposal']->{'period_type_code'};
+            $roomType   = explode('-', $lastProposal['proposal']->{'proposal_key'});
+
+            if (in_array($periodType, array('SS7', 'SS14', 'SS21', 'MM7', 'MM14', 'MS10', 'SM11', 'MS3', 'SM4'))) {
+                $semainierQuery = array_merge($semainierQuery, array(
+                    'room_type'     => end($roomType),
+                    'period_type'   => $periodType,
+                    'start_date'    => $lastProposal['proposal']->{'start_date'},
+                    'end_date'      => $lastProposal['proposal']->{'end_date'},
+                ));
+            }
+
+        }
+
+        $view = $app['twig']->render('Camping/camping.twig', array(
+            'etab'           => $camping,
+            'webuser'        => $webuser,
+            'hasBaignade'    => count($camping->getEtablissementBaignades()) > 0,
+            'searchForm'     => $searchEngine->getView(),
+            'historyBack'    => $request->headers->get('referer'),
+            'semainierQuery' => $semainierQuery,
+            'referer'        => $referer,
         ));
 
         $response = new Response($view, 200, array('Surrogate-Control' => 'content="ESI/1.0"', 'Cache-Control' => 'max-age=0, s-maxage=0, no-cache, public'));

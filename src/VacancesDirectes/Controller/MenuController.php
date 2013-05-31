@@ -55,8 +55,6 @@ class MenuController implements ControllerProviderInterface
 
         $controllers->get('/destinations', function () use ($app)
         {
-            $maxAge = 1200;
-
             $searchForm = $app['form.factory']->create(new AutocompleteType($app));
 
             $view = $app['twig']->render('Menu/destinations.twig', array(
@@ -67,14 +65,12 @@ class MenuController implements ControllerProviderInterface
                 'regionItalie'              => $this->getRegionByCode($app, 'ITA'),
             ));
 
-            return new Response($view, 200, array('Cache-Control' => sprintf('s-maxage=%s, public', $maxAge)));
+            return new Response($view, 200, array('Cache-Control' => sprintf('s-maxage=%s, public', $app['config']->get('vd_config')['httpcache']['long'])));
         })
         ->bind('menu_destinations');
 
         $controllers->get('/locations', function () use ($app)
         {
-            $maxAge = 1200;
-
             $locale = $app['context']->get('language');
 
             $categoryTypeHebergements = \Cungfoo\Model\CategoryTypeHebergementQuery::create()
@@ -95,7 +91,7 @@ class MenuController implements ControllerProviderInterface
                 'capacites'                => $capacites,
             ));
 
-            return new Response($view, 200, array('Cache-Control' => sprintf('s-maxage=%s, public', $maxAge)));
+            return new Response($view, 200, array('Cache-Control' => sprintf('s-maxage=%s, public', $app['config']->get('vd_config')['httpcache']['long'])));
         })
         ->bind('menu_locations');
 
@@ -116,7 +112,7 @@ class MenuController implements ControllerProviderInterface
                 'categories'    => $categories,
             ));
 
-            return new Response($view, 200, array('Cache-Control' => sprintf('s-maxage=%s, public', $maxAge)));
+            return new Response($view, 200, array('Cache-Control' => sprintf('s-maxage=%s, public', $app['config']->get('vd_config')['httpcache']['medium'])));
         })
         ->bind('menu_bons_plans');
 

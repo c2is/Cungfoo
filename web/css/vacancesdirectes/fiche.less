@@ -55,8 +55,10 @@ h3{margin-top:40px;}
   img{float:left;/*cursor:help;*/}
   button{display:block;position:absolute;z-index:2;top:50%;margin-top:-45px;height:70px;width:31px;background-color:@colorBgGrisF;background-image:url(../../images/vacancesdirectes/common/ui/sliderArrows.png);background-repeat:no-repeat;border:0;cursor:pointer;text-indent:-999em;
     &.prev{left:0;background-position:0 0;}
-    &.next{right:0;background-position:100%100%;}
+    &.next{right:0;background-position:100% 100%;}
   }
+
+  .loadingSlider{background: url(../../images/vacancesdirectes/common/ui/loadingSlider.gif) 0 0 no-repeat;position: absolute;top: 50%;left: 50%;margin: -5px 0 0 -8px;z-index: 2;height: 11px;width: 16px;}
 }
 #littleTIP{position:absolute;display:none;z-index:1;width:100%;background:rgba(0, 0, 0, 0.3);text-align:center;padding:7px 0 6px;left:0;top:0;color:#fff;font-weight:bold;}
 .tabCampDiapoOptions{background-color:@colorBgGrisC;padding:2px 10px;margin-bottom:15px;
@@ -125,7 +127,7 @@ h3{margin-top:40px;}
     }
   }
 }
-.filterBy{background-color:@colorBgGrisF;color:@colorBlanc;padding:15px;._border-radius(10px);margin-bottom:20px;
+.filterBy{clear:both;background-color:@colorBgGrisF;color:@colorBlanc;padding:15px;._border-radius(10px);margin-bottom:20px;
   span{font-size:13px;font-weight:bold;display:inline-block;margin-right:50px;}
   select{text-transform:uppercase;font:bold 16px/20px @ptnarrow;color:#999;width:220px;margin-right:5px;}
 }

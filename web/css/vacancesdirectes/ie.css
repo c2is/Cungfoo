@@ -5,3 +5,4 @@
     font-weight: normal;
     font-style: normal;
 }
+.w-gte1280 #sliderWrapper .radiusBox.yellow{display:none !important;}

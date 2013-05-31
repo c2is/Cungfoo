@@ -83,7 +83,11 @@
                             <span class="price">{{ proposal.adult_price|number_format }} €</span>
                         </span>
                         {% endif %}
+                        {% if app.session.get('search_engine_data').nbJoursHauteSaison in [7,14] or app.session.get('search_engine_data').nbJoursBasseSaison in [7,14] %}
+                        <a class="bt big itemGetCampingFiche" href="{{ path('destination_camping', { pays: etab.model.pays.slug, region: etab.model.region.slug, ville: etab.model.ville.slug, camping: etab.model.slug }) }}#stayBooking">{{ "general.reserver" | trans }}</a>
+                        {% else %}
                         <a class="bt big" href="{{ path('couloir_detail_sejour', {proposalKey: proposal.proposal_key}) }}">{{ "general.reserver" | trans }}</a>
+                        {% endif %}
                     </div>
                 {% endfor %}
             {% else %}
@@ -105,7 +109,7 @@
                         <span class="price">{{ etab.model.minimumPrice|number_format }} €</span>
                         <span>{{ "general.la_semaine" | trans }}</span>
                     </span>
-                    <a class="bt big" href="{{ path('destination_camping', {pays: etab.model.pays.slug, region: etab.model.region.slug, ville: etab.model.ville.slug, camping: etab.model.slug}) }}#frameResalys">{{ "general.reserver" | trans }}</a>
+                    <a class="bt big" href="{{ path('destination_camping', {pays: etab.model.pays.slug, region: etab.model.region.slug, ville: etab.model.ville.slug, camping: etab.model.slug}) }}#stayBooking">{{ "general.reserver" | trans }}</a>
                 </div>
             {% endif %}
         </div>
