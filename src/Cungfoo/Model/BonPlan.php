@@ -8,8 +8,6 @@ use Cungfoo\Model\om\BaseBonPlan;
 /**
  * Skeleton subclass for representing a row from the 'bon_plan' table.
  *
- *
- *
  * You should add additional methods to this class to meet the
  * application requirements.  This class will only be generated as
  * long as it does not already exist in the output directory.
@@ -23,7 +21,7 @@ class BonPlan extends BaseBonPlan
         return (string) $this->getName();
     }
 
-    public function getRegionsCodes()
+    public function getTypeHebergementsCodes()
     {
         $codes = array();
 
@@ -35,7 +33,7 @@ class BonPlan extends BaseBonPlan
         return implode(',', $codes);
     }
 
-    public function getTypeHebergementsCodes()
+    public function getRegionsCodes()
     {
         $codes = array();
 
