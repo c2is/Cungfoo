@@ -80,11 +80,11 @@ head.ready(function(){
             resize_myframe();
         });
         if(checked != undefined){
-            $('#returningCustomerYes').trigger("click");
+            $('#returningCustomerYes').click();
         }
         else{
             if($('#returningCustomerYes').is(':checked')) {
-                checked = true
+                checked = true;
                 $('#existingCustomerLayer').show();
                 $('#newCustomerLayer').hide();
             }
