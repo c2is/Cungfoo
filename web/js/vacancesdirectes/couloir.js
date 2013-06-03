@@ -251,6 +251,20 @@ function parentExists() {
     return (parent.location == window.location)? false : true;
 }
 
+$('.goto').click(function(e) {
+    console.log("GOTO");
+    e.preventDefault();
+    var oAnchor = this.hash;
+    console.log(oAnchor);
+    var targetOffset = $(oAnchor).offset().top + $('#frameResalys', window.parent.document).offset().top;
+    consoleLog(targetOffset);
+    var bodyelem;
+    var clicked = false;
+    if($.browser.safari) bodyelem = $("body", window.parent.document);
+    else bodyelem = $('html,body', window.parent.document);
+    bodyelem.animate({scrollTop: targetOffset},400);
+});
+
 $.fn.equalizeHeights = function() {
     var maxHeight = this.map(function(i,e) {
         return $(e).height();
