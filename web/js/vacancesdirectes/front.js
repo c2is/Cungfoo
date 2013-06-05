@@ -1173,54 +1173,6 @@ jQuery.extend( jQuery.fn, {
         if ( $('body').hasClass('home') ) {
             toggleSearchCriteria();
         }
-
-        $('form#searchBlocDate').on("submit", function(e){
-
-            var hasErrors = false;
-            var errors = [];
-            if ( $('#SearchDate_dateDebut').val() != "" ){
-                var durationInput;
-                if ($('#SearchDate_isBasseSaison').val() == 1){
-                    durationInput =  $('#SearchDate_nbJoursBasseSaison');
-                }
-                else{
-                    durationInput =  $('#SearchDate_nbJoursHauteSaison');
-                }
-                if ( durationInput.val() == "" ){
-                    var durationError = $('<p class="duration error" />').text("Le nombre de nuit est requis.");
-                    errors.push(durationError);
-                    console.log(durationError);
-                    hasErrors = true;
-                }
-            }
-            if ( $('#SearchDate_destination').val() == "" ){
-                var destinationError = $('<p class="destination error" />').text("La destination est requise.");
-                errors.push(destinationError);
-                console.log(destinationError);
-                hasErrors = true;
-            }
-
-            if (hasErrors){
-                e.preventDefault();
-                $('#didacticiel_layer').hide();
-                if ( !$('form#searchBlocDate .errors').length ){
-                    $('form#searchBlocDate fieldset').prepend('<div class="errors" />').show();
-                }
-                else{
-                    $('form#searchBlocDate .errors').empty().show();
-                }
-                console.log(errors);
-                $.each(errors, function(i,v){
-                    console.log(v);
-                    v.appendTo('form#searchBlocDate .errors');
-                });
-                console.log(errors);
-            }
-            else{
-                showDidacticielLayer(didacticielTitle, getDidacticielContentFromSearch(this));
-                return true;
-            }
-        });
     }
 
 
