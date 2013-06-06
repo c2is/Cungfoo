@@ -88,6 +88,9 @@
 
     <h3>{{ 'fiche.description_title' | trans }}</h3>
     <div class="richText campDesc">{{ etab.description|raw }}</div>
+    <div class="stayBooking clear">
+        <a class="bt big fushia right goto" href="#stayBooking" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'Chapo_-_Lien-Prix', 'Clic_-_Bouton-Tarifs']);">{{ "semainier.title" | trans }}</a>
+    </div>
 
     {% if etab.plan != "" %}
     <h3>{{ 'fiche.plan_camping' | trans }}</h3>
@@ -129,6 +132,9 @@
             </ul></dd>
         </dl>
         {% endif %}
+    </div>
+    <div class="stayBooking clear">
+        <a class="bt big fushia right goto" href="#stayBooking" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'Chapo_-_Lien-Prix', 'Clic_-_Bouton-Tarifs']);">{{ "semainier.title" | trans }}</a>
     </div>
 
     {% if personnageAleatoire %}
