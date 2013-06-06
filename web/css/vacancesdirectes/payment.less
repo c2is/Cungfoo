@@ -2682,16 +2682,23 @@ h4{font-size:15px;line-height:17px;}
 
 #please_wait_layer{position:absolute;top:0;left:0;width:100%;height:100%;background:url(../../images/vacancesdirectes/common/ui/loadingResalys.gif) no-repeat fixed 50% 35px @colorBgBlanc;text-align:center;font:normal 15px @arial;padding:100px 20px;opacity:0.8;}
 
-#footerContener{overflow:hidden;margin-top:20px;clear:both;
+#footerContener{overflow:visible;margin-top:20px;clear:both;
   .mentions, .footerNavigation{display:none;
     &.gauche, &.droite, &.pageListe{display:block;}
     &.gauche{float:left;}
-    &.droite{float:right;margin-top:-14px;}
+    &.droite{float:right;}
   }
   .footerNavigation.gauche a,
-  .footerNavigation.droite a{display:block;border:0;text-transform:uppercase;text-decoration:none;font:bold 14px/22px @ptnarrow;padding:3px 16px;._border-radius(7px);color:@colorBlanc;background-image:url('../../images/vacancesdirectes/common/ui/lrArrowResalys.png');background-repeat:no-repeat;}
-  .footerNavigation.gauche a{background-position:5px 0;padding-left:25px;background-color:@colorBgGrisF;}
-  .footerNavigation.droite a{background-image:none;background-color:@colorFushia;}
+  .footerNavigation.droite a{display:block;border:0;text-transform:uppercase;text-decoration:none;font:bold 14px/22px @ptnarrow;padding:3px 12px;._border-radius(7px);color:@colorBlanc;position:relative;}
+  .footerNavigation.gauche a{margin:7px 0 7px 15px;padding:0;background-color:transparent;color:@colorGris0;text-decoration:underline;}
+  .footerNavigation.droite a{background-color:@colorFushia;font-size:18px;padding:7px 15px;
+    &.inactive{background-color:@colorBgGrisM;
+      &.tooltip span.bubble{width:380px;white-space:normal;position:absolute;bottom:32px;left:-148px;text-align:left;
+        &:after{top:100%;right:auto;margin-top:0;border:solid transparent;content:"";height:0;width:0;position:absolute;pointer-events:none;border-color:rgba(140, 138, 138, 0);border-top-color: #8C8A8A;border-width:5px;left:50%;margin-left:-5px;}
+      }
+      &:hover{background-color:@colorBgGrisC;}
+    }
+  }
   .footerNavigation.pageListe{._border-radius(3px);._box-shadow(0 1px 2px rgba(0, 0, 0, 0.05));float:right;
     a, b{float:left;padding:0 10px;line-height:24px;text-decoration:none;border:1px solid #ddd;border-left-width:0;
       &:hover{background-color:#f5f5f5;}
@@ -2709,6 +2716,12 @@ h4{font-size:15px;line-height:17px;}
   }
 }
 
+/*
+    Apprise
+    The attractive alert alternative for jQuery
+    http://thrivingkings.com/read/Apprise-The-attractive-alert-alternative-for-jQuery
+*/
+.appriseOverlay{position:fixed;top:0;left:0;background:rgba(0,0,0,0.3);display:none;z-index:20;}.appriseOuter{background:#eee;border:1px solid #fff;box-shadow:0 3px 7px #333;-moz-box-shadow:0 3px 7px #333;-webkit-box-shadow:0 3px 7px #333;-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px;-khtml-border-radius:4px;z-index:99999999;min-width:200px;min-height:50px;max-width:75%;position:fixed;display:none;}.appriseInner{color:#333;text-shadow:0 1px 0 #fff;padding:20px;}.appriseInner button{border:1px solid #bbb;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;-khtml-border-radius:3px;background:0;color:#232d3d;font-size:12px;font-weight:700;text-shadow:0 1px 0 #fff;cursor:pointer;box-shadow:0 1px 2px #ccc;-moz-box-shadow:0 1px 2px #ccc;-webkit-box-shadow:0 1px 2px #ccc;margin:0 3px;padding:4px 10px;}.appriseInner button:hover{color:#d85054;}.aButtons,.aInput{text-align:center;margin:20px 10px 0;}.aTextbox{border:1px solid #aaa;-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px;-khtml-border-radius:4px;box-shadow:0 1px 0 #fff;-moz-box-shadow:0 1px 0 #fff;-webkit-box-shadow:0 1px 0 #fff;width:180px;font-size:12px;font-weight:700;padding:5px 10px;}
 
 
 /*

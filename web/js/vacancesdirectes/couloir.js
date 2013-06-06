@@ -262,7 +262,7 @@ $('.goto').click(function(e) {
     var clicked = false;
     if($.browser.safari) bodyelem = $("body", window.parent.document);
     else bodyelem = $('html,body', window.parent.document);
-    bodyelem.animate({scrollTop: targetOffset},400);
+    bodyelem.animate({scrollTop: targetOffset-10},400);
 });
 
 $.fn.equalizeHeights = function() {

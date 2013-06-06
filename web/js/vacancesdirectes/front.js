@@ -191,7 +191,7 @@ jQuery.extend( jQuery.fn, {
         var clicked = false;
         if($.browser.safari) bodyelem = $("body")
         else bodyelem = $('html,body');
-        bodyelem.animate({scrollTop: targetOffset},400,function(){
+        bodyelem.animate({scrollTop: targetOffset-10},400,function(){
             if ( oAnchor ==  "#searchBloc" && !clicked ){
                 setTimeout(function() {
                     $('#datepickerField').trigger('click');
