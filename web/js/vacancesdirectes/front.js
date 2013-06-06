@@ -189,10 +189,14 @@ jQuery.extend( jQuery.fn, {
         //consoleLog(targetOffset);
         var bodyelem;
         var clicked = false;
+        var opened = false;
+        if ($('#datepickerCalendar.opened').length){
+            opened = true;
+        }
         if($.browser.safari) bodyelem = $("body")
         else bodyelem = $('html,body');
         bodyelem.animate({scrollTop: targetOffset-10},400,function(){
-            if ( oAnchor ==  "#searchBloc" && !clicked ){
+            if ( oAnchor ==  "#searchBloc" && !clicked && !opened ){
                 setTimeout(function() {
                     $('#datepickerField').trigger('click');
                 }, 300);
