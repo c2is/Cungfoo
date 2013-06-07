@@ -252,18 +252,20 @@ function parentExists() {
 }
 
 $('.goto').click(function(e) {
-    console.log("GOTO");
     e.preventDefault();
-    var oAnchor = this.hash;
-    console.log(oAnchor);
+    scrollToHash(this.hash);
+    return false;
+});
+
+function scrollToHash(hash){
+    var oAnchor = hash;
     var targetOffset = $(oAnchor).offset().top + $('#frameResalys', window.parent.document).offset().top;
-    consoleLog(targetOffset);
+    //console.log(targetOffset);
     var bodyelem;
-    var clicked = false;
     if($.browser.safari) bodyelem = $("body", window.parent.document);
     else bodyelem = $('html,body', window.parent.document);
     bodyelem.animate({scrollTop: targetOffset-10},400);
-});
+}
 
 $.fn.equalizeHeights = function() {
     var maxHeight = this.map(function(i,e) {

@@ -184,7 +184,12 @@ jQuery.extend( jQuery.fn, {
 // scroll to anchor
     $('.goto').click(function(e) {
         e.preventDefault();
-        var oAnchor = this.hash;
+        scrollToHash(this.hash);
+        return false;
+    });
+
+    function scrollToHash(hash){
+        var oAnchor = hash;
         var targetOffset = $(oAnchor).offset().top;
         //consoleLog(targetOffset);
         var bodyelem;
@@ -203,8 +208,7 @@ jQuery.extend( jQuery.fn, {
                 clicked = true;
             }
         });
-        return false;
-    });
+    }
 
 // popins
     $(".popinIframe").colorbox({iframe:true, width:'80%', height:'80%', close:"&times;"});

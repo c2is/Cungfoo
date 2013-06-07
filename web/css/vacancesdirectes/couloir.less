@@ -459,41 +459,44 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
             .aField{margin-bottom:10px;}
             .label{margin-right:10px;text-align:right;}
           }
-          .loginButtons{margin-top:20px;}
+          .loginButtons{margin-top:20px;text-align:right;}
         }
-        #existingCustomerLayer{margin-top:20px;
-          .aField{width:450px;float:left;
-            .label{width:130px;}
-            input{width:310px;}
+        #existingCustomerLayer{margin-top:20px;position:relative;
+          .aField{
+            .label{width:144px;padding:3px 10px 0 0;text-align:right;}
+            input{width:288px;}
+          }
+          .loginButtons{margin-top:0;
+            .bt{position:absolute;bottom:34px;right:0;}
           }
         }
         #newCustomerLayer{
-          .label{width:134px;padding-top:3px;}
+          .label{width:144px;padding:3px 10px 0 0;text-align:right;}
           #newAccount{margin-bottom:15px;
-            .aField{width:424px;
-              input{width:280px;}
+            .aField{
+              input{width:288px;}
             }
           }
-          #address{width:586px;
-            td{display:table-cell;padding:5px 10px 5px 0;vertical-align:middle;width:144px !important;}
-            input,textarea,.newListSelected{width:134px;text-transform:uppercase;}
-            textarea{width:134px;height:62px;}
+          #address{
+            td{display:table-cell;padding:5px 10px 5px 0;vertical-align:middle;}
+            input,textarea,.newListSelected{width:288px;text-transform:uppercase;}
+            textarea{width:288px;height:62px;}
             .datepicker button{right:0;}
-            .label{width:134px;line-height:17px;padding:0 10px 0 0;}
+            .label{width:144px;line-height:17px;padding:0 10px 0 0;text-align:right;}
             .firstname input{text-transform:capitalize;}
             .email input{text-transform:lowercase;}
           }
           #others{width:576px;margin:15px 0 20px;
-            td{display:table-cell;padding:5px 10px 5px 0;vertical-align:middle;}
+            td{display:table-cell;padding:5px 0;vertical-align:middle;}
             input,textarea,.newListSelected{text-transform:uppercase;}
-            .label{width:432px;}
+            .label{width:144px;padding-right:5px;}
           }
         }
         #option{padding-top:0;
           table{width:576px;
-            td{display:table-cell;padding:5px 10px 5px 0;vertical-align:middle;}
+            td{display:table-cell;padding:5px 0;vertical-align:middle;}
             input,textarea,.newListSelected{text-transform:uppercase;}
-            .label{width:432px;text-align:right;}
+            .label{width:144px;text-align:right;padding-right:5px;}
           }
         }
         .loginButtons{margin-top:20px;}
@@ -752,7 +755,7 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
 
 // step 1
 #authentication #newCustomerLayer{
-  ._stylish-select(134px,27px,0px,4);
+  ._stylish-select(288px,27px,0px,4);
 }
 #reservation .aRoom{
   ._stylish-select(54px,27px,10px,5);
@@ -761,9 +764,10 @@ textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;b
   ._stylish-select(374px,27px,0px,4);
 }
 
+
 // step 2
 #option {
-  ._stylish-select(134px,27px,0px,4);
+  ._stylish-select(288px,27px,0px,4);
 }
 .paymentMode {
   ._stylish-select(252px,27px,0px,4);
