@@ -1234,6 +1234,7 @@ if($('#refresh_layer').length){
     $('#refresh_layer a.bt').click(function(e) {
         e.preventDefault();
         location.reload();
+        //history.back();
     });
 }
 
@@ -2292,8 +2293,8 @@ function rangeSliderPrice() {
 
                 displayResults();
             }
-        }).find('.noUi-handle div').each(function(index){
-            $(this).append('<span class="rangeBox">'+$(this).parent().parent().noUiSlider( 'value' )[index]+' €</span>');
+        }).find('.noUi-handle').each(function(index){
+            $(this).after('<span class="rangeBox rb"+index>'+$(this).parent().noUiSlider( 'value' )[index]+' €</span>');
         });
     };
 
@@ -2500,8 +2501,8 @@ function displayResults() {
                 var reg = $(this).attr('value');
                 if ( reg != 0 ){
                     var regInItems = $("[data-reg="+reg+"]").length;
-                    //consoleLog(reg + regInItems);
-                    //if ( regInItems == 0 ) { $(this).remove(); }
+                    consoleLog(reg + regInItems);
+                    if ( regInItems == 0 ) { $(this).remove(); }
                 }
             });
             firstTime = false;
