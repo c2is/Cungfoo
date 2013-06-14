@@ -2,3 +2,4 @@ assets_base_url:
     default: "##assets_base_url##"
     css: "##assets_base_url_css##"
     js: "##assets_base_url_js##"
+google_webmaster_id: "##google_webmaster_id##"
