@@ -503,19 +503,9 @@ th.datepickerWeek{display:none;}
  **/
 .noUiSlider{width:400px;border:1px solid #ccc;height:8px;background:#eee;-webkit-touch-callout:none;
   .noUi-handle{cursor:pointer;}
-  .noUi-lowerHandle div{position:absolute;width:0;height:0;top:-7px;left:-8px;z-index:5;
-        border-bottom:12px solid transparent;
-        border-top:10px solid transparent;
-        border-right:18px solid @colorFushia;
-        border-radius:150px;
-    }
-
-  .noUi-upperHandle div{position:absolute;width:0;height:0;top:-7px;left:-8px;z-index:5;
-        border-bottom:12px solid transparent;
-        border-top:10px solid transparent;
-        border-left:18px solid @colorFushia;
-        border-radius:150px;
-    }
+  .noUi-lowerHandle div, .noUi-upperHandle div{position:absolute;width:16px;height:16px;top:-5px;background:@colorFushia;border-radius:50%;}
+  .noUi-lowerHandle div{left:-13px;z-index:6;}
+  .noUi-upperHandle div{right:-13px;z-index:5;}
     > div:hover, > div.noUi-activeHandle {}
   .noUi-midBar{height:100%;z-index:0;background:#39c;-webkit-touch-callout:none;}
   .rangeBox{display:block;margin-top:15px;}

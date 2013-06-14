@@ -1205,6 +1205,18 @@ jQuery.extend( jQuery.fn, {
                openPopinRoomType(url);
             }
         });
+        // click bt MoreResults
+        $('#btPlusResults').click( function() {
+            var nextItems = $('.nextItem'),
+                nextItemsLength = nextItems.length;
+
+            if ( nextItemsLength <= nbToShow ) {
+                $('#results').find('.nextItem').fadeIn().removeClass('nextItem');
+                $(this).hide();
+            }else if ( nextItemsLength > nbToShow ) {
+                $('#results').find('.nextItem:lt('+nbToShow+')').fadeIn().removeClass('nextItem');
+            }
+        });
     }
 
 
@@ -2261,8 +2273,8 @@ function rangeSliderPrice() {
 
             change: function(){
                 var values = $(this).noUiSlider('value');
-                $(this).find('.noUi-lowerHandle .rangeBox').text(values[0] + "€");
-                $(this).find('.noUi-upperHandle .rangeBox').text(values[1] + "€");
+                $(this).find('.noUi-lowerHandle').next('.rangeBox').text(values[0] + "€");
+                $(this).find('.noUi-upperHandle').next('.rangeBox').text(values[1] + "€");
             },
             end: function(type){
                 var values = $(this).noUiSlider('value');
@@ -2291,10 +2303,10 @@ function rangeSliderPrice() {
                     }
                 });
 
-                displayResults();
+                launchFilters();
             }
         }).find('.noUi-handle').each(function(index){
-            $(this).after('<span class="rangeBox rb"+index>'+$(this).parent().noUiSlider( 'value' )[index]+' €</span>');
+            $(this).after('<span class="rangeBox rb'+index+'">'+$(this).parent().noUiSlider( 'value' )[index]+' €</span>');
         });
     };
 
@@ -2558,19 +2570,6 @@ function listPagination() {
     }else{
         btNext.hide();
     };
-
-// click bt MoreResults
-    $('#btPlusResults').click( function() {
-        var nextItems = $('.nextItem'),
-            nextItemsLength = nextItems.length;
-
-        if ( nextItemsLength <= nbToShow ) {
-            $('#results').find('.nextItem').fadeIn().removeClass('nextItem');
-            $(this).hide();
-        }else if ( nextItemsLength > nbToShow ) {
-            $('#results').find('.nextItem:lt('+nbToShow+')').fadeIn().removeClass('nextItem');
-        }
-    });
 };
 
 /*function showResults(){
