@@ -229,8 +229,9 @@ aside{
     .datepickerDays a:hover{border:1px solid @colorFushia;width:24px;}
     .datepickerDays a:hover > *{margin-right:-1px;}
     div.datepicker .datepickerDays td.datepickerDisabled a:hover, div.datepicker .datepickerDays td.datepickerUnselectable a:hover{border:1px solid transparent;}
-    .spinner label{font:bold 17px/27px @ptnarrow;text-transform:uppercase;margin-right:10px;width:81px;}
-    .spinner{
+    .spinner label{font:bold 17px/27px @ptnarrow;text-transform:uppercase;margin-right:10px;width:81px;display: inline-block;vertical-align: top;float: none;}
+    .spinner{text-align: right;
+      .spin{width: 98px;display: inline-block;}
       input{width:40px;height:27px;border:0 none;color:@colorFushia;font:bold 21px/27px @ptnarrow;text-align:center;}
       .spin-bt-down,
       .spin-bt-up {width:27px;height:27px;background-color:@colorBgGrisF;color:@colorBlanc;font:bold 26px/27px @ptnarrow;text-align:center;cursor:pointer;overflow:hidden;border:0 none;}
