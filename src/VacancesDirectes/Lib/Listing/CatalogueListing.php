@@ -19,19 +19,31 @@ class CatalogueListing extends AbstractListing
 
         $prefix  = 0;
         $element = array();
+        $notPriced = array();
 
         foreach ($this->data as $data)
         {
             $prefix++;
-            $index  = ($data->getMinimumPrice() *100) . str_pad($prefix, 3, '0', STR_PAD_LEFT);
+            if (!$data->getMinimumPrice()) {
+                $notPriced[] = array(
+                    'model' => $data,
+                    'extra' => 'extra',
+                );
+            } else {
+                $index  = ($data->getMinimumPrice() *100) . str_pad($prefix, 3, '0', STR_PAD_LEFT);
 
-            $element[$index] = array(
-                'model' => $data,
-                'extra' => 'extra',
-            );
+                $element[$index] = array(
+                    'model' => $data,
+                    'extra' => 'extra',
+                );
+            }
         }
 
         ksort($element);
+
+        foreach ($notPriced as $npElement) {
+            $element[] = $npElement;
+        }
 
         $results['element'] = $element;
 
