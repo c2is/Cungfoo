@@ -2324,6 +2324,7 @@ function reInitFilter(){
 
 //selection des criteres
 function launchFilters() {
+    consoleLog('l.2327 - done !');
     //remize a zero
     $('.nbResult .nb').css({'opacity':0});
     items.removeClass('itemRanged');
