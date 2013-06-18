@@ -25,6 +25,7 @@ var
     maxPrice,                                               // le prix maximum de la liste
     containerCrit = $('#formSearchRefined'),                // conteneur des criteres
     nbToShow = 5,                                           // nombre d'items a afficher si pagination existe
+    nbItemsDisplayed = '',
 //googlemap
     map,
     markerBleu,
@@ -2132,8 +2133,6 @@ function initializeAllGmap() {
 
 function initCritResult(){
 
-    firstTime = false;
-
     //we come from the same page
     if ( $('#results').length ){
         $('#dealsContent').find('.linkParent').click( function(){
@@ -2172,6 +2171,18 @@ function initCritResult(){
         }
     });
 
+    //consoleLog(firstTime);
+    if (firstTime == true) {
+        $('#TopFilter_regions').find('option').each( function(){
+            var reg = $(this).attr('value');
+            if ( reg != 0 ){
+                var regInItems = $("[data-reg="+reg+"]").length;
+                consoleLog(reg + regInItems);
+                if ( regInItems == 0 ) { $(this).remove(); }
+            }
+        });
+        firstTime = false;
+    }
 // init resultat first pass
     items.attr('data-filtered', true)
          .attr('data-filteredPlus', true)
@@ -2276,9 +2287,9 @@ function rangeSliderPrice() {
                 $(this).find('.noUi-lowerHandle').next('.rangeBox').text(values[0] + "€");
                 $(this).find('.noUi-upperHandle').next('.rangeBox').text(values[1] + "€");
             },
-            end: function(type){
+            end: function(){
                 var values = $(this).noUiSlider('value');
-                $('.itemResult').each(function() {
+                items.each(function() {
                     $(this).find('.linePrice').each( function(){
                         var originPriceLine = parseInt($(this).find('.stain .price').text());
                         if ( parseInt(originPriceLine) >= parseInt(values[0]) && parseInt(originPriceLine) <= parseInt(values[1]) ) {
@@ -2295,14 +2306,13 @@ function rangeSliderPrice() {
 
 
                     var nbVisiblePrice = $(this).find('.visiblePrice').length;
-                    //consoleLog(nbVisiblePrice);
                     if ( nbVisiblePrice > 0 ) {
                         $(this).attr('data-ranged', true);
                     }else{
+                        //consoleLog('data-ranged');
                         $(this).attr('data-ranged', false);
                     }
                 });
-
                 launchFilters();
             }
         }).find('.noUi-handle').each(function(index){
@@ -2316,19 +2326,16 @@ function rangeSliderPrice() {
 function reInitFilter(){
     setTimeout( function(){
         //alert('Pas de dispo -> reinit()');
-        //$('#results').prepend('<p id="noResult">Pas de résultat correspondant à votre sélection</p>');
+        $('#results').prepend('<p id="noResult">Pas de résultat correspondant à votre sélection</p>');
         $('#TopFilter_regions').val('');
-        launchFilters();
+        //launchFilters();
     }, 100);
 }
 
 //selection des criteres
 function launchFilters() {
-    consoleLog('l.2327 - done !');
     //remize a zero
     $('.nbResult .nb').css({'opacity':0});
-    items.removeClass('itemRanged');
-    items.removeClass('nextItem');
 
     //init des tableaux
     var arrayCrit = [];         //tableau des criteres
@@ -2447,7 +2454,13 @@ function launchFilters() {
 
 //gestion de l'affichage en fonction des criteres + rangeSlider
 function displayResults() {
-    var nbItemsDisplayed = 0;
+    nbItemsDisplayed = 0;
+    consoleLog('displayResult');
+
+    items.removeClass('itemRanged');
+    items.removeClass('nextItem');
+
+    /*var nbItemsDisplayed = 0;*/
     var gMarkers = [];
 
     items.each(function() {
@@ -2460,12 +2473,14 @@ function displayResults() {
         if ( dataFiltered == 'true' && dataFilteredPlus == 'true' && dataRanged == 'true' && dataDated == 'true' && dataReged == 'true' ) {
             $(this).addClass('itemRanged');
             nbItemsDisplayed++;
+            consoleLog(nbItemsDisplayed);
             var idRsl = $(this).attr('data-id');
             gMarkers.push(idRsl);
-        }/*else{
-            var id = $(this).attr('id');
-            $(this).removeClass('itemRanged');
-        };*/
+        }else{
+            //var id = $(this).attr('id');
+            //$(this).removeClass('itemRanged');
+            //consoleLog('none');
+        }
 
         for (var i = 0; i < aMarkers.length; i++) {
             var marker = aMarkers[i];
@@ -2474,90 +2489,57 @@ function displayResults() {
 
     });
 
-    if ( nbItemsDisplayed == 0 ) {
-        reInitFilter();
-    } else {
-        //Suppression du message d'erreur
-        /*if ( $('#noResult').length ) {
-          setTimeout( function(){
-            $('#noResult').fadeOut().remove();
-          }, 3000);
-        }*/
-
-        //init de l'affichage du nombre de resultats par critere
-        $('.contentCritPlus').find('input').each( function(){
-            var rslTypePlus = $(this).attr('id');
-            var rslTypeinresultPlus = $(".itemRanged[data-critplus~="+rslTypePlus+"]").length;
-            if ( rslTypeinresultPlus == 0 ) {
-                $(this).siblings('.nbItem').text('');
-                $(this).attr('disabled', true).parent().addClass('disableLabel');
-            } else {
-                $(this).siblings('.nbItem').text('('+rslTypeinresultPlus+')');
-                $(this).attr('disabled', false).parent().removeClass('disableLabel');
-            }
-        });
-        $('.contentCrit').find('input').each( function(){
-            var rslType = $(this).attr('id');
-            var rslTypeinresult = $('.itemRanged[data-crit='+rslType+']').length;
-            if ( rslTypeinresult == 0 ) {
-                $(this).siblings('.nbItem').text('');
-                $(this).attr('disabled', true).parent().addClass('disableLabel');
-            } else {
-                $(this).siblings('.nbItem').text('('+rslTypeinresult+')');
-                $(this).attr('disabled', false).parent().removeClass('disableLabel');
-            }
-        });
-
-        //consoleLog(firstTime);
-        if (firstTime == true) {
-            $('#TopFilter_regions').find('option').each( function(){
-                var reg = $(this).attr('value');
-                if ( reg != 0 ){
-                    var regInItems = $("[data-reg="+reg+"]").length;
-                    consoleLog(reg + regInItems);
-                    if ( regInItems == 0 ) { $(this).remove(); }
-                }
-            });
-            firstTime = false;
+    //init de l'affichage du nombre de resultats par critere
+    $('.contentCritPlus').find('input').each( function(){
+        var rslTypePlus = $(this).attr('id');
+        var rslTypeinresultPlus = $(".itemRanged[data-critplus~="+rslTypePlus+"]").length;
+        if ( rslTypeinresultPlus == 0 ) {
+            $(this).siblings('.nbItem').text('');
+            $(this).attr('disabled', true).parent().addClass('disableLabel');
+        } else {
+            $(this).siblings('.nbItem').text('('+rslTypeinresultPlus+')');
+            $(this).attr('disabled', false).parent().removeClass('disableLabel');
         }
-        /*$('#TopFilter_bon_plans').find('option').each( function(){
-            var date = $(this).attr('value');
-            if ( date != 0 )
-                var dateInItems = $(".itemRanged[data-date="+date+"]").length;
-                if ( dateInItems == 0 ) {
-                    $(this).attr('disabled', true);
-                } else {
-                    $(this).attr('disabled', false);
-                }
-        });
-        $('#TopFilter_regions').find('option').each( function(){
-            var reg = $(this).attr('value');
-            if ( reg != 0 )
-                var regInItems = $(".itemRanged[data-reg="+reg+"]").length;
-                if ( regInItems == 0 ) {
-                    $(this).attr('disabled', true);
-                } else {
-                    $(this).attr('disabled', false);
-                }
-        });*/
+    });
+    $('.contentCrit').find('input').each( function(){
+        var rslType = $(this).attr('id');
+        var rslTypeinresult = $('.itemRanged[data-crit='+rslType+']').length;
+        if ( rslTypeinresult == 0 ) {
+            $(this).siblings('.nbItem').text('');
+            $(this).attr('disabled', true).parent().addClass('disableLabel');
+        } else {
+            $(this).siblings('.nbItem').text('('+rslTypeinresult+')');
+            $(this).attr('disabled', false).parent().removeClass('disableLabel');
+        }
+    });
 
     // Affichage du nombre de criteres selectionnes
-        var nbCritChecked = $('#formSearchRefined input:checked').length;
-        $('#nbCrit').text(nbCritChecked);
+    var nbCritChecked = $('#formSearchRefined input:checked').length;
+    $('#nbCrit').text(nbCritChecked);
 
-
-
-        //gestion de la pagination
-        listPagination();
-
-        //mise a jour du nombre d'items affiches
-        $('.nbResult .nb').text(nbItemsDisplayed).animate({'opacity':1});
-    }
+    //gestion de la pagination
+    listPagination();
 };
 
 
 //pagination liste de resultats
 function listPagination() {
+
+    if ( nbItemsDisplayed == 0 ) {
+        consoleLog(nbItemsDisplayed);
+        reInitFilter();
+    } else {
+        //Suppression du message d'erreur
+        if ( $('#noResult').length ) {
+          setTimeout( function(){
+            $('#noResult').fadeOut().remove();
+          }, 3000);
+        }
+
+        //mise a jour du nombre d'items affiches
+    }
+    $('.nbResult .nb').text(nbItemsDisplayed).animate({'opacity':1});
+
     var itemsPagination = $('.itemRanged'),
         nbResults = itemsPagination.length,
         btNext = $('#btPlusResults');
@@ -2571,17 +2553,10 @@ function listPagination() {
     }else{
         btNext.hide();
     };
-};
-
-/*function showResults(){
-    $('.itemRanged').not('.itemVisible').fadeOut();
-    $('.itemVisible').show();
-
-    //listPagination();
-}*/
+}
 
 //gestion du tri par prix ou pertinence
-function orderList() {
+/*function orderList() {
 
     $('#results .itemResult .priceFilter').each(function() {
         var thisPrice = parseInt($(this).text());
@@ -2622,7 +2597,7 @@ function orderList() {
         return false;
     });
     //console.log('/--- orderList ---/');
-};
+}*/
 
 // verifier la presence du tracker GA
 function test_analytics(Url) {
