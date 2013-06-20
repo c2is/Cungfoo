@@ -81,7 +81,8 @@ body{background:#fff;color:#464545;font:12px Arial,Helvetica,sans-serif;margin:0
 #homePage #searchResult .aProposalBlock .proposalDescriptionContent{width:100%;}#homePage #searchResult .aProposalBlock .proposalDescriptionContent tr:first-child td{padding:20px 0;vertical-align:bottom;}
 #homePage #searchResult .aProposalBlock .proposalDescriptionContent .price{font-family:'PT Sans Narrow',Arial,Helvetica,sans-serif;font-weight:bold;font-size:44px;text-transform:uppercase;text-align:right;margin-bottom:-13px;display:block;}
 #homePage #searchResult .aProposalBlock .proposalDescriptionContent .action .chooseButton{display:block;border:0;text-transform:uppercase;text-decoration:none;font:bold 14px 'PT Sans Narrow',Arial,Helvetica,sans-serif;padding:3px 10px;-webkit-border-radius:7px;border-radius:7px;background-color:#464545;color:#ffffff;text-align:center;}
-.ie-lte8 #homePage #searchResult .aProposalBlock{margin:15px 10px;}
+.ie-lte8 #homePage #searchResult{width:924px;}
+.ie-lte8 #homePage #searchResult .aProposalBlock{margin:15px 4px 15px 0;}
 .warning{border:3px solid #ed145b;margin:0 20px 25px;padding:10px;font-weight:bold;text-align:center;}
 .error{margin-bottom:10px;font:12px Arial,Helvetica,sans-serif;color:#f58220;}.error li:before{content:"-";padding-right:3px;}
 #forgetPassword .error{margin:-15px 0 20px;}
