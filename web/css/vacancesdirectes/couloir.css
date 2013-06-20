@@ -218,7 +218,7 @@ textarea{background-color:#ffffff;width:216px;height:81px;padding:0 7px;border:0
 #contentContener.summary #paiement #payment_layer_ecc .newListSelected,#contentContener.editAccount #paiement #payment_layer_ecc .newListSelected{margin-bottom:10px;}
 #contentContener.summary #termsAndConditions .aField .label,#contentContener.editAccount #termsAndConditions .aField .label{margin-right:0;}
 #contentContener.summary #termsAndConditions .aField input[type="checkbox"],#contentContener.editAccount #termsAndConditions .aField input[type="checkbox"]{margin:1px 5px 0 0;float:left;}
-#contentContener.summary #termsAndConditions .aField label,#contentContener.editAccount #termsAndConditions .aField label{font-style:italic;font-weight:bold;float:left;width:554px;}#contentContener.summary #termsAndConditions .aField label a,#contentContener.editAccount #termsAndConditions .aField label a{color:#ed145b;}
+#contentContener.summary #termsAndConditions .aField label,#contentContener.editAccount #termsAndConditions .aField label{font-style:italic;font-weight:bold;float:left;width:550px;}#contentContener.summary #termsAndConditions .aField label a,#contentContener.editAccount #termsAndConditions .aField label a{color:#ed145b;}
 #contentContener.summary #termsAndConditions small,#contentContener.editAccount #termsAndConditions small{font-size:10px;}
 #contentContener.confirmation #reservationSaved h2{margin:15px 0 20px;text-transform:uppercase;font:bold 30px/28px 'PT Sans Narrow',Arial,Helvetica,sans-serif;}
 #contentContener.confirmation #reservationSaved .whiteBg{padding:10px 20px 20px;clear:both;margin:10px -15px 0;}#contentContener.confirmation #reservationSaved .whiteBg h4{margin-top:20px;}

@@ -30,6 +30,7 @@ header, section, footer {position:relative;}
   }
 }
 .ie-lte9 #telephone span span{letter-spacing:-1px;}
+.ie-lte9 #header #accountBox #password{font-family: Arial, sans-serif;}
 /* specifs home */
 .home #telephone{clear:both;}
 
@@ -194,7 +195,7 @@ header, section, footer {position:relative;}
     .tab{
       &.hover,
       &.current{background:@colorFushia;
-        &>a{
+        &>a{position:relative;z-index:50;
           &:after{content:url('../../images/vacancesdirectes/common/pict/Triangle-Tab.png');position:absolute;top:24px;left:50%;margin-left:-12px;height:8px;width:22px;z-index:50;}
           small{color:@colorBlanc;}
         }

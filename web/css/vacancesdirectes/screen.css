@@ -239,6 +239,7 @@ header,section,footer{position:relative;}
 #header #accountBox input>img{vertical-align:middle;}
 #header #accountBox .link{margin-bottom:15px;}#header #accountBox .link a{color:#ffffff;text-decoration:underline;}
 .ie-lte9 #telephone span span{letter-spacing:-1px;}
+.ie-lte9 #header #accountBox #password{font-family:Arial,sans-serif;}
 .home #telephone{clear:both;}
 #nav{position:relative;background:#464545;margin-top:20px;height:50px;z-index:30;}#nav .topnav{top:-7px;}
 #nav .tab{position:static;color:#ffffff;float:left;padding:0;cursor:pointer;-webkit-border-radius:7px 7px 0 0;border-radius:7px 7px 0 0;z-index:50;margin-left:2px;}#nav .tab:first-child:after{width:0;margin-left:0;}
@@ -312,7 +313,7 @@ header,section,footer{position:relative;}
 #nav .tab .subnav .proposals .proposalsDate .bt{display:inline;}
 #nav .tab .subnav#holiday #holidayGallery{margin:10px auto 0;position:relative;width:820px;height:420px;}#nav .tab .subnav#holiday #holidayGallery .polaroid{position:relative;width:185px;height:120px;float:left;margin:0 10px 20px;}#nav .tab .subnav#holiday #holidayGallery .polaroid a{position:absolute;top:0;left:0;}#nav .tab .subnav#holiday #holidayGallery .polaroid a img{margin:0;}
 #nav .tab .subnav#weekends .radiusBox .title{color:#fa8425;}
-.js-true #nav .tab.hover,.js-true #nav .tab.current{background:#ed145b;}.js-true #nav .tab.hover>a:after,.js-true #nav .tab.current>a:after{content:url('../../images/vacancesdirectes/common/pict/Triangle-Tab.png');position:absolute;top:24px;left:50%;margin-left:-12px;height:8px;width:22px;z-index:50;}
+.js-true #nav .tab.hover,.js-true #nav .tab.current{background:#ed145b;}.js-true #nav .tab.hover>a,.js-true #nav .tab.current>a{position:relative;z-index:50;}.js-true #nav .tab.hover>a:after,.js-true #nav .tab.current>a:after{content:url('../../images/vacancesdirectes/common/pict/Triangle-Tab.png');position:absolute;top:24px;left:50%;margin-left:-12px;height:8px;width:22px;z-index:50;}
 .js-true #nav .tab.hover>a small,.js-true #nav .tab.current>a small{color:#ffffff;}
 .js-false #nav .tab:hover,.js-false #nav .tab.current{background:#ed145b;}.js-false #nav .tab:hover small,.js-false #nav .tab.current small{color:#ffffff;}
 .js-false #nav .tab:hover>a:after,.js-false #nav .tab.current>a:after{content:url('../../images/vacancesdirectes/common/pict/Triangle-Tab.png');position:absolute;top:24px;left:50%;margin-left:-12px;height:8px;width:22px;z-index:50;}
@@ -800,6 +801,8 @@ h2+#results{margin-top:25px;}
 .formSearchRefined fieldset p{color:#666666;font:bold 11px Arial,Helvetica,sans-serif,sans-serif;margin:0 0 5px;}
 .formSearchRefined fieldset .nbItem{color:#8c8a8a;font-style:italic;}
 .formSearchRefined .bt{font-size:21px;margin:10px auto;}
+.ie-lte8 .formSearchRefined .stamp{padding-left:15px;padding-right:15px;}
+.ie-lte8 .formSearchRefined .stamp h2{font-size:20px !important;}
 #resultMap{opacity:0;position:absolute !important;left:-999em;top:-999em;border:10px solid #e6e5e5;-webkit-border-radius:8px;border-radius:8px;margin:10px 0;-webkit-transition:opacity 0.5s;-o-transition:opacity 0.5s;transition:opacity 0.5s;}
 #resultMap.active{opacity:1;position:relative !important;top:0;left:0;}
 .destination h2.h3-like{margin-top:10px;margin-bottom:20px;color:#464545;}
