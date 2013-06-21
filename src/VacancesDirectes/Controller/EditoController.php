@@ -35,9 +35,14 @@ class EditoController implements ControllerProviderInterface
         $controllers->match('/{id}', function (Request $request, $id) use ($app)
         {
             $locale = $app['context']->get('language');
+            $edito  = $this->getEditoById($id, $locale);
+
+            if (!$edito) {
+                $app->abort(404);
+            }
 
             return $app->renderView('Edito/view.twig', array(
-                'edito' => $this->getEditoById($locale),
+                'edito' => $edito,
             ));
         })
         ->assert('id', '\d+')
