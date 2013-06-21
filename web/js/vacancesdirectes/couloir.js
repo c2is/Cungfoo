@@ -39,6 +39,11 @@ $(function() {
         setTimeout( "$('#refresh_layer', window.parent.document).show()",1000*60*10);
     }
 
+    if ( $('#footerContener').length ){
+        $('#footerContener').find('#BackLink').click( function(){
+            history.go(-1);
+        });
+    }
 });
 
 head.ready(function(){
