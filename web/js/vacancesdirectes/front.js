@@ -26,6 +26,7 @@ var
     containerCrit = $('#formSearchRefined'),                // conteneur des criteres
     nbToShow = 5,                                           // nombre d'items a afficher si pagination existe
     nbItemsDisplayed = '',
+    resultFrom,
 //googlemap
     map,
     markerBleu,
@@ -2222,7 +2223,7 @@ function initCritResult(){
 
     iBox.change(function() { launchFilters(); });
     iSlcDate.change(function() { launchFilters(); });
-    iSlcReg.change(function() { launchFilters(); });
+    iSlcReg.change(function() { resultFrom = "fromReg"; launchFilters(); });
 
 // First-time launchFilter function
     findMinMaxRange();
@@ -2324,12 +2325,10 @@ function rangeSliderPrice() {
 }
 
 function reInitFilter(){
-    setTimeout( function(){
-        //alert('Pas de dispo -> reinit()');
-        $('#results').prepend('<p id="noResult">Pas de résultat correspondant à votre sélection</p>');
-        $('#TopFilter_regions').val('');
-        //launchFilters();
-    }, 100);
+    $('#results').prepend('<p id="noResult">Pas de résultat correspondant à votre sélection</p>');
+    if ( resultFrom == "fromReg" ){
+        setTimeout( function(){$('#TopFilter_regions').val('');launchFilters();}, 1000);
+    }
 }
 
 //selection des criteres
@@ -2526,14 +2525,21 @@ function displayResults() {
 function listPagination() {
 
     if ( nbItemsDisplayed == 0 ) {
-        consoleLog(nbItemsDisplayed);
+        //consoleLog(nbItemsDisplayed);
         reInitFilter();
     } else {
         //Suppression du message d'erreur
         if ( $('#noResult').length ) {
-          setTimeout( function(){
-            $('#noResult').fadeOut().remove();
-          }, 3000);
+            if ( resultFrom == "fromReg" ){
+                setTimeout( function(){
+                    $('#noResult').fadeOut( function(){
+                        $('#noResult').remove();
+                    })
+                    resultFrom == "";
+                }, 4000);
+            } else {
+                $('#noResult').fadeOut().remove();
+            }
         }
 
         //mise a jour du nombre d'items affiches
