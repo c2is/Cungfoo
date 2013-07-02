@@ -2354,6 +2354,7 @@ function noUiSliderRanged(values){
     launchFilters();
 }
 function reInitFilter(){
+    consoleLog('In');
     $('#noResult').fadeIn();
     if ( resultFrom == "fromReg" ){
         $('#TopFilter_regions').val('');
@@ -2567,6 +2568,7 @@ function listPagination() {
     } else {
         //Suppression du message d'erreur
         setTimeout( function(){
+            consoleLog('Out');
             $('#noResult').fadeOut()
             resultFrom == "";
         }, 2500);
