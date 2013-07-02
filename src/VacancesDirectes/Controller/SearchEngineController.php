@@ -13,9 +13,8 @@ use Symfony\Component\HttpFoundation\Request,
 
 use Cungfoo\Model;
 
-use VacancesDirectes\Lib\SearchEngine;
-
-use VacancesDirectes\Form\Type\Search\DateType,
+use VacancesDirectes\Lib\SearchEngine,
+    VacancesDirectes\Form\Type\Search\DateType,
     VacancesDirectes\Form\Data\Search\DateData;
 
 class SearchEngineController implements ControllerProviderInterface
@@ -78,6 +77,35 @@ class SearchEngineController implements ControllerProviderInterface
             return $response;
         })
         ->bind('search_engine_get_campings_by_destination');
+
+        $controllers->post('/validate', function(Request $request) use ($app) {
+            $searchDateData = new DateData();
+
+            $form = $this->app['form.factory']->create(new DateType($this->app), $searchDateData);
+            $form->bind($request);
+
+            $success    = false;
+            $errors     = array();
+            if ($form->isValid()) {
+                $success = true;
+            } else {
+                foreach ($form->getErrors() as $key => $error) {
+                    $template = $error->getMessageTemplate();
+                    $parameters = $error->getMessageParameters();
+
+                    foreach($parameters as $var => $value){
+                        $template = str_replace($var, $value, $template);
+                    }
+
+                    $errors[$key] = $template;
+                }
+            }
+
+            return json_encode(array(
+                'success'   => $success,
+                'errors'    => $errors,
+            ));
+        });
 
         return $controllers;
     }
