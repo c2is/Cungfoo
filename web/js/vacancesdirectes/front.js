@@ -2354,7 +2354,7 @@ function noUiSliderRanged(values){
     launchFilters();
 }
 function reInitFilter(){
-    consoleLog('In');
+    //consoleLog('In');
     $('#noResult').fadeIn();
     if ( resultFrom == "fromReg" ){
         $('#TopFilter_regions').val('');
@@ -2568,10 +2568,10 @@ function listPagination() {
     } else {
         //Suppression du message d'erreur
         setTimeout( function(){
-            consoleLog('Out');
+            //consoleLog('Out');
             $('#noResult').fadeOut()
             resultFrom == "";
-        }, 2500);
+        }, 4500);
     }
     $('.nbResult .nb').text(nbItemsDisplayed).animate({'opacity':1});
 
