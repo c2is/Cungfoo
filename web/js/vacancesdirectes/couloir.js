@@ -15,7 +15,9 @@ $(function() {
 
     if ( $('form').length ){
         function hideError(){
-            $('.errors > p.errorMessage').fadeOut(500);
+            $('.errors > p.errorMessage').fadeOut(500, function(){
+                $(this).remove();
+            });
         }
         $('form input, form select, form .selectedTxt, form textarea').on('click', function(){
             hideError();
