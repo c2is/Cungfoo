@@ -75,7 +75,7 @@ class SearchEngineController implements ControllerProviderInterface
         })
         ->bind('search_engine_get_campings_by_destination');
 
-        $controllers->match('/validate', function(Request $request) use ($app) {
+        $controllers->post('/validate', function(Request $request) use ($app) {
             $searchDateData = new DateData();
 
             $form = $app['form.factory']->create(new DateType($app), $searchDateData);
