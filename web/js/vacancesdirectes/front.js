@@ -1336,7 +1336,7 @@ function liveSubmit(oForm){
     var sDidacticielTitle = oForm.attr('data-didacticiel-title');
     $.ajax({
         type:"POST",
-        url:templatePath+"index_dev.php/search_engine/validate",
+        url:templatePath+"search_engine/validate",
         data: oForm.serialize(),
         dataType:"json",
         error:function(errorText)
@@ -1351,16 +1351,19 @@ function liveSubmit(oForm){
         },
         beforeSend: function()
         {
-            oForm.children('fieldset').append('<div class="loading"><img width="220" height="20" src="http://localhost/c2is/Cungfoo/web/images/vacancesdirectes/common/ui/loadingLiveSubmit.gif"></div>');
+            oForm.find('button[type="submit"]').hide().next('.loading').show();
+            oForm.children('fieldset').append('');
         },
         success:function(data)
         {
-            oForm.children('fieldset').css({height:"auto"}).children('.loading').remove();
+
             $.each(data, function(key,val){
+                oForm.find('button[type="submit"]').show().next('.loading').hide();
                 if ( key == sFormName) {
                     if (val.success){
-                        showDidacticielLayer(sDidacticielTitle, getDidacticielContentFromSearch(oForm));
+
                         oForm.unbind('submit').submit();
+                        showDidacticielLayer(sDidacticielTitle, getDidacticielContentFromSearch(oForm));
                         return true;
                     }
                     oForm.getErrors(val.errors);
