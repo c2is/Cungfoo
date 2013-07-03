@@ -1176,11 +1176,9 @@ jQuery.extend( jQuery.fn, {
 
 //init Search
     if ($('#searchBloc').length) {
-        $('#searchBloc').find('button[type="submit"]').click(function(e){
-            console.log("CLICK");
+        $('#searchBloc').find('form').submit(function(e){
             e.preventDefault();
-            var oForm = $(this).parents('form');
-            liveSubmit(oForm);
+            liveSubmit($(this));
         });
 
         if ($('#searchBlocDate').length) {
@@ -1192,6 +1190,21 @@ jQuery.extend( jQuery.fn, {
                 toggleSearchCriteria();
             }
         }
+
+        function hideError(){
+            if ( $('form').find('.errors').length ){
+                $('.errors').fadeOut(500, function(){
+                    $(this).remove();
+                });
+            }
+        }
+        $('form input, form select, form .selectedTxt, form textarea').on('click', function(){
+            hideError();
+        });
+        $('form input').on('keyup', function(){
+            hideError();
+        });
+
     }
 
 
@@ -1298,27 +1311,6 @@ head.ready(function(){
 
     });
 
-    /*
-     *  ############################################################
-     *                          SEARCH ENGINE
-     * ############################################################
-     */
-    var errorVisible = false;
-    if ( $('.errors').length > 0 ){
-        $('.errors').each(function(i,v){
-            errorVisible = $(this).css('display') == 'block' ? true : false;
-            //console.log(errorVisible);
-        });
-    }
-    if ( $('form').length > 0 && errorVisible ) {
-        $('form').click(function(e){
-            $(this).find('.errors').fadeOut(500);
-        });
-        $('.selectedTxt, select, input, #datepicker span').click(function(e){
-            $(this).parents('form').find('.errors').fadeOut(500);
-        });
-    }
-
 });
 
 
@@ -1341,49 +1333,50 @@ head.ready(function(){
 // Live submit
 function liveSubmit(oForm){
     var sFormName = oForm.attr('name');
+    var sDidacticielTitle = oForm.attr('data-didacticiel-title');
     $.ajax({
         type:"POST",
-//        url:templatePath+"search_engine/validate",        // PREPROD / PROD
+        url:templatePath+"index_dev.php/search_engine/validate",
         data: oForm.serialize(),
-        url:"search_engine/validate",          // LOCAL
         dataType:"json",
         error:function(errorText)
         {
-            console.log(errorText);
-            console.log(oForm.serialize());
+            //console.log(errorText);
+            //console.log(oForm.serialize());
             if ( $('#wrap').children('.column.left').children('.error').length == 0 ) {
                 $('#wrap').children('.column.left').prepend('<div class="error"></div>');
             }
             $('#wrap').children('.column.left').children('.error').html('<p>' + errorText.responseText + '</p>');
+            return false;
         },
         beforeSend: function()
         {
-            oForm.children('fieldset').css({height:oForm.children('fieldset').css('height')+20}).append('<div class="loading"><img width="220" height="20" src="http://localhost/c2is/Cungfoo/web/images/vacancesdirectes/common/ui/loadingLiveSubmit.gif"></div>');
+            oForm.children('fieldset').append('<div class="loading"><img width="220" height="20" src="http://localhost/c2is/Cungfoo/web/images/vacancesdirectes/common/ui/loadingLiveSubmit.gif"></div>');
         },
         success:function(data)
         {
             oForm.children('fieldset').css({height:"auto"}).children('.loading').remove();
             $.each(data, function(key,val){
-                console.log(key);
                 if ( key == sFormName) {
                     if (val.success){
-                        oForm.submit();
+                        showDidacticielLayer(sDidacticielTitle, getDidacticielContentFromSearch(oForm));
+                        oForm.unbind('submit').submit();
+                        return true;
                     }
-                    else {
-                        oForm.getErrors(val);
-                        return false;
-                    }
+                    oForm.getErrors(val.errors);
+                    return false;
                 }
+
             });
         }
     });
 }
 
 // traversing JSON to get errors
-$.fn.getErrors = function(submitFormData) {
-    console.log(submitFormData);
+$.fn.getErrors = function(errorsData) {
+    //console.log(errorsData);
     var submitForm = this;
-    $.each(submitFormData.errors, function(errorInput,errorMessage){
+    $.each(errorsData, function(errorInput,errorMessage){
         var error = '<div class="errors '+errorInput+'">';
         error += '<p>'+errorMessage+'</p>';
         error += '</div>';
