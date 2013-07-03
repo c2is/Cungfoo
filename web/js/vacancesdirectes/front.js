@@ -1898,7 +1898,7 @@ function sliderPict(dir) {
     /*$('[name="affPhoto"]').change( function() {
         var nVal = $(this).val();
 
-        consoleLog(nVal);
+        //consoleLog(nVal);
         if (nVal == "all") {
             slider.find('img').not(':visible').fadeIn();
             slider.find('.slide').trigger("configuration",["items.filter",":visible"]);
@@ -2178,7 +2178,7 @@ function initCritResult(){
             var reg = $(this).attr('value');
             if ( reg != 0 ){
                 var regInItems = $("[data-reg="+reg+"]").length;
-                consoleLog(reg + regInItems);
+                //consoleLog(reg + regInItems);
                 if ( regInItems == 0 ) { $(this).remove(); }
             }
         });
@@ -2314,7 +2314,8 @@ function rangeSliderPrice() {
                         $(this).attr('data-ranged', false);
                     }
                 });
-                launchFilters();
+                //consoleLog(values);
+                noUiSliderRanged(values);
             }
         }).find('.noUi-handle').each(function(index){
             $(this).after('<span class="rangeBox rb'+index+'">'+$(this).parent().noUiSlider( 'value' )[index]+' €</span>');
@@ -2324,11 +2325,48 @@ function rangeSliderPrice() {
     initRange.call();
 }
 
+function noUiSliderRanged(values){
+    items.each(function() {
+        $(this).find('.linePrice').each( function(){
+            var originPriceLine = parseInt($(this).find('.stain .price').text());
+            if ( parseInt(originPriceLine) >= parseInt(values[0]) && parseInt(originPriceLine) <= parseInt(values[1]) ) {
+                $(this).addClass('visiblePrice').fadeIn();
+            }else{
+                $(this).removeClass('visiblePrice').fadeOut();
+            }
+        });
+
+        //$(this).find('.visiblePrice').eq(0).find('label').trigger('focus');
+        var oCheck = $(this).find('.visiblePrice').eq(0).find(':radio');
+        oCheck.attr('checked', "checked");
+        oCheck.parents('.linePrice').addClass('checked').siblings().removeClass('checked');
+
+
+        var nbVisiblePrice = $(this).find('.visiblePrice').length;
+        if ( nbVisiblePrice > 0 ) {
+            $(this).attr('data-ranged', true);
+        }else{
+            //consoleLog('data-ranged');
+            $(this).attr('data-ranged', false);
+        }
+    });
+    resultFrom = "fromRge";
+    launchFilters();
+}
 function reInitFilter(){
-    $('#results').prepend('<p id="noResult">Pas de résultat correspondant à votre sélection</p>');
+    //consoleLog('In');
+    $('#noResult').fadeIn();
     if ( resultFrom == "fromReg" ){
-        setTimeout( function(){$('#TopFilter_regions').val('');launchFilters();}, 1000);
+        $('#TopFilter_regions').val('');
+        launchFilters();
     }
+    if ( resultFrom == "fromRge" ){
+        rangeSliderPrice();
+        var values = $("#noUiSlider").noUiSlider('value');
+        noUiSliderRanged(values);
+    }
+    resultFrom = "";
+
 }
 
 //selection des criteres
@@ -2454,7 +2492,7 @@ function launchFilters() {
 //gestion de l'affichage en fonction des criteres + rangeSlider
 function displayResults() {
     nbItemsDisplayed = 0;
-    consoleLog('displayResult');
+    //consoleLog('displayResult');
 
     items.removeClass('itemRanged');
     items.removeClass('nextItem');
@@ -2472,7 +2510,7 @@ function displayResults() {
         if ( dataFiltered == 'true' && dataFilteredPlus == 'true' && dataRanged == 'true' && dataDated == 'true' && dataReged == 'true' ) {
             $(this).addClass('itemRanged');
             nbItemsDisplayed++;
-            consoleLog(nbItemsDisplayed);
+            //consoleLog(nbItemsDisplayed);
             var idRsl = $(this).attr('data-id');
             gMarkers.push(idRsl);
         }else{
@@ -2529,20 +2567,11 @@ function listPagination() {
         reInitFilter();
     } else {
         //Suppression du message d'erreur
-        if ( $('#noResult').length ) {
-            if ( resultFrom == "fromReg" ){
-                setTimeout( function(){
-                    $('#noResult').fadeOut( function(){
-                        $('#noResult').remove();
-                    })
-                    resultFrom == "";
-                }, 4000);
-            } else {
-                $('#noResult').fadeOut().remove();
-            }
-        }
-
-        //mise a jour du nombre d'items affiches
+        setTimeout( function(){
+            //consoleLog('Out');
+            $('#noResult').fadeOut()
+            resultFrom == "";
+        }, 4500);
     }
     $('.nbResult .nb').text(nbItemsDisplayed).animate({'opacity':1});
 
