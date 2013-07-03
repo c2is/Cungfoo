@@ -7,7 +7,7 @@
     <div class="title">
         <h2>{{ "search.title" | trans }}</h2>
     </div>
-    <form id="searchBlocDate" method="post" action="{{ app.request.getRequestURI() }}" onsubmit="showDidacticielLayer('{{ 'didacticiel.title' | trans | e('js') }}', getDidacticielContentFromSearch(this));" name="{{ searchForm.name }}">
+    <form id="searchBlocDate" method="post" action="{{ app.request.getRequestURI() }}" onsubmit="showDidacticielLayer('{{ 'didacticiel.title' | trans | e('html') }}', getDidacticielContentFromSearch(this));" name="{{ searchForm.name }}">
         <fieldset>
             {{ form_errors(searchForm) }}
             <ol>
