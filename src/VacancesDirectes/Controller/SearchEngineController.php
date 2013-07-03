@@ -3,18 +3,15 @@
 namespace VacancesDirectes\Controller;
 
 use Silex\Application,
-    Silex\ControllerCollection,
     Silex\ControllerProviderInterface;
 
 use Symfony\Component\HttpFoundation\Request,
-    Symfony\Component\HttpKernel\Exception\NotFoundHttpException,
     Symfony\Component\Routing\Route,
     Symfony\Component\HttpFoundation\Response;
 
 use Cungfoo\Model;
 
-use VacancesDirectes\Lib\SearchEngine,
-    VacancesDirectes\Form\Type\Search\DateType,
+use VacancesDirectes\Form\Type\Search\DateType,
     VacancesDirectes\Form\Data\Search\DateData;
 
 class SearchEngineController implements ControllerProviderInterface
@@ -78,10 +75,10 @@ class SearchEngineController implements ControllerProviderInterface
         })
         ->bind('search_engine_get_campings_by_destination');
 
-        $controllers->post('/validate', function(Request $request) use ($app) {
+        $controllers->match('/validate', function(Request $request) use ($app) {
             $searchDateData = new DateData();
 
-            $form = $this->app['form.factory']->create(new DateType($this->app), $searchDateData);
+            $form = $app['form.factory']->create(new DateType($app), $searchDateData);
             $form->bind($request);
 
             $success    = false;
@@ -89,7 +86,7 @@ class SearchEngineController implements ControllerProviderInterface
             if ($form->isValid()) {
                 $success = true;
             } else {
-                foreach ($form->getErrors() as $key => $error) {
+                foreach ($form->getErrors() as $error) {
                     $template = $error->getMessageTemplate();
                     $parameters = $error->getMessageParameters();
 
@@ -97,6 +94,8 @@ class SearchEngineController implements ControllerProviderInterface
                         $template = str_replace($var, $value, $template);
                     }
 
+                    $key = str_replace('date_search.', '', $template);
+                    $key = substr($key, 0, strpos($key, '.'));
                     $errors[$key] = $template;
                 }
             }
@@ -105,7 +104,8 @@ class SearchEngineController implements ControllerProviderInterface
                 'success'   => $success,
                 'errors'    => $errors,
             ));
-        });
+        })
+        ->bind('search_engine_validate');
 
         return $controllers;
     }
