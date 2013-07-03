@@ -1175,13 +1175,22 @@ jQuery.extend( jQuery.fn, {
  */
 
 //init Search
-    if ($('#searchBlocDate').length > 0) {
-        countItem();
-        $('#searchBlocDate').find('select').sSelect({ddMaxHeight: '300px'});
-        switchPlaceSelect();
-        defineDurationSelect();
-        if ( $('body').hasClass('home') ) {
-            toggleSearchCriteria();
+    if ($('#searchBloc').length) {
+        $('#searchBloc').find('button[type="submit"]').click(function(e){
+            console.log("CLICK");
+            e.preventDefault();
+            var oForm = $(this).parents('form');
+            liveSubmit(oForm);
+        });
+
+        if ($('#searchBlocDate').length) {
+            countItem();
+            $('#searchBlocDate').find('select').sSelect({ddMaxHeight: '300px'});
+            switchPlaceSelect();
+            defineDurationSelect();
+            if ( $('body').hasClass('home') ) {
+                toggleSearchCriteria();
+            }
         }
     }
 
@@ -1328,6 +1337,59 @@ head.ready(function(){
  *                       SEARCH ENGINE
  * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
  */
+
+// Live submit
+function liveSubmit(oForm){
+    var sFormName = oForm.attr('name');
+    $.ajax({
+        type:"POST",
+//        url:templatePath+"search_engine/validate",        // PREPROD / PROD
+        data: oForm.serialize(),
+        url:"search_engine/validate",          // LOCAL
+        dataType:"json",
+        error:function(errorText)
+        {
+            console.log(errorText);
+            console.log(oForm.serialize());
+            if ( $('#wrap').children('.column.left').children('.error').length == 0 ) {
+                $('#wrap').children('.column.left').prepend('<div class="error"></div>');
+            }
+            $('#wrap').children('.column.left').children('.error').html('<p>' + errorText.responseText + '</p>');
+        },
+        beforeSend: function()
+        {
+            oForm.children('fieldset').css({height:oForm.children('fieldset').css('height')+20}).append('<div class="loading"><img width="220" height="20" src="http://localhost/c2is/Cungfoo/web/images/vacancesdirectes/common/ui/loadingLiveSubmit.gif"></div>');
+        },
+        success:function(data)
+        {
+            oForm.children('fieldset').css({height:"auto"}).children('.loading').remove();
+            $.each(data, function(key,val){
+                console.log(key);
+                if ( key == sFormName) {
+                    if (val.success){
+                        oForm.submit();
+                    }
+                    else {
+                        oForm.getErrors(val);
+                        return false;
+                    }
+                }
+            });
+        }
+    });
+}
+
+// traversing JSON to get errors
+$.fn.getErrors = function(submitFormData) {
+    console.log(submitFormData);
+    var submitForm = this;
+    $.each(submitFormData.errors, function(errorInput,errorMessage){
+        var error = '<div class="errors '+errorInput+'">';
+        error += '<p>'+errorMessage+'</p>';
+        error += '</div>';
+        submitForm.children('fieldset').append(error);
+    });
+}
 
 // (+/-) Button Number Incrementers
 function countItem() {
