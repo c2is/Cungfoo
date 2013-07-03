@@ -96,13 +96,15 @@ class SearchEngineController implements ControllerProviderInterface
 
                     $key = str_replace('date_search.', '', $template);
                     $key = substr($key, 0, strpos($key, '.'));
-                    $errors[$key] = $template;
+                    $errors[$key] = $app->trans($template);
                 }
             }
 
             return json_encode(array(
-                'success'   => $success,
-                'errors'    => $errors,
+                $form->getName() => array(
+                    'success'   => $success,
+                    'errors'    => $errors,
+                )
             ));
         })
         ->bind('search_engine_validate');
