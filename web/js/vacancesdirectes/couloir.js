@@ -13,6 +13,18 @@ $(function() {
         resize_myframe();
     }
 
+    if ( $('form').length ){
+        function hideError(){
+            $('.errors > p.errorMessage').fadeOut(500);
+        }
+        $('form input, form select, form .selectedTxt, form textarea').on('click', function(){
+            hideError();
+        });
+        $('form input').on('keyup', function(){
+            hideError();
+        });
+    }
+
     // selects
     if($('#newCustomerLayer').length){
         $('#newCustomerLayer').show().find('select').sSelect({ddMaxHeight: '300px'});
@@ -81,24 +93,18 @@ head.ready(function(){
     // radio buttons
     var checked;
     if($('#authentication').length){
-        $('.authenticationChoice').click(function(e){
-            resize_myframe();
-        });
+
         if(checked != undefined){
             $('#returningCustomerYes').click();
         }
         else{
-            if($('#returningCustomerYes').is(':checked')) {
-                checked = true;
-                $('#existingCustomerLayer').show();
-                $('#newCustomerLayer').hide();
-            }
-            else if($('#returningCustomerNo').is(':checked')) {
-                checked = false;
-                $('#existingCustomerLayer').hide();
-                $('#newCustomerLayer').show();
-            }
+            toggleAccountType();
         }
+
+        $('.authenticationChoice').click(function(e){
+            toggleAccountType();
+        });
+
     }
 
     // selects
@@ -262,15 +268,50 @@ $('.goto').click(function(e) {
     return false;
 });
 
-function scrollToHash(hash){
-    var oAnchor = hash;
+var iCurrentScrollTop = 0;
+var iScrollSpeed = 1000;
+function scrollToHash(sHash, fCallback){
+    //console.log("##################### scrollToHash(hash,f) #####################");
+    var oAnchor = $(sHash);
     var targetOffset = $(oAnchor).offset().top + $('#frameResalys', window.parent.document).offset().top;
-    //console.log(targetOffset);
-    var bodyelem;
-    if($.browser.safari) bodyelem = $("body", window.parent.document);
-    else bodyelem = $('html,body', window.parent.document);
-    bodyelem.animate({scrollTop: targetOffset-10},400);
+    var bodyelem = $('html,body', window.parent.document);
+    var scrolled = false;
+    iScrollSpeed = Math.abs(iCurrentScrollTop - targetOffset);
+    if ( iScrollSpeed > 1000) { iScrollSpeed = 1000; }
+    bodyelem.animate({scrollTop: targetOffset-20},iScrollSpeed,function(){
+        if ( !scrolled && $.isFunction(fCallback) ){ // to correct the double callback of the scrollToHash function (scroll on html AND body)
+            //console.log("------ scrollToTop() CALLBACK ------");
+            scrolled = true;
+            fCallback();
+        }
+        else {
+            scrolled = false;
+        }
+    });
 }
+
+function toggleAccountType(){
+    if($('#returningCustomerYes').is(':checked')) {
+        checked = true;
+        $('#existingCustomerLayer').show();
+        $('#newCustomerLayer').hide();
+    }
+    else if($('#returningCustomerNo').is(':checked')) {
+        checked = false;
+        $('#existingCustomerLayer').hide();
+        $('#newCustomerLayer').show();
+    }
+    resize_myframe();
+}
+
+$.fn.showError = function(sMessage) {
+    //console.log(this);
+    //console.log(sMessage);
+    if ( !this.parent().hasClass('errors') ) {
+        this.wrap('<div class="errors">');
+    }
+    this.after('<p class="errorMessage">'+sMessage+'</p>');
+};
 
 $.fn.equalizeHeights = function() {
     var maxHeight = this.map(function(i,e) {
@@ -281,10 +322,10 @@ $.fn.equalizeHeights = function() {
 };
 
 function resize_myframe() {
-    //var height = $('html').height();
-    var height = $('body').height();
-    height += 70;
-    $('#frameResalys', window.parent.document).css({height:height+'px'});
+    var hFrame = $('body').height();
+    //console.log(hFrame);
+    hFrame += 70;
+    $('#frameResalys', window.parent.document).css({height:hFrame+'px'});
 //    window.parent.document.getElementById('frameResalys').style.height = height + 'px';
     //console.log(height);
 }
