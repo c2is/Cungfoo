@@ -54,7 +54,7 @@ class CatalogueController implements ControllerProviderInterface
 
                 if (!$region)
                 {
-                    die("faire une exception : pas de pays ou de région");
+                    $app->abort(404);
                 }
             }
 
