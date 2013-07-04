@@ -1394,6 +1394,7 @@ function countItem() {
         var $button = $(this);
         var $input = $button.siblings(".spin-tb");
         var oldValue = $input.val();
+        $input.attr('readonly','readonly');
         if ($button.hasClass('spin-bt-up')) {
             if (oldValue < 6) {
                 var newVal = parseFloat(oldValue) + 1;
