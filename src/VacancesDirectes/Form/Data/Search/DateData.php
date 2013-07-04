@@ -38,9 +38,19 @@ class DateData
                 $context->addViolation('date_search.date_debut.required', array (), null);
             }
 
-            if ($this->nbAdultes < 1)
+            if ($this->nbAdultes === null or $this->nbAdultes == '')
             {
                 $context->addViolation('date_search.nb_adultes.required', array (), null);
+            }
+
+            if ($this->nbAdultes < 1 or $this->nbAdultes > 6)
+            {
+                $context->addViolation('date_search.nb_adultes.range', array (), null);
+            }
+
+            if ($this->nbEnfants < 1 or $this->nbEnfants > 6)
+            {
+                $context->addViolation('date_search.nb_enfants.range', array (), null);
             }
 
             if (($this->isBasseSaison && $this->nbJoursBasseSaison < 1) || (!$this->isBasseSaison && $this->nbJoursHauteSaison < 1))
