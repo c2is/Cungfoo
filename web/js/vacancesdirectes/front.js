@@ -1336,7 +1336,7 @@ function liveSubmit(oForm){
     var sDidacticielTitle = oForm.attr('data-didacticiel-title');
     $.ajax({
         type:"POST",
-        url:templatePath+"search_engine/validate",
+        url:basePath+"search_engine/validate",
         data: oForm.serialize(),
         dataType:"json",
         error:function(errorText)
