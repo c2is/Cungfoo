@@ -1192,17 +1192,17 @@ jQuery.extend( jQuery.fn, {
             }
         }
 
-        function hideError(){
-            if ( $('form').find('.errors').length ){
+        function hideError(form){
+            if ( form.find('.errors').length ){
                 $('.errors').fadeOut(500, function(){
                     $(this).remove();
                 });
             }
         }
-        $('form input, form select, form .newListSelected, form button, form textarea').on('click', function(){
-            hideError();
+        $('#searchBlocDate').find('input, select, .selectedTxt, .switchSelect , button, textarea').on('click', function(){
+            hideError($('#searchBlocDate'));
         });
-        $('form input').on('keyup', function(){
+        $('#searchBlocDate').on('keyup', function(){
             hideError();
         });
 
@@ -1337,7 +1337,7 @@ function liveSubmit(oForm){
     var sDidacticielTitle = oForm.attr('data-didacticiel-title');
     $.ajax({
         type:"POST",
-        url:basePath+"search_engine/validate",
+        url:basePath+"index.php/search_engine/validate",
         data: oForm.serialize(),
         dataType:"json",
         beforeSend: function()
