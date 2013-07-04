@@ -48,7 +48,7 @@ class DateData
                 $context->addViolation('date_search.nb_adultes.range', array (), null);
             }
 
-            if ($this->nbEnfants < 1 or $this->nbEnfants > 6)
+            if ($this->nbEnfants < 0 or $this->nbEnfants > 6)
             {
                 $context->addViolation('date_search.nb_enfants.range', array (), null);
             }
