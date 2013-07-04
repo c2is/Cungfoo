@@ -700,4 +700,4 @@ alerte_inactivite.content: 'Vous risques de perdre votre session suite à une lo
 alerte_inactivite.refresh: 'Rafraîchir'
 didacticiel.title_bon_plan: 'Nous recherchons les séjours les mieux adaptés à votre demande'
 date_search.nb_adultes.range: 'Le nombre d''adultes doit être compris entre 1 et 6'
-date_search.nb_enfants.range: 'Le nombre d''enfants doit être compris entre 1 et 6'
+date_search.nb_enfants.range: 'Le nombre d''enfants doit être compris entre 0 et 6'
