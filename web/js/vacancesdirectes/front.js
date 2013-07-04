@@ -1175,14 +1175,36 @@ jQuery.extend( jQuery.fn, {
  */
 
 //init Search
-    if ($('#searchBlocDate').length > 0) {
-        countItem();
-        $('#searchBlocDate').find('select').sSelect({ddMaxHeight: '300px'});
-        switchPlaceSelect();
-        defineDurationSelect();
-        if ( $('body').hasClass('home') ) {
-            toggleSearchCriteria();
+    if ($('#searchBloc').length) {
+        $('#searchBloc').find('form').submit(function(e){
+            e.preventDefault();
+            liveSubmit($(this));
+        });
+
+        if ($('#searchBlocDate').length) {
+            countItem();
+            $('#searchBlocDate').find('select').sSelect({ddMaxHeight: '300px'});
+            switchPlaceSelect();
+            defineDurationSelect();
+            if ( $('body').hasClass('home') ) {
+                toggleSearchCriteria();
+            }
         }
+
+        function hideError(){
+            if ( $('form').find('.errors').length ){
+                $('.errors').fadeOut(500, function(){
+                    $(this).remove();
+                });
+            }
+        }
+        $('form input, form select, form .selectedTxt, form textarea').on('click', function(){
+            hideError();
+        });
+        $('form input').on('keyup', function(){
+            hideError();
+        });
+
     }
 
 
@@ -1289,27 +1311,6 @@ head.ready(function(){
 
     });
 
-    /*
-     *  ############################################################
-     *                          SEARCH ENGINE
-     * ############################################################
-     */
-    var errorVisible = false;
-    if ( $('.errors').length > 0 ){
-        $('.errors').each(function(i,v){
-            errorVisible = $(this).css('display') == 'block' ? true : false;
-            //console.log(errorVisible);
-        });
-    }
-    if ( $('form').length > 0 && errorVisible ) {
-        $('form').click(function(e){
-            $(this).find('.errors').fadeOut(500);
-        });
-        $('.selectedTxt, select, input, #datepicker span').click(function(e){
-            $(this).parents('form').find('.errors').fadeOut(500);
-        });
-    }
-
 });
 
 
@@ -1328,6 +1329,63 @@ head.ready(function(){
  *                       SEARCH ENGINE
  * ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
  */
+
+// Live submit
+function liveSubmit(oForm){
+    var sFormName = oForm.attr('name');
+    var sDidacticielTitle = oForm.attr('data-didacticiel-title');
+    $.ajax({
+        type:"POST",
+        url:templatePath+"search_engine/validate",
+        data: oForm.serialize(),
+        dataType:"json",
+        error:function(errorText)
+        {
+            //console.log(errorText);
+            //console.log(oForm.serialize());
+            if ( $('#wrap').children('.column.left').children('.error').length == 0 ) {
+                $('#wrap').children('.column.left').prepend('<div class="error"></div>');
+            }
+            $('#wrap').children('.column.left').children('.error').html('<p>' + errorText.responseText + '</p>');
+            return false;
+        },
+        beforeSend: function()
+        {
+            oForm.find('button[type="submit"]').hide().next('.loading').show();
+            oForm.children('fieldset').append('');
+        },
+        success:function(data)
+        {
+
+            $.each(data, function(key,val){
+                oForm.find('button[type="submit"]').show().next('.loading').hide();
+                if ( key == sFormName) {
+                    if (val.success){
+
+                        oForm.unbind('submit').submit();
+                        showDidacticielLayer(sDidacticielTitle, getDidacticielContentFromSearch(oForm));
+                        return true;
+                    }
+                    oForm.getErrors(val.errors);
+                    return false;
+                }
+
+            });
+        }
+    });
+}
+
+// traversing JSON to get errors
+$.fn.getErrors = function(errorsData) {
+    //console.log(errorsData);
+    var submitForm = this;
+    $.each(errorsData, function(errorInput,errorMessage){
+        var error = '<div class="errors '+errorInput+'">';
+        error += '<p>'+errorMessage+'</p>';
+        error += '</div>';
+        submitForm.children('fieldset').append(error);
+    });
+}
 
 // (+/-) Button Number Incrementers
 function countItem() {

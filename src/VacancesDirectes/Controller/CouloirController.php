@@ -36,9 +36,10 @@ class CouloirController implements ControllerProviderInterface
     {
         $session = base64_decode(str_replace('B64_', '', $request->cookies->get('session_name')));
 
-        if (!$session && isset($options['session']) && $options['session'])
+        if (isset($options['session']) and $options['session'] and $options['session'] != $session)
         {
-            setcookie("session_name", 'B64_'.base64_encode($options['session']), time() +900);
+            $request->cookies->remove('session_name');
+            setcookie("session_name", 'B64_'.base64_encode($options['session']), time() + 900);
             $session = $options['session'];
         }
 

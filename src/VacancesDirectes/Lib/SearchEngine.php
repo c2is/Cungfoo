@@ -33,7 +33,7 @@ class SearchEngine
         }
 
         // override la session passé en paramètre ($dateData)
-        if ('POST' == $this->request->getMethod() && $this->request->request->has('searchForm'))
+        if ('POST' == $this->request->getMethod() and ($this->request->request->has('searchForm') or $this->request->request->has('SearchDate')))
         {
             $searchDateQuery = $this->request->get('SearchDate');
 
@@ -45,7 +45,7 @@ class SearchEngine
 
         $this->form = $this->app['form.factory']->create(new DateType($this->app), $searchDateData);
 
-        if ('POST' == $this->request->getMethod() && $this->request->request->has('searchForm'))
+        if ('POST' == $this->request->getMethod() and ($this->request->request->has('searchForm') or $this->request->request->has('SearchDate')))
         {
             $this->form->bindRequest($this->request);
             $this->app['session']->set('search_engine_data', $this->form->getData());

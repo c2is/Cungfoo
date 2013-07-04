@@ -2,17 +2,20 @@
     <div id="dealsMenu">
         <div class="title">{{ 'menu_bon_plan.accroche.prefix' | trans}}<br />{{ 'menu_bon_plan.accroche.suffix' | trans}}</div>
         <ul>
+            {% set nbCat = 1 %}
             {% for categorie in categories %}
                 {% if categorie.bonPlansActifsForMenu | length > 0 %}
-            <li class="bp{% if loop.first %} selected{% endif %}">{{ categorie.name }}</li>
+            <li class="bp{% if nbCat == 1 %} selected{% endif %}">{{ categorie.name }}</li>
+                    {% set nbCat = nbCat + 1 %}
                 {% endif %}
             {% endfor %}
         </ul>
     </div>
     <div id="dealsContent">
+    {% set nbCat = 1 %}
     {% for categorie in categories %}
         {% if categorie.bonPlansActifsForMenu | length > 0 %}
-        <div id="bp{{ loop.index }}" class="radiusBox greyC">
+        <div id="bp{{ nbCat }}" class="radiusBox greyC">
         <div class="clear">
             <div>
                 <div class="stamp orange">
@@ -35,6 +38,7 @@
             </div>
         </div>
         </div>
+            {% set nbCat = nbCat + 1 %}
         {% endif %}
     {% endfor %}
     </div>

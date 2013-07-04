@@ -174,7 +174,7 @@
             base.preventDefault(e);
 
             var popin           = $(base.options['portfolioPopinClass']);
-            var selectedIds     = popin.data('selected') ? popin.data('selected').split(';') : new Array();
+            var selectedIds     = popin.data('selected') && strpos(';', popin.data('selected')) ? popin.data('selected').split(';') : new Array();
             var linkUse         = $(this);
             var mediaItem       = linkUse.parent('td').parent('tr');
             var mediaItemId     = mediaItem.data('media-id');
@@ -255,9 +255,9 @@
                 $.get(defaultPortfolioRoute + 'list-fields?table=' + tableField.val(), function(json) {
                     var jsonObject = JSON.parse(json);
                     $.each(jsonObject, function (key, item) {
-                        columnField.append($('<option>', { 
+                        columnField.append($('<option>', {
                             value: key,
-                            text : item 
+                            text : item
                         }));
                     });
                 });

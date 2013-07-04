@@ -3,17 +3,13 @@
 namespace VacancesDirectes\Controller;
 
 use Silex\Application,
-    Silex\ControllerCollection,
     Silex\ControllerProviderInterface;
 
 use Symfony\Component\HttpFoundation\Request,
-    Symfony\Component\HttpKernel\Exception\NotFoundHttpException,
     Symfony\Component\Routing\Route,
     Symfony\Component\HttpFoundation\Response;
 
 use Cungfoo\Model;
-
-use VacancesDirectes\Lib\SearchEngine;
 
 use VacancesDirectes\Form\Type\Search\DateType,
     VacancesDirectes\Form\Data\Search\DateData;
@@ -78,6 +74,40 @@ class SearchEngineController implements ControllerProviderInterface
             return $response;
         })
         ->bind('search_engine_get_campings_by_destination');
+
+        $controllers->post('/validate', function(Request $request) use ($app) {
+            $searchDateData = new DateData();
+
+            $form = $app['form.factory']->create(new DateType($app), $searchDateData);
+            $form->bind($request);
+
+            $success    = false;
+            $errors     = array();
+            if ($form->isValid()) {
+                $success = true;
+            } else {
+                foreach ($form->getErrors() as $error) {
+                    $template = $error->getMessageTemplate();
+                    $parameters = $error->getMessageParameters();
+
+                    foreach($parameters as $var => $value){
+                        $template = str_replace($var, $value, $template);
+                    }
+
+                    $key = str_replace('date_search.', '', $template);
+                    $key = substr($key, 0, strpos($key, '.'));
+                    $errors[$key] = $app->trans($template);
+                }
+            }
+
+            return json_encode(array(
+                $form->getName() => array(
+                    'success'   => $success,
+                    'errors'    => $errors,
+                )
+            ));
+        })
+        ->bind('search_engine_validate');
 
         return $controllers;
     }
