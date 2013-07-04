@@ -1339,20 +1339,21 @@ function liveSubmit(oForm){
         url:basePath+"search_engine/validate",
         data: oForm.serialize(),
         dataType:"json",
+        beforeSend: function()
+        {
+            oForm.find('button[type="submit"]').hide().next('.loading').show();
+            oForm.children('fieldset').append('');
+        },
         error:function(errorText)
         {
             //console.log(errorText);
             //console.log(oForm.serialize());
+            oForm.find('button[type="submit"]').show().next('.loading').hide();
             if ( $('#wrap').children('.column.left').children('.error').length == 0 ) {
                 $('#wrap').children('.column.left').prepend('<div class="error"></div>');
             }
             $('#wrap').children('.column.left').children('.error').html('<p>' + errorText.responseText + '</p>');
             return false;
-        },
-        beforeSend: function()
-        {
-            oForm.find('button[type="submit"]').hide().next('.loading').show();
-            oForm.children('fieldset').append('');
         },
         success:function(data)
         {
