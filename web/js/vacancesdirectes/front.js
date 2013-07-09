@@ -184,6 +184,9 @@ jQuery.extend( jQuery.fn, {
     });
 
 // scroll to anchor
+    if ( window.location.hash.length ) {
+        scrollToHash(window.location.hash);
+    }
     $('.goto').click(function(e) {
         e.preventDefault();
         scrollToHash(this.hash);
@@ -193,7 +196,7 @@ jQuery.extend( jQuery.fn, {
     function scrollToHash(hash){
         var oAnchor = hash;
         var targetOffset = $(oAnchor).offset().top;
-        //consoleLog(targetOffset);
+        consoleLog(targetOffset);
         var bodyelem;
         var clicked = false;
         var opened = false;
