@@ -78,6 +78,13 @@ class SearchEngineController implements ControllerProviderInterface
         $controllers->post('/validate', function(Request $request) use ($app) {
             $searchDateData = new DateData();
 
+            $searchDateQuery = $request->get('SearchDate');
+
+            $searchDateData->destination = $searchDateQuery['destination'];
+            $searchDateData->ville       = $searchDateQuery['ville'];
+            $searchDateData->camping     = $searchDateQuery['camping'];
+            $searchDateData->isCamping   = $searchDateQuery['isCamping'];
+
             $form = $app['form.factory']->create(new DateType($app), $searchDateData);
             $form->bind($request);
 
