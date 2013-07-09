@@ -93,6 +93,10 @@ class SearchEngineController implements ControllerProviderInterface
             if ($form->isValid()) {
                 $success = true;
             } else {
+                foreach($form->all() as $child) {
+                    var_dump($child->getName());
+                    var_dump($child->getErrors());
+                }
                 foreach ($form->getErrors() as $error) {
                     $template = $error->getMessageTemplate();
                     $parameters = $error->getMessageParameters();
