@@ -91,6 +91,9 @@ class WrapperController implements ControllerProviderInterface
             unset($currentUrlExploded[count($currentUrlExploded) -1]);
 
             $domain = implode('/', $currentUrlExploded);
+
+            $request = $this->app['request'];
+            $domain = $request->getScheme() . '://' . $request->getHttpHost();
             return $domain . '/' . ltrim($url, '/');
         }
 
