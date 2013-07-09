@@ -1199,7 +1199,7 @@ jQuery.extend( jQuery.fn, {
                 });
             }
         }
-        $('form input, form select, form .selectedTxt, form textarea').on('click', function(){
+        $('form input, form select, form .newListSelected, form button, form textarea').on('click', function(){
             hideError();
         });
         $('form input').on('keyup', function(){
