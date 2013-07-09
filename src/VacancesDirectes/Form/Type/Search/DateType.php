@@ -3,11 +3,10 @@
 namespace VacancesDirectes\Form\Type\Search;
 
 use Symfony\Component\Form\FormBuilderInterface,
-    Symfony\Component\OptionsResolver\Options,
+    Symfony\Component\Form\FormEvents,
+    Symfony\Component\Form\FormEvent,
     Symfony\Component\OptionsResolver\OptionsResolverInterface,
     Symfony\Component\Validator\Constraints as Assert;
-
-use Symfony\Component\Validator\ExecutionContext;
 
 use Cungfoo\Form\Type\AppAwareType;
 
@@ -18,10 +17,10 @@ class DateType extends AppAwareType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        global $app;
+        $app = $this->getApplication();
 
-        $locale = $this->getApplication()['context']->get('language');
-        $data   = $this->getApplication()['session']->get('search_engine_data');
+        $locale = $app['context']->get('language');
+        $data   = $app['session']->get('search_engine_data');
         $currentDestination = is_object($data) && property_exists($data, 'destination') ? $data->destination : null;
 
         $builder->add('dateDebut', 'hidden', array(
@@ -129,57 +128,6 @@ class DateType extends AppAwareType
             'data' => $currentDestination
         ));
 
-        $region = \Cungfoo\Model\RegionQuery::create()
-            ->filterByCode($currentDestination)
-            ->findOne()
-        ;
-
-        $villes = \Cungfoo\Model\VilleQuery::create()
-            ->joinWithI18n($locale)
-            ->withColumn('VilleI18n.name', 'Name')
-            ->select(array('Code', 'Name'))
-            ->_if($currentDestination)
-            ->filterByDestination($region, $currentDestination)
-            ->_endif()
-            ->useEtablissementQuery()
-                ->filterByActive(true)
-            ->endUse()
-            ->useRegionQuery()
-                ->filterByActive(true)
-                ->usePaysQuery()
-                    ->filterByActive(true)
-                ->endUse()
-            ->endUse()
-            ->setDistinct()
-            ->orderBy('Name')
-            ->findActive()
-        ;
-
-        $builder->add('ville', 'choice', array(
-            'choices'     => $this->formatForList($villes, 'Code', 'Name'),
-            'label'     => 'date_search.ville',
-            'empty_value' => "date_search.ville.empty_value",
-            'empty_data'  => null,
-            'required'  => false,
-        ));
-
-        $campings = \Cungfoo\Model\EtablissementQuery::create()
-            ->select(array('Code', 'Name'))
-            ->_if($currentDestination)
-            ->filterByDestinationSearch($region, $currentDestination)
-            ->_endif()
-            ->orderByName()
-            ->findActive()
-        ;
-
-        $builder->add('camping', 'choice', array(
-            'choices'     => $this->formatForList($campings, 'Code', 'Name'),
-            'label'     => 'date_search.camping',
-            'empty_value' => "date_search.camping.empty_value",
-            'empty_data'  => null,
-            'required'  => false,
-        ));
-
         $builder->add('nbAdultes', 'text', array(
             'label'     => 'date_search.nb_adultes',
             'required'  => false,
@@ -189,6 +137,75 @@ class DateType extends AppAwareType
             'label'     => 'date_search.nb_enfants',
             'required'  => false,
         ));
+
+        $dateType = $this;
+        $builder->addEventListener(
+            FormEvents::PRE_SET_DATA,
+            function (FormEvent $event) use ($app, $dateType) {
+                $form = $event->getForm();
+                $data = $event->getData();
+
+                if(null === $data) {
+                    return;
+                }
+
+                $locale = $app['context']->get('language');
+                $currentDestination = $data->destination;
+
+                $region = \Cungfoo\Model\RegionQuery::create()
+                    ->filterByCode($currentDestination)
+                    ->findOne()
+                ;
+
+                $villes = \Cungfoo\Model\VilleQuery::create()
+                    ->joinWithI18n($locale)
+                    ->withColumn('VilleI18n.name', 'Name')
+                    ->select(array('Code', 'Name'))
+                    ->_if($currentDestination)
+                    ->filterByDestination($region, $currentDestination)
+                    ->_endif()
+                    ->useEtablissementQuery()
+                    ->filterByActive(true)
+                    ->endUse()
+                    ->useRegionQuery()
+                    ->filterByActive(true)
+                    ->usePaysQuery()
+                    ->filterByActive(true)
+                    ->endUse()
+                    ->endUse()
+                    ->setDistinct()
+                    ->orderBy('Name')
+                    ->findActive()
+                    ->toArray()
+                ;
+
+                $form->add($app['form.factory']->createNamed('ville', 'choice', null, array(
+                    'choices'       => $dateType->formatForList($villes, 'Code', 'Name'),
+                    'label'         => 'date_search.ville',
+                    'empty_value'   => "date_search.ville.empty_value",
+                    'empty_data'    => null,
+                    'required'      => false,
+                )));
+
+                $campings = \Cungfoo\Model\EtablissementQuery::create()
+                    ->select(array('Code', 'Name'))
+                    ->_if($currentDestination)
+                    ->filterByDestinationSearch($region, $currentDestination)
+                    ->_endif()
+                    ->orderByName()
+                    ->findActive()
+                    ->toArray()
+                ;
+
+                $form->add($app['form.factory']->createNamed('camping', 'choice', null, array(
+                    'choices'       => $dateType->formatForList($campings, 'Code', 'Name'),
+                    'label'         => 'date_search.camping',
+                    'empty_value'   => "date_search.camping.empty_value",
+                    'empty_data'    => null,
+                    'required'      => false,
+                )));
+            }
+        );
     }
 
     /**
