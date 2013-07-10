@@ -26,7 +26,7 @@
                         <input type="password" placeholder="{{ "compte.placeholder.password" | trans }}" id="password" name="_password" autocomplete="off" />
                     </div>
                     <div class="link clear">
-                        <a href="#">{{ "global.compte.forget"|trans }}</a>
+                        <a href="http://www.vacances-directes.com/rsl/clickbooking?webuser={{ app.config.get('languages')[app.context.get('language')]['resalys_username'] }}&display=forget_password&actions=displayForgetPasswordForm" target="_blank">{{ "global.compte.forget"|trans }}</a>
                     </div>
                     <button class="bt fushia ib" type="submit">{{ "global.compte.submit"|trans }}</button>
                 </li>
