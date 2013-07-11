@@ -194,12 +194,13 @@ jQuery.extend( jQuery.fn, {
     });
 
     function scrollToHash(hash){
+        console.log(hash);
         if (hash.match("^#dateCrit")){
             $('select#TopFilter_bon_plans')
                 .val(hash)
                 .trigger('change');
         }
-        if ( $('*[id='+hash+']').length == 0 ){
+        if ( $('*[id='+hash.substring(1)+']').length == 0 ){
             return false;
         }
         var oAnchor = hash;
