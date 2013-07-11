@@ -42,6 +42,9 @@ class BonsPlansController implements ControllerProviderInterface
         $assertUrlBonPlans = BonPlanPeer::assertUrl($locale);
         $assertUrlBonPlanCategorie = BonPlanCategoriePeer::assertUrl($locale);
 
+        if (empty($assertUrlBonPlans)) {
+            $assertUrlBonPlans = 'n-a';
+        }
         $controllers->match('/{slug}/', function (Request $request, $slug) use ($app)
         {
             $locale = $app['context']->get('language');
