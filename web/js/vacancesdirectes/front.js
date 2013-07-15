@@ -194,7 +194,6 @@ jQuery.extend( jQuery.fn, {
     });
 
     function scrollToHash(hash){
-        console.log(hash);
         if (hash.match("^#dateCrit")){
             $('select#TopFilter_bon_plans')
                 .val(hash)
@@ -205,7 +204,6 @@ jQuery.extend( jQuery.fn, {
         }
         var oAnchor = hash;
         var targetOffset = $(oAnchor).offset().top;
-        consoleLog(targetOffset);
         var bodyelem;
         var clicked = false;
         var opened = false;
@@ -1499,8 +1497,11 @@ function toggleSearchCriteria(){
 }
 
 // wait layer
-function showWaitLayer(){
+function showWaitLayer(e){
     $('#please_wait_layer').show();
+    if ( e != undefined ){
+        window.location.reload(true);
+    }
 }
 
 // didacticiel layer
