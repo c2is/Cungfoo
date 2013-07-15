@@ -16,7 +16,7 @@ services:
         default_envelope:
             base_id:  ##base_id##
             username: web_fr
-            password: web_fr
+            password: DInan22101
             flow_name: prix_min
             nb_products: 9999
     auth:
