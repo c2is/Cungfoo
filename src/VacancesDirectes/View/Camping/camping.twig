@@ -1,10 +1,6 @@
 {% extends "base.twig" %}
 
-{% block title %}
-    {{ etab.seoTitle | trans ({'%nom%': etab.name, '%ville%': etab.ville }) }}
-    {%if hasBaignade %}{{ "seo.title.camping_suffix" | trans }}{% endif %}
-    {{ etab.categorie }}
-{% endblock %}
+{% block title %}{{ etab.seoTitle | trans ({'%nom%': etab.name, '%ville%': etab.ville }) }}{% endblock %}
 {% block metaDescription %}{{ etab.seoDescription | trans  ({'%nom%': etab.name, '%nbEtoiles%': etab.categorie, '%ville%': etab.ville })}}{% endblock %}
 
 {% block bodyClass %} fiche{% endblock %}
