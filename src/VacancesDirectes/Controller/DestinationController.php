@@ -443,7 +443,7 @@ class DestinationController implements ControllerProviderInterface
             'ville'   => $camping->getVille()->getSlug(),
             'camping' => $camping->getSlug()
         ), true);
-
+		
         $semainierQuery = array(
             'webuser'       => $webuser,
             'display'       => 'semainier',
@@ -452,7 +452,12 @@ class DestinationController implements ControllerProviderInterface
             'referer'       => $referer,
             'maxAge'        => 3600,
         );
-
+		// #2034 si present en Get on passe le period_type
+		$periodType = $request->query->get('period_type');
+		if (in_array($periodType, array('SS7', 'SS14', 'SS21', 'MM7', 'MM14', 'MS10', 'SM11', 'MS3', 'SM4'))) {
+			$semainierQuery['period_type'] = $periodType;
+		}
+		
         $lastProposal = $app['session']->get('last_proposal');
         if ($lastProposal) {
             $periodType = $lastProposal['proposal']->{'period_type_code'};
