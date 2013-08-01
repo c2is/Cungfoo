@@ -1497,11 +1497,14 @@ function toggleSearchCriteria(){
 }
 
 // wait layer
-function showWaitLayer(e){
-    $('#please_wait_layer').show();
-    if ( e != undefined ){
-        window.location.reload(true);
-    }
+function showWaitLayer(href){
+	var url = window.location.href.split('/');
+	var ancienCateg = url[url.length-2];
+	var newUrl = href.split('/');
+	var newCateg = newUrl[newUrl.length-2];
+	
+	if(newCateg != ancienCateg)
+		$('#please_wait_layer').show();
 }
 
 // didacticiel layer
