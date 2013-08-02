@@ -229,8 +229,15 @@ class PortfolioController implements ControllerProviderInterface
                     ));
                 }
                 else {
-                    $json['html'] = sprintf('<tr class="portfolio-media-item unused"><td colspan="9">%s</td></tr>',
-                        $app->trans('portfolio_media.format_ignore')
+					if ($imageInfos['channels'] == 4) {
+						$errorMessage = 'portfolio_media.format_ignore';
+					}
+					else {
+						$errorMessage = 'portfolio_media.unexpected_error';
+                    }
+					
+					$json['html'] = sprintf('<tr class="portfolio-media-item unused"><td colspan="9">%s</td></tr>',
+                        $app->trans($errorMessage)
                     );
 
                     unlink($absolutePath);
