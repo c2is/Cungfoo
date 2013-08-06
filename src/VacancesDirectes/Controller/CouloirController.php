@@ -89,6 +89,8 @@ class CouloirController implements ControllerProviderInterface
                 "webuser"       => $rslConfig['username'],
                 "tokens"        => 'ignore_token',
                 "display"       => 'cart_payment',
+				"ogone_accepted_route" => '/'.$app->trans('seo.url.couloir.index').'/'.$app->trans('seo.url.couloir.confirmation'),
+				"ogone_back_route" => '/'.$app->trans('seo.url.couloir.index').'/'.$app->trans('seo.url.couloir.recapitulatif'),
                 "actions"       => 'updateReservationContent;BupdateReservationAddPrestations;BupdateCartReservations',
                 "proposal_key"  => $proposalKey,
                 "confirmation"  => $app['url_generator']->generate('couloir_confirmation', array(), true),
