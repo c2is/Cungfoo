@@ -95,7 +95,7 @@ class CouloirController implements ControllerProviderInterface
                 "proposal_key"  => $proposalKey,
                 "confirmation"  => $app['url_generator']->generate('couloir_confirmation', array(), true),
                 "homeLink"      => $app['url_generator']->generate('homepage', array(), true),
-                "backLink"      => 'javascript:history.go(-1);',
+                "backLink"      => 'history.go(-1);',
                 "cgv"           => $app['url_generator']->generate('edito_by_slug', array('slug' => 'conditions-generales'), true),
                 "session"       => base64_decode(str_replace('B64_', '', $request->cookies->get('session_name'))),
             );
