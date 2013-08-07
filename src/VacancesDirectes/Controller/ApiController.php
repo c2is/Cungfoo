@@ -144,8 +144,8 @@ class ApiController implements ControllerProviderInterface
                     '',
                     '',
                     '"' . str_replace('"', '""', $camping->getRegion()->getPays()->getName()) . '"',
-                    '"' . str_replace('"', '""', getRegion()->getName()) . '"',
-                    '"' . str_replace('"', '""', getVille()->getName()) . '"',
+                    '"' . str_replace('"', '""', $camping->getRegion()->getName()) . '"',
+                    '"' . str_replace('"', '""', $camping->getVille()->getName()) . '"',
                 ));
             }
 
