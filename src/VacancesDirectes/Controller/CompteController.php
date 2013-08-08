@@ -73,10 +73,18 @@ class CompteController implements ControllerProviderInterface
 
         $controllers->match('/' . $app->trans('seo.url.compte.reservations') . '/', function (Request $request) use ($app)
         {
+
+			$gateway_messages = array('LANG_ogone_canceled', 'LANG_ogone_declined', 'LANG_ogone_exception', 'LANG_ogone_accepted');
+			
             $query              = $this->getDefaultResalysParameters($app, $request);
             $query['display']   = 'existing_reservations';
             $query['homeLink']  = $app['url_generator']->generate('homepage', array(), true);
-
+			$query['ogone_accepted_route'] = '/'.$app->trans('seo.url.compte.index').'/'.$app->trans('seo.url.compte.reservations').'/';
+			$query['ogone_back_route'] = '/'.$app->trans('seo.url.compte.index').'/'.$app->trans('seo.url.compte.reservations').'/';
+			
+			if(in_array($request->query->get('gateway_message'),$gateway_messages)) 
+				$query['gateway_message'] = $request->query->get('gateway_message');
+				
             return $app->renderView('Compte/index.twig', array('query' => $query));
 
         })->bind('compte_reservations');
