@@ -2290,12 +2290,6 @@ header, section, footer {position:relative;}
     span{text-align:left;}
   }
   #headerRight{float:right;}
-  #telephone{width:256px;height:60px;background: url("../../images/vacancesdirectes/common/ui/phone-bg.png") no-repeat 0px 0px transparent;float:right;padding:5px 0px 15px 10px;margin:15px 0 0 15px;
-    span{font-size:18px;line-height:19px;color:@colorGris2;
-      &:before{content:"";width:40px;height:29px;background:transparent url("../../images/vacancesdirectes/common/ui/phone-icon-header.png") no-repeat 0px 0px;float:left;margin:5px;}
-      a{font-weight:bold;color:@colorGris2;text-decoration:none;display:block;}
-    }
-  }
   #account{float:right;font-size:16px;text-transform:uppercase;background-color:@colorFushia;border-radius:10px;padding:7px 12px;color:#fff;text-decoration:none;margin:10px 0 15px 15px;}
 }
 /* specifs home */
@@ -2417,7 +2411,7 @@ input[type="radio"] + label{display:inline-block;margin:3px 5px 0 0;}
 input[type="radio"] {height:auto;}
 
 /* structure */
-#wrap{padding:15px 0;clear:both;background:@colorBgBlanc;min-height:200px;position:relative;z-index:20;}
+#wrap{padding:1px 0;clear:both;background:@colorBgBlanc;min-height:200px;position:relative;z-index:20;}
 .popin #wrap{width:646px;padding:0 15px;margin:0 auto;}
 .column{width:928px;margin:0 @gutter;position:relative;
   &.left{width:616px;margin:0 0 0 @gutter;}
@@ -2450,7 +2444,7 @@ input[type="radio"] {height:auto;}
 .booking{
 
 /* STEPS */
-  #stepNav{width:976px;height:50px;font:bold 23px @ptnarrow;text-transform:uppercase;position:relative;background:@colorBgGrisF;margin:20px 0 20px -@gutter;z-index:30;
+  #stepNav{width:976px;height:50px;font:bold 23px @ptnarrow;text-transform:uppercase;position:relative;background:@colorBgGrisF;margin:0px 0 20px -@gutter;z-index:30;
     ul{width:976px;margin:0 auto;text-align:center;
       li.tab{margin:0 12px;float:none;display:inline-block;position:static;color:@colorBlanc;padding:0;
         &.current{background:@colorFushia;}
@@ -2476,7 +2470,7 @@ input[type="radio"] {height:auto;}
 
   h1 {margin:10px 0 20px;}
   h1 span {color:@colorBgGrisF;}
-  iframe{width:100%;min-height:500px;}
+  iframe{width:100%;}
 // All the divs around Resalys pages :
   #basketContainer, #confirmContainer, #discoverContainer{margin:0;width:100%;background:url(../../images/vacancesdirectes/common/ui/loadingResalys.gif) no-repeat 50% 35px;}
   #discoverContainer{margin:0;width:100%;background:url(../../images/vacancesdirectes/common/ui/loadingResalys.gif) no-repeat 50% 35px;}
@@ -2564,6 +2558,14 @@ input[type="text"],input[type="password"]{background-color:@colorBgBlanc;width:2
 textarea{background-color:@colorBgBlanc;width:216px;height:81px;padding: 0 7px;border:0 none;}
 .label{font:bold 15px @ptnarrow;color:@colorGris0;text-transform:uppercase;display:inline-block;}
 h4{font-size:15px;line-height:17px;}
+
+
+#headerRight{
+	margin-top : 30px;
+}
+#headerRight h1 span{
+	color : white;
+}
 
 /*LEFT*/
 #contentContener{
