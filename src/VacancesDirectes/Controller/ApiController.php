@@ -42,11 +42,11 @@ class ApiController implements ControllerProviderInterface
                 $campingDom->appendChild($node);
 
                 $node = $dom->createElement('smallimage');
-                $node->appendChild($dom->createTextNode(''));
+                $node->appendChild($dom->createTextNode('http://' . $app['request']->getHttpHost() . '/images/passerelle/min/' . $camping->getCode() . '.jpg'));
                 $campingDom->appendChild($node);
 
                 $node = $dom->createElement('bigimage');
-                $node->appendChild($dom->createTextNode(''));
+                $node->appendChild($dom->createTextNode('http://' . $app['request']->getHttpHost() . '/images/passerelle/max/' . $camping->getCode() . '.jpg'));
                 $campingDom->appendChild($node);
 
                 $node = $dom->createElement('producturl');
@@ -265,6 +265,82 @@ class ApiController implements ControllerProviderInterface
             return new Response($dom->saveXML(), 200, array('Content-Type' => 'application/xml'));
         })
         ->bind('api_criteo_xml_v2');
+
+		$controllers->match('/csv/ematch', function (Request $request) use ($app)
+        {
+            $campings = EtablissementQuery::create()
+                ->findActive()
+            ;
+
+            $lines = array();
+            $lines[] = implode(',', array(
+                'id',
+				'name',
+				'shortdescription',
+				'description',
+				'smallimage',
+				'bigimage',
+				'producturl',
+				'price'
+            ));
+
+            foreach ($campings as $camping)
+            {
+				$short_description = '';
+                $codes = array();
+                foreach ($camping->getSituationGeographiques() as $situation) {
+                    $codes[$situation->getCode()] = $situation->getName();
+                }
+
+                if (array_key_exists('MDIR', $codes)) {
+                    $short_description = $codes['MDIR'];
+                }
+                else if (array_key_exists('M2K', $codes)) {
+                    $short_description = $codes['M2K'];
+                }
+
+                if (!$short_description) {
+                    $codes = array();
+                    foreach ($camping->getBaignades() as $baignade) {
+                        $codes[$baignade->getCode()] = $baignade->getName();
+                    }
+
+                    if (array_key_exists('PCOU', $codes)) {
+                        $short_description = $codes['PCOU'];
+                    }
+                    else if (array_key_exists('PAAQ', $codes)) {
+                        $short_description = $codes['PAAQ'];
+                    }
+                    else if (array_key_exists('TOBO', $codes)) {
+                        $short_description = $codes['TOBO'];
+                    }
+                }
+
+				$description = str_replace('"', '""', $camping->getDescription());
+				$description = str_replace("\n", ' ', strip_tags($description));
+				$description = str_replace("\r", ' ', $description);
+
+                $lines[] = implode(',', array(
+                    $camping->getCode(),
+                    '"' . str_replace('"', '""', $camping->getName()) . '"',
+					'"' . str_replace('"', '""',$short_description) . '"',
+                    '"' . $description . '"',
+                    '"http://' . $app['request']->getHttpHost() . '/images/passerelle/min/' . $camping->getCode() . '.jpg"',
+                    '"http://' . $app['request']->getHttpHost() . '/images/passerelle/max/' . $camping->getCode() . '.jpg"',
+                    '"'.$app->url('destination_camping', array(
+                        'pays' => $camping->getVille()->getRegion()->getPays()->getSlug(),
+                        'region' => $camping->getVille()->getRegion()->getSlug(),
+                        'ville' => $camping->getVille()->getSlug(),
+                        'camping' => $camping->getSlug()
+                    ))
+					.'?utm_source=Ematch&utm_medium=email&utm_campaign=retargeting"',
+                    $camping->getMinimumPrice()
+                ));
+            }
+
+            return new Response(implode("\n", $lines), 200, array('Content-Type' => 'text/csv', 'Content-Disposition' => 'attachment; filename="ematch.csv'));
+        })
+        ->bind('api_ematch_csv');
 
         return $controllers;
     }
