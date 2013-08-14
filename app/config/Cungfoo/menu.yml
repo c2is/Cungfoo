@@ -130,3 +130,6 @@ menu:
               cache:
                   title:  menu.cache
                   route:  cache_generator_crud_list
+              purge:
+                  title:  menu.purge
+                  route:  purge_actions
