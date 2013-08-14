@@ -3,26 +3,14 @@ users:
         - "ROLE_ADMIN"
         - "YhVciJJ+T0jkic1gmqxPvrRfhRL8zVdfsC/Lp9z+Sg5vNarVroOj5epDgzDGR7YgnkgASf+BMAn0F/HOjalu/Q=="
     g.servoz:
-        - "ROLE_USER"
+        - "ROLE_ADMIN"
+        - "QH9iLyZSDmN/fjo8dBeOyRN6Cqu+hyDjBYB/aKyemv1dpHcGEFK/PcFOAAGeYuzJb4ffcuYUl5M/vM2dvPeDSA=="    
+    l.villain:
+        - "ROLE_ADMIN"
+        - "QH9iLyZSDmN/fjo8dBeOyRN6Cqu+hyDjBYB/aKyemv1dpHcGEFK/PcFOAAGeYuzJb4ffcuYUl5M/vM2dvPeDSA=="    
+    t.kibali:
+        - "ROLE_ADMIN"
         - "QH9iLyZSDmN/fjo8dBeOyRN6Cqu+hyDjBYB/aKyemv1dpHcGEFK/PcFOAAGeYuzJb4ffcuYUl5M/vM2dvPeDSA=="
     a.lambert:
         - "ROLE_USER"
         - "LaFATbP4PD4XmWyt96EtBogYO5aSQKi13QdK1oYvBEMbcwXCiLME9DDT5U144tHyIp9iYYm4JYpsVdXwg3r/QA=="
-    a.meunier:
-        - "ROLE_USER"
-        - "1Ch56FSOUxwOW68V0JK5CEnxdyhWyiyNhjABoppD2COD4HrY/TH/WhcbxStYMjUAMkQcbtsnyryLpDrCqSBWxQ=="
-    l.lacalmontie:
-        - "ROLE_USER"
-        - "n9QM5UA3+ji9TciEaYqEuL4JtFp3tVqcq1kvCvkgDodPUiZUcm/mjN1tJdDO1xYLdVjKq0UadYBkVHk0bRlslQ=="
-    m.beck:
-        - "ROLE_USER"
-        - "DKNlZ7x8PzlwNvtHcMKWX26vBWLEpi3D7bat6F7nWtc+M/4hrjPKOaCiwCZxk5U3E0J75R7ZUmkfCvjDQi+eIA=="
-    m.auffret:
-        - "ROLE_USER"
-        - "5ldAFqC9LL1vqmeivlu0hlakys00GYPFd0tNxbgOIwQovZRPgmL6cgedE7r2O/S51ZYlr4LIY1jvzU96pl+VLg=="
-    w.werle:
-        - "ROLE_USER"
-        - "6dl0ec3fK7LsTqryEz9oAK2bHmkdycioM7z+ctw1s/IleoRnX4ahpNCfaqt730k0Gw+0fXjpOaY+FQqaa7So4A=="
-    l.lacalmontie:
-        - "ROLE_USER"
-        - "sTn4lVLlDvHXy0xY7hxLRqne2kNV2SNU1HqbEZmnb+oclaeriEwlAneZH+C0LL87gJFKxqs0qJT7LaI+xBUe8A=="
