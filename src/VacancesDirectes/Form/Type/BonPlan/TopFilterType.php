@@ -32,7 +32,7 @@ class TopFilterType extends AppAwareType
 
         $bonsPlansChoices = array();
         foreach ($bonPlans as $bonPlan) {
-            $bonsPlansChoices['dateCrit'.$bonPlan->getId()] = $app->trans('general.du').' '.$bonPlan->getDateStart('d/m/Y').' '.$app->trans('general.du').' '.date('d/m/Y', $bonPlan->getDateEnd());
+            $bonsPlansChoices['dateCrit'.$bonPlan->getId()] = $app->trans('general.du').' '.$bonPlan->getDateStart('d/m/Y').' '.$app->trans('general.au').' '.date('d/m/Y', $bonPlan->getDateEnd());
         }
 
         $builder->add('bon_plans', 'choice', array(
