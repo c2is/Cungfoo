@@ -41,6 +41,7 @@ $app->mount('/' . $app->trans('seo.url.dispo'),           new Controller\DispoCo
 $app->mount('/' . $app->trans('seo.url.couloir.index'),   new Controller\CouloirController());
 $app->mount('/' . $app->trans('seo.url.bonsplans'),       new Controller\BonsPlansController());
 $app->mount('/' . $app->trans('seo.url.compte.index'),    new Controller\CompteController());
+$app->mount('/' . $app->trans('seo.url.brochure'),        new Controller\BrochureController());
 $app->mount('/' . $app->trans('seo.url.weekends'),        new Controller\VosWeekEndsController());
 $app->mount('/' . $app->trans('seo.url.lieuVisiter'),     new Controller\FichePOIController());
 $app->mount('/' . $app->trans('seo.url.evenement'),       new Controller\FicheEventController());

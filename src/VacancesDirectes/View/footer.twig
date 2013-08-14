@@ -1,7 +1,4 @@
 {% set user = app.session.get('resalys_user') %}
-<div id="please_wait_layer" class="pleaseWaitLayer">
-    <div id="please_wait_layer_content"><div><img width="56" height="56" src="{{ asset('images/vacancesdirectes/common/ui/loadingResalys.gif') }}" /><p>{{ "global.search_message" | trans | raw }}</p></div></div>
-</div>
 <div id="didacticiel_layer" class="didacticielLayer">
     <div class="layerOverlay"></div>
     <div id="didacticiel_layer_content"><img class="view" width="244" height="257" src="{{ asset('images/vacancesdirectes/common/pict/loading-bloc.jpg') }}" /><h2></h2><p></p><img width="220" height="20" src="{{ asset('images/vacancesdirectes/common/ui/loadingSearch.gif') }}" alt="{{ 'didacticiel.chargement' | trans }}" /></div>
@@ -10,19 +7,7 @@
     <div class="footer-home fixed-width clear">
         <div id="footerInsert" class="clear">
             {{ esi(path('widget', {'name': 'contact'})) }}
-			{# TODO 
-			{% if app.context.get('language') == 'fr' %}
-				<div id="insertCatalog" class="left radiusBox greyC">
-					<div class="content">
-						<h3>{{ "footer.demande_catalogue" | trans }}</h3>
-						<p class="small">
-							{{ "footer.description_catalogue" | trans }}
-						</p>
-						<a class="bt big sombre" {% if user %}href="{{ path('compte_brochure') }}"{% else %}href="{{ path('demande_brochure') }}"{% endif %}>{{ "footer.je_demande_catalogue" | trans }}</a>
-					</div>
-				</div>
-			{% endif %} 
-			#}
+			{% if app.context.get('language') == 'fr' %} {{ esi(path('widget', {'name': 'brochure'})) }} {% endif %}
 		</div>
 		{# TODO<div id="insertFacebook" class="left radiusBox greyC">
                 <div class="content">
@@ -38,8 +23,7 @@
                 <h3>{{ "footer.jeu.titre" | trans }} <img src="../web/images/vacancesdirectes/common/pict/facebook-white.png" /></h3>
                 <span>{{ "footer.jeu.desc" | trans }}</span>
                 <a class="bt big gris2" href="#">{{ "general.jouer" | trans }}</a>
-            </div> 
-		{% if app.context.get('language') == 'fr' %}<div class="clear"></div>{% endif %} #}
+            </div> #}
 		<div id="footerInfo" class="clear">
             {# <div id="infoMenu" class="left">
                 <h3>{{ "footer.location_camping" | trans }}</h3>
@@ -73,7 +57,7 @@
                     <li><a class="rubric" href="#">{{ "footer.ce" | trans }}</a></li>
                 </ul> #}
             </div>
-            <div id="infoOthers" class="left" style="height: 277px;">
+            <div id="infoOthers" class="left">
                 <h3>{{ "footer.locations_camping"|trans }}</h3>
                 <ul>
                     {% for item in app.navigation.get('footer_home').getNavigationItems() %}

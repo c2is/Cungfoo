@@ -1,3 +1,6 @@
+<div id="please_wait_layer" class="pleaseWaitLayer">
+    <div id="please_wait_layer_content"><div><img width="56" height="56" src="{{ asset('images/vacancesdirectes/common/ui/loadingResalys.gif') }}" /><p>{{ "global.search_message" | trans | raw }}</p></div></div>
+</div>
 <div class="footer-links" class="full-width">
 	{% if app.context.get('language') == 'fr' %}<a href="http://ce.vacances-directes.com/"{% if app.request.get('_route') == 'destination_camping' %} onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Footer', 'Lien_-_Footer-Bottom', 'Clic_-_Lien-VD-CE']);"{% endif %}>Vacances Directes CE</a>&nbsp;-&nbsp;{% endif %}
 	{# TODO <a href="#_">{{ "footer.contact" | trans }}</a> - #}

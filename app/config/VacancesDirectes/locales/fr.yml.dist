@@ -11,6 +11,7 @@ seo.meta.couloir: 'Espace de réservation'
 seo.meta.theme: '%theme%'
 seo.url.prefix: camping
 seo.url.catalogue: catalogue
+seo.url.brochure: demande-brochure
 seo.url.dispo: dispo
 seo.url.couloir.index: couloir-reservation
 seo.url.couloir.detail: detail-sejour
@@ -260,6 +261,7 @@ listing.no_results_title: 'Votre recherche n''a retourné aucun résultat.'
 listing.no_results: 'Nous vous invitons à modifier vos critères de recherche'
 listing.nos_locations_disponibles: 'Nos locations disponibles'
 menu_destination.accroche: '3 pays, 34 régions touristiques, vos vacances avec Vacances directes.'
+menu_destination.camping: Camping
 menu_bon_plan.accroche.prefix: Sélectionner
 menu_bon_plan.accroche.suffix: 'un bon plan'
 menu_bon_plan.newsletter.title: 'Abonnement newsletter'
@@ -377,7 +379,9 @@ home.4_pays: '3 pays'
 home.26_regions: '34 régions'
 home.touristiques: touristiques
 home.destination: Destination
+home.camping: Camping
 home.destination_france: 'Destination France'
+home.camping_france: 'Camping France'
 home.plus_de_regions: 'Plus de régions'
 home.faites_le_plein_d_activites: 'Faites le plein d''activités'
 home.dernieres_minutes: 'Dernières minutes'
@@ -419,6 +423,7 @@ general.toggle: 'Affichage résultat(s)'
 general.budget_range: 'Budget(s) proposé(s)'
 general.list: Liste
 general.map: Carte
+general.groupes: Groupes
 filtres.affinez_recherche: 'Affinez votre recherche'
 filtres.criteres_selectionne: 'critères(s) séléctionné(s)'
 filtres.situation: Situation
@@ -450,7 +455,8 @@ footer.masterCard: MasterCard
 footer.nous_joindre: 'Nous joindre'
 footer.nous_contacter: 'Nous contacter'
 footer.demande_catalogue: 'Demande de catalogue'
-footer.description_catalogue: 'Hoc inmaturo interitu ipse quoque sui pertaesus excessit e vita aetatis.'
+footer.je_demande_catalogue: 'je demande le catalogue'
+footer.description_catalogue: 'Recevez votre catalogue directement chez vous et découvrez notre sélection de campings'
 footer.consulter_catalogue: 'Consulter le catalogue'
 footer.telecharger_catalogue: 'Télécharger le catalogue'
 footer.facebook.titre: 'Restons en contact'
@@ -564,6 +570,7 @@ demande_annulation.sinistre_suite.maladie: Maladie
 demande_annulation.sinistre_suite.accident: Accident
 demande_annulation.sinistre_suite.autre: Autre
 demande_annulation.sinistre_suite.not_blank: 'La suite de la nature du sinistre est requise'
+demande_annulation.groupes.label: "Demande d'annulation partielle pour les groupes"
 demande_annulation.sinistre_date.label: 'Date du sinistre'
 demande_annulation.sinistre_date.not_blank: 'La date du sinistre est requise'
 demande_annulation.sinistre_date.date: 'La date de sinistre renseignée n''est pas valide'
@@ -613,6 +620,7 @@ event.type: 'Type :'
 event.transport: 'Transport :'
 event.adresse: 'Adresse :'
 global.search_message: 'Nous traitons actuellement votre demande.<br /><br />Merci de bien vouloir patienter.'
+global.brochure.title: 'Demande de brochure'
 global.compte.btn: 'Mon compte'
 global.compte.title: '<span>Espace</span> client'
 global.compte.user: 'Nom d''utilisateur'

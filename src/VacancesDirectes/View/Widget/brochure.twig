@@ -1,0 +1,9 @@
+<div id="insertCatalog" class="left radiusBox greyC">
+	<div class="content">
+		<h3>{{ "footer.demande_catalogue" | trans }}</h3>
+		<p class="small">
+			{{ "footer.description_catalogue" | trans }}
+		</p>
+		<a class="bt big sombre" {% if user %}href="{{ path('compte_brochure') }}"{% else %}href="{{ path('demande_brochure') }}"{% endif %}>{{ "footer.je_demande_catalogue" | trans }}</a>
+	</div>
+</div>
