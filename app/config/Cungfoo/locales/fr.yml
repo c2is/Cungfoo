@@ -272,6 +272,7 @@ list.actions: Actions
 locale.english: Anglais
 locale.french: Français
 locale.german: Allemand
+locale.nederland: Néerlandais
 
 menu.activite: Activités
 menu.destination: Destinations
@@ -913,6 +914,7 @@ portfolio_media.active: "Active"
 portfolio_media.created_at: "Date de création"
 portfolio_media.updated_at: "Dernière mise à jour"
 portfolio_media.format_ignore: "L'image téléchargé n'est pas au format RGB (veuillez modifier le format)."
+portfolio_media.unexpected_error: "Erreur inattendue. Si le problème persiste, veuillez conctacter votre administrateur."
 portfolio_media_tag.tag_id: "Tags associés à ce media"
 portfolio_mediaI18ns: ""
 portfolio_media_i18n.title: "Titre"
@@ -966,5 +968,3 @@ cache_generator.cached_at: "Date du dernier appel"
 cache_generator.active: "Actif"
 crud.tooltip.cache.time: "Fréquence d'appel (en secondes)"
 cache_generator.crud.list: "Liste des URLs à cacher"
-menu.purge: "Purge"
-purge_erreur: "Une erreur est survenue"

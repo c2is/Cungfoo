@@ -78,6 +78,7 @@ list.actions: Actions
 locale.english: English
 locale.french: French
 locale.german: German
+locale.nederland: Nederland
 
 menu.activite: Activities
 menu.destination: Locations

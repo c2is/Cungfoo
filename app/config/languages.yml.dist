@@ -9,3 +9,8 @@ languages:
         domain: ##domain_de##
         resalys_username: web_de
         resalys_flow_name: "prix_min_de"
+    nl:
+        name:  locale.nederland
+        domain: ##domain_nl##
+        resalys_username: web_nl_indiv
+        resalys_flow_name: "prix_min_nl"
