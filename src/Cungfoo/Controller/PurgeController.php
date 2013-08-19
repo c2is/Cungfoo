@@ -24,7 +24,7 @@ class PurgeController implements ControllerProviderInterface
 
         $controllers->match('/', function (Request $request) use ($app)
         {
-			$result = shell_exec('cd .. && ./clear_cache.sh');
+			$result = shell_exec('cd .. && sh clear_cache.sh');
 			if(empty($result)) $query['result'] = $app->trans('purge_erreur');
 			else $query['result'] = $result;
 			return $app->renderView('Purge/index.twig', array('query' => $query));
