@@ -130,12 +130,14 @@
     <![endif]-->
 	
 	{% if app.request.host == 'www.vacances-directes.com' %}
-		<!-- Google ADWORDS remarketing VD FR -->
+		<!-- Google remarketing VD FR -->
 		<script type="text/javascript">
+		/* <![CDATA[ /
 		var google_conversion_id = 1051012635;
 		var google_conversion_label = "HEJGCKG3ugUQm9yU9QM";
 		var google_custom_params = window.google_tag_params;
 		var google_remarketing_only = true;
+		/ ]]> */
 		</script>
 		<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
 		</script>
@@ -145,11 +147,13 @@
 		</div>
 		</noscript>
 	{% elseif app.request.host == 'www.vacances-directes.de' %}
-		<!-- Google ADWORDS remarketing VD DE -->
+		<!-- Google remarketing VD DE -->
 		<script type="text/javascript">
+		/* <![CDATA[ /
 		var google_conversion_id = 936208272;
 		var google_custom_params = window.google_tag_params;
 		var google_remarketing_only = true;
+		/ ]]> */
 		</script>
 		<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
 		</script>
@@ -158,9 +162,25 @@
 		<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/936208272/?value=0&amp;guid=ON&amp;script=0"/>
 		</div>
 		</noscript>
+	{% elseif app.request.host == 'www.vacances-directes.nl' %}		
+		<!-- Google remarketing VD NL -->
+		<script type="text/javascript">
+		/* <![CDATA[ /
+		var google_conversion_id = 1039448511;
+		var google_conversion_label = "yU2sCInn5QYQv_PS7wM";
+		var google_custom_params = window.google_tag_params;
+		var google_remarketing_only = true;
+		/ ]]> */
+		</script>
+		<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+		</script>
+		<noscript>
+		<div style="display:inline;">
+		<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1039448511/?value=0&label=yU2sCInn5QYQv_PS7wM&guid=ON&script=0"/>
+		</div>
+		</noscript>
 	{% endif %}
     <!-- #1984 -->
     <img src="http://ads.bluelithium.com/pixel?id=2397600&t=2" width="1" height="1" />
-	
 </body>
 </html>
