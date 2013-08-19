@@ -19,6 +19,7 @@ class SetupCommand extends Command
             ->setDescription('Setup language config files')
             ->addArgument('domain_fr', InputArgument::REQUIRED, 'Domain name for fr.')
             ->addArgument('domain_de', InputArgument::REQUIRED, 'Domain name for de')
+            ->addArgument('domain_nl', InputArgument::REQUIRED, 'Domain name for nl')
         ;
     }
 
@@ -30,11 +31,13 @@ class SetupCommand extends Command
         $defaultParameters = array(
             '/##domain_fr##/',
             '/##domain_de##/',
+            '/##domain_nl##/'
         );
 
         $currentParameters = array(
             $input->getArgument('domain_fr'),
             $input->getArgument('domain_de'),
+            $input->getArgument('domain_nl')
         );
 
         $databaseConfig = preg_replace($defaultParameters, $currentParameters, file_get_contents($databaseDistFilename));
