@@ -16,12 +16,12 @@ module.exports = function(grunt) {
       }
     },
     uglify: {
-	  pluginGmap: {
+          pluginGmap: {
         files: { 'web/js/vacancesdirectes/pluginGmap.min.js': 'web/js/vacancesdirectes/pluginGmap.js' }
       },
       compte: {
         files: { 'web/js/vacancesdirectes/compte.min.js': 'web/js/vacancesdirectes/compte.js' }
-	  },
+          },
       couloir: {
           files: { 'web/js/vacancesdirectes/couloir.min.js': 'web/js/vacancesdirectes/couloir.js' }
       },
@@ -33,6 +33,9 @@ module.exports = function(grunt) {
       },
       front: {
         files: { 'web/js/vacancesdirectes/plugFront.min.js': ['web/js/vacancesdirectes/plugins.js', 'web/js/vacancesdirectes/front.js', 'web/js/vacancesdirectes/searchSelectChange.js']}
+      },
+      brochure: {
+        files: { 'web/js/vacancesdirectes/brochure.min.js':  'web/js/vacancesdirectes/brochure.js' }
       }
     },
 
@@ -42,7 +45,12 @@ module.exports = function(grunt) {
           paths: ["web/css/vacancesdirectes"], compress: true, yuicompress: true
         },
         files: {
-          'web/css/vacancesdirectes/screen.css': 'web/css/vacancesdirectes/screen.less'
+          'web/css/vacancesdirectes/couloir.css': 'web/css/vacancesdirectes/couloir.less',
+          'web/css/vacancesdirectes/payment.css': 'web/css/vacancesdirectes/payment.less',
+          'web/css/vacancesdirectes/compte.css': 'web/css/vacancesdirectes/compte.less',
+          'web/css/vacancesdirectes/screen.css': 'web/css/vacancesdirectes/screen.less',
+          'web/css/vacancesdirectes/screen_de.css': 'web/css/vacancesdirectes/screen_de.less',
+          'web/css/vacancesdirectes/screen_nl.css': 'web/css/vacancesdirectes/screen_nl.less'
         }
       },
       iframe: {
