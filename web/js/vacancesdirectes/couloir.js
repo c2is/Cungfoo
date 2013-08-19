@@ -80,8 +80,8 @@ head.ready(function(){
         }
 
         // égalise la hauteur des choix de paiement de l'étape 1 du couloir
-        if ( $('#financialContener .radioDesc').length ){
-            $('#financialContener .radioDesc').equalizeHeights();
+        if ( $('#financialContener .radioDesc').length > 1 ){
+			setTimeout("$('#financialContener .radioDesc').equalizeHeights();", 10);
         }
 
     }
@@ -316,6 +316,7 @@ $.fn.showError = function(sMessage) {
 };
 
 $.fn.equalizeHeights = function() {
+
     var maxHeight = this.map(function(i,e) {
         return $(e).height();
     }).get();
