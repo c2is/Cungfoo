@@ -4,7 +4,7 @@
             <div class="radiusBox2 greyC bgImg national">
                 <div class="view">
                     <img class="bg" width="618" height="90" src="{{ asset('images/vacancesdirectes/common/menu/destinations/france_visuel.jpg') }}" alt="" />
-                    <div class="stamp grey"><span>{{ 'pays.france' | trans }}</span></div>
+                    <div class="stamp grey"><a href="/{{ 'seo.url.destinations' | trans }}/{{ 'seo.url.prefix' | trans }}-{{ 'pays.france' | trans | lower}}/">{{ 'menu_destination.camping' | trans  }}&nbsp;{{ 'pays.france' | trans }}</a></div>
                 </div>
                 {% set nbDestinationFirstCol = (regionsByDestinations|length // 2) + (regionsByDestinations|length % 2) %}
                 {% for destination in regionsByDestinations %}
@@ -15,7 +15,7 @@
                         <div class="title"><a href="{{ path('destination_destination', {destination: destination.slug})}}">{{ destination|trans }}</a></div>
                         <ul>
                             {% for region in destination.regionsActive %}
-                            <li><a href="{{ path('destination_region', {pays: region.pays.slug, region: region.slug})}}">- {{ region }}</a></li>
+                            <li><a href="{{ path('destination_region', {pays: region.pays.slug, region: region.slug})}}">- {{ 'menu_destination.camping' | trans }}&nbsp;{{ region }}</a></li>
                             {% endfor %}
                         </ul>
                     </div>
@@ -27,12 +27,12 @@
             <div class="radiusBox2 greyC bgImg international">
                 <div class="view">
                     <img class="bg" width="298" height="90" src="{{ asset('images/vacancesdirectes/common/menu/destinations/espagne_visuel.jpg') }}" alt="" />
-                    <div class="stamp grey"><span>{{ "pays.espagne" | trans }}</span></div>
+                    <div class="stamp grey"><a href="/{{ 'seo.url.destinations' | trans }}/{{ 'seo.url.prefix' | trans }}-{{ 'pays.espagne' | trans | lower}}/"><span>{{ 'menu_destination.camping' | trans  }}&nbsp;{{ 'pays.espagne' | trans }}</span></a></div>
                 </div>
                 <div class="region">
                     <ul>
                         {% for region in regionEspagne %}
-                        <li><a href="{{ path('destination_region', {pays: region.pays.slug, region: region.slug})}}">- {{ region }}</a></li>
+                        <li><a href="{{ path('destination_region', {pays: region.pays.slug, region: region.slug})}}">- {{ 'menu_destination.camping' | trans }}&nbsp;{{ region }}</a></li>
                         {% endfor %}
                     </ul>
                 </div>
@@ -40,12 +40,12 @@
             <div class="radiusBox2 greyC bgImg international">
                 <div class="view">
                     <img class="bg" width="298" height="90" src="{{ asset('images/vacancesdirectes/common/menu/destinations/italie_visuel.jpg') }}" alt="" />
-                    <div class="stamp grey"><span>{{ "pays.italie" | trans }}</span></div>
+                    <div class="stamp grey"><a href="/{{ 'seo.url.destinations' | trans }}/{{ 'seo.url.prefix' | trans }}-{{ 'pays.italie' | trans | lower}}/"><span>{{ 'menu_destination.camping' | trans  }}&nbsp;{{ 'pays.italie' | trans }}</span></a></div>
                 </div>
                 <div class="region">
                     <ul>
                         {% for region in regionItalie %}
-                        <li><a href="{{ path('destination_region', {pays: region.pays.slug, region: region.slug})}}">- {{ region }}</a></li>
+                        <li><a href="{{ path('destination_region', {pays: region.pays.slug, region: region.slug})}}">-{{ 'menu_destination.camping' | trans }}&nbsp;{{ region }}</a></li>
                         {% endfor %}
                     </ul>
                 </div>

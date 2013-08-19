@@ -37,8 +37,9 @@ class CampingController implements ControllerProviderInterface
             ;
 
             $view = $app['twig']->render('Camping/list_item.twig', array(
-                'list' => array('type' => 0),
-                'etab' => array('model' => $etab),
+                'list'    => array('type' => 0),
+                'etab'    => array('model' => $etab),
+				'nomEtab' => $app->trans('fiche.camping').' '.str_replace($app->trans('fiche.camping'),'',$etab->getName())
             ));
 
             return new Response($view, 200, array('Cache-Control' => sprintf('s-maxage=%s, public', $maxAge)));

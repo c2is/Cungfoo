@@ -260,6 +260,7 @@ listing.no_results_title: 'Ihre Suche ergab keine Treffer.'
 listing.no_results: 'Bitte geben Sie neue Suchkriterien ein.'
 listing.nos_locations_disponibles: 'Unsere verfügbaren Vermietungsangebote'
 menu_destination.accroche: '3 Länder, 34 touristische Regionen, Ihr Urlaub mit Vacances Directes.'
+menu_destination.camping: Campingplatz
 menu_bon_plan.accroche.prefix: Geheimtipp
 menu_bon_plan.accroche.suffix: Auswählen
 menu_bon_plan.newsletter.title: 'Newsletter abonnieren'

@@ -1,9 +1,8 @@
 <div itemscope itemtype="http://schema.org/Place">
     <h1 itemprop="name">
-        {{ etab.name }}{{ etab.categorie.stars }}<br />
-        <span class="h2-like">{{ etab.seoH1 | trans({'%ville%': etab.ville.name}) }} {%if hasBaignade %}{{ "seo.title.camping_suffix" | trans }}{% endif %}</span>
-    </h1>
-
+        {{ 'fiche.camping' | trans }}&nbsp;{{ nomEtab }}{{ etab.categorie.stars }}<br />
+	</h1>
+	<h2>{{ etab.ville.name | trans }} {%if hasBaignade %}{{ "seo.title.camping_suffix" | trans }}{% endif %}</h2>
     <p class="campSubtitle"><strong>{{ "fiche.ouvert_du" | trans }} {{ etab.ouvertureCamping }}</strong></p>
     <p class="campSubtitle">
         {% if etab.getSituationGeographiques | length %}
@@ -86,14 +85,14 @@
 <!-- tab Camping -->
 <div id="tabCamp" class="tabs">
 
-    <h3>{{ 'fiche.description_title' | trans }}</h3>
+    <h3>{{ 'fiche.description_title' | trans }}&nbsp;{{ 'general.du' | trans }}&nbsp;{{ 'fiche.camping' | trans }}&nbsp;{{ nomEtab }} </h3>
     <div class="richText campDesc">{{ etab.description|raw }}</div>
     <div class="stayBooking clear">
         <a class="bt big fushia right goto" href="#stayBooking" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'Chapo_-_Lien-Prix', 'Clic_-_Bouton-Tarifs']);">{{ "semainier.title" | trans }}</a>
     </div>
 
     {% if etab.plan != "" %}
-    <h3>{{ 'fiche.plan_camping' | trans }}</h3>
+    <h3>{{ 'fiche.plan_camping' | trans }}&nbsp;{{ nomEtab }}</h3>
     <div>
         <img src="{{ asset(etab.plan | media('file')) }}" width="616" alt="{{ etab.name }}">
         <img src="{{ asset('images/vacancesdirectes/common/pict/ficheLegendMap.png') }}" alt="{{ "fiche.plan.legende" | trans }}">
