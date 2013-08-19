@@ -48,7 +48,14 @@ class CompteController implements ControllerProviderInterface
             $query            = $this->getDefaultResalysParameters($app, $request);
             $query['display'] = 'customer_area';
 
-            return $app->renderView('Compte/index.twig', array('query' => $query));
+            $view = $app['twig']->render('Compte/index.twig', array('query' => $query));
+
+			$response = new Response($view);
+
+			$date = new \DateTime();
+			$response->setExpires($date);
+
+			return $response;
 
         })->bind('compte_index');
 
@@ -57,7 +64,14 @@ class CompteController implements ControllerProviderInterface
             $query            = $this->getDefaultResalysParameters($app, $request);
             $query['display'] = 'edit_customer_info';
 
-            return $app->renderView('Compte/index.twig', array('query' => $query));
+            $view = $app['twig']->render('Compte/index.twig', array('query' => $query));
+
+			$response = new Response($view);
+
+			$date = new \DateTime();
+			$response->setExpires($date);
+
+			return $response;
 
         })->bind('compte_coordonnees');
 
@@ -67,7 +81,14 @@ class CompteController implements ControllerProviderInterface
             $query['display'] = 'request';
             $query['request_type'] = 'booklet';
 
-            return $app->renderView('Compte/index.twig', array('query' => $query));
+            $view = $app->renderView('Compte/index.twig', array('query' => $query));
+
+			$response = new Response($view);
+
+			$date = new \DateTime();
+			$response->setExpires($date);
+
+			return $response;
 
         })->bind('compte_brochure');
 
@@ -84,8 +105,15 @@ class CompteController implements ControllerProviderInterface
 			
 			if(in_array($request->query->get('gateway_message'),$gateway_messages)) 
 				$query['gateway_message'] = $request->query->get('gateway_message');
-				
-            return $app->renderView('Compte/index.twig', array('query' => $query));
+	
+            $view = $app['twig']->render('Compte/index.twig', array('query' => $query));
+
+			$response = new Response($view);
+
+			$date = new \DateTime();
+			$response->setExpires($date);
+
+			return $response;
 
         })->bind('compte_reservations');
 
@@ -94,7 +122,14 @@ class CompteController implements ControllerProviderInterface
             $query            = $this->getDefaultResalysParameters($app, $request);
             $query['display'] = 'fidelity_point_list';
 
-            return $app->renderView('Compte/index.twig', array('query' => $query));
+            $view = $app->render('Compte/index.twig', array('query' => $query));
+
+			$response = new Response($view);
+
+			$date = new \DateTime();
+			$response->setExpires($date);
+
+			return $response;
 
         })->bind('compte_fidelite');
 
@@ -103,7 +138,14 @@ class CompteController implements ControllerProviderInterface
             $query            = $this->getDefaultResalysParameters($app, $request);
             $query['display'] = 'sponsorship';
 
-            return $app->renderView('Compte/index.twig', array('query' => $query));
+            $view = $app['twig']->render('Compte/index.twig', array('query' => $query));
+
+			$response = new Response($view);
+
+			$date = new \DateTime();
+			$response->setExpires($date);
+
+			return $response;
 
         })->bind('compte_parrainage');
 
