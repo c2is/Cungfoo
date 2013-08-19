@@ -20,8 +20,8 @@
         <link rel="stylesheet" href="{{ asset('css/vacancesdirectes/screen.css?v='~app.config.get('version')) }}" media="screen">
     <!--<![endif]-->
     <!--[if lt IE 9]>
-        <link rel="stylesheet" href="{{ app.request.basePath ~ '/css/vacancesdirectes/screen.css?v='~app.config.get('version') }}" media="screen">
-        <link rel="stylesheet" href="{{ app.request.basePath ~ '/css/vacancesdirectes/ie.css?v='~app.config.get('version') }}">
+        <link rel="stylesheet" href="{{ asset('/css/vacancesdirectes/screen.css?v='~app.config.get('version')) }}" media="screen">
+        <link rel="stylesheet" href="{{ asset('/css/vacancesdirectes/ie.css?v='~app.config.get('version')) }}">
     <![endif]-->
     {% if app.context.get('language') != "fr" %}
     <link rel="stylesheet" href="{{ asset('css/vacancesdirectes/screen_'~app.context.get('language')~'.css?v='~app.config.get('version')) }}" media="screen">
