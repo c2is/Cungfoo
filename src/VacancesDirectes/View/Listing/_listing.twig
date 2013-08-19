@@ -6,7 +6,8 @@
     {% endif %}
     {% for etab in list.element %}
         {% if list.type == 1 %}
-        {% include 'Camping/list_item.twig' %}
+		{% set nomEtab = etab.name %}
+		{% include 'Camping/list_item.twig' %}
         {% else %}
         {{ esi(path('camping_list_item', {camping: etab.model.id})) }}
         {% endif %}

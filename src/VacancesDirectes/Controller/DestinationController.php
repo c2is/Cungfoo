@@ -473,10 +473,9 @@ class DestinationController implements ControllerProviderInterface
             }
 
         }
-
-        $view = $app['twig']->render('Camping/camping.twig', array(
+		$view = $app['twig']->render('Camping/camping.twig', array(
             'etab'           => $camping,
-            'webuser'        => $webuser,
+			'webuser'        => $webuser,
             'hasBaignade'    => count($camping->getEtablissementBaignades()) > 0,
             'searchForm'     => $searchEngine->getView(),
             'historyBack'    => $request->headers->get('referer'),
@@ -533,15 +532,15 @@ class DestinationController implements ControllerProviderInterface
             ->addAscendingOrderByColumn('RAND()')
             ->findOne()
         ;
-
-        $view = $app['twig']->render('Camping/camping.esi.twig', array(
-            'locale'                  => $locale,
-            'etab'                    => $camping,
-            'personnages'             => $personnages,
-            'tags'                    => $tags,
-            'personnageAleatoire'     => $personnageAleatoire,
-            'sitesAVisiter'           => $sitesAVisiter,
-            'events'                  => $events,
+	    $view = $app['twig']->render('Camping/camping.esi.twig', array(
+            'locale'               => $locale,
+            'etab'                 => $camping,
+			'nomEtab'              => str_replace($app->trans('fiche.camping'),'',$camping->getName()),
+            'personnages'          => $personnages,
+            'tags'                 => $tags,
+            'personnageAleatoire'  => $personnageAleatoire,
+            'sitesAVisiter'        => $sitesAVisiter,
+            'events'               => $events,
         ));
 
         return new Response($view, 200, array('Cache-Control' => sprintf('s-maxage=%s, public', $app['config']->get('vd_config')['httpcache']['camping'])));
