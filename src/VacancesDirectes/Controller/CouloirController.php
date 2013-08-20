@@ -8,7 +8,6 @@ use Silex\Application,
 
 use Symfony\Component\HttpFoundation\Request,
     Symfony\Component\HttpKernel\Exception\NotFoundHttpException,
-	Symfony\Component\HttpFoundation\Response,
     Symfony\Component\Routing\Route;
 
 use Cungfoo\Model\EtablissementQuery,
@@ -39,8 +38,8 @@ class CouloirController implements ControllerProviderInterface
 
         if (isset($options['session']) and $options['session'] and $options['session'] != $session)
         {
-           //$request->cookies->remove('session_name');
-           // setcookie("session_name", 'B64_'.base64_encode($options['session']), time() + 900);
+            $request->cookies->remove('session_name');
+            setcookie("session_name", 'B64_'.base64_encode($options['session']), time() + 900);
             $session = $options['session'];
         }
 
@@ -65,27 +64,17 @@ class CouloirController implements ControllerProviderInterface
                 "display"       => 'reservation_content',
                 "actions"       => 'cancelReservation;buildProposalFromKey;chooseProposal',
                 "proposal_key"  => $proposalKey,
-				"session"       => base64_decode(str_replace('B64_', '', $request->cookies->get('session_name'))),
                 "referer"       => $request->headers->get('referer'),
             );
-			
-			//echo base64_decode(str_replace('B64_', '', $request->cookies->get('session_name')));
-            
-			$query = array_merge($query, $request->request->all());
+
+            $query = array_merge($query, $request->request->all());
 
             $query = $this->pushCookieSession($request, $query);
 
-            $view = $app['twig']->render('Couloir\detail-sejour.twig', array(
+            return $app->renderView('Couloir\detail-sejour.twig', array(
                 'query' => $query,
                 "step"  => 1,
             ));
-
-			$response = new Response($view);
-
-			$date = new \DateTime();
-			$response->setExpires($date);
-
-			return $response;
         })
         ->value('proposalKey', null)
         ->bind('couloir_detail_sejour');
@@ -120,17 +109,10 @@ class CouloirController implements ControllerProviderInterface
 
             $query = $this->pushCookieSession($request, $query);
 
-            $view = $app['twig']->render('Couloir\detail-sejour.twig', array(
+            return $app->renderView('Couloir\detail-sejour.twig', array(
                 'query' => $query,
                 "step"  => 2,
             ));
-
-			$response = new Response($view);
-
-			$date = new \DateTime();
-			$response->setExpires($date);
-
-			return $response;
         })
         ->value('proposalKey', null)
         ->bind('couloir_recapitulatif');
@@ -166,17 +148,10 @@ class CouloirController implements ControllerProviderInterface
                 $query['tag_uci'] = $cookies->get('tag_uci');
             }
 
-            $view = $app['twig']->render('Couloir\confirmation.twig', array(
+            return $app->renderView('Couloir\confirmation.twig', array(
                 'query' => $query,
                 "step"  => 4,
             ));
-
-			$response = new Response($view);
-
-			$date = new \DateTime();
-			$response->setExpires($date);
-
-			return $response;
         })
         ->bind('couloir_confirmation');
 

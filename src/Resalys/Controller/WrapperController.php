@@ -9,7 +9,6 @@ use Silex\Application,
 use Symfony\Component\HttpFoundation\Request,
     Symfony\Component\HttpKernel\Exception\NotFoundHttpException,
     Symfony\Component\HttpFoundation\Response,
-	Symfony\Component\HttpFoundation\Cookie,
     Symfony\Component\Routing\Route,
     Symfony\Component\Yaml\Yaml;
 
@@ -32,8 +31,6 @@ class WrapperController implements ControllerProviderInterface
 
         $controllers->match('/wrapper/{specificFiles}', function (Request $request, $specificFiles) use ($app)
         {
-			$response = new Response();
-
             // define default class attributes
             $this->app           = $app;
             $this->request       = $request;
@@ -60,55 +57,22 @@ class WrapperController implements ControllerProviderInterface
 
             $http_response_header = array();
 
-			$iframe = file_get_contents($resalysUri);
+            $iframe = file_get_contents($resalysUri);
 
-			// start replace functions
+            // start replace functions
             $this->replaceC2isLabelFunction($iframe, $app);
             $this->replaceC2isMarker($iframe, $app);
             $this->replaceSpecifics($iframe);
 
-			$response->setContent($iframe);
+            $responseHeader = array('Cache-Control' => sprintf('s-maxage=%s, public', $request->get('maxAge', 0)));
 
-			$response->headers->set('Cache-Control', sprintf('s-maxage=%s, public', $request->get('maxAge', 0)));
-			$date = new \DateTime();
-			$sansCache = array('couloir', 'compte');
-			if(in_array($this->specificFiles,$sansCache)) $response->setExpires($date);
-
-			foreach ($http_response_header as $resalysHeader) {
-				if (strpos($resalysHeader, 'AP-RSL-Front') !== false) {
-                    $response->headers->set('AP-RSL-Front',str_replace('AP-RSL-Front: ', '', $resalysHeader));
-                }
-				
-				if (strpos($resalysHeader, 'Set-Cookie') !== false 
-				 && strpos($resalysHeader, 'X-Cacheable: NO: Server Set-Cookie')) {
-					$arrayHeaderCoookie = explode('; ',trim(str_replace('Set-Cookie: ', '', $resalysHeader)));
-					foreach($arrayHeaderCoookie as $keyHeaderCoookie => $valueHeaderCoookie) {
-						$tmpArray = explode('=',$valueHeaderCoookie,2);
-						if( $tmpArray[0] == 'Domain' || $tmpArray[0] == 'Path' ) {
-							$arrayHeaderCoookie[ $tmpArray[0] ] = $tmpArray[1];
-						}
-						else {
-							$arrayHeaderCoookie['name'] = $tmpArray[0];
-							$arrayHeaderCoookie['value'] = $tmpArray[1];
-						}
-						unset($arrayHeaderCoookie[$keyHeaderCoookie]);
-					}
-					
-					$response->headers->setCookie( new Cookie(
-						$arrayHeaderCoookie['name'], 
-						$arrayHeaderCoookie['value'], 
-						0, // expire (session)
-						$arrayHeaderCoookie['Path'],
-
-						$arrayHeaderCoookie['Domain'],
-						false, // secure
-						false  // httponly
-
-					));	
+            foreach ($http_response_header as $resalysHeader) {
+                if (strpos($resalysHeader, 'AP-RSL-Front') !== false) {
+                    $responseHeader['AP-RSL-Front'] = str_replace('AP-RSL-Front: ', '', $resalysHeader);
                 }
             }
 
-			return $response;
+            return new Response($iframe, 200, $responseHeader);
         })
         ->value('specificFiles', 'iframe')
         ->bind('resalys_wrapper');
