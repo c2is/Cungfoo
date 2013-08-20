@@ -11,7 +11,7 @@ seo.meta.couloir: 'Espace de réservation'
 seo.meta.theme: '%theme%'
 seo.url.prefix: camping
 seo.url.catalogue: catalogue
-seo.url.brochure: demande-brochure
+seo.url.brochure: demande-catalogue
 seo.url.dispo: dispo
 seo.url.couloir.index: couloir-reservation
 seo.url.couloir.detail: detail-sejour
