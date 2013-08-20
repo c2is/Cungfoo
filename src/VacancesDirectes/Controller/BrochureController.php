@@ -28,7 +28,6 @@ class BrochureController implements ControllerProviderInterface{
             "tokens"        => 'ignore_token',
             "actions"       => $request->query->get('actions'),
             "tokens"        => $request->query->get('tokens'),
-            "session"       => $app['session']->get('resalys_user')->session,
         );
 
         $query = array_merge($parameters, $request->request->all());
