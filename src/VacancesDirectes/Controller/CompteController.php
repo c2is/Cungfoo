@@ -79,8 +79,9 @@ class CompteController implements ControllerProviderInterface
             $query              = $this->getDefaultResalysParameters($app, $request);
             $query['display']   = 'existing_reservations';
             $query['homeLink']  = $app['url_generator']->generate('homepage', array(), true);
+			$query['confirmation']  = $app['url_generator']->generate('compte_reservations', array(), true);
 			$query['ogone_accepted_route'] = '/'.$app->trans('seo.url.compte.index').'/'.$app->trans('seo.url.compte.reservations').'/';
-			$query['ogone_back_route'] = '/'.$app->trans('seo.url.compte.index').'/'.$app->trans('seo.url.compte.reservations').'/';
+			$query['ogone_back_route'] 	= '/'.$app->trans('seo.url.compte.index').'/'.$app->trans('seo.url.compte.reservations').'/';
 			
 			if(in_array($request->query->get('gateway_message'),$gateway_messages)) 
 				$query['gateway_message'] = $request->query->get('gateway_message');
