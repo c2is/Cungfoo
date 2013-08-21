@@ -3,7 +3,7 @@
         <h2>{{ "general.idees_week_end" | trans }}</h2>
     </div>
     {% for idee in ideesweekend %}
-        <div class="element clear{% if idee.prix == "" %} noprice{% endif %}{% if loop.last %} last{% endif %}{# TODO linkParent #}">
+        <div class="element clear{% if idee.prix == "" %} noprice{% endif %}{% if loop.last %} last{% endif %} linkParent">
             <div class="left">
                 <img class="view" src="{{ asset(idee.imagePath | media('file')) }}" width="96" alt="" />
             </div>
