@@ -9,7 +9,7 @@
 {% block content %}
 <div class="column" id="DemandeIdentifiant">
     <form action="" method="post" {{ form_enctype(form) }}>
-        <div class="error">{{ form_errors(form) }}</div>
+        {{ form_errors(form) }}
         <fieldset class="societe">
             <legend>Société</legend>
             <div class="field">
@@ -130,7 +130,7 @@
             </div>
         </fieldset>
         <input type="submit" class="bt big fushia" value="Envoyer">
-        {{ form_rest(form) }}
+		<div style="display:none;">{{ form_rest(form) }}</div>
     </form>
 </div>
 {% endblock %}
