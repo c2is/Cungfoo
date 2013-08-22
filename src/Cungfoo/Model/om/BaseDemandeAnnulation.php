@@ -142,6 +142,13 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
     protected $sinistre_suite;
 
     /**
+     * The value for the groupes field.
+     * Note: this column has a database default value of: false
+     * @var        boolean
+     */
+    protected $groupes;
+
+    /**
      * The value for the sinistre_date field.
      * @var        string
      */
@@ -225,6 +232,7 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
      */
     public function applyDefaultValues()
     {
+        $this->groupes = false;
         $this->active = false;
     }
 
@@ -404,6 +412,16 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
         }
 
         return $valueSet[$this->sinistre_suite];
+    }
+
+    /**
+     * Get the [groupes] column value.
+     *
+     * @return boolean
+     */
+    public function getGroupes()
+    {
+        return $this->groupes;
     }
 
     /**
@@ -846,6 +864,35 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
     } // setSinistreSuite()
 
     /**
+     * Sets the value of the [groupes] column.
+     * Non-boolean arguments are converted using the following rules:
+     *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     *
+     * @param boolean|integer|string $v The new value
+     * @return DemandeAnnulation The current object (for fluent API support)
+     */
+    public function setGroupes($v)
+    {
+        if ($v !== null) {
+            if (is_string($v)) {
+                $v = in_array(strtolower($v), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+            } else {
+                $v = (boolean) $v;
+            }
+        }
+
+        if ($this->groupes !== $v) {
+            $this->groupes = $v;
+            $this->modifiedColumns[] = DemandeAnnulationPeer::GROUPES;
+        }
+
+
+        return $this;
+    } // setGroupes()
+
+    /**
      * Set the value of [sinistre_date] column.
      *
      * @param string $v new value
@@ -972,6 +1019,10 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
      */
     public function hasOnlyDefaultValues()
     {
+            if ($this->groupes !== false) {
+                return false;
+            }
+
             if ($this->active !== false) {
                 return false;
             }
@@ -1013,11 +1064,12 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
             $this->camping_montant_verse = ($row[$startcol + 12] !== null) ? (string) $row[$startcol + 12] : null;
             $this->sinistre_nature = ($row[$startcol + 13] !== null) ? (int) $row[$startcol + 13] : null;
             $this->sinistre_suite = ($row[$startcol + 14] !== null) ? (int) $row[$startcol + 14] : null;
-            $this->sinistre_date = ($row[$startcol + 15] !== null) ? (string) $row[$startcol + 15] : null;
-            $this->sinistre_resume = ($row[$startcol + 16] !== null) ? (string) $row[$startcol + 16] : null;
-            $this->created_at = ($row[$startcol + 17] !== null) ? (string) $row[$startcol + 17] : null;
-            $this->updated_at = ($row[$startcol + 18] !== null) ? (string) $row[$startcol + 18] : null;
-            $this->active = ($row[$startcol + 19] !== null) ? (boolean) $row[$startcol + 19] : null;
+            $this->groupes = ($row[$startcol + 15] !== null) ? (boolean) $row[$startcol + 15] : null;
+            $this->sinistre_date = ($row[$startcol + 16] !== null) ? (string) $row[$startcol + 16] : null;
+            $this->sinistre_resume = ($row[$startcol + 17] !== null) ? (string) $row[$startcol + 17] : null;
+            $this->created_at = ($row[$startcol + 18] !== null) ? (string) $row[$startcol + 18] : null;
+            $this->updated_at = ($row[$startcol + 19] !== null) ? (string) $row[$startcol + 19] : null;
+            $this->active = ($row[$startcol + 20] !== null) ? (boolean) $row[$startcol + 20] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -1026,7 +1078,7 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
                 $this->ensureConsistency();
             }
             $this->postHydrate($row, $startcol, $rehydrate);
-            return $startcol + 20; // 20 = DemandeAnnulationPeer::NUM_HYDRATE_COLUMNS.
+            return $startcol + 21; // 21 = DemandeAnnulationPeer::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException("Error populating DemandeAnnulation object", $e);
@@ -1329,6 +1381,9 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
         if ($this->isColumnModified(DemandeAnnulationPeer::SINISTRE_SUITE)) {
             $modifiedColumns[':p' . $index++]  = '`sinistre_suite`';
         }
+        if ($this->isColumnModified(DemandeAnnulationPeer::GROUPES)) {
+            $modifiedColumns[':p' . $index++]  = '`groupes`';
+        }
         if ($this->isColumnModified(DemandeAnnulationPeer::SINISTRE_DATE)) {
             $modifiedColumns[':p' . $index++]  = '`sinistre_date`';
         }
@@ -1399,6 +1454,9 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
                         break;
                     case '`sinistre_suite`':
                         $stmt->bindValue($identifier, $this->sinistre_suite, PDO::PARAM_INT);
+                        break;
+                    case '`groupes`':
+                        $stmt->bindValue($identifier, (int) $this->groupes, PDO::PARAM_INT);
                         break;
                     case '`sinistre_date`':
                         $stmt->bindValue($identifier, $this->sinistre_date, PDO::PARAM_STR);
@@ -1615,18 +1673,21 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
                 return $this->getSinistreSuite();
                 break;
             case 15:
-                return $this->getSinistreDate();
+                return $this->getGroupes();
                 break;
             case 16:
-                return $this->getSinistreResume();
+                return $this->getSinistreDate();
                 break;
             case 17:
-                return $this->getCreatedAt();
+                return $this->getSinistreResume();
                 break;
             case 18:
-                return $this->getUpdatedAt();
+                return $this->getCreatedAt();
                 break;
             case 19:
+                return $this->getUpdatedAt();
+                break;
+            case 20:
                 return $this->getActive();
                 break;
             default:
@@ -1673,11 +1734,12 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
             $keys[12] => $this->getCampingMontantVerse(),
             $keys[13] => $this->getSinistreNature(),
             $keys[14] => $this->getSinistreSuite(),
-            $keys[15] => $this->getSinistreDate(),
-            $keys[16] => $this->getSinistreResume(),
-            $keys[17] => $this->getCreatedAt(),
-            $keys[18] => $this->getUpdatedAt(),
-            $keys[19] => $this->getActive(),
+            $keys[15] => $this->getGroupes(),
+            $keys[16] => $this->getSinistreDate(),
+            $keys[17] => $this->getSinistreResume(),
+            $keys[18] => $this->getCreatedAt(),
+            $keys[19] => $this->getUpdatedAt(),
+            $keys[20] => $this->getActive(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->aEtablissement) {
@@ -1774,18 +1836,21 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
                 $this->setSinistreSuite($value);
                 break;
             case 15:
-                $this->setSinistreDate($value);
+                $this->setGroupes($value);
                 break;
             case 16:
-                $this->setSinistreResume($value);
+                $this->setSinistreDate($value);
                 break;
             case 17:
-                $this->setCreatedAt($value);
+                $this->setSinistreResume($value);
                 break;
             case 18:
-                $this->setUpdatedAt($value);
+                $this->setCreatedAt($value);
                 break;
             case 19:
+                $this->setUpdatedAt($value);
+                break;
+            case 20:
                 $this->setActive($value);
                 break;
         } // switch()
@@ -1827,11 +1892,12 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
         if (array_key_exists($keys[12], $arr)) $this->setCampingMontantVerse($arr[$keys[12]]);
         if (array_key_exists($keys[13], $arr)) $this->setSinistreNature($arr[$keys[13]]);
         if (array_key_exists($keys[14], $arr)) $this->setSinistreSuite($arr[$keys[14]]);
-        if (array_key_exists($keys[15], $arr)) $this->setSinistreDate($arr[$keys[15]]);
-        if (array_key_exists($keys[16], $arr)) $this->setSinistreResume($arr[$keys[16]]);
-        if (array_key_exists($keys[17], $arr)) $this->setCreatedAt($arr[$keys[17]]);
-        if (array_key_exists($keys[18], $arr)) $this->setUpdatedAt($arr[$keys[18]]);
-        if (array_key_exists($keys[19], $arr)) $this->setActive($arr[$keys[19]]);
+        if (array_key_exists($keys[15], $arr)) $this->setGroupes($arr[$keys[15]]);
+        if (array_key_exists($keys[16], $arr)) $this->setSinistreDate($arr[$keys[16]]);
+        if (array_key_exists($keys[17], $arr)) $this->setSinistreResume($arr[$keys[17]]);
+        if (array_key_exists($keys[18], $arr)) $this->setCreatedAt($arr[$keys[18]]);
+        if (array_key_exists($keys[19], $arr)) $this->setUpdatedAt($arr[$keys[19]]);
+        if (array_key_exists($keys[20], $arr)) $this->setActive($arr[$keys[20]]);
     }
 
     /**
@@ -1858,6 +1924,7 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
         if ($this->isColumnModified(DemandeAnnulationPeer::CAMPING_MONTANT_VERSE)) $criteria->add(DemandeAnnulationPeer::CAMPING_MONTANT_VERSE, $this->camping_montant_verse);
         if ($this->isColumnModified(DemandeAnnulationPeer::SINISTRE_NATURE)) $criteria->add(DemandeAnnulationPeer::SINISTRE_NATURE, $this->sinistre_nature);
         if ($this->isColumnModified(DemandeAnnulationPeer::SINISTRE_SUITE)) $criteria->add(DemandeAnnulationPeer::SINISTRE_SUITE, $this->sinistre_suite);
+        if ($this->isColumnModified(DemandeAnnulationPeer::GROUPES)) $criteria->add(DemandeAnnulationPeer::GROUPES, $this->groupes);
         if ($this->isColumnModified(DemandeAnnulationPeer::SINISTRE_DATE)) $criteria->add(DemandeAnnulationPeer::SINISTRE_DATE, $this->sinistre_date);
         if ($this->isColumnModified(DemandeAnnulationPeer::SINISTRE_RESUME)) $criteria->add(DemandeAnnulationPeer::SINISTRE_RESUME, $this->sinistre_resume);
         if ($this->isColumnModified(DemandeAnnulationPeer::CREATED_AT)) $criteria->add(DemandeAnnulationPeer::CREATED_AT, $this->created_at);
@@ -1940,6 +2007,7 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
         $copyObj->setCampingMontantVerse($this->getCampingMontantVerse());
         $copyObj->setSinistreNature($this->getSinistreNature());
         $copyObj->setSinistreSuite($this->getSinistreSuite());
+        $copyObj->setGroupes($this->getGroupes());
         $copyObj->setSinistreDate($this->getSinistreDate());
         $copyObj->setSinistreResume($this->getSinistreResume());
         $copyObj->setCreatedAt($this->getCreatedAt());
@@ -2316,6 +2384,7 @@ abstract class BaseDemandeAnnulation extends BaseObject implements Persistent
         $this->camping_montant_verse = null;
         $this->sinistre_nature = null;
         $this->sinistre_suite = null;
+        $this->groupes = null;
         $this->sinistre_date = null;
         $this->sinistre_resume = null;
         $this->created_at = null;

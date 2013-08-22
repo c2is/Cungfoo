@@ -36,11 +36,11 @@ class AnnulationController implements ControllerProviderInterface
             if ('POST' == $request->getMethod() && $request->request->has('annulationForm'))
             {
                 $form->bind($request);
-
                 if ($form->isValid()) {
                     $annulationData->setActive(true);
                     $annulationData->saveFromCrud($form);
-
+				    if($annulationData->getGroupes()) $groupes = 'oui';
+					else $groupes = 'non';
                     $body = <<<eof
 Nom de l'assuré : {$annulationData->getAssureNom()}
 Prénom de l'assuré : {$annulationData->getAssurePrenom()}
@@ -54,6 +54,7 @@ Montant du séjour : {$annulationData->getCampingMontantSejour()}
 Montant des sommes versées : {$annulationData->getCampingMontantVerse()}
 Nom du camping : {$annulationData->getEtablissement()->getName()}
 N° de réservation du camping : {$annulationData->getCampingNumResa()}
+Demande d'annulation partiel pour les groupes : {$groupes}
 Nature du sinistre : {$app->trans($annulationData->getSinistreNature())}
 Suite à : {$app->trans($annulationData->getSinistreSuite())}
 Date du sinistre : {$annulationData->getSinistreDate()}

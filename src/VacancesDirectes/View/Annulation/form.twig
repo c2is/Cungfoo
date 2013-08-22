@@ -65,6 +65,10 @@
                         <td class="label">{{ form_label(annulationForm.sinistre_suite) }}</td>
                         <td class="field" colspan="3">{{ form_widget(annulationForm.sinistre_suite) }}</td>
                     </tr>
+					<tr>
+						<td class="label">{{general.groupe}}</td>
+						<td class="checkbox" colspan="4">{{ form_widget(annulationForm.groupes) }}{{ form_label(annulationForm.groupes) }}</td>
+					</tr>
                     <tr>
                         <td class="label">{{ form_label(annulationForm.sinistre_date) }}</td>
                         <td class="field">{{ form_widget(annulationForm.sinistre_date, { 'attr': {'class': 'datepicker'} }) }}</td>
