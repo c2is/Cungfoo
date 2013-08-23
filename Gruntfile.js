@@ -45,6 +45,7 @@ module.exports = function(grunt) {
           paths: ["web/css/vacancesdirectes"], compress: true, yuicompress: true
         },
         files: {
+		  'web/css/vacancesdirectes/couloir_de.css': 'web/css/vacancesdirectes/couloir_de.less',
           'web/css/vacancesdirectes/couloir.css': 'web/css/vacancesdirectes/couloir.less',
           'web/css/vacancesdirectes/payment.css': 'web/css/vacancesdirectes/payment.less',
           'web/css/vacancesdirectes/compte.css': 'web/css/vacancesdirectes/compte.less',
