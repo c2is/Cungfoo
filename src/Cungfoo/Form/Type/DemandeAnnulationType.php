@@ -203,6 +203,10 @@ class DemandeAnnulationType extends BaseDemandeAnnulationType
                 )
             )
         );
+		$builder->add('groupes', 'checkbox', array(
+                'label'         => 'demande_annulation.groupes.label'
+            )
+        );
         $builder->add('sinistre_date', 'date', array(
                 'label'             => 'demande_annulation.sinistre_date.label',
                 'widget'            => 'single_text',

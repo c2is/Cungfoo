@@ -1107,6 +1107,7 @@
         <column name="camping_montant_verse" type="varchar" required="true"/>
         <column name="sinistre_nature" type="enum" valueSet="demande_annulation.sinistre_nature.annulation, demande_annulation.sinistre_nature.interruption" required="true"/>
         <column name="sinistre_suite" type="enum" valueSet="demande_annulation.sinistre_suite.maladie, demande_annulation.sinistre_suite.accident, demande_annulation.sinistre_suite.autre" required="true"/>
+		<column name="groupes" type="boolean" required="false" defaultValue="0" />
         <column name="sinistre_date" type="varchar" required="true"/>
         <column name="sinistre_resume" type="longvarchar" required="true"/>
         <behavior name="timestampable" />

@@ -66,6 +66,7 @@ class DemandeAnnulationTableMap extends TableMap
   1 => 'demande_annulation.sinistre_suite.accident',
   2 => 'demande_annulation.sinistre_suite.autre',
 ));
+        $this->addColumn('groupes', 'Groupes', 'BOOLEAN', false, 1, false);
         $this->addColumn('sinistre_date', 'SinistreDate', 'VARCHAR', true, 255, null);
         $this->addColumn('sinistre_resume', 'SinistreResume', 'LONGVARCHAR', true, null, null);
         $this->addColumn('created_at', 'CreatedAt', 'TIMESTAMP', false, null, null);

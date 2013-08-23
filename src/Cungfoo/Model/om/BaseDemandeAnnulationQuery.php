@@ -38,6 +38,7 @@ use Cungfoo\Model\Etablissement;
  * @method DemandeAnnulationQuery orderByCampingMontantVerse($order = Criteria::ASC) Order by the camping_montant_verse column
  * @method DemandeAnnulationQuery orderBySinistreNature($order = Criteria::ASC) Order by the sinistre_nature column
  * @method DemandeAnnulationQuery orderBySinistreSuite($order = Criteria::ASC) Order by the sinistre_suite column
+ * @method DemandeAnnulationQuery orderByGroupes($order = Criteria::ASC) Order by the groupes column
  * @method DemandeAnnulationQuery orderBySinistreDate($order = Criteria::ASC) Order by the sinistre_date column
  * @method DemandeAnnulationQuery orderBySinistreResume($order = Criteria::ASC) Order by the sinistre_resume column
  * @method DemandeAnnulationQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
@@ -59,6 +60,7 @@ use Cungfoo\Model\Etablissement;
  * @method DemandeAnnulationQuery groupByCampingMontantVerse() Group by the camping_montant_verse column
  * @method DemandeAnnulationQuery groupBySinistreNature() Group by the sinistre_nature column
  * @method DemandeAnnulationQuery groupBySinistreSuite() Group by the sinistre_suite column
+ * @method DemandeAnnulationQuery groupByGroupes() Group by the groupes column
  * @method DemandeAnnulationQuery groupBySinistreDate() Group by the sinistre_date column
  * @method DemandeAnnulationQuery groupBySinistreResume() Group by the sinistre_resume column
  * @method DemandeAnnulationQuery groupByCreatedAt() Group by the created_at column
@@ -94,6 +96,7 @@ use Cungfoo\Model\Etablissement;
  * @method DemandeAnnulation findOneByCampingMontantVerse(string $camping_montant_verse) Return the first DemandeAnnulation filtered by the camping_montant_verse column
  * @method DemandeAnnulation findOneBySinistreNature(int $sinistre_nature) Return the first DemandeAnnulation filtered by the sinistre_nature column
  * @method DemandeAnnulation findOneBySinistreSuite(int $sinistre_suite) Return the first DemandeAnnulation filtered by the sinistre_suite column
+ * @method DemandeAnnulation findOneByGroupes(boolean $groupes) Return the first DemandeAnnulation filtered by the groupes column
  * @method DemandeAnnulation findOneBySinistreDate(string $sinistre_date) Return the first DemandeAnnulation filtered by the sinistre_date column
  * @method DemandeAnnulation findOneBySinistreResume(string $sinistre_resume) Return the first DemandeAnnulation filtered by the sinistre_resume column
  * @method DemandeAnnulation findOneByCreatedAt(string $created_at) Return the first DemandeAnnulation filtered by the created_at column
@@ -115,6 +118,7 @@ use Cungfoo\Model\Etablissement;
  * @method array findByCampingMontantVerse(string $camping_montant_verse) Return DemandeAnnulation objects filtered by the camping_montant_verse column
  * @method array findBySinistreNature(int $sinistre_nature) Return DemandeAnnulation objects filtered by the sinistre_nature column
  * @method array findBySinistreSuite(int $sinistre_suite) Return DemandeAnnulation objects filtered by the sinistre_suite column
+ * @method array findByGroupes(boolean $groupes) Return DemandeAnnulation objects filtered by the groupes column
  * @method array findBySinistreDate(string $sinistre_date) Return DemandeAnnulation objects filtered by the sinistre_date column
  * @method array findBySinistreResume(string $sinistre_resume) Return DemandeAnnulation objects filtered by the sinistre_resume column
  * @method array findByCreatedAt(string $created_at) Return DemandeAnnulation objects filtered by the created_at column
@@ -223,7 +227,7 @@ abstract class BaseDemandeAnnulationQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `assure_nom`, `assure_prenom`, `assure_adresse`, `assure_code_postal`, `assure_ville`, `assure_pays`, `assure_mail`, `assure_telephone`, `camping_id`, `camping_num_resa`, `camping_montant_sejour`, `camping_montant_verse`, `sinistre_nature`, `sinistre_suite`, `sinistre_date`, `sinistre_resume`, `created_at`, `updated_at`, `active` FROM `demande_annulation` WHERE `id` = :p0';
+        $sql = 'SELECT `id`, `assure_nom`, `assure_prenom`, `assure_adresse`, `assure_code_postal`, `assure_ville`, `assure_pays`, `assure_mail`, `assure_telephone`, `camping_id`, `camping_num_resa`, `camping_montant_sejour`, `camping_montant_verse`, `sinistre_nature`, `sinistre_suite`, `groupes`, `sinistre_date`, `sinistre_resume`, `created_at`, `updated_at`, `active` FROM `demande_annulation` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -767,6 +771,33 @@ abstract class BaseDemandeAnnulationQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(DemandeAnnulationPeer::SINISTRE_SUITE, $sinistreSuite, $comparison);
+    }
+
+    /**
+     * Filter the query on the groupes column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByGroupes(true); // WHERE groupes = true
+     * $query->filterByGroupes('yes'); // WHERE groupes = true
+     * </code>
+     *
+     * @param     boolean|string $groupes The value to use as filter.
+     *              Non-boolean arguments are converted using the following rules:
+     *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     *              Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return DemandeAnnulationQuery The current query, for fluid interface
+     */
+    public function filterByGroupes($groupes = null, $comparison = null)
+    {
+        if (is_string($groupes)) {
+            $groupes = in_array(strtolower($groupes), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+        }
+
+        return $this->addUsingAlias(DemandeAnnulationPeer::GROUPES, $groupes, $comparison);
     }
 
     /**
