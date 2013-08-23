@@ -457,6 +457,9 @@ class DestinationController implements ControllerProviderInterface
 		if (in_array($periodType, array('SS7', 'SS14', 'SS21', 'MM7', 'MM14', 'MS10', 'SM11', 'MS3', 'SM4'))) {
 			$semainierQuery['period_type'] = $periodType;
 		}
+		else { 
+			$semainierQuery['period_type'] = '';
+		}
 		
         $lastProposal = $app['session']->get('last_proposal');
         if ($lastProposal) {

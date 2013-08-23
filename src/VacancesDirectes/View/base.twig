@@ -182,5 +182,28 @@
 	{% endif %}
     <!-- #1984 -->
     <img src="http://ads.bluelithium.com/pixel?id=2397600&t=2" width="1" height="1" />
+	
+	<!-- Tag de retargeting -->
+	<script language="javascript" type="text/javascript">
+	var __adUrl=document.location.protocol+'//atout.email-match.com/emafunc.js';
+	try
+	{
+	 scriptTag=document.createElement("script");
+	 scriptTag.type="text/javascript";
+	 scriptTag.async=true;
+	 scriptTag.src=__adUrl;
+	 var headTag= document.getElementsByTagName("head")[0];
+	 headTag.insertBefore(scriptTag,headTag.firstChild);
+	} catch(e)
+	{
+	 document.write('<sc'+'ript language="javascript" async="" type="text/javascript" src="'+__adUrl+'"></sc'+'ript>');
+	}
+	function w_emasend()
+	{ if (typeof(emasend)!='undefined'){emasend();} else 
+	{setTimeout('w_emasend()',200);} }
+	var ema_id_site=737;
+	w_emasend();
+	</script>
+
 </body>
 </html>
