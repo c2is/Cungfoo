@@ -234,6 +234,7 @@ eof
 		$pageAvecCssSpecifique = array('couloir');
 		if($app['context']->get('language') == 'de' && in_array($this->specificFiles,$pageAvecCssSpecifique))
 			$iframe = str_replace('{_c2is.stylesheet_de}', $this->getStylesheetTag(sprintf('css/vacancesdirectes/%s_de.css', $this->specificFiles), "gte IE 9"), $iframe);
+		else $iframe= str_replace('{_c2is.stylesheet_de}','', $iframe);
 		
         $iframe = str_replace(array(
             '{_c2is.uri}',
