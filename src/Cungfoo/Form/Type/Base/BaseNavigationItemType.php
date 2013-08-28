@@ -222,7 +222,7 @@ class BaseNavigationItemType extends AppAwareType
             'i18n_class' => 'Cungfoo\Model\NavigationItemI18n',
             'label' => 'navigation_itemI18ns',
             'required' => false,
-            'languages' => array('fr', 'de'),
+            'languages' => array('fr', 'de', 'nl'),
             'columns' => array(
                 'title' => array_merge(array('type' => $this->getTitleType()), $this->getTitleOptions()),
                 'path' => array_merge(array('type' => $this->getPathType()), $this->getPathOptions()),

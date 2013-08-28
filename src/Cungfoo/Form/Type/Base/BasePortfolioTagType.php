@@ -219,7 +219,7 @@ class BasePortfolioTagType extends AppAwareType
             'i18n_class' => 'Cungfoo\Model\PortfolioTagI18n',
             'label' => 'portfolio_tagI18ns',
             'required' => false,
-            'languages' => array('fr', 'de'),
+            'languages' => array('fr', 'de', 'nl'),
             'columns' => array(
                 'name' => array_merge(array('type' => $this->getNameType()), $this->getNameOptions()),
                 'slug' => array_merge(array('type' => $this->getSlugType()), $this->getSlugOptions()),

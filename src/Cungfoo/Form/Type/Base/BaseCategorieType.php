@@ -182,7 +182,7 @@ class BaseCategorieType extends AppAwareType
             'i18n_class' => 'Cungfoo\Model\CategorieI18n',
             'label' => 'categorieI18ns',
             'required' => false,
-            'languages' => array('fr', 'de'),
+            'languages' => array('fr', 'de', 'nl'),
             'columns' => array(
                 'name' => array_merge(array('type' => $this->getNameType()), $this->getNameOptions()),
                 'seo_title' => array_merge(array('type' => $this->getSeoTitleType()), $this->getSeoTitleOptions()),

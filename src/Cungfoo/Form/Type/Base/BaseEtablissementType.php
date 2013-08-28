@@ -782,7 +782,7 @@ class BaseEtablissementType extends AppAwareType
             'i18n_class' => 'Cungfoo\Model\EtablissementI18n',
             'label' => 'etablissementI18ns',
             'required' => false,
-            'languages' => array('fr', 'de'),
+            'languages' => array('fr', 'de', 'nl'),
             'columns' => array(
                 'country' => array_merge(array('type' => $this->getCountryType()), $this->getCountryOptions()),
                 'ouverture_reception' => array_merge(array('type' => $this->getOuvertureReceptionType()), $this->getOuvertureReceptionOptions()),

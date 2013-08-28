@@ -136,7 +136,7 @@ class BaseNavigationType extends AppAwareType
             'i18n_class' => 'Cungfoo\Model\NavigationI18n',
             'label' => 'navigationI18ns',
             'required' => false,
-            'languages' => array('fr', 'de'),
+            'languages' => array('fr', 'de', 'nl'),
             'columns' => array(
                 'seo_title' => array_merge(array('type' => $this->getSeoTitleType()), $this->getSeoTitleOptions()),
                 'seo_description' => array_merge(array('type' => $this->getSeoDescriptionType()), $this->getSeoDescriptionOptions()),

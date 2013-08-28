@@ -238,7 +238,7 @@ class BaseThematiqueType extends AppAwareType
             'i18n_class' => 'Cungfoo\Model\ThematiqueI18n',
             'label' => 'thematiqueI18ns',
             'required' => false,
-            'languages' => array('fr', 'de'),
+            'languages' => array('fr', 'de', 'nl'),
             'columns' => array(
                 'name' => array_merge(array('type' => $this->getNameType()), $this->getNameOptions()),
                 'description' => array_merge(array('type' => $this->getDescriptionType()), $this->getDescriptionOptions()),

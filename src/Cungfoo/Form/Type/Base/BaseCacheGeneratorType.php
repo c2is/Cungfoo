@@ -195,7 +195,7 @@ class BaseCacheGeneratorType extends AppAwareType
             'i18n_class' => 'Cungfoo\Model\CacheGeneratorI18n',
             'label' => 'cache_generatorI18ns',
             'required' => false,
-            'languages' => array('fr', 'de'),
+            'languages' => array('fr', 'de', 'nl'),
             'columns' => array(
                 'seo_title' => array_merge(array('type' => $this->getSeoTitleType()), $this->getSeoTitleOptions()),
                 'seo_description' => array_merge(array('type' => $this->getSeoDescriptionType()), $this->getSeoDescriptionOptions()),

@@ -540,7 +540,7 @@ class BaseBonPlanType extends AppAwareType
             'i18n_class' => 'Cungfoo\Model\BonPlanI18n',
             'label' => 'bon_planI18ns',
             'required' => false,
-            'languages' => array('fr', 'de'),
+            'languages' => array('fr', 'de', 'nl'),
             'columns' => array(
                 'name' => array_merge(array('type' => $this->getNameType()), $this->getNameOptions()),
                 'slug' => array_merge(array('type' => $this->getSlugType()), $this->getSlugOptions()),

@@ -475,7 +475,7 @@ class BaseEventType extends AppAwareType
             'i18n_class' => 'Cungfoo\Model\EventI18n',
             'label' => 'eventI18ns',
             'required' => false,
-            'languages' => array('fr', 'de'),
+            'languages' => array('fr', 'de', 'nl'),
             'columns' => array(
                 'name' => array_merge(array('type' => $this->getNameType()), $this->getNameOptions()),
                 'str_date' => array_merge(array('type' => $this->getStrDateType()), $this->getStrDateOptions()),

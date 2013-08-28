@@ -267,7 +267,7 @@ class BaseDepartementType extends AppAwareType
             'i18n_class' => 'Cungfoo\Model\DepartementI18n',
             'label' => 'departementI18ns',
             'required' => false,
-            'languages' => array('fr', 'de'),
+            'languages' => array('fr', 'de', 'nl'),
             'columns' => array(
                 'slug' => array_merge(array('type' => $this->getSlugType()), $this->getSlugOptions()),
                 'name' => array_merge(array('type' => $this->getNameType()), $this->getNameOptions()),

@@ -242,7 +242,7 @@ class BaseMiseEnAvantType extends AppAwareType
             'i18n_class' => 'Cungfoo\Model\MiseEnAvantI18n',
             'label' => 'mise_en_avantI18ns',
             'required' => false,
-            'languages' => array('fr', 'de'),
+            'languages' => array('fr', 'de', 'nl'),
             'columns' => array(
                 'titre' => array_merge(array('type' => $this->getTitreType()), $this->getTitreOptions()),
                 'accroche' => array_merge(array('type' => $this->getAccrocheType()), $this->getAccrocheOptions()),

@@ -162,7 +162,7 @@ class BaseMetadataType extends AppAwareType
             'i18n_class' => 'Cungfoo\Model\MetadataI18n',
             'label' => 'metadataI18ns',
             'required' => false,
-            'languages' => array('fr', 'de'),
+            'languages' => array('fr', 'de', 'nl'),
             'columns' => array(
                 'title' => array_merge(array('type' => $this->getTitleType()), $this->getTitleOptions()),
                 'subtitle' => array_merge(array('type' => $this->getSubtitleType()), $this->getSubtitleOptions()),

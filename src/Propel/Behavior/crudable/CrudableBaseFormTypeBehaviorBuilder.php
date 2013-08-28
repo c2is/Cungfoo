@@ -302,7 +302,7 @@ class {$this->getClassname()} extends AppAwareType
             'i18n_class' => '{$i18nTableClassname}',
             'label' => '{$i18nTableName}',
             'required' => false,
-            'languages' => array('fr', 'de'),
+            'languages' => array('fr', 'de', 'nl'),
             'columns' => array(\n";
 
             foreach ($tableI18nFields as $fieldname => $field) {

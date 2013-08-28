@@ -186,7 +186,7 @@ class BaseVosVacancesType extends AppAwareType
             'i18n_class' => 'Cungfoo\Model\VosVacancesI18n',
             'label' => 'vos_vacancesI18ns',
             'required' => false,
-            'languages' => array('fr', 'de'),
+            'languages' => array('fr', 'de', 'nl'),
             'columns' => array(
                 'titre' => array_merge(array('type' => $this->getTitreType()), $this->getTitreOptions()),
                 'description' => array_merge(array('type' => $this->getDescriptionType()), $this->getDescriptionOptions()),

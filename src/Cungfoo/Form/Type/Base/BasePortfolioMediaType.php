@@ -264,7 +264,7 @@ class BasePortfolioMediaType extends AppAwareType
             'i18n_class' => 'Cungfoo\Model\PortfolioMediaI18n',
             'label' => 'portfolio_mediaI18ns',
             'required' => false,
-            'languages' => array('fr', 'de'),
+            'languages' => array('fr', 'de', 'nl'),
             'columns' => array(
                 'title' => array_merge(array('type' => $this->getTitleType()), $this->getTitleOptions()),
                 'description' => array_merge(array('type' => $this->getDescriptionType()), $this->getDescriptionOptions()),

@@ -282,7 +282,7 @@ class BaseDestinationType extends AppAwareType
             'i18n_class' => 'Cungfoo\Model\DestinationI18n',
             'label' => 'destinationI18ns',
             'required' => false,
-            'languages' => array('fr', 'de'),
+            'languages' => array('fr', 'de', 'nl'),
             'columns' => array(
                 'slug' => array_merge(array('type' => $this->getSlugType()), $this->getSlugOptions()),
                 'name' => array_merge(array('type' => $this->getNameType()), $this->getNameOptions()),

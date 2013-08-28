@@ -268,7 +268,7 @@ class BaseActiviteType extends AppAwareType
             'i18n_class' => 'Cungfoo\Model\ActiviteI18n',
             'label' => 'activiteI18ns',
             'required' => false,
-            'languages' => array('fr', 'de'),
+            'languages' => array('fr', 'de', 'nl'),
             'columns' => array(
                 'name' => array_merge(array('type' => $this->getNameType()), $this->getNameOptions()),
                 'description' => array_merge(array('type' => $this->getDescriptionType()), $this->getDescriptionOptions()),

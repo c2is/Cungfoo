@@ -201,7 +201,7 @@ class BaseIdeeWeekendType extends AppAwareType
             'i18n_class' => 'Cungfoo\Model\IdeeWeekendI18n',
             'label' => 'idee_weekendI18ns',
             'required' => false,
-            'languages' => array('fr', 'de'),
+            'languages' => array('fr', 'de', 'nl'),
             'columns' => array(
                 'titre' => array_merge(array('type' => $this->getTitreType()), $this->getTitreOptions()),
                 'lien' => array_merge(array('type' => $this->getLienType()), $this->getLienOptions()),

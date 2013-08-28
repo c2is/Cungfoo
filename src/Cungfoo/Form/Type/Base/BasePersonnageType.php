@@ -227,7 +227,7 @@ class BasePersonnageType extends AppAwareType
             'i18n_class' => 'Cungfoo\Model\PersonnageI18n',
             'label' => 'personnageI18ns',
             'required' => false,
-            'languages' => array('fr', 'de'),
+            'languages' => array('fr', 'de', 'nl'),
             'columns' => array(
                 'prenom' => array_merge(array('type' => $this->getPrenomType()), $this->getPrenomOptions()),
                 'seo_title' => array_merge(array('type' => $this->getSeoTitleType()), $this->getSeoTitleOptions()),

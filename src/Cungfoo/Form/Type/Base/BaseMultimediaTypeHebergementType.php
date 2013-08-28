@@ -194,7 +194,7 @@ class BaseMultimediaTypeHebergementType extends AppAwareType
             'i18n_class' => 'Cungfoo\Model\MultimediaTypeHebergementI18n',
             'label' => 'multimedia_type_hebergementI18ns',
             'required' => false,
-            'languages' => array('fr', 'de'),
+            'languages' => array('fr', 'de', 'nl'),
             'columns' => array(
                 'titre' => array_merge(array('type' => $this->getTitreType()), $this->getTitreOptions()),
                 'seo_title' => array_merge(array('type' => $this->getSeoTitleType()), $this->getSeoTitleOptions()),

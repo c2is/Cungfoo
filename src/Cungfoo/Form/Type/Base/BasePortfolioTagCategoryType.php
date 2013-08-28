@@ -147,7 +147,7 @@ class BasePortfolioTagCategoryType extends AppAwareType
             'i18n_class' => 'Cungfoo\Model\PortfolioTagCategoryI18n',
             'label' => 'portfolio_tag_categoryI18ns',
             'required' => false,
-            'languages' => array('fr', 'de'),
+            'languages' => array('fr', 'de', 'nl'),
             'columns' => array(
                 'seo_title' => array_merge(array('type' => $this->getSeoTitleType()), $this->getSeoTitleOptions()),
                 'seo_description' => array_merge(array('type' => $this->getSeoDescriptionType()), $this->getSeoDescriptionOptions()),
