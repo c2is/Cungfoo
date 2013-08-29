@@ -391,6 +391,7 @@ compte.placeholder.name: Benutzername
 compte.placeholder.password: Passwort
 compte.login.error: "Die von Ihnen eingegebenen Login-Informationen sind nicht korrekt.\nVersuchen Sie es bitte noch einmal (vergewissern Sie sich, dass die Umschalttaste nicht aktiviert ist)."
 general.a_partir_de: ab
+general.prix_des : ab
 general.meilleur_prix: 'Unser bester Preis'
 general.jouer: Spielen
 general.en_savoir_plus: 'Mehr erfahren'

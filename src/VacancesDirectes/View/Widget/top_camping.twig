@@ -4,7 +4,7 @@
     </div>
     {% if topCampings | length %}
     {% for camping in topCampings %}
-        {% if loop.index <= 3 %}
+        {% if loop.index <= 5 %}
         {% set campingPath = url('destination_camping', {'pays': camping.etablissement.pays.slug, 'region': camping.etablissement.region.slug, 'ville': camping.etablissement.ville.slug, 'camping': camping.etablissement.slug }) %}
         <div class="element clear linkParent">
             <div class="left">
@@ -14,19 +14,19 @@
             <div class="details left">
                 <span class="title">{{ camping.etablissement.name }} {{ camping.etablissement.categorie.stars }}</span>
                 <span class="region">{{ camping.etablissement.ville.region }}</span>
-                {#<span class="condition">{{ camping.etablissement.minimumPriceLabel }}</span>#}
             </div>
-            <a{% if camping.etablissement.minimumPrice == 0 %} style="display: none"{% endif %} href="{{ campingPath }}" class="stain fushia cover linkBlock">
-                    <span>
-                        {{ "general.a_partir_de" | trans }}<br />
-                        <span class="price linkBlock">{{ camping.etablissement.minimumPrice | number_format(0,'','') }}<span class="fine">&nbsp;</span>€</span>
-                        {{ "general.la_semaine" | trans }}
-                    </span>
-            </a>
+			<div class="prix left">
+				{{ "general.prix_des" | trans }}
+				<span class="price linkBlock">{{ camping.etablissement.minimumPrice | number_format(0,'','') }}<span class="fine">&nbsp;</span>€*</span>
+				
+			</div>
+			<a href="{{ campingPath }}" id="savoirPlus" class=" linkBlock">Reserver</a>
         </div>
         {% endif %}
     {% endfor %}
     {% endif %}
-
-    <a href="{{ path('top_campings') }}" class="bt link right">{{ "home.topcamping.link" | trans  ({'%number%': topCampings|length }) }}</a>
+	<div id="botTopCamp">
+		<div class="left">*&nbsp{{ "general.la_semaine" | trans }}</div>
+		<div class="right"><a href="{{ path('top_campings') }}" class="bt link">{{ "home.topcamping.link" | trans  ({'%number%': topCampings|length }) }}</a></div>
+	</div>
 </div>

@@ -88,36 +88,50 @@
 
   .locationForwards{position:relative;padding-bottom:40px;min-height:575px;margin-top:-20px;
     .stamp{margin-bottom:5px;
-      h2{._verticalCenter(40px);}
+      h2{._verticalCenter(40px);
+		.counter{left:-50px;width:48px;height:48px;background:url("../../images/vacancesdirectes/common/sprites/stain.png") no-repeat 0 -391px transparent;font-family:@ptnarrow;color:@colorOrange;font-size:16px;letter-spacing:-1px;font-weight:bold;text-transform:uppercase;position:absolute;top:-4px;text-align:center;._verticalCenter(48px);}
+	  }
     }
     &>.bt{position:absolute;bottom:15px;right:0;}
     h2{margin-left: 27px;position:relative;
       &:before{content:"";background:url("../../images/vacancesdirectes/common/sprites/sprite-40.png") no-repeat transparent;width:40px;height:40px;position:absolute;top:0;left:-40px;}
     }
     &#topLocations{
-      h2:before{background-position:0 0;}
-      .element{padding:17px 0;
-        .boxborder{margin:0 10px 5px;display:block;}
-        .details{width:151px;}
+		h2:before{background-position:0 0;}
+		.element{width:300px; height : 100px;width:300px; height : 100px;padding:0;border-bottom: 2px solid #e6e5e5;
+        .boxborder{margin:7px 6px;display:block;}
+        .details{margin: 10px 5px;
+			.title{font-size:15px;}
+		}
         &:hover{._border-radius(10px);background-color:@colorBgGrisC;}
-      }
+		.prix{font-size:10px;margin-left:5px;
+			.price{color:@colorFushia;font-weight:bold;font-size:15px;}
+		}
+		#savoirPlus{background-color: #ED145B;border-radius: 5px 5px 5px 5px;color: #FFFFFF;float: right;font-size: 10px;margin:  			5px 5px 0;padding: 5px;text-transform: uppercase;}
+	  }
+	  #botTopCamp{
+		.left{margin-top: 10px;}
+	  }
     }
     &#lastLocations{
       h2:before{background-position:0 -40px;}
-      .element{padding: 10px 0 10px 5px;border-bottom: 7px solid @colorBgGrisC;
-        &:nth-child(2){border-top: 7px solid @colorBgBlanc;}
-        &:nth-last-of-type(1){border-bottom: 7px solid @colorBgBlanc;}
-        .details{width:300px;margin:0;
-          .title, .region, .period{width:245px;}
-          .condition{font-size:15px;}
+      .element{width:300px; height : 100px;padding:0;border-bottom: 2px solid #e6e5e5;
+        .details{width:300px;margin:10px 0 0 5px;
+          .title, .region, .period{width:190px;}
+		  .title{font-size:15px;}
+		  .region{margin-bottom:10px;}
+		  .price{font-weight:bold;font-size:15px;color:#FA8425;margin-right: 15px;}
+          .condition{font-size:12px;margin:0px 15px 0 0;float:right;
+		   .barre{text-decoration: line-through;}
+		  }
+		  .clear{clear:both;margin-bottom:10px;}
+		  .period{font-size:12px;font-style:normal;display:inline-block;}
+		  #savoirPlus{background-color:#FA8425;border-radius: 5px 5px 5px 5px;color: #FFFFFF;float: right;font-size: 10px;
+					  margin: 5px 10px;padding: 5px;text-transform: uppercase;}
         }
-        &:hover{background-color:@colorBgGrisC;
-          .details{
-            .counter{background-position:-48px -391px;right:-15px;}
-          }
-          &:nth-child(2){border-top: 7px solid @colorBgGrisC;}
-        }
+        &:hover{._border-radius(10px);background-color:@colorBgGrisC;}
       }
+	  .link {bottom:12px;}
     }
   }
 

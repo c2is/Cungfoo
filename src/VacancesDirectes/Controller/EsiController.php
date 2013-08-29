@@ -71,7 +71,7 @@ class EsiController implements ControllerProviderInterface
                     $listing
                         ->setClient($client)
                         ->distinct()
-                        ->limit(4)
+                        ->limit(5)
                     ;
                 }
             }

@@ -19,7 +19,11 @@
 {% endblock %}
 
 {% block rightColumn %}
-    {% include 'Form/_search_engine.twig' %}
+    {% if app.context.get('language') == 'nl' %}
+		{% include 'Form/_search_engine_nl.twig' %}
+	{% else %}
+		{% include 'Form/_search_engine.twig' %}
+	{% endif %}
     <div id="greyBoxes" class="clear">
         {{ esi(path('widget', {'name': 'idees_weekend'})) }}
     </div>

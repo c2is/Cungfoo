@@ -396,6 +396,7 @@ compte.login.error: "Le login que vous avez saisi est incorrect.\nVeuillez rées
 general.a_partir_de: 'à partir de'
 general.meilleur_prix: 'Notre meilleur prix'
 general.jouer: Jouer
+general.prix_des : 'Dès'
 general.en_savoir_plus: 'En savoir plus'
 general.la_nuit: 'la nuit'
 general.idees_week_end: 'Bons plans'

@@ -1,32 +1,39 @@
 <div id="lastLocations" class="locationForwards clear">
-    <div class="stamp grey">
-        <h2>{{ "home.early_booking" | trans }}</h2>
-    </div>
+	{% set nbpassage = 1 %}
     {% for etab in dispos.element %}
+		{% if nbpassage == 1 %}
+			<div class="stamp grey">
+				<h2><span class="counter">J - {{ etab.days_countdown }}</span>{{ "home.early_booking" | trans }}</h2>
+			</div>
+			{% set nbpassage = 2 %}
+		{% endif %}
         {% for proposal in etab.extra %}
         <form id="camping-{{ etab.model.slug }}" method="POST">
             <input type="hidden" name="{{ "camp" ~ etab.model.code }}-{{ loopParent.index }}" value="{{ proposal|serialize }}" />
             <div class="element clear linkParent itemGetCampingFiche">
                 <div class="details left">
-                    <span class="title">{{ etab.model.name }} {{ etab.model.categorie.stars }}</span>
-                    <span class="region">{{ etab.model.ville.region }}</span>
-                    <span class="period">{{ "listing.du" | trans }} {{ etab.start_date }} {{ "listing.au" | trans }} {{ etab.end_date }}</span>
-                    <span class="counter">J -{{ etab.days_countdown }}</span>
+                    <span class="title left">{{ etab.model.name }} {{ etab.model.categorie.stars }}</span>
+					<span class="price right">{{ proposal.adult_price|number_format }}<span class="fine">&nbsp;</span>€ </span>
+                    <span class="region left">{{ etab.model.ville.region }}</span>
                     {% set discount = proposal.adult_price != proposal.adult_price_without_discounts %}
                     {% if discount %}
-                        <span class="condition"><a href="{{ path('destination_camping', { pays: etab.model.pays.slug, region: etab.model.region.slug, ville: etab.model.ville.slug, camping: etab.model.slug }) }}" class="price linkBlock">{{ proposal.adult_price|number_format }}<span class="fine">&nbsp;</span>€ {{ "general.au_lieu_de" | trans }} {{ proposal.adult_price_without_discounts|number_format }}<span class="fine">&nbsp;</span>€</a><br>
-                        {{ proposal.room_types.room_type.room_type_label }}</span>
-                    {% else %}
-                        <span class="condition"><a href="{{ path('destination_camping', { pays: etab.model.pays.slug, region: etab.model.region.slug, ville: etab.model.ville.slug, camping: etab.model.slug }) }}" class="price linkBlock">{{ proposal.adult_price|number_format }}<span class="fine">&nbsp;</span>€</a><br>
-                        {{ proposal.room_types.room_type.room_type_label }}</span>
+                        <span class="condition right">{{ "general.au_lieu_de" | trans }} <span class="barre">{{ proposal.adult_price_without_discounts|number_format }}<span class="fine">&nbsp;</span>€</span></span>
                     {% endif %}
+					<span class="clear"></span>
+					<span class="period">{{ "listing.du" | trans }} {{ etab.start_date }} {{ "listing.au" | trans }} {{ etab.end_date }}</span>
+					<a href="{{ path('destination_camping', { pays: etab.model.pays.slug, region: etab.model.region.slug, ville: etab.model.ville.slug, camping: etab.model.slug }) }}" id="savoirPlus" class=" linkBlock">Reserver</a>
                 </div>
-            </div>
+			</div>
         </form>
         {% endfor %}
     {% else %}
     
     {% endfor %}
+	{% if nbpassage == 1 %}
+		<div class="stamp grey">
+			<h2>{{ "home.early_booking" | trans }}</h2>
+		</div>
+	{% endif %}
     {% if bon_plan %}
     <a href="{{ path('bonsplans', {'slug': bon_plan.slug}) }}" class="bt link right">{{ "home.early_booking.link" | trans  ({'%number%': dispos.element|length }) }}</a>
     {% endif %}
