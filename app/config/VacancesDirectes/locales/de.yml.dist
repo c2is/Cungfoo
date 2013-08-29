@@ -408,6 +408,7 @@ general.decouvrir: Entdecken
 general.reserver: Buchen
 general.profite: Zuschlagen
 general.la_semaine: 'pro Woche'
+general.tarif_a_la_semaine: 'pro Woche'
 general.contre_proposition: 'ACHTUNG! Ihre Suche ergibt keine Treffer.<br />Die untenstehenden Angebote sind diejenigen, die Ihrer Suche am nächsten kommen.'
 general.submit: Senden
 general.logout: Anmelden

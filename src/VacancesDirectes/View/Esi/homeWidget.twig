@@ -12,17 +12,20 @@
             <input type="hidden" name="{{ "camp" ~ etab.model.code }}-{{ loopParent.index }}" value="{{ proposal|serialize }}" />
             <div class="element clear linkParent itemGetCampingFiche">
                 <div class="details left">
-                    <span class="title left">{{ etab.model.name }} {{ etab.model.categorie.stars }}</span>
-					<span class="price right">{{ proposal.adult_price|number_format }}<span class="fine">&nbsp;</span>€ </span>
-                    <span class="region left">{{ etab.model.ville.region }}</span>
+                    <span class="title">{{ etab.model.name }} {{ etab.model.categorie.stars }}</span>
+					<span class="region left">{{ etab.model.ville.region }}</span>
+				</div>
+				<div class="price right">
+					{{ proposal.adult_price|number_format }}
+					<span class="fine">&nbsp;</span>€ 
                     {% set discount = proposal.adult_price != proposal.adult_price_without_discounts %}
                     {% if discount %}
-                        <span class="condition right">{{ "general.au_lieu_de" | trans }} <span class="barre">{{ proposal.adult_price_without_discounts|number_format }}<span class="fine">&nbsp;</span>€</span></span>
+                        <span class="condition clear">{{ "general.au_lieu_de" | trans }} <span class="barre">{{ proposal.adult_price_without_discounts|number_format }}<span class="fine">&nbsp;</span>€</span></span>
                     {% endif %}
-					<span class="clear"></span>
-					<span class="period">{{ "listing.du" | trans }} {{ etab.start_date }} {{ "listing.au" | trans }} {{ etab.end_date }}</span>
-					<a href="{{ path('destination_camping', { pays: etab.model.pays.slug, region: etab.model.region.slug, ville: etab.model.ville.slug, camping: etab.model.slug }) }}" id="savoirPlus" class=" linkBlock">Reserver</a>
-                </div>
+				</div>
+				<div class="clear"></div>
+				<div class="period left">{{ "listing.du" | trans }} {{ etab.start_date }} {{ "listing.au" | trans }} {{ etab.end_date }}</div>
+				<a href="{{ path('destination_camping', { pays: etab.model.pays.slug, region: etab.model.region.slug, ville: etab.model.ville.slug, camping: etab.model.slug }) }}" id="btnReserver" class="right linkBlock">Reserver</a> 
 			</div>
         </form>
         {% endfor %}
