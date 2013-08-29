@@ -411,6 +411,7 @@ general.decouvrir: Découvrir
 general.reserver: Réserver
 general.profite: 'J''en profite'
 general.la_semaine: 'la semaine'
+general.tarif_a_la_semaine: 'Tarif à la semaine'
 general.contre_proposition: 'ATTENTION ! Votre recherche ne donne aucun résultat.<br />Les propositions ci-dessous sont celles qui s''en rapprochent le plus.'
 general.submit: Envoyer
 general.logout: 'Se déconnecter'

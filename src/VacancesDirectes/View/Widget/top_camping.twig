@@ -20,13 +20,13 @@
 				<span class="price linkBlock">{{ camping.etablissement.minimumPrice | number_format(0,'','') }}<span class="fine">&nbsp;</span>€*</span>
 				
 			</div>
-			<a href="{{ campingPath }}" id="savoirPlus" class=" linkBlock">Reserver</a>
+			<a href="{{ campingPath }}" id="btnReserver" class=" linkBlock">Reserver</a>
         </div>
         {% endif %}
     {% endfor %}
     {% endif %}
 	<div id="botTopCamp">
-		<div class="left">*&nbsp{{ "general.la_semaine" | trans }}</div>
+		<div class="left semaine">*&nbsp{{ "general.tarif_a_la_semaine" | trans }}</div>
 		<div class="right"><a href="{{ path('top_campings') }}" class="bt link">{{ "home.topcamping.link" | trans  ({'%number%': topCampings|length }) }}</a></div>
 	</div>
 </div>

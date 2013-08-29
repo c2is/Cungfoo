@@ -86,7 +86,7 @@
   }
 
 
-  .locationForwards{position:relative;padding-bottom:40px;min-height:575px;margin-top:-20px;
+  .locationForwards{position:relative;padding-bottom:10px;min-height:575px;margin-top:-20px;
     .stamp{margin-bottom:5px;
       h2{._verticalCenter(40px);
 		.counter{left:-50px;width:48px;height:48px;background:url("../../images/vacancesdirectes/common/sprites/stain.png") no-repeat 0 -391px transparent;font-family:@ptnarrow;color:@colorOrange;font-size:16px;letter-spacing:-1px;font-weight:bold;text-transform:uppercase;position:absolute;top:-4px;text-align:center;._verticalCenter(48px);}
@@ -99,39 +99,40 @@
     &#topLocations{
 		h2:before{background-position:0 0;}
 		.element{width:300px; height : 100px;width:300px; height : 100px;padding:0;border-bottom: 2px solid #e6e5e5;
-        .boxborder{margin:7px 6px;display:block;}
-        .details{margin: 10px 5px;
+        .boxborder{margin:4px 6px;display:block;}
+        .details{margin: 10px 5px;height:50px;
 			.title{font-size:15px;}
 		}
         &:hover{._border-radius(10px);background-color:@colorBgGrisC;}
 		.prix{font-size:10px;margin-left:5px;
-			.price{color:@colorFushia;font-weight:bold;font-size:15px;}
+			.price{color:@colorFushia;font-weight:bold;font-size:18px;}
 		}
-		#savoirPlus{background-color: #ED145B;border-radius: 5px 5px 5px 5px;color: #FFFFFF;float: right;font-size: 10px;margin:  			5px 5px 0;padding: 5px;text-transform: uppercase;}
+		#btnReserver{background-color: #ED145B;border-radius: 5px 5px 5px 5px;color: #FFFFFF;float: right;font-size: 10px;margin:  			0 5px 0;padding: 5px;text-transform: uppercase;}
 	  }
 	  #botTopCamp{
 		.left{margin-top: 10px;}
+		.semaine{font-size:10px;font-style:italic}
 	  }
     }
     &#lastLocations{
       h2:before{background-position:0 -40px;}
       .element{width:300px; height : 100px;padding:0;border-bottom: 2px solid #e6e5e5;
-        .details{width:300px;margin:10px 0 0 5px;
-          .title, .region, .period{width:190px;}
-		  .title{font-size:15px;}
-		  .region{margin-bottom:10px;}
-		  .price{font-weight:bold;font-size:15px;color:#FA8425;margin-right: 15px;}
-          .condition{font-size:12px;margin:0px 15px 0 0;float:right;
-		   .barre{text-decoration: line-through;}
-		  }
-		  .clear{clear:both;margin-bottom:10px;}
-		  .period{font-size:12px;font-style:normal;display:inline-block;}
-		  #savoirPlus{background-color:#FA8425;border-radius: 5px 5px 5px 5px;color: #FFFFFF;float: right;font-size: 10px;
-					  margin: 5px 10px;padding: 5px;text-transform: uppercase;}
+        .details{margin:10px 0 10px 5px;height:50px;
+		  .title{font-size:15px;width:280px;}
+		  .region{clear: both;margin-bottom:10px;width:190px;}
         }
-        &:hover{._border-radius(10px);background-color:@colorBgGrisC;}
+		&:hover{._border-radius(10px);background-color:@colorBgGrisC;}
+	    .price{color: #FA8425;font-size: 18px;font-weight: bold;margin: 30px 10px 0 0;text-align: right;width: 90px;
+				line-height:10px;
+		  .condition{ color: #5F5F5F;font-size: 12px;font-weight: normal;
+		   .barre{text-decoration: line-through;}
+		  } 
+		}
+		.period{font-size:12px;font-style:normal;display:inline-block;margin:5px 0 0 5px;}
+		#btnReserver{background-color:#FA8425;border-radius: 5px 5px 5px 5px;color: #FFFFFF;float: right;font-size: 10px;
+					  margin: 0 10px;padding: 5px;text-transform: uppercase;}
       }
-	  .link {bottom:12px;}
+	  .link {bottom:2px;}
     }
   }
 
