@@ -98,17 +98,21 @@
     }
     &#topLocations{
 		h2:before{background-position:0 0;}
-		.element{width:300px; height : 100px;width:300px; height : 100px;padding:0;border-bottom: 2px solid #e6e5e5;
+		.element{width:300px; height : 100px;padding:0;
+	    &:nth-child(n+3){border-top:2px solid @colorBgGrisC;}
         .boxborder{margin:4px 6px;display:block;}
         .details{margin: 10px 5px;height:50px;
 			.title{font-size:15px;}
 		}
-        &:hover{._border-radius(10px);background-color:@colorBgGrisC;}
+        &:hover{._border-radius(10px);background-color:@colorBgGrisC;
+			&+.element{border-top:none;padding-top:2px;}
+		}
 		.prix{font-size:10px;margin-left:5px;
 			.price{color:@colorFushia;font-weight:bold;font-size:18px;}
 		}
-		#btnReserver{background-color: #ED145B;border-radius: 5px 5px 5px 5px;color: #FFFFFF;float: right;font-size: 10px;margin:  			0 5px 0;padding: 5px;text-transform: uppercase;}
+		#btnReserver{background-color: #ED145B;border-radius: 5px 5px 5px 5px;color: @colorBlanc;float: right;font-size: 10px;margin:  			0 5px 0;padding: 5px;text-transform: uppercase;}
 	  }
+
 	  #botTopCamp{
 		.left{margin-top: 10px;}
 		.semaine{font-size:10px;font-style:italic}
@@ -116,15 +120,18 @@
     }
     &#lastLocations{
       h2:before{background-position:0 -40px;}
-      .element{width:300px; height : 100px;padding:0;border-bottom: 2px solid #e6e5e5;
+	   .element{width:300px; height : 100px;padding:0;
+		&:nth-child(n+3){border-top:2px solid @colorBgGrisC;}
+		&:hover{._border-radius(10px);background-color:@colorBgGrisC;
+			&+form{border-top:none;padding-top:2px;}
+		}
         .details{margin:10px 0 10px 5px;height:50px;
 		  .title{font-size:15px;width:280px;}
 		  .region{clear: both;margin-bottom:10px;width:190px;}
         }
-		&:hover{._border-radius(10px);background-color:@colorBgGrisC;}
 	    .price{color: #FA8425;font-size: 18px;font-weight: bold;margin: 30px 10px 0 0;text-align: right;width: 90px;
 				line-height:10px;
-		  .condition{ color: #5F5F5F;font-size: 12px;font-weight: normal;
+		  .condition{display:inline-block;color: #5F5F5F;font-size: 12px;font-weight: normal;
 		   .barre{text-decoration: line-through;}
 		  } 
 		}

@@ -8,9 +8,8 @@
 			{% set nbpassage = 2 %}
 		{% endif %}
         {% for proposal in etab.extra %}
-        <form id="camping-{{ etab.model.slug }}" method="POST">
+        <form id="camping-{{ etab.model.slug }}" method="POST" class="clear linkParent itemGetCampingFiche element">
             <input type="hidden" name="{{ "camp" ~ etab.model.code }}-{{ loopParent.index }}" value="{{ proposal|serialize }}" />
-            <div class="element clear linkParent itemGetCampingFiche">
                 <div class="details left">
                     <span class="title">{{ etab.model.name }} {{ etab.model.categorie.stars }}</span>
 					<span class="region left">{{ etab.model.ville.region }}</span>
@@ -26,7 +25,6 @@
 				<div class="clear"></div>
 				<div class="period left">{{ "listing.du" | trans }} {{ etab.start_date }} {{ "listing.au" | trans }} {{ etab.end_date }}</div>
 				<a href="{{ path('destination_camping', { pays: etab.model.pays.slug, region: etab.model.region.slug, ville: etab.model.ville.slug, camping: etab.model.slug }) }}" id="btnReserver" class="right linkBlock">Reserver</a> 
-			</div>
         </form>
         {% endfor %}
     {% else %}
