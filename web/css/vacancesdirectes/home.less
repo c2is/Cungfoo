@@ -6,7 +6,11 @@
 
 
 /* STRUCTURE */
-  #wrap{padding:0 0 15px;}
+  #wrap{padding:0 0 15px;
+	.column{
+		&.left{margin: 0 0 10px 24px;}
+	}
+  }
 
 /* HOME */
 
@@ -114,12 +118,11 @@
 	  }
 
 	  #botTopCamp{
-		.left{margin-top: 10px;}
-		.semaine{font-size:10px;font-style:italic}
+		.semaine{margin-top: 10px;font-size:10px;font-style:italic}
 	  }
     }
     &#lastLocations{
-      h2:before{background-position:0 -40px;}
+      h2:before{background-position:40px -40px;}
 	   .element{width:300px; height : 100px;padding:0;
 		&:nth-child(n+3){border-top:2px solid @colorBgGrisC;}
 		&:hover{._border-radius(10px);background-color:@colorBgGrisC;
@@ -139,7 +142,6 @@
 		#btnReserver{background-color:#FA8425;border-radius: 5px 5px 5px 5px;color: #FFFFFF;float: right;font-size: 10px;
 					  margin: 0 10px;padding: 5px;text-transform: uppercase;}
       }
-	  .link {bottom:2px;}
     }
   }
 

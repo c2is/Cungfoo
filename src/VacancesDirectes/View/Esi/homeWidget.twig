@@ -24,7 +24,7 @@
 				</div>
 				<div class="clear"></div>
 				<div class="period left">{{ "listing.du" | trans }} {{ etab.start_date }} {{ "listing.au" | trans }} {{ etab.end_date }}</div>
-				<a href="{{ path('destination_camping', { pays: etab.model.pays.slug, region: etab.model.region.slug, ville: etab.model.ville.slug, camping: etab.model.slug }) }}" id="btnReserver" class="right linkBlock">Reserver</a> 
+				<a href="{{ path('destination_camping', { pays: etab.model.pays.slug, region: etab.model.region.slug, ville: etab.model.ville.slug, camping: etab.model.slug }) }}" id="btnReserver" class="right linkBlock">{{ "general.reserver" | trans }}</a> 
         </form>
         {% endfor %}
     {% else %}
@@ -36,6 +36,10 @@
 		</div>
 	{% endif %}
     {% if bon_plan %}
-    <a href="{{ path('bonsplans', {'slug': bon_plan.slug}) }}" class="bt link right">{{ "home.early_booking.link" | trans  ({'%number%': dispos.element|length }) }}</a>
+	<div id="botEarly">
+		<div class="right">
+			<a href="{{ path('bonsplans', {'slug': bon_plan.slug}) }}" class="bt link">{{ "home.early_booking.link" | trans  ({'%number%': dispos.element|length }) }}</a>
+		</div>
+	</div>
     {% endif %}
 </div>
