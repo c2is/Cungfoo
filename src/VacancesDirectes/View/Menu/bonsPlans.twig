@@ -34,7 +34,7 @@
                     </div>
                 </div>
                 {% endfor %}
-                <a href="{{ path('categorie_bonsplans', {'cat': categorie.slug }) }}" onclick="$('#please_wait_layer').show();" class="bt link right clearboth">{{ 'menu_bon_plan.categorie_bons_plans.link' | trans}}</a>
+                <a href="{{ path('categorie_bonsplans', {'cat': categorie.slug }) }}" onclick="$('#please_wait_layer').show();" class="bt link right clearboth">{{ 'menu_bon_plan.categorie_bons_plans.link' | trans}} : {{ categorie.name }}</a>
             </div>
         </div>
         </div>
