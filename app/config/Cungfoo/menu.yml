@@ -109,7 +109,7 @@ menu:
                   route:  bon_plan_crud_list
                   divider: ~
               i18n:
-                  title: Traductions
+                  title: menu.traductions
                   route: i18n_admin
               navigation:
                   title: menu.navigation_item
