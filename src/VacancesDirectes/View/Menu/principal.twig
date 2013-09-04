@@ -21,5 +21,9 @@
         <a href="http://{{ app.config.get('languages')['fr']['domain'] }}" onclick="javascript:test_analytics(this.href); return false;"><img src="{{ asset('images/vacancesdirectes/dyn/ui/lang-flag-fr.jpg') }}" width="26" height="17" alt="FR"/></a>
         <a href="http://{{ app.config.get('languages')['de']['domain'] }}" onclick="javascript:{% if currentRoute == "destination_camping" %}_gaq.push(['_trackEvent', 'Nav-VD_-_ MenuPrincipal ', 'Lien_-_Version-Langue', 'Clic_-_Bouton-DE']);{% endif %}test_analytics(this.href); return false;"><img src="{{ asset('images/vacancesdirectes/dyn/ui/lang-flag-de.jpg') }}" width="26" height="17" alt="DE"/></a>
         {% endif %}
+	</li>
+	<li id="compte">
+		{% include 'header.twig' %}
+	</li>
     </ul>
 </nav>

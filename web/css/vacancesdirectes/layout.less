@@ -16,12 +16,16 @@ header, section, footer {position:relative;}
       .phonePrice{font-weight:bold;float:right;margin-right:15px;}
     }
   }
-  #account{float:right;font-size:16px;text-transform:uppercase;background-color:@colorFushia;border-radius:10px;padding:7px 12px;color:@colorBlanc;text-decoration:none;margin:10px 0 15px 15px;}
-  #accountBox{width:320px;position:absolute;top:50px;right:0;text-align:left;color:@colorBlanc;opacity:0;display:block;z-index:1;
+}
+#compte{position:relative;float:right;margin: 7px 7px 0 0;
+	a{font: 18px/50px PT Sans Narrow;color: @colorBgBlanc;text-transform:uppercase;text-decoration:none;}
+	a:hover{color:@colorFushia;}
+	#accountBox{width:320px;position:absolute;top:50px;right:0;text-align:left;color:@colorBlanc;opacity:0;display:block;z-index:1;
     &:after{left:100%;margin-left:-65px;}
     h2{font:bold 22px/24px @ptnarrow;text-transform:uppercase;margin-bottom:10px;color:@colorBlanc;
       span{color:@colorBlanc;}
     }
+	a{font-size:12px;line-height:12px;}
     label{display:none;}
     input{._verticalCenter(27px);width:188px;background-color:@colorBlanc;border:0 none;margin-bottom:10px;font:bold 17px/27px @ptnarrow;color:@colorBgGrisM;padding:0 7px;}
     .link{margin-bottom:15px;
@@ -29,13 +33,13 @@ header, section, footer {position:relative;}
     }
   }
 }
-.ie-lte9 #telephone span span{letter-spacing:-1px;}
+.ie-lte9 #telephone span span{letter-spacing:-1px;} 
 .ie-lte9 #header #accountBox #password{font-family: Arial, sans-serif;}
 /* specifs home */
 .home #telephone{clear:both;}
 
 /* nav */
-#nav{position:relative;background:@colorBgGrisF;margin-top:20px;height:50px;z-index:30;
+#nav{position:relative;background:@colorBgGrisF;height:50px;z-index:30;
   .topnav{top:-7px;}
   .tab{position:static;color:@colorBlanc;float:left;padding:0;cursor:pointer;._border-radius(7px 7px 0 0);z-index:50;margin-left:2px;
     &:first-child:after{width:0;margin-left:0;}
@@ -319,8 +323,8 @@ h6, .h6-like{color:@colorFushia;}
   &.bgImg{overflow:hidden;}
   &.greyC{background-color:@colorBgGrisC;}
   &.greyF{background-color:@colorBgGrisF;
-    &.arrowLeft:after{right:100%;top:50%;border:solid transparent;content:"";height:0;width:0;position:absolute;pointer-events:none;border-color:rgba(140, 138, 138, 0);border-right-color:@colorBgGrisF;border-width:18px;margin-top:-18px;margin-left:-18px;}
-    &.arrowUp:after{bottom:100%;left:50%;border:solid transparent;content:"";height:0;width:0;position:absolute;pointer-events:none;border-color:rgba(140, 138, 138, 0);border-bottom-color:@colorBgGrisF;border-width:18px;margin-left:-18px;margin-top:-18px;}
+    &.arrowLeft:after{right:100%;top:50%;border:solid transparent;content:"";height:0;width:0;position:absolute;pointer-events:none;border-color:rgba(140, 138, 138, 0);border-right-color:@colorBgGrisF;border-width:15px;margin-top:-18px;margin-left:-18px;}
+    &.arrowUp:after{bottom:100%;left:50%;border:solid transparent;content:"";height:0;width:0;position:absolute;pointer-events:none;border-color:rgba(140, 138, 138, 0);border-bottom-color:@colorBgGrisF;border-width:15px;margin-left:-18px;margin-top:-18px;}
   }
   &.fushia{background-color:@colorFushia;
     &.arrowLeft:after{right:100%;top:50%;border:solid transparent;content:"";height:0;width:0;position:absolute;pointer-events:none;border-color:rgba(140, 138, 138, 0);border-right-color:@colorFushia;border-width:18px;margin-top:-18px;margin-left:-18px;}

@@ -65,7 +65,6 @@
         {{ render(path('menu_principal', {currentRoute: app.request.get('_route')})) }}
         <div id="header" class="fixed-width clear">
             <div id="headerRight">
-                {% include 'header.twig' %}
                 <div id="telephone">
                     <span>{{ "header.information" | trans }}
                         <span class="phoneNum">{{ "header.telephone.number" | trans }}</span><span class="phonePrice">{{ "header.telephone.price" | trans }}</span>
