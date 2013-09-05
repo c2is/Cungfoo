@@ -5,6 +5,8 @@ services:
         location: ##url##/rsl/wsdl_distrib
         default_envelope:
             base_id:  ##base_id##
+            username: web_fr
+            password: DInan22101
     disponibilite:
         location: ##url##/rsl/dwsdl?namespace=search_engine
         default_envelope:
