@@ -18,4 +18,8 @@ use Cungfoo\Model\om\BaseTypeHebergementQuery;
  */
 class TypeHebergementQuery extends BaseTypeHebergementQuery
 {
+	public function findWithoutOrderByName($con = null)
+	{
+		return parent::find($con);
+	}
 }

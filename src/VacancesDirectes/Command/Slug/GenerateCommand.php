@@ -127,7 +127,7 @@ class GenerateCommand extends BaseCommand
                     ->_or()
                     ->filterBySlug("")
                 ->endUSe()
-                ->find($con)
+                ->findWithoutOrderByName($con)
             ;
 
             foreach ($objects as $object)

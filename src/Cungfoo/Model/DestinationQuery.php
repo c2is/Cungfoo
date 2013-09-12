@@ -18,4 +18,8 @@ use Cungfoo\Model\om\BaseDestinationQuery;
  */
 class DestinationQuery extends BaseDestinationQuery
 {
+	public function findWithoutOrderByName($con = null)
+	{
+		return parent::find($con);
+	}
 }

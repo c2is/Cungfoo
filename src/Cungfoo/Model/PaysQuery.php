@@ -28,4 +28,9 @@ class PaysQuery extends BasePaysQuery
 
         return parent::find($con);
     }
+
+	public function findWithoutOrderByName($con = null)
+	{
+		return parent::find($con);
+	}
 }

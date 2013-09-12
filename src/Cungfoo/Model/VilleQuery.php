@@ -46,6 +46,11 @@ class VilleQuery extends BaseVilleQuery
         return parent::find($con);
     }
 
+	public function findWithoutOrderByName($con = null)
+	{
+		return parent::find($con);
+	}
+
     public function findActive($absolute = true, $con = null)
     {
         if ($absolute)

@@ -32,4 +32,9 @@ class BonPlanQuery extends BaseBonPlanQuery
             ->combine(array('dateDeb', 'dateFin'), 'and')
         ;
     }
+
+	public function findWithoutOrderByName($con = null)
+	{
+		return parent::find($con);
+	}
 }
