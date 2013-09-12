@@ -2441,79 +2441,138 @@ else
 else if(wButton=='cancel')
 {callback(false);}}});}
 
-/**
- * jquery.readmore
- * 
- * Substring long paragraphs and make expandable with "Read More" link.
- * Paragraph will be split either at exactly 'substr_len' chars or at the next
- * space char after 'substr_len' words (default).
- * 
- * @date 02 Apr 2013
- * @author Jake Trent (original author) http://www.builtbyjake.com
- * @author Mike Wendt http://www.mikewendt.net
- * @author Karen Ellrick http://l4jp.com
- * @version 1.7
+/*!
+ * Readmore.js jQuery plugin
+ * Author: @jed_foster
+ * Project home: jedfoster.github.io/Readmore.js
+ * Licensed under the MIT license
  */
-(function ($) {
-  $.fn.readmore = function (settings) {
 
-    var defaults = {
-      substr_len: 500,
-      animate_time: 1000,
-      split_word: false,
-      read_less: false,
-      ellipses: '&#8230;',
-      more_text: 'Read&nbsp;More',
-      less_text: 'Read&nbsp;Less',
-      more_clzz: 'readm-more',
-      ellipse_clzz: 'readm-continue',
-      hidden_clzz: 'readm-hidden'
-    };
+;(function($) {
 
-    var opts =  $.extend({}, defaults, settings);
-    if (settings.more_link) {  //for backward compatibility with the old option syntax
-      opts.more_text = settings.more_link.match(/<a[^>]*>(.*?)<\/a>/)[1];
-    }
+  var readmore = 'readmore',
+      defaults = {
+        speed: 100,
+        maxHeight: 200,
+        moreLink: '<a href="#">Read More</a>',
+        lessLink: '<a href="#">Close</a>',
 
-    this.each(function () {
-      var $this = $(this);
-      if (($this.html().length > opts.substr_len) && !$this.find('.' + opts.more_clzz).length) {  //edited by Karen (3)
-        abridge($this);
-        linkage($this);
+        // callbacks
+        beforeToggle: function(){},
+        afterToggle: function(){}
+      },
+
+      styles = '.readmore-js-toggle, .readmore-js-section { display: block; width: 100%; }\
+.readmore-js-section { overflow: hidden; }';
+
+    (function(d,u) {
+      if(d.createStyleSheet) {
+        d.createStyleSheet( u );
       }
-    });
+      else {
+        var css=d.createElement('style');
+        css.appendChild(document.createTextNode(u));
+        d.getElementsByTagName("head")[0].appendChild(css);
+      }
+    }(document, styles));
 
-    function linkage(elem) {
-      elem.append('<a class="'+opts.more_clzz+'">'+opts.more_text+'</a>');
-      elem.find('.' + opts.more_clzz).click( function () {
-        if (opts.read_less) {
-          $(this).html(($(this).html()== opts.less_text ? opts.more_text : opts.less_text));
-        } else {
-          $(this).hide();
+  function Readmore( element, options ) {
+    this.element = element;
+
+    this.options = $.extend( {}, defaults, options);
+
+    $(this.element).data('max-height', this.options.maxHeight);
+
+    delete(this.options.maxHeight);
+
+    this._defaults = defaults;
+    this._name = readmore;
+
+    this.init();
+  }
+
+  Readmore.prototype = {
+
+    init: function() {
+      var $this = this;
+
+      $(this.element).each(function() {
+        var current = $(this),
+            maxHeight = (current.css('max-height').replace(/[^-\d\.]/g, '') > current.data('max-height')) ? current.css('max-height').replace(/[^-\d\.]/g, '') : current.data('max-height');
+
+        current.addClass('readmore-js-section');
+
+        if(current.css('max-height') != "none") {
+          current.css("max-height", "none");
         }
-        elem.find('.' + opts.ellipse_clzz).toggle();
-        if (elem.find('.' + opts.hidden_clzz).is(':visible')) {
-          elem.find('.' + opts.hidden_clzz).hide();
-        } else {
-          elem.find('.' + opts.hidden_clzz).animate({'opacity' : 'toggle'},opts.animate_time);
+
+        current.data("boxHeight", current.outerHeight(true));
+
+        if(current.outerHeight(true) < maxHeight) {
+          // The block is shorter than the limit, so there's no need to truncate it.
+          return true;
+        }
+        else {
+          current.after($($this.options.moreLink).on('click', function(event) { $this.toggleSlider(this, current, event) }).addClass('readmore-js-toggle'));
+        }
+
+        current.data('sliderHeight', maxHeight);
+
+        current.css({height: maxHeight});
+      });
+    },
+
+    toggleSlider: function(trigger, element, event)
+    {
+      event.preventDefault();
+
+      var $this = this,
+          newHeight = newLink = '',
+          more = false,
+          sliderHeight = $(element).data('sliderHeight');
+
+      if ($(element).height() == sliderHeight) {
+        newHeight = $(element).data().boxHeight + "px";
+        newLink = 'lessLink';
+        more = true;
+      }
+
+      else {
+        newHeight = sliderHeight;
+        newLink = 'moreLink';
+      }
+
+      // Fire beforeToggle callback
+      $this.options.beforeToggle(trigger, element, more);
+
+      $(element).animate({"height": newHeight}, {duration: $this.options.speed });
+
+      $(trigger).replaceWith($($this.options[newLink]).on('click', function(event) { $this.toggleSlider(this, element, event) }).addClass('readmore-js-toggle'));
+
+      // Fire afterToggle callback
+      $this.options.afterToggle(trigger, element, more);
+    }
+  };
+
+  $.fn[readmore] = function( options ) {
+    var args = arguments;
+    if (options === undefined || typeof options === 'object') {
+      return this.each(function () {
+        if (!$.data(this, 'plugin_' + readmore)) {
+          $.data(this, 'plugin_' + readmore, new Readmore( this, options ));
+        }
+      });
+    } else if (typeof options === 'string' && options[0] !== '_' && options !== 'init') {
+      return this.each(function () {
+        var instance = $.data(this, 'plugin_' + readmore);
+        if (instance instanceof Readmore && typeof instance[options] === 'function') {
+          instance[options].apply( instance, Array.prototype.slice.call( args, 1 ) );
         }
       });
     }
-
-    function abridge(elem) {
-      var txt = elem.html();
-      var dots = "<span class='" + opts.ellipse_clzz + "'>" + opts.ellipses + "</span>";
-      var shown = txt.substring(0, (opts.split_word ? opts.substr_len : txt.indexOf(' ', opts.substr_len))) + dots;
-      var hidden =
-        '<span class="' + opts.hidden_clzz + '" style="display:none;">' +
-          txt.substring((opts.split_word ? opts.substr_len : txt.indexOf(' ', opts.substr_len)), txt.length) +
-        '</span>';
-      elem.html(shown + hidden);
-    }
-    
-    return this;
-  };
+  }
 })(jQuery);
+
 
 /**** WAYPOINTS ****/
 /*

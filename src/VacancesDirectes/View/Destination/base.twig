@@ -20,10 +20,8 @@
 				{% if app.context.get('language') == 'nl' %}{# NL texte trop long ajout du read more #}
 				<script>head.ready(function() { 
 						$('div.readMore').readmore({
-						substr_len: 800,
-						split_word: true,
-						ellipses: '&nbsp;&#8230;', 
-						more_text: '{{ "general.en_savoir_plus" | trans }}',
+						moreLink: '<a class="readm-more" href="#">&nbsp;&#8230;{{ "general.en_savoir_plus" | trans }}</a></span>',
+						lessLink: '<a style="display:none; href="#">{{ "general.close" | trans }}</a>',
 					});
 				});</script>
                 <div class="richText destiDescription readMore">{{ item.description | raw }}</div> {# Description #}
