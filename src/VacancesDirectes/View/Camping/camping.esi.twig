@@ -3,7 +3,9 @@
         {{ 'fiche.camping' | trans }}&nbsp;{{ nomEtab }}{{ etab.categorie.stars }}<br />
 	</h1>
 	<h2>{{ etab.ville.name | trans }} {%if hasBaignade %}{{ "seo.title.camping_suffix" | trans }}{% endif %}</h2>
-    <p class="campSubtitle"><strong>{{ "fiche.ouvert_du" | trans }} {{ etab.ouvertureCamping }}</strong></p>
+    {% if etab.ouvertureCamping != '' %}
+	<p class="campSubtitle"><strong>{{ "fiche.ouvert_du" | trans }} {{ etab.ouvertureCamping }}</strong></p>
+	{% endif %}
     <p class="campSubtitle">
         {% if etab.getSituationGeographiques | length %}
             {% for situationGeographiques in etab.getSituationGeographiques %}
@@ -32,8 +34,7 @@
             {% endfor %}
         {% endif %}
     </p>
-
-    <a class="bt big fushia right goto" href="#stayBooking" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'Chapo_-_Lien-Prix', 'Clic_-_Bouton-Tarifs']);">{{ "semainier.title" | trans }}</a>
+   
     <div class="geoDataFiche" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
         <span itemprop="addressCountry">{{ etab.country }}</span> |
         <span itemprop="addressRegion">{{ etab.ville.region }}</span> |
@@ -53,6 +54,24 @@
     <li><a href="#tabProximite" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'Contenu_-_Onglets', 'Clic_-_Onglet-3-A-Proximite']);">{{ "fiche.a_proximite" | trans }}</a></li>
     {# TODO <li><a href="#tabAvis">Avis</a></li> #}
     <li><a href="#tabInfos" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'Contenu_-_Onglets', 'Clic_-_Onglet-4-Info-Pratiques']);">{{ "fiche.infos_pratiques" | trans }}</a></li>
+	{#  Onglets dédiés NL #}
+	{% if app.context.get('language') == 'nl' %}
+		{% if etab.pays.description | trans != "" %}
+		<li class="dropdown"><a href="#tabPays">{{ "fiche.pays" | trans }}</a>
+			{% if etab.region.description | trans != "" or etab.ville.description | trans != "" %}
+			<ul class="sub-menu">
+				{% if etab.region.description | trans != "" %}
+				<li><a href="#tabRegion">{{ "fiche.region" | trans }}</a></li>
+				{% endif %}
+				{% if etab.ville.description | trans != "" %}
+				<li><a href="#tabVille">{{ "fiche.ville" | trans }}</a></li>
+				{% endif %}
+			</ul>
+			{% endif %}
+		</li>
+		{% endif %}
+	{% endif %}{#  /Onglets dédiés NL #}
+	<li><a class="bt fushia" href="#stayBooking" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'Contenu_-_Onglets', 'Clic_-_Onglet-5-Tarifs']);">{{ "semainier.title" | trans }}</a>
 </ul>
 
 <div class="tabCampDiapo">
@@ -395,3 +414,36 @@
         <button class="bt trans right triggerClick" data-triggerLink="#tabCamp" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'Contenu_-_Footer', 'Clic_-_Lien-Suivant']);">{{ "fiche.le_camping" | trans }}</button>
     </nav>
 </div>
+
+{#  Contenu Onglets dédiés NL #}
+{% if app.context.get('language') == 'nl' %}
+	<script>head.ready(function() { 
+			$('div.readMore').readmore({
+			substr_len: 800,
+			split_word: true,
+			ellipses: '&nbsp;&#8230;', 
+			more_text: '{{ "general.en_savoir_plus" | trans }}'
+		});
+	});</script>
+	{% if etab.pays.description | trans != "" %}
+	<!-- tab Pays -->
+	<div id="tabPays" class="tabs">
+	<h3>{{ etab.pays.name | trans }}</h3>
+		<div class="richText readMore">{{ etab.pays.description | trans }}</div>
+	</div>
+	{% endif %}
+	{% if etab.region.description | trans != "" %}
+	<!-- tab Region -->
+	<div id="tabRegion" class="tabs">
+	<h3>{{ etab.region.name | trans }}</h3>
+		<div class="richText readMore">{{ etab.region.description | trans }} </div>
+	</div>
+	{% endif %}
+	{% if etab.ville.description | trans != "" %}
+	<!-- tab Ville -->
+	<div id="tabVille" class="tabs">
+	<h3>{{ etab.ville.name | trans }}</h3>
+		<div class="richText readMore">{{ etab.ville.description | trans }}</div>
+	</div>
+	{% endif %}
+{% endif %}{# /Onglets dédiés NL #}
