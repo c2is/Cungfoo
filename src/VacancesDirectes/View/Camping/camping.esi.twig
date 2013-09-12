@@ -427,21 +427,21 @@
 	<!-- tab Pays -->
 	<div id="tabPays" class="tabs">
 	<h3>{{ etab.pays.name | trans }}</h3>
-		<div class="richText readMore">{{ etab.pays.description | trans }}</div>
+		<div class="richText campDesc readMore">{{ etab.pays.description | raw }}</div>
 	</div>
 	{% endif %}
 	{% if etab.region.description | trans != "" %}
 	<!-- tab Region -->
 	<div id="tabRegion" class="tabs">
 	<h3>{{ etab.region.name | trans }}</h3>
-		<div class="richText readMore">{{ etab.region.description | trans }} </div>
+		<div class="richText campDesc readMore">{{ etab.region.description | raw }} </div>
 	</div>
 	{% endif %}
 	{% if etab.ville.description | trans != "" %}
 	<!-- tab Ville -->
 	<div id="tabVille" class="tabs">
 	<h3>{{ etab.ville.name | trans }}</h3>
-		<div class="richText readMore">{{ etab.ville.description | trans }}</div>
+		<div class="richText campDesc readMore">{{ etab.ville.description | raw }}</div>
 	</div>
 	{% endif %}
 {% endif %}{# /Onglets dédiés NL #}
