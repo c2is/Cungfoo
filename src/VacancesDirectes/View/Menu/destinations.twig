@@ -40,7 +40,13 @@
             <div class="radiusBox2 greyC bgImg international">
                 <div class="view">
                     <img class="bg" width="298" height="90" src="{{ asset('images/vacancesdirectes/common/menu/destinations/italie_visuel.jpg') }}" alt="" />
-                    <div class="stamp grey"><a href="/{{ 'seo.url.destinations' | trans }}/{{ 'seo.url.prefix' | trans }}-{{ 'pays.italie' | trans | lower}}/"><span>{{ 'menu_destination.camping' | trans  }}&nbsp;{{ 'pays.italie' | trans }}</span></a></div>
+                    <div class="stamp grey"><a href="/{{ 'seo.url.destinations' | trans }}/{{ 'seo.url.prefix' | trans }}-
+						{% if app.context.get('language') == 'nl' %}
+							italie
+						{% else %}
+							{{ 'pays.italie' | trans | lower }}
+						{% endif %}
+					/"><span>{{ 'menu_destination.camping' | trans  }}&nbsp;{{ 'pays.italie' | trans }}</span></a></div>
                 </div>
                 <div class="region">
                     <ul>
