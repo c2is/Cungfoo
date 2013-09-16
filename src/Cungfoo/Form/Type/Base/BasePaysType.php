@@ -161,7 +161,7 @@ class BasePaysType extends AppAwareType
 
     public function getDescriptionType()
     {
-        return 'textarea';
+        return 'textrich';
     }
 
     public function getDescriptionOptions()
