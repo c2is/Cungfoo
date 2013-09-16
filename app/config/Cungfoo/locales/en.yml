@@ -1,166 +1,968 @@
-activite.crud.create: Creating an Activity
-activite.crud.list: List activities
-activite.crud.update: Update activity %name%
-activite.crud.view: Activity Details %name%
-activite.etablissements: Institutions having this activity
-activite.id: Code
-activite.name: Name
+general.import: Import
 
-category_type_hebergement.crud.create: Creating a category of accommodation types
-category_type_hebergement.crud.list: List categories of accommodation types
-category_type_hebergement.crud.update: Update the category of accommodation types %name%
-category_type_hebergement.crud.view: Details of the category of accommodation types
-category_type_hebergement.id: Code
-category_type_hebergement.name: Name
+activite.crud.metadata: Metadata of the activity table
+activite.crud.create: Creating an activity
+activite.crud.list: List of the activities
+activite.crud.update: Update the activity %name%
+activite.crud.view: Details of the activity %name%
+activite.etablissements: Campsites offering this activity
+activite.themes: Themes having this activity
+activite.id: Id
+activite.code: Code
+activite_i18n.name: Nom
+activite.image_path: Picture
+activite_i18n.description: Introduction
+activite_i18n.keywords: Keywords
+activite.image.path: Picture
+activite.active: Active
+activite.vignette: Small picture
+activiteI18ns: ""
+activite_i18n.active_locale: "Active for this language"
+activite.image_path_deleted: Delete the picture ?
+activite.vignette_deleted: Delete the small picture ?
 
-job.crud.list: List jobs
-job.name: Name
+category_type_hebergement.crud.metadata: Metadata of the accommodation type table
+category_type_hebergement.crud.create: Creation of an accommodation type
+category_type_hebergement.crud.list: List of accommodation types
+category_type_hebergement.crud.update: Update the accommodation type %name%
+category_type_hebergement.crud.view: Details of the accommodation type
+category_type_hebergement.id: Id
+category_type_hebergement.code: Code
+category_type_hebergement_i18n.name: Name
+category_type_hebergement.active: Active
+category_type_hebergement.minimum_price: "Minimum price"
+category_type_hebergement.image_menu: "Picture of the menu"
+category_type_hebergement.image_menu_deleted: "Deleting the picture of the menu ?"
+category_type_hebergement.image_page: "Picture of the page"
+category_type_hebergement.image_page_deleted: "Delting the picture of the page"
+category_type_hebergement.sortable_rank: "Order"
+category_type_hebergementI18ns: ""
+category_type_hebergement_i18n.active_locale: "Active for this language"
+category_type_hebergement_i18n.slug: "Slug"
+category_type_hebergement_i18n.accroche: "Baseline"
+category_type_hebergement_i18n.description: "Introduction"
+
+type_hebergement_capacite.crud.metadata: Metadata of the accommodation capacity
+type_hebergement_capacite.crud.create: Creation of an accommodation capacity
+type_hebergement_capacite.crud.list: List of accommodation capacities
+type_hebergement_capacite.crud.update: Update the accommodation capacity %name%
+type_hebergement_capacite.crud.view: Details of the accommodation capacity
+type_hebergement_capacite.id: Id
+type_hebergement_capacite.image.menu: Picture menu
+type_hebergement_capacite.image_menu: Picture menu
+type_hebergement_capacite.image_menu_deleted: Deleting picture menu ?
+type_hebergement_capacite.image.page: Picture page
+type_hebergement_capacite.image_page: Picture page
+type_hebergement_capacite.image_page_deleted: Deleting picture page ?
+type_hebergement_capacite.active: Active
+type_hebergement_capacite.sortable_rank: Order
+type_hebergement_capaciteI18ns: ""
+type_hebergement_capacite_i18n.active_locale: "Active for this language"
+type_hebergement_capacite_i18n.name: Name
+type_hebergement_capacite_i18n.slug: Slug
+type_hebergement_capacite_i18n.description: Introduction
+type_hebergement_capacite_i18n.accroche: "Baseline"
+
+job.crud.list: Liste jobs
+job.name: Nom
 job.type: Type
 job.message: Message
-job.created_at: Created at
-job.completed_at: Ended at
-job.logs.crud.list: logs list name job
-job.logs.level: Level
+job.created_at: Date de création
+job.completed_at: Date de fin
+job.logs.crud.list: Liste des logs pour le job name
+job.logs.level: Niveau
 job.logs.message: Message
 job.logs.date: Date
 
 context.language: Language
-context.validate: Submit
+context.term: Term
+context.validate: Validate
 
 crud.button.add: Add
+crud.button.filter: Sort
 crud.button.delete: Delete
 crud.button.edit: Edit
 crud.button.list: List
+crud.button.metadata: Metadata
+crud.button.seo: Seo
 crud.button.read: Details
-crud.button.save: Register
-crud.modal.delete.title: Delete Confirmation
-crud.modal.delete.message: Are you sure you want to delete the <strong>%code%</ ​​strong> item ?
-crud.modal.delete.ok: Ok
+crud.button.save: Save
+crud.button.use: Use this media
+crud.button.upload: Download the pictures
+crud.modal.delete.title: Deleting confirmation
+crud.modal.delete.message: Are you sure to delete the item <strong>%code%</strong> ?
+crud.modal.delete.ok: Validate
 crud.modal.delete.cancel: Cancel
+crud.tab.datas: Datas
+crud.tab.medias: Medias
+crud.tab.parameters: Settings
+crud.tab.resalys: "Resalys"
 
-destination.crud.create: Creating a destination
-destination.crud.list: List destinations
+crud.tooltip.resalys: "Resalys datas"
+
+metadataI18ns: ""
+metadata_i18n.title: "Title"
+metadata_i18n.subtitle: "Subtitle"
+metadata_i18n.accroche: "Baseline"
+metadata.visuel: "Picture"
+metadata.visuel_deleted: "Delete the picture ?"
+metadata.seo_title: "Title (SEO)"
+metadata.seo_description: "Introduction (SEO)"
+metadata.seo_h1: "H1 (SEO)"
+metadata.seo_keywords: "Keywords (SEO)"
+
+seo.seoI18ns: ""
+seo.seo_title: "Title"
+seo.seo_description: "Introduction"
+seo.seo_h1: "H1"
+seo.seo_keywords: "Keywords"
+
+destination.crud.metadata: Metadata of the destination table
+destination.crud.create: Creation of a destination
+destination.crud.list: List of the destinations
 destination.crud.update: Update the destination %name%
 destination.crud.view: Details of the destination %name%
-destination.etablissements: Institutions with this destination
-destination.id: Code
-destination.name: Name
+destination.etablissements: Campsites having this destination
+destination.id: Id
+destination.code: Code
+destination_i18n.name: Name
+destination.active: Active
+destinationI18ns: ""
+destination_i18n.active_locale: "Active for this language"
+destination.sortable_rank: "Order"
+destination.sortable.rank: "Order"
+destination_i18n.slug: "Slug"
+destination_i18n.introduction: "Introduction"
+destination_i18n.description: "Introduction"
+destination.image_detail_1: "Picture 1"
+destination.image.detail.1: "Picture 1"
+destination.image_detail_1_deleted: "Delete Picture 1"
+destination.image_detail_2: "Picture 2"
+destination.image.detail.2: "Picture 2"
+destination.image_detail_2_deleted: "Delete Picture 2"
+destination_i18n.seo_title: "Title SEO"
+destination_i18n.seo_description: "Introduction SEO"
 
-etablissement.activites: List of activities
+categorie.crud.metadata: Metadata of the catagory table
+categorie.crud.create: Creation of a category
+categorie.crud.list: List of the categories
+categorie.crud.update: Update the category %name%
+categorie.crud.view: Details of the category %name%
+categorie.id: Id
+categorie.code: Code
+categorie_i18n.name: Name
+categorie.active: Active
+categorieI18ns: ""
+categorie_i18n.active_locale: "Active for this language"
+
+situation_geographique.crud.metadata: Metadata of the geographical location table
+situation_geographique.crud.create: Creation of a geographical location
+situation_geographique.crud.list: List of the geographical locations
+situation_geographique.crud.update: Update the geographical location %name%
+situation_geographique.crud.view: Details of the geographical location %name%
+situation_geographique.id: Id
+situation_geographique.code: Code
+situation_geographique_i18n.name: Name
+situation_geographique_i18n.description: Introduction
+situation_geographique_i18n.keywords: Keywords
+situation_geographique.etablissement_id: Campsites having this geographical location
+situation_geographique.active: Active
+situation_geographiqueI18ns: ""
+situation_geographique_i18n.active_locale: "Active for this language"
+
+baignade.crud.metadata: Metadata of the swimming table
+baignade.crud.create: Creation of a swimming theme
+baignade.crud.list: List of swimming thmes
+baignade.crud.update: Update a swimming theme %name%
+baignade.crud.view: Details of swimming theme %name%
+baignade.id: Id
+baignade.code: Code
+baignade_i18n.name: Name
+baignade_i18n.etablissement_id: Campsites having this swimming theme
+baignade_i18n.description: Introduction
+baignade_i18n.keywords: Keywords
+baignade.active: Active
+baignade.image_path: Picture
+baignade.image_path_deleted: "Delete Picture ?"
+baignade.vignette: Small picture
+baignade.vignette_deleted: "Delete small picture ?"
+baignadeI18ns: ""
+baignade_i18n.active_locale: "Active for this language"
+
+thematique.crud.metadata: Metadata of the thematic table
+thematique.crud.create: Creation of a thematic
+thematique.crud.list: List of the thematics
+thematique.crud.update: Update the thematic %name%
+thematique.crud.view: Details of the thematic %name%
+thematique.id: Id
+thematique.code: Code
+thematique_i18n.name: Name
+thematique_i18n.description: Introduction
+thematique_i18n.keywords: Keywords
+thematique.etablissements: Campsites having this thematic
+thematique.image_path: Picto
+thematique.image.path: Picto
+thematique.active: Active
+thematique.image_path_deleted: "Delete the picto ?"
+thematiqueI18ns: ""
+thematique_i18n.active_locale: "Active for this language"
+
+etablissement.crud.metadata: Metadata of the campsites table
+etablissement.activites: List of the activities
 etablissement.city: City
-etablissement.country: Country
-etablissement.address1: Address 1
-etablissement.address2: Address 2
-etablissement.country_code: Country Code
-etablissement.crud.create: Creating an institutions
-etablissement.crud.list: List institutions
-etablissement.crud.update: Update the institutions %name%
-etablissement.crud.view: Property Details %name%
-etablissement.destinations: List of destinations
-etablissement.service_complementaires: List of complementary services
-etablissement.type_hebergements: List of types of accommodation
+etablissement_i18n.country: Country
+etablissement.address1: Adress 1
+etablissement.address2: Adress 2
+etablissement.country_code: Country code
+etablissement.crud.create: Campsite creation
+etablissement.crud.list: List of the campsites
+etablissement.crud.update: Update the campsite name %name%
+etablissement.crud.view: Details of the campsite %name%
+etablissement.destinations: List of the campsites
+etablissement.service_complementaires: List of the extra services
+etablissement.type_hebergements: List of the kind of accommodation
+etablissement.point_interets: List of the POI
+etablissement.events: List of the events
 etablissement.fax: Fax
-etablissement.id: Code
-etablissement.mail: Email
+etablissement.id: Id
+etablissement.code: Code
+etablissement.mail: E-mail adress
 etablissement.name: Name
-etablissement.ville: City
-etablissement.ville.id: City Code
+etablissement.ville_id: City
+etablissement.ville.id: City code
+etablissement.categorie_id: Catégory
+etablissement.situation_geographiques: List of geographical locations
+etablissement.baignades: List of swimming themes
+etablissement.thematiques: List of thematics
 etablissement.zip: Postcode
-etablissement.phone1: Phone 1
-etablissement.phone2: Phone 2
-etablissement.opening.date: Opening
-etablissement.closing.date: Closing
-etablissement.opening_date: Opening
-etablissement.closing_date: Closing
+etablissement.phone1: Phone number 1
+etablissement.phone2: Phone number 2
+etablissement.minimum.price: Minimum price
+etablissement.geo_coordinate_x: Latitude
+etablissement.geo_coordinate_y: Longitude
+etablissement.opening_date: Opening date
+etablissement.closing_date: Closing date
+etablissement.minimum_price: Price "from"
+etablissement.video_path: Video
+etablissement.image_360_path: Virtual visit
+etablissement_i18n.description: Introduction
+etablissement.capacite: Capacity
+etablissement.title: Title
+etablissement_i18n.ouverture_reception: Opening hours of the reception
+etablissement_i18n.ouverture_camping: Opening dat eof the campsite
+etablissement_i18n.arrivees_departs: Arrivals and departures
+etablissement.plan_path: Map
+etablissement.published: Published ?
+etablissement.vignette: Small picture
+etablissement.slug: Slug
+etablissement.plan.path: Map
+etablissement.group.resalys: Résalys datas
+etablissement.group.cms: CMS datas
+etablissement.vignette_deleted: "Delete the small picture ?"
+etablissement.plan_path_deleted: "Delete the map ?"
+etablissementI18ns: ""
+etablissement_i18n.active_locale: "Active for this language"
+etablissement.active: "Active"
+etablissement.departement_id: "Département"
+etablissement.related_1: "Campsite close to 1"
+etablissement.related_2: "Campsite close to 2"
 
 list.actions: Actions
 
 locale.english: English
 locale.french: French
 locale.german: German
-locale.nederland: Nederland
 
 menu.activite: Activities
-menu.destination: Locations
-menu.etablissement: Institution
-menu.job: Management jobs
-menu.logout: Logout
+menu.destination: Destinations
+menu.categorie: Catégories
+menu.etablissements: Campsites
+menu.liste_etablissements: List
+menu.multimedia: Multimedia
+menu.tag_multimedia: Multimedia tag
+menu.job: Gestion des jobs
+menu.logout: Log out
 menu.parameters: Settings
+menu.parameters.resalys: Imports Resalys
+menu.parameters.viafrance: Imports ViaFrance
 menu.pays: Country
-menu.region: Regions
-menu.resalys: Managing Resalys
+menu.region: Marketing Régions
 menu.themes: Themes
 menu.title: Cungfoo
 menu.ville: Cities
-menu.type_hebergement: Types accommodation
-menu.category_type_hebergement: Category accommodation types
-menu.service_complementaire: Additional Services
+menu.departement: Departements
+menu.region_ref: Régions Réferencement
+menu.type_hebergement: Kind of accommodation
+menu.type_hebergement_capacite: Accommodation capacities
+menu.type_hebergement_multimedia: Accommodation multimedia
+menu.category_type_hebergement: Accommodation type
+menu.service_complementaire: Extra services
+menu.situation_geographique: Geographical locations
+menu.baignade: Swimming themes
+menu.thematique: Thematics
+menu.viafrance: Via France
+menu.poi: POI
+menu.event: Events
+menu.cms: Cms
+menu.personnages: Characters
+menu.avantages: Advantages
+menu.editos: Editos
+menu.top_camping: Top campings
+menu.mise_en_avant: Home Page Banner
+menu.dernieres_minutes: Last minute offers
+menu.vos_vacances: Your holidays
+menu.idee_weekend: Weekend ideas
+menu.theme: CMS themes
+menu.bon_plan_categorie: Offers category
+menu.bon_plan: Offers
+menu.navigation_item: "Navigation"
 
-category_type_hebergement.crud.create: Creating a class accommodation types
-category_type_hebergement.crud.list: List type categories Accommodation
-category_type_hebergement.crud.update: Update type accommodation category name%%
-category_type_hebergement.crud.view: Details of the accommodation category type %name%
-category_type_hebergement.id: Code
+category_type_hebergement.crud.create: Creation an accommodation category
+category_type_hebergement.crud.list: List of accommodation category
+category_type_hebergement.crud.update: Update the accommodation category %name%
+category_type_hebergement.crud.view: Details of the accommodation cateogry %name%
+category_type_hebergement.id: Id
+category_type_hebergement.code: Code
 category_type_hebergement.name: Name
 
-service_complementaire.crud.create: Creating a complementary service
-service_complementaire.crud.list: List additional services
-service_complementaire.crud.update: Update complementary service %name%
-service_complementaire.crud.view: Additional service details %name%
-service_complementaire.etablissements: Institutions having this additional service
-service_complementaire.id: Code
-service_complementaire.name: Name
+theme.crud.metadata: Metadata of the theme table
+theme.crud.create: Creation of a theme
+theme.crud.list: List dof the themes
+theme.crud.update: Update the theme %name%
+theme.crud.view: Details of the theme %name%
+theme.id: Id
+theme_i18n.name: Name
+theme.image.path: Picture
+theme.image_path_deleted: "Delete the picture ?"
+theme.active: Active
+theme_activite.activite_id: List of activities
+theme_baignade.baignade_id: List of swimming themes
+theme_service_complementaire.service_complementaire_id: List of extra services themes
+theme.personnages: List of characters
+theme_i18n.slug: Slug
+theme_i18n.introduction: Introduction
+theme_i18n.description: Introduction
+themeI18ns: ""
+theme_i18n.active_locale: "Active for this language"
 
-pays.crud.create: Creating a country
-pays.crud.list: List Countries
-pays.crud.update: Update countries %name%
-pays.crud.view: Country details %name%
-pays.id: Code
-pays.name: Name
+service_complementaire.crud.metadata: Metadata of extra services table
+service_complementaire.crud.create: Creation of an extra service
+service_complementaire.crud.list: List of extra services
+service_complementaire.crud.update: Update the extra service %name%
+service_complementaire.crud.view: Details of the extra service %name%
+service_complementaire.etablissements: Campsites having this extra service
+service_complementaire.themes: Themes having this extra service
+service_complementaire.id: Id
+service_complementaire.code: Code
+service_complementaire_i18n.name: Name
+service_complementaire_i18n.description: Introduction
+service_complementaire_i18n.keywords: Keywords
+service_complementaire.image_path: Picture
+service_complementaire.image.path: Picture
+service_complementaire.active: Active
+service_complementaire.vignette: Small picture
+service_complementaire.image_path_deleted: "Delete the picture ?"
+service_complementaire.vignette_deleted: "Delete the small picture "
+service_complementaireI18ns: ""
+service_complementaire_i18n.active_locale: "Active for this language"
 
-region.crud.create: Creating a region
-region.crud.list: List regions
-region.crud.update: Update the region %name%
-region.crud.view: Details of region %name%
-region.id: Code
-region.name: Name
-region.image_path: Picture
-region.image_path_deleted: Delete the picture ?
-region.pays: Country
-region.pays.id: Country code
-
-resalys.actions.import: Import data Resalys
-resalys.title.import: Import Resalys
-
-service_complementaire.crud.create: Creating a additional service
-service_complementaire.crud.list: List additional services
-service_complementaire.crud.update: Update additional service %name%
-service_complementaire.crud.view: Details of additional service %name%
-service_complementaire.etablissements: Institutions having this additional service
-service_complementaire.id: Code
-service_complementaire.name: Name
-
-security.username: Username
+security.title: Administration board
+security.username: Login
 security.password: Password
-security.submit: Login
+security.submit: Connexion
 
-paginator.previous: Previous
+paginator.previous: Last
 paginator.next: Next
 
-type_hebergement.category.type.hebergement.id: Category
-type_hebergement.crud.create: Creating a type accommodation
-type_hebergement.crud.list: List type accommodation
-type_hebergement.crud.update: Update type accommodation %name%
-type_hebergement.crud.view: accommodation type details %name%
-type_hebergement.etablissements: Institutions with such hosting
-type_hebergement.id: Code
-type_hebergement.name: Name
+pays.crud.metadata: Metadata of the counrty table
+pays.crud.create: Creation of a country
+pays.crud.list: List of the countries
+pays.crud.update: Update the country %name%
+pays.crud.view: Details of the country %name%
+pays.id: Id
+pays.code: Code
+pays_i18n.name: Name
+pays_i18n.introduction: Introduction
+pays_i18n.description: Introduction
+pays.image_detail_1: Picture 1
+pays.image_detail_2: Picture 2
+pays.image.detail.1: Picture 1
+pays.image.detail.2: Picture 2
+pays.active: Active
+pays_i18n.slug: Slug
+pays.image_detail_1_deleted: Delete the picture 1
+pays.image_detail_2_deleted: Delete the picture 2
+paysI18ns: ""
+pays_i18n.active_locale: "Active for this language"
 
-ville.crud.create: Creating a city
-ville.crud.list: cities list
+region_ref.crud.metadata: Metadata of the région réferencement table
+region_ref.crud.create: Creation of a region réferencement
+region_ref.crud.list: List of regions réferencements
+region_ref.crud.update: Update the region réferencement %name%
+region_ref.crud.view: Details of the region réferencement %name%
+region_ref.id: Id
+region_ref.code: Code
+region_ref_i18n.name: Name
+region_ref_i18n.introduction: Introduction
+region_ref_i18n.description: Introduction
+region_ref.image_detail_1: Picture 1
+region_ref.image_detail_2: Picture 2
+region_ref.image.detail.1: Picture 1
+region_ref.image.detail.2: Picture 2
+region_ref.active: Active
+region_ref_i18n.slug: Slug
+region_ref.pays_id: Pays
+region_ref.image_detail_1_deleted: Delete picture 1
+region_ref.image_detail_2_deleted: Delete picture 2
+region_refI18ns: ""
+region_ref_i18n.active_locale: "Active for this language"
+
+departement.crud.metadata: Metadata of the departement table
+departement.crud.create: Creation of a departement
+departement.crud.list: List of departements
+departement.crud.update: Update the departement %name%
+departement.crud.view: Details of the departement %name%
+departement.id: Id
+departement.code: Code
+departement.region_ref_id: Région réferencement
+departement_i18n.name: Name
+departement_i18n.introduction: Introduction
+departement_i18n.description: Introduction
+departement.image_detail_1: Picture 1
+departement.image_detail_2: Picture 2
+departement.image.detail.1: Picture 1
+departement.image.detail.2: Picture 2
+departement.active: Active
+departement_i18n.slug: Slug
+departement.pays: Pays
+departement.image_detail_1_deleted: Delete picture 1
+departement.image_detail_2_deleted: Delete picture 2
+departementI18ns: ""
+departement_i18n.active_locale: "Active for this language"
+
+region.crud.metadata: Metadata of the region marketing table
+region.crud.create: Creation of a region marketing
+region.crud.list: List of the regions marketing
+region.crud.update: Update the region marketing %name%
+region.crud.view: Details of the region marketing %name%
+region.id: Id
+region.code: Code
+region_i18n.name: Name
+region.image_path: Picture
+region.image_path_deleted: Delete the picture ?
+region.image_encart_path: Picture of the insert
+region.image_encart_path_deleted: Delte the picture of the insert ?
+region.image_encart_petite_path: Picture of the insert (small)
+region.image_encart_petite_path_deleted: Delete the picture of the insert (small) ?
+region.pays_id: Country
+region.pays.id: Country code
+region_i18n.description: Introduction
+region.mea_home: To highlight on the home page
+region_i18n.introduction: Introduction
+region.image_detail_1: Picture 1
+region.image_detail_2: Picture 2
+region.image.encart.path: Picture of the insert
+region.image.encart.petite.path: Picture of the insert (small)
+region.mea.home: To highlight on the home page
+region.image.detail.1: Picture 1
+region.image.detail.2: Picture 2
+region.active: Active
+region_i18n.slug: Slug
+region.destination_id: Destination
+bon_plan_region.bon_plan_id: Offers including this region
+regionI18ns: ""
+region_i18n.active_locale: "Active for this language"
+
+resalys.actions.import: Import Resalys datas
+resalys.title.import: Import Resalys
+resalys.actions.import.prix: Prices Import Resalys
+resalys.title.import.prix: Prices Import Resalys
+
+viafrance.import.events: Importing events
+viafrance.import.poi: Importating POI
+
+service_complementaire.crud.create: Creation of an extra service
+service_complementaire.crud.list: List of extra services
+service_complementaire.crud.update: Update the extra service %name%
+service_complementaire.crud.view: Details of the extra service %name%
+service_complementaire.etablissements: Campsites offering the extra service
+service_complementaire.id: Id
+service_complementaire.code: Code
+service_complementaire.name: Name
+
+type_hebergement.crud.metadata: Metadata of the accommodation table
+type_hebergement.category_type_hebergement: Catégory
+type_hebergement.crud.create: Creation of an accommodation type
+type_hebergement.crud.list: List of the accommodation types
+type_hebergement.crud.update: Update the accommodation type %name%
+type_hebergement.crud.view: Details of the accommodation type %name%
+type_hebergement.etablissements: Campsites having the accommodation type
+type_hebergement.id: Id
+type_hebergement.code: Code
+type_hebergement_type_hebergement_capacite.type_hebergement_capacite_id: Capacity
+type_hebergement_i18n.name: Name
+type_hebergement.category_type_hebergement_id: Category
+type_hebergement.nombre_chambre: Number of rooms
+type_hebergement_i18n.surface: Surface
+type_hebergement_i18n.type_terrasse: Terrace type
+type_hebergement_i18n.description: Introduction
+type_hebergement.image_hebergement_path: Picture of the accommodation
+type_hebergement.image_hebergement_path_deleted: Delte the accommodation photo
+type_hebergement_i18n.composition: Composition
+type_hebergement.image_composition_path: Picture of the composition
+type_hebergement.image_composition_path_deleted: Delete the composition picture
+type_hebergement.nombre.chambre: Number of rooms
+type_hebergement.type.terrasse: Terrace type
+type_hebergement.nombre_place: Number of places
+type_hebergement.image.hebergement.path: Picture
+type_hebergement.image.composition.path: Picture composition
+type_hebergement.active: Active
+type_hebergement.slider: Media of the slider
+type_hebergementI18ns: ""
+type_hebergement_i18n.active_locale: "Active for this language"
+type_hebergement_i18n.slug: "Slug"
+type_hebergement_i18n.presentation: "Introduction"
+type_hebergement_i18n.capacite_hebergement: "Accommodation capacity"
+type_hebergement_i18n.dimensions: "Dimensions"
+type_hebergement_i18n.agencement: "Layout"
+type_hebergement_i18n.equipements: "Facilities"
+type_hebergement_i18n.annee_utilisation: "Age of the accommodation"
+type_hebergement_i18n.remarque_1: "Remark 1"
+type_hebergement_i18n.remarque_2: "Remark 2"
+type_hebergement_i18n.remarque_3: "Remark 3"
+type_hebergement_i18n.remarque_4: "Remark 4"
+type_hebergement_i18n.indice: Indication
+
+ville.crud.metadata: Metadata of the cities table
+ville.crud.create: Creation of a city
+ville.crud.list: List of the cities
 ville.crud.update: Update the city %name%
-ville.crud.view: Details City %name%
-ville.id: Code
-ville.name: Name
-ville.region: Region
-ville.region.id: Region Code
+ville.crud.view: Details of the city %name%
+ville.id: Id
+ville.code: Code
+ville_i18n.name: Name
+ville.region_id: Région
+ville.region.id: Région code
+ville_i18n.introduction: Introduction
+ville_i18n.description: Introduction
+ville.image_detail_1: Picture 1
+ville.image_detail_1_deleted: "Delete the picture 1"
+ville.image_detail_2: Picture 2
+ville.image_detail_2_deleted: "Delete the picture 2"
+ville.image.detail.1: Picture 1
+ville.image.detail.2: Picture 2
+ville.active: Active
+villeI18ns: ""
+ville_i18n.slug: "Slug"
+ville_i18n.active_locale: "Active for this language"
+
+point_interet.crud.metadata: Metadata of the POI
+point_interet.crud.create: Creation of a POI
+point_interet.crud.list: List of POI
+point_interet.crud.update: Update the POI %name%
+point_interet.crud.view: Details of the POI %name%
+point_interet.id: Id
+point_interet.code: Internal code
+point_interet.address: Adress
+point_interet.address2: Adress 2
+point_interet.zipcode: Postcode
+point_interet.city: City
+point_interet_i18n.name: Name
+point_interet.image: Picture
+point_interet.geo.coordinate.x: Latitude
+point_interet.geo.coordinate.y: Longitude
+point_interet.geo_coordinate_x: Latitude
+point_interet.geo_coordinate_y: Longitude
+point_interet.distance_camping: Distance from the campsite
+point_interet.distance.camping: Distance from the campsite
+point_interet.active: Active
+etablissement_point_interet.etablissement_id: Campsites
+point_interet_i18n.presentation: Introduction
+point_interet_i18n.transport: Transport
+point_interet_i18n.categorie: Category
+point_interet_i18n.type: Type
+point_interet.tel: Phone number
+point_interet.fax: Fax
+point_interet.email: Email
+point_interet.website: Website
+point_interet_i18n.slug: Slug
+point_interetI18ns: ""
+point_interet_i18n.active_locale: "Active for this language"
+point_interet.created_at: "Creation date"
+point_interet.updated_at: "Update date"
+
+event.crud.metadata: Metadata of the Events table
+event.crud.create: Creation of an Event
+event.crud.list: List of Events
+event.crud.update: Update the Event %name%
+event.crud.view: Details of the Event %name%
+event.id: Id
+event.code: INternal code
+event.category: Category
+event_i18n.name: Name
+event.address: Adress
+event.address2: Adress 2
+event.zipcode: Postcode
+event.city: City
+event.image: Picture
+event.priority: Priority
+etablissement_event.etablissement_id: Campsites having this campsite
+event_i18n.str.date: Period
+event_i18n.str_date: Date
+event.geo_coordinate_x: Latitude
+event.geo_coordinate_y: Longitude
+event.geo.coordinate.x: Latitude
+event.geo.coordinate.y: Longitude
+event.distance_camping: Distance from the campsite
+event.distance.camping: Distance from the campsite
+event.active: Active
+event_i18n.subtitle: Subtitle
+event_i18n.description: Introduction
+event_i18n.transport: Transport
+event.tel: Phone number
+event.fax: Fax
+event.email: Email
+event.website: Website
+event_i18n.slug: Slug
+eventI18ns: ""
+event_i18n.active_locale: "Active for this language"
+event.created_at: "Creation date"
+event.updated_at: "Update date"
+
+personnage.crud.metadata: Metadata of the characters table
+personnage.crud.create: Creation of a character
+personnage.crud.list: List of the characters
+personnage.crud.update: Update  the character %name%
+personnage.crud.view: Details of the character %name%
+personnage.id: Id
+personnage.etablissement_id: Campsites
+theme_personnage.theme_id: "Themes"
+personnage.age: Age
+personnage.prenom: First name
+personnage.image_path: Picture
+personnage.image.path: Picture
+personnage.active: Active
+personnageI18ns: ""
+personnage_i18n.active_locale: "Active for this language"
+personnage.image_path_deleted: "Delete the picture ?"
+
+avantage.crud.metadata: Metadata of the advantage table
+avantage.crud.create: Creation of an advantage
+avantage.crud.list: List of advantages
+avantage.crud.update: Update the advantage %name%
+avantage.crud.view: Details of the advantage %name%
+avantage.id: Id
+avantage.personnage_id: Character
+avantage_i18n.name: Title
+avantage_i18n.description: Introduction
+avantage.image_path: Picture
+avantage.image_path_deleted: Delete the picture ?
+avantage.image.path: Picture
+avantage.active: Active
+avantageI18ns: ""
+avantage_i18n.active_locale: "Active for this language"
+
+edito.crud.metadata: Metadata of the Edito table
+edito.crud.create: Creation of an edito
+edito.crud.list: List of editos
+edito.crud.update: Update the edito %name%
+edito.crud.view: Details of the edito %name%
+edito.id: Id
+edito.slug: Slug
+edito_i18n.name: Title
+edito_i18n.description: Introduction
+edito.active: Active
+editoI18ns: ""
+edito_i18n.active_locale: "Active for this language"
+
+multimedia_etablissement.crud.metadata: Metadata of the campsites multimedia table
+multimedia_etablissement.crud.create: Creation of a media
+multimedia_etablissement.crud.list: List of the  media
+multimedia_etablissement.crud.update: Update the media %name%
+multimedia_etablissement.crud.view: Details of the media %name%
+multimedia_etablissement.id: Id
+multimedia_etablissement.etablissement_id: Campsite
+multimedia_etablissement_i18n.titre: Title
+multimedia_etablissement.image_path: Picture
+multimedia_etablissement_tag.tag_id: Tags
+multimedia_etablissement.image.path: Picture
+multimedia_etablissement.active: Active
+multimedia_etablissement.image_path_deleted: "Delete the picture  ?"
+multimedia_etablissementI18ns: ""
+multimedia_etablissement_i18n.active_locale: "Active for this language"
+
+multimedia_type_hebergement.crud.metadata: Metadata of the accommodation type table
+multimedia_type_hebergement.crud.create: Creation of a media for accommodation type
+multimedia_type_hebergement.crud.list: List of medias for accommodation type
+multimedia_type_hebergement.crud.update: Update the media for accommodation type %name%
+multimedia_type_hebergement.crud.view: Details of the media for accommodation type %name%
+multimedia_type_hebergement.id: Id
+multimedia_type_hebergement.etablissement: Campsite
+multimedia_type_hebergement_i18n.titre: Title
+multimedia_type_hebergement.image_path: Picture
+multimedia_type_hebergement.tags: Tags
+multimedia_type_hebergement.image.path: Picture
+multimedia_type_hebergement.active: Active
+multimedia_type_hebergement.type_hebergement: Accommodation type
+multimedia_type_hebergementI18ns: ""
+multimedia_type_hebergement_i18n.active_locale: "Active for this language"
+multimedia_type_hebergement.image_path_deleted: "Delete the picture ?"
+
+tag.crud.metadata: Metadata of the tag multimedia table
+tag.crud.create: Creation of a tag
+tag.crud.list: List of the tags
+tag.crud.update: Update the tag %name%
+tag.crud.view: Details of the tag %name%
+tag.id: Id
+tag_i18n.name: Name
+multimedia_etablissement_tag.multimedia_etablissement_id: Media
+tag.slug: Slug
+tagI18ns: ""
+tag_i18n.active_locale: "Active for this language"
+tag.active: "Active"
+
+demande_identifiant.crud.list: 
+demande_identifiant.crud.view:
+demande_identifiant.id: 
+demande_identifiant.societe_nom:
+demande_identifiant.societe_adresse_1: 
+demande_identifiant.societe_adresse_2: 
+demande_identifiant.societe_adresse_3: 
+demande_identifiant.societe_adresse_4: 
+demande_identifiant.societe_telephone: 
+demande_identifiant.societe_fax: 
+demande_identifiant.contact_prenom: 
+demande_identifiant.contact_nom: 
+demande_identifiant.contact_telephone: 
+demande_identifiant.contact_mail: 
+demande_identifiant.permanence: 
+demande_identifiant.permanence_matin_de: 
+demande_identifiant.permanence_matin_a: 
+demande_identifiant.permanence_apres_midi_de: 
+demande_identifiant.permanence_apres_midi_a:
+demande_identifiant.client_vd: 
+demande_identifiant.client_vd_code: 
+demande_identifiant.client_vc: 
+demande_identifiant.client_vc_code: 
+demande_identifiant.brochure:
+demande_identifiant.identifiant: 
+
+This value should not be blank.: This value should not be blank
+This value is not a valid email address.: This value is not a valid email address
+
+
+top_camping.crud.metadata: Metadata of the top camping table
+top_camping.crud.create: Creation of a top camping
+top_camping.crud.list: List of top campings
+top_camping.crud.update: Update the top camping %name%
+top_camping.crud.view: Details of the top camping
+top_camping.id: Id
+top_camping.etablissement_id: Campsite
+top_camping.sortable_rank: Order
+top_camping.active: Active
+
+dernieres_minutes.crud.create: Creation of a last minute
+dernieres_minutes.crud.list: List of last minute
+dernieres_minutes.crud.update: Update the last minute %name%
+dernieres_minutes.crud.view: Details of the last minute
+dernieres_minutes.id: Id
+dernieres_minutes.etablissements: Camspite
+dernieres_minutes.destinations: Destination
+dernieres_minutes.active: Active
+dernieres_minutes.day_range: Period
+dernieres_minutes.day_start: Arrival date
+dernieres_minutes.day.range: Period
+dernieres_minutes.day.start: Departure date
+dernieres_minutes.date_start: Relative arrival date
+dernieres_minutes.date.start: Relative arrival date
+
+mise_en_avant.crud.metadata: Metadata of the home page banner
+mise_en_avant.crud.create: Creation of a home page banner
+mise_en_avant.crud.list: List of the home page banners
+mise_en_avant.crud.update: Update the home page banner %name%
+mise_en_avant.crud.view: Details of the home page banner
+mise_en_avant.id: Id
+mise_en_avant.image_fond_path: Background picture
+mise_en_avant.image.fond.path: Background picture
+mise_en_avant_i18n.titre: Title
+mise_en_avant_i18n.accroche: Baseline
+mise_en_avant_i18n.lien: Link
+mise_en_avant_i18n.titre_lien: Title link
+mise_en_avant.titre.lien: Title link
+mise_en_avant.prix: Price
+mise_en_avant.illustration_path: Picture
+mise_en_avant.date_fin_validite: End date of validity
+mise_en_avant.illustration.path: Picture
+mise_en_avant.date.fin.validite: End date of validity
+mise_en_avant.sortable_rank: Order
+mise_en_avant.active: Active
+mise_en_avant.image_fond_path_deleted: "Delete the background picture ?"
+mise_en_avant.illustration_path_deleted: "Delete the picture ?"
+mise_en_avantI18ns: ""
+mise_en_avant_i18n.active_locale: "Active for this language"
+
+vos_vacances.crud.metadata: Metadata of your holidays table
+vos_vacances.crud.create: Creation of a your holidays insert 
+vos_vacances.crud.list: List of your holidays insert
+vos_vacances.crud.update: Update the insert of your holidays %name%
+vos_vacances.crud.view: Details of a your hlidays insert
+vos_vacances.id: Id
+vos_vacances.image_path: Picture
+vos_vacances_i18n.titre: Title
+vos_vacances_i18n.description: Introduction
+vos_vacances.age: Age
+vos_vacances_i18n.prenom: First name
+vos_vacances.image.path: Picture
+vos_vacances.active: Active
+vos_vacances.image_path_deleted: "Delete the picture ?"
+vos_vacancesI18ns: ""
+vos_vacances_i18n.active_locale: "Active for this language"
+
+idee_weekend.crud.metadata: Metadata of the week-end ideas table
+idee_weekend.crud.create: Creation of a week-end idea
+idee_weekend.crud.list: List of week-end ideas
+idee_weekend.crud.update: Update the week-end idea %name%
+idee_weekend.crud.view: Details of a week-end idea
+idee_weekend.id: Id
+idee_weekend.image_path: Picture
+idee_weekend.image_path_deleted: "Delete the picture ?"
+idee_weekend_i18n.titre: Title
+idee_weekend.prix: Price
+idee_weekend_i18n.lien: Link
+idee_weekend.home: Pushed on the home page
+idee_weekend.highlight: Colored
+idee_weekend.image.path: Picture
+idee_weekend.active: Active
+idee_weekendI18ns: ""
+idee_weekend_i18n.active_locale: "Active for this language"
+
+monday: Monday
+tuesday: Tuesday
+wednesday: Wednesday
+thursday: Thursday
+friday: Friday
+saturday: Saturday
+sunday: Sunday
+
+bon_plan_categorie.crud.metadata: Metadata of the offer catagories table
+bon_plan_categorie.crud.list: List of offer categories
+bon_plan_categorie.crud.update: Update the offer cateogry
+bon_plan_categorie.crud.create: Add an offer category
+bon_plan_categorie.id: Login
+bon_plan_categorie_i18n.name: Name
+bon_plan_categorie.active: Active
+bon_plan_categorie.sortable_rank: Order
+bon_plan_bon_plan_categorie.bon_plan_id: Associated offers
+bon_plan_categorieI18ns: ""
+bon_plan_categorie_i18n.active_locale: "Active for this language"
+bon_plan_categorie_i18n.slug: Slug
+bon_plan_categorie_i18n.subtitle: Subtitle
+bon_plan_categorie_i18n.description: Introduction
+
+bon_plan.crud.metadata: Metadata of the offers table
+bon_plan.crud.list: List of offers
+bon_plan.crud.update: Update the offer
+bon_plan.crud.create: Add an offer
+bon_plan.id: Login
+bon_plan_i18n.name: Name
+bon_plan.active: Active
+bon_plan.date_debut: Beginning date
+bon_plan.date_fin: End date
+bon_plan.prix: Price
+bon_plan.prix_barre: Old price
+bon_plan.image_menu: Small picture of the menu
+bon_plan.image_menu_deleted: "Delete the small picture of the menu ?"
+bon_plan.image_page: Picture of the Detail page
+bon_plan.image_page_deleted: "Delete the picture of the Detail page ?"
+bon_plan.image_liste: Listing page picture
+bon_plan.image_liste_deleted: "Delete listing page picture ?"
+bon_plan.active_compteur: Activate the timer
+bon_plan.mise_en_avant: TO push (two columns on the listing page)
+bon_plan.push_home: Show on the homepage
+bon_plan.date_start: Departure date (availability)
+bon_plan.day_start: Departure day (availability)
+bon_plan.day_range: Number of days (availability)
+bon_plan.nb_adultes: Number of adults (availability)
+bon_plan.nb_enfants: Number of children (availability)
+bon_plan.period_categories: Periods (availability)
+bon_plan_type_hebergement.type_hebergement_id: Associated accommodation types (availability)
+
+bon_plan_bon_plan_categorie.bon_plan_categorie_id: Associated categories (availability)
+bon_plan_etablissement.etablissement_id: Associated campsites (availabiity)
+bon_plan_region.region_id: Associated Regions (availability)
+bon_planI18ns: ""
+bon_plan_i18n.active_locale: "Active for this language"
+bon_plan_i18n.introduction: Introduction
+bon_plan_i18n.slug: Slug
+bon_plan_i18n.description: Introduction
+bon_plan_i18n.indice: Indication
+bon_plan_i18n.indice_prix: Price indication
+
+portfolio_media.crud.create: "Creation of a media"
+portfolio_media.crud.update: "Update the media"
+portfolio_media.crud.list: "List of medias"
+portfolio_media.id: "Id"
+portfolio_media.file: "Media"
+portfolio_media.title: "Title"
+portfolio_media.width: "Width"
+portfolio_media.height: "Height"
+portfolio_media.size: "Size"
+portfolio_media.type: "Type"
+portfolio_media.description: "Introduction"
+portfolio_media.active: "Active"
+portfolio_media.created_at: "Creation date"
+portfolio_media.updated_at: "Last update"
+portfolio_media.format_ignore: "The downloaded image is not in RGB format (please change the format)."
+portfolio_media_tag.tag_id: "Associated tags to the media"
+portfolio_mediaI18ns: ""
+portfolio_media_i18n.title: "Title"
+portfolio_media_i18n.description: "Introduction"
+portfolio_media_i18n.seo_title: "Seo title"
+portfolio_media_i18n.seo_description: "Seo description"
+portfolio_media_i18n.seo_h1: "Seo balise H1"
+portfolio_media_i18n.seo_keywords: "Seo Keywords"
+portfolio_media_i18n.active_locale: "Active for this language"
+
+'The CSRF token is invalid. Please try to resubmit the form.': 'Your session has expired, please submit the form again.'
+
+navigation.crud.list: "List of navigations"
+navigation.crud.create: "Creation of a navigation"
+navigation.crud.update: "Update the navigation"
+navigation.id: "Id"
+navigation.name: "Name"
+navigation.active: "Active"
+navigationI18ns: ""
+navigation_i18n.seo_title: "Title (SEO)"
+navigation_i18n.seo_description: "Déscription (SEO)"
+navigation_i18n.seo_h1: "H1 (SEO)"
+navigation_i18n.seo_keywords: "Keywords (SEO)"
+navigation_i18n.active_locale: "Active for this language"
+
+navigation_item.crud.list: "List of items"
+navigation_item.crud.create: "Creation of an item"
+navigation_item.crud.update: "Update the item'"
+navigation_item.id: "Id"
+navigation_item_i18n.title: "Title"
+navigation_item_i18n.path: "Link"
+navigation_item.title: "Title"
+navigation_item.path: "Link"
+navigation_item.parent_id: "Parent item"
+navigation_item.navigation: "Navigation"
+navigation_item.navigation_id: "Navigation"
+navigation_item.sortable_rank: "Order"
+navigation_item.active: "Active"
+navigation_itemI18ns: ""
+navigation_item_i18n.seo_title: "Title (SEO)"
+navigation_item_i18n.seo_description: "Déscription (SEO)"
+navigation_item_i18n.seo_h1: "H1 (SEO)"
+navigation_item_i18n.seo_keywords: "Keywords (SEO)"
+navigation_item_i18n.active_locale: "Active for this language"
+menu.cache: "Cache"
+cache_generator.id: "Id"
+cache_generator.url: "URL"
+cache_generator.cache.time: "Duration"
+cache_generator.cache_time: "Duration"
+cache_generator.cached_at: "Date of the last update"
+cache_generator.active: "Active"
+crud.tooltip.cache.time: "Updating frequecy (seconds)"
+cache_generator.crud.list: "List of URLs in the cache"
