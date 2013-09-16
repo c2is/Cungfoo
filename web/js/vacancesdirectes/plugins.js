@@ -2460,21 +2460,7 @@ else if(wButton=='cancel')
         // callbacks
         beforeToggle: function(){},
         afterToggle: function(){}
-      },
-
-      styles = '.readmore-js-toggle, .readmore-js-section { display: block; width: 100%; }\
-.readmore-js-section { overflow: hidden; }';
-
-    (function(d,u) {
-      if(d.createStyleSheet) {
-        d.createStyleSheet( u );
-      }
-      else {
-        var css=d.createElement('style');
-        css.appendChild(document.createTextNode(u));
-        d.getElementsByTagName("head")[0].appendChild(css);
-      }
-    }(document, styles));
+      };
 
   function Readmore( element, options ) {
     this.element = element;
@@ -2572,7 +2558,6 @@ else if(wButton=='cancel')
     }
   }
 })(jQuery);
-
 
 /**** WAYPOINTS ****/
 /*
