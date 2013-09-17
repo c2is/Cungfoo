@@ -13,16 +13,35 @@ html[lang="nl"]{
       font-size:25px;
     }
   }
-	#tabVille, #tabRegion, #tabPays { margin-bottom: 30px; }
-	.tabControls li a{	 padding: 6px 6px 0; }
-	ul.sub-menu { display: none; left: -116px; margin: 1px 0; padding: 5px 0 0; position: absolute; text-align: center; top: 47px; width: 74px; z-index: 999;
-		li { display: block; list-style-type: none; text-align: center;
-			a { border-radius: 0; margin: 0; padding: 0;  position: relative; display: block; float: none;}
-		}
-	}
-	li.dropdown {position: relative;
-		&:hover ul.sub-menu {display: block;}
-	}
+  #tabVille, #tabRegion, #tabPays { margin-bottom: 30px; }
+  .tabControls {
+    li:hover {
+        ul {
+            display:block;
+        }
+    }
+    ul {
+        position:absolute;
+        display:none;
+        z-index: 999;
+        li {
+            float:none;
+            display:block;
+            position: relative;
+            a {
+                border-radius:0;
+            }
+        }
+    }
+    li.dropdown {
+        position:relative;
+        float:left;
+        a {
+            float:none;
+            display:block;
+        }
+    }
+  }
   aside{
     #searchBloc{
       #searchBlocDate{
