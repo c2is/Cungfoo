@@ -15,10 +15,13 @@ html[lang="nl"]{
   }
   #tabVille, #tabRegion, #tabPays { margin-bottom: 30px; }
   .tabControls {
-    li:hover {
-        ul {
-            display:block;
-        }
+    li {
+		&:hover {
+			ul {
+				display:block;
+			}
+		}
+		a {padding: 6px 6px 0;}
     }
     ul {
         position:absolute;
