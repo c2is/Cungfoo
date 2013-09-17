@@ -346,21 +346,22 @@
         {% endfor %}
     </div>
     {% endif %}
-
+	
+	{% if app.context.get('language') != 'nl' %}
     <div class="infoDestination bloc sombre">
         <h3>{{ etab.ville.region.name }}</h3>
-        <p>{{ etab.ville.region.description }}</p>
+        <p>{{ etab.ville.region.description | raw}}</p>
 
         <img class="iDestImg1 boxborder" src="{{ asset(etab.ville.region.imageEncartPath | media('file')) }}" width="211" height="93" alt="{{ etab.ville.region.name }}">
         <img class="iDestImg2 boxborder" src="{{ asset(etab.ville.region.imageEncartPetitePath | media('file')) }}" width="146" height="65" alt="{{ etab.ville.region.name }}">
     </div>
-
+	{% endif %}
+	
     <nav class="paginationTabs clear">
         <button class="bt trans left triggerClick" data-triggerLink="#tabLocations" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'Contenu_-_Footer', 'Clic_-_Lien-Precedent']);">{{ "fiche.les_locations" | trans }}</button>
         <button class="bt trans right triggerClick" data-triggerLink="#tabInfos" onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Page_-_Fiche-Camping', 'Contenu_-_Footer', 'Clic_-_Lien-Suivant']);">{{ "fiche.infos_pratiques" | trans }}</button>
     </nav>
 </div>
-
 <!-- tab Infos pratiques -->
 <div id="tabInfos" class="tabs">
     <div id="infoMap" class="gmap" style="width:616px;height:326px;">
@@ -429,6 +430,8 @@
 	<div id="tabRegion" class="tabs">
 	<h3>{{ etab.region.name | trans }}</h3>
 		<div class="richText campDesc">{{ etab.region.description | raw }} </div>
+		<!-- <img class="iDestImg1 boxborder" src="{{ asset(etab.ville.region.imageEncartPath | media('file')) }}" width="211" height="93" alt="{{ etab.ville.region.name }}">
+        <img class="iDestImg2 boxborder" src="{{ asset(etab.ville.region.imageEncartPetitePath | media('file')) }}" width="146" height="65" alt="{{ etab.ville.region.name }}"> -->
 	</div>
 	{% endif %}
 	{% if etab.ville.description | trans != "" %}
