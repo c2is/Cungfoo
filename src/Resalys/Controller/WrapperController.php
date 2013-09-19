@@ -230,10 +230,12 @@ eof
             , $app['config']->get('version')
             , $this->specificFiles);
 		
-		// #2105 modification du visuel pour le site DE 
+		// #2105 modification du visuel pour le site DE et NL
 		$pageAvecCssSpecifique = array('couloir');
 		if($app['context']->get('language') == 'de' && in_array($this->specificFiles,$pageAvecCssSpecifique))
 			$iframe = str_replace('{_c2is.stylesheet_de}', $this->getStylesheetTag(sprintf('css/vacancesdirectes/%s_de.css', $this->specificFiles)), $iframe);
+		elseif($app['context']->get('language') == 'nl' && in_array($this->specificFiles,$pageAvecCssSpecifique)) 
+			$iframe = str_replace('{_c2is.stylesheet_de}', $this->getStylesheetTag(sprintf('css/vacancesdirectes/%s_nl.css', $this->specificFiles)), $iframe);
 		else $iframe= str_replace('{_c2is.stylesheet_de}','', $iframe);
 		
         $iframe = str_replace(array(
