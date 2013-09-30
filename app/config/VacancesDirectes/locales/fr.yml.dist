@@ -444,6 +444,7 @@ footer.contact.adresse.lieu_dit: 'ZA les Alleux'
 footer.contact.adresse.rue: '4 Rue du Suroit'
 footer.contact.adresse.ville: 'CS 81010 - TADEN'
 footer.contact.adresse.code_postal: '22101 DINAN cedex'
+footer.contact.adresse.mail: 'contact@vacances-directes.com'
 footer.charte_qualite: 'Charte qualité'
 footer.conditions_generales_de_location: 'Conditions générales de location'
 footer.faq: FAQ
