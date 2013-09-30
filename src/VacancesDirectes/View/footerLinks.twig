@@ -3,7 +3,7 @@
 </div>
 <div class="footer-links" class="full-width">
 	{% if app.context.get('language') == 'fr' %}<a href="http://ce.vacances-directes.com/"{% if app.request.get('_route') == 'destination_camping' %} onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Footer', 'Lien_-_Footer-Bottom', 'Clic_-_Lien-VD-CE']);"{% endif %}>Vacances Directes CE</a>&nbsp;-&nbsp;{% endif %}
-	{% if app.context.get('language') == 'nl' %}<a href="http://www.vacances-directes.nl/disclaimer.html">Disclaimer </a> - {% endif %}
+	{% if app.context.get('language') == 'nl' %}<a href="http://www.vacances-directes.nl/disclaimer.html">Disclaimer</a> - {% endif %}
 	{# TODO <a href="#_">{{ "footer.contact" | trans }}</a> - #}
 	{# TODO <a href="{{ path('edito_by_slug', {slug: 'charte-qualite'}) }}">{{ "footer.charte_qualite" | trans }}</a> - #}
 	<a href="{{ path('edito_by_slug', {slug: 'conditions-generales'}) }}"{% if app.request.get('_route') == 'destination_camping' %} onclick="javascript:_gaq.push(['_trackEvent', 'Nav-VD_-_Footer', 'Lien_-_Footer-Bottom', 'Clic_-_Lien-CGV']);"{% endif %}>{{ "footer.conditions_generales_de_location" | trans }}</a> -
