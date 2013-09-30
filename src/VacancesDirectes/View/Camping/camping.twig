@@ -21,11 +21,15 @@
 
 {{ esi(path('esi_camping', {camping: etab.getSlug})) }}
 
+{# patch nl pour éviter l'affichage du semainier tant que la saison 2014 est non activée #}
+{% if app.context.get('language') != 'nl' %}
 <div id="stayBooking">
     {# <a href="#searchBloc" class="bt fushia big ib goto">{{ "search.linkto" | trans }}</a> #}
 <iframe id="frameResalys" src="{{ path('resalys_wrapper', semainierQuery) }}" width="960px" height="700px" marginheight="0" marginwidth="0" frameborder="0"></iframe>
     <a href="#searchBloc" class="bt fushia big ib goto">{{ "search.linkto" | trans }}</a>
 </div>
+{% endif %}
+
 {% endblock %}
 
 {% block rightColumn %}
