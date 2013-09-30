@@ -12,7 +12,9 @@
             </div>
             {% if(idee.prix != "") %}
                 <a href="{{ idee.lien | trans }}" class="stain cover linkBlock "><span>{{ "general.a_partir_de" | trans }}<br /><span class="price linkBlock">{{ idee.prix }}<span class="fine">&nbsp;</span>€</span></span></a>
-            {% endif %}
+            {% else %}
+				<a href="{{ idee.lien | trans }}" class="linkBlock" style="display:none;">{{ idee.titre }}</a>
+			{% endif %}
         </div>
     {% endfor %}
     {# TODO <a href="#_" class="bt link right">{{ "home.idees_weekend.link" | trans  ({'%number%': ideesweekend|length }) }}</a> #}
