@@ -440,6 +440,7 @@ footer.contact.adresse.lieu_dit: 'Ettlinger-Tor-Platz 3'
 footer.contact.adresse.rue: 'D-76137 Karlsruhe'
 footer.contact.adresse.ville: ''
 footer.contact.adresse.code_postal: ''
+footer.contact.adresse.mail: 'contact@vacances-directes.com'
 footer.charte_qualite: Qualitätscharta
 footer.conditions_generales_de_location: 'Allgemeine Vermietungsbedingungen'
 footer.faq: FAQ
