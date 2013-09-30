@@ -3,7 +3,8 @@
     <div class="title">
         <h2>{{ 'widget.tracking.title' | trans }}</h2>
     </div>
-    {% for camping in campings if loop.index < 3 %}
+    {% for camping in campings %}
+	{% if loop.index < 3 %}
     <div class="element clear linkParent">
         <div class="left">
             <img class="boxborder" src="{{ asset(camping.vignette | media('file')) }}" width="119" height="86" alt="" />
@@ -18,6 +19,7 @@
             {% endif %}
         </a>
     </div>
+	{% endif %}
     {% endfor %}
 </div>
 {% endif %}

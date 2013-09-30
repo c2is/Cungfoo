@@ -104,8 +104,16 @@
                         <dt class="roomTypeListTitle">{{ "listing.nos_locations_disponibles" | trans }}&nbsp;:</dt>
                         <dd>
                             <ul>
-                                {% for typeHebergement in etab.model.typeHebergementsActive if loop.index < 6 %}
-                                    <li>{% if loop.index >= 5 %}...{% else %}{{ typeHebergement.categoryTypeHebergement.name }} - {{ typeHebergement.name }}{% endif %}</li>
+                                {% for typeHebergement in etab.model.typeHebergementsActive %}
+								{%if loop.index < 6 %}
+                                    <li>
+										{% if loop.index >= 5 %}
+											...
+										{% else %}
+											{{ typeHebergement.categoryTypeHebergement.name }} - {{ typeHebergement.name }}
+										{% endif %} 
+									</li>
+								{% endif %}
                                 {% endfor %}
                             </ul>
                         </dd>
