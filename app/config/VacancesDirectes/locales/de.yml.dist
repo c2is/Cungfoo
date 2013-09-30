@@ -422,6 +422,7 @@ general.toggle: 'Anzeige Ergebnis(se)'
 general.budget_range: 'Angebotene(s) Budget(s)'
 general.list: Liste
 general.map: Karte
+general.semainier_non_disponible: 'Les réservations pour cette destination seront disponibles prochainement'
 filtres.affinez_recherche: 'Verfeinern Sie Ihre Suche'
 filtres.criteres_selectionne: 'Ausgewählte Kriterien'
 filtres.situation: Situation
@@ -705,3 +706,4 @@ alerte_inactivite.refresh: 'Rafraîchir'
 didacticiel.title_bon_plan: 'Nous recherchons les séjours les mieux adaptés à votre demande'
 date_search.nb_adultes.range: 'Le nombre d''adultes doit être compris entre 1 et 6'
 date_search.nb_enfants.range: 'Le nombre d''enfants doit être compris entre 0 et 6'
+config.fin_saison: 1
