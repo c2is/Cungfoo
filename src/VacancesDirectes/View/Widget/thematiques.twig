@@ -1,0 +1,14 @@
+<div id="thematiquesBloc" class="clear radiusBox greyC">
+	<a href="/{{ 'seo.url.destinations' | trans }}/{{ 'seo.url.prefix' | trans }}-{{ 'pays.espagne' | trans | lower}}/" title="{{ 'menu_destination.camping' | trans  }}&nbsp;{{ 'pays.espagne' | trans }}">
+		<img class="no-margin" src="/images/vacancesdirectes/common/images/espagne_{{ locale }}.jpg" alt="{{ 'menu_destination.camping' | trans  }}&nbsp;{{ 'pays.espagne' | trans }}" width="248" height="90" />
+	</a>
+	<a href="/{{ 'seo.url.destinations' | trans }}/{{ 'seo.url.prefix' | trans }}-{% if app.context.get('language') == 'nl' %}italie{% else %}{{ 'pays.italie' | trans | lower }}{% endif %}/" title="{{ 'menu_destination.camping' | trans  }} {{ 'pays.italie' | trans }}">
+		<img src="/images/vacancesdirectes/common/images/italie_{{ locale }}.jpg" alt="{{ 'menu_destination.camping' | trans  }}&nbsp;{{ 'pays.italie' | trans }}" width="248" height="90" />
+	</a>
+	<a href="/{{ 'seo.url.destinations' | trans }}/{{ 'seo.url.prefix' | trans }}-{{ thematiques[1].slug | trans }}/" title="{{ 'menu_destination.camping' | trans  }} {{ thematiques[1].name }} ">
+		<img src="/images/vacancesdirectes/common/images/mediteranee_{{ locale }}.jpg" alt="{{ 'menu_destination.camping' | trans  }} {{ thematiques[1].name }}" width="248" height="90" />
+	</a>
+	<a href="/{{ 'seo.url.destinations' | trans }}/{{ 'seo.url.prefix' | trans }}-{{ thematiques[0].slug | trans }}/" title="{{ 'menu_destination.camping' | trans  }} {{ thematiques[0].name }}">
+		<img src="/images/vacancesdirectes/common/images/atlantique_{{ locale }}.jpg" alt="{{ 'menu_destination.camping' | trans  }} {{ thematiques[0].name }}" width="248" height="90" />
+	</a>
+</div>
