@@ -5,12 +5,10 @@
         </a>
     </li>
     {% for key,item in menu.items %}
-		{% if item.route != 'menu_bons_plans' %} {# TODO ticket 2183 #}
         <li class="tab{% if key in currentRoute %} current{% endif %}">
             <a>{{ item.title|trans }}{% if item.count is not null %} <small>({{ item.count }})</small>{% endif %}</a>
             {{ esi ( path ( item.route ) ) }}
         </li>
-		{% endif %}
     {% endfor %}
     <li id="lang">
         {% if app.context.get('language') == 'fr' %}
