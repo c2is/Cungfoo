@@ -21,7 +21,8 @@
 {% block rightColumn %}
     {% include 'Form/_search_engine.twig' %}
     <div id="greyBoxes" class="clear">
-        {{ esi(path('widget', {'name': 'idees_weekend'})) }}
+       {# TODO #2181 {{ esi(path('widget', {'name': 'idees_weekend'})) }} #}
+	   {{ esi(path('widget', {'name': 'thematiques'})) }}
     </div>
 {% endblock %}
 
