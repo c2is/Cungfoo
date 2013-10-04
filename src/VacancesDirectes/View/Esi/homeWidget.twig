@@ -3,7 +3,7 @@
     {% for etab in dispos.element %}
 		{% if nbpassage == 1 %}
 			<div class="stamp grey">
-				<h2><span class="counter">J - {{ etab.days_countdown }}</span>{{ "home.early_booking" | trans }}</h2>
+				<h2 class="logo"><span class="counter">J - {{ etab.days_countdown }}</span>{{ "home.early_booking" | trans }}</h2>
 			</div>
 			{% set nbpassage = 2 %}
 		{% endif %}

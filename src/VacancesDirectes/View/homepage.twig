@@ -10,10 +10,14 @@
 
 {% block leftColumn %}
 <div class="ratio-33 left">
-    {{ esi(path('widget', {'name': 'top_camping'})) }}
+     {{ esi(path('widget', {'name': 'top_camping', 'offset': "config.top_camping.offset" | trans, 'limit': "config.top_camping.limit" | trans, 'div_id': 0})) }}
 </div>
 <div class="ratio-33 left clear">
-    {{ esi(path('esi_home_widget')) }}
+    {% if "config.fin_saison" | trans == 1 %}
+		{{ esi(path('widget', {'name': 'top_camping', 'offset': "config.top_camping.limit" | trans, 'limit': "config.top_camping.limit" | trans, 'div_id': 1})) }}
+	{% else %}
+		{{ esi(path('esi_home_widget')) }}
+	{% endif %}
 </div>
 
 {% endblock %}

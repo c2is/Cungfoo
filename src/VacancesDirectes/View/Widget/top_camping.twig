@@ -1,10 +1,15 @@
-<div id="topLocations" class="locationForwards clear">
+<div id="{% if div_id == 0 %}topLocations{% else %}topLocations_{{ div_id }}{% endif %}" class="locationForwards clear" style="min-height:483px;">
     <div class="stamp grey">
-        <h2>{{ "home.topcamping" | trans }}</h2>
+        <h2 {% if div_id == 0 %}class="logo"{% endif %}>
+			{% if div_id == 0 %}
+				{{ "home.topcamping" | trans }}
+			{% else %}
+				{{ "home.topcamping_2" | trans }}
+			{% endif %}
+		</h2>
     </div>
     {% if topCampings | length %}
     {% for camping in topCampings %}
-        {% if loop.index <= 5 %}
         {% set campingPath = url('destination_camping', {'pays': camping.etablissement.pays.slug, 'region': camping.etablissement.region.slug, 'ville': camping.etablissement.ville.slug, 'camping': camping.etablissement.slug }) %}
         <div class="element clear linkParent">
             <div class="left">
@@ -22,11 +27,18 @@
 			</div>
 			<a href="{{ campingPath }}" id="btnReserver" class="linkBlock">{{ "general.reserver" | trans }}</a>
         </div>
-        {% endif %}
     {% endfor %}
     {% endif %}
 	<div id="botTopCamp">
 		<div class="left semaine">*&nbsp;{{ "general.tarif_a_la_semaine" | trans }}</div>
-		<div class="right"><a href="{{ path('top_campings') }}" class="bt link">{{ "home.topcamping.link" | trans  ({'%number%': topCampings|length }) }}</a></div>
+		<div class="right">
+			<a href="{{ path('top_campings') }}" class="bt link">
+				{% if div_id == 0 %}
+					{{ "home.topcamping.link" | trans  ({'%number%': topCampings|length }) }}
+				{% else %}
+					{{ "home.topcamping_2.link" | trans  ({'%number%': topCampings|length }) }}
+				{% endif %}
+			</a>
+		</div>
 	</div>
 </div>

@@ -2,6 +2,8 @@
 
 namespace VacancesDirectes\Widget;
 
+use \Criteria;
+
 use Symfony\Component\HttpFoundation\Request;
 
 use Cungfoo\Model\TopCampingQuery,
@@ -16,6 +18,10 @@ class TopCampingWidget extends AbstractWidget
 
     public function render()
     {
+		$offset = (int) $this->app['request']->query->get('offset');
+        $limit = (int) $this->app['request']->query->get('limit');
+		$divId = (int) $this->app['request']->query->get('div_id');
+
         $locale = $this->app['context']->get('language');
 
         $topCampings = \Cungfoo\Model\TopCampingQuery::create()
@@ -26,11 +32,14 @@ class TopCampingWidget extends AbstractWidget
                 ->endUse()
                 ->filterByActive(true)
             ->endUse()
+			->limit($limit)
+			->offset($offset)
             ->findActive()
         ;
 
         return $this->app['twig']->render('Widget\\top_camping.twig', array(
-            'topCampings' => $topCampings
+            'topCampings' => $topCampings,
+			'div_id' => $divId
         ));
     }
 

@@ -374,6 +374,8 @@ fiche.toutes_regions: 'Toutes les destinations'
 fiche.region: ''
 home.topcamping: 'Top campings'
 home.topcamping.link: 'Tous les top campings'
+home.topcamping_2: 'Coups de Coeur'
+home.topcamping_2.link: 'Tous les coups de coeur'
 home.vacances_directes_cest: 'Vacances directes c''est'
 home.4_pays: '3 pays'
 home.26_regions: '34 régions'
@@ -715,3 +717,5 @@ didacticiel.title_bon_plan: 'Nous recherchons les séjours les mieux adaptés à
 date_search.nb_adultes.range: 'Le nombre d''adultes doit être compris entre 1 et 6'
 date_search.nb_enfants.range: 'Le nombre d''enfants doit être compris entre 0 et 6'
 config.fin_saison: 1
+config.top_camping.offset: 0
+config.top_camping.limit: 4
