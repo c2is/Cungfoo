@@ -462,7 +462,7 @@ class DestinationController implements ControllerProviderInterface
 		}
 		
         $lastProposal = $app['session']->get('last_proposal');
-        if ($lastProposal) {
+        if ($lastProposal && $lastProposal['proposal']) {
             $periodType = $lastProposal['proposal']->{'period_type_code'};
             $roomType   = explode('-', $lastProposal['proposal']->{'proposal_key'});
 
