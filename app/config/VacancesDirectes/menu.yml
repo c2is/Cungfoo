@@ -10,3 +10,5 @@ items:
     bonsplans:
         title:      "menu.bons_plans"
         route:      "menu_bons_plans"
+        countQuery: "\\Cungfoo\\Model\\BonPlanPeer::getNbBonsPlansActifs"
+        hideCount:  true
