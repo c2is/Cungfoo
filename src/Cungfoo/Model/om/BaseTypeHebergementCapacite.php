@@ -2483,17 +2483,16 @@ abstract class BaseTypeHebergementCapacite extends BaseObject implements Persist
 
         return $this;
     }
-
-
-        /**
-         * Get the [slug] column value.
-         *
-         * @return string
-         */
-        public function getSlug()
-        {
-        return $this->getCurrentTranslation()->getSlug();
+    /**
+     * Get the [slug] column value.
+     *
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->getCurrentTranslation()->getSlug() ?: 'n-a';
     }
+
 
 
         /**

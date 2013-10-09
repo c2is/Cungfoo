@@ -83,6 +83,9 @@ class TypeHebergementCapaciteTableMap extends TableMap
   'use_scope' => 'false',
   'scope_column' => 'sortable_scope',
 ),
+            'cungfoo_sluggable' =>  array (
+  'default_value' => 'n-a',
+),
             'i18n' =>  array (
   'i18n_table' => '%TABLE%_i18n',
   'i18n_phpname' => '%PHPNAME%I18n',

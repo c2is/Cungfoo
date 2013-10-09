@@ -136,9 +136,6 @@ class BaseTypeHebergementCapaciteType extends AppAwareType
         return array(
             'required' => false,
             'label' => 'type_hebergement_capacite_i18n.name',
-            'constraints' => array(
-                        new Assert\NotBlank(),
-                    ),
         );
     }
 

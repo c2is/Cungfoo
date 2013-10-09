@@ -166,7 +166,6 @@ abstract class BasePortfolioTagCategory extends BaseObject implements Persistent
     {
         return $this->name;
     }
-
     /**
      * Get the [slug] column value.
      *
@@ -174,8 +173,9 @@ abstract class BasePortfolioTagCategory extends BaseObject implements Persistent
      */
     public function getSlug()
     {
-        return $this->slug;
+        return $this->slug ?: 'n-a';
     }
+
 
     /**
      * Get the [active] column value.

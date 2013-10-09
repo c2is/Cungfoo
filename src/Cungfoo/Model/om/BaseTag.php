@@ -150,7 +150,6 @@ abstract class BaseTag extends BaseObject implements Persistent
     {
         return $this->id;
     }
-
     /**
      * Get the [slug] column value.
      *
@@ -158,8 +157,9 @@ abstract class BaseTag extends BaseObject implements Persistent
      */
     public function getSlug()
     {
-        return $this->slug;
+        return $this->slug ?: 'n-a';
     }
+
 
     /**
      * Get the [optionally formatted] temporal [created_at] column value.
