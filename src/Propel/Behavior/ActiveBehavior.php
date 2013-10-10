@@ -34,8 +34,7 @@ class ActiveBehavior extends Behavior
             $this->getTable()->addColumn(array(
                 'name'    => $this->getParameter('active_column'),
                 'type'    => 'BOOLEAN',
-                'default' => true,
-                'default' => $this->getParameter('default_value') === 'true',
+                'default' => (boolean) $this->getParameter('default_value'),
             ));
         }
 
@@ -43,8 +42,7 @@ class ActiveBehavior extends Behavior
             $this->getTable()->addColumn(array(
                 'name'    => $this->getParameter('active_locale_column'),
                 'type'    => 'BOOLEAN',
-                'default' => true,
-                'default' => $this->getParameter('default_value') === 'true',
+                'default' => (boolean) $this->getParameter('default_value'),
             ));
 
             // add active_locale_column on behavior i18n_columns parameter
