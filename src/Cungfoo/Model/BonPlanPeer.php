@@ -31,4 +31,17 @@ class BonPlanPeer extends BaseBonPlanPeer
 
         return implode('|', $objects);
     }
+
+    public static function getNbBonsPlansActifs()
+    {
+        return BonPlanQuery::create()
+            ->useBonPlanBonPlanCategorieQuery()
+                ->useBonPlanCategorieQuery()
+                    ->filterByActive(true)
+                ->endUse()
+            ->endUse()
+            ->addDateFilters()
+            ->findActive()
+            ->count();
+    }
 }
