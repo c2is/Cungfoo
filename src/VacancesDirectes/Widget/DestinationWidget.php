@@ -16,7 +16,11 @@ class DestinationWidget extends AbstractWidget
 
     public function render()
     {
+        $locale = $this->app['context']->get('language');
+
         $pays = PaysQuery::create()
+            ->useI18nQuery($locale)
+            ->endUse()
             ->findActive()
         ;
 
