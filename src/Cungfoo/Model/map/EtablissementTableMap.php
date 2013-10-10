@@ -130,6 +130,9 @@ class EtablissementTableMap extends TableMap
   'active_column' => 'active',
   'active_locale_column' => 'active_locale',
 ),
+            'cungfoo_sluggable' =>  array (
+  'default_value' => 'n-a',
+),
             'i18n' =>  array (
   'i18n_table' => '%TABLE%_i18n',
   'i18n_phpname' => '%PHPNAME%I18n',

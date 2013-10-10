@@ -71,6 +71,9 @@ class PortfolioTagCategoryTableMap extends TableMap
   'active_column' => 'active',
   'active_locale_column' => 'active_locale',
 ),
+            'cungfoo_sluggable' =>  array (
+  'default_value' => 'n-a',
+),
             'crudable' =>  array (
   'route_prefix' => '/',
   'crud_prefix' => '/portfolio/tags-categories',

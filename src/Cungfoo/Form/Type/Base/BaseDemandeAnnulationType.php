@@ -265,6 +265,19 @@ class BaseDemandeAnnulationType extends AppAwareType
         );
     }
 
+    public function getGroupesType()
+    {
+        return 'checkbox';
+    }
+
+    public function getGroupesOptions()
+    {
+        return array(
+            'required' => false,
+            'label' => 'demande_annulation.groupes',
+        );
+    }
+
     public function getSinistreDateType()
     {
         return 'text';
@@ -475,6 +488,7 @@ class BaseDemandeAnnulationType extends AppAwareType
         $builder->add('camping_montant_verse', $this->getCampingMontantVerseType(), $this->getCampingMontantVerseOptions());
         $builder->add('sinistre_nature', $this->getSinistreNatureType(), $this->getSinistreNatureOptions());
         $builder->add('sinistre_suite', $this->getSinistreSuiteType(), $this->getSinistreSuiteOptions());
+        $builder->add('groupes', $this->getGroupesType(), $this->getGroupesOptions());
         $builder->add('sinistre_date', $this->getSinistreDateType(), $this->getSinistreDateOptions());
         $builder->add('sinistre_resume', $this->getSinistreResumeType(), $this->getSinistreResumeOptions());
         $builder->add('created_at', $this->getCreatedAtType(), $this->getCreatedAtOptions());

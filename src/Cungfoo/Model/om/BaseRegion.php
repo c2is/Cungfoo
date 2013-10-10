@@ -3827,17 +3827,16 @@ abstract class BaseRegion extends BaseObject implements Persistent
     {
         return $this->getTranslation($this->getLocale(), $con);
     }
-
-
-        /**
-         * Get the [slug] column value.
-         *
-         * @return string
-         */
-        public function getSlug()
-        {
-        return $this->getCurrentTranslation()->getSlug();
+    /**
+     * Get the [slug] column value.
+     *
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->getCurrentTranslation()->getSlug() ?: 'n-a';
     }
+
 
 
         /**
