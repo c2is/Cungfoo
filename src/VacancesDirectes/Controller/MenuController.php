@@ -128,6 +128,12 @@ class MenuController implements ControllerProviderInterface
         })
         ->bind('menu_weekends');
 
+        $controllers->get('/footer', function () use ($app)
+        {
+            return $app['twig']->render('footer.twig', array('forIFrame' => true));
+        })
+        ->bind('menu_weekends');
+
         return $controllers;
     }
 
