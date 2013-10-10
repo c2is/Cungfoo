@@ -75,6 +75,7 @@ class EditoTableMap extends TableMap
             'active' =>  array (
   'active_column' => 'active',
   'active_locale_column' => 'active_locale',
+  'default_value' => 'false',
 ),
             'cungfoo_sluggable' =>  array (
   'default_value' => 'n-a',

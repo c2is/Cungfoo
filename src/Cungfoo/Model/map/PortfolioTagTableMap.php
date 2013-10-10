@@ -78,6 +78,7 @@ class PortfolioTagTableMap extends TableMap
             'active' =>  array (
   'active_column' => 'active',
   'active_locale_column' => 'active_locale',
+  'default_value' => 'false',
 ),
             'i18n' =>  array (
   'i18n_table' => '%TABLE%_i18n',

@@ -101,6 +101,7 @@ class DemandeAnnulationTableMap extends TableMap
             'active' =>  array (
   'active_column' => 'active',
   'active_locale_column' => 'active_locale',
+  'default_value' => 'false',
 ),
             'crudable' =>  array (
   'route_prefix' => '/',

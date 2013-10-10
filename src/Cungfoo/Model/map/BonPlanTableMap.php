@@ -121,6 +121,7 @@ class BonPlanTableMap extends TableMap
             'active' =>  array (
   'active_column' => 'active',
   'active_locale_column' => 'active_locale',
+  'default_value' => 'false',
 ),
             'sortable' =>  array (
   'rank_column' => 'sortable_rank',
