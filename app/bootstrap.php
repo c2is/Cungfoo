@@ -61,12 +61,6 @@ $app->register(new Silex\Provider\SessionServiceProvider(), array(
     'session.storage.options' => array('auto_start' => true),
 ));
 
-$app->register(new Silex\Provider\MonologServiceProvider(), array(
-    'monolog.logfile' => __DIR__.'/logs/cungfoo.log',
-));
-
-$app['monolog.name'] = 'Cungfoo';
-
 try {
     // La conf memcache n'est chargée que si le fichier existe ; si elle n'est pas chargée, la méthode get() de config throw une exception, d'où le try/catch
     $memConf = $app['config']->get('memcache');
