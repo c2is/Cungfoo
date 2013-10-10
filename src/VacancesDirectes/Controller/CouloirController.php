@@ -69,6 +69,10 @@ class CouloirController implements ControllerProviderInterface
 
             $query = array_merge($query, $request->request->all());
 
+            if ($app['session']->has('resalys_user')) {
+                $query["session"] = $app['session']->get('resalys_user')->session;
+            }
+
             $query = $this->pushCookieSession($request, $query);
 
             return $app->renderView('Couloir\detail-sejour.twig', array(

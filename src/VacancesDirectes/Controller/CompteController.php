@@ -108,6 +108,23 @@ class CompteController implements ControllerProviderInterface
 
         })->bind('compte_parrainage');
 
+        $controllers->match('/resalys_logout', function() use ($app)
+        {
+            try {
+                $params = array(
+                    'iframe' => 1,
+                    'actions' => 'logout',
+                    'session' => $app['session']->get('resalys_user')->session,
+                );
+
+                file_get_contents(sprintf("%s?%s", $app['config']->get('rsl_config')['services']['modele']['location'], http_build_query($params)));
+            } catch (\Exception $e) {
+
+            }
+
+            return $app->redirect($app->url(sprintf('%s_logout', $app->trans('seo.url.compte.index'))));
+        })->bind('compte_resalys_logout');
+
         return $controllers;
     }
 }
