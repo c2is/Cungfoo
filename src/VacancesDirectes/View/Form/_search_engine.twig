@@ -169,7 +169,7 @@
 
 </div>
 
-{% if list.element|length > 0 or "bonsplans" == app.request.get('_route') %}
+{% if list is defined and list.element|length > 0 or "bonsplans" == app.request.get('_route') %}
 {{ esi(path('widget', {'name': 'search_filter'})) }}
 {% endif %}
 

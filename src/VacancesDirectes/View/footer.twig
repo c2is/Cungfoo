@@ -59,9 +59,11 @@
             <div id="infoOthers" class="left">
                 <h3>{{ "footer.locations_camping"|trans }}</h3>
                 <ul>
+                    {% if app.navigation.get('footer_home').getNavigationItems() is defined %}
                     {% for item in app.navigation.get('footer_home').getNavigationItems() %}
                         <li><a class="level-1" href="{{ item.path }}">{{ item.title }}</a></li>
                     {% endfor %}
+                    {% endif %}
                 </ul>
             </div>
         </div>

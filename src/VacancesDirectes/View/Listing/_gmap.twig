@@ -5,7 +5,7 @@
             var {{ block('gmap_name') }}Mkrs = [
                 //['title', lat, lont, zindex, 'idAjaxCamping', couleurMarker]
                 {% for etab in list.element %}
-                    ['{{ etab.model.name }} {{ etab.model.categorie.stars }}', {{ etab.model.geoCoordinateX }}, {{ etab.model.geoCoordinateY }}, {{ loop.index }}, '{{ path('infobox_camping', {idResalys: etab.model.code}) }}', markerFushia] {% if not loop.last %} ,{% endif %}
+                    ['{{ etab.model.name }} {% if etab.model.categorie.stars is defined %}{{ etab.model.categorie.stars }}{% endif %}', {{ etab.model.geoCoordinateX }}, {{ etab.model.geoCoordinateY }}, {{ loop.index }}, '{{ path('infobox_camping', {idResalys: etab.model.code}) }}', markerFushia] {% if not loop.last %} ,{% endif %}
                 {% endfor %}
             ];
             var center{{ block('gmap_name') }}Mkr = new google.maps.LatLng({{firstEtab.model.geoCoordinateX}},{{firstEtab.model.geoCoordinateY}}),
