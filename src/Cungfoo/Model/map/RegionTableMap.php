@@ -97,6 +97,9 @@ class RegionTableMap extends TableMap
   'default_locale' => 'fr',
   'locale_alias' => '',
 ),
+            'cungfoo_sluggable' =>  array (
+  'default_value' => 'n-a',
+),
             'crudable' =>  array (
   'route_prefix' => '/',
   'crud_prefix' => '/regions',

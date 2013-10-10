@@ -88,6 +88,7 @@
 
         <behavior name="timestampable" />
         <behavior name="active" />
+        <behavior name="cungfoo_sluggable"/>
 
         <foreign-key foreignTable="ville" onDelete="SETNULL">
             <reference local="ville_id" foreign="id"></reference>
@@ -304,6 +305,7 @@
         <foreign-key foreignTable="category_type_hebergement" onDelete="SETNULL">
             <reference local="category_type_hebergement_id" foreign="id"></reference>
         </foreign-key>
+        <behavior name="cungfoo_sluggable"/>
 
         <behavior name="i18n">
             <parameter name="i18n_columns" value="name,slug,indice,surface,type_terrasse,description,composition,presentation,capacite_hebergement,dimensions,agencement,equipements,annee_utilisation,remarque_1,remarque_2,remarque_3,remarque_4" />
@@ -318,13 +320,15 @@
 
     <table name="type_hebergement_capacite">
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
-        <column name="name" type="varchar" required="true" />
+        <column name="name" type="varchar" />
         <column name="slug" type="varchar" />
         <column name="accroche" type="varchar" />
         <column name="description" type="longvarchar" />
+
         <behavior name="timestampable" />
         <behavior name="active" />
         <behavior name="sortable" />
+        <behavior name="cungfoo_sluggable"/>
 
         <behavior name="i18n">
             <parameter name="i18n_columns" value="name,slug,accroche,description" />
@@ -365,6 +369,7 @@
         <behavior name="i18n">
             <parameter name="i18n_columns" value="name,slug,accroche,description" />
         </behavior>
+        <behavior name="cungfoo_sluggable"/>
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/category-type-hebergement" />
@@ -391,6 +396,7 @@
         <behavior name="i18n">
             <parameter name="i18n_columns" value="slug,name,introduction,description" />
         </behavior>
+        <behavior name="cungfoo_sluggable"/>
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/villes" />
@@ -424,6 +430,7 @@
             <parameter name="i18n_columns" value="slug,name,introduction,description" />
         </behavior>
 
+        <behavior name="cungfoo_sluggable"/>
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/regions" />
             <parameter name="crud_search" value="name" />
@@ -450,6 +457,7 @@
             <parameter name="i18n_columns" value="slug,name,introduction,description" />
         </behavior>
 
+        <behavior name="cungfoo_sluggable"/>
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/regions_ref" />
             <parameter name="crud_search" value="name" />
@@ -476,6 +484,7 @@
             <parameter name="i18n_columns" value="slug,name,introduction,description" />
         </behavior>
 
+        <behavior name="cungfoo_sluggable"/>
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/departements" />
             <parameter name="crud_search" value="name" />
@@ -497,6 +506,7 @@
             <parameter name="i18n_columns" value="slug,name,introduction,description" />
         </behavior>
 
+        <behavior name="cungfoo_sluggable"/>
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/pays" />
             <parameter name="crud_search" value="name" />
@@ -515,6 +525,7 @@
         <behavior name="timestampable" />
         <behavior name="sortable" />
         <behavior name="active" />
+        <behavior name="cungfoo_sluggable"/>
 
         <behavior name="i18n">
             <parameter name="i18n_columns" value="slug,name,introduction,description" />
@@ -670,6 +681,7 @@
         <behavior name="i18n">
             <parameter name="i18n_columns" value="name,presentation,transport,categorie,type, slug" />
         </behavior>
+        <behavior name="cungfoo_sluggable"/>
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/points-interet" />
@@ -706,6 +718,7 @@
         <behavior name="i18n">
             <parameter name="i18n_columns" value="name, str_date,subtitle, description, transport, slug" />
         </behavior>
+        <behavior name="cungfoo_sluggable"/>
 
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/events" />
@@ -765,6 +778,7 @@
         <behavior name="timestampable" />
         <behavior name="active" />
 
+        <behavior name="cungfoo_sluggable"/>
         <behavior name="i18n">
             <parameter name="i18n_columns" value="name" />
         </behavior>
@@ -786,6 +800,7 @@
             <unique-column name="slug"/>
         </unique>
 
+        <behavior name="cungfoo_sluggable"/>
         <behavior name="i18n">
             <parameter name="i18n_columns" value="name, description" />
         </behavior>
@@ -917,6 +932,7 @@
             <parameter name="i18n_columns" value="name, slug, introduction, description" />
         </behavior>
 
+        <behavior name="cungfoo_sluggable"/>
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/theme" />
             <parameter name="crud_search" value="name" />
@@ -989,6 +1005,7 @@
             <parameter name="i18n_columns" value="name, slug, subtitle, description" />
         </behavior>
 
+        <behavior name="cungfoo_sluggable"/>
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/bon-plan-categories" />
             <parameter name="crud_type_richtext" value="description" />
@@ -1027,6 +1044,7 @@
             <parameter name="i18n_columns" value="name, slug, introduction, description, indice, indice_prix" />
         </behavior>
 
+        <behavior name="cungfoo_sluggable"/>
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/bons-plans" />
             <parameter name="crud_type_file" value="image_menu,image_page,image_liste" />
@@ -1161,6 +1179,7 @@
             <parameter name="i18n_columns" value="name, slug, description" />
         </behavior>
 
+        <behavior name="cungfoo_sluggable"/>
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/portfolio/tags" />
         </behavior>
@@ -1172,6 +1191,7 @@
         <column name="slug" type="varchar"/>
 
         <behavior name="active"/>
+        <behavior name="cungfoo_sluggable"/>
         <behavior name="crudable">
             <parameter name="crud_prefix" value="/portfolio/tags-categories" />
         </behavior>

@@ -671,7 +671,6 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
     {
         return $this->code;
     }
-
     /**
      * Get the [slug] column value.
      *
@@ -679,8 +678,9 @@ abstract class BaseEtablissement extends BaseObject implements Persistent
      */
     public function getSlug()
     {
-        return $this->slug;
+        return $this->slug ?: 'n-a';
     }
+
 
     /**
      * Get the [name] column value.
