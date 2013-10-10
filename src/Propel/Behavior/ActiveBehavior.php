@@ -11,6 +11,7 @@ class ActiveBehavior extends Behavior
     protected $parameters = array(
         'active_column' => 'active',
         'active_locale_column' => 'active_locale',
+        'default_value' => 'false'
     );
 
     protected $alreadyDeclared = array('I18n');
@@ -34,6 +35,7 @@ class ActiveBehavior extends Behavior
                 'name'    => $this->getParameter('active_column'),
                 'type'    => 'BOOLEAN',
                 'default' => true,
+                'default' => $this->getParameter('default_value') === 'true',
             ));
         }
 
@@ -42,6 +44,7 @@ class ActiveBehavior extends Behavior
                 'name'    => $this->getParameter('active_locale_column'),
                 'type'    => 'BOOLEAN',
                 'default' => true,
+                'default' => $this->getParameter('default_value') === 'true',
             ));
 
             // add active_locale_column on behavior i18n_columns parameter
