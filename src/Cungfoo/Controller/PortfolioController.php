@@ -207,41 +207,35 @@ class PortfolioController implements ControllerProviderInterface
             if (file_put_contents($absolutePath, $decodedData)) {
                 $relativePath = $media->getUploadDir().'/'.$image;
                 $imageInfos   = getimagesize($absolutePath);
-                if ($imageInfos['channels'] == 3) { // channels sera 3 pour des images RGB et 4 pour des images CMYK.
-
-                    $media
-                        ->setWidth($imageInfos[0])
-                        ->setHeight($imageInfos[1])
-                        ->setType($imageInfos['mime'])
-                        ->setSize($media->convertFileSize(filesize($absolutePath)))
-                        ->setFile($relativePath)
-                        ->setLocale('fr')
-                        ->setTitle($name)
-                        ->setLocale('de')
-                        ->setTitle($name)
-                        ->save()
-                    ;
-
-                    $json['success'] = true;
-                    $json['html'] = $app['twig']->render('Crud/Portfolio/table_line.twig', array(
-                        'line' => $media,
-                        'used' => false,
-                    ));
-                }
-                else {
-					if ($imageInfos['channels'] == 4) {
-						$errorMessage = 'portfolio_media.format_ignore';
+				if($imageInfos['mime'] == 'image/jpeg') {
+					if ($imageInfos['channels'] == 3) { // channels sera 3 pour des images RGB et 4 pour des images CMYK.
+						$json = $this->recordMedia($app, $media, $imageInfos, $absolutePath, $relativePath, $name, $json);
 					}
 					else {
-						$errorMessage = 'portfolio_media.unexpected_error';
-                    }
-					
-					$json['html'] = sprintf('<tr class="portfolio-media-item unused"><td colspan="9">%s</td></tr>',
-                        $app->trans($errorMessage)
-                    );
+						if ($imageInfos['channels'] == 4) {
+							$errorMessage = 'portfolio_media.format_ignore';
+						}
+						else {
+							$errorMessage = 'portfolio_media.unexpected_error';
+						}
+						
+						$json['html'] = sprintf('<tr class="portfolio-media-item unused"><td colspan="9">%s</td></tr>',
+							$app->trans($errorMessage)
+						);
 
-                    unlink($absolutePath);
-                }
+						unlink($absolutePath);
+					}
+				}
+				elseif($imageInfos['mime'] == 'image/png') {
+					$json = $this->recordMedia($app, $media, $imageInfos, $absolutePath, $relativePath, $name, $json);
+				}
+				else{
+					$json['html'] = sprintf('<tr class="portfolio-media-item unused"><td colspan="9">%s</td></tr>',
+						$app->trans($errorMessage)
+					);
+
+					unlink($absolutePath);
+				}
             }
 
             return json_encode($json);
@@ -276,4 +270,33 @@ class PortfolioController implements ControllerProviderInterface
 
         return $controllers;
     }
+	
+	/**
+     * {@inheritdoc}
+     */
+    private function recordMedia($app, $media, $imageInfos, $absolutePath, $relativePath, $name, $json)
+    {
+		$media
+			->setWidth($imageInfos[0])
+			->setHeight($imageInfos[1])
+			->setType($imageInfos['mime'])
+			->setSize($media->convertFileSize(filesize($absolutePath)))
+			->setFile($relativePath)
+			->setLocale('fr')
+			->setTitle($name)
+			->setLocale('de')
+			->setTitle($name)
+			->setLocale('nl')
+			->setTitle($name)
+			->save()
+		;
+
+		$json['success'] = true;
+		$json['html'] = $app['twig']->render('Crud/Portfolio/table_line.twig', array(
+			'line' => $media,
+			'used' => false,
+		));
+		
+		return $json;
+	}
 }
