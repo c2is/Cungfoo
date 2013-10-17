@@ -25,7 +25,7 @@
         {% endif %}
 	</li>
 	<li id="compte">
-		{% include 'header.twig' %}
+		{{ esi(path('widget', {'name': 'bloc_compte_client'})) }}
 	</li>
     </ul>
 </nav>
