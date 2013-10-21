@@ -19,7 +19,7 @@
                 <li>
                     <div class="clear" id="userField">
                         <label for="username">{{ "global.compte.user"|trans }}</label>
-                        <input type="text" placeholder="{{ "compte.placeholder.name" | trans }}" id="username" name="_username" value="{{ last_username }}" />
+                        <input type="text" placeholder="{{ "compte.placeholder.name" | trans }}" id="username" name="_username" value="{% if last_username is defined %}{{ last_username }}{%  endif %}" />
                     </div>
                     <div class="clear" id="passwordField">
                         <label for="password">{{ "global.compte.password"|trans }}</label>

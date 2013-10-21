@@ -7,7 +7,7 @@
     {% for key,item in menu.items %}
         {% if item.count is null or item.count > 0 %}
         <li class="tab{% if key in currentRoute %} current{% endif %}">
-            <a>{{ item.title|trans }}{% if item.count is not null and (item.hideCount is null or not item.hideCount) %} <small>({{ item.count }})</small>{% endif %}</a>
+            <a>{{ item.title|trans }}{% if item.count is not null and (item.hideCount is null or is not defined) %} <small>({{ item.count }})</small>{% endif %}</a>
             {{ esi ( path ( item.route ) ) }}
         </li>
         {% endif %}
