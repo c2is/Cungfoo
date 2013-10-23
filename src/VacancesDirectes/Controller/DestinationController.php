@@ -448,7 +448,7 @@ class DestinationController implements ControllerProviderInterface
             'webuser'       => $webuser,
             'display'       => 'semainier',
             'etab_id'       => $camping->getCode(),
-            'campaign_code' => date('Y'),
+            'campaign_code' => $app['config']->get('rsl_config')['campaign'],
             'referer'       => $referer,
             'maxAge'        => 3600,
         );
