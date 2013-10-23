@@ -33,3 +33,4 @@ services:
             base_id:  ##base_id##
             username: web_fr
             password: DInan22101
+campaign: #resalys_campaign#
