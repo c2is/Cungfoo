@@ -30,10 +30,10 @@ $app['translator'] = $app->share($app->extend('translator',
 $app->register(new \Silex\Provider\SwiftmailerServiceProvider());
 
 $app['swiftmailer.options'] = array(
-    'host' => 'smtp.teaser.net',
-    'port' => '587',
-    'username' => 'serveurs@c2is.fr',
-    'password' => 'RiiU879kH',
+    'host' => $app['config']->get('settings')['smtp']['host'],
+    'port' => $app['config']->get('settings')['smtp']['port'],
+    'username' => $app['config']->get('settings')['smtp']['user'],
+    'password' => $app['config']->get('settings')['smtp']['pass'],
     'encryption' => null,
     'auth_mode' => null
 );
