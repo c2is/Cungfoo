@@ -52,8 +52,13 @@ iframe{width:100%;}
     }
   }
   #boxDiscover{
+    a{color: #FFFFFF;text-decoration: none;}
     table{font-family:@ptnarrow;font-size:16px;font-weight:bold;color:@colorBlanc;width:428px;margin:30px 0 5px;
-      tr:first-child th{border-bottom:1px solid @colorBorderGris;}
+      tr{border-top: 1px solid @colorBorderGris;
+        &:first-child{border-top: 0;
+          &th{border-bottom:1px solid @colorBorderGris;}
+        }
+      }
       th, td{padding:10px 0;text-transform:uppercase;text-align:center;}
       th{color:@colorGris2;font-size:14px;line-height:13px;
         span{font-size:11px;}
@@ -61,8 +66,11 @@ iframe{width:100%;}
       }
       td{width:146px;padding:10px;}
       .rubric{display:block;border:0;text-transform:uppercase;text-decoration:none;font:bold 14px @ptnarrow;padding:0 10px;._border-radius(0 10px 0 10px);._verticalCenter(32px,);
+        &.rose{background-color:@colorRubricRose;}
         &.fushia{background-color:@colorRubricFushia;}
-        &.jaune{background-color:@colorRubricJaune;}
+        &.jaune{background-color:@colorRubricJaune;line-height:15px;
+          &.halfWidth{width: 50%}
+        }
         &.orange{background-color:@colorRubricOrange;}
         &.vert{background-color:@colorRubricVert;}
         &.violet{background-color:@colorRubricViolet;}
