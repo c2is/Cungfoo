@@ -131,7 +131,7 @@
                 <select name="type" id="type">
                     <option value="">Toutes catégories</option>
                     {% if etab.categoriesTypeHergement | length %}
-                    {% for category in etab.categoriesTypeHergementActive %}
+                    {% for category in etab.categoriesTypeHergement %}
                         <option value="{{ category.name | trans }}">{{ category.name | trans }}</option>
                     {% endfor %}
                     {% endif %}
@@ -169,8 +169,10 @@
     </div>
     <!-- tab Sur place -->
     <div id="tabSurplace" class="tabs">
-        <img src="{{ asset(etab.planPath | media('file')) }}" width="616" height="402" alt="{{ etab.name }}">
-        <img src="../../../web/images/vacancesdirectes/common/pict/ficheLegendMap.png" alt="Légende du plan du camping" class="right">
+		{% if etab.plan != "" %}
+			<img src="{{ asset(etab.plan | media('file')) }}" width="616" height="402" alt="{{ etab.name }}">
+			<img src="../../../web/images/vacancesdirectes/common/pict/ficheLegendMap.png" alt="Légende du plan du camping" class="right">
+		{% endif %}
         <div class="colSurPlace clearboth">
             {% if etab.activites | length %}
             <dl>
