@@ -450,7 +450,7 @@ class DestinationController implements ControllerProviderInterface
             'etab_id'       => $camping->getCode(),
             'campaign_code' => $app['config']->get('rsl_config')['campaign'],
             'referer'       => $referer,
-            'maxAge'        => 3600,
+            'maxAge'        => $app['config']->get('vd_config')['httpcache']['medium']
         );
 		// #2034 si present en Get on passe le period_type
 		$periodType = $request->query->get('period_type');
@@ -460,7 +460,19 @@ class DestinationController implements ControllerProviderInterface
 		else { 
 			$semainierQuery['period_type'] = '';
 		}
-		
+        // Mode partenaire NL : pas de cache sur les semainier et on passe la session mode partenaire
+        if ( CURRENT_LANGUAGE == 'nl' )
+        {
+            if($app['session']->get('resalys_user'))
+            {
+                if ($app['session']->get('resalys_user')->service->id !='')
+                {
+                    $semainierQuery['session'] = $app['session']->get('resalys_user')->session;
+                    $semainierQuery['maxAge']  = 0;
+                }
+            }
+        }
+
         $lastProposal = $app['session']->get('last_proposal');
         if ($lastProposal && $lastProposal['proposal']) {
             $periodType = $lastProposal['proposal']->{'period_type_code'};
