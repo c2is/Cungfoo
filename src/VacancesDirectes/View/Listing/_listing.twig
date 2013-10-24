@@ -5,7 +5,11 @@
         </div>
     {% endif %}
     {% for etab in list.element %}
-		{% set nomEtab = etab.model.name %}
+        {% if etab.model.id != '238' %}
+		    {% set nomEtab = 'fiche.camping' | trans ~ ' ' ~ etab.model.name | replace({ ('fiche.camping' | trans ~ ' ' ): '' }) %}
+        {% else %}
+            {% set nomEtab = etab.model.name %}
+        {% endif %}
 		{% include 'Camping/list_item.twig' %}
     {% else %}
     <h2>{{ "listing.no_results_title" | trans }}</h2>
