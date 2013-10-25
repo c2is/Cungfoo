@@ -14,3 +14,15 @@ users:
     a.lambert:
         - "ROLE_USER"
         - "LaFATbP4PD4XmWyt96EtBogYO5aSQKi13QdK1oYvBEMbcwXCiLME9DDT5U144tHyIp9iYYm4JYpsVdXwg3r/QA=="
+    jankiel.ferrol@tlcgroup.nl:
+        - "ROLE_USER"
+        - "M+5w69RmRh0ZqvUFcVVgRAXr5xsy6GXG8k5YCmZMawp0suG6In24e1uaRV+yOLoim/ErxhklltKroM/IFE8DIQ=="
+    fred.witte@tlcgroup.nl:
+        - "ROLE_USER"
+        - "3YtBxLH7a1yWjlg1dDDnQO3fyIrTnq7PccxRlHJGUMlxNnMP+lrF8bGrRyuK6W09rgcLGihc1Hf5nQmC7Hm4sQ=="
+    erwin.halderman@tlcgroup.nl:
+        - "ROLE_USER"
+        - "tFUWRTpQu9+QiSGUrlYPXjc2qGS4dB7v0ADLfocJLPMApmraKhrnIM/7mX2CCrzp6Yykr6D2B9I5dEy0oIQ/LA=="
+    ronnie.rokebrand@tlcgroup.nl:
+        - "ROLE_USER"
+        - "6zVD1q33UdCwKYNzQQcMj/1YNTT7GKbSm5hy5RSSuP7TMOSfTaVdKl4sEqj5QANee1w+GUR+Xpnn7hqybizoFg=="
