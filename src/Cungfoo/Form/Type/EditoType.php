@@ -33,9 +33,7 @@ class EditoType extends BaseEditoType
 
     public function getSlugOptions()
     {
-        return array_merge(parent::getSlugOptions(), array('attr' => array(
-            'readonly' => 'readonly',
-        )));
+        return parent::getSlugOptions();
     }
 
     /**

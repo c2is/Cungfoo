@@ -402,6 +402,7 @@
             <parameter name="crud_prefix" value="/villes" />
             <parameter name="crud_search" value="name" />
             <parameter name="crud_type_file" value="image_detail_1,image_detail_2" />
+			<parameter name="crud_type_richtext" value="description" />
         </behavior>
     </table>
 
@@ -435,6 +436,7 @@
             <parameter name="crud_prefix" value="/regions" />
             <parameter name="crud_search" value="name" />
             <parameter name="crud_type_file" value="image_path,image_encart_path,image_encart_petite_path,image_detail_1,image_detail_2" />
+			<parameter name="crud_type_richtext" value="description" />
         </behavior>
     </table>
 
@@ -462,6 +464,7 @@
             <parameter name="crud_prefix" value="/regions_ref" />
             <parameter name="crud_search" value="name" />
             <parameter name="crud_type_file" value="image_detail_1,image_detail_2" />
+			<parameter name="crud_type_richtext" value="description" />
         </behavior>
     </table>
 
@@ -489,6 +492,7 @@
             <parameter name="crud_prefix" value="/departements" />
             <parameter name="crud_search" value="name" />
             <parameter name="crud_type_file" value="image_detail_1,image_detail_2" />
+			<parameter name="crud_type_richtext" value="description" />
         </behavior>
     </table>
 
@@ -511,6 +515,7 @@
             <parameter name="crud_prefix" value="/pays" />
             <parameter name="crud_search" value="name" />
             <parameter name="crud_type_file" value="image_detail_1,image_detail_2" />
+			<parameter name="crud_type_richtext" value="description" />
         </behavior>
     </table>
 
