@@ -8,7 +8,7 @@
     <div class="footer-home fixed-width clear">
         <div id="footerInsert" class="clear">
             {{ esi(path('widget', {'name': 'contact'})) }}
-			{# EN ATTENTE {% if app.context.get('language') == 'fr' %} {{ esi(path('widget', {'name': 'brochure'})) }} {% endif %} #}
+			{% if app.context.get('language') == 'fr' %} {{ render(path('widget', {'name': 'brochure'})) }} {% endif %}
 		</div>
 		{# TODO<div id="insertFacebook" class="left radiusBox greyC">
                 <div class="content">
