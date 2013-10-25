@@ -396,9 +396,20 @@ class DestinationController implements ControllerProviderInterface
     }
 
     function camping(Application $app, Request $request, Pays $pays, Region $region, Etablissement $camping) {
+
         $locale = $app['context']->get('language');
 
-        $webuser = $app['config']->get('languages')[$locale]['resalys_username'];
+        if (defined('DREIZEN'))
+        {
+            $webuser = DREIZEN;
+            //$webuser='web_nl_indiv';
+            $maxAge = '0';
+        }
+        else
+        {
+            $webuser = $app['config']->get('languages')[$locale]['resalys_username'];
+            $maxAge = $app['config']->get('vd_config')['httpcache']['medium'];
+        }
 
         $trackingCamping = unserialize($app['request']->cookies->get('tracking'));
         if (!$trackingCamping)
@@ -450,8 +461,15 @@ class DestinationController implements ControllerProviderInterface
             'etab_id'       => $camping->getCode(),
             'campaign_code' => $app['config']->get('rsl_config')['campaign'],
             'referer'       => $referer,
-            'maxAge'        => $app['config']->get('vd_config')['httpcache']['medium']
+            'maxAge'        => $maxAge,
         );
+
+        // Pour dreizen une session RSL authentifiée est obligatoire pour afficher le semainier
+        if (defined('DREIZEN'))
+        {
+            $semainierQuery['session'] = $app['session']->get('resalys_user')->session;
+        }
+
 		// #2034 si present en Get on passe le period_type
 		$periodType = $request->query->get('period_type');
 		if (in_array($periodType, array('SS7', 'SS14', 'SS21', 'MM7', 'MM14', 'MS10', 'SM11', 'MS3', 'SM4'))) {
@@ -460,25 +478,16 @@ class DestinationController implements ControllerProviderInterface
 		else { 
 			$semainierQuery['period_type'] = '';
 		}
-        // Mode partenaire NL : pas de cache sur les semainier et on passe la session mode partenaire
-        if ( CURRENT_LANGUAGE == 'nl' )
-        {
-            if($app['session']->get('resalys_user'))
-            {
-                if ($app['session']->get('resalys_user')->service->id !='')
-                {
-                    $semainierQuery['session'] = $app['session']->get('resalys_user')->session;
-                    $semainierQuery['maxAge']  = 0;
-                }
-            }
-        }
-
+		
         $lastProposal = $app['session']->get('last_proposal');
-        if ($lastProposal && $lastProposal['proposal']) {
+
+        if ($lastProposal && $lastProposal['proposal'])
+        {
             $periodType = $lastProposal['proposal']->{'period_type_code'};
             $roomType   = explode('-', $lastProposal['proposal']->{'proposal_key'});
 
-            if (in_array($periodType, array('SS7', 'SS14', 'SS21', 'MM7', 'MM14', 'MS10', 'SM11', 'MS3', 'SM4'))) {
+            if (in_array($periodType, array('SS7', 'SS14', 'SS21', 'MM7', 'MM14', 'MS10', 'SM11', 'MS3', 'SM4')))
+            {
                 $semainierQuery = array_merge($semainierQuery, array(
                     'room_type'     => end($roomType),
                     'period_type'   => $periodType,
@@ -488,6 +497,7 @@ class DestinationController implements ControllerProviderInterface
             }
 
         }
+
 		$view = $app['twig']->render('Camping/camping.twig', array(
             'etab'           => $camping,
 			'webuser'        => $webuser,

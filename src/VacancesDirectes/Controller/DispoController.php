@@ -47,31 +47,13 @@ class DispoController implements ControllerProviderInterface
 
             $client->addOptions($searchParams->generate());
 
-            // SPECIFIC DREIZEN
-            if ($app['context']->get('language') === 'nl')
+            if (defined('DREIZEN'))
             {
-                $webuserFicheClient = $app['session']->get('resalys_user')->webuser;
-                if (isset($webuserFicheClient))
-                {
-                    if( $webuserFicheClient == 'webres2_part')
-                    {
-                        $client->addOption (
-                            'service_id', $app['session']->get('resalys_user')->service->id
-                        );
-                        $client->addOption (
-                            'partner_code', $app['session']->get('resalys_user')->service->customer_code
-                        );
-                        $client->addOption (
-                            'username', $app['session']->get('resalys_user')->webuser
-                        );
-                        $client->addOption (
-                            'password', $app['session']->get('resalys_user')->webuser
-                        );
-                        $client->addOption (
-                            'webuser', $app['session']->get('resalys_user')->webuser
-                        );
-                    }
-                }
+                $client->addOption ('service_id', $app['session']->get('resalys_user')->service->id);
+                $client->addOption ('partner_code', $app['session']->get('resalys_user')->service->customer_code);
+                $client->addOption ('username', $app['session']->get('resalys_user')->webuser);
+                $client->addOption ('password', $app['session']->get('resalys_user')->webuser);
+                $client->addOption ('webuser', $app['session']->get('resalys_user')->webuser);
             }
 
             $listing = new DispoListing($app);

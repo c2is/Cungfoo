@@ -20,14 +20,14 @@ define('CURRENT_LANGUAGE', $app['context']->get('language'));
 // set current language
 $app['translator']->setLocale($app['context']->get('language'));
 
-// D-REIZEN specifics
+// DREIZEN specifics
 if ( CURRENT_LANGUAGE === 'nl' )
 {
     if($app['session']->get('resalys_user'))
     {
         if ($app['session']->get('resalys_user')->webuser === 'webres2_part')
         {
-            define('DREIZEN', true);
+            define('DREIZEN', $app['session']->get('resalys_user')->webuser);
         }
         //var_dump($app['session']->get('resalys_user'));
     }
