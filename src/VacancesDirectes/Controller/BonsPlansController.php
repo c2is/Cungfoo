@@ -205,6 +205,15 @@ class BonsPlansController implements ControllerProviderInterface
         $client = new DisponibiliteClient($app['config']->get('root_dir'), $app['context']->get('language'));
         $client->addOptions($searchParams->generate());
 
+        if (defined('DREIZEN'))
+        {
+            $client->addOption ('service_id', $app['session']->get('resalys_user')->service->id);
+            $client->addOption ('partner_code', $app['session']->get('resalys_user')->service->customer_code);
+            $client->addOption ('username', $app['session']->get('resalys_user')->webuser);
+            $client->addOption ('password', $app['session']->get('resalys_user')->webuser);
+            $client->addOption ('webuser', $app['session']->get('resalys_user')->webuser);
+        }
+
         $listing = new DispoListing($app);
         $listing->setClient($client);
 
