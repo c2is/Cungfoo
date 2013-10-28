@@ -25,7 +25,8 @@ if ( CURRENT_LANGUAGE === 'nl' )
 {
     if($app['session']->get('resalys_user'))
     {
-        if ($app['session']->get('resalys_user')->webuser === 'webres2_part')
+        if ($app['session']->get('resalys_user')->webuser ===
+            $app['config']->get('languages')['nl']['resalys_dreizen_username'])
         {
             define('DREIZEN', $app['session']->get('resalys_user')->webuser);
         }

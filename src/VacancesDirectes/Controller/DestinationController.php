@@ -402,7 +402,6 @@ class DestinationController implements ControllerProviderInterface
         if (defined('DREIZEN'))
         {
             $webuser = DREIZEN;
-            //$webuser='web_nl_indiv';
             $maxAge = '0';
         }
         else

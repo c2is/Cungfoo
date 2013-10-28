@@ -14,7 +14,9 @@
         <ul class="topnav fixed-width clear">
             <li class="tab{% if currentRoute == "compte_index" %} current{% endif %}"><a href="{{ path('compte_index') }}">{{ "global.compte.accueil" | trans }}</a></li>
             <li class="tab{% if currentRoute == "compte_coordonnees" %} current{% endif %}"><a href="{{ path('compte_coordonnees') }}">{{ "global.compte.coordonnees" | trans }}</a></li>
+            {% if not constant('DREIZEN') %}
             <li class="tab{% if currentRoute == "compte_brochure" %} current{% endif %}"><a href="{{ path('compte_brochure') }}">{{ "global.compte.demande_brochure" | trans }}</a></li>
+            {% endif %}
             <li class="tab{% if currentRoute == "compte_reservations" %} current{% endif %}"><a href="{{ path('compte_reservations') }}">{{ "global.compte.reservation" | trans }}</a></li>
             {#<li class="tab{% if currentRoute == "compte_fidelite" %} current{% endif %}"><a href="{{ path('compte_fidelite') }}">Avantages fidélité</a></li>#}
             {#<li class="tab{% if currentRoute == "compte_parrainage" %} current{% endif %}"><a href="{{ path('compte_parrainage') }}">Parrainage</a></li>#}
