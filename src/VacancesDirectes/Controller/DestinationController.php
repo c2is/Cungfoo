@@ -397,7 +397,16 @@ class DestinationController implements ControllerProviderInterface
 
     function camping(Application $app, Request $request, Pays $pays, Region $region, Etablissement $camping) {
         $locale        = $app['context']->get('language');
-        $webuser       = $app['config']->get('languages')[$locale]['resalys_username'];
+        if (defined('DREIZEN'))
+        {
+            $webuser = DREIZEN;
+            $maxAge = '0';
+        }
+        else
+        {
+            $webuser = $app['config']->get('languages')[$locale]['resalys_username'];
+            $maxAge = $app['config']->get('vd_config')['httpcache']['medium'];
+        }
 		$sitesAVisiter = PointInteretPeer::getForEtablissement($camping, PointInteretPeer::RANDOM_SORT, 4);
         $events        = EventPeer::getForEtablissement($camping, EventPeer::RANDOM_SORT, 4);
 		
@@ -489,11 +498,19 @@ class DestinationController implements ControllerProviderInterface
             'etab_id'       => $camping->getCode(),
             'campaign_code' => $app['config']->get('rsl_config')['campaign'],
             'referer'       => $referer,
-            'maxAge'        => 3600,
+            'maxAge'        => $maxAge,
         );
+
+        // Pour dreizen une session RSL authentifiée est obligatoire pour afficher le semainier
+        if (defined('DREIZEN'))
+        {
+            $semainierQuery['session'] = $app['session']->get('resalys_user')->session;
+        }
+		
 		// #2034 si present en Get on passe le period_type
 		$periodType = $request->query->get('period_type');
-		if (in_array($periodType, array('SS7', 'SS14', 'SS21', 'MM7', 'MM14', 'MS10', 'SM11', 'MS3', 'SM4'))) {
+		if (in_array($periodType, array('SS7', 'SS14', 'SS21', 'MM7', 'MM14', 'MS10', 'SM11', 'MS3', 'SM4'))) 
+		{
 			$semainierQuery['period_type'] = $periodType;
 		}
 		else { 
@@ -505,7 +522,8 @@ class DestinationController implements ControllerProviderInterface
             $periodType = $lastProposal['proposal']->{'period_type_code'};
             $roomType   = explode('-', $lastProposal['proposal']->{'proposal_key'});
 
-            if (in_array($periodType, array('SS7', 'SS14', 'SS21', 'MM7', 'MM14', 'MS10', 'SM11', 'MS3', 'SM4'))) {
+            if (in_array($periodType, array('SS7', 'SS14', 'SS21', 'MM7', 'MM14', 'MS10', 'SM11', 'MS3', 'SM4'))) 
+			{
                 $semainierQuery = array_merge($semainierQuery, array(
                     'room_type'     => end($roomType),
                     'period_type'   => $periodType,

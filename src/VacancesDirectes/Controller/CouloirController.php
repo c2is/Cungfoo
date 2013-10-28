@@ -24,7 +24,10 @@ class CouloirController implements ControllerProviderInterface
     protected function getResalysConfig(Application $app)
     {
         $rslConfig = $app['config']->get('rsl_config')['services']['disponibilite']['default_envelope'];
-        if (isset($app['config']->get('languages')[$app['context']->get('language')]) && isset($app['config']->get('languages')[$app['context']->get('language')]['resalys_username']))
+        if (defined('DREIZEN'))
+            $rslConfig['username'] = DREIZEN;
+        elseif (isset($app['config']->get('languages')[$app['context']->get('language')]) &&
+                isset($app['config']->get('languages')[$app['context']->get('language')]['resalys_username']))
         {
             $rslConfig['username'] = $app['config']->get('languages')[$app['context']->get('language')]['resalys_username'];
         }

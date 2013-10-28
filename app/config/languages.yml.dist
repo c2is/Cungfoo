@@ -14,3 +14,4 @@ languages:
         domain: ##domain_nl##
         resalys_username: web_nl_indiv
         resalys_flow_name: "prix_min_nl"
+        resalys_dreizen_username: webres2_part

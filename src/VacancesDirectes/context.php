@@ -1,5 +1,7 @@
 <?php
 
+use Symfony\Component\HttpFoundation\Request;
+
 // defined current version instance
 $app['context']->addParam('site', 'site.individual');
 
@@ -17,3 +19,17 @@ define('CURRENT_LANGUAGE', $app['context']->get('language'));
 
 // set current language
 $app['translator']->setLocale($app['context']->get('language'));
+
+// DREIZEN specifics
+if ( CURRENT_LANGUAGE === 'nl' )
+{
+    if($app['session']->get('resalys_user'))
+    {
+        if ($app['session']->get('resalys_user')->webuser ===
+            $app['config']->get('languages')['nl']['resalys_dreizen_username'])
+        {
+            define('DREIZEN', $app['session']->get('resalys_user')->webuser);
+        }
+        //var_dump($app['session']->get('resalys_user'));
+    }
+}

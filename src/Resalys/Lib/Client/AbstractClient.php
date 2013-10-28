@@ -44,7 +44,6 @@ abstract class AbstractClient
     public function addOptions(array $options)
     {
         $this->options = array_merge($this->options, $options);
-
         return $this;
     }
 
@@ -105,17 +104,21 @@ abstract class AbstractClient
             $this->addOption('language', strtoupper($language));
             $this->addOption('language_code', strtoupper($language));
 
-            // @TOOD Fixer le bug site CE
-            if (isset($this->languagesConfig['languages'][$language]) && $this->getName() !== 'auth') {
-                $languageConfig = $this->languagesConfig['languages'][$language];
+            if (!defined('DREIZEN'))
+            {
+                // @TOOD Fixer le bug site CE
+                if (isset($this->languagesConfig['languages'][$language]) && $this->getName() !== 'auth')
+                {
+                    $languageConfig = $this->languagesConfig['languages'][$language];
 
-                if (isset($languageConfig['resalys_username'])) {
-                    $this->addOption('username', $languageConfig['resalys_username']);
-                    $this->addOption('webuser', $languageConfig['resalys_username']);
-                }
+                    if (isset($languageConfig['resalys_username'])) {
+                        $this->addOption('username', $languageConfig['resalys_username']);
+                        $this->addOption('webuser', $languageConfig['resalys_username']);
+                    }
 
-                if (isset($languageConfig['resalys_flow_name'])) {
-                    $this->addOption('flow_name', $languageConfig['resalys_flow_name']);
+                    if (isset($languageConfig['resalys_flow_name'])) {
+                        $this->addOption('flow_name', $languageConfig['resalys_flow_name']);
+                    }
                 }
             }
 
