@@ -209,7 +209,7 @@ function parentExists() {
 function resize_myframe() {
     //var height = $('html').height();
     var height = $('body').height();
-    height += 110;
+    height += 150;
     window.parent.document.getElementById('frameResalys').style.height = height + 'px';
     consoleLog(height);
 }
