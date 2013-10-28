@@ -16,7 +16,10 @@ class CompteController implements ControllerProviderInterface
     protected function getDefaultResalysParameters(Application $app, Request $request)
     {
         $rslConfig = $app['config']->get('rsl_config')['services']['disponibilite']['default_envelope'];
-        if (isset($app['config']->get('languages')[$app['context']->get('language')]) && isset($app['config']->get('languages')[$app['context']->get('language')]['resalys_username']))
+        if (defined('DREIZEN'))
+            $rslConfig['username'] = DREIZEN;
+        elseif (isset($app['config']->get('languages')[$app['context']->get('language')]) &&
+                isset($app['config']->get('languages')[$app['context']->get('language')]['resalys_username']))
         {
             $rslConfig['username'] = $app['config']->get('languages')[$app['context']->get('language')]['resalys_username'];
         }
@@ -46,6 +49,12 @@ class CompteController implements ControllerProviderInterface
         $controllers->match('/', function (Request $request) use ($app)
         {
             $query            = $this->getDefaultResalysParameters($app, $request);
+            if (defined('DREIZEN'))
+            {
+                $query['existing_customer_login']    = $app['session']->get('resalys_user')->service->login;
+                $query['existing_customer_password'] = $app['session']->get('resalys_user')->service->password;
+                $query['actions'] = 'partnerLogin';
+            }
             $query['display'] = 'customer_area';
 
             return $app->renderView('Compte/index.twig', array('query' => $query));
