@@ -396,10 +396,49 @@ class DestinationController implements ControllerProviderInterface
     }
 
     function camping(Application $app, Request $request, Pays $pays, Region $region, Etablissement $camping) {
-        $locale = $app['context']->get('language');
+        $locale        = $app['context']->get('language');
+        $webuser       = $app['config']->get('languages')[$locale]['resalys_username'];
+		$sitesAVisiter = PointInteretPeer::getForEtablissement($camping, PointInteretPeer::RANDOM_SORT, 4);
+        $events        = EventPeer::getForEtablissement($camping, EventPeer::RANDOM_SORT, 4);
+		
+		 $personnages = \Cungfoo\Model\PersonnageQuery::create()
+            ->joinWithI18n($locale)
+            ->filterByEtablissementId($camping->getId())
+            ->orderByAge(\Criteria::ASC)
+            ->limit(3)
+            ->findActive()
+        ;
+		
+		$sliderIds = $camping->getSlider();
+		$tags = array();
+        foreach (explode(';', $sliderIds) as $sliderId)
+        {
+            $slider = PortfolioMediaQuery::create()
+                ->filterById($sliderId)
+                ->findOne()
+            ;
 
-        $webuser = $app['config']->get('languages')[$locale]['resalys_username'];
+            if ($slider)
+            {
+                $multimediaTags = $slider->getPortfolioTags();
 
+                foreach ($multimediaTags as $tag)
+                {
+                    if ($tag->getPortfolioTagCategory() && $tag->getPortfolioTagCategory()->getSlug() == 'camping')
+                    {
+                        $tags[$tag->getSlug()] = $tag;
+                    }
+                }
+            }
+        }
+		
+		$personnageAleatoire = \Cungfoo\Model\PersonnageQuery::create()
+            ->joinWithI18n($locale)
+            ->filterByEtablissementId($camping->getId())
+            ->addAscendingOrderByColumn('RAND()')
+            ->findOne()
+        ;
+		
         $trackingCamping = unserialize($app['request']->cookies->get('tracking'));
         if (!$trackingCamping)
         {
@@ -477,75 +516,24 @@ class DestinationController implements ControllerProviderInterface
 
         }
 		$view = $app['twig']->render('Camping/camping.twig', array(
-            'etab'           => $camping,
-			'webuser'        => $webuser,
-            'hasBaignade'    => count($camping->getEtablissementBaignades()) > 0,
-            'searchForm'     => $searchEngine->getView(),
-            'historyBack'    => $request->headers->get('referer'),
-            'semainierQuery' => $semainierQuery,
-            'referer'        => $referer,
-        ));
-
-        $response = new Response($view, 200, array('Surrogate-Control' => 'content="ESI/1.0"', 'Cache-Control' => 'max-age=0, s-maxage=0, no-cache, public'));
-        $response->headers->setCookie($cookie);
-        return $response;
-    }
-
-    function esiCamping(Application $app, Request $request, Etablissement $camping) {
-        $locale = $app['context']->get('language');
-
-        $sitesAVisiter = PointInteretPeer::getForEtablissement($camping, PointInteretPeer::RANDOM_SORT, 4);
-        $events        = EventPeer::getForEtablissement($camping, EventPeer::RANDOM_SORT, 4);
-
-        $personnages = \Cungfoo\Model\PersonnageQuery::create()
-            ->joinWithI18n($locale)
-            ->filterByEtablissementId($camping->getId())
-            ->orderByAge(\Criteria::ASC)
-            ->limit(3)
-            ->findActive()
-        ;
-
-        $sliderIds = $camping->getSlider();
-
-        $tags = array();
-        foreach (explode(';', $sliderIds) as $sliderId)
-        {
-            $slider = PortfolioMediaQuery::create()
-                ->filterById($sliderId)
-                ->findOne()
-            ;
-
-            if ($slider)
-            {
-                $multimediaTags = $slider->getPortfolioTags();
-
-                foreach ($multimediaTags as $tag)
-                {
-                    if ($tag->getPortfolioTagCategory() && $tag->getPortfolioTagCategory()->getSlug() == 'camping')
-                    {
-                        $tags[$tag->getSlug()] = $tag;
-                    }
-                }
-            }
-        }
-
-        $personnageAleatoire = \Cungfoo\Model\PersonnageQuery::create()
-            ->joinWithI18n($locale)
-            ->filterByEtablissementId($camping->getId())
-            ->addAscendingOrderByColumn('RAND()')
-            ->findOne()
-        ;
-	    $view = $app['twig']->render('Camping/camping.esi.twig', array(
-            'locale'               => $locale,
+			'locale'               => $locale,
             'etab'                 => $camping,
 			'nomEtab'              => str_replace($app->trans('fiche.camping'),'',$camping->getName()),
-            'personnages'          => $personnages,
-            'tags'                 => $tags,
+			'webuser'              => $webuser,
+			'personnages'          => $personnages,
+            'hasBaignade'          => count($camping->getEtablissementBaignades()) > 0,
+            'searchForm'           => $searchEngine->getView(),
+            'historyBack'          => $request->headers->get('referer'),
+            'semainierQuery'       => $semainierQuery,
+            'referer'              => $referer,
+			'tags'                 => $tags,
             'personnageAleatoire'  => $personnageAleatoire,
             'sitesAVisiter'        => $sitesAVisiter,
             'events'               => $events,
         ));
 
-        return new Response($view, 200, array('Cache-Control' => sprintf('s-maxage=%s, public', $app['config']->get('vd_config')['httpcache']['camping'])));
+        return new Response($view, 200, array('Surrogate-Control' => 'content="ESI/1.0"', 'Cache-Control' => 'max-age=0, s-maxage=0, no-cache, public'));
+        $response->headers->setCookie($cookie);
+        return $response;
     }
 }
