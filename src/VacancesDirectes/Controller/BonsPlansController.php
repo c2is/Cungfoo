@@ -45,6 +45,8 @@ class BonsPlansController implements ControllerProviderInterface
         if (empty($assertUrlBonPlans)) {
             $assertUrlBonPlans = 'n-a';
         }
+
+        // refactoring : est ce encore utilisé ?
         $controllers->match('/{slug}/', function (Request $request, $slug) use ($app)
         {
             $locale = $app['context']->get('language');
