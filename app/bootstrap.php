@@ -45,6 +45,7 @@ $app['twig'] = $app->share($app->extend('twig', function($twig, $app) {
     $twig->addExtension(new \VacancesDirectes\Lib\Twig\Extension\ListPaysExtension($app));
     $twig->addExtension(new \Cungfoo\Lib\Twig\Extension\MetadataExtension($app));
     $twig->addExtension(new \Cungfoo\Lib\Twig\Extension\TruncateHtmlExtension($app));
+    $twig->addExtension(new \Cungfoo\Lib\Twig\Extension\ConstantExtension($app));
 
     return $twig;
 }));
@@ -90,10 +91,14 @@ $app->register(new Silex\Provider\HttpCacheServiceProvider(), array(
     )
 ));
 
-$app['cache.max_age'] = 3600 * 24 * 90;
-$app['cache.expires'] = 3600 * 24 * 90;
+$app['cache.max_age']  = 3600 * 24 * 90;
+$app['cache.expires']  = 3600 * 24 * 90;
 $app['cache.defaults'] = array(
-    'Cache-Control' => sprintf('public, max-age=%d, s-maxage=%d, must-revalidate, proxy-revalidate', $app['cache.max_age'], $app['cache.max_age']),
+    'Cache-Control' => sprintf(
+		'public, max-age=%d, s-maxage=%d, must-revalidate, proxy-revalidate',
+        $app['cache.max_age'],
+        $app['cache.max_age']
+    ),
     'Expires'       => date('r', time() + $app['cache.expires'])
 );
 
