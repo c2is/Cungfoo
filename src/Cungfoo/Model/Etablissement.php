@@ -269,4 +269,13 @@ class Etablissement extends BaseEtablissement
 
         return implode(",", $aThematiques);
     }
+
+    public function setName($v)
+    {
+        if($this->name == null)
+        {
+            return parent::setName($v);
+        }
+
+    }
 }
