@@ -127,8 +127,8 @@
     <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
     <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
     <![endif]-->
-	
-	{% if app.request.host == 'www.vacances-directes.com' %}
+
+    {% if app.request.host == 'www.vacances-directes.com' %}
 		<!-- Google remarketing VD FR -->
 		<script type="text/javascript">
 		/* <![CDATA[ /
@@ -179,30 +179,98 @@
 		</div>
 		</noscript>
 	{% endif %}
-    <!-- #1984 -->
+
+    {# <!-- Tag Yahoo #1984 --> #}
     <img src="http://ads.bluelithium.com/pixel?id=2397600&t=2" width="1" height="1" />
-	
-	<!-- Tag de retargeting -->
-	<script language="javascript" type="text/javascript">
-	var __adUrl=document.location.protocol+'//atout.email-match.com/emafunc.js';
-	try
-	{
-	 scriptTag=document.createElement("script");
-	 scriptTag.type="text/javascript";
-	 scriptTag.async=true;
-	 scriptTag.src=__adUrl;
-	 var headTag= document.getElementsByTagName("head")[0];
-	 headTag.insertBefore(scriptTag,headTag.firstChild);
-	} catch(e)
-	{
-	 document.write('<sc'+'ript language="javascript" async="" type="text/javascript" src="'+__adUrl+'"></sc'+'ript>');
-	}
-	function w_emasend()
-	{ if (typeof(emasend)!='undefined'){emasend();} else 
-	{setTimeout('w_emasend()',200);} }
-	var ema_id_site=737;
-	w_emasend();
-	</script>
+
+    {# <!-- Tag Ematch --> #}
+    <script language="javascript" type="text/javascript">
+    var __adUrl=document.location.protocol+'//atout.email-match.com/emafunc.js';
+    try
+    {
+     scriptTag=document.createElement("script");
+     scriptTag.type="text/javascript";
+     scriptTag.async=true;
+     scriptTag.src=__adUrl;
+     var headTag= document.getElementsByTagName("head")[0];
+     headTag.insertBefore(scriptTag,headTag.firstChild);
+    } catch(e)
+    {
+     document.write('<sc'+'ript language="javascript" async="" type="text/javascript" src="'+__adUrl+'"></sc'+'ript>');
+    }
+    function w_emasend()
+    { if (typeof(emasend)!='undefined'){emasend();} else
+    {setTimeout('w_emasend()',200);} }
+    var ema_id_site=737;
+    w_emasend();
+    </script>
+
+
+<hr>
+
+{% if app.request.host == 'dev.vacances-directes.com' %}
+<!-- Tag Criteo -->
+<pre style="position: absolute; left: 20px; background: none repeat scroll 0% 0% white; color: red; top: 20px; min-height: 200px; font-family: courier new; width: 500px; border: 1px solid RED; z-index: 99999; box-shadow: 0px 0px 5px black;">
+
+window.criteo_q = window.criteo_q || [];
+window.criteo_q.push(
+    { event: "setAccount", account: 8987 }
+    { event: "setSiteType", type: "d" }
+    {# TODO: mettre en ESI le tag si on souhaite remonter ce param
+    {% set user_id = app.session.get('resalys_user') %}
+    {% if user_id  %},{ event: "setCustomerId", id: "{{ user_id.service.customer_code }}" },{%  endif %} #}
+    {% if app.request.get('_route') == 'homepage' %}
+    ,{ event: "viewHome" }
+    {%  elseif app.request.get('_route') == 'destination_camping' %}
+    ,{ event: "viewItem", item: "{{ etab.getCode }}" }
+    {% elseif (
+        app.request.get('_route') == 'destination_destination' or
+        app.request.get('_route') == 'destination_pays' or
+        app.request.get('_route') == 'destination_region' or
+        app.request.get('_route') == 'destination_region_ref' or
+        app.request.get('_route') == 'destination_departement' or
+        app.request.get('_route') == 'destination_ville') and
+        campings|length > 0 %}
+    ,{
+        event: "viewList",
+        item: [{% for etab in campings | slice(0,3) %}"{{ etab.getCode }}"{% if not loop.last %},{% endif %}{% endfor %}]
+    }
+    {%  elseif
+        app.request.get('_route') == 'dispo' or
+        app.request.get('_route') == 'bonsplans' or
+        app.request.get('_route') == 'categorie_bonsplans' or
+        app.request.get('_route') == 'catalogue' %}
+    ,{
+        event: "viewList",
+        item: [{% for etab in list.element | slice(0,3) %}"{{ etab.model.id }}"{% if not loop.last %},{% endif %}{% endfor %}]
+    }
+    {% endif %}
+);
+
+</pre>
+
+
+
+<script type="text/javascript" src="//static.criteo.net/js/ld/ld.js" async="true"></script>
+<script type="text/javascript">
+window.criteo_q = window.criteo_q || [];
+window.criteo_q.push(
+{ event: "setAccount", account: 8987 },
+
+{ event: "setSiteType", type: "d" }, // d = desktop
+{% if app.request.get('_route') == 'homepage' %}
+{ event: "viewHome" },
+{% elseif app.request.get('_route') == 'catalogue' or
+app.request.get('_route') == 'dispo' or
+app.request.get('_route') == 'bonsplans' or
+app.request.get('_route') == 'destination_pays' or
+app.request.get('_route') == 'destination_ville' %}
+{ event: "viewItem", item: ["First item id", "Second item id", "Third item id"], keywords: "User Searched Keywords" }
+{% endif %}
+);
+</script>
+
+{% endif %}
 
 </body>
 </html>
