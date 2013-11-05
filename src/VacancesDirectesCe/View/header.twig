@@ -3,7 +3,7 @@
 {% if user %}
 <div id="userBox">
     <span>{{ user.service.firstname }} - {{ user.service.lastname }}</span>
-    <a class="bt fushia small right" href="{{ path ('logout') }}">Déconnexion</a>
+    <a class="bt fushia small right" href="javascript:logoutRsl();">Déconnexion</a>
 </div>
 {% endif %}
 

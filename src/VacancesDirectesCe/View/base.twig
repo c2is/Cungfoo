@@ -62,13 +62,64 @@
 
     <footer class="clear">
         <div class="footer-links" class="full-width">
-            <a href="http://www.vacances-directes.com/">Vacances Directes</a> -
+            <a target="_blank" href="http://www.village-center.fr/">Village Center</a> -
+            <a target="_blank" href="http://www.vacances-directes.com/">Vacances Directes</a> -
             <a href="{{ path('edito_by_slug', {slug: 'conditions-generales-de-location'}) }}">Conditions générales de location</a> -
             <a href="{{ path('edito_by_slug', {slug: 'mentions-legales-credits'}) }}">Mentions légales & crédits</a>
         </div>
     </footer>
 
     <script src="{{ asset('vendor/jquery-1.8.3.min.js?v='~app.config.get('version')) }}"></script>
+
+    <script>
+        function logoutRsl() {
+            jQuery.ajax({
+                type: 'GET',
+                async: false,
+                url: '/resalys/wrapper?'
+                        +'actions=logout'
+                        +'&session={{ app.session.get('resalys_user').session }}'
+                        +'&display=authentication&sub_page=authentication_simple'
+                        +'&tokens=ignore_token&iframe=1',
+                complete : function () {
+                    logoutRedirect();
+                }
+            });
+        }
+        function logoutRedirect() {
+            jQuery('#userBox a').bind('click', function() {
+                window.location.href = '{{ path ('logout') }}';
+            }).click();
+        }
+    </script>
+    {% set route = app.request.get('_route') %}
+    {% if
+        route != '' and
+        route != 'login' and
+        route != 'request_identifiant' and
+        route != 'request_password' and
+        route != 'request_create_identifiant' and
+        route != 'edito_by_slug'
+    %}
+    <script>
+        function alerteFinSession() {
+            clearTimeout(t);
+            var tf = '';
+            jQuery('#refresh_layer').show( function(){
+                tf = setTimeout(logoutRsl, 600000); // 10min
+            });
+        }
+        var t =  setTimeout( alerteFinSession, 900000); // 15min
+    </script>
+    <div id="refresh_layer" class="refreshLayer">
+        <div class="layerOverlay"></div>
+        <div id="refresh_layer_content">
+            <h2>Attention <br>votre session va bientôt expirer !</h2>
+            <p>Afin ne pas perdre votre session en cours, merci de rafraîchir la page.</p>
+            <a class="bt ib gris2" href="#">Rafraîchir</a>
+        </div>
+    </div>
+    {% endif %}
 
     <script>
         head.js(
