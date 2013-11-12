@@ -464,16 +464,9 @@
 	{% endif %}
 {% endif %}{# /Onglets dédiés NL #}
 
-{# patch nl pour éviter l'affichage du semainier tant que la saison 2014 est non activée #}
-
 <div id="stayBooking">
-	{% if app.context.get('language') != 'nl' %}
-    {# <a href="#searchBloc" class="bt fushia big ib goto">{{ "search.linkto" | trans }}</a> #}
-<iframe id="frameResalys" src="{{ path('resalys_wrapper', semainierQuery) }}" width="960px" height="700px" marginheight="0" marginwidth="0" frameborder="0"></iframe>
+	<iframe id="frameResalys" src="{{ path('resalys_wrapper', semainierQuery) }}" width="960px" height="700px" marginheight="0" marginwidth="0" frameborder="0"></iframe>
     <a href="#searchBloc" class="bt fushia big ib goto">{{ "search.linkto" | trans }}</a>
-	{% else %}
-		<span>{{ "general.semainier_non_disponible" | trans }}</span>
-	{% endif %}
 </div>
 
 {% endblock %}
