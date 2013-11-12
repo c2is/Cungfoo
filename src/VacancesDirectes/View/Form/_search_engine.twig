@@ -7,7 +7,7 @@
     <div class="title">
         <h2>{{ "search.title" | trans }}</h2>
     </div>
-    <form id="searchBlocDate" method="post" name="{{ searchForm.name }}" action="{{ app.request.getRequestURI() }}" data-didacticiel-title="{{ 'didacticiel.title' | trans | e('html') }}">
+    <form id="searchBlocDate" method="post" name="{{ searchForm.vars.name }}" action="{{ app.request.getRequestURI() }}" data-didacticiel-title="{{ 'didacticiel.title' | trans | e('html') }}">
         <fieldset>
             {{ form_errors(searchForm) }}
             <ol>
@@ -174,10 +174,10 @@
 {% endif %}
 
 <script type="text/javascript">
-    var fStartDate = '2013/03/01',
-        fEndDate = '2013/12/31',
-        fHighSeasonStartDate = '2013/06/29',    // must be a saturday
-        fHighSeasonEndDate = '2013/08/31',      // must be a saturday
+    var fStartDate = '2014/03/01',
+        fEndDate = '2014/11/01',
+        fHighSeasonStartDate = '2014/06/28',    // must be a saturday
+        fHighSeasonEndDate = '2014/08/30',      // must be a saturday
         linear = "reservation",
         datepickerLanguage = {
             days: {{ 'datepicker.days'|trans|raw }},
