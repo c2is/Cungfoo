@@ -180,39 +180,37 @@
 		</noscript>
 	{% endif %}
 
-    {# <!-- Tag Yahoo #1984 --> #}
-    <img src="http://ads.bluelithium.com/pixel?id=2397600&t=2" width="1" height="1" />
 
-    {% set current_route = app.request.get('_route') %}
+    {% if app.context.get('language') == 'fr' %}
+        {% set current_route = app.request.get('_route') %}
 
-    {# <!-- Tag Ematch --> #}
-    <script language="javascript" type="text/javascript">
-    var __adUrl=document.location.protocol+'//atout.email-match.com/emafunc.js';
-    try
-    {
-     scriptTag=document.createElement("script");
-     scriptTag.type="text/javascript";
-     scriptTag.async=true;
-     scriptTag.src=__adUrl;
-     var headTag= document.getElementsByTagName("head")[0];
-     headTag.insertBefore(scriptTag,headTag.firstChild);
-    } catch(e)
-    {
-     document.write('<sc'+'ript language="javascript" async="" type="text/javascript" src="'+__adUrl+'"></sc'+'ript>');
-    }
-    function w_emasend()
-    { if (typeof(emasend)!='undefined'){emasend();} else
-    {setTimeout('w_emasend()',200);} }
-    var ema_id_site=737;
-    {% if current_route == 'destination_camping' %}
-        var ema_critere = '';
-        ema_critere += '&crt_productid={{ etab.getCode }}' ;
-    {% endif %}
-    w_emasend();
-    </script>
+        {# <!-- Tag Ematch --> #}
+        <script language="javascript" type="text/javascript">
+        var __adUrl=document.location.protocol+'//atout.email-match.com/emafunc.js';
+        try
+        {
+         scriptTag=document.createElement("script");
+         scriptTag.type="text/javascript";
+         scriptTag.async=true;
+         scriptTag.src=__adUrl;
+         var headTag= document.getElementsByTagName("head")[0];
+         headTag.insertBefore(scriptTag,headTag.firstChild);
+        } catch(e)
+        {
+         document.write('<sc'+'ript language="javascript" async="" type="text/javascript" src="'+__adUrl+'"></sc'+'ript>');
+        }
+        function w_emasend()
+        { if (typeof(emasend)!='undefined'){emasend();} else
+        {setTimeout('w_emasend()',200);} }
+        var ema_id_site=737;
+        {% if current_route == 'destination_camping' %}
+            var ema_critere = '';
+            ema_critere += '&crt_productid={{ etab.getCode }}' ;
+        {% endif %}
+        w_emasend();
+        </script>
 
-    {#- <!-- Tag Criteo --> #}
-    {%- if app.context.get('language') == 'fr' -%}
+        {# <!-- Tag Criteo --> #}
         {% set routes_criteo = ['homepage', 'destination_camping', 'destination_destination', 'destination_pays', 'destination_region',
             'destination_region_ref', 'destination_departement', 'destination_ville', 'dispo', 'bonsplans', 'categorie_bonsplans', 'catalogue'] %}
         {%- if current_route in routes_criteo -%}
