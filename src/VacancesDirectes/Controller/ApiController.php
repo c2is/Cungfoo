@@ -206,23 +206,45 @@ class ApiController implements ControllerProviderInterface
                 else if (array_key_exists('M2K', $codes)) {
                     $description = $codes['M2K'];
                 }
-
+				
                 if (!$description) {
-                    $codes = array();
+                    $codesB = array();
                     foreach ($camping->getBaignades() as $baignade) {
-                        $codes[$baignade->getCode()] = $baignade->getName();
+                        $codesB[$baignade->getCode()] = $baignade->getName();
                     }
 
-                    if (array_key_exists('PCOU', $codes)) {
-                        $description = $codes['PCOU'];
+                    if (array_key_exists('PCOU', $codesB)) {
+                        $description = $codesB['PCOU'];
                     }
-                    else if (array_key_exists('PAAQ', $codes)) {
-                        $description = $codes['PAAQ'];
+                    else if (array_key_exists('PAAQ', $codesB)) {
+                        $description = $codesB['PAAQ'];
                     }
-                    else if (array_key_exists('TOBO', $codes)) {
-                        $description = $codes['TOBO'];
+                    else if (array_key_exists('TOBO', $codesB)) {
+                        $description = $codesB['TOBO'];
+                    }
+					else if (array_key_exists('PISC', $codesB)) {
+                        $description = $codesB['PISC'];
                     }
                 }
+				unset($codesB);
+
+				if (!$description) {
+					if (array_key_exists('AMON', $codes)) {
+						$description = $codes['AMON'];
+					}
+					else if (array_key_exists('BOLA', $codes)) {
+						$description = $codes['BOLA'];
+					}
+					else if (array_key_exists('BORI', $codes)) {
+						$description = $codes['BORI'];
+					}
+					else if (array_key_exists('PEAU', $codes)) {
+						$description = $codes['PEAU'];
+					}
+					else if (array_key_exists('CAMO', $codes)) {
+						$description = $codes['CAMO'];
+					}
+				}
 
                 $node = $dom->createElement('description');
                 $node->appendChild($dom->createTextNode($description));
@@ -288,37 +310,61 @@ class ApiController implements ControllerProviderInterface
             {
 				$short_description = '';
                 $codes = array();
+				
                 foreach ($camping->getSituationGeographiques() as $situation) {
                     $codes[$situation->getCode()] = $situation->getName();
                 }
 
-                if (array_key_exists('MDIR', $codes)) {
+				if (array_key_exists('MDIR', $codes)) {
                     $short_description = $codes['MDIR'];
                 }
                 else if (array_key_exists('M2K', $codes)) {
                     $short_description = $codes['M2K'];
                 }
-
+				
                 if (!$short_description) {
-                    $codes = array();
+                    $codesB = array();
                     foreach ($camping->getBaignades() as $baignade) {
-                        $codes[$baignade->getCode()] = $baignade->getName();
+                        $codesB[$baignade->getCode()] = $baignade->getName();
                     }
 
-                    if (array_key_exists('PCOU', $codes)) {
-                        $short_description = $codes['PCOU'];
+                    if (array_key_exists('PCOU', $codesB)) {
+                        $short_description = $codesB['PCOU'];
                     }
-                    else if (array_key_exists('PAAQ', $codes)) {
-                        $short_description = $codes['PAAQ'];
+                    else if (array_key_exists('PAAQ', $codesB)) {
+                        $short_description = $codesB['PAAQ'];
                     }
-                    else if (array_key_exists('TOBO', $codes)) {
-                        $short_description = $codes['TOBO'];
+                    else if (array_key_exists('TOBO', $codesB)) {
+                        $short_description = $codesB['TOBO'];
+                    }
+					else if (array_key_exists('PISC', $codesB)) {
+                        $short_description = $codesB['PISC'];
                     }
                 }
+				unset($codesB);
+
+				if (!$short_description) {
+					if (array_key_exists('AMON', $codes)) {
+						$short_description = $codes['AMON'];
+					}
+					else if (array_key_exists('BOLA', $codes)) {
+						$short_description = $codes['BOLA'];
+					}
+					else if (array_key_exists('BORI', $codes)) {
+						$short_description = $codes['BORI'];
+					}
+					else if (array_key_exists('PEAU', $codes)) {
+						$short_description = $codes['PEAU'];
+					}
+					else if (array_key_exists('CAMO', $codes)) {
+						$short_description = $codes['CAMO'];
+					}
+				}
 
 				$description = str_replace('"', '""', $camping->getDescription());
 				$description = str_replace("\n", ' ', strip_tags($description));
 				$description = str_replace("\r", ' ', $description);
+				$description = html_entity_decode($description,ENT_NOQUOTES,"UTF-8");
 
                 $lines[] = implode(',', array(
                     $camping->getCode(),
