@@ -95,13 +95,13 @@ class CampingController implements ControllerProviderInterface
                 ->limit(3)
                 ->findActive()
             ;
-
+/*
             $multimedia = \Cungfoo\Model\MultimediaEtablissementQuery::create()
                 ->joinWithI18n($locale)
                 ->filterByEtablissementId($etab->getId())
                 ->findActive()
             ;
-
+*/
             $tags = \Cungfoo\Model\TagQuery::create()
                 ->joinWithI18n($locale)
                 ->findActive()
@@ -123,7 +123,7 @@ class CampingController implements ControllerProviderInterface
                 'nbEvenementsCulturels'   => $nbEvenementsCulturels,
                 'eventPrioritaire'        => $eventPrioritaire,
                 'personnages'             => $personnages,
-                'multimedia'              => $multimedia,
+                //'multimedia'              => $multimedia,
                 'tags'                    => $tags,
                 'personnageAleatoire'     => $personnageAleatoire,
                 'sitesAVisiter'           => $sitesAVisiter,
